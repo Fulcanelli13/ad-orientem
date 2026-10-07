@@ -1,0 +1,552 @@
+{
+  "version": "FOCUSED_FORMATION_GAPS_CATHOLIC_LIFE_SALVAGE_V1",
+  "status": "RESEARCH_ONLY_NOT_PUBLISHABLE_AS_IS",
+  "created_at": "2026-10-07",
+  "decision": "Preserve these claims as focused research gaps. Do not create Catholic Life 2.0 and do not surface unsourced pastoral synthesis until it has explicit authority.",
+  "publication_gate": [
+    "Every user-facing explanatory/pastoral claim must acquire an explicit source or be rewritten as clearly identified app guidance with a documented basis.",
+    "Funeral/Requiem should preferentially converge with the Serious Illness/after-death and certified Requiem owners, not become a duplicate death module.",
+    "Religious Life and Vocations should receive a separate ownership decision only if broader research justifies a real Formation surface.",
+    "Spiritual Life should be designed from the larger traditional spiritual-formation research, not from these eleven salvage claims alone.",
+    "Catholic Home & Family should be built from the much richer domestic/customary research, not these three residual claims."
+  ],
+  "domains": {
+    "FORMATION.FUNERAL_AND_REQUIEM": {
+      "claim_count": 15,
+      "unsourced_claim_count": 5,
+      "claims": [
+        {
+          "claim_id": "CL07-S05-Q004",
+          "stage_id": "CL07-S05",
+          "stage_title": "When Death Occurs",
+          "layer": "PASTORAL",
+          "text": "Christian hope for the deceased does not justify the app declaring the person certainly in Heaven.",
+          "source_ids": [],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S05-Q005",
+          "stage_id": "CL07-S05",
+          "stage_title": "When Death Occurs",
+          "layer": "PASTORAL",
+          "text": "The body of the deceased should be treated with Christian reverence.",
+          "source_ids": [],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S06-Q002",
+          "stage_id": "CL07-S06",
+          "stage_title": "Wake & Funeral",
+          "layer": "CURRENT",
+          "text": "Current canon law describes ecclesiastical funerals as giving spiritual assistance to the dead, honouring their bodies and bringing the living the consolation of hope.",
+          "source_ids": [
+            "SRC-CIC83-1176"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S06-Q003",
+          "stage_id": "CL07-S06",
+          "stage_title": "Wake & Funeral",
+          "layer": "PASTORAL",
+          "text": "Catholic funeral rites can include a Funeral Mass or other lawful funeral forms according to the applicable rite and circumstances.",
+          "source_ids": [],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S06-Q005",
+          "stage_id": "CL07-S06",
+          "stage_title": "Wake & Funeral",
+          "layer": "PASTORAL",
+          "text": "The current final commendation and the traditional funeral absolution are not identical rites.",
+          "source_ids": [],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S07-Q001",
+          "stage_id": "CL07-S07",
+          "stage_title": "Traditional Requiem",
+          "layer": "PROFILE_1962",
+          "text": "The 1962 Missal contains a distinct Mass-of-the-Dead/Requiem ceremonial profile.",
+          "source_ids": [
+            "SRC-MR62-REQUIEM"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S07-Q002",
+          "stage_id": "CL07-S07",
+          "stage_title": "Traditional Requiem",
+          "layer": "PROFILE_1962",
+          "text": "Black is the traditional vestment colour associated with Masses of the Dead in the 1962 framework.",
+          "source_ids": [
+            "SRC-MR62-REQUIEM"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S07-Q003",
+          "stage_id": "CL07-S07",
+          "stage_title": "Traditional Requiem",
+          "layer": "PROFILE_1962",
+          "text": "The Dies irae belongs to the traditional Requiem Mass corpus in the relevant 1962 settings.",
+          "source_ids": [
+            "SRC-MR62-REQUIEM"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S07-Q004",
+          "stage_id": "CL07-S07",
+          "stage_title": "Traditional Requiem",
+          "layer": "PASTORAL",
+          "text": "The traditional funeral absolution is not sacramental absolution of the deceased person's sins.",
+          "source_ids": [
+            "SRC-MR62-REQUIEM"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S07-Q005",
+          "stage_id": "CL07-S07",
+          "stage_title": "Traditional Requiem",
+          "layer": "PASTORAL",
+          "text": "A catafalque is a ceremonial structure or representation and is not the deceased person's body.",
+          "source_ids": [],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S08-Q001",
+          "stage_id": "CL07-S08",
+          "stage_title": "Burial, Cremation & Ashes",
+          "layer": "PROFILE_1962",
+          "text": "The 1917 law governing the 1962 context prohibited voluntary cremation.",
+          "source_ids": [
+            "SRC-CIC17-1203"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S08-Q002",
+          "stage_id": "CL07-S08",
+          "stage_title": "Burial, Cremation & Ashes",
+          "layer": "HISTORICAL",
+          "text": "The Church's discipline on cremation changed in 1963.",
+          "source_ids": [
+            "SRC-CDF-AD-RESURGENDUM-2016"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S08-Q003",
+          "stage_id": "CL07-S08",
+          "stage_title": "Burial, Cremation & Ashes",
+          "layer": "CURRENT",
+          "text": "Current law strongly recommends burial but permits cremation unless it was chosen for reasons contrary to Christian doctrine.",
+          "source_ids": [
+            "SRC-CIC83-1176"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S08-Q004",
+          "stage_id": "CL07-S08",
+          "stage_title": "Burial, Cremation & Ashes",
+          "layer": "CURRENT",
+          "text": "Current instruction ordinarily requires ashes to be kept in a sacred place and prohibits scattering them or incorporating them into jewellery or keepsakes.",
+          "source_ids": [
+            "SRC-CDF-AD-RESURGENDUM-2016"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        },
+        {
+          "claim_id": "CL07-S08-Q005",
+          "stage_id": "CL07-S08",
+          "stage_title": "Burial, Cremation & Ashes",
+          "layer": "CURRENT",
+          "text": "The 2023 DDF clarification allows only narrow authority-reviewed possibilities and does not create a general right to divide ashes freely.",
+          "source_ids": [
+            "SRC-DDF-ASHES-2023"
+          ],
+          "original_destination": "FORMATION.FUNERAL_AND_REQUIEM"
+        }
+      ]
+    },
+    "FORMATION.RELIGIOUS_LIFE": {
+      "claim_count": 7,
+      "unsourced_claim_count": 4,
+      "claims": [
+        {
+          "claim_id": "CL10-S05-Q001",
+          "stage_id": "CL10-S05",
+          "stage_title": "Religious Life",
+          "layer": "CURRENT",
+          "text": "Current canon law states that the consecrated state is by its nature neither clerical nor lay.",
+          "source_ids": [
+            "SRC-CIC83-573-607"
+          ],
+          "original_destination": "FORMATION.RELIGIOUS_LIFE"
+        },
+        {
+          "claim_id": "CL10-S05-Q002",
+          "stage_id": "CL10-S05",
+          "stage_title": "Religious Life",
+          "layer": "CURRENT",
+          "text": "Religious profession is distinct from sacramental ordination.",
+          "source_ids": [
+            "SRC-CIC83-573-607"
+          ],
+          "original_destination": "FORMATION.RELIGIOUS_LIFE"
+        },
+        {
+          "claim_id": "CL10-S05-Q003",
+          "stage_id": "CL10-S05",
+          "stage_title": "Religious Life",
+          "layer": "PASTORAL",
+          "text": "Monk and friar are not interchangeable generic labels for every male religious; actual identity depends on the institute and tradition.",
+          "source_ids": [],
+          "original_destination": "FORMATION.RELIGIOUS_LIFE"
+        },
+        {
+          "claim_id": "CL10-S05-Q004",
+          "stage_id": "CL10-S05",
+          "stage_title": "Religious Life",
+          "layer": "PASTORAL",
+          "text": "A religious brother is not an unfinished priest or automatically a seminarian.",
+          "source_ids": [],
+          "original_destination": "FORMATION.RELIGIOUS_LIFE"
+        },
+        {
+          "claim_id": "CL10-S05-Q005",
+          "stage_id": "CL10-S05",
+          "stage_title": "Religious Life",
+          "layer": "PASTORAL",
+          "text": "Ordinary speech often blurs 'sister' and 'nun', but actual canonical forms of women's consecrated life vary.",
+          "source_ids": [],
+          "original_destination": "FORMATION.RELIGIOUS_LIFE"
+        },
+        {
+          "claim_id": "CL10-S05-Q006",
+          "stage_id": "CL10-S05",
+          "stage_title": "Religious Life",
+          "layer": "PASTORAL",
+          "text": "A religious priest is both a religious and a priest; he does not possess a different sacramental priesthood from a diocesan priest.",
+          "source_ids": [],
+          "original_destination": "FORMATION.RELIGIOUS_LIFE"
+        },
+        {
+          "claim_id": "CL10-S05-Q007",
+          "stage_id": "CL10-S05",
+          "stage_title": "Religious Life",
+          "layer": "CURRENT",
+          "text": "Not every Catholic community living or working together is canonically a religious institute.",
+          "source_ids": [
+            "SRC-CIC83-573-607"
+          ],
+          "original_destination": "FORMATION.RELIGIOUS_LIFE"
+        }
+      ]
+    },
+    "FORMATION.VOCATIONS": {
+      "claim_count": 7,
+      "unsourced_claim_count": 6,
+      "claims": [
+        {
+          "claim_id": "CL10-S07-Q001",
+          "stage_id": "CL10-S07",
+          "stage_title": "Vocations & Milestones",
+          "layer": "PASTORAL",
+          "text": "Vocation discernment involves prayer, Christian life, counsel and concrete ecclesial processes rather than an app prediction.",
+          "source_ids": [],
+          "original_destination": "FORMATION.VOCATIONS"
+        },
+        {
+          "claim_id": "CL10-S07-Q002",
+          "stage_id": "CL10-S07",
+          "stage_title": "Vocations & Milestones",
+          "layer": "PASTORAL",
+          "text": "Entering seminary does not mean a man is already a priest or that ordination is guaranteed.",
+          "source_ids": [],
+          "original_destination": "FORMATION.VOCATIONS"
+        },
+        {
+          "claim_id": "CL10-S07-Q003",
+          "stage_id": "CL10-S07",
+          "stage_title": "Vocations & Milestones",
+          "layer": "PASTORAL",
+          "text": "Religious formation commonly distinguishes stages such as postulancy, novitiate and temporary or perpetual profession according to the institute.",
+          "source_ids": [],
+          "original_destination": "FORMATION.VOCATIONS"
+        },
+        {
+          "claim_id": "CL10-S07-Q005",
+          "stage_id": "CL10-S07",
+          "stage_title": "Vocations & Milestones",
+          "layer": "PASTORAL",
+          "text": "A newly ordained priest's first blessing is a pious custom; Ad Orientem should not attach an indulgence claim to it without a specific grant.",
+          "source_ids": [],
+          "original_destination": "FORMATION.VOCATIONS"
+        },
+        {
+          "claim_id": "CL10-S07-Q006",
+          "stage_id": "CL10-S07",
+          "stage_title": "Vocations & Milestones",
+          "layer": "CURRENT",
+          "text": "The Church's current indulgence grants include a plenary indulgence attached to the priest's first public Mass and to faithful who devoutly assist, under the applicable conditions.",
+          "source_ids": [
+            "SRC-FIRST-MASS-INDULGENCE"
+          ],
+          "original_destination": "FORMATION.VOCATIONS"
+        },
+        {
+          "claim_id": "CL10-S07-Q007",
+          "stage_id": "CL10-S07",
+          "stage_title": "Vocations & Milestones",
+          "layer": "PASTORAL",
+          "text": "Ordination, profession and marriage anniversaries are occasions of thanksgiving, not repetitions of the sacrament or profession.",
+          "source_ids": [],
+          "original_destination": "FORMATION.VOCATIONS"
+        },
+        {
+          "claim_id": "CL10-S07-Q008",
+          "stage_id": "CL10-S07",
+          "stage_title": "Vocations & Milestones",
+          "layer": "PASTORAL",
+          "text": "Leaving seminary or religious formation is not automatically a moral failure; formation itself includes discernment.",
+          "source_ids": [],
+          "original_destination": "FORMATION.VOCATIONS"
+        }
+      ]
+    },
+    "FORMATION.SPIRITUAL_LIFE.DAILY_RULE": {
+      "claim_count": 6,
+      "unsourced_claim_count": 4,
+      "claims": [
+        {
+          "claim_id": "CL09-S01-Q002",
+          "stage_id": "CL09-S01",
+          "stage_title": "The Catholic Day",
+          "layer": "CURRENT",
+          "text": "The Angelus is a longstanding Catholic devotional practice associated with remembrance of the Incarnation.",
+          "source_ids": [
+            "SRC-DIRECTORY-POPULAR-PIETY-2002"
+          ],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE"
+        },
+        {
+          "claim_id": "CL09-S01-Q003",
+          "stage_id": "CL09-S01",
+          "stage_title": "The Catholic Day",
+          "layer": "CURRENT",
+          "text": "The Regina Cæli has a traditional seasonal relationship to Paschaltide in Marian devotion.",
+          "source_ids": [
+            "SRC-DIRECTORY-POPULAR-PIETY-2002"
+          ],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE"
+        },
+        {
+          "claim_id": "CL09-S01-Q004",
+          "stage_id": "CL09-S01",
+          "stage_title": "The Catholic Day",
+          "layer": "PASTORAL",
+          "text": "Grace before or after meals is a devotional practice rather than a rigid app-enforced schedule.",
+          "source_ids": [],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE"
+        },
+        {
+          "claim_id": "CL09-S01-Q005",
+          "stage_id": "CL09-S01",
+          "stage_title": "The Catholic Day",
+          "layer": "PASTORAL",
+          "text": "Short aspirations can be used throughout the day without being treated as mantra-like mechanisms.",
+          "source_ids": [],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE"
+        },
+        {
+          "claim_id": "CL09-S08-Q002",
+          "stage_id": "CL09-S08",
+          "stage_title": "Build a Catholic Rhythm",
+          "layer": "PASTORAL",
+          "text": "A small stable prayer rhythm can be better than accumulating an unmanageable number of optional devotions.",
+          "source_ids": [],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE"
+        },
+        {
+          "claim_id": "CL09-S08-Q005",
+          "stage_id": "CL09-S08",
+          "stage_title": "Build a Catholic Rhythm",
+          "layer": "PASTORAL",
+          "text": "A devotional routine may legitimately change with work, family, illness, travel, age and vocation.",
+          "source_ids": [],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE"
+        }
+      ]
+    },
+    "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION": {
+      "claim_count": 5,
+      "unsourced_claim_count": 1,
+      "claims": [
+        {
+          "claim_id": "CL04-S08-Q001",
+          "stage_id": "CL04-S08",
+          "stage_title": "Indulgences & Reparation",
+          "layer": "CURRENT",
+          "text": "An indulgence is remission before God of temporal punishment for sins whose guilt has already been forgiven.",
+          "source_ids": [
+            "SRC-CIC83-992-997",
+            "SRC-INDULGENTIARUM-DOCTRINA"
+          ],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION"
+        },
+        {
+          "claim_id": "CL04-S08-Q002",
+          "stage_id": "CL04-S08",
+          "stage_title": "Indulgences & Reparation",
+          "layer": "CURRENT",
+          "text": "Current discipline distinguishes partial and plenary indulgences.",
+          "source_ids": [
+            "SRC-CIC83-992-997",
+            "SRC-INDULGENTIARUM-DOCTRINA"
+          ],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION"
+        },
+        {
+          "claim_id": "CL04-S08-Q003",
+          "stage_id": "CL04-S08",
+          "stage_title": "Indulgences & Reparation",
+          "layer": "CURRENT",
+          "text": "A plenary indulgence requires the applicable conditions established by the Church.",
+          "source_ids": [
+            "SRC-INDULGENTIARUM-DOCTRINA"
+          ],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION"
+        },
+        {
+          "claim_id": "CL04-S08-Q004",
+          "stage_id": "CL04-S08",
+          "stage_title": "Indulgences & Reparation",
+          "layer": "HISTORICAL",
+          "text": "Older indulgence language using days or years was abolished as the current measure and did not mean a literal number of days removed from Purgatory.",
+          "source_ids": [
+            "SRC-INDULGENTIARUM-DOCTRINA"
+          ],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION"
+        },
+        {
+          "claim_id": "CL04-S08-Q005",
+          "stage_id": "CL04-S08",
+          "stage_title": "Indulgences & Reparation",
+          "layer": "PASTORAL",
+          "text": "Reparation and indulgences must not be represented as a spiritual points economy.",
+          "source_ids": [],
+          "original_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION"
+        }
+      ]
+    },
+    "FORMATION.CATHOLIC_HOME_AND_FAMILY": {
+      "claim_count": 3,
+      "unsourced_claim_count": 3,
+      "claims": [
+        {
+          "claim_id": "CL06-S07-Q002",
+          "stage_id": "CL06-S07",
+          "stage_title": "Living the Marriage",
+          "layer": "PASTORAL",
+          "text": "Regular family prayer can support Catholic married life.",
+          "source_ids": [],
+          "original_destination": "FORMATION.CATHOLIC_HOME_AND_FAMILY"
+        },
+        {
+          "claim_id": "CL06-S07-Q004",
+          "stage_id": "CL06-S07",
+          "stage_title": "Living the Marriage",
+          "layer": "PASTORAL",
+          "text": "Sacred Heart family consecration or enthronement is a devotional practice, not a condition of valid Catholic marriage.",
+          "source_ids": [],
+          "original_destination": "FORMATION.CATHOLIC_HOME_AND_FAMILY"
+        },
+        {
+          "claim_id": "CL06-S07-Q005",
+          "stage_id": "CL06-S07",
+          "stage_title": "Living the Marriage",
+          "layer": "PASTORAL",
+          "text": "A marriage anniversary is an occasion of thanksgiving and does not repeat the Sacrament.",
+          "source_ids": [],
+          "original_destination": "FORMATION.CATHOLIC_HOME_AND_FAMILY"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "source_id": "SRC-CDF-AD-RESURGENDUM-2016",
+      "title": "Ad resurgendum cum Christo",
+      "authority_type": "DICASTERY_INSTRUCTION",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20160815_ad-resurgendum-cum-christo_en.html"
+    },
+    {
+      "source_id": "SRC-CIC17-1203",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC83-1176",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-573-607",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-992-997",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-DDF-ASHES-2023",
+      "title": "Reply regarding preservation of ashes",
+      "authority_type": "DICASTERY_RESPONSE",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231209_risposta-card-zuppi-ceneri_en.html"
+    },
+    {
+      "source_id": "SRC-DIRECTORY-POPULAR-PIETY-2002",
+      "title": "Directory on Popular Piety and the Liturgy",
+      "authority_type": "DICASTERY_DIRECTORY",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+    },
+    {
+      "source_id": "SRC-FIRST-MASS-INDULGENCE",
+      "title": "Enchiridion indulgentiarum, quarto editur",
+      "authority_type": "CURRENT_INDULGENCE_GRANT",
+      "status": "PINNED_APPROVED_TRANSLATION",
+      "canonical_url": "https://docentes.educacion.navarra.es/mzubicob/latfran1999.htm"
+    },
+    {
+      "source_id": "SRC-INDULGENTIARUM-DOCTRINA",
+      "title": "Indulgentiarum Doctrina",
+      "authority_type": "PAPAL_CONSTITUTION",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html"
+    },
+    {
+      "source_id": "SRC-MR62-REQUIEM",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    }
+  ]
+}
