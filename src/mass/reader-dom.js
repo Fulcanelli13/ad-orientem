@@ -644,6 +644,7 @@ export function createReaderDomAdapter({
   let scholaFallbackTimer=0;
   let scholaTickerIdentity=null;
   let suppressNavClickUntil=0;
+  let suppressNavClickDirection=null;
   let suppressModeClickUntil=0;
 
   function setMode(next){
@@ -1010,7 +1011,7 @@ export function createReaderDomAdapter({
         return;
       }
       const nav=event.target?.closest?.("[data-reader-nav]");
-      if(nav && Date.now()<suppressNavClickUntil){return;}
+      if(nav && Date.now()<suppressNavClickUntil && nav.dataset.readerNav===suppressNavClickDirection){return;}
       if(nav?.dataset.readerNav==="previous"){onPrevious?.(current,prepared);return;}
       if(nav?.dataset.readerNav==="next"){onNext?.(current,prepared);return;}
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
@@ -1049,6 +1050,7 @@ export function createReaderDomAdapter({
         event.preventDefault?.();
         event.stopPropagation?.();
         suppressNavClickUntil=Date.now()+650;
+        suppressNavClickDirection=navButton.dataset.readerNav??null;
         if(navButton.dataset.readerNav==="previous")onPrevious?.(current,prepared);
         else if(navButton.dataset.readerNav==="next")onNext?.(current,prepared);
       });
