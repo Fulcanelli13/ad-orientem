@@ -1,0 +1,69 @@
+{
+  "schema": "CUSTOMS_ATLAS_NEGATIVE_KNOWLEDGE_V1",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "custom_id": "DOM-005",
+      "name": "Family prayer corner / coin prière",
+      "decision": "HOLD",
+      "reason": "Modern French material exists, but pre-conciliar French customary status still needs direct verification.",
+      "reopen_condition": "Direct historical French source matching the customary claim.",
+      "source_ids": ["FERON-1934"],
+      "map_blocked": true
+    },
+    {
+      "custom_id": "DOM-008",
+      "name": "Epiphany door chalking as a universal Catholic home custom",
+      "decision": "REJECT",
+      "reason": "A Roman Ritual house blessing does not establish universal or French-world lay chalking.",
+      "reopen_condition": "Only a narrowly localized claim with strong French-world historical evidence.",
+      "source_ids": ["CATHCULT-HOUSE"],
+      "map_blocked": true
+    },
+    {
+      "custom_id": "DOM-015",
+      "name": "Preserving baptismal candle / baptism anniversary customs",
+      "decision": "HOLD",
+      "reason": "French-world attestation remains insufficient.",
+      "reopen_condition": "Direct French historical evidence.",
+      "source_ids": ["WEISER-FAM"],
+      "map_blocked": true
+    },
+    {
+      "custom_id": "LIFE-005",
+      "name": "Sick-room preparation: crucifix, candles, holy water",
+      "decision": "HOLD",
+      "reason": "The exact lay-facing checklist still needs direct pre-conciliar verification.",
+      "reopen_condition": "Direct Roman/French source supporting the checklist as stated.",
+      "source_ids": ["RIT-WELLER", "FERON-1934"],
+      "map_blocked": true
+    },
+    {
+      "custom_id": "BELL-005",
+      "name": "Detailed regional glas patterns",
+      "decision": "REJECT",
+      "reason": "Research establishes regional variation rather than one standard pattern.",
+      "reopen_condition": "A future local attestation may be added only for the specific place/region evidenced.",
+      "source_ids": ["ECF-GLAS"],
+      "map_blocked": true
+    },
+    {
+      "custom_id": "FAST-009",
+      "name": "Holy Saturday as a current universal canonical fast",
+      "decision": "REJECT",
+      "reason": "False as a current universal claim.",
+      "reopen_condition": "None without a change in law; historical discipline must be modeled separately.",
+      "source_ids": ["CIC-1249-1253", "AO-DISCIPLINE-RESEARCH"],
+      "map_blocked": true
+    },
+    {
+      "custom_id": "FAST-010",
+      "name": "14 August as a universal 1962 fast",
+      "decision": "REJECT",
+      "reason": "False as a universal 1962 claim; local historical rules may differ.",
+      "reopen_condition": "Only a source-backed local historical attestation.",
+      "source_ids": ["AO-DEVOTIONAL-CALENDAR-RESEARCH"],
+      "map_blocked": true
+    }
+  ]
+}
