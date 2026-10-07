@@ -239,6 +239,23 @@ export const APOSTOLATE_SOURCES=Object.freeze({
     url:"https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html",
     use:"Reparation as an intrinsic element of Sacred Heart devotion",
   }),
+  "PIUS-X-ACERBO-NIMIS":Object.freeze({
+    id:"PIUS-X-ACERBO-NIMIS",
+    authority:"PAPAL_MAGISTERIUM",
+    work:"St Pius X · Acerbo Nimis",
+    locator:"15 April 1905 · especially §§11–14, 24, 26",
+    url:"https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+    urlFr:"https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+    use:"Plain, simple, prepared catechesis adapted to children and adults",
+  }),
+  "MR62-ORDINARY":Object.freeze({
+    id:"MR62-ORDINARY",
+    authority:"LITURGICAL_BOOK",
+    work:"Missale Romanum · Editio typica 1962",
+    locator:"Ordo Missae / Ordinary of the Mass",
+    url:"https://archive.org/details/sp07mr62-editio-typica",
+    use:"Canonical 1962 order and textual structure of the Roman Mass",
+  }),
   "ST-PIUS-X-CATECHISM-FR":Object.freeze({
     id:"ST-PIUS-X-CATECHISM-FR",
     authority:"CATECHETICAL_PRIMARY",
