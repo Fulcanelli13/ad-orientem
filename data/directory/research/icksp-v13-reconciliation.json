@@ -213,7 +213,29 @@
         "status": "NO_CURRENT_FIRST_PARTY_ICKSP_APOSTOLATE_LISTING_FOUND"
       }
     ],
-    "note": "No Wexford or Waterford row is promoted without current first-party ICKSP evidence; this does not assert that no occasional historic or visiting Mass has ever occurred there."
+    "note": "No Wexford or Waterford row is promoted without current first-party ICKSP evidence; this does not assert that no occasional historic or visiting Mass has ever occurred there.",
+    "source_precedence": {
+      "rule": "Prefer the current local apostolate page for venue/schedule facts; use the national Mass-times page as corroboration; do not let a stale national apostolate summary overwrite a newer local schedule.",
+      "conflicts": [
+        {
+          "place": "Galway",
+          "stale_source": "https://icksp.ie/apostolate",
+          "stale_value": "Sunday 15:00",
+          "canonical_sources": [
+            "https://galway.icksp.ie/",
+            "https://icksp.ie/mass-times"
+          ],
+          "canonical_value": "Sunday 12:00"
+        },
+        {
+          "place": "Ardee",
+          "stale_source": "https://icksp.ie/apostolate",
+          "stale_value": "Contact convent for Mass schedule",
+          "canonical_source": "https://ardee.icksp.ie/",
+          "canonical_value": "Sunday 08:30 Low / 10:30 Sung; weekday schedule published"
+        }
+      ]
+    }
   },
   "resolved_since_bulk_eligibility_pass": [
     "ICKSP-STG-124"
