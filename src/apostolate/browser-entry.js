@@ -1,0 +1,85 @@
+import {
+  APOSTOLATE_HANDOFF_DIRECTIONS,
+  APOSTOLATE_OWNER,
+  APOSTOLATE_SCENARIO_IDS,
+  APOSTOLATE_SKILLS,
+  APOSTOLATE_SOT_VERSION,
+  makeApostolateHandoff,
+} from "./contracts.js";
+import { createApostolateScenarioEngine } from "./engine.js";
+
+export const VERSION="hidden-apostolate-v1";
+
+export function createApostolateOwner(win=globalThis,{scenarios=[]}={}){
+  const scenariosEngine=createApostolateScenarioEngine(scenarios);
+
+  function receiveHandoff(input){
+    const handoff=makeApostolateHandoff(input);
+    if(handoff.direction!==APOSTOLATE_HANDOFF_DIRECTIONS.FORMATION_TO_APOSTOLATE){
+      return Object.freeze({ok:false,reason:"WRONG_DIRECTION",handoff});
+    }
+    const scenario=APOSTOLATE_SCENARIO_IDS.includes(handoff.targetId)
+      ? scenariosEngine.resolve(handoff.targetId)
+      : null;
+    const skill=APOSTOLATE_SKILLS.find(entry=>entry.id===handoff.targetId)??null;
+    return Object.freeze({
+      ok:Boolean(scenario?.ok||skill),
+      reason:scenario&&!scenario.ok?scenario.reason:null,
+      handoff,
+      scenario,
+      skill,
+    });
+  }
+
+  function handoffToFormation({fromId,targetRoute,reason}={}){
+    return makeApostolateHandoff({
+      direction:APOSTOLATE_HANDOFF_DIRECTIONS.APOSTOLATE_TO_FORMATION,
+      fromId,
+      targetId:targetRoute,
+      reason,
+    });
+  }
+
+  function status(){
+    const root=win?.document?.querySelector?.("[data-ao-apostolate-root],#ao-apostolate-root")??null;
+    return Object.freeze({
+      version:VERSION,
+      owner:APOSTOLATE_OWNER,
+      sot:APOSTOLATE_SOT_VERSION,
+      installed:true,
+      hidden:true,
+      visible:false,
+      mounted:Boolean(root?.isConnected),
+      ribbonExposed:Boolean(win?.document?.querySelector?.("[data-ao-app-surface='apostolate'],[data-ao-ribbon='apostolate']")),
+      ...scenariosEngine.status(),
+    });
+  }
+
+  return Object.freeze({
+    version:VERSION,
+    owner:APOSTOLATE_OWNER,
+    sot:APOSTOLATE_SOT_VERSION,
+    engines:Object.freeze({
+      answer:scenariosEngine.answer,
+      help:scenariosEngine.help,
+      introduce:scenariosEngine.introduce,
+      resolve:scenariosEngine.resolve,
+    }),
+    receiveHandoff,
+    handoffToFormation,
+    status,
+  });
+}
+
+export function installApostolateOwner(win=globalThis){
+  if(win?.AO_APOSTOLATE_APP_V1)return win.AO_APOSTOLATE_APP_V1;
+  const api=createApostolateOwner(win);
+  win.AO_APOSTOLATE_APP_V1=api;
+  if(win?.document?.documentElement?.dataset){
+    win.document.documentElement.dataset.aoApostolateOwner=APOSTOLATE_OWNER;
+    win.document.documentElement.dataset.aoApostolateVisibility="hidden";
+  }
+  return api;
+}
+
+if(typeof window!=="undefined")installApostolateOwner(window);
