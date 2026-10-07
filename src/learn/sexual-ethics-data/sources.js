@@ -1,5 +1,5 @@
 export const CSE_SOURCES=Object.freeze([
-  Object.freeze({id:"SCR",title:"Sacred Scripture",authority_type:"REVELATION",role:"primary"}),
+  Object.freeze({id:"SCR",title:"Sacred Scripture",authority_type:"REVELATION",role:"primary",canonical_url:"https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html",canonical_url_fr:"https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"}),
   Object.freeze({id:"TRENT6",title:"Roman Catechism · Sixth Commandment",authority_type:"MAGISTERIAL_CATECHESIS",role:"primary",canonical_url:"https://en.wikisource.org/wiki/The_Catechism_of_the_Council_of_Trent/Part_3:_The_Sixth_Commandment"}),
   Object.freeze({id:"PIUSX",title:"Catechism of St Pius X",authority_type:"MAGISTERIAL_CATECHESIS",role:"primary",canonical_url:"https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286"}),
   Object.freeze({id:"ST6",title:"St Thomas Aquinas · Summa Theologiae I-II q.6",authority_type:"DOCTOR_OF_CHURCH",role:"traditional_theology",canonical_url:"https://www.newadvent.org/summa/2006.htm"}),
