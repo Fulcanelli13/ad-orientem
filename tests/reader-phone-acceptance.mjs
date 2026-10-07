@@ -101,8 +101,12 @@ try{
   await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
   await page.waitForTimeout(350);
   const afterBack=await cardId();
+  const navDiag=await page.evaluate(()=>({
+    input:document.getElementById("ao-r17-native-reader-preview")?.dataset.aoLastNavInput??null,
+    result:document.getElementById("ao-r17-native-reader-preview")?.dataset.aoLastNavResult??null,
+  }));
   assert.equal(afterBack,initialCard,
-    "Back touch did not restore initial card: "+JSON.stringify({initialCard,afterNext,afterBack,backHit}));
+    "Back touch did not restore initial card: "+JSON.stringify({initialCard,afterNext,afterBack,backHit,navDiag}));
 
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
