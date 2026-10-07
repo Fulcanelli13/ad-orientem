@@ -107,8 +107,10 @@ export function auditVenue(venue, path = "venue") {
     issues.push(issue("MISSING_COUNTRY", `${path}.address.country_code`, "Country code is required."));
   }
 
-  const lat = Number(venue?.geo?.lat);
-  const lng = Number(venue?.geo?.lng);
+  const rawLat = venue?.geo?.lat;
+  const rawLng = venue?.geo?.lng;
+  const lat = rawLat === null || rawLat === undefined || rawLat === "" ? NaN : Number(rawLat);
+  const lng = rawLng === null || rawLng === undefined || rawLng === "" ? NaN : Number(rawLng);
   const hasGeo = Number.isFinite(lat) && lat >= -90 && lat <= 90 && Number.isFinite(lng) && lng >= -180 && lng <= 180;
   const hasAddress = [
     venue?.address?.formatted,
