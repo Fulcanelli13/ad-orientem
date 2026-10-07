@@ -197,6 +197,14 @@ try{
     ["15-calendar-v384","NON_MASS_HEAD_V3_22","../04f2-calendar-v384-christ-king-october.png","../04h-calendar-v384-discipline-1962.png"],
     ["16-settings","NON_MASS_HEAD_V3_22","../05-settings.png","../05b-settings-sources.png"],
   ];
+  for(const [id,,currentImage,secondary] of later){
+    const primaryBytes=await readFile(resolve(out,currentImage));
+    assert.ok(primaryBytes.byteLength>0,id+" current regression capture is missing from the visual artifact");
+    if(secondary){
+      const secondaryBytes=await readFile(resolve(out,secondary));
+      assert.ok(secondaryBytes.byteLength>0,id+" secondary current regression capture is missing from the visual artifact");
+    }
+  }
   const evidenceCards=later.map(([id,sourceId,currentImage,secondary])=>{
     const s=sourceById[sourceId]||{};
     const hash=s.sha256?`<code>${s.sha256}</code>`:"<em>primary bytes unavailable</em>";
