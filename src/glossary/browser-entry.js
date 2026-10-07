@@ -9,6 +9,8 @@ const CONCEPT_URLS=[
   new URL("../../data/glossary/concepts-301-450.v1.json",import.meta.url)
 ];
 const SOURCE_URL=new URL("../../data/glossary/source-registry.v1.json",import.meta.url);
+const LEXEME_URL=new URL("../../data/glossary/lexemes.v1.json",import.meta.url);
+const PHRASE_URL=new URL("../../data/glossary/phrases.v1.json",import.meta.url);
 
 export const GLOSSARY_ROUTE_ID=ROUTE_ID;
 export const GLOSSARY_DEFINITION=Object.freeze({
@@ -52,15 +54,22 @@ function categoryById(data,id){return data.nav.categories.find(x=>x.id===id)||nu
 function sectionById(c,id){return c?.sections?.find(x=>x.id===id)||null}
 
 export function createGlossaryRuntime(win=globalThis){
-  const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,query:"",detailId:null,contextIds:[],origin:"learn",data:null,unsub:null,lastLanguage:null};
+  const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,latinStage:null,query:"",detailId:null,detailType:"concept",contextIds:[],origin:"learn",data:null,unsub:null,lastLanguage:null};
 
   async function load(){
     if(state.loaded)return state.data;
     state.loading=true;
     try{
-      const all=await Promise.all([fetchJson(win,NAV_URL),...CONCEPT_URLS.map(u=>fetchJson(win,u)),fetchJson(win,SOURCE_URL)]);
-      const nav=all[0],sourcesDoc=all[4],entries=all.slice(1,4).flatMap(x=>x.entries);
-      state.data={nav,entries,byId:new Map(entries.map(x=>[x.id,x])),sources:new Map(sourcesDoc.sources.map(x=>[x.id,x]))};
+      const all=await Promise.all([fetchJson(win,NAV_URL),...CONCEPT_URLS.map(u=>fetchJson(win,u)),fetchJson(win,SOURCE_URL),fetchJson(win,LEXEME_URL),fetchJson(win,PHRASE_URL)]);
+      const nav=all[0],sourcesDoc=all[4],lexemeDoc=all[5],phraseDoc=all[6],entries=all.slice(1,4).flatMap(x=>x.entries);
+      const lexemes=lexemeDoc.items||[],phrases=phraseDoc.items||[];
+      state.data={
+        nav,entries,lexemes,phrases,
+        byId:new Map(entries.map(x=>[x.id,x])),
+        lexemeById:new Map(lexemes.map(x=>[x.id,x])),
+        phraseById:new Map(phrases.map(x=>[x.id,x])),
+        sources:new Map(sourcesDoc.sources.map(x=>[x.id,x]))
+      };
       state.loaded=true;state.error="";
     }catch(e){state.error=String(e?.message||e)}
     finally{state.loading=false}
@@ -85,6 +94,9 @@ export function createGlossaryRuntime(win=globalThis){
   function title(){
     if(!state.data)return L(win,"Glossary","Glossaire");
     if(state.view==="context")return L(win,"Terms used here","Termes utilisés ici");
+    if(state.view==="lexemes")return L(win,"Core Latin Lexicon","Lexique latin essentiel");
+    if(state.view==="lexemeStage")return L(win,"Latin · Stage "+state.latinStage,"Latin · Étape "+state.latinStage);
+    if(state.view==="phrases")return L(win,"Liturgical Phrasebook","Recueil de formules liturgiques");
     if(state.view==="section"){const c=categoryById(state.data,state.categoryId),s=sectionById(c,state.sectionId);return isFr(win)?s?.label?.fr:s?.label?.en}
     if(state.view==="category"){const c=categoryById(state.data,state.categoryId);return isFr(win)?c?.label?.fr:c?.label?.en}
     return L(win,"Glossary","Glossaire");
@@ -179,7 +191,7 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   async function open(opts={}){
-    state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.query=String(opts.query||"");state.detailId=null;state.contextIds=[];state.origin=String(opts.origin||"learn");
+    state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.latinStage=null;state.query=String(opts.query||"");state.detailId=null;state.detailType="concept";state.contextIds=[];state.origin=String(opts.origin||"learn");
     ensureRoot();attach();state.loading=!state.loaded;render();
     await load();state.loading=false;
     if(opts.categoryId&&categoryById(state.data,opts.categoryId)){state.categoryId=opts.categoryId;state.view="category"}
@@ -208,7 +220,7 @@ export function createGlossaryRuntime(win=globalThis){
     return true;
   }
 
-  function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(state.open&&root(win)),loaded:state.loaded,entries:state.data?.entries?.length||0,categories:state.data?.nav?.categories?.length||0,view:state.view,detailId:state.detailId})}
+  function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(state.open&&root(win)),loaded:state.loaded,entries:state.data?.entries?.length||0,lexemes:state.data?.lexemes?.length||0,phrases:state.data?.phrases?.length||0,categories:state.data?.nav?.categories?.length||0,view:state.view,detailId:state.detailId,detailType:state.detailType})}
   return Object.freeze({version:VERSION,open,openEntry,openTerms,search,close,back,render,status});
 }
 
