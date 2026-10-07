@@ -6,12 +6,12 @@ const sot=JSON.parse(readFileSync("data/learn/spiritual-life-sot.v1.json","utf8"
 const course=JSON.parse(readFileSync("data/learn/spiritual-life-course.v1.json","utf8"));
 
 assert.equal(course.version,"SPIRITUAL_LIFE_COURSE_V1");
-assert.equal(course.status,"BILINGUAL_CONTENT_READY_NOT_PUBLISHED");
+assert.equal(course.status,"BILINGUAL_CONTENT_PUBLISHED");
 assert.equal(course.future_route,"learn.spiritual_life");
 assert.equal(course.lesson_count,14);
 assert.deepEqual(course.language_parity,["en","fr"]);
 assert.equal(course.exercise_policy,"NON_SCORED_APPLICATION_AND_UNDERSTANDING_ONLY");
-assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),false,"Spiritual Life published before runtime/final audit gate");
+assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),true,"published Spiritual Life route missing from Formation");
 
 const claimSet=new Set(sot.curriculum.stages.flatMap(stage=>stage.claims.map(claim=>claim.id)));
 const used=new Set();
@@ -46,7 +46,7 @@ assert.equal(sot.publication_gates.all_claims_sourced,true);
 assert.equal(sot.publication_gates.english_claim_copy_ready,true);
 assert.equal(sot.publication_gates.french_parity_ready,true);
 assert.equal(sot.publication_gates.prayer_owner_handoffs_mapped,true);
-assert.equal(sot.publication_gates.ui_runtime_ready,false);
+assert.equal(sot.publication_gates.ui_runtime_ready,true);
 assert.equal(sot.publication_gates.final_content_audit_ready,true);
 
 const allCopy=JSON.stringify(course).toLowerCase();
@@ -65,5 +65,5 @@ console.log(JSON.stringify({
   claimsRepresented:used.size,
   englishReady:true,
   frenchReady:true,
-  routePublished:false
+  routePublished:true
 },null,2));
