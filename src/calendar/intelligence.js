@@ -88,6 +88,25 @@ export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
     tags:Object.freeze(["LOCAL_LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
     sourceIds:Object.freeze(["PIL-PERE-LAVAL-ANNUAL"]),
   }),
+  "feast.assumption_of_mary":Object.freeze({
+    key:"feast.assumption_of_mary",
+    title:Object.freeze({en:"Assumption of the Blessed Virgin Mary",fr:"Assomption de la Bienheureuse Vierge Marie"}),
+    schedule:Object.freeze({type:"FIXED",month:8,day:15}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:74,
+    sourceIds:Object.freeze(["SHR-ALTOETTING-CURRENT-PROGRAMME"]),
+  }),
+  "observance.einsiedeln_engelweihe":Object.freeze({
+    key:"observance.einsiedeln_engelweihe",
+    title:Object.freeze({en:"Engelweihe at Einsiedeln",fr:"Engelweihe d’Einsiedeln"}),
+    schedule:Object.freeze({type:"FIXED",month:9,day:14}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:67,
+    tags:Object.freeze(["LOCAL_LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-EINSIEDELN-ENGELWEIHE"]),
+  }),
 });
 
 function semanticDateForDefinition(def,year){
