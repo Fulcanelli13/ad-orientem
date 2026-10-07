@@ -1,0 +1,29 @@
+name: Directory corpus audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "tools/directory/**"
+      - "data/directory/**"
+      - ".github/workflows/directory-corpus-audit.yml"
+      - "package.json"
+
+jobs:
+  live-sspx-corpus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Import official SSPX corpus
+        run: npm run directory:import:sspx
+      - name: Print SSPX import report
+        run: cat data/directory/generated/sspx/import-report.v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: directory-sspx-live-audit
+          path: data/directory/generated/sspx/
+          if-no-files-found: error
+          retention-days: 14
