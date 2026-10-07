@@ -10,6 +10,7 @@ import { ensureSexualEthicsRegistry, installSexualEthicsModule } from "./sexual-
 import { ensureSpiritualLifeRegistry, installSpiritualLifeModule } from "./spiritual-life.js";
 import { SPIRITUAL_LIFE_ROUTE_ID } from "./spiritual-life-data.js";
 import { ensureLatinCourseRegistry, installLatinCourseModule, LATIN_COURSE_ROUTE_ID } from "./latin-course-v2.js";
+import { ensureGlossaryRegistry, installGlossaryModule, GLOSSARY_ROUTE_ID } from "../glossary/browser-entry.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
@@ -42,6 +43,7 @@ function retireHistoricalLearnSurface(win){
 
 function childOpen(win,id){
   if(id===LATIN_COURSE_ROUTE_ID)return Boolean(win?.AO_LATIN_COURSE_V1?.status?.()?.open);
+  if(id===GLOSSARY_ROUTE_ID)return Boolean(win?.AO_GLOSSARY_V1?.status?.()?.open);
   if(id==="learn.sexual_ethics")return Boolean(win?.AO_SEXUAL_ETHICS_V1?.status?.()?.open);
   if(id===SPIRITUAL_LIFE_ROUTE_ID)return Boolean(win?.AO_SPIRITUAL_LIFE_V1?.status?.()?.open);
   if(TRADITIONAL_LEARN_ROUTES[id]){const s=win?.AO_TRADITIONAL_LEARN_V381?.status?.();return Boolean(s?.open&&s?.route===id)}
@@ -67,6 +69,7 @@ function childOpen(win,id){
 function closeChild(win,id){
   try{
     if(id===LATIN_COURSE_ROUTE_ID){win?.AO_LATIN_COURSE_V1?.close?.();return true;}
+    if(id===GLOSSARY_ROUTE_ID){win?.AO_GLOSSARY_V1?.close?.();return true;}
     if(id==="learn.sexual_ethics"){win?.AO_SEXUAL_ETHICS_V1?.close?.();return true;}
     if(id===SPIRITUAL_LIFE_ROUTE_ID){win?.AO_SPIRITUAL_LIFE_V1?.close?.();return true;}
     if(TRADITIONAL_LEARN_ROUTES[id]){win?.AO_TRADITIONAL_LEARN_V381?.close?.();return true;}
@@ -202,6 +205,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(!state.open||!MODULE_SET.has(id))return false;
     ensureTraditionalLearnRegistry(win);
     ensureLatinCourseRegistry(win);
+    ensureGlossaryRegistry(win);
     ensureSexualEthicsRegistry(win);
     ensureSpiritualLifeRegistry(win);
     const registry=win?.AO_MODULES;
@@ -302,6 +306,7 @@ export function installLearnBrowserOwner(win=globalThis){
   if(win?.AO_LEARN_APP_V1)return win.AO_LEARN_APP_V1;
   installTraditionalLearnModules(win);
   installLatinCourseModule(win);
+  installGlossaryModule(win);
   installSexualEthicsModule(win);
   installSpiritualLifeModule(win);
   const api=createLearnOwner(win);
