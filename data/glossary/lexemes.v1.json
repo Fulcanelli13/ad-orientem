@@ -4780,7 +4780,11 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "conjunction",
+      "gloss_en": "and not / nor",
+      "gloss_fr": "et ne… pas / ni",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     },
     {
       "id": "LEX-CORE-206",
@@ -5188,7 +5192,11 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "adverb",
+      "gloss_en": "again",
+      "gloss_fr": "de nouveau",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     },
     {
       "id": "LEX-CORE-224",
@@ -5412,7 +5420,11 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "adverb",
+      "gloss_en": "mutually / one another",
+      "gloss_fr": "mutuellement / l’un l’autre",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     },
     {
       "id": "LEX-CORE-234",
@@ -6188,7 +6200,11 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "noun",
+      "gloss_en": "man",
+      "gloss_fr": "homme",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     },
     {
       "id": "LEX-CORE-268",
@@ -7242,7 +7258,11 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "verb",
+      "gloss_en": "say / assert",
+      "gloss_fr": "dire / affirmer",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     },
     {
       "id": "LEX-CORE-314",
@@ -7443,7 +7463,11 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "verb",
+      "gloss_en": "go away / depart",
+      "gloss_fr": "s’en aller / partir",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     },
     {
       "id": "LEX-CORE-323",
@@ -7828,7 +7852,11 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "verb",
+      "gloss_en": "look back / regard / consider",
+      "gloss_fr": "regarder / considérer",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     },
     {
       "id": "LEX-CORE-340",
@@ -8075,12 +8103,27 @@
         "SCANLON-1944",
         "AO-LATIN-CORPUS-201-350"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "adjective",
+      "gloss_en": "wonderful / admirable",
+      "gloss_fr": "merveilleux / admirable",
+      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
     }
   ],
   "enrichment": {
     "course_lessons_completed": 40,
     "source": "data/learn/latin-course-lessons/lesson-01..40.v1.json",
-    "policy": "Gloss/POS/lesson context are projected from the frozen course authoring data; rank and placement are not changed."
+    "policy": "Gloss/POS/lesson context are projected from the frozen course authoring data; rank and placement are not changed.",
+    "complete": true,
+    "fallback_lemmas": [
+      "neque/nec",
+      "iterum",
+      "invicem",
+      "vir",
+      "aio",
+      "abeo",
+      "respicio",
+      "mirabilis"
+    ]
   }
 }
