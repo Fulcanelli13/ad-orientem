@@ -291,6 +291,7 @@ button.ao-schola-control{cursor:pointer}
   opacity:1;visibility:visible;background:rgba(7,11,8,.93)
 }
 .ao-cinematic[hidden]{display:none}
+.ao-cinematic *{pointer-events:none}
 .ao-cinematic-inner{display:grid;gap:9px;justify-items:center;max-width:88%}
 .ao-cinematic-mark{font:400 1.35rem/1 Georgia,serif;color:var(--ao-warm)}
 .ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:.08em;color:#f0f1e9}
