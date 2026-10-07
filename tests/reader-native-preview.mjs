@@ -65,8 +65,8 @@ const liveReady=await prepareNativeReaderPreview({
 assert.equal(liveReady.model.totalCards,39);
 assert.equal(liveReady.rubricState.supported,true);
 assert.equal(liveReady.gestureMatrixState.supported,true);
-assert.equal(liveReady.gestureMatrixState.audit.itemCount,99);
-assert.equal(liveReady.gestureMatrixState.audit.campionBackedCount,60);
+assert.equal(liveReady.gestureMatrixState.audit.itemCount,142);
+assert.equal(liveReady.gestureMatrixState.audit.campionBackedCount,100);
 assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
 assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.label,"THREE CROSSES WITH HOST OVER CHALICE");
 assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.iconKey,null);
