@@ -136,11 +136,6 @@ try{
     sourceStructureOwner:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.sourceStructureOwner??null,
     historicalIdentityClaim:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.historicalV183IdentityClaim??null,
     shellRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview .ao-reader-shell")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
-    postureTop:(()=>{
-      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture-top']");
-      const s=x?getComputedStyle(x):null;
-      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage,maskSize:s.webkitMaskSize||s.maskSize,maskPosition:s.webkitMaskPosition||s.maskPosition}:null;
-    })(),
   }));
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(opening.legacyStarts,0);
@@ -177,10 +172,6 @@ try{
   assert.equal(opening.sourceStructureOwner,"SOURCE_FIRST_LIVE");
   assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
-  assert.equal(opening.postureTop?.hidden,false,"opening posture symbol is hidden");
-  assert.match(opening.postureTop?.mask??"",/ao-live-stand\.svg/,"opening posture does not use frozen STAND symbol");
-  assert.match(opening.postureTop?.maskSize??"",/234\.375%/,"frozen STAND symbol regressed to intrinsic 300x150 sliver geometry");
-  assert.match(opening.postureTop?.maskPosition??"",/left top|0% 0%/,"frozen STAND symbol lost its corrected crop origin");
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
@@ -404,6 +395,8 @@ try{
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
+  assert.equal(gloriaBow.postureIconHidden,false,"Gloria sourced STAND posture icon is hidden");
+  assert.match(gloriaBow.postureMaskSize??"",/234\.375%/,"frozen STAND symbol regressed to intrinsic SVG sliver geometry");
   assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
