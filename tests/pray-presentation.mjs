@@ -40,8 +40,9 @@ assert.match(styles,/--ao347-focus-opacity/,"Stations v3.4.10 focus energy varia
 const runtimeWithoutDonorOverviewClose=runtime.replace(/<button[^>]*data-r23-overview-close[^>]*>×<\/button>/g,"");
 assert.doesNotMatch(runtimeWithoutDonorOverviewClose,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls outside the exact donor Rosary overview close control");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
-assert.match(runtime,/const trailing=view==='home'/,"PRAY root header no longer distinguishes its root exit state");
-assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit header spacer");
+assert.match(runtime,/class="aoP435930Close" data-p435930-close/,"PRAY header lost the donor Close control");
+assert.doesNotMatch(runtime,/const trailing=view==='home'/,"PRAY hub must not suppress the donor Close control");
+assert.doesNotMatch(runtime,/aoP435930HeadSpacer/,"obsolete single-exit spacer returned to the PRAY header");
 assert.match(runtime,/normalizeRosaryPrefs/,"PRAY lost Rosary preference normalization");
 assert.match(runtime,/rosaryDonorRoot/,"PRAY lost canonical Rosary donor-root resolver");
 assert.match(runtime,/restoreRosaryLaunchPrefs/,"PRAY lost post-mount Rosary owner reconciliation");
@@ -53,7 +54,7 @@ assert.match(runtime,/const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
   "Rosary launcher stopped snapshotting chooser state before donor mount");
 assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
   "Rosary chooser stopped synchronizing recitation through the canonical setter");
-assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
+assert.doesNotMatch(styles,/aoP435930HeadSpacer/,"obsolete PRAY hub spacer styling returned");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
 assert.doesNotMatch(runtime,/view===['"]angelus['"][\s\S]{0,650}ao-rich-angelus/,"Angelus exact donor rail regained the later generic context card");
