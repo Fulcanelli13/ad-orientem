@@ -1,0 +1,792 @@
+{
+  "version": "latin-course-lesson-14-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 14,
+  "stage": {
+    "number": 3,
+    "title": "Actions and Time"
+  },
+  "title": "Spiritus / dies",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "sentence",
+  "grammarFocus": "Fourth and fifth declensions",
+  "readingOutcome": "Complete the nominal declension system; consolidate case recognition.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 14 vocabulary only; earlier cases stay active and later clause words remain support.",
+    "authenticTextPolicy": "Fourth/fifth declension forms are anchored in Ordinary, Psalms and Collect-style clauses.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "spiritus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "spirit",
+          "fr": "esprit"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "manus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "hand",
+          "fr": "main"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "dies",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "day",
+          "fr": "jour"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "res",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "thing / matter",
+          "fr": "chose / affaire"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "fides",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "faith",
+          "fr": "foi"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "laus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "praise",
+          "fr": "louange"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "fructus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "fruit",
+          "fr": "fruit"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "facies",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "face",
+          "fr": "face"
+        },
+        "frozenLesson": 14
+      },
+      {
+        "lemma": "conspectus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sight / presence",
+          "fr": "présence / regard"
+        },
+        "frozenLesson": 14
+      }
+    ],
+    "recycled": [
+      "et",
+      "cum",
+      "tuus",
+      "Deus",
+      "sanctus",
+      "in",
+      "pater",
+      "filius",
+      "gloria",
+      "sum",
+      "cor",
+      "Dominus",
+      "omnis",
+      "noster",
+      "mundus",
+      "facio",
+      "laetifico",
+      "is/ea/id",
+      "meus",
+      "ego"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "principatus",
+      "forms": [
+        "principio"
+      ],
+      "gloss": {
+        "en": "beginning / principality",
+        "fr": "commencement / principauté"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "creo",
+      "forms": [
+        "creavit"
+      ],
+      "gloss": {
+        "en": "create",
+        "fr": "créer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "misericordia",
+      "forms": [
+        "misericordias"
+      ],
+      "gloss": {
+        "en": "mercy",
+        "fr": "miséricorde"
+      },
+      "trackedLesson": 29,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "hic/haec/hoc",
+      "forms": [
+        "Haec"
+      ],
+      "gloss": {
+        "en": "this",
+        "fr": "ce / cette"
+      },
+      "trackedLesson": 18,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "qui/quae/quod",
+      "forms": [
+        "quam"
+      ],
+      "gloss": {
+        "en": "which",
+        "fr": "que / lequel"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "exsulto",
+      "forms": [
+        "exsultemus"
+      ],
+      "gloss": {
+        "en": "rejoice / exult",
+        "fr": "exulter"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "rectus",
+      "forms": [
+        "rectum"
+      ],
+      "gloss": {
+        "en": "right / upright",
+        "fr": "droit"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "innovo",
+      "forms": [
+        "innova"
+      ],
+      "gloss": {
+        "en": "renew",
+        "fr": "renouveler"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "viscera",
+      "forms": [
+        "visceribus"
+      ],
+      "gloss": {
+        "en": "inward parts",
+        "fr": "entrailles"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-et-cum-spiritu-l14",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — response",
+      "sourceLatin": "Et cum spiritu tuo.",
+      "provenanceNote": "spiritu is ablative singular of fourth-declension spiritus."
+    },
+    {
+      "id": "mr1962-gloria-patri-spiritui-l14",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Doxology",
+      "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "provenanceNote": "Spiritui is dative singular of fourth-declension spiritus."
+    },
+    {
+      "id": "vulg-ps117-haec-dies-l14",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 117:24",
+      "sourceLatin": "Haec dies, quam fecit Dominus: exsultemus et laetemur in ea.",
+      "provenanceNote": "dies is a high-frequency fifth-declension noun; later pronoun/subjunctive detail remains support."
+    },
+    {
+      "id": "vulg-ps50-cor-mundum-l14",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 50:12",
+      "sourceLatin": "Cor mundum crea in me, Deus: et spiritum rectum innova in visceribus meis.",
+      "provenanceNote": "spiritum shows fourth-declension accusative singular in a familiar penitential Psalm."
+    },
+    {
+      "id": "collect-conspectus-l14",
+      "sourceType": "primary-liturgical",
+      "work": "Traditional Roman Collect language",
+      "section": "Collect formula pattern",
+      "sourceLatin": "in conspectu tuo",
+      "provenanceNote": "conspectu provides a common ablative fourth-declension liturgical phrase."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Lesson 14 completes the main declension inventory rather than changing case functions.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "declensionFramework": {
+    "fourth": {
+      "commonMasculine": {
+        "nominativeSingular": "-us",
+        "genitiveSingular": "-us",
+        "dativeSingular": "-ui",
+        "accusativeSingular": "-um",
+        "ablativeSingular": "-u"
+      },
+      "neuterNote": "Fourth-declension neuters are rarer; recognition remains secondary at this stage."
+    },
+    "fifth": {
+      "commonPattern": {
+        "nominativeSingular": "-es",
+        "genitiveSingular": "-ei",
+        "dativeSingular": "-ei",
+        "accusativeSingular": "-em",
+        "ablativeSingular": "-e"
+      },
+      "highFrequencyAnchors": [
+        "dies",
+        "res",
+        "fides",
+        "facies"
+      ]
+    }
+  },
+  "learningBlocks": [
+    {
+      "id": "l14-b1",
+      "type": "concept",
+      "title": "The nominal system is now complete enough for ordinary reading",
+      "learnerCopy": {
+        "en": "Lessons 2–9 built case functions; Lesson 14 completes the main declension inventory with fourth and fifth declensions. The goal is recognition inside real text, not isolated table recitation.",
+        "fr": "Les leçons 2 à 9 ont construit les fonctions des cas ; la leçon 14 complète l'inventaire principal avec les quatrième et cinquième déclinaisons. Le but est la reconnaissance dans le texte réel, non la récitation de tableaux isolés."
+      }
+    },
+    {
+      "id": "l14-b2",
+      "type": "morphology",
+      "title": "Fourth declension: spiritus, manus, fructus",
+      "learnerCopy": {
+        "en": "Fourth-declension masculine nouns often show -us in both nominative and genitive singular, -ui in the dative, -um in the accusative and -u in the ablative. Context and the permanent case map matter.",
+        "fr": "Les noms masculins de quatrième déclinaison présentent souvent -us au nominatif et au génitif singuliers, -ui au datif, -um à l'accusatif et -u à l'ablatif. Le contexte et la carte permanente des cas restent essentiels."
+      }
+    },
+    {
+      "id": "l14-b3",
+      "type": "authentic-example",
+      "title": "spiritu / Spiritui / spiritum",
+      "learnerCopy": {
+        "en": "Et cum spiritu tuo gives ablative spiritu; Gloria Patri … Spiritui Sancto gives dative Spiritui; Psalm 50 gives accusative spiritum. One lemma now appears across three active cases.",
+        "fr": "Et cum spiritu tuo donne l'ablatif spiritu ; Gloria Patri … Spiritui Sancto donne le datif Spiritui ; le psaume 50 donne l'accusatif spiritum. Un seul lemme apparaît ainsi dans trois cas actifs."
+      }
+    },
+    {
+      "id": "l14-b4",
+      "type": "morphology",
+      "title": "Fifth declension: dies, res, fides, facies",
+      "learnerCopy": {
+        "en": "Fifth-declension nouns often show nominative -es and genitive/dative -ei. dies and res are especially frequent; fides and facies belong to the same broad family.",
+        "fr": "Les noms de cinquième déclinaison présentent souvent un nominatif en -es et un génitif/datf en -ei. dies et res sont particulièrement fréquents ; fides et facies appartiennent à la même grande famille."
+      }
+    },
+    {
+      "id": "l14-b5",
+      "type": "authentic-example",
+      "title": "Haec dies",
+      "sourceId": "vulg-ps117-haec-dies-l14",
+      "learnerCopy": {
+        "en": "dies is fifth declension. You do not need to master the later demonstrative and subjunctive in the Psalm clause to recognize the noun and its role.",
+        "fr": "dies appartient à la cinquième déclinaison. Il n'est pas nécessaire de maîtriser encore le démonstratif et le subjonctif de la phrase pour reconnaître le nom et son rôle."
+      }
+    },
+    {
+      "id": "l14-b6",
+      "type": "retrieval",
+      "title": "Stop thinking in five disconnected declension chapters",
+      "learnerCopy": {
+        "en": "From now on, every noun belongs on one combined case map. The reading question is: what case/function is this form, and what lemma family does it belong to?",
+        "fr": "Désormais, tous les noms appartiennent à une seule carte des cas. La question de lecture est : quel est le cas et la fonction de cette forme, et à quelle famille de lemme appartient-elle ?"
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l14-p1",
+      "sourceId": "mr1962-et-cum-spiritu-l14",
+      "sourceLatin": "Et cum spiritu tuo.",
+      "instructionalDisplay": "Et cum spiritu tuo.",
+      "translation": {
+        "en": "And with thy spirit.",
+        "fr": "Et avec votre esprit."
+      },
+      "targetLemmas": [
+        "et",
+        "cum",
+        "spiritus",
+        "tuus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l14-p2",
+      "sourceId": "mr1962-gloria-patri-spiritui-l14",
+      "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "instructionalDisplay": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "translation": {
+        "en": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+        "fr": "Gloire au Père, et au Fils, et au Saint-Esprit."
+      },
+      "targetLemmas": [
+        "gloria",
+        "pater",
+        "et",
+        "filius",
+        "spiritus",
+        "sanctus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l14-p3",
+      "sourceId": "vulg-ps117-haec-dies-l14",
+      "sourceLatin": "Haec dies, quam fecit Dominus: exsultemus et laetemur in ea.",
+      "instructionalDisplay": "Haec dies, quam fecit Dominus: exsultemus et laetemur in ea.",
+      "translation": {
+        "en": "This is the day which the Lord hath made: let us rejoice and be glad in it.",
+        "fr": "Voici le jour que le Seigneur a fait : exultons et réjouissons-nous en lui."
+      },
+      "targetLemmas": [
+        "dies",
+        "Dominus",
+        "et",
+        "in",
+        "facio",
+        "laetifico",
+        "is/ea/id"
+      ],
+      "supportLemmas": [
+        "hic/haec/hoc",
+        "qui/quae/quod",
+        "exsulto"
+      ]
+    },
+    {
+      "id": "l14-p4",
+      "sourceId": "vulg-ps50-cor-mundum-l14",
+      "sourceLatin": "Cor mundum crea in me, Deus: et spiritum rectum innova in visceribus meis.",
+      "instructionalDisplay": "Cor mundum crea in me, Deus: et spiritum rectum innova in visceribus meis.",
+      "translation": {
+        "en": "Create a clean heart in me, O God: and renew a right spirit within me.",
+        "fr": "Crée en moi un cœur pur, ô Dieu, et renouvelle en moi un esprit droit."
+      },
+      "targetLemmas": [
+        "cor",
+        "mundus",
+        "in",
+        "ego",
+        "Deus",
+        "et",
+        "spiritus",
+        "meus"
+      ],
+      "supportLemmas": [
+        "creo",
+        "rectus",
+        "innovo",
+        "viscera"
+      ]
+    },
+    {
+      "id": "l14-p5",
+      "sourceId": "collect-conspectus-l14",
+      "sourceLatin": "in conspectu tuo",
+      "instructionalDisplay": "in conspectu tuo",
+      "translation": {
+        "en": "in Thy sight / presence",
+        "fr": "en votre présence"
+      },
+      "targetLemmas": [
+        "in",
+        "conspectus",
+        "tuus"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l14-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is spiritu in Et cum spiritu tuo?",
+      "stimulus": "spiritu",
+      "options": [
+        "ablative",
+        "dative",
+        "accusative",
+        "genitive"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "cum governs the ablative.",
+      "explanation": "spiritu is ablative singular of spiritus.",
+      "difficulty": 1,
+      "sourceId": "mr1962-et-cum-spiritu-l14",
+      "skills": [
+        "declension:fourth",
+        "case:ablative"
+      ]
+    },
+    {
+      "id": "l14-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is Spiritui in Spiritui Sancto?",
+      "stimulus": "Spiritui",
+      "options": [
+        "dative",
+        "ablative",
+        "genitive",
+        "accusative"
+      ],
+      "expectedAnswer": "dative",
+      "acceptedVariants": [
+        "dative"
+      ],
+      "hint": "The -ui ending is a strong fourth-declension clue.",
+      "explanation": "Spiritui is dative singular.",
+      "difficulty": 1,
+      "sourceId": "mr1962-gloria-patri-spiritui-l14",
+      "skills": [
+        "declension:fourth",
+        "case:dative"
+      ]
+    },
+    {
+      "id": "l14-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is spiritum in Psalm 50?",
+      "stimulus": "spiritum",
+      "options": [
+        "accusative",
+        "nominative",
+        "dative",
+        "ablative"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "The -um ending is the fourth-declension accusative singular here.",
+      "explanation": "spiritum is accusative singular.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps50-cor-mundum-l14",
+      "skills": [
+        "declension:fourth",
+        "case:accusative"
+      ]
+    },
+    {
+      "id": "l14-e4",
+      "exerciseType": "matching",
+      "prompt": "Match fourth/fifth-declension lemma to meaning.",
+      "stimulus": [
+        "manus",
+        "dies",
+        "res",
+        "fides"
+      ],
+      "expectedAnswer": {
+        "manus": "hand",
+        "dies": "day",
+        "res": "thing / matter",
+        "fides": "faith"
+      },
+      "acceptedVariants": [],
+      "hint": "These are core Lesson 14 nouns.",
+      "explanation": "This checks lexical recognition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l14"
+      ]
+    },
+    {
+      "id": "l14-e5",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 14 lemma to meaning.",
+      "stimulus": [
+        "laus",
+        "fructus",
+        "facies",
+        "conspectus"
+      ],
+      "expectedAnswer": {
+        "laus": "praise",
+        "fructus": "fruit",
+        "facies": "face",
+        "conspectus": "sight / presence"
+      },
+      "acceptedVariants": [],
+      "hint": "All are new Core vocabulary.",
+      "explanation": "This completes lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l14"
+      ]
+    },
+    {
+      "id": "l14-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which noun is fifth declension?",
+      "stimulus": "dies",
+      "options": [
+        "dies",
+        "spiritus",
+        "manus",
+        "fructus"
+      ],
+      "expectedAnswer": "dies",
+      "acceptedVariants": [
+        "dies"
+      ],
+      "hint": "Look for the -es family.",
+      "explanation": "dies is fifth declension.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps117-haec-dies-l14",
+      "skills": [
+        "declension:fifth"
+      ]
+    },
+    {
+      "id": "l14-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which statement best describes Lesson 14's purpose?",
+      "stimulus": null,
+      "options": [
+        "complete the main declension inventory for reading",
+        "introduce new case functions",
+        "begin pronouns",
+        "teach only vocabulary"
+      ],
+      "expectedAnswer": "complete the main declension inventory for reading",
+      "acceptedVariants": [
+        "complete the main declension inventory for reading"
+      ],
+      "hint": "All six cases were already active.",
+      "explanation": "Lesson 14 adds declension families, not new case functions.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:declensions"
+      ]
+    },
+    {
+      "id": "l14-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case does in govern in in conspectu tuo?",
+      "stimulus": "in conspectu tuo",
+      "options": [
+        "ablative",
+        "accusative",
+        "dative",
+        "genitive"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "This is location/state.",
+      "explanation": "conspectu is ablative after static in.",
+      "difficulty": 2,
+      "sourceId": "collect-conspectus-l14",
+      "skills": [
+        "case:ablative",
+        "declension:fourth"
+      ]
+    },
+    {
+      "id": "l14-e9",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin fifth-declension noun meaning 'thing / matter'.",
+      "stimulus": null,
+      "expectedAnswer": "res",
+      "acceptedVariants": [
+        "res",
+        "Res"
+      ],
+      "hint": "It is one of the highest-frequency fifth-declension nouns.",
+      "explanation": "res means thing / matter.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:res"
+      ]
+    },
+    {
+      "id": "l14-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'faith'.",
+      "stimulus": null,
+      "expectedAnswer": "fides",
+      "acceptedVariants": [
+        "fides",
+        "Fides"
+      ],
+      "hint": "It belongs to the fifth-declension set.",
+      "explanation": "fides means faith.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:fides"
+      ]
+    }
+  ],
+  "objectives": [
+    "Recognize core fourth-declension forms.",
+    "Recognize core fifth-declension forms.",
+    "Learn all nine frozen Lesson 14 lemmas.",
+    "Consolidate all noun families on one permanent six-case map."
+  ],
+  "checkpoint": {
+    "id": "l14-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l14-e1",
+        "l14-e2",
+        "l14-e3",
+        "l14-e4",
+        "l14-e5",
+        "l14-e6",
+        "l14-e7",
+        "l14-e8",
+        "l14-e9",
+        "l14-e10"
+      ]
+    },
+    "mustKnow": [
+      "spiritu ablative",
+      "Spiritui dative",
+      "spiritum accusative",
+      "dies/res/fides fifth-declension recognition"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "spiritus",
+      "manus",
+      "dies",
+      "res",
+      "fides",
+      "laus",
+      "fructus",
+      "facies",
+      "conspectus"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

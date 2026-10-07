@@ -256,6 +256,25 @@ if (authored.length >= 5) {
   assert(new Set(stage1Introduced).size === 66, "Stage 1 contains duplicate introduced lemmas");
 }
 
+
+// Stage 2/3 authored progression locks.
+if (authored.length >= 10) {
+  assert(authored[9].pronounParadigms, "Lesson 10 must establish the personal/reflexive pronoun paradigms");
+  assert(authored[9].cumPronounRule?.forms?.includes("vobiscum"), "Lesson 10 must teach attached cum-pronoun forms");
+}
+if (authored.length >= 12) {
+  assert(authored[11].pronounSpiral?.lesson === 12, "Lesson 12 must continue the pronoun spiral");
+}
+if (authored.length >= 15) {
+  const frozenL15Milestone = course.milestones?.find(x => x.lesson === 15)?.target;
+  assert(authored[14].pronounSpiral?.lesson === 15, "Lesson 15 must continue the pronoun spiral");
+  assert(authored[14].checkpoint?.progressionGate === frozenL15Milestone,
+    `Lesson 15 progression gate must match frozen milestone: ${frozenL15Milestone}`);
+  assert(authored[14].checkpoint?.stage === 3, "Lesson 15 must be the Stage 3 checkpoint");
+  assert(JSON.stringify(authored[14].checkpoint?.scopeLessons) === JSON.stringify([11,12,13,14,15]),
+    "Stage 3 checkpoint must cover Lessons 11-15");
+}
+
 console.log(JSON.stringify({
   status: "PASS",
   lessons: course.lessons.length,

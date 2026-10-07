@@ -1,0 +1,742 @@
+{
+  "version": "latin-course-lesson-12-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 12,
+  "stage": {
+    "number": 3,
+    "title": "Actions and Time"
+  },
+  "title": "Orate, fratres",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "sentence",
+  "grammarFocus": "Imperative and vocative",
+  "readingOutcome": "Use commands, direct address and vocative forms.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 12 vocabulary only; later verbs/pronouns in Gospel commands remain declared support.",
+    "authenticTextPolicy": "Commands and vocatives are anchored in Ordinary and Vulgate clauses used liturgically.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "oro",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "pray",
+          "fr": "prier"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "accipio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "receive / take",
+          "fr": "recevoir / prendre"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "facio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "do / make",
+          "fr": "faire"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "dico",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "say / tell",
+          "fr": "dire"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "do",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "give",
+          "fr": "donner"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "frater",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "brother",
+          "fr": "frère"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "nunc",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "now",
+          "fr": "maintenant"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "ecce",
+        "partOfSpeech": "particle",
+        "gloss": {
+          "en": "behold",
+          "fr": "voici"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "respondeo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "answer / respond",
+          "fr": "répondre"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "clamo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "cry out / call",
+          "fr": "crier / appeler"
+        },
+        "frozenLesson": 12
+      },
+      {
+        "lemma": "vado",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "go",
+          "fr": "aller"
+        },
+        "frozenLesson": 12
+      }
+    ],
+    "recycled": [
+      "agnus",
+      "et",
+      "puer",
+      "mater",
+      "is/ea/id",
+      "terra",
+      "vos",
+      "Deus",
+      "in"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "surgo",
+      "forms": [
+        "Surge"
+      ],
+      "gloss": {
+        "en": "rise / get up",
+        "fr": "se lever"
+      },
+      "trackedLesson": 15,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Israel",
+      "forms": [
+        "Israel"
+      ],
+      "gloss": {
+        "en": "Israel",
+        "fr": "Israël"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "hic/haec/hoc",
+      "forms": [
+        "Hoc"
+      ],
+      "gloss": {
+        "en": "this",
+        "fr": "ceci"
+      },
+      "trackedLesson": 18,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "vivo",
+      "forms": [
+        "vives"
+      ],
+      "gloss": {
+        "en": "live",
+        "fr": "vivre"
+      },
+      "trackedLesson": 21,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-orate-fratres-l12",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Orate, fratres",
+      "sourceLatin": "Orate, fratres.",
+      "provenanceNote": "The Ordinary gives a clean plural imperative plus direct-address vocative."
+    },
+    {
+      "id": "mr1962-ecce-agnus-l12",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Communion",
+      "sourceLatin": "Ecce Agnus Dei.",
+      "provenanceNote": "Ecce is introduced in a fixed, highly familiar Ordinary formula."
+    },
+    {
+      "id": "vulg-mt2-20-l12",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 2:20",
+      "sourceLatin": "Surge, et accipe puerum, et matrem ejus, et vade in terram Israel.",
+      "provenanceNote": "Imperative sequence gives accipe and vade; ejus recycles the third-person pronoun family."
+    },
+    {
+      "id": "vulg-lk10-28-l12",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 10:28",
+      "sourceLatin": "Hoc fac, et vives.",
+      "provenanceNote": "fac is the imperative of facio; later demonstrative/future material remains support."
+    },
+    {
+      "id": "gospel-amen-dico-vobis-l12",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Common Gospel formula",
+      "sourceLatin": "Amen dico vobis.",
+      "provenanceNote": "dico is read with dative vobis, deliberately recycling the pronoun case system."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; vocative now receives explicit functional practice rather than remaining only a label.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "imperativeFramework": {
+    "principle": "An imperative gives a direct command. Singular and plural forms depend on conjugation; recognize frequent liturgical commands as members of their lemma families.",
+    "anchors": [
+      {
+        "surface": "Orate",
+        "lemma": "oro",
+        "person": "2nd plural"
+      },
+      {
+        "surface": "accipe",
+        "lemma": "accipio",
+        "person": "2nd singular"
+      },
+      {
+        "surface": "fac",
+        "lemma": "facio",
+        "person": "2nd singular"
+      },
+      {
+        "surface": "vade",
+        "lemma": "vado",
+        "person": "2nd singular"
+      }
+    ]
+  },
+  "pronounSpiral": {
+    "lesson": 12,
+    "focus": "Pronoun object/dative forms inside commands and Gospel formulae.",
+    "forms": [
+      "ejus",
+      "vobis"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l12-b1",
+      "type": "concept",
+      "title": "Commands are direct verbal actions",
+      "learnerCopy": {
+        "en": "The imperative addresses someone directly and tells that person to act. Latin therefore often places imperative and vocative together: Orate, fratres — 'Pray, brethren.'",
+        "fr": "L'impératif s'adresse directement à quelqu'un pour lui ordonner d'agir. Le latin associe donc souvent impératif et vocatif : Orate, fratres — « Priez, mes frères. »"
+      }
+    },
+    {
+      "id": "l12-b2",
+      "type": "case-panel",
+      "title": "Vocative is now used deliberately",
+      "learnerCopy": {
+        "en": "The vocative has been active since Lesson 2; now it becomes a recurrent reading cue. fratres is not the subject of Orate but the people directly addressed.",
+        "fr": "Le vocatif est actif depuis la leçon 2 ; il devient maintenant un signal de lecture récurrent. fratres n'est pas le sujet exprimé de Orate, mais les personnes directement interpellées."
+      }
+    },
+    {
+      "id": "l12-b3",
+      "type": "authentic-example",
+      "title": "Orate, fratres",
+      "sourceId": "mr1962-orate-fratres-l12",
+      "learnerCopy": {
+        "en": "Orate is second-person plural: the command is addressed to several people. fratres is vocative plural. Person and direct address work together.",
+        "fr": "Orate est à la deuxième personne du pluriel : l'ordre s'adresse à plusieurs personnes. fratres est un vocatif pluriel. Personne verbale et adresse directe fonctionnent ensemble."
+      }
+    },
+    {
+      "id": "l12-b4",
+      "type": "authentic-example",
+      "title": "accipe … vade",
+      "sourceId": "vulg-mt2-20-l12",
+      "learnerCopy": {
+        "en": "In Surge, et accipe puerum … et vade, three singular commands drive the action. ejus also recycles the pronoun family is/ea/id in the genitive.",
+        "fr": "Dans Surge, et accipe puerum … et vade, trois impératifs singuliers font avancer l'action. ejus réactive aussi la famille pronominale is/ea/id au génitif."
+      }
+    },
+    {
+      "id": "l12-b5",
+      "type": "pronoun",
+      "title": "Commands still govern cases",
+      "sourceId": "gospel-amen-dico-vobis-l12",
+      "learnerCopy": {
+        "en": "Amen dico vobis shows that verbs and pronouns continue to interact through case. vobis is dative: 'I say to you.' The pronoun spiral therefore grows inside real clauses, not in isolation.",
+        "fr": "Amen dico vobis montre que verbes et pronoms continuent d'interagir par les cas. vobis est au datif : « je vous dis ». La spirale des pronoms progresse donc à l'intérieur de vraies phrases."
+      }
+    },
+    {
+      "id": "l12-b6",
+      "type": "retrieval",
+      "title": "Recognize the command before translating every word",
+      "learnerCopy": {
+        "en": "When a liturgical or Gospel clause opens with Orate, Accipe, Fac, Vade, Ecce or a similar directive, identify the action and addressee first. Fine syntax can follow.",
+        "fr": "Lorsqu'une formule liturgique ou évangélique s'ouvre par Orate, Accipe, Fac, Vade, Ecce ou une directive analogue, identifiez d'abord l'action et la personne interpellée. L'analyse détaillée vient ensuite."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l12-p1",
+      "sourceId": "mr1962-orate-fratres-l12",
+      "sourceLatin": "Orate, fratres.",
+      "instructionalDisplay": "Orate, fratres.",
+      "translation": {
+        "en": "Pray, brethren.",
+        "fr": "Priez, mes frères."
+      },
+      "targetLemmas": [
+        "oro",
+        "frater"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l12-p2",
+      "sourceId": "mr1962-ecce-agnus-l12",
+      "sourceLatin": "Ecce Agnus Dei.",
+      "instructionalDisplay": "Ecce Agnus Dei.",
+      "translation": {
+        "en": "Behold the Lamb of God.",
+        "fr": "Voici l'Agneau de Dieu."
+      },
+      "targetLemmas": [
+        "ecce",
+        "agnus",
+        "Deus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l12-p3",
+      "sourceId": "vulg-mt2-20-l12",
+      "sourceLatin": "Surge, et accipe puerum, et matrem ejus, et vade in terram Israel.",
+      "instructionalDisplay": "Surge, et accipe puerum, et matrem ejus, et vade in terram Israel.",
+      "translation": {
+        "en": "Arise, and take the child and his mother, and go into the land of Israel.",
+        "fr": "Lève-toi, prends l'enfant et sa mère, et va dans la terre d'Israël."
+      },
+      "targetLemmas": [
+        "et",
+        "accipio",
+        "puer",
+        "mater",
+        "is/ea/id",
+        "vado",
+        "in",
+        "terra"
+      ],
+      "supportLemmas": [
+        "surgo",
+        "Israel"
+      ]
+    },
+    {
+      "id": "l12-p4",
+      "sourceId": "vulg-lk10-28-l12",
+      "sourceLatin": "Hoc fac, et vives.",
+      "instructionalDisplay": "Hoc fac, et vives.",
+      "translation": {
+        "en": "Do this, and thou shalt live.",
+        "fr": "Fais cela, et tu vivras."
+      },
+      "targetLemmas": [
+        "facio",
+        "et"
+      ],
+      "supportLemmas": [
+        "hic/haec/hoc",
+        "vivo"
+      ]
+    },
+    {
+      "id": "l12-p5",
+      "sourceId": "gospel-amen-dico-vobis-l12",
+      "sourceLatin": "Amen dico vobis.",
+      "instructionalDisplay": "Amen dico vobis.",
+      "translation": {
+        "en": "Amen, I say to you.",
+        "fr": "Amen, je vous le dis."
+      },
+      "targetLemmas": [
+        "dico",
+        "vos"
+      ],
+      "supportLemmas": [
+        "Amen"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l12-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What mood/function is Orate here?",
+      "stimulus": "Orate, fratres.",
+      "options": [
+        "imperative command",
+        "imperfect background",
+        "future prediction",
+        "passive description"
+      ],
+      "expectedAnswer": "imperative command",
+      "acceptedVariants": [
+        "imperative command"
+      ],
+      "hint": "It tells the brethren to act.",
+      "explanation": "Orate is a second-person plural imperative.",
+      "difficulty": 1,
+      "sourceId": "mr1962-orate-fratres-l12",
+      "skills": [
+        "imperative:recognition"
+      ]
+    },
+    {
+      "id": "l12-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is fratres in Orate, fratres?",
+      "stimulus": "Orate, fratres.",
+      "options": [
+        "vocative",
+        "nominative",
+        "dative",
+        "ablative"
+      ],
+      "expectedAnswer": "vocative",
+      "acceptedVariants": [
+        "vocative"
+      ],
+      "hint": "They are being addressed directly.",
+      "explanation": "fratres is vocative plural.",
+      "difficulty": 1,
+      "sourceId": "mr1962-orate-fratres-l12",
+      "skills": [
+        "case:vocative"
+      ]
+    },
+    {
+      "id": "l12-e3",
+      "exerciseType": "token_select",
+      "prompt": "Select the two Lesson 12 commands in this clause besides the supported Surge.",
+      "stimulus": "Surge, et accipe puerum, et matrem ejus, et vade in terram Israel.",
+      "expectedAnswer": [
+        "accipe",
+        "vade"
+      ],
+      "acceptedVariants": [
+        [
+          "accipe",
+          "vade"
+        ]
+      ],
+      "hint": "Both are singular commands.",
+      "explanation": "accipe comes from accipio; vade comes from vado.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt2-20-l12",
+      "skills": [
+        "imperative:recognition",
+        "vocabulary:l12"
+      ]
+    },
+    {
+      "id": "l12-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What lemma lies behind fac?",
+      "stimulus": "Hoc fac, et vives.",
+      "options": [
+        "facio",
+        "dico",
+        "do",
+        "vado"
+      ],
+      "expectedAnswer": "facio",
+      "acceptedVariants": [
+        "facio"
+      ],
+      "hint": "fac is an irregular-looking imperative form.",
+      "explanation": "fac is the singular imperative of facio.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk10-28-l12",
+      "skills": [
+        "imperative:facio"
+      ]
+    },
+    {
+      "id": "l12-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is vobis in Amen dico vobis?",
+      "stimulus": "Amen dico vobis.",
+      "options": [
+        "dative",
+        "ablative",
+        "accusative",
+        "genitive"
+      ],
+      "expectedAnswer": "dative",
+      "acceptedVariants": [
+        "dative"
+      ],
+      "hint": "Translate 'I say to you'.",
+      "explanation": "vobis is dative plural.",
+      "difficulty": 1,
+      "sourceId": "gospel-amen-dico-vobis-l12",
+      "skills": [
+        "pronoun:vos",
+        "case:dative"
+      ]
+    },
+    {
+      "id": "l12-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What pronoun family does ejus belong to?",
+      "stimulus": "ejus",
+      "options": [
+        "is/ea/id",
+        "ego",
+        "nos",
+        "se"
+      ],
+      "expectedAnswer": "is/ea/id",
+      "acceptedVariants": [
+        "is/ea/id"
+      ],
+      "hint": "It is the third-person genitive singular form.",
+      "explanation": "ejus belongs to is/ea/id.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt2-20-l12",
+      "skills": [
+        "pronoun:is-ea-id",
+        "case:genitive"
+      ]
+    },
+    {
+      "id": "l12-e7",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 12 verb to meaning.",
+      "stimulus": [
+        "oro",
+        "accipio",
+        "respondeo",
+        "clamo"
+      ],
+      "expectedAnswer": {
+        "oro": "pray",
+        "accipio": "receive / take",
+        "respondeo": "answer / respond",
+        "clamo": "cry out / call"
+      },
+      "acceptedVariants": [],
+      "hint": "All are new Core verbs.",
+      "explanation": "This checks the verb set.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l12"
+      ]
+    },
+    {
+      "id": "l12-e8",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 12 item to meaning.",
+      "stimulus": [
+        "nunc",
+        "ecce",
+        "vado",
+        "do"
+      ],
+      "expectedAnswer": {
+        "nunc": "now",
+        "ecce": "behold",
+        "vado": "go",
+        "do": "give"
+      },
+      "acceptedVariants": [],
+      "hint": "Mix particles and verbs deliberately.",
+      "explanation": "This checks rapid lexical recognition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l12"
+      ]
+    },
+    {
+      "id": "l12-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which statement best distinguishes vocative from nominative?",
+      "stimulus": null,
+      "options": [
+        "vocative addresses; nominative names the subject",
+        "vocative is always plural",
+        "nominative follows cum",
+        "they are always identical in function"
+      ],
+      "expectedAnswer": "vocative addresses; nominative names the subject",
+      "acceptedVariants": [
+        "vocative addresses; nominative names the subject"
+      ],
+      "hint": "Recall the permanent case map.",
+      "explanation": "Vocative is direct address; nominative commonly names the subject.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:vocative",
+        "case:nominative"
+      ]
+    },
+    {
+      "id": "l12-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin particle meaning 'behold'.",
+      "stimulus": null,
+      "expectedAnswer": "ecce",
+      "acceptedVariants": [
+        "ecce",
+        "Ecce"
+      ],
+      "hint": "It opens Ecce Agnus Dei.",
+      "explanation": "ecce means behold.",
+      "difficulty": 1,
+      "sourceId": "mr1962-ecce-agnus-l12",
+      "skills": [
+        "vocabulary:ecce"
+      ]
+    }
+  ],
+  "objectives": [
+    "Recognize singular and plural commands.",
+    "Use vocative as an active direct-address case.",
+    "Learn all eleven frozen Lesson 12 lemmas.",
+    "Continue the pronoun spiral through ejus and vobis in authentic clauses."
+  ],
+  "checkpoint": {
+    "id": "l12-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l12-e1",
+        "l12-e2",
+        "l12-e3",
+        "l12-e4",
+        "l12-e5",
+        "l12-e6",
+        "l12-e7",
+        "l12-e8",
+        "l12-e9",
+        "l12-e10"
+      ]
+    },
+    "mustKnow": [
+      "imperative recognition",
+      "vocative direct address",
+      "accipe/fac/vade command forms",
+      "pronoun retrieval in ejus/vobis"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "oro",
+      "accipio",
+      "facio",
+      "dico",
+      "do",
+      "frater",
+      "nunc",
+      "ecce",
+      "respondeo",
+      "clamo",
+      "vado"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

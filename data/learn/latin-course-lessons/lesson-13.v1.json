@@ -1,0 +1,794 @@
+{
+  "version": "latin-course-lesson-13-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 13,
+  "stage": {
+    "number": 3,
+    "title": "Actions and Time"
+  },
+  "title": "Cuius regni non erit finis",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "sentence",
+  "grammarFocus": "Future tense",
+  "readingOutcome": "Read future forms and time expressions.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 13 vocabulary only; later forms remain explicit support.",
+    "authenticTextPolicy": "Future meaning is anchored in Credo, altar prayer, doxology and liturgical Scripture.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "finis",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "end",
+          "fr": "fin"
+        },
+        "frozenLesson": 13
+      },
+      {
+        "lemma": "iudico",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "judge",
+          "fr": "juger"
+        },
+        "frozenLesson": 13
+      },
+      {
+        "lemma": "aeternus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "eternal",
+          "fr": "éternel"
+        },
+        "frozenLesson": 13
+      },
+      {
+        "lemma": "salus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "salvation / health",
+          "fr": "salut"
+        },
+        "frozenLesson": 13
+      },
+      {
+        "lemma": "semper",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "always",
+          "fr": "toujours"
+        },
+        "frozenLesson": 13
+      },
+      {
+        "lemma": "donec",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "until / as long as",
+          "fr": "jusqu'à ce que"
+        },
+        "frozenLesson": 13
+      },
+      {
+        "lemma": "hora",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "hour",
+          "fr": "heure"
+        },
+        "frozenLesson": 13
+      }
+    ],
+    "recycled": [
+      "regnum",
+      "non",
+      "sum",
+      "introeo",
+      "ad",
+      "Deus",
+      "et",
+      "nunc",
+      "saeculum",
+      "iam",
+      "nos",
+      "de",
+      "venio",
+      "Dominus",
+      "cum",
+      "gloria",
+      "in"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "qui/quae/quod",
+      "forms": [
+        "cuius"
+      ],
+      "gloss": {
+        "en": "whose / of which",
+        "fr": "dont / duquel"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "iterum",
+      "forms": [
+        "iterum"
+      ],
+      "gloss": {
+        "en": "again",
+        "fr": "de nouveau"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "venturus",
+      "forms": [
+        "venturus"
+      ],
+      "gloss": {
+        "en": "about to come / coming",
+        "fr": "devant venir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vivus",
+      "forms": [
+        "vivos"
+      ],
+      "gloss": {
+        "en": "living",
+        "fr": "vivants"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mortuus",
+      "forms": [
+        "mortuos"
+      ],
+      "gloss": {
+        "en": "dead",
+        "fr": "morts"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "somnus",
+      "forms": [
+        "somno"
+      ],
+      "gloss": {
+        "en": "sleep",
+        "fr": "sommeil"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "surgo",
+      "forms": [
+        "surgere"
+      ],
+      "gloss": {
+        "en": "rise",
+        "fr": "se lever"
+      },
+      "trackedLesson": 15,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "mors",
+      "forms": [
+        "Mortem"
+      ],
+      "gloss": {
+        "en": "death",
+        "fr": "mort"
+      },
+      "trackedLesson": 20,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "annuntio",
+      "forms": [
+        "annuntiabitis"
+      ],
+      "gloss": {
+        "en": "announce / proclaim",
+        "fr": "annoncer"
+      },
+      "trackedLesson": 16,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-credo-finis-l13",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Cuius regni non erit finis.",
+      "provenanceNote": "erit is future of sum; finis is the target noun."
+    },
+    {
+      "id": "mr1962-credo-iudicare-l13",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Et iterum venturus est cum gloria, iudicare vivos et mortuos.",
+      "provenanceNote": "Future meaning is explicit; advanced participial detail remains support."
+    },
+    {
+      "id": "mr1962-introibo-l13",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Prayers at the Foot of the Altar",
+      "sourceLatin": "Introibo ad altare Dei.",
+      "provenanceNote": "Introibo is the familiar future form of introeo."
+    },
+    {
+      "id": "doxology-nunc-semper-l13",
+      "sourceType": "primary-liturgical",
+      "work": "Traditional Roman doxology",
+      "section": "Gloria Patri — conclusion",
+      "sourceLatin": "Et nunc, et semper, et in saecula saeculorum.",
+      "provenanceNote": "semper is introduced in a fixed time formula already encountered passively."
+    },
+    {
+      "id": "vulg-rom13-11-l13",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Romani 13:11",
+      "sourceLatin": "Hora est jam nos de somno surgere.",
+      "provenanceNote": "hora is introduced with iam; surgere remains Lesson 15 support."
+    },
+    {
+      "id": "vulg-1cor11-26-l13",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "I ad Corinthios 11:26",
+      "sourceLatin": "Mortem Domini annuntiabitis, donec veniat.",
+      "provenanceNote": "donec is introduced in an authentic temporal clause; annuntio belongs to Lesson 16."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; tense recognition is layered on top of the case system.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "futureFramework": {
+    "sum": [
+      "ero",
+      "eris",
+      "erit",
+      "erimus",
+      "eritis",
+      "erunt"
+    ],
+    "patterns": [
+      {
+        "group": "first/second conjugations",
+        "signals": [
+          "-bo",
+          "-bis",
+          "-bit",
+          "-bimus",
+          "-bitis",
+          "-bunt"
+        ]
+      },
+      {
+        "group": "third/fourth conjugations",
+        "signals": [
+          "-am",
+          "-es",
+          "-et",
+          "-emus",
+          "-etis",
+          "-ent"
+        ]
+      }
+    ],
+    "caution": "Identify the verb family as well as the ending."
+  },
+  "learningBlocks": [
+    {
+      "id": "l13-b1",
+      "type": "concept",
+      "title": "Future forms move the clause forward",
+      "learnerCopy": {
+        "en": "The future presents an action or state as not yet complete. Time words such as semper, donec and hora help orient the clause.",
+        "fr": "Le futur présente une action ou un état comme non encore accompli. Des mots comme semper, donec et hora aident à situer la phrase dans le temps."
+      }
+    },
+    {
+      "id": "l13-b2",
+      "type": "verb-system",
+      "title": "erit anchors the future of sum",
+      "learnerCopy": {
+        "en": "The future of sum is ero, eris, erit, erimus, eritis, erunt. In Cuius regni non erit finis, erit gives the future state.",
+        "fr": "Le futur de sum est ero, eris, erit, erimus, eritis, erunt. Dans Cuius regni non erit finis, erit exprime l'état futur."
+      }
+    },
+    {
+      "id": "l13-b3",
+      "type": "morphology",
+      "title": "Two major future patterns",
+      "learnerCopy": {
+        "en": "First/second-conjugation verbs commonly show -bo/-bis/-bit; third/fourth conjugations commonly show -am/-es/-et. Read the ending together with the verb family.",
+        "fr": "Les verbes des première/deuxième conjugaisons montrent souvent -bo/-bis/-bit ; ceux des troisième/quatrième, -am/-es/-et. Lisez la terminaison avec la famille verbale."
+      }
+    },
+    {
+      "id": "l13-b4",
+      "type": "authentic-example",
+      "title": "Cuius regni non erit finis",
+      "sourceId": "mr1962-credo-finis-l13",
+      "learnerCopy": {
+        "en": "Once erit is recognized, the structure is clear: there will be no end. finis is new; cuius remains a later relative-pronoun form.",
+        "fr": "Dès que erit est reconnu, la structure devient claire : il n'y aura pas de fin. finis est nouveau ; cuius reste une forme relative étudiée plus tard."
+      }
+    },
+    {
+      "id": "l13-b5",
+      "type": "authentic-example",
+      "title": "Introibo",
+      "sourceId": "mr1962-introibo-l13",
+      "learnerCopy": {
+        "en": "Introibo is future: 'I will go in'. The phrase was already familiar; Lesson 13 makes its time value explicit.",
+        "fr": "Introibo est au futur : « j'irai ». La formule était déjà familière ; la leçon 13 rend explicite sa valeur temporelle."
+      }
+    },
+    {
+      "id": "l13-b6",
+      "type": "time-words",
+      "title": "semper, donec, hora",
+      "learnerCopy": {
+        "en": "semper marks continuity, donec sets a temporal boundary, and hora locates an event in time. These become essential narrative scaffolding.",
+        "fr": "semper marque la continuité, donec fixe une limite temporelle, et hora situe un événement dans le temps. Ce sont des repères essentiels du récit."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l13-p1",
+      "sourceId": "mr1962-credo-finis-l13",
+      "sourceLatin": "Cuius regni non erit finis.",
+      "instructionalDisplay": "Cuius regni non erit finis.",
+      "translation": {
+        "en": "Of whose kingdom there shall be no end.",
+        "fr": "Et son règne n'aura pas de fin."
+      },
+      "targetLemmas": [
+        "regnum",
+        "non",
+        "sum",
+        "finis"
+      ],
+      "supportLemmas": [
+        "qui/quae/quod"
+      ]
+    },
+    {
+      "id": "l13-p2",
+      "sourceId": "mr1962-credo-iudicare-l13",
+      "sourceLatin": "Et iterum venturus est cum gloria, iudicare vivos et mortuos.",
+      "instructionalDisplay": "Et iterum venturus est cum gloria, iudicare vivos et mortuos.",
+      "translation": {
+        "en": "And He shall come again with glory to judge the living and the dead.",
+        "fr": "Et il reviendra dans la gloire pour juger les vivants et les morts."
+      },
+      "targetLemmas": [
+        "et",
+        "sum",
+        "cum",
+        "gloria",
+        "iudico"
+      ],
+      "supportLemmas": [
+        "iterum",
+        "venturus",
+        "vivus",
+        "mortuus"
+      ]
+    },
+    {
+      "id": "l13-p3",
+      "sourceId": "mr1962-introibo-l13",
+      "sourceLatin": "Introibo ad altare Dei.",
+      "instructionalDisplay": "Introibo ad altare Dei.",
+      "translation": {
+        "en": "I will go in unto the altar of God.",
+        "fr": "J'irai à l'autel de Dieu."
+      },
+      "targetLemmas": [
+        "introeo",
+        "ad",
+        "Deus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l13-p4",
+      "sourceId": "doxology-nunc-semper-l13",
+      "sourceLatin": "Et nunc, et semper, et in saecula saeculorum.",
+      "instructionalDisplay": "Et nunc, et semper, et in saecula saeculorum.",
+      "translation": {
+        "en": "And now, and always, and unto ages of ages.",
+        "fr": "Et maintenant, et toujours, et dans les siècles des siècles."
+      },
+      "targetLemmas": [
+        "et",
+        "nunc",
+        "semper",
+        "in",
+        "saeculum"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l13-p5",
+      "sourceId": "vulg-rom13-11-l13",
+      "sourceLatin": "Hora est jam nos de somno surgere.",
+      "instructionalDisplay": "Hora est jam nos de somno surgere.",
+      "translation": {
+        "en": "It is now the hour for us to rise from sleep.",
+        "fr": "Il est désormais l'heure de nous lever du sommeil."
+      },
+      "targetLemmas": [
+        "hora",
+        "sum",
+        "iam",
+        "nos",
+        "de"
+      ],
+      "supportLemmas": [
+        "somnus",
+        "surgo"
+      ]
+    },
+    {
+      "id": "l13-p6",
+      "sourceId": "vulg-1cor11-26-l13",
+      "sourceLatin": "Mortem Domini annuntiabitis, donec veniat.",
+      "instructionalDisplay": "Mortem Domini annuntiabitis, donec veniat.",
+      "translation": {
+        "en": "You shall proclaim the death of the Lord until He come.",
+        "fr": "Vous annoncerez la mort du Seigneur jusqu'à ce qu'il vienne."
+      },
+      "targetLemmas": [
+        "Dominus",
+        "donec",
+        "venio"
+      ],
+      "supportLemmas": [
+        "mors",
+        "annuntio"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l13-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What tense is erit?",
+      "stimulus": "erit",
+      "options": [
+        "future",
+        "present",
+        "imperfect",
+        "perfect"
+      ],
+      "expectedAnswer": "future",
+      "acceptedVariants": [
+        "future"
+      ],
+      "hint": "It belongs to ero, eris, erit.",
+      "explanation": "erit is third-person singular future of sum.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-finis-l13",
+      "skills": [
+        "tense:future",
+        "verb:sum"
+      ]
+    },
+    {
+      "id": "l13-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does finis mean?",
+      "stimulus": "finis",
+      "options": [
+        "end",
+        "hour",
+        "salvation",
+        "law"
+      ],
+      "expectedAnswer": "end",
+      "acceptedVariants": [
+        "end"
+      ],
+      "hint": "It completes the Credo clause.",
+      "explanation": "finis means end.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-finis-l13",
+      "skills": [
+        "vocabulary:finis"
+      ]
+    },
+    {
+      "id": "l13-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What tense/value is Introibo?",
+      "stimulus": "Introibo",
+      "options": [
+        "future: I will go in",
+        "imperfect: I was entering",
+        "imperative: enter!",
+        "perfect: I entered"
+      ],
+      "expectedAnswer": "future: I will go in",
+      "acceptedVariants": [
+        "future: I will go in"
+      ],
+      "hint": "The -bo form is the clue.",
+      "explanation": "Introibo is future of introeo.",
+      "difficulty": 1,
+      "sourceId": "mr1962-introibo-l13",
+      "skills": [
+        "tense:future",
+        "vocabulary:introeo"
+      ]
+    },
+    {
+      "id": "l13-e4",
+      "exerciseType": "matching",
+      "prompt": "Match future form of sum to meaning.",
+      "stimulus": [
+        "ero",
+        "eris",
+        "erit",
+        "erimus"
+      ],
+      "expectedAnswer": {
+        "ero": "I shall be",
+        "eris": "you shall be",
+        "erit": "he/she/it shall be",
+        "erimus": "we shall be"
+      },
+      "acceptedVariants": [],
+      "hint": "Recall the irregular future paradigm.",
+      "explanation": "These are future forms of sum.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "verb:sum",
+        "tense:future"
+      ]
+    },
+    {
+      "id": "l13-e5",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 13 word to meaning.",
+      "stimulus": [
+        "semper",
+        "donec",
+        "hora",
+        "salus"
+      ],
+      "expectedAnswer": {
+        "semper": "always",
+        "donec": "until / as long as",
+        "hora": "hour",
+        "salus": "salvation / health"
+      },
+      "acceptedVariants": [],
+      "hint": "These are the lesson's time/meaning anchors.",
+      "explanation": "This checks lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l13"
+      ]
+    },
+    {
+      "id": "l13-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which lemma is introduced by iudicare?",
+      "stimulus": "iudicare",
+      "options": [
+        "iudico",
+        "iubeo",
+        "dico",
+        "facio"
+      ],
+      "expectedAnswer": "iudico",
+      "acceptedVariants": [
+        "iudico"
+      ],
+      "hint": "It is the infinitive 'to judge'.",
+      "explanation": "iudicare belongs to iudico.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-iudicare-l13",
+      "skills": [
+        "vocabulary:iudico",
+        "morphology:lemma-form"
+      ]
+    },
+    {
+      "id": "l13-e7",
+      "exerciseType": "token_select",
+      "prompt": "Select the explicit time words already learned by the end of Lesson 13.",
+      "stimulus": "Et nunc, et semper, et in saecula saeculorum.",
+      "expectedAnswer": [
+        "nunc",
+        "semper"
+      ],
+      "acceptedVariants": [
+        [
+          "nunc",
+          "semper"
+        ]
+      ],
+      "hint": "Both locate the clause in time.",
+      "explanation": "nunc and semper are active time vocabulary.",
+      "difficulty": 1,
+      "sourceId": "doxology-nunc-semper-l13",
+      "skills": [
+        "reading:time-words"
+      ]
+    },
+    {
+      "id": "l13-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does donec contribute?",
+      "stimulus": "donec veniat",
+      "options": [
+        "a temporal limit/duration",
+        "direct address",
+        "possession",
+        "a passive subject"
+      ],
+      "expectedAnswer": "a temporal limit/duration",
+      "acceptedVariants": [
+        "a temporal limit/duration"
+      ],
+      "hint": "Translate 'until'.",
+      "explanation": "donec links clauses through time.",
+      "difficulty": 2,
+      "sourceId": "vulg-1cor11-26-l13",
+      "skills": [
+        "syntax:time",
+        "vocabulary:donec"
+      ]
+    },
+    {
+      "id": "l13-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which future pattern is typical of many first/second-conjugation verbs?",
+      "stimulus": null,
+      "options": [
+        "-bo / -bis / -bit",
+        "-bam / -bas / -bat",
+        "-i / -isti / -it",
+        "-tur / -ntur"
+      ],
+      "expectedAnswer": "-bo / -bis / -bit",
+      "acceptedVariants": [
+        "-bo / -bis / -bit"
+      ],
+      "hint": "Compare Introibo.",
+      "explanation": "-bo/-bis/-bit is a major future pattern.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "tense:future",
+        "morphology"
+      ]
+    },
+    {
+      "id": "l13-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin adjective meaning 'eternal'.",
+      "stimulus": null,
+      "expectedAnswer": "aeternus",
+      "acceptedVariants": [
+        "aeternus",
+        "Aeternus"
+      ],
+      "hint": "It belongs to Lesson 13.",
+      "explanation": "aeternus means eternal.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:aeternus"
+      ]
+    }
+  ],
+  "objectives": [
+    "Recognize future forms of sum and major regular future patterns.",
+    "Read future meaning in Credo and altar formulas.",
+    "Learn all seven frozen Lesson 13 lemmas.",
+    "Use semper, donec and hora as temporal reading anchors."
+  ],
+  "checkpoint": {
+    "id": "l13-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l13-e1",
+        "l13-e2",
+        "l13-e3",
+        "l13-e4",
+        "l13-e5",
+        "l13-e6",
+        "l13-e7",
+        "l13-e8",
+        "l13-e9",
+        "l13-e10"
+      ]
+    },
+    "mustKnow": [
+      "erit future of sum",
+      "major future ending families",
+      "semper/donec/hora time functions"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "finis",
+      "iudico",
+      "aeternus",
+      "salus",
+      "semper",
+      "donec",
+      "hora"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 6,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}
