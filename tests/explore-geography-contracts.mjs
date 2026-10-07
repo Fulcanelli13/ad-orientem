@@ -66,6 +66,12 @@ assert.deepEqual(
     "place:US:champion-shrine",
     "place:US:guadalupe-shrine-la-crosse",
     "place:US:holy-hill",
+    "place:US:st-alphonsus-baltimore",
+    "place:US:st-john-neumann-philadelphia",
+    "place:US:miraculous-medal-philadelphia",
+    "place:US:czestochowa-doylestown",
+    "place:US:seton-emmitsburg",
+    "place:US:lourdes-grotto-emmitsburg",
     "place:CA:sainte-anne-de-beaupre",
     "place:CA:notre-dame-du-cap",
     "place:CA:martyrs-shrine-midland",
@@ -156,7 +162,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 24,
-  places: 51,
+  places: 57,
   directoryPlaceLinks: 1,
 });
 
@@ -195,6 +201,13 @@ assert.equal(umuakaLink.relationship,"LOCATED_AT");
 assert.equal(umuakaLink.confidence,"CONFIRMED");
 assert.equal(umuakaLink.venue_id,"ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria");
 assert.equal(seed.directoryPlaceLinks.some(link=>link.venue_id==="ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-474123-umuaka-imo-state-nigeria"),false,"duplicate upstream Umuaka row was linked as a second exact-place venue");
+
+const alphonsusLink=seed.directoryPlaceLinks.find(link=>link.link_id==="link:directory-place:US:st-alphonsus-baltimore");
+assert.ok(alphonsusLink,"production St Alphonsus Directory→Place link missing");
+assert.equal(alphonsusLink.relationship,"LOCATED_AT");
+assert.equal(alphonsusLink.confidence,"CONFIRMED");
+assert.equal(alphonsusLink.venue_id,"ao-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa");
+assert.equal(alphonsusLink.place_id,"place:US:st-alphonsus-baltimore");
 
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:PT:fatima-sanctuary"),false,"FSSP presence in Fátima city was incorrectly collapsed into the sanctuary");
 assert.equal(candidates.candidates.some(item=>item.place_id==="place:PT:fatima-sanctuary"),false,"city-level FSSP presence created an unresolved sanctuary candidate without identity evidence");
