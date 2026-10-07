@@ -172,6 +172,9 @@ export function auditTemporalLink(link,path="temporal_link"){
   if(["PENDING_CALENDAR_BINDING","BOUND_TO_CALENDAR"].includes(link.binding_state)&&!nonEmpty(link.calendar_semantic_key)){
     issues.push(issue("MISSING_CALENDAR_SEMANTIC_KEY",`${path}.calendar_semantic_key`,"Calendar-bound links require calendar_semantic_key."));
   }
+  if(link.binding_state==="BOUND_TO_CALENDAR"&&!nonEmpty(link.calendar_registry_version)){
+    issues.push(issue("MISSING_CALENDAR_REGISTRY_VERSION",`${path}.calendar_registry_version`,"Resolved Calendar bindings require the owning Calendar registry version."));
+  }
   if(link.binding_state==="NO_FIXED_CALENDAR_BINDING"&&nonEmpty(link.calendar_semantic_key)){
     issues.push(issue("UNEXPECTED_CALENDAR_SEMANTIC_KEY",`${path}.calendar_semantic_key`,"No-fixed-binding links must not carry a Calendar semantic key."));
   }
