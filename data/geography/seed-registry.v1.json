@@ -4,7 +4,10 @@
   "geoAreas": [
     {
       "geo_area_id": "geo:world",
-      "name": { "official": "World", "aliases": [] },
+      "name": {
+        "official": "World",
+        "aliases": []
+      },
       "area_system": "GLOBAL",
       "area_type": "world",
       "parent_geo_area_ids": [],
@@ -13,30 +16,74 @@
     },
     {
       "geo_area_id": "geo:country:FR",
-      "name": { "official": "France", "aliases": ["République française"] },
+      "name": {
+        "official": "France",
+        "aliases": [
+          "République française"
+        ]
+      },
       "area_system": "CIVIL",
       "area_type": "country",
-      "parent_geo_area_ids": ["geo:world"],
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
       "mappable": true,
-      "codes": { "iso_alpha2": "FR" }
+      "codes": {
+        "iso_alpha2": "FR"
+      }
     },
     {
       "geo_area_id": "geo:country:IE",
-      "name": { "official": "Ireland", "aliases": ["Éire"] },
+      "name": {
+        "official": "Ireland",
+        "aliases": [
+          "Éire"
+        ]
+      },
       "area_system": "CIVIL",
       "area_type": "country",
-      "parent_geo_area_ids": ["geo:world"],
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
       "mappable": true,
-      "codes": { "iso_alpha2": "IE" }
+      "codes": {
+        "iso_alpha2": "IE"
+      }
     },
     {
       "geo_area_id": "geo:country:MU",
-      "name": { "official": "Mauritius", "aliases": ["Maurice"] },
+      "name": {
+        "official": "Mauritius",
+        "aliases": [
+          "Maurice"
+        ]
+      },
       "area_system": "CIVIL",
       "area_type": "country",
-      "parent_geo_area_ids": ["geo:world"],
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
       "mappable": true,
-      "codes": { "iso_alpha2": "MU" }
+      "codes": {
+        "iso_alpha2": "MU"
+      }
+    },
+    {
+      "geo_area_id": "geo:culture:french-catholic-world",
+      "name": {
+        "official": "French Catholic world",
+        "aliases": [
+          "Monde catholique français",
+          "French Catholic sphere"
+        ]
+      },
+      "area_system": "CULTURAL",
+      "area_type": "cultural_region",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": false,
+      "codes": {}
     }
   ],
   "places": [],
