@@ -29,6 +29,16 @@ function blockAfter(lines,startRe,stopRe){
   }
   return out.filter(Boolean);
 }
+function addressFromLines(lines){
+  const direct=lines.find(line=>/^Address\s*:/i.test(line));
+  if(direct){
+    const value=direct.replace(/^Address\s*:\s*/i,"").replace(/^\|\s*/,"").trim();
+    if(value)return value;
+  }
+  const zipIndex=lines.findIndex(line=>/\b[A-Z]{2}\s+\d{5}(?:-\d{4})?\b/.test(line));
+  if(zipIndex>=0)return lines.slice(Math.max(0,zipIndex-2),zipIndex+1).join(", ");
+  return null;
+}
 function scheduleLines(lines){
   return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass\b/i.test(line));
 }
@@ -61,7 +71,7 @@ function parseUsDetail(html,candidate){
   const inferred=candidate.label.split(" - ").slice(1).join(" - ");
   const title=h ?? (inferred || candidate.label);
   const church=blockAfter(lines,/^Church\s*:/i,/^(Priory|Phone|Email|©)/i);
-  const address=church.length>1?church.slice(1).join(", "):church.join(", ");
+  const address=addressFromLines(lines)||(church.length>1?church.slice(1).join(", "):church.join(", "));
   const rawSchedule=scheduleBlock(lines);
   return {
     title,address,countryCode:"US",diocese:null,detailUrl:candidate.url,
