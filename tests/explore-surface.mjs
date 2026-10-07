@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:60,
-  traditions:78,
-  pilgrimages:79,
+  shrines:66,
+  traditions:85,
+  pilgrimages:90,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -424,6 +424,32 @@ assert.equal(rueDuBacPilgrimage[0].map_publishable,false);
 assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Miraculous Medal/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"France tranche address-only shrines unexpectedly published map points");
+
+const wigratzbadShrine=filterExploreItems(projection.byLens.shrines,{query:"Wigratzbad"});
+assert.equal(wigratzbadShrine.length,1);
+assert.equal(wigratzbadShrine[0].map_publishable,false);
+
+const ambergBergfest=filterExploreItems(projection.byLens.pilgrimages,{query:"Maria Hilf Bergfest"});
+assert.equal(ambergBergfest.length,1);
+assert.ok(ambergBergfest[0].sections.some(section=>/Maria Hilf at Amberg/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const nussdorfRitt=filterExploreItems(projection.byLens.pilgrimages,{query:"Nußdorf Leonhardiritt"});
+assert.equal(nussdorfRitt.length,1);
+assert.ok(nussdorfRitt[0].sections.some(section=>/Nußdorf Leonhardiritt/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const frielingsdorf=filterExploreItems(projection.byLens.pilgrimages,{query:"St. Apollinaris Octave"});
+assert.equal(frielingsdorf.length,1);
+assert.ok(frielingsdorf[0].sections.some(section=>/Saint Apollinaris/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const bettbrunnPreith=filterExploreItems(projection.byLens.pilgrimages,{query:"Preith Foot Pilgrimage"});
+assert.equal(bettbrunnPreith.length,1);
+assert.ok(bettbrunnPreith[0].sections.some(section=>/weekend after Ascension/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const vesperbild=filterExploreItems(projection.byLens.pilgrimages,{query:"Maria Vesperbild"});
+assert.equal(vesperbild.length,1);
+assert.ok(vesperbild[0].sections.some(section=>/13th of every month/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"Germany tranche address-only shrines unexpectedly published map points");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
