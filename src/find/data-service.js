@@ -54,9 +54,19 @@ export function expandResearchProviderSnapshot(snapshot={}){
   const generatedAt=text(snapshot?.generated_at)||null;
   const out={venues:[],ministries:[],schedules:[],sources:[]};
   for(const raw of safeArray(snapshot?.records)){
-    const row=compactResearchRow(defaults,raw,provider);
-    if(!row.u||!row.c||!row.cc||!row.n||!row.su)continue;
-    const base=slugId(provider)+"-"+slugId(row.u);
+    const parent=compactResearchRow(defaults,raw,provider);
+    const physical=safeArray(parent.pv);
+    const rows=physical.length
+      ?physical.map((item,index)=>compactResearchRow(parent,{
+          ...item,
+          u:text(item?.u)||text(parent.u)+"-PV"+String(index+1),
+          parent_u:text(parent.u),
+          pv:undefined,
+        },provider))
+      :[parent];
+    for(const row of rows){
+      if(!row.u||!row.c||!row.cc||!row.n||!row.su)continue;
+      const base=slugId(provider)+"-"+slugId(row.u);
     const venueId="ao-research-"+base;
     const ministryId="ao-ministry-"+base;
     const scheduleId="ao-schedule-"+base;
@@ -74,6 +84,7 @@ export function expandResearchProviderSnapshot(snapshot={}){
       upstream:{
         provider:"AO_RESEARCH_V1_9",
         upstream_id:text(row.u),
+        parent_upstream_id:text(row.parent_u)||null,
         provider_id:provider,
         provider_relationship:row.pr??null,
         source_liturgical_profile:row.sl??null,
@@ -168,6 +179,7 @@ export function expandResearchProviderSnapshot(snapshot={}){
         authority:"PRIMARY",
         fields_supported:["authorization"],
       });
+    }
     }
   }
   return Object.freeze({
