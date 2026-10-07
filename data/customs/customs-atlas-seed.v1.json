@@ -356,8 +356,8 @@
       "attestation_id": "att:DEV-009:LAGHET",
       "custom_id": "DEV-009",
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Sanctuaire Notre-Dame de Laghet",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
       "period_label": "1652 → present",
       "strength": "STRONG",
@@ -365,15 +365,15 @@
         "LAGHET-EXVOTO"
       ],
       "evidence_note": "The shrine documents its ex-voto tradition and collection.",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "confidence": "HIGH"
     },
     {
       "attestation_id": "att:DEV-010:LOURDES",
       "custom_id": "DEV-010",
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Sanctuaire Notre-Dame de Lourdes",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
       "period_label": "Longstanding → present",
       "strength": "STRONG",
@@ -381,7 +381,7 @@
         "LOURDES-CANDLES"
       ],
       "evidence_note": "Lourdes explicitly presents the burning candle as a continuation of prayer.",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "confidence": "HIGH"
     },
     {
@@ -464,6 +464,38 @@
       "evidence_note": "Modern French secondary source documents the former parish distribution of blessed bread distinct from the Eucharist.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-006:PARAY",
+      "custom_id": "DOM-006",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "19th c. → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "PARAY-CONSECRATION"
+      ],
+      "evidence_note": "Paray-le-Monial directly documents family consecration to the Sacred Heart and its continuing practice.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-007:PARAY",
+      "custom_id": "DOM-007",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Late 19th c. → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "PARAY-INTRONISATION"
+      ],
+      "evidence_note": "Paray-le-Monial directly documents intronisation of the Sacred Heart in families.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
     }
   ]
 }
