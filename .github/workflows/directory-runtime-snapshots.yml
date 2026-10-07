@@ -16,7 +16,7 @@ on:
       - "data/directory/source-witnesses/**"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: directory-runtime-snapshots-${{ github.ref }}
@@ -46,15 +46,13 @@ jobs:
           npm run test:directory
           node tests/find-surface.mjs
           node tools/directory/validate-runtime-snapshots.mjs
-      - name: Publish changed snapshots
-        shell: bash
-        run: |
-          git config user.name "ad-orientem-directory-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/directory/generated/fssp data/directory/generated/icksp data/directory/generated/ibp
-          if git diff --cached --quiet; then
-            echo "No directory snapshot changes."
-            exit 0
-          fi
-          git commit -m "Directory: refresh runtime institute snapshots [skip ci]"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - name: Package reviewable snapshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: directory-runtime-snapshots-${{ github.run_id }}
+          path: |
+            data/directory/generated/fssp
+            data/directory/generated/icksp
+            data/directory/generated/ibp
+          if-no-files-found: error
+          retention-days: 14
