@@ -385,6 +385,42 @@ if (authored.length >= 30) {
   assert(new Set(stage6Introduced).size === 31, "Stage 6 contains duplicate introduced lemmas");
 }
 
+
+// Stage 7 Church-Latin and long-Canon locks.
+if (authored.length >= 31) {
+  assert(authored[30].readerToolkitFramework, "Lesson 31 must establish the reader toolkit");
+  assert(authored[30].pronounSpiral?.lesson === 31, "Lesson 31 must complete the interrogative/indefinite pronoun spiral");
+  assert(authored[30].progressionStep === "passage", "Lesson 31 must remain passage-level");
+}
+if (authored.length >= 32) {
+  assert(authored[31].churchLatinFramework, "Lesson 32 must establish ecclesiastical-versus-classical usage");
+  assert(authored[31].progressionStep === "passage", "Lesson 32 must remain passage-level");
+}
+if (authored.length >= 33) {
+  assert(authored[32].biblicalLatinFramework, "Lesson 33 must establish biblical-Latin semantic/rhetorical reading");
+  assert(authored[32].progressionStep === "passage", "Lesson 33 must remain passage-level");
+}
+if (authored.length >= 34) {
+  assert(authored[33].collectArchitectureFramework, "Lesson 34 must consolidate Roman Collect architecture");
+  assert(authored[33].coreVocabulary.introduced.length === 0, "Lesson 34 must remain vocabulary-neutral");
+  assert(authored[33].progressionStep === "passage", "Lesson 34 must remain passage-level");
+}
+if (authored.length >= 35) {
+  const frozenL35Milestone = course.milestones?.find(x => x.lesson === 35)?.target;
+  assert(authored[34].canonLanguageFramework, "Lesson 35 must establish Canon periodic syntax and sacrificial register");
+  assert(authored[34].progressionStep === "passage", "Lesson 35 must remain passage-level");
+  assert(authored[34].checkpoint?.progressionGate === frozenL35Milestone,
+    `Lesson 35 progression gate must match frozen milestone: ${frozenL35Milestone}`);
+  assert(authored[34].checkpoint?.stage === 7, "Lesson 35 must be the Stage 7 checkpoint");
+  assert(JSON.stringify(authored[34].checkpoint?.scopeLessons) === JSON.stringify([31,32,33,34,35]),
+    "Stage 7 checkpoint must cover Lessons 31-35");
+  assert(authored[34].checkpoint?.readingTransition === "complete Collect → long periodic Canon passage",
+    "Lesson 35 must lock the long-periodic-Canon transition");
+  const stage7Introduced = authored.slice(30,35).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage7Introduced.length === 36, `Stage 7 must introduce 36 tracked lemmas, got ${stage7Introduced.length}`);
+  assert(new Set(stage7Introduced).size === 36, "Stage 7 contains duplicate introduced lemmas");
+}
+
 console.log(JSON.stringify({
   status: "PASS",
   lessons: course.lessons.length,

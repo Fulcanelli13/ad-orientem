@@ -1,0 +1,906 @@
+{
+  "version": "latin-course-lesson-34-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 34,
+  "stage": {
+    "number": 7,
+    "title": "Church Latin"
+  },
+  "title": "How a Roman Collect Works",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 50,
+  "progressionStep": "passage",
+  "grammarFocus": "Collect architecture and compressed syntax",
+  "readingOutcome": "Identify address, relative/participial expansion, petition, purpose/result and conclusion.",
+  "authoringPolicy": {
+    "method": "whole prayer → rhetorical segmentation → syntax inside each move → continuous reread",
+    "vocabularyPolicy": "Lesson 34 introduces no new tracked vocabulary; all unfamiliar words are support only.",
+    "authenticTextPolicy": "Three traditional Roman/Catholic Collect forms are compared without simplifying their syntax.",
+    "copyrightPolicy": "Original pedagogical synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [],
+    "recycled": [
+      "omnipotens",
+      "sempiternus",
+      "Deus",
+      "qui/quae/quod",
+      "do",
+      "famulus",
+      "tuus",
+      "in",
+      "fides",
+      "aeternus",
+      "gloria",
+      "et",
+      "maiestas",
+      "adoro",
+      "unitas",
+      "quaeso",
+      "ut",
+      "a/ab",
+      "omnis",
+      "semper",
+      "Dominus",
+      "noster",
+      "filius",
+      "vivo",
+      "regno",
+      "spiritus",
+      "sanctus",
+      "per",
+      "saeculum",
+      "nos",
+      "sacramentum",
+      "tribuo",
+      "corpus",
+      "sanguis",
+      "veneror",
+      "sentio",
+      "cor",
+      "fidelis",
+      "idem",
+      "sub",
+      "ita",
+      "cum",
+      "pater",
+      "is/ea/id"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "confessio",
+      "forms": [
+        "confessione"
+      ],
+      "gloss": {
+        "en": "confession",
+        "fr": "confession"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "verus",
+      "forms": [
+        "verae"
+      ],
+      "gloss": {
+        "en": "true",
+        "fr": "vrai"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Trinitas",
+      "forms": [
+        "Trinitatis"
+      ],
+      "gloss": {
+        "en": "Trinity",
+        "fr": "Trinité"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "agnosco",
+      "forms": [
+        "agnoscere"
+      ],
+      "gloss": {
+        "en": "acknowledge",
+        "fr": "reconnaître"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "potentia",
+      "forms": [
+        "potentia"
+      ],
+      "gloss": {
+        "en": "power",
+        "fr": "puissance"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "firmitas",
+      "forms": [
+        "firmitate"
+      ],
+      "gloss": {
+        "en": "firmness",
+        "fr": "fermeté"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "munio",
+      "forms": [
+        "muniamur"
+      ],
+      "gloss": {
+        "en": "protect / fortify",
+        "fr": "protéger / fortifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "adversum",
+      "forms": [
+        "adversis"
+      ],
+      "gloss": {
+        "en": "adversities",
+        "fr": "adversités"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesum"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "memoria",
+      "forms": [
+        "memoriam"
+      ],
+      "gloss": {
+        "en": "memory / memorial",
+        "fr": "mémoire / mémorial"
+      },
+      "trackedLesson": 35,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "relinquo",
+      "forms": [
+        "reliquisti"
+      ],
+      "gloss": {
+        "en": "leave",
+        "fr": "laisser"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mysterium",
+      "forms": [
+        "mysteria"
+      ],
+      "gloss": {
+        "en": "mystery",
+        "fr": "mystère"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "redemptio",
+      "forms": [
+        "redemptionis"
+      ],
+      "gloss": {
+        "en": "redemption",
+        "fr": "rédemption"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "fructus",
+      "forms": [
+        "fructum"
+      ],
+      "gloss": {
+        "en": "fruit",
+        "fr": "fruit"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "iugiter",
+      "forms": [
+        "iugiter"
+      ],
+      "gloss": {
+        "en": "continually",
+        "fr": "sans cesse"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "illustratio",
+      "forms": [
+        "illustratione"
+      ],
+      "gloss": {
+        "en": "illumination",
+        "fr": "illumination"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "doceo",
+      "forms": [
+        "docuisti"
+      ],
+      "gloss": {
+        "en": "teach",
+        "fr": "enseigner"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "rectus",
+      "forms": [
+        "recta"
+      ],
+      "gloss": {
+        "en": "right / correct",
+        "fr": "droit / juste"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sapio",
+      "forms": [
+        "sapere"
+      ],
+      "gloss": {
+        "en": "be wise / understand / taste",
+        "fr": "être sage / comprendre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "consolatio",
+      "forms": [
+        "consolatione"
+      ],
+      "gloss": {
+        "en": "consolation",
+        "fr": "consolation"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "gaudeo",
+      "forms": [
+        "gaudere"
+      ],
+      "gloss": {
+        "en": "rejoice",
+        "fr": "se réjouir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "passio",
+      "forms": [
+        "passionis"
+      ],
+      "gloss": {
+        "en": "Passion / suffering",
+        "fr": "Passion / souffrance"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christum"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "trinity-collect-l34",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum — Dominica Sanctissimae Trinitatis",
+      "section": "Oratio",
+      "sourceLatin": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "provenanceNote": "Complete Collect used to identify canonical Roman Collect architecture."
+    },
+    {
+      "id": "corpus-collect-l34",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum — Corpus Christi",
+      "section": "Oratio",
+      "sourceLatin": "Deus, qui nobis sub Sacramento mirabili passionis tuae memoriam reliquisti: tribue, quaesumus, ita nos Corporis et Sanguinis tui sacra mysteria venerari; ut redemptionis tuae fructum in nobis iugiter sentiamus. Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "provenanceNote": "Collect with relative clause, petition, ita...ut desired result and full conclusion."
+    },
+    {
+      "id": "holy-spirit-collect-l34",
+      "sourceType": "primary-prayer",
+      "work": "Traditional prayer to the Holy Ghost",
+      "section": "Collect",
+      "sourceLatin": "Deus, qui corda fidelium Sancti Spiritus illustratione docuisti: da nobis in eodem Spiritu recta sapere, et de eius semper consolatione gaudere. Per Christum Dominum nostrum. Amen.",
+      "provenanceNote": "Compact collect form showing address, relative expansion, petition and conclusion."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; no new morphology is introduced. The task is structural recognition across complete prayers.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "collectArchitectureFramework": {
+    "moves": [
+      "address/invocation",
+      "relative or participial expansion",
+      "petition/request",
+      "purpose/result/content clause",
+      "conclusion"
+    ],
+    "compressionSignals": [
+      "relative pronoun qui",
+      "participles/adjectival expansions",
+      "infinitives dependent on finite verbs",
+      "subjunctive ut-clauses",
+      "nested genitives/prepositional phrases"
+    ],
+    "readingRule": "Mark the prayer's rhetorical moves first. Parse internal morphology second. Then reread the prayer as one sentence."
+  },
+  "learningBlocks": [
+    {
+      "id": "l34-b1",
+      "type": "concept",
+      "title": "Collects compress theology into one syntactic arc",
+      "learnerCopy": {
+        "en": "A Roman Collect often feels difficult because several grammatical layers are packed into one sentence. The solution is not more vocabulary first; it is recognizing the recurring rhetorical architecture.",
+        "fr": "Une collecte romaine paraît souvent difficile parce que plusieurs niveaux grammaticaux sont condensés dans une seule phrase. La solution n'est pas d'abord plus de vocabulaire, mais la reconnaissance de l'architecture rhétorique récurrente."
+      }
+    },
+    {
+      "id": "l34-b2",
+      "type": "architecture",
+      "title": "Address before verb-hunting",
+      "learnerCopy": {
+        "en": "The opening address may contain several adjectives and nouns before any finite verb appears. Treat Omnipotens sempiterne Deus as the invocation block rather than searching prematurely for a predicate.",
+        "fr": "L'adresse initiale peut contenir plusieurs adjectifs et noms avant tout verbe conjugué. Lisez Omnipotens sempiterne Deus comme bloc d'invocation au lieu de chercher trop tôt un prédicat."
+      }
+    },
+    {
+      "id": "l34-b3",
+      "type": "comparison",
+      "title": "The relative clause explains why the petition is fitting",
+      "sourceId": "corpus-collect-l34",
+      "learnerCopy": {
+        "en": "Deus, qui nobis... memoriam reliquisti names God and recalls a divine gift before the petition tribue. This relative expansion is not decoration; it supplies the theological ground of the request.",
+        "fr": "Deus, qui nobis... memoriam reliquisti nomme Dieu et rappelle un don divin avant la demande tribue. Cette relative n'est pas décorative : elle fonde théologiquement la requête."
+      }
+    },
+    {
+      "id": "l34-b4",
+      "type": "petition",
+      "title": "Find the governing request verb",
+      "learnerCopy": {
+        "en": "quaesumus, tribue, da and similar verbs are structural beacons. Once found, they tell you where the petition proper begins and what later infinitive or ut-clause depends on it.",
+        "fr": "quaesumus, tribue, da et les verbes analogues sont des balises structurelles. Une fois repérés, ils indiquent où commence la demande proprement dite et de quoi dépendent les infinitifs ou propositions en ut qui suivent."
+      }
+    },
+    {
+      "id": "l34-b5",
+      "type": "comparison",
+      "title": "Different Collects, same architecture",
+      "sourceId": "holy-spirit-collect-l34",
+      "learnerCopy": {
+        "en": "The Holy Ghost prayer is shorter, but the same pattern remains: address, qui-clause, da petition, dependent infinitives, conclusion. Recognizing form makes unfamiliar vocabulary less threatening.",
+        "fr": "La prière au Saint-Esprit est plus courte, mais le même schéma demeure : adresse, relative en qui, demande da, infinitifs dépendants, conclusion. Reconnaître la forme rend le vocabulaire inconnu moins intimidant."
+      }
+    },
+    {
+      "id": "l34-b6",
+      "type": "retrieval",
+      "title": "Read the sentence twice",
+      "learnerCopy": {
+        "en": "First pass: mark architecture and clause boundaries. Second pass: resolve cases, verbs and modifiers. Third movement is not a new parse but a continuous rereading of the prayer as prayer.",
+        "fr": "Premier passage : marquez l'architecture et les limites de propositions. Deuxième passage : résolvez cas, verbes et déterminants. Le troisième mouvement n'est pas une nouvelle analyse, mais une relecture continue de la prière comme prière."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l34-p1",
+      "sourceId": "trinity-collect-l34",
+      "sourceLatin": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "instructionalDisplay": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "translation": {
+        "en": "Almighty everlasting God, who hast granted Thy servants, in confessing the true faith, to acknowledge the glory of the eternal Trinity and in the power of Majesty to adore Its Unity: we beseech Thee that, by steadfastness in this faith, we may ever be defended from all adversities. Through our Lord Jesus Christ Thy Son, who with Thee liveth and reigneth in the unity of the Holy Ghost, God, world without end. Amen.",
+        "fr": "Dieu tout-puissant et éternel, qui avez donné à vos serviteurs, dans la confession de la vraie foi, de reconnaître la gloire de l'éternelle Trinité et d'adorer l'Unité dans la puissance de sa Majesté : nous vous en supplions, faites que, par la fermeté de cette même foi, nous soyons toujours protégés de toute adversité. Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l'unité du Saint-Esprit, Dieu, pour les siècles des siècles. Amen."
+      },
+      "targetLemmas": [
+        "omnipotens",
+        "sempiternus",
+        "Deus",
+        "qui/quae/quod",
+        "do",
+        "famulus",
+        "tuus",
+        "in",
+        "fides",
+        "aeternus",
+        "gloria",
+        "et",
+        "maiestas",
+        "adoro",
+        "unitas",
+        "quaeso",
+        "ut",
+        "a/ab",
+        "omnis",
+        "semper",
+        "Dominus",
+        "noster",
+        "filius",
+        "vivo",
+        "regno",
+        "spiritus",
+        "sanctus",
+        "per",
+        "saeculum"
+      ],
+      "supportLemmas": [
+        "confessio",
+        "verus",
+        "Trinitas",
+        "agnosco",
+        "potentia",
+        "firmitas",
+        "munio",
+        "adversum",
+        "Iesus",
+        "Amen"
+      ]
+    },
+    {
+      "id": "l34-p2",
+      "sourceId": "corpus-collect-l34",
+      "sourceLatin": "Deus, qui nobis sub Sacramento mirabili passionis tuae memoriam reliquisti: tribue, quaesumus, ita nos Corporis et Sanguinis tui sacra mysteria venerari; ut redemptionis tuae fructum in nobis iugiter sentiamus. Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "instructionalDisplay": "Deus, qui nobis sub Sacramento mirabili passionis tuae memoriam reliquisti: tribue, quaesumus, ita nos Corporis et Sanguinis tui sacra mysteria venerari; ut redemptionis tuae fructum in nobis iugiter sentiamus. Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "translation": {
+        "en": "O God, who under a wonderful Sacrament hast left us a memorial of Thy Passion: grant us, we beseech Thee, so to venerate the sacred mysteries of Thy Body and Blood that we may ever feel within us the fruit of Thy redemption. Who livest and reignest with God the Father in the unity of the Holy Ghost, God, world without end. Amen.",
+        "fr": "Ô Dieu, qui nous avez laissé sous un Sacrement admirable le mémorial de votre Passion : accordez-nous, nous vous en supplions, de vénérer les saints mystères de votre Corps et de votre Sang de telle sorte que nous ressentions sans cesse en nous le fruit de votre rédemption. Vous qui vivez et régnez avec Dieu le Père dans l'unité du Saint-Esprit, Dieu, pour les siècles des siècles. Amen."
+      },
+      "targetLemmas": [
+        "Deus",
+        "qui/quae/quod",
+        "nos",
+        "sub",
+        "sacramentum",
+        "tuus",
+        "tribuo",
+        "quaeso",
+        "ita",
+        "corpus",
+        "et",
+        "sanguis",
+        "veneror",
+        "ut",
+        "in",
+        "sentio",
+        "vivo",
+        "regno",
+        "cum",
+        "pater",
+        "unitas",
+        "spiritus",
+        "sanctus",
+        "per",
+        "omnis",
+        "saeculum"
+      ],
+      "supportLemmas": [
+        "memoria",
+        "relinquo",
+        "mysterium",
+        "redemptio",
+        "fructus",
+        "iugiter",
+        "Amen",
+        "passio"
+      ]
+    },
+    {
+      "id": "l34-p3",
+      "sourceId": "holy-spirit-collect-l34",
+      "sourceLatin": "Deus, qui corda fidelium Sancti Spiritus illustratione docuisti: da nobis in eodem Spiritu recta sapere, et de eius semper consolatione gaudere. Per Christum Dominum nostrum. Amen.",
+      "instructionalDisplay": "Deus, qui corda fidelium Sancti Spiritus illustratione docuisti: da nobis in eodem Spiritu recta sapere, et de eius semper consolatione gaudere. Per Christum Dominum nostrum. Amen.",
+      "translation": {
+        "en": "O God, who didst instruct the hearts of the faithful by the light of the Holy Ghost: grant us in the same Spirit to be truly wise and ever to rejoice in His consolation. Through Christ our Lord. Amen.",
+        "fr": "Ô Dieu, qui avez instruit les cœurs des fidèles par la lumière du Saint-Esprit : donnez-nous, dans ce même Esprit, de goûter ce qui est juste et de jouir toujours de sa consolation. Par le Christ notre Seigneur. Amen."
+      },
+      "targetLemmas": [
+        "Deus",
+        "qui/quae/quod",
+        "cor",
+        "fidelis",
+        "sanctus",
+        "spiritus",
+        "do",
+        "nos",
+        "in",
+        "idem",
+        "et",
+        "is/ea/id",
+        "semper",
+        "per",
+        "Dominus",
+        "noster"
+      ],
+      "supportLemmas": [
+        "illustratio",
+        "doceo",
+        "rectus",
+        "sapio",
+        "consolatio",
+        "gaudeo",
+        "Amen",
+        "Christus"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l34-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should be identified first in a difficult Collect?",
+      "stimulus": null,
+      "options": [
+        "its rhetorical architecture",
+        "every dictionary gloss",
+        "classical prose parallels",
+        "pronunciation only"
+      ],
+      "expectedAnswer": "its rhetorical architecture",
+      "acceptedVariants": [
+        "its rhetorical architecture"
+      ],
+      "hint": "Moves before details.",
+      "explanation": "Architecture reduces syntactic load.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "collect:method"
+      ]
+    },
+    {
+      "id": "l34-e2",
+      "exerciseType": "matching",
+      "prompt": "Match Collect move to example.",
+      "stimulus": [
+        "invocation",
+        "relative expansion",
+        "petition",
+        "desired outcome",
+        "conclusion"
+      ],
+      "expectedAnswer": {
+        "invocation": "Omnipotens sempiterne Deus",
+        "relative expansion": "qui nobis sub Sacramento mirabili...",
+        "petition": "tribue, quaesumus",
+        "desired outcome": "ut ... sentiamus",
+        "conclusion": "Per Dominum / Qui vivis et regnas"
+      },
+      "acceptedVariants": [],
+      "hint": "Recurring Roman structure.",
+      "explanation": "This checks architectural recognition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "collect:architecture"
+      ]
+    },
+    {
+      "id": "l34-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does the qui-clause usually do after the invocation?",
+      "stimulus": null,
+      "options": [
+        "expands the divine attribute/action relevant to the petition",
+        "ends the prayer",
+        "creates a vocative",
+        "replaces the petition"
+      ],
+      "expectedAnswer": "expands the divine attribute/action relevant to the petition",
+      "acceptedVariants": [
+        "expands the divine attribute/action relevant to the petition"
+      ],
+      "hint": "Why is the request fitting?",
+      "explanation": "The relative clause grounds the petition.",
+      "difficulty": 1,
+      "sourceId": "corpus-collect-l34",
+      "skills": [
+        "collect:relative"
+      ]
+    },
+    {
+      "id": "l34-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What structural role does tribue play in the Corpus Christi Collect?",
+      "stimulus": null,
+      "options": [
+        "governing petition verb",
+        "relative pronoun",
+        "conclusion marker",
+        "ablative absolute"
+      ],
+      "expectedAnswer": "governing petition verb",
+      "acceptedVariants": [
+        "governing petition verb"
+      ],
+      "hint": "Find the request.",
+      "explanation": "tribue begins the petition proper.",
+      "difficulty": 1,
+      "sourceId": "corpus-collect-l34",
+      "skills": [
+        "collect:petition"
+      ]
+    },
+    {
+      "id": "l34-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does ut ... sentiamus express?",
+      "stimulus": null,
+      "options": [
+        "desired result/outcome",
+        "invocation",
+        "direct address",
+        "past narrative"
+      ],
+      "expectedAnswer": "desired result/outcome",
+      "acceptedVariants": [
+        "desired result/outcome"
+      ],
+      "hint": "Stage 5 syntax is reused.",
+      "explanation": "The ut-clause states the prayed-for result.",
+      "difficulty": 1,
+      "sourceId": "corpus-collect-l34",
+      "skills": [
+        "collect:ut"
+      ]
+    },
+    {
+      "id": "l34-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why is Lesson 34 vocabulary-neutral?",
+      "stimulus": null,
+      "options": [
+        "to force structural reading with already learned Core vocabulary",
+        "because Collects contain no vocabulary",
+        "because syntax is finished",
+        "because translation is forbidden"
+      ],
+      "expectedAnswer": "to force structural reading with already learned Core vocabulary",
+      "acceptedVariants": [
+        "to force structural reading with already learned Core vocabulary"
+      ],
+      "hint": "This is consolidation.",
+      "explanation": "The learner practices architecture rather than acquisition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:consolidation"
+      ]
+    },
+    {
+      "id": "l34-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the purpose of the conclusion block?",
+      "stimulus": null,
+      "options": [
+        "to close the petition through Christ in a stable liturgical formula",
+        "to introduce a new subject unrelated to the prayer",
+        "to create a question",
+        "to list vocabulary"
+      ],
+      "expectedAnswer": "to close the petition through Christ in a stable liturgical formula",
+      "acceptedVariants": [
+        "to close the petition through Christ in a stable liturgical formula"
+      ],
+      "hint": "Reusable syntax block.",
+      "explanation": "Roman conclusions are formulaic and structurally predictable.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "collect:conclusion"
+      ]
+    },
+    {
+      "id": "l34-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the recommended second pass after marking architecture?",
+      "stimulus": null,
+      "options": [
+        "resolve cases, verbs and modifiers inside each move",
+        "start over without structure",
+        "translate only nouns",
+        "ignore subordinate clauses"
+      ],
+      "expectedAnswer": "resolve cases, verbs and modifiers inside each move",
+      "acceptedVariants": [
+        "resolve cases, verbs and modifiers inside each move"
+      ],
+      "hint": "Architecture first, morphology second.",
+      "explanation": "This is the intended reading workflow.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:workflow"
+      ]
+    },
+    {
+      "id": "l34-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does an unfamiliar support word invalidate the Collect reading strategy?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "Structure can remain clear despite glossed support.",
+      "explanation": "The architecture carries the reader through unknown vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:support"
+      ]
+    },
+    {
+      "id": "l34-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Name the standard Latin petition marker meaning 'we beseech'.",
+      "stimulus": null,
+      "expectedAnswer": "quaesumus",
+      "acceptedVariants": [
+        "quaesumus",
+        "Quaesumus"
+      ],
+      "hint": "It recurs in Collects.",
+      "explanation": "quaesumus marks the petition.",
+      "difficulty": 1,
+      "sourceId": "trinity-collect-l34",
+      "skills": [
+        "collect:petition"
+      ]
+    }
+  ],
+  "objectives": [
+    "Identify Roman Collect architecture across multiple prayers.",
+    "Read compressed relative/infinitive/subjunctive syntax without new Core vocabulary.",
+    "Transfer Stage 6 Collect skills to unfamiliar Collects.",
+    "Prepare for the longer periodic syntax of the Canon."
+  ],
+  "checkpoint": {
+    "id": "l34-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l34-e1",
+        "l34-e2",
+        "l34-e3",
+        "l34-e4",
+        "l34-e5",
+        "l34-e6",
+        "l34-e7",
+        "l34-e8",
+        "l34-e9",
+        "l34-e10"
+      ]
+    },
+    "mustKnow": [
+      "invocation",
+      "relative expansion",
+      "petition",
+      "desired outcome",
+      "conclusion",
+      "architecture-first workflow"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

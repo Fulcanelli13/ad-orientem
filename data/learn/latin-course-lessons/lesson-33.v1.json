@@ -1,0 +1,962 @@
+{
+  "version": "latin-course-lesson-33-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 33,
+  "stage": {
+    "number": 7,
+    "title": "Church Latin"
+  },
+  "title": "How the Bible Changed Latin",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 50,
+  "progressionStep": "passage",
+  "grammarFocus": "Biblical Latin; Hebrew and Greek influence",
+  "readingOutcome": "Read Vulgate-shaped coordination, repetition and semantic usage.",
+  "authoringPolicy": {
+    "method": "biblical usage → authentic example → semantic/rhetorical observation → liturgical transfer",
+    "vocabularyPolicy": "Only frozen Lesson 33 vocabulary is introduced.",
+    "authenticTextPolicy": "Examples are Vulgate passages whose diction and repetitions entered Catholic liturgical language.",
+    "copyrightPolicy": "Original pedagogical synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "ovis",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sheep",
+          "fr": "brebis"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "grex",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "flock",
+          "fr": "troupeau"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "semen",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "seed",
+          "fr": "semence"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "timor",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "fear",
+          "fr": "crainte"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "mandatum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "commandment",
+          "fr": "commandement"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "generatio",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "generation / birth",
+          "fr": "génération / naissance"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "sermo",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "word / speech / discourse",
+          "fr": "parole / discours"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "inimicus",
+        "partOfSpeech": "noun/adjective",
+        "gloss": {
+          "en": "enemy / hostile",
+          "fr": "ennemi"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "corona",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "crown",
+          "fr": "couronne"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "lapis",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "stone",
+          "fr": "pierre"
+        },
+        "frozenLesson": 33
+      }
+    ],
+    "recycled": [
+      "ego",
+      "sum",
+      "bonus",
+      "anima",
+      "meus",
+      "do",
+      "pro",
+      "tu",
+      "nolo",
+      "pater",
+      "regnum",
+      "verbum",
+      "Deus",
+      "sapientia",
+      "Dominus",
+      "novus",
+      "vos",
+      "ut",
+      "autem",
+      "sic",
+      "is/ea/id",
+      "fidelis",
+      "usque",
+      "ad",
+      "mors",
+      "vita",
+      "qui/quae/quod",
+      "facio",
+      "in",
+      "suus",
+      "sicut",
+      "omnipotens",
+      "tuus",
+      "de",
+      "caelum",
+      "venio",
+      "homo",
+      "hic/haec/hoc",
+      "et"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "pastor",
+      "forms": [
+        "pastor"
+      ],
+      "gloss": {
+        "en": "shepherd",
+        "fr": "pasteur"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pusillus",
+      "forms": [
+        "pusillus"
+      ],
+      "gloss": {
+        "en": "little / small",
+        "fr": "petit"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "complaceo",
+      "forms": [
+        "complacuit"
+      ],
+      "gloss": {
+        "en": "be pleased",
+        "fr": "se complaire"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "explico",
+      "forms": [
+        "exposuerat"
+      ],
+      "gloss": {
+        "en": "explain / set forth",
+        "fr": "expliquer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "reprobo",
+      "forms": [
+        "reprobaverunt"
+      ],
+      "gloss": {
+        "en": "reject",
+        "fr": "rejeter"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "aedifico",
+      "forms": [
+        "aedificantes"
+      ],
+      "gloss": {
+        "en": "build",
+        "fr": "bâtir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "angulus",
+      "forms": [
+        "anguli"
+      ],
+      "gloss": {
+        "en": "corner",
+        "fr": "angle"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "initium",
+      "forms": [
+        "Initium"
+      ],
+      "gloss": {
+        "en": "beginning",
+        "fr": "commencement"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "diligo",
+      "forms": [
+        "diligatis",
+        "dilexi"
+      ],
+      "gloss": {
+        "en": "love",
+        "fr": "aimer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christi"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "caput",
+      "forms": [
+        "caput"
+      ],
+      "gloss": {
+        "en": "head",
+        "fr": "tête / chef"
+      },
+      "trackedLesson": 36,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vulg-jn10-11-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 10:11",
+      "sourceLatin": "Ego sum pastor bonus. Bonus pastor animam suam dat pro ovibus suis.",
+      "provenanceNote": "Shepherd/sheep semantics become central Christian and liturgical vocabulary."
+    },
+    {
+      "id": "vulg-lk12-32-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 12:32",
+      "sourceLatin": "Nolite timere pusillus grex, quia complacuit Patri vestro dare vobis regnum.",
+      "provenanceNote": "grex and timor appear in a compact ecclesial image."
+    },
+    {
+      "id": "vulg-lk8-11-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 8:11",
+      "sourceLatin": "Semen est verbum Dei.",
+      "provenanceNote": "A direct Semitic/biblical semantic identification: seed = word of God."
+    },
+    {
+      "id": "vulg-ps110-10-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 110:10",
+      "sourceLatin": "Initium sapientiae timor Domini.",
+      "provenanceNote": "timor Domini is a stable biblical semantic phrase."
+    },
+    {
+      "id": "vulg-jn13-34-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 13:34",
+      "sourceLatin": "Mandatum novum do vobis: ut diligatis invicem, sicut dilexi vos.",
+      "provenanceNote": "mandatum develops strong Christian semantic value in Gospel Latin."
+    },
+    {
+      "id": "vulg-mt1-18-generatio-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 1:18",
+      "sourceLatin": "Christi autem generatio sic erat.",
+      "provenanceNote": "generatio is read in its biblical genealogy/birth context."
+    },
+    {
+      "id": "wis18-sermo-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Sapientia 18:15",
+      "sourceLatin": "omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
+      "provenanceNote": "sermo carries the biblical sense of word/speech in sacred prose."
+    },
+    {
+      "id": "vulg-mt13-28-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 13:28",
+      "sourceLatin": "Inimicus homo hoc fecit.",
+      "provenanceNote": "inimicus appears as a substantivized adjective/noun: enemy."
+    },
+    {
+      "id": "vulg-apoc2-10-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Apocalypsis 2:10",
+      "sourceLatin": "Esto fidelis usque ad mortem, et dabo tibi coronam vitae.",
+      "provenanceNote": "corona vitae shows a biblical metaphor that passes into Christian prayer and hagiography."
+    },
+    {
+      "id": "vulg-ps117-22-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 117:22",
+      "sourceLatin": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
+      "provenanceNote": "lapis and repeated demonstrative/relative structure entered Christian typological reading."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; Lesson 33 adds biblical semantics and rhetorical habits, not a new case system.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "biblicalLatinFramework": {
+    "features": [
+      "Repeated coordination and parallel clauses often reflect Semitic rhetorical patterns.",
+      "Common Latin words acquire stable biblical-Christian semantic ranges: grex, semen, timor, mandatum, corona, lapis.",
+      "Concrete biblical images become theological/liturgical vocabulary without ceasing to be ordinary Latin nouns.",
+      "Meaning must be learned from recurrent scriptural context, not only from a classical dictionary gloss."
+    ],
+    "readingRule": "When a familiar-looking word seems semantically stronger or more theological than its basic gloss, inspect the biblical phrase in which Church usage learned it."
+  },
+  "learningBlocks": [
+    {
+      "id": "l33-b1",
+      "type": "concept",
+      "title": "The Vulgate changed what familiar Latin words could mean",
+      "learnerCopy": {
+        "en": "Church Latin does not merely borrow biblical quotations. Repeated scriptural use gives ordinary words stable Christian associations: flock, seed, fear of the Lord, commandment, crown, stone.",
+        "fr": "Le latin de l'Église ne se contente pas de citer la Bible. L'usage scripturaire répété donne à des mots ordinaires des associations chrétiennes stables : troupeau, semence, crainte du Seigneur, commandement, couronne, pierre."
+      }
+    },
+    {
+      "id": "l33-b2",
+      "type": "semantic",
+      "title": "grex and ovis become ecclesial language",
+      "sourceId": "vulg-lk12-32-l33",
+      "learnerCopy": {
+        "en": "A flock is still literally a flock, but biblical repetition makes grex/oves natural language for the faithful and the Church. Read the literal image first, then the inherited theological resonance.",
+        "fr": "Un troupeau reste littéralement un troupeau, mais la répétition biblique fait de grex/oves un langage naturel pour les fidèles et l'Église. Lisez d'abord l'image littérale, puis sa résonance théologique héritée."
+      }
+    },
+    {
+      "id": "l33-b3",
+      "type": "semantic",
+      "title": "Semen est verbum Dei",
+      "sourceId": "vulg-lk8-11-l33",
+      "learnerCopy": {
+        "en": "Biblical Latin frequently states metaphoric identity directly. semen remains 'seed', but in this sentence the parable assigns it a scriptural referent: the word of God.",
+        "fr": "Le latin biblique énonce souvent directement une identité métaphorique. semen reste « semence », mais la parabole lui attribue ici un référent scripturaire : la parole de Dieu."
+      }
+    },
+    {
+      "id": "l33-b4",
+      "type": "semantic",
+      "title": "timor Domini is a phrase, not a dictionary accident",
+      "sourceId": "vulg-ps110-10-l33",
+      "learnerCopy": {
+        "en": "timor can mean fear, but timor Domini is a stable biblical phrase whose devotional meaning must be learned from Scripture and tradition, not flattened into modern emotional vocabulary.",
+        "fr": "timor peut signifier crainte, mais timor Domini est une expression biblique stable dont le sens dévotionnel s'apprend par l'Écriture et la tradition, non en la réduisant au vocabulaire émotionnel moderne."
+      }
+    },
+    {
+      "id": "l33-b5",
+      "type": "rhetoric",
+      "title": "Repetition is often structural, not clumsy",
+      "learnerCopy": {
+        "en": "Biblical Latin may repeat nouns, conjunctions and parallel formulas more than polished classical prose. Preserve the repetition while parsing because it often carries theological or rhetorical structure.",
+        "fr": "Le latin biblique répète parfois noms, conjonctions et formules parallèles davantage qu'une prose classique polie. Conservez cette répétition pendant l'analyse : elle porte souvent la structure théologique ou rhétorique."
+      }
+    },
+    {
+      "id": "l33-b6",
+      "type": "transfer",
+      "title": "These biblical meanings migrate into the liturgy",
+      "learnerCopy": {
+        "en": "Once you know the scriptural range of corona, lapis, grex, mandatum or inimicus, later antiphons, propers, saints' texts and devotional prayers become easier because they reuse an inherited semantic world.",
+        "fr": "Une fois connu le champ scripturaire de corona, lapis, grex, mandatum ou inimicus, les antiennes, propres, textes des saints et prières dévotionnelles deviennent plus lisibles parce qu'ils réemploient le même univers sémantique."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l33-p1",
+      "sourceId": "vulg-jn10-11-l33",
+      "sourceLatin": "Ego sum pastor bonus. Bonus pastor animam suam dat pro ovibus suis.",
+      "instructionalDisplay": "Ego sum pastor bonus. Bonus pastor animam suam dat pro ovibus suis.",
+      "translation": {
+        "en": "I am the good shepherd. The good shepherd giveth his life for his sheep.",
+        "fr": "Je suis le bon pasteur. Le bon pasteur donne sa vie pour ses brebis."
+      },
+      "targetLemmas": [
+        "ego",
+        "sum",
+        "bonus",
+        "anima",
+        "suus",
+        "do",
+        "pro",
+        "ovis"
+      ],
+      "supportLemmas": [
+        "pastor"
+      ]
+    },
+    {
+      "id": "l33-p2",
+      "sourceId": "vulg-lk12-32-l33",
+      "sourceLatin": "Nolite timere pusillus grex, quia complacuit Patri vestro dare vobis regnum.",
+      "instructionalDisplay": "Nolite timere pusillus grex, quia complacuit Patri vestro dare vobis regnum.",
+      "translation": {
+        "en": "Fear not, little flock, for it hath pleased your Father to give you a kingdom.",
+        "fr": "Ne craignez point, petit troupeau, car il a plu à votre Père de vous donner le royaume."
+      },
+      "targetLemmas": [
+        "nolo",
+        "timor",
+        "grex",
+        "pater",
+        "vos",
+        "do",
+        "regnum"
+      ],
+      "supportLemmas": [
+        "pusillus",
+        "complaceo"
+      ]
+    },
+    {
+      "id": "l33-p3",
+      "sourceId": "vulg-lk8-11-l33",
+      "sourceLatin": "Semen est verbum Dei.",
+      "instructionalDisplay": "Semen est verbum Dei.",
+      "translation": {
+        "en": "The seed is the word of God.",
+        "fr": "La semence est la parole de Dieu."
+      },
+      "targetLemmas": [
+        "semen",
+        "sum",
+        "verbum",
+        "Deus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l33-p4",
+      "sourceId": "vulg-ps110-10-l33",
+      "sourceLatin": "Initium sapientiae timor Domini.",
+      "instructionalDisplay": "Initium sapientiae timor Domini.",
+      "translation": {
+        "en": "The fear of the Lord is the beginning of wisdom.",
+        "fr": "La crainte du Seigneur est le commencement de la sagesse."
+      },
+      "targetLemmas": [
+        "sapientia",
+        "timor",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "initium"
+      ]
+    },
+    {
+      "id": "l33-p5",
+      "sourceId": "vulg-jn13-34-l33",
+      "sourceLatin": "Mandatum novum do vobis: ut diligatis invicem, sicut dilexi vos.",
+      "instructionalDisplay": "Mandatum novum do vobis: ut diligatis invicem, sicut dilexi vos.",
+      "translation": {
+        "en": "A new commandment I give unto you: that you love one another, as I have loved you.",
+        "fr": "Je vous donne un commandement nouveau : aimez-vous les uns les autres comme je vous ai aimés."
+      },
+      "targetLemmas": [
+        "mandatum",
+        "novus",
+        "do",
+        "vos",
+        "ut",
+        "sicut"
+      ],
+      "supportLemmas": [
+        "diligo"
+      ]
+    },
+    {
+      "id": "l33-p6",
+      "sourceId": "vulg-mt1-18-generatio-l33",
+      "sourceLatin": "Christi autem generatio sic erat.",
+      "instructionalDisplay": "Christi autem generatio sic erat.",
+      "translation": {
+        "en": "Now the generation of Christ was in this wise.",
+        "fr": "Voici comment arriva la naissance du Christ."
+      },
+      "targetLemmas": [
+        "autem",
+        "generatio",
+        "sic",
+        "sum"
+      ],
+      "supportLemmas": [
+        "Christus"
+      ]
+    },
+    {
+      "id": "l33-p7",
+      "sourceId": "wis18-sermo-l33",
+      "sourceLatin": "omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
+      "instructionalDisplay": "omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
+      "translation": {
+        "en": "Thy almighty Word, O Lord, came down from heaven from the royal throne.",
+        "fr": "Votre parole toute-puissante, Seigneur, vint du ciel, du trône royal."
+      },
+      "targetLemmas": [
+        "omnipotens",
+        "sermo",
+        "tuus",
+        "Dominus",
+        "de",
+        "caelum",
+        "venio"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l33-p8",
+      "sourceId": "vulg-mt13-28-l33",
+      "sourceLatin": "Inimicus homo hoc fecit.",
+      "instructionalDisplay": "Inimicus homo hoc fecit.",
+      "translation": {
+        "en": "An enemy hath done this.",
+        "fr": "C'est un ennemi qui a fait cela."
+      },
+      "targetLemmas": [
+        "inimicus",
+        "homo",
+        "hic/haec/hoc",
+        "facio"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l33-p9",
+      "sourceId": "vulg-apoc2-10-l33",
+      "sourceLatin": "Esto fidelis usque ad mortem, et dabo tibi coronam vitae.",
+      "instructionalDisplay": "Esto fidelis usque ad mortem, et dabo tibi coronam vitae.",
+      "translation": {
+        "en": "Be thou faithful until death, and I will give thee the crown of life.",
+        "fr": "Sois fidèle jusqu'à la mort, et je te donnerai la couronne de vie."
+      },
+      "targetLemmas": [
+        "sum",
+        "fidelis",
+        "usque",
+        "ad",
+        "mors",
+        "et",
+        "do",
+        "tu",
+        "corona",
+        "vita"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l33-p10",
+      "sourceId": "vulg-ps117-22-l33",
+      "sourceLatin": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
+      "instructionalDisplay": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
+      "translation": {
+        "en": "The stone which the builders rejected; the same is become the head of the corner.",
+        "fr": "La pierre qu'ont rejetée les bâtisseurs est devenue la pierre d'angle."
+      },
+      "targetLemmas": [
+        "lapis",
+        "qui/quae/quod",
+        "hic/haec/hoc",
+        "facio",
+        "in"
+      ],
+      "supportLemmas": [
+        "reprobo",
+        "aedifico",
+        "angulus",
+        "caput"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l33-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the main reading lesson of biblical semantic vocabulary?",
+      "stimulus": null,
+      "options": [
+        "learn recurring scriptural phrase-context, not only a basic dictionary gloss",
+        "replace every word with a theological paraphrase",
+        "ignore literal meaning",
+        "assume every noun is symbolic"
+      ],
+      "expectedAnswer": "learn recurring scriptural phrase-context, not only a basic dictionary gloss",
+      "acceptedVariants": [
+        "learn recurring scriptural phrase-context, not only a basic dictionary gloss"
+      ],
+      "hint": "Literal + inherited range.",
+      "explanation": "Biblical repetition stabilizes Christian meanings.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "biblical-latin:semantics"
+      ]
+    },
+    {
+      "id": "l33-e2",
+      "exerciseType": "matching",
+      "prompt": "Match biblical noun to meaning.",
+      "stimulus": [
+        "ovis",
+        "grex",
+        "semen",
+        "timor",
+        "mandatum"
+      ],
+      "expectedAnswer": {
+        "ovis": "sheep",
+        "grex": "flock",
+        "semen": "seed",
+        "timor": "fear",
+        "mandatum": "commandment"
+      },
+      "acceptedVariants": [],
+      "hint": "First half of Lesson 33 vocabulary.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l33"
+      ]
+    },
+    {
+      "id": "l33-e3",
+      "exerciseType": "matching",
+      "prompt": "Match biblical noun to meaning.",
+      "stimulus": [
+        "generatio",
+        "sermo",
+        "inimicus",
+        "corona",
+        "lapis"
+      ],
+      "expectedAnswer": {
+        "generatio": "generation / birth",
+        "sermo": "word / speech",
+        "inimicus": "enemy",
+        "corona": "crown",
+        "lapis": "stone"
+      },
+      "acceptedVariants": [],
+      "hint": "Second half of Lesson 33 vocabulary.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l33"
+      ]
+    },
+    {
+      "id": "l33-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does Semen est verbum Dei demonstrate?",
+      "stimulus": null,
+      "options": [
+        "direct metaphorical identification in biblical discourse",
+        "an ablative absolute",
+        "a gerundive",
+        "indirect statement"
+      ],
+      "expectedAnswer": "direct metaphorical identification in biblical discourse",
+      "acceptedVariants": [
+        "direct metaphorical identification in biblical discourse"
+      ],
+      "hint": "Seed = word in the parable.",
+      "explanation": "The sentence assigns a scriptural referent to semen.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk8-11-l33",
+      "skills": [
+        "biblical-latin:semantics"
+      ]
+    },
+    {
+      "id": "l33-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why should timor Domini be learned as a phrase?",
+      "stimulus": null,
+      "options": [
+        "its stable biblical/devotional sense exceeds a flat modern emotional gloss",
+        "it has no Latin grammar",
+        "timor means joy",
+        "Domini is vocative"
+      ],
+      "expectedAnswer": "its stable biblical/devotional sense exceeds a flat modern emotional gloss",
+      "acceptedVariants": [
+        "its stable biblical/devotional sense exceeds a flat modern emotional gloss"
+      ],
+      "hint": "Phrase context matters.",
+      "explanation": "Stable scriptural collocations shape Church Latin.",
+      "difficulty": 2,
+      "sourceId": "vulg-ps110-10-l33",
+      "skills": [
+        "biblical-latin:phrase"
+      ]
+    },
+    {
+      "id": "l33-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does corona vitae mean literally?",
+      "stimulus": null,
+      "options": [
+        "crown of life",
+        "stone of life",
+        "commandment of life",
+        "flock of life"
+      ],
+      "expectedAnswer": "crown of life",
+      "acceptedVariants": [
+        "crown of life"
+      ],
+      "hint": "Genitive vitae.",
+      "explanation": "The biblical metaphor remains grammatically literal.",
+      "difficulty": 1,
+      "sourceId": "vulg-apoc2-10-l33",
+      "skills": [
+        "vocabulary:corona",
+        "case:genitive"
+      ]
+    },
+    {
+      "id": "l33-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is Lapidem in Psalm 117:22?",
+      "stimulus": null,
+      "options": [
+        "accusative",
+        "nominative",
+        "dative",
+        "ablative"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "It is resumed by quem.",
+      "explanation": "Lapidem is accusative singular of lapis.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps117-22-l33",
+      "skills": [
+        "vocabulary:lapis",
+        "case:accusative"
+      ]
+    },
+    {
+      "id": "l33-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should a reader do with biblical repetition?",
+      "stimulus": null,
+      "options": [
+        "preserve it while parsing because it often carries structure",
+        "delete it as bad style",
+        "translate only the first occurrence",
+        "assume it is scribal error"
+      ],
+      "expectedAnswer": "preserve it while parsing because it often carries structure",
+      "acceptedVariants": [
+        "preserve it while parsing because it often carries structure"
+      ],
+      "hint": "Rhetoric matters.",
+      "explanation": "Repetition is often deliberate and structural.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "biblical-latin:rhetoric"
+      ]
+    },
+    {
+      "id": "l33-e9",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'flock'.",
+      "stimulus": null,
+      "expectedAnswer": "grex",
+      "acceptedVariants": [
+        "grex",
+        "Grex"
+      ],
+      "hint": "Little flock.",
+      "explanation": "grex means flock.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk12-32-l33",
+      "skills": [
+        "vocabulary:grex"
+      ]
+    },
+    {
+      "id": "l33-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'commandment'.",
+      "stimulus": null,
+      "expectedAnswer": "mandatum",
+      "acceptedVariants": [
+        "mandatum",
+        "Mandatum"
+      ],
+      "hint": "Mandatum novum.",
+      "explanation": "mandatum means commandment.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn13-34-l33",
+      "skills": [
+        "vocabulary:mandatum"
+      ]
+    }
+  ],
+  "objectives": [
+    "Recognize biblical semantic extensions in Church Latin.",
+    "Read coordination/repetition as rhetoric rather than error.",
+    "Learn all ten frozen Lesson 33 lemmas.",
+    "Transfer Vulgate vocabulary into later liturgical reading."
+  ],
+  "checkpoint": {
+    "id": "l33-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l33-e1",
+        "l33-e2",
+        "l33-e3",
+        "l33-e4",
+        "l33-e5",
+        "l33-e6",
+        "l33-e7",
+        "l33-e8",
+        "l33-e9",
+        "l33-e10"
+      ]
+    },
+    "mustKnow": [
+      "biblical semantic range",
+      "repetition as structure",
+      "core biblical nouns",
+      "literal image plus theological resonance"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "ovis",
+      "grex",
+      "semen",
+      "timor",
+      "mandatum",
+      "generatio",
+      "sermo",
+      "inimicus",
+      "corona",
+      "lapis"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 10,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

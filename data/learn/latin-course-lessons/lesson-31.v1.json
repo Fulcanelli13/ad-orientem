@@ -1,0 +1,915 @@
+{
+  "version": "latin-course-lesson-31-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 31,
+  "stage": {
+    "number": 7,
+    "title": "Church Latin"
+  },
+  "title": "The Reader’s Toolkit",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 50,
+  "progressionStep": "passage",
+  "grammarFocus": "Questions, indefinites, impersonal and defective forms",
+  "readingOutcome": "Handle interrogatives, indefinites and high-frequency irregular reading problems.",
+  "authoringPolicy": {
+    "method": "reader problem → authentic example → contrast → retrieval → passage reading",
+    "vocabularyPolicy": "Only frozen Lesson 31 vocabulary is introduced; earlier pronoun families are deliberately recycled.",
+    "authenticTextPolicy": "Question particles and irregular verbs are anchored in Gospel/Vulgate clauses.",
+    "copyrightPolicy": "Original pedagogical synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "fero",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "bear / carry / bring",
+          "fr": "porter / apporter"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "volo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "will / wish / want",
+          "fr": "vouloir"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "nolo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "be unwilling / not want",
+          "fr": "ne pas vouloir"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "nihil",
+        "partOfSpeech": "pronoun/noun",
+        "gloss": {
+          "en": "nothing",
+          "fr": "rien"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "iubeo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "command / order",
+          "fr": "ordonner"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "quis/quid",
+        "partOfSpeech": "interrogative pronoun",
+        "gloss": {
+          "en": "who? / what?",
+          "fr": "qui ? / quoi ?"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "aliquis/aliquid",
+        "partOfSpeech": "indefinite pronoun",
+        "gloss": {
+          "en": "someone / something",
+          "fr": "quelqu'un / quelque chose"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "nemo",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "no one",
+          "fr": "personne"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "numquid",
+        "partOfSpeech": "interrogative particle",
+        "gloss": {
+          "en": "surely not? / whether?",
+          "fr": "est-ce que... ? / n'est-ce pas ?"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "nonne",
+        "partOfSpeech": "interrogative particle",
+        "gloss": {
+          "en": "surely...? / is it not?",
+          "fr": "n'est-ce pas ?"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "quomodo",
+        "partOfSpeech": "interrogative adverb",
+        "gloss": {
+          "en": "how?",
+          "fr": "comment ?"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "quaero",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "seek / ask",
+          "fr": "chercher / demander"
+        },
+        "frozenLesson": 31
+      },
+      {
+        "lemma": "interrogo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "ask / question",
+          "fr": "interroger"
+        },
+        "frozenLesson": 31
+      }
+    ],
+    "recycled": [
+      "qui/quae/quod",
+      "quidam",
+      "quisque",
+      "quicumque",
+      "ego",
+      "tu",
+      "nos",
+      "vos",
+      "is/ea/id",
+      "hic/haec/hoc",
+      "sum",
+      "cum",
+      "cognosco",
+      "et",
+      "cor",
+      "noster",
+      "in",
+      "Dominus",
+      "servio",
+      "duo",
+      "habeo",
+      "unus",
+      "venio",
+      "post",
+      "se",
+      "sequor",
+      "do",
+      "vita",
+      "aeternus",
+      "fio",
+      "quoniam",
+      "non",
+      "dum",
+      "loquor",
+      "via",
+      "possum",
+      "si",
+      "suus",
+      "per",
+      "manus",
+      "sanctus",
+      "angelus",
+      "tuus",
+      "vivo",
+      "tollo"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "ardeo",
+      "forms": [
+        "ardens"
+      ],
+      "gloss": {
+        "en": "burn",
+        "fr": "brûler"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "abnego",
+      "forms": [
+        "abneget"
+      ],
+      "gloss": {
+        "en": "deny / renounce",
+        "fr": "renoncer / se renier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "odio",
+      "forms": [
+        "odio habebit"
+      ],
+      "gloss": {
+        "en": "hate",
+        "fr": "haïr"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "alter",
+      "forms": [
+        "alterum"
+      ],
+      "gloss": {
+        "en": "the other / one of two",
+        "fr": "l'autre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "contemno",
+      "forms": [
+        "contemnet"
+      ],
+      "gloss": {
+        "en": "despise",
+        "fr": "mépriser"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mortuus",
+      "forms": [
+        "mortuis"
+      ],
+      "gloss": {
+        "en": "the dead",
+        "fr": "les morts"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vir",
+      "forms": [
+        "virum"
+      ],
+      "gloss": {
+        "en": "man / husband",
+        "fr": "homme / mari"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "crux",
+      "forms": [
+        "crucem"
+      ],
+      "gloss": {
+        "en": "cross",
+        "fr": "croix"
+      },
+      "trackedLesson": 39,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vulg-lk24-5-l31",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 24:5",
+      "sourceLatin": "Quid quaeritis viventem cum mortuis?",
+      "provenanceNote": "quid and quaeritis anchor interrogative reading."
+    },
+    {
+      "id": "vulg-lk1-34-l31",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 1:34",
+      "sourceLatin": "Quomodo fiet istud, quoniam virum non cognosco?",
+      "provenanceNote": "quomodo introduces a direct question; the clause recycles cognosco."
+    },
+    {
+      "id": "vulg-jn6-68-l31",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 6:68",
+      "sourceLatin": "Numquid et vos vultis abire?",
+      "provenanceNote": "numquid marks a question whose pragmatic expectation matters more than a rigid English particle."
+    },
+    {
+      "id": "vulg-lk24-32-l31",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 24:32",
+      "sourceLatin": "Nonne cor nostrum ardens erat in nobis, dum loqueretur in via?",
+      "provenanceNote": "nonne expects confirmation and contrasts with numquid."
+    },
+    {
+      "id": "vulg-mt6-24-l31",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 6:24",
+      "sourceLatin": "Nemo potest duobus dominis servire.",
+      "provenanceNote": "nemo is an indefinite negative pronoun."
+    },
+    {
+      "id": "vulg-mt16-24-l31",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 16:24",
+      "sourceLatin": "Si quis vult post me venire, abneget semetipsum, et tollat crucem suam, et sequatur me.",
+      "provenanceNote": "quis and vult combine indefinite and irregular-verb reading."
+    },
+    {
+      "id": "canon-iube-l31",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Supplices te rogamus",
+      "sourceLatin": "iube haec perferri per manus sancti Angeli tui",
+      "provenanceNote": "iube gives the high-frequency imperative of iubeo in the Canon."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; interrogative/indefinite forms are resolved by case and syntactic role, not English word order.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "readerToolkitFramework": {
+    "questionSignals": [
+      {
+        "form": "quis/quid",
+        "function": "interrogative pronoun: who?/what?"
+      },
+      {
+        "form": "numquid",
+        "function": "question particle often anticipating a negative answer or expressing surprise"
+      },
+      {
+        "form": "nonne",
+        "function": "question particle normally anticipating confirmation"
+      },
+      {
+        "form": "quomodo",
+        "function": "how?"
+      }
+    ],
+    "indefinites": [
+      "aliquis/aliquid",
+      "quidam",
+      "quisque",
+      "quicumque",
+      "nemo"
+    ],
+    "irregularVerbs": [
+      "fero",
+      "volo",
+      "nolo",
+      "iubeo"
+    ],
+    "rule": "Resolve form, case and clause function before choosing an idiomatic question or indefinite translation."
+  },
+  "pronounSpiral": {
+    "lesson": 31,
+    "focus": "Extension to quis/quid, aliquis, quidam, quisque, quicumque and interrogative/indefinite reading.",
+    "retrievalFamilies": [
+      "personal",
+      "reflexive",
+      "is/ea/id",
+      "relative",
+      "demonstrative/intensive",
+      "interrogative/indefinite"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l31-b1",
+      "type": "concept",
+      "title": "Questions have their own signal words",
+      "learnerCopy": {
+        "en": "By Lesson 31, the difficulty is rarely basic case recognition. The problem is identifying what kind of word you are seeing: interrogative quis/quid, indefinite aliquis, negative nemo, or a question particle such as numquid or nonne.",
+        "fr": "À la leçon 31, la difficulté n'est plus le simple repérage des cas. Il faut identifier la nature du mot : interrogatif quis/quid, indéfini aliquis, négatif nemo, ou particule interrogative comme numquid ou nonne."
+      }
+    },
+    {
+      "id": "l31-b2",
+      "type": "contrast",
+      "title": "numquid and nonne are not interchangeable",
+      "sourceId": "vulg-jn6-68-l31",
+      "learnerCopy": {
+        "en": "Question particles carry pragmatic expectation. numquid can suggest doubt or an expected negative; nonne normally invites confirmation. Translate the question naturally after reading its force.",
+        "fr": "Les particules interrogatives portent une attente pragmatique. numquid peut suggérer le doute ou une réponse négative ; nonne appelle normalement la confirmation. Traduisez naturellement après avoir reconnu cette force."
+      }
+    },
+    {
+      "id": "l31-b3",
+      "type": "authentic-example",
+      "title": "Quid quaeritis?",
+      "sourceId": "vulg-lk24-5-l31",
+      "learnerCopy": {
+        "en": "quid is not merely a dictionary word 'what': its form and clause role matter. Here it functions inside the direct question governed by quaeritis.",
+        "fr": "quid n'est pas seulement le mot de dictionnaire « quoi » : sa forme et sa fonction comptent. Ici il appartient à la question directe régie par quaeritis."
+      }
+    },
+    {
+      "id": "l31-b4",
+      "type": "indefinite",
+      "title": "quis can become indefinite",
+      "sourceId": "vulg-mt16-24-l31",
+      "learnerCopy": {
+        "en": "After si, quis commonly has indefinite force: 'if anyone'. This is why a reader must recognize context, not mechanically translate every quis as a direct question.",
+        "fr": "Après si, quis prend couramment une valeur indéfinie : « si quelqu'un ». Il faut donc lire le contexte, non traduire mécaniquement tout quis comme une question directe."
+      }
+    },
+    {
+      "id": "l31-b5",
+      "type": "irregular",
+      "title": "Irregular high-frequency verbs must be recognized whole",
+      "learnerCopy": {
+        "en": "volo, nolo, fero and iubeo occur too often to parse as exceptions from scratch. Learn their common forms as reader vocabulary and then analyze tense/person normally.",
+        "fr": "volo, nolo, fero et iubeo sont trop fréquents pour être redécouverts comme exceptions à chaque occurrence. Apprenez leurs formes courantes comme vocabulaire de lecteur, puis analysez normalement temps et personne."
+      }
+    },
+    {
+      "id": "l31-b6",
+      "type": "retrieval",
+      "title": "The final pronoun spiral",
+      "learnerCopy": {
+        "en": "The pronoun system is now complete enough for ordinary Church-Latin reading. The task is family selection plus case/function—not memorizing another isolated table.",
+        "fr": "Le système pronominal est désormais assez complet pour la lecture ordinaire du latin ecclésiastique. Le travail consiste à choisir la famille puis le cas et la fonction, non à mémoriser encore un tableau isolé."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l31-p1",
+      "sourceId": "vulg-lk24-5-l31",
+      "sourceLatin": "Quid quaeritis viventem cum mortuis?",
+      "instructionalDisplay": "Quid quaeritis viventem cum mortuis?",
+      "translation": {
+        "en": "Why seek you the living with the dead?",
+        "fr": "Pourquoi cherchez-vous parmi les morts celui qui est vivant ?"
+      },
+      "targetLemmas": [
+        "quis/quid",
+        "quaero",
+        "cum",
+        "vivo"
+      ],
+      "supportLemmas": [
+        "mortuus"
+      ]
+    },
+    {
+      "id": "l31-p2",
+      "sourceId": "vulg-lk1-34-l31",
+      "sourceLatin": "Quomodo fiet istud, quoniam virum non cognosco?",
+      "instructionalDisplay": "Quomodo fiet istud, quoniam virum non cognosco?",
+      "translation": {
+        "en": "How shall this be done, because I know not man?",
+        "fr": "Comment cela se fera-t-il, puisque je ne connais point d'homme ?"
+      },
+      "targetLemmas": [
+        "quomodo",
+        "fio",
+        "hic/haec/hoc",
+        "quoniam",
+        "non",
+        "cognosco"
+      ],
+      "supportLemmas": [
+        "vir"
+      ]
+    },
+    {
+      "id": "l31-p3",
+      "sourceId": "vulg-jn6-68-l31",
+      "sourceLatin": "Numquid et vos vultis abire?",
+      "instructionalDisplay": "Numquid et vos vultis abire?",
+      "translation": {
+        "en": "Will you also go away?",
+        "fr": "Voulez-vous partir, vous aussi ?"
+      },
+      "targetLemmas": [
+        "numquid",
+        "et",
+        "vos",
+        "volo"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l31-p4",
+      "sourceId": "vulg-lk24-32-l31",
+      "sourceLatin": "Nonne cor nostrum ardens erat in nobis, dum loqueretur in via?",
+      "instructionalDisplay": "Nonne cor nostrum ardens erat in nobis, dum loqueretur in via?",
+      "translation": {
+        "en": "Was not our heart burning within us, whilst He spoke in the way?",
+        "fr": "Notre cœur n'était-il pas brûlant en nous, tandis qu'il nous parlait en chemin ?"
+      },
+      "targetLemmas": [
+        "nonne",
+        "cor",
+        "noster",
+        "sum",
+        "in",
+        "nos",
+        "dum",
+        "loquor",
+        "via"
+      ],
+      "supportLemmas": [
+        "ardeo"
+      ]
+    },
+    {
+      "id": "l31-p5",
+      "sourceId": "vulg-mt6-24-l31",
+      "sourceLatin": "Nemo potest duobus dominis servire.",
+      "instructionalDisplay": "Nemo potest duobus dominis servire.",
+      "translation": {
+        "en": "No man can serve two masters.",
+        "fr": "Nul ne peut servir deux maîtres."
+      },
+      "targetLemmas": [
+        "nemo",
+        "possum",
+        "duo",
+        "Dominus",
+        "servio"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l31-p6",
+      "sourceId": "vulg-mt16-24-l31",
+      "sourceLatin": "Si quis vult post me venire, abneget semetipsum, et tollat crucem suam, et sequatur me.",
+      "instructionalDisplay": "Si quis vult post me venire, abneget semetipsum, et tollat crucem suam, et sequatur me.",
+      "translation": {
+        "en": "If any man will come after Me, let him deny himself, take up his cross, and follow Me.",
+        "fr": "Si quelqu'un veut venir après moi, qu'il renonce à lui-même, prenne sa croix et me suive."
+      },
+      "targetLemmas": [
+        "si",
+        "quis/quid",
+        "volo",
+        "post",
+        "ego",
+        "venio",
+        "se",
+        "et",
+        "suus",
+        "sequor",
+        "tollo"
+      ],
+      "supportLemmas": [
+        "abnego",
+        "crux"
+      ]
+    },
+    {
+      "id": "l31-p7",
+      "sourceId": "canon-iube-l31",
+      "sourceLatin": "iube haec perferri per manus sancti Angeli tui",
+      "instructionalDisplay": "iube haec perferri per manus sancti Angeli tui",
+      "translation": {
+        "en": "command these things to be carried by the hands of Thy holy Angel",
+        "fr": "ordonnez que ces choses soient portées par les mains de votre saint Ange"
+      },
+      "targetLemmas": [
+        "iubeo",
+        "hic/haec/hoc",
+        "per",
+        "manus",
+        "sanctus",
+        "angelus",
+        "tuus"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l31-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does quis/quid signal in a direct question?",
+      "stimulus": null,
+      "options": [
+        "who? / what?",
+        "because",
+        "therefore",
+        "with"
+      ],
+      "expectedAnswer": "who? / what?",
+      "acceptedVariants": [
+        "who? / what?"
+      ],
+      "hint": "Interrogative family.",
+      "explanation": "quis/quid is the basic interrogative pronoun.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronoun:interrogative"
+      ]
+    },
+    {
+      "id": "l31-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What force does quis have after si in Si quis vult...?",
+      "stimulus": null,
+      "options": [
+        "indefinite: anyone",
+        "direct question: who?",
+        "negative: no one",
+        "relative: who"
+      ],
+      "expectedAnswer": "indefinite: anyone",
+      "acceptedVariants": [
+        "indefinite: anyone"
+      ],
+      "hint": "Context changes force.",
+      "explanation": "After si, quis often means anyone.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt16-24-l31",
+      "skills": [
+        "pronoun:indefinite"
+      ]
+    },
+    {
+      "id": "l31-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which particle normally expects confirmation?",
+      "stimulus": null,
+      "options": [
+        "nonne",
+        "numquid",
+        "quomodo",
+        "nihil"
+      ],
+      "expectedAnswer": "nonne",
+      "acceptedVariants": [
+        "nonne"
+      ],
+      "hint": "Think 'is it not?'.",
+      "explanation": "nonne normally invites a yes/confirmation.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "question:particle"
+      ]
+    },
+    {
+      "id": "l31-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which particle can suggest an expected negative or surprised question?",
+      "stimulus": null,
+      "options": [
+        "numquid",
+        "nonne",
+        "quidem",
+        "itaque"
+      ],
+      "expectedAnswer": "numquid",
+      "acceptedVariants": [
+        "numquid"
+      ],
+      "hint": "Compare John 6:68.",
+      "explanation": "numquid often has negative/surprised expectation.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn6-68-l31",
+      "skills": [
+        "question:particle"
+      ]
+    },
+    {
+      "id": "l31-e5",
+      "exerciseType": "matching",
+      "prompt": "Match irregular verb to meaning.",
+      "stimulus": [
+        "fero",
+        "volo",
+        "nolo",
+        "iubeo"
+      ],
+      "expectedAnswer": {
+        "fero": "bear / carry / bring",
+        "volo": "will / wish / want",
+        "nolo": "not want / be unwilling",
+        "iubeo": "command / order"
+      },
+      "acceptedVariants": [],
+      "hint": "Reader vocabulary.",
+      "explanation": "These high-frequency irregulars should be recognized quickly.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l31"
+      ]
+    },
+    {
+      "id": "l31-e6",
+      "exerciseType": "matching",
+      "prompt": "Match indefinite/question item to meaning.",
+      "stimulus": [
+        "aliquis/aliquid",
+        "nemo",
+        "nihil",
+        "quomodo"
+      ],
+      "expectedAnswer": {
+        "aliquis/aliquid": "someone / something",
+        "nemo": "no one",
+        "nihil": "nothing",
+        "quomodo": "how?"
+      },
+      "acceptedVariants": [],
+      "hint": "Different semantic families.",
+      "explanation": "This checks toolkit vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l31"
+      ]
+    },
+    {
+      "id": "l31-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does vult mean in Si quis vult...?",
+      "stimulus": null,
+      "options": [
+        "wants / wills",
+        "carries",
+        "commands",
+        "asks"
+      ],
+      "expectedAnswer": "wants / wills",
+      "acceptedVariants": [
+        "wants / wills"
+      ],
+      "hint": "Lemma volo.",
+      "explanation": "vult is third-person singular of volo.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt16-24-l31",
+      "skills": [
+        "vocabulary:volo"
+      ]
+    },
+    {
+      "id": "l31-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does iube mean in the Canon?",
+      "stimulus": null,
+      "options": [
+        "command!",
+        "carry!",
+        "pray!",
+        "know!"
+      ],
+      "expectedAnswer": "command!",
+      "acceptedVariants": [
+        "command!"
+      ],
+      "hint": "Lemma iubeo.",
+      "explanation": "iube is the imperative of iubeo.",
+      "difficulty": 1,
+      "sourceId": "canon-iube-l31",
+      "skills": [
+        "vocabulary:iubeo"
+      ]
+    },
+    {
+      "id": "l31-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the final pronoun-reading task after Lesson 31?",
+      "stimulus": null,
+      "options": [
+        "select the pronoun family, then resolve case/function",
+        "memorize one universal translation",
+        "ignore case",
+        "treat every quis as interrogative"
+      ],
+      "expectedAnswer": "select the pronoun family, then resolve case/function",
+      "acceptedVariants": [
+        "select the pronoun family, then resolve case/function"
+      ],
+      "hint": "Family + syntax.",
+      "explanation": "That is the mature reading strategy.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "pronoun:spiral"
+      ]
+    },
+    {
+      "id": "l31-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin pronoun meaning 'no one'.",
+      "stimulus": null,
+      "expectedAnswer": "nemo",
+      "acceptedVariants": [
+        "nemo",
+        "Nemo"
+      ],
+      "hint": "It appears in Matthew 6:24.",
+      "explanation": "nemo means no one.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt6-24-l31",
+      "skills": [
+        "vocabulary:nemo"
+      ]
+    }
+  ],
+  "objectives": [
+    "Complete the pronoun spiral with interrogative/indefinite forms.",
+    "Distinguish numquid from nonne pragmatically.",
+    "Recognize high-frequency irregular verbs.",
+    "Learn all thirteen frozen Lesson 31 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l31-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l31-e1",
+        "l31-e2",
+        "l31-e3",
+        "l31-e4",
+        "l31-e5",
+        "l31-e6",
+        "l31-e7",
+        "l31-e8",
+        "l31-e9",
+        "l31-e10"
+      ]
+    },
+    "mustKnow": [
+      "quis/quid direct vs indefinite",
+      "nonne/numquid",
+      "nemo/nihil",
+      "volo/nolo/fero/iubeo"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "fero",
+      "volo",
+      "nolo",
+      "nihil",
+      "iubeo",
+      "quis/quid",
+      "aliquis/aliquid",
+      "nemo",
+      "numquid",
+      "nonne",
+      "quomodo",
+      "quaero",
+      "interrogo"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 7,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}
