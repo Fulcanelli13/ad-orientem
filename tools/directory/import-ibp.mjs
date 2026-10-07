@@ -19,24 +19,32 @@ function venueType(name){
 export function discoverIbpIndex(html,{pageUrl=IBP_INDEX_URL}={}){
   let currentCountry=null,currentDiocese=null;
   const out=[],seen=new Set();
-  const re=/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>|<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
-  let m;
+  const re=/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>|<li\b[^>]*>([\s\S]*?)<\/li>/gi;
+  let m,index=0;
   while((m=re.exec(String(html??"")))){
     if(m[1]){
       const heading=stripTags(m[2]);
       const cc=countryCodeFromText(heading);
-      if(cc)currentCountry=cc;
+      if(cc){currentCountry=cc;currentDiocese=null;}
       if(/(?:archi)?diocèse|diocese|patriarcat/i.test(heading))currentDiocese=heading.replace(/\s*:\s*$/,"").trim();
       continue;
     }
-    const text=stripTags(m[4]),href=attrValue(m[3],"href"),url=absoluteUrl(href,pageUrl);
-    if(!url||!text||seen.has(url))continue;
-    const parsed=new URL(url);
-    if(!/institutdubonpasteur\.org$/i.test(parsed.hostname))continue;
-    if(!parsed.pathname.includes("/nos-apostolats/lieux-dapostolat-dans-le-monde/"))continue;
-    if(url.replace(/\/$/,"")===pageUrl.replace(/\/$/,""))continue;
-    if(/retour|liste|implantations/i.test(text))continue;
-    seen.add(url);out.push({label:text,url,countryCode:currentCountry,diocese:currentDiocese});
+    const body=m[3],text=stripTags(body);
+    if(!text||/retour|liste|implantations/i.test(text))continue;
+    const anchor=body.match(/<a\b([^>]*)>([\s\S]*?)<\/a>/i);
+    const href=anchor?attrValue(anchor[1],"href"):null;
+    const url=href?absoluteUrl(href,pageUrl):pageUrl+`#index-${index}`;
+    if(href){
+      const parsed=new URL(url);
+      if(!/institutdubonpasteur\.org$/i.test(parsed.hostname))continue;
+      if(!parsed.pathname.includes("/nos-apostolats/lieux-dapostolat-dans-le-monde/"))continue;
+      if(url.replace(/\/$/,"")===pageUrl.replace(/\/$/,""))continue;
+    }
+    const key=`${currentCountry}|${currentDiocese}|${text}`;
+    if(seen.has(key))continue;
+    seen.add(key);
+    out.push({label:text,url,countryCode:currentCountry,diocese:currentDiocese,indexOnly:!href});
+    index+=1;
   }
   return out;
 }
@@ -98,7 +106,9 @@ export function buildIbpDataset(records,{retrievedAt=new Date().toISOString()}={
 }
 export async function runIbpImport({out="data/directory/generated/ibp",concurrency=6,fetchImpl=fetch}={}){
   const html=await fetchText(IBP_INDEX_URL,{fetchImpl}),candidates=discoverIbpIndex(html);
+  if(candidates.length < 30) throw new Error(`IBP import coverage guard: official index currently reports 33 apostolates; parser discovered only ${candidates.length}.`);
   const records=await concurrentMap(candidates,concurrency,async candidate=>{
+    if(candidate.indexOnly)return {title:candidate.label,address:null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:IBP_INDEX_URL,emails:[],phones:[],massRaw:null,indexOnly:true};
     try{return parseDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
     catch(error){return {title:candidate.label,address:null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:candidate.url,emails:[],phones:[],massRaw:null,detailWarning:String(error?.message??error)};}
   });
