@@ -230,6 +230,73 @@
       "codes": {
         "iso_alpha2": "GB"
       }
+    },
+    {
+      "geo_area_id": "geo:country:AU",
+      "name": {
+        "official": "Australia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "AU"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:NZ",
+      "name": {
+        "official": "New Zealand",
+        "aliases": [
+          "Aotearoa New Zealand",
+          "Aotearoa"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "NZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:NG",
+      "name": {
+        "official": "Nigeria",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "NG"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:UG",
+      "name": {
+        "official": "Uganda",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "UG"
+      }
     }
   ],
   "places": [
@@ -1144,7 +1211,293 @@
       "source_ids": [
         "SHR-HOLYWELL-PARISH"
       ]
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "name": {
+        "official": "Shrine of Our Lady of Mercy — Penrose Park",
+        "aliases": [
+          "Penrose Park",
+          "Our Lady of Mercy Penrose Park"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:AU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -34.6272222222,
+        "lng": 150.1958333333,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://penrosepark.com.au/findus/",
+        "source_ref": "SHR-PENROSE-FINDUS:gps",
+        "attribution": "Shrine of Our Lady of Mercy — Penrose Park",
+        "matched_country_code": "AU",
+        "verified_at": "2026-10-07"
+      },
+      "address": {
+        "line1": "120 Hanging Rock Road",
+        "line2": null,
+        "postal_code": "2577",
+        "city": "Sutton Forest",
+        "region": "New South Wales",
+        "country_code": "AU",
+        "country": "Australia",
+        "formatted": "120 Hanging Rock Road, Sutton Forest NSW 2577, Australia"
+      },
+      "source_ids": [
+        "SHR-PENROSE-FINDUS"
+      ]
+    },
+    {
+      "place_id": "place:AU:marian-valley",
+      "name": {
+        "official": "Marian Valley — Shrine of Our Lady Help of Christians",
+        "aliases": [
+          "Marian Valley",
+          "Shrine of Our Lady Help of Christians"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:AU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -28.0821666667,
+        "lng": 153.1945833333,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://marianvalley.org.au/contact-us/",
+        "source_ref": "SHR-MARIAN-VALLEY-CONTACT:gps",
+        "attribution": "Marian Valley — Shrine of Our Lady Help of Christians",
+        "matched_country_code": "AU",
+        "verified_at": "2026-10-07"
+      },
+      "address": {
+        "line1": "2541 Beechmont Road",
+        "line2": null,
+        "postal_code": "4275",
+        "city": "Witheren via Canungra",
+        "region": "Queensland",
+        "country_code": "AU",
+        "country": "Australia",
+        "formatted": "2541 Beechmont Road, Witheren via Canungra QLD 4275, Australia"
+      },
+      "source_ids": [
+        "SHR-MARIAN-VALLEY-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "name": {
+        "official": "National Catholic Shrine of St Peter Chanel",
+        "aliases": [
+          "St Peter Chanel Shrine, Russell"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:NZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Corner of Beresford Street and Chapel Street",
+        "line2": null,
+        "postal_code": null,
+        "city": "Russell",
+        "region": "Northland",
+        "country_code": "NZ",
+        "country": "New Zealand",
+        "formatted": "Corner of Beresford Street and Chapel Street, Russell, Northland, New Zealand"
+      },
+      "source_ids": [
+        "SHR-ST-PETER-CHANEL-NZ"
+      ]
+    },
+    {
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "name": {
+        "official": "Hāto Mere / St Mary's Pukekaraka",
+        "aliases": [
+          "St Mary's Pukekaraka",
+          "Pukekaraka, Ōtaki"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:NZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "4 Convent Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Ōtaki",
+        "region": "Wellington",
+        "country_code": "NZ",
+        "country": "New Zealand",
+        "formatted": "4 Convent Road, Ōtaki, New Zealand"
+      },
+      "source_ids": [
+        "SHR-PUKEKARAKA-WELLINGTON"
+      ]
+    },
+    {
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "name": {
+        "official": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike",
+        "aliases": [
+          "National Marian Shrine, Ugwogo Nike"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:NG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "National Shrine of Our Mother of Perpetual Help",
+        "line2": "Ugwogo Nike",
+        "postal_code": null,
+        "city": "Enugu",
+        "region": "Enugu State",
+        "country_code": "NG",
+        "country": "Nigeria",
+        "formatted": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike, Enugu State, Nigeria"
+      },
+      "source_ids": [
+        "SHR-UGWOGO-NATIONAL-MARIAN"
+      ]
+    },
+    {
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "name": {
+        "official": "Nne Enyemaka Shrine, Umuaka",
+        "aliases": [
+          "Our Lady of Perpetual Help Shrine, Umuaka",
+          "Nne Enyemaka Ebebe Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:NG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 5.6769512,
+        "lng": 7.0243016,
+        "precision": "street",
+        "geocoding_source": "OSM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:way:547843649",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "NG",
+        "verified_at": "2026-10-07"
+      },
+      "address": {
+        "line1": "Nne Enyemaka Shrine",
+        "line2": null,
+        "postal_code": "474123",
+        "city": "Umuaka",
+        "region": "Imo State",
+        "country_code": "NG",
+        "country": "Nigeria",
+        "formatted": "Nne Enyemaka Shrine, Umuaka, Imo State 474123, Nigeria"
+      },
+      "source_ids": [
+        "SHR-NNE-ENYEMAKA-FSSP"
+      ]
+    },
+    {
+      "place_id": "place:UG:namugongo-martyrs",
+      "name": {
+        "official": "Uganda Martyrs Catholic Shrine, Namugongo",
+        "aliases": [
+          "Namugongo Martyrs Shrine",
+          "Uganda Martyrs Shrine Namugongo"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:UG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Uganda Martyrs Shrine",
+        "line2": "Namugongo",
+        "postal_code": null,
+        "city": "Kampala",
+        "region": null,
+        "country_code": "UG",
+        "country": "Uganda",
+        "formatted": "Uganda Martyrs Shrine, Namugongo, Kampala, Uganda"
+      },
+      "source_ids": [
+        "SHR-NAMUGONGO-OFFICIAL"
+      ]
+    },
+    {
+      "place_id": "place:UG:munyonyo-martyrs",
+      "name": {
+        "official": "Munyonyo Martyrs Shrine",
+        "aliases": [
+          "Uganda Martyrs Basilica, Munyonyo"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:UG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "St Andrew Kaggwa Road",
+        "line2": "Munyonyo",
+        "postal_code": null,
+        "city": "Kampala",
+        "region": null,
+        "country_code": "UG",
+        "country": "Uganda",
+        "formatted": "St Andrew Kaggwa Road, Munyonyo, Kampala, Uganda"
+      },
+      "source_ids": [
+        "SHR-MUNYONYO-OFFICIAL"
+      ]
     }
   ],
-  "directoryPlaceLinks": []
+  "directoryPlaceLinks": [
+    {
+      "link_id": "link:directory-place:NG:nne-enyemaka-umuaka",
+      "venue_id": "ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",
+        "SHR-NNE-ENYEMAKA-FSSP"
+      ]
+    }
+  ]
 }
