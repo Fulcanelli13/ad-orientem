@@ -23,7 +23,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  ["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.glossary","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
   "Formation rename changed the canonical Learn launcher IDs",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
@@ -44,6 +44,9 @@ assert.match(owner,/installSexualEthicsModule/,"Catholic Sexual Ethics is not in
 assert.match(owner,/installSpiritualLifeModule/,"Spiritual Life is not installed by the Formation owner");
 assert.match(owner,/ensureSpiritualLifeRegistry/,"Spiritual Life registry is not composed into Formation");
 assert.match(owner,/ensureLatinCourseRegistry/,"Latin course registry is not composed into Formation");
+assert.match(owner,/installGlossaryModule/,"Glossary module is not installed by the Formation owner");
+assert.match(owner,/ensureGlossaryRegistry/,"Glossary registry is not composed into Formation");
+assert.match(presentation,/id:"learn\.glossary"/,"Glossary launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.spiritual_life"/,"Spiritual Life launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
