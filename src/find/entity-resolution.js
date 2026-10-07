@@ -22,7 +22,9 @@ export function normalizeAddress(value) {
 }
 
 export function haversineMeters(a, b) {
-  const lat1 = Number(a?.lat), lng1 = Number(a?.lng), lat2 = Number(b?.lat), lng2 = Number(b?.lng);
+  const raw=[a?.lat,a?.lng,b?.lat,b?.lng];
+  if(raw.some(value=>value===null||value===undefined||value===""))return Infinity;
+  const [lat1,lng1,lat2,lng2]=raw.map(Number);
   if (![lat1, lng1, lat2, lng2].every(Number.isFinite)) return Infinity;
   const toRad = value => value * Math.PI / 180;
   const dLat = toRad(lat2 - lat1);
