@@ -77,7 +77,7 @@ assert.match(transients,/"AO\.SM\.C0181":Object\.freeze\(\{kind:"ELEVATION",titl
 assert.match(transients,/presentationHoldMs:presentationSpec\?\.kind==="ELEVATION" \? 3600/);
 
 assert.deepEqual(donor.open,[]);
-assert.equal(donor.status,"IMPLEMENTATION_COMPLETE_AWAITING_CI");
+assert.equal(donor.status,"CERTIFIED");
 assert.equal(stepReconciliation.status,"RECONCILED_FOR_PRODUCT_NONHISTORICAL");
 assert.equal(stepReconciliation.authorities.presentationDonor.livePrayerCards,38);
 assert.equal(stepReconciliation.authorities.canonicalSource.steps,39);
@@ -87,4 +87,9 @@ assert.equal(stepReconciliation.historicalGap.exactBoundaryRecovered,false);
 assert.equal(stepReconciliation.historicalGap.releaseImpact,"NONE_UNLESS_HISTORICAL_V183_IDENTITY_IS_CLAIMED");
 assert.equal(stepReconciliation.invariants.includes("historicalV183IdentityClaim remains false"),true);
 
-console.log("Mass v1.80 donor parity contract: PASS — v1.80 presentation is implemented, 38→48 is explicitly non-historical, and only CI certification remains.");
+assert.equal(donor.releaseBlocker,null);
+assert.equal(donor.certification?.gates?.static,"PASS");
+assert.equal(donor.certification?.gates?.massPhone,"PASS");
+assert.equal(donor.certification?.gates?.appShellPhone,"PASS");
+assert.equal(donor.certification?.gates?.visualPhoneAndWide,"PASS");
+console.log("Mass v1.80 donor parity contract: PASS — definitive v1.80-native presentation is certified; historical v1.83 identity remains unclaimed.");
