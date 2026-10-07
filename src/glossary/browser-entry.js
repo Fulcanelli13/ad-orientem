@@ -199,17 +199,46 @@ export function createGlossaryRuntime(win=globalThis){
     return top()+'<main class="aoGlossWrap"><div class="aoGlossKicker">'+esc(L(win,"Context reference","Référence contextuelle"))+'</div><p class="aoGlossHint">'+esc(L(win,"These are the glossary terms linked from the screen you were using.","Voici les termes du glossaire liés à l’écran que vous consultiez."))+'</p><div class="aoGlossTerms">'+rows.map(termButton).join("")+'</div></main>';
   }
 
-  function detail(){
-    const e=state.data?.byId?.get(state.detailId);if(!e)return "";
-    const c=categoryById(state.data,e.primary_category),s=sectionById(c,e.browse_section);
-    const links=(e.source_ids||[]).map(id=>state.data.sources.get(id)).filter(Boolean);
-    const sourceHtml=links.map(x=>'<a href="'+esc(x.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title||x.id)+'</a>').join("");
+  function sourceLinks(ids=[]){
+    return ids.map(id=>state.data.sources.get(id)).filter(Boolean).map(x=>'<a href="'+esc(x.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title||x.id)+'</a>').join("");
+  }
+
+  function conceptDetail(e){
+    const c=categoryById(state.data,e.primary_category),sec=sectionById(c,e.browse_section);
     const shortDef=isFr(win)?e.short_definition?.fr:e.short_definition?.en;
     const explanation=isFr(win)?e.explanation?.fr:e.explanation?.en;
     const body=shortDef&&explanation
       ? '<div class="aoGlossDefinition">'+esc(shortDef)+'</div><div class="aoGlossExplanation">'+esc(explanation)+'</div>'
-      : '<div class="aoGlossPending">'+esc(L(win,"Canonical terminology and source ownership are locked. Sourced explanatory text is not yet available for this entry.","La terminologie canonique et les sources sont verrouillées. Le texte explicatif sourcé n’est pas encore disponible pour cette entrée."))+'</div>';
-    return '<div class="aoGlossDetail" data-gloss-overlay><article class="aoGlossDetailCard" role="dialog" aria-modal="true"><div class="aoGlossDetailHead"><div><div class="aoGlossKicker">'+esc(e.id)+'</div><h2>'+esc(isFr(win)?e.labels.fr:e.labels.en)+'</h2>'+(e.labels.la?'<div class="aoGlossLatin">'+esc(e.labels.la)+'</div>':'')+'</div><button type="button" data-gloss-close aria-label="'+esc(L(win,"Close","Fermer"))+'">×</button></div><div class="aoGlossMeta"><span class="aoGlossBadge">'+esc(e.temporal_layer)+'</span><span class="aoGlossBadge">'+esc(isFr(win)?c?.label?.fr:c?.label?.en)+'</span><span class="aoGlossBadge">'+esc(isFr(win)?s?.label?.fr:s?.label?.en)+'</span></div>'+body+'<section class="aoGlossSources"><h3>'+esc(L(win,"Sources","Sources"))+'</h3>'+sourceHtml+'</section></article></div>';
+      : '<div class="aoGlossPending">'+esc(L(win,"Sourced explanatory text is not yet available for this entry.","Le texte explicatif sourcé n’est pas encore disponible pour cette entrée."))+'</div>';
+    return {kicker:e.id,title:isFr(win)?e.labels.fr:e.labels.en,latin:e.labels.la||"",meta:[e.temporal_layer,isFr(win)?c?.label?.fr:c?.label?.en,isFr(win)?sec?.label?.fr:sec?.label?.en].filter(Boolean),body,sources:sourceLinks(e.definition_source_ids?.length?e.definition_source_ids:e.source_ids)};
+  }
+
+  function lexemeDetail(x){
+    const gloss=isFr(win)?x.gloss_fr:x.gloss_en;
+    const stage=latinStageOf(x);
+    const title=stage?(LATIN_STAGE_TITLES[stage]||[])[isFr(win)?1:0]:L(win,"Reference extras","Compléments de référence");
+    const lesson=x.first_lesson?L(win,"Lesson ","Leçon ")+x.first_lesson+" · "+(x.lesson_title||""):L(win,"Frozen Core reference lemma","Lemme de référence du noyau figé");
+    const linked=(x.concept_refs||[]).map(id=>state.data.byId.get(id)).filter(Boolean);
+    const linkedHtml=linked.length?'<div class="aoGlossSources"><h3>'+esc(L(win,"Related concepts","Notions liées"))+'</h3>'+linked.map(e=>'<button class="aoGlossTerm" type="button" data-gloss-entry="'+esc(e.id)+'"><small>'+esc(e.id)+'</small><strong>'+esc(isFr(win)?e.labels.fr:e.labels.en)+'</strong></button>').join("")+'</div>':"";
+    const body='<div class="aoGlossDefinition">'+esc(gloss||L(win,"Gloss pending","Traduction à compléter"))+'</div><div class="aoGlossExplanation">'+esc([lesson,x.grammar_focus].filter(Boolean).join(" · "))+'</div>'+linkedHtml;
+    return {kicker:x.id+" · CORE #"+x.core_rank,title:x.lemma,latin:"",meta:[x.part_of_speech,title].filter(Boolean),body,sources:sourceLinks(x.source_ids)};
+  }
+
+  function phraseDetail(p){
+    const tr=isFr(win)?p.translations?.fr:p.translations?.en;
+    const linked=(p.concept_refs||[]).map(id=>state.data.byId.get(id)).filter(Boolean);
+    const linkedHtml=linked.length?'<div class="aoGlossSources"><h3>'+esc(L(win,"Related concepts","Notions liées"))+'</h3>'+linked.map(e=>'<button class="aoGlossTerm" type="button" data-gloss-entry="'+esc(e.id)+'"><small>'+esc(e.id)+'</small><strong>'+esc(isFr(win)?e.labels.fr:e.labels.en)+'</strong></button>').join("")+'</div>':"";
+    const body='<div class="aoGlossDefinition">'+esc(tr||"")+'</div>'+linkedHtml;
+    return {kicker:p.id+" · "+L(win,"Latin phrase","Formule latine"),title:p.latin,latin:"",meta:[p.status].filter(Boolean),body,sources:sourceLinks(p.source_ids)};
+  }
+
+  function detail(){
+    let d=null;
+    if(state.detailType==="lexeme"){const x=state.data?.lexemeById?.get(state.detailId);if(x)d=lexemeDetail(x)}
+    else if(state.detailType==="phrase"){const p=state.data?.phraseById?.get(state.detailId);if(p)d=phraseDetail(p)}
+    else {const e=state.data?.byId?.get(state.detailId);if(e)d=conceptDetail(e)}
+    if(!d)return "";
+    return '<div class="aoGlossDetail" data-gloss-overlay><article class="aoGlossDetailCard" role="dialog" aria-modal="true"><div class="aoGlossDetailHead"><div><div class="aoGlossKicker">'+esc(d.kicker)+'</div><h2>'+esc(d.title)+'</h2>'+(d.latin?'<div class="aoGlossLatin">'+esc(d.latin)+'</div>':'')+'</div><button type="button" data-gloss-close aria-label="'+esc(L(win,"Close","Fermer"))+'">×</button></div><div class="aoGlossMeta">'+d.meta.map(x=>'<span class="aoGlossBadge">'+esc(x)+'</span>').join("")+'</div>'+d.body+'<section class="aoGlossSources"><h3>'+esc(L(win,"Sources","Sources"))+'</h3>'+d.sources+'</section></article></div>';
   }
 
   function render(){
