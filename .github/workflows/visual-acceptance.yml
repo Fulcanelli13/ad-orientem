@@ -5,7 +5,17 @@ on:
     branches: [main]
     paths:
       - "index.html"
-      - "src/**"
+      - "src/apostolate/**"
+      - "src/app/**"
+      - "src/assets/**"
+      - "src/calendar/**"
+      - "src/find/**"
+      - "src/glossary/**"
+      - "src/home/**"
+      - "src/learn/*.js"
+      - "src/mass/**"
+      - "src/pray/**"
+      - "src/settings/**"
       - "assets/**"
       - "tests/app-visual-acceptance.mjs"
       - "tests/mass-visual-acceptance.mjs"
@@ -14,6 +24,10 @@ on:
       - "data/presentation/nonmass-primary-donor-sources.v1.json"
       - ".github/workflows/visual-acceptance.yml"
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   capture:

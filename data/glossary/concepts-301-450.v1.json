@@ -1,0 +1,4357 @@
+{
+  "schema": "GLOSSARY_CONCEPTS_SOT_V1",
+  "version": "1.0.0",
+  "range": "G301-G450",
+  "entries": [
+    {
+      "id": "G301",
+      "number": 301,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Eucharistic Adoration",
+        "fr": "Adoration eucharistique",
+        "la": "adoratio eucharistica"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "TRENT-XIII-EUCHARIST"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Prayer before Christ truly present in the Blessed Sacrament, ordinarily with the Eucharist reserved or exposed.",
+        "fr": "Prière devant le Christ réellement présent dans le Saint-Sacrement, ordinairement avec l’Eucharistie réservée ou exposée."
+      },
+      "explanation": {
+        "en": "Eucharistic adoration is directed to Christ Himself, not to bread as bread or to an object as such. Exposition can intensify the public form of this worship, but reservation in the tabernacle also grounds Eucharistic adoration.",
+        "fr": "L’adoration eucharistique s’adresse au Christ lui-même, non au pain en tant que pain ni à un objet comme tel. L’exposition peut intensifier la forme publique de ce culte, mais la réserve au tabernacle fonde également l’adoration eucharistique."
+      },
+      "definition_source_ids": [
+        "TRENT-XIII-EUCHARIST"
+      ]
+    },
+    {
+      "id": "G302",
+      "number": 302,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Exposition",
+        "fr": "Exposition",
+        "la": "expositio Sanctissimi Sacramenti"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ritual placing of the Blessed Sacrament in a monstrance or ciborium for the adoration of the faithful.",
+        "fr": "Rite par lequel le Saint-Sacrement est placé dans un ostensoir ou un ciboire pour l’adoration des fidèles."
+      },
+      "explanation": {
+        "en": "Exposition is governed by liturgical law concerning minister, place, vessel, candles, incense and prayer. It is distinct from simple reservation in the tabernacle.",
+        "fr": "L’exposition est régie par le droit liturgique quant au ministre, au lieu, au vase, aux cierges, à l’encens et à la prière. Elle se distingue de la simple réserve au tabernacle."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
+    },
+    {
+      "id": "G303",
+      "number": 303,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Reposition",
+        "fr": "Reposition",
+        "la": "repositio Sanctissimi Sacramenti"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ritual return of the exposed Blessed Sacrament to the tabernacle or other lawful place of reservation.",
+        "fr": "Rite par lequel le Saint-Sacrement exposé est replacé au tabernacle ou dans un autre lieu légitime de réserve."
+      },
+      "explanation": {
+        "en": "Reposition concludes a period of exposition. It should be distinguished from Benediction, since exposition can end by reposition without the blessing with the Blessed Sacrament in some circumstances.",
+        "fr": "La reposition conclut une période d’exposition. Elle doit être distinguée du Salut, car une exposition peut se terminer par la reposition sans bénédiction avec le Saint-Sacrement dans certains cas."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
+    },
+    {
+      "id": "G304",
+      "number": 304,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Benediction of the Blessed Sacrament",
+        "fr": "Salut / Bénédiction du Saint-Sacrement",
+        "la": "Benedictio Sanctissimi Sacramenti"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The rite in which the faithful are blessed with the exposed Blessed Sacrament.",
+        "fr": "Rite dans lequel les fidèles reçoivent la bénédiction avec le Saint-Sacrement exposé."
+      },
+      "explanation": {
+        "en": "Traditional Benediction normally includes hymns, versicles, prayer, incense and the blessing with the monstrance or ciborium. The blessing is given with the Eucharist, not by the minister in his own name.",
+        "fr": "Le Salut traditionnel comprend normalement hymnes, versets, oraison, encensement et bénédiction avec l’ostensoir ou le ciboire. La bénédiction est donnée avec l’Eucharistie, non par le ministre en son propre nom."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
+    },
+    {
+      "id": "G305",
+      "number": 305,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Monstrance",
+        "fr": "Ostensoir",
+        "la": "ostensorium / monstrantia"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-HIST-MONSTRANCE-LUNULA"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A sacred vessel designed to display a consecrated Host visibly for exposition and Benediction.",
+        "fr": "Vase sacré destiné à exposer visiblement une Hostie consacrée pour l’adoration et le Salut."
+      },
+      "explanation": {
+        "en": "The monstrance or ostensorium normally holds the Host in a lunette. It is a Eucharistic vessel and must not be confused with a reliquary, though historical forms can resemble one another.",
+        "fr": "L’ostensoir ou ostensorium contient normalement l’Hostie dans une lunule. C’est un vase eucharistique et il ne doit pas être confondu avec un reliquaire, même si certaines formes historiques peuvent se ressembler."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONSTRANCE-LUNULA"
+      ]
+    },
+    {
+      "id": "G306",
+      "number": 306,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Lunette / luna",
+        "fr": "Lunule",
+        "la": "lunula"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-HIST-MONSTRANCE-LUNULA"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The small circular holder that secures the consecrated Host within a monstrance.",
+        "fr": "Petit support circulaire qui maintient l’Hostie consacrée à l’intérieur d’un ostensoir."
+      },
+      "explanation": {
+        "en": "The lunette is inserted into the monstrance for exposition and removed according to the rites of reservation. It is a sacred Eucharistic accessory, not an independent devotional object.",
+        "fr": "La lunule est insérée dans l’ostensoir pour l’exposition et retirée selon les rites de réserve. C’est un accessoire eucharistique sacré, non un objet dévotionnel indépendant."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONSTRANCE-LUNULA"
+      ]
+    },
+    {
+      "id": "G307",
+      "number": 307,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Exposition throne",
+        "fr": "Trône d’exposition",
+        "la": "thronus expositionis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-OCONNELL-BENEDICTION"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A raised stand or throne on which the monstrance is placed during solemn exposition.",
+        "fr": "Support ou trône surélevé sur lequel l’ostensoir est placé pendant une exposition solennelle."
+      },
+      "explanation": {
+        "en": "The exposition throne belongs to traditional ceremonial arrangements for public Eucharistic worship. It is not required in every form of exposition and should be presented as a ceremonial furnishing, not a doctrinal necessity.",
+        "fr": "Le trône d’exposition appartient aux dispositions cérémonielles traditionnelles du culte eucharistique public. Il n’est pas requis pour toute forme d’exposition et doit être présenté comme un mobilier cérémoniel, non comme une nécessité doctrinale."
+      },
+      "definition_source_ids": [
+        "SRC-OCONNELL-BENEDICTION"
+      ]
+    },
+    {
+      "id": "G308",
+      "number": 308,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Forty Hours’ Devotion",
+        "fr": "Quarante-Heures",
+        "la": "Oratio Quadraginta Horarum"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A traditional period of solemn Eucharistic exposition and prayer extending, by established arrangement, over approximately forty hours.",
+        "fr": "Période traditionnelle d’exposition eucharistique solennelle et de prière s’étendant, selon l’organisation établie, sur environ quarante heures."
+      },
+      "explanation": {
+        "en": "The Forty Hours devotion combines prolonged adoration with a defined ceremonial tradition. Historical rules and indulgences attached to it must not be assumed unchanged in current law.",
+        "fr": "La dévotion des Quarante-Heures unit l’adoration prolongée à une tradition cérémonielle définie. Les anciennes règles et indulgences qui lui étaient attachées ne doivent pas être supposées inchangées dans le droit actuel."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
+    },
+    {
+      "id": "G309",
+      "number": 309,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Perpetual Adoration",
+        "fr": "Adoration perpétuelle",
+        "la": "adoratio perpetua"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An arrangement in which Eucharistic adoration is maintained continuously or for an enduring schedule over time.",
+        "fr": "Organisation dans laquelle l’adoration eucharistique est maintenue continuellement ou selon un horaire durable."
+      },
+      "explanation": {
+        "en": "‘Perpetual’ ordinarily describes continuity of the institution or schedule rather than implying that the Blessed Sacrament can never be reposed. Practical arrangements remain subject to liturgical law and competent authority.",
+        "fr": "« Perpétuelle » décrit ordinairement la continuité de l’institution ou de l’horaire plutôt que l’idée que le Saint-Sacrement ne puisse jamais être remis au tabernacle. Les dispositions pratiques restent soumises au droit liturgique et à l’autorité compétente."
+      },
+      "definition_source_ids": [
+        "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
+      ]
+    },
+    {
+      "id": "G310",
+      "number": 310,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Visit to the Blessed Sacrament",
+        "fr": "Visite au Saint-Sacrement",
+        "la": "visitatio Sanctissimi Sacramenti"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A devotional visit to a church or chapel to pray before the Blessed Sacrament.",
+        "fr": "Visite dévotionnelle à une église ou chapelle pour prier devant le Saint-Sacrement."
+      },
+      "explanation": {
+        "en": "The visit can include silent adoration, acts of faith, reparation, thanksgiving and spiritual communion. It is devotional rather than a separate sacrament or liturgical office.",
+        "fr": "La visite peut comporter adoration silencieuse, actes de foi, réparation, action de grâces et communion spirituelle. Elle est dévotionnelle et non un sacrement ou office liturgique distinct."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
+    },
+    {
+      "id": "G311",
+      "number": 311,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "O Salutaris Hostia",
+        "fr": "O Salutaris Hostia",
+        "la": "O salutaris Hostia"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A Eucharistic hymn beginning O salutaris Hostia, commonly sung during exposition or Benediction.",
+        "fr": "Hymne eucharistique commençant par O salutaris Hostia, couramment chanté pendant l’exposition ou le Salut."
+      },
+      "explanation": {
+        "en": "The text comes from Saint Thomas Aquinas’s hymn Verbum supernum prodiens. In practice it functions as a prayer text and Latin phrase object linked to Eucharistic adoration.",
+        "fr": "Le texte provient de l’hymne Verbum supernum prodiens de saint Thomas d’Aquin. En pratique, il fonctionne comme texte de prière et comme objet de phrase latine lié à l’adoration eucharistique."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
+    },
+    {
+      "id": "G312",
+      "number": 312,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Tantum Ergo",
+        "fr": "Tantum Ergo",
+        "la": "Tantum ergo Sacramentum"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The Eucharistic hymn stanza beginning Tantum ergo Sacramentum, traditionally sung before Benediction.",
+        "fr": "Strophe eucharistique commençant par Tantum ergo Sacramentum, traditionnellement chantée avant le Salut."
+      },
+      "explanation": {
+        "en": "It is the closing portion of Pange lingua by Saint Thomas Aquinas. The hymn is liturgical-devotional text and should link to its Latin vocabulary rather than receive a separate doctrinal theology article.",
+        "fr": "Il s’agit de la partie finale du Pange lingua de saint Thomas d’Aquin. L’hymne est un texte liturgico-dévo­tionnel et doit renvoyer à son vocabulaire latin plutôt que devenir un traité doctrinal distinct."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
+    },
+    {
+      "id": "G313",
+      "number": 313,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Genitori Genitoque",
+        "fr": "Genitori Genitoque",
+        "la": "Genitori Genitoque"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The concluding doxological stanza Genitori Genitoque following Tantum ergo.",
+        "fr": "Strophe doxologique finale Genitori Genitoque qui suit Tantum ergo."
+      },
+      "explanation": {
+        "en": "It praises the Father, the Son and the Holy Ghost and forms part of the traditional Benediction hymn sequence.",
+        "fr": "Elle loue le Père, le Fils et le Saint-Esprit et fait partie de la séquence hymnologique traditionnelle du Salut."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
+    },
+    {
+      "id": "G314",
+      "number": 314,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Panem de caelo",
+        "fr": "Panem de caelo",
+        "la": "Panem de caelo praestitisti eis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The versicle Panem de caelo praestitisti eis used in the traditional Benediction rite.",
+        "fr": "Verset Panem de caelo praestitisti eis employé dans le rite traditionnel du Salut."
+      },
+      "explanation": {
+        "en": "The phrase means ‘Thou gavest them bread from heaven’ and is answered according to the rite before the concluding prayer. It belongs primarily to the Latin phrase layer.",
+        "fr": "L’expression signifie « Vous leur avez donné le pain du ciel » et reçoit la réponse prévue par le rite avant l’oraison finale. Elle appartient principalement à la couche des phrases latines."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
+    },
+    {
+      "id": "G315",
+      "number": 315,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Divine Praises",
+        "fr": "Louanges divines",
+        "la": "Laudes Divinae"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A series of praises of God and holy things traditionally recited after Benediction.",
+        "fr": "Série de louanges adressées à Dieu et aux réalités saintes, traditionnellement récitées après le Salut."
+      },
+      "explanation": {
+        "en": "The Divine Praises form an approved devotional text associated with Eucharistic worship. Their individual invocations should remain textually stable and source-backed.",
+        "fr": "Les Louanges divines constituent un texte dévotionnel approuvé associé au culte eucharistique. Leurs invocations doivent rester textuellement stables et sourcées."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
+    },
+    {
+      "id": "G316",
+      "number": 316,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Blessed Sacrament",
+        "fr": "Saint-Sacrement",
+        "la": "Sanctissimum Sacramentum"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "TRENT-XIII-EUCHARIST"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The Holy Eucharist, especially Christ present under the consecrated species and reserved for Communion and adoration.",
+        "fr": "Sainte Eucharistie, spécialement le Christ présent sous les espèces consacrées et réservé pour la Communion et l’adoration."
+      },
+      "explanation": {
+        "en": "‘Blessed Sacrament’ is a devotional and liturgical title for the Eucharist. It refers to Christ sacramentally present and should not be confused with a generic blessed object or sacramental.",
+        "fr": "« Saint-Sacrement » est un titre dévotionnel et liturgique de l’Eucharistie. Il désigne le Christ sacramentellement présent et ne doit pas être confondu avec un objet simplement béni ou un sacramental."
+      },
+      "definition_source_ids": [
+        "TRENT-XIII-EUCHARIST"
+      ]
+    },
+    {
+      "id": "G317",
+      "number": 317,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Reservation of the Blessed Sacrament",
+        "fr": "Réserve eucharistique",
+        "la": "reservatio Sanctissimi Sacramenti"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-CIC83-934-944"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The keeping of the consecrated Eucharist in a tabernacle or other lawful place after Mass.",
+        "fr": "Conservation de l’Eucharistie consacrée dans un tabernacle ou un autre lieu légitime après la Messe."
+      },
+      "explanation": {
+        "en": "Reservation serves especially Communion of the sick and Eucharistic worship. The place, vessel and conditions of reservation are governed by liturgical and canonical law.",
+        "fr": "La réserve sert notamment à la Communion des malades et au culte eucharistique. Le lieu, le vase et les conditions de réserve sont régis par le droit liturgique et canonique."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-934-944"
+      ]
+    },
+    {
+      "id": "G318",
+      "number": 318,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Pyx",
+        "fr": "Pyxide",
+        "la": "pyxis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A small sacred vessel used to carry consecrated Hosts, especially for Communion of the sick.",
+        "fr": "Petit vase sacré utilisé pour porter les Hosties consacrées, notamment pour la Communion des malades."
+      },
+      "explanation": {
+        "en": "The pyx is smaller and more portable than a ciborium and is used according to the rites governing Eucharistic transport and Communion outside Mass.",
+        "fr": "La pyxide est plus petite et plus portable qu’un ciboire et s’emploie selon les rites régissant le transport eucharistique et la Communion hors de la Messe."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
+    },
+    {
+      "id": "G319",
+      "number": 319,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Ciborium veil",
+        "fr": "Voile de ciboire",
+        "la": "velum ciborii"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A veil placed over a ciborium containing the Blessed Sacrament according to traditional usage.",
+        "fr": "Voile placé sur un ciboire contenant le Saint-Sacrement selon l’usage traditionnel."
+      },
+      "explanation": {
+        "en": "The ciborium veil marks the sacred vessel used for Eucharistic reservation. It must be distinguished from the chalice veil and humeral veil.",
+        "fr": "Le voile de ciboire marque le vase sacré destiné à la réserve eucharistique. Il doit être distingué du voile de calice et du voile huméral."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
+    },
+    {
+      "id": "G320",
+      "number": 320,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Corpus Christi procession",
+        "fr": "Procession de la Fête-Dieu",
+        "la": "processio Corporis Christi"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A solemn Eucharistic procession associated especially with the feast of Corpus Christi, in which the Blessed Sacrament is carried publicly.",
+        "fr": "Procession eucharistique solennelle associée spécialement à la Fête-Dieu, dans laquelle le Saint-Sacrement est porté publiquement."
+      },
+      "explanation": {
+        "en": "In the Ad Orientem process model, a Corpus Christi procession is not inferred from the date alone. It requires an explicit liturgical or local action sequence and can culminate in Benediction.",
+        "fr": "Dans le modèle processuel d’Ad Orientem, une procession de la Fête-Dieu n’est pas déduite de la date seule. Elle exige une séquence liturgique ou locale explicite et peut se conclure par le Salut."
+      },
+      "definition_source_ids": [
+        "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
+      ]
+    },
+    {
+      "id": "G321",
+      "number": 321,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Devotion",
+        "fr": "Dévotion",
+        "la": "devotio"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "ST-THOMAS-II-II-Q82"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The prompt and ready disposition of the will to give oneself to God and to His service.",
+        "fr": "Disposition prompte et volontaire de la volonté à se donner à Dieu et à son service."
+      },
+      "explanation": {
+        "en": "In precise ascetical theology devotio is an interior act of the virtue of religion. A ‘devotion’ in ordinary Catholic speech can also mean a particular pious practice, which is a related but distinct sense.",
+        "fr": "Dans la théologie ascétique précise, devotio est un acte intérieur de la vertu de religion. Dans le langage catholique courant, « une dévotion » peut aussi désigner une pratique pieuse particulière, sens lié mais distinct."
+      },
+      "definition_source_ids": [
+        "ST-THOMAS-II-II-Q82"
+      ]
+    },
+    {
+      "id": "G322",
+      "number": 322,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Pious practice / exercise",
+        "fr": "Pieux exercice",
+        "la": "pium exercitium"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-DIRECTORY-POPULAR-PIETY-2002"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An approved or customary devotional action outside the sacraments and liturgy, such as certain prayers, visits or processions.",
+        "fr": "Pratique dévotionnelle approuvée ou coutumière en dehors des sacrements et de la liturgie, comme certaines prières, visites ou processions."
+      },
+      "explanation": {
+        "en": "Pious exercises should harmonize with and lead toward the liturgy rather than replace it. Their authority and obligation differ from sacramental and liturgical law.",
+        "fr": "Les pieux exercices doivent s’harmoniser avec la liturgie et y conduire plutôt que la remplacer. Leur autorité et leur caractère obligatoire diffèrent du droit sacramentel et liturgique."
+      },
+      "definition_source_ids": [
+        "SRC-DIRECTORY-POPULAR-PIETY-2002"
+      ]
+    },
+    {
+      "id": "G323",
+      "number": 323,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Aspiration / ejaculatory prayer",
+        "fr": "Oraison jaculatoire",
+        "la": "oratio iaculatoria"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A short, fervent prayer raised briefly to God during the day.",
+        "fr": "Brève prière fervente élevée vers Dieu au cours de la journée."
+      },
+      "explanation": {
+        "en": "Aspirations or ejaculatory prayers help maintain recollection and frequent turning of the heart to God. They can be spontaneous or drawn from approved prayers and Scripture.",
+        "fr": "Les oraisons jaculatoires aident à conserver le recueillement et à tourner fréquemment le cœur vers Dieu. Elles peuvent être spontanées ou tirées de prières approuvées et de l’Écriture."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
+    },
+    {
+      "id": "G324",
+      "number": 324,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Mental prayer",
+        "fr": "Oraison mentale",
+        "la": "oratio mentalis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Interior prayer in which the mind and will attend to God, divine truths or one’s duties before Him without depending chiefly on spoken formulas.",
+        "fr": "Prière intérieure dans laquelle l’intelligence et la volonté se portent vers Dieu, les vérités divines ou les devoirs envers lui sans dépendre principalement de formules prononcées."
+      },
+      "explanation": {
+        "en": "Mental prayer includes meditation and more simple affective forms. It is not opposed to vocal prayer, since vocal prayer can also be attentive and interior.",
+        "fr": "L’oraison mentale comprend la méditation et des formes affectives plus simples. Elle ne s’oppose pas à la prière vocale, qui peut elle aussi être attentive et intérieure."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
+    },
+    {
+      "id": "G325",
+      "number": 325,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Meditation",
+        "fr": "Méditation",
+        "la": "meditatio"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Reflective mental prayer in which a person considers a divine truth in order to move the will toward love, repentance and practical resolution.",
+        "fr": "Oraison mentale réfléchie dans laquelle une personne considère une vérité divine afin de mouvoir la volonté vers l’amour, le repentir et une résolution pratique."
+      },
+      "explanation": {
+        "en": "Catholic meditation is ordered toward conversion and union with God rather than mere analysis. Methods can help, but the method is a means rather than the substance of prayer.",
+        "fr": "La méditation catholique est ordonnée à la conversion et à l’union à Dieu plutôt qu’à la simple analyse. Les méthodes peuvent aider, mais elles sont un moyen et non la substance de la prière."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
+    },
+    {
+      "id": "G326",
+      "number": 326,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Vocal prayer",
+        "fr": "Prière vocale",
+        "la": "oratio vocalis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Prayer expressed by words, whether spoken aloud or formed internally.",
+        "fr": "Prière exprimée par des paroles, prononcées à voix haute ou formées intérieurement."
+      },
+      "explanation": {
+        "en": "Vocal prayer includes the Our Father, Hail Mary, liturgical responses and countless approved prayers. Its value depends not on sound alone but on genuine prayerful intention and attention according to one’s capacity.",
+        "fr": "La prière vocale comprend le Notre Père, le Je vous salue Marie, les réponses liturgiques et d’innombrables prières approuvées. Sa valeur ne dépend pas du son seul mais d’une véritable intention et attention de prière selon les capacités de chacun."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
+    },
+    {
+      "id": "G327",
+      "number": 327,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Spiritual reading",
+        "fr": "Lecture spirituelle",
+        "la": "lectio spiritualis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The reading of Sacred Scripture or sound spiritual works for growth in faith, prayer and virtue.",
+        "fr": "Lecture de la Sainte Écriture ou d’ouvrages spirituels solides en vue de progresser dans la foi, la prière et la vertu."
+      },
+      "explanation": {
+        "en": "Spiritual reading is not mere information gathering. It is undertaken slowly and reflectively so that truth can shape prayer and conduct.",
+        "fr": "La lecture spirituelle n’est pas une simple collecte d’informations. Elle se fait lentement et avec réflexion afin que la vérité façonne la prière et la conduite."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
+    },
+    {
+      "id": "G328",
+      "number": 328,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Examination of conscience",
+        "fr": "Examen de conscience",
+        "la": "examen conscientiae"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A review of one’s thoughts, words, actions and omissions in the light of God’s law, especially in preparation for repentance and Confession.",
+        "fr": "Revue de ses pensées, paroles, actions et omissions à la lumière de la loi de Dieu, spécialement en préparation au repentir et à la Confession."
+      },
+      "explanation": {
+        "en": "An examination of conscience should be truthful and proportionate rather than scrupulous. It seeks concrete moral responsibility, not an endless search for absolute psychological certainty.",
+        "fr": "L’examen de conscience doit être vrai et proportionné plutôt que scrupuleux. Il recherche la responsabilité morale concrète, non une quête sans fin de certitude psychologique absolue."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
+    },
+    {
+      "id": "G329",
+      "number": 329,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Act of prayer",
+        "fr": "Acte",
+        "la": "actus"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A formulated prayer expressing a specific interior act such as faith, hope, charity, contrition or thanksgiving.",
+        "fr": "Prière formulée exprimant un acte intérieur précis comme la foi, l’espérance, la charité, la contrition ou l’action de grâces."
+      },
+      "explanation": {
+        "en": "The word ‘act’ in devotional collections refers to a prayer that expresses and elicits the named disposition. It does not mean that reciting the words mechanically guarantees the interior act.",
+        "fr": "Le mot « acte » dans les recueils dévotionnels désigne une prière qui exprime et suscite la disposition nommée. Il ne signifie pas que la récitation mécanique des mots garantit l’acte intérieur."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
+    },
+    {
+      "id": "G330",
+      "number": 330,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Devotional consecration",
+        "fr": "Consécration dévotionnelle",
+        "la": "consecratio"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "LEO-XIII-ANNUM-SACRUM"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A devotional act by which a person, family or community deliberately dedicates itself to God, Our Lady or a sacred mystery according to an approved form.",
+        "fr": "Acte dévotionnel par lequel une personne, une famille ou une communauté se consacre délibérément à Dieu, à Notre-Dame ou à un mystère sacré selon une forme approuvée."
+      },
+      "explanation": {
+        "en": "Devotional consecration is not the same as Eucharistic consecration or canonical religious profession. The term expresses dedication and belonging in a devotional sense.",
+        "fr": "La consécration dévotionnelle n’est pas la même chose que la consécration eucharistique ni la profession religieuse canonique. Le terme exprime un don et une appartenance au sens dévotionnel."
+      },
+      "definition_source_ids": [
+        "LEO-XIII-ANNUM-SACRUM"
+      ]
+    },
+    {
+      "id": "G331",
+      "number": 331,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Reparation",
+        "fr": "Réparation",
+        "la": "reparatio"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "PIUS-XI-MISERENTISSIMUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Prayer and sacrifice offered in union with Christ to make loving satisfaction for sin and irreverence.",
+        "fr": "Prière et sacrifice offerts en union avec le Christ pour faire une satisfaction d’amour pour le péché et l’irrévérence."
+      },
+      "explanation": {
+        "en": "Catholic reparation rests on Christ’s unique redemptive work and the participation of His members in acts of love, penance and satisfaction. It is not an attempt to supplement an insufficient Redemption.",
+        "fr": "La réparation catholique repose sur l’unique œuvre rédemptrice du Christ et sur la participation de ses membres par des actes d’amour, de pénitence et de satisfaction. Elle ne cherche pas à compléter une Rédemption insuffisante."
+      },
+      "definition_source_ids": [
+        "PIUS-XI-MISERENTISSIMUS"
+      ]
+    },
+    {
+      "id": "G332",
+      "number": 332,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "First Friday",
+        "fr": "Premier vendredi",
+        "la": "primus dies Veneris mensis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "PIUS-XI-MISERENTISSIMUS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The devotional observance of the first Friday of the month in honour of the Sacred Heart, especially through Communion and reparation.",
+        "fr": "Observance dévotionnelle du premier vendredi du mois en l’honneur du Sacré-Cœur, spécialement par la Communion et la réparation."
+      },
+      "explanation": {
+        "en": "The First Friday devotion belongs to Sacred Heart spirituality and has a long ecclesial history. Historical promises or indulgences must be presented with careful sourcing and distinguished from current canonical obligations.",
+        "fr": "La dévotion du premier vendredi appartient à la spiritualité du Sacré-Cœur et possède une longue histoire ecclésiale. Les promesses ou indulgences historiques doivent être présentées avec des sources précises et distinguées des obligations canoniques actuelles."
+      },
+      "definition_source_ids": [
+        "PIUS-XI-MISERENTISSIMUS"
+      ]
+    },
+    {
+      "id": "G333",
+      "number": 333,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "First Saturday",
+        "fr": "Premier samedi",
+        "la": "primum sabbatum mensis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "SRC-FATIMA-FIRST-SATURDAYS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The devotional observance requested in the Fatima tradition on five consecutive first Saturdays, involving Communion, confession, Rosary and meditation in a spirit of reparation.",
+        "fr": "Observance dévotionnelle demandée dans la tradition de Fatima pendant cinq premiers samedis consécutifs, comprenant Communion, confession, Rosaire et méditation dans un esprit de réparation."
+      },
+      "explanation": {
+        "en": "The component practices, timing and intention should be stated from reliable Fatima sources. It is a private-devotional practice approved and promoted by the Church, not a new sacrament or universal precept.",
+        "fr": "Les pratiques composantes, leur calendrier et leur intention doivent être exposés à partir de sources fiables de Fatima. Il s’agit d’une pratique dévotionnelle privée approuvée et encouragée par l’Église, non d’un nouveau sacrement ou précepte universel."
+      },
+      "definition_source_ids": [
+        "SRC-FATIMA-FIRST-SATURDAYS"
+      ]
+    },
+    {
+      "id": "G334",
+      "number": 334,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Pilgrimage",
+        "fr": "Pèlerinage",
+        "la": "peregrinatio"
+      },
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-CIC83-1230-1234"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A devotional journey to a sacred place undertaken for prayer, penance or another religious purpose.",
+        "fr": "Voyage dévotionnel vers un lieu sacré entrepris pour la prière, la pénitence ou une autre fin religieuse."
+      },
+      "explanation": {
+        "en": "Pilgrimage combines physical movement with spiritual intention. The canonical status of the destination as a shrine is a separate question from the devotional fact that people travel there as pilgrims.",
+        "fr": "Le pèlerinage unit déplacement physique et intention spirituelle. Le statut canonique du lieu comme sanctuaire est une question distincte du fait dévotionnel que des personnes s’y rendent en pèlerins."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
+    },
+    {
+      "id": "G335",
+      "number": 335,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Pilgrim",
+        "fr": "Pèlerin",
+        "la": "peregrinus"
+      },
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-CIC83-1230-1234"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A person undertaking a pilgrimage for religious motives.",
+        "fr": "Personne qui accomplit un pèlerinage pour des motifs religieux."
+      },
+      "explanation": {
+        "en": "Pilgrim describes the devotional role of the traveler and does not itself imply membership in an association, fulfilment of a vow or participation in an officially organized event.",
+        "fr": "Pèlerin décrit le rôle dévotionnel du voyageur et n’implique pas en lui-même l’appartenance à une association, l’accomplissement d’un vœu ou la participation à un événement officiellement organisé."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
+    },
+    {
+      "id": "G336",
+      "number": 336,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Shrine",
+        "fr": "Sanctuaire",
+        "la": "sanctuarium"
+      },
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1230-1234"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A church or other sacred place to which many faithful make pilgrimage for a special reason of piety with the approval required by canon law.",
+        "fr": "Église ou autre lieu sacré où de nombreux fidèles se rendent en pèlerinage pour un motif particulier de piété avec l’approbation requise par le droit canonique."
+      },
+      "explanation": {
+        "en": "This canonical pilgrimage-shrine sense must be distinguished from G181, the sanctuary area of a church. French sanctuaire commonly covers both senses, so search must disambiguate them.",
+        "fr": "Ce sens canonique de lieu de pèlerinage doit être distingué de G181, le sanctuaire comme partie d’une église. Le français « sanctuaire » couvre couramment les deux sens ; la recherche doit donc les désambiguïser."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
+    },
+    {
+      "id": "G337",
+      "number": 337,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Station / station church",
+        "fr": "Station / église stationnale",
+        "la": "statio / ecclesia stationis"
+      },
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-HIST-STATIONAL-LITURGY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A church or stopping place associated with a traditional liturgical station or stational procession.",
+        "fr": "Église ou halte associée à une station liturgique traditionnelle ou à une procession stationnale."
+      },
+      "explanation": {
+        "en": "The Roman stational tradition links appointed churches with particular liturgical days. ‘Station’ here must be distinguished from an individual Station of the Cross.",
+        "fr": "La tradition stationnale romaine relie des églises déterminées à certains jours liturgiques. « Station » doit ici être distingué d’une station individuelle du Chemin de Croix."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-STATIONAL-LITURGY"
+      ]
+    },
+    {
+      "id": "G338",
+      "number": 338,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Ex-voto",
+        "fr": "Ex-voto",
+        "la": "ex voto"
+      },
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-CIC83-1230-1234"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An object offered in fulfilment of a vow or in thanksgiving for a favour received.",
+        "fr": "Objet offert en accomplissement d’un vœu ou en action de grâces pour une faveur reçue."
+      },
+      "explanation": {
+        "en": "Ex-votos are common at shrines and testify to devotional history. Their presence is evidence of piety and custom, not automatic proof of a miracle or of official ecclesiastical recognition of every claim represented.",
+        "fr": "Les ex-voto sont fréquents dans les sanctuaires et témoignent de l’histoire dévotionnelle. Leur présence atteste une piété et une coutume, non automatiquement un miracle ni la reconnaissance ecclésiastique officielle de toute affirmation représentée."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
+    },
+    {
+      "id": "G339",
+      "number": 339,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Confraternity",
+        "fr": "Confrérie",
+        "la": "confraternitas"
+      },
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-HIST-CONFRATERNITY-SODALITY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An association of the faithful traditionally established for a religious, charitable or devotional purpose and often linked to particular spiritual practices.",
+        "fr": "Association de fidèles traditionnellement établie pour une fin religieuse, charitable ou dévotionnelle et souvent liée à des pratiques spirituelles particulières."
+      },
+      "explanation": {
+        "en": "Historical confraternities had varying canonical forms, privileges and obligations. A modern directory should not infer current canonical standing merely from an old confraternity title.",
+        "fr": "Les confréries historiques possédaient des formes canoniques, privilèges et obligations variables. Un annuaire moderne ne doit pas déduire un statut canonique actuel du seul maintien d’un ancien titre de confrérie."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CONFRATERNITY-SODALITY"
+      ]
+    },
+    {
+      "id": "G340",
+      "number": 340,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Sodality",
+        "fr": "Sodalité",
+        "la": "sodalitas"
+      },
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-HIST-CONFRATERNITY-SODALITY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A religious association or fellowship of the faithful, historically used for various devotional and apostolic groups.",
+        "fr": "Association ou fraternité religieuse de fidèles, terme historiquement employé pour divers groupes dévotionnels et apostoliques."
+      },
+      "explanation": {
+        "en": "Sodality is a broad historical term rather than one single current canonical form. The precise juridical status of a given sodality must be established from its statutes and competent authority.",
+        "fr": "Sodalité est un terme historique large plutôt qu’une forme canonique actuelle unique. Le statut juridique précis d’une sodalité donnée doit être établi d’après ses statuts et l’autorité compétente."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CONFRATERNITY-SODALITY"
+      ]
+    },
+    {
+      "id": "G341",
+      "number": 341,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Vicar General",
+        "fr": "Vicaire général",
+        "la": "vicarius generalis"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-460-572"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The priest appointed to assist the diocesan bishop in governing the whole diocese with ordinary executive power according to law.",
+        "fr": "Prêtre nommé pour assister l’évêque diocésain dans le gouvernement de tout le diocèse avec un pouvoir exécutif ordinaire selon le droit."
+      },
+      "explanation": {
+        "en": "The vicar general acts within the authority granted by universal and particular law and by the diocesan bishop. The office is diocesan and juridical, not a sacramental degree.",
+        "fr": "Le vicaire général agit dans l’autorité accordée par le droit universel et particulier et par l’évêque diocésain. La charge est diocésaine et juridique, non un degré sacramentel."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
+    },
+    {
+      "id": "G342",
+      "number": 342,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Episcopal Vicar",
+        "fr": "Vicaire épiscopal",
+        "la": "vicarius episcopalis"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-460-572"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest appointed with ordinary executive power similar to a vicar general but limited to a defined territory, category of affairs, rite or group.",
+        "fr": "Prêtre nommé avec un pouvoir exécutif ordinaire semblable à celui d’un vicaire général mais limité à un territoire, une catégorie d’affaires, un rite ou un groupe déterminé."
+      },
+      "explanation": {
+        "en": "The scope of an episcopal vicar is defined by appointment and law. The title does not mean he is himself necessarily a bishop.",
+        "fr": "L’étendue du pouvoir d’un vicaire épiscopal est définie par sa nomination et le droit. Le titre ne signifie pas qu’il soit lui-même nécessairement évêque."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
+    },
+    {
+      "id": "G343",
+      "number": 343,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Parochial Vicar / curate",
+        "fr": "Vicaire paroissial",
+        "la": "vicarius paroecialis"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-460-572"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest assigned to assist the pastor in the pastoral care of a parish.",
+        "fr": "Prêtre chargé d’assister le curé dans la charge pastorale d’une paroisse."
+      },
+      "explanation": {
+        "en": "A parochial vicar works under the pastor according to law and the bishop’s arrangements. In French this office is commonly called vicaire paroissial.",
+        "fr": "Le vicaire paroissial travaille sous l’autorité du curé selon le droit et les dispositions de l’évêque. En français cette charge est couramment appelée vicaire paroissial."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
+    },
+    {
+      "id": "G344",
+      "number": 344,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Rector of a church",
+        "fr": "Recteur d’église",
+        "la": "rector ecclesiae"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-460-572"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The priest entrusted with the care of a church that is neither parochial nor capitular, according to canon law.",
+        "fr": "Prêtre auquel est confié le soin d’une église qui n’est ni paroissiale ni capitulaire, selon le droit canonique."
+      },
+      "explanation": {
+        "en": "A rector of a church has defined rights and duties concerning worship and pastoral activity there. The office should not be confused with a seminary rector or a generic administrative director.",
+        "fr": "Le recteur d’une église possède des droits et devoirs définis concernant le culte et l’activité pastorale en ce lieu. Cette charge ne doit pas être confondue avec celle de recteur de séminaire ni avec un directeur administratif générique."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
+    },
+    {
+      "id": "G345",
+      "number": 345,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Chaplain",
+        "fr": "Aumônier",
+        "la": "capellanus"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-460-572"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest entrusted in a stable way with pastoral care of a particular community or group of the faithful.",
+        "fr": "Prêtre auquel est confiée de manière stable la charge pastorale d’une communauté ou d’un groupe particulier de fidèles."
+      },
+      "explanation": {
+        "en": "A chaplain’s competence is defined by appointment and law. The term can cover hospitals, schools, military or religious communities and other groups, so context matters.",
+        "fr": "La compétence d’un aumônier est définie par sa nomination et le droit. Le terme peut concerner hôpitaux, écoles, armées, communautés religieuses et autres groupes ; le contexte est donc important."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
+    },
+    {
+      "id": "G346",
+      "number": 346,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Canon — chapter cleric",
+        "fr": "Chanoine",
+        "la": "canonicus"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-460-572"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A cleric who belongs to a cathedral or collegiate chapter according to canon law and the chapter’s statutes.",
+        "fr": "Clerc membre d’un chapitre cathédral ou collégial selon le droit canonique et les statuts du chapitre."
+      },
+      "explanation": {
+        "en": "This sense of canon, canonicus, is entirely distinct from the Canon of the Mass and from a canon as an individual legal norm.",
+        "fr": "Ce sens de chanoine, canonicus, est entièrement distinct du Canon de la Messe et d’un canon comme norme juridique individuelle."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
+    },
+    {
+      "id": "G347",
+      "number": 347,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Dean / vicar forane",
+        "fr": "Doyen",
+        "la": "vicarius foraneus / decanus"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-460-572"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest appointed to oversee and coordinate a group of parishes forming a vicariate forane or deanery.",
+        "fr": "Prêtre nommé pour superviser et coordonner un groupe de paroisses formant un vicariat forain ou doyenné."
+      },
+      "explanation": {
+        "en": "The vicar forane or dean assists diocesan coordination but does not become the proper pastor of every parish in the deanery.",
+        "fr": "Le vicaire forain ou doyen aide à la coordination diocésaine mais ne devient pas le pasteur propre de toutes les paroisses du doyenné."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
+    },
+    {
+      "id": "G348",
+      "number": 348,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Provost",
+        "fr": "Prévôt",
+        "la": "praepositus"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-PROVOST"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A superior or presiding cleric bearing the historical title praepositus, whose exact office depends on the chapter, monastery or institution concerned.",
+        "fr": "Supérieur ou clerc président portant le titre historique praepositus, dont la charge exacte dépend du chapitre, monastère ou institut concerné."
+      },
+      "explanation": {
+        "en": "Provost is not one universal canonical office with identical powers everywhere. The governing statutes and historical context determine its meaning.",
+        "fr": "Prévôt n’est pas une charge canonique universelle possédant partout les mêmes pouvoirs. Les statuts applicables et le contexte historique en déterminent le sens."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PROVOST"
+      ]
+    },
+    {
+      "id": "G349",
+      "number": 349,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Abbot",
+        "fr": "Abbé",
+        "la": "abbas"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-607-709"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The male superior of an abbey or autonomous monastic community according to its rule and proper law.",
+        "fr": "Supérieur masculin d’une abbaye ou communauté monastique autonome selon sa règle et son droit propre."
+      },
+      "explanation": {
+        "en": "An abbot’s authority varies with the institute and canonical status of the monastery. Not every superior of monks is necessarily an abbot, and not every abbot has territorial jurisdiction beyond his community.",
+        "fr": "L’autorité d’un abbé varie selon l’institut et le statut canonique du monastère. Tout supérieur de moines n’est pas nécessairement abbé et tout abbé ne possède pas une juridiction territoriale au-delà de sa communauté."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
+    },
+    {
+      "id": "G350",
+      "number": 350,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Abbess",
+        "fr": "Abbesse",
+        "la": "abbatissa"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-607-709"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The female superior of an abbey or autonomous community of nuns according to its rule and proper law.",
+        "fr": "Supérieure féminine d’une abbaye ou communauté autonome de moniales selon sa règle et son droit propre."
+      },
+      "explanation": {
+        "en": "An abbess exercises the authority granted by canon law and the institute’s constitutions within the religious community. She does not receive Holy Orders by reason of that office.",
+        "fr": "Une abbesse exerce l’autorité accordée par le droit canonique et les constitutions de l’institut au sein de la communauté religieuse. Elle ne reçoit pas le sacrement de l’Ordre en raison de cette charge."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
+    },
+    {
+      "id": "G351",
+      "number": 351,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Prior",
+        "fr": "Prieur",
+        "la": "prior"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-PRIOR-PRIORY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A religious superior whose office is traditionally below that of an abbot and whose authority depends on the monastery or priory’s proper law.",
+        "fr": "Supérieur religieux dont la charge est traditionnellement inférieure à celle d’un abbé et dont l’autorité dépend du droit propre du monastère ou du prieuré."
+      },
+      "explanation": {
+        "en": "‘Prior’ can mean the head of a priory, a subordinate superior in an abbey, or another office defined by institute custom. The title therefore requires contextual rather than universal interpretation.",
+        "fr": "« Prieur » peut désigner le supérieur d’un prieuré, un supérieur subordonné dans une abbaye ou une autre charge définie par la coutume de l’institut. Le titre exige donc une interprétation contextuelle plutôt qu’universelle."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PRIOR-PRIORY"
+      ]
+    },
+    {
+      "id": "G352",
+      "number": 352,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Prioress",
+        "fr": "Prieure",
+        "la": "priorissa"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-PRIORESS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The female religious superior corresponding to a prior in communities whose proper law uses that office.",
+        "fr": "Supérieure religieuse correspondant au prieur dans les communautés dont le droit propre emploie cette charge."
+      },
+      "explanation": {
+        "en": "As with prior, the precise authority of a prioress is defined by the institute’s constitutions and house structure rather than by one universal office description.",
+        "fr": "Comme pour le prieur, l’autorité précise d’une prieure est définie par les constitutions de l’institut et la structure de la maison plutôt que par une description universelle unique."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PRIORESS"
+      ]
+    },
+    {
+      "id": "G353",
+      "number": 353,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Supreme Moderator / Superior General",
+        "fr": "Modérateur suprême / Supérieur général",
+        "la": "supremus moderator"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-607-709"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The highest superior governing an entire religious institute according to universal and proper law.",
+        "fr": "Supérieur le plus élevé gouvernant tout un institut religieux selon le droit universel et propre."
+      },
+      "explanation": {
+        "en": "Current canon law uses the title ‘supreme moderator’; ‘Superior General’ remains a common practical equivalent in many institutes. The glossary preserves the canonical term while retaining the common alias.",
+        "fr": "Le droit canonique actuel emploie le titre « modérateur suprême » ; « Supérieur général » demeure un équivalent courant dans de nombreux instituts. Le glossaire conserve le terme canonique tout en gardant l’alias usuel."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
+    },
+    {
+      "id": "G354",
+      "number": 354,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Provincial Superior",
+        "fr": "Supérieur provincial",
+        "la": "superior provincialis"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-607-709"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A major superior who governs a province of a religious institute according to the institute’s law.",
+        "fr": "Supérieur majeur qui gouverne une province d’un institut religieux selon le droit de l’institut."
+      },
+      "explanation": {
+        "en": "A provincial’s authority is real but limited to the province and powers granted by universal and proper law. The office is distinct from the supreme moderator of the whole institute.",
+        "fr": "L’autorité d’un provincial est réelle mais limitée à la province et aux pouvoirs accordés par le droit universel et propre. Cette charge se distingue de celle du modérateur suprême de tout l’institut."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
+    },
+    {
+      "id": "G355",
+      "number": 355,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Monsignor",
+        "fr": "Monseigneur",
+        "la": ""
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HOLY-SEE-MONSIGNOR"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An honorific title granted by the Holy See to certain priests; not a degree of Holy Orders.",
+        "fr": "Titre honorifique accordé par le Saint-Siège à certains prêtres ; ce n’est pas un degré du sacrement de l’Ordre."
+      },
+      "explanation": {
+        "en": "Monsignor indicates a papal honorific or office-related style, depending on context. It does not make the priest a bishop and should never be treated as a sacramental rank.",
+        "fr": "Monseigneur indique un honneur pontifical ou une forme de titre liée à une charge, selon le contexte. Il ne fait pas du prêtre un évêque et ne doit jamais être traité comme un rang sacramentel."
+      },
+      "definition_source_ids": [
+        "SRC-HOLY-SEE-MONSIGNOR"
+      ]
+    },
+    {
+      "id": "G356",
+      "number": 356,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Seminarian",
+        "fr": "Séminariste",
+        "la": "seminarista / alumnus seminarii"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-232-264"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A man undergoing formation for possible ordination to the priesthood, ordinarily within a seminary or equivalent ecclesial formation structure.",
+        "fr": "Homme en formation en vue d’une éventuelle ordination sacerdotale, ordinairement dans un séminaire ou une structure ecclésiale équivalente."
+      },
+      "explanation": {
+        "en": "A seminarian is not yet a priest and, under current law, is not a cleric merely by entering seminary. Formation includes human, spiritual, intellectual and pastoral dimensions.",
+        "fr": "Un séminariste n’est pas encore prêtre et, selon le droit actuel, n’est pas clerc du seul fait d’entrer au séminaire. La formation comprend les dimensions humaine, spirituelle, intellectuelle et pastorale."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-232-264"
+      ]
+    },
+    {
+      "id": "G357",
+      "number": 357,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Novice",
+        "fr": "Novice",
+        "la": "novitius / novitia"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-607-709"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A person validly admitted to the novitiate of a religious institute for the canonical period of initial testing and formation before profession.",
+        "fr": "Personne validement admise au noviciat d’un institut religieux pour la période canonique initiale d’épreuve et de formation avant la profession."
+      },
+      "explanation": {
+        "en": "The novitiate has legal requirements for admission, duration, place and formation. A novice is not yet a professed religious by reason of novitiate alone.",
+        "fr": "Le noviciat comporte des exigences juridiques d’admission, de durée, de lieu et de formation. Un novice n’est pas encore religieux profès du seul fait d’être novice."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
+    },
+    {
+      "id": "G358",
+      "number": 358,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Postulant",
+        "fr": "Postulant(e)",
+        "la": "postulans"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-POSTULANT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A candidate in a pre-novitiate stage of discernment and formation, where an institute’s proper law provides such a stage.",
+        "fr": "Candidat dans une étape pré-noviciat de discernement et de formation, lorsque le droit propre d’un institut prévoit une telle étape."
+      },
+      "explanation": {
+        "en": "Postulancy is widely used but is not a universally standardized canonical state in current law. Its length, obligations and terminology depend largely on the institute’s proper law.",
+        "fr": "Le postulat est largement employé mais ne constitue pas un état canonique universellement standardisé dans le droit actuel. Sa durée, ses obligations et sa terminologie dépendent largement du droit propre de l’institut."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-POSTULANT"
+      ]
+    },
+    {
+      "id": "G359",
+      "number": 359,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Oblate",
+        "fr": "Oblat(e)",
+        "la": "oblatus / oblata"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-OBLATI"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A person associated with a religious community under an oblate status whose exact meaning is determined by the tradition and statutes concerned.",
+        "fr": "Personne associée à une communauté religieuse sous un statut d’oblat dont le sens exact est déterminé par la tradition et les statuts concernés."
+      },
+      "explanation": {
+        "en": "Historically ‘oblate’ has referred to several different forms of offering or affiliation, including lay oblates and members living more closely with a monastery. It is therefore a multi-sense term, not one universal canonical category.",
+        "fr": "Historiquement, « oblat » a désigné plusieurs formes différentes d’offrande ou d’affiliation, notamment des oblats laïcs et des membres vivant plus étroitement avec un monastère. C’est donc un terme à plusieurs sens, non une catégorie canonique universelle unique."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-OBLATI"
+      ]
+    },
+    {
+      "id": "G360",
+      "number": 360,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Sacristan",
+        "fr": "Sacristain",
+        "la": "sacrista"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-GIRM-105"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The person responsible for preparing and caring for the sacristy, liturgical books, vestments, vessels and other practical needs of worship.",
+        "fr": "Personne chargée de préparer et d’entretenir la sacristie, les livres liturgiques, ornements, vases et autres besoins pratiques du culte."
+      },
+      "explanation": {
+        "en": "The sacristan’s office is practical and liturgical. It does not itself imply ordination, although clergy or religious may serve as sacristans in particular institutions.",
+        "fr": "La fonction de sacristain est pratique et liturgique. Elle n’implique pas en elle-même l’ordination, même si des clercs ou religieux peuvent exercer cette fonction dans certaines institutions."
+      },
+      "definition_source_ids": [
+        "SRC-GIRM-105"
+      ]
+    },
+    {
+      "id": "G361",
+      "number": 361,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "Dominus",
+        "fr": "Dominus / Seigneur",
+        "la": "Dominus, -i m."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun Dominus: ‘Lord’ or ‘master’, used especially as a divine title in liturgical Latin.",
+        "fr": "Nom latin Dominus : « Seigneur » ou « maître », employé spécialement comme titre divin dans le latin liturgique."
+      },
+      "explanation": {
+        "en": "The lexical entry should expose declension, forms and phrase occurrences. As a divine title it often translates the biblical and liturgical ‘Lord’, but context can also support an ordinary human-master sense.",
+        "fr": "L’entrée lexicale doit présenter la déclinaison, les formes et les occurrences dans les phrases. Comme titre divin, il traduit souvent le « Seigneur » biblique et liturgique, mais le contexte peut aussi permettre le sens ordinaire de maître humain."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G362",
+      "number": 362,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "Deus",
+        "fr": "Deus / Dieu",
+        "la": "Deus, Dei m."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun Deus: ‘God’.",
+        "fr": "Nom latin Deus : « Dieu »."
+      },
+      "explanation": {
+        "en": "Deus is a high-frequency irregular-looking second-declension noun with distinctive plural forms. In liturgical usage capitalization and context usually indicate the one true God, while grammar still follows the lexical form.",
+        "fr": "Deus est un nom très fréquent de deuxième déclinaison présentant des formes plurielles particulières. Dans l’usage liturgique, la majuscule et le contexte indiquent généralement le Dieu unique, tandis que la grammaire suit la forme lexicale."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G363",
+      "number": 363,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "Christus",
+        "fr": "Christus / Christ",
+        "la": "Christus, -i m."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin proper name Christus: ‘Christ’, the Anointed One.",
+        "fr": "Nom propre latin Christus : « Christ », l’Oint."
+      },
+      "explanation": {
+        "en": "Christus is the standard Latin title-name for Jesus the Messiah. It should link to sacred-name occurrences without turning the lexeme entry into a duplicate Christology article.",
+        "fr": "Christus est le titre-nom latin standard de Jésus le Messie. Il doit renvoyer aux occurrences du nom sacré sans transformer l’entrée lexicale en doublon d’un article de christologie."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G364",
+      "number": 364,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "spiritus",
+        "fr": "esprit / Esprit",
+        "la": "spiritus, -us m."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun spiritus: ‘spirit’, ‘breath’, or ‘Spirit’ according to context.",
+        "fr": "Nom latin spiritus : « esprit », « souffle » ou « Esprit » selon le contexte."
+      },
+      "explanation": {
+        "en": "In liturgical Latin Spiritus with theological context often refers to the Holy Ghost, while the same noun can denote a human spirit or breath. Search and translation must preserve the sense distinction.",
+        "fr": "Dans le latin liturgique, Spiritus dans un contexte théologique désigne souvent le Saint-Esprit, tandis que le même nom peut désigner l’esprit humain ou le souffle. La recherche et la traduction doivent préserver cette distinction de sens."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G365",
+      "number": 365,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "sanctus",
+        "fr": "saint / sacré",
+        "la": "sanctus, -a, -um"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin adjective sanctus, -a, -um: ‘holy’; substantivally, ‘saint’.",
+        "fr": "Adjectif latin sanctus, -a, -um : « saint », « sacré » ; substantivé : « saint » comme personne."
+      },
+      "explanation": {
+        "en": "The adjective agrees with its noun in gender, number and case. In titles such as Sanctus Spiritus or Sancta Maria the translation depends on the noun and established devotional usage.",
+        "fr": "L’adjectif s’accorde avec son nom en genre, nombre et cas. Dans des titres comme Sanctus Spiritus ou Sancta Maria, la traduction dépend du nom et de l’usage dévotionnel établi."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G366",
+      "number": 366,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "beatus",
+        "fr": "bienheureux",
+        "la": "beatus, -a, -um"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin adjective beatus, -a, -um: ‘blessed’, ‘happy’; also used in titles of the blessed and saints.",
+        "fr": "Adjectif latin beatus, -a, -um : « bienheureux », « heureux » ; également employé dans les titres des bienheureux et des saints."
+      },
+      "explanation": {
+        "en": "Liturgical translation varies with context: beata Maria is conventionally ‘Blessed Mary’, while a generic biblical sentence may use ‘blessed’ or ‘happy’.",
+        "fr": "La traduction liturgique varie selon le contexte : beata Maria se traduit conventionnellement « Bienheureuse Marie », tandis qu’une phrase biblique générale peut employer « bienheureux » ou « heureux »."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G367",
+      "number": 367,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "omnipotens",
+        "fr": "tout-puissant",
+        "la": "omnipotens, -entis"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin adjective omnipotens: ‘almighty’ or ‘all-powerful’.",
+        "fr": "Adjectif latin omnipotens : « tout-puissant »."
+      },
+      "explanation": {
+        "en": "It is a third-declension participial adjective frequently used of God, especially in phrases such as omnipotens Deus. Morphology should be taught from its stem omnipotent-.",
+        "fr": "C’est un adjectif participial de troisième déclinaison fréquemment employé pour Dieu, notamment dans omnipotens Deus. La morphologie doit être enseignée à partir du radical omnipotent-."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G368",
+      "number": 368,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "aeternus",
+        "fr": "éternel",
+        "la": "aeternus, -a, -um"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin adjective aeternus, -a, -um: ‘eternal’, ‘everlasting’.",
+        "fr": "Adjectif latin aeternus, -a, -um : « éternel »."
+      },
+      "explanation": {
+        "en": "Aeternus appears constantly in prayers concerning eternal life, eternal rest and God’s eternal nature. It agrees regularly as a first/second-declension adjective.",
+        "fr": "Aeternus apparaît constamment dans les prières concernant la vie éternelle, le repos éternel et la nature éternelle de Dieu. Il s’accorde régulièrement comme adjectif de première/deuxième déclinaison."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G369",
+      "number": 369,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "misericordia",
+        "fr": "miséricorde",
+        "la": "misericordia, -ae f."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun misericordia: ‘mercy’, ‘compassion’.",
+        "fr": "Nom latin misericordia : « miséricorde », « compassion »."
+      },
+      "explanation": {
+        "en": "The noun is frequent in collects, psalms and penitential prayer. It can denote God’s merciful disposition or acts of mercy according to context.",
+        "fr": "Le nom est fréquent dans les collectes, les psaumes et la prière pénitentielle. Il peut désigner la disposition miséricordieuse de Dieu ou des actes de miséricorde selon le contexte."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G370",
+      "number": 370,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "gloria",
+        "fr": "gloire",
+        "la": "gloria, -ae f."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun gloria: ‘glory’.",
+        "fr": "Nom latin gloria : « gloire »."
+      },
+      "explanation": {
+        "en": "Gloria can denote divine glory, honour or praise and appears in fixed liturgical texts such as Gloria Patri and Gloria in excelsis Deo. The lexeme should link to those phrases.",
+        "fr": "Gloria peut désigner la gloire divine, l’honneur ou la louange et apparaît dans des textes liturgiques fixes comme Gloria Patri et Gloria in excelsis Deo. L’entrée lexicale doit renvoyer à ces phrases."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G371",
+      "number": 371,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "laus",
+        "fr": "louange",
+        "la": "laus, laudis f."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun laus: ‘praise’.",
+        "fr": "Nom latin laus : « louange »."
+      },
+      "explanation": {
+        "en": "Laus is a third-declension noun with genitive laudis and gives rise to the verb laudare. It often occurs in doxological and devotional language.",
+        "fr": "Laus est un nom de troisième déclinaison au génitif laudis et donne le verbe laudare. Il apparaît souvent dans le langage doxologique et dévotionnel."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G372",
+      "number": 372,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "pax",
+        "fr": "paix",
+        "la": "pax, pacis f."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun pax: ‘peace’.",
+        "fr": "Nom latin pax : « paix »."
+      },
+      "explanation": {
+        "en": "Pax is a third-declension noun, genitive pacis, frequent in blessings and Mass texts such as Pax Domini sit semper vobiscum. Its theological sense is determined by the phrase context.",
+        "fr": "Pax est un nom de troisième déclinaison, génitif pacis, fréquent dans les bénédictions et les textes de Messe comme Pax Domini sit semper vobiscum. Son sens théologique dépend du contexte de la phrase."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G373",
+      "number": 373,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "anima",
+        "fr": "âme",
+        "la": "anima, -ae f."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun anima: ‘soul’, sometimes ‘life’ or ‘living being’ by context.",
+        "fr": "Nom latin anima : « âme », parfois « vie » ou « être vivant » selon le contexte."
+      },
+      "explanation": {
+        "en": "In Catholic liturgical Latin anima commonly refers to the human soul, as in prayers for the dead or Communion formulas. Biblical usage can be broader, so lexical context matters.",
+        "fr": "Dans le latin liturgique catholique, anima désigne couramment l’âme humaine, notamment dans les prières pour les défunts ou les formules de Communion. L’usage biblique peut être plus large ; le contexte lexical importe donc."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G374",
+      "number": 374,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "corpus",
+        "fr": "corps",
+        "la": "corpus, corporis n."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun corpus: ‘body’.",
+        "fr": "Nom latin corpus : « corps »."
+      },
+      "explanation": {
+        "en": "Corpus is a third-declension neuter noun, genitive corporis, central to Eucharistic phrases such as Corpus Christi and Hoc est enim Corpus meum.",
+        "fr": "Corpus est un nom neutre de troisième déclinaison, génitif corporis, central dans des expressions eucharistiques comme Corpus Christi et Hoc est enim Corpus meum."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G375",
+      "number": 375,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "sanguis",
+        "fr": "sang",
+        "la": "sanguis, sanguinis m."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun sanguis: ‘blood’.",
+        "fr": "Nom latin sanguis : « sang »."
+      },
+      "explanation": {
+        "en": "Sanguis is a third-declension noun, genitive sanguinis, frequent in Eucharistic and biblical texts. Liturgical capitalization does not change its morphology.",
+        "fr": "Sanguis est un nom de troisième déclinaison, génitif sanguinis, fréquent dans les textes eucharistiques et bibliques. La majuscule liturgique ne change pas sa morphologie."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G376",
+      "number": 376,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "ecclesia",
+        "fr": "Église / église",
+        "la": "ecclesia, -ae f."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun ecclesia: ‘church’ or ‘Church’.",
+        "fr": "Nom latin ecclesia : « église » ou « Église »."
+      },
+      "explanation": {
+        "en": "The same lexeme can denote the Church as the ecclesial body or a local church/building depending on context. The lexeme therefore links to several concepts rather than forcing one definition.",
+        "fr": "Le même lexème peut désigner l’Église comme corps ecclésial ou une église locale/édifice selon le contexte. Le lexème renvoie donc à plusieurs concepts au lieu d’imposer une seule définition."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G377",
+      "number": 377,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "caelum",
+        "fr": "ciel",
+        "la": "caelum, -i n."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun caelum: ‘heaven’ or ‘sky’.",
+        "fr": "Nom latin caelum : « ciel » au sens céleste ou physique."
+      },
+      "explanation": {
+        "en": "The plural caeli is common in liturgical phrases such as Pleni sunt caeli et terra. Translation depends on whether the text speaks cosmologically, poetically or theologically.",
+        "fr": "Le pluriel caeli est fréquent dans des expressions liturgiques comme Pleni sunt caeli et terra. La traduction dépend du sens cosmologique, poétique ou théologique du texte."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G378",
+      "number": 378,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "terra",
+        "fr": "terre",
+        "la": "terra, -ae f."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun terra: ‘earth’, ‘land’, or ‘ground’.",
+        "fr": "Nom latin terra : « terre », « pays » ou « sol »."
+      },
+      "explanation": {
+        "en": "Terra is a regular first-declension noun and appears constantly in biblical and liturgical contrasts with caelum.",
+        "fr": "Terra est un nom régulier de première déclinaison et apparaît constamment dans les oppositions bibliques et liturgiques avec caelum."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G379",
+      "number": 379,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "saeculum",
+        "fr": "siècle / âge",
+        "la": "saeculum, -i n."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun saeculum: ‘age’, ‘world’, ‘generation’ or an extended period of time according to context.",
+        "fr": "Nom latin saeculum : « siècle », « âge », « monde » ou longue période selon le contexte."
+      },
+      "explanation": {
+        "en": "In saecula saeculorum is an idiomatic biblical-liturgical formula meaning ‘for ever and ever’. Learners should not translate it mechanically as ‘into the centuries of centuries’.",
+        "fr": "In saecula saeculorum est une formule biblique et liturgique idiomatique signifiant « dans les siècles des siècles » ou « pour toujours ». L’apprenant ne doit pas la traduire mécaniquement mot à mot."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G380",
+      "number": 380,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "servus",
+        "fr": "serviteur",
+        "la": "servus, -i m."
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin noun servus: ‘servant’ or ‘slave’.",
+        "fr": "Nom latin servus : « serviteur » ou « esclave »."
+      },
+      "explanation": {
+        "en": "Liturgical Latin often uses servus for the servant of God, but also uses famulus and related terms. Translation should respect the phrase rather than forcing one English or French equivalent everywhere.",
+        "fr": "Le latin liturgique emploie souvent servus pour le serviteur de Dieu, mais aussi famulus et des termes proches. La traduction doit respecter la phrase plutôt qu’imposer partout un seul équivalent."
+      },
+      "definition_source_ids": [
+        "CORE-LATIN-200-V0.2"
+      ]
+    },
+    {
+      "id": "G381",
+      "number": 381,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "orare",
+        "fr": "prier",
+        "la": "oro, orare"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin verb orare: ‘to pray’, ‘to ask’, ‘to plead’.",
+        "fr": "Verbe latin orare : « prier », « demander », « supplier »."
+      },
+      "explanation": {
+        "en": "The verb is central to liturgical prayer and underlies Oremus, ‘Let us pray’. Its exact English or French rendering depends on whether the context stresses prayer, petition or address.",
+        "fr": "Le verbe est central dans la prière liturgique et se trouve derrière Oremus, « Prions ». Sa traduction exacte dépend du fait que le contexte souligne la prière, la demande ou l’adresse."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G382",
+      "number": 382,
+      "kind": "LATIN_PHRASE",
+      "labels": {
+        "en": "Oremus",
+        "fr": "Prions",
+        "la": "Oremus"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The liturgical invitation Oremus: ‘Let us pray’.",
+        "fr": "Invitation liturgique Oremus : « Prions »."
+      },
+      "explanation": {
+        "en": "Oremus is the first-person plural present subjunctive of oro used hortatorily. It functions as a fixed liturgical cue and therefore belongs primarily to the phrase layer.",
+        "fr": "Oremus est la première personne du pluriel du subjonctif présent de oro employée de manière exhortative. Il fonctionne comme indication liturgique fixe et appartient donc principalement à la couche des phrases."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G383",
+      "number": 383,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "quaesumus",
+        "fr": "nous vous en prions",
+        "la": "quaesumus"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin quaesumus: ‘we beseech’, ‘we ask’.",
+        "fr": "Latin quaesumus : « nous vous en prions », « nous demandons »."
+      },
+      "explanation": {
+        "en": "Quaeso is defective in classical usage and quaesumus survives frequently as a conventional liturgical petition formula. Its idiomatic translation is more natural than a mechanical grammatical gloss.",
+        "fr": "Quaeso est défectif dans l’usage classique et quaesumus demeure très fréquent comme formule liturgique conventionnelle de demande. Une traduction idiomatique est plus naturelle qu’un calque grammatical."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G384",
+      "number": 384,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "praesta",
+        "fr": "accordez / donnez",
+        "la": "praesta"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin imperative praesta: ‘grant’, ‘bestow’, ‘make available’.",
+        "fr": "Impératif latin praesta : « accordez », « donnez »."
+      },
+      "explanation": {
+        "en": "Praesta is a common collect verb asking God to grant a requested grace or effect. Its precise nuance varies with the object and subordinate clause that follow.",
+        "fr": "Praesta est un verbe fréquent des collectes demandant à Dieu d’accorder une grâce ou un effet. Sa nuance précise varie selon le complément et la proposition qui suivent."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G385",
+      "number": 385,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "concede",
+        "fr": "accordez",
+        "la": "concede"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin imperative concede: ‘grant’, ‘allow’, ‘bestow’.",
+        "fr": "Impératif latin concede : « accordez », « permettez »."
+      },
+      "explanation": {
+        "en": "Concede is a standard liturgical petition verb. It is usually best translated idiomatically as ‘grant’ rather than with the modern sense of reluctantly conceding an argument.",
+        "fr": "Concede est un verbe standard de demande liturgique. Il se traduit généralement de manière idiomatique par « accordez » plutôt qu’au sens moderne de concéder à contrecœur un argument."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G386",
+      "number": 386,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "exaudi",
+        "fr": "exaucez",
+        "la": "exaudi"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin imperative exaudi: ‘hear favourably’, ‘hearken to’.",
+        "fr": "Impératif latin exaudi : « exaucez », « écoutez favorablement »."
+      },
+      "explanation": {
+        "en": "Exaudio is stronger than simple audio in many prayer contexts: it asks not merely that God hear sound but that He hear and favourably answer the prayer.",
+        "fr": "Exaudio est souvent plus fort que le simple audio dans les contextes de prière : il demande non seulement que Dieu entende, mais qu’il écoute favorablement et exauce."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G387",
+      "number": 387,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "miserere",
+        "fr": "ayez pitié",
+        "la": "miserere"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin miserere: ‘have mercy’.",
+        "fr": "Latin miserere : « ayez pitié », « faites miséricorde »."
+      },
+      "explanation": {
+        "en": "Miserere is the imperative of the deponent verb misereor and governs the genitive in classical-liturgical usage, as in miserere nobis.",
+        "fr": "Miserere est l’impératif du verbe déponent misereor et régit le génitif dans l’usage classique-liturgique, comme dans miserere nobis."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G388",
+      "number": 388,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "benedicere",
+        "fr": "bénir",
+        "la": "benedicere"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin benedicere: ‘to bless’.",
+        "fr": "Verbe latin benedicere : « bénir »."
+      },
+      "explanation": {
+        "en": "Benedico is formed from bene and dico and in liturgical usage denotes blessing or speaking blessing. It gives rise to forms such as benedicimus and benedictus.",
+        "fr": "Benedico est formé de bene et dico et, dans l’usage liturgique, signifie bénir ou prononcer une bénédiction. Il donne des formes comme benedicimus et benedictus."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G389",
+      "number": 389,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "laudare",
+        "fr": "louer",
+        "la": "laudare"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin laudare: ‘to praise’.",
+        "fr": "Verbe latin laudare : « louer »."
+      },
+      "explanation": {
+        "en": "Laudare is the verb corresponding to laus, praise, and appears in doxological texts such as Laudamus te.",
+        "fr": "Laudare est le verbe correspondant à laus, louange, et apparaît dans des textes doxologiques comme Laudamus te."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G390",
+      "number": 390,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "adorare",
+        "fr": "adorer",
+        "la": "adorare"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin adorare: ‘to adore’, ‘to worship’, sometimes more broadly ‘to venerate’ in historical usage.",
+        "fr": "Verbe latin adorare : « adorer », parfois plus largement « vénérer » dans certains usages historiques."
+      },
+      "explanation": {
+        "en": "In precise modern Catholic theological translation, divine adoration should be distinguished from veneration of saints. Historical Latin context can be broader, so the lexeme cannot mechanically decide the theological category without its object.",
+        "fr": "Dans la traduction théologique catholique moderne précise, l’adoration divine doit être distinguée de la vénération des saints. Le latin historique peut être plus large ; le lexème seul ne peut donc déterminer mécaniquement la catégorie théologique sans son objet."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G391",
+      "number": 391,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "glorificare",
+        "fr": "glorifier",
+        "la": "glorificare"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin glorificare: ‘to glorify’.",
+        "fr": "Verbe latin glorificare : « glorifier »."
+      },
+      "explanation": {
+        "en": "The verb appears in praise of God and in biblical-liturgical language of manifesting glory. It is a regular first-conjugation ecclesiastical Latin verb.",
+        "fr": "Le verbe apparaît dans la louange de Dieu et dans le langage biblique-liturgique de manifestation de la gloire. C’est un verbe ecclésiastique régulier de première conjugaison."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G392",
+      "number": 392,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "credere",
+        "fr": "croire",
+        "la": "credere"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin credere: ‘to believe’, ‘to trust’.",
+        "fr": "Verbe latin credere : « croire », « avoir confiance »."
+      },
+      "explanation": {
+        "en": "Credo can introduce belief in a proposition or trust in a person, with different grammatical constructions. In the Creed it expresses the profession Credo in unum Deum.",
+        "fr": "Credo peut introduire la croyance en une proposition ou la confiance en une personne avec des constructions grammaticales différentes. Dans le Credo, il exprime la profession Credo in unum Deum."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G393",
+      "number": 393,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "sperare",
+        "fr": "espérer",
+        "la": "sperare"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin sperare: ‘to hope’, ‘to expect’.",
+        "fr": "Verbe latin sperare : « espérer », « attendre avec espérance »."
+      },
+      "explanation": {
+        "en": "In Christian Latin the verb often carries the theological sense of hope in God or His promises, but grammar and context determine the exact object.",
+        "fr": "Dans le latin chrétien, le verbe porte souvent le sens théologique de l’espérance en Dieu ou en ses promesses, mais la grammaire et le contexte déterminent l’objet exact."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G394",
+      "number": 394,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "diligere",
+        "fr": "aimer",
+        "la": "diligere"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin diligere: ‘to love’, especially with an emphasis on chosen or esteemed love.",
+        "fr": "Verbe latin diligere : « aimer », souvent avec une nuance d’amour choisi ou estimatif."
+      },
+      "explanation": {
+        "en": "Diligere and amare overlap but are not always interchangeable in nuance. Scriptural and liturgical Latin frequently uses diligo for love of God and neighbour.",
+        "fr": "Diligere et amare se recouvrent mais ne sont pas toujours interchangeables dans leur nuance. Le latin scripturaire et liturgique emploie fréquemment diligo pour l’amour de Dieu et du prochain."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G395",
+      "number": 395,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "confiteri",
+        "fr": "confesser / reconnaître",
+        "la": "confiteri"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin confiteri: ‘to confess’, ‘acknowledge’, ‘profess’, and in some contexts ‘praise’.",
+        "fr": "Verbe latin confiteri : « confesser », « reconnaître », « professer » et, dans certains contextes, « louer »."
+      },
+      "explanation": {
+        "en": "The broad lexical sense explains why Confiteor does not always mean sacramental Confession. G036 is the sacramental concept; G395 is the wider Latin verb family.",
+        "fr": "Le sens lexical large explique pourquoi Confiteor ne signifie pas toujours Confession sacramentelle. G036 est le concept sacramentel ; G395 est la famille verbale latine plus large."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G396",
+      "number": 396,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "suscipere",
+        "fr": "recevoir / accepter",
+        "la": "suscipere"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin suscipere: ‘to receive’, ‘take up’, ‘accept’, ‘undertake’.",
+        "fr": "Verbe latin suscipere : « recevoir », « prendre », « accueillir », « entreprendre »."
+      },
+      "explanation": {
+        "en": "Suscipio has a wide range of liturgical uses, from receiving gifts or persons to taking something up. Translation should be phrase-specific.",
+        "fr": "Suscipio possède une large gamme d’usages liturgiques, de l’accueil de dons ou de personnes à l’action de prendre quelque chose. La traduction doit dépendre de la phrase."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G397",
+      "number": 397,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "offerre",
+        "fr": "offrir",
+        "la": "offerre"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin offerre: ‘to offer’, ‘present’, ‘bring before’.",
+        "fr": "Verbe latin offerre : « offrir », « présenter »."
+      },
+      "explanation": {
+        "en": "The irregular compound of fero is central to offertory and sacrificial language. Its forms should be taught as a lexical family rather than inferred from a regular conjugation.",
+        "fr": "Le composé irrégulier de fero est central dans le langage de l’offertoire et du sacrifice. Ses formes doivent être enseignées comme famille lexicale plutôt que déduites d’une conjugaison régulière."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G398",
+      "number": 398,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "requiescere",
+        "fr": "se reposer",
+        "la": "requiescere"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin requiescere: ‘to rest’, ‘to repose’.",
+        "fr": "Verbe latin requiescere : « se reposer », « reposer »."
+      },
+      "explanation": {
+        "en": "The verb appears especially in prayers for the dead and gives the vocabulary behind requiem, ‘rest’. Its theological sense comes from the prayer context, not from the verb alone.",
+        "fr": "Le verbe apparaît spécialement dans les prières pour les défunts et donne le vocabulaire à l’origine de requiem, « repos ». Son sens théologique vient du contexte de prière, non du verbe seul."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G399",
+      "number": 399,
+      "kind": "LATIN_LEXEME",
+      "labels": {
+        "en": "dignus",
+        "fr": "digne",
+        "la": "dignus, -a, -um"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Latin adjective dignus, -a, -um: ‘worthy’.",
+        "fr": "Adjectif latin dignus, -a, -um : « digne »."
+      },
+      "explanation": {
+        "en": "Dignus often governs an ablative or appears in fixed liturgical formulas such as Dignum et iustum est and Domine, non sum dignus.",
+        "fr": "Dignus régit souvent l’ablatif ou apparaît dans des formules liturgiques fixes comme Dignum et iustum est et Domine, non sum dignus."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G400",
+      "number": 400,
+      "kind": "LATIN_PHRASE",
+      "labels": {
+        "en": "Per Dominum nostrum Iesum Christum…",
+        "fr": "Par Notre-Seigneur Jésus-Christ…",
+        "la": "Per Dominum nostrum Iesum Christum…"
+      },
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The common liturgical conclusion Per Dominum nostrum Iesum Christum…: ‘Through our Lord Jesus Christ…’.",
+        "fr": "Conclusion liturgique courante Per Dominum nostrum Iesum Christum… : « Par Notre-Seigneur Jésus-Christ… »."
+      },
+      "explanation": {
+        "en": "The phrase is a Christological conclusion used in collects and other prayers, with grammatical variations depending on whether Christ, the Father and the Holy Ghost have been named in the prayer.",
+        "fr": "La formule est une conclusion christologique utilisée dans les collectes et autres prières, avec des variantes grammaticales selon que le Christ, le Père et le Saint-Esprit ont été nommés dans la prière."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
+    },
+    {
+      "id": "G401",
+      "number": 401,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Narthex",
+        "fr": "Narthex",
+        "la": "narthex"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-NARTHEX"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The vestibule or entrance area at the western end of a church, historically distinct from the nave.",
+        "fr": "Vestibule ou espace d’entrée à l’extrémité occidentale d’une église, historiquement distinct de la nef."
+      },
+      "explanation": {
+        "en": "The narthex has varied architectural and liturgical functions across periods. It is an architectural term and should not be treated as a universal requirement of every church building.",
+        "fr": "Le narthex a eu des fonctions architecturales et liturgiques variables selon les époques. C’est un terme architectural et non une exigence universelle de tout édifice religieux."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-NARTHEX"
+      ]
+    },
+    {
+      "id": "G402",
+      "number": 402,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Nave",
+        "fr": "Nef",
+        "la": "navis ecclesiae"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-NAVE"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The principal body of a church where the faithful ordinarily stand or sit during worship.",
+        "fr": "Partie principale d’une église où les fidèles se tiennent ordinairement pendant le culte."
+      },
+      "explanation": {
+        "en": "The nave is distinguished from the sanctuary, choir and side chapels. Historical church plans can use the term with architectural nuances, but it broadly denotes the main congregational space.",
+        "fr": "La nef se distingue du sanctuaire, du chœur et des chapelles latérales. Les plans historiques peuvent employer le terme avec des nuances architecturales, mais il désigne largement l’espace principal des fidèles."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-NAVE"
+      ]
+    },
+    {
+      "id": "G403",
+      "number": 403,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Architectural choir",
+        "fr": "Chœur",
+        "la": "chorus"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-CHOIR"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The architectural area of a church traditionally occupied by clergy or singers, often between nave and sanctuary.",
+        "fr": "Partie architecturale d’une église traditionnellement occupée par le clergé ou les chanteurs, souvent entre la nef et le sanctuaire."
+      },
+      "explanation": {
+        "en": "This architectural sense of choir must be distinguished from G245, the body of singers. French chœur likewise covers both senses, so category and context must disambiguate.",
+        "fr": "Ce sens architectural de chœur doit être distingué de G245, l’ensemble des chanteurs. Le français « chœur » couvre également les deux sens ; la catégorie et le contexte doivent donc les désambiguïser."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CHOIR"
+      ]
+    },
+    {
+      "id": "G404",
+      "number": 404,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "High altar",
+        "fr": "Maître-autel",
+        "la": "altare maius"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-HIGH-SIDE-ALTARS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The principal altar of a church, traditionally the chief focus of its liturgical arrangement.",
+        "fr": "Autel principal d’une église, traditionnellement centre majeur de son organisation liturgique."
+      },
+      "explanation": {
+        "en": "A high altar is distinguished from side altars and secondary altars. The term describes architectural and liturgical prominence, not a doctrinally superior kind of altar.",
+        "fr": "Le maître-autel se distingue des autels latéraux et secondaires. Le terme décrit une prééminence architecturale et liturgique, non une catégorie doctrinalement supérieure d’autel."
+      },
+      "definition_source_ids": [
+        "SRC-P16-HIGH-SIDE-ALTARS"
+      ]
+    },
+    {
+      "id": "G405",
+      "number": 405,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Side altar",
+        "fr": "Autel latéral",
+        "la": "altare laterale"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-HIGH-SIDE-ALTARS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A secondary altar located apart from the principal altar, often in a side chapel or along a church wall.",
+        "fr": "Autel secondaire situé à l’écart de l’autel principal, souvent dans une chapelle latérale ou le long d’un mur de l’église."
+      },
+      "explanation": {
+        "en": "Side altars historically supported additional Masses and particular devotions. Their presence and use vary with church architecture and liturgical discipline.",
+        "fr": "Les autels latéraux ont historiquement permis des Messes supplémentaires et des dévotions particulières. Leur présence et leur usage varient selon l’architecture de l’église et la discipline liturgique."
+      },
+      "definition_source_ids": [
+        "SRC-P16-HIGH-SIDE-ALTARS"
+      ]
+    },
+    {
+      "id": "G406",
+      "number": 406,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Cathedra",
+        "fr": "Cathèdre",
+        "la": "cathedra"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-SEDILIA-CATHEDRA"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The bishop’s official chair in his cathedral church, symbolizing his teaching and governing office.",
+        "fr": "Siège officiel de l’évêque dans son église cathédrale, symbole de sa charge d’enseignement et de gouvernement."
+      },
+      "explanation": {
+        "en": "The cathedral takes its name from the cathedra. It must be distinguished from ordinary sedilia or celebrant seating, which do not signify diocesan episcopal authority.",
+        "fr": "La cathédrale tire son nom de la cathèdre. Celle-ci doit être distinguée des sedilia ou sièges ordinaires du célébrant, qui ne signifient pas l’autorité épiscopale diocésaine."
+      },
+      "definition_source_ids": [
+        "SRC-P16-SEDILIA-CATHEDRA"
+      ]
+    },
+    {
+      "id": "G407",
+      "number": 407,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Rood screen / jubé",
+        "fr": "Jubé",
+        "la": "cancelli / trabes crucis"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-JUBE"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A screen or loft marking the division between nave and choir or sanctuary, often surmounted by a crucifix.",
+        "fr": "Clôture ou tribune marquant la séparation entre nef et chœur ou sanctuaire, souvent surmontée d’un crucifix."
+      },
+      "explanation": {
+        "en": "The medieval and early modern jubé took many forms and functions. It is a historical architectural feature, not a universal requirement of traditional Catholic churches.",
+        "fr": "Le jubé médiéval et moderne a pris de nombreuses formes et fonctions. C’est un élément architectural historique et non une exigence universelle des églises catholiques traditionnelles."
+      },
+      "definition_source_ids": [
+        "SRC-P16-JUBE"
+      ]
+    },
+    {
+      "id": "G408",
+      "number": 408,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Pulpit",
+        "fr": "Chaire",
+        "la": "pulpitum"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-PULPIT-AMBO"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An elevated preaching structure from which sermons or proclamations are delivered.",
+        "fr": "Structure surélevée destinée à la prédication et aux proclamations."
+      },
+      "explanation": {
+        "en": "The pulpit is primarily architectural and homiletic. It differs from the liturgical ambo, although in some churches a single structure may have served overlapping functions.",
+        "fr": "La chaire est principalement architecturale et homilétique. Elle se distingue de l’ambon liturgique, même si dans certaines églises une seule structure a pu remplir des fonctions qui se recoupent."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PULPIT-AMBO"
+      ]
+    },
+    {
+      "id": "G409",
+      "number": 409,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Ambo",
+        "fr": "Ambon",
+        "la": "ambo"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-HIST-PULPIT-AMBO"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A fixed or stable liturgical place from which readings or certain chants are proclaimed.",
+        "fr": "Lieu liturgique fixe ou stable d’où sont proclamées les lectures ou certains chants."
+      },
+      "explanation": {
+        "en": "The ambo has ancient roots and a specific liturgical function. It should not automatically be equated with every pulpit or portable lectern.",
+        "fr": "L’ambon possède des racines anciennes et une fonction liturgique précise. Il ne doit pas être automatiquement assimilé à toute chaire ou pupitre mobile."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PULPIT-AMBO"
+      ]
+    },
+    {
+      "id": "G410",
+      "number": 410,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Baptismal font",
+        "fr": "Fonts baptismaux",
+        "la": "fons baptismalis"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-FONT-STOUP"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The basin or structure containing baptismal water for the administration of Baptism.",
+        "fr": "Bassin ou structure contenant l’eau baptismale pour l’administration du Baptême."
+      },
+      "explanation": {
+        "en": "The baptismal font is a sacramental furnishing and can be located in a baptistery, chapel or church area according to architecture and law. It is distinct from a holy-water stoup.",
+        "fr": "Les fonts baptismaux sont un mobilier sacramentel et peuvent se situer dans un baptistère, une chapelle ou un espace de l’église selon l’architecture et le droit. Ils se distinguent du bénitier."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-FONT-STOUP"
+      ]
+    },
+    {
+      "id": "G411",
+      "number": 411,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Holy-water stoup",
+        "fr": "Bénitier",
+        "la": "vas aquae benedictae"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-FONT-STOUP"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A vessel placed near the entrance of a church to hold holy water for the faithful.",
+        "fr": "Récipient placé près de l’entrée d’une église pour contenir de l’eau bénite à l’usage des fidèles."
+      },
+      "explanation": {
+        "en": "The stoup supports devotional use of holy water, especially the Sign of the Cross on entering or leaving. It must be distinguished from the baptismal font, which serves the sacrament of Baptism.",
+        "fr": "Le bénitier permet l’usage dévotionnel de l’eau bénite, notamment le signe de croix en entrant ou en sortant. Il doit être distingué des fonts baptismaux, destinés au sacrement de Baptême."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-FONT-STOUP"
+      ]
+    },
+    {
+      "id": "G412",
+      "number": 412,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Confessional",
+        "fr": "Confessionnal",
+        "la": "confessionale / sedes confessionalis"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-CIC83-964"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The fixed place or enclosure provided for hearing sacramental confessions.",
+        "fr": "Lieu ou meuble fixe prévu pour entendre les confessions sacramentelles."
+      },
+      "explanation": {
+        "en": "A confessional is a practical-sacramental furnishing, not the sacrament itself. Current canon law still requires confessionals with a fixed grille to be available in churches for those who wish to use them.",
+        "fr": "Le confessionnal est un mobilier pratique et sacramentel, non le sacrement lui-même. Le droit canonique actuel exige encore que des confessionnaux munis d’une grille fixe soient disponibles dans les églises pour les fidèles qui souhaitent les utiliser."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-964"
+      ]
+    },
+    {
+      "id": "G413",
+      "number": 413,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Confessional grille",
+        "fr": "Grille du confessionnal",
+        "la": "craticula"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "MULTI_LAYER",
+      "source_ids": [
+        "SRC-CIC83-964"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The fixed screen or lattice in a confessional separating priest and penitent when that form is used.",
+        "fr": "Écran ou grille fixe d’un confessionnal séparant le prêtre du pénitent lorsque cette forme est utilisée."
+      },
+      "explanation": {
+        "en": "The grille protects anonymity and remains explicitly provided for in current canon law. Its availability does not prevent other lawful forms of confession where the law permits them.",
+        "fr": "La grille protège l’anonymat et demeure explicitement prévue par le droit canonique actuel. Sa disponibilité n’empêche pas d’autres formes licites de confession lorsque le droit les permet."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-964"
+      ]
+    },
+    {
+      "id": "G414",
+      "number": 414,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Sacrarium",
+        "fr": "Sacrarium",
+        "la": "sacrarium"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-PISCINA-SACRARIUM"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A drain or basin in or near the sacristy intended for the reverent disposal of certain blessed water or sacred-liquid residues into the earth.",
+        "fr": "Drain ou bassin dans ou près de la sacristie destiné à l’évacuation respectueuse de certaines eaux bénites ou résidus de liquides sacrés directement dans la terre."
+      },
+      "explanation": {
+        "en": "Historical terminology overlaps with piscina, but sacrarium ordinarily emphasizes the drain’s sacred-service function. Modern local arrangements and law can differ.",
+        "fr": "La terminologie historique se recoupe avec piscina, mais sacrarium souligne ordinairement la fonction sacrée d’évacuation. Les dispositions locales modernes et le droit peuvent différer."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PISCINA-SACRARIUM"
+      ]
+    },
+    {
+      "id": "G415",
+      "number": 415,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Piscina",
+        "fr": "Piscine liturgique",
+        "la": "piscina"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-PISCINA-SACRARIUM"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A basin or drain associated historically with the reverent disposal of water used in liturgical cleansing.",
+        "fr": "Bassin ou drain historiquement associé à l’évacuation respectueuse de l’eau utilisée pour les purifications liturgiques."
+      },
+      "explanation": {
+        "en": "Piscina and sacrarium can overlap in historical sources. The glossary keeps the architectural-historical terms linked while allowing particular sources to specify the exact feature.",
+        "fr": "Piscina et sacrarium peuvent se recouper dans les sources historiques. Le glossaire garde ces termes architecturaux-historiques liés tout en permettant aux sources particulières d’en préciser la forme exacte."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PISCINA-SACRARIUM"
+      ]
+    },
+    {
+      "id": "G416",
+      "number": 416,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Architectural ciborium",
+        "fr": "Ciborium architectural",
+        "la": "ciborium"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An architectural canopy or structure erected over an altar.",
+        "fr": "Structure ou baldaquin architectural élevé au-dessus d’un autel."
+      },
+      "explanation": {
+        "en": "This architectural ciborium must be distinguished from G192, the Eucharistic vessel called ciborium. The shared word reflects different historical developments and requires sense disambiguation.",
+        "fr": "Ce ciborium architectural doit être distingué de G192, le vase eucharistique appelé ciboire. Le mot commun reflète des développements historiques différents et exige une désambiguïsation."
+      },
+      "definition_source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ]
+    },
+    {
+      "id": "G417",
+      "number": 417,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Baldachin",
+        "fr": "Baldaquin",
+        "la": "baldachinum"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A fixed canopy over an altar, throne or sacred focal point.",
+        "fr": "Baldaquin fixe au-dessus d’un autel, d’un trône ou d’un point focal sacré."
+      },
+      "explanation": {
+        "en": "The architectural baldachin is distinct from the portable processional canopy in G230. Historical terminology can overlap with ciborium depending on form and period.",
+        "fr": "Le baldaquin architectural se distingue du dais processionnel portatif de G230. La terminologie historique peut se recouper avec ciborium selon la forme et l’époque."
+      },
+      "definition_source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ]
+    },
+    {
+      "id": "G418",
+      "number": 418,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Retable",
+        "fr": "Retable",
+        "la": "retabulum"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An ornamental structure or screen rising behind an altar and carrying sacred images, sculpture or decoration.",
+        "fr": "Structure ornementale ou écran s’élevant derrière un autel et portant images sacrées, sculptures ou décor."
+      },
+      "explanation": {
+        "en": "Retables range from simple painted panels to monumental architectural compositions. They are devotional-architectural furnishings, not part of the altar’s sacramental essence.",
+        "fr": "Les retables vont du simple panneau peint aux compositions architecturales monumentales. Ce sont des éléments dévotionnels et architecturaux, non une partie de l’essence sacramentelle de l’autel."
+      },
+      "definition_source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ]
+    },
+    {
+      "id": "G419",
+      "number": 419,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Stations of the Cross",
+        "fr": "Chemin de Croix",
+        "la": "Via Crucis"
+      },
+      "primary_category": "prayer_devotions",
+      "browse_section": "stations",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-STATIONS"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A series of devotional stations commemorating episodes of Christ’s Passion, traditionally fourteen in number.",
+        "fr": "Série de stations dévotionnelles commémorant les épisodes de la Passion du Christ, traditionnellement au nombre de quatorze."
+      },
+      "explanation": {
+        "en": "The Stations of the Cross combine images or crosses with prayer and meditation. This devotional ‘station’ sense is distinct from G337, the liturgical station church.",
+        "fr": "Le Chemin de Croix associe images ou croix à la prière et à la méditation. Ce sens dévotionnel de « station » se distingue de G337, l’église stationnale liturgique."
+      },
+      "definition_source_ids": [
+        "SRC-P16-STATIONS"
+      ]
+    },
+    {
+      "id": "G420",
+      "number": 420,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Churchyard / cemetery",
+        "fr": "Cimetière / enclos paroissial",
+        "la": "coemeterium"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-P16-CHURCHYARD-CEMETERY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Ground associated with a church and used for Christian burial, or a cemetery set apart for the dead.",
+        "fr": "Terrain associé à une église et utilisé pour la sépulture chrétienne, ou cimetière consacré aux défunts."
+      },
+      "explanation": {
+        "en": "Churchyard and cemetery customs vary culturally and legally. The glossary treats this as funerary architecture/custom rather than assuming every parish historically possessed its own burial ground.",
+        "fr": "Les coutumes relatives aux cimetières et enclos paroissiaux varient culturellement et juridiquement. Le glossaire traite ce terme comme relevant de l’architecture et des coutumes funéraires sans supposer que toute paroisse possédait historiquement son propre cimetière."
+      },
+      "definition_source_ids": [
+        "SRC-P16-CHURCHYARD-CEMETERY"
+      ]
+    },
+    {
+      "id": "G421",
+      "number": 421,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Matrimonial consent",
+        "fr": "Consentement matrimonial",
+        "la": "consensus matrimonialis"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1055-1057"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The act of will by which a man and a woman mutually give and accept one another in order to establish marriage.",
+        "fr": "Acte de volonté par lequel un homme et une femme se donnent et se reçoivent mutuellement afin de constituer le mariage."
+      },
+      "explanation": {
+        "en": "Valid matrimonial consent is indispensable: no human authority can supply it where it is absent. Canon law regulates capacity, manifestation and defects of consent.",
+        "fr": "Le consentement matrimonial valide est indispensable : aucune autorité humaine ne peut le suppléer lorsqu’il manque. Le droit canonique règle la capacité, la manifestation et les vices du consentement."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1055-1057"
+      ]
+    },
+    {
+      "id": "G422",
+      "number": 422,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Canonical form",
+        "fr": "Forme canonique",
+        "la": "forma canonica matrimonii"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1108"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The juridical manner in which Catholics must ordinarily exchange matrimonial consent for validity, unless the law provides otherwise.",
+        "fr": "Manière juridique selon laquelle les catholiques doivent ordinairement échanger leur consentement matrimonial pour la validité, sauf disposition contraire du droit."
+      },
+      "explanation": {
+        "en": "Canonical form ordinarily requires consent before the competent assisting cleric and witnesses. Dispensation and exceptional forms are governed by law and should not be improvised pastorally.",
+        "fr": "La forme canonique exige ordinairement le consentement devant le ministre compétent qui assiste et les témoins. Les dispenses et formes exceptionnelles sont régies par le droit et ne doivent pas être improvisées pastoralement."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1108"
+      ]
+    },
+    {
+      "id": "G423",
+      "number": 423,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Engagement",
+        "fr": "Fiançailles",
+        "la": "sponsalia"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1062"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A mutual promise or commitment to future marriage that does not itself create the matrimonial bond.",
+        "fr": "Promesse ou engagement mutuel en vue d’un mariage futur qui ne constitue pas en lui-même le lien matrimonial."
+      },
+      "explanation": {
+        "en": "Current canon law leaves engagement substantially to particular law and custom. Engagement creates serious moral and practical responsibilities but is not marriage and does not confer marital rights.",
+        "fr": "Le droit canonique actuel laisse largement les fiançailles au droit particulier et à la coutume. Les fiançailles créent de sérieuses responsabilités morales et pratiques mais ne sont pas le mariage et ne confèrent pas les droits conjugaux."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1062"
+      ]
+    },
+    {
+      "id": "G424",
+      "number": 424,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Historical sponsalia",
+        "fr": "Fiançailles canoniques anciennes",
+        "la": "sponsalia"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-CIC17-1017"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The older canonical institution of sponsalia or formal betrothal governed by pre-1983 discipline.",
+        "fr": "Ancienne institution canonique des sponsalia ou fiançailles formelles régie par la discipline antérieure à 1983."
+      },
+      "explanation": {
+        "en": "Historical sponsalia had juridical forms and effects that should not be silently imported into current marriage law. This entry exists specifically to separate the historical layer from modern engagement.",
+        "fr": "Les sponsalia historiques possédaient des formes et effets juridiques qui ne doivent pas être importés silencieusement dans le droit matrimonial actuel. Cette entrée existe précisément pour séparer la couche historique des fiançailles modernes."
+      },
+      "definition_source_ids": [
+        "SRC-CIC17-1017"
+      ]
+    },
+    {
+      "id": "G425",
+      "number": 425,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Marriage banns",
+        "fr": "Bans de mariage",
+        "la": "publicationes matrimoniales"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1066-1067"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Public announcements or inquiries concerning an intended marriage, traditionally used to discover impediments before celebration.",
+        "fr": "Annonces publiques ou enquêtes concernant un mariage projeté, traditionnellement destinées à découvrir d’éventuels empêchements avant la célébration."
+      },
+      "explanation": {
+        "en": "Current law requires appropriate investigation before marriage but the exact use of banns can depend on episcopal-conference or particular norms. Historical practice should therefore be layered separately.",
+        "fr": "Le droit actuel exige une enquête appropriée avant le mariage, mais l’usage précis des bans peut dépendre des normes de la conférence épiscopale ou du droit particulier. La pratique historique doit donc être présentée séparément."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1066-1067"
+      ]
+    },
+    {
+      "id": "G426",
+      "number": 426,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Matrimonial impediment",
+        "fr": "Empêchement matrimonial",
+        "la": "impedimentum matrimoniale"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1073-1082"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A circumstance recognized by canon law that restricts or prohibits the valid or lawful celebration of marriage.",
+        "fr": "Circonstance reconnue par le droit canonique qui restreint ou interdit la célébration valide ou licite du mariage."
+      },
+      "explanation": {
+        "en": "Impediments are juridical categories, not merely pastoral concerns. Their existence, scope, dispensation and effect are determined by law rather than private judgment.",
+        "fr": "Les empêchements sont des catégories juridiques, non de simples préoccupations pastorales. Leur existence, leur étendue, leur dispense et leur effet sont déterminés par le droit et non par un jugement privé."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1073-1082"
+      ]
+    },
+    {
+      "id": "G427",
+      "number": 427,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Diriment impediment",
+        "fr": "Empêchement dirimant",
+        "la": "impedimentum dirimens"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1073-1094"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A matrimonial impediment that makes an attempted marriage invalid unless lawfully dispensed where dispensation is possible.",
+        "fr": "Empêchement matrimonial qui rend invalide une tentative de mariage à moins d’une dispense licite lorsqu’elle est possible."
+      },
+      "explanation": {
+        "en": "A diriment impediment affects validity, not merely liceity. Canon law determines which impediments are diriment and which authority can dispense from them.",
+        "fr": "Un empêchement dirimant affecte la validité et non seulement la licéité. Le droit canonique détermine quels empêchements sont dirimants et quelle autorité peut en dispenser."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1073-1094"
+      ]
+    },
+    {
+      "id": "G428",
+      "number": 428,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Mixed marriage",
+        "fr": "Mariage mixte",
+        "la": "matrimonium mixtum"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1124-1125"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A marriage between a Catholic and another baptized Christian who is not in full communion with the Catholic Church.",
+        "fr": "Mariage entre un catholique et un autre chrétien baptisé qui n’est pas en pleine communion avec l’Église catholique."
+      },
+      "explanation": {
+        "en": "Mixed marriage is distinct from disparity of cult because both parties are baptized. Permission and pastoral conditions are governed by canon law.",
+        "fr": "Le mariage mixte se distingue de la disparité de culte parce que les deux parties sont baptisées. La permission et les conditions pastorales sont régies par le droit canonique."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1124-1125"
+      ]
+    },
+    {
+      "id": "G429",
+      "number": 429,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Disparity of cult",
+        "fr": "Disparité de culte",
+        "la": "disparitas cultus"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1086"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The diriment impediment existing between a Catholic and an unbaptized person.",
+        "fr": "Empêchement dirimant existant entre un catholique et une personne non baptisée."
+      },
+      "explanation": {
+        "en": "A marriage attempted under disparity of cult is invalid without the required dispensation. The category must not be confused with mixed marriage between two baptized persons.",
+        "fr": "Un mariage tenté sous l’empêchement de disparité de culte est invalide sans la dispense requise. Cette catégorie ne doit pas être confondue avec le mariage mixte entre deux personnes baptisées."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1086"
+      ]
+    },
+    {
+      "id": "G430",
+      "number": 430,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Nuptial Blessing",
+        "fr": "Bénédiction nuptiale",
+        "la": "benedictio nuptialis"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-MR62-NUPTIAL"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The solemn blessing associated with marriage in the Roman liturgical tradition.",
+        "fr": "Bénédiction solennelle associée au mariage dans la tradition liturgique romaine."
+      },
+      "explanation": {
+        "en": "The nuptial blessing has its own liturgical placement and traditional conditions. In the 1962 profile it belongs to the Nuptial Mass structure and must be distinguished from the exchange of consent itself.",
+        "fr": "La bénédiction nuptiale possède sa place liturgique et ses conditions traditionnelles propres. Dans le profil de 1962, elle appartient à la structure de la Messe nuptiale et doit être distinguée de l’échange du consentement lui-même."
+      },
+      "definition_source_ids": [
+        "SRC-MR62-NUPTIAL"
+      ]
+    },
+    {
+      "id": "G431",
+      "number": 431,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Declaration of nullity",
+        "fr": "Déclaration de nullité",
+        "la": "declaratio nullitatis matrimonii"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1671-1691"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A judgment by a competent ecclesiastical tribunal that a valid matrimonial bond was not established despite an apparent marriage.",
+        "fr": "Jugement d’un tribunal ecclésiastique compétent selon lequel aucun lien matrimonial valide n’a été constitué malgré un mariage apparent."
+      },
+      "explanation": {
+        "en": "A declaration of nullity does not dissolve a valid marriage and is not ‘Catholic divorce’. It judges validity at the time consent was exchanged under the applicable law.",
+        "fr": "Une déclaration de nullité ne dissout pas un mariage valide et n’est pas un « divorce catholique ». Elle juge la validité au moment où le consentement a été échangé selon le droit applicable."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1671-1691"
+      ]
+    },
+    {
+      "id": "G432",
+      "number": 432,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Separation with bond remaining",
+        "fr": "Séparation avec maintien du lien",
+        "la": "separatio manente vinculo"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1151-1155"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The lawful cessation of common conjugal life in circumstances recognized by canon law while the marriage bond itself remains.",
+        "fr": "Cessation licite de la vie conjugale commune dans des circonstances reconnues par le droit canonique tandis que le lien matrimonial demeure."
+      },
+      "explanation": {
+        "en": "Separation does not by itself make either spouse free to marry another person. The bond remains unless it is later established that no valid marriage existed or another lawful dissolution applies in a case permitted by the Church.",
+        "fr": "La séparation ne rend pas en elle-même l’un ou l’autre époux libre d’en épouser une autre personne. Le lien demeure à moins qu’il ne soit ultérieurement établi qu’aucun mariage valide n’existait ou qu’une autre dissolution licite ne s’applique dans un cas permis par l’Église."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1151-1155"
+      ]
+    },
+    {
+      "id": "G433",
+      "number": 433,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Convalidation",
+        "fr": "Convalidation",
+        "la": "convalidatio"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1156-1160"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The making valid of a marriage that was invalid because of a defect, ordinarily through renewal of consent under the conditions established by law.",
+        "fr": "Acte de rendre valide un mariage qui était invalide en raison d’un défaut, ordinairement par renouvellement du consentement selon les conditions établies par le droit."
+      },
+      "explanation": {
+        "en": "Convalidation addresses an invalid attempted marriage; it does not strengthen a marriage that is already valid. The required procedure depends on the source of invalidity.",
+        "fr": "La convalidation traite un mariage tenté invalide ; elle ne « renforce » pas un mariage déjà valide. La procédure requise dépend de la cause d’invalidité."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1156-1160"
+      ]
+    },
+    {
+      "id": "G434",
+      "number": 434,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Radical sanation",
+        "fr": "Sanation radicale",
+        "la": "sanatio in radice"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1161-1165"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The convalidation of an invalid marriage without renewal of consent, granted by competent authority and carrying retroactive canonical effects as provided by law.",
+        "fr": "Convalidation d’un mariage invalide sans renouvellement du consentement, accordée par l’autorité compétente et produisant les effets rétroactifs prévus par le droit."
+      },
+      "explanation": {
+        "en": "Sanatio in radice is a specific juridical remedy and is not interchangeable with ordinary convalidation. It requires that the consent persist and that the law’s conditions be satisfied.",
+        "fr": "La sanatio in radice est un remède juridique précis et n’est pas interchangeable avec la convalidation ordinaire. Elle exige que le consentement persiste et que les conditions du droit soient remplies."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1161-1165"
+      ]
+    },
+    {
+      "id": "G435",
+      "number": 435,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Indissolubility",
+        "fr": "Indissolubilité",
+        "la": "indissolubilitas"
+      },
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "TRENT-XXIV-MATRIMONY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The essential property by which a valid consummated sacramental marriage cannot be dissolved by any human power or for any cause other than death.",
+        "fr": "Propriété essentielle selon laquelle un mariage sacramentel valide et consommé ne peut être dissous par aucune puissance humaine ni pour aucune cause autre que la mort."
+      },
+      "explanation": {
+        "en": "Indissolubility belongs to the nature of Christian marriage and is not merely an ecclesiastical policy. Canon law also distinguishes cases of non-consummated or certain non-sacramental marriages where lawful dissolution questions differ.",
+        "fr": "L’indissolubilité appartient à la nature du mariage chrétien et n’est pas une simple politique ecclésiastique. Le droit canonique distingue aussi les cas de mariages non consommés ou de certains mariages non sacramentels où les questions de dissolution légitime diffèrent."
+      },
+      "definition_source_ids": [
+        "TRENT-XXIV-MATRIMONY"
+      ]
+    },
+    {
+      "id": "G436",
+      "number": 436,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Chapel",
+        "fr": "Chapelle",
+        "la": "cappella / sacellum"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "venue_types",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A general directory label for a smaller place of Catholic worship; not by itself a precise canonical classification.",
+        "fr": "Étiquette générale d’annuaire pour un lieu de culte catholique de plus petite taille ; ce n’est pas en soi une classification canonique précise."
+      },
+      "explanation": {
+        "en": "A place called ‘chapel’ may canonically be an oratory, private chapel, shrine, mission church or other sacred place. The directory must preserve the source’s wording unless the juridical type is explicitly established.",
+        "fr": "Un lieu appelé « chapelle » peut canoniquement être un oratoire, une chapelle privée, un sanctuaire, une église de mission ou un autre lieu sacré. L’annuaire doit conserver le vocabulaire de la source à moins que le type juridique ne soit explicitement établi."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
+    },
+    {
+      "id": "G437",
+      "number": 437,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Oratory",
+        "fr": "Oratoire",
+        "la": "oratorium"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "venue_types",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-1223-1229"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A sacred place established with the local Ordinary’s permission for divine worship for the benefit of a community or group of faithful who assemble there.",
+        "fr": "Lieu sacré établi avec la permission de l’Ordinaire du lieu pour le culte divin au bénéfice d’une communauté ou d’un groupe de fidèles qui s’y réunissent."
+      },
+      "explanation": {
+        "en": "Oratory is a technical current canonical category. It must not be inferred merely because a venue is small or informally called a chapel.",
+        "fr": "Oratoire est une catégorie canonique technique actuelle. Elle ne doit pas être déduite du seul fait qu’un lieu soit petit ou appelé informellement chapelle."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1223-1229"
+      ]
+    },
+    {
+      "id": "G438",
+      "number": 438,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Mission",
+        "fr": "Mission",
+        "la": "missio"
+      },
+      "primary_category": "sacred_places_objects",
+      "browse_section": "venue_types",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A directory and pastoral label for an ecclesial outpost, community or place of ministry whose exact canonical form must be established from source evidence.",
+        "fr": "Étiquette d’annuaire et pastorale pour un poste, une communauté ou un lieu de ministère ecclésial dont la forme canonique exacte doit être établie par des sources."
+      },
+      "explanation": {
+        "en": "‘Mission’ is used differently across dioceses, religious institutes and countries. Ad Orientem therefore treats it as a descriptive venue/community term unless competent sources define a specific juridical status.",
+        "fr": "« Mission » est employé différemment selon les diocèses, instituts religieux et pays. Ad Orientem le traite donc comme terme descriptif de lieu ou communauté à moins que des sources compétentes n’en définissent un statut juridique précis."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
+    },
+    {
+      "id": "G439",
+      "number": 439,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Monastery",
+        "fr": "Monastère",
+        "la": "monasterium"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-607-709"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A religious house in which a monastic community lives according to its rule and proper law.",
+        "fr": "Maison religieuse dans laquelle une communauté monastique vit selon sa règle et son droit propre."
+      },
+      "explanation": {
+        "en": "Canon law recognizes monasteries and certain autonomous houses with particular governance. ‘Monastery’ should not be used as a generic label for every convent or religious residence.",
+        "fr": "Le droit canonique reconnaît les monastères et certaines maisons autonomes avec un gouvernement particulier. « Monastère » ne doit pas être employé comme étiquette générique pour tout couvent ou résidence religieuse."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
+    },
+    {
+      "id": "G440",
+      "number": 440,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Convent",
+        "fr": "Couvent",
+        "la": "conventus"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-CONVENT"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A common historical term for a religious house or community, especially of religious women or mendicant communities, whose exact canonical form varies.",
+        "fr": "Terme historique courant pour une maison ou communauté religieuse, notamment de religieuses ou de communautés mendiantes, dont la forme canonique exacte varie."
+      },
+      "explanation": {
+        "en": "Convent is not one single current canonical category. Directory data should retain it as a descriptive/historical term unless the institute’s proper status is known.",
+        "fr": "Couvent n’est pas une catégorie canonique actuelle unique. Les données d’annuaire doivent le conserver comme terme descriptif/historique à moins que le statut propre de l’institut soit connu."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CONVENT"
+      ]
+    },
+    {
+      "id": "G441",
+      "number": 441,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Priory",
+        "fr": "Prieuré",
+        "la": "prioratus"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-PRIOR-PRIORY"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A religious house governed by a prior or prioress according to the proper law of the religious family.",
+        "fr": "Maison religieuse gouvernée par un prieur ou une prieure selon le droit propre de la famille religieuse."
+      },
+      "explanation": {
+        "en": "A priory can be independent or dependent on another house depending on the order. The title alone does not establish the house’s autonomy or canonical rank.",
+        "fr": "Un prieuré peut être indépendant ou dépendant d’une autre maison selon l’ordre. Le titre seul n’établit ni l’autonomie ni le rang canonique de la maison."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PRIOR-PRIORY"
+      ]
+    },
+    {
+      "id": "G442",
+      "number": 442,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Seminary",
+        "fr": "Séminaire",
+        "la": "seminarium"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-232-264"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An institution erected for the formation of candidates for sacred ministry.",
+        "fr": "Institution érigée pour la formation des candidats au ministère sacré."
+      },
+      "explanation": {
+        "en": "Canon law distinguishes minor and major seminaries and regulates their governance and programme. Seminary is an institution of formation, not itself a degree of clerical status.",
+        "fr": "Le droit canonique distingue petits et grands séminaires et règle leur gouvernement et leur programme. Le séminaire est une institution de formation, non un degré de statut clérical."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-232-264"
+      ]
+    },
+    {
+      "id": "G443",
+      "number": 443,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Monk",
+        "fr": "Moine",
+        "la": "monachus"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-MONK-FRIAR"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A male religious living the monastic form of consecrated life according to a rule and monastic tradition.",
+        "fr": "Religieux vivant la forme monastique de vie consacrée selon une règle et une tradition monastique."
+      },
+      "explanation": {
+        "en": "‘Monk’ is not a synonym for every male religious. Monastic communities differ from mendicant friars, clerical societies and other institutes in history, spirituality and law.",
+        "fr": "« Moine » n’est pas synonyme de tout religieux masculin. Les communautés monastiques se distinguent des frères mendiants, sociétés cléricales et autres instituts par leur histoire, leur spiritualité et leur droit."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONK-FRIAR"
+      ]
+    },
+    {
+      "id": "G444",
+      "number": 444,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Friar",
+        "fr": "Frère religieux / frère mendiant",
+        "la": "frater"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "temporal_layer": "HISTORICAL",
+      "source_ids": [
+        "SRC-HIST-MONK-FRIAR"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A male religious, especially in a mendicant or similar order, traditionally called frater or brother.",
+        "fr": "Religieux masculin, spécialement dans un ordre mendiant ou analogue, traditionnellement appelé frater ou frère."
+      },
+      "explanation": {
+        "en": "A friar can be a priest or a non-ordained brother. The term describes a religious-family tradition, not a sacramental rank.",
+        "fr": "Un frère mendiant peut être prêtre ou frère non ordonné. Le terme décrit une tradition de famille religieuse et non un rang sacramentel."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONK-FRIAR"
+      ]
+    },
+    {
+      "id": "G445",
+      "number": 445,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Religious profession",
+        "fr": "Profession religieuse",
+        "la": "professio religiosa"
+      },
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "temporal_layer": "CURRENT",
+      "source_ids": [
+        "SRC-CIC83-607-709"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The public act by which a person assumes the evangelical counsels by vow and is incorporated into a religious institute according to law.",
+        "fr": "Acte public par lequel une personne assume les conseils évangéliques par vœu et est incorporée à un institut religieux selon le droit."
+      },
+      "explanation": {
+        "en": "Religious profession is juridical and ecclesial, not merely a private devotional promise. Temporary and perpetual profession have different canonical effects according to the institute and law.",
+        "fr": "La profession religieuse est juridique et ecclésiale, non une simple promesse dévotionnelle privée. La profession temporaire et la profession perpétuelle ont des effets canoniques différents selon l’institut et le droit."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
+    },
+    {
+      "id": "G446",
+      "number": 446,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Pontifical Mass",
+        "fr": "Messe pontificale",
+        "la": "Missa pontificalis"
+      },
+      "primary_category": "mass_liturgy",
+      "browse_section": "pontifical",
+      "temporal_layer": "PROFILE_1962",
+      "source_ids": [
+        "PONTIFICALE-ROMANUM"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A solemn Mass celebrated by a bishop according to the pontifical ceremonial proper to his office.",
+        "fr": "Messe solennelle célébrée par un évêque selon le cérémonial pontifical propre à sa charge."
+      },
+      "explanation": {
+        "en": "In the traditional Roman books a Pontifical Mass has additional ministers, vesture, insignia and ceremonial beyond an ordinary Solemn Mass. It is a PROFILE_1962 ceremonial category, not merely any Mass at which a bishop is present.",
+        "fr": "Dans les livres romains traditionnels, la Messe pontificale comporte des ministres, ornements, insignes et cérémonies supplémentaires par rapport à une Messe solennelle ordinaire. C’est une catégorie cérémonielle du profil 1962, non simplement toute Messe à laquelle un évêque assiste."
+      },
+      "definition_source_ids": [
+        "PONTIFICALE-ROMANUM"
+      ]
+    },
+    {
+      "id": "G447",
+      "number": 447,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Sedevacantism",
+        "fr": "Sédévacantisme",
+        "la": ""
+      },
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A descriptive position-family label for the thesis that the Roman See is presently vacant because the claimant to the papacy is not a true pope.",
+        "fr": "Étiquette descriptive de famille de position pour la thèse selon laquelle le Siège romain est actuellement vacant parce que le prétendant à la papauté n’est pas véritablement pape."
+      },
+      "explanation": {
+        "en": "In Ad Orientem this is a directory taxonomy value, not a judgment generated by the app. It may be assigned only when explicit, reliable evidence supports the community or ministry’s self-identification or position.",
+        "fr": "Dans Ad Orientem, il s’agit d’une valeur taxonomique d’annuaire et non d’un jugement produit par l’application. Elle ne peut être attribuée que lorsqu’une preuve explicite et fiable établit l’auto-identification ou la position de la communauté ou du ministère."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
+    },
+    {
+      "id": "G448",
+      "number": 448,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Sedeprivationism",
+        "fr": "Sédéprivationnisme",
+        "la": ""
+      },
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A descriptive position-family label for Cassiciacum-type theories distinguishing material designation or occupation of the Roman See from possession of formal papal authority.",
+        "fr": "Étiquette descriptive de famille de position pour les théories de type Cassiciacum distinguant la désignation ou occupation matérielle du Siège romain de la possession formelle de l’autorité papale."
+      },
+      "explanation": {
+        "en": "The glossary describes the position without endorsing or refuting it. Directory assignment requires explicit evidence; it must not be inferred merely from association with another traditionalist group.",
+        "fr": "Le glossaire décrit la position sans l’approuver ni la réfuter. L’attribution dans l’annuaire exige une preuve explicite et ne doit pas être déduite d’une simple association avec un autre groupe traditionaliste."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
+    },
+    {
+      "id": "G449",
+      "number": 449,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Liturgical usage / rite family",
+        "fr": "Usage liturgique / famille rituelle",
+        "la": "usus liturgicus"
+      },
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A project taxonomy describing the liturgical books, rite or usage actually employed by a ministry or celebration.",
+        "fr": "Taxonomie de projet décrivant les livres liturgiques, le rite ou l’usage réellement employés par un ministère ou une célébration."
+      },
+      "explanation": {
+        "en": "Liturgical usage must be sourced independently from canonical affiliation and communion profile. Celebrating according to the 1962 Roman books does not by itself identify the community’s canonical status or theological position.",
+        "fr": "L’usage liturgique doit être sourcé indépendamment de l’affiliation canonique et du profil de communion. Célébrer selon les livres romains de 1962 n’identifie pas à lui seul le statut canonique ni la position théologique de la communauté."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
+    },
+    {
+      "id": "G450",
+      "number": 450,
+      "kind": "GLOSSARY_CONCEPT",
+      "labels": {
+        "en": "Directory communion profile",
+        "fr": "Profil de communion de l’annuaire",
+        "la": ""
+      },
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "temporal_layer": "TIMELESS",
+      "source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ],
+      "status": "SOURCE_OWNER_LOCKED",
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A project data type recording sourced assertions about a ministry or celebration’s ecclesial communion relationship at a given time.",
+        "fr": "Type de donnée du projet enregistrant des affirmations sourcées sur la relation de communion ecclésiale d’un ministère ou d’une célébration à un moment donné."
+      },
+      "explanation": {
+        "en": "The profile can legitimately be YES, NO, VARIES, DISPUTED or UNKNOWN according to evidence. It is not inferred from venue type, community name, liturgical usage or una-cum evidence alone.",
+        "fr": "Le profil peut légitimement être YES, NO, VARIES, DISPUTED ou UNKNOWN selon les preuves. Il n’est pas déduit du type de lieu, du nom de la communauté, de l’usage liturgique ou de la seule formule una cum."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
+    }
+  ]
+}

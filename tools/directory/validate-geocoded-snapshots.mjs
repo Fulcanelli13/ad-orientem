@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { auditDirectoryGeo, isMapPublishableGeo } from "../../src/find/geo-provenance.js";
 
-const providers=(process.env.AO_GEOCODE_PROVIDERS??"fssp,icksp,ibp").split(",").map(x=>x.trim()).filter(Boolean);
+const providers=(process.env.AO_GEOCODE_PROVIDERS??"fssp,icksp,ibp,sspx").split(",").map(x=>x.trim()).filter(Boolean);
 const aggregatePath=path.resolve("data/directory/generated/geocoding-report.v1.json");
 const aggregate=JSON.parse(fs.readFileSync(aggregatePath,"utf8"));
 let total=0,totalUnresolved=0,failed=false;

@@ -1,0 +1,367 @@
+{
+  "schema": "AO_DIRECTORY_ICKSP_RECONCILIATION_V1",
+  "version": "1.1.0",
+  "verified_on": "2026-10-07",
+  "research_unique_candidates": 125,
+  "live_runtime_records": 27,
+  "live_runtime_coverage": {
+    "us_detail_records": 23,
+    "central_international_records": 4
+  },
+  "overlap_candidate_ids": [
+    "ICKSP-STG-041",
+    "ICKSP-STG-042",
+    "ICKSP-STG-044",
+    "ICKSP-STG-045",
+    "ICKSP-STG-046",
+    "ICKSP-STG-047",
+    "ICKSP-STG-048",
+    "ICKSP-STG-049",
+    "ICKSP-STG-050",
+    "ICKSP-STG-051",
+    "ICKSP-STG-052",
+    "ICKSP-STG-053",
+    "ICKSP-STG-055",
+    "ICKSP-STG-056",
+    "ICKSP-STG-057",
+    "ICKSP-STG-058",
+    "ICKSP-STG-059",
+    "ICKSP-STG-060",
+    "ICKSP-STG-061",
+    "ICKSP-STG-063",
+    "ICKSP-STG-064",
+    "ICKSP-STG-065",
+    "ICKSP-STG-066",
+    "ICKSP-STG-069",
+    "ICKSP-STG-071",
+    "ICKSP-STG-074",
+    "ICKSP-STG-075"
+  ],
+  "missing_candidate_count": 98,
+  "missing_by_source_bucket": {
+    "FR_PROVINCE": 39,
+    "US": 4,
+    "IT": 5,
+    "GB": 6,
+    "SE": 1,
+    "ES": 9,
+    "MU": 5,
+    "BE": 5,
+    "GA": 10,
+    "DE_CH": 10,
+    "IE": 4
+  },
+  "rule": "The live importer remains authoritative for the 27 materialized records. This supplement contains only the 98 current official-source candidates absent from that runtime snapshot; it must not duplicate those 27.",
+  "caveat": "Provider identity and current official-source listing do not by themselves prove a public Mass schedule. Rows with unaudited or non-Mass statuses are projected as SOURCE_ASSERTION rather than MASS.",
+  "publication_gate": {
+    "live_runtime_records": 27,
+    "live_current_mass_records": 26,
+    "federated_supplement_records": 103,
+    "federated_current_mass_candidate_records": 90,
+    "federated_physical_projection_records": 120,
+    "federated_physical_current_mass_venues": 104,
+    "publishable_current_mass_candidates_total": 116,
+    "publishable_physical_mass_venues_total": 130,
+    "nonpublishable_candidate_total": 14,
+    "provider_presence_only_total": 5,
+    "public_mass_suspended_total": 1,
+    "restricted_or_special_access_total": 2,
+    "seasonal_or_occasional_total": 5,
+    "mass_eligibility_pending_total": 1
+  },
+  "provider_presence_only_candidate_ids": [
+    "ICKSP-STG-020",
+    "ICKSP-STG-081",
+    "ICKSP-STG-104",
+    "ICKSP-STG-110",
+    "ICKSP-STG-113"
+  ],
+  "conditional_mass_evidence_not_promoted_ids": [
+    "ICKSP-STG-067",
+    "ICKSP-STG-102",
+    "ICKSP-STG-105",
+    "ICKSP-STG-106",
+    "ICKSP-STG-107"
+  ],
+  "publication_rule": "Find a Mass operates on physical Mass venues, not merely apostolate candidates. A candidate may fan out to several physical venues when current first-party evidence gives distinct locations and schedules; restricted, suspended, seasonal/occasional and unpublished-time records remain outside Find.",
+  "bulk_eligibility_pass": {
+    "verified_on": "2026-10-07",
+    "newly_promoted_federated_candidates": 49,
+    "newly_recovered_live_mass_records": 1,
+    "newly_publishable_total": 50,
+    "rule": "A candidate clears Find only when a current first-party source establishes a recurring public Mass. Seasonal/occasional passage Masses, restricted/school settings, suspended public Masses, non-Mass houses and rows without published current times remain outside Find."
+  },
+  "newly_promoted_candidate_ids": [
+    "ICKSP-STG-001",
+    "ICKSP-STG-002",
+    "ICKSP-STG-003",
+    "ICKSP-STG-004",
+    "ICKSP-STG-005",
+    "ICKSP-STG-006",
+    "ICKSP-STG-007",
+    "ICKSP-STG-008",
+    "ICKSP-STG-009",
+    "ICKSP-STG-010",
+    "ICKSP-STG-011",
+    "ICKSP-STG-012",
+    "ICKSP-STG-013",
+    "ICKSP-STG-014",
+    "ICKSP-STG-015",
+    "ICKSP-STG-016",
+    "ICKSP-STG-017",
+    "ICKSP-STG-018",
+    "ICKSP-STG-021",
+    "ICKSP-STG-022",
+    "ICKSP-STG-023",
+    "ICKSP-STG-024",
+    "ICKSP-STG-025",
+    "ICKSP-STG-026",
+    "ICKSP-STG-027",
+    "ICKSP-STG-029",
+    "ICKSP-STG-030",
+    "ICKSP-STG-031",
+    "ICKSP-STG-032",
+    "ICKSP-STG-033",
+    "ICKSP-STG-034",
+    "ICKSP-STG-035",
+    "ICKSP-STG-036",
+    "ICKSP-STG-037",
+    "ICKSP-STG-038",
+    "ICKSP-STG-039",
+    "ICKSP-STG-040",
+    "ICKSP-STG-043",
+    "ICKSP-STG-054",
+    "ICKSP-STG-062",
+    "ICKSP-STG-068",
+    "ICKSP-STG-070",
+    "ICKSP-STG-072",
+    "ICKSP-STG-073",
+    "ICKSP-STG-076",
+    "ICKSP-STG-077",
+    "ICKSP-STG-078",
+    "ICKSP-STG-079",
+    "ICKSP-STG-080"
+  ],
+  "live_recovered_mass_candidate_ids": [
+    "ICKSP-STG-055"
+  ],
+  "public_mass_suspended_candidate_ids": [
+    "ICKSP-STG-047"
+  ],
+  "restricted_or_special_access_candidate_ids": [
+    "ICKSP-STG-019",
+    "ICKSP-STG-099"
+  ],
+  "no_published_current_times_candidate_ids": [
+    "ICKSP-STG-028"
+  ],
+  "physical_venue_normalization": {
+    "verified_on": "2026-10-07",
+    "scope": [
+      "FR_PROVINCE",
+      "IRELAND_NORTHERN_IRELAND",
+      "ITALY",
+      "GREAT_BRITAIN",
+      "SWEDEN",
+      "SPAIN",
+      "MAURITIUS",
+      "BELGIUM",
+      "GABON",
+      "GERMANY_SWITZERLAND"
+    ],
+    "frozen_v13_federated_candidates": 98,
+    "post_v13_official_additions": 5,
+    "canonical_federated_candidates": 103,
+    "multi_venue_candidate_ids": [
+      "ICKSP-STG-001",
+      "ICKSP-STG-007",
+      "ICKSP-STG-012",
+      "ICKSP-STG-013",
+      "ICKSP-STG-018",
+      "ICKSP-STG-023",
+      "ICKSP-STG-025",
+      "ICKSP-STG-027",
+      "ICKSP-STG-029",
+      "ICKSP-STG-068",
+      "ICKSP-STG-070",
+      "ICKSP-STG-072",
+      "ICKSP-STG-080"
+    ],
+    "fanout_additional_physical_records": 17,
+    "total_physical_records": 120,
+    "candidate_level_current_mass_records": 90,
+    "physical_current_mass_venues": 104,
+    "additional_publishable_mass_venues_from_fanout": 14,
+    "physical_source_assertions": 16,
+    "rule": "The historic research candidate denominator remains auditable, but Find projects physical venues. A candidate may fan out to distinct churches, chapels or houses when current first-party sources identify separate locations and schedules. Source-assertion subvenues remain outside Find."
+  },
+  "ireland_northern_ireland_audit": {
+    "verified_on": "2026-10-07",
+    "current_official_locations": [
+      {
+        "candidate_id": "ICKSP-STG-122",
+        "place": "Limerick",
+        "venue": "Sacred Heart Church"
+      },
+      {
+        "candidate_id": "ICKSP-STG-123",
+        "place": "Belfast",
+        "venue": "Church of the Immaculate Heart of Mary"
+      },
+      {
+        "candidate_id": "ICKSP-STG-124",
+        "place": "Ardee",
+        "venue": "House of Our Lady of the Most Holy Rosary"
+      },
+      {
+        "candidate_id": "ICKSP-STG-125",
+        "place": "Galway",
+        "venue": "St. Mary's College Chapel"
+      }
+    ],
+    "ardee_status": "PROMOTED_CURRENT_MASS",
+    "galway_current_sunday_time": "12:00",
+    "negative_checks": [
+      {
+        "place": "Wexford",
+        "status": "NO_CURRENT_FIRST_PARTY_ICKSP_APOSTOLATE_LISTING_FOUND"
+      },
+      {
+        "place": "Waterford",
+        "status": "NO_CURRENT_FIRST_PARTY_ICKSP_APOSTOLATE_LISTING_FOUND"
+      }
+    ],
+    "note": "No Wexford or Waterford row is promoted without current first-party ICKSP evidence; this does not assert that no occasional historic or visiting Mass has ever occurred there.",
+    "source_precedence": {
+      "rule": "Prefer the current local apostolate page for venue/schedule facts; use the national Mass-times page as corroboration; do not let a stale national apostolate summary overwrite a newer local schedule.",
+      "conflicts": [
+        {
+          "place": "Galway",
+          "stale_source": "https://icksp.ie/apostolate",
+          "stale_value": "Sunday 15:00",
+          "canonical_sources": [
+            "https://galway.icksp.ie/",
+            "https://icksp.ie/mass-times"
+          ],
+          "canonical_value": "Sunday 12:00"
+        },
+        {
+          "place": "Ardee",
+          "stale_source": "https://icksp.ie/apostolate",
+          "stale_value": "Contact convent for Mass schedule",
+          "canonical_source": "https://ardee.icksp.ie/",
+          "canonical_value": "Sunday 08:30 Low / 10:30 Sung; weekday schedule published"
+        }
+      ]
+    }
+  },
+  "resolved_since_bulk_eligibility_pass": [
+    "ICKSP-STG-124"
+  ],
+  "research_unique_candidates_v13": 125,
+  "federated_missing_candidates_v13": 98,
+  "post_v13_official_additions": 5,
+  "canonical_current_candidates": 130,
+  "post_v13_official_addition_ids": [
+    "ICKSP-IT-2026-ALESSANDRIA",
+    "ICKSP-IT-2026-LUCCA",
+    "ICKSP-IT-2026-ORVIETO",
+    "ICKSP-IT-2026-BIENTINA",
+    "ICKSP-IT-2026-PISTOIA"
+  ],
+  "post_v13_official_addition_source": "https://www.icrss.it/",
+  "historical_denominator_note": "research_unique_candidates=125 and missing_candidate_count=98 are retained as frozen v1.3 reconciliation values. The current canonical corpus adds five first-party Italian Mass locations discovered after that freeze.",
+  "remaining_country_normalization": {
+    "verified_on": "2026-10-07",
+    "fanout_candidate_ids": [
+      "ICKSP-STG-068",
+      "ICKSP-STG-070",
+      "ICKSP-STG-072",
+      "ICKSP-STG-080"
+    ],
+    "normalized_single_site_candidate_ids": [
+      "ICKSP-STG-073",
+      "ICKSP-STG-076",
+      "ICKSP-STG-077",
+      "ICKSP-STG-078",
+      "ICKSP-STG-079",
+      "ICKSP-STG-082",
+      "ICKSP-STG-083",
+      "ICKSP-STG-084",
+      "ICKSP-STG-085",
+      "ICKSP-STG-086",
+      "ICKSP-STG-087",
+      "ICKSP-STG-088",
+      "ICKSP-STG-089",
+      "ICKSP-STG-090",
+      "ICKSP-STG-091",
+      "ICKSP-STG-092",
+      "ICKSP-STG-093",
+      "ICKSP-STG-094",
+      "ICKSP-STG-095",
+      "ICKSP-STG-096",
+      "ICKSP-STG-097",
+      "ICKSP-STG-098",
+      "ICKSP-STG-100",
+      "ICKSP-STG-101",
+      "ICKSP-STG-103",
+      "ICKSP-STG-108",
+      "ICKSP-STG-109",
+      "ICKSP-STG-111",
+      "ICKSP-STG-112",
+      "ICKSP-STG-114",
+      "ICKSP-STG-115",
+      "ICKSP-STG-116",
+      "ICKSP-STG-117",
+      "ICKSP-STG-118",
+      "ICKSP-STG-119",
+      "ICKSP-STG-120",
+      "ICKSP-STG-121"
+    ],
+    "italy_missing_from_v13": [
+      {
+        "id": "ICKSP-IT-2026-ALESSANDRIA",
+        "venue": "Chiesa di San Giovannino",
+        "schedule": "SECOND_SUNDAY_11:00"
+      },
+      {
+        "id": "ICKSP-IT-2026-LUCCA",
+        "venue": "Chiesa di Santa Maria della Rosa",
+        "schedule": "SUNDAY_FEAST_09:30; SATURDAY_08:00; FIRST_FRIDAY_17:30"
+      },
+      {
+        "id": "ICKSP-IT-2026-ORVIETO",
+        "venue": "Chiesa Santa Maria dei Servi",
+        "schedule": "SECOND_FOURTH_SUNDAY_17:30"
+      },
+      {
+        "id": "ICKSP-IT-2026-BIENTINA",
+        "venue": "Chiesa di San Domenico",
+        "schedule": "SATURDAY_18:30"
+      },
+      {
+        "id": "ICKSP-IT-2026-PISTOIA",
+        "venue": "Chiesa di San Vitale",
+        "schedule": "SUNDAY_FEAST_18:00"
+      }
+    ],
+    "naples_unscheduled_physical_venue": {
+      "id": "ICKSP-STG-072-SANTANNA",
+      "venue": "Chiesa di Sant’Anna alle Paludi",
+      "disposition": "SOURCE_ASSERTION_NO_PUBLISHED_CURRENT_MASS_TIME"
+    },
+    "great_britain_split": {
+      "parent": "ICKSP-STG-080",
+      "venues": [
+        {
+          "id": "ICKSP-STG-080-HOLYANGELS",
+          "venue": "Holy Angels Church, Torquay"
+        },
+        {
+          "id": "ICKSP-STG-080-STEDWARD",
+          "venue": "St Edward the Confessor Church, Plymouth"
+        }
+      ]
+    }
+  }
+}

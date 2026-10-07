@@ -1,6 +1,6 @@
 export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoTP381DonorBody{gap:0}
-#aoPray435930 .aoTP381Intro{margin:0;padding:18px 0 11px;color:var(--muted,rgba(238,233,223,.7));font:400 .94rem/1.5 var(--ao-font-liturgical,var(--font-liturgical,Georgia,serif))}
+#aoPray435930 .aoTP381Glossary{align-self:flex-start;margin:14px 0 -4px;padding:7px 10px;border:1px solid var(--liturgical-border,rgba(199,174,109,.28));border-radius:999px;background:transparent;color:var(--liturgical,#c7ae6d);font:600 .67rem/1.1 var(--ao-font-display,var(--font-display,system-ui));letter-spacing:.035em}\n#aoPray435930 .aoTP381Intro{margin:0;padding:18px 0 11px;color:var(--muted,rgba(238,233,223,.7));font:400 .94rem/1.5 var(--ao-font-liturgical,var(--font-liturgical,Georgia,serif))}
 #aoPray435930 .aoTP381Section{margin:18px 0}
 #aoPray435930 .aoTP381Section h2{margin:0 0 8px;font:600 1.2rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif))}
 #aoPray435930 .aoTP381Section>p{margin:0 0 10px;color:var(--muted,rgba(238,233,223,.72));line-height:1.52}

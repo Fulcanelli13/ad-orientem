@@ -84,6 +84,12 @@ assert.deepEqual(
     "place:US:czestochowa-doylestown",
     "place:US:seton-emmitsburg",
     "place:US:lourdes-grotto-emmitsburg",
+    "place:US:st-mary-assumption-oswego",
+    "place:US:auriesville-martyrs",
+    "place:US:divine-mercy-stockbridge",
+    "place:US:la-salette-attleboro",
+    "place:US:lourdes-litchfield",
+    "place:US:st-anne-fiskdale",
     "place:CA:sainte-anne-de-beaupre",
     "place:CA:notre-dame-du-cap",
     "place:CA:martyrs-shrine-midland",
@@ -174,7 +180,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 24,
-  places: 69,
+  places: 75,
   directoryPlaceLinks: 1,
 });
 
@@ -220,6 +226,13 @@ assert.equal(alphonsusLink.relationship,"LOCATED_AT");
 assert.equal(alphonsusLink.confidence,"CONFIRMED");
 assert.equal(alphonsusLink.venue_id,"ao-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa");
 assert.equal(alphonsusLink.place_id,"place:US:st-alphonsus-baltimore");
+
+const oswegoLink=seed.directoryPlaceLinks.find(link=>link.link_id==="link:directory-place:US:oswego-st-mary-assumption");
+assert.ok(oswegoLink,"production Oswego ICKSP Directory→Place link missing");
+assert.equal(oswegoLink.relationship,"LOCATED_AT");
+assert.equal(oswegoLink.confidence,"CONFIRMED");
+assert.equal(oswegoLink.venue_id,"ao-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14");
+assert.equal(oswegoLink.place_id,"place:US:st-mary-assumption-oswego");
 
 
 const arcachonLink=seed.directoryPlaceLinks.find(link=>link.link_id==="link:directory-place:FR:arcachon-notre-dame");

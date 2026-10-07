@@ -1,4 +1,4 @@
-export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v1";
+export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2";
 const STYLE_ID="ao-app-design-system";
 
 const CSS=`
@@ -7,6 +7,7 @@ const CSS=`
   --ao-font-body:var(--font-body,Georgia,"Times New Roman",serif);
   --ao-font-liturgical:var(--font-liturgical,var(--font-body,Georgia,"Times New Roman",serif));
   --ao-font-ui:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
   --ao-bg-canvas:var(--bg,#080c12);
   --ao-surface-1:var(--surface-1,#101821);
   --ao-surface-2:var(--surface-2,#0d141c);
@@ -16,6 +17,7 @@ const CSS=`
   --ao-liturgical-accent:var(--liturgical,#c9ad78);
   --ao-liturgical-border:var(--liturgical-border,rgba(201,173,120,.38));
   --ao-liturgical-soft:var(--liturgical-soft,rgba(201,173,120,.08));
+
   --ao-content-max:760px;
   --ao-content-wide:980px;
   --ao-page-gutter:14px;
@@ -26,7 +28,25 @@ const CSS=`
   --ao-pill-radius:999px;
   --ao-section-gap:18px;
   --ao-topbar-blur:16px;
+
+  /* Shared UI type scale. Do not create new micro-sizes in feature CSS. */
+  --ao-type-ui-xs:11px;
+  --ao-type-ui-sm:12px;
+  --ao-type-ui:14px;
+  --ao-type-body:16px;
+
+  /*
+   * Shared elevation vocabulary. These retain the migration-safe high range
+   * while legacy roots still exist, but feature CSS must consume the tokens
+   * rather than inventing a new z-index. Once the historical host is removed,
+   * only these values need to be lowered.
+   */
+  --ao-z-surface:2147481800;
+  --ao-z-sheet:2147483000;
+  --ao-z-modal:2147483200;
+  --ao-z-global-nav:2147483300;
 }
+
 .homeScreen{
   width:min(var(--ao-content-max),100%);
   margin-inline:auto;
@@ -34,7 +54,8 @@ const CSS=`
 .homeScreen,
 #ao-calendar-modular-root,
 #ao-learn-modular-root,
-#ao-settings-modular-root{
+#ao-settings-modular-root,
+#ao-find-modular-root{
   font-family:var(--ao-font-body);
   color:var(--ao-text-primary);
   text-rendering:optimizeLegibility;
@@ -44,6 +65,7 @@ const CSS=`
 #ao-calendar-modular-root h1,#ao-calendar-modular-root h2,#ao-calendar-modular-root h3,#ao-calendar-modular-root h4,
 #ao-learn-modular-root h1,#ao-learn-modular-root h2,#ao-learn-modular-root h3,
 #ao-settings-modular-root h1,#ao-settings-modular-root h2,#ao-settings-modular-root h3,
+#ao-find-modular-root h1,#ao-find-modular-root h2,#ao-find-modular-root h3,
 #aoPray435930 h1,#aoPray435930 h2,#aoPray435930 h3,#aoPray435930 h4,
 .prepareScreen h1,.prepareScreen h2,.prepareScreen h3,
 .thanksgivingScreen h1,.thanksgivingScreen h2,.thanksgivingScreen h3{
@@ -52,10 +74,13 @@ const CSS=`
 
 #ao-global-ribbon{
   font-family:var(--ao-font-display);
+  z-index:var(--ao-z-global-nav)!important;
 }
+
 .aoCalModTop button,
 .aoLearnModTop button,
 .aoSetModTop button,
+.aoFindHeader button,
 #aoPray435930 .aoP435930Head button{
   width:var(--ao-control-h)!important;
   height:var(--ao-control-h)!important;
@@ -63,6 +88,7 @@ const CSS=`
   min-height:var(--ao-control-h)!important;
   border-radius:var(--ao-pill-radius)!important;
 }
+
 .homeScreen .contentCard,
 #ao-calendar-modular-root .aoCalV2NextMajor,
 #ao-calendar-modular-root .aoCalV2YearHeroGrid,
@@ -71,6 +97,11 @@ const CSS=`
 #ao-calendar-modular-root .aoCalV2IndexGrid button,
 #ao-learn-modular-root .aoLearnModCard,
 #ao-settings-modular-root .aoSetModCard,
+#ao-find-modular-root .aoFindCard,
+#ao-find-modular-root .aoFindEmpty,
+#ao-find-modular-root .aoFindFacts>div,
+#ao-find-modular-root .aoExploreAddress,
+#ao-find-modular-root .aoExplorePlaceRow,
 #aoPray435930 .aoP435930ModuleCard{
   border-radius:var(--ao-card-radius)!important;
 }
@@ -78,6 +109,7 @@ const CSS=`
 #ao-calendar-modular-root button,
 #ao-learn-modular-root button,
 #ao-settings-modular-root button,
+#ao-find-modular-root button,
 #aoPray435930 button,
 .prepareScreen button,
 .thanksgivingScreen button{
@@ -87,12 +119,35 @@ const CSS=`
 #ao-calendar-modular-root button:focus-visible,
 #ao-learn-modular-root button:focus-visible,
 #ao-settings-modular-root button:focus-visible,
+#ao-find-modular-root button:focus-visible,
 #aoPray435930 button:focus-visible,
 .prepareScreen button:focus-visible,
 .thanksgivingScreen button:focus-visible{
   outline:2px solid var(--ao-liturgical-accent);
   outline-offset:2px;
 }
+
+/* Reusable source/provenance disclosure. Feature modules should converge here. */
+.aoSourceDisclosure{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid var(--ao-rule);
+  color:var(--ao-text-muted);
+  font:500 var(--ao-type-ui-sm)/1.45 var(--ao-font-ui);
+}
+.aoSourceDisclosure>summary{
+  min-height:var(--ao-control-h);
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+  color:var(--ao-text-muted);
+  font:650 var(--ao-type-ui-sm)/1.2 var(--ao-font-ui);
+}
+.aoSourceDisclosure a{
+  color:var(--ao-liturgical-accent);
+  text-underline-offset:2px;
+}
+
 @media(max-width:560px){
   :root{
     --ao-page-gutter:var(--ao-page-gutter-phone);
@@ -101,7 +156,8 @@ const CSS=`
 @media(prefers-reduced-motion:reduce){
   #ao-calendar-modular-root *,
   #ao-learn-modular-root *,
-  #ao-settings-modular-root *{
+  #ao-settings-modular-root *,
+  #ao-find-modular-root *{
     scroll-behavior:auto!important;
   }
 }
@@ -114,9 +170,14 @@ export function installAppDesignSystem(win=globalThis){
   if(!style){
     style=doc.createElement("style");
     style.id=STYLE_ID;
-    style.textContent=CSS;
     (doc.head??doc.documentElement)?.append?.(style);
   }
+  /*
+   * Always refresh the style text. This lets an existing DOM created by a
+   * previous owner converge to the current token contract without requiring a
+   * page reload or a second override stylesheet.
+   */
+  if(style.textContent!==CSS)style.textContent=CSS;
   if(doc.documentElement?.dataset)doc.documentElement.dataset.aoDesignSystem=APP_DESIGN_SYSTEM_VERSION;
   return Object.freeze({version:APP_DESIGN_SYSTEM_VERSION,styleId:STYLE_ID,installed:true});
 }

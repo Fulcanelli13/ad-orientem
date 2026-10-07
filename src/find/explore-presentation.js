@@ -1,4 +1,6 @@
+import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
 
@@ -65,7 +67,7 @@ function placeSheet(vm){
   let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
   html+='<header><div><small>'+esc(L(vm.language,"PLACE","LIEU"))+'</small><h2>'+esc(profile.name||"")+'</h2>';
   if(profile.address_label)html+='<p>'+esc(profile.address_label)+'</p>';
-  html+='</div><button type="button" data-find-close-place aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">×</button></header>';
+  html+='</div><button type="button" data-find-close-place aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
   if(arr(profile.aliases).length)html+='<p class="aoExploreLead">'+esc(profile.aliases.join(" · "))+'</p>';
 
@@ -126,7 +128,7 @@ function detailSheet(vm){
   let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet" role="dialog" aria-modal="true">';
   html+='<header><div><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(item.title||"")+'</h2>';
   if(item.subtitle)html+='<p>'+esc(item.subtitle)+'</p>';
-  html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">×</button></header>';
+  html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
   if(item.summary)html+='<p class="aoExploreLead">'+esc(item.summary)+'</p>';
 
@@ -234,7 +236,7 @@ export function buildExploreViewModel({
 export function renderExploreToString(vm){
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.counts?.[vm.lens]??vm.items.length);
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
-  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">←</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><span>'+esc(loaded)+'</span></header>';
+  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
   html+='<nav class="aoExploreLensTabs">';
   for(const lens of ["tlm","shrines","traditions","pilgrimages"]){

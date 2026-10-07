@@ -1,0 +1,14 @@
+{
+  "schema": "AO_DIRECTORY_ICKSP_OVERLAP_DISPOSITIONS_V1",
+  "version": "1.0.0",
+  "generated_at": "2026-10-08T01:45:00+04:00",
+  "rule": "Every internal or cross-corpus same-place candidate requires an explicit disposition. Shared postal address alone does not merge distinct liturgical spaces.",
+  "records": [
+    {
+      "pair_key": "ao-research-icksp-federated-v13-icksp-stg-013-standre::ao-research-icksp-federated-v13-icksp-stg-013-stmichel",
+      "disposition": "DISTINCT_LITURGICAL_SPACES_SAME_ADDRESS",
+      "evidence": "The Dijon apostolate source lists Chapelle Saint-André and Église Saint-Michel as separate Mass venues at the same 5 place Saint-Michel property.",
+      "source_url": "https://icrspfrance.fr/?org=13"
+    }
+  ]
+}

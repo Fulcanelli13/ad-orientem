@@ -140,6 +140,15 @@ export function createHomeOwner(win=globalThis){
       });
       return;
     }
+    const settings=target?.closest?.("[data-home-settings]");
+    if(settings){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("settings")).catch(error=>{
+        console.error("Modular Home Settings navigation failed",error);
+      });
+      return;
+    }
     const find=target?.closest?.("[data-home-find]");
     if(find){
       event.preventDefault?.();

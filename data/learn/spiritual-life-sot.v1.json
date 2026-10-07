@@ -1,0 +1,986 @@
+{
+  "version": "SPIRITUAL_LIFE_SOT_V1",
+  "status": "SOURCE_CONTROLLED_CURRICULUM_BLUEPRINT",
+  "created_at": "2026-10-07",
+  "repository_baseline": "a4e71421c6c6feb1e6b61e50a9b8a25d337834f5",
+  "future_route": "learn.spiritual_life",
+  "route_status": "PUBLISHED",
+  "parent_decision": "data/learn/formation-gap-ownership.v1.json",
+  "principles": [
+    "Traditional Catholic spiritual formation for ordinary users, not a seminary ascetical-theology textbook.",
+    "Every explanatory claim has explicit provenance.",
+    "Doctrine, current discipline, traditional counsel, school-specific method and product guidance remain distinguishable.",
+    "Prayer texts and devotional execution remain in PRAY; sacramental execution remains with their canonical owners.",
+    "No invented prayers, AI-generated meditations or synthetic spiritual methods.",
+    "No gamification, streaks, rankings, holiness scores or sin ledgers.",
+    "Methods must be adapted to state of life and circumstances; duties of state outrank optional exercises when they conflict.",
+    "Advanced mystical phenomena, visions, infused-state taxonomy, priest/religious-specific formation and scruples are outside the core course."
+  ],
+  "source_hierarchy": [
+    "Sacred Scripture and doctrinal/catechetical owners control doctrine.",
+    "Papal magisterium and canon law control reparation/indulgence doctrine and current discipline.",
+    "Tanquerey is the principal traditional synthetic spine and locator map.",
+    "St Francis de Sales is the principal lay-facing control for prayer, adaptation, dryness and spiritual reading.",
+    "St Ignatius controls the examen methods.",
+    "Chautard contributes the prayer/action relationship only."
+  ],
+  "sources": [
+    {
+      "id": "SL-TANQUEREY-1930",
+      "authority_type": "TRADITIONAL_SPIRITUAL_THEOLOGY_MANUAL",
+      "title": "Adolphe Tanquerey · The Spiritual Life: A Treatise on Ascetical and Mystical Theology",
+      "date": "1930",
+      "role": "PRIMARY_SYNTHETIC_SPINE",
+      "locators": [
+        "#421–423 desire for perfection",
+        "#446–447 presence of God",
+        "#466–468 general and particular examination",
+        "#510–527 prayer, daily exercises and ordinary actions",
+        "#558–567 rule of life",
+        "#579–582 spiritual reading",
+        "#643–700 prayer of beginners and methods of mental prayer; especially #688–700"
+      ],
+      "canonical_url": "https://www.ewtn.com/catholicism/library/spiritual-life-12632",
+      "continuation_url": "https://www.ewtn.com/catholicism/library/spiritual-life-12636",
+      "scan_url": "https://isidore.co/misc/Res%20pro%20Deo/TheCatholicArchive_OCRed/Image_and_OCR_layers/The%20Spiritual%20Life%3A%20A%20Treatise%20on%20Ascetical%20and%20Mystical%20Theology%2C%20Adolphe%20Tanquerey%2C%201930.pdf",
+      "use_boundary": "Use as a traditional synthetic manual and source map. Do not elevate every school-specific counsel to universal doctrine. Exclude advanced mystical phenomena and priest/religious-specific material from the core course."
+    },
+    {
+      "id": "SL-FRANCIS-SALES-DEVOUT-LIFE",
+      "authority_type": "DOCTOR_OF_CHURCH_SPIRITUAL_CLASSIC",
+      "title": "St Francis de Sales · Introduction to the Devout Life",
+      "role": "LAY_FACING_CONTROL",
+      "locators": [
+        "Part I, ch. 3: devotion in differing states of life",
+        "Part II, chs. 1–13: mental prayer, presence of God, meditation, dryness, morning/evening prayer, aspirations",
+        "Part II, ch. 17: hearing and reading God's word",
+        "Part IV, chs. 13–14: consolations, dryness and barrenness",
+        "Part V, chs. 3–7: examination of progress"
+      ],
+      "canonical_url": "https://www.ccel.org/ccel/desales/devout_life.all.html",
+      "use_boundary": "Lay-facing spiritual counsel. Preserve his insistence on adaptation to state of life and perseverance without forcing his suggested durations as universal norms."
+    },
+    {
+      "id": "SL-IGNATIUS-EXERCISES",
+      "authority_type": "SAINT_SPIRITUAL_METHOD",
+      "title": "St Ignatius of Loyola · Spiritual Exercises",
+      "role": "EXAMEN_CONTROL",
+      "locators": [
+        "Annotations 1, 18–19: exercises adapted to the person",
+        "Particular and Daily Examen",
+        "General Examen: five points"
+      ],
+      "canonical_url": "https://ccel.org/ccel/ignatius/exercises.all.html",
+      "use_boundary": "Use for the structure and purpose of general/particular examen. Do not productize dot-counting as a gamified score or require the full Exercises."
+    },
+    {
+      "id": "SL-CHAUTARD-APOSTOLATE",
+      "authority_type": "TRADITIONAL_SPIRITUAL_CLASSIC",
+      "title": "Dom Jean-Baptiste Chautard · The Soul of the Apostolate",
+      "role": "PRAYER_ACTION_CONTROL",
+      "locators": [
+        "Part II: priority and overflow of the interior life",
+        "Part IV: action made fruitful by interior life",
+        "Part V, pp. 95–100: principles for active workers and mental prayer",
+        "Part V, pp. 129–134: custody of heart and presence of God"
+      ],
+      "canonical_url": "https://www.mountsaintbernard.org/wp-content/uploads/2017/12/Dom-Chautard-The-Soul-of-the-Apostolate.pdf",
+      "use_boundary": "One thematic enrichment only: action/apostolate must flow from interior and Eucharistic life. Do not build a second apostolate course here or transfer priest/religious-specific counsels wholesale to lay users."
+    },
+    {
+      "id": "SL-PIUS-X-CATECHISM",
+      "authority_type": "TRADITIONAL_CATECHETICAL_PRIMARY",
+      "title": "Catechism of St Pius X",
+      "role": "DOCTRINAL_BOUNDARY",
+      "locators": [
+        "First Commandment: external/internal worship, superstition, sacred images",
+        "Virtues and Christian life"
+      ],
+      "canonical_url": "https://laportelatine.org/wp-content/uploads/2020/06/idx-catechisme-saint-pie-x.pdf",
+      "normalized_text_url": "https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286",
+      "use_boundary": "Doctrine and terminology control. Formation must not turn devotional objects or practices into automatic mechanisms."
+    },
+    {
+      "id": "SL-PIUS-XI-MISERENTISSIMUS",
+      "authority_type": "PAPAL_MAGISTERIUM",
+      "title": "Pius XI · Miserentissimus Redemptor",
+      "role": "REPARATION_AUTHORITY",
+      "locator": "8 May 1928 · especially §§6–7, 11–12, 20",
+      "canonical_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html",
+      "use_boundary": "Controls explanation of reparation, especially in relation to Sacred Heart devotion."
+    },
+    {
+      "id": "SL-PAUL-VI-INDULGENTIARUM",
+      "authority_type": "PAPAL_CONSTITUTION",
+      "title": "Paul VI · Indulgentiarum Doctrina",
+      "role": "CURRENT_INDULGENCE_AUTHORITY",
+      "locator": "1 January 1967 · norms and doctrinal introduction",
+      "canonical_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html",
+      "use_boundary": "Controls current explanation of indulgences and historical change from days/years language."
+    },
+    {
+      "id": "SL-CIC83-992-997",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "title": "Code of Canon Law (1983) · Indulgences",
+      "role": "CURRENT_DISCIPLINE",
+      "locator": "cann. 992–997",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "use_boundary": "Current canonical definition and discipline only; never projected backwards into 1962."
+    },
+    {
+      "id": "SL-SCRIPTURE-MT5-48",
+      "authority_type": "SACRED_SCRIPTURE",
+      "title": "Matthew 5:48",
+      "role": "DOCTRINAL_ANCHOR",
+      "locator": "Call to perfection",
+      "canonical_url": "https://www.drbo.org/chapter/47005.htm"
+    },
+    {
+      "id": "SL-SCRIPTURE-JN15",
+      "authority_type": "SACRED_SCRIPTURE",
+      "title": "John 15",
+      "role": "DOCTRINAL_ANCHOR",
+      "locator": "Abiding in Christ and fruitfulness",
+      "canonical_url": "https://www.drbo.org/chapter/50015.htm"
+    },
+    {
+      "id": "SL-SCRIPTURE-1COR10-31",
+      "authority_type": "SACRED_SCRIPTURE",
+      "title": "1 Corinthians 10:31",
+      "role": "ORDINARY_DUTIES_ANCHOR",
+      "locator": "Do all to the glory of God",
+      "canonical_url": "https://www.drbo.org/chapter/53010.htm"
+    },
+    {
+      "id": "SL-SCRIPTURE-COL3-17",
+      "authority_type": "SACRED_SCRIPTURE",
+      "title": "Colossians 3:17",
+      "role": "ORDINARY_DUTIES_ANCHOR",
+      "locator": "All in word or work in the name of the Lord Jesus Christ",
+      "canonical_url": "https://www.drbo.org/chapter/58003.htm"
+    }
+  ],
+  "curriculum": {
+    "stage_count": 14,
+    "claim_count": 76,
+    "stages": [
+      {
+        "id": "SL01",
+        "order": 1,
+        "title": {
+          "en": "The Interior Life",
+          "fr": "La vie intérieure"
+        },
+        "objective": "Understand what spiritual growth is for and why it is not reserved to clergy or religious.",
+        "claims": [
+          {
+            "id": "SL01-Q01",
+            "layer": "DOCTRINE",
+            "text": "Christian perfection is ordered to love of God, union with Him and conformity to His will rather than the accumulation of devotional activities.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-SCRIPTURE-MT5-48"
+            ]
+          },
+          {
+            "id": "SL01-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The devout life must be adapted to a person's state and duties rather than copied mechanically from another vocation.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL01-Q03",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The desire for spiritual progress should be calm, persevering and grace-dependent rather than impatient or presumptuous.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL01-Q04",
+            "layer": "METHOD_BOUNDARY",
+            "text": "Methods, exercises and schedules are means to union with God; they are not the end of the spiritual life.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL01-Q05",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "The app must not turn holiness into points, streaks, ranks or visible spiritual-performance scoring.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL02",
+        "order": 2,
+        "title": {
+          "en": "Living in God's Presence",
+          "fr": "Vivre en présence de Dieu"
+        },
+        "objective": "Learn recollection and the presence of God as a simple, repeatable orientation of the day.",
+        "claims": [
+          {
+            "id": "SL02-Q01",
+            "layer": "DOCTRINE",
+            "text": "The practice of the presence of God rests on God's omnipresence and, in the supernatural order, on His indwelling in the soul by grace.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL02-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Frequent affectionate remembrance of God can prolong the fruit of mental prayer through the day.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL02-Q03",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Recollection is compatible with ordinary work and duties; it does not require constant withdrawal from action.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-CHAUTARD-APOSTOLATE"
+            ]
+          },
+          {
+            "id": "SL02-Q04",
+            "layer": "METHOD_BOUNDARY",
+            "text": "Presence of God is not a technique for suppressing thought but an act of faith, attention and love.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL02-Q05",
+            "layer": "PRACTICAL",
+            "text": "Short aspirations and renewed intentions can restore recollection when attention has been dispersed.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE",
+              "SL-TANQUEREY-1930"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL03",
+        "order": 3,
+        "title": {
+          "en": "Mental Prayer: The Foundations",
+          "fr": "Oraison mentale : les fondements"
+        },
+        "objective": "Understand mental prayer before learning a particular method.",
+        "claims": [
+          {
+            "id": "SL03-Q01",
+            "layer": "DOCTRINE",
+            "text": "Mental prayer is interior intercourse with God involving the mind and heart and ordered to union with Him.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL03-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Meditation should move beyond analysis toward affections, prayer and practical resolution.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL03-Q03",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Meditation on the life and Passion of Christ is a privileged school of imitation and love.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL03-Q04",
+            "layer": "METHOD_BOUNDARY",
+            "text": "Methodical meditation is a guide for prayer, not the only possible form of mental prayer.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL03-Q05",
+            "layer": "PRACTICAL",
+            "text": "Beginners can start through meditative reading: read a short solid passage, consider its truth, examine personal application, resolve concretely and ask for grace.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL03-Q06",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "Formation may teach a method, but the actual act of prayer must not become a scripted AI-generated pseudo-meditation.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL03-Q07",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Vocal and mental prayer are not rivals: vocal prayer can awaken interior devotion, while mental prayer can deepen attention to the words being prayed.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL04",
+        "order": 4,
+        "title": {
+          "en": "The Saint-Sulpice Method",
+          "fr": "La méthode de Saint-Sulpice"
+        },
+        "objective": "Learn one traditional Christ-centred method without mistaking it for a universal obligation.",
+        "claims": [
+          {
+            "id": "SL04-Q01",
+            "layer": "SCHOOL_SPECIFIC_METHOD",
+            "text": "The Saint-Sulpice method is one traditional method among several; it is not the universal definition of mental prayer.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL04-Q02",
+            "layer": "SCHOOL_SPECIFIC_METHOD",
+            "text": "Its central movement is Christ before the eyes, in the heart and in the hands.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL04-Q03",
+            "layer": "SCHOOL_SPECIFIC_METHOD",
+            "text": "Jesus before the eyes means considering Christ as model and rendering Him adoration and homage.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL04-Q04",
+            "layer": "SCHOOL_SPECIFIC_METHOD",
+            "text": "Jesus in the heart means seeking through prayer to receive and share His dispositions and virtues.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL04-Q05",
+            "layer": "SCHOOL_SPECIFIC_METHOD",
+            "text": "Jesus in the hands means practical co-operation: carrying the received light into concrete action and resolution.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL04-Q06",
+            "layer": "METHOD_BOUNDARY",
+            "text": "As prayer matures, the method should serve loving attention to God rather than become a rigid checklist of acts.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL05",
+        "order": 5,
+        "title": {
+          "en": "Distractions, Dryness & Perseverance",
+          "fr": "Distractions, sécheresse & persévérance"
+        },
+        "objective": "Remove the idea that prayer has failed whenever it feels distracted or dry.",
+        "claims": [
+          {
+            "id": "SL05-Q01",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The absence of sensible consolation does not make prayer useless or failed.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL05-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "During dryness one should remain peacefully faithful rather than abandon prayer merely because it feels barren.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL05-Q03",
+            "layer": "PRACTICAL",
+            "text": "Vocal prayer, attentive spiritual reading, a crucifix or a simple act of recollection can help when the mind is scattered.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL05-Q04",
+            "layer": "PRACTICAL",
+            "text": "When duties genuinely prevent the usual prayer period, the response should be prudent adaptation rather than anxiety or self-condemnation.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL05-Q05",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "The app must not infer spiritual regression from missed sessions, lack of consolation or reduced prayer duration.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE",
+              "SL-TANQUEREY-1930"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL06",
+        "order": 6,
+        "title": {
+          "en": "The General Examination",
+          "fr": "L'examen général"
+        },
+        "objective": "Learn a calm daily review distinct from sacramental Confession preparation.",
+        "claims": [
+          {
+            "id": "SL06-Q01",
+            "layer": "METHOD",
+            "text": "The general examen reviews the day in God's presence in order to know oneself, give thanks, repent and amend.",
+            "source_ids": [
+              "SL-IGNATIUS-EXERCISES",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL06-Q02",
+            "layer": "METHOD",
+            "text": "Its classical five movements are thanksgiving, asking light, reviewing the day, asking pardon and resolving amendment with grace.",
+            "source_ids": [
+              "SL-IGNATIUS-EXERCISES",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL06-Q03",
+            "layer": "BOUNDARY",
+            "text": "A daily general examen is not identical to the fuller examination made in immediate preparation for sacramental Confession.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL06-Q04",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The purpose of examination is reform and renewed dependence on grace, not anxious self-surveillance.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL06-Q05",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "The app must keep examen finite and calm and must not retain a private ledger of sins as a spiritual-performance record.",
+            "source_ids": [
+              "SL-IGNATIUS-EXERCISES",
+              "SL-TANQUEREY-1930"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL07",
+        "order": 7,
+        "title": {
+          "en": "The Particular Examination",
+          "fr": "L'examen particulier"
+        },
+        "objective": "Learn how focused work on one fault or virtue differs from the general examen.",
+        "claims": [
+          {
+            "id": "SL07-Q01",
+            "layer": "METHOD",
+            "text": "The particular examen focuses on one definite fault to correct or virtue to cultivate rather than reviewing every aspect of the day.",
+            "source_ids": [
+              "SL-IGNATIUS-EXERCISES",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL07-Q02",
+            "layer": "METHOD",
+            "text": "A focused examination can make practical resolutions more concrete and easier to test in ordinary situations.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL07-Q03",
+            "layer": "METHOD_BOUNDARY",
+            "text": "Traditional counting marks are a tool of one method, not a requirement and not a spiritual score.",
+            "source_ids": [
+              "SL-IGNATIUS-EXERCISES",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL07-Q04",
+            "layer": "PRACTICAL",
+            "text": "A chosen point should be sufficiently specific to guide action, such as guarding speech in a recurring situation or practising a particular virtue.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL07-Q05",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The point may change as needs change; persistence is not the same as rigid attachment to one exercise.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL07-Q06",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "If the app offers a particular-examen aid, data should be minimal and private and should not create charts that invite vanity, anxiety or scrupulous comparison.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-IGNATIUS-EXERCISES"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL08",
+        "order": 8,
+        "title": {
+          "en": "Spiritual Reading",
+          "fr": "La lecture spirituelle"
+        },
+        "objective": "Learn to read for prayer and conversion rather than merely to accumulate religious information.",
+        "claims": [
+          {
+            "id": "SL08-Q01",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The purpose of spiritual reading is to nourish prayer, convictions and practical Christian life.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL08-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Spiritual reading should normally be slow and attentive enough for a truth to be considered, relished and applied.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL08-Q03",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Sacred Scripture, sound spiritual works and suitable lives of saints are traditional sources for spiritual reading.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL08-Q04",
+            "layer": "BOUNDARY",
+            "text": "Not everything admirable in a saint's life is directly imitable in every state of life; application must respect circumstances and vocation.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL08-Q05",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "Formation should teach selection and method but should not substitute endless content consumption for prayer and practice.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL09",
+        "order": 9,
+        "title": {
+          "en": "Sanctifying Ordinary Duties",
+          "fr": "Sanctifier les devoirs ordinaires"
+        },
+        "objective": "Connect prayer with work, family duties and ordinary actions without importing a narrow school-specific spirituality.",
+        "claims": [
+          {
+            "id": "SL09-Q01",
+            "layer": "DOCTRINE",
+            "text": "Ordinary lawful actions can be directed to God's glory and performed in union with Christ.",
+            "source_ids": [
+              "SL-SCRIPTURE-1COR10-31",
+              "SL-SCRIPTURE-COL3-17",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL09-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The duties of one's state are not interruptions of spiritual life; faithfully performed, they are material for sanctification.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL09-Q03",
+            "layer": "PRACTICAL",
+            "text": "A brief supernatural intention before important actions can help unite work to prayer without requiring continuous conscious verbal prayer.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL09-Q04",
+            "layer": "PRACTICAL",
+            "text": "The spiritual life should make a person more faithful to real duties, charity and responsibilities, not less available to them.",
+            "source_ids": [
+              "SL-FRANCIS-SALES-DEVOUT-LIFE",
+              "SL-CHAUTARD-APOSTOLATE"
+            ]
+          },
+          {
+            "id": "SL09-Q05",
+            "layer": "BOUNDARY",
+            "text": "No single modern movement owns the doctrine of sanctifying ordinary duties; the course presents it as broad Catholic tradition.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE",
+              "SL-SCRIPTURE-COL3-17"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL10",
+        "order": 10,
+        "title": {
+          "en": "A Rule of Life Without Rigidity",
+          "fr": "Une règle de vie sans rigidité"
+        },
+        "objective": "Build a stable spiritual rhythm that serves duties and adapts prudently to circumstances.",
+        "claims": [
+          {
+            "id": "SL10-Q01",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "A rule of life can help order time, spiritual exercises, duties and the practice of virtue.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL10-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "A good rule must be firm enough to sustain consistency and flexible enough to adapt to real circumstances.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL10-Q03",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Duties should be graded by importance; urgent charity or a more necessary duty may rightly displace a nonessential exercise.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL10-Q04",
+            "layer": "PRACTICAL",
+            "text": "A small stable core is preferable to an elaborate programme that repeatedly collapses under work, family, illness or travel.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL10-Q05",
+            "layer": "BOUNDARY",
+            "text": "A rule of life should be reviewed when state, health, work or family circumstances materially change.",
+            "source_ids": [
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL10-Q06",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "Ad Orientem may help a user understand or sketch a rule, but it must not become a generic life-planner or treat every optional devotion as a required task.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL11",
+        "order": 11,
+        "title": {
+          "en": "Prayer Before Action",
+          "fr": "La prière avant l'action"
+        },
+        "objective": "Learn why apostolic activity and good works must remain rooted in the interior life.",
+        "claims": [
+          {
+            "id": "SL11-Q01",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "External activity is not a substitute for prayer and interior union with Christ.",
+            "source_ids": [
+              "SL-CHAUTARD-APOSTOLATE",
+              "SL-SCRIPTURE-JN15"
+            ]
+          },
+          {
+            "id": "SL11-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "For active Catholics, prayer should sustain purity of intention, dependence on grace and perseverance in good works.",
+            "source_ids": [
+              "SL-CHAUTARD-APOSTOLATE"
+            ]
+          },
+          {
+            "id": "SL11-Q03",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "The busier a person becomes in apostolic work, the more important it is to preserve the essentials of interior life rather than allow activity to consume them.",
+            "source_ids": [
+              "SL-CHAUTARD-APOSTOLATE"
+            ]
+          },
+          {
+            "id": "SL11-Q04",
+            "layer": "BOUNDARY",
+            "text": "This lesson does not teach Apostolate technique; Apostolate remains the owner of helping, teaching and answering others.",
+            "source_ids": [
+              "SL-CHAUTARD-APOSTOLATE"
+            ]
+          },
+          {
+            "id": "SL11-Q05",
+            "layer": "PRACTICAL",
+            "text": "The fruit sought is not inactivity but action that proceeds from prayer and returns a person to deeper union with God.",
+            "source_ids": [
+              "SL-CHAUTARD-APOSTOLATE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL12",
+        "order": 12,
+        "title": {
+          "en": "Reparation & Indulgences",
+          "fr": "Réparation & indulgences"
+        },
+        "objective": "Understand these practices without reducing them to a transaction or points economy.",
+        "claims": [
+          {
+            "id": "SL12-Q01",
+            "layer": "DOCTRINE",
+            "text": "Reparation is a real Catholic response of love, justice and union with Christ, not a mechanism for earning spiritual points.",
+            "source_ids": [
+              "SL-PIUS-XI-MISERENTISSIMUS"
+            ]
+          },
+          {
+            "id": "SL12-Q02",
+            "layer": "CURRENT_DISCIPLINE",
+            "text": "An indulgence is remission before God of temporal punishment for sins whose guilt has already been forgiven.",
+            "source_ids": [
+              "SL-CIC83-992-997",
+              "SL-PAUL-VI-INDULGENTIARUM"
+            ]
+          },
+          {
+            "id": "SL12-Q03",
+            "layer": "CURRENT_DISCIPLINE",
+            "text": "Current discipline distinguishes partial and plenary indulgences and establishes conditions for gaining a plenary indulgence.",
+            "source_ids": [
+              "SL-CIC83-992-997",
+              "SL-PAUL-VI-INDULGENTIARUM"
+            ]
+          },
+          {
+            "id": "SL12-Q04",
+            "layer": "HISTORICAL",
+            "text": "Older days/years terminology is not the current measure and did not mean a literal number of days removed from Purgatory.",
+            "source_ids": [
+              "SL-PAUL-VI-INDULGENTIARUM"
+            ]
+          },
+          {
+            "id": "SL12-Q05",
+            "layer": "BOUNDARY",
+            "text": "Formation explains indulgences and reparation; Calendar and PRAY may surface specific opportunities or prayers when they have their own verified grants.",
+            "source_ids": [
+              "SL-PAUL-VI-INDULGENTIARUM",
+              "SL-PIUS-XI-MISERENTISSIMUS"
+            ]
+          },
+          {
+            "id": "SL12-Q06",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "The app must never display indulgences, reparatory acts or devotions as a score, balance, streak or guaranteed exchange.",
+            "source_ids": [
+              "SL-PIUS-XI-MISERENTISSIMUS",
+              "SL-PAUL-VI-INDULGENTIARUM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL13",
+        "order": 13,
+        "title": {
+          "en": "Devotion Without Superstition",
+          "fr": "Dévotion sans superstition"
+        },
+        "objective": "Distinguish Catholic devotion from magical or automatic thinking.",
+        "claims": [
+          {
+            "id": "SL13-Q01",
+            "layer": "DOCTRINE",
+            "text": "Superstition includes attributing supernatural efficacy to an action or object that it does not possess according to the Church's teaching and practice.",
+            "source_ids": [
+              "SL-PIUS-X-CATECHISM"
+            ]
+          },
+          {
+            "id": "SL13-Q02",
+            "layer": "DOCTRINE",
+            "text": "External devotion must remain ordered to interior faith, worship and conversion rather than functioning as an independent mechanism.",
+            "source_ids": [
+              "SL-PIUS-X-CATECHISM"
+            ]
+          },
+          {
+            "id": "SL13-Q03",
+            "layer": "PRACTICAL",
+            "text": "Sacramentals and devotional objects should lead toward prayer and Christian life, not replace them.",
+            "source_ids": [
+              "SL-PIUS-X-CATECHISM"
+            ]
+          },
+          {
+            "id": "SL13-Q04",
+            "layer": "BOUNDARY",
+            "text": "Claims of guaranteed worldly success or salvation from mere possession or mechanical use of an object require correction unless a genuine Church promise is accurately stated.",
+            "source_ids": [
+              "SL-PIUS-X-CATECHISM"
+            ]
+          },
+          {
+            "id": "SL13-Q05",
+            "layer": "OWNER_BOUNDARY",
+            "text": "Customs and sacramentals remain owned by their dedicated reference/PRAY/Customary surfaces; Spiritual Life teaches the interior principle only.",
+            "source_ids": [
+              "SL-PIUS-X-CATECHISM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SL14",
+        "order": 14,
+        "title": {
+          "en": "Building a Mature Spiritual Rhythm",
+          "fr": "Construire un rythme spirituel mûr"
+        },
+        "objective": "Integrate prayer, examen, reading and duties without overload or spiritual self-measurement.",
+        "claims": [
+          {
+            "id": "SL14-Q01",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "A mature spiritual rhythm integrates prayer, duties, sacraments, reading and self-examination rather than multiplying practices without order.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL14-Q02",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Growth may require simplification and deeper attention rather than adding more devotions.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL14-Q03",
+            "layer": "TRADITIONAL_COUNSEL",
+            "text": "Spiritual exercises should be adapted to real capacity and circumstances while preserving fidelity to essential duties.",
+            "source_ids": [
+              "SL-IGNATIUS-EXERCISES",
+              "SL-TANQUEREY-1930"
+            ]
+          },
+          {
+            "id": "SL14-Q04",
+            "layer": "BOUNDARY",
+            "text": "Formation gives principles and methods but does not replace a confessor or spiritual director in matters requiring personal discernment.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          },
+          {
+            "id": "SL14-Q05",
+            "layer": "PRODUCT_BOUNDARY",
+            "text": "The desired product outcome is greater freedom for prayerful Catholic life, not dependence on the app for every spiritual action.",
+            "source_ids": [
+              "SL-TANQUEREY-1930",
+              "SL-FRANCIS-SALES-DEVOUT-LIFE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "publication_gates": {
+    "research_complete": true,
+    "all_claims_sourced": true,
+    "english_claim_copy_ready": true,
+    "french_parity_ready": true,
+    "ui_runtime_ready": true,
+    "prayer_owner_handoffs_mapped": true,
+    "final_content_audit_ready": true
+  },
+  "next_passes": [
+    "Keep the 14-lesson / 76-claim / 12-source contract stable unless new research justifies a versioned curriculum change.",
+    "Run the Spiritual Life runtime and phone acceptance gates on every Formation regression pass.",
+    "Treat future additions as explicit curriculum revisions rather than expanding the course opportunistically."
+  ]
+}

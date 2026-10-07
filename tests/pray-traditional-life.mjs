@@ -55,12 +55,23 @@ for(const id of ["pray.morning_evening","pray.sacred_hymns","pray.holy_name_lita
   assert.match(runtime,new RegExp(id.replace(".","\\.")),id+" is not owned by the modular traditional PRAY runtime");
 }
 assert.match(runtime,/BASE_OPEN\("pray\.hub",opts\)/,"Traditional PRAY modules no longer mount inside the shared PRAY shell");
+assert.doesNotMatch(runtime,/function injectHome|aoTP381InsertedSection|MutationObserver/,"Traditional PRAY regained DOM-based hub injection");
+assert.match(runtime,/OPEN_OPTS\.returnFamily/,"Traditional PRAY no longer preserves its owning PRAY family");
+assert.match(runtime,/openFamily\?\.\(OPEN_OPTS\.returnFamily\)/,"Traditional PRAY family return is not delegated to the canonical PRAY owner");
+
 assert.match(runtime,/legacyTraditionOwner:false/,"Extraction must not restore AO_TRADITION_V38 ownership");
 assert.match(runtime,/OFFLINE_SOURCE_LOCKED/,"Holy Name litany is no longer declared offline/source-locked");
 assert.doesNotMatch(runtime,/ensureHolyName|en\.wikisource\.org\/w\/api\.php/,"Holy Name litany regained a runtime network dependency");
 assert.match(runtime,/data-tp381-daypart/,"Morning/Evening daypart control disappeared");
 assert.match(runtime,/data-tp381-hymn-lang/,"Hymn language control disappeared");
 assert.match(runtime,/data-tp381-prayer/,"Canonical prayer reuse disappeared");
+assert.match(runtime,/data-tp381-glossary/,"Traditional PRAY lost contextual glossary action");
+assert.match(runtime,/function glossaryTermsForState\(\)/,"Traditional PRAY lost route-to-glossary mapping");
+assert.match(runtime,/openTerms\(glossaryTermsForState\(\),\{origin:"pray"\}\)/,"Traditional PRAY glossary no longer opens contextually");
+for(const id of ["G326","G328","G096","G331","G031","G037","G038"]){
+  assert.match(runtime,new RegExp('"'+id+'"'),"Traditional PRAY glossary mapping lost "+id);
+}
+assert.match(styles,/aoTP381Glossary/,"Traditional PRAY glossary action lost restrained styling");
 assert.match(styles,/aoTP381Reader/);
 assert.match(styles,/aoTP381PrayerList/);
 assert.match(runtime,/Foundational prayers may recur later in the Rosary or another devotion/,"Morning\/Evening repetition guide disappeared");

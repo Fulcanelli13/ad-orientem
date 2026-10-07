@@ -1,9 +1,39 @@
 import { auditVenue } from "./contracts.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
+export const RESEARCH_MASS_REVIEW_DAYS=120;
+const RESEARCH_PROVIDERS=Object.freeze([
+  Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
+  Object.freeze({key:"aasjmv",file:"aasjmv.v1.json"}),
+  Object.freeze({key:"fsvf",file:"fsvf.v1.json"}),
+  Object.freeze({key:"canons",file:"canons-st-john-cantius.v1.json"}),
+  Object.freeze({key:"cmri",file:"cmri.v1.json"}),
+  Object.freeze({key:"rci",file:"rci.v1.json"}),
+  Object.freeze({key:"cspv",file:"cspv.v1.json"}),
+  Object.freeze({key:"smmd",file:"smmd.v1.json"}),
+  Object.freeze({key:"icksp",file:"icksp-federated.v1.json",geoFile:"icksp-federated.geo.v1.json"}),
+]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
 function text(value){return String(value??"").trim()}
+function isoDay(value){
+  const match=text(value).match(/^(20\d{2}-\d{2}-\d{2})/);
+  return match?.[1]??null;
+}
+function addDays(day,count){
+  if(!day)return null;
+  const date=new Date(day+"T00:00:00Z");
+  if(Number.isNaN(date.getTime()))return null;
+  date.setUTCDate(date.getUTCDate()+Number(count||0));
+  return date.toISOString().slice(0,10);
+}
+export function scheduleFreshnessState(schedule,{now=new Date()}={}){
+  const due=schedule?.verification?.review_due_at;
+  if(!due)return "UNKNOWN";
+  const dueTime=new Date(due).getTime(),nowTime=now instanceof Date?now.getTime():new Date(now).getTime();
+  if(!Number.isFinite(dueTime)||!Number.isFinite(nowTime))return "UNKNOWN";
+  return nowTime>dueTime?"REVIEW_DUE":"CURRENT";
+}
 async function fetchJson(url,{fetchImpl=fetch,optional=false}={}){
   try{
     const response=await fetchImpl(url,{headers:{accept:"application/json"}});
@@ -18,6 +48,13 @@ async function fetchJson(url,{fetchImpl=fetch,optional=false}={}){
   }
 }
 function moduleUrl(relative){return new URL(relative,import.meta.url).href}
+function slugId(value){
+  return text(value).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase()
+    .replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")||"record";
+}
+export function researchProviderUrl(file){
+  return moduleUrl("../../data/directory/generated/v19/"+file);
+}
 export function directoryProviderUrls(provider){
   const base="../../data/directory/generated/"+provider+"/";
   return Object.freeze({
@@ -27,6 +64,160 @@ export function directoryProviderUrls(provider){
     sources:moduleUrl(base+"sources.v1.json"),
   });
 }
+function compactResearchRow(defaults,row,provider){
+  return Object.freeze({...defaults,...row,p:provider});
+}
+export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
+  const provider=text(snapshot?.provider);
+  const defaults=snapshot?.defaults&&typeof snapshot.defaults==="object"?snapshot.defaults:{};
+  const generatedAt=text(snapshot?.generated_at)||null;
+  const geoByVenueId=new Map(safeArray(geoRecords).map(item=>[item?.venue_id,item?.geo]).filter(([id,geo])=>id&&geo));
+  const out={venues:[],ministries:[],schedules:[],sources:[]};
+  for(const raw of safeArray(snapshot?.records)){
+    const parent=compactResearchRow(defaults,raw,provider);
+    const physical=safeArray(parent.pv);
+    const rows=physical.length
+      ?physical.map((item,index)=>compactResearchRow(parent,{
+          ...item,
+          u:text(item?.u)||text(parent.u)+"-PV"+String(index+1),
+          parent_u:text(parent.u),
+          pv:undefined,
+        },provider))
+      :[parent];
+    for(const row of rows){
+      if(!row.u||!row.c||!row.cc||!row.n||!row.su)continue;
+      const base=slugId(provider)+"-"+slugId(row.u);
+    const venueId="ao-research-"+base;
+    const ministryId="ao-ministry-"+base;
+    const scheduleId="ao-schedule-"+base;
+    const scheduleSourceId="src-research-"+base+"-schedule";
+    const authorizationSourceId=row.au?"src-research-"+base+"-authorization":null;
+    const editionSourceId=row.eu?"src-research-"+base+"-edition":null;
+    const sourceIds=[scheduleSourceId,...(authorizationSourceId?[authorizationSourceId]:[]),...(editionSourceId?[editionSourceId]:[])];
+    const formatted=text(row.a)||[row.l,row.r,row.cc].map(text).filter(Boolean).join(", ");
+    const scheduleRaw=text(row.sr);
+    const serviceType=text(row.svc)||"MASS";
+    const verifiedOn=isoDay(row.vv)||isoDay(generatedAt);
+    const reviewDue=serviceType==="MASS"&&verifiedOn?addDays(verifiedOn,RESEARCH_MASS_REVIEW_DAYS):null;
+    const sunday=/\bsunday\b|\bdimanche\b|\bdomingo\b|\bdomenica\b|\bsonntag\b|\bsun\.?\b/i.test(scheduleRaw);
+    out.venues.push({
+      venue_id:venueId,
+      name:{official:text(row.n),alternate:[]},
+      venue_type:text(row.vt)||"other",
+      upstream:{
+        provider:"AO_RESEARCH_V1_9",
+        upstream_id:text(row.u),
+        parent_upstream_id:text(row.parent_u)||null,
+        provider_id:provider,
+        provider_relationship:row.pr??null,
+        source_liturgical_profile:row.sl??null,
+        geometry_status:row.gs??null,
+      },
+      address:{
+        line1:text(row.a)||null,line2:null,postal_code:null,
+        city:text(row.l)||null,region:text(row.r)||null,country_code:text(row.cc),country:null,
+        formatted:formatted||null,
+      },
+      geo:geoByVenueId.get(venueId)??{lat:null,lng:null,precision:"unknown",geocoding_source:null},
+      diocese:{diocese_id:null,name:text(row.j)||null,type:"diocese"},
+      contact:{
+        phone:[],email:[],website:[text(row.su)].filter(Boolean),
+        schedule_url:[text(row.su)].filter(Boolean),bulletin_url:[],contact_form:[],official_social:[],
+      },
+      capabilities:{sunday_mass:sunday},
+      status:"active",
+      source_ids:sourceIds,
+      upstream_updated_at:null,
+    });
+    out.ministries.push({
+      ministry_id:ministryId,
+      venue_id:venueId,
+      community_id:text(row.c),
+      relationship:text(row.rel)||"unknown",
+      affiliation_confidence:text(row.ac)||"REVIEW",
+      community_profile_ref:text(row.c),
+      liturgical_usage:{
+        family:text(row.f)||"ROMAN",
+        books:text(row.b)||"UNKNOWN",
+        mass_form:text(row.mf)||"TRADITIONAL_LATIN",
+        evidence_source_ids:[editionSourceId??scheduleSourceId],
+      },
+      authorization:{
+        status:row.az??null,
+        parish_church_use:row.pc??null,
+        apostolic_see_dispensation_evidence:row.ad??null,
+        celebrant_permission_scope:row.cp??null,
+        source_id:authorizationSourceId,
+      },
+      upstream:{
+        provider_relationship:row.pr??null,
+        una_cum_status_raw:row.uc??null,
+        source_liturgical_profile:row.sl??null,
+      },
+      active:true,
+      source_ids:sourceIds,
+    });
+    out.schedules.push({
+      schedule_id:scheduleId,
+      ministry_id:ministryId,
+      service_type:serviceType,
+      mass_type:"UNKNOWN",
+      payload:{raw:scheduleRaw},
+      source_ids:[scheduleSourceId],
+      verification:{
+        state:text(row.vs)||"OFFICIAL_VERIFIED",
+        checked_at:verifiedOn?verifiedOn+"T00:00:00Z":generatedAt,
+        review_due_at:reviewDue?reviewDue+"T23:59:59Z":null,
+        freshness_policy:serviceType==="MASS"?"CURRENT_MASS_120D":null,
+      },
+    });
+    out.sources.push({
+      source_id:scheduleSourceId,
+      registry_source_id:null,
+      source_type:text(row.st)||"COMMUNITY_OFFICIAL",
+      publisher:text(row.j)||text(row.c)||provider,
+      title:text(row.n),
+      url:text(row.su),
+      retrieved_at:generatedAt,
+      authority:"PRIMARY",
+      fields_supported:editionSourceId?["venue","venue.contact","schedule"]:["venue","venue.contact","schedule","liturgical_usage"],
+    });
+    if(editionSourceId){
+      out.sources.push({
+        source_id:editionSourceId,
+        registry_source_id:null,
+        source_type:text(row.et)||text(row.st)||"COMMUNITY_OFFICIAL",
+        publisher:text(row.j)||text(row.c)||provider,
+        title:text(row.n)+" — liturgical edition",
+        url:text(row.eu),
+        retrieved_at:generatedAt,
+        authority:"PRIMARY",
+        fields_supported:["liturgical_usage"],
+      });
+    }
+    if(authorizationSourceId){
+      out.sources.push({
+        source_id:authorizationSourceId,
+        registry_source_id:null,
+        source_type:text(row.at)||"DIOCESE_OFFICIAL",
+        publisher:text(row.j)||text(row.c)||provider,
+        title:text(row.n)+" — authorization",
+        url:text(row.au),
+        retrieved_at:generatedAt,
+        authority:"PRIMARY",
+        fields_supported:["authorization"],
+      });
+    }
+    }
+  }
+  return Object.freeze({
+    venues:Object.freeze(out.venues),
+    ministries:Object.freeze(out.ministries),
+    schedules:Object.freeze(out.schedules),
+    sources:Object.freeze(out.sources),
+  });
+}
+
 export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sources=[],communityProfiles=[]}={}){
   const ministriesByVenue=new Map(),schedulesByMinistry=new Map();
   for(const ministry of safeArray(ministries)){
@@ -60,9 +251,14 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
   });
 }
 export function publishableDirectoryRecords(records){
-  return safeArray(records).filter(record=>auditVenue(record?.venue).length===0);
+  return safeArray(records).filter(record=>{
+    if(auditVenue(record?.venue).length!==0)return false;
+    const icksp=safeArray(record?.ministries).filter(m=>m?.community_id==="ICKSP");
+    if(icksp.length&&!icksp.some(m=>safeArray(m?.schedules).some(schedule=>schedule?.service_type==="MASS")))return false;
+    return true;
+  });
 }
-export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PROVIDERS}={}){
+export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PROVIDERS,researchProviders=RESEARCH_PROVIDERS}={}){
   const [statusData,communityData]=await Promise.all([
     fetchJson(moduleUrl("../../data/directory/status-assertions.v1.json"),{fetchImpl,optional:true}),
     fetchJson(moduleUrl("../../data/directory/communities.v1.json"),{fetchImpl,optional:true}),
@@ -79,11 +275,24 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
       fetchJson(urls.sources,{fetchImpl,optional:true}),
     ]);
     if(!venues?.records){unavailable.push(provider);continue}
-    loaded.push(provider);
+    if(!loaded.includes(provider))loaded.push(provider);
     merged.venues.push(...safeArray(venues.records));
     merged.ministries.push(...safeArray(ministries?.records));
     merged.schedules.push(...safeArray(schedules?.records));
     merged.sources.push(...safeArray(sources?.records));
+  }
+  for(const descriptor of safeArray(researchProviders)){
+    const [snapshot,geoOverlay]=await Promise.all([
+      fetchJson(researchProviderUrl(descriptor.file),{fetchImpl,optional:true}),
+      descriptor.geoFile?fetchJson(researchProviderUrl(descriptor.geoFile),{fetchImpl,optional:true}):Promise.resolve(null),
+    ]);
+    if(!snapshot?.records){unavailable.push(descriptor.key);continue}
+    const expanded=expandResearchProviderSnapshot(snapshot,{geoRecords:safeArray(geoOverlay?.records)});
+    if(!loaded.includes(descriptor.key))loaded.push(descriptor.key);
+    merged.venues.push(...expanded.venues);
+    merged.ministries.push(...expanded.ministries);
+    merged.schedules.push(...expanded.schedules);
+    merged.sources.push(...expanded.sources);
   }
   const joined=joinDirectoryRecords({...merged,communityProfiles});
   const records=publishableDirectoryRecords(joined);

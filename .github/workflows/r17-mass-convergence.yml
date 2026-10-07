@@ -10,10 +10,27 @@ on:
       - "src/mass/**"
       - "data/mass/**"
       - "data/presentation/**"
-      - "tests/**"
+      - "tests/reader-*.mjs"
+      - "tests/*mass*.mjs"
+      - "tests/proper-*.mjs"
+      - "tests/faithful-gesture-cues.mjs"
+      - "tests/canonical-text-corrections.mjs"
+      - "tests/postcommunion-exit.mjs"
+      - "tests/pre-gospel-sequence.mjs"
+      - "tests/r17-convergence.mjs"
+      - "tests/v1.83-reader-parity.mjs"
+      - "tests/app-shell-easter-vigil-e2e.mjs"
+      - "tests/app-shell-nuptial-e2e.mjs"
+      - "tests/field-current-week-e2e.mjs"
+      - "tests/release-candidate-field-qa.mjs"
+      - "tests/source-transport-compat.mjs"
+      - "tests/fixtures/reader-phone-harness.html"
       - "index.html"
-      - "package.json"
       - ".github/workflows/r17-mass-convergence.yml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -26,6 +43,7 @@ jobs:
       - run: npm test
 
   phone-browser:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

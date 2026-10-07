@@ -30,6 +30,12 @@ export const DEVOTIONAL_SOURCE_REGISTRY=F({
     url:"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15051956_haurietis-aquas.html",
     authority:"PRE_CONCILIAR_ROMAN"
   }),
+  portiunculaHistoricalFrench:F({
+    id:"portiuncula-historical-french",
+    label:"Dictionnaire de théologie catholique · Portioncule · discipline antérieure",
+    url:"https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_12.2.djvu/589",
+    authority:"PRE_CONCILIAR_FRENCH_THEOLOGICAL_REFERENCE"
+  }),
   traditionalResearch:F({
     id:"traditional-research",
     label:"Ad Orientem pre-conciliar / French-world research ledger",
@@ -143,9 +149,13 @@ export const DEVOTIONAL_PRACTICE_REGISTRY=F({
     schedule:F({type:"FIXED",month:8,day:2}),
     route:"today.calendar",
     priority:72,
-    classification:C(false,false,false,true,"CONDITIONAL_USUAL_CONDITIONS","NONE_BY_DEFAULT"),
-    tags:A(["TRADITIONAL_DEVOTIONAL_PRACTICE","CURRENT_INDULGED_WORK_CONDITIONAL"]),
-    sources:A([DEVOTIONAL_SOURCE_REGISTRY.enchiridion])
+    classification:C(false,true,false,true,"CONDITIONAL_USUAL_CONDITIONS","NONE_BY_DEFAULT"),
+    tags:A(["TRADITIONAL_DEVOTIONAL_PRACTICE","CURRENT_INDULGED_WORK_CONDITIONAL","HISTORICAL_DISCIPLINE_LAYER"]),
+    historicalNote:F({
+      en:"Pre-conciliar discipline and the scope of privileged churches changed over time; historical concessions must not be used to infer today's conditions.",
+      fr:"La discipline antérieure au Concile et l'étendue des églises privilégiées ont varié au cours du temps ; les concessions historiques ne permettent pas de déduire les conditions actuelles."
+    }),
+    sources:A([DEVOTIONAL_SOURCE_REGISTRY.enchiridion,DEVOTIONAL_SOURCE_REGISTRY.portiunculaHistoricalFrench])
   }),
   "st-michael":F({
     key:"st-michael",

@@ -1185,6 +1185,10 @@ export const AO_APP_SURFACE_ASSET_IDS=Object.freeze({
   pray:"ao-nav-pray",
   learn:"ao-nav-learn",
   calendar:"ao-nav-calendar",
+  // Explore does not yet have a dedicated V4 navigation master. Reuse the
+  // physically externalized canonical Search utility mark: it expresses
+  // discovery without inventing a new icon or misusing another domain mark.
+  find:"ao-ui-search",
   settings:"ao-nav-settings",
 });
 
@@ -1192,6 +1196,7 @@ export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
   "learn.catechism.daily":"ao-refined-study",
   "learn.latin":"ao-refined-study",
   "learn.mass":"ao-rich-guides",
+  "learn.spiritual_life":"ao-refined-spiritual-life",
   "learn.catechism":"ao-module-catechism",
   "today.gospel":"ao-refined-scripture",
   "today.saint":"ao-refined-saint-of-day",

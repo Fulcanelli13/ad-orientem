@@ -16,7 +16,7 @@ import {
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const GENERATED=path.join(ROOT,"data/directory/generated");
 const CACHE_PATH=path.join(ROOT,"data/directory/geocoding-cache.v1.json");
-const PROVIDERS=(process.env.AO_GEOCODE_PROVIDERS??"fssp,icksp,ibp").split(",").map(x=>x.trim()).filter(Boolean);
+const PROVIDERS=(process.env.AO_GEOCODE_PROVIDERS??"fssp,icksp,ibp,sspx").split(",").map(x=>x.trim()).filter(Boolean);
 const ENDPOINT=process.env.AO_GEOCODER_ENDPOINT??"https://nominatim.openstreetmap.org/search";
 const USER_AGENT="AdOrientemDirectoryGeocoder/1.0 (+https://github.com/Fulcanelli13/ad-orientem)";
 const OFFICIAL_PUBLIC=/^https:\/\/nominatim\.openstreetmap\.org\//i.test(ENDPOINT);

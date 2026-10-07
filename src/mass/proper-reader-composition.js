@@ -8,7 +8,10 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
       id:"AO.SM.C0076",
       kind:"RESPONSE",
       latin:"℟. Deo grátias.",
-      vernacular:"℟. Thanks be to God.",
+      vernacular:Object.freeze({
+        en:"℟. Thanks be to God.",
+        fr:"℟. Nous rendons grâces à Dieu.",
+      }),
       role:"FIXED_RESPONSE",
     }),
   ]),
@@ -17,24 +20,38 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
       id:"AO.SM.C0087",
       kind:"RESPONSE",
       latin:"℟. Laus tibi, Christe.",
-      vernacular:"℟. Praise be to Thee, O Christ.",
+      vernacular:Object.freeze({
+        en:"℟. Praise be to Thee, O Christ.",
+        fr:"℟. Louange à vous, ô Christ.",
+      }),
       role:"FIXED_RESPONSE",
     }),
     Object.freeze({
       id:"AO.SM.C0088",
       kind:"TEXT",
       latin:"Per evangélica dicta deleántur nostra delícta.",
-      vernacular:"By the words of the Gospel may our sins be blotted out.",
+      vernacular:Object.freeze({
+        en:"By the words of the Gospel may our sins be blotted out.",
+        fr:"Que par les paroles de l’Évangile nos péchés soient effacés.",
+      }),
       role:"PRIEST_PRIVATE",
     }),
   ]),
 });
 
-export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs) {
+function languageKey(language){
+  return String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
+}
+
+export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs, {language="en"}={}) {
   if (!Array.isArray(resolvedProperParagraphs) || resolvedProperParagraphs.length === 0) {
     throw new TypeError("Resolved Proper paragraphs required");
   }
-  const fixed = PINNED_PROPER_FOLLOWUPS[String(blockId)] ?? [];
+  const locale=languageKey(language);
+  const fixed=(PINNED_PROPER_FOLLOWUPS[String(blockId)] ?? []).map(row=>Object.freeze({
+    ...row,
+    vernacular:row.vernacular?.[locale] ?? row.vernacular?.en ?? "",
+  }));
   return Object.freeze([
     ...resolvedProperParagraphs.map(x=>Object.freeze({...x})),
     ...fixed,

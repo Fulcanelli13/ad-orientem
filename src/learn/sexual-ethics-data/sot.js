@@ -1,6 +1,6 @@
 import { CSE_QUESTIONS, CSE_SOURCE_MAP } from "./index.js";
 
-export const CSE_SOT_VERSION="CSE_SOT_V2";
+export const CSE_SOT_VERSION="CSE_SOT_V3";
 
 export const CSE_RELATED_TARGETS=Object.freeze({
   "learn.catechism":Object.freeze({id:"learn.catechism",surface:"learn",label:Object.freeze(["Traditional Catechism","Catéchisme traditionnel"])}),
@@ -38,6 +38,12 @@ const SECTION_RELATED=Object.freeze({
   reproduction:Object.freeze(["learn.rites.matrimony"]),
   confession:Object.freeze(["pray.confession"]),
   "family-digital":Object.freeze(["learn.catholic_life"]),
+});
+
+const EVIDENCE_OVERRIDES=Object.freeze({
+  CSE123:Object.freeze(["MAGISTERIUM","BIOETHICS","EMBRYOLOGY"]),
+  CSE124:Object.freeze(["MAGISTERIUM","BIOETHICS","PASTORAL_PRUDENCE"]),
+  CSE125:Object.freeze(["MAGISTERIUM","BIOETHICS","MEDICINE","DOUBLE_EFFECT"]),
 });
 
 const CONFIDENCE_OVERRIDES=Object.freeze({
@@ -108,8 +114,12 @@ function sourceRecords(item){
 export const CSE_SOT_MATRIX=Object.freeze(CSE_QUESTIONS.map(item=>{
   const sources=sourceRecords(item);
   const crossLinks=relatedTargetsFor(item);
-  const completeEn=Boolean(item.q?.[0]&&item.a?.[0]&&(item.depth==="STANDARD"||item.d?.[0]));
-  const completeFr=Boolean(item.q?.[1]&&item.a?.[1]&&(item.depth==="STANDARD"||item.d?.[1]));
+  const debateEn=item.depth!=="DEBATE"||Boolean(item.debate&&Object.values(item.debate).every(pair=>pair?.[0]));
+  const debateFr=item.depth!=="DEBATE"||Boolean(item.debate&&Object.values(item.debate).every(pair=>pair?.[1]));
+  const depthEn=item.depth==="STANDARD"||item.depth==="DEBATE"?debateEn:Boolean(item.d?.[0]);
+  const depthFr=item.depth==="STANDARD"||item.depth==="DEBATE"?debateFr:Boolean(item.d?.[1]);
+  const completeEn=Boolean(item.q?.[0]&&item.a?.[0]&&depthEn);
+  const completeFr=Boolean(item.q?.[1]&&item.a?.[1]&&depthFr);
   const nonArgumentLead=sources.filter(source=>source.role!=="argument_lead");
   return Object.freeze({
     id:item.id,
@@ -119,9 +129,10 @@ export const CSE_SOT_MATRIX=Object.freeze(CSE_QUESTIONS.map(item=>{
     question:Object.freeze([...item.q]),
     proposition:Object.freeze([...item.a]),
     deeperArgument:item.d?Object.freeze([...item.d]):null,
+    debateStructure:item.debate||null,
     doctrinalLayer:item.layer,
     confidence:confidenceFor(item),
-    evidenceDomains:SECTION_EVIDENCE[item.section]||Object.freeze(["MORAL_THEOLOGY"]),
+    evidenceDomains:EVIDENCE_OVERRIDES[item.id]||SECTION_EVIDENCE[item.section]||Object.freeze(["MORAL_THEOLOGY"]),
     sources,
     hasNonArgumentLeadAuthority:nonArgumentLead.length>0,
     narrowCitationCount:sources.filter(source=>source.precision==="EXACT_OR_NARROW").length,
@@ -140,7 +151,7 @@ export const CSE_GAP_AUDIT=Object.freeze([
   Object.freeze({topic:"Intoxication / incapacity and sexual consent",status:"COVERED",record:"CSE117"}),
   Object.freeze({topic:"Detailed annulment law",status:"CROSS_LINK",target:"learn.rites.matrimony"}),
   Object.freeze({topic:"Detailed confession mechanics",status:"CROSS_LINK",target:"pray.confession",records:Object.freeze(["CSE119","CSE131","CSE132","CSE133","CSE134","CSE135","CSE136","CSE137","CSE138","CSE139","CSE140"])}),
-  Object.freeze({topic:"Abortion and full embryo-personhood treatment",status:"OUT_OF_SCOPE",action:"Belongs in Bioethics / Life rather than Sexual Ethics."}),
+  Object.freeze({topic:"Abortion and difficult pregnancy cases",status:"COVERED",records:Object.freeze(["CSE123","CSE124","CSE125"]),action:"Core abortion principle, rape/incest and maternal-life cases are covered; broader bioethics remains outside this module."}),
   Object.freeze({topic:"Safeguarding procedures and reporting",status:"OUT_OF_SCOPE",action:"Pastoral/safeguarding owner; CSE retains moral distinctions about coercion and voluntariness."}),
   Object.freeze({topic:"Modern gender and digital sexual applications",status:"COVERED_AS_LATER_APPLICATION",records:Object.freeze(["CSE091","CSE092","CSE093","CSE094","CSE095","CSE096","CSE097","CSE098","CSE099","CSE100","CSE127","CSE128","CSE129","CSE130"])}),
   Object.freeze({topic:"Future fertility technologies",status:"COVERED_BY_PROTOCOL",record:"CSE107"}),

@@ -10,9 +10,10 @@ import {
 } from "../src/app/index.js";
 import { installAppShellBridge } from "../src/app/browser-entry.js";
 
-assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "settings"]);
-assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "calendar", "settings", "find"]);
-assert.equal(APP_SURFACES.includes("find"), false, "Find unexpectedly became a seventh permanent ribbon surface");
+assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "find"]);
+assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "calendar", "find", "settings"]);
+assert.equal(APP_SURFACES.includes("find"), true, "Explore/Find is not a permanent ribbon surface");
+assert.equal(APP_SURFACES.includes("settings"), false, "Settings still consumes a permanent ribbon slot");
 assert.equal(APP_SURFACES.includes("sources"), false);
 assert.equal(APP_SURFACES.includes("formation"), false, "Formation became a second canonical surface");
 assert.equal(normalizeAppSurface("learn"), "learn");
@@ -21,6 +22,7 @@ assert.equal(NON_MASS_DONOR_CONTRACT.release, "43.59.30");
 assert.equal(NON_MASS_DONOR_CONTRACT.prayerOwner, "AO_PRAY_V435930");
 assert.equal(NON_MASS_DONOR_CONTRACT.settingsOwner, "AO_SETTINGS_APP_V1");
 assert.equal(NON_MASS_DONOR_CONTRACT.settingsDonorOwner, "AO_SETTINGS_V4359");
+assert.deepEqual(NON_MASS_DONOR_CONTRACT.topLevel,["home","mass","pray","learn","calendar","settings"],"historical donor ribbon evidence was rewritten to match the modern product");
 
 const appEntrySource=readFileSync("src/app/browser-entry.js","utf8");
 assert.match(appEntrySource,/aoHomeSuppressed/,"app shell no longer isolates Home beneath modular surfaces");
@@ -291,7 +293,7 @@ function host({ route = "home", confirm = true } = {}) {
       setAttribute(name,value){this.attributes[name]=value;},
       removeAttribute(name){ if(name==="data-ao-ribbon")delete this.dataset.aoRibbon; },
       querySelectorAll(selector){
-        if(selector==="[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label")return [label];
+        if(selector.includes("[data-ao-ribbon-label]"))return [label];
         return [];
       },
     };
@@ -327,17 +329,19 @@ function host({ route = "home", confirm = true } = {}) {
   };
   installAppShellBridge({win,pollMs:0,maxPolls:1});
   assert.equal(typeof ribbonHandler,"function","ribbon click listener was not bound while initial donor ribbon was incomplete");
-  for(const surface of APP_SURFACES){
-    const button=makeButton(surface);
-    button.dataset.aoAppSurface=surface;
-    delete button.dataset.aoRibbon;
-    buttons.push(button);
+  for(const surface of NON_MASS_DONOR_CONTRACT.topLevel){
+    buttons.push(makeButton(surface));
   }
   for(const fn of observerCallbacks)fn?.();
   assert.equal(win.AO_APP_SHELL_V1.status().visibleOwner,true,"late donor ribbon was not adopted");
   const learnButton=buttons.find(x=>x.dataset.aoAppSurface==="learn");
   assert.equal(learnButton?._label?.textContent,"Formation","adopted phone ribbon still displays Learn / Apprendre");
   assert.equal(learnButton?.attributes?.["aria-label"],"Formation","adopted Learn ribbon ARIA label is not Formation");
+  const exploreButton=buttons.find(x=>x.dataset.aoAppSurface==="find");
+  assert.ok(exploreButton,"donor Settings slot was not promoted to Explore");
+  assert.equal(exploreButton?._label?.textContent,"Explore","promoted ribbon slot is not labelled Explore");
+  assert.equal(exploreButton?.attributes?.["aria-label"],"Explore","promoted Explore ribbon ARIA label is wrong");
+  assert.equal(buttons.some(x=>x.dataset.aoAppSurface==="settings"),false,"Settings survived as a permanent adopted ribbon surface");
   assert.equal(learnButton?.dataset?.aoAppSurface,"learn","Formation ribbon label changed the canonical surface");
   let prevented=false;
   ribbonHandler({

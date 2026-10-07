@@ -25,18 +25,20 @@ const [
   read("src/mass/reader-dom.js"),
 ]);
 
-assert.match(design,/APP_DESIGN_SYSTEM_VERSION="ao-design-system-v1"/);
+assert.match(design,/APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2"/);
 for(const token of [
   "--ao-font-display","--ao-font-body","--ao-font-liturgical","--ao-font-ui",
   "--ao-content-max","--ao-content-wide","--ao-page-gutter","--ao-page-gutter-phone",
   "--ao-control-h","--ao-card-radius","--ao-control-radius","--ao-pill-radius",
+  "--ao-type-ui-xs","--ao-type-ui-sm","--ao-z-surface","--ao-z-sheet","--ao-z-modal","--ao-z-global-nav",
 ]){
   assert.ok(design.includes(token),token+" missing from the canonical design system");
 }
-assert.match(design,/\.homeScreen[\s\S]*#ao-calendar-modular-root[\s\S]*#ao-learn-modular-root[\s\S]*#ao-settings-modular-root/);
+assert.match(design,/\.homeScreen[\s\S]*#ao-calendar-modular-root[\s\S]*#ao-learn-modular-root[\s\S]*#ao-settings-modular-root[\s\S]*#ao-find-modular-root/);
 assert.match(design,/#aoPray435930 h1/);
 assert.doesNotMatch(design,/\.ao-reader-shell \.ao-prayer-card/,"Mass reader geometry must remain reader-specific");
 assert.match(design,/#ao-global-ribbon/);
+assert.match(design,/\.aoSourceDisclosure/,"shared source disclosure component is missing");
 assert.match(app,/import \{ installAppDesignSystem \} from "\.\/design-system\.js";/);
 assert.match(app,/installAppDesignSystem\(globalThis\);/);
 

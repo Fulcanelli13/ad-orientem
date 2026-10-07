@@ -121,6 +121,12 @@ assert.match(browser, /data-cal-liturgical-marker/, "Calendar month cells lost s
 assert.match(browser, /data-rank-tier/, "Calendar month cells lost rank salience");
 assert.match(browser, /dayLoads\.has\(id\)/, "Calendar no longer deduplicates day resolution across week and month loaders");
 assert.match(browser, /data-cal-mass/);
+assert.match(browser, /data-cal-glossary/,"Calendar lost contextual glossary action");
+assert.match(browser, /function calendarGlossaryTerms\(\)/,"Calendar lost view-aware glossary mapping");
+assert.match(browser, /openTerms\(calendarGlossaryTerms\(\),\{origin:"calendar"\}\)/,"Calendar glossary no longer opens contextually");
+for(const id of ["G086","G087","G273","G274","G088","G094","G261","G262"]){
+  assert.match(browser,new RegExp('"'+id+'"'),"Calendar glossary mapping lost "+id);
+}
 assert.match(browser, /Open this Mass/);
 assert.doesNotMatch(browser, /scrollIntoView/, "Calendar must not vertically auto-scroll while centering the selected day");
 assert.match(browser, /repeat\(7,minmax\(0,1fr\)\)/, "Calendar month grid must use zero-minimum seven-column tracks");

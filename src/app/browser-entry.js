@@ -139,7 +139,27 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   }
 
   function forceCanonicalSurfaceLabel(button,surface){
-    if(!button||surface!=="learn")return false;
+    if(!button)return false;
+    if(surface==="find"){
+      button.setAttribute?.("aria-label","Explore");
+      const candidates=button.querySelectorAll?.("[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label,span,strong,small")??[];
+      const legacy=/^\s*(?:Settings|Réglages|Explore|Explorer)\s*$/i;
+      for(const node of candidates){
+        if(node?.querySelector?.("[data-ao-asset-id],.aoGlobalRibbonIcon"))continue;
+        if(legacy.test(node?.textContent??"")){
+          node.textContent="Explore";
+          return true;
+        }
+      }
+      for(const node of button.childNodes??[]){
+        if(node?.nodeType===3&&legacy.test(node.textContent??"")){
+          node.textContent="Explore";
+          return true;
+        }
+      }
+      return false;
+    }
+    if(surface!=="learn")return false;
     button.setAttribute?.("aria-label","Formation");
     const legacyLabel=/^\s*(?:Learn(?:\s*\/\s*Apprendre)?|Apprendre)\s*$/i;
     const preferred=button.querySelectorAll?.("[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label")??[];
@@ -187,10 +207,14 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
 
     let adopted = 0;
     for (const button of nav.querySelectorAll("[data-ao-ribbon], [data-ao-app-surface]")) {
-      const surface = normalizeAppSurface(
+      const rawSurface = normalizeAppSurface(
         button.dataset?.aoAppSurface ?? button.dataset?.aoRibbon
       );
-      if (!surface) continue;
+      // The donor's sixth permanent slot was Settings. The modern shell
+      // deliberately reuses that physical slot for Explore; Settings remains
+      // available as a utility overlay from Home and contextual controls.
+      const surface = rawSurface==="settings" ? "find" : rawSurface;
+      if (!surface || !APP_SURFACES.includes(surface)) continue;
       button.dataset.aoAppSurface = surface;
       const assetId=canonicalAssetIdForSurface(surface);
       if(assetId){
@@ -391,6 +415,9 @@ export function installAppShellBridge({
         apostolateTeachFaithReady: win?.AO_APOSTOLATE_APP_V1?.status?.()?.readyFamilies?.includes?.("TF") === true,
         apostolateDevotionalOnrampsReady: win?.AO_APOSTOLATE_APP_V1?.status?.()?.readyFamilies?.includes?.("DV") === true,
         apostolateCorpusReady: win?.AO_APOSTOLATE_APP_V1?.status?.()?.publishedCount === 36 && win?.AO_APOSTOLATE_APP_V1?.status?.()?.researchOnlyCount === 0,
+        apostolatePublishedSkillCount: win?.AO_APOSTOLATE_APP_V1?.status?.()?.publishedSkillCount ?? null,
+        apostolateSkillsReady: win?.AO_APOSTOLATE_APP_V1?.status?.()?.skillsReady === true,
+        apostolatePublishedObjectCount: win?.AO_APOSTOLATE_APP_V1?.status?.()?.publishedObjectCount ?? null,
         calendarOwner: win?.AO_CALENDAR_APP_V1?.status?.()?.installed === true,
         calendarOpen: win?.AO_CALENDAR_APP_V1?.status?.()?.open === true,
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),

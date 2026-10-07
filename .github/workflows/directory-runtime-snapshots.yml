@@ -41,6 +41,7 @@ jobs:
           npm run directory:import:fssp
           npm run directory:import:icksp
           npm run directory:import:ibp
+          npm run directory:import:sspx -- --no-details
       - name: Validate generated corpus
         run: |
           npm run test:directory
@@ -54,5 +55,6 @@ jobs:
             data/directory/generated/fssp
             data/directory/generated/icksp
             data/directory/generated/ibp
+            data/directory/generated/sspx
           if-no-files-found: error
           retention-days: 14

@@ -1,0 +1,148 @@
+{
+  "version": "FORMATION_GAP_OWNERSHIP_V1",
+  "status": "FROZEN_ARCHITECTURE_DECISION",
+  "created_at": "2026-10-07",
+  "repository_baseline": "2d403ad325ba901d32eca619f0a6999f3b422a94",
+  "predecessor": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json",
+  "governing_rules": [
+    "Do not recreate Catholic Life as an umbrella module.",
+    "One concern has one canonical owner; other surfaces hand off explicitly.",
+    "A new Formation route requires a coherent learning objective, substantial source substrate, and material that cannot be served better by existing owners.",
+    "Prayer execution belongs to PRAY; liturgical execution belongs to Mass; temporal logic belongs to Calendar; local/customary practice belongs to Customary/Explore; Formation explains and teaches without duplicating those engines.",
+    "Unsourced pastoral synthesis is research-only until explicit authority is attached."
+  ],
+  "decisions": {
+    "spiritual_life": {
+      "decision": "CREATE_FOCUSED_FORMATION_STRAND",
+      "future_route": "learn.spiritual_life",
+      "route_state": "PUBLISHED",
+      "priority": "LIVE",
+      "rationale": [
+        "This is a genuine learning domain rather than an orchestration wrapper.",
+        "Substantial prior project research already exists on mental prayer, particular and general examen, spiritual reading, presence of God, sanctification of ordinary duties, and a flexible rule/plan of life.",
+        "The recovered research substrate includes Tanquerey, Chautard, St Francis de Sales and Saint-Sulpice-style mental-prayer material, but it is not yet normalized into one source-controlled corpus.",
+        "The Catholic Life salvage contributes only a small residue; the strand must be rebuilt from the larger traditional spiritual-formation research rather than from those cards."
+      ],
+      "canonical_scope": [
+        "call to holiness and purpose of the interior life",
+        "presence of God and recollection",
+        "mental prayer: what it is, how to begin, common difficulties",
+        "vocal prayer in relation to mental prayer",
+        "general and particular examination of conscience",
+        "spiritual reading: purpose, method and selection",
+        "rule/plan of life: stable core without rigidity or gamification",
+        "sanctification of ordinary duties, work and state in life",
+        "distractions, dryness, perseverance and prudent adaptation",
+        "indulgences and reparation as doctrinally grounded practices rather than a points economy"
+      ],
+      "explicit_non_owners": [
+        "PRAY owns actual prayer texts, Rosary, Morning/Evening Prayer, Adoration, First Friday and other devotional execution.",
+        "Catechism owns doctrine as doctrine.",
+        "Calendar owns dates, seasons and temporal obligations.",
+        "Apostolate owns helping or teaching another person.",
+        "The strand must not act as a substitute spiritual director or create behavioural scoring, streaks or gamified holiness."
+      ],
+      "publication_gates": [
+        "Recover and normalize the larger traditional source corpus before writing the course.",
+        "Every explanatory claim must carry explicit provenance.",
+        "English/French parity is required at publication.",
+        "Separate universal doctrine, traditional counsel, school-specific method and prudential app guidance.",
+        "Do not ship merely because the reserved route exists."
+      ]
+    },
+    "catholic_home_and_family": {
+      "decision": "NO_STANDALONE_FORMATION_SURFACE",
+      "route_state": "PROHIBITED_AS_SEPARATE_CATCH_ALL",
+      "rationale": [
+        "The user need is orchestration, not another course.",
+        "Apostolate already contains eight sourced bilingual Family Help scenarios covering family Rosary, grace, morning/evening prayer, teaching children prayers, First Confession/Communion preparation, godparents, Confirmation sponsors and Sacred Heart devotion.",
+        "Actual actions already have canonical owners in PRAY and the sacramental Formation modules.",
+        "Domestic/customary practices are better surfaced contextually through Calendar and Customary data."
+      ],
+      "canonical_owner_network": [
+        "apostolate.FH01-FH08",
+        "pray.rosary",
+        "pray.library",
+        "pray.morning_evening",
+        "programme.first_friday",
+        "learn.rites.baptism",
+        "learn.rites.first_communion",
+        "learn.rites.confirmation",
+        "learn.rites.matrimony",
+        "CALENDAR",
+        "CUSTOMARY_SOT"
+      ],
+      "residual_action": "COMPLETE — the three residual claims are sourced and absorbed into Matrimony aftercare / existing family-help owners; no learn.catholic_home route.",
+      "absorption_state": "COMPLETE",
+      "absorbed_into": [
+        "learn.rites.matrimony",
+        "apostolate.FH01-FH08",
+        "PRAY",
+        "CALENDAR",
+        "CUSTOMARY_SOT"
+      ]
+    },
+    "funeral_and_requiem": {
+      "decision": "NO_STANDALONE_FORMATION_SURFACE",
+      "route_state": "ABSORB_IN_EXISTING_OWNERS",
+      "rationale": [
+        "The traditional Requiem and funeral Absolution already have certified Mass runtime ownership.",
+        "Serious Illness & Dying is the natural Formation owner for what happens before death and the immediate after-death/funeral handoff.",
+        "Prayer for the dead and dying already belongs to PRAY/Holy Souls/Dying Companion.",
+        "A second Funeral/Requiem course would duplicate the rite, the dying guide and the prayer treasury."
+      ],
+      "canonical_owner_network": [
+        "learn.rites.sick",
+        "MASS.REQUIEM",
+        "MASS.REQUIEM_ABSOLUTION",
+        "pray.dying_companion",
+        "pray.good_death",
+        "pray.holy_souls"
+      ],
+      "residual_action": "COMPLETE — after-death, funeral/Requiem and burial/cremation/ashes formation now lives in Serious Illness & Dying with explicit Mass/PRAY handoffs.",
+      "absorption_state": "COMPLETE",
+      "absorbed_into": [
+        "learn.rites.sick",
+        "MASS",
+        "pray.holy_souls",
+        "pray.dying_companion"
+      ]
+    },
+    "religious_life": {
+      "decision": "RESEARCH_ONLY_NO_SURFACE",
+      "route_state": "NO_ROUTE_RESERVED",
+      "rationale": [
+        "Only seven residual claims exist and four are unsourced.",
+        "The recovered project history does not show a substantial independent research corpus comparable to Spiritual Life.",
+        "Religious profession is not Holy Orders, so forcing the subject into learn.rites.holy_orders would create a category error."
+      ],
+      "residual_action": "Keep canonical distinctions as reference research. Revisit only as part of a source-complete States of Life/Vocation study; no launcher now."
+    },
+    "vocations": {
+      "decision": "RESEARCH_ONLY_NO_SURFACE",
+      "route_state": "NO_ROUTE_RESERVED",
+      "rationale": [
+        "Only seven residual claims exist and six are unsourced.",
+        "Existing sacramental owners already cover concrete preparation for Holy Orders and Matrimony.",
+        "Generic discernment advice is too easy to turn into unsourced pastoral synthesis or pseudo-spiritual-direction."
+      ],
+      "residual_action": "Preserve the research. If later work justifies it, Religious Life and Vocations may converge into one source-complete States of Life & Vocation Formation strand; neither gets a route now."
+    }
+  },
+  "immediate_actions": [
+    "Preserve Spiritual Life as the published focused Formation strand with its source-controlled curriculum.",
+    "Preserve Serious Illness & Dying as owner of after-death/funeral formation and hand off actual Requiem execution to Mass and suffrages to PRAY.",
+    "Preserve Matrimony/Apostolate/PRAY as the owner network for Catholic Home & Family; do not create learn.catholic_home.",
+    "Leave Religious Life and Vocations research-only unless a future source-complete States of Life & Vocation study justifies a new ownership decision.",
+    "Reject any reintroduction of learn.catholic_life as a valid handoff or Formation route."
+  ],
+  "closure": {
+    "catholic_life_absorption": "COMPLETE",
+    "closure_ledger": "data/learn/catholic-life-final-absorption.v1.json",
+    "publishable_residual_claims_without_owner": 0,
+    "intentional_research_only": [
+      "Religious Life",
+      "Vocations"
+    ]
+  }
+}

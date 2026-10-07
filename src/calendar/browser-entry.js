@@ -589,6 +589,42 @@ function centerSelectedDay(r){
   const left=el.offsetLeft-(scroller.clientWidth-el.offsetWidth)/2;
   scroller.scrollTo?.({left:Math.max(0,left),behavior:"auto"});
 }
+function calendarGlossaryTerms(){
+  if(calendarView==="year")return ["G086","G087","G273","G274"];
+  if(calendarView==="picker"){
+    if(calendarMonthView==="temporale")return ["G086","G082","G277"];
+    if(calendarMonthView==="sanctorale")return ["G087","G276","G275"];
+    if(calendarMonthView==="practices")return ["G322","G334","G095","G094"];
+    if(calendarMonthView==="major")return ["G261","G262","G276","G277"];
+    return ["G273","G274","G269","G271"];
+  }
+  const r=state()?.resolution;
+  const text=[titleOf(r),rankOf(r),profileOf(r)].filter(Boolean).join(" ").toLowerCase();
+  const ids=[];
+  const add=(...xs)=>ids.push(...xs);
+  if(/feria|férie/.test(text))add("G082");
+  if(/vigil/.test(text))add("G083");
+  if(/octav/.test(text))add("G084");
+  if(/commemor/.test(text))add("G085");
+  if(/ember|quatre[- ]temps/.test(text))add("G088");
+  if(/rogation/.test(text))add("G094");
+  if(/advent|avent/.test(text))add("G090");
+  if(/lent|carême|careme/.test(text))add("G091");
+  if(/easter|pasch|pâques|paques/.test(text))add("G092");
+  if(/pentecost|pentecôte|pentecote/.test(text))add("G093");
+  if(/1st|first|i class|i classe/.test(text))add("G261");
+  if(/2nd|second|ii class|ii classe/.test(text))add("G262");
+  if(/3rd|third|iii class|iii classe/.test(text))add("G263");
+  if(/4th|fourth|iv class|iv classe/.test(text))add("G264");
+  if(!ids.length)add("G086","G087","G276");
+  return [...new Set(ids)];
+}
+function openCalendarGlossary(){
+  const g=globalThis.AO_GLOSSARY_V1;
+  if(typeof g?.openTerms!=="function")return false;
+  void g.openTerms(calendarGlossaryTerms(),{origin:"calendar"});
+  return true;
+}
 function paint(){const r=root();if(!r)return false;const body=r.querySelector("[data-cal-body]");if(!body)return false;body.innerHTML=bodyMarkup();r.dataset.aoCalendarOwner=VERSION;r.dataset.aoCalendarView=calendarView;requestAnimationFrame(()=>centerSelectedDay(r));return true}
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
 function close({surface="home"}={}){cancelPendingNavigation();root()?.remove?.();try{unsub?.()}catch{}unsub=null;syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
@@ -638,6 +674,7 @@ function setView(view){
 }
 function bind(r){
   r.addEventListener("click",event=>{
+    const glossaryButton=event.target.closest?.("[data-cal-glossary]");if(glossaryButton){event.preventDefault();openCalendarGlossary();return}
     const viewButton=event.target.closest?.("[data-cal-view]");if(viewButton){event.preventDefault();setView(viewButton.dataset.calView||"day");return}
     const monthViewButton=event.target.closest?.("[data-cal-month-view]");if(monthViewButton){event.preventDefault();setMonthView(monthViewButton.dataset.calMonthView||"calendar",{openMonth:true});return}
     const monthOpen=event.target.closest?.("[data-cal-open-month]");if(monthOpen){event.preventDefault();setMonthView(monthOpen.dataset.calOpenMonth||"calendar",{openMonth:true});return}
@@ -661,7 +698,7 @@ function open(){
   calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});return true;
 }
 function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,monthView:calendarMonthView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,pickerMonthId,monthReady:pickerMonthId?monthReady(pickerMonthId):false,monthLoading:pickerMonthId?monthLoads.has(pickerMonthId):false,monthCachedDays:pickerMonthId?monthGridIds(pickerMonthId).filter(x=>weekCache.has(x)).length:0,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}

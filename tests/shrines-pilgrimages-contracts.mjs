@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:66,
-  pilgrimages:90,
-  routes:18,
-  temporalLinks:65,
-  sources:142,
+  shrines:72,
+  pilgrimages:100,
+  routes:20,
+  temporalLinks:69,
+  sources:154,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -89,6 +89,12 @@ const requiredPlaces=new Set([
   "place:US:czestochowa-doylestown",
   "place:US:seton-emmitsburg",
   "place:US:lourdes-grotto-emmitsburg",
+  "place:US:st-mary-assumption-oswego",
+  "place:US:auriesville-martyrs",
+  "place:US:divine-mercy-stockbridge",
+  "place:US:la-salette-attleboro",
+  "place:US:lourdes-litchfield",
+  "place:US:st-anne-fiskdale",
   "place:CA:sainte-anne-de-beaupre",
   "place:CA:notre-dame-du-cap",
   "place:CA:martyrs-shrine-midland",
@@ -153,6 +159,7 @@ assert.equal(calendarDateForSemanticKey("observance.miraculous_medal_nov27",2026
 assert.equal(calendarDateForSemanticKey("observance.mariahilf_amberg_july2",2026),"2026-07-02");
 assert.equal(calendarDateForSemanticKey("observance.nussdorf_leonhardiritt",2026),"2026-11-06");
 assert.equal(calendarDateForSemanticKey("feast.saint_apollinaris",2026),"2026-07-23");
+assert.equal(calendarDateForSemanticKey("observance.divine_mercy_sunday_current",2026),"2026-04-12");
 
 const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
 assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -267,6 +274,38 @@ for(const [id,key,date] of [
   assert.equal(link.calendar_semantic_key,key);
   assert.equal(calendarDateForSemanticKey(key,2026),date);
 }
+const restoration=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:auriesville:restoration");
+assert.ok(restoration);
+assert.equal(restoration.binding_state,"NO_FIXED_CALENDAR_BINDING");
+assert.equal(restoration.calendar_semantic_key,null);
+
+const amsterdamAuriesville=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:auriesville:amsterdam");
+assert.ok(amsterdamAuriesville);
+assert.equal(amsterdamAuriesville.binding_state,"NO_FIXED_CALENDAR_BINDING");
+assert.equal(amsterdamAuriesville.calendar_semantic_key,null);
+
+const mercySunday=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:stockbridge:divine-mercy-sunday");
+assert.ok(mercySunday);
+assert.equal(mercySunday.binding_state,"BOUND_TO_CALENDAR");
+assert.equal(mercySunday.calendar_semantic_key,"observance.divine_mercy_sunday_current");
+assert.equal(calendarDateForSemanticKey(mercySunday.calendar_semantic_key,2026),"2026-04-12");
+
+const fiskdaleNovena=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:fiskdale:st-anne-novena");
+assert.ok(fiskdaleNovena);
+assert.equal(fiskdaleNovena.binding_state,"BOUND_TO_CALENDAR");
+assert.equal(fiskdaleNovena.calendar_semantic_key,"feast.saint_anne");
+assert.equal(calendarDateForSemanticKey(fiskdaleNovena.calendar_semantic_key,2026),"2026-07-26");
+
+for(const [routeId,destination] of [
+  ["route:US:lake-george-auriesville-restoration","place:US:auriesville-martyrs"],
+  ["route:US:amsterdam-auriesville","place:US:auriesville-martyrs"],
+]){
+  const route=corpus.routes.find(item=>item.route_id===routeId);
+  assert.ok(route,routeId+" missing");
+  assert.equal(route.route_state,"DOCUMENTED_UNMAPPED");
+  assert.equal(route.destination_place_id,destination);
+}
+
 const preithRoute=corpus.routes.find(item=>item.route_id==="route:DE:preith-bettbrunn");
 assert.ok(preithRoute);
 assert.equal(preithRoute.route_state,"DOCUMENTED_UNMAPPED");

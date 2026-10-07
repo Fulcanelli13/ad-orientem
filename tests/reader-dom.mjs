@@ -44,6 +44,7 @@ for(const token of [
   'data-reader-home',
   'data-reader-preferences',
   'data-reader-parameters',
+  'data-reader-glossary',
   'data-role="section-jump"',
   'data-role="section-menu"',
   'data-schola-resize',
@@ -175,4 +176,4 @@ unlocked.setMode("SIMPLE");
 expect(unlocked.getMode()==="SIMPLE","unlocked reader did not change mode");
 expect(callbackMode==="SIMPLE","unlocked reader did not invoke presentation mode callback");
 
-console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
+console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
