@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { SETTINGS_PRESENTATION_VERSION, buildSettingsViewModel, canonicalSettingsAppVersion, renderSettingsToString } from "../src/settings/presentation.js";
+import { SETTINGS_PRESENTATION_VERSION, buildSettingsViewModel, canonicalSettingsAppVersion, renderSettingsToString, settingsCss } from "../src/settings/presentation.js";
 import { OWNER, VERSION } from "../src/settings/browser-entry.js";
 import { DEFAULT_PREFERENCES } from "../src/settings/donor-state.js";
 
@@ -28,6 +28,11 @@ assert.match(landing,/Local Church &amp; Customs/);
 assert.match(landing,/Privacy &amp; Data/);
 assert.equal((landing.match(/data-settings-close/g)||[]).length,1);
 assert.doesNotMatch(landing,/43\.59\.99/,"version must appear in About only");
+
+const css=settingsCss();
+assert.match(css,/z-index:14950/,"Settings must remain below the global app ribbon");
+assert.match(css,/inset:0 0 calc\(var\(--ao-global-ribbon-h,68px\) \+ var\(--safe-bottom,0px\)\) 0/,"Settings must reserve the global ribbon footprint");
+assert.doesNotMatch(css,/z-index:2147483400/,"Settings donor z-index must not cover the modular shell ribbon");
 
 const mass=renderSettingsToString(fakeWin,{route:"/settings/mass",live:true});
 assert.match(mass,/data-pref-path="mass\.defaultExperience"/);
