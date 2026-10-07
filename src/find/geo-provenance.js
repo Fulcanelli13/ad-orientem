@@ -50,10 +50,12 @@ export function auditDirectoryGeo(geo,{countryCode=null,path="geo"}={}){
 
   const source=String(geo.geocoding_source??"").trim();
   if(!sourceSet.has(source))issues.push(issue("INVALID_GEO_SOURCE",path+".geocoding_source","Published coordinates require a supported provenance source."));
+  if(!nonEmpty(geo.source_ref))issues.push(issue("MISSING_GEO_SOURCE_REF",path+".source_ref","Published coordinates require a stable source reference."));
+  if(["OSM_NOMINATIM","OFFICIAL_SOURCE"].includes(source)&&!nonEmpty(geo.source_url)){
+    issues.push(issue("MISSING_GEO_SOURCE_URL",path+".source_url","External coordinate sources require a source URL."));
+  }
 
   if(source==="OSM_NOMINATIM"){
-    if(!nonEmpty(geo.source_ref))issues.push(issue("MISSING_GEO_SOURCE_REF",path+".source_ref","Nominatim coordinates require an OSM source reference."));
-    if(!nonEmpty(geo.source_url))issues.push(issue("MISSING_GEO_SOURCE_URL",path+".source_url","Nominatim coordinates require the source endpoint URL."));
     if(!nonEmpty(geo.attribution))issues.push(issue("MISSING_GEO_ATTRIBUTION",path+".attribution","Nominatim/OSM coordinates require attribution text."));
     const matched=String(geo.matched_country_code??"").toUpperCase();
     const expected=String(countryCode??"").toUpperCase();
