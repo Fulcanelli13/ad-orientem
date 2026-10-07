@@ -36,7 +36,7 @@ assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
 assert.equal(CSE_SECTIONS.length,15);
 assert.equal(CSE_VALIDATION.ok,true,CSE_VALIDATION.errors.join("\n"));
-assert.deepEqual(CSE_VALIDATION.depthCounts,{STANDARD:70,EXPANDED:25,DEBATE:55});
+assert.deepEqual(CSE_VALIDATION.depthCounts,{STANDARD:75,EXPANDED:20,DEBATE:55});
 
 const ids=new Set();
 for(const [index,item] of CSE_QUESTIONS.entries()){
