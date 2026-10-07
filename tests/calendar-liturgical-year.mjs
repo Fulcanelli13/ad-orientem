@@ -121,9 +121,15 @@ assert.match(browser, /v384Companion/,"Calendar year view lost the v38.4 traditi
 assert.match(browser, /data-ao-cal-v384-panel/,"Calendar lost the v38.4 year\/discipline switch");
 assert.match(browser, /data-ao-cal-v384-era/,"Calendar lost the donor Current\/1962\/Earlier discipline switch");
 assert.match(browser, /traditional-year-v384/,"Calendar no longer imports the extracted v38.4 donor contract");
-assert.match(browser, /data-cal-index-date/);
+assert.match(browser, /data-cal-month-index-date/);
 assert.match(browser, /data-cal-pick-date/);
-assert.match(browser, /L\("Month","Mois"\)/, "Calendar fourth surface must be the Liturgical Month");
+assert.match(browser, /L\("Month","Mois"\)/, "Calendar must expose Month as a top-level surface");
+assert.doesNotMatch(browser, /L\("Year index","Repères"\)/, "redundant Year Index returned as a top-level surface");
+assert.doesNotMatch(browser, /function indexSurface\(/, "obsolete Year Index implementation remains active");
+assert.match(browser, /MONTH_INDEX_VIEWS=new Set\(\["calendar","major","temporale","sanctorale"\]\)/, "Month did not acquire Calendar\/Major\/Temporale\/Sanctorale projections");
+assert.match(browser, /data-cal-month-view/, "Month secondary navigation is missing");
+assert.match(browser, /function monthIndexEntries\(monthId,view\)/, "Month index projections are missing");
+assert.match(browser, /if\(next==="index"\).*calendarMonthView="major"/, "legacy Year Index route no longer redirects to Month\/Major");
 assert.match(browser, /function monthGridIds\(monthId\)/, "Calendar lost its 42-cell month geometry");
 assert.match(browser, /function prepareMonth\(monthId,\{concurrency=3/, "Calendar month preload lost its bounded resolver concurrency");
 assert.match(browser, /data-cal-liturgical-marker/, "Calendar month cells lost semantic liturgical markers");
@@ -135,6 +141,9 @@ assert.doesNotMatch(browser, /scrollIntoView/, "Calendar must not vertically aut
 assert.match(browser, /repeat\(7,minmax\(0,1fr\)\)/, "Calendar month grid must use zero-minimum seven-column tracks");
 assert.match(browser, /overflow-y:auto;overflow-x:hidden/, "Calendar root must suppress accidental horizontal overflow");
 assert.match(browser, /height:66px!important/, "Calendar liturgical month lost its phone-readable cell height");
+assert.match(browser, /grid-template-columns:repeat\(3,1fr\)/, "Calendar top navigation did not collapse to Day · Month · Liturgical Year");
+assert.match(browser, /observedCycle\(r,id\)/, "Month Temporale\/Sanctorale classification is missing");
+assert.match(browser, /majorForDate\(id\)/, "Month classification stopped using resolved major-day metadata");
 
 const bodySource = browser.match(/function bodyMarkup\(\)\{[\s\S]*?\n\}\nfunction css/)?.[0] || "";
 assert.doesNotMatch(bodySource, /yearWheel\(selected,r\)/, "day surface must not restore the old decorative year ring");
