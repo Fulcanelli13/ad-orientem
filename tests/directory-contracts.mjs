@@ -245,6 +245,7 @@ const dataset = buildCanonicalSspxDataset([sspxFixture, friendFixture], {
   retrievedAt: "2026-10-07T09:00:00Z",
 });
 assert.equal(dataset.report.place_count, 2);
+assert.equal(dataset.report.venue_count, 2);
 assert.equal(dataset.report.ministry_count, 2);
 assert.equal(dataset.report.schedule_assertion_count, 2);
 assert.equal(dataset.report.geo_feature_count, 2);

@@ -317,6 +317,7 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
     schema: "AO_DIRECTORY_SSPX_IMPORT_REPORT_V1",
     retrieved_at: retrievedAt,
     place_count: venueRecords.length,
+    venue_count: venueRecords.length,
     ministry_count: ministryRecords.length,
     schedule_assertion_count: scheduleRecords.length,
     source_count: sourceRecords.length,
