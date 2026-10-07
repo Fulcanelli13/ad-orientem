@@ -18,6 +18,7 @@ const ENDPOINT=process.env.AO_GEOCODER_ENDPOINT??"https://nominatim.openstreetma
 const USER_AGENT="AdOrientemDirectoryGeocoder/1.0 (+https://github.com/Fulcanelli13/ad-orientem)";
 const OFFICIAL_PUBLIC=/^https:\/\/nominatim\.openstreetmap\.org\//i.test(ENDPOINT);
 const ACK=process.env.AO_PUBLIC_NOMINATIM_ACK==="1";
+const OFFLINE=process.env.AO_GEOCODER_OFFLINE==="1";
 const DELAY_MS=Math.max(Number(process.env.AO_GEOCODER_DELAY_MS??1100),OFFICIAL_PUBLIC?1100:0);
 const MAX_REQUESTS=Number(process.env.AO_GEOCODER_MAX_REQUESTS??1000);
 
@@ -75,10 +76,6 @@ function makeGeoJson(venues,ministries){
   };
 }
 
-if(OFFICIAL_PUBLIC&&!ACK){
-  throw new Error("Public Nominatim use requires AO_PUBLIC_NOMINATIM_ACK=1 after reviewing https://operations.osmfoundation.org/policies/nominatim/");
-}
-
 const cache=await readJson(CACHE_PATH,{
   schema:"AO_DIRECTORY_GEOCODING_CACHE_V1",
   provider:"OSM_NOMINATIM",
@@ -93,6 +90,10 @@ const overall={schema:"AO_DIRECTORY_GEOCODING_REPORT_V1",generated_at:runStarted
 
 async function fetchCandidates(query,countryCode,key){
   if(cache.records[key])return cache.records[key];
+  if(OFFLINE)return {query,country_code:String(countryCode).toUpperCase(),fetched_at:null,offline_miss:true,results:[]};
+  if(OFFICIAL_PUBLIC&&!ACK){
+    throw new Error("Public Nominatim use requires AO_PUBLIC_NOMINATIM_ACK=1 after reviewing https://operations.osmfoundation.org/policies/nominatim/");
+  }
   if(networkRequests>=MAX_REQUESTS)throw new Error("AO_GEOCODER_MAX_REQUESTS exceeded");
   const wait=Math.max(0,DELAY_MS-(Date.now()-lastRequestAt));
   if(wait)await sleep(wait);
@@ -229,10 +230,13 @@ for(const provider of PROVIDERS){
   console.log(provider.toUpperCase()+": "+geojson.features.length+"/"+venues.length+" mapped; "+validationIssues.length+" validation issues");
 }
 
-cache.updated_at=new Date().toISOString();
-cache.network_requests_this_run=networkRequests;
-await writeJson(CACHE_PATH,cache);
+if(networkRequests>0){
+  cache.updated_at=new Date().toISOString();
+  cache.network_requests_this_run=networkRequests;
+  await writeJson(CACHE_PATH,cache);
+}
 overall.network_requests=networkRequests;
+overall.offline=OFFLINE;
 overall.cache_records=Object.keys(cache.records).length;
 await writeJson(path.join(GENERATED,"geocoding-report.v1.json"),overall);
 console.log(JSON.stringify(overall,null,2));
