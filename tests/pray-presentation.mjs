@@ -126,6 +126,8 @@ assert.match(runtime,/shell\?\.classList\?\.remove\('aoRosaryRitualGrid'\)/,"Ros
 assert.match(runtime,/aoRosaryLayout='single-column'/,"Rosary single-column reader ownership stamp is absent");
 assert.match(runtime,/function declutterRosaryDonor\(r\)/,"Rosary duplicate-control cleanup owner is absent");
 assert.match(runtime,/\['guide','preferences','préférences'\]/,"Rosary no longer suppresses redundant Guide / Preferences controls");
+assert.match(runtime,/\.lab-view-head \.aoModuleHome,\.lab-view-head \.lab-lang/,"Rosary no longer suppresses redundant Home / language header chrome");
+assert.match(runtime,/host\.dataset\.face='vernacular'/,"Rosary no longer defaults prayer text to the vernacular face");
 assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,2200}ensureRosaryDonorOverview\(r,info\)/,"Rosary exact decorator still injects permanent Overview chrome");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
 assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary lost donor five-mystery progress projection");
