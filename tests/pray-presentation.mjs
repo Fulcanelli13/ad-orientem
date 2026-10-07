@@ -50,8 +50,10 @@ assert.ok(runtime.includes("!root?.classList?.contains('open')||!native"),
   "Rosary handoff stopped waiting for the preserved player to be visibly open");
 assert.ok(runtime.includes('[data-ao-recitation="${prefs.recitation}"]'),
   "Rosary handoff stopped driving the preserved player's native recitation owner");
-assert.match(runtime,/const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
-  "Rosary launcher stopped snapshotting chooser state before donor mount");
+assert.match(runtime,/function launchRosaryPlayer\(resume=captureResume\(\)\)[\s\S]*const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
+  "Rosary direct launcher stopped snapshotting canonical preferences before donor mount");
+assert.match(runtime,/if\(b\.dataset\.p435930Own\)\{if\(b\.dataset\.p435930Own==='pray\.rosary'\)\{launchRosaryPlayer\(captureResume\(\)\)/,
+  "Rosary card no longer bypasses the redundant modular chooser");
 assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
   "Rosary chooser stopped synchronizing recitation through the canonical setter");
 assert.doesNotMatch(styles,/aoP435930HeadSpacer/,"obsolete PRAY hub spacer styling returned");
@@ -120,11 +122,24 @@ assert.match(styles,/width:min\(820px,100%\)!important/,"PRAY shell diverged fro
 assert.match(styles,/data-ao-rosary-active-root="true"[^\n]*pbShell\[data-ao-rosary-exact-donor="v3\.4\.14"\][^\{]*\{[^\}]*max-width:760px!important[^\}]*box-sizing:border-box!important/,"Active Rosary shell lost the v3.4.10 760px composition measure");
 assert.match(styles,/aoP435930ModuleGrid\{display:grid;grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/,"PRAY wide hub lost the v3.4.10 two-column module grid");
 assert.match(styles,/@media\(max-width:560px\)\{#aoPray435930 \.aoP435930ModuleGrid\{grid-template-columns:1fr\}/,"PRAY phone hub lost the v3.4.10 single-column collapse");
-assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader ownership marker");
+assert.match(runtime,/shell\?\.classList\?\.remove\('aoRosaryRitualGrid'\)/,"Rosary no longer removes the two-column ritual-grid class that collapsed prayer text");
+assert.match(runtime,/aoRosaryLayout='single-column'/,"Rosary single-column reader ownership stamp is absent");
+assert.match(runtime,/function declutterRosaryDonor\(r\)/,"Rosary duplicate-control cleanup owner is absent");
+assert.match(runtime,/\['guide','preferences','préférences'\]/,"Rosary no longer suppresses redundant Guide / Preferences controls");
+assert.match(runtime,/\.lab-view-head \.aoModuleHome,\.lab-view-head \.lab-lang/,"Rosary no longer suppresses redundant Home / language header chrome");
+assert.match(runtime,/host\.dataset\.face='vernacular'/,"Rosary no longer defaults prayer text to the vernacular face");
+assert.match(runtime,/function rosarySetHeading\(set\)/,"Rosary set-heading owner is absent");
+assert.match(runtime,/headerTitle&&setHeading\)headerTitle\.textContent=setHeading/,"Rosary live header still repeats the active mystery title");
+assert.match(runtime,/\.lab-option-bar \.lab-step-count/,"Rosary no longer suppresses redundant helper copy");
+assert.match(runtime,/\.lab-contemplation \.kicker/,"Rosary no longer suppresses duplicate mystery progress text");
+assert.match(runtime,/\.lab-prayer-count/,"Rosary no longer suppresses duplicate Hail Mary count text");
+assert.match(runtime,/prayerRubric&&info\?\.step\?\.phase!=='opening'/,"Rosary no longer suppresses repeated set-name prayer rubrics");
+assert.match(runtime,/beadStage&&info\?\.step\?\.kind==='mystery'/,"Rosary no longer defers empty decade beads until prayer begins");
+assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,2200}ensureRosaryDonorOverview\(r,info\)/,"Rosary exact decorator still injects permanent Overview chrome");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
-assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary lost donor five-mystery progress projection");
-assert.match(runtime,/rosary-decade-bar-v15/,"Rosary lost the donor five-segment progress bar");
-assert.match(runtime,/data-ao-exact-donor-progress/,"Rosary progress is no longer marked as exact donor presentation");
+assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary legacy progress projection helper disappeared unexpectedly");
+assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,1400}ensureRosaryDonorProgress\(r,info\)/,"Rosary exact decorator still injects a duplicate five-segment progress bar");
+assert.match(runtime,/querySelectorAll\('\.rosary-decade-bar-v15\[data-ao-exact-donor-progress\]'\)\.forEach\(node=>node\.remove\(\)\)/,"Rosary does not actively remove stale injected progress surfaces");
 assert.match(runtime,/function ensureRosaryDonorRecitation\(r\)/,"Rosary lost donor head recitation control");
 assert.match(runtime,/r29-head-recitation/,"Rosary lost Individual\/Group head control");
 assert.match(runtime,/function rosaryDonorArt\(r,info\)/,"Rosary lost donor mystery-art backdrop projection");
@@ -134,6 +149,8 @@ assert.match(runtime,/info\?\.step\?\.kind!==['"]mystery['"]/,"Rosary mystery ci
 assert.match(runtime,/AO_CINEMATIC_V4312\|\|window\.AO_CINEMATIC_V4311/,"Rosary mystery cinematic no longer reuses the certified cinematic owner");
 assert.match(runtime,/isReducedMotion\?\.\(\)/,"Rosary mystery cinematic no longer honors reduced motion");
 assert.match(styles,/ROSARY_EXACT_DONOR_CSS/,"Rosary exact donor style block is absent");
+assert.match(styles,/ROSARY_DECLUTTER_CSS/,"Rosary declutter style owner is absent");
+assert.match(styles,/grid-template-columns:none!important/,"Rosary single-column style guard is absent");
 assert.match(styles,/rosary-decade-bar-v15 i\.current/,"Rosary donor progress current-state geometry is absent");
 assert.match(styles,/r29-head-recitation/,"Rosary donor recitation strip styling is absent");
 assert.match(styles,/r24-has-mystery-art::before/,"Rosary donor sacred-art backdrop styling is absent");
