@@ -53,10 +53,17 @@ function token(value){
   return String(value??"").trim().toUpperCase().replace(/[ -]+/g,"_");
 }
 
-function priestActionKey(_action){
-  // Exact action semantics are source-backed, but the corresponding frozen V4
-  // action masters are not present in the repository at their certified hashes.
-  // Do not substitute priest-position or provisional artwork.
+function priestActionKey(action){
+  const label=token(action?.value??action?.label??action?.action);
+  if(["ELEVATES_HOST","ELEVATES_CHALICE","MINOR_ELEVATION","SHOWS_SACRED_HOST"].includes(label))return "priest_elevation";
+  if(label==="BLESSES_PEOPLE")return "blessing";
+  if(label==="GIVES_COMMUNION")return "communion";
+  if(label==="WASHES_/_PURIFIES" || label==="WASHES_PURIFIES")return "lavabo";
+  if(label==="INCENSES_ALTAR")return "priest_incense_altar";
+  if(label==="PROFOUND_BOW")return "profound_bow";
+  if(label==="STRIKES_BREAST")return "breast_strike";
+  // ACTOR.PRIEST.GENUFLECT remains quarantined by KNOWN-ERRATA.md because the
+  // recovered archive bytes do not match the frozen manifest hash.
   return null;
 }
 
@@ -94,6 +101,7 @@ export function iconKeysForReaderState(state={}){
     // No frozen active priest-action asset exists yet, so action art fails closed
     // instead of borrowing a position pictogram.
     priestActionIconKey:priestActionKey(state.priestAction),
+    bellIconKey:state.bell ? "bells" : null,
   });
 }
 
@@ -115,6 +123,7 @@ export const R17_FROZEN_ACTIVE_ICON_KEYS=Object.freeze([
   "response","schola","priest_audible","priest_silent",
   "priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel",
   "priest_rail","priest_people",
+  "bells","priest_elevation","blessing","communion","lavabo","priest_incense_altar",
 ]);
 
 export const R17_FROZEN_EXCLUDED_ICON_KEYS=Object.freeze([
