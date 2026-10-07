@@ -89,7 +89,8 @@ function shortSourceTitle(source){
 function paragraphSourceLinks(win,item,kind,field=null){
   const refs=paragraphRefsFor(item,kind,field);
   if(!refs.length)return "";
-  const label=L(win,"Sources:","Sources :");
+  const positionSide=kind==="debate"&&["opposition","appeal","counter"].includes(field);
+  const label=positionSide?L(win,"Position source:","Source de la position :"):L(win,"Sources:","Sources :");
   const links=refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
     const url=isFr(win)?(source.canonical_url_fr||source.canonical_url):source.canonical_url;
