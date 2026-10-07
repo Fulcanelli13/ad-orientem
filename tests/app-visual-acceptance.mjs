@@ -271,7 +271,7 @@ try{
   assert.equal(calendarFx.rootScan,"legacy-v4312","Calendar modular root bypassed the approved v43.12 art loader");
   await shot("02-calendar-day");
 
-  await page.locator("#ao-calendar-modular-root [data-cal-view='year']").click();
+  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:3000});
   const calendarYear=await page.evaluate(()=>({
     ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect?.().width??0,
@@ -289,13 +289,13 @@ try{
   assert.ok(calendarYear.comingCards>=1,"Calendar year lost its Coming Next intelligence");
   await shot("02b-calendar-year");
 
-  await page.locator("#ao-calendar-modular-root [data-cal-view='index']").click();
+  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2IndexGrid",{state:"visible",timeout:3000});
   assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2IndexGrid [data-cal-index-date]").count()>=24,"Calendar year index is missing major celebrations");
   assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2IndexGrid").getByText(/Christ the King|Christ-Roi/).count()>=1,"Calendar year index lost Christ the King");
   await shot("02c-calendar-index");
 
-  await page.locator("#ao-calendar-modular-root [data-cal-view='picker']").click();
+  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:3000});
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1,"Calendar Date Picker lost direct date entry");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,"Calendar Date Picker lost its six-week month grid");
