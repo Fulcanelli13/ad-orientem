@@ -25,6 +25,16 @@ const DEPTH_LABELS=Object.freeze({
   DEBATE:["Debate","Débat"],
 });
 const CSE_SOT_BY_ID=Object.freeze(Object.fromEntries(CSE_SOT_MATRIX.map(record=>[record.id,record])));
+const DEBATE_LABELS=Object.freeze({
+  opposition:["The strongest objection","L’objection la plus forte"],
+  appeal:["Why it is persuasive","Pourquoi elle paraît convaincante"],
+  concession:["What it gets right","Ce qu’elle dit de juste"],
+  breakpoint:["Where the argument breaks","Où l’argument échoue"],
+  catholicCase:["The Catholic case","L’argument catholique"],
+  counter:["The strongest comeback","La meilleure contre-objection"],
+  response:["Reply to the comeback","Réponse à la contre-objection"],
+  bottom:["Bottom line","En bref"],
+});
 
 const LAYER_LABELS=Object.freeze({
   PERENNIAL:["Perennial doctrine","Doctrine pérenne"],
@@ -45,6 +55,7 @@ function css(){
 .aoCSESectionMeta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:5px}.aoCSEBadge{display:inline-flex;padding:3px 7px;border:1px solid var(--liturgical-border,rgba(199,174,109,.35));border-radius:999px;color:var(--liturgical,#c7ae6d);font:600 .61rem/1.2 var(--font-display,system-ui);letter-spacing:.055em;text-transform:uppercase}.aoCSELayer{color:var(--muted);font-size:.68rem}
 .aoCSEQNum{color:var(--liturgical,#c7ae6d);font:600 .7rem/1.2 var(--font-display,serif);letter-spacing:.08em}.aoCSEQuestion{margin:6px 0 14px;font:600 clamp(1.45rem,6vw,2.2rem)/1.12 var(--font-display,Georgia,serif)}.aoCSEAnswer{margin:0;padding:16px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:13px;background:var(--surface-1,#102235);font-size:1rem;line-height:1.62}
 .aoCSEExplore{margin-top:12px}.aoCSEDetail{margin-top:12px;padding:14px;border-left:2px solid var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07));line-height:1.62}.aoCSEDetail[hidden]{display:none!important}
+.aoCSEDebate{display:grid;gap:0;padding:0;border-left:0;background:transparent}.aoCSEDebateStep{padding:14px 14px 15px;border-left:2px solid var(--border,rgba(255,255,255,.16));border-bottom:1px solid var(--border,rgba(255,255,255,.10));background:var(--surface-1,#102235)}.aoCSEDebateStep:first-child{border-left-color:var(--liturgical,#c7ae6d);border-radius:12px 12px 0 0}.aoCSEDebateStep:last-child{border-left-color:var(--liturgical,#c7ae6d);border-bottom:0;border-radius:0 0 12px 12px}.aoCSEDebateStep small{display:block;margin-bottom:6px;color:var(--liturgical,#c7ae6d);font:600 .65rem/1.2 var(--font-display,serif);letter-spacing:.07em;text-transform:uppercase}.aoCSEDebateStep p{margin:0;line-height:1.6}.aoCSEDebateStep[data-stage="opposition"] p,.aoCSEDebateStep[data-stage="counter"] p{font-style:italic}.aoCSEDebateStep[data-stage="bottom"] p{font-weight:600}
 .aoCSERelated{margin:17px 0 0;padding-top:11px;border-top:1px solid var(--border,rgba(255,255,255,.13))}.aoCSERelated small{display:block;margin-bottom:8px;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}.aoCSERelatedButtons{display:flex;gap:8px;flex-wrap:wrap}.aoCSERelated .aoCSEBtn{font-size:.76rem}
 .aoCSESources{margin:17px 0 0;border-top:1px solid var(--border,rgba(255,255,255,.13));padding-top:11px}.aoCSESources summary{cursor:pointer;color:var(--muted);font-size:.78rem}.aoCSESource{margin:9px 0;padding-left:10px;border-left:1px solid var(--border,rgba(255,255,255,.14));font-size:.76rem;line-height:1.45}.aoCSESource a{color:var(--liturgical,#c7ae6d)}.aoCSESource em{color:var(--muted);font-style:normal}
 .aoCSEEmpty{padding:22px 0;color:var(--muted);line-height:1.5}
@@ -81,7 +92,8 @@ function searchQuestions(query,win){
   const needle=norm(query);
   if(!needle)return [];
   return CSE_QUESTIONS.filter(item=>{
-    const hay=[...item.q,...item.a,...(item.d||[])].map(norm).join(" ");
+    const debateText=item.debate?Object.values(item.debate).flat():[];
+    const hay=[...item.q,...item.a,...(item.d||[]),...(item.aliases||[]),...debateText].map(norm).join(" ");
     return hay.includes(needle);
   });
 }
@@ -99,18 +111,30 @@ function sectionsHtml(win,state){
   if(state.query){
     return `${top(win,L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap">${searchBox(win,state.query,results.length)}${results.length?`<div class="aoCSEList">${results.map(item=>questionRow(win,item)).join("")}</div>`:`<div class="aoCSEEmpty">${esc(L(win,"No matching question.","Aucune question correspondante."))}</div>`}</main>`;
   }
-  return `${top(win,L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><p class="aoCSEIntro">${esc(L(win,"150 concise, source-backed questions on Catholic sexual ethics. Most answers are brief; only the most important objections open into a deeper argument.","150 questions concises et sourcées sur la morale sexuelle catholique. La plupart des réponses sont brèves ; seules les objections les plus importantes s’ouvrent sur une argumentation plus approfondie."))}</p><div class="aoCSENote">${esc(L(win,"Research architecture informed by Lawler · Boyle · May; doctrinal claims are traced to the cited primary or authoritative sources.","Architecture de recherche éclairée par Lawler · Boyle · May ; les affirmations doctrinales sont rattachées aux sources primaires ou autorisées citées."))}</div>${searchBox(win,"",null)}<div class="aoCSEList">${CSE_SECTIONS.map(section=>`<button type="button" class="aoCSERow" data-ao-cse-section="${esc(section.id)}"><strong>${esc(pick(win,section.title))}</strong><span>10 ${esc(L(win,"questions","questions"))} ›</span></button>`).join("")}</div></main>`;
+  return `${top(win,L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><p class="aoCSEIntro">${esc(L(win,"150 concise, source-backed questions on Catholic sexual ethics. Most answers are brief; 55 popular objections open into a structured debate.","150 questions concises et sourcées sur la morale sexuelle catholique. La plupart des réponses sont brèves ; 55 objections courantes s’ouvrent sur un débat structuré."))}</p><div class="aoCSENote">${esc(L(win,"Research architecture informed by Lawler · Boyle · May; doctrinal claims are traced to the cited primary or authoritative sources.","Architecture de recherche éclairée par Lawler · Boyle · May ; les affirmations doctrinales sont rattachées aux sources primaires ou autorisées citées."))}</div>${searchBox(win,"",null)}<div class="aoCSEList">${CSE_SECTIONS.map(section=>`<button type="button" class="aoCSERow" data-ao-cse-section="${esc(section.id)}"><strong>${esc(pick(win,section.title))}</strong><span>10 ${esc(L(win,"questions","questions"))} ›</span></button>`).join("")}</div></main>`;
 }
 
 function sectionHtml(win,section){
   const items=CSE_QUESTIONS.filter(item=>item.section===section.id);
-  return `${top(win,pick(win,section.title),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><p class="aoCSEIntro">${esc(L(win,"Choose a question. Debate and Expanded entries contain an optional deeper explanation.","Choisissez une question. Les entrées Débat et Approfondie comportent une explication facultative plus développée."))}</p><div class="aoCSEList">${items.map(item=>questionRow(win,item)).join("")}</div></main>`;
+  return `${top(win,pick(win,section.title),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><p class="aoCSEIntro">${esc(L(win,"Choose a question. Debate entries present the opposing case and answer it step by step; Expanded entries contain a shorter optional explanation.","Choisissez une question. Les entrées Débat présentent l’objection adverse et y répondent étape par étape ; les entrées Approfondie offrent une explication facultative plus courte."))}</p><div class="aoCSEList">${items.map(item=>questionRow(win,item)).join("")}</div></main>`;
+}
+
+function debateDetails(win,item){
+  if(!item.debate)return "";
+  return Object.entries(DEBATE_LABELS).map(([field,label])=>{
+    const value=pick(win,item.debate[field]);
+    return value?`<section class="aoCSEDebateStep" data-stage="${esc(field)}"><small>${esc(L(win,label[0],label[1]))}</small><p>${esc(value)}</p></section>`:"";
+  }).join("");
 }
 
 function questionHtml(win,item,reveal){
   const detail=item.d?pick(win,item.d):"";
+  const isDebate=item.depth==="DEBATE"&&item.debate;
+  const exploreBody=isDebate?debateDetails(win,item):detail;
   const section=CSE_SECTION_MAP[item.section];
-  return `${top(win,pick(win,section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1><div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}</p>${detail?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?L(win,"Hide deeper explanation","Masquer l’explication approfondie"):L(win,item.depth==="DEBATE"?"Explore the objection":"Go deeper",item.depth==="DEBATE"?"Explorer l’objection":"Approfondir"))}</button><div class="aoCSEDetail" ${reveal?"":"hidden"}>${esc(detail)}</div></div>`:""}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+  const buttonClosed=isDebate?L(win,"Examine the argument","Examiner l’argument"):L(win,"Go deeper","Approfondir");
+  const buttonOpen=isDebate?L(win,"Hide the argument","Masquer l’argument"):L(win,"Hide deeper explanation","Masquer l’explication approfondie");
+  return `${top(win,pick(win,section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1><div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?exploreBody:esc(exploreBody)}</div></div>`:""}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
 }
 
 export function createSexualEthicsRuntime(win=globalThis){
