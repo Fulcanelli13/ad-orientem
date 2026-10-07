@@ -6,7 +6,9 @@ import { auditDirectoryGeo, hasDirectoryCoordinates, isMapPublishableGeo } from 
 import {
   buildDirectoryAddressOnlyQuery,
   buildDirectoryGeocodeQuery,
+  buildDirectoryStructuredAttempts,
   geocodeCacheKey,
+  structuredGeocodeFingerprint,
   nominatimGeoFromSelection,
   selectNominatimCandidate,
 } from "./lib/geocode-utils.mjs";
@@ -89,6 +91,46 @@ let lastRequestAt=0,networkRequests=0;
 const runStarted=new Date().toISOString();
 const overall={schema:"AO_DIRECTORY_GEOCODING_REPORT_V1",generated_at:runStarted,provider:"OSM_NOMINATIM",endpoint:ENDPOINT,providers:{}};
 
+async function fetchStructuredCandidates(params,countryCode,key){
+  if(cache.records[key])return cache.records[key];
+  if(OFFLINE)return {structured_params:params,country_code:String(countryCode).toUpperCase(),fetched_at:null,offline_miss:true,results:[]};
+  if(OFFICIAL_PUBLIC&&!ACK){
+    throw new Error("Public Nominatim use requires AO_PUBLIC_NOMINATIM_ACK=1 after reviewing https://operations.osmfoundation.org/policies/nominatim/");
+  }
+  if(networkRequests>=MAX_REQUESTS)throw new Error("AO_GEOCODER_MAX_REQUESTS exceeded");
+  const wait=Math.max(0,DELAY_MS-(Date.now()-lastRequestAt));
+  if(wait)await sleep(wait);
+  const url=new URL(ENDPOINT);
+  url.searchParams.set("format","jsonv2");
+  url.searchParams.set("limit","5");
+  url.searchParams.set("addressdetails","1");
+  url.searchParams.set("namedetails","1");
+  url.searchParams.set("countrycodes",String(countryCode).toLowerCase());
+  for(const [name,value] of Object.entries(params??{})){
+    if(value!==null&&value!==undefined&&String(value).trim())url.searchParams.set(name,String(value).trim());
+  }
+  lastRequestAt=Date.now();
+  networkRequests+=1;
+  const response=await fetch(url,{
+    headers:{
+      "user-agent":USER_AGENT,
+      "accept":"application/json",
+      "accept-language":"en",
+    }
+  });
+  if(!response.ok)throw new Error("Geocoder HTTP "+response.status+" for structured "+structuredGeocodeFingerprint(params));
+  const raw=await response.json();
+  const record={
+    structured_params:params,
+    country_code:String(countryCode).toUpperCase(),
+    fetched_at:new Date().toISOString(),
+    results:safeArray(raw).map(slimCandidate),
+  };
+  cache.records[key]=record;
+  if(networkRequests%20===0)await writeJson(CACHE_PATH,cache);
+  return record;
+}
+
 async function fetchCandidates(query,countryCode,key){
   if(cache.records[key])return cache.records[key];
   if(OFFLINE)return {query,country_code:String(countryCode).toUpperCase(),fetched_at:null,offline_miss:true,results:[]};
@@ -161,6 +203,7 @@ for(const provider of PROVIDERS){
     accepted:0,
     primary_accepted:0,
     fallback_accepted:0,
+    structured_accepted:0,
     unresolved:0,
     existing_invalid:0,
     by_precision:{building:0,address:0,street:0,locality:0,region:0,unknown:0},
@@ -191,18 +234,26 @@ for(const provider of PROVIDERS){
 
     const attempts=[];
     let chosen=null;
-    for(const attempt of [
+    const geocodeAttempts=[
       {kind:"PRIMARY_NAME_ADDRESS",query:primaryQuery},
       {kind:"FALLBACK_ADDRESS_ONLY",query:fallbackQuery},
-    ]){
+      ...buildDirectoryStructuredAttempts(venue).map(attempt=>({
+        ...attempt,
+        query:"structured:"+structuredGeocodeFingerprint(attempt.params),
+      })),
+    ];
+    for(const attempt of geocodeAttempts){
       if(!attempt.query)continue;
       if(attempts.some(item=>item.query===attempt.query))continue;
       const key=geocodeCacheKey({query:attempt.query,countryCode});
-      const cached=await fetchCandidates(attempt.query,countryCode,key);
+      const cached=attempt.params
+        ? await fetchStructuredCandidates(attempt.params,countryCode,key)
+        : await fetchCandidates(attempt.query,countryCode,key);
       const selection=selectNominatimCandidate(venue,cached.results);
       attempts.push({
         kind:attempt.kind,
         query:attempt.query,
+        params:attempt.params??null,
         key,
         candidates:safeArray(cached.results).slice(0,3).map(c=>({
           display_name:c.display_name,
@@ -242,7 +293,8 @@ for(const provider of PROVIDERS){
     venue.geo=geo;
     report.accepted+=1;
     if(chosen.kind==="FALLBACK_ADDRESS_ONLY")report.fallback_accepted+=1;
-    else report.primary_accepted+=1;
+    else if(chosen.kind==="PRIMARY_NAME_ADDRESS")report.primary_accepted+=1;
+    else report.structured_accepted=(report.structured_accepted??0)+1;
     report.by_precision[geo.precision]=(report.by_precision[geo.precision]??0)+1;
   }
 
@@ -259,6 +311,7 @@ for(const provider of PROVIDERS){
     accepted:report.accepted,
     primary_accepted:report.primary_accepted,
     fallback_accepted:report.fallback_accepted,
+    structured_accepted:report.structured_accepted,
     existing_valid:report.existing_valid,
     unresolved:report.unresolved,
     existing_invalid:report.existing_invalid,
@@ -275,6 +328,7 @@ for(const provider of PROVIDERS){
     accepted:report.accepted,
     primary_accepted:report.primary_accepted,
     fallback_accepted:report.fallback_accepted,
+    structured_accepted:report.structured_accepted,
     existing_valid:report.existing_valid,
     unresolved:report.unresolved,
     existing_invalid:report.existing_invalid,
