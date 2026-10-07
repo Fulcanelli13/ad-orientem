@@ -50,15 +50,27 @@ The Laghet deanery walking route and the Paray four-stage pilgrim path are both 
 
 This SOT does not contain recurring dates.
 
-Instead it contains unresolved semantic bindings:
+It contains Calendar-owned semantic bindings:
 
 - `feast.our_lady_of_lourdes`;
 - `liturgical.pentecost_monday`;
 - `feast.sacred_heart`.
 
-The source evidence proves the relationship. Calendar must later expose/resolve the semantic event key. Until then, these links are `PENDING_CALENDAR_BINDING`.
+The source evidence proves the relationship. Calendar now resolves all three keys through `calendar-semantic-registry-v1`, and the Shrine records are `BOUND_TO_CALENDAR`. The Shrine corpus still stores no recurring date arithmetic.
 
 Date/month/day, Easter offsets, RRULEs and private recurrence logic are explicitly rejected by the validator.
+
+## Map coordinates
+
+The shared Geography SOT now carries provenance-locked point coordinates for Lourdes, Laghet and Paray.
+
+- **Laghet** uses the shrine's own published GPS coordinate.
+- **Paray-le-Monial** uses the official sanctuary pilgrim-path coordinate as a `complex_anchor`, rather than pretending it is an exact boundary or entrance.
+- **Lourdes** uses an explicitly attributed OpenStreetMap shrine node because the official shrine material supplies the canonical address but not a GPS point.
+
+These coordinates belong to the canonical Place, not to the Shrine, Custom or Pilgrimage records. Explore may therefore reuse one point across those lenses without creating new identity or association claims.
+
+Route geometry remains independent and unpublished unless separately sourced.
 
 ## Directory separation
 
@@ -71,6 +83,8 @@ A shrine Place may later also contain or sit near a TLM Directory venue. That ph
 
 Any such association requires its own evidence-backed bridge.
 
-## Next step
+## Explore projection
 
-The next useful layer is the **Explore projection**: one read model that can combine Directory venues, Shrine places, Custom attestations and Pilgrimages into switchable map/list layers while preserving each owner’s provenance and status.
+The Explore projection consumes these canonical Place coordinates across the Shrines, Traditions and Pilgrimages lenses. The same point may be reused for records referring to the same Place, but this never establishes an association with a nearby Directory/TLM venue.
+
+The next research expansion can therefore add more shrine/pilgrimage places incrementally without changing the map architecture.
