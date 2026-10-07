@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import { auditDirectoryGeo, isMapPublishableGeo } from "../src/find/geo-provenance.js";
-import { buildFsspDataset } from "../tools/directory/import-fssp.mjs";
+import {
+  buildFsspDataset,
+  linkedOfficialGeoPageCandidates,
+  recoverLinkedOfficialGeo,
+} from "../tools/directory/import-fssp.mjs";
 import { parseIckspUsDetail } from "../tools/directory/import-icksp.mjs";
 import { parseIbpDetail } from "../tools/directory/import-ibp.mjs";
 import {
@@ -104,6 +108,37 @@ const ibpHtml=`
 const ibp=parseIbpDetail(ibpHtml,{label:"Paris – Centre Saint-Paul",url:"https://www.institutdubonpasteur.org/example",countryCode:"FR",city:"Paris",diocese:"Archidiocèse de Paris"});
 assert.ok(ibp.officialGeo);
 assert.equal(ibp.officialGeo.source_url,"https://www.institutdubonpasteur.org/example");
+
+const linkedAnchors=[
+  {text:"Contact us",url:"https://parish.example/contact-us/"},
+  {text:"Mass schedule",url:"https://parish.example/mass-schedule/"},
+  {text:"Facebook",url:"https://facebook.com/example"},
+  {text:"Contact mirror",url:"http://www.parish.example/contact-us/"},
+];
+const linkedPages=linkedOfficialGeoPageCandidates(linkedAnchors,"https://parish.example/",{maxPages:2});
+assert.deepEqual(linkedPages,["https://parish.example/contact-us/","https://parish.example/mass-schedule/"]);
+const linkedHtml={
+  "https://parish.example/contact-us/":'<script type="application/ld+json">{"@type":"Place","geo":{"latitude":51.501,"longitude":-0.141}}</script>',
+  "https://parish.example/mass-schedule/":'<a href="https://www.openstreetmap.org/?mlat=51.501&mlon=-0.141#map=18/51.501/-0.141">Map</a>',
+};
+const fakeFetch=async url=>({ok:true,status:200,text:async()=>linkedHtml[url]??""});
+const linkedRecovered=await recoverLinkedOfficialGeo({
+  title:"Example Parish",address:"1 Example Street, London",detailUrl:"https://parish.example/"
+},linkedAnchors,{fetchImpl:fakeFetch});
+assert.ok(linkedRecovered.geo);
+assert.equal(linkedRecovered.attempted,2);
+assert.equal(linkedRecovered.ambiguous,false);
+assert.equal(linkedRecovered.geo.geocoding_source,"OFFICIAL_SOURCE");
+
+const conflictingFetch=async url=>({ok:true,status:200,text:async()=>url.includes("contact-us")
+  ?'<meta itemprop="latitude" content="51.501"><meta itemprop="longitude" content="-0.141">'
+  :'<meta itemprop="latitude" content="53.4808"><meta itemprop="longitude" content="-2.2426">'
+});
+const linkedConflict=await recoverLinkedOfficialGeo({
+  title:"Example Parish",address:"1 Example Street, London",detailUrl:"https://parish.example/"
+},linkedAnchors,{fetchImpl:conflictingFetch});
+assert.equal(linkedConflict.geo,null);
+assert.equal(linkedConflict.ambiguous,true);
 
 const fsspDataset=buildFsspDataset([{
   index:1,title:"Official-coordinate Church",address:"1 Example Street - 75002 Paris - France",
