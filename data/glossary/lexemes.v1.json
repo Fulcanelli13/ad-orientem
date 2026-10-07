@@ -4619,7 +4619,13 @@
         "SCANLON-1944",
         "AO-LATIN-CORE-1-200"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "noun",
+      "gloss_en": "cross",
+      "gloss_fr": "croix",
+      "lesson_title": "Requiem and Holy Week",
+      "grammar_focus": "Specialized liturgical registers",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-39.v1.json"
     },
     {
       "id": "LEX-CORE-199",
@@ -4636,7 +4642,13 @@
         "SCANLON-1944",
         "AO-LATIN-CORE-1-200"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "noun",
+      "gloss_en": "rest",
+      "gloss_fr": "repos",
+      "lesson_title": "Requiem and Holy Week",
+      "grammar_focus": "Specialized liturgical registers",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-39.v1.json"
     },
     {
       "id": "LEX-CORE-200",
@@ -4653,7 +4665,13 @@
         "SCANLON-1944",
         "AO-LATIN-CORE-1-200"
       ],
-      "status": "FROZEN_CORE"
+      "status": "FROZEN_CORE",
+      "part_of_speech": "adjective/noun",
+      "gloss_en": "deceased",
+      "gloss_fr": "defunt",
+      "lesson_title": "Requiem and Holy Week",
+      "grammar_focus": "Specialized liturgical registers",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-39.v1.json"
     },
     {
       "id": "LEX-CORE-201",
@@ -8061,7 +8079,7 @@
     }
   ],
   "enrichment": {
-    "course_lessons_completed": 36,
+    "course_lessons_completed": 40,
     "source": "data/learn/latin-course-lessons/lesson-01..40.v1.json",
     "policy": "Gloss/POS/lesson context are projected from the frozen course authoring data; rank and placement are not changed."
   }
