@@ -109,6 +109,8 @@ function token(value){
 }
 
 function priestActionKey(action){
+  const direct=String(action?.iconKey??"").trim();
+  if(direct)return direct;
   const label=String(action?.label??action?.action??action?.value??"").trim().toUpperCase();
   return ACTION_ICON_KEYS[label]??null;
 }
