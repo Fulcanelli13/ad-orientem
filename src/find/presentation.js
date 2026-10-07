@@ -1,3 +1,4 @@
+import { directoryGeoLabel, isMapPublishableGeo } from "./geo-provenance.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
@@ -36,10 +37,7 @@ function rawSchedules(record){
 
 export function buildFindViewModel({language="en",records=[],communities=[],loadedProviders=[],unavailableProviders=[],view="list",filters={},selectedId=null}={}){
   const selected=records.find(r=>r?.venue?.venue_id===selectedId)??null;
-  const geocoded=records.filter(r=>{
-    const g=r?.venue?.geo;
-    return g?.lat!==null&&g?.lat!==undefined&&g?.lng!==null&&g?.lng!==undefined&&Number.isFinite(Number(g.lat))&&Number.isFinite(Number(g.lng));
-  }).length;
+  const geocoded=records.filter(r=>isMapPublishableGeo(r?.venue?.geo,r?.venue?.address?.country_code)).length;
   return Object.freeze({language,records,communities,loadedProviders,unavailableProviders,view,filters,selected,geocoded});
 }
 
@@ -75,7 +73,11 @@ function detailSheet(vm){
   html+='<div class="aoFindFacts">';
   if(v?.diocese?.name)html+='<div><small>'+esc(L(vm.language,"DIOCESE","DIOCÈSE"))+'</small><strong>'+esc(v.diocese.name)+'</strong></div>';
   html+='<div><small>'+esc(L(vm.language,"LITURGY","LITURGIE"))+'</small><strong>'+esc(usageLabel(m))+'</strong></div>';
-  html+='<div><small>UNA CUM</small><strong>'+esc(una==="YES"?L(vm.language,"Yes","Oui"):una==="NO"?L(vm.language,"No","Non"):L(vm.language,"Unknown / varies","Inconnu / variable"))+'</strong></div></div>';
+  html+='<div><small>UNA CUM</small><strong>'+esc(una==="YES"?L(vm.language,"Yes","Oui"):una==="NO"?L(vm.language,"No","Non"):L(vm.language,"Unknown / varies","Inconnu / variable"))+'</strong></div>';
+  if(isMapPublishableGeo(v?.geo,v?.address?.country_code)){
+    html+='<div><small>'+esc(L(vm.language,"LOCATION","POSITION"))+'</small><strong>'+esc(directoryGeoLabel(v.geo,{language:vm.language}))+'</strong></div>';
+  }
+  html+='</div>';
   if(schedules.length){
     html+='<section class="aoFindSchedules"><small>'+esc(L(vm.language,"SCHEDULE","HORAIRES"))+'</small>';
     for(const item of schedules){
@@ -90,7 +92,11 @@ function detailSheet(vm){
   if(src&&src!==site)html+='<a href="'+esc(src)+'" target="_blank" rel="noopener">'+esc(L(vm.language,"Official source","Source officielle"))+'</a>';
   if(phone)html+='<a href="tel:'+esc(phone)+'">'+esc(phone)+'</a>';
   if(email)html+='<a href="mailto:'+esc(email)+'">'+esc(email)+'</a>';
-  html+='</section><footer><small>'+esc(L(vm.language,"Source-backed directory record. Check the official schedule before travelling.","Fiche d’annuaire sourcée. Vérifiez l’horaire officiel avant de vous déplacer."))+'</small></footer></section></div>';
+  html+='</section><footer><small>'+esc(L(vm.language,"Source-backed directory record. Check the official schedule before travelling.","Fiche d’annuaire sourcée. Vérifiez l’horaire officiel avant de vous déplacer."))+'</small>';
+  if(v?.geo?.geocoding_source==="OSM_NOMINATIM"&&v?.geo?.attribution){
+    html+='<small class="aoFindGeoAttribution">'+esc(v.geo.attribution)+'</small>';
+  }
+  html+='</footer></section></div>';
   return html;
 }
 export function renderFindToString(vm){
