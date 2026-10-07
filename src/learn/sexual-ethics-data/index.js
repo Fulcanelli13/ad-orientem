@@ -2,8 +2,9 @@ import { CSE_SOURCES, CSE_SOURCE_MAP } from "./sources.js";
 import { CSE_RAW_001_050 } from "./questions-001-050.js";
 import { CSE_RAW_051_100 } from "./questions-051-100.js";
 import { CSE_RAW_101_150 } from "./questions-101-150.js";
+import { CSE_DEBATE_MAP, CSE_DEBATE_IDS, CSE_DEBATE_FIELDS, CSE_DEBATE_VALIDATION } from "./debates.js";
 
-export const SEXUAL_ETHICS_VERSION="1.2.0";
+export const SEXUAL_ETHICS_VERSION="1.3.0";
 export const SEXUAL_ETHICS_ROUTE="learn.sexual_ethics";
 export const SEXUAL_ETHICS_RESEARCH_LEAD="LBM";
 
@@ -20,13 +21,13 @@ export const CSE_SECTIONS=Object.freeze([
   Object.freeze({id:"gender",range:[91,100],title:Object.freeze(["Sex, gender & personal identity","Sexe, genre & identité personnelle"])}),
   Object.freeze({id:"reproduction",range:[101,110],title:Object.freeze(["Infertility & reproductive technology","Infertilité & technologies reproductives"])}),
   Object.freeze({id:"violence",range:[111,120],title:Object.freeze(["Sexual violence, coercion & involuntariness","Violence sexuelle, contrainte & involontaire"])}),
-  Object.freeze({id:"family-digital",range:[121,130],title:Object.freeze(["Children, digital sexuality & modern situations","Enfants, sexualité numérique & situations modernes"])}),
+  Object.freeze({id:"family-digital",range:[121,130],title:Object.freeze(["Family, pregnancy & digital sexuality","Famille, grossesse & sexualité numérique"])}),
   Object.freeze({id:"confession",range:[131,140],title:Object.freeze(["Confession, scrupulosity & recovery","Confession, scrupule & relèvement"])}),
   Object.freeze({id:"popular",range:[141,150],title:Object.freeze(["Major popular objections","Grandes objections courantes"])})
 ]);
 
-const DEBATE=new Set([6,7,12,14,16,20,31,43,44,49,50,54,61,63,71,74,83,84,87,95,101,112,141,142,145]);
-const EXPANDED=new Set([4,8,10,11,17,19,21,26,28,30,33,36,46,52,53,57,62,68,70,72,76,82,94,107,137]);
+const DEBATE=new Set(CSE_DEBATE_IDS.map(id=>Number(id.slice(3))));
+const EXPANDED=new Set([4,11,17,19,26,28,30,33,36,46,52,53,57,62,68,72,82,107,137,144]);
 const allRaw=[...CSE_RAW_001_050,...CSE_RAW_051_100,...CSE_RAW_101_150];
 
 const numberOf=id=>Number(String(id).replace(/^CSE/,""));
@@ -44,6 +45,8 @@ export const CSE_QUESTIONS=Object.freeze(allRaw.map(raw=>{
     q:Object.freeze([...raw.q]),
     a:Object.freeze([...raw.a]),
     d:raw.d?Object.freeze([...raw.d]):null,
+    debate:CSE_DEBATE_MAP[raw.id]||null,
+    aliases:Object.freeze([...(raw.aliases||[])]),
     refs:Object.freeze((raw.refs||[]).map(ref=>Object.freeze([...ref]))),
     cross:Object.freeze([...(raw.cross||[])])
   });
@@ -67,7 +70,9 @@ for(let n=1;n<=150;n++){
   if(!item.section)errors.push(`${id}: missing section`);
   if(!item.q?.[0]||!item.q?.[1])errors.push(`${id}: missing bilingual question`);
   if(!item.a?.[0]||!item.a?.[1])errors.push(`${id}: missing bilingual answer`);
-  if((item.depth==="DEBATE"||item.depth==="EXPANDED")&&(!item.d?.[0]||!item.d?.[1]))errors.push(`${id}: ${item.depth} missing detail`);
+  if(item.depth==="EXPANDED"&&(!item.d?.[0]||!item.d?.[1]))errors.push(`${id}: EXPANDED missing detail`);
+  if(item.depth==="DEBATE"&&!item.debate)errors.push(`${id}: DEBATE missing structured debate`);
+  if(item.depth!=="DEBATE"&&item.debate)errors.push(`${id}: structured debate assigned to non-DEBATE record`);
   if(!allowedLayers.has(item.layer))errors.push(`${id}: invalid layer ${item.layer}`);
   if(!item.refs.length)errors.push(`${id}: no sources`);
   if(item.cross.some(target=>!allowedCrossTargets.has(target)))errors.push(`${id}: invalid cross-link target`);
@@ -85,9 +90,12 @@ const depthCounts=Object.freeze({
   EXPANDED:CSE_QUESTIONS.filter(item=>item.depth==="EXPANDED").length,
   DEBATE:CSE_QUESTIONS.filter(item=>item.depth==="DEBATE").length,
 });
-if(depthCounts.STANDARD!==100)errors.push(`expected 100 STANDARD, got ${depthCounts.STANDARD}`);
-if(depthCounts.EXPANDED!==25)errors.push(`expected 25 EXPANDED, got ${depthCounts.EXPANDED}`);
-if(depthCounts.DEBATE!==25)errors.push(`expected 25 DEBATE, got ${depthCounts.DEBATE}`);
+if(depthCounts.STANDARD!==75)errors.push(`expected 75 STANDARD, got ${depthCounts.STANDARD}`);
+if(depthCounts.EXPANDED!==20)errors.push(`expected 20 EXPANDED, got ${depthCounts.EXPANDED}`);
+if(depthCounts.DEBATE!==55)errors.push(`expected 55 DEBATE, got ${depthCounts.DEBATE}`);
+if(!CSE_DEBATE_VALIDATION.complete||CSE_DEBATE_VALIDATION.count!==55)errors.push(`structured debate corpus invalid`);
+for(const id of CSE_DEBATE_IDS){if(!CSE_QUESTION_MAP[id])errors.push(`debate references missing question ${id}`);}
+for(const item of CSE_QUESTIONS){if(item.depth==="DEBATE"){for(const field of CSE_DEBATE_FIELDS){if(!item.debate?.[field]?.[0]||!item.debate?.[field]?.[1])errors.push(`${item.id}: incomplete debate field ${field}`);}}}
 
 export const CSE_VALIDATION=Object.freeze({
   ok:errors.length===0,
@@ -96,4 +104,5 @@ export const CSE_VALIDATION=Object.freeze({
   sections:CSE_SECTIONS.length,
   sources:CSE_SOURCES.length,
   depthCounts,
+  debates:CSE_DEBATE_VALIDATION,
 });
