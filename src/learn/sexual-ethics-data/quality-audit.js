@@ -1,10 +1,10 @@
 import { CSE_QUESTIONS, CSE_SOURCE_MAP } from "./index.js";
 
-export const CSE_QUALITY_AUDIT_VERSION="CSE_QUALITY_V3";
+export const CSE_QUALITY_AUDIT_VERSION="CSE_QUALITY_V4";
 
-const REWRITE=new Set([13,18,29,35,51,57,76,89,100,108,128,139,141,143,149]);
-const TIGHTEN=new Set([6,12,14,15,20,31,33,36,43,44,46,52,53,54,61,63,65,70,71,74,75,83,84,87,88,94,95,96,101,107,110,112,117,121,125,130,137,142,145,147,150]);
-const SOURCE_REPAIR=new Set([1,2,3,4,5,8,9,10,11,16,17,19,21,22,23,24,25,26,27,28,30,32,34,37,38,39,40,41,42,45,47,48,55,56,58,59,60,62,64,66,67,68,69,72,73,77,78,79,80,81,82,85,86,90,91,92,93,97,98,99,102,103,104,105,106,109,111,113,114,115,116,118,119,120,122,123,124,126,127,129,131,132,133,134,135,136,138,140,144,146,148]);
+const REWRITE=new Set([13,18,29,35,38,39,40,51,55,56,57,58,76,89,100,108,123,124,125,128,139,141,143,149]);
+const TIGHTEN=new Set([6,12,14,15,20,31,33,36,43,44,46,52,53,54,61,63,65,70,71,74,75,83,84,87,88,94,95,96,101,107,110,112,117,121,130,137,142,145,147,150]);
+const SOURCE_REPAIR=new Set([1,2,3,4,5,8,9,10,11,16,17,19,21,22,23,24,25,26,27,28,30,32,34,37,41,42,45,47,48,59,60,62,64,66,67,68,69,72,73,77,78,79,80,81,82,85,86,90,91,92,93,97,98,99,102,103,104,105,106,109,111,113,114,115,116,118,119,120,122,126,127,129,131,132,133,134,135,136,138,140,144,146,148]);
 
 const disposition=n=>REWRITE.has(n)?"REWRITE":TIGHTEN.has(n)?"TIGHTEN":SOURCE_REPAIR.has(n)?"SOURCE_REPAIR":"KEEP";
 
@@ -42,9 +42,9 @@ export const CSE_QUALITY_AUDIT=Object.freeze(CSE_QUESTIONS.map(item=>{
     hasNarrowSource:sources.some(source=>source.locatorPrecision==="NARROW"),
     notes:Object.freeze(
       status==="REWRITE"
-        ? ["Weak/vague user-facing answer rewritten in v3."]
+        ? ["User-facing answer rewritten or replaced in v4."]
         : status==="TIGHTEN"
-          ? ["Argument, caveat, or high-risk wording tightened in v3."]
+          ? ["Argument, caveat, or high-risk wording tightened and rechecked in v4."]
           : status==="SOURCE_REPAIR"
             ? ["Answer retained; citation chain and locator precision reviewed/tightened."]
             : ["Answer already passed content and source review without substantive change."]
