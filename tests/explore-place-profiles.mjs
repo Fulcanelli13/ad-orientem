@@ -76,7 +76,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,15,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,21,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -177,6 +177,49 @@ assert.ok(mariastein);
 assert.equal(mariastein.counts.shrines,1);
 assert.equal(mariastein.counts.pilgrimages,1);
 assert.equal(mariastein.calendar.length,0,"monthly Mariastein pilgrimage should remain recurrence context, not a single date");
+
+const champion=explorePlaceProfile(profiles,"place:US:champion-shrine");
+assert.ok(champion);
+assert.equal(champion.counts.shrines,1);
+assert.equal(champion.counts.pilgrimages,3);
+assert.ok(champion.counts.traditions>=1);
+assert.equal(champion.map_publishable,false);
+assert.ok(champion.calendar.some(row=>row.semantic_key==="observance.our_lady_of_champion"&&row.date==="2026-10-09"));
+
+const guadalupe=explorePlaceProfile(profiles,"place:US:guadalupe-shrine-la-crosse");
+assert.ok(guadalupe);
+assert.equal(guadalupe.counts.shrines,1);
+assert.equal(guadalupe.counts.pilgrimages,1);
+assert.ok(guadalupe.counts.traditions>=1);
+assert.equal(guadalupe.counts.tlm,0,"unresolved Guadalupe TLM candidate leaked into exact-place TLM projection");
+assert.ok(guadalupe.calendar.some(row=>row.semantic_key==="feast.our_lady_of_guadalupe"&&row.date==="2026-12-12"));
+
+const holyHill=explorePlaceProfile(profiles,"place:US:holy-hill");
+assert.ok(holyHill);
+assert.equal(holyHill.counts.shrines,1);
+assert.equal(holyHill.counts.pilgrimages,2);
+assert.equal(holyHill.calendar.length,0,"annual traditional Holy Hill pilgrimage was incorrectly reduced to one fixed Calendar date");
+
+const beaupre=explorePlaceProfile(profiles,"place:CA:sainte-anne-de-beaupre");
+assert.ok(beaupre);
+assert.equal(beaupre.counts.shrines,1);
+assert.equal(beaupre.counts.pilgrimages,1);
+assert.ok(beaupre.counts.traditions>=1);
+assert.ok(beaupre.calendar.some(row=>row.semantic_key==="feast.saint_anne"&&row.date==="2027-07-26"));
+
+const ndc=explorePlaceProfile(profiles,"place:CA:notre-dame-du-cap");
+assert.ok(ndc);
+assert.equal(ndc.counts.shrines,1);
+assert.equal(ndc.counts.pilgrimages,1);
+assert.ok(ndc.counts.traditions>=1);
+assert.ok(ndc.calendar.some(row=>row.semantic_key==="feast.assumption_of_mary"&&row.date==="2027-08-15"));
+
+const martyrs=explorePlaceProfile(profiles,"place:CA:martyrs-shrine-midland");
+assert.ok(martyrs);
+assert.equal(martyrs.counts.shrines,1);
+assert.equal(martyrs.counts.pilgrimages,2);
+assert.equal(martyrs.calendar.length,0);
+assert.equal(martyrs.counts.tlm,0,"traditional pilgrimage evidence incorrectly created an exact-place TLM venue");
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"})[0];
 assert.equal(placeIdForExploreItem(lourdesShrine),lourdes.place_id);

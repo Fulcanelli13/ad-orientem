@@ -29,6 +29,34 @@
         "NON_INSTITUTE_DIOCESAN_OR_LOCAL_DIRECTORY_RECORDS"
       ],
       "guardrail": "Do not create a Directory→Place link until a current Directory venue is independently identified as the Kerzenkapelle. The Gnadenkapelle is a different canonical Place."
+    },
+    {
+      "candidate_id": "candidate:directory-place:US:guadalupe-la-crosse-tlm",
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "relationship_if_resolved": "LOCATED_AT",
+      "status": "IDENTITY_RESOLUTION_REQUIRED",
+      "claim_summary": "The official Shrine of Our Lady of Guadalupe schedule publishes a current Traditional Latin Mass at the shrine.",
+      "schedule_context": {
+        "monday_through_saturday": "08:30 Traditional Latin",
+        "sunday": "09:00 Traditional Latin"
+      },
+      "source_ids": [
+        "SHR-GUADALUPE-SCHEDULE"
+      ],
+      "generated_provider_scan": {
+        "checked_at": "2026-10-07",
+        "providers": [
+          "FSSP",
+          "ICKSP",
+          "IBP"
+        ],
+        "exact_or_text_matches": []
+      },
+      "unresolved_scope": [
+        "SSPX_OR_OTHER_LIVE_SOURCES",
+        "NON_INSTITUTE_DIOCESAN_OR_LOCAL_DIRECTORY_RECORDS"
+      ],
+      "guardrail": "Do not create a Directory→Place link until a current Directory venue record is independently identified as this Shrine. The official shrine schedule proves the Mass, not the existence of a canonical Directory venue."
     }
   ]
 }

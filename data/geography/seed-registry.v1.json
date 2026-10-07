@@ -140,6 +140,41 @@
       "codes": {
         "iso_alpha2": "CH"
       }
+    },
+    {
+      "geo_area_id": "geo:country:US",
+      "name": {
+        "official": "United States",
+        "aliases": [
+          "United States of America",
+          "USA"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "US"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CA",
+      "name": {
+        "official": "Canada",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CA"
+      }
     }
   ],
   "places": [
@@ -639,6 +674,197 @@
       },
       "source_ids": [
         "SHR-MARIASTEIN-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:US:champion-shrine",
+      "name": {
+        "official": "National Shrine of Our Lady of Champion",
+        "aliases": [
+          "Our Lady of Champion Shrine",
+          "Our Lady of Good Help Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "4047 Chapel Drive",
+        "line2": null,
+        "postal_code": "54229",
+        "city": "Champion",
+        "region": "Wisconsin",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "4047 Chapel Drive, Champion, WI 54229, United States"
+      },
+      "source_ids": [
+        "SHR-CHAMPION-HOME"
+      ]
+    },
+    {
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "name": {
+        "official": "Shrine of Our Lady of Guadalupe",
+        "aliases": [
+          "Our Lady of Guadalupe Shrine, La Crosse"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "5250 Justin Road",
+        "line2": null,
+        "postal_code": "54601",
+        "city": "La Crosse",
+        "region": "Wisconsin",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "5250 Justin Road, La Crosse, WI 54601, United States"
+      },
+      "source_ids": [
+        "SHR-GUADALUPE-SCHEDULE"
+      ]
+    },
+    {
+      "place_id": "place:US:holy-hill",
+      "name": {
+        "official": "Basilica and National Shrine of Mary Help of Christians at Holy Hill",
+        "aliases": [
+          "Holy Hill",
+          "Holy Hill National Shrine"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "1525 Carmel Road",
+        "line2": null,
+        "postal_code": "53033",
+        "city": "Hubertus",
+        "region": "Wisconsin",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "1525 Carmel Road, Hubertus, WI 53033, United States"
+      },
+      "source_ids": [
+        "SHR-HOLY-HILL-OFFICIAL"
+      ]
+    },
+    {
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "name": {
+        "official": "Sanctuaire Sainte-Anne-de-Beaupré",
+        "aliases": [
+          "Shrine of Sainte-Anne-de-Beaupré",
+          "Basilica of Sainte-Anne-de-Beaupré"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "10018 Avenue Royale",
+        "line2": null,
+        "postal_code": "G0A 3C0",
+        "city": "Sainte-Anne-de-Beaupré",
+        "region": "Québec",
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "10018 Avenue Royale, Sainte-Anne-de-Beaupré, QC G0A 3C0, Canada"
+      },
+      "source_ids": [
+        "SHR-SAINT-ANNE-BEAUPRE-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "name": {
+        "official": "Sanctuaire Notre-Dame-du-Cap",
+        "aliases": [
+          "Our Lady of the Cape Shrine",
+          "Notre-Dame-du-Cap Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "626 rue Notre-Dame Est",
+        "line2": null,
+        "postal_code": "G8T 4G9",
+        "city": "Trois-Rivières",
+        "region": "Québec",
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "626 rue Notre-Dame Est, Trois-Rivières, QC G8T 4G9, Canada"
+      },
+      "source_ids": [
+        "SHR-NDC-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "name": {
+        "official": "Martyrs' Shrine",
+        "aliases": [
+          "Canadian Martyrs' Shrine",
+          "Martyrs’ Shrine, Midland"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "16163 Highway 12 West",
+        "line2": null,
+        "postal_code": "L4R 4K6",
+        "city": "Midland",
+        "region": "Ontario",
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "16163 Highway 12 West, Midland, ON L4R 4K6, Canada"
+      },
+      "source_ids": [
+        "SHR-MARTYRS-CONTACT"
       ]
     }
   ],
