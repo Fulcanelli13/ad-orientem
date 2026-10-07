@@ -5,6 +5,7 @@ const providers={
   fssp:{minVenues:400},
   icksp:{minVenues:25},
   ibp:{minVenues:34},
+  sspx:{minVenues:900},
 };
 
 let failed=false;
