@@ -50,8 +50,8 @@ export function buildLiturgicalYear(selectedId){
   const nextPeriod=periods.find(p=>p.start>selectedId)||null;
   return Object.freeze({
     startYear,endYear:startYear+1,label:`${startYear}–${startYear+1}`,start,end,totalDays,dayIndex,
-    progress:clamp01(elapsed/totalDays),periods,currentPeriod,periodDayIndex,
-    periodProgress:clamp01(periodElapsed/currentPeriod.days),nextPeriod,easter,pentecost
+    progress:clamp01(dayIndex/totalDays),periods,currentPeriod,periodDayIndex,
+    periodProgress:clamp01(periodDayIndex/currentPeriod.days),nextPeriod,easter,pentecost
   });
 }
 function celebration(date,en,fr,kind="temporale",importance="major"){return {date,en,fr,kind,importance}}
