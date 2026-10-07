@@ -402,6 +402,15 @@ try{
   assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] [data-cal-saint-date]").count()>=4,"Month Sanctorale is not wired to the shared saint-detail entry point");
   await shot("02g-calendar-month-sanctorale");
 
+  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='practices']").click();
+  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='practices']",{state:"visible",timeout:3000});
+  const practicesText=await page.locator("#ao-calendar-modular-root [data-cal-month-index='practices']").innerText();
+  assert.match(practicesText,/First Friday|Premier vendredi/,"Month Practices lost First Friday");
+  assert.match(practicesText,/Month of the Holy Rosary|Mois du Saint Rosaire/,"Month Practices lost October Rosary");
+  assert.match(practicesText,/Kingship of Christ|Royauté du Christ/,"Month Practices lost Christ the King");
+  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-month-index='practices'] [data-cal-month-index-date]").count()>=3,true,"Month Practices exposes too few date-bound rows");
+  await shot("02g2-calendar-month-practices");
+
   const legacyIndexRedirect=await page.evaluate(()=>{globalThis.AO_CALENDAR_APP_V1?.setView?.("index");return globalThis.AO_CALENDAR_APP_V1?.status?.()});
   assert.equal(legacyIndexRedirect.view,"picker","legacy Calendar index route did not redirect to Month");
   assert.equal(legacyIndexRedirect.monthView,"major","legacy Calendar index route did not redirect specifically to Month/Major");
