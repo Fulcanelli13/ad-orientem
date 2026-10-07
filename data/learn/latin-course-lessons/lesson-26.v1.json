@@ -285,7 +285,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Un infinitif peut avoir son propre sujet"
+        }
+      }
     },
     {
       "id": "l26-b2",
@@ -302,7 +307,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Quem dicunt homines esse…"
+        }
+      }
     },
     {
       "id": "l26-b3",
@@ -319,7 +329,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Christum Jesum… fuisse"
+        }
+      }
     },
     {
       "id": "l26-b4",
@@ -336,7 +351,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "quia peut aussi rapporter un contenu"
+        }
+      }
     },
     {
       "id": "l26-b5",
@@ -351,7 +371,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Repérer d’abord le verbe introducteur"
+        }
+      }
     },
     {
       "id": "l26-b6",
@@ -366,7 +391,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’accusatif ne signifie pas toujours complément d’objet"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -485,7 +515,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Dans une construction accusatif + infinitif, que peut être l’accusatif ?",
+          "hint": "Le discours rapporté change le cas du sujet.",
+          "explanation": "Le sujet rapporté est à l’accusatif.",
+          "options": [
+            "le sujet de l’infinitif",
+            "toujours uniquement un complément d’objet direct",
+            "un vocatif",
+            "un ablatif absolu"
+          ]
+        }
+      }
     },
     {
       "id": "l26-e2",
@@ -515,7 +558,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’indique normalement un infinitif parfait comme fuisse par rapport au verbe introducteur ?",
+          "hint": "L’infinitif parfait renvoie vers l’antérieur.",
+          "explanation": "Il rapporte normalement un état ou une action antérieurs.",
+          "options": [
+            "antériorité",
+            "futur seulement",
+            "simultanéité seulement",
+            "un ordre"
+          ]
+        }
+      }
     },
     {
       "id": "l26-e3",
@@ -545,7 +601,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel autre schéma sert à rapporter un contenu en latin ecclésiastique ou de la Vulgate ?",
+          "hint": "Voir Jean 6,69.",
+          "explanation": "quia + verbe fini est une syntaxe fréquente du discours rapporté.",
+          "options": [
+            "quia + proposition à verbe fini",
+            "vocatif + impératif",
+            "ablatif absolu seulement",
+            "gérondif seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l26-e4",
@@ -576,7 +645,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de la leçon 26 à son sens.",
+          "hint": "Ce sont les quatre lemmes de l’allocation figée.",
+          "explanation": "Ceci vérifie la récupération lexicale.",
+          "matches": {
+            "scio": "savoir",
+            "cognosco": "connaître / reconnaître",
+            "sentio": "percevoir / penser / ressentir",
+            "scribo": "écrire"
+          }
+        }
+      }
     },
     {
       "id": "l26-e5",
@@ -605,7 +687,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est la première étape la plus sûre pour lire un discours rapporté ?",
+          "hint": "La structure d’abord.",
+          "explanation": "Le verbe introducteur encadre la construction de contenu.",
+          "options": [
+            "repérer le verbe introducteur",
+            "traduire chaque accusatif comme objet",
+            "ignorer les infinitifs",
+            "regarder seulement l’ordre des mots"
+          ]
+        }
+      }
     },
     {
       "id": "l26-e6",
@@ -635,7 +730,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est esse ?",
+          "hint": "C’est l’infinitif du dictionnaire.",
+          "explanation": "esse est l’infinitif présent de sum.",
+          "options": [
+            "infinitif présent de sum",
+            "parfait de l’indicatif",
+            "impératif",
+            "gérondif"
+          ]
+        }
+      }
     },
     {
       "id": "l26-e7",
@@ -665,7 +773,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau verbe apparaît directement sous la forme cognovimus ?",
+          "hint": "Reconnaissez le radical du parfait.",
+          "explanation": "cognovimus appartient à cognosco.",
+          "options": [
+            "cognosco",
+            "scio",
+            "sentio",
+            "scribo"
+          ]
+        }
+      }
     },
     {
       "id": "l26-e8",
@@ -693,7 +814,18 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Le latin de l’Église peut-il employer à la fois quia + proposition finie et l’accusatif + infinitif pour rapporter un contenu ?",
+          "hint": "La leçon montre les deux.",
+          "explanation": "Les deux sont de véritables schémas de lecture.",
+          "options": [
+            "oui",
+            "non"
+          ]
+        }
+      }
     },
     {
       "id": "l26-e9",
@@ -717,7 +849,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le verbe latin signifiant « écrire ».",
+          "hint": "Il appartient au vocabulaire fondamental de la leçon 26.",
+          "explanation": "scribo signifie « écrire »."
+        }
+      }
     },
     {
       "id": "l26-e10",
@@ -742,7 +881,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le verbe latin signifiant « connaître / reconnaître ».",
+          "hint": "Il apparaît sous la forme cognovimus.",
+          "explanation": "cognosco est le lemme."
+        }
+      }
     }
   ],
   "objectives": [
@@ -806,5 +952,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Scimus quia… / dicit esse…",
+      "grammarFocus": "Infinitifs et discours indirect",
+      "readingOutcome": "Reconnaître les constructions infinitives et la pensée ou parole rapportée.",
+      "objectives": [
+        "Reconnaître le discours indirect à l’accusatif + infinitif.",
+        "Distinguer les rapports temporels de l’infinitif présent et de l’infinitif parfait.",
+        "Reconnaître quia + proposition à verbe fini pour rapporter un contenu en latin ecclésiastique.",
+        "Apprendre les quatre lemmes figés de la leçon 26."
+      ]
+    }
+  }
 }
