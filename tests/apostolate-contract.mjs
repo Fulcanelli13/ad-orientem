@@ -18,6 +18,7 @@ import { createApostolateScenarioEngine } from "../src/apostolate/engine.js";
 import { createApostolateOwner, installApostolateOwner } from "../src/apostolate/browser-entry.js";
 import { APOSTOLATE_AQ_CORPUS_VERSION, APOSTOLATE_AQ_SCENARIOS } from "../src/apostolate/corpus.js";
 import { APOSTOLATE_HS_CORPUS_VERSION, APOSTOLATE_HS_SCENARIOS } from "../src/apostolate/hs-corpus.js";
+import { APOSTOLATE_FH_CORPUS_VERSION, APOSTOLATE_FH_SCENARIOS } from "../src/apostolate/fh-corpus.js";
 import {
   APOSTOLATE_SOURCE_REGISTRY_VERSION,
   APOSTOLATE_SOURCES,
@@ -123,6 +124,48 @@ assert.deepEqual(hsEngine.status(),{scenarioCount:36,registeredCount:7,published
 for(const id of ["HS01","HS02","HS03","HS04","HS05","HS06","HS07"])assert.equal(hsEngine.help.resolve(id).ok,true,id+" is not internally publishable");
 assert.equal(hsEngine.resolve("FH01").reason,"RESEARCH_ONLY","A5 accidentally promoted family-help content");
 
+assert.equal(APOSTOLATE_FH_CORPUS_VERSION,"APOSTOLATE_FH_CORPUS_V1");
+assert.equal(APOSTOLATE_FH_SCENARIOS.length,8);
+assert.deepEqual(APOSTOLATE_FH_SCENARIOS.map(x=>x.id),["FH01","FH02","FH03","FH04","FH05","FH06","FH07","FH08"]);
+assert.deepEqual(APOSTOLATE_FH_SCENARIOS.map(x=>x.publication),Array(8).fill("READY"));
+
+const expectedFhTitles=[
+  "How do I start a family Rosary?",
+  "How do we begin saying grace at meals?",
+  "How do we establish morning and evening prayer at home?",
+  "How do I teach children their basic prayers?",
+  "How do I prepare a child for First Confession and First Communion?",
+  "What is a godparent actually supposed to do?",
+  "What should a Confirmation sponsor actually do?",
+  "How can a family begin devotion to the Sacred Heart?",
+];
+assert.deepEqual(APOSTOLATE_FH_SCENARIOS.map(x=>x.title.en),expectedFhTitles);
+
+for(const scenario of APOSTOLATE_FH_SCENARIOS){
+  const normalized=makeApostolateScenario(scenario);
+  assert.equal(normalized.publication,"READY",scenario.id+" failed READY normalization");
+  assert.ok(normalized.title.en&&normalized.title.fr,scenario.id+" lost bilingual title");
+  assert.ok(normalized.text.en&&normalized.text.fr,scenario.id+" lost bilingual short answer");
+  assert.ok(normalized.explanation.en&&normalized.explanation.fr,scenario.id+" lost bilingual explanation");
+  assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,scenario.id+" lost bilingual avoidances");
+  assert.ok(normalized.apfSkills.length,scenario.id+" has no APF skill mapping");
+  assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
+  assert.ok(normalized.handoffs.some(h=>h.targetId?.startsWith("learn.")),scenario.id+" lacks canonical Formation handoff");
+}
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH01").explanation.en,/Pius XII/i);
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH02").text.en,/traditional grace before meals/i);
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH03").avoid.en.join(" "),/long devotional rule/i);
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH04").text.en,/Sign of the Cross/i);
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH05").avoid.en.join(" "),/certify a child/i);
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH06").text.en,/not merely an honorary guest/i);
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH07").text.en,/witness of Christ/i);
+assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH08").avoid.en.join(" "),/private enthronement ceremony/i);
+
+const fhEngine=createApostolateScenarioEngine(APOSTOLATE_FH_SCENARIOS);
+assert.deepEqual(fhEngine.status(),{scenarioCount:36,registeredCount:8,publishedCount:8,researchOnlyCount:28});
+for(const id of ["FH01","FH02","FH03","FH04","FH05","FH06","FH07","FH08"])assert.equal(fhEngine.help.resolve(id).ok,true,id+" is not internally publishable");
+assert.equal(fhEngine.resolve("TF01").reason,"RESEARCH_ONLY","A6 accidentally promoted traditional-faith introduction content");
+
 assert.equal(APOSTOLATE_AQ_CORPUS_VERSION,"APOSTOLATE_AQ_CORPUS_V1");
 assert.equal(APOSTOLATE_SOURCE_REGISTRY_VERSION,"APOSTOLATE_SOURCE_REGISTRY_V1");
 assert.equal(APOSTOLATE_AQ_SCENARIOS.length,8);
@@ -208,20 +251,22 @@ const doc={
   },
 };
 const win={document:doc};
-const owner=createApostolateOwner(win,{scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS]});
+const owner=createApostolateOwner(win,{scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS,...APOSTOLATE_FH_SCENARIOS]});
 assert.equal(owner.owner,"AO_APOSTOLATE_APP_V1");
 assert.equal(owner.status().installed,true);
 assert.equal(owner.status().hidden,true);
 assert.equal(owner.status().visible,false);
 assert.equal(owner.status().mounted,false);
 assert.equal(owner.status().ribbonExposed,false);
-assert.equal(owner.status().publishedCount,15);
-assert.equal(owner.status().researchOnlyCount,21);
+assert.equal(owner.status().publishedCount,23);
+assert.equal(owner.status().researchOnlyCount,13);
 assert.equal(owner.engines.answer.resolve("AQ01").ok,true);
 assert.equal(owner.engines.answer.resolve("AQ08").ok,true);
 assert.equal(owner.engines.help.resolve("HS01").ok,true);
 assert.equal(owner.engines.help.resolve("HS07").ok,true);
-assert.equal(owner.engines.help.resolve("FH01").reason,"RESEARCH_ONLY");
+assert.equal(owner.engines.help.resolve("FH01").ok,true);
+assert.equal(owner.engines.help.resolve("FH08").ok,true);
+assert.equal(owner.engines.introduce.resolve("TF01").reason,"RESEARCH_ONLY");
 assert.equal(owner.receiveHandoff(toApostolate).ok,true);
 assert.equal(owner.handoffToFormation({fromId:"AQ01",targetRoute:"learn.catechism",reason:"Study"}).targetSurface,"learn");
 
@@ -233,9 +278,9 @@ assert.doesNotMatch(readFileSync("src/learn/presentation.js","utf8"),/data-ao-ap
 
 const installedWin={document:{documentElement:{dataset:{}},querySelector:()=>null}};
 const installed=installApostolateOwner(installedWin);
-assert.equal(installed.status().publishedCount,15,"production hidden owner did not load AQ + HS corpora");
-assert.equal(installed.status().researchOnlyCount,21);
+assert.equal(installed.status().publishedCount,23,"production hidden owner did not load AQ + HS + FH corpora");
+assert.equal(installed.status().researchOnlyCount,13);
 assert.equal(installed.status().visible,false);
 assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"hidden");
 
-console.log("PASS hidden Apostolate A5: AQ01-AQ08 + HS01-HS07 are sourced bilingual READY; 21 unrecovered scenarios remain fail-closed; no visible surface.");
+console.log("PASS hidden Apostolate A6: AQ01-AQ08 + HS01-HS07 + FH01-FH08 are sourced bilingual READY; 13 unrecovered scenarios remain fail-closed; no visible surface.");
