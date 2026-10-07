@@ -99,15 +99,10 @@ It does **not** take ownership from:
 - **Customary/Explore** — local and inherited customs;
 - **Confession** — sacramental preparation and the confession workflow.
 
-## Publication gates still closed
+## Publication state
 
-The research spine is now complete enough to write the course, but `learn.spiritual_life` remains unpublished until:
+Research, provenance, bilingual lesson copy, owner handoffs, non-gamified exercises and the first harsh content audit now pass.
 
-1. concise user-facing lesson copy is written;
-2. English/French parity is complete;
-3. owner handoffs are mapped;
-4. non-gamified exercises are designed;
-5. final content and source audit passes;
-6. the Formation ownership gate is deliberately updated to publish the route.
+`learn.spiritual_life` remains unpublished for one reason: **the runtime/UI and phone acceptance have not yet been built and certified**.
 
-The next pass is therefore **content production**, not more source discovery.
+The next pass is therefore the restrained Formation runtime and source drawer—not more source discovery or curriculum expansion.
