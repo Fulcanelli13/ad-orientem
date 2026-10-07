@@ -32,7 +32,6 @@ export const APOSTOLATE_FH_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF03","APF04","APF05","APF09"]),
     sourceIds:Object.freeze(["PIUS-XII-INGRUENTIUM-MALORUM","CIC83-226"]),
     handoffs:Object.freeze([
-      formation("FH01","learn.catholic_life","Formation deepens the duty and place of family prayer."),
       owned("pray","pray.rosary","The actual Rosary belongs to the canonical PRAY Rosary owner."),
     ]),
   }),
@@ -57,7 +56,6 @@ export const APOSTOLATE_FH_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF03","APF04","APF05","APF09"]),
     sourceIds:Object.freeze(["BALTIMORE-MANUAL-GRACE","CIC83-226"]),
     handoffs:Object.freeze([
-      formation("FH02","learn.catholic_life","Formation provides the wider pattern of Catholic household life."),
       owned("pray","pray.library","Use the Prayer Library for the stored grace before and after meals."),
     ]),
   }),
@@ -82,7 +80,6 @@ export const APOSTOLATE_FH_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF03","APF04","APF05","APF09"]),
     sourceIds:Object.freeze(["BALTIMORE-MANUAL-MORNING-EVENING","CIC83-226"]),
     handoffs:Object.freeze([
-      formation("FH03","learn.catholic_life","Formation situates daily prayer within Catholic household life."),
       owned("pray","pray.library","Use the Prayer Library for the canonical morning and evening texts."),
     ]),
   }),
@@ -107,7 +104,6 @@ export const APOSTOLATE_FH_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF03","APF04","APF05","APF09"]),
     sourceIds:Object.freeze(["CIC83-226","COMPENDIUM-BASIC-PRAYERS"]),
     handoffs:Object.freeze([
-      formation("FH04","learn.catholic_life","Formation supports the wider Christian education of children."),
       owned("pray","pray.library","Use the canonical Prayer Library for the actual formulas."),
     ]),
   }),
@@ -206,7 +202,6 @@ export const APOSTOLATE_FH_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF03","APF04","APF05","APF07","APF09"]),
     sourceIds:Object.freeze(["LEO-XIII-ANNUM-SACRUM","PIUS-XI-MISERENTISSIMUS","CIC83-226"]),
     handoffs:Object.freeze([
-      formation("FH08","learn.catholic_life","Formation situates household devotion within Catholic life."),
       owned("pray","pray.library","Use the Prayer Library for Sacred Heart prayers and approved texts."),
       owned("pray","programme.first_friday","First Friday remains the owned reparatory programme."),
     ]),
