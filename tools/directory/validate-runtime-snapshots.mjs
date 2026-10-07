@@ -18,6 +18,9 @@ for(const [provider,rule] of Object.entries(providers)){
   if(issues.length)errors.push(issues.length+" canonical venue validation issue(s)");
   if(provider==="fssp"&&venues.some(v=>["←","→","↑","↓","+","-","Home","End","Page Up","Page Down"].includes(String(v?.name?.official??"").trim())))errors.push("FSSP navigation-control rows survived parsing");
   if(venues.some(v=>!v?.address?.country_code))errors.push("venue without country code");
+  const venueIds=venues.map(v=>v?.venue_id).filter(Boolean);
+  const duplicateVenueIds=[...new Set(venueIds.filter((id,index)=>venueIds.indexOf(id)!==index))];
+  if(duplicateVenueIds.length)errors.push("duplicate venue_id values: "+duplicateVenueIds.slice(0,10).join(", "));
   if(errors.length){
     failed=true;
     console.error(provider.toUpperCase()+": FAIL — "+errors.join("; "));
