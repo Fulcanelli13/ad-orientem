@@ -35,14 +35,19 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:3,
-  pilgrimages:4,
-  routes:2,
-  temporalLinks:3,
-  sources:10,
+  shrines:8,
+  pilgrimages:11,
+  routes:6,
+  temporalLinks:8,
+  sources:22,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
+  if(link.binding_state==="NO_FIXED_CALENDAR_BINDING"){
+    assert.equal(link.calendar_semantic_key,null,link.temporal_link_id+" should not pretend to have a fixed Calendar key");
+    assert.equal(Object.hasOwn(link,"calendar_registry_version"),false,link.temporal_link_id+" should not claim Calendar resolution");
+    continue;
+  }
   assert.equal(link.binding_state,"BOUND_TO_CALENDAR",link.temporal_link_id);
   assert.equal(link.calendar_registry_version,CALENDAR_SEMANTIC_REGISTRY_VERSION,link.temporal_link_id);
   assert.ok(calendarDateForSemanticKey(link.calendar_semantic_key,2026),link.calendar_semantic_key+" is not owned by Calendar");
@@ -52,10 +57,31 @@ const requiredPlaces=new Set([
   "place:FR:sanctuaire-notre-dame-de-lourdes",
   "place:FR:sanctuaire-notre-dame-de-laghet",
   "place:FR:sanctuaire-sacre-coeur-paray",
+  "place:FR:chartres-notre-dame",
+  "place:FR:sainte-anne-d-auray",
+  "place:IE:knock-shrine",
+  "place:IE:lough-derg-station-island",
+  "place:MU:pere-laval-sainte-croix",
 ]);
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
 }
+
+assert.equal(calendarDateForSemanticKey("feast.saint_anne",2026),"2026-07-26");
+assert.equal(calendarDateForSemanticKey("observance.knock_apparition_anniversary",2026),"2026-08-21");
+assert.equal(calendarDateForSemanticKey("feast.blessed_jacques_desire_laval",2026),"2026-09-09");
+
+const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
+assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
+assert.equal(loughSeason.relation,"SEASONAL");
+
+const chartresRoute=corpus.routes.find(item=>item.route_id==="route:FR:paris-chartres-pentecost");
+assert.equal(chartresRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(chartresRoute.stage_count,3);
+
+const pereRoutes=corpus.routes.filter(item=>item.route_id.startsWith("route:MU:pere-laval-"));
+assert.equal(pereRoutes.length,2);
+assert.ok(pereRoutes.every(item=>item.route_state==="DOCUMENTED_UNMAPPED"));
 
 const laghetRoute=corpus.routes.find(item=>item.route_id==="route:FR:laghet-paillon-old-road");
 assert.equal(laghetRoute.route_state,"DOCUMENTED_UNMAPPED");
