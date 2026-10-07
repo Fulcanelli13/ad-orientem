@@ -56,9 +56,9 @@ const SHELL_STYLE = `
   position:absolute;z-index:34;top:58px;right:8px;width:min(310px,calc(100% - 16px));
   padding:13px;border:1px solid rgba(255,255,255,.075);border-radius:14px;
   background:rgba(8,13,10,.985);box-shadow:0 18px 60px rgba(0,0,0,.5);
-  opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:.18s ease
+  opacity:0;visibility:hidden;pointer-events:none;transform:none;transition:opacity .14s ease,visibility 0s linear .14s
 }
-.ao-mass-prefs[data-open="true"]{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.ao-mass-prefs[data-open="true"]{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity .14s ease}
 .ao-mass-prefs-head{display:flex;justify-content:space-between;align-items:center;color:#e3e8e3;font:600 15px Georgia,serif}
 .ao-mass-prefs-close{appearance:none;border:0;background:transparent;color:#89958c;font-size:22px;line-height:1;padding:3px 5px}
 .ao-mass-prefs-group{margin-top:14px}
