@@ -229,7 +229,7 @@ const SHELL_STYLE = `
 .ao-rail .ao-icon-mask{width:36px;height:36px}
 
 .ao-schola-dock{
-  position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
+  position:absolute;z-index:11;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
   width:min(940px,calc(100% - 170px));height:var(--ao-schola-height);min-height:100px;max-height:180px;
   display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(42px,auto) auto;
   align-items:center;gap:6px 10px;padding:11px 16px 13px;
