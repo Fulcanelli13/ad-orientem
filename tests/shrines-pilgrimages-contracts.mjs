@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:14,
-  pilgrimages:19,
-  routes:6,
-  temporalLinks:13,
-  sources:35,
+  shrines:26,
+  pilgrimages:37,
+  routes:10,
+  temporalLinks:28,
+  sources:66,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -68,6 +68,18 @@ const requiredPlaces=new Set([
   "place:AT:maria-taferl-basilica",
   "place:CH:einsiedeln-monastery",
   "place:CH:kloster-mariastein",
+  "place:US:champion-shrine",
+  "place:US:guadalupe-shrine-la-crosse",
+  "place:US:holy-hill",
+  "place:CA:sainte-anne-de-beaupre",
+  "place:CA:notre-dame-du-cap",
+  "place:CA:martyrs-shrine-midland",
+  "place:IT:loreto-santa-casa",
+  "place:IT:pompei-rosary-shrine",
+  "place:PL:jasna-gora",
+  "place:PL:kalwaria-zebrzydowska",
+  "place:GB:walsingham-catholic-shrine",
+  "place:GB:holywell-st-winefride",
 ]);
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
@@ -78,6 +90,13 @@ assert.equal(calendarDateForSemanticKey("observance.knock_apparition_anniversary
 assert.equal(calendarDateForSemanticKey("feast.blessed_jacques_desire_laval",2026),"2026-09-09");
 assert.equal(calendarDateForSemanticKey("feast.assumption_of_mary",2026),"2026-08-15");
 assert.equal(calendarDateForSemanticKey("observance.einsiedeln_engelweihe",2026),"2026-09-14");
+assert.equal(calendarDateForSemanticKey("observance.our_lady_of_champion",2026),"2026-10-09");
+assert.equal(calendarDateForSemanticKey("feast.our_lady_of_guadalupe",2026),"2026-12-12");
+assert.equal(calendarDateForSemanticKey("observance.loreto_our_lady",2026),"2026-12-10");
+assert.equal(calendarDateForSemanticKey("observance.pompeii_supplica_may_8",2026),"2026-05-08");
+assert.equal(calendarDateForSemanticKey("observance.jasna_gora_czestochowa",2026),"2026-08-26");
+assert.equal(calendarDateForSemanticKey("observance.walsingham_our_lady",2026),"2026-09-24");
+assert.equal(calendarDateForSemanticKey("observance.holywell_saint_winefride",2026),"2026-11-03");
 
 const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
 assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -85,6 +104,18 @@ const mariazellSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="t
 assert.equal(mariazellSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
 const mariasteinMonthly=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:mariastein:monthly-pilgrimage");
 assert.equal(mariasteinMonthly.binding_state,"NO_FIXED_CALENDAR_BINDING");
+
+const walkToMary=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:champion:walk-to-mary");
+assert.equal(walkToMary.binding_state,"NO_FIXED_CALENDAR_BINDING");
+const holyHillSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:holy-hill:traditional-pilgrimage");
+assert.equal(holyHillSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
+const martyrsSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:martyrs:traditional-pilgrimage");
+assert.equal(martyrsSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
+
+const walsinghamWalk=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:walsingham:lms-walk");
+assert.equal(walsinghamWalk.binding_state,"NO_FIXED_CALENDAR_BINDING");
+const holywellWalk=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:holywell:lms-pilgrimage");
+assert.equal(holywellWalk.binding_state,"NO_FIXED_CALENDAR_BINDING");
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -97,6 +128,21 @@ assert.equal(chartresRoute.stage_count,3);
 const pereRoutes=corpus.routes.filter(item=>item.route_id.startsWith("route:MU:pere-laval-"));
 assert.equal(pereRoutes.length,2);
 assert.ok(pereRoutes.every(item=>item.route_state==="DOCUMENTED_UNMAPPED"));
+
+const walkRoute=corpus.routes.find(item=>item.route_id==="route:US:walk-to-mary");
+assert.equal(walkRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(walkRoute.destination_place_id,"place:US:champion-shrine");
+const martyrsRoute=corpus.routes.find(item=>item.route_id==="route:CA:canadian-martyrs-traditional");
+assert.equal(martyrsRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(martyrsRoute.destination_place_id,"place:CA:martyrs-shrine-midland");
+
+const walsinghamRoute=corpus.routes.find(item=>item.route_id==="route:GB:ely-walsingham-lms");
+assert.equal(walsinghamRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(walsinghamRoute.stage_count,3);
+assert.equal(walsinghamRoute.destination_place_id,"place:GB:walsingham-catholic-shrine");
+const holywellRoute=corpus.routes.find(item=>item.route_id==="route:GB:holywell-church-to-well");
+assert.equal(holywellRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(holywellRoute.destination_place_id,"place:GB:holywell-st-winefride");
 
 const laghetRoute=corpus.routes.find(item=>item.route_id==="route:FR:laghet-paillon-old-road");
 assert.equal(laghetRoute.route_state,"DOCUMENTED_UNMAPPED");

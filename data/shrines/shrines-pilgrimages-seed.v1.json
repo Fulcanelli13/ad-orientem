@@ -226,6 +226,201 @@
         "SHR-MARIASTEIN-MONTHLY"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:champion-our-lady",
+      "place_id": "place:US:champion-shrine",
+      "name": "National Shrine of Our Lady of Champion",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Champion",
+      "origin_summary": "National Marian shrine at the first and only Church-approved Marian apparition site in the United States, associated with the 1859 apparitions to Adele Brise.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-CHAMPION-HOME",
+        "PIL-CHAMPION-SOLEMNITY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:guadalupe-la-crosse",
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "name": "Shrine of Our Lady of Guadalupe",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Guadalupe",
+      "origin_summary": "Marian pilgrimage shrine in La Crosse with an integrated pilgrimage route, devotional areas and a current Traditional Latin Mass schedule.",
+      "associated_saints": [
+        "Saint Juan Diego"
+      ],
+      "source_ids": [
+        "SHR-GUADALUPE-SCHEDULE",
+        "SHR-GUADALUPE-PILGRIMAGE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:holy-hill-mary-help",
+      "place_id": "place:US:holy-hill",
+      "name": "Basilica and National Shrine of Mary Help of Christians at Holy Hill",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Mary Help of Christians",
+      "origin_summary": "Historic Wisconsin Marian pilgrimage shrine staffed by Discalced Carmelites, with a continuing tradition of individual, group and annual pilgrimages.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-HOLY-HILL-OFFICIAL",
+        "PIL-HOLY-HILL-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CA:sainte-anne-de-beaupre",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "name": "Sanctuaire Sainte-Anne-de-Beaupré",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Anne",
+      "origin_summary": "Historic Québec pilgrimage shrine dedicated to Saint Anne, welcoming pilgrims for more than three centuries and centering its annual cycle on the July novena and feast.",
+      "associated_saints": [
+        "Saint Anne"
+      ],
+      "source_ids": [
+        "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
+        "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CA:notre-dame-du-cap",
+      "place_id": "place:CA:notre-dame-du-cap",
+      "name": "Sanctuaire Notre-Dame-du-Cap",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of the Cape",
+      "origin_summary": "Québec Marian pilgrimage shrine at Cap-de-la-Madeleine with a long pilgrimage tradition and an Assumption novena that became the shrine's principal annual programme.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-NDC-CONTACT",
+        "PIL-NDC-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CA:martyrs-midland",
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "name": "Martyrs' Shrine",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Canadian Martyrs",
+      "origin_summary": "National pilgrimage shrine in Midland dedicated to the Canadian Martyrs and served by the Jesuits.",
+      "associated_saints": [
+        "Saint Jean de Brébeuf",
+        "Saint Isaac Jogues"
+      ],
+      "source_ids": [
+        "SHR-MARTYRS-CONTACT",
+        "SHR-MARTYRS-MINISTRY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:loreto-holy-house",
+      "place_id": "place:IT:loreto-santa-casa",
+      "name": "Santuario Pontificio della Santa Casa di Loreto",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Blessed Virgin Mary of Loreto / Holy House",
+      "origin_summary": "Pontifical Marian sanctuary centered on the Holy House, traditionally associated with the house of Nazareth and the Annunciation.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-LORETO-CONTACT",
+        "SHR-LORETO-HOLY-HOUSE",
+        "PIL-LORETO-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:pompei-rosary",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "name": "Pontificio Santuario della Beata Maria Vergine del Santo Rosario di Pompei",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of the Rosary of Pompeii",
+      "origin_summary": "Pontifical Marian shrine founded through the apostolate of Saint Bartolo Longo and centered on devotion to the Rosary and the Supplica.",
+      "associated_saints": [
+        "Saint Bartolo Longo"
+      ],
+      "source_ids": [
+        "SHR-POMPEI-CONTACT",
+        "PIL-POMPEI-SUPPLICA-MAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PL:jasna-gora-czestochowa",
+      "place_id": "place:PL:jasna-gora",
+      "name": "Jasna Góra",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Częstochowa",
+      "origin_summary": "Pauline monastery and major Polish Marian pilgrimage shrine centered on the icon of Our Lady of Częstochowa.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-JASNA-GORA-CONTACT",
+        "PIL-JASNA-GORA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PL:kalwaria-zebrzydowska",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "name": "Sanktuarium Pasyjno-Maryjne w Kalwarii Zebrzydowskiej",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Kalwaria",
+      "origin_summary": "Bernardine Passion-Marian pilgrimage sanctuary with devotional paths, rosary practice and major Assumption observances.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-KALWARIA-CONTACT",
+        "PIL-KALWARIA-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:GB:walsingham-our-lady",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "name": "Catholic National Shrine and Basilica of Our Lady, Walsingham",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Walsingham",
+      "origin_summary": "Catholic National Shrine and Basilica at Walsingham, restored around the Slipper Chapel and dedicated to the mystery of the Incarnation and Our Lady of Walsingham.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-WALSINGHAM-CONTACT",
+        "PIL-WALSINGHAM-FEAST",
+        "PIL-WALSINGHAM-LMS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:GB:holywell-st-winefride",
+      "place_id": "place:GB:holywell-st-winefride",
+      "name": "St Winefride's Shrine & Well",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Winefride",
+      "origin_summary": "Ancient Welsh Catholic pilgrimage shrine centered on St Winefride's Well, with an unbroken tradition of pilgrimage and veneration.",
+      "associated_saints": [
+        "Saint Winefride",
+        "Saint Beuno"
+      ],
+      "source_ids": [
+        "SHR-HOLYWELL-CONTACT",
+        "PIL-HOLYWELL-FEAST",
+        "PIL-HOLYWELL-LMS"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -525,6 +720,290 @@
         "SHR-MARIASTEIN-MONTHLY"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:champion-destination",
+      "name": "Pilgrimage to the National Shrine of Our Lady of Champion",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:champion-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open individual and group pilgrimage destination at the approved apparition site in Champion.",
+      "source_ids": [
+        "SHR-CHAMPION-HOME"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:champion-solemnity",
+      "name": "Solemnity pilgrimage of Our Lady of Champion",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:champion-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:champion:solemnity"
+      ],
+      "scope_note": "Annual 9 October shrine solemnity with Mass and Eucharistic Rosary Procession on the apparition anniversary.",
+      "source_ids": [
+        "PIL-CHAMPION-SOLEMNITY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:walk-to-mary",
+      "name": "Walk to Mary pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:champion-our-lady",
+      "route_ids": [
+        "route:US:walk-to-mary"
+      ],
+      "temporal_link_ids": [
+        "temporal:champion:walk-to-mary"
+      ],
+      "scope_note": "Annual first-Saturday-of-May walking pilgrimage from the National Shrine of Saint Joseph at St. Norbert College to the National Shrine of Our Lady of Champion.",
+      "source_ids": [
+        "PIL-CHAMPION-EVENTS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:guadalupe-la-crosse-destination",
+      "name": "Pilgrimage to the Shrine of Our Lady of Guadalupe",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:guadalupe-la-crosse",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:guadalupe:solemnity"
+      ],
+      "scope_note": "Open pilgrimage destination with devotional paths, shrine church, votive-candle chapel and formal pilgrimage coordination.",
+      "source_ids": [
+        "SHR-GUADALUPE-PILGRIMAGE",
+        "SHR-GUADALUPE-SCHEDULE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:holy-hill-destination",
+      "name": "Pilgrimage to Holy Hill",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:holy-hill-mary-help",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open Marian pilgrimage destination at the Basilica and National Shrine of Mary Help of Christians.",
+      "source_ids": [
+        "SHR-HOLY-HILL-OFFICIAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:holy-hill-traditional",
+      "name": "Traditional Holy Hill Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:holy-hill-mary-help",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:holy-hill:traditional-pilgrimage"
+      ],
+      "scope_note": "Current three-day traditional Catholic walking pilgrimage to Holy Hill, organized through Saint Pius V Chapel / SSPX, culminating at the basilica.",
+      "source_ids": [
+        "PIL-HOLY-HILL-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CA:sainte-anne-de-beaupre-destination",
+      "name": "Pilgrimage to Sainte-Anne-de-Beaupré",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CA:sainte-anne-de-beaupre",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:sainte-anne-beaupre:feast"
+      ],
+      "scope_note": "Historic Saint Anne pilgrimage destination whose annual cycle includes the 17–25 July novena and 26 July feast.",
+      "source_ids": [
+        "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
+        "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CA:notre-dame-du-cap-destination",
+      "name": "Pilgrimage to Notre-Dame-du-Cap",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CA:notre-dame-du-cap",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:notre-dame-du-cap:assumption"
+      ],
+      "scope_note": "Marian pilgrimage destination whose principal annual programme includes the Assumption novena from 7 to 15 August.",
+      "source_ids": [
+        "SHR-NDC-CONTACT",
+        "PIL-NDC-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CA:martyrs-midland-destination",
+      "name": "Pilgrimage to Martyrs' Shrine",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CA:martyrs-midland",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open pilgrimage destination dedicated to the Canadian Martyrs at Midland.",
+      "source_ids": [
+        "SHR-MARTYRS-CONTACT",
+        "SHR-MARTYRS-MINISTRY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CA:canadian-martyrs-traditional",
+      "name": "Canadian Martyrs traditional pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CA:martyrs-midland",
+      "route_ids": [
+        "route:CA:canadian-martyrs-traditional"
+      ],
+      "temporal_link_ids": [
+        "temporal:martyrs:traditional-pilgrimage"
+      ],
+      "scope_note": "Current chapter-based traditional walking pilgrimage with relic veneration at Martyrs' Shrine and Solemn High Mass in the Midland mission landscape.",
+      "source_ids": [
+        "PIL-MARTYRS-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:loreto-destination",
+      "name": "Pilgrimage to the Holy House of Loreto",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:loreto-holy-house",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:loreto:our-lady-feast"
+      ],
+      "scope_note": "Open pilgrimage destination centered on the Holy House, with a major annual Venuta and Our Lady of Loreto observance on 9–10 December.",
+      "source_ids": [
+        "SHR-LORETO-HOLY-HOUSE",
+        "PIL-LORETO-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:pompei-destination",
+      "name": "Pilgrimage to Our Lady of the Rosary of Pompeii",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:pompei-rosary",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:pompei:supplica-may-8"
+      ],
+      "scope_note": "Rosary pilgrimage destination whose recurring 8 May Supplica draws large numbers of pilgrims to the sanctuary.",
+      "source_ids": [
+        "SHR-POMPEI-CONTACT",
+        "PIL-POMPEI-SUPPLICA-MAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PL:jasna-gora-destination",
+      "name": "Pilgrimage to Jasna Góra",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PL:jasna-gora-czestochowa",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:jasna-gora:czestochowa-feast"
+      ],
+      "scope_note": "Major Polish Marian pilgrimage destination receiving large organized and walking pilgrimages, with the 26 August feast of Our Lady of Częstochowa as a principal annual observance.",
+      "source_ids": [
+        "SHR-JASNA-GORA-CONTACT",
+        "PIL-JASNA-GORA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PL:kalwaria-destination",
+      "name": "Pilgrimage to Kalwaria Zebrzydowska",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PL:kalwaria-zebrzydowska",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:kalwaria:assumption"
+      ],
+      "scope_note": "Passion-Marian pilgrimage destination with devotional paths and a major annual Assumption cycle from 9 to 16 August.",
+      "source_ids": [
+        "SHR-KALWARIA-CONTACT",
+        "PIL-KALWARIA-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:walsingham-destination",
+      "name": "Pilgrimage to Our Lady of Walsingham",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:walsingham-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:walsingham:our-lady-feast"
+      ],
+      "scope_note": "Catholic National Shrine pilgrimage destination whose feast of Our Lady of Walsingham is observed on 24 September.",
+      "source_ids": [
+        "SHR-WALSINGHAM-CONTACT",
+        "PIL-WALSINGHAM-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:walsingham-lms",
+      "name": "Latin Mass Society walking pilgrimage to Walsingham",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:walsingham-our-lady",
+      "route_ids": [
+        "route:GB:ely-walsingham-lms"
+      ],
+      "temporal_link_ids": [
+        "temporal:walsingham:lms-walk"
+      ],
+      "scope_note": "Annual traditional Catholic walking pilgrimage from Ely to Walsingham with Traditional High Masses, devotions and procession at the Catholic National Shrine.",
+      "source_ids": [
+        "PIL-WALSINGHAM-LMS",
+        "SHR-WALSINGHAM-CONTACT"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:holywell-destination",
+      "name": "Pilgrimage to St Winefride's Well",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:holywell-st-winefride",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:holywell:saint-winefride-feast"
+      ],
+      "scope_note": "Ancient Welsh pilgrimage destination focused on the Well, relic veneration and devotion to Saint Winefride; her liturgical feast is observed locally on 3 November.",
+      "source_ids": [
+        "SHR-HOLYWELL-CONTACT",
+        "PIL-HOLYWELL-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:holywell-lms",
+      "name": "Latin Mass Society Holywell pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:holywell-st-winefride",
+      "route_ids": [
+        "route:GB:holywell-church-to-well"
+      ],
+      "temporal_link_ids": [
+        "temporal:holywell:lms-pilgrimage"
+      ],
+      "scope_note": "Annual first-Sunday-of-July traditional pilgrimage with High Mass, rosary procession to St Winefride's Well and veneration of the saint's relic.",
+      "source_ids": [
+        "PIL-HOLYWELL-LMS",
+        "SHR-HOLYWELL-CONTACT"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -615,6 +1094,66 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-PERE-LAVAL-ANNUAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:US:walk-to-mary",
+      "name": "National Shrine of Saint Joseph to Our Lady of Champion",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "National Shrine of Saint Joseph at St. Norbert College, De Pere, Wisconsin",
+      "destination_place_id": "place:US:champion-shrine",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-CHAMPION-EVENTS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:CA:canadian-martyrs-traditional",
+      "name": "Crystal Beach to Martyrs' Shrine",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Crystal Beach, 1645 Rosemount Road, Ontario",
+      "destination_place_id": "place:CA:martyrs-shrine-midland",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-MARTYRS-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:GB:ely-walsingham-lms",
+      "name": "Ely to Walsingham",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Ely, Cambridgeshire",
+      "destination_place_id": "place:GB:walsingham-catholic-shrine",
+      "stage_count": 3,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-WALSINGHAM-LMS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:GB:holywell-church-to-well",
+      "name": "St Winefride's Parish Church to St Winefride's Well",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "St Winefride's RC Parish Church, 15 Well Street, Holywell",
+      "destination_place_id": "place:GB:holywell-st-winefride",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-HOLYWELL-LMS"
       ],
       "confidence": "HIGH"
     }
@@ -795,6 +1334,211 @@
       "source_event_label": "Monthly pilgrimage on the first Wednesday",
       "source_ids": [
         "SHR-MARIASTEIN-MONTHLY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:champion:solemnity",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:champion-solemnity",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.our_lady_of_champion",
+      "source_event_label": "Solemnity of Our Lady of Champion",
+      "source_ids": [
+        "PIL-CHAMPION-SOLEMNITY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:champion:walk-to-mary",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:walk-to-mary",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Walk to Mary — first Saturday of May",
+      "source_ids": [
+        "PIL-CHAMPION-EVENTS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:guadalupe:solemnity",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:guadalupe-la-crosse-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.our_lady_of_guadalupe",
+      "source_event_label": "Solemnity of Our Lady of Guadalupe",
+      "source_ids": [
+        "PIL-GUADALUPE-SOLEMNITY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:holy-hill:traditional-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:holy-hill-traditional",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual traditional Holy Hill pilgrimage",
+      "source_ids": [
+        "PIL-HOLY-HILL-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:sainte-anne-beaupre:feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CA:sainte-anne-de-beaupre-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.saint_anne",
+      "source_event_label": "Feast of Saint Anne at Sainte-Anne-de-Beaupré",
+      "source_ids": [
+        "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:notre-dame-du-cap:assumption",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CA:notre-dame-du-cap-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.assumption_of_mary",
+      "source_event_label": "Assumption novena and feast at Notre-Dame-du-Cap",
+      "source_ids": [
+        "PIL-NDC-ASSUMPTION"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:martyrs:traditional-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CA:canadian-martyrs-traditional",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual Canadian Martyrs traditional pilgrimage",
+      "source_ids": [
+        "PIL-MARTYRS-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:loreto:our-lady-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:IT:loreto-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.loreto_our_lady",
+      "source_event_label": "Feast of the Blessed Virgin Mary of Loreto",
+      "source_ids": [
+        "PIL-LORETO-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:pompei:supplica-may-8",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:IT:pompei-destination",
+      "relation": "SOURCE_EVENT",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.pompeii_supplica_may_8",
+      "source_event_label": "Supplica to Our Lady of the Rosary of Pompeii",
+      "source_ids": [
+        "PIL-POMPEI-SUPPLICA-MAY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:jasna-gora:czestochowa-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PL:jasna-gora-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.jasna_gora_czestochowa",
+      "source_event_label": "Feast of Our Lady of Częstochowa",
+      "source_ids": [
+        "PIL-JASNA-GORA-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:kalwaria:assumption",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PL:kalwaria-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.assumption_of_mary",
+      "source_event_label": "Assumption pilgrimage cycle at Kalwaria Zebrzydowska",
+      "source_ids": [
+        "PIL-KALWARIA-ASSUMPTION"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:walsingham:our-lady-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:walsingham-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.walsingham_our_lady",
+      "source_event_label": "Feast of Our Lady of Walsingham",
+      "source_ids": [
+        "PIL-WALSINGHAM-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:walsingham:lms-walk",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:walsingham-lms",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual LMS walking pilgrimage over the August Bank Holiday period",
+      "source_ids": [
+        "PIL-WALSINGHAM-LMS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:holywell:saint-winefride-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:holywell-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.holywell_saint_winefride",
+      "source_event_label": "Liturgical feast of Saint Winefride",
+      "source_ids": [
+        "PIL-HOLYWELL-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:holywell:lms-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:holywell-lms",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual LMS Holywell pilgrimage on the first Sunday of July",
+      "source_ids": [
+        "PIL-HOLYWELL-LMS"
       ],
       "confidence": "HIGH"
     }

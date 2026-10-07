@@ -76,7 +76,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,15,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,28,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -177,6 +177,100 @@ assert.ok(mariastein);
 assert.equal(mariastein.counts.shrines,1);
 assert.equal(mariastein.counts.pilgrimages,1);
 assert.equal(mariastein.calendar.length,0,"monthly Mariastein pilgrimage should remain recurrence context, not a single date");
+
+const champion=explorePlaceProfile(profiles,"place:US:champion-shrine");
+assert.ok(champion);
+assert.equal(champion.counts.shrines,1);
+assert.equal(champion.counts.pilgrimages,3);
+assert.ok(champion.counts.traditions>=1);
+assert.equal(champion.map_publishable,false);
+assert.ok(champion.calendar.some(row=>row.semantic_key==="observance.our_lady_of_champion"&&row.date==="2026-10-09"));
+
+const guadalupe=explorePlaceProfile(profiles,"place:US:guadalupe-shrine-la-crosse");
+assert.ok(guadalupe);
+assert.equal(guadalupe.counts.shrines,1);
+assert.equal(guadalupe.counts.pilgrimages,1);
+assert.ok(guadalupe.counts.traditions>=1);
+assert.equal(guadalupe.counts.tlm,0,"unresolved Guadalupe TLM candidate leaked into exact-place TLM projection");
+assert.ok(guadalupe.calendar.some(row=>row.semantic_key==="feast.our_lady_of_guadalupe"&&row.date==="2026-12-12"));
+
+const holyHill=explorePlaceProfile(profiles,"place:US:holy-hill");
+assert.ok(holyHill);
+assert.equal(holyHill.counts.shrines,1);
+assert.equal(holyHill.counts.pilgrimages,2);
+assert.equal(holyHill.calendar.length,0,"annual traditional Holy Hill pilgrimage was incorrectly reduced to one fixed Calendar date");
+
+const beaupre=explorePlaceProfile(profiles,"place:CA:sainte-anne-de-beaupre");
+assert.ok(beaupre);
+assert.equal(beaupre.counts.shrines,1);
+assert.equal(beaupre.counts.pilgrimages,1);
+assert.ok(beaupre.counts.traditions>=1);
+assert.ok(beaupre.calendar.some(row=>row.semantic_key==="feast.saint_anne"&&row.date==="2027-07-26"));
+
+const ndc=explorePlaceProfile(profiles,"place:CA:notre-dame-du-cap");
+assert.ok(ndc);
+assert.equal(ndc.counts.shrines,1);
+assert.equal(ndc.counts.pilgrimages,1);
+assert.ok(ndc.counts.traditions>=1);
+assert.ok(ndc.calendar.some(row=>row.semantic_key==="feast.assumption_of_mary"&&row.date==="2027-08-15"));
+
+const martyrs=explorePlaceProfile(profiles,"place:CA:martyrs-shrine-midland");
+assert.ok(martyrs);
+assert.equal(martyrs.counts.shrines,1);
+assert.equal(martyrs.counts.pilgrimages,2);
+assert.equal(martyrs.calendar.length,0);
+assert.equal(martyrs.counts.tlm,0,"traditional pilgrimage evidence incorrectly created an exact-place TLM venue");
+
+const loreto=explorePlaceProfile(profiles,"place:IT:loreto-santa-casa");
+assert.ok(loreto);
+assert.equal(loreto.counts.shrines,1);
+assert.equal(loreto.counts.pilgrimages,1);
+assert.ok(loreto.counts.traditions>=1);
+assert.equal(loreto.map_publishable,false);
+assert.ok(loreto.calendar.some(row=>row.semantic_key==="observance.loreto_our_lady"&&row.date==="2026-12-10"));
+
+const pompei=explorePlaceProfile(profiles,"place:IT:pompei-rosary-shrine");
+assert.ok(pompei);
+assert.equal(pompei.counts.shrines,1);
+assert.equal(pompei.counts.pilgrimages,1);
+assert.ok(pompei.counts.traditions>=1);
+assert.ok(pompei.calendar.some(row=>row.semantic_key==="observance.pompeii_supplica_may_8"&&row.date==="2027-05-08"));
+
+const jasna=explorePlaceProfile(profiles,"place:PL:jasna-gora");
+assert.ok(jasna);
+assert.equal(jasna.counts.shrines,1);
+assert.equal(jasna.counts.pilgrimages,1);
+assert.ok(jasna.counts.traditions>=1);
+assert.ok(jasna.calendar.some(row=>row.semantic_key==="observance.jasna_gora_czestochowa"&&row.date==="2027-08-26"));
+
+const kalwaria=explorePlaceProfile(profiles,"place:PL:kalwaria-zebrzydowska");
+assert.ok(kalwaria);
+assert.equal(kalwaria.counts.shrines,1);
+assert.equal(kalwaria.counts.pilgrimages,1);
+assert.ok(kalwaria.counts.traditions>=1);
+assert.ok(kalwaria.calendar.some(row=>row.semantic_key==="feast.assumption_of_mary"&&row.date==="2027-08-15"));
+
+const walsingham=explorePlaceProfile(profiles,"place:GB:walsingham-catholic-shrine");
+assert.ok(walsingham);
+assert.equal(walsingham.counts.shrines,1);
+assert.equal(walsingham.counts.pilgrimages,2);
+assert.ok(walsingham.counts.traditions>=1);
+assert.equal(walsingham.counts.tlm,0,"annual Walsingham traditional pilgrimage leaked into exact-place TLM projection");
+assert.ok(walsingham.calendar.some(row=>row.semantic_key==="observance.walsingham_our_lady"&&row.date==="2027-09-24"));
+
+const holywell=explorePlaceProfile(profiles,"place:GB:holywell-st-winefride");
+assert.ok(holywell);
+assert.equal(holywell.counts.shrines,1);
+assert.equal(holywell.counts.pilgrimages,2);
+assert.ok(holywell.counts.traditions>=1);
+assert.equal(holywell.counts.tlm,0,"Holywell pilgrimage evidence leaked into Well-shrine TLM projection");
+assert.ok(holywell.calendar.some(row=>row.semantic_key==="observance.holywell_saint_winefride"&&row.date==="2026-11-03"));
+
+const holywellChurch=explorePlaceProfile(profiles,"place:GB:holywell-st-winefride-church");
+assert.ok(holywellChurch);
+assert.equal(holywellChurch.counts.shrines,0);
+assert.equal(holywellChurch.counts.pilgrimages,0);
+assert.equal(holywellChurch.counts.tlm,0,"unresolved Holywell parish candidate leaked into exact-place TLM projection");
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"})[0];
 assert.equal(placeIdForExploreItem(lourdesShrine),lourdes.place_id);

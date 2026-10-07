@@ -1133,7 +1133,7 @@ try{
     cards:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModCard")].map(x=>{const r=x.getBoundingClientRect();return {w:r.width,h:r.height}}),
   }));
   assert.equal(learnParity.heroTitles,1,"Learn lost its single formation identity");
-  assert.equal(learnParity.heroTitle,"Learn","Learn hero no longer preserves the locked donor title");
+  assert.equal(learnParity.heroTitle,"Formation","Formation hero no longer preserves the locked A2 title");
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
   assert.deepEqual(learnParity.sectionTitles,["Daily formation","Courses & study","Traditional Catholic life","Today in context"],"Learn section hierarchy diverged from v43.59.30 plus v38.4 Holy Orders formation");

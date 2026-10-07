@@ -11,7 +11,7 @@ import {
 assert.equal(LEARN_DONOR_RELEASE,"43.59.30");
 assert.equal(LEARN_PRESENTATION_VERSION,"modular-learn-presentation-v1");
 assert.deepEqual(LEARN_LAYOUT.kicker,["FORMATION","FORMATION"]);
-assert.deepEqual(LEARN_LAYOUT.title,["Learn","Apprendre"]);
+assert.deepEqual(LEARN_LAYOUT.title,["Formation","Formation"]);
 assert.deepEqual(
   LEARN_LAYOUT.sections.map(section=>section.title),
   [
@@ -24,8 +24,9 @@ assert.deepEqual(
 assert.deepEqual(
   LEARN_MODULE_IDS,
   ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
-  "Learn visible launcher order changed after moving Saint of the Day into Calendar",
+  "Formation rename changed the canonical Learn launcher IDs",
 );
+assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
 assert.deepEqual(
   LEARN_LAYOUT.sections.flatMap(section=>section.items.filter(item=>item.featured).map(item=>item.id)),
   ["learn.catechism.daily","learn.mass"],
@@ -38,6 +39,7 @@ const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const host=readFileSync("src/app/host-adapter.js","utf8");
 
 assert.match(owner,/AO_LEARN_APP_V1/);
+assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
 assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint"\]\)/,"hidden Saint of the Day compatibility alias was removed");
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.match(owner,/modular-learn-v1/);

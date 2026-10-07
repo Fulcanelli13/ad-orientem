@@ -35,7 +35,7 @@ for (const entry of negative.entries) {
 }
 
 assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 21);
+assert.equal(atlas.attestations.length, 31);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -49,13 +49,13 @@ const result = assertCustomsAtlasRegistry({
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
   customs: 13,
-  attestations: 21,
-  sources: 25,
+  attestations: 31,
+  sources: 35,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
   [...result.mapCandidates].sort(),
-  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE"].sort(),
+  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE", "att:DEV-007:CHAMPION", "att:DEV-010:GUADALUPE-LA-CROSSE", "att:DEV-007:SAINTE-ANNE-BEAUPRE", "att:DEV-010:NOTRE-DAME-DU-CAP", "att:DEV-007:LORETO-VENUTA", "att:DEV-007:POMPEI-SUPPLICA", "att:DEV-007:JASNA-GORA", "att:DEV-007:KALWARIA-ASSUMPTION", "att:DEV-007:WALSINGHAM", "att:DEV-007:HOLYWELL-ST-WINEFRIDE"].sort(),
 );
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
@@ -77,6 +77,28 @@ const mariazell=atlas.attestations.find(item=>item.attestation_id==="att:DEV-010
 assert.equal(mariazell.place_id,"place:AT:mariazell-basilica");
 const einsiedeln=atlas.attestations.find(item=>item.attestation_id==="att:DEV-007:EINSIEDELN-ENGELWEIHE");
 assert.equal(einsiedeln.place_id,"place:CH:einsiedeln-monastery");
+
+const champion=atlas.attestations.find(item=>item.attestation_id==="att:DEV-007:CHAMPION");
+assert.equal(champion.place_id,"place:US:champion-shrine");
+const guadalupe=atlas.attestations.find(item=>item.attestation_id==="att:DEV-010:GUADALUPE-LA-CROSSE");
+assert.equal(guadalupe.place_id,"place:US:guadalupe-shrine-la-crosse");
+const sainteAnneBeaupre=atlas.attestations.find(item=>item.attestation_id==="att:DEV-007:SAINTE-ANNE-BEAUPRE");
+assert.equal(sainteAnneBeaupre.place_id,"place:CA:sainte-anne-de-beaupre");
+const ndc=atlas.attestations.find(item=>item.attestation_id==="att:DEV-010:NOTRE-DAME-DU-CAP");
+assert.equal(ndc.place_id,"place:CA:notre-dame-du-cap");
+
+for(const [id,place] of [
+  ["att:DEV-007:LORETO-VENUTA","place:IT:loreto-santa-casa"],
+  ["att:DEV-007:POMPEI-SUPPLICA","place:IT:pompei-rosary-shrine"],
+  ["att:DEV-007:JASNA-GORA","place:PL:jasna-gora"],
+  ["att:DEV-007:KALWARIA-ASSUMPTION","place:PL:kalwaria-zebrzydowska"],
+  ["att:DEV-007:WALSINGHAM","place:GB:walsingham-catholic-shrine"],
+  ["att:DEV-007:HOLYWELL-ST-WINEFRIDE","place:GB:holywell-st-winefride"],
+]){
+  const att=atlas.attestations.find(item=>item.attestation_id===id);
+  assert.ok(att,id+" missing");
+  assert.equal(att.place_id,place,id);
+}
 
 const universalPilgrimage = atlas.attestations.find(item => item.attestation_id === "att:DEV-006:WORLD");
 assert.equal(universalPilgrimage.map_policy, "NOT_MAPPED");

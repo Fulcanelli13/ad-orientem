@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:14,
-  traditions:39,
-  pilgrimages:19,
+  shrines:26,
+  traditions:49,
+  pilgrimages:37,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -226,6 +226,73 @@ assert.ok(einsiedelnCustom.some(item=>item.source_id==="att:DEV-007:EINSIEDELN-E
 const mariastein=filterExploreItems(projection.byLens.pilgrimages,{query:"Mariastein"});
 assert.equal(mariastein.length,1);
 assert.ok(mariastein[0].sections.some(section=>/first Wednesday/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const champion=filterExploreItems(projection.byLens.pilgrimages,{query:"Our Lady of Champion"});
+assert.ok(champion.length>=1);
+assert.ok(champion.every(item=>item.map_publishable===false));
+assert.ok(champion.some(item=>item.sections.some(section=>/Solemnity of Our Lady of Champion/.test(section.title)&&/Resolved by Calendar/.test(section.body))));
+
+const guadalupeShrine=filterExploreItems(projection.byLens.shrines,{query:"Guadalupe"});
+assert.equal(guadalupeShrine.length,1);
+assert.equal(guadalupeShrine[0].map_publishable,false);
+const guadalupeCandles=filterExploreItems(projection.byLens.traditions,{query:"Votive Candle"});
+assert.ok(guadalupeCandles.some(item=>item.source_id==="att:DEV-010:GUADALUPE-LA-CROSSE"));
+
+const holyHill=filterExploreItems(projection.byLens.pilgrimages,{query:"Traditional Holy Hill"});
+assert.equal(holyHill.length,1);
+assert.equal(holyHill[0].map_publishable,false);
+assert.ok(holyHill[0].sections.some(section=>/Annual traditional Holy Hill pilgrimage/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const beaupre=filterExploreItems(projection.byLens.pilgrimages,{query:"Sainte-Anne-de-Beaupré"});
+assert.equal(beaupre.length,1);
+assert.ok(beaupre[0].sections.some(section=>/Feast of Saint Anne/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const ndc=filterExploreItems(projection.byLens.pilgrimages,{query:"Notre-Dame-du-Cap"});
+assert.equal(ndc.length,1);
+assert.ok(ndc[0].sections.some(section=>/Assumption/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+const ndcCandle=filterExploreItems(projection.byLens.traditions,{query:"novena candle"});
+assert.ok(ndcCandle.some(item=>item.source_id==="att:DEV-010:NOTRE-DAME-DU-CAP"));
+
+const martyrs=filterExploreItems(projection.byLens.pilgrimages,{query:"Canadian Martyrs traditional"});
+assert.equal(martyrs.length,1);
+assert.equal(martyrs[0].map_publishable,false);
+assert.ok(martyrs[0].sections.some(section=>/Annual Canadian Martyrs traditional pilgrimage/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const loreto=filterExploreItems(projection.byLens.pilgrimages,{query:"Loreto"});
+assert.equal(loreto.length,1);
+assert.equal(loreto[0].map_publishable,false);
+assert.ok(loreto[0].sections.some(section=>/Blessed Virgin Mary of Loreto/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+const loretoCustom=filterExploreItems(projection.byLens.traditions,{query:"Venuta"});
+assert.ok(loretoCustom.some(item=>item.source_id==="att:DEV-007:LORETO-VENUTA"));
+
+const pompei=filterExploreItems(projection.byLens.pilgrimages,{query:"Pompeii"});
+assert.equal(pompei.length,1);
+assert.equal(pompei[0].map_publishable,false);
+assert.ok(pompei[0].sections.some(section=>/Supplica/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const jasna=filterExploreItems(projection.byLens.pilgrimages,{query:"Jasna Góra"});
+assert.equal(jasna.length,1);
+assert.equal(jasna[0].map_publishable,false);
+assert.ok(jasna[0].sections.some(section=>/Częstochowa/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const kalwaria=filterExploreItems(projection.byLens.pilgrimages,{query:"Kalwaria"});
+assert.equal(kalwaria.length,1);
+assert.equal(kalwaria[0].map_publishable,false);
+assert.ok(kalwaria[0].sections.some(section=>/Assumption/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const walsingham=filterExploreItems(projection.byLens.pilgrimages,{query:"Walsingham"});
+assert.equal(walsingham.length,2);
+assert.ok(walsingham.every(item=>item.map_publishable===false));
+assert.ok(walsingham.some(item=>item.sections.some(section=>/Our Lady of Walsingham/.test(section.title)&&/Resolved by Calendar/.test(section.body))));
+assert.ok(walsingham.some(item=>item.sections.some(section=>/August Bank Holiday/.test(section.title)&&/no single recurring Calendar date/i.test(section.body))));
+
+const holywell=filterExploreItems(projection.byLens.pilgrimages,{query:"Holywell"});
+assert.equal(holywell.length,2);
+assert.ok(holywell.every(item=>item.map_publishable===false));
+assert.ok(holywell.some(item=>item.sections.some(section=>/Saint Winefride/.test(section.title)&&/Resolved by Calendar/.test(section.body))));
+assert.ok(holywell.some(item=>item.sections.some(section=>/first Sunday of July/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body))));
+
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,3,"tranche 4 address-only shrines unexpectedly published map points");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
