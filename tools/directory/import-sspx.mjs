@@ -104,6 +104,7 @@ function venueTypeFor(place) {
 }
 
 function validNumber(value) {
+  if (value === null || value === undefined || value === "") return null;
   const number = Number(value);
   return Number.isFinite(number) ? number : null;
 }
@@ -207,7 +208,7 @@ export function mapSspxPlace(place) {
     source_ids: [sourceId],
     verification: {
       state: "OFFICIAL_LIVE",
-      checked_at: place?.updatedAt ?? schedule?.updatedAt ?? null,
+      checked_at: schedule?.updatedAt ?? place?.updatedAt ?? null,
     },
   }));
 
@@ -281,7 +282,8 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
     type: "FeatureCollection",
     features: venueRecords
       .filter(venue => publishableIds.has(venue.venue_id))
-      .filter(venue => Number.isFinite(Number(venue?.geo?.lat)) && Number.isFinite(Number(venue?.geo?.lng)))
+      .filter(venue => venue?.geo?.lat !== null && venue?.geo?.lat !== undefined && venue?.geo?.lng !== null && venue?.geo?.lng !== undefined)
+      .filter(venue => Number.isFinite(Number(venue.geo.lat)) && Number.isFinite(Number(venue.geo.lng)))
       .map(venue => {
         const ministry = ministryRecords.find(item => item.venue_id === venue.venue_id);
         return {
