@@ -146,7 +146,7 @@ function applyCached(id){
   const s=store.getState();if(s?.selectedDate!==id)store.dispatch({type:"set-date",date:id});
   store.dispatch({type:"resolve-complete",resolution:r});return store.getState()?.resolution?.date===id;
 }
-function cancelPendingNavigation(){navEpoch++;foregroundWeek="";hideWeekLoader();return true}
+function cancelPendingNavigation(){navEpoch++;monthEpoch++;foregroundWeek="";hideWeekLoader();return true}
 function hideWeekLoaderAfterPaint(token){
   const done=()=>{if(token===navEpoch)hideWeekLoader()};
   if(typeof globalThis.requestAnimationFrame==="function")globalThis.requestAnimationFrame(()=>globalThis.requestAnimationFrame(done));
