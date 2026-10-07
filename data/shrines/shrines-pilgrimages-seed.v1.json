@@ -765,6 +765,106 @@
         "PIL-SAMEIRO-PILGRIMAGES"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:alphonsus-baltimore",
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "name": "National Shrine of Saint Alphonsus Liguori",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Alphonsus Liguori",
+      "origin_summary": "Historic Baltimore shrine church dedicated in 1845 and currently entrusted to the Priestly Fraternity of Saint Peter for the Traditional Latin Mass.",
+      "associated_saints": [
+        "Saint Alphonsus Liguori",
+        "Saint John Neumann"
+      ],
+      "source_ids": [
+        "SHR-ALPHONSUS-BALTIMORE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:neumann-philadelphia",
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "name": "National Shrine of St. John Neumann",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint John Neumann",
+      "origin_summary": "National shrine at St. Peter the Apostle Church in Philadelphia containing the remains of Saint John Neumann and operating an explicit pilgrimage and retreat ministry.",
+      "associated_saints": [
+        "Saint John Neumann"
+      ],
+      "source_ids": [
+        "SHR-NEUMANN-PHILADELPHIA",
+        "PIL-NEUMANN-PHILADELPHIA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:miraculous-medal-philadelphia",
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "name": "Basilica Shrine of Our Lady of the Miraculous Medal",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of the Miraculous Medal",
+      "origin_summary": "Philadelphia Marian basilica shrine associated with the Central Association of the Miraculous Medal and the uninterrupted Monday Perpetual Novena begun in 1930.",
+      "associated_saints": [
+        "Saint Catherine Labouré"
+      ],
+      "source_ids": [
+        "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
+        "PIL-MIRACULOUS-MEDAL-NOVENA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:czestochowa-doylestown",
+      "place_id": "place:US:czestochowa-doylestown",
+      "name": "National Shrine of Our Lady of Czestochowa",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Czestochowa",
+      "origin_summary": "Polish-American Marian shrine in Doylestown established in 1955 and serving as a continuing destination for multi-day walking pilgrimages.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-CZESTOCHOWA-US",
+        "PIL-CZESTOCHOWA-US-WALK"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:seton-emmitsburg",
+      "place_id": "place:US:seton-emmitsburg",
+      "name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Elizabeth Ann Seton",
+      "origin_summary": "National shrine in Emmitsburg preserving sites associated with Saint Elizabeth Ann Seton and hosting individual, group and recurring institutional pilgrimages.",
+      "associated_saints": [
+        "Saint Elizabeth Ann Seton"
+      ],
+      "source_ids": [
+        "SHR-SETON-EMMITSBURG",
+        "PIL-SETON-SEA-SERVICES-2026"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "name": "National Shrine Grotto of Our Lady of Lourdes",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Lourdes",
+      "origin_summary": "Emmitsburg Marian pilgrimage shrine whose Lourdes replica was built seventeen years after the 1858 apparitions and which continues an annual Lourdes feast-day novena.",
+      "associated_saints": [
+        "Saint Bernadette Soubirous"
+      ],
+      "source_ids": [
+        "SHR-GROTTO-LOURDES-EMMITSBURG",
+        "PIL-GROTTO-LOURDES-FEAST"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -1731,6 +1831,122 @@
         "PIL-SAMEIRO-PILGRIMAGES"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:alphonsus-baltimore-destination",
+      "name": "Visit and pilgrimage to the National Shrine of Saint Alphonsus Liguori",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:alphonsus-baltimore",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic national-shrine destination in Baltimore with current Traditional Latin Mass, public liturgy and arranged visits.",
+      "source_ids": [
+        "SHR-ALPHONSUS-BALTIMORE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:neumann-philadelphia-destination",
+      "name": "Pilgrimage to the National Shrine of St. John Neumann",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:neumann-philadelphia",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open individual and organized group pilgrimage destination at the tomb of Saint John Neumann, with Rosary, Mass, museum and shrine visit.",
+      "source_ids": [
+        "PIL-NEUMANN-PHILADELPHIA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:miraculous-medal-philadelphia-destination",
+      "name": "Pilgrimage to the Basilica Shrine of Our Lady of the Miraculous Medal",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:miraculous-medal-philadelphia",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:miraculous-medal:monday-novena"
+      ],
+      "scope_note": "Open Marian pilgrimage and retreat destination whose current devotional programme includes the historic Monday Perpetual Novena.",
+      "source_ids": [
+        "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
+        "PIL-MIRACULOUS-MEDAL-NOVENA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:czestochowa-doylestown-destination",
+      "name": "Pilgrimage to the National Shrine of Our Lady of Czestochowa",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:czestochowa-doylestown",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open Polish-American Marian pilgrimage destination in Doylestown.",
+      "source_ids": [
+        "SHR-CZESTOCHOWA-US"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:czestochowa-walking",
+      "name": "American Czestochowa Walking Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:czestochowa-doylestown",
+      "route_ids": [
+        "route:US:great-meadows-doylestown-czestochowa"
+      ],
+      "temporal_link_ids": [
+        "temporal:czestochowa-us:walking-pilgrimage"
+      ],
+      "scope_note": "Long-running multi-day walking pilgrimage to Doylestown with groups from Great Meadows, Trenton and Philadelphia; current dates remain owned by the Shrine event programme.",
+      "source_ids": [
+        "PIL-CZESTOCHOWA-US-WALK"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:seton-emmitsburg-destination",
+      "name": "Pilgrimage to the National Shrine of Saint Elizabeth Ann Seton",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:seton-emmitsburg",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open national-shrine pilgrimage destination in Emmitsburg with historic homes, Basilica, prayer and tours.",
+      "source_ids": [
+        "SHR-SETON-EMMITSBURG"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:seton-sea-services",
+      "name": "Annual Pilgrimage for the Sea Services",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:seton-emmitsburg",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:seton:sea-services"
+      ],
+      "scope_note": "Annual pilgrimage and Mass gathering members of the U.S. Sea Services, families and the public at the Seton Shrine.",
+      "source_ids": [
+        "PIL-SETON-SEA-SERVICES-2026"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:lourdes-grotto-emmitsburg-destination",
+      "name": "Pilgrimage to the National Shrine Grotto of Our Lady of Lourdes",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:grotto-lourdes:feb11"
+      ],
+      "scope_note": "Marian pilgrimage destination in Emmitsburg with an annual novena of Masses culminating on the shrine's Our Lady of Lourdes feast day.",
+      "source_ids": [
+        "SHR-GROTTO-LOURDES-EMMITSBURG",
+        "PIL-GROTTO-LOURDES-FEAST"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -1971,6 +2187,21 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-SAMEIRO-PILGRIMAGES"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:US:great-meadows-doylestown-czestochowa",
+      "name": "Great Meadows to American Czestochowa",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Great Meadows, New Jersey",
+      "destination_place_id": "place:US:czestochowa-doylestown",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-CZESTOCHOWA-US-WALK"
       ],
       "confidence": "HIGH"
     }
@@ -2641,6 +2872,59 @@
       "source_event_label": "Feast of Our Lady of Sameiro",
       "source_ids": [
         "PIL-SAMEIRO-PILGRIMAGES"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:miraculous-medal:monday-novena",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:miraculous-medal-philadelphia-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Perpetual Miraculous Medal Novena — every Monday",
+      "source_ids": [
+        "PIL-MIRACULOUS-MEDAL-NOVENA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:czestochowa-us:walking-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:czestochowa-walking",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual/seasonal American Czestochowa walking pilgrimage; current dates belong to the Shrine Events calendar",
+      "source_ids": [
+        "PIL-CZESTOCHOWA-US-WALK"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:seton:sea-services",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:seton-sea-services",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual Pilgrimage for the Sea Services",
+      "source_ids": [
+        "PIL-SETON-SEA-SERVICES-2026"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:grotto-lourdes:feb11",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:lourdes-grotto-emmitsburg-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.our_lady_of_lourdes",
+      "source_event_label": "National Shrine Grotto feast day of Our Lady of Lourdes",
+      "source_ids": [
+        "PIL-GROTTO-LOURDES-FEAST"
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"
