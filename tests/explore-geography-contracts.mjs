@@ -32,6 +32,18 @@ const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:cultu
 assert.ok(culturalScope);
 assert.equal(auditGeoArea(culturalScope).length, 0);
 
+for (const place of seed.places) {
+  assert.equal(auditPlace(place).length, 0, place.place_id);
+}
+assert.deepEqual(
+  seed.places.map(place => place.place_id).sort(),
+  [
+    "place:FR:sanctuaire-notre-dame-de-laghet",
+    "place:FR:sanctuaire-notre-dame-de-lourdes",
+    "place:FR:sanctuaire-sacre-coeur-paray",
+  ].sort(),
+);
+
 const chartres = {
   place_id: "place:FR:chartres-notre-dame",
   name: { official: "Cathédrale Notre-Dame de Chartres", aliases: ["Chartres Cathedral"] },
@@ -67,12 +79,12 @@ assert.ok(auditDirectoryPlaceLink(noSourceLink).some(item => item.code === "MISS
 
 const registry = {
   geoAreas: seed.geoAreas,
-  places: [chartres],
+  places: [...seed.places, chartres],
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 5,
-  places: 1,
+  places: 4,
   directoryPlaceLinks: 1,
 });
 
