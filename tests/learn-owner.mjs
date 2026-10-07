@@ -39,7 +39,8 @@ const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const host=readFileSync("src/app/host-adapter.js","utf8");
 
 assert.match(owner,/AO_LEARN_APP_V1/);
-assert.match(owner,/installLatinCourseModule/,"Latin course is not installed by the Formation owner");\nassert.match(owner,/installSexualEthicsModule/,"Catholic Sexual Ethics is not installed by the Formation owner");
+assert.match(owner,/installLatinCourseModule/,"Latin course is not installed by the Formation owner");
+assert.match(owner,/installSexualEthicsModule/,"Catholic Sexual Ethics is not installed by the Formation owner");
 assert.match(owner,/ensureLatinCourseRegistry/,"Latin course registry is not composed into Formation");
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
