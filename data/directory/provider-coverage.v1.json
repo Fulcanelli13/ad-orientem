@@ -6,12 +6,17 @@
   "providers": [
     {
       "provider_id": "ICKSP",
-      "runtime_published_venues": 27,
       "official_source_records": 127,
       "unique_current_candidates": 125,
-      "status": "PARTIAL_PUBLICATION",
+      "status": "PARTIAL_PUBLICATION_RECONCILED",
       "blocks_complete": true,
-      "note": "The 125-candidate research corpus is not a worldwide denominator. Many candidates establish current provider presence but still require venue-level public-Mass/schedule verification before Find a Mass publication."
+      "note": "Provider SOT v1.9 reconciled into 60 current Mass candidates published to Find: 25 with live-import schedules and 35 source-confirmed static Mass venues. Five rows are provider presence only; 60 remain staged until Mass eligibility/schedule evidence is sufficient.",
+      "generated_runtime_venues": 27,
+      "live_import_mass_venues": 25,
+      "static_confirmed_mass_venues": 35,
+      "app_publishable_mass_venues": 60,
+      "provider_presence_only": 5,
+      "mass_eligibility_pending": 60
     },
     {
       "provider_id": "IBP",
