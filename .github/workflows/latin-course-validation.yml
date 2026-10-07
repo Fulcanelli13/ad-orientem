@@ -6,18 +6,24 @@ on:
       - main
       - integrate/latin-course-main-20261007
       - research/core-201-350-resolved-propers
+      - learn/latin-v2-runtime-rescue
     paths:
       - "data/learn/core-latin-200.v0.2.json"
       - "data/learn/core-latin-201-350.v1.json"
       - "data/learn/latin-course-40-core350.v1.json"
       - "data/learn/latin-course-fr-parity-audit.v1.json"
+      - "data/learn/latin-course-v2-assessment-policy.v1.json"
+      - "data/learn/latin-course-scanlon-coverage.v1.json"
       - "data/learn/latin-course-lessons/**"
       - "src/assets/asset-registry.js"
       - "src/learn/latin-course.js"
+      - "src/learn/latin-course-v2.js"
+      - "src/learn/latin-course-v2-data.js"
       - "src/learn/browser-entry.js"
       - "src/learn/presentation.js"
       - "tests/learn-latin-core-freeze.mjs"
       - "tests/learn-latin-runtime.mjs"
+      - "tests/learn-latin-scanlon-coverage.mjs"
       - "tests/learn-owner.mjs"
       - "tools/validate_latin_course.mjs"
       - ".github/workflows/latin-course-validation.yml"
@@ -38,3 +44,5 @@ jobs:
         run: node tests/learn-latin-runtime.mjs
       - name: Validate Formation owner wiring
         run: node tests/learn-owner.mjs
+      - name: Validate Scanlon completeness control
+        run: node tests/learn-latin-scanlon-coverage.mjs

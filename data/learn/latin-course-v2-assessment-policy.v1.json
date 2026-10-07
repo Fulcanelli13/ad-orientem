@@ -1,0 +1,26 @@
+{
+  "version": "latin-course-v2-assessment-policy-v1",
+  "status": "POSITION_INTEGRITY_REPAIRED_ITEM_BANK_PENDING",
+  "legacyFinding": {
+    "multipleChoiceItems": 290,
+    "correctAnswerFirstInCanonicalData": 284,
+    "lessons11To40FirstPositionRate": "228/228",
+    "consequence": "Legacy display-order scores are not valid mastery evidence."
+  },
+  "presentation": {
+    "algorithm": "deterministic rotation by exercise id",
+    "invariant": "localized labels and canonical grading values remain paired by original option index",
+    "ciGate": "displayed correct answers must not retain a dominant first-position bias"
+  },
+  "scoring": {
+    "scoreVersion": "latin-v2-assessment-v1",
+    "legacyScores": "INVALIDATE_IF_EVER_PERSISTED",
+    "currentCheckpointInterpretation": "threshold evidence only; not final mastery certification until item-bank and distractor rebuild"
+  },
+  "next": {
+    "itemBankSchemaRequired": true,
+    "distractorRationalesRequired": true,
+    "transferItemsRequired": true,
+    "productiveParsingRequired": true
+  }
+}

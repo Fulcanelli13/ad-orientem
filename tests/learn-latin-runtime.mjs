@@ -6,9 +6,15 @@ import {
   gradeLatinExercise,
   localizeLatinExercise,
   localizeLatinLesson,
-} from "../src/learn/latin-course.js";
+  LATIN_COURSE_VERSION,
+  latinVocabularyRows,
+  latinPassageGlosses,
+  latinCheckpointStatus,
+  latinChoiceOrder,
+} from "../src/learn/latin-course-v2.js";
 
 assert.equal(LATIN_COURSE_ROUTE_ID,"learn.latin");
+assert.equal(LATIN_COURSE_VERSION,"latin-course-runtime-v2");
 
 const lesson=n=>JSON.parse(readFileSync(`data/learn/latin-course-lessons/lesson-${String(n).padStart(2,"0")}.v1.json`,"utf8"));
 
@@ -106,3 +112,65 @@ assert.match(owner,/AO_LATIN_COURSE_V1/);
 assert.match(presentation,/id:"learn\.latin"/);
 
 console.log("PASS Latin course runtime localization: 40 lessons / 245 blocks / 431 exercises, canonical grading isolated from EN↔FR presentation.");
+
+
+/* Runtime-rescue surfaces must consume authored curriculum data rather than dropping it. */
+{
+  const l2=lesson(2);
+  assert.equal(latinVocabularyRows(l2,"fr")[0].gloss,"faute");
+  assert.equal(l2.authenticPassages.length,3);
+  const glosses=latinPassageGlosses(l2,l2.authenticPassages[0],"fr");
+  assert.ok(glosses.some(x=>x.lemma==="meus"&&x.gloss==="ma"));
+  const feedback={};
+  for(const id of l2.checkpoint.passingRule.autoGradedExerciseIds.slice(0,8))feedback[id]={shown:true,graded:true,correct:true};
+  const pass=latinCheckpointStatus(l2,feedback);
+  assert.equal(pass.required,8);
+  assert.equal(pass.correct,8);
+  assert.equal(pass.passed,true);
+  const fail=latinCheckpointStatus(l2,Object.fromEntries(Object.entries(feedback).slice(0,7)));
+  assert.equal(fail.passed,false);
+}
+{
+  const l10=lesson(10);
+  assert.ok(l10.casePanel?.visible);
+  assert.ok(l10.pronounParadigms?.["is/ea/id"]);
+}
+{
+  const l40=lesson(40);
+  assert.equal(l40.authenticPassages.length,6);
+  assert.ok(l40.authenticPassages.some(p=>(p.sourceLatin||"").length>1000),"capstone Gospel is not present");
+  assert.equal(Boolean(l40.authenticPassages[0].translation),false,"capstone must not acquire a pre-attempt translation");
+}
+const runtimeV2=readFileSync("src/learn/latin-course-v2.js","utf8");
+for(const token of ["authenticPassages","passiveReadingLexicon","latinCaseRows","latinPronounParadigms","latinFrameworkEntries","latinCheckpointStatus"]){
+  assert.match(runtimeV2,new RegExp(token),`v2 runtime does not consume ${token}`);
+}
+console.log("PASS Latin v2 runtime rescue: authentic reading, vocabulary/support, grammar panels and checkpoint rules are wired.");
+
+
+/* Tranche 2: display-order integrity. Canonical values stay fixed; presentation order does not. */
+{
+  let mcq=0,first=0;
+  const positions={};
+  for(let n=1;n<=40;n++){
+    for(const e of lesson(n).exercises||[]){
+      if(e.exerciseType!=="multiple_choice")continue;
+      mcq++;
+      const order=latinChoiceOrder(e);
+      assert.equal(order.length,e.options.length,`${e.id} choice order cardinality drift`);
+      assert.deepEqual([...order].sort((a,b)=>a-b),e.options.map((_,i)=>i),`${e.id} choice order is not a permutation`);
+      const canonicalIndex=e.options.findIndex(x=>x===e.expectedAnswer);
+      const displayIndex=order.indexOf(canonicalIndex);
+      positions[displayIndex]=(positions[displayIndex]||0)+1;
+      if(displayIndex===0)first++;
+      const fr=localizeLatinExercise(e,"fr");
+      for(const originalIndex of order){
+        assert.equal(canonicalChoiceValue(e,originalIndex),e.options[originalIndex]);
+        assert.ok(fr.options?.[originalIndex]!==undefined,`${e.id} lost localized label after rotation`);
+      }
+    }
+  }
+  assert.equal(mcq,290);
+  assert.ok(first/mcq<0.4,`MCQ first-position bias remains too high: ${first}/${mcq}`);
+  assert.ok(Object.keys(positions).length>=3,"MCQ correct answers do not occupy enough display positions");
+}

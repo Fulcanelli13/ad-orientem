@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+const m=JSON.parse(readFileSync("data/learn/latin-course-scanlon-coverage.v1.json","utf8"));
+assert.equal(m.status,"FOUNDATION_GAP_MATRIX_COMPLETE");
+assert.ok(Array.isArray(m.entries)&&m.entries.length>=40);
+assert.ok(m.entries.every(x=>["FULL","PARTIAL","MISSING","OUT_OF_SCOPE"].includes(x.status)));
+assert.ok(m.entries.every(x=>Array.isArray(x.scanlonPdfPages)&&x.scanlonPdfPages.length>0));
+assert.ok(m.entries.every(x=>typeof x.remediation==="string"&&x.remediation.trim().length>0));
+assert.ok(m.entries.some(x=>x.id==="indirect-questions"&&x.status==="MISSING"));
+assert.ok(m.entries.some(x=>x.id==="comparison"&&x.status==="MISSING"));
+assert.ok(m.entries.some(x=>x.id==="connected-reading"&&x.priority==="P0"));
+assert.ok(m.gate.p0Open.length>=5);
+const duplicateIds=m.entries.map(x=>x.id).filter((x,i,a)=>a.indexOf(x)!==i);
+assert.deepEqual(duplicateIds,[],"Scanlon coverage IDs must be unique");
+console.log("PASS Scanlon completeness control:",m.counts,"P0 open:",m.gate.p0Open.length);
