@@ -750,7 +750,7 @@ try{
   const seasonalAlias=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("learn.seasonal_rites",{returnContext:{surface:"learn"}}));
   assert.equal(seasonalAlias?.ok,true,"Seasonal compatibility route failed");
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:5000});
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),1,"Seasonal compatibility route did not reach the richer liturgical-year Calendar");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Ring").count(),1,"Seasonal compatibility route did not reach the Liturgical Year surface");
   await shot("04f-seasonal-year-alias");
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
