@@ -640,9 +640,17 @@ try{
     contemplationTitle:document.querySelector("#aoPrayerBookRoot .lab-contemplation h2,#aoPrayerBookRoot .r23-contemplation h2")?.textContent?.trim()??"",
     artTitleVisible:(()=>{
       const x=document.querySelector("#aoPrayerBookRoot .aoV401RosaryHero figcaption span:first-child,#aoPrayerBookRoot .aoRosaryArtHero figcaption span:first-child");
-      return Boolean(x&&getComputedStyle(x).display!=="none"&&!x.hidden&&x.getClientRects().length);
+      return Boolean(x&&getComputedStyle(x).display!=="none"&&x.getClientRects().length);
     })(),
-    helperTextVisible:[...document.querySelectorAll("#aoPrayerBookRoot .lab-option-bar .lab-step-count")].some(x=>!x.hidden&&getComputedStyle(x).display!=="none"&&x.getClientRects().length>0),
+    mysteryKickerVisible:(()=>{
+      const x=document.querySelector("#aoPrayerBookRoot .lab-contemplation .kicker,#aoPrayerBookRoot .r23-contemplation .kicker");
+      return Boolean(x&&getComputedStyle(x).display!=="none"&&x.getClientRects().length);
+    })(),
+    mysteryBeadsVisible:(()=>{
+      const x=document.querySelector("#aoPrayerBookRoot .lab-bead-stage");
+      return Boolean(x&&getComputedStyle(x).display!=="none"&&x.getClientRects().length);
+    })(),
+    helperTextVisible:[...document.querySelectorAll("#aoPrayerBookRoot .lab-option-bar .lab-step-count")].some(x=>getComputedStyle(x).display!=="none"&&x.getClientRects().length>0),
     cinematicTitle:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-title]")?.textContent?.trim()??"",
     cinematicKicker:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-kicker]")?.textContent?.trim()??"",
     reduced:globalThis.AO_CINEMATIC_V4312?.isReducedMotion?.()??null,
@@ -654,6 +662,8 @@ try{
   assert.match(rosaryMysteryFx.headerTitle,/Glorious Mysteries|Mystères glorieux/i,"Rosary header repeats the active mystery instead of identifying the mystery set");
   assert.match(rosaryMysteryFx.contemplationTitle,/Resurrection|Résurrection/i,"Rosary contemplation lost the active mystery title");
   assert.equal(rosaryMysteryFx.artTitleVisible,false,"Rosary sacred-art caption repeats the active mystery title");
+  assert.equal(rosaryMysteryFx.mysteryKickerVisible,false,"Rosary repeats mystery progress as text beneath the five-segment progress owner");
+  assert.equal(rosaryMysteryFx.mysteryBeadsVisible,false,"Rosary displays an empty decade-bead row before decade prayer begins");
   assert.equal(rosaryMysteryFx.helperTextVisible,false,"Rosary keeps obsolete explanatory helper text in the live reader");
   assert.ok(rosaryMysteryFx.cinematicTitle.length>0,"Rosary mystery cinematic has no title");
   assert.match(rosaryMysteryFx.cinematicKicker,/HOLY ROSARY|SAINT ROSAIRE/,"Rosary mystery cinematic lost devotional identity");
