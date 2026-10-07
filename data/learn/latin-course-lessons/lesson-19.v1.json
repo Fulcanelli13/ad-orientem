@@ -1,0 +1,827 @@
+{
+  "version": "latin-course-lesson-19-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 19,
+  "stage": {
+    "number": 4,
+    "title": "Structure"
+  },
+  "title": "Miserere nobis",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "sentence",
+  "grammarFocus": "Deponent verbs",
+  "readingOutcome": "Read passive-form verbs with active meaning.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only frozen Lesson 19 vocabulary is introduced; mood/infinitive details beyond the deponent target remain support.",
+    "authenticTextPolicy": "Deponents are anchored in Ordinary, hymn, Office and Gospel clauses.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "misereor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "have mercy",
+          "fr": "avoir pitié"
+        },
+        "frozenLesson": 19
+      },
+      {
+        "lemma": "confiteor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "confess / acknowledge",
+          "fr": "confesser / reconnaître"
+        },
+        "frozenLesson": 19
+      },
+      {
+        "lemma": "veneror",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "venerate",
+          "fr": "vénérer"
+        },
+        "frozenLesson": 19
+      },
+      {
+        "lemma": "precor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "pray / entreat",
+          "fr": "prier / supplier"
+        },
+        "frozenLesson": 19
+      },
+      {
+        "lemma": "dignor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "deign / deem worthy",
+          "fr": "daigner / juger digne"
+        },
+        "frozenLesson": 19
+      },
+      {
+        "lemma": "loquor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "speak",
+          "fr": "parler"
+        },
+        "frozenLesson": 19
+      },
+      {
+        "lemma": "sequor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "follow",
+          "fr": "suivre"
+        },
+        "frozenLesson": 19
+      }
+    ],
+    "recycled": [
+      "agnus",
+      "Deus",
+      "tollo",
+      "peccatum",
+      "mundus",
+      "nos",
+      "beatus",
+      "semper",
+      "virgo",
+      "sacramentum",
+      "Dominus",
+      "dies",
+      "iste",
+      "sine",
+      "in",
+      "ego",
+      "sum",
+      "qui/quae/quod",
+      "tu",
+      "cum",
+      "non",
+      "meus",
+      "et",
+      "ergo",
+      "sed",
+      "lumen",
+      "vita",
+      "habeo"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Tantum",
+      "forms": [
+        "Tantum"
+      ],
+      "gloss": {
+        "en": "so great / such",
+        "fr": "si grand"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cernuus",
+      "forms": [
+        "cernui"
+      ],
+      "gloss": {
+        "en": "bowed / prostrate",
+        "fr": "inclinés / prosternés"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "custodio",
+      "forms": [
+        "custodire"
+      ],
+      "gloss": {
+        "en": "guard / keep",
+        "fr": "garder"
+      },
+      "trackedLesson": 22,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "pecco",
+      "forms": [
+        "peccato"
+      ],
+      "gloss": {
+        "en": "sin",
+        "fr": "pécher"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "ambulo",
+      "forms": [
+        "ambulat"
+      ],
+      "gloss": {
+        "en": "walk",
+        "fr": "marcher"
+      },
+      "trackedLesson": 22,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "tenebrae",
+      "forms": [
+        "tenebris"
+      ],
+      "gloss": {
+        "en": "darkness",
+        "fr": "ténèbres"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "omnipotens",
+      "forms": [
+        "omnipotenti"
+      ],
+      "gloss": {
+        "en": "almighty",
+        "fr": "tout-puissant"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Maria",
+      "forms": [
+        "Mariae"
+      ],
+      "gloss": {
+        "en": "Mary",
+        "fr": "Marie"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-agnus-miserere-l19",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Agnus Dei",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "provenanceNote": "miserere is a deponent imperative: passive-looking form, active meaning 'have mercy'."
+    },
+    {
+      "id": "mr1962-confiteor-opening-l19",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Confiteor",
+      "sourceLatin": "Confiteor Deo omnipotenti, beatae Mariae semper Virgini.",
+      "provenanceNote": "confiteor is first-person singular deponent with active meaning 'I confess'."
+    },
+    {
+      "id": "tantum-ergo-veneremur-l19",
+      "sourceType": "primary-liturgical-hymn",
+      "work": "Tantum ergo Sacramentum",
+      "section": "Verse 1",
+      "sourceLatin": "Tantum ergo Sacramentum veneremur cernui.",
+      "provenanceNote": "veneremur is deponent in form and active in meaning; the hymn is used in Benediction."
+    },
+    {
+      "id": "te-deum-dignare-l19",
+      "sourceType": "primary-liturgical",
+      "work": "Te Deum",
+      "section": "Suffrage",
+      "sourceLatin": "Dignare, Domine, die isto sine peccato nos custodire.",
+      "provenanceNote": "dignare is a deponent imperative used in traditional liturgical prayer."
+    },
+    {
+      "id": "vulg-jn8-12-l19",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 8:12",
+      "sourceLatin": "Qui sequitur me, non ambulat in tenebris: sed habebit lumen vitae.",
+      "provenanceNote": "sequitur is present deponent with active meaning 'follows' and governs accusative me."
+    },
+    {
+      "id": "vulg-jn4-26-l19",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 4:26",
+      "sourceLatin": "Ego sum, qui loquor tecum.",
+      "provenanceNote": "loquor is first-person singular deponent; tecum recycles the attached cum-pronoun form."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Deponent morphology changes voice interpretation, not the case system or each verb's government.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "deponentFramework": {
+    "principle": "Deponent verbs use passive morphology but normally carry active meaning.",
+    "anchors": [
+      {
+        "lemma": "misereor",
+        "surface": "miserere",
+        "meaning": "have mercy"
+      },
+      {
+        "lemma": "confiteor",
+        "surface": "confiteor",
+        "meaning": "I confess"
+      },
+      {
+        "lemma": "veneror",
+        "surface": "veneremur",
+        "meaning": "let us venerate"
+      },
+      {
+        "lemma": "dignor",
+        "surface": "dignare",
+        "meaning": "deign"
+      },
+      {
+        "lemma": "loquor",
+        "surface": "loquor",
+        "meaning": "I speak"
+      },
+      {
+        "lemma": "sequor",
+        "surface": "sequitur",
+        "meaning": "he/she follows"
+      }
+    ],
+    "perfectConnection": "Earlier nascor, morior and patior showed perfect forms built with participles + sum but active meaning. Lesson 19 generalizes the deponent system."
+  },
+  "pronounSpiral": {
+    "lesson": 19,
+    "focus": "Pronouns with deponents and non-English case government.",
+    "examples": [
+      {
+        "phrase": "miserere nobis",
+        "pronoun": "nobis",
+        "case": "dative",
+        "note": "liturgical recipient/reference form"
+      },
+      {
+        "phrase": "qui sequitur me",
+        "pronoun": "me",
+        "case": "accusative",
+        "note": "object of sequitur"
+      },
+      {
+        "phrase": "qui loquor tecum",
+        "pronoun": "te",
+        "case": "ablative inside tecum",
+        "note": "cum attached after pronoun"
+      }
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l19-b1",
+      "type": "concept",
+      "title": "Passive form does not always mean passive action",
+      "learnerCopy": {
+        "en": "Deponent verbs use passive-looking morphology but normally have active meaning. This is a lexical property of the verb: sequitur means 'he follows', not 'he is followed'.",
+        "fr": "Les verbes déponents utilisent une morphologie d'apparence passive mais ont normalement un sens actif. C'est une propriété lexicale du verbe : sequitur signifie « il suit », non « il est suivi »."
+      }
+    },
+    {
+      "id": "l19-b2",
+      "type": "connection",
+      "title": "Lesson 16 already prepared this",
+      "learnerCopy": {
+        "en": "patior, nascor and morior already showed that participial/passive-looking forms can have active meaning. Lesson 19 turns that preview into a general reading category.",
+        "fr": "patior, nascor et morior ont déjà montré que des formes d'apparence passive peuvent avoir un sens actif. La leçon 19 transforme cet aperçu en catégorie générale de lecture."
+      }
+    },
+    {
+      "id": "l19-b3",
+      "type": "authentic-example",
+      "title": "miserere nobis",
+      "sourceId": "mr1962-agnus-miserere-l19",
+      "learnerCopy": {
+        "en": "miserere is a command: 'have mercy'. Its form resembles passive morphology, but its meaning is active. nobis remains the pronoun/case anchor.",
+        "fr": "miserere est un ordre : « ayez pitié ». Sa forme ressemble au passif, mais son sens est actif. nobis reste le repère pronominal et casuel."
+      }
+    },
+    {
+      "id": "l19-b4",
+      "type": "authentic-example",
+      "title": "Confiteor Deo",
+      "sourceId": "mr1962-confiteor-opening-l19",
+      "learnerCopy": {
+        "en": "confiteor means 'I confess / acknowledge'. The first-person ending -or looks passive, but the lexical meaning is active. Deo marks the person to whom the confession is made.",
+        "fr": "confiteor signifie « je confesse / reconnais ». La terminaison -or ressemble au passif, mais le sens lexical est actif. Deo marque celui à qui la confession est faite."
+      }
+    },
+    {
+      "id": "l19-b5",
+      "type": "pronoun",
+      "title": "Deponents keep their own case government",
+      "sourceId": "vulg-jn8-12-l19",
+      "learnerCopy": {
+        "en": "sequitur me takes accusative me. loquor tecum uses the ablative pronoun inside tecum. Do not assume a deponent needs a 'passive' case pattern; learn its syntax like any other verb.",
+        "fr": "sequitur me prend l'accusatif me. loquor tecum emploie le pronom à l'ablatif dans tecum. Un déponent ne crée pas un régime « passif » : sa syntaxe s'apprend comme celle de tout autre verbe."
+      }
+    },
+    {
+      "id": "l19-b6",
+      "type": "retrieval",
+      "title": "Read morphology, then check lexical voice",
+      "learnerCopy": {
+        "en": "When a form looks passive, first identify the lemma. If the lemma is deponent, read active meaning; if not, continue with the passive analysis learned earlier. This prevents both over- and under-calling passives.",
+        "fr": "Lorsqu'une forme paraît passive, identifiez d'abord le lemme. Si le lemme est déponent, lisez un sens actif ; sinon, poursuivez l'analyse passive déjà apprise. Cela évite les deux types d'erreur."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l19-p1",
+      "sourceId": "mr1962-agnus-miserere-l19",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "instructionalDisplay": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "translation": {
+        "en": "Lamb of God, who takest away the sins of the world: have mercy on us.",
+        "fr": "Agneau de Dieu, qui enlevez les péchés du monde : ayez pitié de nous."
+      },
+      "targetLemmas": [
+        "agnus",
+        "Deus",
+        "qui/quae/quod",
+        "tollo",
+        "peccatum",
+        "mundus",
+        "misereor",
+        "nos"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l19-p2",
+      "sourceId": "mr1962-confiteor-opening-l19",
+      "sourceLatin": "Confiteor Deo omnipotenti, beatae Mariae semper Virgini.",
+      "instructionalDisplay": "Confiteor Deo omnipotenti, beatae Mariae semper Virgini.",
+      "translation": {
+        "en": "I confess to Almighty God, to blessed Mary ever Virgin.",
+        "fr": "Je confesse à Dieu tout-puissant, à la bienheureuse Marie toujours Vierge."
+      },
+      "targetLemmas": [
+        "confiteor",
+        "Deus",
+        "beatus",
+        "semper",
+        "virgo"
+      ],
+      "supportLemmas": [
+        "omnipotens",
+        "Maria"
+      ]
+    },
+    {
+      "id": "l19-p3",
+      "sourceId": "tantum-ergo-veneremur-l19",
+      "sourceLatin": "Tantum ergo Sacramentum veneremur cernui.",
+      "instructionalDisplay": "Tantum ergo Sacramentum veneremur cernui.",
+      "translation": {
+        "en": "Therefore let us venerate so great a Sacrament, bowing low.",
+        "fr": "Vénérons donc, prosternés, un si grand Sacrement."
+      },
+      "targetLemmas": [
+        "ergo",
+        "sacramentum",
+        "veneror"
+      ],
+      "supportLemmas": [
+        "Tantum",
+        "cernuus"
+      ]
+    },
+    {
+      "id": "l19-p4",
+      "sourceId": "te-deum-dignare-l19",
+      "sourceLatin": "Dignare, Domine, die isto sine peccato nos custodire.",
+      "instructionalDisplay": "Dignare, Domine, die isto sine peccato nos custodire.",
+      "translation": {
+        "en": "Vouchsafe, O Lord, this day to keep us without sin.",
+        "fr": "Daignez, Seigneur, en ce jour nous garder sans péché."
+      },
+      "targetLemmas": [
+        "dignor",
+        "Dominus",
+        "dies",
+        "iste",
+        "sine",
+        "peccatum",
+        "nos"
+      ],
+      "supportLemmas": [
+        "custodio"
+      ]
+    },
+    {
+      "id": "l19-p5",
+      "sourceId": "vulg-jn8-12-l19",
+      "sourceLatin": "Qui sequitur me, non ambulat in tenebris: sed habebit lumen vitae.",
+      "instructionalDisplay": "Qui sequitur me, non ambulat in tenebris: sed habebit lumen vitae.",
+      "translation": {
+        "en": "He that followeth Me walketh not in darkness, but shall have the light of life.",
+        "fr": "Celui qui me suit ne marche pas dans les ténèbres, mais il aura la lumière de la vie."
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "sequor",
+        "ego",
+        "non",
+        "sed",
+        "habeo",
+        "lumen",
+        "vita"
+      ],
+      "supportLemmas": [
+        "ambulo",
+        "tenebrae"
+      ]
+    },
+    {
+      "id": "l19-p6",
+      "sourceId": "vulg-jn4-26-l19",
+      "sourceLatin": "Ego sum, qui loquor tecum.",
+      "instructionalDisplay": "Ego sum, qui loquor tecum.",
+      "translation": {
+        "en": "I am He, who am speaking with thee.",
+        "fr": "Je le suis, moi qui te parle."
+      },
+      "targetLemmas": [
+        "ego",
+        "sum",
+        "qui/quae/quod",
+        "loquor",
+        "tu",
+        "cum"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l19-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is a deponent verb?",
+      "stimulus": null,
+      "options": [
+        "a verb with passive morphology and active meaning",
+        "a verb with no meaning",
+        "a noun used as a verb",
+        "a future-only verb"
+      ],
+      "expectedAnswer": "a verb with passive morphology and active meaning",
+      "acceptedVariants": [
+        "a verb with passive morphology and active meaning"
+      ],
+      "hint": "Think sequitur = follows.",
+      "explanation": "Deponents use passive forms with active lexical meaning.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "deponent:principle"
+      ]
+    },
+    {
+      "id": "l19-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does miserere mean here?",
+      "stimulus": "miserere nobis",
+      "options": [
+        "have mercy",
+        "be pitied",
+        "was pitied",
+        "will pity"
+      ],
+      "expectedAnswer": "have mercy",
+      "acceptedVariants": [
+        "have mercy"
+      ],
+      "hint": "It is a deponent command.",
+      "explanation": "miserere has active meaning despite passive-looking form.",
+      "difficulty": 1,
+      "sourceId": "mr1962-agnus-miserere-l19",
+      "skills": [
+        "deponent:misereor"
+      ]
+    },
+    {
+      "id": "l19-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does Confiteor mean?",
+      "stimulus": "Confiteor Deo omnipotenti",
+      "options": [
+        "I confess / acknowledge",
+        "I am confessed",
+        "I shall confess",
+        "confess!"
+      ],
+      "expectedAnswer": "I confess / acknowledge",
+      "acceptedVariants": [
+        "I confess / acknowledge"
+      ],
+      "hint": "The -or ending does not make its meaning passive.",
+      "explanation": "confiteor is first-person singular deponent.",
+      "difficulty": 1,
+      "sourceId": "mr1962-confiteor-opening-l19",
+      "skills": [
+        "deponent:confiteor"
+      ]
+    },
+    {
+      "id": "l19-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is me in qui sequitur me?",
+      "stimulus": "me",
+      "options": [
+        "accusative",
+        "ablative",
+        "dative",
+        "genitive"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "It is the object of 'follows'.",
+      "explanation": "me is accusative here.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn8-12-l19",
+      "skills": [
+        "pronoun:ego",
+        "case:accusative",
+        "deponent:government"
+      ]
+    },
+    {
+      "id": "l19-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What form is embedded in tecum?",
+      "stimulus": "tecum",
+      "options": [
+        "ablative te + cum",
+        "accusative te + ad",
+        "dative tibi + cum",
+        "genitive tui + cum"
+      ],
+      "expectedAnswer": "ablative te + cum",
+      "acceptedVariants": [
+        "ablative te + cum"
+      ],
+      "hint": "Recall the attached cum forms.",
+      "explanation": "tecum contains ablative te with postposed cum.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn4-26-l19",
+      "skills": [
+        "pronoun:tu",
+        "case:ablative"
+      ]
+    },
+    {
+      "id": "l19-e6",
+      "exerciseType": "matching",
+      "prompt": "Match deponent to meaning.",
+      "stimulus": [
+        "veneror",
+        "precor",
+        "dignor",
+        "loquor"
+      ],
+      "expectedAnswer": {
+        "veneror": "venerate",
+        "precor": "pray / entreat",
+        "dignor": "deign / deem worthy",
+        "loquor": "speak"
+      },
+      "acceptedVariants": [],
+      "hint": "All have active meaning.",
+      "explanation": "This checks the new deponent vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l19"
+      ]
+    },
+    {
+      "id": "l19-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which earlier verb already previewed deponent behavior?",
+      "stimulus": "patior",
+      "options": [
+        "patior",
+        "crucifigo",
+        "sepelio",
+        "trado"
+      ],
+      "expectedAnswer": "patior",
+      "acceptedVariants": [
+        "patior"
+      ],
+      "hint": "passus meant 'suffered'.",
+      "explanation": "patior was the Lesson 16 preview.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "deponent:spiral"
+      ]
+    },
+    {
+      "id": "l19-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does deponent morphology change the ordinary case system?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes, all objects become ablative",
+        "yes, nominative disappears",
+        "yes, only pronouns change"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "Case government remains lexical/syntactic.",
+      "explanation": "Deponents still govern cases according to their own syntax.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "deponent:government",
+        "case:framework"
+      ]
+    },
+    {
+      "id": "l19-e9",
+      "exerciseType": "token_select",
+      "prompt": "Select the deponent verb and its object pronoun.",
+      "stimulus": "Qui sequitur me, non ambulat in tenebris.",
+      "expectedAnswer": [
+        "sequitur",
+        "me"
+      ],
+      "acceptedVariants": [
+        [
+          "sequitur",
+          "me"
+        ]
+      ],
+      "hint": "One is the deponent; one is its accusative object.",
+      "explanation": "sequitur governs accusative me.",
+      "difficulty": 2,
+      "sourceId": "vulg-jn8-12-l19",
+      "skills": [
+        "reading:deponent-pronoun"
+      ]
+    },
+    {
+      "id": "l19-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin deponent meaning 'speak'.",
+      "stimulus": null,
+      "expectedAnswer": "loquor",
+      "acceptedVariants": [
+        "loquor",
+        "Loquor"
+      ],
+      "hint": "It appears in Ego sum, qui loquor tecum.",
+      "explanation": "loquor means speak.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn4-26-l19",
+      "skills": [
+        "vocabulary:loquor"
+      ]
+    }
+  ],
+  "objectives": [
+    "Recognize passive morphology with active deponent meaning.",
+    "Connect Lesson 16 deponent previews to a general system.",
+    "Keep pronoun/case government active with deponent verbs.",
+    "Learn all seven frozen Lesson 19 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l19-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l19-e1",
+        "l19-e2",
+        "l19-e3",
+        "l19-e4",
+        "l19-e5",
+        "l19-e6",
+        "l19-e7",
+        "l19-e8",
+        "l19-e9",
+        "l19-e10"
+      ]
+    },
+    "mustKnow": [
+      "deponent passive form + active meaning",
+      "miserere/confiteor/sequitur/loquor recognition",
+      "pronoun case remains syntactically governed",
+      "patior/nascor/morior connection"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "misereor",
+      "confiteor",
+      "veneror",
+      "precor",
+      "dignor",
+      "loquor",
+      "sequor"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 6,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

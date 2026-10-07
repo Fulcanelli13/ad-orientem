@@ -275,6 +275,48 @@ if (authored.length >= 15) {
     "Stage 3 checkpoint must cover Lessons 11-15");
 }
 
+
+// Stage 4 structure and pronoun checkpoint locks.
+if (authored.length >= 16) {
+  assert(authored[15].perfectPassiveFramework, "Lesson 16 must establish perfect passive + participial agreement");
+  assert(authored[15].progressionStep === "sentence", "Lesson 16 must remain sentence-level");
+}
+if (authored.length >= 17) {
+  assert(authored[16].relativePronounFramework, "Lesson 17 must establish relative-pronoun parsing");
+  assert(authored[16].pronounSpiral?.lesson === 17, "Lesson 17 must continue the pronoun spiral");
+  assert(authored[16].progressionStep === "sentence", "Lesson 17 must remain sentence-level");
+}
+if (authored.length >= 18) {
+  assert(authored[17].demonstrativeFramework, "Lesson 18 must establish demonstrative/intensive pronouns");
+  assert(authored[17].pronounSpiral?.lesson === 18, "Lesson 18 must continue the pronoun spiral");
+  assert(authored[17].progressionStep === "sentence", "Lesson 18 must remain sentence-level");
+}
+if (authored.length >= 19) {
+  assert(authored[18].deponentFramework, "Lesson 19 must establish deponent reading");
+  assert(authored[18].pronounSpiral?.lesson === 19, "Lesson 19 must continue the pronoun spiral");
+  assert(authored[18].progressionStep === "sentence", "Lesson 19 must remain sentence-level");
+}
+if (authored.length >= 20) {
+  const frozenL20Milestone = course.milestones?.find(x => x.lesson === 20)?.target;
+  assert(authored[19].integratedReadingFramework, "Lesson 20 must contain integrated passage-reading architecture");
+  assert(authored[19].pronounSpiral?.lesson === 20, "Lesson 20 must complete the compulsory pronoun checkpoint");
+  assert(authored[19].progressionStep === "passage", "Lesson 20 must transition to passage-level reading");
+  assert(authored[19].checkpoint?.readingTransition === "sentence → passage",
+    "Lesson 20 must lock the sentence → passage transition");
+  assert(authored[19].checkpoint?.progressionGate === frozenL20Milestone,
+    `Lesson 20 progression gate must match frozen milestone: ${frozenL20Milestone}`);
+  assert(authored[19].checkpoint?.stage === 4, "Lesson 20 must be the Stage 4 checkpoint");
+  assert(JSON.stringify(authored[19].checkpoint?.scopeLessons) === JSON.stringify([16,17,18,19,20]),
+    "Stage 4 checkpoint must cover Lessons 16-20");
+  for (const family of ["personal","reflexive","is/ea/id","relative","demonstrative","intensive/identity retrieval"]) {
+    assert(authored[19].checkpoint?.compulsoryPronounFamilies?.includes(family),
+      `Lesson 20 compulsory pronoun checkpoint missing family: ${family}`);
+  }
+  const stage4Introduced = authored.slice(15,20).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage4Introduced.length === 47, `Stage 4 must introduce 47 tracked lemmas, got ${stage4Introduced.length}`);
+  assert(new Set(stage4Introduced).size === 47, "Stage 4 contains duplicate introduced lemmas");
+}
+
 console.log(JSON.stringify({
   status: "PASS",
   lessons: course.lessons.length,

@@ -1,0 +1,817 @@
+{
+  "version": "latin-course-lesson-17-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 17,
+  "stage": {
+    "number": 4,
+    "title": "Structure"
+  },
+  "title": "Qui tollis",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "sentence",
+  "grammarFocus": "Relative pronouns",
+  "readingOutcome": "Resolve antecedent, case and function of relative pronouns.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen Lesson 17 allocation is introduced; later verbs in relative clauses are explicit support.",
+    "authenticTextPolicy": "Relative-pronoun parsing is anchored in the Ordinary and Vulgate clauses.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "qui/quae/quod",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "who / which / that",
+          "fr": "qui / lequel"
+        },
+        "frozenLesson": 17
+      },
+      {
+        "lemma": "tollo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "take away / lift",
+          "fr": "enlever / porter"
+        },
+        "frozenLesson": 17
+      },
+      {
+        "lemma": "peccatum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sin",
+          "fr": "péché"
+        },
+        "frozenLesson": 17
+      },
+      {
+        "lemma": "dextera",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "right hand / right side",
+          "fr": "droite"
+        },
+        "frozenLesson": 17
+      },
+      {
+        "lemma": "quicumque",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "whoever / whatever",
+          "fr": "quiconque"
+        },
+        "frozenLesson": 17
+      },
+      {
+        "lemma": "unde",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "whence / from where",
+          "fr": "d'où"
+        },
+        "frozenLesson": 17
+      },
+      {
+        "lemma": "quisque",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "each / each one",
+          "fr": "chacun"
+        },
+        "frozenLesson": 17
+      }
+    ],
+    "recycled": [
+      "agnus",
+      "Deus",
+      "mundus",
+      "nos",
+      "sedeo",
+      "ad",
+      "pater",
+      "propter",
+      "homo",
+      "noster",
+      "salus",
+      "descendo",
+      "de",
+      "caelum",
+      "regnum",
+      "non",
+      "sum",
+      "omnis",
+      "enim",
+      "nomen",
+      "Dominus",
+      "salvus",
+      "et",
+      "cum",
+      "filius",
+      "simul",
+      "adoro",
+      "per",
+      "finis"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "invoco",
+      "forms": [
+        "invocaverit"
+      ],
+      "gloss": {
+        "en": "call upon / invoke",
+        "fr": "invoquer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "conglorifico",
+      "forms": [
+        "conglorificatur"
+      ],
+      "gloss": {
+        "en": "glorify together",
+        "fr": "glorifier ensemble"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "loquor",
+      "forms": [
+        "locutus est"
+      ],
+      "gloss": {
+        "en": "speak",
+        "fr": "parler"
+      },
+      "trackedLesson": 19,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "vivifico",
+      "forms": [
+        "vivificantem"
+      ],
+      "gloss": {
+        "en": "give life",
+        "fr": "vivifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "procedo",
+      "forms": [
+        "procedit"
+      ],
+      "gloss": {
+        "en": "proceed",
+        "fr": "procéder"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cuius",
+      "forms": [
+        "cuius"
+      ],
+      "gloss": {
+        "en": "whose / of which",
+        "fr": "dont"
+      },
+      "trackedLesson": null,
+      "status": "surface-form-alias"
+    },
+    {
+      "lemma": "misereor",
+      "forms": [
+        "miserere"
+      ],
+      "gloss": {
+        "en": "have mercy",
+        "fr": "avoir pitié"
+      },
+      "trackedLesson": 19,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "propheta",
+      "forms": [
+        "Prophetas"
+      ],
+      "gloss": {
+        "en": "prophet",
+        "fr": "prophète"
+      },
+      "trackedLesson": 20,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-agnus-dei-relative-l17",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Agnus Dei",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "provenanceNote": "qui has antecedent Agnus and functions as subject of tollis."
+    },
+    {
+      "id": "mr1962-gloria-qui-sedes-l17",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Gloria",
+      "sourceLatin": "Qui sedes ad dexteram Patris, miserere nobis.",
+      "provenanceNote": "qui is nominative subject; dexteram introduces the lesson noun dextera in a familiar clause."
+    },
+    {
+      "id": "mr1962-credo-qui-propter-l17",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "provenanceNote": "qui takes its gender/number from the antecedent while its nominative case comes from being subject of descendit."
+    },
+    {
+      "id": "mr1962-credo-cuius-l17",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Cuius regni non erit finis.",
+      "provenanceNote": "cuius is genitive singular of qui/quae/quod; the pronoun case comes from its role inside the relative clause."
+    },
+    {
+      "id": "vulg-rom10-13-l17",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Romani 10:13",
+      "sourceLatin": "Omnis enim quicumque invocaverit nomen Domini, salvus erit.",
+      "provenanceNote": "quicumque gives the indefinite relative 'whoever' in an authentic soteriological clause."
+    },
+    {
+      "id": "mr1962-credo-qui-cum-patre-l17",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas.",
+      "provenanceNote": "Two relative clauses allow repeated antecedent/case resolution; later deponent locutus est remains support until Lesson 19."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Relative-pronoun case is determined by the pronoun's role in its own clause, not by the antecedent's case.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "relativePronounFramework": {
+    "singular": {
+      "masculine": {
+        "nominative": "qui",
+        "genitive": "cuius",
+        "dative": "cui",
+        "accusative": "quem",
+        "ablative": "quo"
+      },
+      "feminine": {
+        "nominative": "quae",
+        "genitive": "cuius",
+        "dative": "cui",
+        "accusative": "quam",
+        "ablative": "qua"
+      },
+      "neuter": {
+        "nominative": "quod",
+        "genitive": "cuius",
+        "dative": "cui",
+        "accusative": "quod",
+        "ablative": "quo"
+      }
+    },
+    "principle": "Gender and number come from the antecedent; case comes from the relative pronoun's function inside the relative clause.",
+    "indefiniteRelatives": [
+      "quicumque",
+      "quisque"
+    ]
+  },
+  "pronounSpiral": {
+    "lesson": 17,
+    "focus": "Relative qui/quae/quod; antecedent versus pronoun case.",
+    "retrievalFamilies": [
+      "is/ea/id",
+      "personal pronouns",
+      "qui/quae/quod"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l17-b1",
+      "type": "concept",
+      "title": "A relative pronoun does two jobs",
+      "learnerCopy": {
+        "en": "qui/quae/quod points back to an antecedent and also performs a grammatical role inside its own clause. Its gender and number come from the antecedent; its case comes from what it is doing in the relative clause.",
+        "fr": "qui/quae/quod renvoie à un antécédent tout en remplissant une fonction grammaticale dans sa propre proposition. Son genre et son nombre viennent de l'antécédent ; son cas dépend de sa fonction dans la relative."
+      }
+    },
+    {
+      "id": "l17-b2",
+      "type": "authentic-example",
+      "title": "Agnus Dei, qui tollis",
+      "sourceId": "mr1962-agnus-dei-relative-l17",
+      "learnerCopy": {
+        "en": "qui refers to Agnus and is nominative because it is the subject of tollis. The antecedent does not force the relative pronoun to copy its case.",
+        "fr": "qui renvoie à Agnus et est au nominatif parce qu'il est sujet de tollis. L'antécédent n'impose pas au relatif de copier son cas."
+      }
+    },
+    {
+      "id": "l17-b3",
+      "type": "case-panel",
+      "title": "cuius shows the relative pronoun changing case",
+      "sourceId": "mr1962-credo-cuius-l17",
+      "learnerCopy": {
+        "en": "cuius is genitive: 'whose / of which'. The form is the same across masculine, feminine and neuter singular. This makes it a useful anchor for separating antecedent agreement from clause function.",
+        "fr": "cuius est au génitif : « dont / duquel ». La forme est la même aux trois genres du singulier, ce qui aide à distinguer accord avec l'antécédent et fonction dans la proposition."
+      }
+    },
+    {
+      "id": "l17-b4",
+      "type": "pronoun",
+      "title": "Resolve before translating",
+      "learnerCopy": {
+        "en": "When you meet a relative pronoun, ask in order: What is the antecedent? What gender/number must the pronoun have? What role does it perform inside its own clause? Only then translate.",
+        "fr": "Devant un relatif, demandez successivement : quel est l'antécédent ? quel genre et quel nombre le pronom doit-il avoir ? quelle fonction exerce-t-il dans sa proposition ? Traduisez ensuite."
+      }
+    },
+    {
+      "id": "l17-b5",
+      "type": "authentic-example",
+      "title": "quicumque",
+      "sourceId": "vulg-rom10-13-l17",
+      "learnerCopy": {
+        "en": "quicumque means 'whoever'. It behaves like a relative form with an indefinite force. The clause remains structurally readable because nomen Domini and salvus erit are already largely familiar.",
+        "fr": "quicumque signifie « quiconque ». Il se comporte comme un relatif à valeur indéfinie. La phrase reste lisible grâce à des éléments déjà largement connus comme nomen Domini et salvus erit."
+      }
+    },
+    {
+      "id": "l17-b6",
+      "type": "retrieval",
+      "title": "The pronoun spiral now has three families",
+      "learnerCopy": {
+        "en": "By Lesson 17, personal pronouns, is/ea/id and relative qui/quae/quod all live on the same case map. The course will now require you to choose the correct family as well as the correct case.",
+        "fr": "À la leçon 17, les pronoms personnels, is/ea/id et le relatif qui/quae/quod vivent tous sur la même carte des cas. Il faut désormais choisir la bonne famille autant que le bon cas."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l17-p1",
+      "sourceId": "mr1962-agnus-dei-relative-l17",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "instructionalDisplay": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "translation": {
+        "en": "Lamb of God, who takest away the sins of the world: have mercy on us.",
+        "fr": "Agneau de Dieu, qui enlevez les péchés du monde : ayez pitié de nous."
+      },
+      "targetLemmas": [
+        "agnus",
+        "Deus",
+        "qui/quae/quod",
+        "tollo",
+        "peccatum",
+        "mundus",
+        "nos"
+      ],
+      "supportLemmas": [
+        "misereor"
+      ]
+    },
+    {
+      "id": "l17-p2",
+      "sourceId": "mr1962-gloria-qui-sedes-l17",
+      "sourceLatin": "Qui sedes ad dexteram Patris, miserere nobis.",
+      "instructionalDisplay": "Qui sedes ad dexteram Patris, miserere nobis.",
+      "translation": {
+        "en": "Thou who sittest at the right hand of the Father, have mercy on us.",
+        "fr": "Vous qui êtes assis à la droite du Père, ayez pitié de nous."
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "sedeo",
+        "ad",
+        "dextera",
+        "pater",
+        "nos"
+      ],
+      "supportLemmas": [
+        "misereor"
+      ]
+    },
+    {
+      "id": "l17-p3",
+      "sourceId": "mr1962-credo-qui-propter-l17",
+      "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "instructionalDisplay": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "translation": {
+        "en": "Who for us men and for our salvation came down from heaven.",
+        "fr": "Qui, pour nous les hommes et pour notre salut, descendit des cieux."
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "propter",
+        "nos",
+        "homo",
+        "et",
+        "noster",
+        "salus",
+        "descendo",
+        "de",
+        "caelum"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l17-p4",
+      "sourceId": "mr1962-credo-cuius-l17",
+      "sourceLatin": "Cuius regni non erit finis.",
+      "instructionalDisplay": "Cuius regni non erit finis.",
+      "translation": {
+        "en": "Of whose kingdom there shall be no end.",
+        "fr": "Et son règne n'aura pas de fin."
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "regnum",
+        "non",
+        "sum",
+        "finis"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l17-p5",
+      "sourceId": "vulg-rom10-13-l17",
+      "sourceLatin": "Omnis enim quicumque invocaverit nomen Domini, salvus erit.",
+      "instructionalDisplay": "Omnis enim quicumque invocaverit nomen Domini, salvus erit.",
+      "translation": {
+        "en": "For whosoever shall call upon the name of the Lord shall be saved.",
+        "fr": "Car quiconque invoquera le nom du Seigneur sera sauvé."
+      },
+      "targetLemmas": [
+        "omnis",
+        "enim",
+        "quicumque",
+        "nomen",
+        "Dominus",
+        "salvus",
+        "sum"
+      ],
+      "supportLemmas": [
+        "invoco"
+      ]
+    },
+    {
+      "id": "l17-p6",
+      "sourceId": "mr1962-credo-qui-cum-patre-l17",
+      "sourceLatin": "Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas.",
+      "instructionalDisplay": "Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas.",
+      "translation": {
+        "en": "Who together with the Father and the Son is adored and glorified: who spoke through the Prophets.",
+        "fr": "Qui, avec le Père et le Fils, est conjointement adoré et glorifié ; qui a parlé par les prophètes."
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "cum",
+        "pater",
+        "et",
+        "filius",
+        "simul",
+        "adoro",
+        "per"
+      ],
+      "supportLemmas": [
+        "conglorifico",
+        "loquor",
+        "propheta"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l17-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What determines the gender and number of a relative pronoun?",
+      "stimulus": null,
+      "options": [
+        "its antecedent",
+        "its verb tense",
+        "the nearest preposition",
+        "word order"
+      ],
+      "expectedAnswer": "its antecedent",
+      "acceptedVariants": [
+        "its antecedent"
+      ],
+      "hint": "Agreement points backward.",
+      "explanation": "The antecedent supplies gender and number.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronoun:relative"
+      ]
+    },
+    {
+      "id": "l17-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What determines the case of a relative pronoun?",
+      "stimulus": null,
+      "options": [
+        "its function inside the relative clause",
+        "the antecedent's case automatically",
+        "its position in the sentence",
+        "the tense of the main verb"
+      ],
+      "expectedAnswer": "its function inside the relative clause",
+      "acceptedVariants": [
+        "its function inside the relative clause"
+      ],
+      "hint": "Case is local to the pronoun's own clause.",
+      "explanation": "Relative case comes from its grammatical role inside the relative clause.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronoun:relative",
+        "case:syntax"
+      ]
+    },
+    {
+      "id": "l17-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is qui in Agnus Dei, qui tollis...?",
+      "stimulus": "qui",
+      "options": [
+        "nominative",
+        "genitive",
+        "dative",
+        "accusative"
+      ],
+      "expectedAnswer": "nominative",
+      "acceptedVariants": [
+        "nominative"
+      ],
+      "hint": "It is the subject of tollis.",
+      "explanation": "qui is nominative masculine singular.",
+      "difficulty": 1,
+      "sourceId": "mr1962-agnus-dei-relative-l17",
+      "skills": [
+        "pronoun:relative",
+        "case:nominative"
+      ]
+    },
+    {
+      "id": "l17-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is cuius in Cuius regni non erit finis?",
+      "stimulus": "cuius",
+      "options": [
+        "genitive",
+        "nominative",
+        "dative",
+        "ablative"
+      ],
+      "expectedAnswer": "genitive",
+      "acceptedVariants": [
+        "genitive"
+      ],
+      "hint": "Translate 'whose / of which'.",
+      "explanation": "cuius is genitive singular.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-cuius-l17",
+      "skills": [
+        "pronoun:relative",
+        "case:genitive"
+      ]
+    },
+    {
+      "id": "l17-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the antecedent relationship in Qui sedes ad dexteram Patris?",
+      "stimulus": "Qui refers to the person being addressed in the Gloria",
+      "options": [
+        "Qui refers to the person being addressed in the Gloria",
+        "Qui refers to dexteram",
+        "Qui refers to Patris",
+        "Qui has no antecedent or referent"
+      ],
+      "expectedAnswer": "Qui refers to the person being addressed in the Gloria",
+      "acceptedVariants": [
+        "Qui refers to the person being addressed in the Gloria"
+      ],
+      "hint": "The relative clause describes 'Thou who sittest'.",
+      "explanation": "The relative identifies the addressee, not the nearby nouns.",
+      "difficulty": 2,
+      "sourceId": "mr1962-gloria-qui-sedes-l17",
+      "skills": [
+        "pronoun:antecedent"
+      ]
+    },
+    {
+      "id": "l17-e6",
+      "exerciseType": "matching",
+      "prompt": "Match relative form to case/function.",
+      "stimulus": [
+        "qui",
+        "cuius",
+        "cui",
+        "quem",
+        "quo"
+      ],
+      "expectedAnswer": {
+        "qui": "nominative masculine singular",
+        "cuius": "genitive singular",
+        "cui": "dative singular",
+        "quem": "accusative masculine singular",
+        "quo": "ablative masculine/neuter singular"
+      },
+      "acceptedVariants": [],
+      "hint": "Use the singular relative paradigm.",
+      "explanation": "This builds high-frequency relative forms.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "pronoun:relative",
+        "case:paradigm"
+      ]
+    },
+    {
+      "id": "l17-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does quicumque mean?",
+      "stimulus": "quicumque",
+      "options": [
+        "whoever",
+        "where",
+        "each",
+        "because"
+      ],
+      "expectedAnswer": "whoever",
+      "acceptedVariants": [
+        "whoever"
+      ],
+      "hint": "It is an indefinite relative.",
+      "explanation": "quicumque means whoever / whatever.",
+      "difficulty": 1,
+      "sourceId": "vulg-rom10-13-l17",
+      "skills": [
+        "vocabulary:quicumque"
+      ]
+    },
+    {
+      "id": "l17-e8",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 17 item to meaning.",
+      "stimulus": [
+        "tollo",
+        "peccatum",
+        "dextera",
+        "unde",
+        "quisque"
+      ],
+      "expectedAnswer": {
+        "tollo": "take away / lift",
+        "peccatum": "sin",
+        "dextera": "right hand / right side",
+        "unde": "whence / from where",
+        "quisque": "each / each one"
+      },
+      "acceptedVariants": [],
+      "hint": "All belong to the frozen Lesson 17 allocation.",
+      "explanation": "This checks the non-relative vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l17"
+      ]
+    },
+    {
+      "id": "l17-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which pronoun family is being formally added to the spiral in Lesson 17?",
+      "stimulus": null,
+      "options": [
+        "qui/quae/quod",
+        "ego/tu only",
+        "se only",
+        "none"
+      ],
+      "expectedAnswer": "qui/quae/quod",
+      "acceptedVariants": [
+        "qui/quae/quod"
+      ],
+      "hint": "This is the relative-pronoun lesson.",
+      "explanation": "Relative pronouns join the earlier personal and third-person families.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:pronoun-spiral"
+      ]
+    },
+    {
+      "id": "l17-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'sin'.",
+      "stimulus": null,
+      "expectedAnswer": "peccatum",
+      "acceptedVariants": [
+        "peccatum",
+        "Peccatum"
+      ],
+      "hint": "It appears in the Agnus Dei.",
+      "explanation": "peccatum means sin.",
+      "difficulty": 1,
+      "sourceId": "mr1962-agnus-dei-relative-l17",
+      "skills": [
+        "vocabulary:peccatum"
+      ]
+    }
+  ],
+  "objectives": [
+    "Resolve antecedent separately from relative-pronoun case.",
+    "Learn the core singular forms of qui/quae/quod.",
+    "Introduce quicumque/quisque/unde without confusing their functions.",
+    "Continue the pronoun spiral inside authentic Ordinary/Credo clauses."
+  ],
+  "checkpoint": {
+    "id": "l17-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l17-e1",
+        "l17-e2",
+        "l17-e3",
+        "l17-e4",
+        "l17-e5",
+        "l17-e6",
+        "l17-e7",
+        "l17-e8",
+        "l17-e9",
+        "l17-e10"
+      ]
+    },
+    "mustKnow": [
+      "antecedent gives gender/number",
+      "relative-clause role gives case",
+      "qui/cuius/cui/quem/quo recognition",
+      "relative family joins pronoun spiral"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "qui/quae/quod",
+      "tollo",
+      "peccatum",
+      "dextera",
+      "quicumque",
+      "unde",
+      "quisque"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 6,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

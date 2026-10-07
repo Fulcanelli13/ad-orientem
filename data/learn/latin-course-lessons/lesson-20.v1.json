@@ -1,0 +1,1277 @@
+{
+  "version": "latin-course-lesson-20-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 20,
+  "stage": {
+    "number": 4,
+    "title": "Structure"
+  },
+  "title": "Read the Credo",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 60,
+  "progressionStep": "passage",
+  "grammarFocus": "Integrated morphology and syntax checkpoint",
+  "readingOutcome": "Read the Credo with cumulative cases, tenses and pronoun resolution.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 20 vocabulary only; every later or untracked word in the checkpoint passage is explicitly supported.",
+    "authenticTextPolicy": "The primary gate is a sustained Roman Credo passage, supplemented only where necessary to force personal/reflexive/demonstrative pronoun retrieval.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "remissio",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "remission / forgiveness",
+          "fr": "rémission / pardon"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "mors",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "death",
+          "fr": "mort"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "testamentum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "testament / covenant",
+          "fr": "testament / alliance"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "caritas",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "charity / love",
+          "fr": "charité"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "communio",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "communion / fellowship",
+          "fr": "communion"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "catholicus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "catholic / universal",
+          "fr": "catholique"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "propheta",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "prophet",
+          "fr": "prophète"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "iudicium",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "judgment",
+          "fr": "jugement"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "cunctus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "all / entire",
+          "fr": "tout / tous"
+        },
+        "frozenLesson": 20
+      },
+      {
+        "lemma": "universus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "whole / universal / all",
+          "fr": "tout entier / universel"
+        },
+        "frozenLesson": 20
+      }
+    ],
+    "recycled": [
+      "et",
+      "in",
+      "spiritus",
+      "sanctus",
+      "Dominus",
+      "qui/quae/quod",
+      "e/ex",
+      "pater",
+      "filius",
+      "cum",
+      "simul",
+      "adoro",
+      "loquor",
+      "per",
+      "unus",
+      "ecclesia",
+      "confiteor",
+      "peccatum",
+      "vita",
+      "saeculum",
+      "hic/haec/hoc",
+      "calix",
+      "sanguis",
+      "meus",
+      "novus",
+      "aeternus",
+      "fides",
+      "pro",
+      "vos",
+      "multus",
+      "annuntio",
+      "donec",
+      "venio",
+      "nos",
+      "homo",
+      "noster",
+      "salus",
+      "descendo",
+      "de",
+      "caelum",
+      "omnis",
+      "enim",
+      "se",
+      "is/ea/id",
+      "accedo",
+      "sum",
+      "sed",
+      "do",
+      "propter"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "vivifico",
+      "forms": [
+        "vivificantem"
+      ],
+      "gloss": {
+        "en": "give life",
+        "fr": "vivifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "procedo",
+      "forms": [
+        "procedit"
+      ],
+      "gloss": {
+        "en": "proceed",
+        "fr": "procéder"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "conglorifico",
+      "forms": [
+        "conglorificatur"
+      ],
+      "gloss": {
+        "en": "glorify together",
+        "fr": "glorifier ensemble"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "apostolicus",
+      "forms": [
+        "apostolicam"
+      ],
+      "gloss": {
+        "en": "apostolic",
+        "fr": "apostolique"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "baptisma",
+      "forms": [
+        "baptisma"
+      ],
+      "gloss": {
+        "en": "baptism",
+        "fr": "baptême"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "exspecto",
+      "forms": [
+        "exspecto"
+      ],
+      "gloss": {
+        "en": "await / expect",
+        "fr": "attendre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "resurrectio",
+      "forms": [
+        "resurrectionem"
+      ],
+      "gloss": {
+        "en": "resurrection",
+        "fr": "résurrection"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mortuus",
+      "forms": [
+        "mortuorum"
+      ],
+      "gloss": {
+        "en": "dead",
+        "fr": "mort"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "-que",
+      "forms": [
+        "-que"
+      ],
+      "gloss": {
+        "en": "and (enclitic)",
+        "fr": "et (enclitique)"
+      },
+      "trackedLesson": null,
+      "status": "morphological-support"
+    },
+    {
+      "lemma": "mysterium",
+      "forms": [
+        "Mysterium"
+      ],
+      "gloss": {
+        "en": "mystery",
+        "fr": "mystère"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "effundo",
+      "forms": [
+        "effundetur"
+      ],
+      "gloss": {
+        "en": "pour out / shed",
+        "fr": "répandre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "patiens",
+      "forms": [
+        "patiens"
+      ],
+      "gloss": {
+        "en": "patient",
+        "fr": "patient"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "benignus",
+      "forms": [
+        "benigna"
+      ],
+      "gloss": {
+        "en": "kind",
+        "fr": "bienveillant"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sanctorum",
+      "forms": [
+        "sanctorum"
+      ],
+      "gloss": {
+        "en": "of the saints",
+        "fr": "des saints"
+      },
+      "trackedLesson": null,
+      "status": "formula-support"
+    },
+    {
+      "lemma": "exalto",
+      "forms": [
+        "exaltat"
+      ],
+      "gloss": {
+        "en": "exalt / raise",
+        "fr": "exalter"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "humilio",
+      "forms": [
+        "humiliabitur"
+      ],
+      "gloss": {
+        "en": "humble",
+        "fr": "abaisser"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pes",
+      "forms": [
+        "pedes"
+      ],
+      "gloss": {
+        "en": "foot",
+        "fr": "pied"
+      },
+      "trackedLesson": 36,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "teneo",
+      "forms": [
+        "tenuerunt"
+      ],
+      "gloss": {
+        "en": "hold",
+        "fr": "tenir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-credo-stage4-passage-l20",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo, final section",
+      "sourceLatin": "Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen.",
+      "provenanceNote": "Sustained passage-level checkpoint with relative clauses, deponent locutus est, cases, agreement, and new Lesson 20 vocabulary."
+    },
+    {
+      "id": "mr1962-consecration-calix-l20",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Consecration of the Chalice",
+      "sourceLatin": "Hic est enim Calix Sanguinis mei, novi et aeterni testamenti: Mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum.",
+      "provenanceNote": "Hic/mei/vobis and relative qui force demonstrative/personal/relative pronoun retrieval while introducing testamentum and reinforcing remissio."
+    },
+    {
+      "id": "vulg-1cor11-26-l20",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "I ad Corinthios 11:26",
+      "sourceLatin": "Mortem Domini annuntiabitis, donec veniat.",
+      "provenanceNote": "Mortem introduces mors in a previously familiar temporal clause."
+    },
+    {
+      "id": "vulg-1cor13-4-l20",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "I ad Corinthios 13:4",
+      "sourceLatin": "Caritas patiens est, benigna est.",
+      "provenanceNote": "caritas is introduced in a concise liturgical-scriptural clause."
+    },
+    {
+      "id": "symbolum-apostolorum-communio-l20",
+      "sourceType": "primary-creedal",
+      "work": "Symbolum Apostolorum",
+      "section": "Final articles",
+      "sourceLatin": "sanctorum communionem",
+      "provenanceNote": "Supplementary creedal phrase introduces communio without conflating it with the Roman Mass Nicene Creed."
+    },
+    {
+      "id": "vulg-jn5-22-l20",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 5:22",
+      "sourceLatin": "Neque enim Pater iudicat quemquam, sed omne iudicium dedit Filio.",
+      "provenanceNote": "iudicium appears in an authentic judgment clause."
+    },
+    {
+      "id": "mr1962-credo-qui-propter-l20",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "provenanceNote": "Relative + personal-pronoun retrieval inside the Credo."
+    },
+    {
+      "id": "vulg-lk14-11-l20",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 14:11",
+      "sourceLatin": "Omnis enim qui se exaltat, humiliabitur.",
+      "provenanceNote": "Relative qui plus reflexive se makes the reflexive family compulsory in the checkpoint."
+    },
+    {
+      "id": "vulg-mt28-9-l20",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 28:9",
+      "sourceLatin": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
+      "provenanceNote": "ejus/eum retrieve the is/ea/id family in completed narrative."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Lesson 20 requires case resolution across nouns, adjectives and every pronoun family learned so far.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "integratedReadingFramework": {
+    "progression": "sentence → passage",
+    "procedure": [
+      "Mark finite verbs and verb constructions.",
+      "Identify clause boundaries and connectors.",
+      "Resolve each pronoun family and case.",
+      "Attach genitives/datives/prepositional phrases.",
+      "Check adjective/participle agreement.",
+      "Only then produce the full sense."
+    ],
+    "checkpointFamilies": [
+      "personal",
+      "reflexive",
+      "is/ea/id",
+      "relative qui/quae/quod",
+      "demonstrative hic/ille/iste",
+      "intensive ipse/idem"
+    ]
+  },
+  "pronounSpiral": {
+    "lesson": 20,
+    "focus": "Compulsory mixed retrieval across personal, reflexive, relative and demonstrative families in authentic Credo/liturgical clauses.",
+    "compulsoryFamilies": {
+      "personal": [
+        "nos",
+        "vobis",
+        "mei"
+      ],
+      "reflexive": [
+        "se"
+      ],
+      "anaphoric": [
+        "ejus",
+        "eum"
+      ],
+      "relative": [
+        "qui"
+      ],
+      "demonstrative": [
+        "Hic"
+      ],
+      "intensiveIdentity": [
+        "ipse/idem recognition in cumulative items"
+      ]
+    }
+  },
+  "learningBlocks": [
+    {
+      "id": "l20-b1",
+      "type": "concept",
+      "title": "Stop reading one word at a time",
+      "learnerCopy": {
+        "en": "Lesson 20 is the first passage-level gate. The task is to keep several connected clauses in view: verbs, pronouns, case relationships, agreement and connectors must be resolved as a structure before full translation.",
+        "fr": "La leçon 20 est le premier contrôle au niveau du passage. Il faut garder plusieurs propositions liées en vue : verbes, pronoms, relations de cas, accords et connecteurs doivent être résolus comme une structure avant la traduction complète."
+      }
+    },
+    {
+      "id": "l20-b2",
+      "type": "passage",
+      "title": "Map the Credo before translating",
+      "sourceId": "mr1962-credo-stage4-passage-l20",
+      "learnerCopy": {
+        "en": "Begin by finding the repeated qui clauses, then the coordinated Et clauses. Notice locutus est as deponent-perfect meaning, catholicam agreeing with Ecclesiam, and remissionem governed by in.",
+        "fr": "Commencez par repérer les relatives répétées en qui, puis les propositions coordonnées par Et. Notez locutus est comme parfait déponent actif, catholicam accordé avec Ecclesiam, et remissionem régi par in."
+      }
+    },
+    {
+      "id": "l20-b3",
+      "type": "pronoun",
+      "title": "Mixed pronoun retrieval is compulsory",
+      "learnerCopy": {
+        "en": "You must now distinguish Hic from qui, nos from se, ejus/eum from demonstratives, and attached personal forms such as vobis. Case and pronoun family must both be correct.",
+        "fr": "Il faut désormais distinguer Hic de qui, nos de se, ejus/eum des démonstratifs, et les formes personnelles comme vobis. Le cas et la famille pronominale doivent tous deux être corrects."
+      }
+    },
+    {
+      "id": "l20-b4",
+      "type": "authentic-example",
+      "title": "Hic est enim Calix Sanguinis mei",
+      "sourceId": "mr1962-consecration-calix-l20",
+      "learnerCopy": {
+        "en": "Hic is demonstrative, mei is genitive personal/possessive reference, vobis is dative/ablative-form personal pronoun governed here by pro, and qui begins a relative clause. Four earlier systems meet in one liturgical sentence.",
+        "fr": "Hic est démonstratif, mei est une référence personnelle/possessive au génitif, vobis est une forme pronominale personnelle régie ici par pro, et qui ouvre une relative. Quatre systèmes antérieurs se rencontrent dans une seule phrase liturgique."
+      }
+    },
+    {
+      "id": "l20-b5",
+      "type": "authentic-example",
+      "title": "qui se exaltat",
+      "sourceId": "vulg-lk14-11-l20",
+      "learnerCopy": {
+        "en": "qui is relative and se is reflexive. The relative points to an antecedent; se points back to the subject of its own clause. Similar-looking pronoun work therefore requires different resolution rules.",
+        "fr": "qui est relatif et se est réfléchi. Le relatif renvoie à un antécédent ; se renvoie au sujet de sa propre proposition. Des pronoms proches en apparence exigent donc des règles de résolution différentes."
+      }
+    },
+    {
+      "id": "l20-b6",
+      "type": "stage-checkpoint",
+      "title": "Credo integrated reading checkpoint",
+      "learnerCopy": {
+        "en": "Pass this stage only if you can sustain structural reading across a Credo passage: identify clause architecture, resolve pronouns, keep all six cases active, distinguish active/passive/deponent voice, and track tense/agreement without resetting at every sentence.",
+        "fr": "Cette étape n'est franchie que si vous pouvez maintenir une lecture structurelle sur un passage du Credo : architecture des propositions, résolution des pronoms, six cas, distinction actif/passif/déponent, temps et accords, sans recommencer à zéro à chaque phrase."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l20-p1",
+      "sourceId": "mr1962-credo-stage4-passage-l20",
+      "sourceLatin": "Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen.",
+      "instructionalDisplay": "Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen.",
+      "translation": {
+        "en": "And in the Holy Ghost, the Lord and giver of life, who proceedeth from the Father and the Son; who together with the Father and the Son is adored and glorified; who spoke through the Prophets. And one, holy, catholic and apostolic Church. I confess one baptism for the remission of sins. And I look for the resurrection of the dead and the life of the world to come. Amen.",
+        "fr": "Et au Saint-Esprit, Seigneur et vivificateur, qui procède du Père et du Fils ; qui, avec le Père et le Fils, est adoré et glorifié ; qui a parlé par les prophètes. Et l'Église, une, sainte, catholique et apostolique. Je confesse un seul baptême pour la rémission des péchés. Et j'attends la résurrection des morts et la vie du siècle à venir. Amen."
+      },
+      "targetLemmas": [
+        "et",
+        "in",
+        "spiritus",
+        "sanctus",
+        "Dominus",
+        "qui/quae/quod",
+        "e/ex",
+        "pater",
+        "filius",
+        "cum",
+        "simul",
+        "adoro",
+        "loquor",
+        "per",
+        "propheta",
+        "unus",
+        "catholicus",
+        "ecclesia",
+        "confiteor",
+        "remissio",
+        "peccatum",
+        "vita",
+        "saeculum"
+      ],
+      "supportLemmas": [
+        "vivifico",
+        "-que",
+        "procedo",
+        "conglorifico",
+        "apostolicus",
+        "baptisma",
+        "exspecto",
+        "resurrectio",
+        "mortuus",
+        "Amen"
+      ]
+    },
+    {
+      "id": "l20-p2",
+      "sourceId": "mr1962-consecration-calix-l20",
+      "sourceLatin": "Hic est enim Calix Sanguinis mei, novi et aeterni testamenti: Mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum.",
+      "instructionalDisplay": "Hic est enim Calix Sanguinis mei, novi et aeterni testamenti: Mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum.",
+      "translation": {
+        "en": "For this is the Chalice of My Blood, of the new and eternal testament: the Mystery of Faith: which shall be shed for you and for many unto the remission of sins.",
+        "fr": "Car ceci est le Calice de mon Sang, du testament nouveau et éternel : Mystère de la foi : qui sera répandu pour vous et pour beaucoup en rémission des péchés."
+      },
+      "targetLemmas": [
+        "hic/haec/hoc",
+        "sum",
+        "enim",
+        "calix",
+        "sanguis",
+        "meus",
+        "novus",
+        "et",
+        "aeternus",
+        "testamentum",
+        "fides",
+        "qui/quae/quod",
+        "pro",
+        "vos",
+        "multus",
+        "in",
+        "remissio",
+        "peccatum"
+      ],
+      "supportLemmas": [
+        "mysterium",
+        "effundo"
+      ]
+    },
+    {
+      "id": "l20-p3",
+      "sourceId": "vulg-1cor11-26-l20",
+      "sourceLatin": "Mortem Domini annuntiabitis, donec veniat.",
+      "instructionalDisplay": "Mortem Domini annuntiabitis, donec veniat.",
+      "translation": {
+        "en": "You shall proclaim the death of the Lord until He come.",
+        "fr": "Vous annoncerez la mort du Seigneur jusqu'à ce qu'il vienne."
+      },
+      "targetLemmas": [
+        "mors",
+        "Dominus",
+        "annuntio",
+        "donec",
+        "venio"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l20-p4",
+      "sourceId": "vulg-1cor13-4-l20",
+      "sourceLatin": "Caritas patiens est, benigna est.",
+      "instructionalDisplay": "Caritas patiens est, benigna est.",
+      "translation": {
+        "en": "Charity is patient, is kind.",
+        "fr": "La charité est patiente, elle est bienveillante."
+      },
+      "targetLemmas": [
+        "caritas",
+        "sum"
+      ],
+      "supportLemmas": [
+        "patiens",
+        "benignus"
+      ]
+    },
+    {
+      "id": "l20-p5",
+      "sourceId": "symbolum-apostolorum-communio-l20",
+      "sourceLatin": "sanctorum communionem",
+      "instructionalDisplay": "sanctorum communionem",
+      "translation": {
+        "en": "the communion of saints",
+        "fr": "la communion des saints"
+      },
+      "targetLemmas": [
+        "communio"
+      ],
+      "supportLemmas": [
+        "sanctorum"
+      ]
+    },
+    {
+      "id": "l20-p6",
+      "sourceId": "vulg-jn5-22-l20",
+      "sourceLatin": "Neque enim Pater iudicat quemquam, sed omne iudicium dedit Filio.",
+      "instructionalDisplay": "Neque enim Pater iudicat quemquam, sed omne iudicium dedit Filio.",
+      "translation": {
+        "en": "For neither doth the Father judge any man, but hath given all judgment to the Son.",
+        "fr": "Car le Père ne juge personne, mais il a remis tout jugement au Fils."
+      },
+      "targetLemmas": [
+        "enim",
+        "pater",
+        "sed",
+        "omnis",
+        "iudicium",
+        "do",
+        "filius"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l20-p7",
+      "sourceId": "mr1962-credo-qui-propter-l20",
+      "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "instructionalDisplay": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "translation": {
+        "en": "Who for us men and for our salvation came down from heaven.",
+        "fr": "Qui, pour nous les hommes et pour notre salut, descendit des cieux."
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "propter",
+        "nos",
+        "homo",
+        "et",
+        "noster",
+        "salus",
+        "descendo",
+        "de",
+        "caelum"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l20-p8",
+      "sourceId": "vulg-lk14-11-l20",
+      "sourceLatin": "Omnis enim qui se exaltat, humiliabitur.",
+      "instructionalDisplay": "Omnis enim qui se exaltat, humiliabitur.",
+      "translation": {
+        "en": "For everyone that exalteth himself shall be humbled.",
+        "fr": "Car quiconque s'élève sera abaissé."
+      },
+      "targetLemmas": [
+        "omnis",
+        "enim",
+        "qui/quae/quod",
+        "se"
+      ],
+      "supportLemmas": [
+        "exalto",
+        "humilio"
+      ]
+    },
+    {
+      "id": "l20-p9",
+      "sourceId": "vulg-mt28-9-l20",
+      "sourceLatin": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
+      "instructionalDisplay": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
+      "translation": {
+        "en": "And they came up, and took hold of His feet, and adored Him.",
+        "fr": "Elles s'approchèrent, saisirent ses pieds et l'adorèrent."
+      },
+      "targetLemmas": [
+        "et",
+        "accedo",
+        "is/ea/id",
+        "adoro"
+      ],
+      "supportLemmas": [
+        "teneo",
+        "pes"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l20-e1",
+      "exerciseType": "passage_analysis",
+      "prompt": "Identify the three repeated relative-clause openings in the main Credo passage.",
+      "stimulus": "Qui ... Qui ... qui ...",
+      "expectedAnswer": [
+        "qui",
+        "Qui",
+        "qui"
+      ],
+      "acceptedVariants": [
+        [
+          "qui",
+          "Qui",
+          "qui"
+        ],
+        [
+          "Qui",
+          "Qui",
+          "qui"
+        ]
+      ],
+      "hint": "The passage repeats the same relative family.",
+      "explanation": "Repeated qui clauses organize the Holy Ghost section of the Credo.",
+      "difficulty": 3,
+      "sourceId": "mr1962-credo-stage4-passage-l20",
+      "skills": [
+        "reading:passage",
+        "pronoun:relative"
+      ]
+    },
+    {
+      "id": "l20-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does catholicam agree with in the Credo passage?",
+      "stimulus": "catholicam ... Ecclesiam",
+      "options": [
+        "Ecclesiam",
+        "Spiritum",
+        "Prophetas",
+        "remissionem"
+      ],
+      "expectedAnswer": "Ecclesiam",
+      "acceptedVariants": [
+        "Ecclesiam",
+        "ecclesiam"
+      ],
+      "hint": "Match gender, number and case.",
+      "explanation": "catholicam is feminine accusative singular agreeing with Ecclesiam.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-stage4-passage-l20",
+      "skills": [
+        "agreement",
+        "vocabulary:catholicus"
+      ]
+    },
+    {
+      "id": "l20-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is remissionem after in in the Credo passage?",
+      "stimulus": "in remissionem peccatorum",
+      "options": [
+        "accusative",
+        "ablative",
+        "genitive",
+        "dative"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "This in expresses goal/result: unto remission.",
+      "explanation": "remissionem is accusative after directional/result in.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-stage4-passage-l20",
+      "skills": [
+        "case:accusative",
+        "vocabulary:remissio"
+      ]
+    },
+    {
+      "id": "l20-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which pronoun family is Hic in Hic est enim Calix...?",
+      "stimulus": "Hic",
+      "options": [
+        "demonstrative hic/haec/hoc",
+        "relative qui/quae/quod",
+        "personal ego/tu",
+        "reflexive se"
+      ],
+      "expectedAnswer": "demonstrative hic/haec/hoc",
+      "acceptedVariants": [
+        "demonstrative hic/haec/hoc"
+      ],
+      "hint": "It points to 'this'.",
+      "explanation": "Hic is demonstrative.",
+      "difficulty": 1,
+      "sourceId": "mr1962-consecration-calix-l20",
+      "skills": [
+        "pronoun:demonstrative"
+      ]
+    },
+    {
+      "id": "l20-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What family/form is mei in Sanguinis mei?",
+      "stimulus": "mei",
+      "options": [
+        "genitive of ego",
+        "dative of nos",
+        "relative genitive",
+        "reflexive se"
+      ],
+      "expectedAnswer": "genitive of ego",
+      "acceptedVariants": [
+        "genitive of ego"
+      ],
+      "hint": "It means 'of me / my'.",
+      "explanation": "mei is the genitive form associated with ego.",
+      "difficulty": 2,
+      "sourceId": "mr1962-consecration-calix-l20",
+      "skills": [
+        "pronoun:personal",
+        "case:genitive"
+      ]
+    },
+    {
+      "id": "l20-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What pronoun family is se in qui se exaltat?",
+      "stimulus": "se",
+      "options": [
+        "reflexive",
+        "relative",
+        "demonstrative",
+        "personal nominative"
+      ],
+      "expectedAnswer": "reflexive",
+      "acceptedVariants": [
+        "reflexive"
+      ],
+      "hint": "It points back to the subject of its own clause.",
+      "explanation": "se is reflexive.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk14-11-l20",
+      "skills": [
+        "pronoun:reflexive"
+      ]
+    },
+    {
+      "id": "l20-e7",
+      "exerciseType": "matching",
+      "prompt": "Match pronoun form to family.",
+      "stimulus": [
+        "nos",
+        "se",
+        "ejus",
+        "qui",
+        "Hic"
+      ],
+      "expectedAnswer": {
+        "nos": "personal",
+        "se": "reflexive",
+        "ejus": "is/ea/id",
+        "qui": "relative",
+        "Hic": "demonstrative"
+      },
+      "acceptedVariants": [],
+      "hint": "This is the compulsory mixed-family checkpoint.",
+      "explanation": "Each form belongs to a distinct family learned across Lessons 10–20.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "pronoun:mixed"
+      ]
+    },
+    {
+      "id": "l20-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is ejus in pedes ejus?",
+      "stimulus": "ejus",
+      "options": [
+        "genitive",
+        "accusative",
+        "dative",
+        "ablative"
+      ],
+      "expectedAnswer": "genitive",
+      "acceptedVariants": [
+        "genitive"
+      ],
+      "hint": "It answers 'whose feet?'.",
+      "explanation": "ejus is genitive singular of is/ea/id.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt28-9-l20",
+      "skills": [
+        "pronoun:is-ea-id",
+        "case:genitive"
+      ]
+    },
+    {
+      "id": "l20-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is eum in adoraverunt eum?",
+      "stimulus": "eum",
+      "options": [
+        "accusative",
+        "genitive",
+        "dative",
+        "ablative"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "It is the direct object of adoraverunt.",
+      "explanation": "eum is accusative masculine singular.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt28-9-l20",
+      "skills": [
+        "pronoun:is-ea-id",
+        "case:accusative"
+      ]
+    },
+    {
+      "id": "l20-e10",
+      "exerciseType": "matching",
+      "prompt": "Match Stage 4 structure to example.",
+      "stimulus": [
+        "perfect passive",
+        "relative pronoun",
+        "demonstrative",
+        "deponent"
+      ],
+      "expectedAnswer": {
+        "perfect passive": "incarnatus est",
+        "relative pronoun": "qui tollis",
+        "demonstrative": "Hoc est Corpus meum",
+        "deponent": "miserere nobis"
+      },
+      "acceptedVariants": [],
+      "hint": "Each lesson contributes one structural system.",
+      "explanation": "This retrieves Lessons 16–19 before passage reading.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "stage4:cumulative"
+      ]
+    },
+    {
+      "id": "l20-e11",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is locutus est in the Credo passage?",
+      "stimulus": "locutus est",
+      "options": [
+        "deponent perfect with active meaning",
+        "ordinary perfect passive",
+        "future active",
+        "imperative"
+      ],
+      "expectedAnswer": "deponent perfect with active meaning",
+      "acceptedVariants": [
+        "deponent perfect with active meaning"
+      ],
+      "hint": "loquor is deponent.",
+      "explanation": "locutus est means 'spoke', not 'was spoken'.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-stage4-passage-l20",
+      "skills": [
+        "deponent:loquor",
+        "tense:perfect"
+      ]
+    },
+    {
+      "id": "l20-e12",
+      "exerciseType": "matching",
+      "prompt": "Match new Lesson 20 lemma to meaning.",
+      "stimulus": [
+        "testamentum",
+        "caritas",
+        "communio",
+        "iudicium"
+      ],
+      "expectedAnswer": {
+        "testamentum": "testament / covenant",
+        "caritas": "charity / love",
+        "communio": "communion / fellowship",
+        "iudicium": "judgment"
+      },
+      "acceptedVariants": [],
+      "hint": "These appear in the supplementary checkpoint sources.",
+      "explanation": "This checks the non-Credo portion of the frozen vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l20"
+      ]
+    },
+    {
+      "id": "l20-e13",
+      "exerciseType": "matching",
+      "prompt": "Match new Lesson 20 lemma to meaning.",
+      "stimulus": [
+        "remissio",
+        "mors",
+        "propheta",
+        "cunctus",
+        "universus"
+      ],
+      "expectedAnswer": {
+        "remissio": "remission / forgiveness",
+        "mors": "death",
+        "propheta": "prophet",
+        "cunctus": "all / entire",
+        "universus": "whole / universal / all"
+      },
+      "acceptedVariants": [],
+      "hint": "All belong to the frozen Lesson 20 allocation.",
+      "explanation": "This completes lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l20"
+      ]
+    },
+    {
+      "id": "l20-e14",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the Stage 4 milestone?",
+      "stimulus": null,
+      "options": [
+        "Credo integrated reading checkpoint.",
+        "Short Psalm/Gospel narrative clauses.",
+        "Complete Roman Collect.",
+        "Canon passage with long periodic syntax."
+      ],
+      "expectedAnswer": "Credo integrated reading checkpoint.",
+      "acceptedVariants": [
+        "Credo integrated reading checkpoint."
+      ],
+      "hint": "This is the frozen Lesson 20 gate.",
+      "explanation": "Stage 4 ends with passage-level Credo reading.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ]
+    },
+    {
+      "id": "l20-e15",
+      "exerciseType": "multiple_choice",
+      "prompt": "What changes at Lesson 20 in the reading progression?",
+      "stimulus": null,
+      "options": [
+        "sentence → passage",
+        "phrase → sentence",
+        "passage → independent liturgical reading",
+        "nothing"
+      ],
+      "expectedAnswer": "sentence → passage",
+      "acceptedVariants": [
+        "sentence → passage"
+      ],
+      "hint": "The main Credo selection is sustained connected text.",
+      "explanation": "Lesson 20 is the first passage-level gate.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:progression"
+      ]
+    }
+  ],
+  "objectives": [
+    "Read a sustained Credo passage as connected syntax.",
+    "Resolve personal, reflexive, anaphoric, relative and demonstrative pronoun families in one checkpoint.",
+    "Integrate perfect passive, deponent, case, tense and agreement systems.",
+    "Learn all ten frozen Lesson 20 lemmas.",
+    "Pass the compulsory Credo integrated reading checkpoint."
+  ],
+  "checkpoint": {
+    "id": "stage4-checkpoint",
+    "stage": 4,
+    "scopeLessons": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "progressionGate": "Credo integrated reading checkpoint.",
+    "readingTransition": "sentence → passage",
+    "compulsoryPronounFamilies": [
+      "personal",
+      "reflexive",
+      "is/ea/id",
+      "relative",
+      "demonstrative",
+      "intensive/identity retrieval"
+    ],
+    "passingRule": {
+      "autoGradedMinimumCorrect": 12,
+      "autoGradedExerciseIds": [
+        "l20-e1",
+        "l20-e2",
+        "l20-e3",
+        "l20-e4",
+        "l20-e5",
+        "l20-e6",
+        "l20-e7",
+        "l20-e8",
+        "l20-e9",
+        "l20-e10",
+        "l20-e11",
+        "l20-e12",
+        "l20-e13",
+        "l20-e14",
+        "l20-e15"
+      ]
+    },
+    "mustKnow": [
+      "perfect passive + participial agreement",
+      "relative antecedent versus pronoun case",
+      "demonstrative/intensive family distinctions",
+      "deponent passive form with active meaning",
+      "all six cases",
+      "mixed pronoun-family resolution",
+      "sustained Credo passage architecture"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "remissio",
+      "mors",
+      "testamentum",
+      "caritas",
+      "communio",
+      "catholicus",
+      "propheta",
+      "iudicium",
+      "cunctus",
+      "universus"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 9,
+    "exerciseCount": 15,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}
