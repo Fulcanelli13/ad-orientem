@@ -1,6 +1,6 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
   "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional or conceptual equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
@@ -56,13 +56,19 @@
     {
       "id": "V3_4_14_ROSARY_FINAL",
       "source": "Ad_Orientem_v3_4_14.html",
-      "status": "REFERENCE_REQUIRED",
+      "status": "PRIMARY_MISSING_EXACT_SUCCESSOR_RECOVERED",
       "owns": [
         "final Rosary live rail",
         "mystery cinematics",
         "progress treatment",
         "Rosary art treatment"
-      ]
+      ],
+      "successorEvidence": {
+        "filename": "Ad_Orientem_v3_4_16.html",
+        "sha256": "f34ab3281ac16f8125e13cb3e9e1173efe1f0e10185f163b6604bdae30d0bc86",
+        "byteLength": 54403486,
+        "result": "LINEAGE_CONFIRMED_PRIMARY_BYTES_NOT_DERIVABLE"
+      }
     },
     {
       "id": "N3_GUIDED_NOVENAS",
@@ -159,7 +165,7 @@
       "id": "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
       "classification": "MISSING_PRIMARY_EVIDENCE",
       "status": "OPEN",
-      "current": "The current 390x844 regression matrix now covers Home, PRAY hub, Angelus, Stations, prayer reader, Rosary cinematic/live rail, Adoration, Benediction, Confession, N3 Novenas, all three recovered v38.1 Traditional PRAY modules, the modular Learn hub plus five Traditional Catholic Life children, Calendar Day/Year/Index/Picker, v38.4 Traditional Year/current/1962 discipline, Settings and Sources & About. The direct comparison artifact now embeds this full matrix and labels the authority used for every later state. Five states retain genuine Git-addressable donor/current pairs from frozen v43.59.30. Exact v3.4.10 and N3 primary files are known and hashed but are not repository-addressable in CI. The final v3.4.14 Rosary donor and v3.22 final non-Mass head are approved authorities whose exact primary bytes are currently unavailable. No reconstructed implementation is accepted as a substitute donor. Historical recovery provenance is now recorded for both missing final donors: v3.4.14 was generated in chat on 2026-10-02 and v3.22 on 2026-10-04; neither survives as primary bytes in Git, Library, current attachments, or the active artifact mount. v3.22 has a documented append-only v3.23 successor relationship, but the successor bytes are also unavailable.",
+      "current": "The current 390x844 regression matrix remains complete and green across the recovered non-Mass surfaces. Exact user-supplied v3.4.16 successor bytes are now recovered (SHA-256 f34ab3281ac16f8125e13cb3e9e1173efe1f0e10185f163b6604bdae30d0bc86; 54,403,486 bytes) and embed the v3.4.14→v3.4.15→v3.4.16 certification chain, with v3.4.15 explicitly preserving the v3.4.14 Rosary dedicated rail. This is strong successor provenance but not exact v3.4.14 primary evidence: v3.4.15/16 repaired visible cross-marker/cue content, and the first 54,354,041 bytes of v3.4.16 hash to 75a66058e5fdb7576baa3fa64c6a79ced4535caa13cd954eac953e36a713e593 rather than the frozen v3.4.10 hash 952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283, disproving a byte-preserved append-only slice. The N3 donor upload was also revalidated exactly against its recorded hash. v3.22 primary/successor bytes remain unavailable.",
       "expected": "Keep the full current capture matrix green and obtain immutable primary evidence for the final v3.4.14 Rosary donor and v3.22 final non-Mass head before closing exact parity. Exact external v3.4.10/N3 hashes may support provenance but do not become CI donor renders unless their exact bytes are made repository-addressable or an immutable render is frozen directly from those bytes.",
       "evidence": [
         "tests/nonmass-donor-reference-e2e.mjs",
@@ -174,9 +180,11 @@
         "PR #237 — Restore exact v38.4 traditional-year composition",
         "Ad_Orientem_v3_4_10.html · SHA-256 952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283",
         "Ad_Orientem_NON_MASS_HEAD_v1_NOVENAS_N3_GUIDED.html · SHA-256 105f765d0227b937c58781416cf461c7b950b50427704b81478b4deaeeaadf10",
-        "data/presentation/nonmass-primary-donor-sources.v1.json — recoveryProvenance and recoveryAudit"
+        "data/presentation/nonmass-primary-donor-sources.v1.json — recoveryProvenance and recoveryAudit",
+        "Ad_Orientem_v3_4_16.html · SHA-256 f34ab3281ac16f8125e13cb3e9e1173efe1f0e10185f163b6604bdae30d0bc86 · 54,403,486 bytes · embedded v3.4.14/v3.4.15/v3.4.16 certification chain",
+        "v3.4.16 first-54,354,041-byte SHA-256 75a66058e5fdb7576baa3fa64c6a79ced4535caa13cd954eac953e36a713e593 ≠ frozen v3.4.10 SHA-256 952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283"
       ],
-      "validation": "CURRENT_MATRIX_COMPLETE_PRIMARY_DONOR_BYTES_CONFIRMED_MISSING"
+      "validation": "CURRENT_MATRIX_COMPLETE_SUCCESSOR_PROVENANCE_RECOVERED_PRIMARY_DONOR_BYTES_STILL_MISSING"
     }
   ],
   "preservationRules": [
@@ -200,7 +208,7 @@
   ],
   "openBlockers": [
     "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
-    "MISSING_PRIMARY_DONOR: Ad_Orientem_v3_4_14.html — generated 2026-10-02T21:02:31Z, original sandbox artifact no longer addressable",
+    "MISSING_PRIMARY_DONOR: Ad_Orientem_v3_4_14.html — exact v3.4.16 successor recovered and hashed, but later cross-marker repairs plus a nonmatching frozen-prefix hash prevent byte-exact derivation of v3.4.14",
     "MISSING_PRIMARY_DONOR: Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html — generated 2026-10-04T14:52:03Z; v3.23 append-only successor also unavailable"
   ]
 }
