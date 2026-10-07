@@ -1,6 +1,6 @@
 {
   "schema": "AO_DIRECTORY_SCHEDULE_ASSERTIONS_V1",
-  "generated_at": "2026-10-07T11:45:39.289Z",
+  "generated_at": "2026-10-07T19:45:00Z",
   "records": [
     {
       "schedule_id": "ao-schedule-institute-of-christ-the-king-bay-area-most-holy-rosary-chapel-st-vincent-s-school-for-boys-1-st-vincent-s-drive-0-1",
@@ -400,6 +400,22 @@
       "verification": {
         "state": "OFFICIAL_LIVE",
         "checked_at": "2026-10-07T11:45:39.289Z"
+      }
+    },
+    {
+      "schedule_id": "ao-schedule-oratory-of-st-joseph-5450-equity-ave-reno-nv-89502-12-1",
+      "ministry_id": "ao-ministry-ao-icksp-oratory-of-st-joseph-5450-equity-ave-reno-nv-89502-12",
+      "service_type": "MASS",
+      "mass_type": "UNKNOWN",
+      "payload": {
+        "raw": "Sunday Masses\n9:00 AM\nWeekday Masses\nMonday - Thursday 9:00 AM\nSaturday 9:00 AM\nFridays and Holy Days of Obligation\n6:00 PM\nConfessions\n30 minutes before all Masses"
+      },
+      "source_ids": [
+        "src-icksp-oratory-of-st-joseph-5450-equity-ave-reno-nv-89502-12"
+      ],
+      "verification": {
+        "state": "OFFICIAL_LIVE",
+        "checked_at": "2026-10-07T19:45:00Z"
       }
     }
   ]
