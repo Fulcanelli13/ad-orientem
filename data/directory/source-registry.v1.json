@@ -186,6 +186,44 @@
       "fieldsSupported": [
         "community.IBP.communion_profile.recognises_current_pontiff"
       ]
+    },
+    {
+      "id": "SRC-CMRI-THEOL-20261007",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "CMRI",
+      "title": "Theological Position: Sede Vacante",
+      "url": "https://cmri.org/about-cmri/theological-position-sede-vacante-2/",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.CMRI.communion_profile.position_family",
+        "community.CMRI.communion_profile.recognises_current_pontiff"
+      ]
+    },
+    {
+      "id": "SRC-RCI-THEOL-20261007",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Roman Catholic Institute",
+      "title": "Theological Directory",
+      "url": "https://romancatholicinstitute.org/theological-directory-of-the-roman-catholic-institute/",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.RCI.communion_profile.position_family"
+      ]
+    },
+    {
+      "id": "SRC-RCI-PASTORAL-20261007",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Roman Catholic Institute",
+      "title": "Pastoral Directory",
+      "url": "https://romancatholicinstitute.org/pastoral-directory-of-the-roman-catholic-institute/",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.RCI.communion_profile.pope_named_in_canon",
+        "community.RCI.communion_profile.ordinary_named_in_canon"
+      ]
     }
   ]
 }
