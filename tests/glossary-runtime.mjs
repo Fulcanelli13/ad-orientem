@@ -19,7 +19,7 @@ assert.equal(nav.categories.length,13);
 assert.equal(concepts.length,450);
 assert.ok(concepts.every(x=>x.definition_status==="SOURCE_BACKED"),"Glossary runtime corpus contains non-source-backed definitions");
 assert.ok(concepts.every(x=>x.short_definition?.en&&x.short_definition?.fr&&x.explanation?.en&&x.explanation?.fr),"Glossary runtime corpus has incomplete EN/FR definition text");
-assert.equal(sources.sources.length,137);
+assert.equal(sources.sources.length,146);
 
 assert.match(runtime,/GLOBAL|Search English, French or Latin/);
 assert.match(runtime,/data-gloss-category/);
@@ -27,6 +27,12 @@ assert.match(runtime,/data-gloss-section/);
 assert.match(runtime,/data-gloss-entry/);
 assert.match(runtime,/openEntry/);
 assert.match(runtime,/openTerms/);
+assert.match(runtime,/openLexeme/);
+assert.match(runtime,/openPhrase/);
+assert.match(runtime,/LEXEME_URL/);
+assert.match(runtime,/PHRASE_URL/);
+assert.match(runtime,/Core Latin Lexicon/);
+assert.match(runtime,/Liturgical Phrasebook/);
 assert.match(runtime,/function contextView/);
 assert.match(runtime,/origin:"context"/);
 assert.match(runtime,/short_definition/);
@@ -47,4 +53,4 @@ for(let n=1;n<=450;n++)assert.ok(categoryNumbers.has(n),"uncategorized G"+String
 const sourceIds=new Set(sources.sources.map(x=>x.id));
 for(const e of concepts)for(const id of e.source_ids)assert.ok(sourceIds.has(id),e.id+" unresolved runtime source "+id);
 
-console.log("PASS glossary runtime contract: 13 categories, 450 records, contextual API and source resolution.");
+console.log("PASS glossary runtime contract: 13 categories, 450 concepts, 350 lexemes, 80 phrases, contextual API and source resolution.");
