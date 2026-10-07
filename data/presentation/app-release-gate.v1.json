@@ -9,7 +9,7 @@
     "requiredReaderStatus": "FINAL_NATIVE_READY",
     "productionDefault": "R17_NATIVE",
     "legacyPolicy": "NO_ALTERNATE_RENDERER",
-    "presentationStatus": "CERTIFIED",
+    "presentationStatus": "RECOVERY_REQUIRED",
     "singlePresentationOwner": "R17_NATIVE_PRODUCTION",
     "definitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json",
     "v180DonorParityLedger": "data/presentation/mass-v180-donor-parity.v1.json",
@@ -247,6 +247,26 @@
       "detail": "Presentation FX V1-V5 certifies that cinematic, rail, hero and art-loading mechanisms exist on modular surfaces. It does not certify exact reproduction of the later approved non-Mass prototype composition, trigger semantics, geometry, timings or module choreography; those are governed by EXACT_NON_MASS_DONOR_PARITY."
     },
     {
+      "id": "MASS_V180_INTERACTION_ICON_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
+        "src/mass/reader-dom.js",
+        "src/mass/reader-icons.js",
+        "src/mass/reader-icon-bank.js",
+        "data/presentation/mass-v180-donor-parity.v1.json"
+      ],
+      "detail": "User acceptance reopened Mass presentation parity: current native reader still lacks the donor's explicit vertical-text/horizontal-card interaction contract, the Guide remains under-curated, rubric presentation remains too verbose in places, and the repository icon subset does not reproduce the v1.80 v4.6 master bank.",
+      "progress": {
+        "navigation": "OPEN",
+        "schola": "PARTIAL_IMPLEMENTATION_REQUIRES_DONOR_PARITY",
+        "guide": "OPEN",
+        "rubrics": "OPEN",
+        "iconBank": "OPEN"
+      }
+    },
+    {
       "id": "EXACT_NON_MASS_DONOR_PARITY",
       "classification": "MISSING_PRIMARY_EVIDENCE",
       "status": "OPEN",
@@ -274,6 +294,7 @@
     }
   ],
   "openBlockers": [
+    "MASS_V180_INTERACTION_ICON_PARITY",
     "EXACT_NON_MASS_DONOR_PARITY"
   ],
   "regressionGates": {
