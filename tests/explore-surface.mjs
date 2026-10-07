@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:48,
-  traditions:67,
-  pilgrimages:61,
+  shrines:54,
+  traditions:72,
+  pilgrimages:69,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -91,7 +91,7 @@ assert.equal(tlm.map_state,"MAPPED");
 assert.equal(exploreMapFeatures([tlm]).length,1);
 assert.match(tlm.note,/Check the official schedule/);
 
-const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"});
+const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Sanctuaire Notre-Dame de Lourdes"});
 assert.equal(lourdesShrine.length,1);
 assert.equal(lourdesShrine[0].map_publishable,true);
 assert.equal(lourdesShrine[0].map_state,"MAPPED");
@@ -113,7 +113,7 @@ assert.ok(christmasContext.some(item=>item.kind==="NOVENA_CONTEXT"&&/Corsica/i.t
 const christKingContext=filterExploreItems(projection.byLens.traditions,{query:"Christ the King"});
 assert.ok(christKingContext.some(item=>item.kind==="NOVENA_CONTEXT"&&item.map_state==="NOT_MAPPED"),"Christ the King textual French-world context was incorrectly forced onto a map");
 
-const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Lourdes"});
+const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Pilgrimage to Lourdes"});
 assert.equal(lourdesPilgrimage.length,1);
 assert.equal(lourdesPilgrimage[0].map_publishable,true);
 assert.equal(lourdesPilgrimage[0].map_state,"DESTINATION_MAPPED");
@@ -125,7 +125,7 @@ const shrineVm=buildExploreViewModel({
   lens:"shrines",
   counts:projection.counts,
   view:"list",
-  filters:{query:"Lourdes"},
+  filters:{query:"Sanctuaire Notre-Dame de Lourdes"},
   selectedId:lourdesShrine[0].item_id,
 });
 const shrineHtml=renderExploreToString(shrineVm);

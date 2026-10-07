@@ -1008,6 +1008,86 @@
       "evidence_note": "Sameiro documents the archdiocesan pilgrimage, 12 June feast and recurring candlelight processions.",
       "map_policy": "PLACE",
       "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:NEUMANN-PHILADELPHIA",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:country:US",
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "National shrine pilgrimage practice → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "NEUMANN-PILGRIMAGE-CUSTOM"
+      ],
+      "evidence_note": "The National Shrine of St. John Neumann explicitly organizes individual and group pilgrimages with Rosary, Mass and shrine visits.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-010:MIRACULOUS-MEDAL-PHILADELPHIA",
+      "custom_id": "DEV-010",
+      "geo_area_id": "geo:country:US",
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Continuing shrine practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "MIRACULOUS-MEDAL-CANDLE-CUSTOM"
+      ],
+      "evidence_note": "The Basilica Shrine presents candle offerings as a current devotional practice tied to prayer intentions and Marian intercession.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:CZESTOCHOWA-US-WALK",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:country:US",
+      "place_id": "place:US:czestochowa-doylestown",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Long-running multi-day walking pilgrimage → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "CZESTOCHOWA-US-WALK-CUSTOM"
+      ],
+      "evidence_note": "American Czestochowa documents a continuing multi-day walking pilgrimage tradition to the Doylestown shrine.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:SETON-SEA-SERVICES",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:country:US",
+      "place_id": "place:US:seton-emmitsburg",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual institutional pilgrimage → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "SETON-SEA-SERVICES-CUSTOM"
+      ],
+      "evidence_note": "The Seton Shrine documents the annual Pilgrimage and Mass for the Sea Services, including the 2026 observance.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:GROTTO-LOURDES-FEAST",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:US",
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual Lourdes feast-day novena → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "GROTTO-LOURDES-FEAST-CUSTOM"
+      ],
+      "evidence_note": "The National Shrine Grotto documents an annual Novena of Masses from 2–11 February culminating on its Our Lady of Lourdes feast day.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
     }
   ]
 }

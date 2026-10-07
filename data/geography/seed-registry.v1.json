@@ -2064,6 +2064,198 @@
       "source_ids": [
         "SHR-SAMEIRO-CONTACT"
       ]
+    },
+    {
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "name": {
+        "official": "National Shrine of Saint Alphonsus Liguori",
+        "aliases": [
+          "National Shrine of St. Alphonsus Liguori",
+          "St. Alphonsus Shrine Baltimore"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "112 West Saratoga Street",
+        "line2": null,
+        "postal_code": "21201",
+        "city": "Baltimore",
+        "region": "Maryland",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "112 West Saratoga Street, Baltimore, MD 21201, United States"
+      },
+      "source_ids": [
+        "SHR-ALPHONSUS-BALTIMORE"
+      ]
+    },
+    {
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "name": {
+        "official": "National Shrine of St. John Neumann",
+        "aliases": [
+          "National Shrine of Saint John Neumann",
+          "St. John Neumann Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "1019 North 5th Street",
+        "line2": null,
+        "postal_code": "19123",
+        "city": "Philadelphia",
+        "region": "Pennsylvania",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "1019 North 5th Street, Philadelphia, PA 19123, United States"
+      },
+      "source_ids": [
+        "SHR-NEUMANN-PHILADELPHIA"
+      ]
+    },
+    {
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "name": {
+        "official": "Basilica Shrine of Our Lady of the Miraculous Medal",
+        "aliases": [
+          "Miraculous Medal Shrine",
+          "The Basilica Shrine of Our Lady of the Miraculous Medal"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "500 E. Chelten Ave.",
+        "line2": null,
+        "postal_code": "19144",
+        "city": "Philadelphia",
+        "region": "Pennsylvania",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "500 E. Chelten Ave., Philadelphia, PA 19144, United States"
+      },
+      "source_ids": [
+        "SHR-MIRACULOUS-MEDAL-PHILADELPHIA"
+      ]
+    },
+    {
+      "place_id": "place:US:czestochowa-doylestown",
+      "name": {
+        "official": "National Shrine of Our Lady of Czestochowa",
+        "aliases": [
+          "American Czestochowa",
+          "Our Lady of Czestochowa Shrine, Doylestown"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "654 Ferry Road",
+        "line2": null,
+        "postal_code": "18901",
+        "city": "Doylestown",
+        "region": "Pennsylvania",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "654 Ferry Road, Doylestown, PA 18901, United States"
+      },
+      "source_ids": [
+        "SHR-CZESTOCHOWA-US"
+      ]
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "name": {
+        "official": "The National Shrine of Saint Elizabeth Ann Seton",
+        "aliases": [
+          "National Shrine of Saint Elizabeth Ann Seton",
+          "Seton Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "339 South Seton Avenue",
+        "line2": null,
+        "postal_code": "21727",
+        "city": "Emmitsburg",
+        "region": "Maryland",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "339 South Seton Avenue, Emmitsburg, MD 21727, United States"
+      },
+      "source_ids": [
+        "SHR-SETON-EMMITSBURG"
+      ]
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "name": {
+        "official": "National Shrine Grotto of Our Lady of Lourdes",
+        "aliases": [
+          "National Shrine Grotto",
+          "Our Lady of Lourdes Grotto, Emmitsburg"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "16330 Grotto Road",
+        "line2": null,
+        "postal_code": "21727",
+        "city": "Emmitsburg",
+        "region": "Maryland",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "16330 Grotto Road, Emmitsburg, MD 21727, United States"
+      },
+      "source_ids": [
+        "SHR-GROTTO-LOURDES-EMMITSBURG"
+      ]
     }
   ],
   "directoryPlaceLinks": [
@@ -2076,6 +2268,17 @@
       "source_ids": [
         "src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",
         "SHR-NNE-ENYEMAKA-FSSP"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:US:st-alphonsus-baltimore",
+      "venue_id": "ao-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa",
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "src-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa",
+        "SHR-ALPHONSUS-BALTIMORE"
       ]
     }
   ]
