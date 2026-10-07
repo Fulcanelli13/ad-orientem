@@ -688,6 +688,12 @@ try{
   assert.ok(rosaryOpening.recitationButtonWidths.length===2&&rosaryOpening.recitationButtonWidths.every(width=>width>=52),"Rosary Individual / Group controls are visibly truncated");
   assert.ok(rosaryOpening.recitationRight<=rosaryOpening.headRight+1,"Rosary recitation control clips outside the phone header");
 
+  // Reproduce the user-visible failure mode explicitly: Group recitation. The late
+  // preserved donor had to collapse common-prayer leader/response grids to full-width
+  // blocks or the anonymous prayer text falls into the 1.55rem role column.
+  await page.locator("#aoPrayerBookRoot .r29-head-recitation [data-p435930-recitation='group']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .r29-head-recitation [data-p435930-recitation='group']")?.getAttribute("aria-pressed")==="true",null,{timeout:2000});
+
   // Prove the real Next button and the actual prayer column, not just selector presence.
   const ourFatherTarget=await page.evaluate(()=>{
     const xs=globalThis.AO_ROSARY_V381?.steps?.()||[];
@@ -718,6 +724,10 @@ try{
       latinVisible:Boolean(latin&&getComputedStyle(latin).display!=="none"&&getComputedStyle(latin).visibility!=="hidden"&&latin.getClientRects().length),
       vernVisible:Boolean(vern&&getComputedStyle(vern).display!=="none"&&getComputedStyle(vern).visibility!=="hidden"&&vern.getClientRects().length),
       face:flip?.dataset?.face??null,
+      groupRoot:active?.classList?.contains("aoRecitationGroup")??false,
+      innerBlocks:[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse,.aoPrayerDialogueBody,.aoPrayerWords")??[])]
+        .filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=="none")
+        .map(node=>({className:node.className||"",width:node.getBoundingClientRect().width,display:getComputedStyle(node).display,grid:getComputedStyle(node).gridTemplateColumns,writingMode:getComputedStyle(node).writingMode})),
     };
   });
   assert.ok(rosaryPrayerGeometry.width>=330,"Rosary prayer column collapsed horizontally");
@@ -729,6 +739,17 @@ try{
   assert.equal(rosaryPrayerGeometry.vernHidden,false,"Rosary vernacular face is marked hidden by default");
   assert.equal(rosaryPrayerGeometry.latinVisible,false,"Rosary visually renders Latin simultaneously with the vernacular");
   assert.equal(rosaryPrayerGeometry.vernVisible,true,"Rosary vernacular face is not actually visible");
+  assert.equal(rosaryPrayerGeometry.groupRoot,true,"Rosary visual acceptance did not reproduce Group recitation");
+  assert.ok(rosaryPrayerGeometry.innerBlocks.length>0,"Rosary Our Father exposes no semantic prayer-text blocks");
+  for(const block of rosaryPrayerGeometry.innerBlocks){
+    if(/aoPrayerDialogueBody|aoPrayerWords/.test(block.className))continue;
+    assert.ok(block.width>=rosaryPrayerGeometry.width*.72,"Rosary Group prayer text collapsed into a narrow semantic column: "+JSON.stringify(block));
+    assert.match(block.writingMode,/horizontal/i,"Rosary inner prayer block is not horizontal: "+JSON.stringify(block));
+  }
+  for(const block of rosaryPrayerGeometry.innerBlocks.filter(x=>/aoCustomaryLeader|aoCustomaryResponse/.test(x.className))){
+    assert.equal(block.display,"block","Rosary Group common-prayer owner regressed to grid: "+JSON.stringify(block));
+    assert.ok(!/1\.55rem/.test(block.grid),"Rosary Group common-prayer owner retained the narrow role grid: "+JSON.stringify(block));
+  }
 
   // Translation is a real tap-to-replace interaction in the preserved Rosary engine,
   // not merely a hidden second face. Tap once for Latin, then tap again to return.
@@ -755,6 +776,9 @@ try{
       flipWidth:flipRect?.width??0,
       cardHeight:cardRect?.height??0,
       writingMode:css?.writingMode??"",
+      innerMinWidth:Math.min(...[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse")??[])]
+        .filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=="none")
+        .map(node=>node.getBoundingClientRect().width),Infinity),
     };
   });
   assert.equal(rosaryLatin.face,"latin","Rosary tap did not switch the active face to Latin");
@@ -766,6 +790,7 @@ try{
   assert.ok(rosaryLatin.cardWidth>=330&&rosaryLatin.flipWidth>=300,"Rosary translation tap collapsed the prayer column horizontally");
   assert.ok(rosaryLatin.cardHeight>0&&rosaryLatin.cardHeight<720,"Rosary Latin face reproduced the vertical word-stack regression");
   assert.match(rosaryLatin.writingMode,/horizontal/i,"Rosary prayer flip is not horizontally written after translation");
+  assert.ok(!Number.isFinite(rosaryLatin.innerMinWidth)||rosaryLatin.innerMinWidth>=rosaryLatin.flipWidth*.72,"Rosary Latin translation collapsed an inner prayer block");
   await shot("03d3-pray-rosary-latin-toggle");
 
   await rosaryFlip.tap();

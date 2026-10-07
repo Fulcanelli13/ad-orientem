@@ -162,6 +162,8 @@ assert.match(styles,/ROSARY_EXACT_DONOR_CSS/,"Rosary exact donor style block is 
 assert.match(styles,/ROSARY_DECLUTTER_CSS/,"Rosary declutter style owner is absent");
 assert.match(styles,/grid-template-columns:none!important/,"Rosary single-column style guard is absent");
 assert.match(styles,/\.lab-prayer-flip\[data-pb-flip\]\{[\s\S]*display:block!important;[\s\S]*width:100%!important;[\s\S]*writing-mode:horizontal-tb!important/,"Rosary prayer flip lost its horizontal full-width text guard");
+assert.match(styles,/\.lab-prayer-flip \.aoPrayerProse,[\s\S]*\.lab-prayer-flip \.aoCustomarySplit,[\s\S]*\.lab-prayer-flip \.aoPrayerDialogueLine/,"Rosary lost the late donor descendant-width guard");
+assert.match(styles,/aoRecitationGroup \.aoCustomaryLeader,[\s\S]*aoRecitationGroup \.aoCustomaryResponse[\s\S]*display:block!important;[\s\S]*grid-template-columns:none!important;[\s\S]*width:100%!important/,"Rosary lost the v43.33 Group common-prayer grid-collapse repair");
 assert.match(styles,/rosary-decade-bar-v15 i\.current/,"Rosary donor progress current-state geometry is absent");
 assert.match(styles,/r29-head-recitation/,"Rosary donor recitation strip styling is absent");
 assert.match(styles,/r24-has-mystery-art::before/,"Rosary donor sacred-art backdrop styling is absent");
