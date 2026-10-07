@@ -84,9 +84,21 @@ async function concurrentMap(items,concurrency,mapper){
 }
 
 export function buildFsspDataset(records,{retrievedAt=new Date().toISOString()}={}){
-  const venues=[],ministries=[],schedules=[],sources=[];
+  const venues=[],ministries=[],schedules=[],sources=[],exactDuplicateRows=[];
+  const seenKeys=new Map();
   for(const record of records){
     const key=slugify(`${record.title}-${record.address}`)||`row-${record.index}`;
+    if(seenKeys.has(key)){
+      exactDuplicateRows.push({
+        key,
+        first_row_index:seenKeys.get(key),
+        duplicate_row_index:record.index,
+        title:record.title,
+        address:record.address,
+      });
+      continue;
+    }
+    seenKeys.set(key,record.index);
     const venueId=`ao-fssp-${key}`,sourceId=`src-fssp-${key}`;
     const contactUrls=[record.detailUrl,...(record.externalLinks??[])].filter(Boolean);
     const venue={
@@ -112,7 +124,7 @@ export function buildFsspDataset(records,{retrievedAt=new Date().toISOString()}=
     sources.push({source_id:sourceId,registry_source_id:FSSP_SOURCE_ID,source_type:"COMMUNITY_OFFICIAL",publisher:"Priestly Fraternity of Saint Peter",title:record.title,url:record.detailUrl??FSSP_DIRECTORY_URL,retrieved_at:retrievedAt,authority:"PRIMARY",fields_supported:["venue","venue.diocese","venue.contact","schedule"]});
     venues.push(venue);ministries.push(ministry);
   }
-  return {venues,ministries,schedules,sources};
+  return {venues,ministries,schedules,sources,exactDuplicateRows};
 }
 
 async function renderFsspDirectoryHtml(url=FSSP_DIRECTORY_URL){
@@ -143,7 +155,14 @@ export async function runFsspImport({out="data/directory/generated/fssp",concurr
   const countryKnown=dataset.venues.filter(v=>v.address.country_code).length;
   const result=await writeDirectoryDataset(path.resolve(out),{
     provider:"FSSP",retrievedAt,...dataset,
-    coverage:{source_rows:base.length,detail_pages_attempted:base.filter(r=>r.detailUrl).length,country_code_known:countryKnown,country_code_unknown:dataset.venues.length-countryKnown}
+    coverage:{
+      source_rows:base.length,
+      canonical_unique_rows:dataset.venues.length,
+      exact_duplicate_rows:dataset.exactDuplicateRows.length,
+      detail_pages_attempted:base.filter(r=>r.detailUrl).length,
+      country_code_known:countryKnown,
+      country_code_unknown:dataset.venues.length-countryKnown
+    }
   });
   return result.report;
 }
