@@ -1,0 +1,53 @@
+name: Directory snapshot promotion gate
+
+on:
+  push:
+    branches:
+      - "snapshot/directory-*"
+    paths:
+      - "data/directory/.snapshot-promotion-request"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: directory-snapshot-promotion-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Generate official-source runtime snapshots
+        run: |
+          npm run directory:import:fssp
+          npm run directory:import:icksp
+          npm run directory:import:ibp
+      - name: Validate promotion payload
+        run: |
+          npm run test:directory
+          npm run test:find
+          node tools/directory/validate-runtime-snapshots.mjs
+      - name: Commit to review branch only
+        shell: bash
+        run: |
+          git config user.name "ad-orientem-directory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          rm -f data/directory/.snapshot-promotion-request
+          git add data/directory/generated/fssp data/directory/generated/icksp data/directory/generated/ibp
+          git add -u data/directory/.snapshot-promotion-request
+          if git diff --cached --quiet; then
+            echo "No snapshot changes to promote."
+            exit 0
+          fi
+          git commit -m "Directory: promote validated runtime snapshots [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
