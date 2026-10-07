@@ -830,7 +830,43 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "TEXT_PENDING",
+      "historical_parts": [
+        {
+          "en": "Mass of the Catechumens",
+          "fr": "Messe des catéchumènes",
+          "la": "Missa catechumenorum",
+          "definition": {
+            "en": "A traditional historical and catechetical name for the first major part of Mass, especially the preparatory and instructional rites before the Offertory.",
+            "fr": "Nom historique et catéchétique traditionnel de la première grande partie de la Messe, surtout les rites préparatoires et d’instruction avant l’Offertoire."
+          },
+          "evidence": {
+            "id": "CAMPION-1954",
+            "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+            "pages": [
+              13,
+              14
+            ]
+          }
+        },
+        {
+          "en": "Mass of the Faithful",
+          "fr": "Messe des fidèles",
+          "la": "Missa fidelium",
+          "definition": {
+            "en": "A traditional historical and catechetical name for the sacrificial part of Mass beginning with the Offertory.",
+            "fr": "Nom historique et catéchétique traditionnel de la partie sacrificielle de la Messe commençant avec l’Offertoire."
+          },
+          "evidence": {
+            "id": "CAMPION-1954",
+            "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+            "pages": [
+              13,
+              14
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "G047",
@@ -920,7 +956,29 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_LOCKED_TEXT",
+      "definition": {
+        "en": "Texts that vary according to the day or Mass, as distinct from the more stable Ordinary.",
+        "fr": "Textes qui varient selon le jour ou la Messe, par opposition aux parties plus stables de l’Ordinaire."
+      },
+      "evidence": [
+        {
+          "id": "CAMPION-1954",
+          "title": "Know Your Mass / Saint Edmund Campion Children’s Missal (1954)",
+          "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+          "pages": [
+            24,
+            27
+          ]
+        }
+      ],
+      "aliases": [
+        {
+          "en": "Proper",
+          "fr": "Propre",
+          "la": "Proprium"
+        }
+      ]
     },
     {
       "id": "G052",
@@ -938,7 +996,21 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_LOCKED_TEXT",
+      "definition": {
+        "en": "The Proper chant/text at the entrance of the Mass; in the 1962 rite the celebrant reads it and it is sung in sung forms.",
+        "fr": "Chant/texte propre de l’entrée de la Messe ; dans le rite de 1962 le célébrant le lit et il est chanté dans les formes chantées."
+      },
+      "evidence": [
+        {
+          "id": "CAMPION-1954",
+          "title": "Know Your Mass / Saint Edmund Campion Children’s Missal (1954)",
+          "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+          "pages": [
+            24
+          ]
+        }
+      ]
     },
     {
       "id": "G053",
@@ -1064,7 +1136,21 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_LOCKED_TEXT",
+      "definition": {
+        "en": "The prayer over the offerings recited quietly after Orate, fratres and before the Preface; it varies with the Mass.",
+        "fr": "Prière sur les offrandes récitée à voix basse après l’Orate, fratres et avant la Préface ; elle varie selon la Messe."
+      },
+      "evidence": [
+        {
+          "id": "CAMPION-1954",
+          "title": "Know Your Mass / Saint Edmund Campion Children’s Missal (1954)",
+          "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+          "pages": [
+            44
+          ]
+        }
+      ]
     },
     {
       "id": "G060",
@@ -1082,7 +1168,21 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_LOCKED_TEXT",
+      "definition": {
+        "en": "The variable or seasonal thanksgiving prayer immediately before the Sanctus and Canon.",
+        "fr": "Prière d’action de grâces variable ou saisonnière immédiatement avant le Sanctus et le Canon."
+      },
+      "evidence": [
+        {
+          "id": "CAMPION-1954",
+          "title": "Know Your Mass / Saint Edmund Campion Children’s Missal (1954)",
+          "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+          "pages": [
+            45
+          ]
+        }
+      ]
     },
     {
       "id": "G061",
@@ -1100,7 +1200,30 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_LOCKED_TEXT",
+      "definition": {
+        "en": "The central Eucharistic prayer of the traditional Roman Mass, extending from Te igitur through the concluding doxology before the Pater noster.",
+        "fr": "Prière eucharistique centrale de la Messe romaine traditionnelle, allant du Te igitur jusqu’à la doxologie finale avant le Pater noster."
+      },
+      "evidence": [
+        {
+          "id": "CAMPION-1954",
+          "title": "Know Your Mass / Saint Edmund Campion Children’s Missal (1954)",
+          "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+          "pages": [
+            46,
+            49,
+            70
+          ]
+        }
+      ],
+      "aliases": [
+        {
+          "en": "Roman Canon",
+          "fr": "Canon romain",
+          "la": "Canon Missae"
+        }
+      ]
     },
     {
       "id": "G062",
