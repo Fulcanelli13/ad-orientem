@@ -46,7 +46,7 @@ const ickspUs=parseIckspUsDetail(ickspUsHtml,{label:"New York - St. Josaphat Ora
 assert.match(ickspUs.address,/34-32 210th Street/);
 assert.match(ickspUs.address,/New York 11361/);
 assert.deepEqual(ickspUs.phones,["718-229-1663"]);
-assert.equal(phoneCandidates("09/02/2026 718-229-1663"),["718-229-1663"],"date string was classified as a phone");
+assert.deepEqual(phoneCandidates("09/02/2026 718-229-1663"),["718-229-1663"],"date string was classified as a phone");
 
 const ickspIntl=`
 <h2>Rome, Italy</h2>
