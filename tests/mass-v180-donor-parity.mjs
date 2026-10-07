@@ -25,6 +25,10 @@ assert.doesNotMatch(entry,/\.startLive\s*\(|runReaderShadowAudit|LEGACY_EXPLICIT
 assert.match(dom,/data-reader-home/);
 assert.match(dom,/data-role="section-jump"/);
 assert.match(dom,/data-reader-preferences/);
+assert.match(dom,/data-ao-donor-icon="home"/);
+assert.match(dom,/M3\.5 10\.7 12 3\.8l8\.5 6\.9v9\.1h-5\.4v-5\.7H8\.9v5\.7H3\.5z/);
+assert.match(dom,/data-ao-donor-icon="preferences"/);
+assert.match(dom,/M4 7h10M18 7h2M4 17h2M10 17h10M4 12h5M13 12h7/);
 assert.match(dom,/data-role="mass-preferences"/);
 assert.match(rendered,/data-reader-mode="MISSAL"/);
 assert.match(rendered,/data-reader-mode="SIMPLE"/);
@@ -41,6 +45,10 @@ assert.match(dom,/data-channel="priest-action"/);
 assert.match(dom,/data-channel="gesture"/);
 assert.match(dom,/data-channel="priest-voice"/);
 assert.match(dom,/data-channel="bell"/);
+assert.match(dom,/data-icon-slot="bell"/);
+assert.match(dom,/class="ao-bell-icon"/);
+assert.doesNotMatch(dom,/data-channel="bell"[^>]*><span class="ao-rail-copy"/,
+  "active bell rail can render as an empty visual square");
 assert.match(dom,/\.ao-rail-copy\{display:none!important\}/);
 assert.match(dom,/border:0;border-radius:0;background:transparent;box-shadow:none/);
 assert.doesNotMatch(dom,/grid-template-columns:repeat\(3,1fr\).*ao-reader-top-ribbon/);

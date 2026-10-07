@@ -118,10 +118,11 @@ try{
     appSettingsButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")),
     homeControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.textContent?.trim()??"",
     preferencesControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")?.textContent?.trim()??"",
-    homeControlRenderer:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.dataset?.aoAssetRenderer??null,
-    preferencesControlRenderer:document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")?.dataset?.aoAssetRenderer??null,
-    homeControlMask:getComputedStyle(document.querySelector("#ao-r17-native-reader-preview [data-reader-home] .ao-reader-top-icon"))?.webkitMaskImage||"",
-    preferencesControlMask:getComputedStyle(document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences] .ao-reader-top-icon"))?.webkitMaskImage||"",
+    homeControlDonorIcon:document.querySelector("#ao-r17-native-reader-preview [data-reader-home] [data-ao-donor-icon='home']")?.dataset?.aoDonorIcon??null,
+    preferencesControlDonorIcon:document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences] [data-ao-donor-icon='preferences']")?.dataset?.aoDonorIcon??null,
+    homeControlPath:document.querySelector("#ao-r17-native-reader-preview [data-reader-home] svg path")?.getAttribute("d")??"",
+    preferencesCircleCount:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-preferences] svg circle").length,
+    preferencesPath:document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences] svg path")?.getAttribute("d")??"",
     homeControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
     preferencesControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
     stateLabels:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-state-kicker")].map(x=>x.textContent?.trim()??""),
@@ -154,10 +155,13 @@ try{
   assert.equal(opening.appSettingsButton,true,"Mass preferences lost its app-settings handoff");
   assert.equal(opening.homeControlText,"","Home control retained obsolete text after canonical icon externalization");
   assert.equal(opening.preferencesControlText,"","Mass preferences control retained obsolete text after canonical icon externalization");
-  assert.equal(opening.homeControlRenderer,"mask","Home control is not owned by the canonical mask renderer");
-  assert.equal(opening.preferencesControlRenderer,"mask","Mass preferences control is not owned by the canonical mask renderer");
-  assert.match(opening.homeControlMask,/ao-nav-home\.png/,"Home control does not render the frozen navigation asset");
-  assert.match(opening.preferencesControlMask,/ao-nav-settings\.png/,"Mass preferences control does not render the frozen navigation asset");
+  assert.equal(opening.homeControlDonorIcon,"home","Mass Home control is not the exact v1.80 donor icon owner");
+  assert.equal(opening.preferencesControlDonorIcon,"preferences","Mass preferences control is not the exact v1.80 donor icon owner");
+  assert.equal(opening.homeControlPath,"M3.5 10.7 12 3.8l8.5 6.9v9.1h-5.4v-5.7H8.9v5.7H3.5z",
+    "Mass Home icon drifted from the v1.80 house glyph");
+  assert.equal(opening.preferencesCircleCount,3,"Mass preferences icon lost one of the three v1.80 slider knobs");
+  assert.equal(opening.preferencesPath,"M4 7h10M18 7h2M4 17h2M10 17h10M4 12h5M13 12h7",
+    "Mass preferences icon drifted from the v1.80 sliders glyph");
   assert.ok(opening.homeControlRect?.width>=44&&opening.homeControlRect?.height>=44,"Home control lost a usable phone touch target");
   assert.ok(opening.preferencesControlRect?.width>=44&&opening.preferencesControlRect?.height>=44,"Mass preferences control lost a usable phone touch target");
   assert.deepEqual(opening.stateLabels,["YOU","PRIEST"],"persistent state ribbon is no longer YOU / GUIDE / PRIEST");
@@ -289,6 +293,8 @@ try{
     cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
     bellActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='bell']")?.dataset?.active??null,
     bellText:document.querySelector("#ao-r17-native-reader-preview [data-role='bell']")?.textContent?.trim()??"",
+    bellIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell']")?.hidden??null,
+    bellIconSvg:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell'] svg")?.outerHTML??"",
     cinematicKind:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.dataset?.kind??null,
     cinematicTitle:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-title']")?.textContent?.trim()??"",
     cinematicSub:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-sub']")?.textContent?.trim()??"",
@@ -298,6 +304,9 @@ try{
   assert.equal(elevationState.cue,"AO.SM.C0174");
   assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
   assert.match(elevationState.bellText,/ELEVATION BELL/i);
+  assert.equal(elevationState.bellIconHidden,false,"Host elevation bell rail is active but its icon is hidden");
+  assert.match(elevationState.bellIconSvg,/<svg[^>]*viewBox="0 0 48 48"/,
+    "Host elevation bell rail is active but contains no visible bell glyph");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
   assert.equal(elevationState.cinematicTitle,"ELEVATION");
   assert.equal(elevationState.cinematicSub,"SACRED HOST");
