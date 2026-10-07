@@ -4,6 +4,7 @@
 export const TRADITIONAL_LEARN_SOURCES_V381=Object.freeze({
   baltimore:"https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity",
   ritual1952:"https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+  missal1962:"https://archive.org/details/sp07mr62-editio-typica",
   currentAnointing:"https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19721130_sacram-unctionem.html",
   currentBaptism:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/iii_how_is_the_sacrament_of_baptism_celebrated.html",
   currentBaptismWho:"https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
