@@ -4,7 +4,7 @@
   "retrieved_at": "2026-10-07T11:45:39.289Z",
   "venue_count": 27,
   "ministry_count": 27,
-  "schedule_assertion_count": 25,
+  "schedule_assertion_count": 26,
   "source_count": 27,
   "geo_feature_count": 22,
   "validation_issue_count": 0,
@@ -30,5 +30,12 @@
     "existing_valid": 0,
     "unresolved": 5,
     "existing_invalid": 0
+  },
+  "post_import_schedule_recovery": {
+    "verified_at": "2026-10-07T19:45:00Z",
+    "candidate_id": "ICKSP-STG-055",
+    "venue": "Oratory of St. Joseph, Reno",
+    "source_url": "https://www.institute-christ-king.org/reno-home",
+    "reason": "The current official page now publishes Sunday and weekday Mass times; this schedule was absent from the earlier generated snapshot."
   }
 }
