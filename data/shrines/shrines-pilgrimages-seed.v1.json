@@ -641,6 +641,130 @@
         "PIL-CHIQUINQUIRA-JULY9"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:BE:banneux-virgin-poor",
+      "place_id": "place:BE:banneux",
+      "name": "Sanctuaire de la Vierge des Pauvres — Banneux",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Virgin of the Poor",
+      "origin_summary": "Belgian Marian sanctuary at Banneux associated with the 1933 apparitions to Mariette Beco and a continuing international pilgrimage tradition.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-BANNEUX-CONTACT",
+        "PIL-BANNEUX-ANNIVERSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:BE:beauraing-golden-heart",
+      "place_id": "place:BE:beauraing",
+      "name": "Sanctuaire Notre-Dame de Beauraing",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Beauraing / Virgin of the Golden Heart",
+      "origin_summary": "Belgian Marian sanctuary at the site of the 1932–1933 Beauraing apparitions, officially recognised by the Church and developed as an international pilgrimage destination.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-BEAURAING-CONTACT"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CZ:svata-hora",
+      "place_id": "place:CZ:svata-hora-pribram",
+      "name": "Svatá Hora",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Assumption of the Blessed Virgin Mary",
+      "origin_summary": "Historic Czech Marian pilgrimage basilica above Příbram, centered on the miraculous image and an annual pilgrimage feast around the Assumption season.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-SVATA-HORA-OFFICIAL",
+        "PIL-SVATA-HORA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "name": "Bazilika svatého Václava — Stará Boleslav",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Wenceslas",
+      "origin_summary": "National Czech pilgrimage site at the place associated with the martyrdom of Saint Wenceslas, hosting the annual National St Wenceslas Pilgrimage.",
+      "associated_saints": [
+        "Saint Wenceslas"
+      ],
+      "source_ids": [
+        "SHR-STARA-BOLESLAV-OFFICIAL",
+        "PIL-ST-WENCESLAS-NATIONAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:NL:heiloo-olv-ter-nood",
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "name": "Heiligdom Onze Lieve Vrouw ter Nood",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady in Need",
+      "origin_summary": "Historic Dutch Marian pilgrimage shrine at Heiloo with a continuing liturgical and devotional programme including a recurring First Saturday pilgrimage.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-HEILOO-CONTACT",
+        "PIL-HEILOO-FIRST-SATURDAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:NL:maastricht-sterre-der-zee",
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "name": "Basiliek Onze Lieve Vrouw — Sterre der Zee",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady, Star of the Sea",
+      "origin_summary": "Historic Maastricht Marian basilica centered on the image of the Sterre der Zee and a centuries-old pilgrimage/bidweg tradition.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MAASTRICHT-STERRE-DER-ZEE",
+        "PIL-MAASTRICHT-STERRE-DER-ZEE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PT:fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "name": "Santuário de Nossa Senhora do Rosário de Fátima",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of the Rosary of Fátima",
+      "origin_summary": "International Marian sanctuary at Cova da Iria associated with the 1917 apparitions and the major international anniversary pilgrimages.",
+      "associated_saints": [
+        "Saint Francisco Marto",
+        "Saint Jacinta Marto"
+      ],
+      "source_ids": [
+        "SHR-FATIMA-CONTACT",
+        "PIL-FATIMA-MAY13"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PT:sameiro",
+      "place_id": "place:PT:sameiro-braga",
+      "name": "Santuário de Nossa Senhora do Sameiro",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Sameiro / Immaculate Conception",
+      "origin_summary": "Major Portuguese Marian shrine overlooking Braga, with a recurring archdiocesan pilgrimage, liturgical feast and candlelight processions.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-SAMEIRO-CONTACT",
+        "PIL-SAMEIRO-PILGRIMAGES"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -1477,6 +1601,136 @@
         "PIL-CHIQUINQUIRA-JULY9"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:BE:banneux-destination",
+      "name": "Pilgrimage to Banneux, Virgin of the Poor",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:BE:banneux-virgin-poor",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:banneux:first-apparition"
+      ],
+      "scope_note": "International Marian pilgrimage destination with annual observances of the apparition anniversaries beginning on 15 January.",
+      "source_ids": [
+        "SHR-BANNEUX-CONTACT",
+        "PIL-BANNEUX-ANNIVERSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:BE:beauraing-destination",
+      "name": "Pilgrimage to Our Lady of Beauraing",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:BE:beauraing-golden-heart",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open Marian pilgrimage destination at the officially recognised Beauraing apparition site.",
+      "source_ids": [
+        "SHR-BEAURAING-CONTACT"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CZ:svata-hora-destination",
+      "name": "Pilgrimage to Svatá Hora",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CZ:svata-hora",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:svata-hora:annual-feast"
+      ],
+      "scope_note": "Historic Marian pilgrimage destination with an annual pilgrimage feast around the Assumption season, including Rosary, procession, blessings and veneration of the miraculous image.",
+      "source_ids": [
+        "SHR-SVATA-HORA-OFFICIAL",
+        "PIL-SVATA-HORA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CZ:stara-boleslav-wenceslas",
+      "name": "National St Wenceslas Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:stara-boleslav:st-wenceslas"
+      ],
+      "scope_note": "Annual Czech national pilgrimage to Stará Boleslav on the feast of Saint Wenceslas.",
+      "source_ids": [
+        "SHR-STARA-BOLESLAV-OFFICIAL",
+        "PIL-ST-WENCESLAS-NATIONAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:NL:heiloo-destination",
+      "name": "Pilgrimage to Our Lady in Need, Heiloo",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:NL:heiloo-olv-ter-nood",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:heiloo:first-saturday"
+      ],
+      "scope_note": "Dutch Marian pilgrimage destination with a recurring First Saturday pilgrimage including confession, Rosary, Mass, adoration and Benediction.",
+      "source_ids": [
+        "SHR-HEILOO-CONTACT",
+        "PIL-HEILOO-FIRST-SATURDAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:NL:maastricht-sterre-der-zee",
+      "name": "Pilgrimage to the Sterre der Zee, Maastricht",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:NL:maastricht-sterre-der-zee",
+      "route_ids": [
+        "route:NL:winthagen-maastricht-sterre-der-zee"
+      ],
+      "temporal_link_ids": [
+        "temporal:maastricht:sterre-der-zee-walk"
+      ],
+      "scope_note": "Centuries-old Marian pilgrimage destination in Maastricht; current diocesan-feast walking pilgrimage reaches the Basilica from Winthagen via Schin op Geul and Houthem.",
+      "source_ids": [
+        "SHR-MAASTRICHT-STERRE-DER-ZEE",
+        "PIL-MAASTRICHT-STERRE-DER-ZEE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PT:fatima-destination",
+      "name": "Pilgrimage to the Shrine of Fátima",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PT:fatima",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:fatima:may13"
+      ],
+      "scope_note": "International Marian pilgrimage destination with major anniversary pilgrimages from May through October and the principal first-apparition commemoration on 13 May.",
+      "source_ids": [
+        "SHR-FATIMA-CONTACT",
+        "PIL-FATIMA-MAY13"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PT:sameiro-destination",
+      "name": "Pilgrimage to Our Lady of Sameiro",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PT:sameiro",
+      "route_ids": [
+        "route:PT:braga-cathedral-sameiro"
+      ],
+      "temporal_link_ids": [
+        "temporal:sameiro:annual-pilgrimage",
+        "temporal:sameiro:june12"
+      ],
+      "scope_note": "Major Portuguese Marian pilgrimage destination with an archdiocesan pilgrimage from Braga Cathedral on the first Sunday of June and the shrine feast on 12 June.",
+      "source_ids": [
+        "SHR-SAMEIRO-CONTACT",
+        "PIL-SAMEIRO-PILGRIMAGES"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -1687,6 +1941,36 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-CIRIO-NAZARE-2026"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:NL:winthagen-maastricht-sterre-der-zee",
+      "name": "Winthagen to Maastricht Sterre der Zee",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Sterre der Zee Chapel, Winthagen / Voerendaal",
+      "destination_place_id": "place:NL:maastricht-sterre-der-zee",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-MAASTRICHT-STERRE-DER-ZEE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:PT:braga-cathedral-sameiro",
+      "name": "Braga Cathedral to Sameiro",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Sé de Braga / Braga Cathedral",
+      "destination_place_id": "place:PT:sameiro-braga",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-SAMEIRO-PILGRIMAGES"
       ],
       "confidence": "HIGH"
     }
@@ -2249,6 +2533,114 @@
       "source_event_label": "9 July shrine observance of Our Lady of Chiquinquirá",
       "source_ids": [
         "PIL-CHIQUINQUIRA-JULY9"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:banneux:first-apparition",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:BE:banneux-destination",
+      "relation": "SOURCE_EVENT",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.banneux_first_apparition",
+      "source_event_label": "Anniversary of the first apparition at Banneux",
+      "source_ids": [
+        "PIL-BANNEUX-ANNIVERSARY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:svata-hora:annual-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CZ:svata-hora-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual Svatá Hora pilgrimage feast around the Assumption season",
+      "source_ids": [
+        "PIL-SVATA-HORA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:stara-boleslav:st-wenceslas",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CZ:stara-boleslav-wenceslas",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.saint_wenceslas",
+      "source_event_label": "National St Wenceslas Pilgrimage",
+      "source_ids": [
+        "PIL-ST-WENCESLAS-NATIONAL"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:heiloo:first-saturday",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:NL:heiloo-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "First Saturday pilgrimage at Heiloo",
+      "source_ids": [
+        "PIL-HEILOO-FIRST-SATURDAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:maastricht:sterre-der-zee-walk",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:NL:maastricht-sterre-der-zee",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Sterre der Zee diocesan-feast walking pilgrimage",
+      "source_ids": [
+        "PIL-MAASTRICHT-STERRE-DER-ZEE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:fatima:may13",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PT:fatima-destination",
+      "relation": "SOURCE_EVENT",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.fatima_may13",
+      "source_event_label": "13 May anniversary pilgrimage at Fátima",
+      "source_ids": [
+        "PIL-FATIMA-MAY13"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:sameiro:annual-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PT:sameiro-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Archdiocesan pilgrimage to Sameiro on the first Sunday of June",
+      "source_ids": [
+        "PIL-SAMEIRO-PILGRIMAGES"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:sameiro:june12",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PT:sameiro-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.sameiro_june12",
+      "source_event_label": "Feast of Our Lady of Sameiro",
+      "source_ids": [
+        "PIL-SAMEIRO-PILGRIMAGES"
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"
