@@ -7,6 +7,7 @@ import {
 } from "./presentation.js";
 import { ensureTraditionalLearnRegistry, installTraditionalLearnModules, TRADITIONAL_LEARN_ROUTES } from "./traditional-life.js";
 import { installCatholicLifeModule } from "./catholic-life.js";
+import { ensureSexualEthicsRegistry, installSexualEthicsModule } from "./sexual-ethics.js";
 import { ensureLatinCourseRegistry, installLatinCourseModule, LATIN_COURSE_ROUTE_ID } from "./latin-course-v2.js";
 
 const VERSION="modular-learn-v1";
@@ -41,6 +42,7 @@ function retireHistoricalLearnSurface(win){
 function childOpen(win,id){
   if(id===LATIN_COURSE_ROUTE_ID)return Boolean(win?.AO_LATIN_COURSE_V1?.status?.()?.open);
   if(id==="learn.catholic_life")return Boolean(win?.AO_CATHOLIC_LIFE_V1?.status?.()?.open);
+  if(id==="learn.sexual_ethics")return Boolean(win?.AO_SEXUAL_ETHICS_V1?.status?.()?.open);
   if(TRADITIONAL_LEARN_ROUTES[id]){const s=win?.AO_TRADITIONAL_LEARN_V381?.status?.();return Boolean(s?.open&&s?.route===id)}
   if(id==="learn.mass"){
     const node=win?.document?.getElementById?.("ao-learn-root");
@@ -65,6 +67,7 @@ function closeChild(win,id){
   try{
     if(id===LATIN_COURSE_ROUTE_ID){win?.AO_LATIN_COURSE_V1?.close?.();return true;}
     if(id==="learn.catholic_life"){win?.AO_CATHOLIC_LIFE_V1?.close?.();return true;}
+    if(id==="learn.sexual_ethics"){win?.AO_SEXUAL_ETHICS_V1?.close?.();return true;}
     if(TRADITIONAL_LEARN_ROUTES[id]){win?.AO_TRADITIONAL_LEARN_V381?.close?.();return true;}
     if(id==="learn.mass"){win?.AO_UNDERSTAND_MASS?.close?.();return true;}
     if(id==="learn.catechism"){win?.AO_TRADITIONAL_CATECHISM?.close?.();return true;}
@@ -198,6 +201,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(!state.open||!MODULE_SET.has(id))return false;
     ensureTraditionalLearnRegistry(win);
     ensureLatinCourseRegistry(win);
+    ensureSexualEthicsRegistry(win);
     const registry=win?.AO_MODULES;
     if(typeof registry?.open!=="function"){
       state.error=L(win,"This module could not be opened.","Ce module n’a pas pu être ouvert.");
@@ -297,6 +301,7 @@ export function installLearnBrowserOwner(win=globalThis){
   installTraditionalLearnModules(win);
   installCatholicLifeModule(win);
   installLatinCourseModule(win);
+  installSexualEthicsModule(win);
   const api=createLearnOwner(win);
   win.AO_LEARN_APP_V1=api;
   return api;
