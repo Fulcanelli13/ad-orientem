@@ -1,6 +1,6 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
   "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional or conceptual equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
@@ -135,19 +135,22 @@
       "id": "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
       "classification": "MISSING_INTEGRATION",
       "status": "OPEN",
-      "current": "The remaining donor-parity risk is now visual/compositional certification rather than known missing module/runtime ownership. Exact Rosary, devotional rails, v3.4.10 Angelus/Stations focus, Guided Novenas N3 and the v38.1 Traditional Catholic Life modules have been extracted/recovered, but current acceptance still lacks direct donor/current capture comparison for the complete non-Mass surface set.",
+      "current": "A direct donor/current capture lane now renders the frozen v43.59.30 historical production tree and current modular app in independent 390x844 mobile Chromium contexts, producing paired Home, PRAY hub, Angelus, Stations and representative prayer-reader screenshots plus measured geometry. The later v3.4.10/v3.4.14/N3 recovery deltas remain regression-locked in code/tests, but the full pair set still requires visual review before this finding can close.",
       "expected": "Create donor-reference acceptance for Home, PRAY, Learn, Calendar and Settings at 390x844 and key module states; certify only after direct donor-vs-current comparison.",
       "evidence": [
+        "tests/nonmass-donor-reference-e2e.mjs",
+        ".github/workflows/visual-acceptance.yml",
+        "artifacts/visual-acceptance/donor-current-v435930/comparison.html (CI artifact)",
         "tests/app-visual-acceptance.mjs",
-        "tests/pray-presentation.mjs",
+        "tests/pray-focus.mjs",
         "tests/pray-novenas.mjs",
         "tests/pray-traditional-life.mjs",
         "tests/learn-traditional-life.mjs",
-        "data/presentation/presentation-fx-parity.v1.json",
         "Ad_Orientem_v3_4_10.html",
         "Ad_Orientem_v3_4_14.html",
         "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
-      ]
+      ],
+      "validation": "DIRECT_CAPTURE_LANE_INSTALLED_REVIEW_PENDING"
     }
   ],
   "preservationRules": [
@@ -159,6 +162,7 @@
     "One state must still map to one visible surface."
   ],
   "requiredAcceptance": [
+    "CI must generate frozen v43.59.30 donor/current comparison artifacts at 390x844 before final manual/computer-vision review.",
     "Donor/current side-by-side captures at 390x844 for Home, PRAY hub, representative prayer reader, Rosary, Angelus, Stations, Adoration/Benediction, Confession, Learn, Calendar and Settings.",
     "Exact transition trigger/content/timing matrix from donor to modular owner.",
     "Exact loader state matrix from donor to modular owner.",
