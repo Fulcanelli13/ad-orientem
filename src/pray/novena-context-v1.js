@@ -111,8 +111,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Corsica. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Corsica. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French traditional-liturgy attestation: a Corsican diocesan extraordinary-form programme explicitly begins the Holy Ghost novena on Ascension.",
+          "fr": "Attestation française liée à la liturgie traditionnelle : un programme diocésain corse en forme extraordinaire fait explicitement commencer la neuvaine au Saint-Esprit à l’Ascension."
         },
         "links": [
           {
@@ -171,8 +171,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Corsica. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Corsica. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French form attestation: a Corsican diocesan Christmas novena is structured around the Great O Antiphons.",
+          "fr": "Attestation française de la forme : une neuvaine de Noël diocésaine en Corse est structurée autour des grandes antiennes Ô."
         },
         "links": [
           {
@@ -244,8 +244,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Sanctuaire de sainte Julienne de Cornillon, Liège, Belgium. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Sanctuaire de sainte Julienne de Cornillon, Liège, Belgium. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "Devotional origin context: Liège and St Julienne of Cornillon are directly associated with the birth of the Fête-Dieu.",
+          "fr": "Contexte d’origine dévotionnelle : Liège et sainte Julienne de Cornillon sont directement liés à la naissance de la Fête-Dieu."
         },
         "links": [
           {
@@ -317,8 +317,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: devotional family custom; optional preparatory custom. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : devotional family custom ; optional preparatory custom. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French-world context: the canonical Sacred Heart shrine at Paray-le-Monial, family consecration, and home enthronement.",
+          "fr": "Contexte du monde catholique français : sanctuaire canonique du Sacré-Cœur à Paray-le-Monial, consécration familiale et intronisation au foyer."
         },
         "links": [
           {
@@ -407,8 +407,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: public novena shrine context. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : public novena shrine context. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "Shrine context: Lourdes directly publishes and celebrates an Immaculate Conception novena.",
+          "fr": "Contexte de sanctuaire : Lourdes publie et célèbre directement une neuvaine à l’Immaculée Conception."
         },
         "links": [
           {
@@ -480,8 +480,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Cathédrale Notre-Dame du Puy, Le Puy-en-Velay. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Cathédrale Notre-Dame du Puy, Le Puy-en-Velay. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French shrine context: Notre-Dame du Puy is explicitly tied to the mystery of the Annunciation and its Grand Pardon.",
+          "fr": "Contexte de sanctuaire français : Notre-Dame du Puy est explicitement liée au mystère de l’Annonciation et à son Grand Pardon."
         },
         "links": [
           {
@@ -553,8 +553,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Cathédrale Notre-Dame de Paris. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Cathédrale Notre-Dame de Paris. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French customary context: Notre-Dame de Paris preserves the Vœu de Louis XIII and the Marian procession of 15 August.",
+          "fr": "Contexte coutumier français : Notre-Dame de Paris conserve la mémoire du Vœu de Louis XIII et de la procession mariale du 15 août."
         },
         "links": [
           {
@@ -620,8 +620,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Basilique Notre-Dame des Victoires, Paris. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Basilique Notre-Dame des Victoires, Paris. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French Marian-shrine context: Notre-Dame des Victoires publicly observes Notre-Dame des Douleurs.",
+          "fr": "Contexte de sanctuaire marial français : Notre-Dame des Victoires célèbre publiquement Notre-Dame des Douleurs."
         },
         "links": [
           {
@@ -693,8 +693,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: devotional family area context. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : devotional family area context. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French geographical context: official Catholic sources document several sanctuaries and monasteries dedicated to St Joseph in France.",
+          "fr": "Contexte géographique français : des sources catholiques officielles documentent plusieurs sanctuaires et monastères dédiés à saint Joseph en France."
         },
         "links": [
           {
@@ -766,8 +766,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: related devotional custom; temporal custom context. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : related devotional custom ; temporal custom context. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French customary context: prayerful cemetery visitation and prayer for the faithful departed on 2 November.",
+          "fr": "Contexte coutumier français : visite priante du cimetière et prière pour les fidèles défunts le 2 novembre."
         },
         "links": [
           {
@@ -849,8 +849,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Basilique Notre-Dame du Perpétuel-Secours, Paris. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Basilique Notre-Dame du Perpétuel-Secours, Paris. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French public-novena context: the Diocese of Paris documents a nine-day novena at the Basilica of Our Lady of Perpetual Help.",
+          "fr": "Contexte français de neuvaine publique : le diocèse de Paris documente une neuvaine de neuf jours à la basilique Notre-Dame du Perpétuel-Secours."
         },
         "links": [
           {
@@ -916,8 +916,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Sanctuaire Sainte-Thérèse de Lisieux. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Sanctuaire Sainte-Thérèse de Lisieux. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "Shrine context: the Sanctuary of St Thérèse at Lisieux directly attests a St Thérèse novena.",
+          "fr": "Contexte de sanctuaire : le Sanctuaire Sainte-Thérèse de Lisieux atteste directement une neuvaine à sainte Thérèse."
         },
         "links": [
           {
@@ -983,8 +983,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Sanctuaire des Grottes de Saint Antoine, Brive. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Sanctuaire des Grottes de Saint Antoine, Brive. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French Tuesday-devotion context: the Franciscan shrine at Brive preserves a regular Tuesday pilgrimage Mass associated with St Anthony.",
+          "fr": "Contexte français de la dévotion du mardi : le sanctuaire franciscain de Brive conserve une messe régulière du pèlerinage le mardi, liée à saint Antoine."
         },
         "links": [
           {
@@ -1050,8 +1050,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: french world historical devotional attestation. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : french world historical devotional attestation. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French traditional textual attestation: the prayer used by Ad Orientem is preserved in a traditional French devotional witness. No artificial shrine pin is inferred.",
+          "fr": "Attestation textuelle française traditionnelle : la prière employée par Ad Orientem est conservée dans un témoin dévotionnel français traditionnel. Aucun sanctuaire artificiel n’en est déduit."
         },
         "links": [
           {
@@ -1117,8 +1117,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Basilique Notre-Dame des Victoires, Paris. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Basilique Notre-Dame des Victoires, Paris. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French historical devotional centre: Notre-Dame des Victoires is the historic home of the Archconfraternity of the Immaculate Heart of Mary.",
+          "fr": "Centre historique français de la dévotion : Notre-Dame des Victoires est le foyer historique de l’Archiconfrérie du Cœur Immaculé de Marie."
         },
         "links": [
           {
@@ -1184,8 +1184,8 @@ export const NOVENA_CONTEXT_V1={
         "bridge_file": "data/customs/novena-context-links.v1.json",
         "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Evidence-backed context: Sanctuaire du Mont-Saint-Michel. These links provide devotional, customary or geographical context and do not make the related practice part of the novena itself.",
-          "fr": "Contexte étayé par des sources : Sanctuaire du Mont-Saint-Michel. Ces liens apportent un contexte dévotionnel, coutumier ou géographique et ne rendent pas la pratique associée obligatoire dans la neuvaine elle-même."
+          "en": "French shrine and pilgrimage context: the diocesan sanctuary at Mont-Saint-Michel preserves a centuries-old St Michael pilgrimage tradition.",
+          "fr": "Contexte français de sanctuaire et de pèlerinage : le sanctuaire diocésain du Mont-Saint-Michel conserve une tradition séculaire de pèlerinage à saint Michel."
         },
         "links": [
           {
