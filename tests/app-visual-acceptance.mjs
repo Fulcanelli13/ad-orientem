@@ -589,7 +589,7 @@ try{
     const rect=icon?.getBoundingClientRect?.();
     return {mask,url,status,bytes,width:rect?.width??0,height:rect?.height??0};
   });
-  assert.match(benBlessing.mask,/assets\\/recovered\\/ao-live-blessing\\.svg/,"Benediction blessing did not resolve through the recovered frozen-V4 silhouette");
+  assert.match(benBlessing.mask,/assets\/recovered\/ao-live-blessing\.svg/,"Benediction blessing did not resolve through the recovered frozen-V4 silhouette");
   assert.equal(benBlessing.status,200,"Benediction blessing runtime asset does not load");
   assert.ok(benBlessing.bytes>1000,"Benediction blessing runtime asset is unexpectedly empty");
   assert.ok(benBlessing.width>=30&&benBlessing.height>=30,"Benediction blessing icon collapsed below visible rail geometry");
