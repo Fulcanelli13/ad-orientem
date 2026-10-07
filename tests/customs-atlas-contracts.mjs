@@ -35,7 +35,7 @@ for (const entry of negative.entries) {
 }
 
 assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 49);
+assert.equal(atlas.attestations.length, 54);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -49,13 +49,13 @@ const result = assertCustomsAtlasRegistry({
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
   customs: 13,
-  attestations: 49,
-  sources: 53,
+  attestations: 54,
+  sources: 58,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
   [...result.mapCandidates].sort(),
-  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE", "att:DEV-007:CHAMPION", "att:DEV-010:GUADALUPE-LA-CROSSE", "att:DEV-007:SAINTE-ANNE-BEAUPRE", "att:DEV-010:NOTRE-DAME-DU-CAP", "att:DEV-007:LORETO-VENUTA", "att:DEV-007:POMPEI-SUPPLICA", "att:DEV-007:JASNA-GORA", "att:DEV-007:KALWARIA-ASSUMPTION", "att:DEV-007:WALSINGHAM", "att:DEV-007:HOLYWELL-ST-WINEFRIDE", "att:DEV-007:ST-PETER-CHANEL-NZ", "att:DEV-007:UGWOGO-PERPETUAL-HELP", "att:DEV-007:NAMUGONGO-MARTYRS-DAY", "att:DEV-007:MUNYONYO-MARTYRS", "att:DEV-007:GUADALUPE-MX", "att:DEV-007:ZAPOPAN-ROMERIA", "att:DEV-007:APARECIDA", "att:DEV-007:CIRIO-NAZARE", "att:DEV-007:LAS-LAJAS", "att:DEV-007:CHIQUINQUIRA", "att:DEV-007:BANNEUX", "att:DEV-006:BEAURAING", "att:DEV-007:SVATA-HORA", "att:DEV-007:ST-WENCESLAS-BOLESLAV", "att:DEV-007:HEILOO-FIRST-SATURDAY", "att:DEV-007:MAASTRICHT-STERRE-DER-ZEE", "att:DEV-007:FATIMA-MAY13", "att:DEV-007:SAMEIRO"].sort(),
+  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE", "att:DEV-007:CHAMPION", "att:DEV-010:GUADALUPE-LA-CROSSE", "att:DEV-007:SAINTE-ANNE-BEAUPRE", "att:DEV-010:NOTRE-DAME-DU-CAP", "att:DEV-007:LORETO-VENUTA", "att:DEV-007:POMPEI-SUPPLICA", "att:DEV-007:JASNA-GORA", "att:DEV-007:KALWARIA-ASSUMPTION", "att:DEV-007:WALSINGHAM", "att:DEV-007:HOLYWELL-ST-WINEFRIDE", "att:DEV-007:ST-PETER-CHANEL-NZ", "att:DEV-007:UGWOGO-PERPETUAL-HELP", "att:DEV-007:NAMUGONGO-MARTYRS-DAY", "att:DEV-007:MUNYONYO-MARTYRS", "att:DEV-007:GUADALUPE-MX", "att:DEV-007:ZAPOPAN-ROMERIA", "att:DEV-007:APARECIDA", "att:DEV-007:CIRIO-NAZARE", "att:DEV-007:LAS-LAJAS", "att:DEV-007:CHIQUINQUIRA", "att:DEV-007:BANNEUX", "att:DEV-006:BEAURAING", "att:DEV-007:SVATA-HORA", "att:DEV-007:ST-WENCESLAS-BOLESLAV", "att:DEV-007:HEILOO-FIRST-SATURDAY", "att:DEV-007:MAASTRICHT-STERRE-DER-ZEE", "att:DEV-007:FATIMA-MAY13", "att:DEV-007:SAMEIRO", "att:DEV-006:NEUMANN-PHILADELPHIA", "att:DEV-010:MIRACULOUS-MEDAL-PHILADELPHIA", "att:DEV-006:CZESTOCHOWA-US-WALK", "att:DEV-006:SETON-SEA-SERVICES", "att:DEV-007:GROTTO-LOURDES-FEAST"].sort(),
 );
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
