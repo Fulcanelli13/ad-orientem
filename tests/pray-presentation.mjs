@@ -56,6 +56,12 @@ assert.match(runtime,/if\(b\.dataset\.p435930Own\)\{if\(b\.dataset\.p435930Own==
   "Rosary card no longer bypasses the redundant modular chooser");
 assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
   "Rosary chooser stopped synchronizing recitation through the canonical setter");
+assert.match(runtime,/function applySettingsPreferences\(raw=\{\}\)/,
+  "PRAY lost the restored Settings preference bridge");
+assert.match(runtime,/applySettingsPreferences,sources:SOURCE_REGISTRY/,
+  "PRAY Settings bridge is not exposed on the canonical public owner");
+assert.match(runtime,/typeof stations\.stabatMater===['"]boolean['"]/,
+  "PRAY Settings bridge no longer maps Stations Stabat Mater");
 assert.doesNotMatch(styles,/aoP435930HeadSpacer/,"obsolete PRAY hub spacer styling returned");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
