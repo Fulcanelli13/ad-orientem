@@ -12,7 +12,7 @@ assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),false,"Spiritual 
 assert.equal(sot.sources.length,12);
 assert.equal(sot.curriculum.stage_count,14);
 assert.equal(sot.curriculum.stages.length,14);
-assert.equal(sot.curriculum.claim_count,75);
+assert.equal(sot.curriculum.claim_count,76);
 
 const sourceIds=new Set(sot.sources.map(x=>x.id));
 assert.equal(sourceIds.size,sot.sources.length,"duplicate Spiritual Life source IDs");
@@ -25,8 +25,8 @@ const stages=sot.curriculum.stages;
 assert.deepEqual(stages.map(x=>x.id),Array.from({length:14},(_,i)=>"SL"+String(i+1).padStart(2,"0")));
 assert.deepEqual(stages.map(x=>x.order),Array.from({length:14},(_,i)=>i+1));
 const claimIds=stages.flatMap(stage=>stage.claims.map(claim=>claim.id));
-assert.equal(claimIds.length,75);
-assert.equal(new Set(claimIds).size,75,"duplicate Spiritual Life claim IDs");
+assert.equal(claimIds.length,76);
+assert.equal(new Set(claimIds).size,76,"duplicate Spiritual Life claim IDs");
 
 for(const stage of stages){
   assert.ok(stage.title?.en&&stage.title?.fr,stage.id+" lost bilingual title");
