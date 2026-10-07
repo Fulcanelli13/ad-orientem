@@ -40,6 +40,15 @@ try{
   );
   await page.waitForSelector("[data-ao-app-surface='learn']",{state:"visible",timeout:30000});
 
+  const formationRibbon=await page.locator("[data-ao-app-surface='learn']").evaluate(node=>({
+    surface:node.dataset.aoAppSurface,
+    text:(node.textContent??"").trim(),
+    aria:node.getAttribute("aria-label"),
+  }));
+  assert.equal(formationRibbon.surface,"learn","Formation ribbon changed the canonical app surface");
+  assert.equal(formationRibbon.text,"Formation","phone ribbon still displays Learn / Apprendre");
+  assert.equal(formationRibbon.aria,"Formation","phone ribbon ARIA label still exposes Learn / Apprendre");
+
   const assertNoMass=async label=>{
     const snapshot=await page.evaluate(()=>({
       route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
