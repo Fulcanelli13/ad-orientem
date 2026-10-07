@@ -23,6 +23,7 @@ export function v384Dates(y){const e=easter(y),ash=add(e,-46),pent=add(e,49),asc
   easter:e,septuagesima:add(e,-63),ash,palm:add(e,-7),holyThursday:add(e,-3),goodFriday:add(e,-2),holySaturday:add(e,-1),ascension:asc,pentecost:pent,corpus:add(e,60),christKing:lastSunday(y,10),
   emberLent:[add(lentSun,3),add(lentSun,5),add(lentSun,6)],emberPent:[add(pent,3),add(pent,5),add(pent,6)],emberSept:[add(sept3,3),add(sept3,5),add(sept3,6)],emberAdvent:[add(adv3,3),add(adv3,5),add(adv3,6)],minorRog:[add(asc,-3),add(asc,-2),add(asc,-1)]
 }}
+const v384Ref=(label,url)=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;
 const actionButtons=(actions,escFn=esc)=>actions?.length?`<div class="v384Actions">${actions.map(([r,l])=>`<button type="button" data-v384-route="${escFn(r)}">${escFn(l)}</button>`).join("")}</div>`:"";
 export function v384Event(selected,{fr=false,properTitle=""}={}){
   const L=(en,frText)=>fr?frText:en,d=dObj(selected),y=d.getFullYear(),m=d.getMonth()+1,day=d.getDate(),x=v384Dates(y),pt=String(properTitle||"").toLowerCase(),E=[];
