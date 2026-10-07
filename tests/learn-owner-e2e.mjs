@@ -107,7 +107,7 @@ try{
   assert.equal(learned.owner,"modular-learn-v1");
   assert.equal(learned.presentationOwner,"modular-learn-presentation-v1");
   assert.equal(learned.routeOwner,"modular-learn-v1");
-  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.confirmation","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
+  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module=\'today.saint\']").count(),0,"Saint of the Day remained visible in Learn");
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
@@ -124,6 +124,7 @@ try{
   const recoveredTraditional=[
     "learn.rites.sick",
     "learn.rites.baptism",
+    "learn.rites.first_communion",
     "learn.rites.confirmation",
     "learn.rites.matrimony",
     "learn.serve_mass.responses",
@@ -143,7 +144,7 @@ try{
       donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
       priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
     }});
-    assert.equal(child.owner,"38.2-sacramental-life-formation",id+": wrong child owner");
+    assert.equal(child.owner,"38.3-first-communion-formation",id+": wrong child owner");
     assert.ok(child.width>300,id+": child collapsed on phone");
     assert.ok(child.overflow<=1,id+": child has horizontal overflow");
     assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
