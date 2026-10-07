@@ -222,5 +222,31 @@
     "Lessons 31-35",
     "Lessons 36-40"
   ],
-  "nextBatch": null
+  "nextBatch": null,
+  "runtimeWiring": {
+    "status": "WIRED_AND_GATED",
+    "route": "learn.latin",
+    "owner": "AO_LATIN_COURSE_V1",
+    "launcher": "Formation > Courses & study",
+    "languageBehavior": "Open course surfaces re-render on AO runtime language changes; stored exercise responses remain canonical.",
+    "gradingBehavior": "Localized multiple-choice labels map to canonical options by index; localized matching labels map to canonical values by key; localization never overrides expectedAnswer or acceptedVariants.",
+    "selfCheckBehavior": "Passage-analysis and read-aloud model guidance is localized separately from canonical grading data.",
+    "coverage": {
+      "lessons": "40/40",
+      "blockTitles": "245/245",
+      "exerciseTextSets": "431/431",
+      "matchingEnglishKeyRepairs": [
+        "l15-e10",
+        "l20-e10",
+        "l34-e2"
+      ],
+      "localizedPassageAnalysisGuides": "all applicable",
+      "localizedReadAloudModels": "all applicable"
+    },
+    "ci": [
+      "tools/validate_latin_course.mjs",
+      "tests/learn-latin-runtime.mjs",
+      "tests/learn-owner.mjs"
+    ]
+  }
 }
