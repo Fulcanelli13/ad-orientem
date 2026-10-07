@@ -148,10 +148,16 @@ function novenaLinksForAttestation(attestation,links=[]){
   });
 }
 function novenaSections(links,recordMap){
-  return arr(links).map(link=>{
-    const row=recordMap.get(link?.novena_id);
-    return Object.freeze({label:"Related novena",title:novenaTitle(row),body:link?.note??""});
-  });
+  const grouped=new Map();
+  for(const link of arr(links)){
+    const id=link?.novena_id;if(!id)continue;
+    const current=grouped.get(id)??[];
+    if(link?.note&&!current.includes(link.note))current.push(link.note);
+    grouped.set(id,current);
+  }
+  return [...grouped.entries()].map(([id,notes])=>Object.freeze({
+    label:"Related novena",title:novenaTitle(recordMap.get(id)),body:notes.join(" ")
+  }));
 }
 function novenaActions(links,recordMap){
   const seen=new Set(),out=[];
