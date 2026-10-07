@@ -11,6 +11,7 @@ on:
       - "tests/mass-visual-acceptance.mjs"
       - "tests/nonmass-donor-reference-e2e.mjs"
       - "data/presentation/exact-donor-parity.v1.json"
+      - "data/presentation/nonmass-primary-donor-sources.v1.json"
       - ".github/workflows/visual-acceptance.yml"
   workflow_dispatch:
 
