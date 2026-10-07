@@ -155,7 +155,8 @@ export function createSettingsOwner(win=globalThis){
     return Object.freeze({
       version:"modular-settings-v4359.6",installed:true,open:Boolean(r?.isConnected),owner:r?.dataset?.aoSettingsOwner||"AO_SETTINGS_APP_V1",
       presentationOwner:r?.dataset?.aoSettingsPresentationOwner||SETTINGS_PRESENTATION_VERSION,route:route==="/settings/about-sources"?"about-sources":route,path:route,returnSurface,
-      liveSessionGuarded:isLive(),structuralLocked:false,historicalSettingsVisible:historicalVisible(),
+      liveSessionGuarded:isLive(),structuralLocked:isLive(),historicalSettingsVisible:historicalVisible(),
+      embeddedHomeSettingsVisible:Boolean(doc?.querySelector?.(".homeSheet [data-ao-home-settings],.homeSheet[data-ao-home-settings]")),
       donorVersion:donor.version,profileCount:donor.snapshot().profiles.length
     });
   }
