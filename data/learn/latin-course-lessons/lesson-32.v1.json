@@ -398,7 +398,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le latin de l’Église est une langue historique, pas du mauvais latin classique"
+        }
+      }
     },
     {
       "id": "l32-b2",
@@ -415,7 +420,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "neque et nec accumulent les négations"
+        }
+      }
     },
     {
       "id": "l32-b3",
@@ -430,7 +440,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "aut, vel et sive se recouvrent sans être identiques"
+        }
+      }
     },
     {
       "id": "l32-b4",
@@ -447,7 +462,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Sive... sive... sive..."
+        }
+      }
     },
     {
       "id": "l32-b5",
@@ -462,7 +482,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ne pas « corriger » l’usage ecclésiastique pendant l’analyse"
+        }
+      }
     },
     {
       "id": "l32-b6",
@@ -477,7 +502,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "De petits connecteurs gouvernent de longs passages"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -612,7 +642,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le principe directeur de lecture de la leçon 32 ?",
+          "hint": "Lire d’abord le texte transmis.",
+          "explanation": "Le latin de l’Église est enseigné comme un usage historique réel.",
+          "options": [
+            "décrire d’abord la construction ecclésiastique avant de la comparer à une préférence classique",
+            "réécrire chaque phrase en prose cicéronienne",
+            "ignorer l’usage biblique",
+            "traiter tout usage postclassique comme une erreur"
+          ]
+        }
+      }
     },
     {
       "id": "l32-e2",
@@ -647,7 +690,22 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur négatif ou alternatif à son sens principal.",
+          "hint": "Les six appartiennent au vocabulaire fondamental de la leçon 32.",
+          "explanation": "Récupération des connecteurs.",
+          "matches": {
+            "neque": "et ne... pas / ni",
+            "nec": "et ne... pas / ni",
+            "aut": "ou",
+            "vel": "ou / voire",
+            "sive": "soit / ou si",
+            "at": "mais / cependant"
+          }
+        }
+      }
     },
     {
       "id": "l32-e3",
@@ -677,7 +735,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait la répétition de neque dans Jean 1,13 ?",
+          "hint": "Lisez toute la coordination.",
+          "explanation": "La répétition de neque accumule les alternatives négatives.",
+          "options": [
+            "construit une chaîne d’exclusions",
+            "forme une proposition relative",
+            "marque le futur",
+            "crée un ablatif absolu"
+          ]
+        }
+      }
     },
     {
       "id": "l32-e4",
@@ -707,7 +778,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel connecteur marque habituellement l’alternative la plus tranchée, de type « soit... soit » ?",
+          "hint": "Comparez aut...aut.",
+          "explanation": "aut marque couramment des alternatives exclusives ou nettes.",
+          "options": [
+            "aut",
+            "vel",
+            "sive",
+            "neque"
+          ]
+        }
+      }
     },
     {
       "id": "l32-e5",
@@ -737,7 +821,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel connecteur peut exprimer un « ou » plus souple ou inclusif ?",
+          "hint": "Deux ou trois possibilités.",
+          "explanation": "vel donne souvent une alternative plus souple.",
+          "options": [
+            "vel",
+            "aut",
+            "nec",
+            "at"
+          ]
+        }
+      }
     },
     {
       "id": "l32-e6",
@@ -767,7 +864,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que structure sive...sive ?",
+          "hint": "Les alternatives répétées chez saint Paul.",
+          "explanation": "sive encadre des alternatives.",
+          "options": [
+            "des alternatives « soit... soit »",
+            "une chaîne de génitifs",
+            "une adresse directe",
+            "la voix passive"
+          ]
+        }
+      }
     },
     {
       "id": "l32-e7",
@@ -795,7 +905,18 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Faut-il rejeter l’usage biblique de quia/quoniam parce que la prose classique pourrait préférer une autre construction ?",
+          "hint": "Le latin de l’Église possède sa propre histoire.",
+          "explanation": "Le lecteur apprend l’usage ecclésiastique réel.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
     },
     {
       "id": "l32-e8",
@@ -824,7 +945,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi les connecteurs sont-ils particulièrement importants dans la prose liturgique longue ?",
+          "hint": "La structure avant la surcharge lexicale.",
+          "explanation": "Les connecteurs montrent comment les propositions s’articulent.",
+          "options": [
+            "ils révèlent l’architecture logique",
+            "ils remplacent tous les verbes",
+            "ils déterminent la prononciation",
+            "ils suppriment les terminaisons casuelles"
+          ]
+        }
+      }
     },
     {
       "id": "l32-e9",
@@ -849,7 +983,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le connecteur latin signifiant « soit / ou si ».",
+          "hint": "Il se répète dans 1 Corinthiens 10,31.",
+          "explanation": "sive est la forme visée."
+        }
+      }
     },
     {
       "id": "l32-e10",
@@ -873,7 +1014,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez la conjonction latine signifiant « et ne... pas / ni », forme brève apparentée à neque.",
+          "hint": "Vocabulaire fondamental de la leçon 32.",
+          "explanation": "nec signifie « ni / et ne... pas »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -940,5 +1088,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Le latin de l’Église n’est pas le latin scolaire",
+      "grammarFocus": "Usage ecclésiastique et usage classique",
+      "readingOutcome": "Reconnaître le vocabulaire et les préférences syntaxiques propres au latin de l’Église sans imposer les normes classiques.",
+      "objectives": [
+        "Lire le latin de l’Église sans le normaliser de force selon le latin classique.",
+        "Reconnaître la coordination négative et alternative.",
+        "Comprendre la nuance des connecteurs selon le contexte.",
+        "Apprendre les six lemmes figés de la leçon 32."
+      ]
+    }
+  }
 }
