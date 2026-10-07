@@ -33,7 +33,7 @@ const mass=renderSettingsToString(fakeWin,{route:"/settings/mass",live:true});
 assert.match(mass,/data-pref-path="mass\.defaultExperience"/);
 assert.match(mass,/data-pref-path="mass\.defaultForm"/);
 assert.match(mass,/Future sessions only/);
-assert.match(mass,/do not change a Mass already in progress/);
+assert.match(mass,/will not change a Mass already in progress/);
 
 const prayer=renderSettingsToString(fakeWin,{route:"/settings/prayer"});
 for(const marker of ["prayer.recitationMode","prayer.rosary.fatimaPrayer","prayer.rosary.scriptureCues","prayer.rosary.commentary","prayer.stations.mode","prayer.stations.stabatMater","prayer.angelus.seasonalForm"]){
