@@ -203,25 +203,13 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-fs-stage]").count(),6,"First Saturday lost six-stage programme");
   await page.locator("#aoPray435930 [data-p435930-fs-stage='3']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-p435930-fs-stage='3']")?.getAttribute("aria-current")==="step");
+  // Rosary opens directly: there is no second configuration/launcher screen.
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.setRecitationMode?.("group"));
   await page.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
-  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="rosary",null,{timeout:5000});
-
-  // Make the restored snapshot non-default so a hub reset or lost state is obvious.
-  await page.locator("#aoPray435930 [data-p435930-seg='guided']").click();
-  await page.locator("#aoPray435930 [data-p435930-seg='group']").click();
-  const chooserState=await page.evaluate(()=>({
-    guided:document.querySelector("#aoPray435930 [data-p435930-seg='guided']")?.getAttribute("aria-pressed"),
-    group:document.querySelector("#aoPray435930 [data-p435930-seg='group']")?.getAttribute("aria-pressed"),
-    stored:globalThis.AO_PRAY_V435930?.state?.()?.rosary?.recitation??null,
-    globalRecitation:localStorage.getItem("ao-prayer-recitation-mode"),
-    coherence:globalThis.AO_PRAY_COHERENCE_V435930?.mode?.()??null,
-  }));
-  assert.deepEqual(chooserState,{guided:"true",group:"true",stored:"group",globalRecitation:"group",coherence:"group"},
-    "modular Rosary chooser did not synchronize Guided + Group before donor launch");
-  await page.locator("#aoPray435930 [data-p435930-launch-rosary]").click();
-
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
+  await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await page.waitForSelector(".aoP435930RosaryBar",{state:"visible",timeout:10000});
+  await page.locator(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']").click();
   await page.waitForTimeout(220);
   const settledRosary=await page.evaluate(()=>({
     donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
@@ -289,21 +277,15 @@ try{
   await page.waitForFunction(()=>!document.getElementById("aoPrayerBookRoot")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForFunction(()=>
     document.getElementById("aoPray435930")?.classList?.contains("open") &&
-    document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="rosary",
+    document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="firstSaturday" &&
+    document.querySelector("#aoPray435930 [data-p435930-fs-stage='3']")?.getAttribute("aria-current")==="step",
     null,{timeout:10000}
   );
   const restoredRosary=await page.evaluate(()=>({
-    guided:document.querySelector("#aoPray435930 [data-p435930-seg='guided']")?.getAttribute("aria-pressed"),
-    group:document.querySelector("#aoPray435930 [data-p435930-seg='group']")?.getAttribute("aria-pressed"),
+    recitation:globalThis.AO_PRAY_V435930?.state?.()?.rosary?.recitation??null,
+    depth:document.querySelector("#aoPrayerBookRoot .aoP435930RosaryBar [data-p435930-rosary-depth='guided']")?.classList?.contains("active")??null,
   }));
-  assert.deepEqual(restoredRosary,{guided:"true",group:"true"},"Rosary return lost modular PRAY snapshot preferences");
-
-  await page.locator("#aoPray435930 [data-p435930-back]").click();
-  await page.waitForFunction(()=>
-    document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="firstSaturday" &&
-    document.querySelector("#aoPray435930 [data-p435930-fs-stage='3']")?.getAttribute("aria-current")==="step",
-    null,{timeout:5000}
-  );
+  assert.equal(restoredRosary.recitation,"group","Rosary return lost Group preference");
   assert.match(await page.locator("#aoP435930Title").textContent(),/First Saturdays/i,
     "Rosary return/back did not restore First Saturday programme");
 
