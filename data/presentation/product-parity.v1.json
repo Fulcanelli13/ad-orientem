@@ -1,6 +1,6 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "releaseBlocker": null,
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
@@ -56,7 +56,7 @@
         "navigation became a full-width footer instead of latent boundary controls",
         "Schola presentation became a full-width status strip"
       ],
-      "recoveryPass": "MASS_V180_DEFINITIVE_NATIVE_CERTIFIED",
+      "recoveryPass": "MASS_V180_INTERACTION_ICON_PARITY_CERTIFIED",
       "recoveryTargets": [
         "v1.80 Home / current-section / Mass-preferences primary ribbon",
         "v1.79-v1.80 YOU / GUIDE / PRIEST state ribbon",
@@ -74,7 +74,11 @@
         "App convergence workflow 37289906553",
         "tests/mass-visual-acceptance.mjs",
         "tests/reader-dom.mjs",
-        "tests/reader-cue-focus.mjs"
+        "tests/reader-cue-focus.mjs",
+        "data/presentation/mass-v180-donor-parity.v1.json v1.4.0",
+        "R17 Mass convergence workflow 37591506346",
+        "App convergence workflow 37591506503",
+        "Visual acceptance workflow 37591506362"
       ],
       "resolvedInPass1": [
         "inactive cue gutters collapse",
@@ -219,6 +223,13 @@
       },
       "postMergeValidation": [
         "deployed representative-checkpoint comparison against v1.80"
+      ],
+      "resolvedInV180Final": [
+        "vertical prayer scrolling and deliberate horizontal swipe/card navigation are real-touch certified",
+        "Schola page/progress, speed persistence, pause/resume, translation lifecycle, hide/show and resize are functional",
+        "v1.79 structured Guide sheet with curated headings and source links is visually certified",
+        "in-card rubrics are concise ceremonial cues and posture-only state duplicates fail closed",
+        "all 67 exact v4.6 Mass masters are manifest-certified and runtime-wired with plain position versus rich action ownership"
       ]
     },
     "pray": {
@@ -305,7 +316,7 @@
   },
   "status": "CERTIFIED",
   "crossSurfacePresentationFx": {
-    "status": "RECOVERY_IN_PROGRESS",
+    "status": "CERTIFIED",
     "authority": "data/presentation/presentation-fx-parity.v1.json",
     "mustPreserve": [
       "cold-load branded boot cinematic",
@@ -322,12 +333,7 @@
       "modular surface roots receive geometry-neutral opacity/filter entry motion",
       "reduced-motion remains authoritative"
     ],
-    "remaining": [
-      "Rosary physical bead rail parity",
-      "Stations XIV pilgrimage-route parity",
-      "current modular hero/art choreography audit",
-      "modular art-loading selector coverage",
-      "phone certification of recovered route transition/loader/surface-entry behavior"
-    ]
+    "remaining": [],
+    "certificationNote": "Authoritative presentation-fx-parity.v1.json is CERTIFIED; exact later non-Mass donor composition is governed separately by exact-donor-parity.v1.json."
   }
 }

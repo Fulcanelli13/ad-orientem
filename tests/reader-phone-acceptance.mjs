@@ -86,6 +86,9 @@ try{
   await page.waitForFunction(previous=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId!==previous,initialCard);
   const afterNext=await cardId();
   assert.notEqual(afterNext,initialCard,"Next touch did not change cards");
+  // v1.80 donor part-transition cinema deliberately owns the transition interval.
+  // Test the next deliberate tap only after that interval has completed.
+  await page.waitForFunction(()=>document.querySelector('[data-role="cinematic"]')?.hidden===true,null,{timeout:5000});
   const backButton=page.locator('[data-reader-nav="previous"]');
   box=await backButton.boundingBox();
   const backHit=await page.evaluate(({x,y})=>{
@@ -127,6 +130,34 @@ try{
   },{x:box.x+box.width/2,y:box.y+box.height/2});
   assert.equal(afterBack,initialCard,
     "Back touch did not restore initial card: "+JSON.stringify({initialCard,afterNext,afterBack,backHit,navDiag}));
+
+  // v1.80 two-axis contract: vertical touch remains native prayer scrolling;
+  // a deliberate horizontal swipe owns card navigation.
+  const swipeClient=await context.newCDPSession(page);
+  async function horizontalSwipe(direction){
+    const hit=await page.locator(".ao-prayer-card").boundingBox();
+    assert.ok(hit&&hit.width>180&&hit.height>180,"active prayer card has no swipe territory");
+    const y=Math.round(hit.y+Math.min(hit.height*.46,320));
+    const xStart=Math.round(hit.x+hit.width*(direction>0?.78:.22));
+    const xEnd=Math.round(hit.x+hit.width*(direction>0?.22:.78));
+    await swipeClient.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x:xStart,y}]});
+    for(let i=1;i<=5;i++){
+      const x=Math.round(xStart+(xEnd-xStart)*(i/5));
+      await swipeClient.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y}]});
+    }
+    await swipeClient.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+  }
+  await horizontalSwipe(1);
+  await page.waitForFunction(previous=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId!==previous,initialCard,{timeout:3000});
+  const afterSwipeNext=await cardId();
+  assert.notEqual(afterSwipeNext,initialCard,"horizontal left swipe did not advance the card");
+  assert.equal(await page.evaluate(()=>document.querySelector("[data-ao-reader-shell]")?.parentElement?.dataset.aoLastNavInput),"swipe:next",
+    "horizontal left swipe was not owned by the v1.80 card-navigation path");
+  await page.waitForTimeout(430);
+  await horizontalSwipe(-1);
+  await page.waitForFunction(expected=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId===expected,initialCard,{timeout:3000});
+  assert.equal(await page.evaluate(()=>document.querySelector("[data-ao-reader-shell]")?.parentElement?.dataset.aoLastNavInput),"swipe:previous",
+    "horizontal right swipe was not owned by the v1.80 card-navigation path");
 
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");

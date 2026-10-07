@@ -23,7 +23,7 @@ const SHELL_STYLE = `
   --ao-bg:#0d120f;--ao-panel:#141c17;--ao-panel2:#19231d;
   --ao-line:rgba(238,241,233,.13);--ao-muted:#a9afa7;--ao-dim:#6f766f;
   --ao-text:#eef1e9;--ao-accent:#6d9575;--ao-warm:#d6caa6;--ao-response:#c8d9e9;
-  --ao-rail:62px;--ao-content-max:820px;--ao-schola-height:100px;--ao-schola-reserve:0px;
+  --ao-rail:62px;--ao-content-max:820px;--ao-schola-height:150px;--ao-schola-reserve:0px;
   box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr);
   width:100%;height:100%;min-height:0;overflow:hidden;
   background:linear-gradient(180deg,#0c120e 0,#101711 100%);color:var(--ao-text);
@@ -92,10 +92,11 @@ const SHELL_STYLE = `
 }
 .ao-state-cell[data-side="faithful"]{justify-content:center}
 .ao-state-cell[data-side="priest"]{justify-content:center;border-left:1px solid rgba(255,255,255,.035)}
+.ao-state-cell[data-side="priest"] .ao-state-label{max-width:132px}
 .ao-state-kicker{font:700 7px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:#657268}
 .ao-state-copy{min-width:0;display:flex;flex-direction:column}
 .ao-state-label{
-  max-width:132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  max-width:142px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   font:600 10px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.045em;color:#c9d1ca
 }
 .ao-state-cell>.ao-icon-mask{width:52px;height:52px;flex:0 0 52px;color:#d6dfd7}
@@ -125,6 +126,11 @@ const SHELL_STYLE = `
   mask-repeat:no-repeat;mask-position:center;mask-size:contain;
   -webkit-mask-repeat:no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain
 }
+.ao-icon-mask.ao-icon-direct{
+  background-color:transparent!important;background-repeat:no-repeat;background-position:center;background-size:contain;
+  -webkit-mask-image:none!important;mask-image:none!important;
+  filter:brightness(0) saturate(100%) invert(94%) sepia(9%) saturate(263%) hue-rotate(353deg) brightness(104%) contrast(91%)
+}
 .ao-progress-track{position:absolute;z-index:13;left:0;right:0;top:120px;height:2px;background:rgba(255,255,255,.05)}
 .ao-progress-track>span{display:block;height:100%;width:0;background:#6d9575;transition:width .18s linear}
 
@@ -148,12 +154,19 @@ const SHELL_STYLE = `
   width:100%;height:100%;min-width:0;min-height:0;margin:0;padding:0 calc(var(--ao-rail) + 8px);background:transparent
 }
 .ao-prayer-card{
-  width:100%;height:100%;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+  width:100%;height:100%;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;
   scrollbar-width:none;scroll-behavior:auto;scroll-padding-top:clamp(44px,8vh,82px);
   padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px)/2)) calc(max(42vh,250px) + var(--ao-schola-reserve));
   border:0;border-radius:0;background:transparent;box-shadow:none
 }
 .ao-prayer-card::-webkit-scrollbar{display:none}
+
+.ao-reader-shell[data-handoff="next"] .ao-reader-nav button[data-reader-nav="next"],
+.ao-reader-shell[data-handoff="previous"] .ao-reader-nav button[data-reader-nav="previous"]{opacity:.46;transform:scale(1)}
+.ao-prayer-card[data-card-arrival="next"]{animation:aoCardArriveNext .34s cubic-bezier(.18,.82,.20,1) both}
+.ao-prayer-card[data-card-arrival="previous"]{animation:aoCardArrivePrevious .34s cubic-bezier(.18,.82,.20,1) both}
+@keyframes aoCardArriveNext{0%{opacity:.72;transform:translateX(14vw);filter:blur(.35px)}100%{opacity:1;transform:none;filter:none}}
+@keyframes aoCardArrivePrevious{0%{opacity:.72;transform:translateX(-14vw);filter:blur(.35px)}100%{opacity:1;transform:none;filter:none}}
 .ao-prayer-title{
   margin:0 auto 26px;max-width:760px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.045);
   font:400 clamp(1.15rem,2.3vw,1.55rem)/1.18 var(--ao-font-display,Georgia,"Times New Roman",serif);
@@ -169,13 +182,30 @@ const SHELL_STYLE = `
 }
 .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.43}
 .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1;color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)}
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.70}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.84}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.67}
 .ao-reader-paragraph[data-kind="RUBRIC"]{
-  margin:10px 0;padding:8px 10px;border-left:2px solid #65756a;
-  background:rgba(255,255,255,.022);font:italic 500 .74rem/1.45 var(--ao-font-ui,system-ui,sans-serif);
-  letter-spacing:.01em;color:#aab0a9
+  margin:11px 0 14px;padding:9px 11px 9px 13px;border-left:2px solid #718178;border-radius:0 8px 8px 0;
+  background:linear-gradient(90deg,rgba(113,129,120,.085),rgba(255,255,255,.012));
+  font:600 .70rem/1.42 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.012em;color:#b8c2ba
 }
+.ao-reader-paragraph[data-kind="RUBRIC"]::before{
+  content:"RUBRIC";display:block;margin-bottom:5px;font:800 7px/1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.14em;color:#738278
+}
+.ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:none}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:block}
+.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"] .ao-line-primary{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden
+}
+.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]::after{
+  content:"TAP FOR FULL RUBRIC";display:block;margin-top:6px;font:700 6.5px/1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.12em;color:#657268
+}
+.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"][data-expanded="true"] .ao-line-primary{
+  display:block;-webkit-line-clamp:unset;overflow:visible
+}
+.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"][data-expanded="true"]::after{content:"TAP TO COLLAPSE"}
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{
   margin:14px 0;padding:14px 8px;text-align:center;
   font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
@@ -226,50 +256,77 @@ const SHELL_STYLE = `
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
-.ao-rail .ao-icon-mask{width:36px;height:36px}
-.ao-bell-icon{display:block;width:36px;height:36px;color:#d8c590}
+.ao-rail .ao-icon-mask{width:38px;height:38px}
+.ao-bell-icon{display:block;width:38px;height:38px;color:#d8c590}
 .ao-bell-icon svg{display:block;width:100%;height:100%}
+.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{
+  animation:aoBellHold 3.4s ease-out both
+}
+.ao-rail-item[data-channel="schola-shared"][data-active="false"]{display:none}
+.ao-rail-item[data-channel="schola-shared"][data-active="true"]{
+  display:flex;opacity:1;border-color:rgba(109,149,117,.42);background:rgba(26,43,31,.94)
+}
+.ao-rail-item[data-channel="schola-shared"][data-active="true"] .ao-icon-mask{
+  filter:drop-shadow(0 0 8px rgba(148,188,158,.18))
+}
+@keyframes aoBellHold{
+  0%{transform:scale(.76) rotate(-10deg);opacity:.25}
+  10%{transform:scale(1.22) rotate(9deg);opacity:1}
+  22%{transform:scale(1.02) rotate(-5deg)}
+  38%{transform:scale(1.08) rotate(3deg)}
+  70%{transform:scale(1);opacity:1}
+  100%{transform:scale(.96);opacity:.62}
+}
 
 .ao-schola-dock{
   position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
-  width:min(940px,calc(100% - 170px));height:var(--ao-schola-height);min-height:100px;max-height:180px;
-  display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(42px,auto) auto;
-  align-items:center;gap:6px 10px;padding:11px 16px 13px;
-  border:1px solid rgba(109,149,117,.38);border-radius:16px;background:rgba(17,25,20,.968);
-  box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
+  width:min(940px,calc(100% - 170px));height:var(--ao-schola-height);min-height:0;max-height:180px;
+  padding:11px 16px 13px;border:1px solid rgba(109,149,117,.38);border-radius:16px;
+  background:rgba(17,25,20,.968);box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
 }
 .ao-schola-dock[data-active="false"]{display:none}
-.ao-schola-dock[data-collapsed="true"]{min-height:32px;height:32px;padding-top:4px;padding-bottom:4px}
+.ao-schola-dock[data-collapsed="true"]{min-height:32px;height:32px!important;padding-top:4px;padding-bottom:4px}
 .ao-schola-dock[data-collapsed="true"] .ao-schola-main,
+.ao-schola-dock[data-collapsed="true"] .ao-schola-translation,
 .ao-schola-dock[data-collapsed="true"] .ao-schola-meta{display:none}
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:rgba(109,149,117,.28);transform:translateX(-50%)}
-.ao-schola-title{display:flex;align-items:center;gap:7px;grid-column:1/3;min-height:24px}
+.ao-schola-title{display:flex;align-items:center;gap:8px;min-height:21px;padding-right:54px}
 .ao-schola-title .ao-icon-mask{width:22px;height:22px;color:#a9c6b0}
 .ao-schola-kicker{font:700 8.5px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase;color:#99b6a0}
 .ao-schola-page{font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:#6f8175}
-.ao-schola-main{grid-column:1/4;min-width:0;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045);padding:10px 0;cursor:pointer}
-.ao-schola-dock [data-role="schola"]{display:inline-block;min-width:max-content;font:500 17px/1.3 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);color:#f2f3ed;white-space:nowrap;will-change:transform;backface-visibility:hidden}
-.ao-schola-translation{display:none;margin-top:7px;padding:8px 10px;border-radius:9px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05);font:400 14px/1.42 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);color:#d8dfd8}
+.ao-schola-main{
+  position:relative;height:58px;margin-top:6px;overflow:hidden;border-top:1px solid rgba(255,255,255,.045);
+  border-bottom:1px solid rgba(255,255,255,.045);cursor:pointer;display:flex;align-items:center
+}
+.ao-schola-dock [data-role="schola"]{
+  display:inline-block;min-width:max-content;font:500 17px/1.25 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);
+  color:#f2f3ed;white-space:nowrap;will-change:transform;backface-visibility:hidden
+}
+.ao-schola-translation{
+  display:none;margin-top:7px;padding:8px 10px;border-radius:9px;background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.05);font:400 14px/1.42 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);color:#d8dfd8
+}
 .ao-schola-dock[data-show-translation="true"] .ao-schola-translation{display:block}
-.ao-schola-meta{grid-column:1/4;display:grid;grid-template-columns:1fr;gap:8px;min-width:0}
-.ao-schola-progress{height:2px;width:100%;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px}
+.ao-schola-meta{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px;min-height:0}
+.ao-schola-progress{grid-row:1;width:100%;height:2px;max-width:none;min-width:0;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px;opacity:.76}
 .ao-schola-progress>span{display:block;height:100%;width:0;background:#8eae96;transition:none}
-.ao-schola-controls{width:100%;display:grid;grid-template-columns:38px 58px 38px minmax(72px,1fr);gap:6px;align-items:center}
+.ao-schola-controls{grid-row:2;width:100%;display:grid;grid-template-columns:38px 58px 38px minmax(72px,1fr);gap:6px;align-items:center;opacity:1;pointer-events:auto;overflow:visible}
 .ao-schola-control{
-  appearance:none;height:34px;border:1px solid rgba(255,255,255,.09);border-radius:7px;
-  background:rgba(255,255,255,.03);color:#aebcaf;display:grid;place-items:center;
+  appearance:none;border:1px solid rgba(255,255,255,.065);background:rgba(255,255,255,.025);color:#9eada2;
+  border-radius:7px;min-height:26px;padding:4px 7px;
   font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase
 }
 button.ao-schola-control{cursor:pointer}
-.ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{
-  font-size:16px;line-height:1;color:#d7e2d9;background:rgba(115,151,123,.14);border-color:rgba(145,181,153,.28)
+.ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{min-width:0;height:34px;font-size:16px;line-height:1;color:#d7e2d9;background:rgba(115,151,123,.14);border-color:rgba(145,181,153,.28)}
+.ao-schola-speed{display:grid;place-items:center;min-width:58px;height:34px;text-align:center;color:#c9d8cc;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.07);padding:0}
+.ao-schola-control[data-schola-pause]{justify-self:stretch;min-width:72px;height:34px;color:#aebcaf;border-color:rgba(255,255,255,.09);background:rgba(255,255,255,.03)}
+.ao-schola-control[data-schola-pause][aria-pressed="true"]{color:#e5ede7;border-color:rgba(145,181,153,.34);background:rgba(88,123,97,.22)}
+.ao-schola-toggle{
+  position:absolute;top:7px;right:11px;appearance:none;border:1px solid rgba(255,255,255,.065);
+  background:rgba(255,255,255,.025);color:#8f9a91;border-radius:7px;min-height:26px;padding:4px 7px;
+  font:700 7px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase
 }
-.ao-schola-speed{color:#c9d8cc;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.07)}
-.ao-schola-control[data-schola-pause][aria-pressed="true"]{
-  color:#e5ede7;border-color:rgba(145,181,153,.34);background:rgba(88,123,97,.22)
-}
-.ao-schola-toggle{grid-column:3;grid-row:1;appearance:none;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:#9eada2;border-radius:7px;min-height:28px;padding:4px 8px;font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}
 
 .ao-reader-nav{position:absolute;z-index:10;inset:0;pointer-events:none}
 .ao-reader-nav button{
@@ -285,7 +342,12 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-nav button:hover,.ao-reader-nav button:focus-visible{opacity:.92;background:rgba(23,32,26,.90);color:#e8ece7;outline:none}
 .ao-reader-nav button[data-reader-nav="previous"]{left:max(49px,calc((100% - 1120px)/2 + 52px))}
 .ao-reader-nav button[data-reader-nav="next"]{right:max(49px,calc((100% - 1120px)/2 + 52px))}
-.ao-reader-progress{display:none}
+.ao-reader-progress{
+  position:absolute;z-index:1;left:50%;bottom:calc(13px + var(--ao-schola-reserve));transform:translateX(-50%);
+  display:block;padding:2px 4px;border:0;background:transparent;box-shadow:none;
+  font:600 9px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;color:#69736c;opacity:.34;
+  pointer-events:none;white-space:nowrap
+}
 
 .ao-cinematic{
   position:absolute;inset:0;z-index:22;display:grid;place-items:center;pointer-events:none;text-align:center;padding:2rem;
@@ -294,7 +356,9 @@ button.ao-schola-control{cursor:pointer}
 .ao-cinematic[hidden]{display:none}
 .ao-cinematic *{pointer-events:none}
 .ao-cinematic-inner{display:grid;gap:9px;justify-items:center;max-width:88%}
-.ao-cinematic-mark{font:400 1.35rem/1 var(--ao-font-display,Georgia,serif);color:var(--ao-warm)}
+.ao-cinematic-mark{font:400 1.35rem/1 var(--ao-font-display,Georgia,serif);color:var(--ao-warm);display:grid;place-items:center}
+.ao-cinematic-icon{display:block;width:68%;height:68%;color:#efe9d2}
+.ao-cinematic-fallback{display:block}
 .ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 var(--ao-font-display,Georgia,"Times New Roman",serif);letter-spacing:.08em;color:#f0f1e9}
 .ao-cinematic-sub{font:600 .63rem/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:#89928a}
 .ao-cinematic[data-kind="ELEVATION"]{background:radial-gradient(circle at center,rgba(226,211,158,.075),rgba(3,7,5,0) 43%)}
@@ -303,7 +367,9 @@ button.ao-schola-control{cursor:pointer}
   background:radial-gradient(circle,rgba(239,233,210,.12),rgba(20,27,22,.44) 48%,rgba(7,10,8,.15) 70%,transparent 72%);
   filter:drop-shadow(0 0 28px rgba(230,214,157,.14));animation:aoElevation 3.35s cubic-bezier(.18,.72,.22,1) both
 }
-.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-mark{font-size:clamp(2.4rem,10vw,5.6rem);color:#efe9d2}
+.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-mark{width:100%;height:100%;font-size:0;color:#efe9d2}
+.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-icon{width:68%;height:68%}
+.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-fallback{display:none}
 .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-title{display:none}
 .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-sub{
   position:absolute;top:calc(100% + 14px);white-space:nowrap;font:600 10px/1.2 var(--ao-font-display,Cinzel,Georgia,serif);
@@ -312,13 +378,66 @@ button.ao-schola-control{cursor:pointer}
 @keyframes aoElevation{0%{opacity:0;transform:translateY(28px) scale(.72)}16%{opacity:1;transform:translateY(0) scale(1.03)}72%{opacity:1;transform:translateY(-5px) scale(1)}100%{opacity:0;transform:translateY(-16px) scale(.96)}}
 
 .ao-guide-popover{
-  position:absolute;z-index:30;left:50%;bottom:0;transform:translateX(-50%);
-  width:min(760px,100%);max-height:min(84vh,860px);overflow:auto;
-  padding:18px 18px 34px;border:1px solid rgba(218,225,218,.10);border-bottom:0;border-radius:18px 18px 0 0;
-  background:#0c120e;box-shadow:0 -22px 60px rgba(0,0,0,.44);
-  font:400 14px/1.62 var(--ao-font-body,Georgia,"Times New Roman",serif);color:#c4c8c2
+  position:absolute;inset:0;z-index:35;background:rgba(1,4,2,.74);backdrop-filter:blur(7px);
+  display:grid;align-items:end;justify-items:stretch;padding:0
 }
 .ao-guide-popover[hidden]{display:none}
+.ao-guide-sheet{
+  width:min(760px,100%);max-height:min(84vh,860px);margin:0 auto;
+  background:#0c120e;border:1px solid rgba(218,225,218,.10);border-bottom:0;border-radius:18px 18px 0 0;
+  box-shadow:0 -22px 60px rgba(0,0,0,.44);overflow:hidden;display:flex;flex-direction:column
+}
+.ao-guide-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  padding:18px 18px 14px;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(17,25,19,.96)
+}
+.ao-guide-kicker{
+  font:760 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase;
+  color:#87948a;margin-bottom:6px
+}
+.ao-guide-title{
+  margin:0;font:500 21px/1.12 var(--ao-font-display,Georgia,"Times New Roman",serif);color:#f0f1ec
+}
+.ao-guide-summary{
+  margin:9px 0 0;max-width:620px;
+  font:400 14px/1.55 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);color:#c9d0ca
+}
+.ao-guide-close{
+  appearance:none;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);color:#aeb7b0;
+  border-radius:999px;width:34px;height:34px;font:300 24px/1 var(--ao-font-ui,system-ui,sans-serif);
+  cursor:pointer;flex:0 0 auto
+}
+.ao-guide-body{overflow:auto;-webkit-overflow-scrolling:touch;padding:8px 18px 34px}
+.ao-guide-section{margin:20px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.055)}
+.ao-guide-section:first-child{margin-top:7px;padding-top:0;border-top:0}
+.ao-guide-section h3{
+  margin:0 0 9px;font:500 16px/1.25 var(--ao-font-display,Georgia,"Times New Roman",serif);color:#ebece7
+}
+.ao-guide-section h4{
+  margin:0 0 8px;font:760 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.085em;
+  text-transform:uppercase;color:#9c9b8b
+}
+.ao-guide-section p{
+  margin:0;font:400 14px/1.62 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);color:#c4c8c2
+}
+.ao-guide-section[data-tone="history"]{opacity:1;border-left:2px solid rgba(142,56,67,.26);padding-left:13px}
+.ao-guide-section[data-tone="prayer"]{border-left:2px solid rgba(185,158,104,.28);padding-left:13px}
+.ao-guide-sources{
+  margin-top:24px;padding:13px 14px;border:1px solid rgba(255,255,255,.06);border-radius:10px;
+  background:rgba(255,255,255,.018)
+}
+.ao-guide-sources small{
+  display:block;margin-bottom:7px;font:750 7px/1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.11em;text-transform:uppercase;color:#78786f
+}
+.ao-guide-sources p{margin:0;font:500 10px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:#94978f}
+.ao-guide-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.ao-guide-links a{
+  display:inline-flex;padding:6px 8px;border:1px solid rgba(255,255,255,.065);border-radius:7px;
+  color:#b2a993;text-decoration:none;font:650 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  background:rgba(255,255,255,.018)
+}
+
 
 @media(max-width:760px){
   .ao-reader-shell{--ao-rail:48px}
@@ -327,35 +446,46 @@ button.ao-schola-control{cursor:pointer}
   .ao-section-jump{font-size:14px}
   .ao-state-ribbon{grid-template-columns:minmax(0,1fr) 80px minmax(0,1fr);height:64px;min-height:64px}
   .ao-state-cell{gap:7px;padding:5px 6px}
-  .ao-state-cell>.ao-icon-mask{width:46px;height:46px;flex-basis:46px}
-  .ao-state-label{font-size:9px;max-width:102px}
+  .ao-state-cell>.ao-icon-mask{width:52px;height:52px;flex-basis:52px}
+  .ao-state-label{font-size:10px;max-width:108px}
+  .ao-state-cell[data-side="priest"] .ao-state-label{max-width:132px}
   .ao-guide-icon{width:29px;height:29px;flex-basis:29px}.ao-guide-icon svg{width:26px;height:26px}
   .ao-guide-copy{gap:1px}.ao-guide-copy small{font-size:5.8px}.ao-guide-short{font-size:6.6px;max-width:38px}
   .ao-progress-track{top:120px}
   .ao-section-menu{top:58px;width:min(92vw,440px)}
   .ao-mass-prefs{top:58px;right:8px;width:min(310px,calc(100% - 16px))}
-  .ao-card-viewport{width:100%;padding:0 61px}
-  .ao-prayer-card{padding:22px 12px max(42vh,240px)}
+  .ao-card-viewport{width:100%;padding:0 56px}
+  .ao-prayer-card{padding:22px 8px calc(max(42vh,240px) + var(--ao-schola-reserve))}
   .ao-reader-paragraph{font-size:19px;line-height:1.55}
   .ao-rail{top:8px;bottom:20px;width:48px;gap:6px}
   .ao-rail-left{left:5px}.ao-rail-right{right:5px}
   .ao-rail-item{width:48px;height:48px;min-height:48px}
-  .ao-rail-item[data-major="true"]{width:58px;height:58px;min-height:58px}
+  .ao-rail-item[data-major="true"]{width:58px;height:58px;min-width:58px;max-width:58px;min-height:58px}
   .ao-rail .ao-icon-mask{width:34px;height:34px}
-  .ao-schola-dock{width:calc(100% - 124px);min-height:100px;padding:9px 11px 11px}
+  .ao-schola-dock{width:calc(100% - 32px);min-height:0;padding:8px 10px 8px}
+  .ao-schola-main{height:44px;margin-top:4px}
   .ao-schola-dock [data-role="schola"]{font-size:14px}.ao-schola-translation{font-size:12px;padding:7px 8px}
+  .ao-schola-meta{gap:8px;margin-top:8px}
   .ao-schola-controls{grid-template-columns:36px 54px 36px minmax(66px,1fr);gap:5px}
-  .ao-reader-nav button{top:auto;bottom:10px;width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
+  .ao-schola-control{min-height:28px;padding:4px 6px;font-size:7px}
+  .ao-schola-speed{min-width:54px;padding:0}
+  .ao-schola-toggle{position:absolute;top:3px;left:70%;transform:translateX(-50%);right:auto}
+  .ao-reader-nav button{top:auto;bottom:calc(10px + var(--ao-schola-reserve));width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
   .ao-reader-nav button::before{inset:5px;background:rgba(11,16,13,.38)}
   .ao-reader-nav button[data-reader-nav="previous"]{left:51px}.ao-reader-nav button[data-reader-nav="next"]{right:51px}
+  .ao-reader-progress{bottom:calc(18px + var(--ao-schola-reserve));font-size:8px;opacity:.42}
   .ao-schola-resize{left:25%;right:45%}
-  .ao-schola-toggle{position:absolute;top:3px;left:70%;transform:translateX(-50%);grid-column:auto;grid-row:auto}
-  .ao-guide-popover{width:100%;max-height:89vh;border-radius:16px 16px 0 0;padding:15px 14px 28px}
+  .ao-guide-sheet{max-height:89vh;border-radius:16px 16px 0 0}
+  .ao-guide-head{padding:15px 14px 12px}
+  .ao-guide-body{padding:7px 14px 28px}
+  .ao-guide-title{font-size:19px}
+  .ao-guide-summary{font-size:13px}
+  .ao-guide-section p{font-size:13.5px}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{width:min(48vw,190px)}
 }
 @media(prefers-reduced-motion:reduce){
-  .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}
-  .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{animation:none!important}
+  .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
+  .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
 }
 `;
 
@@ -458,7 +588,13 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   const schola = persist(moment.schola, previous.schola);
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
   const guide = moment.guide?.registryAvailable === true && moment.guide?.text
-    ? Object.freeze({text:String(moment.guide.text),detail:moment.guide.detail == null ? null : String(moment.guide.detail)})
+    ? Object.freeze({
+        text:String(moment.guide.text),
+        detail:moment.guide.detail == null ? null : String(moment.guide.detail),
+        moment:moment.guide.moment == null ? momentTitle : String(moment.guide.moment),
+        sourceLine:moment.guide.sourceLine == null ? null : String(moment.guide.sourceLine),
+        sourceLinks:moment.guide.sourceLinks == null ? null : String(moment.guide.sourceLinks),
+      })
     : null;
 
   return Object.freeze({
@@ -477,6 +613,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     priestAction:moment.priestAction ?? null,
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
+    scholaShared:sharedTextWithSchola && Boolean(textValue(schola)),
     scholaVisible:!sharedTextWithSchola && Boolean(textValue(schola)),
     guide,
     priestPositionIconKey:moment.priestPositionIconKey ?? null,
@@ -486,7 +623,72 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     responseIconKey:moment.responseIconKey ?? null,
     priestVoiceIconKey:moment.priestVoiceIconKey ?? null,
     scholaIconKey:moment.scholaIconKey ?? null,
+    bellIconKey:moment.bellIconKey ?? null,
   });
+}
+
+
+const GUIDE_HEADINGS=new Set([
+  "What is happening","What should I do?","Why this matters","How this developed",
+  "Before 1960","In the 1960–1962 reform state","After the Council / in the current Roman Rite",
+  "Why the difference matters","What should I follow now?","Priest and schola",
+  "Local or form variation","For prayer","Sources",
+]);
+const GUIDE_HISTORY_HEADINGS=new Set(["Before 1960","In the 1960–1962 reform state","After the Council / in the current Roman Rite","How this developed","Why the difference matters"]);
+
+function stripRubricBrackets(text){
+  const raw=String(text??"").trim();
+  return /^\[[\s\S]*\]$/.test(raw) ? raw.slice(1,-1).trim() : raw;
+}
+export function rubricIsStateDuplicate(text){
+  const t=stripRubricBrackets(text).replace(/\s+/g," ").trim();
+  return /^(?:stand|sit|kneel|rise|genuflect|bow(?: the head)?|remain standing|remain seated|remain kneeling)[.!]?$/i.test(t);
+}
+function guideSections(text){
+  const blocks=String(text??"").replace(/\r/g,"").split(/\n{2,}/).map(x=>x.trim()).filter(Boolean);
+  return blocks.map(block=>{
+    const lines=block.split("\n"),heading=lines[0].trim(),rest=lines.slice(1).join("\n").trim();
+    if(heading==="Sources")return null;
+    if(/^Exact references where useful:/i.test(heading)){
+      return {heading:"Exact references",body:block.replace(/^Exact references where useful:\s*/i,""),tone:"reference",level:4};
+    }
+    if(GUIDE_HEADINGS.has(heading)){
+      return {heading,body:rest,tone:GUIDE_HISTORY_HEADINGS.has(heading)?"history":heading==="For prayer"?"prayer":"",level:/^(Before 1960|In the 1960|After the Council)/.test(heading)?4:3};
+    }
+    return {heading:null,body:block,tone:"",level:0};
+  }).filter(Boolean);
+}
+function renderGuideSheet(pop,guide){
+  if(!pop||!guide)return;
+  const doc=pop.ownerDocument??globalThis.document;
+  if(!doc?.createElement)return;
+  pop.replaceChildren();
+  const sheet=doc.createElement("section");sheet.className="ao-guide-sheet";sheet.setAttribute("role","dialog");sheet.setAttribute("aria-modal","true");
+  const head=doc.createElement("header");head.className="ao-guide-head";
+  const intro=doc.createElement("div");
+  const kicker=doc.createElement("div");kicker.className="ao-guide-kicker";kicker.textContent="Guide · 1962 Sung Mass";
+  const title=doc.createElement("h2");title.className="ao-guide-title";title.textContent=guide.moment||"Guide";
+  const summary=doc.createElement("p");summary.className="ao-guide-summary";summary.textContent=guide.text||"";
+  intro.append(kicker,title,summary);
+  const close=doc.createElement("button");close.type="button";close.className="ao-guide-close";close.dataset.guideClose="true";close.setAttribute("aria-label","Close Guide");close.textContent="×";
+  head.append(intro,close);sheet.append(head);
+  const body=doc.createElement("div");body.className="ao-guide-body";
+  for(const section of guideSections(guide.detail)){
+    const node=doc.createElement("section");node.className="ao-guide-section";if(section.tone)node.dataset.tone=section.tone;
+    if(section.heading){const h=doc.createElement(section.level===4?"h4":"h3");h.textContent=section.heading;node.append(h);}
+    if(section.body){const p=doc.createElement("p");p.textContent=section.body;node.append(p);}
+    body.append(node);
+  }
+  if(guide.sourceLine){
+    const sources=doc.createElement("div");sources.className="ao-guide-sources";
+    const label=doc.createElement("small");label.textContent="SOURCES";sources.append(label);
+    const line=doc.createElement("p");line.textContent=guide.sourceLine;sources.append(line);
+    const urls=String(guide.sourceLinks??"").split(/\s*;\s*/).filter(Boolean);
+    const names=String(guide.sourceLine).split(/\s*;\s*/).filter(Boolean);
+    if(urls.length){const links=doc.createElement("div");links.className="ao-guide-links";urls.forEach((url,index)=>{const a=doc.createElement("a");a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=names[index]||("Source "+(index+1));links.append(a);});sources.append(links);}
+    body.append(sources);
+  }
+  sheet.append(body);pop.append(sheet);
 }
 
 export function buildReaderShellMarkup(prepared = {}) {
@@ -538,10 +740,11 @@ export function buildReaderShellMarkup(prepared = {}) {
       </article>
     </main>
 
-    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest and bell cues">
+    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest, bell, and shared Schola cues">
       <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
-      <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-bell-icon" data-icon-slot="bell" hidden aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M13 13h9M26 13h9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M16 15c0 8-3 10-5 14h13c-2-4-5-6-5-14zM29 15c0 8-3 10-5 14h13c-2-4-5-6-5-14z" fill="currentColor"/><circle cx="17.5" cy="31.5" r="2" fill="currentColor"/><circle cx="30.5" cy="31.5" r="2" fill="currentColor"/><path d="M7 18c-3 3-3 9 0 12M41 18c3 3 3 9 0 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="ao-rail-copy" data-role="bell">—</span></div>
+      <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-icon-mask ao-bell-icon" data-icon-slot="bell" hidden aria-hidden="true"></span><span class="ao-rail-copy" data-role="bell">—</span></div>
+      <div class="ao-rail-item" data-channel="schola-shared" data-active="false" aria-label="Schola shares the current text"><span class="ao-icon-mask" data-icon-slot="schola-shared" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
     </aside>
   </div>
 
@@ -549,7 +752,8 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-page" data-role="schola-page"></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
-    <div class="ao-schola-main" data-schola-translate title="Tap to show translation"><span data-role="schola">—</span><span class="ao-schola-translation" data-role="schola-translation"></span></div>
+    <div class="ao-schola-main" data-schola-translate title="Tap to translate"><span data-role="schola">—</span></div>
+    <div class="ao-schola-translation" data-role="schola-translation" aria-live="polite"></div>
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
       <div class="ao-schola-controls" aria-label="Schola text speed">
@@ -562,7 +766,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   </div>
 
   <div class="ao-cinematic" data-role="cinematic" aria-live="polite" hidden>
-    <div class="ao-cinematic-inner"><div class="ao-cinematic-mark">✠</div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
+    <div class="ao-cinematic-inner"><div class="ao-cinematic-mark"><span class="ao-icon-mask ao-cinematic-icon" data-icon-slot="cinematic" hidden></span><span class="ao-cinematic-fallback" aria-hidden="true">✠</span></div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
   </div>
 
   <nav class="ao-reader-nav" aria-label="Prayer card navigation">
@@ -600,12 +804,29 @@ function syncRailVisibility(root){
 function applyIcon(root, slot, key, iconResolver){
   const el=root.querySelector(`[data-icon-slot="${slot}"]`);
   if(!el) return;
-  const src = key && typeof iconResolver === "function" ? iconResolver(key) : null;
-  if(!src){el.hidden=true;el.style.maskImage="";el.style.webkitMaskImage="";return;}
+  const id=String(key??"").trim();
+  const src = id && typeof iconResolver === "function" ? iconResolver(id) : null;
+  const direct=/_rich$/.test(id);
+  el.classList?.toggle?.("ao-icon-direct",Boolean(src&&direct));
+  if(!src){
+    el.hidden=true;
+    el.style.maskImage="";el.style.webkitMaskImage="";
+    el.style.backgroundImage="";
+    return;
+  }
   el.hidden=false;
   const css=`url("${String(src).replace(/"/g,'\\\"')}")`;
-  el.style.maskImage=css;
-  el.style.webkitMaskImage=css;
+  if(direct){
+    // The exact v4.6 rich masters are transparent PNG silhouettes externalized
+    // inside SVG wrappers. Rendering the wrapper directly preserves its alpha;
+    // re-masking the wrapper can collapse Chromium to the SVG viewport rectangle.
+    el.style.maskImage="none";el.style.webkitMaskImage="none";
+    el.style.backgroundImage=css;
+  }else{
+    el.style.backgroundImage="";
+    el.style.maskImage=css;
+    el.style.webkitMaskImage=css;
+  }
 }
 
 export function createReaderDomAdapter({
@@ -630,7 +851,7 @@ export function createReaderDomAdapter({
   let bound=false;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let scholaCollapsed=false;
-  let scholaHeight=100;
+  let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 132 : 150);
   let scholaTranslationVisible=false;
   let scholaIdentity=null;
   let heldBell=null;
@@ -647,6 +868,9 @@ export function createReaderDomAdapter({
   let suppressNavClickUntil=0;
   let suppressNavClickDirection=null;
   let suppressModeClickUntil=0;
+  let swipeStart=null;
+  let wheelIntent={dir:0,amount:0,last:0};
+  let navCooldownUntil=0;
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
@@ -925,9 +1149,11 @@ export function createReaderDomAdapter({
     dock.style.setProperty?.("--ao-schola-height",scholaHeight+"px");
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
-    const reserve=scholaActive ? (scholaCollapsed ? 32 : scholaHeight) : 0;
+    const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
+    const reserve=(scholaActive||scholaRelevant) ? (scholaCollapsed ? 32 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
+      shell.dataset.scholaRelevant=String(scholaRelevant);
       shell.style.setProperty?.("--ao-schola-reserve",reserve+"px");
     }
     const toggle=dock.querySelector?.("[data-schola-toggle]");
@@ -953,6 +1179,36 @@ export function createReaderDomAdapter({
       button.textContent=String(item.label);
       menu.append(button);
     }
+  }
+
+  function activeScrollCard(){return root.querySelector?.(".ao-prayer-card")??null;}
+  function edgeZone(card){return Math.max(20,(Number(card?.clientHeight)||0)*.025);}
+  function atCardEdge(card,dir){
+    if(!card)return false;
+    if(dir<0)return (Number(card.scrollTop)||0)<=edgeZone(card);
+    const remaining=Math.max(0,(Number(card.scrollHeight)||0)-(Number(card.clientHeight)||0)-(Number(card.scrollTop)||0));
+    return remaining<=edgeZone(card);
+  }
+  function setHandoff(dir,on=true){
+    const shell=root.querySelector("[data-ao-reader-shell]");if(!shell)return;
+    shell.dataset.handoff=on?(dir>0?"next":"previous"):"";
+  }
+  function animateCardArrival(dir){
+    const card=activeScrollCard();if(!card)return;
+    card.dataset.cardArrival=dir>0?"next":"previous";
+    const win=scholaWindow();
+    (win?.setTimeout??setTimeout)(()=>{if(card)delete card.dataset.cardArrival;},380);
+  }
+  function navigateBy(dir,input="unknown"){
+    const now=Date.now(),continuous=/^(?:swipe|wheel-edge)$/.test(String(input));
+    if(continuous&&now<navCooldownUntil)return null;
+    if(continuous)navCooldownUntil=now+360;
+    setHandoff(dir,false);wheelIntent={dir:0,amount:0,last:0};
+    root.dataset.aoLastNavInput=input+":"+(dir>0?"next":"previous");
+    const result=dir>0?onNext?.(current,prepared):onPrevious?.(current,prepared);
+    root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+    if(result)animateCardArrival(dir);
+    return result;
   }
 
   function bind(){
@@ -1014,15 +1270,11 @@ export function createReaderDomAdapter({
       const nav=event.target?.closest?.("[data-reader-nav]");
       if(nav && Date.now()<suppressNavClickUntil && nav.dataset.readerNav===suppressNavClickDirection){return;}
       if(nav?.dataset.readerNav==="previous"){
-        root.dataset.aoLastNavInput="click:previous";
-        const result=onPrevious?.(current,prepared);
-        root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+        navigateBy(-1,"click");
         return;
       }
       if(nav?.dataset.readerNav==="next"){
-        root.dataset.aoLastNavInput="click:next";
-        const result=onNext?.(current,prepared);
-        root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+        navigateBy(1,"click");
         return;
       }
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
@@ -1040,16 +1292,22 @@ export function createReaderDomAdapter({
         }
         return;
       }
+      const guideClose=event.target?.closest?.("[data-guide-close]");
+      if(guideClose){const pop=root.querySelector('[data-role="guide-popover"]');if(pop){pop.hidden=true;pop.replaceChildren?.();}return;}
+      const guideBackdrop=event.target?.closest?.('[data-role="guide-popover"]');
+      if(guideBackdrop && event.target===guideBackdrop){guideBackdrop.hidden=true;guideBackdrop.replaceChildren?.();return;}
       const guideButton=event.target?.closest?.('[data-role="guide-button"]');
       if(guideButton && !guideButton.disabled && current?.guide){
         const pop=root.querySelector('[data-role="guide-popover"]');
         if(pop){
-          const wasHidden=pop.hidden;
-          pop.hidden=!wasHidden;
-          if(wasHidden) pop.textContent=current.guide.detail ?? current.guide.text;
+          if(pop.hidden){renderGuideSheet(pop,current.guide);pop.hidden=false;}
+          else{pop.hidden=true;pop.replaceChildren?.();}
         }
         onGuide?.(current.guide,current,prepared);
+        return;
       }
+      const rubric=event.target?.closest?.('.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]');
+      if(rubric){rubric.dataset.expanded=String(rubric.dataset.expanded!=="true");return;}
     });
     // The donor edge arrows are real phone controls. Own touch navigation on
     // pointerdown: Playwright/Chromium and physical touchscreens both dispatch
@@ -1063,16 +1321,45 @@ export function createReaderDomAdapter({
         suppressNavClickUntil=Date.now()+650;
         suppressNavClickDirection=navButton.dataset.readerNav??null;
         if(navButton.dataset.readerNav==="previous"){
-          root.dataset.aoLastNavInput="pointer:previous";
-          const result=onPrevious?.(current,prepared);
-          root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+          navigateBy(-1,"pointer");
         }else if(navButton.dataset.readerNav==="next"){
-          root.dataset.aoLastNavInput="pointer:next";
-          const result=onNext?.(current,prepared);
-          root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+          navigateBy(1,"pointer");
         }
       });
     }
+    const scrollCard=activeScrollCard();
+    if(scrollCard?.addEventListener){
+      scrollCard.addEventListener("scroll",()=>{
+        setHandoff(1,atCardEdge(scrollCard,1));
+      },{passive:true});
+      scrollCard.addEventListener("wheel",event=>{
+        if(!event.deltaY)return;
+        const dir=event.deltaY>0?1:-1;
+        if(!atCardEdge(scrollCard,dir)){wheelIntent={dir:0,amount:0,last:0};setHandoff(dir,false);return;}
+        event.preventDefault?.();
+        const now=Date.now();
+        if(wheelIntent.dir!==dir||now-wheelIntent.last>260)wheelIntent={dir,amount:0,last:now};
+        wheelIntent.last=now;wheelIntent.amount+=Math.min(140,Math.abs(Number(event.deltaY)||0));
+        setHandoff(dir,true);
+        if(wheelIntent.amount>=105)navigateBy(dir,"wheel-edge");
+      },{passive:false});
+      scrollCard.addEventListener("touchstart",event=>{
+        const t=event.touches?.[0];swipeStart=t?{x:t.clientX,y:t.clientY,time:Date.now()}:null;
+      },{passive:true});
+      scrollCard.addEventListener("touchend",event=>{
+        if(!swipeStart)return;
+        const t=event.changedTouches?.[0],start=swipeStart;swipeStart=null;if(!t)return;
+        const dx=t.clientX-start.x,dy=t.clientY-start.y;
+        if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.25){
+          event.preventDefault?.();navigateBy(dx<0?1:-1,"swipe");
+        }
+      },{passive:false});
+    }
+    root.addEventListener?.("keydown",event=>{
+      const tag=String(event.target?.tagName??"").toUpperCase();if(["INPUT","SELECT","TEXTAREA"].includes(tag))return;
+      if(event.key==="ArrowRight"){event.preventDefault?.();navigateBy(1,"keyboard");}
+      else if(event.key==="ArrowLeft"){event.preventDefault?.();navigateBy(-1,"keyboard");}
+    });
     // v1.80 Mass-preferences mode controls own touch on pointerdown for the
     // same reason as the edge arrows: a physical tap must commit the switch
     // even while the reader rebuilds beneath the preferences sheet.
@@ -1164,7 +1451,7 @@ export function createReaderDomAdapter({
     const guideShort=root.querySelector('[data-role="guide-short"]');
     if(guideShort){
       guideShort.hidden=false;
-      guideShort.textContent=current.guide?.text ? "OPEN" : "RUBRICS";
+      guideShort.textContent=current.guide?.moment ? "OPEN" : "RUBRICS";
     }
 
     setChannel(root,"posture",current.posture);
@@ -1173,6 +1460,7 @@ export function createReaderDomAdapter({
     setChannel(root,"response",current.response);
     setChannel(root,"bell",visibleBell);
     setChannel(root,"priest-voice",current.priestVoice);
+    setChannel(root,"schola-shared",current.scholaShared ? current.schola : null);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
     syncScholaChrome();
     syncScholaContent();
@@ -1187,8 +1475,8 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
     applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
-    const bellIcon=root.querySelector('[data-icon-slot="bell"]');
-    if(bellIcon)bellIcon.hidden=!visibleBell;
+    applyIcon(root,"bell",visibleBell ? (current.bellIconKey??"bells") : null,iconResolver);
+    applyIcon(root,"schola-shared",current.scholaShared ? current.scholaIconKey : null,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
 
     const actionBadge=root.querySelector('[data-role="priest-action-badge"]');
@@ -1204,10 +1492,12 @@ export function createReaderDomAdapter({
     const cinematic=root.querySelector('[data-role="cinematic"]');
     if(cinematic){
       const visible=Boolean(current.cinematic);
+      const kind=visible ? String(current.cinematic.kind??"TRANSIENT") : "";
       cinematic.hidden=!visible;
-      cinematic.dataset.kind=visible ? String(current.cinematic.kind??"TRANSIENT") : "";
+      cinematic.dataset.kind=kind;
       setText(root,"cinematic-title",visible ? current.cinematic.title : null);
       setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
+      applyIcon(root,"cinematic",visible && kind==="ELEVATION" ? current.priestActionIconKey : null,iconResolver);
     }
 
     const guideButton=root.querySelector('[data-role="guide-button"]');
@@ -1216,7 +1506,7 @@ export function createReaderDomAdapter({
       guideButton.title=current.guide?.text??"Guide";
     }
     const pop=root.querySelector('[data-role="guide-popover"]');
-    if(pop){pop.hidden=true;pop.textContent="";}
+    if(pop){pop.hidden=true;pop.replaceChildren?.();}
 
     const body=root.querySelector('[data-role="paragraphs"]');
     if(body && current.cardUpdate){
@@ -1228,6 +1518,12 @@ export function createReaderDomAdapter({
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
           node.dataset.active=String(p.active);
+          if(p.kind==="RUBRIC"){
+            const rubricText=stripRubricBrackets(p.primary);
+            node.dataset.stateDuplicate=String(rubricIsStateDuplicate(rubricText));
+            node.dataset.rubricExpandable=String(rubricText.length>180);
+            node.dataset.expanded="false";
+          }
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
           const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
@@ -1251,7 +1547,7 @@ export function createReaderDomAdapter({
             node.dataset.ritualAnchor=String(current.gesture.anchorLat);
             node.dataset.ritualCueActive="true";
           }
-          renderReaderText(primary,p.primary,{
+          renderReaderText(primary,p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary,{
             anchor:ritualCueActive ? current.gesture.anchorLat : null,
             active:ritualCueActive,
           });

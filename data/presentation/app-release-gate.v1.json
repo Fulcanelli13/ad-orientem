@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.26.0",
+  "version": "1.27.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -245,6 +245,33 @@
         "R17 Mass convergence workflow 37341706430"
       ],
       "detail": "Presentation FX V1-V5 certifies that cinematic, rail, hero and art-loading mechanisms exist on modular surfaces. It does not certify exact reproduction of the later approved non-Mass prototype composition, trigger semantics, geometry, timings or module choreography; those are governed by EXACT_NON_MASS_DONOR_PARITY."
+    },
+    {
+      "id": "MASS_V180_INTERACTION_ICON_PARITY",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "evidence": [
+        "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
+        "data/presentation/mass-v180-donor-parity.v1.json",
+        "src/mass/reader-dom.js",
+        "src/mass/reader-icons.js",
+        "src/mass/reader-icon-bank.js",
+        "tests/reader-phone-acceptance.mjs",
+        "tests/mass-visual-acceptance.mjs",
+        "tests/mass-v180-donor-parity.mjs",
+        "tests/asset-bank-contract.mjs",
+        "R17 Mass convergence workflow 37591506346",
+        "App convergence workflow 37591506503",
+        "Visual acceptance workflow 37591506362"
+      ],
+      "detail": "The reopened v1.80 presentation gate is closed. Real-touch phone acceptance certifies the donor two-axis navigation contract; dedicated visual acceptance certifies full Schola controls and translation lifecycle plus the structured v1.79 Guide; source-rubric and one-state-one-surface checks are locked; and the complete 67-entry v4.6 Mass master bank is exact-donor manifest-certified and runtime-wired.",
+      "progress": {
+        "navigation": "CERTIFIED_REAL_TOUCH",
+        "schola": "CERTIFIED_VISUAL_INTERACTION",
+        "guide": "CERTIFIED_V179_STRUCTURED",
+        "rubrics": "CERTIFIED_CONCISE_STATE_AWARE",
+        "iconBank": "CERTIFIED_V46_67_OF_67"
+      }
     },
     {
       "id": "EXACT_NON_MASS_DONOR_PARITY",

@@ -126,6 +126,8 @@ try{
     homeControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
     preferencesControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
     stateLabels:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-state-kicker")].map(x=>x.textContent?.trim()??""),
+    openingPosture:document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.trim()??"",
+    openingPostureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture-top']")?.hidden??null,
     guideLabel:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-short']")?.textContent?.trim()??"",
     preferencesOpen:document.querySelector("#ao-r17-native-reader-preview [data-role='mass-preferences']")?.dataset?.open??null,
     floatingClose:Boolean(document.querySelector("#ao-r17-native-reader-preview [aria-label='Close Mass reader']")),
@@ -165,6 +167,8 @@ try{
   assert.ok(opening.homeControlRect?.width>=44&&opening.homeControlRect?.height>=44,"Home control lost a usable phone touch target");
   assert.ok(opening.preferencesControlRect?.width>=44&&opening.preferencesControlRect?.height>=44,"Mass preferences control lost a usable phone touch target");
   assert.deepEqual(opening.stateLabels,["YOU","PRIEST"],"persistent state ribbon is no longer YOU / GUIDE / PRIEST");
+  assert.equal(opening.openingPosture,"STAND","opening YOU state regressed to an empty or incorrect posture");
+  assert.equal(opening.openingPostureIconHidden,false,"opening YOU state lost its exact posture icon");
   assert.ok(["OPEN","RUBRICS"].includes(opening.guideLabel),"Guide centre cell lost v1.79/v1.80 semantics");
   assert.equal(opening.preferencesOpen,"false","Mass preferences sheet should be closed at reader entry");
   assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
@@ -176,6 +180,31 @@ try{
   assert.equal(opening.sourceStructureOwner,"SOURCE_FIRST_LIVE");
   assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
+
+  // v1.79 Guide: structured sheet, curated sections and source links.
+  const guideButton=page.locator("#ao-r17-native-reader-preview [data-role='guide-button']");
+  assert.equal(await guideButton.isDisabled(),false,"opening v1.79 Guide is disabled");
+  await guideButton.click();
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===false);
+  const guideAudit=await page.evaluate(()=>({
+    kicker:document.querySelector("#ao-r17-native-reader-preview .ao-guide-kicker")?.textContent?.trim()??"",
+    title:document.querySelector("#ao-r17-native-reader-preview .ao-guide-title")?.textContent?.trim()??"",
+    summary:document.querySelector("#ao-r17-native-reader-preview .ao-guide-summary")?.textContent?.trim()??"",
+    headings:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-section h3,#ao-r17-native-reader-preview .ao-guide-section h4")].map(x=>x.textContent?.trim()??""),
+    sectionCount:document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-section").length,
+    sources:document.querySelector("#ao-r17-native-reader-preview .ao-guide-sources p")?.textContent?.trim()??"",
+    sourceLinks:document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-links a").length,
+  }));
+  assert.equal(guideAudit.kicker,"Guide · 1962 Sung Mass","Guide lost v1.79 identity");
+  assert.ok(guideAudit.title.length>0&&guideAudit.summary.length>0,"Guide header is not curated");
+  assert.ok(guideAudit.sectionCount>=5,"Guide collapsed back into an unstructured long-text dump");
+  for(const heading of ["What is happening","What should I do?","For prayer"]){
+    assert.ok(guideAudit.headings.includes(heading),"Guide is missing curated section: "+heading);
+  }
+  assert.ok(guideAudit.sources.length>0,"Guide lost its source line");
+  assert.ok(guideAudit.sourceLinks>=1,"Guide lost source links");
+  await page.locator("#ao-r17-native-reader-preview [data-guide-close]").click();
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===true);
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
@@ -203,6 +232,39 @@ try{
     const scholaAfter=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
     assert.ok(scholaAfter>scholaBefore+10,"Schola drag handle did not resize the dock");
   }
+
+  // v1.76-v1.80 Schola interaction contract: page/progress, persisted speed,
+  // explicit pause/resume, and translation which temporarily pauses motion.
+  const scholaState=await page.evaluate(()=>({
+    page:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-page']")?.textContent?.trim()??"",
+    progress:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-progress']")?.style?.width??"",
+    speed:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-speed']")?.textContent?.trim()??"",
+    latin:document.querySelector("#ao-r17-native-reader-preview [data-role='schola']")?.textContent?.trim()??"",
+  }));
+  assert.match(scholaState.page,/\d+\s*\/\s*\d+/,"Schola lost page state");
+  assert.match(scholaState.progress,/^\d+(?:\.\d+)?%$/,"Schola lost progress state");
+  assert.equal(scholaState.speed,"0.45×","Schola no longer starts on donor default speed");
+  assert.ok(scholaState.latin.length>0,"Schola stream is empty");
+
+  await scholaDock.locator("[data-schola-faster]").click();
+  assert.equal(await scholaDock.locator("[data-role='schola-speed']").textContent(),"0.60×","Schola faster control did not advance donor speed ladder");
+  assert.equal(await page.evaluate(()=>localStorage.getItem("ao-schola-speed")),"0.6","Schola speed did not persist");
+
+  const scholaPause=scholaDock.locator("[data-schola-pause]");
+  await scholaPause.click();
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola pause control did not pause");
+  assert.equal((await scholaPause.textContent())?.trim(),"RESUME","paused Schola does not expose resume");
+  await scholaPause.click();
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola resume control did not resume");
+
+  await scholaDock.locator("[data-schola-translate]").click();
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not open");
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola translation did not pause moving text");
+  assert.ok(((await scholaDock.locator("[data-role='schola-translation']").textContent())??"").trim().length>0,"Schola translation is empty");
+  await scholaDock.locator("[data-schola-translate]").click();
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola translation did not close");
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola did not resume after translation closed");
+
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
 
@@ -294,10 +356,22 @@ try{
     bellActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='bell']")?.dataset?.active??null,
     bellText:document.querySelector("#ao-r17-native-reader-preview [data-role='bell']")?.textContent?.trim()??"",
     bellIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell']")?.hidden??null,
-    bellIconSvg:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell'] svg")?.outerHTML??"",
+    bellIconMask:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell']");return x?.style?.maskImage||x?.style?.webkitMaskImage||""})(),
+    cueStateSupported:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCueState?.()?.supported??null,
+    cueStateReason:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCueState?.()?.reason??null,
+    cueStateAction:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCueState?.()?.priestAction?.label??null,
+    cueStateActionOwner:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCueState?.()?.ownership?.priestAction??null,
+    projectedAction:globalThis.AO_R17_NATIVE_READER_STATE?.priestAction?.label??null,
+    projectedActionIconKey:globalThis.AO_R17_NATIVE_READER_STATE?.priestActionIconKey??null,
     cinematicKind:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.dataset?.kind??null,
     cinematicTitle:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-title']")?.textContent?.trim()??"",
     cinematicSub:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-sub']")?.textContent?.trim()??"",
+    cinematicIcon:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='cinematic']");return {
+      hidden:x?.hidden??null,
+      direct:x?.classList?.contains("ao-icon-direct")??false,
+      background:x?.style?.backgroundImage??"",
+      mask:x?.style?.maskImage||x?.style?.webkitMaskImage||"",
+    }})(),
     bellOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerBell??null,
     cinematicOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerCinematic??null,
   }));
@@ -305,11 +379,23 @@ try{
   assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
   assert.match(elevationState.bellText,/ELEVATION BELL/i);
   assert.equal(elevationState.bellIconHidden,false,"Host elevation bell rail is active but its icon is hidden");
-  assert.match(elevationState.bellIconSvg,/<svg[^>]*viewBox="0 0 48 48"/,
-    "Host elevation bell rail is active but contains no visible bell glyph");
+  assert.match(elevationState.bellIconMask,/mass-v46\/bells\.svg/,
+    "Host elevation bell rail is active but is not using the exact v4.6 donor bell art");
+  assert.equal(elevationState.cueStateSupported,true,
+    "Sung cue-state controller is not active at the Host elevation: "+JSON.stringify(elevationState));
+  assert.equal(elevationState.cueStateAction,"ELEVATES HOST",
+    "loaded v1.80 priest-action registry does not expose the Host elevation action at AO.SM.C0174: "+JSON.stringify(elevationState));
+  assert.equal(elevationState.projectedAction,"ELEVATES HOST",
+    "native state projection dropped the Host elevation action after cue resolution");
+  assert.equal(elevationState.projectedActionIconKey,"priest_elevate_host_rich","Host elevation cue lost its exact v4.6 action key");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
   assert.equal(elevationState.cinematicTitle,"ELEVATION");
   assert.equal(elevationState.cinematicSub,"SACRED HOST");
+  assert.equal(elevationState.cinematicIcon.hidden,false,"Host elevation master is hidden");
+  assert.equal(elevationState.cinematicIcon.direct,true,"rich Host elevation master fell back to wrapper masking");
+  assert.match(elevationState.cinematicIcon.background,/mass-v46\/priest_elevate_host_rich\.svg/,
+    "Host elevation cinematic is not using the exact v4.6 rich master");
+  assert.equal(elevationState.cinematicIcon.mask,"none","rich Host elevation master is still being rasterized as an SVG mask viewport");
   assert.match(elevationState.bellOwner,/R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT/);
   assert.match(elevationState.cinematicOwner,/R17_EXACT_ELEVATION_CINEMATIC/);
   await page.screenshot({path:resolve(out,"08-mass-host-elevation.png"),fullPage:false});
@@ -323,6 +409,9 @@ try{
       return {sectionId:target.sectionId,title:target.title};
     },cueId);
     assert.ok(section?.sectionId,"source-first display model has no section for "+cueId);
+    // Section changes legitimately show the donor part-transition cinema. Wait
+    // for it to finish so salience screenshots certify the ritual cue itself.
+    await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
     const cue=page.locator(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${cueId}']`);
     assert.equal(await cue.count(),1,cueId+" is not exposed exactly once in the current source-first section");
     for(let attempt=0;attempt<5;attempt++){
@@ -366,6 +455,9 @@ try{
       postureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='posture']")?.dataset?.active??null,
       gestureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='gesture']")?.hidden??null,
       postureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture']")?.hidden??null,
+      scholaSharedActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='schola-shared']")?.dataset?.active??null,
+      scholaSharedIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='schola-shared']")?.hidden??null,
+      scholaDockActive:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset?.active??null,
       activeParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
       targetActive:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset?.active??null,
       gestureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerGesture??null,
@@ -380,6 +472,9 @@ try{
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
   assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
+  assert.equal(gloriaBow.scholaSharedActive,"true","shared Gloria text lost the v1.76 right-rail Schola indicator");
+  assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
+  assert.equal(gloriaBow.scholaDockActive,"false","shared Gloria text duplicated itself in the Schola dock");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
 

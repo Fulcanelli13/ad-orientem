@@ -126,8 +126,28 @@ export function conditionPasses(expression,conditions){
   return tokens.length>0 && tokens.every(token=>active.has(token));
 }
 
+export const V180_ORDINARY_SUNG_PRESENTATION_FLAGS=Object.freeze([
+  "AO_DEFAULT_1962_SUNG",
+  "DEFAULT_SUNG_PROFILE",
+  "PROCESSION_ACTIVE",
+  "PUBLIC_KYRIE",
+  "COLLECT_SEQUENCE",
+  "PUBLIC_GOSPEL",
+  "OFFERTORY_GREETING",
+  "PREFACE_DIALOGUE",
+  "CANON_START",
+  "COMMUNION_PREPARATION",
+  "POSTCOMMUNION_GREETING",
+]);
+
+export function sungPresentationBaselineConditions(prepared){
+  const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
+  if(!SUPPORTED_FORMS.has(form))return new Set();
+  return new Set(V180_ORDINARY_SUNG_PRESENTATION_FLAGS);
+}
+
 export function cueProjectionConditions(prepared){
-  const active=new Set();
+  const active=sungPresentationBaselineConditions(prepared);
   const resolved=prepared?.session?.resolvedMass;
   const conditionSources=[
     ...(resolved?.provenance?.conditions??[]),

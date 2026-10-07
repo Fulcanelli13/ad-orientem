@@ -35,8 +35,8 @@ assert.equal(keys.postureIconKey,"kneel");
 assert.equal(keys.gestureIconKey,"gospel_crosses");
 assert.equal(keys.responseIconKey,"response");
 assert.equal(keys.priestVoiceIconKey,"priest_silent");
-assert.equal(keys.priestPositionIconKey,"priest_gospel");
-assert.equal(keys.priestActionIconKey,null,"unavailable certified elevation art must fail closed");
+assert.equal(keys.priestPositionIconKey,"priest_centre");
+assert.equal(keys.priestActionIconKey,"priest_elevate_host_rich","recovered v4.6 Host elevation art is not wired");
 assert.equal(keys.scholaIconKey,"schola");
 
 keys=iconKeysForReaderState({
@@ -51,15 +51,18 @@ assert.equal(keys.priestVoiceIconKey,"priest_audible");
 assert.equal(keys.priestPositionIconKey,"priest_foot");
 assert.equal(keys.priestActionIconKey,null,"position-only state must remain action-art free");
 
-const broken={...bank}; delete broken.priest_steps;
+const broken={...bank}; delete broken.priest_ascending_rich;
 assert.equal(auditHostIconBank(broken).complete,false);
-assert.ok(auditHostIconBank(broken).missing.includes("priest_steps"));
+assert.ok(auditHostIconBank(broken).missing.includes("priest_ascending_rich"));
+
+keys=iconKeysForReaderState({priestPosition:{station:"ALTAR_CENTER",facing:"PEOPLE"}});
+assert.equal(keys.priestPositionIconKey,"priest_facing_people","top PRIEST position ignored facing-people state");
 
 keys=iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}});
-assert.equal(keys.priestActionIconKey,null);
+assert.equal(keys.priestActionIconKey,"priest_genuflect");
 keys=iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}});
-assert.equal(keys.priestActionIconKey,null);
+assert.equal(keys.priestActionIconKey,"lavabo");
 keys=iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}});
 assert.equal(keys.priestActionIconKey,null,"unmapped action guessed an unrelated icon");
 
-console.log("reader icons: PASS — priest actions are source-backed and uncertified action art fails closed.");
+console.log("reader icons: PASS — v1.77 plain position pictograms and exact v4.6 rich action art remain separately owned.");

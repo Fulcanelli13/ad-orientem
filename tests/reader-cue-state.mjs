@@ -4,6 +4,8 @@ import {
   validateReaderCueRegistries,
   createReaderCueStateController,
   conditionPasses,
+  sungPresentationBaselineConditions,
+  V180_ORDINARY_SUNG_PRESENTATION_FLAGS,
 } from "../src/mass/reader-cue-state.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
@@ -36,11 +38,16 @@ const ctrl=createReaderCueStateController({registries,sungCorpus:sung,prepared})
 assert.equal(ctrl.supported,true);
 assert.equal(ctrl.unresolvedPostureAnchors.length,5);
 
+assert.deepEqual([...sungPresentationBaselineConditions(prepared)],[...V180_ORDINARY_SUNG_PRESENTATION_FLAGS],
+  "ordinary Sung presentation baseline drifted from the executable v1.80 donor");
+assert.deepEqual(prepared.session.resolvedMass.provenance.conditions,[],
+  "presentation baseline mutated canonical resolved-Mass provenance");
+
 let state=ctrl.project("AO.SM.C0001");
 assert.equal(state.priestPosition.station,"FOOT_CENTER");
 assert.equal(state.priestVoice.voice ?? state.priestVoice.value,"LOW / QUIET");
 assert.match(state.gesture.action,/Sign of the Cross/i);
-assert.equal(state.posture,null,"conditional procession posture was invented");
+assert.equal(state.posture?.value,"STAND","v1.80 ordinary Sung opening posture is not visible");
 
 state=ctrl.project("AO.SM.C0041");
 assert.equal(state.priestPosition.station,"ROUTE_CONTROLLED");
@@ -111,7 +118,9 @@ state=ctrl.project("AO.SM.C0082");
 assert.equal(state.priestPosition.station,"ALTAR_GOSPEL_MISSAL");
 
 state=ctrl.project("AO.SM.C0075");
-assert.equal(state.posture,null,"default sung posture activated without explicit profile condition");
+assert.equal(state.posture?.value,"SIT","v1.80 ordinary Sung default profile did not activate the Epistle sitting posture");
+state=ctrl.project("AO.SM.C0075",{conditions:[]});
+assert.equal(state.posture,null,"explicit condition override no longer provides a fail-closed test path");
 state=ctrl.project("AO.SM.C0075",{conditions:["DEFAULT_SUNG_PROFILE"]});
 assert.equal(state.posture.value,"SIT");
 
@@ -136,6 +145,8 @@ const low=createReaderCueStateController({
   registries,sungCorpus:sung,
   prepared:{session:{resolvedMass:{form:"LOW",conditions:[]}},readerPreferences:{}},
 });
+assert.deepEqual([...sungPresentationBaselineConditions({session:{resolvedMass:{form:"LOW"}}})],[],
+  "ordinary Sung presentation flags leaked into Low Mass");
 assert.equal(low.supported,false);
 state=low.project("AO.SM.C0068");
 assert.equal(state.gesture,null);

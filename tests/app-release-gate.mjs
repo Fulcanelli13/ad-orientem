@@ -11,7 +11,7 @@ const massV180=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity
 const massStepReconciliation=JSON.parse(readFileSync("data/presentation/mass-v180-v183-step-reconciliation.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.26.0");
+assert.equal(app.version,"1.27.0");
 assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -40,7 +40,7 @@ for(const finding of findings){
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
 assert.deepEqual(app.openBlockers,["EXACT_NON_MASS_DONOR_PARITY"],
-  "exact non-Mass donor parity must remain the sole app presentation blocker");
+  "only exact non-Mass primary-donor evidence may remain an app blocker");
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
 assert.equal(fieldRuntime?.classification,"PASS");
 assert.equal(fieldRuntime?.status,"CLOSED");
@@ -51,6 +51,14 @@ assert.equal(massParity?.progress?.singleRenderer,"CERTIFIED_NATIVE_ONLY");
 assert.equal(massParity?.progress?.donorPresentation,"CERTIFIED_V1_80");
 assert.equal(massParity?.progress?.visualAcceptance,"PASS");
 assert.equal(massParity?.progress?.phoneAcceptance,"PASS");
+const interactionParity=findings.find(x=>x.id==="MASS_V180_INTERACTION_ICON_PARITY");
+assert.equal(interactionParity?.classification,"PASS");
+assert.equal(interactionParity?.status,"CLOSED");
+assert.equal(interactionParity?.progress?.navigation,"CERTIFIED_REAL_TOUCH");
+assert.equal(interactionParity?.progress?.schola,"CERTIFIED_VISUAL_INTERACTION");
+assert.equal(interactionParity?.progress?.guide,"CERTIFIED_V179_STRUCTURED");
+assert.equal(interactionParity?.progress?.rubrics,"CERTIFIED_CONCISE_STATE_AWARE");
+assert.equal(interactionParity?.progress?.iconBank,"CERTIFIED_V46_67_OF_67");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
 assert.equal(app.exactDonorParityLedger,"data/presentation/exact-donor-parity.v1.json");
@@ -91,11 +99,20 @@ assert.ok(Object.values(parity.surfaces).every(surface=>surface.status==="CERTIF
   "one or more product-parity surfaces lost certification");
 assert.equal(parity.status,"CERTIFIED");
 assert.equal(parity.releaseBlocker,null);
+assert.equal(parity.crossSurfacePresentationFx?.status,"CERTIFIED");
 assert.equal(massDefinitive.schema,"ao-mass-definitive-convergence-v1");
 assert.equal(massDefinitive.singleOwnerContract.legacyStartLiveAllowed,false);
 assert.equal(massDefinitive.singleOwnerContract.shadowRendererAllowed,false);
 assert.equal(massV180.status,"CERTIFIED");
+assert.equal(massV180.releaseBlocker,null);
 assert.deepEqual(massV180.open,[]);
+assert.deepEqual(massV180.certified.map(x=>x.id),[
+  "V180_TWO_AXIS_NAVIGATION",
+  "V180_SCHOLA_INTERACTION_PARITY",
+  "V179_GUIDE_CURATED_PRESENTATION",
+  "V180_RUBRIC_EFFICIENCY",
+  "V46_MASTER_ICON_PARITY",
+]);
 assert.equal(massStepReconciliation.status,"RECONCILED_FOR_PRODUCT_NONHISTORICAL");
 assert.equal(massStepReconciliation.authorities.productionPresentation.steps,48);
 assert.equal(massStepReconciliation.historicalGap.exactBoundaryRecovered,false);
@@ -150,4 +167,4 @@ assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"))
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-donor-reference-e2e.mjs"));
 
-console.log("PASS app release gate: Mass runtime and v1.80-native presentation are certified; exact non-Mass donor parity remains the sole app blocker.");
+console.log("PASS app release gate: Mass runtime and v1.80 donor interaction/icon parity are certified; only exact non-Mass primary-donor evidence remains open.");
