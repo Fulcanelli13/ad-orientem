@@ -110,9 +110,28 @@ export function buildFsspDataset(records,{retrievedAt=new Date().toISOString()}=
   return {venues,ministries,schedules,sources};
 }
 
+async function renderFsspDirectoryHtml(url=FSSP_DIRECTORY_URL){
+  const { chromium }=await import("@playwright/test");
+  const browser=await chromium.launch({headless:true});
+  try{
+    const page=await browser.newPage();
+    await page.goto(url,{waitUntil:"domcontentloaded",timeout:60000});
+    await page.waitForTimeout(2500);
+    await page.waitForLoadState("networkidle",{timeout:15000}).catch(()=>{});
+    return await page.content();
+  }finally{await browser.close();}
+}
+
 export async function runFsspImport({out="data/directory/generated/fssp",concurrency=6,fetchImpl=fetch}={}){
-  const html=await fetchText(FSSP_DIRECTORY_URL,{fetchImpl});
-  const base=parseFsspDirectoryHtml(html);
+  let html=await fetchText(FSSP_DIRECTORY_URL,{fetchImpl});
+  let base=parseFsspDirectoryHtml(html);
+  if(base.length===0){
+    html=await renderFsspDirectoryHtml(FSSP_DIRECTORY_URL);
+    base=parseFsspDirectoryHtml(html);
+  }
+  if(base.length < 100) {
+    throw new Error(`FSSP import coverage guard: expected at least 100 official directory rows, received ${base.length}.`);
+  }
   const records=await concurrentMap(base,concurrency,record=>enrichDetail(record,{fetchImpl}));
   const retrievedAt=new Date().toISOString();
   const dataset=buildFsspDataset(records,{retrievedAt});
