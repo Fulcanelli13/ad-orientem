@@ -2919,7 +2919,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The opening words or notes of a text or chant, used to identify or begin it.",
+        "fr": "Premiers mots ou premières notes d’un texte ou d’un chant, utilisés pour l’identifier ou le commencer."
+      },
+      "explanation": {
+        "en": "In liturgical books an incipit can function as a title-like identifier for a prayer or chant. In music it can also mean the portion intoned before others continue.",
+        "fr": "Dans les livres liturgiques, l’incipit peut servir d’identifiant proche d’un titre pour une prière ou un chant. En musique, il peut aussi désigner la portion entonnée avant que les autres poursuivent."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G252",
@@ -2937,7 +2948,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A short liturgical verse, usually followed by a response.",
+        "fr": "Bref verset liturgique, généralement suivi d’une réponse."
+      },
+      "explanation": {
+        "en": "The versicle is commonly marked by ℣. or V. and forms a call-and-response structure with the response marked ℟. or R. It must be distinguished from a longer responsory.",
+        "fr": "Le verset est couramment marqué par ℣. ou V. et forme une structure d’appel-réponse avec la réponse marquée ℟. ou R. Il doit être distingué d’un répons plus développé."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G253",
@@ -2955,7 +2977,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The liturgical reply made to a versicle, invocation or other cue.",
+        "fr": "Réponse liturgique donnée à un verset, une invocation ou une autre indication."
+      },
+      "explanation": {
+        "en": "The response is commonly marked ℟. or R. and belongs to the dialogical structure of the rite. It is not synonymous with responsory, which is a more developed chant form.",
+        "fr": "La réponse est couramment marquée ℟. ou R. et appartient à la structure dialoguée du rite. Elle n’est pas synonyme de répons, qui est une forme chantée plus développée."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G254",
@@ -2973,7 +3006,18 @@
         "SRC-HIST-RESPONSORIUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A liturgical chant composed around a response and one or more verses.",
+        "fr": "Chant liturgique construit autour d’une réponse et d’un ou plusieurs versets."
+      },
+      "explanation": {
+        "en": "Responsories belong especially to the Divine Office and certain rites. The term should not be reduced to any spoken response because it denotes a specific musical-liturgical form.",
+        "fr": "Les répons appartiennent spécialement à l’Office divin et à certains rites. Le terme ne doit pas être réduit à n’importe quelle réponse parlée, car il désigne une forme liturgico-musicale précise."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-RESPONSORIUM"
+      ]
     },
     {
       "id": "G255",
@@ -2991,7 +3035,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The Greek acclamation ‘Lord, have mercy’ used in the Roman Mass.",
+        "fr": "Acclamation grecque « Seigneur, ayez pitié » employée dans la Messe romaine."
+      },
+      "explanation": {
+        "en": "The Kyrie retains Greek in the Latin Roman rite and is arranged according to the form of Mass and chant. It is an invocation for mercy, not simply an introductory song title.",
+        "fr": "Le Kyrie conserve le grec dans le rite romain latin et s’organise selon la forme de Messe et le chant. C’est une invocation de miséricorde, non un simple titre de chant introductif."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G256",
@@ -3009,7 +3064,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The hymn beginning Gloria in excelsis Deo sung or recited at Mass on days prescribed by the rubrics.",
+        "fr": "Hymne commençant par Gloria in excelsis Deo chanté ou récité à la Messe les jours prévus par les rubriques."
+      },
+      "explanation": {
+        "en": "The Gloria is not used at every Mass. In the 1962 Missal its presence depends on the liturgical class, season and type of Mass according to the rubrics.",
+        "fr": "Le Gloria n’est pas employé à chaque Messe. Dans le Missel de 1962, sa présence dépend de la classe liturgique, du temps et du type de Messe selon les rubriques."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G257",
@@ -3027,7 +3093,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The Niceno-Constantinopolitan Creed beginning Credo in unum Deum, recited or sung at Mass when appointed.",
+        "fr": "Symbole nicéno-constantinopolitain commençant par Credo in unum Deum, récité ou chanté à la Messe lorsqu’il est prescrit."
+      },
+      "explanation": {
+        "en": "The Credo is a solemn profession of faith and is governed by rubrical rules specifying when it is said. It is distinct from shorter creedal formulas used in other contexts.",
+        "fr": "Le Credo est une profession solennelle de foi et son emploi est régi par les rubriques précisant quand il doit être dit. Il se distingue des formules de foi plus brèves employées dans d’autres contextes."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G258",
@@ -3045,7 +3122,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The acclamation beginning Sanctus, Sanctus, Sanctus before the Canon of the Mass.",
+        "fr": "Acclamation commençant par Sanctus, Sanctus, Sanctus avant le Canon de la Messe."
+      },
+      "explanation": {
+        "en": "The Sanctus joins biblical acclamations of divine holiness and forms part of the fixed Ordinary. In sung Mass it belongs to the schola’s Ordinary repertoire.",
+        "fr": "Le Sanctus unit des acclamations bibliques de la sainteté divine et fait partie de l’Ordinaire fixe. À la Messe chantée, il appartient au répertoire de l’Ordinaire de la schola."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G259",
@@ -3063,7 +3151,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The continuation of the Sanctus beginning Benedictus qui venit in nomine Domini.",
+        "fr": "Suite du Sanctus commençant par Benedictus qui venit in nomine Domini."
+      },
+      "explanation": {
+        "en": "In traditional sung practice the Benedictus can be musically separated from the Sanctus around the Canon, although textually they form one liturgical unit.",
+        "fr": "Dans la pratique chantée traditionnelle, le Benedictus peut être musicalement séparé du Sanctus autour du Canon, bien que textuellement ils forment une seule unité liturgique."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G260",
@@ -3081,7 +3180,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The litany-like invocation Agnus Dei, qui tollis peccata mundi, said or sung before Communion.",
+        "fr": "Invocation de forme litanique Agnus Dei, qui tollis peccata mundi, dite ou chantée avant la Communion."
+      },
+      "explanation": {
+        "en": "Its final petition varies in certain Masses, especially Requiem Masses. It belongs to the fixed Ordinary while its exact text can reflect the liturgical context.",
+        "fr": "Sa dernière demande varie dans certaines Messes, notamment les Messes de Requiem. Il appartient à l’Ordinaire fixe tout en pouvant refléter le contexte liturgique dans sa formulation exacte."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G261",
@@ -3099,7 +3209,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The highest class of liturgical day in the 1960/1962 Roman ranking system.",
+        "fr": "Classe la plus élevée de jour liturgique dans le système romain de 1960/1962."
+      },
+      "explanation": {
+        "en": "First-class days enjoy the strongest precedence under the 1962 rubrics. The classification must not be confused with the older double/semidouble system abolished before the 1962 Missal.",
+        "fr": "Les jours de première classe jouissent de la plus forte préséance selon les rubriques de 1962. Cette classification ne doit pas être confondue avec l’ancien système double/semi-double aboli avant le Missel de 1962."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G262",
@@ -3117,7 +3238,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The second-highest class of liturgical day in the 1960/1962 Roman ranking system.",
+        "fr": "Deuxième classe la plus élevée de jour liturgique dans le système romain de 1960/1962."
+      },
+      "explanation": {
+        "en": "Second-class days have defined precedence and liturgical privileges below first-class days but above third- and fourth-class days.",
+        "fr": "Les jours de deuxième classe possèdent une préséance et des privilèges liturgiques déterminés, inférieurs aux jours de première classe mais supérieurs aux jours de troisième et quatrième classes."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G263",
@@ -3135,7 +3267,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The third class of liturgical day in the 1960/1962 Roman ranking system.",
+        "fr": "Troisième classe de jour liturgique dans le système romain de 1960/1962."
+      },
+      "explanation": {
+        "en": "Third-class days include many feasts and ferias and are governed by the precedence rules of the 1960 reform. Their treatment cannot be inferred from pre-1960 rank names.",
+        "fr": "Les jours de troisième classe comprennent de nombreuses fêtes et féries et sont régis par les règles de préséance de la réforme de 1960. Leur traitement ne peut être déduit des anciens noms de rang antérieurs à 1960."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G264",
@@ -3153,7 +3296,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The lowest class of liturgical day in the 1960/1962 Roman ranking system.",
+        "fr": "Classe la plus basse de jour liturgique dans le système romain de 1960/1962."
+      },
+      "explanation": {
+        "en": "Fourth-class days have the least precedence in the 1962 system but still possess real liturgical identity. They are not equivalent to an absence of observance.",
+        "fr": "Les jours de quatrième classe ont la préséance la plus faible dans le système de 1962 mais possèdent néanmoins une véritable identité liturgique. Ils ne signifient pas absence de célébration."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G265",
@@ -3171,7 +3325,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A Mass celebrated for a permitted mystery, saint, intention or need rather than the Mass normally required by the calendar day.",
+        "fr": "Messe célébrée pour un mystère, un saint, une intention ou un besoin permis plutôt que la Messe normalement requise par le jour du calendrier."
+      },
+      "explanation": {
+        "en": "The 1962 rubrics classify votive Masses and regulate when they may replace the day’s Mass. Personal preference alone does not override the liturgical calendar.",
+        "fr": "Les rubriques de 1962 classent les Messes votives et règlent les cas où elles peuvent remplacer la Messe du jour. Une simple préférence personnelle ne prime pas sur le calendrier liturgique."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G266",
@@ -3189,7 +3354,18 @@
         "SRC-MR62-REQUIEM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A Mass for the dead using the Requiem formulary and ceremonial proper to such Masses.",
+        "fr": "Messe pour les défunts employant le formulaire et le cérémonial propres au Requiem."
+      },
+      "explanation": {
+        "en": "Requiem Masses have distinctive texts and omissions, including changes to the Ordinary. Their classes and permitted occasions are governed separately by the 1962 rubrics.",
+        "fr": "Les Messes de Requiem possèdent des textes et omissions caractéristiques, y compris des modifications de l’Ordinaire. Leurs classes et occasions permises sont régies séparément par les rubriques de 1962."
+      },
+      "definition_source_ids": [
+        "SRC-MR62-REQUIEM"
+      ]
     },
     {
       "id": "G267",
@@ -3207,7 +3383,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A Mass for the dead celebrated in direct connection with funeral rites for a deceased person.",
+        "fr": "Messe des défunts célébrée en lien direct avec les funérailles d’une personne décédée."
+      },
+      "explanation": {
+        "en": "A funeral Mass is one particular class or occasion of Mass for the Dead and should not be treated as synonymous with every Requiem or anniversary Mass.",
+        "fr": "La Messe de funérailles est une occasion particulière de Messe des défunts et ne doit pas être considérée comme synonyme de tout Requiem ou Messe anniversaire."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G268",
@@ -3225,7 +3412,18 @@
         "SRC-MR62-REQUIEM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Any Mass celebrated for one or more deceased persons according to the proper Roman formularies.",
+        "fr": "Toute Messe célébrée pour un ou plusieurs défunts selon les formulaires romains propres."
+      },
+      "explanation": {
+        "en": "This is the broader category under which funeral, anniversary and other permitted Requiem Masses fall. Exact terminology and rank are determined by the rubrics.",
+        "fr": "Il s’agit de la catégorie plus large dans laquelle entrent les Messes de funérailles, anniversaires et autres Requiem permis. La terminologie et le rang exacts sont déterminés par les rubriques."
+      },
+      "definition_source_ids": [
+        "SRC-MR62-REQUIEM"
+      ]
     },
     {
       "id": "G269",
@@ -3243,7 +3441,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The meeting of two or more liturgical observances on the same calendar day.",
+        "fr": "Rencontre de deux ou plusieurs célébrations liturgiques le même jour du calendrier."
+      },
+      "explanation": {
+        "en": "Occurrence is resolved by the table of precedence and rules governing omission, commemoration or transfer. It concerns same-day competition and must be distinguished from concurrence.",
+        "fr": "L’occurrence est résolue par la table de préséance et les règles d’omission, commémoraison ou translation. Elle concerne la concurrence le même jour et doit être distinguée de la concurrence entre Offices."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G270",
@@ -3261,7 +3470,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The meeting of the ending Office of one liturgical day with the beginning Office of another around Vespers.",
+        "fr": "Rencontre de la fin de l’Office d’un jour liturgique avec le commencement de l’Office d’un autre autour des Vêpres."
+      },
+      "explanation": {
+        "en": "Concurrence is principally an Office concept and is distinct from occurrence, which concerns celebrations falling on the same calendar day.",
+        "fr": "La concurrence est principalement un concept de l’Office et se distingue de l’occurrence, qui concerne des célébrations tombant le même jour du calendrier."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G271",
@@ -3279,7 +3499,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The moving of a liturgical celebration from its proper date to another date according to the rubrics.",
+        "fr": "Déplacement d’une célébration liturgique de sa date propre à une autre date selon les rubriques."
+      },
+      "explanation": {
+        "en": "Transfer is not a discretionary rescheduling. It occurs only when the rubrics or competent authority provide for it after a higher-ranking observance takes precedence.",
+        "fr": "La translation n’est pas un simple changement de date discrétionnaire. Elle n’a lieu que lorsque les rubriques ou l’autorité compétente le prévoient après la préséance d’une célébration supérieure."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G272",
@@ -3297,7 +3528,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A feria possessing special liturgical precedence or privileges under the Roman rubrics.",
+        "fr": "Férie possédant une préséance ou des privilèges liturgiques particuliers selon les rubriques romaines."
+      },
+      "explanation": {
+        "en": "Certain ferias, especially in major penitential seasons, can outrank feasts or restrict commemorations. The exact privileges depend on the 1962 table and rubric.",
+        "fr": "Certaines féries, notamment dans les grands temps pénitentiels, peuvent l’emporter sur des fêtes ou limiter les commémoraisons. Les privilèges exacts dépendent de la table et des rubriques de 1962."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G273",
@@ -3315,7 +3557,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The calendar of celebrations observed throughout the Roman Church according to universal law.",
+        "fr": "Calendrier des célébrations observées dans toute l’Église romaine selon le droit universel."
+      },
+      "explanation": {
+        "en": "The universal calendar provides the common Roman framework but does not exhaust every celebration observed locally. Particular calendars add legitimately proper feasts and observances.",
+        "fr": "Le calendrier universel fournit le cadre romain commun mais n’épuise pas toutes les célébrations observées localement. Les calendriers particuliers ajoutent légitimement des fêtes et observances propres."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G274",
@@ -3333,7 +3586,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A liturgical calendar proper to a diocese, nation, religious family or other authorized community.",
+        "fr": "Calendrier liturgique propre à un diocèse, une nation, une famille religieuse ou une autre communauté autorisée."
+      },
+      "explanation": {
+        "en": "Particular calendars supplement the universal calendar and can change what is celebrated locally on a given date. Ad Orientem therefore cannot infer a complete local calendar from the universal calendar alone.",
+        "fr": "Les calendriers particuliers complètent le calendrier universel et peuvent modifier ce qui est célébré localement à une date donnée. Ad Orientem ne peut donc pas déduire un calendrier local complet du seul calendrier universel."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G275",
@@ -3351,7 +3615,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The collection of Mass formularies used for saints who share a category when no fully proper formulary is supplied.",
+        "fr": "Ensemble de formulaires de Messe utilisés pour des saints d’une même catégorie lorsqu’aucun formulaire entièrement propre n’est fourni."
+      },
+      "explanation": {
+        "en": "Commons include categories such as apostles, martyrs, confessors and virgins. A saint’s proper texts can be combined with a Common according to the Missal.",
+        "fr": "Les Communs comprennent des catégories comme les apôtres, martyrs, confesseurs et vierges. Les textes propres d’un saint peuvent être combinés avec un Commun selon le Missel."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G276",
@@ -3369,7 +3644,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A liturgical celebration assigned to a mystery of faith, Our Lord, Our Lady, a saint or another approved object of worship.",
+        "fr": "Célébration liturgique assignée à un mystère de foi, à Notre-Seigneur, à Notre-Dame, à un saint ou à un autre objet approuvé de culte."
+      },
+      "explanation": {
+        "en": "‘Feast’ is a broad liturgical term whose rank depends on the calendar system in force. Historical labels such as double or semidouble must not be mixed with the 1962 class system.",
+        "fr": "« Fête » est un terme liturgique large dont le rang dépend du système de calendrier en vigueur. Les anciens labels comme double ou semi-double ne doivent pas être mélangés au système de classes de 1962."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G277",
@@ -3387,7 +3673,18 @@
         "MR62-GENERAL-RUBRICS-1960"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The weekly liturgical celebration of the Lord’s Day, the first day of the week.",
+        "fr": "Célébration liturgique hebdomadaire du Jour du Seigneur, premier jour de la semaine."
+      },
+      "explanation": {
+        "en": "Sundays possess their own rank and precedence according to season in the Roman calendar. Their liturgical observance is related to, but distinct from, the canonical obligation to attend Mass.",
+        "fr": "Les dimanches possèdent leur propre rang et leur préséance selon le temps dans le calendrier romain. Leur observance liturgique est liée à l’obligation canonique d’assister à la Messe mais s’en distingue."
+      },
+      "definition_source_ids": [
+        "MR62-GENERAL-RUBRICS-1960"
+      ]
     },
     {
       "id": "G278",
@@ -3405,7 +3702,18 @@
         "SRC-HIST-PRE1960-RANKS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A pre-1960 Roman feast rank called ‘double’.",
+        "fr": "Ancien rang romain de fête appelé « double »."
+      },
+      "explanation": {
+        "en": "Double belonged to the older classification system and included further grades such as greater doubles and doubles of different classes. It is historical terminology and not a 1962 rank.",
+        "fr": "Double appartenait à l’ancien système de classement et comprenait d’autres degrés tels que doubles majeurs et doubles de différentes classes. C’est une terminologie historique et non un rang de 1962."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PRE1960-RANKS"
+      ]
     },
     {
       "id": "G279",
@@ -3423,7 +3731,18 @@
         "SRC-HIST-PRE1960-RANKS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A pre-1960 Roman feast rank between simple and double.",
+        "fr": "Ancien rang romain de fête intermédiaire entre simple et double."
+      },
+      "explanation": {
+        "en": "Semidouble was abolished as an operative rank before the 1962 Missal. When encountered in older missals or manuals it must be displayed as historical terminology.",
+        "fr": "Le semi-double a été aboli comme rang opératoire avant le Missel de 1962. Lorsqu’il apparaît dans des missels ou manuels plus anciens, il doit être présenté comme une terminologie historique."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PRE1960-RANKS"
+      ]
     },
     {
       "id": "G280",
@@ -3441,7 +3760,18 @@
         "SRC-HIST-PRE1960-RANKS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A pre-1960 Roman feast rank called ‘simple’.",
+        "fr": "Ancien rang romain de fête appelé « simple »."
+      },
+      "explanation": {
+        "en": "The historical rank simplex should not be confused with ‘Simple’ as a user-interface mode or with the fourth-class system of 1962. It belongs to the superseded ranking structure.",
+        "fr": "Le rang historique simplex ne doit pas être confondu avec « Simple » comme mode d’interface ni avec le système de quatrième classe de 1962. Il appartient à l’ancien système de classement."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PRE1960-RANKS"
+      ]
     },
     {
       "id": "G281",
@@ -3459,7 +3789,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The symbol ℣. or V. marking a versicle.",
+        "fr": "Symbole ℣. ou V. indiquant un verset."
+      },
+      "explanation": {
+        "en": "It tells the reader or singer that the following text is the initiating versicle in a call-and-response structure. It links directly to G252, Versicle.",
+        "fr": "Il indique au lecteur ou au chantre que le texte suivant est le verset initial dans une structure d’appel-réponse. Il renvoie directement à G252, Verset."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G282",
@@ -3477,7 +3818,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The symbol ℟. or R. marking the response.",
+        "fr": "Symbole ℟. ou R. indiquant la réponse."
+      },
+      "explanation": {
+        "en": "It identifies the text answered by the respondent, server, choir or people according to the rite. It links directly to G253, Response.",
+        "fr": "Il identifie le texte répondu par le répondant, le servant, le chœur ou les fidèles selon le rite. Il renvoie directement à G253, Réponse."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G283",
@@ -3495,7 +3847,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A conventional placeholder indicating that a proper name is to be inserted.",
+        "fr": "Indication conventionnelle signalant qu’un nom propre doit être inséré."
+      },
+      "explanation": {
+        "en": "N. stands for nomen, ‘name’. The specific person or saint intended must be supplied from the liturgical context rather than pronounced as the letter itself.",
+        "fr": "N. représente nomen, « nom ». La personne ou le saint concerné doit être fourni d’après le contexte liturgique plutôt que de prononcer simplement la lettre."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G284",
@@ -3513,7 +3876,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubric meaning ‘is said’ or ‘is recited’.",
+        "fr": "Rubrique signifiant « est dit » ou « est récité »."
+      },
+      "explanation": {
+        "en": "Dicitur is the passive form of dico and directs that the specified text be said. The grammatical form is useful for learners because rubrics frequently use impersonal or passive constructions.",
+        "fr": "Dicitur est la forme passive de dico et indique que le texte spécifié doit être dit. Sa forme grammaticale est utile aux apprenants car les rubriques emploient fréquemment des constructions impersonnelles ou passives."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G285",
@@ -3531,7 +3905,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubric meaning ‘is omitted’.",
+        "fr": "Rubrique signifiant « est omis »."
+      },
+      "explanation": {
+        "en": "Omittitur signals that a text or action normally present is left out under the stated conditions. It should be treated as an operative instruction, not explanatory prose.",
+        "fr": "Omittitur indique qu’un texte ou une action normalement présent est supprimé dans les conditions indiquées. Il s’agit d’une instruction opératoire, non d’un commentaire explicatif."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G286",
@@ -3549,7 +3934,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubric meaning ‘he genuflects’.",
+        "fr": "Rubrique signifiant « il fait la génuflexion »."
+      },
+      "explanation": {
+        "en": "Genuflectit is a present-tense liturgical instruction from genuflectere. It should link to the exact gesture cue and to G068, Genuflection.",
+        "fr": "Genuflectit est une instruction liturgique au présent dérivée de genuflectere. Elle doit être reliée à l’indication gestuelle exacte et à G068, Génuflexion."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G287",
@@ -3567,7 +3963,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubric meaning ‘he rises’.",
+        "fr": "Rubrique signifiant « il se lève »."
+      },
+      "explanation": {
+        "en": "Surgit is the present form of surgo and usually signals a change from kneeling, sitting or another lowered posture to standing.",
+        "fr": "Surgit est le présent de surgo et indique généralement le passage de la position à genoux, assise ou abaissée à la station debout."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G288",
@@ -3585,7 +3992,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubric meaning ‘he sits’.",
+        "fr": "Rubrique signifiant « il s’assied »."
+      },
+      "explanation": {
+        "en": "Sedet is the present form of sedeo. The subject is determined by the ceremonial context, usually the celebrant or another minister.",
+        "fr": "Sedet est le présent de sedeo. Le sujet est déterminé par le contexte cérémoniel, généralement le célébrant ou un autre ministre."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G289",
@@ -3603,7 +4021,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubric meaning ‘he stands’ or ‘remains standing’.",
+        "fr": "Rubrique signifiant « il se tient debout » ou « demeure debout »."
+      },
+      "explanation": {
+        "en": "Stat is the present form of sto and describes posture in a concise rubrical style. It must be interpreted with the subject and surrounding actions.",
+        "fr": "Stat est le présent de sto et décrit la posture dans le style concis des rubriques. Il doit être interprété avec le sujet et les actions environnantes."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G290",
@@ -3621,7 +4050,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A liturgical adverb indicating that a text is said secretly or in the prescribed low voice.",
+        "fr": "Adverbe liturgique indiquant qu’un texte est dit secrètement ou à la voix basse prescrite."
+      },
+      "explanation": {
+        "en": "Secreto is a technical voice-direction term in the traditional Mass. It does not mean the prayer is esoteric or hidden from doctrine; it describes how it is recited.",
+        "fr": "Secreto est un terme technique de direction vocale dans la Messe traditionnelle. Il ne signifie pas que la prière est ésotérique ou doctrinalement cachée ; il décrit la manière dont elle est récitée."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G291",
@@ -3639,7 +4079,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘in a clear voice’ or ‘aloud’.",
+        "fr": "Expression rubricale signifiant « d’une voix claire » ou « à haute voix »."
+      },
+      "explanation": {
+        "en": "Clara voce contrasts with lower or secret voice levels and signals audibility appropriate to the rite. The exact acoustic level is ceremonial, not a modern microphone specification.",
+        "fr": "Clara voce s’oppose aux niveaux de voix plus bas ou secrets et indique l’audibilité propre au rite. Le niveau acoustique exact relève du cérémonial et non d’une spécification moderne de microphone."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G292",
@@ -3657,7 +4108,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘in a subdued voice’.",
+        "fr": "Expression rubricale signifiant « à voix basse » ou « d’une voix retenue »."
+      },
+      "explanation": {
+        "en": "Submissa voce identifies a quieter vocal level in traditional rubrical language. It should be mapped consistently to the app’s priest-voice state rather than translated differently card by card.",
+        "fr": "Submissa voce désigne un niveau vocal plus bas dans le langage rubrical traditionnel. L’application doit le relier de manière cohérente à l’état de voix du prêtre plutôt que le traduire différemment d’une carte à l’autre."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G293",
@@ -3675,7 +4137,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘turned toward the people’.",
+        "fr": "Expression rubricale signifiant « tourné vers le peuple »."
+      },
+      "explanation": {
+        "en": "This is an actual directional phrase found in Roman ceremonial and is distinct from G076, the broader conceptual entry ‘facing the people’. One is a rubrical phrase; the other is a concept.",
+        "fr": "Il s’agit d’une expression directionnelle réelle du cérémonial romain et elle se distingue de G076, l’entrée conceptuelle plus large « face au peuple ». L’une est une formule rubricale ; l’autre un concept."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G294",
@@ -3693,7 +4166,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘with hands joined’.",
+        "fr": "Expression rubricale signifiant « les mains jointes »."
+      },
+      "explanation": {
+        "en": "Junctis is an ablative plural participle agreeing with manibus. The phrase is a recurring ceremonial cue and should link to the hands-joined icon/action.",
+        "fr": "Junctis est un participe à l’ablatif pluriel accordé avec manibus. L’expression est une indication cérémonielle récurrente et doit être reliée à l’icône/action des mains jointes."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G295",
@@ -3711,7 +4195,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘with hands extended’.",
+        "fr": "Expression rubricale signifiant « les mains étendues »."
+      },
+      "explanation": {
+        "en": "Extensis manibus marks the orans-like position prescribed for the celebrant during specified prayers. It is a precise hand posture, not a generic expressive gesture.",
+        "fr": "Extensis manibus marque la position des mains prescrite au célébrant pendant certaines prières. C’est une posture précise, non un geste expressif générique."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G296",
@@ -3729,7 +4224,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘with eyes raised’.",
+        "fr": "Expression rubricale signifiant « les yeux levés »."
+      },
+      "explanation": {
+        "en": "The ablative construction describes the celebrant’s action of raising the eyes at specified moments. It should link directly to the visual/action cue rather than remain as untranslated rubric text.",
+        "fr": "La construction à l’ablatif décrit l’action du célébrant levant les yeux à certains moments. Elle doit être reliée directement à l’indication visuelle/d’action plutôt que rester comme texte rubrical non traduit."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G297",
@@ -3747,7 +4253,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘he bows his head’.",
+        "fr": "Expression rubricale signifiant « il incline la tête »."
+      },
+      "explanation": {
+        "en": "Inclinat caput indicates a head bow and should be distinguished from a bow of the body or a profound inclination.",
+        "fr": "Inclinat caput indique une inclination de tête et doit être distingué d’une inclination du corps ou d’une inclination profonde."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G298",
@@ -3765,7 +4282,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘with a profound inclination’.",
+        "fr": "Expression rubricale signifiant « avec une inclination profonde »."
+      },
+      "explanation": {
+        "en": "The phrase indicates a deep bow of the body in the traditional ceremonial. It links to G070, Profound bow, and to the exact cue in the Mass gesture registry.",
+        "fr": "L’expression indique une profonde inclination du corps dans le cérémonial traditionnel. Elle renvoie à G070, Inclination profonde, et à l’indication exacte du registre des gestes de la Messe."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G299",
@@ -3783,7 +4311,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘he turns himself’.",
+        "fr": "Expression rubricale signifiant « il se tourne »."
+      },
+      "explanation": {
+        "en": "Vertit se normally introduces a specified change of orientation by the celebrant. The destination or direction is supplied by the surrounding rubric.",
+        "fr": "Vertit se introduit normalement un changement d’orientation précis du célébrant. La destination ou la direction est fournie par la rubrique environnante."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     },
     {
       "id": "G300",
@@ -3801,7 +4340,18 @@
         "MR62-RITUS-SERVANDUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A rubrical phrase meaning ‘he kisses the altar’.",
+        "fr": "Expression rubricale signifiant « il baise l’autel »."
+      },
+      "explanation": {
+        "en": "Osculatur altare identifies the liturgical kiss of the altar at prescribed moments. It should link to G239, Liturgical kiss, while preserving the altar as the specific object.",
+        "fr": "Osculatur altare désigne le baiser liturgique de l’autel aux moments prescrits. Il doit renvoyer à G239, Baiser liturgique, tout en conservant l’autel comme objet précis."
+      },
+      "definition_source_ids": [
+        "MR62-RITUS-SERVANDUS"
+      ]
     }
   ]
 }
