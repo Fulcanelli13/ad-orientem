@@ -92,11 +92,11 @@ export function parseIckspUsDetail(html,candidate){
   const church=blockAfter(lines,/^Church\s*:/i,/^(Priory|Phone|Email|©)/i);
   const address=addressFromLines(lines)||(church.length>1?church.slice(1).join(", "):church.join(", "));
   const rawSchedule=scheduleBlock(lines);
-  const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:candidate.url});
+  const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:candidate.url,expectedText:[title,address].filter(Boolean).join(" ")});
   return {
     title,address,countryCode:"US",diocese:null,detailUrl:candidate.url,
     emails:emailAddresses(text),phones:phonesFromLines(lines),massRaw:rawSchedule,
-    detailText:text,officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous
+    detailText:text,officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
   };
 }
 export function parseIckspInternationalHtml(html,{pageUrl=ICKSP_INTL_URL}={}){
@@ -113,7 +113,7 @@ export function parseIckspInternationalHtml(html,{pageUrl=ICKSP_INTL_URL}={}){
     const scheduleStart=lines.findIndex(line=>/^(Sundays?|During the Week|Weekdays?|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)/i.test(line));
     const addressLines=(scheduleStart>0?lines.slice(1,scheduleStart):lines.slice(1,5))
       .filter(line=>!/^Map & Directions$/i.test(line)&&!/^Phone:|^Email:/i.test(line));
-    const officialGeo=selectOfficialGeoFromHtml(body,{pageUrl});
+    const officialGeo=selectOfficialGeoFromHtml(body,{pageUrl,expectedText:[h4,addressLines.join(" "),heading].filter(Boolean).join(" ")});
     sections.push({
       index:index++,title:h4,address:addressLines.join(", "),countryCode,diocese:null,detailUrl:pageUrl,
       emails:emailAddresses(stripTags(body)),phones:phoneCandidates(stripTags(body)),massRaw:schedule,detailText:stripTags(body),
@@ -181,7 +181,8 @@ export async function runIckspImport({out="data/directory/generated/icksp",concu
       international_country_sites:discovery.length,
       international_scope:"PARTIAL_CENTRAL_PLUS_COUNTRY_DISCOVERY",
       official_geo_recovered:records.filter(r=>r.officialGeo).length,
-      official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length
+      official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length,
+      official_geo_rejected_conflict:records.filter(r=>r.officialGeoRejected).length
     }
   });
   return result.report;
