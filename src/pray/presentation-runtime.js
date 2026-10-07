@@ -654,7 +654,7 @@ function decorateRosaryExact(r){
  shell.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
  shell.dataset.aoRosaryCue=info.step?.cue?'true':'false';
  shell.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
- ensureRosaryDonorProgress(r,info);
+ r.querySelectorAll('.rosary-decade-bar-v15[data-ao-exact-donor-progress]').forEach(node=>node.remove());
  ensureRosaryDonorRecitation(r);
  r.querySelectorAll('[data-r23-overview-open],#r23-overview-sheet').forEach(node=>node.remove());
  rosaryDonorArt(r,info);
