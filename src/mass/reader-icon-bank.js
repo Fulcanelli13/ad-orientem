@@ -13,6 +13,7 @@ export const R17_FROZEN_ACTIVE_ICON_ASSETS=Object.freeze({
   breast_strike:new URL("../../assets/active/live-gesture/ao-live-breast-strike.png",import.meta.url).href,
   hands_joined:new URL("../../assets/active/live-gesture/ao-live-hands-joined.png",import.meta.url).href,
   response:new URL("../../assets/active/live-cue/ao-live-response.png",import.meta.url).href,
+  bells:new URL("../../assets/active/live-cue/ao-live-bells-v180.png",import.meta.url).href,
   priest_audible:new URL("../../assets/active/live-audio/ao-live-priest-audible.png",import.meta.url).href,
   priest_silent:new URL("../../assets/active/live-audio/ao-live-priest-silent.png",import.meta.url).href,
   schola:new URL("../../assets/active/live-audio/ao-live-schola.png",import.meta.url).href,
