@@ -378,7 +378,7 @@ try{
   assert.ok(calendarMonth.rootScrollTop<=2,"Calendar Liturgical Month opened below the top of its surface");
   await shot("02d-calendar-month");
 
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]").count(),4,"Month lost Calendar · Major · Temporale · Sanctorale navigation");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]").count(),5,"Month lost Calendar · Major · Temporale · Sanctorale · Practices navigation");
 
   await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='major']").click();
   await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='major']",{state:"visible",timeout:3000});
