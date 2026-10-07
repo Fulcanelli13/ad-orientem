@@ -8,6 +8,7 @@ import {
   AO_ASSET_BANK_CONTRACT,
   AO_CANONICAL_CORE_ASSETS,
   AO_CANONICAL_EXTENSION_ASSETS,
+  AO_RUNTIME_ASSET_RECOVERIES,
   AO_REMOVED_ASSET_IDS,
   AO_SHARED_IDENTITY_MAPPINGS,
   getCanonicalAsset,
@@ -72,6 +73,21 @@ assert.equal(
 assert.equal(
   AO_SHARED_IDENTITY_MAPPINGS.find(x=>x.route==="pray.forty_hours")?.asset_id,
   "ao-rich-adoration",
+);
+
+const frozenBlessing=AO_CANONICAL_CORE_ASSETS["ao-live-blessing"];
+assert.equal(frozenBlessing.path,"assets/active/live-actions/ao-live-blessing.png","frozen V4 blessing identity/path drifted");
+assert.equal(frozenBlessing.sha256,"620d70d4c40ba75deec8985f043683df6dae0e6bfe72490744eae7c83190417c","frozen V4 blessing checksum drifted");
+const blessingRecovery=AO_RUNTIME_ASSET_RECOVERIES["ao-live-blessing"];
+assert.equal(blessingRecovery?.sourceSha256,frozenBlessing.sha256,"runtime blessing recovery is not provenance-linked to frozen V4");
+assert.equal(blessingRecovery?.path,"assets/recovered/ao-live-blessing.svg");
+const blessingRuntimePath=fileURLToPath(resolveCanonicalAssetUrl("ao-live-blessing"));
+assert.equal(path.relative(root,blessingRuntimePath).split(path.sep).join("/"),blessingRecovery.path,"blessing resolver bypassed the explicit runtime recovery");
+assert.ok(fs.existsSync(blessingRuntimePath),"recovered blessing runtime asset is missing");
+assert.equal(
+  createHash("sha256").update(fs.readFileSync(blessingRuntimePath)).digest("hex"),
+  blessingRecovery.recoverySha256,
+  "recovered blessing silhouette drifted",
 );
 
 assert.ok(activeCsv.startsWith("index,semantic_id,semantic_label,"));
