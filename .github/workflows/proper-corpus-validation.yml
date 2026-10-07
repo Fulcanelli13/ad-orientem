@@ -5,6 +5,7 @@ on:
     branches:
       - research/core-201-350-resolved-propers
     paths:
+      - "tools/build_core_proper_corpus.mjs"
       - ".github/workflows/proper-corpus-validation.yml"
 
 jobs:
