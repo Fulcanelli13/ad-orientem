@@ -182,7 +182,7 @@ try{
     gutter:getComputedStyle(document.documentElement).getPropertyValue("--ao-page-gutter").trim(),
     controlHeight:getComputedStyle(document.documentElement).getPropertyValue("--ao-control-h").trim(),
   }));
-  assert.equal(designBaseline.version,"ao-design-system-v1","shared app design system is not installed");
+  assert.equal(designBaseline.version,"ao-design-system-v2","shared app design system is not installed");
   assert.equal(designBaseline.stylePresent,true,"shared app design-system stylesheet is missing");
   assert.ok(designBaseline.displayFont.length>0,"Home display font did not resolve");
   assert.ok(designBaseline.bodyFont.length>0,"Home body font did not resolve");
