@@ -27,7 +27,7 @@ export const CSE_SECTIONS=Object.freeze([
 ]);
 
 const DEBATE=new Set(CSE_DEBATE_IDS.map(id=>Number(id.slice(3))));
-const EXPANDED=new Set([4,11,17,19,26,28,30,33,36,46,52,53,57,62,68,72,82,107,108,110,121,126,128,137,139]);
+const EXPANDED=new Set([4,11,17,19,26,28,30,33,36,46,52,53,57,62,68,72,82,107,137,144]);
 const allRaw=[...CSE_RAW_001_050,...CSE_RAW_051_100,...CSE_RAW_101_150];
 
 const numberOf=id=>Number(String(id).replace(/^CSE/,""));
@@ -90,8 +90,8 @@ const depthCounts=Object.freeze({
   EXPANDED:CSE_QUESTIONS.filter(item=>item.depth==="EXPANDED").length,
   DEBATE:CSE_QUESTIONS.filter(item=>item.depth==="DEBATE").length,
 });
-if(depthCounts.STANDARD!==70)errors.push(`expected 70 STANDARD, got ${depthCounts.STANDARD}`);
-if(depthCounts.EXPANDED!==25)errors.push(`expected 25 EXPANDED, got ${depthCounts.EXPANDED}`);
+if(depthCounts.STANDARD!==75)errors.push(`expected 75 STANDARD, got ${depthCounts.STANDARD}`);
+if(depthCounts.EXPANDED!==20)errors.push(`expected 20 EXPANDED, got ${depthCounts.EXPANDED}`);
 if(depthCounts.DEBATE!==55)errors.push(`expected 55 DEBATE, got ${depthCounts.DEBATE}`);
 if(!CSE_DEBATE_VALIDATION.complete||CSE_DEBATE_VALIDATION.count!==55)errors.push(`structured debate corpus invalid`);
 for(const id of CSE_DEBATE_IDS){if(!CSE_QUESTION_MAP[id])errors.push(`debate references missing question ${id}`);}
