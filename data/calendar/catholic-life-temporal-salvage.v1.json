@@ -1,0 +1,304 @@
+{
+  "version": "CALENDAR_CATHOLIC_LIFE_TEMPORAL_SALVAGE_V1",
+  "status": "OWNER_ANNEX",
+  "created_at": "2026-10-07",
+  "purpose": "Preserve devotional-month, obligation/penance, Ember, Rogation/procession and saint/patronage research under Calendar temporal ownership.",
+  "domains": {
+    "CALENDAR.OBLIGATION_AND_PENANCE": [
+      {
+        "claim_id": "CL09-S02-Q002",
+        "stage_id": "CL09-S02",
+        "stage_title": "The Catholic Week",
+        "layer": "CURRENT",
+        "text": "Current canon law establishes Fridays as penitential days in the universal Church.",
+        "source_ids": [
+          "SRC-CIC83-1249-1253"
+        ],
+        "original_destination": "CALENDAR.OBLIGATION_AND_PENANCE"
+      },
+      {
+        "claim_id": "CL09-S02-Q003",
+        "stage_id": "CL09-S02",
+        "stage_title": "The Catholic Week",
+        "layer": "CURRENT",
+        "text": "Current episcopal conferences can determine more precisely the observance and substitute other forms of penance according to the law.",
+        "source_ids": [
+          "SRC-CIC83-1249-1253"
+        ],
+        "original_destination": "CALENDAR.OBLIGATION_AND_PENANCE"
+      },
+      {
+        "claim_id": "CL09-S02-Q004",
+        "stage_id": "CL09-S02",
+        "stage_title": "The Catholic Week",
+        "layer": "CURRENT",
+        "text": "Wednesday has a longstanding devotional association with St Joseph.",
+        "source_ids": [
+          "SRC-PATRIS-CORDE"
+        ],
+        "original_destination": "CALENDAR.OBLIGATION_AND_PENANCE"
+      },
+      {
+        "claim_id": "CL09-S02-Q005",
+        "stage_id": "CL09-S02",
+        "stage_title": "The Catholic Week",
+        "layer": "CURRENT",
+        "text": "Saturday has a longstanding Marian devotional association.",
+        "source_ids": [
+          "SRC-DIRECTORY-POPULAR-PIETY-2002"
+        ],
+        "original_destination": "CALENDAR.OBLIGATION_AND_PENANCE"
+      }
+    ],
+    "CALENDAR.DEVOTIONAL_MONTHS": [
+      {
+        "claim_id": "CL09-S04-Q002",
+        "stage_id": "CL09-S04",
+        "stage_title": "Devotional Months",
+        "layer": "CURRENT",
+        "text": "March has a longstanding devotional association with St Joseph.",
+        "source_ids": [
+          "SRC-PATRIS-CORDE"
+        ],
+        "original_destination": "CALENDAR.DEVOTIONAL_MONTHS"
+      },
+      {
+        "claim_id": "CL09-S04-Q003",
+        "stage_id": "CL09-S04",
+        "stage_title": "Devotional Months",
+        "layer": "CURRENT",
+        "text": "May is a strong Western Marian devotional month; this association must not be inferred as identical in every Southern-Hemisphere locality.",
+        "source_ids": [
+          "SRC-MAY-MARIAN-DIRECTORY"
+        ],
+        "original_destination": "CALENDAR.DEVOTIONAL_MONTHS"
+      },
+      {
+        "claim_id": "CL09-S04-Q004",
+        "stage_id": "CL09-S04",
+        "stage_title": "Devotional Months",
+        "layer": "CURRENT",
+        "text": "June has a longstanding devotional association with the Sacred Heart of Jesus.",
+        "source_ids": [
+          "SRC-JUNE-SACRED-HEART"
+        ],
+        "original_destination": "CALENDAR.DEVOTIONAL_MONTHS"
+      },
+      {
+        "claim_id": "CL09-S04-Q005",
+        "stage_id": "CL09-S04",
+        "stage_title": "Devotional Months",
+        "layer": "CURRENT",
+        "text": "October has a longstanding Catholic devotional association with the Holy Rosary.",
+        "source_ids": [
+          "SRC-LEO13-OCTOBER-ROSARY"
+        ],
+        "original_destination": "CALENDAR.DEVOTIONAL_MONTHS"
+      },
+      {
+        "claim_id": "CL09-S04-Q006",
+        "stage_id": "CL09-S04",
+        "stage_title": "Devotional Months",
+        "layer": "CURRENT",
+        "text": "November is traditionally associated with prayer for the faithful departed.",
+        "source_ids": [
+          "SRC-NOVEMBER-FAITHFUL-DEPARTED"
+        ],
+        "original_destination": "CALENDAR.DEVOTIONAL_MONTHS"
+      }
+    ],
+    "CALENDAR.EMBER_DAYS": [
+      {
+        "claim_id": "CL09-S05-Q001",
+        "stage_id": "CL09-S05",
+        "stage_title": "Ember Days",
+        "layer": "PROFILE_1962",
+        "text": "The 1962 Roman calendar contains four Ember cycles associated with Advent, Lent, Pentecost and September.",
+        "source_ids": [
+          "SRC-MR62-EMBER-ROGATION"
+        ],
+        "original_destination": "CALENDAR.EMBER_DAYS"
+      },
+      {
+        "claim_id": "CL09-S05-Q002",
+        "stage_id": "CL09-S05",
+        "stage_title": "Ember Days",
+        "layer": "PROFILE_1962",
+        "text": "Each traditional Ember cycle uses Wednesday, Friday and Saturday.",
+        "source_ids": [
+          "SRC-MR62-EMBER-ROGATION"
+        ],
+        "original_destination": "CALENDAR.EMBER_DAYS"
+      },
+      {
+        "claim_id": "CL09-S05-Q003",
+        "stage_id": "CL09-S05",
+        "stage_title": "Ember Days",
+        "layer": "PASTORAL",
+        "text": "Ember observance joins prayer, penance and thanksgiving rather than being reducible to an old fasting rule.",
+        "source_ids": [],
+        "original_destination": "CALENDAR.EMBER_DAYS"
+      },
+      {
+        "claim_id": "CL09-S05-Q004",
+        "stage_id": "CL09-S05",
+        "stage_title": "Ember Days",
+        "layer": "PROFILE_1962",
+        "text": "Under the 1917 discipline, Ember Saturdays were among the ordinary traditional times for sacred ordinations.",
+        "source_ids": [
+          "SRC-CIC17-1006"
+        ],
+        "original_destination": "CALENDAR.EMBER_DAYS"
+      }
+    ],
+    "CALENDAR.PROCESSIONS_AND_ROGATIONS": [
+      {
+        "claim_id": "CL09-S06-Q001",
+        "stage_id": "CL09-S06",
+        "stage_title": "Rogations & Processions",
+        "layer": "PROFILE_1962",
+        "text": "Traditional Rogations are days of public supplication associated with litanies and processional prayer.",
+        "source_ids": [
+          "SRC-MR62-EMBER-ROGATION"
+        ],
+        "original_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS"
+      },
+      {
+        "claim_id": "CL09-S06-Q002",
+        "stage_id": "CL09-S06",
+        "stage_title": "Rogations & Processions",
+        "layer": "PROFILE_1962",
+        "text": "In the ordinary 1962 scheme, the Minor Rogations occur on Monday, Tuesday and Wednesday before Ascension, subject to the rubric's provisions.",
+        "source_ids": [
+          "SRC-MR62-EMBER-ROGATION"
+        ],
+        "original_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS"
+      },
+      {
+        "claim_id": "CL09-S06-Q003",
+        "stage_id": "CL09-S06",
+        "stage_title": "Rogations & Processions",
+        "layer": "CURRENT",
+        "text": "Current popular-piety guidance leaves Rogation dates to the respective episcopal conferences.",
+        "source_ids": [
+          "SRC-DIRECTORY-POPULAR-PIETY-2002"
+        ],
+        "original_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS"
+      },
+      {
+        "claim_id": "CL09-S06-Q004",
+        "stage_id": "CL09-S06",
+        "stage_title": "Rogations & Processions",
+        "layer": "CURRENT",
+        "text": "A Corpus Christi procession is Eucharistic and is distinct in character from a Rogation procession.",
+        "source_ids": [
+          "SRC-DIRECTORY-POPULAR-PIETY-2002"
+        ],
+        "original_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS"
+      }
+    ],
+    "CALENDAR.SAINTS_AND_PATRONAGE": [
+      {
+        "claim_id": "CL10-S01-Q002",
+        "stage_id": "CL10-S01",
+        "stage_title": "Patron Saints",
+        "layer": "PASTORAL",
+        "text": "A patron saint is specially associated with a person, place, community, profession or cause as intercessor and example.",
+        "source_ids": [],
+        "original_destination": "CALENDAR.SAINTS_AND_PATRONAGE"
+      },
+      {
+        "claim_id": "CL10-S01-Q003",
+        "stage_id": "CL10-S01",
+        "stage_title": "Patron Saints",
+        "layer": "PASTORAL",
+        "text": "Personal patronage should be identified from actual baptismal, family, vocational or devotional context rather than guessed automatically.",
+        "source_ids": [],
+        "original_destination": "CALENDAR.SAINTS_AND_PATRONAGE"
+      },
+      {
+        "claim_id": "CL10-S01-Q004",
+        "stage_id": "CL10-S01",
+        "stage_title": "Patron Saints",
+        "layer": "PASTORAL",
+        "text": "A church's title, parish patron and wider territorial patronage can be related but are not automatically identical categories.",
+        "source_ids": [],
+        "original_destination": "CALENDAR.SAINTS_AND_PATRONAGE"
+      },
+      {
+        "claim_id": "CL10-S01-Q005",
+        "stage_id": "CL10-S01",
+        "stage_title": "Patron Saints",
+        "layer": "PASTORAL",
+        "text": "A saint is an intercessor and model, not an independent deity or source of grace apart from God.",
+        "source_ids": [],
+        "original_destination": "CALENDAR.SAINTS_AND_PATRONAGE"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-CIC17-1006",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC83-1249-1253",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-DIRECTORY-POPULAR-PIETY-2002",
+      "title": "Directory on Popular Piety and the Liturgy",
+      "authority_type": "DICASTERY_DIRECTORY",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+    },
+    {
+      "source_id": "SRC-JUNE-SACRED-HEART",
+      "title": "John Paul II — Sacred Heart in June",
+      "authority_type": "PAPAL_PASTORAL_WITNESS",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020623.html"
+    },
+    {
+      "source_id": "SRC-LEO13-OCTOBER-ROSARY",
+      "title": "Octobri mense",
+      "authority_type": "PAPAL_ENCYCLICAL",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_22091891_octobri-mense.html"
+    },
+    {
+      "source_id": "SRC-MAY-MARIAN-DIRECTORY",
+      "title": "Directory on Popular Piety — Marian months",
+      "authority_type": "DICASTERY_DIRECTORY",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+    },
+    {
+      "source_id": "SRC-MR62-EMBER-ROGATION",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-NOVEMBER-FAITHFUL-DEPARTED",
+      "title": "John Paul II — November and faithful departed",
+      "authority_type": "PAPAL_PASTORAL_WITNESS",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/angelus/2004/documents/hf_jp-ii_ang_20041107.html"
+    },
+    {
+      "source_id": "SRC-PATRIS-CORDE",
+      "title": "Patris corde",
+      "authority_type": "PAPAL_APOSTOLIC_LETTER",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera_ap_20201208_patris-corde.html"
+    }
+  ]
+}
