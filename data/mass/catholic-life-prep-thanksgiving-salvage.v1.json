@@ -1,0 +1,188 @@
+{
+  "version": "MASS_CATHOLIC_LIFE_PREP_THANKSGIVING_SALVAGE_V1",
+  "status": "OWNER_ANNEX",
+  "created_at": "2026-10-07",
+  "purpose": "Preserve Communion preparation/non-reception/fasting and thanksgiving research under Mass lifecycle owners rather than Catholic Life.",
+  "domains": {
+    "mass.prepare": [
+      {
+        "claim_id": "CL03-S02-Q001",
+        "stage_id": "CL03-S02",
+        "stage_title": "Preparing for Communion",
+        "layer": "CURRENT",
+        "text": "Under current law, a person conscious of grave sin should not receive Communion without prior sacramental confession except in the canon's exceptional circumstances.",
+        "source_ids": [
+          "SRC-CIC83-916"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S02-Q002",
+        "stage_id": "CL03-S02",
+        "stage_title": "Preparing for Communion",
+        "layer": "SHARED",
+        "text": "The communicant must observe the Eucharistic fast applicable to the relevant discipline.",
+        "source_ids": [
+          "SRC-CIC83-919",
+          "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S02-Q003",
+        "stage_id": "CL03-S02",
+        "stage_title": "Preparing for Communion",
+        "layer": "PASTORAL",
+        "text": "Prayerful recollection is appropriate preparation for Communion.",
+        "source_ids": [],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S03-Q001",
+        "stage_id": "CL03-S03",
+        "stage_title": "The Eucharistic Fast",
+        "layer": "PROFILE_1962",
+        "text": "Under the 1962 discipline, solid food and alcoholic drink require a three-hour fast before Holy Communion.",
+        "source_ids": [
+          "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S03-Q002",
+        "stage_id": "CL03-S03",
+        "stage_title": "The Eucharistic Fast",
+        "layer": "PROFILE_1962",
+        "text": "Under the 1962 discipline, non-alcoholic drink requires a one-hour fast and water does not break the fast.",
+        "source_ids": [
+          "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S03-Q003",
+        "stage_id": "CL03-S03",
+        "stage_title": "The Eucharistic Fast",
+        "layer": "CURRENT",
+        "text": "Current Latin canon law requires a one-hour fast from food and drink before Holy Communion, with water and medicine excepted.",
+        "source_ids": [
+          "SRC-CIC83-919"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S03-Q004",
+        "stage_id": "CL03-S03",
+        "stage_title": "The Eucharistic Fast",
+        "layer": "HISTORICAL",
+        "text": "The older midnight fast is historical and is not the binding 1962 rule.",
+        "source_ids": [
+          "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S05-Q001",
+        "stage_id": "CL03-S05",
+        "stage_title": "When You Do Not Receive",
+        "layer": "PASTORAL",
+        "text": "A person may assist at Mass without sacramentally receiving Holy Communion.",
+        "source_ids": [],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S05-Q002",
+        "stage_id": "CL03-S05",
+        "stage_title": "When You Do Not Receive",
+        "layer": "CURRENT",
+        "text": "Current can. 916 restricts reception by a person conscious of grave sin except in its stated exceptional circumstances.",
+        "source_ids": [
+          "SRC-CIC83-916"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S05-Q003",
+        "stage_id": "CL03-S05",
+        "stage_title": "When You Do Not Receive",
+        "layer": "SHARED",
+        "text": "The applicable Eucharistic fast must be observed before reception.",
+        "source_ids": [
+          "SRC-CIC83-919",
+          "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957"
+        ],
+        "original_destination": "mass.prepare"
+      },
+      {
+        "claim_id": "CL03-S05-Q004",
+        "stage_id": "CL03-S05",
+        "stage_title": "When You Do Not Receive",
+        "layer": "PASTORAL",
+        "text": "Not receiving Communion does not require a person to leave the Mass.",
+        "source_ids": [],
+        "original_destination": "mass.prepare"
+      }
+    ],
+    "mass.thanksgiving": [
+      {
+        "claim_id": "CL03-S07-Q001",
+        "stage_id": "CL03-S07",
+        "stage_title": "Thanksgiving & Eucharistic Devotion",
+        "layer": "PASTORAL",
+        "text": "Thanksgiving after Holy Communion is a longstanding devotional practice.",
+        "source_ids": [],
+        "original_destination": "mass.thanksgiving"
+      },
+      {
+        "claim_id": "CL03-S07-Q003",
+        "stage_id": "CL03-S07",
+        "stage_title": "Thanksgiving & Eucharistic Devotion",
+        "layer": "CURRENT",
+        "text": "Prayer before the tabernacle is distinct from Eucharistic exposition.",
+        "source_ids": [
+          "SRC-CIC83-938-940"
+        ],
+        "original_destination": "mass.thanksgiving"
+      },
+      {
+        "claim_id": "CL03-S07-Q004",
+        "stage_id": "CL03-S07",
+        "stage_title": "Thanksgiving & Eucharistic Devotion",
+        "layer": "PASTORAL",
+        "text": "Exposition and Benediction are distinct ecclesial rites or devotions rather than ordinary private tabernacle prayer.",
+        "source_ids": [],
+        "original_destination": "mass.thanksgiving"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-CIC83-916",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-919",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-938-940",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957",
+      "title": "Sacram Communionem",
+      "authority_type": "PAPAL_DISCIPLINARY_NORM",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-49-1957-ocr.pdf"
+    }
+  ]
+}

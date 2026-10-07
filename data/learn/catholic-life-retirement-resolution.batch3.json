@@ -1,0 +1,610 @@
+{
+  "version": "CATHOLIC_LIFE_RETIREMENT_RESOLUTION_BATCH3",
+  "status": "COMPLETE",
+  "created_at": "2026-10-07",
+  "claims_resolved": 99,
+  "breakdown": {
+    "mass": 14,
+    "pray": 16,
+    "calendar": 21,
+    "explore": 5,
+    "focused_formation_gaps": 43
+  },
+  "final_unresolved_claims_from_catholic_life": 0,
+  "resolutions": [
+    {
+      "claim_id": "CL03-S02-Q001",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S02-Q002",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S02-Q003",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S03-Q001",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S03-Q002",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S03-Q003",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S03-Q004",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S05-Q001",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S05-Q002",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S05-Q003",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S05-Q004",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.prepare",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S07-Q001",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.thanksgiving",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S07-Q003",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.thanksgiving",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S07-Q004",
+      "outcome": "REHOMED_EXISTING_MASS_OWNER_DATA",
+      "final_destination": "mass.thanksgiving",
+      "artifact": "data/mass/catholic-life-prep-thanksgiving-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S06-Q001",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.SPIRITUAL_COMMUNION",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S06-Q002",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.SPIRITUAL_COMMUNION",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S06-Q003",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.SPIRITUAL_COMMUNION",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S04-Q001",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "pray.dying_companion",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S04-Q002",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "pray.dying_companion",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S04-Q003",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "pray.dying_companion",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S04-Q004",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "pray.dying_companion",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S09-Q001",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S09-Q002",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S09-Q003",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S09-Q004",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S03-Q001",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S03-Q002",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S03-Q003",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S03-Q004",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S03-Q005",
+      "outcome": "REHOMED_EXISTING_PRAY_OWNER_DATA",
+      "final_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY",
+      "artifact": "data/pray/catholic-life-devotional-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S02-Q002",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.OBLIGATION_AND_PENANCE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S02-Q003",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.OBLIGATION_AND_PENANCE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S02-Q004",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.OBLIGATION_AND_PENANCE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S02-Q005",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.OBLIGATION_AND_PENANCE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S04-Q002",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.DEVOTIONAL_MONTHS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S04-Q003",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.DEVOTIONAL_MONTHS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S04-Q004",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.DEVOTIONAL_MONTHS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S04-Q005",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.DEVOTIONAL_MONTHS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S04-Q006",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.DEVOTIONAL_MONTHS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S05-Q001",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.EMBER_DAYS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S05-Q002",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.EMBER_DAYS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S05-Q003",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.EMBER_DAYS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S05-Q004",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.EMBER_DAYS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S06-Q001",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S06-Q002",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S06-Q003",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S06-Q004",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.PROCESSIONS_AND_ROGATIONS",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S01-Q002",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.SAINTS_AND_PATRONAGE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S01-Q003",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.SAINTS_AND_PATRONAGE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S01-Q004",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.SAINTS_AND_PATRONAGE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S01-Q005",
+      "outcome": "REHOMED_EXISTING_CALENDAR_OWNER_DATA",
+      "final_destination": "CALENDAR.SAINTS_AND_PATRONAGE",
+      "artifact": "data/calendar/catholic-life-temporal-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S03-Q001",
+      "outcome": "REHOMED_EXISTING_EXPLORE_OWNER_DATA",
+      "final_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES",
+      "artifact": "data/explore/catholic-life-shrine-pilgrimage-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S03-Q002",
+      "outcome": "REHOMED_EXISTING_EXPLORE_OWNER_DATA",
+      "final_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES",
+      "artifact": "data/explore/catholic-life-shrine-pilgrimage-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S03-Q003",
+      "outcome": "REHOMED_EXISTING_EXPLORE_OWNER_DATA",
+      "final_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES",
+      "artifact": "data/explore/catholic-life-shrine-pilgrimage-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S03-Q004",
+      "outcome": "REHOMED_EXISTING_EXPLORE_OWNER_DATA",
+      "final_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES",
+      "artifact": "data/explore/catholic-life-shrine-pilgrimage-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S03-Q006",
+      "outcome": "REHOMED_EXISTING_EXPLORE_OWNER_DATA",
+      "final_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES",
+      "artifact": "data/explore/catholic-life-shrine-pilgrimage-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S08-Q001",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S08-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S08-Q003",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S08-Q004",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S08-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.INDULGENCES_AND_REPARATION",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S07-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.CATHOLIC_HOME_AND_FAMILY",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S07-Q004",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.CATHOLIC_HOME_AND_FAMILY",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S07-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.CATHOLIC_HOME_AND_FAMILY",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S05-Q004",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S05-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S06-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S06-Q003",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S06-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S07-Q001",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S07-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S07-Q003",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S07-Q004",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S07-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S08-Q001",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S08-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S08-Q003",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S08-Q004",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S08-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.FUNERAL_AND_REQUIEM",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S01-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S01-Q003",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S01-Q004",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S01-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S08-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S08-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE.DAILY_RULE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S05-Q001",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.RELIGIOUS_LIFE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S05-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.RELIGIOUS_LIFE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S05-Q003",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.RELIGIOUS_LIFE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S05-Q004",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.RELIGIOUS_LIFE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S05-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.RELIGIOUS_LIFE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S05-Q006",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.RELIGIOUS_LIFE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S05-Q007",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.RELIGIOUS_LIFE",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q001",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.VOCATIONS",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q002",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.VOCATIONS",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q003",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.VOCATIONS",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q005",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.VOCATIONS",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q006",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.VOCATIONS",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q007",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.VOCATIONS",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q008",
+      "outcome": "REHOMED_FOCUSED_FORMATION_GAP_RESEARCH_ONLY",
+      "final_destination": "FORMATION.VOCATIONS",
+      "artifact": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json"
+    }
+  ]
+}
