@@ -1,0 +1,967 @@
+{
+  "schema": "GLOSSARY_SOURCE_REGISTRY_V1",
+  "version": "1.0.0",
+  "status": "RESOLVABLE_BASELINE",
+  "note": "Specific locators remain on glossary entries/source IDs. Project-internal pointers are not substitutes for doctrinal authorities.",
+  "sources": [
+    {
+      "id": "CORE-LATIN-200-V0.2",
+      "title": "CORE LATIN 200 V0.2",
+      "authority_type": "PROJECT_INTERNAL",
+      "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/core-latin-200.v0.2.json",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "DIRECTORY_CONTRACT_V1",
+      "title": "DIRECTORY_CONTRACT_V1",
+      "authority_type": "PROJECT_INTERNAL",
+      "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/directory-contract.v1.json",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "EI4-22",
+      "title": "EI4 22",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "LEO-XIII-ANNUM-SACRUM",
+      "title": "LEO XIII ANNUM SACRUM",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_25051899_annum-sacrum.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "MR62-GENERAL-RUBRICS-1960",
+      "title": "MR62 GENERAL RUBRICS 1960",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "MR62-ORDINARY",
+      "title": "MR62 ORDINARY",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "MR62-RITUS-SERVANDUS",
+      "title": "MR62 RITUS SERVANDUS",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PIUS-X-TRA-LE-SOLLECITUDINI-1903",
+      "title": "PIUS X TRA LE SOLLECITUDINI 1903",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PIUS-XI-MISERENTISSIMUS",
+      "title": "PIUS XI MISERENTISSIMUS",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PIUS-XII-INGRUENTIUM-MALORUM",
+      "title": "PIUS XII INGRUENTIUM MALORUM",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15091951_ingruentium-malorum.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PIUS-XII-MYSTICI-CORPORIS",
+      "title": "PIUS XII MYSTICI CORPORIS",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PIUS-XII-SEDES-SAPIENTIAE",
+      "title": "PIUS XII SEDES SAPIENTIAE",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19560531_sedes-sapientiae.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PONTIFICALE-ROMANUM",
+      "title": "PONTIFICALE ROMANUM",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://books.google.com/books?id=l2PZAAAAMAAJ",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PONTIFICALE-ROMANUM-HOLY-OILS",
+      "title": "PONTIFICALE ROMANUM HOLY OILS",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://books.google.com/books?id=l2PZAAAAMAAJ",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PRAEDICATE-EVANGELIUM-2022",
+      "title": "PRAEDICATE EVANGELIUM 2022",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/20220319-costituzione-ap-praedicate-evangelium.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "PRAY-CANONICAL-CORPUS",
+      "title": "PRAY CANONICAL CORPUS",
+      "authority_type": "PROJECT_INTERNAL",
+      "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/pray/canonical-data.js",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-ASCETICAL-PRAYER",
+      "title": "SRC ASCETICAL PRAYER",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://archive.org/search?query=Catholic+mental+prayer+spiritual+theology",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CDF-RELICS-2017",
+      "title": "SRC CDF RELICS 2017",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/csaints/documents/rc_con_csaints_doc_20171208_istruzione-reliquie_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC17-1017",
+      "title": "SRC CIC17 1017",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC17-CLERICAL-CURSUS",
+      "title": "SRC CIC17 CLERICAL CURSUS",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-001-006",
+      "title": "SRC CIC83 001 006",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1055-1057",
+      "title": "SRC CIC83 1055 1057",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1062",
+      "title": "SRC CIC83 1062",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1066-1067",
+      "title": "SRC CIC83 1066 1067",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1073-1082",
+      "title": "SRC CIC83 1073 1082",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1073-1094",
+      "title": "SRC CIC83 1073 1094",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1086",
+      "title": "SRC CIC83 1086",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1108",
+      "title": "SRC CIC83 1108",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1124-1125",
+      "title": "SRC CIC83 1124 1125",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1151-1155",
+      "title": "SRC CIC83 1151 1155",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1156-1160",
+      "title": "SRC CIC83 1156 1160",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1161-1165",
+      "title": "SRC CIC83 1161 1165",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1166-1171",
+      "title": "SRC CIC83 1166 1171",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1223-1229",
+      "title": "SRC CIC83 1223 1229",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1230-1234",
+      "title": "SRC CIC83 1230 1234",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1235-1239",
+      "title": "SRC CIC83 1235 1239",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1246-1248",
+      "title": "SRC CIC83 1246 1248",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1249-1253",
+      "title": "SRC CIC83 1249 1253",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-129-144",
+      "title": "SRC CIC83 129 144",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1311-1363",
+      "title": "SRC CIC83 1311 1363",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-1671-1691",
+      "title": "SRC CIC83 1671 1691",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-204-207",
+      "title": "SRC CIC83 204 207",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-208-329",
+      "title": "SRC CIC83 208 329",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-232-264",
+      "title": "SRC CIC83 232 264",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-330-367",
+      "title": "SRC CIC83 330 367",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-368-430",
+      "title": "SRC CIC83 368 430",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-460-572",
+      "title": "SRC CIC83 460 572",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-573-607",
+      "title": "SRC CIC83 573 607",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-607-709",
+      "title": "SRC CIC83 607 709",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-731-746",
+      "title": "SRC CIC83 731 746",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-747-755",
+      "title": "SRC CIC83 747 755",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-934-944",
+      "title": "SRC CIC83 934 944",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-938-940",
+      "title": "SRC CIC83 938 940",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-964",
+      "title": "SRC CIC83 964",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-992-997",
+      "title": "SRC CIC83 992 997",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-CIC83-CORPUS",
+      "title": "SRC CIC83 CORPUS",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-DIRECTORY-POPULAR-PIETY-2002",
+      "title": "SRC DIRECTORY POPULAR PIETY 2002",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-EUCHARISTIC-WORSHIP-EXPOSITION",
+      "title": "SRC EUCHARISTIC WORSHIP EXPOSITION",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19730521_eucharistiae-sacramentum.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-FATIMA-FIRST-SATURDAYS",
+      "title": "SRC FATIMA FIRST SATURDAYS",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.fatima.pt/en/pages/first-saturdays",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-GIRM-105",
+      "title": "SRC GIRM 105",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-ALTAR-LITURGY",
+      "title": "SRC HIST ALTAR LITURGY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-ALTAR-STONE",
+      "title": "SRC HIST ALTAR STONE",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-ANTIPHON",
+      "title": "SRC HIST ANTIPHON",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-BIRETTA",
+      "title": "SRC HIST BIRETTA",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-CANTOR",
+      "title": "SRC HIST CANTOR",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-CASSOCK",
+      "title": "SRC HIST CASSOCK",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-CENSER",
+      "title": "SRC HIST CENSER",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-CHOIR",
+      "title": "SRC HIST CHOIR",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/03693a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-CIBORIUM-VESSEL",
+      "title": "SRC HIST CIBORIUM VESSEL",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-CONFRATERNITY-SODALITY",
+      "title": "SRC HIST CONFRATERNITY SODALITY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-CONVENT",
+      "title": "SRC HIST CONVENT",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-FONT-STOUP",
+      "title": "SRC HIST FONT STOUP",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/02274a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-MONK-FRIAR",
+      "title": "SRC HIST MONK FRIAR",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-MONSTRANCE-LUNULA",
+      "title": "SRC HIST MONSTRANCE LUNULA",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-NARTHEX",
+      "title": "SRC HIST NARTHEX",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/10704b.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-NAVE",
+      "title": "SRC HIST NAVE",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/10724a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-NEUME",
+      "title": "SRC HIST NEUME",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-OBLATI",
+      "title": "SRC HIST OBLATI",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PATEN",
+      "title": "SRC HIST PATEN",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PISCINA-SACRARIUM",
+      "title": "SRC HIST PISCINA SACRARIUM",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/12115a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PLAINCHANT",
+      "title": "SRC HIST PLAINCHANT",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-POSTULANT",
+      "title": "SRC HIST POSTULANT",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PRE1960-RANKS",
+      "title": "SRC HIST PRE1960 RANKS",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PRIOR-PRIORY",
+      "title": "SRC HIST PRIOR PRIORY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PRIORESS",
+      "title": "SRC HIST PRIORESS",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PROVOST",
+      "title": "SRC HIST PROVOST",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PSALMODY",
+      "title": "SRC HIST PSALMODY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-PULPIT-AMBO",
+      "title": "SRC HIST PULPIT AMBO",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/12563b.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-REGULARS",
+      "title": "SRC HIST REGULARS",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-RESPONSORIUM",
+      "title": "SRC HIST RESPONSORIUM",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-ROCHET",
+      "title": "SRC HIST ROCHET",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-SANCTUARY",
+      "title": "SRC HIST SANCTUARY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/13431a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-SCHOLA-CANTORUM",
+      "title": "SRC HIST SCHOLA CANTORUM",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-SECULAR-CLERGY",
+      "title": "SRC HIST SECULAR CLERGY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-SOLIDEO",
+      "title": "SRC HIST SOLIDEO",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-STATIONAL-LITURGY",
+      "title": "SRC HIST STATIONAL LITURGY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HIST-VESTMENTS-CE",
+      "title": "SRC HIST VESTMENTS CE",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-HOLY-SEE-MONSIGNOR",
+      "title": "SRC HOLY SEE MONSIGNOR",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-MINISTERIA-QUAEDAM-1972",
+      "title": "SRC MINISTERIA QUAEDAM 1972",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19720815_ministeria-quaedam.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-MR62-EMBER-ROGATION",
+      "title": "SRC MR62 EMBER ROGATION",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-MR62-GOSPEL",
+      "title": "SRC MR62 GOSPEL",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-MR62-NUPTIAL",
+      "title": "SRC MR62 NUPTIAL",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-MR62-REQUIEM",
+      "title": "SRC MR62 REQUIEM",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-OCONNELL-BENEDICTION",
+      "title": "SRC OCONNELL BENEDICTION",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://archive.org/search?query=J.B.+O%27Connell+Celebration+of+Mass",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-OCONNELL-MASS-GENERAL-1962",
+      "title": "SRC OCONNELL MASS GENERAL 1962",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://archive.org/search?query=J.B.+O%27Connell+Celebration+of+Mass",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-CHURCHYARD-CEMETERY",
+      "title": "SRC P16 CHURCHYARD CEMETERY",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/03504a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-COMMUNION-RAIL",
+      "title": "SRC P16 COMMUNION RAIL",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/01356c.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-CREDENCE",
+      "title": "SRC P16 CREDENCE",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/04476a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-HIGH-SIDE-ALTARS",
+      "title": "SRC P16 HIGH SIDE ALTARS",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/07346b.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-JUBE",
+      "title": "SRC P16 JUBE",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/13181a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-RETABLE-CIBORIUM",
+      "title": "SRC P16 RETABLE CIBORIUM",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/01356d.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-SEDILIA-CATHEDRA",
+      "title": "SRC P16 SEDILIA CATHEDRA",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/13679b.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-P16-STATIONS",
+      "title": "SRC P16 STATIONS",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "canonical_url": "https://www.newadvent.org/cathen/15569a.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-ROMRIT",
+      "title": "SRC ROMRIT",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-ROMRIT-LAST-RITES",
+      "title": "SRC ROMRIT LAST RITES",
+      "authority_type": "LITURGICAL_RITUAL",
+      "canonical_url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-ALPHONSUS-SELVA-OCCASIONS",
+      "title": "ST ALPHONSUS SELVA OCCASIONS",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://archive.org/details/alphonsusworks12liguuoft",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-PIUS-X-CATECHISM-FR",
+      "title": "ST PIUS X CATECHISM FR",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/content/pius-x/en.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-I-II-Q61",
+      "title": "ST THOMAS I II Q61",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-I-Q79-A13",
+      "title": "ST THOMAS I Q79 A13",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-II-II-Q101",
+      "title": "ST THOMAS II II Q101",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-II-II-Q103",
+      "title": "ST THOMAS II II Q103",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-II-II-Q104",
+      "title": "ST THOMAS II II Q104",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-II-II-Q81",
+      "title": "ST THOMAS II II Q81",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-II-II-Q82",
+      "title": "ST THOMAS II II Q82",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "ST-THOMAS-II-II-TEMPERANCE-FAMILY",
+      "title": "ST THOMAS II II TEMPERANCE FAMILY",
+      "authority_type": "THEOLOGICAL_CLASSIC",
+      "canonical_url": "https://www.newadvent.org/summa/",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-IV-SCRIPTURE-TRADITION",
+      "title": "TRENT IV SCRIPTURE TRADITION",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-V-ORIGINAL-SIN",
+      "title": "TRENT V ORIGINAL SIN",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-VI-JUSTIFICATION",
+      "title": "TRENT VI JUSTIFICATION",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-VII-SACRAMENTS",
+      "title": "TRENT VII SACRAMENTS",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-XIII-EUCHARIST",
+      "title": "TRENT XIII EUCHARIST",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-XIV-EXTREME-UNCTION",
+      "title": "TRENT XIV EXTREME UNCTION",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-XIV-PENANCE",
+      "title": "TRENT XIV PENANCE",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-XXIII-ORDERS",
+      "title": "TRENT XXIII ORDERS",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-XXIV-MATRIMONY",
+      "title": "TRENT XXIV MATRIMONY",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "TRENT-XXV-SAINTS-PURGATORY",
+      "title": "TRENT XXV SAINTS PURGATORY",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "VATICAN-I-DEI-FILIUS",
+      "title": "VATICAN I DEI FILIUS",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+      "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "VATICAN-I-PASTOR-AETERNUS",
+      "title": "VATICAN I PASTOR AETERNUS",
+      "authority_type": "MAGISTERIAL",
+      "canonical_url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+      "status": "RESOLVABLE_V1"
+    }
+  ]
+}
