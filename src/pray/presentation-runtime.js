@@ -161,7 +161,7 @@ function load(){
   return d;
 }
 let S=load();
-let view='home',returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
+let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
 let CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
 let BEN={step:0,divinePraises:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
@@ -246,7 +246,7 @@ function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
   if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))clearRosaryDonorReturn();
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
-  navStack=[];
+  navStack=[];familyId=null;
   if(id==='pray.hub')view='home';
   else if(id==='pray.angelus'||id==='pray.angelus_regina')view='angelus';
   else if(id==='pray.rosary'){
@@ -309,36 +309,95 @@ function paschal(){
 }
 function angelusChoice(){const p=paschal();if(S.angelusMode==='regina')return {form:'regina',auto:false,authority:p};if(S.angelusMode==='angelus')return {form:'angelus',auto:false,authority:p};return {form:p.ok&&p.value?'regina':'angelus',auto:true,authority:p}}
 function splitPrayer(text){return String(text||'').split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean)}
+function prayFamilies(){
+ return Object.freeze({
+  daily:Object.freeze({
+   title:L('Daily Prayer','Prière quotidienne'),
+   description:L('The prayers that structure ordinary Catholic life each day.','Les prières qui structurent la vie catholique quotidienne.'),
+   assetId:'ao-rich-begin-end-day',
+   items:Object.freeze([
+    ['external','pray.morning_evening',L('Morning & Evening Prayer','Prières du matin & du soir'),L('A stable daily sequence for beginning and ending the day.','Une séquence quotidienne stable pour commencer et terminer la journée.')],
+    ['own','pray.angelus_regina',L('Angelus / Regina Cæli','Angélus / Regina Cæli'),L('The traditional Marian prayer of the day and season.','La prière mariale traditionnelle du jour et du temps liturgique.')],
+    ['own','pray.rosary',L('Holy Rosary','Saint Rosaire'),L('Pray the mysteries in the existing Rosary companion.','Priez les mystères dans le compagnon du Rosaire existant.')],
+    ['external','pray.meal_prayers',L('Grace at Meals','Prières des repas'),L('Traditional prayers before and after meals.','Prières traditionnelles avant et après les repas.')],
+    ['external','pray.nightly_examen',L('Nightly Examination','Examen du soir'),L('A short examination before night prayer.','Un bref examen avant la prière du soir.')]
+   ])
+  }),
+  eucharistic:Object.freeze({
+   title:L('Eucharistic Prayer','Prière eucharistique'),
+   description:L('Prayer before the Blessed Sacrament and public Eucharistic devotions.','Prière devant le Saint-Sacrement et dévotions eucharistiques publiques.'),
+   assetId:'ao-rich-adoration',
+   items:Object.freeze([
+    ['own','pray.adoration',L('Adoration & Visit','Adoration & visite'),L('Visit · open adoration · Holy Hour · Four Ends.','Visite · adoration libre · Heure Sainte · quatre fins.')],
+    ['own','pray.benediction',L('Benediction','Bénédiction'),L('Follow the public rite as it happens in church.','Suivez le rite public tel qu’il se déroule dans l’église.')],
+    ['own','pray.forty_hours',L('Forty Hours','Quarante-Heures'),L('A companion for prolonged Eucharistic exposition.','Un compagnon pour l’exposition eucharistique prolongée.')],
+    ['external','pray.communion_treasury',L('Traditional Communion Prayers','Prières traditionnelles de Communion'),L('Preparation and thanksgiving from traditional sources.','Préparation et action de grâces d’après des sources traditionnelles.')]
+   ])
+  }),
+  penance:Object.freeze({
+   title:L('Confession & Penance','Confession & pénitence'),
+   description:L('Prepare for Confession and pray the Church’s penitential texts.','Préparez la Confession et priez les textes pénitentiels de l’Église.'),
+   assetId:'ao-rich-confession',
+   items:Object.freeze([
+    ['own','pray.confession',L('Confession','Confession'),L('Prepare · examine · contrition · after Confession.','Préparer · examiner · contrition · après la Confession.')],
+    ['own','pray.penitential_psalms',L('Seven Penitential Psalms','Sept psaumes pénitentiels'),L('The traditional seven-psalm penitential sequence.','La séquence traditionnelle des sept psaumes pénitentiels.')],
+    ['own','pray.litany_saints',L('Litany of the Saints','Litanies des saints'),L('Traditional intercession in call-and-response form.','Intercession traditionnelle sous forme d’invocations et de répons.')]
+   ])
+  }),
+  passion:Object.freeze({
+   title:L('Passion & Stations','Passion & Chemin de Croix'),
+   description:L('Prayer centred on the Passion of Our Lord.','Prière centrée sur la Passion de Notre-Seigneur.'),
+   assetId:'ao-rich-stations',
+   items:Object.freeze([
+    ['own','pray.stations',L('Stations of the Cross','Chemin de Croix'),L('Fourteen Stations with the existing guided or simple companion.','Quatorze stations avec le compagnon guidé ou simple existant.')],
+    ['own','pray.seven_words',L('Seven Words of Our Lord','Sept Paroles de Notre-Seigneur'),L('Gospel word · traditional meditation · silence.','Parole évangélique · méditation traditionnelle · silence.')]
+   ])
+  }),
+  devotions:Object.freeze({
+   title:L('Devotions & Novenas','Dévotions & neuvaines'),
+   description:L('Traditional devotions, reparatory practices and prayers for particular needs.','Dévotions traditionnelles, pratiques réparatrices et prières pour des besoins particuliers.'),
+   assetId:'ao-rich-novenas',
+   items:Object.freeze([
+    ['external','pray.novenas',L('Novenas','Neuvaines'),L('Sixteen source-backed novenas with calendar context.','Seize neuvaines sourcées avec contexte calendaire.')],
+    ['own','programme.first_friday',L('Nine First Fridays','Neuf premiers vendredis'),L('The Sacred Heart reparatory devotion.','La dévotion réparatrice au Sacré-Cœur.')],
+    ['own','programme.first_saturday',L('Five First Saturdays','Cinq premiers samedis'),L('The Immaculate Heart reparatory devotion.','La dévotion réparatrice au Cœur Immaculé.')],
+    ['external','pray.sacred_heart',L('Sacred Heart of Jesus','Sacré-Cœur de Jésus'),L('Litany · reparation · consecration.','Litanies · réparation · consécration.')],
+    ['external','pray.holy_name_litany',L('Litany of the Holy Name','Litanies du Saint Nom'),L('Traditional Roman form available offline.','Forme romaine traditionnelle disponible hors ligne.')],
+    ['external','pray.sacred_hymns',L('Sacred Hymns & Canticles','Hymnes & cantiques sacrés'),L('Te Deum · Veni Creator · Ave Maris Stella.','Te Deum · Veni Creator · Ave Maris Stella.')],
+    ['external','pray.good_death',L('Preparation for a Good Death','Préparation à une bonne mort'),L('St Joseph · final perseverance · traditional prayers.','Saint Joseph · persévérance finale · prières traditionnelles.')],
+    ['external','pray.dying_companion',L('Dying Companion','Accompagnement du mourant'),L('Priest · Viaticum · bedside prayer · commendation.','Prêtre · Viatique · prière au chevet · recommandation.')]
+   ])
+  }),
+  library:Object.freeze({
+   title:L('Prayer Library','Livre de prières'),
+   description:L('Find a particular prayer rather than a guided devotion.','Trouvez une prière précise plutôt qu’une dévotion guidée.'),
+   assetId:'ao-rich-prayer-library',
+   direct:'pray.library',
+   items:Object.freeze([])
+  })
+ });
+}
+function prayFamilyDoor(id,family){
+ return `<button type="button" class="aoP435930ModuleCard aoP435930FamilyDoor" ${family.direct?`data-p435930-own="${esc(family.direct)}"`:`data-p435930-family="${esc(id)}"`}>${assetIcon(family.assetId,'aoP435930ModuleAsset',{preferEmbedded:true})}<small class="aoP435930ModuleKind">${esc(L('PRAYER','PRIÈRE'))}</small><b>${esc(family.title)}</b><span class="aoP435930ModuleDescription">${esc(family.description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
+}
+function prayFamilyItem(item){
+ const [owner,route,title,description]=item;
+ const attr=owner==='external'?`data-p435930-external="${esc(route)}"`:`data-p435930-own="${esc(route)}"`;
+ return `<button type="button" class="aoP435930ModuleCard" ${attr}>${moduleIcon(route)}<small class="aoP435930ModuleKind">${esc(route.startsWith('programme.')?L('DEVOTION','DÉVOTION'):L('PRAYER','PRIÈRE'))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
+}
 function renderPrayHome(){
- const sections=[
-  {title:L('Daily & Marian','Quotidien & marial'),sub:L('Prayer that naturally structures the day.','Prière qui structure naturellement la journée.'),items:[
-   ['own','pray.angelus_regina',L('Angelus / Regina Cæli','Angélus / Regina Cæli'),L('Daily Marian prayer · season-aware','Prière mariale quotidienne · selon le temps liturgique')],
-   ['own','pray.rosary',L('Holy Rosary','Saint Rosaire'),L('Mysteries · guided or simple · individual or group','Mystères · guidé ou simple · individuel ou groupe')]
-  ]},
-  {title:L('Eucharistic','Eucharistique'),sub:L('Prayer before the Blessed Sacrament and companions for public Eucharistic devotion.','Prière devant le Saint-Sacrement et compagnons pour les dévotions eucharistiques publiques.'),items:[
-   ['own','pray.adoration',L('Adoration & Visit','Adoration & visite'),L('Visit · open adoration · Holy Hour · Four Ends','Visite · adoration libre · Heure Sainte · quatre fins')],
-   ['own','pray.benediction',L('Benediction','Bénédiction'),L('Live companion · follow what is happening in church','Compagnon en direct · suivre ce qui se passe dans l’église')],
-   ['own','pray.forty_hours',L('Forty Hours','Quarante-Heures'),L('Live companion for prolonged exposition · yields to public rites','Compagnon pour l’exposition prolongée · s’efface devant les rites publics')]
-  ]},
-  {title:L('Penance, Passion & Intercession','Pénitence, Passion & intercession'),sub:L('Preparation for Confession and traditional devotions centred on repentance, the Passion and intercession.','Préparation à la Confession et dévotions traditionnelles centrées sur la pénitence, la Passion et l’intercession.'),items:[
-   ['own','pray.confession',L('Confession','Confession'),L('Recollect · examine · contrition · after Confession','Recueillement · examen · contrition · après la Confession')],
-   ['own','pray.stations',L('Stations of the Cross','Chemin de Croix'),L('14 Stations · guided or simple · optional Stabat Mater','14 stations · guidé ou simple · Stabat Mater facultatif')],
-   ['own','pray.penitential_psalms',L('Seven Penitential Psalms','Sept psaumes pénitentiels'),L('Seven psalms · continues naturally into the Litany','Sept psaumes · se poursuit naturellement par les Litanies')],
-   ['own','pray.seven_words',L('Seven Words of Our Lord','Sept Paroles de Notre-Seigneur'),L('Gospel word · traditional meditation · silence','Parole évangélique · méditation traditionnelle · silence')],
-   ['own','pray.litany_saints',L('Litany of the Saints','Litanies des saints'),L('Call and response · individual or group','Invocations et répons · individuel ou groupe')]
-  ]},
-  {title:L('Devotional programmes','Programmes dévotionnels'),sub:L('Multi-month practices with guided stages; the app records only what you explicitly report.','Pratiques sur plusieurs mois avec étapes guidées ; l’application ne mémorise que ce que vous déclarez explicitement.'),items:[
-   ['own','programme.first_friday',L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparatory programme','Programme réparateur guidé du Sacré-Cœur')],
-   ['own','programme.first_saturday',L('Five First Saturdays','Cinq premiers samedis'),L('Guided Immaculate Heart reparatory programme','Programme réparateur guidé du Cœur Immaculé')]
-  ]},
-  {title:L('Around Mass','Autour de la Messe'),sub:L('Preparation and thanksgiving remain tied to the Mass lifecycle rather than duplicated in PRAY.','La préparation et l’action de grâces restent liées au cycle de la Messe au lieu d’être dupliquées dans PRIER.'),items:[
-   ['handoff','mass.prepare',L('Before Mass','Avant la Messe'),L('Preparation · recollection · offering','Préparation · recueillement · offrande')],
-   ['handoff','mass.thanksgiving',L('After Mass','Après la Messe'),L('Immediate thanks · thanksgiving · return to duty','Remerciement immédiat · action de grâces · retour au devoir')]
-  ]}
- ];
- const kind=it=>it[0]==='handoff'?L('AROUND MASS','AUTOUR DE LA MESSE'):it[1].startsWith('programme.')?L('PROGRAMME','PROGRAMME'):['pray.benediction','pray.forty_hours'].includes(it[1])?L('LIVE COMPANION','COMPAGNON EN DIRECT'):L('GUIDED','GUIDÉ');
- const card=it=>`<button type="button" class="aoP435930ModuleCard" ${it[0]==='own'?`data-p435930-own="${esc(it[1])}"`:`data-p435930-handoff="${esc(it[1])}"`}>${it[0]==='own'?moduleIcon(it[1]):''}<small class="aoP435930ModuleKind">${esc(kind(it))}</small><b>${esc(it[2])}</b><span class="aoP435930ModuleDescription">${esc(it[3])}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
- return `${head(L('Pray','Prier'),L('Choose the kind of prayer you need','Choisissez le type de prière dont vous avez besoin'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('One place for the app’s prayer life','Un seul espace pour la vie de prière de l’application'))}</h2><p>${esc(L('Guided devotions, live companions, programmes and individual prayer texts are kept distinct so the next step is clear.','Les dévotions guidées, compagnons en direct, programmes et prières individuelles restent distincts afin que l’étape suivante soit évidente.'))}</p></section>${sections.map(sec=>`<section class="aoP435930ModuleSection"><div class="aoP435930ModuleSectionHead"><h3>${esc(sec.title)}</h3><p>${esc(sec.sub)}</p></div><div class="aoP435930ModuleGrid">${sec.items.map(card).join('')}</div></section>`).join('')}<section class="aoP435930ModuleSection aoP435930LibraryDoor"><div class="aoP435930ModuleSectionHead"><h3>${esc(L('Prayer Library','Livre de prières'))}</h3><p>${esc(L('Use this when you want a particular prayer rather than a guided devotion.','Utilisez-le lorsque vous cherchez une prière précise plutôt qu’une dévotion guidée.'))}</p></div><button type="button" class="aoP435930ModuleCard primary" data-p435930-own="pray.library">${moduleIcon('pray.library')}<small class="aoP435930ModuleKind">${esc(L('REFERENCE','RÉFÉRENCE'))}</small><b>${esc(L('Browse individual prayers','Parcourir les prières individuelles'))}</b><span class="aoP435930ModuleDescription">${esc(Object.keys(DATA.prayers||{}).length+' '+L('prayers available','prières disponibles'))}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button></section></main>`;
+ const families=prayFamilies();
+ return `${head(L('Pray','Prier'),L('What do you need for prayer now?','De quoi avez-vous besoin pour prier maintenant ?'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Choose one path','Choisissez une voie'))}</h2><p>${esc(L('Begin with the kind of prayer you need; the full corpus stays one level deeper.','Commencez par le type de prière dont vous avez besoin ; le corpus complet reste au niveau suivant.'))}</p></section><div class="aoP435930ModuleGrid aoP435930FamilyGrid">${Object.entries(families).map(([id,family])=>prayFamilyDoor(id,family)).join('')}</div></main>`;
+}
+function renderPrayFamily(){
+ const family=prayFamilies()[familyId];
+ if(!family){familyId=null;view='home';return renderPrayHome()}
+ return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}</div></main>`;
+}
+function openFamily(id){
+ const family=prayFamilies()[String(id??'')];
+ if(!family||family.direct)return false;
+ familyId=String(id);view='family';render();return true;
 }
 function angelusUnits(text,form){
  const lines=String(text||'').replace(/\r/g,'').split(/\n/).map(x=>x.trim()).filter(Boolean),out=[];
@@ -933,14 +992,14 @@ function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr|
 let prayerReturnView=null,prayerId=null;
 function pushView(v=view){if(v)navStack.push(v);return navStack.length}
 function popView(fallback='home'){view=navStack.length?navStack.pop():fallback;return view}
-function captureResume(){return {view,navStack:[...navStack],prayerReturnView,prayerId}}
+function captureResume(){return {view,familyId,navStack:[...navStack],prayerReturnView,prayerId}}
 function reopenResume(snapshot){
  if(!snapshot)return false;
- navStack=Array.isArray(snapshot.navStack)?[...snapshot.navStack]:[];view=snapshot.view||'home';prayerReturnView=snapshot.prayerReturnView||null;prayerId=snapshot.prayerId||null;
+ navStack=Array.isArray(snapshot.navStack)?[...snapshot.navStack]:[];view=snapshot.view||'home';familyId=snapshot.familyId||null;prayerReturnView=snapshot.prayerReturnView||null;prayerId=snapshot.prayerId||null;
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,CONF.stage,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,familyId||'',CONF.stage,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
@@ -1035,7 +1094,7 @@ function fortyStageBody(){
 function renderFortyHours(){
  FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step));return `${head(L('Forty Hours','Quarante-Heures'),L('Live companion · follow the church, not a timer','Compagnon en direct · suivez l’église, pas un minuteur'))}<main class="aoP435930Body">${callout(esc(L('Use this by what is happening around you, not by a timer. Public worship always outranks the private sequence on the screen.','Utilisez ce guide selon ce qui se passe autour de vous, non selon un minuteur. Le culte public a toujours priorité sur la séquence privée affichée à l’écran.')),'rubric')}${guideRail(FORTY_STAGES.map(x=>L(x[0],x[1])),FORTY.step,'forty')}${fortyStageBody()}<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-forty-prev ${FORTY.step===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>${FORTY.step===FORTY_STAGES.length-1?`<button type="button" class="aoP435930Primary" data-p435930-forty-done>${esc(L('Done · back to PRAY','Terminé · retour à PRIER'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-forty-next>${esc(L('Continue','Continuer'))}</button>`}</div>${devotionalSource('Baltimore Manual · Forty Hours; Saint Andrew Daily Missal · 1951 · special Forty Hours Litany and prayers',L('Historical witnesses for the prayer aids and public-order note. The situational navigation is app guidance, not a claim that every church uses an identical ceremonial schedule.','Témoins historiques pour les aides de prière et la note sur l’ordre public. La navigation selon la situation est une aide de l’application, non l’affirmation que chaque église suit un cérémonial identique.'))}</main>`
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
 function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
@@ -1043,7 +1102,13 @@ function openPrayerOnly(id){prayerReturnView=view;prayerId=id;view='prayerOnly';
 function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.matches('[data-p435930-close]'))return close();
- if(b.matches('[data-p435930-back]')){if(view==='adoration'&&ADOR.mode!=='home'){ADOR.mode='home';return render()}if(view==='library'&&LIB.open){LIB.open=null;return render()}if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}if(view!=='home'&&navStack.length){popView();return render()}return close()}
+ if(b.matches('[data-p435930-back]')){if(view==='family'){view='home';familyId=null;navStack=[];return render()}if(view==='adoration'&&ADOR.mode!=='home'){ADOR.mode='home';return render()}if(view==='library'&&LIB.open){LIB.open=null;return render()}if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}if(view!=='home'&&navStack.length){popView();return render()}return close()}
+ if(b.dataset.p435930Family){familyId=b.dataset.p435930Family;view='family';navStack=[];return render()}
+ if(b.dataset.p435930External){
+  const route=b.dataset.p435930External,returnFamily=familyId;
+  void Promise.resolve(window?.AO_MODULES?.open?.(route,{returnContext:PRAY_CTX,returnFamily})).catch(error=>console.error('PRAY family route failed',route,error));
+  return;
+ }
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){S.angelusMode=seg;save()}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
@@ -1226,7 +1291,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={version:VERSION,open,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={version:VERSION,open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
