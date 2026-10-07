@@ -1,0 +1,96 @@
+{
+  "schema": "CUSTOMS_ATLAS_SOT_V1",
+  "version": "1.0.0",
+  "frozenAt": "2026-10-07",
+  "researchAuthority": "Ad_Orientem_SOT-07_Traditional_Catholic_Customary_French_World_v1",
+  "purpose": "Machine-readable customary corpus that separates the custom itself from geographically scoped attestations, source evidence, negative knowledge, and later Calendar/Place presentation.",
+  "entityOrder": [
+    "custom",
+    "attestation",
+    "source",
+    "negative_knowledge"
+  ],
+  "invariants": [
+    "A custom is not a calendar rule, map pin, place, pilgrimage, liturgical rite, or legal obligation merely because those may be related to it.",
+    "Geographic claims live in attestations, not in the custom identity itself.",
+    "Calendar owns date computation and seasonal triggering; this corpus may carry only non-authoritative trigger hints until an explicit Calendar bridge exists.",
+    "Pray owns prayer bodies; Special Days owns ceremonial mechanics; Learn owns explanatory presentation.",
+    "A custom may have multiple attestations across time and place without becoming universal.",
+    "Geographic proximity to a TLM venue, shrine, community or another custom never proves association.",
+    "HOLD and REJECT findings are retained as negative knowledge and may not be published as active customs.",
+    "Map-visible claims require geographically specific direct evidence; bibliographic-only or project-evidence sources cannot independently authorize a map claim.",
+    "PLACE_PENDING preserves a source-backed named place before the shared Place corpus has assigned a canonical place_id.",
+    "Source confidence and customary classification must remain distinct: a strongly sourced local custom is still local.",
+    "Current law, 1962 discipline, historical practice and devotional custom must never be collapsed into one status."
+  ],
+  "enums": {
+    "customClass": [
+      "CURRENT_NORM",
+      "1962_DISCIPLINE",
+      "TRADITIONAL_ROMAN_PRACTICE",
+      "TRADITIONAL_CATHOLIC_PRACTICE",
+      "FRENCH_CATHOLIC_CUSTOM",
+      "LOCAL_REGIONAL_CUSTOM",
+      "DEVOTIONAL_OPTION",
+      "HISTORICAL_ONLY",
+      "FORMATION",
+      "GOVERNANCE"
+    ],
+    "publicationState": [
+      "PUBLISHED",
+      "CONTEXT_ONLY",
+      "SOURCE_LOCK_REQUIRED"
+    ],
+    "attestationStrength": [
+      "STRONG",
+      "MODERATE",
+      "WEAK"
+    ],
+    "confidence": [
+      "HIGH",
+      "MEDIUM_HIGH",
+      "MEDIUM",
+      "LOW"
+    ],
+    "geographicPrecision": [
+      "GLOBAL",
+      "CULTURAL_SPHERE",
+      "COUNTRY",
+      "REGION",
+      "LOCALITY",
+      "PLACE",
+      "ROUTE",
+      "UNKNOWN"
+    ],
+    "mapPolicy": [
+      "NOT_MAPPED",
+      "AREA_CONTEXT",
+      "PLACE_PENDING",
+      "PLACE",
+      "ROUTE"
+    ],
+    "sourceDirectness": [
+      "OFFICIAL_CURRENT",
+      "PRIMARY_HISTORICAL",
+      "DIRECT_INSTITUTIONAL",
+      "DIRECT_TRANSCRIPTION",
+      "SECONDARY",
+      "BIBLIOGRAPHIC_ONLY",
+      "PROJECT_EVIDENCE"
+    ],
+    "negativeDecision": [
+      "HOLD",
+      "REJECT"
+    ]
+  },
+  "releaseGates": {
+    "customIdentity": "Every active custom requires its stable SOT-07 custom_id, canonical statement, class, decision lineage and at least one attestation.",
+    "attestationGeography": "Every attestation requires a shared geo_area_id, a shared place_id, or both. PLACE_PENDING additionally requires a place_name_hint.",
+    "provenance": "Every attestation requires source_ids that resolve in the Customs Atlas source registry.",
+    "mapSafety": "PLACE and ROUTE map policies require a canonical shared place/route reference and direct geographically specific evidence.",
+    "pendingPlaceSafety": "PLACE_PENDING may surface as an unresolved research/place candidate but must not render as a canonical map point.",
+    "negativeKnowledge": "HOLD/REJECT rows may not occur in the active customs array.",
+    "ownership": "Calendar trigger hints are descriptive only and may not drive date logic directly.",
+    "associationSafety": "No Directory/community association may be created without a separate explicit evidence-backed bridge."
+  }
+}

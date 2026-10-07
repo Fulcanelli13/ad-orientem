@@ -1,0 +1,469 @@
+{
+  "schema": "CUSTOMS_ATLAS_SEED_V1",
+  "version": "1.0.0",
+  "sourceOfTruth": "SOT-07",
+  "customs": [
+    {
+      "custom_id": "DOM-002",
+      "family": "Home & family",
+      "name": "Domestic holy-water font / bénitier de chevet",
+      "canonical_statement": "A bedside or domestic bénitier holding blessed water is a documented French Catholic domestic object and devotional custom.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "19th–20th c.; pre-conciliar",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Present as a historical/traditional domestic practice, not a requirement."
+    },
+    {
+      "custom_id": "DOM-006",
+      "family": "Sacred Heart",
+      "name": "Family consecration to the Sacred Heart",
+      "canonical_statement": "Family consecration to the Sacred Heart is a well-attested French devotional practice centered on Paray-le-Monial and may be presented as a voluntary devotion.",
+      "custom_class": "DEVOTIONAL_OPTION",
+      "period_label": "19th c. → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Pray",
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Sacred Heart season / family use",
+      "confidence": "HIGH",
+      "guardrail": "Keep distinct from the liturgy and from priestly house blessing."
+    },
+    {
+      "custom_id": "DOM-007",
+      "family": "Sacred Heart",
+      "name": "Intronement of a Sacred Heart image in the home",
+      "canonical_statement": "The enthronement/intronisation of the Sacred Heart image is a documented French family devotion. It is not universal liturgical law.",
+      "custom_class": "DEVOTIONAL_OPTION",
+      "period_label": "Late 19th–20th c. → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Pray",
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Any blessing of the image remains ministerial where required."
+    },
+    {
+      "custom_id": "LIFE-002",
+      "family": "Life events",
+      "name": "Relevailles / blessing after childbirth",
+      "canonical_statement": "Relevailles are a voluntary thanksgiving/blessing after childbirth. They are not a purification from ritual impurity and no mandatory forty-day waiting period should be taught.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Pre-conciliar; historical today",
+      "decision": "KEEP — HISTORICAL/OPTIONAL",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Preserve the anti-misconception note prominently."
+    },
+    {
+      "custom_id": "DEV-001",
+      "family": "Marian domestic devotion",
+      "name": "May as the month of Mary",
+      "canonical_statement": "The month of May has a long-standing Catholic Marian devotional association and strong French-world attestation. It is devotional custom, not part of the formal liturgical calendar structure.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Early modern → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Pray",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "May",
+      "confidence": "HIGH",
+      "guardrail": "Calendar points to the practice; devotional modules own prayer content."
+    },
+    {
+      "custom_id": "DEV-006",
+      "family": "Pilgrimage",
+      "name": "Pilgrimage to a shrine or holy place",
+      "canonical_statement": "Pilgrimage is a legitimate personal or collective act of Catholic piety. It is commendable and optional, not a universal obligation.",
+      "custom_class": "DEVOTIONAL_OPTION",
+      "period_label": "Ancient → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Learn",
+        "Calendar"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Do not turn local pilgrimage calendars into universal app law."
+    },
+    {
+      "custom_id": "DEV-007",
+      "family": "Pilgrimage",
+      "name": "Regional pardons and shrine anniversaries",
+      "canonical_statement": "Regional pilgrimages and pardons are genuine Catholic customs but belong to local metadata, not the universal Ad Orientem calendar.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Varies",
+      "decision": "KEEP — EXAMPLE ONLY / NO GLOBAL ENGINE",
+      "publication_state": "CONTEXT_ONLY",
+      "owners": [
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "No country mode and no universal trigger."
+    },
+    {
+      "custom_id": "DEV-009",
+      "family": "Sacred objects",
+      "name": "Ex-votos",
+      "canonical_statement": "Ex-votos are documented French Catholic offerings of thanksgiving/testimony at shrines. They should be explained as expressions of gratitude, not magical transactions.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "17th c. → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Avoid superstition framing."
+    },
+    {
+      "custom_id": "DEV-010",
+      "family": "Sacred objects",
+      "name": "Votive candle at a shrine",
+      "canonical_statement": "Lighting a votive candle at a shrine is a documented devotional act; the flame symbolizes and prolongs prayer rather than functioning magically.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Longstanding → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Learn",
+        "Pray"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Do not imply payment purchases spiritual effects."
+    },
+    {
+      "custom_id": "DEAD-001",
+      "family": "Death & Holy Souls",
+      "name": "Prayerful cemetery visit",
+      "canonical_statement": "Visiting a cemetery to pray for the dead is an established Catholic devotional practice and strongly French-attested.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Longstanding → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Pray",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "02/11; November; anniversaries",
+      "confidence": "HIGH",
+      "guardrail": "Explain as prayer and bonds with the dead, not superstitious obligation."
+    },
+    {
+      "custom_id": "DEAD-003",
+      "family": "Death & Holy Souls",
+      "name": "Prayer for the dead on 2 November",
+      "canonical_statement": "2 November is a privileged day of prayer for the faithful departed; cemetery visits are common but the core is prayer for the dead.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Liturgical observance → present",
+      "decision": "KEEP",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Pray"
+      ],
+      "calendar_trigger_hint": "02/11",
+      "confidence": "HIGH",
+      "guardrail": "Calendar owns the date; Pray owns prayer texts."
+    },
+    {
+      "custom_id": "BELL-004",
+      "family": "Sacred time & bells",
+      "name": "Glas / death bell",
+      "canonical_statement": "The glas is a French Catholic bell custom announcing death or obsequies. The generic meaning is suitable for formation; exact strike patterns are highly local.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Historical → present in places",
+      "decision": "KEEP — GENERIC ONLY",
+      "publication_state": "CONTEXT_ONLY",
+      "owners": [
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Do not encode local sex/age/number-of-strokes patterns as universal."
+    },
+    {
+      "custom_id": "FOOD-001",
+      "family": "Food & sacramentals",
+      "name": "Pain bénit",
+      "canonical_statement": "Pain bénit is a historical French Catholic parish custom: blessed bread distinct from the Eucharist. It is local/regional and should not be implied as a universal Roman practice.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Historical; largely declined",
+      "decision": "KEEP — REGIONAL/HISTORICAL",
+      "publication_state": "CONTEXT_ONLY",
+      "owners": [
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Distinguish clearly from the Eucharist; stronger historical source closure is still desirable."
+    }
+  ],
+  "attestations": [
+    {
+      "attestation_id": "att:DOM-002:FR",
+      "custom_id": "DOM-002",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "1900–1950 material witnesses",
+      "strength": "STRONG",
+      "source_ids": [
+        "MUCEM-BENITIER"
+      ],
+      "evidence_note": "Mucem catalogue preserves French domestic bénitiers, including Lourdes-associated examples.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-006:FRENCH-WORLD",
+      "custom_id": "DOM-006",
+      "geo_area_id": "geo:culture:french-catholic-world",
+      "place_id": null,
+      "place_name_hint": "Paray-le-Monial",
+      "geographic_precision": "CULTURAL_SPHERE",
+      "period_label": "19th c. → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "PARAY-CONSECRATION"
+      ],
+      "evidence_note": "Paray-le-Monial documents the history and continuing practice of family consecration.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-007:FRENCH-WORLD",
+      "custom_id": "DOM-007",
+      "geo_area_id": "geo:culture:french-catholic-world",
+      "place_id": null,
+      "place_name_hint": "Paray-le-Monial",
+      "geographic_precision": "CULTURAL_SPHERE",
+      "period_label": "Late 19th c. → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "PARAY-INTRONISATION"
+      ],
+      "evidence_note": "Paray-le-Monial directly describes intronisation in families.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:LIFE-002:FR",
+      "custom_id": "LIFE-002",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Pre-conciliar",
+      "strength": "STRONG",
+      "source_ids": [
+        "RIT-1878",
+        "SCHOLA-RELEVAILLES"
+      ],
+      "evidence_note": "Roman Ritual witness and French traditional transcription support the voluntary blessing after childbirth.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-001:FR",
+      "custom_id": "DEV-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Early modern → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-MAY"
+      ],
+      "evidence_note": "French episcopal source traces the devotion and French parish/family expressions.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:WORLD",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Ancient → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "DPP-2001"
+      ],
+      "evidence_note": "Official universal guidance treats pilgrimage as an established form of popular piety.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:FR",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Continuing practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-PILGRIMAGE"
+      ],
+      "evidence_note": "French episcopal source describes continuing pilgrimage and shrine practice.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:FR",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Varies regionally",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-PILGRIMAGE"
+      ],
+      "evidence_note": "French episcopal source explicitly recognizes local pardons and shrine-linked pilgrimage traditions.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-009:LAGHET",
+      "custom_id": "DEV-009",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Sanctuaire Notre-Dame de Laghet",
+      "geographic_precision": "PLACE",
+      "period_label": "1652 → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "LAGHET-EXVOTO"
+      ],
+      "evidence_note": "The shrine documents its ex-voto tradition and collection.",
+      "map_policy": "PLACE_PENDING",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-010:LOURDES",
+      "custom_id": "DEV-010",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Sanctuaire Notre-Dame de Lourdes",
+      "geographic_precision": "PLACE",
+      "period_label": "Longstanding → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "LOURDES-CANDLES"
+      ],
+      "evidence_note": "Lourdes explicitly presents the burning candle as a continuation of prayer.",
+      "map_policy": "PLACE_PENDING",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEAD-001:WORLD",
+      "custom_id": "DEAD-001",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Longstanding → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "DPP-2001"
+      ],
+      "evidence_note": "Official guidance supports cemetery visitation and prayer for the dead.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEAD-001:FR",
+      "custom_id": "DEAD-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Current French practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-DEAD"
+      ],
+      "evidence_note": "French episcopal source directly links 2 November with cemetery visitation and prayer.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEAD-003:FR",
+      "custom_id": "DEAD-003",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Current",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-DEAD",
+        "DPP-2001"
+      ],
+      "evidence_note": "French and universal official sources support prayer for the faithful departed on 2 November.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BELL-004:FR",
+      "custom_id": "BELL-004",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historical → present in places",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-GLAS"
+      ],
+      "evidence_note": "French episcopal glossary defines the glas as a bell sounding that announces death or obsequies.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:FOOD-001:FR",
+      "custom_id": "FOOD-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historical; largely declined",
+      "strength": "MODERATE",
+      "source_ids": [
+        "PAIN-BENIT"
+      ],
+      "evidence_note": "Modern French secondary source documents the former parish distribution of blessed bread distinct from the Eucharist.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "MEDIUM_HIGH"
+    }
+  ]
+}
