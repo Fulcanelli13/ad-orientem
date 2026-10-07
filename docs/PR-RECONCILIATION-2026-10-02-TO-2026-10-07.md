@@ -33,7 +33,7 @@ The competing Mass branches were reduced to one surviving line.
   - exact 67-entry v4.6 Mass master icon bank.
 - #249 passed Visual acceptance, R17 Mass convergence and App convergence and was merged.
 - The Mass app-release blocker `MASS_V180_INTERACTION_ICON_PARITY` is closed.
-- `EXACT_NON_MASS_DONOR_PARITY` remains the application-level presentation blocker.
+- `EXACT_NON_MASS_DONOR_PARITY` remains the application-level presentation blocker and is tracked explicitly in issue #271.
 
 Do not revive #207, #239 or #240 as alternate Mass architectures.
 
@@ -54,7 +54,7 @@ PR #265 was shown to be file-disjoint from the concurrent Mass/PRAY changes. Aft
 
 PR #256 contains zero implementation commits. Its descriptive scope is not evidence that the work landed.
 
-Merged #260 owns the Calendar Intelligence foundation. Remaining devotional-practice / 16-novena reconciliation is tracked in issue #267, including explicit missing-donor holds. Do not reopen #256.
+Merged #260 owns the Calendar Intelligence foundation. Remaining devotional-practice / 16-novena reconciliation is tracked in issue #267, including explicit missing-donor holds. The separate primary-evidence release blocker is tracked in issue #271. Do not reopen #256.
 
 ## Key historical successor chains
 
