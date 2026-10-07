@@ -62,6 +62,11 @@ export function createApostolateOwner(win=globalThis,{scenarios=[]}={}){
           )
         )]
       ),
+      pendingFamilies:Object.freeze(
+        ["AQ","HS","FH","TF","DV","WC"].filter(prefix=>
+          !APOSTOLATE_SCENARIO_IDS.filter(id=>id.startsWith(prefix)).every(id=>scenariosEngine.resolve(id).ok)
+        )
+      ),
       ...scenariosEngine.status(),
     });
   }
