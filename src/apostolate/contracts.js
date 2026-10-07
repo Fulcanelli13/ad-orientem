@@ -33,6 +33,22 @@ export const APOSTOLATE_SKILLS=Object.freeze([
   Object.freeze({id:"APF08",name:"Know your boundaries"}),
   Object.freeze({id:"APF09",name:"Practise, follow up & deepen"}),
 ]);
+export const APOSTOLATE_SKILL_IDS=Object.freeze(APOSTOLATE_SKILLS.map(skill=>skill.id));
+
+export const APOSTOLATE_FORMATION_TARGETS=Object.freeze([
+  "learn.catechism",
+  "learn.mass",
+  "learn.rites.sick",
+  "learn.rites.baptism",
+  "learn.rites.first_communion",
+  "learn.rites.confirmation",
+  "learn.rites.holy_orders",
+  "learn.rites.matrimony",
+  "learn.scapular",
+  "learn.sexual_ethics",
+  "learn.latin",
+  "learn.serve_mass.responses",
+]);
 
 export const APOSTOLATE_CLAIM_CLASSES=Object.freeze(["D","N","T","H","S","P","C"]);
 export const APOSTOLATE_PUBLICATION_STATES=Object.freeze(["RESEARCH_ONLY","READY"]);
@@ -56,7 +72,8 @@ export const APOSTOLATE_HANDOFF_DIRECTIONS=Object.freeze({
 });
 
 const scenarioSet=new Set(APOSTOLATE_SCENARIO_IDS);
-const skillSet=new Set(APOSTOLATE_SKILLS.map(skill=>skill.id));
+const skillSet=new Set(APOSTOLATE_SKILL_IDS);
+const formationTargetSet=new Set(APOSTOLATE_FORMATION_TARGETS);
 const claimSet=new Set(APOSTOLATE_CLAIM_CLASSES);
 const publicationSet=new Set(APOSTOLATE_PUBLICATION_STATES);
 
@@ -148,6 +165,60 @@ export function makeApostolateScenario(input={}){
   });
 }
 
+export function makeApostolateSkill(input={}){
+  const id=String(input.id??"").trim().toUpperCase();
+  if(!skillSet.has(id))throw new Error("Unknown Apostolate skill id: "+id);
+  const publication=String(input.publication??"RESEARCH_ONLY").trim().toUpperCase();
+  if(!publicationSet.has(publication))throw new Error("Unknown Apostolate publication state: "+publication);
+  const record={
+    id,
+    publication,
+    title:input.title&&typeof input.title==="object"?input.title:{},
+    summary:input.summary&&typeof input.summary==="object"?input.summary:{},
+    explanation:input.explanation&&typeof input.explanation==="object"?input.explanation:{},
+    practice:input.practice&&typeof input.practice==="object"?input.practice:{},
+    avoid:input.avoid&&typeof input.avoid==="object"?input.avoid:{},
+    sourceStrength:nonEmpty(input.sourceStrength)?input.sourceStrength:null,
+    sourceIds:Array.isArray(input.sourceIds)?input.sourceIds.filter(nonEmpty):[],
+    scenarioRefs:Array.isArray(input.scenarioRefs)?input.scenarioRefs.filter(nonEmpty):[],
+  };
+  if(publication==="READY"){
+    if(!nonEmpty(record.title.en)||!nonEmpty(record.title.fr))throw new Error("READY Apostolate skill requires English and French titles: "+id);
+    if(!nonEmpty(record.summary.en)||!nonEmpty(record.summary.fr))throw new Error("READY Apostolate skill requires English and French summaries: "+id);
+    if(!nonEmpty(record.explanation.en)||!nonEmpty(record.explanation.fr))throw new Error("READY Apostolate skill requires English and French explanations: "+id);
+    if(!Array.isArray(record.practice.en)||record.practice.en.length===0||!Array.isArray(record.practice.fr)||record.practice.fr.length===0)throw new Error("READY Apostolate skill requires bilingual practice steps: "+id);
+    if(!Array.isArray(record.avoid.en)||record.avoid.en.length===0||!Array.isArray(record.avoid.fr)||record.avoid.fr.length===0)throw new Error("READY Apostolate skill requires bilingual avoidances: "+id);
+    if(!APOSTOLATE_SOURCE_STRENGTHS.includes(record.sourceStrength))throw new Error("READY Apostolate skill requires a valid sourceStrength: "+id);
+    if(record.sourceIds.length===0)throw new Error("READY Apostolate skill requires resolved source IDs: "+id);
+    if(record.scenarioRefs.length===0||record.scenarioRefs.some(ref=>!scenarioSet.has(ref)))throw new Error("READY Apostolate skill requires valid scenarioRefs: "+id);
+  }
+  return Object.freeze({
+    ...record,
+    title:Object.freeze({...record.title}),
+    summary:Object.freeze({...record.summary}),
+    explanation:Object.freeze({...record.explanation}),
+    practice:Object.freeze({
+      en:Object.freeze([...(Array.isArray(record.practice.en)?record.practice.en:[])]),
+      fr:Object.freeze([...(Array.isArray(record.practice.fr)?record.practice.fr:[])]),
+    }),
+    avoid:Object.freeze({
+      en:Object.freeze([...(Array.isArray(record.avoid.en)?record.avoid.en:[])]),
+      fr:Object.freeze([...(Array.isArray(record.avoid.fr)?record.avoid.fr:[])]),
+    }),
+    sourceIds:Object.freeze([...record.sourceIds]),
+    scenarioRefs:Object.freeze([...record.scenarioRefs]),
+  });
+}
+
+export function auditApostolateSkill(record){
+  try{
+    makeApostolateSkill(record);
+    return Object.freeze({pass:true,issues:Object.freeze([])});
+  }catch(error){
+    return Object.freeze({pass:false,issues:Object.freeze([String(error?.message??error)])});
+  }
+}
+
 export function makeApostolateHandoff(input={}){
   const direction=String(input.direction??"").trim().toUpperCase();
   if(!Object.values(APOSTOLATE_HANDOFF_DIRECTIONS).includes(direction))throw new Error("Unknown Apostolate handoff direction");
@@ -156,8 +227,8 @@ export function makeApostolateHandoff(input={}){
   const reason=String(input.reason??"").trim();
   if(!fromId||!targetId||!reason)throw new Error("Apostolate handoff requires fromId, targetId and reason");
 
-  if(direction===APOSTOLATE_HANDOFF_DIRECTIONS.APOSTOLATE_TO_FORMATION&&!targetId.startsWith("learn.")){
-    throw new Error("Apostolate → Formation handoff must target the canonical learn.* namespace");
+  if(direction===APOSTOLATE_HANDOFF_DIRECTIONS.APOSTOLATE_TO_FORMATION&&!formationTargetSet.has(targetId)){
+    throw new Error("Apostolate → Formation handoff must target a surviving canonical Formation route");
   }
   if(direction===APOSTOLATE_HANDOFF_DIRECTIONS.FORMATION_TO_APOSTOLATE&&!scenarioSet.has(targetId)&&!skillSet.has(targetId)){
     throw new Error("Formation → Apostolate handoff must target a frozen scenario or APF skill");
