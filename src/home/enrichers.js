@@ -1,5 +1,6 @@
 import { getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { calendarIntelligenceForDate } from "../calendar/intelligence.js";
 
 export const HOME_ENRICHERS_VERSION="modular-home-enrichers-v1";
 export const HOME_ENRICHER_ICON_ASSET_IDS=Object.freeze({
@@ -27,7 +28,6 @@ const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
 const mins=d=>d.getHours()*60+d.getMinutes();
 
 function safeRule(win){return win?.AO_RULE_V411??win?.AO_RULE_V401??null}
-function safeYear(win){return win?.AO_LITURGICAL_YEAR_V384??null}
 function todayKey(now){return iso(now)}
 
 function mystery(state,d=new Date()){
@@ -134,37 +134,28 @@ function eventSub(state,event){
   return event?.kicker??L(state,"Liturgical observance","Observance liturgique");
 }
 
-function sourceEvents(state,win,d){
-  const out=[];
-  try{
-    for(const event of safeYear(win)?.eventsFor?.(iso(d))??[]){
-      const action=Array.isArray(event?.actions)?event.actions.find(x=>Array.isArray(x)&&x[0]):null;
-      out.push({
-        key:event.key,priority:Number(event.priority)||40,title:event.title,
-        sub:eventSub(state,event),route:action?.[0]??"learn.liturgical_year",
-        icon:/ember|rogation|candlemas|palm|holy-thursday|corpus/.test(String(event.key))?"church":"calendar",
-        source:true,
-      });
-    }
-  }catch{}
-  return out;
-}
-
-function weeklyEvent(state,d){
-  const dow=d.getDay(),first=d.getDate()<=7;
-  if(dow===0)return{key:"sunday-mass",priority:100,title:L(state,"Sunday Mass","Messe dominicale"),sub:L(state,"Sunday obligation","Obligation dominicale"),route:"mass.current",icon:"mass"};
-  if(dow===5&&first)return{key:"first-friday",priority:76,title:L(state,"First Friday","Premier vendredi"),sub:L(state,"Sacred Heart devotion","Dévotion au Sacré-Cœur"),route:"pray.visit_blessed_sacrament",icon:"heart"};
-  if(dow===6&&first)return{key:"first-saturday",priority:76,title:L(state,"First Saturday","Premier samedi"),sub:L(state,"Immaculate Heart devotion","Dévotion au Cœur Immaculé"),route:"pray.rosary",icon:"marian"};
-  if(dow===5)return{key:"friday",priority:50,title:L(state,"Friday devotion","Dévotion du vendredi"),sub:L(state,"Sacred Heart · prayer & penance","Sacré-Cœur · prière & pénitence"),route:"pray.visit_blessed_sacrament",icon:"heart"};
-  if(dow===6)return{key:"saturday",priority:50,title:L(state,"Saturday of Our Lady","Samedi de Notre-Dame"),sub:L(state,"Traditional Marian devotion","Dévotion mariale traditionnelle"),route:"pray.library",icon:"marian"};
-  return null;
+function intelligenceEvents(state,d){
+  const fr=lang(state)==="fr",date=iso(d);
+  let rows=[];
+  try{rows=[...calendarIntelligenceForDate(date,{fr}).events]}catch{}
+  return rows.map(event=>({
+    key:event.key,
+    priority:Number(event.priority)||40,
+    title:event.title,
+    sub:event.source==="traditional-year-v384"?eventSub(state,event):(event.summary||eventSub(state,event)),
+    route:event.route??"today.calendar",
+    icon:/ember|rogation|candlemas|palm|holy-thursday|corpus/.test(String(event.key))?"church"
+      :event.key==="first-friday"?"heart"
+      :event.key==="first-saturday"||event.key==="saturday"?"marian"
+      :event.kind==="novena"?"prayer"
+      :event.key==="sunday-mass"?"mass":"calendar",
+    source:event.source==="traditional-year-v384",
+    intelligence:true,
+  }));
 }
 
 function candidateForDate(state,win,d){
-  const items=sourceEvents(state,win,d);
-  const weekly=weeklyEvent(state,d);
-  if(weekly)items.push(weekly);
-  items.sort((a,b)=>b.priority-a.priority);
+  const items=intelligenceEvents(state,d).sort((a,b)=>b.priority-a.priority);
   if(d.getDay()===0){
     const named=items.find(x=>x.source&&x.priority>=70&&x.key!=="october");
     if(named)return {...named,priority:Math.max(102,named.priority),sub:`${L(state,"Sunday obligation","Obligation dominicale")} · ${named.sub}`};
@@ -192,7 +183,7 @@ function eventSlot(state,win,now){
     id:"event.calendar",kind:"event",role:L(state,"Upcoming","À venir"),when:L(state,"Calendar","Calendrier"),
     title:L(state,"Liturgical calendar","Calendrier liturgique"),
     sub:L(state,"See the next observance","Voir la prochaine observance"),
-    icon:"calendar",route:"learn.liturgical_year",date:iso(now),done:false,
+    icon:"calendar",route:"today.calendar",date:iso(now),done:false,
   });
 }
 

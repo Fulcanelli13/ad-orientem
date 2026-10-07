@@ -107,6 +107,7 @@ export function createHomeOwner(win=globalThis){
     const id=String(route??"");
     if(!id)return false;
     if(id==="mass.current")return win?.AO_APP_SHELL_V1?.navigate?.("mass")??false;
+    if(id==="today.calendar"||id==="calendar")return win?.AO_APP_SHELL_V1?.navigate?.("calendar")??false;
     if(id.startsWith("pray.")){
       try{const result=win?.AO_MODULES?.open?.(id);if(result)return result;}catch{}
       try{return win?.AO_PRAY_APP_V1?.open?.()??false;}catch{return false;}

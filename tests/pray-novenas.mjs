@@ -32,6 +32,9 @@ assert.match(runtime,/noCompletionTracking:true/,"N3 privacy rule for completion
 assert.match(runtime,/noIntentStorage:true/,"N3 privacy rule for intentions changed");
 assert.match(runtime,/FAIL_CLOSED_EXPLICIT_EN_WITNESS_OPTION/,"historical French witness policy changed");
 assert.match(runtime,/calendarStatus/,"calendar-aware Novena status disappeared");
+assert.match(runtime,/novenaStatusFor/,"Novenas stopped consuming the shared Calendar intelligence date semantics");
+assert.doesNotMatch(runtime,/function easter\(/,"Novenas reintroduced a private Easter calculator");
+assert.doesNotMatch(runtime,/function windowFor\(/,"Novenas reintroduced private novena date-window logic");
 assert.match(runtime,/canonicalReuse:\{ourFather:true,hailMary:true,gloryBe:true,loreto1962:true\}/,"canonical prayer reuse contract changed");
 assert.match(styles,/aoN1Hero/);
 assert.match(styles,/aoN1StageRail/);

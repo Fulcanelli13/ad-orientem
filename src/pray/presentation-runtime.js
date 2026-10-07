@@ -2,6 +2,7 @@ import "./canonical-data.js";
 import "./presentation-styles.js";
 import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
+import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -296,7 +297,7 @@ function selectedDateKey(){
 }
 function dateObj(key){const m=String(key||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?new Date(+m[1],+m[2]-1,+m[3],12,0,0):null}
 function fmtDate(key){const d=dateObj(key);if(!d)return key||L('No date selected','Aucune date sélectionnée');const weekday=new Intl.DateTimeFormat(isFr()?'fr-FR':'en-GB',{weekday:'long'}).format(d);return `${weekday} · ${formatDisplayDate(d)}`}
-function isFirstWeekday(key,weekday){const d=dateObj(key);return !!d&&d.getDay()===weekday&&d.getDate()<=7}
+const isFirstWeekday=calendarIsFirstWeekday;
 function paschal(){
  try{const c=window.AO_RULE_V411?.liturgicalContext?.(core());if(typeof c?.isEastertide==='boolean')return {ok:true,value:c.isEastertide}}
  catch{}
