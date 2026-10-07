@@ -13,7 +13,7 @@ const HERO_SELECTOR = Object.freeze({
   home: ".celebrationBlock",
   pray: ".aoP435930HomeIntro,.aoP435930Hero,.aoP435930WordHero,.aoP435930MeditationIntro",
   learn: ".aoLearnModHero",
-  calendar: ".aoCalSacredTime",
+  calendar: ".aoCalV2Hero,.aoCalSacredTime",
 });
 
 

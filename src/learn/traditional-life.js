@@ -173,6 +173,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
     if(!TRADITIONAL_LEARN_ROUTES[canonical])return false;
     if(canonical==="learn.seasonal_rites"){
       close();
+      win?.AO_CALENDAR_APP_V1?.setView?.("year");
       void win?.AO_APP_SHELL_V1?.navigate?.("calendar");
       return true;
     }

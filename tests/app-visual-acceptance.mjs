@@ -244,27 +244,62 @@ try{
   assert.equal(donorWeek.weekReady,true,"Calendar did not resolve the complete visible week");
   assert.equal(donorWeek.visibleWeek.length,7,"Calendar donor week cache does not contain seven dates");
   assert.equal(donorWeek.visibleWeek.every(x=>x.cached),true,"Calendar rail still contains unresolved placeholder dates after donor preload");
-  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1);
+  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),0,"Day view should not expose the date-picker input");
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-native]").count(),0);
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),1,"Calendar lost its sacred-time annual overview");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalIdentity").count(),1,"Calendar lost its single selected-feast identity");
-  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalObservance").count()>=7,"Calendar lost the touch observance rail");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalObservance[aria-current='date']").count(),1,"Calendar selected date is not uniquely identified");
-  const calendarDashboard=await page.evaluate(()=>({
-    wheel:document.querySelector("#ao-calendar-modular-root .aoCalYearWheel")?.getBoundingClientRect()?.width??0,
-    identity:document.querySelector("#ao-calendar-modular-root .aoCalIdentity h2")?.textContent?.trim()??"",
-    railScrollable:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalModRail");return x?x.scrollWidth>=x.clientWidth:false})(),
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),0,"obsolete decorative year wheel leaked into the Day view");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs").count(),1,"Calendar v2 four-surface navigation is missing");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Hero").count(),1,"Calendar Day lost its single selected-feast hero");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [data-cal-date]").count(),7,"Calendar Day lost its seven-day context strip");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [aria-current='date']").count(),1,"Calendar selected date is not uniquely identified");
+  const calendarDay=await page.evaluate(()=>({
+    version:globalThis.AO_CALENDAR_APP_V1?.status?.().version??null,
+    identity:document.querySelector("#ao-calendar-modular-root .aoCalV2Hero h2")?.textContent?.trim()??"",
+    season:document.querySelector("#ao-calendar-modular-root .aoCalV2Context h3")?.textContent?.trim()??"",
+    progress:document.querySelector("#ao-calendar-modular-root .aoCalV2Progress i")?.style?.width??"",
+    weekScrollable:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalV2Week");return x?x.scrollWidth>=x.clientWidth:false})(),
   }));
-  assert.ok(calendarDashboard.wheel>=120,"Calendar annual overview collapsed below phone-readable size");
-  assert.ok(calendarDashboard.identity.length>0,"Calendar selected feast identity is blank");
-  assert.equal(calendarDashboard.railScrollable,true,"Calendar observance rail is not touch-scrollable/snapping");
+  assert.equal(calendarDay.version,"modular-calendar-v2-liturgical-year","Calendar did not activate the v2 owner");
+  assert.ok(calendarDay.identity.length>0,"Calendar selected feast identity is blank");
+  assert.ok(calendarDay.season.length>0,"Calendar selected liturgical period is blank");
+  assert.match(calendarDay.progress,/\d+(?:\.\d+)?%/,"Calendar period progress is missing");
+  assert.equal(calendarDay.weekScrollable,true,"Calendar week context does not remain touch-scrollable on phone");
   const calendarFx=await page.evaluate(()=>({
-    hero:document.querySelector("#ao-calendar-modular-root .aoCalSacredTime")?.dataset?.aoPresentationFxHero??null,
+    hero:document.querySelector("#ao-calendar-modular-root .aoCalV2Hero")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFxArtScan??null,
   }));
-  assert.match(calendarFx.hero,/modular-presentation-fx-v3/,"Calendar Sacred Time hero did not receive recovered entry choreography");
+  assert.match(calendarFx.hero,/modular-presentation-fx-v3/,"Calendar v2 Day hero did not receive recovered entry choreography");
   assert.equal(calendarFx.rootScan,"legacy-v4312","Calendar modular root bypassed the approved v43.12 art loader");
-  await shot("02-calendar");
+  await shot("02-calendar-day");
+
+  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']").click();
+  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:3000});
+  const calendarYear=await page.evaluate(()=>({
+    ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect?.().width??0,
+    ringValue:document.querySelector("#ao-calendar-modular-root .aoCalV2RingCore strong")?.textContent?.trim()??"",
+    periods:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Timeline [data-cal-date]").length,
+    journeyCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail [data-cal-date]").length,
+    currentJourney:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail .current").length,
+    comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-date]").length,
+  }));
+  assert.ok(calendarYear.ringWidth>=220,"Calendar liturgical-year ring collapsed below phone-readable size");
+  assert.match(calendarYear.ringValue,/\d+(?:\.\d+)?%/,"Calendar year ring lost its computed percentage");
+  assert.equal(calendarYear.periods,9,"Calendar proportional year timeline lost one or more liturgical periods");
+  assert.equal(calendarYear.journeyCards,9,"Calendar year journey lost one or more liturgical periods");
+  assert.equal(calendarYear.currentJourney,1,"Calendar year journey does not uniquely identify the current period");
+  assert.ok(calendarYear.comingCards>=1,"Calendar year lost its Coming Next intelligence");
+  await shot("02b-calendar-year");
+
+  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").click();
+  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2IndexGrid",{state:"visible",timeout:3000});
+  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2IndexGrid [data-cal-index-date]").count()>=24,"Calendar year index is missing major celebrations");
+  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2IndexGrid").getByText(/Christ the King|Christ-Roi/).count()>=1,"Calendar year index lost Christ the King");
+  await shot("02c-calendar-index");
+
+  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']").click();
+  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:3000});
+  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1,"Calendar Date Picker lost direct date entry");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,"Calendar Date Picker lost its six-week month grid");
+  await shot("02d-calendar-picker");
 
   await page.locator("[data-ao-app-surface='pray']").click();
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
@@ -715,7 +750,7 @@ try{
   const seasonalAlias=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("learn.seasonal_rites",{returnContext:{surface:"learn"}}));
   assert.equal(seasonalAlias?.ok,true,"Seasonal compatibility route failed");
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:5000});
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),1,"Seasonal compatibility route did not reach the richer liturgical-year Calendar");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Ring").count(),1,"Seasonal compatibility route did not reach the Liturgical Year surface");
   await shot("04f-seasonal-year-alias");
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
