@@ -59,10 +59,12 @@ assert.equal(exactFinding?.classification,"MISSING_INTEGRATION");
 assert.equal(exactFinding?.status,"OPEN");
 assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
-assert.equal(exactDonor.version,"1.5.0");
+assert.equal(exactDonor.version,"1.6.0");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
 assert.deepEqual(exactDonor.openBlockers,[
   "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
+  "MISSING_PRIMARY_DONOR: Ad_Orientem_v3_4_14.html",
+  "MISSING_PRIMARY_DONOR: Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html",
 ]);
 assert.match(exactDonor.rule,/conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
 const fxFinding=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
