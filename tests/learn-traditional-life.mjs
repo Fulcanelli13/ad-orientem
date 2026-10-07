@@ -150,6 +150,11 @@ assert.match(runtime,/learn\.serve_mass.*learn\.serve_mass\.responses/s,"Low Mas
 assert.match(runtime,/data-ao-tradlearn-close/,"traditional Learn child shell lost donor Close control");
 assert.match(runtime,/ao-ui-close/,"traditional Learn Close control stopped using the canonical utility asset");
 assert.doesNotMatch(runtime,/Lay Companion/,"retired Lay Companion sub-brand returned");
+assert.match(runtime,/function card\(win,title,text,extra=""\)[\s\S]*<details class="aoLearnTradCard"/,"Formation guides are not scan-first accordions");
+assert.match(runtime,/aoLearnTradCard" open/,"Formation guide shell no longer opens the first actionable section by default");
+assert.match(runtime,/Start with the open section; expand only what you need next\./,"Formation guide scan-first instruction disappeared");
+assert.match(runtime,/aoLearnTradGuideHint/,"Formation guide hint styling hook disappeared");
+
 assert.match(runtime,/Formation/,"traditional Learn child shell lost Formation identity");
 assert.doesNotMatch(sickSection,/DISCERNMENT & ENGAGEMENT|Courtship is discernment|CANONICAL PREPARATION/,"Serious Illness regained misplaced Matrimony content");
 assert.doesNotMatch(runtime,/<span aria-hidden="true"><\/span><\/header>/,"traditional Learn child shell regressed to a blank trailing spacer");
@@ -157,7 +162,7 @@ assert.match(runtime,/canonical==="learn\.seasonal_rites"[\s\S]*navigate\?\.\("c
 assert.doesNotMatch(runtime,/AO_TRADITION_V38/,"historical Traditions monolith was restored as a runtime owner");
 assert.match(browser,/ensureTraditionalLearnRegistry/);
 assert.match(browser,/TRADITIONAL_LEARN_ROUTES\[id\]/);
-assert.match(presentation,/Traditional Catholic life/);
+assert.match(presentation,/Sacraments & Life Events/);
 assert.doesNotMatch(presentation,/id:"learn\.seasonal_rites"/,"final v38.4 duplicate seasonal discovery card returned to Learn");
 assert.match(assets,/"learn\.rites\.sick"\s*:\s*"ao-refined-help"/);
 assert.match(assets,/"learn\.rites\.baptism"\s*:\s*"ao-rich-guides"/);
