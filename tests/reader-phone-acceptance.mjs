@@ -98,13 +98,33 @@ try{
       current:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
     };
   },{x:box.x+box.width/2,y:box.y+box.height/2});
+  await page.evaluate(()=>{
+    window.__AO_BACK_EVENTS=[];
+    for(const type of ["pointerdown","touchstart","touchend","click"]){
+      document.addEventListener(type,event=>{
+        const t=event.target;
+        window.__AO_BACK_EVENTS.push({
+          type,
+          tag:t?.tagName??null,
+          nav:t?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,
+          cls:typeof t?.className==="string"?t.className:null,
+        });
+      },{capture:true,once:false});
+    }
+  });
   await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
   await page.waitForTimeout(350);
   const afterBack=await cardId();
-  const navDiag=await page.evaluate(()=>({
-    input:document.getElementById("ao-r17-native-reader-preview")?.dataset.aoLastNavInput??null,
-    result:document.getElementById("ao-r17-native-reader-preview")?.dataset.aoLastNavResult??null,
-  }));
+  const navDiag=await page.evaluate(({x,y})=>{
+    const root=document.querySelector("[data-ao-reader-shell]")?.parentElement;
+    const post=document.elementFromPoint(x,y);
+    return {
+      input:root?.dataset.aoLastNavInput??null,
+      result:root?.dataset.aoLastNavResult??null,
+      events:window.__AO_BACK_EVENTS??[],
+      postHit:{tag:post?.tagName??null,nav:post?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,cls:post?.className??null},
+    };
+  },{x:box.x+box.width/2,y:box.y+box.height/2});
   assert.equal(afterBack,initialCard,
     "Back touch did not restore initial card: "+JSON.stringify({initialCard,afterNext,afterBack,backHit,navDiag}));
 
