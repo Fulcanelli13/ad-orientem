@@ -51,6 +51,90 @@
         "SHR-PARAY-MARGUERITE"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:chartres-notre-dame",
+      "place_id": "place:FR:chartres-notre-dame",
+      "name": "Cathédrale Notre-Dame de Chartres",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame / Blessed Virgin Mary",
+      "origin_summary": "Historic cathedral and Marian pilgrimage destination; the annual Notre-Dame de Chrétienté Pentecost pilgrimage concludes at the cathedral.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-CHARTRES-CATHEDRAL",
+        "PIL-CHARTRES-NDC"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:sainte-anne-d-auray",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "name": "Sanctuaire de Sainte-Anne-d'Auray",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Anne",
+      "origin_summary": "Breton shrine centered on devotion to Saint Anne, with an annual pilgrimage cycle and the Grand Pardon of 25–26 July.",
+      "associated_saints": [
+        "Saint Anne"
+      ],
+      "source_ids": [
+        "SHR-SAINTE-ANNE-IDENTITY",
+        "PIL-SAINTE-ANNE-GRAND-PARDON"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IE:knock",
+      "place_id": "place:IE:knock-shrine",
+      "name": "Knock Shrine",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Knock",
+      "origin_summary": "International Eucharistic and Marian shrine associated with the silent apparition at Knock on 21 August 1879.",
+      "associated_saints": [
+        "Saint Joseph",
+        "Saint John the Evangelist"
+      ],
+      "source_ids": [
+        "SHR-KNOCK-IDENTITY",
+        "PIL-KNOCK-ANNIVERSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IE:lough-derg",
+      "place_id": "place:IE:lough-derg-station-island",
+      "name": "Lough Derg — Sanctuary of Saint Patrick",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Patrick",
+      "origin_summary": "Historic penitential pilgrimage sanctuary on Station Island, known for the traditional Three Day Pilgrimage of prayer, vigil and fasting.",
+      "associated_saints": [
+        "Saint Patrick"
+      ],
+      "source_ids": [
+        "SHR-LOUGH-DERG-CONTACT",
+        "PIL-LOUGH-DERG-THREE-DAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:MU:pere-laval",
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "name": "Centre Père Laval",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Blessed Jacques-Désiré Laval",
+      "origin_summary": "Diocesan pilgrimage destination at Sainte-Croix centered on the tomb of Blessed Jacques-Désiré Laval.",
+      "associated_saints": [
+        "Blessed Jacques-Désiré Laval"
+      ],
+      "source_ids": [
+        "SHR-PERE-LAVAL-CENTRE",
+        "PIL-PERE-LAVAL-ANNUAL"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -118,6 +202,119 @@
         "SHR-PARAY-SACRED-HEART"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:chartres-pentecost",
+      "name": "Notre-Dame de Chrétienté Pentecost pilgrimage to Chartres",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:chartres-notre-dame",
+      "route_ids": [
+        "route:FR:paris-chartres-pentecost"
+      ],
+      "temporal_link_ids": [
+        "temporal:chartres:pentecost-monday"
+      ],
+      "scope_note": "Annual three-day walking pilgrimage from Saint-Sulpice in Paris to Notre-Dame Cathedral in Chartres over the Pentecost weekend.",
+      "source_ids": [
+        "PIL-CHARTRES-NDC",
+        "SHR-CHARTRES-CATHEDRAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:sainte-anne-d-auray-destination",
+      "name": "Pilgrimage to Sainte-Anne-d'Auray",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:sainte-anne-d-auray",
+      "route_ids": [
+        "route:FR:sainte-anne-chemin-nicolazic"
+      ],
+      "temporal_link_ids": [],
+      "scope_note": "Open Breton pilgrimage destination with an annual cycle of organized pilgrimages.",
+      "source_ids": [
+        "SHR-SAINTE-ANNE-IDENTITY",
+        "PIL-SAINTE-ANNE-CHEMIN"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:sainte-anne-grand-pardon",
+      "name": "Grand Pardon of Sainte-Anne-d'Auray",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:sainte-anne-d-auray",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:sainte-anne:grand-pardon"
+      ],
+      "scope_note": "Annual Grand Pardon held around the feast of Saint Anne, with principal observances on 25–26 July.",
+      "source_ids": [
+        "PIL-SAINTE-ANNE-GRAND-PARDON"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IE:knock-destination",
+      "name": "Pilgrimage to Knock Shrine",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IE:knock",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "International Marian and Eucharistic pilgrimage destination receiving organized pilgrimages throughout its pilgrimage season.",
+      "source_ids": [
+        "SHR-KNOCK-IDENTITY",
+        "PIL-KNOCK-ORGANISERS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IE:knock-apparition-anniversary",
+      "name": "Knock Apparition anniversary pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IE:knock",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:knock:apparition-anniversary"
+      ],
+      "scope_note": "Annual 21 August commemoration of the 1879 Knock apparition, including the Witness Walk and Mass of thanksgiving.",
+      "source_ids": [
+        "PIL-KNOCK-ANNIVERSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IE:lough-derg-three-day",
+      "name": "Lough Derg Three Day Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IE:lough-derg",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:lough-derg:three-day-season"
+      ],
+      "scope_note": "Traditional penitential pilgrimage on Station Island involving prayer, bare feet, vigil and fasting; the season ends on 15 August each year.",
+      "source_ids": [
+        "PIL-LOUGH-DERG-THREE-DAY",
+        "SHR-LOUGH-DERG-CONTACT"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:MU:pere-laval-annual",
+      "name": "Annual pilgrimage to the tomb of Blessed Père Laval",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:MU:pere-laval",
+      "route_ids": [
+        "route:MU:pere-laval-saint-louis",
+        "route:MU:pere-laval-saint-joseph"
+      ],
+      "temporal_link_ids": [
+        "temporal:pere-laval:feast"
+      ],
+      "scope_note": "Annual diocesan pilgrimage to Sainte-Croix around the feast of Blessed Jacques-Désiré Laval, with documented walking departures from Port-Louis and Terre-Rouge.",
+      "source_ids": [
+        "PIL-PERE-LAVAL-ANNUAL",
+        "SHR-PERE-LAVAL-CENTRE"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -148,6 +345,66 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "SHR-PARAY-PILGRIM-PATH"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:FR:paris-chartres-pentecost",
+      "name": "Saint-Sulpice, Paris to Notre-Dame de Chartres",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Église Saint-Sulpice, Paris",
+      "destination_place_id": "place:FR:chartres-notre-dame",
+      "stage_count": 3,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-CHARTRES-NDC"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:FR:sainte-anne-chemin-nicolazic",
+      "name": "Chemin Nicolazic — Sainte-Anne-d'Auray",
+      "route_type": "ON_SITE_PATH",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Maison Nicolazic, Sainte-Anne-d'Auray",
+      "destination_place_id": "place:FR:sainte-anne-d-auray",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-SAINTE-ANNE-CHEMIN"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:MU:pere-laval-saint-louis",
+      "name": "Cathédrale Saint-Louis to Centre Père Laval",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Cathédrale Saint-Louis, Port-Louis",
+      "destination_place_id": "place:MU:pere-laval-sainte-croix",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-PERE-LAVAL-ANNUAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:MU:pere-laval-saint-joseph",
+      "name": "Église Saint-Joseph, Terre-Rouge to Centre Père Laval",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Église Saint-Joseph, Terre-Rouge",
+      "destination_place_id": "place:MU:pere-laval-sainte-croix",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-PERE-LAVAL-ANNUAL"
       ],
       "confidence": "HIGH"
     }
@@ -191,6 +448,75 @@
       "source_event_label": "Fêtes du Sacré-Cœur",
       "source_ids": [
         "SHR-PARAY-SACRED-HEART"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:chartres:pentecost-monday",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:FR:chartres-pentecost",
+      "relation": "LITURGICAL_DAY",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "liturgical.pentecost_monday",
+      "source_event_label": "Pentecost pilgrimage concluding at Chartres on Pentecost Monday",
+      "source_ids": [
+        "PIL-CHARTRES-NDC"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:sainte-anne:grand-pardon",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:FR:sainte-anne-grand-pardon",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.saint_anne",
+      "source_event_label": "Grand Pardon of Sainte-Anne-d'Auray",
+      "source_ids": [
+        "PIL-SAINTE-ANNE-GRAND-PARDON"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:knock:apparition-anniversary",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:IE:knock-apparition-anniversary",
+      "relation": "SOURCE_EVENT",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.knock_apparition_anniversary",
+      "source_event_label": "Anniversary of the Knock Apparition",
+      "source_ids": [
+        "PIL-KNOCK-ANNIVERSARY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:lough-derg:three-day-season",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:IE:lough-derg-three-day",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Traditional Three Day Pilgrimage season",
+      "source_ids": [
+        "PIL-LOUGH-DERG-THREE-DAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:pere-laval:feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:MU:pere-laval-annual",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.blessed_jacques_desire_laval",
+      "source_event_label": "Feast and annual pilgrimage of Blessed Jacques-Désiré Laval",
+      "source_ids": [
+        "PIL-PERE-LAVAL-ANNUAL"
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"

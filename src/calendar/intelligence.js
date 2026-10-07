@@ -59,6 +59,35 @@ export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
     priority:72,
     sourceIds:Object.freeze(["SHR-PARAY-SACRED-HEART"]),
   }),
+  "feast.saint_anne":Object.freeze({
+    key:"feast.saint_anne",
+    title:Object.freeze({en:"Saint Anne",fr:"Sainte Anne"}),
+    schedule:Object.freeze({type:"FIXED",month:7,day:26}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:70,
+    sourceIds:Object.freeze(["PIL-SAINTE-ANNE-GRAND-PARDON"]),
+  }),
+  "observance.knock_apparition_anniversary":Object.freeze({
+    key:"observance.knock_apparition_anniversary",
+    title:Object.freeze({en:"Anniversary of the Knock Apparition",fr:"Anniversaire de l’apparition de Knock"}),
+    schedule:Object.freeze({type:"FIXED",month:8,day:21}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:66,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["PIL-KNOCK-ANNIVERSARY"]),
+  }),
+  "feast.blessed_jacques_desire_laval":Object.freeze({
+    key:"feast.blessed_jacques_desire_laval",
+    title:Object.freeze({en:"Blessed Jacques-Désiré Laval",fr:"Bienheureux Jacques-Désiré Laval"}),
+    schedule:Object.freeze({type:"FIXED",month:9,day:9}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:68,
+    tags:Object.freeze(["LOCAL_LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["PIL-PERE-LAVAL-ANNUAL"]),
+  }),
 });
 
 function semanticDateForDefinition(def,year){
@@ -93,7 +122,7 @@ export function calendarSemanticEvent(key,year,{fr=false}={}){
     priority:def.priority,
     route:def.route,
     exploreLens:def.exploreLens,
-    tags:Object.freeze(["LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    tags:Object.freeze([...(def.tags??["LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"])]),
     sourceIds:def.sourceIds,
     source:"calendar-semantic-registry",
   });
