@@ -86,6 +86,101 @@
       "codes": {}
     }
   ],
-  "places": [],
+  "places": [
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de Lourdes",
+        "aliases": [
+          "Sanctuary of Our Lady of Lourdes"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "1 avenue Mgr Théas",
+        "line2": null,
+        "postal_code": "65108",
+        "city": "Lourdes",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "1 avenue Mgr Théas, 65108 Lourdes Cedex, France"
+      },
+      "source_ids": [
+        "SHR-LOURDES-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de Laghet",
+        "aliases": [
+          "Notre-Dame de Laghet"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Route de Laghet",
+        "line2": null,
+        "postal_code": "06340",
+        "city": "La Trinité",
+        "region": "Alpes-Maritimes",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Route de Laghet, 06340 La Trinité, France"
+      },
+      "source_ids": [
+        "SHR-LAGHET-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "name": {
+        "official": "Sanctuaire du Sacré-Cœur de Paray-le-Monial",
+        "aliases": [
+          "Sanctuaire du Sacré-Cœur",
+          "Sacred Heart Sanctuary of Paray-le-Monial"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Place du Cardinal Perraud",
+        "line2": null,
+        "postal_code": "71600",
+        "city": "Paray-le-Monial",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place du Cardinal Perraud, 71600 Paray-le-Monial, France"
+      },
+      "source_ids": [
+        "SHR-PARAY-CONTACT"
+      ]
+    }
+  ],
   "directoryPlaceLinks": []
 }
