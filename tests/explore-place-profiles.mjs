@@ -29,20 +29,43 @@ const records=joinDirectoryRecords({
     diocese:{name:"Archidiocèse de Paris"},
     contact:{phone:[],email:[],website:["https://example.org"],schedule_url:["https://example.org/mass"]},
     source_ids:["src-fssp-paris"]
+  },{
+    venue_id:"ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",
+    name:{official:"Nne Enyemaka Shrine Umuaka",alternate:[]},
+    venue_type:"other",
+    address:{formatted:"P.O. Box 605 - Umuaka Imo State - Nigeria",city:"Umuaka",country_code:"NG"},
+    geo:{
+      lat:5.6769512,lng:7.0243016,precision:"street",geocoding_source:"OSM_NOMINATIM",
+      source_url:"https://nominatim.openstreetmap.org/",source_ref:"osm:way:547843649",
+      matched_country_code:"NG",geocoded_at:"2026-10-07T11:45:46.764Z",
+      attribution:"© OpenStreetMap contributors, ODbL 1.0",match_score:0.65,query_fingerprint:"umuaka-fixture"
+    },
+    diocese:{name:"Orlu"},
+    contact:{phone:[],email:[],website:["https://fsspnigeria.org/"],schedule_url:["https://fsspnigeria.org/"]},
+    source_ids:["src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria"]
   }],
   ministries:[{
     ministry_id:"m-fssp",venue_id:"ao-fssp-paris",community_id:"FSSP",relationship:"served_by",
     liturgical_usage:{family:"ROMAN",books:"1962"},source_ids:["src-fssp-paris"]
+  },{
+    ministry_id:"m-fssp-umuaka",venue_id:"ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",community_id:"FSSP",relationship:"served_by",
+    liturgical_usage:{family:"ROMAN",books:"1962"},source_ids:["src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria"]
   }],
   schedules:[{
     schedule_id:"s-fssp",ministry_id:"m-fssp",service_type:"MASS",mass_type:"SUNG",
     payload:{raw:"Sunday 10:30 Sung Mass"},source_ids:["src-fssp-paris"]
+  },{
+    schedule_id:"s-fssp-umuaka",ministry_id:"m-fssp-umuaka",service_type:"MASS",mass_type:"LOW",
+    payload:{raw:"Sunday 07:00 Traditional Latin Mass"},source_ids:["src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria"]
   }],
-  sources:[{source_id:"src-fssp-paris",url:"https://example.org/mass",source_type:"COMMUNITY_OFFICIAL"}],
+  sources:[
+    {source_id:"src-fssp-paris",url:"https://example.org/mass",source_type:"COMMUNITY_OFFICIAL"},
+    {source_id:"src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",url:"https://fsspnigeria.org/",source_type:"COMMUNITY_OFFICIAL"}
+  ],
   communityProfiles:[{communityId:"FSSP",communionProfile:{pope_named_in_canon:"YES"}}]
 });
 
-function buildDataset(directoryPlaceLinks=[]){
+function buildDataset(directoryPlaceLinks=geography.directoryPlaceLinks){
   return {
     directory:{
       records,
@@ -76,7 +99,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,28,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,36,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -271,6 +294,51 @@ assert.ok(holywellChurch);
 assert.equal(holywellChurch.counts.shrines,0);
 assert.equal(holywellChurch.counts.pilgrimages,0);
 assert.equal(holywellChurch.counts.tlm,0,"unresolved Holywell parish candidate leaked into exact-place TLM projection");
+
+const penrose=explorePlaceProfile(profiles,"place:AU:penrose-park");
+assert.ok(penrose);
+assert.equal(penrose.counts.shrines,1);
+assert.equal(penrose.counts.pilgrimages,1);
+assert.equal(penrose.map_publishable,true);
+
+const marianValley=explorePlaceProfile(profiles,"place:AU:marian-valley");
+assert.ok(marianValley);
+assert.equal(marianValley.map_publishable,true);
+assert.equal(marianValley.calendar.length,0);
+
+const peterChanel=explorePlaceProfile(profiles,"place:NZ:st-peter-chanel-russell");
+assert.ok(peterChanel);
+assert.equal(peterChanel.counts.shrines,1);
+assert.equal(peterChanel.counts.pilgrimages,1);
+assert.ok(peterChanel.counts.traditions>=1);
+assert.ok(peterChanel.calendar.some(row=>row.semantic_key==="feast.saint_peter_chanel"&&row.date==="2027-04-28"));
+
+const pukekaraka=explorePlaceProfile(profiles,"place:NZ:pukekaraka-otaki");
+assert.ok(pukekaraka);
+assert.equal(pukekaraka.counts.shrines,1);
+assert.equal(pukekaraka.counts.pilgrimages,1);
+
+const ugwogo=explorePlaceProfile(profiles,"place:NG:ugwogo-nike-national-marian-shrine");
+assert.ok(ugwogo);
+assert.ok(ugwogo.counts.traditions>=1);
+assert.ok(ugwogo.calendar.some(row=>row.semantic_key==="feast.our_lady_perpetual_help"&&row.date==="2027-06-27"));
+
+const umuaka=explorePlaceProfile(profiles,"place:NG:nne-enyemaka-umuaka");
+assert.ok(umuaka);
+assert.equal(umuaka.map_publishable,true);
+assert.equal(umuaka.counts.tlm,1,"confirmed FSSP Umuaka Directory→Place bridge did not surface exactly one TLM venue");
+assert.equal(umuaka.exact_tlm_link_state,"VERIFIED");
+assert.equal(umuaka.tlm[0].item_id,"tlm:ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria");
+
+const namugongo=explorePlaceProfile(profiles,"place:UG:namugongo-martyrs");
+assert.ok(namugongo);
+assert.ok(namugongo.counts.traditions>=1);
+assert.ok(namugongo.calendar.some(row=>row.semantic_key==="feast.uganda_martyrs"&&row.date==="2027-06-03"));
+
+const munyonyo=explorePlaceProfile(profiles,"place:UG:munyonyo-martyrs");
+assert.ok(munyonyo);
+assert.ok(munyonyo.counts.traditions>=1);
+assert.ok(munyonyo.calendar.some(row=>row.semantic_key==="feast.uganda_martyrs"&&row.date==="2027-06-03"));
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"})[0];
 assert.equal(placeIdForExploreItem(lourdesShrine),lourdes.place_id);
