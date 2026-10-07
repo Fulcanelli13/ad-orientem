@@ -43,6 +43,18 @@ assert.doesNotMatch(productionIndex,/data-ao-r17-icon-bridge/,
 assert.doesNotMatch(productionIndex,/AO_EMERGENCY_STABLE_V4333|ao-v4333-emergency-stable-(?:css|js)/,
   "embedded v43.33 emergency runtime returned to production index");
 
+
+const massReaderGate=readFileSync("src/mass/reader-gate.js","utf8");
+const massBrowserEntry=readFileSync("src/mass/browser-entry.js","utf8");
+assert.match(massReaderGate,/READER_UI_MODES\s*=\s*Object\.freeze\(\[["']NATIVE["']\]\)/,
+  "Mass reader gate no longer declares one native renderer");
+assert.doesNotMatch(massReaderGate,/\["NATIVE"\s*,\s*"LEGACY"|\bSHADOW\b.*return\s+["']SHADOW["']/,
+  "legacy/shadow Mass renderer selection returned");
+assert.doesNotMatch(massBrowserEntry,/\.startLive\s*\(|runReaderShadowAudit|LEGACY_EXPLICIT_ROLLBACK|LEGACY_SHADOW_AUDIT/,
+  "browser entry regained an executable legacy/shadow Mass renderer");
+assert.match(massBrowserEntry,/presentationOwner:\s*"R17_NATIVE_PRODUCTION"/,
+  "browser entry lost the single definitive presentation owner marker");
+
 const baseline=readFileSync(".github/workflows/baseline-integrity.yml","utf8");
 assert.match(baseline,/contents:\s*read/i,"baseline verification is not read-only");
 assert.match(baseline,/Frozen v43\.33 verified as historical baseline only/i,
@@ -54,4 +66,4 @@ assert.match(readme,/archive\/2026-10-04-pre-hygiene/,
 assert.doesNotMatch(readme,/retained under `field\/2026-10-04\/`/,
   "README still claims the field snapshot lives in production main");
 
-console.log("production tree hygiene: PASS — no legacy mutators, emergency v43.33 runtime, duplicate Mass entry, or inline icon bridge remain.");
+console.log("production tree hygiene: PASS — one native Mass renderer, no legacy/shadow execution path, no emergency runtime, no duplicate Mass entry.");

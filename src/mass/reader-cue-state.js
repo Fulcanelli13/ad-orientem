@@ -10,6 +10,7 @@ export const READER_CUE_FILES=Object.freeze({
   postures:"reader-postures.v1.json",
   positions:"reader-priest-positions.v1.json",
   voices:"reader-priest-voices.v1.json",
+  actions:"reader-priest-actions.v1.json",
 });
 
 const EXPECTED=Object.freeze({
@@ -18,6 +19,7 @@ const EXPECTED=Object.freeze({
   postures:Object.freeze({schema:"ao-r17-reader-postures-v1",count:23}),
   positions:Object.freeze({schema:"ao-r17-reader-priest-positions-v1",count:49}),
   voices:Object.freeze({schema:"ao-r17-reader-priest-voices-v1",count:126}),
+  actions:Object.freeze({schema:"ao-r17-reader-priest-actions-v1",count:77}),
 });
 
 const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
@@ -97,6 +99,7 @@ export function validateReaderCueRegistries(registries,sungCorpus){
   validateCueItems(registries.postures.items,"postures",sortIndex,{allowNullCue:true,idField:"id"});
   validateCueItems(registries.positions.items,"positions",sortIndex);
   validateCueItems(registries.voices.items,"voices",sortIndex);
+  validateCueItems(registries.actions.items,"actions",sortIndex);
   return Object.freeze({
     sourceSha256:SOURCE_SHA,
     cueCount:sortIndex.size,
@@ -105,6 +108,7 @@ export function validateReaderCueRegistries(registries,sungCorpus){
     postures:registries.postures.items.length,
     positions:registries.positions.items.length,
     voices:registries.voices.items.length,
+    actions:registries.actions.items.length,
   });
 }
 
@@ -222,6 +226,18 @@ function sourceResponse(item){
   });
 }
 
+function sourcePriestAction(item){
+  if(!item)return null;
+  return Object.freeze({
+    label:item.label,
+    action:item.label,
+    owner:"R17_V180_PRIEST_ACTION_SOURCE",
+    cueId:item.cueId,
+    transient:true,
+    condition:item.condition??null,
+  });
+}
+
 function sourcePosition(item){
   if(!item)return null;
   return Object.freeze({
@@ -274,6 +290,7 @@ export function createReaderCueStateController({
 
   const gestures=exactByCue(registries.gestures.items);
   const responses=exactByCue(registries.responses.items);
+  const actions=exactByCue(registries.actions.items);
   const positions=transitionList(registries.positions.items,sortIndex);
   const voices=transitionList(registries.voices.items,sortIndex);
   const cuePostures=transitionList(
@@ -287,20 +304,20 @@ export function createReaderCueStateController({
       supported:false,
       reason:"SUNG_CUE_PROJECTION_NOT_CERTIFIED_FOR_"+(form||"UNKNOWN_FORM"),
       cueId:cueId??null,
-      gesture:null,response:null,priestPosition:null,priestVoice:null,posture:null,
+      gesture:null,response:null,priestPosition:null,priestVoice:null,priestAction:null,posture:null,
       ownership:Object.freeze({
         gesture:"LEGACY_FALLBACK",response:"LEGACY_FALLBACK",
         priestPosition:"LEGACY_FALLBACK",priestVoice:"LEGACY_FALLBACK",
-        posture:"LEGACY_FALLBACK",
+        priestAction:"R17_FAIL_CLOSED",posture:"LEGACY_FALLBACK",
       }),
     });
     if(!sortIndex.has(String(cueId??"")))return Object.freeze({
       supported:true,reason:"UNKNOWN_OR_SYNTHETIC_CUE",cueId:cueId??null,
-      gesture:null,response:null,priestPosition:null,priestVoice:null,posture:null,
+      gesture:null,response:null,priestPosition:null,priestVoice:null,priestAction:null,posture:null,
       ownership:Object.freeze({
         gesture:"R17_FAIL_CLOSED",response:"R17_FAIL_CLOSED",
         priestPosition:"R17_FAIL_CLOSED",priestVoice:"R17_FAIL_CLOSED",
-        posture:"R17_FAIL_CLOSED",
+        priestAction:"R17_FAIL_CLOSED",posture:"R17_FAIL_CLOSED",
       }),
     });
 
@@ -315,6 +332,10 @@ export function createReaderCueStateController({
     const response= responseItem && conditionPasses(responseItem.condition,activeConditions)
       ? sourceResponse(responseItem) : null;
 
+    const actionItem=actions.get(cueId);
+    const priestAction=actionItem && conditionPasses(actionItem.condition,activeConditions)
+      ? sourcePriestAction(actionItem) : null;
+
     const positionItem=latestPassing(positions,activeSort,activeConditions);
     const voiceItem=latestPassing(voices,activeSort,activeConditions);
     const postureItem=latestPassing(cuePostures,activeSort,activeConditions);
@@ -327,12 +348,14 @@ export function createReaderCueStateController({
       gesture:gesture?.label ? gesture : null,
       gestureAdvisory:gesture && !gesture.label ? gesture : null,
       response,
+      priestAction,
       priestPosition:sourcePosition(positionItem),
       priestVoice:sourceVoice(voiceItem),
       posture:sourcePosture(postureItem),
       ownership:Object.freeze({
         gesture:gesture?.label ? "R17_CUE_NATIVE" : gesture ? "R17_SOURCE_ADVISORY_FAIL_CLOSED" : "R17_EXACT_CUE_NONE",
         response:response ? "R17_CUE_NATIVE" : "R17_EXACT_CUE_NONE",
+        priestAction:priestAction ? "R17_V180_EXACT_CUE_ACTION" : "R17_EXACT_CUE_NONE",
         priestPosition:positionItem ? "R17_CUE_NATIVE_PERSISTENT" : "R17_FAIL_CLOSED",
         priestVoice:voiceItem ? "R17_CUE_NATIVE_RUN" : "R17_FAIL_CLOSED",
         posture:postureItem ? "R17_CUE_NATIVE_PERSISTENT" : "R17_PROFILE_OR_ANCHOR_UNRESOLVED",

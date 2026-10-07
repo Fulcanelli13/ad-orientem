@@ -1,6 +1,6 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.1.0",
+  "version": "1.4.0",
   "releaseBlocker": null,
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
@@ -26,7 +26,7 @@
     "mass": {
       "status": "CERTIFIED",
       "currentOwner": "src/mass",
-      "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
+      "reference": "V1_80_EXECUTABLE_EUCHARISTIC_CARD_DONOR_PLUS_DIRECT_V183_EVIDENCE",
       "mustPreserve": [
         "LIVE focus hierarchy",
         "ribbons and rails",
@@ -36,27 +36,36 @@
         "cinematic moments without reopening liturgical runtime"
       ],
       "evidence": [
+        "data/presentation/mass-definitive-convergence.v1.json",
+        "data/presentation/mass-v180-donor-parity.v1.json",
+        "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
+        "src/mass/reader-dom.js",
+        "src/mass/reader-gate.js",
+        "src/mass/browser-entry.js",
+        "tests/mass-v180-donor-parity.mjs",
         "tests/mass-visual-acceptance.mjs",
-        "Visual acceptance workflow 37288227688 at 390x844 touch geometry",
-        "06-mass-live-opening.png",
-        "07-mass-live-consecration.png",
-        "tests/app-shell-journey-e2e.mjs",
-        "Visual acceptance workflow 37298926233",
-        "R17 Mass convergence workflow 37298926238",
-        "App convergence workflow 37298926228"
+        "tests/reader-phone-acceptance.mjs",
+        "tests/production-tree-hygiene.mjs"
       ],
-      "observedRegressions": [],
-      "recoveryPass": "MASS_UI_V6_MODE_SWITCH_CERTIFIED",
+      "observedRegressions": [
+        "production reader expanded into browser-width dashboard geometry on wide viewports",
+        "mode selector became three full-width tabs rather than compact donor control",
+        "LIVE ritual rails disappeared when channels were inactive instead of remaining as dim state surfaces",
+        "centre reader regained giant bordered card chrome",
+        "focus muting made surrounding prayer text unreadably dark",
+        "navigation became a full-width footer instead of latent boundary controls",
+        "Schola presentation became a full-width status strip"
+      ],
+      "recoveryPass": "MASS_V180_DEFINITIVE_NATIVE_CERTIFIED",
       "recoveryTargets": [
-        "collapse inactive cue rails without changing cue ownership",
-        "move Schola from narrow right rail to dedicated readable dock",
-        "make Host/Chalice Consecration Latin-prominent with vernacular subordinate",
-        "render action rubrics as rubrics rather than ordinary prayer prose",
-        "suppress duplicate card title when state ribbon already owns the same title",
-        "surface short Guide rubric while retaining deeper Guide popover",
-        "move faithful posture to the left state ribbon and priest position/action to the right",
-        "restore approximately 39 percent fluid focus-zone presentation",
-        "visually distinguish locked mode selector state"
+        "v1.80 Home / current-section / Mass-preferences primary ribbon",
+        "v1.79-v1.80 YOU / GUIDE / PRIEST state ribbon",
+        "icon-first semantic ritual rails with text fallback only when certified action art is unavailable",
+        "transparent scrolling centre reader with source-backed fluid focus",
+        "dedicated Schola stream with speed/pause/translation lifecycle",
+        "exact ritual-word salience from canonical anchorLat",
+        "distinct Host/Chalice Eucharistic cinematics and held bell salience",
+        "48 visible LIVE product steps over 39 canonical source steps without historical v1.83 ID claim"
       ],
       "certifiedPass": "MASS_UI_V1",
       "certifiedEvidence": [
@@ -198,6 +207,18 @@
         "Visual acceptance workflow 37325466930",
         "R17 Mass convergence workflow 37325466725",
         "App convergence workflow 37325466826"
+      ],
+      "nonBlockingAssetHygiene": [
+        "priest-action semantics remain exact and source-backed; action artwork with unavailable certified frozen bytes fails closed to text rather than borrowing position/provisional art"
+      ],
+      "certification": {
+        "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
+        "r17MassConvergenceRun": 37563706320,
+        "appConvergenceRun": 37563706129,
+        "visualAcceptanceRun": 37563706157
+      },
+      "postMergeValidation": [
+        "deployed representative-checkpoint comparison against v1.80"
       ]
     },
     "pray": {

@@ -13,13 +13,14 @@ const registries=Object.freeze({
   postures:load("../data/presentation/reader-postures.v1.json"),
   positions:load("../data/presentation/reader-priest-positions.v1.json"),
   voices:load("../data/presentation/reader-priest-voices.v1.json"),
+  actions:load("../data/presentation/reader-priest-actions.v1.json"),
 });
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 
 const audit=validateReaderCueRegistries(registries,sung);
 assert.deepEqual(
-  {cues:audit.cueCount,gestures:audit.gestures,responses:audit.responses,postures:audit.postures,positions:audit.positions,voices:audit.voices},
-  {cues:279,gestures:59,responses:23,postures:23,positions:49,voices:126}
+  {cues:audit.cueCount,gestures:audit.gestures,responses:audit.responses,postures:audit.postures,positions:audit.positions,voices:audit.voices,actions:audit.actions},
+  {cues:279,gestures:59,responses:23,postures:23,positions:49,voices:126,actions:77}
 );
 
 assert.equal(conditionPasses(null,new Set()),true);
@@ -75,6 +76,13 @@ state=ctrl.project("AO.SM.C0181");
 assert.ok(state.gesture);
 assert.doesNotMatch(state.gesture.action,/Sign of the Cross/i,"Chalice elevation invented a cross");
 assert.match(state.gesture.action,/Chalice/i);
+
+assert.equal(ctrl.project("AO.SM.C0174").priestAction?.label,"ELEVATES HOST");
+assert.equal(ctrl.project("AO.SM.C0181").priestAction?.label,"ELEVATES CHALICE");
+assert.equal(ctrl.project("AO.SM.C0161").priestAction,null,"action lane invented an unsourced action");
+assert.equal(ctrl.project("AO.SM.C0040",{conditions:[]}).priestAction,null,"incense action ignored its condition");
+assert.equal(ctrl.project("AO.SM.C0040",{conditions:["INCENSE_ENABLED"]}).priestAction?.label,"BLESSES INCENSE");
+assert.equal(ctrl.project("AO.SM.C0276").priestAction,null,"sedilia position transition duplicated into priest-action lane");
 
 state=ctrl.project("AO.SM.C0265");
 assert.match(state.gesture.action,/Sign of the Cross/i);
@@ -133,4 +141,4 @@ state=low.project("AO.SM.C0068");
 assert.equal(state.gesture,null);
 assert.match(state.reason,/NOT_CERTIFIED_FOR_LOW/);
 
-console.log("reader cue state: PASS — exact source cues, conditional fail-closed, persistent route/voice/posture transitions.");
+console.log("reader cue state: PASS — exact source cues, v1.80 priest actions, conditional fail-closed, persistent route/voice/posture transitions.");

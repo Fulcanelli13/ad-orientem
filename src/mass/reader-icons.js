@@ -53,6 +53,13 @@ function token(value){
   return String(value??"").trim().toUpperCase().replace(/[ -]+/g,"_");
 }
 
+function priestActionKey(_action){
+  // Exact action semantics are source-backed, but the corresponding frozen V4
+  // action masters are not present in the repository at their certified hashes.
+  // Do not substitute priest-position or provisional artwork.
+  return null;
+}
+
 function gestureKey(gesture){
   if(!gesture)return null;
   const direct=token(gesture.type??gesture.value);
@@ -82,7 +89,11 @@ export function iconKeysForReaderState(state={}){
       voice ? "priest_audible" : null
     ),
     scholaIconKey:state.schola ? R17_ICON_KEYS.schola : null,
-    priestActionIconKey:R17_ICON_KEYS.priestPosition[station]??null,
+    priestPositionIconKey:R17_ICON_KEYS.priestPosition[station]??null,
+    // v1.80 separates persistent priest position from transient priest action.
+    // No frozen active priest-action asset exists yet, so action art fails closed
+    // instead of borrowing a position pictogram.
+    priestActionIconKey:priestActionKey(state.priestAction),
   });
 }
 

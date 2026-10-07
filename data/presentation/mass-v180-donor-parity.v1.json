@@ -1,0 +1,86 @@
+{
+  "schema": "ao-mass-v180-donor-parity-v1",
+  "version": "1.2.0",
+  "status": "CERTIFIED",
+  "releaseBlocker": null,
+  "donor": {
+    "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
+    "sha256": "4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543",
+    "sizeBytes": 13713627,
+    "totalLines": 8543,
+    "authority": "PRIMARY_PRESENTATION_INTERACTION_DONOR"
+  },
+  "runtimeRule": "R17/R19 remains canonical for liturgical data, state, form, source ownership and lifecycle. v1.80 owns presentation/choreography unless directly superseded by later recovered v1.83 evidence.",
+  "evidence": [
+    {
+      "range": "L1440-L1488",
+      "scope": "final primary ribbon, YOU/GUIDE/PRIEST state ribbon, Mass preferences sheet and rail markup"
+    },
+    {
+      "range": "L1560-L1635",
+      "scope": "v1.75 live-reader architecture: app ribbon, state ribbon, semantic rails and preferences"
+    },
+    {
+      "range": "L8325-L8383",
+      "scope": "v1.77 final UI hardening and icon-first cue surfaces"
+    },
+    {
+      "range": "L8384-L8440",
+      "scope": "v1.78 one-state-one-owner semantics"
+    },
+    {
+      "range": "L8441-L8480",
+      "scope": "v1.79 Guide/rubric restoration in second ribbon"
+    },
+    {
+      "range": "L8481-L8542",
+      "scope": "v1.80 Eucharistic card architecture and sacramental salience"
+    }
+  ],
+  "closed": [
+    "single executable Mass renderer is native-only",
+    "primary ribbon is Home / current section / Mass preferences",
+    "MISSAL / SIMPLE / LIVE selector lives inside Mass preferences",
+    "second ribbon is YOU / GUIDE / PRIEST",
+    "persistent priest position remains in PRIEST summary",
+    "left/right LIVE rails are icon-first cue surfaces rather than prose dashboard cards",
+    "persistent faithful posture cue is retained",
+    "centre reader has no giant bordered card chrome",
+    "duplicate in-card title is suppressed because the top ribbon owns current moment",
+    "Schola has a dedicated readable stream surface with page/progress/translation affordances",
+    "Host and Chalice elevation cues remain distinct",
+    "Host and Chalice elevation cinematic duration is 3450 ms",
+    "elevation bell salience is held for approximately 3600 ms",
+    "phone card arrows preserve donor-small visuals inside minimum 44 px touch targets",
+    "wide-browser acceptance prevents the reader from stretching back into dashboard geometry",
+    "Schola slower/faster/pause controls use the donor speed ladder [0.25, 0.35, 0.45, 0.60, 0.80, 1.00], persist ao-schola-speed, and pause while translation is open",
+    "exact Gloria/Credo ritual words are decorated only from the source-backed gesture anchorLat on the active canonical cue; no prayer-text guessing is used",
+    "ordinary Sung priest actions now come from a 77-cue source-backed action registry derived from canonical priest events and the v1.80 classifier; canonical v4 action art is exact-mapped where available and unmapped actions fail closed rather than borrowing priest-position art",
+    "v1.80 38-card presentation and later v1.83 48-step concept are reconciled at product level without claiming historical C01-C48 identity; the unrecovered Canon boundary remains a non-blocking historical evidence gap"
+  ],
+  "open": [],
+  "prohibitedRegressions": [
+    "browser-width MISSAL/SIMPLE/LIVE tabs in the primary ribbon",
+    "PRIEST/current/ACTION as the persistent second ribbon",
+    "giant bordered full-viewport prayer card",
+    "full-width Back / counter / Next footer",
+    "Schola reduced to a thin status strip",
+    "legacy or shadow reader renderer fallback",
+    "using priest position as a substitute for priest action",
+    "claiming current 48-step projection is the recovered historical v1.83 C01-C48 map"
+  ],
+  "reconciliationLedger": "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
+  "releaseRule": "Certified on the definitive native reader after static, real-touch phone, app-shell phone and donor-derived visual acceptance all passed on the same implementation line. Historical v1.83 card identity remains explicitly unclaimed.",
+  "certification": {
+    "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
+    "r17MassConvergenceRun": 37563706320,
+    "appConvergenceRun": 37563706129,
+    "visualAcceptanceRun": 37563706157,
+    "gates": {
+      "static": "PASS",
+      "massPhone": "PASS",
+      "appShellPhone": "PASS",
+      "visualPhoneAndWide": "PASS"
+    }
+  }
+}

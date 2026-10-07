@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.23.0",
+  "version": "1.25.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -8,7 +8,12 @@
     "authority": "data/presentation/reader-release-gate.v1.json",
     "requiredReaderStatus": "FINAL_NATIVE_READY",
     "productionDefault": "R17_NATIVE",
-    "legacyPolicy": "EXPLICIT_ROLLBACK_ONLY"
+    "legacyPolicy": "NO_ALTERNATE_RENDERER",
+    "presentationStatus": "CERTIFIED",
+    "singlePresentationOwner": "R17_NATIVE_PRODUCTION",
+    "definitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json",
+    "v180DonorParityLedger": "data/presentation/mass-v180-donor-parity.v1.json",
+    "presentationCertification": "data/presentation/mass-v180-donor-parity.v1.json"
   },
   "topLevelContract": [
     "home",
@@ -185,27 +190,37 @@
       "detail": "The 5 October P0 runtime regressions are repaired and verified on merged main. Post-merge App convergence run 37276882767 passed the normal phone journey and real-data Oct 4-9 field-current-week acceptance: every date resolved a READY Proper, runtime recovery filled missing Secret/Postcommunion source sections where needed, every R17 reader was ready, and no reader slots remained missing. Stale persisted Mass checkpoints also fail closed without uncaught resume."
     },
     {
-      "id": "PRODUCT_PRESENTATION_PARITY",
+      "id": "MASS_DEFINITIVE_DONOR_PARITY",
       "classification": "PASS",
       "status": "CLOSED",
       "evidence": [
+        "data/presentation/mass-definitive-convergence.v1.json",
+        "data/presentation/mass-v180-donor-parity.v1.json",
+        "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
         "data/presentation/product-parity.v1.json",
-        "tests/app-visual-acceptance.mjs",
+        "src/mass/reader-dom.js",
+        "src/mass/reader-gate.js",
+        "src/mass/browser-entry.js",
+        "tests/mass-v180-donor-parity.mjs",
         "tests/mass-visual-acceptance.mjs",
-        "tests/reader-mode-switch.mjs",
-        "tests/reader-phone-acceptance.mjs",
-        "src/home/presentation.js",
-        "src/calendar/browser-entry.js",
-        "src/pray/presentation-coherence.js",
-        "src/learn/presentation.js",
-        "src/settings/presentation.js",
-        "src/mass/reader-live-product48.js",
-        "src/mass/reader-mode-switch.js",
-        "Visual acceptance workflow 37325466930",
-        "R17 Mass convergence workflow 37325466725",
-        "App convergence workflow 37325466826"
+        "tests/reader-phone-acceptance.mjs"
       ],
-      "detail": "All six modular product surfaces are phone/visual parity certified. Mass presentation recovery V1-V6 restores the approved LIVE hierarchy and 48-step product rhythm while retaining the 39-step source model, exact cue/state ownership, and persistent source-anchored MISSAL/SIMPLE/LIVE switching."
+      "detail": "The definitive Mass presentation is certified against the executable v1.80 donor on the single native renderer. Static R17, real-touch Mass phone, app-shell phone and donor-derived visual acceptance all passed after current-main integration. The 48-step product remains explicitly non-historical with respect to unrecovered v1.83 card identities.",
+      "progress": {
+        "runtimeAuthority": "CERTIFIED",
+        "singleRenderer": "CERTIFIED_NATIVE_ONLY",
+        "donorPresentation": "CERTIFIED_V1_80",
+        "stepReconciliation": "CERTIFIED_NONHISTORICAL_38_TO_48",
+        "visualAcceptance": "PASS",
+        "phoneAcceptance": "PASS",
+        "appShellPhone": "PASS"
+      },
+      "certification": {
+        "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
+        "r17MassConvergenceRun": 37563706320,
+        "appConvergenceRun": 37563706129,
+        "visualAcceptanceRun": 37563706157
+      }
     },
     {
       "id": "PRESENTATION_FX_PARITY",
@@ -293,5 +308,6 @@
   },
   "productParityLedger": "data/presentation/product-parity.v1.json",
   "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json",
-  "exactDonorParityLedger": "data/presentation/exact-donor-parity.v1.json"
+  "exactDonorParityLedger": "data/presentation/exact-donor-parity.v1.json",
+  "massDefinitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json"
 }

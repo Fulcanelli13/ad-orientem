@@ -1,4 +1,12 @@
-import { buildReaderShellMarkup, createReaderDomAdapter, normalizeReaderMoment } from "../src/mass/reader-dom.js";
+import {
+  buildReaderShellMarkup,
+  createReaderDomAdapter,
+  normalizeReaderMoment,
+  SCHOLA_SPEEDS,
+  DEFAULT_SCHOLA_SPEED,
+  normalizeScholaSpeed,
+  scholaTickerDuration,
+} from "../src/mass/reader-dom.js";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
 
@@ -27,27 +35,45 @@ for(const token of [
   'data-role="cinematic"',
   'data-reader-nav="previous"',
   'data-reader-nav="next"',
-  'data-icon-slot="priest-action"',
+  'data-icon-slot="priest-position"',
   'class="ao-schola-dock"',
   'data-side="faithful"',
   'data-side="priest"',
   'data-role="guide-short"',
   'data-reader-home',
+  'data-reader-preferences',
   'data-reader-parameters',
   'data-role="section-jump"',
   'data-role="section-menu"',
   'data-schola-resize',
-  'data-schola-toggle'
+  'data-schola-toggle',
+  'data-schola-slower',
+  'data-role="schola-speed"',
+  'data-schola-faster',
+  'data-schola-pause'
 ]) expect(html.includes(token),"reader shell missing "+token);
 expect(html.includes('data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask"'),"reader Home control is not canonical-mask owned");
-expect(html.includes('data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask"'),"reader Parameters control is not canonical-mask owned");
+expect(html.includes('data-reader-preferences data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask"'),"reader Mass-preferences control is not canonical-mask owned");
 expect(html.includes("ao-nav-home.png"),"reader Home mask did not resolve to externalized PNG");
 expect(html.includes("ao-nav-settings.png"),"reader Parameters mask did not resolve to externalized PNG");
 expect(!html.includes("pending-externalization"),"reader top ribbon still advertises pending asset externalization");
-expect(html.includes(".ao-reader-stage{min-height:0;display:grid;grid-template-columns:minmax(0,1fr);position:relative"),"reader stage lost geometry-neutral single-column layout");
-expect(html.includes(".ao-rail{position:absolute"),"active cue rails are no longer overlays");
-expect(!html.includes('data-left-rail="true"][data-right-rail="false"]{grid-template-columns'),"left cue rail can still reflow prayer width");
-expect(!html.includes('data-left-rail="false"][data-right-rail="true"]{grid-template-columns'),"right cue rail can still reflow prayer width");
+expect(html.includes(".ao-reader-stage{min-height:0;position:relative"),"reader stage lost donor-derived geometry");
+expect(html.includes(".ao-rail{\n  position:absolute"),"ritual rails are no longer overlay surfaces");
+expect(html.includes("padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px)/2))"),"centre reader lost donor 790px reading measure");
+expect(html.includes("border:0;border-radius:0;background:transparent;box-shadow:none"),"giant card chrome returned to the Mass reader");
+expect(html.includes(".ao-reader-body")===false,"unexpected duplicate reader body presentation layer appeared");
+expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matches the final executable donor");
+expect(html.includes("opacity:.70"),"donor near-focus level no longer matches the final executable donor");
+expect(html.includes(".ao-state-kicker{font:700 7px/1"),"YOU / PRIEST state labels lost v1.79-v1.80 typography");
+expect(html.includes('class="ao-guide-copy"><small>GUIDE</small>'),"GUIDE centre cell is missing from the state ribbon");
+expect(html.includes('[data-channel="gesture"][data-active="false"]'),"inactive gesture rail no longer disappears like the final donor");
+
+expect(JSON.stringify([...SCHOLA_SPEEDS])===JSON.stringify([0.25,0.35,0.45,0.60,0.80,1]),"v1.80 Schola speed ladder changed");
+expect(DEFAULT_SCHOLA_SPEED===0.45,"v1.80 Schola default speed changed");
+expect(normalizeScholaSpeed(0.60)===0.60,"valid donor Schola speed was rejected");
+expect(normalizeScholaSpeed(0.50)===0.45,"unknown Schola speed did not fail to donor default");
+const donorDuration=scholaTickerDuration({viewportWidth:260,lineWidth:420,speed:0.45,isMobile:true});
+expect(donorDuration>=15000&&donorDuration<=120000,"Schola ticker duration escaped donor bounds");
 
 const first=normalizeReaderMoment({
   id:"A",
@@ -59,6 +85,7 @@ const first=normalizeReaderMoment({
   bell:{label:"ELEVATION BELL",detail:"Sacred Host"},
   cinematic:{kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST"},
   priestPosition:{label:"CENTRE"},
+  priestAction:{label:"ELEVATES HOST"},
   priestVoice:{label:"AUDIBLE"},
   schola:{label:"CREDO"},
   guide:{registryAvailable:false,text:"must not render"},
@@ -67,6 +94,7 @@ const first=normalizeReaderMoment({
 expect(first.guide===null,"unsourced Guide rubric did not fail closed");
 expect(first.gesture?.label==="BOW","transient gesture missing");
 expect(first.posture?.label==="STAND","persistent posture missing");
+expect(first.priestAction?.label==="ELEVATES HOST","priest action did not reach the v1.80 transient action channel");
 
 const second=normalizeReaderMoment({
   id:"B",
@@ -77,6 +105,7 @@ const second=normalizeReaderMoment({
 expect(second.posture?.label==="STAND","persistent posture did not carry");
 expect(second.priestPosition?.label==="CENTRE","persistent priest position did not carry");
 expect(second.priestVoice?.label==="AUDIBLE","persistent priest voice did not carry");
+expect(second.priestAction===null,"transient priest action leaked into the next moment");
 expect(second.gesture===null,"transient gesture leaked into next moment");
 expect(second.response===null,"transient response leaked into next moment");
 expect(second.bell===null,"transient bell leaked into next moment");
@@ -143,4 +172,4 @@ unlocked.setMode("SIMPLE");
 expect(unlocked.getMode()==="SIMPLE","unlocked reader did not change mode");
 expect(callbackMode==="SIMPLE","unlocked reader did not invoke presentation mode callback");
 
-console.log("Reader DOM contract PASS: shell channels, top ribbon, section jump, Schola controls, persistent/transient ownership, Guide fail-closed, and explicit locked/unlocked mode switching.");
+console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");

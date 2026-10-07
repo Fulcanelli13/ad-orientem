@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {
+  READER_UI_MODES,
   resolveReaderUiMode,
   readerModeAllowsLegacyDom,
   readerModeRunsShadowAudit,
@@ -10,24 +11,22 @@ import {
   auditSelectorPresence,
 } from "../src/mass/reader-parity.js";
 
+assert.deepEqual([...READER_UI_MODES],["NATIVE"]);
+
 assert.equal(resolveReaderUiMode({}), "NATIVE");
-assert.equal(resolveReaderUiMode({stored:"legacy"}), "LEGACY");
-assert.equal(resolveReaderUiMode({stored:"shadow"}), "SHADOW");
+assert.equal(resolveReaderUiMode({stored:"legacy"}), "NATIVE");
+assert.equal(resolveReaderUiMode({stored:"shadow"}), "NATIVE");
 assert.equal(resolveReaderUiMode({stored:"preview"}), "NATIVE");
-assert.equal(resolveReaderUiMode({search:"?aoR17Reader=shadow",stored:"preview"}), "SHADOW");
-assert.equal(resolveReaderUiMode({search:"?aoR17Reader=legacy"}), "LEGACY");
+assert.equal(resolveReaderUiMode({search:"?aoR17Reader=shadow",stored:"legacy"}), "NATIVE");
+assert.equal(resolveReaderUiMode({search:"?aoR17Reader=legacy"}), "NATIVE");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=r17"}), "NATIVE");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=unknown",stored:"legacy"}), "NATIVE");
 
-assert.equal(readerModeAllowsLegacyDom("NATIVE"), false);
-assert.equal(readerModeAllowsLegacyDom("LEGACY"), true);
-assert.equal(readerModeAllowsLegacyDom("SHADOW"), true);
-assert.equal(readerModeRunsShadowAudit("NATIVE"), false);
-assert.equal(readerModeRunsShadowAudit("LEGACY"), false);
-assert.equal(readerModeRunsShadowAudit("SHADOW"), true);
-assert.equal(readerModeMountsPreview("NATIVE"), true);
-assert.equal(readerModeMountsPreview("LEGACY"), false);
-assert.equal(readerModeMountsPreview("SHADOW"), false);
+for(const historical of ["NATIVE","LEGACY","SHADOW","rollback","legacy","shadow"]){
+  assert.equal(readerModeAllowsLegacyDom(historical), false);
+  assert.equal(readerModeRunsShadowAudit(historical), false);
+  assert.equal(readerModeMountsPreview(historical), true);
+}
 
 const requiredSelectors=READER_PARITY_REQUIREMENTS.filter(x=>x.required).map(x=>x.selector);
 const allPresent=new Set(requiredSelectors);
@@ -41,4 +40,4 @@ const fail=auditSelectorPresence(sel=>oneMissing.has(sel));
 assert.equal(fail.complete,false);
 assert.deepEqual([...fail.missing],["schola-dock"]);
 
-console.log("reader gate/parity contract: PASS — native default, explicit legacy rollback.");
+console.log("reader gate/parity contract: PASS — native is the only executable Mass renderer.");

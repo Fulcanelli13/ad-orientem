@@ -88,8 +88,45 @@ try{
   assert.notEqual(afterNext,initialCard,"Next touch did not change cards");
   const backButton=page.locator('[data-reader-nav="previous"]');
   box=await backButton.boundingBox();
+  const backHit=await page.evaluate(({x,y})=>{
+    const target=document.elementFromPoint(x,y);
+    return {
+      tag:target?.tagName??null,
+      cls:target?.className??null,
+      nav:target?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,
+      cinematicHidden:document.querySelector('[data-role="cinematic"]')?.hidden??null,
+      current:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
+    };
+  },{x:box.x+box.width/2,y:box.y+box.height/2});
+  await page.evaluate(()=>{
+    window.__AO_BACK_EVENTS=[];
+    for(const type of ["pointerdown","touchstart","touchend","click"]){
+      document.addEventListener(type,event=>{
+        const t=event.target;
+        window.__AO_BACK_EVENTS.push({
+          type,
+          tag:t?.tagName??null,
+          nav:t?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,
+          cls:typeof t?.className==="string"?t.className:null,
+        });
+      },{capture:true,once:false});
+    }
+  });
   await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-  await page.waitForFunction(expected=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId===expected,initialCard);
+  await page.waitForTimeout(350);
+  const afterBack=await cardId();
+  const navDiag=await page.evaluate(({x,y})=>{
+    const root=document.querySelector("[data-ao-reader-shell]")?.parentElement;
+    const post=document.elementFromPoint(x,y);
+    return {
+      input:root?.dataset.aoLastNavInput??null,
+      result:root?.dataset.aoLastNavResult??null,
+      events:window.__AO_BACK_EVENTS??[],
+      postHit:{tag:post?.tagName??null,nav:post?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,cls:post?.className??null},
+    };
+  },{x:box.x+box.width/2,y:box.y+box.height/2});
+  assert.equal(afterBack,initialCard,
+    "Back touch did not restore initial card: "+JSON.stringify({initialCard,afterNext,afterBack,backHit,navDiag}));
 
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
@@ -163,12 +200,18 @@ try{
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
 
   async function tapMode(mode){
+    const prefs=page.locator('[data-reader-preferences]');
+    const prefBox=await prefs.boundingBox();
+    assert.ok(prefBox&&prefBox.height>=40,"v1.80 Mass-preferences control is not touchable");
+    await page.touchscreen.tap(prefBox.x+prefBox.width/2,prefBox.y+prefBox.height/2);
+    await page.waitForFunction(()=>document.querySelector('[data-role="mass-preferences"]')?.dataset?.open==="true");
     const button=page.locator('[data-reader-mode="'+mode+'"]');
     const hit=await button.boundingBox();
-    assert.ok(hit&&hit.height>=30,mode+" mode selector is not touchable");
+    assert.ok(hit&&hit.height>=30,mode+" mode selector is not touchable in Mass preferences");
     await page.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
     await page.waitForFunction(expected=>window.__AO_PHONE_PREVIEW.getPresentationMode()===expected,mode,{timeout:3000});
     assert.equal(await button.getAttribute("aria-pressed"),"true",mode+" selector did not become active");
+    await page.locator('[data-reader-preferences-close]').click();
   }
 
   await tapMode("SIMPLE");

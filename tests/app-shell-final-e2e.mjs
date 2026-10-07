@@ -802,7 +802,8 @@ try{
   assert.equal(ownership.starts,0,"final native entry booted the legacy live renderer");
   assert.equal(ownership.runtime?.readerUiMode,"NATIVE");
   assert.equal(ownership.runtime?.uiOwner,"R17_NATIVE_PRODUCTION");
-  assert.equal(ownership.runtime?.legacyActive,null);
+  assert.equal(Object.hasOwn(ownership.runtime??{},"legacyActive"),false,
+    "definitive native runtime still exposes a legacy renderer state slot");
   assert.equal(ownership.massEngine,"r17-native-production");
   assert.equal(ownership.massReaderUi,"R17_NATIVE_PRODUCTION");
   assert.equal(ownership.rootConnected,true);
