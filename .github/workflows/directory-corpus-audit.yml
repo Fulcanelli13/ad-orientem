@@ -15,17 +15,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        source: [sspx, fssp, icksp, ibp]
+        source: [fssp, icksp, ibp]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Install browser scraper dependency
-        if: matrix.source == 'fssp' || matrix.source == 'sspx'
+        if: matrix.source == 'fssp'
         run: npm install --no-audit --no-fund
       - name: Install Chromium for browser-backed official sources
-        if: matrix.source == 'fssp' || matrix.source == 'sspx'
+        if: matrix.source == 'fssp'
         run: npx playwright install --with-deps chromium
       - name: Import official source corpus
         run: npm run directory:import:${{ matrix.source }}
