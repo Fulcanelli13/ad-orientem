@@ -3,7 +3,7 @@ name: Directory geocode promotion
 on:
   push:
     branches:
-      - "snapshot/directory-geocode-*"
+      - "snapshot/directory-*"
     paths:
       - "data/directory/.geocode-promotion-request"
 
