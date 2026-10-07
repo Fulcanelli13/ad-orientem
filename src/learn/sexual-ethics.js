@@ -89,8 +89,10 @@ function shortSourceTitle(source){
 function paragraphSourceLinks(win,item,kind,field=null){
   const refs=paragraphRefsFor(item,kind,field);
   if(!refs.length)return "";
-  const positionSide=kind==="debate"&&["opposition","appeal","counter"].includes(field);
-  const label=positionSide?L(win,"Position source:","Source de la position :"):L(win,"Sources:","Sources :");
+  const positionSide=(kind==="question"&&item?.depth==="DEBATE")||(kind==="debate"&&["opposition","appeal","counter"].includes(field));
+  const label=kind==="question"
+    ?L(win,"Question source:","Source de la question :")
+    :positionSide?L(win,"Position source:","Source de la position :"):L(win,"Sources:","Sources :");
   const links=refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
     const url=isFr(win)?(source.canonical_url_fr||source.canonical_url):source.canonical_url;
@@ -160,7 +162,7 @@ function questionHtml(win,item,reveal){
   const section=CSE_SECTION_MAP[item.section];
   const buttonClosed=isDebate?L(win,"Examine the argument","Examiner l’argument"):L(win,"Go deeper","Approfondir");
   const buttonOpen=isDebate?L(win,"Hide the argument","Masquer l’argument"):L(win,"Hide deeper explanation","Masquer l’explication approfondie");
-  return `${top(win,pick(win,section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1><div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+  return `${top(win,pick(win,section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
 }
 
 export function createSexualEthicsRuntime(win=globalThis){
