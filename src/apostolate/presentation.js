@@ -50,20 +50,12 @@ function handoffsMarkup(scenario,state){
   return `<div class="aoApostolateActions">${scenario.handoffs.map((h,i)=>`<button type="button" data-ao-ap-handoff="${i}">${esc(handoffLabel(h,state))}</button>`).join("")}</div>`;
 }
 
-function detailMarkup(scenario,state,skills,sources){
+function guidanceMarkup(scenario,state,skills,sources){
   if(!scenario)return "";
   const lang=isFr(state)?"fr":"en";
   const skillRecords=(scenario.apfSkills||[]).map(id=>skills.get(id)).filter(Boolean);
   const sourceRecords=(scenario.sourceIds||[]).map(id=>sources[id]).filter(Boolean);
   return `
-    <section class="aoApostolateScenarioHero">
-      <div class="aoApostolateEyebrow">${esc(scenarioKind(scenario.id,state))}</div>
-      <h1>${esc(pick(scenario.title,state))}</h1>
-    </section>
-    <section class="aoApostolateAnswer">
-      <h2>${esc(L(state,"Short answer","Réponse courte"))}</h2>
-      <p>${esc(pick(scenario.text,state))}</p>
-    </section>
     <details class="aoApostolateDetail" open>
       <summary>${esc(L(state,"Why this answer","Pourquoi cette réponse"))}</summary>
       <p>${esc(pick(scenario.explanation,state))}</p>
@@ -78,6 +70,20 @@ function detailMarkup(scenario,state,skills,sources){
   `;
 }
 
+function detailMarkup(scenario,state,skills,sources){
+  if(!scenario)return "";
+  return `
+    <section class="aoApostolateScenarioHero">
+      <div class="aoApostolateEyebrow">${esc(scenarioKind(scenario.id,state))}</div>
+      <h1>${esc(pick(scenario.title,state))}</h1>
+    </section>
+    <section class="aoApostolateAnswer">
+      <h2>${esc(L(state,"Short answer","Réponse courte"))}</h2>
+      <p>${esc(pick(scenario.text,state))}</p>
+    </section>
+    ${guidanceMarkup(scenario,state,skills,sources)}
+  `;
+}
 function practiceMarkup(scenario,state,skills,sources){
   if(!scenario)return "";
   const reveal=Boolean(state.practiceRevealed);
@@ -92,7 +98,7 @@ function practiceMarkup(scenario,state,skills,sources){
       <textarea data-ao-ap-draft rows="6" placeholder="${esc(L(state,"Aim for 2–4 clear sentences.","Visez 2 à 4 phrases claires."))}">${esc(state.draft||"")}</textarea>
     </label>
     <button type="button" class="aoApostolatePrimary" data-ao-ap-compare>${esc(reveal?L(state,"Hide guide","Masquer le guide"):L(state,"Compare with guide","Comparer avec le guide"))}</button>
-    ${reveal?`<section class="aoApostolateCompare"><h2>${esc(L(state,"A strong concise answer","Une réponse concise et solide"))}</h2><p>${esc(pick(scenario.text,state))}</p></section>${detailMarkup(scenario,state,skills,sources)}`:""}
+    ${reveal?`<section class="aoApostolateCompare"><h2>${esc(L(state,"A strong concise answer","Une réponse concise et solide"))}</h2><p>${esc(pick(scenario.text,state))}</p></section>${guidanceMarkup(scenario,state,skills,sources)}`:""}
   `;
 }
 
