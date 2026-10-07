@@ -1,0 +1,804 @@
+{
+  "version": "latin-course-lesson-37-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 37,
+  "stage": {
+    "number": 8,
+    "title": "Read the Missal"
+  },
+  "title": "Read the Ordinary",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 65,
+  "progressionStep": "independent-liturgical-reading",
+  "grammarFocus": "Continuous Ordinary of Mass",
+  "readingOutcome": "Read the complete Ordinary with progressively reduced assistance.",
+  "authoringPolicy": {
+    "method": "whole Ordinary unit -> self-segmentation -> selective checking -> continuous reread",
+    "vocabularyPolicy": "No new tracked vocabulary.",
+    "authenticTextPolicy": "Five principal Ordinary texts preserved in full.",
+    "copyrightPolicy": "Liturgical Latin source text; original pedagogy."
+  },
+  "coreVocabulary": {
+    "introduced": [],
+    "recycled": [
+      "gloria",
+      "in",
+      "Deus",
+      "et",
+      "terra",
+      "pax",
+      "homo",
+      "bonus",
+      "voluntas",
+      "laudo",
+      "tu",
+      "benedico",
+      "adoro",
+      "glorifico",
+      "gratia",
+      "ago",
+      "propter",
+      "magnus",
+      "tuus",
+      "Dominus",
+      "rex",
+      "pater",
+      "omnipotens",
+      "filius",
+      "agnus",
+      "qui/quae/quod",
+      "tollo",
+      "peccatum",
+      "mundus",
+      "misereor",
+      "nos",
+      "suscipio",
+      "quoniam",
+      "solus",
+      "sanctus",
+      "cum",
+      "spiritus",
+      "credo",
+      "unus",
+      "caelum",
+      "omnis",
+      "lumen",
+      "per",
+      "salus",
+      "descendo",
+      "incarno",
+      "virgo",
+      "crucifigo",
+      "patior",
+      "sepelio",
+      "resurgo",
+      "dies",
+      "secundum",
+      "ascendo",
+      "iudico",
+      "vita",
+      "aeternus",
+      "ecclesia",
+      "catholicus",
+      "confiteor",
+      "remissio",
+      "nomen",
+      "do",
+      "venio"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Kyrie",
+      "forms": [
+        "Kyrie"
+      ],
+      "gloss": {
+        "en": "Lord, Greek formula",
+        "fr": "Seigneur, formule grecque"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "eleison",
+      "forms": [
+        "eleison"
+      ],
+      "gloss": {
+        "en": "have mercy, Greek",
+        "fr": "ayez pitie, grec"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "Christe",
+      "forms": [
+        "Christe"
+      ],
+      "gloss": {
+        "en": "Christ, Greek formula",
+        "fr": "Christ, formule grecque"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "unigenitus",
+      "forms": [
+        "unigenite",
+        "unigenitum"
+      ],
+      "gloss": {
+        "en": "only-begotten",
+        "fr": "unique-engendre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "deprecatio",
+      "forms": [
+        "deprecationem"
+      ],
+      "gloss": {
+        "en": "supplication",
+        "fr": "supplication"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "consubstantialis",
+      "forms": [
+        "consubstantialem"
+      ],
+      "gloss": {
+        "en": "consubstantial",
+        "fr": "consubstantiel"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Pontius Pilatus",
+      "forms": [
+        "Pontio Pilato"
+      ],
+      "gloss": {
+        "en": "Pontius Pilate",
+        "fr": "Ponce Pilate"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "vivifico",
+      "forms": [
+        "vivificantem"
+      ],
+      "gloss": {
+        "en": "give life",
+        "fr": "vivifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "apostolicus",
+      "forms": [
+        "apostolicam"
+      ],
+      "gloss": {
+        "en": "apostolic",
+        "fr": "apostolique"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "baptisma",
+      "forms": [
+        "baptisma"
+      ],
+      "gloss": {
+        "en": "baptism",
+        "fr": "bapteme"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Sabaoth",
+      "forms": [
+        "Sabaoth"
+      ],
+      "gloss": {
+        "en": "Sabaoth",
+        "fr": "Sabaoth"
+      },
+      "trackedLesson": null,
+      "status": "liturgical-formula"
+    },
+    {
+      "lemma": "Hosanna",
+      "forms": [
+        "Hosanna"
+      ],
+      "gloss": {
+        "en": "Hosanna",
+        "fr": "Hosanna"
+      },
+      "trackedLesson": null,
+      "status": "liturgical-formula"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ordinary-kyrie-l37",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordinarium Missae - Kyrie",
+      "sourceLatin": "Kyrie, eleison. Kyrie, eleison. Kyrie, eleison. Christe, eleison. Christe, eleison. Christe, eleison. Kyrie, eleison. Kyrie, eleison. Kyrie, eleison."
+    },
+    {
+      "id": "ordinary-gloria-l37",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordinarium Missae - Gloria",
+      "sourceLatin": "Gloria in excelsis Deo. Et in terra pax hominibus bonae voluntatis. Laudamus te. Benedicimus te. Adoramus te. Glorificamus te. Gratias agimus tibi propter magnam gloriam tuam. Domine Deus, Rex caelestis, Deus Pater omnipotens. Domine Fili unigenite, Iesu Christe. Domine Deus, Agnus Dei, Filius Patris. Qui tollis peccata mundi, miserere nobis. Qui tollis peccata mundi, suscipe deprecationem nostram. Qui sedes ad dexteram Patris, miserere nobis. Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu in gloria Dei Patris. Amen."
+    },
+    {
+      "id": "ordinary-credo-l37",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordinarium Missae - Credo",
+      "sourceLatin": "Credo in unum Deum, Patrem omnipotentem, factorem caeli et terrae, visibilium omnium et invisibilium. Et in unum Dominum Iesum Christum, Filium Dei unigenitum. Et ex Patre natum ante omnia saecula. Deum de Deo, lumen de lumine, Deum verum de Deo vero. Genitum, non factum, consubstantialem Patri: per quem omnia facta sunt. Qui propter nos homines et propter nostram salutem descendit de caelis. Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. Crucifixus etiam pro nobis: sub Pontio Pilato passus et sepultus est. Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris. Et iterum venturus est cum gloria iudicare vivos et mortuos: cuius regni non erit finis. Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen."
+    },
+    {
+      "id": "ordinary-sanctus-l37",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordinarium Missae - Sanctus/Benedictus",
+      "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua. Hosanna in excelsis. Benedictus qui venit in nomine Domini. Hosanna in excelsis."
+    },
+    {
+      "id": "ordinary-agnus-l37",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordinarium Missae - Agnus Dei",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: dona nobis pacem."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "ordinaryReadingFramework": {
+    "units": [
+      "Kyrie",
+      "Gloria",
+      "Credo",
+      "Sanctus/Benedictus",
+      "Agnus Dei"
+    ],
+    "assistanceTaper": [
+      "segmented",
+      "formula glosses only",
+      "unsegmented",
+      "continuous reading"
+    ],
+    "rule": "Diagnose only the point that actually blocks comprehension."
+  },
+  "learningBlocks": [
+    {
+      "id": "l37-b1",
+      "type": "independence",
+      "title": "Whole units",
+      "learnerCopy": {
+        "en": "Read each Ordinary unit whole before stopping to analyze.",
+        "fr": "Lisez chaque partie de l'Ordinaire en entier avant de vous arreter pour analyser."
+      }
+    },
+    {
+      "id": "l37-b2",
+      "type": "ordinary",
+      "title": "Kyrie",
+      "sourceId": "ordinary-kyrie-l37",
+      "learnerCopy": {
+        "en": "Treat the Greek Kyrie as a fixed liturgical formula.",
+        "fr": "Traitez le Kyrie grec comme une formule liturgique fixe."
+      }
+    },
+    {
+      "id": "l37-b3",
+      "type": "ordinary",
+      "title": "Gloria",
+      "sourceId": "ordinary-gloria-l37",
+      "learnerCopy": {
+        "en": "Track proclamation, praise, titles, petitions and final acclamation.",
+        "fr": "Suivez proclamation, louange, titres, demandes et acclamation finale."
+      }
+    },
+    {
+      "id": "l37-b4",
+      "type": "ordinary",
+      "title": "Credo",
+      "sourceId": "ordinary-credo-l37",
+      "learnerCopy": {
+        "en": "Keep Credo as the governing act while the confession expands through many clauses.",
+        "fr": "Gardez Credo comme acte regissant pendant que la confession se developpe en nombreuses propositions."
+      }
+    },
+    {
+      "id": "l37-b5",
+      "type": "ordinary",
+      "title": "Sanctus and Agnus",
+      "sourceId": "ordinary-sanctus-l37",
+      "learnerCopy": {
+        "en": "Use parallel repetition to predict structure, then verify the actual forms.",
+        "fr": "Utilisez la repetition parallele pour prevoir la structure, puis verifiez les formes."
+      }
+    },
+    {
+      "id": "l37-b6",
+      "type": "milestone",
+      "title": "Complete Ordinary",
+      "learnerCopy": {
+        "en": "The goal is sustained comprehension with selective checking, not perfect word-by-word translation.",
+        "fr": "Le but est une comprehension soutenue avec verification selective, non une traduction parfaite mot a mot."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l37-p1",
+      "sourceId": "ordinary-kyrie-l37",
+      "sourceLatin": "Kyrie, eleison. Kyrie, eleison. Kyrie, eleison. Christe, eleison. Christe, eleison. Christe, eleison. Kyrie, eleison. Kyrie, eleison. Kyrie, eleison.",
+      "instructionalDisplay": "Kyrie, eleison. Kyrie, eleison. Kyrie, eleison. Christe, eleison. Christe, eleison. Christe, eleison. Kyrie, eleison. Kyrie, eleison. Kyrie, eleison.",
+      "targetLemmas": [
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "Kyrie",
+        "eleison",
+        "Christe"
+      ]
+    },
+    {
+      "id": "l37-p2",
+      "sourceId": "ordinary-gloria-l37",
+      "sourceLatin": "Gloria in excelsis Deo. Et in terra pax hominibus bonae voluntatis. Laudamus te. Benedicimus te. Adoramus te. Glorificamus te. Gratias agimus tibi propter magnam gloriam tuam. Domine Deus, Rex caelestis, Deus Pater omnipotens. Domine Fili unigenite, Iesu Christe. Domine Deus, Agnus Dei, Filius Patris. Qui tollis peccata mundi, miserere nobis. Qui tollis peccata mundi, suscipe deprecationem nostram. Qui sedes ad dexteram Patris, miserere nobis. Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu in gloria Dei Patris. Amen.",
+      "instructionalDisplay": "Gloria in excelsis Deo. Et in terra pax hominibus bonae voluntatis. Laudamus te. Benedicimus te. Adoramus te. Glorificamus te. Gratias agimus tibi propter magnam gloriam tuam. Domine Deus, Rex caelestis, Deus Pater omnipotens. Domine Fili unigenite, Iesu Christe. Domine Deus, Agnus Dei, Filius Patris. Qui tollis peccata mundi, miserere nobis. Qui tollis peccata mundi, suscipe deprecationem nostram. Qui sedes ad dexteram Patris, miserere nobis. Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu in gloria Dei Patris. Amen.",
+      "targetLemmas": [
+        "gloria",
+        "Deus",
+        "et",
+        "terra",
+        "homo",
+        "voluntas",
+        "laudo",
+        "benedico",
+        "adoro",
+        "tu",
+        "Dominus",
+        "filius",
+        "agnus",
+        "qui/quae/quod",
+        "peccatum",
+        "mundus",
+        "nos",
+        "quoniam",
+        "sanctus",
+        "spiritus"
+      ],
+      "supportLemmas": [
+        "unigenitus",
+        "deprecatio",
+        "Amen"
+      ]
+    },
+    {
+      "id": "l37-p3",
+      "sourceId": "ordinary-credo-l37",
+      "sourceLatin": "Credo in unum Deum, Patrem omnipotentem, factorem caeli et terrae, visibilium omnium et invisibilium. Et in unum Dominum Iesum Christum, Filium Dei unigenitum. Et ex Patre natum ante omnia saecula. Deum de Deo, lumen de lumine, Deum verum de Deo vero. Genitum, non factum, consubstantialem Patri: per quem omnia facta sunt. Qui propter nos homines et propter nostram salutem descendit de caelis. Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. Crucifixus etiam pro nobis: sub Pontio Pilato passus et sepultus est. Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris. Et iterum venturus est cum gloria iudicare vivos et mortuos: cuius regni non erit finis. Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen.",
+      "instructionalDisplay": "Credo in unum Deum, Patrem omnipotentem, factorem caeli et terrae, visibilium omnium et invisibilium. Et in unum Dominum Iesum Christum, Filium Dei unigenitum. Et ex Patre natum ante omnia saecula. Deum de Deo, lumen de lumine, Deum verum de Deo vero. Genitum, non factum, consubstantialem Patri: per quem omnia facta sunt. Qui propter nos homines et propter nostram salutem descendit de caelis. Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. Crucifixus etiam pro nobis: sub Pontio Pilato passus et sepultus est. Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris. Et iterum venturus est cum gloria iudicare vivos et mortuos: cuius regni non erit finis. Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen.",
+      "targetLemmas": [
+        "credo",
+        "in",
+        "unus",
+        "Deus",
+        "pater",
+        "omnipotens",
+        "caelum",
+        "terra",
+        "filius",
+        "lumen",
+        "per",
+        "nos",
+        "salus",
+        "descendo",
+        "spiritus",
+        "sanctus",
+        "virgo",
+        "homo",
+        "crucifigo",
+        "patior",
+        "sepelio",
+        "resurgo",
+        "dies",
+        "secundum",
+        "ascendo",
+        "gloria",
+        "iudico",
+        "vita",
+        "ecclesia",
+        "catholicus",
+        "confiteor",
+        "remissio"
+      ],
+      "supportLemmas": [
+        "unigenitus",
+        "consubstantialis",
+        "Pontius Pilatus",
+        "vivifico",
+        "apostolicus",
+        "baptisma",
+        "Amen"
+      ]
+    },
+    {
+      "id": "l37-p4",
+      "sourceId": "ordinary-sanctus-l37",
+      "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua. Hosanna in excelsis. Benedictus qui venit in nomine Domini. Hosanna in excelsis.",
+      "instructionalDisplay": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua. Hosanna in excelsis. Benedictus qui venit in nomine Domini. Hosanna in excelsis.",
+      "targetLemmas": [
+        "sanctus",
+        "Dominus",
+        "Deus",
+        "caelum",
+        "et",
+        "terra",
+        "gloria",
+        "tuus",
+        "qui/quae/quod",
+        "venio",
+        "nomen"
+      ],
+      "supportLemmas": [
+        "Sabaoth",
+        "Hosanna"
+      ]
+    },
+    {
+      "id": "l37-p5",
+      "sourceId": "ordinary-agnus-l37",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: dona nobis pacem.",
+      "instructionalDisplay": "Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: dona nobis pacem.",
+      "targetLemmas": [
+        "agnus",
+        "Deus",
+        "qui/quae/quod",
+        "tollo",
+        "peccatum",
+        "mundus",
+        "misereor",
+        "nos",
+        "do"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l37-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What governs the long Creed text?",
+      "stimulus": null,
+      "options": [
+        "Credo",
+        "Et",
+        "Deum",
+        "Amen"
+      ],
+      "expectedAnswer": "Credo",
+      "acceptedVariants": [
+        "Credo"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "ordinary-credo-l37",
+      "skills": [
+        "ordinary:credo"
+      ]
+    },
+    {
+      "id": "l37-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why is Kyrie not parsed as ordinary Latin?",
+      "stimulus": null,
+      "options": [
+        "it is a retained Greek formula",
+        "it is Hebrew",
+        "it is French",
+        "it is meaningless"
+      ],
+      "expectedAnswer": "it is a retained Greek formula",
+      "acceptedVariants": [
+        "it is a retained Greek formula"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "ordinary-kyrie-l37",
+      "skills": [
+        "ordinary:kyrie"
+      ]
+    },
+    {
+      "id": "l37-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which unit contains incarnatus est and resurrexit?",
+      "stimulus": null,
+      "options": [
+        "Credo",
+        "Gloria",
+        "Sanctus",
+        "Agnus Dei"
+      ],
+      "expectedAnswer": "Credo",
+      "acceptedVariants": [
+        "Credo"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "ordinary-credo-l37",
+      "skills": [
+        "ordinary:navigation"
+      ]
+    },
+    {
+      "id": "l37-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which unit ends with dona nobis pacem?",
+      "stimulus": null,
+      "options": [
+        "Agnus Dei",
+        "Credo",
+        "Kyrie",
+        "Sanctus"
+      ],
+      "expectedAnswer": "Agnus Dei",
+      "acceptedVariants": [
+        "Agnus Dei"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "ordinary-agnus-l37",
+      "skills": [
+        "ordinary:navigation"
+      ]
+    },
+    {
+      "id": "l37-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which unit contains Quoniam tu solus Sanctus?",
+      "stimulus": null,
+      "options": [
+        "Gloria",
+        "Credo",
+        "Sanctus",
+        "Kyrie"
+      ],
+      "expectedAnswer": "Gloria",
+      "acceptedVariants": [
+        "Gloria"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "ordinary-gloria-l37",
+      "skills": [
+        "ordinary:navigation"
+      ]
+    },
+    {
+      "id": "l37-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What helps most in Sanctus and Agnus?",
+      "stimulus": null,
+      "options": [
+        "parallel repetition plus form checking",
+        "new vocabulary lists",
+        "rewriting into prose",
+        "ignoring verbs"
+      ],
+      "expectedAnswer": "parallel repetition plus form checking",
+      "acceptedVariants": [
+        "parallel repetition plus form checking"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "ordinary-sanctus-l37",
+      "skills": [
+        "ordinary:parallelism"
+      ]
+    },
+    {
+      "id": "l37-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should you do when one clause blocks comprehension?",
+      "stimulus": null,
+      "options": [
+        "diagnose it, then return to continuous reading",
+        "restart the course",
+        "translate every word",
+        "skip the unit"
+      ],
+      "expectedAnswer": "diagnose it, then return to continuous reading",
+      "acceptedVariants": [
+        "diagnose it, then return to continuous reading"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:independence"
+      ]
+    },
+    {
+      "id": "l37-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is Lesson 37's frozen milestone?",
+      "stimulus": null,
+      "options": [
+        "Complete Ordinary.",
+        "Unseen normal Propers.",
+        "Psalm/hymn/antiphon register.",
+        "Unseen authentic Missal capstone."
+      ],
+      "expectedAnswer": "Complete Ordinary.",
+      "acceptedVariants": [
+        "Complete Ordinary."
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ]
+    },
+    {
+      "id": "l37-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does Lesson 37 introduce new tracked vocabulary?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no"
+      ],
+      "hint": "Use the structure of the complete Ordinary text.",
+      "explanation": "Lesson 37 tests navigation and sustained comprehension rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:vocabulary-neutral"
+      ]
+    },
+    {
+      "id": "l37-e10",
+      "exerciseType": "passage_analysis",
+      "prompt": "State the expected final reading behavior.",
+      "stimulus": null,
+      "expectedAnswer": [
+        "continuous comprehension with selective diagnostic checking"
+      ],
+      "acceptedVariants": [
+        [
+          "continuous comprehension with selective diagnostic checking"
+        ],
+        "continuous reading with selective checking"
+      ],
+      "hint": "Read whole units.",
+      "explanation": "Stage 8 trains recovery without reset.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "reading:independence"
+      ]
+    }
+  ],
+  "objectives": [
+    "Read the complete Ordinary continuously.",
+    "Use rhetorical movement instead of re-teaching grammar.",
+    "Reduce support to genuine blockers.",
+    "Pass the Complete Ordinary milestone with zero new tracked vocabulary."
+  ],
+  "checkpoint": {
+    "id": "l37-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l37-e1",
+        "l37-e2",
+        "l37-e3",
+        "l37-e4",
+        "l37-e5",
+        "l37-e6",
+        "l37-e7",
+        "l37-e8",
+        "l37-e9",
+        "l37-e10"
+      ]
+    },
+    "mustKnow": [
+      "Kyrie formula status",
+      "Gloria movement",
+      "Credo governing confession",
+      "Sanctus/Agnus parallelism",
+      "continuous reading recovery"
+    ],
+    "progressionGate": "Complete Ordinary."
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

@@ -421,6 +421,61 @@ if (authored.length >= 35) {
   assert(new Set(stage7Introduced).size === 36, "Stage 7 contains duplicate introduced lemmas");
 }
 
+
+// Stage 8 independent-Missal-reading locks.
+if (authored.length >= 36) {
+  const frozenL36Milestone = course.milestones?.find(x => x.lesson === 36)?.target;
+  assert(authored[35].poeticRegisterFramework, "Lesson 36 must establish Psalm/hymn/antiphon reading");
+  assert(authored[35].progressionStep === "independent-liturgical-reading", "Lesson 36 must enter independent liturgical reading");
+  assert(authored[35].checkpoint?.progressionGate === frozenL36Milestone,
+    `Lesson 36 progression gate must match frozen milestone: ${frozenL36Milestone}`);
+}
+if (authored.length >= 37) {
+  const frozenL37Milestone = course.milestones?.find(x => x.lesson === 37)?.target;
+  assert(authored[36].ordinaryReadingFramework, "Lesson 37 must contain complete-Ordinary reading architecture");
+  assert(authored[36].coreVocabulary.introduced.length === 0, "Lesson 37 must remain tracked-vocabulary neutral");
+  assert(authored[36].checkpoint?.progressionGate === frozenL37Milestone,
+    `Lesson 37 progression gate must match frozen milestone: ${frozenL37Milestone}`);
+}
+if (authored.length >= 38) {
+  const frozenL38Milestone = course.milestones?.find(x => x.lesson === 38)?.target;
+  assert(authored[37].properReadingFramework, "Lesson 38 must establish unseen normal-Proper reading");
+  assert(authored[37].coreVocabulary.introduced.length === 0, "Lesson 38 must remain tracked-vocabulary neutral");
+  assert(authored[37].checkpoint?.progressionGate === frozenL38Milestone,
+    `Lesson 38 progression gate must match frozen milestone: ${frozenL38Milestone}`);
+}
+if (authored.length >= 39) {
+  const frozenL39Milestone = course.milestones?.find(x => x.lesson === 39)?.target;
+  assert(authored[38].specializedRegisterFramework, "Lesson 39 must separate Requiem/Holy Week specialized registers");
+  assert(authored[38].coreVocabulary.introduced.map(x => x.lemma).sort().join(",") === ["crux","defunctus","requies"].sort().join(","),
+    "Lesson 39 must introduce only crux, requies and defunctus");
+  assert(authored[38].checkpoint?.progressionGate === frozenL39Milestone,
+    `Lesson 39 progression gate must match frozen milestone: ${frozenL39Milestone}`);
+}
+if (authored.length >= 40) {
+  const frozenL40Milestone = course.milestones?.find(x => x.lesson === 40)?.target;
+  assert(authored[39].capstoneFramework, "Lesson 40 must contain independent capstone architecture");
+  assert(authored[39].coreVocabulary.introduced.length === 0, "Lesson 40 must introduce zero tracked vocabulary");
+  assert(authored[39].checkpoint?.progressionGate === frozenL40Milestone,
+    `Lesson 40 progression gate must match frozen milestone: ${frozenL40Milestone}`);
+  assert(authored[39].checkpoint?.stage === 8, "Lesson 40 must be the Stage 8 checkpoint");
+  assert(JSON.stringify(authored[39].checkpoint?.scopeLessons) === JSON.stringify([36,37,38,39,40]),
+    "Stage 8 checkpoint must cover Lessons 36-40");
+  assert(authored[39].checkpoint?.readingTransition === "guided liturgical reading -> independent Missal reading",
+    "Lesson 40 must lock the transition to independent Missal reading");
+  const stage8Introduced = authored.slice(35,40).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage8Introduced.length === 11, `Stage 8 must introduce 11 tracked lemmas, got ${stage8Introduced.length}`);
+  assert(new Set(stage8Introduced).size === 11, "Stage 8 contains duplicate introduced lemmas");
+  assert(allAuthoredIntroduced.length === 350,
+    `Complete authored course must introduce exactly 350 tracked lemmas, got ${allAuthoredIntroduced.length}`);
+  assert(new Set(allAuthoredIntroduced.map(x => x.lemma)).size === 350,
+    "Complete authored course must contain 350 unique tracked lemmas");
+  for (const n of [37,38,40]) {
+    assert(authored[n-1].coreVocabulary.introduced.length === 0,
+      `Lesson ${n} must remain tracked-vocabulary neutral`);
+  }
+}
+
 console.log(JSON.stringify({
   status: "PASS",
   lessons: course.lessons.length,

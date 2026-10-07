@@ -1,0 +1,1003 @@
+{
+  "version": "latin-course-lesson-40-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 40,
+  "stage": {
+    "number": 8,
+    "title": "Read the Missal"
+  },
+  "title": "Read the Missal",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 90,
+  "progressionStep": "independent-liturgical-reading",
+  "grammarFocus": "Independent liturgical-reading capstone",
+  "readingOutcome": "Read an unseen authentic Missal selection with minimal assistance.",
+  "authoringPolicy": {
+    "method": "cold read -> liturgical-function identification -> clause map -> selective support -> second independent read -> self-explanation",
+    "vocabularyPolicy": "Zero new tracked vocabulary. Any unfamiliar non-Core word remains optional support.",
+    "authenticTextPolicy": "Capstone uses authentic 1962 Roman Missal texts for Our Lady of the Rosary, not previously taught as a Proper set.",
+    "copyrightPolicy": "Latin liturgical/scriptural source text; original pedagogy."
+  },
+  "coreVocabulary": {
+    "introduced": [],
+    "recycled": [
+      "gaudium",
+      "omnis",
+      "in",
+      "Dominus",
+      "dies",
+      "sub",
+      "honor",
+      "beatus",
+      "virgo",
+      "de",
+      "qui/quae/quod",
+      "angelus",
+      "et",
+      "laudo",
+      "filius",
+      "Deus",
+      "cor",
+      "meus",
+      "verbum",
+      "bonus",
+      "dico",
+      "ego",
+      "opus",
+      "rex",
+      "via",
+      "suus",
+      "ante",
+      "facio",
+      "aeternus",
+      "terra",
+      "ergo",
+      "audio",
+      "sapientia",
+      "nolo",
+      "homo",
+      "custodio",
+      "vita",
+      "salus",
+      "propter",
+      "veritas",
+      "iustitia",
+      "tu",
+      "auris",
+      "semen",
+      "domus",
+      "nomen",
+      "ad",
+      "gratia",
+      "plenus",
+      "mulier",
+      "cum",
+      "sermo",
+      "timeo",
+      "ecce",
+      "magnus",
+      "pater",
+      "regno",
+      "quomodo",
+      "quoniam",
+      "cognosco",
+      "spiritus",
+      "sanctus",
+      "virtus",
+      "nascor",
+      "fio",
+      "secundum",
+      "spes",
+      "quasi",
+      "aqua",
+      "do",
+      "benedico",
+      "dextera",
+      "sum",
+      "video",
+      "tempus",
+      "civitas",
+      "invenio",
+      "enim",
+      "autem",
+      "super"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Maria",
+      "forms": [
+        "Mariae",
+        "Maria"
+      ],
+      "gloss": {
+        "en": "Mary",
+        "fr": "Marie"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Gabriel",
+      "forms": [
+        "Gabriel"
+      ],
+      "gloss": {
+        "en": "Gabriel",
+        "fr": "Gabriel"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Nazareth",
+      "forms": [
+        "Nazareth"
+      ],
+      "gloss": {
+        "en": "Nazareth",
+        "fr": "Nazareth"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Joseph",
+      "forms": [
+        "Joseph"
+      ],
+      "gloss": {
+        "en": "Joseph",
+        "fr": "Joseph"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "David",
+      "forms": [
+        "David"
+      ],
+      "gloss": {
+        "en": "David",
+        "fr": "David"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Elisabeth",
+      "forms": [
+        "Elisabeth"
+      ],
+      "gloss": {
+        "en": "Elizabeth",
+        "fr": "Elisabeth"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Abraham",
+      "forms": [
+        "Abrahae"
+      ],
+      "gloss": {
+        "en": "Abraham",
+        "fr": "Abraham"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Juda",
+      "forms": [
+        "Juda"
+      ],
+      "gloss": {
+        "en": "Judah",
+        "fr": "Juda"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Alleluia",
+      "forms": [
+        "Alleluia"
+      ],
+      "gloss": {
+        "en": "Alleluia",
+        "fr": "Alleluia"
+      },
+      "trackedLesson": null,
+      "status": "liturgical-formula"
+    },
+    {
+      "lemma": "abyssus",
+      "forms": [
+        "abyssi"
+      ],
+      "gloss": {
+        "en": "abyss / deep",
+        "fr": "abime"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "disciplina",
+      "forms": [
+        "disciplinam"
+      ],
+      "gloss": {
+        "en": "instruction / discipline",
+        "fr": "instruction"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "fores",
+      "forms": [
+        "fores"
+      ],
+      "gloss": {
+        "en": "doors / gates",
+        "fr": "portes"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "ostium",
+      "forms": [
+        "ostii"
+      ],
+      "gloss": {
+        "en": "doorway",
+        "fr": "porte"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mansuetudo",
+      "forms": [
+        "mansuetudinem"
+      ],
+      "gloss": {
+        "en": "meekness",
+        "fr": "douceur"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sterilis",
+      "forms": [
+        "sterilis"
+      ],
+      "gloss": {
+        "en": "barren",
+        "fr": "sterile"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "rosa",
+      "forms": [
+        "rosa"
+      ],
+      "gloss": {
+        "en": "rose",
+        "fr": "rose"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "lilium",
+      "forms": [
+        "lilium"
+      ],
+      "gloss": {
+        "en": "lily",
+        "fr": "lis"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "rosary-introit-l40",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
+      "section": "Introit - Ps 44:2",
+      "sourceLatin": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
+      "provenanceNote": "Normalized Latin; verified against 1962 Rosary feast propers."
+    },
+    {
+      "id": "rosary-epistle-l40",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
+      "section": "Epistle - Proverbs 8:22-24,32-35",
+      "sourceLatin": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas quotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
+      "provenanceNote": "Unseen capstone reading."
+    },
+    {
+      "id": "rosary-gradual-l40",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
+      "section": "Gradual and Alleluia",
+      "sourceLatin": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
+      "provenanceNote": "Unseen chant selection."
+    },
+    {
+      "id": "rosary-gospel-l40",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
+      "section": "Gospel - Luke 1:26-38",
+      "sourceLatin": "In illo tempore: Missus est Angelus Gabriel a Deo in civitatem Galilaeae, cui nomen Nazareth, ad Virginem desponsatam viro, cui nomen erat Joseph, de domo David, et nomen Virginis Maria. Et ingressus Angelus ad eam, dixit: Ave, gratia plena; Dominus tecum: benedicta tu in mulieribus. Quae cum audisset, turbata est in sermone ejus: et cogitabat, qualis esset ista salutatio. Et ait Angelus ei: Ne timeas, Maria, invenisti enim gratiam apud Deum: ecce, concipies in utero, et paries filium, et vocabis nomen ejus Jesum. Hic erit magnus, et Filius Altissimi vocabitur, et dabit illi Dominus Deus sedem David, patris ejus: et regnabit in domo Jacob in aeternum, et regni ejus non erit finis. Dixit autem Maria ad Angelum: Quomodo fiet istud, quoniam virum non cognosco? Et respondens Angelus, dixit ei: Spiritus Sanctus superveniet in te, et virtus Altissimi obumbrabit tibi. Ideoque et quod nascetur ex te Sanctum, vocabitur Filius Dei. Et ecce, Elisabeth, cognata tua, et ipsa concepit filium in senectute sua: et hic mensis sextus est illi, quae vocatur sterilis: quia non erit impossibile apud Deum omne verbum. Dixit autem Maria: Ecce ancilla Domini, fiat mihi secundum verbum tuum.",
+      "provenanceNote": "Annunciation Gospel used as capstone narrative."
+    },
+    {
+      "id": "rosary-offertory-l40",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
+      "section": "Offertory - Ecclesiasticus 24:25;39:17",
+      "sourceLatin": "In me gratia omnis viae et veritatis, in me omnis spes vitae et virtutis: ego quasi rosa plantata super rivos aquarum fructificavi.",
+      "provenanceNote": "Poetic/sapiential Offertory."
+    },
+    {
+      "id": "rosary-communion-l40",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
+      "section": "Communion - Ecclesiasticus 39:19",
+      "sourceLatin": "Florete, flores, quasi lilium, et date odorem, et frondete in gratiam, collaudate canticum, et benedicite Dominum in operibus suis.",
+      "provenanceNote": "Poetic Communion text."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain available as diagnostic tools; the capstone does not prompt case analysis unless needed.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "capstoneFramework": {
+    "stages": [
+      "cold read without glosses",
+      "identify liturgical genre and main clause skeleton",
+      "mark only genuine blockers",
+      "consult minimal support",
+      "reread continuously",
+      "explain how you recovered meaning"
+    ],
+    "successDefinition": "Sustained structural comprehension of unseen authentic Missal Latin with minimal assistance; not a perfect literary translation.",
+    "forbiddenShortcuts": [
+      "no new tracked vocabulary",
+      "no grammar label announced before the text",
+      "no line-by-line translation supplied before attempt"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l40-b1",
+      "type": "capstone",
+      "title": "Cold read first",
+      "learnerCopy": {
+        "en": "Begin without glosses. Identify the liturgical part, finite verbs, connectors and any immediately visible case relationships.",
+        "fr": "Commencez sans gloses. Identifiez la partie liturgique, les verbes conjugués, les connecteurs et les relations de cas immédiatement visibles."
+      }
+    },
+    {
+      "id": "l40-b2",
+      "type": "capstone",
+      "title": "Do not name the grammar lesson",
+      "sourceId": "rosary-epistle-l40",
+      "learnerCopy": {
+        "en": "There is no announced construction to find. Use the full toolkit and let the text tell you which grammar matters.",
+        "fr": "Aucune construction n'est annoncée. Utilisez toute la boîte à outils et laissez le texte indiquer quelle grammaire compte."
+      }
+    },
+    {
+      "id": "l40-b3",
+      "type": "capstone",
+      "title": "Genre predicts without solving",
+      "sourceId": "rosary-gospel-l40",
+      "learnerCopy": {
+        "en": "Knowing that this is a Gospel predicts narrative and dialogue, but it does not parse the clauses for you. Track speakers, verbs and pronouns independently.",
+        "fr": "Savoir qu'il s'agit d'un Évangile annonce récit et dialogue, mais n'analyse pas les propositions à votre place. Suivez indépendamment locuteurs, verbes et pronoms."
+      }
+    },
+    {
+      "id": "l40-b4",
+      "type": "capstone",
+      "title": "Chants require poetic recovery",
+      "sourceId": "rosary-offertory-l40",
+      "learnerCopy": {
+        "en": "The Offertory and Communion return to poetic/biblical compression. Recover grammar from endings and parallelism before seeking prose order.",
+        "fr": "Offertoire et Communion reviennent à la condensation poétique et biblique. Reconstruisez la grammaire par les désinences et le parallélisme avant de chercher l'ordre de prose."
+      }
+    },
+    {
+      "id": "l40-b5",
+      "type": "capstone",
+      "title": "Minimal support means strategic support",
+      "learnerCopy": {
+        "en": "A proper name or rare noun may be glossed. A familiar case ending, pronoun or connective should not. Use help only where it changes comprehension.",
+        "fr": "Un nom propre ou un nom rare peut être glosé. Une désinence, un pronom ou un connecteur familier ne doit pas l'être. Utilisez l'aide seulement lorsqu'elle change la compréhension."
+      }
+    },
+    {
+      "id": "l40-b6",
+      "type": "stage-checkpoint",
+      "title": "Read the Missal",
+      "learnerCopy": {
+        "en": "The course ends when you can approach an unseen authentic selection, recover its structure, tolerate some unknown vocabulary and still understand the prayer or reading as a whole.",
+        "fr": "Le cours s'achève lorsque vous pouvez aborder un texte authentique inédit, reconstruire sa structure, tolérer un peu de vocabulaire inconnu et comprendre néanmoins l'ensemble de la prière ou de la lecture."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l40-p1",
+      "sourceId": "rosary-introit-l40",
+      "sourceLatin": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
+      "instructionalDisplay": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
+      "targetLemmas": [
+        "gaudium",
+        "omnis",
+        "in",
+        "Dominus",
+        "dies",
+        "beatus",
+        "virgo",
+        "de",
+        "qui/quae/quod",
+        "angelus",
+        "et",
+        "laudo",
+        "filius",
+        "Deus",
+        "cor",
+        "meus",
+        "verbum",
+        "bonus",
+        "dico",
+        "ego",
+        "opus",
+        "rex"
+      ],
+      "supportLemmas": [
+        "Maria"
+      ]
+    },
+    {
+      "id": "l40-p2",
+      "sourceId": "rosary-epistle-l40",
+      "sourceLatin": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas quotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
+      "instructionalDisplay": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas quotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
+      "targetLemmas": [
+        "Dominus",
+        "in",
+        "via",
+        "suus",
+        "ante",
+        "facio",
+        "aeternus",
+        "terra",
+        "sum",
+        "ergo",
+        "filius",
+        "audio",
+        "beatus",
+        "qui/quae/quod",
+        "custodio",
+        "sapientia",
+        "nolo",
+        "homo",
+        "vita",
+        "salus"
+      ],
+      "supportLemmas": [
+        "abyssus",
+        "disciplina",
+        "fores",
+        "ostium"
+      ]
+    },
+    {
+      "id": "l40-p3",
+      "sourceId": "rosary-gradual-l40",
+      "sourceLatin": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
+      "instructionalDisplay": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
+      "targetLemmas": [
+        "propter",
+        "veritas",
+        "et",
+        "iustitia",
+        "tu",
+        "audio",
+        "filius",
+        "video",
+        "auris",
+        "rex",
+        "virgo",
+        "semen",
+        "dextera"
+      ],
+      "supportLemmas": [
+        "mansuetudo",
+        "Maria",
+        "Abraham",
+        "Juda",
+        "David",
+        "Alleluia"
+      ]
+    },
+    {
+      "id": "l40-p4",
+      "sourceId": "rosary-gospel-l40",
+      "sourceLatin": "In illo tempore: Missus est Angelus Gabriel a Deo in civitatem Galilaeae, cui nomen Nazareth, ad Virginem desponsatam viro, cui nomen erat Joseph, de domo David, et nomen Virginis Maria. Et ingressus Angelus ad eam, dixit: Ave, gratia plena; Dominus tecum: benedicta tu in mulieribus. Quae cum audisset, turbata est in sermone ejus: et cogitabat, qualis esset ista salutatio. Et ait Angelus ei: Ne timeas, Maria, invenisti enim gratiam apud Deum: ecce, concipies in utero, et paries filium, et vocabis nomen ejus Jesum. Hic erit magnus, et Filius Altissimi vocabitur, et dabit illi Dominus Deus sedem David, patris ejus: et regnabit in domo Jacob in aeternum, et regni ejus non erit finis. Dixit autem Maria ad Angelum: Quomodo fiet istud, quoniam virum non cognosco? Et respondens Angelus, dixit ei: Spiritus Sanctus superveniet in te, et virtus Altissimi obumbrabit tibi. Ideoque et quod nascetur ex te Sanctum, vocabitur Filius Dei. Et ecce, Elisabeth, cognata tua, et ipsa concepit filium in senectute sua: et hic mensis sextus est illi, quae vocatur sterilis: quia non erit impossibile apud Deum omne verbum. Dixit autem Maria: Ecce ancilla Domini, fiat mihi secundum verbum tuum.",
+      "instructionalDisplay": "In illo tempore: Missus est Angelus Gabriel a Deo in civitatem Galilaeae, cui nomen Nazareth, ad Virginem desponsatam viro, cui nomen erat Joseph, de domo David, et nomen Virginis Maria. Et ingressus Angelus ad eam, dixit: Ave, gratia plena; Dominus tecum: benedicta tu in mulieribus. Quae cum audisset, turbata est in sermone ejus: et cogitabat, qualis esset ista salutatio. Et ait Angelus ei: Ne timeas, Maria, invenisti enim gratiam apud Deum: ecce, concipies in utero, et paries filium, et vocabis nomen ejus Jesum. Hic erit magnus, et Filius Altissimi vocabitur, et dabit illi Dominus Deus sedem David, patris ejus: et regnabit in domo Jacob in aeternum, et regni ejus non erit finis. Dixit autem Maria ad Angelum: Quomodo fiet istud, quoniam virum non cognosco? Et respondens Angelus, dixit ei: Spiritus Sanctus superveniet in te, et virtus Altissimi obumbrabit tibi. Ideoque et quod nascetur ex te Sanctum, vocabitur Filius Dei. Et ecce, Elisabeth, cognata tua, et ipsa concepit filium in senectute sua: et hic mensis sextus est illi, quae vocatur sterilis: quia non erit impossibile apud Deum omne verbum. Dixit autem Maria: Ecce ancilla Domini, fiat mihi secundum verbum tuum.",
+      "targetLemmas": [
+        "in",
+        "tempus",
+        "angelus",
+        "Deus",
+        "civitas",
+        "qui/quae/quod",
+        "nomen",
+        "ad",
+        "virgo",
+        "domus",
+        "et",
+        "gratia",
+        "plenus",
+        "Dominus",
+        "tu",
+        "mulier",
+        "cum",
+        "sermo",
+        "timeo",
+        "invenio",
+        "enim",
+        "ecce",
+        "filius",
+        "magnus",
+        "pater",
+        "regno",
+        "aeternus",
+        "autem",
+        "quomodo",
+        "fio",
+        "quoniam",
+        "cognosco",
+        "spiritus",
+        "sanctus",
+        "virtus",
+        "nascor",
+        "verbum",
+        "secundum"
+      ],
+      "supportLemmas": [
+        "Gabriel",
+        "Nazareth",
+        "Joseph",
+        "David",
+        "Maria",
+        "Elisabeth",
+        "sterilis"
+      ]
+    },
+    {
+      "id": "l40-p5",
+      "sourceId": "rosary-offertory-l40",
+      "sourceLatin": "In me gratia omnis viae et veritatis, in me omnis spes vitae et virtutis: ego quasi rosa plantata super rivos aquarum fructificavi.",
+      "instructionalDisplay": "In me gratia omnis viae et veritatis, in me omnis spes vitae et virtutis: ego quasi rosa plantata super rivos aquarum fructificavi.",
+      "targetLemmas": [
+        "in",
+        "ego",
+        "gratia",
+        "omnis",
+        "via",
+        "et",
+        "veritas",
+        "spes",
+        "vita",
+        "virtus",
+        "quasi",
+        "super",
+        "aqua"
+      ],
+      "supportLemmas": [
+        "rosa"
+      ]
+    },
+    {
+      "id": "l40-p6",
+      "sourceId": "rosary-communion-l40",
+      "sourceLatin": "Florete, flores, quasi lilium, et date odorem, et frondete in gratiam, collaudate canticum, et benedicite Dominum in operibus suis.",
+      "instructionalDisplay": "Florete, flores, quasi lilium, et date odorem, et frondete in gratiam, collaudate canticum, et benedicite Dominum in operibus suis.",
+      "targetLemmas": [
+        "et",
+        "do",
+        "in",
+        "gratia",
+        "laudo",
+        "benedico",
+        "Dominus",
+        "opus",
+        "suus",
+        "quasi"
+      ],
+      "supportLemmas": [
+        "lilium"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l40-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is your first action on an unseen capstone text?",
+      "stimulus": null,
+      "options": [
+        "cold read and identify structure",
+        "open every gloss",
+        "translate word by word",
+        "look for the lesson grammar"
+      ],
+      "expectedAnswer": "cold read and identify structure",
+      "acceptedVariants": [
+        "cold read and identify structure"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "capstone:method"
+      ]
+    },
+    {
+      "id": "l40-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What genre is the long Luke 1 selection?",
+      "stimulus": null,
+      "options": [
+        "Gospel narrative and dialogue",
+        "Collect",
+        "Secret",
+        "Requiem chant"
+      ],
+      "expectedAnswer": "Gospel narrative and dialogue",
+      "acceptedVariants": [
+        "Gospel narrative and dialogue"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": "rosary-gospel-l40",
+      "skills": [
+        "capstone:genre"
+      ]
+    },
+    {
+      "id": "l40-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which text most strongly requires poetic/parallel recovery?",
+      "stimulus": null,
+      "options": [
+        "Offertory",
+        "Gospel",
+        "Epistle heading",
+        "none"
+      ],
+      "expectedAnswer": "Offertory",
+      "acceptedVariants": [
+        "Offertory"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": "rosary-offertory-l40",
+      "skills": [
+        "capstone:poetry"
+      ]
+    },
+    {
+      "id": "l40-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Should an unknown proper name trigger a grammar review?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": "rosary-gospel-l40",
+      "skills": [
+        "capstone:support"
+      ]
+    },
+    {
+      "id": "l40-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does quomodo signal in the Gospel?",
+      "stimulus": null,
+      "options": [
+        "a direct how-question",
+        "a purpose clause",
+        "a genitive",
+        "an ablative absolute"
+      ],
+      "expectedAnswer": "a direct how-question",
+      "acceptedVariants": [
+        "a direct how-question"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": "rosary-gospel-l40",
+      "skills": [
+        "capstone:pronoun-toolkit"
+      ]
+    },
+    {
+      "id": "l40-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should repeated et in biblical prose make you do?",
+      "stimulus": null,
+      "options": [
+        "track coordination without fragmenting the passage",
+        "discard repeated clauses",
+        "assume scribal error",
+        "translate each et differently"
+      ],
+      "expectedAnswer": "track coordination without fragmenting the passage",
+      "acceptedVariants": [
+        "track coordination without fragmenting the passage"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": "rosary-gospel-l40",
+      "skills": [
+        "capstone:biblical-latin"
+      ]
+    },
+    {
+      "id": "l40-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does Lesson 40 introduce new tracked vocabulary?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:capstone-neutral"
+      ]
+    },
+    {
+      "id": "l40-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What counts as successful capstone reading?",
+      "stimulus": null,
+      "options": [
+        "sustained structural comprehension with minimal assistance",
+        "perfect literary translation",
+        "memorizing the Proper",
+        "zero unknown words"
+      ],
+      "expectedAnswer": "sustained structural comprehension with minimal assistance",
+      "acceptedVariants": [
+        "sustained structural comprehension with minimal assistance"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "capstone:success"
+      ]
+    },
+    {
+      "id": "l40-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which source unit contains Dominus possedit me in initio viarum suarum?",
+      "stimulus": null,
+      "options": [
+        "Epistle",
+        "Introit",
+        "Gospel",
+        "Communion"
+      ],
+      "expectedAnswer": "Epistle",
+      "acceptedVariants": [
+        "Epistle"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": "rosary-epistle-l40",
+      "skills": [
+        "capstone:navigation"
+      ]
+    },
+    {
+      "id": "l40-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which source unit begins Gaudeamus omnes in Domino?",
+      "stimulus": null,
+      "options": [
+        "Introit",
+        "Offertory",
+        "Communion",
+        "Gospel"
+      ],
+      "expectedAnswer": "Introit",
+      "acceptedVariants": [
+        "Introit"
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": "rosary-introit-l40",
+      "skills": [
+        "capstone:navigation"
+      ]
+    },
+    {
+      "id": "l40-e11",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the frozen final milestone?",
+      "stimulus": null,
+      "options": [
+        "Unseen authentic Missal capstone.",
+        "Complete Ordinary.",
+        "Unseen normal Propers.",
+        "Canon passage with long periodic syntax."
+      ],
+      "expectedAnswer": "Unseen authentic Missal capstone.",
+      "acceptedVariants": [
+        "Unseen authentic Missal capstone."
+      ],
+      "hint": "Use the full-course reading workflow; no new grammar clue is supplied.",
+      "explanation": "The capstone tests independent liturgical reading from authentic Missal text.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ]
+    },
+    {
+      "id": "l40-e12",
+      "exerciseType": "passage_analysis",
+      "prompt": "State the capstone recovery sequence.",
+      "stimulus": null,
+      "expectedAnswer": [
+        "cold read",
+        "genre/structure",
+        "mark blockers",
+        "minimal support",
+        "continuous reread",
+        "self-explanation"
+      ],
+      "acceptedVariants": [
+        [
+          "cold read",
+          "genre/structure",
+          "mark blockers",
+          "minimal support",
+          "continuous reread",
+          "self-explanation"
+        ]
+      ],
+      "hint": "The process matters as much as the answer.",
+      "explanation": "Independent reading means being able to recover from uncertainty without reverting to beginner mode.",
+      "difficulty": 3,
+      "sourceId": null,
+      "skills": [
+        "capstone:workflow"
+      ]
+    }
+  ],
+  "objectives": [
+    "Read unseen authentic Missal Latin with minimal assistance.",
+    "Select grammar tools independently rather than from a lesson label.",
+    "Tolerate non-Core vocabulary without losing structural comprehension.",
+    "Pass the final unseen authentic Missal capstone."
+  ],
+  "checkpoint": {
+    "id": "stage8-checkpoint",
+    "stage": 8,
+    "scopeLessons": [
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "progressionGate": "Unseen authentic Missal capstone.",
+    "readingTransition": "guided liturgical reading -> independent Missal reading",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 10,
+      "autoGradedExerciseIds": [
+        "l40-e1",
+        "l40-e2",
+        "l40-e3",
+        "l40-e4",
+        "l40-e5",
+        "l40-e6",
+        "l40-e7",
+        "l40-e8",
+        "l40-e9",
+        "l40-e10",
+        "l40-e11",
+        "l40-e12"
+      ]
+    },
+    "mustKnow": [
+      "poetic register",
+      "complete Ordinary",
+      "unseen normal Proper",
+      "specialized Requiem/Holy Week register",
+      "independent unseen Missal recovery"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [],
+    "silentIntroductions": [],
+    "authenticSourceCount": 6,
+    "exerciseCount": 12,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}
