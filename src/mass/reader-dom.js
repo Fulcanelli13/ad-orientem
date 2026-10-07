@@ -1037,18 +1037,19 @@ export function createReaderDomAdapter({
         onGuide?.(current.guide,current,prepared);
       }
     });
-    // Navigation also owns touchend directly. The donor uses edge arrows as
-    // genuine phone controls; preventing the synthetic follow-up click avoids
-    // double navigation while ensuring Schola/cinematic chrome cannot swallow
-    // a physical touch release.
+    // The donor edge arrows are real phone controls. Own touch navigation on
+    // pointerdown: Playwright/Chromium and physical touchscreens both dispatch
+    // this before the compatibility click, so the latter can be suppressed
+    // deterministically without risking a lost touchend after card repaint.
     for(const navButton of root.querySelectorAll?.("[data-reader-nav]") ?? []){
-      navButton.addEventListener?.("touchend",event=>{
+      navButton.addEventListener?.("pointerdown",event=>{
+        if(event.pointerType!=="touch")return;
         event.preventDefault?.();
         event.stopPropagation?.();
-        suppressNavClickUntil=Date.now()+550;
+        suppressNavClickUntil=Date.now()+650;
         if(navButton.dataset.readerNav==="previous")onPrevious?.(current,prepared);
         else if(navButton.dataset.readerNav==="next")onNext?.(current,prepared);
-      },{passive:false});
+      });
     }
     // v1.80 Mass-preferences mode controls own their touch/click lifecycle directly.
     // This avoids delegated-click ambiguity inside the floating preferences sheet
