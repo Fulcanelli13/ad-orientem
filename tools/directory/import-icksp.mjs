@@ -34,13 +34,14 @@ function addressFromLines(lines){
   const block=blockAfter(
     lines,
     /^Address\s*:/i,
-    /^(?:Emergency\s+Phone|Phone|Fax|Email|Website|Rectory|Office|Clergy|©)\s*:?/i,
+    /^(?:Mailing\s+Address|Emergency\s+Phone|Phone|Fax|Email|Website|Rectory|Office|Clergy|Oratory\s+Office\s+Hours|©)\s*:?/i,
   );
   if(block.length){
     const parts=block
       .map(line=>line.replace(/^\|\s*/,"").trim())
       .filter(Boolean)
-      .slice(0,3);
+      .filter(line=>!/^(?:Temporary\s+Chapel\s+Address|Church\s+Address|Address)$/i.test(line))
+      .slice(0,5);
     if(parts.length)return parts.join(", ");
   }
   const zipIndex=lines.findIndex(line=>/(?:\b[A-Z]{2}\s+\d{5}(?:-\d{4})?\b|\b(?:Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming)\s+\d{5}(?:-\d{4})?\b)/i.test(line));
@@ -113,9 +114,14 @@ export function parseIckspInternationalHtml(html,{pageUrl=ICKSP_INTL_URL}={}){
     const scheduleStart=lines.findIndex(line=>/^(Sundays?|During the Week|Weekdays?|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)/i.test(line));
     const addressLines=(scheduleStart>0?lines.slice(1,scheduleStart):lines.slice(1,5))
       .filter(line=>!/^Map & Directions$/i.test(line)&&!/^Phone:|^Email:/i.test(line));
-    const officialGeo=selectOfficialGeoFromHtml(body,{pageUrl,expectedText:[h4,addressLines.join(" "),heading].filter(Boolean).join(" ")});
+    const locality=heading.split(",")[0]?.trim()??"";
+    const addressBase=addressLines.join(", ");
+    const address=locality&&!addressBase.toLowerCase().includes(locality.toLowerCase())
+      ?[addressBase,locality].filter(Boolean).join(", ")
+      :addressBase;
+    const officialGeo=selectOfficialGeoFromHtml(body,{pageUrl,expectedText:[h4,address,heading].filter(Boolean).join(" ")});
     sections.push({
-      index:index++,title:h4,address:addressLines.join(", "),countryCode,diocese:null,detailUrl:pageUrl,
+      index:index++,title:h4,address,countryCode,diocese:null,detailUrl:pageUrl,
       emails:emailAddresses(stripTags(body)),phones:phoneCandidates(stripTags(body)),massRaw:schedule,detailText:stripTags(body),
       officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
     });
