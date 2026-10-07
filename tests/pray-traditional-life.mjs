@@ -5,6 +5,7 @@ import {
   MORNING_PRAYER_SEQUENCE_V381,
   EVENING_PRAYER_SEQUENCE_V381,
   HOLY_NAME_LITANY_V381,
+  SACRED_HEART_DEVOTIONS_V382,
   TRADITIONAL_PRAY_SOURCES_V381,
 } from "../src/pray/traditional-pray-data.js";
 
@@ -17,13 +18,16 @@ assert.equal(MORNING_PRAYER_SEQUENCE_V381.at(-1)[0],"foundations_glory_be","Morn
 assert.equal(EVENING_PRAYER_SEQUENCE_V381.at(-1)[0],"foundations_glory_be","Evening prayer lost its doxological conclusion");
 assert.ok(["en","fr","la"].every(k=>HOLY_NAME_LITANY_V381[k]?.length>500),"Holy Name litany must be complete and offline in EN/FR/LA");
 assert.match(TRADITIONAL_PRAY_SOURCES_V381.holyname,/Litany_of_the_Holy_Name_of_Jesus/);
+assert.ok(["en","fr","la"].every(k=>SACRED_HEART_DEVOTIONS_V382.litany[k]?.length>2000),"Sacred Heart Litany must remain complete and source-locked in EN/FR/LA");
+assert.ok(["en","fr","la"].every(k=>SACRED_HEART_DEVOTIONS_V382.humanRaceConsecration[k]?.length>1000),"Traditional Christ-the-King consecration must remain complete in EN/FR/LA");
+assert.match(SACRED_HEART_DEVOTIONS_V382.humanRaceConsecration.note,/pre-conciliar period/,"Sacred Heart consecration lost its historical-version warning");
 
 const runtime=readFileSync("src/pray/traditional-pray-runtime.js","utf8");
 const styles=readFileSync("src/pray/traditional-pray-styles.js","utf8");
 const browser=readFileSync("src/pray/browser-entry.js","utf8");
 const assets=readFileSync("src/assets/asset-registry.js","utf8");
 
-for(const id of ["pray.morning_evening","pray.sacred_hymns","pray.holy_name_litany","pray.nightly_examen","pray.meal_prayers"]){
+for(const id of ["pray.morning_evening","pray.sacred_hymns","pray.holy_name_litany","pray.nightly_examen","pray.meal_prayers","pray.sacred_heart"]){
   assert.match(runtime,new RegExp(id.replace(".","\\.")),id+" is not owned by the modular traditional PRAY runtime");
 }
 assert.match(runtime,/BASE_OPEN\("pray\.hub",opts\)/,"Traditional PRAY modules no longer mount inside the shared PRAY shell");
@@ -38,6 +42,12 @@ assert.match(styles,/aoTP381PrayerList/);
 assert.match(runtime,/Foundational prayers may recur later in the Rosary or another devotion/,"Morning\/Evening repetition guide disappeared");
 assert.match(runtime,/A deliberately small source-locked collection/,"Sacred Hymns donor introduction drifted");
 assert.match(runtime,/Historical approved Roman form, stored locally for complete offline prayer/,"Holy Name offline donor introduction drifted");
+assert.match(runtime,/38\.2-sacred-heart-convergence/,"Sacred Heart convergence version marker missing");
+assert.match(runtime,/SOURCE_LOCKED_TRADITIONAL/,"Sacred Heart source-lock policy disappeared");
+assert.match(runtime,/data-tp381-heart="litany"/,"Sacred Heart litany tab disappeared");
+assert.match(runtime,/data-tp381-heart="reparation"/,"Sacred Heart reparation tab disappeared");
+assert.match(runtime,/data-tp381-heart="consecration"/,"Sacred Heart consecration tab disappeared");
+assert.match(runtime,/current Enchiridion prints an abbreviated form/,"Traditional/current Sacred Heart version distinction disappeared");
 assert.doesNotMatch(runtime,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero cards");
 assert.doesNotMatch(styles,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero styling");
 assert.match(styles,/aoTP381Intro/,"v38.1 donor intro geometry is absent");
@@ -50,5 +60,6 @@ assert.match(assets,/"pray\.sacred_hymns"\s*:\s*"ao-refined-devotions"/);
 assert.match(assets,/"pray\.holy_name_litany"\s*:\s*"ao-refined-devotions"/);
 assert.match(assets,/"pray\.nightly_examen"\s*:\s*"ao-rich-examination-of-conscience"/);
 assert.match(assets,/"pray\.meal_prayers"\s*:\s*"ao-refined-pray-now"/);
+assert.match(assets,/"pray\.sacred_heart"\s*:\s*"ao-rich-sacred-heart"/);
 
-console.log("PASS modular v38.1 traditional PRAY extraction");
+console.log("PASS modular v38.2 traditional PRAY + Sacred Heart convergence");
