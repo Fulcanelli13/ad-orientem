@@ -5,6 +5,20 @@
   "note": "Specific locators remain on glossary entries/source IDs. Project-internal pointers are not substitutes for doctrinal authorities.",
   "sources": [
     {
+      "id": "AO-LATIN-CORE-1-200",
+      "title": "Ad Orientem — frozen Core Latin 1–200 ranking",
+      "authority_type": "PROJECT_INTERNAL",
+      "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/core-latin-200.v0.2.json",
+      "status": "PROJECT_INTERNAL"
+    },
+    {
+      "id": "AO-LATIN-CORPUS-201-350",
+      "title": "Ad Orientem — frozen Core Latin 201–350 ranking",
+      "authority_type": "PROJECT_INTERNAL",
+      "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/core-latin-201-350.v1.0.json",
+      "status": "PROJECT_INTERNAL"
+    },
+    {
       "id": "CORE-LATIN-200-V0.2",
       "title": "CORE LATIN 200 V0.2",
       "authority_type": "PROJECT_INTERNAL",
@@ -115,6 +129,13 @@
       "authority_type": "PROJECT_INTERNAL",
       "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/pray/canonical-data.js",
       "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SCANLON-1944",
+      "title": "Cora Carroll Scanlon & Charles L. Scanlon, Latin Grammar (1944)",
+      "authority_type": "GRAMMAR_REFERENCE",
+      "canonical_url": "https://books.google.com/books?id=m1akCuhCNOwC",
+      "status": "DIRECT_CONTEXT_V1"
     },
     {
       "id": "SRC-ASCETICAL-PRAYER",
