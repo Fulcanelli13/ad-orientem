@@ -7,7 +7,6 @@ on:
       - "tools/directory/**"
       - "data/directory/**"
       - ".github/workflows/directory-corpus-audit.yml"
-      - "package.json"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
