@@ -78,6 +78,9 @@ function extractPostalCode(value,countryCode){
   if(cc==="CA")return text.match(/\b[A-Z]\d[A-Z][ -]?\d[A-Z]\d\b/i)?.[0]?.toUpperCase()??null;
   if(cc==="US")return text.match(/\b\d{5}(?:-\d{4})?\b/g)?.at(-1)??null;
   if(cc==="GB")return text.match(/\b[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\b/i)?.[0]?.toUpperCase()??null;
+  if(cc==="PL")return text.match(/\b\d{2}-\d{3}\b/g)?.at(-1)??null;
+  if(cc==="BR")return text.match(/\b\d{5}-\d{3}\b/g)?.at(-1)??null;
+  if(cc==="PT")return text.match(/\b\d{4}-\d{3}\b/g)?.at(-1)??null;
   return text.match(/\b\d{4,6}\b/g)?.at(-1)??null;
 }
 function escapeRegExp(value){
