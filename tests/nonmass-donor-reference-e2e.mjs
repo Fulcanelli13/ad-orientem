@@ -15,7 +15,7 @@ const sourceById=Object.fromEntries(primarySources.sources.map(x=>[x.id,x]));
 assert.equal(sourceById.PRAY_UNIFIED_READER_CLOSURE.repositoryCommit,DONOR_COMMIT,"frozen Git donor commit drifted from primary-source manifest");
 assert.equal(sourceById.V3_4_10_PRESENTATION_AND_TRADITION.sha256,"952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283");
 assert.equal(sourceById.N3_GUIDED_NOVENAS.sha256,"105f765d0227b937c58781416cf461c7b950b50427704b81478b4deaeeaadf10");
-assert.equal(sourceById.V3_4_14_ROSARY_FINAL.availability,"APPROVED_PRIMARY_BYTES_MISSING");
+assert.equal(sourceById.V3_4_14_ROSARY_FINAL.availability,"PRIMARY_BYTES_MISSING_EXACT_SUCCESSOR_BYTES_RECOVERED");
 assert.equal(sourceById.NON_MASS_HEAD_V3_22.availability,"APPROVED_PRIMARY_BYTES_MISSING");
 const out=resolve(root,"artifacts/visual-acceptance/donor-current-v435930");
 await mkdir(out,{recursive:true});
