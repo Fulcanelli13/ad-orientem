@@ -1328,13 +1328,77 @@
         }
       ],
       "notes": "Current Carolina traditional-liturgy schedule lists Sunday noon at Sacred Heart; the diocesan policy separately permits the 1962 Missal there. Schedule and authorization remain separate claims."
+    },
+    {
+      "id": "DIO-US-SYR-BINGHAMTON-STMARY",
+      "venue_id": "VEN-US-SYR-BINGHAMTON-STMARY",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Syracuse",
+      "locality": "Binghamton, NY",
+      "name": "St. Mary of the Assumption",
+      "venue_type": "PARISH_CHURCH",
+      "address": "37 Fayette Street, Binghamton, NY 13901",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_14:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_LIVE",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://marypaul.org/mass/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_BISHOP_CURRENT",
+          "url": "https://stjamesjc.org/bishop-lucias-statement-on-the-sspx/"
+        }
+      ],
+      "notes": "Current parish page lists Sunday 2pm Traditional Latin Mass. Bishop Lucia's July 2026 statement identifies St. Mary Binghamton as an indult location in the current 1962-Missal context."
+    },
+    {
+      "id": "DIO-US-NY-HOLYINNOCENTS-MANHATTAN",
+      "venue_id": "VEN-US-NY-HOLYINNOCENTS-MANHATTAN",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of New York",
+      "locality": "New York, NY",
+      "name": "Shrine & Parish Church of the Holy Innocents",
+      "venue_type": "PARISH_CHURCH_SHRINE",
+      "address": "128 West 37th Street, New York, NY 10018",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:00_LOW_10:30_HIGH; MON_FRI_18:00; SATURDAY_13:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_LIVE",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://shrineofholyinnocents.org/mass-times"
+        },
+        {
+          "role": "edition",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://shrineofholyinnocents.org/about-us"
+        }
+      ],
+      "notes": "Current parish schedule gives recurring Tridentine Masses; the parish's own current About page explicitly identifies its Extraordinary Form as the 1962 edition."
     }
   ],
   "residue_summary": {
     "total": 13,
-    "promoted": 1,
+    "promoted": 3,
     "provider_routed": 4,
     "rejected_current": 1,
-    "staged": 7
+    "staged": 5
   }
 }
