@@ -113,7 +113,7 @@ export function createSettingsDonorState(win=globalThis){
     writeJson(SETTINGS_KEYS.preferences,preferences);writeJson(SETTINGS_KEYS.profiles,{schemaVersion:1,profiles});
     syncEffects();return snapshot();
   }
-  function snapshot(){return Object.freeze({version:"43.59.6",preferences:clone(preferences),profiles:clone(profiles),keys:SETTINGS_KEYS});}
+  function snapshot(){return Object.freeze({version:"43.59.6",preferences:clone(preferences),profiles:clone(profiles),keys:SETTINGS_KEYS,capabilities:{...capabilities},persistence:volatileStorageUsed?"volatile":"local"});}
   function getPath(path){
     return String(path).split(".").reduce((v,k)=>v?.[k],preferences);
   }
