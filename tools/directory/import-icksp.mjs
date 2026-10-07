@@ -29,6 +29,34 @@ function blockAfter(lines,startRe,stopRe){
   }
   return out.filter(Boolean);
 }
+function addressFromLines(lines){
+  const block=blockAfter(
+    lines,
+    /^Address\s*:/i,
+    /^(?:Emergency\s+Phone|Phone|Fax|Email|Website|Rectory|Office|Clergy|©)\s*:?/i,
+  );
+  if(block.length){
+    const parts=block
+      .map(line=>line.replace(/^\|\s*/,"").trim())
+      .filter(Boolean)
+      .slice(0,3);
+    if(parts.length)return parts.join(", ");
+  }
+  const zipIndex=lines.findIndex(line=>/(?:\b[A-Z]{2}\s+\d{5}(?:-\d{4})?\b|\b(?:Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming)\s+\d{5}(?:-\d{4})?\b)/i.test(line));
+  if(zipIndex>=0)return lines.slice(Math.max(0,zipIndex-1),zipIndex+1).join(", ");
+  return null;
+}
+function phonesFromLines(lines){
+  const candidates=[];
+  for(let i=0;i<lines.length;i+=1){
+    if(!/^(?:Emergency\s+Phone|Phone)\s*:/i.test(lines[i]))continue;
+    const remainder=lines[i].replace(/^(?:Emergency\s+Phone|Phone)\s*:\s*/i,"").replace(/^\|\s*/,"").trim();
+    if(remainder)candidates.push(remainder);
+    const next=String(lines[i+1]??"").replace(/^\|\s*/,"").trim();
+    if(next&&!/^(?:Fax|Email|Website|Address|Emergency\s+Phone|Phone)\s*:/i.test(next))candidates.push(next);
+  }
+  return phoneCandidates(candidates.join("\n"));
+}
 function scheduleLines(lines){
   return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass\b/i.test(line));
 }
@@ -55,17 +83,17 @@ function discoverUs(html){
   }
   return out;
 }
-function parseUsDetail(html,candidate){
+export function parseIckspUsDetail(html,candidate){
   const lines=textLines(html),text=stripTags(html);
   const h=extractTagBlocks(html,"h6").map(x=>x.text).find(Boolean);
   const inferred=candidate.label.split(" - ").slice(1).join(" - ");
   const title=h ?? (inferred || candidate.label);
   const church=blockAfter(lines,/^Church\s*:/i,/^(Priory|Phone|Email|©)/i);
-  const address=church.length>1?church.slice(1).join(", "):church.join(", ");
+  const address=addressFromLines(lines)||(church.length>1?church.slice(1).join(", "):church.join(", "));
   const rawSchedule=scheduleBlock(lines);
   return {
     title,address,countryCode:"US",diocese:null,detailUrl:candidate.url,
-    emails:emailAddresses(text),phones:phoneCandidates(text),massRaw:rawSchedule,
+    emails:emailAddresses(text),phones:phonesFromLines(lines),massRaw:rawSchedule,
     detailText:text
   };
 }
@@ -133,7 +161,7 @@ export async function runIckspImport({out="data/directory/generated/icksp",concu
   const [usHtml,intlHtml]=await Promise.all([fetchText(ICKSP_US_URL,{fetchImpl}),fetchText(ICKSP_INTL_URL,{fetchImpl})]);
   const usCandidates=discoverUs(usHtml);
   const usRecords=await concurrentMap(usCandidates,concurrency,async candidate=>{
-    try{return parseUsDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
+    try{return parseIckspUsDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
     catch(error){return {title:candidate.label,address:null,countryCode:"US",diocese:null,detailUrl:candidate.url,emails:[],phones:[],massRaw:null,detailWarning:String(error?.message??error)};}
   });
   const intlRecords=parseIckspInternationalHtml(intlHtml);

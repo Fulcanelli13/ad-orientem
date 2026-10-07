@@ -5,6 +5,7 @@ import {
   directoryStats,
   filterDirectoryRecords,
   joinDirectoryRecords,
+  publishableDirectoryRecords,
 } from "../src/find/data-service.js";
 import { buildFindViewModel, renderFindToString } from "../src/find/presentation.js";
 import { FIND_MAP_RUNTIME } from "../src/find/map-runtime.js";
@@ -68,6 +69,8 @@ const communities=[
 
 const records=joinDirectoryRecords({venues,ministries,schedules,sources,communityProfiles});
 assert.equal(records.length,2);
+const invalidRecord={venue:{venue_id:"bad",address:{country_code:null},geo:{lat:null,lng:null}},ministries:[],sources:[]};
+assert.equal(publishableDirectoryRecords([...records,invalidRecord]).length,2,"runtime did not quarantine invalid venues");
 assert.equal(records[0].ministries[0].schedules.length,1);
 assert.equal(communionValue(records[0]),"YES");
 assert.equal(communionValue(records[1]),"UNKNOWN");

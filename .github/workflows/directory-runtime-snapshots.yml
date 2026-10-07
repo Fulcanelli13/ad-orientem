@@ -45,6 +45,7 @@ jobs:
         run: |
           npm run test:directory
           node tests/find-surface.mjs
+          node tools/directory/validate-runtime-snapshots.mjs
       - name: Package reviewable snapshots
         uses: actions/upload-artifact@v4
         with:

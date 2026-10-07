@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
 import { countryCodeFromText } from "../tools/directory/lib/country-codes.mjs";
 import { parseFsspDirectoryHtml, buildFsspDataset } from "../tools/directory/import-fssp.mjs";
-import { parseIckspInternationalHtml, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
+import { parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
 import { discoverIbpIndex, buildIbpDataset, mergeIbpIndexWitness } from "../tools/directory/import-ibp.mjs";
+import { phoneCandidates } from "../tools/directory/lib/html-source-utils.mjs";
 
 assert.equal(countryCodeFromText("75002 Paris - France"),"FR");
 assert.equal(countryCodeFromText("2049 - Australia"),"AU");
@@ -29,6 +30,23 @@ const fsspDataset=buildFsspDataset([{...fssp[0],emails:["office@example.org"],ph
 assert.equal(fsspDataset.venues[0].address.country_code,"AU");
 assert.equal(fsspDataset.ministries[0].community_id,"FSSP");
 assert.equal(fsspDataset.ministries[0].liturgical_usage.books,"1962");
+const fsspControlHtml=`
+<table><tr><td>←</td><td>Move left</td><td></td></tr>
+<tr><td>Home</td><td>Jump left by 75%</td><td></td></tr></table>`;
+assert.equal(parseFsspDirectoryHtml(fsspControlHtml).length,0,"FSSP UI controls survived venue parsing");
+
+
+const ickspUsHtml=`
+<h6>St. Josaphat Oratory</h6>
+<div>Sunday</div><div>9:30 am Holy Mass</div>
+<div>Address:</div><div>| 34-32 210th Street</div><div>Bayside, New York 11361</div>
+<div>Phone:</div><div>| 718-229-1663</div>
+<div>Email:</div><div>| stjosaphat.queens@institute-christ-king.org</div>`;
+const ickspUs=parseIckspUsDetail(ickspUsHtml,{label:"New York - St. Josaphat Oratory",url:"https://www.institute-christ-king.org/queens-home",countryCode:"US"});
+assert.match(ickspUs.address,/34-32 210th Street/);
+assert.match(ickspUs.address,/New York 11361/);
+assert.deepEqual(ickspUs.phones,["718-229-1663"]);
+assert.deepEqual(phoneCandidates("09/02/2026 718-229-1663"),["718-229-1663"],"date string was classified as a phone");
 
 const ickspIntl=`
 <h2>Rome, Italy</h2>
