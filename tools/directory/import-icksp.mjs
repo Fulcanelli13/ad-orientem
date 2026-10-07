@@ -32,6 +32,17 @@ function blockAfter(lines,startRe,stopRe){
 function scheduleLines(lines){
   return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass\b/i.test(line));
 }
+function scheduleBlock(lines){
+  const start=lines.findIndex(line=>/^(Sundays?|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|During the Week|Weekdays?|Feast Days?|Holy Mass|Mass Times?)/i.test(line));
+  if(start<0)return scheduleLines(lines).join("\n")||null;
+  const out=[];
+  for(let i=start;i<lines.length;i+=1){
+    const line=lines[i];
+    if(i>start&&/^(Church|Priory|Address|Phone|Email|Clergy|Rector|Canon|Map|Directions|Contact|Website)\s*:?/i.test(line))break;
+    if(/\b(Mass|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Weekdays?|Feast Days?|During the Week)\b/i.test(line)||/\b\d{1,2}(?::|\.)\d{2}\b|\b(?:am|pm)\b/i.test(line))out.push(line);
+  }
+  return out.some(line=>/\bMass\b/i.test(line))?out.join("\n"):null;
+}
 function discoverUs(html){
   const seen=new Set(),out=[];
   for(const a of extractAnchors(html,ICKSP_US_URL)){
@@ -51,7 +62,7 @@ function parseUsDetail(html,candidate){
   const title=h ?? (inferred || candidate.label);
   const church=blockAfter(lines,/^Church\s*:/i,/^(Priory|Phone|Email|©)/i);
   const address=church.length>1?church.slice(1).join(", "):church.join(", ");
-  const rawSchedule=scheduleLines(lines).join("\n")||null;
+  const rawSchedule=scheduleBlock(lines);
   return {
     title,address,countryCode:"US",diocese:null,detailUrl:candidate.url,
     emails:emailAddresses(text),phones:phoneCandidates(text),massRaw:rawSchedule,
@@ -68,7 +79,7 @@ export function parseIckspInternationalHtml(html,{pageUrl=ICKSP_INTL_URL}={}){
     if(!countryCode)continue;
     const body=m[2],h4=extractTagBlocks(body,"h4")[0]?.text??heading;
     const lines=textLines(body);
-    const schedule=scheduleLines(lines).join("\n")||null;
+    const schedule=scheduleBlock(lines);
     const scheduleStart=lines.findIndex(line=>/^(Sundays?|During the Week|Weekdays?|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)/i.test(line));
     const addressLines=(scheduleStart>0?lines.slice(1,scheduleStart):lines.slice(1,5))
       .filter(line=>!/^Map & Directions$/i.test(line)&&!/^Phone:|^Email:/i.test(line));
