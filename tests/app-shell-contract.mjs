@@ -293,7 +293,7 @@ function host({ route = "home", confirm = true } = {}) {
       setAttribute(name,value){this.attributes[name]=value;},
       removeAttribute(name){ if(name==="data-ao-ribbon")delete this.dataset.aoRibbon; },
       querySelectorAll(selector){
-        if(selector==="[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label")return [label];
+        if(selector.includes("[data-ao-ribbon-label]"))return [label];
         return [];
       },
     };
