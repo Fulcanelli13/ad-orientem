@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { countryCodeFromText } from "../tools/directory/lib/country-codes.mjs";
 import { parseFsspDirectoryHtml, buildFsspDataset } from "../tools/directory/import-fssp.mjs";
 import { parseIckspInternationalHtml, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
-import { discoverIbpIndex, buildIbpDataset } from "../tools/directory/import-ibp.mjs";
+import { discoverIbpIndex, buildIbpDataset, mergeIbpIndexWitness } from "../tools/directory/import-ibp.mjs";
 
 assert.equal(countryCodeFromText("75002 Paris - France"),"FR");
 assert.equal(countryCodeFromText("2049 - Australia"),"AU");
@@ -62,6 +62,16 @@ assert.equal(ibp.length,2);
 assert.equal(ibp[0].countryCode,"FR");
 assert.equal(ibp[1].countryCode,"AU");
 assert.match(ibp[0].diocese,/Paris/);
+const witnessMerge=mergeIbpIndexWitness(ibp,{
+  entries:[
+    {country_code:"FR",diocese:"Archidiocèse de Paris",city:"Paris",label:"Paris – Centre culturel chrétien Saint-Paul"},
+    {country_code:"FR",diocese:"Diocèse de Chartres",city:"Manou",label:"Manou"}
+  ]
+});
+assert.equal(witnessMerge.length,2);
+assert.equal(witnessMerge[0].city,"Paris");
+assert.equal(witnessMerge[1].city,"Manou");
+assert.equal(witnessMerge[1].witnessOnly,true);
 const ibpDataset=buildIbpDataset([{
   title:"Paris – Centre Saint-Paul",address:"12 rue Saint Joseph, 75002 Paris",countryCode:"FR",
   diocese:"Archidiocèse de Paris",detailUrl:"https://www.institutdubonpasteur.org/example",
