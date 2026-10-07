@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
   "version": "1.0.0",
-  "generated_at": "2026-10-07T19:07:31Z",
+  "generated_at": "2026-10-07T19:55:00Z",
   "provider": "ICKSP_FEDERATED_V13",
   "defaults": {
     "c": "ICKSP",
@@ -26,77 +26,102 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-001-AGEN",
+          "l": "Agen",
+          "n": "Église Notre-Dame-du-Bourg",
+          "vt": "church",
+          "a": "Rue Montesquieu, 47000 Agen, France",
+          "sr": "SUNDAY_FEAST_10:00",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-001-LAFOX",
+          "l": "Lafox",
+          "n": "Chapelle du château de Lafox",
+          "vt": "chapel",
+          "a": "Château, 47240 Lafox, France",
+          "sr": "SATURDAY_18:00",
+          "svc": "MASS"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-002",
       "cc": "FR",
-      "l": "Puygouzon / Albi",
-      "n": "Albi",
-      "vt": "other",
+      "l": "Puygouzon",
+      "n": "Église Saint-Genieys",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_11:15",
       "su": "https://icrspfrance.fr/?org=2",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "6, chemin de la Brugue, 81990 Puygouzon, France"
     },
     {
       "u": "ICKSP-STG-003",
       "cc": "FR",
       "l": "Auros",
-      "n": "Auros (Bordeaux)",
-      "vt": "other",
+      "n": "Église Saint-Germain",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_09:00_LOW_10:30_HIGH",
       "su": "https://icrspfrance.fr/?org=3",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Église Saint-Germain, 33124 Auros, France"
     },
     {
       "u": "ICKSP-STG-004",
       "cc": "FR",
       "l": "Baladou",
-      "n": "Baladou",
-      "vt": "other",
+      "n": "Maison Notre-Dame-de-Rocamadour",
+      "vt": "residence",
       "sr": "SATURDAY_11:30; FIRST_FRIDAY_18:30",
       "su": "https://icrspfrance.fr/?org=4",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Lagarrigue Haute, 46600 Baladou, France"
     },
     {
       "u": "ICKSP-STG-005",
       "cc": "FR",
       "l": "Beauvais",
-      "n": "Beauvais",
-      "vt": "other",
+      "n": "Église Notre-Dame-de-l'Assomption",
+      "vt": "church",
       "sr": "THURSDAY_FRIDAY_18:30; SATURDAY_09:00; SUNDAY_FEAST_11:00",
       "su": "https://icrspfrance.fr/?org=5",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "3, rue Aimé Besnard, 60000 Beauvais, France"
     },
     {
       "u": "ICKSP-STG-006",
       "cc": "FR",
       "l": "Béziers",
-      "n": "Béziers",
-      "vt": "other",
+      "n": "Église Saint-Jacques",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_10:30; FRIDAY_19:00; SATURDAY_11:00",
       "su": "https://icrspfrance.fr/?org=6",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "51, rue Saint-Jacques, 34500 Béziers, France"
     },
     {
       "u": "ICKSP-STG-007",
@@ -110,63 +135,88 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-007-BIRIATOU",
+          "l": "Biriatou",
+          "n": "Église Saint-Martin",
+          "vt": "church",
+          "a": "Église Saint-Martin, 64400 Biriatou, France",
+          "sr": "SUNDAY_OBLIGATION_10:30; FIRST_SATURDAY_11:00",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-007-BAYONNE",
+          "l": "Bayonne",
+          "n": "Cathédrale Sainte-Marie de Bayonne",
+          "vt": "church",
+          "a": "Cathédrale Sainte-Marie, 64000 Bayonne, France",
+          "sr": "WEEKDAY_MASS_TIMES_BY_CONTACT; NO_PUBLISHED_RECURRING_TIME",
+          "svc": "SOURCE_ASSERTION",
+          "pr": "ICKSP_PHYSICAL_VENUE_SCHEDULE_BY_CONTACT"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-008",
       "cc": "FR",
       "l": "Brive-la-Gaillarde",
-      "n": "Brive-la-Gaillarde",
-      "vt": "other",
+      "n": "Église Saint-Paul-du-Rivet",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_11:00",
       "su": "https://icrspfrance.fr/?org=8",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Impasse des Arcades, 19100 Brive-la-Gaillarde, France"
     },
     {
       "u": "ICKSP-STG-009",
       "cc": "FR",
       "l": "Cannes",
-      "n": "Cannes",
-      "vt": "other",
+      "n": "Chapelle de la Miséricorde",
+      "vt": "chapel",
       "sr": "SUNDAY_FEAST_10:00",
       "su": "https://icrspfrance.fr/?org=9",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "16-18, rue de la Miséricorde, Cannes, France"
     },
     {
       "u": "ICKSP-STG-010",
       "cc": "FR",
       "l": "Castres",
-      "n": "Castres",
-      "vt": "other",
+      "n": "Église Saint-Jacques",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_09:15",
       "su": "https://icrspfrance.fr/?org=10",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "9, rue de l'Église, 81100 Castres, France"
     },
     {
       "u": "ICKSP-STG-011",
       "cc": "FR",
       "l": "La Chapelle-d'Armentières",
-      "n": "Chapelle d'Armentières",
-      "vt": "other",
+      "n": "Maison Notre-Dame-de-Fatima",
+      "vt": "residence",
       "sr": "SUNDAY_FEAST_08:30_LOW_10:30_SUNG; WEEKDAY_MASSES_SEE_SOURCE",
       "su": "https://icrspfrance.fr/?org=11",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "201, chemin de la Patinerie, 59930 La Chapelle-d'Armentières, France"
     },
     {
       "u": "ICKSP-STG-012",
@@ -180,7 +230,27 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-012-PONTLABBE",
+          "l": "Pont-l'Abbé-d'Arnoult",
+          "n": "Maison Saint-Louis-Marie-Grignion-de-Montfort",
+          "vt": "residence",
+          "a": "Chantemerle, 17250 Pont-l'Abbé-d'Arnoult, France",
+          "sr": "MON_FRI_07:00; SATURDAY_08:00",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-012-CRAZANNES",
+          "l": "Crazannes",
+          "n": "Église Sainte-Madeleine",
+          "vt": "church",
+          "a": "7, rue de l'église, 17350 Crazannes, France",
+          "sr": "SUNDAY_FEAST_11:00",
+          "svc": "MASS"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-013",
@@ -194,63 +264,96 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-013-FONTAINE",
+          "l": "Fontaine-lès-Dijon",
+          "n": "Basilique de la Maison natale Saint-Bernard",
+          "vt": "basilica",
+          "a": "Place des Feuillants, 21121 Fontaine-lès-Dijon, France",
+          "sr": "SUNDAY_FEAST_08:30_10:00; FRIDAY_18:30",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-013-STANDRE",
+          "l": "Dijon",
+          "n": "Chapelle Saint-André",
+          "vt": "chapel",
+          "a": "5, place Saint-Michel, 21000 Dijon, France",
+          "sr": "THURSDAY_07:30",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-013-STMICHEL",
+          "l": "Dijon",
+          "n": "Église Saint-Michel",
+          "vt": "church",
+          "a": "5, place Saint-Michel, 21000 Dijon, France",
+          "sr": "TUESDAY_12:15; WEDNESDAY_18:30; SATURDAY_10:00",
+          "svc": "MASS"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-014",
       "cc": "FR",
-      "l": "Rodez",
-      "n": "Foissac (Rodez)",
-      "vt": "other",
+      "l": "Foissac",
+      "n": "Chapelle Notre-Dame-de-la-Consolation",
+      "vt": "chapel",
       "sr": "SUNDAY_17:00_OUTSIDE_SUMMER; CURRENT_OCTOBER_SCHEDULE",
       "su": "https://icrspfrance.fr/?org=14",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "La Capelette S, 12260 Foissac, France"
     },
     {
       "u": "ICKSP-STG-015",
       "cc": "MQ",
       "l": "Fort-de-France",
-      "n": "Fort-de-France",
-      "vt": "other",
+      "n": "Chapelle du Foyer de l’Espérance",
+      "vt": "chapel",
       "sr": "SUNDAY_FEAST_09:30; WEEKDAY_TIMES_SEE_SOURCE",
       "su": "https://icrspfrance.fr/?org=15",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Rue Adolphe Trillard, 97200 Fort-de-France, Martinique"
     },
     {
       "u": "ICKSP-STG-016",
       "cc": "FR",
       "l": "La Rochelle",
-      "n": "La Rochelle",
-      "vt": "other",
+      "n": "Chapelle Saint-Maurice",
+      "vt": "chapel",
       "sr": "SUNDAY_FEAST_18:00",
       "su": "https://icrspfrance.fr/?org=16",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "150, avenue Carnot, 17000 La Rochelle, France"
     },
     {
       "u": "ICKSP-STG-017",
       "cc": "FR",
       "l": "Lille",
-      "n": "Lille",
-      "vt": "other",
+      "n": "Église Saint-Étienne",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_10:30_18:30; WEEKDAY_MASSES",
       "su": "https://icrspfrance.fr/?org=18",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "47, rue de l’Hôpital Militaire, 59800 Lille, France"
     },
     {
       "u": "ICKSP-STG-018",
@@ -264,7 +367,28 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-018-STANTOINE",
+          "l": "Limoges",
+          "n": "Chapelle Saint-Antoine",
+          "vt": "chapel",
+          "a": "Rue des Papillons, 87100 Limoges, France",
+          "sr": "MON_TUE_THU_FRI_18:30; SATURDAY_11:00; SUNDAY_FEAST_10:30",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-018-STLOUP",
+          "l": "Le Vigen",
+          "n": "Chapelle Saint-Loup",
+          "vt": "school_chapel",
+          "a": "43, chemin de l'Âge, 87110 Le Vigen, France",
+          "sr": "MONDAY_18:30; WEDNESDAY_11:00; SCHOOL_CHAPEL_PUBLIC_ACCESS_NOT_ESTABLISHED",
+          "svc": "SOURCE_ASSERTION",
+          "pr": "ICKSP_SCHOOL_CHAPEL_SPECIAL_ACCESS_UNCLEAR"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-019",
@@ -298,29 +422,31 @@
       "u": "ICKSP-STG-021",
       "cc": "FR",
       "l": "Mechmont",
-      "n": "Mechmont (Cahors)",
-      "vt": "other",
+      "n": "Église Saint-Caprais",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_17:00",
       "su": "https://icrspfrance.fr/?org=21",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Église Saint-Caprais, 46150 Mechmont, France"
     },
     {
       "u": "ICKSP-STG-022",
       "cc": "FR",
       "l": "Montauban",
-      "n": "Montauban",
-      "vt": "other",
+      "n": "Église de la Nativité de Notre-Dame",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_10:30; WEEKDAY_MASSES",
       "su": "https://icrspfrance.fr/?org=22",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "5, rue de l'abbé Justin Mercadier, 82000 Montauban, France"
     },
     {
       "u": "ICKSP-STG-023",
@@ -334,21 +460,51 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-023-VILLA",
+          "l": "Montpellier",
+          "n": "Maison Monseigneur-Bessieux – Villa Sainte-Christine",
+          "vt": "residence",
+          "a": "336, rue du Pioch-de-Boutonnet, 34090 Montpellier, France",
+          "sr": "MON_FRI_08:25_18:30_SCHOOL_TERM; TUESDAY_EXTRA_07:00; SATURDAY_11:00; SUNDAY_19:00_EXCEPT_JUL_AUG_CHRISTMAS_EASTER_PENTECOST",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-023-STEULALIE",
+          "l": "Montpellier",
+          "n": "Église Sainte-Eulalie",
+          "vt": "church",
+          "a": "12, rue de la Merci, 34000 Montpellier, France",
+          "sr": "SUNDAY_FEAST_10:30",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-023-PENITENTS",
+          "l": "Montpellier",
+          "n": "Chapelle des Pénitents Blancs",
+          "vt": "chapel",
+          "a": "14, rue Jacques Cœur, 34000 Montpellier, France",
+          "sr": "FIRST_MONDAY_19:00_REQUIEM",
+          "svc": "MASS"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-024",
       "cc": "FR",
       "l": "Bressolles",
-      "n": "Moulins",
-      "vt": "other",
+      "n": "Église du Sacré-Cœur",
+      "vt": "church",
       "sr": "FRIDAY_18:30; SATURDAY_09:00; SUNDAY_FEAST_11:15",
       "su": "https://icrspfrance.fr/?org=24",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "5, place de l'Église, 03000 Bressolles, France"
     },
     {
       "u": "ICKSP-STG-025",
@@ -362,21 +518,42 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-025-GESU",
+          "l": "Nice",
+          "n": "Église Saint-Jacques-le-Majeur (Gesù)",
+          "vt": "church",
+          "a": "Place du Jésus, rue Droite, 06300 Nice, France",
+          "sr": "SUNDAY_FEAST_09:00_18:00; TUE_WED_THU_10:00",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-025-SAINTSUAIRE",
+          "l": "Nice",
+          "n": "Chapelle du Saint-Suaire (Pénitents Rouges)",
+          "vt": "chapel",
+          "a": "Place Charles-Félix, 06300 Nice, France",
+          "sr": "SUNDAY_FEAST_10:30; MON_FRI_SAT_10:00",
+          "svc": "MASS"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-026",
       "cc": "FR",
       "l": "Nîmes",
-      "n": "Nîmes",
-      "vt": "other",
+      "n": "Chapelle Sainte-Eugénie",
+      "vt": "chapel",
       "sr": "SUNDAY_FEAST_10:15; FIRST_FRIDAY_19:00",
       "su": "https://icrspfrance.fr/?org=26",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "7, rue Sainte-Eugénie, 30000 Nîmes, France"
     },
     {
       "u": "ICKSP-STG-027",
@@ -390,7 +567,36 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-027-RECOUVRANCE",
+          "l": "Orléans",
+          "n": "Église Notre-Dame-de-Recouvrance",
+          "vt": "church",
+          "a": "10, rue de Recouvrance, 45000 Orléans, France",
+          "sr": "MON_FRI_18:30; SATURDAY_11:00; SUNDAY_FEAST_10:30",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-027-STMARTIN",
+          "l": "Saint-Martin-d'Abbat",
+          "n": "Église Saint-Martin",
+          "vt": "church",
+          "a": "10, place de la Mairie, 45110 Saint-Martin-d'Abbat, France",
+          "sr": "SUNDAY_FEAST_08:30; VERIFY_CURRENT_WEEK_ON_OFFICIAL_APOSTOLATE_SOURCE",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-027-CONFLANS",
+          "l": "Conflans-sur-Loing",
+          "n": "Église Saint-Pierre-ès-Liens",
+          "vt": "church",
+          "a": "Route de Gy les Nonains, 45700 Conflans-sur-Loing, France",
+          "sr": "FIRST_SUNDAY_18:00; VERIFY_CURRENT_WEEK_ON_OFFICIAL_APOSTOLATE_SOURCE",
+          "svc": "MASS"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-028",
@@ -418,147 +624,177 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-029-STLOUIS",
+          "l": "Le Port-Marly",
+          "n": "Église Saint-Louis",
+          "vt": "church",
+          "a": "42, route de Versailles, 78560 Le Port-Marly, France",
+          "sr": "MON_TUE_WED_18:00; WEDNESDAY_07:00; SATURDAY_11:00; VERIFY_AGENDA",
+          "svc": "MASS"
+        },
+        {
+          "u": "ICKSP-STG-029-STFRANCOIS",
+          "l": "Marly-le-Roi",
+          "n": "Chapelle Saint-François-de-Sales",
+          "vt": "chapel",
+          "a": "47 ter, avenue de l'Abreuvoir, 78160 Marly-le-Roi, France",
+          "sr": "MON_TUE_WED_18:00; WEDNESDAY_07:00; SATURDAY_11:00",
+          "svc": "MASS"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-030",
       "cc": "FR",
       "l": "Reims",
-      "n": "Reims",
-      "vt": "other",
+      "n": "Église Sainte-Jeanne-d'Arc",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_10:30; SATURDAY_10:30",
       "su": "https://icrspfrance.fr/?org=30",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "79, rue de Verdun, 51100 Reims, France"
     },
     {
       "u": "ICKSP-STG-031",
       "cc": "FR",
       "l": "Rennes",
-      "n": "Rennes",
-      "vt": "other",
+      "n": "Chapelle Saint-François",
+      "vt": "chapel",
       "sr": "SUNDAY_FEAST_09:00_10:30_18:30; WEEKDAY_MASSES",
       "su": "https://icrspfrance.fr/?org=31",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "43, rue de Redon, 35000 Rennes, France"
     },
     {
       "u": "ICKSP-STG-032",
       "cc": "FR",
       "l": "Rouen",
-      "n": "Rouen",
-      "vt": "other",
+      "n": "Église Saint-Patrice",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_08:30_10:30; WEEKDAY_MASSES",
       "su": "https://icrspfrance.fr/?org=33",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "1, rue Abbé Cochet, 76000 Rouen, France"
     },
     {
       "u": "ICKSP-STG-033",
       "cc": "FR",
-      "l": "Saint-Augustin / Royan",
-      "n": "Royan",
-      "vt": "other",
+      "l": "Saint-Augustin",
+      "n": "Église Saint-Augustin",
+      "vt": "church",
       "sr": "FIRST_AND_THIRD_SUNDAY_09:00; FEASTS_AS_PUBLISHED",
       "su": "https://icrspfrance.fr/?org=34",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Rue du Logis, 17570 Saint-Augustin, France"
     },
     {
       "u": "ICKSP-STG-034",
       "cc": "FR",
       "l": "Saint-Brieuc",
-      "n": "Saint-Brieuc",
-      "vt": "other",
+      "n": "Église Saint-Vincent-de-Paul",
+      "vt": "church",
       "sr": "FRIDAY_12:30; SATURDAY_11:30; SUNDAY_FEAST_10:30",
       "su": "https://icrspfrance.fr/?org=35",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "6, rue Théodore Botrel, 22000 Saint-Brieuc, France"
     },
     {
       "u": "ICKSP-STG-035",
       "cc": "FR",
       "l": "Toulouse",
-      "n": "Toulouse",
-      "vt": "other",
+      "n": "Chapelle Saint-Jean-Baptiste",
+      "vt": "chapel",
       "sr": "SUNDAY_FEAST_08:15_10:00_18:30; WEEKDAY_MASSES",
       "su": "https://icrspfrance.fr/?org=36",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "7, rue Antonin Mercié, 31000 Toulouse, France"
     },
     {
       "u": "ICKSP-STG-036",
       "cc": "FR",
       "l": "Troyes",
-      "n": "Troyes",
-      "vt": "other",
+      "n": "Église Saint-Rémy",
+      "vt": "church",
       "sr": "SUNDAY_FEAST_10:30; WEEKDAY_MASSES",
       "su": "https://icrspfrance.fr/?org=37",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "3, place Saint-Rémy, 10000 Troyes, France"
     },
     {
       "u": "ICKSP-STG-037",
       "cc": "FR",
       "l": "Valognes",
-      "n": "Valognes (Cherbourg)",
-      "vt": "other",
+      "n": "Chapelle de l'hôpital",
+      "vt": "chapel",
       "sr": "SUNDAY_FEAST_10:30; FIRST_SATURDAY_11:30",
       "su": "https://icrspfrance.fr/?org=38",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "1, avenue du 8 mai 1945, 50700 Valognes, France"
     },
     {
       "u": "ICKSP-STG-038",
       "cc": "FR",
       "l": "Vichy",
-      "n": "Vichy",
-      "vt": "other",
+      "n": "Église Saint-Louis",
+      "vt": "church",
       "sr": "SATURDAY_18:00; SUNDAY_FEAST_08:45",
       "su": "https://icrspfrance.fr/?org=39",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "33, rue Sainte-Cécile, 03200 Vichy, France"
     },
     {
       "u": "ICKSP-STG-039",
       "cc": "CH",
       "l": "Vicques",
-      "n": "Vicques (Delémont)",
-      "vt": "other",
+      "n": "Chapelle de l'Immaculée Conception",
+      "vt": "chapel",
       "sr": "SUNDAY_18:00_APR_OCT; SUNDAY_17:00_NOV_MAR; JUL_AUG_CONFIRM; MAJOR_FEAST_EXCEPTIONS",
       "su": "https://icrspfrance.fr/?org=11465",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Biel de Val 1, 2824 Vicques, Switzerland"
     },
     {
       "u": "ICKSP-STG-040",
@@ -1304,25 +1540,29 @@
       "l": "Limerick",
       "n": "Sacred Heart Church",
       "vt": "church",
-      "sr": "PUBLIC_DAILY_TRADITIONAL_MASS_CONFIRMED",
-      "su": "https://limerick.icksp.ie/",
+      "sr": "SUNDAY_08:00_LOW_10:30_SUNG; MON_WED_18:00; THURSDAY_08:00; FRIDAY_18:00; SATURDAY_08:00_10:30",
+      "su": "https://icksp.ie/mass-times",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "The Crescent, Limerick, V94 HK29, Ireland",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-123",
       "cc": "GB",
-      "l": "Belfast",
+      "l": "Belfast, Northern Ireland",
       "n": "Church of the Immaculate Heart of Mary",
       "vt": "church",
-      "sr": "PUBLIC_DAILY_TRADITIONAL_MASS_CONFIRMED",
-      "su": "https://icksp.ie/apostolate",
+      "sr": "SUNDAY_08:00_LOW_11:00_SUNG_18:00_LOW; MON_WED_FRI_18:30; THURSDAY_07:30; SATURDAY_09:30",
+      "su": "https://belfast.icksp.ie/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "577 Antrim Road, Belfast, BT15 3BU, Northern Ireland",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-124",
@@ -1330,13 +1570,14 @@
       "l": "Ardee, Co. Louth",
       "n": "House of Our Lady of the Most Holy Rosary",
       "vt": "residence",
-      "sr": "MASS_PAGE_PRESENT_BUT_TIMES_NOT_YET_PUBLISHED",
+      "sr": "SUNDAY_08:30_LOW_10:30_SUNG; MON_THU_SAT_08:30; FRIDAY_17:00",
       "su": "https://ardee.icksp.ie/",
       "st": "COMMUNITY_OFFICIAL",
-      "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_CONVENT_MASS_TIMES_UNPUBLISHED",
+      "svc": "MASS",
+      "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Hale Street, Moorehall Rise, Townparks, Ardee, Co. Louth, A92 F8FP, Ireland"
     },
     {
       "u": "ICKSP-STG-125",
@@ -1344,12 +1585,14 @@
       "l": "Galway",
       "n": "St. Mary's College Chapel",
       "vt": "chapel",
-      "sr": "PUBLIC_SUNDAY_TRADITIONAL_MASS_CONFIRMED",
-      "su": "https://icksp.ie/apostolate",
+      "sr": "SUNDAY_12:00; CONFESSION_SUNDAY_11:30",
+      "su": "https://galway.icksp.ie/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "St Mary's Road, Galway, H91 H7F8, Ireland",
+      "vv": "2026-10-07"
     }
   ]
 }
