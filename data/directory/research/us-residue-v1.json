@@ -1,0 +1,105 @@
+{
+  "schema": "AO_DIRECTORY_US_RESIDUE_V1",
+  "version": "1.0.0",
+  "verified_on": "2026-10-07",
+  "rule": "Promote DIOCESAN only when current public schedule, explicit 1962-edition evidence and venue identity clear the strict gate; keep provider ownership separate.",
+  "records": [
+    {
+      "id": "USB-EX-001",
+      "candidate": "Holy Innocents Church — Neptune, NJ",
+      "decision": "STAGE_YEAR_EDITION",
+      "reason": "Current monthly Traditional Latin Mass remains edition-ambiguous on the official parish source.",
+      "source": "https://holyinnocentschurch.net/mass-schedule/"
+    },
+    {
+      "id": "USB-EX-002",
+      "candidate": "Holy Ghost Parish — Tiverton, RI",
+      "decision": "STAGE_YEAR_EDITION",
+      "reason": "Current Extraordinary Form schedule is official, but the current source does not explicitly identify the 1962 books.",
+      "source": "https://www.dioceseofprovidence.org/parishfinder"
+    },
+    {
+      "id": "USB-EX-003",
+      "candidate": "SS John and James / St Mary — West Warwick, RI",
+      "decision": "STAGE_YEAR_EDITION",
+      "reason": "Current Extraordinary Form schedule is official, but the current source does not explicitly identify the 1962 books.",
+      "source": "https://www.dioceseofprovidence.org/parishfinder"
+    },
+    {
+      "id": "USB-EX-004",
+      "candidate": "St Mary — Providence, RI",
+      "decision": "ROUTE_TO_FSSP",
+      "reason": "1962 venue is FSSP-served; provider ownership must not be duplicated as diocesan.",
+      "source": "https://www.dioceseofprovidence.org/parishfinder"
+    },
+    {
+      "id": "USB-EX-005",
+      "candidate": "Chapel at St John the Evangelist — Forest Glen, MD",
+      "decision": "STAGE_FOR_CURRENT_SCHEDULE",
+      "reason": "Archdiocesan 1962 authorization remains public, but a current recurring schedule was not independently frozen.",
+      "source": "https://adw.org/news/traditionis-custodes/"
+    },
+    {
+      "id": "USB-EX-006",
+      "candidate": "Maria Lanakila — Lahaina, HI",
+      "decision": "HOLD_NO_CURRENT_TLM_LISTING",
+      "reason": "Current diocesan parish listing does not publish a traditional/1962 Mass schedule; historic authorization is not treated as a current schedule.",
+      "source": "https://www.catholichawaii.org/parish-listing/maria-lanakila/"
+    },
+    {
+      "id": "USB-EX-007",
+      "candidate": "Sacred Heart — Pahoa, HI",
+      "decision": "HOLD_NO_CURRENT_TLM_LISTING",
+      "reason": "Current diocesan parish listing does not publish a traditional/1962 Mass schedule; historic authorization is not treated as a current schedule.",
+      "source": "https://www.catholichawaii.org/parish-listing/sacred-heart-pahoa/"
+    },
+    {
+      "id": "USB-EX-008",
+      "candidate": "St Mary of the Assumption — Binghamton, NY",
+      "decision": "PROMOTED_DIOCESAN_1962",
+      "reason": "Current parish schedule publishes the Sunday Traditional Latin Mass and July 2026 bishop-level evidence identifies the 1962 community/venue context.",
+      "source": "https://marypaul.org/mass/"
+    },
+    {
+      "id": "USB-EX-009",
+      "candidate": "Diocesan Shrine of St Mary of the Assumption — Oswego, NY",
+      "decision": "ROUTE_TO_ICKSP",
+      "reason": "Bishop-level evidence identifies the shrine as directed by ICKSP.",
+      "source": "https://stjamesjc.org/bishop-lucias-statement-on-the-sspx/"
+    },
+    {
+      "id": "USB-EX-010",
+      "candidate": "St Stanislaus Oratory — Milwaukee, WI",
+      "decision": "ROUTE_TO_ICKSP",
+      "reason": "Current archdiocesan evidence identifies the traditional apostolate as ICKSP-served.",
+      "source": "https://www.archmil.org/posts/message-from-archbishop-grob-regarding-sspx"
+    },
+    {
+      "id": "USB-EX-011",
+      "candidate": "St Katharine Drexel / Sacred Heart — Springfield, IL",
+      "decision": "ROUTE_TO_CANONS_ST_JOHN_CANTIUS",
+      "reason": "Current parish schedule explicitly publishes 1962-Missal Masses and states the parish is staffed by the Canons Regular of St John Cantius.",
+      "source": "https://www.katharinedrexel.com/mass-scheduke"
+    },
+    {
+      "id": "USB-EX-012",
+      "candidate": "Sacred Heart — Charleston, SC",
+      "decision": "PROMOTED_DIOCESAN_1962",
+      "reason": "Current community schedule explicitly states the listed Masses use the 1962 books; diocesan policy supplies authorization context.",
+      "source": "https://carolinaliturgy.org/mass-times"
+    },
+    {
+      "id": "USB-EX-013",
+      "candidate": "Shrine & Parish Church of the Holy Innocents — New York, NY",
+      "decision": "STAGE_YEAR_EDITION",
+      "reason": "Current official material confirms recurring Traditional Latin Masses but the frozen current official source does not itself state the 1962 edition.",
+      "source": null
+    }
+  ],
+  "final_counts": {
+    "promoted_from_residue": 2,
+    "provider_routes": 4,
+    "staged_or_held": 7,
+    "diocesan_total": 44
+  }
+}

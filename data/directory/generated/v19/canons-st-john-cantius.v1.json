@@ -1,0 +1,38 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
+  "version": "1.0.0",
+  "generated_at": "2026-10-07T18:45:00Z",
+  "provider": "CANONS_ST_JOHN_CANTIUS",
+  "defaults": {
+    "c": "CANONS_ST_JOHN_CANTIUS",
+    "f": "ROMAN",
+    "b": "1962",
+    "mf": "TRADITIONAL_LATIN",
+    "rel": "served_by",
+    "ac": "DIRECT",
+    "ss": "CURRENT",
+    "vs": "OFFICIAL_LIVE"
+  },
+  "records": [
+    {
+      "u": "SJC-003",
+      "cc": "US",
+      "l": "Springfield, IL",
+      "n": "St. Katharine Drexel Parish",
+      "vt": "church",
+      "sr": "MON_FRI_06:15; WED_19:00; FIRST_FRIDAY_19:00; SAT_08:30; SUNDAY_10:30_HIGH_1962_EXCEPT_FIRST_SUNDAY",
+      "su": "https://www.katharinedrexel.com/mass-scheduke",
+      "st": "PARISH_OFFICIAL"
+    },
+    {
+      "u": "SJC-004",
+      "cc": "US",
+      "l": "Lawton, MI",
+      "n": "St. Anne's Chapel",
+      "vt": "chapel",
+      "sr": "SEASONAL_FIRST_SATURDAY_MASS_CONFIRMED_2026",
+      "su": "https://www.canons-regular.org/newsdesk",
+      "st": "COMMUNITY_OFFICIAL"
+    }
+  ]
+}
