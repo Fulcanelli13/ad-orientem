@@ -405,7 +405,7 @@ assert.equal(pontmainShrine.length,1);
 assert.equal(pontmainShrine[0].map_publishable,false);
 const pontmainAnniversary=filterExploreItems(projection.byLens.pilgrimages,{query:"Pontmain Apparition Anniversary"});
 assert.equal(pontmainAnniversary.length,1);
-assert.ok(pontmainAnniversary[0].sections.some(section=>/Anniversary of the Pontmain Apparition/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+assert.ok(pontmainAnniversary[0].sections.some(section=>/Anniversary of the apparition at Pontmain/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 const pontmainAssumption=filterExploreItems(projection.byLens.pilgrimages,{query:"Pontmain Assumption"});
 assert.equal(pontmainAssumption.length,1);
 assert.ok(pontmainAssumption[0].sections.some(section=>/Assumption/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
@@ -421,7 +421,7 @@ assert.ok(montligeonCiel[0].sections.some(section=>/Pèlerinages du Ciel/.test(s
 const rueDuBacPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Rue du Bac"});
 assert.equal(rueDuBacPilgrimage.length,1);
 assert.equal(rueDuBacPilgrimage[0].map_publishable,false);
-assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Miraculous Medal/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Médaille Miraculeuse/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"France tranche address-only shrines unexpectedly published map points");
 
@@ -431,7 +431,7 @@ assert.equal(wigratzbadShrine[0].map_publishable,false);
 
 const ambergBergfest=filterExploreItems(projection.byLens.pilgrimages,{query:"Maria Hilf Bergfest"});
 assert.equal(ambergBergfest.length,1);
-assert.ok(ambergBergfest[0].sections.some(section=>/Maria Hilf at Amberg/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+assert.ok(ambergBergfest[0].sections.some(section=>/Maria Hilf principal feast/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
 const nussdorfRitt=filterExploreItems(projection.byLens.pilgrimages,{query:"Nußdorf Leonhardiritt"});
 assert.equal(nussdorfRitt.length,1);
