@@ -238,6 +238,8 @@ assert.equal(liveRome.address.city,"Rome","Rome live ICKSP locality regressed");
 
 const generatedIckspSchedules=readJson("../data/directory/generated/icksp/schedules.v1.json");
 assert.equal(generatedIckspSchedules.records.length,26,"ICKSP live schedule count drifted");
+assert.ok(generatedIckspSchedules.records.every(schedule=>schedule.verification.freshness_policy==="CURRENT_MASS_120D"),"live ICKSP freshness policy missing");
+assert.ok(generatedIckspSchedules.records.every(schedule=>schedule.verification.review_due_at),"live ICKSP review dates missing");
 assert.ok(generatedIckspSchedules.records.some(schedule=>/reno-nv-89502/.test(schedule.schedule_id)),"Reno current Mass schedule missing");
 assert.ok(!generatedIckspSchedules.records.some(schedule=>/christ-the-king-sovereign-priest/.test(schedule.schedule_id)),"Chicago suspended public Mass leaked into live schedules");
 
