@@ -123,8 +123,13 @@ assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Ever
 
 assert.equal(CSE_POSITION_SOURCE_IDS.length,55,"Every structured debate must have an explicit position-source chain");
 assert.deepEqual(CSE_POSITION_SOURCE_IDS,[...CSE_DEBATE_IDS].sort(),"Position-source coverage must match the 55 debate IDs exactly");
+let sourcedQuestions=0;
 let sourcedParagraphs=0;
 for(const item of CSE_QUESTIONS){
+  const questionRefs=paragraphRefsFor(item,"question");
+  assert.equal(validateParagraphRefs(item,questionRefs),true,`${item.id}: question prompt must have clickable provenance`);
+  sourcedQuestions++;
+
   const answerRefs=paragraphRefsFor(item,"answer");
   assert.equal(validateParagraphRefs(item,answerRefs),true,`${item.id}: answer paragraph must have clickable provenance`);
   sourcedParagraphs++;
@@ -146,6 +151,7 @@ for(const item of CSE_QUESTIONS){
     }
   }
 }
+assert.equal(sourcedQuestions,150,"Every Sexual Ethics question prompt must carry provenance");
 assert.equal(sourcedParagraphs,610,"Every visible substantive Sexual Ethics paragraph must carry a source chain");
 
 const META_COMMENTARY_EN=/(?:the strongest objection|the serious objection|the classic objection|the objection\b|the traditional reply|the traditional response|the Catholic reply|the Catholic answer|the Catholic argument|the Catholic case|the argument (?:assumes|starts|concerns|depends|confuses|correctly|recognizes|sees)|this question should|this remains a case-analysis question|this is a case-analysis question|this is a prudential case question|this module|the module|the reusable method|the point is|the point here)/i;
@@ -275,6 +281,8 @@ assert.match(runtime,/Search all 150 questions/);
 assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/paragraphSourceLinks/);
 assert.match(runtime,/data-ao-cse-inline-source/);
+assert.match(runtime,/Question source:/);
+assert.match(runtime,/Position source:/);
 assert.match(runtime,/aoCSEInlineRefs/);
 assert.doesNotMatch(runtime,/Research architecture informed by Lawler · Boyle · May/,"research-method copy leaked back onto the learner landing");
 assert.match(runtime,/ao-ui-back/);
