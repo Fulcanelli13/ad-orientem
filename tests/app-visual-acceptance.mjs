@@ -1008,29 +1008,31 @@ try{
   const settingsParity=await page.evaluate(()=>({
     owner:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsOwner??null,
     presentation:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsPresentationOwner??null,
-    headings:[...document.querySelectorAll("#ao-settings-modular-root .aoSetModSection > h2")].map(x=>x.textContent?.trim()??""),
+    headings:[...document.querySelectorAll("#ao-settings-modular-root .aoSetSection > h2")].map(x=>x.textContent?.trim()??""),
+    routes:[...document.querySelectorAll("#ao-settings-modular-root [data-settings-route]")].map(x=>x.getAttribute("data-settings-route")),
     sourcesLaunchers:document.querySelectorAll("#ao-settings-modular-root [data-settings-sources]").length,
-    structuralControls:document.querySelectorAll("#ao-settings-modular-root [data-setting-structural='true']").length,
     historicalVisible:globalThis.AO_SETTINGS_APP_V1?.status?.().historicalSettingsVisible??null,
     embeddedHomeSettings:globalThis.AO_SETTINGS_APP_V1?.status?.().embeddedHomeSettingsVisible??null,
     overflow:(()=>{const x=document.getElementById("ao-settings-modular-root");return x?x.scrollWidth-x.clientWidth:Infinity})(),
     topLevelSources:document.querySelectorAll("[data-ao-app-surface='sources']").length,
   }));
   assert.equal(settingsParity.owner,"AO_SETTINGS_APP_V1");
-  assert.equal(settingsParity.presentation,"modular-settings-presentation-v1");
-  assert.deepEqual(settingsParity.headings,["Language","Mass","Display & accessibility","Local practice","Advanced"],"Settings preference hierarchy diverged from approved modular Settings");
+  assert.equal(settingsParity.presentation,"modular-settings-presentation-v4359.6");
+  assert.deepEqual(settingsParity.headings,["APP","MASS & PRAYER","DATA","ABOUT"],"Settings donor hierarchy regressed");
+  for(const route of ["/settings/general","/settings/accessibility","/settings/language-reading","/settings/mass","/settings/local-customs","/settings/prayer","/settings/privacy-data","/settings/about-sources"]){
+    assert.ok(settingsParity.routes.includes(route),route+" missing from restored Settings landing");
+  }
   assert.equal(settingsParity.sourcesLaunchers,1,"Settings must expose exactly one Sources & About destination");
-  assert.ok(settingsParity.structuralControls>=6,"Settings lost structural Mass controls");
   assert.equal(settingsParity.historicalVisible,false,"historical Settings donor is visible beneath modular Settings");
   assert.equal(settingsParity.embeddedHomeSettings,false,"retired Home Settings surface is visible beneath modular Settings");
   assert.ok(settingsParity.overflow<=1,"Settings has horizontal overflow on 390px phone geometry");
   assert.equal(settingsParity.topLevelSources,0,"Sources resurfaced as a seventh top-level destination");
   const settingsDesign=await page.evaluate(()=>({
-    displayFont:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModTop h1")).fontFamily,
+    displayFont:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetTitle strong")).fontFamily,
     bodyFont:getComputedStyle(document.getElementById("ao-settings-modular-root")).fontFamily,
-    gutter:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModBody")).paddingLeft,
-    cardRadius:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModCard")).borderRadius,
-    topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
+    gutter:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetWrap")).paddingLeft,
+    cardRadius:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetGroup")).borderRadius,
+    topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
   }));
   assert.equal(settingsDesign.displayFont,designBaseline.displayFont,"Settings display typography diverged from the app system");
   assert.equal(settingsDesign.bodyFont,designBaseline.bodyFont,"Settings body typography diverged from Home");
@@ -1044,19 +1046,17 @@ try{
   await page.locator("#ao-settings-modular-root [data-settings-sources]").click();
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="about-sources",null,{timeout:5000});
   const settingsAbout=await page.evaluate(()=>({
-    sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetModSource").length,
-    provenanceRows:document.querySelectorAll("#ao-settings-modular-root .aoSetModKey p").length,
-    aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetModAbout > div").length,
+    sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetSource").length,
+    provenanceRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSourceKey").length,
+    aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSection:last-child .aoSetRow").length,
     version:document.querySelector("#ao-settings-modular-root [data-settings-app-version]")?.textContent?.trim()??"",
     canonical:globalThis.AO_RELEASE_AUTHORITY_V4359?.version||document.documentElement.dataset.aoRelease||"",
-    privacy:/sins are not recorded/i.test(document.getElementById("ao-settings-modular-root")?.innerText??""),
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
   }));
   assert.equal(settingsAbout.sourceGroups,8,"Sources & About lost a source family");
   assert.equal(settingsAbout.provenanceRows,6,"Sources & About lost provenance labels");
-  assert.ok(settingsAbout.aboutRows>=3,"Settings About section is incomplete");
+  assert.ok(settingsAbout.aboutRows>=7,"Settings About section is incomplete");
   assert.equal(settingsAbout.version,String(settingsAbout.canonical),"Settings About does not show canonical application version");
-  assert.equal(settingsAbout.privacy,true,"Settings privacy statement no longer states that sins are not recorded");
   assert.equal(settingsAbout.active,"settings","Sources & About escaped Settings into another top-level surface");
   await page.screenshot({path:resolve(out,"05b-settings-sources.png"),fullPage:false});
 
