@@ -318,7 +318,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La prière peut ordonner, exhorter ou souhaiter"
+        }
+      }
     },
     {
       "id": "l22-b2",
@@ -335,7 +340,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Oremus"
+        }
+      }
     },
     {
       "id": "l22-b3",
@@ -350,7 +360,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Adveniat / Fiat face à Ostende / Parce"
+        }
+      }
     },
     {
       "id": "l22-b4",
@@ -367,7 +382,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "custodiat nos"
+        }
+      }
     },
     {
       "id": "l22-b5",
@@ -382,7 +402,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les verbes de prière reviennent dans plusieurs modules"
+        }
+      }
     },
     {
       "id": "l22-b6",
@@ -397,7 +422,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Identifier la morphologie avant la nuance de la prière"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -546,7 +576,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que Oremus ?",
+          "hint": "Il signifie « Prions ».",
+          "explanation": "Oremus est un subjonctif présent à la première personne du pluriel employé comme exhortation.",
+          "options": [
+            "subjonctif présent jussif / exhortatif",
+            "impératif singulier",
+            "futur de l’indicatif",
+            "parfait passif"
+          ]
+        }
+      }
     },
     {
       "id": "l22-e2",
@@ -577,7 +620,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est un impératif direct ?",
+          "hint": "Elle commande directement : « montre ».",
+          "explanation": "ostende est à l’impératif ; les autres formes sont au subjonctif.",
+          "options": [
+            "Ostende",
+            "Adveniat",
+            "Fiat",
+            "custodiat"
+          ]
+        }
+      }
     },
     {
       "id": "l22-e3",
@@ -607,7 +663,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle force custodiat a-t-il dans la formule de bénédiction ?",
+          "hint": "C’est un subjonctif présent.",
+          "explanation": "custodiat exprime le résultat désiré de la prière.",
+          "options": [
+            "prière désirée / jussive : qu’Il nous garde",
+            "passé achevé",
+            "fait direct à l’indicatif",
+            "infinitif"
+          ]
+        }
+      }
     },
     {
       "id": "l22-e4",
@@ -638,7 +707,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de prière à son sens.",
+          "hint": "Ce sont des verbes de prière à forte valeur.",
+          "explanation": "Ceci vérifie le vocabulaire sans imposer de formules douteuses.",
+          "matches": {
+            "exaudio": "exaucer / entendre favorablement",
+            "libero": "délivrer / libérer",
+            "parco": "épargner / pardonner",
+            "perduco": "conduire jusqu’à / mener à"
+          }
+        }
+      }
     },
     {
       "id": "l22-e5",
@@ -667,7 +749,19 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de prière à son sens.",
+          "hint": "Tous sont des lemmes figés de la leçon 22.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "custodio": "garder / protéger",
+            "ostendo": "montrer",
+            "ambulo": "marcher"
+          }
+        }
+      }
     },
     {
       "id": "l22-e6",
@@ -698,7 +792,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nobis dans Ostende nobis... ?",
+          "hint": "Montrer quelque chose à nous.",
+          "explanation": "nobis est au datif pluriel.",
+          "options": [
+            "datif",
+            "accusatif",
+            "génitif",
+            "nominatif"
+          ]
+        }
+      }
     },
     {
       "id": "l22-e7",
@@ -729,7 +836,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nos dans custodiat nos ?",
+          "hint": "C’est l’objet de l’action de garder.",
+          "explanation": "nos est ici à l’accusatif.",
+          "options": [
+            "accusatif",
+            "datif",
+            "ablatif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l22-e8",
@@ -758,7 +878,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi la seule traduction française ou anglaise peut-elle être trompeuse ici ?",
+          "hint": "Comparez Ostende et Adveniat.",
+          "explanation": "Il faut identifier la morphologie avant d’interpréter la nuance.",
+          "options": [
+            "les impératifs et les subjonctifs jussifs/optatifs peuvent tous deux se traduire comme des ordres ou des souhaits",
+            "tous les subjonctifs expriment le passé",
+            "le latin n’a pas d’impératif",
+            "l’ordre des mots détermine le mode"
+          ]
+        }
+      }
     },
     {
       "id": "l22-e9",
@@ -788,7 +921,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les verbes de prière au subjonctif.",
+          "hint": "Tous deux expriment des résultats désirés.",
+          "explanation": "Les deux sont des formes de prière au subjonctif présent."
+        }
+      }
     },
     {
       "id": "l22-e10",
@@ -813,7 +953,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le verbe latin signifiant « garder / protéger ».",
+          "hint": "Il apparaît sous la forme custodiat.",
+          "explanation": "custodio signifie « garder / protéger »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -881,5 +1028,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Adveniat. Fiat. Oremus.",
+      "grammarFocus": "Emplois jussif et optatif",
+      "readingOutcome": "Lire les ordres, les souhaits et l’exhortation liturgique au subjonctif.",
+      "objectives": [
+        "Distinguer l’impératif du subjonctif jussif ou optatif.",
+        "Lire Oremus comme une exhortation liturgique.",
+        "Apprendre les sept lemmes figés de la leçon 22.",
+        "Maintenir active la reconnaissance des cas pronominaux dans les propositions de prière."
+      ]
+    }
+  }
 }

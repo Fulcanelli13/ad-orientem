@@ -744,7 +744,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "cum peut introduire toute une circonstance"
+        }
+      }
     },
     {
       "id": "l25-b2",
@@ -759,7 +764,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "esset révèle l’imparfait du subjonctif"
+        }
+      }
     },
     {
       "id": "l25-b3",
@@ -776,7 +786,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Cum esset desponsata"
+        }
+      }
     },
     {
       "id": "l25-b4",
@@ -791,7 +806,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "si et nisi encadrent les conditions"
+        }
+      }
     },
     {
       "id": "l25-b5",
@@ -806,7 +826,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Connecteurs temporels, causaux et discursifs"
+        }
+      }
     },
     {
       "id": "l25-b6",
@@ -821,7 +846,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Étape 5 : tenir plusieurs propositions à la fois"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -1107,7 +1137,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait cum dans Cum esset desponsata... ?",
+          "hint": "Un verbe fini suit cum.",
+          "explanation": "Ici, cum est une conjonction, et non la préposition « avec ».",
+          "options": [
+            "introduit une proposition subordonnée circonstancielle",
+            "régit un nom à l’ablatif",
+            "marque un objet direct",
+            "forme un pronom relatif"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e2",
@@ -1138,7 +1181,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel mode et à quel temps est esset ?",
+          "hint": "Il se construit sur esse + terminaison personnelle.",
+          "explanation": "esset est la troisième personne du singulier de l’imparfait du subjonctif de sum.",
+          "options": [
+            "imparfait du subjonctif",
+            "futur de l’indicatif",
+            "parfait actif",
+            "impératif"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e3",
@@ -1168,7 +1224,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel rôle structurel la proposition en cum joue-t-elle dans Matthieu 1,18 ?",
+          "hint": "Repérez plus loin l’événement principal inventa est.",
+          "explanation": "La proposition en cum encadre la circonstance.",
+          "options": [
+            "circonstance d’arrière-plan précédant l’événement principal",
+            "ordre direct",
+            "proposition de résultat seulement",
+            "groupe au génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e4",
@@ -1201,7 +1270,21 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur à la relation qu’il exprime.",
+          "hint": "Ce sont les principaux connecteurs temporels et conditionnels.",
+          "explanation": "Ceci vérifie le vocabulaire structurel.",
+          "matches": {
+            "quando": "quand",
+            "dum": "pendant que",
+            "ubi": "où / quand",
+            "si": "si",
+            "nisi": "à moins que / si ne… pas"
+          }
+        }
+      }
     },
     {
       "id": "l25-e5",
@@ -1234,7 +1317,21 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur discursif à son sens.",
+          "hint": "Ces mots guident la relation et l’emphase.",
+          "explanation": "Ceci vérifie le vocabulaire discursif.",
+          "matches": {
+            "quoniam": "parce que / puisque",
+            "nam": "car",
+            "vero": "mais / en vérité",
+            "etiam": "aussi / même",
+            "quidem": "certes / assurément"
+          }
+        }
+      }
     },
     {
       "id": "l25-e6",
@@ -1264,7 +1361,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’introduit nisi dans Jean 3,5 ?",
+          "hint": "Traduisez « à moins que ».",
+          "explanation": "nisi introduit la condition en dehors de laquelle l’entrée est impossible.",
+          "options": [
+            "une condition exceptive / négative",
+            "un vocatif",
+            "une proposition de résultat",
+            "un groupe à l’ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e7",
@@ -1294,7 +1404,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle relation quoniam exprime-t-il dans le Gloria ?",
+          "hint": "Traduisez « car / parce que ».",
+          "explanation": "quoniam explique la louange qui précède.",
+          "options": [
+            "causale / explicative",
+            "ordre direct",
+            "but seulement",
+            "comparaison"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e8",
@@ -1324,7 +1447,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle relation quando exprime-t-il dans le vers du Stabat Mater ?",
+          "hint": "Traduisez « quand ».",
+          "explanation": "quando situe la demande de prière dans un temps futur.",
+          "options": [
+            "temporelle future",
+            "relative",
+            "causale seulement",
+            "génitive"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e9",
@@ -1355,7 +1491,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait dum dans le passage de la Sagesse / de l’Introït ?",
+          "hint": "L’événement principal est venit.",
+          "explanation": "dum encadre le temps d’arrière-plan.",
+          "options": [
+            "établit un arrière-plan temporel pendant que survient l’événement principal",
+            "marque la possession",
+            "crée le discours direct",
+            "signifie « à moins que »"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e10",
@@ -1385,7 +1534,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fournit nam dans le Psaume 22 ?",
+          "hint": "Il relie l’énoncé à ce qui précède.",
+          "explanation": "nam est un connecteur discursif explicatif.",
+          "options": [
+            "explication : car",
+            "condition : à moins que",
+            "but : afin que",
+            "adresse directe"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e11",
@@ -1415,7 +1577,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie quasi dans l’ouverture de l’Introït ?",
+          "hint": "Il introduit une comparaison.",
+          "explanation": "quasi signifie « comme / à la manière de ».",
+          "options": [
+            "comme / semblable à",
+            "parce que",
+            "à moins que",
+            "après"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e12",
@@ -1445,7 +1620,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment distinguer cum préposition de cum conjonction ?",
+          "hint": "Comparez cum spiritu et cum esset.",
+          "explanation": "L’environnement syntaxique distingue les deux emplois.",
+          "options": [
+            "la conjonction est suivie d’une proposition avec verbe fini ; la préposition régit un nom ou pronom à l’ablatif",
+            "par l’ordre des mots seulement",
+            "ils sont toujours identiques",
+            "la conjonction prend toujours l’accusatif"
+          ]
+        }
+      }
     },
     {
       "id": "l25-e13",
@@ -1474,7 +1662,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 5 ?",
+          "hint": "C’est le seuil figé de la leçon 25.",
+          "explanation": "L’étape 5 s’achève par la lecture à plusieurs propositions.",
+          "options": [
+            "Syntaxe de prière et de récit à plusieurs propositions.",
+            "Jalon de lecture intégrée du Credo.",
+            "Oraison romaine complète.",
+            "Ordinaire complet."
+          ]
+        }
+      }
     },
     {
       "id": "l25-e14",
@@ -1502,7 +1703,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que devez-vous marquer en premier dans un long passage de l’étape 5 ?",
+          "hint": "Ne commencez pas par la traduction mot à mot.",
+          "explanation": "L’architecture des propositions est la première stratégie de lecture."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1593,5 +1801,19 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Cum… esset",
+      "grammarFocus": "Imparfait du subjonctif ; propositions en cum",
+      "readingOutcome": "Lire le cum circonstanciel ou temporel et des propositions subordonnées plus longues.",
+      "objectives": [
+        "Reconnaître des formes de l’imparfait du subjonctif telles que esset.",
+        "Distinguer cum préposition de cum conjonction.",
+        "Lire les connecteurs temporels, conditionnels, causaux et discursifs dans des passages à plusieurs propositions.",
+        "Apprendre les douze lemmes figés de la leçon 25.",
+        "Franchir le jalon de l’étape 5 portant sur les prières et récits à plusieurs propositions."
+      ]
+    }
+  }
 }

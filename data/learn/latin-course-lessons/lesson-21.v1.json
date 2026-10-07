@@ -286,7 +286,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le latin de la prière demande souvent plutôt qu’il n’énonce"
+        }
+      }
     },
     {
       "id": "l21-b2",
@@ -303,7 +308,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Trois subjonctifs dans le Pater"
+        }
+      }
     },
     {
       "id": "l21-b3",
@@ -318,7 +328,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "fiat appartient à fio"
+        }
+      }
     },
     {
       "id": "l21-b4",
@@ -335,7 +350,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Fiat mihi secundum verbum tuum"
+        }
+      }
     },
     {
       "id": "l21-b5",
@@ -350,7 +370,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "sic et ita orientent le sens, non le mode"
+        }
+      }
     },
     {
       "id": "l21-b6",
@@ -365,7 +390,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître le mode avant de traduire avec élégance"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -490,7 +520,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel mode est sanctificetur dans le Pater ?",
+          "hint": "Il exprime une demande.",
+          "explanation": "sanctificetur est un subjonctif présent passif.",
+          "options": [
+            "subjonctif présent",
+            "futur de l’indicatif",
+            "parfait passif de l’indicatif",
+            "impératif"
+          ]
+        }
+      }
     },
     {
       "id": "l21-e2",
@@ -521,7 +564,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière fiat ?",
+          "hint": "Il signifie « qu’il soit / qu’il devienne ».",
+          "explanation": "fiat appartient à fio.",
+          "options": [
+            "fio",
+            "facio",
+            "sum",
+            "do"
+          ]
+        }
+      }
     },
     {
       "id": "l21-e3",
@@ -551,7 +607,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’exprime adveniat dans le Pater ?",
+          "hint": "Traduisez la force de la prière, pas seulement le temps.",
+          "explanation": "adveniat est une demande au subjonctif présent.",
+          "options": [
+            "une venue désirée",
+            "un événement passé achevé",
+            "une affirmation directe à l’indicatif",
+            "une description passive"
+          ]
+        }
+      }
     },
     {
       "id": "l21-e4",
@@ -582,7 +651,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 21 à son sens.",
+          "hint": "Ce sont les nouveaux verbes.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale.",
+          "matches": {
+            "fio": "devenir / être fait",
+            "advenio": "venir / arriver",
+            "regno": "régner",
+            "vivo": "vivre"
+          }
+        }
+      }
     },
     {
       "id": "l21-e5",
@@ -609,7 +691,18 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’adverbe structurel à son sens.",
+          "hint": "Tous deux peuvent signifier « ainsi », selon le contexte.",
+          "explanation": "ita et sic sont des adverbes structurels.",
+          "matches": {
+            "ita": "ainsi / de cette manière",
+            "sic": "ainsi / de cette manière"
+          }
+        }
+      }
     },
     {
       "id": "l21-e6",
@@ -639,7 +732,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "sic rend-il à lui seul un verbe subjonctif ?",
+          "hint": "Le mode vient de la morphologie et de la syntaxe verbales.",
+          "explanation": "sic peut encadrer une proposition, mais ne déclenche pas mécaniquement le subjonctif.",
+          "options": [
+            "non",
+            "oui, toujours",
+            "seulement dans le Credo",
+            "seulement avec des noms"
+          ]
+        }
+      }
     },
     {
       "id": "l21-e7",
@@ -672,7 +778,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les trois formes de demande au subjonctif.",
+          "hint": "Ce sont les verbes des trois demandes.",
+          "explanation": "Les trois sont des formes au subjonctif présent."
+        }
+      }
     },
     {
       "id": "l21-e8",
@@ -701,7 +814,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est la priorité de lecture dans la leçon 21 ?",
+          "hint": "Les leçons suivantes distingueront les emplois plus fins.",
+          "explanation": "La leçon garde volontairement ce premier pas dans le subjonctif sur un plan fonctionnel.",
+          "options": [
+            "reconnaître le subjonctif et la force de prière",
+            "mémoriser immédiatement tous les paradigmes du subjonctif",
+            "ignorer le sens de la proposition",
+            "traduire uniquement mot à mot"
+          ]
+        }
+      }
     },
     {
       "id": "l21-e9",
@@ -732,7 +858,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle relation casuelle mihi a-t-il dans Fiat mihi... ?",
+          "hint": "Pensez : « à moi ».",
+          "explanation": "mihi est la forme au datif de ego.",
+          "options": [
+            "datif / référence",
+            "accusatif objet direct",
+            "génitif de possession",
+            "ablatif avec cum"
+          ]
+        }
+      }
     },
     {
       "id": "l21-e10",
@@ -757,7 +896,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez l’adverbe latin signifiant « ainsi / de cette manière » employé dans Sic luceat...",
+          "hint": "Il ouvre Matthieu 5,16.",
+          "explanation": "sic signifie « ainsi »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -824,5 +970,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Sanctificetur nomen tuum",
+      "grammarFocus": "Subjonctif présent",
+      "readingOutcome": "Reconnaître les formes du subjonctif présent dans le langage de la prière.",
+      "objectives": [
+        "Reconnaître les formes de prière au subjonctif présent.",
+        "Lire sanctificetur/adveniat/fiat comme des demandes.",
+        "Apprendre les six lemmes figés de la leçon 21.",
+        "Maintenir active la lecture des cas et des pronoms à l’intérieur des propositions de prière."
+      ]
+    }
+  }
 }

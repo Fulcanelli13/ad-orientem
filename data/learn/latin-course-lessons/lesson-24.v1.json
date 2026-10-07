@@ -412,7 +412,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "ut ne signifie pas « but » à lui seul"
+        }
+      }
     },
     {
       "id": "l24-b2",
@@ -429,7 +434,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ut digni efficiamur"
+        }
+      }
     },
     {
       "id": "l24-b3",
@@ -446,7 +456,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Sic ... ut marque la conséquence"
+        }
+      }
     },
     {
       "id": "l24-b4",
@@ -461,7 +476,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "magis et plus comparent"
+        }
+      }
     },
     {
       "id": "l24-b5",
@@ -476,7 +496,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "tantum et nimis expriment le degré"
+        }
+      }
     },
     {
       "id": "l24-b6",
@@ -491,7 +516,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Poser une question sémantique"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -665,7 +695,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle relation ut digni efficiamur exprime-t-il ?",
+          "hint": "Il répond à ce que la prière cherche à obtenir.",
+          "explanation": "La proposition énonce le résultat désiré de Ora pro nobis.",
+          "options": [
+            "résultat désiré de la prière",
+            "simple récit au passé",
+            "adresse directe",
+            "possession au génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l24-e2",
@@ -696,7 +739,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière efficiamur ?",
+          "hint": "Il signifie « que nous soyons rendus ».",
+          "explanation": "efficiamur est un subjonctif de efficio.",
+          "options": [
+            "efficio",
+            "facio",
+            "fio",
+            "mereor"
+          ]
+        }
+      }
     },
     {
       "id": "l24-e3",
@@ -726,7 +782,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signale sic ... ut dans Jean 3,16 ?",
+          "hint": "Traduisez « tellement ... que ».",
+          "explanation": "sic est corrélé à ut pour exprimer une conséquence ou un résultat.",
+          "options": [
+            "un degré menant à une conséquence / un résultat",
+            "un ordre direct",
+            "une adresse au vocatif",
+            "l’instrument à l’ablatif seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l24-e4",
@@ -755,7 +824,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi ne faut-il pas étiqueter toute proposition en ut comme une proposition de but ?",
+          "hint": "La leçon 23 a déjà privilégié la relation plutôt que la conjonction seule.",
+          "explanation": "ut est multifonctionnel.",
+          "options": [
+            "ut peut marquer plusieurs relations subordonnées, notamment le résultat et le résultat désiré",
+            "ut n’est jamais une conjonction",
+            "le but emploie seulement l’indicatif",
+            "l’ordre des mots l’interdit"
+          ]
+        }
+      }
     },
     {
       "id": "l24-e5",
@@ -786,7 +868,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 24 à son sens.",
+          "hint": "Ce sont des mots de prière et de degré.",
+          "explanation": "Ceci vérifie la récupération lexicale.",
+          "matches": {
+            "promissio": "promesse",
+            "dignus": "digne",
+            "mereor": "mériter",
+            "tantum": "tant / tellement / seulement"
+          }
+        }
+      }
     },
     {
       "id": "l24-e6",
@@ -815,7 +910,19 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mot de degré à son sens principal.",
+          "hint": "Tous expriment comparaison ou degré.",
+          "explanation": "Leur syntaxe varie selon le contexte.",
+          "matches": {
+            "magis": "davantage / plutôt",
+            "plus": "plus",
+            "nimis": "excessivement / beaucoup"
+          }
+        }
+      }
     },
     {
       "id": "l24-e7",
@@ -845,7 +952,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait magis dans Beatius est magis dare quam accipere ?",
+          "hint": "Il accompagne quam.",
+          "explanation": "magis aide à comparer donner et recevoir.",
+          "options": [
+            "marque la comparaison / le degré",
+            "introduit une proposition relative",
+            "marque le génitif",
+            "crée la voix passive"
+          ]
+        }
+      }
     },
     {
       "id": "l24-e8",
@@ -875,7 +995,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’exprime plus dans diligis me plus his ?",
+          "hint": "Traduisez « davantage que ».",
+          "explanation": "plus exprime le degré ou la comparaison.",
+          "options": [
+            "degré supérieur / comparaison",
+            "but",
+            "futur",
+            "adresse directe"
+          ]
+        }
+      }
     },
     {
       "id": "l24-e9",
@@ -905,7 +1038,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait nimis dans la proposition du Psaume ?",
+          "hint": "Il signifie « excessivement ».",
+          "explanation": "nimis est un intensificateur.",
+          "options": [
+            "intensifie fortement le degré",
+            "marque un pronom relatif",
+            "crée le subjonctif",
+            "signifie « jamais »"
+          ]
+        }
+      }
     },
     {
       "id": "l24-e10",
@@ -930,7 +1076,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez l’adjectif latin signifiant « digne ».",
+          "hint": "Il apparaît sous la forme digni dans le verset marial.",
+          "explanation": "dignus signifie « digne »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -999,5 +1152,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Ut digni efficiamur",
+      "grammarFocus": "Conséquence et but",
+      "readingOutcome": "Distinguer conséquence et but dans des propositions authentiques de prière.",
+      "objectives": [
+        "Distinguer le but, la conséquence et le résultat désiré d’une prière.",
+        "Reconnaître la logique degré → conséquence des schémas sic/ita/tantum.",
+        "Apprendre les huit lemmes figés de la leçon 24.",
+        "Lire les adverbes de comparaison et de degré sans les confondre avec des marqueurs de proposition."
+      ]
+    }
+  }
 }
