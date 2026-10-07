@@ -20,12 +20,20 @@ const expected=[
   "learn.seasonal_rites",
 ];
 
-assert.deepEqual(Object.keys(TRADITIONAL_LEARN_ROUTES),expected,"v38.4 traditional Learn route identity/order changed");
+assert.deepEqual(Object.keys(TRADITIONAL_LEARN_ROUTES),expected,"traditional Learn route identity/order changed");
 assert.equal(LOW_MASS_RESPONSES_V381.length,15,"Low Mass response trainer no longer matches donor 15-card corpus");
 assert.equal(LOW_MASS_RESPONSES_V381[0].lat,"℟. Ad Deum, qui lætíficat iuventútem meam.");
 assert.equal(LOW_MASS_RESPONSES_V381.at(-1).lat,"℟. Deo grátias.");
 assert.equal(SEASONAL_PRACTICES_V381.length,10,"seasonal lay-practice list changed");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.ritual1952,/alcuinus\.org/);
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.missal1962,/archive\.org/,"Requiem formation lost the 1962 Missal witness");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentFuneralsCanons,/vatican\.va/,"after-death formation lost current funeral canon-law authority");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentFuneralsCatechism,/vatican\.va/,"after-death formation lost current funeral Catechism authority");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentPurgatory,/vatican\.va/,"after-death formation lost prayer-for-the-dead doctrine");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentAshes,/vatican\.va/,"after-death formation lost 2016 ashes discipline");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentAshes2023,/vatican\.va/,"after-death formation lost 2023 ashes clarification");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.familyPrayer,/vatican\.va/,"Matrimony aftercare lost family-prayer authority");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.sacredHeartFamily,/vatican\.va/,"Matrimony aftercare lost Sacred Heart family-consecration authority");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.pontifical1962,/books\.google\.com/,"Confirmation formation lost the 1962 Pontifical witness");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentConfirmation,/vatican\.va/,"Confirmation formation lost current Catechism authority");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentConfirmationSponsor,/vatican\.va/,"Confirmation sponsor guidance lost current canon-law authority");
@@ -41,7 +49,7 @@ assert.match(TRADITIONAL_LEARN_SOURCES_V381.ministeriaQuaedam,/vatican\.va/,"Hol
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.frenchHolyOrders,/icrsp-lille\.fr/,"Holy Orders lost its French-world traditional witness");
 const visibleTraditional=expected.filter(id=>id!=="learn.seasonal_rites");
 assert.ok(visibleTraditional.every(id=>LEARN_MODULE_IDS.includes(id)),"recovered traditional routes are not visible in modular Learn");
-assert.equal(LEARN_MODULE_IDS.includes("learn.seasonal_rites"),false,"final v38.4 donor dedupe requires Seasonal Catholic Practice to remain a compatibility alias, not a duplicate Learn launcher");
+assert.equal(LEARN_MODULE_IDS.includes("learn.seasonal_rites"),false,"Seasonal Catholic Practice must remain a compatibility alias, not a duplicate Learn launcher");
 
 const runtime=readFileSync("src/learn/traditional-life.js","utf8");
 const browser=readFileSync("src/learn/browser-entry.js","utf8");
@@ -54,11 +62,29 @@ assert.match(runtime,/one ring or two/,"Matrimony no longer warns that ring cust
 assert.match(runtime,/approved local custom/,"Matrimony local-custom guard disappeared");
 assert.match(runtime,/special marriage prayers after the Pater noster/,"Matrimony no longer explains the certified Nuptial Mass insertions");
 assert.match(runtime,/A 1951 rule is therefore never copied into the 1962 engine/,"older-missal versus 1962 authority guard disappeared");
-assert.match(runtime,/AFTER DEATH · TRADITIONAL FUNERAL SEQUENCE/,"Serious Illness & Dying lost the traditional funeral sequence explanation");
+assert.match(runtime,/DISCERNMENT & ENGAGEMENT/,"Matrimony lost courtship\/engagement formation");
+assert.match(runtime,/CANONICAL PREPARATION/,"Matrimony lost canonical preparation");
+assert.match(runtime,/LIVING THE MARRIAGE/,"Matrimony lost aftercare formation");
+assert.match(runtime,/Regular family prayer supports the sacramental communion/,"Matrimony aftercare lost family prayer");
+assert.match(runtime,/Family consecration to the Sacred Heart is a genuine Catholic devotional practice/,"Matrimony aftercare lost Sacred Heart family devotion");
+assert.match(runtime,/marriage anniversary is an occasion of thanksgiving/,"Matrimony aftercare lost anniversary thanksgiving");
+assert.match(runtime,/WHEN DEATH OCCURS/,"Serious Illness & Dying lost the sourced after-death boundary");
+assert.match(runtime,/FUNERAL & REQUIEM/,"Serious Illness & Dying lost funeral\/Requiem formation");
+assert.match(runtime,/BURIAL, CREMATION & ASHES/,"Serious Illness & Dying lost burial\/cremation\/ashes formation");
 assert.match(runtime,/Death may be near · Open Dying Companion/,"Serious Illness guide lost escalation into Dying Companion");
 assert.match(runtime,/route:"pray\.dying_companion"/,"Serious Illness guide no longer routes imminent death to the bedside companion");
-assert.match(runtime,/stop using prayers addressed to the dying person and move to suffrage for the departed/,"Serious Illness guide lost the death-state boundary");
+assert.match(runtime,/move from prayers for the dying to suffrage for the departed/,"Serious Illness guide lost the death-state boundary");
+assert.match(runtime,/Christian hope does not require the family or the app to declare that the deceased is certainly already in Heaven/,"after-death formation regained canonization-by-app language");
+assert.match(runtime,/The body should be treated with Christian reverence/,"after-death formation lost reverence for the body");
+assert.match(runtime,/traditional Absolution at the bier or catafalque is a funeral rite of suffrage/,"Requiem formation lost the Absolution boundary");
+assert.match(runtime,/current final commendation and the traditional funeral Absolution therefore should not be presented as the same rite/,"traditional\/current funeral distinction collapsed");
+assert.match(runtime,/A catafalque is a ceremonial representation used when the body is not present/,"Requiem formation lost catafalque explanation");
+assert.match(runtime,/1917 law governing the 1962 context prohibited voluntary cremation/,"burial formation lost historical discipline");
+assert.match(runtime,/does not create a general right to divide or distribute ashes freely/,"ashes formation lost 2023 narrow-exception boundary");
+assert.match(runtime,/data-ao-tradlearn-mass/,"after-death formation lost its explicit Mass handoff");
+assert.match(runtime,/route:"pray\.holy_souls"/,"after-death formation lost Holy Souls handoff");
 assert.match(runtime,/dead_eternal_rest_singular/,"Serious Illness after-death section lost singular Eternal Rest");
+assert.doesNotMatch(runtime,/function sick\(win\)[\s\S]*?DISCERNMENT & ENGAGEMENT[\s\S]*?function /,"Matrimony content leaked back into Serious Illness");
 
 assert.match(runtime,/TRADITIONAL ROMAN ORDER · WHAT YOU MAY SEE/,"Baptism/Confirmation lost the traditional lay-facing order map");
 assert.match(runtime,/church door with the child’s name and request for faith/,"Baptism lost the traditional Roman entrance sequence");
@@ -107,8 +133,8 @@ assert.match(runtime,/route:"pray\.litany_saints"/,"Holy Orders stopped reusing 
 assert.match(runtime,/prayer:"sacrament_come_holy_spirit"/,"Holy Orders stopped reusing the canonical Holy Spirit prayer");
 assert.doesNotMatch(runtime,/Accipe Spiritum Sanctum|Accipe potestatem|Da, quaesumus, omnipotens Pater/,"Lay Holy Orders guide leaked ordination formulae");
 
-assert.match(runtime,/Absolution at the bier or catafalque is actually appointed/,"funeral formation no longer preserves explicit Absolution activation");
-assert.match(runtime,/In paradisum accompanies the departure/,"funeral formation lost the burial-procession handoff");
+assert.match(runtime,/Missale Romanum · 1962 · Masses of the Dead \/ Requiem/,"funeral formation lost its 1962 Requiem source drawer");
+assert.match(runtime,/Rituale Romanum · 1952 · De Exsequiis/,"funeral formation lost its traditional funeral-rite source drawer");
 assert.doesNotMatch(runtime,/Ego conjungo vos|With this ring I thee wed/,"lay formation leaked a country-specific or celebrant ritual script");
 assert.match(runtime,/AO_TRADITIONAL_LEARN_V381/);
 assert.match(runtime,/learn\.serve_mass.*learn\.serve_mass\.responses/s,"Low Mass alias disappeared");
@@ -132,4 +158,4 @@ assert.match(assets,/"learn\.serve_mass\.responses"\s*:\s*"ao-refined-study"/);
 assert.match(assets,/"learn\.scapular"\s*:\s*"ao-rich-our-lady-marian-devotions"/);
 assert.match(assets,/"learn\.seasonal_rites"\s*:\s*"ao-refined-calendar-upcoming"/);
 
-console.log("PASS modular v38.4 traditional Learn Holy Orders formation convergence without clerical-script ownership");
+console.log("PASS modular v38.5 traditional Learn after-death and family absorption with canonical ownership");
