@@ -723,7 +723,8 @@ export async function mountNativeReaderPreview({
       }catch{}
     }
 
-    const cueProjection=activeCueId && eventAllowed ? ready.cueState.project(activeCueId) : null;
+    const sourceCueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
+    const cueProjection=eventAllowed ? sourceCueProjection : null;
     const gestureProfile=prepared?.readerPreferences?.gestureProfile ?? "GUIDED_1962";
     const owned=resolveCueOwnedChannels({
       cueControllerSupported:ready.cueState.supported,
@@ -778,11 +779,11 @@ export async function mountNativeReaderPreview({
               : transientProjection.ownership.cinematic,
       posture:postureResolved.owner,
       schola:scholaProjection.ownership,
-      priestAction:cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED",
+      priestAction:sourceCueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED",
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
 
-    const priestAction=cueProjection?.priestAction??null;
+    const priestAction=sourceCueProjection?.priestAction??null;
     const iconKeys=iconKeysForReaderState({
       priestPosition,posture,gesture,response,bell,priestVoice,
       schola:scholaProjection.schola,priestAction
