@@ -4,10 +4,10 @@
   "resolved_at": "2026-10-07",
   "summary": {
     "total": 13,
-    "promoted": 1,
+    "promoted": 3,
     "provider_routed": 4,
     "rejected_current": 1,
-    "staged": 7
+    "staged": 5
   },
   "records": [
     {
@@ -82,7 +82,7 @@
       "reason": "Authorization alone does not prove a current October 2026 schedule.",
       "source_url": "https://adw.org/news/traditionis-custodes/",
       "resolution": "STAGED",
-      "resolution_note": "STAGE_FOR_CURRENT_SCHEDULE",
+      "resolution_note": "Remain staged: current Latin Mass community schedule still lists Sunday 8am, but the current Archdiocese parish listing no longer labels that slot as the 1962/Tridentine Mass. Do not resolve the conflict by inference.",
       "resolved_source_url": "https://adw.org/news/traditionis-custodes/"
     },
     {
@@ -112,7 +112,7 @@
       "reason": "No fresh 2026 recurring schedule was frozen in this sweep.",
       "source_url": "https://www.catholichawaii.org/news-events/news-articles/2022/january/112-letter-regarding-celebration-of-latin-mass/",
       "resolution": "STAGED",
-      "resolution_note": "Current Diocese of Honolulu Sacred Heart Pahoa listing has no traditional slot; retain staged until a current official 1962 schedule exists.",
+      "resolution_note": "Remain staged: current diocesan parish listing omits the TLM schedule; a third-party directory reports current Saturday/Sunday TLMs but the first-party community schedule was not independently captured.",
       "resolved_source_url": "https://www.catholichawaii.org/parish-listing/sacred-heart-pahoa/"
     },
     {
@@ -126,9 +126,9 @@
       "disposition": "STAGE_FOR_CURRENT_SCHEDULE",
       "reason": "Current bishop-level venue evidence exists, but the recurring schedule was not frozen.",
       "source_url": "https://stjamesjc.org/bishop-lucias-statement-on-the-sspx/",
-      "resolution": "STAGED",
-      "resolution_note": "STAGE_FOR_CURRENT_SCHEDULE",
-      "resolved_source_url": "https://stjamesjc.org/bishop-lucias-statement-on-the-sspx/"
+      "resolution": "PROMOTED_DIOCESAN_2026_10_07",
+      "resolution_note": "Current parish Mass page lists Sunday 2pm Traditional Latin Mass; bishop-level July 2026 evidence supplies the explicit current 1962 context.",
+      "resolved_source_url": "https://marypaul.org/mass/"
     },
     {
       "exception_id": "USB-EX-009",
@@ -201,9 +201,9 @@
       "disposition": "STAGE_YEAR_EDITION",
       "reason": "Keep strict edition rule rather than infer from historical/secondary descriptions.",
       "source_url": null,
-      "resolution": "STAGED",
-      "resolution_note": "STAGE_YEAR_EDITION",
-      "resolved_source_url": null
+      "resolution": "PROMOTED_DIOCESAN_2026_10_07",
+      "resolution_note": "Current parish Mass page lists recurring Tridentine Masses and the parish About page explicitly identifies the form as the 1962 edition.",
+      "resolved_source_url": "https://shrineofholyinnocents.org/mass-times"
     }
   ]
 }
