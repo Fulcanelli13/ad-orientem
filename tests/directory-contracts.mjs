@@ -10,7 +10,7 @@ import {
   compareVenueCandidates,
   normalizeAddress,
 } from "../src/find/entity-resolution.js";
-import { expandResearchProviderSnapshot } from "../src/find/data-service.js";
+import { expandResearchProviderSnapshot, publishableDirectoryRecords } from "../src/find/data-service.js";
 import {
   buildCanonicalSspxDataset,
   mapSspxPlace,
@@ -38,7 +38,7 @@ const researchSnapshots = [
 ];
 
 const expectedResearchCounts = new Map([
-  ["DIOCESAN",44],
+  ["DIOCESAN",46],
   ["AASJMV",6],
   ["FSVF",1],
   ["CANONS_ST_JOHN_CANTIUS",2],
@@ -68,22 +68,56 @@ for(const snapshot of researchSnapshots){
     assert.ok(expanded.ministries.every(m=>m.liturgical_usage.family==="ROMAN"&&m.liturgical_usage.books==="1962"));
     assert.ok(expanded.venues.some(v=>/charleston-sacredheart/.test(v.venue_id)),"Charleston residue promotion missing");
     assert.ok(expanded.venues.some(v=>/binghamton-stmary/.test(v.venue_id)),"Binghamton residue promotion missing");
+    assert.ok(expanded.venues.some(v=>/trenton-holyinnocents-neptune/.test(v.venue_id)),"Neptune residue promotion missing");
+    assert.ok(expanded.venues.some(v=>/ny-holyinnocents-manhattan/.test(v.venue_id)),"Manhattan residue promotion missing");
+    const manhattanIndex=expanded.venues.findIndex(v=>/ny-holyinnocents-manhattan/.test(v.venue_id));
+    assert.ok(manhattanIndex>=0);
+    assert.ok(expanded.ministries[manhattanIndex].liturgical_usage.evidence_source_ids.some(id=>/edition$/.test(id)),"Manhattan 1962 evidence must point to the edition source");
   }
   if(snapshot.provider==="CMRI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books!=="1962"),"CMRI was wrongly normalized to 1962");
   if(snapshot.provider==="RCI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="PRE_1955"),"RCI pre-1955 profile drifted");
   if(snapshot.provider==="SSPV_CSPV")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="UNKNOWN"),"CSPV exact books were inferred");
   if(snapshot.provider==="ICKSP_FEDERATED_V13"){
     assert.ok(expanded.ministries.every(m=>m.community_id==="ICKSP"&&m.liturgical_usage.books==="1962"),"ICKSP supplement profile drifted");
-    assert.ok(expanded.schedules.some(s=>s.service_type==="MASS"),"ICKSP supplement lost confirmed Mass assertions");
-    assert.ok(expanded.schedules.some(s=>s.service_type==="SOURCE_ASSERTION"),"ICKSP supplement falsely promoted every provider entity to a Mass schedule");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,35,"ICKSP strict current-Mass count drifted");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,63,"ICKSP research-assertion count drifted");
   }
 }
-assert.equal(researchVenueCount,344,"v1.9 research projection count drift");
+assert.equal(researchVenueCount,346,"v1.9 research projection count drift");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
 assert.equal(ickspReconciliation.overlap_candidate_ids.length,27);
 assert.equal(ickspReconciliation.missing_candidate_count,98);
+assert.deepEqual(ickspReconciliation.publication_gate,{
+  live_runtime_records:27,
+  live_current_mass_records:25,
+  federated_supplement_records:98,
+  federated_current_mass_records:35,
+  publishable_current_mass_total:60,
+  provider_presence_only_total:5,
+  mass_eligibility_pending_total:60,
+});
+assert.equal(ickspReconciliation.provider_presence_only_candidate_ids.length,5);
+assert.equal(ickspReconciliation.conditional_mass_evidence_not_promoted_ids.length,7);
+
+const ickspFederated=researchSnapshots.find(snapshot=>snapshot.provider==="ICKSP_FEDERATED_V13");
+const expandedIcksp=expandResearchProviderSnapshot(ickspFederated);
+const massIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="MASS");
+const assertionIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="SOURCE_ASSERTION");
+assert.ok(massIndex>=0&&assertionIndex>=0);
+assert.equal(publishableDirectoryRecords([{
+  venue:expandedIcksp.venues[massIndex],
+  ministries:[{...expandedIcksp.ministries[massIndex],schedules:[expandedIcksp.schedules[massIndex]]}],
+}]).length,1,"ICKSP current-Mass row was incorrectly suppressed");
+assert.equal(publishableDirectoryRecords([{
+  venue:expandedIcksp.venues[assertionIndex],
+  ministries:[{...expandedIcksp.ministries[assertionIndex],schedules:[expandedIcksp.schedules[assertionIndex]]}],
+}]).length,0,"ICKSP research assertion leaked into Find a Mass");
+assert.equal(publishableDirectoryRecords([{
+  venue:expandedIcksp.venues[massIndex],
+  ministries:[{...expandedIcksp.ministries[massIndex],schedules:[]}],
+}]).length,0,"ICKSP provider-presence row without a Mass schedule leaked into Find");
 
 
 assert.equal(contract.schema, "DIRECTORY_SOT_V1");
