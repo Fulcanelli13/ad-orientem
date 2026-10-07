@@ -1,0 +1,23 @@
+name: Latin course validation
+
+on:
+  push:
+    branches:
+      - research/core-201-350-resolved-propers
+    paths:
+      - "data/learn/core-latin-200.v0.2.json"
+      - "data/learn/core-latin-201-350.v1.json"
+      - "data/learn/latin-course-40-core350.v1.json"
+      - "tools/validate_latin_course.mjs"
+      - ".github/workflows/latin-course-validation.yml"
+
+jobs:
+  validate-course:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate frozen vocabulary and 40-lesson crosswalk
+        run: node tools/validate_latin_course.mjs
