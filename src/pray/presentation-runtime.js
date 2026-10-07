@@ -1099,8 +1099,20 @@ function qa(){
  const immaculate=d.marian_consecration_immaculate_heart||{};
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
+function applySettingsPreferences(prefs={}){
+ const recitation=prefs.recitationMode==='group'?'group':'individual';
+ S.rosary.recitation=recitation;
+ if(prefs.stations){S.stations.mode=prefs.stations.mode==='simple'?'simple':'guided';S.stations.stabat=!!prefs.stations.stabatMater}
+ if(prefs.angelus){S.angelusMode=prefs.angelus.seasonalForm==='angelus'?'angelus':prefs.angelus.seasonalForm==='regina_caeli'?'regina':'auto';S.angelusHistoricalConclusion=!!prefs.angelus.traditionalConclusion}
+ try{localStorage.setItem('ao-prayer-recitation-mode',recitation)}catch{}
+ try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(recitation)}catch{}
+ try{window.AO_ROSARY_V381?.setRecitationMode?.(recitation)}catch{}
+ save();
+ if(document.getElementById(ROOT_ID)?.classList.contains('open'))render();
+ return true
+}
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={version:VERSION,open,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={version:VERSION,open,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
