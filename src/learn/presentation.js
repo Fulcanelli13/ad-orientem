@@ -1,4 +1,5 @@
 import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { formatDisplayDate } from "../app/date-format.js";
 
 export const LEARN_PRESENTATION_VERSION="modular-learn-presentation-v1";
 export const LEARN_DONOR_RELEASE="43.59.30";
@@ -47,8 +48,7 @@ function contextLabel(state,win){
   const rawDate=state?.selectedDate||"";
   const day=state?.resolution?.day?.main;
   const title=isFr(state)?(day?.titleFr||day?.nameFr||day?.title||day?.name||""):(day?.title||day?.name||"");
-  let date=rawDate;
-  try{date=rawDate?(win?.AO_DISPLAY_DATE?.(rawDate)||rawDate):"";}catch{}
+  const date=rawDate?formatDisplayDate(rawDate):"";
   return [date,title].filter(Boolean).join(" · ");
 }
 
