@@ -2919,7 +2919,18 @@
         "SRC-HIST-NARTHEX"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The vestibule or entrance area at the western end of a church, historically distinct from the nave.",
+        "fr": "Vestibule ou espace d’entrée à l’extrémité occidentale d’une église, historiquement distinct de la nef."
+      },
+      "explanation": {
+        "en": "The narthex has varied architectural and liturgical functions across periods. It is an architectural term and should not be treated as a universal requirement of every church building.",
+        "fr": "Le narthex a eu des fonctions architecturales et liturgiques variables selon les époques. C’est un terme architectural et non une exigence universelle de tout édifice religieux."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-NARTHEX"
+      ]
     },
     {
       "id": "G402",
@@ -2937,7 +2948,18 @@
         "SRC-HIST-NAVE"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The principal body of a church where the faithful ordinarily stand or sit during worship.",
+        "fr": "Partie principale d’une église où les fidèles se tiennent ordinairement pendant le culte."
+      },
+      "explanation": {
+        "en": "The nave is distinguished from the sanctuary, choir and side chapels. Historical church plans can use the term with architectural nuances, but it broadly denotes the main congregational space.",
+        "fr": "La nef se distingue du sanctuaire, du chœur et des chapelles latérales. Les plans historiques peuvent employer le terme avec des nuances architecturales, mais il désigne largement l’espace principal des fidèles."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-NAVE"
+      ]
     },
     {
       "id": "G403",
@@ -2955,7 +2977,18 @@
         "SRC-HIST-CHOIR"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The architectural area of a church traditionally occupied by clergy or singers, often between nave and sanctuary.",
+        "fr": "Partie architecturale d’une église traditionnellement occupée par le clergé ou les chanteurs, souvent entre la nef et le sanctuaire."
+      },
+      "explanation": {
+        "en": "This architectural sense of choir must be distinguished from G245, the body of singers. French chœur likewise covers both senses, so category and context must disambiguate.",
+        "fr": "Ce sens architectural de chœur doit être distingué de G245, l’ensemble des chanteurs. Le français « chœur » couvre également les deux sens ; la catégorie et le contexte doivent donc les désambiguïser."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CHOIR"
+      ]
     },
     {
       "id": "G404",
@@ -2973,7 +3006,18 @@
         "SRC-P16-HIGH-SIDE-ALTARS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The principal altar of a church, traditionally the chief focus of its liturgical arrangement.",
+        "fr": "Autel principal d’une église, traditionnellement centre majeur de son organisation liturgique."
+      },
+      "explanation": {
+        "en": "A high altar is distinguished from side altars and secondary altars. The term describes architectural and liturgical prominence, not a doctrinally superior kind of altar.",
+        "fr": "Le maître-autel se distingue des autels latéraux et secondaires. Le terme décrit une prééminence architecturale et liturgique, non une catégorie doctrinalement supérieure d’autel."
+      },
+      "definition_source_ids": [
+        "SRC-P16-HIGH-SIDE-ALTARS"
+      ]
     },
     {
       "id": "G405",
@@ -2991,7 +3035,18 @@
         "SRC-P16-HIGH-SIDE-ALTARS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A secondary altar located apart from the principal altar, often in a side chapel or along a church wall.",
+        "fr": "Autel secondaire situé à l’écart de l’autel principal, souvent dans une chapelle latérale ou le long d’un mur de l’église."
+      },
+      "explanation": {
+        "en": "Side altars historically supported additional Masses and particular devotions. Their presence and use vary with church architecture and liturgical discipline.",
+        "fr": "Les autels latéraux ont historiquement permis des Messes supplémentaires et des dévotions particulières. Leur présence et leur usage varient selon l’architecture de l’église et la discipline liturgique."
+      },
+      "definition_source_ids": [
+        "SRC-P16-HIGH-SIDE-ALTARS"
+      ]
     },
     {
       "id": "G406",
@@ -3009,7 +3064,18 @@
         "SRC-P16-SEDILIA-CATHEDRA"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The bishop’s official chair in his cathedral church, symbolizing his teaching and governing office.",
+        "fr": "Siège officiel de l’évêque dans son église cathédrale, symbole de sa charge d’enseignement et de gouvernement."
+      },
+      "explanation": {
+        "en": "The cathedral takes its name from the cathedra. It must be distinguished from ordinary sedilia or celebrant seating, which do not signify diocesan episcopal authority.",
+        "fr": "La cathédrale tire son nom de la cathèdre. Celle-ci doit être distinguée des sedilia ou sièges ordinaires du célébrant, qui ne signifient pas l’autorité épiscopale diocésaine."
+      },
+      "definition_source_ids": [
+        "SRC-P16-SEDILIA-CATHEDRA"
+      ]
     },
     {
       "id": "G407",
@@ -3027,7 +3093,18 @@
         "SRC-P16-JUBE"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A screen or loft marking the division between nave and choir or sanctuary, often surmounted by a crucifix.",
+        "fr": "Clôture ou tribune marquant la séparation entre nef et chœur ou sanctuaire, souvent surmontée d’un crucifix."
+      },
+      "explanation": {
+        "en": "The medieval and early modern jubé took many forms and functions. It is a historical architectural feature, not a universal requirement of traditional Catholic churches.",
+        "fr": "Le jubé médiéval et moderne a pris de nombreuses formes et fonctions. C’est un élément architectural historique et non une exigence universelle des églises catholiques traditionnelles."
+      },
+      "definition_source_ids": [
+        "SRC-P16-JUBE"
+      ]
     },
     {
       "id": "G408",
@@ -3045,7 +3122,18 @@
         "SRC-HIST-PULPIT-AMBO"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An elevated preaching structure from which sermons or proclamations are delivered.",
+        "fr": "Structure surélevée destinée à la prédication et aux proclamations."
+      },
+      "explanation": {
+        "en": "The pulpit is primarily architectural and homiletic. It differs from the liturgical ambo, although in some churches a single structure may have served overlapping functions.",
+        "fr": "La chaire est principalement architecturale et homilétique. Elle se distingue de l’ambon liturgique, même si dans certaines églises une seule structure a pu remplir des fonctions qui se recoupent."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PULPIT-AMBO"
+      ]
     },
     {
       "id": "G409",
@@ -3063,7 +3151,18 @@
         "SRC-HIST-PULPIT-AMBO"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A fixed or stable liturgical place from which readings or certain chants are proclaimed.",
+        "fr": "Lieu liturgique fixe ou stable d’où sont proclamées les lectures ou certains chants."
+      },
+      "explanation": {
+        "en": "The ambo has ancient roots and a specific liturgical function. It should not automatically be equated with every pulpit or portable lectern.",
+        "fr": "L’ambon possède des racines anciennes et une fonction liturgique précise. Il ne doit pas être automatiquement assimilé à toute chaire ou pupitre mobile."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PULPIT-AMBO"
+      ]
     },
     {
       "id": "G410",
@@ -3081,7 +3180,18 @@
         "SRC-HIST-FONT-STOUP"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The basin or structure containing baptismal water for the administration of Baptism.",
+        "fr": "Bassin ou structure contenant l’eau baptismale pour l’administration du Baptême."
+      },
+      "explanation": {
+        "en": "The baptismal font is a sacramental furnishing and can be located in a baptistery, chapel or church area according to architecture and law. It is distinct from a holy-water stoup.",
+        "fr": "Les fonts baptismaux sont un mobilier sacramentel et peuvent se situer dans un baptistère, une chapelle ou un espace de l’église selon l’architecture et le droit. Ils se distinguent du bénitier."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-FONT-STOUP"
+      ]
     },
     {
       "id": "G411",
@@ -3099,7 +3209,18 @@
         "SRC-HIST-FONT-STOUP"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A vessel placed near the entrance of a church to hold holy water for the faithful.",
+        "fr": "Récipient placé près de l’entrée d’une église pour contenir de l’eau bénite à l’usage des fidèles."
+      },
+      "explanation": {
+        "en": "The stoup supports devotional use of holy water, especially the Sign of the Cross on entering or leaving. It must be distinguished from the baptismal font, which serves the sacrament of Baptism.",
+        "fr": "Le bénitier permet l’usage dévotionnel de l’eau bénite, notamment le signe de croix en entrant ou en sortant. Il doit être distingué des fonts baptismaux, destinés au sacrement de Baptême."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-FONT-STOUP"
+      ]
     },
     {
       "id": "G412",
@@ -3117,7 +3238,18 @@
         "SRC-CIC83-964"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The fixed place or enclosure provided for hearing sacramental confessions.",
+        "fr": "Lieu ou meuble fixe prévu pour entendre les confessions sacramentelles."
+      },
+      "explanation": {
+        "en": "A confessional is a practical-sacramental furnishing, not the sacrament itself. Current canon law still requires confessionals with a fixed grille to be available in churches for those who wish to use them.",
+        "fr": "Le confessionnal est un mobilier pratique et sacramentel, non le sacrement lui-même. Le droit canonique actuel exige encore que des confessionnaux munis d’une grille fixe soient disponibles dans les églises pour les fidèles qui souhaitent les utiliser."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-964"
+      ]
     },
     {
       "id": "G413",
@@ -3135,7 +3267,18 @@
         "SRC-CIC83-964"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The fixed screen or lattice in a confessional separating priest and penitent when that form is used.",
+        "fr": "Écran ou grille fixe d’un confessionnal séparant le prêtre du pénitent lorsque cette forme est utilisée."
+      },
+      "explanation": {
+        "en": "The grille protects anonymity and remains explicitly provided for in current canon law. Its availability does not prevent other lawful forms of confession where the law permits them.",
+        "fr": "La grille protège l’anonymat et demeure explicitement prévue par le droit canonique actuel. Sa disponibilité n’empêche pas d’autres formes licites de confession lorsque le droit les permet."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-964"
+      ]
     },
     {
       "id": "G414",
@@ -3153,7 +3296,18 @@
         "SRC-HIST-PISCINA-SACRARIUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A drain or basin in or near the sacristy intended for the reverent disposal of certain blessed water or sacred-liquid residues into the earth.",
+        "fr": "Drain ou bassin dans ou près de la sacristie destiné à l’évacuation respectueuse de certaines eaux bénites ou résidus de liquides sacrés directement dans la terre."
+      },
+      "explanation": {
+        "en": "Historical terminology overlaps with piscina, but sacrarium ordinarily emphasizes the drain’s sacred-service function. Modern local arrangements and law can differ.",
+        "fr": "La terminologie historique se recoupe avec piscina, mais sacrarium souligne ordinairement la fonction sacrée d’évacuation. Les dispositions locales modernes et le droit peuvent différer."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PISCINA-SACRARIUM"
+      ]
     },
     {
       "id": "G415",
@@ -3171,7 +3325,18 @@
         "SRC-HIST-PISCINA-SACRARIUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A basin or drain associated historically with the reverent disposal of water used in liturgical cleansing.",
+        "fr": "Bassin ou drain historiquement associé à l’évacuation respectueuse de l’eau utilisée pour les purifications liturgiques."
+      },
+      "explanation": {
+        "en": "Piscina and sacrarium can overlap in historical sources. The glossary keeps the architectural-historical terms linked while allowing particular sources to specify the exact feature.",
+        "fr": "Piscina et sacrarium peuvent se recouper dans les sources historiques. Le glossaire garde ces termes architecturaux-historiques liés tout en permettant aux sources particulières d’en préciser la forme exacte."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PISCINA-SACRARIUM"
+      ]
     },
     {
       "id": "G416",
@@ -3189,7 +3354,18 @@
         "SRC-P16-RETABLE-CIBORIUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An architectural canopy or structure erected over an altar.",
+        "fr": "Structure ou baldaquin architectural élevé au-dessus d’un autel."
+      },
+      "explanation": {
+        "en": "This architectural ciborium must be distinguished from G192, the Eucharistic vessel called ciborium. The shared word reflects different historical developments and requires sense disambiguation.",
+        "fr": "Ce ciborium architectural doit être distingué de G192, le vase eucharistique appelé ciboire. Le mot commun reflète des développements historiques différents et exige une désambiguïsation."
+      },
+      "definition_source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ]
     },
     {
       "id": "G417",
@@ -3207,7 +3383,18 @@
         "SRC-P16-RETABLE-CIBORIUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A fixed canopy over an altar, throne or sacred focal point.",
+        "fr": "Baldaquin fixe au-dessus d’un autel, d’un trône ou d’un point focal sacré."
+      },
+      "explanation": {
+        "en": "The architectural baldachin is distinct from the portable processional canopy in G230. Historical terminology can overlap with ciborium depending on form and period.",
+        "fr": "Le baldaquin architectural se distingue du dais processionnel portatif de G230. La terminologie historique peut se recouper avec ciborium selon la forme et l’époque."
+      },
+      "definition_source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ]
     },
     {
       "id": "G418",
@@ -3225,7 +3412,18 @@
         "SRC-P16-RETABLE-CIBORIUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An ornamental structure or screen rising behind an altar and carrying sacred images, sculpture or decoration.",
+        "fr": "Structure ornementale ou écran s’élevant derrière un autel et portant images sacrées, sculptures ou décor."
+      },
+      "explanation": {
+        "en": "Retables range from simple painted panels to monumental architectural compositions. They are devotional-architectural furnishings, not part of the altar’s sacramental essence.",
+        "fr": "Les retables vont du simple panneau peint aux compositions architecturales monumentales. Ce sont des éléments dévotionnels et architecturaux, non une partie de l’essence sacramentelle de l’autel."
+      },
+      "definition_source_ids": [
+        "SRC-P16-RETABLE-CIBORIUM"
+      ]
     },
     {
       "id": "G419",
@@ -3243,7 +3441,18 @@
         "SRC-P16-STATIONS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A series of devotional stations commemorating episodes of Christ’s Passion, traditionally fourteen in number.",
+        "fr": "Série de stations dévotionnelles commémorant les épisodes de la Passion du Christ, traditionnellement au nombre de quatorze."
+      },
+      "explanation": {
+        "en": "The Stations of the Cross combine images or crosses with prayer and meditation. This devotional ‘station’ sense is distinct from G337, the liturgical station church.",
+        "fr": "Le Chemin de Croix associe images ou croix à la prière et à la méditation. Ce sens dévotionnel de « station » se distingue de G337, l’église stationnale liturgique."
+      },
+      "definition_source_ids": [
+        "SRC-P16-STATIONS"
+      ]
     },
     {
       "id": "G420",
@@ -3261,7 +3470,18 @@
         "SRC-P16-CHURCHYARD-CEMETERY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Ground associated with a church and used for Christian burial, or a cemetery set apart for the dead.",
+        "fr": "Terrain associé à une église et utilisé pour la sépulture chrétienne, ou cimetière consacré aux défunts."
+      },
+      "explanation": {
+        "en": "Churchyard and cemetery customs vary culturally and legally. The glossary treats this as funerary architecture/custom rather than assuming every parish historically possessed its own burial ground.",
+        "fr": "Les coutumes relatives aux cimetières et enclos paroissiaux varient culturellement et juridiquement. Le glossaire traite ce terme comme relevant de l’architecture et des coutumes funéraires sans supposer que toute paroisse possédait historiquement son propre cimetière."
+      },
+      "definition_source_ids": [
+        "SRC-P16-CHURCHYARD-CEMETERY"
+      ]
     },
     {
       "id": "G421",
@@ -3279,7 +3499,18 @@
         "SRC-CIC83-1055-1057"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The act of will by which a man and a woman mutually give and accept one another in order to establish marriage.",
+        "fr": "Acte de volonté par lequel un homme et une femme se donnent et se reçoivent mutuellement afin de constituer le mariage."
+      },
+      "explanation": {
+        "en": "Valid matrimonial consent is indispensable: no human authority can supply it where it is absent. Canon law regulates capacity, manifestation and defects of consent.",
+        "fr": "Le consentement matrimonial valide est indispensable : aucune autorité humaine ne peut le suppléer lorsqu’il manque. Le droit canonique règle la capacité, la manifestation et les vices du consentement."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1055-1057"
+      ]
     },
     {
       "id": "G422",
@@ -3297,7 +3528,18 @@
         "SRC-CIC83-1108"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The juridical manner in which Catholics must ordinarily exchange matrimonial consent for validity, unless the law provides otherwise.",
+        "fr": "Manière juridique selon laquelle les catholiques doivent ordinairement échanger leur consentement matrimonial pour la validité, sauf disposition contraire du droit."
+      },
+      "explanation": {
+        "en": "Canonical form ordinarily requires consent before the competent assisting cleric and witnesses. Dispensation and exceptional forms are governed by law and should not be improvised pastorally.",
+        "fr": "La forme canonique exige ordinairement le consentement devant le ministre compétent qui assiste et les témoins. Les dispenses et formes exceptionnelles sont régies par le droit et ne doivent pas être improvisées pastoralement."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1108"
+      ]
     },
     {
       "id": "G423",
@@ -3315,7 +3557,18 @@
         "SRC-CIC83-1062"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A mutual promise or commitment to future marriage that does not itself create the matrimonial bond.",
+        "fr": "Promesse ou engagement mutuel en vue d’un mariage futur qui ne constitue pas en lui-même le lien matrimonial."
+      },
+      "explanation": {
+        "en": "Current canon law leaves engagement substantially to particular law and custom. Engagement creates serious moral and practical responsibilities but is not marriage and does not confer marital rights.",
+        "fr": "Le droit canonique actuel laisse largement les fiançailles au droit particulier et à la coutume. Les fiançailles créent de sérieuses responsabilités morales et pratiques mais ne sont pas le mariage et ne confèrent pas les droits conjugaux."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1062"
+      ]
     },
     {
       "id": "G424",
@@ -3333,7 +3586,18 @@
         "SRC-CIC17-1017"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The older canonical institution of sponsalia or formal betrothal governed by pre-1983 discipline.",
+        "fr": "Ancienne institution canonique des sponsalia ou fiançailles formelles régie par la discipline antérieure à 1983."
+      },
+      "explanation": {
+        "en": "Historical sponsalia had juridical forms and effects that should not be silently imported into current marriage law. This entry exists specifically to separate the historical layer from modern engagement.",
+        "fr": "Les sponsalia historiques possédaient des formes et effets juridiques qui ne doivent pas être importés silencieusement dans le droit matrimonial actuel. Cette entrée existe précisément pour séparer la couche historique des fiançailles modernes."
+      },
+      "definition_source_ids": [
+        "SRC-CIC17-1017"
+      ]
     },
     {
       "id": "G425",
@@ -3351,7 +3615,18 @@
         "SRC-CIC83-1066-1067"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Public announcements or inquiries concerning an intended marriage, traditionally used to discover impediments before celebration.",
+        "fr": "Annonces publiques ou enquêtes concernant un mariage projeté, traditionnellement destinées à découvrir d’éventuels empêchements avant la célébration."
+      },
+      "explanation": {
+        "en": "Current law requires appropriate investigation before marriage but the exact use of banns can depend on episcopal-conference or particular norms. Historical practice should therefore be layered separately.",
+        "fr": "Le droit actuel exige une enquête appropriée avant le mariage, mais l’usage précis des bans peut dépendre des normes de la conférence épiscopale ou du droit particulier. La pratique historique doit donc être présentée séparément."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1066-1067"
+      ]
     },
     {
       "id": "G426",
@@ -3369,7 +3644,18 @@
         "SRC-CIC83-1073-1082"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A circumstance recognized by canon law that restricts or prohibits the valid or lawful celebration of marriage.",
+        "fr": "Circonstance reconnue par le droit canonique qui restreint ou interdit la célébration valide ou licite du mariage."
+      },
+      "explanation": {
+        "en": "Impediments are juridical categories, not merely pastoral concerns. Their existence, scope, dispensation and effect are determined by law rather than private judgment.",
+        "fr": "Les empêchements sont des catégories juridiques, non de simples préoccupations pastorales. Leur existence, leur étendue, leur dispense et leur effet sont déterminés par le droit et non par un jugement privé."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1073-1082"
+      ]
     },
     {
       "id": "G427",
@@ -3387,7 +3673,18 @@
         "SRC-CIC83-1073-1094"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A matrimonial impediment that makes an attempted marriage invalid unless lawfully dispensed where dispensation is possible.",
+        "fr": "Empêchement matrimonial qui rend invalide une tentative de mariage à moins d’une dispense licite lorsqu’elle est possible."
+      },
+      "explanation": {
+        "en": "A diriment impediment affects validity, not merely liceity. Canon law determines which impediments are diriment and which authority can dispense from them.",
+        "fr": "Un empêchement dirimant affecte la validité et non seulement la licéité. Le droit canonique détermine quels empêchements sont dirimants et quelle autorité peut en dispenser."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1073-1094"
+      ]
     },
     {
       "id": "G428",
@@ -3405,7 +3702,18 @@
         "SRC-CIC83-1124-1125"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A marriage between a Catholic and another baptized Christian who is not in full communion with the Catholic Church.",
+        "fr": "Mariage entre un catholique et un autre chrétien baptisé qui n’est pas en pleine communion avec l’Église catholique."
+      },
+      "explanation": {
+        "en": "Mixed marriage is distinct from disparity of cult because both parties are baptized. Permission and pastoral conditions are governed by canon law.",
+        "fr": "Le mariage mixte se distingue de la disparité de culte parce que les deux parties sont baptisées. La permission et les conditions pastorales sont régies par le droit canonique."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1124-1125"
+      ]
     },
     {
       "id": "G429",
@@ -3423,7 +3731,18 @@
         "SRC-CIC83-1086"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The diriment impediment existing between a Catholic and an unbaptized person.",
+        "fr": "Empêchement dirimant existant entre un catholique et une personne non baptisée."
+      },
+      "explanation": {
+        "en": "A marriage attempted under disparity of cult is invalid without the required dispensation. The category must not be confused with mixed marriage between two baptized persons.",
+        "fr": "Un mariage tenté sous l’empêchement de disparité de culte est invalide sans la dispense requise. Cette catégorie ne doit pas être confondue avec le mariage mixte entre deux personnes baptisées."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1086"
+      ]
     },
     {
       "id": "G430",
@@ -3441,7 +3760,18 @@
         "SRC-MR62-NUPTIAL"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The solemn blessing associated with marriage in the Roman liturgical tradition.",
+        "fr": "Bénédiction solennelle associée au mariage dans la tradition liturgique romaine."
+      },
+      "explanation": {
+        "en": "The nuptial blessing has its own liturgical placement and traditional conditions. In the 1962 profile it belongs to the Nuptial Mass structure and must be distinguished from the exchange of consent itself.",
+        "fr": "La bénédiction nuptiale possède sa place liturgique et ses conditions traditionnelles propres. Dans le profil de 1962, elle appartient à la structure de la Messe nuptiale et doit être distinguée de l’échange du consentement lui-même."
+      },
+      "definition_source_ids": [
+        "SRC-MR62-NUPTIAL"
+      ]
     },
     {
       "id": "G431",
@@ -3459,7 +3789,18 @@
         "SRC-CIC83-1671-1691"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A judgment by a competent ecclesiastical tribunal that a valid matrimonial bond was not established despite an apparent marriage.",
+        "fr": "Jugement d’un tribunal ecclésiastique compétent selon lequel aucun lien matrimonial valide n’a été constitué malgré un mariage apparent."
+      },
+      "explanation": {
+        "en": "A declaration of nullity does not dissolve a valid marriage and is not ‘Catholic divorce’. It judges validity at the time consent was exchanged under the applicable law.",
+        "fr": "Une déclaration de nullité ne dissout pas un mariage valide et n’est pas un « divorce catholique ». Elle juge la validité au moment où le consentement a été échangé selon le droit applicable."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1671-1691"
+      ]
     },
     {
       "id": "G432",
@@ -3477,7 +3818,18 @@
         "SRC-CIC83-1151-1155"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The lawful cessation of common conjugal life in circumstances recognized by canon law while the marriage bond itself remains.",
+        "fr": "Cessation licite de la vie conjugale commune dans des circonstances reconnues par le droit canonique tandis que le lien matrimonial demeure."
+      },
+      "explanation": {
+        "en": "Separation does not by itself make either spouse free to marry another person. The bond remains unless it is later established that no valid marriage existed or another lawful dissolution applies in a case permitted by the Church.",
+        "fr": "La séparation ne rend pas en elle-même l’un ou l’autre époux libre d’en épouser une autre personne. Le lien demeure à moins qu’il ne soit ultérieurement établi qu’aucun mariage valide n’existait ou qu’une autre dissolution licite ne s’applique dans un cas permis par l’Église."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1151-1155"
+      ]
     },
     {
       "id": "G433",
@@ -3495,7 +3847,18 @@
         "SRC-CIC83-1156-1160"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The making valid of a marriage that was invalid because of a defect, ordinarily through renewal of consent under the conditions established by law.",
+        "fr": "Acte de rendre valide un mariage qui était invalide en raison d’un défaut, ordinairement par renouvellement du consentement selon les conditions établies par le droit."
+      },
+      "explanation": {
+        "en": "Convalidation addresses an invalid attempted marriage; it does not strengthen a marriage that is already valid. The required procedure depends on the source of invalidity.",
+        "fr": "La convalidation traite un mariage tenté invalide ; elle ne « renforce » pas un mariage déjà valide. La procédure requise dépend de la cause d’invalidité."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1156-1160"
+      ]
     },
     {
       "id": "G434",
@@ -3513,7 +3876,18 @@
         "SRC-CIC83-1161-1165"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The convalidation of an invalid marriage without renewal of consent, granted by competent authority and carrying retroactive canonical effects as provided by law.",
+        "fr": "Convalidation d’un mariage invalide sans renouvellement du consentement, accordée par l’autorité compétente et produisant les effets rétroactifs prévus par le droit."
+      },
+      "explanation": {
+        "en": "Sanatio in radice is a specific juridical remedy and is not interchangeable with ordinary convalidation. It requires that the consent persist and that the law’s conditions be satisfied.",
+        "fr": "La sanatio in radice est un remède juridique précis et n’est pas interchangeable avec la convalidation ordinaire. Elle exige que le consentement persiste et que les conditions du droit soient remplies."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1161-1165"
+      ]
     },
     {
       "id": "G435",
@@ -3531,7 +3905,18 @@
         "TRENT-XXIV-MATRIMONY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The essential property by which a valid consummated sacramental marriage cannot be dissolved by any human power or for any cause other than death.",
+        "fr": "Propriété essentielle selon laquelle un mariage sacramentel valide et consommé ne peut être dissous par aucune puissance humaine ni pour aucune cause autre que la mort."
+      },
+      "explanation": {
+        "en": "Indissolubility belongs to the nature of Christian marriage and is not merely an ecclesiastical policy. Canon law also distinguishes cases of non-consummated or certain non-sacramental marriages where lawful dissolution questions differ.",
+        "fr": "L’indissolubilité appartient à la nature du mariage chrétien et n’est pas une simple politique ecclésiastique. Le droit canonique distingue aussi les cas de mariages non consommés ou de certains mariages non sacramentels où les questions de dissolution légitime diffèrent."
+      },
+      "definition_source_ids": [
+        "TRENT-XXIV-MATRIMONY"
+      ]
     },
     {
       "id": "G436",
@@ -3549,7 +3934,18 @@
         "DIRECTORY_CONTRACT_V1"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A general directory label for a smaller place of Catholic worship; not by itself a precise canonical classification.",
+        "fr": "Étiquette générale d’annuaire pour un lieu de culte catholique de plus petite taille ; ce n’est pas en soi une classification canonique précise."
+      },
+      "explanation": {
+        "en": "A place called ‘chapel’ may canonically be an oratory, private chapel, shrine, mission church or other sacred place. The directory must preserve the source’s wording unless the juridical type is explicitly established.",
+        "fr": "Un lieu appelé « chapelle » peut canoniquement être un oratoire, une chapelle privée, un sanctuaire, une église de mission ou un autre lieu sacré. L’annuaire doit conserver le vocabulaire de la source à moins que le type juridique ne soit explicitement établi."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
     },
     {
       "id": "G437",
@@ -3567,7 +3963,18 @@
         "SRC-CIC83-1223-1229"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A sacred place established with the local Ordinary’s permission for divine worship for the benefit of a community or group of faithful who assemble there.",
+        "fr": "Lieu sacré établi avec la permission de l’Ordinaire du lieu pour le culte divin au bénéfice d’une communauté ou d’un groupe de fidèles qui s’y réunissent."
+      },
+      "explanation": {
+        "en": "Oratory is a technical current canonical category. It must not be inferred merely because a venue is small or informally called a chapel.",
+        "fr": "Oratoire est une catégorie canonique technique actuelle. Elle ne doit pas être déduite du seul fait qu’un lieu soit petit ou appelé informellement chapelle."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1223-1229"
+      ]
     },
     {
       "id": "G438",
@@ -3585,7 +3992,18 @@
         "DIRECTORY_CONTRACT_V1"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A directory and pastoral label for an ecclesial outpost, community or place of ministry whose exact canonical form must be established from source evidence.",
+        "fr": "Étiquette d’annuaire et pastorale pour un poste, une communauté ou un lieu de ministère ecclésial dont la forme canonique exacte doit être établie par des sources."
+      },
+      "explanation": {
+        "en": "‘Mission’ is used differently across dioceses, religious institutes and countries. Ad Orientem therefore treats it as a descriptive venue/community term unless competent sources define a specific juridical status.",
+        "fr": "« Mission » est employé différemment selon les diocèses, instituts religieux et pays. Ad Orientem le traite donc comme terme descriptif de lieu ou communauté à moins que des sources compétentes n’en définissent un statut juridique précis."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
     },
     {
       "id": "G439",
@@ -3603,7 +4021,18 @@
         "SRC-CIC83-607-709"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A religious house in which a monastic community lives according to its rule and proper law.",
+        "fr": "Maison religieuse dans laquelle une communauté monastique vit selon sa règle et son droit propre."
+      },
+      "explanation": {
+        "en": "Canon law recognizes monasteries and certain autonomous houses with particular governance. ‘Monastery’ should not be used as a generic label for every convent or religious residence.",
+        "fr": "Le droit canonique reconnaît les monastères et certaines maisons autonomes avec un gouvernement particulier. « Monastère » ne doit pas être employé comme étiquette générique pour tout couvent ou résidence religieuse."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
     },
     {
       "id": "G440",
@@ -3621,7 +4050,18 @@
         "SRC-HIST-CONVENT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A common historical term for a religious house or community, especially of religious women or mendicant communities, whose exact canonical form varies.",
+        "fr": "Terme historique courant pour une maison ou communauté religieuse, notamment de religieuses ou de communautés mendiantes, dont la forme canonique exacte varie."
+      },
+      "explanation": {
+        "en": "Convent is not one single current canonical category. Directory data should retain it as a descriptive/historical term unless the institute’s proper status is known.",
+        "fr": "Couvent n’est pas une catégorie canonique actuelle unique. Les données d’annuaire doivent le conserver comme terme descriptif/historique à moins que le statut propre de l’institut soit connu."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CONVENT"
+      ]
     },
     {
       "id": "G441",
@@ -3639,7 +4079,18 @@
         "SRC-HIST-PRIOR-PRIORY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A religious house governed by a prior or prioress according to the proper law of the religious family.",
+        "fr": "Maison religieuse gouvernée par un prieur ou une prieure selon le droit propre de la famille religieuse."
+      },
+      "explanation": {
+        "en": "A priory can be independent or dependent on another house depending on the order. The title alone does not establish the house’s autonomy or canonical rank.",
+        "fr": "Un prieuré peut être indépendant ou dépendant d’une autre maison selon l’ordre. Le titre seul n’établit ni l’autonomie ni le rang canonique de la maison."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PRIOR-PRIORY"
+      ]
     },
     {
       "id": "G442",
@@ -3657,7 +4108,18 @@
         "SRC-CIC83-232-264"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An institution erected for the formation of candidates for sacred ministry.",
+        "fr": "Institution érigée pour la formation des candidats au ministère sacré."
+      },
+      "explanation": {
+        "en": "Canon law distinguishes minor and major seminaries and regulates their governance and programme. Seminary is an institution of formation, not itself a degree of clerical status.",
+        "fr": "Le droit canonique distingue petits et grands séminaires et règle leur gouvernement et leur programme. Le séminaire est une institution de formation, non un degré de statut clérical."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-232-264"
+      ]
     },
     {
       "id": "G443",
@@ -3675,7 +4137,18 @@
         "SRC-HIST-MONK-FRIAR"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A male religious living the monastic form of consecrated life according to a rule and monastic tradition.",
+        "fr": "Religieux vivant la forme monastique de vie consacrée selon une règle et une tradition monastique."
+      },
+      "explanation": {
+        "en": "‘Monk’ is not a synonym for every male religious. Monastic communities differ from mendicant friars, clerical societies and other institutes in history, spirituality and law.",
+        "fr": "« Moine » n’est pas synonyme de tout religieux masculin. Les communautés monastiques se distinguent des frères mendiants, sociétés cléricales et autres instituts par leur histoire, leur spiritualité et leur droit."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONK-FRIAR"
+      ]
     },
     {
       "id": "G444",
@@ -3693,7 +4166,18 @@
         "SRC-HIST-MONK-FRIAR"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A male religious, especially in a mendicant or similar order, traditionally called frater or brother.",
+        "fr": "Religieux masculin, spécialement dans un ordre mendiant ou analogue, traditionnellement appelé frater ou frère."
+      },
+      "explanation": {
+        "en": "A friar can be a priest or a non-ordained brother. The term describes a religious-family tradition, not a sacramental rank.",
+        "fr": "Un frère mendiant peut être prêtre ou frère non ordonné. Le terme décrit une tradition de famille religieuse et non un rang sacramentel."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONK-FRIAR"
+      ]
     },
     {
       "id": "G445",
@@ -3711,7 +4195,18 @@
         "SRC-CIC83-607-709"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The public act by which a person assumes the evangelical counsels by vow and is incorporated into a religious institute according to law.",
+        "fr": "Acte public par lequel une personne assume les conseils évangéliques par vœu et est incorporée à un institut religieux selon le droit."
+      },
+      "explanation": {
+        "en": "Religious profession is juridical and ecclesial, not merely a private devotional promise. Temporary and perpetual profession have different canonical effects according to the institute and law.",
+        "fr": "La profession religieuse est juridique et ecclésiale, non une simple promesse dévotionnelle privée. La profession temporaire et la profession perpétuelle ont des effets canoniques différents selon l’institut et le droit."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
     },
     {
       "id": "G446",
@@ -3729,7 +4224,18 @@
         "PONTIFICALE-ROMANUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A solemn Mass celebrated by a bishop according to the pontifical ceremonial proper to his office.",
+        "fr": "Messe solennelle célébrée par un évêque selon le cérémonial pontifical propre à sa charge."
+      },
+      "explanation": {
+        "en": "In the traditional Roman books a Pontifical Mass has additional ministers, vesture, insignia and ceremonial beyond an ordinary Solemn Mass. It is a PROFILE_1962 ceremonial category, not merely any Mass at which a bishop is present.",
+        "fr": "Dans les livres romains traditionnels, la Messe pontificale comporte des ministres, ornements, insignes et cérémonies supplémentaires par rapport à une Messe solennelle ordinaire. C’est une catégorie cérémonielle du profil 1962, non simplement toute Messe à laquelle un évêque assiste."
+      },
+      "definition_source_ids": [
+        "PONTIFICALE-ROMANUM"
+      ]
     },
     {
       "id": "G447",
@@ -3747,7 +4253,18 @@
         "DIRECTORY_CONTRACT_V1"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A descriptive position-family label for the thesis that the Roman See is presently vacant because the claimant to the papacy is not a true pope.",
+        "fr": "Étiquette descriptive de famille de position pour la thèse selon laquelle le Siège romain est actuellement vacant parce que le prétendant à la papauté n’est pas véritablement pape."
+      },
+      "explanation": {
+        "en": "In Ad Orientem this is a directory taxonomy value, not a judgment generated by the app. It may be assigned only when explicit, reliable evidence supports the community or ministry’s self-identification or position.",
+        "fr": "Dans Ad Orientem, il s’agit d’une valeur taxonomique d’annuaire et non d’un jugement produit par l’application. Elle ne peut être attribuée que lorsqu’une preuve explicite et fiable établit l’auto-identification ou la position de la communauté ou du ministère."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
     },
     {
       "id": "G448",
@@ -3765,7 +4282,18 @@
         "DIRECTORY_CONTRACT_V1"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A descriptive position-family label for Cassiciacum-type theories distinguishing material designation or occupation of the Roman See from possession of formal papal authority.",
+        "fr": "Étiquette descriptive de famille de position pour les théories de type Cassiciacum distinguant la désignation ou occupation matérielle du Siège romain de la possession formelle de l’autorité papale."
+      },
+      "explanation": {
+        "en": "The glossary describes the position without endorsing or refuting it. Directory assignment requires explicit evidence; it must not be inferred merely from association with another traditionalist group.",
+        "fr": "Le glossaire décrit la position sans l’approuver ni la réfuter. L’attribution dans l’annuaire exige une preuve explicite et ne doit pas être déduite d’une simple association avec un autre groupe traditionaliste."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
     },
     {
       "id": "G449",
@@ -3783,7 +4311,18 @@
         "DIRECTORY_CONTRACT_V1"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A project taxonomy describing the liturgical books, rite or usage actually employed by a ministry or celebration.",
+        "fr": "Taxonomie de projet décrivant les livres liturgiques, le rite ou l’usage réellement employés par un ministère ou une célébration."
+      },
+      "explanation": {
+        "en": "Liturgical usage must be sourced independently from canonical affiliation and communion profile. Celebrating according to the 1962 Roman books does not by itself identify the community’s canonical status or theological position.",
+        "fr": "L’usage liturgique doit être sourcé indépendamment de l’affiliation canonique et du profil de communion. Célébrer selon les livres romains de 1962 n’identifie pas à lui seul le statut canonique ni la position théologique de la communauté."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
     },
     {
       "id": "G450",
@@ -3801,7 +4340,18 @@
         "DIRECTORY_CONTRACT_V1"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A project data type recording sourced assertions about a ministry or celebration’s ecclesial communion relationship at a given time.",
+        "fr": "Type de donnée du projet enregistrant des affirmations sourcées sur la relation de communion ecclésiale d’un ministère ou d’une célébration à un moment donné."
+      },
+      "explanation": {
+        "en": "The profile can legitimately be YES, NO, VARIES, DISPUTED or UNKNOWN according to evidence. It is not inferred from venue type, community name, liturgical usage or una-cum evidence alone.",
+        "fr": "Le profil peut légitimement être YES, NO, VARIES, DISPUTED ou UNKNOWN selon les preuves. Il n’est pas déduit du type de lieu, du nom de la communauté, de l’usage liturgique ou de la seule formule una cum."
+      },
+      "definition_source_ids": [
+        "DIRECTORY_CONTRACT_V1"
+      ]
     }
   ]
 }
