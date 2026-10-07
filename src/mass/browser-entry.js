@@ -202,6 +202,59 @@ function installReaderCloseBridge(preview) {
   });
 }
 
+function massGlossaryTerms(preview){
+  const card=preview?.getCurrentCard?.()??null;
+  const text=[card?.title,card?.sectionTitle,card?.sectionId,card?.id].filter(Boolean).join(" ").toLowerCase();
+  const rows=[];
+  const add=(...ids)=>rows.push(...ids);
+  if(/asperges/.test(text))add("G235","G238","G043");
+  if(/vidi aquam/.test(text))add("G236","G238","G043");
+  if(/introit/.test(text))add("G052");
+  if(/collect/.test(text))add("G053");
+  if(/epistle/.test(text))add("G054");
+  if(/gradual/.test(text))add("G055");
+  if(/tract/.test(text))add("G056");
+  if(/gospel/.test(text))add("G057");
+  if(/kyrie/.test(text))add("G255");
+  if(/gloria/.test(text))add("G256");
+  if(/credo|creed/.test(text))add("G257");
+  if(/offertory/.test(text))add("G058");
+  if(/secret/.test(text))add("G059");
+  if(/preface/.test(text))add("G060");
+  if(/sanctus/.test(text))add("G258");
+  if(/benedictus/.test(text))add("G259");
+  if(/canon/.test(text))add("G061");
+  if(/consecrat/.test(text))add("G062");
+  if(/elevation/.test(text))add("G063");
+  if(/agnus/.test(text))add("G260");
+  if(/communion/.test(text))add("G031","G064");
+  if(/postcommunion/.test(text))add("G065");
+  if(/last gospel/.test(text))add("G066");
+  if(/requiem/.test(text))add("G266");
+  if(/rogation/.test(text))add("G094","G233");
+  if(/corpus christi/.test(text))add("G320","G301","G316");
+  if(/procession/.test(text))add("G233");
+  if(!rows.length)add("G046","G067");
+  else add("G067");
+  return [...new Set(rows)];
+}
+
+function installReaderGlossaryBridge(preview){
+  const button=preview?.root?.querySelector?.("[data-reader-glossary]");
+  if(!button?.addEventListener)return null;
+  const onClick=(event)=>{
+    const glossary=globalThis.AO_GLOSSARY_V1;
+    if(typeof glossary?.openTerms!=="function")return;
+    event.preventDefault?.();
+    event.stopImmediatePropagation?.();
+    void Promise.resolve(glossary.openTerms(massGlossaryTerms(preview),{origin:"mass"})).catch(error=>{
+      console.error("R17 reader glossary failed",error);
+    });
+  };
+  button.addEventListener("click",onClick,true);
+  return Object.freeze({dispose(){button.removeEventListener?.("click",onClick,true);}});
+}
+
 function installReaderParametersBridge(preview) {
   const button=preview?.root?.querySelector?.("[data-reader-parameters]");
   if(!button?.addEventListener)return null;
@@ -336,6 +389,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderCheckpoint(previewState.preview);
   installReaderCloseBridge(previewState.preview);
   installReaderParametersBridge(previewState.preview);
+  installReaderGlossaryBridge(previewState.preview);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,
