@@ -50,7 +50,7 @@ jobs:
           git config user.name "ad-orientem-directory-bot"
           git config user.email "actions@users.noreply.github.com"
           rm -f data/directory/.snapshot-promotion-request
-          git add data/directory/generated/fssp data/directory/generated/icksp data/directory/generated/ibp
+          git add data/directory/generated/geocoding-report.v1.json data/directory/generated/fssp data/directory/generated/icksp data/directory/generated/ibp
           git add -u data/directory/.snapshot-promotion-request
           if git diff --cached --quiet; then
             echo "No snapshot changes to promote."
