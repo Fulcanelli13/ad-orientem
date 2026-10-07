@@ -70,7 +70,11 @@ export function createSettingsDonorState(win=globalThis){
     }
     const current=core();
     if(current.language!==p.general.uiLanguage)dispatch({type:"set-language",language:p.general.uiLanguage});
-    try{win?.AO_HAPTICS_V4319?.setEnabled?.(Boolean(p.general.hapticsEnabled));}catch{}
+    const activeMass=Boolean(win?.AO_APP_LIVE_SESSION_GUARDS_V1?.status?.().live);
+    try{
+      if(activeMass)win?.AO_APP_LIVE_SESSION_GUARDS_V1?.forceHapticsOff?.();
+      else win?.AO_HAPTICS_V4319?.setEnabled?.(Boolean(p.general.hapticsEnabled));
+    }catch{}
     try{win?.AO_PRAY_V435930?.applySettingsPreferences?.(p.prayer);}catch{}
     return true;
   }
