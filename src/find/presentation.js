@@ -1,3 +1,4 @@
+import { scheduleFreshnessState } from "./data-service.js";
 import { directoryGeoLabel, isMapPublishableGeo } from "./geo-provenance.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const arr=value=>Array.isArray(value)?value:[];
@@ -34,6 +35,18 @@ function directionsUrl(venue){
 function rawSchedules(record){
   return arr(record?.ministries).flatMap(m=>arr(m.schedules).map(s=>({community:m.community_id,schedule:s})));
 }
+function scheduleFreshnessLabel(schedule,language){
+  const state=scheduleFreshnessState(schedule);
+  if(state==="REVIEW_DUE")return L(language,"Schedule needs verification","Horaire à revérifier");
+  return null;
+}
+function checkedDateLabel(schedule,language){
+  const value=schedule?.verification?.checked_at;
+  if(!value)return null;
+  const date=new Date(value);
+  if(Number.isNaN(date.getTime()))return null;
+  return L(language,"Checked ","Vérifié le ")+date.toLocaleDateString(language==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
+}
 
 export function buildFindViewModel({language="en",records=[],communities=[],loadedProviders=[],unavailableProviders=[],view="list",filters={},selectedId=null}={}){
   const selected=records.find(r=>r?.venue?.venue_id===selectedId)??null;
@@ -47,6 +60,7 @@ function pill(name,value,label,current){
 function venueCard(record,vm){
   const v=record.venue??{},m=arr(record.ministries)[0]??{},label=communityLabel(m.community_id,vm.communities),una=communion(record);
   const schedule=rawSchedules(record)[0]?.schedule;
+  const freshness=schedule? scheduleFreshnessLabel(schedule,vm.language):null;
   const status=una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":"STATUS UNKNOWN";
   return '<button type="button" class="aoFindCard" data-find-venue="'+esc(v.venue_id)+'">'
     +'<span class="aoFindCardTop"><small>'+esc(label)+'</small><i class="aoFindStatus" data-state="'+esc(una)+'">'+esc(status)+'</i></span>'
@@ -54,6 +68,7 @@ function venueCard(record,vm){
     +'<span>'+esc([v?.address?.city,v?.address?.country_code].filter(Boolean).join(" · "))+'</span>'
     +'<em>'+esc(usageLabel(m))+'</em>'
     +(schedule?.payload?.raw?'<p>'+esc(String(schedule.payload.raw).slice(0,180))+'</p>':"")
+    +(freshness?'<span class="aoFindFreshness" data-state="REVIEW_DUE">'+esc(freshness)+'</span>':"")
     +'</button>';
 }
 function emptyState(vm){
@@ -81,8 +96,11 @@ function detailSheet(vm){
   if(schedules.length){
     html+='<section class="aoFindSchedules"><small>'+esc(L(vm.language,"SCHEDULE","HORAIRES"))+'</small>';
     for(const item of schedules){
-      const s=item.schedule;
-      html+='<article><strong>'+esc(s.mass_type&&s.mass_type!=="UNKNOWN"?s.mass_type:"Mass / liturgy")+'</strong><p>'+esc(s?.payload?.raw||JSON.stringify(s?.payload??{}))+'</p></article>';
+      const s=item.schedule,freshness=scheduleFreshnessLabel(s,vm.language),checked=checkedDateLabel(s,vm.language);
+      html+='<article><strong>'+esc(s.mass_type&&s.mass_type!=="UNKNOWN"?s.mass_type:"Mass / liturgy")+'</strong><p>'+esc(s?.payload?.raw||JSON.stringify(s?.payload??{}))+'</p>'
+        +(freshness?'<small class="aoFindFreshness" data-state="REVIEW_DUE">'+esc(freshness)+'</small>':"")
+        +(checked?'<small class="aoFindChecked">'+esc(checked)+'</small>':"")
+        +'</article>';
     }
     html+='</section>';
   }
