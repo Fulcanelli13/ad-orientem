@@ -1195,6 +1195,12 @@ try{
     assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").count(),1,route+" lost donor Back");
     assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").count(),1,route+" lost donor Close");
     assert.equal((await page.locator("#ao-learn-traditional-root .aoLearnTradTop small").textContent())?.trim(),"Formation",route+" lost the shared Formation shell identity");
+    const guideDisclosure=await page.evaluate(()=>{
+      const cards=[...document.querySelectorAll("#ao-learn-traditional-root details.aoLearnTradCard")];
+      return {cards:cards.length,open:cards.filter(x=>x.open).length};
+    });
+    if(guideDisclosure.cards>0)assert.equal(guideDisclosure.open,1,route+" should expose exactly one guide section by default");
+
     await shot(name);
     await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").click();
     await page.waitForFunction(()=>!document.getElementById("ao-learn-traditional-root")&&globalThis.AO_LEARN_APP_V1?.status?.().child===null,null,{timeout:5000});
