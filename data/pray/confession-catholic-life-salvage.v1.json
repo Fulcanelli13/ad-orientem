@@ -1,0 +1,329 @@
+{
+  "version": "CONFESSION_CATHOLIC_LIFE_SALVAGE_V1",
+  "status": "CANONICAL_OWNER_ANNEX",
+  "created_at": "2026-10-07",
+  "canonical_owner": "pray.confession",
+  "parent_sot": "data/learn/sacramental-formation-sot.v1.json",
+  "source_audit": "data/learn/catholic-life-retirement-audit.v1.json",
+  "owner_contract": "Confession remains a PRAY-owned five-stage sacramental workflow; Catholic Life does not create a second Confession course.",
+  "routing_note": "The four child-specific readiness claims from CL05-S07 are preserved here for provenance but resolve pedagogically through learn.rites.first_communion -> pray.confession.",
+  "claims": [
+    {
+      "claim_id": "CL04-S01-Q002",
+      "stage_id": "CL04-S01",
+      "stage_title": "Why Confess",
+      "layer": "CURRENT",
+      "text": "Current law requires confession of grave sins not yet directly remitted or individually confessed, insofar as known after diligent examination.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S01-Q003",
+      "stage_id": "CL04-S01",
+      "stage_title": "Why Confess",
+      "layer": "CURRENT",
+      "text": "Those bound by the law are to confess grave sins at least once a year.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S01-Q004",
+      "stage_id": "CL04-S01",
+      "stage_title": "Why Confess",
+      "layer": "PASTORAL",
+      "text": "Confession is ordered to reconciliation and conversion, not merely to administrative disclosure.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S02-Q001",
+      "stage_id": "CL04-S02",
+      "stage_title": "Examine Your Conscience",
+      "layer": "CURRENT",
+      "text": "Current law refers to grave sins known after diligent examination.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S02-Q002",
+      "stage_id": "CL04-S02",
+      "stage_title": "Examine Your Conscience",
+      "layer": "CURRENT",
+      "text": "Current law requires grave sins to be confessed in kind and number insofar as known.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S02-Q003",
+      "stage_id": "CL04-S02",
+      "stage_title": "Examine Your Conscience",
+      "layer": "PASTORAL",
+      "text": "No single Ad Orientem examination worksheet is itself a condition for valid Confession.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S03-Q001",
+      "stage_id": "CL04-S03",
+      "stage_title": "Contrition",
+      "layer": "CURRENT",
+      "text": "Proper disposition for Penance includes repudiation of sins committed.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S03-Q002",
+      "stage_id": "CL04-S03",
+      "stage_title": "Contrition",
+      "layer": "CURRENT",
+      "text": "Proper disposition includes a purpose of amendment.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S03-Q003",
+      "stage_id": "CL04-S03",
+      "stage_title": "Contrition",
+      "layer": "PASTORAL",
+      "text": "The intensity of a person's emotional feeling is not the canonical definition of contrition.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S04-Q001",
+      "stage_id": "CL04-S04",
+      "stage_title": "How Confession Works",
+      "layer": "PASTORAL",
+      "text": "A penitent begins the sacramental encounter according to the lawful rite and local practice.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S04-Q002",
+      "stage_id": "CL04-S04",
+      "stage_title": "How Confession Works",
+      "layer": "CURRENT",
+      "text": "Grave sins are confessed in kind and number insofar as known.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S04-Q003",
+      "stage_id": "CL04-S04",
+      "stage_title": "How Confession Works",
+      "layer": "PASTORAL",
+      "text": "The confessor may give counsel and imposes the sacramental penance.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S04-Q004",
+      "stage_id": "CL04-S04",
+      "stage_title": "How Confession Works",
+      "layer": "CURRENT",
+      "text": "The penitent is to have contrition and purpose of amendment.",
+      "source_ids": [
+        "SRC-CIC83-987-989"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S05-Q001",
+      "stage_id": "CL04-S05",
+      "stage_title": "Inside the Confessional",
+      "layer": "CURRENT",
+      "text": "Current law identifies a church or oratory as the proper place for sacramental Confession.",
+      "source_ids": [
+        "SRC-CIC83-964"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S05-Q002",
+      "stage_id": "CL04-S05",
+      "stage_title": "Inside the Confessional",
+      "layer": "CURRENT",
+      "text": "Current law requires fixed-grille confessionals to remain available to those who freely wish to use them.",
+      "source_ids": [
+        "SRC-CIC83-964"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S05-Q003",
+      "stage_id": "CL04-S05",
+      "stage_title": "Inside the Confessional",
+      "layer": "PROFILE_1962",
+      "text": "The 1917 law in force in the 1962 context contained stronger and more specific fixed-grille provisions, especially regarding women.",
+      "source_ids": [
+        "SRC-CIC17-909"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S05-Q004",
+      "stage_id": "CL04-S05",
+      "stage_title": "Inside the Confessional",
+      "layer": "SHARED",
+      "text": "Face-to-face or grille arrangement is not itself what makes sacramental absolution valid.",
+      "source_ids": [
+        "SRC-CIC83-964",
+        "SRC-CIC17-909"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S05-Q005",
+      "stage_id": "CL04-S05",
+      "stage_title": "Inside the Confessional",
+      "layer": "PASTORAL",
+      "text": "Use a lawful arrangement in which you can confess honestly rather than treating one current option as universally mandatory.",
+      "source_ids": [
+        "SRC-CIC83-964"
+      ],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S06-Q001",
+      "stage_id": "CL04-S06",
+      "stage_title": "Your Penance",
+      "layer": "PASTORAL",
+      "text": "Sacramental penance is assigned by the confessor, not by Ad Orientem.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S06-Q002",
+      "stage_id": "CL04-S06",
+      "stage_title": "Your Penance",
+      "layer": "PASTORAL",
+      "text": "The penitent should fulfil the penance imposed by the confessor.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S06-Q004",
+      "stage_id": "CL04-S06",
+      "stage_title": "Your Penance",
+      "layer": "PASTORAL",
+      "text": "If a penance is genuinely unclear or forgotten, seek appropriate priestly guidance rather than letting the app invent a substitute.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S07-Q001",
+      "stage_id": "CL04-S07",
+      "stage_title": "After Confession",
+      "layer": "PASTORAL",
+      "text": "A brief thanksgiving after Confession is an appropriate devotional practice.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S07-Q002",
+      "stage_id": "CL04-S07",
+      "stage_title": "After Confession",
+      "layer": "PASTORAL",
+      "text": "Carry out the penance assigned by the confessor.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL04-S07-Q003",
+      "stage_id": "CL04-S07",
+      "stage_title": "After Confession",
+      "layer": "PASTORAL",
+      "text": "Ad Orientem should not encourage repetitive re-analysis of a completed good-faith Confession.",
+      "source_ids": [],
+      "pedagogical_handoff": "pray.confession"
+    },
+    {
+      "claim_id": "CL05-S07-Q001",
+      "stage_id": "CL05-S07",
+      "stage_title": "First Confession",
+      "layer": "HISTORICAL",
+      "text": "Quam singulari associates sacramental readiness with the age of discretion, about seven years more or less.",
+      "source_ids": [
+        "SRC-QUAM-SINGULARI"
+      ],
+      "pedagogical_handoff": "learn.rites.first_communion"
+    },
+    {
+      "claim_id": "CL05-S07-Q002",
+      "stage_id": "CL05-S07",
+      "stage_title": "First Confession",
+      "layer": "HISTORICAL",
+      "text": "First Confession precedes First Communion in the discipline established by Quam singulari.",
+      "source_ids": [
+        "SRC-QUAM-SINGULARI"
+      ],
+      "pedagogical_handoff": "learn.rites.first_communion"
+    },
+    {
+      "claim_id": "CL05-S07-Q003",
+      "stage_id": "CL05-S07",
+      "stage_title": "First Confession",
+      "layer": "PASTORAL",
+      "text": "A child's examination and sacramental preparation should be proportionate to the child's understanding.",
+      "source_ids": [],
+      "pedagogical_handoff": "learn.rites.first_communion"
+    },
+    {
+      "claim_id": "CL05-S07-Q004",
+      "stage_id": "CL05-S07",
+      "stage_title": "First Confession",
+      "layer": "HISTORICAL",
+      "text": "'About seven' is not an automatic sacramental switch on a particular birthday.",
+      "source_ids": [
+        "SRC-QUAM-SINGULARI"
+      ],
+      "pedagogical_handoff": "learn.rites.first_communion"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-CIC17-909",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC83-964",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-987-989",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-QUAM-SINGULARI",
+      "title": "Quam singulari — De aetate admittendorum ad primam Communionem eucharisticam",
+      "authority_type": "DICASTERY_DECREE",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf"
+    }
+  ]
+}
