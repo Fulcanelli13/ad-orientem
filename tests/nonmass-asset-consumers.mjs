@@ -20,6 +20,7 @@ assert.deepEqual(AO_APP_SURFACE_ASSET_IDS,{
   pray:"ao-nav-pray",
   learn:"ao-nav-learn",
   calendar:"ao-nav-calendar",
+  find:"ao-ui-search",
   settings:"ao-nav-settings",
 });
 assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
@@ -93,6 +94,7 @@ for(const id of CONSUMED_DEVOTIONAL_MASK_ASSETS){
 }
 
 assert.equal(canonicalAssetIdForSurface("settings"),"ao-nav-settings");
+assert.equal(canonicalAssetIdForSurface("find"),"ao-ui-search");
 assert.equal(canonicalAssetIdForLearnRoute("learn.mass"),"ao-rich-guides");
 assert.equal(canonicalAssetIdForLearnRoute("learn.spiritual_life"),"ao-refined-spiritual-life");
 assert.equal(canonicalAssetIdForLearnRoute("unknown"),null);
@@ -124,7 +126,7 @@ const presentationConsumers=new Set([
   ...Object.values(AO_LEARN_ROUTE_ASSET_IDS),
   ...Object.values(PRAY_HOME_ROUTE_ASSET_IDS),
   ...Object.values(HOME_ENRICHER_ICON_ASSET_IDS),
-  "ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-previous","ao-ui-search",
+  "ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-previous","ao-ui-search","ao-ui-settings",
   "ao-live-blessing",
 ]);
 const unresolved=[...presentationConsumers].filter(id=>!physicalCanonical(id)&&!embeddedSymbol(id));
@@ -147,7 +149,8 @@ assert.match(appEntry,/data-ao-asset-renderer|aoAssetRenderer/);
 assert.match(appEntry,/button\.dataset\.aoAssetId=assetId/);
 assert.match(home,/ao-ui-previous/);
 assert.match(home,/ao-ui-next/);
-assert.match(home,/ao-ui-close/);
+assert.match(home,/ao-ui-settings/,"Home utility Settings entry lost its canonical asset");
+assert.doesNotMatch(home,/ao-ui-close/,"Home regained a modal-sheet Close control after those sheets were retired");
 assert.match(calendar,/ao-ui-back/);
 assert.match(calendar,/ao-ui-previous/);
 assert.match(calendar,/ao-ui-next/);

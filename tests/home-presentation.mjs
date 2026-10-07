@@ -78,10 +78,15 @@ assert.match(en,/Around the Mass/);
 assert.match(en,/data-home-mass-entry/,"Home Follow Mass is not owned by modular app navigation");
 assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on the historical Home click controller");
 assert.match(en,/Holy Gospel/);
-assert.match(en,/Today’s Mass/);
+assert.doesNotMatch(en,/data-action="today-mass"/,"duplicate Today’s Mass Home card returned");
 assert.match(en,/data-home-find/,"Home does not expose the Explore entry");
 assert.match(en,/Traditional Masses, shrines, customs and pilgrimages/,"Home Explore card lost cross-domain explanation");
-assert.match(en,/Settings · preparation · thanksgiving/);
+assert.match(en,/data-home-settings/,"Home header lost the utility Settings entry");
+assert.match(en,/data-ao-asset-id="ao-ui-settings"/,"Home Settings entry is not using the canonical utility asset");
+assert.doesNotMatch(en,/class="languageSwitch"/,"Home still owns a duplicate language selector");
+assert.doesNotMatch(en,/class="contentCard moreCard"/,"Home More junk drawer returned");
+assert.doesNotMatch(en,/data-action="more"/,"Home still exposes the retired More action");
+assert.doesNotMatch(en,/class="contentCard massCard"/,"duplicate Today’s Mass card returned");
 assert.doesNotMatch(en,/next migration stage/i,"Home still exposes migration-era placeholder copy");
 
 const fr=renderHomeToString({...base,language:"fr"},r17Win);
@@ -91,7 +96,9 @@ assert.match(fr,/Saint Évangile/);
 assert.match(fr,/EXPLORER/,"French Home does not expose the Explore entry");
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
-assert.match(fr,/Réglages · préparation · action de grâces/);
+assert.match(fr,/data-home-settings/);
+assert.doesNotMatch(fr,/class="languageSwitch"/);
+assert.doesNotMatch(fr,/class="contentCard moreCard"/);
 assert.doesNotMatch(fr,/étape suivante de la migration/i,"French Home still exposes migration-era placeholder copy");
 
 
@@ -105,10 +112,6 @@ const retiredSettings=renderHomeToString({
 },{AO_DISPLAY_DATE:()=> "07/10/2026"});
 assert.doesNotMatch(retiredSettings,/data-ao-home-settings=/,"Home still renders a second Settings surface");
 assert.doesNotMatch(retiredSettings,/data-setting-form=/,"Home still owns Settings controls after extraction");
-
-const more=renderHomeToString({...base,homeSheet:"more"},{AO_DISPLAY_DATE:()=> "07/10/2026"});
-assert.match(more,/data-ao-settings-open/,"Home More launcher does not route to modular Settings");
-assert.doesNotMatch(more,/data-home-open-settings/,"historical Home Settings launcher survived extraction");
 
 const failed=renderHomeToString({
   ...base,

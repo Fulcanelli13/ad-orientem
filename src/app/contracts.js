@@ -4,10 +4,12 @@ export const APP_SURFACES = Object.freeze([
   "pray",
   "learn",
   "calendar",
-  "settings",
+  "find",
 ]);
 
-export const APP_ROUTE_SURFACES = Object.freeze([...APP_SURFACES, "find"]);
+// Settings remains a routable utility overlay, but it no longer consumes one
+// of the six permanent navigation slots.
+export const APP_ROUTE_SURFACES = Object.freeze([...APP_SURFACES, "settings"]);
 
 const APP_SURFACE_SET = new Set(APP_ROUTE_SURFACES);
 
@@ -25,7 +27,8 @@ const CORE_MASS_ROUTE_SET = new Set(CORE_MASS_ROUTES);
 export const NON_MASS_DONOR_CONTRACT = Object.freeze({
   release: "43.59.30",
   canonicalHead: "v43.59.30",
-  topLevel: APP_SURFACES,
+  // Preserve donor evidence separately from the modern navigation contract.
+  topLevel: Object.freeze(["home", "mass", "pray", "learn", "calendar", "settings"]),
   sourcesTopLevelVisible: false,
   homeOwner: "AO_NAV_V362",
   domainShellOwner: "AO_V37_SHELL",
