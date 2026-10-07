@@ -442,36 +442,27 @@ function yearSurface(selected,r){
         <button type="button" data-cal-date="${nextSeason.start}"><small>${esc(L("NEXT CHANGE OF SEASON","PROCHAIN CHANGEMENT DE TEMPS"))}</small><strong>${esc(periodName(nextSeason))}</strong><span>${esc(longDate(nextSeason.start))} · ${dayCount(selected,nextSeason.start)} ${esc(L("days","jours"))}</span></button>
         ${next?`<button type="button" data-cal-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:""}
       </div>
-      <button class="aoCalV2TextLink" type="button" data-cal-view="index">${esc(L("All major celebrations","Toutes les grandes célébrations"))} →</button>
+      <button class="aoCalV2TextLink" type="button" data-cal-open-month="major">${esc(L("Major days this month","Jours majeurs de ce mois"))} →</button>
     </section>
     ${v384Companion(selected,r)}
   `;
-}
-function indexSurface(selected){
-  const y=buildLiturgicalYear(selected),events=buildMajorCelebrations(selected),filters=[["all",L("All","Toutes")],["sunday",L("Sundays","Dimanches")],["temporale",L("Temporale","Temporal")],["sanctorale",L("Sanctorale","Sanctoral")]];
-  const shown=calendarIndexFilter==="all"?events:events.filter(x=>x.kind===calendarIndexFilter),next=events.find(x=>x.date>=selected);
-  return `<section class="aoCalV2Index">
-    <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL YEAR","ANNÉE LITURGIQUE"))}</small><h2>${esc(y.label)}</h2><p>${esc(L("Major Sundays, feasts and special structures","Grands dimanches, fêtes et structures particulières"))}</p></div>
-    <div class="aoCalV2Filters">${filters.map(([id,label])=>`<button type="button" data-cal-filter="${id}" class="${calendarIndexFilter===id?"active":""}">${esc(label)}</button>`).join("")}</div>
-    <div class="aoCalV2IndexGrid">${shown.map(x=>{
-      const isNext=next?.date===x.date;
-      return `<button type="button" data-cal-index-date="${x.date}" class="${x.date===selected?"selected":isNext?"next":""}"><time>${esc(shortDate(x.date))}</time><strong>${esc(celebrationName(x))}</strong>${isNext?`<small>${esc(L("NEXT","PROCHAINE"))}</small>`:""}</button>`;
-    }).join("")}</div>
-  </section>`;
 }
 function pickerSurface(selected){
   if(!pickerMonthId)pickerMonthId=selected.slice(0,7);
   const [yy,mm]=pickerMonthId.split("-").map(Number),first=new Date(yy,mm-1,1,12),days=monthGridIds(pickerMonthId),today=iso(new Date()),loc=fr()?"fr-FR":"en-GB";
   const status=monthStatus.get(pickerMonthId),ready=monthReady(pickerMonthId),done=status?.done??days.filter(x=>weekCache.has(x)).length;
-  return `<section class="aoCalV2Picker">
-    <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2><p>${esc(L("Liturgical colour, rank and major observances at a glance","Couleur liturgique, classe et grandes célébrations d’un seul regard"))}</p></div>
-    <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1">${assetIcon("ao-ui-previous")} ${esc(L("Previous month","Mois précédent"))}</button><button type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button><button type="button" data-cal-month-shift="1">${esc(L("Next month","Mois suivant"))} ${assetIcon("ao-ui-next")}</button></div>
-    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?L("1962 calendar · liturgical month ready","Calendrier 1962 · mois liturgique prêt"):L(`Resolving liturgical month · ${done}/42`,`Résolution du mois liturgique · ${done}/42`))}</span><span>${esc(L("Colour = liturgical colour · stronger mark = higher rank","Couleur = couleur liturgique · marque plus forte = classe plus élevée"))}</span></div>
-    <div class="aoCalV2Weekdays">${Array.from({length:7},(_,i)=>{const d=new Date(2026,7,2+i,12);return `<span>${esc(d.toLocaleDateString(loc,{weekday:"short"}))}</span>`}).join("")}</div>
+  const calendarGrid=`<div class="aoCalV2Weekdays">${Array.from({length:7},(_,i)=>{const d=new Date(2026,7,2+i,12);return `<span>${esc(d.toLocaleDateString(loc,{weekday:"short"}))}</span>`}).join("")}</div>
     <div class="aoCalV2MonthGrid" data-month-ready="${ready?"true":"false"}">${days.map(id=>{
       const d=dateOf(id),outside=d.getMonth()!==mm-1,data=monthCellData(id);
       return `<button type="button" data-cal-pick-date="${id}" data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.name?"major":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria)}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><i data-cal-liturgical-marker aria-hidden="true"></i></span><span class="aoCalMonthName">${esc(data.name)}</span></button>`;
-    }).join("")}</div>
+    }).join("")}</div>`;
+  const projection=calendarMonthView==="calendar"?calendarGrid:monthIndexList(pickerMonthId,selected,calendarMonthView);
+  return `<section class="aoCalV2Picker">
+    <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2><p>${esc(L("The month by calendar, major days, temporal cycle or sanctoral cycle.","Le mois par calendrier, jours majeurs, cycle temporal ou cycle sanctoral."))}</p></div>
+    <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1">${assetIcon("ao-ui-previous")} ${esc(L("Previous month","Mois précédent"))}</button><button type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button><button type="button" data-cal-month-shift="1">${esc(L("Next month","Mois suivant"))} ${assetIcon("ao-ui-next")}</button></div>
+    ${monthIndexTabs()}
+    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?L("1962 calendar · liturgical month ready","Calendrier 1962 · mois liturgique prêt"):L(`Resolving liturgical month · ${done}/42`,`Résolution du mois liturgique · ${done}/42`))}</span><span>${esc(calendarMonthView==="calendar"?L("Colour = liturgical colour · stronger mark = higher rank","Couleur = couleur liturgique · marque plus forte = classe plus élevée"):L("Only observances actually resolved for this month are shown.","Seules les célébrations effectivement résolues pour ce mois sont affichées."))}</span></div>
+    ${projection}
     <div class="aoCalV2DirectJump"><label>${esc(L("Exact date","Date exacte"))}</label><div><input data-cal-input inputmode="numeric" value="${esc(displayDate(selected))}" aria-label="${esc(L("Date in DD/MM/YYYY format","Date au format JJ/MM/AAAA"))}"><button type="button" data-cal-go>${esc(L("Go","Aller"))}</button></div><p data-cal-error aria-live="polite"></p></div>
   </section>`;
 }
@@ -481,7 +472,7 @@ function bodyMarkup(){
   if(!r||r.status==="failed"||!r.day){
     return `${tabsMarkup()}<div class="aoCalModEmpty"><small>${L("CALENDAR","CALENDRIER")}</small><h2>${esc(displayDate(selected))}</h2><p>${L("This date could not be opened. Please try again or choose another date.","Cette date n’a pas pu être ouverte. Veuillez réessayer ou choisir une autre date.")}</p><button data-cal-today>${L("Return to today","Revenir à aujourd’hui")}</button></div>`;
   }
-  const surface=calendarView==="year"?yearSurface(selected,r):calendarView==="index"?indexSurface(selected):calendarView==="picker"?pickerSurface(selected):daySurface(selected,r);
+  const surface=calendarView==="year"?yearSurface(selected,r):calendarView==="picker"?pickerSurface(selected):daySurface(selected,r);
   return `${tabsMarkup()}${surface}`;
 }
 function css(){
