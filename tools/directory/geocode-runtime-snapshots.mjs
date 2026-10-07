@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { auditVenue } from "../../src/find/contracts.js";
 import { auditDirectoryGeo, hasDirectoryCoordinates, isMapPublishableGeo } from "../../src/find/geo-provenance.js";
 import {
+  buildDirectoryAddressOnlyQuery,
   buildDirectoryGeocodeQuery,
   geocodeCacheKey,
   nominatimGeoFromSelection,
@@ -147,6 +148,8 @@ for(const provider of PROVIDERS){
     total:venues.length,
     existing_valid:0,
     accepted:0,
+    primary_accepted:0,
+    fallback_accepted:0,
     unresolved:0,
     existing_invalid:0,
     by_precision:{building:0,address:0,street:0,locality:0,region:0,unknown:0},
@@ -165,34 +168,68 @@ for(const provider of PROVIDERS){
       report.unresolved_records.push({venue_id:venue.venue_id,reason:"EXISTING_COORDINATE_PROVENANCE_INVALID",issues:auditDirectoryGeo(venue.geo,{countryCode})});
       continue;
     }
-    const query=buildDirectoryGeocodeQuery(venue);
-    if(!query||!countryCode){
+    const primaryQuery=buildDirectoryGeocodeQuery(venue);
+    const fallbackQuery=buildDirectoryAddressOnlyQuery(venue);
+    if(!primaryQuery||!countryCode){
       report.unresolved+=1;
-      report.unresolved_records.push({venue_id:venue.venue_id,reason:"NO_QUERY_OR_COUNTRY",query});
+      report.unresolved_records.push({venue_id:venue.venue_id,reason:"NO_QUERY_OR_COUNTRY",query:primaryQuery});
       continue;
     }
-    const key=geocodeCacheKey({query,countryCode});
-    const cached=await fetchCandidates(query,countryCode,key);
-    const selection=selectNominatimCandidate(venue,cached.results);
-    if(!selection){
+
+    const attempts=[];
+    let chosen=null;
+    for(const attempt of [
+      {kind:"PRIMARY_NAME_ADDRESS",query:primaryQuery},
+      {kind:"FALLBACK_ADDRESS_ONLY",query:fallbackQuery},
+    ]){
+      if(!attempt.query)continue;
+      if(attempts.some(item=>item.query===attempt.query))continue;
+      const key=geocodeCacheKey({query:attempt.query,countryCode});
+      const cached=await fetchCandidates(attempt.query,countryCode,key);
+      const selection=selectNominatimCandidate(venue,cached.results);
+      attempts.push({
+        kind:attempt.kind,
+        query:attempt.query,
+        key,
+        candidates:safeArray(cached.results).slice(0,3).map(c=>({
+          display_name:c.display_name,
+          type:c.addresstype??c.type,
+          country_code:c?.address?.country_code??null,
+        })),
+      });
+      if(selection){
+        chosen={...attempt,key,selection};
+        break;
+      }
+    }
+
+    if(!chosen){
       report.unresolved+=1;
       report.unresolved_records.push({
         venue_id:venue.venue_id,
         reason:"NO_TRUSTWORTHY_MATCH",
-        query,
-        candidates:safeArray(cached.results).slice(0,3).map(c=>({display_name:c.display_name,type:c.addresstype??c.type,country_code:c?.address?.country_code??null}))
+        attempts,
       });
       continue;
     }
-    const geo=nominatimGeoFromSelection(selection,{geocodedAt:new Date().toISOString(),cacheKey:key});
+
+    const geo=nominatimGeoFromSelection(chosen.selection,{geocodedAt:new Date().toISOString(),cacheKey:chosen.key});
     const geoIssues=auditDirectoryGeo(geo,{countryCode,path:"geo"});
     if(geoIssues.length){
       report.unresolved+=1;
-      report.unresolved_records.push({venue_id:venue.venue_id,reason:"SELECTED_GEO_FAILED_CONTRACT",query,issues:geoIssues});
+      report.unresolved_records.push({
+        venue_id:venue.venue_id,
+        reason:"SELECTED_GEO_FAILED_CONTRACT",
+        query_kind:chosen.kind,
+        query:chosen.query,
+        issues:geoIssues,
+      });
       continue;
     }
     venue.geo=geo;
     report.accepted+=1;
+    if(chosen.kind==="FALLBACK_ADDRESS_ONLY")report.fallback_accepted+=1;
+    else report.primary_accepted+=1;
     report.by_precision[geo.precision]=(report.by_precision[geo.precision]??0)+1;
   }
 
@@ -207,6 +244,8 @@ for(const provider of PROVIDERS){
   importReport.geocoding={
     provider:"OSM_NOMINATIM",
     accepted:report.accepted,
+    primary_accepted:report.primary_accepted,
+    fallback_accepted:report.fallback_accepted,
     existing_valid:report.existing_valid,
     unresolved:report.unresolved,
     existing_invalid:report.existing_invalid,
@@ -221,6 +260,8 @@ for(const provider of PROVIDERS){
     total:report.total,
     mapped:geojson.features.length,
     accepted:report.accepted,
+    primary_accepted:report.primary_accepted,
+    fallback_accepted:report.fallback_accepted,
     existing_valid:report.existing_valid,
     unresolved:report.unresolved,
     existing_invalid:report.existing_invalid,

@@ -9,6 +9,11 @@ const STOP_MARKERS=[
   /\bContact\s*:/iu,
   /\bAutres lieux d['’]apostolat\b/iu,
   /\bPlease direct correspondence\b/iu,
+  /\bMailing Address\s*:/iu,
+  /\bMaison canonique\s*:/iu,
+  /\bPr[êe]tre responsable\s*:/iu,
+  /\bMesses?\s*:/iu,
+  /\bConfessions?\s*:/iu,
   /©\s*20\d{2}/u,
   /\bShopping Basket\b/iu,
   /\bNous utilisons des cookies\b/iu,
@@ -51,17 +56,18 @@ export function cleanDirectoryAddress(address){
   value=value.replace(/\bP\.?O\.?\s*Box\s+\d+\s*[-,]?\s*/giu," ");
   value=value.replace(/\bChurch Address\s*:\s*/giu," ");
   value=value.replace(/\bTemporary Chapel Address\s*,?\s*/giu," ");
+  value=value.replace(/\b(?:Address|Adresse)\s*:\s*/giu," ");
+  value=value.replace(/\b(?:F|D|B|CZ|I)-(?=\d{4,6}\b)/giu,"");
   value=value.replace(/\s+-\s+/g,", ").replace(/,{2,}/g,",").replace(/\s+,/g,",").replace(/,\s*$/,"");
   return value.replace(/\s+/g," ").trim();
 }
+export function buildDirectoryAddressOnlyQuery(venue){
+  return cleanDirectoryAddress(venue?.address?.formatted??venue?.address?.line1??venue?.address?.city??"").slice(0,280);
+}
 export function buildDirectoryGeocodeQuery(venue){
   const name=String(venue?.name?.official??"").trim();
-  const address=cleanDirectoryAddress(venue?.address?.formatted??venue?.address?.line1??venue?.address?.city??"");
-  const parts=[];
-  if(name)parts.push(name);
-  if(address&&!ascii(address).includes(ascii(name)))parts.push(address);
-  else if(address)parts.push(address);
-  return parts.filter(Boolean).join(", ").slice(0,280);
+  const address=buildDirectoryAddressOnlyQuery(venue);
+  return [name,address].filter(Boolean).join(", ").slice(0,280);
 }
 export function geocodeCacheKey({query,countryCode}){
   return crypto.createHash("sha256").update(String(countryCode??"").toUpperCase()+"\n"+String(query??"").trim()).digest("hex");

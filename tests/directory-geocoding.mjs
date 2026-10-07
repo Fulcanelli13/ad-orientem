@@ -9,6 +9,7 @@ import {
 import { directoryMapFeatures } from "../src/find/map-runtime.js";
 import {
   addressLooksLocalityOnly,
+  buildDirectoryAddressOnlyQuery,
   buildDirectoryGeocodeQuery,
   cleanDirectoryAddress,
   classifyNominatimPrecision,
@@ -44,6 +45,9 @@ assert.equal(auditVenue(venue).length,0);
 assert.equal(cleanDirectoryAddress(venue.address.formatted),"12 rue Saint-Joseph, 75002 Paris");
 assert.match(buildDirectoryGeocodeQuery(venue),/Église Saint-Joseph/);
 assert.match(buildDirectoryGeocodeQuery(venue),/75002 Paris/);
+assert.equal(buildDirectoryAddressOnlyQuery(venue),"12 rue Saint-Joseph, 75002 Paris");
+assert.equal(cleanDirectoryAddress("Rue des Minimes 62 - B-1000 Bruxelles - Belgique"),"Rue des Minimes 62, 1000 Bruxelles, Belgique");
+assert.equal(cleanDirectoryAddress("St. Mary's Oratory, 325 Grand Avenue, Wausau, Wisconsin 54403, Mailing Address: P.O. Box 1"),"St. Mary's Oratory, 325 Grand Avenue, Wausau, Wisconsin 54403");
 assert.equal(cleanDirectoryAddress("PO Box 917 - Petersham NSW 2049 - Australia"),"Petersham NSW 2049, Australia");
 assert.equal(addressLooksLocalityOnly({address:{formatted:"Rome"}}),true);
 assert.equal(addressLooksLocalityOnly({address:{formatted:"1 Via Roma, Rome"}}),false);
