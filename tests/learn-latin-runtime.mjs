@@ -20,6 +20,16 @@ assert.match(latinRuntimeSource,/ao-ui-back/,"Latin Back control is not canonica
 assert.match(latinRuntimeSource,/ao-ui-close/,"Latin Close control is not canonical");
 assert.doesNotMatch(latinRuntimeSource,/>←<\/button>|>×<\/button>/,"Latin shell regained raw Unicode navigation controls");
 assert.match(latinRuntimeSource,/var\(--ao-z-surface,2147481800\)/,"Latin child root is not on the shared elevation vocabulary");
+assert.match(latinRuntimeSource,/lessonPhase:"learn"/,"Latin lessons do not default to the Learn phase");
+assert.match(latinRuntimeSource,/\["learn","read","practice","review"\]/,"Latin lesson phase registry changed");
+assert.match(latinRuntimeSource,/data-l2-phase="\$\{id\}"/,"Latin phase controls are not generated from the canonical phase registry");
+assert.match(latinRuntimeSource,/if\(phase==="learn"\)/);
+assert.match(latinRuntimeSource,/else if\(phase==="read"\)/);
+assert.match(latinRuntimeSource,/else if\(phase==="practice"\)/);
+assert.match(latinRuntimeSource,/Reference tools/,"Latin Read phase lost progressive reference access");
+assert.doesNotMatch(latinRuntimeSource,/aoL2Panel" open/,"Latin reference panels returned to default-open overload");
+assert.match(latinRuntimeSource,/lessonPhase:state\.screen==="lesson"\?state\.lessonPhase:null/,"Latin status no longer exposes the active phase");
+
 
 const lesson=n=>JSON.parse(readFileSync(`data/learn/latin-course-lessons/lesson-${String(n).padStart(2,"0")}.v1.json`,"utf8"));
 

@@ -15,7 +15,7 @@ import { ensureMassFormationRegistry, installMassFormationModule, MASS_FORMATION
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
-const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint",SPIRITUAL_LIFE_ROUTE_ID]);
+const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint","today.gospel",SPIRITUAL_LIFE_ROUTE_ID]);
 
 function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function appState(win){return runtime(win)?.store?.getState?.()??null;}

@@ -15,16 +15,18 @@ assert.deepEqual(LEARN_LAYOUT.title,["Formation","Formation"]);
 assert.deepEqual(
   LEARN_LAYOUT.sections.map(section=>section.title),
   [
-    ["Daily formation","Formation quotidienne"],
-    ["Courses & study","Parcours & étude"],
-    ["Traditional Catholic life","Vie catholique traditionnelle"],
-    ["Today in context","Le jour en contexte"],
+    ["Foundations","Fondements"],
+    ["Spiritual & Moral Life","Vie spirituelle & morale"],
+    ["Liturgy & Tradition","Liturgie & tradition"],
+    ["Sacraments & Life Events","Sacrements & étapes de vie"],
+    ["Latin","Latin"],
+    ["Reference","Référence"],
   ],
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.glossary","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
-  "Formation rename changed the canonical Learn launcher IDs",
+  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.mass","learn.serve_mass.responses","learn.scapular","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],
+  "Formation learning-intent layout changed unexpectedly",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
 assert.deepEqual(
@@ -50,8 +52,13 @@ assert.match(presentation,/id:"learn\.glossary"/,"Glossary launcher is missing f
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.spiritual_life"/,"Spiritual Life launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
-assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost Saint compatibility or Spiritual Life");
+assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint","today\.gospel",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost hidden Today compatibility routes or Spiritual Life");
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
+assert.doesNotMatch(presentation,/id:"today\.gospel"/,"Today’s Gospel returned as a Formation launcher");
+assert.match(owner,/"today\.gospel"/,"Today’s Gospel compatibility route was removed rather than hidden");
+assert.match(presentation,/Spiritual & Moral Life/);
+assert.match(presentation,/Sacraments & Life Events/);
+assert.match(presentation,/type:"practice".*learn\.serve_mass\.responses|id:"learn\.serve_mass\.responses",type:"practice"/s,"Serve Low Mass is not classified as practice");
 assert.match(owner,/modular-learn-v1/);
 assert.match(owner,/aoLearnRouteOwner/);
 assert.match(owner,/aoLearnOwner/);
