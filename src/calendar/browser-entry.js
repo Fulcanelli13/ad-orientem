@@ -25,8 +25,9 @@ const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));re
 
 const weekCache=new Map(),dayLoads=new Map(),weekLoads=new Map(),weekStatus=new Map(),monthLoads=new Map(),monthStatus=new Map(),majorCelebrationCache=new Map();
 let foregroundWeek="",navEpoch=0,monthEpoch=0;
-const CALENDAR_VIEWS=new Set(["day","year","index","picker"]);
-let calendarView="day",calendarIndexFilter="all",pickerMonthId="",requestedView=null;
+const CALENDAR_VIEWS=new Set(["day","year","picker"]);
+const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale"]);
+let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null;
 let calendarV384Panel="year",calendarV384Era="current";
 function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
 function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
@@ -275,9 +276,8 @@ const pct=x=>Math.round(Math.max(0,Math.min(1,Number(x||0)))*1000)/10;
 function tabsMarkup(){
   const tabs=[
     ["day",L("Day","Jour")],
-    ["year",L("Liturgical year","Année liturgique")],
-    ["index",L("Year index","Repères")],
-    ["picker",L("Month","Mois")]
+    ["picker",L("Month","Mois")],
+    ["year",L("Liturgical year","Année liturgique")]
   ];
   return `<nav class="aoCalV2Tabs" aria-label="${esc(L("Calendar views","Vues du calendrier"))}">${tabs.map(([id,label])=>`<button type="button" data-cal-view="${id}" class="${calendarView===id?"active":""}" ${calendarView===id?'aria-current="page"':""}>${esc(label)}</button>`).join("")}</nav>`;
 }
