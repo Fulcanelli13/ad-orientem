@@ -41,7 +41,7 @@ jobs:
           npm run directory:import:fssp
           npm run directory:import:icksp
           npm run directory:import:ibp
-          npm run directory:import:sspx
+          npm run directory:import:sspx -- --no-details
       - name: Validate generated corpus
         run: |
           npm run test:directory
