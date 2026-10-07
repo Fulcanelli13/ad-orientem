@@ -378,7 +378,7 @@ function compactWeek(selected){
   }).join("")}</div>`;
 }
 function daySurface(selected,r){
-  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextMajorCelebration(selected),cm=commemorations(r);
+  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextMajorCelebration(selected),cm=commemorations(r),saint=principalSaintContext(r,selected);
   const season=periodName(p),properReady=!!properOf(r),periodPercent=pct(y.periodProgress);
   return `
     ${dayNavigator(selected)}
@@ -389,6 +389,7 @@ function daySurface(selected,r){
       ${sourceStatus(r)}
       ${properReady?`<button class="aoCalV2Primary" type="button" data-cal-mass>${esc(L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
     </section>
+    ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small><p>${esc(L("Biography, artwork and sources for the principal observance.","Biographie, œuvre et sources de la célébration principale."))}</p></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
     <section class="aoCalV2Context">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><h3>${esc(season)}</h3></div><strong>${periodPercent}%</strong></div>
       <div class="aoCalV2SeasonMeta"><span>${esc(L(`Day ${y.periodDayIndex} of ${p.days}`,`Jour ${y.periodDayIndex} sur ${p.days}`))}</span><span>${esc(L(`Liturgical year ${y.label}`,`Année liturgique ${y.label}`))}</span></div>
