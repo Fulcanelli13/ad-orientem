@@ -2,7 +2,7 @@
 
 **Status:** source-controlled curriculum blueprint  
 **Date:** 2026-10-07  
-**Future route:** `learn.spiritual_life` — **reserved, not published**
+**Route:** `learn.spiritual_life` — **published**
 
 This SOT implements the ownership decision in `data/learn/formation-gap-ownership.v1.json`.
 
@@ -101,8 +101,18 @@ It does **not** take ownership from:
 
 ## Publication state
 
-Research, provenance, bilingual lesson copy, owner handoffs, non-gamified exercises and the first harsh content audit now pass.
+Research, provenance, bilingual lesson copy, owner handoffs, non-gamified exercises, content audit and runtime integration pass.
 
-`learn.spiritual_life` remains unpublished for one reason: **the runtime/UI and phone acceptance have not yet been built and certified**.
+`learn.spiritual_life` is published in Formation with its dedicated Spiritual Life asset. Its release contract remains:
 
-The next pass is therefore the restrained Formation runtime and source drawer—not more source discovery or curriculum expansion.
+- 14 lessons;
+- 76 sourced claims;
+- 12 source records;
+- English/French parity;
+- three readable teaching blocks per lesson;
+- one non-scored application per lesson;
+- source drawer with original links;
+- no persistence, streaks, holiness scores or sin ledger;
+- Playwright phone acceptance at 390 × 844.
+
+Future expansion requires an explicit versioned curriculum revision rather than opportunistic additions.
