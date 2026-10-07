@@ -39,7 +39,7 @@ function installStyle(win){
     "#"+ROOT_ID+"{position:fixed;inset:0;z-index:var(--ao-z-surface,2147481800);display:none;background:var(--ao-bg-canvas,#080c12);color:var(--ao-text-primary,#efe7d4);font-family:var(--ao-font-body,Georgia,serif)}",
     "#"+ROOT_ID+"[data-open=true]{display:block}",
     ".aoFindSurface{height:100%;overflow:auto;background:linear-gradient(180deg,#0d131c,#080c12 38%);padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}",
-    ".aoFindHeader{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:14px var(--ao-page-gutter,14px);background:rgba(8,12,18,.94);border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.15));backdrop-filter:blur(var(--ao-topbar-blur,14px))}",
+    ".aoFindHeader{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:44px minmax(0,1fr) 44px auto;gap:10px;align-items:center;padding:14px var(--ao-page-gutter,14px);background:rgba(8,12,18,.94);border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.15));backdrop-filter:blur(var(--ao-topbar-blur,14px))}",
     ".aoFindHeader button{width:var(--ao-control-h,44px);height:var(--ao-control-h,44px);border-radius:var(--ao-pill-radius,999px);border:1px solid var(--ao-rule,rgba(217,197,154,.22));background:transparent;color:inherit;font-size:20px}",
     ".aoFindHeader small,.aoFindCard small,.aoFindFacts small,.aoFindSchedules>small,.aoFindSources>small,.aoExploreAddress>small{font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;color:#b7a57d}",
     ".aoFindHeader h1{margin:2px 0 0;font:600 24px/1.05 var(--ao-font-display,Georgia,serif)}",
@@ -86,6 +86,21 @@ export function createFindOwner(win=globalThis){
     selectedId:null,
     selectedPlaceId:null,
   };
+
+  function glossaryTerms(){
+    if(state.lens==="tlm")return ["G135","G149","G150","G449","G450","G047","G048","G049"];
+    if(state.lens==="shrines")return ["G336","G334","G338","G321"];
+    if(state.lens==="traditions")return ["G322","G233","G095","G339"];
+    if(state.lens==="pilgrimages")return ["G334","G335","G336","G233"];
+    return ["G334","G336"];
+  }
+
+  function openGlossary(){
+    const glossary=win?.AO_GLOSSARY_V1;
+    if(typeof glossary?.openTerms!=="function")return false;
+    void glossary.openTerms(glossaryTerms(),{origin:"find"});
+    return true;
+  }
 
   async function ensureData(){
     if(dataset)return dataset;
@@ -171,6 +186,7 @@ export function createFindOwner(win=globalThis){
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
+    if(target?.closest?.("[data-find-glossary]")){event.preventDefault?.();event.stopPropagation?.();openGlossary();return}
     if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(target?.closest?.("[data-find-close-detail]")){state.selectedId=null;void paint();return}
     if(target?.closest?.("[data-find-close-place]")){state.selectedPlaceId=null;void paint();return}
