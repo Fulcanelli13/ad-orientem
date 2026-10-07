@@ -528,6 +528,14 @@ try{
   // then yields to persistent silence without changing reader geometry.
   await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
+  const adorationLanding=await page.evaluate(()=>({
+    modes:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode]")].map(x=>x.getAttribute("data-p435930-ador-mode")),
+    titles:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode] b")].map(x=>x.textContent?.trim()??""),
+    benedictionCard:document.querySelectorAll("#aoPray435930 [data-p435930-go-ben]").length,
+  }));
+  assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury"],"Adoration landing no longer matches the final five-entry donor composition");
+  assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Adoration","Holy Hour","Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
+  assert.equal(adorationLanding.benedictionCard,0,"Benediction incorrectly replaced a private Adoration entry on the landing page");
   await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-genuflect",null,{timeout:3000});
   const adorationArrival=await page.evaluate(()=>({
@@ -570,6 +578,21 @@ try{
   await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
+  const benBlessing=await page.evaluate(async()=>{
+    const icon=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-live-blessing'] .aoP435930SemanticRailIcon");
+    const cs=icon?getComputedStyle(icon):null;
+    const mask=cs?.webkitMaskImage||cs?.maskImage||"";
+    const match=mask.match(/url\\(["']?(.*?)["']?\\)/);
+    const url=match?.[1]??"";
+    let status=0,bytes=0;
+    if(url){try{const response=await fetch(url);status=response.status;bytes=(await response.arrayBuffer()).byteLength}catch{}}
+    const rect=icon?.getBoundingClientRect?.();
+    return {mask,url,status,bytes,width:rect?.width??0,height:rect?.height??0};
+  });
+  assert.match(benBlessing.mask,/assets\\/recovered\\/ao-live-blessing\\.svg/,"Benediction blessing did not resolve through the recovered frozen-V4 silhouette");
+  assert.equal(benBlessing.status,200,"Benediction blessing runtime asset does not load");
+  assert.ok(benBlessing.bytes>1000,"Benediction blessing runtime asset is unexpectedly empty");
+  assert.ok(benBlessing.width>=30&&benBlessing.height>=30,"Benediction blessing icon collapsed below visible rail geometry");
   await shot("03g-pray-benediction-blessing");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
