@@ -10,6 +10,7 @@ const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"rci",file:"rci.v1.json"}),
   Object.freeze({key:"cspv",file:"cspv.v1.json"}),
   Object.freeze({key:"smmd",file:"smmd.v1.json"}),
+  Object.freeze({key:"icksp",file:"icksp-federated.v1.json"}),
 ]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
@@ -124,7 +125,7 @@ export function expandResearchProviderSnapshot(snapshot={}){
     out.schedules.push({
       schedule_id:scheduleId,
       ministry_id:ministryId,
-      service_type:"MASS",
+      service_type:text(row.svc)||"MASS",
       mass_type:"UNKNOWN",
       payload:{raw:scheduleRaw},
       source_ids:[scheduleSourceId],
@@ -215,7 +216,7 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
       fetchJson(urls.sources,{fetchImpl,optional:true}),
     ]);
     if(!venues?.records){unavailable.push(provider);continue}
-    loaded.push(provider);
+    if(!loaded.includes(provider))loaded.push(provider);
     merged.venues.push(...safeArray(venues.records));
     merged.ministries.push(...safeArray(ministries?.records));
     merged.schedules.push(...safeArray(schedules?.records));
@@ -225,7 +226,7 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     const snapshot=await fetchJson(researchProviderUrl(descriptor.file),{fetchImpl,optional:true});
     if(!snapshot?.records){unavailable.push(descriptor.key);continue}
     const expanded=expandResearchProviderSnapshot(snapshot);
-    loaded.push(descriptor.key);
+    if(!loaded.includes(descriptor.key))loaded.push(descriptor.key);
     merged.venues.push(...expanded.venues);
     merged.ministries.push(...expanded.ministries);
     merged.schedules.push(...expanded.schedules);

@@ -34,6 +34,7 @@ const researchSnapshots = [
   readJson("../data/directory/generated/v19/rci.v1.json"),
   readJson("../data/directory/generated/v19/cspv.v1.json"),
   readJson("../data/directory/generated/v19/smmd.v1.json"),
+  readJson("../data/directory/generated/v19/icksp-federated.v1.json"),
 ];
 
 const expectedResearchCounts = new Map([
@@ -45,6 +46,7 @@ const expectedResearchCounts = new Map([
   ["RCI",31],
   ["SSPV_CSPV",19],
   ["SMMD",1],
+  ["ICKSP_FEDERATED_V13",98],
 ]);
 let researchVenueCount=0;
 const researchVenueIds=new Set();
@@ -70,8 +72,18 @@ for(const snapshot of researchSnapshots){
   if(snapshot.provider==="CMRI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books!=="1962"),"CMRI was wrongly normalized to 1962");
   if(snapshot.provider==="RCI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="PRE_1955"),"RCI pre-1955 profile drifted");
   if(snapshot.provider==="SSPV_CSPV")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="UNKNOWN"),"CSPV exact books were inferred");
+  if(snapshot.provider==="ICKSP_FEDERATED_V13"){
+    assert.ok(expanded.ministries.every(m=>m.community_id==="ICKSP"&&m.liturgical_usage.books==="1962"),"ICKSP supplement profile drifted");
+    assert.ok(expanded.schedules.some(s=>s.service_type==="MASS"),"ICKSP supplement lost confirmed Mass assertions");
+    assert.ok(expanded.schedules.some(s=>s.service_type==="SOURCE_ASSERTION"),"ICKSP supplement falsely promoted every provider entity to a Mass schedule");
+  }
 }
-assert.equal(researchVenueCount,246,"v1.9 research projection count drift");
+assert.equal(researchVenueCount,344,"v1.9 research projection count drift");
+const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
+assert.equal(ickspReconciliation.research_unique_candidates,125);
+assert.equal(ickspReconciliation.live_runtime_records,27);
+assert.equal(ickspReconciliation.overlap_candidate_ids.length,27);
+assert.equal(ickspReconciliation.missing_candidate_count,98);
 
 
 assert.equal(contract.schema, "DIRECTORY_SOT_V1");
