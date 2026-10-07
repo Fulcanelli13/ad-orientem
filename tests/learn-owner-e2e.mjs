@@ -163,10 +163,14 @@ try{
   const glossaryDetail=await page.evaluate(()=>({
     title:document.querySelector("#ao-glossary-root .aoGlossDetailHead h2")?.textContent?.trim()??"",
     latin:document.querySelector("#ao-glossary-root .aoGlossLatin")?.textContent?.trim()??"",
+    definition:document.querySelector("#ao-glossary-root .aoGlossDefinition")?.textContent?.trim()??"",
+    explanation:document.querySelector("#ao-glossary-root .aoGlossExplanation")?.textContent?.trim()??"",
     sourceLinks:document.querySelectorAll("#ao-glossary-root .aoGlossSources a[href]").length,
   }));
   assert.equal(glossaryDetail.title,"Transubstantiation");
   assert.equal(glossaryDetail.latin,"transsubstantiatio");
+  assert.match(glossaryDetail.definition,/conversion/i,"Glossary term drawer did not render the sourced short definition");
+  assert.ok(glossaryDetail.explanation.length>80,"Glossary term drawer did not render the sourced explanation");
   assert.ok(glossaryDetail.sourceLinks>=1,"Glossary term drawer has no clickable source");
   await page.locator("#ao-glossary-root [data-gloss-close]").tap();
   await page.locator("#ao-glossary-root [data-gloss-back]").tap();
