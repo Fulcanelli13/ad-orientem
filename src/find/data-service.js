@@ -1,3 +1,4 @@
+import { auditVenue } from "./contracts.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
@@ -57,6 +58,9 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
     });
   });
 }
+export function publishableDirectoryRecords(records){
+  return safeArray(records).filter(record=>auditVenue(record?.venue).length===0);
+}
 export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PROVIDERS}={}){
   const [statusData,communityData]=await Promise.all([
     fetchJson(moduleUrl("../../data/directory/status-assertions.v1.json"),{fetchImpl,optional:true}),
@@ -80,8 +84,11 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     merged.schedules.push(...safeArray(schedules?.records));
     merged.sources.push(...safeArray(sources?.records));
   }
+  const joined=joinDirectoryRecords({...merged,communityProfiles});
+  const records=publishableDirectoryRecords(joined);
   return Object.freeze({
-    records:joinDirectoryRecords({...merged,communityProfiles}),
+    records,
+    skippedInvalidRecords:joined.length-records.length,
     communities:safeArray(communityData?.communities),
     communityProfiles,
     loadedProviders:loaded,
