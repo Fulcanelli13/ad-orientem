@@ -23,8 +23,8 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel","today.saint"],
-  "Learn launcher order changed after final v38.4 seasonal dedupe",
+  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  "Learn visible launcher order changed after moving Saint of the Day into Calendar",
 );
 assert.deepEqual(
   LEARN_LAYOUT.sections.flatMap(section=>section.items.filter(item=>item.featured).map(item=>item.id)),
@@ -38,6 +38,8 @@ const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const host=readFileSync("src/app/host-adapter.js","utf8");
 
 assert.match(owner,/AO_LEARN_APP_V1/);
+assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint"\]\)/,"hidden Saint of the Day compatibility alias was removed");
+assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.match(owner,/modular-learn-v1/);
 assert.match(owner,/aoLearnRouteOwner/);
 assert.match(owner,/aoLearnOwner/);
