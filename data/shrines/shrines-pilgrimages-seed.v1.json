@@ -1055,6 +1055,109 @@
         "PIL-MARIA-VESPERBILD-FATIMA"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:st-mary-assumption-oswego",
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "name": "St. Mary of the Assumption Parish and Shrine",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Assumption of the Blessed Virgin Mary",
+      "origin_summary": "Diocesan shrine in Oswego entrusted to the Institute of Christ the King Sovereign Priest, with a full traditional Latin Mass schedule and active parish-shrine life.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-OSWEGO-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:auriesville-martyrs",
+      "place_id": "place:US:auriesville-martyrs",
+      "name": "National Shrine of Our Lady of Martyrs",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Martyrs",
+      "origin_summary": "Auriesville shrine dedicated to the North American Martyrs and associated with St. Kateri Tekakwitha, maintaining a long national pilgrimage tradition on the historic Ossernenon site.",
+      "associated_saints": [
+        "Saint Isaac Jogues",
+        "Saint René Goupil",
+        "Saint John de Lalande",
+        "Saint Kateri Tekakwitha"
+      ],
+      "source_ids": [
+        "SHR-AURIESVILLE-MARTYRS",
+        "PIL-AURIESVILLE-RESTORATION",
+        "PIL-AURIESVILLE-AMSTERDAM"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:divine-mercy-stockbridge",
+      "place_id": "place:US:divine-mercy-stockbridge",
+      "name": "The National Shrine of The Divine Mercy",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "The Divine Mercy",
+      "origin_summary": "National shrine of the Marian Fathers at Eden Hill, Stockbridge, welcoming individual and group pilgrimages and maintaining the principal national Divine Mercy Sunday pilgrimage celebration.",
+      "associated_saints": [
+        "Saint Faustina Kowalska"
+      ],
+      "source_ids": [
+        "SHR-DIVINE-MERCY-STOCKBRIDGE",
+        "PIL-DIVINE-MERCY-SUNDAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:la-salette-attleboro",
+      "place_id": "place:US:la-salette-attleboro",
+      "name": "National Shrine of Our Lady of La Salette",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of La Salette",
+      "origin_summary": "National La Salette shrine in Attleboro, opened in 1953 by the Missionaries of Our Lady of La Salette as a major American centre for the apparition's message of reconciliation.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-LA-SALETTE-ATTLEBORO",
+        "OBS-LA-SALETTE-SEP19"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:lourdes-litchfield",
+      "place_id": "place:US:lourdes-litchfield",
+      "name": "The Shrine of Lourdes in Litchfield",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Lourdes",
+      "origin_summary": "Montfort Missionaries' Connecticut shrine centred on a stone Lourdes grotto, Way of the Cross and outdoor pilgrimage grounds visited by thousands annually.",
+      "associated_saints": [
+        "Saint Bernadette Soubirous",
+        "Saint Louis de Montfort"
+      ],
+      "source_ids": [
+        "SHR-LOURDES-LITCHFIELD",
+        "PIL-LOURDES-LITCHFIELD"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:st-anne-fiskdale",
+      "place_id": "place:US:st-anne-fiskdale",
+      "name": "St. Anne Shrine",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Anne",
+      "origin_summary": "New England shrine at Fiskdale/Sturbridge with more than a century of pilgrimage, devotional chapels and an annual nine-day Saint Anne novena with Rosary procession.",
+      "associated_saints": [
+        "Saint Anne",
+        "Saint Joachim"
+      ],
+      "source_ids": [
+        "SHR-ST-ANNE-FISKDALE",
+        "PIL-ST-ANNE-NOVENA"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -2440,6 +2543,150 @@
         "PIL-MARIA-VESPERBILD-FATIMA"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:oswego-assumption-destination",
+      "name": "Pilgrimage to St. Mary of the Assumption Shrine, Oswego",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:st-mary-assumption-oswego",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Traditional Latin Mass shrine destination served by the Institute of Christ the King Sovereign Priest.",
+      "source_ids": [
+        "SHR-OSWEGO-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:auriesville-destination",
+      "name": "Pilgrimage to Our Lady of Martyrs, Auriesville",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:auriesville-martyrs",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic national pilgrimage destination associated with the North American Martyrs and St. Kateri Tekakwitha.",
+      "source_ids": [
+        "SHR-AURIESVILLE-MARTYRS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:auriesville-restoration",
+      "name": "Pilgrimage for Restoration to Auriesville",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:auriesville-martyrs",
+      "route_ids": [
+        "route:US:lake-george-auriesville-restoration"
+      ],
+      "temporal_link_ids": [
+        "temporal:auriesville:restoration"
+      ],
+      "scope_note": "Traditional three-day walking pilgrimage from Lake George to Auriesville, modeled on the Chartres pilgrimage and covering about 61 miles; annual dates are published year by year.",
+      "source_ids": [
+        "PIL-AURIESVILLE-RESTORATION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:auriesville-amsterdam",
+      "name": "Amsterdam to Auriesville Walking Eucharistic Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:auriesville-martyrs",
+      "route_ids": [
+        "route:US:amsterdam-auriesville"
+      ],
+      "temporal_link_ids": [
+        "temporal:auriesville:amsterdam"
+      ],
+      "scope_note": "Annual walking Eucharistic pilgrimage from Amsterdam, New York, to the Auriesville shrine; the specific date is published annually.",
+      "source_ids": [
+        "PIL-AURIESVILLE-AMSTERDAM"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:divine-mercy-stockbridge-destination",
+      "name": "Pilgrimage to the National Shrine of The Divine Mercy",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:divine-mercy-stockbridge",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Year-round national pilgrimage destination with group and individual pilgrimage programmes, Stations, Confession, Adoration, Rosary, Chaplet and blessing of religious articles.",
+      "source_ids": [
+        "SHR-DIVINE-MERCY-STOCKBRIDGE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:divine-mercy-sunday-stockbridge",
+      "name": "Divine Mercy Sunday Pilgrimage at Stockbridge",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:divine-mercy-stockbridge",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:stockbridge:divine-mercy-sunday"
+      ],
+      "scope_note": "The shrine's largest annual pilgrimage weekend, centred on the Sunday after Easter with Mass, Confession, Chaplet, Exposition, Benediction and blessing of religious articles.",
+      "source_ids": [
+        "PIL-DIVINE-MERCY-SUNDAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:la-salette-attleboro-destination",
+      "name": "Pilgrimage to Our Lady of La Salette, Attleboro",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:la-salette-attleboro",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "National Marian shrine destination rooted in the La Salette apparition and serving pilgrims in multiple languages, including a regular Sunday French Mass.",
+      "source_ids": [
+        "SHR-LA-SALETTE-ATTLEBORO",
+        "OBS-LA-SALETTE-SEP19"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:lourdes-litchfield-destination",
+      "name": "Pilgrimage to Lourdes in Litchfield",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:lourdes-litchfield",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Montfortian Marian pilgrimage destination with Lourdes grotto, Stations of the Cross and seasonal outdoor Masses.",
+      "source_ids": [
+        "SHR-LOURDES-LITCHFIELD",
+        "PIL-LOURDES-LITCHFIELD"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:st-anne-fiskdale-destination",
+      "name": "Pilgrimage to St. Anne Shrine, Fiskdale",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:st-anne-fiskdale",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "New England pilgrimage destination dedicated to Saint Anne with devotional chapels, daily Rosary and a long-running annual novena.",
+      "source_ids": [
+        "SHR-ST-ANNE-FISKDALE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:st-anne-fiskdale-novena",
+      "name": "Annual St. Anne Novena at Fiskdale",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:st-anne-fiskdale",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:fiskdale:st-anne-novena"
+      ],
+      "scope_note": "Annual nine-day pilgrimage novena from 18 through 26 July, with nightly Rosary procession and Mass, culminating on the feast of Saints Anne and Joachim.",
+      "source_ids": [
+        "PIL-ST-ANNE-NOVENA"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -2710,6 +2957,36 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-BETTBRUNN-PREITH"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:US:lake-george-auriesville-restoration",
+      "name": "Lake George to Auriesville — Pilgrimage for Restoration",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Lake George Village, New York",
+      "destination_place_id": "place:US:auriesville-martyrs",
+      "stage_count": 3,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-AURIESVILLE-RESTORATION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:US:amsterdam-auriesville",
+      "name": "Amsterdam to Auriesville Walking Eucharistic Pilgrimage",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Amsterdam, New York",
+      "destination_place_id": "place:US:auriesville-martyrs",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-AURIESVILLE-AMSTERDAM"
       ],
       "confidence": "HIGH"
     }
@@ -3598,6 +3875,60 @@
         "PIL-MARIA-VESPERBILD-FATIMA"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:auriesville:restoration",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:auriesville-restoration",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Pilgrimage for Restoration — annual September dates published year by year",
+      "source_ids": [
+        "PIL-AURIESVILLE-RESTORATION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:auriesville:amsterdam",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:auriesville-amsterdam",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Amsterdam–Auriesville Walking Eucharistic Pilgrimage — annual date published year by year",
+      "source_ids": [
+        "PIL-AURIESVILLE-AMSTERDAM"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:stockbridge:divine-mercy-sunday",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:divine-mercy-sunday-stockbridge",
+      "relation": "LITURGICAL_DAY",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.divine_mercy_sunday_current",
+      "source_event_label": "Divine Mercy Sunday — Sunday after Easter",
+      "source_ids": [
+        "PIL-DIVINE-MERCY-SUNDAY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:fiskdale:st-anne-novena",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:US:st-anne-fiskdale-novena",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.saint_anne",
+      "source_event_label": "St. Anne Novena — 18–26 July, culminating on the feast",
+      "source_ids": [
+        "PIL-ST-ANNE-NOVENA"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
     }
   ]
 }

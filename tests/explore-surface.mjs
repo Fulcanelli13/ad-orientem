@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:66,
-  traditions:85,
-  pilgrimages:90,
+  shrines:72,
+  traditions:89,
+  pilgrimages:100,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -113,7 +113,7 @@ assert.ok(christmasContext.some(item=>item.kind==="NOVENA_CONTEXT"&&/Corsica/i.t
 const christKingContext=filterExploreItems(projection.byLens.traditions,{query:"Christ the King"});
 assert.ok(christKingContext.some(item=>item.kind==="NOVENA_CONTEXT"&&item.map_state==="NOT_MAPPED"),"Christ the King textual French-world context was incorrectly forced onto a map");
 
-const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Pilgrimage to Lourdes"});
+const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Sanctuaire Notre-Dame de Lourdes"});
 assert.equal(lourdesPilgrimage.length,1);
 assert.equal(lourdesPilgrimage[0].map_publishable,true);
 assert.equal(lourdesPilgrimage[0].map_state,"DESTINATION_MAPPED");
@@ -450,6 +450,37 @@ assert.equal(vesperbild.length,1);
 assert.ok(vesperbild[0].sections.some(section=>/13th of every month/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"Germany tranche address-only shrines unexpectedly published map points");
+
+const oswegoShrine=filterExploreItems(projection.byLens.shrines,{query:"St. Mary of the Assumption Parish and Shrine"});
+assert.equal(oswegoShrine.length,1);
+assert.equal(oswegoShrine[0].map_publishable,false);
+
+const restorationPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Pilgrimage for Restoration"});
+assert.equal(restorationPilgrimage.length,1);
+assert.equal(restorationPilgrimage[0].map_publishable,false);
+assert.ok(restorationPilgrimage[0].sections.some(section=>/annual September dates/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+const restorationCustom=filterExploreItems(projection.byLens.traditions,{query:"Chartres"});
+assert.ok(restorationCustom.some(item=>item.source_id==="att:DEV-006:AURIESVILLE-RESTORATION"));
+
+const stockbridgeMercy=filterExploreItems(projection.byLens.pilgrimages,{query:"Divine Mercy Sunday Pilgrimage"});
+assert.equal(stockbridgeMercy.length,1);
+assert.equal(stockbridgeMercy[0].map_publishable,false);
+assert.ok(stockbridgeMercy[0].sections.some(section=>/Divine Mercy Sunday/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const laSaletteShrine=filterExploreItems(projection.byLens.shrines,{query:"La Salette"});
+assert.equal(laSaletteShrine.length,1);
+assert.equal(laSaletteShrine[0].map_publishable,false);
+
+const litchfieldShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes in Litchfield"});
+assert.equal(litchfieldShrine.length,1);
+assert.equal(litchfieldShrine[0].map_publishable,false);
+
+const fiskdaleNovena=filterExploreItems(projection.byLens.pilgrimages,{query:"Annual St. Anne Novena"});
+assert.equal(fiskdaleNovena.length,1);
+assert.equal(fiskdaleNovena[0].map_publishable,false);
+assert.ok(fiskdaleNovena[0].sections.some(section=>/18–26 July/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"US Northeast address-only shrines unexpectedly published map points");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
