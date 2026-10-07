@@ -480,7 +480,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les questions ont leurs propres mots-signaux"
+        }
+      }
     },
     {
       "id": "l31-b2",
@@ -497,7 +502,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "numquid et nonne ne sont pas interchangeables"
+        }
+      }
     },
     {
       "id": "l31-b3",
@@ -514,7 +524,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Quid quaeritis?"
+        }
+      }
     },
     {
       "id": "l31-b4",
@@ -531,7 +546,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "quis peut devenir indéfini"
+        }
+      }
     },
     {
       "id": "l31-b5",
@@ -546,7 +566,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les verbes irréguliers fréquents doivent être reconnus comme des ensembles"
+        }
+      }
     },
     {
       "id": "l31-b6",
@@ -561,7 +586,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La dernière étape de la progression en spirale des pronoms"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -740,7 +770,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signale quis/quid dans une question directe ?",
+          "hint": "Famille interrogative.",
+          "explanation": "quis/quid est le pronom interrogatif de base.",
+          "options": [
+            "qui ? / quoi ?",
+            "parce que",
+            "donc",
+            "avec"
+          ]
+        }
+      }
     },
     {
       "id": "l31-e2",
@@ -770,7 +813,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle valeur quis a-t-il après si dans Si quis vult... ?",
+          "hint": "Le contexte change sa valeur.",
+          "explanation": "Après si, quis signifie souvent « quelqu’un / quiconque ».",
+          "options": [
+            "indéfini : quelqu’un / quiconque",
+            "question directe : qui ?",
+            "négatif : personne",
+            "relatif : qui"
+          ]
+        }
+      }
     },
     {
       "id": "l31-e3",
@@ -799,7 +855,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle particule attend normalement une confirmation ?",
+          "hint": "Pensez à « n’est-ce pas ? ».",
+          "explanation": "nonne appelle normalement une réponse affirmative ou une confirmation.",
+          "options": [
+            "nonne",
+            "numquid",
+            "quomodo",
+            "nihil"
+          ]
+        }
+      }
     },
     {
       "id": "l31-e4",
@@ -829,7 +898,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle particule peut suggérer une réponse négative attendue ou une question surprise ?",
+          "hint": "Comparez Jean 6,68.",
+          "explanation": "numquid porte souvent une attente négative ou surprise.",
+          "options": [
+            "numquid",
+            "nonne",
+            "quidem",
+            "itaque"
+          ]
+        }
+      }
     },
     {
       "id": "l31-e5",
@@ -860,7 +942,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe irrégulier à son sens.",
+          "hint": "Vocabulaire de lecture.",
+          "explanation": "Ces irréguliers fréquents doivent être reconnus rapidement.",
+          "matches": {
+            "fero": "porter / apporter",
+            "volo": "vouloir / souhaiter",
+            "nolo": "ne pas vouloir / refuser",
+            "iubeo": "commander / ordonner"
+          }
+        }
+      }
     },
     {
       "id": "l31-e6",
@@ -891,7 +986,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément indéfini ou interrogatif à son sens.",
+          "hint": "Familles sémantiques distinctes.",
+          "explanation": "Ceci vérifie le vocabulaire de la boîte à outils.",
+          "matches": {
+            "aliquis/aliquid": "quelqu’un / quelque chose",
+            "nemo": "personne",
+            "nihil": "rien",
+            "quomodo": "comment ?"
+          }
+        }
+      }
     },
     {
       "id": "l31-e7",
@@ -921,7 +1029,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie vult dans Si quis vult... ?",
+          "hint": "Lemme volo.",
+          "explanation": "vult est la troisième personne du singulier de volo.",
+          "options": [
+            "veut / désire",
+            "porte",
+            "commande",
+            "demande"
+          ]
+        }
+      }
     },
     {
       "id": "l31-e8",
@@ -951,7 +1072,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie iube dans le Canon ?",
+          "hint": "Lemme iubeo.",
+          "explanation": "iube est l’impératif de iubeo.",
+          "options": [
+            "ordonne !",
+            "porte !",
+            "prie !",
+            "sache !"
+          ]
+        }
+      }
     },
     {
       "id": "l31-e9",
@@ -980,7 +1114,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est la tâche finale de lecture des pronoms après la leçon 31 ?",
+          "hint": "Famille + syntaxe.",
+          "explanation": "C’est la stratégie de lecture arrivée à maturité.",
+          "options": [
+            "choisir la famille pronominale, puis résoudre cas et fonction",
+            "mémoriser une seule traduction universelle",
+            "ignorer le cas",
+            "traiter chaque quis comme interrogatif"
+          ]
+        }
+      }
     },
     {
       "id": "l31-e10",
@@ -1005,7 +1152,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le pronom latin signifiant « personne ».",
+          "hint": "Il apparaît dans Matthieu 6,24.",
+          "explanation": "nemo signifie « personne »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1079,5 +1233,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "La boîte à outils du lecteur",
+      "grammarFocus": "Questions, indéfinis, formes impersonnelles et défectives",
+      "readingOutcome": "Maîtriser les interrogatifs, les indéfinis et les difficultés de lecture irrégulières à haute fréquence.",
+      "objectives": [
+        "Achever la progression en spirale des pronoms avec les formes interrogatives et indéfinies.",
+        "Distinguer pragmatiquement numquid de nonne.",
+        "Reconnaître les verbes irréguliers à haute fréquence.",
+        "Apprendre les treize lemmes figés de la leçon 31."
+      ]
+    }
+  }
 }
