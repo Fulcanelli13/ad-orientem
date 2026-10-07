@@ -75,6 +75,11 @@ assert.equal(
   "ao-rich-adoration",
 );
 
+const formationNav=AO_CANONICAL_CORE_ASSETS["ao-nav-learn"];
+assert.equal(formationNav?.semanticId,"NAV.GLOBAL.FORMATION","Learn navigation asset semantic ID was not relabeled to Formation");
+assert.equal(formationNav?.label,"Formation","Learn navigation asset visible metadata was not relabeled to Formation");
+assert.equal(formationNav?.assetId,"ao-nav-learn","A2 replaced the canonical Learn asset ID");
+
 const frozenBlessing=AO_CANONICAL_CORE_ASSETS["ao-live-blessing"];
 assert.equal(frozenBlessing.path,"assets/active/live-actions/ao-live-blessing.png","frozen V4 blessing identity/path drifted");
 assert.equal(frozenBlessing.sha256,"620d70d4c40ba75deec8985f043683df6dae0e6bfe72490744eae7c83190417c","frozen V4 blessing checksum drifted");

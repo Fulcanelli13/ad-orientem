@@ -37,7 +37,8 @@ export const NON_MASS_DONOR_CONTRACT = Object.freeze({
 
 export function normalizeAppSurface(value) {
   const normalized = String(value ?? "").trim().toLowerCase();
-  return APP_SURFACE_SET.has(normalized) ? normalized : null;
+  const canonical = normalized === "formation" ? "learn" : normalized;
+  return APP_SURFACE_SET.has(canonical) ? canonical : null;
 }
 
 export function isMassCoreRoute(route) {
