@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.25.0",
+  "version": "1.26.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -248,7 +248,7 @@
     },
     {
       "id": "EXACT_NON_MASS_DONOR_PARITY",
-      "classification": "MISSING_INTEGRATION",
+      "classification": "MISSING_PRIMARY_EVIDENCE",
       "status": "OPEN",
       "evidence": [
         "data/presentation/exact-donor-parity.v1.json",
@@ -264,9 +264,13 @@
         "tests/learn-traditional-life.mjs",
         "tests/app-visual-acceptance.mjs",
         "tests/nonmass-donor-reference-e2e.mjs",
-        ".github/workflows/visual-acceptance.yml"
+        ".github/workflows/visual-acceptance.yml",
+        "PR #254",
+        "App convergence workflow 37576353184",
+        "R17 Mass convergence workflow 37576353212",
+        "Visual acceptance workflow 37576353174"
       ],
-      "detail": "Exact-donor recovery has materially converged and a direct frozen-donor/current 390x844 capture lane is now installed. Semantic rails, final Rosary, v3.4.10 Angelus/Stations focus, Guided Novenas N3 and v38.1 Traditional Catholic Life are recovered. Release remains blocked until the generated donor/current comparison artifact is reviewed across the required non-Mass surface/state matrix."
+      "detail": "All currently demonstrated non-Mass implementation defects are repaired and current phone/visual acceptance is green, including restored v43.59.6 Settings, the real v43.12 cinematic runtime, final Adoration composition, Benediction blessing asset, semantic rails, Rosary, Novenas, Traditional PRAY/Learn and Calendar/v38.4. Release remains blocked because exact immutable primary donor evidence for Ad_Orientem_v3_4_14.html and Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html is unavailable; successor lineage is not treated as byte-exact primary evidence."
     }
   ],
   "openBlockers": [
