@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -69,6 +69,13 @@ assert.deepEqual(
     "place:CA:sainte-anne-de-beaupre",
     "place:CA:notre-dame-du-cap",
     "place:CA:martyrs-shrine-midland",
+    "place:IT:loreto-santa-casa",
+    "place:IT:pompei-rosary-shrine",
+    "place:PL:jasna-gora",
+    "place:PL:kalwaria-zebrzydowska",
+    "place:GB:walsingham-catholic-shrine",
+    "place:GB:holywell-st-winefride",
+    "place:GB:holywell-st-winefride-church",
   ].sort(),
 );
 
@@ -126,8 +133,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 10,
-  places: 22,
+  geoAreas: 13,
+  places: 29,
   directoryPlaceLinks: 1,
 });
 
@@ -145,6 +152,20 @@ assert.equal(guadalupeCandidate.status,"IDENTITY_RESOLUTION_REQUIRED");
 assert.equal(guadalupeCandidate.place_id,"place:US:guadalupe-shrine-la-crosse");
 assert.deepEqual(guadalupeCandidate.generated_provider_scan.exact_or_text_matches,[]);
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:US:guadalupe-shrine-la-crosse"),false,"unresolved Guadalupe TLM candidate leaked into canonical Directory→Place links");
+
+const walsinghamCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:GB:walsingham-lms-tlm");
+assert.ok(walsinghamCandidate,"Walsingham TLM identity-resolution candidate missing");
+assert.equal(walsinghamCandidate.status,"IDENTITY_RESOLUTION_REQUIRED");
+assert.equal(walsinghamCandidate.place_id,"place:GB:walsingham-catholic-shrine");
+assert.deepEqual(walsinghamCandidate.generated_provider_scan.exact_or_text_matches,[]);
+assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:GB:walsingham-catholic-shrine"),false,"annual Walsingham pilgrimage evidence leaked into canonical Directory→Place links");
+
+const holywellCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:GB:holywell-st-winefride-church-tlm");
+assert.ok(holywellCandidate,"Holywell parish TLM identity-resolution candidate missing");
+assert.equal(holywellCandidate.place_id,"place:GB:holywell-st-winefride-church");
+assert.deepEqual(holywellCandidate.generated_provider_scan.exact_or_text_matches,[]);
+assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:GB:holywell-st-winefride-church"),false,"unresolved Holywell parish candidate leaked into canonical Directory→Place links");
+assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:GB:holywell-st-winefride"),false,"parish-church TLM evidence was incorrectly attached to the Well shrine");
 
 const badParent = structuredClone(registry);
 badParent.geoAreas.push({
