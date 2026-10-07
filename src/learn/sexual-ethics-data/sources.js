@@ -36,6 +36,7 @@ export const CSE_SOURCES=Object.freeze([
   Object.freeze({id:"CIC_EUCHARIST",title:"Code of Canon Law (1983) · Holy Communion",authority_type:"CANON_LAW",role:"juridical",canonical_url:"https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html",canonical_url_fr:"https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann912-923_fr.html"}),
   Object.freeze({id:"CCC",title:"Catechism of the Catholic Church · Chastity",authority_type:"MAGISTERIAL_CATECHESIS",role:"later_synthesis",canonical_url:"https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.index.html"}),
   Object.freeze({id:"ASSAULT2024",title:"Physiological sexual responses during non-consensual sexual activity · scoping review (2024)",authority_type:"EMPIRICAL_RESEARCH",role:"empirical",canonical_url:"https://pubmed.ncbi.nlm.nih.gov/38724699/"}),
+  Object.freeze({id:"MCHUGH",title:"John A. McHugh & Charles J. Callan · Moral Theology (1929)",authority_type:"PRECONCILIAR_MANUAL",role:"traditional_theology",canonical_url:"https://gorettipub.org/mchugh_moral.pdf"}),
   Object.freeze({id:"LBM",title:"Ronald Lawler, Joseph Boyle & William E. May · Catholic Sexual Ethics, 3rd ed. (2011)",authority_type:"SCHOLARLY_SYNTHESIS",role:"argument_lead",canonical_url:"https://books.google.com/books?id=1Fb8CwAAQBAJ"})
 ]);
 
