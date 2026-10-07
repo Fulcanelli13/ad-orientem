@@ -59,13 +59,12 @@ assert.equal(exactFinding?.classification,"MISSING_INTEGRATION");
 assert.equal(exactFinding?.status,"OPEN");
 assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
-assert.equal(exactDonor.version,"1.6.0");
+assert.equal(exactDonor.version,"1.7.0");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
-assert.deepEqual(exactDonor.openBlockers,[
-  "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
-  "MISSING_PRIMARY_DONOR: Ad_Orientem_v3_4_14.html",
-  "MISSING_PRIMARY_DONOR: Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html",
-]);
+assert.equal(exactDonor.openBlockers?.[0],"FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED");
+assert.equal(exactDonor.openBlockers?.length,3,"exact donor gate must retain exactly the composition blocker plus two missing-primary blockers");
+assert.match(exactDonor.openBlockers?.[1]??"",/^MISSING_PRIMARY_DONOR: Ad_Orientem_v3_4_14\.html\b/);
+assert.match(exactDonor.openBlockers?.[2]??"",/^MISSING_PRIMARY_DONOR: Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2\.html\b/);
 assert.match(exactDonor.rule,/conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
 const fxFinding=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
 assert.equal(fxFinding?.classification,"PASS");
