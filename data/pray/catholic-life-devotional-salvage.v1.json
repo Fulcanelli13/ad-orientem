@@ -1,0 +1,211 @@
+{
+  "version": "PRAY_CATHOLIC_LIFE_DEVOTIONAL_SALVAGE_V1",
+  "status": "OWNER_ANNEX",
+  "created_at": "2026-10-07",
+  "purpose": "Preserve spiritual Communion, dying-companion, suffrage and First Friday/First Saturday research under PRAY owners.",
+  "domains": {
+    "PRAY.SPIRITUAL_COMMUNION": [
+      {
+        "claim_id": "CL03-S06-Q001",
+        "stage_id": "CL03-S06",
+        "stage_title": "Spiritual Communion",
+        "layer": "PASTORAL",
+        "text": "Spiritual Communion is a devotional desire for union with Christ and is not sacramental reception.",
+        "source_ids": [],
+        "original_destination": "PRAY.SPIRITUAL_COMMUNION"
+      },
+      {
+        "claim_id": "CL03-S06-Q002",
+        "stage_id": "CL03-S06",
+        "stage_title": "Spiritual Communion",
+        "layer": "PASTORAL",
+        "text": "A spiritual Communion may be made when one does not sacramentally receive.",
+        "source_ids": [],
+        "original_destination": "PRAY.SPIRITUAL_COMMUNION"
+      },
+      {
+        "claim_id": "CL03-S06-Q003",
+        "stage_id": "CL03-S06",
+        "stage_title": "Spiritual Communion",
+        "layer": "PASTORAL",
+        "text": "Spiritual Communion and sacramental Communion are distinct.",
+        "source_ids": [],
+        "original_destination": "PRAY.SPIRITUAL_COMMUNION"
+      }
+    ],
+    "pray.dying_companion": [
+      {
+        "claim_id": "CL07-S04-Q001",
+        "stage_id": "CL07-S04",
+        "stage_title": "Accompanying Someone Dying",
+        "layer": "PASTORAL",
+        "text": "Quiet presence and prayer are appropriate ways to accompany a dying person.",
+        "source_ids": [],
+        "original_destination": "pray.dying_companion"
+      },
+      {
+        "claim_id": "CL07-S04-Q002",
+        "stage_id": "CL07-S04",
+        "stage_title": "Accompanying Someone Dying",
+        "layer": "PASTORAL",
+        "text": "Prayer should be adapted to the person's strength and condition rather than mechanically maximised.",
+        "source_ids": [],
+        "original_destination": "pray.dying_companion"
+      },
+      {
+        "claim_id": "CL07-S04-Q003",
+        "stage_id": "CL07-S04",
+        "stage_title": "Accompanying Someone Dying",
+        "layer": "PROFILE_1962",
+        "text": "The traditional Proficiscere belongs to prayers for the dying rather than prayers after death.",
+        "source_ids": [
+          "SRC-ROMRIT-LAST-RITES"
+        ],
+        "original_destination": "pray.dying_companion"
+      },
+      {
+        "claim_id": "CL07-S04-Q004",
+        "stage_id": "CL07-S04",
+        "stage_title": "Accompanying Someone Dying",
+        "layer": "PASTORAL",
+        "text": "Crucifixes, holy water and other sacramentals are aids to Christian prayer, not talismans.",
+        "source_ids": [],
+        "original_destination": "pray.dying_companion"
+      }
+    ],
+    "PRAY.SUFFRAGES_FOR_THE_DEAD": [
+      {
+        "claim_id": "CL07-S09-Q001",
+        "stage_id": "CL07-S09",
+        "stage_title": "Continuing Prayer for the Dead",
+        "layer": "PASTORAL",
+        "text": "Catholic prayer for the dead continues beyond the funeral itself.",
+        "source_ids": [],
+        "original_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD"
+      },
+      {
+        "claim_id": "CL07-S09-Q002",
+        "stage_id": "CL07-S09",
+        "stage_title": "Continuing Prayer for the Dead",
+        "layer": "PASTORAL",
+        "text": "Offering Mass for the dead is a central Catholic form of suffrage.",
+        "source_ids": [],
+        "original_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD"
+      },
+      {
+        "claim_id": "CL07-S09-Q003",
+        "stage_id": "CL07-S09",
+        "stage_title": "Continuing Prayer for the Dead",
+        "layer": "HISTORICAL",
+        "text": "Gregorian Masses are a traditional series of thirty Masses offered for one deceased person.",
+        "source_ids": [
+          "SRC-TRICENARIO-GREGORIANO-1967"
+        ],
+        "original_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD"
+      },
+      {
+        "claim_id": "CL07-S09-Q004",
+        "stage_id": "CL07-S09",
+        "stage_title": "Continuing Prayer for the Dead",
+        "layer": "PROFILE_1962",
+        "text": "The third, seventh and thirtieth days had genuine privileged traditional liturgical commemorations in the 1962 Requiem framework.",
+        "source_ids": [
+          "SRC-MR62-REQUIEM"
+        ],
+        "original_destination": "PRAY.SUFFRAGES_FOR_THE_DEAD"
+      }
+    ],
+    "PRAY.FIRST_FRIDAY_FIRST_SATURDAY": [
+      {
+        "claim_id": "CL09-S03-Q001",
+        "stage_id": "CL09-S03",
+        "stage_title": "First Friday & First Saturday",
+        "layer": "CURRENT",
+        "text": "The traditional Sacred Heart devotion is associated with Nine First Fridays.",
+        "source_ids": [
+          "SRC-DIRECTORY-POPULAR-PIETY-2002"
+        ],
+        "original_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY"
+      },
+      {
+        "claim_id": "CL09-S03-Q002",
+        "stage_id": "CL09-S03",
+        "stage_title": "First Friday & First Saturday",
+        "layer": "CURRENT",
+        "text": "The First Saturday devotion is associated with five consecutive First Saturdays.",
+        "source_ids": [
+          "SRC-FATIMA-FIRST-SATURDAYS"
+        ],
+        "original_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY"
+      },
+      {
+        "claim_id": "CL09-S03-Q003",
+        "stage_id": "CL09-S03",
+        "stage_title": "First Friday & First Saturday",
+        "layer": "CURRENT",
+        "text": "The Fatima First Saturday practice includes Confession, Holy Communion, five decades of the Rosary, fifteen minutes of meditation, and a reparatory intention.",
+        "source_ids": [
+          "SRC-FATIMA-FIRST-SATURDAYS"
+        ],
+        "original_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY"
+      },
+      {
+        "claim_id": "CL09-S03-Q004",
+        "stage_id": "CL09-S03",
+        "stage_title": "First Friday & First Saturday",
+        "layer": "CURRENT",
+        "text": "The fifteen-minute meditation is distinct from simply praying the five decades.",
+        "source_ids": [
+          "SRC-FATIMA-FIRST-SATURDAYS"
+        ],
+        "original_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY"
+      },
+      {
+        "claim_id": "CL09-S03-Q005",
+        "stage_id": "CL09-S03",
+        "stage_title": "First Friday & First Saturday",
+        "layer": "PASTORAL",
+        "text": "Approved devotional promises must not be presented as automatic salvation contracts.",
+        "source_ids": [],
+        "original_destination": "PRAY.FIRST_FRIDAY_FIRST_SATURDAY"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-DIRECTORY-POPULAR-PIETY-2002",
+      "title": "Directory on Popular Piety and the Liturgy",
+      "authority_type": "DICASTERY_DIRECTORY",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+    },
+    {
+      "source_id": "SRC-FATIMA-FIRST-SATURDAYS",
+      "title": "Official Sanctuary of Fatima — First Saturdays",
+      "authority_type": "APPROVED_DEVOTIONAL_SOURCE",
+      "status": "NORMALIZED_OFFICIAL_SHRINE",
+      "canonical_url": "https://www.fatima.pt/en/pages/first-saturdays"
+    },
+    {
+      "source_id": "SRC-MR62-REQUIEM",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-ROMRIT-LAST-RITES",
+      "title": "Rituale Romanum Pauli V Pontificis Maximi jussu editum aliorumque Pontificum cura recognitum atque ad normam Codicis Juris Canonici accommodatum SS.mi D.N. Pii Papae XII auctoritate ordinatum et auctum, Editio typica, 1952 — Extreme Unction and Prayers for the Dying",
+      "authority_type": "APPROVED_RITUAL",
+      "status": "PINNED_1952_RITUAL_TRANSLATION",
+      "canonical_url": "https://www.ewtn.com/catholicism/library/roman-ritual-part-i-11882"
+    },
+    {
+      "source_id": "SRC-TRICENARIO-GREGORIANO-1967",
+      "title": "Tricenario Gregoriano",
+      "authority_type": "DICASTERY_DECLARATION",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-59-1967-ocr.pdf"
+    }
+  ]
+}
