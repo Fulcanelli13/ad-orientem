@@ -58,10 +58,12 @@ assert.match(dom,/\.ao-schola-dock\{\s*position:absolute;z-index:9;/,
   "Schola dock z-layer changed without interaction review");
 assert.match(dom,/\.ao-reader-nav\{position:absolute;z-index:10;/,
   "reader navigation z-layer changed without interaction review");
-assert.match(dom,/data-schola-visible="true"\] \.ao-reader-nav button\[data-reader-nav="previous"\]\{left:8px\}/,
-  "Schola-visible phone previous arrow no longer clears the dock footprint");
-assert.match(dom,/data-schola-visible="true"\] \.ao-reader-nav button\[data-reader-nav="next"\]\{right:8px\}/,
-  "Schola-visible phone next arrow no longer clears the dock footprint");
+assert.match(dom,/\.ao-reader-nav button\[data-reader-nav="previous"\]\{left:51px\}/,
+  "phone previous arrow drifted from the recovered donor geometry");
+assert.match(dom,/\.ao-reader-nav button\[data-reader-nav="next"\]\{right:51px\}/,
+  "phone next arrow drifted from the recovered donor geometry");
+assert.match(dom,/\.ao-schola-toggle\{position:absolute;top:3px;left:50%;transform:translateX\(-50%\)/,
+  "mobile Schola toggle no longer clears the donor edge arrows");
 assert.match(dom,/ao-ritual-trigger-live/);
 assert.match(dom,/current\.gesture\?\.anchorLat/);
 assert.match(dom,/exactCueIds\.includes\(gestureCueId\)/);
