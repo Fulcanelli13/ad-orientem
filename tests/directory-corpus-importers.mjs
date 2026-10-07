@@ -53,10 +53,10 @@ assert.equal(ickspDataset.ministries.every(x=>x.community_id==="ICKSP"),true);
 const ibpIndex=`
 <h4>France</h4>
 <h5>Archidiocèse de Paris :</h5>
-<a href="/nos-apostolats/lieux-dapostolat-dans-le-monde/paris/">Paris – Centre culturel chrétien Saint-Paul</a>
+<ul><li><a href="/nos-apostolats/lieux-dapostolat-dans-le-monde/paris/">Paris – Centre culturel chrétien Saint-Paul</a></li></ul>
 <h4>Australie</h4>
 <h5>Archidiocèse de Sydney :</h5>
-<a href="/nos-apostolats/lieux-dapostolat-dans-le-monde/sydney/">Sydney</a>`;
+<ul><li><a href="/nos-apostolats/lieux-dapostolat-dans-le-monde/sydney/">Sydney</a></li></ul>`;
 const ibp=discoverIbpIndex(ibpIndex);
 assert.equal(ibp.length,2);
 assert.equal(ibp[0].countryCode,"FR");
