@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:34,
-  traditions:53,
-  pilgrimages:45,
+  shrines:40,
+  traditions:59,
+  pilgrimages:53,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -169,7 +169,7 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   filters:{},
 }));
 assert.match(shrineMapHtml,/Loading source-backed map points/i);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,6,"only provenance-locked shrine Places should publish map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"only provenance-locked shrine Places should publish map points");
 
 const chartresShrine=filterExploreItems(projection.byLens.shrines,{query:"Chartres"});
 assert.equal(chartresShrine.length,1);
@@ -232,7 +232,7 @@ assert.ok(champion.length>=1);
 assert.ok(champion.every(item=>item.map_publishable===false));
 assert.ok(champion.some(item=>item.sections.some(section=>/Solemnity of Our Lady of Champion/.test(section.title)&&/Resolved by Calendar/.test(section.body))));
 
-const guadalupeShrine=filterExploreItems(projection.byLens.shrines,{query:"Guadalupe"});
+const guadalupeShrine=filterExploreItems(projection.byLens.shrines,{query:"La Crosse"});
 assert.equal(guadalupeShrine.length,1);
 assert.equal(guadalupeShrine[0].map_publishable,false);
 const guadalupeCandles=filterExploreItems(projection.byLens.traditions,{query:"Votive Candle"});
@@ -315,7 +315,39 @@ assert.ok(namugongo[0].sections.some(section=>/Uganda Martyrs Day/.test(section.
 const munyonyo=filterExploreItems(projection.byLens.pilgrimages,{query:"Munyonyo"});
 assert.equal(munyonyo.length,1);
 assert.ok(munyonyo[0].sections.some(section=>/Uganda Martyrs/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,6,"Australasia/Africa mapped shrine count drifted");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"Australasia/Africa mapped shrine count drifted");
+
+const guadalupeMx=filterExploreItems(projection.byLens.pilgrimages,{query:"Santa María de Guadalupe"});
+assert.equal(guadalupeMx.length,1);
+assert.equal(guadalupeMx[0].map_publishable,false);
+assert.ok(guadalupeMx[0].sections.some(section=>/Guadalupe/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const zapopan=filterExploreItems(projection.byLens.pilgrimages,{query:"Zapopan"});
+assert.equal(zapopan.length,2);
+assert.ok(zapopan.every(item=>item.map_publishable===false));
+assert.ok(zapopan.some(item=>item.sections.some(section=>/Romería de Zapopan/.test(section.title)&&/Resolved by Calendar/.test(section.body))));
+
+const aparecida=filterExploreItems(projection.byLens.pilgrimages,{query:"Aparecida"});
+assert.equal(aparecida.length,1);
+assert.equal(aparecida[0].map_publishable,false);
+assert.ok(aparecida[0].sections.some(section=>/Aparecida/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const cirio=filterExploreItems(projection.byLens.pilgrimages,{query:"Círio de Nazaré"});
+assert.equal(cirio.length,1);
+assert.equal(cirio[0].map_publishable,false);
+assert.ok(cirio[0].sections.some(section=>/second Sunday of October/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const lasLajas=filterExploreItems(projection.byLens.pilgrimages,{query:"Las Lajas"});
+assert.equal(lasLajas.length,1);
+assert.equal(lasLajas[0].map_publishable,true);
+assert.ok(lasLajas[0].sections.some(section=>/Las Lajas/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const chiquinquira=filterExploreItems(projection.byLens.pilgrimages,{query:"Chiquinquirá"});
+assert.equal(chiquinquira.length,1);
+assert.equal(chiquinquira[0].map_publishable,false);
+assert.ok(chiquinquira[0].sections.some(section=>/Chiquinquirá/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"Latin America shrine pin count drifted");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
