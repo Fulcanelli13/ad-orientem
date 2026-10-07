@@ -16,7 +16,7 @@ const venues=[
     name:{official:"Église Saint-Test",alternate:["Saint Test"]},
     venue_type:"church",
     address:{formatted:"10 rue Exemple, Paris, France",city:"Paris",country_code:"FR"},
-    geo:{lat:48.8566,lng:2.3522},
+    geo:{lat:48.8566,lng:2.3522,precision:"building",geocoding_source:"OSM_NOMINATIM",source_url:"https://nominatim.openstreetmap.org/",source_ref:"osm:node:1",matched_country_code:"FR",geocoded_at:"2026-10-07T10:00:00Z",attribution:"© OpenStreetMap contributors, ODbL 1.0",match_score:0.9,query_fingerprint:"fixture"},
     diocese:{name:"Archidiocèse de Paris"},
     contact:{phone:["+33 1 00 00 00 00"],email:["office@example.org"],website:["https://example.org"],schedule_url:["https://example.org/mass"]},
     source_ids:["src-fssp-paris"],

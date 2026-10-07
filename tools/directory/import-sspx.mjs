@@ -3,6 +3,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { auditVenue } from "../../src/find/contracts.js";
 import { findDuplicateCandidates } from "../../src/find/entity-resolution.js";
+import { isMapPublishableGeo } from "../../src/find/geo-provenance.js";
 
 export const SSPX_API_BASE = "https://map.fsspx.org/api/v1";
 export const SSPX_SOURCE_REGISTRY_ID = "SRC_SSPX_MAP_API";
@@ -148,8 +149,11 @@ export function mapSspxPlace(place) {
     geo: {
       lat,
       lng,
-      precision: lat !== null && lng !== null ? "upstream_exact_or_asserted" : "unknown",
-      geocoding_source: "SSPX_MAP_API",
+      precision: lat !== null && lng !== null ? "address" : "unknown",
+      geocoding_source: lat !== null && lng !== null ? "OFFICIAL_SOURCE" : null,
+      source_url: lat !== null && lng !== null ? (place?.url ?? "https://map.fsspx.org/") : null,
+      source_ref: lat !== null && lng !== null ? String(firstDefined(place?.crmId,place?.slug,place?.name)) : null,
+      upstream_precision: lat !== null && lng !== null ? "source_asserted" : null,
     },
     diocese: {
       diocese_id: null,
@@ -282,8 +286,7 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
     type: "FeatureCollection",
     features: venueRecords
       .filter(venue => publishableIds.has(venue.venue_id))
-      .filter(venue => venue?.geo?.lat !== null && venue?.geo?.lat !== undefined && venue?.geo?.lng !== null && venue?.geo?.lng !== undefined)
-      .filter(venue => Number.isFinite(Number(venue.geo.lat)) && Number.isFinite(Number(venue.geo.lng)))
+      .filter(venue => isMapPublishableGeo(venue?.geo,venue?.address?.country_code))
       .map(venue => {
         const ministry = ministryRecords.find(item => item.venue_id === venue.venue_id);
         return {
@@ -302,6 +305,9 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
             upstream_relationship: ministry?.upstream_relationship ?? null,
             sunday_mass: venue.capabilities.sunday_mass,
             weekday_mass: venue.capabilities.weekday_mass,
+            precision: venue.geo.precision,
+            approximate: false,
+            geocoding_source: venue.geo.geocoding_source,
           },
         };
       }),

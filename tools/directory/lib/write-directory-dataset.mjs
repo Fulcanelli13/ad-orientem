@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { auditVenue } from "../../../src/find/contracts.js";
+import { isMapPublishableGeo } from "../../../src/find/geo-provenance.js";
 import { findDuplicateCandidates } from "../../../src/find/entity-resolution.js";
 
 async function writeJson(file,value){
@@ -26,8 +27,7 @@ export async function writeDirectoryDataset(outDir,{
   const geojson={
     type:"FeatureCollection",
     features:venues
-      .filter(v=>v?.geo?.lat!==null&&v?.geo?.lat!==undefined&&v?.geo?.lng!==null&&v?.geo?.lng!==undefined)
-      .filter(v=>Number.isFinite(Number(v.geo.lat))&&Number.isFinite(Number(v.geo.lng)))
+      .filter(v=>isMapPublishableGeo(v?.geo,v?.address?.country_code))
       .map(v=>{
         const ministry=ministries.find(m=>m.venue_id===v.venue_id);
         return {
@@ -39,7 +39,10 @@ export async function writeDirectoryDataset(outDir,{
             venue_type:v.venue_type??null,
             country_code:v?.address?.country_code??null,
             city:v?.address?.city??null,
-            community_id:ministry?.community_id??"UNKNOWN"
+            community_id:ministry?.community_id??"UNKNOWN",
+            precision:v?.geo?.precision??"unknown",
+            approximate:["street","locality"].includes(String(v?.geo?.precision??"").toLowerCase()),
+            geocoding_source:v?.geo?.geocoding_source??null
           }
         };
       })

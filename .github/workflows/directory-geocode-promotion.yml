@@ -1,0 +1,54 @@
+name: Directory geocode promotion
+
+on:
+  push:
+    branches:
+      - "snapshot/directory-*"
+    paths:
+      - "data/directory/.geocode-promotion-request"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: directory-geocode-promotion-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  geocode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Geocode uncached directory venues sequentially
+        env:
+          AO_PUBLIC_NOMINATIM_ACK: "1"
+          AO_GEOCODER_DELAY_MS: "1100"
+          AO_GEOCODER_MAX_REQUESTS: "1000"
+        run: npm run directory:geocode
+      - name: Validate coordinate and map payload
+        run: |
+          npm run test:directory
+          npm run test:directory-geocoding
+          npm run test:find
+          node tools/directory/validate-runtime-snapshots.mjs
+          node tools/directory/validate-geocoded-snapshots.mjs
+      - name: Commit to review branch only
+        shell: bash
+        run: |
+          git config user.name "ad-orientem-directory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          rm -f data/directory/.geocode-promotion-request
+          git add data/directory/geocoding-cache.v1.json data/directory/generated
+          git add -u data/directory/.geocode-promotion-request
+          if git diff --cached --quiet; then
+            echo "No geocoding changes to promote."
+            exit 0
+          fi
+          git commit -m "Directory: promote validated geocoded snapshot [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

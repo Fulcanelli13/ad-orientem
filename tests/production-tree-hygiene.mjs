@@ -18,7 +18,7 @@ for(const path of forbiddenPaths){
 
 const workflowDir=".github/workflows";
 const workflows=readdirSync(workflowDir).filter(name=>/\.ya?ml$/i.test(name));
-const reviewBranchMutationWorkflows=new Set(["directory-snapshot-promotion.yml"]);
+const reviewBranchMutationWorkflows=new Set(["directory-snapshot-promotion.yml","directory-geocode-promotion.yml"]);
 for(const name of workflows){
   const path=join(workflowDir,name);
   const source=readFileSync(path,"utf8");
@@ -79,4 +79,4 @@ assert.match(readme,/archive\/2026-10-04-pre-hygiene/,
 assert.doesNotMatch(readme,/retained under `field\/2026-10-04\/`/,
   "README still claims the field snapshot lives in production main");
 
-console.log("production tree hygiene: PASS — one native Mass renderer, no legacy/shadow execution path, no emergency runtime, and repository mutation limited to the guarded Directory review-branch promotion workflow.");
+console.log("production tree hygiene: PASS — one native Mass renderer, no legacy/shadow execution path, no emergency runtime, and repository mutation limited to guarded Directory review-branch promotion workflows.");
