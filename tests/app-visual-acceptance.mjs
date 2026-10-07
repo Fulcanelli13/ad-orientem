@@ -533,6 +533,8 @@ try{
       legacyRecitation,
       redundantButtons,
       overview:shell?.querySelectorAll("[data-r23-overview-open],#r23-overview-sheet").length??0,
+      visibleHome:[...(shell?.querySelectorAll(".lab-view-head .aoModuleHome")??[])].filter(visible).length,
+      visibleLanguageBadge:[...(shell?.querySelectorAll(".lab-view-head .lab-lang")??[])].filter(visible).length,
       shellWidth:shell?.getBoundingClientRect?.().width??0,
       headOverflow:(head?.scrollWidth??0)-(head?.clientWidth??0),
       recitationButtonWidths,
@@ -554,6 +556,8 @@ try{
   assert.equal(rosaryOpening.legacyRecitation,0,"Rosary exposes a second legacy Individual/Group selector");
   assert.equal(rosaryOpening.redundantButtons,0,"Rosary exposes redundant Guide / Preferences / Overview controls");
   assert.equal(rosaryOpening.overview,0,"Rosary Overview was reintroduced as permanent reader chrome");
+  assert.equal(rosaryOpening.visibleHome,0,"Rosary header exposes a redundant Home control beside Back");
+  assert.equal(rosaryOpening.visibleLanguageBadge,0,"Rosary header exposes a redundant app-language badge");
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
   assert.ok(rosaryOpening.headOverflow<=1,"Rosary phone header still overflows horizontally");
   assert.ok(rosaryOpening.recitationButtonWidths.length===2&&rosaryOpening.recitationButtonWidths.every(width=>width>=52),"Rosary Individual / Group controls are visibly truncated");
@@ -579,16 +583,23 @@ try{
     const candidates=[...(active?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
     const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null;
     const rect=card?.getBoundingClientRect?.();
+    const flip=card?.querySelector?.(".lab-prayer-flip[data-pb-flip]"),latin=flip?.querySelector?.("[data-pb-latin]"),vern=flip?.querySelector?.("[data-pb-vern]");
     return {
       width:rect?.width??0,height:rect?.height??0,
       scrollWidth:card?.scrollWidth??0,clientWidth:card?.clientWidth??0,
       text:(card?.innerText??"").replace(/\s+/g," ").trim(),
+      latinHidden:latin?.hidden??null,
+      vernHidden:vern?.hidden??null,
+      face:flip?.dataset?.face??null,
     };
   });
   assert.ok(rosaryPrayerGeometry.width>=330,"Rosary prayer column collapsed horizontally");
   assert.ok(rosaryPrayerGeometry.height>0&&rosaryPrayerGeometry.height<720,"Rosary Our Father card exploded vertically from word-by-word wrapping");
   assert.ok(rosaryPrayerGeometry.scrollWidth-rosaryPrayerGeometry.clientWidth<=1,"Rosary prayer card has horizontal overflow");
   assert.match(rosaryPrayerGeometry.text,/Our Father/i,"Visible Rosary Next did not advance to the Our Father");
+  assert.equal(rosaryPrayerGeometry.face,"vernacular","Rosary prayer text does not default to vernacular");
+  assert.equal(rosaryPrayerGeometry.latinHidden,true,"Rosary shows Latin simultaneously with the vernacular");
+  assert.equal(rosaryPrayerGeometry.vernHidden,false,"Rosary vernacular face is hidden by default");
 
   // Advance through the actual prayer sequence to Mystery I. The permanent
   // Overview control was removed because it duplicated navigation and crowded the header.
