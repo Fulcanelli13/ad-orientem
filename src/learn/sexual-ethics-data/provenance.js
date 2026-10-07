@@ -76,8 +76,9 @@ function uniqRefs(refs){
 
 export function paragraphRefsFor(item,kind,field=null){
   const catholic=freezeRefs(item?.refs||[]);
-  if(kind!=="debate")return catholic;
   const position=CSE_DEBATE_POSITION_REFS[item?.id]||Object.freeze([]);
+  if(kind==="question")return item?.depth==="DEBATE"&&position.length?position:catholic;
+  if(kind!=="debate")return catholic;
   if(field==="opposition"||field==="appeal"||field==="counter")return position.length?position:catholic;
   if(field==="concession")return uniqRefs([...position,...catholic]);
   return catholic;
