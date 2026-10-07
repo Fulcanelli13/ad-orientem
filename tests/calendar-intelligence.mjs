@@ -195,6 +195,10 @@ assert.equal(ashDiscipline.today.key,"fast-abstinence");
 assert.match(ashDiscipline.today.label,/universal fast and abstinence/);
 assert.equal(calendarIntelligenceForDate("2026-10-09").discipline.today.key,"friday","Calendar intelligence stopped carrying discipline context");
 
+const calendarBrowser=readFileSync("src/calendar/browser-entry.js","utf8");
+assert.match(calendarBrowser,/route\.startsWith\("find:"\)/,"Calendar semantic Explore routes are not handled by the app shell");
+assert.match(calendarBrowser,/AO_FIND_APP_V1\?\.open\?\.\(\{lens\}\)/,"Calendar semantic Explore route does not open the requested lens");
+
 const home=readFileSync("src/home/enrichers.js","utf8");
 const homeBrowser=readFileSync("src/home/browser-entry.js","utf8");
 const prayRuntime=readFileSync("src/pray/presentation-runtime.js","utf8");
