@@ -6,8 +6,8 @@ const sot=JSON.parse(readFileSync("data/learn/spiritual-life-sot.v1.json","utf8"
 assert.equal(sot.version,"SPIRITUAL_LIFE_SOT_V1");
 assert.equal(sot.status,"SOURCE_CONTROLLED_CURRICULUM_BLUEPRINT");
 assert.equal(sot.future_route,"learn.spiritual_life");
-assert.equal(sot.route_status,"RESERVED_NOT_PUBLISHED");
-assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),false,"Spiritual Life published before content gates were cleared");
+assert.equal(sot.route_status,"PUBLISHED");
+assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),true,"published Spiritual Life route missing from Formation");
 
 assert.equal(sot.sources.length,12);
 assert.equal(sot.curriculum.stage_count,14);
@@ -41,10 +41,11 @@ for(const stage of stages){
 
 assert.equal(sot.publication_gates.research_complete,true);
 assert.equal(sot.publication_gates.all_claims_sourced,true);
-assert.equal(sot.publication_gates.english_claim_copy_ready,false);
-assert.equal(sot.publication_gates.french_parity_ready,false);
-assert.equal(sot.publication_gates.ui_runtime_ready,false);
-assert.equal(sot.publication_gates.prayer_owner_handoffs_mapped,false);
+assert.equal(sot.publication_gates.english_claim_copy_ready,true);
+assert.equal(sot.publication_gates.french_parity_ready,true);
+assert.equal(sot.publication_gates.ui_runtime_ready,true);
+assert.equal(sot.publication_gates.prayer_owner_handoffs_mapped,true);
+assert.equal(sot.publication_gates.final_content_audit_ready,true);
 
 const excluded=sot.principles.join(" ").toLowerCase();
 for(const phrase of ["advanced mystical phenomena","no gamification","no invented prayers"]){
@@ -65,7 +66,7 @@ const work=stages.find(x=>x.id==="SL09");
 assert.match(work.claims.map(x=>x.text).join(" "),/broad Catholic tradition/i);
 
 console.log(JSON.stringify({
-  routePublished:false,
+  routePublished:true,
   stages:stages.length,
   claims:claimIds.length,
   sources:sourceIds.size,
