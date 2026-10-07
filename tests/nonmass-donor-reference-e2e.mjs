@@ -66,7 +66,7 @@ try{
       const visible=el=>Boolean(el&&!el.hidden&&getComputedStyle(el).display!=="none"&&getComputedStyle(el).visibility!=="hidden");
       if(kind==="home"){const x=document.querySelector(".homeScreen");return {root:rect(x),hero:rect(x?.querySelector(".celebrationBlock")),gospel:rect(x?.querySelector(".gospelCard")),background:x?getComputedStyle(x).backgroundColor:null};}
       if(kind==="pray"){const root=document.getElementById("aoPray435930"),mount=root?.querySelector(".aoP435930Mount");return {root:rect(root),mount:rect(mount),head:rect(mount?.querySelector(".aoP435930Head")),body:rect(mount?.querySelector(".aoP435930Body")),firstCard:rect(mount?.querySelector(".aoP435930ModuleCard,.aoP435930PrayerUnit,.aoP435930Prayer,.aoP435930BigGrid button")),view:mount?.dataset?.aoPrayView??null,readerContract:mount?.dataset?.aoReaderContract??null};}
-      if(kind==="settings"){const root=[document.getElementById("ao-settings-modular-root"),document.getElementById("ao-settings-v4359")].find(visible);return {root:rect(root),head:rect(root?.querySelector(".aoSetTop,.aoSettingsTop,.aoV4359Top")),body:rect(root?.querySelector(".aoSetWrap,.aoSettingsBody,.aoV4359Wrap")),route:root?.dataset?.aoSettingsRoute??null};}
+      if(kind==="settings"){const root=[document.getElementById("ao-settings-modular-root"),document.getElementById("ao-settings-v4359"),document.getElementById("ao-settings-v4358"),document.getElementById("ao-settings-v4356"),document.getElementById("ao-v37-root")].find(visible);return {root:rect(root),head:rect(root?.querySelector(".aoSetTop,.aoSettingsTop,.aoV4359Top,.aoV37Top")),body:rect(root?.querySelector(".aoSetWrap,.aoSettingsBody,.aoV4359Wrap,.aoV37Wrap")),route:root?.dataset?.aoSettingsRoute??document.documentElement.dataset.aoSettingsRoute??null};}
       if(kind==="learn"){const root=[document.getElementById("ao-learn-modular-root"),document.getElementById("ao-v37-root"),document.getElementById("ao-learn-root")].find(visible);return {root:rect(root),hero:rect(root?.querySelector(".aoLearnModHero,.aoLearnHero,.aoV37Hero")),firstCard:rect(root?.querySelector("button,.aoLearnModCard,.aoV37Card"))};}
       if(kind==="calendar"){const root=[document.getElementById("ao-calendar-modular-root"),document.getElementById("ao-v25-panel")].find(visible);return {root:rect(root),hero:rect(root?.querySelector(".aoCalSacredTime,.aoCal48Hero,.aoV25Hero")),week:rect(root?.querySelector(".aoCalModRail,.aoCal48Week,.aoV25CalendarWeek"))};}
       if(kind==="cinema"){const t=document.getElementById("ao-cinema-transition"),l=document.getElementById("ao-cinema-loader");return {transition:rect(t),transitionOn:Boolean(t?.classList.contains("aoCinemaTransitionOn")),loader:rect(l),loaderOn:Boolean(l?.classList.contains("aoCinemaLoaderOn")),loaderKind:l?.dataset?.kind??null};}
@@ -112,17 +112,26 @@ try{
 
   for(const page of [donor,current])await page.evaluate(()=>globalThis.AO_PRAY_V435930?.close?.({silent:true}));
   await Promise.all([
-    donor.evaluate(()=>globalThis.AO_SETTINGS_V4359?.open?.("/settings")),
+    donor.evaluate(async()=>{
+      const api=[globalThis.AO_SETTINGS_V4359,globalThis.AO_SETTINGS_V4358,globalThis.AO_SETTINGS_V4356].find(x=>typeof x?.open==="function");
+      if(api)return await api.open("/settings");
+      if(typeof globalThis.AO_V37_SHELL?.openModule==="function")return await globalThis.AO_V37_SHELL.openModule("utility.settings");
+      const button=document.querySelector('[data-ao-ribbon="settings"],[data-v37-open="utility.settings"],[data-home-open-settings]');
+      button?.click?.();return Boolean(button);
+    }),
     current.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.open?.("/settings")),
   ]);
   await Promise.all([
-    donor.waitForSelector("#ao-settings-v4359",{state:"visible",timeout:10000}),
+    donor.waitForFunction(()=>[document.getElementById("ao-settings-v4359"),document.getElementById("ao-settings-v4358"),document.getElementById("ao-settings-v4356"),document.getElementById("ao-v37-root")].some(n=>n&&!n.hidden&&getComputedStyle(n).display!=="none"),null,{timeout:10000}),
     current.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000}),
   ]);
   await capturePair("10-settings","settings");
 
   await Promise.all([
-    donor.evaluate(()=>globalThis.AO_SETTINGS_V4359?.dismiss?.()),
+    donor.evaluate(()=>{
+      const api=[globalThis.AO_SETTINGS_V4359,globalThis.AO_SETTINGS_V4358,globalThis.AO_SETTINGS_V4356].find(x=>typeof x?.dismiss==="function"||typeof x?.close==="function");
+      try{api?.dismiss?.();}catch{}try{api?.close?.();}catch{}try{globalThis.AO_V37_SHELL?.close?.();}catch{}return true;
+    }),
     current.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.dismiss?.()),
   ]);
   await Promise.all([
