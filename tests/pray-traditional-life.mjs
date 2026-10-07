@@ -76,6 +76,11 @@ assert.match(runtime,/not a checklist to be completed before every Communion/,"C
 assert.match(runtime,/Historical days-or-years grants printed in old missals are not the current way indulgences are measured/,"Communion treasury indulgence guide lost current-vs-historical distinction");
 assert.match(runtime,/ROMAN_ST_JOSEPH_SOURCE_LOCKED/,"Good Death lost Roman St Joseph source lock");
 assert.match(runtime,/PASTORAL_NOT_SACRAMENT_SIMULATION/,"Dying Companion lost sacramental-boundary policy");
+assert.match(runtime,/seriousIllnessBridge:"learn\.rites\.sick"/,"Dying Companion lost Serious Illness formation bridge");
+assert.match(runtime,/data-tp381-route="learn\.rites\.sick"/,"Dying Companion no longer exposes the Serious Illness guide");
+assert.match(runtime,/String\(route\)\.startsWith\("learn\."\)/,"PRAY cross-domain bridge to Learn disappeared");
+assert.match(runtime,/navigate\?\.\("learn"\)/,"Dying Companion cross-domain handoff no longer enters Learn");
+
 assert.match(runtime,/Call a priest now/,"Dying Companion no longer prioritises obtaining a priest");
 assert.match(runtime,/Confession or Penance, Anointing of the Sick, Holy Communion as Viaticum, and the Apostolic Blessing/,"Dying Companion lost last-sacraments request guidance");
 assert.match(runtime,/never simulates priestly absolution/,"Dying Companion regained priest-role simulation");
