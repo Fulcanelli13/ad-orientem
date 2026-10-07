@@ -22,6 +22,7 @@ jobs:
       - name: Resolve canonical Proper corpus
         run: node tools/build_core_proper_corpus.mjs
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: core-proper-corpus
           path: artifacts/core-proper-corpus/
