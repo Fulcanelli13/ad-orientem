@@ -3,7 +3,7 @@ import { CSE_RAW_001_050 } from "./questions-001-050.js";
 import { CSE_RAW_051_100 } from "./questions-051-100.js";
 import { CSE_RAW_101_150 } from "./questions-101-150.js";
 
-export const SEXUAL_ETHICS_VERSION="1.1.0";
+export const SEXUAL_ETHICS_VERSION="1.1.1";
 export const SEXUAL_ETHICS_ROUTE="learn.sexual_ethics";
 export const SEXUAL_ETHICS_RESEARCH_LEAD="LBM";
 
