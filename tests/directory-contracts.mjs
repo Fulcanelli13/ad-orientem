@@ -10,7 +10,7 @@ import {
   compareVenueCandidates,
   normalizeAddress,
 } from "../src/find/entity-resolution.js";
-import { expandResearchProviderSnapshot, publishableDirectoryRecords } from "../src/find/data-service.js";
+import { RESEARCH_MASS_REVIEW_DAYS, expandResearchProviderSnapshot, publishableDirectoryRecords, scheduleFreshnessState } from "../src/find/data-service.js";
 import {
   buildCanonicalSspxDataset,
   mapSspxPlace,
@@ -24,6 +24,7 @@ const contract = readJson("../data/directory/directory-contract.v1.json");
 const communities = readJson("../data/directory/communities.v1.json");
 const sources = readJson("../data/directory/source-registry.v1.json");
 const status = readJson("../data/directory/status-assertions.v1.json");
+const scheduleFreshnessPolicy = readJson("../data/directory/research/schedule-freshness-policy.v1.json");
 
 const researchSnapshots = [
   readJson("../data/directory/generated/v19/diocesan.v1.json"),
@@ -158,6 +159,13 @@ assert.deepEqual(
 
 const ickspFederated=researchSnapshots.find(snapshot=>snapshot.provider==="ICKSP_FEDERATED_V13");
 const expandedIcksp=expandResearchProviderSnapshot(ickspFederated);
+const currentIckspMassSchedules=expandedIcksp.schedules.filter(schedule=>schedule.service_type==="MASS");
+assert.equal(RESEARCH_MASS_REVIEW_DAYS,120);
+assert.equal(scheduleFreshnessPolicy.rules.research_current_mass.review_days,RESEARCH_MASS_REVIEW_DAYS);
+assert.ok(currentIckspMassSchedules.every(schedule=>/^2026-10-07T00:00:00Z$/.test(schedule.verification.checked_at)),"ICKSP current Mass schedules must preserve venue verification day");
+assert.ok(currentIckspMassSchedules.every(schedule=>/^2027-02-04T23:59:59Z$/.test(schedule.verification.review_due_at)),"ICKSP current Mass schedules must carry review dates");
+assert.ok(currentIckspMassSchedules.every(schedule=>scheduleFreshnessState(schedule,{now:new Date("2026-10-08T00:00:00Z")})==="CURRENT"));
+assert.equal(scheduleFreshnessState(currentIckspMassSchedules[0],{now:new Date("2027-02-05T00:00:00Z")}),"REVIEW_DUE");
 const massIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="MASS");
 const assertionIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="SOURCE_ASSERTION");
 const residualIckspRows=ickspFederated.records.filter(row=>row.svc==="SOURCE_ASSERTION");
