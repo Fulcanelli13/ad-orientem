@@ -963,17 +963,16 @@
   "publication_gates": {
     "research_complete": true,
     "all_claims_sourced": true,
-    "english_claim_copy_ready": false,
-    "french_parity_ready": false,
+    "english_claim_copy_ready": true,
+    "french_parity_ready": true,
     "ui_runtime_ready": false,
-    "prayer_owner_handoffs_mapped": false,
+    "prayer_owner_handoffs_mapped": true,
     "final_content_audit_ready": false
   },
   "next_passes": [
-    "Write concise user-facing EN/FR lesson copy from this SOT without exposing source-ontology jargon.",
-    "Map each lesson to existing PRAY/Mass/Catechism/Apostolate handoffs.",
-    "Build exercises that test understanding without scoring spiritual performance.",
-    "Source-audit every French translation against the same claim/source IDs.",
-    "Publish learn.spiritual_life only after the formation-gap ownership gate is deliberately updated."
+    "Run a harsh content/UX audit of the 14 bilingual lessons against the 75-claim SOT.",
+    "Build a restrained Formation runtime with source drawers and explicit owner handoffs; do not reuse Catholic Life's reveal-card pedagogy.",
+    "Design lesson progress as navigation/completion only, never a spiritual-performance score.",
+    "Publish learn.spiritual_life only after final content audit and phone acceptance pass."
   ]
 }
