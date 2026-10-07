@@ -7,7 +7,7 @@ import {
 } from "./presentation.js";
 import { ensureTraditionalLearnRegistry, installTraditionalLearnModules, TRADITIONAL_LEARN_ROUTES } from "./traditional-life.js";
 import { installCatholicLifeModule } from "./catholic-life.js";
-import { ensureLatinCourseRegistry, installLatinCourseModule, LATIN_COURSE_ROUTE_ID } from "./latin-course.js";
+import { ensureLatinCourseRegistry, installLatinCourseModule, LATIN_COURSE_ROUTE_ID } from "./latin-course-v2.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";

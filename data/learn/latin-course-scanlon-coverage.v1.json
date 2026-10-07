@@ -1,0 +1,660 @@
+{
+  "version": "latin-course-scanlon-coverage-v1",
+  "status": "FOUNDATION_GAP_MATRIX_COMPLETE",
+  "purpose": "Use Scanlon & Scanlon as a pedagogical completeness control for a Missal-reading course, not as the liturgical textual source of truth.",
+  "source": {
+    "work": "Cora Carroll Scanlon and Charles L. Scanlon, Latin Grammar: Grammar, Vocabularies, and Exercises in Preparation for the Reading of the Missal and Breviary",
+    "originalPublication": 1944,
+    "reprint": "TAN 1976",
+    "scopeLocators": {
+      "aimAndVocabulary": "PDF pp. 5-6 (Preface)",
+      "grammarContents": "PDF pp. 9-11 (Contents)",
+      "appendix": "PDF pp. 6 and 11"
+    }
+  },
+  "classification": [
+    "FULL",
+    "PARTIAL",
+    "MISSING",
+    "OUT_OF_SCOPE"
+  ],
+  "counts": {
+    "PARTIAL": 21,
+    "FULL": 12,
+    "MISSING": 9
+  },
+  "gate": {
+    "rule": "No v2 curriculum freeze until every P0 PARTIAL/MISSING row has an explicit lesson placement and assessment plan.",
+    "p0Open": [
+      "regular-present-conjugations",
+      "participles-gerundive",
+      "perfect-system",
+      "present-subjunctive",
+      "imperfect-subjunctive",
+      "indirect-questions",
+      "conditional-sentences",
+      "comparison",
+      "connected-reading",
+      "vocabulary-scale"
+    ]
+  },
+  "entries": [
+    {
+      "id": "pronunciation-stress",
+      "topic": "Pronunciation and marked stress",
+      "status": "PARTIAL",
+      "currentLessons": [
+        1
+      ],
+      "evidence": "Recurring pronunciation strand is absent; v1 has one read-aloud model.",
+      "priority": "P1",
+      "remediation": "Build recurring stress/syllable/audio work across all stages.",
+      "scanlonPdfPages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "declensions-1-3",
+      "topic": "First, second and third declensions; gender; neuters",
+      "status": "FULL",
+      "currentLessons": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "evidence": "Core noun/adjective morphology is present and cumulative.",
+      "priority": "LOCK",
+      "remediation": "Preserve; improve productive drill rather than add new exposition.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "declensions-4-5",
+      "topic": "Fourth and fifth declensions",
+      "status": "FULL",
+      "currentLessons": [
+        14
+      ],
+      "evidence": "Both are explicitly taught for reading recognition.",
+      "priority": "LOCK",
+      "remediation": "Preserve and add production/retrieval items.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "adjective-agreement",
+      "topic": "Adjective declension and agreement",
+      "status": "FULL",
+      "currentLessons": [
+        4,
+        6,
+        16
+      ],
+      "evidence": "Agreement is taught early and re-used with participles.",
+      "priority": "LOCK",
+      "remediation": "Preserve.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "regular-present-conjugations",
+      "topic": "Regular present indicative active/passive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        5,
+        7
+      ],
+      "evidence": "Person/number and voice recognition are taught, but not the complete four-conjugation system.",
+      "priority": "P0",
+      "remediation": "Add permanent verb map and full regular-conjugation reference.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "esse-posse-ire",
+      "topic": "esse, posse, ire across core tenses",
+      "status": "PARTIAL",
+      "currentLessons": [
+        5,
+        11,
+        13,
+        15,
+        31
+      ],
+      "evidence": "High-frequency forms occur, but the complete systematic paradigms are not taught.",
+      "priority": "P1",
+      "remediation": "Add structured irregular-verb reference and retrieval drills.",
+      "scanlonPdfPages": [
+        9,
+        11
+      ]
+    },
+    {
+      "id": "personal-reflexive-is",
+      "topic": "Personal/reflexive pronouns; is/ea/id; cum forms",
+      "status": "FULL",
+      "currentLessons": [
+        10
+      ],
+      "evidence": "Structured paradigms are authored and v2 exposes them.",
+      "priority": "LOCK",
+      "remediation": "Preserve and add cumulative retrieval.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "imperfect-active-passive",
+      "topic": "Imperfect active/passive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        11
+      ],
+      "evidence": "Imperfect reading is taught; full active/passive conjugational coverage is not.",
+      "priority": "P1",
+      "remediation": "Expand within verb map and add passive imperfect transfer items.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "imperative",
+      "topic": "Imperative system",
+      "status": "PARTIAL",
+      "currentLessons": [
+        12
+      ],
+      "evidence": "Frequent liturgical commands are taught, not the complete regular/irregular system.",
+      "priority": "P1",
+      "remediation": "Add systematic forms while retaining liturgical anchors.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "future-active-passive",
+      "topic": "Future active/passive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        13
+      ],
+      "evidence": "Future recognition is taught, but passive and complete paradigms are not comprehensive.",
+      "priority": "P1",
+      "remediation": "Add full future patterns to verb map.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "participles-gerundive",
+      "topic": "Participles and gerundive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        16,
+        27
+      ],
+      "evidence": "Perfect participles and gerundive/gerund are taught; participial system is incomplete.",
+      "priority": "P0",
+      "remediation": "Add present/future participles and full verbal-adjective map where Missal frequency warrants.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "perfect-system",
+      "topic": "Perfect, pluperfect, future perfect; active/passive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        15,
+        16
+      ],
+      "evidence": "Perfect active/passive are taught; pluperfect and future perfect are not systematically covered.",
+      "priority": "P0",
+      "remediation": "Add complete perfect-system recognition and principal-parts strategy.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "preposition-government",
+      "topic": "Prepositions governing accusative/ablative",
+      "status": "FULL",
+      "currentLessons": [
+        9
+      ],
+      "evidence": "Core government is explicitly taught and recycled.",
+      "priority": "LOCK",
+      "remediation": "Preserve; add transfer items.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "present-subjunctive",
+      "topic": "Present subjunctive active/passive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        21,
+        22
+      ],
+      "evidence": "Prayer uses and recognition are taught, not full conjugational paradigms.",
+      "priority": "P0",
+      "remediation": "Integrate full mood/voice recognition into verb map.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "jussive-optative",
+      "topic": "Hope/wish/command uses of subjunctive",
+      "status": "FULL",
+      "currentLessons": [
+        21,
+        22
+      ],
+      "evidence": "Prayer-oriented jussive/optative reading is explicit.",
+      "priority": "LOCK",
+      "remediation": "Preserve with better transfer assessment.",
+      "scanlonPdfPages": [
+        9
+      ]
+    },
+    {
+      "id": "purpose-clauses",
+      "topic": "ut/ne purpose and alternative purpose constructions",
+      "status": "PARTIAL",
+      "currentLessons": [
+        23,
+        27
+      ],
+      "evidence": "ut/ne and gerund(ive) purpose are present; relative-purpose/causa/infinitive coverage is incomplete.",
+      "priority": "P1",
+      "remediation": "Complete Missal-relevant purpose alternatives.",
+      "scanlonPdfPages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "demonstratives-intensive",
+      "topic": "hic/ille/iste; ipse; idem",
+      "status": "FULL",
+      "currentLessons": [
+        18
+      ],
+      "evidence": "Families are explicitly contrasted.",
+      "priority": "LOCK",
+      "remediation": "Preserve and strengthen production.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "imperfect-subjunctive",
+      "topic": "Imperfect subjunctive active/passive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        25
+      ],
+      "evidence": "Recognition is taught in cum clauses; full active/passive system is not.",
+      "priority": "P0",
+      "remediation": "Add full paradigm and clause-transfer drills.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "result-clauses",
+      "topic": "Result clauses",
+      "status": "FULL",
+      "currentLessons": [
+        24
+      ],
+      "evidence": "Purpose/result contrast is explicit.",
+      "priority": "LOCK",
+      "remediation": "Preserve; tighten terminology in later curriculum rewrite.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "indirect-questions",
+      "topic": "Indirect questions",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No dedicated treatment in the 40-lesson course.",
+      "priority": "P0",
+      "remediation": "Add to Stage 5/6 after interrogatives and subjunctive foundations.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "cum-clauses",
+      "topic": "cum temporal/causal/concessive with subjunctive",
+      "status": "PARTIAL",
+      "currentLessons": [
+        25
+      ],
+      "evidence": "Circumstantial cum is taught, but distinctions are compressed.",
+      "priority": "P1",
+      "remediation": "Separate temporal/background, causal and concessive reading cues.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "conditional-sentences",
+      "topic": "Doubt and contrary-to-fact conditions",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No systematic conditional syntax.",
+      "priority": "P0",
+      "remediation": "Add Missal/Vulgate-relevant conditionals and imperfect/pluperfect subjunctive contrast.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "third-io-verbs",
+      "topic": "Third-conjugation verbs in -io",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "Forms occur, but no systematic morphology unit exists.",
+      "priority": "P1",
+      "remediation": "Add to permanent verb map rather than a standalone classical lesson.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "deponents",
+      "topic": "Deponent verbs",
+      "status": "FULL",
+      "currentLessons": [
+        19
+      ],
+      "evidence": "Passive morphology with active meaning is explicitly taught.",
+      "priority": "LOCK",
+      "remediation": "Preserve.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "semideponents",
+      "topic": "Semideponent verbs",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No explicit treatment.",
+      "priority": "P1",
+      "remediation": "Add recognition note and high-frequency examples if corpus audit confirms value.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "relative-interrogative-indefinite",
+      "topic": "Relative, interrogative and indefinite pronouns/adjectives",
+      "status": "FULL",
+      "currentLessons": [
+        17,
+        31
+      ],
+      "evidence": "Relative families and reader-toolkit interrogatives/indefinites are present.",
+      "priority": "LOCK",
+      "remediation": "Preserve; add double-question extension.",
+      "scanlonPdfPages": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "ferre",
+      "topic": "ferre and compounds",
+      "status": "PARTIAL",
+      "currentLessons": [
+        31
+      ],
+      "evidence": "Listed as a reader-toolkit irregular, but not conjugated systematically.",
+      "priority": "P1",
+      "remediation": "Add high-frequency forms to irregular verb reference.",
+      "scanlonPdfPages": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "ablative-absolute",
+      "topic": "Ablative absolute",
+      "status": "FULL",
+      "currentLessons": [
+        28
+      ],
+      "evidence": "Form, function and diagnostic are explicit.",
+      "priority": "LOCK",
+      "remediation": "Preserve with unseen transfer.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "fieri",
+      "topic": "fieri / fio",
+      "status": "PARTIAL",
+      "currentLessons": [
+        21
+      ],
+      "evidence": "fiat/fio is taught, but Scanlon's broader irregular tense treatment is absent.",
+      "priority": "P1",
+      "remediation": "Add relevant fio/fieri forms to irregular verb map.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "indirect-discourse",
+      "topic": "Indirect discourse and infinitives",
+      "status": "FULL",
+      "currentLessons": [
+        26
+      ],
+      "evidence": "Accusative + infinitive and quia + finite clause are contrasted.",
+      "priority": "LOCK",
+      "remediation": "Preserve and add production/transfer.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "impersonal-verbs",
+      "topic": "Impersonal verbs",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No dedicated reading treatment.",
+      "priority": "P1",
+      "remediation": "Add high-frequency ecclesiastical impersonals after indirect discourse.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "special-pronominal-adjectives",
+      "topic": "Adjectives of special/pronominal declension",
+      "status": "PARTIAL",
+      "currentLessons": [
+        18
+      ],
+      "evidence": "A note exists for unus/solus/totus/alius patterns; not drilled systematically.",
+      "priority": "P2",
+      "remediation": "Add compact reference and retrieval rather than a full lesson.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "dative-uses",
+      "topic": "Extended uses of the dative",
+      "status": "PARTIAL",
+      "currentLessons": [
+        8,
+        29
+      ],
+      "evidence": "Recipient/reference and selected advanced uses are present; Scanlon's full range is not.",
+      "priority": "P1",
+      "remediation": "Corpus-rank possession, purpose, agent and verb-governed datives and teach those that matter.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "comparison",
+      "topic": "Comparison of adjectives and adverbs",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No systematic comparative/superlative morphology or syntax.",
+      "priority": "P0",
+      "remediation": "Add frequency-driven comparison module; needed for broad independent reading.",
+      "scanlonPdfPages": [
+        10
+      ]
+    },
+    {
+      "id": "velle-nolle",
+      "topic": "velle/nolle and negative command",
+      "status": "PARTIAL",
+      "currentLessons": [
+        31
+      ],
+      "evidence": "volo/nolo appear as irregulars; the system and noli/nolite command are not systematically taught.",
+      "priority": "P1",
+      "remediation": "Add to irregular verb reference and command syntax.",
+      "scanlonPdfPages": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "ablative-uses",
+      "topic": "Extended ablative functions",
+      "status": "PARTIAL",
+      "currentLessons": [
+        9,
+        29
+      ],
+      "evidence": "Government and selected means/content uses are present; broader functions are compressed.",
+      "priority": "P1",
+      "remediation": "Corpus-rank accompaniment, agent, cause, manner, means, place, separation and time.",
+      "scanlonPdfPages": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "question-particles",
+      "topic": "-ne, nonne, num/numquid; double questions",
+      "status": "PARTIAL",
+      "currentLessons": [
+        31
+      ],
+      "evidence": "nonne/numquid/quomodo are covered; enclitic -ne and double-question systems are not.",
+      "priority": "P1",
+      "remediation": "Add compact question-particle system and transfer passages.",
+      "scanlonPdfPages": [
+        11
+      ]
+    },
+    {
+      "id": "defective-verbs",
+      "topic": "Defective verbs",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No explicit treatment.",
+      "priority": "P2",
+      "remediation": "Add only corpus-relevant defective forms to irregular reference.",
+      "scanlonPdfPages": [
+        11
+      ]
+    },
+    {
+      "id": "accusative-extended",
+      "topic": "Accusative duration of time / extent of space",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No systematic treatment.",
+      "priority": "P2",
+      "remediation": "Add if corpus frequency justifies; otherwise reference-only.",
+      "scanlonPdfPages": [
+        11
+      ]
+    },
+    {
+      "id": "irregular-declensions-numerals",
+      "topic": "Irregular declensions and cardinal/ordinal numerals",
+      "status": "MISSING",
+      "currentLessons": [],
+      "evidence": "No systematic appendix-equivalent reference.",
+      "priority": "P2",
+      "remediation": "Build digital reference; teach only high-frequency forms actively.",
+      "scanlonPdfPages": [
+        11
+      ]
+    },
+    {
+      "id": "connected-reading",
+      "topic": "Connected liturgical/Vulgate reading progression",
+      "status": "PARTIAL",
+      "currentLessons": [
+        20,
+        30,
+        35,
+        37,
+        38,
+        39,
+        40
+      ],
+      "evidence": "Authentic passages are authored and v2 now displays them, but sustained assessed reading is too sparse.",
+      "priority": "P0",
+      "remediation": "Create stage reading lessons and make connected reading compulsory evidence.",
+      "scanlonPdfPages": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "vocabulary-scale",
+      "topic": "Missal vocabulary architecture",
+      "status": "PARTIAL",
+      "currentLessons": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "evidence": "Core 350 exists, but vocabulary is over-front-loaded and lacks Scanlon-style mastery/recognition/support tiering.",
+      "priority": "P0",
+      "remediation": "Rebuild lexicon tiers from Core 350 × Scanlon regular/derivative model × 1962 corpus frequency.",
+      "scanlonPdfPages": [
+        5
+      ]
+    }
+  ],
+  "notes": [
+    "FULL means adequate reading coverage exists in the authored course, not that current exercises are sufficient.",
+    "PARTIAL means the concept exists but is narrower or less systematic than the Scanlon reading-grammar benchmark.",
+    "MISSING does not automatically mean a new standalone lesson; corpus frequency decides lesson, micro-unit, or reference-only treatment.",
+    "The full Breviary lexicon is outside the core Ad Orientem Missal-course target and may become a later extension."
+  ]
+}

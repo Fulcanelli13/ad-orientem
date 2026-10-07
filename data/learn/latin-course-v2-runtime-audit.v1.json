@@ -1,0 +1,25 @@
+{
+  "version": "latin-course-v2-runtime-audit-v1",
+  "status": "TRANCHE1_RUNTIME_RESCUE",
+  "baseline": "latin-course-runtime-v1",
+  "runtime": "latin-course-runtime-v2",
+  "branch": "learn/latin-v2-runtime-rescue",
+  "goals": {
+    "authenticPassages": "rendered",
+    "coreVocabulary": "rendered",
+    "passiveReadingLexicon": "rendered and passage-linked",
+    "casePanel": "rendered from Lesson 2 onward",
+    "pronounParadigms": "rendered where authored",
+    "frameworks": "rendered where authored",
+    "checkpoints": "passingRule evaluated in runtime",
+    "capstone": "authentic passages displayed without fabricated translations",
+    "assessmentPresentation": "deterministic canonical-safe option rotation"
+  },
+  "deferred": [
+    "assessment item-bank rebuild and distractor-quality rewrite",
+    "persistent mastery/progress",
+    "spaced repetition",
+    "course-mode progression locking",
+    "Scanlon coverage matrix and curriculum v2"
+  ]
+}
