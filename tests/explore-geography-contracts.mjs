@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -63,6 +63,12 @@ assert.deepEqual(
     "place:AT:maria-taferl-basilica",
     "place:CH:einsiedeln-monastery",
     "place:CH:kloster-mariastein",
+    "place:US:champion-shrine",
+    "place:US:guadalupe-shrine-la-crosse",
+    "place:US:holy-hill",
+    "place:CA:sainte-anne-de-beaupre",
+    "place:CA:notre-dame-du-cap",
+    "place:CA:martyrs-shrine-midland",
   ].sort(),
 );
 
@@ -120,8 +126,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 8,
-  places: 16,
+  geoAreas: 10,
+  places: 22,
   directoryPlaceLinks: 1,
 });
 
@@ -132,6 +138,13 @@ assert.equal(kevelaerCandidate.place_id,"place:DE:kevelaer-kerzenkapelle");
 assert.deepEqual(kevelaerCandidate.generated_provider_scan.exact_or_text_matches,[]);
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:DE:kevelaer-kerzenkapelle"),false,"unresolved Kevelaer candidate leaked into canonical Directory→Place links");
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:DE:kevelaer-gnadenkapelle"),false,"1962 Kerzenkapelle evidence was incorrectly attached to the Gnadenkapelle");
+
+const guadalupeCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:US:guadalupe-la-crosse-tlm");
+assert.ok(guadalupeCandidate,"Guadalupe Shrine TLM identity-resolution candidate missing");
+assert.equal(guadalupeCandidate.status,"IDENTITY_RESOLUTION_REQUIRED");
+assert.equal(guadalupeCandidate.place_id,"place:US:guadalupe-shrine-la-crosse");
+assert.deepEqual(guadalupeCandidate.generated_provider_scan.exact_or_text_matches,[]);
+assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:US:guadalupe-shrine-la-crosse"),false,"unresolved Guadalupe TLM candidate leaked into canonical Directory→Place links");
 
 const badParent = structuredClone(registry);
 badParent.geoAreas.push({
