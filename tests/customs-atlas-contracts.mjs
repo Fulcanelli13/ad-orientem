@@ -35,7 +35,7 @@ for (const entry of negative.entries) {
 }
 
 assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 67);
+assert.equal(atlas.attestations.length, 71);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
