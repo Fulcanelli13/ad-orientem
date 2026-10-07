@@ -20,7 +20,7 @@ assert.deepEqual(AO_APP_SURFACE_ASSET_IDS,{
   pray:"ao-nav-pray",
   learn:"ao-nav-learn",
   calendar:"ao-nav-calendar",
-  find:"ao-refined-church",
+  find:"ao-ui-search",
   settings:"ao-nav-settings",
 });
 assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
@@ -94,7 +94,7 @@ for(const id of CONSUMED_DEVOTIONAL_MASK_ASSETS){
 }
 
 assert.equal(canonicalAssetIdForSurface("settings"),"ao-nav-settings");
-assert.equal(canonicalAssetIdForSurface("find"),"ao-refined-church");
+assert.equal(canonicalAssetIdForSurface("find"),"ao-ui-search");
 assert.equal(canonicalAssetIdForLearnRoute("learn.mass"),"ao-rich-guides");
 assert.equal(canonicalAssetIdForLearnRoute("learn.spiritual_life"),"ao-refined-spiritual-life");
 assert.equal(canonicalAssetIdForLearnRoute("unknown"),null);
