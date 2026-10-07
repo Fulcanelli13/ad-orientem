@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:60,
-  pilgrimages:79,
-  routes:17,
-  temporalLinks:58,
-  sources:130,
+  shrines:66,
+  pilgrimages:90,
+  routes:18,
+  temporalLinks:65,
+  sources:142,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -70,6 +70,12 @@ const requiredPlaces=new Set([
   "place:MU:pere-laval-sainte-croix",
   "place:DE:altoetting-gnadenkapelle",
   "place:DE:kevelaer-gnadenkapelle",
+  "place:DE:wigratzbad-maria-vom-sieg",
+  "place:DE:mariahilf-amberg",
+  "place:DE:st-leonhard-nussdorf",
+  "place:DE:st-apollinaris-frielingsdorf",
+  "place:DE:bettbrunn-st-salvator",
+  "place:DE:maria-vesperbild",
   "place:AT:mariazell-basilica",
   "place:AT:maria-taferl-basilica",
   "place:CH:einsiedeln-monastery",
@@ -144,6 +150,9 @@ assert.equal(calendarDateForSemanticKey("observance.fatima_may13",2026),"2026-05
 assert.equal(calendarDateForSemanticKey("observance.sameiro_june12",2026),"2026-06-12");
 assert.equal(calendarDateForSemanticKey("observance.pontmain_apparition_anniversary",2026),"2026-01-17");
 assert.equal(calendarDateForSemanticKey("observance.miraculous_medal_nov27",2026),"2026-11-27");
+assert.equal(calendarDateForSemanticKey("observance.mariahilf_amberg_july2",2026),"2026-07-02");
+assert.equal(calendarDateForSemanticKey("observance.nussdorf_leonhardiritt",2026),"2026-11-06");
+assert.equal(calendarDateForSemanticKey("feast.saint_apollinaris",2026),"2026-07-23");
 
 const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
 assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -236,6 +245,32 @@ assert.equal(rueDuBac.binding_state,"BOUND_TO_CALENDAR");
 assert.equal(rueDuBac.calendar_semantic_key,"observance.miraculous_medal_nov27");
 assert.equal(calendarDateForSemanticKey(rueDuBac.calendar_semantic_key,2026),"2026-11-27");
 
+
+for(const id of [
+  "temporal:wigratzbad:suehnesamstag",
+  "temporal:bettbrunn:preith",
+  "temporal:bettbrunn:men-october",
+  "temporal:maria-vesperbild:fatima-day",
+]){
+  const link=corpus.temporalLinks.find(item=>item.temporal_link_id===id);
+  assert.ok(link,id+" missing");
+  assert.equal(link.binding_state,"NO_FIXED_CALENDAR_BINDING");
+}
+for(const [id,key,date] of [
+  ["temporal:mariahilf-amberg:july2","observance.mariahilf_amberg_july2","2026-07-02"],
+  ["temporal:nussdorf:leonhardiritt","observance.nussdorf_leonhardiritt","2026-11-06"],
+  ["temporal:frielingsdorf:apollinaris","feast.saint_apollinaris","2026-07-23"],
+]){
+  const link=corpus.temporalLinks.find(item=>item.temporal_link_id===id);
+  assert.ok(link,id+" missing");
+  assert.equal(link.binding_state,"BOUND_TO_CALENDAR");
+  assert.equal(link.calendar_semantic_key,key);
+  assert.equal(calendarDateForSemanticKey(key,2026),date);
+}
+const preithRoute=corpus.routes.find(item=>item.route_id==="route:DE:preith-bettbrunn");
+assert.ok(preithRoute);
+assert.equal(preithRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(preithRoute.destination_place_id,"place:DE:bettbrunn-st-salvator");
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");

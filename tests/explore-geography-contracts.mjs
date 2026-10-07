@@ -65,6 +65,12 @@ assert.deepEqual(
     "place:DE:altoetting-gnadenkapelle",
     "place:DE:kevelaer-gnadenkapelle",
     "place:DE:kevelaer-kerzenkapelle",
+    "place:DE:wigratzbad-maria-vom-sieg",
+    "place:DE:mariahilf-amberg",
+    "place:DE:st-leonhard-nussdorf",
+    "place:DE:st-apollinaris-frielingsdorf",
+    "place:DE:bettbrunn-st-salvator",
+    "place:DE:maria-vesperbild",
     "place:AT:mariazell-basilica",
     "place:AT:maria-taferl-basilica",
     "place:CH:einsiedeln-monastery",
@@ -168,7 +174,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 24,
-  places: 63,
+  places: 69,
   directoryPlaceLinks: 1,
 });
 
@@ -229,6 +235,21 @@ assert.equal(bermontLink.relationship,"LOCATED_AT");
 assert.equal(bermontLink.confidence,"CONFIRMED");
 assert.equal(bermontLink.venue_id,"ao-fssp-ermitage-notre-dame-de-bermont-chapelle-notre-dame-de-bermont-f-88630-greux-france");
 assert.equal(bermontLink.place_id,"place:FR:bermont-greux");
+
+for(const [linkId,venueId,placeId] of [
+  ["link:directory-place:DE:wigratzbad-suehnekirche","ao-fssp-suhnekirche-kirchstrasse-d-88145-opfenbach-wigratzbad-deutschland","place:DE:wigratzbad-maria-vom-sieg"],
+  ["link:directory-place:DE:mariahilf-amberg","ao-fssp-wallfahrtskirche-maria-hilf-mariahilfberg-3-d-92224-amberg-deutschland","place:DE:mariahilf-amberg"],
+  ["link:directory-place:DE:st-leonhard-nussdorf","ao-fssp-kirche-st-leonhard-leonhardiweg-d-83131-nu-dorf-am-inn-deutschland","place:DE:st-leonhard-nussdorf"],
+  ["link:directory-place:DE:st-apollinaris-frielingsdorf","ao-fssp-st-apollinaris-jan-wellem-strasse-12-d-51789-lindlar-deutschland","place:DE:st-apollinaris-frielingsdorf"],
+]){
+  const link=seed.directoryPlaceLinks.find(item=>item.link_id===linkId);
+  assert.ok(link,linkId+" missing");
+  assert.equal(link.relationship,"LOCATED_AT");
+  assert.equal(link.confidence,"CONFIRMED");
+  assert.equal(link.venue_id,venueId);
+  assert.equal(link.place_id,placeId);
+}
+
 
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:PT:fatima-sanctuary"),false,"FSSP presence in Fátima city was incorrectly collapsed into the sanctuary");
 assert.equal(candidates.candidates.some(item=>item.place_id==="place:PT:fatima-sanctuary"),false,"city-level FSSP presence created an unresolved sanctuary candidate without identity evidence");

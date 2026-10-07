@@ -958,7 +958,7 @@
       "id": "SHR-ARCACHON-MARINS",
       "title": "Notre-Dame des Marins",
       "issuer": "Diocèse de Bordeaux",
-      "directness": "OFFICIAL_DIOCESE",
+      "directness": "OFFICIAL_DIOCESAN",
       "url": "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/",
       "contribution": "Canonical Arcachon Marian sanctuary identity, basilica status and maritime devotion since the sixteenth century"
     },
@@ -1038,9 +1038,105 @@
       "id": "OBS-RUE-DU-BAC-NOV27",
       "title": "Notre-Dame de la Médaille Miraculeuse — 27 novembre",
       "issuer": "Diocèse de Paris",
-      "directness": "OFFICIAL_DIOCESE",
+      "directness": "OFFICIAL_DIOCESAN",
       "url": "https://dioceseparis.fr/notre-dame-de-la-medaille-16921",
       "contribution": "Stable 27 November Paris observance associated with the 1830 apparition and Miraculous Medal"
+    },
+    {
+      "id": "SHR-WIGRATZBAD",
+      "title": "Gebetsstätte Maria vom Sieg Wigratzbad",
+      "issuer": "Gebetsstätte Wigratzbad / Bistum Augsburg",
+      "directness": "OFFICIAL_SHRINE",
+      "url": "https://www.gebetsstaette.de/",
+      "contribution": "Canonical diocesan prayer-site identity, Maria vom Sieg dedication, pilgrimage character and Kirchstraße 18 address"
+    },
+    {
+      "id": "PIL-WIGRATZBAD-SUEHNE",
+      "title": "Gottesdienstordnung — Gebetsstätte Wigratzbad",
+      "issuer": "Gebetsstätte Wigratzbad",
+      "directness": "OFFICIAL_SHRINE",
+      "url": "https://www.gebetsstaette.de/aktuelles/gottesdienstordnung/",
+      "contribution": "Current Sühnekirche worship, recurring Sühnesamstag references, devotional-object blessing and pilgrimage practice"
+    },
+    {
+      "id": "SHR-MARIAHILF-AMBERG",
+      "title": "Wallfahrtskirche Maria Hilf — Amberg",
+      "issuer": "Mariahilfberg-Kirchenstiftung",
+      "directness": "OFFICIAL_SHRINE",
+      "url": "https://www.mariahilfberg-amberg.de/index.html",
+      "contribution": "Canonical pilgrimage-church identity, current opening and Mariahilfberg address"
+    },
+    {
+      "id": "PIL-MARIAHILF-AMBERG-BERGFEST",
+      "title": "Geschichte der Wallfahrt Maria Hilf",
+      "issuer": "Mariahilfberg-Kirchenstiftung",
+      "directness": "OFFICIAL_SHRINE",
+      "url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+      "contribution": "Maria Hilf pilgrimage history, 2 July principal feast, annual Bergfest week and regional foot-pilgrimage tradition"
+    },
+    {
+      "id": "SHR-ST-LEONHARD-NUSSDORF",
+      "title": "Pfarrverband Neubeuern-Nußdorf — Kontakt",
+      "issuer": "Erzbistum München und Freising",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://www2.erzbistum-muenchen.de/pfarrei/pv-neubeuern-nussdorf/Kontakt",
+      "contribution": "Current Nußdorf parish identity and Leonhardiweg 5 address"
+    },
+    {
+      "id": "PIL-ST-LEONHARD-NUSSDORF",
+      "title": "Kirche St. Leonhard",
+      "issuer": "Gemeinde Nußdorf am Inn",
+      "directness": "OFFICIAL_PILGRIMAGE_SITE",
+      "url": "https://www.nussdorf.de/leben-in-nussdorf/soziales/kirchen-und-pfarraemter/kirche-st-leonhard",
+      "contribution": "Historic pilgrimage church identity, Scapular confraternity, Sunday-after-19-July feast and revived 6 November Leonhardiritt"
+    },
+    {
+      "id": "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+      "title": "St. Apollinaris Frielingsdorf — Oktav 2026",
+      "issuer": "Seelsorgebereich Lindlar",
+      "directness": "OFFICIAL_CHURCH",
+      "url": "https://www.katholisch-in-lindlar.de/news/Oktav-Frielingsdorf-2026-Einfach-WIR/",
+      "contribution": "Current St. Apollinaris Frielingsdorf identity and continuing annual July octave"
+    },
+    {
+      "id": "PIL-ST-APOLLINARIS-FRIELINGSDORF",
+      "title": "Wallfahrtsorte im Erzbistum Köln — St. Apollinaris Frielingsdorf",
+      "issuer": "Erzbistum Köln",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://www.erzbistum-koeln.de/export/sites/ebkportal/thema/kinderpilgern/.content/.galleries/downloads/wallfahrtsorte_im_Bistum.pdf",
+      "contribution": "Diocesan pilgrimage-site classification and octave around the 23 July feast of Saint Apollinaris"
+    },
+    {
+      "id": "SHR-BETTBRUNN-ST-SALVATOR",
+      "title": "Die Hostienwallfahrt von Bettbrunn",
+      "issuer": "Bistum Regensburg",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://bistum-regensburg.de/news/die-hostienwallfahrt-von-bettbrunn",
+      "contribution": "Canonical St. Salvator pilgrimage identity, oldest attested Bavarian Hostienwallfahrt and continuing annual pilgrimage groups"
+    },
+    {
+      "id": "PIL-BETTBRUNN-PREITH",
+      "title": "Bettbrunn-Fußwallfahrt",
+      "issuer": "Pfarrei Preith / Bistum Eichstätt",
+      "directness": "DIRECT_PILGRIMAGE_ORGANIZER",
+      "url": "https://preith.bistum-eichstaett.de/wallfahrt/",
+      "contribution": "Annual two-day foot pilgrimage from Preith to Bettbrunn on the weekend after Ascension, continuing since 1578"
+    },
+    {
+      "id": "SHR-MARIA-VESPERBILD",
+      "title": "Maria Vesperbild — Wallfahrt",
+      "issuer": "Wallfahrtsdirektion Maria Vesperbild",
+      "directness": "OFFICIAL_SHRINE",
+      "url": "https://maria-vesperbild.de/",
+      "contribution": "Canonical Maria Vesperbild pilgrimage identity, current worship and Schellenbacher Straße 4 address"
+    },
+    {
+      "id": "PIL-MARIA-VESPERBILD-FATIMA",
+      "title": "Fatimapilgertag — Maria Vesperbild",
+      "issuer": "Wallfahrtsdirektion Maria Vesperbild",
+      "directness": "OFFICIAL_SHRINE",
+      "url": "https://maria-vesperbild.de/",
+      "contribution": "Current Fatima pilgrimage day on the 13th of every month with pilgrim Mass, Rosary, Benediction and devotional practices"
     }
   ]
 }
