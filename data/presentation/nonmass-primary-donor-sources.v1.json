@@ -101,7 +101,16 @@
         "successor": "Ad_Orientem_NON_MASS_HEAD_v3_23_NOVENA_FREEZE_CALENDAR_DASHBOARD_C3_FINAL.html",
         "successorGeneratedInChatAt": "2026-10-04T15:06:48Z",
         "successorEvidence": "The v3.23 generation record states that the entire v3.22 prefix was unchanged, but neither v3.22 nor v3.23 bytes, hashes, attachment IDs, or persistent Library objects survive.",
-        "currentRecoveryStatus": "Historical generation and append-only successor lineage are proven, but exact primary bytes remain unavailable."
+        "currentRecoveryStatus": "Historical v3.22 generation and the documented append-only v3.23 successor relationship remain proven, but exact v3.22/v3.23 bytes are unavailable. The newly uploaded v3.4.16 and N3 files were audited and do not supply a primary or append-only successor copy of v3.22.",
+        "uploadedCandidateAudit": {
+          "auditedAt": "2026-10-07",
+          "candidates": [
+            "Ad_Orientem_v3_4_16.html",
+            "Ad_Orientem_NON_MASS_HEAD_v1_NOVENAS_N3_GUIDED.html"
+          ],
+          "searchResult": "Neither uploaded file contains the v3.22 filename/version marker, NOVENA_FREEZE_CALENDAR_DASHBOARD_C2 marker, or the later v3.23 aria-current=\"date\" signature. The files contain related calendar/devotional concepts but do not establish byte identity or preserved-prefix lineage for v3.22.",
+          "conclusion": "NO_PRIMARY_OR_APPEND_ONLY_SUCCESSOR_RECOVERED"
+        }
       }
     }
   ],
