@@ -547,6 +547,100 @@
         "SHR-MUNYONYO-OFFICIAL"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:MX:guadalupe-tepeyac",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "name": "Insigne y Nacional Basílica de Santa María de Guadalupe",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Guadalupe",
+      "origin_summary": "National Marian shrine at Tepeyac in Mexico City, receiving large numbers of pilgrims and centered on devotion to Our Lady of Guadalupe.",
+      "associated_saints": [
+        "Saint Juan Diego"
+      ],
+      "source_ids": [
+        "SHR-GUADALUPE-MX-CONTACT",
+        "PIL-GUADALUPE-MX-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:MX:zapopan-our-lady",
+      "place_id": "place:MX:basilica-zapopan",
+      "name": "Basílica de Nuestra Señora de Zapopan",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Zapopan",
+      "origin_summary": "Historic Marian basilica and destination of the annual Romería returning the image of Our Lady of Zapopan from Guadalajara.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-ZAPOPAN-IDENTITY",
+        "PIL-ZAPOPAN-ROMERIA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:BR:aparecida-our-lady",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "name": "Santuário Nacional de Nossa Senhora Aparecida",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady Aparecida",
+      "origin_summary": "National Marian shrine of Brazil and major pilgrimage centre, with the annual novena and feast of the national patroness culminating on 12 October.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-APARECIDA-CONTACT",
+        "PIL-APARECIDA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:BR:nazare-belem",
+      "place_id": "place:BR:nazare-belem",
+      "name": "Basílica Santuário de Nossa Senhora de Nazaré do Desterro",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Nazareth",
+      "origin_summary": "Archdiocesan Marian shrine in Belém and destination of the Círio de Nazaré pilgrimage cycle.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-NAZARE-BELEM-CONTACT",
+        "PIL-CIRIO-NAZARE-2026"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CO:las-lajas",
+      "place_id": "place:CO:las-lajas-ipiales",
+      "name": "Santuario de Nuestra Señora del Rosario de Las Lajas",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Las Lajas",
+      "origin_summary": "Marian pilgrimage sanctuary in the Guáitara canyon near Ipiales, with a longstanding September pilgrimage and patronal cycle.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-LAS-LAJAS-OFFICIAL",
+        "PIL-LAS-LAJAS-HISTORY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CO:chiquinquira",
+      "place_id": "place:CO:chiquinquira-basilica",
+      "name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of the Rosary of Chiquinquirá",
+      "origin_summary": "Dominican Marian basilica and national pilgrimage centre in Boyacá, with principal annual observances including 9 July.",
+      "associated_saints": [
+        "Saint Dominic"
+      ],
+      "source_ids": [
+        "SHR-CHIQUINQUIRA-DIOCESE",
+        "PIL-CHIQUINQUIRA-JULY9"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -1257,6 +1351,132 @@
         "SHR-MUNYONYO-OFFICIAL"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:MX:guadalupe-destination",
+      "name": "Pilgrimage to the Basilica of Our Lady of Guadalupe",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:MX:guadalupe-tepeyac",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:guadalupe-mx:dec12"
+      ],
+      "scope_note": "National Marian pilgrimage destination at Tepeyac, with the principal Guadalupan pilgrimage and liturgies centered on 12 December.",
+      "source_ids": [
+        "SHR-GUADALUPE-MX-CONTACT",
+        "PIL-GUADALUPE-MX-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:MX:zapopan-destination",
+      "name": "Pilgrimage to Our Lady of Zapopan",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:MX:zapopan-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open Marian pilgrimage destination at the Basilica of Zapopan.",
+      "source_ids": [
+        "SHR-ZAPOPAN-IDENTITY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:MX:zapopan-romeria",
+      "name": "Romería de Zapopan",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:MX:zapopan-our-lady",
+      "route_ids": [
+        "route:MX:guadalajara-zapopan-romeria"
+      ],
+      "temporal_link_ids": [
+        "temporal:zapopan:romeria"
+      ],
+      "scope_note": "Annual 12 October return pilgrimage of the Virgin of Zapopan from Guadalajara Cathedral to the Basilica of Zapopan.",
+      "source_ids": [
+        "PIL-ZAPOPAN-ROMERIA",
+        "SHR-ZAPOPAN-IDENTITY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:BR:aparecida-destination",
+      "name": "Pilgrimage to the National Shrine of Our Lady Aparecida",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:BR:aparecida-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:aparecida:oct12"
+      ],
+      "scope_note": "Brazil's national Marian pilgrimage destination, with the annual novena from 3–12 October culminating in the patronal feast and solemn procession.",
+      "source_ids": [
+        "SHR-APARECIDA-CONTACT",
+        "PIL-APARECIDA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:BR:nazare-destination",
+      "name": "Pilgrimage to the Basilica Sanctuary of Nazaré",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:BR:nazare-belem",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open Marian pilgrimage destination at the Basilica Sanctuary in Belém.",
+      "source_ids": [
+        "SHR-NAZARE-BELEM-CONTACT"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:BR:cirio-nazare",
+      "name": "Círio de Nazaré",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:BR:nazare-belem",
+      "route_ids": [
+        "route:BR:belem-cathedral-nazare"
+      ],
+      "temporal_link_ids": [
+        "temporal:nazare:cirio"
+      ],
+      "scope_note": "Annual Círio pilgrimage cycle in Belém, with the principal procession on the second Sunday of October and related romarias throughout the period.",
+      "source_ids": [
+        "PIL-CIRIO-NAZARE-2026",
+        "SHR-NAZARE-BELEM-CONTACT"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CO:las-lajas-destination",
+      "name": "Pilgrimage to Our Lady of Las Lajas",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CO:las-lajas",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:las-lajas:sep15"
+      ],
+      "scope_note": "Andean Marian pilgrimage destination near Ipiales, with September patronal celebrations centered on 15 September.",
+      "source_ids": [
+        "SHR-LAS-LAJAS-OFFICIAL",
+        "PIL-LAS-LAJAS-HISTORY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CO:chiquinquira-destination",
+      "name": "Pilgrimage to Our Lady of Chiquinquirá",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CO:chiquinquira",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:chiquinquira:july9"
+      ],
+      "scope_note": "National Marian pilgrimage destination in Boyacá, with a principal annual shrine observance on 9 July.",
+      "source_ids": [
+        "SHR-CHIQUINQUIRA-DIOCESE",
+        "PIL-CHIQUINQUIRA-JULY9"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -1437,6 +1657,36 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-NNE-ENYEMAKA-ROSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:MX:guadalajara-zapopan-romeria",
+      "name": "Guadalajara Cathedral to Basilica of Zapopan",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Catedral Metropolitana de Guadalajara",
+      "destination_place_id": "place:MX:basilica-zapopan",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-ZAPOPAN-ROMERIA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:BR:belem-cathedral-nazare",
+      "name": "Belém Cathedral to Basilica Sanctuary of Nazaré",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Catedral Metropolitana de Belém",
+      "destination_place_id": "place:BR:nazare-belem",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-CIRIO-NAZARE-2026"
       ],
       "confidence": "HIGH"
     }
@@ -1916,6 +2166,89 @@
       "source_event_label": "Uganda Martyrs feast and pilgrimage cycle",
       "source_ids": [
         "SHR-MUNYONYO-OFFICIAL"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:guadalupe-mx:dec12",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:MX:guadalupe-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.our_lady_of_guadalupe",
+      "source_event_label": "Feast of Our Lady of Guadalupe at Tepeyac",
+      "source_ids": [
+        "PIL-GUADALUPE-MX-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:zapopan:romeria",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:MX:zapopan-romeria",
+      "relation": "SOURCE_EVENT",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.zapopan_romeria",
+      "source_event_label": "Romería de Zapopan",
+      "source_ids": [
+        "PIL-ZAPOPAN-ROMERIA"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:aparecida:oct12",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:BR:aparecida-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.our_lady_aparecida",
+      "source_event_label": "Feast of Our Lady Aparecida",
+      "source_ids": [
+        "PIL-APARECIDA-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:nazare:cirio",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:BR:cirio-nazare",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Círio de Nazaré — principal procession on the second Sunday of October",
+      "source_ids": [
+        "PIL-CIRIO-NAZARE-2026"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:las-lajas:sep15",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CO:las-lajas-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.las_lajas",
+      "source_event_label": "Our Lady of Las Lajas central September pilgrimage day",
+      "source_ids": [
+        "PIL-LAS-LAJAS-HISTORY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:chiquinquira:july9",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CO:chiquinquira-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.chiquinquira_july9",
+      "source_event_label": "9 July shrine observance of Our Lady of Chiquinquirá",
+      "source_ids": [
+        "PIL-CHIQUINQUIRA-JULY9"
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"
