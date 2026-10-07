@@ -1,0 +1,711 @@
+{
+  "version": "CUSTOMARY_CATHOLIC_LIFE_SALVAGE_V1",
+  "status": "CUSTOMARY_SOT_ANNEX",
+  "created_at": "2026-10-07",
+  "purpose": "Re-home Catholic Life claims that are fundamentally customary, sacramental, relic, sacred-object, parish-rhythm, name-day or church-conduct data. Geographic/custom authority remains explicit.",
+  "domains": {
+    "CUSTOMARY_SOT.CHURCH_BEHAVIOUR": [
+      {
+        "claim_id": "CL02-S01-Q001",
+        "stage_id": "CL02-S01",
+        "stage_title": "Entering",
+        "layer": "PASTORAL",
+        "text": "Enter the church with recollection appropriate to sacred worship.",
+        "source_ids": [
+          "SRC-GIRM-42-44"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR"
+      },
+      {
+        "claim_id": "CL02-S01-Q002",
+        "stage_id": "CL02-S01",
+        "stage_title": "Entering",
+        "layer": "PASTORAL",
+        "text": "Using holy water at the entrance is a sacramental devotional practice, not a condition for entering the church.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR"
+      },
+      {
+        "claim_id": "CL02-S01-Q003",
+        "stage_id": "CL02-S01",
+        "stage_title": "Entering",
+        "layer": "PASTORAL",
+        "text": "The practical first question for Eucharistic reverence is whether and where the Blessed Sacrament is reserved.",
+        "source_ids": [
+          "SRC-MR62-RS-II",
+          "SRC-GIRM-274-275"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR"
+      },
+      {
+        "claim_id": "CL02-S01-Q004",
+        "stage_id": "CL02-S01",
+        "stage_title": "Entering",
+        "layer": "SHARED",
+        "text": "Crossing a church threshold does not itself create a universal genuflection obligation.",
+        "source_ids": [
+          "SRC-MR62-RS-II",
+          "SRC-GIRM-274-275"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR"
+      }
+    ],
+    "CUSTOMARY_SOT.CATHOLIC_GESTURES": [
+      {
+        "claim_id": "CL02-S04-Q001",
+        "stage_id": "CL02-S04",
+        "stage_title": "Signs & Small Gestures",
+        "layer": "SHARED",
+        "text": "The full Sign of the Cross and the three small Gospel crosses are distinct gestures.",
+        "source_ids": [
+          "SRC-MR62-GOSPEL",
+          "SRC-GIRM-134"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES"
+      },
+      {
+        "claim_id": "CL02-S04-Q002",
+        "stage_id": "CL02-S04",
+        "stage_title": "Signs & Small Gestures",
+        "layer": "CURRENT",
+        "text": "Current GIRM explicitly directs the people to make the three small Gospel crosses.",
+        "source_ids": [
+          "SRC-GIRM-134"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES"
+      },
+      {
+        "claim_id": "CL02-S04-Q003",
+        "stage_id": "CL02-S04",
+        "stage_title": "Signs & Small Gestures",
+        "layer": "PROFILE_1962",
+        "text": "The 1962 rubrics explicitly prescribe the Gospel crosses for the relevant sacred ministers.",
+        "source_ids": [
+          "SRC-MR62-GOSPEL"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES"
+      },
+      {
+        "claim_id": "CL02-S04-Q004",
+        "stage_id": "CL02-S04",
+        "stage_title": "Signs & Small Gestures",
+        "layer": "PROFILE_1962",
+        "text": "A priestly 1962 rubric does not by itself establish a universal lay legal obligation to copy the gesture.",
+        "source_ids": [
+          "SRC-MR62-GOSPEL"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES"
+      },
+      {
+        "claim_id": "CL02-S04-Q005",
+        "stage_id": "CL02-S04",
+        "stage_title": "Signs & Small Gestures",
+        "layer": "PASTORAL",
+        "text": "Breast strikes, bows and joined hands should be classified separately as ministerial rubrics, congregational practice or local custom.",
+        "source_ids": [
+          "SRC-MR62-RG-517-525"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES"
+      }
+    ],
+    "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS": [
+      {
+        "claim_id": "CL02-S05-Q001",
+        "stage_id": "CL02-S05",
+        "stage_title": "Moving Around Church",
+        "layer": "CURRENT",
+        "text": "Current Roman norms require genuflection when passing the Blessed Sacrament except where procession rules apply.",
+        "source_ids": [
+          "SRC-GIRM-274-275"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS"
+      },
+      {
+        "claim_id": "CL02-S05-Q002",
+        "stage_id": "CL02-S05",
+        "stage_title": "Moving Around Church",
+        "layer": "PROFILE_1962",
+        "text": "The 1962 celebrant genuflects when passing the place of Eucharistic reservation.",
+        "source_ids": [
+          "SRC-MR62-RS-II"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS"
+      },
+      {
+        "claim_id": "CL02-S05-Q003",
+        "stage_id": "CL02-S05",
+        "stage_title": "Moving Around Church",
+        "layer": "SHARED",
+        "text": "A pew, rail or aisle does not itself create a genuflection trigger.",
+        "source_ids": [
+          "SRC-MR62-RS-II",
+          "SRC-GIRM-274-275"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS"
+      },
+      {
+        "claim_id": "CL02-S05-Q004",
+        "stage_id": "CL02-S05",
+        "stage_title": "Moving Around Church",
+        "layer": "CURRENT",
+        "text": "Processional movement can modify the ordinary pattern of individual genuflection cues.",
+        "source_ids": [
+          "SRC-GIRM-274-275"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS"
+      }
+    ],
+    "CUSTOMARY_SOT.CHURCH_CONDUCT": [
+      {
+        "claim_id": "CL02-S06-Q001",
+        "stage_id": "CL02-S06",
+        "stage_title": "Silence & Conduct",
+        "layer": "CURRENT",
+        "text": "The current Roman liturgy explicitly provides for sacred silence.",
+        "source_ids": [
+          "SRC-GIRM-42-44"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_CONDUCT"
+      },
+      {
+        "claim_id": "CL02-S06-Q002",
+        "stage_id": "CL02-S06",
+        "stage_title": "Silence & Conduct",
+        "layer": "PASTORAL",
+        "text": "Avoid unnecessary conversation that disrupts worship.",
+        "source_ids": [
+          "SRC-GIRM-42-44"
+        ],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_CONDUCT"
+      },
+      {
+        "claim_id": "CL02-S06-Q003",
+        "stage_id": "CL02-S06",
+        "stage_title": "Silence & Conduct",
+        "layer": "PASTORAL",
+        "text": "Silence devices during worship when they would cause disruption.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.CHURCH_CONDUCT"
+      }
+    ],
+    "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS": [
+      {
+        "claim_id": "CL02-S07-Q001",
+        "stage_id": "CL02-S07",
+        "stage_title": "Traditional & Local Customs",
+        "layer": "PROFILE_1962",
+        "text": "The 1917 Code in force in the 1962 context required women assisting at sacred rites to cover the head.",
+        "source_ids": [
+          "SRC-CIC17-1262"
+        ],
+        "original_destination": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS"
+      },
+      {
+        "claim_id": "CL02-S07-Q002",
+        "stage_id": "CL02-S07",
+        "stage_title": "Traditional & Local Customs",
+        "layer": "CURRENT",
+        "text": "Current universal Latin canon law does not reproduce the former 1917 head-covering obligation.",
+        "source_ids": [
+          "SRC-CIC83-006",
+          "SRC-CIC17-1262"
+        ],
+        "original_destination": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS"
+      },
+      {
+        "claim_id": "CL02-S07-Q003",
+        "stage_id": "CL02-S07",
+        "stage_title": "Traditional & Local Customs",
+        "layer": "PASTORAL",
+        "text": "The absence of the former universal obligation is not a prohibition of voluntary veiling.",
+        "source_ids": [
+          "SRC-CIC83-006"
+        ],
+        "original_destination": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS"
+      }
+    ],
+    "CUSTOMARY_SOT.SACRAMENTALS": [
+      {
+        "claim_id": "CL08-S01-Q001",
+        "stage_id": "CL08-S01",
+        "stage_title": "What Is a Sacramental?",
+        "layer": "CURRENT",
+        "text": "Current canon law defines sacramentals as sacred signs which signify spiritual effects and obtain them through the Church's intercession.",
+        "source_ids": [
+          "SRC-CIC83-1166-1171"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S01-Q002",
+        "stage_id": "CL08-S01",
+        "stage_title": "What Is a Sacramental?",
+        "layer": "PASTORAL",
+        "text": "A sacramental is not one of the seven sacraments.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S01-Q003",
+        "stage_id": "CL08-S01",
+        "stage_title": "What Is a Sacramental?",
+        "layer": "PASTORAL",
+        "text": "Sacramentals include more than blessed objects alone and can include sacred signs, blessings and actions.",
+        "source_ids": [
+          "SRC-CIC83-1166-1171"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S01-Q004",
+        "stage_id": "CL08-S01",
+        "stage_title": "What Is a Sacramental?",
+        "layer": "CURRENT",
+        "text": "Who may administer a sacramental depends on the liturgical books and competent authority; not every sacramental is restricted in exactly the same way.",
+        "source_ids": [
+          "SRC-CIC83-1166-1171"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S01-Q005",
+        "stage_id": "CL08-S01",
+        "stage_title": "What Is a Sacramental?",
+        "layer": "PASTORAL",
+        "text": "Sacramentals are not automatic magical mechanisms independent of faith and the Church's prayer.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S02-Q001",
+        "stage_id": "CL08-S02",
+        "stage_title": "Holy Water, Candles & Blessed Branches",
+        "layer": "PASTORAL",
+        "text": "Holy water is a genuine sacramental used in Catholic worship and devotion.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S02-Q002",
+        "stage_id": "CL08-S02",
+        "stage_title": "Holy Water, Candles & Blessed Branches",
+        "layer": "PASTORAL",
+        "text": "Blessed salt is a genuine traditional sacramental found in the Roman Ritual; it is not a required Catholic home item.",
+        "source_ids": [
+          "SRC-ROMRIT"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S02-Q003",
+        "stage_id": "CL08-S02",
+        "stage_title": "Holy Water, Candles & Blessed Branches",
+        "layer": "PASTORAL",
+        "text": "Candles blessed in the Candlemas tradition are sacramentals and should not be treated as talismans.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S02-Q004",
+        "stage_id": "CL08-S02",
+        "stage_title": "Holy Water, Candles & Blessed Branches",
+        "layer": "PASTORAL",
+        "text": "Blessed branches from Palm Sunday can be taken home for devotional use according to local custom.",
+        "source_ids": [
+          "SRC-CEF-PALM-BRANCHES"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S02-Q005",
+        "stage_id": "CL08-S02",
+        "stage_title": "Holy Water, Candles & Blessed Branches",
+        "layer": "CUSTOM",
+        "text": "In France, Palm Sunday branches may be boxwood, olive, laurel or palm according to region, and blessed branches are commonly taken home for domestic devotional use.",
+        "source_ids": [
+          "SRC-CEF-PALM-BRANCHES"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S03-Q001",
+        "stage_id": "CL08-S03",
+        "stage_title": "Rosaries, Crucifixes & Images",
+        "layer": "PASTORAL",
+        "text": "A physical rosary and the prayer of the Rosary are related but distinct.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S03-Q002",
+        "stage_id": "CL08-S03",
+        "stage_title": "Rosaries, Crucifixes & Images",
+        "layer": "PASTORAL",
+        "text": "A crucifix is a sacred devotional object and is not a talisman.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S03-Q003",
+        "stage_id": "CL08-S03",
+        "stage_title": "Rosaries, Crucifixes & Images",
+        "layer": "CURRENT",
+        "text": "Catholic veneration of sacred images is distinct from the adoration due to God.",
+        "source_ids": [
+          "SRC-CIC83-1186-1190"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S03-Q004",
+        "stage_id": "CL08-S03",
+        "stage_title": "Rosaries, Crucifixes & Images",
+        "layer": "PASTORAL",
+        "text": "Calling an image an icon, statue or picture does not by itself establish a higher theological rank.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S03-Q005",
+        "stage_id": "CL08-S03",
+        "stage_title": "Rosaries, Crucifixes & Images",
+        "layer": "PASTORAL",
+        "text": "A sacred image can be used devotionally even when the user does not know that it has been blessed.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S06-Q002",
+        "stage_id": "CL08-S06",
+        "stage_title": "Older & Unfamiliar Sacramentals",
+        "layer": "PASTORAL",
+        "text": "Blessed salt belongs to genuine traditional Roman sacramental practice.",
+        "source_ids": [
+          "SRC-ROMRIT"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S06-Q003",
+        "stage_id": "CL08-S06",
+        "stage_title": "Older & Unfamiliar Sacramentals",
+        "layer": "HISTORICAL",
+        "text": "Historical Agnus Dei wax discs were papally blessed sacramentals bearing the Lamb of God.",
+        "source_ids": [
+          "SRC-HIST-AGNUS-DEI"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      },
+      {
+        "claim_id": "CL08-S06-Q006",
+        "stage_id": "CL08-S06",
+        "stage_title": "Older & Unfamiliar Sacramentals",
+        "layer": "PASTORAL",
+        "text": "Visual identification cannot establish whether an object was actually blessed or its historical provenance.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRAMENTALS"
+      }
+    ],
+    "CUSTOMARY_SOT.RELICS": [
+      {
+        "claim_id": "CL08-S05-Q001",
+        "stage_id": "CL08-S05",
+        "stage_title": "Relics",
+        "layer": "CURRENT",
+        "text": "The Church regulates the veneration and protection of sacred relics.",
+        "source_ids": [
+          "SRC-CIC83-1186-1190",
+          "SRC-CDF-RELICS-2017"
+        ],
+        "original_destination": "CUSTOMARY_SOT.RELICS"
+      },
+      {
+        "claim_id": "CL08-S05-Q002",
+        "stage_id": "CL08-S05",
+        "stage_title": "Relics",
+        "layer": "PASTORAL",
+        "text": "First-, second- and third-class relic terminology is widespread popular terminology and should not be presented as the current formal administrative taxonomy.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.RELICS"
+      },
+      {
+        "claim_id": "CL08-S05-Q003",
+        "stage_id": "CL08-S05",
+        "stage_title": "Relics",
+        "layer": "CURRENT",
+        "text": "The 2017 instruction distinguishes significant and non-significant relics for current administrative purposes.",
+        "source_ids": [
+          "SRC-CDF-RELICS-2017"
+        ],
+        "original_destination": "CUSTOMARY_SOT.RELICS"
+      },
+      {
+        "claim_id": "CL08-S05-Q004",
+        "stage_id": "CL08-S05",
+        "stage_title": "Relics",
+        "layer": "CURRENT",
+        "text": "Visual appearance or a photograph does not establish canonical authenticity; ecclesiastical provenance and certification matter.",
+        "source_ids": [
+          "SRC-CDF-RELICS-2017"
+        ],
+        "original_destination": "CUSTOMARY_SOT.RELICS"
+      },
+      {
+        "claim_id": "CL08-S05-Q005",
+        "stage_id": "CL08-S05",
+        "stage_title": "Relics",
+        "layer": "PASTORAL",
+        "text": "Relics should not be treated as ordinary devotional merchandise.",
+        "source_ids": [
+          "SRC-CIC83-1186-1190"
+        ],
+        "original_destination": "CUSTOMARY_SOT.RELICS"
+      },
+      {
+        "claim_id": "CL08-S05-Q006",
+        "stage_id": "CL08-S05",
+        "stage_title": "Relics",
+        "layer": "PASTORAL",
+        "text": "A reliquary near an altar does not prove the presence of an altar relic.",
+        "source_ids": [
+          "SRC-CIC83-1235-1239"
+        ],
+        "original_destination": "CUSTOMARY_SOT.RELICS"
+      }
+    ],
+    "CUSTOMARY_SOT.SACRED_OBJECT_CARE": [
+      {
+        "claim_id": "CL08-S07-Q001",
+        "stage_id": "CL08-S07",
+        "stage_title": "Caring for Sacred Objects",
+        "layer": "CURRENT",
+        "text": "Objects dedicated or blessed for divine worship are to be treated reverently and not put to profane or inappropriate use.",
+        "source_ids": [
+          "SRC-CIC83-1166-1171"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE"
+      },
+      {
+        "claim_id": "CL08-S07-Q002",
+        "stage_id": "CL08-S07",
+        "stage_title": "Caring for Sacred Objects",
+        "layer": "PASTORAL",
+        "text": "Reverence does not require indefinite retention of every broken devotional object.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE"
+      },
+      {
+        "claim_id": "CL08-S07-Q003",
+        "stage_id": "CL08-S07",
+        "stage_title": "Caring for Sacred Objects",
+        "layer": "PASTORAL",
+        "text": "Burning or burying worn blessed objects is a longstanding reverent custom, not a universal current canon governing every blessed object.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE"
+      },
+      {
+        "claim_id": "CL08-S07-Q004",
+        "stage_id": "CL08-S07",
+        "stage_title": "Caring for Sacred Objects",
+        "layer": "PASTORAL",
+        "text": "Questions involving sacred vessels should be referred to the Church rather than handled as ordinary household disposal.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE"
+      },
+      {
+        "claim_id": "CL08-S07-Q005",
+        "stage_id": "CL08-S07",
+        "stage_title": "Caring for Sacred Objects",
+        "layer": "CURRENT",
+        "text": "Relics require preservation, authentication and ecclesial oversight rather than ordinary disposal.",
+        "source_ids": [
+          "SRC-CDF-RELICS-2017"
+        ],
+        "original_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE"
+      }
+    ],
+    "CUSTOMARY_SOT.PARISH_RHYTHMS": [
+      {
+        "claim_id": "CL09-S07-Q001",
+        "stage_id": "CL09-S07",
+        "stage_title": "Parish Rhythms",
+        "layer": "PASTORAL",
+        "text": "Forty Hours is an extended Eucharistic devotion organised ecclesially rather than a private app timer.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.PARISH_RHYTHMS"
+      },
+      {
+        "claim_id": "CL09-S07-Q002",
+        "stage_id": "CL09-S07",
+        "stage_title": "Parish Rhythms",
+        "layer": "PASTORAL",
+        "text": "Parish missions are concentrated periods of preaching, prayer, Confession and renewal for a community.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.PARISH_RHYTHMS"
+      },
+      {
+        "claim_id": "CL09-S07-Q003",
+        "stage_id": "CL09-S07",
+        "stage_title": "Parish Rhythms",
+        "layer": "PASTORAL",
+        "text": "A retreat and a parish mission are related but distinct forms of spiritual renewal.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.PARISH_RHYTHMS"
+      }
+    ],
+    "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS": [
+      {
+        "claim_id": "CL10-S02-Q001",
+        "stage_id": "CL10-S02",
+        "stage_title": "Christian Names & Personal Patronage",
+        "layer": "PASTORAL",
+        "text": "Christian naming traditions often connect names with saints, biblical figures or Christian mysteries.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS"
+      },
+      {
+        "claim_id": "CL10-S02-Q002",
+        "stage_id": "CL10-S02",
+        "stage_title": "Christian Names & Personal Patronage",
+        "layer": "PASTORAL",
+        "text": "A name such as John, Mary or Francis can correspond to more than one saint or mystery and should not be automatically mapped to one patron.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS"
+      },
+      {
+        "claim_id": "CL10-S02-Q004",
+        "stage_id": "CL10-S02",
+        "stage_title": "Christian Names & Personal Patronage",
+        "layer": "PASTORAL",
+        "text": "Multiple Christian names can correspond to multiple devotional patrons; the app should not assume the first name is the only relevant one.",
+        "source_ids": [],
+        "original_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS"
+      },
+      {
+        "claim_id": "CL10-S02-Q005",
+        "stage_id": "CL10-S02",
+        "stage_title": "Christian Names & Personal Patronage",
+        "layer": "CUSTOM",
+        "text": "French Catholic sources document family celebration of the feast of a person's patron or name saint as a genuine custom.",
+        "source_ids": [
+          "SRC-CEF-NAME-PATRON"
+        ],
+        "original_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-CDF-RELICS-2017",
+      "title": "Relics in the Church: Authenticity and Conservation",
+      "authority_type": "DICASTERY_INSTRUCTION",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/csaints/documents/rc_con_csaints_doc_20171208_istruzione-reliquie_en.html"
+    },
+    {
+      "source_id": "SRC-CEF-NAME-PATRON",
+      "title": "Conférence des évêques de France — saints and names",
+      "authority_type": "EPISCOPAL_CONFERENCE_CUSTOM_WITNESS",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/toussaint/408752-nominis-fete-saints-prenoms/"
+    },
+    {
+      "source_id": "SRC-CEF-PALM-BRANCHES",
+      "title": "Conférence des évêques de France — Dimanche des Rameaux",
+      "authority_type": "EPISCOPAL_CONFERENCE_CUSTOM_WITNESS",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/paques-et-la-semaine-sainte/369510-le-dimanche-des-rameaux/"
+    },
+    {
+      "source_id": "SRC-CIC17-1262",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC83-006",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1166-1171",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1186-1190",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1235-1239",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-GIRM-134",
+      "title": "General Instruction of the Roman Missal",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+    },
+    {
+      "source_id": "SRC-GIRM-274-275",
+      "title": "General Instruction of the Roman Missal",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+    },
+    {
+      "source_id": "SRC-GIRM-42-44",
+      "title": "General Instruction of the Roman Missal",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+    },
+    {
+      "source_id": "SRC-HIST-AGNUS-DEI",
+      "title": "Historical Agnus Dei wax sacramental",
+      "authority_type": "HISTORICAL_SECONDARY",
+      "status": "NORMALIZED_SECONDARY",
+      "canonical_url": "https://www.newadvent.org/cathen/01220a.htm"
+    },
+    {
+      "source_id": "SRC-MR62-GOSPEL",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-MR62-RG-517-525",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-MR62-RS-II",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-ROMRIT",
+      "title": "Rituale Romanum Pauli V Pontificis Maximi jussu editum aliorumque Pontificum cura recognitum atque ad normam Codicis Juris Canonici accommodatum SS.mi D.N. Pii Papae XII auctoritate ordinatum et auctum, Editio typica, 1952",
+      "authority_type": "APPROVED_RITUAL",
+      "status": "PINNED_1952_RITUAL_TRANSLATION",
+      "canonical_url": "https://www.ewtn.com/catholicism/library/roman-ritual-part-i-11882"
+    }
+  ]
+}
