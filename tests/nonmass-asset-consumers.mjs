@@ -30,6 +30,7 @@ assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
   "today.saint":"ao-refined-saint-of-day",
   "learn.rites.sick":"ao-refined-help",
   "learn.rites.baptism":"ao-rich-guides",
+  "learn.rites.confirmation":"ao-rich-guides",
   "learn.rites.matrimony":"ao-rich-guides",
   "learn.serve_mass.responses":"ao-refined-study",
   "learn.scapular":"ao-rich-our-lady-marian-devotions",

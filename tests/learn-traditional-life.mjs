@@ -11,6 +11,7 @@ import { LEARN_MODULE_IDS } from "../src/learn/presentation.js";
 const expected=[
   "learn.rites.sick",
   "learn.rites.baptism",
+  "learn.rites.confirmation",
   "learn.rites.matrimony",
   "learn.serve_mass.responses",
   "learn.scapular",
@@ -23,6 +24,10 @@ assert.equal(LOW_MASS_RESPONSES_V381[0].lat,"℟. Ad Deum, qui lætíficat iuven
 assert.equal(LOW_MASS_RESPONSES_V381.at(-1).lat,"℟. Deo grátias.");
 assert.equal(SEASONAL_PRACTICES_V381.length,10,"seasonal lay-practice list changed");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.ritual1952,/alcuinus\.org/);
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.pontifical1962,/books\.google\.com/,"Confirmation formation lost the 1962 Pontifical witness");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentConfirmation,/vatican\.va/,"Confirmation formation lost current Catechism authority");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentConfirmationSponsor,/vatican\.va/,"Confirmation sponsor guidance lost current canon-law authority");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.frenchConfirmationCatechism,/amicidilazzaro\.it\/fr/,"Confirmation lost its French-world catechetical witness");
 const visibleTraditional=expected.filter(id=>id!=="learn.seasonal_rites");
 assert.ok(visibleTraditional.every(id=>LEARN_MODULE_IDS.includes(id)),"recovered traditional routes are not visible in modular Learn");
 assert.equal(LEARN_MODULE_IDS.includes("learn.seasonal_rites"),false,"final v38.4 donor dedupe requires Seasonal Catholic Practice to remain a compatibility alias, not a duplicate Learn launcher");
@@ -44,6 +49,23 @@ assert.match(runtime,/route:"pray\.dying_companion"/,"Serious Illness guide no l
 assert.match(runtime,/stop using prayers addressed to the dying person and move to suffrage for the departed/,"Serious Illness guide lost the death-state boundary");
 assert.match(runtime,/dead_eternal_rest_singular/,"Serious Illness after-death section lost singular Eternal Rest");
 
+assert.match(runtime,/TRADITIONAL ROMAN ORDER · WHAT YOU MAY SEE/,"Baptism/Confirmation lost the traditional lay-facing order map");
+assert.match(runtime,/church door with the child’s name and request for faith/,"Baptism lost the traditional Roman entrance sequence");
+assert.match(runtime,/Ephpheta, the renunciations and the anointing with the Oil of Catechumens/,"Baptism lost the pre-font traditional sequence");
+assert.match(runtime,/Sacred Chrism, the white garment and the lighted candle/,"Baptism lost the post-baptismal traditional signs");
+assert.match(runtime,/Emergency Baptism · only in real necessity/,"Baptism lost the emergency-only boundary");
+assert.match(runtime,/I baptize you in the name of the Father, and of the Son, and of the Holy Spirit/,"Emergency Baptism lost the exact Trinitarian form");
+assert.match(runtime,/godparent’s task is not ceremonial only/,"Baptism lost the continuing godparent responsibility");
+
+assert.match(runtime,/learn\.rites\.confirmation/,"Confirmation route is not owned by traditional Learn");
+assert.match(runtime,/Confirmation · Candidate & Sponsor/,"Confirmation module title disappeared");
+assert.match(runtime,/seven gifts of the Holy Spirit/,"Confirmation lost the traditional invocation over the confirmands");
+assert.match(runtime,/places the right hand on the candidate’s right shoulder/,"Confirmation lost the traditional sponsor position");
+assert.match(runtime,/light touch on the cheek with the sign of peace/,"Confirmation lost the traditional peace gesture");
+assert.match(runtime,/OLD PONTIFICAL RUBRICS ARE NOT AUTOMATIC CURRENT RULES/,"Confirmation lost the historical/current authority guard");
+assert.match(runtime,/fasting, forehead bands and older sponsor rules/,"Confirmation no longer identifies historical Pontifical details as historical");
+assert.doesNotMatch(runtime,/Signo te signo crucis|confirmo te chrismate salutis/,"Lay Confirmation guide leaked the celebrant's sacramental formula");
+
 assert.match(runtime,/Absolution at the bier or catafalque is actually appointed/,"funeral formation no longer preserves explicit Absolution activation");
 assert.match(runtime,/In paradisum accompanies the departure/,"funeral formation lost the burial-procession handoff");
 assert.doesNotMatch(runtime,/Ego conjungo vos|With this ring I thee wed/,"lay formation leaked a country-specific or celebrant ritual script");
@@ -61,9 +83,10 @@ assert.match(presentation,/Traditional Catholic life/);
 assert.doesNotMatch(presentation,/id:"learn\.seasonal_rites"/,"final v38.4 duplicate seasonal discovery card returned to Learn");
 assert.match(assets,/"learn\.rites\.sick"\s*:\s*"ao-refined-help"/);
 assert.match(assets,/"learn\.rites\.baptism"\s*:\s*"ao-rich-guides"/);
+assert.match(assets,/"learn\.rites\.confirmation"\s*:\s*"ao-rich-guides"/);
 assert.match(assets,/"learn\.rites\.matrimony"\s*:\s*"ao-rich-guides"/);
 assert.match(assets,/"learn\.serve_mass\.responses"\s*:\s*"ao-refined-study"/);
 assert.match(assets,/"learn\.scapular"\s*:\s*"ao-rich-our-lady-marian-devotions"/);
 assert.match(assets,/"learn\.seasonal_rites"\s*:\s*"ao-refined-calendar-upcoming"/);
 
-console.log("PASS modular v38.1 traditional Learn extraction with rite-formation convergence");
+console.log("PASS modular v38.2 traditional Learn sacramental-life formation convergence");
