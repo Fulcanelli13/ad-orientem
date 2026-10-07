@@ -1,0 +1,164 @@
+{
+  "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
+  "provider": "ICKSP",
+  "generated_at": "2026-10-07T10:37:20.141Z",
+  "total": 27,
+  "existing_valid": 0,
+  "accepted": 3,
+  "unresolved": 24,
+  "existing_invalid": 0,
+  "by_precision": {
+    "building": 3,
+    "address": 0,
+    "street": 0,
+    "locality": 0,
+    "region": 0,
+    "unknown": 0
+  },
+  "unresolved_records": [
+    {
+      "venue_id": "ao-icksp-institute-of-christ-the-king-bay-area-most-holy-rosary-chapel-st-vincent-s-school-for-boys-1-st-vincent-s-drive-0",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Institute of Christ the King - Bay Area, Most Holy Rosary Chapel, St. Vincent's School for Boys, 1 St. Vincent's Drive",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-immaculate-heart-of-mary-oratory-temporary-chapel-address-immaculate-heart-of-mary-oratory-1101-s-winchester-boulevard-1",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Immaculate Heart of Mary Oratory, Immaculate Heart of Mary Oratory, 1101 S. Winchester Boulevard",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-patrick-parish-and-oratory-50-charles-street-waterbury-ct-06708-2",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Patrick Parish and Oratory, 50 Charles Street, Waterbury, CT 06708",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-epiphany-of-our-lord-shrine-church-address-2510-east-hanna-ave-tampa-fl-33610-3",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Epiphany of Our Lord Shrine, , 2510 East Hanna Ave, Tampa, FL 33610",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Holy Family Log Church, 116 Church Street, Cahokia, Illinois 62206",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-shrine-of-christ-the-king-sovereign-priest-institute-of-christ-the-king-6415-south-woodlawn-avenue-chicago-illinois-60637-3817-5",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Shrine of Christ the King Sovereign Priest, Institute of Christ the King, 6415 South Woodlawn Avenue, Chicago, Illinois 60637-3817",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-joseph-oratory-st-joseph-oratory-at-our-lady-of-czestochowa-shrine-5755-pennsylvania-street-7",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Joseph Oratory, St. Joseph Oratory, (at Our Lady of Częstochowa Shrine), 5755 Pennsylvania Street",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-paul-oratory-1060-main-st-warren-ma-01083-9",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Paul Oratory, 1060 Main St., Warren, MA 01083",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-old-st-patrick-oratory-old-st-patrick-oratory-806-cherry-street-kansas-city-10",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Old St. Patrick Oratory, Old St. Patrick Oratory, 806 Cherry Street, Kansas City",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-oratory-of-st-joseph-5450-equity-ave-reno-nv-89502-12",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Oratory of St. Joseph, 5450 Equity Ave. Reno, NV 89502",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-anthony-of-padua-oratory-1360-pleasant-valley-way-west-orange-nj-07052-13",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Anthony of Padua Oratory, 1360 Pleasant Valley Way, West Orange, NJ 07052",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Mary of the Assumption Parish and Shrine, 103 West 7th Street, Oswego, NY 13126",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-josaphat-oratory-34-32-210th-street-bayside-new-york-11361-15",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Josaphat Oratory, 34-32 210th Street, Bayside, New York 11361",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-leo-oratory-221-hanford-st-columbus-oh-43206-16",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Leo Oratory, 221 Hanford St, Columbus, OH 43206",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-immaculate-conception-oratory-4129-superior-ave-cleveland-oh-44103-17",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Immaculate Conception Oratory, 4129 Superior Ave, Cleveland, OH 44103",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-most-precious-blood-of-jesus-parish-3250-california-avenue-pittsburgh-pennsylvania-15212-2362-18",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Most Precious Blood of Jesus Parish, 3250 California Avenue, Pittsburgh, Pennsylvania 15212-2362",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-patrick-s-oratory-211-n-maple-ave-green-bay-wisconsin-54303-19",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Patrick's Oratory, 211 N. Maple Ave., Green Bay, Wisconsin 54303",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-stanislaus-oratory-524-w-historic-mitchell-street-milwaukee-wisconsin-53204-20",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Stanislaus Oratory, 524 W. Historic Mitchell Street, Milwaukee, Wisconsin 53204",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-ss-cyril-methodius-church-822-new-jersey-ave-sheboygan-wi-53081-please-direct-correspondence-to-the-institute-s-oratory-in-milwaukee-wi-21",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Ss. Cyril & Methodius Church, 822 New Jersey Ave, Sheboygan, WI 53081",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-st-mary-s-oratory-325-grand-avenue-wausau-wisconsin-54403-mailing-address-22",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "St. Mary's Oratory, 325 Grand Avenue, Wausau, Wisconsin 54403, Mailing Address:",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-basilica-dei-santi-celso-e-giuliano-via-del-banco-di-santo-spirito-5-23",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Basilica dei Santi Celso e Giuliano, Via del Banco di Santo Spirito, 5",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Chiesa dei Santi Michele e Gaetano, Piazza Antinori",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-international-seminary-of-saint-philip-neri-via-di-gricigliano-52-i-50065-sieci-fi-25",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "International Seminary of Saint Philip Neri, Via di Gricigliano, 52, I-50065 Sieci (FI)",
+      "candidates": []
+    },
+    {
+      "venue_id": "ao-icksp-chiesa-di-san-sebastiano-piazza-ilio-barontini-livorno-26",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "query": "Chiesa di San Sebastiano, Piazza Ilio Barontini, Livorno",
+      "candidates": []
+    }
+  ]
+}

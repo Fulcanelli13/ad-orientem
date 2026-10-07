@@ -1,4 +1,320 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.9194405,
+          45.4159709
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-thiviers-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-7",
+        "name": "Thiviers",
+        "venue_type": "other",
+        "country_code": "FR",
+        "city": "Thiviers",
+        "community_id": "IBP",
+        "precision": "building",
+        "approximate": false,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4829321,
+          41.8933203
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-rome-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-rome-9",
+        "name": "Rome",
+        "venue_type": "other",
+        "country_code": "IT",
+        "city": "Rome",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.2420179,
+          52.3468689
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-wo-omin-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-15",
+        "name": "Wołomin",
+        "venue_type": "other",
+        "country_code": "PL",
+        "city": "Wołomin",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.2155678,
+          52.1284934
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-jozefow-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-16",
+        "name": "Józefów",
+        "venue_type": "other",
+        "country_code": "PL",
+        "city": "Józefów",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.2686901,
+          50.7494569
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-olsztyn-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-17",
+        "name": "Olsztyn",
+        "venue_type": "other",
+        "country_code": "PL",
+        "city": "Olsztyn",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.3606487,
+          38.5682451
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-ferreira-de-capelins-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-19",
+        "name": "Ferreira de Capelins",
+        "venue_type": "other",
+        "country_code": "PT",
+        "city": "Ferreira de Capelins",
+        "community_id": "IBP",
+        "precision": "street",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.6333824,
+          -23.5506507
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-sao-paulo-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-sao-paulo-20",
+        "name": "São Paulo",
+        "venue_type": "other",
+        "country_code": "BR",
+        "city": "São Paulo",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.3735044,
+          -22.7433969
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-toledo-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-24",
+        "name": "Toledo",
+        "venue_type": "other",
+        "country_code": "BR",
+        "city": "Toledo",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50.9946035,
+          -29.6431332
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-sapiranga-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-25",
+        "name": "Sapiranga",
+        "venue_type": "other",
+        "country_code": "BR",
+        "city": "Sapiranga",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.5494815,
+          -27.5972029
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-florianopolis-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-26",
+        "name": "Florianópolis",
+        "venue_type": "other",
+        "country_code": "BR",
+        "city": "Florianópolis",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1254368,
+          5.7810313
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-paipa-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-28",
+        "name": "Paipa",
+        "venue_type": "other",
+        "country_code": "CO",
+        "city": "Paipa",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.79745,
+          46.1124298
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-moncton-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-30",
+        "name": "Moncton",
+        "venue_type": "other",
+        "country_code": "CA",
+        "city": "Moncton",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.5813539,
+          0.3177137
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-kampala-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-kampala-31",
+        "name": "Kampala",
+        "venue_type": "other",
+        "country_code": "UG",
+        "city": "Kampala",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          147.1392629,
+          -41.433389
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-launceston-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-32",
+        "name": "Launceston",
+        "venue_type": "other",
+        "country_code": "AU",
+        "city": "Launceston",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.2050397,
+          -33.8890382
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-sydney-https-www-institutdubonpasteur-org-nos-apostolats-lieux-dapostolat-dans-le-monde-33",
+        "name": "Sydney",
+        "venue_type": "other",
+        "country_code": "AU",
+        "city": "Sydney",
+        "community_id": "IBP",
+        "precision": "locality",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    }
+  ]
 }

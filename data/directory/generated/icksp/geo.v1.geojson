@@ -1,4 +1,68 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.0984421,
+          42.2720574
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-icksp-st-mary-oratory-517-elm-st-rockford-il-61102-6",
+        "name": "St. Mary Oratory",
+        "venue_type": "oratory",
+        "country_code": "US",
+        "city": null,
+        "community_id": "ICKSP",
+        "precision": "building",
+        "approximate": false,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3768603,
+          30.2318623
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-icksp-st-francis-de-sales-oratory-802-s-huntington-sulphur-la-70663-8",
+        "name": "St. Francis de Sales Oratory",
+        "venue_type": "oratory",
+        "country_code": "US",
+        "city": null,
+        "community_id": "ICKSP",
+        "precision": "building",
+        "approximate": false,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2262096,
+          38.6041963
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-icksp-st-francis-de-sales-oratory-2653-ohio-avenue-st-louis-missouri-63118-11",
+        "name": "St. Francis de Sales Oratory",
+        "venue_type": "oratory",
+        "country_code": "US",
+        "city": null,
+        "community_id": "ICKSP",
+        "precision": "building",
+        "approximate": false,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    }
+  ]
 }

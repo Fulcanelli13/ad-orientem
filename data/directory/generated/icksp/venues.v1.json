@@ -355,10 +355,17 @@
         "formatted": "517 Elm St,, Rockford, IL 61102"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 42.2720574,
+        "lng": -89.0984421,
+        "precision": "building",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:way:823982027",
+        "matched_country_code": "US",
+        "geocoded_at": "2026-10-07T10:37:27.996Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 1,
+        "query_fingerprint": "0ee7a26f88ecb759c375e0bb98884033d28f2930ad62c266dc2230f8da7bcfc0"
       },
       "diocese": {
         "diocese_id": null,
@@ -461,10 +468,17 @@
         "formatted": "802 S Huntington, Sulphur LA 70663"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 30.2318623,
+        "lng": -93.3768603,
+        "precision": "building",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:way:1355844466",
+        "matched_country_code": "US",
+        "geocoded_at": "2026-10-07T10:37:29.896Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 1,
+        "query_fingerprint": "6da13c5fc348772a7b942d72f810375dea38d0a4663bbc1e8ff9d0e3f344e01a"
       },
       "diocese": {
         "diocese_id": null,
@@ -624,10 +638,17 @@
         "formatted": "2653 Ohio Avenue St. Louis, Missouri 63118"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 38.6041963,
+        "lng": -90.2262096,
+        "precision": "building",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:way:139761891",
+        "matched_country_code": "US",
+        "geocoded_at": "2026-10-07T10:37:33.590Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 1,
+        "query_fingerprint": "debab27d266bbd27c45eff14f2c22930fd3a1cb4d63d48cd183187e6491189c9"
       },
       "diocese": {
         "diocese_id": null,
@@ -1472,5 +1493,6 @@
       ],
       "upstream_updated_at": null
     }
-  ]
+  ],
+  "geocoded_at": "2026-10-07T10:37:49.617Z"
 }
