@@ -670,6 +670,19 @@ function declutterRosaryDonor(r){
    }
  });
  r.querySelectorAll('[data-r23-overview-open],#r23-overview-sheet').forEach(node=>node.remove());
+ r.querySelectorAll('.lab-view-head .aoModuleHome,.lab-view-head .lab-lang').forEach(node=>{
+   node.hidden=true;node.setAttribute('aria-hidden','true');node.dataset.aoRosaryRedundant='true';
+ });
+ r.querySelectorAll('.lab-prayer-flip[data-pb-flip]').forEach(host=>{
+   if(host.dataset.aoRosaryLanguageDefault==='vernacular')return;
+   const latin=host.querySelector('[data-pb-latin]'),vern=host.querySelector('[data-pb-vern]');
+   if(!latin||!vern)return;
+   host.dataset.aoRosaryLanguageDefault='vernacular';
+   host.dataset.face='vernacular';
+   latin.hidden=true;vern.hidden=false;
+   host.setAttribute('aria-pressed','false');
+   host.setAttribute('aria-label',L('Show Latin','Afficher le latin'));
+ });
 }
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
