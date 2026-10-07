@@ -102,6 +102,7 @@
     "test:pray-focus": "node tests/pray-focus.mjs",
     "test:pray-traditional": "node tests/pray-traditional-life.mjs",
     "test:learn-traditional": "node tests/learn-traditional-life.mjs",
+    "test:donor-visual": "node tests/nonmass-donor-reference-e2e.mjs",
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs"
   },
   "devDependencies": {
