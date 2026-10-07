@@ -691,12 +691,12 @@ try{
     const opened=await page.evaluate(route=>globalThis.AO_LEARN_APP_V1?.openModule?.(route),route);
     assert.equal(opened,true,route+" could not be opened from modular Learn");
     await page.waitForFunction(route=>globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().open===true&&globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().route===route,route,{timeout:5000});
-    assert.equal(await page.locator("#ao-learn-traditional-life [data-ao-tradlearn-back]").count(),1,route+" lost donor Back");
-    assert.equal(await page.locator("#ao-learn-traditional-life [data-ao-tradlearn-close]").count(),1,route+" lost donor Close");
-    assert.equal((await page.locator("#ao-learn-traditional-life .aoLearnTradTop small").textContent())?.trim(),"Lay Companion",route+" lost the v38.1 donor shell identity");
+    assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").count(),1,route+" lost donor Back");
+    assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").count(),1,route+" lost donor Close");
+    assert.equal((await page.locator("#ao-learn-traditional-root .aoLearnTradTop small").textContent())?.trim(),"Lay Companion",route+" lost the v38.1 donor shell identity");
     await shot(name);
-    await page.locator("#ao-learn-traditional-life [data-ao-tradlearn-close]").click();
-    await page.waitForFunction(()=>!document.getElementById("ao-learn-traditional-life")&&globalThis.AO_LEARN_APP_V1?.status?.().child===null,null,{timeout:5000});
+    await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").click();
+    await page.waitForFunction(()=>!document.getElementById("ao-learn-traditional-root")&&globalThis.AO_LEARN_APP_V1?.status?.().child===null,null,{timeout:5000});
     await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
   }
 
