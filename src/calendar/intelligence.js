@@ -2,6 +2,7 @@ import { formatDisplayDate } from "../app/date-format.js";
 import { NOVENA_CORPUS_V3 } from "../pray/novena-corpus.js";
 import { addDaysIso, dateFromIso, isoDate } from "./liturgical-year.js";
 import { v384Events, v384Dates } from "./traditional-year-v384.js";
+import { CALENDAR_DEVOTIONAL_REGISTRY_VERSION, DEVOTIONAL_PRACTICE_REGISTRY, NOVENA_TARGET_IDS, NOVENA_SOURCE_HOLDS, devotionalPracticeDefinition } from "./devotional-registry.js";
 
 export const CALENDAR_INTELLIGENCE_VERSION="calendar-intelligence-v1";
 
@@ -115,58 +116,85 @@ export function novenaStatusFor(novena,value,{fr=false}={}){
   });
 }
 
-const v384Tags=key=>{
+const legacyV384Tags=key=>{
   if(["ash","good-friday"].includes(key))return ["LITURGICAL_OBSERVANCE","CURRENT_UNIVERSAL_DISCIPLINE"];
   if(String(key).startsWith("ember"))return ["LITURGICAL_OBSERVANCE","1962_ERA_HISTORICAL_DISCIPLINE"];
-  if(key==="holy-souls")return ["TRADITIONAL_DEVOTIONAL_PRACTICE","CURRENT_INDULGED_WORK_CONDITIONAL"];
-  if(["candlemas","septuagesima","palm","holy-thursday","holy-saturday","rogation","corpus","christ-king"].includes(key))return ["LITURGICAL_OBSERVANCE","TRADITIONAL_DEVOTIONAL_PRACTICE"];
+  if(["candlemas","septuagesima","palm","holy-thursday","holy-saturday","rogation"].includes(key))return ["LITURGICAL_OBSERVANCE","TRADITIONAL_DEVOTIONAL_PRACTICE"];
   return ["TRADITIONAL_DEVOTIONAL_PRACTICE"];
 };
 
-function normalizeTraditionalEvent(event,date){
+const titleFor=(def,fr)=>fr?def?.title?.fr:def?.title?.en;
+const summaryFor=(def,fr)=>fr?def?.summary?.fr:def?.summary?.en;
+const eventIdForKey=key=>key==="first-friday"?"programme.first_friday":key==="first-saturday"?"programme.first_saturday":key==="saturday"?"practice.saturday-marian":`practice.${key}`;
+const traditionalDateOwnerKeys=new Set(["corpus","october","holy-souls","christ-king"]);
+
+function scheduleMatches(def,date){
+  const c=def?.schedule,d=dateFromIso(date),y=d.getFullYear(),m=d.getMonth()+1,day=d.getDate(),dow=d.getDay();
+  if(!c)return false;
+  if(c.type==="FIRST_WEEKDAY")return dow===Number(c.weekday)&&day<=7;
+  if(c.type==="WEEKDAY")return dow===Number(c.weekday);
+  if(c.type==="MONTH")return m===Number(c.month);
+  if(c.type==="FIXED")return m===Number(c.month)&&day===Number(c.day);
+  if(c.type==="FIXED_RANGE"){
+    const mmdd=m*100+day,start=Number(c.startMonth)*100+Number(c.startDay),end=Number(c.endMonth)*100+Number(c.endDay);
+    return mmdd>=start&&mmdd<=end;
+  }
+  if(c.type==="EASTER_OFFSET")return date===addDaysIso(v384Dates(y).easter,Number(c.offset));
+  if(c.type==="LAST_SUNDAY")return Number(c.month)===10&&date===v384Dates(y).christKing;
+  if(c.type==="LENT_WEEKDAY"){
+    const x=v384Dates(y);
+    return dow===Number(c.weekday)&&date>=x.ash&&date<x.easter;
+  }
+  return false;
+}
+
+function registryEvent(def,date,{fr=false}={}){
+  const key=def.key,id=eventIdForKey(key),programme=key==="first-friday"||key==="first-saturday";
+  return Object.freeze({
+    id,date,key,kind:programme?"programme":"practice",priority:Number(def.priority)||40,
+    title:titleFor(def,fr)||key,summary:summaryFor(def,fr)||"",
+    route:def.route||"today.calendar",
+    tags:Object.freeze([...(def.tags??[])]),
+    classification:def.classification??null,
+    sources:Object.freeze([...(def.sources??[])]),
+    source:"calendar-devotional-registry",
+  });
+}
+
+function normalizeTraditionalEvent(event,date,{fr=false}={}){
   const action=Array.isArray(event?.actions)?event.actions.find(x=>Array.isArray(x)&&x[0]):null;
+  const def=devotionalPracticeDefinition(event.key);
   return Object.freeze({
     id:`practice.${event.key}`,date,key:event.key,kind:"practice",
     title:event.title,summary:event.summary,current:event.current,historical:event.historical,
-    priority:Number(event.priority)||40,route:action?.[0]??"today.calendar",
-    actions:Object.freeze([...(event.actions??[])]),tags:Object.freeze(v384Tags(event.key)),
-    source:"traditional-year-v384",
+    priority:Number(event.priority)||Number(def?.priority)||40,route:def?.route??action?.[0]??"today.calendar",
+    actions:Object.freeze([...(event.actions??[])]),
+    tags:Object.freeze([...(def?.tags??legacyV384Tags(event.key))]),
+    classification:def?.classification??null,
+    sources:Object.freeze([...(def?.sources??[])]),
+    source:def?"traditional-year-v384+calendar-devotional-registry":"traditional-year-v384",
   });
 }
 
 function recurringEvents(date,{fr=false}={}){
-  const d=dateFromIso(date),dow=d.getDay(),first=d.getDate()<=7,out=[];
-  if(dow===0)out.push(Object.freeze({
+  const d=dateFromIso(date),out=[];
+  if(d.getDay()===0)out.push(Object.freeze({
     id:"programme.sunday-mass",date,key:"sunday-mass",kind:"obligation",priority:100,
     title:L(fr,"Sunday Mass","Messe dominicale"),summary:L(fr,"Sunday obligation","Obligation dominicale"),
-    route:"mass.current",tags:Object.freeze(["LITURGICAL_OBSERVANCE","CURRENT_UNIVERSAL_OBLIGATION"]),source:"calendar-intelligence",
+    route:"mass.current",tags:Object.freeze(["LITURGICAL_OBSERVANCE","CURRENT_UNIVERSAL_OBLIGATION"]),
+    classification:Object.freeze({observance1962:true,historicalDiscipline:false,currentObligation:"CURRENT_UNIVERSAL_OBLIGATION",traditionalDevotion:false,currentIndulgencedWork:false,localProminence:"NONE_BY_DEFAULT"}),
+    sources:Object.freeze([]),source:"calendar-intelligence",
   }));
-  if(dow===5&&first)out.push(Object.freeze({
-    id:"programme.first_friday",date,key:"first-friday",kind:"programme",priority:76,
-    title:L(fr,"First Friday","Premier vendredi"),summary:L(fr,"Sacred Heart reparatory programme","Programme réparateur du Sacré-Cœur"),
-    route:"programme.first_friday",tags:Object.freeze(["TRADITIONAL_DEVOTIONAL_PRACTICE","DEVOTIONAL_PROGRAMME"]),source:"calendar-intelligence",
-  }));
-  if(dow===6&&first)out.push(Object.freeze({
-    id:"programme.first_saturday",date,key:"first-saturday",kind:"programme",priority:76,
-    title:L(fr,"First Saturday","Premier samedi"),summary:L(fr,"Immaculate Heart reparatory programme","Programme réparateur du Cœur Immaculé"),
-    route:"programme.first_saturday",tags:Object.freeze(["TRADITIONAL_DEVOTIONAL_PRACTICE","DEVOTIONAL_PROGRAMME"]),source:"calendar-intelligence",
-  }));
-  if(dow===5)out.push(Object.freeze({
-    id:"practice.friday",date,key:"friday",kind:"practice",priority:50,
-    title:L(fr,"Friday penance","Pénitence du vendredi"),summary:L(fr,"Universal penitential day · local form may vary","Jour pénitentiel universel · la forme locale peut varier"),
-    route:"pray.penitential_psalms",tags:Object.freeze(["CURRENT_PENITENTIAL_DAY"]),source:"calendar-intelligence",
-  }));
-  if(dow===6)out.push(Object.freeze({
-    id:"practice.saturday-marian",date,key:"saturday",kind:"practice",priority:50,
-    title:L(fr,"Saturday of Our Lady","Samedi de Notre-Dame"),summary:L(fr,"Traditional Marian devotion","Dévotion mariale traditionnelle"),
-    route:"pray.library",tags:Object.freeze(["TRADITIONAL_DEVOTIONAL_PRACTICE"]),source:"calendar-intelligence",
-  }));
+  for(const def of Object.values(DEVOTIONAL_PRACTICE_REGISTRY)){
+    if(traditionalDateOwnerKeys.has(def.key)||!scheduleMatches(def,date))continue;
+    out.push(registryEvent(def,date,{fr}));
+  }
   return out;
 }
 
 export function calendarPracticeEvents(value,{fr=false,properTitle=""}={}){
   const date=keyOf(value);
-  const traditional=v384Events(date,{fr,properTitle}).map(event=>normalizeTraditionalEvent(event,date));
+  const traditional=v384Events(date,{fr,properTitle}).map(event=>normalizeTraditionalEvent(event,date,{fr}));
   const recurring=recurringEvents(date,{fr});
   const byId=new Map();
   for(const event of [...traditional,...recurring]){
@@ -174,6 +202,41 @@ export function calendarPracticeEvents(value,{fr=false,properTitle=""}={}){
     if(!existing||event.priority>existing.priority)byId.set(event.id,event);
   }
   return Object.freeze([...byId.values()].sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id)));
+}
+
+export function calendarPracticeMonthEntries(monthId,{fr=false}={}){
+  const m=/^(\d{4})-(\d{2})$/.exec(String(monthId||""));
+  if(!m)return Object.freeze([]);
+  const year=Number(m[1]),month=Number(m[2]);
+  if(month<1||month>12)return Object.freeze([]);
+  const last=new Date(year,month,0,12).getDate(),byId=new Map();
+  for(let day=1;day<=last;day+=1){
+    const date=`${year}-${String(month).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+    const events=[
+      ...calendarPracticeEvents(date,{fr}),
+      ...calendarNovenaEvents(date,{fr,upcomingDays:0}).filter(x=>x.status?.kind==="active"&&x.status?.day===1),
+    ];
+    for(const event of events){
+      if(["friday","saturday"].includes(event.key))continue;
+      if(event.kind!=="novena"&&event.priority<55&&!event.tags?.includes("CURRENT_INDULGED_WORK_CONDITIONAL")&&!["october","sacred-heart-month","precious-blood-month"].includes(event.key))continue;
+      if(!byId.has(event.id))byId.set(event.id,Object.freeze({
+        id:event.id,date,eventKind:event.kind,title:event.title,summary:event.summary,route:event.route,
+        priority:event.priority,tags:event.tags,classification:event.classification??null,source:event.source,
+      }));
+    }
+  }
+  return Object.freeze([...byId.values()].sort((a,b)=>a.date.localeCompare(b.date)||b.priority-a.priority||a.title.localeCompare(b.title)));
+}
+
+export function novenaTargetRegistryStatus(){
+  return Object.freeze({
+    registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,
+    targetCount:NOVENA_TARGET_IDS.length,
+    playableCount:Object.keys(NOVENA_CORPUS_V3).length,
+    heldCount:Object.keys(NOVENA_SOURCE_HOLDS).length,
+    targetIds:NOVENA_TARGET_IDS,
+    heldIds:Object.freeze(Object.keys(NOVENA_SOURCE_HOLDS)),
+  });
 }
 
 export function calendarNovenaEvents(value,{fr=false,upcomingDays=0}={}){
@@ -200,7 +263,7 @@ export function calendarIntelligenceForDate(value,{fr=false,properTitle="",inclu
   const novenas=calendarNovenaEvents(date,{fr,upcomingDays:includeUpcomingNovenas});
   const discipline=calendarDisciplineForDate(date,{fr});
   return Object.freeze({
-    schema:CALENDAR_INTELLIGENCE_VERSION,date,
+    schema:CALENDAR_INTELLIGENCE_VERSION,registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,date,
     practices,novenas,discipline,
     events:Object.freeze([...practices,...novenas].sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id))),
   });
