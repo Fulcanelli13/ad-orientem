@@ -1,0 +1,92 @@
+{
+  "version": "SPIRITUAL_LIFE_CONTENT_AUDIT_V1",
+  "status": "PASS_CONTENT_READY_RUNTIME_NOT_BUILT",
+  "created_at": "2026-10-07",
+  "source_sot": "data/learn/spiritual-life-sot.v1.json",
+  "course": "data/learn/spiritual-life-course.v1.json",
+  "summary": {
+    "lessons": 14,
+    "sot_claims": 76,
+    "claims_represented_in_course": 76,
+    "unsourced_claims": 0,
+    "unresolved_source_ids": 0,
+    "bilingual_lessons": 14,
+    "bilingual_blocks": 42,
+    "bilingual_practices": 14,
+    "scored_spiritual_exercises": 0,
+    "published_route": false
+  },
+  "audit_dimensions": [
+    {
+      "dimension": "CURRICULUM_COHERENCE",
+      "result": "PASS",
+      "note": "Arc moves from purpose/recollection to prayer method, examen, reading, ordinary duties, rule of life, action, reparation/devotion and integration."
+    },
+    {
+      "dimension": "SOURCE_DISCIPLINE",
+      "result": "PASS",
+      "note": "All 76 SOT claims carry explicit source IDs; school-specific method is labelled as such."
+    },
+    {
+      "dimension": "TRADITIONAL_BREADTH",
+      "result": "PASS",
+      "note": "Tanquerey is the synthetic spine, controlled by St Francis de Sales, St Ignatius, Chautard, Scripture and magisterial/canonical sources. No modern movement is treated as owner of the tradition."
+    },
+    {
+      "dimension": "PRACTICALITY",
+      "result": "PASS",
+      "note": "Every lesson has one non-scored application, reflection, review or knowledge check; no lesson ends in a trivial reveal-answer button."
+    },
+    {
+      "dimension": "OWNER_BOUNDARIES",
+      "result": "PASS",
+      "note": "Prayer execution, Confession, Mass, Catechism, Calendar and Apostolate remain external canonical owners."
+    },
+    {
+      "dimension": "ANTI_GAMIFICATION",
+      "result": "PASS",
+      "note": "No streaks, ranks, holiness scoring or sin-performance charts; traditional examen counts are explicitly demoted from goal to optional method."
+    },
+    {
+      "dimension": "SCRUPULOSITY_RISK",
+      "result": "PASS_WITH_GUARDS",
+      "note": "General examen is finite; particular examen is one point; dryness is not treated as failure; no persistent sin ledger is authorized."
+    },
+    {
+      "dimension": "FRENCH_PARITY",
+      "result": "PASS",
+      "note": "All lesson titles, summaries, teaching blocks, prompts and guidance have EN/FR copy."
+    },
+    {
+      "dimension": "MENTAL_PRAYER_BALANCE",
+      "result": "PASS",
+      "note": "Method is subordinate to prayer; vocal and mental prayer are explicitly complementary; Saint-Sulpice is one method among several."
+    },
+    {
+      "dimension": "PRODUCT_DEPENDENCE",
+      "result": "PASS",
+      "note": "Final lesson explicitly teaches that maturity should reduce dependence on the app rather than increase it."
+    },
+    {
+      "dimension": "SCOPE_CONTROL",
+      "result": "PASS",
+      "note": "Advanced mystical phenomena, visions, priest/religious-specific ascetics, generic life-planning and AI-generated meditation remain excluded."
+    }
+  ],
+  "repaired_during_audit": [
+    {
+      "issue": "Mental prayer lesson did not explicitly explain its relationship to vocal prayer.",
+      "repair": "Added SL03-Q07 and bilingual course copy stating that vocal and mental prayer are complementary rather than rivals.",
+      "status": "CLOSED"
+    }
+  ],
+  "known_runtime_requirements": [
+    "Do not implement Catholic Life-style static claim cards plus reveal-answer pedagogy.",
+    "Use lesson navigation with a readable focus area; source provenance should be accessible but not dominate the main reading flow.",
+    "Practices are optional learning/application prompts, never spiritual performance scores.",
+    "Source drawer must resolve claim IDs to SOT source records and original links.",
+    "Owner handoffs should launch the canonical surface rather than duplicating prayer or ritual content.",
+    "Phone acceptance is required before the Formation launcher is enabled."
+  ],
+  "decision": "CONTENT_FREEZE_APPROVED_FOR_RUNTIME_BUILD"
+}
