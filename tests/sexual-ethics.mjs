@@ -65,10 +65,13 @@ assert.ok(unilateralContraception.refs.some(([sourceId,locator])=>sourceId==="CA
 assert.ok(unilateralContraception.cross.includes("pray.confession"));
 assert.ok(unilateralContraception.cross.includes("learn.rites.matrimony"));
 
-const adultery=CSE_QUESTIONS.find(item=>item.id==="CSE117");
+const adultery=CSE_QUESTIONS.find(item=>item.id==="CSE056");
 assert.match(adultery.q[0],/open marriage/i);
 assert.equal(/sexual sacrilege/i.test(adultery.q[0]),false);
 assert.ok(adultery.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§72–73"));
+const impairedConsent=CSE_QUESTIONS.find(item=>item.id==="CSE117");
+assert.match(impairedConsent.q[0],/intoxicated|incapacitated/i);
+assert.equal(impairedConsent.layer,"PASTORAL_CASE");
 
 const communion=CSE_QUESTIONS.find(item=>item.id==="CSE139");
 assert.ok(communion.refs.some(([sourceId,locator])=>sourceId==="CIC_EUCHARIST"&&locator==="can. 916"));
