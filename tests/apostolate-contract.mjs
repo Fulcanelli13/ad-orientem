@@ -493,7 +493,9 @@ const appSource=readFileSync("src/app/browser-entry.js","utf8");
 assert.match(appSource,/import "\.\.\/apostolate\/browser-entry\.js";/,"Apostolate owner is not installed by the app entry");
 assert.doesNotMatch(appSource,/data-ao-app-surface=["']apostolate["']/,"Apostolate UI leaked into the ribbon");
 assert.doesNotMatch(readFileSync("src/home/presentation.js","utf8"),/apostolate/i,"Apostolate leaked into Home presentation");
-const formationPresentation=readFileSync("src/learn/presentation.js","utf8");\nassert.doesNotMatch(formationPresentation,/data-ao-app-surface=["\']apostolate["\']/i,"Apostolate became a permanent ribbon surface from Formation");\nassert.match(formationPresentation,/data-ao-learn-apostolate/,"Formation lost its explicit Apostolate entry point");
+const formationPresentation=readFileSync("src/learn/presentation.js","utf8");
+assert.doesNotMatch(formationPresentation,/data-ao-app-surface=["\']apostolate["\']/i,"Apostolate became a permanent ribbon surface from Formation");
+assert.match(formationPresentation,/data-ao-learn-apostolate/,"Formation lost its explicit Apostolate entry point");
 
 const installedWin={document:{documentElement:{dataset:{}},querySelector:()=>null}};
 const installed=installApostolateOwner(installedWin);
@@ -506,4 +508,13 @@ assert.equal(installed.status().publishedObjectCount,45);
 assert.equal(installed.status().visible,false);
 assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"route");
 
-const presentationSource=readFileSync("src/apostolate/presentation.js","utf8");\nassert.match(presentationSource,/Answer a question/);\nassert.match(presentationSource,/Help someone/);\nassert.match(presentationSource,/Practise/);\nassert.match(presentationSource,/Nothing you type here is saved/,"Practice draft privacy promise disappeared");\nassert.doesNotMatch(presentationSource,/AQ · HS|AQ\\s*·\\s*HS|data-family-code/,"Internal Apostolate family taxonomy leaked into the UI");\nconst browserSource=readFileSync("src/apostolate/browser-entry.js","utf8");\nassert.match(browserSource,/practiceDraftPersistence:"NONE"/,"Practice draft gained persistence");\nassert.doesNotMatch(browserSource,/localStorage|sessionStorage/,"Apostolate should not persist practice drafts or scenario state");\nconsole.log("PASS Apostolate product v1: 36 scenarios + 9 APF skills remain sourced bilingual READY; Answer · Help · Practise is routable without a permanent ribbon slot.");
+const presentationSource=readFileSync("src/apostolate/presentation.js","utf8");
+assert.match(presentationSource,/Answer a question/);
+assert.match(presentationSource,/Help someone/);
+assert.match(presentationSource,/Practise/);
+assert.match(presentationSource,/Nothing you type here is saved/,"Practice draft privacy promise disappeared");
+assert.doesNotMatch(presentationSource,/AQ · HS|AQ\\s*·\\s*HS|data-family-code/,"Internal Apostolate family taxonomy leaked into the UI");
+const browserSource=readFileSync("src/apostolate/browser-entry.js","utf8");
+assert.match(browserSource,/practiceDraftPersistence:"NONE"/,"Practice draft gained persistence");
+assert.doesNotMatch(browserSource,/localStorage|sessionStorage/,"Apostolate should not persist practice drafts or scenario state");
+console.log("PASS Apostolate product v1: 36 scenarios + 9 APF skills remain sourced bilingual READY; Answer · Help · Practise is routable without a permanent ribbon slot.");
