@@ -11,7 +11,7 @@ import {
 import { installAppShellBridge } from "../src/app/browser-entry.js";
 
 assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "find"]);
-assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "calendar", "find", "settings"]);
+assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "calendar", "find", "settings", "apostolate"]);
 assert.equal(APP_SURFACES.includes("find"), true, "Explore/Find is not a permanent ribbon surface");
 assert.equal(APP_SURFACES.includes("settings"), false, "Settings still consumes a permanent ribbon slot");
 assert.equal(APP_SURFACES.includes("sources"), false);
@@ -81,6 +81,14 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal((await shell.go("find")).ok, true);
   assert.equal(shell.getActive(), "find");
   assert.deepEqual(h.calls, ["dismiss-settings", "home", "defer", "domain:find"]);
+}
+
+{
+  const h = host();
+  const shell = createAppShellController({ host: h });
+  assert.equal((await shell.go("apostolate")).ok, true);
+  assert.equal(shell.getActive(), "apostolate");
+  assert.deepEqual(h.calls, ["dismiss-settings", "home", "defer", "domain:apostolate"]);
 }
 
 {
@@ -175,13 +183,14 @@ function host({ route = "home", confirm = true } = {}) {
   const calls = [];
   const win = {
     AO_RUNTIME_V8: { store: { getState: () => ({ route: "home", language: "en" }), subscribe: () => () => {} } },
+    AO_APOSTOLATE_APP_V1:{close:()=>{calls.push("apostolate:close");return true;}},
     AO_HOME_APP_V1: { open: () => { calls.push("home:modular"); return true; } },
     AO_NAV_V362: { home: () => { calls.push("home:donor"); return true; } },
     AO_V37_SHELL: { openDomain: () => true, openModule: async () => ({ ok:true }) },
   };
   const adapter=createAppHostAdapter(win);
   assert.equal(adapter.hardHome(),true);
-  assert.deepEqual(calls,["home:modular"],"Home fell through to AO_NAV_V362 despite modular owner");
+  assert.deepEqual(calls,["apostolate:close","home:modular"],"Home did not close Apostolate before mounting the modular owner");
 }
 
 {
