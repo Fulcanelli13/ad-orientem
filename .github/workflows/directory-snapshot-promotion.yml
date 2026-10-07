@@ -40,8 +40,10 @@ jobs:
       - name: Validate promotion payload
         run: |
           npm run test:directory
+          npm run test:directory-geocoding
           npm run test:find
           node tools/directory/validate-runtime-snapshots.mjs
+          node tools/directory/validate-geocoded-snapshots.mjs
       - name: Commit to review branch only
         shell: bash
         run: |
