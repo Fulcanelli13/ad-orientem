@@ -115,6 +115,7 @@ assert.match(FIND_MAP_RUNTIME.style,/openfreemap/);
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 const explorePresentation=readFileSync("src/find/explore-presentation.js","utf8");
+const glossarySource=readFileSync("src/glossary/browser-entry.js","utf8");
 assert.match(browserSource,/AO_FIND_APP_V1/);
 assert.match(browserSource,/data-find-query/);
 assert.match(browserSource,/mountExploreMap/);
@@ -123,6 +124,14 @@ assert.doesNotMatch(browserSource,/Église Saint-Test|Sydney Apostolate/,"Find b
 assert.match(browserSource,/var\(--ao-z-surface,2147481800\)/,"Explore root is not on the shared elevation vocabulary");
 assert.match(explorePresentation,/ao-ui-back/,"Explore Back control is not using the canonical utility icon");
 assert.match(explorePresentation,/ao-ui-close/,"Explore Close control is not using the canonical utility icon");
+assert.match(explorePresentation,/data-find-glossary/,"Explore header lost contextual glossary action");
+assert.match(browserSource,/function glossaryTerms\(\)/,"Explore lost lens-aware glossary mapping");
+assert.match(browserSource,/openTerms\(glossaryTerms\(\),\{origin:"find"\}\)/,"Explore glossary no longer opens contextually");
+for(const id of ["G135","G149","G150","G449","G450","G336","G334","G322","G233"]){
+  assert.match(browserSource,new RegExp('"'+id+'"'),"Explore glossary mapping lost "+id);
+}
+assert.match(browserSource,/grid-template-columns:44px minmax\(0,1fr\) 44px auto/,"Explore glossary action broke header geometry");
+assert.match(glossarySource,/z-index:2147483600/,"Context glossary no longer renders above Explore/Mass surfaces");
 assert.doesNotMatch(explorePresentation,/>×<\/button>|>←<\/button>/,"Explore shell regained raw Unicode navigation controls");
 
 console.log("PASS Find a Mass modular surface");
