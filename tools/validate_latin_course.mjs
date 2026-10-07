@@ -310,6 +310,25 @@ for (const lesson of authored) {
         assert(JSON.stringify(localizedKeys) === JSON.stringify(canonicalKeys) &&
           localizedKeys.every(k => typeof fr.matches[k] === "string" && fr.matches[k].trim().length > 0),
           `Lesson ${n} matching exercise ${exercise.id} French labels must preserve canonical key mapping`);
+        if (["l15-e10","l20-e10","l34-e2"].includes(exercise.id)) {
+          const localizedPromptKeys = Object.keys(fr.matchKeys || {}).sort();
+          assert(JSON.stringify(localizedPromptKeys) === JSON.stringify(canonicalKeys) &&
+            localizedPromptKeys.every(k => typeof fr.matchKeys[k] === "string" && fr.matchKeys[k].trim().length > 0),
+            `Lesson ${n} matching exercise ${exercise.id} must localize English-side matching keys`);
+        }
+      }
+      if (exercise.exerciseType === "passage_analysis") {
+        assert(Array.isArray(fr.answerGuide) && fr.answerGuide.length > 0 &&
+          fr.answerGuide.every(x => typeof x === "string" && x.trim().length > 0),
+          `Lesson ${n} passage-analysis exercise ${exercise.id} missing French answer guide`);
+      }
+      if (exercise.exerciseType === "read_aloud_model") {
+        assert(typeof fr.modelGuide === "string" && fr.modelGuide.trim().length > 0,
+          `Lesson ${n} read-aloud exercise ${exercise.id} missing French model guide`);
+        const canonicalChecks = exercise.expectedAnswer?.requiredChecks || [];
+        assert(Array.isArray(fr.requiredChecks) && fr.requiredChecks.length === canonicalChecks.length &&
+          fr.requiredChecks.every(x => typeof x === "string" && x.trim().length > 0),
+          `Lesson ${n} read-aloud exercise ${exercise.id} French checklist must align with canonical model`);
       }
       localizedFrExercisePrompts++;
       localizedFrExerciseHints++;
