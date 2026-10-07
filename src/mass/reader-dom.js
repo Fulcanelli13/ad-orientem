@@ -227,7 +227,8 @@ const SHELL_STYLE = `
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
 .ao-rail .ao-icon-mask{width:36px;height:36px}
-.ao-rail-image-icon{display:block;width:36px;height:36px;object-fit:contain}
+.ao-bell-icon{display:block;width:36px;height:36px;color:#d8c590}
+.ao-bell-icon svg{display:block;width:100%;height:100%}
 
 .ao-schola-dock{
   position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
@@ -540,7 +541,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest and bell cues">
       <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
-      <div class="ao-rail-item" data-channel="bell" data-active="false"><img class="ao-rail-image-icon" data-icon-slot="bell" alt="" hidden><span class="ao-rail-copy" data-role="bell">—</span></div>
+      <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-bell-icon" data-icon-slot="bell" hidden aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M13 13h9M26 13h9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M16 15c0 8-3 10-5 14h13c-2-4-5-6-5-14zM29 15c0 8-3 10-5 14h13c-2-4-5-6-5-14z" fill="currentColor"/><circle cx="17.5" cy="31.5" r="2" fill="currentColor"/><circle cx="30.5" cy="31.5" r="2" fill="currentColor"/><path d="M7 18c-3 3-3 9 0 12M41 18c3 3 3 9 0 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="ao-rail-copy" data-role="bell">—</span></div>
     </aside>
   </div>
 
@@ -594,19 +595,6 @@ function syncRailVisibility(root){
   if(right)right.dataset.visible=String(live);
   stage.dataset.leftRail=String(live);
   stage.dataset.rightRail=String(live);
-}
-
-function applyImageIcon(root, slot, key, iconResolver){
-  const node=root.querySelector?.(`[data-icon-slot="${slot}"]`);
-  if(!node)return;
-  const url=key && typeof iconResolver==="function" ? iconResolver(key) : null;
-  if(url){
-    node.src=url;
-    node.hidden=false;
-  }else{
-    node.removeAttribute?.("src");
-    node.hidden=true;
-  }
 }
 
 function applyIcon(root, slot, key, iconResolver){
@@ -1199,7 +1187,8 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
     applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
-    applyImageIcon(root,"bell",visibleBell ? "bells" : null,iconResolver);
+    const bellIcon=root.querySelector('[data-icon-slot="bell"]');
+    if(bellIcon)bellIcon.hidden=!visibleBell;
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
 
     const actionBadge=root.querySelector('[data-role="priest-action-badge"]');
