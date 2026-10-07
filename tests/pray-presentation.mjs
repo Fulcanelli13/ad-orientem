@@ -40,8 +40,9 @@ assert.match(styles,/--ao347-focus-opacity/,"Stations v3.4.10 focus energy varia
 const runtimeWithoutDonorOverviewClose=runtime.replace(/<button[^>]*data-r23-overview-close[^>]*>×<\/button>/g,"");
 assert.doesNotMatch(runtimeWithoutDonorOverviewClose,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls outside the exact donor Rosary overview close control");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
-assert.match(runtime,/const trailing=view==='home'/,"PRAY root header no longer distinguishes its root exit state");
-assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit header spacer");
+assert.match(runtime,/class="aoP435930Close" data-p435930-close/,"PRAY header lost the donor Close control");
+assert.doesNotMatch(runtime,/const trailing=view==='home'/,"PRAY hub must not suppress the donor Close control");
+assert.doesNotMatch(runtime,/aoP435930HeadSpacer/,"obsolete single-exit spacer returned to the PRAY header");
 assert.match(runtime,/normalizeRosaryPrefs/,"PRAY lost Rosary preference normalization");
 assert.match(runtime,/rosaryDonorRoot/,"PRAY lost canonical Rosary donor-root resolver");
 assert.match(runtime,/restoreRosaryLaunchPrefs/,"PRAY lost post-mount Rosary owner reconciliation");
@@ -53,7 +54,7 @@ assert.match(runtime,/const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
   "Rosary launcher stopped snapshotting chooser state before donor mount");
 assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
   "Rosary chooser stopped synchronizing recitation through the canonical setter");
-assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
+assert.doesNotMatch(styles,/aoP435930HeadSpacer/,"obsolete PRAY hub spacer styling returned");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
 assert.doesNotMatch(runtime,/view===['"]angelus['"][\s\S]{0,650}ao-rich-angelus/,"Angelus exact donor rail regained the later generic context card");
@@ -106,8 +107,20 @@ assert.ok(runtime.includes("if(!document.getElementById('aoPrayerBookRoot')?.cla
   "stale Rosary donor return ownership is not cleared when the donor is actually closed");
 assert.doesNotMatch(runtime,/if\(!silent\)\{navStack=\[\];externalResume=null;rosaryDonorReturnSnapshot=null\}/,
   "generic modular close must not erase an active Rosary donor return snapshot");
-assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
-assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader grid");
+assert.match(runtime,/function decorateRosary\(\)\{\s*const r=rosaryDonorRoot\(\)/,"Rosary decorator is not bound to the actually visible donor root");
+assert.doesNotMatch(runtime,/for\(const node of children\)center\.appendChild\(node\)/,"Rosary decorator still reparents the preserved PrayerBook DOM and can collapse donor geometry");
+assert.match(runtime,/function ownRosaryDonorRoots\(active\)/,"Rosary lost single-visible-root ownership");
+assert.match(runtime,/assetId:'ao-live-sign-cross'/,"Rosary still references the removed ao-posture-sign-cross asset id");
+assert.doesNotMatch(runtime,/assetId:'ao-posture-sign-cross'/,"Removed Sign-of-Cross asset id survived in production PRAY");
+assert.match(styles,/data-ao-rosary-active-root="false"[^}]*pointer-events:none/,"Inactive duplicate PrayerBook roots can still intercept pointer input");
+assert.match(styles,/data-ao-rosary-active-root="true"[^\n]*\.lab-recitation-mode[\s\S]*display:none!important/,"Active Rosary root can expose the legacy recitation surface during shell rebuilds");
+assert.match(runtime,/api\.setStep\(target\)!==false\)\{decorateRosary\(\);setTimeout\(decorateRosary,0\)\}/,"Rosary canonical Next\/Previous no longer redecorates synchronously at the step boundary");
+assert.match(styles,/data-ao-rosary-exact-donor="v3\.4\.14"[^\n]*\.lab-recitation-mode[\s\S]*display:none!important/,"Rosary still exposes duplicate native recitation controls");
+assert.match(styles,/width:min\(820px,100%\)!important/,"PRAY shell diverged from the integrated v3.4.10 820px composition");
+assert.match(styles,/data-ao-rosary-active-root="true"[^\n]*pbShell\[data-ao-rosary-exact-donor="v3\.4\.14"\][^\{]*\{[^\}]*max-width:760px!important[^\}]*box-sizing:border-box!important/,"Active Rosary shell lost the v3.4.10 760px composition measure");
+assert.match(styles,/aoP435930ModuleGrid\{display:grid;grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/,"PRAY wide hub lost the v3.4.10 two-column module grid");
+assert.match(styles,/@media\(max-width:560px\)\{#aoPray435930 \.aoP435930ModuleGrid\{grid-template-columns:1fr\}/,"PRAY phone hub lost the v3.4.10 single-column collapse");
+assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader ownership marker");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
 assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary lost donor five-mystery progress projection");
 assert.match(runtime,/rosary-decade-bar-v15/,"Rosary lost the donor five-segment progress bar");

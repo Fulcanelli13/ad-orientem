@@ -9,6 +9,8 @@ on:
       - "assets/**"
       - "tests/app-visual-acceptance.mjs"
       - "tests/mass-visual-acceptance.mjs"
+      - "tests/nonmass-donor-reference-e2e.mjs"
+      - "data/presentation/exact-donor-parity.v1.json"
       - ".github/workflows/visual-acceptance.yml"
   workflow_dispatch:
 
@@ -17,11 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: node tests/nonmass-donor-reference-e2e.mjs
       - run: node tests/app-visual-acceptance.mjs
       - run: node tests/mass-visual-acceptance.mjs
       - uses: actions/upload-artifact@v4
