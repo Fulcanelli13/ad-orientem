@@ -19,7 +19,18 @@
         "TRENT-XIII-EUCHARIST"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Prayer before Christ truly present in the Blessed Sacrament, ordinarily with the Eucharist reserved or exposed.",
+        "fr": "Prière devant le Christ réellement présent dans le Saint-Sacrement, ordinairement avec l’Eucharistie réservée ou exposée."
+      },
+      "explanation": {
+        "en": "Eucharistic adoration is directed to Christ Himself, not to bread as bread or to an object as such. Exposition can intensify the public form of this worship, but reservation in the tabernacle also grounds Eucharistic adoration.",
+        "fr": "L’adoration eucharistique s’adresse au Christ lui-même, non au pain en tant que pain ni à un objet comme tel. L’exposition peut intensifier la forme publique de ce culte, mais la réserve au tabernacle fonde également l’adoration eucharistique."
+      },
+      "definition_source_ids": [
+        "TRENT-XIII-EUCHARIST"
+      ]
     },
     {
       "id": "G302",
@@ -37,7 +48,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ritual placing of the Blessed Sacrament in a monstrance or ciborium for the adoration of the faithful.",
+        "fr": "Rite par lequel le Saint-Sacrement est placé dans un ostensoir ou un ciboire pour l’adoration des fidèles."
+      },
+      "explanation": {
+        "en": "Exposition is governed by liturgical law concerning minister, place, vessel, candles, incense and prayer. It is distinct from simple reservation in the tabernacle.",
+        "fr": "L’exposition est régie par le droit liturgique quant au ministre, au lieu, au vase, aux cierges, à l’encens et à la prière. Elle se distingue de la simple réserve au tabernacle."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G303",
@@ -55,7 +77,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ritual return of the exposed Blessed Sacrament to the tabernacle or other lawful place of reservation.",
+        "fr": "Rite par lequel le Saint-Sacrement exposé est replacé au tabernacle ou dans un autre lieu légitime de réserve."
+      },
+      "explanation": {
+        "en": "Reposition concludes a period of exposition. It should be distinguished from Benediction, since exposition can end by reposition without the blessing with the Blessed Sacrament in some circumstances.",
+        "fr": "La reposition conclut une période d’exposition. Elle doit être distinguée du Salut, car une exposition peut se terminer par la reposition sans bénédiction avec le Saint-Sacrement dans certains cas."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G304",
@@ -73,7 +106,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The rite in which the faithful are blessed with the exposed Blessed Sacrament.",
+        "fr": "Rite dans lequel les fidèles reçoivent la bénédiction avec le Saint-Sacrement exposé."
+      },
+      "explanation": {
+        "en": "Traditional Benediction normally includes hymns, versicles, prayer, incense and the blessing with the monstrance or ciborium. The blessing is given with the Eucharist, not by the minister in his own name.",
+        "fr": "Le Salut traditionnel comprend normalement hymnes, versets, oraison, encensement et bénédiction avec l’ostensoir ou le ciboire. La bénédiction est donnée avec l’Eucharistie, non par le ministre en son propre nom."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G305",
@@ -91,7 +135,18 @@
         "SRC-HIST-MONSTRANCE-LUNULA"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A sacred vessel designed to display a consecrated Host visibly for exposition and Benediction.",
+        "fr": "Vase sacré destiné à exposer visiblement une Hostie consacrée pour l’adoration et le Salut."
+      },
+      "explanation": {
+        "en": "The monstrance or ostensorium normally holds the Host in a lunette. It is a Eucharistic vessel and must not be confused with a reliquary, though historical forms can resemble one another.",
+        "fr": "L’ostensoir ou ostensorium contient normalement l’Hostie dans une lunule. C’est un vase eucharistique et il ne doit pas être confondu avec un reliquaire, même si certaines formes historiques peuvent se ressembler."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONSTRANCE-LUNULA"
+      ]
     },
     {
       "id": "G306",
@@ -109,7 +164,18 @@
         "SRC-HIST-MONSTRANCE-LUNULA"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The small circular holder that secures the consecrated Host within a monstrance.",
+        "fr": "Petit support circulaire qui maintient l’Hostie consacrée à l’intérieur d’un ostensoir."
+      },
+      "explanation": {
+        "en": "The lunette is inserted into the monstrance for exposition and removed according to the rites of reservation. It is a sacred Eucharistic accessory, not an independent devotional object.",
+        "fr": "La lunule est insérée dans l’ostensoir pour l’exposition et retirée selon les rites de réserve. C’est un accessoire eucharistique sacré, non un objet dévotionnel indépendant."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-MONSTRANCE-LUNULA"
+      ]
     },
     {
       "id": "G307",
@@ -127,7 +193,18 @@
         "SRC-OCONNELL-BENEDICTION"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A raised stand or throne on which the monstrance is placed during solemn exposition.",
+        "fr": "Support ou trône surélevé sur lequel l’ostensoir est placé pendant une exposition solennelle."
+      },
+      "explanation": {
+        "en": "The exposition throne belongs to traditional ceremonial arrangements for public Eucharistic worship. It is not required in every form of exposition and should be presented as a ceremonial furnishing, not a doctrinal necessity.",
+        "fr": "Le trône d’exposition appartient aux dispositions cérémonielles traditionnelles du culte eucharistique public. Il n’est pas requis pour toute forme d’exposition et doit être présenté comme un mobilier cérémoniel, non comme une nécessité doctrinale."
+      },
+      "definition_source_ids": [
+        "SRC-OCONNELL-BENEDICTION"
+      ]
     },
     {
       "id": "G308",
@@ -145,7 +222,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A traditional period of solemn Eucharistic exposition and prayer extending, by established arrangement, over approximately forty hours.",
+        "fr": "Période traditionnelle d’exposition eucharistique solennelle et de prière s’étendant, selon l’organisation établie, sur environ quarante heures."
+      },
+      "explanation": {
+        "en": "The Forty Hours devotion combines prolonged adoration with a defined ceremonial tradition. Historical rules and indulgences attached to it must not be assumed unchanged in current law.",
+        "fr": "La dévotion des Quarante-Heures unit l’adoration prolongée à une tradition cérémonielle définie. Les anciennes règles et indulgences qui lui étaient attachées ne doivent pas être supposées inchangées dans le droit actuel."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G309",
@@ -163,7 +251,18 @@
         "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An arrangement in which Eucharistic adoration is maintained continuously or for an enduring schedule over time.",
+        "fr": "Organisation dans laquelle l’adoration eucharistique est maintenue continuellement ou selon un horaire durable."
+      },
+      "explanation": {
+        "en": "‘Perpetual’ ordinarily describes continuity of the institution or schedule rather than implying that the Blessed Sacrament can never be reposed. Practical arrangements remain subject to liturgical law and competent authority.",
+        "fr": "« Perpétuelle » décrit ordinairement la continuité de l’institution ou de l’horaire plutôt que l’idée que le Saint-Sacrement ne puisse jamais être remis au tabernacle. Les dispositions pratiques restent soumises au droit liturgique et à l’autorité compétente."
+      },
+      "definition_source_ids": [
+        "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
+      ]
     },
     {
       "id": "G310",
@@ -181,7 +280,18 @@
         "PRAY-CANONICAL-CORPUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A devotional visit to a church or chapel to pray before the Blessed Sacrament.",
+        "fr": "Visite dévotionnelle à une église ou chapelle pour prier devant le Saint-Sacrement."
+      },
+      "explanation": {
+        "en": "The visit can include silent adoration, acts of faith, reparation, thanksgiving and spiritual communion. It is devotional rather than a separate sacrament or liturgical office.",
+        "fr": "La visite peut comporter adoration silencieuse, actes de foi, réparation, action de grâces et communion spirituelle. Elle est dévotionnelle et non un sacrement ou office liturgique distinct."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
     },
     {
       "id": "G311",
@@ -199,7 +309,18 @@
         "PRAY-CANONICAL-CORPUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A Eucharistic hymn beginning O salutaris Hostia, commonly sung during exposition or Benediction.",
+        "fr": "Hymne eucharistique commençant par O salutaris Hostia, couramment chanté pendant l’exposition ou le Salut."
+      },
+      "explanation": {
+        "en": "The text comes from Saint Thomas Aquinas’s hymn Verbum supernum prodiens. In practice it functions as a prayer text and Latin phrase object linked to Eucharistic adoration.",
+        "fr": "Le texte provient de l’hymne Verbum supernum prodiens de saint Thomas d’Aquin. En pratique, il fonctionne comme texte de prière et comme objet de phrase latine lié à l’adoration eucharistique."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
     },
     {
       "id": "G312",
@@ -217,7 +338,18 @@
         "PRAY-CANONICAL-CORPUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The Eucharistic hymn stanza beginning Tantum ergo Sacramentum, traditionally sung before Benediction.",
+        "fr": "Strophe eucharistique commençant par Tantum ergo Sacramentum, traditionnellement chantée avant le Salut."
+      },
+      "explanation": {
+        "en": "It is the closing portion of Pange lingua by Saint Thomas Aquinas. The hymn is liturgical-devotional text and should link to its Latin vocabulary rather than receive a separate doctrinal theology article.",
+        "fr": "Il s’agit de la partie finale du Pange lingua de saint Thomas d’Aquin. L’hymne est un texte liturgico-dévo­tionnel et doit renvoyer à son vocabulaire latin plutôt que devenir un traité doctrinal distinct."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
     },
     {
       "id": "G313",
@@ -235,7 +367,18 @@
         "PRAY-CANONICAL-CORPUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The concluding doxological stanza Genitori Genitoque following Tantum ergo.",
+        "fr": "Strophe doxologique finale Genitori Genitoque qui suit Tantum ergo."
+      },
+      "explanation": {
+        "en": "It praises the Father, the Son and the Holy Ghost and forms part of the traditional Benediction hymn sequence.",
+        "fr": "Elle loue le Père, le Fils et le Saint-Esprit et fait partie de la séquence hymnologique traditionnelle du Salut."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
     },
     {
       "id": "G314",
@@ -253,7 +396,18 @@
         "PRAY-CANONICAL-CORPUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The versicle Panem de caelo praestitisti eis used in the traditional Benediction rite.",
+        "fr": "Verset Panem de caelo praestitisti eis employé dans le rite traditionnel du Salut."
+      },
+      "explanation": {
+        "en": "The phrase means ‘Thou gavest them bread from heaven’ and is answered according to the rite before the concluding prayer. It belongs primarily to the Latin phrase layer.",
+        "fr": "L’expression signifie « Vous leur avez donné le pain du ciel » et reçoit la réponse prévue par le rite avant l’oraison finale. Elle appartient principalement à la couche des phrases latines."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
     },
     {
       "id": "G315",
@@ -271,7 +425,18 @@
         "PRAY-CANONICAL-CORPUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A series of praises of God and holy things traditionally recited after Benediction.",
+        "fr": "Série de louanges adressées à Dieu et aux réalités saintes, traditionnellement récitées après le Salut."
+      },
+      "explanation": {
+        "en": "The Divine Praises form an approved devotional text associated with Eucharistic worship. Their individual invocations should remain textually stable and source-backed.",
+        "fr": "Les Louanges divines constituent un texte dévotionnel approuvé associé au culte eucharistique. Leurs invocations doivent rester textuellement stables et sourcées."
+      },
+      "definition_source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ]
     },
     {
       "id": "G316",
@@ -289,7 +454,18 @@
         "TRENT-XIII-EUCHARIST"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The Holy Eucharist, especially Christ present under the consecrated species and reserved for Communion and adoration.",
+        "fr": "Sainte Eucharistie, spécialement le Christ présent sous les espèces consacrées et réservé pour la Communion et l’adoration."
+      },
+      "explanation": {
+        "en": "‘Blessed Sacrament’ is a devotional and liturgical title for the Eucharist. It refers to Christ sacramentally present and should not be confused with a generic blessed object or sacramental.",
+        "fr": "« Saint-Sacrement » est un titre dévotionnel et liturgique de l’Eucharistie. Il désigne le Christ sacramentellement présent et ne doit pas être confondu avec un objet simplement béni ou un sacramental."
+      },
+      "definition_source_ids": [
+        "TRENT-XIII-EUCHARIST"
+      ]
     },
     {
       "id": "G317",
@@ -307,7 +483,18 @@
         "SRC-CIC83-934-944"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The keeping of the consecrated Eucharist in a tabernacle or other lawful place after Mass.",
+        "fr": "Conservation de l’Eucharistie consacrée dans un tabernacle ou un autre lieu légitime après la Messe."
+      },
+      "explanation": {
+        "en": "Reservation serves especially Communion of the sick and Eucharistic worship. The place, vessel and conditions of reservation are governed by liturgical and canonical law.",
+        "fr": "La réserve sert notamment à la Communion des malades et au culte eucharistique. Le lieu, le vase et les conditions de réserve sont régis par le droit liturgique et canonique."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-934-944"
+      ]
     },
     {
       "id": "G318",
@@ -325,7 +512,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A small sacred vessel used to carry consecrated Hosts, especially for Communion of the sick.",
+        "fr": "Petit vase sacré utilisé pour porter les Hosties consacrées, notamment pour la Communion des malades."
+      },
+      "explanation": {
+        "en": "The pyx is smaller and more portable than a ciborium and is used according to the rites governing Eucharistic transport and Communion outside Mass.",
+        "fr": "La pyxide est plus petite et plus portable qu’un ciboire et s’emploie selon les rites régissant le transport eucharistique et la Communion hors de la Messe."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G319",
@@ -343,7 +541,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A veil placed over a ciborium containing the Blessed Sacrament according to traditional usage.",
+        "fr": "Voile placé sur un ciboire contenant le Saint-Sacrement selon l’usage traditionnel."
+      },
+      "explanation": {
+        "en": "The ciborium veil marks the sacred vessel used for Eucharistic reservation. It must be distinguished from the chalice veil and humeral veil.",
+        "fr": "Le voile de ciboire marque le vase sacré destiné à la réserve eucharistique. Il doit être distingué du voile de calice et du voile huméral."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G320",
@@ -361,7 +570,18 @@
         "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A solemn Eucharistic procession associated especially with the feast of Corpus Christi, in which the Blessed Sacrament is carried publicly.",
+        "fr": "Procession eucharistique solennelle associée spécialement à la Fête-Dieu, dans laquelle le Saint-Sacrement est porté publiquement."
+      },
+      "explanation": {
+        "en": "In the Ad Orientem process model, a Corpus Christi procession is not inferred from the date alone. It requires an explicit liturgical or local action sequence and can culminate in Benediction.",
+        "fr": "Dans le modèle processuel d’Ad Orientem, une procession de la Fête-Dieu n’est pas déduite de la date seule. Elle exige une séquence liturgique ou locale explicite et peut se conclure par le Salut."
+      },
+      "definition_source_ids": [
+        "SRC-EUCHARISTIC-WORSHIP-EXPOSITION"
+      ]
     },
     {
       "id": "G321",
@@ -379,7 +599,18 @@
         "ST-THOMAS-II-II-Q82"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The prompt and ready disposition of the will to give oneself to God and to His service.",
+        "fr": "Disposition prompte et volontaire de la volonté à se donner à Dieu et à son service."
+      },
+      "explanation": {
+        "en": "In precise ascetical theology devotio is an interior act of the virtue of religion. A ‘devotion’ in ordinary Catholic speech can also mean a particular pious practice, which is a related but distinct sense.",
+        "fr": "Dans la théologie ascétique précise, devotio est un acte intérieur de la vertu de religion. Dans le langage catholique courant, « une dévotion » peut aussi désigner une pratique pieuse particulière, sens lié mais distinct."
+      },
+      "definition_source_ids": [
+        "ST-THOMAS-II-II-Q82"
+      ]
     },
     {
       "id": "G322",
@@ -397,7 +628,18 @@
         "SRC-DIRECTORY-POPULAR-PIETY-2002"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An approved or customary devotional action outside the sacraments and liturgy, such as certain prayers, visits or processions.",
+        "fr": "Pratique dévotionnelle approuvée ou coutumière en dehors des sacrements et de la liturgie, comme certaines prières, visites ou processions."
+      },
+      "explanation": {
+        "en": "Pious exercises should harmonize with and lead toward the liturgy rather than replace it. Their authority and obligation differ from sacramental and liturgical law.",
+        "fr": "Les pieux exercices doivent s’harmoniser avec la liturgie et y conduire plutôt que la remplacer. Leur autorité et leur caractère obligatoire diffèrent du droit sacramentel et liturgique."
+      },
+      "definition_source_ids": [
+        "SRC-DIRECTORY-POPULAR-PIETY-2002"
+      ]
     },
     {
       "id": "G323",
@@ -415,7 +657,18 @@
         "SRC-ASCETICAL-PRAYER"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A short, fervent prayer raised briefly to God during the day.",
+        "fr": "Brève prière fervente élevée vers Dieu au cours de la journée."
+      },
+      "explanation": {
+        "en": "Aspirations or ejaculatory prayers help maintain recollection and frequent turning of the heart to God. They can be spontaneous or drawn from approved prayers and Scripture.",
+        "fr": "Les oraisons jaculatoires aident à conserver le recueillement et à tourner fréquemment le cœur vers Dieu. Elles peuvent être spontanées ou tirées de prières approuvées et de l’Écriture."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
     },
     {
       "id": "G324",
@@ -433,7 +686,18 @@
         "SRC-ASCETICAL-PRAYER"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Interior prayer in which the mind and will attend to God, divine truths or one’s duties before Him without depending chiefly on spoken formulas.",
+        "fr": "Prière intérieure dans laquelle l’intelligence et la volonté se portent vers Dieu, les vérités divines ou les devoirs envers lui sans dépendre principalement de formules prononcées."
+      },
+      "explanation": {
+        "en": "Mental prayer includes meditation and more simple affective forms. It is not opposed to vocal prayer, since vocal prayer can also be attentive and interior.",
+        "fr": "L’oraison mentale comprend la méditation et des formes affectives plus simples. Elle ne s’oppose pas à la prière vocale, qui peut elle aussi être attentive et intérieure."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
     },
     {
       "id": "G325",
@@ -451,7 +715,18 @@
         "SRC-ASCETICAL-PRAYER"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Reflective mental prayer in which a person considers a divine truth in order to move the will toward love, repentance and practical resolution.",
+        "fr": "Oraison mentale réfléchie dans laquelle une personne considère une vérité divine afin de mouvoir la volonté vers l’amour, le repentir et une résolution pratique."
+      },
+      "explanation": {
+        "en": "Catholic meditation is ordered toward conversion and union with God rather than mere analysis. Methods can help, but the method is a means rather than the substance of prayer.",
+        "fr": "La méditation catholique est ordonnée à la conversion et à l’union à Dieu plutôt qu’à la simple analyse. Les méthodes peuvent aider, mais elles sont un moyen et non la substance de la prière."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
     },
     {
       "id": "G326",
@@ -469,7 +744,18 @@
         "SRC-ASCETICAL-PRAYER"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Prayer expressed by words, whether spoken aloud or formed internally.",
+        "fr": "Prière exprimée par des paroles, prononcées à voix haute ou formées intérieurement."
+      },
+      "explanation": {
+        "en": "Vocal prayer includes the Our Father, Hail Mary, liturgical responses and countless approved prayers. Its value depends not on sound alone but on genuine prayerful intention and attention according to one’s capacity.",
+        "fr": "La prière vocale comprend le Notre Père, le Je vous salue Marie, les réponses liturgiques et d’innombrables prières approuvées. Sa valeur ne dépend pas du son seul mais d’une véritable intention et attention de prière selon les capacités de chacun."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
     },
     {
       "id": "G327",
@@ -487,7 +773,18 @@
         "SRC-ASCETICAL-PRAYER"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The reading of Sacred Scripture or sound spiritual works for growth in faith, prayer and virtue.",
+        "fr": "Lecture de la Sainte Écriture ou d’ouvrages spirituels solides en vue de progresser dans la foi, la prière et la vertu."
+      },
+      "explanation": {
+        "en": "Spiritual reading is not mere information gathering. It is undertaken slowly and reflectively so that truth can shape prayer and conduct.",
+        "fr": "La lecture spirituelle n’est pas une simple collecte d’informations. Elle se fait lentement et avec réflexion afin que la vérité façonne la prière et la conduite."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
     },
     {
       "id": "G328",
@@ -505,7 +802,18 @@
         "SRC-ASCETICAL-PRAYER"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A review of one’s thoughts, words, actions and omissions in the light of God’s law, especially in preparation for repentance and Confession.",
+        "fr": "Revue de ses pensées, paroles, actions et omissions à la lumière de la loi de Dieu, spécialement en préparation au repentir et à la Confession."
+      },
+      "explanation": {
+        "en": "An examination of conscience should be truthful and proportionate rather than scrupulous. It seeks concrete moral responsibility, not an endless search for absolute psychological certainty.",
+        "fr": "L’examen de conscience doit être vrai et proportionné plutôt que scrupuleux. Il recherche la responsabilité morale concrète, non une quête sans fin de certitude psychologique absolue."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
     },
     {
       "id": "G329",
@@ -523,7 +831,18 @@
         "SRC-ASCETICAL-PRAYER"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A formulated prayer expressing a specific interior act such as faith, hope, charity, contrition or thanksgiving.",
+        "fr": "Prière formulée exprimant un acte intérieur précis comme la foi, l’espérance, la charité, la contrition ou l’action de grâces."
+      },
+      "explanation": {
+        "en": "The word ‘act’ in devotional collections refers to a prayer that expresses and elicits the named disposition. It does not mean that reciting the words mechanically guarantees the interior act.",
+        "fr": "Le mot « acte » dans les recueils dévotionnels désigne une prière qui exprime et suscite la disposition nommée. Il ne signifie pas que la récitation mécanique des mots garantit l’acte intérieur."
+      },
+      "definition_source_ids": [
+        "SRC-ASCETICAL-PRAYER"
+      ]
     },
     {
       "id": "G330",
@@ -541,7 +860,18 @@
         "LEO-XIII-ANNUM-SACRUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A devotional act by which a person, family or community deliberately dedicates itself to God, Our Lady or a sacred mystery according to an approved form.",
+        "fr": "Acte dévotionnel par lequel une personne, une famille ou une communauté se consacre délibérément à Dieu, à Notre-Dame ou à un mystère sacré selon une forme approuvée."
+      },
+      "explanation": {
+        "en": "Devotional consecration is not the same as Eucharistic consecration or canonical religious profession. The term expresses dedication and belonging in a devotional sense.",
+        "fr": "La consécration dévotionnelle n’est pas la même chose que la consécration eucharistique ni la profession religieuse canonique. Le terme exprime un don et une appartenance au sens dévotionnel."
+      },
+      "definition_source_ids": [
+        "LEO-XIII-ANNUM-SACRUM"
+      ]
     },
     {
       "id": "G331",
@@ -559,7 +889,18 @@
         "PIUS-XI-MISERENTISSIMUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Prayer and sacrifice offered in union with Christ to make loving satisfaction for sin and irreverence.",
+        "fr": "Prière et sacrifice offerts en union avec le Christ pour faire une satisfaction d’amour pour le péché et l’irrévérence."
+      },
+      "explanation": {
+        "en": "Catholic reparation rests on Christ’s unique redemptive work and the participation of His members in acts of love, penance and satisfaction. It is not an attempt to supplement an insufficient Redemption.",
+        "fr": "La réparation catholique repose sur l’unique œuvre rédemptrice du Christ et sur la participation de ses membres par des actes d’amour, de pénitence et de satisfaction. Elle ne cherche pas à compléter une Rédemption insuffisante."
+      },
+      "definition_source_ids": [
+        "PIUS-XI-MISERENTISSIMUS"
+      ]
     },
     {
       "id": "G332",
@@ -577,7 +918,18 @@
         "PIUS-XI-MISERENTISSIMUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The devotional observance of the first Friday of the month in honour of the Sacred Heart, especially through Communion and reparation.",
+        "fr": "Observance dévotionnelle du premier vendredi du mois en l’honneur du Sacré-Cœur, spécialement par la Communion et la réparation."
+      },
+      "explanation": {
+        "en": "The First Friday devotion belongs to Sacred Heart spirituality and has a long ecclesial history. Historical promises or indulgences must be presented with careful sourcing and distinguished from current canonical obligations.",
+        "fr": "La dévotion du premier vendredi appartient à la spiritualité du Sacré-Cœur et possède une longue histoire ecclésiale. Les promesses ou indulgences historiques doivent être présentées avec des sources précises et distinguées des obligations canoniques actuelles."
+      },
+      "definition_source_ids": [
+        "PIUS-XI-MISERENTISSIMUS"
+      ]
     },
     {
       "id": "G333",
@@ -595,7 +947,18 @@
         "SRC-FATIMA-FIRST-SATURDAYS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The devotional observance requested in the Fatima tradition on five consecutive first Saturdays, involving Communion, confession, Rosary and meditation in a spirit of reparation.",
+        "fr": "Observance dévotionnelle demandée dans la tradition de Fatima pendant cinq premiers samedis consécutifs, comprenant Communion, confession, Rosaire et méditation dans un esprit de réparation."
+      },
+      "explanation": {
+        "en": "The component practices, timing and intention should be stated from reliable Fatima sources. It is a private-devotional practice approved and promoted by the Church, not a new sacrament or universal precept.",
+        "fr": "Les pratiques composantes, leur calendrier et leur intention doivent être exposés à partir de sources fiables de Fatima. Il s’agit d’une pratique dévotionnelle privée approuvée et encouragée par l’Église, non d’un nouveau sacrement ou précepte universel."
+      },
+      "definition_source_ids": [
+        "SRC-FATIMA-FIRST-SATURDAYS"
+      ]
     },
     {
       "id": "G334",
@@ -613,7 +976,18 @@
         "SRC-CIC83-1230-1234"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A devotional journey to a sacred place undertaken for prayer, penance or another religious purpose.",
+        "fr": "Voyage dévotionnel vers un lieu sacré entrepris pour la prière, la pénitence ou une autre fin religieuse."
+      },
+      "explanation": {
+        "en": "Pilgrimage combines physical movement with spiritual intention. The canonical status of the destination as a shrine is a separate question from the devotional fact that people travel there as pilgrims.",
+        "fr": "Le pèlerinage unit déplacement physique et intention spirituelle. Le statut canonique du lieu comme sanctuaire est une question distincte du fait dévotionnel que des personnes s’y rendent en pèlerins."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
     },
     {
       "id": "G335",
@@ -631,7 +1005,18 @@
         "SRC-CIC83-1230-1234"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A person undertaking a pilgrimage for religious motives.",
+        "fr": "Personne qui accomplit un pèlerinage pour des motifs religieux."
+      },
+      "explanation": {
+        "en": "Pilgrim describes the devotional role of the traveler and does not itself imply membership in an association, fulfilment of a vow or participation in an officially organized event.",
+        "fr": "Pèlerin décrit le rôle dévotionnel du voyageur et n’implique pas en lui-même l’appartenance à une association, l’accomplissement d’un vœu ou la participation à un événement officiellement organisé."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
     },
     {
       "id": "G336",
@@ -649,7 +1034,18 @@
         "SRC-CIC83-1230-1234"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A church or other sacred place to which many faithful make pilgrimage for a special reason of piety with the approval required by canon law.",
+        "fr": "Église ou autre lieu sacré où de nombreux fidèles se rendent en pèlerinage pour un motif particulier de piété avec l’approbation requise par le droit canonique."
+      },
+      "explanation": {
+        "en": "This canonical pilgrimage-shrine sense must be distinguished from G181, the sanctuary area of a church. French sanctuaire commonly covers both senses, so search must disambiguate them.",
+        "fr": "Ce sens canonique de lieu de pèlerinage doit être distingué de G181, le sanctuaire comme partie d’une église. Le français « sanctuaire » couvre couramment les deux sens ; la recherche doit donc les désambiguïser."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
     },
     {
       "id": "G337",
@@ -667,7 +1063,18 @@
         "SRC-HIST-STATIONAL-LITURGY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A church or stopping place associated with a traditional liturgical station or stational procession.",
+        "fr": "Église ou halte associée à une station liturgique traditionnelle ou à une procession stationnale."
+      },
+      "explanation": {
+        "en": "The Roman stational tradition links appointed churches with particular liturgical days. ‘Station’ here must be distinguished from an individual Station of the Cross.",
+        "fr": "La tradition stationnale romaine relie des églises déterminées à certains jours liturgiques. « Station » doit ici être distingué d’une station individuelle du Chemin de Croix."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-STATIONAL-LITURGY"
+      ]
     },
     {
       "id": "G338",
@@ -685,7 +1092,18 @@
         "SRC-CIC83-1230-1234"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An object offered in fulfilment of a vow or in thanksgiving for a favour received.",
+        "fr": "Objet offert en accomplissement d’un vœu ou en action de grâces pour une faveur reçue."
+      },
+      "explanation": {
+        "en": "Ex-votos are common at shrines and testify to devotional history. Their presence is evidence of piety and custom, not automatic proof of a miracle or of official ecclesiastical recognition of every claim represented.",
+        "fr": "Les ex-voto sont fréquents dans les sanctuaires et témoignent de l’histoire dévotionnelle. Leur présence atteste une piété et une coutume, non automatiquement un miracle ni la reconnaissance ecclésiastique officielle de toute affirmation représentée."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-1230-1234"
+      ]
     },
     {
       "id": "G339",
@@ -703,7 +1121,18 @@
         "SRC-HIST-CONFRATERNITY-SODALITY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An association of the faithful traditionally established for a religious, charitable or devotional purpose and often linked to particular spiritual practices.",
+        "fr": "Association de fidèles traditionnellement établie pour une fin religieuse, charitable ou dévotionnelle et souvent liée à des pratiques spirituelles particulières."
+      },
+      "explanation": {
+        "en": "Historical confraternities had varying canonical forms, privileges and obligations. A modern directory should not infer current canonical standing merely from an old confraternity title.",
+        "fr": "Les confréries historiques possédaient des formes canoniques, privilèges et obligations variables. Un annuaire moderne ne doit pas déduire un statut canonique actuel du seul maintien d’un ancien titre de confrérie."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CONFRATERNITY-SODALITY"
+      ]
     },
     {
       "id": "G340",
@@ -721,7 +1150,18 @@
         "SRC-HIST-CONFRATERNITY-SODALITY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A religious association or fellowship of the faithful, historically used for various devotional and apostolic groups.",
+        "fr": "Association ou fraternité religieuse de fidèles, terme historiquement employé pour divers groupes dévotionnels et apostoliques."
+      },
+      "explanation": {
+        "en": "Sodality is a broad historical term rather than one single current canonical form. The precise juridical status of a given sodality must be established from its statutes and competent authority.",
+        "fr": "Sodalité est un terme historique large plutôt qu’une forme canonique actuelle unique. Le statut juridique précis d’une sodalité donnée doit être établi d’après ses statuts et l’autorité compétente."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CONFRATERNITY-SODALITY"
+      ]
     },
     {
       "id": "G341",
@@ -739,7 +1179,18 @@
         "SRC-CIC83-460-572"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The priest appointed to assist the diocesan bishop in governing the whole diocese with ordinary executive power according to law.",
+        "fr": "Prêtre nommé pour assister l’évêque diocésain dans le gouvernement de tout le diocèse avec un pouvoir exécutif ordinaire selon le droit."
+      },
+      "explanation": {
+        "en": "The vicar general acts within the authority granted by universal and particular law and by the diocesan bishop. The office is diocesan and juridical, not a sacramental degree.",
+        "fr": "Le vicaire général agit dans l’autorité accordée par le droit universel et particulier et par l’évêque diocésain. La charge est diocésaine et juridique, non un degré sacramentel."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
     },
     {
       "id": "G342",
@@ -757,7 +1208,18 @@
         "SRC-CIC83-460-572"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest appointed with ordinary executive power similar to a vicar general but limited to a defined territory, category of affairs, rite or group.",
+        "fr": "Prêtre nommé avec un pouvoir exécutif ordinaire semblable à celui d’un vicaire général mais limité à un territoire, une catégorie d’affaires, un rite ou un groupe déterminé."
+      },
+      "explanation": {
+        "en": "The scope of an episcopal vicar is defined by appointment and law. The title does not mean he is himself necessarily a bishop.",
+        "fr": "L’étendue du pouvoir d’un vicaire épiscopal est définie par sa nomination et le droit. Le titre ne signifie pas qu’il soit lui-même nécessairement évêque."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
     },
     {
       "id": "G343",
@@ -775,7 +1237,18 @@
         "SRC-CIC83-460-572"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest assigned to assist the pastor in the pastoral care of a parish.",
+        "fr": "Prêtre chargé d’assister le curé dans la charge pastorale d’une paroisse."
+      },
+      "explanation": {
+        "en": "A parochial vicar works under the pastor according to law and the bishop’s arrangements. In French this office is commonly called vicaire paroissial.",
+        "fr": "Le vicaire paroissial travaille sous l’autorité du curé selon le droit et les dispositions de l’évêque. En français cette charge est couramment appelée vicaire paroissial."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
     },
     {
       "id": "G344",
@@ -793,7 +1266,18 @@
         "SRC-CIC83-460-572"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The priest entrusted with the care of a church that is neither parochial nor capitular, according to canon law.",
+        "fr": "Prêtre auquel est confié le soin d’une église qui n’est ni paroissiale ni capitulaire, selon le droit canonique."
+      },
+      "explanation": {
+        "en": "A rector of a church has defined rights and duties concerning worship and pastoral activity there. The office should not be confused with a seminary rector or a generic administrative director.",
+        "fr": "Le recteur d’une église possède des droits et devoirs définis concernant le culte et l’activité pastorale en ce lieu. Cette charge ne doit pas être confondue avec celle de recteur de séminaire ni avec un directeur administratif générique."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
     },
     {
       "id": "G345",
@@ -811,7 +1295,18 @@
         "SRC-CIC83-460-572"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest entrusted in a stable way with pastoral care of a particular community or group of the faithful.",
+        "fr": "Prêtre auquel est confiée de manière stable la charge pastorale d’une communauté ou d’un groupe particulier de fidèles."
+      },
+      "explanation": {
+        "en": "A chaplain’s competence is defined by appointment and law. The term can cover hospitals, schools, military or religious communities and other groups, so context matters.",
+        "fr": "La compétence d’un aumônier est définie par sa nomination et le droit. Le terme peut concerner hôpitaux, écoles, armées, communautés religieuses et autres groupes ; le contexte est donc important."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
     },
     {
       "id": "G346",
@@ -829,7 +1324,18 @@
         "SRC-CIC83-460-572"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A cleric who belongs to a cathedral or collegiate chapter according to canon law and the chapter’s statutes.",
+        "fr": "Clerc membre d’un chapitre cathédral ou collégial selon le droit canonique et les statuts du chapitre."
+      },
+      "explanation": {
+        "en": "This sense of canon, canonicus, is entirely distinct from the Canon of the Mass and from a canon as an individual legal norm.",
+        "fr": "Ce sens de chanoine, canonicus, est entièrement distinct du Canon de la Messe et d’un canon comme norme juridique individuelle."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
     },
     {
       "id": "G347",
@@ -847,7 +1353,18 @@
         "SRC-CIC83-460-572"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A priest appointed to oversee and coordinate a group of parishes forming a vicariate forane or deanery.",
+        "fr": "Prêtre nommé pour superviser et coordonner un groupe de paroisses formant un vicariat forain ou doyenné."
+      },
+      "explanation": {
+        "en": "The vicar forane or dean assists diocesan coordination but does not become the proper pastor of every parish in the deanery.",
+        "fr": "Le vicaire forain ou doyen aide à la coordination diocésaine mais ne devient pas le pasteur propre de toutes les paroisses du doyenné."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-460-572"
+      ]
     },
     {
       "id": "G348",
@@ -865,7 +1382,18 @@
         "SRC-HIST-PROVOST"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A superior or presiding cleric bearing the historical title praepositus, whose exact office depends on the chapter, monastery or institution concerned.",
+        "fr": "Supérieur ou clerc président portant le titre historique praepositus, dont la charge exacte dépend du chapitre, monastère ou institut concerné."
+      },
+      "explanation": {
+        "en": "Provost is not one universal canonical office with identical powers everywhere. The governing statutes and historical context determine its meaning.",
+        "fr": "Prévôt n’est pas une charge canonique universelle possédant partout les mêmes pouvoirs. Les statuts applicables et le contexte historique en déterminent le sens."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PROVOST"
+      ]
     },
     {
       "id": "G349",
@@ -883,7 +1411,18 @@
         "SRC-CIC83-607-709"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The male superior of an abbey or autonomous monastic community according to its rule and proper law.",
+        "fr": "Supérieur masculin d’une abbaye ou communauté monastique autonome selon sa règle et son droit propre."
+      },
+      "explanation": {
+        "en": "An abbot’s authority varies with the institute and canonical status of the monastery. Not every superior of monks is necessarily an abbot, and not every abbot has territorial jurisdiction beyond his community.",
+        "fr": "L’autorité d’un abbé varie selon l’institut et le statut canonique du monastère. Tout supérieur de moines n’est pas nécessairement abbé et tout abbé ne possède pas une juridiction territoriale au-delà de sa communauté."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
     },
     {
       "id": "G350",
@@ -901,7 +1440,18 @@
         "SRC-CIC83-607-709"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The female superior of an abbey or autonomous community of nuns according to its rule and proper law.",
+        "fr": "Supérieure féminine d’une abbaye ou communauté autonome de moniales selon sa règle et son droit propre."
+      },
+      "explanation": {
+        "en": "An abbess exercises the authority granted by canon law and the institute’s constitutions within the religious community. She does not receive Holy Orders by reason of that office.",
+        "fr": "Une abbesse exerce l’autorité accordée par le droit canonique et les constitutions de l’institut au sein de la communauté religieuse. Elle ne reçoit pas le sacrement de l’Ordre en raison de cette charge."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-607-709"
+      ]
     },
     {
       "id": "G351",
