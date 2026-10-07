@@ -379,7 +379,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Unités complètes"
+        }
+      }
     },
     {
       "id": "l37-b2",
@@ -396,7 +401,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Kyrie"
+        }
+      }
     },
     {
       "id": "l37-b3",
@@ -413,7 +423,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Gloria"
+        }
+      }
     },
     {
       "id": "l37-b4",
@@ -430,7 +445,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Credo"
+        }
+      }
     },
     {
       "id": "l37-b5",
@@ -447,7 +467,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Sanctus et Agnus"
+        }
+      }
     },
     {
       "id": "l37-b6",
@@ -462,7 +487,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ordinaire complet"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -633,7 +663,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui gouverne le long texte du Credo ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Credo",
+            "Et",
+            "Deum",
+            "Amen"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e2",
@@ -663,7 +706,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi Kyrie n’est-il pas analysé comme du latin ordinaire ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "c’est une formule grecque conservée",
+            "c’est de l’hébreu",
+            "c’est du français",
+            "cela n’a pas de sens"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e3",
@@ -693,7 +749,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle unité contient incarnatus est et resurrexit ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Credo",
+            "Gloria",
+            "Sanctus",
+            "Agnus Dei"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e4",
@@ -723,7 +792,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle unité se termine par dona nobis pacem ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Agnus Dei",
+            "Credo",
+            "Kyrie",
+            "Sanctus"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e5",
@@ -753,7 +835,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle unité contient Quoniam tu solus Sanctus ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Gloria",
+            "Credo",
+            "Sanctus",
+            "Kyrie"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e6",
@@ -783,7 +878,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui aide le plus dans le Sanctus et l’Agnus ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "la répétition parallèle avec vérification des formes",
+            "de nouvelles listes de vocabulaire",
+            "la réécriture en prose",
+            "l’ignorance des verbes"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e7",
@@ -812,7 +920,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que faut-il faire lorsqu’une proposition bloque la compréhension ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "diagnostiquer le blocage puis revenir à la lecture continue",
+            "recommencer le cours",
+            "traduire chaque mot",
+            "sauter l’unité"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e8",
@@ -841,7 +962,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon figé de la leçon 37 ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Ordinaire complet.",
+            "Propres ordinaires inconnus.",
+            "Registre psaume / hymne / antienne.",
+            "Couronnement sur un texte authentique inconnu du Missel."
+          ]
+        }
+      }
     },
     {
       "id": "l37-e9",
@@ -868,7 +1002,18 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "La leçon 37 introduit-elle du nouveau vocabulaire suivi ?",
+          "hint": "Utilisez la structure de l’Ordinaire complet.",
+          "explanation": "La leçon 37 évalue la navigation et la compréhension soutenue plutôt que du nouveau vocabulaire.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
     },
     {
       "id": "l37-e10",
@@ -896,7 +1041,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Énoncez le comportement final de lecture attendu.",
+          "hint": "Lisez des unités entières.",
+          "explanation": "L’étape 8 entraîne à récupérer sans repartir de zéro."
+        }
+      }
     }
   ],
   "objectives": [
@@ -958,5 +1110,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Lire l’Ordinaire",
+      "grammarFocus": "Ordinaire continu de la Messe",
+      "readingOutcome": "Lire l’Ordinaire complet avec une assistance progressivement réduite.",
+      "objectives": [
+        "Lire l’Ordinaire complet de façon continue.",
+        "Utiliser le mouvement rhétorique plutôt que réenseigner la grammaire.",
+        "Réduire l’aide aux seuls véritables blocages.",
+        "Franchir le jalon « Ordinaire complet » sans nouveau vocabulaire suivi."
+      ]
+    }
+  }
 }
