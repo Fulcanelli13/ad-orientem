@@ -4,10 +4,10 @@
   "resolved_at": "2026-10-07",
   "summary": {
     "total": 13,
-    "promoted": 3,
+    "promoted": 4,
     "provider_routed": 4,
     "rejected_current": 1,
-    "staged": 5
+    "staged": 4
   },
   "records": [
     {
@@ -16,14 +16,14 @@
       "jurisdiction": "Diocese of Trenton",
       "locality": "Neptune, NJ",
       "candidate": "Holy Innocents Church",
-      "current_fact": "Current parish calendar has monthly Traditional Latin Mass, third Sunday 3pm through 2027.",
-      "status": "CURRENT_TLM_YEAR_NOT_EXPLICIT",
-      "disposition": "STAGE_YEAR_EDITION",
-      "reason": "Do not force ROMAN_1962 without an official source explicitly identifying the books.",
+      "current_fact": "Current parish schedule lists a recurring Traditional Latin Mass on the third Sunday at 3pm, with dated events through February 2027; diocesan authorization explicitly identifies Holy Innocents as a 1962-Missal parish.",
+      "status": "1962_CONFIRMED_CURRENT",
+      "disposition": "PROMOTE_DIOCESAN",
+      "reason": "Current first-party schedule and explicit diocesan 1962-edition authorization now satisfy the strict gate.",
       "source_url": "https://holyinnocentschurch.net/mass-schedule/",
-      "resolution": "STAGED",
-      "resolution_note": "STAGE_YEAR_EDITION",
-      "resolved_source_url": "https://holyinnocentschurch.net/mass-schedule/"
+      "resolution": "PROMOTED_DIOCESAN_2026_10_07",
+      "resolution_note": "Promoted: current parish event series confirms the recurring third-Sunday TLM through February 2027, while the Diocese of Trenton explicitly authorizes Holy Innocents for the 1962 Roman Missal.",
+      "resolved_source_url": "https://holyinnocentschurch.net/series/traditional-latin-mass-with-gregorian-chant-2/"
     },
     {
       "exception_id": "USB-EX-002",
