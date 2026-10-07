@@ -1046,7 +1046,10 @@
         "fr": {
           "prompt": "Énoncez le comportement final de lecture attendu.",
           "hint": "Lisez des unités entières.",
-          "explanation": "L’étape 8 entraîne à récupérer sans repartir de zéro."
+          "explanation": "L’étape 8 entraîne à récupérer sans repartir de zéro.",
+          "answerGuide": [
+            "compréhension continue avec vérifications diagnostiques sélectives"
+          ]
         }
       }
     }
