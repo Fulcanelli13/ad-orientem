@@ -10,6 +10,32 @@ const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const OUT = resolve(ROOT, "artifacts/core-proper-corpus");
 const PIN = "126a07f91ede04664108abb6fb20ace3f4de14b9";
 
+const RECOVERY_DONORS = Object.freeze({
+  "C10t:Latin":"obsolete/missa/Latin/Commune/C10t.txt",
+  "C10t:English":"obsolete/missa/English/Commune/C10t.txt",
+  "C10t:Francais":"obsolete/missa/French/Commune/C10t.txt",
+  "Nat29:Latin":"web/www/missa/Latin/Tempora/Nat29.txt",
+  "Nat29:English":"web/www/missa/English/Tempora/Nat29.txt",
+  "Nat29:Francais":"web/www/missa/Francais/Tempora/Nat29.txt",
+  "Nat30:Latin":"web/www/missa/Latin/Tempora/Nat30.txt",
+  "Nat30:English":"web/www/missa/English/Tempora/Nat30.txt",
+  "Nat30:Francais":"web/www/missa/Francais/Tempora/Nat30.txt",
+  "Nat31:Latin":"web/www/missa/Latin/Tempora/Nat31.txt",
+  "Nat31:English":"web/www/missa/English/Tempora/Nat31.txt",
+  "Nat31:Francais":"web/www/missa/Francais/Tempora/Nat31.txt",
+});
+
+async function loadRecoverySources() {
+  const base = "https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/" + PIN + "/";
+  const out = {};
+  for (const [key,path] of Object.entries(RECOVERY_DONORS)) {
+    const response = await fetch(base + path);
+    if (!response.ok) throw new Error("Corpus recovery donor unavailable " + key + " -> " + path + " (" + response.status + ")");
+    out[key] = await response.text();
+  }
+  return out;
+}
+
 function arg(name, fallback) {
   const prefix = "--" + name + "=";
   const hit = process.argv.find(x => x.startsWith(prefix));
@@ -196,6 +222,7 @@ async function resolveBatch(page, dates) {
         commemorations: p.calendarCommemorations ?? [],
         sourceRules: p.sourceRules ?? [],
         segments,
+        sourceRecoveries: [...(globalThis.__AO_CORPUS_SOURCE_RECOVERIES ?? [])],
         diagnostic: {
           requestedFiles: result?.diagnostic?.requestedFiles ?? [],
           referencesResolved: result?.diagnostic?.referencesResolved ?? [],
@@ -210,10 +237,14 @@ async function resolveBatch(page, dates) {
 
     const all = [];
     for (const date of dateList) {
+      globalThis.__AO_CORPUS_CURRENT_DATE = date;
+      globalThis.__AO_CORPUS_SOURCE_RECOVERIES = [];
       const first = await resolver.resolveDay(date, { formularyIndex: 0 });
       all.push(extract(first));
       const count = Math.max(1, Number(first?.day?.massOptions?.length || 1));
       for (let i = 1; i < count; i++) {
+        globalThis.__AO_CORPUS_CURRENT_DATE = date;
+        globalThis.__AO_CORPUS_SOURCE_RECOVERIES = [];
         const alternate = await resolver.resolveDay(date, { formularyIndex: i });
         all.push(extract(alternate));
       }
@@ -374,6 +405,59 @@ try {
   const pin = await page.evaluate(() => globalThis.AO_SOURCE_TRANSPORT_COMPAT?.pin ?? globalThis.AO_DIVINUM_OFFICIUM_PIN ?? null);
   if (pin) assert.equal(pin, PIN, "production Divinum Officium pin drifted");
 
+  const recoverySources = await loadRecoverySources();
+  await page.evaluate(({sources,pin,donors}) => {
+    const upstreamFetch = globalThis.fetch.bind(globalThis);
+    const RECOVERY_DONORS_BROWSER = donors;\n    const langKey = value => /^French$/i.test(value) ? "Francais" : value;
+    const responseFor = (text, donor, requested) => {
+      globalThis.__AO_CORPUS_SOURCE_RECOVERIES ??= [];
+      globalThis.__AO_CORPUS_SOURCE_RECOVERIES.push({
+        date: globalThis.__AO_CORPUS_CURRENT_DATE ?? null,
+        requested,
+        donor,
+        policy: "CORPUS_ONLY_PINNED_SOURCE_RECOVERY",
+      });
+      return new Response(text, {
+        status:200,
+        headers:{
+          "content-type":"text/plain; charset=utf-8",
+          "x-ao-corpus-recovery":"1",
+          "x-ao-corpus-donor":donor,
+        },
+      });
+    };
+    globalThis.fetch = async (input,init) => {
+      const raw = typeof input === "string" ? input : (input?.url ?? String(input ?? ""));
+      let match = raw.match(new RegExp(
+        "^https://raw\\.githubusercontent\\.com/DivinumOfficium/divinum-officium/" + pin +
+        "/obsolete/missa/(Latin|English|Francais|French)/Commune/C10t\\.txt$","i"
+      ));
+      if (match) {
+        const language = langKey(match[1]);
+        const key = "C10t:" + language;
+        const text = sources[key];
+        if (text != null) return responseFor(text, RECOVERY_DONORS_BROWSER[key], raw);
+      }
+
+      match = raw.match(new RegExp(
+        "^https://raw\\.githubusercontent\\.com/DivinumOfficium/divinum-officium/" + pin +
+        "/web/www/(?:missa|horas)/(Latin|English|Francais|French)/Tempora/Nat1-1\\.txt$","i"
+      ));
+      if (match) {
+        const date = String(globalThis.__AO_CORPUS_CURRENT_DATE ?? "");
+        const md = date.slice(5);
+        const donorId = md === "12-29" ? "Nat29" : md === "12-30" ? "Nat30" : md === "12-31" ? "Nat31" : null;
+        if (donorId) {
+          const language = langKey(match[1]);
+          const key = donorId + ":" + language;
+          const text = sources[key];
+          if (text != null) return responseFor(text, RECOVERY_DONORS_BROWSER[key], raw);
+        }
+      }
+      return upstreamFetch(input,init);
+    };
+  }, {sources:recoverySources,pin:PIN,donors:RECOVERY_DONORS});
+
   const discoveryDates = datesBetween(discoveryStart, discoveryEnd);
   const encounterDates = datesBetween(encounterStart, encounterEnd);
   const discoveryRows = [];
@@ -408,6 +492,7 @@ try {
       discovery:"All production calendar days and all exposed formularies in the discovery window; final resolved Latin is canonicalized by sourcePath + final-text SHA-256.",
       encounter:"One complete liturgical-year window; every production-resolved formulary occurrence contributes encounter frequency.",
       specialRites:["good_friday_1962","holy_thursday_1962","easter_vigil_1962","palm_sunday_1962","candlemas_1962","ash_wednesday_1962","requiem_mass_1962"],
+      sourceRecovery:"Two pinned-source anomalies are recovered only inside this research harness: Tempora/Nat1-1 is date-mapped to Nat29/Nat30/Nat31 on 29-31 December; obsolete Mass Commune/C10t is served from its pinned obsolete/missa donor before source-transport compatibility can redirect it to a non-existent Hours file.",
       note:"Raw Divinum Officium filenames are never counted directly. Reference resolution, 1960 section selection, commemorations, inherited Propers, and production calendar substitutions are inherited from Ad Orientem runtime.",
     },
     summary:{
