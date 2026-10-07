@@ -1220,6 +1220,8 @@ export const AO_PRAY_ROUTE_ASSET_IDS=Object.freeze({
   "pray.morning_evening":"ao-rich-begin-end-day",
   "pray.sacred_hymns":"ao-refined-devotions",
   "pray.holy_name_litany":"ao-refined-devotions",
+  "pray.nightly_examen":"ao-rich-examination-of-conscience",
+  "pray.meal_prayers":"ao-refined-pray-now",
   "pray.morning":"ao-rich-morning-offering",
   "pray.night":"ao-rich-night-prayer",
   "pray.marian":"ao-rich-our-lady-marian-devotions",

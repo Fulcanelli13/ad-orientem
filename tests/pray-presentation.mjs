@@ -70,6 +70,9 @@ assert.match(runtime,/aoRitualReaderGrid aoAngelusRitualGrid/,"Angelus lost the 
 assert.match(runtime,/data-ao-ritual-module="angelus"/,"Angelus lost its exact donor rail ownership marker");
 assert.match(runtime,/data-ao-ritual-channels="posture,gesture"/,"Angelus exact donor channel contract changed");
 assert.match(runtime,/data-ao-incarnation="true"/,"Angelus lost the exact Incarnation focus marker");
+assert.match(runtime,/TODO\(ANGELUS_POSTURE_SATURDAY_VESPERS\)/,"Angelus Saturday-Vespers posture blocker lost its explicit TODO");
+const angelusPostureSource=runtime.match(/function selectedSunday\(\)[\s\S]*?function semanticRailChip/)?.[0]||"";
+assert.doesNotMatch(angelusPostureSource,/getHours|getMinutes|18:00|6\s*PM/i,"Angelus Saturday-Vespers posture must not use a crude civil-clock heuristic");
 assert.match(runtime,/ritualSlotMarkup\('gesture','ao-live-profound-bow'/,"Angelus lost the donor profound-bow gesture slot");
 assert.match(runtime,/intersectionRatio>=\.56/,"Angelus gesture no longer follows the donor focus threshold");
 assert.match(runtime,/ao-rich-stations/,"Stations semantic rail lost its canonical devotional identity");
@@ -82,6 +85,10 @@ assert.match(runtime,/isReducedMotion\?\.\(\)/,"Stations transition no longer ho
 assert.doesNotMatch(runtime,/view===['"]stations['"][\s\S]{0,900}ao-live-(?:stand|kneel)/,"Stations semantic rails invented a universal posture");
 assert.match(runtime,/i===13\?'ao-refined-silence':'ao-live-look'/,"Stations XIV no longer changes from attention to donor silence");
 assert.match(runtime,/After the XIV Station/,"Stations XIV silence cue lost its donor context");
+assert.match(runtime,/TRADITIONAL PRAYERS OF THE ST ALPHONSUS METHOD/,"Stations lost the traditional-method status of the vocal prayers");
+assert.match(runtime,/the Way of the Cross itself is centered on prayerfully visiting the stations and meditating on the Passion/,"Stations again presents the vocal prayers as constitutive requirements");
+assert.match(runtime,/'pray\.de_profundis':\{id:'pray\.de_profundis',type:'prayer'/,"Direct De profundis route is not owned by PRAY");
+assert.match(runtime,/'pray\.eternal_rest':\{id:'pray\.eternal_rest',type:'prayer'/,"Direct Requiem aeternam route is not owned by PRAY");
 assert.match(runtime,/ADOR\.mode==='visit'&&ADOR\.visitStep===0/,"Adoration arrival cue lost exact visit-entry ownership");
 assert.match(runtime,/ao-live-genuflect/,"Adoration arrival lost the donor genuflection cue");
 assert.match(runtime,/Remain present/,"Adoration recollection rail lost its persistent silence state");
