@@ -367,6 +367,14 @@ const ROSARY_DECLUTTER_CSS=`
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .aoModuleHome,
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .lab-lang{display:none!important}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] [hidden]{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-latin][hidden],
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-vern][hidden]{
+ display:none!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-latin]:not([hidden]),
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-vern]:not([hidden]){
+ display:block!important;
+}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"] .aoRitualValue{display:none!important}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"]{
  grid-template-columns:28px!important;padding-inline:8px!important;
