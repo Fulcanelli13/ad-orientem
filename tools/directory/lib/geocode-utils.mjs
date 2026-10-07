@@ -69,6 +69,107 @@ export function buildDirectoryGeocodeQuery(venue){
   const address=buildDirectoryAddressOnlyQuery(venue);
   return [name,address].filter(Boolean).join(", ").slice(0,280);
 }
+function normalizedComparable(value){
+  return ascii(value).replace(/[^a-z0-9]+/g," ").replace(/\s+/g," ").trim();
+}
+function extractPostalCode(value,countryCode){
+  const text=String(value??"");
+  const cc=String(countryCode??"").toUpperCase();
+  if(cc==="CA")return text.match(/\b[A-Z]\d[A-Z][ -]?\d[A-Z]\d\b/i)?.[0]?.toUpperCase()??null;
+  if(cc==="US")return text.match(/\b\d{5}(?:-\d{4})?\b/g)?.at(-1)??null;
+  if(cc==="GB")return text.match(/\b[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\b/i)?.[0]?.toUpperCase()??null;
+  return text.match(/\b\d{4,6}\b/g)?.at(-1)??null;
+}
+function escapeRegExp(value){
+  return String(value??"").replace(/[.*+?^$(){}|[\]\\]/g,"\\export function buildDirectoryGeocodeQuery(venue){
+  const name=String(venue?.name?.official??"").trim();
+  const address=buildDirectoryAddressOnlyQuery(venue);
+  return [name,address].filter(Boolean).join(", ").slice(0,280);
+}
+");
+}
+function stripPostal(value,postal){
+  if(!postal)return String(value??"").trim();
+  const re=new RegExp(escapeRegExp(postal).replace(/\s+/g,"\\s*"),"i");
+  return String(value??"").replace(re," ").replace(/\s+/g," ").trim();
+}
+function parseLocalitySegment(segment,countryCode,postal){
+  let value=stripPostal(segment,postal).replace(/^[,;\s-]+|[,;\s-]+$/g,"").trim();
+  const cc=String(countryCode??"").toUpperCase();
+  let state=null;
+  if(["US","CA","AU"].includes(cc)){
+    const stateMatch=value.match(/\b([A-Z]{2,3})\b\s*$/);
+    if(stateMatch){
+      state=stateMatch[1].toUpperCase();
+      value=value.slice(0,stateMatch.index).replace(/[,;\s-]+$/g,"").trim();
+    }
+  }
+  return {city:value||null,state};
+}
+export function extractDirectoryAddressComponents(venue){
+  const cleaned=buildDirectoryAddressOnlyQuery(venue);
+  const countryCode=String(venue?.address?.country_code??"").toUpperCase();
+  const postalcode=extractPostalCode(cleaned,countryCode);
+  let segments=cleaned.split(/\s*,\s*/).map(x=>x.trim()).filter(Boolean);
+  const countryName=String(venue?.address?.country??"").trim();
+  if(countryName&&segments.length&&normalizedComparable(segments.at(-1))===normalizedComparable(countryName))segments.pop();
+  const nameKey=normalizedComparable(venue?.name?.official??"");
+  if(segments.length&&nameKey){
+    const firstKey=normalizedComparable(segments[0]);
+    if(firstKey===nameKey||firstKey.startsWith(nameKey+" ")||nameKey.startsWith(firstKey+" "))segments.shift();
+  }
+  let localitySegment=segments.at(-1)??"";
+  if(postalcode&&!localitySegment.includes(postalcode)){
+    const containing=[...segments].reverse().find(s=>s.includes(postalcode));
+    if(containing)localitySegment=containing;
+  }
+  const {city,state}=parseLocalitySegment(localitySegment,countryCode,postalcode);
+  let street=segments[0]??null;
+  if(street===localitySegment&&segments.length>1)street=segments[segments.length-2];
+  if(street&&city&&normalizedComparable(street)===normalizedComparable(city))street=null;
+  return Object.freeze({
+    street:street||null,
+    city:city||venue?.address?.city||null,
+    state:state||venue?.address?.region||null,
+    postalcode:postalcode||venue?.address?.postal_code||null,
+    countryCode,
+  });
+}
+export function buildDirectoryStructuredAttempts(venue){
+  const parts=extractDirectoryAddressComponents(venue);
+  const attempts=[];
+  if(parts.street&&(parts.city||parts.postalcode)){
+    attempts.push(Object.freeze({
+      kind:"STRUCTURED_STREET",
+      params:Object.freeze({
+        street:parts.street,
+        city:parts.city,
+        state:parts.state,
+        postalcode:parts.postalcode,
+      })
+    }));
+  }
+  const amenity=String(venue?.name?.official??"").trim();
+  if(amenity&&(parts.city||parts.postalcode)){
+    attempts.push(Object.freeze({
+      kind:"STRUCTURED_AMENITY",
+      params:Object.freeze({
+        amenity,
+        city:parts.city,
+        state:parts.state,
+        postalcode:parts.postalcode,
+      })
+    }));
+  }
+  return attempts;
+}
+export function structuredGeocodeFingerprint(params){
+  return Object.entries(params??{})
+    .filter(([,value])=>value!==null&&value!==undefined&&String(value).trim())
+    .sort(([a],[b])=>a.localeCompare(b))
+    .map(([key,value])=>key+"="+String(value).trim())
+    .join("&");
+}
 export function geocodeCacheKey({query,countryCode}){
   return crypto.createHash("sha256").update(String(countryCode??"").toUpperCase()+"\n"+String(query??"").trim()).digest("hex");
 }
