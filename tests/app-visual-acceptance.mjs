@@ -257,12 +257,14 @@ try{
     season:document.querySelector("#ao-calendar-modular-root .aoCalV2Context h3")?.textContent?.trim()??"",
     progress:document.querySelector("#ao-calendar-modular-root .aoCalV2Progress i")?.style?.width??"",
     weekScrollable:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalV2Week");return x?x.scrollWidth>=x.clientWidth:false})(),
+    rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
   }));
   assert.equal(calendarDay.version,"modular-calendar-v2-liturgical-year","Calendar did not activate the v2 owner");
   assert.ok(calendarDay.identity.length>0,"Calendar selected feast identity is blank");
   assert.ok(calendarDay.season.length>0,"Calendar selected liturgical period is blank");
   assert.match(calendarDay.progress,/\d+(?:\.\d+)?%/,"Calendar period progress is missing");
   assert.equal(calendarDay.weekScrollable,true,"Calendar week context does not remain touch-scrollable on phone");
+  assert.ok(calendarDay.rootScrollTop<=2,"Calendar Day auto-scrolled vertically while centering the selected date");
   const calendarFx=await page.evaluate(()=>({
     hero:document.querySelector("#ao-calendar-modular-root .aoCalV2Hero")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFxArtScan??null,
@@ -280,6 +282,9 @@ try{
     journeyCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail [data-cal-date]").length,
     currentJourney:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail .current").length,
     comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-date]").length,
+    rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
+    headingTop:document.querySelector("#ao-calendar-modular-root .aoCalV2YearHeading")?.getBoundingClientRect?.().top??-1,
+    tabsBottom:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs")?.getBoundingClientRect?.().bottom??Infinity,
   }));
   assert.ok(calendarYear.ringWidth>=220,"Calendar liturgical-year ring collapsed below phone-readable size");
   assert.match(calendarYear.ringValue,/\d+(?:\.\d+)?%/,"Calendar year ring lost its computed percentage");
@@ -287,6 +292,8 @@ try{
   assert.equal(calendarYear.journeyCards,9,"Calendar year journey lost one or more liturgical periods");
   assert.equal(calendarYear.currentJourney,1,"Calendar year journey does not uniquely identify the current period");
   assert.ok(calendarYear.comingCards>=1,"Calendar year lost its Coming Next intelligence");
+  assert.ok(calendarYear.rootScrollTop<=2,"Calendar view switch retained the previous surface scroll position");
+  assert.ok(calendarYear.headingTop>=calendarYear.tabsBottom-1,"Calendar Liturgical Year heading is hidden beneath sticky navigation");
   await shot("02b-calendar-year");
 
   await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").click();
@@ -299,6 +306,11 @@ try{
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:3000});
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1,"Calendar Date Picker lost direct date entry");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,"Calendar Date Picker lost its six-week month grid");
+  const calendarPickerGeometry=await page.evaluate(()=>{const root=document.getElementById("ao-calendar-modular-root"),grid=document.querySelector(".aoCalV2MonthGrid"),last=grid?.querySelector?.("[data-cal-pick-date]:nth-child(7)");return {rootOverflow:(root?.scrollWidth??Infinity)-(root?.clientWidth??0),gridOverflow:(grid?.scrollWidth??Infinity)-(grid?.clientWidth??0),lastRight:last?.getBoundingClientRect?.().right??Infinity,rootRight:root?.getBoundingClientRect?.().right??0,rootScrollTop:root?.scrollTop??Infinity}});
+  assert.ok(calendarPickerGeometry.rootOverflow<=1,"Calendar Date Picker causes horizontal root overflow");
+  assert.ok(calendarPickerGeometry.gridOverflow<=1,"Calendar month grid overflows horizontally");
+  assert.ok(calendarPickerGeometry.lastRight<=calendarPickerGeometry.rootRight+1,"Calendar Saturday column is clipped off-screen");
+  assert.ok(calendarPickerGeometry.rootScrollTop<=2,"Calendar Date Picker opened below the top of its surface");
   await shot("02d-calendar-picker");
 
   await page.locator("[data-ao-app-surface='pray']").click();
