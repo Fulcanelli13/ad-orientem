@@ -22,10 +22,10 @@ jobs:
         with:
           node-version: 22
       - name: Install browser scraper dependency
-        if: matrix.source == 'fssp' || matrix.source == 'sspx' || matrix.source == 'ibp' || matrix.source == 'sspx' || matrix.source == 'ibp'
+        if: matrix.source == 'fssp' || matrix.source == 'sspx' || matrix.source == 'ibp'
         run: npm install --no-audit --no-fund
-      - name: Install Chromium for dynamic FSSP directory
-        if: matrix.source == 'fssp'
+      - name: Install Chromium for browser-backed official sources
+        if: matrix.source == 'fssp' || matrix.source == 'sspx' || matrix.source == 'ibp'
         run: npx playwright install --with-deps chromium
       - name: Import official source corpus
         run: npm run directory:import:${{ matrix.source }}
