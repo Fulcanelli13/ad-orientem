@@ -79,18 +79,51 @@ export function selectReaderTextCorpus({form,lowCorpus,sungCorpus}={}){
   return Object.freeze({family,corpus,audit});
 }
 
-function ordinaryParagraphs(block){
+function languageKey(language){
+  return String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
+}
+
+function rolePrefix(latin){
+  const match=String(latin??"").trim().match(/^(℣\.|℟\.|[VRSMD]\.)\s*/u);
+  return match?.[1] ?? "";
+}
+
+function validateFrenchOrdinary(frenchOrdinary){
+  if(!frenchOrdinary || frenchOrdinary.schema!=="ao-reader-french-ordinary-v1") {
+    throw new Error("French Ordinary reader corpus required for French Mass");
+  }
+  if(frenchOrdinary.source?.commit!=="126a07f91ede04664108abb6fb20ace3f4de14b9") {
+    throw new Error("French Ordinary source pin changed");
+  }
+  if(!frenchOrdinary.byCue || typeof frenchOrdinary.byCue!=="object") {
+    throw new Error("French Ordinary cue map missing");
+  }
+  return frenchOrdinary.byCue;
+}
+
+function ordinaryParagraphs(block,{language="en",frenchOrdinary=null}={}){
+  const locale=languageKey(language);
+  const frenchByCue=locale==="fr" ? validateFrenchOrdinary(frenchOrdinary) : null;
   const raw=(block.units??[])
     .map(unit=>applyCanonicalTextCorrection(block.Block_ID,unit))
     .filter(unit=>Boolean(String(unit?.latin??"").trim() || String(unit?.english??"").trim()))
-    .map(unit=>({
-      id:unit.cue_id,
-      kind:unitKind(unit),
-      latin:unit.latin,
-      vernacular:unit.english,
-      sourceCueIds:Object.freeze([unit.cue_id]),
-    }));
-  return composeOrdinaryReaderParagraphs(block,raw);
+    .map(unit=>{
+      let vernacular=unit.english;
+      if(locale==="fr"){
+        const sourced=String(frenchByCue?.[unit.cue_id]??"").trim();
+        if(!sourced) throw new Error(block.Block_ID+": French Ordinary cue missing "+unit.cue_id);
+        const prefix=rolePrefix(unit.latin);
+        vernacular=prefix ? prefix+" "+sourced : sourced;
+      }
+      return {
+        id:unit.cue_id,
+        kind:unitKind(unit),
+        latin:unit.latin,
+        vernacular,
+        sourceCueIds:Object.freeze([unit.cue_id]),
+      };
+    });
+  return composeOrdinaryReaderParagraphs(block,raw,{language:locale});
 }
 
 function stateOnlyBlock(block){
@@ -102,7 +135,7 @@ function stateOnlyBlock(block){
   );
 }
 
-function properParagraphs(block,properSlots){
+function properParagraphs(block,properSlots,{language="en"}={}){
   const slot=block.Proper_Slot;
   const envelope=properSlots?.[slot] ?? null;
   if(envelope?.status==="NOT_APPLICABLE") return [];
@@ -117,7 +150,7 @@ function properParagraphs(block,properSlots){
       latin:p.latin ?? p.lat ?? null,
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
     }));
-    return composeProperReaderParagraphs(block.Block_ID,resolved);
+    return composeProperReaderParagraphs(block.Block_ID,resolved,{language});
   }
   const latin=data.latin ?? data.Latin_Text ?? null;
   const english=data.vernacular ?? data.english ?? data.English_Text ?? null;
@@ -127,13 +160,15 @@ function properParagraphs(block,properSlots){
     kind:"TEXT",
     latin,
     vernacular:english,
-  }]);
+  }],{language});
 }
 
 export function buildReaderSectionCard({
   corpus,
   section,
   properSlots={},
+  vernacularLanguage="en",
+  frenchOrdinary=null,
 }={}){
   validateReaderTextCorpus(corpus);
   if(!section || !Number.isInteger(section.sequence)) throw new TypeError("Reader section with sequence required");
@@ -151,8 +186,8 @@ export function buildReaderSectionCard({
       block.Proper_Slot && properSlots?.[block.Proper_Slot]?.status==="NOT_APPLICABLE"
     );
     const raw=block.Proper_Slot
-      ? properParagraphs(block,properSlots)
-      : ordinaryParagraphs(block);
+      ? properParagraphs(block,properSlots,{language:vernacularLanguage})
+      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary});
     const stateOnly=stateOnlyBlock(block);
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");
@@ -186,6 +221,8 @@ export function buildReaderSectionCard({
       textCorpusForm:corpus.form,
       donorHash:corpus.source.rawSha256,
       displayOnly:true,
+      vernacularLanguage:languageKey(vernacularLanguage),
+      frenchOrdinaryCommit:languageKey(vernacularLanguage)==="fr" ? frenchOrdinary?.source?.commit??null : null,
     }),
   });
 }

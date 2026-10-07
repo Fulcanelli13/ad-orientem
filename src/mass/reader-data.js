@@ -5,6 +5,7 @@ export const READER_PRESENTATION_FILES=Object.freeze({
   canonSourceMap:"reader-canon-source-map.v1.json",
   nuptialData:"reader-nuptial.v1.json",
   rubricEvents:"reader-rubric-events.v1.json",
+  frenchOrdinary:"reader-french-ordinary.v1.json",
 });
 
 function urlFor(file,baseUrl){
@@ -27,13 +28,14 @@ export async function loadReaderPresentationData({
   const urls=Object.fromEntries(Object.entries(READER_PRESENTATION_FILES).map(([key,file])=>[
     key,urlFor(file,baseUrl)
   ]));
-  const [sectionMap,lowCorpus,sungCorpus,canonSourceMap,nuptialData,rubricEvents]=await Promise.all([
+  const [sectionMap,lowCorpus,sungCorpus,canonSourceMap,nuptialData,rubricEvents,frenchOrdinary]=await Promise.all([
     readJson(fetchImpl,urls.sectionMap,"reader section map"),
     readJson(fetchImpl,urls.lowCorpus,"Low reader corpus"),
     readJson(fetchImpl,urls.sungCorpus,"Sung reader corpus"),
     readJson(fetchImpl,urls.canonSourceMap,"reader Canon source map"),
     readJson(fetchImpl,urls.nuptialData,"Nuptial reader payload"),
     readJson(fetchImpl,urls.rubricEvents,"reader rubric-event overlay"),
+    readJson(fetchImpl,urls.frenchOrdinary,"French Ordinary reader corpus"),
   ]);
   return Object.freeze({
     sectionMap,
@@ -42,6 +44,7 @@ export async function loadReaderPresentationData({
     canonSourceMap,
     nuptialData,
     rubricEvents,
+    frenchOrdinary,
     urls:Object.freeze(Object.fromEntries(Object.entries(urls).map(([k,v])=>[k,String(v)]))),
   });
 }

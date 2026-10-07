@@ -8,18 +8,26 @@ const COMPOSITE_RULES = Object.freeze({
       id:"AO.SM.C0053+AO.SM.C0054",
       kind:"TEXT",
       latin:"Glória in excélsis Deo.",
-      vernacular:"Glory to God in the highest.",
+      vernacular:Object.freeze({
+        en:"Glory to God in the highest.",
+        fr:"Gloire à Dieu au plus haut des cieux.",
+      }),
     }),
   ]),
 });
 
-export function composeOrdinaryReaderParagraphs(block, rawParagraphs) {
+function languageKey(language){
+  return String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
+}
+
+export function composeOrdinaryReaderParagraphs(block, rawParagraphs, {language="en"}={}) {
   if(!block?.Block_ID) throw new TypeError("Canonical block required");
   if(!Array.isArray(rawParagraphs)) throw new TypeError("Raw paragraph array required");
 
   const rules=COMPOSITE_RULES[block.Block_ID] ?? [];
   if(!rules.length) return Object.freeze(rawParagraphs.map(x=>Object.freeze({...x})));
 
+  const locale=languageKey(language);
   const consumed=new Set(rules.flatMap(rule=>rule.sourceCueIds));
   const byId=new Map(rawParagraphs.map(p=>[p.id,p]));
   for(const rule of rules){
@@ -33,7 +41,10 @@ export function composeOrdinaryReaderParagraphs(block, rawParagraphs) {
   for(const paragraph of rawParagraphs){
     if(consumed.has(paragraph.id)){
       if(!ruleInserted){
-        for(const rule of rules) out.push(rule);
+        for(const rule of rules) out.push(Object.freeze({
+          ...rule,
+          vernacular:rule.vernacular?.[locale] ?? rule.vernacular?.en ?? "",
+        }));
         ruleInserted=true;
       }
       continue;

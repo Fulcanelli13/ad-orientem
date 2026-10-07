@@ -78,7 +78,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={};
-let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:"en",prayerId:null,sacredHeart:"litany",communion:"before",dying:"now"};
+let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now"};
 
 function renderMorningEvening(){
   const rows=S.daypart==="evening"?EVENING_PRAYER_SEQUENCE_V381:MORNING_PRAYER_SEQUENCE_V381;
@@ -86,7 +86,16 @@ function renderMorningEvening(){
 }
 function renderHymns(){
   const h=SACRED_HYMNS_V381[S.hymn]||SACRED_HYMNS_V381.te_deum;
-  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A deliberately small source-locked collection. These texts come from a public-domain Catholic prayer book rather than from an inherited app composition.","Une collection volontairement réduite et verrouillée sur ses sources. Ces textes proviennent d’un livre de prières catholique du domaine public et non d’une composition héritée d’une application."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-hymn="te_deum" class="${S.hymn==="te_deum"?"active":""}">Te Deum</button><button type="button" data-tp381-hymn="veni_creator" class="${S.hymn==="veni_creator"?"active":""}">Veni Creator</button><button type="button" data-tp381-hymn="ave_maris_stella" class="${S.hymn==="ave_maris_stella"?"active":""}">Ave Maris Stella</button></div><div class="aoTP381Lang"><button type="button" data-tp381-hymn-lang="en" class="${S.hymnLang==="en"?"active":""}">English</button><button type="button" data-tp381-hymn-lang="la" class="${S.hymnLang==="la"?"active":""}">Latin</button></div><section class="aoTP381Section"><h2>${esc(h.title)}</h2><p>${esc(h.subtitle)}</p><div class="aoTP381Reader">${nl(h[S.hymnLang]||h.en||h.la)}</div></section>${source("The Daily Prayer-Book · Burns & Oates · 1882",TRADITIONAL_PRAY_SOURCES_V381.dailybook)}</main>`;
+  const lang=S.hymnLang|| (isFr()?"fr":"en");
+  const text=h[lang];
+  if(!text)throw new Error("Sacred hymn language missing: "+S.hymn+" · "+lang);
+  const frenchSources={
+    te_deum:["Divinum Officium · French Ordo witness",TRADITIONAL_PRAY_SOURCES_V381.teDeumFrench],
+    veni_creator:["Comtesse de Ségur · Livre de messe des petits enfants · 1858",TRADITIONAL_PRAY_SOURCES_V381.veniCreatorFrench],
+    ave_maris_stella:["Pierre Corneille · Office de la sainte Vierge · historical French witness",TRADITIONAL_PRAY_SOURCES_V381.aveMarisFrench],
+  };
+  const frSource=frenchSources[S.hymn]||frenchSources.te_deum;
+  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A deliberately small source-locked collection. Latin, English and French witnesses are identified rather than silently substituted.","Une collection volontairement réduite et verrouillée sur ses sources. Les témoins latin, anglais et français sont identifiés plutôt que remplacés silencieusement."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-hymn="te_deum" class="${S.hymn==="te_deum"?"active":""}">Te Deum</button><button type="button" data-tp381-hymn="veni_creator" class="${S.hymn==="veni_creator"?"active":""}">Veni Creator</button><button type="button" data-tp381-hymn="ave_maris_stella" class="${S.hymn==="ave_maris_stella"?"active":""}">Ave Maris Stella</button></div><div class="aoTP381Lang"><button type="button" data-tp381-hymn-lang="en" class="${lang==="en"?"active":""}">${esc(L("English","Anglais"))}</button><button type="button" data-tp381-hymn-lang="fr" class="${lang==="fr"?"active":""}">Français</button><button type="button" data-tp381-hymn-lang="la" class="${lang==="la"?"active":""}">Latin</button></div><section class="aoTP381Section"><h2>${esc(h.title)}</h2><p>${esc(L(h.subtitle,h.subtitleFr))}</p><div class="aoTP381Reader">${nl(text)}</div></section>${source("The Daily Prayer-Book · Burns & Oates · 1882",TRADITIONAL_PRAY_SOURCES_V381.dailybook)}${source(frSource[0],frSource[1])}</main>`;
 }
 function renderHolyName(){
   const vern=isFr()?HOLY_NAME_LITANY_V381.fr:HOLY_NAME_LITANY_V381.en;
@@ -240,7 +249,7 @@ function handleClick(e){
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
   if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";return render()}
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
-  if(b.dataset.tp381HymnLang){S.hymnLang=b.dataset.tp381HymnLang==="la"?"la":"en";return render()}
+  if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
   if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";return render()}
   if(b.dataset.tp381Dying){S.dying=["now","pray","commend"].includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}

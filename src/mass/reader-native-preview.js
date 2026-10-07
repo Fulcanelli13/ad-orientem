@@ -231,6 +231,7 @@ export async function prepareNativeReaderPreview({
       sungCorpus:data?.sungCorpus,
       canonSourceMap:data?.canonSourceMap,
       nuptialData:data?.nuptialData,
+      frenchOrdinary:data?.frenchOrdinary,
       properNotApplicableSlots:["INTROIT","COMMUNION"],
       vernacularLanguage:prepared?.readerPreferences?.language??"en",
     });
@@ -299,6 +300,7 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,
     canonSourceMap:data?.canonSourceMap,
     nuptialData:data?.nuptialData,
+    frenchOrdinary:data?.frenchOrdinary,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
   const presentationModel=projectSourceFirst48Presentation(model);
