@@ -11,12 +11,15 @@ import {
   addressLooksLocalityOnly,
   buildDirectoryAddressOnlyQuery,
   buildDirectoryGeocodeQuery,
+  buildDirectoryStructuredAttempts,
   cleanDirectoryAddress,
+  extractDirectoryAddressComponents,
   classifyNominatimPrecision,
   geocodeCacheKey,
   nominatimGeoFromSelection,
   scoreNominatimCandidate,
   selectNominatimCandidate,
+  structuredGeocodeFingerprint,
 } from "../tools/directory/lib/geocode-utils.mjs";
 
 const validGeo={
@@ -52,6 +55,44 @@ assert.equal(cleanDirectoryAddress("PO Box 917 - Petersham NSW 2049 - Australia"
 assert.equal(addressLooksLocalityOnly({address:{formatted:"Rome"}}),true);
 assert.equal(addressLooksLocalityOnly({address:{formatted:"1 Via Roma, Rome"}}),false);
 assert.equal(geocodeCacheKey({query:"Rome",countryCode:"IT"}),geocodeCacheKey({query:"Rome",countryCode:"IT"}));
+
+const auComponents=extractDirectoryAddressComponents({
+  name:{official:"Our Lady of the Nativity Church"},
+  address:{formatted:"254 Great Western Hwy. - Lawson NSW 2783 - Australia",country_code:"AU"}
+});
+assert.deepEqual(auComponents,{street:"254 Great Western Hwy.",city:"Lawson",state:"NSW",postalcode:"2783",countryCode:"AU"});
+
+const caComponents=extractDirectoryAddressComponents({
+  name:{official:"Eglise St-Zéphirin-de-Stadacona"},
+  address:{formatted:"1450 avenue François-1er - Québec QC G1L 4L2 - Canada",country_code:"CA"}
+});
+assert.deepEqual(caComponents,{street:"1450 avenue François-1er",city:"Québec",state:"QC",postalcode:"G1L 4L2",countryCode:"CA"});
+
+const plComponents=extractDirectoryAddressComponents({
+  name:{official:"Warszawa"},
+  address:{formatted:"pl. Teatralny 18, 00-077 Warszawa, Polska",country_code:"PL"}
+});
+assert.deepEqual(plComponents,{street:"pl. Teatralny 18",city:"Warszawa",state:null,postalcode:"00-077",countryCode:"PL"});
+
+const brComponents=extractDirectoryAddressComponents({
+  name:{official:"Brasília"},
+  address:{formatted:"Av. das Paineiras, Entrequadra 9/10, Brasília/DF, 71681-505",country_code:"BR"}
+});
+assert.equal(brComponents.city,"Brasília");
+assert.equal(brComponents.state,"DF");
+assert.equal(brComponents.postalcode,"71681-505");
+
+const structured=buildDirectoryStructuredAttempts({
+  name:{official:"Our Lady of the Nativity Church"},
+  address:{formatted:"254 Great Western Hwy. - Lawson NSW 2783 - Australia",country_code:"AU"}
+});
+assert.equal(structured.length,2);
+assert.equal(structured[0].kind,"STRUCTURED_STREET");
+assert.equal(structured[0].params.street,"254 Great Western Hwy.");
+assert.equal(structured[0].params.city,"Lawson");
+assert.equal(structured[1].kind,"STRUCTURED_AMENITY");
+assert.equal(structured[1].params.amenity,"Our Lady of the Nativity Church");
+assert.match(structuredGeocodeFingerprint(structured[0].params),/postalcode=2783/);
 
 const buildingCandidate={
   lat:"48.867",lon:"2.343",display_name:"Église Saint-Joseph, Rue Saint-Joseph, Paris, 75002, France",
