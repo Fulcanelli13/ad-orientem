@@ -4,7 +4,7 @@
   "created_at": "2026-10-07",
   "repository_baseline": "a4e71421c6c6feb1e6b61e50a9b8a25d337834f5",
   "future_route": "learn.spiritual_life",
-  "route_status": "RESERVED_NOT_PUBLISHED",
+  "route_status": "PUBLISHED",
   "parent_decision": "data/learn/formation-gap-ownership.v1.json",
   "principles": [
     "Traditional Catholic spiritual formation for ordinary users, not a seminary ascetical-theology textbook.",
@@ -974,15 +974,13 @@
     "all_claims_sourced": true,
     "english_claim_copy_ready": true,
     "french_parity_ready": true,
-    "ui_runtime_ready": false,
+    "ui_runtime_ready": true,
     "prayer_owner_handoffs_mapped": true,
     "final_content_audit_ready": true
   },
   "next_passes": [
-    "Build the Spiritual Life Formation runtime against the frozen bilingual course.",
-    "Provide a source drawer resolving lesson claim IDs to original source records and links.",
-    "Implement explicit canonical owner handoffs without duplicating PRAY/Mass/Catechism/Apostolate content.",
-    "Run phone acceptance and visual/interaction audit.",
-    "Only then set ui_runtime_ready=true and publish learn.spiritual_life."
+    "Keep the 14-lesson / 76-claim / 12-source contract stable unless new research justifies a versioned curriculum change.",
+    "Run the Spiritual Life runtime and phone acceptance gates on every Formation regression pass.",
+    "Treat future additions as explicit curriculum revisions rather than expanding the course opportunistically."
   ]
 }

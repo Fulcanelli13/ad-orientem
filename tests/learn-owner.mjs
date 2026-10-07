@@ -23,7 +23,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.latin","learn.mass","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  ["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
   "Formation rename changed the canonical Learn launcher IDs",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
@@ -41,10 +41,13 @@ const host=readFileSync("src/app/host-adapter.js","utf8");
 assert.match(owner,/AO_LEARN_APP_V1/);
 assert.match(owner,/installLatinCourseModule/,"Latin course is not installed by the Formation owner");
 assert.match(owner,/installSexualEthicsModule/,"Catholic Sexual Ethics is not installed by the Formation owner");
+assert.match(owner,/installSpiritualLifeModule/,"Spiritual Life is not installed by the Formation owner");
+assert.match(owner,/ensureSpiritualLifeRegistry/,"Spiritual Life registry is not composed into Formation");
 assert.match(owner,/ensureLatinCourseRegistry/,"Latin course registry is not composed into Formation");
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
+assert.match(presentation,/id:"learn\.spiritual_life"/,"Spiritual Life launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
-assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint"\]\)/,"hidden Saint of the Day compatibility alias was removed");
+assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost Saint compatibility or Spiritual Life");
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.match(owner,/modular-learn-v1/);
 assert.match(owner,/aoLearnRouteOwner/);
@@ -108,4 +111,4 @@ assert.match(host,/domain === "learn"[\s\S]*AO_LEARN_APP_V1/);
   assert.deepEqual(calls,["learn:close","settings:open"],"Settings left modular Learn active underneath");
 }
 
-console.log("PASS modular Learn owner: v43.59.30 hub plus v38.4 Holy Orders formation, shell-routed, donor fallback retired.");
+console.log("PASS modular Learn owner: v43.59.30 hub plus Spiritual Life and v38.4 sacramental formation, shell-routed, donor fallback retired.");

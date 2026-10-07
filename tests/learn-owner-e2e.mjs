@@ -116,7 +116,7 @@ try{
   assert.equal(learned.owner,"modular-learn-v1");
   assert.equal(learned.presentationOwner,"modular-learn-presentation-v1");
   assert.equal(learned.routeOwner,"modular-learn-v1");
-  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
+  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module=\'today.saint\']").count(),0,"Saint of the Day remained visible in Learn");
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
@@ -129,6 +129,85 @@ try{
   for(const target of learned.geometry.tapTargets)assert.ok(target.w>=44&&target.h>=44,"Learn touch target fell below 44px");
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
+
+  // Spiritual Life: published 14-lesson phone journey, readable and explicitly non-scored.
+  await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.spiritual_life"]').tap();
+  await page.waitForFunction(()=>
+    globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().open===true &&
+    globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().view==="list" &&
+    Boolean(document.getElementById("ao-spiritual-life-root")),
+    null,{timeout:10000}
+  );
+  const spiritualLanding=await page.evaluate(()=>{
+    const root=document.getElementById("ao-spiritual-life-root");
+    const rect=root?.getBoundingClientRect();
+    const buttons=[...root.querySelectorAll("button")].map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height}});
+    return {
+      status:globalThis.AO_SPIRITUAL_LIFE_V1?.status?.()??null,
+      lessons:root?.querySelectorAll("[data-ao-sl-lesson]").length??0,
+      width:rect?.width??0,
+      overflow:root?(root.scrollWidth-root.clientWidth):Infinity,
+      buttons,
+      text:root?.textContent??"",
+    };
+  });
+  assert.equal(spiritualLanding.status?.lessons,14,"Spiritual Life runtime lost its 14-lesson corpus");
+  assert.equal(spiritualLanding.status?.claims,76,"Spiritual Life runtime lost claim coverage");
+  assert.equal(spiritualLanding.status?.sources,12,"Spiritual Life runtime lost source coverage");
+  assert.equal(spiritualLanding.status?.scoring,false,"Spiritual Life introduced spiritual scoring");
+  assert.equal(spiritualLanding.status?.persistence,false,"Spiritual Life introduced persistent spiritual tracking");
+  assert.equal(spiritualLanding.lessons,14,"Spiritual Life landing does not expose all 14 lessons");
+  assert.ok(spiritualLanding.width>300,"Spiritual Life phone surface collapsed");
+  assert.ok(spiritualLanding.overflow<=1,"Spiritual Life has horizontal overflow on 390px phone geometry");
+  assert.match(spiritualLanding.text,/There is no score|Il n’y a ni score/,"Spiritual Life lost its anti-scoring boundary");
+  for(const target of spiritualLanding.buttons)assert.ok(target.w>=44&&target.h>=44,"Spiritual Life landing touch target fell below 44px");
+  await assertNoMass("Spiritual Life landing");
+  await assertFocusSafe("Spiritual Life landing");
+
+  await page.locator('#ao-spiritual-life-root [data-ao-sl-lesson="SL01"]').tap();
+  await page.waitForFunction(()=>
+    globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().view==="lesson" &&
+    globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().lessonId==="SL01",
+    null,{timeout:10000}
+  );
+  const spiritualLesson=await page.evaluate(()=>{
+    const root=document.getElementById("ao-spiritual-life-root");
+    return {
+      title:root?.querySelector(".aoSLLessonHead h1")?.textContent?.trim()??"",
+      kicker:root?.querySelector(".aoSLTopTitle small")?.textContent?.trim()??"",
+      blocks:root?.querySelectorAll(".aoSLBlock").length??0,
+      practices:root?.querySelectorAll(".aoSLPractice").length??0,
+      sources:root?.querySelectorAll(".aoSLSources").length??0,
+      sourceLinks:root?.querySelectorAll(".aoSLSources a[href]").length??0,
+      practiceText:root?.querySelector(".aoSLPractice small")?.textContent?.trim()??"",
+      overflow:root?(root.scrollWidth-root.clientWidth):Infinity,
+    };
+  });
+  assert.equal(spiritualLesson.title,"The Interior Life","Spiritual Life Lesson 1 title regressed");
+  assert.match(spiritualLesson.kicker,/Lesson 1 of 14/,"Spiritual Life lesson count is not visible");
+  assert.equal(spiritualLesson.blocks,3,"Spiritual Life lesson lost the frozen three-block rhythm");
+  assert.equal(spiritualLesson.practices,1,"Spiritual Life lesson lost its single application");
+  assert.equal(spiritualLesson.sources,1,"Spiritual Life lesson lost its source drawer");
+  assert.ok(spiritualLesson.sourceLinks>=2,"Spiritual Life Lesson 1 source drawer is too thin");
+  assert.match(spiritualLesson.practiceText,/not scored/i,"Spiritual Life practice lost the non-scored label");
+  assert.ok(spiritualLesson.overflow<=1,"Spiritual Life lesson has horizontal overflow");
+  await assertNoMass("Spiritual Life Lesson 1");
+  await assertFocusSafe("Spiritual Life Lesson 1");
+
+  await page.locator("#ao-spiritual-life-root [data-ao-sl-next]").tap();
+  await page.waitForFunction(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().lessonId==="SL02",null,{timeout:10000});
+  assert.equal((await page.locator("#ao-spiritual-life-root .aoSLLessonHead h1").textContent())?.trim(),"Living in God's Presence","Spiritual Life next navigation failed");
+  await page.locator("#ao-spiritual-life-root [data-ao-sl-back]").tap();
+  await page.waitForFunction(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().view==="list",null,{timeout:10000});
+  await page.locator("#ao-spiritual-life-root [data-ao-sl-back]").tap();
+  await page.waitForFunction(()=>
+    !document.getElementById("ao-spiritual-life-root") &&
+    !document.getElementById("ao-learn-modular-root")?.hidden &&
+    globalThis.AO_LEARN_APP_V1?.status?.().child==null,
+    null,{timeout:10000}
+  );
+  await assertNoMass("Spiritual Life -> Formation");
+  await assertFocusSafe("Spiritual Life -> Formation");
 
   const recoveredTraditional=[
     "learn.rites.sick",

@@ -8,8 +8,8 @@ assert.equal(sot.status,"FROZEN_ARCHITECTURE_DECISION");
 
 assert.equal(sot.decisions.spiritual_life.decision,"CREATE_FOCUSED_FORMATION_STRAND");
 assert.equal(sot.decisions.spiritual_life.future_route,"learn.spiritual_life");
-assert.equal(sot.decisions.spiritual_life.route_state,"RESERVED_NOT_YET_PUBLISHED");
-assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),false,"Spiritual Life was published before its source-controlled corpus cleared the gate");
+assert.equal(sot.decisions.spiritual_life.route_state,"PUBLISHED");
+assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),true,"published Spiritual Life route missing from Formation");
 
 assert.equal(sot.decisions.catholic_home_and_family.decision,"NO_STANDALONE_FORMATION_SURFACE");
 assert.equal(sot.decisions.funeral_and_requiem.decision,"NO_STANDALONE_FORMATION_SURFACE");
@@ -32,7 +32,7 @@ assert.equal(retirement.domains["FORMATION.VOCATIONS"].claim_count,7);
 assert.equal(retirement.domains["FORMATION.CATHOLIC_HOME_AND_FAMILY"].claim_count,3);
 
 console.log(JSON.stringify({
-  spiritualLife:"AUTHORIZED_NOT_PUBLISHED",
+  spiritualLife:"PUBLISHED_FOCUSED_STRAND",
   catholicHome:"NO_STANDALONE_SURFACE",
   funeralRequiem:"ABSORB_EXISTING_OWNERS",
   religiousLife:"RESEARCH_ONLY",

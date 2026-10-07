@@ -7,11 +7,13 @@ import {
 } from "./presentation.js";
 import { ensureTraditionalLearnRegistry, installTraditionalLearnModules, TRADITIONAL_LEARN_ROUTES } from "./traditional-life.js";
 import { ensureSexualEthicsRegistry, installSexualEthicsModule } from "./sexual-ethics.js";
+import { ensureSpiritualLifeRegistry, installSpiritualLifeModule } from "./spiritual-life.js";
+import { SPIRITUAL_LIFE_ROUTE_ID } from "./spiritual-life-data.js";
 import { ensureLatinCourseRegistry, installLatinCourseModule, LATIN_COURSE_ROUTE_ID } from "./latin-course-v2.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
-const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint"]);
+const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint",SPIRITUAL_LIFE_ROUTE_ID]);
 
 function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function appState(win){return runtime(win)?.store?.getState?.()??null;}
@@ -41,6 +43,7 @@ function retireHistoricalLearnSurface(win){
 function childOpen(win,id){
   if(id===LATIN_COURSE_ROUTE_ID)return Boolean(win?.AO_LATIN_COURSE_V1?.status?.()?.open);
   if(id==="learn.sexual_ethics")return Boolean(win?.AO_SEXUAL_ETHICS_V1?.status?.()?.open);
+  if(id===SPIRITUAL_LIFE_ROUTE_ID)return Boolean(win?.AO_SPIRITUAL_LIFE_V1?.status?.()?.open);
   if(TRADITIONAL_LEARN_ROUTES[id]){const s=win?.AO_TRADITIONAL_LEARN_V381?.status?.();return Boolean(s?.open&&s?.route===id)}
   if(id==="learn.mass"){
     const node=win?.document?.getElementById?.("ao-learn-root");
@@ -65,6 +68,7 @@ function closeChild(win,id){
   try{
     if(id===LATIN_COURSE_ROUTE_ID){win?.AO_LATIN_COURSE_V1?.close?.();return true;}
     if(id==="learn.sexual_ethics"){win?.AO_SEXUAL_ETHICS_V1?.close?.();return true;}
+    if(id===SPIRITUAL_LIFE_ROUTE_ID){win?.AO_SPIRITUAL_LIFE_V1?.close?.();return true;}
     if(TRADITIONAL_LEARN_ROUTES[id]){win?.AO_TRADITIONAL_LEARN_V381?.close?.();return true;}
     if(id==="learn.mass"){win?.AO_UNDERSTAND_MASS?.close?.();return true;}
     if(id==="learn.catechism"){win?.AO_TRADITIONAL_CATECHISM?.close?.();return true;}
@@ -199,6 +203,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     ensureTraditionalLearnRegistry(win);
     ensureLatinCourseRegistry(win);
     ensureSexualEthicsRegistry(win);
+    ensureSpiritualLifeRegistry(win);
     const registry=win?.AO_MODULES;
     if(typeof registry?.open!=="function"){
       state.error=L(win,"This module could not be opened.","Ce module n’a pas pu être ouvert.");
@@ -298,6 +303,7 @@ export function installLearnBrowserOwner(win=globalThis){
   installTraditionalLearnModules(win);
   installLatinCourseModule(win);
   installSexualEthicsModule(win);
+  installSpiritualLifeModule(win);
   const api=createLearnOwner(win);
   win.AO_LEARN_APP_V1=api;
   return api;

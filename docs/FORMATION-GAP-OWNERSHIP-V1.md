@@ -1,6 +1,6 @@
 # Formation Gap Ownership — v1
 
-**Status:** frozen architecture decision  
+**Status:** frozen architecture decision · Spiritual Life publication completed  
 **Date:** 2026-10-07  
 **Baseline:** `2d403ad325ba901d32eca619f0a6999f3b422a94`
 
@@ -10,13 +10,13 @@ This decision follows the retirement of `learn.catholic_life`. Its purpose is to
 
 | Area | Decision |
 | --- | --- |
-| Spiritual Life | **Create one focused Formation strand** — future `learn.spiritual_life`, not yet published |
+| Spiritual Life | **Published focused Formation strand** — `learn.spiritual_life` |
 | Catholic Home & Family | **No standalone Formation module** |
 | Funeral & Requiem | **No standalone module; absorb into existing death/Requiem owners** |
 | Religious Life | **Research-only; no route** |
 | Vocations | **Research-only; no route** |
 
-## 1. Spiritual Life — authorised future Formation strand
+## 1. Spiritual Life — published focused Formation strand
 
 This is the only residual area that passes the test for an independent Formation owner.
 
@@ -37,7 +37,7 @@ Core scope:
 - distractions, dryness, perseverance and prudent adaptation;
 - indulgences and reparation, without points-economy language.
 
-Publication is blocked until the larger traditional source corpus is recovered and normalized. Every explanatory claim must be explicitly sourced; English/French parity is mandatory; school-specific methods must not be presented as universal law; and the app must not imitate spiritual direction, scoring, streaks or gamification.
+The source corpus is now normalized and the strand is published. Every explanatory claim remains explicitly sourced; English/French parity is mandatory; school-specific methods are not presented as universal law; and the app does not imitate spiritual direction, scoring, streaks or gamification.
 
 ## 2. Catholic Home & Family — no module
 
