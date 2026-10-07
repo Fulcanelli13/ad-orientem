@@ -130,7 +130,7 @@ function renderCommunionTreasury(){
       ])}
       ${sourcedPrayerCard(d.beforeThomas,L(d.beforeThomas.title,d.beforeThomas.titleFr))}
       ${sourcedPrayerCard(d.beforeAmbrose,L(d.beforeAmbrose.title,d.beforeAmbrose.titleFr))}
-      ${source(L("French & Latin Roman-Missal prayer witness","Témoin français & latin des prières du Missel romain"),commonSource)}`;
+      ${source(L("French & Latin traditional prayer witness","Témoin traditionnel français & latin"),commonSource)}`;
   }else{
     body=`<p class="aoTP381Intro">${esc(L("Remain in thanksgiving after Communion. Choose one or more prayers and leave room for silence; the app does not treat the treasury as a completion list.","Demeurez en action de grâces après la Communion. Choisissez une ou plusieurs prières et laissez place au silence ; l’application ne traite pas ce trésor comme une liste à compléter."))}</p>
       ${prayerRows([["adoration_anima_christi","Anima Christi",L("Traditional Eucharistic thanksgiving","Action de grâces eucharistique traditionnelle")]])}
@@ -138,13 +138,14 @@ function renderCommunionTreasury(){
       ${sourcedPrayerCard(d.afterBonaventure,L(d.afterBonaventure.title,d.afterBonaventure.titleFr))}
       ${sourcedPrayerCard(d.enEgo,L(d.enEgo.title,d.enEgo.titleFr))}
       <details class="aoTP381Source"><summary>${esc(L("Indulgences · current discipline","Indulgences · discipline actuelle"))}</summary><p>${esc(L("The current Enchiridion grants a partial indulgence for an approved act of thanksgiving after Communion and expressly gives Anima Christi and En ego as examples. It grants a plenary indulgence for devoutly reciting En ego before an image of Christ crucified after Communion on any Friday of Lent, under the usual conditions. Historical days-or-years grants printed in old missals are not the current way indulgences are measured.","L’Enchiridion actuel accorde une indulgence partielle pour une formule pieuse approuvée d’action de grâces après la Communion et donne expressément comme exemples l’Anima Christi et l’En ego. Il accorde une indulgence plénière à qui récite pieusement l’En ego devant une image du Christ crucifié après la Communion, un vendredi du Carême, aux conditions habituelles. Les anciennes concessions exprimées en jours ou en années dans les vieux missels ne constituent plus la manière actuelle de mesurer les indulgences."))}</p><p><a href="${esc(d.sources.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>
-      ${source(L("French & Latin Roman-Missal thanksgiving witness","Témoin français & latin des actions de grâces du Missel romain"),commonSource)}`;
+      ${source(L("French & Latin traditional thanksgiving witness","Témoin traditionnel français & latin de l’action de grâces"),commonSource)}`;
   }
   return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"),L("Preparation · thanksgiving","Préparation · action de grâces"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A source-locked treasury of prayers long printed before and after Mass in the Roman-Missal tradition, retained only where the French Catholic tradition is also attested.","Un trésor de prières verrouillées sur leurs sources, longtemps imprimées avant et après la Messe dans la tradition du Missel romain, retenues seulement lorsqu’elles sont également attestées dans la tradition catholique française."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-communion="before" class="${tab==="before"?"active":""}">${esc(L("Before Communion","Avant la Communion"))}</button><button type="button" data-tp381-communion="after" class="${tab==="after"?"active":""}">${esc(L("After Communion","Après la Communion"))}</button></div>${body}</main>`;
 }
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
-  return `${head(prayerTitle(p,S.prayerId),L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body">${prayerCard(S.prayerId)}</main>`;
+  const parent=S.route==="pray.communion_treasury"?L("Traditional Communion Prayers","Prières traditionnelles de Communion"):L("Morning & Evening Prayer","Prières du matin & du soir");
+  return `${head(prayerTitle(p,S.prayerId),parent)}<main class="aoP435930Body">${prayerCard(S.prayerId)}</main>`;
 }
 function render(){
   const m=mount();if(!m)return false;
