@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-definitive-convergence-v1",
-  "version": "1.1.0",
-  "status": "IN_PROGRESS",
+  "version": "1.2.0",
+  "status": "IMPLEMENTATION_COMPLETE_AWAITING_CI",
   "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
   "rule": "The final Mass product has one executable reader only. R17/R19 owns canonical liturgical data, state and lifecycle; the recovered Sung Mass donor owns presentation geometry and choreography. Historical legacy/shadow renderers may remain only as non-executable evidence.",
   "runtimeAuthority": {
@@ -90,11 +90,14 @@
     "wide-viewport acceptance remains present so desktop dashboard regressions cannot pass phone-only tests"
   ],
   "remaining": [
-    "run full static, phone and visual CI after v1.80 port and reconcile any interaction regressions",
-    "restore exact v1.80 priest-action icon ownership for ordinary Sung Mass from directly recoverable source evidence rather than inferring actions from position",
-    "complete Schola slower/faster/pause runtime parity; current native Schola controller owns sequence but not donor timing-speed controls yet",
-    "complete line-by-line ritual trigger styling for exact words and cross symbols",
-    "audit v1.80 card-composition boundaries against the later 48-step v1.83 product projection",
-    "preserve v1.80 appearance/choreography while retaining later certified special structures and R17/R19 canonical state"
+    "keep branch reconciled with the current mainline without replacing v1.80 Mass presentation authority",
+    "pass complete static Mass/app CI",
+    "pass real-touch phone CI including forward/back navigation and mode switching",
+    "pass full app-shell/special-structure phone CI",
+    "pass donor-derived visual acceptance at 390x844 and wide desktop geometry",
+    "after merge, compare deployed Mass visually against v1.80 at representative ritual checkpoints"
+  ],
+  "nonBlockingHygiene": [
+    "certified frozen bytes for some priest-action artwork are unavailable in the repository; exact source-backed action text remains authoritative and artwork fails closed until the asset bank resolves those bytes"
   ]
 }
