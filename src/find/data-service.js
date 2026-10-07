@@ -1,6 +1,7 @@
 import { auditVenue } from "./contracts.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
+export const RESEARCH_MASS_REVIEW_DAYS=120;
 const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
   Object.freeze({key:"aasjmv",file:"aasjmv.v1.json"}),
@@ -10,11 +11,29 @@ const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"rci",file:"rci.v1.json"}),
   Object.freeze({key:"cspv",file:"cspv.v1.json"}),
   Object.freeze({key:"smmd",file:"smmd.v1.json"}),
-  Object.freeze({key:"icksp",file:"icksp-federated.v1.json"}),
+  Object.freeze({key:"icksp",file:"icksp-federated.v1.json",geoFile:"icksp-federated.geo.v1.json"}),
 ]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
 function text(value){return String(value??"").trim()}
+function isoDay(value){
+  const match=text(value).match(/^(20\d{2}-\d{2}-\d{2})/);
+  return match?.[1]??null;
+}
+function addDays(day,count){
+  if(!day)return null;
+  const date=new Date(day+"T00:00:00Z");
+  if(Number.isNaN(date.getTime()))return null;
+  date.setUTCDate(date.getUTCDate()+Number(count||0));
+  return date.toISOString().slice(0,10);
+}
+export function scheduleFreshnessState(schedule,{now=new Date()}={}){
+  const due=schedule?.verification?.review_due_at;
+  if(!due)return "UNKNOWN";
+  const dueTime=new Date(due).getTime(),nowTime=now instanceof Date?now.getTime():new Date(now).getTime();
+  if(!Number.isFinite(dueTime)||!Number.isFinite(nowTime))return "UNKNOWN";
+  return nowTime>dueTime?"REVIEW_DUE":"CURRENT";
+}
 async function fetchJson(url,{fetchImpl=fetch,optional=false}={}){
   try{
     const response=await fetchImpl(url,{headers:{accept:"application/json"}});
@@ -48,10 +67,11 @@ export function directoryProviderUrls(provider){
 function compactResearchRow(defaults,row,provider){
   return Object.freeze({...defaults,...row,p:provider});
 }
-export function expandResearchProviderSnapshot(snapshot={}){
+export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
   const provider=text(snapshot?.provider);
   const defaults=snapshot?.defaults&&typeof snapshot.defaults==="object"?snapshot.defaults:{};
   const generatedAt=text(snapshot?.generated_at)||null;
+  const geoByVenueId=new Map(safeArray(geoRecords).map(item=>[item?.venue_id,item?.geo]).filter(([id,geo])=>id&&geo));
   const out={venues:[],ministries:[],schedules:[],sources:[]};
   for(const raw of safeArray(snapshot?.records)){
     const parent=compactResearchRow(defaults,raw,provider);
@@ -76,6 +96,9 @@ export function expandResearchProviderSnapshot(snapshot={}){
     const sourceIds=[scheduleSourceId,...(authorizationSourceId?[authorizationSourceId]:[]),...(editionSourceId?[editionSourceId]:[])];
     const formatted=text(row.a)||[row.l,row.r,row.cc].map(text).filter(Boolean).join(", ");
     const scheduleRaw=text(row.sr);
+    const serviceType=text(row.svc)||"MASS";
+    const verifiedOn=isoDay(row.vv)||isoDay(generatedAt);
+    const reviewDue=serviceType==="MASS"&&verifiedOn?addDays(verifiedOn,RESEARCH_MASS_REVIEW_DAYS):null;
     const sunday=/\bsunday\b|\bdimanche\b|\bdomingo\b|\bdomenica\b|\bsonntag\b|\bsun\.?\b/i.test(scheduleRaw);
     out.venues.push({
       venue_id:venueId,
@@ -95,7 +118,7 @@ export function expandResearchProviderSnapshot(snapshot={}){
         city:text(row.l)||null,region:text(row.r)||null,country_code:text(row.cc),country:null,
         formatted:formatted||null,
       },
-      geo:{lat:null,lng:null,precision:"unknown",geocoding_source:null},
+      geo:geoByVenueId.get(venueId)??{lat:null,lng:null,precision:"unknown",geocoding_source:null},
       diocese:{diocese_id:null,name:text(row.j)||null,type:"diocese"},
       contact:{
         phone:[],email:[],website:[text(row.su)].filter(Boolean),
@@ -137,11 +160,16 @@ export function expandResearchProviderSnapshot(snapshot={}){
     out.schedules.push({
       schedule_id:scheduleId,
       ministry_id:ministryId,
-      service_type:text(row.svc)||"MASS",
+      service_type:serviceType,
       mass_type:"UNKNOWN",
       payload:{raw:scheduleRaw},
       source_ids:[scheduleSourceId],
-      verification:{state:text(row.vs)||"OFFICIAL_VERIFIED",checked_at:generatedAt},
+      verification:{
+        state:text(row.vs)||"OFFICIAL_VERIFIED",
+        checked_at:verifiedOn?verifiedOn+"T00:00:00Z":generatedAt,
+        review_due_at:reviewDue?reviewDue+"T23:59:59Z":null,
+        freshness_policy:serviceType==="MASS"?"CURRENT_MASS_120D":null,
+      },
     });
     out.sources.push({
       source_id:scheduleSourceId,
@@ -254,9 +282,12 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     merged.sources.push(...safeArray(sources?.records));
   }
   for(const descriptor of safeArray(researchProviders)){
-    const snapshot=await fetchJson(researchProviderUrl(descriptor.file),{fetchImpl,optional:true});
+    const [snapshot,geoOverlay]=await Promise.all([
+      fetchJson(researchProviderUrl(descriptor.file),{fetchImpl,optional:true}),
+      descriptor.geoFile?fetchJson(researchProviderUrl(descriptor.geoFile),{fetchImpl,optional:true}):Promise.resolve(null),
+    ]);
     if(!snapshot?.records){unavailable.push(descriptor.key);continue}
-    const expanded=expandResearchProviderSnapshot(snapshot);
+    const expanded=expandResearchProviderSnapshot(snapshot,{geoRecords:safeArray(geoOverlay?.records)});
     if(!loaded.includes(descriptor.key))loaded.push(descriptor.key);
     merged.venues.push(...expanded.venues);
     merged.ministries.push(...expanded.ministries);
