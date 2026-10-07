@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.22.0",
+  "version": "1.24.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -11,7 +11,8 @@
     "legacyPolicy": "NO_ALTERNATE_RENDERER",
     "presentationStatus": "RECOVERY_REQUIRED",
     "singlePresentationOwner": "R17_NATIVE_PRODUCTION",
-    "definitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json"
+    "definitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json",
+    "v180DonorParityLedger": "data/presentation/mass-v180-donor-parity.v1.json"
   },
   "topLevelContract": [
     "home",
@@ -193,19 +194,24 @@
       "status": "OPEN",
       "evidence": [
         "data/presentation/mass-definitive-convergence.v1.json",
+        "data/presentation/mass-v180-donor-parity.v1.json",
+        "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
         "data/presentation/product-parity.v1.json",
         "src/mass/reader-dom.js",
         "src/mass/reader-gate.js",
         "src/mass/browser-entry.js",
+        "tests/mass-v180-donor-parity.mjs",
         "tests/mass-visual-acceptance.mjs",
-        "tests/production-tree-hygiene.mjs"
+        "tests/reader-phone-acceptance.mjs"
       ],
-      "detail": "The Mass liturgical/runtime subsystem remains certified, but the visible native reader had diverged from the approved executable donor: browser-width mode tabs, giant card chrome, disappearing LIVE rails, over-dark focus muting, footer navigation and Schola status-strip presentation. Recovery is now donor-first on one definitive native renderer; release remains blocked until the donor-derived shell and choreography pass phone and wide-view visual acceptance.",
+      "detail": "Mass liturgical/runtime authority remains certified, but the visible production reader is being converged against the approved v1.80 executable donor on one native renderer. Implementation is donor-complete; the blocker remains open until the rebased static, phone and visual gates are green.",
       "progress": {
-        "singleRenderer": "LANDED_ON_CONVERGENCE_BRANCH",
-        "donorShell": "PORTED_FROM_V1_66_EXECUTABLE_DONOR",
-        "wideViewportGuard": "ADDED",
-        "choreographyAudit": "IN_PROGRESS"
+        "runtimeAuthority": "CERTIFIED",
+        "singleRenderer": "IMPLEMENTED_NATIVE_ONLY",
+        "donorPresentation": "IMPLEMENTATION_COMPLETE_AWAITING_CI",
+        "stepReconciliation": "RECONCILED_NONHISTORICAL_38_TO_48",
+        "visualAcceptance": "REQUIRED_GREEN",
+        "phoneAcceptance": "REQUIRED_GREEN"
       }
     },
     {
@@ -234,21 +240,25 @@
     },
     {
       "id": "EXACT_NON_MASS_DONOR_PARITY",
-      "classification": "REGRESSION",
+      "classification": "MISSING_INTEGRATION",
       "status": "OPEN",
       "evidence": [
         "data/presentation/exact-donor-parity.v1.json",
-        "src/app/presentation-fx.js",
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
+        "src/pray/presentation-coherence.js",
+        "src/pray/novena-runtime.js",
+        "src/pray/traditional-pray-runtime.js",
+        "src/learn/traditional-life.js",
+        "tests/pray-presentation.mjs",
+        "tests/pray-novenas.mjs",
+        "tests/pray-traditional-life.mjs",
+        "tests/learn-traditional-life.mjs",
         "tests/app-visual-acceptance.mjs",
-        "Ad-Orientem-2.0-v43.59.30-PRAY-UNIFIED-READER-CLOSURE.html",
-        "Ad_Orientem_v3_4_6.html",
-        "Ad_Orientem_v3_4_8.html",
-        "Ad_Orientem_v3_4_14.html",
-        "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
+        "tests/nonmass-donor-reference-e2e.mjs",
+        ".github/workflows/visual-acceptance.yml"
       ],
-      "detail": "The current modular app recovers presentation mechanisms but not the exact approved non-Mass donor experience. Generic six-surface transition labels and loaders were substituted for donor action/content-specific choreography; semantic rails and Rosary presentation were reconstructed approximately; and current visual tests compare against current implementation rather than the final donor head. Release readiness is therefore reopened until direct donor-to-current parity is certified."
+      "detail": "Exact-donor recovery has materially converged and a direct frozen-donor/current 390x844 capture lane is now installed. Semantic rails, final Rosary, v3.4.10 Angelus/Stations focus, Guided Novenas N3 and v38.1 Traditional Catholic Life are recovered. Release remains blocked until the generated donor/current comparison artifact is reviewed across the required non-Mass surface/state matrix."
     }
   ],
   "openBlockers": [
@@ -271,7 +281,10 @@
       "tests/settings-owner.mjs",
       "tests/source-transport-compat.mjs",
       "tests/reader-mode-switch.mjs",
-      "tests/presentation-fx.mjs"
+      "tests/presentation-fx.mjs",
+      "tests/pray-novenas.mjs",
+      "tests/pray-traditional-life.mjs",
+      "tests/learn-traditional-life.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
@@ -282,10 +295,12 @@
       "tests/nonmass-d3-d6-e2e.mjs",
       "tests/learn-owner-e2e.mjs",
       "tests/settings-e2e.mjs",
-      "tests/field-current-week-e2e.mjs"
+      "tests/field-current-week-e2e.mjs",
+      "tests/nonmass-donor-reference-e2e.mjs"
     ]
   },
   "productParityLedger": "data/presentation/product-parity.v1.json",
   "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json",
-  "exactDonorParityLedger": "data/presentation/exact-donor-parity.v1.json"
+  "exactDonorParityLedger": "data/presentation/exact-donor-parity.v1.json",
+  "massDefinitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json"
 }
