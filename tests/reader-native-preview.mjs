@@ -9,6 +9,7 @@ const data={
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
   canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
   rubricEvents:load("../data/presentation/reader-rubric-events.v1.json"),
+  gestureMatrix:load("../data/mass/gesture-matrix.v1.json"),
 };
 const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide-registry"};
 const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
@@ -63,6 +64,12 @@ const liveReady=await prepareNativeReaderPreview({
 });
 assert.equal(liveReady.model.totalCards,39);
 assert.equal(liveReady.rubricState.supported,true);
+assert.equal(liveReady.gestureMatrixState.supported,true);
+assert.equal(liveReady.gestureMatrixState.audit.itemCount,99);
+assert.equal(liveReady.gestureMatrixState.audit.campionBackedCount,60);
+assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
+assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.label,"THREE CROSSES WITH HOST OVER CHALICE");
+assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.iconKey,null);
 assert.equal(liveReady.rubricState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
 assert.equal(liveReady.rubricState.project("AO.SM.C0174").events.length,6);
 assert.equal(liveReady.rubricState.project("AO.SM.C0204").activeStates.THUMB_INDEX_JOINED.value,true);
