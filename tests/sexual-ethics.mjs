@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { APOSTOLATE_SKILLS } from "../src/apostolate/contracts.js";
 import {
   SEXUAL_ETHICS_VERSION,
   SEXUAL_ETHICS_ROUTE,
@@ -52,6 +53,7 @@ assert.equal(CSE_SOT_AUDIT.records,150);
 assert.equal(CSE_SOT_AUDIT.bilingual,true);
 assert.equal(CSE_SOT_AUDIT.allHaveNonArgumentLeadAuthority,true);
 assert.equal(CSE_SOT_AUDIT.debateHandoffs,25);
+assert.ok(APOSTOLATE_SKILLS.some(skill=>skill.id==="APF06"),"CSE Debate handoff target APF06 must exist");
 assert.ok(CSE_SOT_AUDIT.recordsWithCrossLinks>0);
 assert.ok(CSE_SOT_AUDIT.recordsWithNarrowCitation>0);
 
@@ -93,6 +95,8 @@ assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/Lawler · Boyle · May/);
 assert.match(runtime,/Related in Ad Orientem/);
 assert.match(runtime,/data-ao-cse-related/);
+assert.match(runtime,/handoffToApostolate/);
+assert.match(runtime,/FORMATION_TO_APOSTOLATE/);
 
 console.log(JSON.stringify({
   version:SEXUAL_ETHICS_VERSION,
