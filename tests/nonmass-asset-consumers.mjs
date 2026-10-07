@@ -126,7 +126,7 @@ const presentationConsumers=new Set([
   ...Object.values(AO_LEARN_ROUTE_ASSET_IDS),
   ...Object.values(PRAY_HOME_ROUTE_ASSET_IDS),
   ...Object.values(HOME_ENRICHER_ICON_ASSET_IDS),
-  "ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-previous","ao-ui-search",
+  "ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-previous","ao-ui-search","ao-ui-settings",
   "ao-live-blessing",
 ]);
 const unresolved=[...presentationConsumers].filter(id=>!physicalCanonical(id)&&!embeddedSymbol(id));
@@ -149,7 +149,8 @@ assert.match(appEntry,/data-ao-asset-renderer|aoAssetRenderer/);
 assert.match(appEntry,/button\.dataset\.aoAssetId=assetId/);
 assert.match(home,/ao-ui-previous/);
 assert.match(home,/ao-ui-next/);
-assert.match(home,/ao-ui-close/);
+assert.match(home,/ao-ui-settings/,"Home utility Settings entry lost its canonical asset");
+assert.doesNotMatch(home,/ao-ui-close/,"Home regained a modal-sheet Close control after those sheets were retired");
 assert.match(calendar,/ao-ui-back/);
 assert.match(calendar,/ao-ui-previous/);
 assert.match(calendar,/ao-ui-next/);
