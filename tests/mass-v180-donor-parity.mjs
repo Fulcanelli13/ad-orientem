@@ -54,10 +54,14 @@ assert.match(dom,/SCHOLA_SPEED_STORAGE_KEY="ao-schola-speed"/);
 assert.match(dom,/data-schola-slower/);
 assert.match(dom,/data-schola-faster/);
 assert.match(dom,/data-schola-pause/);
-assert.match(dom,/\.ao-schola-dock\{\s*position:absolute;z-index:11;/,
-  "Schola controls must remain above overlapping edge navigation");
+assert.match(dom,/\.ao-schola-dock\{\s*position:absolute;z-index:9;/,
+  "Schola dock z-layer changed without interaction review");
 assert.match(dom,/\.ao-reader-nav\{position:absolute;z-index:10;/,
-  "reader navigation z-layer changed without Schola interaction review");
+  "reader navigation z-layer changed without interaction review");
+assert.match(dom,/data-schola-visible="true"\] \.ao-reader-nav button\[data-reader-nav="previous"\]\{left:8px\}/,
+  "Schola-visible phone previous arrow no longer clears the dock footprint");
+assert.match(dom,/data-schola-visible="true"\] \.ao-reader-nav button\[data-reader-nav="next"\]\{right:8px\}/,
+  "Schola-visible phone next arrow no longer clears the dock footprint");
 assert.match(dom,/ao-ritual-trigger-live/);
 assert.match(dom,/current\.gesture\?\.anchorLat/);
 assert.match(dom,/exactCueIds\.includes\(gestureCueId\)/);
