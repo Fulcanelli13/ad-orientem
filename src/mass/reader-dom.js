@@ -1012,8 +1012,18 @@ export function createReaderDomAdapter({
       }
       const nav=event.target?.closest?.("[data-reader-nav]");
       if(nav && Date.now()<suppressNavClickUntil && nav.dataset.readerNav===suppressNavClickDirection){return;}
-      if(nav?.dataset.readerNav==="previous"){onPrevious?.(current,prepared);return;}
-      if(nav?.dataset.readerNav==="next"){onNext?.(current,prepared);return;}
+      if(nav?.dataset.readerNav==="previous"){
+        root.dataset.aoLastNavInput="click:previous";
+        const result=onPrevious?.(current,prepared);
+        root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+        return;
+      }
+      if(nav?.dataset.readerNav==="next"){
+        root.dataset.aoLastNavInput="click:next";
+        const result=onNext?.(current,prepared);
+        root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+        return;
+      }
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
       if(translatable){
         const primary=translatable.querySelector?.(".ao-line-primary");
@@ -1051,8 +1061,15 @@ export function createReaderDomAdapter({
         event.stopPropagation?.();
         suppressNavClickUntil=Date.now()+650;
         suppressNavClickDirection=navButton.dataset.readerNav??null;
-        if(navButton.dataset.readerNav==="previous")onPrevious?.(current,prepared);
-        else if(navButton.dataset.readerNav==="next")onNext?.(current,prepared);
+        if(navButton.dataset.readerNav==="previous"){
+          root.dataset.aoLastNavInput="pointer:previous";
+          const result=onPrevious?.(current,prepared);
+          root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+        }else if(navButton.dataset.readerNav==="next"){
+          root.dataset.aoLastNavInput="pointer:next";
+          const result=onNext?.(current,prepared);
+          root.dataset.aoLastNavResult=result?.sectionId??result?.id??"none";
+        }
       });
     }
     // v1.80 Mass-preferences mode controls own touch on pointerdown for the
