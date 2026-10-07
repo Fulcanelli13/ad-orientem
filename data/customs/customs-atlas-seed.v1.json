@@ -512,6 +512,54 @@
       "evidence_note": "The official shrine documents the annual Grand Pardon of 25–26 July at Sainte-Anne-d'Auray.",
       "map_policy": "PLACE",
       "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-009:ALTOETTING",
+      "custom_id": "DEV-009",
+      "geo_area_id": "geo:country:DE",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Longstanding → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "ALTOETTING-EXVOTO"
+      ],
+      "evidence_note": "The official pilgrimage-site material documents more than 2,000 votive tablets around the Gnadenkapelle.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-010:MARIAZELL",
+      "custom_id": "DEV-010",
+      "geo_area_id": "geo:country:AT",
+      "place_id": "place:AT:mariazell-basilica",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Current",
+      "strength": "STRONG",
+      "source_ids": [
+        "MARIAZELL-VOTIVE-CANDLES"
+      ],
+      "evidence_note": "The basilica's official schedule documents votive candles in the Kerzengrotte.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:EINSIEDELN-ENGELWEIHE",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:CH",
+      "place_id": "place:CH:einsiedeln-monastery",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Longstanding annual observance → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "EINSIEDELN-ENGELWEIHE-CUSTOM"
+      ],
+      "evidence_note": "The official pilgrimage calendar documents the Engelweihe of the Gnadenkapelle on 14 September and its major procession form.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
     }
   ]
 }

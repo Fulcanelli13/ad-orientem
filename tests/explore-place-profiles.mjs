@@ -76,7 +76,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,8,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,15,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -131,6 +131,52 @@ assert.equal(pereLaval.counts.pilgrimages,1);
 assert.ok(pereLaval.saints.includes("Blessed Jacques-Désiré Laval"));
 assert.ok(pereLaval.calendar.some(row=>row.semantic_key==="feast.blessed_jacques_desire_laval"&&row.date==="2027-09-09"));
 assert.equal(pereLaval.counts.tlm,0,"Mauritius shrine inferred a TLM link without a bridge");
+
+const altoetting=explorePlaceProfile(profiles,"place:DE:altoetting-gnadenkapelle");
+assert.ok(altoetting);
+assert.equal(altoetting.counts.shrines,1);
+assert.equal(altoetting.counts.pilgrimages,2);
+assert.ok(altoetting.counts.traditions>=1);
+assert.equal(altoetting.map_publishable,false);
+assert.ok(altoetting.calendar.some(row=>row.semantic_key==="feast.assumption_of_mary"&&row.date==="2027-08-15"));
+
+const kevelaer=explorePlaceProfile(profiles,"place:DE:kevelaer-gnadenkapelle");
+assert.ok(kevelaer);
+assert.equal(kevelaer.counts.shrines,1);
+assert.equal(kevelaer.counts.pilgrimages,1);
+assert.equal(kevelaer.counts.tlm,0);
+assert.equal(kevelaer.calendar.length,0,"seasonal Kevelaer pilgrimage was incorrectly reduced to one date");
+
+const kevelaerKerzen=explorePlaceProfile(profiles,"place:DE:kevelaer-kerzenkapelle");
+assert.ok(kevelaerKerzen);
+assert.equal(kevelaerKerzen.counts.shrines,0);
+assert.equal(kevelaerKerzen.counts.pilgrimages,0);
+assert.equal(kevelaerKerzen.counts.tlm,0,"unresolved 1962-Mass candidate leaked into exact-place TLM projection");
+
+const mariazell=explorePlaceProfile(profiles,"place:AT:mariazell-basilica");
+assert.ok(mariazell);
+assert.equal(mariazell.counts.shrines,1);
+assert.equal(mariazell.counts.pilgrimages,1);
+assert.ok(mariazell.counts.traditions>=1);
+assert.equal(mariazell.calendar.length,0);
+
+const mariaTaferl=explorePlaceProfile(profiles,"place:AT:maria-taferl-basilica");
+assert.ok(mariaTaferl);
+assert.equal(mariaTaferl.counts.shrines,1);
+assert.equal(mariaTaferl.counts.pilgrimages,1);
+
+const einsiedeln=explorePlaceProfile(profiles,"place:CH:einsiedeln-monastery");
+assert.ok(einsiedeln);
+assert.equal(einsiedeln.counts.shrines,1);
+assert.equal(einsiedeln.counts.pilgrimages,2);
+assert.ok(einsiedeln.counts.traditions>=1);
+assert.ok(einsiedeln.calendar.some(row=>row.semantic_key==="observance.einsiedeln_engelweihe"&&row.date==="2027-09-14"));
+
+const mariastein=explorePlaceProfile(profiles,"place:CH:kloster-mariastein");
+assert.ok(mariastein);
+assert.equal(mariastein.counts.shrines,1);
+assert.equal(mariastein.counts.pilgrimages,1);
+assert.equal(mariastein.calendar.length,0,"monthly Mariastein pilgrimage should remain recurrence context, not a single date");
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"})[0];
 assert.equal(placeIdForExploreItem(lourdesShrine),lourdes.place_id);

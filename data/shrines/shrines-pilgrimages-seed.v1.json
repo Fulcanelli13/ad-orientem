@@ -135,6 +135,97 @@
         "PIL-PERE-LAVAL-ANNUAL"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:altoetting-our-lady",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "name": "Gnadenkapelle Altötting",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Altötting",
+      "origin_summary": "Historic Bavarian Marian pilgrimage destination centered on the Gnadenkapelle, with a long pilgrimage tradition and extensive votive testimony.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-ALTOETTING-PILGRIMAGE-SITE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "name": "Gnadenkapelle Kevelaer",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady, Consoler of the Afflicted",
+      "origin_summary": "Marian pilgrimage shrine at Kevelaer centered on the Gnadenkapelle and the image of the Consoler of the Afflicted.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-KEVELAER-GNADENKAPELLE",
+        "SHR-KEVELAER-1962-SCHEDULE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:AT:mariazell-our-lady",
+      "place_id": "place:AT:mariazell-basilica",
+      "name": "Basilika Mariazell",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Magna Mater Austriae / Our Lady of Mariazell",
+      "origin_summary": "Major Austrian Marian pilgrimage basilica with a continuing pilgrimage season, pilgrim Masses and devotional practices.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MARIAZELL-CONTACT",
+        "SHR-MARIAZELL-PILGRIMAGE-SCHEDULE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
+      "place_id": "place:AT:maria-taferl-basilica",
+      "name": "Wallfahrtsbasilika Maria Taferl",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Sorrows",
+      "origin_summary": "Austrian pilgrimage basilica whose shrine history is associated with the events of 1633 and 1642 and the subsequent growth of pilgrimage at Taferlberg.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MARIA-TAFERL-CONTACT",
+        "SHR-MARIA-TAFERL-HISTORY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CH:einsiedeln-our-lady",
+      "place_id": "place:CH:einsiedeln-monastery",
+      "name": "Kloster Einsiedeln / Gnadenkapelle",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Einsiedeln",
+      "origin_summary": "Benedictine monastery and major Marian pilgrimage destination centered on the Gnadenkapelle.",
+      "associated_saints": [
+        "Saint Meinrad"
+      ],
+      "source_ids": [
+        "SHR-EINSIEDELN-PILGRIMAGE",
+        "SHR-EINSIEDELN-ENGELWEIHE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CH:mariastein-our-lady",
+      "place_id": "place:CH:kloster-mariastein",
+      "name": "Kloster Mariastein / Gnadenkapelle",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Mariastein",
+      "origin_summary": "Benedictine pilgrimage monastery whose Gnadenkapelle is the focal point of the Mariastein pilgrimage.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MARIASTEIN-CONTACT",
+        "SHR-MARIASTEIN-MONTHLY"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -313,6 +404,125 @@
       "source_ids": [
         "PIL-PERE-LAVAL-ANNUAL",
         "SHR-PERE-LAVAL-CENTRE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:altoetting-destination",
+      "name": "Pilgrimage to Altötting",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:altoetting-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open Marian pilgrimage destination centered on the Gnadenkapelle, with registered group pilgrimages and a continuing pilgrimage programme.",
+      "source_ids": [
+        "SHR-ALTOETTING-PILGRIMAGE-SITE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:altoetting-assumption",
+      "name": "Assumption pilgrimage observances at Altötting",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:altoetting-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:altoetting:assumption"
+      ],
+      "scope_note": "Annual Assumption observances including the major candlelight procession on 14 August and solemn procession on 15 August.",
+      "source_ids": [
+        "SHR-ALTOETTING-CURRENT-PROGRAMME"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:kevelaer-destination",
+      "name": "Pilgrimage to Kevelaer",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:kevelaer:pilgrimage-season"
+      ],
+      "scope_note": "Marian pilgrimage destination with an official pilgrimage season from 1 May to 1 November and daily pilgrim liturgies during the season.",
+      "source_ids": [
+        "SHR-KEVELAER-GNADENKAPELLE",
+        "SHR-KEVELAER-1962-SCHEDULE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:AT:mariazell-destination",
+      "name": "Pilgrimage to Mariazell",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:AT:mariazell-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:mariazell:pilgrimage-season"
+      ],
+      "scope_note": "Major Marian pilgrimage destination with a principal pilgrimage season from May through October, pilgrim Masses and recurring devotional observances.",
+      "source_ids": [
+        "SHR-MARIAZELL-CONTACT",
+        "SHR-MARIAZELL-PILGRIMAGE-SCHEDULE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:AT:maria-taferl-destination",
+      "name": "Pilgrimage to Maria Taferl",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic Marian pilgrimage destination at Maria Taferl, retained without a forced local Calendar recurrence in this tranche.",
+      "source_ids": [
+        "SHR-MARIA-TAFERL-CONTACT",
+        "SHR-MARIA-TAFERL-HISTORY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CH:einsiedeln-destination",
+      "name": "Pilgrimage to Einsiedeln",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CH:einsiedeln-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Open Marian pilgrimage destination with pilgrim Masses and a dedicated pilgrimage office at the monastery.",
+      "source_ids": [
+        "SHR-EINSIEDELN-PILGRIMAGE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CH:einsiedeln-engelweihe",
+      "name": "Engelweihe pilgrimage at Einsiedeln",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CH:einsiedeln-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:einsiedeln:engelweihe"
+      ],
+      "scope_note": "Annual 14 September dedication observance of the Gnadenkapelle; the source documents a major procession form for the intensified celebration.",
+      "source_ids": [
+        "SHR-EINSIEDELN-ENGELWEIHE",
+        "SHR-EINSIEDELN-PILGRIMAGE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CH:mariastein-destination",
+      "name": "Pilgrimage to Mariastein",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CH:mariastein-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:mariastein:monthly-pilgrimage"
+      ],
+      "scope_note": "Benedictine Marian pilgrimage destination with a documented monthly pilgrimage on the first Wednesday.",
+      "source_ids": [
+        "SHR-MARIASTEIN-CONTACT",
+        "SHR-MARIASTEIN-MONTHLY"
       ],
       "confidence": "HIGH"
     }
@@ -520,6 +730,73 @@
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:altoetting:assumption",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:altoetting-assumption",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.assumption_of_mary",
+      "source_event_label": "Assumption of Mary at Altötting",
+      "source_ids": [
+        "SHR-ALTOETTING-CURRENT-PROGRAMME"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:kevelaer:pilgrimage-season",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:kevelaer-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Kevelaer pilgrimage season, 1 May to 1 November",
+      "source_ids": [
+        "SHR-KEVELAER-1962-SCHEDULE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:mariazell:pilgrimage-season",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:AT:mariazell-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Mariazell principal pilgrimage season, May to October",
+      "source_ids": [
+        "SHR-MARIAZELL-PILGRIMAGE-SCHEDULE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:einsiedeln:engelweihe",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CH:einsiedeln-engelweihe",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.einsiedeln_engelweihe",
+      "source_event_label": "Engelweihe — dedication feast of the Gnadenkapelle",
+      "source_ids": [
+        "SHR-EINSIEDELN-ENGELWEIHE"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:mariastein:monthly-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:CH:mariastein-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Monthly pilgrimage on the first Wednesday",
+      "source_ids": [
+        "SHR-MARIASTEIN-MONTHLY"
+      ],
+      "confidence": "HIGH"
     }
   ]
 }
