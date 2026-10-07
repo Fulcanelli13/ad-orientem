@@ -1,0 +1,857 @@
+{
+  "version": "latin-course-lesson-23-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 23,
+  "stage": {
+    "number": 5,
+    "title": "Prayer Language"
+  },
+  "title": "Ut… ne…",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "passage",
+  "grammarFocus": "Purpose clauses",
+  "readingOutcome": "Identify purpose by conjunction, mood and clause relationship.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 23 vocabulary only; authentic prayer clauses carry the syntax while remaining vocabulary is taught through controlled retrieval.",
+    "authenticTextPolicy": "Purpose clauses are anchored in traditional prayer and Vulgate clauses, with explicit attention to ecclesiastical ut non usage.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "ut",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "that / so that / in order that",
+          "fr": "que / afin que"
+        },
+        "frozenLesson": 23
+      },
+      {
+        "lemma": "ne",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "lest / that not / not",
+          "fr": "de peur que / que ne... pas"
+        },
+        "frozenLesson": 23
+      },
+      {
+        "lemma": "concedo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "grant / concede",
+          "fr": "accorder"
+        },
+        "frozenLesson": 23
+      },
+      {
+        "lemma": "praesto",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "grant / provide / show",
+          "fr": "accorder / fournir"
+        },
+        "frozenLesson": 23
+      },
+      {
+        "lemma": "tribuo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "grant / bestow",
+          "fr": "accorder / attribuer"
+        },
+        "frozenLesson": 23
+      },
+      {
+        "lemma": "quaeso",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "ask / beseech",
+          "fr": "demander / supplier"
+        },
+        "frozenLesson": 23
+      },
+      {
+        "lemma": "ideo",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "therefore / for that reason",
+          "fr": "c'est pourquoi"
+        },
+        "frozenLesson": 23
+      },
+      {
+        "lemma": "itaque",
+        "partOfSpeech": "conjunction/adverb",
+        "gloss": {
+          "en": "and so / therefore",
+          "fr": "ainsi donc / c'est pourquoi"
+        },
+        "frozenLesson": 23
+      }
+    ],
+    "recycled": [
+      "gratia",
+      "tuus",
+      "Dominus",
+      "mens",
+      "noster",
+      "angelus",
+      "annuntio",
+      "filius",
+      "incarno",
+      "per",
+      "patior",
+      "is/ea/id",
+      "resurgo",
+      "gloria",
+      "oro",
+      "et",
+      "non",
+      "in",
+      "nos",
+      "sanctus",
+      "pater",
+      "bonus",
+      "opus",
+      "lux",
+      "sic",
+      "introeo",
+      "qui/quae/quod",
+      "perduco",
+      "do",
+      "ante",
+      "vos",
+      "coram",
+      "homo"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "infundo",
+      "forms": [
+        "infunde"
+      ],
+      "gloss": {
+        "en": "pour in / infuse",
+        "fr": "répandre / infuser"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cognosco",
+      "forms": [
+        "cognovimus"
+      ],
+      "gloss": {
+        "en": "know / come to know",
+        "fr": "connaître"
+      },
+      "trackedLesson": 26,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "passio",
+      "forms": [
+        "passionem"
+      ],
+      "gloss": {
+        "en": "passion / suffering",
+        "fr": "passion"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "resurrectio",
+      "forms": [
+        "resurrectionis"
+      ],
+      "gloss": {
+        "en": "resurrection",
+        "fr": "résurrection"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vigilo",
+      "forms": [
+        "Vigilate"
+      ],
+      "gloss": {
+        "en": "watch / keep vigil",
+        "fr": "veiller"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "nolite",
+      "forms": [
+        "Nolite"
+      ],
+      "gloss": {
+        "en": "do not",
+        "fr": "ne... pas"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "margarita",
+      "forms": [
+        "margaritas"
+      ],
+      "gloss": {
+        "en": "pearl",
+        "fr": "perle"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "porcus",
+      "forms": [
+        "porcos"
+      ],
+      "gloss": {
+        "en": "swine",
+        "fr": "porc"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "conculco",
+      "forms": [
+        "conculcent"
+      ],
+      "gloss": {
+        "en": "trample",
+        "fr": "fouler aux pieds"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "dirumpo",
+      "forms": [
+        "dirumpant"
+      ],
+      "gloss": {
+        "en": "tear / rend",
+        "fr": "déchirer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christi"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "crux",
+      "forms": [
+        "crucem"
+      ],
+      "gloss": {
+        "en": "cross",
+        "fr": "croix"
+      },
+      "trackedLesson": 39,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "tentatio",
+      "forms": [
+        "tentationem"
+      ],
+      "gloss": {
+        "en": "temptation",
+        "fr": "tentation"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "induco",
+      "forms": [
+        "inducas"
+      ],
+      "gloss": {
+        "en": "lead / bring in",
+        "fr": "conduire / faire entrer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "nuntio",
+      "forms": [
+        "nuntiante"
+      ],
+      "gloss": {
+        "en": "announce / report",
+        "fr": "annoncer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "angelus-collect-l23",
+      "sourceType": "primary-prayer",
+      "work": "Traditional Angelus",
+      "section": "Collect",
+      "sourceLatin": "Gratiam tuam, quaesumus, Domine, mentibus nostris infunde: ut qui, Angelo nuntiante, Christi Filii tui incarnationem cognovimus, per passionem ejus et crucem ad resurrectionis gloriam perducamur.",
+      "provenanceNote": "quaesumus and ut introduce a classic multi-clause prayer structure; perducamur is the desired end of the prayer."
+    },
+    {
+      "id": "vulg-mt26-41-l23",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 26:41",
+      "sourceLatin": "Vigilate, et orate, ut non intretis in tentationem.",
+      "provenanceNote": "A clear purpose clause using ecclesiastical/Vulgate ut non rather than a simplified ne-only rule."
+    },
+    {
+      "id": "pater-ne-nos-l23",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "Et ne nos inducas in tentationem.",
+      "provenanceNote": "ne marks a negative prayer clause here; this is deliberately distinguished from a dependent purpose clause."
+    },
+    {
+      "id": "vulg-mt7-6-l23",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 7:6",
+      "sourceLatin": "Nolite dare sanctum canibus, neque mittatis margaritas vestras ante porcos: ne forte conculcent eas pedibus suis, et conversi dirumpant vos.",
+      "provenanceNote": "ne forte introduces prevention/negative-purpose sense in a dependent clause."
+    },
+    {
+      "id": "vulg-mt5-16-purpose-l23",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 5:16",
+      "sourceLatin": "Sic luceat lux vestra coram hominibus, ut videant opera vestra bona, et glorificent Patrem vestrum.",
+      "provenanceNote": "ut links the shining light to its intended/expected consequence; Lesson 24 will refine purpose versus result."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; clause linkage is now added to mood recognition.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "purposeFramework": {
+    "positive": "ut + subjunctive commonly introduces intended purpose or desired end.",
+    "negative": "ne + subjunctive can introduce negative purpose/prevention; ecclesiastical/Vulgate Latin also commonly uses ut non.",
+    "caution": "Do not decide purpose from conjunction alone. Check the main-clause meaning, subordinate mood, and logical relationship.",
+    "prayerPattern": "request/grant verb + ut-clause often expresses the content or desired outcome of prayer and overlaps semantically with purpose."
+  },
+  "learningBlocks": [
+    {
+      "id": "l23-b1",
+      "type": "concept",
+      "title": "Purpose is a relationship between clauses",
+      "learnerCopy": {
+        "en": "A purpose clause tells what an action is for. ut often introduces positive purpose; ne can introduce negative purpose or prevention. But conjunction alone is not enough: read the governing clause and the subjunctive relationship.",
+        "fr": "Une proposition finale indique le but d'une action. ut introduit souvent un but positif ; ne peut introduire un but négatif ou une prévention. Mais la conjonction seule ne suffit pas : lisez la proposition principale et le rapport au subjonctif."
+      }
+    },
+    {
+      "id": "l23-b2",
+      "type": "authentic-example",
+      "title": "Gratiam tuam, quaesumus",
+      "sourceId": "angelus-collect-l23",
+      "learnerCopy": {
+        "en": "The Angelus collect opens with a request and then an ut-clause describing the desired end: that those who have known the Incarnation may be brought through Passion and Cross to Resurrection glory.",
+        "fr": "La collecte de l'Angélus s'ouvre par une demande puis une proposition en ut décrivant le terme désiré : que ceux qui ont connu l'Incarnation soient conduits, par la Passion et la Croix, à la gloire de la Résurrection."
+      }
+    },
+    {
+      "id": "l23-b3",
+      "type": "contrast",
+      "title": "ut non also occurs",
+      "sourceId": "vulg-mt26-41-l23",
+      "learnerCopy": {
+        "en": "Vigilate et orate, ut non intretis... shows that ecclesiastical/Vulgate Latin can express negative purpose with ut non. Do not learn the false equation 'negative purpose always equals ne'.",
+        "fr": "Vigilate et orate, ut non intretis... montre que le latin ecclésiastique/Vulgate peut exprimer un but négatif par ut non. N'apprenez pas la fausse équation « but négatif = toujours ne »."
+      }
+    },
+    {
+      "id": "l23-b4",
+      "type": "boundary",
+      "title": "ne nos inducas is not a purpose clause",
+      "sourceId": "pater-ne-nos-l23",
+      "learnerCopy": {
+        "en": "In the Pater, ne nos inducas is an independent negative petition, not a subordinate purpose clause. The same conjunction can serve different syntax; clause relationship decides.",
+        "fr": "Dans le Pater, ne nos inducas est une demande négative indépendante, non une proposition finale subordonnée. Une même conjonction peut servir plusieurs structures ; c'est le rapport entre propositions qui décide."
+      }
+    },
+    {
+      "id": "l23-b5",
+      "type": "vocabulary",
+      "title": "Grant/request verbs predict prayer syntax",
+      "learnerCopy": {
+        "en": "concedo, praesto, tribuo and quaeso frequently lead into prayer clauses expressing what is being granted or requested. Recognize the governing verb before entering the subordinate clause.",
+        "fr": "concedo, praesto, tribuo et quaeso introduisent souvent des propositions de prière exprimant ce qui est accordé ou demandé. Repérez le verbe régissant avant d'entrer dans la subordonnée."
+      }
+    },
+    {
+      "id": "l23-b6",
+      "type": "retrieval",
+      "title": "Use three signals, not one",
+      "learnerCopy": {
+        "en": "To identify purpose, combine: conjunction, subjunctive mood, and logical dependence on the main clause. This three-part test prevents mechanical parsing.",
+        "fr": "Pour identifier le but, combinez trois signaux : conjonction, subjonctif et dépendance logique par rapport à la principale. Ce test évite une analyse mécanique."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l23-p1",
+      "sourceId": "angelus-collect-l23",
+      "sourceLatin": "Gratiam tuam, quaesumus, Domine, mentibus nostris infunde: ut qui, Angelo nuntiante, Christi Filii tui incarnationem cognovimus, per passionem ejus et crucem ad resurrectionis gloriam perducamur.",
+      "instructionalDisplay": "Gratiam tuam, quaesumus, Domine, mentibus nostris infunde: ut qui, Angelo nuntiante, Christi Filii tui incarnationem cognovimus, per passionem ejus et crucem ad resurrectionis gloriam perducamur.",
+      "translation": {
+        "en": "Pour forth, we beseech Thee, O Lord, Thy grace into our hearts; that we, to whom the Incarnation of Christ Thy Son was made known by the message of an angel, may by His Passion and Cross be brought to the glory of His Resurrection.",
+        "fr": "Répandez, nous vous en supplions, Seigneur, votre grâce dans nos âmes, afin qu'ayant connu, par le message de l'ange, l'Incarnation du Christ votre Fils, nous soyons conduits par sa Passion et sa Croix à la gloire de la Résurrection."
+      },
+      "targetLemmas": [
+        "gratia",
+        "tuus",
+        "quaeso",
+        "Dominus",
+        "mens",
+        "noster",
+        "ut",
+        "qui/quae/quod",
+        "angelus",
+        "filius",
+        "incarno",
+        "per",
+        "is/ea/id",
+        "perduco",
+        "gloria"
+      ],
+      "supportLemmas": [
+        "infundo",
+        "cognosco",
+        "passio",
+        "resurrectio",
+        "Christus",
+        "nuntio",
+        "crux"
+      ]
+    },
+    {
+      "id": "l23-p2",
+      "sourceId": "vulg-mt26-41-l23",
+      "sourceLatin": "Vigilate, et orate, ut non intretis in tentationem.",
+      "instructionalDisplay": "Vigilate, et orate, ut non intretis in tentationem.",
+      "translation": {
+        "en": "Watch and pray that you enter not into temptation.",
+        "fr": "Veillez et priez afin de ne pas entrer en tentation."
+      },
+      "targetLemmas": [
+        "et",
+        "oro",
+        "ut",
+        "non",
+        "in",
+        "introeo"
+      ],
+      "supportLemmas": [
+        "vigilo",
+        "tentatio"
+      ]
+    },
+    {
+      "id": "l23-p3",
+      "sourceId": "pater-ne-nos-l23",
+      "sourceLatin": "Et ne nos inducas in tentationem.",
+      "instructionalDisplay": "Et ne nos inducas in tentationem.",
+      "translation": {
+        "en": "And lead us not into temptation.",
+        "fr": "Et ne nous laissez pas succomber à la tentation."
+      },
+      "targetLemmas": [
+        "et",
+        "ne",
+        "nos",
+        "in"
+      ],
+      "supportLemmas": [
+        "induco",
+        "tentatio"
+      ]
+    },
+    {
+      "id": "l23-p4",
+      "sourceId": "vulg-mt7-6-l23",
+      "sourceLatin": "Nolite dare sanctum canibus, neque mittatis margaritas vestras ante porcos: ne forte conculcent eas pedibus suis, et conversi dirumpant vos.",
+      "instructionalDisplay": "Nolite dare sanctum canibus, neque mittatis margaritas vestras ante porcos: ne forte conculcent eas pedibus suis, et conversi dirumpant vos.",
+      "translation": {
+        "en": "Give not that which is holy to dogs, neither cast ye your pearls before swine, lest perhaps they trample them under their feet and, turning, rend you.",
+        "fr": "Ne donnez pas aux chiens ce qui est saint et ne jetez pas vos perles devant les porcs, de peur qu'ils ne les foulent aux pieds et, se retournant, ne vous déchirent."
+      },
+      "targetLemmas": [
+        "do",
+        "sanctus",
+        "ante",
+        "ne",
+        "et",
+        "vos"
+      ],
+      "supportLemmas": [
+        "nolite",
+        "margarita",
+        "porcus",
+        "conculco",
+        "dirumpo"
+      ]
+    },
+    {
+      "id": "l23-p5",
+      "sourceId": "vulg-mt5-16-purpose-l23",
+      "sourceLatin": "Sic luceat lux vestra coram hominibus, ut videant opera vestra bona, et glorificent Patrem vestrum.",
+      "instructionalDisplay": "Sic luceat lux vestra coram hominibus, ut videant opera vestra bona, et glorificent Patrem vestrum.",
+      "translation": {
+        "en": "So let your light shine before men, that they may see your good works and glorify your Father.",
+        "fr": "Ainsi, que votre lumière brille devant les hommes, afin qu'ils voient vos bonnes œuvres et glorifient votre Père."
+      },
+      "targetLemmas": [
+        "sic",
+        "lux",
+        "coram",
+        "homo",
+        "ut",
+        "opus",
+        "bonus",
+        "et",
+        "pater"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l23-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What three signals should be combined to identify purpose?",
+      "stimulus": null,
+      "options": [
+        "conjunction + subjunctive + clause relationship",
+        "word order only",
+        "case ending only",
+        "translation only"
+      ],
+      "expectedAnswer": "conjunction + subjunctive + clause relationship",
+      "acceptedVariants": [
+        "conjunction + subjunctive + clause relationship"
+      ],
+      "hint": "Purpose is syntactic and logical.",
+      "explanation": "The lesson explicitly rejects conjunction-only parsing.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "syntax:purpose"
+      ]
+    },
+    {
+      "id": "l23-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does ut commonly introduce here?",
+      "stimulus": "ut ... perducamur",
+      "options": [
+        "desired purpose/end",
+        "direct address",
+        "genitive possession",
+        "perfect active"
+      ],
+      "expectedAnswer": "desired purpose/end",
+      "acceptedVariants": [
+        "desired purpose/end"
+      ],
+      "hint": "Read the governing prayer request.",
+      "explanation": "The ut-clause expresses the desired end of the prayer.",
+      "difficulty": 1,
+      "sourceId": "angelus-collect-l23",
+      "skills": [
+        "syntax:purpose"
+      ]
+    },
+    {
+      "id": "l23-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does negative purpose always use ne in ecclesiastical/Vulgate Latin?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes",
+        "only in Psalms",
+        "only in the Mass"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "Recall ut non intretis.",
+      "explanation": "ut non is also common in Vulgate/ecclesiastical usage.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt26-41-l23",
+      "skills": [
+        "syntax:negative-purpose"
+      ]
+    },
+    {
+      "id": "l23-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Is ne nos inducas in the Pater a subordinate purpose clause?",
+      "stimulus": "ne nos inducas",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "It is an independent petition.",
+      "explanation": "The conjunction ne has more than one syntactic use.",
+      "difficulty": 1,
+      "sourceId": "pater-ne-nos-l23",
+      "skills": [
+        "syntax:boundary"
+      ]
+    },
+    {
+      "id": "l23-e5",
+      "exerciseType": "matching",
+      "prompt": "Match prayer verb to meaning.",
+      "stimulus": [
+        "concedo",
+        "praesto",
+        "tribuo",
+        "quaeso"
+      ],
+      "expectedAnswer": {
+        "concedo": "grant / concede",
+        "praesto": "grant / provide / show",
+        "tribuo": "grant / bestow",
+        "quaeso": "ask / beseech"
+      },
+      "acceptedVariants": [],
+      "hint": "These often govern prayer content.",
+      "explanation": "This checks the prayer-governing verbs.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l23"
+      ]
+    },
+    {
+      "id": "l23-e6",
+      "exerciseType": "matching",
+      "prompt": "Match connective to meaning.",
+      "stimulus": [
+        "ideo",
+        "itaque"
+      ],
+      "expectedAnswer": {
+        "ideo": "therefore / for that reason",
+        "itaque": "and so / therefore"
+      },
+      "acceptedVariants": [],
+      "hint": "Both indicate consequence/inference.",
+      "explanation": "They will help distinguish logical relations between clauses.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l23"
+      ]
+    },
+    {
+      "id": "l23-e7",
+      "exerciseType": "token_select",
+      "prompt": "Select the purpose-clause marker and its subjunctive verb.",
+      "stimulus": "Vigilate, et orate, ut non intretis in tentationem.",
+      "expectedAnswer": [
+        "ut",
+        "intretis"
+      ],
+      "acceptedVariants": [
+        [
+          "ut",
+          "intretis"
+        ]
+      ],
+      "hint": "Ignore non when identifying the core pair.",
+      "explanation": "ut + subjunctive intretis marks the subordinate purpose relation.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt26-41-l23",
+      "skills": [
+        "syntax:purpose",
+        "mood:subjunctive"
+      ]
+    },
+    {
+      "id": "l23-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does ne forte contribute in Matthew 7:6?",
+      "stimulus": "ne forte",
+      "options": [
+        "prevention: lest perhaps",
+        "simple affirmation",
+        "possession",
+        "future time"
+      ],
+      "expectedAnswer": "prevention: lest perhaps",
+      "acceptedVariants": [
+        "prevention: lest perhaps"
+      ],
+      "hint": "It warns against a possible outcome.",
+      "explanation": "ne forte introduces a negative/preventive subordinate idea.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt7-6-l23",
+      "skills": [
+        "syntax:negative-purpose"
+      ]
+    },
+    {
+      "id": "l23-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which new Lesson 23 verb appears directly in the Angelus collect?",
+      "stimulus": "quaesumus",
+      "options": [
+        "quaeso",
+        "tribuo",
+        "praesto",
+        "concedo"
+      ],
+      "expectedAnswer": "quaeso",
+      "acceptedVariants": [
+        "quaeso"
+      ],
+      "hint": "quaesumus is first-person plural.",
+      "explanation": "quaesumus belongs to quaeso.",
+      "difficulty": 1,
+      "sourceId": "angelus-collect-l23",
+      "skills": [
+        "vocabulary:quaeso"
+      ]
+    },
+    {
+      "id": "l23-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin conjunction meaning 'lest / that not'.",
+      "stimulus": null,
+      "expectedAnswer": "ne",
+      "acceptedVariants": [
+        "ne",
+        "Ne"
+      ],
+      "hint": "It appears in the Pater and in prevention clauses.",
+      "explanation": "ne is the target conjunction.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:ne"
+      ]
+    }
+  ],
+  "objectives": [
+    "Identify purpose from conjunction, subjunctive and clause relationship.",
+    "Avoid the false rule that negative purpose always uses ne.",
+    "Distinguish independent ne-prayer clauses from dependent purpose clauses.",
+    "Learn all eight frozen Lesson 23 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l23-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l23-e1",
+        "l23-e2",
+        "l23-e3",
+        "l23-e4",
+        "l23-e5",
+        "l23-e6",
+        "l23-e7",
+        "l23-e8",
+        "l23-e9",
+        "l23-e10"
+      ]
+    },
+    "mustKnow": [
+      "ut purpose",
+      "ne prevention/negative use",
+      "ut non ecclesiastical/Vulgate usage",
+      "clause relationship over mechanical conjunction parsing"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "ut",
+      "ne",
+      "concedo",
+      "praesto",
+      "tribuo",
+      "quaeso",
+      "ideo",
+      "itaque"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

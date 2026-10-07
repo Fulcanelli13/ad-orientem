@@ -1,0 +1,678 @@
+{
+  "version": "latin-course-lesson-21-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 21,
+  "stage": {
+    "number": 5,
+    "title": "Prayer Language"
+  },
+  "title": "Sanctificetur nomen tuum",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "passage",
+  "grammarFocus": "Present subjunctive",
+  "readingOutcome": "Recognize present-subjunctive forms in prayer language.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen Lesson 21 allocation is introduced; later verbs in authentic prayer clauses remain explicit support.",
+    "authenticTextPolicy": "Present subjunctive is anchored in the Pater noster and prayer/scriptural formulas.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "fio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "become / be made / happen",
+          "fr": "devenir / être fait / arriver"
+        },
+        "frozenLesson": 21
+      },
+      {
+        "lemma": "advenio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "come / arrive",
+          "fr": "venir / arriver"
+        },
+        "frozenLesson": 21
+      },
+      {
+        "lemma": "regno",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "reign",
+          "fr": "régner"
+        },
+        "frozenLesson": 21
+      },
+      {
+        "lemma": "vivo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "live",
+          "fr": "vivre"
+        },
+        "frozenLesson": 21
+      },
+      {
+        "lemma": "ita",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "so / thus",
+          "fr": "ainsi"
+        },
+        "frozenLesson": 21
+      },
+      {
+        "lemma": "sic",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "so / thus / in this way",
+          "fr": "ainsi / de cette manière"
+        },
+        "frozenLesson": 21
+      }
+    ],
+    "recycled": [
+      "sanctifico",
+      "nomen",
+      "tuus",
+      "regnum",
+      "voluntas",
+      "sicut",
+      "in",
+      "caelum",
+      "et",
+      "terra",
+      "lux",
+      "noster",
+      "coram",
+      "homo",
+      "bonus",
+      "opus",
+      "pater",
+      "verbum",
+      "secundum",
+      "ego",
+      "video",
+      "glorifico",
+      "angelus",
+      "qui/quae/quod",
+      "sum"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "luceo",
+      "forms": [
+        "luceat"
+      ],
+      "gloss": {
+        "en": "shine",
+        "fr": "briller"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vester",
+      "forms": [
+        "vestra"
+      ],
+      "gloss": {
+        "en": "your (plural)",
+        "fr": "votre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mihi",
+      "forms": [
+        "mihi"
+      ],
+      "gloss": {
+        "en": "to me",
+        "fr": "à moi"
+      },
+      "trackedLesson": null,
+      "status": "surface-form-personal"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pater-noster-subj-l21",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "Sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra.",
+      "provenanceNote": "Three present-subjunctive prayer clauses provide sanctificetur, adveniat and fiat."
+    },
+    {
+      "id": "vulg-mt5-16-l21",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 5:16",
+      "sourceLatin": "Sic luceat lux vestra coram hominibus, ut videant opera vestra bona, et glorificent Patrem vestrum, qui in caelis est.",
+      "provenanceNote": "sic introduces manner; luceat is a present-subjunctive exhortative form, while the ut clause is left for later lessons."
+    },
+    {
+      "id": "vulg-lk1-38-l21",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 1:38",
+      "sourceLatin": "Fiat mihi secundum verbum tuum.",
+      "provenanceNote": "Fiat gives a compact prayer/assent use of present subjunctive."
+    },
+    {
+      "id": "doxology-ita-l21",
+      "sourceType": "primary-prayer",
+      "work": "Traditional Catholic prayer formula",
+      "section": "Assent formula",
+      "sourceLatin": "Ita fiat. Amen.",
+      "provenanceNote": "Compact devotional formula used only to distinguish ita from sic; not treated as a Mass Ordinary text."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; the new work is verbal mood inside prayer clauses.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "subjunctiveFramework": {
+    "presentRecognition": "Present subjunctive changes the stem vowel or uses distinctive irregular forms such as sim/fiam; read it first as prayer, wish, exhortation or subordinate-clause mood rather than assigning one English tense.",
+    "anchors": [
+      {
+        "surface": "sanctificetur",
+        "lemma": "sanctifico",
+        "value": "may it be hallowed / hallowed be"
+      },
+      {
+        "surface": "adveniat",
+        "lemma": "advenio",
+        "value": "may it come / come"
+      },
+      {
+        "surface": "fiat",
+        "lemma": "fio",
+        "value": "may it be done / let it be"
+      },
+      {
+        "surface": "luceat",
+        "lemma": "luceo",
+        "value": "let it shine"
+      }
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l21-b1",
+      "type": "concept",
+      "title": "Prayer Latin often asks rather than states",
+      "learnerCopy": {
+        "en": "The subjunctive is a mood, not simply another tense. In prayer it often expresses what is desired, requested or willed: hallowed be, may Thy kingdom come, may Thy will be done.",
+        "fr": "Le subjonctif est un mode, non simplement un autre temps. Dans la prière, il exprime souvent ce qui est désiré, demandé ou voulu : que votre nom soit sanctifié, que votre règne arrive, que votre volonté soit faite."
+      }
+    },
+    {
+      "id": "l21-b2",
+      "type": "authentic-example",
+      "title": "Three subjunctives in the Pater",
+      "sourceId": "pater-noster-subj-l21",
+      "learnerCopy": {
+        "en": "sanctificetur, adveniat and fiat form a sequence of present-subjunctive petitions. The clause architecture is simple enough that the mood itself becomes visible.",
+        "fr": "sanctificetur, adveniat et fiat forment une série de demandes au subjonctif présent. La structure des propositions est assez simple pour rendre le mode lui-même visible."
+      }
+    },
+    {
+      "id": "l21-b3",
+      "type": "morphology",
+      "title": "fiat belongs to fio",
+      "learnerCopy": {
+        "en": "fio is irregular and extremely important in prayer language. fiat means 'let it be done / may it become'; do not mistake it for a separate vocabulary item.",
+        "fr": "fio est irrégulier et très important dans le langage de la prière. fiat signifie « que cela soit fait / advienne » ; ce n'est pas un lemme séparé."
+      }
+    },
+    {
+      "id": "l21-b4",
+      "type": "authentic-example",
+      "title": "Fiat mihi secundum verbum tuum",
+      "sourceId": "vulg-lk1-38-l21",
+      "learnerCopy": {
+        "en": "Mary's fiat is an assent expressed in the subjunctive. mihi is an already familiar dative-type personal form; secundum governs the accusative phrase.",
+        "fr": "Le fiat de Marie est un assentiment exprimé au subjonctif. mihi est une forme personnelle de type datif déjà familière ; secundum régit l'accusatif."
+      }
+    },
+    {
+      "id": "l21-b5",
+      "type": "contrast",
+      "title": "sic and ita orient meaning, not mood",
+      "learnerCopy": {
+        "en": "sic and ita both often mean 'so / thus'. They can frame the manner or result of a clause, but they do not themselves create the subjunctive. Read them as structural adverbs.",
+        "fr": "sic et ita signifient souvent « ainsi ». Ils peuvent encadrer la manière ou le résultat d'une proposition, mais ne créent pas à eux seuls le subjonctif. Lisez-les comme des adverbes structurants."
+      }
+    },
+    {
+      "id": "l21-b6",
+      "type": "retrieval",
+      "title": "Recognize mood before translating elegantly",
+      "learnerCopy": {
+        "en": "At this stage, it is enough to identify a present-subjunctive form and the prayer force it carries. Nuances such as jussive, optative and subordinate-clause uses are separated in the next lessons.",
+        "fr": "À ce stade, il suffit d'identifier une forme au subjonctif présent et sa force de prière. Les nuances jussive, optative et subordonnée seront distinguées dans les leçons suivantes."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l21-p1",
+      "sourceId": "pater-noster-subj-l21",
+      "sourceLatin": "Sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra.",
+      "instructionalDisplay": "Sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra.",
+      "translation": {
+        "en": "Hallowed be Thy name. Thy kingdom come. Thy will be done, on earth as it is in heaven.",
+        "fr": "Que votre nom soit sanctifié. Que votre règne arrive. Que votre volonté soit faite sur la terre comme au ciel."
+      },
+      "targetLemmas": [
+        "sanctifico",
+        "nomen",
+        "tuus",
+        "advenio",
+        "regnum",
+        "fio",
+        "voluntas",
+        "sicut",
+        "in",
+        "caelum",
+        "et",
+        "terra"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l21-p2",
+      "sourceId": "vulg-mt5-16-l21",
+      "sourceLatin": "Sic luceat lux vestra coram hominibus, ut videant opera vestra bona, et glorificent Patrem vestrum, qui in caelis est.",
+      "instructionalDisplay": "Sic luceat lux vestra coram hominibus, ut videant opera vestra bona, et glorificent Patrem vestrum, qui in caelis est.",
+      "translation": {
+        "en": "So let your light shine before men, that they may see your good works and glorify your Father who is in heaven.",
+        "fr": "Ainsi, que votre lumière brille devant les hommes, afin qu'ils voient vos bonnes œuvres et glorifient votre Père qui est aux cieux."
+      },
+      "targetLemmas": [
+        "sic",
+        "lux",
+        "coram",
+        "homo",
+        "opus",
+        "bonus",
+        "et",
+        "pater",
+        "qui/quae/quod",
+        "in",
+        "caelum",
+        "sum",
+        "video",
+        "glorifico"
+      ],
+      "supportLemmas": [
+        "luceo",
+        "vester"
+      ]
+    },
+    {
+      "id": "l21-p3",
+      "sourceId": "vulg-lk1-38-l21",
+      "sourceLatin": "Fiat mihi secundum verbum tuum.",
+      "instructionalDisplay": "Fiat mihi secundum verbum tuum.",
+      "translation": {
+        "en": "Be it done unto me according to thy word.",
+        "fr": "Qu'il me soit fait selon votre parole."
+      },
+      "targetLemmas": [
+        "fio",
+        "secundum",
+        "verbum",
+        "tuus"
+      ],
+      "supportLemmas": [
+        "mihi"
+      ]
+    },
+    {
+      "id": "l21-p4",
+      "sourceId": "doxology-ita-l21",
+      "sourceLatin": "Ita fiat. Amen.",
+      "instructionalDisplay": "Ita fiat. Amen.",
+      "translation": {
+        "en": "So be it. Amen.",
+        "fr": "Ainsi soit-il. Amen."
+      },
+      "targetLemmas": [
+        "ita",
+        "fio"
+      ],
+      "supportLemmas": [
+        "Amen"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l21-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What mood is sanctificetur in the Pater?",
+      "stimulus": "sanctificetur",
+      "options": [
+        "present subjunctive",
+        "future indicative",
+        "perfect passive indicative",
+        "imperative"
+      ],
+      "expectedAnswer": "present subjunctive",
+      "acceptedVariants": [
+        "present subjunctive"
+      ],
+      "hint": "It expresses a petition.",
+      "explanation": "sanctificetur is present subjunctive passive.",
+      "difficulty": 1,
+      "sourceId": "pater-noster-subj-l21",
+      "skills": [
+        "mood:subjunctive"
+      ]
+    },
+    {
+      "id": "l21-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which lemma lies behind fiat?",
+      "stimulus": "fiat",
+      "options": [
+        "fio",
+        "facio",
+        "sum",
+        "do"
+      ],
+      "expectedAnswer": "fio",
+      "acceptedVariants": [
+        "fio"
+      ],
+      "hint": "It means 'let it be / become'.",
+      "explanation": "fiat belongs to fio.",
+      "difficulty": 1,
+      "sourceId": "pater-noster-subj-l21",
+      "skills": [
+        "vocabulary:fio",
+        "mood:subjunctive"
+      ]
+    },
+    {
+      "id": "l21-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does adveniat express in the Pater?",
+      "stimulus": "Adveniat regnum tuum",
+      "options": [
+        "a desired coming",
+        "a completed past event",
+        "a direct indicative statement",
+        "a passive description"
+      ],
+      "expectedAnswer": "a desired coming",
+      "acceptedVariants": [
+        "a desired coming"
+      ],
+      "hint": "Translate prayer force, not only tense.",
+      "explanation": "adveniat is a present-subjunctive petition.",
+      "difficulty": 1,
+      "sourceId": "pater-noster-subj-l21",
+      "skills": [
+        "mood:prayer"
+      ]
+    },
+    {
+      "id": "l21-e4",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 21 item to meaning.",
+      "stimulus": [
+        "fio",
+        "advenio",
+        "regno",
+        "vivo"
+      ],
+      "expectedAnswer": {
+        "fio": "become / be made",
+        "advenio": "come / arrive",
+        "regno": "reign",
+        "vivo": "live"
+      },
+      "acceptedVariants": [],
+      "hint": "These are the new verbs.",
+      "explanation": "This checks lexical recognition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l21"
+      ]
+    },
+    {
+      "id": "l21-e5",
+      "exerciseType": "matching",
+      "prompt": "Match structural adverb to meaning.",
+      "stimulus": [
+        "ita",
+        "sic"
+      ],
+      "expectedAnswer": {
+        "ita": "so / thus",
+        "sic": "so / thus / in this way"
+      },
+      "acceptedVariants": [],
+      "hint": "Both can mean 'thus', but context decides nuance.",
+      "explanation": "ita and sic are structural adverbs.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l21"
+      ]
+    },
+    {
+      "id": "l21-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does sic by itself make a verb subjunctive?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes, always",
+        "only in the Creed",
+        "only with nouns"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "Mood comes from verbal morphology/syntax.",
+      "explanation": "sic can frame a clause but does not mechanically trigger subjunctive.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "syntax:structure"
+      ]
+    },
+    {
+      "id": "l21-e7",
+      "exerciseType": "token_select",
+      "prompt": "Select the three subjunctive petition forms.",
+      "stimulus": "Sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua.",
+      "expectedAnswer": [
+        "Sanctificetur",
+        "Adveniat",
+        "Fiat"
+      ],
+      "acceptedVariants": [
+        [
+          "Sanctificetur",
+          "Adveniat",
+          "Fiat"
+        ]
+      ],
+      "hint": "They are the verbs of the three petitions.",
+      "explanation": "All three are present-subjunctive forms.",
+      "difficulty": 1,
+      "sourceId": "pater-noster-subj-l21",
+      "skills": [
+        "mood:subjunctive",
+        "reading:prayer"
+      ]
+    },
+    {
+      "id": "l21-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the reading priority in Lesson 21?",
+      "stimulus": null,
+      "options": [
+        "recognize subjunctive mood and prayer force",
+        "memorize every subjunctive paradigm immediately",
+        "ignore clause meaning",
+        "translate only word by word"
+      ],
+      "expectedAnswer": "recognize subjunctive mood and prayer force",
+      "acceptedVariants": [
+        "recognize subjunctive mood and prayer force"
+      ],
+      "hint": "Later lessons separate finer uses.",
+      "explanation": "The lesson deliberately keeps the first subjunctive step functional.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:scope"
+      ]
+    },
+    {
+      "id": "l21-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case relationship is mihi in Fiat mihi...?",
+      "stimulus": "mihi",
+      "options": [
+        "dative/reference",
+        "accusative direct object",
+        "genitive possession",
+        "ablative with cum"
+      ],
+      "expectedAnswer": "dative/reference",
+      "acceptedVariants": [
+        "dative/reference"
+      ],
+      "hint": "Think 'unto me'.",
+      "explanation": "mihi is the dative form of ego.",
+      "difficulty": 2,
+      "sourceId": "vulg-lk1-38-l21",
+      "skills": [
+        "pronoun:ego",
+        "case:dative"
+      ]
+    },
+    {
+      "id": "l21-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin adverb meaning 'thus / in this way' used in Sic luceat...",
+      "stimulus": null,
+      "expectedAnswer": "sic",
+      "acceptedVariants": [
+        "sic",
+        "Sic"
+      ],
+      "hint": "It opens Matthew 5:16.",
+      "explanation": "sic means thus / so.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt5-16-l21",
+      "skills": [
+        "vocabulary:sic"
+      ]
+    }
+  ],
+  "objectives": [
+    "Recognize present-subjunctive prayer forms.",
+    "Read sanctificetur/adveniat/fiat as petitions.",
+    "Learn all six frozen Lesson 21 lemmas.",
+    "Keep case/pronoun reading active inside prayer clauses."
+  ],
+  "checkpoint": {
+    "id": "l21-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l21-e1",
+        "l21-e2",
+        "l21-e3",
+        "l21-e4",
+        "l21-e5",
+        "l21-e6",
+        "l21-e7",
+        "l21-e8",
+        "l21-e9",
+        "l21-e10"
+      ]
+    },
+    "mustKnow": [
+      "present subjunctive prayer force",
+      "fiat→fio",
+      "adveniat petition",
+      "sic/ita structural adverbs"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "fio",
+      "advenio",
+      "regno",
+      "vivo",
+      "ita",
+      "sic"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 4,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

@@ -317,6 +317,40 @@ if (authored.length >= 20) {
   assert(new Set(stage4Introduced).size === 47, "Stage 4 contains duplicate introduced lemmas");
 }
 
+
+// Stage 5 prayer-language and multi-clause syntax locks.
+if (authored.length >= 21) {
+  assert(authored[20].subjunctiveFramework, "Lesson 21 must establish present-subjunctive prayer reading");
+  assert(authored[20].progressionStep === "passage", "Lesson 21 must remain passage-level");
+}
+if (authored.length >= 22) {
+  assert(authored[21].jussiveOptativeFramework, "Lesson 22 must distinguish jussive/optative uses");
+  assert(authored[21].progressionStep === "passage", "Lesson 22 must remain passage-level");
+}
+if (authored.length >= 23) {
+  assert(authored[22].purposeFramework, "Lesson 23 must establish purpose-clause reading");
+  assert(authored[22].progressionStep === "passage", "Lesson 23 must remain passage-level");
+}
+if (authored.length >= 24) {
+  assert(authored[23].purposeResultFramework, "Lesson 24 must distinguish result from purpose");
+  assert(authored[23].progressionStep === "passage", "Lesson 24 must remain passage-level");
+}
+if (authored.length >= 25) {
+  const frozenL25Milestone = course.milestones?.find(x => x.lesson === 25)?.target;
+  assert(authored[24].cumClauseFramework, "Lesson 25 must establish circumstantial/temporal cum-clause reading");
+  assert(authored[24].progressionStep === "passage", "Lesson 25 must remain passage-level");
+  assert(authored[24].checkpoint?.progressionGate === frozenL25Milestone,
+    `Lesson 25 progression gate must match frozen milestone: ${frozenL25Milestone}`);
+  assert(authored[24].checkpoint?.stage === 5, "Lesson 25 must be the Stage 5 checkpoint");
+  assert(JSON.stringify(authored[24].checkpoint?.scopeLessons) === JSON.stringify([21,22,23,24,25]),
+    "Stage 5 checkpoint must cover Lessons 21-25");
+  assert(authored[24].checkpoint?.readingTransition === "passage → multi-clause passage",
+    "Lesson 25 must lock the multi-clause passage transition");
+  const stage5Introduced = authored.slice(20,25).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage5Introduced.length === 41, `Stage 5 must introduce 41 tracked lemmas, got ${stage5Introduced.length}`);
+  assert(new Set(stage5Introduced).size === 41, "Stage 5 contains duplicate introduced lemmas");
+}
+
 console.log(JSON.stringify({
   status: "PASS",
   lessons: course.lessons.length,
