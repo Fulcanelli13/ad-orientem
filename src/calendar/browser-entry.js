@@ -88,6 +88,20 @@ function observedCycle(r,id){
   const generic=/^(?:liturgical day|jour liturgique|calendar unavailable|calendrier indisponible)$/;
   return generic.test(title.trim())?"unknown":"sanctorale";
 }
+function principalSaintContext(r,id){
+  if(observedCycle(r,id)!=="sanctorale")return null;
+  const title=titleOf(r);
+  const marian=/\b(?:our lady|blessed virgin|virgin mary|immaculate|assumption|purification|annunciation|rosary|notre[- ]dame|sainte vierge|bienheureuse vierge|immacul[eé]e|assomption|purification|annonciation|rosaire)\b/i.test(title);
+  return {date:id,title,marian,label:marian?L("Marian feast","Fête mariale"):L("Saint / feast","Saint / fête")};
+}
+async function openSaintDetail(id){
+  const target=String(id||state()?.selectedDate||"");if(!target)return false;
+  const ok=await select(target,{closeAfter:false});if(!ok)return false;
+  try{
+    const result=await Promise.resolve(globalThis.AO_MODULES?.open?.("today.saint",{returnContext:{surface:"calendar",view:"day",date:target}}));
+    return result?.ok===true||result===true||Boolean(globalThis.AO_NAV_V25?.getState?.()?.panel==="saint");
+  }catch(error){console.error("Calendar saint detail failed",error);return false}
+}
 function monthEntry(id){
   const raw=weekCache.get(id),r=raw?.status!=="failed"&&raw?.day?raw:null;
   if(!r)return null;
@@ -120,9 +134,9 @@ function monthIndexList(monthId,selected,view){
       :L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.");
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
-    ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
+    ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" ${view==="sanctorale"?`data-cal-saint-date="${x.date}"`:""} class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
       <time>${esc(displayDate(x.date))}</time>
-      <span class="aoCalMonthIndexText"><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small></span>
+      <span class="aoCalMonthIndexText"><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small>${view==="sanctorale"?`<em>${esc(L("Life & sources","Vie & sources"))} →</em>`:""}</span>
       <i aria-hidden="true"></i>
     </button>`).join("")}</div>`:`<div class="aoCalMonthEmpty">${esc(L("No resolved observances in this category for the month.","Aucune célébration résolue dans cette catégorie pour ce mois."))}</div>`}
   </section>`;
@@ -364,7 +378,7 @@ function compactWeek(selected){
   }).join("")}</div>`;
 }
 function daySurface(selected,r){
-  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextMajorCelebration(selected),cm=commemorations(r);
+  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextMajorCelebration(selected),cm=commemorations(r),saint=principalSaintContext(r,selected);
   const season=periodName(p),properReady=!!properOf(r),periodPercent=pct(y.periodProgress);
   return `
     ${dayNavigator(selected)}
@@ -375,6 +389,7 @@ function daySurface(selected,r){
       ${sourceStatus(r)}
       ${properReady?`<button class="aoCalV2Primary" type="button" data-cal-mass>${esc(L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
     </section>
+    ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small><p>${esc(L("Biography, artwork and sources for the principal observance.","Biographie, œuvre et sources de la célébration principale."))}</p></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
     <section class="aoCalV2Context">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><h3>${esc(season)}</h3></div><strong>${periodPercent}%</strong></div>
       <div class="aoCalV2SeasonMeta"><span>${esc(L(`Day ${y.periodDayIndex} of ${p.days}`,`Jour ${y.periodDayIndex} sur ${p.days}`))}</span><span>${esc(L(`Liturgical year ${y.label}`,`Année liturgique ${y.label}`))}</span></div>
@@ -578,6 +593,7 @@ function bind(r){
     const dayShift=event.target.closest?.("[data-cal-day-shift]");if(dayShift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(dayShift.dataset.calDayShift||0)));return}
     const monthShift=event.target.closest?.("[data-cal-month-shift]");if(monthShift){event.preventDefault();const base=pickerMonthId||String(state()?.selectedDate||iso(new Date())).slice(0,7),parts=base.split("-").map(Number),d=new Date(parts[0],parts[1]-1+Number(monthShift.dataset.calMonthShift||0),1,12);pickerMonthId=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");paint();requestPickerMonth();return}
     const pick=event.target.closest?.("[data-cal-pick-date]");if(pick){event.preventDefault();calendarView="day";void select(pick.dataset.calPickDate);return}
+    const saintDetail=event.target.closest?.("[data-cal-saint-date]");if(saintDetail){event.preventDefault();event.stopPropagation?.();void openSaintDetail(saintDetail.dataset.calSaintDate);return}
     const monthIndexDate=event.target.closest?.("[data-cal-month-index-date]");if(monthIndexDate){event.preventDefault();calendarView="day";void select(monthIndexDate.dataset.calMonthIndexDate);return}
     const mass=event.target.closest?.("[data-cal-mass]");if(mass){event.preventDefault();void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar Mass entry failed",error));return}
     const closeButton=event.target.closest?.("[data-cal-close]");if(closeButton){event.preventDefault();close();return}
