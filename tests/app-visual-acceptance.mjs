@@ -724,10 +724,14 @@ try{
       latinVisible:Boolean(latin&&getComputedStyle(latin).display!=="none"&&getComputedStyle(latin).visibility!=="hidden"&&latin.getClientRects().length),
       vernVisible:Boolean(vern&&getComputedStyle(vern).display!=="none"&&getComputedStyle(vern).visibility!=="hidden"&&vern.getClientRects().length),
       face:flip?.dataset?.face??null,
-      groupRoot:active?.classList?.contains("aoRecitationGroup")??false,
-      innerBlocks:[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse,.aoPrayerDialogueBody,.aoPrayerWords")??[])]
+      groupRoot:(active?.classList?.contains("aoRecitationGroup")||document.documentElement.classList.contains("aoRecitationGroup"))??false,
+      innerBlocks:[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse,.aoPrayerDialogueLine,.aoPrayerDialogueBody,.aoPrayerWords")??[])]
         .filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=="none")
-        .map(node=>({className:node.className||"",width:node.getBoundingClientRect().width,display:getComputedStyle(node).display,grid:getComputedStyle(node).gridTemplateColumns,writingMode:getComputedStyle(node).writingMode})),
+        .map(node=>{
+          const css=getComputedStyle(node),rect=node.getBoundingClientRect(),lineHeight=parseFloat(css.lineHeight)||0;
+          const text=(node.textContent||"").replace(/\s+/g," ").trim();
+          return {className:node.className||"",textLength:text.length,wordCount:text?text.split(/\s+/).length:0,width:rect.width,height:rect.height,lineCount:lineHeight?Math.ceil(rect.height/lineHeight):0,display:css.display,grid:css.gridTemplateColumns,writingMode:css.writingMode};
+        }),
     };
   });
   assert.ok(rosaryPrayerGeometry.width>=330,"Rosary prayer column collapsed horizontally");
@@ -742,13 +746,17 @@ try{
   assert.equal(rosaryPrayerGeometry.groupRoot,true,"Rosary visual acceptance did not reproduce Group recitation");
   assert.ok(rosaryPrayerGeometry.innerBlocks.length>0,"Rosary Our Father exposes no semantic prayer-text blocks");
   for(const block of rosaryPrayerGeometry.innerBlocks){
-    if(/aoPrayerDialogueBody|aoPrayerWords/.test(block.className))continue;
-    assert.ok(block.width>=rosaryPrayerGeometry.width*.72,"Rosary Group prayer text collapsed into a narrow semantic column: "+JSON.stringify(block));
     assert.match(block.writingMode,/horizontal/i,"Rosary inner prayer block is not horizontal: "+JSON.stringify(block));
+    if(block.textLength>=40){
+      assert.ok(block.width>=rosaryPrayerGeometry.width*.62,"Rosary Group long prayer text collapsed into a narrow semantic column: "+JSON.stringify(block));
+      assert.ok(!block.lineCount||block.lineCount<=18,"Rosary Group long prayer text reverted to word-by-word vertical stacking: "+JSON.stringify(block));
+    }
   }
   for(const block of rosaryPrayerGeometry.innerBlocks.filter(x=>/aoCustomaryLeader|aoCustomaryResponse/.test(x.className))){
     assert.equal(block.display,"block","Rosary Group common-prayer owner regressed to grid: "+JSON.stringify(block));
-    assert.ok(!/1\.55rem/.test(block.grid),"Rosary Group common-prayer owner retained the narrow role grid: "+JSON.stringify(block));
+  }
+  for(const block of rosaryPrayerGeometry.innerBlocks.filter(x=>/aoPrayerDialogueLine/.test(x.className))){
+    assert.ok(block.width>=rosaryPrayerGeometry.width*.72,"Rosary Group dialogue owner collapsed before its prose: "+JSON.stringify(block));
   }
 
   // Translation is a real tap-to-replace interaction in the preserved Rosary engine,
@@ -776,9 +784,13 @@ try{
       flipWidth:flipRect?.width??0,
       cardHeight:cardRect?.height??0,
       writingMode:css?.writingMode??"",
-      innerMinWidth:Math.min(...[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse")??[])]
+      innerBlocks:[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse,.aoPrayerDialogueLine,.aoPrayerDialogueBody,.aoPrayerWords")??[])]
         .filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=="none")
-        .map(node=>node.getBoundingClientRect().width),Infinity),
+        .map(node=>{
+          const cs=getComputedStyle(node),r=node.getBoundingClientRect(),lineHeight=parseFloat(cs.lineHeight)||0;
+          const text=(node.textContent||"").replace(/\s+/g," ").trim();
+          return {className:node.className||"",textLength:text.length,width:r.width,height:r.height,lineCount:lineHeight?Math.ceil(r.height/lineHeight):0,writingMode:cs.writingMode};
+        }),
     };
   });
   assert.equal(rosaryLatin.face,"latin","Rosary tap did not switch the active face to Latin");
@@ -790,7 +802,13 @@ try{
   assert.ok(rosaryLatin.cardWidth>=330&&rosaryLatin.flipWidth>=300,"Rosary translation tap collapsed the prayer column horizontally");
   assert.ok(rosaryLatin.cardHeight>0&&rosaryLatin.cardHeight<720,"Rosary Latin face reproduced the vertical word-stack regression");
   assert.match(rosaryLatin.writingMode,/horizontal/i,"Rosary prayer flip is not horizontally written after translation");
-  assert.ok(!Number.isFinite(rosaryLatin.innerMinWidth)||rosaryLatin.innerMinWidth>=rosaryLatin.flipWidth*.72,"Rosary Latin translation collapsed an inner prayer block");
+  for(const block of rosaryLatin.innerBlocks){
+    assert.match(block.writingMode,/horizontal/i,"Rosary Latin inner prayer block is not horizontal: "+JSON.stringify(block));
+    if(block.textLength>=40){
+      assert.ok(block.width>=rosaryLatin.flipWidth*.62,"Rosary Latin long prayer text collapsed into a narrow semantic column: "+JSON.stringify(block));
+      assert.ok(!block.lineCount||block.lineCount<=18,"Rosary Latin long prayer text reverted to word-by-word vertical stacking: "+JSON.stringify(block));
+    }
+  }
   await shot("03d3-pray-rosary-latin-toggle");
 
   await rosaryFlip.tap();
@@ -804,6 +822,61 @@ try{
   });
   assert.equal(rosaryReturned.face,"vernacular","Second Rosary tap did not return to the vernacular");
   assert.match(rosaryReturned.text,/Our Father/i,"Second Rosary tap did not restore the vernacular prayer");
+
+  // Exercise a second common prayer with different donor markup. This catches the
+  // Hail Mary path that previously remained narrow even when the Our Father looked fixed.
+  const hailMaryTarget=await page.evaluate(after=>{
+    const xs=globalThis.AO_ROSARY_V381?.steps?.()||[];
+    return xs.findIndex((step,index)=>index>after&&/ave maria|hail mary/i.test(JSON.stringify(step)));
+  },currentRosaryStep);
+  assert.ok(hailMaryTarget>currentRosaryStep,"Canonical Rosary steps expose no Hail Mary after the Our Father");
+  for(let guard=0;currentRosaryStep<hailMaryTarget&&guard<12;guard+=1){
+    const before=currentRosaryStep;
+    await page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
+    await page.waitForFunction(previous=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1)>previous,before,{timeout:2000});
+    currentRosaryStep=await page.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+  }
+  assert.equal(currentRosaryStep,hailMaryTarget,"Visible Rosary Next did not reach the canonical Hail Mary step");
+  const hailGeometry=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']");
+    const card=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])].find(node=>node.offsetParent!==null&&/Hail Mary|Ave Maria/i.test(node.innerText??""))||null;
+    const flip=card?.querySelector(".lab-prayer-flip[data-pb-flip]"),rect=card?.getBoundingClientRect?.();
+    const blocks=[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse,.aoPrayerDialogueLine,.aoPrayerDialogueBody,.aoPrayerWords")??[])]
+      .filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=="none")
+      .map(node=>{const css=getComputedStyle(node),r=node.getBoundingClientRect(),lh=parseFloat(css.lineHeight)||0,text=(node.textContent||"").replace(/\s+/g," ").trim();return{className:node.className||"",textLength:text.length,width:r.width,lineCount:lh?Math.ceil(r.height/lh):0,writingMode:css.writingMode}});
+    return {width:rect?.width??0,height:rect?.height??0,face:flip?.dataset?.face??null,text:(card?.innerText??"").replace(/\s+/g," ").trim(),blocks};
+  });
+  assert.equal(hailGeometry.face,"vernacular","Hail Mary did not inherit the vernacular default");
+  assert.match(hailGeometry.text,/Hail Mary/i,"Hail Mary vernacular face is not visible");
+  assert.ok(hailGeometry.width>=330&&hailGeometry.height>0&&hailGeometry.height<720,"Hail Mary card reproduced the narrow vertical regression");
+  for(const block of hailGeometry.blocks){
+    assert.match(block.writingMode,/horizontal/i,"Hail Mary inner block is not horizontal: "+JSON.stringify(block));
+    if(block.textLength>=40){
+      assert.ok(block.width>=hailGeometry.width*.62,"Hail Mary long prayer text collapsed into a narrow semantic column: "+JSON.stringify(block));
+      assert.ok(!block.lineCount||block.lineCount<=18,"Hail Mary long prayer text reverted to word-by-word vertical stacking: "+JSON.stringify(block));
+    }
+  }
+  const hailFlip=page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet:visible .lab-prayer-flip[data-pb-flip]").first();
+  await hailFlip.tap();
+  await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet .lab-prayer-flip[data-pb-flip]")?.dataset?.face==="latin",null,{timeout:2000});
+  const hailLatin=await page.evaluate(()=>{
+    const flip=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet .lab-prayer-flip[data-pb-flip]");
+    const r=flip?.getBoundingClientRect?.();
+    const blocks=[...(flip?.querySelectorAll(".aoPrayerProse,.aoCustomarySplit,.aoCustomaryLeader,.aoCustomaryResponse,.aoPrayerDialogueLine,.aoPrayerDialogueBody,.aoPrayerWords")??[])]
+      .filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=="none")
+      .map(node=>{const css=getComputedStyle(node),b=node.getBoundingClientRect(),lh=parseFloat(css.lineHeight)||0,text=(node.textContent||"").replace(/\s+/g," ").trim();return{className:node.className||"",textLength:text.length,width:b.width,lineCount:lh?Math.ceil(b.height/lh):0,writingMode:css.writingMode}});
+    return {width:r?.width??0,text:(flip?.innerText??"").replace(/\s+/g," ").trim(),blocks};
+  });
+  assert.match(hailLatin.text,/Ave Maria/i,"Hail Mary Latin replacement did not render");
+  for(const block of hailLatin.blocks){
+    assert.match(block.writingMode,/horizontal/i,"Hail Mary Latin inner block is not horizontal: "+JSON.stringify(block));
+    if(block.textLength>=40){
+      assert.ok(block.width>=hailLatin.width*.62,"Hail Mary Latin long prayer text collapsed into a narrow semantic column: "+JSON.stringify(block));
+      assert.ok(!block.lineCount||block.lineCount<=18,"Hail Mary Latin text reverted to word-by-word vertical stacking: "+JSON.stringify(block));
+    }
+  }
+  await hailFlip.tap();
+  await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet .lab-prayer-flip[data-pb-flip]")?.dataset?.face==="vernacular",null,{timeout:2000});
 
   // Advance through the actual prayer sequence to Mystery I. The permanent
   // Overview control was removed because it duplicated navigation and crowded the header.

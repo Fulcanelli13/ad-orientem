@@ -164,6 +164,9 @@ assert.match(styles,/grid-template-columns:none!important/,"Rosary single-column
 assert.match(styles,/\.lab-prayer-flip\[data-pb-flip\]\{[\s\S]*display:block!important;[\s\S]*width:100%!important;[\s\S]*writing-mode:horizontal-tb!important/,"Rosary prayer flip lost its horizontal full-width text guard");
 assert.match(styles,/\.lab-prayer-flip \.aoPrayerProse,[\s\S]*\.lab-prayer-flip \.aoCustomarySplit,[\s\S]*\.lab-prayer-flip \.aoPrayerDialogueLine/,"Rosary lost the late donor descendant-width guard");
 assert.match(styles,/aoRecitationGroup \.aoCustomaryLeader,[\s\S]*aoRecitationGroup \.aoCustomaryResponse[\s\S]*display:block!important;[\s\S]*grid-template-columns:none!important;[\s\S]*width:100%!important/,"Rosary lost the v43.33 Group common-prayer grid-collapse repair");
+assert.match(styles,/aoRecitationGroup \.lab-prayer-flip \.aoPrayerDialogueLine,[\s\S]*grid-template-columns:max-content minmax\(0,1fr\)!important/,"Rosary Group dialogue owner can regress to the historical 1.55rem first track");
+assert.match(styles,/aoRecitationGroup \.lab-prayer-flip \.aoPrayerDialogueLine>\.aoPrayerDialogueBody,[\s\S]*grid-column:2!important;[\s\S]*width:100%!important/,"Rosary Group dialogue body lost explicit full reading-column ownership");
+assert.match(styles,/aoRecitationGroup \.lab-prayer-flip \.aoPrayerDialogueLine>\.aoPrayerWords,[\s\S]*grid-column:2!important;[\s\S]*width:100%!important/,"Rosary Group prayer words lost explicit full reading-column ownership");
 assert.match(styles,/rosary-decade-bar-v15 i\.current/,"Rosary donor progress current-state geometry is absent");
 assert.match(styles,/r29-head-recitation/,"Rosary donor recitation strip styling is absent");
 assert.match(styles,/r24-has-mystery-art::before/,"Rosary donor sacred-art backdrop styling is absent");

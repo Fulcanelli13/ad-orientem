@@ -408,6 +408,44 @@ const ROSARY_DECLUTTER_CSS=`
  display:grid!important;
  grid-template-columns:1.55rem minmax(0,1fr)!important;
 }
+/* Group recitation must own the actual dialogue tracks, not just the outer prayer card.
+   The role marker is explicitly returned to column 1 and long prayer prose to a flexible
+   column 2 so anonymous/inner text can never inherit the historical 1.55rem track. */
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .lab-prayer-flip .aoPrayerDialogueLine,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerDialogueLine{
+ display:grid!important;
+ grid-template-columns:max-content minmax(0,1fr)!important;
+ column-gap:.42rem!important;
+ width:100%!important;
+ inline-size:100%!important;
+ min-width:0!important;
+ max-width:100%!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .lab-prayer-flip .aoPrayerDialogueLine>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerDialogueLine>.aoPrayerRole{
+ position:static!important;
+ float:none!important;
+ grid-column:1!important;
+ width:auto!important;
+ inline-size:auto!important;
+ min-width:0!important;
+ max-width:none!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .lab-prayer-flip .aoPrayerDialogueLine>.aoPrayerDialogueBody,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .lab-prayer-flip .aoPrayerDialogueLine>.aoPrayerWords,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerDialogueLine>.aoPrayerDialogueBody,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerDialogueLine>.aoPrayerWords{
+ grid-column:2!important;
+ justify-self:stretch!important;
+ width:100%!important;
+ inline-size:100%!important;
+ min-width:0!important;
+ max-width:100%!important;
+ writing-mode:horizontal-tb!important;
+ white-space:normal!important;
+ word-break:normal!important;
+ overflow-wrap:break-word!important;
+}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .aoCustomaryLeader,
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .aoCustomaryResponse,
 html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoCustomaryLeader,
