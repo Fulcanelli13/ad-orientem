@@ -52,5 +52,31 @@
     "IE": 4
   },
   "rule": "The live importer remains authoritative for the 27 materialized records. This supplement contains only the 98 current official-source candidates absent from that runtime snapshot; it must not duplicate those 27.",
-  "caveat": "Provider identity and current official-source listing do not by themselves prove a public Mass schedule. Rows with unaudited or non-Mass statuses are projected as SOURCE_ASSERTION rather than MASS."
+  "caveat": "Provider identity and current official-source listing do not by themselves prove a public Mass schedule. Rows with unaudited or non-Mass statuses are projected as SOURCE_ASSERTION rather than MASS.",
+  "publication_gate": {
+    "live_runtime_records": 27,
+    "live_current_mass_records": 25,
+    "federated_supplement_records": 98,
+    "federated_current_mass_records": 35,
+    "publishable_current_mass_total": 60,
+    "provider_presence_only_total": 5,
+    "mass_eligibility_pending_total": 60
+  },
+  "provider_presence_only_candidate_ids": [
+    "ICKSP-STG-047",
+    "ICKSP-STG-055",
+    "ICKSP-STG-104",
+    "ICKSP-STG-110",
+    "ICKSP-STG-113"
+  ],
+  "conditional_mass_evidence_not_promoted_ids": [
+    "ICKSP-STG-067",
+    "ICKSP-STG-099",
+    "ICKSP-STG-102",
+    "ICKSP-STG-105",
+    "ICKSP-STG-106",
+    "ICKSP-STG-107",
+    "ICKSP-STG-124"
+  ],
+  "publication_rule": "Find a Mass requires a live Mass schedule or explicit current public-Mass evidence. Provider presence, seasonal/occasional passage Masses, school-chapel evidence and contact-for-schedule records remain research assertions until a current public schedule clears the gate."
 }
