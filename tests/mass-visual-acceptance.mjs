@@ -136,6 +136,11 @@ try{
     sourceStructureOwner:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.sourceStructureOwner??null,
     historicalIdentityClaim:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.historicalV183IdentityClaim??null,
     shellRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview .ao-reader-shell")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
+    postureTop:(()=>{
+      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture-top']");
+      const s=x?getComputedStyle(x):null;
+      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage,maskSize:s.webkitMaskSize||s.maskSize,maskPosition:s.webkitMaskPosition||s.maskPosition}:null;
+    })(),
   }));
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(opening.legacyStarts,0);
@@ -172,6 +177,10 @@ try{
   assert.equal(opening.sourceStructureOwner,"SOURCE_FIRST_LIVE");
   assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
+  assert.equal(opening.postureTop?.hidden,false,"opening posture symbol is hidden");
+  assert.match(opening.postureTop?.mask??"",/ao-live-stand\.svg/,"opening posture does not use frozen STAND symbol");
+  assert.match(opening.postureTop?.maskSize??"",/234\.375%/,"frozen STAND symbol regressed to intrinsic 300x150 sliver geometry");
+  assert.match(opening.postureTop?.maskPosition??"",/left top|0% 0%/,"frozen STAND symbol lost its corrected crop origin");
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
@@ -294,6 +303,22 @@ try{
     cinematicSub:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-sub']")?.textContent?.trim()??"",
     bellOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerBell??null,
     cinematicOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerCinematic??null,
+    bellIcon:(()=>{
+      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell']");
+      const s=x?getComputedStyle(x):null;
+      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
+    })(),
+    priestActionIcon:(()=>{
+      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='priest-action']");
+      const s=x?getComputedStyle(x):null;
+      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
+    })(),
+    cinematicActionIcon:(()=>{
+      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='cinematic-action']");
+      const s=x?getComputedStyle(x):null;
+      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
+    })(),
+    cinematicFallbackHidden:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-fallback']")?.hidden??null,
   }));
   assert.equal(elevationState.cue,"AO.SM.C0174");
   assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
@@ -303,6 +328,13 @@ try{
   assert.equal(elevationState.cinematicSub,"SACRED HOST");
   assert.match(elevationState.bellOwner,/R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT/);
   assert.match(elevationState.cinematicOwner,/R17_EXACT_ELEVATION_CINEMATIC/);
+  assert.equal(elevationState.bellIcon?.hidden,false,"active elevation bell rail is visually blank");
+  assert.match(elevationState.bellIcon?.mask??"",/ao-live-bells\.png/,"bell cue is not using the frozen V4 altar-bells art");
+  assert.equal(elevationState.priestActionIcon?.hidden,false,"Host elevation action rail is visually blank");
+  assert.match(elevationState.priestActionIcon?.mask??"",/ao-live-priest-elevation\.png/,"Host elevation action does not use the frozen V4 elevation art");
+  assert.equal(elevationState.cinematicActionIcon?.hidden,false,"v1.80 sacred elevation orb is missing the current action artwork");
+  assert.match(elevationState.cinematicActionIcon?.mask??"",/ao-live-priest-elevation\.png/,"sacred elevation orb does not reuse canonical action art");
+  assert.equal(elevationState.cinematicFallbackHidden,true,"generic cinematic cross still replaces available elevation action art");
   await page.screenshot({path:resolve(out,"08-mass-host-elevation.png"),fullPage:false});
 
   async function focusCanonicalCue(cueId){
@@ -357,6 +389,8 @@ try{
       postureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='posture']")?.dataset?.active??null,
       gestureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='gesture']")?.hidden??null,
       postureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture']")?.hidden??null,
+      gestureMaskSize:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='gesture']");return x?(getComputedStyle(x).webkitMaskSize||getComputedStyle(x).maskSize):null})(),
+      postureMaskSize:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture']");return x?(getComputedStyle(x).webkitMaskSize||getComputedStyle(x).maskSize):null})(),
       activeParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
       targetActive:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset?.active??null,
       gestureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerGesture??null,
@@ -372,6 +406,7 @@ try{
   assert.equal(gloriaBow.postureActive,"true");
   assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
@@ -379,7 +414,9 @@ try{
   assert.equal(incarnatus.posture,"STAND","Incarnatus transient genuflection incorrectly replaced the persistent standing posture");
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
+  assert.match(incarnatus.gestureMaskSize??"",/234\.375%/,"Incarnatus genuflect symbol collapsed to intrinsic SVG sliver geometry");
   assert.equal(incarnatus.targetActive,"true");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
 
   const agnus=await focusCanonicalCue("AO.SM.C0222");
@@ -388,6 +425,7 @@ try{
   assert.equal(agnus.leftRail,"true");
   assert.equal(agnus.gestureIconHidden,false,"Agnus Dei breast strike lost its canonical icon");
   assert.equal(agnus.targetActive,"true");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"11-mass-agnus-dei.png"),fullPage:false});
 
   const lastGospelGenuflect=await focusCanonicalCue("AO.SM.C0273");
@@ -395,7 +433,9 @@ try{
   assert.equal(lastGospelGenuflect.posture,"STAND","Last Gospel persistent posture should remain standing around the transient genuflection");
   assert.equal(lastGospelGenuflect.leftRail,"true");
   assert.equal(lastGospelGenuflect.gestureIconHidden,false,"Last Gospel genuflect lost its canonical icon");
+  assert.match(lastGospelGenuflect.gestureMaskSize??"",/234\.375%/,"Last Gospel genuflect symbol collapsed to intrinsic SVG sliver geometry");
   assert.equal(lastGospelGenuflect.targetActive,"true");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"12-mass-last-gospel-genuflect.png"),fullPage:false});
 
   const lastGospelRise=await focusCanonicalCue("AO.SM.C0274");
