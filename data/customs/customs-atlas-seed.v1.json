@@ -12,7 +12,9 @@
       "period_label": "19th–20th c.; pre-conciliar",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Learn"],
+      "owners": [
+        "Learn"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Present as a historical/traditional domestic practice, not a requirement."
@@ -26,7 +28,11 @@
       "period_label": "19th c. → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Pray", "Calendar", "Learn"],
+      "owners": [
+        "Pray",
+        "Calendar",
+        "Learn"
+      ],
       "calendar_trigger_hint": "Sacred Heart season / family use",
       "confidence": "HIGH",
       "guardrail": "Keep distinct from the liturgy and from priestly house blessing."
@@ -40,7 +46,10 @@
       "period_label": "Late 19th–20th c. → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Pray", "Learn"],
+      "owners": [
+        "Pray",
+        "Learn"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Any blessing of the image remains ministerial where required."
@@ -54,7 +63,9 @@
       "period_label": "Pre-conciliar; historical today",
       "decision": "KEEP — HISTORICAL/OPTIONAL",
       "publication_state": "PUBLISHED",
-      "owners": ["Learn"],
+      "owners": [
+        "Learn"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Preserve the anti-misconception note prominently."
@@ -68,7 +79,11 @@
       "period_label": "Early modern → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Calendar", "Pray", "Learn"],
+      "owners": [
+        "Calendar",
+        "Pray",
+        "Learn"
+      ],
       "calendar_trigger_hint": "May",
       "confidence": "HIGH",
       "guardrail": "Calendar points to the practice; devotional modules own prayer content."
@@ -82,7 +97,10 @@
       "period_label": "Ancient → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Learn", "Calendar"],
+      "owners": [
+        "Learn",
+        "Calendar"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Do not turn local pilgrimage calendars into universal app law."
@@ -96,7 +114,9 @@
       "period_label": "Varies",
       "decision": "KEEP — EXAMPLE ONLY / NO GLOBAL ENGINE",
       "publication_state": "CONTEXT_ONLY",
-      "owners": ["Learn"],
+      "owners": [
+        "Learn"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "No country mode and no universal trigger."
@@ -110,7 +130,9 @@
       "period_label": "17th c. → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Learn"],
+      "owners": [
+        "Learn"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Avoid superstition framing."
@@ -124,7 +146,10 @@
       "period_label": "Longstanding → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Learn", "Pray"],
+      "owners": [
+        "Learn",
+        "Pray"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Do not imply payment purchases spiritual effects."
@@ -134,11 +159,15 @@
       "family": "Death & Holy Souls",
       "name": "Prayerful cemetery visit",
       "canonical_statement": "Visiting a cemetery to pray for the dead is an established Catholic devotional practice and strongly French-attested.",
-      "custom_class": "TRADITIONAL_ROMAN_PRACTICE",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
       "period_label": "Longstanding → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Calendar", "Pray", "Learn"],
+      "owners": [
+        "Calendar",
+        "Pray",
+        "Learn"
+      ],
       "calendar_trigger_hint": "02/11; November; anniversaries",
       "confidence": "HIGH",
       "guardrail": "Explain as prayer and bonds with the dead, not superstitious obligation."
@@ -148,11 +177,14 @@
       "family": "Death & Holy Souls",
       "name": "Prayer for the dead on 2 November",
       "canonical_statement": "2 November is a privileged day of prayer for the faithful departed; cemetery visits are common but the core is prayer for the dead.",
-      "custom_class": "TRADITIONAL_ROMAN_PRACTICE",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
       "period_label": "Liturgical observance → present",
       "decision": "KEEP",
       "publication_state": "PUBLISHED",
-      "owners": ["Calendar", "Pray"],
+      "owners": [
+        "Calendar",
+        "Pray"
+      ],
       "calendar_trigger_hint": "02/11",
       "confidence": "HIGH",
       "guardrail": "Calendar owns the date; Pray owns prayer texts."
@@ -166,7 +198,9 @@
       "period_label": "Historical → present in places",
       "decision": "KEEP — GENERIC ONLY",
       "publication_state": "CONTEXT_ONLY",
-      "owners": ["Learn"],
+      "owners": [
+        "Learn"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Do not encode local sex/age/number-of-strokes patterns as universal."
@@ -180,7 +214,9 @@
       "period_label": "Historical; largely declined",
       "decision": "KEEP — REGIONAL/HISTORICAL",
       "publication_state": "CONTEXT_ONLY",
-      "owners": ["Learn"],
+      "owners": [
+        "Learn"
+      ],
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Distinguish clearly from the Eucharist; stronger historical source closure is still desirable."
@@ -196,7 +232,9 @@
       "geographic_precision": "COUNTRY",
       "period_label": "1900–1950 material witnesses",
       "strength": "STRONG",
-      "source_ids": ["MUCEM-BENITIER"],
+      "source_ids": [
+        "MUCEM-BENITIER"
+      ],
       "evidence_note": "Mucem catalogue preserves French domestic bénitiers, including Lourdes-associated examples.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -210,7 +248,9 @@
       "geographic_precision": "CULTURAL_SPHERE",
       "period_label": "19th c. → present",
       "strength": "STRONG",
-      "source_ids": ["PARAY-CONSECRATION"],
+      "source_ids": [
+        "PARAY-CONSECRATION"
+      ],
       "evidence_note": "Paray-le-Monial documents the history and continuing practice of family consecration.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -224,7 +264,9 @@
       "geographic_precision": "CULTURAL_SPHERE",
       "period_label": "Late 19th c. → present",
       "strength": "STRONG",
-      "source_ids": ["PARAY-INTRONISATION"],
+      "source_ids": [
+        "PARAY-INTRONISATION"
+      ],
       "evidence_note": "Paray-le-Monial directly describes intronisation in families.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -238,7 +280,10 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Pre-conciliar",
       "strength": "STRONG",
-      "source_ids": ["RIT-1878", "SCHOLA-RELEVAILLES"],
+      "source_ids": [
+        "RIT-1878",
+        "SCHOLA-RELEVAILLES"
+      ],
       "evidence_note": "Roman Ritual witness and French traditional transcription support the voluntary blessing after childbirth.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -252,7 +297,9 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Early modern → present",
       "strength": "STRONG",
-      "source_ids": ["ECF-MAY"],
+      "source_ids": [
+        "ECF-MAY"
+      ],
       "evidence_note": "French episcopal source traces the devotion and French parish/family expressions.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -266,7 +313,9 @@
       "geographic_precision": "GLOBAL",
       "period_label": "Ancient → present",
       "strength": "STRONG",
-      "source_ids": ["DPP-2001"],
+      "source_ids": [
+        "DPP-2001"
+      ],
       "evidence_note": "Official universal guidance treats pilgrimage as an established form of popular piety.",
       "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
@@ -280,7 +329,9 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Continuing practice",
       "strength": "STRONG",
-      "source_ids": ["ECF-PILGRIMAGE"],
+      "source_ids": [
+        "ECF-PILGRIMAGE"
+      ],
       "evidence_note": "French episcopal source describes continuing pilgrimage and shrine practice.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -294,7 +345,9 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Varies regionally",
       "strength": "STRONG",
-      "source_ids": ["ECF-PILGRIMAGE"],
+      "source_ids": [
+        "ECF-PILGRIMAGE"
+      ],
       "evidence_note": "French episcopal source explicitly recognizes local pardons and shrine-linked pilgrimage traditions.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -308,7 +361,9 @@
       "geographic_precision": "PLACE",
       "period_label": "1652 → present",
       "strength": "STRONG",
-      "source_ids": ["LAGHET-EXVOTO"],
+      "source_ids": [
+        "LAGHET-EXVOTO"
+      ],
       "evidence_note": "The shrine documents its ex-voto tradition and collection.",
       "map_policy": "PLACE_PENDING",
       "confidence": "HIGH"
@@ -322,7 +377,9 @@
       "geographic_precision": "PLACE",
       "period_label": "Longstanding → present",
       "strength": "STRONG",
-      "source_ids": ["LOURDES-CANDLES"],
+      "source_ids": [
+        "LOURDES-CANDLES"
+      ],
       "evidence_note": "Lourdes explicitly presents the burning candle as a continuation of prayer.",
       "map_policy": "PLACE_PENDING",
       "confidence": "HIGH"
@@ -336,7 +393,9 @@
       "geographic_precision": "GLOBAL",
       "period_label": "Longstanding → present",
       "strength": "STRONG",
-      "source_ids": ["DPP-2001"],
+      "source_ids": [
+        "DPP-2001"
+      ],
       "evidence_note": "Official guidance supports cemetery visitation and prayer for the dead.",
       "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
@@ -350,7 +409,9 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Current French practice",
       "strength": "STRONG",
-      "source_ids": ["ECF-DEAD"],
+      "source_ids": [
+        "ECF-DEAD"
+      ],
       "evidence_note": "French episcopal source directly links 2 November with cemetery visitation and prayer.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -364,7 +425,10 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Current",
       "strength": "STRONG",
-      "source_ids": ["ECF-DEAD", "DPP-2001"],
+      "source_ids": [
+        "ECF-DEAD",
+        "DPP-2001"
+      ],
       "evidence_note": "French and universal official sources support prayer for the faithful departed on 2 November.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -378,7 +442,9 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Historical → present in places",
       "strength": "STRONG",
-      "source_ids": ["ECF-GLAS"],
+      "source_ids": [
+        "ECF-GLAS"
+      ],
       "evidence_note": "French episcopal glossary defines the glas as a bell sounding that announces death or obsequies.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "HIGH"
@@ -392,7 +458,9 @@
       "geographic_precision": "COUNTRY",
       "period_label": "Historical; largely declined",
       "strength": "MODERATE",
-      "source_ids": ["PAIN-BENIT"],
+      "source_ids": [
+        "PAIN-BENIT"
+      ],
       "evidence_note": "Modern French secondary source documents the former parish distribution of blessed bread distinct from the Eucharist.",
       "map_policy": "AREA_CONTEXT",
       "confidence": "MEDIUM_HIGH"
