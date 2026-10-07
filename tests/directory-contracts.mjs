@@ -27,6 +27,7 @@ const sources = readJson("../data/directory/source-registry.v1.json");
 const status = readJson("../data/directory/status-assertions.v1.json");
 const scheduleFreshnessPolicy = readJson("../data/directory/research/schedule-freshness-policy.v1.json");
 const ickspOverlapAudit = readJson("../data/directory/research/icksp-cross-provider-overlap-audit.v1.json");
+const ickspAddressPrecisionAudit = readJson("../data/directory/research/icksp-address-precision-audit.v1.json");
 
 const researchSnapshots = [
   readJson("../data/directory/generated/v19/diocesan.v1.json"),
@@ -106,6 +107,14 @@ for(const snapshot of researchSnapshots){
     assert.ok(expanded.venues.some(v=>/icksp-it-2026-orvieto/.test(v.venue_id)),"Orvieto post-v1.3 venue missing");
     assert.ok(expanded.venues.some(v=>/icksp-it-2026-bientina/.test(v.venue_id)),"Bientina post-v1.3 venue missing");
     assert.ok(expanded.venues.some(v=>/icksp-it-2026-pistoia/.test(v.venue_id)),"Pistoia post-v1.3 venue missing");
+    const byUpstream=new Map(expanded.venues.map(v=>[v.upstream.upstream_id,v]));
+    assert.match(byUpstream.get("ICKSP-STG-040")?.address?.formatted??"",/338 West University Boulevard/,"Tucson street-level address missing");
+    assert.match(byUpstream.get("ICKSP-STG-043")?.address?.formatted??"",/79 Church Street/,"Bridgeport street-level address missing");
+    assert.match(byUpstream.get("ICKSP-STG-054")?.address?.formatted??"",/1828 Jay Street/,"Detroit street-level address missing");
+    assert.match(byUpstream.get("ICKSP-STG-062")?.address?.formatted??"",/2457 Browns Lake Drive/,"Burlington street-level address missing");
+    assert.match(byUpstream.get("ICKSP-STG-083")?.address?.formatted??"",/Doctor Esquerdo 44/,"Madrid street-level address missing");
+    assert.match(byUpstream.get("ICKSP-STG-091")?.address?.formatted??"",/Teresa Gil 20/,"Valladolid street-level address missing");
+    assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
 assert.equal(researchVenueCount,370,"v1.9 research physical projection count drift");
@@ -179,6 +188,18 @@ assert.deepEqual(ickspOverlapAudit.scope.compared_against,{
 assert.equal(ickspOverlapAudit.result.credible_same_physical_place_duplicates,0);
 assert.equal(ickspOverlapAudit.result.unresolved_overlap_candidates,0);
 assert.equal(ickspOverlapAudit.reviewed_false_positives.length,1);
+assert.equal(ickspAddressPrecisionAudit.scope.federated_physical_venues,120);
+assert.equal(ickspAddressPrecisionAudit.scope.current_mass_physical_venues,104);
+assert.deepEqual(ickspAddressPrecisionAudit.result,{
+  street_or_property_level:103,
+  locality_only:16,
+  named_place_only:1,
+  current_mass_locality_only:3,
+});
+assert.deepEqual(
+  ickspAddressPrecisionAudit.current_mass_locality_only.map(row=>row.id).sort(),
+  ["ICKSP-STG-108","ICKSP-STG-109","ICKSP-STG-111"]
+);
 const staleFindHtml=renderFindToString({
   language:"en",
   records:[{
