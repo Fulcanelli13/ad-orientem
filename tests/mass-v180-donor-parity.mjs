@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { buildReaderShellMarkup } from "../src/mass/reader-dom.js";
+import { buildReaderShellMarkup, rubricIsStateDuplicate } from "../src/mass/reader-dom.js";
 
 const donor=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity.v1.json","utf8"));
 const stepReconciliation=JSON.parse(readFileSync("data/presentation/mass-v180-v183-step-reconciliation.v1.json","utf8"));
@@ -12,6 +12,7 @@ const nativePreview=readFileSync("src/mass/reader-native-preview.js","utf8");
 const iconBank=readFileSync("src/mass/reader-icon-bank.js","utf8");
 const iconMap=readFileSync("src/mass/reader-icons.js","utf8");
 const masterIcons=JSON.parse(readFileSync("assets/active/mass-v46/manifest.v1.json","utf8"));
+const sungText=JSON.parse(readFileSync("data/presentation/reader-text-sung.v1.json","utf8"));
 const rendered=buildReaderShellMarkup({
   readerPreferences:{mode:"LIVE"},
   session:{resolvedMass:{presentationMode:"LIVE",actualCelebration:{title:"Mass"}}},
@@ -115,6 +116,20 @@ assert.match(dom,/ao-guide-sources/);
 assert.match(dom,/sourceLinks/);
 assert.match(dom,/data-rubric-expandable/);
 assert.match(dom,/data-state-duplicate/);
+assert.equal(rubricIsStateDuplicate("[Kneel.]"),true,"posture-only rubric is not suppressed as a state duplicate");
+assert.equal(rubricIsStateDuplicate("[Stand]"),true,"standing-only rubric is not suppressed as a state duplicate");
+assert.equal(rubricIsStateDuplicate("[Genuflects — elevates the Sacred Host — replaces It — genuflects]"),false,
+  "meaningful ceremonial rubric was incorrectly suppressed");
+const sourceRubrics=[];
+for(const block of sungText.blocks??[])for(const unit of block.units??[]){
+  const value=String(unit.english??unit.latin??"").trim();
+  if(/^\[[\s\S]+\]$/.test(value))sourceRubrics.push(value);
+}
+assert.equal(sourceRubrics.length,15,"Sung source rubric inventory changed without parity review");
+assert.ok(Math.max(...sourceRubrics.map(x=>x.length))<=90,
+  "reader source regained a verbose in-card rubric that belongs in the Guide");
+assert.ok(sourceRubrics.every(x=>!rubricIsStateDuplicate(x)),
+  "source corpus contains a posture-only rubric that duplicates the rail owner");
 
 assert.match(dom,/data-schola-translate title="Tap to translate"/);
 assert.doesNotMatch(rendered,/ao-schola-translate-hint|tap text · translate/,
