@@ -71,7 +71,7 @@ for(const x of lex.items){
 }
 
 assert.equal(phr.schema,"GLOSSARY_LATIN_PHRASES_V1");
-assert.equal(phr.items.length,60);
+assert.equal(phr.items.length,80);
 assert.equal(new Set(phr.items.map(x=>x.id)).size,60);
 for(const p of phr.items){
   assert.ok(p.latin,p.id+" missing Latin");
@@ -85,4 +85,4 @@ for(const [a,b] of [["G181","G336"],["G245","G403"],["G192","G416"],["G050","G13
   assert.ok(navById.has(a)&&navById.has(b),"collision lock target missing "+a+"/"+b);
 }
 
-console.log("Glossary corpus integrity: 450 concepts + 350 fully enriched lexemes + 60 phrases clean.");
+console.log("Glossary corpus integrity: 450 concepts + 350 fully enriched lexemes + 80 phrases clean.");
