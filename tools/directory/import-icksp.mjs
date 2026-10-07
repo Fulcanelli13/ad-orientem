@@ -7,6 +7,14 @@ import { selectOfficialGeoFromHtml } from "./lib/official-geo-utils.mjs";
 
 export const ICKSP_US_URL="https://www.institute-christ-king.org/";
 export const ICKSP_INTL_URL="https://institute-christ-king.org/international-home";
+export const ICKSP_LIVE_MASS_REVIEW_DAYS=120;
+
+function reviewDueAt(checkedAt,days=ICKSP_LIVE_MASS_REVIEW_DAYS){
+  const date=new Date(checkedAt);
+  if(Number.isNaN(date.getTime()))return null;
+  date.setUTCDate(date.getUTCDate()+Number(days||0));
+  return date.toISOString();
+}
 
 function slugify(v){return String(v??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");}
 function venueType(name){
@@ -161,7 +169,16 @@ export function buildIckspDataset(records,{retrievedAt=new Date().toISOString()}
       community_profile_ref:"ICKSP",liturgical_usage:{family:"ROMAN",books:"1962",mass_form:"TRADITIONAL_LATIN",evidence_source_ids:["SRC_ICKSP_OFFICIAL_LOCATIONS"]},
       active:true,source_ids:[sourceId]
     });
-    if(r.massRaw)schedules.push({schedule_id:`ao-schedule-${key}-1`,ministry_id:ministryId,service_type:"MASS",mass_type:"UNKNOWN",payload:{raw:r.massRaw},source_ids:[sourceId],verification:{state:"OFFICIAL_LIVE",checked_at:retrievedAt}});
+    if(r.massRaw)schedules.push({
+      schedule_id:`ao-schedule-${key}-1`,ministry_id:ministryId,service_type:"MASS",mass_type:"UNKNOWN",
+      payload:{raw:r.massRaw},source_ids:[sourceId],
+      verification:{
+        state:"OFFICIAL_LIVE",
+        checked_at:retrievedAt,
+        review_due_at:reviewDueAt(retrievedAt),
+        freshness_policy:"CURRENT_MASS_120D",
+      }
+    });
     sources.push({source_id:sourceId,registry_source_id:"SRC_ICKSP_OFFICIAL_LOCATIONS",source_type:"COMMUNITY_OFFICIAL",publisher:"Institute of Christ the King Sovereign Priest",title:r.title,url:r.detailUrl,retrieved_at:retrievedAt,authority:"PRIMARY",fields_supported:["venue","venue.geo","venue.contact","schedule"]});
   });
   return {venues,ministries,schedules,sources};
