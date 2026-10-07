@@ -1,4 +1,5 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations, nextMajorCelebration } from "./liturgical-year.js";
 import { V384_CSS, v384YearHTML, v384DisciplineHTML } from "./traditional-year-v384.js";
 
@@ -19,8 +20,7 @@ const assetIcon=(assetId,className="aoCalAssetIcon")=>{
 };
 const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 const dateOf=id=>new Date(`${id}T12:00:00`);
-const displayDate=id=>{const m=String(id??"").match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?`${m[3]}/${m[2]}/${m[1]}`:String(id??"")};
-const parseDisplayDate=raw=>{const m=String(raw??"").trim().match(/^(\d{1,2})\s*[\/.-]\s*(\d{1,2})\s*[\/.-]\s*(\d{4})$/);if(!m)return null;const d=+m[1],mo=+m[2],y=+m[3],x=new Date(y,mo-1,d,12);return x.getFullYear()===y&&x.getMonth()===mo-1&&x.getDate()===d?iso(x):null};
+const displayDate=id=>formatDisplayDate(id);
 const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));return iso(d)};
 
 const weekCache=new Map(),weekLoads=new Map(),weekStatus=new Map();
@@ -31,7 +31,7 @@ let calendarV384Panel="year",calendarV384Era="current";
 function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
 function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
 function weekReady(id){return weekIds(id).every(x=>weekCache.has(x))}
-function weekLabel(id){const ids=weekIds(id),a=dateOf(ids[0]),b=dateOf(ids[6]),loc=fr()?"fr-FR":"en-GB";const af=a.toLocaleDateString(loc,{day:"numeric",month:"long"}),bf=b.toLocaleDateString(loc,{day:"numeric",month:"long",year:"numeric"});return `${af} – ${bf}`}
+function weekLabel(id){const ids=weekIds(id);return `${displayDate(ids[0])} – ${displayDate(ids[6])}`}
 function seedCurrent(){const s=state(),r=s?.resolution;if(s&&!s.resolving&&r?.date===s.selectedDate&&!weekCache.has(s.selectedDate))weekCache.set(s.selectedDate,r)}
 function cinemaLoader(){return globalThis.document?.getElementById?.("ao-cinema-loader")??null}
 function loaderText(done,total,id,errors=0){
@@ -195,8 +195,8 @@ const periodUiColour=key=>({
 })[String(key||"").toLowerCase()]||"#81735c";
 const periodName=p=>fr()?p?.fr:p?.en;
 const celebrationName=x=>fr()?x?.fr:x?.en;
-const longDate=id=>dateOf(id).toLocaleDateString(fr()?"fr-FR":"en-GB",{day:"numeric",month:"long",year:"numeric"});
-const shortDate=id=>dateOf(id).toLocaleDateString(fr()?"fr-FR":"en-GB",{day:"numeric",month:"short"});
+const longDate=id=>displayDate(id);
+const shortDate=id=>displayDate(id);
 const dayCount=(from,to)=>Math.max(0,Math.round((dateOf(to)-dateOf(from))/86400000));
 const pct=x=>Math.round(Math.max(0,Math.min(1,Number(x||0)))*1000)/10;
 
@@ -213,7 +213,7 @@ function dayNavigator(selected){
   const d=dateOf(selected),loc=fr()?"fr-FR":"en-GB";
   return `<div class="aoCalV2DayNav">
     <button type="button" data-cal-day-shift="-1" aria-label="${esc(L("Previous day","Jour précédent"))}">${assetIcon("ao-ui-previous")}</button>
-    <div><small>${esc(d.toLocaleDateString(loc,{weekday:"long"}))}</small><strong>${esc(d.toLocaleDateString(loc,{day:"numeric",month:"long",year:"numeric"}))}</strong></div>
+    <div><small>${esc(d.toLocaleDateString(loc,{weekday:"long"}))}</small><strong>${esc(displayDate(selected))}</strong></div>
     <button type="button" data-cal-day-shift="1" aria-label="${esc(L("Next day","Jour suivant"))}">${assetIcon("ao-ui-next")}</button>
   </div>`;
 }
