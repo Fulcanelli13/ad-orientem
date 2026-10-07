@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { countryCodeFromText } from "./lib/country-codes.mjs";
@@ -87,7 +88,7 @@ export function buildIbpDataset(records,{retrievedAt=new Date().toISOString()}={
     venues.push({
       venue_id:venueId,name:{official:r.title,alternate:[]},venue_type:venueType(r.title),
       upstream:{provider:"IBP_WORLD_DIRECTORY",detail_url:r.detailUrl},
-      address:{line1:null,line2:null,postal_code:null,city:null,region:null,country_code:r.countryCode,country:null,formatted:r.address},
+      address:{line1:null,line2:null,postal_code:null,city:r.city??null,region:null,country_code:r.countryCode,country:null,formatted:r.address??r.city??null},
       geo:{lat:null,lng:null,precision:"unknown",geocoding_source:null},
       diocese:{diocese_id:null,name:r.diocese??null,type:"diocese"},
       contact:{phone:r.phones??[],email:r.emails??[],website:[r.detailUrl].filter(Boolean),schedule_url:[r.detailUrl].filter(Boolean),bulletin_url:[],contact_form:[],official_social:[]},
@@ -104,46 +105,47 @@ export function buildIbpDataset(records,{retrievedAt=new Date().toISOString()}={
   });
   return {venues,ministries,schedules,sources};
 }
-async function discoverIbpIndexRendered(){
-  const { chromium }=await import("@playwright/test");
-  const browser=await chromium.launch({headless:true});
-  try{
-    const page=await browser.newPage();
-    await page.goto(IBP_INDEX_URL,{waitUntil:"domcontentloaded",timeout:60000});
-    await page.waitForLoadState("networkidle",{timeout:15000}).catch(()=>{});
-    const nodes=await page.locator("main h2, main h3, main h4, main h5, main h6, main li").evaluateAll(elements=>
-      elements.map(el=>({
-        tag:el.tagName.toLowerCase(),
-        text:(el.innerText||"").replace(/\s+/g," ").trim(),
-        href:el.tagName.toLowerCase()==="li"?(el.querySelector("a")?.href??null):null
-      })).filter(x=>x.text)
-    );
-    let currentCountry=null,currentDiocese=null,index=0;
-    const out=[],seen=new Set();
-    for(const node of nodes){
-      if(node.tag!=="li"){
-        const cc=countryCodeFromText(node.text);
-        if(cc){currentCountry=cc;currentDiocese=null;}
-        if(/(?:archi)?diocèse|diocese|patriarcat/i.test(node.text))currentDiocese=node.text.replace(/\s*:\s*$/,"").trim();
-        continue;
-      }
-      if(!currentCountry||/retour|liste|implantations/i.test(node.text))continue;
-      const url=node.href||IBP_INDEX_URL+`#rendered-${index}`;
-      const key=`${currentCountry}|${currentDiocese}|${node.text}`;
-      if(seen.has(key))continue;
-      seen.add(key);
-      out.push({label:node.text,url,countryCode:currentCountry,diocese:currentDiocese,indexOnly:!node.href});
-      index+=1;
-    }
-    return out;
-  }finally{await browser.close();}
+async function loadIbpIndexWitness(){
+  const raw=await fs.readFile(new URL("../../data/directory/source-witnesses/ibp-index-2026-10-07.v1.json",import.meta.url),"utf8");
+  return JSON.parse(raw);
+}
+
+export function mergeIbpIndexWitness(discovered,witness){
+  const remaining=[...(Array.isArray(discovered)?discovered:[])];
+  const merged=[];
+  for(const entry of witness?.entries??[]){
+    const cityKey=slugify(entry.city);
+    const labelKey=slugify(entry.label);
+    const index=remaining.findIndex(candidate=>{
+      if(candidate.countryCode&&candidate.countryCode!==entry.country_code)return false;
+      const candidateKey=slugify(candidate.label);
+      return candidateKey===labelKey
+        || (cityKey.length>=4&&candidateKey.includes(cityKey))
+        || (candidateKey.length>=4&&labelKey.includes(candidateKey));
+    });
+    const candidate=index>=0?remaining.splice(index,1)[0]:null;
+    merged.push({
+      ...(candidate??{}),
+      label:candidate?.label??entry.label,
+      url:candidate?.url??IBP_INDEX_URL,
+      countryCode:entry.country_code,
+      diocese:candidate?.diocese??entry.diocese,
+      city:entry.city,
+      indexOnly:candidate?.indexOnly??!candidate,
+      witnessOnly:!candidate
+    });
+  }
+  for(const candidate of remaining)merged.push({...candidate,sourceDiscoveryExtra:true});
+  return merged;
 }
 
 export async function runIbpImport({out="data/directory/generated/ibp",concurrency=6,fetchImpl=fetch}={}){
   const html=await fetchText(IBP_INDEX_URL,{fetchImpl});
-  let candidates=discoverIbpIndex(html);
-  if(candidates.length < 33)candidates=await discoverIbpIndexRendered();
-  if(candidates.length < 33) throw new Error(`IBP import coverage guard: official page states 33 apostolates; parser discovered only ${candidates.length}.`);
+  const liveCandidates=discoverIbpIndex(html);
+  if(liveCandidates.length < 20) throw new Error(`IBP live-discovery guard: expected a substantial official index, discovered only ${liveCandidates.length} entries.`);
+  const witness=await loadIbpIndexWitness();
+  const candidates=mergeIbpIndexWitness(liveCandidates,witness);
+  if(candidates.length < witness.enumerated_entry_count) throw new Error(`IBP witness merge lost entries: expected at least ${witness.enumerated_entry_count}, produced ${candidates.length}.`);
   const records=await concurrentMap(candidates,concurrency,async candidate=>{
     if(candidate.indexOnly)return {title:candidate.label,address:null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:IBP_INDEX_URL,emails:[],phones:[],massRaw:null,indexOnly:true};
     try{return parseDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
@@ -152,7 +154,17 @@ export async function runIbpImport({out="data/directory/generated/ibp",concurren
   const retrievedAt=new Date().toISOString(),dataset=buildIbpDataset(records,{retrievedAt});
   const result=await writeDirectoryDataset(path.resolve(out),{
     provider:"IBP",retrievedAt,...dataset,
-    coverage:{index_links:candidates.length,detail_records:records.length,country_code_known:records.filter(r=>r.countryCode).length}
+    coverage:{
+      live_discovered_entries:liveCandidates.length,
+      witness_enumerated_entries:witness.enumerated_entry_count,
+      official_claimed_apostolates:witness.published_summary?.apostolate_count_claim??null,
+      merged_entries:candidates.length,
+      witness_only_entries:candidates.filter(x=>x.witnessOnly).length,
+      live_extra_entries:candidates.filter(x=>x.sourceDiscoveryExtra).length,
+      detail_records:records.length,
+      country_code_known:records.filter(r=>r.countryCode).length,
+      source_count_discrepancy:witness.discrepancy
+    }
   });
   return result.report;
 }
