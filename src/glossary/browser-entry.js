@@ -101,9 +101,15 @@ export function createGlossaryRuntime(win=globalThis){
     return '<button class="aoGlossTerm" type="button" data-gloss-entry="'+esc(e.id)+'"><small>'+esc(e.id+" · "+e.temporal_layer)+'</small><strong>'+esc(isFr(win)?e.labels.fr:e.labels.en)+'</strong>'+(e.labels.la?'<em>'+esc(e.labels.la)+'</em>':'')+'</button>';
   }
 
+  function searchableText(e){
+    const aliases=(e.aliases||[]).flatMap(x=>[x?.en,x?.fr,x?.la]);
+    const historical=(e.historical_parts||[]).flatMap(x=>[x?.en,x?.fr,x?.la,x?.definition?.en,x?.definition?.fr]);
+    return norm([e.id,e.labels.en,e.labels.fr,e.labels.la,e.definition?.en,e.definition?.fr,...aliases,...historical].join(" "));
+  }
+
   function searchResults(){
     const q=norm(state.query);
-    const rows=q?state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la].join(" ")).includes(q)).slice(0,80):[];
+    const rows=q?state.data.entries.filter(e=>searchableText(e).includes(q)).slice(0,80):[];
     return '<div class="aoGlossTerms">'+(rows.length?rows.map(termButton).join(""):'<div class="aoGlossEmpty">'+esc(L(win,"No matching term.","Aucun terme correspondant."))+'</div>')+'</div>';
   }
 
@@ -128,8 +134,16 @@ export function createGlossaryRuntime(win=globalThis){
     const e=state.data?.byId?.get(state.detailId);if(!e)return "";
     const c=categoryById(state.data,e.primary_category),s=sectionById(c,e.browse_section);
     const links=(e.source_ids||[]).map(id=>state.data.sources.get(id)).filter(Boolean);
-    const sourceHtml=links.map(x=>'<a href="'+esc(x.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title||x.id)+'</a>').join("");
-    return '<div class="aoGlossDetail" data-gloss-overlay><article class="aoGlossDetailCard" role="dialog" aria-modal="true"><div class="aoGlossDetailHead"><div><div class="aoGlossKicker">'+esc(e.id)+'</div><h2>'+esc(isFr(win)?e.labels.fr:e.labels.en)+'</h2>'+(e.labels.la?'<div class="aoGlossLatin">'+esc(e.labels.la)+'</div>':'')+'</div><button type="button" data-gloss-close aria-label="'+esc(L(win,"Close","Fermer"))+'">×</button></div><div class="aoGlossMeta"><span class="aoGlossBadge">'+esc(e.temporal_layer)+'</span><span class="aoGlossBadge">'+esc(isFr(win)?c?.label?.fr:c?.label?.en)+'</span><span class="aoGlossBadge">'+esc(isFr(win)?s?.label?.fr:s?.label?.en)+'</span></div><div class="aoGlossPending">'+esc(L(win,"Canonical terminology and source ownership are locked. Sourced explanatory text is populated separately so no unsourced definition is invented.","La terminologie canonique et les sources sont verrouillées. Le texte explicatif sourcé est alimenté séparément afin qu’aucune définition non sourcée ne soit inventée."))+'</div><section class="aoGlossSources"><h3>'+esc(L(win,"Sources","Sources"))+'</h3>'+sourceHtml+'</section></article></div>';
+    const evidence=(e.evidence||[]).filter(x=>x?.canonical_url);
+    const sourceHtml=[
+      ...links.map(x=>'<a href="'+esc(x.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title||x.id)+'</a>'),
+      ...evidence.map(x=>'<a href="'+esc(x.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc((x.title||x.id)+(x.pages?.length?" · pp. "+x.pages.join(", "):""))+'</a>')
+    ].join("");
+    const definition=e.definition?.[isFr(win)?"fr":"en"]||"";
+    const definitionHtml=definition?'<div class="aoGlossPending">'+esc(definition)+'</div>':'<div class="aoGlossPending">'+esc(L(win,"Canonical terminology and source ownership are locked. Sourced explanatory text is populated separately so no unsourced definition is invented.","La terminologie canonique et les sources sont verrouillées. Le texte explicatif sourcé est alimenté séparément afin qu’aucune définition non sourcée ne soit inventée."))+'</div>';
+    const aliases=(e.aliases||[]).map(x=>'<span class="aoGlossBadge">'+esc(isFr(win)?(x.fr||x.en):(x.en||x.fr))+(x.la?" · "+esc(x.la):"")+'</span>').join("");
+    const historical=(e.historical_parts||[]).map(x=>'<article class="aoGlossPending"><strong>'+esc(isFr(win)?x.fr:x.en)+'</strong>'+(x.la?'<div class="aoGlossLatin">'+esc(x.la)+'</div>':'')+'<p>'+esc((x.definition||{})[isFr(win)?"fr":"en"]||"")+'</p>'+(x.evidence?.canonical_url?'<a href="'+esc(x.evidence.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc("Campion"+(x.evidence.pages?.length?" · pp. "+x.evidence.pages.join(", "):""))+'</a>':"")+'</article>').join("");
+    return '<div class="aoGlossDetail" data-gloss-overlay><article class="aoGlossDetailCard" role="dialog" aria-modal="true"><div class="aoGlossDetailHead"><div><div class="aoGlossKicker">'+esc(e.id)+'</div><h2>'+esc(isFr(win)?e.labels.fr:e.labels.en)+'</h2>'+(e.labels.la?'<div class="aoGlossLatin">'+esc(e.labels.la)+'</div>':'')+'</div><button type="button" data-gloss-close aria-label="'+esc(L(win,"Close","Fermer"))+'">×</button></div><div class="aoGlossMeta"><span class="aoGlossBadge">'+esc(e.temporal_layer)+'</span><span class="aoGlossBadge">'+esc(isFr(win)?c?.label?.fr:c?.label?.en)+'</span><span class="aoGlossBadge">'+esc(isFr(win)?s?.label?.fr:s?.label?.en)+'</span>'+aliases+'</div>'+definitionHtml+historical+'<section class="aoGlossSources"><h3>'+esc(L(win,"Sources","Sources"))+'</h3>'+sourceHtml+'</section></article></div>';
   }
 
   function render(){
@@ -186,7 +200,7 @@ export function createGlossaryRuntime(win=globalThis){
 
   function search(q){
     const z=norm(q);if(!state.loaded||!z)return [];
-    return state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la].join(" ")).includes(z));
+    return state.data.entries.filter(e=>searchableText(e).includes(z));
   }
 
   function close(returnToLearn=false){
