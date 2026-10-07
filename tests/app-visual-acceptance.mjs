@@ -861,18 +861,24 @@ try{
 
   // Exercise a second common prayer with different donor markup. This catches the
   // Hail Mary path that previously remained narrow even when the Our Father looked fixed.
-  const hailMaryTarget=await page.evaluate(after=>{
-    const xs=globalThis.AO_ROSARY_V381?.steps?.()||[];
-    return xs.findIndex((step,index)=>index>after&&/ave maria|hail mary/i.test(JSON.stringify(step)));
-  },currentRosaryStep);
-  assert.ok(hailMaryTarget>currentRosaryStep,"Canonical Rosary steps expose no Hail Mary after the Our Father");
-  for(let guard=0;currentRosaryStep<hailMaryTarget&&guard<12;guard+=1){
+  // Do not infer prayer identity from AO_ROSARY_V381.steps() serialization: the
+  // preserved donor may represent common prayers by opaque IDs. Exercise the
+  // user-visible Next path and stop only when the rendered prayer is Hail Mary.
+  let hailMaryReached=false;
+  for(let guard=0;guard<12&&!hailMaryReached;guard+=1){
+    hailMaryReached=await page.evaluate(()=>{
+      const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']");
+      const card=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])]
+        .find(node=>node.offsetParent!==null)||null;
+      return /Hail Mary|Ave Maria/i.test(card?.innerText??"");
+    });
+    if(hailMaryReached)break;
     const before=currentRosaryStep;
     await page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
     await page.waitForFunction(previous=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1)>previous,before,{timeout:2000});
     currentRosaryStep=await page.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
   }
-  assert.equal(currentRosaryStep,hailMaryTarget,"Visible Rosary Next did not reach the canonical Hail Mary step");
+  assert.equal(hailMaryReached,true,"Visible Rosary Next did not reach a rendered Hail Mary");
   const hailGeometry=await page.evaluate(()=>{
     const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']");
     const card=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])].find(node=>node.offsetParent!==null&&/Hail Mary|Ave Maria/i.test(node.innerText??""))||null;
