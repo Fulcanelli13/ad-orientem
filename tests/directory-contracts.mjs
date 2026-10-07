@@ -176,6 +176,16 @@ houseSameProperty.venue_type = "priory";
 houseSameProperty.name.official = "Priory of Saint Joseph";
 assert.notEqual(compareVenueCandidates(sameVenueA, houseSameProperty).classification, "AUTO_MERGE_SAFE");
 
+const nullGeoTwinA = structuredClone(mapped.venue);
+nullGeoTwinA.venue_id = "ao-null-geo-a";
+nullGeoTwinA.geo = { lat: null, lng: null };
+nullGeoTwinA.address = { ...nullGeoTwinA.address, formatted: "1 Example Street, Paris, France" };
+const nullGeoTwinB = structuredClone(nullGeoTwinA);
+nullGeoTwinB.venue_id = "ao-null-geo-b";
+nullGeoTwinB.name.official = "Completely Different Chapel";
+nullGeoTwinB.address = { ...nullGeoTwinB.address, formatted: "99 Other Avenue, Paris, France" };
+assert.equal(compareVenueCandidates(nullGeoTwinA, nullGeoTwinB).classification, "DISTINCT");
+
 const dataset = buildCanonicalSspxDataset([sspxFixture, friendFixture], {
   retrievedAt: "2026-10-07T09:00:00Z",
 });
