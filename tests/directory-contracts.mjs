@@ -11,6 +11,7 @@ import {
   normalizeAddress,
 } from "../src/find/entity-resolution.js";
 import { RESEARCH_MASS_REVIEW_DAYS, expandResearchProviderSnapshot, publishableDirectoryRecords, scheduleFreshnessState } from "../src/find/data-service.js";
+import { renderFindToString } from "../src/find/presentation.js";
 import {
   buildCanonicalSspxDataset,
   mapSspxPlace,
@@ -25,6 +26,7 @@ const communities = readJson("../data/directory/communities.v1.json");
 const sources = readJson("../data/directory/source-registry.v1.json");
 const status = readJson("../data/directory/status-assertions.v1.json");
 const scheduleFreshnessPolicy = readJson("../data/directory/research/schedule-freshness-policy.v1.json");
+const ickspOverlapAudit = readJson("../data/directory/research/icksp-cross-provider-overlap-audit.v1.json");
 
 const researchSnapshots = [
   readJson("../data/directory/generated/v19/diocesan.v1.json"),
@@ -166,6 +168,43 @@ assert.ok(currentIckspMassSchedules.every(schedule=>/^2026-10-07T00:00:00Z$/.tes
 assert.ok(currentIckspMassSchedules.every(schedule=>/^2027-02-04T23:59:59Z$/.test(schedule.verification.review_due_at)),"ICKSP current Mass schedules must carry review dates");
 assert.ok(currentIckspMassSchedules.every(schedule=>scheduleFreshnessState(schedule,{now:new Date("2026-10-08T00:00:00Z")})==="CURRENT"));
 assert.equal(scheduleFreshnessState(currentIckspMassSchedules[0],{now:new Date("2027-02-05T00:00:00Z")}),"REVIEW_DUE");
+assert.equal(ickspOverlapAudit.scope.icksp_federated_physical_venues,120);
+assert.deepEqual(ickspOverlapAudit.scope.compared_against,{
+  ICKSP_LIVE:27,
+  FSSP:404,
+  IBP:34,
+  DIOCESAN:46,
+  CANONS_ST_JOHN_CANTIUS:4,
+});
+assert.equal(ickspOverlapAudit.result.credible_same_physical_place_duplicates,0);
+assert.equal(ickspOverlapAudit.result.unresolved_overlap_candidates,0);
+assert.equal(ickspOverlapAudit.reviewed_false_positives.length,1);
+const staleFindHtml=renderFindToString({
+  language:"en",
+  records:[{
+    venue:{
+      venue_id:"freshness-test",
+      name:{official:"Freshness Test Church",alternate:[]},
+      address:{city:"Test City",country_code:"US",formatted:"1 Test Street, Test City"},
+      geo:{lat:null,lng:null,precision:"unknown",geocoding_source:null},
+      contact:{phone:[],email:[],website:[],schedule_url:[]},
+    },
+    ministries:[{
+      community_id:"ICKSP",
+      liturgical_usage:{family:"ROMAN",books:"1962"},
+      schedules:[{
+        service_type:"MASS",
+        mass_type:"UNKNOWN",
+        payload:{raw:"Sunday 10:00"},
+        verification:{checked_at:"2000-01-01T00:00:00Z",review_due_at:"2000-05-01T23:59:59Z"},
+      }],
+    }],
+    sources:[],
+  }],
+  communities:[{id:"ICKSP",abbreviation:"ICKSP"}],
+});
+assert.match(staleFindHtml,/Schedule needs verification/,"Find did not surface stale schedule review state");
+assert.match(staleFindHtml,/Checked 1 Jan 2000/,"Find did not surface schedule verification date");
 const massIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="MASS");
 const assertionIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="SOURCE_ASSERTION");
 const residualIckspRows=ickspFederated.records.filter(row=>row.svc==="SOURCE_ASSERTION");
