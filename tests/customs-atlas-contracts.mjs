@@ -35,7 +35,7 @@ for (const entry of negative.entries) {
 }
 
 assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 17);
+assert.equal(atlas.attestations.length, 18);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -49,13 +49,13 @@ const result = assertCustomsAtlasRegistry({
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
   customs: 13,
-  attestations: 17,
-  sources: 21,
+  attestations: 18,
+  sources: 22,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
   [...result.mapCandidates].sort(),
-  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY"].sort(),
+  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY"].sort(),
 );
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
@@ -66,6 +66,10 @@ assert.equal(laghet.place_name_hint, null);
 const lourdes = atlas.attestations.find(item => item.attestation_id === "att:DEV-010:LOURDES");
 assert.equal(lourdes.map_policy, "PLACE");
 assert.equal(lourdes.place_id, "place:FR:sanctuaire-notre-dame-de-lourdes");
+
+const sainteAnne = atlas.attestations.find(item => item.attestation_id === "att:DEV-007:SAINTE-ANNE-D-AURAY");
+assert.equal(sainteAnne.map_policy,"PLACE");
+assert.equal(sainteAnne.place_id,"place:FR:sainte-anne-d-auray");
 
 const universalPilgrimage = atlas.attestations.find(item => item.attestation_id === "att:DEV-006:WORLD");
 assert.equal(universalPilgrimage.map_policy, "NOT_MAPPED");

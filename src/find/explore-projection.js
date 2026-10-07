@@ -328,7 +328,10 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
     const facts=[
       {label:"Kind",value:String(pilgrimage?.kind??"").replaceAll("_"," ")},
       linkedRoutes.length?{label:"Route",value:linkedRoutes.map(route=>String(route.route_state??"").replaceAll("_"," ")).join(" · ")}:null,
-      linkedTemporal.length?{label:"Calendar",value:linkedTemporal.some(link=>link.binding_state==="BOUND_TO_CALENDAR")?"Linked":"Binding pending"}:null,
+      linkedTemporal.length?{label:"Calendar",value:
+        linkedTemporal.some(link=>link.binding_state==="BOUND_TO_CALENDAR")?"Linked":
+        linkedTemporal.every(link=>link.binding_state==="NO_FIXED_CALENDAR_BINDING")?"Seasonal · no single date":
+        "Binding pending"}:null,
       {label:"Confidence",value:pilgrimage?.confidence},
     ].filter(item=>item&&text(item.value));
     const sections=[
@@ -342,7 +345,9 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
         title:link.source_event_label||link.calendar_semantic_key,
         body:link.binding_state==="PENDING_CALENDAR_BINDING"
           ?"Source-backed relationship; Calendar has not yet exposed this semantic key as a resolved event."
-          :"Resolved by Calendar.",
+          :link.binding_state==="NO_FIXED_CALENDAR_BINDING"
+            ?"Source-backed seasonal relationship; no single recurring Calendar date is asserted."
+            :"Resolved by Calendar.",
       })),
     ];
     return Object.freeze({
