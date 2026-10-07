@@ -1,4 +1,5 @@
 import { APOSTOLATE_AQ_SCENARIOS } from "./corpus.js";
+import { APOSTOLATE_HS_SCENARIOS } from "./hs-corpus.js";
 import {
   APOSTOLATE_HANDOFF_DIRECTIONS,
   APOSTOLATE_OWNER,
@@ -74,7 +75,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[]}={}){
 
 export function installApostolateOwner(win=globalThis){
   if(win?.AO_APOSTOLATE_APP_V1)return win.AO_APOSTOLATE_APP_V1;
-  const api=createApostolateOwner(win,{scenarios:APOSTOLATE_AQ_SCENARIOS});
+  const api=createApostolateOwner(win,{scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS]});
   win.AO_APOSTOLATE_APP_V1=api;
   if(win?.document?.documentElement?.dataset){
     win.document.documentElement.dataset.aoApostolateOwner=APOSTOLATE_OWNER;
