@@ -7,6 +7,7 @@ const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const diocesan=readJson("data/directory/static/diocesan.v1.json");
 const provider=readJson("data/directory/static/provider-research.v1.json");
 const residue=readJson("data/directory/static/us-residue.v1.json");
+const providerCoverage=readJson("data/directory/provider-coverage.v1.json");
 
 assert.equal(diocesan.records.length,46);
 assert.equal(provider.records.length,204);
@@ -20,6 +21,14 @@ assert.deepEqual(provider.distribution,{
   SMMD:1,
 });
 assert.deepEqual(residue.summary,{total:13,promoted:4,provider_routed:4,rejected_current:1,staged:4});
+const ickspCoverage=providerCoverage.providers.find(x=>x.provider_id==="ICKSP");
+assert.equal(ickspCoverage.runtime_published_venues,27);
+assert.equal(ickspCoverage.official_source_records,127);
+assert.equal(ickspCoverage.unique_current_candidates,125);
+assert.equal(ickspCoverage.blocks_complete,true);
+const sspxCoverage=providerCoverage.providers.find(x=>x.provider_id==="SSPX");
+assert.equal(sspxCoverage.official_public_map_published_places,942);
+assert.equal(sspxCoverage.blocks_complete,true);
 
 const expandedDiocesan=expandStaticDirectoryBundle(diocesan);
 const expandedProvider=expandStaticDirectoryBundle(provider);
