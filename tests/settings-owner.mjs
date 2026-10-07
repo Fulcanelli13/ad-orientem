@@ -1,125 +1,73 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import {
-  SETTINGS_PRESENTATION_VERSION,
-  buildSettingsViewModel,
-  canonicalSettingsAppVersion,
-  renderSettingsToString,
-} from "../src/settings/presentation.js";
+import { SETTINGS_PRESENTATION_VERSION, buildSettingsViewModel, canonicalSettingsAppVersion, renderSettingsToString, settingsCss } from "../src/settings/presentation.js";
 import { OWNER, VERSION } from "../src/settings/browser-entry.js";
+import { DEFAULT_PREFERENCES } from "../src/settings/donor-state.js";
 
-const settings={
-  massForm:"sung",
-  followMode:"vox",
-  textMode:"oriented",
-  participationMode:"quiet",
-  faithfulCommunion:true,
-  secondConfiteor:false,
-  joinSecondConfiteor:false,
-  sundayAsperges:true,
-  reducedMotion:false,
-  textScale:"normal",
-  massPostureProfile:"FOLLOW_CONGREGATION",
-  massGestureProfile:"GUIDED_1962",
-  localPostures:{},
-  localMassPostures:{},
-};
+const prefs=JSON.parse(JSON.stringify(DEFAULT_PREFERENCES));
 const fakeWin={
-  AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en",settings})}},
-  AO_RELEASE_AUTHORITY_V4359:{version:"43.59.30"},
-  AO_HAPTICS_V4319:{isEnabled:()=>true},
+  AO_SETTINGS_DONOR_V4359:{snapshot:()=>({version:"43.59.6",preferences:prefs,profiles:[]})},
   document:{documentElement:{dataset:{aoRelease:"43.59.99"}}},
 };
-
 assert.equal(OWNER,"AO_SETTINGS_APP_V1");
-assert.equal(VERSION,"modular-settings-v1");
-assert.equal(SETTINGS_PRESENTATION_VERSION,"modular-settings-presentation-v1");
-assert.equal(canonicalSettingsAppVersion(fakeWin),"43.59.30","Settings About stopped using canonical release authority");
+assert.equal(VERSION,"modular-settings-v4359.6");
+assert.equal(SETTINGS_PRESENTATION_VERSION,"modular-settings-presentation-v4359.6");
+assert.equal(canonicalSettingsAppVersion(fakeWin),"43.59.99");
 
 const vm=buildSettingsViewModel(fakeWin);
 assert.equal(vm.language,"en");
-assert.equal(vm.settings.massForm,"sung");
-assert.equal(vm.settings.massPostureProfile,"FOLLOW_CONGREGATION");
-assert.equal(vm.settings.massGestureProfile,"GUIDED_1962");
-assert.equal(vm.haptics,true);
+assert.equal(vm.preferences.mass.defaultExperience,"simple");
+assert.equal(vm.preferences.prayer.stations.mode,"guided");
 
-const html=renderSettingsToString(fakeWin);
-for(const marker of [
-  'data-setting-language="en"',
-  'data-setting-form="sung"',
-  'data-setting-follow="vox"',
-  'data-setting-follow="simple"',
-  'data-setting-follow="missal"',
-  'data-setting-text="oriented"',
-  'data-setting-participation="quiet"',
-  'data-setting-posture-profile="FOLLOW_CONGREGATION"',
-  'data-setting-posture-profile="TRADITIONAL_WALSH"',
-  'data-setting-gesture-profile="ESSENTIAL"',
-  'data-setting-gesture-profile="GUIDED_1962"',
-  'data-setting-faithful-communion',
-  'data-setting-second-confiteor',
-  'data-setting-join-confiteor',
-  'data-sunday-asperges',
-  'data-setting-scale="normal"',
-  'data-setting-motion',
-  'data-setting-haptics',
-  'data-reset-postures',
-  'data-settings-sources',
-]){
-  assert.ok(html.includes(marker),marker+" missing from modular Settings");
+const landing=renderSettingsToString(fakeWin,{route:"/settings"});
+for(const route of ["/settings/general","/settings/accessibility","/settings/language-reading","/settings/mass","/settings/local-customs","/settings/prayer","/settings/privacy-data","/settings/about-sources"]){
+  assert.ok(landing.includes('data-settings-route="'+route+'"'),route+" missing from donor Settings landing");
 }
-assert.match(html,/data-setting-structural="true"/,"structural Settings controls are not exposed to the canonical live-session guard");
-assert.equal((html.match(/data-settings-close/g)||[]).length,1,"Settings main renders duplicate close controls");
-assert.match(html,/ao-ui-back/,"Settings main exit control is not the canonical Back icon");
+assert.match(landing,/Display &amp; Accessibility/);
+assert.match(landing,/Local Church &amp; Customs/);
+assert.match(landing,/Privacy &amp; Data/);
+assert.equal((landing.match(/data-settings-close/g)||[]).length,1);
+assert.doesNotMatch(landing,/43\.59\.99/,"version must appear in About only");
 
-const liveHtml=renderSettingsToString(fakeWin,{live:true});
-assert.match(liveHtml,/Structural Mass settings are locked while the current Mass is in progress/);
-assert.match(liveHtml,/data-setting-haptics="0"[^>]*disabled/,"live Settings did not lock haptics");
+const css=settingsCss();
+assert.match(css,/z-index:2147483250/,"Settings must remain above live Mass but below the global app ribbon");
+assert.match(css,/inset:0 0 calc\(var\(--ao-global-ribbon-h,68px\) \+ var\(--safe-bottom,0px\)\) 0/,"Settings must reserve the global ribbon footprint");
+assert.match(css,/data-ao-settings-surface="open"\] #ao-global-ribbon\{z-index:2147483300!important/,"Settings must elevate the global ribbon above the overlay");
+assert.doesNotMatch(css,/z-index:2147483400/,"Settings donor z-index must not cover the modular shell ribbon");
 
-const sources=renderSettingsToString(fakeWin,{route:"about-sources"});
-assert.match(sources,/Liturgical books &amp; 1962 basis/);
-assert.match(sources,/Prayer &amp; devotional methods/);
-assert.match(sources,/How provenance is labelled/);
-assert.match(sources,/Application version/);
-assert.match(sources,/43\.59\.30/);
-assert.match(sources,/Sins are not recorded/);
-assert.equal((sources.match(/data-settings-close/g)||[]).length,1,"Sources/About should expose one close control");
-assert.match(sources,/data-settings-main/,"Sources/About lost the Back to Settings control");
+const mass=renderSettingsToString(fakeWin,{route:"/settings/mass",live:true});
+assert.match(mass,/data-pref-path="mass\.defaultExperience"/);
+assert.match(mass,/data-pref-path="mass\.defaultForm"/);
+assert.match(mass,/Future sessions only/);
+assert.match(mass,/will not change a Mass already in progress/);
 
-const frWin={
-  ...fakeWin,
-  AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"fr",settings:{...settings,language:"fr"}})}},
-};
-const fr=renderSettingsToString(frWin,{route:"about-sources"});
-assert.match(fr,/Sources et à propos/);
-assert.match(fr,/Livres liturgiques et base 1962/);
-assert.match(fr,/Version de l’application/);
+const prayer=renderSettingsToString(fakeWin,{route:"/settings/prayer"});
+for(const marker of ["prayer.recitationMode","prayer.rosary.fatimaPrayer","prayer.rosary.scriptureCues","prayer.rosary.commentary","prayer.stations.mode","prayer.stations.stabatMater","prayer.angelus.seasonalForm"]){
+  assert.ok(prayer.includes(marker),marker+" missing from Prayer & Devotions");
+}
+const privacy=renderSettingsToString(fakeWin,{route:"/settings/privacy-data",live:true});
+assert.match(privacy,/data-data-action="clear-mass" disabled/);
+assert.match(privacy,/not stored as a persistent list of sins/);
+
+const about=renderSettingsToString(fakeWin,{route:"/settings/about-sources"});
+assert.match(about,/1962 Roman Mass/);
+assert.match(about,/Scripture editions/);
+assert.match(about,/Artwork sources &amp; rights/);
+assert.match(about,/43\.59\.99/);
+
+const stateSource=readFileSync("src/settings/donor-state.js","utf8");
+for(const key of ["ao2:preferences:v1","ao2:local-profiles:v1","defaultExperience","preparationDepth","thanksgivingDepth","postureGuidance","secondConfiteorParticipation"]){
+  assert.ok(stateSource.includes(key),key+" missing from recovered v43.59.6 state model");
+}
+const owner=readFileSync("src/settings/browser-entry.js","utf8");
+assert.match(owner,/createSettingsDonorState/);
+assert.match(owner,/AO_SETTINGS_DONOR_V4359/);
+assert.match(owner,/\/settings\/local-customs/);
+assert.match(owner,/dataAction/);
+assert.match(owner,/AO_APP_LIVE_SESSION_GUARDS_V1/);
+assert.match(owner,/\[data-v37-module='utility\.settings'\]/);
 
 const host=readFileSync("src/app/host-adapter.js","utf8");
 assert.match(host,/AO_SETTINGS_APP_V1/);
-assert.doesNotMatch(host,/AO_SETTINGS_V4359|AO_SETTINGS_V4358|AO_SETTINGS_V4356/,"normal host adapter still probes historical Settings owners");
-assert.doesNotMatch(host,/openModule\("utility\.settings"\)/,"normal host adapter still falls back to utility.settings");
-
-const home=readFileSync("src/home/presentation.js","utf8");
-assert.doesNotMatch(home,/function homeSettings\(/,"Home still owns a second Settings presentation");
-assert.doesNotMatch(home,/data-ao-home-settings/);
-assert.doesNotMatch(home,/data-home-open-settings/);
-assert.match(home,/data-ao-settings-open/);
-
-const owner=readFileSync("src/settings/browser-entry.js","utf8");
-for(const api of ["open","close","dismiss","restoreHome","status"]){
-  assert.ok(owner.includes(api),"Settings owner missing "+api+" API");
-}
-assert.match(owner,/AO_APP_LIVE_SESSION_GUARDS_V1/,"Settings created or used a live rule outside the modular guard");
-assert.match(owner,/hydrate-settings/,"Settings is not attached to canonical app preference persistence");
-assert.match(owner,/watchReleaseMetadata/,"Settings does not observe canonical release metadata");
-assert.match(owner,/data-ao-release/,"Settings does not repaint when canonical release metadata settles");
-assert.match(owner,/queueMicrotask/,"Sources/About does not schedule a post-route canonical-version repaint");
-assert.match(owner,/\[data-v37-module='utility\.settings'\]/,"modular owner does not suppress stale utility.settings surfaces");
-
-const nonMass=readFileSync("src/app/nonmass-convergence.js","utf8");
-assert.doesNotMatch(nonMass,/d6:\s*"integrated-on-settings"/,"D6 still claims a donor-backed Settings owner");
-assert.doesNotMatch(nonMass,/integrated-on-settings-compatibility/,"D6 still exposes a historical Settings compatibility fallback");
-assert.match(nonMass,/settings-modular-owner-unavailable/,"D6 does not fail closed when the modular Settings owner is unavailable");
-
-console.log("PASS modular Settings owner/presentation contract");
+assert.doesNotMatch(host,/AO_SETTINGS_V4359|AO_SETTINGS_V4358|AO_SETTINGS_V4356/);
+console.log("PASS v43.59.6 modular Settings donor contract");

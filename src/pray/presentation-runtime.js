@@ -205,6 +205,30 @@ function adorationPresence(){try{return sessionStorage.getItem(ADORATION_SESSION
 function setAdorationPresence(value){const next=value==='exposed'?'exposed':'reserved';try{sessionStorage.setItem(ADORATION_SESSION_KEY,next)}catch{};S.adoration.presence='reserved';save();return next}
 function save(){try{const out=JSON.parse(JSON.stringify(S));if(out.adoration)delete out.adoration.presence;localStorage.setItem(STORE_KEY,JSON.stringify(out))}catch{}}
 function setRecitationMode(mode){S.rosary.recitation=mode==='group'?'group':'individual';save();try{localStorage.setItem('ao-prayer-recitation-mode',S.rosary.recitation)}catch{};return S.rosary.recitation}
+function applySettingsPreferences(raw={}){
+ const prayer=raw&&typeof raw==='object'?raw:{};
+ const recitation=prayer.recitationMode==='group'?'group':prayer.recitationMode==='individual'?'individual':null;
+ if(recitation)S.rosary.recitation=recitation;
+ const stations=prayer.stations&&typeof prayer.stations==='object'?prayer.stations:{};
+ if(stations.mode==='simple'||stations.mode==='guided')S.stations.mode=stations.mode;
+ if(typeof stations.stabatMater==='boolean')S.stations.stabat=stations.stabatMater;
+ const angelus=prayer.angelus&&typeof prayer.angelus==='object'?prayer.angelus:{};
+ if(angelus.seasonalForm==='angelus')S.angelusMode='angelus';
+ else if(angelus.seasonalForm==='regina_caeli')S.angelusMode='regina';
+ else if(angelus.seasonalForm==='auto')S.angelusMode='auto';
+ if(typeof angelus.traditionalConclusion==='boolean')S.angelusHistoricalConclusion=angelus.traditionalConclusion;
+ save();
+ if(recitation){try{localStorage.setItem('ao-prayer-recitation-mode',recitation)}catch{}}
+ try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(S.rosary.recitation)}catch{}
+ if(document.getElementById(ROOT_ID)?.classList?.contains('open')){
+  if(view==='stations'||view==='angelus')render();
+ }
+ return {
+  recitationMode:S.rosary.recitation,
+  stations:{mode:S.stations.mode,stabatMater:S.stations.stabat},
+  angelus:{seasonalForm:S.angelusMode==='regina'?'regina_caeli':S.angelusMode,traditionalConclusion:!!S.angelusHistoricalConclusion}
+ };
+}
 function shell(){
   let r=document.getElementById(ROOT_ID);if(r)return r;
   r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');
@@ -795,7 +819,7 @@ function guidedStage(kind,steps,index,lastLabel){
  return `${guideRail(steps.map(x=>x.title),index,kind)}${guideNow(st.title,st.now)}${guidePrayers(st.prayers)}${guideCue(L('SILENCE / NOTICE','SILENCE / ATTENTION'),st.silence)}${st.extra||''}${guideNav(kind,index,steps.length,lastLabel)}`
 }
 function renderAdoration(){
- if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('Choose the situation actually before you','Choisissez la situation réellement présente'))}<main class="aoP435930Body"><div class="aoP435930BigGrid"><button data-p435930-ador-mode="visit"><small>${esc(L('PRIVATE','PRIVÉ'))}</small><b>${esc(L('Visit to the Blessed Sacrament','Visite au Saint-Sacrement'))}</b><span>${esc(L('Simple visit before the reserved Sacrament','Visite simple devant le Saint-Sacrement réservé'))}</span></button><button data-p435930-ador-mode="open"><small>${esc(L('PRIVATE / EXPOSED','PRIVÉ / EXPOSÉ'))}</small><b>${esc(L('Adoration','Adoration'))}</b><span>${esc(L('Silence first · optional guided methods inside','Silence d’abord · méthodes guidées facultatives à l’intérieur'))}</span></button><button data-p435930-go-ben><small>${esc(L('PUBLIC RITE','RITE PUBLIC'))}</small><b>${esc(L('Exposition & Benediction','Exposition et Bénédiction'))}</b><span>${esc(L('Follow the service actually being celebrated','Suivre l’office réellement célébré'))}</span></button><button data-p435930-ador-mode="treasury"><small>${esc(L('TEXTS','TEXTES'))}</small><b>${esc(L('Eucharistic Treasury','Trésor eucharistique'))}</b><span>${esc(L('Shared sourced prayer corpus','Corpus commun de prières sourcées'))}</span></button></div></main>`;
+ if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('One Eucharistic family · choose the form that matches the situation','Une même famille eucharistique · choisissez la forme adaptée à la situation'))}<main class="aoP435930Body"><div class="aoP435930BigGrid"><button data-p435930-ador-mode="visit"><small>${esc(L('5–15 MIN','5–15 MIN'))}</small><b>${esc(L('Visit to the Blessed Sacrament','Visite au Saint-Sacrement'))}</b><span>${esc(L('Reserved tabernacle · guided arrival, adoration, thanksgiving, reparation, petition and silence','Tabernacle · arrivée guidée, adoration, action de grâces, réparation, demande et silence'))}</span></button><button data-p435930-ador-mode="open"><small>${esc(L('OPEN-ENDED','LIBRE'))}</small><b>${esc(L('Adoration','Adoration'))}</b><span>${esc(L('Silence first · optional guidance only when you need it','Silence d’abord · aide facultative seulement si nécessaire'))}</span></button><button data-p435930-ador-mode="holy"><small>${esc(L('~60 MIN','~60 MIN'))}</small><b>${esc(L('Holy Hour','Heure Sainte'))}</b><span>${esc(L('Gethsemane-centred · guided stages without forced timing','Centrée sur Gethsémani · étapes guidées sans minutage imposé'))}</span></button><button data-p435930-ador-mode="four"><small>${esc(L('METHOD','MÉTHODE'))}</small><b>${esc(L('Four Ends','Quatre fins'))}</b><span>${esc(L('Adoration · thanksgiving · reparation · petition · silence','Adoration · action de grâces · réparation · demande · silence'))}</span></button><button data-p435930-ador-mode="treasury"><small>${esc(L('TEXTS','TEXTES'))}</small><b>${esc(L('Eucharistic Treasury','Trésor eucharistique'))}</b><span>${esc(L('Traditional prayers for adoration and Benediction','Prières traditionnelles pour l’adoration et la Bénédiction'))}</span></button></div></main>`;
  let content='';
  if(ADOR.mode==='visit'){
   const steps=visitSteps();content=`${callout(esc(L('A Visit does not require exposition. This guide gives you a path without turning the visit into a checklist.','Une visite ne requiert pas l’exposition. Ce guide vous donne un chemin sans transformer la visite en liste à cocher.')),'rubric')}${guidedStage('visit',steps,ADOR.visitStep,L('Finish visit','Terminer la visite'))}`;
@@ -1169,7 +1193,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={version:VERSION,open,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={version:VERSION,open,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 

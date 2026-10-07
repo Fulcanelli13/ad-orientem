@@ -56,6 +56,12 @@ assert.match(runtime,/if\(b\.dataset\.p435930Own\)\{if\(b\.dataset\.p435930Own==
   "Rosary card no longer bypasses the redundant modular chooser");
 assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
   "Rosary chooser stopped synchronizing recitation through the canonical setter");
+assert.match(runtime,/function applySettingsPreferences\(raw=\{\}\)/,
+  "PRAY lost the restored Settings preference bridge");
+assert.match(runtime,/applySettingsPreferences,sources:SOURCE_REGISTRY/,
+  "PRAY Settings bridge is not exposed on the canonical public owner");
+assert.match(runtime,/typeof stations\.stabatMater===['"]boolean['"]/,
+  "PRAY Settings bridge no longer maps Stations Stabat Mater");
 assert.doesNotMatch(styles,/aoP435930HeadSpacer/,"obsolete PRAY hub spacer styling returned");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
@@ -164,3 +170,9 @@ assert.equal(directChildAnchor(body,nested),direct,"nested PRAY card did not res
 assert.equal(directChildAnchor(body,{parentNode:null}),null,"foreign PRAY node incorrectly became an insertion anchor");
 
 console.log("PASS locked v43.59.30 PRAY presentation extraction");
+
+const prayRuntimeSource=readFileSync("src/pray/presentation-runtime.js","utf8");
+for(const text of ["One Eucharistic family","5–15 MIN","OPEN-ENDED","Holy Hour","Four Ends","Traditional prayers for adoration and Benediction"]){
+  assert.ok(prayRuntimeSource.includes(text),"final Adoration donor landing lost: "+text);
+}
+assert.doesNotMatch(prayRuntimeSource,/data-p435930-go-ben><small>\$\{esc\(L\('PUBLIC RITE'/,"Benediction must not replace Holy Hour/Four Ends on the final Adoration landing");

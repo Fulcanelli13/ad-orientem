@@ -372,7 +372,9 @@ try{
   assert.equal(settingsOverLiveOpen.legacyVisible,false,"historical Settings donor became visible over LIVE");
 
   const structuralTarget=settingsOverLiveBefore.form==="low"?"sung":"low";
-  await page.locator(`#ao-settings-modular-root [data-setting-form='${structuralTarget}']`).click();
+  await page.locator('#ao-settings-modular-root [data-settings-route="/settings/mass"]').click();
+  await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/mass",null,{timeout:5000});
+  await page.locator(`#ao-settings-modular-root [data-pref-path="mass.defaultForm"][data-pref-value="${structuralTarget}"]`).click();
   await page.waitForTimeout(0);
   const afterStructuralAttempt=await page.evaluate(()=>({
     form:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.massForm??null,
@@ -383,9 +385,12 @@ try{
   assert.equal(afterStructuralAttempt.resolvedForm,"MISSA_CANTATA_INCENSE","Settings mutated the active resolved Mass");
   assert.ok(afterStructuralAttempt.alerts>=1,"live-session guard did not reject structural Settings input");
 
-  const displayTarget=settingsOverLiveBefore.textScale==="large"?"normal":"large";
-  await page.locator(`#ao-settings-modular-root [data-setting-scale='${displayTarget}']`).click();
-  await page.waitForFunction(expected=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.textScale===expected,displayTarget,{timeout:5000});
+  await page.locator("#ao-settings-modular-root [data-settings-back]").click();
+  await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings",null,{timeout:5000});
+  await page.locator('#ao-settings-modular-root [data-settings-route="/settings/accessibility"]').click();
+  const displayTarget=settingsOverLiveBefore.textScale==="large"?"standard":"large";
+  await page.locator('#ao-settings-modular-root [data-pref-select="accessibility.textScale"]').selectOption(displayTarget);
+  await page.waitForFunction(expected=>document.documentElement.dataset.aoTextScaleV1===expected,displayTarget,{timeout:5000});
 
   await page.locator("#ao-settings-modular-root [data-settings-close]").first().click();
   await page.waitForFunction(()=>!document.getElementById("ao-settings-modular-root"),null,{timeout:5000});
@@ -395,7 +400,7 @@ try{
     section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
     resolvedForm:globalThis.AO_R17_MASS_RUNTIME?.prepared?.session?.resolvedMass?.form??null,
     persisted:JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}"),
-    textScale:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.textScale??null,
+    textScale:document.documentElement.dataset.aoTextScaleV1??null,
     legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS??0,
     focusHidden:Boolean(document.activeElement?.closest?.("[aria-hidden='true'],[hidden]")),
   }));
