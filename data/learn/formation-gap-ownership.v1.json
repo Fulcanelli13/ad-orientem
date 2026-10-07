@@ -72,7 +72,15 @@
         "CALENDAR",
         "CUSTOMARY_SOT"
       ],
-      "residual_action": "Merge the three Catholic Life residual claims into Matrimony aftercare / Apostolate Family Help where useful; do not create learn.catholic_home."
+      "residual_action": "COMPLETE — the three residual claims are sourced and absorbed into Matrimony aftercare / existing family-help owners; no learn.catholic_home route.",
+      "absorption_state": "COMPLETE",
+      "absorbed_into": [
+        "learn.rites.matrimony",
+        "apostolate.FH01-FH08",
+        "PRAY",
+        "CALENDAR",
+        "CUSTOMARY_SOT"
+      ]
     },
     "funeral_and_requiem": {
       "decision": "NO_STANDALONE_FORMATION_SURFACE",
@@ -91,7 +99,14 @@
         "pray.good_death",
         "pray.holy_souls"
       ],
-      "residual_action": "Extend the Serious Illness & Dying owner with a sourced after-death/funeral section for funeral forms, Requiem orientation, burial/cremation/ashes distinctions and explicit handoffs to Mass/PRAY. Do not create a new route."
+      "residual_action": "COMPLETE — after-death, funeral/Requiem and burial/cremation/ashes formation now lives in Serious Illness & Dying with explicit Mass/PRAY handoffs.",
+      "absorption_state": "COMPLETE",
+      "absorbed_into": [
+        "learn.rites.sick",
+        "MASS",
+        "pray.holy_souls",
+        "pray.dying_companion"
+      ]
     },
     "religious_life": {
       "decision": "RESEARCH_ONLY_NO_SURFACE",
@@ -115,10 +130,19 @@
     }
   },
   "immediate_actions": [
-    "Spiritual Life is now the published focused Formation strand; preserve its owner boundaries and source-controlled curriculum.",
-    "Fold Funeral/Requiem explanatory residue into Serious Illness & Dying plus existing Mass/PRAY handoffs.",
-    "Use Apostolate Family Help and contextual owners for Catholic Home & Family rather than adding a Formation card.",
-    "Leave Religious Life and Vocations research-only.",
+    "Preserve Spiritual Life as the published focused Formation strand with its source-controlled curriculum.",
+    "Preserve Serious Illness & Dying as owner of after-death/funeral formation and hand off actual Requiem execution to Mass and suffrages to PRAY.",
+    "Preserve Matrimony/Apostolate/PRAY as the owner network for Catholic Home & Family; do not create learn.catholic_home.",
+    "Leave Religious Life and Vocations research-only unless a future source-complete States of Life & Vocation study justifies a new ownership decision.",
     "Reject any reintroduction of learn.catholic_life as a valid handoff or Formation route."
-  ]
+  ],
+  "closure": {
+    "catholic_life_absorption": "COMPLETE",
+    "closure_ledger": "data/learn/catholic-life-final-absorption.v1.json",
+    "publishable_residual_claims_without_owner": 0,
+    "intentional_research_only": [
+      "Religious Life",
+      "Vocations"
+    ]
+  }
 }
