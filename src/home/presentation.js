@@ -150,6 +150,7 @@ ${resume?`<button class="resumeCard" data-resume-mass data-ao-resume-owner="${re
 <section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p><button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
 ${renderHomeEnrichersToString(enrichers,state,win)}
 <section class="contentCard massCard"><div><div class="cardKicker">${esc(t("todaysMass"))}</div><p>${esc(vm.massHint)}</p></div><button class="roundAction" data-action="today-mass" aria-label="${esc(t("openMass"))}">${assetIcon("ao-ui-next")}</button></section>
+<section class="contentCard findCard"><div><div class="cardKicker">${esc(vm.language==="fr"?"TROUVER UNE MESSE":"FIND A MASS")}</div><p>${esc(vm.language==="fr"?"Annuaire mondial des messes traditionnelles, instituts, horaires et sources.":"Worldwide traditional Mass directory with communities, schedules and sources.")}</p></div><button class="roundAction" data-home-find aria-label="${esc(vm.language==="fr"?"Ouvrir l’annuaire":"Open directory")}">→</button></section>
 <section class="contentCard moreCard"><div><div class="cardKicker">${esc(t("more"))}</div><p>${esc(t("moreHint"))}</p></div><button class="roundAction" data-action="more" aria-label="${esc(t("openMore"))}">•••</button></section>
 <div class="homeSpacer"></div>${homeSheet(state)}</main>`;
 }
