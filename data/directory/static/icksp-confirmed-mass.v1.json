@@ -1,0 +1,953 @@
+{
+  "schema": "AO_DIRECTORY_STATIC_ICKSP_CONFIRMED_MASS_V1",
+  "version": "1.0.0",
+  "generated_at": "2026-10-07T19:20:00Z",
+  "source_snapshot": "Ad_Orientem_TLM_Directory_Provider_SOT_v1.9.xlsx",
+  "records": [
+    {
+      "id": "ICKSP-MASS-082",
+      "venue_id": "VEN-ICKSP-STG-082",
+      "community": "ICKSP",
+      "country_code": "SE",
+      "locality": "Stockholm / Sätra",
+      "name": "St Maroun Church",
+      "venue_type": "APOSTOLATE",
+      "address": "St Maroun Church, Stockholm / Sätra, Sweden",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.se/masstider-2/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies St Maroun Church as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-083",
+      "venue_id": "VEN-ICKSP-STG-083",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "Madrid",
+      "name": "Iglesia Nuestra Señora de la Paz",
+      "venue_type": "MASS_VENUE",
+      "address": "Iglesia Nuestra Señora de la Paz, Madrid, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Iglesia Nuestra Señora de la Paz as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-084",
+      "venue_id": "VEN-ICKSP-STG-084",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "Alcalá de Henares",
+      "name": "Iglesia de las Carmelitas Descalzas de la Purísima Concepción",
+      "venue_type": "MASS_VENUE",
+      "address": "Iglesia de las Carmelitas Descalzas de la Purísima Concepción, Alcalá de Henares, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Iglesia de las Carmelitas Descalzas de la Purísima Concepción as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-085",
+      "venue_id": "VEN-ICKSP-STG-085",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "Alcalá de Henares",
+      "name": "Iglesia de las Concepcionistas Franciscanas",
+      "venue_type": "MASS_VENUE",
+      "address": "Iglesia de las Concepcionistas Franciscanas, Alcalá de Henares, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Iglesia de las Concepcionistas Franciscanas as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-086",
+      "venue_id": "VEN-ICKSP-STG-086",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "El Puerto de Santa María",
+      "name": "Convento de las Concepcionistas",
+      "venue_type": "MASS_VENUE",
+      "address": "Convento de las Concepcionistas, El Puerto de Santa María, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Convento de las Concepcionistas as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-087",
+      "venue_id": "VEN-ICKSP-STG-087",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "El Puerto de Santa María",
+      "name": "Oratorio de la Inmaculada Concepción",
+      "venue_type": "MASS_VENUE",
+      "address": "Oratorio de la Inmaculada Concepción, El Puerto de Santa María, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Oratorio de la Inmaculada Concepción as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-088",
+      "venue_id": "VEN-ICKSP-STG-088",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "Cádiz",
+      "name": "Oratorio de San Felipe Neri",
+      "venue_type": "MASS_VENUE",
+      "address": "Oratorio de San Felipe Neri, Cádiz, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Oratorio de San Felipe Neri as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-089",
+      "venue_id": "VEN-ICKSP-STG-089",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "Getafe",
+      "name": "Convento del Sagrado Corazón y Nuestra Señora de los Ángeles",
+      "venue_type": "MASS_VENUE",
+      "address": "Convento del Sagrado Corazón y Nuestra Señora de los Ángeles, Getafe, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Convento del Sagrado Corazón y Nuestra Señora de los Ángeles as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-090",
+      "venue_id": "VEN-ICKSP-STG-090",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "Segovia",
+      "name": "Iglesia de San Sebastián",
+      "venue_type": "MASS_VENUE",
+      "address": "Iglesia de San Sebastián, Segovia, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Iglesia de San Sebastián as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-091",
+      "venue_id": "VEN-ICKSP-STG-091",
+      "community": "ICKSP",
+      "country_code": "ES",
+      "locality": "Valladolid",
+      "name": "Convento de las Dominicas de Porta Coeli",
+      "venue_type": "MASS_VENUE",
+      "address": "Convento de las Dominicas de Porta Coeli, Valladolid, Spain",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icrss.es/santa-misa-horarios/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Convento de las Dominicas de Porta Coeli as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-092",
+      "venue_id": "VEN-ICKSP-STG-092",
+      "community": "ICKSP",
+      "country_code": "MU",
+      "locality": "Curepipe",
+      "name": "Chapelle du Collège Saint-Joseph",
+      "venue_type": "MASS_VENUE",
+      "address": "Chapelle du Collège Saint-Joseph, Curepipe, Mauritius",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle du Collège Saint-Joseph as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-093",
+      "venue_id": "VEN-ICKSP-STG-093",
+      "community": "ICKSP",
+      "country_code": "MU",
+      "locality": "Curepipe",
+      "name": "Église Sainte-Thérèse",
+      "venue_type": "MASS_VENUE",
+      "address": "Église Sainte-Thérèse, Curepipe, Mauritius",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Église Sainte-Thérèse as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-094",
+      "venue_id": "VEN-ICKSP-STG-094",
+      "community": "ICKSP",
+      "country_code": "MU",
+      "locality": "Curepipe",
+      "name": "Chapelle de la Maison Bienheureux-Père-Laval",
+      "venue_type": "MASS_VENUE",
+      "address": "Chapelle de la Maison Bienheureux-Père-Laval, Curepipe, Mauritius",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle de la Maison Bienheureux-Père-Laval as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-095",
+      "venue_id": "VEN-ICKSP-STG-095",
+      "community": "ICKSP",
+      "country_code": "MU",
+      "locality": "Port-Louis",
+      "name": "Sanctuaire Marie-Reine-de-la-Paix",
+      "venue_type": "MASS_VENUE",
+      "address": "Sanctuaire Marie-Reine-de-la-Paix, Port-Louis, Mauritius",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Sanctuaire Marie-Reine-de-la-Paix as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-096",
+      "venue_id": "VEN-ICKSP-STG-096",
+      "community": "ICKSP",
+      "country_code": "MU",
+      "locality": "Port-Louis",
+      "name": "Chapelle Saint-Jean-de-Dieu, Hôpital Jeetoo",
+      "venue_type": "MASS_VENUE",
+      "address": "Chapelle Saint-Jean-de-Dieu, Hôpital Jeetoo, Port-Louis, Mauritius",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle Saint-Jean-de-Dieu, Hôpital Jeetoo as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-097",
+      "venue_id": "VEN-ICKSP-STG-097",
+      "community": "ICKSP",
+      "country_code": "BE",
+      "locality": "Bruxelles",
+      "name": "Maison Saint-Joseph",
+      "venue_type": "HOUSE_CHAPEL",
+      "address": "Maison Saint-Joseph, Bruxelles, Belgium",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Maison Saint-Joseph as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-098",
+      "venue_id": "VEN-ICKSP-STG-098",
+      "community": "ICKSP",
+      "country_code": "BE",
+      "locality": "Bruxelles",
+      "name": "Église du couvent Sainte-Anne",
+      "venue_type": "CHURCH",
+      "address": "Église du couvent Sainte-Anne, Bruxelles, Belgium",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Église du couvent Sainte-Anne as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-100",
+      "venue_id": "VEN-ICKSP-STG-100",
+      "community": "ICKSP",
+      "country_code": "BE",
+      "locality": "Havré",
+      "name": "Chapelle Notre-Dame-de-Bon-Vouloir",
+      "venue_type": "CHAPEL",
+      "address": "Chapelle Notre-Dame-de-Bon-Vouloir, Havré, Belgium",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle Notre-Dame-de-Bon-Vouloir as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-101",
+      "venue_id": "VEN-ICKSP-STG-101",
+      "community": "ICKSP",
+      "country_code": "BE",
+      "locality": "Brasménil",
+      "name": "Chapelle Notre-Dame-de-l'Espérance",
+      "venue_type": "CHAPEL",
+      "address": "Chapelle Notre-Dame-de-l'Espérance, Brasménil, Belgium",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle Notre-Dame-de-l'Espérance as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-103",
+      "venue_id": "VEN-ICKSP-STG-103",
+      "community": "ICKSP",
+      "country_code": "GA",
+      "locality": "Libreville",
+      "name": "Église du Christ-Roi / Paroisse Notre-Dame-de-Lourdes",
+      "venue_type": "PARISH_CHURCH",
+      "address": "Église du Christ-Roi / Paroisse Notre-Dame-de-Lourdes, Libreville, Gabon",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Église du Christ-Roi / Paroisse Notre-Dame-de-Lourdes as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-108",
+      "venue_id": "VEN-ICKSP-STG-108",
+      "community": "ICKSP",
+      "country_code": "GA",
+      "locality": "Mouila",
+      "name": "Chapelle Notre-Dame-du-Sacré-Cœur",
+      "venue_type": "CHAPEL",
+      "address": "Chapelle Notre-Dame-du-Sacré-Cœur, Mouila, Gabon",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle Notre-Dame-du-Sacré-Cœur as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-109",
+      "venue_id": "VEN-ICKSP-STG-109",
+      "community": "ICKSP",
+      "country_code": "GA",
+      "locality": "Mouila",
+      "name": "Chapelle Sainte-Thérèse-de-l’Enfant-Jésus",
+      "venue_type": "CHAPEL",
+      "address": "Chapelle Sainte-Thérèse-de-l’Enfant-Jésus, Mouila, Gabon",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle Sainte-Thérèse-de-l’Enfant-Jésus as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-111",
+      "venue_id": "VEN-ICKSP-STG-111",
+      "community": "ICKSP",
+      "country_code": "GA",
+      "locality": "Mouila",
+      "name": "Chapelle de l’École Saint-François-de-Sales",
+      "venue_type": "SCHOOL_CHAPEL",
+      "address": "Chapelle de l’École Saint-François-de-Sales, Mouila, Gabon",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "WEEKDAY_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Chapelle de l’École Saint-François-de-Sales as WEEKDAY_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-112",
+      "venue_id": "VEN-ICKSP-STG-112",
+      "community": "ICKSP",
+      "country_code": "DE",
+      "locality": "Altötting",
+      "name": "Friedhofskirche St. Michael",
+      "venue_type": "CHURCH",
+      "address": "Friedhofskirche St. Michael, Altötting, Germany",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/altoetting/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Friedhofskirche St. Michael as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-114",
+      "venue_id": "VEN-ICKSP-STG-114",
+      "community": "ICKSP",
+      "country_code": "DE",
+      "locality": "Bad Reichenhall",
+      "name": "Kirche St. Ägidi",
+      "venue_type": "CHURCH",
+      "address": "Kirche St. Ägidi, Bad Reichenhall, Germany",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/bad-reichenhall/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Kirche St. Ägidi as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-115",
+      "venue_id": "VEN-ICKSP-STG-115",
+      "community": "ICKSP",
+      "country_code": "DE",
+      "locality": "Traunstein",
+      "name": "Salinenkapelle St. Rupert und Maximilian",
+      "venue_type": "CHAPEL",
+      "address": "Salinenkapelle St. Rupert und Maximilian, Traunstein, Germany",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/traustein/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Salinenkapelle St. Rupert und Maximilian as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-116",
+      "venue_id": "VEN-ICKSP-STG-116",
+      "community": "ICKSP",
+      "country_code": "DE",
+      "locality": "Treis-Karden",
+      "name": "Kloster Maria Engelport",
+      "venue_type": "MONASTERY",
+      "address": "Kloster Maria Engelport, Treis-Karden, Germany",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "DAILY_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/kloster-maria-engelport/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Kloster Maria Engelport as PUBLIC_DAILY_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-117",
+      "venue_id": "VEN-ICKSP-STG-117",
+      "community": "ICKSP",
+      "country_code": "DE",
+      "locality": "Koblenz",
+      "name": "Kloster Bethlehem",
+      "venue_type": "APOSTOLATE",
+      "address": "Kloster Bethlehem, Koblenz, Germany",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/koblenz/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Kloster Bethlehem as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-118",
+      "venue_id": "VEN-ICKSP-STG-118",
+      "community": "ICKSP",
+      "country_code": "DE",
+      "locality": "Köllerbach",
+      "name": "Katholische Kirche St. Martin",
+      "venue_type": "CHURCH",
+      "address": "Katholische Kirche St. Martin, Köllerbach, Germany",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "DAILY_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/koellerbach/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Katholische Kirche St. Martin as PUBLIC_DAILY_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-119",
+      "venue_id": "VEN-ICKSP-STG-119",
+      "community": "ICKSP",
+      "country_code": "DE",
+      "locality": "Trier",
+      "name": "St. Martin",
+      "venue_type": "CHURCH",
+      "address": "St. Martin, Trier, Germany",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/trier/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies St. Martin as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-120",
+      "venue_id": "VEN-ICKSP-STG-120",
+      "community": "ICKSP",
+      "country_code": "CH",
+      "locality": "Basel",
+      "name": "Kirche St. Joseph",
+      "venue_type": "CHURCH",
+      "address": "Kirche St. Joseph, Basel, Switzerland",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/diozese-basel/apostolate/basel-stjoseph/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Kirche St. Joseph as PUBLIC_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-121",
+      "venue_id": "VEN-ICKSP-STG-121",
+      "community": "ICKSP",
+      "country_code": "CH",
+      "locality": "Le Noirmont",
+      "name": "Haus vom Eucharistischen Herzen Jesu",
+      "venue_type": "RELIGIOUS_HOUSE",
+      "address": "Haus vom Eucharistischen Herzen Jesu, Le Noirmont, Switzerland",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "DAILY_PUBLIC_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://institut-christus-koenig.de/diozese-basel/apostolate/le-noirmont/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Haus vom Eucharistischen Herzen Jesu as PUBLIC_DAILY_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-122",
+      "venue_id": "VEN-ICKSP-STG-122",
+      "community": "ICKSP",
+      "country_code": "IE",
+      "locality": "Limerick",
+      "name": "Sacred Heart Church",
+      "venue_type": "CHURCH",
+      "address": "Sacred Heart Church, Limerick, Ireland",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "DAILY_PUBLIC_TRADITIONAL_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://limerick.icksp.ie/"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Sacred Heart Church as PUBLIC_DAILY_TRADITIONAL_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-123",
+      "venue_id": "VEN-ICKSP-STG-123",
+      "community": "ICKSP",
+      "country_code": "GB",
+      "locality": "Belfast, Northern Ireland",
+      "name": "Church of the Immaculate Heart of Mary",
+      "venue_type": "CHURCH",
+      "address": "Church of the Immaculate Heart of Mary, Belfast, Northern Ireland",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "DAILY_PUBLIC_TRADITIONAL_MASS; EXACT_TIMES_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icksp.ie/apostolate"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies Church of the Immaculate Heart of Mary as PUBLIC_DAILY_TRADITIONAL_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    },
+    {
+      "id": "ICKSP-MASS-125",
+      "venue_id": "VEN-ICKSP-STG-125",
+      "community": "ICKSP",
+      "country_code": "IE",
+      "locality": "Galway",
+      "name": "St. Mary's College Chapel",
+      "venue_type": "CHAPEL",
+      "address": "St. Mary's College Chapel, Galway, Ireland",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_PUBLIC_TRADITIONAL_MASS; EXACT_TIME_SEE_OFFICIAL_SOURCE",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "relationship": "served_by",
+      "provider_relationship": "ICKSP_OFFICIAL_CURRENT_MASS",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://icksp.ie/apostolate"
+        }
+      ],
+      "notes": "Provider SOT v1.9 classifies St. Mary's College Chapel as PUBLIC_SUNDAY_TRADITIONAL_MASS_CONFIRMED. This row promotes only the current public-Mass claim; exact times remain on the official source until a venue-level schedule parser is available."
+    }
+  ]
+}
