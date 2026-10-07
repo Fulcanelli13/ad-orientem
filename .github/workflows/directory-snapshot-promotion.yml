@@ -32,6 +32,11 @@ jobs:
           npm run directory:import:fssp
           npm run directory:import:icksp
           npm run directory:import:ibp
+      - name: Rehydrate previously reviewed coordinates from cache
+        env:
+          AO_GEOCODER_OFFLINE: "1"
+          AO_GEOCODER_MAX_REQUESTS: "0"
+        run: npm run directory:geocode
       - name: Validate promotion payload
         run: |
           npm run test:directory

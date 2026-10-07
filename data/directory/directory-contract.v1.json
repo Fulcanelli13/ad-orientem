@@ -1,6 +1,6 @@
 {
   "schema": "DIRECTORY_SOT_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "frozenAt": "2026-10-07",
   "purpose": "Canonical worldwide directory of public traditional Latin Catholic liturgies with provenance-aware venue, ministry, liturgy, communion, schedule, source, and verification records.",
   "entityOrder": [
@@ -21,7 +21,9 @@
     "Contentious communion or ecclesial classifications require explicit evidence source ids.",
     "Schedules require provenance and a last-verified or upstream-updated timestamp when available.",
     "Importers must preserve upstream identifiers and relationship classifications before canonical normalization.",
-    "Entity resolution may propose merges; it must not merge distinct houses, churches, chapels, or missions merely because they share clergy, community, city, telephone, or property."
+    "Entity resolution may propose merges; it must not merge distinct houses, churches, chapels, or missions merely because they share clergy, community, city, telephone, or property.",
+    "Coordinates are assertions with precision and provenance; geocoded coordinates must never be treated as identity keys.",
+    "Third-party geocoding must preserve the source address verbatim, cache requests, verify country agreement, and expose approximate precision to the user."
   ],
   "enums": {
     "venueType": [
@@ -105,6 +107,20 @@
       "SOLEMN",
       "PONTIFICAL",
       "UNKNOWN"
+    ],
+    "geoPrecision": [
+      "building",
+      "address",
+      "street",
+      "locality",
+      "region",
+      "unknown"
+    ],
+    "geoSource": [
+      "OFFICIAL_SOURCE",
+      "OSM_NOMINATIM",
+      "MANUAL",
+      "OTHER"
     ]
   },
   "requiredEvidence": {
@@ -129,6 +145,7 @@
     "provenance": "Every schedule and contentious classification needs source provenance.",
     "uniqueness": "Upstream source identifiers may not map silently to multiple canonical venues.",
     "safeMerging": "Importers may not silently merge probable duplicates.",
-    "uncertainty": "UNKNOWN and VARIES must survive normalization."
+    "uncertainty": "UNKNOWN and VARIES must survive normalization.",
+    "geocoding": "Published coordinates require valid ranges, non-unknown precision, explicit provenance, and country agreement for third-party geocoder results."
   }
 }

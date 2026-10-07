@@ -24,9 +24,10 @@ const sources = readJson("../data/directory/source-registry.v1.json");
 const status = readJson("../data/directory/status-assertions.v1.json");
 
 assert.equal(contract.schema, "DIRECTORY_SOT_V1");
-assert.equal(contract.version, "1.0.0");
+assert.equal(contract.version, "1.1.0");
 assert.ok(contract.invariants.some(value => /una-cum/i.test(value)));
 assert.ok(contract.invariants.some(value => /UNKNOWN/.test(value)));
+assert.ok(contract.invariants.some(value => /Coordinates are assertions/i.test(value)));
 
 assert.ok(communities.communities.some(item => item.id === "SSPX"));
 assert.equal(communities.upstreamRelationshipPolicy.sspx.fsspx.defaultCommunityId, "SSPX");
@@ -122,6 +123,9 @@ assert.equal(mapped.venue.contact.contact_form[0], "https://example.test/contact
 assert.equal(mapped.schedules.length, 1);
 assert.equal(mapped.schedules[0].payload.sections[0].role, "sunday");
 assert.equal(auditVenue(mapped.venue).length, 0);
+assert.equal(mapped.venue.geo.geocoding_source,"OFFICIAL_SOURCE");
+assert.equal(mapped.venue.geo.precision,"address");
+assert.ok(mapped.venue.geo.source_ref);
 
 const noLocation = structuredClone(mapped.venue);
 noLocation.venue_id = "ao-test-no-location";
