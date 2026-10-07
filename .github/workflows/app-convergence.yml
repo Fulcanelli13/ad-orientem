@@ -78,6 +78,7 @@ jobs:
 
   app-shell-phone:
     if: github.event_name == 'push'
+    needs: app-shell-contract
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
