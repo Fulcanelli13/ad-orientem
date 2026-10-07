@@ -71,7 +71,7 @@ function parseDetail(html,candidate){
   const title=titleMatch?stripTags(titleMatch[1]):candidate.label;
   const address=addressBlock(lines);
   return {
-    title,address,countryCode:candidate.countryCode??countryCodeFromText(address),diocese:candidate.diocese,detailUrl:candidate.url,
+    title,address,city:candidate.city??null,countryCode:candidate.countryCode??countryCodeFromText(address),diocese:candidate.diocese,detailUrl:candidate.url,
     emails:emailAddresses(text),phones:phoneCandidates(text),massRaw:massBlock(lines),detailText:text
   };
 }
@@ -147,9 +147,9 @@ export async function runIbpImport({out="data/directory/generated/ibp",concurren
   const candidates=mergeIbpIndexWitness(liveCandidates,witness);
   if(candidates.length < witness.enumerated_entry_count) throw new Error(`IBP witness merge lost entries: expected at least ${witness.enumerated_entry_count}, produced ${candidates.length}.`);
   const records=await concurrentMap(candidates,concurrency,async candidate=>{
-    if(candidate.indexOnly)return {title:candidate.label,address:null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:IBP_INDEX_URL,emails:[],phones:[],massRaw:null,indexOnly:true};
+    if(candidate.indexOnly)return {title:candidate.label,address:null,city:candidate.city??null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:IBP_INDEX_URL,emails:[],phones:[],massRaw:null,indexOnly:true};
     try{return parseDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
-    catch(error){return {title:candidate.label,address:null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:candidate.url,emails:[],phones:[],massRaw:null,detailWarning:String(error?.message??error)};}
+    catch(error){return {title:candidate.label,address:null,city:candidate.city??null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:candidate.url,emails:[],phones:[],massRaw:null,detailWarning:String(error?.message??error)};}
   });
   const retrievedAt=new Date().toISOString(),dataset=buildIbpDataset(records,{retrievedAt});
   const result=await writeDirectoryDataset(path.resolve(out),{
