@@ -1,7 +1,7 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations, nextMajorCelebration } from "./liturgical-year.js";
-import { calendarIntelligenceForDate } from "./intelligence.js";
+import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -26,7 +26,7 @@ const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));re
 const weekCache=new Map(),dayLoads=new Map(),weekLoads=new Map(),weekStatus=new Map(),monthLoads=new Map(),monthStatus=new Map(),majorCelebrationCache=new Map();
 let foregroundWeek="",navEpoch=0,monthEpoch=0;
 const CALENDAR_VIEWS=new Set(["day","year","picker"]);
-const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale"]);
+const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","practices"]);
 let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null;
 function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
 function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
@@ -108,6 +108,10 @@ function monthEntry(id){
   return {date:id,r,title,rank,colour,cycle,tier,major,sunday,commemorations:commemorations(r),accent:liturgicalAccent(r)};
 }
 function monthIndexEntries(monthId,view){
+  if(view==="practices")return calendarPracticeMonthEntries(monthId,{fr:fr()}).map(x=>({
+    ...x,rank:x.summary||L("Traditional practice","Pratique traditionnelle"),colour:"",
+    accent:periodUiColour(buildLiturgicalYear(x.date).currentPeriod.color)
+  }));
   const entries=monthDateIds(monthId).map(monthEntry).filter(Boolean);
   if(view==="major")return entries.filter(x=>x.sunday||x.tier<=2||Boolean(x.major));
   if(view==="temporale")return entries.filter(x=>x.cycle==="temporale");
@@ -120,17 +124,20 @@ function monthIndexTabs(){
     ["major",L("Major","Jours majeurs")],
     ["temporale",L("Temporale","Temporal")],
     ["sanctorale",L("Sanctorale","Sanctoral")],
+    ["practices",L("Practices","Pratiques")],
   ];
   return `<nav class="aoCalMonthTabs" aria-label="${esc(L("Month views","Vues du mois"))}">${tabs.map(([id,label])=>`<button type="button" data-cal-month-view="${id}" class="${calendarMonthView===id?"active":""}" ${calendarMonthView===id?'aria-current="page"':""}>${esc(label)}</button>`).join("")}</nav>`;
 }
 function monthIndexList(monthId,selected,view){
   const rows=monthIndexEntries(monthId,view);
-  const label=view==="major"?L("Major days","Jours majeurs"):view==="temporale"?L("Temporale","Temporal"):L("Sanctorale","Sanctoral");
+  const label=view==="major"?L("Major days","Jours majeurs"):view==="temporale"?L("Temporale","Temporal"):view==="sanctorale"?L("Sanctorale","Sanctoral"):L("Practices","Pratiques");
   const explanation=view==="major"
     ?L("Sundays, I–II class observances and other principal days in this month.","Dimanches, célébrations de I–II classe et autres jours principaux de ce mois.")
     :view==="temporale"
       ?L("Observed days belonging to the temporal cycle and movable season.","Jours observés appartenant au cycle temporal et aux temps mobiles.")
-      :L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.");
+      :view==="sanctorale"
+        ?L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.")
+        :L("Date-bound traditional practices, programmes and source-locked novena starts from the shared Calendar Intelligence registry.","Pratiques traditionnelles datées, programmes et débuts de neuvaines sourcées provenant du registre commun de Calendar Intelligence.");
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
     ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" ${view==="sanctorale"?`data-cal-saint-date="${x.date}"`:""} class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
@@ -518,7 +525,7 @@ function pickerSurface(selected){
     }).join("")}</div>`;
   const projection=calendarMonthView==="calendar"?calendarGrid:monthIndexList(pickerMonthId,selected,calendarMonthView);
   return `<section class="aoCalV2Picker">
-    <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2><p>${esc(L("The month by calendar, major days, temporal cycle or sanctoral cycle.","Le mois par calendrier, jours majeurs, cycle temporal ou cycle sanctoral."))}</p></div>
+    <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2><p>${esc(L("The month by calendar, major days, temporal cycle, sanctoral cycle or devotional practices.","Le mois par calendrier, jours majeurs, cycle temporal, cycle sanctoral ou pratiques dévotionnelles."))}</p></div>
     <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1">${assetIcon("ao-ui-previous")} ${esc(L("Previous month","Mois précédent"))}</button><button type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button><button type="button" data-cal-month-shift="1">${esc(L("Next month","Mois suivant"))} ${assetIcon("ao-ui-next")}</button></div>
     ${monthIndexTabs()}
     <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?L("1962 calendar · liturgical month ready","Calendrier 1962 · mois liturgique prêt"):L(`Resolving liturgical month · ${done}/42`,`Résolution du mois liturgique · ${done}/42`))}</span><span>${esc(calendarMonthView==="calendar"?L("Colour = liturgical colour · stronger mark = higher rank","Couleur = couleur liturgique · marque plus forte = classe plus élevée"):L("Only observances actually resolved for this month are shown.","Seules les célébrations effectivement résolues pour ce mois sont affichées."))}</span></div>
