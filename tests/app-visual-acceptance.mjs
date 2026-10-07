@@ -265,7 +265,9 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),0,"Day view should not expose the date-picker input");
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-native]").count(),0);
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),0,"obsolete decorative year wheel leaked into the Day view");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs").count(),1,"Calendar v2 four-surface navigation is missing");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs").count(),1,"Calendar v2 three-surface navigation is missing");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").count(),3,"Calendar top navigation must be Day · Month · Liturgical Year");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").count(),0,"redundant Year Index returned to top-level Calendar navigation");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Hero").count(),1,"Calendar Day lost its single selected-feast hero");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [data-cal-date]").count(),7,"Calendar Day lost its seven-day context strip");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [aria-current='date']").count(),1,"Calendar selected date is not uniquely identified");
@@ -330,12 +332,6 @@ try{
   assert.ok(calendarYear.headingTop>=calendarYear.tabsBottom-1,"Calendar Liturgical Year heading is hidden beneath sticky navigation");
   await shot("02b-calendar-year");
 
-  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").click();
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2IndexGrid",{state:"visible",timeout:3000});
-  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2IndexGrid [data-cal-index-date]").count()>=24,"Calendar year index is missing major celebrations");
-  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2IndexGrid").getByText(/Christ the King|Christ-Roi/).count()>=1,"Calendar year index lost Christ the King");
-  await shot("02c-calendar-index");
-
   await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:3000});
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1,"Calendar Liturgical Month lost direct date entry");
@@ -374,6 +370,34 @@ try{
   assert.ok(calendarMonth.lastRight<=calendarMonth.rootRight+1,"Calendar Liturgical Month Saturday column is clipped off-screen");
   assert.ok(calendarMonth.rootScrollTop<=2,"Calendar Liturgical Month opened below the top of its surface");
   await shot("02d-calendar-month");
+
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]").count(),4,"Month lost Calendar · Major · Temporale · Sanctorale navigation");
+
+  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='major']").click();
+  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='major']",{state:"visible",timeout:3000});
+  const majorMonthCount=await page.locator("#ao-calendar-modular-root [data-cal-month-index='major'] [data-cal-month-index-date]").count();
+  assert.ok(majorMonthCount>=4,"Month Major index is unexpectedly sparse");
+  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").getByText(/Christ the King|Christ-Roi/).count()>=1,"Month Major index lost Christ the King");
+  await shot("02e-calendar-month-major");
+
+  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='temporale']").click();
+  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='temporale']",{state:"visible",timeout:3000});
+  const temporaleCount=await page.locator("#ao-calendar-modular-root [data-cal-month-index='temporale'] [data-cal-month-index-date]").count();
+  assert.ok(temporaleCount>=4,"Month Temporale index is missing resolved temporal observances");
+  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='temporale']").getByText(/Christ the King|Christ-Roi/).count()>=1,"Month Temporale classification lost Christ the King");
+  await shot("02f-calendar-month-temporale");
+
+  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='sanctorale']").click();
+  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='sanctorale']",{state:"visible",timeout:3000});
+  const sanctoraleCount=await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] [data-cal-month-index-date]").count();
+  assert.ok(sanctoraleCount>=4,"Month Sanctorale index is missing resolved sanctoral observances");
+  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").getByText(/Rosary|Rosaire/).count()>=1,"Month Sanctorale classification lost Our Lady of the Rosary");
+  await shot("02g-calendar-month-sanctorale");
+
+  const legacyIndexRedirect=await page.evaluate(()=>{globalThis.AO_CALENDAR_APP_V1?.setView?.("index");return globalThis.AO_CALENDAR_APP_V1?.status?.()});
+  assert.equal(legacyIndexRedirect.view,"picker","legacy Calendar index route did not redirect to Month");
+  assert.equal(legacyIndexRedirect.monthView,"major","legacy Calendar index route did not redirect specifically to Month/Major");
+
 
   await page.locator("[data-ao-app-surface='pray']").click();
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
