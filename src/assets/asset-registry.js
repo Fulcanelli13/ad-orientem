@@ -1186,8 +1186,9 @@ export const AO_APP_SURFACE_ASSET_IDS=Object.freeze({
   learn:"ao-nav-learn",
   calendar:"ao-nav-calendar",
   // Explore does not yet have a dedicated V4 navigation master. Reuse the
-  // canonical Church/context mark rather than inventing or drawing a new icon.
-  find:"ao-refined-church",
+  // physically externalized canonical Search utility mark: it expresses
+  // discovery without inventing a new icon or misusing another domain mark.
+  find:"ao-ui-search",
   settings:"ao-nav-settings",
 });
 
