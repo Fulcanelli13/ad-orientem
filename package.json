@@ -107,7 +107,7 @@
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
-    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs",
+    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo",
     "directory:import:sspx": "node tools/directory/import-sspx.mjs",
     "test:sacramental-sot": "node tests/sacramental-formation-sot.mjs",
     "directory:import:fssp": "node tools/directory/import-fssp.mjs",
@@ -121,7 +121,8 @@
     "test:directory-geocoding": "node tests/directory-geocoding.mjs",
     "test:novena-context": "node tests/novena-context-sot.mjs",
     "test:explore-surface": "node tests/explore-surface.mjs",
-    "test:explore-place-profiles": "node tests/explore-place-profiles.mjs"
+    "test:explore-place-profiles": "node tests/explore-place-profiles.mjs",
+    "test:directory-official-geo": "node tests/directory-official-geo.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"

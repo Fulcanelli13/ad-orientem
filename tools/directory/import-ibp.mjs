@@ -4,6 +4,7 @@ import { pathToFileURL } from "node:url";
 import { countryCodeFromText } from "./lib/country-codes.mjs";
 import { attrValue, emailAddresses, fetchText, phoneCandidates, stripTags, textLines, absoluteUrl } from "./lib/html-source-utils.mjs";
 import { writeDirectoryDataset } from "./lib/write-directory-dataset.mjs";
+import { selectOfficialGeoFromHtml } from "./lib/official-geo-utils.mjs";
 
 export const IBP_INDEX_URL="https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/";
 
@@ -65,14 +66,16 @@ function massBlock(lines){
   const source=addressIndex>0?lines.slice(0,addressIndex):lines;
   return source.filter(line=>/Messe|Mass|Confession|Adoration|Chapelet|Salut du Saint Sacrement/i.test(line)).join("\n")||null;
 }
-function parseDetail(html,candidate){
+export function parseIbpDetail(html,candidate){
   const lines=textLines(html),text=stripTags(html);
   const titleMatch=String(html).match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const title=titleMatch?stripTags(titleMatch[1]):candidate.label;
   const address=addressBlock(lines);
+  const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:candidate.url,expectedText:[title,address,candidate.city].filter(Boolean).join(" ")});
   return {
     title,address,city:candidate.city??null,countryCode:candidate.countryCode??countryCodeFromText(address),diocese:candidate.diocese,detailUrl:candidate.url,
-    emails:emailAddresses(text),phones:phoneCandidates(text),massRaw:massBlock(lines),detailText:text
+    emails:emailAddresses(text),phones:phoneCandidates(text),massRaw:massBlock(lines),detailText:text,
+    officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
   };
 }
 async function concurrentMap(items,concurrency,mapper){
@@ -89,7 +92,7 @@ export function buildIbpDataset(records,{retrievedAt=new Date().toISOString()}={
       venue_id:venueId,name:{official:r.title,alternate:[]},venue_type:venueType(r.title),
       upstream:{provider:"IBP_WORLD_DIRECTORY",detail_url:r.detailUrl},
       address:{line1:null,line2:null,postal_code:null,city:r.city??null,region:null,country_code:r.countryCode,country:null,formatted:r.address??r.city??null},
-      geo:{lat:null,lng:null,precision:"unknown",geocoding_source:null},
+      geo:r.officialGeo??{lat:null,lng:null,precision:"unknown",geocoding_source:null},
       diocese:{diocese_id:null,name:r.diocese??null,type:"diocese"},
       contact:{phone:r.phones??[],email:r.emails??[],website:[r.detailUrl].filter(Boolean),schedule_url:[r.detailUrl].filter(Boolean),bulletin_url:[],contact_form:[],official_social:[]},
       status:"active",source_ids:[sourceId],upstream_updated_at:null
@@ -101,7 +104,7 @@ export function buildIbpDataset(records,{retrievedAt=new Date().toISOString()}={
       active:true,source_ids:[sourceId]
     });
     if(r.massRaw)schedules.push({schedule_id:`ao-schedule-${key}-1`,ministry_id:ministryId,service_type:"MASS",mass_type:"UNKNOWN",payload:{raw:r.massRaw},source_ids:[sourceId],verification:{state:"OFFICIAL_LIVE",checked_at:retrievedAt}});
-    sources.push({source_id:sourceId,registry_source_id:"SRC_IBP_WORLD_DIRECTORY",source_type:"COMMUNITY_OFFICIAL",publisher:"Institute of the Good Shepherd",title:r.title,url:r.detailUrl,retrieved_at:retrievedAt,authority:"PRIMARY",fields_supported:["venue","venue.diocese","venue.contact","schedule"]});
+    sources.push({source_id:sourceId,registry_source_id:"SRC_IBP_WORLD_DIRECTORY",source_type:"COMMUNITY_OFFICIAL",publisher:"Institute of the Good Shepherd",title:r.title,url:r.detailUrl,retrieved_at:retrievedAt,authority:"PRIMARY",fields_supported:["venue","venue.geo","venue.diocese","venue.contact","schedule"]});
   });
   return {venues,ministries,schedules,sources};
 }
@@ -148,7 +151,7 @@ export async function runIbpImport({out="data/directory/generated/ibp",concurren
   if(candidates.length < witness.enumerated_entry_count) throw new Error(`IBP witness merge lost entries: expected at least ${witness.enumerated_entry_count}, produced ${candidates.length}.`);
   const records=await concurrentMap(candidates,concurrency,async candidate=>{
     if(candidate.indexOnly)return {title:candidate.label,address:null,city:candidate.city??null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:IBP_INDEX_URL,emails:[],phones:[],massRaw:null,indexOnly:true};
-    try{return parseDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
+    try{return parseIbpDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
     catch(error){return {title:candidate.label,address:null,city:candidate.city??null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:candidate.url,emails:[],phones:[],massRaw:null,detailWarning:String(error?.message??error)};}
   });
   const retrievedAt=new Date().toISOString(),dataset=buildIbpDataset(records,{retrievedAt});
@@ -163,6 +166,9 @@ export async function runIbpImport({out="data/directory/generated/ibp",concurren
       live_extra_entries:candidates.filter(x=>x.sourceDiscoveryExtra).length,
       detail_records:records.length,
       country_code_known:records.filter(r=>r.countryCode).length,
+      official_geo_recovered:records.filter(r=>r.officialGeo).length,
+      official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length,
+      official_geo_rejected_conflict:records.filter(r=>r.officialGeoRejected).length,
       source_count_discrepancy:witness.discrepancy
     }
   });
