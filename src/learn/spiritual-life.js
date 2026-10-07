@@ -196,7 +196,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
       sources:SPIRITUAL_LIFE_RUNTIME_AUDIT.sources,
       scoring:false,
       persistence:false,
-      visibleLauncher:false,
+      visibleLauncher:true,
     });
   }
 
@@ -207,12 +207,12 @@ export function ensureSpiritualLifeRegistry(win=globalThis){
   if(win?.AO_MODULES?.__aoSpiritualLifeV1)return win.AO_MODULES;
   const base=win?.AO_MODULES;if(!base)return null;
   const runtime=win.AO_SPIRITUAL_LIFE_V1||createSpiritualLifeRuntime(win);win.AO_SPIRITUAL_LIFE_V1=runtime;
-  const definition=Object.freeze({id:SPIRITUAL_LIFE_ROUTE_ID,type:"module",domain:"learn",category:"spiritual-life",title:"Spiritual Life",hidden:true});
+  const definition=Object.freeze({id:SPIRITUAL_LIFE_ROUTE_ID,type:"module",domain:"learn",category:"spiritual-life",title:"Spiritual Life",hidden:false});
   const wrapper={...base,__aoSpiritualLifeV1:true,
     get(id){return id===SPIRITUAL_LIFE_ROUTE_ID?definition:base.get?.(id)||null;},
     resolve(id){if(id===SPIRITUAL_LIFE_ROUTE_ID)return {ok:true,input:id,id,defaults:{},chain:[id],definition};return base.resolve?.(id);},
     async open(id,opts={}){if(id===SPIRITUAL_LIFE_ROUTE_ID)return {ok:runtime.open(opts),input:String(id),canonicalId:id,type:"module",domain:"learn",options:opts,aliasChain:[id],error:null};return base.open?.(id,opts);},
-    list(filter={}){return [...(base.list?.(filter)||[])].filter(item=>item?.id!==SPIRITUAL_LIFE_ROUTE_ID);}
+    list(filter={}){const prior=[...(base.list?.(filter)||[])].filter(item=>item?.id!==SPIRITUAL_LIFE_ROUTE_ID);if((!filter.type||filter.type==="module")&&(!filter.domain||String(filter.domain).toLowerCase()==="learn"))prior.push(definition);return prior;}
   };
   win.AO_MODULES=wrapper;win.AO_MODULE_REGISTRY_V36=wrapper;return wrapper;
 }
