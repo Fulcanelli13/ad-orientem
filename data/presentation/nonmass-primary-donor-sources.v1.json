@@ -1,6 +1,6 @@
 {
   "schema": "ao-nonmass-primary-donor-sources-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "rule": "Exact donor/current certification may only use primary donor bytes or an immutable render derived from those exact bytes. Recovered/reconstructed modular code is supporting evidence, not a substitute primary donor.",
   "sources": [
     {
@@ -57,7 +57,19 @@
         "progress treatment",
         "Rosary art treatment"
       ],
-      "note": "Approved authority is known, but exact primary bytes are not in Git history, current attachments, or the persistent file library. Existing recovered Rosary tests remain supporting evidence only."
+      "note": "Approved authority is known, but exact primary bytes are not in Git history, current attachments, or the persistent file library. Existing recovered Rosary tests remain supporting evidence only.",
+      "recoveryProvenance": {
+        "generatedInChatAt": "2026-10-02T21:02:31Z",
+        "generatedSandboxPath": "sandbox:/mnt/data/Ad_Orientem_v3_4_14.html",
+        "predecessor": "Ad_Orientem_v3_4_10.html",
+        "successors": [
+          "Ad_Orientem_v3_4_15.html",
+          "Ad_Orientem_v3_4_16.html",
+          "Ad_Orientem_v3_4_17.html"
+        ],
+        "successorEvidence": "v3.4.17 was presentation-only over v3.4.16 with all 217 executable scripts byte-identical to v3.4.16; no exact v3.4.14 successor-prefix proof or surviving bytes were recovered.",
+        "currentRecoveryStatus": "Historical generation is proven, but no attachment ID, hash, byte length, persistent Library object, Git object, or active /mnt/data file survives."
+      }
     },
     {
       "id": "NON_MASS_HEAD_V3_22",
@@ -69,7 +81,16 @@
         "Novena freeze integration",
         "cross-surface visual hierarchy"
       ],
-      "note": "Approved authority is known, but exact primary bytes are not repository- or library-addressable. Current visual capture can be reviewed, but exact final side-by-side certification must remain open."
+      "note": "Approved authority is known, but exact primary bytes are not repository- or library-addressable. Current visual capture can be reviewed, but exact final side-by-side certification must remain open.",
+      "recoveryProvenance": {
+        "generatedInChatAt": "2026-10-04T14:52:03Z",
+        "generatedSandboxPath": "sandbox:/mnt/data/Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html",
+        "predecessor": "Ad_Orientem_NON_MASS_HEAD_v3_21_NOVENA_FREEZE_CALENDAR_DASHBOARD_C1.html",
+        "successor": "Ad_Orientem_NON_MASS_HEAD_v3_23_NOVENA_FREEZE_CALENDAR_DASHBOARD_C3_FINAL.html",
+        "successorGeneratedInChatAt": "2026-10-04T15:06:48Z",
+        "successorEvidence": "The v3.23 generation record states that the entire v3.22 prefix was unchanged, but neither v3.22 nor v3.23 bytes, hashes, attachment IDs, or persistent Library objects survive.",
+        "currentRecoveryStatus": "Historical generation and append-only successor lineage are proven, but exact primary bytes remain unavailable."
+      }
     }
   ],
   "currentCaptureCoverage": {
@@ -117,5 +138,17 @@
       "V3_4_10_PRESENTATION_AND_TRADITION",
       "N3_GUIDED_NOVENAS"
     ]
+  },
+  "recoveryAudit": {
+    "auditedAt": "2026-10-07",
+    "searched": [
+      "Git default branch and branch names",
+      "repository commit history",
+      "current conversation attachments",
+      "persistent File Library",
+      "prior ChatGPT conversation context",
+      "active /mnt/data artifact mount"
+    ],
+    "result": "No exact primary bytes for V3_4_14_ROSARY_FINAL or NON_MASS_HEAD_V3_22 were recovered. Certification remains open; reconstructed current code must not be substituted."
   }
 }
