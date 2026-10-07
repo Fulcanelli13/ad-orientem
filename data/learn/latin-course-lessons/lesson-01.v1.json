@@ -1058,7 +1058,15 @@
         "fr": {
           "prompt": "Lisez la réponse à haute voix, puis comparez-vous au guide-modèle.",
           "hint": "Gardez les voyelles nettes ; n’avalez pas spiritu en syllabes à l’anglaise.",
-          "explanation": "Ceci est un exercice d’auto-évaluation. Le guide-modèle fournit une cible vérifiable même avant l’ajout d’un enregistrement audio."
+          "explanation": "Ceci est un exercice d’auto-évaluation. Le guide-modèle fournit une cible vérifiable même avant l’ajout d’un enregistrement audio.",
+          "modelGuide": "ET koom SPEE-ree-too TOO-oh",
+          "requiredChecks": [
+            "t final de et nettement prononcé",
+            "c dur dans cum",
+            "accent tonique sur spí",
+            "trois syllabes dans spiritu",
+            "deux syllabes dans tuo"
+          ]
         }
       }
     },
