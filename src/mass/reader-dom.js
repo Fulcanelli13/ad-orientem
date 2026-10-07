@@ -292,7 +292,9 @@ button.ao-schola-control{cursor:pointer}
 .ao-cinematic[hidden]{display:none}
 .ao-cinematic *{pointer-events:none}
 .ao-cinematic-inner{display:grid;gap:9px;justify-items:center;max-width:88%}
-.ao-cinematic-mark{font:400 1.35rem/1 Georgia,serif;color:var(--ao-warm)}
+.ao-cinematic-mark{font:400 1.35rem/1 Georgia,serif;color:var(--ao-warm);display:grid;place-items:center;min-height:2rem}
+.ao-cinematic-mark .ao-icon-mask{width:clamp(3rem,13vw,6.2rem);height:clamp(3rem,13vw,6.2rem)}
+.ao-cinematic-fallback[hidden]{display:none}
 .ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:.08em;color:#f0f1e9}
 .ao-cinematic-sub{font:600 .63rem/1.3 system-ui,sans-serif;letter-spacing:.11em;color:#89928a}
 .ao-cinematic[data-kind="ELEVATION"]{background:radial-gradient(circle at center,rgba(226,211,158,.075),rgba(3,7,5,0) 43%)}
@@ -562,7 +564,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   </div>
 
   <div class="ao-cinematic" data-role="cinematic" aria-live="polite" hidden>
-    <div class="ao-cinematic-inner"><div class="ao-cinematic-mark">✠</div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
+    <div class="ao-cinematic-inner"><div class="ao-cinematic-mark"><span class="ao-icon-mask" data-icon-slot="cinematic-action" hidden></span><span class="ao-cinematic-fallback" data-role="cinematic-fallback">✠</span></div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
   </div>
 
   <nav class="ao-reader-nav" aria-label="Prayer card navigation">
@@ -601,7 +603,7 @@ const FROZEN_SYMBOL_MASK_KEYS=Object.freeze(new Set(["stand","kneel","genuflect"
 
 function applyIcon(root, slot, key, iconResolver){
   const el=root.querySelector(`[data-icon-slot="${slot}"]`);
-  if(!el) return;
+  if(!el) return false;
   const src = key && typeof iconResolver === "function" ? iconResolver(key) : null;
   if(!src){
     el.hidden=true;
@@ -611,7 +613,7 @@ function applyIcon(root, slot, key, iconResolver){
     el.style.webkitMaskSize="";
     el.style.maskPosition="";
     el.style.webkitMaskPosition="";
-    return;
+    return false;
   }
   el.hidden=false;
   const css=`url("${String(src).replace(/"/g,'\\\"')}")`;
@@ -626,6 +628,7 @@ function applyIcon(root, slot, key, iconResolver){
   el.style.webkitMaskSize=frozenSymbol ? "234.375% 117.1875%" : "contain";
   el.style.maskPosition=frozenSymbol ? "left top" : "center";
   el.style.webkitMaskPosition=frozenSymbol ? "left top" : "center";
+  return true;
 }
 
 export function createReaderDomAdapter({
@@ -1208,6 +1211,9 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
     applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
+    const cinematicActionArt=applyIcon(root,"cinematic-action",current.priestActionIconKey,iconResolver);
+    const cinematicFallback=root.querySelector('[data-role="cinematic-fallback"]');
+    if(cinematicFallback)cinematicFallback.hidden=Boolean(cinematicActionArt && current.cinematic?.kind==="ELEVATION");
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
 
     const actionBadge=root.querySelector('[data-role="priest-action-badge"]');
