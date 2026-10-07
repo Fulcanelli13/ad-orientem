@@ -6,7 +6,7 @@ import {
 } from "./traditional-life-data.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
-export const TRADITIONAL_LEARN_VERSION="38.2-rite-formation-convergence";
+export const TRADITIONAL_LEARN_VERSION="38.1-modular-learn-extraction";
 export const TRADITIONAL_LEARN_ROOT_ID="ao-learn-traditional-root";
 
 export const TRADITIONAL_LEARN_ROUTES=Object.freeze({
