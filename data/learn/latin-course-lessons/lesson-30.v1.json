@@ -619,7 +619,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une oraison possède une architecture"
+        }
+      }
     },
     {
       "id": "l30-b2",
@@ -636,7 +641,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Invocation"
+        }
+      }
     },
     {
       "id": "l30-b3",
@@ -653,7 +663,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Motif relatif"
+        }
+      }
     },
     {
       "id": "l30-b4",
@@ -670,7 +685,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Demande et proposition en ut"
+        }
+      }
     },
     {
       "id": "l30-b5",
@@ -687,7 +707,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Conclusion"
+        }
+      }
     },
     {
       "id": "l30-b6",
@@ -702,7 +727,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire toute l’oraison sans repartir de zéro"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -923,7 +953,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le premier mouvement rhétorique de l’oraison ?",
+          "hint": "La prière commence en s’adressant à Dieu.",
+          "explanation": "C’est l’invocation.",
+          "options": [
+            "invocation",
+            "proposition de but",
+            "conclusion relative",
+            "discours indirect"
+          ]
+        }
+      }
     },
     {
       "id": "l30-e2",
@@ -953,7 +996,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui ouvre le motif relatif ?",
+          "hint": "Pronom relatif + verbe fini.",
+          "explanation": "La proposition relative explique le don ou l’action antérieure de Dieu.",
+          "options": [
+            "qui dedisti",
+            "quaesumus",
+            "ut",
+            "Per Dominum"
+          ]
+        }
+      }
     },
     {
       "id": "l30-e3",
@@ -983,7 +1039,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel mot marque explicitement la demande ?",
+          "hint": "Il signifie « nous vous en supplions ».",
+          "explanation": "quaesumus marque la demande.",
+          "options": [
+            "quaesumus",
+            "unitatem",
+            "gloriam",
+            "sempiterne"
+          ]
+        }
+      }
     },
     {
       "id": "l30-e4",
@@ -1013,7 +1082,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’exprime la proposition en ut ?",
+          "hint": "La syntaxe de l’étape 5 revient ici.",
+          "explanation": "La proposition au subjonctif donne le résultat demandé.",
+          "options": [
+            "le résultat demandé",
+            "l’invocation",
+            "un simple complément d’objet direct",
+            "un vocatif"
+          ]
+        }
+      }
     },
     {
       "id": "l30-e5",
@@ -1043,7 +1125,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le dernier bloc syntaxique réutilisable ?",
+          "hint": "Il clôt les oraisons romaines.",
+          "explanation": "La conclusion est un bloc syntaxique liturgique réutilisable.",
+          "options": [
+            "la conclusion christologique",
+            "un ablatif absolu",
+            "un gérondif",
+            "un discours indirect"
+          ]
+        }
+      }
     },
     {
       "id": "l30-e6",
@@ -1078,7 +1173,22 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’adjectif de la leçon 30 à son sens.",
+          "hint": "Ce sont des adjectifs du langage de la prière.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "omnipotens": "tout-puissant",
+            "sempiternus": "éternel / perpétuel",
+            "clemens": "clément / bienveillant",
+            "misericors": "miséricordieux",
+            "divinus": "divin",
+            "salutaris": "salutaire / qui donne le salut"
+          }
+        }
+      }
     },
     {
       "id": "l30-e7",
@@ -1109,7 +1219,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 30 à son sens.",
+          "hint": "Quatre noms importants du langage de la prière.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "oratio": "prière",
+            "gaudium": "joie",
+            "laetitia": "allégresse / joie",
+            "sapientia": "sagesse"
+          }
+        }
+      }
     },
     {
       "id": "l30-e8",
@@ -1136,7 +1259,18 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 30 à son sens.",
+          "hint": "Vocabulaire pénitentiel et psalmique.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "iniquitas": "iniquité",
+            "tribulatio": "tribulation / détresse"
+          }
+        }
+      }
     },
     {
       "id": "l30-e9",
@@ -1167,7 +1301,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que supplices dans Supplices te rogamus ?",
+          "hint": "Il s’accorde avec le sujet implicite à la première personne du pluriel.",
+          "explanation": "supplices signifie « suppliants / humblement suppliants » comme adjectif accordé.",
+          "options": [
+            "un adjectif « suppliants / humbles » décrivant « nous »",
+            "un verbe au futur",
+            "un nom signifiant autel",
+            "un pronom relatif"
+          ]
+        }
+      }
     },
     {
       "id": "l30-e10",
@@ -1197,7 +1344,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est tribulationibus après in ?",
+          "hint": "Lieu ou circonstance après in.",
+          "explanation": "tribulationibus est à l’ablatif pluriel.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
     },
     {
       "id": "l30-e11",
@@ -1226,7 +1386,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 6 ?",
+          "hint": "C’est le seuil figé.",
+          "explanation": "L’étape 6 s’achève par une oraison entière.",
+          "options": [
+            "Oraison romaine complète.",
+            "Syntaxe de prière et de récit à plusieurs propositions.",
+            "Jalon de lecture intégrée du Credo.",
+            "Ordinaire complet."
+          ]
+        }
+      }
     },
     {
       "id": "l30-e12",
@@ -1261,7 +1434,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que devez-vous marquer avant de traduire l’oraison de façon continue ?",
+          "hint": "Commencez par l’architecture rhétorique.",
+          "explanation": "Les mouvements de l’oraison organisent sa syntaxe."
+        }
+      }
     },
     {
       "id": "l30-e13",
@@ -1286,7 +1466,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « sagesse ».",
+          "hint": "Il apparaît dans Romains 11,33.",
+          "explanation": "sapientia signifie « sagesse »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1375,5 +1562,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Lire une oraison",
+      "grammarFocus": "Jalon intégré de syntaxe de la prière",
+      "readingOutcome": "Analyser une oraison romaine complète, de l’invocation à la conclusion.",
+      "objectives": [
+        "Analyser une oraison romaine complète, de l’invocation à la conclusion.",
+        "Intégrer propositions relatives, infinitifs, cas, subjonctif et syntaxe de la conclusion liturgique.",
+        "Apprendre les treize lemmes figés de la leçon 30.",
+        "Franchir le jalon de l’étape 6 : oraison romaine complète."
+      ]
+    }
+  }
 }
