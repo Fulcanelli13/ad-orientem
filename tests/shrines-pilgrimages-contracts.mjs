@@ -69,6 +69,10 @@ assert.equal(lourdesTemporal.calendar_semantic_key,"feast.our_lady_of_lourdes");
 assert.equal(Object.hasOwn(lourdesTemporal,"date"),false);
 assert.equal(calendarDateForSemanticKey(lourdesTemporal.calendar_semantic_key,2026),"2026-02-11");
 
+const missingRegistry={...lourdesTemporal};
+delete missingRegistry.calendar_registry_version;
+assert.ok(auditTemporalLink(missingRegistry).some(item=>item.code==="MISSING_CALENDAR_REGISTRY_VERSION"));
+
 const leakedDate={...lourdesTemporal,date:"2027-02-11"};
 assert.ok(auditTemporalLink(leakedDate).some(item=>item.code==="TEMPORAL_DATE_LOGIC_OUTSIDE_CALENDAR"));
 
