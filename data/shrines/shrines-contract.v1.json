@@ -20,7 +20,8 @@
     "An observed source event may support a temporal association but does not become the recurrence engine.",
     "Customs Atlas attestations may point to a canonical Place only after that Place exists in the shared Geography registry.",
     "Shrine history, apparition/prodigy narratives and devotional associations must remain source-attributed and must not be promoted into doctrinal or canonical claims beyond the evidence.",
-    "Stable shrine, pilgrimage and route ids survive source refreshes and current-event changes."
+    "Stable shrine, pilgrimage and route ids survive source refreshes and current-event changes.",
+    "A BOUND_TO_CALENDAR temporal link must name the Calendar semantic registry version that owns resolution."
   ],
   "enums": {
     "shrineKind": [
@@ -90,7 +91,7 @@
     "placeIdentity": "Every shrine requires a canonical place_id present in EXPLORE_GEOGRAPHY_SOT_V1.",
     "provenance": "Every shrine, pilgrimage, route and temporal link requires source provenance.",
     "routeSafety": "MAPPED routes require source-backed geometry or canonical waypoint ids; documented text alone remains DOCUMENTED_UNMAPPED.",
-    "calendarOwnership": "PENDING/BOUND Calendar links require a semantic calendar key and may not contain date, month, day, Easter-offset or private recurrence fields.",
+    "calendarOwnership": "PENDING/BOUND Calendar links require a semantic calendar key and may not contain date, month, day, Easter-offset or private recurrence fields; BOUND links additionally require the owning Calendar semantic registry version.",
     "associationSafety": "No Directory venue/community relationship may be inferred from distance or shared locality.",
     "customPromotion": "A Customs Atlas PLACE_PENDING record may be promoted to PLACE only after its canonical shared Place exists."
   }
