@@ -3,6 +3,7 @@ import { pathToFileURL } from "node:url";
 import { countryCodeFromText } from "./lib/country-codes.mjs";
 import { absoluteUrl, emailAddresses, extractAnchors, extractTableRows, fetchText, phoneCandidates, stripTags } from "./lib/html-source-utils.mjs";
 import { writeDirectoryDataset } from "./lib/write-directory-dataset.mjs";
+import { selectOfficialGeoFromHtml } from "./lib/official-geo-utils.mjs";
 
 export const FSSP_DIRECTORY_URL="https://www.fssp.org/en/find-us/where-are-we/";
 export const FSSP_SOURCE_ID="SRC_FSSP_WORLD_DIRECTORY";
@@ -70,7 +71,8 @@ async function enrichDetail(record,{fetchImpl=fetch}={}){
     const html=await fetchText(record.detailUrl,{fetchImpl});
     const text=stripTags(html);
     const links=extractAnchors(html,record.detailUrl).map(x=>x.url);
-    return {...record,detailText:text,emails:emailAddresses(text),phones:phoneCandidates(text),externalLinks:[...new Set(links)]};
+    const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:record.detailUrl});
+    return {...record,detailText:text,emails:emailAddresses(text),phones:phoneCandidates(text),externalLinks:[...new Set(links)],officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous};
   }catch(error){
     return {...record,detailText:null,emails:[],phones:[],externalLinks:[],detailWarning:String(error?.message??error)};
   }
@@ -107,7 +109,7 @@ export function buildFsspDataset(records,{retrievedAt=new Date().toISOString()}=
       venue_type:venueType(record.title),
       upstream:{provider:"FSSP_WORLD_DIRECTORY",row_index:record.index,detail_url:record.detailUrl??null},
       address:{line1:null,line2:null,postal_code:null,city:null,region:null,country_code:record.countryCode,country:null,formatted:record.address},
-      geo:{lat:null,lng:null,precision:"unknown",geocoding_source:null},
+      geo:record.officialGeo??{lat:null,lng:null,precision:"unknown",geocoding_source:null},
       diocese:{diocese_id:null,name:record.diocese,type:"diocese"},
       contact:{phone:record.phones??[],email:record.emails??[],website:[...new Set(contactUrls)],schedule_url:record.detailUrl?[record.detailUrl]:[],bulletin_url:[],contact_form:[],official_social:[]},
       status:"active",source_ids:[sourceId],upstream_updated_at:null
@@ -121,7 +123,7 @@ export function buildFsspDataset(records,{retrievedAt=new Date().toISOString()}=
     if(record.massRaw){
       schedules.push({schedule_id:`ao-schedule-${key}-1`,ministry_id:ministry.ministry_id,service_type:"MASS",mass_type:"UNKNOWN",payload:{raw:record.massRaw},source_ids:[sourceId],verification:{state:"OFFICIAL_LIVE",checked_at:retrievedAt}});
     }
-    sources.push({source_id:sourceId,registry_source_id:FSSP_SOURCE_ID,source_type:"COMMUNITY_OFFICIAL",publisher:"Priestly Fraternity of Saint Peter",title:record.title,url:record.detailUrl??FSSP_DIRECTORY_URL,retrieved_at:retrievedAt,authority:"PRIMARY",fields_supported:["venue","venue.diocese","venue.contact","schedule"]});
+    sources.push({source_id:sourceId,registry_source_id:FSSP_SOURCE_ID,source_type:"COMMUNITY_OFFICIAL",publisher:"Priestly Fraternity of Saint Peter",title:record.title,url:record.detailUrl??FSSP_DIRECTORY_URL,retrieved_at:retrievedAt,authority:"PRIMARY",fields_supported:["venue","venue.geo","venue.diocese","venue.contact","schedule"]});
     venues.push(venue);ministries.push(ministry);
   }
   return {venues,ministries,schedules,sources,exactDuplicateRows};
@@ -161,7 +163,9 @@ export async function runFsspImport({out="data/directory/generated/fssp",concurr
       exact_duplicate_rows:dataset.exactDuplicateRows.length,
       detail_pages_attempted:base.filter(r=>r.detailUrl).length,
       country_code_known:countryKnown,
-      country_code_unknown:dataset.venues.length-countryKnown
+      country_code_unknown:dataset.venues.length-countryKnown,
+      official_geo_recovered:records.filter(r=>r.officialGeo).length,
+      official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length
     }
   });
   return result.report;
