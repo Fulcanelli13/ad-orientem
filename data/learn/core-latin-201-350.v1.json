@@ -1,0 +1,852 @@
+{
+  "version": "core-latin-201-350-v1.0",
+  "status": "FROZEN",
+  "frozenAt": "2026-10-07",
+  "method": {
+    "source": "Ad Orientem production Proper resolver output",
+    "divinumOfficiumPin": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "discoveryWindow": "2000-01-01/2027-12-31",
+    "encounterWindow": "2025-11-30/2026-11-28",
+    "canonicalResolvedDocuments": 983,
+    "normalProperDocuments": 975,
+    "specialRiteDocuments": 8,
+    "unresolvedRows": 0,
+    "rankingPolicy": [
+      "Resolve 1960/1962 calendar and @-references before tokenization.",
+      "Exclude proper names, headings/formula inflation, and inflected duplicates.",
+      "Do not allocate new slots to lemma families already frozen in Core 1-200.",
+      "Prefer high-dispersion Proper and Scriptural vocabulary; defer Collect-heavy/theological vocabulary to 351-500.",
+      "Use seven-year and 28-year dispersion checks at the 330-370 boundary."
+    ]
+  },
+  "boundaryAudit": {
+    "promoted": [
+      {
+        "lemma": "conspectus",
+        "reason": "high multi-slot dispersion across Introit, Epistle, Offertory and other Proper text"
+      },
+      {
+        "lemma": "iudicium",
+        "reason": "high dispersion across Introit, Gradual, Epistle, Gospel and other Proper text"
+      },
+      {
+        "lemma": "adversus",
+        "reason": "high Scriptural dispersion, chiefly Epistle and Gospel"
+      },
+      {
+        "lemma": "nimis",
+        "reason": "high Proper dispersion, especially Introit and Gradual"
+      }
+    ],
+    "deferredTo351_500": [
+      {
+        "lemma": "caelestis",
+        "reason": "low normal-Proper dispersion; more appropriate to Collect/theological tranche"
+      },
+      {
+        "lemma": "ager",
+        "reason": "lower dispersion than promoted boundary candidates"
+      },
+      {
+        "lemma": "porta",
+        "reason": "lower dispersion than promoted boundary candidates"
+      },
+      {
+        "lemma": "filia",
+        "reason": "lower dispersion than promoted boundary candidates"
+      },
+      {
+        "lemma": "meritum",
+        "reason": "strong but heavily Collect/theological; reserve for 351-500"
+      },
+      {
+        "lemma": "prex",
+        "reason": "strong liturgical vocabulary but Collect/prayer weighted; reserve for 351-500"
+      },
+      {
+        "lemma": "pontifex",
+        "reason": "useful but specialized and Collect-heavy; reserve for later tranche"
+      },
+      {
+        "lemma": "parabola",
+        "reason": "strong Gospel word; first reserve if a 201-350 slot later proves unstable"
+      },
+      {
+        "lemma": "intendo",
+        "reason": "frequent but formula/imperative weighted; reserve for later tranche"
+      }
+    ]
+  },
+  "recycleCore200": [
+    "dico",
+    "facio",
+    "fio",
+    "sum",
+    "venio",
+    "do",
+    "habeo",
+    "qui/quae/quod",
+    "is/ea/id",
+    "hic/haec/hoc",
+    "ille",
+    "ipse",
+    "omnis",
+    "ut",
+    "propter",
+    "autem",
+    "enim",
+    "ergo"
+  ],
+  "items": [
+    {
+      "rank": 201,
+      "lemma": "secundum",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 202,
+      "lemma": "semper",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 203,
+      "lemma": "nunc",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 204,
+      "lemma": "ecce",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 205,
+      "lemma": "neque",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 206,
+      "lemma": "nec",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 207,
+      "lemma": "aut",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 208,
+      "lemma": "vel",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 209,
+      "lemma": "sive",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 210,
+      "lemma": "vero",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 211,
+      "lemma": "at",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 212,
+      "lemma": "usque",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 213,
+      "lemma": "ita",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 214,
+      "lemma": "tunc",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 215,
+      "lemma": "quasi",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 216,
+      "lemma": "sic",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 217,
+      "lemma": "apud",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 218,
+      "lemma": "coram",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 219,
+      "lemma": "inter",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 220,
+      "lemma": "etiam",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 221,
+      "lemma": "ibi",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 222,
+      "lemma": "adhuc",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 223,
+      "lemma": "donec",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 224,
+      "lemma": "nam",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 225,
+      "lemma": "contra",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 226,
+      "lemma": "simul",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 227,
+      "lemma": "magis",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 228,
+      "lemma": "ideo",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 229,
+      "lemma": "itaque",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 230,
+      "lemma": "unde",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 231,
+      "lemma": "numquid",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 232,
+      "lemma": "nonne",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 233,
+      "lemma": "quomodo",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 234,
+      "lemma": "quidem",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 235,
+      "lemma": "iam",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 236,
+      "lemma": "ultra",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 237,
+      "lemma": "iuxta",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 238,
+      "lemma": "statim",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 239,
+      "lemma": "tantum",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 240,
+      "lemma": "plus",
+      "placementBand": "Lessons 9, 11 and 25 · connectors/adverbs in authentic clauses"
+    },
+    {
+      "rank": 241,
+      "lemma": "quis/quid",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 242,
+      "lemma": "quidam",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 243,
+      "lemma": "aliquis/aliquid",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 244,
+      "lemma": "quicumque",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 245,
+      "lemma": "quisque",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 246,
+      "lemma": "alius",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 247,
+      "lemma": "solus",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 248,
+      "lemma": "nemo",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 249,
+      "lemma": "unus",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 250,
+      "lemma": "duo",
+      "placementBand": "Lessons 10, 18 and 20 · pronoun/quantifier spiral"
+    },
+    {
+      "rank": 251,
+      "lemma": "multus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 252,
+      "lemma": "totus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 253,
+      "lemma": "primus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 254,
+      "lemma": "cunctus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 255,
+      "lemma": "universus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 256,
+      "lemma": "tempus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 257,
+      "lemma": "gens",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 258,
+      "lemma": "propheta",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 259,
+      "lemma": "lex",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 260,
+      "lemma": "iustitia",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 261,
+      "lemma": "testimonium",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 262,
+      "lemma": "opus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 263,
+      "lemma": "locus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 264,
+      "lemma": "templum",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 265,
+      "lemma": "civitas",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 266,
+      "lemma": "oculus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 267,
+      "lemma": "os",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 268,
+      "lemma": "lingua",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 269,
+      "lemma": "vox",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 270,
+      "lemma": "facies",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 271,
+      "lemma": "auris",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 272,
+      "lemma": "pes",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 273,
+      "lemma": "caput",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 274,
+      "lemma": "domus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 275,
+      "lemma": "familia",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 276,
+      "lemma": "mater",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 277,
+      "lemma": "angelus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 278,
+      "lemma": "servus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 279,
+      "lemma": "magister",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 280,
+      "lemma": "pastor",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 281,
+      "lemma": "ovis",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 282,
+      "lemma": "grex",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 283,
+      "lemma": "inimicus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 284,
+      "lemma": "princeps",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 285,
+      "lemma": "corona",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 286,
+      "lemma": "semen",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 287,
+      "lemma": "ignis",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 288,
+      "lemma": "aqua",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 289,
+      "lemma": "mare",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 290,
+      "lemma": "nox",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 291,
+      "lemma": "sol",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 292,
+      "lemma": "mons",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 293,
+      "lemma": "hora",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 294,
+      "lemma": "gaudium",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 295,
+      "lemma": "laetitia",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 296,
+      "lemma": "timor",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 297,
+      "lemma": "sapientia",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 298,
+      "lemma": "virtus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 299,
+      "lemma": "mandatum",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 300,
+      "lemma": "iniquitas",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 301,
+      "lemma": "tribulatio",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 302,
+      "lemma": "generatio",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 303,
+      "lemma": "sermo",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 304,
+      "lemma": "signum",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 305,
+      "lemma": "puer",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 306,
+      "lemma": "sacerdos",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 307,
+      "lemma": "lapis",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 308,
+      "lemma": "vinum",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 309,
+      "lemma": "iudicium",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 310,
+      "lemma": "conspectus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 311,
+      "lemma": "adversus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 312,
+      "lemma": "ira",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 313,
+      "lemma": "discipulus",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 314,
+      "lemma": "mulier",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 315,
+      "lemma": "turba",
+      "placementBand": "Lessons 2–6, 13, 20 and 28 · nouns/adjectival concepts by declension and reading context"
+    },
+    {
+      "rank": 316,
+      "lemma": "respondeo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 317,
+      "lemma": "video",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 318,
+      "lemma": "voco",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 319,
+      "lemma": "mitto",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 320,
+      "lemma": "maneo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 321,
+      "lemma": "invenio",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 322,
+      "lemma": "loquor",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 323,
+      "lemma": "surgo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 324,
+      "lemma": "aperio",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 325,
+      "lemma": "pono",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 326,
+      "lemma": "descendo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 327,
+      "lemma": "ambulo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 328,
+      "lemma": "accedo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 329,
+      "lemma": "sto",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 330,
+      "lemma": "timeo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 331,
+      "lemma": "clamo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 332,
+      "lemma": "sequor",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 333,
+      "lemma": "scribo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 334,
+      "lemma": "vado",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 335,
+      "lemma": "eligo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 336,
+      "lemma": "trado",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 337,
+      "lemma": "quaero",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 338,
+      "lemma": "interrogo",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 339,
+      "lemma": "annuntio",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 340,
+      "lemma": "cado",
+      "placementBand": "Lessons 12, 15, 22, 26 and 31 · verbs by conjugation and Gospel narrative"
+    },
+    {
+      "rank": 341,
+      "lemma": "magnus",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 342,
+      "lemma": "iustus",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 343,
+      "lemma": "malus",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 344,
+      "lemma": "salvus",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 345,
+      "lemma": "nimis",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 346,
+      "lemma": "salutaris",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 347,
+      "lemma": "similis",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 348,
+      "lemma": "novus",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 349,
+      "lemma": "plenus",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    },
+    {
+      "rank": 350,
+      "lemma": "pauper",
+      "placementBand": "Lessons 4, 13 and 30 · adjective/adverb recognition and comparison"
+    }
+  ]
+}
