@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   mapLegacyFollowMode,
   mapInsertedRites,
@@ -116,6 +117,14 @@ assert.equal(persistedMassIsResumable({...persisted,state:"complete"}),false);
 assert.equal(readPersistedActiveMass({getItem:()=>"{bad"}),null);
 assert.equal(clearPersistedActiveMass(persistedStorage),true);
 assert.equal(readPersistedActiveMass(persistedStorage),null,"stale persisted Mass checkpoint was not clearable");
+
+const browserEntrySource=readFileSync("src/mass/browser-entry.js","utf8");
+assert.match(browserEntrySource,/function massGlossaryTerms\(preview\)/,"Mass reader lost current-card glossary mapping");
+assert.match(browserEntrySource,/data-reader-glossary/,"Mass browser bridge lost glossary button ownership");
+for(const id of ["G052","G057","G061","G062","G063","G266","G320","G067"]){
+  assert.match(browserEntrySource,new RegExp('"'+id+'"'),"Mass glossary mapping lost "+id);
+}
+assert.match(browserEntrySource,/openTerms\(massGlossaryTerms\(preview\),\{origin:"mass"\}\)/,"Mass glossary no longer opens as contextual overlay");
 
 // browser-entry persisted Mass contract
 
