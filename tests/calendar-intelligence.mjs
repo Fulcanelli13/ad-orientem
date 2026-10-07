@@ -39,6 +39,10 @@ assert.equal(calendarDateForSemanticKey("observance.holywell_saint_winefride",20
 assert.equal(calendarDateForSemanticKey("feast.saint_peter_chanel",2026),"2026-04-28");
 assert.equal(calendarDateForSemanticKey("feast.our_lady_perpetual_help",2026),"2026-06-27");
 assert.equal(calendarDateForSemanticKey("feast.uganda_martyrs",2026),"2026-06-03");
+assert.equal(calendarDateForSemanticKey("observance.zapopan_romeria",2026),"2026-10-12");
+assert.equal(calendarDateForSemanticKey("observance.our_lady_aparecida",2026),"2026-10-12");
+assert.equal(calendarDateForSemanticKey("observance.las_lajas",2026),"2026-09-15");
+assert.equal(calendarDateForSemanticKey("observance.chiquinquira_july9",2026),"2026-07-09");
 const peterChanel=calendarSemanticEventsForDate("2026-04-28").find(x=>x.id==="feast.saint_peter_chanel");
 assert.ok(peterChanel);
 assert.ok(peterChanel.tags.includes("LOCAL_LITURGICAL_OBSERVANCE"));
@@ -48,6 +52,17 @@ assert.ok(perpetualHelp.tags.includes("LOCAL_SHRINE_OBSERVANCE"));
 const ugandaMartyrs=calendarSemanticEventsForDate("2026-06-03").find(x=>x.id==="feast.uganda_martyrs");
 assert.ok(ugandaMartyrs);
 assert.ok(ugandaMartyrs.tags.includes("LOCAL_LITURGICAL_OBSERVANCE"));
+
+for(const [date,key] of [
+  ["2026-10-12","observance.zapopan_romeria"],
+  ["2026-10-12","observance.our_lady_aparecida"],
+  ["2026-09-15","observance.las_lajas"],
+  ["2026-07-09","observance.chiquinquira_july9"],
+]){
+  const ev=calendarSemanticEventsForDate(date).find(x=>x.id===key);
+  assert.ok(ev,key+" missing");
+  assert.ok(ev.tags.includes("EXPLORE_TEMPORAL_LINK"),key+" lost Explore tag");
+}
 
 assert.equal(calendarDateForSemanticKey("unknown.key",2026),null);
 assert.ok(calendarSemanticEventsForDate("2026-02-11").some(x=>x.id==="feast.our_lady_of_lourdes"));
