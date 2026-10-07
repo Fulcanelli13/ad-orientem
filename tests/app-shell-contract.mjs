@@ -67,6 +67,15 @@ function host({ route = "home", confirm = true } = {}) {
 {
   const h = host();
   const shell = createAppShellController({ host: h });
+  const nav = await shell.go("formation");
+  assert.equal(nav.ok, true);
+  assert.equal(shell.getActive(), "learn");
+  assert.deepEqual(h.calls, ["dismiss-settings", "home", "defer", "domain:learn"]);
+}
+
+{
+  const h = host();
+  const shell = createAppShellController({ host: h });
   assert.equal((await shell.go("find")).ok, true);
   assert.equal(shell.getActive(), "find");
   assert.deepEqual(h.calls, ["dismiss-settings", "home", "defer", "domain:find"]);
