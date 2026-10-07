@@ -184,7 +184,8 @@ export function apostolateCss(){
 
 export function renderApostolatePresentation(root,state,{scenarios,skills,sources}={}){
   if(!root)return false;
-  const selected=state.selectedId?scenarios.get(state.selectedId):null;\n  const selectedSkill=state.selectedSkillId?skills.get(state.selectedSkillId):null;
+  const selected=state.selectedId?scenarios.get(state.selectedId):null;
+  const selectedSkill=state.selectedSkillId?skills.get(state.selectedSkillId):null;
   root.dataset.aoApostolatePresentationOwner=APOSTOLATE_PRESENTATION_VERSION;
   root.lang=isFr(state)?"fr":"en";
   let body="";
@@ -192,7 +193,8 @@ export function renderApostolatePresentation(root,state,{scenarios,skills,source
   else if(state.view==="answer"||state.view==="help")body=listMarkup(state.view,state,scenarios);
   else if(state.view==="practice"&&!selected)body=listMarkup("practice",state,scenarios);
   else if(state.view==="practice"&&selected)body=practiceMarkup(selected,state,skills,sources);
-  else if(state.view==="scenario")body=detailMarkup(selected,state,skills,sources);\n  else if(state.view==="skill")body=skillDetailMarkup(selectedSkill,state,sources);
+  else if(state.view==="scenario")body=detailMarkup(selected,state,skills,sources);
+  else if(state.view==="skill")body=skillDetailMarkup(selectedSkill,state,sources);
   else body=homeMarkup(state);
   const canBack=state.view!=="home";
   root.innerHTML=`<style data-ao-apostolate-style>${apostolateCss()}</style><header class="aoApostolateTop"><button type="button" data-ao-ap-back aria-label="${esc(L(state,canBack?"Back":"Back to Formation",canBack?"Retour":"Retour à la Formation"))}">${icon("ao-ui-back")}</button><div class="aoApostolateTopTitle"><small>APOSTOLATE</small><strong>${esc(L(state,"Apostolate","Apostolat"))}</strong></div><button type="button" data-ao-ap-close aria-label="${esc(L(state,"Close","Fermer"))}">${icon("ao-ui-close")}</button></header><main class="aoApostolateWrap">${body}</main>`;
