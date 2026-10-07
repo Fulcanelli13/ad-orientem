@@ -41,7 +41,7 @@ The exact twelve-target N3 English donor remains preserved in `src/pray/novena-c
 
 French parity means the **actual prayer body**, not merely the title, guide or historical note.
 
-The corpus contains 79 novena-specific source-body units. Every one has non-empty English and French text. Canonical prayers reused by the novenas—Our Father, Hail Mary, Glory Be and the 1962 Loreto litany—also have French canonical records.
+The production V4 corpus contains 91 novena-specific source-body units. Every one has non-empty English and French text. Canonical prayers reused by the novenas—Our Father, Hail Mary, Glory Be and the 1962 Loreto litany—also have French canonical records.
 
 Two French provenance labels are deliberately distinct:
 
