@@ -356,7 +356,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Rites particuliers, lexique particulier"
+        }
+      }
     },
     {
       "id": "l39-b2",
@@ -373,7 +378,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Requiem aeternam"
+        }
+      }
     },
     {
       "id": "l39-b3",
@@ -390,7 +400,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "fidelium defunctorum"
+        }
+      }
     },
     {
       "id": "l39-b4",
@@ -407,7 +422,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ecce lignum Crucis"
+        }
+      }
     },
     {
       "id": "l39-b5",
@@ -424,7 +444,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Popule meus"
+        }
+      }
     },
     {
       "id": "l39-b6",
@@ -439,7 +464,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ne pas normaliser la fréquence"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -599,7 +629,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie requies ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "repos",
+            "croix",
+            "vin",
+            "prêtre"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e2",
@@ -629,7 +672,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est defunctorum ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "génitif pluriel",
+            "nominatif singulier",
+            "accusatif pluriel",
+            "ablatif singulier"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e3",
@@ -659,7 +715,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie Crucis ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "de la Croix",
+            "à la Croix",
+            "des Croix",
+            "avec la Croix"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e4",
@@ -689,7 +758,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi l’imagerie infernale du Requiem ne doit-elle pas modifier la fréquence des Propres ordinaires ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "elle appartient à un registre spécialisé",
+            "ce n’est pas du latin",
+            "elle se trouve dans chaque oraison",
+            "tout cela appartient au vocabulaire fondamental"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e5",
@@ -719,7 +801,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel mode rhétorique domine Popule meus ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "adresse directe et questions",
+            "discours indirect",
+            "prose juridique",
+            "généalogie"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e6",
@@ -747,7 +842,18 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "La vénération de la Croix du Vendredi saint est-elle un Propre ordinaire de Messe ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e7",
@@ -777,7 +883,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau mot signifie « défunt » ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "defunctus",
+            "requies",
+            "crux",
+            "hostia"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e8",
@@ -807,7 +926,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau mot signifie « croix » ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "crux",
+            "requies",
+            "defunctus",
+            "lignum"
+          ]
+        }
+      }
     },
     {
       "id": "l39-e9",
@@ -836,7 +968,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de la leçon 39 ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "Registres spécialisés du Requiem et de la Semaine sainte.",
+            "Propres ordinaires inconnus.",
+            "Ordinaire complet.",
+            "Couronnement sur un texte authentique inconnu du Missel."
+          ]
+        }
+      }
     },
     {
       "id": "l39-e10",
@@ -865,7 +1010,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est la bonne politique de fréquence ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "garder le vocabulaire spécialisé séparé de la fréquence des Propres ordinaires",
+            "traiter tout comme vocabulaire ordinaire à haute fréquence",
+            "ignorer les rites particuliers",
+            "supprimer les mots rares"
+          ]
+        }
+      }
     }
   ],
   "objectives": [
@@ -932,5 +1090,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Requiem et Semaine sainte",
+      "grammarFocus": "Registres liturgiques spécialisés",
+      "readingOutcome": "Lire les textes du Requiem et de la Semaine sainte sans traiter le vocabulaire des rites particuliers comme fréquent dans les Propres ordinaires.",
+      "objectives": [
+        "Lire avec précision les registres du Requiem et du Vendredi saint.",
+        "Apprendre crux, requies et defunctus.",
+        "Séparer la fréquence spécialisée de celle des Propres ordinaires.",
+        "Atteindre le jalon des registres spécialisés."
+      ]
+    }
+  }
 }
