@@ -1,7 +1,7 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.4.0",
-  "releaseBlocker": null,
+  "version": "1.5.0",
+  "releaseBlocker": "MASS_V180_INTERACTION_ICON_PARITY",
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
     "home": {
@@ -24,7 +24,7 @@
       ]
     },
     "mass": {
-      "status": "CERTIFIED",
+      "status": "RECOVERY_REQUIRED",
       "currentOwner": "src/mass",
       "reference": "V1_80_EXECUTABLE_EUCHARISTIC_CARD_DONOR_PLUS_DIRECT_V183_EVIDENCE",
       "mustPreserve": [
@@ -56,7 +56,7 @@
         "navigation became a full-width footer instead of latent boundary controls",
         "Schola presentation became a full-width status strip"
       ],
-      "recoveryPass": "MASS_V180_DEFINITIVE_NATIVE_CERTIFIED",
+      "recoveryPass": "MASS_V180_INTERACTION_ICON_PARITY_OPEN",
       "recoveryTargets": [
         "v1.80 Home / current-section / Mass-preferences primary ribbon",
         "v1.79-v1.80 YOU / GUIDE / PRIEST state ribbon",
@@ -87,7 +87,14 @@
         "fluid focus point is restored to approximately 39 percent",
         "locked mode selector is visually differentiated"
       ],
-      "remainingParityWork": [],
+      "remainingParityWork": [
+        "vertical text scroll and horizontal swipe/card navigation parity",
+        "full Schola translation/speed/pause/progress parity",
+        "curated structured Guide presentation",
+        "rubric distinction/declutter/verbosity pass",
+        "exact v4.6 master icon bank extraction and runtime mapping",
+        "phone and visual acceptance after implementation"
+      ],
       "v2Targets": [
         "Home / mode / current-section / Settings first-ribbon architecture",
         "source-first current-section jump menu",
@@ -303,7 +310,7 @@
       ]
     }
   },
-  "status": "CERTIFIED",
+  "status": "RECOVERY_REQUIRED",
   "crossSurfacePresentationFx": {
     "status": "RECOVERY_IN_PROGRESS",
     "authority": "data/presentation/presentation-fx-parity.v1.json",

@@ -86,6 +86,9 @@ try{
   await page.waitForFunction(previous=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId!==previous,initialCard);
   const afterNext=await cardId();
   assert.notEqual(afterNext,initialCard,"Next touch did not change cards");
+  // v1.80 donor part-transition cinema deliberately owns the transition interval.
+  // Test the next deliberate tap only after that interval has completed.
+  await page.waitForFunction(()=>document.querySelector('[data-role="cinematic"]')?.hidden===true,null,{timeout:5000});
   const backButton=page.locator('[data-reader-nav="previous"]');
   box=await backButton.boundingBox();
   const backHit=await page.evaluate(({x,y})=>{

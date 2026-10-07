@@ -723,7 +723,11 @@ export async function mountNativeReaderPreview({
       }catch{}
     }
 
-    const cueProjection=activeCueId && eventAllowed ? ready.cueState.project(activeCueId) : null;
+    // Exact native cue ownership is independent of the legacy/event compatibility
+    // channel. If a canonical cue is visible in the native reader, its gesture,
+    // response, action, position, voice and posture source may project. The
+    // eventAllowed flag only controls legacy event-state fallback above.
+    const cueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
     const gestureProfile=prepared?.readerPreferences?.gestureProfile ?? "GUIDED_1962";
     const owned=resolveCueOwnedChannels({
       cueControllerSupported:ready.cueState.supported,
@@ -782,8 +786,10 @@ export async function mountNativeReaderPreview({
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
 
+    const priestAction=cueProjection?.priestAction??null;
     const iconKeys=iconKeysForReaderState({
-      priestPosition,posture,gesture,response,priestVoice,schola:scholaProjection.schola
+      priestPosition,posture,gesture,response,priestVoice,
+      priestAction,bell,schola:scholaProjection.schola
     });
     return Object.freeze({
       priestPosition,
@@ -794,7 +800,7 @@ export async function mountNativeReaderPreview({
       cinematic,
       priestVoice,
       schola:scholaProjection.schola,
-      priestAction:cueProjection?.priestAction??null,
+      priestAction,
       sacredMinister:cueProjection?.sacredMinister??null,
       sacredMinisterAdvisory:cueProjection?.sacredMinisterAdvisory??null,
       sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),

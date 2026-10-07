@@ -33,8 +33,8 @@ assert.equal(productionAudit.complete,true,"externalized frozen active icon bank
 assert.deepEqual(productionAudit.missing,[]);
 assert.deepEqual(productionAudit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
 assert.deepEqual(productionAudit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
-assert.match(productionIcons.stand,/assets\/active\/live-posture\/ao-live-stand\.svg$/);
-assert.match(productionIcons.priest_gospel,/assets\/active\/live-actors\/ao-live-priest-gospel-side\.png$/);
+assert.match(productionIcons.stand,/assets\/active\/mass-v46\/stand\.svg$/);
+assert.match(productionIcons.priest_gospel_rich,/assets\/active\/mass-v46\/priest_gospel_rich\.svg$/);
 for(const key of R17_FROZEN_EXCLUDED_ICON_KEYS)assert.equal(productionIcons[key],undefined,
   key+" was reintroduced despite FROZEN_EXCLUDED status");
 
@@ -132,8 +132,8 @@ const bundledChoice=await mountR17Preview({
   nativeMount:({iconResolver})=>({kind:"bundled",stand:iconResolver("stand")}),
 });
 assert.equal(bundledChoice.preview.kind,"bundled");
-assert.match(bundledChoice.preview.stand,/assets\/active\/live-posture\/ao-live-stand\.svg$/,
-  "native reader failed to mount from the bundled frozen bank without host injection");
+assert.match(bundledChoice.preview.stand,/assets\/active\/mass-v46\/stand\.svg$/,
+  "native reader failed to mount from the bundled exact v4.6 donor bank without host injection");
 if(previousHostIcons===undefined)delete globalThis.AO_R17_ICON_ASSETS;
 else globalThis.AO_R17_ICON_ASSETS=previousHostIcons;
 

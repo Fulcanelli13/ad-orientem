@@ -32,6 +32,7 @@ for(const token of [
   'data-channel="priest-voice"',
   'data-channel="bell"',
   'data-channel="schola"',
+  'data-channel="schola-shared"',
   'data-role="cinematic"',
   'data-reader-nav="previous"',
   'data-reader-nav="next"',
@@ -63,7 +64,8 @@ expect(html.includes("padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px
 expect(html.includes("border:0;border-radius:0;background:transparent;box-shadow:none"),"giant card chrome returned to the Mass reader");
 expect(html.includes(".ao-reader-body")===false,"unexpected duplicate reader body presentation layer appeared");
 expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matches the final executable donor");
-expect(html.includes("opacity:.70"),"donor near-focus level no longer matches the final executable donor");
+expect(html.includes("opacity:.84"),"donor forward near-focus level no longer matches the final executable donor");
+expect(html.includes("opacity:.67"),"donor backward near-focus level no longer matches the final executable donor");
 expect(html.includes(".ao-state-kicker{font:700 7px/1"),"YOU / PRIEST state labels lost v1.79-v1.80 typography");
 expect(html.includes('class="ao-guide-copy"><small>GUIDE</small>'),"GUIDE centre cell is missing from the state ribbon");
 expect(html.includes('[data-channel="gesture"][data-active="false"]'),"inactive gesture rail no longer disappears like the final donor");
@@ -111,7 +113,8 @@ expect(second.response===null,"transient response leaked into next moment");
 expect(second.bell===null,"transient bell leaked into next moment");
 expect(second.cinematic===null,"transient cinematic leaked into next moment");
 expect(second.schola?.label==="CREDO","underlying Schola state did not persist");
-expect(second.scholaVisible===false,"shared text did not suppress duplicate Schola lane");
+expect(second.scholaShared===true,"shared Schola text did not acquire the v1.76 rail owner");
+expect(second.scholaVisible===false,"shared text did not suppress duplicate Schola dock");
 expect(second.cardTitle==="Credo","action-only moment replaced the card title");
 expect(second.paragraphs[0].primary==="Credo in unum Deum","action-only moment cleared the prayer card");
 
@@ -122,7 +125,7 @@ const third=normalizeReaderMoment({
   paragraphs:[]
 },second);
 expect(third.guide?.text==="Bow the head","verified Guide rubric was not retained");
-expect(third.schola===null && third.scholaVisible===false,"explicit Schola silence did not clear state");
+expect(third.schola===null && third.scholaVisible===false && third.scholaShared===false,"explicit Schola silence did not clear state");
 
 const translated=normalizeReaderMoment({
   id:"D",

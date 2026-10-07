@@ -1,8 +1,8 @@
 {
   "schema": "ao-mass-v180-donor-parity-v1",
-  "version": "1.2.0",
-  "status": "CERTIFIED",
-  "releaseBlocker": null,
+  "version": "1.3.0",
+  "status": "RECOVERY_REQUIRED",
+  "releaseBlocker": "MASS_V180_INTERACTION_ICON_PARITY",
   "donor": {
     "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
     "sha256": "4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543",
@@ -58,7 +58,33 @@
     "ordinary Sung priest actions now come from a 77-cue source-backed action registry derived from canonical priest events and the v1.80 classifier; canonical v4 action art is exact-mapped where available and unmapped actions fail closed rather than borrowing priest-position art",
     "v1.80 38-card presentation and later v1.83 48-step concept are reconciled at product level without claiming historical C01-C48 identity; the unrecovered Canon boundary remains a non-blocking historical evidence gap"
   ],
-  "open": [],
+  "open": [
+    {
+      "id": "V180_TWO_AXIS_NAVIGATION",
+      "status": "OPEN",
+      "detail": "Vertical scrolling must own prayer text within the active card; horizontal swipe/card motion must own previous/next card movement, with donor edge handoff and latent arrow behavior."
+    },
+    {
+      "id": "V180_SCHOLA_INTERACTION_PARITY",
+      "status": "OPEN",
+      "detail": "Schola translation, speed ladder, pause/resume, progress/page state and mobile hit geometry require final donor-parity certification."
+    },
+    {
+      "id": "V179_GUIDE_CURATED_PRESENTATION",
+      "status": "OPEN",
+      "detail": "Guide must use the v1.79 structured sheet with curated sections/headings/source links instead of a raw long-text dump."
+    },
+    {
+      "id": "V180_RUBRIC_EFFICIENCY",
+      "status": "OPEN",
+      "detail": "Rubrics must be visually distinct from prayer text, suppress state duplicates already owned by rails, and avoid unnecessary verbosity."
+    },
+    {
+      "id": "V46_MASTER_ICON_PARITY",
+      "status": "OPEN",
+      "detail": "Current repository icon subset must be replaced/wired to the exact v4.6 master bank embedded in the v1.80 donor."
+    }
+  ],
   "prohibitedRegressions": [
     "browser-width MISSAL/SIMPLE/LIVE tabs in the primary ribbon",
     "PRIEST/current/ACTION as the persistent second ribbon",
@@ -70,7 +96,7 @@
     "claiming current 48-step projection is the recovered historical v1.83 C01-C48 map"
   ],
   "reconciliationLedger": "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
-  "releaseRule": "Certified on the definitive native reader after static, real-touch phone, app-shell phone and donor-derived visual acceptance all passed on the same implementation line. Historical v1.83 card identity remains explicitly unclaimed.",
+  "releaseRule": "Mass presentation is not certified until the v1.80 two-axis navigation, full Schola controls, v1.79 Guide treatment, rubric decluttering and v4.6 icon-bank parity pass phone and visual acceptance.",
   "certification": {
     "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
     "r17MassConvergenceRun": 37563706320,
