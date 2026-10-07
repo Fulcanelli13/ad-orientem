@@ -2,6 +2,17 @@ import { directoryGeoLabel, isMapPublishableGeo } from "./geo-provenance.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
+const AFFILIATION_ORDER=Object.freeze([
+  "DIOCESAN","FSSP","ICKSP","IBP","AASJMV","FSVF","CANONS_ST_JOHN_CANTIUS","SMMD","SSPX","CMRI","RCI","SSPV_CSPV","OTHER","INDEPENDENT","UNKNOWN"
+]);
+function affiliationIds(records){
+  const found=new Set(arr(records).flatMap(record=>arr(record?.ministries).map(m=>m?.community_id)).filter(Boolean));
+  return [...found].sort((a,b)=>{
+    const ai=AFFILIATION_ORDER.indexOf(a),bi=AFFILIATION_ORDER.indexOf(b);
+    if(ai!==-1||bi!==-1)return (ai===-1?999:ai)-(bi===-1?999:bi);
+    return String(a).localeCompare(String(b));
+  });
+}
 
 function communityLabel(id,communities){
   const match=communities.find(x=>x.id===id);
@@ -107,7 +118,7 @@ export function renderFindToString(vm){
   html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   html+='<div class="aoFindFilters"><div>'+pill("day","ANY",L(vm.language,"Any day","Tous les jours"),f.day||"ANY")+pill("day","TODAY",L(vm.language,"Today","Aujourd’hui"),f.day||"ANY")+pill("day","SUNDAY",L(vm.language,"Sunday","Dimanche"),f.day||"ANY")+'</div>';
   html+='<div class="aoFindAffiliations">';
-  for(const id of ["DIOCESAN","FSSP","ICKSP","SSPX","IBP","OTHER"])html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
+  for(const id of affiliationIds(vm.records))html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
   html+='</div><details><summary>'+esc(L(vm.language,"Advanced filters","Filtres avancés"))+'</summary><div>';
   html+=pill("unaCum","ANY",L(vm.language,"Any communion status","Tout statut"),f.unaCum||"ANY")+pill("unaCum","YES","Una cum",f.unaCum||"ANY")+pill("unaCum","NO","Non-una cum",f.unaCum||"ANY")+pill("unaCum","UNKNOWN",L(vm.language,"Unknown","Inconnu"),f.unaCum||"ANY");
   html+='</div><div>'+pill("liturgy","ANY",L(vm.language,"Any liturgy","Toute liturgie"),f.liturgy||"ANY")+pill("liturgy","1962","1962",f.liturgy||"ANY")+pill("liturgy","PRE_1955","Pre-1955",f.liturgy||"ANY")+pill("liturgy","DOMINICAN","Dominican",f.liturgy||"ANY")+'</div><div>';
