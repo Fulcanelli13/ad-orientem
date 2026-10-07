@@ -84,8 +84,8 @@ for(const snapshot of researchSnapshots){
   }
   if(snapshot.provider==="ICKSP_FEDERATED_V13"){
     assert.ok(expanded.ministries.every(m=>m.community_id==="ICKSP"&&m.liturgical_usage.books==="1962"),"ICKSP supplement profile drifted");
-    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,35,"ICKSP strict current-Mass count drifted");
-    assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,63,"ICKSP research-assertion count drifted");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,84,"ICKSP strict current-Mass count drifted");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,14,"ICKSP research-assertion count drifted");
   }
 }
 assert.equal(researchVenueCount,348,"v1.9 research projection count drift");
@@ -96,15 +96,24 @@ assert.equal(ickspReconciliation.overlap_candidate_ids.length,27);
 assert.equal(ickspReconciliation.missing_candidate_count,98);
 assert.deepEqual(ickspReconciliation.publication_gate,{
   live_runtime_records:27,
-  live_current_mass_records:25,
+  live_current_mass_records:26,
   federated_supplement_records:98,
-  federated_current_mass_records:35,
-  publishable_current_mass_total:60,
+  federated_current_mass_records:84,
+  publishable_current_mass_total:110,
+  nonpublishable_total:15,
   provider_presence_only_total:5,
-  mass_eligibility_pending_total:60,
+  public_mass_suspended_total:1,
+  restricted_or_special_access_total:2,
+  seasonal_or_occasional_total:5,
+  mass_eligibility_pending_total:2,
 });
+assert.equal(ickspReconciliation.newly_promoted_candidate_ids.length,49);
+assert.deepEqual(ickspReconciliation.live_recovered_mass_candidate_ids,["ICKSP-STG-055"]);
 assert.equal(ickspReconciliation.provider_presence_only_candidate_ids.length,5);
-assert.equal(ickspReconciliation.conditional_mass_evidence_not_promoted_ids.length,7);
+assert.equal(ickspReconciliation.public_mass_suspended_candidate_ids.length,1);
+assert.equal(ickspReconciliation.restricted_or_special_access_candidate_ids.length,2);
+assert.equal(ickspReconciliation.conditional_mass_evidence_not_promoted_ids.length,5);
+assert.equal(ickspReconciliation.no_published_current_times_candidate_ids.length,2);
 
 const ickspFederated=researchSnapshots.find(snapshot=>snapshot.provider==="ICKSP_FEDERATED_V13");
 const expandedIcksp=expandResearchProviderSnapshot(ickspFederated);
@@ -123,6 +132,10 @@ assert.equal(publishableDirectoryRecords([{
   venue:expandedIcksp.venues[massIndex],
   ministries:[{...expandedIcksp.ministries[massIndex],schedules:[]}],
 }]).length,0,"ICKSP provider-presence row without a Mass schedule leaked into Find");
+const generatedIckspSchedules=readJson("../data/directory/generated/icksp/schedules.v1.json");
+assert.equal(generatedIckspSchedules.records.length,26,"ICKSP live schedule count drifted");
+assert.ok(generatedIckspSchedules.records.some(schedule=>/reno-nv-89502/.test(schedule.schedule_id)),"Reno current Mass schedule missing");
+assert.ok(!generatedIckspSchedules.records.some(schedule=>/christ-the-king-sovereign-priest/.test(schedule.schedule_id)),"Chicago suspended public Mass leaked into live schedules");
 
 
 assert.equal(contract.schema, "DIRECTORY_SOT_V1");
