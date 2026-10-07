@@ -64,9 +64,10 @@ export function publishableDirectoryRecords(records){
   return safeArray(records).filter(record=>auditVenue(record?.venue).length===0);
 }
 export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PROVIDERS}={}){
-  const [statusData,communityData]=await Promise.all([
+  const [statusData,communityData,coverageData]=await Promise.all([
     fetchJson(moduleUrl("../../data/directory/status-assertions.v1.json"),{fetchImpl,optional:true}),
     fetchJson(moduleUrl("../../data/directory/communities.v1.json"),{fetchImpl,optional:true}),
+    fetchJson(moduleUrl("../../data/directory/provider-coverage.v1.json"),{fetchImpl,optional:true}),
   ]);
   const communityProfiles=safeArray(statusData?.communityProfiles);
   const loaded=[],unavailable=[];
@@ -101,6 +102,7 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     if(!id||seen.has(id))return false;
     seen.add(id);return true;
   });
+  const knownCoverageGaps=safeArray(coverageData?.providers).filter(x=>x?.blocks_complete);
   return Object.freeze({
     records,
     skippedInvalidRecords:joined.length-records.length,
@@ -109,7 +111,9 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     loadedProviders:loaded,
     unavailableProviders:unavailable,
     staticResearchIssues:safeArray(staticResearch.issues),
-    complete:unavailable.length===0,
+    providerCoverage:coverageData??null,
+    knownCoverageGaps,
+    complete:unavailable.length===0&&knownCoverageGaps.length===0,
   });
 }
 function haystack(record){
