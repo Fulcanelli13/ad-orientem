@@ -1,8 +1,8 @@
 {
   "schema": "ao-mass-v180-donor-parity-v1",
-  "version": "1.3.0",
-  "status": "RECOVERY_REQUIRED",
-  "releaseBlocker": "MASS_V180_INTERACTION_ICON_PARITY",
+  "version": "1.4.0",
+  "status": "CERTIFIED",
+  "releaseBlocker": null,
   "donor": {
     "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
     "sha256": "4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543",
@@ -56,35 +56,14 @@
     "Schola slower/faster/pause controls use the donor speed ladder [0.25, 0.35, 0.45, 0.60, 0.80, 1.00], persist ao-schola-speed, and pause while translation is open",
     "exact Gloria/Credo ritual words are decorated only from the source-backed gesture anchorLat on the active canonical cue; no prayer-text guessing is used",
     "ordinary Sung priest actions now come from a 77-cue source-backed action registry derived from canonical priest events and the v1.80 classifier; canonical v4 action art is exact-mapped where available and unmapped actions fail closed rather than borrowing priest-position art",
-    "v1.80 38-card presentation and later v1.83 48-step concept are reconciled at product level without claiming historical C01-C48 identity; the unrecovered Canon boundary remains a non-blocking historical evidence gap"
+    "v1.80 38-card presentation and later v1.83 48-step concept are reconciled at product level without claiming historical C01-C48 identity; the unrecovered Canon boundary remains a non-blocking historical evidence gap",
+    "v1.80 two-axis navigation is phone-certified: native vertical prayer scrolling remains pan-y, deliberate horizontal swipes own previous/next card movement, and wheel continuation hands off only at a completed reading edge",
+    "v1.80 Schola interaction is visual/phone-certified: page and progress state, persisted speed ladder, pause/resume, translation pause lifecycle, hide/show and touch resize all remain active",
+    "v1.79 Guide presentation is certified as a structured sheet with curated headings, short summary, historical/prayer sections and source links rather than a raw long-text dump",
+    "in-card rubric presentation is certified concise and state-aware: source rubrics are short ceremonial cues, posture-only duplicates are suppressed, and longer explanatory material belongs to the Guide",
+    "the complete 67-entry AO_V46_ASSETS Mass bank is separately manifest-certified, exact donor payload wrappers are wired at runtime, plain position pictograms remain position-only, and rich action masters remain action-only"
   ],
-  "open": [
-    {
-      "id": "V180_TWO_AXIS_NAVIGATION",
-      "status": "OPEN",
-      "detail": "Vertical scrolling must own prayer text within the active card; horizontal swipe/card motion must own previous/next card movement, with donor edge handoff and latent arrow behavior."
-    },
-    {
-      "id": "V180_SCHOLA_INTERACTION_PARITY",
-      "status": "OPEN",
-      "detail": "Schola translation, speed ladder, pause/resume, progress/page state and mobile hit geometry require final donor-parity certification."
-    },
-    {
-      "id": "V179_GUIDE_CURATED_PRESENTATION",
-      "status": "OPEN",
-      "detail": "Guide must use the v1.79 structured sheet with curated sections/headings/source links instead of a raw long-text dump."
-    },
-    {
-      "id": "V180_RUBRIC_EFFICIENCY",
-      "status": "OPEN",
-      "detail": "Rubrics must be visually distinct from prayer text, suppress state duplicates already owned by rails, and avoid unnecessary verbosity."
-    },
-    {
-      "id": "V46_MASTER_ICON_PARITY",
-      "status": "OPEN",
-      "detail": "Current repository icon subset must be replaced/wired to the exact v4.6 master bank embedded in the v1.80 donor."
-    }
-  ],
+  "open": [],
   "prohibitedRegressions": [
     "browser-width MISSAL/SIMPLE/LIVE tabs in the primary ribbon",
     "PRIEST/current/ACTION as the persistent second ribbon",
@@ -96,17 +75,71 @@
     "claiming current 48-step projection is the recovered historical v1.83 C01-C48 map"
   ],
   "reconciliationLedger": "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
-  "releaseRule": "Mass presentation is not certified until the v1.80 two-axis navigation, full Schola controls, v1.79 Guide treatment, rubric decluttering and v4.6 icon-bank parity pass phone and visual acceptance.",
+  "releaseRule": "Mass v1.80 presentation parity is certified only while static donor contracts, real-touch Mass phone acceptance, app-shell phone acceptance and dedicated Mass visual acceptance remain green. The unrecovered historical v1.83 C01-C48 identity remains explicitly unclaimed.",
   "certification": {
-    "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
-    "r17MassConvergenceRun": 37563706320,
-    "appConvergenceRun": 37563706129,
-    "visualAcceptanceRun": 37563706157,
+    "certifiedHead": "1116cf525e603c995df8ce767153a0ddb2db5e97",
+    "r17MassConvergenceRun": 37591506346,
+    "appConvergenceRun": 37591506503,
+    "visualAcceptanceRun": 37591506362,
     "gates": {
       "static": "PASS",
       "massPhone": "PASS",
       "appShellPhone": "PASS",
       "visualPhoneAndWide": "PASS"
     }
-  }
+  },
+  "certified": [
+    {
+      "id": "V180_TWO_AXIS_NAVIGATION",
+      "status": "CERTIFIED",
+      "evidence": [
+        "src/mass/reader-dom.js",
+        "tests/reader-phone-acceptance.mjs",
+        "R17 Mass convergence workflow 37591506346"
+      ],
+      "detail": "Real-touch 390x844 acceptance now exercises vertical prayer scrolling and deliberate horizontal swipe navigation in both directions. Donor thresholds remain 70 px / 1.25 axis ratio with edge-wheel handoff."
+    },
+    {
+      "id": "V180_SCHOLA_INTERACTION_PARITY",
+      "status": "CERTIFIED",
+      "evidence": [
+        "src/mass/reader-dom.js",
+        "tests/mass-visual-acceptance.mjs",
+        "Visual acceptance workflow 37591506362"
+      ],
+      "detail": "Functional visual acceptance covers Schola page/progress state, 0.25-1.00 speed ladder with persistence, pause/resume, translation pause/resume, hide/show, resize and non-overlapping mobile hit geometry."
+    },
+    {
+      "id": "V179_GUIDE_CURATED_PRESENTATION",
+      "status": "CERTIFIED",
+      "evidence": [
+        "src/mass/reader-dom.js",
+        "tests/mass-visual-acceptance.mjs",
+        "Visual acceptance workflow 37591506362"
+      ],
+      "detail": "The second-ribbon Guide opens the recovered v1.79 structured sheet and verifies curated headings, short summary, source line and source links."
+    },
+    {
+      "id": "V180_RUBRIC_EFFICIENCY",
+      "status": "CERTIFIED",
+      "evidence": [
+        "src/mass/reader-dom.js",
+        "data/presentation/reader-text-sung.v1.json",
+        "tests/mass-v180-donor-parity.mjs"
+      ],
+      "detail": "The Sung source has 15 in-card ceremonial rubrics with a maximum rendered source length of 85 characters; posture-only state duplicates are classified out of LIVE while meaningful ceremonial rubrics remain visible."
+    },
+    {
+      "id": "V46_MASTER_ICON_PARITY",
+      "status": "CERTIFIED",
+      "evidence": [
+        "assets/active/mass-v46/manifest.v1.json",
+        "src/mass/reader-icon-bank.js",
+        "src/mass/reader-icons.js",
+        "tests/asset-bank-contract.mjs",
+        "tests/mass-visual-acceptance.mjs"
+      ],
+      "detail": "All 67 recovered v4.6 donor masters are present under a separate Mass manifest; runtime mapping is complete and Host elevation plus bell art are visually asserted against exact v4.6 assets."
+    }
+  ]
 }
