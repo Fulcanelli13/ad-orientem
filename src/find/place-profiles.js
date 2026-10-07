@@ -69,7 +69,7 @@ function itemRef(item){
 
 function exactTlmItems(dataset,projection,placeId){
   const links=arr(dataset?.geography?.directoryPlaceLinks)
-    .filter(link=>link?.place_id===placeId&&["LOCATED_AT","COLOCATED_WITH","SAME_COMPLEX"].includes(link?.relationship));
+    .filter(link=>link?.place_id===placeId&&link?.relationship==="LOCATED_AT");
   if(!links.length)return Object.freeze([]);
   const venueIds=new Set(links.map(link=>link?.venue_id).filter(Boolean));
   return Object.freeze(arr(projection?.byLens?.tlm)
