@@ -84,12 +84,7 @@ function extractPostalCode(value,countryCode){
   return text.match(/\b\d{4,6}\b/g)?.at(-1)??null;
 }
 function escapeRegExp(value){
-  return String(value??"").replace(/[.*+?^$(){}|[\]\\]/g,"\\export function buildDirectoryGeocodeQuery(venue){
-  const name=String(venue?.name?.official??"").trim();
-  const address=buildDirectoryAddressOnlyQuery(venue);
-  return [name,address].filter(Boolean).join(", ").slice(0,280);
-}
-");
+  return String(value??"").replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&");
 }
 function stripPostal(value,postal){
   if(!postal)return String(value??"").trim();
