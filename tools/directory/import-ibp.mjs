@@ -71,11 +71,11 @@ export function parseIbpDetail(html,candidate){
   const titleMatch=String(html).match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const title=titleMatch?stripTags(titleMatch[1]):candidate.label;
   const address=addressBlock(lines);
-  const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:candidate.url});
+  const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:candidate.url,expectedText:[title,address,candidate.city].filter(Boolean).join(" ")});
   return {
     title,address,city:candidate.city??null,countryCode:candidate.countryCode??countryCodeFromText(address),diocese:candidate.diocese,detailUrl:candidate.url,
     emails:emailAddresses(text),phones:phoneCandidates(text),massRaw:massBlock(lines),detailText:text,
-    officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous
+    officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
   };
 }
 async function concurrentMap(items,concurrency,mapper){
@@ -168,6 +168,7 @@ export async function runIbpImport({out="data/directory/generated/ibp",concurren
       country_code_known:records.filter(r=>r.countryCode).length,
       official_geo_recovered:records.filter(r=>r.officialGeo).length,
       official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length,
+      official_geo_rejected_conflict:records.filter(r=>r.officialGeoRejected).length,
       source_count_discrepancy:witness.discrepancy
     }
   });
