@@ -1,6 +1,6 @@
 {
   "version": "TLM_OBJECTIONS_051_065_RECONCILED_V1",
-  "status": "BILINGUAL_COMPLETE_EDITORIAL_PROVENANCE_RECONCILED_NOT_PUBLISHED",
+  "status": "BILINGUAL_DRAFT_CRITICAL_1967_1970_SOURCES_DISTINGUISHED_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_transformation_notice": "This pack preserves all 15 earlier titles and principal claims, but the substantive passages were normalized/rephrased from chat draft, not exact verbatim migration. Consult previous in-chat TLM051–065 for complete draft language.",
@@ -79,16 +79,22 @@
       "type": "PAPAL_PRIMARY"
     },
     {
-      "id": "GIM70",
-      "title": "General Instruction, amendments and 1970 text",
-      "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049",
-      "type": "DICASTERY_PRIMARY_REPRINT"
-    },
-    {
       "id": "NOT67",
       "title": "Consilium, Notitiae, vol. 3 no. 8 (1967), pp. 357 and 363 — official first Synod of Bishops votes and observations",
       "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-035-1967.pdf",
       "type": "CONTEMPORANEOUS_CONSILIUM_PRIMARY"
+    },
+    {
+      "id": "IGMR69_ORIGINAL",
+      "title": "1969 Institutio Generalis Missalis Romani (original n. 7) with 1970 changes shown; contemporary text reproduced in French by La Porte Latine",
+      "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969",
+      "type": "HISTORICAL_PRIMARY_TEXT_REPRINT_BY_SSPX_EDITORIAL_FR"
+    },
+    {
+      "id": "GIRM75",
+      "title": "1975 General Instruction reprint, including 1970 promulgation chronology; later edition, not 1969 original",
+      "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049",
+      "type": "DICASTERY_PRIMARY_REPRINT_1975_AND_CHRONOLOGY"
     }
   ],
   "records": [
@@ -321,13 +327,21 @@
         },
         {
           "role": "assessment",
-          "text": "The 1967 vote concerned an experimental form rather than the final typical edition; it demonstrates significant reservations and cannot be used as a final canonical judgment on the promulgated Missal.",
+          "text": "The vote concerned a provisional Missa normativa rather than the final 1970 typical edition. The same 1967 Notitiae record documents bishops' specific reservations: some wanted more signs of the cross, genuflections and silent prayers, others judged the Offertory excessively reduced, and some requested retaining Orate, fratres. These are recorded contemporary criticisms of proposed liturgical choices, not proof that the finally promulgated rite was doctrinally invalid.",
           "source_ids": [
-            "NOT67",
-            "CHIRON"
+            "NOT67"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Le vote de 1967 portait sur une forme expérimentale et non sur l’édition typique définitive. Il révèle des réserves importantes, mais ne constitue pas un jugement canonique final sur le missel promulgué."
+          "source_review": "PRIMARY_CONTEMPORARY_OBJECTIONS_ANCHORED_FINAL_EDITORIAL_REVIEW_PENDING",
+          "text_fr": "Le vote concernait une Missa normativa provisoire, non l'édition typique définitive de 1970. Le même compte rendu des Notitiae de 1967 rapporte des réserves concrètes d'évêques : certains demandaient davantage de signes de croix, de génuflexions et de prières dites à voix basse ; d'autres jugeaient l'offertoire trop réduit et souhaitaient conserver l'Orate, fratres. Il s'agit de critiques contemporaines documentées de choix liturgiques proposés, non d'une preuve de l'invalidité doctrinale du rite finalement promulgué.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "The 1967 vote concerned an experimental form rather than the final typical edition; it demonstrates significant reservations and cannot be used as a final canonical judgment on the promulgated Missal.",
+              "original_text_fr": "Le vote de 1967 portait sur une forme expérimentale et non sur l’édition typique définitive. Il révèle des réserves importantes, mais ne constitue pas un jugement canonique final sur le missel promulgué.",
+              "reason": "Added the contemporary Synod's concrete objections rather than reducing its objections to a vote total."
+            }
+          ],
+          "evidence_locator": "Notitiae 35 (1967), pp. 357–359 (scan pp. 11–13), general Missa normativa ballot and episcopal modorum"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -364,7 +378,8 @@
           "text": "A criticism of a provisional version must identify what carried forward into the final text. Conversely, later revisions do not make earlier episcopal reservations historically irrelevant.",
           "source_ids": [
             "CHIRON",
-            "GIM70",
+            "GIRM75",
+            "IGMR69_ORIGINAL",
             "NOT67"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
@@ -396,21 +411,25 @@
           "role": "identified_objection",
           "text": "The 1969 Short Critical Study criticized the first wording of paragraph 7 for failing to state essential Eucharistic doctrines with sufficient explicitness, including the sacrificial nature of the Mass and Christ's substantial presence.",
           "source_ids": [
-            "OTT69"
+            "OTT69",
+            "IGMR69_ORIGINAL"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "La *Brève étude critique du nouvel Ordo Missae*, publiée en 1969, reprochait à la première rédaction du paragraphe 7 de ne pas exprimer assez explicitement des doctrines eucharistiques essentielles, notamment le caractère sacrificiel de la messe et la présence substantielle du Christ."
+          "text_fr": "La *Brève étude critique du nouvel Ordo Missae*, publiée en 1969, reprochait à la première rédaction du paragraphe 7 de ne pas exprimer assez explicitement des doctrines eucharistiques essentielles, notamment le caractère sacrificiel de la messe et la présence substantielle du Christ.",
+          "evidence_locator": "1969 Institutio generalis no. 7 as reproduced, compared with 1970 amendments"
         },
         {
           "role": "answer",
           "text": "The reform's original general introduction was later supplemented and corrected, while Paul VI's apostolic constitution already referred to the Eucharistic Sacrifice. A doctrinally incomplete explanatory sentence does not alone establish that the promulgated rite rejects Catholic Eucharistic doctrine.",
           "source_ids": [
-            "GIM70",
+            "GIRM75",
+            "IGMR69_ORIGINAL",
             "MR69",
             "CHIRON"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "L’introduction générale initiale fut ensuite complétée et corrigée, tandis que la constitution apostolique de Paul VI parlait déjà du sacrifice eucharistique. Le caractère doctrinalement incomplet d’une phrase explicative ne démontre pas, à lui seul, que le rite promulgué rejette la doctrine eucharistique catholique."
+          "text_fr": "L’introduction générale initiale fut ensuite complétée et corrigée, tandis que la constitution apostolique de Paul VI parlait déjà du sacrifice eucharistique. Le caractère doctrinalement incomplet d’une phrase explicative ne démontre pas, à lui seul, que le rite promulgué rejette la doctrine eucharistique catholique.",
+          "evidence_locator": "Original 1969 n. 7; 1970 doctrinal preamble and revised no. 7; 1969 Missale Romanum"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -449,11 +468,13 @@
           "text": "An argument that a rite expresses sacrificial doctrine less clearly does not automatically entail that the rite is invalid or formally heretical. The later amendments and the reform's own explicit sacrificial language must be weighed in any evaluation.",
           "source_ids": [
             "MR69",
-            "GIM70",
+            "GIRM75",
+            "IGMR69_ORIGINAL",
             "CHIRON"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Soutenir qu’un rite exprime moins clairement la doctrine du sacrifice ne revient pas automatiquement à démontrer son invalidité ou une hérésie formelle. Les corrections ultérieures et le langage sacrificiel expressément présent dans la réforme doivent aussi entrer dans l’examen."
+          "text_fr": "Soutenir qu’un rite exprime moins clairement la doctrine du sacrifice ne revient pas automatiquement à démontrer son invalidité ou une hérésie formelle. Les corrections ultérieures et le langage sacrificiel expressément présent dans la réforme doivent aussi entrer dans l’examen.",
+          "evidence_locator": "1969 Short Critical Study compared with 1970 revisions and Paul VI's apostolic constitution"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -480,11 +501,13 @@
           "role": "answer",
           "text": "The General Instruction was amended in 1970, including the introduction of an explicitly doctrinal preamble and clearer Eucharistic language, following the controversy surrounding the initial edition.",
           "source_ids": [
-            "GIM70",
+            "GIRM75",
+            "IGMR69_ORIGINAL",
             "CHIRON"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "La Présentation générale du Missel romain fut modifiée en 1970, notamment par l’ajout d’un préambule doctrinal explicite et par la clarification du langage eucharistique, après la controverse suscitée par la première édition."
+          "text_fr": "La Présentation générale du Missel romain fut modifiée en 1970, notamment par l’ajout d’un préambule doctrinal explicite et par la clarification du langage eucharistique, après la controverse suscitée par la première édition.",
+          "evidence_locator": "1970 revised no. 7 and Preface compared with the 1969 original; chronology corroborated by 1975 GIRM reprint"
         },
         {
           "role": "critical_assessment",
@@ -721,5 +744,19 @@
     ],
     "no_new_navigation_dossiers": true,
     "original_vote_count_verified_in_primary": "NOT67, p. 363, vote I"
+  },
+  "source_audit_20261008": {
+    "reviewed_cases": [
+      "TLM056",
+      "TLM058",
+      "TLM059",
+      "TLM060"
+    ],
+    "verified_primary_1967_vote": "Notitiae 35 (1967) p. 363 records 71 placet, 43 non placet, 62 placet iuxta modum, 4 abstentions",
+    "contemporaneous_objections": "Notitiae 35 (1967) pp. 357–359 preserves specific bishops' proposals including retaining Offertory formulas, gestures and Orate fratres",
+    "edition_control": "1969 GIRM n.7 distinguished from 1970 revisions, from later 1975 reprint and from 2002/2003 GIRM",
+    "source_provenance_warning": "La Porte Latine provides an SSPX-hosted transcription of historic text; its editorial conclusions are distinct from the quoted document.",
+    "human_theological_approval": false,
+    "all_30_paragraphs_finally_approved": false
   }
 }
