@@ -342,6 +342,16 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   return Object.freeze({version:VERSION,open,close,openModule,paint,status,dispose});
 }
 
+function maybeOpenFormationResearchPreview(win){
+  // Explicit editorial QA URL only. Never register public Formation navigation.
+  if(!String(win?.location?.search||"").includes("aoFormationResearchPreview=1"))return;
+  void import("./formation-research-preview.js").then(mod=>{
+    const preview=mod.installFormationResearchPreview(win);
+    if(win?.document?.body)preview.open();
+    else win?.document?.addEventListener?.("DOMContentLoaded",()=>preview.open(),{once:true});
+  }).catch(error=>{try{win?.console?.error?.("Formation research preview unavailable",error);}catch{}});
+}
+
 export function installLearnBrowserOwner(win=globalThis){
   if(win?.AO_LEARN_APP_V1)return win.AO_LEARN_APP_V1;
   installTraditionalLearnModules(win);
@@ -352,6 +362,7 @@ export function installLearnBrowserOwner(win=globalThis){
   installSpiritualLifeModule(win);
   const api=createLearnOwner(win);
   win.AO_LEARN_APP_V1=api;
+  maybeOpenFormationResearchPreview(win);
   return api;
 }
 
