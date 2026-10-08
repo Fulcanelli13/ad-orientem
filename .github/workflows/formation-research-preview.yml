@@ -5,6 +5,8 @@ on:
       - 'src/learn/formation-research-preview.js'
       - 'src/learn/formation-recovery-review.js'
       - 'tests/formation-recovery-review.mjs'
+      - 'tests/formation-123-claim-gates.mjs'
+      - 'data/learn/formation-123-source-claim-gates-2026-10-09.v1.json'
       - 'src/learn/formation-research-preview-data.js'
       - 'src/learn/browser-entry.js'
       - 'tests/formation-research-preview.mjs'
@@ -48,6 +50,8 @@ jobs:
         run: node tests/formation-recovery-review.mjs
       - name: Bulk-validate all 21 unresolved controversy source maps
         run: node tests/contemporary-controversies-21-source-scaffold.mjs
+      - name: Verify all 123 source-claim audit gates without claiming certification
+        run: node tests/formation-123-claim-gates.mjs
       - name: Check Traditional Mass objections and canonical ownership
         run: node tests/traditional-mass-objections-reconciliation.mjs
       - name: Check 30 BAQ/SDV sources and opponent attribution

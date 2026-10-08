@@ -1,0 +1,2735 @@
+{
+  "version": "FORMATION_ALL_123_SOURCE_CLAIM_QA_GATES_V1",
+  "date": "2026-10-09",
+  "status": "BULK_SOURCE_POINTER_AND_BILINGUAL_PARITY_AUDIT_WITH_PARTIAL_PRIMARY_TEXT_SPOT_CHECKS_NO_RELEASE",
+  "method": [
+    "All 123 existing research entries are enumerated from the canonical 102-research ledger and 21 new controversy drafts; no additional dossier or published route is created.",
+    "All 622 source-bearing blocks and 1,508 source-ID occurrences remain represented. URL format and source-ID resolution are NOT the same as quote/context certification or expert theological review.",
+    "A spot check marks only the identified primary-source passage as directly examined; no record is certified completely merely because one source passage was checked.",
+    "Source links on a named critic's own site establish the argument the critic actually advances, not the truth of factual or doctrinal assertions.",
+    "Draft EN/FR presence does not imply native-French copyediting, original-language collation or publication permission.",
+    "A later same-day tranche compared eight additional primary passages, including original 2023 five-cardinal dubia signatures: each spot check remains strictly scoped and gives no blanket record-level approval."
+  ],
+  "metrics": {
+    "records": 123,
+    "historical_records": 102,
+    "new_records": 21,
+    "paragraphs": 622,
+    "french_draft_paragraphs": 622,
+    "source_link_occurrences": 1508,
+    "records_with_at_least_one_original_text_spot_check": 17,
+    "original_text_passages_spot_checked": 18,
+    "fully_independently_certified_records": 0,
+    "human_editorially_approved_records": 0,
+    "published_records": 0
+  },
+  "quality_gates": {
+    "structural_source_pointer_integrity": "PASS_IN_CURRENT_REPOSITORY_SNAPSHOT",
+    "bilingual_draft_parity": "PASS_IN_CURRENT_REPOSITORY_SNAPSHOT",
+    "external_source_retrievability_of_every_reference": "NOT_CHECKED",
+    "every_substantive_paragraph_claim_matched_to_exact_original_passage": "NOT_DONE",
+    "opponent_original_text_collation_of_all_cases": "NOT_DONE",
+    "magisterial_rank_and_canonical_effect_signed_off": "NOT_DONE",
+    "native_french_human_review": "NOT_DONE",
+    "human_theological_editorial_approval": "NOT_DONE",
+    "public_release": false
+  },
+  "entries": [
+    {
+      "id": "BAQ-01",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-004",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "FATIMA00",
+        "FATIMAFR",
+        "FATIMASSEDEV"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "FATIMA00",
+          "locator": "CDF (2000), introduction: one reproduced manuscript; interview of Sister Lucia, 27 April 2000",
+          "scope": "Reports official dossier and testimony; cannot independently exclude every alleged additional manuscript"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-02",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-004",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "FATIMA00",
+        "FATIMAFR",
+        "FATIMASSEDEV"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-03",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-012",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 11,
+      "distinct_source_ids": [
+        "DIVINO",
+        "JEREMIAH-DSS",
+        "JUSTIN-TRY",
+        "JUSTIN71",
+        "QUMRAN"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "JUSTIN71",
+          "locator": "Justin, Dialogue with Trypho 71–73, particularly chapter 72, some synagogue copies retain Jeremiah",
+          "scope": "Original early-Christian accusation and internal admission, not independent proof of all manuscript allegations"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-04",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-012",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "DIVINO",
+        "JEREMIAH-DSS",
+        "QUMRAN"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-05",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-013",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 13,
+      "distinct_source_ids": [
+        "AUG-CANON",
+        "CCC120",
+        "JEROME-CANON",
+        "QUMRAN",
+        "TRENTIV"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-06",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-046",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 6,
+      "french_draft_blocks": 6,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "APOCRYPHA",
+        "ATHANASIUS-ARIANS",
+        "CORPUSBIRDS",
+        "NICEA",
+        "QURAN-349"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-07",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-046",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 6,
+      "french_draft_blocks": 6,
+      "source_link_occurrences": 14,
+      "distinct_source_ids": [
+        "APOCRYPHA",
+        "CCC120",
+        "CORPUSPALM",
+        "PSMAT20",
+        "QURAN-1923"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-08",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-046",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "MUSLIM-2135",
+        "QURAN1928"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-09",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-010",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 11,
+      "distinct_source_ids": [
+        "ATHANASIUS-ARIANS",
+        "HEBREWS-1",
+        "JW-JOHN",
+        "JWBELIEFS",
+        "NICEA"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-10",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-008",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "ATHANASIUS-ARIANS",
+        "HEBREWS-1",
+        "JW-JOHN",
+        "JW-MICHAEL",
+        "NICEA"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-11",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-013",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 11,
+      "distinct_source_ids": [
+        "AUG-CANON",
+        "CCC120",
+        "COE-ARTICLE-VI",
+        "TRENTIV"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-12",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-013",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "AUG-CANON",
+        "COE-ARTICLE-VI",
+        "JEROME-CANON",
+        "TRENTIV"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-13",
+      "bank": "BAQ",
+      "canonical_owner": "CR-ECC-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 6,
+      "french_draft_blocks": 6,
+      "source_link_occurrences": 13,
+      "distinct_source_ids": [
+        "ANTIPOPES",
+        "PASTORET",
+        "PIUS-ELECT45",
+        "SCHISM-1913"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-14",
+      "bank": "BAQ",
+      "canonical_owner": "CR-ECC-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 8,
+      "french_draft_blocks": 8,
+      "source_link_occurrences": 20,
+      "distinct_source_ids": [
+        "BELL-II30",
+        "BELL-IV67",
+        "LEO",
+        "MYSTICI",
+        "PASTORET",
+        "SALZA-REPLY",
+        "SEDEVBELL",
+        "SEDEVOP"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-15",
+      "bank": "BAQ",
+      "canonical_owner": "CR-ECC-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 8,
+      "french_draft_blocks": 8,
+      "source_link_occurrences": 24,
+      "distinct_source_ids": [
+        "BELL-II30",
+        "BILLOT-29",
+        "CIC-1404",
+        "CIC-194",
+        "DALY-PRIVATE",
+        "LEO",
+        "PASTORET",
+        "SALZA-REPLY"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-16",
+      "bank": "BAQ",
+      "canonical_owner": "CR-ECC-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 8,
+      "french_draft_blocks": 8,
+      "source_link_occurrences": 22,
+      "distinct_source_ids": [
+        "BILLOT-29",
+        "IRENAEUS",
+        "LEO",
+        "MYSTICI",
+        "NOW-VIS",
+        "PASTORET",
+        "PIUS-ELECT45"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-17",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-012",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "1JOHN-2",
+        "AUG20"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-18",
+      "bank": "BAQ",
+      "canonical_owner": "CR-ECC-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 10,
+      "distinct_source_ids": [
+        "2THESS-2",
+        "AUG20",
+        "LEO",
+        "PASTORET"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-19",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-012",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "AUG20",
+        "KOESTER-666",
+        "REVELATION-13"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-20",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-042",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 10,
+      "distinct_source_ids": [
+        "AUG-PATRISTIC",
+        "AUG20",
+        "IRENAEUS-V33"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-21",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-044",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "GAMALIEL",
+        "PHARISEE"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-22",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-044",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "ESAU",
+        "OBADIAH"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-23",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-044",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "EDOM-PESACHIM",
+        "EDOM-RABBAH",
+        "ESAU"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-24",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-012",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "AUG18",
+        "IRENAEUS",
+        "REVELATION-17"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-25",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-012",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "CCC120",
+        "CRAMPON-1904",
+        "DIVINO"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "BAQ-26",
+      "bank": "BAQ",
+      "canonical_owner": "APOL-012",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "DIVINO",
+        "TRENTIV"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "DIVINO",
+          "locator": "Pius XII, Divino afflante Spiritu §§20–22",
+          "scope": "Explicit juridical versus critical Vulgate distinction and original-language translation permission"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-01",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-ECC-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 17,
+      "french_draft_blocks": 17,
+      "source_link_occurrences": 54,
+      "distinct_source_ids": [
+        "AQUINAS",
+        "BEL-2-30",
+        "BEL-4-67",
+        "BILLOT",
+        "ECUM1913",
+        "LEO",
+        "NOWHERETIC",
+        "NOWIMPOSS",
+        "NOWRNR",
+        "P12",
+        "SALZA",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-02",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-ECC-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 17,
+      "french_draft_blocks": 17,
+      "source_link_occurrences": 44,
+      "distinct_source_ids": [
+        "AQUINAS",
+        "BEL-2-30",
+        "BILLOT",
+        "CATECHURCH",
+        "IRENAEUS",
+        "LEO",
+        "NOWIMPOSS",
+        "NOWPRIVATE",
+        "NOWVIS",
+        "P12",
+        "SALZA",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-03",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-ECC-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 17,
+      "french_draft_blocks": 17,
+      "source_link_occurrences": 47,
+      "distinct_source_ids": [
+        "ANTIPOPES",
+        "BEL-2-30",
+        "BILLOT",
+        "IRENAEUS",
+        "LEO",
+        "NOWACCEPT",
+        "NOWVIS",
+        "SALZA",
+        "SALZADEB",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-04",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-ECC-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 17,
+      "french_draft_blocks": 17,
+      "source_link_occurrences": 48,
+      "distinct_source_ids": [
+        "BILLOT",
+        "IRENAEUS",
+        "LEO",
+        "NOWMATERIAL",
+        "NOWVIS",
+        "P12",
+        "PIUS1945",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-05",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-ECC-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 16,
+      "french_draft_blocks": 16,
+      "source_link_occurrences": 33,
+      "distinct_source_ids": [
+        "ANTIPOPES",
+        "BILLOT",
+        "NOWIMPOSS",
+        "NOWPRIVATE",
+        "NOWVIS",
+        "P12",
+        "PIUS1945",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-06",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-ECC-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 17,
+      "french_draft_blocks": 17,
+      "source_link_occurrences": 59,
+      "distinct_source_ids": [
+        "BILLOT",
+        "CASS",
+        "GUERARD-FR",
+        "IRENAEUS",
+        "LEO",
+        "NOWMATER",
+        "NOWMATERIAL",
+        "PIUS1945",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-07",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-AUT-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 17,
+      "french_draft_blocks": 17,
+      "source_link_occurrences": 40,
+      "distinct_source_ids": [
+        "AQUINAS",
+        "LEO",
+        "NOWHERETIC",
+        "NOWRNR",
+        "NOWVIS",
+        "PASCENDI",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "SDV-08",
+      "bank": "SEDEVACANTISM",
+      "canonical_owner": "CR-ECC-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 17,
+      "french_draft_blocks": 17,
+      "source_link_occurrences": 44,
+      "distinct_source_ids": [
+        "AQUINAS",
+        "BEL-2-30",
+        "BILLOT",
+        "LEO",
+        "NOWHERETIC",
+        "NOWRNR",
+        "NOWVIS",
+        "P12",
+        "PASCENDI",
+        "PASCENDI-FR",
+        "SALZA",
+        "V1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "CO-REDEMPTRIX",
+      "bank": "CONTEMPORARY_CASE_PACK_1",
+      "canonical_owner": "CR-DOC-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 11,
+      "french_draft_blocks": 11,
+      "source_link_occurrences": 30,
+      "distinct_source_ids": [
+        "LG60",
+        "MPF25",
+        "PIUSX1904",
+        "RM38",
+        "SSPXINT",
+        "SSPXMPF"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "MPF25",
+          "locator": "DDF Mater Populi fidelis §§17–22, official English and French versions",
+          "scope": "Exact verbal scope of title prohibition; theological continuity still contested"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "COVID-WORSHIP",
+      "bank": "CONTEMPORARY_CASE_PACK_1",
+      "canonical_owner": "CR-AUT-02",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 11,
+      "french_draft_blocks": 11,
+      "source_link_occurrences": 24,
+      "distinct_source_ids": [
+        "CAN1247",
+        "CDW20",
+        "CDW21",
+        "GENEVA",
+        "PANDEMSSPX",
+        "PEN20"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "VACCINES",
+      "bank": "CONTEMPORARY_CASE_PACK_1",
+      "canonical_owner": "APOL-052",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 13,
+      "french_draft_blocks": 13,
+      "source_link_occurrences": 27,
+      "distinct_source_ids": [
+        "CCC1738",
+        "CDFVAC",
+        "DP35",
+        "VACCA",
+        "VACSSPX"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "CAPITAL-PUNISHMENT",
+      "bank": "CONTEMPORARY_CASE_PACK_1",
+      "canonical_owner": "CR-DOC-02",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 13,
+      "french_draft_blocks": 13,
+      "source_link_occurrences": 31,
+      "distinct_source_ids": [
+        "AQUINAS",
+        "CCC2267",
+        "CDFDEATH",
+        "EV56",
+        "FESER",
+        "LONG"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "IMMIGRATION",
+      "bank": "CONTEMPORARY_CASE_PACK_1",
+      "canonical_owner": "APOL-053",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 11,
+      "french_draft_blocks": 11,
+      "source_link_occurrences": 19,
+      "distinct_source_ids": [
+        "CCC2241",
+        "EXSUL",
+        "PACEM"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "PACHAMAMA",
+      "bank": "CONTEMPORARY_CASE_PACK_1",
+      "canonical_owner": "CR-IDM-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 11,
+      "french_draft_blocks": 11,
+      "source_link_occurrences": 26,
+      "distinct_source_ids": [
+        "CCC2112",
+        "FRANCIS",
+        "PACHFR",
+        "PACHREV",
+        "PACHSSPX"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "vaccines-empirical-evidence",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": null,
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "WHOSAFETY",
+        "WHOSIGNAL"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "fatima-consecration",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "APOL-004",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "CCC67",
+        "FATIMA2000",
+        "FATIMASSPX1"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "fatima-third-secret",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "APOL-004",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "FATIMA2000",
+        "FATIMASSPX2"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "medjugorje",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "APOL-004",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "CCC67",
+        "DDFN2024",
+        "MEDJ2024"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "private-revelation",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "learn.catechism",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 3,
+      "distinct_source_ids": [
+        "CCC67",
+        "DDFN2024"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "vatican-china",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "CR-GOV-01",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "CHINA2024",
+        "CHINA2026",
+        "PIUSCHINA",
+        "ZENREUTERS",
+        "ZENSCHOLAR"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "charismatic-renewal",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "APOL-004",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "CHARIS2016",
+        "CHARISFR"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "yoga-reiki",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "learn.catechism",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "MEDIT1989",
+        "MEDITFR",
+        "NEWAGE2003",
+        "REIKIUS"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "public-communion-politicians",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "CR-GOV-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 3,
+      "distinct_source_ids": [
+        "CAN915",
+        "RATZ2004"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "euthanasia",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "APOL-052",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 2,
+      "distinct_source_ids": [
+        "SB2020"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "organ-donation",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "learn.catechism",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 2,
+      "distinct_source_ids": [
+        "TRANS2000"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "cremation",
+      "bank": "CONTEMPORARY_CASE_PACK_2",
+      "canonical_owner": "learn.rites.sick",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 3,
+      "distinct_source_ids": [
+        "CREM2016",
+        "CREM2023"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM026",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "BEN07",
+        "FR21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM027",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "BEN07",
+        "FR21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM028",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "BEN07",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM029",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-12",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "CAN1917",
+        "CCC_JUD",
+        "CIC6",
+        "CODE83",
+        "COR11",
+        "VEIL"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM030",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "CCC_JUD",
+        "CCC_MOD"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM031",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-12",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "CIC83",
+        "ORD94",
+        "SERV94"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM032",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-11",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "GIRM"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM033",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "GIRM",
+        "LEC81",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM034",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-08",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "GIRM",
+        "LEC81",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM035",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-12",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "GIRM",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM036",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-06",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 17,
+      "distinct_source_ids": [
+        "CCC1350",
+        "CHIRON",
+        "MR62",
+        "MR69",
+        "OFF1962"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM037",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-06",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "GIRM",
+        "MD47",
+        "MR69"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM038",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "GIRM",
+        "MR62",
+        "OFF1962"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM039",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "CHIRON",
+        "DAVIES",
+        "JLG1966",
+        "MR69",
+        "OFF1962",
+        "SSPX_PROT",
+        "VATICAN76"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM040",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-10",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 11,
+      "distinct_source_ids": [
+        "CDW2000",
+        "GIRM",
+        "LANG05",
+        "RAT2000",
+        "SC63",
+        "VAT2010"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM041",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-GOV-06",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "BEN07",
+        "FR21",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM042",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-ORG-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 14,
+      "distinct_source_ids": [
+        "BEN07",
+        "BERTH22",
+        "CUCHET",
+        "CUCHET26",
+        "FR21",
+        "MD47"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM043",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-ORG-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 10,
+      "distinct_source_ids": [
+        "BERTH22",
+        "CHIRON",
+        "CUCHET",
+        "PO1954"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM044",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-02",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "BEN07",
+        "BEN07FR",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM045",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "BEN07",
+        "CCC_JUD"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM046",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "BEN07",
+        "CCC_JUD",
+        "FR21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM047",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-DOC-10",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "BEN07",
+        "FR21",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM048",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "BEN07",
+        "GS65"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM049",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-01",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "BEN07",
+        "CAN212",
+        "ED88"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM050",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-ECC-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 15,
+      "distinct_source_ids": [
+        "BEN07",
+        "ED88",
+        "FR21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM051",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-02",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "MR69",
+        "SA64",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM052",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "AUD19",
+        "MR69",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM053",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-03",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "CHIRON",
+        "IO64",
+        "SC63",
+        "TA67"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM054",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 3,
+      "distinct_source_ids": [
+        "CHIRON",
+        "MR69"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM055",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "CHIRON",
+        "MR69",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM056",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 3,
+      "distinct_source_ids": [
+        "CHIRON",
+        "NOT67"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM057",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-04",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "CHIRON",
+        "GIRM75",
+        "IGMR69_ORIGINAL",
+        "MR69",
+        "NOT67"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM058",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "CHIRON",
+        "GIRM75",
+        "IGMR69_ORIGINAL",
+        "MR69",
+        "OTT69"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM059",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "CHIRON",
+        "GIRM75",
+        "IGMR69_ORIGINAL",
+        "MR69",
+        "OTT69"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM060",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 2,
+      "french_draft_blocks": 2,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "CHIRON",
+        "GIRM75",
+        "IGMR69_ORIGINAL",
+        "MR69"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM061",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "AUD26",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM062",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "AUD26",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM063",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-09",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 5,
+      "distinct_source_ids": [
+        "GIRM",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM064",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-11",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "MEM69",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM065",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-LIT-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 3,
+      "french_draft_blocks": 3,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "MP69",
+        "SC63"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM066",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-ECC-03",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 13,
+      "distinct_source_ids": [
+        "CIC2",
+        "CIC4",
+        "COURT21",
+        "FSSP21",
+        "TC21",
+        "TCL21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM067",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 15,
+      "distinct_source_ids": [
+        "AP25_REPRINT",
+        "BRUNI25",
+        "MONT25",
+        "SP07",
+        "TC21",
+        "TCL21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM068",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 14,
+      "distinct_source_ids": [
+        "CIC4",
+        "SP07",
+        "SPL07",
+        "TC21",
+        "TCL21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM069",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-ECC-03",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 14,
+      "distinct_source_ids": [
+        "RESP21",
+        "SP07",
+        "SPL07",
+        "TC21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM070",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-06",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "CIC4",
+        "SC63",
+        "SPL07",
+        "TC21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM071",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "CIC2",
+        "COURT21",
+        "FSSP22",
+        "TC21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM072",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-ECC-03",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 13,
+      "distinct_source_ids": [
+        "CIC2",
+        "COURT21",
+        "FSSP21",
+        "TC21",
+        "TCL21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM073",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-07",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 14,
+      "distinct_source_ids": [
+        "FSSP22",
+        "FSSP22FR",
+        "RES23",
+        "RESP21",
+        "TC21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM074",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-ECC-05",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 13,
+      "distinct_source_ids": [
+        "COURT21",
+        "FSSP21",
+        "FSSP22",
+        "SPL07",
+        "SSPX21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "TLM075",
+      "bank": "TRADITIONAL_MASS_OBJECTION",
+      "canonical_owner": "CR-AUT-03",
+      "research_provenance": "HISTORICALLY_RECOVERED_OR_EXISTING_RESEARCH_RECORD",
+      "source_bearing_blocks": 5,
+      "french_draft_blocks": 5,
+      "source_link_occurrences": 18,
+      "distinct_source_ids": [
+        "AQU104",
+        "CIC1752",
+        "CIC2",
+        "CIC4",
+        "COURT21",
+        "FSSP22",
+        "OBED08",
+        "SC63",
+        "TC21"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_LEDGER_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "abu-dhabi",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-IDM-01",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "AD2019",
+        "DH1965",
+        "ABUPAG19",
+        "LIB1888",
+        "DI2000"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "singapore-religions",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-DOC-09",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "SING2024",
+        "SINGALT24",
+        "AD2019",
+        "DI2000"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "fiducia-supplicans",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-DOC-09",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "FS2023",
+        "FS2021",
+        "DDFJAN24",
+        "SSPXFS24"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "FS2023",
+          "locator": "DDF Fiducia supplicans §§31–32: couples and non-ritual forms, avoiding marriage resemblance",
+          "scope": "Proves declared permission and limit; does not decide prudential public signification in concrete rituals"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "amoris-laetitia",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-MOR-08",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "AL2016",
+        "FC1981",
+        "DUBIA2016"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "assisi",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-IDM-07",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "ASSISI-START",
+        "ASSISI-END",
+        "ASSISILEF86",
+        "MA1928",
+        "DI2000"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "ASSISI-START",
+          "locator": "John Paul II, address of 27 October 1986, §4 on separate places and sequential prayers",
+          "scope": "Proves organization described in pope's own speech; does not settle objective symbol/scandal evaluation"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "common-prayer",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-IDM-05",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "ECUM1993",
+        "ASSISI-START",
+        "ECFSSPX",
+        "MA1928"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "ECUM1993",
+          "locator": "1993 Ecumenical Directory §§102–104, sharing in spiritual activities and different ecclesial communion",
+          "scope": "Permits certain Christian common prayer; no blanket approval of interreligious rites or Eucharistic intercommunion"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "religious-liberty",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-DOC-04",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 11,
+      "distinct_source_ids": [
+        "DH1965",
+        "QP1925",
+        "RLFSSPX",
+        "LIB1888",
+        "IMM1885"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "DH1965",
+          "locator": "Dignitatis humanae preamble and §2: immunity from coercion and duty of men/societies towards true religion",
+          "scope": "Council's exact wording verified; reconciliation with Leo XIII not independently established"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "freemasonry",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-060",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 10,
+      "distinct_source_ids": [
+        "MASON1983",
+        "MASON2023",
+        "UGLEFAQ"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "communism",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-059",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "DR1937",
+        "MARX1848",
+        "QP1925",
+        "RN1891"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "evolution",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-002",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "HG1950",
+        "DA1943",
+        "BEHE2000"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "HG1950",
+          "locator": "Pius XII, Humani generis §36",
+          "scope": "Limited research permission on body and immediate creation of soul; scientific consensus not evaluated"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "adam-monogenism",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-002",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 7,
+      "distinct_source_ids": [
+        "HG1950",
+        "BIOLOGOS2014",
+        "DA1943"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "HG1950",
+          "locator": "Pius XII, Humani generis §37",
+          "scope": "Precise polygenist opinion that the encyclical says Catholics may not embrace; population genetics not evaluated"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "just-war",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-053",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "WAR2309",
+        "GS1965",
+        "DAY1940"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "GS1965",
+          "locator": "Vatican II Gaudium et spes §§79–81: legitimate defense, categorical ban on indiscriminate city destruction, deterrence reported as policy",
+          "scope": "Textual scope checked, not an empirical assessment of a particular war or weapon"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "nuclear-deterrence",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-053",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "GS1965",
+        "WAR2309",
+        "NAGASAKI19",
+        "NATO2026"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "NATO2026",
+          "locator": "NATO North Atlantic Council, 20 April 2026, paragraphs 5–8",
+          "scope": "Original policy rationale and disarmament position; strategic efficacy and moral rightness not certified"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "regime-type",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-053",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 12,
+      "distinct_source_ids": [
+        "QP1925",
+        "DH1965",
+        "AQUINAS105",
+        "IMM1885"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "AQUINAS105",
+          "locator": "Thomas Aquinas, Summa I–II q.105 a.1 corpus and reply to objection 2",
+          "scope": "Shows mixed polity under one head and risk of tyranny; not a modern endorsement of specific constitutional laws"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "ai-transhumanism",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-050",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "AIN2025",
+        "HG1950",
+        "HPLUS2009"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "HPLUS2009",
+          "locator": "Humanity+ Transhumanist Declaration as adopted March 2009, paragraphs 1–8",
+          "scope": "Expresses human enhancement, autonomy and potential nonhuman sentience; makes no direct claim proving an immaterial soul or denying disability dignity"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "climate-ecology",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-053",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 6,
+      "distinct_source_ids": [
+        "LD2023",
+        "RAMAGE2023"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "conspiracy",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "APOL-002",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 4,
+      "distinct_source_ids": [
+        "TRUTH2477"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "synodality",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-ECC-12",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 8,
+      "distinct_source_ids": [
+        "SYN2018",
+        "SYN5CARD23",
+        "DUBIA2023"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "SYN5CARD23",
+          "locator": "Original five signed dubia (10 July 2023), Question 3 and papal response dated 11 July 2023",
+          "scope": "Despite Vatican page title saying 'two Cardinals', original question bears five cardinal signatures; not all signed reply correspondences are separately certified"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "sspx-status",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-ECC-05",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 20,
+      "distinct_source_ids": [
+        "SSPX2009",
+        "SSPXL2009",
+        "DDFDEC26",
+        "DDFNOTE26",
+        "SSPXREC26",
+        "SSPXCANN26",
+        "PCED2017"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "DDFDEC26",
+          "locator": "DDF decree of 2 July 2026, named six bishops and declared penalties",
+          "scope": "Original Italian canonical declaration, not independent determination of procedural appellate outcome"
+        },
+        {
+          "source_id": "DDFNOTE26",
+          "locator": "DDF explanatory note of 2 July 2026, numbered points 1–3",
+          "scope": "Clerics, formally adhering lay persons, liceity and validity as the dicastery claims; later recourse disputed"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "recent-canonisations",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-DOC-09",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 9,
+      "distinct_source_ids": [
+        "CANON2014",
+        "PAST1870",
+        "CANFELLAY14"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    },
+    {
+      "id": "modernism",
+      "bank": "CONTEMPORARY_CASE_PACK_3_NEW_DRAFT",
+      "canonical_owner": "CR-DOC-01",
+      "research_provenance": "NEWLY_AUTHORED_NOT_RECOVERED_LEGACY_QUESTION",
+      "source_bearing_blocks": 4,
+      "french_draft_blocks": 4,
+      "source_link_occurrences": 11,
+      "distinct_source_ids": [
+        "PAS1907",
+        "PAS1907FR",
+        "LOISY1904"
+      ],
+      "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
+      "original_text_spot_checks": [
+        {
+          "source_id": "LOISY1904",
+          "locator": "Alfred Loisy, L'Évangile et l'Église (1904), ch. V",
+          "scope": "Original French thesis of historical development; Wikisource transcription not independently proofread against facsimile"
+        }
+      ],
+      "claim_by_claim_independent_source_context_certified": false,
+      "formal_theological_or_canonical_approval": false,
+      "native_french_edit_approved": false,
+      "publishable": false
+    }
+  ]
+}

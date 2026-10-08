@@ -1444,7 +1444,11 @@
           "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
           "scope": "Humani generis §§35–36",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
-          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+          "verification": "PRIMARY_TEXT_WORDING_CHECKED_CLAIM_LEVEL_EDITORIAL_REVIEW_PENDING",
+          "passages_checked": [
+            "§36 conditional allowance of research on bodily origins",
+            "§36 immediate divine creation of spiritual souls"
+          ]
         },
         {
           "id": "DA1943",
@@ -1585,7 +1589,11 @@
           "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
           "scope": "Humani generis §37",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
-          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+          "verification": "PRIMARY_TEXT_WORDING_CHECKED_CLAIM_LEVEL_EDITORIAL_REVIEW_PENDING",
+          "passages_checked": [
+            "§36 bodily evolution and immediate creation of rational souls",
+            "§37 exact specific polygenism prohibited as a free opinion and original sin rationale"
+          ]
         },
         {
           "id": "DA1943",
@@ -1606,8 +1614,8 @@
         {
           "role": "answer",
           "text": {
-            "en": "Humani generis §37 warned against a form of polygenism because its reconciliation with original sin transmitted from one first sin was not apparent. The text addresses a doctrinal-theological difficulty; it does not supply a full modern population-genetics model.",
-            "fr": "Humani generis §37 avertit contre une forme de polygénisme parce que sa conciliation avec un péché originel transmis à partir d'une première faute n'apparaît pas. Le texte relève une difficulté théologique, non un modèle complet de génétique des populations."
+            "en": "Pius XII's Humani generis §37 states that Catholics are not free to embrace the specific polygenist opinion it describes: either that true human beings existed after Adam without descending naturally from him as the first parent of all, or that 'Adam' represents several first parents. The stated reason is that reconciliation with original sin, deriving from an actual sin of one Adam and transmitted to all by generation, is not apparent. This is stronger than a merely casual caution, but the encyclical does not prescribe a mathematical population-genetic model.",
+            "fr": "Dans Humani generis §37, Pie XII affirme que les catholiques ne sont pas libres d'embrasser l'opinion polygéniste précisément définie : soit que des hommes véritables aient existé après Adam sans descendre naturellement de lui, premier père de tous, soit qu'« Adam » désigne plusieurs premiers parents. Il motive cette restriction par l'absence de conciliation apparente avec le péché originel, issu de la faute réelle d'un seul Adam et transmis à tous par génération. Il s'agit donc de plus qu'une simple mise en garde, sans que l'encyclique prescrive un modèle mathématique de génétique des populations."
           },
           "source_ids": [
             "HG1950"
@@ -1619,7 +1627,9 @@
             }
           ],
           "attribution": null,
-          "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
+          "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED",
+          "source_locator": "Humani generis §37, with BioLogos effective-population discussion in critical response",
+          "source_context_status": "SPECIFIC_MAGISTERIAL_SENTENCE_CHECKED_SECONDARY_SCIENCE_NOT_INDEPENDENTLY_REVIEWED"
         },
         {
           "role": "documented_position_or_source_based_objection",
@@ -1651,8 +1661,8 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Humani generis §37 is concerned with a doctrinal transmission from an original human fault, not with assigning an effective population size from allele frequencies. A purely recent unique-genetic-pair account faces substantial empirical objections; conversely, an ancestral population-genetic model does not by itself decide whether a historical pair could be genealogical ancestors, or how the dogma of original sin applies. Any reconciliation is a theological argument to be defended, not a fact automatically established by either discipline.",
-            "fr": "Humani generis §37 concerne la transmission doctrinale d'une faute originelle, non le calcul d'une taille de population efficace à partir de fréquences alléliques. L'hypothèse d'un couple génétique unique et récent se heurte à d'importantes objections empiriques ; inversement, un modèle d'ascendance génétique ne tranche pas à lui seul la possibilité d'ancêtres généalogiques historiques ni l'application du dogme du péché originel. Toute conciliation exige une argumentation théologique explicite : aucune des deux disciplines ne l'établit automatiquement."
+            "en": "BioLogos' discussion concerns effective ancestral population sizes inferred from genetic data; it does not by itself settle the theological question defined in Humani generis §37. Yet Catholics cannot evade the papal text by merely saying that population genetics is complicated: a proposal that denies descent from the historical first parent or treats Adam as several progenitors must confront the explicit restriction. Conversely, genetic effective-population estimates and genealogical ancestry are not interchangeable quantities, and any claimed reconciliation must be argued rather than announced.",
+            "fr": "L'étude de BioLogos porte sur la taille efficace des populations ancestrales déduite de données génétiques ; elle ne tranche pas à elle seule la question théologique définie dans Humani generis §37. Mais la complexité de la génétique ne permet pas d'éluder le texte pontifical : une hypothèse niant la descendance d'un premier père historique ou faisant d'Adam plusieurs ancêtres doit répondre à la restriction explicite. Inversement, taille efficace génétique et ascendance généalogique ne sont pas la même grandeur ; toute conciliation annoncée doit être démontrée."
           },
           "source_ids": [
             "HG1950",
@@ -1674,13 +1684,15 @@
             }
           ],
           "attribution": null,
-          "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
+          "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED",
+          "source_locator": "Humani generis §37, with BioLogos effective-population discussion in critical response",
+          "source_context_status": "SPECIFIC_MAGISTERIAL_SENTENCE_CHECKED_SECONDARY_SCIENCE_NOT_INDEPENDENTLY_REVIEWED"
         },
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Pius XII's caution in Humani generis §37 concerns the compatibility of polygenism with original sin proceeding from an original fault and being transmitted to all human beings; it is not a numerical prediction about prehistoric effective population size. A genetic model may illuminate ancestry but cannot, without a theological account, settle the historical and doctrinal claims about Adam and original sin. The obligation is to preserve what the teaching actually asserts and neither canonize one speculative genetics model nor dissolve original sin into a poetic name for social evil.",
-            "fr": "La réserve de Pie XII dans Humani generis §37 porte sur la compatibilité du polygénisme avec un péché originel procédant d'une faute initiale et transmis à tous les hommes ; ce n'est pas une prédiction chiffrée sur la taille des populations préhistoriques. Un modèle génétique peut éclairer les ascendances sans trancher, faute d'une argumentation théologique, les affirmations historiques et doctrinales concernant Adam et le péché originel. Il faut garder la portée réelle de cet enseignement, sans ériger un modèle génétique hypothétique en dogme ni réduire le péché originel à un simple nom poétique du mal social."
+            "en": "Original sin is not a literary figure for humanity's collective failings: the Church teaches an original fault propagated to the human family, which is why Pius XII rejects liberty to assert the specified polygenism. Scientific models should be fairly assessed on their own evidence, but they cannot automatically nullify a doctrinal premise; nor can theological argument require inventing a recent two-person genetic bottleneck where no scientific proof exists. Preserve the papal restriction in its exact terms while identifying where legitimate scientific and theological questions remain.",
+            "fr": "Le péché originel n'est pas une figure littéraire désignant l'ensemble des fautes sociales : la doctrine catholique affirme une faute initiale transmise à la famille humaine, d'où le refus par Pie XII de laisser adopter le polygénisme ainsi défini. Les modèles scientifiques doivent être examinés loyalement selon leurs preuves, sans pouvoir annuler automatiquement la prémisse doctrinale ; l'argumentation théologique ne doit pas davantage inventer un étranglement génétique récent limité à deux personnes sans preuve. Il faut conserver la restriction pontificale selon ses termes tout en distinguant les questions scientifiques et théologiques ouvertes."
           },
           "source_ids": [
             "HG1950"
@@ -1692,7 +1704,9 @@
             }
           ],
           "attribution": null,
-          "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
+          "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED",
+          "source_locator": "Humani generis §37, with BioLogos effective-population discussion in critical response",
+          "source_context_status": "SPECIFIC_MAGISTERIAL_SENTENCE_CHECKED_SECONDARY_SCIENCE_NOT_INDEPENDENTLY_REVIEWED"
         }
       ],
       "original_case_pack_association": false,
@@ -1888,7 +1902,10 @@
           "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/04/20/north-atlantic-council-statement-on-the-occasion-of-the-11th-review-conference-of-the-treaty-on-the-non-proliferation-of-nuclear-weapons",
           "scope": "North Atlantic Council, 20 April 2026 NPT statement §§5–8: deterrence claims, opposition to its delegitimization, ultimate disarmament objective",
           "role": "IDENTIFIED_ORIGINAL_POLICY_PROPONENT",
-          "verification": "ORIGINAL_PRIMARY_PASSAGE_LOCATED_CONTRAST_VERIFIED_NOT_MORAL_PREMISES"
+          "verification": "ORIGINAL_DOCUMENT_SECTION_WORDING_CHECKED_NOT_INDEPENDENT_POLICY_VALIDATION",
+          "passages_checked": [
+            "20 April 2026 statement paragraphs 5–8, deterrence peace, coercion, delegation, ultimate verifiable elimination"
+          ]
         }
       ],
       "paragraphs": [
@@ -2746,21 +2763,30 @@
           "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2017/04/04/170404d.html",
           "scope": "Pontifical Commission Ecclesia Dei: 2017 SSPX confessional and marriage faculties",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
-          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+          "verification": "ORIGINAL_DOCUMENT_SECTION_WORDING_CHECKED_CANONICAL_EFFECT_NOT_INDEPENDENTLY_CERTIFIED",
+          "passages_checked": [
+            "2017 letter, ordinary's role in delegated marriage faculties"
+          ]
         },
         {
           "id": "DDFDEC26",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html",
           "scope": "DDF formal decree, 2 July 2026, original Italian: unauthorized consecrations, declared censures",
           "role": "PRIMARY_CANONICAL_ACT",
-          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
+          "verification": "ORIGINAL_DOCUMENT_SECTION_WORDING_CHECKED_CANONICAL_EFFECT_NOT_INDEPENDENTLY_CERTIFIED",
+          "passages_checked": [
+            "2 July 2026 decree: six specified bishops and latae sententiae penalties"
+          ]
         },
         {
           "id": "DDFNOTE26",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html",
           "scope": "DDF explanatory note, 2 July 2026, original Italian: minister status, sacraments and lay formal adherence",
           "role": "PRIMARY_CANONICAL_ACT",
-          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
+          "verification": "ORIGINAL_DOCUMENT_SECTION_WORDING_CHECKED_CANONICAL_EFFECT_NOT_INDEPENDENTLY_CERTIFIED",
+          "passages_checked": [
+            "2 July 2026 explanatory note, nos 1–3: clerics, formal lay adherence, and validity of penance and marriage"
+          ]
         },
         {
           "id": "SSPXREC26",
@@ -3121,7 +3147,14 @@
           "url": "https://fr.wikisource.org/wiki/L%E2%80%99%C3%89vangile_et_l%E2%80%99%C3%89glise/V",
           "scope": "Alfred Loisy, L’Évangile et l’Église, 1904 edition, ch. V Le dogme chrétien, historical development, Greek conceptual formulations and evolving expressions of faith",
           "role": "IDENTIFIED_ORIGINAL_HISTORICAL_AUTHOR",
-          "verification": "1904_EDITION_ORIGINAL_PASSAGE_LOCATED_NOT_VERBATIM_AUTHOR_COLLATION"
+          "verification": "ORIGINAL_EDITION_TEXT_READ_TRANSCRIPTION_COLLATION_PENDING",
+          "passages_checked": [
+            "L'Évangile et l'Église, ch. V opening, Loisy's discussion of historical continuity and doctrinal development"
+          ],
+          "limitations": [
+            "Wikisource transcription explicitly marked not yet fully proofread against 1904 page scans",
+            "Paraphrase not a verbatim transcription or exhaustive identification of all propositions condemned by Pascendi"
+          ]
         }
       ],
       "paragraphs": [
@@ -3269,7 +3302,8 @@
     "The SSPX canonical-status entry must not regress to the pre-July-2026 2009–2017 position: original DDF decree and explanatory note plus disputed Society recourse must remain attached; follow-up canonical rulings may supersede this state.",
     "2026-10-09: original positions from UGLE, Humanity+ and theologian Matthew Ramage added as expressly scoped arguments, not assumed opposition to entire magisterial documents nor proof of empirical claims; claim-by-claim review remains open.",
     "2026-10-09 second actual-proponent batch: Marx and Engels, Behe, BioLogos, and Dorothy Day cited to their own statements; their factual or policy claims are not treated as independently proven by proponent sources.",
-    "2026-10-09 source audit: NATO 2026 and original 1904 Loisy arguments cited with precise scope; Aquinas is a classical Catholic voice, NOT an external reply to Leo XIII; general conspiracy methodology is not converted into a fictitious named debate."
+    "2026-10-09 source audit: NATO 2026 and original 1904 Loisy arguments cited with precise scope; Aquinas is a classical Catholic voice, NOT an external reply to Leo XIII; general conspiracy methodology is not converted into a fictitious named debate.",
+    "2026-10-09: verified limited original-text passages against Humani generis §§36–37, NATO 2026 paragraphs 5–8, 2017 and 2026 SSPX documents, and Loisy ch. V; historical/source reading is not independent doctrinal, scientific, canonical, or French editorial approval."
   ],
   "public_release": false
 }
