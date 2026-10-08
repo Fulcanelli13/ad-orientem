@@ -231,9 +231,18 @@ try{
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
-  // This isolated chrome interaction must have a visible dock. The opening
-  // moment can legitimately have no Schola track; real cue activation is audited below.
-  await scholaDock.evaluate(el=>{el.dataset.active="true";});
+  // Select a real sourced Schola track, not an artificial data-active DOM flag.
+  // Repeated source-state reconciliation is allowed to overwrite presentation
+  // attributes; therefore all controls must be tested in an actual Schola context.
+  const realSchola=await page.evaluate(()=>{
+    const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+    preview.selectScholaTrack("INTROIT");
+    return preview.getScholaState();
+  });
+  assert.equal(realSchola.schola?.trackId,"INTROIT","canonical Introit Schola track missing");
+  assert.ok(realSchola.schola?.latin && realSchola.schola?.english,
+    "Schola test cannot interact with an unsourced or translation-less track");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset.active==="true",null,{timeout:5000});
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
   const scholaHitGeometry=await page.evaluate(()=>{
