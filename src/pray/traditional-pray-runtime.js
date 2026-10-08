@@ -259,9 +259,11 @@ function open(route,opts={}){
 }
 function back(){
   if(S.screen==="prayer"){S.screen="module";S.prayerId=null;return render()}
+  if(hasReturnPoint()){BASE_CLOSE();void returnToPrevious();return true}
   BASE_OPEN("pray.hub",OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);return true;
 }
 function goHome(){
+  clearReturnStack();
   BASE_CLOSE();
   const p=window.AO_APP_SHELL_V1?.navigate?.("home");
   if(p&&typeof p.catch==="function")p.catch(()=>window.AO_NAV_V362?.openHome?.());
