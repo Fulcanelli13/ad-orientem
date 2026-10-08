@@ -61,6 +61,7 @@ function venueCard(record,vm){
   const v=record.venue??{},m=arr(record.ministries)[0]??{},label=communityLabel(m.community_id,vm.communities),una=communion(record);
   const schedule=rawSchedules(record)[0]?.schedule;
   const freshness=schedule? scheduleFreshnessLabel(schedule,vm.language):null;
+  const checked=schedule? checkedDateLabel(schedule,vm.language):null;
   const status=una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":"STATUS UNKNOWN";
   return '<button type="button" class="aoFindCard" data-find-venue="'+esc(v.venue_id)+'">'
     +'<span class="aoFindCardTop"><small>'+esc(label)+'</small><i class="aoFindStatus" data-state="'+esc(una)+'">'+esc(status)+'</i></span>'
@@ -69,6 +70,7 @@ function venueCard(record,vm){
     +'<em>'+esc(usageLabel(m))+'</em>'
     +(schedule?.payload?.raw?'<p>'+esc(String(schedule.payload.raw).slice(0,180))+'</p>':"")
     +(freshness?'<span class="aoFindFreshness" data-state="REVIEW_DUE">'+esc(freshness)+'</span>':"")
+    +(checked?'<small class="aoFindChecked">'+esc(checked)+'</small>':"")
     +'</button>';
 }
 function emptyState(vm){
