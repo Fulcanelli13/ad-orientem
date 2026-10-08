@@ -514,7 +514,8 @@ try{
   assert.equal(homeOwnership.homeSuppressed,"false","Home suppression survived return to Home");
   assert.notEqual(homeOwnership.homeDisplay,"none","Home did not become visible after returning Home");
 
-  await page.locator("[data-ao-app-surface='settings']").click();
+  // Settings is a contextual overlay, not a permanent ribbon slot.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
 
   const end=await page.evaluate(()=>({

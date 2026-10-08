@@ -142,9 +142,14 @@ async function assertNoLegacyLeak(page,label,width){
 }
 
 async function openSurface(page,surface,width){
-  const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
-  assert.equal(await nav.count(),1,width+"px missing "+surface+" top-level navigation control");
-  await nav.click();
+  if(surface==="settings"){
+    // Settings is a contextual overlay; the sixth permanent ribbon tab is Find.
+    await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
+  }else{
+    const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
+    assert.equal(await nav.count(),1,width+"px missing "+surface+" top-level navigation control");
+    await nav.click();
+  }
 
   if(surface==="home"){
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:10000});
@@ -223,7 +228,7 @@ try{
     assert.equal(release.active,"home",viewport.width+"px cold launch did not land on Home");
     assert.deepEqual(
       [...new Set(release.destinations)],
-      ["home","mass","pray","learn","calendar","settings"],
+      ["home","mass","pray","learn","calendar","find"],
       viewport.width+"px top-level destination contract changed",
     );
 

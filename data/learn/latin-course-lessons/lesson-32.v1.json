@@ -30,24 +30,6 @@
   "coreVocabulary": {
     "introduced": [
       {
-        "lemma": "neque",
-        "partOfSpeech": "conjunction",
-        "gloss": {
-          "en": "and not / neither",
-          "fr": "et ne... pas / ni"
-        },
-        "frozenLesson": 32
-      },
-      {
-        "lemma": "nec",
-        "partOfSpeech": "conjunction",
-        "gloss": {
-          "en": "and not / nor",
-          "fr": "et ne... pas / ni"
-        },
-        "frozenLesson": 32
-      },
-      {
         "lemma": "aut",
         "partOfSpeech": "conjunction",
         "gloss": {
@@ -80,6 +62,24 @@
         "gloss": {
           "en": "but / yet",
           "fr": "mais / cependant"
+        },
+        "frozenLesson": 32
+      },
+      {
+        "lemma": "neque/nec",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "and not / nor",
+          "fr": "et ne… pas / ni"
+        },
+        "frozenLesson": 32
+      },
+      {
+        "lemma": "vir",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "man",
+          "fr": "homme"
         },
         "frozenLesson": 32
       }
@@ -184,18 +184,6 @@
       "gloss": {
         "en": "midst",
         "fr": "milieu"
-      },
-      "trackedLesson": null,
-      "status": "reading-support-untracked"
-    },
-    {
-      "lemma": "vir",
-      "forms": [
-        "viri"
-      ],
-      "gloss": {
-        "en": "man / husband",
-        "fr": "homme / mari"
       },
       "trackedLesson": null,
       "status": "reading-support-untracked"
@@ -411,8 +399,8 @@
       "title": "neque and nec accumulate negatives",
       "sourceId": "vulg-jn1-13-l32",
       "learnerCopy": {
-        "en": "Biblical Latin often coordinates through repeated particles. neque...neque can carry a chain of exclusions; do not compress it until you have seen the whole structure.",
-        "fr": "Le latin biblique coordonne souvent par répétition de particules. neque...neque peut porter une chaîne d'exclusions ; ne la condensez qu'après avoir vu toute la structure."
+        "en": "Biblical Latin often coordinates through repeated particles. neque...neque can carry a chain of exclusions; do not compress it until you have seen the whole structure. Neque and nec are one tracked conjunction family: nec is a shortened form, not a separate Core item. In ex voluntate viri, viri is the genitive of the tracked second-declension noun vir.",
+        "fr": "Le latin biblique coordonne souvent par répétition de particules. neque...neque peut porter une chaîne d'exclusions ; ne la condensez qu'après avoir vu toute la structure. Neque et nec constituent une seule famille de conjonctions suivie ; nec en est la forme abrégée. Dans ex voluntate viri, viri est le génitif du nom vir, désormais suivi."
       },
       "referenceIds": [
         "vulg-jn1-13-l32",
@@ -524,18 +512,17 @@
         "qui/quae/quod",
         "non",
         "e/ex",
-        "neque",
+        "neque/nec",
         "voluntas",
         "caro",
         "sed",
         "Deus",
         "nascor",
         "sum",
-        "sanguis"
-      ],
-      "supportLemmas": [
+        "sanguis",
         "vir"
-      ]
+      ],
+      "supportLemmas": []
     },
     {
       "id": "l32-p2",
@@ -1062,12 +1049,12 @@
   },
   "validation": {
     "trackedVocabularyIntroduced": [
-      "neque",
-      "nec",
       "aut",
       "vel",
       "sive",
-      "at"
+      "at",
+      "neque/nec",
+      "vir"
     ],
     "silentIntroductions": [],
     "authenticSourceCount": 5,
@@ -1101,5 +1088,18 @@
         "Apprendre les six lemmes figés de la leçon 32."
       ]
     }
+  },
+  "reconciliation": {
+    "date": "2026-10-08",
+    "source": "data/learn/core-latin-201-350.v1.0.json",
+    "retiredTracked": [
+      "neque",
+      "nec"
+    ],
+    "promotedTracked": [
+      "neque/nec",
+      "vir"
+    ],
+    "note": "Displaced words are not presented as certified Core; authenticated readings retain their support lexicon."
   }
 }

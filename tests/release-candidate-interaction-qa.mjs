@@ -83,7 +83,13 @@ try{
     return !curtain || curtain.classList.contains("aoCinemaBootDone") &&
       getComputedStyle(curtain).pointerEvents==="none";
   },null,{timeout:15000});
-  await page.locator("[data-ao-app-surface='pray']").click();
+  // Wait for the real loading curtain to release input; never hide or force-click it.
+  await page.waitForFunction(()=>{
+    const curtain=document.getElementById("ao-cinema-boot");
+    return !curtain || curtain.classList.contains("aoCinemaBootDone") &&
+      getComputedStyle(curtain).pointerEvents==="none";
+  },null,{timeout:15000});
+  await page.locator("[data-ao-app-surface='pray']").tap({timeout:15000});
   await page.waitForSelector("#aoPray435930.open",{state:"visible",timeout:15000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
 
