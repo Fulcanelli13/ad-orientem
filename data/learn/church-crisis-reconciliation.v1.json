@@ -524,5 +524,23 @@
       "Published data projection integration and rendering checks"
     ],
     "test": "tests/traditionis-custodes-debates.mjs"
+  },
+  "traditional_mass_objections_001_075": {
+    "file": "data/learn/traditional-mass-objections-reconciliation.v1.json",
+    "status": "50_RECONCILED_RESEARCH_QUESTIONS_UNPUBLISHED_25_SOURCE_MISSING",
+    "prior_draft_exists_but_not_recovered": "TLM001-TLM025",
+    "source_exact_English": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+    "source_linked_summary": "data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
+    "traditionis_custodes_merged": "data/learn/traditionis-custodes-debates.v1.json",
+    "canonical_ownership": "Existing CR (81) dossiers, no new canonical/navigation dossiers; search or browse surface links only",
+    "editorial_blockers": [
+      "Exact TLM001–025 recovery",
+      "74 linkless 026–050 citation placeholders: candidate source IDs require claim-level verification",
+      "Eight unattributed rebuttal prompts require evidence of identifiable proponents or restatement as editorial follow-up questions",
+      "TLM026–050 English-only and TLM051–065 titles-only French parity; all user-facing paragraphs require vetted translation",
+      "TLM051–065 are normalized summaries, not original full draft",
+      "UI/index projection and runtime tests not yet published"
+    ],
+    "test": "tests/traditional-mass-objections-reconciliation.mjs"
   }
 }

@@ -1,0 +1,550 @@
+{
+  "version": "TLM_OBJECTIONS_051_065_RECONCILED_V1",
+  "status": "ENGLISH_SOURCE_LINKED_NORMALIZED_SUMMARIES_NOT_PUBLISHED",
+  "created_at": "2026-10-08",
+  "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
+  "source_transformation_notice": "This pack preserves all 15 earlier titles and principal claims, but the substantive passages were normalized/rephrased from chat draft, not exact verbatim migration. Consult previous in-chat TLM051–065 for complete draft language.",
+  "source_policy": "Original source links for each substantive paragraph; publication blocked until claim-level review and authentic objection attribution. French titles are preliminary; paragraphs not yet translated.",
+  "source_registry": [
+    {
+      "id": "SC63",
+      "title": "Sacrosanctum Concilium (1963)",
+      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "type": "COUNCIL_PRIMARY"
+    },
+    {
+      "id": "MR69",
+      "title": "Paul VI, Missale Romanum (1969)",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "SA64",
+      "title": "Paul VI, Sacram Liturgiam (1964)",
+      "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19640125_sacram-liturgiam.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "CHIRON",
+      "title": "Yves Chiron, How the Novus Ordo Mass Was Made (2021)",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "type": "HISTORICAL_SECONDARY"
+    },
+    {
+      "id": "AUD19",
+      "title": "Paul VI, general audience, 19 November 1969",
+      "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691119.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "AUD26",
+      "title": "Paul VI, general audience, 26 November 1969",
+      "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691126.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "IO64",
+      "title": "Inter Oecumenici (1964) English text",
+      "url": "https://origin.ewtn.com/catholicism/library/inter-oecumenici--instruction-on-implementing-the-constitution-on-sacred-liturgy-28955",
+      "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "TA67",
+      "title": "Tres abhinc annos (1967) English translation",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/TresAbhinc.html",
+      "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "OTT69",
+      "title": "Ottaviani and Bacci, Short Critical Study (1969)",
+      "url": "https://sourcebooks.web.fordham.edu/mod/1969ottoviani.asp",
+      "type": "CONTEMPORARY_CRITICAL_PRIMARY"
+    },
+    {
+      "id": "GIRM",
+      "title": "General Instruction of the Roman Missal",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
+      "type": "LITURGICAL_PRIMARY"
+    },
+    {
+      "id": "MEM69",
+      "title": "Congregation for Divine Worship, Memoriale Domini (1969)",
+      "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5165",
+      "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "MP69",
+      "title": "Paul VI, Mysterii Paschalis (1969)",
+      "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "GIM70",
+      "title": "General Instruction, amendments and 1970 text",
+      "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049",
+      "type": "DICASTERY_PRIMARY_REPRINT"
+    }
+  ],
+  "records": [
+    {
+      "id": "TLM051",
+      "question_original": "Vatican II ordered the creation of the Novus Ordo, so criticizing it means rejecting the Council.",
+      "question_fr": "Vatican II a-t-il ordonné la création du nouvel Ordo de la messe ?",
+      "canonical_owner": "CR-LIT-02",
+      "crossLinks": [
+        "CR-LIT-05"
+      ],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Sacrosanctum Concilium ordered a revision of the Roman liturgy but did not itself promulgate the complete Order of Mass introduced under Paul VI. Its principles concerned simplification, Scripture, participation, and the retention of sound tradition.",
+          "source_ids": [
+            "SC63",
+            "MR69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "identified_reply",
+          "text": "The reform was carried out under papal authority through postconciliar organs; it was not an independent act of priests or consultors. That juridical fact does not eliminate the historical question of whether every concrete decision met the Council's criteria, notably its requirement of organic development.",
+          "source_ids": [
+            "SA64",
+            "SC63",
+            "MR69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM052",
+      "question_original": "The reform merely simplified the old Mass. There was no substantial change.",
+      "question_fr": "La réforme n’a-t-elle fait que simplifier la messe traditionnelle ?",
+      "canonical_owner": "CR-LIT-05",
+      "crossLinks": [
+        "CR-LIT-02"
+      ],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Paul VI described the changes as significant; the postconciliar Missal introduced additional Eucharistic Prayers, a restructured Order of Mass and a much-expanded lectionary. Calling this process merely a reduction of ceremonial complexity understates its extent.",
+          "source_ids": [
+            "AUD19",
+            "MR69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "identified_reply",
+          "text": "Sacrosanctum Concilium positively required some simplification and restoration. Criticism therefore concerns which changes were necessary and organic, rather than an argument that no liturgical revision can be legitimate.",
+          "source_ids": [
+            "SC63",
+            "MR69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM053",
+      "question_original": "The Novus Ordo appeared suddenly in 1969, without any preceding reforms.",
+      "question_fr": "Le nouvel Ordo est-il apparu sans transition en 1969 ?",
+      "canonical_owner": "CR-LIT-03",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Inter Oecumenici in 1964 and Tres abhinc annos in 1967 progressively modified the existing Mass before promulgation of the 1969 Order. The experimental Missa normativa also preceded the final publication.",
+          "source_ids": [
+            "IO64",
+            "TA67",
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "A chronological chain of official revisions establishes institutional continuity but does not alone prove that every alteration constituted organic liturgical development. That judgment must use the Council's stated criteria.",
+          "source_ids": [
+            "SC63",
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM054",
+      "question_original": "Bugnini single-handedly invented the Novus Ordo.",
+      "question_fr": "Bugnini a-t-il inventé seul le nouvel Ordo ?",
+      "canonical_owner": "CR-LIT-04",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Archbishop Annibale Bugnini had major coordinating influence, but commissions, bishops, consultors and ultimately Paul VI participated in the drafting, review and authorization of the new Missal. Personalizing the entire reform under one man's authorship obscures the documented process.",
+          "source_ids": [
+            "CHIRON",
+            "MR69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "The documented procedures, selection of experts, and speed of some drafting stages are legitimate subjects of criticism. Those historical points should be argued from records rather than conspiratorial claims about one supposed sole author.",
+          "source_ids": [
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM055",
+      "question_original": "Paul VI simply rubber-stamped whatever the Consilium proposed.",
+      "question_fr": "Paul VI a-t-il simplement approuvé sans examen le travail du Consilium ?",
+      "canonical_owner": "CR-LIT-04",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Paul VI personally intervened on draft questions, including the Roman Canon and the form of the new Order of Mass. Chiron's reconstruction records objections and revisions during the drafting process; the Pope's promulgation was an exercise of his own juridical authority.",
+          "source_ids": [
+            "CHIRON",
+            "MR69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "Personal papal approval entails responsibility for the legal reform while remaining distinct from unauthorized innovations introduced during later celebrations. The evidence does not support treating Paul VI as a merely passive figurehead.",
+          "source_ids": [
+            "MR69",
+            "CHIRON",
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM056",
+      "question_original": "The bishops overwhelmingly approved the experimental new Mass in 1967.",
+      "question_fr": "Les évêques ont-ils massivement approuvé la messe expérimentale de 1967 ?",
+      "canonical_owner": "CR-LIT-04",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "On the general structure of the 1967 Missa normativa, the recorded votes were 71 placet, 43 non placet, 62 placet iuxta modum and four abstentions. A conditional placet is not a rejection, but neither is it an unconditional approval.",
+          "source_ids": [
+            "CHIRON",
+            "OTT69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "The 1967 vote concerned an experimental form rather than the final typical edition; it demonstrates significant reservations and cannot be used as a final canonical judgment on the promulgated Missal.",
+          "source_ids": [
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM057",
+      "question_original": "The 1967 experimental Mass and the final 1969–1970 Missal were exactly the same.",
+      "question_fr": "La messe expérimentale de 1967 était-elle identique au missel de 1970 ?",
+      "canonical_owner": "CR-LIT-04",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "The 1967 Missa normativa was a developmental stage. Further consultation, revisions and papal approval took place before the Order of Mass was promulgated in 1969 and the full Latin typical edition appeared in 1970.",
+          "source_ids": [
+            "CHIRON",
+            "MR69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "A criticism of a provisional version must identify what carried forward into the final text. Conversely, later revisions do not make earlier episcopal reservations historically irrelevant.",
+          "source_ids": [
+            "CHIRON",
+            "GIM70"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM058",
+      "question_original": "The original 1969 General Instruction reduced the Mass to a community meal.",
+      "question_fr": "L’Institutio Generalis de 1969 réduisait-elle la messe à un repas communautaire ?",
+      "canonical_owner": "CR-LIT-07",
+      "crossLinks": [
+        "CR-LIT-05"
+      ],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "identified_objection",
+          "text": "The 1969 Short Critical Study criticized the first wording of paragraph 7 for failing to state essential Eucharistic doctrines with sufficient explicitness, including the sacrificial nature of the Mass and Christ's substantial presence.",
+          "source_ids": [
+            "OTT69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "answer",
+          "text": "The reform's original general introduction was later supplemented and corrected, while Paul VI's apostolic constitution already referred to the Eucharistic Sacrifice. A doctrinally incomplete explanatory sentence does not alone establish that the promulgated rite rejects Catholic Eucharistic doctrine.",
+          "source_ids": [
+            "GIM70",
+            "MR69",
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM059",
+      "question_original": "The Ottaviani Intervention proved that the Novus Ordo was heretical or invalid.",
+      "question_fr": "L’intervention Ottaviani a-t-elle démontré l’hérésie ou l’invalidité du nouvel Ordo ?",
+      "canonical_owner": "CR-LIT-07",
+      "crossLinks": [
+        "CR-ECC-03"
+      ],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "identified_objection",
+          "text": "In 1969 Cardinals Ottaviani and Bacci transmitted a Short Critical Study alleging marked departures from the theology of Eucharistic sacrifice formulated at Trent. The study is a serious documented contemporary criticism, not a binding magisterial condemnation.",
+          "source_ids": [
+            "OTT69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "An argument that a rite expresses sacrificial doctrine less clearly does not automatically entail that the rite is invalid or formally heretical. The later amendments and the reform's own explicit sacrificial language must be weighed in any evaluation.",
+          "source_ids": [
+            "MR69",
+            "GIM70",
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM060",
+      "question_original": "The objections to the new Mass were ignored and nothing was corrected.",
+      "question_fr": "Toutes les critiques du nouvel Ordo ont-elles été ignorées ?",
+      "canonical_owner": "CR-LIT-05",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "The General Instruction was amended in 1970, including the introduction of an explicitly doctrinal preamble and clearer Eucharistic language, following the controversy surrounding the initial edition.",
+          "source_ids": [
+            "GIM70",
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "identified_reply",
+          "text": "These explanatory revisions did not reverse the core new arrangement of the Offertory, additional Eucharistic Prayers and other ritual changes. A critic may still object to those structural decisions without denying that corrections occurred.",
+          "source_ids": [
+            "MR69",
+            "CHIRON"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM061",
+      "question_original": "Vatican II required the Mass to be celebrated entirely in the vernacular.",
+      "question_fr": "Vatican II a-t-il imposé la messe entièrement en langue vernaculaire ?",
+      "canonical_owner": "CR-LIT-09",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Sacrosanctum Concilium 36 required the preservation of Latin in the Latin rites while admitting a wider place for the vernacular; article 54 also directed that the faithful should be able to sing or say their parts of the Ordinary in Latin.",
+          "source_ids": [
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "The Council authorized broader vernacular usage through competent ecclesiastical authority, but the near-total disappearance of Latin in some local practice cannot be described as its explicit requirement.",
+          "source_ids": [
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM062",
+      "question_original": "Paul VI dismissed the loss of Latin and Gregorian chant as unimportant.",
+      "question_fr": "Paul VI considérait-il la disparition du latin et du chant grégorien comme insignifiante ?",
+      "canonical_owner": "CR-LIT-09",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "In his 26 November 1969 audience, Paul VI acknowledged the spiritual and artistic loss caused by shifting from Latin to the vernacular, and specifically referred to Gregorian chant. He nonetheless defended greater verbal comprehension and popular participation as pastoral gains.",
+          "source_ids": [
+            "AUD26"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "His explanation confirms that the inherited musical and linguistic patrimony possessed a value he recognized. The proportionality of the sacrifice is a historical and pastoral question; neither the loss nor the anticipated benefit should be erased from the debate.",
+          "source_ids": [
+            "AUD26",
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM063",
+      "question_original": "Gregorian chant belongs to the old Mass and is incompatible with the modern liturgy.",
+      "question_fr": "Le chant grégorien est-il incompatible avec la liturgie réformée ?",
+      "canonical_owner": "CR-LIT-09",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Sacrosanctum Concilium 116 states that Gregorian chant is especially appropriate to Roman worship and should enjoy pride of place, other things equal. It was not reserved exclusively to celebrations under the 1962 Missal.",
+          "source_ids": [
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "The reformed Missal can be celebrated in Latin with chant; the near-total absence of chant from some parishes is a distinct issue of liturgical practice, formation and musical provision, not a universal prohibition in the reformed books.",
+          "source_ids": [
+            "GIRM",
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM064",
+      "question_original": "Vatican II and the new Missal introduced Communion in the hand.",
+      "question_fr": "Vatican II a-t-il institué la communion dans la main ?",
+      "canonical_owner": "CR-LIT-11",
+      "crossLinks": [
+        "CR-LIT-12"
+      ],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Sacrosanctum Concilium did not order Communion in the hand. The 1969 instruction Memoriale Domini addressed its diffusion in certain places, retained the established mode as the baseline and permitted particular episcopal-conference requests to receive authorization for the alternative practice.",
+          "source_ids": [
+            "MEM69",
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "The discipline's manner of introduction is a legitimate historical issue. Where lawful permission was granted, the practice should not simply be labeled illicit; concerns about Eucharistic reverence should instead be addressed using the instruction's own considerations.",
+          "source_ids": [
+            "MEM69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "id": "TLM065",
+      "question_original": "The reform of the liturgical calendar was simply an attack on traditional saints and feasts.",
+      "question_fr": "La réforme du calendrier liturgique visait-elle les saints traditionnels ?",
+      "canonical_owner": "CR-LIT-05",
+      "crossLinks": [],
+      "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
+      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": "Paul VI's Mysterii Paschalis (1969) stated that revising the calendar would give priority to the Paschal Mystery, reduce overload in the universal sanctoral cycle and broaden representation of saints from across the Church.",
+          "source_ids": [
+            "MP69"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        },
+        {
+          "role": "assessment",
+          "text": "The calendar shapes devotional memory and particular changes may be criticized on their historical merits; nevertheless the fact of suppressing or moving celebrations does not demonstrate an intention to attack the cult of saints. Earlier popes had also revised feasts, vigils and octaves.",
+          "source_ids": [
+            "MP69",
+            "SC63"
+          ],
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "questions": 15,
+    "substantive_paragraphs": 30,
+    "new_canonical_dossiers": 0
+  }
+}
