@@ -503,5 +503,26 @@
     ],
     "unresolved": "Original Latin collation and editorial theological/source review; no production runtime/published UI.",
     "new_navigation_dossiers": 0
+  },
+  "traditionis_custodes_2021_2025": {
+    "file": "data/learn/traditionis-custodes-debates.v1.json",
+    "status": "30_BILINGUAL_SOURCED_EDITORIAL_PARAGRAPHS_UNPUBLISHED",
+    "legacy_debate_ids": "TLM066-TLM075",
+    "question_count": 10,
+    "source_count": 14,
+    "canonical_owners": [
+      "CR-ECC-03",
+      "CR-AUT-07",
+      "CR-AUT-06",
+      "CR-ECC-05",
+      "CR-AUT-03"
+    ],
+    "policy": "Absorb debates as source-backed subquestions of existing canonical dossiers; Mass/TLM objections and other Formation surfaces provide cross-links only. No new navigation dossier.",
+    "review_gates": [
+      "Source links and attributions checked against original publications",
+      "French language and legal analysis editorial review",
+      "Published data projection integration and rendering checks"
+    ],
+    "test": "tests/traditionis-custodes-debates.mjs"
   }
 }
