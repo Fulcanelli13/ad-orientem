@@ -146,11 +146,57 @@ export function readExistingSspxSnapshots(root=process.cwd()){
       return rows;
     });
 }
+export function parseDistrictMarkdown(text,{url}={}){
+  const source=String(text??"");
+  const chunks=[];
+  const headings=[...source.matchAll(/^#{2,4}[ \t]+(.+)$/gm)];
+  for(let i=0;i<headings.length;i++){
+    const h=headings[i],start=h.index,end=headings[i+1]?.index??source.length;
+    const raw=source.slice(start,end).split(/\r?\n/)
+      .map(line=>line.replace(/^\s*(?:[*-]\s+|\d+[.)]\s+)/,"").trim())
+      .filter(line=>line&&!/^!\[/.test(line)&&!/^Image:/.test(line)).join("\n");
+    const title=flat(h[1].replace(/\[([^\]]+)\]\([^)]+\)/g,"$1"));
+    if(title&&title.length<160&&/^(United States|Canada|Mexico)$/m.test(raw))
+      chunks.push({title,raw:title+"\n"+raw.split("\n").slice(1).join("\n")});
+  }
+  return chunks;
+}
+async function fallbackCards(url){
+  const mirrors=[
+    "https://r.jina.ai/https://"+new URL(url).host+new URL(url).pathname,
+    "https://r.jina.ai/http://"+new URL(url).host+new URL(url).pathname,
+  ];
+  const errors=[];
+  for(const mirror of mirrors){
+    try{
+      const controller=new AbortController();
+      const deadline=setTimeout(()=>controller.abort(),25000);
+      let result;
+      try{result=await fetch(mirror,{signal:controller.signal,headers:{"Accept":"text/plain"}});}
+      finally{clearTimeout(deadline);}
+      if(!result.ok)throw new Error("HTTP "+result.status);
+      const text=await result.text();
+      if(text.length<10000)throw new Error("mirror too short: "+text.length);
+      const cards=parseDistrictMarkdown(text,{url});
+      const required=url.includes("sspx.org")?["Annunciation Chapel","Christ the King Church"]:
+        ["Cathedral of the Transfiguration","Christ the King Church"];
+      if(cards.length<25||!required.every(name=>cards.some(c=>c.title.includes(name)))){
+        throw new Error("incomplete mirror: "+cards.length+" cards; missing sentinels");
+      }
+      return {cards,transport:"THIRD_PARTY_READ_ONLY_RENDER",mirror};
+    }catch(error){errors.push(mirror+": "+String(error));}
+  }
+  throw new Error("No usable district transport for "+url+"; "+errors.join("; "));
+}
 async function fetchCards(browser,url){
   const page=await browser.newPage({locale:"en-US"});
   try{
     const response=await page.goto(url,{waitUntil:"domcontentloaded",timeout:45000});
-    invariant(response?.ok(),"district page HTTP "+(response?.status()??"unknown")+" at "+url);
+    if(!response?.ok()){
+      const fallback=await fallbackCards(url);
+      console.warn("Official district direct access denied; source retrieved from nonauthoritative mirror",url,fallback.transport);
+      return fallback.cards;
+    }
     return await page.evaluate(()=>{
       const items=[];
       for(const h of document.querySelectorAll("h2")){
