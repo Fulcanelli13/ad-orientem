@@ -60,7 +60,7 @@ export function parseNorthAmericaCards(cards,{district,checkedOn="2026-10-08"}={
       /^Canada$/i.test(countryLine)?"CA":"MX";
     const sunday=/\bSunday Mass\b|\bMesse dominicale\b/i.test(raw);
     const weekday=/\bWeekday Mass\b|\bMesse en semaine\b/i.test(raw);
-    const key=district+"|"+fingerprint(title)+"|"+fingerprint(raw.slice(0,150));
+    const key=country+"|"+fingerprint(title)+"|"+fingerprint(raw.slice(0,raw.indexOf(countryLine)+countryLine.length));
     if(seen.has(key))continue;
     seen.add(key);
     const base={source_title:title,source_page:config.url,source_country:country,
