@@ -286,6 +286,8 @@ const SHELL_STYLE = `
   background:color-mix(in srgb,var(--ao-mass-panel) 94%,#080b10);box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
 }
 .ao-schola-dock[data-active="false"]{display:none}
+/* A manually collapsed Schola retains its SHOW handle even between sung cues. */
+.ao-schola-dock[data-active="false"][data-collapsed="true"]{display:block}
 .ao-schola-dock[data-collapsed="true"]{min-height:32px;height:32px!important;padding-top:4px;padding-bottom:4px}
 .ao-schola-dock[data-collapsed="true"] .ao-schola-main,
 .ao-schola-dock[data-collapsed="true"] .ao-schola-translation,
@@ -1152,7 +1154,7 @@ export function createReaderDomAdapter({
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
-    const reserve=(scholaActive||scholaRelevant) ? (scholaCollapsed ? 32 : scholaHeight) : 0;
+    const reserve=(scholaActive||scholaRelevant||scholaCollapsed) ? (scholaCollapsed ? 32 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
       shell.dataset.scholaRelevant=String(scholaRelevant);
