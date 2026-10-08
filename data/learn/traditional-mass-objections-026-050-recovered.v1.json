@@ -1,0 +1,1197 @@
+{
+  "version": "TLM_OBJECTIONS_026_050_RECOVERED_V1",
+  "created_at": "2026-10-08",
+  "status": "EXACT_ENGLISH_SOURCE_TEXT_RECOVERED_DRAFT_NOT_PUBLISHED",
+  "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
+  "publication_policy": "No mass-app or Formation runtime integration until original question provenance, source claim support and French translation are verified. Candidate links are not certified citations.",
+  "original_source_issue": "74 prior chatgpt-content-reference indices were non-resolving placeholders; numerical provenance retained for editorial investigation. These are not links.",
+  "original_source": "file_00000000af748211b582b239af188275 / Pasted text.txt",
+  "source_registry": [
+    {
+      "id": "BEN07",
+      "title": "Benedict XVI, letter accompanying Summorum Pontificum (2007)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "FR21",
+      "title": "Francis, letter accompanying Traditionis custodes (2021)",
+      "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "SC63",
+      "title": "Sacrosanctum Concilium (1963)",
+      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "type": "COUNCIL_PRIMARY"
+    },
+    {
+      "id": "GIRM",
+      "title": "General Instruction of the Roman Missal (2003 English)",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
+      "type": "RUBRICAL_PRIMARY"
+    },
+    {
+      "id": "CCC_MOD",
+      "title": "Catechism §§2521–2524 on modesty",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_9/ii_the_battle_for_purity.html",
+      "type": "DOCTRINAL_PRIMARY"
+    },
+    {
+      "id": "CCC_JUD",
+      "title": "Catechism §2477 on rash judgment and detraction",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html",
+      "type": "DOCTRINAL_PRIMARY"
+    },
+    {
+      "id": "COR11",
+      "title": "1 Corinthians 11, head covering at worship",
+      "url": "https://www.vatican.va/archive/ENG0839/__PXX.HTM",
+      "type": "SCRIPTURE_SOURCE_URL_CHECK_REQUIRED"
+    },
+    {
+      "id": "CODE83",
+      "title": "1983 Code of Canon Law, promulgation and previous Code replacement",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html",
+      "type": "CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "VEIL",
+      "title": "Brian Baker, legal history of women's church headcovering (2016)",
+      "url": "https://uscatholic.org/articles/201606/hats-in-church-a-heady-issue/",
+      "type": "HISTORICAL_SECONDARY"
+    },
+    {
+      "id": "SERV94",
+      "title": "Congregation for Divine Worship, 1994 communication on female altar servers",
+      "url": "https://www.ewtn.com/catholicism/library/vatican-communication-on-female-altar-servers-29771",
+      "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "ORD94",
+      "title": "John Paul II, Ordinatio sacerdotalis (1994)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1994/documents/hf_jp-ii_apl_19940522_ordinatio-sacerdotalis.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "MR69",
+      "title": "Paul VI, Missale Romanum (1969)",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "MR62",
+      "title": "Missale Romanum — Editio typica (1962) facsimile",
+      "url": "https://archive.org/details/sp07mr62-editio-typica",
+      "type": "LITURGICAL_PRIMARY"
+    },
+    {
+      "id": "CHIRON",
+      "title": "Yves Chiron, How the Novus Ordo Mass Was Made (2021)",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "type": "HISTORICAL_SECONDARY"
+    },
+    {
+      "id": "BERTH22",
+      "title": "Pierre-Marie Berthe, La chute de la pratique catholique en France autour de 1965 (2022)",
+      "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene",
+      "type": "HISTORICAL_SECONDARY"
+    },
+    {
+      "id": "ED88",
+      "title": "John Paul II, Ecclesia Dei (1988)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "GS65",
+      "title": "Gaudium et spes §43 (1965)",
+      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
+      "type": "COUNCIL_PRIMARY"
+    },
+    {
+      "id": "CIC83",
+      "title": "1983 Code of Canon Law, book III (canons 230 and others)",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
+      "type": "CANON_LAW_PRIMARY"
+    }
+  ],
+  "records": [
+    {
+      "id": "TLM026",
+      "question_original": "“The Traditional Mass is just nostalgia for the 1950s.”",
+      "canonical_owner": "CR-LIT-05",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "That explanation cannot account for Catholics who never experienced the preconciliar period. Benedict XVI explicitly observed in 2007 that younger people were discovering the older liturgy, feeling attracted to it and finding it particularly suited to encounter with the Eucharistic mystery; Francis repeated that observation in his 2021 letter accompanying *Traditionis Custodes*.",
+          "source_ids": [
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 0
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“Young people can still romanticize a past they never lived.”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "Certainly. Attraction to an imagined past can exist, and Benedict XVI himself acknowledged that exaggerated social attitudes had sometimes become associated with attachment to the older liturgical tradition. But that possibility cannot establish that nostalgia explains every attachment; the stated reasons of individual worshippers still have to be examined rather than psychologized away.",
+          "source_ids": [
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 1
+        },
+        {
+          "role": "substantive",
+          "text": "A serious defence of the TLM should therefore rest on its actual liturgical characteristics—texts, ritual structure, silence, Latin, chant, orientation, calendar and continuity—not on the claim that its adherents possess purer motives than everyone else. Benedict's own defence combined appreciation of the earlier liturgy with explicit recognition of the legitimacy and holiness of the reformed Missal.",
+          "source_ids": [
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 2
+        }
+      ]
+    },
+    {
+      "id": "TLM027",
+      "question_original": "“Young people only like the TLM because it is exotic and countercultural.”",
+      "canonical_owner": "CR-LIT-05",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Novelty can attract people to almost any religious movement, so youthful interest by itself does not prove the TLM superior. But the converse is also true: youthful attraction cannot simply be dismissed as inherited nostalgia, because Benedict XVI explicitly noted that people with no lived memory of the older liturgy were discovering it for themselves.",
+          "source_ids": [
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 3
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“So the fact that young people like it proves nothing.”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "Correct. Demographics do not settle liturgical theology. The relevant question is *why* they are attracted and whether the features attracting them correspond to genuine Catholic liturgical goods. Benedict associated the older form with sacrality and Eucharistic encounter, while Francis later judged that attachment had in some cases become linked to rejection of the Council and ecclesial division; both phenomena therefore have to be distinguished rather than reduced to one explanation.",
+          "source_ids": [
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 4
+        }
+      ]
+    },
+    {
+      "id": "TLM028",
+      "question_original": "“The TLM is elitist because ordinary people need Latin and liturgical training to follow it.”",
+      "canonical_owner": "CR-LIT-09",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Benedict XVI openly acknowledged that use of the older Missal presupposes some liturgical formation and access to Latin, and that neither is widespread. The accessibility objection is therefore not imaginary.",
+          "source_ids": [
+            "BEN07",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 5
+        },
+        {
+          "role": "substantive",
+          "text": "That difficulty does not make the rite intrinsically elitist. John Paul II spoke of the “rightful aspirations” of Catholics attached to earlier liturgical forms, while Benedict distinguished attachment to the old Missal from rejection of the pope or Vatican II. Formation barriers can be addressed through catechesis, translations and familiarity without concluding that a historically received form of Roman worship is suitable only for a social elite.",
+          "source_ids": [
+            "BEN07",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 6
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“But a parish liturgy should be immediately accessible without special training.”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "Immediate verbal accessibility is a genuine pastoral good, but Catholic liturgy itself requires formation even in the vernacular. Vatican II devoted substantial attention to liturgical instruction because understanding the theological meaning of Eucharistic worship is not reducible to understanding the vocabulary used aloud.",
+          "source_ids": [
+            "BEN07",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 7
+        }
+      ]
+    },
+    {
+      "id": "TLM029",
+      "question_original": "“Women wearing veils at the TLM is sexist.”",
+      "canonical_owner": "CR-LIT-12",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Women's head covering at Christian worship has an explicit New Testament antecedent in 1 Corinthians 11, so the practice cannot honestly be dismissed as a modern traditionalist invention. St Paul discusses women's head covering specifically in the context of Christian prayer and assembly.",
+          "source_ids": [
+            "COR11",
+            "CODE83",
+            "VEIL"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 8
+        },
+        {
+          "role": "substantive",
+          "text": "At the same time, wearing a chapel veil is **not a universal requirement of current Latin canon law**. The 1917 Code contained a head-covering norm, but that Code was superseded by the 1983 Code, which contains no equivalent obligation. Canonist Edward Peters explains the canonical history directly.",
+          "source_ids": [
+            "COR11",
+            "CODE83",
+            "VEIL"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 9
+        },
+        {
+          "role": "substantive",
+          "text": "A woman who voluntarily veils may therefore understand it as a devotional expression of reverence, modesty or continuity with older Catholic custom; another Catholic woman is not thereby violating current universal law by attending Mass unveiled. Treating either woman with contempt goes beyond what the Church currently legislates.",
+          "source_ids": [
+            "COR11",
+            "CODE83",
+            "VEIL"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 10
+        }
+      ]
+    },
+    {
+      "id": "TLM030",
+      "question_original": "“Traditional Catholics are obsessed with policing women's clothing.”",
+      "canonical_owner": "CR-AUT-09",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Catholic teaching really does include modesty. The Catechism says modesty concerns bodily presentation, conduct, looks, feelings and clothing, and relates it to human dignity and chastity. But it also explicitly says that the concrete forms modesty takes vary between cultures.",
+          "source_ids": [
+            "CCC_MOD",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 11
+        },
+        {
+          "role": "substantive",
+          "text": "The doctrine therefore cannot honestly be reduced to one universal skirt length, one approved garment or one set of internet rules. Nor is modesty an obligation imposed only on women; it is a virtue governing how persons present themselves and how they look at others.",
+          "source_ids": [
+            "CCC_MOD",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 12
+        },
+        {
+          "role": "substantive",
+          "text": "Traditional Catholics also have no moral licence for rash judgment. The Catechism expressly condemns assuming another person's moral fault without sufficient foundation and requires charitable interpretation of another's actions where possible.",
+          "source_ids": [
+            "CCC_MOD",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 13
+        }
+      ]
+    },
+    {
+      "id": "TLM031",
+      "question_original": "“Refusing altar girls proves TLM communities think women are inferior.”",
+      "canonical_owner": "CR-LIT-12",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Current Latin discipline permits diocesan bishops to allow women and girls to serve at the altar under canon 230 §2. The Holy See's authentic interpretation also states that this permission is not an individual right and does not bind every bishop to introduce the practice.",
+          "source_ids": [
+            "SERV94",
+            "CIC83",
+            "ORD94"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 14
+        },
+        {
+          "role": "substantive",
+          "text": "The same 1994 clarification explicitly encouraged preservation of the tradition of boys serving at the altar and noted its historic connection with fostering priestly vocations. A TLM community retaining male altar service therefore follows a discipline the Holy See itself expressly recognized as legitimate rather than asserting that women lack equal baptismal dignity.",
+          "source_ids": [
+            "SERV94",
+            "CIC83",
+            "ORD94"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 15
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“But isn't exclusion from a liturgical role still discrimination?”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "Catholic doctrine does not equate human equality with interchangeability of every ecclesial role. The CDF's teaching on the male priesthood expressly rejects the idea that baptism creates a personal entitlement to every public ministry in the Church.",
+          "source_ids": [
+            "SERV94",
+            "CIC83",
+            "ORD94"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 16
+        }
+      ]
+    },
+    {
+      "id": "TLM032",
+      "question_original": "“Altar rails divide the people from God.”",
+      "canonical_owner": "CR-LIT-11",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Catholic liturgy itself preserves a distinction between sanctuary and nave. The current General Instruction says the sanctuary is the place of the altar and ministerial offices and should be marked off from the body of the church by elevation, structure or ornamentation, while still expressing the unity of the whole people.",
+          "source_ids": [
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 17
+        },
+        {
+          "role": "substantive",
+          "text": "An altar rail is therefore one architectural way of expressing a distinction the reformed liturgy itself still recognizes: unity does not require spatial undifferentiation. The theological question is whether the boundary helps express sacred order, ministerial distinction and Eucharistic reverence, not whether every physical boundary constitutes social exclusion.",
+          "source_ids": [
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 18
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“But doesn't a rail imply the laity are second-class Catholics?”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "The current General Instruction simultaneously affirms a hierarchical differentiation of ministries and the unity of the assembled People of God. Catholic liturgical order therefore treats differentiation and equal Christian dignity as compatible categories.",
+          "source_ids": [
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 19
+        }
+      ]
+    },
+    {
+      "id": "TLM033",
+      "question_original": "“The Novus Ordo has much more Scripture, so it is obviously superior.”",
+      "canonical_owner": "CR-LIT-08",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Vatican II deliberately required the biblical treasures to be opened more abundantly and called for a more representative portion of Scripture to be read over a multi-year cycle. The reformed lectionary genuinely implements that objective, and traditional apologetics should not deny it.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 20
+        },
+        {
+          "role": "substantive",
+          "text": "Quantity of passages read publicly, however, is not the only possible measure of liturgical quality. The comparison must also consider how readings are selected, repeated, connected to the sanctoral and temporal cycles, and integrated with Propers and other scriptural liturgical texts; the Council itself required reform in continuity with sound tradition rather than identifying “more readings” with the entire criterion of liturgical excellence.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 21
+        }
+      ]
+    },
+    {
+      "id": "TLM034",
+      "question_original": "“The old one-year lectionary is impoverished compared with the modern three-year cycle.”",
+      "canonical_owner": "CR-LIT-08",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "The older system undeniably exposes the congregation to a narrower range of biblical pericopes at Mass than the postconciliar multi-year lectionary. Vatican II explicitly wanted a broader representative portion of Scripture read to the faithful, and the contemporary lectionary was built to fulfil that mandate.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 22
+        },
+        {
+          "role": "substantive",
+          "text": "That fact does not settle every comparative question. A one-year cycle can create strong annual repetition and stable association between particular Sundays, feasts and passages, whereas a multi-year cycle maximizes breadth. These are different liturgical goods, and deciding between them requires more than counting verses. *Sacrosanctum Concilium* itself combines expansion of Scripture with the principle that liturgical reform should preserve sound tradition and proceed organically.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 23
+        },
+        {
+          "role": "substantive",
+          "text": "Claims that the reformed lectionary systematically suppresses difficult themes should not be made from anecdotes or raw word counts. They require an actual contextual comparison of omissions, truncations, optional passages and thematic redistribution across both lectionaries.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 24
+        }
+      ]
+    },
+    {
+      "id": "TLM035",
+      "question_original": "“The traditional Mass gives too little importance to preaching.”",
+      "canonical_owner": "CR-LIT-12",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Vatican II strengthened the liturgical status of the homily and directed that on Sundays and holy days it ordinarily not be omitted. The current General Instruction likewise calls the homily part of the liturgy and says it should ordinarily explain the readings or another liturgical text in relation to the mystery celebrated and the needs of the faithful.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 25
+        },
+        {
+          "role": "substantive",
+          "text": "A traditional Catholic therefore has no reason to defend bad, perfunctory or doctrinally thin preaching. The fact that the 1962 ritual structure treats the sermon differently from the modern liturgical arrangement does not make preaching unimportant to Catholic formation. Vatican II's insistence upon serious preaching addressed a genuine pastoral need.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 26
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“Then isn't the modern arrangement simply better?”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "It may be pastorally advantageous in this respect, but the quality of preaching depends primarily upon the doctrine, preparation and ability of the preacher rather than the rubric locating the sermon. Modern law itself contains extensive norms because liturgical placement alone does not guarantee good preaching.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 27
+        }
+      ]
+    },
+    {
+      "id": "TLM036",
+      "question_original": "“The old Offertory is unnecessarily complicated and talks as if the bread and wine were already Christ's sacrifice.”",
+      "canonical_owner": "CR-LIT-06",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "The 1962 Offertory contains prayers such as *Suscipe, sancte Pater* and *Offerimus tibi, Domine* that explicitly speak of offering a spotless host, sins, salvation and sacrifice before the consecration. The later Missal instead uses the *Benedictus es, Domine Deus universi* formulas over bread and wine and retains explicitly sacrificial language elsewhere, including the *Orate, fratres* and Eucharistic Prayer. The textual difference is real.",
+          "source_ids": [
+            "MR62",
+            "MR69",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 28
+        },
+        {
+          "role": "substantive",
+          "text": "The traditional theological answer is not that unconsecrated bread is already the Body of Christ. Liturgical language can anticipate the sacrificial reality toward which the gifts are ordered, just as the rite can call the bread an offering before the consecration without confusing natural substance with the consecrated victim. The same 1962 Offertory explicitly asks God to sanctify the sacrifice being prepared.",
+          "source_ids": [
+            "MR62",
+            "MR69",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 29
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“Then why did the reform change it?”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "Paul VI described the revised Missal as part of a broader reorganization intended to clarify the parts of the Mass and renew the rite according to conciliar principles. Whether the older Offertory's anticipatory sacrificial language was pastorally obscure or instead theologically valuable remains a legitimate comparative question; its removal cannot simply be explained by claiming it taught literal pre-consecration transubstantiation.",
+          "source_ids": [
+            "MR62",
+            "MR69",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 30
+        }
+      ]
+    },
+    {
+      "id": "TLM037",
+      "question_original": "“Why cling to one Roman Canon when the new Eucharistic Prayers give richer variety?”",
+      "canonical_owner": "CR-LIT-06",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Paul VI himself called the introduction of additional Eucharistic Prayers a major innovation. He noted that the Roman Canon had retained a remarkably stable form for many centuries and that three additional Eucharistic Prayers were being added to provide different theological emphases and richer themes of thanksgiving.",
+          "source_ids": [
+            "MR69",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 31
+        },
+        {
+          "role": "substantive",
+          "text": "A traditional Catholic can therefore acknowledge a real advantage in legitimate textual variety without pretending the Roman tradition suffered from having one stable Canon. Stability itself can be a liturgical good because repeated prayer forms shape memory, theological instinct and continuity across generations. Paul VI's own explanation confirms that the addition of several Canons represented a significant change to long-standing Roman usage.",
+          "source_ids": [
+            "MR69",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 32
+        },
+        {
+          "role": "substantive",
+          "text": "The current Missal retains the Roman Canon as Eucharistic Prayer I and permits it broadly, while also providing other Eucharistic Prayers for different occasions. The debate is therefore not “Catholic Canon versus invalid modern prayers,” but whether the expansion strengthened or diluted the distinctive inherited Roman liturgical identity.",
+          "source_ids": [
+            "MR69",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 33
+        }
+      ]
+    },
+    {
+      "id": "TLM038",
+      "question_original": "“The old Mass is obsessed with sin, sacrifice and propitiation instead of celebrating the Resurrection.”",
+      "canonical_owner": "CR-LIT-07",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Catholic Eucharistic doctrine includes sacrifice as well as thanksgiving, communion and resurrection. The current General Instruction itself calls the altar the place where the Sacrifice of the Cross is made sacramentally present, and Paul VI consistently describes the Eucharist as the Eucharistic Sacrifice. Sacrificial language is therefore not a preconciliar theological defect.",
+          "source_ids": [
+            "MR62",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 34
+        },
+        {
+          "role": "substantive",
+          "text": "The traditional Missal does use abundant penitential, sacrificial and propitiatory vocabulary, especially in the Offertory and Canon. Its prayers explicitly refer to sins, salvation, sacrifice, the living and dead and the acceptability of the offering before God.",
+          "source_ids": [
+            "MR62",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 35
+        },
+        {
+          "role": "substantive",
+          "text": "A balanced Catholic theology should not turn that strength into a false opposition. The Eucharist is also thanksgiving, praise, communion and proclamation of Christ's Resurrection; the modern Missal explicitly seeks to bring these multiple dimensions into view. The real comparative question is whether the reformed texts maintain the sacrificial and propitiatory dimensions with equal liturgical salience, not whether those dimensions belong to Catholic doctrine.",
+          "source_ids": [
+            "MR62",
+            "GIRM"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 36
+        }
+      ]
+    },
+    {
+      "id": "TLM039",
+      "question_original": "“Six Protestants wrote the Novus Ordo.”",
+      "canonical_owner": "CR-LIT-04",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "That formulation is too crude to be used as a serious historical argument. Protestant observers were present around the postconciliar liturgical reform process, but presence as observers or consultants is not the same thing as possessing juridical authorship of the Roman Missal, which was promulgated by Pope Paul VI under Catholic ecclesiastical authority. Paul VI's apostolic constitution is the juridical act establishing the revised Missal.",
+          "source_ids": [
+            "MR69",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 37
+        },
+        {
+          "role": "substantive",
+          "text": "Traditionalist historians are nevertheless entitled to investigate ecumenical influence on the reform. Even traditionalist-friendly accounts that emphasize Protestantizing tendencies acknowledge that the observers' actual role has to be distinguished from slogans about them “writing the Mass”; one such review notes scholarship judging their direct role comparatively limited while still treating their presence and the reformers' ecumenical aims as historically relevant.",
+          "source_ids": [
+            "MR69",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 38
+        },
+        {
+          "role": "substantive",
+          "text": "The stronger argument therefore examines particular textual changes and documented reform principles. If an Offertory prayer disappeared, a rubric changed or a theological emphasis became less explicit, that can be demonstrated directly from the liturgical books; invoking “six Protestants” does not itself establish that the resulting text is Protestant.",
+          "source_ids": [
+            "MR69",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 39
+        }
+      ]
+    },
+    {
+      "id": "TLM040",
+      "question_original": "“Facing the people is the ancient Christian norm; ad orientem is a medieval invention.”",
+      "canonical_owner": "CR-LIT-10",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "The current Roman Missal clearly permits and often facilitates celebration facing the people: GIRM 299 says altars should ordinarily be built apart from the wall so Mass can be celebrated *versus populum*, which it describes as desirable wherever possible. A traditionalist should not deny that current Roman legislation favours architectural possibility for that orientation.",
+          "source_ids": [
+            "GIRM",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 40
+        },
+        {
+          "role": "substantive",
+          "text": "That does not prove a simple historical narrative in which the primitive Church universally celebrated across a table facing the congregation until medieval clericalism reversed the priest. Liturgical orientation developed in relation to church architecture, eastward prayer, apsidal design and local practice; current legislation itself does not claim that versus populum was the universal apostolic norm.",
+          "source_ids": [
+            "GIRM",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 41
+        },
+        {
+          "role": "substantive",
+          "text": "The strongest traditional defence of *ad orientem* is consequently theological rather than mythological: priest and people share a common liturgical orientation toward God. The current General Instruction itself retains the concepts of sanctuary, hierarchical ordering and the altar as the center toward which the whole assembly is directed, so Catholic worship is not reducible to priest and people visually facing one another.",
+          "source_ids": [
+            "GIRM",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 42
+        }
+      ]
+    },
+    {
+      "id": "TLM041",
+      "question_original": "“Liturgical abuse is not the fault of the new Missal.”",
+      "canonical_owner": "CR-GOV-06",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Correct. An abuse is by definition a departure from what the Church authorizes, so the existence of clownish, improvised or unauthorized celebrations cannot simply be attributed to the text of the Missal. Vatican II explicitly forbids priests from adding, removing or changing the liturgy on their own authority.",
+          "source_ids": [
+            "SC63",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 43
+        },
+        {
+          "role": "substantive",
+          "text": "Benedict XVI nevertheless testified that in many places the new Missal was interpreted as authorizing or requiring creativity, producing deformations he found deeply painful. Francis later likewise acknowledged abuses “on all sides” and ordered fidelity to the reformed liturgical books. The historical fact that abuse occurred on a large scale is therefore acknowledged by both popes even though such abuse cannot simply be identified with the Missal itself.",
+          "source_ids": [
+            "SC63",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 44
+        },
+        {
+          "role": "substantive",
+          "text": "A serious critique should therefore distinguish at least three questions: what the reformed books actually prescribe, what legitimate options they permit, and what clergy introduced without authorization. Failure to make those distinctions weakens rather than strengthens the traditionalist case.",
+          "source_ids": [
+            "SC63",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 45
+        }
+      ]
+    },
+    {
+      "id": "TLM042",
+      "question_original": "“Traditionalists blame every postconciliar problem on the new Mass.”",
+      "canonical_owner": "CR-ORG-09",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "That is historically unsustainable. Secularization, demographic change, theological dissent, cultural revolution, sexual revolution, institutional weakness and pre-existing pastoral problems cannot all be reduced to a single liturgical reform. Serious historical work on the post-1960 Catholic crisis treats it as a complex interaction of ecclesial and societal causes.",
+          "source_ids": [
+            "BEN07",
+            "FR21",
+            "BERTH22"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 46
+        },
+        {
+          "role": "substantive",
+          "text": "The liturgical reform can still be investigated as one factor among others. Benedict XVI himself connected arbitrary liturgical deformation with serious pastoral suffering, while Francis presents the postconciliar reform as an intended renewal of Roman worship; neither position justifies pretending liturgy had no consequences at all.",
+          "source_ids": [
+            "BEN07",
+            "FR21",
+            "BERTH22"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 47
+        },
+        {
+          "role": "substantive",
+          "text": "The defensible traditionalist claim is therefore narrower: changes in worship may influence belief, religious identity and ecclesial culture, so the reform deserves historical and theological evaluation. It is not necessary—and usually not credible—to claim it single-handedly caused every decline in Catholic life.",
+          "source_ids": [
+            "BEN07",
+            "FR21",
+            "BERTH22"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 48
+        }
+      ]
+    },
+    {
+      "id": "TLM043",
+      "question_original": "“If the old Mass was so good, why was Catholicism already collapsing before Vatican II?”",
+      "canonical_owner": "CR-ORG-05",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "The premise needs qualification. In France, major pastoral and intellectual difficulties clearly existed before Vatican II, including worker-priest controversies, de-Christianization in some regions and serious attempts to respond to a changing society. The Church did not enter 1962 from an untouched golden age.",
+          "source_ids": [
+            "BERTH22",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 49
+        },
+        {
+          "role": "substantive",
+          "text": "At the same time, historical research places the sharp French collapse in regular religious practice mainly in the 1960s and later rather than describing a uniform pre-1962 collapse. Guillaume Cuchet's work identifies a dramatic break around the mid-1960s, while other scholarship describes relative stability in French Sunday practice from roughly 1930 to 1960 followed by a later collapse.",
+          "source_ids": [
+            "BERTH22",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 50
+        },
+        {
+          "role": "substantive",
+          "text": "That chronology does not by itself prove Vatican II or the liturgical reform caused the collapse. Temporal sequence is not sufficient evidence of causation, and historians debate interacting religious, cultural and social factors. It does, however, make the opposite slogan—“everything was already collapsing anyway”—equally inadequate.",
+          "source_ids": [
+            "BERTH22",
+            "CHIRON"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 51
+        }
+      ]
+    },
+    {
+      "id": "TLM044",
+      "question_original": "“Before Vatican II ordinary Catholics understood nothing at Mass.”",
+      "canonical_owner": "CR-LIT-02",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "That claim is too sweeping. Benedict XVI recalled that in some countries the Liturgical Movement had given many Catholics substantial liturgical formation and deep familiarity with the older form, while also acknowledging that Latin and liturgical formation were not universal.",
+          "source_ids": [
+            "BEN07",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 52
+        },
+        {
+          "role": "substantive",
+          "text": "Vatican II's demand for fuller conscious participation nevertheless shows that the bishops considered existing formation inadequate in many places. The Council explicitly wanted the rites and prayers more fully understood and participation strengthened.",
+          "source_ids": [
+            "BEN07",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 53
+        },
+        {
+          "role": "substantive",
+          "text": "The accurate conclusion is therefore mixed: some Catholics followed the old Mass intelligently and intensely; others attended with limited understanding. The pastoral failure of the latter group argues for better formation, but does not establish that the rite itself was unintelligible or spiritually fruitless.",
+          "source_ids": [
+            "BEN07",
+            "SC63"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 54
+        }
+      ]
+    },
+    {
+      "id": "TLM045",
+      "question_original": "“Traditional Catholics think they are holier than everyone else.”",
+      "canonical_owner": "CR-AUT-09",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Some do behave that way, and Benedict XVI explicitly acknowledged “exaggerations” and problematic social attitudes among Catholics attached to the older liturgical tradition. No liturgical preference guarantees humility or sanctity.",
+          "source_ids": [
+            "BEN07",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 55
+        },
+        {
+          "role": "substantive",
+          "text": "Catholic moral teaching directly condemns rash judgment, detraction and unjust injury to another person's reputation. A traditional Catholic who treats Novus Ordo Catholics as automatically ignorant, faithless or morally inferior violates ordinary Catholic moral principles irrespective of his liturgical arguments.",
+          "source_ids": [
+            "BEN07",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 56
+        },
+        {
+          "role": "substantive",
+          "text": "The reverse generalization is equally invalid. The misconduct of some TLM Catholics cannot establish that a liturgical form or every person attached to it is spiritually defective. Benedict XVI explicitly distinguished Catholics attached to the older liturgy who were faithful to the pope and Council from those whose attachment had become ideological separation.",
+          "source_ids": [
+            "BEN07",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 57
+        }
+      ]
+    },
+    {
+      "id": "TLM046",
+      "question_original": "“Why are traditional Catholics so angry and combative?”",
+      "canonical_owner": "CR-AUT-09",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "There is a real temptation toward factionalism wherever religious identity is formed under conflict. Francis's 2021 letter specifically accuses some adherents of the older Missal of using it to widen divisions and reject the Church's institutions; Benedict XVI had earlier acknowledged exaggerated social attitudes within the same milieu. Those criticisms should not simply be dismissed.",
+          "source_ids": [
+            "BEN07",
+            "FR21",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 58
+        },
+        {
+          "role": "substantive",
+          "text": "Traditional Catholics can also point to experiences that generated anger: unauthorized liturgical experimentation, restrictions on inherited worship and dismissive treatment of legitimate aspirations. Benedict himself wrote that arbitrary liturgical deformations caused deep pain and that Catholics attached to the old Missal had legitimate aspirations deserving pastoral consideration.",
+          "source_ids": [
+            "BEN07",
+            "FR21",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 59
+        },
+        {
+          "role": "substantive",
+          "text": "Neither history provides a licence for bitterness. Catholic moral teaching still requires charity, truthfulness and restraint in judging others; anger at real injustice does not transform contempt, calumny or factional identity into virtues.",
+          "source_ids": [
+            "BEN07",
+            "FR21",
+            "CCC_JUD"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 60
+        }
+      ]
+    },
+    {
+      "id": "TLM047",
+      "question_original": "“Why do TLM Catholics make everything about Vatican II?”",
+      "canonical_owner": "CR-DOC-10",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "The Council genuinely matters to the question because the postconciliar liturgical reform was explicitly undertaken in fulfilment of *Sacrosanctum Concilium*, and Francis continues to present the Paul VI/John Paul II liturgical books as the expression of the reform willed by Vatican II. Questions about the TLM therefore inevitably intersect with interpretation of the Council.",
+          "source_ids": [
+            "SC63",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 61
+        },
+        {
+          "role": "substantive",
+          "text": "That does not mean every parish conversation, devotional practice or disagreement should become a referendum on Vatican II. Benedict XVI explicitly described many Catholics who accepted the binding character of the Council and remained faithful to pope and bishops while desiring the older liturgy. Attachment to the TLM and obsessive rejection of the Council are not identical propositions.",
+          "source_ids": [
+            "SC63",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 62
+        },
+        {
+          "role": "substantive",
+          "text": "Francis's contrary concern must also be represented fairly: he judged that in some communities the older Missal had become closely connected with rejection of Vatican II and the postconciliar Church. The correct apologetic response is therefore to distinguish liturgical attachment from actual doctrinal positions rather than deny that the problem ever occurs.",
+          "source_ids": [
+            "SC63",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 63
+        }
+      ]
+    },
+    {
+      "id": "TLM048",
+      "question_original": "“Traditional Catholics are basically a right-wing political movement.”",
+      "canonical_owner": "CR-AUT-09",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Catholic attachment to a liturgical form does not entail one comprehensive political programme. Vatican II explicitly recognizes that Catholics acting sincerely from the same faith may legitimately reach different concrete political judgments and warns believers not to identify their own political solution exclusively with the authority of the Gospel.",
+          "source_ids": [
+            "GS65",
+            "BEN07"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 64
+        },
+        {
+          "role": "substantive",
+          "text": "Traditionalist communities can nevertheless develop strong political subcultures, and Benedict XVI acknowledged that social attitudes had sometimes become unduly attached to older-liturgical identity. It is therefore fair to criticize a community when prudential politics becomes a test of Catholic orthodoxy.",
+          "source_ids": [
+            "GS65",
+            "BEN07"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 65
+        },
+        {
+          "role": "substantive",
+          "text": "Catholic teaching does impose moral limits upon politics, so legitimate diversity does not mean relativism about abortion, justice, marriage, human dignity or natural law. The distinction is between binding moral principles and the multiple prudential political strategies by which Catholics may seek to apply them.",
+          "source_ids": [
+            "GS65",
+            "BEN07"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 66
+        }
+      ]
+    },
+    {
+      "id": "TLM049",
+      "question_original": "“TLM Catholics distrust the pope and bishops, so how can that be Catholic?”",
+      "canonical_owner": "CR-AUT-01",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "Catholicism requires communion with legitimate ecclesiastical authority. John Paul II's *Ecclesia Dei* explicitly condemned Archbishop Lefebvre's unlawful 1988 episcopal consecrations as a grave act of disobedience affecting Church unity and warned against a concept of Tradition detached from the Roman Pontiff and episcopal college.",
+          "source_ids": [
+            "ED88",
+            "BEN07"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 67
+        },
+        {
+          "role": "substantive",
+          "text": "At the same time, distrust can arise from actual failures of governance or liturgical discipline without logically amounting to rejection of the papacy. Benedict XVI recognized widespread unauthorized liturgical deformation and admitted that Catholics deeply rooted in the Church had been hurt by it.",
+          "source_ids": [
+            "ED88",
+            "BEN07"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 68
+        },
+        {
+          "role": "substantive",
+          "text": "A traditional Catholic response therefore has to distinguish **criticism of a decision**, **serious theological difficulty**, **disobedience**, and **rejection of legitimate authority**. Treating every criticism as schism is inaccurate; treating personal distrust as permission to ignore the hierarchy whenever one disagrees is equally incompatible with Catholic ecclesiology.",
+          "source_ids": [
+            "ED88",
+            "BEN07"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 69
+        }
+      ]
+    },
+    {
+      "id": "TLM050",
+      "question_original": "“The TLM is a gateway to the SSPX, sedevacantism and schism.”",
+      "canonical_owner": "CR-ECC-05",
+      "source_material": "USER_ATTACHED_PASTED_TEXT",
+      "editorial_status": "UNPUBLISHED_EXACT_PROSE_RECOVERED_SOURCE_REPAIR_PENDING",
+      "question_provenance": "UNATTRIBUTED_OBJECTION_NEEDS_IDENTIFIABLE_PROPONENT",
+      "paragraphs": [
+        {
+          "role": "substantive",
+          "text": "The historical association is real enough to explain the concern. Attachment to the old Missal became a visible marker of Archbishop Lefebvre's movement, and John Paul II judged the 1988 episcopal consecrations schismatic acts. Francis later said that some use of the 1962 Missal had become linked with rejection of the Council and the institutional Church.",
+          "source_ids": [
+            "ED88",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 70
+        },
+        {
+          "role": "substantive",
+          "text": "But it is false to infer that attachment to the TLM itself equals SSPX affiliation or sedevacantism. Benedict XVI explicitly wrote that many Catholics attached to the older form accepted Vatican II's binding character and were faithful to the pope and bishops; the Holy See also regularized communities preserving traditional liturgical and spiritual forms in full ecclesial communion.",
+          "source_ids": [
+            "ED88",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 71
+        },
+        {
+          "role": "unattributed_challenge",
+          "text": "“But doesn't traditionalism naturally lead people to reject the Church once they start criticizing the reform?”",
+          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
+          "source_ids": []
+        },
+        {
+          "role": "substantive",
+          "text": "It can lead there if every liturgical criticism is inflated into a claim that the Church has defected, every papal error into loss of office, or every canonical restriction into proof of persecution by a false Church. John Paul II directly warned against a notion of Tradition that is set against the living Magisterium and ecclesial unity.",
+          "source_ids": [
+            "ED88",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 72
+        },
+        {
+          "role": "substantive",
+          "text": "The opposite inference is also false: defending continuity with inherited Roman worship does not logically require acceptance of every postconciliar prudential or liturgical decision as optimal. Benedict XVI defended the older liturgy precisely while recognizing the reformed Missal and ecclesial authority, showing that attachment to the TLM and communion with Rome are not inherently incompatible.",
+          "source_ids": [
+            "ED88",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": 73
+        },
+        {
+          "role": "substantive",
+          "text": "I’ll keep this format from now on: no “30-second answer,” no unsourced synthesis, and every substantive paragraph individually anchored.",
+          "source_ids": [
+            "ED88",
+            "BEN07",
+            "FR21"
+          ],
+          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
+          "legacy_placeholder_index": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "questions": 25,
+    "legacy_placeholder_count": 74,
+    "new_canonical_dossiers": 0
+  }
+}
