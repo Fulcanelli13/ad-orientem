@@ -85,8 +85,8 @@
     },
     {
       "id": "CIC4",
-      "title": "1983 Code of Canon Law, canon 838",
-      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-839_en.html",
+      "title": "1983 Code of Canon Law, Book IV canons 834–878, canon 838 as amended in 2017",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html",
       "type": "CANON_LAW"
     },
     {
@@ -130,6 +130,12 @@
       "title": "St Thomas Aquinas, Summa theologiae II–II q.104 a.5, limits of obedience",
       "url": "https://www.newadvent.org/summa/3104.htm#article5",
       "type": "CLASSICAL_THEOLOGICAL_PRIMARY_TRANSLATION"
+    },
+    {
+      "id": "OBED08",
+      "title": "Congregation for Institutes of Consecrated Life, The Service of Authority and Obedience (2008), conscience and the limits of obedience",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccscrlife/documents/rc_con_ccscrlife_doc_20080511_autorita-obbedienza_en.html",
+      "type": "HOLY_SEE_INSTRUCTION_ON_LIMITS_OF_OBEDIENCE"
     }
   ],
   "debates": [
@@ -269,8 +275,8 @@
         {
           "role": "assessment",
           "text": {
-            "en": "Vatican spokesman Matteo Bruni declined to confirm the leaked documents' authenticity and described the publicly released texts as a very partial and incomplete account of the decision-making process: other confidential reports and additional consultations also informed the process. The release therefore raises a legitimate documentary question but does not establish a verified majority of all consulted bishops, or the complete basis of Francis's decision.",
-            "fr": "Le porte-parole du Vatican Matteo Bruni n'a pas confirmé l'authenticité des documents divulgués et a décrit les textes publiés comme une présentation très partielle et incomplète du processus de décision : d'autres rapports confidentiels et consultations ultérieures ont également été pris en compte. Cette publication soulève donc une question documentaire légitime sans établir une majorité vérifiée de tous les évêques consultés ni l'ensemble des motifs de la décision de François."
+            "en": "Vatican spokesman Matteo Bruni stated that the published extracts provided only a very partial and incomplete reconstruction, since confidential reports and additional consultations had also informed the decision. His statement did not authenticate the released texts or publish the complete 2020 episcopal responses. Montagna's reported excerpts, if authentic and representative of the CDF synthesis, are significant evidence of reservations about new restrictions; they cannot establish the numerical position of all consulted bishops or the complete basis of Francis's decision.",
+            "fr": "Le porte-parole du Vatican Matteo Bruni a déclaré que les extraits publiés ne permettaient qu'une reconstitution très partielle et incomplète, puisque d'autres rapports confidentiels et consultations avaient également éclairé la décision. Sa déclaration n'a ni authentifié les textes divulgués ni publié l'ensemble des réponses épiscopales de 2020. Les extraits rapportés par Montagna, s'ils sont authentiques et représentatifs de la synthèse de la CDF, constituent un indice important de réserves envers de nouvelles restrictions, mais n'établissent ni la position chiffrée de tous les évêques consultés ni tous les motifs de la décision de François."
           },
           "source_ids": [
             "AP25_REPRINT",
@@ -292,6 +298,12 @@
                 "MONT25"
               ],
               "reason": "Correct source scope or canonical specificity"
+            },
+            {
+              "date": "2026-10-08",
+              "original_en": "Vatican spokesman Matteo Bruni declined to confirm the leaked documents' authenticity and described the publicly released texts as a very partial and incomplete account of the decision-making process: other confidential reports and additional consultations also informed the process. The release therefore raises a legitimate documentary question but does not establish a verified majority of all consulted bishops, or the complete basis of Francis's decision.",
+              "original_fr": "Le porte-parole du Vatican Matteo Bruni n'a pas confirmé l'authenticité des documents divulgués et a décrit les textes publiés comme une présentation très partielle et incomplète du processus de décision : d'autres rapports confidentiels et consultations ultérieures ont également été pris en compte. Cette publication soulève donc une question documentaire légitime sans établir une majorité vérifiée de tous les évêques consultés ni l'ensemble des motifs de la décision de François.",
+              "reason": "Avoid attributing to Bruni an explicit authenticity refusal not contained in 3 July Vatican News statement."
             }
           ],
           "source_locator": "Bruni 3 July 2025 press conference final paragraph; Montagna excerpts; AP",
@@ -1053,7 +1065,8 @@
             "CIC4",
             "SC63",
             "CIC1752",
-            "AQU104"
+            "AQU104",
+            "OBED08"
           ],
           "revision_history": [
             {
@@ -1077,8 +1090,8 @@
         {
           "role": "assessment",
           "text": {
-            "en": "Faithful Catholics can seek permissions, request changes, explain concrete pastoral harm, and use lawful avenues of petition or recourse. The Courtalain institutes sought dialogue and their canonical guarantees; this is a documented form of serious criticism without making contempt or rejection of authority a condition of fidelity to Tradition.",
-            "fr": "Les catholiques peuvent demander des permissions, solliciter des changements, exposer un dommage pastoral concret et recourir aux voies légitimes de requête. Les instituts de Courtalain ont demandé le dialogue et le respect de leurs garanties canoniques ; cet exemple atteste qu’une critique sérieuse n’exige ni mépris ni rejet de l’autorité."
+            "en": "Catholics may petition respectfully, seek permissions, and ask for reconsideration of concrete administrative decisions. Canons 1732–1739 regulate recourse against singular administrative decrees, not a general appeal suspending universal papal legislation; the filing of a petition does not automatically suspend a law or decree. Courtalain's request for dialogue is a documented example of lawful disagreement, not a declaration that everyone may disregard Traditionis custodes.",
+            "fr": "Les catholiques peuvent présenter des requêtes respectueuses, demander des permissions et solliciter le réexamen de décisions administratives concrètes. Les canons 1732 à 1739 régissent les recours contre les décrets administratifs singuliers : ils ne constituent pas un appel général suspendant la législation pontificale universelle ; le dépôt d'un recours ne suspend pas automatiquement une loi ou un décret. La demande de dialogue formulée à Courtalain illustre un désaccord légitime, non une déclaration autorisant chacun à ignorer Traditionis custodes."
           },
           "source_ids": [
             "CIC2",
@@ -1087,7 +1100,15 @@
             "CIC1752"
           ],
           "source_locator": "CIC 212, 1732–1739; Courtalain petition and FSSP particular faculties",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_en": "Faithful Catholics can seek permissions, request changes, explain concrete pastoral harm, and use lawful avenues of petition or recourse. The Courtalain institutes sought dialogue and their canonical guarantees; this is a documented form of serious criticism without making contempt or rejection of authority a condition of fidelity to Tradition.",
+              "original_fr": "Les catholiques peuvent demander des permissions, solliciter des changements, exposer un dommage pastoral concret et recourir aux voies légitimes de requête. Les instituts de Courtalain ont demandé le dialogue et le respect de leurs garanties canoniques ; cet exemple atteste qu’une critique sérieuse n’exige ni mépris ni rejet de l’autorité.",
+              "reason": "Recourse under canons 1732–1739 only applies to singular administrative acts, not universal law."
+            }
+          ]
         },
         {
           "role": "traditional_argument",
@@ -1097,7 +1118,8 @@
           },
           "source_ids": [
             "AQU104",
-            "CIC2"
+            "CIC2",
+            "OBED08"
           ],
           "source_locator": "Aquinas Summa II-II q104 a5 limits of obedience to human superiors; CIC 212",
           "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
@@ -1182,5 +1204,18 @@
       "SSPX view attributed, not adopted as doctrinal conclusion.",
       "Aquinas on limits of obedience does not prove right to ignore particular law."
     ]
+  },
+  "legal_precision_20261008": {
+    "date": "2026-10-08",
+    "reviewed_scope": "2021–2023 legislation, 2025 disputed survey evidence, 2008 ecclesiastical-obedience doctrine",
+    "corrected": [
+      "CIC4 incorrect code URL",
+      "TLM067 authenticity-attribution nuance",
+      "TLM075 applicability and suspension of administrative recourse"
+    ],
+    "additional_source": "OBED08",
+    "prior_expanded_five_paragraph_structure_preserved": true,
+    "final_external_human_review": false,
+    "publication_ready": false
   }
 }
