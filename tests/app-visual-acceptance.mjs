@@ -1332,7 +1332,7 @@ try{
     canonical:globalThis.AO_RELEASE_AUTHORITY_V4359?.version||document.documentElement.dataset.aoRelease||"",
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
   }));
-  assert.equal(settingsAbout.sourceGroups,8,"Sources & About lost a source family");
+  assert.ok(settingsAbout.sourceGroups>=9,"Sources & About lost one of the nine retained source families, including programme authorities");
   assert.equal(settingsAbout.provenanceRows,6,"Sources & About lost provenance labels");
   assert.ok(settingsAbout.aboutRows>=7,"Settings About section is incomplete");
   assert.equal(settingsAbout.version,String(settingsAbout.canonical),"Settings About does not show canonical application version");
