@@ -76,7 +76,8 @@ export function buildRecoveryReviewRows(packs) {
     for(const raw of entries||[]) out.push({...make(raw),bank:label,raw,sourceRegistry:new Map((reg||[]).map(s=>[s.id,s]))});
   }
   push("BAQ",(questions.questions||[]),answers.source_registry,raw=>({
-    id:raw.id,owner:raw.canonical_owner,title_en:raw.question,title_fr:raw.question_fr,
+    id:raw.id,owner:raw.canonical_owner,title_en:raw.question,
+    title_fr:raw.question_fr||answerMap.get(raw.id)?.question_fr||null,
     content:answerMap.get(raw.id)||null,qaStatus:answerMap.has(raw.id)?"ANSWER_DRAFT":"QUESTION_ONLY"}));
   const sdv=byName("Sedevacantism")||{};
   push("Sedevacantism",sdv.debates,sdv.source_registry,raw=>({
