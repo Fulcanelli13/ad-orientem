@@ -44,6 +44,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     query:"",
     language:language(win),
     unsub:null,
+    suspended:false,
   };
 
   const root=()=>win?.document?.getElementById?.(APOSTOLATE_ROOT_ID)??null;
@@ -118,8 +119,21 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
   function open(opts={}){
     const node=ensureRoot();
     if(!node)return false;
+    const explicit=Boolean(opts?.scenarioId||opts?.skillId||["answer","help","practice"].includes(opts?.view));
+    const restoreSuspended=state.suspended&&!explicit;
     state.open=true;
+    state.suspended=false;
     attach();
+    if(restoreSuspended){
+      node.hidden=false;
+      node.removeAttribute?.("aria-hidden");
+      win?.document?.body?.classList?.add?.("aoApostolateOpen");
+      if(win?.document?.documentElement?.dataset)win.document.documentElement.dataset.aoApostolateVisibility="visible";
+      render();
+      try{win?.AO_APP_SHELL_V1?.syncSurface?.("apostolate");}catch{}
+      queueMicrotask(()=>root()?.querySelector?.("[data-ao-ap-back]")?.focus?.({preventScroll:true}));
+      return true;
+    }
     if(opts?.scenarioId){
       const practice=opts.practice!==false;
       if(!selectScenario(opts.scenarioId,{practice,returnView:practice?"practice":"answer"}))resetHome();
@@ -147,6 +161,17 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     return true;
   }
 
+  function suspend(){
+    state.open=false;
+    state.suspended=true;
+    const node=root();
+    try{if(node?.contains?.(win?.document?.activeElement))win.document.activeElement?.blur?.();}catch{}
+    node?.remove?.();
+    win?.document?.body?.classList?.remove?.("aoApostolateOpen");
+    if(win?.document?.documentElement?.dataset)win.document.documentElement.dataset.aoApostolateVisibility="route";
+    return true;
+  }
+
   function close(){
     state.open=false;
     const node=root();
@@ -156,6 +181,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     node?.remove?.();
     win?.document?.body?.classList?.remove?.("aoApostolateOpen");
     if(win?.document?.documentElement?.dataset)win.document.documentElement.dataset.aoApostolateVisibility="route";
+    state.suspended=false;
     resetHome();
     return true;
   }
@@ -169,29 +195,31 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
       return selectScenario(target,{practice:false,returnView:state.view==="practice"?"practice":"help"});
     }
     if(target.startsWith("learn.")){
-      close();
+      suspend();
       const nav=await win?.AO_APP_SHELL_V1?.navigate?.("learn");
-      if(nav?.ok===false)return false;
-      return (await win?.AO_LEARN_APP_V1?.openModule?.(target))!==false;
+      if(nav?.ok===false){open();return false;}
+      return (await win?.AO_LEARN_APP_V1?.openModule?.(target,{returnContext:{surface:"apostolate"}}))!==false;
     }
     const surface=handoff.surface||
       (target.startsWith("pray.")?"pray":target.startsWith("mass")?"mass":target==="find"?"find":null);
     if(surface==="pray"){
-      close();
+      suspend();
       const nav=await win?.AO_APP_SHELL_V1?.navigate?.("pray");
-      if(nav?.ok===false)return false;
+      if(nav?.ok===false){open();return false;}
       if(target&&target!=="pray")try{await win?.AO_MODULES?.open?.(target,{returnContext:{surface:"apostolate"}})}catch{}
       return true;
     }
     if(surface==="find"){
-      close();
+      suspend();
       const nav=await win?.AO_APP_SHELL_V1?.navigate?.("find");
-      return nav?.ok!==false;
+      if(nav?.ok===false){open();return false;}
+      return true;
     }
     if(surface==="mass"){
-      close();
+      suspend();
       const nav=await win?.AO_APP_SHELL_V1?.navigate?.("mass");
-      return nav?.ok!==false;
+      if(nav?.ok===false){open();return false;}
+      return true;
     }
     return false;
   }
@@ -216,7 +244,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
   function onClick(event){
     const button=event.target?.closest?.("button");
     if(!button)return;
-    if(button.matches?.("[data-ao-ap-close]")){
+    if(button.matches?.("[data-ao-ap-home]")){
       event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return;
     }
     if(button.matches?.("[data-ao-ap-back]")){
@@ -295,6 +323,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
       hidden:false,
       visible:Boolean(state.open&&node?.isConnected!==false),
       open:Boolean(state.open&&node),
+      suspended:state.suspended,
       mounted:Boolean(node?.isConnected),
       view:state.open?state.view:null,
       selectedId:state.selectedId,
@@ -330,6 +359,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     }),
     open,
     close,
+    suspend,
     render,
     selectScenario,
     receiveHandoff,

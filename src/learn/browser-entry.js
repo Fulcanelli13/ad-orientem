@@ -85,7 +85,7 @@ function closeChild(win,id){
 }
 
 export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
-  const state={open:false,child:null,family:null,lastFamily:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false};
+  const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false};
 
   function cancelMonitor(){
     if(state.monitor&&typeof win?.clearTimeout==="function")win.clearTimeout(state.monitor);
@@ -118,8 +118,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     node.setAttribute("role","region");
     node.setAttribute("aria-label","Formation");
     node.addEventListener("click",event=>{
-      const home=event.target?.closest?.("[data-ao-learn-home]");
-      if(home){
+      const back=event.target?.closest?.("[data-ao-learn-back]");
+      if(back){
         event.preventDefault?.();
         if(state.family){
           state.lastFamily=state.family;
@@ -129,6 +129,12 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           queue(()=>root(win)?.querySelector?.(`[data-ao-learn-family="${state.lastFamily}"]`)?.focus?.({preventScroll:true}));
           return;
         }
+        void win?.AO_APP_SHELL_V1?.navigate?.("home");
+        return;
+      }
+      const home=event.target?.closest?.("[data-ao-learn-home]");
+      if(home){
+        event.preventDefault?.();
         void win?.AO_APP_SHELL_V1?.navigate?.("home");
         return;
       }
@@ -201,7 +207,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         ?`[data-ao-learn-module="${state.lastLauncher}"]`
         :state.family
           ?"[data-ao-learn-module]"
-          :"[data-ao-learn-home]";
+          :"[data-ao-learn-back]";
       const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
       queue(()=>root(win)?.querySelector?.(selector)?.focus?.({preventScroll:true}));
     }
@@ -218,6 +224,18 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       state.openPolls=0;
       state.seenChild=false;
       state.error="";
+      const external=state.externalReturn;
+      state.externalReturn=null;
+      if(external?.surface==="apostolate"){
+        state.open=false;
+        cancelMonitor();
+        const node=root(win);
+        releaseFocus(win,node);
+        node?.remove?.();
+        win?.document?.body?.classList?.remove?.("aoLearnModularOpen");
+        void win?.AO_APP_SHELL_V1?.navigate?.("apostolate");
+        return;
+      }
       showHub();
       try{win?.AO_APP_SHELL_V1?.syncSurface?.("learn");}catch{}
       return;
@@ -235,7 +253,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(typeof win?.setTimeout==="function")state.monitor=win.setTimeout(monitorChild,pollMs);
   }
 
-  async function openModule(id){
+  async function openModule(id,opts={}){
     if(!state.open||!MODULE_SET.has(id))return false;
     ensureTraditionalLearnRegistry(win);
     ensureLatinCourseRegistry(win);
@@ -252,6 +270,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     retireHistoricalLearnSurface(win);
     try{win?.AO_NAV_V362?.clearExternalReturn?.();}catch{}
     state.child=id;
+    state.externalReturn=opts?.returnContext??null;
     state.error="";
     state.seenChild=false;
     state.openPolls=0;
@@ -278,6 +297,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.child=null;
     state.family=null;
     state.lastFamily=null;
+    state.externalReturn=null;
     state.seenChild=false;
     state.openPolls=0;
     const node=root(win);
@@ -323,6 +343,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       open:Boolean(state.open&&node&&!node.hidden),
       child:state.child,
       family:state.family,
+      externalReturn:state.externalReturn,
       owner:node?.dataset?.aoLearnOwner??null,
       presentationOwner:node?.dataset?.aoLearnPresentationOwner??LEARN_PRESENTATION_VERSION,
       routeOwner:win?.document?.documentElement?.dataset?.aoLearnRouteOwner??null,

@@ -169,9 +169,9 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null}=
   const backLabel=family?(langFr?"Retour à Formation":"Back to Formation"):(langFr?"Retour à l’accueil":"Back to Home");
   root.innerHTML=`<style data-ao-learn-style>${learnPresentationCss()}</style>
     <header class="aoLearnModTop">
-      <button type="button" data-ao-learn-home aria-label="${esc(backLabel)}">${assetMask("ao-ui-back")}</button>
+      <button type="button" data-ao-learn-back aria-label="${esc(backLabel)}">${assetMask("ao-ui-back")}</button>
       <div class="aoLearnModTopTitle"><small>AD ORIENTEM</small><strong>${esc(pick(LEARN_LAYOUT.title,state))}</strong></div>
-      <span class="aoLearnModTopSpacer" aria-hidden="true"></span>
+      <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Accueil":"Home")}">${assetMask("ao-nav-home")}</button>
     </header>
     <main class="aoLearnModWrap">
       <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(heroTitle)}</h1><p>${esc(heroIntro)}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
