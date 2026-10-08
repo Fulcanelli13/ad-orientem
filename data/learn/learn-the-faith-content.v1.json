@@ -4,11 +4,6 @@
   "status": "FULL_54_LESSON_DRAFT_SOURCE_MAPPED_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "curriculum": "data/learn/learn-the-faith-curriculum.v1.json",
-  "batches": {
-    "batch1": "LTF-001–LTF-018",
-    "batch2": "LTF-019–LTF-036",
-    "batch3": "LTF-037–LTF-054"
-  },
   "lessons": [
     {
       "id": "LTF-001",
@@ -18,6 +13,7 @@
       },
       "catechismCoverage": "DIRECT",
       "catechismRefs": [
+        "PX1912-Q001",
         "PX1912-Q013",
         "PX1912-Q014",
         "PX1912-Q015",
@@ -26,8 +22,7 @@
         "PX1912-Q018"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -37,12 +32,16 @@
             "fr": "Dieu a créé l’homme pour une fin surnaturelle : le connaître, l’aimer et le servir en cette vie, puis jouir éternellement de Lui au Ciel."
           },
           "catechismRefs": [
+            "PX1912-Q001",
             "PX1912-Q013",
             "PX1912-Q014",
             "PX1912-Q015",
             "PX1912-Q016",
             "PX1912-Q017",
             "PX1912-Q018"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -52,12 +51,16 @@
             "fr": "Notre destinée ultime donne son orientation à la vie morale : le Ciel est la possession éternelle de Dieu, tandis que mourir en état de péché mortel signifie la séparation définitive d’avec Lui."
           },
           "catechismRefs": [
+            "PX1912-Q001",
             "PX1912-Q013",
             "PX1912-Q014",
             "PX1912-Q015",
             "PX1912-Q016",
             "PX1912-Q017",
             "PX1912-Q018"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -84,8 +87,7 @@
         "PX1912-Q012"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -106,6 +108,9 @@
             "PX1912-Q010",
             "PX1912-Q011",
             "PX1912-Q012"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -126,6 +131,9 @@
             "PX1912-Q010",
             "PX1912-Q011",
             "PX1912-Q012"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -140,14 +148,15 @@
       "catechismCoverage": "DIRECT",
       "catechismRefs": [
         "PX1912-Q028",
+        "PX1912-Q029",
+        "PX1912-Q030",
         "PX1912-Q233",
         "PX1912-Q234",
         "PX1912-Q235",
         "PX1912-Q236"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -158,10 +167,15 @@
           },
           "catechismRefs": [
             "PX1912-Q028",
+            "PX1912-Q029",
+            "PX1912-Q030",
             "PX1912-Q233",
             "PX1912-Q234",
             "PX1912-Q235",
             "PX1912-Q236"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -172,10 +186,15 @@
           },
           "catechismRefs": [
             "PX1912-Q028",
+            "PX1912-Q029",
+            "PX1912-Q030",
             "PX1912-Q233",
             "PX1912-Q234",
             "PX1912-Q235",
             "PX1912-Q236"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -199,8 +218,7 @@
         "PX1912-Q249"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -218,6 +236,9 @@
             "PX1912-Q247",
             "PX1912-Q248",
             "PX1912-Q249"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -235,6 +256,9 @@
             "PX1912-Q247",
             "PX1912-Q248",
             "PX1912-Q249"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -254,8 +278,7 @@
         "PX1912-Q236"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -269,6 +292,9 @@
             "PX1912-Q234",
             "PX1912-Q235",
             "PX1912-Q236"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -282,6 +308,9 @@
             "PX1912-Q234",
             "PX1912-Q235",
             "PX1912-Q236"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -314,8 +343,7 @@
         "PX1912-Q236"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -342,6 +370,9 @@
             "PX1912-Q119",
             "PX1912-Q120",
             "PX1912-Q236"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -368,6 +399,9 @@
             "PX1912-Q119",
             "PX1912-Q120",
             "PX1912-Q236"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -395,8 +429,7 @@
         "PX1912-Q019"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -418,6 +451,9 @@
             "PX1912-Q011",
             "PX1912-Q012",
             "PX1912-Q019"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -439,6 +475,9 @@
             "PX1912-Q011",
             "PX1912-Q012",
             "PX1912-Q019"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -454,6 +493,12 @@
       "catechismRefs": [
         "PX1912-Q019",
         "PX1912-Q020",
+        "PX1912-Q031",
+        "PX1912-Q032",
+        "PX1912-Q033",
+        "PX1912-Q034",
+        "PX1912-Q035",
+        "PX1912-Q036",
         "PX1912-Q037",
         "PX1912-Q038",
         "PX1912-Q039",
@@ -470,8 +515,7 @@
         "PX1912-Q050"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -483,6 +527,12 @@
           "catechismRefs": [
             "PX1912-Q019",
             "PX1912-Q020",
+            "PX1912-Q031",
+            "PX1912-Q032",
+            "PX1912-Q033",
+            "PX1912-Q034",
+            "PX1912-Q035",
+            "PX1912-Q036",
             "PX1912-Q037",
             "PX1912-Q038",
             "PX1912-Q039",
@@ -497,6 +547,9 @@
             "PX1912-Q048",
             "PX1912-Q049",
             "PX1912-Q050"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -508,6 +561,12 @@
           "catechismRefs": [
             "PX1912-Q019",
             "PX1912-Q020",
+            "PX1912-Q031",
+            "PX1912-Q032",
+            "PX1912-Q033",
+            "PX1912-Q034",
+            "PX1912-Q035",
+            "PX1912-Q036",
             "PX1912-Q037",
             "PX1912-Q038",
             "PX1912-Q039",
@@ -522,6 +581,9 @@
             "PX1912-Q048",
             "PX1912-Q049",
             "PX1912-Q050"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -542,8 +604,7 @@
         "PX1912-Q053"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -558,6 +619,9 @@
             "PX1912-Q051",
             "PX1912-Q052",
             "PX1912-Q053"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -572,6 +636,9 @@
             "PX1912-Q051",
             "PX1912-Q052",
             "PX1912-Q053"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -593,8 +660,7 @@
         "PX1912-Q059"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -610,6 +676,9 @@
             "PX1912-Q057",
             "PX1912-Q058",
             "PX1912-Q059"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -625,6 +694,9 @@
             "PX1912-Q057",
             "PX1912-Q058",
             "PX1912-Q059"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -656,8 +728,7 @@
         "PX1912-Q075"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -683,6 +754,9 @@
             "PX1912-Q073",
             "PX1912-Q074",
             "PX1912-Q075"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -708,6 +782,9 @@
             "PX1912-Q073",
             "PX1912-Q074",
             "PX1912-Q075"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -735,8 +812,7 @@
         "PX1912-Q088"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -758,6 +834,9 @@
             "PX1912-Q086",
             "PX1912-Q087",
             "PX1912-Q088"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -779,6 +858,9 @@
             "PX1912-Q086",
             "PX1912-Q087",
             "PX1912-Q088"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -809,8 +891,7 @@
         "PX1912-Q085"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -835,6 +916,9 @@
             "PX1912-Q083",
             "PX1912-Q084",
             "PX1912-Q085"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -859,6 +943,9 @@
             "PX1912-Q083",
             "PX1912-Q084",
             "PX1912-Q085"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -879,8 +966,7 @@
         "PX1912-Q091"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -895,6 +981,9 @@
             "PX1912-Q089",
             "PX1912-Q090",
             "PX1912-Q091"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -909,6 +998,9 @@
             "PX1912-Q089",
             "PX1912-Q090",
             "PX1912-Q091"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -929,8 +1021,7 @@
         "PX1912-Q094"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -945,6 +1036,9 @@
             "PX1912-Q092",
             "PX1912-Q093",
             "PX1912-Q094"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -959,6 +1053,9 @@
             "PX1912-Q092",
             "PX1912-Q093",
             "PX1912-Q094"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -982,10 +1079,9 @@
         "PX1912-Q050"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899"
       ],
       "claims": [
         {
@@ -1003,6 +1099,10 @@
             "PX1912-Q048",
             "PX1912-Q049",
             "PX1912-Q050"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "ROMAN_CATECHISM_TRENT"
           ]
         },
         {
@@ -1020,6 +1120,10 @@
             "PX1912-Q048",
             "PX1912-Q049",
             "PX1912-Q050"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "ROMAN_CATECHISM_TRENT"
           ]
         }
       ],
@@ -1048,11 +1152,12 @@
         "PX1912-Q117",
         "PX1912-Q118",
         "PX1912-Q119",
-        "PX1912-Q120"
+        "PX1912-Q120",
+        "PX1912-Q131",
+        "PX1912-Q132"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1077,7 +1182,12 @@
             "PX1912-Q117",
             "PX1912-Q118",
             "PX1912-Q119",
-            "PX1912-Q120"
+            "PX1912-Q120",
+            "PX1912-Q131",
+            "PX1912-Q132"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1102,7 +1212,12 @@
             "PX1912-Q117",
             "PX1912-Q118",
             "PX1912-Q119",
-            "PX1912-Q120"
+            "PX1912-Q120",
+            "PX1912-Q131",
+            "PX1912-Q132"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1128,8 +1243,7 @@
         "PX1912-Q130"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1149,6 +1263,9 @@
             "PX1912-Q128",
             "PX1912-Q129",
             "PX1912-Q130"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1168,6 +1285,9 @@
             "PX1912-Q128",
             "PX1912-Q129",
             "PX1912-Q130"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1190,8 +1310,7 @@
         "PX1912-Q139"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1208,6 +1327,9 @@
             "PX1912-Q137",
             "PX1912-Q138",
             "PX1912-Q139"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1224,6 +1346,9 @@
             "PX1912-Q137",
             "PX1912-Q138",
             "PX1912-Q139"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1249,8 +1374,7 @@
         "PX1912-Q160"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1270,6 +1394,9 @@
             "PX1912-Q158",
             "PX1912-Q159",
             "PX1912-Q160"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1289,6 +1416,9 @@
             "PX1912-Q158",
             "PX1912-Q159",
             "PX1912-Q160"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1315,8 +1445,7 @@
         "PX1912-Q104"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1337,6 +1466,9 @@
             "PX1912-Q102",
             "PX1912-Q103",
             "PX1912-Q104"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1357,6 +1489,9 @@
             "PX1912-Q102",
             "PX1912-Q103",
             "PX1912-Q104"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1381,8 +1516,7 @@
         "PX1912-Q277"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1401,6 +1535,9 @@
             "PX1912-Q275",
             "PX1912-Q276",
             "PX1912-Q277"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1419,6 +1556,9 @@
             "PX1912-Q275",
             "PX1912-Q276",
             "PX1912-Q277"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1457,8 +1597,7 @@
         "PX1912-Q289"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1491,6 +1630,9 @@
             "PX1912-Q287",
             "PX1912-Q288",
             "PX1912-Q289"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1523,6 +1665,9 @@
             "PX1912-Q287",
             "PX1912-Q288",
             "PX1912-Q289"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1552,8 +1697,7 @@
         "PX1912-Q303"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1577,6 +1721,9 @@
             "PX1912-Q301",
             "PX1912-Q302",
             "PX1912-Q303"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1600,6 +1747,9 @@
             "PX1912-Q301",
             "PX1912-Q302",
             "PX1912-Q303"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1627,8 +1777,7 @@
         "PX1912-Q315"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1650,6 +1799,9 @@
             "PX1912-Q313",
             "PX1912-Q314",
             "PX1912-Q315"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1671,6 +1823,9 @@
             "PX1912-Q313",
             "PX1912-Q314",
             "PX1912-Q315"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1717,8 +1872,7 @@
         "PX1912-Q346"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1759,6 +1913,9 @@
             "PX1912-Q344",
             "PX1912-Q345",
             "PX1912-Q346"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1799,6 +1956,9 @@
             "PX1912-Q344",
             "PX1912-Q345",
             "PX1912-Q346"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1822,8 +1982,7 @@
         "PX1912-Q354"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1841,6 +2000,9 @@
             "PX1912-Q352",
             "PX1912-Q353",
             "PX1912-Q354"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -1858,6 +2020,9 @@
             "PX1912-Q352",
             "PX1912-Q353",
             "PX1912-Q354"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -1910,8 +2075,7 @@
         "PX1912-Q391"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -1958,6 +2122,9 @@
             "PX1912-Q389",
             "PX1912-Q390",
             "PX1912-Q391"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2004,6 +2171,9 @@
             "PX1912-Q389",
             "PX1912-Q390",
             "PX1912-Q391"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2024,8 +2194,7 @@
         "PX1912-Q396"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2040,6 +2209,9 @@
             "PX1912-Q394",
             "PX1912-Q395",
             "PX1912-Q396"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2054,6 +2226,9 @@
             "PX1912-Q394",
             "PX1912-Q395",
             "PX1912-Q396"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2078,8 +2253,7 @@
         "PX1912-Q405"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2098,6 +2272,9 @@
             "PX1912-Q403",
             "PX1912-Q404",
             "PX1912-Q405"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2116,6 +2293,9 @@
             "PX1912-Q403",
             "PX1912-Q404",
             "PX1912-Q405"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2132,12 +2312,14 @@
         "PX1912-Q406",
         "PX1912-Q407",
         "PX1912-Q408",
+        "PX1912-Q409",
+        "PX1912-Q410",
+        "PX1912-Q411",
         "PX1912-Q412",
         "PX1912-Q413"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2150,8 +2332,14 @@
             "PX1912-Q406",
             "PX1912-Q407",
             "PX1912-Q408",
+            "PX1912-Q409",
+            "PX1912-Q410",
+            "PX1912-Q411",
             "PX1912-Q412",
             "PX1912-Q413"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2164,8 +2352,14 @@
             "PX1912-Q406",
             "PX1912-Q407",
             "PX1912-Q408",
+            "PX1912-Q409",
+            "PX1912-Q410",
+            "PX1912-Q411",
             "PX1912-Q412",
             "PX1912-Q413"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2191,8 +2385,7 @@
         "PX1912-Q168"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2212,6 +2405,9 @@
             "PX1912-Q166",
             "PX1912-Q167",
             "PX1912-Q168"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2231,6 +2427,9 @@
             "PX1912-Q166",
             "PX1912-Q167",
             "PX1912-Q168"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2254,10 +2453,10 @@
         "PX1912-Q168"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "LEO_XIII_LIBERTAS"
       ],
       "claims": [
         {
@@ -2275,6 +2474,10 @@
             "PX1912-Q166",
             "PX1912-Q167",
             "PX1912-Q168"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "LEO_XIII_LIBERTAS"
           ]
         },
         {
@@ -2292,6 +2495,10 @@
             "PX1912-Q166",
             "PX1912-Q167",
             "PX1912-Q168"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "LEO_XIII_LIBERTAS"
           ]
         }
       ],
@@ -2329,10 +2536,10 @@
         "PX1912-Q255"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "VERITATIS_SPLENDOR_60_61"
       ],
       "claims": [
         {
@@ -2364,6 +2571,10 @@
             "PX1912-Q154",
             "PX1912-Q155",
             "PX1912-Q255"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "VERITATIS_SPLENDOR_60_61"
           ]
         },
         {
@@ -2395,6 +2606,10 @@
             "PX1912-Q154",
             "PX1912-Q155",
             "PX1912-Q255"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "VERITATIS_SPLENDOR_60_61"
           ]
         }
       ],
@@ -2418,8 +2633,7 @@
         "PX1912-Q142"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2437,6 +2651,9 @@
             "PX1912-Q140",
             "PX1912-Q141",
             "PX1912-Q142"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2454,6 +2671,9 @@
             "PX1912-Q140",
             "PX1912-Q141",
             "PX1912-Q142"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2478,8 +2698,7 @@
         "PX1912-Q151"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2498,6 +2717,9 @@
             "PX1912-Q149",
             "PX1912-Q150",
             "PX1912-Q151"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2516,6 +2738,9 @@
             "PX1912-Q149",
             "PX1912-Q150",
             "PX1912-Q151"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2547,8 +2772,7 @@
         "PX1912-Q263"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2574,6 +2798,9 @@
             "PX1912-Q261",
             "PX1912-Q262",
             "PX1912-Q263"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2599,6 +2826,9 @@
             "PX1912-Q261",
             "PX1912-Q262",
             "PX1912-Q263"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2635,8 +2865,7 @@
         "PX1912-Q249"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2667,6 +2896,9 @@
             "PX1912-Q247",
             "PX1912-Q248",
             "PX1912-Q249"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2697,6 +2929,9 @@
             "PX1912-Q247",
             "PX1912-Q248",
             "PX1912-Q249"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2719,8 +2954,7 @@
         "PX1912-Q258"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2737,6 +2971,9 @@
             "PX1912-Q256",
             "PX1912-Q257",
             "PX1912-Q258"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2753,6 +2990,9 @@
             "PX1912-Q256",
             "PX1912-Q257",
             "PX1912-Q258"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2789,8 +3029,7 @@
         "PX1912-Q189"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2821,6 +3060,9 @@
             "PX1912-Q187",
             "PX1912-Q188",
             "PX1912-Q189"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2851,6 +3093,9 @@
             "PX1912-Q187",
             "PX1912-Q188",
             "PX1912-Q189"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2877,8 +3122,7 @@
         "PX1912-Q200"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2899,6 +3143,9 @@
             "PX1912-Q198",
             "PX1912-Q199",
             "PX1912-Q200"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2919,6 +3166,9 @@
             "PX1912-Q198",
             "PX1912-Q199",
             "PX1912-Q200"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2938,8 +3188,7 @@
         "PX1912-Q210"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -2953,6 +3202,9 @@
             "PX1912-Q202",
             "PX1912-Q209",
             "PX1912-Q210"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -2966,6 +3218,9 @@
             "PX1912-Q202",
             "PX1912-Q209",
             "PX1912-Q210"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -2986,8 +3241,7 @@
         "PX1912-Q212"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3002,6 +3256,9 @@
             "PX1912-Q205",
             "PX1912-Q211",
             "PX1912-Q212"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3016,6 +3273,9 @@
             "PX1912-Q205",
             "PX1912-Q211",
             "PX1912-Q212"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3034,8 +3294,7 @@
         "PX1912-Q208"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3048,6 +3307,9 @@
             "PX1912-Q206",
             "PX1912-Q207",
             "PX1912-Q208"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3060,6 +3322,9 @@
             "PX1912-Q206",
             "PX1912-Q207",
             "PX1912-Q208"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3079,10 +3344,10 @@
         "PX1912-Q371"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "CCC_1868_COOPERATION"
       ],
       "claims": [
         {
@@ -3096,6 +3361,10 @@
             "PX1912-Q199",
             "PX1912-Q370",
             "PX1912-Q371"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "CCC_1868_COOPERATION"
           ]
         },
         {
@@ -3109,6 +3378,10 @@
             "PX1912-Q199",
             "PX1912-Q370",
             "PX1912-Q371"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "CCC_1868_COOPERATION"
           ]
         }
       ],
@@ -3134,8 +3407,7 @@
         "PX1912-Q423"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3155,6 +3427,9 @@
             "PX1912-Q421",
             "PX1912-Q422",
             "PX1912-Q423"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3174,6 +3449,9 @@
             "PX1912-Q421",
             "PX1912-Q422",
             "PX1912-Q423"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3194,8 +3472,7 @@
         "PX1912-Q428"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3210,6 +3487,9 @@
             "PX1912-Q426",
             "PX1912-Q427",
             "PX1912-Q428"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3224,6 +3504,9 @@
             "PX1912-Q426",
             "PX1912-Q427",
             "PX1912-Q428"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3244,8 +3527,7 @@
         "PX1912-Q433"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3260,6 +3542,9 @@
             "PX1912-Q431",
             "PX1912-Q432",
             "PX1912-Q433"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3274,6 +3559,9 @@
             "PX1912-Q431",
             "PX1912-Q432",
             "PX1912-Q433"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3297,8 +3585,7 @@
         "PX1912-Q433"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3316,6 +3603,9 @@
             "PX1912-Q431",
             "PX1912-Q432",
             "PX1912-Q433"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3333,6 +3623,9 @@
             "PX1912-Q431",
             "PX1912-Q432",
             "PX1912-Q433"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3357,8 +3650,7 @@
         "PX1912-Q430"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3377,6 +3669,9 @@
             "PX1912-Q123",
             "PX1912-Q429",
             "PX1912-Q430"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3395,6 +3690,9 @@
             "PX1912-Q123",
             "PX1912-Q429",
             "PX1912-Q430"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3413,10 +3711,9 @@
         "PX1912-Q183"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899"
       ],
       "claims": [
         {
@@ -3429,6 +3726,11 @@
             "PX1912-Q176",
             "PX1912-Q177",
             "PX1912-Q183"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "ROMAN_CATECHISM_TRENT",
+            "SPIRAGO_1899"
           ]
         },
         {
@@ -3441,6 +3743,11 @@
             "PX1912-Q176",
             "PX1912-Q177",
             "PX1912-Q183"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "ROMAN_CATECHISM_TRENT",
+            "SPIRAGO_1899"
           ]
         }
       ],
@@ -3476,10 +3783,10 @@
         "PX1912-Q226"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "PIUS_XII_MEDIATOR_DEI_165"
       ],
       "claims": [
         {
@@ -3509,6 +3816,10 @@
             "PX1912-Q224",
             "PX1912-Q225",
             "PX1912-Q226"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "PIUS_XII_MEDIATOR_DEI_165"
           ]
         },
         {
@@ -3538,6 +3849,10 @@
             "PX1912-Q224",
             "PX1912-Q225",
             "PX1912-Q226"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912",
+            "PIUS_XII_MEDIATOR_DEI_165"
           ]
         }
       ],
@@ -3596,8 +3911,7 @@
         "PX1912-Q266"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3650,6 +3964,9 @@
             "PX1912-Q264",
             "PX1912-Q265",
             "PX1912-Q266"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3702,6 +4019,9 @@
             "PX1912-Q264",
             "PX1912-Q265",
             "PX1912-Q266"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
@@ -3740,8 +4060,7 @@
         "PX1912-Q396"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "claims": [
         {
@@ -3774,6 +4093,9 @@
             "PX1912-Q394",
             "PX1912-Q395",
             "PX1912-Q396"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         },
         {
@@ -3806,11 +4128,23 @@
             "PX1912-Q394",
             "PX1912-Q395",
             "PX1912-Q396"
+          ],
+          "sourceRefs": [
+            "PIUS_X_1912"
           ]
         }
       ],
       "publicationStatus": "DRAFT"
     }
   ],
-  "lessonCount": 54
+  "lessonCount": 54,
+  "sourceRegistry": "data/learn/learn-the-faith-curriculum.v1.json#source_registry",
+  "sourceMap": "data/learn/st-pius-x-catechism-source-map.v1.json",
+  "coverage": {
+    "questions": 433,
+    "lessons": 54,
+    "directLessons": 48,
+    "partialLessons": 6,
+    "published": false
+  }
 }
