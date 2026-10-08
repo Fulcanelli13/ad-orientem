@@ -277,10 +277,10 @@
     },
     {
       "id": "REVELATION-17",
-      "title": "Catholic Bible, Revelation 17 (text and notes)",
-      "url": "https://bible.usccb.org/bible/revelation/17",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "title": "Douay–Rheims/Challoner, Apocalypse 17, including the historic Catholic note distinguishing pagan Rome from the Church",
+      "url": "https://www.drbo.org/chapter/73017.htm",
+      "type": "CATHOLIC_SCRIPTURE_WITH_TRADITIONAL_COMMENTARY",
+      "verification": "RELEVANT_PASSAGE_EXAMINED_2026_10_08"
     },
     {
       "id": "KOESTER-666",
@@ -1346,9 +1346,9 @@
         {
           "text": "Augustine's two-cities interpretation broadens Babylon into a type of earthly pride and opposition to God. None of this makes pagan imperial Rome, the city of Rome and the Catholic Roman See identical theological entities. Calling the Catholic Church 'Babylon' requires a separate argument rather than an inference from the geography.",
           "source_ids": [
+            "REVELATION-17",
             "AUG18",
-            "IRENAEUS",
-            "REVELATION-17"
+            "IRENAEUS"
           ],
           "text_fr": "Saint Augustin fait de Babylone une figure plus générale de la cité terrestre dominée par l’orgueil. Ni l’empire romain, ni la ville, ni le siège apostolique de Pierre ne sont une seule réalité théologique."
         }
@@ -1383,7 +1383,9 @@
         ],
         "text_fr": "Le siège apostolique de Pierre n’est pas identique au pouvoir impérial païen qui persécutait les chrétiens."
       },
-      "verification_pending": [],
+      "verification_pending": [
+        "Catholic Challoner commentary directly distinguishes the pagan empire from the Roman See; further contrast with Protestant commentaries only if a specific primary author is cited."
+      ],
       "editorial_status": "BILINGUAL_FIELD_PARITY_EDITORIAL_REVIEW_PENDING",
       "question_fr": "Babylone la Grande désigne-t-elle Rome ou l’Église catholique ?"
     },
