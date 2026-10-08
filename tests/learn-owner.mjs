@@ -25,7 +25,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.mass","learn.serve_mass.responses","learn.scapular","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],
+  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],
   "Formation learning-intent layout changed unexpectedly",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
@@ -52,12 +52,27 @@ assert.match(presentation,/id:"learn\.glossary"/,"Glossary launcher is missing f
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.spiritual_life"/,"Spiritual Life launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
+assert.match(presentation,/data-ao-learn-apostolate/,"Formation lost its Apostolate entry action");
+assert.match(presentation,/data-ao-learn-back/,"Formation lost hierarchical Back");
+assert.match(presentation,/data-ao-learn-home/,"Formation lost explicit global Home");
+assert.match(presentation,/ao-refined-help/,"Formation Apostolate entry lost its canonical icon");
+assert.match(owner,/navigate\?\.\("apostolate"\)/,"Formation Apostolate action does not use the app-shell route");
+assert.match(owner,/openModule\(id,opts=\{\}\)/,"Formation child launcher cannot receive a return context");
+assert.match(owner,/external\?\.surface==="apostolate"/,"Formation cannot restore a suspended Apostolate parent");
 assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint","today\.gospel",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost hidden Today compatibility routes or Spiritual Life");
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.doesNotMatch(presentation,/id:"today\.gospel"/,"Today’s Gospel returned as a Formation launcher");
 assert.match(owner,/"today\.gospel"/,"Today’s Gospel compatibility route was removed rather than hidden");
 assert.match(presentation,/Spiritual & Moral Life/);
 assert.match(presentation,/Sacraments & Life Events/);
+assert.match(presentation,/data-ao-learn-family/,"Formation landing does not expose learning-intent doors");
+assert.match(presentation,/aoLearnFamilyGrid/,"Formation family-door grid is missing");
+assert.match(owner,/state\.family/,"Formation owner does not retain family navigation state");
+assert.match(owner,/familyId:state\.family/,"Formation presentation is not driven by family state");
+const spiritualSection=LEARN_LAYOUT.sections.find(section=>section.id==="spiritual-moral");
+const liturgySection=LEARN_LAYOUT.sections.find(section=>section.id==="liturgy-tradition");
+assert.ok(spiritualSection?.items.some(item=>item.id==="learn.scapular"),"Brown Scapular is not classified under Spiritual & Moral Life");
+assert.equal(liturgySection?.items.some(item=>item.id==="learn.scapular"),false,"Brown Scapular remains misclassified under Liturgy & Tradition");
 assert.match(presentation,/type:"practice".*learn\.serve_mass\.responses|id:"learn\.serve_mass\.responses",type:"practice"/s,"Serve Low Mass is not classified as practice");
 assert.match(owner,/modular-learn-v1/);
 assert.match(owner,/aoLearnRouteOwner/);

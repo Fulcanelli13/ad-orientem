@@ -6,19 +6,22 @@ import {
 } from "./traditional-life-data.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
-export const TRADITIONAL_LEARN_VERSION="38.5-after-death-family-absorption";
+export const TRADITIONAL_LEARN_VERSION="38.6-content-ownership-cleanup";
 export const TRADITIONAL_LEARN_ROOT_ID="ao-learn-traditional-root";
 
 export const TRADITIONAL_LEARN_ROUTES=Object.freeze({
-  "learn.rites.sick":Object.freeze({id:"learn.rites.sick",type:"module",domain:"learn",category:"catholic-life",title:"Serious Illness & Dying"}),
-  "learn.rites.baptism":Object.freeze({id:"learn.rites.baptism",type:"module",domain:"learn",category:"catholic-life",title:"Baptism · Parents & Godparents"}),
-  "learn.rites.first_communion":Object.freeze({id:"learn.rites.first_communion",type:"module",domain:"learn",category:"catholic-life",title:"First Holy Communion · Child & Family"}),
-  "learn.rites.confirmation":Object.freeze({id:"learn.rites.confirmation",type:"module",domain:"learn",category:"catholic-life",title:"Confirmation · Candidate & Sponsor"}),
-  "learn.rites.holy_orders":Object.freeze({id:"learn.rites.holy_orders",type:"module",domain:"learn",category:"catholic-life",title:"Holy Orders · Understand the Ordinations"}),
-  "learn.rites.matrimony":Object.freeze({id:"learn.rites.matrimony",type:"module",domain:"learn",category:"catholic-life",title:"Matrimony · Bride & Groom"}),
+  "learn.rites.sick":Object.freeze({id:"learn.rites.sick",type:"module",domain:"learn",category:"sacramental-formation",title:"Serious Illness & Dying"}),
+  "learn.rites.baptism":Object.freeze({id:"learn.rites.baptism",type:"module",domain:"learn",category:"sacramental-formation",title:"Baptism · Parents & Godparents"}),
+  "learn.rites.first_communion":Object.freeze({id:"learn.rites.first_communion",type:"module",domain:"learn",category:"sacramental-formation",title:"First Holy Communion · Child & Family"}),
+  "learn.rites.confirmation":Object.freeze({id:"learn.rites.confirmation",type:"module",domain:"learn",category:"sacramental-formation",title:"Confirmation · Candidate & Sponsor"}),
+  "learn.rites.holy_orders":Object.freeze({id:"learn.rites.holy_orders",type:"module",domain:"learn",category:"sacramental-formation",title:"Holy Orders · Understand the Ordinations"}),
+  "learn.rites.matrimony":Object.freeze({id:"learn.rites.matrimony",type:"module",domain:"learn",category:"sacramental-formation",title:"Matrimony · Bride & Groom"}),
   "learn.serve_mass.responses":Object.freeze({id:"learn.serve_mass.responses",type:"module",domain:"learn",category:"mass-formation",title:"Low Mass Responses"}),
-  "learn.scapular":Object.freeze({id:"learn.scapular",type:"module",domain:"learn",category:"catholic-life",title:"Brown Scapular"}),
-  "learn.seasonal_rites":Object.freeze({id:"learn.seasonal_rites",type:"module",domain:"learn",category:"liturgical-life",title:"Seasonal Catholic Practice"}),
+  "learn.scapular":Object.freeze({id:"learn.scapular",type:"module",domain:"learn",category:"spiritual-moral",title:"Brown Scapular"}),
+});
+
+export const TRADITIONAL_LEARN_ALIASES=Object.freeze({
+  "learn.seasonal_rites":Object.freeze({id:"learn.seasonal_rites",type:"alias",domain:"learn",category:"calendar",target:"calendar",title:"Seasonal Catholic Practice"}),
 });
 
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -56,7 +59,7 @@ function actions(items){
   return `<div class="aoLearnTradActions">${items.map(item=>`<button type="button" class="${item.primary?"primary":""}" ${item.route?`data-ao-tradlearn-route="${esc(item.route)}"`:""} ${item.prayer?`data-ao-tradlearn-prayer="${esc(item.prayer)}"`:""} ${item.mass?"data-ao-tradlearn-mass":""} ${item.nuptial?"data-ao-tradlearn-nuptial":""}>${esc(item.label)}</button>`).join("")}</div>`;
 }
 function top(win,title){
-  return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-tradlearn-close aria-label="${esc(L(win,"Close","Fermer"))}">${uiIcon("ao-ui-close")}</button></header>`;
+  return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-tradlearn-home aria-label="${esc(L(win,"Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
 }
 function shell(win,title,intro,status,body){
   const progressive=String(body||"").replace('<details class="aoLearnTradCard">','<details class="aoLearnTradCard" open>');
@@ -155,7 +158,7 @@ function firstCommunion(win){
     card(win,L(win,"HOW COMMUNION IS RECEIVED","COMMENT RECEVOIR LA COMMUNION"),L(win,"The older Roman discipline and current universal discipline must not be blended. In the 1962 Communion rite the priest’s formula itself includes Amen, and the traditional Roman manner is reception kneeling and on the tongue, apart from legitimate physical necessity. Current discipline preserves the faithful’s right to receive on the tongue; Communion in the hand exists where lawfully authorized, and a communicant is not to be refused merely because he or she kneels. Follow the actual rite and competent local norms being used.","L’ancienne discipline romaine et la discipline universelle actuelle ne doivent pas être mélangées. Dans le rite de Communion de 1962, la formule du prêtre contient elle-même Amen, et la manière romaine traditionnelle est de recevoir à genoux et sur la langue, sauf nécessité physique légitime. La discipline actuelle maintient le droit des fidèles à recevoir sur la langue ; la Communion dans la main existe là où elle est licitement autorisée, et un communiant ne doit pas être refusé simplement parce qu’il s’agenouille. Suivez le rite réellement célébré et les normes compétentes applicables."))+
     card(win,L(win,"1962 PRACTICAL REHEARSAL","RÉPÉTITION PRATIQUE · 1962"),L(win,"For the traditional Roman manner, approach the rail without rushing and keep the hands joined. Kneel where the arrangement and your physical condition permit. The priest’s Communion formula already contains Amen, so the communicant does not add a separate Amen. Traditional practical manuals and Campion-style missals commonly direct the communicant to keep the head upright and still, open the mouth and extend the tongue sufficiently for the priest to place the Sacred Host securely. These are practical reception instructions, not a new set of universal rubrics: follow the actual clergy and arrangement of the church, especially where there is no rail or where physical necessity requires adaptation.","Pour la manière romaine traditionnelle, approchez de la table de Communion sans vous presser et gardez les mains jointes. Agenouillez-vous lorsque l’aménagement et votre état physique le permettent. La formule de Communion du prêtre contient déjà Amen ; le communiant n’ajoute donc pas un Amen séparé. Les manuels pratiques traditionnels et les missels de type Campion indiquent habituellement de garder la tête droite et immobile, d’ouvrir la bouche et d’avancer suffisamment la langue pour que le prêtre puisse déposer sûrement la Sainte Hostie. Il s’agit d’indications pratiques de réception, non d’un nouvel ensemble de rubriques universelles : suivez le clergé et l’aménagement réels de l’église, surtout lorsqu’il n’y a pas de table de Communion ou lorsqu’une nécessité physique exige une adaptation."))+
     card(win,L(win,"AT THE FIRST COMMUNION MASS","À LA MESSE DE PREMIÈRE COMMUNION"),L(win,"Follow the actual priest, parish and traditional Roman Mass being celebrated. Ad Orientem does not create a second Communion ritual or rehearse the priest’s formula here. Use the Mass follower for the liturgical moment and the local instructions for approaching and receiving. Assisting at Mass and sacramentally receiving Holy Communion are distinct acts: not receiving Communion does not mean one has failed to assist at Mass. The important interior act when receiving is faith: this is truly the Body of Christ, not ordinary bread.","Suivez le prêtre, la paroisse et la Messe romaine traditionnelle effectivement célébrée. Ad Orientem ne crée pas ici un second rituel de Communion et ne fait pas répéter la formule du prêtre. Utilisez le suivi de Messe pour le moment liturgique et les indications locales pour vous approcher et communier. Assister à la Messe et recevoir sacramentellement la Sainte Communion sont deux actes distincts : ne pas communier ne signifie pas que l’on n’a pas assisté à la Messe. L’acte intérieur essentiel lorsqu’on communie est la foi : ceci est vraiment le Corps du Christ, non un pain ordinaire."))+
-    card(win,L(win,"AFTER RECEIVING","APRÈS AVOIR COMMUNIÉ"),L(win,"Remain recollected and give thanks. Do not turn thanksgiving into a race through many prayers. The Mass lifecycle already owns the immediate After Mass flow, while the Traditional Communion Prayers treasury contains the longer source-locked prayers before and after Communion.","Demeurez recueilli et rendez grâce. Ne transformez pas l’action de grâces en course à travers de nombreuses prières. Le cycle de la Messe possède déjà le parcours immédiat Après la Messe, tandis que le trésor des Prières traditionnelles de Communion contient les prières plus longues, verrouillées sur leurs sources, avant et après la Communion."),actions([
+    card(win,L(win,"AFTER RECEIVING","APRÈS AVOIR COMMUNIÉ"),L(win,"Remain recollected and give thanks. Do not turn thanksgiving into a race through many prayers. The Mass lifecycle already owns the immediate After Mass flow, while the Traditional Communion Prayers treasury contains the longer sourced prayers before and after Communion.","Demeurez recueilli et rendez grâce. Ne transformez pas l’action de grâces en course à travers de nombreuses prières. Le cycle de la Messe possède déjà le parcours immédiat Après la Messe, tandis que le trésor des Prières traditionnelles de Communion contient les prières plus longues et sourcées avant et après la Communion."),actions([
       {label:L(win,"After Mass","Après la Messe"),route:"mass.thanksgiving"},
       {label:L(win,"Traditional Communion Prayers","Prières traditionnelles de Communion"),route:"pray.communion_treasury"},
     ]))+
@@ -302,18 +305,12 @@ export function createTraditionalLearnRuntime(win=globalThis){
     else if(state.route==="learn.rites.matrimony")node.innerHTML=matrimony(win);
     else if(state.route==="learn.serve_mass.responses")node.innerHTML=trainer(win,state);
     else if(state.route==="learn.scapular")node.innerHTML=scapular(win);
-    else node.innerHTML=seasonal(win);
+    else return false;
     node.scrollTop=0;queueMicrotask(()=>node.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());return true;
   }
   function open(id,opts={}){
     const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;
     if(!TRADITIONAL_LEARN_ROUTES[canonical])return false;
-    if(canonical==="learn.seasonal_rites"){
-      close();
-      win?.AO_CALENDAR_APP_V1?.setView?.("year");
-      void win?.AO_APP_SHELL_V1?.navigate?.("calendar");
-      return true;
-    }
     state.route=canonical;state.screen="module";state.prayerId=null;state.trainerIndex=0;state.trainerReveal=false;state.returnFocus=opts.trigger||win?.document?.activeElement||null;
     ensureRoot();render();return true;
   }
@@ -341,7 +338,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
   function onClick(e){
     const b=e.target?.closest?.("button,[data-ao-tradlearn-flip]");if(!b)return;
     if(b.matches("[data-ao-tradlearn-back]")){e.preventDefault();if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render()}else close();return}
-    if(b.matches("[data-ao-tradlearn-close]")){e.preventDefault();close();return}
+    if(b.matches("[data-ao-tradlearn-home]")){e.preventDefault();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(b.matches("[data-ao-tradlearn-flip]")){e.preventDefault();const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return}
     if(b.dataset.aoTradlearnPrayer){e.preventDefault();state.screen="prayer";state.prayerId=b.dataset.aoTradlearnPrayer;render();return}
     if(b.dataset.aoTradlearnRoute){e.preventDefault();void handoff(b.dataset.aoTradlearnRoute);return}
@@ -359,11 +356,12 @@ export function ensureTraditionalLearnRegistry(win=globalThis){
   const base=win?.AO_MODULES;if(!base)return null;
   const runtime=win.AO_TRADITIONAL_LEARN_V381||createTraditionalLearnRuntime(win);win.AO_TRADITIONAL_LEARN_V381=runtime;
   const alias=Object.freeze({id:"learn.serve_mass",type:"alias",domain:"learn",category:"mass-formation",title:"Low Mass Responses"});
+  const seasonalAlias=TRADITIONAL_LEARN_ALIASES["learn.seasonal_rites"];
   const wrapper={...base,__aoTraditionalLearnV381:true,
-    get(id){if(id==="learn.serve_mass")return alias;return TRADITIONAL_LEARN_ROUTES[id]||base.get?.(id)||null},
-    resolve(id){if(id==="learn.serve_mass")return {ok:true,input:id,id:"learn.serve_mass.responses",defaults:{},chain:["learn.serve_mass","learn.serve_mass.responses"],definition:TRADITIONAL_LEARN_ROUTES["learn.serve_mass.responses"]};if(TRADITIONAL_LEARN_ROUTES[id])return {ok:true,input:id,id,defaults:{},chain:[id],definition:TRADITIONAL_LEARN_ROUTES[id]};return base.resolve?.(id)},
-    async open(id,opts={}){const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;if(TRADITIONAL_LEARN_ROUTES[canonical])return {ok:runtime.open(canonical,opts),input:String(id),canonicalId:canonical,type:"module",domain:"learn",options:opts,aliasChain:id===canonical?[id]:[id,canonical],error:null};return base.open?.(id,opts)},
-    list(filter={}){const prior=[...(base.list?.(filter)||[])].filter(x=>!TRADITIONAL_LEARN_ROUTES[x?.id]);if((!filter.type||filter.type==="module")&&(!filter.domain||String(filter.domain).toLowerCase()==="learn"))prior.push(...Object.values(TRADITIONAL_LEARN_ROUTES));return prior}
+    get(id){if(id==="learn.serve_mass")return alias;if(id==="learn.seasonal_rites")return seasonalAlias;return TRADITIONAL_LEARN_ROUTES[id]||base.get?.(id)||null},
+    resolve(id){if(id==="learn.serve_mass")return {ok:true,input:id,id:"learn.serve_mass.responses",defaults:{},chain:["learn.serve_mass","learn.serve_mass.responses"],definition:TRADITIONAL_LEARN_ROUTES["learn.serve_mass.responses"]};if(id==="learn.seasonal_rites")return {ok:true,input:id,id:"calendar",defaults:{view:"year",monthView:"practices"},chain:["learn.seasonal_rites","calendar"],definition:seasonalAlias};if(TRADITIONAL_LEARN_ROUTES[id])return {ok:true,input:id,id,defaults:{},chain:[id],definition:TRADITIONAL_LEARN_ROUTES[id]};return base.resolve?.(id)},
+    async open(id,opts={}){const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;if(canonical==="learn.seasonal_rites"){runtime.close();win?.AO_CALENDAR_APP_V1?.setView?.("year");await win?.AO_APP_SHELL_V1?.navigate?.("calendar");return {ok:true,input:String(id),canonicalId:"calendar",type:"alias",domain:"learn",options:opts,aliasChain:["learn.seasonal_rites","calendar"],error:null}}if(TRADITIONAL_LEARN_ROUTES[canonical])return {ok:runtime.open(canonical,opts),input:String(id),canonicalId:canonical,type:"module",domain:"learn",options:opts,aliasChain:id===canonical?[id]:[id,canonical],error:null};return base.open?.(id,opts)},
+    list(filter={}){const prior=[...(base.list?.(filter)||[])].filter(x=>x?.id!=="learn.seasonal_rites"&&!TRADITIONAL_LEARN_ROUTES[x?.id]);if((!filter.type||filter.type==="module")&&(!filter.domain||String(filter.domain).toLowerCase()==="learn"))prior.push(...Object.values(TRADITIONAL_LEARN_ROUTES));return prior}
   };
   win.AO_MODULES=wrapper;win.AO_MODULE_REGISTRY_V36=wrapper;return wrapper;
 }

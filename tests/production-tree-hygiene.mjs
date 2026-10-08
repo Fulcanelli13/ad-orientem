@@ -18,14 +18,24 @@ for(const path of forbiddenPaths){
 
 const workflowDir=".github/workflows";
 const workflows=readdirSync(workflowDir).filter(name=>/\.ya?ml$/i.test(name));
-const reviewBranchMutationWorkflows=new Set(["directory-snapshot-promotion.yml","directory-geocode-promotion.yml"]);
+// Only narrowly scoped Directory review branches may write generated artifacts.
+const reviewBranchMutationWorkflows=new Map([
+  ["directory-snapshot-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
+  ["directory-geocode-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
+  ["directory-icksp-research-geocode.yml",/branches:\s*\n\s*-\s*["']directory\/icksp-quality-\*["']/i],
+]);
 for(const name of workflows){
   const path=join(workflowDir,name);
   const source=readFileSync(path,"utf8");
 
-  if(reviewBranchMutationWorkflows.has(name)){
-    assert.match(source,/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i,
-      name+" must remain scoped to snapshot/directory-* review branches");
+  const reviewBranchGuard=reviewBranchMutationWorkflows.get(name);
+  if(reviewBranchGuard){
+    assert.match(source,reviewBranchGuard,
+      name+" must remain scoped to its designated Directory review branch family");
+    if(name==="directory-icksp-research-geocode.yml"){
+      assert.match(source,/branches:[ \t]*\n[ \t]*-[ \t]*["']directory\/icksp-quality-\*["'][ \t]*\n[ \t]*paths:[ \t]*\n[ \t]*-[ \t]*["']data\/directory\/\.icksp-research-geocode-request["']/i,
+        name+" must be triggered only by the ICKSP geocode request marker on review branches");
+    }
     assert.doesNotMatch(source,/branches:\s*[\s\S]{0,160}?[-"'\s]main\b/i,
       name+" must never target main");
     assert.match(source,/permissions:\s*[\s\S]*?contents:\s*write/i,

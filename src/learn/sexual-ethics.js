@@ -68,7 +68,7 @@ function css(){
 }
 
 function top(win,title,kicker){
-  return `<style data-ao-cse-style>${css()}</style><header class="aoCSETop"><button type="button" data-ao-cse-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(kicker||L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-cse-close aria-label="${esc(L(win,"Close","Fermer"))}">${uiIcon("ao-ui-close")}</button></header>`;
+  return `<style data-ao-cse-style>${css()}</style><header class="aoCSETop"><button type="button" data-ao-cse-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(kicker||L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-cse-home aria-label="${esc(L(win,"Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
 }
 
 function depthLabel(win,depth){const pair=DEPTH_LABELS[depth]||DEPTH_LABELS.STANDARD;return L(win,pair[0],pair[1]);}
@@ -162,7 +162,9 @@ function questionHtml(win,item,reveal){
   const section=CSE_SECTION_MAP[item.section];
   const buttonClosed=isDebate?L(win,"Examine the argument","Examiner l’argument"):L(win,"Go deeper","Approfondir");
   const buttonOpen=isDebate?L(win,"Hide the argument","Masquer l’argument"):L(win,"Hide deeper explanation","Masquer l’explication approfondie");
-  return `${top(win,pick(win,section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+  const apostolateTarget=CSE_SOT_BY_ID[item.id]?.apostolateHandoff||null;
+  const apostolateAction=apostolateTarget?`<button type="button" class="aoCSEBtn" data-ao-cse-apostolate>${esc(L(win,"Practise answering this objection","S’exercer à répondre à cette objection"))}</button>`:"";
+  return `${top(win,pick(win,section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
 }
 
 export function createSexualEthicsRuntime(win=globalThis){
@@ -175,12 +177,13 @@ export function createSexualEthicsRuntime(win=globalThis){
     node.setAttribute("role","region");node.setAttribute("aria-label",L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"));
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button,a");if(!target)return;
-      if(target.matches("[data-ao-cse-close]")){event.preventDefault?.();close(true);return;}
+      if(target.matches("[data-ao-cse-home]")){event.preventDefault?.();close(false);void win?.AO_APP_SHELL_V1?.navigate?.("home");return;}
       if(target.matches("[data-ao-cse-back]")){event.preventDefault?.();back();return;}
       if(target.dataset.aoCseSection){event.preventDefault?.();openSection(target.dataset.aoCseSection);return;}
       if(target.dataset.aoCseQuestion){event.preventDefault?.();openQuestion(target.dataset.aoCseQuestion);return;}
       if(target.dataset.aoCseRelated){event.preventDefault?.();openRelated(target.dataset.aoCseRelated);return;}
       if(target.matches("[data-ao-cse-reveal]")){event.preventDefault?.();state.reveal=!state.reveal;render();return;}
+      if(target.matches("[data-ao-cse-apostolate]")){event.preventDefault?.();void openApostolateHandoff(state.questionId);return;}
     });
     node.addEventListener("input",event=>{
       const input=event.target?.closest?.("[data-ao-cse-search]");if(!input)return;
@@ -240,6 +243,15 @@ export function createSexualEthicsRuntime(win=globalThis){
       return Object.freeze({ok:false,reason:String(error?.message??error),questionId,targetId});
     }
   }
+  async function openApostolateHandoff(questionId=state.questionId){
+    const record=CSE_SOT_BY_ID[questionId];
+    if(!record?.apostolateHandoff)return Object.freeze({ok:false,reason:"NO_APOSTOLATE_HANDOFF",questionId});
+    close(false);
+    const nav=await win?.AO_APP_SHELL_V1?.navigate?.("apostolate");
+    if(nav?.ok===false)return Object.freeze({ok:false,reason:nav.reason||"APOSTOLATE_NAVIGATION_FAILED",questionId});
+    return handoffToApostolate(questionId);
+  }
+
   function back(){
     if(state.view==="question"){state.questionId=null;state.reveal=false;state.view=state.returnView==="sections"?"sections":"section";render();return true;}
     if(state.view==="section"){state.view="sections";state.sectionId=null;render();return true;}

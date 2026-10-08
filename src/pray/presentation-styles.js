@@ -4,7 +4,7 @@ const MODULAR_SHELL_CSS="body.aoP435930Open #ao-global-ribbon{z-index:2147483300
 const VISIBLE_REGRESSION_GUARD_CSS=`
 #aoPray435930 svg.aoP435930UiIcon,#aoPray435930 svg.aoRitualIcon,#aoPray435930 svg.aoP435930SemanticRailIcon{background:none!important;-webkit-mask:none!important;mask:none!important;overflow:visible!important}
 #aoPray435930 .aoP435930Head button::before,#aoPray435930 .aoP435930Head button::after{content:none!important;display:none!important}
-#aoPray435930 .aoP435930Head button>:not([data-ao-inline-asset-id]){display:none!important}
+#aoPray435930 .aoP435930Head button>:not([data-ao-inline-asset-id]):not([data-ao-asset-id]){display:none!important}
 #aoPray435930 .aoP435930HomeIntro.aoModularHeroIn{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
 #aoPray435930 .aoP435930ModuleCard{grid-template-columns:44px minmax(0,1fr) auto!important;grid-template-rows:auto auto 1fr!important;column-gap:10px!important;row-gap:3px!important}
 #aoPray435930 .aoP435930ModuleCard>.aoP435930ModuleIcon{grid-column:1!important;grid-row:1/4!important;align-self:center!important}
@@ -515,6 +515,60 @@ html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoC
 }
 `;
 
+
+const DEVOTIONAL_UX_CSS=`
+#aoPray435930 .aoP435930Sheet{touch-action:pan-y}
+#aoPray435930 .aoP435930Head{grid-template-columns:44px minmax(0,1fr) 44px!important}
+#aoPray435930 .aoP435930Head>.aoP435930Back,
+#aoPray435930 .aoP435930Head>.aoP435930Home{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important}
+#aoPray435930 .aoP435930GuideInfo{margin:0;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:14px;background:var(--surface-1,#151c24);overflow:hidden}
+#aoPray435930 .aoP435930GuideInfo>summary{min-height:44px;display:flex;align-items:center;padding:10px 12px;cursor:pointer;color:var(--liturgical,#d8bd7d);font:700 var(--ao-type-ui-sm,12px)/1.25 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoP435930GuideInfo>div{padding:0 12px 12px;color:var(--muted,#aeb2b8);font:500 var(--ao-type-ui,14px)/1.55 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoP435930GuideInfo p{margin:8px 0}
+#aoPray435930 .aoP435930GuideLinks{display:grid;gap:7px;margin-top:10px}
+#aoPray435930 .aoP435930GuideLinks a{color:var(--liturgical,#d8bd7d);text-decoration:none;font:650 var(--ao-type-ui-sm,12px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoP435930ModeRow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#aoPray435930 .aoP435930VR{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:15px;background:var(--surface-1,#151c24)}
+#aoPray435930 .aoP435930VR>small{color:var(--liturgical,#d8bd7d);font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em}
+#aoPray435930 .aoP435930VRLine{display:grid;grid-template-columns:1.55rem minmax(0,1fr);gap:6px;align-items:start}
+#aoPray435930 .aoP435930VRLine>b{color:var(--liturgical,#d8bd7d);font:700 1rem/1.55 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoP435930VRLine>button{border:0;background:transparent;color:var(--text,#f3ead7);padding:0;text-align:left;font:500 1rem/1.55 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoP435930VR.group .aoP435930VRLine.response{padding:7px 8px;border-radius:10px;background:var(--liturgical-soft,rgba(216,189,125,.08))}
+#aoPray435930 .aoP435930StationOrdinary{border-top:1px solid var(--border,rgba(255,255,255,.12));border-bottom:1px solid var(--border,rgba(255,255,255,.12))}
+#aoPray435930 .aoP435930StationOrdinary>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--muted,#aeb2b8);font:650 var(--ao-type-ui-sm,12px)/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoP435930StationOrdinary>p{color:var(--muted,#aeb2b8);font:500 var(--ao-type-ui-sm,12px)/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoP435930TrackingToggle{display:flex;gap:10px;align-items:flex-start;padding:12px 13px;border:1px dashed var(--border,rgba(255,255,255,.18));border-radius:14px;background:color-mix(in srgb,var(--surface-1,#151c24) 82%,transparent)}
+#aoPray435930 .aoP435930TrackingToggle input{margin-top:3px}
+#aoPray435930 .aoP435930TrackingToggle span{display:flex;flex-direction:column;gap:3px}
+#aoPray435930 .aoP435930TrackingToggle b{font:650 var(--ao-type-ui,14px)/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoP435930TrackingToggle small{color:var(--muted,#aeb2b8);font:500 var(--ao-type-ui-sm,12px)/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoTrackingOff label:has([data-p435930-ff-intention]),
+#aoPray435930 .aoTrackingOff label:has([data-p435930-ff-communion]),
+#aoPray435930 .aoTrackingOff label:has([data-p435930-fs-intention]),
+#aoPray435930 .aoTrackingOff label:has([data-p435930-fs-confession]),
+#aoPray435930 .aoTrackingOff label:has([data-p435930-fs-communion]),
+#aoPray435930 .aoTrackingOff label:has([data-p435930-fs-rosary]),
+#aoPray435930 .aoTrackingOff label:has([data-p435930-fs-meditation]),
+#aoPray435930 .aoTrackingOff .aoP435930ProgrammeSummary,
+#aoPray435930 .aoTrackingOff [data-p435930-ff-save],
+#aoPray435930 .aoTrackingOff [data-p435930-ff-interrupt],
+#aoPray435930 .aoTrackingOff [data-p435930-fs-save],
+#aoPray435930 .aoTrackingOff [data-p435930-fs-interrupt]{display:none!important}
+#aoPray435930 .aoP435930LitFlow button{transition:opacity .24s ease,background .24s ease,border-color .24s ease,color .24s ease,transform .24s ease}
+#aoPray435930 .aoP435930LitFlow button.current{opacity:1;background:var(--liturgical,#d8bd7d);border-color:var(--liturgical,#d8bd7d);color:var(--bg,#0d1218);transform:scale(1.02)}
+#aoPray435930 .aoP435930LitFlow button.current span{background:var(--bg,#0d1218);color:var(--liturgical,#d8bd7d)}
+#aoPray435930 .aoP435930LitFlow button.past{opacity:.42}
+#aoPray435930 .aoP435930LitFlow button.future{opacity:.28}
+@media(max-width:560px){
+ #aoPray435930 .aoP435930ModeRow{grid-template-columns:1fr}
+ #aoPray435930 .aoP435930GuideInfo>div{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPray435930 .aoP435930LitFlow button{transition:none!important}
+}
+html[data-reduced-motion="true"] #aoPray435930 .aoP435930LitFlow button{transition:none!important}
+`;
+
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
   const style=doc.createElement("style");
@@ -527,6 +581,7 @@ function ensureStyle(doc,id,css){
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
+  ensureStyle(doc,"ao-pray-devotional-ux-contract-style",DEVOTIONAL_UX_CSS);
   ensureStyle(doc,"ao-pray-modular-shell-integration-style",MODULAR_SHELL_CSS);
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);
   ensureStyle(doc,"ao-pray-semantic-rails-style",SEMANTIC_RAIL_CSS);

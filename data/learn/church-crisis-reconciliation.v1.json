@@ -1,0 +1,507 @@
+{
+  "version": "CHURCH_CRISIS_RECONCILIATION_V1",
+  "status": "FROZEN_NO_INVENTED_PER_ID_MAPPING",
+  "created_at": "2026-10-08",
+  "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
+  "finding": "No Church Crisis production route or stable per-record corpus exists in the repository. Prior research is extensive but was developed across multiple chat/research pipelines. This ledger preserves known ID bands and research banks without inventing exact titles or ownership for IDs whose text is not recoverable here.",
+  "legacy_corpus_C001_C233": [
+    {
+      "range": "C001-C004",
+      "disposition": "MERGE",
+      "primary_family": "ecclesiological",
+      "targets": [
+        "CR-ECC-01",
+        "CR-ECC-02",
+        "CR-ECC-03"
+      ]
+    },
+    {
+      "range": "C005-C008",
+      "disposition": "MERGE",
+      "primary_family": "authority",
+      "targets": [
+        "CR-AUT-01",
+        "CR-AUT-02",
+        "CR-AUT-03",
+        "CR-AUT-04",
+        "CR-AUT-05"
+      ]
+    },
+    {
+      "range": "C009-C017",
+      "disposition": "MERGE",
+      "primary_family": "doctrinal",
+      "targets": [
+        "CR-DOC-01",
+        "CR-DOC-02",
+        "CR-DOC-03",
+        "CR-DOC-10"
+      ]
+    },
+    {
+      "range": "C018",
+      "disposition": "MERGE",
+      "primary_family": "authority",
+      "targets": [
+        "CR-AUT-04",
+        "CR-AUT-05"
+      ]
+    },
+    {
+      "range": "C019-C029",
+      "disposition": "MERGE",
+      "primary_family": "doctrinal",
+      "targets": [
+        "CR-DOC-04",
+        "CR-DOC-05",
+        "CR-DOC-06",
+        "CR-DOC-07",
+        "CR-DOC-08",
+        "CR-DOC-10"
+      ]
+    },
+    {
+      "range": "C030-C048",
+      "disposition": "MERGE",
+      "primary_family": "mixed",
+      "targets": [
+        "CR-AUT-04",
+        "CR-AUT-05",
+        "CR-ECC-01",
+        "CR-ECC-02",
+        "CR-DOC-02",
+        "CR-DOC-03",
+        "CR-IDM-01",
+        "CR-IDM-02"
+      ],
+      "note": "Band spans authority, ecclesiology, doctrine and identity/mission; do not infer exact per-ID ownership without the source records."
+    },
+    {
+      "range": "C049-C052",
+      "disposition": "MERGE",
+      "primary_family": "identity-mission",
+      "targets": [
+        "CR-IDM-01",
+        "CR-IDM-02",
+        "CR-IDM-03",
+        "CR-IDM-06"
+      ]
+    },
+    {
+      "range": "C053-C055",
+      "disposition": "MERGE",
+      "primary_family": "liturgical",
+      "targets": [
+        "CR-LIT-01",
+        "CR-LIT-02",
+        "CR-LIT-05"
+      ]
+    },
+    {
+      "range": "C056",
+      "disposition": "MERGE",
+      "primary_family": "authority",
+      "secondary_family": "liturgical",
+      "targets": [
+        "CR-AUT-06",
+        "CR-AUT-07",
+        "CR-LIT-05"
+      ]
+    },
+    {
+      "range": "C057-C081",
+      "disposition": "REFERENCE",
+      "primary_family": "liturgical",
+      "targets": [
+        "CR-LIT-01",
+        "CR-LIT-02",
+        "CR-LIT-03",
+        "CR-LIT-04",
+        "CR-LIT-05",
+        "CR-LIT-06",
+        "CR-LIT-09",
+        "CR-LIT-10",
+        "CR-LIT-11",
+        "CR-LIT-12"
+      ],
+      "note": "Old Mass-crisis questions are superseded by the richer Mass Crisis research bank; retain as aliases/evidence nodes rather than duplicate dossiers."
+    },
+    {
+      "range": "C082-C106",
+      "disposition": "MERGE",
+      "primary_family": "ecclesiological",
+      "secondary_families": [
+        "authority",
+        "governance"
+      ],
+      "targets": [
+        "CR-ECC-05",
+        "CR-ECC-06",
+        "CR-ECC-07",
+        "CR-AUT-01",
+        "CR-AUT-02",
+        "CR-GOV-01"
+      ]
+    },
+    {
+      "range": "C107-C130",
+      "disposition": "REFERENCE",
+      "primary_family": "historical-case-bank",
+      "targets": [
+        "CR-DOC-10",
+        "CR-ECC-01",
+        "CR-ECC-02",
+        "CR-AUT-03",
+        "CR-GOV-01"
+      ],
+      "note": "Historical precedents should increasingly reference Church History case files when those are built."
+    },
+    {
+      "range": "C131-C155",
+      "disposition": "MERGE",
+      "primary_family": "ecclesiological",
+      "targets": [
+        "CR-ECC-04",
+        "CR-ECC-08",
+        "CR-ECC-09",
+        "CR-ECC-10"
+      ]
+    },
+    {
+      "range": "C156-C180",
+      "disposition": "REFERENCE",
+      "primary_family": "mixed-historical",
+      "targets": [
+        "CR-AUT-03",
+        "CR-AUT-04",
+        "CR-DOC-01",
+        "CR-DOC-10",
+        "CR-GOV-05"
+      ],
+      "note": "Conciliarism, Gallicanism, Jansenism and related precedents belong to Church History as chronology and Crisis only insofar as they illuminate the argument."
+    },
+    {
+      "range": "C181-C191",
+      "disposition": "REFERENCE",
+      "primary_family": "mixed-historical-mission-liturgical",
+      "targets": [
+        "CR-IDM-01",
+        "CR-IDM-03",
+        "CR-LIT-01",
+        "CR-LIT-12"
+      ]
+    },
+    {
+      "range": "C192",
+      "disposition": "MERGE",
+      "primary_family": "doctrinal",
+      "targets": [
+        "CR-DOC-01",
+        "CR-DOC-03"
+      ]
+    },
+    {
+      "range": "C193",
+      "disposition": "MERGE",
+      "primary_family": "origins-governance",
+      "targets": [
+        "CR-ORG-01",
+        "CR-GOV-01"
+      ]
+    },
+    {
+      "range": "C194-C218",
+      "disposition": "MERGE",
+      "primary_family": "governance",
+      "targets": [
+        "CR-GOV-01",
+        "CR-GOV-02",
+        "CR-GOV-03",
+        "CR-GOV-04",
+        "CR-GOV-05",
+        "CR-GOV-06",
+        "CR-GOV-07",
+        "CR-GOV-08",
+        "CR-GOV-09"
+      ],
+      "note": "Empirical postconciliar-crisis spine."
+    },
+    {
+      "range": "C219-C221",
+      "disposition": "MERGE",
+      "primary_family": "moral",
+      "targets": [
+        "CR-MOR-03",
+        "CR-MOR-04"
+      ]
+    },
+    {
+      "range": "C222-C223",
+      "disposition": "MERGE",
+      "primary_family": "doctrinal",
+      "targets": [
+        "CR-DOC-02",
+        "CR-DOC-03",
+        "CR-DOC-10"
+      ]
+    },
+    {
+      "range": "C224",
+      "disposition": "MERGE",
+      "primary_family": "governance",
+      "secondary_family": "doctrinal",
+      "targets": [
+        "CR-GOV-04",
+        "CR-DOC-09"
+      ]
+    },
+    {
+      "range": "C225",
+      "disposition": "MERGE",
+      "primary_family": "moral",
+      "targets": [
+        "CR-MOR-01",
+        "CR-MOR-02"
+      ]
+    },
+    {
+      "range": "C226-C227",
+      "disposition": "MERGE",
+      "primary_family": "moral",
+      "targets": [
+        "CR-MOR-05",
+        "CR-MOR-06",
+        "CR-MOR-07"
+      ]
+    },
+    {
+      "range": "C228",
+      "disposition": "MERGE",
+      "primary_family": "authority",
+      "secondary_family": "moral",
+      "targets": [
+        "CR-AUT-04",
+        "CR-AUT-05",
+        "CR-MOR-04"
+      ]
+    },
+    {
+      "range": "C229-C230",
+      "disposition": "MERGE",
+      "primary_family": "moral",
+      "targets": [
+        "CR-MOR-07",
+        "CR-MOR-08"
+      ]
+    },
+    {
+      "range": "C231-C233",
+      "disposition": "MERGE",
+      "primary_family": "authority",
+      "targets": [
+        "CR-AUT-01",
+        "CR-AUT-02",
+        "CR-AUT-03",
+        "CR-AUT-09",
+        "CR-AUT-10"
+      ]
+    }
+  ],
+  "research_banks": [
+    {
+      "id": "MASS-CRISIS",
+      "recovered_shape": "175 historical Q&As + 50 adversarial dossiers",
+      "disposition": "MERGE",
+      "primary_targets": [
+        "CR-LIT-01",
+        "CR-LIT-02",
+        "CR-LIT-03",
+        "CR-LIT-04",
+        "CR-LIT-05",
+        "CR-LIT-06",
+        "CR-LIT-07",
+        "CR-LIT-08",
+        "CR-LIT-09",
+        "CR-LIT-10",
+        "CR-LIT-11",
+        "CR-LIT-12"
+      ],
+      "secondary_targets": [
+        "CR-AUT-06",
+        "CR-AUT-07",
+        "CR-DOC-10",
+        "CR-GOV-06"
+      ],
+      "note": "This supersedes C057-C081 as the substantive Mass Crisis research bank."
+    },
+    {
+      "id": "ORIG001-ORIG050",
+      "recovered_shape": "50 exploratory Origins / preconciliar-crisis questions",
+      "disposition": "MERGE",
+      "targets": [
+        "CR-ORG-01",
+        "CR-ORG-02",
+        "CR-ORG-03",
+        "CR-ORG-04",
+        "CR-ORG-05",
+        "CR-ORG-06",
+        "CR-ORG-07",
+        "CR-ORG-08",
+        "CR-ORG-09"
+      ]
+    },
+    {
+      "id": "ECU",
+      "recovered_shape": "ECU001-ECU025 documentary + 20 adversarial dossiers",
+      "disposition": "MERGE",
+      "primary_targets": [
+        "CR-IDM-02",
+        "CR-IDM-03",
+        "CR-IDM-04",
+        "CR-IDM-05",
+        "CR-IDM-06"
+      ],
+      "secondary_targets": [
+        "CR-DOC-06",
+        "CR-DOC-07",
+        "CR-ECC-01"
+      ],
+      "note": "Ecumenism is not a separate visible crisis family after convergence."
+    },
+    {
+      "id": "SYN",
+      "recovered_shape": "SYN001-SYN025 documentary + 20 adversarial dossiers",
+      "disposition": "MERGE",
+      "primary_targets": [
+        "CR-ECC-11",
+        "CR-ECC-12"
+      ],
+      "secondary_targets": [
+        "CR-GOV-05",
+        "CR-GOV-10",
+        "CR-AUT-04",
+        "CR-AUT-05"
+      ],
+      "note": "Modern synodality is compressed principally into two ecclesiological dossiers, with governance/authority cross-links."
+    },
+    {
+      "id": "GOV001-GOV050",
+      "recovered_shape": "50 exploratory governance questions",
+      "disposition": "MERGE",
+      "targets": [
+        "CR-GOV-01",
+        "CR-GOV-02",
+        "CR-GOV-03",
+        "CR-GOV-04",
+        "CR-GOV-05",
+        "CR-GOV-06",
+        "CR-GOV-07",
+        "CR-GOV-08",
+        "CR-GOV-09",
+        "CR-GOV-10"
+      ]
+    },
+    {
+      "id": "MOR",
+      "recovered_shape": "MOR001-MOR025 documentary + 10 adversarial dossiers",
+      "disposition": "MERGE",
+      "targets": [
+        "CR-MOR-01",
+        "CR-MOR-02",
+        "CR-MOR-03",
+        "CR-MOR-04",
+        "CR-MOR-05",
+        "CR-MOR-06",
+        "CR-MOR-07",
+        "CR-MOR-08"
+      ],
+      "note": "Concrete sexual cases remain in Sexual Ethics."
+    },
+    {
+      "id": "IDM",
+      "recovered_shape": "IDM001-IDM025 documentary + 10 adversarial dossiers",
+      "disposition": "MERGE",
+      "targets": [
+        "CR-IDM-01",
+        "CR-IDM-02",
+        "CR-IDM-03",
+        "CR-IDM-04",
+        "CR-IDM-05",
+        "CR-IDM-06",
+        "CR-IDM-07",
+        "CR-IDM-08",
+        "CR-IDM-09",
+        "CR-IDM-10"
+      ]
+    }
+  ],
+  "cross_module_moves": [
+    {
+      "content": "Positive Catholic doctrine",
+      "disposition": "MOVE",
+      "owner": "catechism"
+    },
+    {
+      "content": "General defence of Catholic doctrine against non-crisis objections",
+      "disposition": "MOVE",
+      "owner": "apologetics"
+    },
+    {
+      "content": "Specific sexual acts and relationship cases",
+      "disposition": "MOVE",
+      "owner": "sexual-ethics"
+    },
+    {
+      "content": "Chronological narration of historical events",
+      "disposition": "MOVE",
+      "owner": "church-history"
+    },
+    {
+      "content": "Conversation scripts and pastoral dialogue",
+      "disposition": "MOVE",
+      "owner": "apostolate"
+    },
+    {
+      "content": "How to follow or understand the 1962 Mass itself",
+      "disposition": "MOVE",
+      "owner": "mass / mass-formation"
+    }
+  ],
+  "alias_policy": "Legacy questions and exploratory research records remain sourceRefs/aliases/evidence nodes. They do not automatically become user-facing navigation items.",
+  "unresolved_rule": "Where a range is marked mixed or reference-only, exact per-record assignment requires recovery of the original record text; range membership alone is not evidence for a more precise mapping.",
+  "biblical_and_sedevacantist_question_supplement": {
+    "file": "data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
+    "status": "26_RESEARCH_QUESTIONS_REGISTERED_NOT_PUBLISHED",
+    "role": "Sourced subquestion anchors within existing canonical dossiers, not 26 new navigation dossiers",
+    "question_count_total": 26,
+    "canonical_owners_in_this_module": [
+      "CR-ECC-04",
+      "CR-ECC-08"
+    ],
+    "source_policy": "Question provenance is linked; full answers and opposing arguments remain editorially incomplete."
+  },
+  "sedevacantism_preconciliar_debates": {
+    "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
+    "status": "EIGHT_FULL_BILINGUAL_PRECONCILIAR_DEBATE_DRAFTS_UNPUBLISHED",
+    "debate_count": 8,
+    "objector_source_policy": "Actual sedevacantist authors represented in their own publications; non-sedevacantist replies linked to historical magisterium and writers",
+    "mapped_debate_ids": [
+      "SDV-01",
+      "SDV-02",
+      "SDV-03",
+      "SDV-04",
+      "SDV-05",
+      "SDV-06",
+      "SDV-07",
+      "SDV-08"
+    ],
+    "related_question_ids": [
+      "BAQ-13",
+      "BAQ-14",
+      "BAQ-15",
+      "BAQ-16"
+    ],
+    "unresolved": "Original Latin collation and editorial theological/source review; no production runtime/published UI.",
+    "new_navigation_dossiers": 0
+  }
+}

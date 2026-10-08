@@ -76,6 +76,17 @@ try{
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="learn",null,{timeout:10000});
   }
 
+  async function openFormationFamily(id){
+    const status=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.()??null);
+    if(status?.family===id)return;
+    if(status?.family){
+      await page.locator("#ao-learn-modular-root [data-ao-learn-back]").tap();
+      await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
+    }
+    await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).tap();
+    await page.waitForFunction(expected=>globalThis.AO_LEARN_APP_V1?.status?.().family===expected,id,{timeout:10000});
+  }
+
   await openLearn();
   const learned=await page.evaluate(()=>{
     const root=document.getElementById("ao-learn-modular-root");
@@ -92,6 +103,7 @@ try{
       owner:root?.dataset?.aoLearnOwner??null,
       presentationOwner:root?.dataset?.aoLearnPresentationOwner??null,
       routeOwner:document.documentElement.dataset.aoLearnRouteOwner??null,
+      families:[...root.querySelectorAll("[data-ao-learn-family]")].map(node=>node.dataset.aoLearnFamily),
       modules:[...root.querySelectorAll("[data-ao-learn-module]")].map(node=>node.dataset.aoLearnModule),
       donorVisible:Boolean(donor&&!donor.hidden&&document.body.classList.contains("aoV37ShellOpen")),
       donorNavCount:root.querySelectorAll("[data-v37-domain],[data-v37-open],.aoV37DomainDock").length,
@@ -116,7 +128,9 @@ try{
   assert.equal(learned.owner,"modular-learn-v1");
   assert.equal(learned.presentationOwner,"modular-learn-presentation-v1");
   assert.equal(learned.routeOwner,"modular-learn-v1");
-  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.glossary","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
+  assert.deepEqual(learned.families,["foundations","spiritual-moral","liturgy-tradition","sacraments-life","latin","reference"],"Formation landing no longer exposes exactly six learning-intent doors");
+  assert.deepEqual(learned.modules,[],"Formation landing regressed to exposing the full module warehouse");
+  assert.deepEqual(learned.status?.modules,["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"]);
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module=\'today.saint\']").count(),0,"Saint of the Day remained visible in Learn");
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
@@ -131,6 +145,7 @@ try{
   await assertFocusSafe("Home -> Learn");
 
   // Glossary: category-first navigation, multilingual search and sourced term drawer.
+  await openFormationFamily("reference");
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
   await page.waitForFunction(()=>
     globalThis.AO_GLOSSARY_V1?.status?.().open===true &&
@@ -235,6 +250,7 @@ try{
   await assertFocusSafe("Glossary -> Formation");
 
   // Spiritual Life: published 14-lesson phone journey, readable and explicitly non-scored.
+  await openFormationFamily("spiritual-moral");
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.spiritual_life"]').tap();
   await page.waitForFunction(()=>
     globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().open===true &&
@@ -324,6 +340,8 @@ try{
     "learn.scapular",
   ];
   for(const id of recoveredTraditional){
+    const family=id==="learn.scapular"?"spiritual-moral":id==="learn.serve_mass.responses"?"liturgy-tradition":"sacraments-life";
+    await openFormationFamily(family);
     await page.locator(`#ao-learn-modular-root [data-ao-learn-module="${id}"]`).tap();
     await page.waitForFunction(expected=>{
       const s=globalThis.AO_TRADITIONAL_LEARN_V381?.status?.();

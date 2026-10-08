@@ -189,14 +189,20 @@ function emptyState(vm){
 }
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
-  let html='<div class="aoFindFilters aoExploreTlmFilters"><div>'+pill("day","ANY",L(vm.language,"Any day","Tous les jours"),f.day||"ANY")+pill("day","TODAY",L(vm.language,"Today","Aujourd’hui"),f.day||"ANY")+pill("day","SUNDAY",L(vm.language,"Sunday","Dimanche"),f.day||"ANY")+'</div>';
-  html+='<div class="aoFindAffiliations">';
+  let html='<div class="aoFindFilters aoExploreTlmFilters">';
+  html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"When","Quand"))+'</span>'
+    +pill("day","ANY",L(vm.language,"Any day","Tous les jours"),f.day||"ANY")
+    +pill("day","TODAY",L(vm.language,"Today","Aujourd’hui"),f.day||"ANY")
+    +pill("day","SUNDAY",L(vm.language,"Sunday","Dimanche"),f.day||"ANY")
+    +'</div>';
+  html+='<details class="aoExploreAdvancedFilters"><summary>'+esc(L(vm.language,"More filters","Plus de filtres"))+'</summary>';
+  html+='<section><small>'+esc(L(vm.language,"COMMUNITY / PROVIDER","COMMUNAUTÉ / INSTITUT"))+'</small><div class="aoFindAffiliations">';
   for(const id of ["DIOCESAN","FSSP","ICKSP","SSPX","IBP","OTHER"])html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
-  html+='</div><details><summary>'+esc(L(vm.language,"Advanced TLM filters","Filtres TLM avancés"))+'</summary><div>';
-  html+=pill("unaCum","ANY",L(vm.language,"Any communion status","Tout statut"),f.unaCum||"ANY")+pill("unaCum","YES","Una cum",f.unaCum||"ANY")+pill("unaCum","NO","Non-una cum",f.unaCum||"ANY")+pill("unaCum","UNKNOWN",L(vm.language,"Unknown","Inconnu"),f.unaCum||"ANY");
-  html+='</div><div>'+pill("liturgy","ANY",L(vm.language,"Any liturgy","Toute liturgie"),f.liturgy||"ANY")+pill("liturgy","1962","1962",f.liturgy||"ANY")+pill("liturgy","PRE_1955","Pre-1955",f.liturgy||"ANY")+pill("liturgy","DOMINICAN","Dominican",f.liturgy||"ANY")+'</div><div>';
+  html+='</div></section><section><small>'+esc(L(vm.language,"COMMUNION STATUS","STATUT DE COMMUNION"))+'</small><div>';
+  html+=pill("unaCum","ANY",L(vm.language,"Any status","Tout statut"),f.unaCum||"ANY")+pill("unaCum","YES","Una cum",f.unaCum||"ANY")+pill("unaCum","NO","Non-una cum",f.unaCum||"ANY")+pill("unaCum","UNKNOWN",L(vm.language,"Unknown","Inconnu"),f.unaCum||"ANY");
+  html+='</div></section><section><small>'+esc(L(vm.language,"LITURGY","LITURGIE"))+'</small><div>'+pill("liturgy","ANY",L(vm.language,"Any liturgy","Toute liturgie"),f.liturgy||"ANY")+pill("liturgy","1962","1962",f.liturgy||"ANY")+pill("liturgy","PRE_1955","Pre-1955",f.liturgy||"ANY")+pill("liturgy","DOMINICAN","Dominican",f.liturgy||"ANY")+'</div></section><section><small>'+esc(L(vm.language,"MASS TYPE","TYPE DE MESSE"))+'</small><div>';
   for(const id of ["ANY","LOW","SUNG","SOLEMN"])html+=pill("massType",id,id==="ANY"?L(vm.language,"Any Mass type","Tout type de messe"):id,f.massType||"ANY");
-  return html+'</div></details></div>';
+  return html+'</div></section></details></div>';
 }
 
 export function buildExploreViewModel({

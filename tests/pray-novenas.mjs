@@ -113,6 +113,9 @@ const browser=readFileSync("src/pray/browser-entry.js","utf8");
 const assets=readFileSync("src/assets/asset-registry.js","utf8");
 
 assert.match(runtime,/44\.0-bilingual-novenas-v1/);
+assert.doesNotMatch(runtime,/CURATED CORE · V4|NOYAU SÉLECTIONNÉ · V4|V4 is deliberately frozen|source-of-truth version|V4 · \$\{items\.length\}/,"Novenas leaked internal versioning/governance language into the UI");
+assert.match(runtime,/TRADITIONAL NOVENAS/,"Novenas overview lost its user-facing collection label");
+assert.match(runtime,/bilingual sourced novenas/,"Novenas overview lost sourced bilingual summary");
 assert.match(runtime,/NOVENA_CORPUS_V4 as CORPUS/,"Novenas runtime is not consuming completed V4 corpus");
 assert.match(runtime,/pray\.novenas/,"Novenas route is not registered");
 assert.doesNotMatch(runtime,/function injectHome|aoN1InsertedSection|MutationObserver/,"Novenas regained DOM-based PRAY hub injection");
@@ -121,9 +124,16 @@ assert.match(runtime,/openFamily\?\.\(OPEN_OPTS\.returnFamily\)/,"Novenas family
 
 assert.match(runtime,/data-n1-mode/,"Guided\/Simple control disappeared");
 assert.match(runtime,/class="aoP435930Back" data-n1-back/,"Novena header lost donor Back control");
-assert.match(runtime,/class="aoP435930Close" data-n1-close/,"Novena header lost donor Close control");
-assert.match(runtime,/data-ao-inline-asset-id="ao-ui-back"/,"Novena header lost canonical Back utility artwork");
-assert.match(runtime,/data-ao-inline-asset-id="ao-ui-close"/,"Novena header lost canonical Close utility artwork");
+assert.match(runtime,/class="aoP435930Home" data-n1-home/,"Novena header lost explicit global Home control");
+assert.doesNotMatch(runtime,/data-n1-close/,"Novena header regressed to ambiguous Close control");
+// The live artwork is resolved through n1UiIcon(id), so the literal asset attribute
+// is generated at render time rather than embedded verbatim in head().
+assert.match(runtime,/resolveCanonicalAssetUrl\(id\)/,"Novena header lost canonical asset resolution");
+assert.match(runtime,/n1UiIcon\('ao-ui-back'\)/,"Novena header lost canonical Back utility artwork");
+assert.match(runtime,/n1UiIcon\('ao-nav-home'\)/,"Novena header lost canonical Home utility artwork");
+assert.match(runtime,/function goHome\(\)/,"Novena global Home action is missing");
+assert.match(runtime,/if\(N\.screen===\'day\'\).*N\.screen=\'detail\'/,"Novena Back no longer returns Day to Novena detail");
+assert.match(runtime,/if\(N\.screen===\'detail\'\).*N\.screen=\'overview\'/,"Novena Back no longer returns detail to Novena overview");
 assert.match(runtime,/noCompletionTracking:true/,"Novenas privacy rule for completion tracking changed");
 assert.match(runtime,/noIntentStorage:true/,"Novenas privacy rule for intentions changed");
 assert.match(runtime,/TRADUCTION FRANÇAISE · ALIGNÉE SUR LA SOURCE/,"French editorial translation provenance label disappeared");

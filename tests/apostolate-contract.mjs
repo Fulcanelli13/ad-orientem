@@ -441,8 +441,8 @@ assert.equal(APOSTOLATE_OWNERSHIP_BOUNDARIES.MASS.owner,"mass");
 assert.equal(APOSTOLATE_OWNERSHIP_BOUNDARIES.RECEPTION.owner,"formation");
 
 assert.equal(APP_SURFACES.includes("apostolate"),false,"A3 exposed Apostolate in the permanent ribbon");
-assert.equal(APP_ROUTE_SURFACES.includes("apostolate"),false,"A3 made Apostolate a normal app route");
-assert.equal(normalizeAppSurface("apostolate"),null,"A3 made Apostolate navigable through the app shell");
+assert.equal(APP_ROUTE_SURFACES.includes("apostolate"),true,"Apostolate is not available as a non-ribbon app route");
+assert.equal(normalizeAppSurface("apostolate"),"apostolate","Apostolate route is not normalized by the app shell");
 
 const doc={
   documentElement:{dataset:{}},
@@ -458,7 +458,7 @@ const owner=createApostolateOwner(win,{
 });
 assert.equal(owner.owner,"AO_APOSTOLATE_APP_V1");
 assert.equal(owner.status().installed,true);
-assert.equal(owner.status().hidden,true);
+assert.equal(owner.status().hidden,false);
 assert.equal(owner.status().visible,false);
 assert.equal(owner.status().mounted,false);
 assert.equal(owner.status().ribbonExposed,false);
@@ -490,20 +490,37 @@ assert.equal(owner.receiveHandoff(toApostolateSkill).skill.id,"APF04");
 assert.equal(owner.handoffToFormation({fromId:"AQ01",targetRoute:"learn.catechism",reason:"Study"}).targetSurface,"learn");
 
 const appSource=readFileSync("src/app/browser-entry.js","utf8");
-assert.match(appSource,/import "\.\.\/apostolate\/browser-entry\.js";/,"hidden Apostolate owner is not installed by the app entry");
+assert.match(appSource,/import "\.\.\/apostolate\/browser-entry\.js";/,"Apostolate owner is not installed by the app entry");
 assert.doesNotMatch(appSource,/data-ao-app-surface=["']apostolate["']/,"Apostolate UI leaked into the ribbon");
 assert.doesNotMatch(readFileSync("src/home/presentation.js","utf8"),/apostolate/i,"Apostolate leaked into Home presentation");
-assert.doesNotMatch(readFileSync("src/learn/presentation.js","utf8"),/data-ao-app-surface=["']apostolate["']/i,"Apostolate leaked into Formation presentation");
+const formationPresentation=readFileSync("src/learn/presentation.js","utf8");
+assert.doesNotMatch(formationPresentation,/data-ao-app-surface=["\']apostolate["\']/i,"Apostolate became a permanent ribbon surface from Formation");
+assert.match(formationPresentation,/data-ao-learn-apostolate/,"Formation lost its explicit Apostolate entry point");
 
 const installedWin={document:{documentElement:{dataset:{}},querySelector:()=>null}};
 const installed=installApostolateOwner(installedWin);
-assert.equal(installed.status().publishedCount,36,"production hidden owner did not load the complete 36-scenario corpus");
+assert.equal(installed.status().publishedCount,36,"production Apostolate owner did not load the complete 36-scenario corpus");
 assert.equal(installed.status().researchOnlyCount,0);
 assert.deepEqual(installed.status().readyFamilies,["AQ","HS","FH","TF","DV","WC"]);
 assert.equal(installed.status().publishedSkillCount,9);
 assert.equal(installed.status().skillsReady,true);
 assert.equal(installed.status().publishedObjectCount,45);
 assert.equal(installed.status().visible,false);
-assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"hidden");
+assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"route");
 
-console.log("PASS hidden Apostolate A10: 36 scenarios + 9 APF skills are sourced bilingual READY; retired Catholic Life handoffs are eliminated; no visible Apostolate surface.");
+const presentationSource=readFileSync("src/apostolate/presentation.js","utf8");
+assert.match(presentationSource,/Answer a question/);
+assert.match(presentationSource,/Help someone/);
+assert.match(presentationSource,/Practise/);
+assert.match(presentationSource,/Nothing you type here is saved/,"Practice draft privacy promise disappeared");
+assert.match(presentationSource,/data-ao-ap-home/,"Apostolate lost explicit global Home");
+assert.doesNotMatch(presentationSource,/data-ao-ap-close/,"Apostolate regressed to ambiguous Close");
+assert.doesNotMatch(presentationSource,/AQ · HS|AQ\\s*·\\s*HS|data-family-code/,"Internal Apostolate family taxonomy leaked into the UI");
+const browserSource=readFileSync("src/apostolate/browser-entry.js","utf8");
+assert.match(browserSource,/practiceDraftPersistence:"NONE"/,"Practice draft gained persistence");
+assert.match(browserSource,/function suspend\(\)/,"Apostolate lost state-preserving suspension");
+assert.match(browserSource,/state\.suspended&&!explicit/,"Apostolate cannot resume a suspended scenario");
+assert.match(browserSource,/openModule\?\.\(target,\{returnContext:\{surface:"apostolate"\}\}\)/,"Formation handoff no longer carries Apostolate return context");
+assert.match(browserSource,/AO_MODULES\?\.open\?\.\(target,\{returnContext:\{surface:"apostolate"\}\}\)/,"Prayer handoff no longer carries Apostolate return context");
+assert.doesNotMatch(browserSource,/localStorage|sessionStorage/,"Apostolate should not persist practice drafts or scenario state");
+console.log("PASS Apostolate product v1: 36 scenarios + 9 APF skills remain sourced bilingual READY; Answer · Help · Practise is routable without a permanent ribbon slot.");

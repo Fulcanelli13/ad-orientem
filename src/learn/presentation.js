@@ -13,6 +13,7 @@ export const LEARN_LAYOUT=Object.freeze({
   ]),
   sections:Object.freeze([
     Object.freeze({
+      id:"foundations",
       title:Object.freeze(["Foundations","Fondements"]),
       description:Object.freeze(["Build and review the doctrinal foundation before specialising.","Construire et réviser les fondements doctrinaux avant de se spécialiser."]),
       items:Object.freeze([
@@ -21,23 +22,27 @@ export const LEARN_LAYOUT=Object.freeze({
       ])
     }),
     Object.freeze({
+      id:"spiritual-moral",
       title:Object.freeze(["Spiritual & Moral Life","Vie spirituelle & morale"]),
       description:Object.freeze(["Form judgment, prayer and daily Catholic conduct.","Former le jugement, la prière et la conduite catholique quotidienne."]),
       items:Object.freeze([
         Object.freeze({id:"learn.spiritual_life",type:"course",featured:false,title:Object.freeze(["Spiritual Life","Vie spirituelle"]),description:Object.freeze(["14 sourced lessons on recollection, mental prayer, examen, spiritual reading, ordinary duties and a stable rule of life.","14 leçons sourcées sur le recueillement, l’oraison mentale, l’examen, la lecture spirituelle, les devoirs ordinaires et une règle de vie stable."])}),
-        Object.freeze({id:"learn.sexual_ethics",type:"reference",featured:false,title:Object.freeze(["Catholic Sexual Ethics","Morale sexuelle catholique"]),description:Object.freeze(["150 concise, rigorously sourced questions with deeper objection/refutation treatment where it is genuinely useful.","150 questions concises et rigoureusement sourcées, avec un traitement objection/réfutation plus développé lorsqu’il est réellement utile."])})
+        Object.freeze({id:"learn.sexual_ethics",type:"reference",featured:false,title:Object.freeze(["Catholic Sexual Ethics","Morale sexuelle catholique"]),description:Object.freeze(["150 concise, rigorously sourced questions with deeper objection/refutation treatment where it is genuinely useful.","150 questions concises et rigoureusement sourcées, avec un traitement objection/réfutation plus développé lorsqu’il est réellement utile."])}),
+        Object.freeze({id:"learn.scapular",type:"guide",featured:false,title:Object.freeze(["Brown Scapular","Scapulaire brun"]),description:Object.freeze(["Meaning, preparation for enrolment and living the devotion.","Sens, préparation à l’imposition et vie de la dévotion."])})
       ])
     }),
     Object.freeze({
+      id:"liturgy-tradition",
       title:Object.freeze(["Liturgy & Tradition","Liturgie & tradition"]),
       description:Object.freeze(["Understand traditional Catholic worship and learn how to take part in it.","Comprendre le culte catholique traditionnel et apprendre à y prendre part."]),
       items:Object.freeze([
         Object.freeze({id:"learn.mass",type:"course",featured:true,title:Object.freeze(["Understand the Mass","Comprendre la Messe"]),description:Object.freeze(["A guided course through the order, meaning, history and roles of the Roman Mass.","Un parcours guidé sur l’ordre, le sens, l’histoire et les rôles de la Messe romaine."])}),
         Object.freeze({id:"learn.serve_mass.responses",type:"practice",featured:false,title:Object.freeze(["Serve Low Mass","Servir la Messe basse"]),description:Object.freeze(["Exact minister-response trainer from the certified 1962 corpus.","Entraînement exact aux réponses du servant d’après le corpus certifié de 1962."])}),
-        Object.freeze({id:"learn.scapular",type:"guide",featured:false,title:Object.freeze(["Brown Scapular","Scapulaire brun"]),description:Object.freeze(["Meaning, preparation for enrolment and living the devotion.","Sens, préparation à l’imposition et vie de la dévotion."])})
+
       ])
     }),
     Object.freeze({
+      id:"sacraments-life",
       title:Object.freeze(["Sacraments & Life Events","Sacrements & étapes de vie"]),
       description:Object.freeze(["Open the guide that matches the sacrament, vocation or serious situation you are preparing for.","Ouvrir le guide correspondant au sacrement, à la vocation ou à la situation grave que vous préparez."]),
       items:Object.freeze([
@@ -50,6 +55,7 @@ export const LEARN_LAYOUT=Object.freeze({
       ])
     }),
     Object.freeze({
+      id:"latin",
       title:Object.freeze(["Latin","Latin"]),
       description:Object.freeze(["A structured course for understanding the Latin you actually meet in the Missal.","Un parcours structuré pour comprendre le latin réellement rencontré dans le Missel."]),
       items:Object.freeze([
@@ -57,6 +63,7 @@ export const LEARN_LAYOUT=Object.freeze({
       ])
     }),
     Object.freeze({
+      id:"reference",
       title:Object.freeze(["Reference","Référence"]),
       description:Object.freeze(["Look up Catholic, liturgical, canonical and Latin terms without entering a course.","Rechercher des termes catholiques, liturgiques, canoniques et latins sans entrer dans un parcours."]),
       items:Object.freeze([
@@ -121,34 +128,59 @@ function cardMarkup(item,state,win){
   </article>`;
 }
 
+function sectionDoorMarkup(section,state,win){
+  const representative=section.items[0];
+  const icon=iconMarkup(representative,win);
+  return `<article class="aoLearnModCard aoLearnFamilyCard">
+    <button type="button" class="aoLearnModCardMain aoLearnFamilyDoor ${icon?"iconized":""}" data-ao-learn-family="${esc(section.id)}">
+      ${icon}<span class="type">${esc(isFr(state)?"Parcours":"Formation")}</span>
+      <strong>${esc(pick(section.title,state))}</strong>
+      <p>${esc(pick(section.description,state))}</p>
+    </button>
+  </article>`;
+}
+
+function familyById(id){
+  return LEARN_LAYOUT.sections.find(section=>section.id===id)||null;
+}
+
 export function learnPresentationCss(){
   return `
-#ao-learn-modular-root{position:fixed;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;z-index:14950;background:var(--ao-bg-canvas,var(--bg,#080c12));color:var(--ao-text-primary,var(--text,#e9e4d9));overflow:auto;overscroll-behavior:contain;font-family:var(--ao-font-body,var(--font-body,Georgia,serif))}
+#ao-learn-modular-root{position:fixed;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;z-index:var(--ao-z-surface,2147481800);background:var(--ao-bg-canvas,var(--bg,#080c12));color:var(--ao-text-primary,var(--text,#e9e4d9));overflow:auto;overscroll-behavior:contain;font-family:var(--ao-font-body,var(--font-body,Georgia,serif))}
 #ao-learn-modular-root *{box-sizing:border-box}#ao-learn-modular-root[hidden]{display:none!important}
 .aoLearnModTop{position:sticky;top:0;z-index:4;display:grid;grid-template-columns:46px minmax(0,1fr) 46px;align-items:center;gap:10px;padding:calc(10px + var(--safe-top,0px)) max(var(--ao-page-gutter,14px),env(safe-area-inset-right)) 10px max(var(--ao-page-gutter,14px),env(safe-area-inset-left));background:color-mix(in srgb,var(--ao-bg-canvas,var(--bg,#080c12)) 94%,transparent);backdrop-filter:blur(var(--ao-topbar-blur,16px));border-bottom:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}
 .aoLearnModTop button{width:var(--ao-control-h,44px);height:var(--ao-control-h,44px);border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.16)));border-radius:var(--ao-pill-radius,999px);background:var(--ao-surface-1,var(--surface-1,#101821));color:var(--ao-text-primary,var(--text,#e9e4d9));font-size:20px}.aoLearnModTopTitle{min-width:0;text-align:center}.aoLearnModTopTitle small{display:block;color:var(--muted,#9ba5b1);font:.61rem/1.2 var(--ao-font-display,var(--ao-font-display,var(--font-display,Georgia,serif)));letter-spacing:.13em}.aoLearnModTopTitle strong{display:block;margin-top:3px;font:600 1rem/1.2 var(--ao-font-display,var(--ao-font-display,var(--font-display,Georgia,serif)));letter-spacing:.035em}.aoLearnModTopSpacer{width:44px;height:44px}
-.aoLearnModWrap{width:min(var(--ao-content-max,760px),100%);margin:0 auto;padding:18px var(--ao-page-gutter,14px) 42px}.aoLearnModHero{padding:18px 2px 24px}.aoLearnModHero .kicker{color:var(--liturgical,#c9ad78);font:.67rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.14em}.aoLearnModHero h1{margin:7px 0 9px;font:500 clamp(2rem,8vw,3.35rem)/1.03 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModHero p{max-width:680px;margin:0;color:var(--muted,#9ba5b1);font-size:1rem;line-height:1.5}.aoLearnModContext{margin-top:12px;color:var(--muted,#9ba5b1);font-size:.76rem}.aoLearnModError{margin:0 0 16px;padding:11px 12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.38));border-radius:var(--ao-control-radius,11px);background:var(--liturgical-soft,rgba(201,173,120,.08));font-size:.82rem}
-.aoLearnModSection{padding:18px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}.aoLearnModSectionHead{margin:0 0 10px}.aoLearnModSectionHead h2{margin:0;font:600 1rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.02em}.aoLearnModSectionHead p{max-width:640px;margin:5px 0 0;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-sm,12px)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnModGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.aoLearnModCard{min-width:0;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-card-radius,15px);background:var(--surface-1,#101821);overflow:hidden}.aoLearnModCard.featured{border-color:var(--liturgical-border,rgba(201,173,120,.4));background:linear-gradient(145deg,var(--liturgical-soft,rgba(201,173,120,.08)),var(--surface-1,#101821))}
+.aoLearnModWrap{width:min(var(--ao-content-max,760px),100%);margin:0 auto;padding:18px var(--ao-page-gutter,14px) 42px}.aoLearnModHero{padding:18px 2px 24px}.aoLearnModHero .kicker{color:var(--liturgical,#c9ad78);font:.67rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.14em}.aoLearnModHero h1{margin:7px 0 9px;font:500 clamp(2rem,8vw,3.35rem)/1.03 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModHero p{max-width:680px;margin:0;color:var(--muted,#9ba5b1);font-size:1rem;line-height:1.5}.aoLearnModContext{margin-top:12px;color:var(--muted,#9ba5b1);font-size:.76rem}.aoLearnModError{margin:0 0 16px;padding:11px 12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.38));border-radius:var(--ao-control-radius,11px);background:var(--liturgical-soft,rgba(201,173,120,.08));font-size:.82rem}.aoLearnApostolateBridge{width:100%;min-height:58px;display:grid;grid-template-columns:28px minmax(0,1fr) 18px;gap:10px;align-items:center;margin:0 0 18px;padding:10px 12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.38));border-radius:var(--ao-control-radius,11px);background:var(--liturgical-soft,rgba(201,173,120,.08));color:inherit;text-align:left}.aoLearnApostolateBridge>.aoLearnControlIcon:first-child{width:24px!important;height:24px!important;color:var(--liturgical,#c9ad78)}.aoLearnApostolateBridge strong{display:block;font:600 .95rem/1.2 var(--ao-font-display,Georgia,serif)}.aoLearnApostolateBridge small{display:block;margin-top:3px;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.aoLearnModSection{padding:18px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}.aoLearnModSectionHead{margin:0 0 10px}.aoLearnModSectionHead h2{margin:0;font:600 1rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.02em}.aoLearnModSectionHead p{max-width:640px;margin:5px 0 0;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-sm,12px)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnModGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.aoLearnFamilyGrid .aoLearnModCardMain{min-height:132px}.aoLearnFamilyDoor strong{font-size:1.08rem}.aoLearnModCard{min-width:0;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-card-radius,15px);background:var(--surface-1,#101821);overflow:hidden}.aoLearnModCard.featured{border-color:var(--liturgical-border,rgba(201,173,120,.4));background:linear-gradient(145deg,var(--liturgical-soft,rgba(201,173,120,.08)),var(--surface-1,#101821))}
 .aoLearnModCardMain{position:relative;width:100%;min-height:112px;padding:13px 13px 14px;border:0;background:transparent;color:var(--text,#e9e4d9);text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:6px}.aoLearnModCardMain.iconized{padding-left:61px}.aoLearnModCardMain>.aoLearnModIcon{position:absolute;left:13px;top:15px;width:36px;height:36px;color:var(--liturgical,#c9ad78)}.aoLearnModCardMain .type{color:var(--liturgical,#c9ad78);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}.aoLearnModCardMain strong{font:600 1rem/1.22 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModCardMain p{margin:0;color:var(--muted,#9ba5b1);font-size:.82rem;line-height:1.4}.aoLearnModCardMain:hover,.aoLearnModCardMain:focus-visible{outline:none;background:rgba(255,255,255,.025)}.aoLearnModCardMain:focus-visible{box-shadow:inset 0 0 0 2px var(--liturgical,#c9ad78)}
 @media(max-width:430px){.aoLearnModWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}.aoLearnModGrid{grid-template-columns:1fr}.aoLearnModCardMain{min-height:96px}.aoLearnModHero{padding-top:14px}.aoLearnModHero h1{font-size:2.35rem}}
 `;
 }
 
-export function renderLearnPresentation(root,state,win,{error=""}={}){
+export function renderLearnPresentation(root,state,win,{error="",familyId=null}={}){
   if(!root)return false;
   const langFr=isFr(state);
+  const family=familyById(familyId);
   root.dataset.aoLearnPresentationOwner=LEARN_PRESENTATION_VERSION;
+  root.dataset.aoLearnFamily=family?.id||"";
   root.lang=langFr?"fr":"en";
+  const heroTitle=family?pick(family.title,state):pick(LEARN_LAYOUT.title,state);
+  const heroIntro=family?pick(family.description,state):pick(LEARN_LAYOUT.intro,state);
+  const backLabel=family?(langFr?"Retour à Formation":"Back to Formation"):(langFr?"Retour à l’accueil":"Back to Home");
   root.innerHTML=`<style data-ao-learn-style>${learnPresentationCss()}</style>
     <header class="aoLearnModTop">
-      <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Retour à l’accueil":"Back to Home")}">${assetMask("ao-ui-back")}</button>
+      <button type="button" data-ao-learn-back aria-label="${esc(backLabel)}">${assetMask("ao-ui-back")}</button>
       <div class="aoLearnModTopTitle"><small>AD ORIENTEM</small><strong>${esc(pick(LEARN_LAYOUT.title,state))}</strong></div>
-      <span class="aoLearnModTopSpacer" aria-hidden="true"></span>
+      <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Accueil":"Home")}">${assetMask("ao-nav-home")}</button>
     </header>
     <main class="aoLearnModWrap">
-      <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(pick(LEARN_LAYOUT.title,state))}</h1><p>${esc(pick(LEARN_LAYOUT.intro,state))}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
+      <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(heroTitle)}</h1><p>${esc(heroIntro)}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
+      ${family?"":`<button type="button" class="aoLearnApostolateBridge" data-ao-learn-apostolate>${assetMask("ao-refined-help")}<span><strong>${esc(langFr?"Apostolat":"Apostolate")}</strong><small>${esc(langFr?"Répondre · aider · s’exercer":"Answer · help · practise")}</small></span>${assetMask("ao-ui-next")}</button>`}
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
-      ${LEARN_LAYOUT.sections.map(section=>`<section class="aoLearnModSection"><div class="aoLearnModSectionHead"><h2>${esc(pick(section.title,state))}</h2>${section.description?`<p>${esc(pick(section.description,state))}</p>`:""}</div><div class="aoLearnModGrid">${section.items.map(item=>cardMarkup(item,state,win)).join("")}</div></section>`).join("")}
+      ${family
+        ?`<section class="aoLearnModSection aoLearnFamilyModules"><div class="aoLearnModGrid">${family.items.map(item=>cardMarkup(item,state,win)).join("")}</div></section>`
+        :`<section class="aoLearnModSection"><div class="aoLearnModGrid aoLearnFamilyGrid">${LEARN_LAYOUT.sections.map(section=>sectionDoorMarkup(section,state,win)).join("")}</div></section>`
+      }
     </main>`;
   return true;
 }

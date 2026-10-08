@@ -9,6 +9,7 @@ const data={
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
   canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
   rubricEvents:load("../data/presentation/reader-rubric-events.v1.json"),
+  gestureMatrix:load("../data/mass/gesture-matrix.v1.json"),
 };
 const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide-registry"};
 const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
@@ -63,6 +64,12 @@ const liveReady=await prepareNativeReaderPreview({
 });
 assert.equal(liveReady.model.totalCards,39);
 assert.equal(liveReady.rubricState.supported,true);
+assert.equal(liveReady.gestureMatrixState.supported,true);
+assert.equal(liveReady.gestureMatrixState.audit.itemCount,142);
+assert.equal(liveReady.gestureMatrixState.audit.campionBackedCount,100);
+assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
+assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.label,"THREE CROSSES WITH HOST OVER CHALICE");
+assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.iconKey,null);
 assert.equal(liveReady.rubricState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
 assert.equal(liveReady.rubricState.project("AO.SM.C0174").events.length,6);
 assert.equal(liveReady.rubricState.project("AO.SM.C0204").activeStates.THUMB_INDEX_JOINED.value,true);
@@ -412,6 +419,20 @@ assert.equal(exactOwned.priestPosition.station,"ALTAR_CENTER");
 assert.equal(exactOwned.priestVoice.value,"LISTENS");
 assert.equal(exactOwned.response.text,"Et cum spíritu tuo.");
 assert.equal(exactOwned.gesture,null);
+
+const matrixCue=ready.cueState.project("AO.SM.C0001");
+assert.equal(matrixCue.gesture.owner,"GESTURE_MATRIX_SOT");
+assert.equal(matrixCue.gesture.sourceGestureId,"GM.F.C0001.01");
+const matrixOwned=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:matrixCue,
+  eventState:null,
+  legacy:staleLegacy,
+  cueId:"AO.SM.C0001",
+  gestureProfile:"GUIDED_1962",
+});
+assert.equal(matrixOwned.gesture.owner,"GESTURE_MATRIX_SOT");
+assert.equal(matrixOwned.ownership.gesture,"GESTURE_MATRIX_SOT");
 
 const unsupportedOwned=resolveCueOwnedChannels({
   cueControllerSupported:false,

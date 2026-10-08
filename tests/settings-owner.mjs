@@ -29,12 +29,19 @@ assert.match(landing,/Privacy &amp; Data/);
 assert.equal((landing.match(/data-settings-close/g)||[]).length,1);
 assert.doesNotMatch(landing,/43\.59\.99/,"version must appear in About only");
 
+const general=renderSettingsToString(fakeWin,{route:"/settings/general"});
+assert.doesNotMatch(general,/data-pref-path="general\.uiLanguage"/,"General regained duplicate app-language ownership");
+const languageReading=renderSettingsToString(fakeWin,{route:"/settings/language-reading"});
+assert.match(languageReading,/data-pref-path="general\.uiLanguage"/,"Language & Text lost sole app-language ownership");
+
+
 const css=settingsCss();
 assert.match(css,/z-index:var\(--ao-z-modal,2147483200\)/,"Settings must consume the shared modal elevation token");
 assert.match(css,/inset:0 0 calc\(var\(--ao-global-ribbon-h,68px\) \+ var\(--safe-bottom,0px\)\) 0/,"Settings must reserve the global ribbon footprint");
 assert.match(css,/data-ao-settings-surface="open"\] #ao-global-ribbon\{z-index:var\(--ao-z-global-nav,2147483300\)!important/,"Settings must consume the shared global-nav elevation token");
 assert.doesNotMatch(css,/z-index:2147483(?:250|400)/,"Settings must not invent a raw overlay z-index");
 assert.match(css,/min-height:var\(--ao-control-h,44px\)/,"Settings compact controls must converge on the canonical touch target");
+assert.match(css,/\.aoSetRowText b\{[^}]*var\(--ao-font-ui/,"Settings utility rows regressed to decorative display typography");
 
 const mass=renderSettingsToString(fakeWin,{route:"/settings/mass",live:true});
 assert.match(mass,/data-pref-path="mass\.defaultExperience"/);
@@ -54,6 +61,9 @@ const about=renderSettingsToString(fakeWin,{route:"/settings/about-sources"});
 assert.match(about,/1962 Roman Mass/);
 assert.match(about,/Scripture editions/);
 assert.match(about,/Artwork sources &amp; rights/);
+assert.match(about,/How source labels work/,"About lost collapsed source-methodology disclosure");
+assert.match(about,/Official \/ governing source/,"About lost provenance vocabulary");
+assert.doesNotMatch(about,/>PROVENANCE</,"Provenance taxonomy returned as a standalone Settings section");
 assert.match(about,/43\.59\.99/);
 
 const stateSource=readFileSync("src/settings/donor-state.js","utf8");
