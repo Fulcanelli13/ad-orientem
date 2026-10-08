@@ -35,7 +35,7 @@ for(const record of audit.cases){
  for(const stage of ["opposition","appeal","counter"]){
    const chosen=CSE_HIGH_STAGE_SOURCE_IDS[record.id]?.[stage]||CSE_REMAINING_STAGE_SOURCE_IDS[record.id]?.[stage];
    const expected=chosen
-     ?chosen.map(id=>[...live,...CSE_QUESTION_MAP[record.id].refs].find(ref=>ref[0]===id))
+     ?chosen.map(id=>new Map([...CSE_QUESTION_MAP[record.id].refs,...live].map(ref=>[ref[0],ref])).get(id))
      :[...live];
    assert.deepEqual(paragraphRefsFor(CSE_QUESTION_MAP[record.id],"debate",stage),expected);
  }
