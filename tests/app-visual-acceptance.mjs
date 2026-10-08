@@ -1326,14 +1326,15 @@ try{
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="about-sources",null,{timeout:5000});
   const settingsAbout=await page.evaluate(()=>({
     sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetSource").length,
-    provenanceRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSourceKey").length,
+    provenanceLabels:(document.querySelector("#ao-settings-modular-root .aoSetSource:last-of-type p")?.textContent?.trim()||"").split(/\s*·\s*/).filter(Boolean),
     aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSection:last-child .aoSetRow").length,
     version:document.querySelector("#ao-settings-modular-root [data-settings-app-version]")?.textContent?.trim()??"",
     canonical:globalThis.AO_RELEASE_AUTHORITY_V4359?.version||document.documentElement.dataset.aoRelease||"",
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
   }));
   assert.ok(settingsAbout.sourceGroups>=9,"Sources & About lost one of the nine retained source families, including programme authorities");
-  assert.equal(settingsAbout.provenanceRows,6,"Sources & About lost provenance labels");
+  assert.equal(settingsAbout.provenanceLabels.length,6,"Sources & About lost the six source-methodology labels");
+  assert.ok(settingsAbout.provenanceLabels.some(x=>/1962/.test(x)),"1962 normative source distinction lost");
   assert.ok(settingsAbout.aboutRows>=7,"Settings About section is incomplete");
   assert.equal(settingsAbout.version,String(settingsAbout.canonical),"Settings About does not show canonical application version");
   assert.equal(settingsAbout.active,"settings","Sources & About escaped Settings into another top-level surface");
