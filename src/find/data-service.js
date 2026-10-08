@@ -6,6 +6,7 @@ const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
   Object.freeze({key:"sspx-district",file:"sspx-district-seed.v1.json"}),
   Object.freeze({key:"sspx-france",file:"sspx-france-first-party.v1.json"}),
+  Object.freeze({key:"sspx-france-second",file:"sspx-france-second-pass.v1.json"}),
   Object.freeze({key:"aasjmv",file:"aasjmv.v1.json"}),
   Object.freeze({key:"fsvf",file:"fsvf.v1.json"}),
   Object.freeze({key:"canons",file:"canons-st-john-cantius.v1.json"}),
@@ -256,7 +257,7 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
 export function publishableDirectoryRecords(records){
   return safeArray(records).filter(record=>{
     if(auditVenue(record?.venue).length!==0)return false;
-    if(["SSPX_DISTRICT_SEED","SSPX_FRANCE_FIRST_PARTY"].includes(record?.venue?.upstream?.provider_id)){
+    if(["SSPX_DISTRICT_SEED","SSPX_FRANCE_FIRST_PARTY","SSPX_FRANCE_SECOND_PASS"].includes(record?.venue?.upstream?.provider_id)){
       if(!["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record?.venue?.publication_state))return false;
       const valid=safeArray(record?.ministries).some(m=>m.community_id==="SSPX" &&
         safeArray(m?.schedules).some(s=>s.service_type==="MASS" &&
