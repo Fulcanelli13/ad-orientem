@@ -48,7 +48,7 @@ const expectedResearchCounts = new Map([
   ["DIOCESAN",46],
   ["SSPX_DISTRICT_SEED",34],
   ["SSPX_FRANCE_FIRST_PARTY",89],
-  ["SSPX_FRANCE_SECOND_PASS",29],
+  ["SSPX_FRANCE_SECOND_PASS",30],
   ["AASJMV",6],
   ["FSVF",1],
   ["CANONS_ST_JOHN_CANTIUS",4],
@@ -97,7 +97,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(visible.length,89,"SSPX France confirmed Mass rows missing in Find");
   }
   if(snapshot.provider==="SSPX_FRANCE_SECOND_PASS"){
-    assert.equal(expanded.venues.length,29,"Second France tranche changed unexpectedly");
+    assert.equal(expanded.venues.length,30,"Second France tranche changed unexpectedly");
     assert.equal(expanded.venues.filter(v=>v.publication_state==="CONDITIONAL_MASS").length,4);
     assert.ok(expanded.ministries.every(m=>m.community_id==="SSPX"&&m.liturgical_usage.books==="1962"));
     assert.ok(expanded.venues.every(v=>v.contact.schedule_url.some(u=>u.startsWith("https://laportelatine.org/lieux/"))));
@@ -105,7 +105,7 @@ for(const snapshot of researchSnapshots){
     const visible=publishableDirectoryRecords(expanded.venues.map((venue,i)=>({
       venue,ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}],
     })));
-    assert.equal(visible.length,29,"Held SSPX France source was incorrectly published or promoted venues disappeared");
+    assert.equal(visible.length,30,"Held SSPX France source was incorrectly published or promoted venues disappeared");
   }
   if(snapshot.provider==="SSPX_DISTRICT_SEED"){
     assert.ok(expanded.ministries.every(m=>m.community_id==="SSPX"),"SSPX district source lost affiliation");
@@ -160,7 +160,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,522,"research projection incl second SSPX France physical pass drift");
+assert.equal(researchVenueCount,523,"research projection incl second SSPX France physical pass drift");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
