@@ -48,11 +48,11 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Schola-to-section real-shell navigation
-        run: node tests/mass-batch-a-schola-nav.mjs
+        run: timeout --signal=TERM --kill-after=5s 75s node tests/mass-batch-a-schola-nav.mjs
 
   full-mass-visual:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -61,7 +61,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Full 48-card Mass visual acceptance
-        run: node tests/mass-visual-acceptance.mjs
+        run: timeout --signal=TERM --kill-after=5s 150s node tests/mass-visual-acceptance.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
