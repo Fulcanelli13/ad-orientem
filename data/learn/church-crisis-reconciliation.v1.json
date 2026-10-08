@@ -468,5 +468,16 @@
     }
   ],
   "alias_policy": "Legacy questions and exploratory research records remain sourceRefs/aliases/evidence nodes. They do not automatically become user-facing navigation items.",
-  "unresolved_rule": "Where a range is marked mixed or reference-only, exact per-record assignment requires recovery of the original record text; range membership alone is not evidence for a more precise mapping."
+  "unresolved_rule": "Where a range is marked mixed or reference-only, exact per-record assignment requires recovery of the original record text; range membership alone is not evidence for a more precise mapping.",
+  "biblical_and_sedevacantist_question_supplement": {
+    "file": "data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
+    "status": "26_RESEARCH_QUESTIONS_REGISTERED_NOT_PUBLISHED",
+    "role": "Sourced subquestion anchors within existing canonical dossiers, not 26 new navigation dossiers",
+    "question_count_total": 26,
+    "canonical_owners_in_this_module": [
+      "CR-ECC-04",
+      "CR-ECC-08"
+    ],
+    "source_policy": "Question provenance is linked; full answers and opposing arguments remain editorially incomplete."
+  }
 }
