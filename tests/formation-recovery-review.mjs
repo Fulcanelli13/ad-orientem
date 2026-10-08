@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {buildRecoveryReviewRows,buildRecoveryDossierCoverage,createFormationRecoveryReview,RECOVERY_REVIEW_ROOT,RECOVERY_REVIEW_SECTION_KEYS,RECOVERY_REVIEW_CHILD_KEYS} from "../src/learn/formation-recovery-review.js";
+import {buildRecoveryReviewRows,buildContemporaryDraftRows,buildRecoveryDossierCoverage,createFormationRecoveryReview,RECOVERY_REVIEW_ROOT,RECOVERY_REVIEW_SECTION_KEYS,RECOVERY_REVIEW_CHILD_KEYS} from "../src/learn/formation-recovery-review.js";
 import {LEARN_MODULE_IDS} from "../src/learn/presentation.js";
 const names=[
   ["BAQ questions","biblical-patristic-and-sedevacantist-question-supplement.v1.json"],
@@ -8,6 +8,7 @@ const names=[
   ["Sedevacantism","sedevacantism-preconciliar-debates.v1.json"],
   ["Contemporary I","contemporary-controversies-source-pack.v1.json"],
   ["Contemporary II","contemporary-controversies-batch2-source-pack.v1.json"],
+  ["Contemporary III · drafted","contemporary-controversies-bulk-21-debates-2026-10-08.v1.json"],
   ["Traditional Mass I","traditional-mass-objections-026-050-recovered.v1.json"],
   ["Traditional Mass II","traditional-mass-objections-051-065-reconciled.v1.json"],
   ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
@@ -15,27 +16,32 @@ const names=[
   ["Church Crisis dossiers","church-crisis-canonical.v1.json"]
 ];
 const packs=names.map(([label,name])=>({label,doc:JSON.parse(readFileSync("data/learn/"+name,"utf8"))}));
-const rows=buildRecoveryReviewRows(packs);
+const legacyRows=buildRecoveryReviewRows(packs);
+const draftRows=buildContemporaryDraftRows(packs);
+const rows=[...legacyRows,...draftRows];
 const known=JSON.parse(readFileSync("data/learn/formation-recoverable-research-ledger-2026-10-08.v1.json","utf8"));
 const ap=JSON.parse(readFileSync("data/learn/apologetics-canonical.v1.json","utf8"));
 const cr=JSON.parse(readFileSync("data/learn/church-crisis-canonical.v1.json","utf8"));
 const owners=new Set([...ap.dossiers,...cr.dossiers].map(x=>x.id));
-assert.equal(rows.length,102);
+assert.equal(legacyRows.length,102);
+assert.equal(draftRows.length,21);
+assert.equal(rows.length,123);
 const coverage=buildRecoveryDossierCoverage(rows,packs);
 assert.equal(coverage.dossiers.length,141);
-assert.equal(coverage.covered,42);
-assert.equal(coverage.linked,97);
+assert.equal(coverage.covered,53);
+assert.equal(coverage.linked,118);
 assert.equal(coverage.external.length,5);
-assert.equal(coverage.dossiers.filter(d=>d.corpus==="apologetics" && d.research.length).length,10);
-assert.equal(coverage.dossiers.filter(d=>d.corpus==="crisis" && d.research.length).length,32);
+assert.equal(coverage.dossiers.filter(d=>d.corpus==="apologetics" && d.research.length).length,14);
+assert.equal(coverage.dossiers.filter(d=>d.corpus==="crisis" && d.research.length).length,39);
 assert.equal(coverage.dossiers.find(d=>d.id==="CR-LIT-05").research.length,5);
 assert.equal(coverage.dossiers.find(d=>d.id==="APOL-012").research.length,7);
 assert.ok(coverage.external.some(x=>x.id==="cremation"));
 
-assert.deepEqual(rows.map(x=>x.id).sort(),known.recovered_research.map(x=>x.id).sort());
-assert.equal(new Set(rows.map(x=>x.id)).size,102);
+assert.deepEqual(legacyRows.map(x=>x.id).sort(),known.recovered_research.map(x=>x.id).sort());
+assert.equal(draftRows.every(x=>x.qaStatus==="NEW_UNPUBLISHED_DRAFT"),true);
+assert.equal(new Set(rows.map(x=>x.id)).size,123);
 assert.deepEqual(Object.fromEntries([...new Set(rows.map(x=>x.bank))].map(k=>[k,rows.filter(x=>x.bank===k).length])),{
-  BAQ:26,Sedevacantism:8,"Contemporary I":6,"Contemporary II":12,
+  BAQ:26,Sedevacantism:8,"Contemporary I":6,"Contemporary II":12,"Contemporary III · drafted":21,
   "Traditional Mass I":25,"Traditional Mass II":15,"Traditionis custodes":10
 });
 for(const r of rows){
@@ -71,8 +77,8 @@ const countVisibleSources = value => {
 };
 const expected=rows.reduce((n,r)=>n+countAllSources(r.content),0);
 const renderable=rows.reduce((n,r)=>n+countVisibleSources(r.content),0);
-assert.equal(expected,known.counts.source_bearing_blocks,"source-bearing text blocks diverged from indexed ledger");
-assert.equal(expected,538,"all 26 BAQ answer drafts and preexisting research source blocks");
+assert.equal(legacyRows.reduce((n,r)=>n+countAllSources(r.content),0),known.counts.source_bearing_blocks,"legacy source blocks diverged from historical registry");
+assert.equal(expected,622,"538 recovered plus 84 new four-part debates");
 assert.equal(renderable,expected,"reader silently hides sourced paragraphs");
 
 const fake={document:{getElementById:()=>null}};
@@ -113,10 +119,11 @@ const windowLike={
 };
 const live=createFormationRecoveryReview(windowLike);
 assert.equal(await live.open(),true,"QA source files failed to mount");
-assert.equal(live.status().researchRecords,102);
+assert.equal(live.status().researchRecords,123);
+assert.equal(live.status().newContemporaryDrafts,21);
 const node=nodes.get(RECOVERY_REVIEW_ROOT);
 assert.equal(live.status().canonicalDossiers,141);
-assert.equal(live.status().coveredDossiers,42);
+assert.equal(live.status().coveredDossiers,53);
 assert.equal(live.status().externalRecords,5);
 assert.ok(node.innerHTML.includes("Formation recovery by topic"));
 assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'));
