@@ -109,7 +109,7 @@ export function matchOfficialMapPlaces(snapshots,items){
           tokenSimilarity(row.n,item.churchTitle??"")),
       })).sort((a,b)=>b.score-a.score);
       const best=scored[0],next=scored[1];
-      if(!best||best.score<0.79 || (next&&next.score>=best.score-0.09)){
+      if(!best||best.score<0.90 || (next&&next.score>=best.score-0.09)){
         holds.push({provider,id:row.u,city:row.l,country,reason:"NAME_IDENTITY_AMBIGUOUS",
           best_score:best?.score??0,candidates:scored.slice(0,3).map(s=>({
             crmId:s.item.crmId,name:s.item.name,score:s.score,
