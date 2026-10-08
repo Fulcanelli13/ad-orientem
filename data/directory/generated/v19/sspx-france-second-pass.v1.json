@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "generated_at": "2026-10-08T08:57:00Z",
   "provider": "SSPX_FRANCE_SECOND_PASS",
-  "purpose": "Second, manually adjudicated source-first tranche (29 physical Mass sites; 4 conditional) from complete French 254-place first-party census. Does not replace full source ledger.",
+  "purpose": "Second, manually adjudicated source-first tranche (30 physical Mass sites; 4 conditional) from complete French 254-place first-party census. Does not replace full source ledger.",
   "defaults": {
     "c": "SSPX",
     "f": "ROMAN",
@@ -421,6 +421,20 @@
       "ps": "CONDITIONAL_MASS",
       "source_profile_slug": "moulin-du-pin/pontmain",
       "review_flag": "MONTHLY_DAY_SPECIFIC",
+      "source_archive_date": "2026-10-08"
+    },
+    {
+      "u": "SSPX-LPL2-CHAPELLE-LA-PLACELIERE",
+      "cc": "FR",
+      "l": "Château-Thébaud",
+      "n": "Chapelle de l'école Saint-Martin",
+      "vt": "chapel",
+      "a": "La Placelière 44690 Château-Thébaud",
+      "sr": "Dimanche et fêtes — 8h messe basse · 9h messe basse · 10h30 messe chantée",
+      "su": "https://laportelatine.org/lieux/chapelle-la-placeliere",
+      "ps": "CURRENT_PUBLIC_MASS",
+      "source_profile_slug": "chapelle-la-placeliere",
+      "review_flag": "PUBLIC_SUNDAY_MASS_AT_DISTINCT_SCHOOL_CHAPEL",
       "source_archive_date": "2026-10-08"
     }
   ]
