@@ -1,7 +1,7 @@
 {
   "schema": "ao-learn-the-faith-curriculum-v1",
-  "version": "1.0.0",
-  "status": "CURRICULUM_FROZEN_NOT_PUBLISHED",
+  "version": "1.1.0",
+  "status": "QUESTION_MAPPING_COMPLETE_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "proposed_route": "learn.faith",
   "title": {
@@ -11,7 +11,7 @@
   "purpose": "Guided positive Catholic doctrine in a coherent order between the Daily Catechism and the full Traditional Catechism reference.",
   "publication_gate": {
     "published": false,
-    "rule": "Do not expose learn.faith until every lesson has resolved Catechism references, paragraph-level sources, bilingual publication-ready text and cross-module deduplication.",
+    "rule": "Do not expose learn.faith until every lesson has paragraph-level source-resolved bilingual prose. The 433-question St Pius X corpus is now fully mapped, but several lessons require explicit supplementary traditional/magisterial sources.",
     "current_reference_route": "learn.catechism",
     "current_daily_route": "learn.catechism.daily",
     "mapping_complete": true,
@@ -112,7 +112,8 @@
         "LTF-042",
         "LTF-043",
         "LTF-044",
-        "LTF-045"
+        "LTF-045",
+        "LTF-046"
       ]
     },
     {
@@ -122,7 +123,6 @@
         "fr": "Prière & Vie chrétienne"
       },
       "lessonIds": [
-        "LTF-046",
         "LTF-047",
         "LTF-048",
         "LTF-049",
@@ -130,7 +130,8 @@
         "LTF-051",
         "LTF-052",
         "LTF-053",
-        "LTF-054"
+        "LTF-054",
+        "LTF-055"
       ]
     }
   ],
@@ -146,21 +147,31 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q013",
-        "Q014",
-        "Q015",
-        "Q016",
-        "Q017",
-        "Q018",
-        "Q027"
+        1,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
       ],
       "sourceRefs": [
-        "PX1912:intro"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        1,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-002",
@@ -173,29 +184,29 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q001",
-        "Q002",
-        "Q003",
-        "Q004",
-        "Q005",
-        "Q006",
-        "Q007",
-        "Q008",
-        "Q009",
-        "Q010",
-        "Q011",
-        "Q012",
-        "Q019"
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
       ],
       "sourceRefs": [
-        "PX1912:intro"
+        "PIUSX-1912",
+        "DEI-FILIUS",
+        "ROMAN-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "St Pius X supplies the doctrine of God and His attributes but not a developed natural-theology demonstration from reason; add Scripture/Vatican I/Thomistic sources for the lesson argument.",
-      "catechismCoverage": "DIRECT",
-      "catechismNote": "St Pius X gives the attributes and providence of God, not a developed philosophical proof of God's existence."
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "catechismNote": "St Pius X gives the attributes and providence of God, not a developed philosophical proof of God's existence.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true
     },
     {
       "id": "LTF-003",
@@ -208,19 +219,33 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q028",
-        "Q029",
-        "Q030",
-        "Q031"
+        28,
+        29,
+        30,
+        31,
+        232,
+        233,
+        234,
+        235,
+        236
       ],
       "sourceRefs": [
-        "PX1912:mysteries"
+        "PIUSX-1912",
+        "DEI-FILIUS",
+        "ROMAN-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "The 1912 catechism presupposes Revelation more than it systematically defines revelation, inspiration and transmission; supplement with authoritative doctrinal sources.",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-004",
@@ -233,20 +258,32 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q232",
-        "Q237",
-        "Q244",
-        "Q245",
-        "Q246",
-        "Q247"
+        28,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        244,
+        245,
+        246,
+        247
       ],
       "sourceRefs": [
-        "PX1912:virtues"
+        "PIUSX-1912",
+        "DEI-FILIUS",
+        "ROMAN-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        232,
+        237
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-005",
@@ -259,18 +296,27 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q233",
-        "Q234",
-        "Q235",
-        "Q236"
+        28,
+        232,
+        233,
+        234,
+        235,
+        236
       ],
       "sourceRefs": [
-        "PX1912:virtues"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        233,
+        234,
+        235
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-006",
@@ -283,30 +329,33 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q105",
-        "Q106",
-        "Q107",
-        "Q108",
-        "Q109",
-        "Q110",
-        "Q111",
-        "Q112",
-        "Q113",
-        "Q114",
-        "Q115",
-        "Q116",
-        "Q213",
-        "Q214",
-        "Q215"
+        105,
+        106,
+        107,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        119,
+        236
       ],
       "sourceRefs": [
-        "PX1912:church",
-        "PX1912:precepts"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        114,
+        115,
+        116,
+        236
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-007",
@@ -319,26 +368,39 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q002",
-        "Q003",
-        "Q004",
-        "Q005",
-        "Q006",
-        "Q007",
-        "Q008",
-        "Q009",
-        "Q010",
-        "Q011",
-        "Q012",
-        "Q019"
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
       ],
       "sourceRefs": [
-        "PX1912:intro"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-008",
@@ -351,36 +413,49 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q020",
-        "Q021",
-        "Q031",
-        "Q032",
-        "Q033",
-        "Q034",
-        "Q037",
-        "Q038",
-        "Q039",
-        "Q040",
-        "Q041",
-        "Q042",
-        "Q043",
-        "Q044",
-        "Q045",
-        "Q046",
-        "Q047",
-        "Q048",
-        "Q049",
-        "Q050"
+        19,
+        20,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:mysteries",
-        "PX1912:trinity"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        19,
+        20,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-009",
@@ -393,20 +468,23 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q004",
-        "Q012",
-        "Q051",
-        "Q052",
-        "Q053"
+        51,
+        52,
+        53
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:creation"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        51,
+        52,
+        53
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-010",
@@ -419,20 +497,29 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q054",
-        "Q055",
-        "Q056",
-        "Q057",
-        "Q058",
-        "Q059"
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
       ],
       "sourceRefs": [
-        "PX1912:creation"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-011",
@@ -445,30 +532,49 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q060",
-        "Q061",
-        "Q062",
-        "Q063",
-        "Q064",
-        "Q065",
-        "Q066",
-        "Q067",
-        "Q068",
-        "Q069",
-        "Q070",
-        "Q071",
-        "Q072",
-        "Q073",
-        "Q074",
-        "Q075"
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
       ],
       "sourceRefs": [
-        "PX1912:creation"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-012",
@@ -481,25 +587,34 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q022",
-        "Q023",
-        "Q024",
-        "Q080",
-        "Q081",
-        "Q086",
-        "Q087",
-        "Q088",
-        "Q094"
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        78,
+        79,
+        86,
+        87,
+        88
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:incarnation",
-        "PX1912:lastthings"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        22,
+        23,
+        24,
+        86,
+        87,
+        88
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-013",
@@ -512,30 +627,43 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q021",
-        "Q023",
-        "Q024",
-        "Q025",
-        "Q076",
-        "Q077",
-        "Q078",
-        "Q079",
-        "Q080",
-        "Q081",
-        "Q082",
-        "Q083",
-        "Q084",
-        "Q085"
+        21,
+        22,
+        23,
+        24,
+        25,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:creation",
-        "PX1912:incarnation"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        21,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-014",
@@ -548,20 +676,27 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q025",
-        "Q026",
-        "Q089",
-        "Q090",
-        "Q091"
+        25,
+        26,
+        89,
+        90,
+        91
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:incarnation"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        25,
+        26,
+        89,
+        90,
+        91
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-015",
@@ -574,22 +709,25 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q092",
-        "Q093",
-        "Q094",
-        "Q095",
-        "Q156",
-        "Q157",
-        "Q158"
+        92,
+        93,
+        94,
+        95
       ],
       "sourceRefs": [
-        "PX1912:lastthings",
-        "PX1912:resurrection"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-016",
@@ -602,26 +740,22 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q020",
-        "Q031",
-        "Q043",
-        "Q046",
-        "Q047",
-        "Q048",
-        "Q049",
-        "Q050"
+        20,
+        46
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:mysteries",
-        "PX1912:trinity"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "The shorter catechism is very compressed on the Holy Ghost as Person and mission; supplement with Creed/Scripture/catechetical sources.",
-      "catechismCoverage": "PARTIAL",
-      "supplementNeeded": "The 433-question catechism gives Trinitarian identity/procession but little developed pneumatology or Pentecost/ecclesial mission."
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "The 433-question catechism gives Trinitarian identity/procession but little developed pneumatology or Pentecost/ecclesial mission.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true
     },
     {
       "id": "LTF-017",
@@ -634,43 +768,64 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q105",
-        "Q106",
-        "Q107",
-        "Q108",
-        "Q109",
-        "Q110",
-        "Q111",
-        "Q112",
-        "Q113",
-        "Q114",
-        "Q115",
-        "Q116",
-        "Q117",
-        "Q118",
-        "Q119",
-        "Q120",
-        "Q121",
-        "Q124",
-        "Q125",
-        "Q126",
-        "Q127",
-        "Q128",
-        "Q129",
-        "Q130",
-        "Q131",
-        "Q132",
-        "Q225"
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
       ],
       "sourceRefs": [
-        "PX1912:church",
-        "PX1912:sin",
-        "PX1912:precepts"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        117,
+        118,
+        119,
+        120,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-018",
@@ -683,28 +838,29 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q122",
-        "Q123",
-        "Q174",
-        "Q175",
-        "Q176",
-        "Q177",
-        "Q178",
-        "Q429",
-        "Q430",
-        "Q431",
-        "Q432",
-        "Q433"
+        105,
+        107,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
       ],
       "sourceRefs": [
-        "PX1912:church",
-        "PX1912:commandments",
-        "PX1912:prayer"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        121,
+        122,
+        123
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-019",
@@ -717,45 +873,26 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q133",
-        "Q134",
-        "Q135",
-        "Q136",
-        "Q137",
-        "Q138",
-        "Q139",
-        "Q140",
-        "Q141",
-        "Q142",
-        "Q143",
-        "Q144",
-        "Q145",
-        "Q146",
-        "Q147",
-        "Q148",
-        "Q149",
-        "Q150",
-        "Q151",
-        "Q152",
-        "Q153",
-        "Q154",
-        "Q155",
-        "Q380",
-        "Q386",
-        "Q387",
-        "Q388",
-        "Q389",
-        "Q390",
-        "Q391"
+        133,
+        134,
+        135,
+        139,
+        146,
+        355,
+        380
       ],
       "sourceRefs": [
-        "PX1912:sin",
-        "PX1912:penance"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        133,
+        134
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-020",
@@ -768,26 +905,35 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q095",
-        "Q096",
-        "Q097",
-        "Q098",
-        "Q099",
-        "Q100",
-        "Q156",
-        "Q157",
-        "Q158",
-        "Q159",
-        "Q160"
+        96,
+        97,
+        98,
+        99,
+        156,
+        157,
+        158,
+        159,
+        160
       ],
       "sourceRefs": [
-        "PX1912:lastthings",
-        "PX1912:resurrection"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        96,
+        97,
+        98,
+        99,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-021",
@@ -800,28 +946,37 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q014",
-        "Q015",
-        "Q016",
-        "Q017",
-        "Q018",
-        "Q099",
-        "Q100",
-        "Q101",
-        "Q102",
-        "Q103",
-        "Q104",
-        "Q159"
+        14,
+        15,
+        16,
+        17,
+        18,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        156,
+        157,
+        158,
+        159
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:lastthings",
-        "PX1912:resurrection"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-022",
@@ -834,24 +989,26 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q269",
-        "Q270",
-        "Q271",
-        "Q272",
-        "Q273",
-        "Q274",
-        "Q275",
-        "Q276",
-        "Q277"
+        269,
+        270,
+        271,
+        273,
+        274,
+        275,
+        277
       ],
       "sourceRefs": [
-        "PX1912:sacraments"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "The sacramental section directly defines sanctifying and sacramental grace but is not a full treatise on actual grace; supplement accordingly.",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        270
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-023",
@@ -864,37 +1021,60 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q267",
-        "Q268",
-        "Q269",
-        "Q270",
-        "Q271",
-        "Q272",
-        "Q273",
-        "Q274",
-        "Q275",
-        "Q276",
-        "Q277",
-        "Q278",
-        "Q279",
-        "Q280",
-        "Q281",
-        "Q282",
-        "Q283",
-        "Q284",
-        "Q285",
-        "Q286",
-        "Q287",
-        "Q288",
-        "Q289"
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289
       ],
       "sourceRefs": [
-        "PX1912:sacraments"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        267,
+        268,
+        269,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-024",
@@ -907,36 +1087,45 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q278",
-        "Q279",
-        "Q280",
-        "Q282",
-        "Q283",
-        "Q284",
-        "Q285",
-        "Q290",
-        "Q291",
-        "Q292",
-        "Q293",
-        "Q294",
-        "Q295",
-        "Q296",
-        "Q297",
-        "Q298",
-        "Q299",
-        "Q300",
-        "Q301",
-        "Q302",
-        "Q303"
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
       ],
       "sourceRefs": [
-        "PX1912:sacraments",
-        "PX1912:baptism"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-025",
@@ -949,32 +1138,41 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q281",
-        "Q282",
-        "Q283",
-        "Q284",
-        "Q285",
-        "Q304",
-        "Q305",
-        "Q306",
-        "Q307",
-        "Q308",
-        "Q309",
-        "Q310",
-        "Q311",
-        "Q312",
-        "Q313",
-        "Q314",
-        "Q315"
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315
       ],
       "sourceRefs": [
-        "PX1912:sacraments",
-        "PX1912:confirmation"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-026",
@@ -987,47 +1185,79 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q223",
-        "Q224",
-        "Q316",
-        "Q317",
-        "Q318",
-        "Q319",
-        "Q320",
-        "Q321",
-        "Q322",
-        "Q323",
-        "Q324",
-        "Q325",
-        "Q326",
-        "Q327",
-        "Q328",
-        "Q329",
-        "Q330",
-        "Q331",
-        "Q332",
-        "Q333",
-        "Q334",
-        "Q335",
-        "Q336",
-        "Q337",
-        "Q338",
-        "Q339",
-        "Q340",
-        "Q341",
-        "Q342",
-        "Q343",
-        "Q344",
-        "Q345"
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346
       ],
       "sourceRefs": [
-        "PX1912:precepts",
-        "PX1912:eucharist"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-027",
@@ -1040,21 +1270,21 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q216",
-        "Q217",
-        "Q346",
-        "Q347",
-        "Q348",
-        "Q349",
-        "Q350",
-        "Q351",
-        "Q352",
-        "Q353",
-        "Q354"
+        316,
+        320,
+        321,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354
       ],
       "sourceRefs": [
-        "PX1912:precepts",
-        "PX1912:eucharist"
+        "PIUSX-1912"
       ],
       "crossLinks": [
         "learn.mass",
@@ -1063,7 +1293,18 @@
       "note": "Teach doctrine of the Mass; ritual explanation remains Mass Formation.",
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-028",
@@ -1076,49 +1317,44 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q223",
-        "Q224",
-        "Q355",
-        "Q356",
-        "Q357",
-        "Q358",
-        "Q359",
-        "Q360",
-        "Q361",
-        "Q362",
-        "Q363",
-        "Q364",
-        "Q365",
-        "Q366",
-        "Q367",
-        "Q368",
-        "Q369",
-        "Q370",
-        "Q371",
-        "Q372",
-        "Q373",
-        "Q374",
-        "Q375",
-        "Q376",
-        "Q377",
-        "Q378",
-        "Q379",
-        "Q380",
-        "Q381",
-        "Q382",
-        "Q383",
-        "Q384",
-        "Q385",
-        "Q386",
-        "Q387",
-        "Q388",
-        "Q389",
-        "Q390",
-        "Q391"
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391
       ],
       "sourceRefs": [
-        "PX1912:precepts",
-        "PX1912:penance"
+        "PIUSX-1912"
       ],
       "crossLinks": [
         "pray.confession",
@@ -1127,7 +1363,45 @@
       "note": "Teach sacramental doctrine; practical confession flow remains PRAY → Confession.",
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-029",
@@ -1140,19 +1414,27 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q392",
-        "Q393",
-        "Q394",
-        "Q395",
-        "Q396"
+        392,
+        393,
+        394,
+        395,
+        396
       ],
       "sourceRefs": [
-        "PX1912:unction"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        392,
+        393,
+        394,
+        395,
+        396
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-030",
@@ -1165,23 +1447,35 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q397",
-        "Q398",
-        "Q399",
-        "Q400",
-        "Q401",
-        "Q402",
-        "Q403",
-        "Q404",
-        "Q405"
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405
       ],
       "sourceRefs": [
-        "PX1912:orders"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-031",
@@ -1194,19 +1488,17 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q226",
-        "Q406",
-        "Q407",
-        "Q408",
-        "Q409",
-        "Q410",
-        "Q411",
-        "Q412",
-        "Q413"
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413
       ],
       "sourceRefs": [
-        "PX1912:precepts",
-        "PX1912:matrimony"
+        "PIUSX-1912"
       ],
       "crossLinks": [
         "learn.rites.matrimony",
@@ -1215,8 +1507,19 @@
       "note": "Teach sacramental doctrine; preparation and concrete sexual ethics remain with their canonical owners.",
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT",
-      "catechismNote": "Q409–Q411 are intentionally excluded from the doctrinal core because they concern historical Italian civil-law arrangements."
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "catechismNote": "Q409–Q411 are intentionally excluded from the doctrinal core because they concern historical Italian civil-law arrangements.",
+      "primaryCatechismRefs": [
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-032",
@@ -1229,26 +1532,36 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q064",
-        "Q065",
-        "Q161",
-        "Q162",
-        "Q163",
-        "Q164",
-        "Q165",
-        "Q166",
-        "Q167",
-        "Q168"
+        27,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
       ],
       "sourceRefs": [
-        "PX1912:creation",
-        "PX1912:commandments"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "The catechism covers freedom and commandments but not a full modern moral-theology account of moral law; supplement with authoritative moral theology.",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        27,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-033",
@@ -1261,32 +1574,28 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q161",
-        "Q162",
-        "Q163",
-        "Q164",
-        "Q165",
-        "Q166",
-        "Q167",
-        "Q168",
-        "Q252",
-        "Q253",
-        "Q254",
-        "Q255",
-        "Q256",
-        "Q257",
-        "Q258"
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
       ],
       "sourceRefs": [
-        "PX1912:commandments",
-        "PX1912:virtues"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM",
+        "SUMMA-NATURAL-LAW"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "Natural law is not directly developed in the 433-question corpus; requires supplementary doctrinal sources.",
-      "catechismCoverage": "PARTIAL",
-      "supplementNeeded": "The short catechism teaches divine/moral law and commandments but does not give a developed natural-law treatise."
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "The short catechism teaches divine/moral law and commandments but does not give a developed natural-law treatise.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true
     },
     {
       "id": "LTF-034",
@@ -1299,19 +1608,19 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q161",
-        "Q162",
-        "Q163",
-        "Q164",
-        "Q165",
-        "Q166",
-        "Q167",
-        "Q168",
-        "Q255"
+        155,
+        165,
+        166,
+        167,
+        168,
+        227,
+        252,
+        255
       ],
       "sourceRefs": [
-        "PX1912:commandments",
-        "PX1912:virtues"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
       ],
       "crossLinks": [
         "APOL-051",
@@ -1321,8 +1630,10 @@
       "sourceResolution": "SOURCE_MAPPED",
       "mappingStatus": "SUPPLEMENT_REQUIRED",
       "supplementarySourceNeed": "Conscience is not directly treated as a standalone doctrine in the 433-question corpus; requires supplementary doctrinal sources.",
-      "catechismCoverage": "PARTIAL",
-      "supplementNeeded": "Conscience as proximate moral judgment and its formation require deeper catechetical/Magisterial sources."
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "Conscience as proximate moral judgment and its formation require deeper catechetical/Magisterial sources.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true
     },
     {
       "id": "LTF-035",
@@ -1335,27 +1646,43 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q135",
-        "Q136",
-        "Q137",
-        "Q138",
-        "Q139",
-        "Q140",
-        "Q141",
-        "Q142",
-        "Q151",
-        "Q152",
-        "Q153",
-        "Q154",
-        "Q155"
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        151,
+        152,
+        153,
+        154,
+        155
       ],
       "sourceRefs": [
-        "PX1912:sin"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-036",
@@ -1368,22 +1695,33 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q143",
-        "Q144",
-        "Q145",
-        "Q146",
-        "Q147",
-        "Q148",
-        "Q149",
-        "Q150"
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
       ],
       "sourceRefs": [
-        "PX1912:sin"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-037",
@@ -1396,28 +1734,46 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q227",
-        "Q228",
-        "Q229",
-        "Q230",
-        "Q231",
-        "Q252",
-        "Q259",
-        "Q260",
-        "Q261",
-        "Q262",
-        "Q263",
-        "Q264",
-        "Q265",
-        "Q266"
+        227,
+        228,
+        229,
+        230,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266
       ],
       "sourceRefs": [
-        "PX1912:virtues"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        227,
+        228,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-038",
@@ -1430,35 +1786,49 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q229",
-        "Q230",
-        "Q231",
-        "Q232",
-        "Q233",
-        "Q234",
-        "Q235",
-        "Q236",
-        "Q237",
-        "Q238",
-        "Q239",
-        "Q240",
-        "Q241",
-        "Q242",
-        "Q243",
-        "Q244",
-        "Q245",
-        "Q246",
-        "Q247",
-        "Q248",
-        "Q249"
+        227,
+        228,
+        229,
+        230,
+        231,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249
       ],
       "sourceRefs": [
-        "PX1912:virtues"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        229,
+        230,
+        231,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-039",
@@ -1471,21 +1841,33 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q252",
-        "Q253",
-        "Q254",
-        "Q255",
-        "Q256",
-        "Q257",
-        "Q258"
+        227,
+        228,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258
       ],
       "sourceRefs": [
-        "PX1912:virtues"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-040",
@@ -1498,35 +1880,59 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q169",
-        "Q170",
-        "Q171",
-        "Q172",
-        "Q173",
-        "Q174",
-        "Q175",
-        "Q176",
-        "Q177",
-        "Q178",
-        "Q179",
-        "Q180",
-        "Q181",
-        "Q182",
-        "Q183",
-        "Q184",
-        "Q185",
-        "Q186",
-        "Q187",
-        "Q188",
-        "Q189"
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189
       ],
       "sourceRefs": [
-        "PX1912:commandments"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-041",
@@ -1539,25 +1945,35 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q190",
-        "Q191",
-        "Q192",
-        "Q193",
-        "Q194",
-        "Q195",
-        "Q196",
-        "Q197",
-        "Q198",
-        "Q199",
-        "Q200"
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        200
       ],
       "sourceRefs": [
-        "PX1912:commandments"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        200
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-042",
@@ -1570,13 +1986,13 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q201",
-        "Q202",
-        "Q209",
-        "Q210"
+        201,
+        202,
+        209,
+        210
       ],
       "sourceRefs": [
-        "PX1912:commandments"
+        "PIUSX-1912"
       ],
       "crossLinks": [
         "learn.sexual_ethics"
@@ -1584,7 +2000,14 @@
       "note": "Teach the commandments and chastity at doctrinal level; concrete acts remain Sexual Ethics.",
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        201,
+        202,
+        209,
+        210
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-043",
@@ -1597,19 +2020,27 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q203",
-        "Q204",
-        "Q205",
-        "Q211",
-        "Q212"
+        203,
+        204,
+        205,
+        211,
+        212
       ],
       "sourceRefs": [
-        "PX1912:commandments"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        203,
+        204,
+        205,
+        211,
+        212
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-044",
@@ -1622,17 +2053,23 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q206",
-        "Q207",
-        "Q208"
+        206,
+        207,
+        208
       ],
       "sourceRefs": [
-        "PX1912:commandments"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        206,
+        207,
+        208
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-045",
@@ -1645,14 +2082,19 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q198",
-        "Q199",
-        "Q370",
-        "Q371"
+        135,
+        140,
+        141,
+        142,
+        143,
+        148,
+        198,
+        199,
+        370,
+        371
       ],
       "sourceRefs": [
-        "PX1912:commandments",
-        "PX1912:penance"
+        "PIUSX-1912"
       ],
       "crossLinks": [
         "learn.sexual_ethics"
@@ -1661,11 +2103,72 @@
       "sourceResolution": "SOURCE_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "Scandal and occasions of sin are direct; cooperation with evil is not developed and requires supplementary moral-theology sources.",
-      "catechismCoverage": "PARTIAL",
-      "supplementNeeded": "Scandal and occasions of sin are directly covered; formal/material cooperation with evil needs deeper moral-theology sources."
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "supplementNeeded": "Scandal and occasions of sin are directly covered; formal/material cooperation with evil needs deeper moral-theology sources.",
+      "primaryCatechismRefs": [
+        198,
+        199,
+        370,
+        371
+      ],
+      "supplementRequired": false
     },
     {
       "id": "LTF-046",
+      "family": "moral-life",
+      "title": {
+        "en": "The Precepts of the Church",
+        "fr": "Les Préceptes de l’Église"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "primaryCatechismRefs": [
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "sourceRefs": [
+        "PIUSX-1912"
+      ],
+      "crossLinks": [
+        "today.calendar",
+        "learn.rites.matrimony",
+        "pray.confession"
+      ],
+      "note": "Teach the Church's authority to establish disciplinary precepts and their enduring principles; explicitly distinguish the 1912 fasting, abstinence and marriage-season discipline from current law.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "supplementRequired": false
+    },
+    {
+      "id": "LTF-047",
       "family": "prayer-christian-life",
       "title": {
         "en": "What prayer is",
@@ -1675,19 +2178,19 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q414",
-        "Q415",
-        "Q416",
-        "Q417",
-        "Q418",
-        "Q419",
-        "Q420",
-        "Q421",
-        "Q422",
-        "Q423"
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423
       ],
       "sourceRefs": [
-        "PX1912:prayer"
+        "PIUSX-1912"
       ],
       "crossLinks": [
         "learn.spiritual_life"
@@ -1695,10 +2198,23 @@
       "note": "Teach what prayer is; sustained practice belongs to Spiritual Life.",
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "supplementRequired": false
     },
     {
-      "id": "LTF-047",
+      "id": "LTF-048",
       "family": "prayer-christian-life",
       "title": {
         "en": "The Our Father",
@@ -1708,22 +2224,30 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q424",
-        "Q425",
-        "Q426",
-        "Q427",
-        "Q428"
+        424,
+        425,
+        426,
+        427,
+        428
       ],
       "sourceRefs": [
-        "PX1912:prayer"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        424,
+        425,
+        426,
+        427,
+        428
+      ],
+      "supplementRequired": false
     },
     {
-      "id": "LTF-048",
+      "id": "LTF-049",
       "family": "prayer-christian-life",
       "title": {
         "en": "The Hail Mary and Marian prayer",
@@ -1733,22 +2257,30 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q429",
-        "Q430",
-        "Q431",
-        "Q432",
-        "Q433"
+        82,
+        83,
+        138,
+        429,
+        430,
+        431,
+        432,
+        433
       ],
       "sourceRefs": [
-        "PX1912:prayer"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        431,
+        432
+      ],
+      "supplementRequired": false
     },
     {
-      "id": "LTF-049",
+      "id": "LTF-050",
       "family": "prayer-christian-life",
       "title": {
         "en": "The Blessed Virgin Mary",
@@ -1758,28 +2290,30 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q082",
-        "Q083",
-        "Q138",
-        "Q429",
-        "Q430",
-        "Q431",
-        "Q432",
-        "Q433"
+        82,
+        83,
+        138,
+        429,
+        430,
+        431,
+        432,
+        433
       ],
       "sourceRefs": [
-        "PX1912:incarnation",
-        "PX1912:sin",
-        "PX1912:prayer"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "The shorter catechism has Marian material but no complete standalone Mariology lesson; supplement from authoritative Marian doctrine.",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true
     },
     {
-      "id": "LTF-050",
+      "id": "LTF-051",
       "family": "prayer-christian-life",
       "title": {
         "en": "The saints, relics and sacred images",
@@ -1789,30 +2323,34 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q121",
-        "Q122",
-        "Q123",
-        "Q174",
-        "Q175",
-        "Q176",
-        "Q177",
-        "Q178",
-        "Q429",
-        "Q430",
-        "Q433"
+        121,
+        122,
+        123,
+        174,
+        175,
+        176,
+        177,
+        178,
+        429,
+        430,
+        433
       ],
       "sourceRefs": [
-        "PX1912:church",
-        "PX1912:commandments",
-        "PX1912:prayer"
+        "PIUSX-1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        429,
+        430,
+        433
+      ],
+      "supplementRequired": false
     },
     {
-      "id": "LTF-051",
+      "id": "LTF-052",
       "family": "prayer-christian-life",
       "title": {
         "en": "Sacramentals and blessings",
@@ -1822,28 +2360,40 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q032",
-        "Q033",
-        "Q034",
-        "Q035",
-        "Q036",
-        "Q177",
-        "Q178",
-        "Q183"
+        32,
+        33,
+        34,
+        35,
+        36,
+        169,
+        174,
+        175,
+        176,
+        177,
+        178
       ],
       "sourceRefs": [
-        "PX1912:mysteries",
-        "PX1912:commandments"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "SUPPLEMENT_REQUIRED",
       "supplementarySourceNeed": "Sacramentals and blessings are not adequately developed in the 433-question corpus; requires supplementary catechetical/liturgical sources.",
-      "catechismCoverage": "PARTIAL",
-      "supplementNeeded": "Relics, sacred things and vows are present, but a proper doctrine of sacramentals/blessings needs deeper catechetical and liturgical sources."
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "supplementNeeded": "Relics, sacred things and vows are present, but a proper doctrine of sacramentals/blessings needs deeper catechetical and liturgical sources.",
+      "primaryCatechismRefs": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "supplementRequired": true
     },
     {
-      "id": "LTF-052",
+      "id": "LTF-053",
       "family": "prayer-christian-life",
       "title": {
         "en": "The liturgical year",
@@ -1853,27 +2403,31 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q184",
-        "Q185",
-        "Q186",
-        "Q187",
-        "Q188",
-        "Q189",
-        "Q216",
-        "Q217",
-        "Q218",
-        "Q219",
-        "Q220",
-        "Q221",
-        "Q222",
-        "Q223",
-        "Q224",
-        "Q225",
-        "Q226"
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
       ],
       "sourceRefs": [
-        "PX1912:commandments",
-        "PX1912:precepts"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
       ],
       "crossLinks": [
         "today.calendar"
@@ -1882,11 +2436,13 @@
       "sourceResolution": "SOURCE_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "The catechism treats Sundays, feasts, fasting and Church precepts, but not the liturgical year as a coherent theology; supplement from liturgical sources.",
-      "catechismCoverage": "PARTIAL",
-      "supplementNeeded": "The short catechism covers feast-day duties and Church precepts, not a full theology/structure of the liturgical year."
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "The short catechism covers feast-day duties and Church precepts, not a full theology/structure of the liturgical year.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true
     },
     {
-      "id": "LTF-053",
+      "id": "LTF-054",
       "family": "prayer-christian-life",
       "title": {
         "en": "Growth in holiness and perseverance",
@@ -1896,54 +2452,39 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q015",
-        "Q027",
-        "Q227",
-        "Q228",
-        "Q229",
-        "Q230",
-        "Q231",
-        "Q232",
-        "Q233",
-        "Q234",
-        "Q235",
-        "Q236",
-        "Q237",
-        "Q238",
-        "Q239",
-        "Q240",
-        "Q241",
-        "Q242",
-        "Q243",
-        "Q244",
-        "Q245",
-        "Q246",
-        "Q247",
-        "Q248",
-        "Q249",
-        "Q250",
-        "Q251",
-        "Q252",
-        "Q253",
-        "Q254",
-        "Q255",
-        "Q256",
-        "Q257",
-        "Q258",
-        "Q259",
-        "Q260",
-        "Q261",
-        "Q262",
-        "Q263",
-        "Q264",
-        "Q265",
-        "Q266",
-        "Q277"
+        15,
+        27,
+        155,
+        227,
+        230,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        277
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:virtues",
-        "PX1912:sacraments"
+        "PIUSX-1912",
+        "SPIRAGO-1899"
       ],
       "crossLinks": [
         "learn.spiritual_life"
@@ -1952,10 +2493,16 @@
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
       "supplementarySourceNeed": "The corpus supplies virtues and means of sanctification, but a coherent lesson on growth/perseverance needs broader ascetical and doctrinal sources.",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        250,
+        251,
+        277
+      ],
+      "supplementRequired": false
     },
     {
-      "id": "LTF-054",
+      "id": "LTF-055",
       "family": "prayer-christian-life",
       "title": {
         "en": "Preparing for death and eternity",
@@ -1965,40 +2512,35 @@
       "doctrineOwner": "catechism",
       "status": "CATECHISM_MAPPED",
       "catechismRefs": [
-        "Q013",
-        "Q014",
-        "Q015",
-        "Q016",
-        "Q017",
-        "Q018",
-        "Q095",
-        "Q096",
-        "Q097",
-        "Q098",
-        "Q099",
-        "Q100",
-        "Q101",
-        "Q102",
-        "Q103",
-        "Q104",
-        "Q155",
-        "Q156",
-        "Q157",
-        "Q158",
-        "Q159",
-        "Q160",
-        "Q392",
-        "Q393",
-        "Q394",
-        "Q395",
-        "Q396"
+        14,
+        15,
+        16,
+        17,
+        18,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        156,
+        157,
+        158,
+        159,
+        392,
+        393,
+        394,
+        395,
+        396
       ],
       "sourceRefs": [
-        "PX1912:intro",
-        "PX1912:lastthings",
-        "PX1912:sin",
-        "PX1912:resurrection",
-        "PX1912:unction"
+        "PIUSX-1912",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
       ],
       "crossLinks": [
         "learn.rites.sick",
@@ -2007,7 +2549,9 @@
       "note": "Teach death/judgment/Christian preparation; urgent practical action remains in dedicated guides.",
       "sourceResolution": "CATECHISM_MAPPED",
       "mappingStatus": "CATECHISM_MAPPED",
-      "catechismCoverage": "DIRECT"
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "primaryCatechismRefs": [],
+      "supplementRequired": false
     }
   ],
   "ownership_boundaries": [
@@ -2049,57 +2593,32 @@
     }
   ],
   "source_registry": {
-    "PIUS_X_1912": {
+    "PIUSX-1912": {
       "title": "St Pius X — Catechism of Christian Doctrine (1912), 433-question shorter catechism",
-      "role": "PRIMARY_CATECHISM_REFERENCE",
-      "en_corpus": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
-      "fr_corpus": "https://catechismecatholique.fr/petit-catechisme"
+      "role": "PRIMARY_CATECHETICAL_REFERENCE",
+      "url": "https://catechismecatholique.fr/petit-catechisme",
+      "englishStructured": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
+      "frenchStructured": "https://catechismecatholique.fr/petit-catechisme"
     },
-    "ROMAN_CATECHISM_TRENT": {
+    "ROMAN-CATECHISM": {
       "title": "Roman Catechism — Council of Trent",
-      "role": "DEEPER_CATECHETICAL_REFERENCE",
+      "role": "DEEPER_TRADITIONAL_EXPOSITION",
       "url": "https://en.wikisource.org/wiki/The_catechism_of_the_Council_of_Trent"
     },
-    "SPIRAGO_1899": {
+    "SPIRAGO-1899": {
       "title": "Joseph Spirago — The Catechism Explained (1899)",
       "role": "TRADITIONAL_EXPLANATORY_REFERENCE",
       "url": "https://archive.org/details/catechismexplain00spiruoft"
     },
-    "VATICAN_I_DEI_FILIUS_CH2": {
-      "title": "First Vatican Council — Dei Filius, ch. II (Revelation)",
-      "role": "DOGMATIC_PRIMARY",
-      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html",
-      "note": "Supports the Church's teaching that God can be known with certainty from created things by the natural light of human reason, while supernatural Revelation remains distinct and necessary for man's supernatural end."
+    "DEI-FILIUS": {
+      "title": "First Vatican Council — Dei Filius",
+      "role": "MAGISTERIAL_SOURCE_FOR_REASON_REVELATION_FAITH",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html"
     },
-    "LEO_XIII_LIBERTAS": {
-      "title": "Leo XIII — Libertas praestantissimum (1888)",
-      "role": "MAGISTERIAL_MORAL_THEOLOGY",
-      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
-      "note": "Used for freedom, law and the natural law as rational participation in the eternal law."
-    },
-    "VERITATIS_SPLENDOR_60_61": {
-      "title": "John Paul II — Veritatis splendor §§60–61",
-      "role": "MAGISTERIAL_CONSCIENCE_SYNTHESIS",
-      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
-      "note": "Used for the judgment of conscience as witness to objective moral truth rather than creator of moral law."
-    },
-    "CCC_1868_COOPERATION": {
-      "title": "Catechism of the Catholic Church §1868 — Cooperation in the sins of others",
-      "role": "MAGISTERIAL_MORAL_SYNTHESIS",
-      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/v_the_proliferation_of_sin.html",
-      "note": "Used narrowly to distinguish responsibility for another person's sin through direct participation, counsel/approval, culpable omission, or protection of wrongdoing."
-    },
-    "PIUS_XII_MUNIFICENTISSIMUS_DEUS": {
-      "title": "Pius XII — Munificentissimus Deus (1950)",
-      "role": "DOGMATIC_PRIMARY",
-      "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
-      "note": "Used for the defined dogma of the bodily Assumption of the Blessed Virgin Mary, especially §44."
-    },
-    "PIUS_XII_MEDIATOR_DEI_165": {
-      "title": "Pius XII — Mediator Dei §165",
-      "role": "MAGISTERIAL_LITURGICAL_THEOLOGY",
-      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
-      "note": "Used for the theological meaning of the liturgical year as Christ's mysteries living in the Church, not merely a record of past events."
+    "SUMMA-NATURAL-LAW": {
+      "title": "St Thomas Aquinas — Summa Theologiae I-II, q.94",
+      "role": "TRADITIONAL_THEOLOGICAL_SOURCE_FOR_NATURAL_LAW",
+      "url": "https://www.newadvent.org/summa/2094.htm"
     }
   },
   "catechism_corpus": {
@@ -2392,5 +2911,22 @@
     "catechismQuestionTotal": 433,
     "unmappedQuestions": [],
     "publicationReady": false
+  },
+  "coverage": {
+    "catechismQuestionCount": 433,
+    "primaryMappedQuestionCount": 433,
+    "unmappedPrimaryQuestions": [],
+    "guidedLessonCount": 55,
+    "lessonsWithPrimaryPiusXCoverage": 48,
+    "lessonsRequiringSupplement": [
+      "LTF-002",
+      "LTF-016",
+      "LTF-033",
+      "LTF-034",
+      "LTF-050",
+      "LTF-052",
+      "LTF-053"
+    ],
+    "mappingRule": "Each St Pius X question has exactly one primary guided lesson owner. Supporting catechismRefs may overlap where a doctrine legitimately informs more than one lesson."
   }
 }
