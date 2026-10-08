@@ -1,0 +1,1500 @@
+{
+  "schema": "ao-learn-the-faith-curriculum-v1",
+  "version": "1.0.0",
+  "status": "CURRICULUM_FROZEN_NOT_PUBLISHED",
+  "created_at": "2026-10-08",
+  "proposed_route": "learn.faith",
+  "title": {
+    "en": "Learn the Faith",
+    "fr": "Apprendre la Foi"
+  },
+  "purpose": "Guided positive Catholic doctrine in a coherent order between the Daily Catechism and the full Traditional Catechism reference.",
+  "publication_gate": {
+    "published": false,
+    "rule": "Do not expose learn.faith until every lesson has resolved Catechism references, paragraph-level sources, bilingual publication-ready text and cross-module deduplication.",
+    "current_reference_route": "learn.catechism",
+    "current_daily_route": "learn.catechism.daily",
+    "mapping_complete": true,
+    "lesson_prose_complete": true,
+    "paragraph_sources_complete": true,
+    "note": "All 54 lessons now have bilingual source-linked draft prose and exact St Pius X mappings. Publication remains blocked pending final editorial review, source-link verification and deduplication acceptance.",
+    "editorial_review_complete": false
+  },
+  "relationship_to_existing": {
+    "learn.catechism.daily": "Daily review and spaced encounter with the existing question bank; not the guided doctrine course.",
+    "learn.catechism": "Full searchable Traditional Catechism reference and exact Q&A owner.",
+    "learn.faith": "Guided synthesis only; it references rather than replaces or duplicates the Catechism corpus.",
+    "apologetics": "Defence against objections; not positive doctrinal instruction.",
+    "church-crisis": "Contested development, rupture/continuity and authority questions; not baseline doctrine."
+  },
+  "source_policy": {
+    "primary_doctrine": "Use the existing Traditional Catechism corpus as the immediate doctrinal reference layer, then resolve substantive prose to original Scripture, councils, catechisms and authoritative Magisterium where available.",
+    "paragraph_rule": "Every substantive published paragraph must carry explicit source support.",
+    "no_unsourced_synthesis": true,
+    "no_duplicate_question_bank": true
+  },
+  "families": [
+    {
+      "id": "revelation-faith",
+      "title": {
+        "en": "God, Revelation & Faith",
+        "fr": "Dieu, Révélation & Foi"
+      },
+      "lessonIds": [
+        "LTF-001",
+        "LTF-002",
+        "LTF-003",
+        "LTF-004",
+        "LTF-005",
+        "LTF-006"
+      ]
+    },
+    {
+      "id": "creed",
+      "title": {
+        "en": "The Creed",
+        "fr": "Le Credo"
+      },
+      "lessonIds": [
+        "LTF-007",
+        "LTF-008",
+        "LTF-009",
+        "LTF-010",
+        "LTF-011",
+        "LTF-012",
+        "LTF-013",
+        "LTF-014",
+        "LTF-015",
+        "LTF-016",
+        "LTF-017",
+        "LTF-018",
+        "LTF-019",
+        "LTF-020",
+        "LTF-021"
+      ]
+    },
+    {
+      "id": "grace-sacraments",
+      "title": {
+        "en": "Grace & the Sacraments",
+        "fr": "Grâce & Sacrements"
+      },
+      "lessonIds": [
+        "LTF-022",
+        "LTF-023",
+        "LTF-024",
+        "LTF-025",
+        "LTF-026",
+        "LTF-027",
+        "LTF-028",
+        "LTF-029",
+        "LTF-030",
+        "LTF-031"
+      ]
+    },
+    {
+      "id": "moral-life",
+      "title": {
+        "en": "The Moral Life",
+        "fr": "La Vie morale"
+      },
+      "lessonIds": [
+        "LTF-032",
+        "LTF-033",
+        "LTF-034",
+        "LTF-035",
+        "LTF-036",
+        "LTF-037",
+        "LTF-038",
+        "LTF-039",
+        "LTF-040",
+        "LTF-041",
+        "LTF-042",
+        "LTF-043",
+        "LTF-044",
+        "LTF-045"
+      ]
+    },
+    {
+      "id": "prayer-christian-life",
+      "title": {
+        "en": "Prayer & Christian Life",
+        "fr": "Prière & Vie chrétienne"
+      },
+      "lessonIds": [
+        "LTF-046",
+        "LTF-047",
+        "LTF-048",
+        "LTF-049",
+        "LTF-050",
+        "LTF-051",
+        "LTF-052",
+        "LTF-053",
+        "LTF-054"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "LTF-001",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Why man exists",
+        "fr": "Pourquoi l’homme existe"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q13–18"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-002",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Knowing God by reason",
+        "fr": "Connaître Dieu par la raison"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q1–12"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "St Pius X supplies the doctrine of God and His attributes but not a developed natural-theology demonstration from reason; add Scripture/Vatican I/Thomistic sources for the lesson argument."
+    },
+    {
+      "id": "LTF-003",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Divine Revelation",
+        "fr": "La Révélation divine"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q28–29",
+        "Q232–237"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The 1912 catechism presupposes Revelation more than it systematically defines revelation, inspiration and transmission; supplement with authoritative doctrinal sources."
+    },
+    {
+      "id": "LTF-004",
+      "family": "revelation-faith",
+      "title": {
+        "en": "The virtue of faith",
+        "fr": "La vertu de foi"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q232–249"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-005",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Sacred Scripture and Tradition",
+        "fr": "Écriture Sainte et Tradition"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q233–236"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-006",
+      "family": "revelation-faith",
+      "title": {
+        "en": "The Church as teacher",
+        "fr": "L’Église enseignante"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q105–120",
+        "Q236"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-007",
+      "family": "creed",
+      "title": {
+        "en": "God and His attributes",
+        "fr": "Dieu et ses attributs"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q2–12",
+        "Q37"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-008",
+      "family": "creed",
+      "title": {
+        "en": "The Most Holy Trinity",
+        "fr": "La Très Sainte Trinité"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q19–20",
+        "Q37–50"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-009",
+      "family": "creed",
+      "title": {
+        "en": "Creation and Providence",
+        "fr": "Création et Providence"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q4",
+        "Q12",
+        "Q51–53"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-010",
+      "family": "creed",
+      "title": {
+        "en": "The angels",
+        "fr": "Les anges"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q54–59"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-011",
+      "family": "creed",
+      "title": {
+        "en": "Man, original justice and the Fall",
+        "fr": "L’homme, la justice originelle et la Chute"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q60–75"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-012",
+      "family": "creed",
+      "title": {
+        "en": "Jesus Christ",
+        "fr": "Jésus-Christ"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q22–26",
+        "Q76–95"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-013",
+      "family": "creed",
+      "title": {
+        "en": "The Incarnation",
+        "fr": "L’Incarnation"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q21–25",
+        "Q76–89"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-014",
+      "family": "creed",
+      "title": {
+        "en": "The Redemption",
+        "fr": "La Rédemption"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q25–26",
+        "Q89–94"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-015",
+      "family": "creed",
+      "title": {
+        "en": "The Resurrection and Ascension",
+        "fr": "La Résurrection et l’Ascension"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q92–95",
+        "Q156–160"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-016",
+      "family": "creed",
+      "title": {
+        "en": "The Holy Ghost",
+        "fr": "Le Saint-Esprit"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q20",
+        "Q43",
+        "Q46–50"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The shorter catechism is very compressed on the Holy Ghost as Person and mission; supplement with Creed/Scripture/catechetical sources."
+    },
+    {
+      "id": "LTF-017",
+      "family": "creed",
+      "title": {
+        "en": "The Catholic Church",
+        "fr": "L’Église catholique"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q105–121"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-018",
+      "family": "creed",
+      "title": {
+        "en": "The Communion of Saints",
+        "fr": "La Communion des saints"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q122–130"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-019",
+      "family": "creed",
+      "title": {
+        "en": "The forgiveness of sins",
+        "fr": "La rémission des péchés"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q133–155"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-020",
+      "family": "creed",
+      "title": {
+        "en": "Death, judgment and the resurrection of the body",
+        "fr": "Mort, jugement et résurrection de la chair"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q96–104",
+        "Q156–160"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-021",
+      "family": "creed",
+      "title": {
+        "en": "Heaven, Purgatory and Hell",
+        "fr": "Ciel, Purgatoire et Enfer"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q14–18",
+        "Q99–104",
+        "Q159"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-022",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Sanctifying and actual grace",
+        "fr": "Grâce sanctifiante et grâce actuelle"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q269–277"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The sacramental section directly defines sanctifying and sacramental grace but is not a full treatise on actual grace; supplement accordingly."
+    },
+    {
+      "id": "LTF-023",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "What a sacrament is",
+        "fr": "Ce qu’est un sacrement"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q267–289"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-024",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Baptism",
+        "fr": "Baptême"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q278–280",
+        "Q290–303"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-025",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Confirmation",
+        "fr": "Confirmation"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q304–315"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-026",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "The Holy Eucharist",
+        "fr": "La Sainte Eucharistie"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q316–346"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-027",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "The Holy Sacrifice of the Mass",
+        "fr": "Le Saint Sacrifice de la Messe"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q347–354"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.mass",
+        "APOL-031"
+      ],
+      "note": "Teach doctrine of the Mass; ritual explanation remains Mass Formation.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-028",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Penance and Confession",
+        "fr": "Pénitence et Confession"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q355–391"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "pray.confession",
+        "APOL-026"
+      ],
+      "note": "Teach sacramental doctrine; practical confession flow remains PRAY → Confession.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-029",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Extreme Unction / Anointing of the Sick",
+        "fr": "Extrême-Onction / Onction des malades"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q392–396"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-030",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Holy Orders",
+        "fr": "Ordre"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q397–405"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-031",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Matrimony",
+        "fr": "Mariage"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q406–413"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.rites.matrimony",
+        "learn.sexual_ethics"
+      ],
+      "note": "Teach sacramental doctrine; preparation and concrete sexual ethics remain with their canonical owners.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-032",
+      "family": "moral-life",
+      "title": {
+        "en": "Christian freedom and moral law",
+        "fr": "Liberté chrétienne et loi morale"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q64–65",
+        "Q161–168"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The catechism covers freedom and commandments but not a full modern moral-theology account of moral law; supplement with authoritative moral theology."
+    },
+    {
+      "id": "LTF-033",
+      "family": "moral-life",
+      "title": {
+        "en": "Natural law",
+        "fr": "Loi naturelle"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q161–168"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "Natural law is not directly developed in the 433-question corpus; requires supplementary doctrinal sources."
+    },
+    {
+      "id": "LTF-034",
+      "family": "moral-life",
+      "title": {
+        "en": "Conscience and its formation",
+        "fr": "La conscience et sa formation"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "APOL-051",
+        "CR-MOR-02"
+      ],
+      "note": "Teach conscience positively; apologetic and crisis disputes remain elsewhere.",
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "SUPPLEMENT_REQUIRED",
+      "supplementarySourceNeed": "Conscience is not directly treated as a standalone doctrine in the 433-question corpus; requires supplementary doctrinal sources."
+    },
+    {
+      "id": "LTF-035",
+      "family": "moral-life",
+      "title": {
+        "en": "Sin",
+        "fr": "Le péché"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q135–142"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-036",
+      "family": "moral-life",
+      "title": {
+        "en": "Mortal and venial sin",
+        "fr": "Péché mortel et péché véniel"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q143–155"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-037",
+      "family": "moral-life",
+      "title": {
+        "en": "Virtue and vice",
+        "fr": "Vertu et vice"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q227–231",
+        "Q252–266"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-038",
+      "family": "moral-life",
+      "title": {
+        "en": "The theological virtues",
+        "fr": "Les vertus théologales"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q229–249"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-039",
+      "family": "moral-life",
+      "title": {
+        "en": "The cardinal virtues",
+        "fr": "Les vertus cardinales"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q252–258"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-040",
+      "family": "moral-life",
+      "title": {
+        "en": "The First, Second and Third Commandments",
+        "fr": "Les trois premiers Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q169–189"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-041",
+      "family": "moral-life",
+      "title": {
+        "en": "The Fourth and Fifth Commandments",
+        "fr": "Les quatrième et cinquième Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q190–200"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-042",
+      "family": "moral-life",
+      "title": {
+        "en": "The Sixth and Ninth Commandments",
+        "fr": "Les sixième et neuvième Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q201–202",
+        "Q209–210"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.sexual_ethics"
+      ],
+      "note": "Teach the commandments and chastity at doctrinal level; concrete acts remain Sexual Ethics.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-043",
+      "family": "moral-life",
+      "title": {
+        "en": "The Seventh and Tenth Commandments",
+        "fr": "Les septième et dixième Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q203–205",
+        "Q211–212"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-044",
+      "family": "moral-life",
+      "title": {
+        "en": "The Eighth Commandment",
+        "fr": "Le huitième Commandement"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q206–208"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-045",
+      "family": "moral-life",
+      "title": {
+        "en": "Scandal, cooperation and occasions of sin",
+        "fr": "Scandale, coopération et occasions de péché"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q198–199",
+        "Q370–371"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.sexual_ethics"
+      ],
+      "note": "Teach moral grammar; concrete case analysis remains with the relevant practical owner.",
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "Scandal and occasions of sin are direct; cooperation with evil is not developed and requires supplementary moral-theology sources."
+    },
+    {
+      "id": "LTF-046",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "What prayer is",
+        "fr": "Ce qu’est la prière"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q414–423"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.spiritual_life"
+      ],
+      "note": "Teach what prayer is; sustained practice belongs to Spiritual Life.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-047",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The Our Father",
+        "fr": "Le Notre Père"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q424–428"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-048",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The Hail Mary and Marian prayer",
+        "fr": "L’Ave Maria et la prière mariale"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q429–433"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-049",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The Blessed Virgin Mary",
+        "fr": "La Très Sainte Vierge Marie"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q82–83",
+        "Q138",
+        "Q429–433"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The shorter catechism has Marian material but no complete standalone Mariology lesson; supplement from authoritative Marian doctrine."
+    },
+    {
+      "id": "LTF-050",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The saints, relics and sacred images",
+        "fr": "Les saints, les reliques et les images sacrées"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q122–123",
+        "Q174–178",
+        "Q429–433"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    },
+    {
+      "id": "LTF-051",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "Sacramentals and blessings",
+        "fr": "Sacramentaux et bénédictions"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "SUPPLEMENT_REQUIRED",
+      "supplementarySourceNeed": "Sacramentals and blessings are not adequately developed in the 433-question corpus; requires supplementary catechetical/liturgical sources."
+    },
+    {
+      "id": "LTF-052",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The liturgical year",
+        "fr": "L’année liturgique"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q184–189",
+        "Q216–222"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "today.calendar"
+      ],
+      "note": "Teach meaning of the liturgical year; temporal logic belongs to Calendar.",
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The catechism treats Sundays, feasts, fasting and Church precepts, but not the liturgical year as a coherent theology; supplement from liturgical sources."
+    },
+    {
+      "id": "LTF-053",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "Growth in holiness and perseverance",
+        "fr": "Croissance dans la sainteté et persévérance"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q119–121",
+        "Q227–266",
+        "Q277"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.spiritual_life"
+      ],
+      "note": "Teach positive doctrine of sanctification; practical rule of life belongs to Spiritual Life.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The corpus supplies virtues and means of sanctification, but a coherent lesson on growth/perseverance needs broader ascetical and doctrinal sources."
+    },
+    {
+      "id": "LTF-054",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "Preparing for death and eternity",
+        "fr": "Se préparer à la mort et à l’éternité"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        "Q14–18",
+        "Q95–104",
+        "Q156–160"
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.rites.sick",
+        "pray.dying_companion"
+      ],
+      "note": "Teach death/judgment/Christian preparation; urgent practical action remains in dedicated guides.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED"
+    }
+  ],
+  "ownership_boundaries": [
+    {
+      "content": "positive doctrine",
+      "owner": "learn.faith / catechism"
+    },
+    {
+      "content": "exact catechism Q&A",
+      "owner": "learn.catechism"
+    },
+    {
+      "content": "why believe / answer objection",
+      "owner": "apologetics"
+    },
+    {
+      "content": "Vatican II, SSPX, sedevacantism, liturgical reform controversy",
+      "owner": "church-crisis"
+    },
+    {
+      "content": "Mass ceremonial meaning and how the rite unfolds",
+      "owner": "learn.mass"
+    },
+    {
+      "content": "concrete sexual act or relationship case",
+      "owner": "learn.sexual_ethics"
+    },
+    {
+      "content": "practical spiritual habit and rule of life",
+      "owner": "learn.spiritual_life"
+    },
+    {
+      "content": "actual prayer or devotion execution",
+      "owner": "pray"
+    },
+    {
+      "content": "sacramental preparation and reception",
+      "owner": "sacramental-formation"
+    }
+  ],
+  "source_registry": {
+    "PIUS_X_1912": {
+      "title": "St Pius X — Catechism of Christian Doctrine (1912), 433-question shorter catechism",
+      "role": "PRIMARY_CATECHISM_REFERENCE",
+      "en_corpus": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
+      "fr_corpus": "https://catechismecatholique.fr/petit-catechisme"
+    },
+    "ROMAN_CATECHISM_TRENT": {
+      "title": "Roman Catechism — Council of Trent",
+      "role": "DEEPER_CATECHETICAL_REFERENCE",
+      "url": "https://en.wikisource.org/wiki/The_catechism_of_the_Council_of_Trent"
+    },
+    "SPIRAGO_1899": {
+      "title": "Joseph Spirago — The Catechism Explained (1899)",
+      "role": "TRADITIONAL_EXPLANATORY_REFERENCE",
+      "url": "https://archive.org/details/catechismexplain00spiruoft"
+    },
+    "VATICAN_I_DEI_FILIUS_CH2": {
+      "title": "First Vatican Council — Dei Filius, ch. II (Revelation)",
+      "role": "DOGMATIC_PRIMARY",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html",
+      "note": "Supports the Church's teaching that God can be known with certainty from created things by the natural light of human reason, while supernatural Revelation remains distinct and necessary for man's supernatural end."
+    },
+    "LEO_XIII_LIBERTAS": {
+      "title": "Leo XIII — Libertas praestantissimum (1888)",
+      "role": "MAGISTERIAL_MORAL_THEOLOGY",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+      "note": "Used for freedom, law and the natural law as rational participation in the eternal law."
+    },
+    "VERITATIS_SPLENDOR_60_61": {
+      "title": "John Paul II — Veritatis splendor §§60–61",
+      "role": "MAGISTERIAL_CONSCIENCE_SYNTHESIS",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "note": "Used for the judgment of conscience as witness to objective moral truth rather than creator of moral law."
+    },
+    "CCC_1868_COOPERATION": {
+      "title": "Catechism of the Catholic Church §1868 — Cooperation in the sins of others",
+      "role": "MAGISTERIAL_MORAL_SYNTHESIS",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/v_the_proliferation_of_sin.html",
+      "note": "Used narrowly to distinguish responsibility for another person's sin through direct participation, counsel/approval, culpable omission, or protection of wrongdoing."
+    },
+    "PIUS_XII_MUNIFICENTISSIMUS_DEUS": {
+      "title": "Pius XII — Munificentissimus Deus (1950)",
+      "role": "DOGMATIC_PRIMARY",
+      "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "note": "Used for the defined dogma of the bodily Assumption of the Blessed Virgin Mary, especially §44."
+    },
+    "PIUS_XII_MEDIATOR_DEI_165": {
+      "title": "Pius XII — Mediator Dei §165",
+      "role": "MAGISTERIAL_LITURGICAL_THEOLOGY",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "note": "Used for the theological meaning of the liturgical year as Christ's mysteries living in the Church, not merely a record of past events."
+    }
+  },
+  "catechism_corpus": {
+    "question_count": 433,
+    "partitions": [
+      {
+        "id": "intro",
+        "range": "PXQ001–PXQ027"
+      },
+      {
+        "id": "faith",
+        "range": "PXQ028–PXQ160"
+      },
+      {
+        "id": "moral",
+        "range": "PXQ161–PXQ266"
+      },
+      {
+        "id": "grace",
+        "range": "PXQ267–PXQ413"
+      },
+      {
+        "id": "prayer",
+        "range": "PXQ414–PXQ433"
+      }
+    ],
+    "mapping_status": "ALL_54_LESSONS_MAPPED_TO_EXACT_QUESTION_REFS",
+    "source_map": "data/learn/pius-x-catechism-source-map.v1.json",
+    "source_chapters": 21
+  },
+  "content_batches": [
+    {
+      "path": "data/learn/learn-the-faith-content.batch1.v1.json",
+      "scope": "LTF-001–LTF-018",
+      "lessons": 18,
+      "claims": 54,
+      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "path": "data/learn/learn-the-faith-content.batch2.v1.json",
+      "scope": "LTF-019–LTF-036",
+      "lessons": 18,
+      "claims": 64,
+      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "path": "data/learn/learn-the-faith-content.batch3.v1.json",
+      "scope": "LTF-037–LTF-054",
+      "lessons": 18,
+      "claims": 58,
+      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
+    }
+  ],
+  "metrics": {
+    "lesson_count": 54,
+    "content_batches": 3,
+    "source_linked_claims": 176,
+    "unresolved_source_gaps": 0,
+    "public_route_exposed": false
+  },
+  "catechism_mapping": {
+    "status": "PX1912_433_MAPPED",
+    "corpus": "St Pius X — Catechism of Christian Doctrine (1912), 433-question shorter catechism",
+    "questionRange": "Q1–Q433",
+    "parts": [
+      {
+        "id": "intro",
+        "range": "Q1–27",
+        "title": "First notions"
+      },
+      {
+        "id": "faith",
+        "range": "Q28–160",
+        "title": "The Faith / Creed"
+      },
+      {
+        "id": "moral",
+        "range": "Q161–266",
+        "title": "Christian moral life"
+      },
+      {
+        "id": "grace",
+        "range": "Q267–413",
+        "title": "Means of grace / Sacraments"
+      },
+      {
+        "id": "prayer",
+        "range": "Q414–433",
+        "title": "Prayer"
+      }
+    ],
+    "directOrPartialLessons": 52,
+    "supplementRequiredLessons": 12,
+    "zeroDirectCatechismRefLessons": [
+      "LTF-034",
+      "LTF-051"
+    ],
+    "rule": "Question references identify the exact Pius X material feeding each guided lesson; they do not imply that the shorter catechism alone is sufficient for every lesson."
+  },
+  "content_draft": {
+    "status": "ALL_54_SOURCE_LINKED_DRAFTED",
+    "batches": [
+      "data/learn/learn-the-faith-lessons-001-018.v1.json",
+      "data/learn/learn-the-faith-lessons-019-036.v1.json",
+      "data/learn/learn-the-faith-lessons-037-054.v1.json"
+    ],
+    "lessons": 54,
+    "paragraphs": 162,
+    "bilingual": true,
+    "published": false,
+    "remaining_before_publication": [
+      "Verify every external source URL and source-to-paragraph fit.",
+      "Resolve stronger primary sources where the current registry relies on explanatory or mirror sources.",
+      "Run cross-module deduplication against Apologetics, Church Crisis, Mass Formation, Sexual Ethics, Spiritual Life and sacramental Formation.",
+      "Editorial pass for tone, precision, disciplinary-historical qualifications and French parity.",
+      "Build the user-facing runtime only after the sourcing and deduplication gates pass."
+    ]
+  }
+}
