@@ -17,11 +17,11 @@
       "CONTEMPORARY_CASE_PACK_2": 12,
       "TRADITIONAL_MASS_OBJECTION": 50
     },
-    "source_bearing_blocks": 488,
-    "blocks_with_french": 360,
+    "source_bearing_blocks": 508,
+    "blocks_with_french": 380,
     "blocks_without_french": 128,
     "blocks_without_source_ids": 0,
-    "source_id_links": 1150,
+    "source_id_links": 1209,
     "unknown_source_ids": 0,
     "biblical_patristic_question_only": [
       "BAQ-13",
@@ -5003,16 +5003,17 @@
       "question_fr": "François a-t-il restreint le missel de 1962 à cause des divisions ecclésiales ?",
       "canonical_owner": "CR-ECC-03",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 7,
+        "source_id_links": 13,
         "source_ids": [
+          "CIC2",
           "CIC4",
           "COURT21",
           "FSSP21",
@@ -5021,6 +5022,10 @@
         ],
         "unresolved_source_ids": [],
         "source_links": [
+          {
+            "id": "CIC2",
+            "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+          },
           {
             "id": "CIC4",
             "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-839_en.html"
@@ -5051,15 +5056,15 @@
       "question_fr": "La majorité des évêques demandait-elle des restrictions contre la messe traditionnelle ?",
       "canonical_owner": "CR-AUT-07",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 9,
+        "source_id_links": 15,
         "source_ids": [
           "AP25_REPRINT",
           "BRUNI25",
@@ -5104,15 +5109,15 @@
       "question_fr": "Traditionis custodes contredit-il Summorum Pontificum ?",
       "canonical_owner": "CR-AUT-07",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 8,
+        "source_id_links": 14,
         "source_ids": [
           "CIC4",
           "SP07",
@@ -5152,15 +5157,15 @@
       "question_fr": "Que signifie l’« unique expression de la lex orandi » si le missel de 1962 reste autorisé ?",
       "canonical_owner": "CR-ECC-03",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 8,
+        "source_id_links": 14,
         "source_ids": [
           "RESP21",
           "SP07",
@@ -5195,15 +5200,15 @@
       "question_fr": "Un pape peut-il restreindre l’ancienne liturgie romaine ?",
       "canonical_owner": "CR-AUT-06",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 7,
+        "source_id_links": 12,
         "source_ids": [
           "CIC4",
           "SC63",
@@ -5238,15 +5243,15 @@
       "question_fr": "Les fidèles ont-ils un droit inconditionnel à la messe traditionnelle ?",
       "canonical_owner": "CR-AUT-07",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 6,
+        "source_id_links": 12,
         "source_ids": [
           "CIC2",
           "COURT21",
@@ -5281,16 +5286,17 @@
       "question_fr": "Les restrictions ont-elles frappé indistinctement des communautés traditionnelles fidèles ?",
       "canonical_owner": "CR-ECC-03",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 7,
+        "source_id_links": 13,
         "source_ids": [
+          "CIC2",
           "COURT21",
           "FSSP21",
           "TC21",
@@ -5298,6 +5304,10 @@
         ],
         "unresolved_source_ids": [],
         "source_links": [
+          {
+            "id": "CIC2",
+            "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+          },
           {
             "id": "COURT21",
             "url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
@@ -5324,15 +5334,15 @@
       "question_fr": "Les mesures de 2021–2023 ont-elles totalement interdit le missel de 1962 et les anciens rituels ?",
       "canonical_owner": "CR-AUT-07",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 8,
+        "source_id_links": 14,
         "source_ids": [
           "FSSP22",
           "FSSP22FR",
@@ -5372,17 +5382,18 @@
       "question_fr": "La FSSP, l’ICRSP et la FSSPX ont-ils réagi de la même manière à Traditionis custodes ?",
       "canonical_owner": "CR-ECC-05",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 7,
+        "source_id_links": 13,
         "source_ids": [
           "COURT21",
+          "FSSP21",
           "FSSP22",
           "SPL07",
           "SSPX21"
@@ -5392,6 +5403,10 @@
           {
             "id": "COURT21",
             "url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+          },
+          {
+            "id": "FSSP21",
+            "url": "https://fssp.com/official-communique-following-the-publication-of-the-motu-proprio-traditionis-custodes/"
           },
           {
             "id": "FSSP22",
@@ -5415,16 +5430,17 @@
       "question_fr": "Un catholique peut-il désobéir à Traditionis custodes s’il le juge injuste ?",
       "canonical_owner": "CR-AUT-03",
       "originality": "BILINGUAL_RESEARCH_DRAFT",
-      "content_status": "DRAFT_NOT_PUBLIC",
+      "content_status": "UNPUBLISHED_EXPANDED_BILINGUAL_DRAFT_NOT_APPROVED",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 3,
+        "source_bearing_blocks": 5,
+        "blocks_with_fr": 5,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 10,
+        "source_id_links": 16,
         "source_ids": [
+          "AQU104",
           "CIC1752",
           "CIC2",
           "CIC4",
@@ -5435,6 +5451,10 @@
         ],
         "unresolved_source_ids": [],
         "source_links": [
+          {
+            "id": "AQU104",
+            "url": "https://www.newadvent.org/summa/3104.htm#article5"
+          },
           {
             "id": "CIC1752",
             "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1732-1752_en.html"
@@ -5474,5 +5494,13 @@
     "source_ledger_recomputed_from_current_research_text": true,
     "source_id_count_judged_only_for_pointer_integrity": true,
     "publication_approved": false
+  },
+  "tc_source_expansion_20261008": {
+    "records": 10,
+    "added_source_bearing_blocks": 20,
+    "source_registry_addition": "AQU104",
+    "preserved_other_source_pack_repair_changes": true,
+    "certification": false,
+    "publication": false
   }
 }
