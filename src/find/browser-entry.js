@@ -196,6 +196,7 @@ export function createFindOwner(win=globalThis){
     else if(key==="lens"&&EXPLORE_LENSES.includes(value))state.lens=value;
     else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;
+    mapHandle?.destroy?.();mapHandle=null;
     lastMapView=null;lastMapLens=null;void paint();
   }
 
