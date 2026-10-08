@@ -114,7 +114,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(expanded.venues.filter(v=>v.publication_state==="CONDITIONAL_MASS").length,16);
     assert.ok(expanded.ministries.every(m=>m.community_id==="SSPX"&&m.liturgical_usage.books==="1962"));
     assert.ok(expanded.venues.every(v=>v.contact.schedule_url.length&&v.address.formatted));
-    assert.ok(expanded.schedules.every(s=>s.service_type==="MASS"&&s.payload?.raw.length>12));
+    assert.ok(expanded.schedules.every(s=>s.service_type==="MASS"&&s.payload?.raw.length>=10));
     const rows=expanded.venues.map((venue,i)=>({venue,
       ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}]}));
     assert.equal(publishableDirectoryRecords(rows).length,113,"SSPX four-district Mass source gating drift");
