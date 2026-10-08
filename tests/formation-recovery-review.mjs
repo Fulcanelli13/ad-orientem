@@ -45,7 +45,7 @@ for(const r of rows){
   if(r.owner?.startsWith("APOL-")||r.owner?.startsWith("CR-"))assert.ok(owners.has(r.owner),r.id+" lacks canonical owner");
   for(const s of r.sourceRegistry.values())assert.ok(/^https:\/\//.test(s.url),r.id+" invalid source URL");
 }
-assert.equal(rows.filter(x=>x.bank==="BAQ" && !x.content).length,4);
+assert.equal(rows.filter(x=>x.bank==="BAQ" && !x.content).length,0);
 assert.equal(rows.filter(x=>x.bank==="BAQ" && x.title_fr).length,26,"BAQ French titles lost between question bank and answer drafts");
 const countAllSources = value => {
   let count=0;
@@ -72,7 +72,7 @@ const countVisibleSources = value => {
 const expected=rows.reduce((n,r)=>n+countAllSources(r.content),0);
 const renderable=rows.reduce((n,r)=>n+countVisibleSources(r.content),0);
 assert.equal(expected,known.counts.source_bearing_blocks,"source-bearing text blocks diverged from indexed ledger");
-assert.equal(expected,508,"expected prior repairs plus 20 bilingual TC source-bearing claims");
+assert.equal(expected,538,"all 26 BAQ answer drafts and preexisting research source blocks");
 assert.equal(renderable,expected,"reader silently hides sourced paragraphs");
 
 const fake={document:{getElementById:()=>null}};
