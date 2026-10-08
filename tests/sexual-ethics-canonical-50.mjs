@@ -23,7 +23,7 @@ for(const row of audit.cases){
   for(const source of row.opponent_provenance)assert.match(source.url,/^https:\/\//);
 }
 assert.equal(audit.summary.selected_primary_position_checks,51);
-assert.equal(audit.summary.book_catalog_preview_cases,32);
+assert.equal(audit.summary.book_catalog_preview_cases,31);
 assert.equal(audit.summary.remaining_full_passage_review,55);
 
 const owned=[];
