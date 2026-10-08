@@ -6,7 +6,7 @@
   "curriculum": "data/learn/learn-the-faith-curriculum.v1.json",
   "batches": {
     "batch1": "LTF-001–LTF-018",
-    "batch2": "PENDING",
+    "batch2": "LTF-019–LTF-036",
     "batch3": "PENDING"
   },
   "lessons": [
@@ -1168,6 +1168,1354 @@
             "PX1912-Q128",
             "PX1912-Q129",
             "PX1912-Q130"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-019",
+      "title": {
+        "en": "The forgiveness of sins",
+        "fr": "La rémission des péchés"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q133",
+        "PX1912-Q134",
+        "PX1912-Q135",
+        "PX1912-Q136",
+        "PX1912-Q137",
+        "PX1912-Q138",
+        "PX1912-Q139"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-019-C01",
+          "text": {
+            "en": "Christ entrusted to His Church the forgiveness of sins, chiefly through Baptism and the sacrament of Penance.",
+            "fr": "Le Christ a confié à son Église la rémission des péchés, principalement par le Baptême et le sacrement de Pénitence."
+          },
+          "catechismRefs": [
+            "PX1912-Q133",
+            "PX1912-Q134",
+            "PX1912-Q135",
+            "PX1912-Q136",
+            "PX1912-Q137",
+            "PX1912-Q138",
+            "PX1912-Q139"
+          ]
+        },
+        {
+          "id": "LTF-019-C02",
+          "text": {
+            "en": "Forgiveness restores the sinner to God’s grace when the necessary dispositions and sacramental means are present.",
+            "fr": "Le pardon rétablit le pécheur dans la grâce de Dieu lorsque les dispositions nécessaires et les moyens sacramentels sont présents."
+          },
+          "catechismRefs": [
+            "PX1912-Q133",
+            "PX1912-Q134",
+            "PX1912-Q135",
+            "PX1912-Q136",
+            "PX1912-Q137",
+            "PX1912-Q138",
+            "PX1912-Q139"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-020",
+      "title": {
+        "en": "Death, judgment and the resurrection of the body",
+        "fr": "Mort, jugement et résurrection de la chair"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q095",
+        "PX1912-Q096",
+        "PX1912-Q097",
+        "PX1912-Q098",
+        "PX1912-Q099",
+        "PX1912-Q156",
+        "PX1912-Q157",
+        "PX1912-Q158",
+        "PX1912-Q159",
+        "PX1912-Q160"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-020-C01",
+          "text": {
+            "en": "Each person faces death and a particular judgment, while the end of the world includes the resurrection of the body and the general judgment.",
+            "fr": "Chaque personne affronte la mort et un jugement particulier, tandis que la fin du monde comporte la résurrection de la chair et le jugement général."
+          },
+          "catechismRefs": [
+            "PX1912-Q095",
+            "PX1912-Q096",
+            "PX1912-Q097",
+            "PX1912-Q098",
+            "PX1912-Q099",
+            "PX1912-Q156",
+            "PX1912-Q157",
+            "PX1912-Q158",
+            "PX1912-Q159",
+            "PX1912-Q160"
+          ]
+        },
+        {
+          "id": "LTF-020-C02",
+          "text": {
+            "en": "Christian hope therefore concerns the whole person: the soul survives death, and the body will be raised at the last day.",
+            "fr": "L’espérance chrétienne concerne donc la personne tout entière : l’âme survit à la mort et le corps ressuscitera au dernier jour."
+          },
+          "catechismRefs": [
+            "PX1912-Q095",
+            "PX1912-Q096",
+            "PX1912-Q097",
+            "PX1912-Q098",
+            "PX1912-Q099",
+            "PX1912-Q156",
+            "PX1912-Q157",
+            "PX1912-Q158",
+            "PX1912-Q159",
+            "PX1912-Q160"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-021",
+      "title": {
+        "en": "Heaven, Purgatory and Hell",
+        "fr": "Ciel, Purgatoire et Enfer"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q014",
+        "PX1912-Q015",
+        "PX1912-Q016",
+        "PX1912-Q017",
+        "PX1912-Q018",
+        "PX1912-Q099",
+        "PX1912-Q100",
+        "PX1912-Q101",
+        "PX1912-Q102",
+        "PX1912-Q103",
+        "PX1912-Q104"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-021-C01",
+          "text": {
+            "en": "Heaven is eternal union with God; Purgatory is purification for those who die in God’s grace but still require cleansing; Hell is definitive separation from God for those who die in mortal sin.",
+            "fr": "Le Ciel est l’union éternelle avec Dieu ; le Purgatoire est la purification de ceux qui meurent dans la grâce de Dieu mais ont encore besoin d’être purifiés ; l’Enfer est la séparation définitive d’avec Dieu pour ceux qui meurent en état de péché mortel."
+          },
+          "catechismRefs": [
+            "PX1912-Q014",
+            "PX1912-Q015",
+            "PX1912-Q016",
+            "PX1912-Q017",
+            "PX1912-Q018",
+            "PX1912-Q099",
+            "PX1912-Q100",
+            "PX1912-Q101",
+            "PX1912-Q102",
+            "PX1912-Q103",
+            "PX1912-Q104"
+          ]
+        },
+        {
+          "id": "LTF-021-C02",
+          "text": {
+            "en": "The faithful can assist the souls in Purgatory by prayer and other suffrages offered through the Communion of Saints.",
+            "fr": "Les fidèles peuvent secourir les âmes du Purgatoire par la prière et les autres suffrages offerts dans la Communion des saints."
+          },
+          "catechismRefs": [
+            "PX1912-Q014",
+            "PX1912-Q015",
+            "PX1912-Q016",
+            "PX1912-Q017",
+            "PX1912-Q018",
+            "PX1912-Q099",
+            "PX1912-Q100",
+            "PX1912-Q101",
+            "PX1912-Q102",
+            "PX1912-Q103",
+            "PX1912-Q104"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-022",
+      "title": {
+        "en": "Sanctifying and actual grace",
+        "fr": "Grâce sanctifiante et grâce actuelle"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q269",
+        "PX1912-Q270",
+        "PX1912-Q271",
+        "PX1912-Q272",
+        "PX1912-Q273",
+        "PX1912-Q274",
+        "PX1912-Q275",
+        "PX1912-Q276",
+        "PX1912-Q277"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-022-C01",
+          "text": {
+            "en": "Sanctifying grace is a supernatural gift that makes the soul holy, a friend and adopted child of God, and an heir of eternal life.",
+            "fr": "La grâce sanctifiante est un don surnaturel qui rend l’âme sainte, amie et enfant adoptive de Dieu, et héritière de la vie éternelle."
+          },
+          "catechismRefs": [
+            "PX1912-Q269",
+            "PX1912-Q270",
+            "PX1912-Q271",
+            "PX1912-Q272",
+            "PX1912-Q273",
+            "PX1912-Q274",
+            "PX1912-Q275",
+            "PX1912-Q276",
+            "PX1912-Q277"
+          ]
+        },
+        {
+          "id": "LTF-022-C02",
+          "text": {
+            "en": "The sacraments either give sanctifying grace where it is absent or increase it in those already living in God’s friendship.",
+            "fr": "Les sacrements donnent la grâce sanctifiante lorsqu’elle est absente ou l’augmentent chez ceux qui vivent déjà dans l’amitié de Dieu."
+          },
+          "catechismRefs": [
+            "PX1912-Q269",
+            "PX1912-Q270",
+            "PX1912-Q271",
+            "PX1912-Q272",
+            "PX1912-Q273",
+            "PX1912-Q274",
+            "PX1912-Q275",
+            "PX1912-Q276",
+            "PX1912-Q277"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-023",
+      "title": {
+        "en": "What a sacrament is",
+        "fr": "Ce qu’est un sacrement"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q267",
+        "PX1912-Q268",
+        "PX1912-Q269",
+        "PX1912-Q270",
+        "PX1912-Q271",
+        "PX1912-Q272",
+        "PX1912-Q273",
+        "PX1912-Q274",
+        "PX1912-Q275",
+        "PX1912-Q276",
+        "PX1912-Q277",
+        "PX1912-Q278",
+        "PX1912-Q279",
+        "PX1912-Q280",
+        "PX1912-Q281",
+        "PX1912-Q282",
+        "PX1912-Q283",
+        "PX1912-Q284",
+        "PX1912-Q285",
+        "PX1912-Q286",
+        "PX1912-Q287",
+        "PX1912-Q288",
+        "PX1912-Q289"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-023-C01",
+          "text": {
+            "en": "A sacrament is an efficacious sensible sign of grace instituted by Jesus Christ to sanctify us.",
+            "fr": "Un sacrement est un signe sensible et efficace de la grâce institué par Jésus-Christ pour nous sanctifier."
+          },
+          "catechismRefs": [
+            "PX1912-Q267",
+            "PX1912-Q268",
+            "PX1912-Q269",
+            "PX1912-Q270",
+            "PX1912-Q271",
+            "PX1912-Q272",
+            "PX1912-Q273",
+            "PX1912-Q274",
+            "PX1912-Q275",
+            "PX1912-Q276",
+            "PX1912-Q277",
+            "PX1912-Q278",
+            "PX1912-Q279",
+            "PX1912-Q280",
+            "PX1912-Q281",
+            "PX1912-Q282",
+            "PX1912-Q283",
+            "PX1912-Q284",
+            "PX1912-Q285",
+            "PX1912-Q286",
+            "PX1912-Q287",
+            "PX1912-Q288",
+            "PX1912-Q289"
+          ]
+        },
+        {
+          "id": "LTF-023-C02",
+          "text": {
+            "en": "The sacraments act through matter, form and a valid minister acting with the intention of doing what the Church does.",
+            "fr": "Les sacrements agissent par une matière, une forme et un ministre valide ayant l’intention de faire ce que fait l’Église."
+          },
+          "catechismRefs": [
+            "PX1912-Q267",
+            "PX1912-Q268",
+            "PX1912-Q269",
+            "PX1912-Q270",
+            "PX1912-Q271",
+            "PX1912-Q272",
+            "PX1912-Q273",
+            "PX1912-Q274",
+            "PX1912-Q275",
+            "PX1912-Q276",
+            "PX1912-Q277",
+            "PX1912-Q278",
+            "PX1912-Q279",
+            "PX1912-Q280",
+            "PX1912-Q281",
+            "PX1912-Q282",
+            "PX1912-Q283",
+            "PX1912-Q284",
+            "PX1912-Q285",
+            "PX1912-Q286",
+            "PX1912-Q287",
+            "PX1912-Q288",
+            "PX1912-Q289"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-024",
+      "title": {
+        "en": "Baptism",
+        "fr": "Baptême"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q290",
+        "PX1912-Q291",
+        "PX1912-Q292",
+        "PX1912-Q293",
+        "PX1912-Q294",
+        "PX1912-Q295",
+        "PX1912-Q296",
+        "PX1912-Q297",
+        "PX1912-Q298",
+        "PX1912-Q299",
+        "PX1912-Q300",
+        "PX1912-Q301",
+        "PX1912-Q302",
+        "PX1912-Q303"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-024-C01",
+          "text": {
+            "en": "Baptism makes a person Christian, a child of God and a member of the Church, and removes sin through the grace Christ gives in the sacrament.",
+            "fr": "Le Baptême fait d’une personne un chrétien, un enfant de Dieu et un membre de l’Église, et efface le péché par la grâce que le Christ donne dans le sacrement."
+          },
+          "catechismRefs": [
+            "PX1912-Q290",
+            "PX1912-Q291",
+            "PX1912-Q292",
+            "PX1912-Q293",
+            "PX1912-Q294",
+            "PX1912-Q295",
+            "PX1912-Q296",
+            "PX1912-Q297",
+            "PX1912-Q298",
+            "PX1912-Q299",
+            "PX1912-Q300",
+            "PX1912-Q301",
+            "PX1912-Q302",
+            "PX1912-Q303"
+          ]
+        },
+        {
+          "id": "LTF-024-C02",
+          "text": {
+            "en": "Because Baptism imprints a permanent character, it is received only once and establishes lasting obligations of Christian life.",
+            "fr": "Parce que le Baptême imprime un caractère permanent, il n’est reçu qu’une seule fois et établit des obligations durables de vie chrétienne."
+          },
+          "catechismRefs": [
+            "PX1912-Q290",
+            "PX1912-Q291",
+            "PX1912-Q292",
+            "PX1912-Q293",
+            "PX1912-Q294",
+            "PX1912-Q295",
+            "PX1912-Q296",
+            "PX1912-Q297",
+            "PX1912-Q298",
+            "PX1912-Q299",
+            "PX1912-Q300",
+            "PX1912-Q301",
+            "PX1912-Q302",
+            "PX1912-Q303"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-025",
+      "title": {
+        "en": "Confirmation",
+        "fr": "Confirmation"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q304",
+        "PX1912-Q305",
+        "PX1912-Q306",
+        "PX1912-Q307",
+        "PX1912-Q308",
+        "PX1912-Q309",
+        "PX1912-Q310",
+        "PX1912-Q311",
+        "PX1912-Q312",
+        "PX1912-Q313",
+        "PX1912-Q314",
+        "PX1912-Q315"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-025-C01",
+          "text": {
+            "en": "Confirmation strengthens baptismal grace and perfects the Christian for courageous witness and fidelity to Christ.",
+            "fr": "La Confirmation fortifie la grâce baptismale et perfectionne le chrétien pour un témoignage courageux et fidèle au Christ."
+          },
+          "catechismRefs": [
+            "PX1912-Q304",
+            "PX1912-Q305",
+            "PX1912-Q306",
+            "PX1912-Q307",
+            "PX1912-Q308",
+            "PX1912-Q309",
+            "PX1912-Q310",
+            "PX1912-Q311",
+            "PX1912-Q312",
+            "PX1912-Q313",
+            "PX1912-Q314",
+            "PX1912-Q315"
+          ]
+        },
+        {
+          "id": "LTF-025-C02",
+          "text": {
+            "en": "Its anointing with sacred chrism and the sign of the Cross express consecration and readiness to profess the faith openly.",
+            "fr": "Son onction avec le saint chrême et le signe de la Croix expriment la consécration et la disponibilité à professer ouvertement la foi."
+          },
+          "catechismRefs": [
+            "PX1912-Q304",
+            "PX1912-Q305",
+            "PX1912-Q306",
+            "PX1912-Q307",
+            "PX1912-Q308",
+            "PX1912-Q309",
+            "PX1912-Q310",
+            "PX1912-Q311",
+            "PX1912-Q312",
+            "PX1912-Q313",
+            "PX1912-Q314",
+            "PX1912-Q315"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-026",
+      "title": {
+        "en": "The Holy Eucharist",
+        "fr": "La Sainte Eucharistie"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q316",
+        "PX1912-Q317",
+        "PX1912-Q318",
+        "PX1912-Q319",
+        "PX1912-Q320",
+        "PX1912-Q321",
+        "PX1912-Q322",
+        "PX1912-Q323",
+        "PX1912-Q324",
+        "PX1912-Q325",
+        "PX1912-Q326",
+        "PX1912-Q327",
+        "PX1912-Q328",
+        "PX1912-Q329",
+        "PX1912-Q330",
+        "PX1912-Q331",
+        "PX1912-Q332",
+        "PX1912-Q333",
+        "PX1912-Q334",
+        "PX1912-Q335",
+        "PX1912-Q336",
+        "PX1912-Q337",
+        "PX1912-Q338",
+        "PX1912-Q339",
+        "PX1912-Q340",
+        "PX1912-Q341",
+        "PX1912-Q342",
+        "PX1912-Q343",
+        "PX1912-Q344",
+        "PX1912-Q345",
+        "PX1912-Q346"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-026-C01",
+          "text": {
+            "en": "In the Eucharist, Jesus Christ is truly, really and substantially present under the appearances of bread and wine after the Consecration.",
+            "fr": "Dans l’Eucharistie, Jésus-Christ est véritablement, réellement et substantiellement présent sous les apparences du pain et du vin après la Consécration."
+          },
+          "catechismRefs": [
+            "PX1912-Q316",
+            "PX1912-Q317",
+            "PX1912-Q318",
+            "PX1912-Q319",
+            "PX1912-Q320",
+            "PX1912-Q321",
+            "PX1912-Q322",
+            "PX1912-Q323",
+            "PX1912-Q324",
+            "PX1912-Q325",
+            "PX1912-Q326",
+            "PX1912-Q327",
+            "PX1912-Q328",
+            "PX1912-Q329",
+            "PX1912-Q330",
+            "PX1912-Q331",
+            "PX1912-Q332",
+            "PX1912-Q333",
+            "PX1912-Q334",
+            "PX1912-Q335",
+            "PX1912-Q336",
+            "PX1912-Q337",
+            "PX1912-Q338",
+            "PX1912-Q339",
+            "PX1912-Q340",
+            "PX1912-Q341",
+            "PX1912-Q342",
+            "PX1912-Q343",
+            "PX1912-Q344",
+            "PX1912-Q345",
+            "PX1912-Q346"
+          ]
+        },
+        {
+          "id": "LTF-026-C02",
+          "text": {
+            "en": "Holy Communion requires proper disposition, especially the state of grace, and worthily received it nourishes and strengthens supernatural life.",
+            "fr": "La Sainte Communion exige les dispositions requises, surtout l’état de grâce, et reçue dignement elle nourrit et fortifie la vie surnaturelle."
+          },
+          "catechismRefs": [
+            "PX1912-Q316",
+            "PX1912-Q317",
+            "PX1912-Q318",
+            "PX1912-Q319",
+            "PX1912-Q320",
+            "PX1912-Q321",
+            "PX1912-Q322",
+            "PX1912-Q323",
+            "PX1912-Q324",
+            "PX1912-Q325",
+            "PX1912-Q326",
+            "PX1912-Q327",
+            "PX1912-Q328",
+            "PX1912-Q329",
+            "PX1912-Q330",
+            "PX1912-Q331",
+            "PX1912-Q332",
+            "PX1912-Q333",
+            "PX1912-Q334",
+            "PX1912-Q335",
+            "PX1912-Q336",
+            "PX1912-Q337",
+            "PX1912-Q338",
+            "PX1912-Q339",
+            "PX1912-Q340",
+            "PX1912-Q341",
+            "PX1912-Q342",
+            "PX1912-Q343",
+            "PX1912-Q344",
+            "PX1912-Q345",
+            "PX1912-Q346"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-027",
+      "title": {
+        "en": "The Holy Sacrifice of the Mass",
+        "fr": "Le Saint Sacrifice de la Messe"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q347",
+        "PX1912-Q348",
+        "PX1912-Q349",
+        "PX1912-Q350",
+        "PX1912-Q351",
+        "PX1912-Q352",
+        "PX1912-Q353",
+        "PX1912-Q354"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-027-C01",
+          "text": {
+            "en": "The Mass is the sacramental sacrifice in which the same Christ who offered Himself on Calvary is offered in an unbloody manner.",
+            "fr": "La Messe est le sacrifice sacramentel dans lequel le même Christ qui s’est offert au Calvaire est offert d’une manière non sanglante."
+          },
+          "catechismRefs": [
+            "PX1912-Q347",
+            "PX1912-Q348",
+            "PX1912-Q349",
+            "PX1912-Q350",
+            "PX1912-Q351",
+            "PX1912-Q352",
+            "PX1912-Q353",
+            "PX1912-Q354"
+          ]
+        },
+        {
+          "id": "LTF-027-C02",
+          "text": {
+            "en": "The Mass is offered in adoration, thanksgiving, propitiation and petition for the living and the dead; the detailed ceremonial belongs to Mass Formation.",
+            "fr": "La Messe est offerte en adoration, en action de grâces, en propitiation et en demande pour les vivants et les morts ; le cérémonial détaillé relève de la Formation sur la Messe."
+          },
+          "catechismRefs": [
+            "PX1912-Q347",
+            "PX1912-Q348",
+            "PX1912-Q349",
+            "PX1912-Q350",
+            "PX1912-Q351",
+            "PX1912-Q352",
+            "PX1912-Q353",
+            "PX1912-Q354"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-028",
+      "title": {
+        "en": "Penance and Confession",
+        "fr": "Pénitence et Confession"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q355",
+        "PX1912-Q356",
+        "PX1912-Q357",
+        "PX1912-Q358",
+        "PX1912-Q359",
+        "PX1912-Q360",
+        "PX1912-Q361",
+        "PX1912-Q362",
+        "PX1912-Q363",
+        "PX1912-Q364",
+        "PX1912-Q365",
+        "PX1912-Q366",
+        "PX1912-Q367",
+        "PX1912-Q368",
+        "PX1912-Q369",
+        "PX1912-Q370",
+        "PX1912-Q371",
+        "PX1912-Q372",
+        "PX1912-Q373",
+        "PX1912-Q374",
+        "PX1912-Q375",
+        "PX1912-Q376",
+        "PX1912-Q377",
+        "PX1912-Q378",
+        "PX1912-Q379",
+        "PX1912-Q380",
+        "PX1912-Q381",
+        "PX1912-Q382",
+        "PX1912-Q383",
+        "PX1912-Q384",
+        "PX1912-Q385",
+        "PX1912-Q386",
+        "PX1912-Q387",
+        "PX1912-Q388",
+        "PX1912-Q389",
+        "PX1912-Q390",
+        "PX1912-Q391"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-028-C01",
+          "text": {
+            "en": "Penance is the sacrament instituted by Christ for the forgiveness of sins committed after Baptism.",
+            "fr": "La Pénitence est le sacrement institué par le Christ pour le pardon des péchés commis après le Baptême."
+          },
+          "catechismRefs": [
+            "PX1912-Q355",
+            "PX1912-Q356",
+            "PX1912-Q357",
+            "PX1912-Q358",
+            "PX1912-Q359",
+            "PX1912-Q360",
+            "PX1912-Q361",
+            "PX1912-Q362",
+            "PX1912-Q363",
+            "PX1912-Q364",
+            "PX1912-Q365",
+            "PX1912-Q366",
+            "PX1912-Q367",
+            "PX1912-Q368",
+            "PX1912-Q369",
+            "PX1912-Q370",
+            "PX1912-Q371",
+            "PX1912-Q372",
+            "PX1912-Q373",
+            "PX1912-Q374",
+            "PX1912-Q375",
+            "PX1912-Q376",
+            "PX1912-Q377",
+            "PX1912-Q378",
+            "PX1912-Q379",
+            "PX1912-Q380",
+            "PX1912-Q381",
+            "PX1912-Q382",
+            "PX1912-Q383",
+            "PX1912-Q384",
+            "PX1912-Q385",
+            "PX1912-Q386",
+            "PX1912-Q387",
+            "PX1912-Q388",
+            "PX1912-Q389",
+            "PX1912-Q390",
+            "PX1912-Q391"
+          ]
+        },
+        {
+          "id": "LTF-028-C02",
+          "text": {
+            "en": "A good confession requires examination, sorrow, a firm purpose of amendment, sincere confession and satisfaction; absolution is given by the priest as minister of Christ.",
+            "fr": "Une bonne confession exige l’examen, la contrition, un ferme propos, une confession sincère et la satisfaction ; l’absolution est donnée par le prêtre comme ministre du Christ."
+          },
+          "catechismRefs": [
+            "PX1912-Q355",
+            "PX1912-Q356",
+            "PX1912-Q357",
+            "PX1912-Q358",
+            "PX1912-Q359",
+            "PX1912-Q360",
+            "PX1912-Q361",
+            "PX1912-Q362",
+            "PX1912-Q363",
+            "PX1912-Q364",
+            "PX1912-Q365",
+            "PX1912-Q366",
+            "PX1912-Q367",
+            "PX1912-Q368",
+            "PX1912-Q369",
+            "PX1912-Q370",
+            "PX1912-Q371",
+            "PX1912-Q372",
+            "PX1912-Q373",
+            "PX1912-Q374",
+            "PX1912-Q375",
+            "PX1912-Q376",
+            "PX1912-Q377",
+            "PX1912-Q378",
+            "PX1912-Q379",
+            "PX1912-Q380",
+            "PX1912-Q381",
+            "PX1912-Q382",
+            "PX1912-Q383",
+            "PX1912-Q384",
+            "PX1912-Q385",
+            "PX1912-Q386",
+            "PX1912-Q387",
+            "PX1912-Q388",
+            "PX1912-Q389",
+            "PX1912-Q390",
+            "PX1912-Q391"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-029",
+      "title": {
+        "en": "Extreme Unction / Anointing of the Sick",
+        "fr": "Extrême-Onction / Onction des malades"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q392",
+        "PX1912-Q393",
+        "PX1912-Q394",
+        "PX1912-Q395",
+        "PX1912-Q396"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-029-C01",
+          "text": {
+            "en": "Extreme Unction is the sacrament given to the seriously ill to confer grace, strengthen the soul and prepare the Christian for the final struggle.",
+            "fr": "L’Extrême-Onction est le sacrement donné au malade gravement atteint pour conférer la grâce, fortifier l’âme et préparer le chrétien au dernier combat."
+          },
+          "catechismRefs": [
+            "PX1912-Q392",
+            "PX1912-Q393",
+            "PX1912-Q394",
+            "PX1912-Q395",
+            "PX1912-Q396"
+          ]
+        },
+        {
+          "id": "LTF-029-C02",
+          "text": {
+            "en": "Its traditional terminology and some disciplinary details are historically conditioned, so the doctrinal core must be distinguished from current sacramental discipline.",
+            "fr": "Sa terminologie traditionnelle et certains détails disciplinaires sont historiquement conditionnés ; il faut donc distinguer le noyau doctrinal de la discipline sacramentelle actuelle."
+          },
+          "catechismRefs": [
+            "PX1912-Q392",
+            "PX1912-Q393",
+            "PX1912-Q394",
+            "PX1912-Q395",
+            "PX1912-Q396"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-030",
+      "title": {
+        "en": "Holy Orders",
+        "fr": "Ordre"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q397",
+        "PX1912-Q398",
+        "PX1912-Q399",
+        "PX1912-Q400",
+        "PX1912-Q401",
+        "PX1912-Q402",
+        "PX1912-Q403",
+        "PX1912-Q404",
+        "PX1912-Q405"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-030-C01",
+          "text": {
+            "en": "Holy Orders is the sacrament by which sacred ministers are constituted for the service of God and the Church.",
+            "fr": "L’Ordre est le sacrement par lequel des ministres sacrés sont constitués pour le service de Dieu et de l’Église."
+          },
+          "catechismRefs": [
+            "PX1912-Q397",
+            "PX1912-Q398",
+            "PX1912-Q399",
+            "PX1912-Q400",
+            "PX1912-Q401",
+            "PX1912-Q402",
+            "PX1912-Q403",
+            "PX1912-Q404",
+            "PX1912-Q405"
+          ]
+        },
+        {
+          "id": "LTF-030-C02",
+          "text": {
+            "en": "The priesthood is a vocation received from God and carries serious duties; it is not merely a role chosen by private preference.",
+            "fr": "Le sacerdoce est une vocation reçue de Dieu et comporte de graves devoirs ; il n’est pas simplement un rôle choisi selon une préférence privée."
+          },
+          "catechismRefs": [
+            "PX1912-Q397",
+            "PX1912-Q398",
+            "PX1912-Q399",
+            "PX1912-Q400",
+            "PX1912-Q401",
+            "PX1912-Q402",
+            "PX1912-Q403",
+            "PX1912-Q404",
+            "PX1912-Q405"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-031",
+      "title": {
+        "en": "Matrimony",
+        "fr": "Mariage"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q406",
+        "PX1912-Q407",
+        "PX1912-Q408",
+        "PX1912-Q412",
+        "PX1912-Q413"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-031-C01",
+          "text": {
+            "en": "Matrimony is the sacramental covenant by which a baptized man and woman give themselves to one another in a stable union ordered by God.",
+            "fr": "Le Mariage est l’alliance sacramentelle par laquelle un homme et une femme baptisés se donnent l’un à l’autre dans une union stable ordonnée par Dieu."
+          },
+          "catechismRefs": [
+            "PX1912-Q406",
+            "PX1912-Q407",
+            "PX1912-Q408",
+            "PX1912-Q412",
+            "PX1912-Q413"
+          ]
+        },
+        {
+          "id": "LTF-031-C02",
+          "text": {
+            "en": "The spouses must enter marriage with proper dispositions and accept the duties of fidelity, mutual help and Christian family life; historical civil-law details are not part of the doctrinal core.",
+            "fr": "Les époux doivent entrer dans le mariage avec les dispositions requises et accepter les devoirs de fidélité, d’aide mutuelle et de vie familiale chrétienne ; les détails historiques de droit civil ne font pas partie du noyau doctrinal."
+          },
+          "catechismRefs": [
+            "PX1912-Q406",
+            "PX1912-Q407",
+            "PX1912-Q408",
+            "PX1912-Q412",
+            "PX1912-Q413"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-032",
+      "title": {
+        "en": "Christian freedom and moral law",
+        "fr": "Liberté chrétienne et loi morale"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q064",
+        "PX1912-Q065",
+        "PX1912-Q161",
+        "PX1912-Q162",
+        "PX1912-Q163",
+        "PX1912-Q164",
+        "PX1912-Q165",
+        "PX1912-Q166",
+        "PX1912-Q167",
+        "PX1912-Q168"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-032-C01",
+          "text": {
+            "en": "Human freedom makes moral responsibility possible, but freedom is ordered to the good rather than to arbitrary self-assertion.",
+            "fr": "La liberté humaine rend possible la responsabilité morale, mais elle est ordonnée au bien plutôt qu’à l’affirmation arbitraire de soi."
+          },
+          "catechismRefs": [
+            "PX1912-Q064",
+            "PX1912-Q065",
+            "PX1912-Q161",
+            "PX1912-Q162",
+            "PX1912-Q163",
+            "PX1912-Q164",
+            "PX1912-Q165",
+            "PX1912-Q166",
+            "PX1912-Q167",
+            "PX1912-Q168"
+          ]
+        },
+        {
+          "id": "LTF-032-C02",
+          "text": {
+            "en": "God’s commandments express binding moral duties and can be observed with the help of divine grace.",
+            "fr": "Les commandements de Dieu expriment des devoirs moraux obligatoires et peuvent être observés avec l’aide de la grâce divine."
+          },
+          "catechismRefs": [
+            "PX1912-Q064",
+            "PX1912-Q065",
+            "PX1912-Q161",
+            "PX1912-Q162",
+            "PX1912-Q163",
+            "PX1912-Q164",
+            "PX1912-Q165",
+            "PX1912-Q166",
+            "PX1912-Q167",
+            "PX1912-Q168"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-033",
+      "title": {
+        "en": "Natural law",
+        "fr": "Loi naturelle"
+      },
+      "catechismCoverage": "PARTIAL",
+      "catechismRefs": [
+        "PX1912-Q161",
+        "PX1912-Q162",
+        "PX1912-Q163",
+        "PX1912-Q164",
+        "PX1912-Q165",
+        "PX1912-Q166",
+        "PX1912-Q167",
+        "PX1912-Q168"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
+      ],
+      "claims": [
+        {
+          "id": "LTF-033-C01",
+          "text": {
+            "en": "The moral law is not created by individual preference: God’s commandments presuppose an objective order of good and evil binding on rational creatures.",
+            "fr": "La loi morale n’est pas créée par la préférence individuelle : les commandements de Dieu présupposent un ordre objectif du bien et du mal qui oblige les créatures raisonnables."
+          },
+          "catechismRefs": [
+            "PX1912-Q161",
+            "PX1912-Q162",
+            "PX1912-Q163",
+            "PX1912-Q164",
+            "PX1912-Q165",
+            "PX1912-Q166",
+            "PX1912-Q167",
+            "PX1912-Q168"
+          ]
+        },
+        {
+          "id": "LTF-033-C02",
+          "text": {
+            "en": "The short Catechism gives this foundation but does not itself provide a developed doctrine of natural law, so the published lesson must add deeper authoritative sources.",
+            "fr": "Le Petit Catéchisme donne ce fondement mais n’expose pas à lui seul une doctrine développée de la loi naturelle ; la leçon publiée devra donc ajouter des sources faisant davantage autorité."
+          },
+          "catechismRefs": [
+            "PX1912-Q161",
+            "PX1912-Q162",
+            "PX1912-Q163",
+            "PX1912-Q164",
+            "PX1912-Q165",
+            "PX1912-Q166",
+            "PX1912-Q167",
+            "PX1912-Q168"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-034",
+      "title": {
+        "en": "Conscience and its formation",
+        "fr": "La conscience et sa formation"
+      },
+      "catechismCoverage": "PARTIAL",
+      "catechismRefs": [
+        "PX1912-Q135",
+        "PX1912-Q136",
+        "PX1912-Q137",
+        "PX1912-Q138",
+        "PX1912-Q139",
+        "PX1912-Q140",
+        "PX1912-Q141",
+        "PX1912-Q142",
+        "PX1912-Q143",
+        "PX1912-Q144",
+        "PX1912-Q145",
+        "PX1912-Q146",
+        "PX1912-Q147",
+        "PX1912-Q148",
+        "PX1912-Q149",
+        "PX1912-Q150",
+        "PX1912-Q151",
+        "PX1912-Q152",
+        "PX1912-Q153",
+        "PX1912-Q154",
+        "PX1912-Q155",
+        "PX1912-Q255"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
+      ],
+      "claims": [
+        {
+          "id": "LTF-034-C01",
+          "text": {
+            "en": "Conscience does not make an act good merely by approving it; moral judgment must be formed according to objective truth and God’s law.",
+            "fr": "La conscience ne rend pas un acte bon simplement en l’approuvant ; le jugement moral doit être formé selon la vérité objective et la loi de Dieu."
+          },
+          "catechismRefs": [
+            "PX1912-Q135",
+            "PX1912-Q136",
+            "PX1912-Q137",
+            "PX1912-Q138",
+            "PX1912-Q139",
+            "PX1912-Q140",
+            "PX1912-Q141",
+            "PX1912-Q142",
+            "PX1912-Q143",
+            "PX1912-Q144",
+            "PX1912-Q145",
+            "PX1912-Q146",
+            "PX1912-Q147",
+            "PX1912-Q148",
+            "PX1912-Q149",
+            "PX1912-Q150",
+            "PX1912-Q151",
+            "PX1912-Q152",
+            "PX1912-Q153",
+            "PX1912-Q154",
+            "PX1912-Q155",
+            "PX1912-Q255"
+          ]
+        },
+        {
+          "id": "LTF-034-C02",
+          "text": {
+            "en": "Because the short Catechism treats sin, responsibility and prudence without a full systematic account of conscience, this lesson remains source-partial until supplemented.",
+            "fr": "Parce que le Petit Catéchisme traite du péché, de la responsabilité et de la prudence sans exposé systématique complet de la conscience, cette leçon reste partiellement sourcée jusqu’à l’ajout de sources complémentaires."
+          },
+          "catechismRefs": [
+            "PX1912-Q135",
+            "PX1912-Q136",
+            "PX1912-Q137",
+            "PX1912-Q138",
+            "PX1912-Q139",
+            "PX1912-Q140",
+            "PX1912-Q141",
+            "PX1912-Q142",
+            "PX1912-Q143",
+            "PX1912-Q144",
+            "PX1912-Q145",
+            "PX1912-Q146",
+            "PX1912-Q147",
+            "PX1912-Q148",
+            "PX1912-Q149",
+            "PX1912-Q150",
+            "PX1912-Q151",
+            "PX1912-Q152",
+            "PX1912-Q153",
+            "PX1912-Q154",
+            "PX1912-Q155",
+            "PX1912-Q255"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-035",
+      "title": {
+        "en": "Sin",
+        "fr": "Le péché"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q135",
+        "PX1912-Q136",
+        "PX1912-Q137",
+        "PX1912-Q138",
+        "PX1912-Q139",
+        "PX1912-Q140",
+        "PX1912-Q141",
+        "PX1912-Q142"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-035-C01",
+          "text": {
+            "en": "Sin is a voluntary transgression of God’s law and may be committed in thought, word, deed or omission.",
+            "fr": "Le péché est une transgression volontaire de la loi de Dieu et peut être commis par pensée, parole, action ou omission."
+          },
+          "catechismRefs": [
+            "PX1912-Q135",
+            "PX1912-Q136",
+            "PX1912-Q137",
+            "PX1912-Q138",
+            "PX1912-Q139",
+            "PX1912-Q140",
+            "PX1912-Q141",
+            "PX1912-Q142"
+          ]
+        },
+        {
+          "id": "LTF-035-C02",
+          "text": {
+            "en": "Actual sin differs from original sin and varies in gravity according to its object and the responsibility of the person acting.",
+            "fr": "Le péché actuel se distingue du péché originel et varie en gravité selon son objet et la responsabilité de la personne qui agit."
+          },
+          "catechismRefs": [
+            "PX1912-Q135",
+            "PX1912-Q136",
+            "PX1912-Q137",
+            "PX1912-Q138",
+            "PX1912-Q139",
+            "PX1912-Q140",
+            "PX1912-Q141",
+            "PX1912-Q142"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-036",
+      "title": {
+        "en": "Mortal and venial sin",
+        "fr": "Péché mortel et péché véniel"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q143",
+        "PX1912-Q144",
+        "PX1912-Q145",
+        "PX1912-Q146",
+        "PX1912-Q147",
+        "PX1912-Q148",
+        "PX1912-Q149",
+        "PX1912-Q150",
+        "PX1912-Q151"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-036-C01",
+          "text": {
+            "en": "Mortal sin destroys sanctifying grace and supernatural life in the soul; venial sin wounds charity without destroying it.",
+            "fr": "Le péché mortel détruit la grâce sanctifiante et la vie surnaturelle de l’âme ; le péché véniel blesse la charité sans la détruire."
+          },
+          "catechismRefs": [
+            "PX1912-Q143",
+            "PX1912-Q144",
+            "PX1912-Q145",
+            "PX1912-Q146",
+            "PX1912-Q147",
+            "PX1912-Q148",
+            "PX1912-Q149",
+            "PX1912-Q150",
+            "PX1912-Q151"
+          ]
+        },
+        {
+          "id": "LTF-036-C02",
+          "text": {
+            "en": "The distinction matters because grave sin requires reconciliation with God, while venial sin, though less serious, still harms spiritual life and disposes toward greater faults.",
+            "fr": "Cette distinction est importante : le péché grave exige la réconciliation avec Dieu, tandis que le péché véniel, quoique moins grave, nuit à la vie spirituelle et dispose à des fautes plus grandes."
+          },
+          "catechismRefs": [
+            "PX1912-Q143",
+            "PX1912-Q144",
+            "PX1912-Q145",
+            "PX1912-Q146",
+            "PX1912-Q147",
+            "PX1912-Q148",
+            "PX1912-Q149",
+            "PX1912-Q150",
+            "PX1912-Q151"
           ]
         }
       ],
