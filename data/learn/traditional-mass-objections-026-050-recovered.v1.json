@@ -1,7 +1,7 @@
 {
   "version": "TLM_OBJECTIONS_026_050_RECOVERED_V1",
   "created_at": "2026-10-08",
-  "status": "EXACT_ENGLISH_SOURCE_TEXT_RECOVERED_DRAFT_NOT_PUBLISHED",
+  "status": "ENGLISH_RECOVERED_74_REFERENCES_COLLATED_7_BLOCKED_NOT_PUBLISHED",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "publication_policy": "No mass-app or Formation runtime integration until original question provenance, source claim support and French translation are verified. Candidate links are not certified citations.",
   "original_source_issue": "74 prior chatgpt-content-reference indices were non-resolving placeholders; numerical provenance retained for editorial investigation. These are not links.",
@@ -22,7 +22,7 @@
     {
       "id": "SC63",
       "title": "Sacrosanctum Concilium (1963)",
-      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
       "type": "COUNCIL_PRIMARY"
     },
     {
@@ -45,8 +45,8 @@
     },
     {
       "id": "COR11",
-      "title": "1 Corinthians 11, head covering at worship",
-      "url": "https://bible.usccb.org/bible/1corinthians/11",
+      "title": "1 Corinthians 11, Vatican NAB chapter",
+      "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM",
       "type": "SCRIPTURE_PRIMARY"
     },
     {
@@ -105,15 +105,87 @@
     },
     {
       "id": "GS65",
-      "title": "Gaudium et spes §43 (1965)",
-      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
+      "title": "Gaudium et spes (1965)",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
       "type": "COUNCIL_PRIMARY"
     },
     {
       "id": "CIC83",
-      "title": "1983 Code of Canon Law, book III (canons 230 and others)",
+      "title": "1983 Code, Book II (including canon 230)",
       "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
       "type": "CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "CAN1917",
+      "title": "1917 Code, canon 1262 §2 (Latin/French)",
+      "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026",
+      "type": "CANON_LAW_ORIGINAL_REPRINT"
+    },
+    {
+      "id": "CIC6",
+      "title": "1983 Code, canon 6 abrogation",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html",
+      "type": "CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "LEC81",
+      "title": "General Introduction to Lectionary, §§65–66",
+      "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913",
+      "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "OFF1962",
+      "title": "1962 Missal Offertory, Latin text",
+      "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html",
+      "type": "LITURGICAL_PRIMARY_REPRINT"
+    },
+    {
+      "id": "RAT2000",
+      "title": "Joseph Ratzinger, Spirit of the Liturgy, Ch 3 excerpt",
+      "url": "https://www.ratzinger.us/The-Altar-and-the-Direction-of-Liturgical-Prayer/",
+      "type": "THEOLOGICAL_AUTHOR_PRIMARY_REPRINT"
+    },
+    {
+      "id": "VAT2010",
+      "title": "Vatican liturgical office, orientation and Ratzinger (2010)",
+      "url": "https://www.vatican.va/news_services/liturgy/2010/documents/ns_lit_doc_20100907_mistero-celebrato_en.html",
+      "type": "VATICAN_LITURGICAL_EXPLANATION"
+    },
+    {
+      "id": "CUCHET",
+      "title": "Guillaume Cuchet, Comment notre monde a cessé d’être chrétien (2018) abstract",
+      "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr",
+      "type": "HISTORICAL_BOOK_ABSTRACT"
+    },
+    {
+      "id": "PO1954",
+      "title": "CNRS history, worker-priest controversy (1947–1954)",
+      "url": "https://histoire-sociale.cnrs.fr/la-presse-et-la-question-des-pretres-ouvriers-de-1947-a-1954-le-traitement-de-laffaire-des-pretres-ouvriers-par-la-presse-nationale-francaise-au-lendemain-de-leur-naissance-jusqua/",
+      "type": "HISTORICAL_ACADEMIC"
+    },
+    {
+      "id": "JLG1966",
+      "title": "Joint Liturgical Group, eyewitness institutional history of Protestant observers",
+      "url": "https://jlg.org.uk/the-birth-of-jlg/",
+      "type": "PROTESTANT_PARTICIPANT_HISTORY"
+    },
+    {
+      "id": "SSPX_PROT",
+      "title": "SSPX Australia, claim concerning six Protestant advisers",
+      "url": "https://sspx.au/en/traditional-mass-vs-new-mass-33860",
+      "type": "NAMED_TRADITIONALIST_OBJECTION"
+    },
+    {
+      "id": "DAVIES",
+      "title": "Michael Davies observer-role claims in reported interview",
+      "url": "https://www.newliturgicalmovement.org/2017/09/a-discussion-on-liturgical-reform-in.html",
+      "type": "TRADITIONALIST_INTERVIEW_REPORT"
+    },
+    {
+      "id": "VATICAN76",
+      "title": "1976 Vatican denial quoted in historical discussion (2025)",
+      "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/",
+      "type": "SECONDARY_REPRINT_OF_VATICAN_STATEMENT"
     }
   ],
   "records": [
@@ -132,8 +204,23 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 0
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 0,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: younger Catholics",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -148,8 +235,23 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 1
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 1,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: exaggerated social attitudes",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -158,8 +260,23 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 2
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 2,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: sacrality, two Missals",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -178,8 +295,23 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 3
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 3,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: young persons",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -194,8 +326,23 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 4
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 4,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 and Francis 2021: different concerns",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -214,8 +361,23 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 5
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 5,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: Latin and formation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -224,8 +386,23 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 6
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 6,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: 1988 rightful aspirations",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -240,8 +417,23 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 7
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 7,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 14,19,35",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -261,8 +453,27 @@
             "CODE83",
             "VEIL"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 8
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 8,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1 Cor 11:3–16",
+            "hyperlinked_sources": [
+              {
+                "source_id": "COR11",
+                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
+              },
+              {
+                "source_id": "CODE83",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html"
+              },
+              {
+                "source_id": "VEIL",
+                "url": "https://uscatholic.org/articles/201606/hats-in-church-a-heady-issue/"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -270,10 +481,41 @@
           "source_ids": [
             "COR11",
             "CODE83",
-            "VEIL"
+            "VEIL",
+            "CAN1917",
+            "CIC6"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 9
+          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "legacy_placeholder_index": 9,
+          "citation_review": {
+            "status": "BLOCKED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1917 c.1262§2; 1983 c.6",
+            "hyperlinked_sources": [
+              {
+                "source_id": "COR11",
+                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
+              },
+              {
+                "source_id": "CODE83",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html"
+              },
+              {
+                "source_id": "VEIL",
+                "url": "https://uscatholic.org/articles/201606/hats-in-church-a-heady-issue/"
+              },
+              {
+                "source_id": "CAN1917",
+                "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026"
+              },
+              {
+                "source_id": "CIC6",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html"
+              }
+            ],
+            "editorial_issue": "False author attribution: Edward Peters is not author of the linked Brian Baker article; cite 1917 c.1262§2 and 1983 c.6 instead.",
+            "suggested_replacement": "At the same time, wearing a chapel veil is not a universal requirement of current Latin canon law. Canon 1262 §2 of the 1917 Code required women's head covering during sacred rites, but canon 6 §1(1) of the 1983 Code abrogated the former Code without retaining an equivalent universal obligation."
+          }
         },
         {
           "role": "substantive",
@@ -281,10 +523,39 @@
           "source_ids": [
             "COR11",
             "CODE83",
-            "VEIL"
+            "VEIL",
+            "CAN1917",
+            "CIC6"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 10
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 10,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1 Cor 11 and 1983 c.6",
+            "hyperlinked_sources": [
+              {
+                "source_id": "COR11",
+                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
+              },
+              {
+                "source_id": "CODE83",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html"
+              },
+              {
+                "source_id": "VEIL",
+                "url": "https://uscatholic.org/articles/201606/hats-in-church-a-heady-issue/"
+              },
+              {
+                "source_id": "CAN1917",
+                "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026"
+              },
+              {
+                "source_id": "CIC6",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -303,8 +574,23 @@
             "CCC_MOD",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 11
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 11,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2521–2524",
+            "hyperlinked_sources": [
+              {
+                "source_id": "CCC_MOD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_9/ii_the_battle_for_purity.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -313,8 +599,23 @@
             "CCC_MOD",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 12
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 12,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2524",
+            "hyperlinked_sources": [
+              {
+                "source_id": "CCC_MOD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_9/ii_the_battle_for_purity.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -323,8 +624,23 @@
             "CCC_MOD",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 13
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 13,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2477–2478",
+            "hyperlinked_sources": [
+              {
+                "source_id": "CCC_MOD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_9/ii_the_battle_for_purity.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -344,8 +660,27 @@
             "CIC83",
             "ORD94"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 14
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 14,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1994 CDW communication nn.1,3–4; canon 230§2",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SERV94",
+                "url": "https://www.ewtn.com/catholicism/library/vatican-communication-on-female-altar-servers-29771"
+              },
+              {
+                "source_id": "CIC83",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "ORD94",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1994/documents/hf_jp-ii_apl_19940522_ordinatio-sacerdotalis.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -355,8 +690,27 @@
             "CIC83",
             "ORD94"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 15
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 15,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1994 CDW n.2",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SERV94",
+                "url": "https://www.ewtn.com/catholicism/library/vatican-communication-on-female-altar-servers-29771"
+              },
+              {
+                "source_id": "CIC83",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "ORD94",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1994/documents/hf_jp-ii_apl_19940522_ordinatio-sacerdotalis.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -372,8 +726,29 @@
             "CIC83",
             "ORD94"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 16
+          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "legacy_placeholder_index": 16,
+          "citation_review": {
+            "status": "BLOCKED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ordinatio sacerdotalis §4; 1994 CDW",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SERV94",
+                "url": "https://www.ewtn.com/catholicism/library/vatican-communication-on-female-altar-servers-29771"
+              },
+              {
+                "source_id": "CIC83",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "ORD94",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1994/documents/hf_jp-ii_apl_19940522_ordinatio-sacerdotalis.html"
+              }
+            ],
+            "editorial_issue": "Misattributed as CDF doctrine: Ordinatio sacerdotalis is by John Paul II. Change agency or obtain an actual CDF original.",
+            "suggested_replacement": "Catholic doctrine does not equate human equality with interchangeability of every ecclesial office. Pope John Paul II's Ordinatio sacerdotalis concerns priestly ordination; the 1994 Vatican communication treats altar service as a delegated lay function rather than an individual entitlement."
+          }
         }
       ]
     },
@@ -391,8 +766,19 @@
           "source_ids": [
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 17
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 17,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 295",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -400,8 +786,19 @@
           "source_ids": [
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 18
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 18,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 295 applied to rail",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -415,8 +812,19 @@
           "source_ids": [
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 19
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 19,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 294–295",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -433,20 +841,60 @@
           "text": "Vatican II deliberately required the biblical treasures to be opened more abundantly and called for a more representative portion of Scripture to be read over a multi-year cycle. The reformed lectionary genuinely implements that objective, and traditional apologetics should not deny it.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 20
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 20,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 51; Lectionary introduction 65–66",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "Quantity of passages read publicly, however, is not the only possible measure of liturgical quality. The comparison must also consider how readings are selected, repeated, connected to the sanctoral and temporal cycles, and integrated with Propers and other scriptural liturgical texts; the Council itself required reform in continuity with sound tradition rather than identifying “more readings” with the entire criterion of liturgical excellence.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 21
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 21,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 23,51; Lectionary introduction 65–66",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ]
+          }
         }
       ]
     },
@@ -463,30 +911,90 @@
           "text": "The older system undeniably exposes the congregation to a narrower range of biblical pericopes at Mass than the postconciliar multi-year lectionary. Vatican II explicitly wanted a broader representative portion of Scripture read to the faithful, and the contemporary lectionary was built to fulfil that mandate.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 22
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 22,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Lectionary introduction 65–66; MR62",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "That fact does not settle every comparative question. A one-year cycle can create strong annual repetition and stable association between particular Sundays, feasts and passages, whereas a multi-year cycle maximizes breadth. These are different liturgical goods, and deciding between them requires more than counting verses. *Sacrosanctum Concilium* itself combines expansion of Scripture with the principle that liturgical reform should preserve sound tradition and proceed organically.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 23
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 23,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Lectionary introduction 65–66",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "Claims that the reformed lectionary systematically suppresses difficult themes should not be made from anecdotes or raw word counts. They require an actual contextual comparison of omissions, truncations, optional passages and thematic redistribution across both lectionaries.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 24
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 24,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Compare actual reading schedules; methodological statement",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ]
+          }
         }
       ]
     },
@@ -505,8 +1013,23 @@
             "SC63",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 25
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 25,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 52; GIRM 65",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -515,8 +1038,23 @@
             "SC63",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 26
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 26,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 52; GIRM 65",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -531,8 +1069,25 @@
             "SC63",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 27
+          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "legacy_placeholder_index": 27,
+          "citation_review": {
+            "status": "BLOCKED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 52; GIRM 65 (not comparative quality study)",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ],
+            "editorial_issue": "A claim that preaching quality is primarily determined by the preacher rather than rubrics is not demonstrated by SC and GIRM.",
+            "suggested_replacement": "The reformed rite explicitly places the homily within the liturgy, a genuine difference. The rubric alone does not establish how well a homily communicates Catholic doctrine or serves those attending."
+          }
         }
       ]
     },
@@ -550,10 +1105,34 @@
           "source_ids": [
             "MR62",
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "OFF1962"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 28
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 28,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 Offertory: Suscipe sancte Pater/Offerimus/Veni sanctificator",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -561,10 +1140,34 @@
           "source_ids": [
             "MR62",
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "OFF1962"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 29
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 29,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 Offertory: Veni sanctificator (anticipatory reading)",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -580,8 +1183,29 @@
             "MR69",
             "CHIRON"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 30
+          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "legacy_placeholder_index": 30,
+          "citation_review": {
+            "status": "BLOCKED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "MR69 general preface, not committee's specific rationale",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "editorial_issue": "General aims of Paul VI do not directly document the particular motives for removing each Offertory formula.",
+            "suggested_replacement": "Paul VI set out general objectives for the reform in Missale Romanum, but the particular reasons for eliminating each traditional Offertory prayer require committee documents or direct testimony."
+          }
         }
       ]
     },
@@ -600,8 +1224,23 @@
             "MR69",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 31
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 31,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "MR69: three new Eucharistic Prayers",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -610,8 +1249,23 @@
             "MR69",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 32
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 32,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "MR69: stable Roman Canon and innovation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -620,8 +1274,23 @@
             "MR69",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 33
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 33,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 365",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -640,18 +1309,53 @@
             "MR62",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 34
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 34,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 2; SC 47",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "The traditional Missal does use abundant penitential, sacrificial and propitiatory vocabulary, especially in the Offertory and Canon. Its prayers explicitly refer to sins, salvation, sacrifice, the living and dead and the acceptability of the offering before God.",
           "source_ids": [
             "MR62",
-            "GIRM"
+            "GIRM",
+            "OFF1962"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 35
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 35,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 Offertory and Canon",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -660,8 +1364,23 @@
             "MR62",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 36
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 36,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 2 on propitiation and thanksgiving",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -678,30 +1397,117 @@
           "text": "That formulation is too crude to be used as a serious historical argument. Protestant observers were present around the postconciliar liturgical reform process, but presence as observers or consultants is not the same thing as possessing juridical authorship of the Roman Missal, which was promulgated by Pope Paul VI under Catholic ecclesiastical authority. Paul VI's apostolic constitution is the juridical act establishing the revised Missal.",
           "source_ids": [
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "JLG1966",
+            "SSPX_PROT"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 37
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 37,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "JLG institutional history; MR69 promulgation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "JLG1966",
+                "url": "https://jlg.org.uk/the-birth-of-jlg/"
+              },
+              {
+                "source_id": "SSPX_PROT",
+                "url": "https://sspx.au/en/traditional-mass-vs-new-mass-33860"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "Traditionalist historians are nevertheless entitled to investigate ecumenical influence on the reform. Even traditionalist-friendly accounts that emphasize Protestantizing tendencies acknowledge that the observers' actual role has to be distinguished from slogans about them “writing the Mass”; one such review notes scholarship judging their direct role comparatively limited while still treating their presence and the reformers' ecumenical aims as historically relevant.",
           "source_ids": [
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "JLG1966",
+            "DAVIES",
+            "VATICAN76",
+            "SSPX_PROT"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 38
+          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "legacy_placeholder_index": 38,
+          "citation_review": {
+            "status": "BLOCKED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "JLG eyewitness vs Vatican 1976 disclaimer vs Davies account",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "JLG1966",
+                "url": "https://jlg.org.uk/the-birth-of-jlg/"
+              },
+              {
+                "source_id": "DAVIES",
+                "url": "https://www.newliturgicalmovement.org/2017/09/a-discussion-on-liturgical-reform-in.html"
+              },
+              {
+                "source_id": "VATICAN76",
+                "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/"
+              },
+              {
+                "source_id": "SSPX_PROT",
+                "url": "https://sspx.au/en/traditional-mass-vs-new-mass-33860"
+              }
+            ],
+            "editorial_issue": "Protestant observer influence is materially contested (1976 Vatican denial versus participant accounts and Davies); present the differences explicitly.",
+            "suggested_replacement": "The participation of Protestant observers is documented, but their precise influence is disputed. The Joint Liturgical Group records attendance and exchange; a Vatican spokesman denied in 1976 that they composed the Missal, while Michael Davies reported a participant describing active discussion. Consultation and legal authorship must be distinguished."
+          }
         },
         {
           "role": "substantive",
           "text": "The stronger argument therefore examines particular textual changes and documented reform principles. If an Offertory prayer disappeared, a rubric changed or a theological emphasis became less explicit, that can be demonstrated directly from the liturgical books; invoking “six Protestants” does not itself establish that the resulting text is Protestant.",
           "source_ids": [
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "OFF1962",
+            "JLG1966"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 39
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 39,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 vs 1969 primary texts",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              },
+              {
+                "source_id": "JLG1966",
+                "url": "https://jlg.org.uk/the-birth-of-jlg/"
+              }
+            ]
+          }
         }
       ]
     },
@@ -720,28 +1526,95 @@
             "GIRM",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 40
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 40,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 299",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "That does not prove a simple historical narrative in which the primitive Church universally celebrated across a table facing the congregation until medieval clericalism reversed the priest. Liturgical orientation developed in relation to church architecture, eastward prayer, apsidal design and local practice; current legislation itself does not claim that versus populum was the universal apostolic norm.",
           "source_ids": [
             "GIRM",
-            "SC63"
+            "SC63",
+            "RAT2000",
+            "VAT2010"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 41
+          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "legacy_placeholder_index": 41,
+          "citation_review": {
+            "status": "BLOCKED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ratzinger ch.3; architectural variance needs independent corroboration",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "RAT2000",
+                "url": "https://www.ratzinger.us/The-Altar-and-the-Direction-of-Liturgical-Prayer/"
+              },
+              {
+                "source_id": "VAT2010",
+                "url": "https://www.vatican.va/news_services/liturgy/2010/documents/ns_lit_doc_20100907_mistero-celebrato_en.html"
+              }
+            ],
+            "editorial_issue": "Ancient orientation has complex disputed history; Ratzinger is a substantial argument, not independent confirmation of every basilica arrangement.",
+            "suggested_replacement": "Ratzinger defended the antiquity of eastward common prayer; early churches, however, had diverse architectural arrangements. No claim of a universal apostolic configuration can be established from GIRM 299 or Sacrosanctum Concilium alone."
+          }
         },
         {
           "role": "substantive",
           "text": "The strongest traditional defence of *ad orientem* is consequently theological rather than mythological: priest and people share a common liturgical orientation toward God. The current General Instruction itself retains the concepts of sanctuary, hierarchical ordering and the altar as the center toward which the whole assembly is directed, so Catholic worship is not reducible to priest and people visually facing one another.",
           "source_ids": [
             "GIRM",
-            "SC63"
+            "SC63",
+            "RAT2000",
+            "VAT2010"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 42
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 42,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ratzinger ch.3; GIRM 295",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "RAT2000",
+                "url": "https://www.ratzinger.us/The-Altar-and-the-Direction-of-Liturgical-Prayer/"
+              },
+              {
+                "source_id": "VAT2010",
+                "url": "https://www.vatican.va/news_services/liturgy/2010/documents/ns_lit_doc_20100907_mistero-celebrato_en.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -761,8 +1634,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 43
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 43,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 22(3)",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -772,8 +1664,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 44
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 44,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 on abuses; Francis 2021 abuses on all sides",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -783,8 +1694,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 45
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 45,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 22 and GIRM 24",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -802,10 +1732,34 @@
           "source_ids": [
             "BEN07",
             "FR21",
-            "BERTH22"
+            "BERTH22",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 46
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 46,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018, Berthe 2022",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -815,8 +1769,27 @@
             "FR21",
             "BERTH22"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 47
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 47,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 and Francis 2021",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -824,10 +1797,34 @@
           "source_ids": [
             "BEN07",
             "FR21",
-            "BERTH22"
+            "BERTH22",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 48
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 48,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018, Berthe 2022",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ]
+          }
         }
       ]
     },
@@ -844,30 +1841,95 @@
           "text": "The premise needs qualification. In France, major pastoral and intellectual difficulties clearly existed before Vatican II, including worker-priest controversies, de-Christianization in some regions and serious attempts to respond to a changing society. The Church did not enter 1962 from an untouched golden age.",
           "source_ids": [
             "BERTH22",
-            "CHIRON"
+            "CHIRON",
+            "PO1954",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 49
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 49,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CNRS worker-priest preconciliar dispute; Cuchet",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "PO1954",
+                "url": "https://histoire-sociale.cnrs.fr/la-presse-et-la-question-des-pretres-ouvriers-de-1947-a-1954-le-traitement-de-laffaire-des-pretres-ouvriers-par-la-presse-nationale-francaise-au-lendemain-de-leur-naissance-jusqua/"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "At the same time, historical research places the sharp French collapse in regular religious practice mainly in the 1960s and later rather than describing a uniform pre-1962 collapse. Guillaume Cuchet's work identifies a dramatic break around the mid-1960s, while other scholarship describes relative stability in French Sunday practice from roughly 1930 to 1960 followed by a later collapse.",
           "source_ids": [
             "BERTH22",
-            "CHIRON"
+            "CHIRON",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 50
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 50,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018 mid-1960s break; Berthe 2022",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
           "text": "That chronology does not by itself prove Vatican II or the liturgical reform caused the collapse. Temporal sequence is not sufficient evidence of causation, and historians debate interacting religious, cultural and social factors. It does, however, make the opposite slogan—“everything was already collapsing anyway”—equally inadequate.",
           "source_ids": [
             "BERTH22",
-            "CHIRON"
+            "CHIRON",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 51
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 51,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018 and Berthe 2022, no single cause",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ]
+          }
         }
       ]
     },
@@ -886,8 +1948,23 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 52
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 52,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007, Liturgical Movement's prior formation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -896,8 +1973,23 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 53
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 53,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 14,48",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -906,8 +1998,23 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 54
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 54,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007; SC 14,48",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -926,8 +2033,23 @@
             "BEN07",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 55
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 55,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: exaggerations",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -936,8 +2058,23 @@
             "BEN07",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 56
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 56,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2477–2478",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -946,8 +2083,23 @@
             "BEN07",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 57
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 57,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: loyal adherents",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -967,8 +2119,27 @@
             "FR21",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 58
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 58,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Francis 2021 vs Benedict 2007",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -978,8 +2149,27 @@
             "FR21",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 59
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 59,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: hurt faithful",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -989,8 +2179,27 @@
             "FR21",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 60
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 60,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2477–2478",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1010,8 +2219,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 61
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 61,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 21–23; Francis 2021",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -1021,8 +2249,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 62
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 62,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: accepted Council",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -1032,8 +2279,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 63
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 63,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Francis 2021: anti-Council concern",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1052,8 +2318,23 @@
             "GS65",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 64
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 64,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GS 43",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GS65",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -1062,8 +2343,25 @@
             "GS65",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 65
+          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "legacy_placeholder_index": 65,
+          "citation_review": {
+            "status": "BLOCKED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: social aspects only, not empirical politics",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GS65",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ],
+            "editorial_issue": "Empirical implication about political subculture is not established by Benedict's generic reference to social aspects.",
+            "suggested_replacement": "Some liturgical communities may also develop political and social subcultures. Whether any particular community has done so must be established with evidence rather than inferred from attachment to the older liturgy."
+          }
         },
         {
           "role": "substantive",
@@ -1072,8 +2370,23 @@
             "GS65",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 66
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 66,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GS 43,51,73–76",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GS65",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1092,8 +2405,23 @@
             "ED88",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 67
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 67,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 3–5",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -1102,8 +2430,23 @@
             "ED88",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 68
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 68,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 liturgical abuses",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -1112,8 +2455,23 @@
             "ED88",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 69
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 69,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 3–6; Benedict 2007",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1133,8 +2491,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 70
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 70,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 3–5; Francis 2021",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -1144,8 +2521,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 71
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 71,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 faithful adherents; Ecclesia Dei 6",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "unattributed_challenge",
@@ -1161,8 +2557,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 72
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 72,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 4: Tradition and Magisterium",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         },
         {
           "role": "substantive",
@@ -1172,8 +2587,27 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 73
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 73,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: two Missals and Holy See authority",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          }
         }
       ]
     }
@@ -1182,5 +2616,26 @@
     "questions": 25,
     "legacy_placeholder_count": 74,
     "new_canonical_dossiers": 0
+  },
+  "source_verification_method": "Original or documentary reprints located and inspected by topic/section; direct textual statements distinguished from interpretive claims; linked sources do not imply final theological/editorial approval.",
+  "claim_level_audit": {
+    "reviewed_on": "2026-10-08",
+    "legacy_paragraphs": 74,
+    "status_counts": {
+      "DIRECT_TEXT_ANCHORED": 37,
+      "SOURCED_INTERPRETIVE": 30,
+      "BLOCKED": 7
+    },
+    "blocked_legacy_indices": [
+      9,
+      16,
+      27,
+      30,
+      38,
+      41,
+      65
+    ],
+    "unattributed_followup_challenges": 8,
+    "publication_ready": false
   }
 }
