@@ -101,6 +101,7 @@ const SHELL_STYLE = `
   font:600 10px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.045em;color:#c9d1ca
 }
 .ao-state-cell>.ao-icon-mask{width:52px;height:52px;flex:0 0 52px;color:#d6dfd7}
+.ao-reader-shell button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .ao-state-guide{
   appearance:none;border:0;border-left:1px solid rgba(255,255,255,.035);border-right:1px solid rgba(255,255,255,.035);
   background:color-mix(in srgb,var(--ao-mass-bg) 94%,#05060a);color:#d6dfd7;display:flex;align-items:center;justify-content:center;gap:8px;
