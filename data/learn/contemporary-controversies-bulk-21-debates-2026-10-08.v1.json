@@ -1882,6 +1882,13 @@
           "scope": "Pope Francis, Nagasaki address 24 November 2019 on nuclear deterrence and possession",
           "role": "PAPAL_PRIMARY_TEXT",
           "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
+        },
+        {
+          "id": "NATO2026",
+          "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/04/20/north-atlantic-council-statement-on-the-occasion-of-the-11th-review-conference-of-the-treaty-on-the-non-proliferation-of-nuclear-weapons",
+          "scope": "North Atlantic Council, 20 April 2026 NPT statement §§5–8: deterrence claims, opposition to its delegitimization, ultimate disarmament objective",
+          "role": "IDENTIFIED_ORIGINAL_POLICY_PROPONENT",
+          "verification": "ORIGINAL_PRIMARY_PASSAGE_LOCATED_CONTRAST_VERIFIED_NOT_MORAL_PREMISES"
         }
       ],
       "paragraphs": [
@@ -1916,21 +1923,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The absolute moral norm prohibits deliberate indiscriminate targeting, whereas deterrence claims depend on strategic intention, risk and expected consequences that require empirical assessment.",
-            "fr": "La norme absolue interdit de viser délibérément sans discrimination ; les arguments de dissuasion dépendent d'intentions, risques et conséquences à examiner empiriquement."
+            "en": "The North Atlantic Council's 20 April 2026 statement defends nuclear deterrence as a means of preserving peace, preventing coercion and discouraging aggression while nuclear arms continue to exist. NATO expressly resists treating deterrence itself as illegitimate and also professes a long-term objective of verifiable nuclear elimination. This is NATO's identifiable policy position, not an independent demonstration that every declared threat, targeting plan or act is morally permissible.",
+            "fr": "Dans sa déclaration du 20 avril 2026, le Conseil de l'Atlantique Nord défend la dissuasion nucléaire comme un moyen de préserver la paix, d'empêcher la coercition et de décourager l'agression aussi longtemps que ces armes existent. L'OTAN refuse expressément de tenir la dissuasion en elle-même pour illégitime, tout en affirmant un objectif de désarmement nucléaire vérifiable. C'est la position politique identifiable de l'OTAN, non une démonstration indépendante de la licéité morale de toute menace, doctrine de ciblage ou action envisagée."
           },
           "source_ids": [
-            "GS1965"
+            "GS1965",
+            "NATO2026"
           ],
           "source_links": [
             {
               "id": "GS1965",
               "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+            },
+            {
+              "id": "NATO2026",
+              "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/04/20/north-atlantic-council-statement-on-the-occasion-of-the-11th-review-conference-of-the-treaty-on-the-non-proliferation-of-nuclear-weapons"
             }
           ],
           "attribution": {
-            "voice": "Vatican II, Gaudium et spes §§80–81, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "North Atlantic Council, official 20 April 2026 non-proliferation statement, paragraphs 5–8",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -1938,13 +1950,14 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "The consequentialist defense claims that a credible retaliatory threat might prevent aggression; critics respond that one cannot licitly intend indiscriminate civilian destruction merely to deter it. Francis's explicit denunciation of nuclear deterrence in 2019 must be included alongside the Council's earlier treatment. Whether a particular strategy entails an illicit intention, threat or risk depends on the documented targeting doctrine and command structures; a claim of peacekeeping benefit cannot independently dispense with moral constraints.",
-            "fr": "Le défenseur de la dissuasion fait valoir qu'une menace crédible de riposte pourrait prévenir l'agression ; ses critiques répliquent qu'on ne peut licitement vouloir une destruction indistincte de civils pour dissuader. La condamnation explicite de la dissuasion nucléaire prononcée par François en 2019 doit figurer à côté du traitement conciliaire antérieur. Savoir si une stratégie implique une intention, une menace ou un risque illicites dépend d'une doctrine de ciblage et de structures de commandement documentées ; l'effet pacificateur allégué ne dispense pas des contraintes morales."
+            "en": "NATO's argument depends on a predicted deterrent effect and the credibility of its threats, while Francis's 2019 Nagasaki address criticizes a peace built on fear of mutual annihilation and the possession of nuclear weapons. Neither the claim that deterrence works nor the condemnation of indiscriminate destruction alone identifies the moral object of every actual posture. A Catholic assessment must distinguish deterrence by defensive survival, announced retaliation against civilian populations, command policy, escalatory risk and good-faith arms reductions; an intended evil cannot become licit merely because its threatened execution is thought unlikely.",
+            "fr": "L'argument de l'OTAN suppose un effet dissuasif probable et la crédibilité de ses menaces ; le discours de François à Nagasaki en 2019 critique une paix fondée sur la peur de l'anéantissement réciproque et la possession d'armes nucléaires. Ni l'efficacité supposée de la dissuasion ni la seule condamnation des destructions indistinctes ne définissent l'objet moral de chaque posture réelle. Le jugement catholique distingue défense, riposte annoncée contre les civils, politique de commandement, risque d'escalade et réduction sincère des armements ; une intention mauvaise ne devient pas licite parce que son exécution paraît improbable."
           },
           "source_ids": [
             "GS1965",
             "WAR2309",
-            "NAGASAKI19"
+            "NAGASAKI19",
+            "NATO2026"
           ],
           "source_links": [
             {
@@ -1958,6 +1971,10 @@
             {
               "id": "NAGASAKI19",
               "url": "https://www.vatican.va/content/francesco/en/speeches/2019/november/documents/papa-francesco_20191124_messaggio-arminucleari-nagasaki.html"
+            },
+            {
+              "id": "NATO2026",
+              "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/04/20/north-atlantic-council-statement-on-the-occasion-of-the-11th-review-conference-of-the-treaty-on-the-non-proliferation-of-nuclear-weapons"
             }
           ],
           "attribution": null,
@@ -1994,7 +2011,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -2033,6 +2050,13 @@
           "scope": "Immortale Dei §§4, 36, 48: civil authority, political forms and religious toleration",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "AQUINAS105",
+          "url": "https://www.newadvent.org/summa/2105.htm",
+          "scope": "St Thomas Aquinas, Summa theologiae I–II q.105 a.1: best polity a mixed form of rule with single head, aristocratic office and popular participation; risk of tyranny",
+          "role": "ORIGINAL_CLASSICAL_ARGUMENT_NOT_OPPOSING_RECENT_DOCUMENT",
+          "verification": "TRANSLATED_PRIMARY_PASSAGE_LOCATED_TEXT_CONTEXT_PENDING"
         }
       ],
       "paragraphs": [
@@ -2062,12 +2086,13 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "Pius XI rejects a purely private religion with no social implications, while the conciliar declaration insists on the rights and duties of persons with respect to coercion.",
-            "fr": "Pie XI refuse de réduire la religion à la vie privée ; le Concile rappelle droits et devoirs des personnes face à la contrainte."
+            "en": "St Thomas Aquinas argues in Summa theologiae I–II, q.105, a.1 that rule by one has a strong claim to political unity, but that the best stable polity combines a single presiding head with virtuous officials and participation of the people in choosing rulers. This is a genuine classical Catholic argument for a mixed constitutional form, not a declaration that hereditary monarchy is obligatory for every Catholic nation or a direct response to Leo XIII's later teaching.",
+            "fr": "Dans la Somme théologique I–II, q.105, a.1, saint Thomas d'Aquin reconnaît à l'autorité d'un seul la capacité de favoriser l'unité politique, mais estime que le meilleur régime durable unit un chef unique, des magistrats vertueux et la participation du peuple au choix des gouvernants. Il s'agit d'un véritable argument catholique classique en faveur d'un régime mixte, non de l'obligation d'une monarchie héréditaire pour toute nation catholique ni d'une réponse directe à l'enseignement ultérieur de Léon XIII."
           },
           "source_ids": [
             "QP1925",
-            "DH1965"
+            "DH1965",
+            "AQUINAS105"
           ],
           "source_links": [
             {
@@ -2077,11 +2102,15 @@
             {
               "id": "DH1965",
               "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html"
+            },
+            {
+              "id": "AQUINAS105",
+              "url": "https://www.newadvent.org/summa/2105.htm"
             }
           ],
           "attribution": {
-            "voice": "Pius XI, Quas primas, documented magisterial position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "St Thomas Aquinas, Summa theologiae I–II q.105 a.1 (classical position, not an external critic of Leo XIII)",
+            "type": "DOCUMENTED_CLASSICAL_POSITION_NOT_DIRECT_OPPONENT",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -2089,12 +2118,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A traditional concern is that formally non-confessional public law can marginalize the true religion; an opposing concern is that confessional systems may coerce conscience. The documents address real, different hazards, and an assessment requires precise legislation rather than romanticizing a regime name.",
-            "fr": "Une critique traditionnelle craint qu'un droit public non confessionnel marginalise la vraie religion ; une critique inverse craint la contrainte des consciences. Les textes répondent à des dangers distincts : il faut examiner les lois, non idéaliser le nom du régime."
+            "en": "Aquinas's preference for a mixed government qualifies simplistic appeals to kingship; its shared administration and popular selection seek to restrain tyranny. Leo XIII's Immortale Dei leaves multiple civil constitutional forms legitimate when they serve justice and the common good. Neither text requires Catholics to identify Christ's social kingship with a single dynastic form, and neither removes a polity's public obligations toward God and natural justice. Specific institutional systems must therefore be judged by the goods and limits of the actual laws and authorities, not by titles.",
+            "fr": "La préférence de saint Thomas pour un régime mixte corrige les appels simplistes à la royauté : administration partagée et choix populaire des gouvernants cherchent à limiter la tyrannie. Immortale Dei de Léon XIII admet plusieurs formes constitutionnelles civiles lorsqu'elles servent la justice et le bien commun. Aucun de ces textes n'identifie nécessairement la royauté sociale du Christ à une forme dynastique unique ; aucun non plus ne supprime les devoirs publics envers Dieu et la justice naturelle. Il faut donc juger les institutions à partir de leurs lois et de leurs limites réelles, non de leur titre."
           },
           "source_ids": [
             "QP1925",
-            "DH1965"
+            "DH1965",
+            "AQUINAS105"
           ],
           "source_links": [
             {
@@ -2104,6 +2134,10 @@
             {
               "id": "DH1965",
               "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html"
+            },
+            {
+              "id": "AQUINAS105",
+              "url": "https://www.newadvent.org/summa/2105.htm"
             }
           ],
           "attribution": null,
@@ -2118,7 +2152,8 @@
           "source_ids": [
             "QP1925",
             "DH1965",
-            "IMM1885"
+            "IMM1885",
+            "AQUINAS105"
           ],
           "source_links": [
             {
@@ -2132,6 +2167,10 @@
             {
               "id": "IMM1885",
               "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html"
+            },
+            {
+              "id": "AQUINAS105",
+              "url": "https://www.newadvent.org/summa/2105.htm"
             }
           ],
           "attribution": null,
@@ -2147,7 +2186,8 @@
         "original_historical_legacy_question_recovered": false,
         "native_french_signoff": false,
         "substantive_claim_audit_finished": false,
-        "published": false
+        "published": false,
+        "documented_nonopponent_classical_argument": true
       }
     },
     {
@@ -2468,8 +2508,8 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The doctrinal norm obliges charitable and just interpretation of another's conduct where facts are not established, without forbidding critical investigation into real wrongdoing.",
-            "fr": "La norme morale oblige à interpréter avec justice et charité quand les faits ne sont pas établis, sans interdire l'enquête sur de véritables fautes."
+            "en": "A documented conspiracy is a concerted action supported by evidence about identifiable people, communication, motives and acts; secrecy or abuse can occur and responsible investigation is permissible. But a generic allegation that unspecified institutions hide the truth names no identifiable claimant or testable proposition. Consequently this paragraph states an evidentiary distinction, not a quotation or an argument attributed to an imagined conspiracist author.",
+            "fr": "Un complot documenté suppose une action concertée établie par des preuves portant sur des personnes identifiables, leurs échanges, leurs motifs et leurs actes ; une action clandestine ou un abus peut exister et faire l'objet d'une enquête légitime. Mais affirmer sans précision que des institutions dissimulent la vérité n'identifie ni auteur de l'allégation ni proposition vérifiable. Ce passage expose donc une distinction probatoire, non la citation ou l'argument prêté à un théoricien imaginaire."
           },
           "source_ids": [
             "TRUTH2477"
@@ -2481,8 +2521,8 @@
             }
           ],
           "attribution": {
-            "voice": "Catechism §2477, official moral norm",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Editorial evidence standard (no case-specific alleged conspirator or proponent identified)",
+            "type": "EDITORIAL_METHOD_NOT_ATTRIBUTED_OPPONENT",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -2490,8 +2530,8 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A critic may insist that powerful groups can conceal genuine collusion. That possibility is real in principle but supplies no warrant for specific accusations without primary records, chronology, named acts and scrutiny of alternate explanations.",
-            "fr": "Un critique rappelle que des groupes puissants peuvent dissimuler des collusions réelles. Cette possibilité ne justifie aucune accusation précise sans archives primaires, chronologie, actes identifiés et examen des explications concurrentes."
+            "en": "Before publishing any named accusation, identify the alleged event, its original records, dates, actors and independent corroboration; distinguish direct proof from inference and compare alternative explanations. The Catechism's prohibition of rash judgment, detraction and calumny restrains both genuine investigations and indiscriminate charges. Without an identified claim there is no meaningful opposing doctrine to refute and no justification for asserting a conspiracy, especially against a whole religious or ethnic group.",
+            "fr": "Avant de publier une accusation nominative, il faut préciser l'événement allégué, les documents primaires, les dates, les acteurs et les confirmations indépendantes ; distinguer les preuves directes des déductions et confronter les explications concurrentes. L'interdiction catéchétique du jugement téméraire, de la médisance et de la calomnie limite autant les enquêtes sérieuses que les accusations indistinctes. En l'absence d'une thèse définie, il n'existe ni doctrine adverse à réfuter ni justification pour affirmer l'existence d'un complot, notamment contre un groupe religieux ou ethnique entier."
           },
           "source_ids": [
             "TRUTH2477"
@@ -2533,7 +2573,8 @@
         "original_historical_legacy_question_recovered": false,
         "native_french_signoff": false,
         "substantive_claim_audit_finished": false,
-        "published": false
+        "published": false,
+        "case_specific_proponent_not_applicable": true
       }
     },
     {
@@ -3074,6 +3115,13 @@
           "scope": "Original official French translation",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "LOISY1904",
+          "url": "https://fr.wikisource.org/wiki/L%E2%80%99%C3%89vangile_et_l%E2%80%99%C3%89glise/V",
+          "scope": "Alfred Loisy, L’Évangile et l’Église, 1904 edition, ch. V Le dogme chrétien, historical development, Greek conceptual formulations and evolving expressions of faith",
+          "role": "IDENTIFIED_ORIGINAL_HISTORICAL_AUTHOR",
+          "verification": "1904_EDITION_ORIGINAL_PASSAGE_LOCATED_NOT_VERBATIM_AUTHOR_COLLATION"
         }
       ],
       "paragraphs": [
@@ -3103,12 +3151,13 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The encyclical's doctrinal case insists that revealed truth and dogmatic propositions cannot be made mere functions of the believer's evolving subjective consciousness.",
-            "fr": "L'encyclique affirme que la vérité révélée et le dogme ne peuvent devenir de simples fonctions de la conscience subjective changeante du croyant."
+            "en": "In the 1904 edition of L'Évangile et l'Église, chapter V, Alfred Loisy argues from the history of Christianity that the Church's dogmatic formulations developed in interaction with apostolic faith and Greek intellectual categories. Against Harnack, he does not merely portray all dogmas as alien pagan inventions; he defends historical connections between later Christian doctrine and the Gospel while stressing ongoing doctrinal evolution. His published position raises a concrete question about the boundary between legitimate development of expression and transformation of the faith's objective content.",
+            "fr": "Dans l'édition de 1904 de L'Évangile et l'Église, chapitre V, Alfred Loisy soutient, à partir de l'histoire du christianisme, que les formulations dogmatiques se sont développées par la rencontre de la foi apostolique et des catégories intellectuelles grecques. Contre Harnack, il ne présente pas simplement tous les dogmes comme des inventions païennes étrangères à l'Évangile : il défend leur enracinement historique dans la foi primitive, tout en insistant sur l'évolution permanente de la doctrine. Sa position publiée soulève ainsi la question précise de la limite entre développement légitime de l'expression et transformation du contenu objectif de la foi."
           },
           "source_ids": [
             "PAS1907",
-            "PAS1907FR"
+            "PAS1907FR",
+            "LOISY1904"
           ],
           "source_links": [
             {
@@ -3118,11 +3167,15 @@
             {
               "id": "PAS1907FR",
               "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"
+            },
+            {
+              "id": "LOISY1904",
+              "url": "https://fr.wikisource.org/wiki/L%E2%80%99%C3%89vangile_et_l%E2%80%99%C3%89glise/V"
             }
           ],
           "attribution": {
-            "voice": "Pope St Pius X, Pascendi (documented magisterial thesis)",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Alfred Loisy, L’Évangile et l’Église, 1904 edition, ch. V, author’s original historical-development argument",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -3130,12 +3183,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A critic can identify genuinely analogous contemporary theses only by presenting the actual proponent's words and specifying which condemned proposition they reproduce. Treating the label 'modernist' as an all-purpose insult obscures Pius X's precise arguments.",
-            "fr": "Un critique ne peut identifier des thèses contemporaines analogues qu'en citant les paroles de leur auteur et en précisant la proposition condamnée qu'elles reproduisent. Employer « moderniste » comme injure universelle obscurcit la précision de Pie X."
+            "en": "Loisy's historical observation that dogmatic terminology develops is not, by itself, identical to every philosophical thesis condemned by Pius X in Pascendi. The critical dividing line is whether the Church unfolds the same divine revelation more precisely, or whether evolving religious consciousness becomes the ultimate source and measure of dogma. Pascendi rejects the latter; Loisy's particular theses must be examined individually in his own French text instead of inferred wholesale from the later papal synthesis of 'Modernism'.",
+            "fr": "Le constat historique de Loisy selon lequel la terminologie dogmatique se développe ne s'identifie pas, à lui seul, à toutes les propositions philosophiques condamnées par Pie X dans Pascendi. La distinction décisive est entre l'explicitation plus précise d'une même révélation divine et une conscience religieuse changeante devenue source et mesure ultime du dogme. Pascendi condamne la seconde conception ; chaque thèse de Loisy doit être examinée dans son texte français, et non déduite globalement de la synthèse pontificale postérieure appelée « modernisme »."
           },
           "source_ids": [
             "PAS1907",
-            "PAS1907FR"
+            "PAS1907FR",
+            "LOISY1904"
           ],
           "source_links": [
             {
@@ -3145,6 +3199,10 @@
             {
               "id": "PAS1907FR",
               "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"
+            },
+            {
+              "id": "LOISY1904",
+              "url": "https://fr.wikisource.org/wiki/L%E2%80%99%C3%89vangile_et_l%E2%80%99%C3%89glise/V"
             }
           ],
           "attribution": null,
@@ -3158,7 +3216,8 @@
           },
           "source_ids": [
             "PAS1907",
-            "PAS1907FR"
+            "PAS1907FR",
+            "LOISY1904"
           ],
           "source_links": [
             {
@@ -3168,6 +3227,10 @@
             {
               "id": "PAS1907FR",
               "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"
+            },
+            {
+              "id": "LOISY1904",
+              "url": "https://fr.wikisource.org/wiki/L%E2%80%99%C3%89vangile_et_l%E2%80%99%C3%89glise/V"
             }
           ],
           "attribution": null,
@@ -3176,7 +3239,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -3191,9 +3254,9 @@
     "case_count": 21,
     "paragraphs": 84,
     "fr_paragraphs": 84,
-    "primary_link_instances": 194,
-    "externally_named_opposing_position_cases": 17,
-    "documentary_and_editorial_position_cases": 4,
+    "primary_link_instances": 202,
+    "externally_named_opposing_position_cases": 19,
+    "documentary_and_editorial_position_cases": 2,
     "canonical_dossiers_added": 0
   },
   "policy": [
@@ -3205,7 +3268,8 @@
     "2026-10-08 original-proponent batch: named critics are only attributed when the linked original source has been located; links prove the author's argument, not the theological truth of the criticism; claim-level review remains open.",
     "The SSPX canonical-status entry must not regress to the pre-July-2026 2009–2017 position: original DDF decree and explanatory note plus disputed Society recourse must remain attached; follow-up canonical rulings may supersede this state.",
     "2026-10-09: original positions from UGLE, Humanity+ and theologian Matthew Ramage added as expressly scoped arguments, not assumed opposition to entire magisterial documents nor proof of empirical claims; claim-by-claim review remains open.",
-    "2026-10-09 second actual-proponent batch: Marx and Engels, Behe, BioLogos, and Dorothy Day cited to their own statements; their factual or policy claims are not treated as independently proven by proponent sources."
+    "2026-10-09 second actual-proponent batch: Marx and Engels, Behe, BioLogos, and Dorothy Day cited to their own statements; their factual or policy claims are not treated as independently proven by proponent sources.",
+    "2026-10-09 source audit: NATO 2026 and original 1904 Loisy arguments cited with precise scope; Aquinas is a classical Catholic voice, NOT an external reply to Leo XIII; general conspiracy methodology is not converted into a fictitious named debate."
   ],
   "public_release": false
 }
