@@ -25,7 +25,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.mass","learn.serve_mass.responses","learn.scapular","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],
+  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],
   "Formation learning-intent layout changed unexpectedly",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
@@ -61,6 +61,14 @@ assert.doesNotMatch(presentation,/id:"today\.gospel"/,"Today’s Gospel returned
 assert.match(owner,/"today\.gospel"/,"Today’s Gospel compatibility route was removed rather than hidden");
 assert.match(presentation,/Spiritual & Moral Life/);
 assert.match(presentation,/Sacraments & Life Events/);
+assert.match(presentation,/data-ao-learn-family/,"Formation landing does not expose learning-intent doors");
+assert.match(presentation,/aoLearnFamilyGrid/,"Formation family-door grid is missing");
+assert.match(owner,/state\.family/,"Formation owner does not retain family navigation state");
+assert.match(owner,/familyId:state\.family/,"Formation presentation is not driven by family state");
+const spiritualSection=LEARN_LAYOUT.sections.find(section=>section.id==="spiritual-moral");
+const liturgySection=LEARN_LAYOUT.sections.find(section=>section.id==="liturgy-tradition");
+assert.ok(spiritualSection?.items.some(item=>item.id==="learn.scapular"),"Brown Scapular is not classified under Spiritual & Moral Life");
+assert.equal(liturgySection?.items.some(item=>item.id==="learn.scapular"),false,"Brown Scapular remains misclassified under Liturgy & Tradition");
 assert.match(presentation,/type:"practice".*learn\.serve_mass\.responses|id:"learn\.serve_mass\.responses",type:"practice"/s,"Serve Low Mass is not classified as practice");
 assert.match(owner,/modular-learn-v1/);
 assert.match(owner,/aoLearnRouteOwner/);

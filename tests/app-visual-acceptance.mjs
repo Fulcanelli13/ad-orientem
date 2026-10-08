@@ -1123,7 +1123,7 @@ try{
     heroTitle:document.querySelector("#ao-learn-modular-root .aoLearnModHero h1")?.textContent?.trim()??"",
     intro:document.querySelector("#ao-learn-modular-root .aoLearnModHero p")?.textContent?.trim()??"",
     context:document.querySelector("#ao-learn-modular-root .aoLearnModContext")?.textContent?.trim()??"",
-    sectionTitles:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModSectionHead h2")].map(x=>x.textContent?.trim()??""),
+    families:[...document.querySelectorAll("#ao-learn-modular-root [data-ao-learn-family]")].map(x=>x.dataset.aoLearnFamily),
     modules:[...document.querySelectorAll("#ao-learn-modular-root [data-ao-learn-module]")].map(x=>x.dataset.aoLearnModule),
     featured:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModCard.featured [data-ao-learn-module]")].map(x=>x.dataset.aoLearnModule),
     donorNav:document.querySelectorAll("#ao-learn-modular-root [data-v37-domain],#ao-learn-modular-root [data-v37-open],#ao-learn-modular-root .aoV37DomainDock").length,
@@ -1136,23 +1136,31 @@ try{
   assert.equal(learnParity.heroTitle,"Formation","Formation hero no longer preserves the locked A2 title");
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
-  assert.deepEqual(learnParity.sectionTitles,["Foundations","Spiritual & Moral Life","Liturgy & Tradition","Sacraments & Life Events","Latin","Reference"],"Formation learning-intent hierarchy diverged");
-  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.mass","learn.serve_mass.responses","learn.scapular","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],"Formation visible launcher order diverged from the learning-intent layout");
+  assert.deepEqual(learnParity.families,["foundations","spiritual-moral","liturgy-tradition","sacraments-life","latin","reference"],"Formation learning-intent doors diverged");
+  assert.deepEqual(learnParity.modules,[],"Formation landing regressed to exposing all module launchers at once");
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='today.saint']").count(),0,"Saint of the Day remained duplicated in Learn");
-  assert.deepEqual(learnParity.featured,["learn.catechism.daily","learn.mass"],"Learn featured-card hierarchy diverged from the canonical Formation layout");
+  assert.deepEqual(learnParity.featured,[],"Featured module cards should only appear inside a selected Formation family");
   assert.equal(learnParity.donorNav,0,"historical V37 navigation leaked into modular Learn");
   assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
   assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
   assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
-  assert.equal(learnParity.cards.length,15,"Formation should expose 15 learning launchers; Today’s Gospel remains owned outside Formation");
+  assert.equal(learnParity.cards.length,6,"Formation landing should expose exactly six learning-intent doors");
   for(const card of learnParity.cards){assert.ok(card.w>300,"Learn card collapsed below phone-readable width");assert.ok(card.h>=90,"Learn card collapsed below approved touch/readability height");}
+  await page.locator("#ao-learn-modular-root [data-ao-learn-family='spiritual-moral']").click();
+  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="spiritual-moral",null,{timeout:5000});
   const spiritualIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.spiritual_life'] .aoLearnModIcon[data-ao-asset-id='ao-refined-spiritual-life']");
   assert.equal(await spiritualIcon.count(),1,"Spiritual Life is missing its canonical formation icon");
+  await page.locator("#ao-learn-modular-root [data-ao-learn-home]").click();
+  await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
+  await page.locator("#ao-learn-modular-root [data-ao-learn-family='foundations']").click();
+  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="foundations",null,{timeout:5000});
   const catechismIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.catechism'] .aoLearnModIcon[data-ao-asset-id='ao-module-catechism']");
   assert.equal(await catechismIcon.count(),1,"Traditional Catechism is missing its canonical icon");
   assert.equal(await catechismIcon.getAttribute("data-ao-asset-renderer"),"mask","Traditional Catechism did not use the canonical file-backed mask renderer");
   const catechismMask=await catechismIcon.evaluate(el=>getComputedStyle(el).webkitMaskImage||getComputedStyle(el).maskImage||"");
   assert.match(catechismMask,/ao-module-catechism\.png/,"Traditional Catechism canonical mask did not resolve to the frozen PNG");
+  await page.locator("#ao-learn-modular-root [data-ao-learn-home]").click();
+  await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
   const learnFx=await page.evaluate(()=>({
     hero:document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("ao-learn-modular-root")?.dataset?.aoPresentationFxArtScan??null,
@@ -1174,6 +1182,16 @@ try{
   assert.equal(Math.round(learnDesign.topControl.h),44,"Learn top control height diverged");
   assert.equal(learnDesign.topControl.r,"999px","Learn top control lost canonical circular geometry");
   await shot("04-learn");
+  const openLearnFamily=async id=>{
+    const current=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().family??null);
+    if(current===id)return;
+    if(current){
+      await page.locator("#ao-learn-modular-root [data-ao-learn-home]").click();
+      await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
+    }
+    await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).click();
+    await page.waitForFunction(expected=>globalThis.AO_LEARN_APP_V1?.status?.().family===expected,id,{timeout:5000});
+  };
 
   const hiddenSaintAlias=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.openModule?.("today.saint"));
   assert.equal(hiddenSaintAlias,true,"Hidden today.saint compatibility route could not be opened from Learn owner");
@@ -1189,6 +1207,8 @@ try{
     ["learn.serve_mass.responses","04d-learn-low-mass-responses"],
     ["learn.scapular","04e-learn-scapular"],
   ]){
+    const family=route==="learn.scapular"?"spiritual-moral":route==="learn.serve_mass.responses"?"liturgy-tradition":"sacraments-life";
+    await openLearnFamily(family);
     const opened=await page.evaluate(route=>globalThis.AO_LEARN_APP_V1?.openModule?.(route),route);
     assert.equal(opened,true,route+" could not be opened from modular Learn");
     await page.waitForFunction(route=>globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().open===true&&globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().route===route,route,{timeout:5000});
