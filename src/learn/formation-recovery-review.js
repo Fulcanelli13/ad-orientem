@@ -8,6 +8,7 @@ const PACKS = Object.freeze([
   ["Sedevacantism","sedevacantism-preconciliar-debates.v1.json"],
   ["Contemporary I","contemporary-controversies-source-pack.v1.json"],
   ["Contemporary II","contemporary-controversies-batch2-source-pack.v1.json"],
+  ["Contemporary III · drafted","contemporary-controversies-bulk-21-debates-2026-10-08.v1.json"],
   ["Traditional Mass I","traditional-mass-objections-026-050-recovered.v1.json"],
   ["Traditional Mass II","traditional-mass-objections-051-065-reconciled.v1.json"],
   ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
@@ -99,6 +100,21 @@ export function buildRecoveryReviewRows(packs) {
   return out;
 }
 
+export function buildContemporaryDraftRows(packs) {
+  const doc=packs.find(x=>x.label==="Contemporary III · drafted")?.doc;
+  if(!doc || doc.cases?.length!==21 || doc.public_release!==false)
+    throw new Error("New contemporary draft corpus missing or unexpectedly approved");
+  const ids=new Set();
+  return doc.cases.map(raw=>{
+    if(ids.has(raw.id) || !raw.canonical_owner || raw.paragraphs?.length!==4)
+      throw new Error("Invalid new contemporary draft record: "+raw.id);
+    ids.add(raw.id);
+    return {id:raw.id,owner:raw.canonical_owner,title_en:raw.title.en,title_fr:raw.title.fr,
+      bank:"Contemporary III · drafted",raw,content:raw,qaStatus:"NEW_UNPUBLISHED_DRAFT",
+      sourceRegistry:new Map(raw.source_registry.map(x=>[x.id,{...x,title:x.scope||x.id}]))};
+  });
+}
+
 export function buildRecoveryDossierCoverage(rows,packs) {
   const apo=packs.find(p=>p.label==="Apologetics dossiers")?.doc?.dossiers||[];
   const crisis=packs.find(p=>p.label==="Church Crisis dossiers")?.doc?.dossiers||[];
@@ -172,7 +188,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       (d.research.length?'<div class="rrList">'+d.research.map(x=>
         '<button type="button" data-rr-id="'+esc(x.id)+'"><small>'+esc(x.id)+' · '+esc(x.bank)+'</small>'+
         esc(ttl(x))+'</button>').join("")+'</div>':
-        '<p class="rrMuted">'+esc(pick(win,"No direct entry in the recovered 102-record corpus. Other research may exist outside this source bank.",
+        '<p class="rrMuted">'+esc(pick(win,"No direct research entry in the recovered 102 records or the 21 new unpublished controversy drafts. Other research may exist elsewhere.",
         "Aucune entrée directe dans les 102 dossiers récupérés. D’autres recherches peuvent exister ailleurs."))+'</p>');
   };
   const listRows=()=>{
@@ -192,11 +208,11 @@ export function createFormationRecoveryReview(win=globalThis) {
       "Research links are not an approval of the text. Empty dossiers here mean no record in this recovered pack, not that the question was never researched.",
       "Ces liens ne valent pas approbation. Un dossier vide ici signifie seulement qu’aucune entrée de cette collection n’y est associée."))+'</p>'+
       '<div class="rrMuted">'+esc(state.dossiers.filter(x=>x.research.length).length)+' / 141 '+
-      esc(pick(win,"dossiers have a direct source-pack entry; 5 records are owned elsewhere.",
-      "dossiers ont une entrée directe ; 5 recherches appartiennent à d’autres modules."))+'</div>'+
+      esc(pick(win,"dossiers have editorial research drafts; 5 legacy records belong elsewhere.",
+      "dossiers ont un projet de recherche ; 5 archives relèvent d’autres modules."))+'</div>'+
       '<div class="rrTabs" role="group" aria-label="Review mode">'+
       [['dossiers',pick(win,"Dossiers (141)","Dossiers (141)")],
-       ['records',pick(win,"Research (102)","Recherches (102)")]].map(([value,label])=>
+       ['records',pick(win,"Research (123)","Recherches (102)")]].map(([value,label])=>
        '<button type="button" data-rr-mode="'+value+'" aria-pressed="'+(state.mode===value)+'">'+esc(label)+'</button>').join("")+
       '</div>'+
       '<div class="rrFields"><input data-rr-search type="search" value="'+esc(state.query)+
@@ -276,7 +292,7 @@ export function createFormationRecoveryReview(win=globalThis) {
         if(!response.ok)throw new Error(file+" ("+response.status+")");
         return {label,doc:await response.json()};
       }));
-      state.rows=buildRecoveryReviewRows(docs);
+      state.rows=[...buildRecoveryReviewRows(docs),...buildContemporaryDraftRows(docs)];
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
       state.external=coverage.external;
@@ -292,7 +308,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     el?.remove?.();state.open=false;state.view="list";state.id=null;state.dossierId=null;return true;
   }
   function status(){return Object.freeze({version:RECOVERY_REVIEW_VERSION,open:state.open,
-    researchRecords:state.rows.length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
+    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
   return Object.freeze({open,close,paint,status});
 }
 export function installFormationRecoveryReview(win=globalThis) {
