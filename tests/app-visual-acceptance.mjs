@@ -1102,7 +1102,8 @@ try{
       const m=document.querySelector("#aoPray435930 .aoP435930Mount");
       return m?.dataset?.aoPrayView==="traditional-pray"&&m?.dataset?.aoTraditionalPrayRoute===route;
     },route,{timeout:5000});
-    assert.equal(await page.locator("#aoPray435930 [data-tp381-close]").count(),1,route+" lost the donor Close control");
+    assert.equal(await page.locator("#aoPray435930 [data-tp381-home]").count(),1,route+" lost explicit global Home");
+    assert.equal(await page.locator("#aoPray435930 [data-tp381-close]").count(),0,route+" regressed to ambiguous Close");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Hero").count(),0,route+" regained a non-donor hero card");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,route+" lost its v38.1 donor introduction");
     if(route==="pray.morning_evening"){
@@ -1122,6 +1123,8 @@ try{
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
   await waitForFxSettled();
   await assertHomeHidden("Learn");
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-back]").count(),1,"Formation root lost hierarchical Back");
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-home]").count(),1,"Formation root lost explicit global Home");
   const learnParity=await page.evaluate(()=>({
     heroTitles:document.querySelectorAll("#ao-learn-modular-root .aoLearnModHero h1").length,
     heroTitle:document.querySelector("#ao-learn-modular-root .aoLearnModHero h1")?.textContent?.trim()??"",
@@ -1154,7 +1157,7 @@ try{
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="spiritual-moral",null,{timeout:5000});
   const spiritualIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.spiritual_life'] .aoLearnModIcon[data-ao-asset-id='ao-refined-spiritual-life']");
   assert.equal(await spiritualIcon.count(),1,"Spiritual Life is missing its canonical formation icon");
-  await page.locator("#ao-learn-modular-root [data-ao-learn-home]").click();
+  await page.locator("#ao-learn-modular-root [data-ao-learn-back]").click();
   await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
   await page.locator("#ao-learn-modular-root [data-ao-learn-family='foundations']").click();
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="foundations",null,{timeout:5000});
@@ -1163,7 +1166,7 @@ try{
   assert.equal(await catechismIcon.getAttribute("data-ao-asset-renderer"),"mask","Traditional Catechism did not use the canonical file-backed mask renderer");
   const catechismMask=await catechismIcon.evaluate(el=>getComputedStyle(el).webkitMaskImage||getComputedStyle(el).maskImage||"");
   assert.match(catechismMask,/ao-module-catechism\.png/,"Traditional Catechism canonical mask did not resolve to the frozen PNG");
-  await page.locator("#ao-learn-modular-root [data-ao-learn-home]").click();
+  await page.locator("#ao-learn-modular-root [data-ao-learn-back]").click();
   await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
   const learnFx=await page.evaluate(()=>({
     hero:document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero??null,
@@ -1190,7 +1193,7 @@ try{
     const current=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().family??null);
     if(current===id)return;
     if(current){
-      await page.locator("#ao-learn-modular-root [data-ao-learn-home]").click();
+      await page.locator("#ao-learn-modular-root [data-ao-learn-back]").click();
       await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
     }
     await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).click();
@@ -1217,7 +1220,8 @@ try{
     assert.equal(opened,true,route+" could not be opened from modular Learn");
     await page.waitForFunction(route=>globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().open===true&&globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().route===route,route,{timeout:5000});
     assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").count(),1,route+" lost donor Back");
-    assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").count(),1,route+" lost donor Close");
+    assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-home]").count(),1,route+" lost explicit global Home");
+    assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").count(),0,route+" regressed to ambiguous Close");
     assert.equal((await page.locator("#ao-learn-traditional-root .aoLearnTradTop small").textContent())?.trim(),"Formation",route+" lost the shared Formation shell identity");
     const guideDisclosure=await page.evaluate(()=>{
       const cards=[...document.querySelectorAll("#ao-learn-traditional-root details.aoLearnTradCard")];
@@ -1226,7 +1230,7 @@ try{
     if(guideDisclosure.cards>0)assert.equal(guideDisclosure.open,1,route+" should expose exactly one guide section by default");
 
     await shot(name);
-    await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").click();
+    await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").click();
     await page.waitForFunction(()=>!document.getElementById("ao-learn-traditional-root")&&globalThis.AO_LEARN_APP_V1?.status?.().child===null,null,{timeout:5000});
     await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
   }
