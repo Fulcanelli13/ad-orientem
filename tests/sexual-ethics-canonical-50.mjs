@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {CSE_CANONICAL_VERSION,CSE_CANONICAL_DOSSIERS,CSE_CANONICAL_FAMILIES,CSE_CANONICAL_DOSSIER_MAP,CSE_QUESTION_OWNER_MAP} from "../src/learn/sexual-ethics-data/canonical.js";
 import {CSE_QUESTION_MAP,CSE_QUESTIONS} from "../src/learn/sexual-ethics-data/index.js";
 import {createSexualEthicsRuntime,SEXUAL_ETHICS_ROOT_ID} from "../src/learn/sexual-ethics.js";
+import {CSE_DEBATE_POSITION_REFS,CSE_POSITION_SOURCE_IDS} from "../src/learn/sexual-ethics-data/provenance.js";
 
 const registry=JSON.parse(readFileSync("data/learn/content-ownership-registry.v1.json","utf8"));
 const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-audit.v1.json","utf8"));
@@ -15,6 +16,15 @@ assert.equal(audit.summary.remaining_full_passage_review,55);
 assert.equal(audit.summary.unmapped_opponent_sources,0);
 assert.equal(audit.summary.missing_canonical_urls,0);
 assert.equal(audit.cases.filter(c=>c.opponent_provenance.length===0).length,0);
+assert.deepEqual(audit.cases.map(c=>c.id),[...CSE_POSITION_SOURCE_IDS]);
+for(const row of audit.cases){
+  const refs=CSE_DEBATE_POSITION_REFS[row.id];
+  assert.deepEqual(row.opponent_provenance.map(x=>[x.source_id,x.locator]),refs.map(x=>[...x]),"source provenance changed: "+row.id);
+  for(const source of row.opponent_provenance)assert.match(source.url,/^https:\/\//);
+}
+assert.equal(audit.summary.selected_primary_position_checks,23);
+assert.equal(audit.summary.book_catalog_preview_cases,33);
+assert.equal(audit.summary.remaining_full_passage_review,55);
 
 const owned=[];
 for(const [index,dossier] of CSE_CANONICAL_DOSSIERS.entries()){
@@ -84,6 +94,18 @@ assert.equal(api.back(),true);
 assert.equal(api.status().view,"dossier");
 assert.equal(api.openDossier("SEX-CORE-02"),true);
 assert.match(html(),/CSE006/);
+assert.equal(api.back(),true);
+assert.equal(api.status().view,"family");
+assert.equal(api.back(),true);
+assert.equal(api.status().view,"sections");
+const inputEvent=en._listeners.get("input");
+assert.equal(typeof inputEvent,"function");
+inputEvent({target:{closest(){return {value:"flirting while engaged"};}}});
+assert.match(html(),/CSE039/,"global 150-question alias search");
+assert.equal(api.openQuestion("CSE039"),true);
+assert.equal(api.back(),true);
+assert.equal(api.status().view,"sections");
+assert.match(html(),/CSE039/,"back restores search results");
 assert.equal(api.close(),true);
 assert.equal(api.status().open,false);
 
