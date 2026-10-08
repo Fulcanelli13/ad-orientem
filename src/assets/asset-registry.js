@@ -1072,6 +1072,14 @@ export const AO_CANONICAL_EXTENSION_ASSETS=Object.freeze({
 });
 
 export const AO_RUNTIME_ASSET_RECOVERIES=Object.freeze({
+  // The frozen V4 UI.SETTINGS PNG is not shipped in this repository.
+  // Reuse the shipped V4 Settings navigation master rather than loading a 404.
+  "ao-ui-settings": Object.freeze({
+    "assetId": "ao-ui-settings",
+    "path": "assets/active/navigation/ao-nav-settings.png",
+    "sourcePath": "assets/active/ui/ao-ui-settings.png",
+    "derivation": "runtime alias to the shipped frozen V4 Settings gear; original semantic source metadata retained"
+  }),
   "ao-live-blessing": Object.freeze({
     "assetId": "ao-live-blessing",
     "path": "assets/recovered/ao-live-blessing.svg",
