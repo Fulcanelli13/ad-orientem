@@ -2,11 +2,19 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
 import { directChildAnchor } from "../src/pray/dom-anchor.js";
+import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pray/devotional-ux-contract.js";
 
 const prayers=PRAY_CANONICAL_DATA_V435930?.prayers??{};
 assert.equal(Object.keys(prayers).length,48,"locked v43.59.30 corpus must contain exactly 48 prayer records");
 assert.ok(prayers.sacrament_act_of_contrition,"Act of Contrition missing from canonical PRAY corpus");
 assert.ok(prayers.litany_loreto_1962,"1962 Litany of Loreto missing from canonical PRAY corpus");
+assert.equal(DEVOTIONAL_UX_CONTRACT_VERSION,"devotional-ux-v1");
+const devotionalUx=devotionalUxContract();
+assert.match(devotionalUx.rules.back,/immediate parent/i);
+assert.match(devotionalUx.rules.home,/never an alias for Back/i);
+assert.match(devotionalUx.rules.mobileAxes,/Vertical.*horizontal/i);
+assert.ok(devotionalUx.groupCapable.includes("pray.stations"));
+assert.ok(devotionalUx.swipeCapable.includes("programme.first_saturday"));
 
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 const coherence=readFileSync("src/pray/presentation-coherence.js","utf8");
@@ -30,7 +38,7 @@ assert.match(coherence,/aoPrayerBookRoot/);
 assert.match(coherence,/aoPray435930/);
 assert.match(styles,/ao-v435930-pray-audit-style/);
 assert.match(styles,/ao-v435930-pray-coherence-style/);
-for(const id of ["ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-search"]){
+for(const id of ["ao-ui-back","ao-nav-home","ao-ui-next","ao-ui-search"]){
   assert.match(runtime,new RegExp(id),"PRAY lost canonical V4 control: "+id);
 }
 assert.match(runtime,/canonicalAssetIdForPrayRoute/,"PRAY module cards no longer resolve through the canonical route asset registry");
@@ -53,8 +61,10 @@ assert.match(styles,/--ao347-focus-opacity/,"Stations v3.4.10 focus energy varia
 const runtimeWithoutDonorOverviewClose=runtime.replace(/<button[^>]*data-r23-overview-close[^>]*>×<\/button>/g,"");
 assert.doesNotMatch(runtimeWithoutDonorOverviewClose,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls outside the exact donor Rosary overview close control");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
-assert.match(runtime,/class="aoP435930Close" data-p435930-close/,"PRAY header lost the donor Close control");
-assert.doesNotMatch(runtime,/const trailing=view==='home'/,"PRAY hub must not suppress the donor Close control");
+assert.match(runtime,/class="aoP435930Home" data-p435930-home/,"PRAY header lost the explicit global Home control");
+assert.doesNotMatch(runtime,/class="aoP435930Close" data-p435930-close/,"PRAY header regressed to ambiguous Close instead of Home");
+assert.match(runtime,/function backToParent\(\)/,"PRAY lost hierarchical Back semantics");
+assert.match(runtime,/function goGlobalHome\(\)/,"PRAY lost explicit global Home semantics");
 assert.doesNotMatch(runtime,/aoP435930HeadSpacer/,"obsolete single-exit spacer returned to the PRAY header");
 assert.match(runtime,/normalizeRosaryPrefs/,"PRAY lost Rosary preference normalization");
 assert.match(runtime,/rosaryDonorRoot/,"PRAY lost canonical Rosary donor-root resolver");
@@ -76,6 +86,10 @@ assert.match(runtime,/applySettingsPreferences,sources:SOURCE_REGISTRY/,
 assert.match(runtime,/typeof stations\.stabatMater===['"]boolean['"]/,
   "PRAY Settings bridge no longer maps Stations Stabat Mater");
 assert.doesNotMatch(styles,/aoP435930HeadSpacer/,"obsolete PRAY hub spacer styling returned");
+assert.match(runtime,/function onPrayTouchStart\(e\)/,"PRAY lost horizontal-swipe owner");
+assert.match(runtime,/Math\.abs\(dx\)<72\|\|Math\.abs\(dx\)<Math\.abs\(dy\)\*1\.35/,"PRAY swipe axis lock changed");
+assert.doesNotMatch(runtime,/function onPrayTouchEnd[\s\S]{0,900}preventDefault/,"PRAY touch navigation must not suppress vertical scrolling");
+assert.match(runtime,/close\(\{silent:true,preserve:true\}\)/,"nested PRAY handoffs no longer preserve parent state");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
 assert.doesNotMatch(runtime,/view===['"]angelus['"][\s\S]{0,650}ao-rich-angelus/,"Angelus exact donor rail regained the later generic context card");
@@ -98,8 +112,11 @@ assert.match(runtime,/isReducedMotion\?\.\(\)/,"Stations transition no longer ho
 assert.doesNotMatch(runtime,/view===['"]stations['"][\s\S]{0,900}ao-live-(?:stand|kneel)/,"Stations semantic rails invented a universal posture");
 assert.match(runtime,/i===13\?'ao-refined-silence':'ao-live-look'/,"Stations XIV no longer changes from attention to donor silence");
 assert.match(runtime,/After the XIV Station/,"Stations XIV silence cue lost its donor context");
-assert.match(runtime,/TRADITIONAL PRAYERS OF THE ST ALPHONSUS METHOD/,"Stations lost the traditional-method status of the vocal prayers");
-assert.match(runtime,/the Way of the Cross itself is centered on prayerfully visiting the stations and meditating on the Passion/,"Stations again presents the vocal prayers as constitutive requirements");
+assert.match(runtime,/Traditional prayers · St Alphonsus method/,"Stations lost the traditional-method grouping of the vocal prayers");
+assert.match(runtime,/aoP435930StationOrdinary/,"Stations vocal prayers are no longer progressively disclosed");
+assert.match(runtime,/data-role="leader"/,"Stations lost explicit versicle ownership");
+assert.match(runtime,/data-role="response"/,"Stations lost explicit response ownership");
+assert.match(runtime,/\[\['individual','Individual','Individuel'\],\['group','Group','Groupe'\]\]/,"Stations lost Individual\/Group recitation mode");
 assert.match(runtime,/'pray\.de_profundis':\{id:'pray\.de_profundis',type:'prayer'/,"Direct De profundis route is not owned by PRAY");
 assert.match(runtime,/'pray\.eternal_rest':\{id:'pray\.eternal_rest',type:'prayer'/,"Direct Requiem aeternam route is not owned by PRAY");
 assert.match(runtime,/ADOR\.mode==='visit'&&ADOR\.visitStep===0/,"Adoration arrival cue lost exact visit-entry ownership");
@@ -110,12 +127,28 @@ assert.match(runtime,/blessing:\['ao-live-blessing'/,"Benediction blessing stage
 assert.match(runtime,/prayer:\['ao-live-response'/,"Benediction versicle\/collect stage lost the response cue");
 assert.match(runtime,/praises:\['ao-live-response'/,"Benediction Divine Praises stage lost the response cue");
 assert.match(runtime,/data-p435930-handoff="pray\.sacred_heart"/,"First Friday no longer hands off to the Sacred Heart treasury");
+assert.match(runtime,/data-p435930-ff-tracking/,"First Friday lost optional private tracking");
+assert.match(runtime,/data-p435930-fs-tracking/,"First Saturday lost optional private tracking");
+assert.match(runtime,/firstFriday:\{records:\[\],tracking:false\}/,"First Friday tracking is no longer opt-in");
+assert.match(runtime,/firstSaturday:\{records:\[\],tracking:false\}/,"First Saturday tracking is no longer opt-in");
+assert.match(runtime,/devotionalGuide\('firstFriday'\)/,"First Friday lost Guide\/history");
+assert.match(runtime,/devotionalGuide\('firstSaturday'\)/,"First Saturday lost Guide\/history");
 assert.match(runtime,/Private Litany of the Saints/,"Forty Hours private Litany is no longer distinguished from the public ceremonial form");
+assert.match(runtime,/view==='litany'.*\['individual','group'\]/s,"Litany lost communal recitation selector");
 assert.match(runtime,/Psalm 69 \(Deus, in adiutorium\)/,"Forty Hours lost the historical public Psalm 69 cue");
 assert.match(runtime,/proper Forty Hours prayers/,"Forty Hours lost the historical proper-prayers cue");
 assert.match(runtime,/follow the book and clergy actually being used in the church/,"Forty Hours no longer gives actual public ceremonial priority");
-assert.match(runtime,/CONF\.stage===3.*ao-live-sign-cross/s,"Confession in-confessional stage lost the donor Sign-of-Cross cue");
+assert.match(runtime,/aoP435930LitFlow/,"Forty Hours lost Benediction-inspired lit\/muted progression");
+assert.match(runtime,/view==='fortyHours'/,"Forty Hours lost its semantic ritual rail");
+assert.match(runtime,/devotionalGuide\('fortyHours'\)/,"Forty Hours lost its history\/practice Guide");
+assert.match(runtime,/CONF\.stage===2.*ao-live-sign-cross/s,"Confession in-confessional stage lost the Sign-of-Cross cue after practical-flow convergence");
+assert.doesNotMatch(runtime,/\[L\('Doctrine','Doctrine'\)/,"Confession rail regressed to a mandatory Doctrine first stage");
+assert.match(runtime,/devotionalGuide\('confession'\)/,"Confession lost its optional doctrine\/history Guide");
 assert.match(runtime,/aoP435930SemanticRailChip \$\{channel\}\$\{cueClass\}/,"transient semantic rail state no longer receives its cue-enter class");
+assert.match(styles,/aoP435930GuideInfo/,"PRAY Guide\/Info layer has no shared styling");
+assert.match(styles,/aoP435930TrackingToggle/,"optional devotional tracking has no shared presentation");
+assert.match(styles,/aoP435930LitFlow button\.current/,"lit\/muted sequential flow styling is missing");
+assert.match(styles,/touch-action:pan-y/,"PRAY shell no longer reserves vertical touch for text scrolling");
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
 assert.match(styles,/aoP435930SemanticRailCard\{width:44px/,"PRAY lost the donor thin desktop rail-card geometry");
