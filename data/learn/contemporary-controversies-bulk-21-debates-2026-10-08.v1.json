@@ -40,6 +40,13 @@
           "scope": "Dominus Iesus §§13–17, 20–22: unique mediation of Christ and the Church",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "ABUPAG19",
+          "url": "https://fsspx.org/en/publications/communique-superior-general-society-saint-pius-x-true-fraternity-exists-only-jesus",
+          "scope": "Fr Davide Pagliarani, SSPX Superior General, 24 February 2019, official criticism of Abu Dhabi clause",
+          "role": "IDENTIFIED_PROPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -69,21 +76,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The 2019 signatories present religious fraternity as a basis for civil peace, dialogue and freedom against religious coercion; this is the declaration's express practical intention, not itself a technical explanation of divine willing.",
-            "fr": "Les signataires invoquent la fraternité religieuse pour la paix civile, le dialogue et le refus de la contrainte ; telle est leur intention pratique déclarée, non une définition technique de la volonté divine."
+            "en": "Fr Davide Pagliarani explicitly condemned the Abu Dhabi document on 24 February 2019. His argument is not merely that the wording is unfortunate: by saying religious diversity is willed by divine Wisdom, it risks attributing contrary religious claims to the same God who revealed a single saving truth in Christ. He regards a fraternity detached from that unique mediation as religious indifferentism.",
+            "fr": "Dans son communiqué du 24 février 2019, l'abbé Davide Pagliarani condamne explicitement le document d'Abou Dhabi. Son grief ne se limite pas à une formule maladroite : attribuer à la Sagesse divine la volonté d'une diversité de religions semble faire vouloir à Dieu des affirmations religieuses incompatibles, alors qu'il a révélé l'unique vérité salvifique dans le Christ. Il y voit une fraternité risquant de se détacher de cette médiation unique."
           },
           "source_ids": [
-            "AD2019"
+            "AD2019",
+            "ABUPAG19"
           ],
           "source_links": [
             {
               "id": "AD2019",
               "url": "https://www.vatican.va/content/francesco/en/travels/2019/outside/documents/papa-francesco_20190204_documento-fratellanza-umana.html"
+            },
+            {
+              "id": "ABUPAG19",
+              "url": "https://fsspx.org/en/publications/communique-superior-general-society-saint-pius-x-true-fraternity-exists-only-jesus"
             }
           ],
           "attribution": {
-            "voice": "Abu Dhabi joint declaration, signed by Francis and Ahmad al-Tayyeb",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Fr Davide Pagliarani, SSPX Superior General, communiqué dated 24 February 2019",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -91,13 +103,14 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "The practical aim of protecting religious fraternity is compatible with civil peace, but it does not resolve the theological assertion that pluralism is 'willed by God'. In the older distinction between permission and approbation, a tolerated error does not acquire a right to be considered revealed truth; the controversial sentence must be read in that light, rather than suppressed or assumed to define equal salvific paths.",
-            "fr": "L'objectif pratique de fraternité religieuse peut servir la paix civile, mais ne résout pas l'affirmation théologique selon laquelle le pluralisme est « voulu par Dieu ». Dans la distinction classique entre permission et approbation, une erreur tolérée n'acquiert aucun droit à être tenue pour une vérité révélée ; la formule contestée doit être évaluée à cette lumière, sans être effacée ni érigée en définition de voies de salut équivalentes."
+            "en": "The objection identifies a genuine doctrinal ambiguity in the declaration's positive-sounding phrase. The declaration's context is public peace and opposition to coercion, but context alone cannot convert a permissive divine will into positive approbation of contradictory doctrines. Conversely, the phrase does not formally define equal salvific efficacy for all religions; a precise critique must keep those propositions separate.",
+            "fr": "L'objection relève une véritable ambiguïté doctrinale de la formule, qui peut paraître attribuer une volonté positive à Dieu. Le contexte est celui de la paix civile et du refus de la contrainte, mais ce contexte ne transforme pas la volonté permissive en approbation positive de doctrines contradictoires. Inversement, la phrase ne définit pas formellement une efficacité salvifique égale de toutes les religions ; la critique doit distinguer ces propositions."
           },
           "source_ids": [
             "AD2019",
             "DH1965",
-            "LIB1888"
+            "LIB1888",
+            "ABUPAG19"
           ],
           "source_links": [
             {
@@ -111,6 +124,10 @@
             {
               "id": "LIB1888",
               "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
+            },
+            {
+              "id": "ABUPAG19",
+              "url": "https://fsspx.org/en/publications/communique-superior-general-society-saint-pius-x-true-fraternity-exists-only-jesus"
             }
           ],
           "attribution": null,
@@ -152,7 +169,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -191,6 +208,13 @@
           "scope": "Dominus Iesus §§13–17, 20–22: unique mediation of Christ and the Church",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "SINGALT24",
+          "url": "https://www.catholicworldreport.com/2024/09/15/what-and-why-did-pope-francis-say-about-religions-as-paths-to-god/",
+          "scope": "Christopher R. Altieri, Catholic World Report, 15 September 2024, original critical analysis of Singapore religious-paths analogy and translation",
+          "role": "IDENTIFIED_PROPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -215,21 +239,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The papal speaker's analogy was intended to encourage dialogue among young people of different religions. It depicts sincere searching for the divine rather than delivering a systematic treatise on the means of salvation.",
-            "fr": "L'analogie du pape visait le dialogue entre jeunes de différentes religions. Elle évoque la recherche sincère de Dieu, non un traité systématique sur les moyens du salut."
+            "en": "Christopher Altieri argued that Francis's impromptu assertion that every religion is a path to God was poorly drawn and liable to suggest that choosing one religion over another is a matter of indifference. He distinguished the actual spoken Italian, the interpreter's words and alterations to the Vatican translation, while expressly resisting the leap from an infelicitous analogy to a formal charge of doctrinal apostasy.",
+            "fr": "Christopher Altieri relève que l'affirmation improvisée de François présentant chaque religion comme un chemin vers Dieu est imprécise et peut laisser penser que le choix d'une religion est indifférent. Il distingue les paroles italiennes réellement prononcées, l'interprétation orale et les modifications de la traduction vaticane, sans déduire de cette analogie malheureuse une apostasie doctrinale formellement établie."
           },
           "source_ids": [
-            "SING2024"
+            "SING2024",
+            "SINGALT24"
           ],
           "source_links": [
             {
               "id": "SING2024",
               "url": "https://www.vatican.va/content/francesco/en/speeches/2024/september/documents/20240913-singapore-giovani.html"
+            },
+            {
+              "id": "SINGALT24",
+              "url": "https://www.catholicworldreport.com/2024/09/15/what-and-why-did-pope-francis-say-about-religions-as-paths-to-god/"
             }
           ],
           "attribution": {
-            "voice": "Pope Francis, Singapore address 13 September 2024",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Christopher R. Altieri, Catholic World Report, 15 September 2024",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -237,12 +266,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Taken without qualification, a 'different ways to God' formula can be understood as religious indifferentism. That risk should be stated rather than dismissed; yet the genre, audience and the Catholic doctrinal baseline must also govern interpretation.",
-            "fr": "Prise sans précision, la formule des « chemins vers Dieu » peut être comprise comme indifférentiste. Le risque doit être reconnu, mais le genre du discours, ses auditeurs et la doctrine catholique en gouvernent aussi l'interprétation."
+            "en": "This criticism is stronger than either pretending the sentence was never uttered or calling a pastoral metaphor an infallible definition. The words can mislead and require explicit clarification by the uniqueness of Christ and his Church; they are not in themselves a legislative or dogmatic act abolishing missionary duty. Versions of the spoken and later translated wording should be collated before publication.",
+            "fr": "Cette critique est plus solide que la négation de la phrase prononcée ou sa transformation en définition infaillible. Les mots peuvent induire en erreur et doivent être précisés par l'unicité du Christ et de son Église ; ils ne constituent pas à eux seuls un acte dogmatique ou législatif supprimant la mission. Les versions parlée et traduite devront être collationnées avant publication."
           },
           "source_ids": [
             "SING2024",
-            "AD2019"
+            "AD2019",
+            "SINGALT24"
           ],
           "source_links": [
             {
@@ -252,6 +282,10 @@
             {
               "id": "AD2019",
               "url": "https://www.vatican.va/content/francesco/en/travels/2019/outside/documents/papa-francesco_20190204_documento-fratellanza-umana.html"
+            },
+            {
+              "id": "SINGALT24",
+              "url": "https://www.catholicworldreport.com/2024/09/15/what-and-why-did-pope-francis-say-about-religions-as-paths-to-god/"
             }
           ],
           "attribution": null,
@@ -288,7 +322,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -635,6 +669,13 @@
           "scope": "Dominus Iesus §§13–17, 20–22: unique mediation of Christ and the Church",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "ASSISILEF86",
+          "url": "https://sspx.org/en/1986-joint-declaration-against-assisi-30309",
+          "scope": "Archbishop Marcel Lefebvre and Bishop Antônio de Castro Mayer, 2 December 1986, original declaration criticizing Assisi",
+          "role": "IDENTIFIED_PROPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -664,12 +705,13 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The pope publicly proposed the meeting as a witness against war and religious hostility, without expressing agreement on the object or theology of each participant's prayer.",
-            "fr": "Le pape présenta la rencontre comme un témoignage contre la guerre et l'hostilité religieuse, sans professer l'accord sur l'objet ou la théologie de chaque prière."
+            "en": "Lefebvre and de Castro Mayer publicly denounced Assisi as an unprecedented scandal: in their judgment, inviting representatives of non-Christian religions to pray in that public setting encouraged false worship and suggested a rupture with the Church's prior public witness to Christ. This is an actual post-event objection in their signed declaration, not an editorially imagined 'traditional concern'.",
+            "fr": "Mgr Lefebvre et Mgr de Castro Mayer dénoncent publiquement Assise comme un scandale inédit : selon leur jugement, inviter des représentants de religions non chrétiennes à prier dans cette manifestation publique favorisait de faux cultes et suggérait une rupture avec le témoignage antérieur de l'Église au Christ. Il s'agit de leur objection réelle, dans une déclaration signée après l'événement, et non d'une inquiétude traditionaliste reconstituée."
           },
           "source_ids": [
             "ASSISI-START",
-            "ASSISI-END"
+            "ASSISI-END",
+            "ASSISILEF86"
           ],
           "source_links": [
             {
@@ -679,11 +721,15 @@
             {
               "id": "ASSISI-END",
               "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1986/october/documents/hf_jp-ii_spe_19861027_prayer-peace-assisi-final.html"
+            },
+            {
+              "id": "ASSISILEF86",
+              "url": "https://sspx.org/en/1986-joint-declaration-against-assisi-30309"
             }
           ],
           "attribution": {
-            "voice": "Pope John Paul II, Assisi addresses of 1986",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Archbishop Marcel Lefebvre and Bishop Antônio de Castro Mayer, joint declaration, 2 December 1986",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -691,12 +737,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A counterargument asks whether the common public setting nevertheless gave an impression of equivalent worship to spectators. This is an editorially formulated objection here: the cited papal texts establish the staged acts and papal aim, not a particular outside critic's wording.",
-            "fr": "Une objection demande si le cadre public commun n'a pas suggéré une équivalence des cultes. Elle est ici formulée éditorialement : les documents pontificaux prouvent le déroulement et l'intention du pape, non les paroles d'un critique externe déterminé."
+            "en": "The bishops' documented concern about the public symbol is not answered simply by insisting that the pope desired peace. Yet John Paul II explicitly organized separate or successive acts rather than one jointly composed non-Christian liturgy. A factual assessment must therefore distinguish the real risk of confusing appearances from the stronger factual allegation that Catholics and non-Christians jointly celebrated an identical act of worship.",
+            "fr": "L'inquiétude documentée des deux évêques au sujet du symbole public ne disparaît pas parce que le pape recherchait la paix. Toutefois Jean-Paul II avait prévu des prières séparées ou successives, et non une liturgie commune composée avec les religions non chrétiennes. L'analyse doit distinguer le risque réel de confusion créé par les apparences de l'allégation factuelle plus forte d'un acte cultuel identique célébré ensemble."
           },
           "source_ids": [
             "ASSISI-START",
-            "ASSISI-END"
+            "ASSISI-END",
+            "ASSISILEF86"
           ],
           "source_links": [
             {
@@ -706,6 +753,10 @@
             {
               "id": "ASSISI-END",
               "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1986/october/documents/hf_jp-ii_spe_19861027_prayer-peace-assisi-final.html"
+            },
+            {
+              "id": "ASSISILEF86",
+              "url": "https://sspx.org/en/1986-joint-declaration-against-assisi-30309"
             }
           ],
           "attribution": null,
@@ -747,7 +798,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -786,6 +837,13 @@
           "scope": "Mortalium animos: visible unity of the Church and integrity of revealed doctrine",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "ECFSSPX",
+          "url": "https://fsspx.org/en/duty-spread-faith-30279",
+          "scope": "SSPX General House's published critique of ecumenism; NOT a statement specifically addressing the 1993 Directory",
+          "role": "IDENTIFIED_PROPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -815,21 +873,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The Directory's positive argument is that common baptism and genuine Christian elements can justify prayer for unity within ecclesiastical conditions; its permissions are not unrestricted intercommunion.",
-            "fr": "Le Directoire invoque le baptême commun et les éléments chrétiens authentiques pour permettre de prier pour l'unité dans certaines conditions ; cela n'autorise pas l'intercommunion sans limites."
+            "en": "The SSPX's published account of ecumenism argues that Christian unity must proceed by conversion to the truth revealed in the one Church, not by treating religious knowledge as a collection of subjectively valid expressions to be reconciled through compromise. It therefore fears that shared religious acts may present a merely negotiated unity. This document does not specifically claim that every prayer permitted by the 1993 Ecumenical Directory is sacramental intercommunion.",
+            "fr": "L'exposé publié par la FSSPX soutient que l'unité chrétienne doit venir de la conversion à la vérité révélée dans l'unique Église, et non de la conciliation de croyances regardées comme des expressions subjectivement équivalentes. De là sa crainte que des actes religieux communs ne suggèrent une unité négociée. Ce document n'affirme pas spécifiquement que toute prière admise par le Directoire œcuménique de 1993 serait une intercommunion sacramentelle."
           },
           "source_ids": [
-            "ECUM1993"
+            "ECUM1993",
+            "ECFSSPX"
           ],
           "source_links": [
             {
               "id": "ECUM1993",
               "url": "https://www.christianunity.va/content/unitacristiani/en/documenti/testo-in-inglese.html"
+            },
+            {
+              "id": "ECFSSPX",
+              "url": "https://fsspx.org/en/duty-spread-faith-30279"
             }
           ],
           "attribution": {
-            "voice": "1993 Ecumenical Directory, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "SSPX General House, published critique of modern ecumenism (general doctrine, not a direct reply to the 1993 Directory)",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -837,16 +900,21 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A serious traditional concern is that ambiguous practice can obscure differences in Eucharistic faith and ecclesial membership. That concern should be assessed against the concrete event and permitted norms, rather than automatically treating every Lord's Prayer recited with another Christian as sacramental sharing.",
-            "fr": "Une inquiétude traditionnelle sérieuse est que la pratique ambiguë masque les différences de foi eucharistique et de communion ecclésiale. Elle doit être examinée selon l'acte concret et les normes, non en assimilant toute récitation commune du Pater au partage eucharistique."
+            "en": "The objection rightly excludes doctrinal relativism as the object of Christian unity. The Directory, however, identifies particular common non-sacramental prayers among baptized Christians and separately limits sacramental sharing. One must evaluate the precise prayer and whether its language masks contested dogmas, rather than substitute the general critique of religious compromise for evidence about every permitted pastoral case.",
+            "fr": "L'objection exclut à juste titre le relativisme doctrinal comme fondement de l'unité chrétienne. Le Directoire distingue néanmoins certaines prières communes non sacramentelles entre baptisés et un partage sacramentel soumis à des conditions plus strictes. Il faut vérifier la prière concrète et si ses paroles occultent les dogmes contestés, plutôt que de faire de la critique générale du compromis religieux une preuve contre toute situation autorisée."
           },
           "source_ids": [
-            "ECUM1993"
+            "ECUM1993",
+            "ECFSSPX"
           ],
           "source_links": [
             {
               "id": "ECUM1993",
               "url": "https://www.christianunity.va/content/unitacristiani/en/documenti/testo-in-inglese.html"
+            },
+            {
+              "id": "ECFSSPX",
+              "url": "https://fsspx.org/en/duty-spread-faith-30279"
             }
           ],
           "attribution": null,
@@ -878,7 +946,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -924,6 +992,13 @@
           "scope": "Immortale Dei §§4, 36, 48: civil authority, political forms and religious toleration",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "RLFSSPX",
+          "url": "https://fsspx.org/en/religious-liberty-30946",
+          "scope": "SSPX General House, Religious Liberty, published doctrinal objection to Dignitatis humanae §§1–2",
+          "role": "IDENTIFIED_PROPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -953,21 +1028,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The Council's own argument protects persons and communities against state coercion within due public-order limits, distinguishing legal immunity from truth claims.",
-            "fr": "Le Concile protège personnes et communautés contre la contrainte étatique sous réserve de l'ordre public juste, en distinguant immunité juridique et vérité doctrinale."
+            "en": "The SSPX states that Dignitatis humanae §§1–2 contradicts earlier teaching by assigning to every person a civil right to external religious exercise founded in human dignity even when the religion professed is false. Its written distinction is sharp: the Council may disclaim individual religious indifferentism but, it argues, nevertheless introduces an unacceptable religious indifferentism into the civil authority's duties. This is the proponent's actual thesis, not a paraphrase of a generic desire for a confessional state.",
+            "fr": "La FSSPX soutient que Dignitatis humanae §§1–2 contredit l'enseignement antérieur en reconnaissant à toute personne, au titre de sa dignité, un droit civil à l'exercice extérieur de la religion même fausse. Elle distingue clairement l'indifférentisme religieux individuel, que le Concile n'enseigne pas expressément, de ce qu'elle juge être un indifférentisme imposé à l'autorité civile. Telle est sa thèse écrite, et non un vague souhait de restauration d'un État confessionnel."
           },
           "source_ids": [
-            "DH1965"
+            "DH1965",
+            "RLFSSPX"
           ],
           "source_links": [
             {
               "id": "DH1965",
               "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html"
+            },
+            {
+              "id": "RLFSSPX",
+              "url": "https://fsspx.org/en/religious-liberty-30946"
             }
           ],
           "attribution": {
-            "voice": "Vatican II, Dignitatis humanae, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "SSPX General House, Religious Liberty, official doctrinal objection to Dignitatis humanae",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -975,12 +1055,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A traditional objection notes the earlier affirmation of Christ's social kingship and fears a practical retreat from confessional public duties. Comparing distinct objects—moral obligation to truth and immunity from forced adherence—is necessary but does not automatically prove every formulation historically continuous.",
-            "fr": "Une objection traditionnelle souligne la royauté sociale du Christ et craint l'abandon des devoirs publics confessionnels. Comparer obligation morale et protection contre la contrainte est nécessaire, mais ne démontre pas mécaniquement la continuité de toutes les formules historiques."
+            "en": "This objection cannot be disposed of solely by observing that coerced conversion is wrong, since the SSPX expressly distinguishes prohibited compulsion from the limits of public propagation of false worship. The Council's claim that immunity from coercion leaves untouched the duties of persons and societies must be compared with Leo XIII's treatment of tolerance, civil public order and rights. A conclusion of perfect continuity or direct contradiction requires that point-by-point comparison, which remains the central theological dispute.",
+            "fr": "On ne réfute pas cette objection par la seule affirmation qu'une conversion forcée est illicite : la FSSPX distingue expressément cette contrainte des limites à la propagation publique d'un culte faux. L'affirmation conciliaire selon laquelle l'immunité de contrainte maintient les devoirs des personnes et des sociétés doit être comparée à la doctrine de Léon XIII sur la tolérance, l'ordre public et les droits civils. Établir une continuité parfaite ou une contradiction directe exige cette comparaison article par article, qui demeure le cœur du débat."
           },
           "source_ids": [
             "QP1925",
-            "DH1965"
+            "DH1965",
+            "RLFSSPX"
           ],
           "source_links": [
             {
@@ -990,6 +1071,10 @@
             {
               "id": "DH1965",
               "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html"
+            },
+            {
+              "id": "RLFSSPX",
+              "url": "https://fsspx.org/en/religious-liberty-30946"
             }
           ],
           "attribution": null,
@@ -1031,7 +1116,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -1705,18 +1790,26 @@
           "scope": "Catechism 2309, 2314",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "NAGASAKI19",
+          "url": "https://www.vatican.va/content/francesco/en/speeches/2019/november/documents/papa-francesco_20191124_messaggio-arminucleari-nagasaki.html",
+          "scope": "Pope Francis, Nagasaki address 24 November 2019 on nuclear deterrence and possession",
+          "role": "PAPAL_PRIMARY_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
         {
           "role": "answer",
           "text": {
-            "en": "Gaudium et spes §80 condemns actions of war aimed indiscriminately at destroying entire cities or vast regions and their inhabitants. Its next section considers deterrent armaments as an attempted means to forestall war, while warning against the arms race.",
-            "fr": "Gaudium et spes §80 condamne les actes guerriers de destruction indiscriminée de villes entières ou de vastes régions habitées. La section suivante évoque les armements dissuasifs censés prévenir la guerre, tout en dénonçant la course aux armes."
+            "en": "Gaudium et spes §§80–81 condemns indiscriminate annihilation and warns against competitive armament, while describing deterrence as a policy pursued to ward off war rather than morally canonizing it. Francis's 2019 Nagasaki address explicitly condemned the logic of nuclear deterrence based on fear and possession of nuclear weapons. The debate must not stop at the Council's 1965 description or assume that 2019's moral judgment settled every detailed case in strategic policy; cite the development, the relevant level of authority and the kinds of weapons or threats in view.",
+            "fr": "Gaudium et spes §§80–81 condamne l'anéantissement sans discrimination et la course aux armements, tout en décrivant la dissuasion comme une politique destinée à éviter la guerre, sans la canoniser moralement. À Nagasaki en 2019, François condamne explicitement la logique de dissuasion fondée sur la peur et la possession d'armes nucléaires. Le débat ne peut donc s'arrêter à la description conciliaire de 1965 ni prétendre que le jugement moral de 2019 a réglé toutes les questions stratégiques particulières ; il faut préciser l'évolution, le degré d'autorité et les armes ou menaces concernées."
           },
           "source_ids": [
             "GS1965",
-            "WAR2309"
+            "WAR2309",
+            "NAGASAKI19"
           ],
           "source_links": [
             {
@@ -1726,6 +1819,10 @@
             {
               "id": "WAR2309",
               "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/iii_safeguarding_peace.index.html"
+            },
+            {
+              "id": "NAGASAKI19",
+              "url": "https://www.vatican.va/content/francesco/en/speeches/2019/november/documents/papa-francesco_20191124_messaggio-arminucleari-nagasaki.html"
             }
           ],
           "attribution": null,
@@ -1756,12 +1853,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A defender of deterrence may argue that credible retaliation prevents aggression; a critic may argue that threatening an intrinsically unlawful act cannot become licit through a hoped-for peace. Both strategic premises must be evaluated without treating an entire nuclear arsenal as morally uniform.",
-            "fr": "Le défenseur de la dissuasion affirme que la riposte crédible prévient l'agression ; le critique répond que menacer d'un acte intrinsèquement illicite ne devient pas licite par espoir de paix. Les prémisses stratégiques doivent être examinées sans uniformiser tous les systèmes d'armes."
+            "en": "The consequentialist defense claims that a credible retaliatory threat might prevent aggression; critics respond that one cannot licitly intend indiscriminate civilian destruction merely to deter it. Francis's explicit denunciation of nuclear deterrence in 2019 must be included alongside the Council's earlier treatment. Whether a particular strategy entails an illicit intention, threat or risk depends on the documented targeting doctrine and command structures; a claim of peacekeeping benefit cannot independently dispense with moral constraints.",
+            "fr": "Le défenseur de la dissuasion fait valoir qu'une menace crédible de riposte pourrait prévenir l'agression ; ses critiques répliquent qu'on ne peut licitement vouloir une destruction indistincte de civils pour dissuader. La condamnation explicite de la dissuasion nucléaire prononcée par François en 2019 doit figurer à côté du traitement conciliaire antérieur. Savoir si une stratégie implique une intention, une menace ou un risque illicites dépend d'une doctrine de ciblage et de structures de commandement documentées ; l'effet pacificateur allégué ne dispense pas des contraintes morales."
           },
           "source_ids": [
             "GS1965",
-            "WAR2309"
+            "WAR2309",
+            "NAGASAKI19"
           ],
           "source_links": [
             {
@@ -1771,6 +1869,10 @@
             {
               "id": "WAR2309",
               "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/iii_safeguarding_peace.index.html"
+            },
+            {
+              "id": "NAGASAKI19",
+              "url": "https://www.vatican.va/content/francesco/en/speeches/2019/november/documents/papa-francesco_20191124_messaggio-arminucleari-nagasaki.html"
             }
           ],
           "attribution": null,
@@ -1784,7 +1886,8 @@
           },
           "source_ids": [
             "GS1965",
-            "WAR2309"
+            "WAR2309",
+            "NAGASAKI19"
           ],
           "source_links": [
             {
@@ -1794,6 +1897,10 @@
             {
               "id": "WAR2309",
               "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/iii_safeguarding_peace.index.html"
+            },
+            {
+              "id": "NAGASAKI19",
+              "url": "https://www.vatican.va/content/francesco/en/speeches/2019/november/documents/papa-francesco_20191124_messaggio-arminucleari-nagasaki.html"
             }
           ],
           "attribution": null,
@@ -2332,6 +2439,13 @@
           "scope": "2023 cardinals' question and papal reply",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "SYN5CARD23",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_risposta-dubia-2023_en.html",
+          "scope": "Five cardinals' 2023 dubia including Question 3 on synodality and papal reply, published by DDF",
+          "role": "IDENTIFIED_PROPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -2356,21 +2470,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The constructive case is that real consultation can inform governors, improve accountability and mobilize the baptized without abolishing distinct episcopal and papal responsibilities.",
-            "fr": "La défense de la synodalité souligne qu'une consultation réelle peut éclairer les pasteurs, améliorer la responsabilité et associer les baptisés sans abolir la charge distincte des évêques et du pape."
+            "en": "The five cardinals' third 2023 dubium asks whether describing synodality as a constitutive dimension of the Church could turn a consultative Synod, which does not itself represent the college of bishops, into the supreme criterion of governance at the expense of papal and episcopal authority. Their first dubium separately asks whether revealed teaching can be reinterpreted in contradiction to its original deposit. Both concerns are written in the published questions and do not allege that every synodal consultation is illicit.",
+            "fr": "Dans leur troisième dubium de 2023, cinq cardinaux demandent si la synodalité, présentée comme dimension constitutive de l'Église, pourrait faire d'un synode consultatif — qui n'est pas le collège des évêques — le critère suprême du gouvernement, au détriment de l'autorité pontificale et épiscopale. Leur premier dubium interroge aussi l'immutabilité du dépôt révélé. Ces réserves figurent dans les questions publiées et n'affirment pas que toute consultation synodale serait illicite."
           },
           "source_ids": [
-            "SYN2018"
+            "SYN2018",
+            "SYN5CARD23"
           ],
           "source_links": [
             {
               "id": "SYN2018",
               "url": "https://www.vatican.va/roman_curia/congregations/cfaith/cti_documents/rc_cti_20180302_sinodalita_en.html"
+            },
+            {
+              "id": "SYN5CARD23",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_risposta-dubia-2023_en.html"
             }
           ],
           "attribution": {
-            "voice": "International Theological Commission 2018, official advisory text",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Cardinals Walter Brandmüller and Raymond Burke, with Cardinals Sandoval Íñiguez, Sarah and Zen, 2023 dubia, Question 3",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -2378,12 +2497,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A critical objection asks whether unclear decision structures permit doctrinal ambiguity or diffuse responsibility. That is a substantial governance issue; proving an actual transfer of teaching authority, however, demands a specific enacted rule or act rather than a slogan about a 'synodal Church'.",
-            "fr": "Une objection critique craint qu'une procédure incertaine favorise l'ambiguïté doctrinale ou la dilution des responsabilités. La difficulté est réelle, mais démontrer un transfert de l'autorité enseignante exige un acte normatif précis, non un slogan."
+            "en": "The papal response affirms differentiated participation and the possibility for the faithful to be heard; that supplies an argument for consultation but does not erase the cardinals' legal distinction between advisory voice and governing authority. The relevant test is whether any enacted norm transfers a doctrinal or jurisdictional decision from those competent to make it to a consultative majority. Neither slogan about democracy nor reassurance about listening can replace that normative inquiry.",
+            "fr": "La réponse pontificale valorise une participation différenciée et la possibilité pour les fidèles d'être écoutés ; elle fonde la consultation sans supprimer la distinction juridique entre voix consultative et autorité de gouvernement. Il faut vérifier si une règle effectivement adoptée transfère une décision doctrinale ou juridictionnelle de l'autorité compétente vers une majorité consultative. Ni l'accusation générale de démocratie ni la seule assurance d'écoute ne remplacent cet examen des normes."
           },
           "source_ids": [
             "SYN2018",
-            "DUBIA2023"
+            "DUBIA2023",
+            "SYN5CARD23"
           ],
           "source_links": [
             {
@@ -2392,6 +2512,10 @@
             },
             {
               "id": "DUBIA2023",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_risposta-dubia-2023_en.html"
+            },
+            {
+              "id": "SYN5CARD23",
               "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_risposta-dubia-2023_en.html"
             }
           ],
@@ -2424,7 +2548,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -2463,18 +2587,49 @@
           "scope": "Pontifical Commission Ecclesia Dei: 2017 SSPX confessional and marriage faculties",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "DDFDEC26",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html",
+          "scope": "DDF formal decree, 2 July 2026, original Italian: unauthorized consecrations, declared censures",
+          "role": "PRIMARY_CANONICAL_ACT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
+        },
+        {
+          "id": "DDFNOTE26",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html",
+          "scope": "DDF explanatory note, 2 July 2026, original Italian: minister status, sacraments and lay formal adherence",
+          "role": "PRIMARY_CANONICAL_ACT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
+        },
+        {
+          "id": "SSPXREC26",
+          "url": "https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112",
+          "scope": "SSPX General House communiqué, 13 July 2026, original recourse claim under canons 1734 and 1353",
+          "role": "IDENTIFIED_OPPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
+        },
+        {
+          "id": "SSPXCANN26",
+          "url": "https://sspx.org/en/news/hundreds-thousands-catholics-purportedly-excommunicated-how-should-see-60149",
+          "scope": "Fr Scott Gardner, SSPX, 16 July 2026, published canonical objection to DDF declaration",
+          "role": "IDENTIFIED_OPPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
         {
           "role": "answer",
           "text": {
-            "en": "Benedict XVI's 2009 letter and Ecclesiae unitatem distinguish remission of penalties imposed on bishops from recognition of the SSPX as a canonical institution. Absence of regular canonical status is not the same statement as saying every sacrament ever administered by its priests is invalid.",
-            "fr": "La lettre de Benoît XVI et Ecclesiae unitatem en 2009 distinguent la levée des sanctions contre les évêques de la reconnaissance canonique de la FSSPX comme institution. L'absence de statut régulier ne signifie pas que tous les sacrements célébrés par ses prêtres sont invalides."
+            "en": "Benedict XVI distinguished the 2009 remission of individual episcopal excommunications from granting the SSPX regular canonical status; specific faculties for SSPX confessions and marriages followed in 2016–2017. Those historical arrangements cannot describe the position after 1–2 July 2026. Following four episcopal consecrations without pontifical mandate, the DDF's decree declared excommunications for six bishops, and its explanatory note said SSPX ministers are in schism, administer sacraments illicitly, and that their confessions and marriages are invalid. The Society disputes this characterization and has filed administrative recourse, which it says suspends execution. The canonical legal effect of that recourse and any later disposition require expert verification; neither the old faculties nor the Society's contrary assessment should be presented as unqualified current law.",
+            "fr": "Benoît XVI distinguait en 2009 la levée des excommunications personnelles de l'octroi d'un statut canonique régulier à la FSSPX ; des facultés particulières concernant la confession et le mariage ont suivi en 2016–2017. Mais ces mesures historiques ne suffisent plus à décrire la situation après les 1er et 2 juillet 2026. Après quatre consécrations épiscopales sans mandat pontifical, le décret du DDF a déclaré les excommunications de six évêques ; sa note explicative tient les ministres de la Fraternité pour schismatiques, leur administration des sacrements pour illicite et les confessions et mariages pour invalides. La Fraternité conteste cette qualification et a introduit un recours administratif dont elle affirme l'effet suspensif. Les effets juridiques de ce recours et toute décision ultérieure exigent une vérification canonique spécialisée ; ni les anciennes facultés ni la position contraire de la Fraternité ne doivent être présentées sans réserve comme le droit actuellement applicable."
           },
           "source_ids": [
             "SSPX2009",
-            "SSPXL2009"
+            "SSPXL2009",
+            "DDFDEC26",
+            "DDFNOTE26",
+            "SSPXREC26"
           ],
           "source_links": [
             {
@@ -2484,6 +2639,18 @@
             {
               "id": "SSPXL2009",
               "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html"
+            },
+            {
+              "id": "DDFDEC26",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html"
+            },
+            {
+              "id": "DDFNOTE26",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html"
+            },
+            {
+              "id": "SSPXREC26",
+              "url": "https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112"
             }
           ],
           "attribution": null,
@@ -2492,12 +2659,14 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "Benedict XVI states that until doctrinal questions are clarified, the Society lacks canonical status and ministers do not legitimately exercise ministries merely by the lifting of excommunication.",
-            "fr": "Benoît XVI précise que tant que les difficultés doctrinales ne sont pas levées, la Fraternité n'a pas de statut canonique et ses ministres n'exercent pas légitimement du seul fait de la levée des excommunications."
+            "en": "The SSPX maintains that necessity in the Church and its fidelity to the received Catholic faith justify the July 2026 consecrations; in July it publicly contested the canonical force and scope of the DDF's decree and its generalization to ministers and lay faithful. Its General House announced that a preliminary recourse had been filed on 11 July and asserted that it suspends execution under canon 1353. That suspension is the Society's express legal position, not a decision independently verified here from the competent appellate authority.",
+            "fr": "La FSSPX affirme que l'état de nécessité dans l'Église et sa fidélité à la foi reçue justifient les consécrations de juillet 2026 ; elle conteste publiquement la portée et l'efficacité canonique du décret du DDF, notamment son application générale aux ministres et aux fidèles. Sa Maison générale annonce un recours préalable déposé le 11 juillet et soutient que l'exécution du décret est suspendue en vertu du canon 1353. Cet effet suspensif est la thèse juridique explicite de la Fraternité, non une décision d'une juridiction de recours indépendamment vérifiée ici."
           },
           "source_ids": [
             "SSPX2009",
-            "SSPXL2009"
+            "SSPXL2009",
+            "SSPXREC26",
+            "SSPXCANN26"
           ],
           "source_links": [
             {
@@ -2507,11 +2676,19 @@
             {
               "id": "SSPXL2009",
               "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html"
+            },
+            {
+              "id": "SSPXREC26",
+              "url": "https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112"
+            },
+            {
+              "id": "SSPXCANN26",
+              "url": "https://sspx.org/en/news/hundreds-thousands-catholics-purportedly-excommunicated-how-should-see-60149"
             }
           ],
           "attribution": {
-            "voice": "Benedict XVI, Ecclesiae unitatem and explanatory letter of 2009",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "SSPX General House (13 July 2026 recourse communiqué) and Fr Scott Gardner, SSPX (16 July 2026 canonical critique)",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -2519,13 +2696,15 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "The claimed state of necessity explains the Society's argument for its ministry but, by itself, is not an act granting regular canonical status. Conversely, the Holy See's concrete faculties for confession and conditional arrangements for marriage show that irregular institutional status does not warrant treating every sacrament uniformly. In marriage cases, the 2017 letter explicitly contemplates delegation to a regular priest to receive consent or, where appropriate, to an SSPX priest; such specificity must govern any answer.",
-            "fr": "L'état de nécessité invoqué expose l'argument de la Fraternité en faveur de son ministère, mais ne constitue pas en lui-même un acte accordant un statut canonique régulier. Inversement, les facultés concrètes pour la confession et les dispositions conditionnelles pour le mariage montrent que l'irrégularité institutionnelle ne permet pas de traiter tous les sacrements indistinctement. Pour le mariage, la lettre de 2017 envisage expressément la délégation à un prêtre régulier pour recevoir les consentements ou, dans certaines conditions, à un prêtre de la Fraternité ; c'est cette précision qui doit gouverner la réponse."
+            "en": "The DDF's 2 July explanatory note explicitly addresses ministers, persons formally adhering, liceity and the validity of penance and marriage. It does not itself declare every sacrament null or everyone who merely attends an SSPX Mass automatically excommunicated: formal adherence is an expressly different criterion. The Society's subsequent recourse adds a contested procedural question, but filing a petition is not by itself evidence that its arguments have prevailed. Careful pastoral advice must cite the latest competent decree or judgment and distinguish official claims, contested legal effects, validity, liceity and individual culpability.",
+            "fr": "La note explicative du DDF du 2 juillet traite expressément des ministres, de l'adhésion formelle, de la licéité et de la validité de la pénitence et du mariage. Elle ne déclare ni tous les sacrements nuls ni automatiquement excommunié quiconque assiste simplement à une messe de la FSSPX : l'adhésion formelle constitue un critère distinct. Le recours de la Fraternité ajoute une question procédurale controversée, mais son dépôt ne prouve pas à lui seul que ses arguments ont été accueillis. Tout conseil pastoral doit citer la dernière décision compétente et distinguer déclarations officielles, effets juridiques contestés, validité, licéité et culpabilité individuelle."
           },
           "source_ids": [
             "SSPX2009",
             "SSPXL2009",
-            "PCED2017"
+            "PCED2017",
+            "DDFNOTE26",
+            "SSPXREC26"
           ],
           "source_links": [
             {
@@ -2539,6 +2718,14 @@
             {
               "id": "PCED2017",
               "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2017/04/04/170404d.html"
+            },
+            {
+              "id": "DDFNOTE26",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html"
+            },
+            {
+              "id": "SSPXREC26",
+              "url": "https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112"
             }
           ],
           "attribution": null,
@@ -2547,13 +2734,16 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "A remission of individual episcopal excommunications in 2009 was not the canonical regularization of the Society; Benedict XVI said the distinction expressly. Yet the Holy See subsequently granted SSPX priests faculties for valid and licit sacramental absolution and authorized local ordinaries to arrange marriage faculties under specified conditions in 2017. These measures do not remove the institute's irregular standing, but they preclude blanket assertions that all its sacraments are invalid or that nothing has changed. Pastoral counsel must specify which sacrament, time, faculty and juridical question is actually at issue.",
-            "fr": "La remise en 2009 des excommunications de certains évêques ne constituait pas la régularisation canonique de la Fraternité : Benoît XVI l'a dit expressément. Le Saint-Siège a néanmoins accordé ensuite aux prêtres de la FSSPX la faculté d'absoudre validement et licitement et permis aux Ordinaires locaux d'organiser, à certaines conditions, des facultés matrimoniales en 2017. Ces mesures ne suppriment pas l'irrégularité de l'institut, mais excluent l'affirmation globale selon laquelle tous ses sacrements seraient invalides ou que rien n'aurait changé. Le conseil pastoral doit préciser le sacrement, la date, la faculté et la question juridique réellement en cause."
+            "en": "Catholic obedience to legitimate ecclesiastical authority and preservation of the received faith are both serious duties; neither licenses private certainty about whether a canonical sanction is void. The July 2026 original DDF decree and explanatory note must be quoted accurately, and the SSPX's original recourse and objections represented fairly. An ordinary Catholic should not resolve complex jurisdictional disputes by partisan assertion or ignore the Holy See's published warning; concrete sacramental cases require competent diocesan/canonical advice, especially where confession or marriage validity is at issue.",
+            "fr": "L'obéissance à l'autorité ecclésiastique légitime et la fidélité à la foi reçue sont des devoirs sérieux ; aucun ne fonde la certitude privée qu'une sanction canonique est nulle. Le décret et la note du DDF de juillet 2026 doivent être cités exactement, tandis que le recours et les objections de la FSSPX doivent être présentés loyalement. Un fidèle ne saurait trancher un conflit de juridiction aussi complexe par une affirmation partisane ni ignorer l'avertissement publié par le Saint-Siège ; les cas sacramentels concrets exigent un avis diocésain ou canonique compétent, surtout pour la validité de la confession ou du mariage."
           },
           "source_ids": [
             "SSPX2009",
             "SSPXL2009",
-            "PCED2017"
+            "PCED2017",
+            "DDFDEC26",
+            "DDFNOTE26",
+            "SSPXREC26"
           ],
           "source_links": [
             {
@@ -2567,6 +2757,18 @@
             {
               "id": "PCED2017",
               "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2017/04/04/170404d.html"
+            },
+            {
+              "id": "DDFDEC26",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html"
+            },
+            {
+              "id": "DDFNOTE26",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html"
+            },
+            {
+              "id": "SSPXREC26",
+              "url": "https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112"
             }
           ],
           "attribution": null,
@@ -2575,7 +2777,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -2607,6 +2809,13 @@
           "scope": "Vatican I limits of defined papal infallibility, not a direct canonization treatise",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "CANFELLAY14",
+          "url": "https://fsspx.org/en/publications/april-2014-superior-generals-letter-82-36125",
+          "scope": "Bishop Bernard Fellay, Superior General's Letter 82, April 2014, direct opposition to 2014 canonizations",
+          "role": "IDENTIFIED_PROPONENT_ORIGINAL_TEXT",
+          "verification": "WEB_ORIGINAL_TEXT_LOCATED_EDITORIAL_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -2636,21 +2845,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The papal canonization publicly presents these saints as models of Christian holiness; the papal homily recalls their pastoral missions without constituting an exhaustive historical audit.",
-            "fr": "La canonisation propose publiquement ces saints comme modèles de sainteté chrétienne ; l'homélie évoque leur mission sans réaliser l'audit historique exhaustif de leurs actes."
+            "en": "Before the 27 April 2014 canonizations, Bishop Fellay objected in an extended open letter that canonizing John XXIII and John Paul II would publicly appear to vindicate Vatican II and Assisi, whose doctrinal and pastoral orientations he sharply criticized. His argument is about the meaning conveyed by these particular canonizations and whether a saint proposed as a model can be separated from a contested pontifical program. It is an attributable, historical objection rather than a reconstructed complaint.",
+            "fr": "Avant les canonisations du 27 avril 2014, Mgr Fellay objecte, dans une longue lettre publique, que l'élévation de Jean XXIII et de Jean-Paul II sur les autels semblerait cautionner Vatican II et Assise, dont il critique vivement les orientations doctrinales et pastorales. Il met en cause la signification publique de ces canonisations particulières et la possibilité de distinguer un modèle de sainteté d'un programme pontifical discuté. Cette objection est historiquement attestée."
           },
           "source_ids": [
-            "CANON2014"
+            "CANON2014",
+            "CANFELLAY14"
           ],
           "source_links": [
             {
               "id": "CANON2014",
               "url": "https://www.vatican.va/content/francesco/en/homilies/2014/documents/papa-francesco_20140427_omelia-canonizzazioni.html"
+            },
+            {
+              "id": "CANFELLAY14",
+              "url": "https://fsspx.org/en/publications/april-2014-superior-generals-letter-82-36125"
             }
           ],
           "attribution": {
-            "voice": "Francis, canonization of 27 April 2014",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Bishop Bernard Fellay, SSPX Superior General, Letter to Friends and Benefactors 82 (April 2014)",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -2658,12 +2872,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A traditional critic may challenge prudential aspects of these pontificates, whereas others infer that canonization vindicates every reform. Neither inference is entailed simply by the canonization act; the precise debate over the infallibility and object of canonizations needs dedicated classical sources.",
-            "fr": "Un critique traditionnel peut contester des choix prudentiels, tandis que d'autres déduisent de la canonisation l'approbation de toutes les réformes. Aucun raisonnement ne découle simplement de l'acte : le débat sur l'infaillibilité et l'objet des canonisations exige des sources théologiques propres."
+            "en": "Fellay's argument deserves an answer to its actual premise: public canonization may indeed influence how a pontificate is remembered. Yet the act's object is public recognition of sanctity, not a proposition approving each reform or historical decision. The theological question whether that judgment is infallible requires specific classical authorities and examination of the canonization formula, not a generic invocation of Pastor aeternus; that narrower technical question remains under independent review.",
+            "fr": "L'argument de Mgr Fellay mérite une réponse à sa prémisse réelle : une canonisation publique influence la mémoire d'un pontificat. Mais l'objet de l'acte est la reconnaissance publique de la sainteté, non l'approbation de chaque réforme ou décision historique. La question théologique de l'infaillibilité de ce jugement requiert des auteurs classiques précis et l'examen de la formule de canonisation, non une invocation générale de Pastor aeternus ; ce point technique reste à vérifier."
           },
           "source_ids": [
             "CANON2014",
-            "PAST1870"
+            "PAST1870",
+            "CANFELLAY14"
           ],
           "source_links": [
             {
@@ -2673,6 +2888,10 @@
             {
               "id": "PAST1870",
               "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            },
+            {
+              "id": "CANFELLAY14",
+              "url": "https://fsspx.org/en/publications/april-2014-superior-generals-letter-82-36125"
             }
           ],
           "attribution": null,
@@ -2704,7 +2923,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -2853,9 +3072,9 @@
     "case_count": 21,
     "paragraphs": 84,
     "fr_paragraphs": 84,
-    "primary_link_instances": 153,
-    "externally_named_opposing_position_cases": 2,
-    "documentary_and_editorial_position_cases": 19,
+    "primary_link_instances": 180,
+    "externally_named_opposing_position_cases": 10,
+    "documentary_and_editorial_position_cases": 11,
     "canonical_dossiers_added": 0
   },
   "policy": [
@@ -2863,7 +3082,9 @@
     "Sources are hyperlinks to candidate original passages, not complete theological or FR text-level certification.",
     "This supplement is not added to public Formation navigation or the original 102 recovered legacy research register.",
     "Opposing arguments that are only editorial frames may not be presented as an authentic opponent's published words.",
-    "2026-10-08 bulk strengthening expanded the traditional arguments in all 21 drafts, with selected critical replies and six additional original documentary authorities; all claims still need independent claim-to-source and native French signoff."
+    "2026-10-08 bulk strengthening expanded the traditional arguments in all 21 drafts, with selected critical replies and six additional original documentary authorities; all claims still need independent claim-to-source and native French signoff.",
+    "2026-10-08 original-proponent batch: named critics are only attributed when the linked original source has been located; links prove the author's argument, not the theological truth of the criticism; claim-level review remains open.",
+    "The SSPX canonical-status entry must not regress to the pre-July-2026 2009–2017 position: original DDF decree and explanatory note plus disputed Society recourse must remain attached; follow-up canonical rulings may supersede this state."
   ],
   "public_release": false
 }
