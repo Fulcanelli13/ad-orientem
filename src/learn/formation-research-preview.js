@@ -101,7 +101,18 @@ export function createFormationResearchPreview(win=globalThis){
     });
   }
   function listItems(){
-    return available().map(q=>`<button type="button" data-ao-fr-question="${esc(q.id)}"><small>${esc(q.id)} · ${esc(q.owner)}</small>${esc(title(q))}</button>`).join("")||`<p>${esc(L(win,"No matching questions.","Aucune question trouvée."))}</p>`;
+    const items=available();
+    if(state.scope==="tlm"){
+      const grouped=new Map();
+      for(const q of items){if(!grouped.has(q.owner))grouped.set(q.owner,[]);grouped.get(q.owner).push(q);}
+      return [...grouped].map(([owner,qs])=>{
+        const canon=TLM.canonical_owners?.[owner];
+        const heading=canon?.title||owner;
+        const buttons=qs.map(q=>`<button type="button" data-ao-fr-question="${esc(q.id)}"><small>${esc(q.id)} · ${esc(owner)}</small>${esc(title(q))}</button>`).join("");
+        return `<section class="aoFROwnerGroup" data-ao-fr-owner="${esc(owner)}"><h2>${esc(heading)}</h2><div class="aoFRMeta">${esc(L(win,"Existing Church Crisis dossier · draft subquestions","Dossier existant Crise de l’Église · sous-questions en projet"))}</div>${buttons}</section>`;
+      }).join("")||`<p>${esc(L(win,"No matching questions.","Aucune question trouvée."))}</p>`;
+    }
+    return items.map(q=>`<button type="button" data-ao-fr-question="${esc(q.id)}"><small>${esc(q.id)} · ${esc(q.owner)}</small>${esc(title(q))}</button>`).join("")||`<p>${esc(L(win,"No matching questions.","Aucune question trouvée."))}</p>`;
   }
   function listView(){
     return `<div class="aoFRMeta">${esc(L(win,"Internal editorial preview","Aperçu éditorial interne"))}</div>
@@ -115,7 +126,9 @@ export function createFormationResearchPreview(win=globalThis){
   function questionView(){
     const q=chosen();if(!q)return listView();
     const currentSeries=series(),i=currentSeries.findIndex(x=>x.id===q.id),prev=i>0,next=i<currentSeries.length-1;
-    return `<div class="aoFRMeta">${esc(q.id)} · ${esc(q.owner)}</div><h1>${esc(title(q))}</h1>
+    const owner=TLM.canonical_owners?.[q.owner];
+    const ownerLine=owner&&q.id.startsWith("TLM")?`<p class="aoFRMeta">${esc(L(win,"Church Crisis owner","Dossier Crise de l’Église"))}: ${esc(owner.title)}</p>`:"";
+    return `<div class="aoFRMeta">${esc(q.id)} · ${esc(q.owner)}</div>${ownerLine}<h1>${esc(title(q))}</h1>
     <div class="aoFRNotice">${esc(L(win,"Unpublished editorial draft","Projet éditorial non publié"))}</div>${answerView()}
     ${q.debate_ids?.length?`<h2>${esc(L(win,"Complete debates","Débats complets"))}</h2><div class="aoFRSub">${q.debate_ids.map(id=>{const d=debateMap.get(id);return d?`<button type="button" data-ao-fr-debate="${esc(id)}">${esc(fr(win)?d.title_fr:d.title)}</button>`:""}).join("")}</div>`:""}
     <nav class="aoFRPrevNext"><button type="button" data-ao-fr-move="-1"${prev?"":" disabled"}>${esc(L(win,"Previous","Précédente"))}</button>
@@ -156,7 +169,7 @@ export function createFormationResearchPreview(win=globalThis){
   function move(delta){const questions=series(),n=questions.findIndex(x=>x.id===state.questionId)+delta;return questions[n]?openQuestion(questions[n].id):false;}
   function back(){if(state.view==="debate"){state.view="question";state.debateId=null;paint();return true;}if(state.view==="question"){state.view="list";state.questionId=null;paint();return true;}return close(true);}
   function close(toLearn=false){const el=root();try{el?.querySelector?.(":focus")?.blur?.();}catch{}el?.remove?.();state.open=false;state.view="list";state.questionId=null;state.debateId=null;if(toLearn)win?.AO_LEARN_APP_V1?.open?.();return true;}
-  function status(){return Object.freeze({version:FORMATION_RESEARCH_PREVIEW_VERSION,open:state.open,view:state.view,questions:allQuestions.length,traditionalMassQuestions:TLM.questions.length,approvedTraditionalMassQuestions:0,answered:answerMap.size,debates:debateMap.size,published:false});}
+  function status(){return Object.freeze({version:FORMATION_RESEARCH_PREVIEW_VERSION,open:state.open,view:state.view,questions:allQuestions.length,traditionalMassQuestions:TLM.questions.length,traditionalMassOwnerDossiers:Object.keys(TLM.canonical_owners||{}).length,approvedTraditionalMassQuestions:0,answered:answerMap.size,debates:debateMap.size,published:false});}
   return Object.freeze({open,openQuestion,openDebate,back,close,paint,status});
 }
 export function installFormationResearchPreview(win=globalThis){
