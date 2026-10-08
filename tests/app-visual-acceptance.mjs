@@ -1002,8 +1002,20 @@ try{
   assert.equal(rosaryMysteryFx.artBackdrop,true,"Rosary Mystery I lost the donor sacred-art backdrop");
   assert.ok(rosaryMysteryFx.artValue.includes("url("),"Rosary mystery backdrop has no resolved artwork");
   assert.ok(rosaryMysteryFx.contemplation>=1,"Rosary Mystery I lost the donor contemplation sheet");
-  assert.match(rosaryMysteryFx.headerTitle,/Glorious Mysteries|Mystères glorieux/i,"Rosary header repeats the active mystery instead of identifying the mystery set");
-  assert.match(rosaryMysteryFx.contemplationTitle,/Resurrection|Résurrection/i,"Rosary contemplation lost the active mystery title");
+  // The Rosary "Today" entry chooses the mystery set by date (Thursday is
+  // traditionally Joyful), not by an old hard-coded feast-day screenshot.
+  assert.match(rosaryMysteryFx.headerTitle,/(Joyful|Sorrowful|Glorious) Mysteries|Mystères (joyeux|douloureux|glorieux)/i,
+    "Rosary heading must identify the selected mystery set, not a single mystery");
+  assert.notEqual(rosaryMysteryFx.headerTitle,rosaryMysteryFx.contemplationTitle,
+    "Rosary header repeats the active contemplation mystery");
+  const firstMysteries=[
+    [/Joyful|joyeux/i,/Annunciation|Annonciation/i],
+    [/Sorrowful|douloureux/i,/Agony|Agonie/i],
+    [/Glorious|glorieux/i,/Resurrection|Résurrection/i],
+  ];
+  const first=firstMysteries.find(([set])=>set.test(rosaryMysteryFx.headerTitle));
+  assert.ok(first,"Rosary mystery set has no canonical first mystery");
+  assert.match(rosaryMysteryFx.contemplationTitle,first[1],"Rosary contemplation does not match the selected set's first mystery");
   assert.equal(rosaryMysteryFx.artTitleVisible,false,"Rosary sacred-art caption repeats the active mystery title");
   assert.equal(rosaryMysteryFx.mysteryKickerVisible,false,"Rosary repeats mystery progress as text beneath the five-segment progress owner");
   assert.equal(rosaryMysteryFx.mysteryBeadsVisible,false,"Rosary displays an empty decade-bead row before decade prayer begins");
