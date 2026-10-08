@@ -223,13 +223,19 @@
           "text_fr": "Le Christ seul rachète les hommes par un sacrifice d'une valeur infinie ; la coopération unique et l'intercession de Marie dépendent entièrement de ses mérites. Vatican II enseigne que sa maternité ne diminue ni ne concurrence l'unique médiation du Christ."
         },
         {
-          "text": "Mater Populi Fidelis acknowledges that earlier popes and Roman authorities used the term 'Co-redemptrix', yet judges its use to describe Mary's cooperation always inappropriate because of the risk of misunderstanding. A historically sanctioned expression and an irreformable definition are not the same theological category.",
+          "text": "Mater Populi fidelis (§§17–22) acknowledges some earlier papal and Roman uses of 'Co-redemptrix' but judges its use to describe Mary's cooperation 'always inappropriate' because it risks obscuring Christ's sole salvific mediation. Prior papal use of a devotional-theological title, even by authentic authorities, is not equivalent to an irreformable doctrinal definition.",
           "source_ids": [
             "MPF25",
             "LG60",
             "PIUSX1904"
           ],
-          "text_fr": "Mater Populi Fidelis reconnaît que des papes et des autorités romaines ont employé le terme « Corédemptrice », mais juge désormais son emploi toujours inapproprié pour décrire la coopération mariale, en raison de possibles malentendus. Une expression historiquement autorisée et une définition irréformable ne relèvent pas de la même catégorie théologique."
+          "text_fr": "Mater Populi fidelis (§§17–22) reconnaît que certains papes et organismes romains ont employé le titre de « Co-rédemptrice », mais juge son emploi « toujours inopportun » pour désigner la coopération de Marie, en raison du risque d'obscurcir l'unique médiation du Christ. Une expression historiquement employée par des papes et une définition doctrinale irréformable ne sont pas de même nature.",
+          "original_french_primary_source": {
+            "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_fr.html",
+            "locator": "§§17–22, particularly §22, 'toujours inopportune'",
+            "scope": "official French wording checked; any theological assessment of continuity remains unsettled"
+          },
+          "source_context_status": "OFFICIAL_FRENCH_AND_ENGLISH_MAGISTERIAL_WORDING_COMPARED_NOT_CLAIM_BY_CLAIM_SIGNOFF"
         },
         {
           "text": "The SSPX's own reaction objects that the note attenuates Mary's association in acquiring and distributing graces. Whether the text actually contradicts older doctrinal content must be tested with precise claims about redemption, merit and mediation—not asserted from the word alone.",
@@ -324,7 +330,8 @@
             "MPF25",
             "PIUSX1904"
           ],
-          "text_fr": "La critique traditionaliste soulève une véritable question de continuité : si les autorités antérieures employaient ce terme pour enseigner la coopération exceptionnelle de Marie, une désapprobation ultérieure doit expliquer — et non simplement ignorer — le contenu doctrinal transmis."
+          "text_fr": "La critique traditionaliste soulève une véritable question de continuité : si les autorités antérieures employaient ce terme pour enseigner la coopération exceptionnelle de Marie, une désapprobation ultérieure doit expliquer — et non simplement ignorer — le contenu doctrinal transmis.",
+          "source_context_status": "ARGUMENT_REQUIRES_PATRISTIC_AND_MAGISTERIAL_HISTORICAL_REVIEW"
         }
       ],
       "verification_pending": [
@@ -1029,5 +1036,19 @@
     "native_french_signoff": false,
     "publication_approved": false,
     "source_ids_unchanged": true
+  },
+  "original_text_spot_checks_20261009": {
+    "cases": [
+      {
+        "id": "CO-REDEMPTRIX",
+        "source_id": "MPF25",
+        "locator": "Mater Populi fidelis §§17–22 official English and French",
+        "finding": "2025 document explicitly acknowledges earlier papal uses while calling title always inappropriate / toujours inopportune",
+        "approval": "SPECIFIC_WORDING_CHECKED_NOT_HUMAN_DOCTRINAL_SIGNOFF"
+      }
+    ],
+    "reviewed_all_cases": false,
+    "native_french_signoff": false,
+    "public_release": false
   }
 }
