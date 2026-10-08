@@ -7,7 +7,8 @@
     "All 622 source-bearing blocks and 1,508 source-ID occurrences remain represented. URL format and source-ID resolution are NOT the same as quote/context certification or expert theological review.",
     "A spot check marks only the identified primary-source passage as directly examined; no record is certified completely merely because one source passage was checked.",
     "Source links on a named critic's own site establish the argument the critic actually advances, not the truth of factual or doctrinal assertions.",
-    "Draft EN/FR presence does not imply native-French copyediting, original-language collation or publication permission."
+    "Draft EN/FR presence does not imply native-French copyediting, original-language collation or publication permission.",
+    "A later same-day tranche compared eight additional primary passages, including original 2023 five-cardinal dubia signatures: each spot check remains strictly scoped and gives no blanket record-level approval."
   ],
   "metrics": {
     "records": 123,
@@ -16,8 +17,8 @@
     "paragraphs": 622,
     "french_draft_paragraphs": 622,
     "source_link_occurrences": 1508,
-    "records_with_at_least_one_original_text_spot_check": 9,
-    "original_text_passages_spot_checked": 10,
+    "records_with_at_least_one_original_text_spot_check": 17,
+    "original_text_passages_spot_checked": 18,
     "fully_independently_certified_records": 0,
     "human_editorially_approved_records": 0,
     "published_records": 0
@@ -2272,7 +2273,13 @@
         "SSPXFS24"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "FS2023",
+          "locator": "DDF Fiducia supplicans §§31–32: couples and non-ritual forms, avoiding marriage resemblance",
+          "scope": "Proves declared permission and limit; does not decide prudential public signification in concrete rituals"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
@@ -2314,7 +2321,13 @@
         "DI2000"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "ASSISI-START",
+          "locator": "John Paul II, address of 27 October 1986, §4 on separate places and sequential prayers",
+          "scope": "Proves organization described in pope's own speech; does not settle objective symbol/scandal evaluation"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
@@ -2335,7 +2348,13 @@
         "MA1928"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "ECUM1993",
+          "locator": "1993 Ecumenical Directory §§102–104, sharing in spiritual activities and different ecclesial communion",
+          "scope": "Permits certain Christian common prayer; no blanket approval of interreligious rites or Eucharistic intercommunion"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
@@ -2357,7 +2376,13 @@
         "IMM1885"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "DH1965",
+          "locator": "Dignitatis humanae preamble and §2: immunity from coercion and duty of men/societies towards true religion",
+          "scope": "Council's exact wording verified; reconciliation with Leo XIII not independently established"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
@@ -2470,7 +2495,13 @@
         "DAY1940"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "GS1965",
+          "locator": "Vatican II Gaudium et spes §§79–81: legitimate defense, categorical ban on indiscriminate city destruction, deterrence reported as policy",
+          "scope": "Textual scope checked, not an empirical assessment of a particular war or weapon"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
@@ -2518,7 +2549,13 @@
         "IMM1885"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "AQUINAS105",
+          "locator": "Thomas Aquinas, Summa I–II q.105 a.1 corpus and reply to objection 2",
+          "scope": "Shows mixed polity under one head and risk of tyranny; not a modern endorsement of specific constitutional laws"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
@@ -2538,7 +2575,13 @@
         "HPLUS2009"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "HPLUS2009",
+          "locator": "Humanity+ Transhumanist Declaration as adopted March 2009, paragraphs 1–8",
+          "scope": "Expresses human enhancement, autonomy and potential nonhuman sentience; makes no direct claim proving an immaterial soul or denying disability dignity"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
@@ -2595,7 +2638,13 @@
         "DUBIA2023"
       ],
       "source_registry_pointer_integrity": "RESOLVED_IN_CURRENT_REGISTRY_NOT_EXTERNAL_HTTP_OR_CONTEXT_CERTIFICATION",
-      "original_text_spot_checks": [],
+      "original_text_spot_checks": [
+        {
+          "source_id": "SYN5CARD23",
+          "locator": "Original five signed dubia (10 July 2023), Question 3 and papal response dated 11 July 2023",
+          "scope": "Despite Vatican page title saying 'two Cardinals', original question bears five cardinal signatures; not all signed reply correspondences are separately certified"
+        }
+      ],
       "claim_by_claim_independent_source_context_certified": false,
       "formal_theological_or_canonical_approval": false,
       "native_french_edit_approved": false,
