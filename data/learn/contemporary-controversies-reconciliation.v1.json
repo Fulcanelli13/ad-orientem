@@ -17,8 +17,11 @@
     "topics_reviewed": 43,
     "dispositions": {
       "EMBED_CASE_PROPOSED": 22,
-      "OWNERSHIP_REVIEW": 12,
-      "ANCHOR_CONFIRMED_CONTENT_UNVERIFIED": 9
+      "EXTERNAL_EVIDENCE_REFERENCE": 1,
+      "ANCHOR_CONFIRMED_CONTENT_UNVERIFIED": 9,
+      "EMBED_CASE": 7,
+      "REFERENCE_ONLY": 3,
+      "KEEP_EXISTING": 1
     }
   },
   "reading_rules": [
@@ -29,7 +32,8 @@
     "One issue has one primary canonical owner; other IDs are cross-references, not duplicate records.",
     "Legacy A001-A318 and C001-C233 research references are noncanonical aliases; do not invent per-ID mappings.",
     "All substantive paragraphs, objections, answers and traditional assessments require traceable hyperlinked sources; attribute objections to actual proponents.",
-    "Empirical medical or historical claims require sources appropriate to their disciplines, distinct from moral authority."
+    "Empirical medical or historical claims require sources appropriate to their disciplines, distinct from moral authority.",
+    "REFERENCE_ONLY and KEEP_EXISTING do not create an independent debate; EMBED_CASE requires editorial verification before insertion; EXTERNAL_EVIDENCE_REFERENCE is not a theological claim owner."
   ],
   "dossiers": [
     {
@@ -146,10 +150,18 @@
       "topic": "Specific vaccine safety and efficacy claims",
       "canonical_owner": null,
       "cross_references": [
-        "APOL-002"
+        "APOL-002",
+        "APOL-052"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Requires up-to-date biomedical evidence; do not assert in doctrinal dossier without scientific sourcing"
+      "disposition": "EXTERNAL_EVIDENCE_REFERENCE",
+      "note": "Ownership resolution: Source library/reference only, not an independent apologetics answer.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "vaccines-empirical-evidence",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": null
+      }
     },
     {
       "slug": "capital-punishment",
@@ -266,54 +278,93 @@
     {
       "slug": "fatima-consecration",
       "topic": "Fatima consecration of Russia",
-      "canonical_owner": null,
+      "canonical_owner": "APOL-004",
       "cross_references": [
-        "APOL-004",
-        "CR-DOC-09"
+        "CR-DOC-09",
+        "learn.catechism"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Private-revelation formation and crisis interpretation; inspect PRAY/research first"
+      "disposition": "EMBED_CASE",
+      "note": "Ownership resolution: Historical apparition-specific case; no separate Fatima theology owner.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "fatima-consecration",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "APOL-004"
+      }
     },
     {
       "slug": "fatima-third-secret",
       "topic": "Third Secret of Fatima",
-      "canonical_owner": null,
+      "canonical_owner": "APOL-004",
       "cross_references": [
-        "APOL-004"
+        "CR-DOC-09",
+        "learn.catechism"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Historical claims and private revelation; source provenance required"
+      "disposition": "EMBED_CASE",
+      "note": "Ownership resolution: Evidence case under private revelation credibility; not repeated in Church Crisis.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "fatima-third-secret",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "APOL-004"
+      }
     },
     {
       "slug": "medjugorje",
       "topic": "Medjugorje and degrees of Church recognition",
-      "canonical_owner": null,
+      "canonical_owner": "APOL-004",
       "cross_references": [
-        "APOL-004"
+        "learn.catechism",
+        "learn.spiritual_life"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Private-revelation formation owner to be located; avoid new apologetics bank"
+      "disposition": "EMBED_CASE",
+      "note": "Ownership resolution: Can share general introduction with private-revelation entry; no duplicate first-principles explanation.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "medjugorje",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "APOL-004"
+      }
     },
     {
       "slug": "private-revelation",
       "topic": "Approvals, discernment and assent to private revelation",
-      "canonical_owner": null,
+      "canonical_owner": "learn.catechism",
       "cross_references": [
-        "APOL-004"
+        "APOL-004",
+        "learn.spiritual_life"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Potential shared formation doctrinal reference, not each apparition as new dossier"
+      "disposition": "REFERENCE_ONLY",
+      "note": "Ownership resolution: No new APOL navigation entry; foundational Catechism source and handoff.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "private-revelation",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "learn.catechism"
+      }
     },
     {
       "slug": "vatican-china",
       "topic": "Vatican-China appointment agreements",
-      "canonical_owner": null,
+      "canonical_owner": "CR-GOV-01",
       "cross_references": [
-        "CR-GOV-01",
-        "CR-ECC-01"
+        "CR-ECC-01",
+        "CR-AUT-04",
+        "APOL-053"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Contemporary case lacks clear fit in 81-title inventory; investigate owner before new navigation"
+      "disposition": "EMBED_CASE",
+      "note": "Ownership resolution: No new Crisis category; attach historical case to governance responsibility.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "vatican-china",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "CR-GOV-01"
+      }
     },
     {
       "slug": "assisi",
@@ -387,22 +438,38 @@
     {
       "slug": "charismatic-renewal",
       "topic": "Charismatic renewal, tongues and healing",
-      "canonical_owner": null,
+      "canonical_owner": "APOL-004",
       "cross_references": [
-        "APOL-004"
+        "learn.catechism",
+        "learn.spiritual_life"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Spiritual life versus apologetics boundary unresolved"
+      "disposition": "EMBED_CASE",
+      "note": "Ownership resolution: Do not amend the frozen 14-lesson Spiritual Life curriculum for this alone.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "charismatic-renewal",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "APOL-004"
+      }
     },
     {
       "slug": "yoga-reiki",
       "topic": "Yoga, Reiki and Eastern spiritual practices",
-      "canonical_owner": null,
+      "canonical_owner": "learn.catechism",
       "cross_references": [
+        "learn.spiritual_life",
         "APOL-050"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Examine Spiritual Life ownership first"
+      "disposition": "REFERENCE_ONLY",
+      "note": "Ownership resolution: Catechism owns doctrinal discernment; SL13 Devotion Without Superstition only a link.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "yoga-reiki",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "learn.catechism"
+      }
     },
     {
       "slug": "just-war",
@@ -433,44 +500,77 @@
     {
       "slug": "public-communion-politicians",
       "topic": "Communion for public politicians supporting abortion",
-      "canonical_owner": null,
+      "canonical_owner": "CR-GOV-07",
       "cross_references": [
         "CR-MOR-04",
-        "APOL-030"
+        "APOL-030",
+        "learn.sexual_ethics"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Recover sacramental discipline and Sexual Ethics source first"
+      "disposition": "EMBED_CASE",
+      "note": "Ownership resolution: Church-governance enforcement case, not a duplicate abortion debate.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "public-communion-politicians",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "CR-GOV-07"
+      }
     },
     {
       "slug": "euthanasia",
       "topic": "Euthanasia versus declining disproportionate treatment",
-      "canonical_owner": null,
+      "canonical_owner": "APOL-052",
       "cross_references": [
-        "APOL-050",
-        "APOL-052"
+        "learn.catechism",
+        "learn.rites.sick",
+        "pray.dying_companion"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Medical moral teaching needs assigned formation owner"
+      "disposition": "EMBED_CASE",
+      "note": "Ownership resolution: Embed objective-intention distinction in existing moral principle dossier; no new euthanasia navigator.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "euthanasia",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "APOL-052"
+      }
     },
     {
       "slug": "organ-donation",
       "topic": "Organ donation and determination of death",
-      "canonical_owner": null,
+      "canonical_owner": "learn.catechism",
       "cross_references": [
+        "learn.rites.sick",
         "APOL-052"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Medical-bioethics technical owner unresolved"
+      "disposition": "REFERENCE_ONLY",
+      "note": "Ownership resolution: Catholic doctrinal reference rather than new sacramental formation or apologetics dossier.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "organ-donation",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "learn.catechism"
+      }
     },
     {
       "slug": "cremation",
       "topic": "Cremation, burial and changing discipline",
-      "canonical_owner": null,
+      "canonical_owner": "learn.rites.sick",
       "cross_references": [
+        "pray.holy_souls",
+        "pray.dying_companion",
         "APOL-040"
       ],
-      "disposition": "OWNERSHIP_REVIEW",
-      "note": "Sacramental funeral formation or devotional practice, not general apologetics by default"
+      "disposition": "KEEP_EXISTING",
+      "note": "Ownership resolution: Existing owner confirmed in data/learn/formation-gap-ownership.v1.json; only repair if currently incomplete.",
+      "previous_disposition": "OWNERSHIP_REVIEW",
+      "content_pack": {
+        "file": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+        "case_id": "cremation",
+        "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+        "case_owner": "learn.rites.sick"
+      }
     },
     {
       "slug": "ai-transhumanism",
@@ -550,6 +650,20 @@
     "case_count": 6,
     "source_count": 31,
     "stage": "DRAFT_RESEARCH_NEEDS_EDITORIAL_APPROVAL",
-    "direct_sources_each_substantive_paragraph": true
+    "direct_sources_each_substantive_paragraph": true,
+    "second_batch_pack": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+    "second_batch_case_count": 12,
+    "second_batch_source_count": 25
+  },
+  "review_status": {
+    "initial_ownership_reviews": 12,
+    "remaining_ownership_reviews": 0,
+    "external_scientific_evidence_not_catholic_owner": 1,
+    "new_navigation_dossiers": 0,
+    "all_12_evidence_notes": "RESEARCH_DRAFT_NOT_PUBLISHED",
+    "existing_dossier_counts": {
+      "apologetics": 60,
+      "church_crisis": 81
+    }
   }
 }
