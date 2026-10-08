@@ -146,6 +146,7 @@ try{
 
   // Glossary: category-first navigation, multilingual search and sourced term drawer.
   await openFormationFamily("reference");
+  await page.evaluate(()=>{globalThis.__AO_LEARN_GLOSS_TRACE=[]});
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
   try{
     await page.waitForFunction(()=>
@@ -163,7 +164,8 @@ try{
       registered:!!globalThis.AO_MODULES?.get?.("learn.glossary"),
       route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
       rootPresent:!!document.getElementById("ao-glossary-root"),
-      learnText:document.getElementById("ao-learn-modular-root")?.innerText?.slice(0,250)??null
+      learnText:document.getElementById("ao-learn-modular-root")?.innerText?.slice(0,250)??null,
+      trace:globalThis.__AO_LEARN_GLOSS_TRACE
     }));
     throw new Error("Glossary phone navigation state: "+JSON.stringify({diagnostic,pageErrors,error:String(error)}));
   }
