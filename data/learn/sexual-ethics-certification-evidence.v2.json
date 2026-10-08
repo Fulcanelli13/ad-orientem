@@ -7,7 +7,8 @@
     "A source-supported inference is not a verbatim author's position. Clinical guidelines do not pronounce moral doctrine.",
     "English and French wording must independently preserve the same limited claim; live canonical ownership must remain unchanged.",
     "Only after all eight stages have original-passage support, documented exact opponent attribution where relevant, and detailed French proof-reading may full certification be considered.",
-    "Any named theological certification requires an independent competent human theological editor; this file does not claim imprimatur."
+    "Any named theological certification requires an independent competent human theological editor; this file does not claim imprimatur.",
+    "A clinically confirmed emergency is a factual medical claim, not evidence that its original clinical author advocates any given moral conclusion."
   ],
   "sources_checked": {
     "VS": {
@@ -57,12 +58,13 @@
     "substantive_case_reviews": 8,
     "individually_assessed_stages": 64,
     "stage_verdict_counts": {
-      "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 30,
-      "ORIGINAL_OPPONENT_POSITION": 5,
-      "ILLUSTRATIVE_CHALLENGE": 11,
-      "REASONED_INFERENCE_FROM_DOCUMENT": 12,
+      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 377,
       "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT": 5,
-      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 377
+      "REASONED_INFERENCE_FROM_DOCUMENT": 12,
+      "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 30,
+      "ILLUSTRATIVE_CHALLENGE": 11,
+      "ORIGINAL_OPPONENT_POSITION": 3,
+      "DIRECT_ORIGINAL_CLINICAL_CONTEXT": 2
     },
     "full_case_certifications": 0
   },
@@ -4931,7 +4933,7 @@
           "selected_source_ids": [
             "ACOG_ECTOPIC_GUIDELINE"
           ],
-          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "assessment": "DIRECT_ORIGINAL_CLINICAL_CONTEXT",
           "explanation_en": "ACOG clinical original supports emergency danger and need for intervention, not a moral preference.",
           "explanation_fr": "ACOG confirme l'urgence clinique, sans trancher la préférence morale.",
           "author_quote_verified": false,
@@ -4943,7 +4945,7 @@
             "CASTI",
             "ACOG_ECTOPIC"
           ],
-          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "assessment": "DIRECT_ORIGINAL_CLINICAL_CONTEXT",
           "explanation_en": "ACOG describes ruptured ectopic pregnancy and need for urgent care.",
           "explanation_fr": "ACOG décrit la rupture et la nécessité de soins urgents.",
           "author_quote_verified": false,
