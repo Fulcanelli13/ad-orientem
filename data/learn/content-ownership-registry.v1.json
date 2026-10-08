@@ -134,13 +134,18 @@
       "id": "learn.seasonal_rites",
       "disposition": "RETIRE",
       "owner": "calendar/customary/pray",
-      "note": "Hidden surviving route; move seasonal practice records to Calendar/Customary/PRAY and remove Learn route after handoffs are migrated."
+      "note": "Hidden surviving route; move seasonal practice records to Calendar/Customary/PRAY and remove Learn route after handoffs are migrated.",
+      "implementation_state": "COMPATIBILITY_ALIAS_ONLY",
+      "alias_target": "calendar",
+      "visible": false
     },
     {
       "id": "learn.catholic_life",
       "disposition": "RETIRE",
       "owner": null,
-      "note": "Explicitly prohibited catch-all owner. Must not remain a route or valid handoff target."
+      "note": "Explicitly prohibited catch-all owner. Must not remain a route or valid handoff target.",
+      "implementation_state": "ABSENT",
+      "visible": false
     }
   ],
   "metadata_migrations": [
@@ -153,7 +158,15 @@
         "spiritual-moral",
         "mass-formation",
         "liturgical-life"
-      ]
+      ],
+      "state": "COMPLETE",
+      "completed_at": "2026-10-08",
+      "result": {
+        "sacramental_routes": "sacramental-formation",
+        "scapular": "spiritual-moral",
+        "low_mass_responses": "mass-formation",
+        "retired_category_remaining_in_active_routes": false
+      }
     },
     {
       "source": "src/learn/sexual-ethics-data/index.js",
@@ -714,5 +727,17 @@
       "target": "~35-40 timeline nodes",
       "note": "Chronology/context support layer; avoid duplicating Crisis."
     }
-  ]
+  ],
+  "publication_gates": {
+    "apologetics": {
+      "status": "NOT_PUBLISHED",
+      "route": "learn.apologetics",
+      "requirement": "Do not expose the route until canonical dossiers have paragraph-level source resolution and bilingual publication-ready content."
+    },
+    "church_crisis": {
+      "status": "NOT_PUBLISHED",
+      "route": "learn.church_crisis",
+      "requirement": "Do not expose the route until every substantive paragraph is source-resolved, real objections are attributed to actual proponents, and the canonical 81-dossier corpus is bilingual and publication-ready."
+    }
+  }
 }
