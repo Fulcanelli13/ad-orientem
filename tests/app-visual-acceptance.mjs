@@ -520,8 +520,11 @@ try{
   assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
   await shot("03a-pray-angelus-rails");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
+  await page.locator("#aoPray435930 [data-p435930-family='passion']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.stations']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="stations",null,{timeout:5000});
   await waitForFxSettled();
@@ -573,6 +576,8 @@ try{
   await shot("03d-pray-stations-xiv-silence");
 
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Exact-donor devotional rails: Adoration arrival is transient genuflection,
@@ -610,6 +615,8 @@ try{
   await shot("03f-pray-adoration-silence");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForSelector("#aoPray435930 [data-p435930-ador-mode='visit']",{state:"visible",timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
@@ -650,6 +657,8 @@ try{
   assert.ok(benBlessing.width>=30&&benBlessing.height>=30,"Benediction blessing icon collapsed below visible rail geometry");
   await shot("03g-pray-benediction-blessing");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Confession remains private/read-only; only the exact in-confessional moment
@@ -668,6 +677,8 @@ try{
   assert.equal(confessionRail.right,"ao-rich-confession","Confession lost its persistent sacramental identity rail");
   assert.match(confessionRail.stage,/In Confessional|Au confessionnal/,"Confession rail lost the active stage");
   await shot("03h-pray-confession-in-confessional");
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
