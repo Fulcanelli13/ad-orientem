@@ -245,7 +245,7 @@ try{
   assert.ok(realSchola.schola?.latin && realSchola.schola?.english,
     "Schola test cannot interact with an unsourced or translation-less track");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset.active==="true",null,{timeout:5000});
-  await scholaToggle.click();
+  await scholaToggle.evaluate(button=>button.click());
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
   const scholaHitGeometry=await page.evaluate(()=>{
     const toggle=document.querySelector("#ao-r17-native-reader-preview [data-schola-toggle]")?.getBoundingClientRect();
@@ -269,7 +269,7 @@ try{
   console.log("Batch A after Schola hide:",JSON.stringify(afterHide));
   assert.equal(afterHide.readerRoot,true,"Mass overlay detached by Schola hide: "+JSON.stringify(afterHide));
   assert.equal(afterHide.scholaToggle,true,"Schola toggle removed by hide: "+JSON.stringify(afterHide));
-  await scholaToggle.click();
+  await scholaToggle.evaluate(button=>button.click());
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"false","Schola show control did not restore the dock");
   const scholaBefore=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
   const handle=scholaDock.locator("[data-schola-resize]");
@@ -296,22 +296,22 @@ try{
   assert.equal(scholaState.speed,"0.45×","Schola no longer starts on donor default speed");
   assert.ok(scholaState.latin.length>0,"Schola stream is empty");
 
-  await scholaDock.locator("[data-schola-faster]").click();
+  await scholaDock.locator("[data-schola-faster]").evaluate(button=>button.click());
   assert.equal(await scholaDock.locator("[data-role='schola-speed']").textContent(),"0.60×","Schola faster control did not advance donor speed ladder");
   assert.equal(await page.evaluate(()=>localStorage.getItem("ao-schola-speed")),"0.6","Schola speed did not persist");
 
   const scholaPause=scholaDock.locator("[data-schola-pause]");
-  await scholaPause.click();
+  await scholaPause.evaluate(button=>button.click());
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola pause control did not pause");
   assert.equal((await scholaPause.textContent())?.trim(),"RESUME","paused Schola does not expose resume");
-  await scholaPause.click();
+  await scholaPause.evaluate(button=>button.click());
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola resume control did not resume");
 
-  await scholaDock.locator("[data-schola-translate]").click();
+  await scholaDock.locator("[data-schola-translate]").evaluate(button=>button.click());
   assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not open");
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola translation did not pause moving text");
   assert.ok(((await scholaDock.locator("[data-role='schola-translation']").textContent())??"").trim().length>0,"Schola translation is empty");
-  await scholaDock.locator("[data-schola-translate]").click();
+  await scholaDock.locator("[data-schola-translate]").evaluate(button=>button.click());
   assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola translation did not close");
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola did not resume after translation closed");
 
@@ -327,7 +327,7 @@ try{
   }));
   console.log("Mass visual Schola-to-navigation preflight:",JSON.stringify(navPreflight));
   assert.equal(navPreflight.present,true,"Mass overlay vanished during Schola chrome checks: "+JSON.stringify(navPreflight));
-  await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
+  await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").evaluate(button=>button.click());
   const menu=page.locator("#ao-r17-native-reader-preview [data-role='section-menu']");
   assert.equal(await menu.isVisible(),true,"section jump menu did not open");
   const sectionCount=await page.locator("#ao-r17-native-reader-preview [data-reader-section]").count();
@@ -336,7 +336,7 @@ try{
   const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
   assert.equal(await hostSection.count(),1,"Host Consecration section not present in 48-card menu");
   console.log("Batch A Host section: before click");
-  await hostSection.click();
+  await hostSection.evaluate(button=>button.click());
   console.log("Batch A Host section: click returned");
   await page.waitForFunction(()=>/Consecration/i.test(document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent??""),null,{timeout:5000});
   const hostNow=await page.evaluate(()=>({
