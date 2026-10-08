@@ -1,0 +1,25 @@
+name: Formation research preview checks
+on:
+  pull_request:
+    paths:
+      - 'src/learn/formation-research-preview.js'
+      - 'src/learn/formation-research-preview-data.js'
+      - 'src/learn/browser-entry.js'
+      - 'tests/formation-research-preview.mjs'
+      - 'data/learn/biblical-patristic-answers.v1.json'
+      - 'data/learn/sedevacantism-preconciliar-debates.v1.json'
+      - 'data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json'
+      - '.github/workflows/formation-research-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa-reader:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check bilingual source-linked Formation preview
+        run: node tests/formation-research-preview.mjs
