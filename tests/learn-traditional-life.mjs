@@ -159,6 +159,7 @@ assert.match(runtime,/Formation/,"traditional Learn child shell lost Formation i
 assert.doesNotMatch(sickSection,/DISCERNMENT & ENGAGEMENT|Courtship is discernment|CANONICAL PREPARATION/,"Serious Illness regained misplaced Matrimony content");
 assert.doesNotMatch(runtime,/<span aria-hidden="true"><\/span><\/header>/,"traditional Learn child shell regressed to a blank trailing spacer");
 assert.match(runtime,/id==="learn\.seasonal_rites"[\s\S]*canonicalId:"calendar"[\s\S]*navigate\?\.\("calendar"\)/,"Seasonal compatibility alias no longer hands off to the richer Calendar/liturgical-year owner");
+assert.doesNotMatch(runtime,/else node\.innerHTML=seasonal\(win\)/,"retired Seasonal Catholic Practice returned as the generic Traditional Learn renderer fallback");
 assert.doesNotMatch(runtime,/AO_TRADITION_V38/,"historical Traditions monolith was restored as a runtime owner");
 assert.match(browser,/ensureTraditionalLearnRegistry/);
 assert.match(browser,/TRADITIONAL_LEARN_ROUTES\[id\]/);
