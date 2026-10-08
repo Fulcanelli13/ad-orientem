@@ -28,6 +28,9 @@
 4. **Medium — UI/QA:** keep compact dossier navigation but expose all **proven** distinct subsidiary questions below their existing owners, searchable by legacy ID and question wording.
 5. **Separate workstream:** examine archive-vs-runtime Customs Atlas and Calendar research before asserting worldwide/map coverage complete; do not blend geographical attestation counts with the Formation totals.
 
+## Separate Customs Atlas archival delta (not counted as Formation questions)
+The prior user-file archive includes `Ad_Orientem_SOT-07_Traditional_Catholic_Customary_French_World_v1.xlsx` (**63** research customs/rules) and `Ad_Orientem_SOT-07G_Geographic_Customary_Atlas_v1.6.xlsx` (**62** custom families, **69** named complexes, **216** geographical attestations). The current GitHub `data/customs/customs-atlas-seed.v1.json` has **13** customs and **71** attestations. The user-file Atlas has a worldwide/directory-driven evidence gate, whereas the SOT-07 customary authority layer has a French-world relevance gate; the GitHub production-seed has its own promotion policy. Accordingly **216 minus 71 is not a verified count of missing records**. Perform a distinct row-by-row SOT-07G-v1.6 → GitHub Customs Atlas reconciliation before calling the map/calendar research fully integrated. Do not replace the 13 active seed customs with 62 family labels without classifying the identity differences.
+
 ## Acceptance policy
 A record can be `RECOVERED_VERBATIM` only with a stable original question text and provenance. `RECOVERED_NORMALIZED` must be explicitly named as such and linked to evidence. A band-level topical summary remains `BAND_ONLY`; no per-ID owner is certified by association alone.
 
