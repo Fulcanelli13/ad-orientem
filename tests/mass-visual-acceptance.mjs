@@ -40,6 +40,7 @@ try{
     const proper={
       sourcePath:"Sancti/10-07",
       name:"Our Lady of the Rosary",
+      color:"white",
       introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord"),
       collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son")],
       epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world"),
@@ -98,6 +99,9 @@ try{
 
   const opening=await page.evaluate(()=>({
     uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+    liturgicalColour:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset?.liturgicalColour??null,
+    liturgicalSource:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset?.liturgicalSource??null,
+    liturgicalBackground:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.style?.getPropertyValue("--ao-mass-bg")??null,
     legacyStarts:globalThis.__AO_MASS_VISUAL_LEGACY_STARTS??0,
     modeButtons:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-mode]").length,
     livePressed:document.querySelector("#ao-r17-native-reader-preview [data-reader-mode='LIVE']")?.getAttribute("aria-pressed")??null,
@@ -152,6 +156,9 @@ try{
   assert.ok(opening.body.length>0);
   assert.equal(opening.scholaInRightRail,false,"Schola remained trapped in the narrow right rail");
   assert.equal(opening.scholaDock,"true","active Schola did not move to the readable dedicated dock");
+  assert.equal(opening.liturgicalColour,"WHITE","selected Rosary votive Proper failed to supply the Mass liturgical background");
+  assert.equal(opening.liturgicalSource,"SELECTED_PROPER","Mass colour came from the day fallback instead of selected Proper");
+  assert.equal(opening.liturgicalBackground,"#191815","Mass reader ignored the white-themed dark palette");
   assert.equal(opening.homeButton,true,"LIVE first ribbon lost Home control");
   assert.equal(opening.preferencesButton,true,"v1.80 first ribbon lost Mass preferences control");
   assert.equal(opening.appSettingsButton,true,"Mass preferences lost its app-settings handoff");
