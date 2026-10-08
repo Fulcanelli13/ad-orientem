@@ -84,11 +84,11 @@
         "frozenLesson": 35
       },
       {
-        "lemma": "vinum",
-        "partOfSpeech": "noun",
+        "lemma": "respicio",
+        "partOfSpeech": "verb",
         "gloss": {
-          "en": "wine",
-          "fr": "vin"
+          "en": "look back / regard / consider",
+          "fr": "regarder / considérer"
         },
         "frozenLesson": 35
       }
@@ -131,7 +131,7 @@
       "nos",
       "servus",
       "sed",
-      "nec",
+      "neque/nec",
       "a/ab",
       "caelum",
       "maiestas",
@@ -422,18 +422,6 @@
       "status": "reading-support-untracked"
     },
     {
-      "lemma": "respicio",
-      "forms": [
-        "respicere"
-      ],
-      "gloss": {
-        "en": "look upon",
-        "fr": "regarder"
-      },
-      "trackedLesson": null,
-      "status": "reading-support-untracked"
-    },
-    {
       "lemma": "Abel",
       "forms": [
         "Abel"
@@ -645,6 +633,18 @@
       "gloss": {
         "en": "mystery",
         "fr": "mystère"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vinum",
+      "forms": [
+        "vinum"
+      ],
+      "gloss": {
+        "en": "wine",
+        "fr": "vin"
       },
       "trackedLesson": null,
       "status": "reading-support-untracked"
@@ -910,8 +910,8 @@
       "title": "Supra quae: comparison inside the period",
       "sourceId": "canon-supra-l35",
       "learnerCopy": {
-        "en": "The prayer asks God to look favourably on the offerings, then compares them with Abel, Abraham and Melchisedech. sacerdos and sacrificium belong to the Canon's sacrificial register, not an isolated vocabulary list.",
-        "fr": "La prière demande à Dieu de regarder favorablement les offrandes, puis les compare à celles d'Abel, d'Abraham et de Melchisédech. sacerdos et sacrificium appartiennent au registre sacrificiel du Canon, non à une liste isolée."
+        "en": "The prayer asks God to look favourably on the offerings, then compares them with Abel, Abraham and Melchisedech. sacerdos and sacrificium belong to the Canon's sacrificial register, not an isolated vocabulary list. The actual Canon petition respicere digneris is a form of the certified verb respicio, 'look upon': do not treat it as a merely optional gloss.",
+        "fr": "La prière demande à Dieu de regarder favorablement les offrandes, puis les compare à celles d'Abel, d'Abraham et de Melchisédech. sacerdos et sacrificium appartiennent au registre sacrificiel du Canon, non à une liste isolée. Dans la demande du Canon respicere digneris, respicere relève du verbe suivi respicio (« regarder avec faveur »), et non d'une simple glose facultative."
       },
       "referenceIds": [
         "canon-supra-l35",
@@ -1029,7 +1029,7 @@
         "sed",
         "sanctus",
         "filius",
-        "nec",
+        "neque/nec",
         "a/ab",
         "in",
         "caelum",
@@ -1084,7 +1084,8 @@
         "offero",
         "sacerdos",
         "sanctus",
-        "hostia"
+        "hostia",
+        "respicio"
       ],
       "supportLemmas": [
         "propitius",
@@ -1139,7 +1140,6 @@
         "per",
         "hic/haec/hoc",
         "aqua",
-        "vinum",
         "is/ea/id",
         "divinus",
         "sum"
@@ -1151,7 +1151,8 @@
         "condo",
         "reformo",
         "consors",
-        "mysterium"
+        "mysterium",
+        "vinum"
       ]
     },
     {
@@ -1794,7 +1795,7 @@
       "suscipio",
       "memoria",
       "sacerdos",
-      "vinum"
+      "respicio"
     ],
     "silentIntroductions": [],
     "authenticSourceCount": 6,
@@ -1828,5 +1829,16 @@
         "Franchir le jalon de l’étape 7 sur la longue syntaxe du Canon."
       ]
     }
+  },
+  "reconciliation": {
+    "date": "2026-10-08",
+    "source": "data/learn/core-latin-201-350.v1.0.json",
+    "retiredTracked": [
+      "vinum"
+    ],
+    "promotedTracked": [
+      "respicio"
+    ],
+    "preservation": "Former tracked words remain reading support when the source passage requires them."
   }
 }
