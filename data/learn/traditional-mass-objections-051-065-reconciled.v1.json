@@ -1,6 +1,6 @@
 {
   "version": "TLM_OBJECTIONS_051_065_RECONCILED_V1",
-  "status": "ENGLISH_SOURCE_LINKED_NORMALIZED_SUMMARIES_NOT_PUBLISHED",
+  "status": "BILINGUAL_30_PARAGRAPHS_DRAFT_SOURCE_REVIEW_PENDING_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_transformation_notice": "This pack preserves all 15 earlier titles and principal claims, but the substantive passages were normalized/rephrased from chat draft, not exact verbatim migration. Consult previous in-chat TLM051–065 for complete draft language.",
@@ -375,7 +375,8 @@
           "source_ids": [
             "OTT69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "En 1969, les cardinaux Ottaviani et Bacci transmirent une *Brève étude critique* dénonçant, selon leurs auteurs, des écarts notables par rapport à la théologie du sacrifice eucharistique formulée au concile de Trente. Cette étude constitue une critique contemporaine sérieuse et documentée, non une condamnation magistérielle obligatoire."
         },
         {
           "role": "assessment",
@@ -385,9 +386,11 @@
             "GIM70",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Soutenir qu’un rite exprime moins clairement la doctrine du sacrifice ne revient pas automatiquement à démontrer son invalidité ou une hérésie formelle. Les corrections ultérieures et le langage sacrificiel expressément présent dans la réforme doivent aussi entrer dans l’examen."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM060",
@@ -406,7 +409,8 @@
             "GIM70",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La Présentation générale du Missel romain fut modifiée en 1970, notamment par l’ajout d’un préambule doctrinal explicite et par la clarification du langage eucharistique, après la controverse suscitée par la première édition."
         },
         {
           "role": "identified_reply",
@@ -415,9 +419,11 @@
             "MR69",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Ces corrections explicatives ne rétablirent pas pour autant l’ancien agencement de l’offertoire, le Canon romain comme unique prière eucharistique ni les autres structures rituelles antérieures. On peut critiquer ces choix tout en reconnaissant que des corrections ont eu lieu."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM061",
@@ -435,7 +441,8 @@
           "source_ids": [
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium*, au n° 36, demandait la conservation du latin dans les rites latins tout en admettant une place plus large pour les langues vernaculaires ; le n° 54 souhaitait aussi que les fidèles puissent réciter ou chanter en latin les parties de l’Ordinaire qui leur reviennent."
         },
         {
           "role": "assessment",
@@ -443,9 +450,11 @@
           "source_ids": [
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Le Concile autorisa donc un emploi accru des langues vernaculaires sous la responsabilité de l’autorité ecclésiastique compétente. Mais la disparition presque complète du latin dans certaines pratiques locales ne saurait être présentée comme une prescription explicite du Concile."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM062",
@@ -463,7 +472,8 @@
           "source_ids": [
             "AUD26"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Dans son audience du 26 novembre 1969, Paul VI reconnut la perte spirituelle et artistique entraînée par le passage du latin aux langues vernaculaires et mentionna particulièrement le chant grégorien. Il défendit néanmoins l’amélioration de la compréhension des paroles et de la participation du peuple comme des gains pastoraux."
         },
         {
           "role": "assessment",
@@ -472,9 +482,11 @@
             "AUD26",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Son explication confirme qu’il reconnaissait la valeur du patrimoine linguistique et musical hérité. La proportionnalité de ce sacrifice demeure une question historique et pastorale : il ne faut effacer ni la perte reconnue ni les bénéfices espérés."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM063",
@@ -492,7 +504,8 @@
           "source_ids": [
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium*, au n° 116, affirme que le chant grégorien convient particulièrement à la liturgie romaine et qu’il doit, toutes choses égales d’ailleurs, y occuper la première place. Il n’était donc pas réservé exclusivement aux célébrations selon le missel de 1962."
         },
         {
           "role": "assessment",
@@ -501,9 +514,11 @@
             "GIRM",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Le missel réformé peut être célébré en latin avec chant. Si le chant grégorien est devenu presque absent de certaines paroisses, cela concerne la pratique liturgique, la formation et les moyens musicaux disponibles, non une interdiction générale dans les livres réformés."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM064",
@@ -524,7 +539,8 @@
             "MEM69",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium* n’a pas imposé la communion dans la main. L’instruction *Memoriale Domini* de 1969 examina la diffusion de cette pratique en certains lieux, conserva le mode de distribution établi comme principe et permit à certaines conférences épiscopales de demander l’autorisation de l’autre pratique."
         },
         {
           "role": "assessment",
@@ -532,9 +548,11 @@
           "source_ids": [
             "MEM69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La manière dont cette discipline s’est introduite est une question historique légitime. Là où l’autorisation a été régulièrement accordée, on ne peut simplement qualifier cette pratique d’illicite ; les préoccupations relatives à la révérence eucharistique doivent être examinées à la lumière de l’instruction elle-même."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM065",
@@ -552,7 +570,8 @@
           "source_ids": [
             "MP69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Dans *Mysterii Paschalis* (1969), Paul VI expliqua la réforme du calendrier par la volonté de mettre au premier plan le mystère pascal, d’alléger une surcharge du sanctoral universel et de mieux représenter les saints des diverses régions de l’Église."
         },
         {
           "role": "assessment",
@@ -561,9 +580,11 @@
             "MP69",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Le calendrier façonne la mémoire dévotionnelle, et chaque déplacement ou suppression de fête peut être discuté sur le fondement de son histoire. Cependant, ces modifications ne démontrent pas, à elles seules, une intention d’attaquer le culte des saints. Des papes antérieurs avaient eux aussi révisé des fêtes, vigiles et octaves."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
     }
   ],
   "counts": {
@@ -573,8 +594,8 @@
   },
   "translation_progress": {
     "question_titles_fr_draft": 15,
-    "paragraphs_fr_draft": 16,
-    "questions_with_complete_paragraphs_fr_draft": 8,
+    "paragraphs_fr_draft": 30,
+    "questions_with_complete_paragraphs_fr_draft": 15,
     "question_paragraph_count_expected": 30,
     "human_review_completed": false
   }
