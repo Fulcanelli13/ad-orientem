@@ -703,8 +703,10 @@
     {
       "id": "church-crisis",
       "disposition": "MERGE",
-      "target": "~70-80 canonical dossiers",
-      "note": "Compress existing C corpus plus Mass Crisis, Origins, Ecumenism, Synodality, Governance and Moral research."
+      "target": "81 canonical dossiers",
+      "note": "Freeze 81 canonical dossiers across Origins, Liturgical, Doctrinal, Ecclesiological, Authority, Moral, Identity & Mission, and Governance. Legacy C001-C233 plus Mass/Origins/Ecumenism/Synodality/Governance/Moral/Identity research remain sourceRefs/aliases, not navigation.",
+      "canonical_registry": "data/learn/church-crisis-canonical.v1.json",
+      "reconciliation": "data/learn/church-crisis-reconciliation.v1.json"
     },
     {
       "id": "church-history",
