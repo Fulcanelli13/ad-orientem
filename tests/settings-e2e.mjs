@@ -49,6 +49,13 @@ try{
 
   await page.locator('[data-settings-route="/settings/general"]').click();
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/general");
+  assert.equal(await page.locator('[data-pref-path="general.uiLanguage"]').count(),0,
+    "App language must be owned by Language & Text, not duplicated in General");
+  await page.locator("[data-pref-toggle='general.hapticsEnabled']").click();
+  await page.locator("[data-settings-back]").click();
+
+  await page.locator('[data-settings-route="/settings/language-reading"]').click();
+  await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/language-reading");
   await page.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
   await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr");
   await page.locator("[data-settings-back]").click();
