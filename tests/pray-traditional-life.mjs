@@ -79,7 +79,11 @@ assert.match(runtime,/A deliberately small traditional collection with identifie
 assert.match(runtime,/Historical approved Roman form, stored locally for complete offline prayer/,"Holy Name offline donor introduction drifted");
 assert.doesNotMatch(runtime,/Traditional · source-locked · offline|A source-locked treasury|are source-locked historical forms/,"Traditional PRAY leaked pipeline source-lock wording into the UI");
 assert.match(runtime,/ao-ui-back/,"Traditional PRAY Back control is not using the canonical utility asset");
-assert.match(runtime,/ao-ui-close/,"Traditional PRAY Close control is not using the canonical utility asset");
+assert.match(runtime,/ao-nav-home/,"Traditional PRAY Home control is not using the canonical utility asset");
+assert.match(runtime,/data-tp381-home/,"Traditional PRAY header lost explicit global Home control");
+assert.doesNotMatch(runtime,/data-tp381-close/,"Traditional PRAY header regressed to ambiguous Close control");
+assert.match(runtime,/function goHome\(\)/,"Traditional PRAY global Home action is missing");
+assert.match(runtime,/if\(S\.screen==="prayer"\)\{S\.screen="module"/,"Traditional PRAY Back no longer returns nested prayer to its module");
 assert.doesNotMatch(runtime,/>←<\/button>|>×<\/button>/,"Traditional PRAY shell regained raw Unicode navigation controls");
 assert.match(runtime,/38\.4-good-death-dying-companion/,"Good Death / Dying Companion convergence version marker missing");
 assert.match(runtime,/SOURCE_LOCKED_TRADITIONAL/,"Sacred Heart source-lock policy disappeared");

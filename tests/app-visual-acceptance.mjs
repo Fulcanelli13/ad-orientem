@@ -450,15 +450,16 @@ try{
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
   await waitForFxSettled();
   await assertHomeHidden("PRAY");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost its Home return control");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),1,"PRAY root lost the donor Close exit");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost hierarchical Back");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-home]").count(),1,"PRAY root lost explicit global Home");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root regressed to ambiguous Close instead of Home");
   const prayHub=await page.evaluate(()=>({
     owner:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
     cards:document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length,
     legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
   }));
   assert.equal(prayHub.owner,"modular-pray-v1");
-  assert.ok(prayHub.cards>=10,"PRAY hub lost its locked devotional module hierarchy");
+  assert.equal(prayHub.cards,6,"PRAY landing must expose exactly six user-intent doors");
   assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
   const prayFx=await page.evaluate(()=>({
@@ -650,7 +651,7 @@ try{
   // owns the transient Sign-of-Cross rail cue.
   await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
-  for(let i=0;i<3;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  for(let i=0;i<2;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
   const confessionRail=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
@@ -1081,7 +1082,8 @@ try{
   // Later approved donor surfaces: completed bilingual V4 Novenas plus the v38.1 traditional PRAY modules.
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.novenas",{returnContext:null}));
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="novenas",null,{timeout:5000});
-  assert.equal(await page.locator("#aoPray435930 [data-n1-close]").count(),1,"Novenas lost the donor Close control");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-home]").count(),1,"Novenas lost explicit global Home");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-close]").count(),0,"Novenas regressed to ambiguous Close");
   assert.equal(await page.locator("#aoPray435930 .aoN1Card").count(),16,"Novenas overview must expose the frozen 16-target bilingual corpus");
   await shot("03f-pray-novenas");
   await page.locator("#aoPray435930 [data-n1-select='st_michael']").click();

@@ -55,7 +55,7 @@ function assetMarkup(route){
 }
 
 function head(title,sub=""){
-  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-tp381-back aria-label="${esc(L("Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L("PRAY","PRIER"))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:""}</div><button type="button" class="aoP435930Close" data-tp381-close aria-label="${esc(L("Close","Fermer"))}">${uiIcon("ao-ui-close")}</button></header>`;
+  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-tp381-back aria-label="${esc(L("Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L("PRAY","PRIER"))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:""}</div><button type="button" class="aoP435930Home" data-tp381-home aria-label="${esc(L("Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
 }
 function source(label,url){
   return `<details class="aoTP381Source"><summary>${esc(L("Source","Source"))} · ${esc(label)}</summary><p><a href="${esc(url)}" target="_blank" rel="noopener">${esc(L("Open source","Ouvrir la source"))} ↗</a></p></details>`;
@@ -261,12 +261,19 @@ function back(){
   if(S.screen==="prayer"){S.screen="module";S.prayerId=null;return render()}
   BASE_OPEN("pray.hub",OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);return true;
 }
+function goHome(){
+  BASE_CLOSE();
+  const p=window.AO_APP_SHELL_V1?.navigate?.("home");
+  if(p&&typeof p.catch==="function")p.catch(()=>window.AO_NAV_V362?.openHome?.());
+  else if(!p)window.AO_NAV_V362?.openHome?.();
+  return true;
+}
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-close],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip],[data-tp381-glossary]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip],[data-tp381-glossary]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
-  if(b.matches("[data-tp381-close]"))return BASE_CLOSE();
+  if(b.matches("[data-tp381-home]"))return goHome();
   if(b.matches("[data-tp381-glossary]")){const g=window?.AO_GLOSSARY_V1;if(typeof g?.openTerms==="function")void g.openTerms(glossaryTermsForState(),{origin:"pray"});return;}
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
   if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";return render()}
