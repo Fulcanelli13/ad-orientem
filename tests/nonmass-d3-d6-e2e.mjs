@@ -88,7 +88,6 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-step]").count(),4,"D5 does not expose the four approved practical Confession phases");
   assert.doesNotMatch(await page.locator("#aoPray435930").innerText(),/\b\d+\s*\/\s*8\b/);
   await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
-  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
   await page.waitForSelector("#aoPray435930 .aoP435930ExamReadOnly details",{timeout:5000});
   assert.ok(await page.locator("#aoPray435930 .aoP435930ExamReadOnly details").count()>=10);
   assert.equal(await page.locator("#aoPray435930 .aoP435930ExamReadOnly input").count(),0,"D5 examination still contains tickable controls");
