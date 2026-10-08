@@ -23,7 +23,12 @@
     "batch_4_scope_reviewed": 11,
     "source_scope_coverage": 55,
     "batch_4_new_primary_evidence": 7,
-    "unverified_literally_attributed_debate_stages": 55
+    "unverified_literally_attributed_debate_stages": 55,
+    "stage_specific_mapping_debates": 24,
+    "stage_specific_mapping_records": 192,
+    "stage_specific_mapping_references": 280,
+    "stage_full_text_certified": 0,
+    "stage_specific_mapping_pending": 31
   },
   "policy": [
     "The debate text is authored synthesis/paraphrase unless an individually attributed literal quotation has been independently verified.",
@@ -378,6 +383,14 @@
         "source_ids": [
           "CURRAN1987"
         ]
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Curran's criticism concerns historical moral teaching and dissent; cannot be turned into proof that all moral norms have changed.",
+        "review_focus": "Compare explicit preconciliar norms before claiming either absolute novelty or total uniformity."
       }
     },
     {
@@ -722,6 +735,14 @@
         "claim_to_source_stage_reviewed": false,
         "source_scope_checked": true,
         "not_necessarily_authored_opposition": true
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "The 'looking is not touching' retort is illustrative; Planned Parenthood's page is background, not a named proponent.",
+        "review_focus": "Distinguish involuntary perception from deliberately entertained lust. Do not impute a slogan to Farley."
       }
     },
     {
@@ -753,7 +774,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Healthy-relationship pages do not defend deliberate infidelity; the opposition is a reconstructed scenario.",
+        "review_focus": "Separate social warmth, chosen sexual incitement and promises of fidelity."
+      }
     },
     {
       "id": "CSE040",
@@ -795,6 +824,14 @@
         ],
         "finding": "Planned Parenthood lists oral/manual/genital activities and consent and STI prevention; it does not specifically defend those acts for engaged Catholics as a moral compromise.",
         "full_eight_stage_check": false
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Sexual-health pages describe actions and medical risk, not an author's Catholic moral defense of engaged couples.",
+        "review_focus": "Sexual acts outside marriage versus ordinary affectionate gestures; scriptural and Thomistic source limits."
       }
     },
     {
@@ -1123,6 +1160,14 @@
         ],
         "finding": "Planned Parenthood describes these sexual practices and safety; it does not decide traditional Catholic moral theology about completed marital acts.",
         "full_eight_stage_check": false
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "McHugh-Callan §1624 is the directly relevant preconciliar moral-manual text; neither PP page is a Christian moral argument.",
+        "review_focus": "Avoid a blanket condemnation of every nonconsummated marital caress; distinguish deliberate sexual completion."
       }
     },
     {
@@ -1154,7 +1199,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Consensual non-monogamy sources describe negotiated arrangements but do not claim that Church marriage permits them.",
+        "review_focus": "Distinguish consent from fidelity to exclusive covenant."
+      }
     },
     {
       "id": "CSE058",
@@ -1196,6 +1249,14 @@
         ],
         "finding": "Planned Parenthood discusses anal sex, voluntary choice and physical risks; it does not directly assert the norm 'if married, all anal acts are morally identical'.",
         "full_eight_stage_check": false
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "PP discusses practice/risk; Thomistic and moral-manual sources address moral object; no named opponent asserts married acts identical.",
+        "review_focus": "Avoid overextending the moral species of completed acts to incidental or clinical touching."
       }
     },
     {
@@ -1365,7 +1426,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Casti Connubii §59 explicitly recognizes differences in cooperation and responsibility between spouses.",
+        "review_focus": "Do not call a coerced or unwilling spouse equally guilty, or imply any formal participation is automatically excused."
+      }
     },
     {
       "id": "CSE071",
@@ -1502,6 +1571,14 @@
         "source_ids": [
           "FARLEY_QUOTED2012"
         ]
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Farley's quoted pp. 293 and 295 are genuine opponent positions; APA clinical findings do not decide moral norms.",
+        "review_focus": "Distinguish dignity and loyalty from the act's moral species and avoid assigning clinical stigma."
       }
     },
     {
@@ -1547,6 +1624,14 @@
         "source_ids": [
           "FARLEY_QUOTED2012"
         ]
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Infertility analogy is an editorial reasoning challenge, not a directly quoted Farley analogy.",
+        "review_focus": "Canon 1084 §3 explicitly distinguishes sterility from impotence; do not infer a moral verdict from biology alone."
       }
     },
     {
@@ -1676,6 +1761,14 @@
         "source_ids": [
           "FARLEY_QUOTED2012"
         ]
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "CDF quotes Farley's direct advocacy of civil same-sex marriage; do not expand it to unsupported claims.",
+        "review_focus": "Political/legal claims about real-world outcomes require additional research beyond doctrinal arguments."
       }
     },
     {
@@ -1707,7 +1800,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "APA definitions of gender roles and identity are descriptive; they do not assert that reproductive biology is invented.",
+        "review_focus": "Distinguish sex traits, cultural roles, and gender dysphoria terminology."
+      }
     },
     {
       "id": "CSE094",
@@ -1738,7 +1839,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "APA psychology pages address descriptive or clinical phenomena rather than Catholic pastoral conclusions.",
+        "review_focus": "Avoid applying the 2024 document to every clinical diagnosis or individual circumstance."
+      }
     },
     {
       "id": "CSE095",
@@ -1769,7 +1878,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "APA position supports non-discrimination and affirmative care with evidence caveats; no uniform claim about compulsory assent.",
+        "review_focus": "Separate respect and humane care from assent to a disputed assertion."
+      }
     },
     {
       "id": "CSE096",
@@ -1819,6 +1936,14 @@
         ],
         "finding": "WPATH SOC8 is freely accessible with criteria and individualized safeguards; APA 2024 explicitly acknowledges limits of evidence and noncoercive care. Neither by itself defines Catholic moral permissibility.",
         "full_eight_stage_check": false
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "WPATH SOC8 is a clinical standard with safeguards and individualized criteria, not a conclusion about Catholic moral permissibility.",
+        "review_focus": "No generic claim that all transition procedures are medically or morally identical; verify interventions one by one."
       }
     },
     {
@@ -1842,7 +1967,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "ASRM gives reproductive medical consent principles; Donum vitae distinguishes assisting conception from replacing the conjugal act.",
+        "review_focus": "Do not claim every clinical infertility treatment is the same as IVF."
+      }
     },
     {
       "id": "CSE104",
@@ -1865,7 +1998,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "ASRM's support for gestational carriers is conditional with safeguards, not an unconditional approval of all surrogacy arrangements.",
+        "review_focus": "Catholic objections to third-party gestation are broader than commercial exploitation."
+      }
     },
     {
       "id": "CSE112",
@@ -1916,6 +2057,14 @@
         ],
         "finding": "RAINN expressly states physiological arousal, lubrication and orgasm do not constitute consent. The original objection is a misconception, not RAINN's position.",
         "full_eight_stage_check": false
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "RAINN and research REFUTE this misconception; they are not proponent positions.",
+        "review_focus": "An involuntary physiological response is never evidence of consent."
       }
     },
     {
@@ -1966,6 +2115,14 @@
         ],
         "finding": "RAINN identifies intoxication/impairment as conditions limiting capacity for free consent. It does not endorse 'drunken yes is consent'.",
         "full_eight_stage_check": false
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "RAINN and consent resources REFUTE the putative opponent claim that severe intoxication equals valid consent.",
+        "review_focus": "Capacity and voluntariness are distinct from mere verbal acquiescence."
       }
     },
     {
@@ -2005,7 +2162,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "ACOG supports abortion access clinically; Singer is moral-philosophical, and they must not be conflated into one author.",
+        "review_focus": "Embryological assertions and moral/legal claims have different evidence requirements."
+      }
     },
     {
       "id": "CSE124",
@@ -2036,7 +2201,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "ACOG discusses rape/incest in abortion policy; it does not dispute the gravity of assault nor determine Church moral obligation.",
+        "review_focus": "Care for the pregnant survivor and prohibition of direct abortion must both be articulated without stigma."
+      }
     },
     {
       "id": "CSE125",
@@ -2084,6 +2257,14 @@
           "ACOG_ECTOPIC",
           "ACOG_ECTOPIC_GUIDELINE"
         ]
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "ACOG describes methotrexate and surgery for ectopic pregnancy, but explicitly is NOT a source for Catholic moral classifications.",
+        "review_focus": "Do not declare methotrexate, salpingectomy and salpingostomy morally interchangeable; case-specific physician and competent moral advice."
       }
     },
     {
@@ -2236,6 +2417,14 @@
         "claim_to_source_stage_reviewed": false,
         "source_scope_checked": true,
         "not_necessarily_authored_opposition": true
+      },
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "Empirical sexual-shame studies report associations and contexts; do not assert they prove Catholic doctrine causes shame.",
+        "review_focus": "Preserve difference between sin, culpability, anxiety, and shame; causal generalizations are unsupported."
       }
     },
     {
@@ -2341,7 +2530,15 @@
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "stage_evidence_review": {
+        "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+        "version": "CSE_STAGE_EVIDENCE_HIGH_24_V1",
+        "stage_count": 8,
+        "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
+        "caveat": "The modern sciences cover disparate factual domains; a clinical policy or guideline is not a unified argument against all Catholic ethics.",
+        "review_focus": "Correct outdated scientific premises when shown, and distinguish 'is' from 'ought'."
+      }
     }
   ],
   "primary_source_accuracy_alerts": [
@@ -2591,5 +2788,49 @@
       "Prior book-preview references remain bibliographic context, not specific-page certification."
     ],
     "publication_gate": "FULL_EIGHT_STAGE_AUTHOR_SOURCE_AND_CATHOLIC_REBUTTAL_CLAIM_PROOF_STILL_OPEN"
+  },
+  "stage_evidence_v1": {
+    "date": "2026-10-08",
+    "file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
+    "status": "HIGH_PRIORITY_24_MATCHED_SOURCE_LOCATORS_STAGE_BY_STAGE_NOT_PUBLISHED_OR_CERTIFIED",
+    "passages_confirmed": [
+      {
+        "question": "CSE055",
+        "original": "McHugh and Callan, Moral Theology §1624",
+        "url": "https://gorettipub.org/mchugh_moral.html",
+        "finding": "§1624 distinguishes lawful accessory/non-consummated acts from acts directed to non-conjugal completion. Not a catalog of forbidden anatomical body parts."
+      },
+      {
+        "question": "CSE070",
+        "original": "Pius XI, Casti Connubii §59",
+        "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+        "finding": "§59 exempts a reluctant spouse for grave reason under defined conditions; moral responsibility is not identical with the contracepting spouse."
+      },
+      {
+        "question": "CSE125",
+        "original": "ACOG, Ectopic Pregnancy clinical FAQ",
+        "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+        "finding": "Clinical FAQ documents methotrexate, surgery and rupture danger; it does not determine Catholic moral permissibility or whether methods have equivalent moral objects."
+      },
+      {
+        "question": "CSE040",
+        "original": "CDF, Persona Humana §§7 and 9",
+        "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+        "finding": "Addresses premarital sexuality and deliberate sexual acts. Not a verbatim discussion of all modern particular acts."
+      },
+      {
+        "question": "CSE101",
+        "original": "CDF, Dignitas Personae §§12–16",
+        "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+        "finding": "Distinguishes fertility-assisting techniques from conception-replacing procedures; does not condemn medical assistance merely because it is technologically artificial."
+      },
+      {
+        "question": "CSE014",
+        "original": "John Paul II, Veritatis Splendor §§74–83",
+        "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+        "finding": "Intention/circumstance distinguishable from moral object; absolute negative moral norms remain. Does not alone prove absence of every historical teaching development."
+      }
+    ],
+    "qualification": "These are selected documentary passages, not a complete verification of all 192 stage texts."
   }
 }
