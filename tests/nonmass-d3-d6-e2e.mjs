@@ -85,7 +85,7 @@ try{
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
   await page.waitForSelector("#aoPray435930 [data-p435930-conf-step='0']",{timeout:5000});
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-step]").count(),5,"D5 does not expose exactly five canonical phases");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-step]").count(),4,"D5 does not expose the four approved practical Confession phases");
   assert.doesNotMatch(await page.locator("#aoPray435930").innerText(),/\b\d+\s*\/\s*8\b/);
   await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
   await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
