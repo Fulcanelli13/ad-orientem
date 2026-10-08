@@ -47,10 +47,15 @@ for(const d of debates.debates){
 assert.equal(paragraphs,50);
 assert.equal(namedProponentArguments,5);
 assert.equal(syntheticArguments,5);
-assert.equal(sources.size,19);
+assert.equal(sources.size,20);
+assert.equal(sources.get('CIC4').url,'https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html');
+assert.ok(sources.get('OBED08').url.includes('autorita-obbedienza'));
+assert.ok(debates.debates.find(x=>x.id==='TLM075').paragraphs[3].source_ids.includes('OBED08'));
+assert.match(debates.debates.find(x=>x.id==='TLM075').paragraphs[2].text.en,/singular administrative decrees/);
+assert.match(debates.debates.find(x=>x.id==='TLM067').paragraphs[2].text.en,/statement did not authenticate/);
 assert.ok(sources.get("AQU104").url.includes("/summa/3104.htm"));
 assert.equal(sources.get("RES23").url,"https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html");
 assert.ok(sources.get("FSSP22FR").url.includes("/fr/"));
 assert.ok(debates.debates.find(x=>x.id==="TLM073").paragraphs[2].source_ids.includes("FSSP22FR"));
 assert.ok(debates.debates.find(x=>x.id==="TLM075").paragraphs[1].source_ids.includes("CIC1752"));
-console.log("Traditionis custodes dossier: PASS — 10 questions, 50 sourced bilingual paragraphs, 19 hyperlinked sources, 5 attributed objections, 5 editorial arguments, 0 new navigation dossiers.");
+console.log("Traditionis custodes dossier: PASS — 10 questions, 50 sourced bilingual paragraphs, 20 hyperlinked sources, 5 attributed objections, 5 editorial arguments, 0 new navigation dossiers.");
