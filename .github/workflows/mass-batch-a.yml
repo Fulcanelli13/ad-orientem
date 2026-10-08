@@ -13,6 +13,7 @@ on:
       - "tests/reader-native-preview.mjs"
       - "tests/reader-rubric-events.mjs"
       - ".github/workflows/mass-batch-a.yml"
+      - "tests/mass-batch-a-schola-nav.mjs"
   workflow_dispatch:
 
 permissions:
@@ -34,3 +35,16 @@ jobs:
           node tests/reader-dom.mjs
           node tests/reader-native-preview.mjs
           node tests/reader-rubric-events.mjs
+
+  real-shell-navigation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Schola-to-section real-shell navigation
+        run: node tests/mass-batch-a-schola-nav.mjs
