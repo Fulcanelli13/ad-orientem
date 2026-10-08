@@ -31,3 +31,5 @@ jobs:
         with:
           node-version: 22
       - run: npm run test:directory
+      - run: npm run test:find
+      - run: node --check src/find/browser-entry.js
