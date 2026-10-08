@@ -1477,5 +1477,24 @@
       "LTF-051"
     ],
     "rule": "Question references identify the exact Pius X material feeding each guided lesson; they do not imply that the shorter catechism alone is sufficient for every lesson."
+  },
+  "content_draft": {
+    "status": "ALL_54_SOURCE_LINKED_DRAFTED",
+    "batches": [
+      "data/learn/learn-the-faith-lessons-001-018.v1.json",
+      "data/learn/learn-the-faith-lessons-019-036.v1.json",
+      "data/learn/learn-the-faith-lessons-037-054.v1.json"
+    ],
+    "lessons": 54,
+    "paragraphs": 162,
+    "bilingual": true,
+    "published": false,
+    "remaining_before_publication": [
+      "Verify every external source URL and source-to-paragraph fit.",
+      "Resolve stronger primary sources where the current registry relies on explanatory or mirror sources.",
+      "Run cross-module deduplication against Apologetics, Church Crisis, Mass Formation, Sexual Ethics, Spiritual Life and sacramental Formation.",
+      "Editorial pass for tone, precision, disciplinary-historical qualifications and French parity.",
+      "Build the user-facing runtime only after the sourcing and deduplication gates pass."
+    ]
   }
 }
