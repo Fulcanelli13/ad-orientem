@@ -35,6 +35,7 @@ try{
  await page.locator("#aoPray435930 [data-p435930-seg='group']").first().evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-angelus-recitation]").getAttribute("data-ao-angelus-recitation"),"group");
  assert.ok(await page.locator("#aoPray435930 .aoAngelusDialogueLine[data-ao-angelus-voice='leader']").count()>0);
+ console.log("Angelus V/R DOM:",JSON.stringify(await page.evaluate(()=>({face:document.querySelector("#aoPray435930 [data-ao-angelus-recitation]")?.dataset.aoAngelusRecitation,leader:document.querySelectorAll("#aoPray435930 [data-ao-angelus-voice=leader]").length,response:document.querySelectorAll("#aoPray435930 [data-ao-angelus-voice=response]").length,first:document.querySelector("#aoPray435930 [data-ao-angelus-unit=vr]")?.innerHTML?.slice(0,1600)}))));
  assert.ok(await page.locator("#aoPray435930 .aoAngelusDialogueLine[data-ao-angelus-voice='response']").count()>0);
  const flip=page.locator("#aoPray435930 .aoP435930PrayerUnit [data-p435930-card-flip]").first();
  await flip.evaluate(x=>x.click());
