@@ -19,6 +19,12 @@ assert.equal(audit.metrics.source_link_occurrences,1508);
 assert.equal(audit.metrics.human_editorially_approved_records,0);
 assert.equal(audit.metrics.fully_independently_certified_records,0);
 assert.equal(audit.metrics.published_records,0);
+assert.equal(audit.metrics.records_with_at_least_one_original_text_spot_check,17);
+assert.equal(audit.metrics.original_text_passages_spot_checked,18);
+assert.equal(ledger.source_claim_quality_gate_20261009.all_research_entries,123);
+assert.equal(ledger.source_claim_quality_gate_20261009.exact_original_text_passages_spot_checked,18);
+assert.equal(ledger.source_claim_quality_gate_20261009.human_theological_signoffs,0);
+
 assert.equal(audit.quality_gates.public_release,false);
 assert.equal(audit.quality_gates.every_substantive_paragraph_claim_matched_to_exact_original_passage,"NOT_DONE");
 
@@ -65,5 +71,16 @@ assert.equal(audit.metrics.records_with_at_least_one_original_text_spot_check,
 assert.equal(ledger.counts.blocks_without_french,0);
 assert.equal(ledger.counts.source_id_links,1306);
 assert.equal(drafts.metrics.primary_link_instances,202);
+const adam=drafts.cases.find(x=>x.id==="adam-monogenism");
+assert.ok(adam.paragraphs[0].text.en.includes("not free to embrace"));
+assert.ok(adam.paragraphs[0].text.fr.includes("ne sont pas libres d'embrasser"));
+const baq=load("data/learn/biblical-patristic-answers.v1.json");
+const justin=baq.answers.find(x=>x.question_id==="BAQ-03");
+assert.ok(justin.answer_paragraphs[1].text.includes("remained in some Jewish synagogue copies"));
+assert.ok(justin.answer_paragraphs[1].text_fr.includes("certaines copies des synagogues"));
+const firstPack=load("data/learn/contemporary-controversies-source-pack.v1.json");
+const mariology=firstPack.cases.find(x=>x.id==="CO-REDEMPTRIX");
+assert.ok(mariology.short_answer[1].text_fr.includes("toujours inopportun"));
+assert.ok(mariology.short_answer[1].original_french_primary_source.url.includes("mater-populi-fidelis_fr.html"));
 console.log(JSON.stringify({status:"PASS",records:audit.entries.length,sourceBearingBlocks:blocks,frenchDrafts:fr,
   sourceIdLinks:links,sourceSpotChecks:spotChecks,fullyCertified:fullyCert,publicRelease:false}));
