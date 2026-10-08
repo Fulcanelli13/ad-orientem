@@ -3,16 +3,16 @@
   "reviewed_on": "2026-10-08",
   "first_pass_count": 89,
   "remaining_source_entries_before_review": 165,
-  "new_public_mass_venues": 29,
+  "new_public_mass_venues": 30,
   "states": {
-    "PENDING_CURRENT_EVIDENCE": 71,
+    "PENDING_CURRENT_EVIDENCE": 70,
     "INSTITUTION_ONLY": 53,
-    "CURRENT_PUBLIC_MASS": 25,
+    "CURRENT_PUBLIC_MASS": 26,
     "PROVIDER_HOUSE_ONLY": 4,
     "DUPLICATE_SOURCE_ROW": 8,
     "CONDITIONAL_MASS": 4
   },
-  "gate": "Decisions refer to distinct physical chapels or a documented recurring public Mass at source address. Duplicate source entities and apostolate houses are excluded from Find. No GPS inferred.",
+  "gate": "Decisions refer to distinct physical chapels or a documented recurring public Mass at source address. Duplicate source entities and apostolate houses are excluded from Find. No GPS inferred. School-campus chapels may be listed only when independently identified by name/address with explicit Sunday Mass evidence; the associated school record never creates a second venue.",
   "entries": [
     {
       "slug": "gastines/angers-2",
@@ -466,8 +466,8 @@
         "07h15 messe basse",
         "En vacances : 11h30"
       ],
-      "state": "PENDING_CURRENT_EVIDENCE",
-      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published distinct school-campus chapel with explicit official public Sunday Mass times; school's institution row points here, not a separate Mass venue"
     },
     {
       "slug": "mantes-la-jolie/conflans",
