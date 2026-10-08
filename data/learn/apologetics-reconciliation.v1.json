@@ -1,0 +1,253 @@
+{
+  "version": "APOLOGETICS_RECONCILIATION_V1",
+  "status": "FROZEN_NO_INVENTED_LEGACY_IDS",
+  "created_at": "2026-10-08",
+  "canonical_sot": "data/learn/apologetics-canonical.v1.json",
+  "finding": "No stable complete A001-A318 register exists in the repository or recoverable prior work. Production exposes AQ01-AQ08. Earlier research contains some exact A-batches, but later ranges were provisional or conflict with other pipeline numbering. Therefore only evidenced legacy material is reconciled; missing IDs are not invented.",
+  "confirmed_live": [
+    {
+      "legacy": "AQ01",
+      "canonical": [
+        "APOL-034",
+        "APOL-035"
+      ],
+      "disposition": "REFERENCE"
+    },
+    {
+      "legacy": "AQ02",
+      "canonical": [
+        "APOL-026"
+      ],
+      "disposition": "REFERENCE"
+    },
+    {
+      "legacy": "AQ03",
+      "canonical": [
+        "APOL-020"
+      ],
+      "disposition": "REFERENCE",
+      "secondary_owner": "church-crisis:authority"
+    },
+    {
+      "legacy": "AQ04",
+      "canonical": [
+        "APOL-031"
+      ],
+      "disposition": "REFERENCE"
+    },
+    {
+      "legacy": "AQ05",
+      "canonical": [
+        "APOL-030"
+      ],
+      "disposition": "REFERENCE"
+    },
+    {
+      "legacy": "AQ06",
+      "canonical": [],
+      "disposition": "MOVE",
+      "owner": "mass-formation"
+    },
+    {
+      "legacy": "AQ07",
+      "canonical": [
+        "APOL-040"
+      ],
+      "disposition": "REFERENCE"
+    },
+    {
+      "legacy": "AQ08",
+      "canonical": [
+        "APOL-014",
+        "APOL-015"
+      ],
+      "disposition": "REFERENCE"
+    }
+  ],
+  "recoverable_research_batches": [
+    {
+      "range": "A001-A025",
+      "batch_title": "Batch 1 — God, Revelation, Christ and the Resurrection",
+      "evidence_level": "BATCH_CONTENT_RECOVERED_NOT_FULL_PER-ID_TITLES",
+      "themes": [
+        "reason and God",
+        "causality",
+        "contingency",
+        "science",
+        "evolution",
+        "order",
+        "evil",
+        "truth",
+        "relativism",
+        "faith and reason",
+        "miracles",
+        "revelation",
+        "historical Jesus",
+        "Gospel history",
+        "textual reliability",
+        "Christ's divinity",
+        "Trinity",
+        "Resurrection"
+      ],
+      "canonical_targets": [
+        "APOL-001",
+        "APOL-002",
+        "APOL-003",
+        "APOL-004",
+        "APOL-005",
+        "APOL-006",
+        "APOL-007",
+        "APOL-008",
+        "APOL-009",
+        "APOL-010"
+      ],
+      "disposition": "MERGE"
+    },
+    {
+      "range": "A026-A050",
+      "batch_title": "Christ, Scripture, Tradition and Magisterium",
+      "evidence_level": "BATCH_CONTENT_RECOVERED_NOT_FULL_PER-ID_TITLES",
+      "themes": [
+        "why Jesus died",
+        "early worship of Christ",
+        "Nicaea",
+        "Incarnation",
+        "unique Saviour",
+        "inspiration",
+        "dictation",
+        "inerrancy",
+        "biblical genres",
+        "textual variants",
+        "canon",
+        "Trent",
+        "sola Scriptura",
+        "Tradition",
+        "Magisterium",
+        "doctrinal development"
+      ],
+      "canonical_targets": [
+        "APOL-010",
+        "APOL-011",
+        "APOL-012",
+        "APOL-013",
+        "APOL-014",
+        "APOL-015",
+        "APOL-020",
+        "APOL-021"
+      ],
+      "disposition": "MERGE"
+    },
+    {
+      "range": "A051-A075",
+      "batch_title": "The Church, Apostolic Succession and the Papacy",
+      "evidence_level": "BATCH_CONTENT_RECOVERED_NOT_FULL_PER-ID_TITLES",
+      "themes": [
+        "visible Church",
+        "hierarchy",
+        "four marks",
+        "unity",
+        "holiness",
+        "catholicity",
+        "apostolicity",
+        "apostolic succession",
+        "indefectibility",
+        "bishops",
+        "subsistit in",
+        "Peter",
+        "keys",
+        "Luke 22",
+        "John 21",
+        "Rome",
+        "primacy",
+        "papal infallibility"
+      ],
+      "canonical_targets": [
+        "APOL-016",
+        "APOL-017",
+        "APOL-018",
+        "APOL-019",
+        "APOL-020"
+      ],
+      "secondary_moves": [
+        {
+          "theme": "indefectibility during crisis",
+          "owner": "church-crisis:ecclesiological"
+        },
+        {
+          "theme": "subsistit in continuity controversy",
+          "owner": "church-crisis:ecclesiological"
+        }
+      ],
+      "disposition": "MERGE"
+    }
+  ],
+  "unreconciled_ranges": [
+    {
+      "range": "A076-A250",
+      "reason": "No stable per-ID register recovered; do not infer assignments."
+    },
+    {
+      "range": "A251-A318",
+      "reason": "Conflicting prior numbering across Apologetics and Church-Crisis research; do not treat as canonical Apologetics IDs without source recovery."
+    }
+  ],
+  "prior_nonproduction_candidates": [
+    {
+      "range": "AQ09-AQ18",
+      "status": "PROPOSED_NOT_LIVE",
+      "titles": [
+        [
+          "AQ09",
+          "Does only the Pope teach infallibly?",
+          "APOL-020"
+        ],
+        [
+          "AQ10",
+          "Did the Church invent doctrines later?",
+          "APOL-021"
+        ],
+        [
+          "AQ11",
+          "Can contradictory religions all be true?",
+          "APOL-048"
+        ],
+        [
+          "AQ12",
+          "How can we identify Christ's true Church?",
+          "APOL-016"
+        ],
+        [
+          "AQ13",
+          "Are Catholic images and statues idols?",
+          "APOL-036"
+        ],
+        [
+          "AQ14",
+          "Why do Catholics venerate relics?",
+          "APOL-037"
+        ],
+        [
+          "AQ15",
+          "What are indulgences?",
+          "APOL-040"
+        ],
+        [
+          "AQ16",
+          "Are Anglican orders valid?",
+          "APOL-022"
+        ],
+        [
+          "AQ17",
+          "Why worship on Sunday rather than the Jewish Sabbath?",
+          "APOL-015"
+        ],
+        [
+          "AQ18",
+          "Are we saved by faith or works?",
+          "APOL-038"
+        ]
+      ]
+    }
+  ],
+  "rule": "Any recovered legacy question must be reconciled by actual text before publication. Range membership alone is insufficient to create a per-ID mapping."
+}
