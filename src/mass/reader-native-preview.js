@@ -1380,7 +1380,7 @@ export async function mountNativeReaderPreview({
     return null;
   }
 
-  function showCard(card){
+  function showCard(card,{directJump=false}={}){
     if(!card) return null;
     inAsperges=false;
     inPalm=false;
@@ -1398,7 +1398,9 @@ export async function mountNativeReaderPreview({
     if(!visibleCard)return null;
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
-    const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
+    // A direct jump already signals its destination in the section ribbon.
+    // PART_TRANSITION is for linear reading, not arbitrary card selection.
+    const partCinema=directJump ? null : partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
     initialCardRender=false;
     armPartCinematic(partCinema);
     if(changed){
@@ -1519,7 +1521,7 @@ export async function mountNativeReaderPreview({
     },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(visibleCardAllowed(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     onPrevious:previousReaderCard,
     onNext:nextReaderCard,
@@ -1649,11 +1651,11 @@ export async function mountNativeReaderPreview({
     }),
     showSection:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(visibleCardAllowed(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     showSequence:sequence=>{
       const card=readerModel.cardBySequence(sequence);
-      return showCard(visibleCardAllowed(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     syncState:queue,
     getPresentationMode:()=>reader.getMode(),
