@@ -1277,7 +1277,9 @@ try{
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
 
-  await page.locator("[data-ao-app-surface='settings']").click();
+  // Settings is a contextual destination, not the sixth permanent ribbon slot.
+  // Enter it through the same shell navigation method used by actual Settings launchers.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
   await waitForFxSettled();
   await assertHomeHidden("Settings");
