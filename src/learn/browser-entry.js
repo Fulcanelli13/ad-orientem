@@ -276,7 +276,15 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.openPolls=0;
     hideHub();
     let result=null;
-    try{result=await registry.open(id);}catch(error){
+    try{
+      if(id===GLOSSARY_ROUTE_ID&&typeof win?.AO_GLOSSARY_V1?.open==="function"){
+        // Glossary's existing canonical owner is authoritative. Registry wrappers
+        // from other Formation modules may advertise the route without actually
+        // dispatching it; open the owner directly on this known Learn child.
+        const opened=await win.AO_GLOSSARY_V1.open({origin:"learn"});
+        result={ok:opened!==false,canonicalId:GLOSSARY_ROUTE_ID};
+      }else result=await registry.open(id);
+    }catch(error){
       try{win?.console?.error?.("Modular Learn module launch failed",error);}catch{}
     }
     if(result?.ok!==true){
