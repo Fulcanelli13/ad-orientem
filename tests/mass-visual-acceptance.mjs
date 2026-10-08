@@ -30,6 +30,7 @@ try{
   browser=await chromium.launch({headless:true});
   const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-GB"});
   const page=await context.newPage();
+  page.setDefaultTimeout(9000); // fail fast with actionable diagnostics instead of repeated 30-second locator hangs
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
   await page.goto("http://127.0.0.1:4190/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
@@ -300,6 +301,7 @@ try{
     previewOwned:Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW),
     shell:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")),
   }));
+  console.log("Mass visual Schola-to-navigation preflight:",JSON.stringify(navPreflight));
   assert.equal(navPreflight.present,true,"Mass overlay vanished during Schola chrome checks: "+JSON.stringify(navPreflight));
   await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
   const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
