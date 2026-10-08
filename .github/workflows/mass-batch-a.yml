@@ -1,0 +1,36 @@
+name: Mass Batch A focused acceptance
+
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-liturgical-theme.js"
+      - "src/mass/reader-dom.js"
+      - "src/mass/reader-icons.js"
+      - "src/mass/reader-gesture-matrix.js"
+      - "data/mass/gesture-matrix.v1.json"
+      - "tests/mass-batch-a-theme-icons.mjs"
+      - "tests/reader-dom.mjs"
+      - "tests/reader-native-preview.mjs"
+      - "tests/reader-rubric-events.mjs"
+      - ".github/workflows/mass-batch-a.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mass-batch-a:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Liturgical-theme and frozen-master binding gates
+        run: |
+          node tests/mass-batch-a-theme-icons.mjs
+          node tests/reader-icons.mjs
+          node tests/reader-dom.mjs
+          node tests/reader-native-preview.mjs
+          node tests/reader-rubric-events.mjs
