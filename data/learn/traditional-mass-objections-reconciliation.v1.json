@@ -431,6 +431,29 @@
     "published": 0,
     "new_canonical_dossiers": 0,
     "underlying_substantive_paragraphs": 134,
-    "unattributed_followup_challenges": 8
+    "unattributed_followup_challenges": 8,
+    "legacy_026_050_source_records_collated": 74,
+    "legacy_026_050_blocked": 7
+  },
+  "citation_review_tlm026_050": {
+    "source_file": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+    "status": "74_SOURCE_RECORDS_COLLATED_NOT_PUBLICATION_APPROVED",
+    "direct_text_anchored": 37,
+    "sourced_interpretive": 30,
+    "blocked_for_correction": 7,
+    "blocked_placeholder_indices": [
+      9,
+      16,
+      27,
+      30,
+      38,
+      41,
+      65
+    ],
+    "unattributed_followup_challenges": 8,
+    "review_date": "2026-10-08",
+    "source_count": 30,
+    "original_wording_preserved": true,
+    "gate": "Every blocked claim must be corrected and its replacement reviewed before publication; 30 argumentative syntheses require editorial assent."
   }
 }
