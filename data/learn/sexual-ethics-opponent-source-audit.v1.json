@@ -4,7 +4,7 @@
   "status": "STRUCTURAL_55_CASE_SOURCE_AUDIT_WITH_SELECTED_DIRECT_PASSAGE_CHECKS_NO_CLAIM_OF_55_FULLY_VERIFIED",
   "summary": {
     "records": 55,
-    "selected_primary_position_checks": 5,
+    "selected_primary_position_checks": 23,
     "remaining_full_passage_review": 55,
     "high_priority": 24,
     "book_catalog_preview_cases": 33,
@@ -22,15 +22,18 @@
   "samples_checked": [
     {
       "source_id": "PP_CONSENT",
-      "url": "https://www.plannedparenthood.org/learn/relationships/sexual-consent"
+      "url": "https://www.plannedparenthood.org/learn/relationships/sexual-consent",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
     },
     {
       "source_id": "PP_MAST",
-      "url": "https://www.plannedparenthood.org/learn/sex-pleasure-and-sexual-dysfunction/masturbation"
+      "url": "https://www.plannedparenthood.org/learn/sex-pleasure-and-sexual-dysfunction/masturbation",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
     },
     {
       "source_id": "ACOG_ABORTION",
-      "url": "https://www.acog.org/advocacy/facts-are-important/abortion-is-healthcare"
+      "url": "https://www.acog.org/advocacy/facts-are-important/abortion-is-healthcare",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
     },
     {
       "source_id": "CASTI",
@@ -41,6 +44,36 @@
       "source_id": "ST154",
       "url": "https://www.newadvent.org/summa/3154.htm",
       "scope": "Thomistic primary-source crosscheck"
+    },
+    {
+      "source_id": "PP_OPEN",
+      "url": "https://www.plannedparenthood.org/blog/what-is-an-open-relationship",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
+    },
+    {
+      "source_id": "PP_BIRTHCONTROL",
+      "url": "https://www.plannedparenthood.org/learn/birth-control",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
+    },
+    {
+      "source_id": "PP_PORN",
+      "url": "https://www.plannedparenthood.org/learn/teens/sex/porn",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
+    },
+    {
+      "source_id": "APA_TRANS",
+      "url": "https://www.apa.org/topics/lgbtq/transgender-people-gender-identity-gender-expression",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
+    },
+    {
+      "source_id": "ASRM_ART",
+      "url": "https://www.asrm.org/practice-guidance/ethics-opinions/informed-consent-in-assisted-reproduction-an-ethics-committee-opinion-2023/",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
+    },
+    {
+      "source_id": "ASRM_GC",
+      "url": "https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+      "scope": "Original institution/source position checked; not an 8-stage complete debate verification."
     }
   ],
   "cases": [
@@ -89,9 +122,9 @@
       "verified_primary_source_ids": [
         "PP_CONSENT"
       ],
-      "verified_finding": "Planned Parenthood defines consent and explicitly lists FRIES. This is a verified primary institutional position, but its definition of consent alone does not assert that consent is sufficient for all moral questions.",
+      "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -447,11 +480,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_CONSENT"
+      ],
+      "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -627,11 +662,13 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_CONSENT"
+      ],
+      "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -655,11 +692,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_CONSENT"
+      ],
+      "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -711,11 +750,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_OPEN"
+      ],
+      "verified_finding": "Planned Parenthood explains consensual open relationships descriptively, including negotiated external sexual/romantic partners. The article does not establish a claim that all consensual conduct is morally acceptable.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -767,11 +808,13 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_BIRTHCONTROL"
+      ],
+      "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -795,11 +838,13 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_BIRTHCONTROL"
+      ],
+      "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -823,11 +868,13 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_BIRTHCONTROL"
+      ],
+      "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -851,11 +898,13 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_BIRTHCONTROL"
+      ],
+      "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -875,9 +924,9 @@
       "verified_primary_source_ids": [
         "PP_MAST"
       ],
-      "verified_finding": "Planned Parenthood states that masturbation is normal and healthy. Primary institutional position verified against the provider's own page.",
+      "verified_finding": "Planned Parenthood's primary page explicitly describes masturbation as normal, safe and sometimes beneficial. It provides a real opposing institutional position.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -893,11 +942,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_PORN"
+      ],
+      "verified_finding": "Planned Parenthood's own pornography page defines adult material and also cautions that porn can create unhealthy ideas about sex, relationships and gender. Do not misattribute an unqualified claim that pornography can never harm.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -921,11 +972,13 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_PORN"
+      ],
+      "verified_finding": "Planned Parenthood's own pornography page defines adult material and also cautions that porn can create unhealthy ideas about sex, relationships and gender. Do not misattribute an unqualified claim that pornography can never harm.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1073,11 +1126,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "APA_TRANS"
+      ],
+      "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1101,11 +1156,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "APA_TRANS"
+      ],
+      "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1129,11 +1186,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "APA_TRANS"
+      ],
+      "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1177,11 +1236,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "ASRM_ART"
+      ],
+      "verified_finding": "ASRM's 2023 ethics opinion supports fully informed patient consent within assisted reproduction. It does not by itself demonstrate that every reproductive procedure is morally permissible.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1197,11 +1258,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "ASRM_GC"
+      ],
+      "verified_finding": "ASRM's 2023 ethics opinion deems gestational carrier arrangements ethically justifiable under informed consent and additional safeguards; it discusses coercion and legal risks. Its position is conditional, not unconditional.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1225,11 +1288,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_CONSENT"
+      ],
+      "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1253,11 +1318,13 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "PP_CONSENT"
+      ],
+      "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1293,9 +1360,9 @@
       "verified_primary_source_ids": [
         "ACOG_ABORTION"
       ],
-      "verified_finding": "ACOG explicitly calls abortion an essential component of healthcare. This validates the organization's general position; the page does not verify every moral/embryological claim in the reconstructed opposition.",
+      "verified_finding": "ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
+      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1323,9 +1390,9 @@
       "verified_primary_source_ids": [
         "ACOG_ABORTION"
       ],
-      "verified_finding": "ACOG's page explicitly includes rape and incest as reasons affecting decisions about abortion. Does not independently establish all trauma or ethical argument subclaims.",
+      "verified_finding": "ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1345,9 +1412,9 @@
       "verified_primary_source_ids": [
         "ACOG_ABORTION"
       ],
-      "verified_finding": "ACOG discusses serious illness during pregnancy under broader access arguments, but the linked position page is not a procedure-specific ectopic-pregnancy or maternal-threat guideline. Require clinical primary guideline before declaring fully sourced.",
+      "verified_finding": "ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     },
     {
@@ -1499,12 +1566,23 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
-      "verified_finding": null,
+      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "verified_primary_source_ids": [
+        "APA_TRANS",
+        "ASRM_ART",
+        "ACOG_ABORTION"
+      ],
+      "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention. ASRM's 2023 ethics opinion supports fully informed patient consent within assisted reproduction. It does not by itself demonstrate that every reproductive procedure is morally permissible. ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
       "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
       "not_a_direct_quotation": true
     }
+  ],
+  "primary_source_accuracy_alerts": [
+    "CSE007: consent source establishes necessity, not ethical sufficiency; revise opposition attribution or find a real advocate of sufficiency.",
+    "CSE074: Planned Parenthood explicitly discusses possible unhealthy ideas from pornography; avoid a blanket 'harmless pornography' opposition.",
+    "CSE104: ASRM approves gestational carrier arrangements conditionally under safeguards; do not erase its coercion and autonomy caveats.",
+    "CSE125: ACOG general abortion access page cannot substitute for a clinical guideline in life-threatening pregnancy cases.",
+    "Gender-related APA definitions do not support imputing support for every intervention or a blanket clinical outcome claim."
   ]
 }
