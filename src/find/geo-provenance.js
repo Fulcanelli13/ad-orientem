@@ -55,6 +55,15 @@ export function auditDirectoryGeo(geo,{countryCode=null,path="geo"}={}){
     issues.push(issue("MISSING_GEO_SOURCE_URL",path+".source_url","External coordinate sources require a source URL."));
   }
 
+  if(source==="OFFICIAL_SOURCE"){
+    // First-party map data may still be misattached to a source entity;
+    // whenever the country is provided, fail closed on contradictions.
+    const matched=String(geo.matched_country_code??"").toUpperCase();
+    const expected=String(countryCode??"").toUpperCase();
+    if(matched&&expected&&matched!==expected)
+      issues.push(issue("GEO_COUNTRY_MISMATCH",path+".matched_country_code",
+        "Official source coordinates belong to "+matched+", not "+expected+"."));
+  }
   if(source==="OSM_NOMINATIM"){
     if(!nonEmpty(geo.attribution))issues.push(issue("MISSING_GEO_ATTRIBUTION",path+".attribution","Nominatim/OSM coordinates require attribution text."));
     const matched=String(geo.matched_country_code??"").toUpperCase();
