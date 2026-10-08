@@ -1,0 +1,201 @@
+{
+  "schema": "ao-mass-knowledge-registry-v1",
+  "version": "1.0.0",
+  "status": "CANONICAL_SHARED_MASS_KNOWLEDGE",
+  "created_at": "2026-10-08",
+  "purpose": "One shared Mass knowledge layer powers immediate live cues and deeper Formation explanations without creating a separate gestures/postures module.",
+  "governing_rule": "Mass runtime owns what the user needs now; Mass Formation owns what the action, posture, gesture, sound, position or response means.",
+  "no_new_route": true,
+  "canonical_formation_route": "learn.mass",
+  "source_registries": [
+    {
+      "id": "GESTURES",
+      "path": "data/mass/gesture-matrix.v1.json",
+      "canonical": true,
+      "count": 142,
+      "breakdown": {
+        "priest": 83,
+        "faithful": 59
+      },
+      "role": "Exact-cue gesture source of truth, including Campion provenance and icon bindings."
+    },
+    {
+      "id": "POSTURES",
+      "path": "data/presentation/reader-postures.v1.json",
+      "count": 23,
+      "role": "Faithful posture transitions and profile-aware posture state."
+    },
+    {
+      "id": "PRIEST_POSITIONS",
+      "path": "data/presentation/reader-priest-positions.v1.json",
+      "count": 49,
+      "role": "Persistent priest station/position state for the live right rail and Formation explanation."
+    },
+    {
+      "id": "PRIEST_VOICES",
+      "path": "data/presentation/reader-priest-voices.v1.json",
+      "count": 126,
+      "role": "Audible/silent/voice-state cues and explanatory links for the liturgical soundscape."
+    },
+    {
+      "id": "RESPONSES",
+      "path": "data/presentation/reader-responses.v1.json",
+      "count": 23,
+      "role": "Faithful/minister response cues."
+    },
+    {
+      "id": "RUBRIC_EVENTS",
+      "path": "data/presentation/reader-rubric-events.v1.json",
+      "count": 57,
+      "role": "Source-backed Campion rubric-event overlay for exact visible actions and guide hooks."
+    },
+    {
+      "id": "MASS_FORMATION",
+      "path": "data/learn/mass-formation-campion.v1.json",
+      "count": 8,
+      "role": "User-facing explanatory course and source-backed long-form formation owner."
+    }
+  ],
+  "projection_contracts": {
+    "mass_runtime": {
+      "owns": [
+        "current posture",
+        "exact gesture/action cue",
+        "priest position",
+        "priest voice/audibility",
+        "response",
+        "trigger words",
+        "short rubric",
+        "runtime icon"
+      ],
+      "excludes": [
+        "long historical essays",
+        "full theological explanation",
+        "crisis-era controversy",
+        "duplicated source exposition"
+      ],
+      "behavior": "Project the minimum useful state at the exact cue; deeper explanation must hand off by reference."
+    },
+    "mass_formation": {
+      "owns": [
+        "meaning of gestures and postures",
+        "why the priest moves or turns",
+        "why parts are audible or silent",
+        "theological meaning of actions",
+        "how the parts of Mass fit together",
+        "historical development where it directly explains the rite",
+        "source-backed long rubric explanation",
+        "how the faithful assist"
+      ],
+      "excludes": [
+        "live cue timing",
+        "duplicate runtime state",
+        "general apologetics not specific to understanding the Mass",
+        "postconciliar controversy whose primary question is continuity or rupture"
+      ],
+      "route": "learn.mass"
+    },
+    "glossary": {
+      "owns": [
+        "definition of liturgical and technical terms"
+      ]
+    },
+    "church_history": {
+      "owns": [
+        "standalone historical chronology and case studies when chronology is the main user need"
+      ]
+    },
+    "church_crisis": {
+      "owns": [
+        "claims about reform, rupture, suppression, change, authority or postconciliar controversy"
+      ]
+    },
+    "apologetics": {
+      "owns": [
+        "external objection or defence of Catholic worship"
+      ]
+    }
+  },
+  "formation_stage_links": {
+    "MF01": [
+      "order of Mass",
+      "sections",
+      "overall ceremonial logic"
+    ],
+    "MF02": [
+      "faithful gestures",
+      "priest gestures",
+      "postures",
+      "bows",
+      "crosses",
+      "genuflections",
+      "body at prayer"
+    ],
+    "MF03": [
+      "Offertory actions",
+      "offering",
+      "participation"
+    ],
+    "MF04": [
+      "Roman Canon",
+      "silence",
+      "priest voice",
+      "positions",
+      "ceremonial action"
+    ],
+    "MF05": [
+      "Consecration gestures",
+      "elevations",
+      "genuflections",
+      "bells",
+      "Real Presence"
+    ],
+    "MF06": [
+      "sacrificial actions",
+      "Calvary relationship"
+    ],
+    "MF07": [
+      "Communion actions",
+      "priest Communion",
+      "faithful Communion distinctions"
+    ],
+    "MF08": [
+      "dismissal",
+      "Last Gospel",
+      "thanksgiving",
+      "post-Mass disposition"
+    ]
+  },
+  "canonical_record_shape": {
+    "required": [
+      "knowledgeId",
+      "phenomenonType",
+      "actor",
+      "runtimeRefs",
+      "formationRefs",
+      "sourceRefs"
+    ],
+    "optional": [
+      "cueIds",
+      "sectionIds",
+      "triggerLatin",
+      "runtimeCue",
+      "iconKey",
+      "authorityClass",
+      "shortRubric",
+      "longExplanation",
+      "historicalNote",
+      "glossaryRefs",
+      "historyRefs",
+      "crisisRefs",
+      "apologeticsRefs"
+    ]
+  },
+  "migration_policy": [
+    "Do not duplicate gesture/posture explanations in live Mass cards.",
+    "Do not create a top-level Gestures & Postures Formation route.",
+    "Use the canonical gesture matrix as gesture authority; reader-gestures remains compatibility projection for faithful gestures.",
+    "Campion is explanatory/discovery provenance, while the 1962 Roman Missal remains primary rubrical authority where the priest rubric is normative.",
+    "Every new Mass explanation should reference existing cue/registry IDs when possible rather than inventing parallel identifiers."
+  ]
+}
