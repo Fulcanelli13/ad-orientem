@@ -251,7 +251,12 @@ try{
   assert.match(phraseDetail.translation,/Lord be with you/i);
   assert.ok(phraseDetail.sources>=1,"Phrasebook drawer has no source link");
   await page.locator("#ao-glossary-root [data-gloss-close]").tap();
+  // Back must preserve every real parent: Phrases → Latin category →
+  // Glossary categories → Formation. It must never jump straight Home.
   await page.locator("#ao-glossary-root [data-gloss-back]").tap();
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.().view==="category",null,{timeout:5000});
+  await page.locator("#ao-glossary-root [data-gloss-back]").tap();
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.().view==="categories",null,{timeout:5000});
   await page.locator("#ao-glossary-root [data-gloss-back]").tap();
   await page.waitForFunction(()=>
     !document.getElementById("ao-glossary-root") &&
