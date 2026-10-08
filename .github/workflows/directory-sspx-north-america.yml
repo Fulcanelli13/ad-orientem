@@ -1,0 +1,58 @@
+name: SSPX North America official bulk acquisition
+
+on:
+  pull_request:
+    paths:
+      - "tools/directory/acquire-sspx-north-america.mjs"
+      - "tests/directory-sspx-north-america.mjs"
+      - ".github/workflows/directory-sspx-north-america.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sspx-north-america-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  north-america-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run US/Canada source parser tests
+        run: node tests/directory-sspx-north-america.mjs
+      - name: Install Playwright browser
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install chromium
+      - name: Acquire both complete first-party district directories
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/sspx-na"
+          node tools/directory/acquire-sspx-north-america.mjs --out="$RUNNER_TEMP/sspx-na"
+          cat "$RUNNER_TEMP/sspx-na/report.v1.json"
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const base=process.env.RUNNER_TEMP+'/sspx-na/';
+          const rows=JSON.parse(fs.readFileSync(base+'candidate-records.v1.json','utf8'));
+          const holds=JSON.parse(fs.readFileSync(base+'exceptions.v1.json','utf8'));
+          console.log('AO_NA_CANDIDATES_BEGIN');
+          console.log(JSON.stringify(rows));
+          console.log('AO_NA_CANDIDATES_END');
+          console.log('AO_NA_EXCEPTIONS_BEGIN');
+          console.log(JSON.stringify(holds));
+          console.log('AO_NA_EXCEPTIONS_END');
+          EOF
+      - name: Upload public-source research artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sspx-us-ca-official-source-census
+          path: ${{ runner.temp }}/sspx-na/
+          retention-days: 30
+          if-no-files-found: warn
