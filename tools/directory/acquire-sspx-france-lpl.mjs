@@ -120,14 +120,26 @@ export async function acquireLplFrance({out="data/directory/research/staging/ssp
         try{
           while(index<work.length){
             const n=index++;const item=work[n];
-            try{
-              const result=await visit(tab,item.url);
-              const parsed=parseLplDetail({
-                slug:item.slug,title:result.headline||item.title,url:item.url,text:result.text,
-              });
-              work[n]={...item,...parsed};
-            }catch(error){
-              failures.push({slug:item.slug,url:item.url,error:String(error)});
+            let lastError=null;
+            for(let attempt=1;attempt<=3;attempt++){
+              try{
+                const result=await visit(tab,item.url);
+                const parsed=parseLplDetail({
+                  slug:item.slug,title:result.headline||item.title,url:item.url,text:result.text,
+                });
+                work[n]={...item,...parsed};
+                lastError=null;break;
+              }catch(error){
+                lastError=error;
+                if(attempt<3)await new Promise(resolve=>setTimeout(resolve,600*attempt));
+              }
+            }
+            if(lastError){
+              const issue={slug:item.slug,url:item.url,error:String(lastError)};
+              failures.push(issue);
+              work[n]={...item,review_state:"DETAIL_FETCH_FAILED",publishable:false,
+                extraction_note:"Detailed Mass status unverified; source index was recovered.",
+                detail_fetch_error:issue.error};
             }
           }
         }finally{await tab.close();}
@@ -154,6 +166,8 @@ export async function acquireLplFrance({out="data/directory/research/staging/ssp
     conditional_candidates:rows.filter(r=>r.conditional_candidate).length,
     not_sspx_or_unverified:rows.filter(r=>r.review_state==="OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT").length,
     staging_only:true,publication_eligible_venues:0,
+    complete_source_index:sourceCount===rows.length,
+    complete_detail_review:details&&failures.length===0,
     details_failures:failures,
     review_states:counts,
     per_page:pages,
@@ -166,9 +180,10 @@ export async function acquireLplFrance({out="data/directory/research/staging/ssp
     retrieved_at:report.retrieved_at,origin:INDEX,release_eligible:false,records:rows,
   },null,2)+"\n");
   await fs.writeFile(path.join(folder,"sspx-france-acquisition-report.v1.json"),JSON.stringify(report,null,2)+"\n");
-  if(failures.length||sourceCount!==rows.length)fail("incomplete detail scrape "+JSON.stringify({
-    failures:failures.length,expected:sourceCount,actual:rows.length,
+  if(sourceCount!==rows.length)fail("incomplete primary source index "+JSON.stringify({
+    expected:sourceCount,actual:rows.length,
   }));
+  if(failures.length)console.warn("LPL detailed-source exceptions:",JSON.stringify(failures));
   return report;
 }
 const direct=process.argv[1]&&pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url;
