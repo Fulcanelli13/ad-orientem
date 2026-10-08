@@ -321,9 +321,8 @@ try{
   const calendarYear=await page.evaluate(()=>({
     ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect?.().width??0,
     ringValue:document.querySelector("#ao-calendar-modular-root .aoCalV2RingCore strong")?.textContent?.trim()??"",
-    periods:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Timeline [data-cal-date]").length,
-    journeyCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail [data-cal-date]").length,
-    currentJourney:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail .current").length,
+    duplicateTimeline:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Timeline").length,
+    duplicateJourney:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail").length,
     comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-date]").length,
     rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
     headingTop:document.querySelector("#ao-calendar-modular-root .aoCalV2YearHeading")?.getBoundingClientRect?.().top??-1,
@@ -331,9 +330,8 @@ try{
   }));
   assert.ok(calendarYear.ringWidth>=220,"Calendar liturgical-year ring collapsed below phone-readable size");
   assert.match(calendarYear.ringValue,/\d+(?:\.\d+)?%/,"Calendar year ring lost its computed percentage");
-  assert.equal(calendarYear.periods,9,"Calendar proportional year timeline lost one or more liturgical periods");
-  assert.equal(calendarYear.journeyCards,9,"Calendar year journey lost one or more liturgical periods");
-  assert.equal(calendarYear.currentJourney,1,"Calendar year journey does not uniquely identify the current period");
+  assert.equal(calendarYear.duplicateTimeline,0,"Calendar regained a second proportional year visualization");
+  assert.equal(calendarYear.duplicateJourney,0,"Calendar regained the redundant nine-card year journey");
   assert.ok(calendarYear.comingCards>=1,"Calendar year lost its Coming Next intelligence");
   assert.ok(calendarYear.rootScrollTop<=2,"Calendar view switch retained the previous surface scroll position");
   assert.ok(calendarYear.headingTop>=calendarYear.tabsBottom-1,"Calendar Liturgical Year heading is hidden beneath sticky navigation");
@@ -361,6 +359,8 @@ try{
       ranked:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='1'],#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='2'],#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='3']").length,
       readyState:grid?.dataset?.monthReady??null,
       apiCached:globalThis.AO_CALENDAR_APP_V1?.status?.().monthCachedDays??0,
+      monthTabMinHeight:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs button")).minHeight,
+      monthLabelSize:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalMonthName")).fontSize,
     };
   });
   assert.equal(calendarMonth.cells,42,"Calendar Liturgical Month changed its 42-cell geometry");
@@ -372,6 +372,8 @@ try{
   assert.ok(calendarMonth.named>=6,"Calendar Liturgical Month is not surfacing major observances selectively");
   assert.ok(calendarMonth.ranked>=6,"Calendar Liturgical Month lost rank salience");
   assert.equal(calendarMonth.selected,1,"Calendar Liturgical Month does not uniquely identify the selected date");
+  assert.equal(calendarMonth.monthTabMinHeight,"44px","Calendar month tabs dropped below the canonical touch target");
+  assert.ok(parseFloat(calendarMonth.monthLabelSize)>=11,"Calendar month labels regressed below the readable type floor");
   assert.ok(calendarMonth.rootOverflow<=1,"Calendar Liturgical Month causes horizontal root overflow");
   assert.ok(calendarMonth.gridOverflow<=1,"Calendar Liturgical Month grid overflows horizontally");
   assert.ok(calendarMonth.lastRight<=calendarMonth.rootRight+1,"Calendar Liturgical Month Saturday column is clipped off-screen");
