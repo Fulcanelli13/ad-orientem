@@ -147,8 +147,9 @@ assert.match(sickSection,/Rituale Romanum · 1952 · De Exsequiis/,"funeral form
 assert.doesNotMatch(runtime,/Ego conjungo vos|With this ring I thee wed/,"lay formation leaked a country-specific or celebrant ritual script");
 assert.match(runtime,/AO_TRADITIONAL_LEARN_V381/);
 assert.match(runtime,/learn\.serve_mass.*learn\.serve_mass\.responses/s,"Low Mass alias disappeared");
-assert.match(runtime,/data-ao-tradlearn-close/,"traditional Learn child shell lost donor Close control");
-assert.match(runtime,/ao-ui-close/,"traditional Learn Close control stopped using the canonical utility asset");
+assert.match(runtime,/data-ao-tradlearn-home/,"traditional Learn child shell lost explicit global Home");
+assert.doesNotMatch(runtime,/data-ao-tradlearn-close/,"traditional Learn child shell regressed to ambiguous Close");
+assert.match(runtime,/ao-nav-home/,"traditional Learn Home control is not using the canonical navigation asset");
 assert.doesNotMatch(runtime,/Lay Companion/,"retired Lay Companion sub-brand returned");
 assert.match(runtime,/function card\(win,title,text,extra=""\)[\s\S]*<details class="aoLearnTradCard"/,"Formation guides are not scan-first accordions");
 assert.match(runtime,/aoLearnTradCard" open/,"Formation guide shell no longer opens the first actionable section by default");
