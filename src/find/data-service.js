@@ -4,6 +4,7 @@ const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 export const RESEARCH_MASS_REVIEW_DAYS=120;
 const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
+  Object.freeze({key:"sspx-district",file:"sspx-district-seed.v1.json"}),
   Object.freeze({key:"aasjmv",file:"aasjmv.v1.json"}),
   Object.freeze({key:"fsvf",file:"fsvf.v1.json"}),
   Object.freeze({key:"canons",file:"canons-st-john-cantius.v1.json"}),
@@ -126,6 +127,7 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
       },
       capabilities:{sunday_mass:sunday},
       status:"active",
+      publication_state:text(row.ps)||null,
       source_ids:sourceIds,
       upstream_updated_at:null,
     });
@@ -253,6 +255,15 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
 export function publishableDirectoryRecords(records){
   return safeArray(records).filter(record=>{
     if(auditVenue(record?.venue).length!==0)return false;
+    if(record?.venue?.upstream?.provider_id==="SSPX_DISTRICT_SEED"){
+      if(!["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record?.venue?.publication_state))return false;
+      const valid=safeArray(record?.ministries).some(m=>m.community_id==="SSPX" &&
+        safeArray(m?.schedules).some(s=>s.service_type==="MASS" &&
+          safeArray(s.source_ids).length>0 &&
+          ["OFFICIAL_VERIFIED","OFFICIAL_LIVE","RECENTLY_VERIFIED"].includes(s?.verification?.state) &&
+          text(s?.payload?.raw).length>0));
+      if(!valid)return false;
+    }
     const icksp=safeArray(record?.ministries).filter(m=>m?.community_id==="ICKSP");
     if(icksp.length&&!icksp.some(m=>safeArray(m?.schedules).some(schedule=>schedule?.service_type==="MASS")))return false;
     return true;
