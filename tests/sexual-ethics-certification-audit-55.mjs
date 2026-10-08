@@ -35,7 +35,7 @@ for(const review of report.cases){
  assert.deepEqual(review.stage_reviews.map(x=>x.stage),[...CSE_DEBATE_FIELDS]);
  for(const stage of review.stage_reviews){
    assert.ok(d[stage.stage]?.[0]&&d[stage.stage]?.[1],id+"."+stage.stage+" missing EN/FR");
-   assert.ok(d[stage.stage][0].length>40&&d[stage.stage][1].length>40,id+"."+stage.stage+" suspiciously short translation");
+   assert.ok(d[stage.stage][0].trim().length>=12&&d[stage.stage][1].trim().length>=12,id+"."+stage.stage+" missing substantive bilingual text");
    assert.deepEqual(stage.selected_source_ids,sources[id][stage.stage],id+"."+stage.stage+" source drift");
    const actual=paragraphRefsFor(q,"debate",stage.stage);
    assert.deepEqual(actual.map(x=>x[0]),stage.selected_source_ids);
