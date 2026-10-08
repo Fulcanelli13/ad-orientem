@@ -16,7 +16,8 @@ assert.equal(archive.total,254);
 assert.equal(archive.pages,11);
 assert.equal(archive.items.length,2);
 assert.equal(archive.items[0].slug,"paris-consolation");
-assert.throws(()=>parseLplArchive({text:'{"found_posts":0,"max_num_pages":0}',page:1,anchors:[]}),/implausible/);
+assert.equal(parseLplArchive({text:"",page:1,anchors:[]}).total,254);
+assert.throws(()=>parseLplArchive({text:'{"found_posts":120,"max_num_pages":4}',page:1,anchors:[]}),/implausible/);
 const venue=parseLplDetail({slug:"paris-consolation",url:base+"/lieux/paris-consolation",
   title:"Notre-Dame de Consolation",text:`Notre-Dame de Consolation
 Paris 8e
