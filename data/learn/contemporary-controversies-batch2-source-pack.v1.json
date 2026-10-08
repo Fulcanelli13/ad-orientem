@@ -1,0 +1,698 @@
+{
+  "version": "CONTEMPORARY_CONTROVERSIES_BATCH2_SOURCE_PACK_V1",
+  "created_at": "2026-10-08",
+  "status": "OWNERSHIP_RECONCILED_RESEARCH_DRAFT_NOT_PUBLISHED",
+  "source_inventory": "data/learn/contemporary-controversies-reconciliation.v1.json",
+  "method": [
+    "Use existing routes and the 60+81 frozen dossier titles; no new published dossier ID.",
+    "Each claim and identified proponent position has an original hyperlinked source, and each question has documented provenance.",
+    "The same theological baseline is owned once in Catechism; apparition cases only assess specific historical or supernatural evidence.",
+    "Medical scientific claims are external evidence, not inferred from doctrinal permission; no unsupported vaccine efficacy generalization.",
+    "Historical religious controversies retain opposing testimony while avoiding unproved allegations as fact.",
+    "Clinical medical decisions and legal mandates require current specialized evidence.",
+    "All records need editorial review and French parity before publishing."
+  ],
+  "source_registry": [
+    {
+      "id": "FATIMA2000",
+      "title": "CDF, The Message of Fatima (26 June 2000): original dossier, historical documents and Ratzinger commentary",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_en.html",
+      "kind": "OFFICIAL_PRIMARY"
+    },
+    {
+      "id": "FATIMASSPX1",
+      "title": "FSSPX Actualités, La consécration de la Russie ... a-t-elle été faite?",
+      "url": "https://fsspx.news/fr/news/la-consecration-la-russie-au-coeur-immacule-marie-t-elle-ete-faite-17216",
+      "kind": "TRADITIONALIST_PROPONENT_FR"
+    },
+    {
+      "id": "FATIMASSPX2",
+      "title": "Bishop Bernard Fellay, Interview on Fatima centenary and the Church Crisis",
+      "url": "https://fsspx.news/en/news/interview-bishop-bernard-fellay-fatima-centenary-church-crisis-18544",
+      "kind": "TRADITIONALIST_PROPONENT"
+    },
+    {
+      "id": "CCC67",
+      "title": "Catechism of the Catholic Church, §§66–67, public and private revelation",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_1/iii_christ_jesus_mediator_and_fullness_of_all_revelation.index.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "DDFN2024",
+      "title": "DDF, Norms for Discernment of Alleged Supernatural Phenomena (2024)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "MEDJ2024",
+      "title": "DDF, The Queen of Peace: note on Medjugorje (2024), especially §§38–40",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240919_nota-esperienza-medjugorje_en.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "CHINA2024",
+      "title": "Holy See Press Office, 2024 four-year extension of agreement with China",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/10/22/241022c.html",
+      "kind": "OFFICIAL_PRIMARY"
+    },
+    {
+      "id": "CHINA2026",
+      "title": "Holy See Press Office, Chifeng episcopal appointment and consecration 22 July 2026",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/07/22/260722a.html",
+      "kind": "OFFICIAL_PRIMARY"
+    },
+    {
+      "id": "PIUSCHINA",
+      "title": "Pius XII, Ad Apostolorum Principis (1958)",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061958_ad-apostolorum-principis.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "ZENSCHOLAR",
+      "title": "Beatrice Leung, The Sino-Vatican Provisional Agreement 2018, with documentation of Cardinal Zen's criticism (2024)",
+      "url": "https://chsource.org/articles/the-sino-vatican-provisional-agreement-2018/",
+      "kind": "SECONDARY_WITH_ATTRIBUTED_PROPONENT"
+    },
+    {
+      "id": "ZENREUTERS",
+      "title": "Reuters, Vatican and China extend deal over Catholic bishop appointments (2024)",
+      "url": "https://www.reuters.com/world/china-says-it-has-extended-agreement-with-vatican-bishops-2024-10-22/",
+      "kind": "INDEPENDENT_REPORTING"
+    },
+    {
+      "id": "CHARIS2016",
+      "title": "CDF, Iuvenescit Ecclesia (2016), hierarchical and charismatic gifts",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20160516_iuvenescit-ecclesia_en.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "CHARISFR",
+      "title": "CDF, Iuvenescit Ecclesia (2016), French version",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20160516_iuvenescit-ecclesia_fr.html",
+      "kind": "MAGISTERIAL_FR"
+    },
+    {
+      "id": "MEDIT1989",
+      "title": "CDF, Orationis Formas (1989), aspects of Christian meditation",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19891015_meditazione-cristiana_en.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "MEDITFR",
+      "title": "CDF, Orationis Formas (1989), French text",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19891015_meditazione-cristiana_fr.html",
+      "kind": "MAGISTERIAL_FR"
+    },
+    {
+      "id": "REIKIUS",
+      "title": "USCCB Committee on Doctrine, Guidelines for Evaluating Reiki (2009)",
+      "url": "https://www.usccb.org/resources/guidelines-evaluating-reiki-alternative-therapy-2009",
+      "kind": "EPISCOPAL_COMMITTEE"
+    },
+    {
+      "id": "NEWAGE2003",
+      "title": "Pontifical Councils, Jesus Christ the Bearer of the Water of Life (2003)",
+      "url": "https://www.vatican.va/roman_curia/pontifical_councils/interelg/documents/rc_pc_interelg_doc_20030203_new-age_en.html",
+      "kind": "VATICAN_STUDY"
+    },
+    {
+      "id": "CAN915",
+      "title": "Code of Canon Law, canons 915 and 916",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html",
+      "kind": "UNIVERSAL_CANON_LAW"
+    },
+    {
+      "id": "RATZ2004",
+      "title": "Cardinal Ratzinger, Worthiness to Receive Holy Communion: General Principles (2004 memorandum)",
+      "url": "https://www.ewtn.com/catholicism/library/worthiness-to-receive-holy-communion-general-principles-29329",
+      "kind": "PRIMARY_AUTHOR_HOSTED_TRANSCRIPTION"
+    },
+    {
+      "id": "SB2020",
+      "title": "CDF, Samaritanus bonus (2020), terminal care, euthanasia, disproportionate treatment",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200714_samaritanus-bonus_en.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "TRANS2000",
+      "title": "John Paul II, Address to Transplantation Society (29 August 2000)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/2000/jul-sep/documents/hf_jp-ii_spe_20000829_transplants.html",
+      "kind": "PAPAL_ADDRESS"
+    },
+    {
+      "id": "CREM2016",
+      "title": "CDF, Ad resurgendum cum Christo (2016), burial and cremation",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2016/10/25/161025c.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "CREM2023",
+      "title": "DDF, Reply to Cardinal Zuppi regarding ashes (2023)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231209_risposta-card-zuppi-ceneri_en.html",
+      "kind": "MAGISTERIAL"
+    },
+    {
+      "id": "WHOSAFETY",
+      "title": "WHO, Vaccines and immunization: vaccine safety Q&A (2025)",
+      "url": "https://www.who.int/news-room/questions-and-answers/item/vaccines-and-immunization-vaccine-safety",
+      "kind": "BIOMEDICAL_INSTITUTION"
+    },
+    {
+      "id": "WHOSIGNAL",
+      "title": "WHO, Investigation of vaccine safety signals",
+      "url": "https://www.who.int/initiatives/the-global-vaccine-safety-initiative/investigation-of-safety-signals",
+      "kind": "BIOMEDICAL_INSTITUTION"
+    }
+  ],
+  "cases": [
+    {
+      "slug": "vaccines-empirical-evidence",
+      "status": "EXTERNAL_EVIDENCE_REFERENCE",
+      "canonical_owner": null,
+      "owner_type": "NOT_CATHOLIC_DOCTRINAL_OWNER",
+      "cross_references": [
+        "APOL-002",
+        "APOL-052"
+      ],
+      "question": "How should empirical claims about particular vaccines, efficacy and adverse events be judged?",
+      "question_provenance_ids": [
+        "WHOSAFETY",
+        "WHOSIGNAL"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "Product-specific vaccine safety, benefits, adverse reactions and efficacy require scientific evidence. Reports following a vaccination identify events in time, not automatically causes; systematic signal assessment may require epidemiological or biological investigation.",
+          "source_ids": [
+            "WHOSAFETY",
+            "WHOSIGNAL"
+          ]
+        },
+        {
+          "text": "The general ethical permission to use a vaccine must not be converted into an unsupported clinical claim, nor can a vaccine-safety dispute on its own determine whether a civil mandate is proportionate. Reference the existing moral case under APOL-052 for the ethical dimension; keep empirical monitoring in external biomedical evidence.",
+          "source_ids": [
+            "WHOSAFETY",
+            "WHOSIGNAL"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "No undated product-specific statistics in the app.",
+        "Cite appropriate regulator, clinical trials and systematic studies for each particular product and time frame."
+      ],
+      "editorial_notes": "Source library/reference only, not an independent apologetics answer.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "fatima-consecration",
+      "status": "EMBED_CASE",
+      "canonical_owner": "APOL-004",
+      "owner_type": "CANONICAL_DOSSIER",
+      "cross_references": [
+        "CR-DOC-09",
+        "learn.catechism"
+      ],
+      "question": "Was Russia consecrated as requested at Fatima?",
+      "question_provenance_ids": [
+        "FATIMA2000",
+        "FATIMASSPX1"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "The CDF's 2000 dossier records Sister Lucia's letter of 8 November 1989 as affirming that the act of 25 March 1984 corresponded to Our Lady's request. That is the documented Holy See conclusion.",
+          "source_ids": [
+            "FATIMA2000"
+          ]
+        },
+        {
+          "text": "FSSPX Actualités rejects this conclusion, pointing to wording and participation requirements and to accounts of Sister Lucia's earlier reported statements. Whether those other reports are authentic and how to reconcile them with the documented 1989 confirmation is a question of historical evidence, not an article of the deposit of faith.",
+          "source_ids": [
+            "FATIMASSPX1",
+            "FATIMA2000",
+            "CCC67"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "CDF dossier, 2000",
+          "argument": {
+            "text": "Sister Lucia personally confirmed the 1984 consecration fulfilled the request; the official record treats the matter as accomplished.",
+            "source_ids": [
+              "FATIMA2000"
+            ]
+          }
+        },
+        {
+          "voice": "FSSPX Actualités, French traditionalist account",
+          "argument": {
+            "text": "The act did not explicitly and uniquely name Russia and, in the author's assessment, failed the requested collegiate and public conditions; the retrospective Vatican conclusion is therefore disputed.",
+            "source_ids": [
+              "FATIMASSPX1"
+            ]
+          }
+        }
+      ],
+      "verification_pending": [
+        "Verify individual Lucia testimony claims in original letters or contemporary witness records before treating them as established.",
+        "Distinguish 1984, 2000 and 2022 acts rather than merging chronologies."
+      ],
+      "editorial_notes": "Historical apparition-specific case; no separate Fatima theology owner.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "fatima-third-secret",
+      "status": "EMBED_CASE",
+      "canonical_owner": "APOL-004",
+      "owner_type": "CANONICAL_DOSSIER",
+      "cross_references": [
+        "CR-DOC-09",
+        "learn.catechism"
+      ],
+      "question": "Was the Third Secret of Fatima fully published in 2000?",
+      "question_provenance_ids": [
+        "FATIMA2000",
+        "FATIMASSPX2"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "The Vatican's 2000 publication includes the visionary text, associated historical material and Cardinal Ratzinger's theological interpretation. These documents are the official publication that any contrary historical thesis must address directly.",
+          "source_ids": [
+            "FATIMA2000"
+          ]
+        },
+        {
+          "text": "Bishop Bernard Fellay has argued that the phrase about the dogma of the faith being preserved in Portugal and the lack of a separately published interpretive explanation suggest an unreleased component. This is an attributable traditionalist allegation, not proof that a document has been withheld.",
+          "source_ids": [
+            "FATIMASSPX2",
+            "FATIMA2000"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "CDF, 2000",
+          "argument": {
+            "text": "The published visionary manuscript and supplementary documentation are presented as the Third Secret, accompanied by interpretation rather than a claim of a new dogma.",
+            "source_ids": [
+              "FATIMA2000"
+            ]
+          }
+        },
+        {
+          "voice": "Bishop Bernard Fellay, interview",
+          "argument": {
+            "text": "The published image of the bishop in white seems not to include what critics expected concerning the faith in Portugal, making an absent explanatory text a plausible hypothesis in his judgment.",
+            "source_ids": [
+              "FATIMASSPX2"
+            ]
+          }
+        }
+      ],
+      "verification_pending": [
+        "Do not present 'the Vatican concealed the Third Secret' as proven.",
+        "Check original Portuguese documents and dates before concluding any archival inconsistency."
+      ],
+      "editorial_notes": "Evidence case under private revelation credibility; not repeated in Church Crisis.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "medjugorje",
+      "status": "EMBED_CASE",
+      "canonical_owner": "APOL-004",
+      "owner_type": "CANONICAL_DOSSIER",
+      "cross_references": [
+        "learn.catechism",
+        "learn.spiritual_life"
+      ],
+      "question": "What did the Church actually approve at Medjugorje in 2024?",
+      "question_provenance_ids": [
+        "MEDJ2024",
+        "DDFN2024"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "The 2024 DDF note grants a nihil obstat for the spiritual experience of Medjugorje, permits public devotion and acknowledges positive pastoral fruits. It explicitly does not judge the alleged apparitions or messages to have supernatural origin.",
+          "source_ids": [
+            "MEDJ2024",
+            "DDFN2024"
+          ]
+        },
+        {
+          "text": "The document requires messages to be described as alleged, distinguishes pastoral benefits from claims of miraculous authenticity and says no Catholic must accept the presumed visions as divine. Thus neither 'all messages officially proved true' nor 'the Church prohibited all Marian devotion there' accurately reflects the decision.",
+          "source_ids": [
+            "MEDJ2024",
+            "DDFN2024",
+            "CCC67"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "Assess specific contested 'messages' only after establishing original wording and Church review.",
+        "No unsourced claim that current seers are authentic or fraudulent."
+      ],
+      "editorial_notes": "Can share general introduction with private-revelation entry; no duplicate first-principles explanation.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "private-revelation",
+      "status": "REFERENCE_ONLY",
+      "canonical_owner": "learn.catechism",
+      "owner_type": "EXISTING_FORMATION_ROUTE",
+      "cross_references": [
+        "APOL-004",
+        "learn.spiritual_life"
+      ],
+      "question": "Are Catholics obliged to believe recognized private apparitions?",
+      "question_provenance_ids": [
+        "CCC67",
+        "DDFN2024"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "Christ's definitive revelation is complete and private revelations do not belong to the deposit of faith. Their role, when authentic and properly discerned, is to help Catholics live the Gospel in particular times.",
+          "source_ids": [
+            "CCC67"
+          ]
+        },
+        {
+          "text": "Under the 2024 norms even a nihil obstat does not certify supernatural origin or oblige assent of faith. The theological baseline should be stated once in Catechism, referenced from each Fatima, Medjugorje and similar credibility case.",
+          "source_ids": [
+            "DDFN2024",
+            "CCC67"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "Avoid blurring the difference between historic ecclesiastical approval, a current nihil obstat and a dogmatic definition.",
+        "Do not make each apparition a stand-alone catechetical module."
+      ],
+      "editorial_notes": "No new APOL navigation entry; foundational Catechism source and handoff.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "vatican-china",
+      "status": "EMBED_CASE",
+      "canonical_owner": "CR-GOV-01",
+      "owner_type": "CANONICAL_DOSSIER",
+      "cross_references": [
+        "CR-ECC-01",
+        "CR-AUT-04",
+        "APOL-053"
+      ],
+      "question": "Has the Holy See's agreement with China compromised its freedom to appoint bishops?",
+      "question_provenance_ids": [
+        "CHINA2024",
+        "PIUSCHINA",
+        "ZENREUTERS"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "The Holy See stated in October 2024 that the agreement on episcopal appointments had been extended four years. In July 2026 it identified the approval of the Chifeng bishop as taking place within that agreement. The full agreement text is not public, limiting clause-by-clause analysis.",
+          "source_ids": [
+            "CHINA2024",
+            "CHINA2026"
+          ]
+        },
+        {
+          "text": "Pius XII strongly condemned state interference that subordinated Catholic ecclesiastical governance in China to Communist political organizations. The contemporary controversy is whether diplomacy safeguards communion and eventually helps Christians, or cedes institutional leverage to an oppressive regime.",
+          "source_ids": [
+            "PIUSCHINA",
+            "CHINA2024",
+            "ZENSCHOLAR"
+          ]
+        },
+        {
+          "text": "Cardinal Zen's recorded criticism focuses on the underground Church and pressure on faithful bishops, whereas the Vatican presents reconciliation and appointment regularization as benefits. This is a question of prudential diplomacy constrained by real ecclesiological principles, not a change to apostolic succession.",
+          "source_ids": [
+            "ZENSCHOLAR",
+            "ZENREUTERS",
+            "PIUSCHINA",
+            "CHINA2024"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "Holy See communiqué, 2024 and episcopal appointment record, 2026",
+          "argument": {
+            "text": "Negotiated appointments and continued dialogue are intended for the good of the Catholic Church in China and reconciliation of ecclesial relations.",
+            "source_ids": [
+              "CHINA2024",
+              "CHINA2026"
+            ]
+          }
+        },
+        {
+          "voice": "Cardinal Joseph Zen's critical position, documented by Beatrice Leung",
+          "argument": {
+            "text": "The concessions risk betraying Catholics who remained faithful through persecution and surrendering practical ecclesiastical freedom to the state.",
+            "source_ids": [
+              "ZENSCHOLAR"
+            ]
+          }
+        }
+      ],
+      "verification_pending": [
+        "Do not invent contractual clauses: the agreement text is not public.",
+        "Distinguish formal papal approval, timing of state appointment, actual appointments and evidence of persecution in each case.",
+        "Do not claim a final prudential verdict from a unilateral official statement or a partisan accusation."
+      ],
+      "editorial_notes": "No new Crisis category; attach historical case to governance responsibility.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "charismatic-renewal",
+      "status": "EMBED_CASE",
+      "canonical_owner": "APOL-004",
+      "owner_type": "CANONICAL_DOSSIER",
+      "cross_references": [
+        "learn.catechism",
+        "learn.spiritual_life"
+      ],
+      "question": "Does the modern charismatic renewal genuinely manifest the gifts described by St Paul?",
+      "question_provenance_ids": [
+        "CHARIS2016",
+        "CHARISFR"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "The CDF teaches that hierarchical and charismatic gifts both belong to the Church; its 2016 letter also insists on ecclesial discernment, obedience to pastors and integration with sacramental life. It does not imply every claimed tongue, healing or prophecy is authentic.",
+          "source_ids": [
+            "CHARIS2016",
+            "CHARISFR"
+          ]
+        },
+        {
+          "text": "St Paul's limits on glossolalia and prophecy are explicitly discussed in that letter. General doctrine belongs to Catechism; testing particular extraordinary claims and associated apologetic objections may be an evidence case under APOL-004, with Spiritual Life merely linked rather than rewritten.",
+          "source_ids": [
+            "CHARIS2016",
+            "CHARISFR"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "Retrieve identifiable traditionalist critiques before creating a named opposition section.",
+        "Distinguish scriptural charisms, charismatic renewal movement, Pentecostalism, and individual contested practices.",
+        "Never imply the Sacraments are optional or supplanted by a 'baptism in the Spirit' experience."
+      ],
+      "editorial_notes": "Do not amend the frozen 14-lesson Spiritual Life curriculum for this alone.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "yoga-reiki",
+      "status": "REFERENCE_ONLY",
+      "canonical_owner": "learn.catechism",
+      "owner_type": "EXISTING_FORMATION_ROUTE",
+      "cross_references": [
+        "learn.spiritual_life",
+        "APOL-050"
+      ],
+      "question": "Can a Catholic use yoga, Reiki or Eastern methods of meditation?",
+      "question_provenance_ids": [
+        "MEDIT1989",
+        "REIKIUS",
+        "NEWAGE2003"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "The CDF's 1989 letter assesses Eastern meditation methods according to their underlying spiritual meaning and their compatibility with prayer to the personal Triune God; it recognizes that bodily techniques may assist recollection without being identical to prayer or substitutes for it.",
+          "source_ids": [
+            "MEDIT1989",
+            "MEDITFR"
+          ]
+        },
+        {
+          "text": "The US bishops' doctrinal committee judges Reiki's proposed spiritual healing rationale incompatible with Catholic belief and unsupported as an effective natural therapy. Reiki and ordinary physical stretching therefore require distinct analyses rather than an undifferentiated prohibition based on foreign origins.",
+          "source_ids": [
+            "REIKIUS",
+            "MEDIT1989",
+            "NEWAGE2003"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "Distinguish exercise postures, meditation as religious doctrine, and claims of supernatural therapeutic energy.",
+        "Before a categorical claim about a named class/programme, verify its actual content and avoid guilt by cultural association.",
+        "If a traditionalist critique is included, find exact words from its author."
+      ],
+      "editorial_notes": "Catechism owns doctrinal discernment; SL13 Devotion Without Superstition only a link.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "public-communion-politicians",
+      "status": "EMBED_CASE",
+      "canonical_owner": "CR-GOV-07",
+      "owner_type": "CANONICAL_DOSSIER",
+      "cross_references": [
+        "CR-MOR-04",
+        "APOL-030",
+        "learn.sexual_ethics"
+      ],
+      "question": "When should Holy Communion be withheld from a public Catholic politician who supports abortion legislation?",
+      "question_provenance_ids": [
+        "CAN915",
+        "RATZ2004"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "Canon 915 governs the minister's action concerning those obstinately persevering in manifest grave sin; canon 916 addresses the recipient's own conscience. These legal objects are different, and public reception cannot be decided merely from knowledge of private subjective guilt.",
+          "source_ids": [
+            "CAN915"
+          ]
+        },
+        {
+          "text": "Cardinal Ratzinger's 2004 memorandum addressed the hypothetical case of manifest formal cooperation by campaigning and voting for permissive abortion laws, explained necessary pastoral warning and the minister's duty when obstinate public persistence continues. The individual application requires verified public facts, canonical competence and attention to procedural obligations.",
+          "source_ids": [
+            "RATZ2004",
+            "CAN915"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "Distinguish abortion from prudential differences over capital punishment and war, as the 2004 memorandum itself does.",
+        "Never issue a public judgment about an identifiable living politician without factual and canonical record.",
+        "Do not duplicate the moral wrong of abortion already in Sexual Ethics."
+      ],
+      "editorial_notes": "Church-governance enforcement case, not a duplicate abortion debate.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "euthanasia",
+      "status": "EMBED_CASE",
+      "canonical_owner": "APOL-052",
+      "owner_type": "CANONICAL_DOSSIER",
+      "cross_references": [
+        "learn.catechism",
+        "learn.rites.sick",
+        "pray.dying_companion"
+      ],
+      "question": "What distinguishes euthanasia from declining disproportionate medical treatment?",
+      "question_provenance_ids": [
+        "SB2020"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "Samaritanus bonus condemns euthanasia and assisted suicide, and distinguishes intending death from declining burdensome or futile life-prolonging intervention when dying is imminent. Disproportionate treatment is not obligatory simply because a machine can temporarily extend biological processes.",
+          "source_ids": [
+            "SB2020"
+          ]
+        },
+        {
+          "text": "Ordinary care and appropriate nutrition/hydration remain ethically relevant, yet the document allows that such measures are not beneficial when the body cannot absorb or metabolize them. Clinical judgments require the patient's actual condition, not a slogan such as 'always treat' or 'always withdraw'.",
+          "source_ids": [
+            "SB2020"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "Specific treatment choices require clinician assessment and, where appropriate, individual pastoral guidance.",
+        "Respect existing Serious Illness and Dying ownership for action and bedside handoffs.",
+        "Separate palliative sedation, withdrawal, ordinary care, direct intent and foreseen side effects."
+      ],
+      "editorial_notes": "Embed objective-intention distinction in existing moral principle dossier; no new euthanasia navigator.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "organ-donation",
+      "status": "REFERENCE_ONLY",
+      "canonical_owner": "learn.catechism",
+      "owner_type": "EXISTING_FORMATION_ROUTE",
+      "cross_references": [
+        "learn.rites.sick",
+        "APOL-052"
+      ],
+      "question": "When is organ donation morally legitimate, and how is death established?",
+      "question_provenance_ids": [
+        "TRANS2000"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "John Paul II describes organ donation as a genuine act of solidarity conditioned by free and informed consent, protection of human dignity and moral certainty that death has occurred before retrieving unpaired vital organs.",
+          "source_ids": [
+            "TRANS2000"
+          ]
+        },
+        {
+          "text": "His 2000 address states that total and irreversible cessation of brain activity, if rigorously established, does not seem to conflict with sound anthropology; the Church does not itself decide technical medical criteria. The validity of a particular clinical diagnosis must not be assumed from the existence of a general principle.",
+          "source_ids": [
+            "TRANS2000"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "For claims about current determination-of-death practice, obtain updated medical standards and record contested clinical literature fairly.",
+        "Separate living donation from deceased donation and diagnosis of death from procurement conflicts of interest.",
+        "This is not a substitute for medical consent or clinical advice."
+      ],
+      "editorial_notes": "Catholic doctrinal reference rather than new sacramental formation or apologetics dossier.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "slug": "cremation",
+      "status": "KEEP_EXISTING",
+      "canonical_owner": "learn.rites.sick",
+      "owner_type": "EXISTING_SACRAMENTAL_FORMATION_ROUTE",
+      "cross_references": [
+        "pray.holy_souls",
+        "pray.dying_companion",
+        "APOL-040"
+      ],
+      "question": "What are the Church's rules on burial, cremation and preservation of ashes?",
+      "question_provenance_ids": [
+        "CREM2016",
+        "CREM2023"
+      ],
+      "answer_paragraphs": [
+        {
+          "text": "The Church prefers burial but no longer regards cremation itself as contrary to Catholic faith unless chosen for reasons that deny Christian doctrine or express hostility. The 2016 instruction directs reverent preservation of ashes and rejects scattering or storing ashes as trinkets.",
+          "source_ids": [
+            "CREM2016"
+          ]
+        },
+        {
+          "text": "The 2023 DDF response permits case-specific consideration of a minimal portion of ashes in a significant place under specified conditions while requiring a sacred permanent place for the remains; this nuance must accompany, not be suppressed by, a summary of the 2016 rules.",
+          "source_ids": [
+            "CREM2023",
+            "CREM2016"
+          ]
+        }
+      ],
+      "positions": [],
+      "verification_pending": [
+        "Audit current learn.rites.sick copy so it does not accidentally contradict the 2023 clarification.",
+        "Keep 1917, 1963, 2016 and 2023 disciplinary stages properly dated.",
+        "No second funeral or cremation course."
+      ],
+      "editorial_notes": "Existing owner confirmed in data/learn/formation-gap-ownership.v1.json; only repair if currently incomplete.",
+      "publication_status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    }
+  ]
+}

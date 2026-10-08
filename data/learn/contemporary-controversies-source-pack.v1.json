@@ -1,0 +1,948 @@
+{
+  "version": "CONTEMPORARY_CONTROVERSIES_SOURCE_PACK_V1",
+  "status": "RESEARCH_DRAFT_NOT_PUBLISHED",
+  "date": "2026-10-08",
+  "parent_reconciliation": "data/learn/contemporary-controversies-reconciliation.v1.json",
+  "quality_rules": [
+    "Each case inherits its existing canonical dossier; this file creates no additional navigation dossiers.",
+    "Question provenance, each answer paragraph, each position, objection, response and traditional argument must resolve to original hyperlinked sources.",
+    "Traditional arguments are substantive, never editor commentary about a question or module.",
+    "Partisan sources prove what their authors argued; they do not establish disputed event allegations independently.",
+    "Empirical biomedical claims require current regulator/clinical evidence separately from moral analysis.",
+    "These six dossiers are research drafts requiring editorial, historical and doctrinal review before user publication."
+  ],
+  "source_registry": [
+    {
+      "id": "MPF25",
+      "title": "DDF, Mater Populi Fidelis (2025), §§16–23,45–47,67–71",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "LG60",
+      "title": "Vatican II, Lumen gentium, §§60–62",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "RM38",
+      "title": "John Paul II, Redemptoris Mater, §§38–40",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25031987_redemptoris-mater.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "SSPXMPF",
+      "title": "SSPX General House, communiqué on Mater Populi Fidelis (2025)",
+      "url": "https://fsspx.news/en/publications/communique-general-house-society-saint-pius-x-55472",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "SSPXINT",
+      "title": "SSPX Superior General, interview on Mater Populi Fidelis (2025)",
+      "url": "https://fsspx.news/sites/default/files/documents/2025-11-09_entretien_mater_populi_fidelis_en.pdf",
+      "classification": "opponent_own_words_pdf"
+    },
+    {
+      "id": "CDW20",
+      "title": "Congregation for Divine Worship, In time of Covid-19 (II) (2020)",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/03/25/200325d.html",
+      "classification": "ecclesiastical"
+    },
+    {
+      "id": "CDW21",
+      "title": "Congregation for Divine Worship, Holy Week 2021 Note",
+      "url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210217_settimanasanta-2021_en.html",
+      "classification": "ecclesiastical"
+    },
+    {
+      "id": "PEN20",
+      "title": "Apostolic Penitentiary, Confession during pandemic (2020)",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/03/20/200320d.html",
+      "classification": "ecclesiastical"
+    },
+    {
+      "id": "CAN1247",
+      "title": "1983 CIC, canons 1247–1248",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
+      "classification": "canon_law"
+    },
+    {
+      "id": "GENEVA",
+      "title": "FSSPX News, Geneva court challenge to Mass ban (2022)",
+      "url": "https://fsspx.news/en/news/definitive-victory-mass-canton-geneva-27624",
+      "classification": "case_proponent"
+    },
+    {
+      "id": "PANDEMSSPX",
+      "title": "SSPX Superior General, letter during epidemic (2020)",
+      "url": "https://fsspx.news/en/news/letter-superior-general-faithful-time-epidemic-23530",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "CDFVAC",
+      "title": "CDF, Covid-19 vaccine morality note (2020), §§1–6",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20201221_nota-vaccini-anticovid_en.html.",
+      "classification": "magisterial"
+    },
+    {
+      "id": "DP35",
+      "title": "CDF, Dignitas personae (2008), §§34–35",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "VACSSPX",
+      "title": "FSSPX, Practical considerations on Covid vaccination (2021)",
+      "url": "https://fsspx.news/en/news/practical-considerations-vaccination-against-covid-19-26814",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "VACCA",
+      "title": "SSPX Canada, Morality of vaccines (2021)",
+      "url": "https://ontario.sspx.ca/en/publications/november-2021-letter-friends-and-benefactors-morality-vaccines-38244",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "CCC1738",
+      "title": "Catechism, §1738: responsible freedom and public order",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_3/i_freedom_and_responsibility.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "CCC2267",
+      "title": "CDF, Catechism §2267 revised (2018)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20180801_catechismo-penadimorte_en.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "CDFDEATH",
+      "title": "CDF, Letter on revision of Catechism §2267 (2018)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20180801_lettera-vescovi-penadimorte_en.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "EV56",
+      "title": "John Paul II, Evangelium vitae (1995), §56",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25031995_evangelium-vitae.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "AQUINAS",
+      "title": "Thomas Aquinas, Summa theologiae II–II q.64 a.2",
+      "url": "https://www.newadvent.org/summa/3064.htm",
+      "classification": "theology_original_translation"
+    },
+    {
+      "id": "FESER",
+      "title": "Edward Feser, Pope Francis and Capital Punishment (2018)",
+      "url": "https://firstthings.com/pope-francis-and-capital-punishment/",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "LONG",
+      "title": "Steven A. Long, Magisterial Irresponsibility (2018)",
+      "url": "https://firstthings.com/magisterial-irresponsibility/",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "CCC2241",
+      "title": "Catechism, §2241: obligations concerning immigration",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_4/v_the_authorities_in_civil_society.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "PACEM",
+      "title": "John XXIII, Pacem in terris (1963), §§25,105–107",
+      "url": "https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_11041963_pacem.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "EXSUL",
+      "title": "Pius XII, Exsul Familia (1952; Latin original)",
+      "url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19520801_exsul-familia.html",
+      "classification": "magisterial_latin"
+    },
+    {
+      "id": "CCC2112",
+      "title": "Catechism, §§2110–2114: idolatry and religious worship",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iii_you_shall_have_no_other_gods_before_me.html",
+      "classification": "magisterial"
+    },
+    {
+      "id": "FRANCIS",
+      "title": "Vatican News, Pope Francis's remarks on the statues (25 Oct 2019)",
+      "url": "https://www.vaticannews.va/en/pope/news/2019-10/pope-francis-comments-on-statues-stolen-from-church.html",
+      "classification": "official_transcript"
+    },
+    {
+      "id": "PACHSSPX",
+      "title": "SSPX Superior General, communiqué on Amazon Synod (2019)",
+      "url": "https://fsspx.news/it/node/22833",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "PACHFR",
+      "title": "FSSPX Actualités, idolatry accusation (29 Oct 2019; French)",
+      "url": "https://fsspx.news/fr/news/la-veneration-des-statuettes-la-pachamama-ete-objectivement-une-idolatrie-22832",
+      "classification": "opponent_own_words_fr"
+    },
+    {
+      "id": "PACHREV",
+      "title": "FSSPX News, Look back at Pachamama controversy (2019)",
+      "url": "https://fsspx.news/en/news/look-back-pachamama-scandal-22839",
+      "classification": "opponent_own_words"
+    },
+    {
+      "id": "PIUSX1904",
+      "title": "Pius X, Ad diem illum laetissimum (1904), §§12–14",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "classification": "magisterial"
+    }
+  ],
+  "cases": [
+    {
+      "id": "CO-REDEMPTRIX",
+      "canonical_owner": "CR-DOC-09",
+      "cross_references": [
+        "APOL-034",
+        "APOL-035",
+        "CR-DOC-02"
+      ],
+      "question": "Did Mater Populi Fidelis (2025) reject established doctrine about Mary's cooperation in redemption, or restrict contested Marian titles?",
+      "question_provenance_ids": [
+        "MPF25",
+        "SSPXMPF"
+      ],
+      "short_answer": [
+        {
+          "text": "Christ alone redeems by a sacrifice of infinite worth; Mary's unique cooperation and intercession depend wholly on his merits. Vatican II teaches that her motherhood neither diminishes nor competes with his unique mediation.",
+          "source_ids": [
+            "LG60",
+            "RM38"
+          ]
+        },
+        {
+          "text": "Mater Populi Fidelis acknowledges that earlier popes and Roman authorities used the term 'Co-redemptrix', yet judges its use to describe Mary's cooperation always inappropriate because of the risk of misunderstanding. A historically sanctioned expression and an irreformable definition are not the same theological category.",
+          "source_ids": [
+            "MPF25",
+            "LG60",
+            "PIUSX1904"
+          ]
+        },
+        {
+          "text": "The SSPX's own reaction objects that the note attenuates Mary's association in acquiring and distributing graces. Whether the text actually contradicts older doctrinal content must be tested with precise claims about redemption, merit and mediation—not asserted from the word alone.",
+          "source_ids": [
+            "SSPXMPF",
+            "SSPXINT",
+            "MPF25"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "DDF, 2025",
+          "argument": {
+            "text": "Marian motherhood, intercession and active cooperation are real and unique, but the term Co-redemptrix risks obscuring Christ's exclusive salvific work and should not define Mary's subordinate role.",
+            "source_ids": [
+              "MPF25",
+              "LG60"
+            ]
+          }
+        },
+        {
+          "voice": "SSPX General House and Superior General, 2025",
+          "argument": {
+            "text": "The title and associated theological theses have ecclesial precedent, and rejecting them risks narrowing Mary's divinely willed association with the acquisition and application of the fruits of redemption.",
+            "source_ids": [
+              "SSPXMPF",
+              "SSPXINT",
+              "LG60",
+              "PIUSX1904"
+            ]
+          }
+        }
+      ],
+      "objections": [
+        {
+          "challenge": {
+            "text": "How can the title be declared inappropriate if earlier popes used it?",
+            "source_ids": [
+              "MPF25",
+              "SSPXMPF",
+              "PIUSX1904"
+            ]
+          },
+          "reply": {
+            "text": "The 2025 note concedes historical papal usage, but denies that such use justifies a dogmatic definition or remains pastorally clear. The unresolved issue is whether its proposed linguistic restriction faithfully expresses all of the older doctrine.",
+            "source_ids": [
+              "MPF25",
+              "LG60",
+              "PIUSX1904"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "Does questioning the title deny Mary's cooperation?",
+            "source_ids": [
+              "SSPXMPF",
+              "LG60"
+            ]
+          },
+          "reply": {
+            "text": "Not necessarily: the note explicitly affirms Mary's active and unique cooperation. Critics nevertheless contest whether its account of objective redemption and graces is too restrictive; that narrower theological dispute deserves textual comparison.",
+            "source_ids": [
+              "MPF25",
+              "SSPXINT",
+              "RM38"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "Mary cannot be a parallel redeemer; neither can her singular and wholly dependent association with Christ be dismissed. The Catholic account includes her faith, consent, suffering at the Cross and continuing maternal intercession as aspects of God's saving design.",
+          "source_ids": [
+            "LG60",
+            "RM38"
+          ]
+        },
+        {
+          "text": "The traditionalist criticism raises a substantive continuity question: if earlier authorities used this term to teach Mary’s exceptional cooperation, a later categorical discouragement must account for—not simply ignore—the historical doctrinal content.",
+          "source_ids": [
+            "SSPXMPF",
+            "MPF25",
+            "PIUSX1904"
+          ]
+        }
+      ],
+      "verification_pending": [
+        "Pius X Ad diem illum §§12–14 (now directly linked) must be reconciled with original Pius XI references and earlier Roman decrees cited in Mater Populi Fidelis.",
+        "Separate acquisition and distribution of graces from independent meritorious redemption.",
+        "Never claim a fifth Marian dogma was defined."
+      ],
+      "status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "COVID-WORSHIP",
+      "canonical_owner": "CR-AUT-02",
+      "cross_references": [
+        "CR-AUT-01",
+        "CR-ECC-03",
+        "CR-GOV-01",
+        "APOL-053"
+      ],
+      "question": "Were restrictions on public Mass, Confession and sacramental access during Covid-19 legitimate and proportionate?",
+      "question_provenance_ids": [
+        "CDW20",
+        "CDW21",
+        "GENEVA"
+      ],
+      "short_answer": [
+        {
+          "text": "The Holy See published exceptional Holy Week provisions during the pandemic permitting celebration without congregations in places under assembly restrictions; in 2021 the Congregation for Divine Worship gave bishops responsibility for prudent concrete decisions respecting both souls and public health.",
+          "source_ids": [
+            "CDW20",
+            "CDW21"
+          ]
+        },
+        {
+          "text": "The Sunday obligation is governed by canons 1247–1248; the Apostolic Penitentiary reaffirmed the ordinarily individual celebration of Confession while addressing emergency provision. Local civil prohibitions, diocesan dispensations, sacramental access and moral impossibility cannot be treated as one identical question.",
+          "source_ids": [
+            "CAN1247",
+            "PEN20",
+            "CDW21"
+          ]
+        },
+        {
+          "text": "The SSPX's Geneva court challenge illustrates a specific contest over freedom of worship and proportionality. Its reported success does not determine the legal or medical merit of every order in every country.",
+          "source_ids": [
+            "GENEVA"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "Congregation for Divine Worship, 2020–2021",
+          "argument": {
+            "text": "An extraordinary health emergency may demand time-limited liturgical adaptations, with episcopal judgment and continuing spiritual provision for the faithful.",
+            "source_ids": [
+              "CDW20",
+              "CDW21"
+            ]
+          }
+        },
+        {
+          "voice": "SSPX litigants in Geneva",
+          "argument": {
+            "text": "The Eucharist and Mass are essential religious goods, so sweeping public-worship bans can impermissibly burden freedom of worship and should be subject to rigorous legal review.",
+            "source_ids": [
+              "GENEVA",
+              "PANDEMSSPX"
+            ]
+          }
+        }
+      ],
+      "objections": [
+        {
+          "challenge": {
+            "text": "Does obedience make every civil or episcopal closure legitimate?",
+            "source_ids": [
+              "CDW21",
+              "GENEVA"
+            ]
+          },
+          "reply": {
+            "text": "No. Competence, lawful dispensation, proportionality, locality, exemption and public-health evidence matter. Emergency directives do not automatically invalidate sacramental obligations or rights.",
+            "source_ids": [
+              "CAN1247",
+              "CDW21",
+              "GENEVA"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "Are temporary precautions necessarily proof of a lack of faith?",
+            "source_ids": [
+              "CDW20",
+              "PANDEMSSPX"
+            ]
+          },
+          "reply": {
+            "text": "No. Church officials addressed specific hazards while urging pastoral provision. The strongest criticism concerns particular unnecessary or excessive restrictions, rather than all health precautions without distinction.",
+            "source_ids": [
+              "CDW21",
+              "PEN20"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "The sacrifice of the Mass and access to Confession are not interchangeable with optional civic events. Severe restrictions demand strong justification, limited duration, and serious concern for souls.",
+          "source_ids": [
+            "CAN1247",
+            "PEN20",
+            "GENEVA"
+          ]
+        },
+        {
+          "text": "Prudence and charity toward the vulnerable also matter. The Church's own emergency decrees acknowledge exceptional circumstances, so a fair assessment must identify the specific order and reason it was excessive or proportionate.",
+          "source_ids": [
+            "CDW20",
+            "CDW21"
+          ]
+        }
+      ],
+      "verification_pending": [
+        "For each jurisdiction obtain original civil orders, diocesan decisions, dates and appellate judgments.",
+        "Do not assume a Sunday-obligation dispensation justifies all sacramental restrictions.",
+        "Source contemporaneous epidemiology if making an empirical necessity claim."
+      ],
+      "status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "VACCINES",
+      "canonical_owner": "APOL-052",
+      "cross_references": [
+        "APOL-051",
+        "APOL-053",
+        "CR-AUT-02"
+      ],
+      "question": "May Catholics receive Covid-19 vaccines linked to abortion-derived cell lines, and do permissibility and conscience settle mandates?",
+      "question_provenance_ids": [
+        "CDFVAC",
+        "DP35",
+        "VACSSPX",
+        "VACCA"
+      ],
+      "short_answer": [
+        {
+          "text": "Dignitas personae §§34–35 differentiates moral responsibility in using biological material of illicit origin. The CDF's 2020 note holds that certain Covid-19 vaccines can be used morally in specified circumstances where ethically irreproachable alternatives are unavailable; permission does not imply endorsement of abortion.",
+          "source_ids": [
+            "DP35",
+            "CDFVAC"
+          ]
+        },
+        {
+          "text": "The CDF describes vaccination as generally voluntary and differentiates biomedical safety and efficacy from its moral assessment. It also identifies obligations to protect vulnerable persons when a person does not vaccinate. The moral status of the product and the legitimacy of a particular mandate remain separate questions.",
+          "source_ids": [
+            "CDFVAC",
+            "CCC1738"
+          ]
+        },
+        {
+          "text": "SSPX authors likewise permit proportionate, remotely connected vaccine use while criticizing coercion, and reject treating all vaccinated people as traitors or all objectors as heroes. There is no single 'traditionalist ban on vaccines'.",
+          "source_ids": [
+            "VACSSPX",
+            "VACCA"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "CDF, 2020",
+          "argument": {
+            "text": "Remote material connection with abortion does not necessarily make reception illicit where proportionate serious reasons exist; vaccines still require independent medical assessment.",
+            "source_ids": [
+              "CDFVAC",
+              "DP35"
+            ]
+          }
+        },
+        {
+          "voice": "FSSPX contributors and SSPX Canada, 2021",
+          "argument": {
+            "text": "The choice is governed by the moral object, proportionate reason and personal prudence; forceful mandates are a separate possible abuse, even where vaccination itself is morally allowable.",
+            "source_ids": [
+              "VACSSPX",
+              "VACCA"
+            ]
+          }
+        }
+      ],
+      "objections": [
+        {
+          "challenge": {
+            "text": "Does taking a vaccine connected remotely to past abortion formally approve the abortion?",
+            "source_ids": [
+              "DP35",
+              "CDFVAC"
+            ]
+          },
+          "reply": {
+            "text": "No automatic inference is permitted: formal approval, direct causation and remote material cooperation are distinct. Moral gravity, scandal and access to alternatives remain relevant.",
+            "source_ids": [
+              "DP35",
+              "CDFVAC"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "If morally allowable, is vaccination obligatory?",
+            "source_ids": [
+              "CDFVAC",
+              "VACSSPX"
+            ]
+          },
+          "reply": {
+            "text": "Not merely from that conclusion. The CDF describes vaccination as generally voluntary and acknowledges other precautions to protect the vulnerable. Individual circumstances still call for prudential and clinical judgment.",
+            "source_ids": [
+              "CDFVAC",
+              "VACSSPX"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "Can criticism of mandates prove a product is medically ineffective or unsafe?",
+            "source_ids": [
+              "CDFVAC",
+              "VACCA"
+            ]
+          },
+          "reply": {
+            "text": "No. Ethical coercion and clinical efficacy are different evidentiary questions; the CDF explicitly leaves scientific evaluation to competent biomedical bodies.",
+            "source_ids": [
+              "CDFVAC",
+              "VACCA"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "The rejection of abortion is absolute; the evaluation of remote benefits of another's prior sin demands distinctions of intent, proximity, proportional reason and scandal. Both blanket condemnation and blanket endorsement of such products bypass classical moral reasoning.",
+          "source_ids": [
+            "DP35",
+            "VACSSPX"
+          ]
+        },
+        {
+          "text": "A well-formed conscience cannot be displaced by political pressure, but neither can it be formed by medical claims made without evidence. Catholics can defend a genuine moral choice without circulating unsupported safety assertions.",
+          "source_ids": [
+            "CDFVAC",
+            "CCC1738",
+            "VACCA"
+          ]
+        }
+      ],
+      "verification_pending": [
+        "Separate vaccination, fetal-cell-line use, mandates, and scientific safety/efficacy in the presentation while keeping a single canonical owner.",
+        "Require current 2026 medical/regulatory studies before current product-specific claims.",
+        "Do not repeat historically inaccurate claims about particular unlicensed or unavailable vaccines."
+      ],
+      "status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "CAPITAL-PUNISHMENT",
+      "canonical_owner": "CR-DOC-02",
+      "cross_references": [
+        "APOL-053",
+        "CR-DOC-09",
+        "CR-DOC-10"
+      ],
+      "question": "Can the 2018 revision to Catechism §2267 be reconciled with earlier Catholic teaching on capital punishment?",
+      "question_provenance_ids": [
+        "CCC2267",
+        "CDFDEATH",
+        "FESER"
+      ],
+      "short_answer": [
+        {
+          "text": "St Thomas Aquinas judged that legitimate civil authority could execute grave criminals for the common good. Evangelium vitae §56 tightly restricted cases of necessity in contemporary conditions while preserving the analysis of punishment and societal defence.",
+          "source_ids": [
+            "AQUINAS",
+            "EV56"
+          ]
+        },
+        {
+          "text": "The 2018 revision of §2267 judges capital punishment inadmissible in light of dignity, penal developments and modern detention; the CDF's accompanying letter explicitly claims doctrinal continuity and favors worldwide abolition.",
+          "source_ids": [
+            "CCC2267",
+            "CDFDEATH"
+          ]
+        },
+        {
+          "text": "Edward Feser argues that an assertion of intrinsic immorality would contradict older teaching; a central question is whether the 2018 text asserts that, or makes a context-conditioned judgment in strong doctrinal language.",
+          "source_ids": [
+            "FESER",
+            "CDFDEATH",
+            "LONG"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "CDF under Cardinal Ladaria, 2018",
+          "argument": {
+            "text": "New insight into personal dignity, the character of penal sanctions and availability of nonlethal protection supports categorical contemporary opposition, while remaining in continuity with earlier doctrine.",
+            "source_ids": [
+              "CDFDEATH",
+              "CCC2267"
+            ]
+          }
+        },
+        {
+          "voice": "Edward Feser, 2018",
+          "argument": {
+            "text": "The legitimate use of capital punishment cannot become intrinsically evil merely by changing a Catechism paragraph; language apparently implying that conflicts with prior natural-law and magisterial judgments.",
+            "source_ids": [
+              "FESER",
+              "AQUINAS"
+            ]
+          }
+        }
+      ],
+      "objections": [
+        {
+          "challenge": {
+            "text": "Did classical Catholic teaching allow the penalty in principle?",
+            "source_ids": [
+              "AQUINAS",
+              "EV56"
+            ]
+          },
+          "reply": {
+            "text": "Yes, the older record includes principled arguments for its possible licitness under lawful authority; historical denial would misstate the source.",
+            "source_ids": [
+              "AQUINAS",
+              "EV56",
+              "CDFDEATH"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "Does theoretical licitness mean a Catholic must support modern executions?",
+            "source_ids": [
+              "EV56",
+              "CDFDEATH"
+            ]
+          },
+          "reply": {
+            "text": "No. Judgments about deterrence, state capacity, rehabilitation, judicial error and social necessity affect whether any application is permissible or wise in current conditions.",
+            "source_ids": [
+              "EV56",
+              "CDFDEATH"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "Does the revised paragraph unambiguously teach only prudential policy?",
+            "source_ids": [
+              "CCC2267",
+              "FESER"
+            ]
+          },
+          "reply": {
+            "text": "No. It invokes dignity and Gospel principles while its explanatory letter includes contingent penal circumstances. A responsible presentation admits the interpretive difficulty instead of simply declaring contradiction or continuity proved.",
+            "source_ids": [
+              "CCC2267",
+              "CDFDEATH",
+              "FESER",
+              "LONG"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "Historic Catholic teaching on lawful penal authority must be interpreted on its own terms. A change of legal or empirical circumstances may restrict just application, but it cannot by itself turn an intrinsically licit moral kind into an intrinsic evil.",
+          "source_ids": [
+            "AQUINAS",
+            "EV56",
+            "FESER"
+          ]
+        },
+        {
+          "text": "The dignity of prisoners, risks of judicial mistakes and stronger means of protection can justify vigorous opposition to executions today without relying on a false claim that the Church never permitted them.",
+          "source_ids": [
+            "EV56",
+            "CDFDEATH"
+          ]
+        }
+      ],
+      "verification_pending": [
+        "Examine original-language scholastic and magisterial contexts before publishing the strongest irreformability claims.",
+        "Clearly distinguish a doctrinal contradiction claim from an interpretation under dispute.",
+        "Do not substitute partisan empirical claims about deterrence for criminological evidence."
+      ],
+      "status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "IMMIGRATION",
+      "canonical_owner": "APOL-053",
+      "cross_references": [
+        "CR-DOC-05"
+      ],
+      "question": "Does Catholic social doctrine require open borders, or may states regulate migration?",
+      "question_provenance_ids": [
+        "CCC2241",
+        "PACEM",
+        "EXSUL"
+      ],
+      "short_answer": [
+        {
+          "text": "Catechism §2241 asks prosperous nations to welcome foreigners needing security or sustenance to the extent possible, and also permits juridical conditions for the common good. Immigrants have corresponding duties of legal obedience and respect for the receiving nation's heritage.",
+          "source_ids": [
+            "CCC2241"
+          ]
+        },
+        {
+          "text": "John XXIII affirmed significant rights of migration subject to the rightly understood common good of the receiving country; Pius XII's Exsul Familia demonstrates longstanding preconciliar pastoral concern for refugees and emigrants.",
+          "source_ids": [
+            "PACEM",
+            "EXSUL"
+          ]
+        },
+        {
+          "text": "Neither an unrestricted immigration entitlement nor exclusion regardless of human need follows from those texts. Concrete admission criteria, asylum procedures, integration, security and capacity require moral principles as well as prudential state judgment.",
+          "source_ids": [
+            "CCC2241",
+            "PACEM"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "Social teaching emphasizing the receiving polity's duty",
+          "argument": {
+            "text": "Public authority is responsible for the common good and may condition admission while expecting lawful integration and reciprocal civic burdens.",
+            "source_ids": [
+              "CCC2241"
+            ]
+          }
+        },
+        {
+          "voice": "Pius XII and John XXIII on human mobility and need",
+          "argument": {
+            "text": "Being a migrant or refugee does not extinguish human dignity, the need for assistance or legitimate claims arising from persecution and destitution.",
+            "source_ids": [
+              "EXSUL",
+              "PACEM"
+            ]
+          }
+        }
+      ],
+      "objections": [
+        {
+          "challenge": {
+            "text": "Is limiting immigration intrinsically anti-Catholic?",
+            "source_ids": [
+              "CCC2241"
+            ]
+          },
+          "reply": {
+            "text": "No. The Catechism expressly permits just juridical conditions and recognizes reciprocal duties.",
+            "source_ids": [
+              "CCC2241"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "May an appeal to sovereignty excuse disregard for refugees and the poor?",
+            "source_ids": [
+              "PACEM",
+              "EXSUL"
+            ]
+          },
+          "reply": {
+            "text": "No. Human solidarity and pastoral care are supported by papal teachings long before Vatican II. State discretion must be exercised justly.",
+            "source_ids": [
+              "PACEM",
+              "EXSUL",
+              "CCC2241"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "A just civil authority must protect common order, families and the country's legitimate inheritance. Regulation and integration requirements can therefore be morally warranted rather than exceptions to Catholic social teaching.",
+          "source_ids": [
+            "CCC2241"
+          ]
+        },
+        {
+          "text": "Protection of the national community does not nullify duties toward migrants; long-established Catholic teaching demands regard for the poor, persecuted and displaced. Charity and legitimate borders are compatible obligations.",
+          "source_ids": [
+            "EXSUL",
+            "PACEM",
+            "CCC2241"
+          ]
+        }
+      ],
+      "verification_pending": [
+        "Keep asylum, labour migration, irregular migration, deportation, citizenship and cultural integration distinct.",
+        "Do not assign a political position to the SSPX or any other traditionalist group without their own text.",
+        "Avoid current policy conclusions without jurisdiction-specific evidence."
+      ],
+      "status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "PACHAMAMA",
+      "canonical_owner": "CR-IDM-08",
+      "cross_references": [
+        "CR-IDM-07",
+        "APOL-036",
+        "CR-DOC-09"
+      ],
+      "question": "Did the 2019 Amazon Synod Pachamama ceremonies involve idolatry, syncretism or scandal?",
+      "question_provenance_ids": [
+        "FRANCIS",
+        "PACHSSPX",
+        "PACHFR"
+      ],
+      "short_answer": [
+        {
+          "text": "Francis on 25 October 2019 explicitly referred to the statues as 'pachamama' and said they were placed without idolatrous intention. This reports his stated assessment of intention but cannot alone establish the objective meaning of every act surrounding the figures.",
+          "source_ids": [
+            "FRANCIS"
+          ]
+        },
+        {
+          "text": "The SSPX Superior General condemned what he judged to be idolatrous rites at the Amazon Synod, and FSSPX authors argued that bodily gestures and the liturgical setting publicly conveyed pagan worship or grave scandal. Those are authentic objections by identified traditionalist proponents.",
+          "source_ids": [
+            "PACHSSPX",
+            "PACHFR",
+            "PACHREV"
+          ]
+        },
+        {
+          "text": "The Catholic prohibition of idolatry is non-negotiable. Whether a given act constitutes worship of another divinity, a merely cultural gesture, religious ambiguity or public scandal requires evidence of object, act and circumstances, without pretending to know participants' interior dispositions.",
+          "source_ids": [
+            "CCC2112",
+            "FRANCIS",
+            "PACHFR"
+          ]
+        }
+      ],
+      "positions": [
+        {
+          "voice": "Pope Francis, 25 October 2019",
+          "argument": {
+            "text": "The statues were present without idolatrous intentions; he described their removal, recovery and offered an apology to those offended by their removal.",
+            "source_ids": [
+              "FRANCIS"
+            ]
+          }
+        },
+        {
+          "voice": "SSPX Superior General and FSSPX authors, 2019",
+          "argument": {
+            "text": "The symbols, ritual acts and their display in churches objectively amounted, in their judgment, to illicit pagan veneration and a grave scandal incompatible with Catholic worship.",
+            "source_ids": [
+              "PACHSSPX",
+              "PACHFR",
+              "PACHREV"
+            ]
+          }
+        }
+      ],
+      "objections": [
+        {
+          "challenge": {
+            "text": "Does a declared lack of idolatrous intention dispose of every public-scandal objection?",
+            "source_ids": [
+              "FRANCIS",
+              "PACHFR"
+            ]
+          },
+          "reply": {
+            "text": "No. The moral and communicative meaning of an external act and personal intention are related but not equivalent. A verdict still requires authentic evidence of what was done.",
+            "source_ids": [
+              "CCC2112",
+              "FRANCIS",
+              "PACHFR"
+            ]
+          }
+        },
+        {
+          "challenge": {
+            "text": "Does displaying a figure from a pre-Christian culture prove formal idolatry?",
+            "source_ids": [
+              "CCC2112",
+              "PACHREV"
+            ]
+          },
+          "reply": {
+            "text": "No. Cultural provenance alone is insufficient; worshipful external acts and their signification are the relevant evidence. It is also wrong to dismiss well-evidenced acts merely by labeling them folklore.",
+            "source_ids": [
+              "CCC2112",
+              "FRANCIS",
+              "PACHREV"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "Inculturation cannot relativize the first commandment. Any ceremony whose outward acts amount to adoration of a creature is incompatible with Catholic worship, regardless of cultural or ecological purposes.",
+          "source_ids": [
+            "CCC2112",
+            "PACHFR"
+          ]
+        },
+        {
+          "text": "A sound accusation of idolatry must be precise about which images, which acts, their ritual meaning and their documentary proof. The Pope's statement of intention and the SSPX's accusation of public objective scandal both belong in the evidentiary record.",
+          "source_ids": [
+            "FRANCIS",
+            "PACHSSPX",
+            "PACHFR"
+          ]
+        }
+      ],
+      "verification_pending": [
+        "Build primary-source chronology of ceremonies and Vatican statements 4–25 October 2019, including original images/video when possible.",
+        "Do not confuse idolatry, syncretism, scandal, sacrilege and imprudence.",
+        "Treat SSPX categorical accusations as their claims, not as adjudicated fact."
+      ],
+      "status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {FORMATION_RESEARCH_PREVIEW_DATA as DATA} from "../src/learn/formation-research-preview-data.js";
+import {createFormationResearchPreview,FORMATION_RESEARCH_PREVIEW_ROOT} from "../src/learn/formation-research-preview.js";
+import {LEARN_MODULE_IDS} from "../src/learn/presentation.js";
+
+const answers=JSON.parse(readFileSync("data/learn/biblical-patristic-answers.v1.json","utf8"));
+const debates=JSON.parse(readFileSync("data/learn/sedevacantism-preconciliar-debates.v1.json","utf8"));
+const supplement=JSON.parse(readFileSync("data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json","utf8"));
+const apol=JSON.parse(readFileSync("data/learn/apologetics-canonical.v1.json","utf8"));
+const crisis=JSON.parse(readFileSync("data/learn/church-crisis-canonical.v1.json","utf8"));
+assert.equal(DATA.status,"INTERNAL_REVIEW_UNPUBLISHED");
+assert.equal(DATA.canonical_navigation_locked,true);
+assert.equal(DATA.questions.length,26);
+assert.equal(DATA.answers.length,22);
+assert.equal(DATA.debates.length,8);
+assert.deepEqual(DATA.questions.map(x=>x.id),supplement.questions.map(x=>x.id));
+assert.deepEqual(DATA.answers.map(x=>x.question_id),answers.answers.map(x=>x.question_id));
+assert.deepEqual(DATA.debates.map(x=>x.id),debates.debates.map(x=>x.id));
+assert.equal(Object.keys(DATA.sourceSets.biblical).length,answers.source_registry.length);
+assert.equal(Object.keys(DATA.sourceSets.sedevacantism).length,debates.source_registry.length);
+const allOwners=new Set([...apol.dossiers,...crisis.dossiers].map(x=>x.id));
+const answerById=new Map(DATA.answers.map(x=>[x.question_id,x]));
+const debateById=new Map(DATA.debates.map(x=>[x.id,x]));
+function checkParagraph(p,group,label){
+  assert.ok(p?.text&&p?.text_fr,label+" bilingual");
+  assert.ok(p.source_ids?.length,label+" unsourced");
+  for(const key of p.source_ids){
+    const item=DATA.sourceSets[group][key];
+    assert.ok(item?.title&&/^https:\/\//.test(item.url),label+" missing source "+key);
+  }
+}
+let claimCount=0;
+for(const q of DATA.questions){
+  assert.ok(q.id&&q.owner&&q.title_en&&q.title_fr,"incomplete title "+q.id);
+  assert.ok(allOwners.has(q.owner),"invalid canonical owner "+q.id);
+  if(q.debate_ids.length){for(const id of q.debate_ids)assert.ok(debateById.has(id),"missing debate "+id);}
+  else assert.ok(answerById.has(q.id),"missing answer "+q.id);
+}
+for(const a of DATA.answers){
+  assert.ok(allOwners.has(a.canonical_owner));
+  const ps=[...a.answer_paragraphs,...a.objections.flatMap(x=>[x.argument,x.response]),a.traditional_argument];
+  for(const p of ps){checkParagraph(p,"biblical",a.question_id);claimCount++;}
+}
+for(const d of DATA.debates){
+  assert.ok(allOwners.has(d.canonical_owner));
+  assert.ok(d.title_fr&&d.title);
+  const ps=[...d.short_answer,...d.sedevacantist_case.paragraphs,...d.critical_assessment,...d.objections.flatMap(x=>[x.objection,x.response]),...d.traditional_argument];
+  for(const p of ps){checkParagraph(p,"sedevacantism",d.id);claimCount++;}
+}
+assert.equal(claimCount,211);
+assert.equal(LEARN_MODULE_IDS.includes("learn.apologetics"),false,"unapproved module wrongly public");
+assert.equal(LEARN_MODULE_IDS.includes("learn.church_crisis"),false,"unapproved module wrongly public");
+const browser=readFileSync("src/learn/browser-entry.js","utf8");
+assert.match(browser,/aoFormationResearchPreview=1/,"missing QA gate");
+assert.match(browser,/import\("\.\/formation-research-preview\.js"\)/,"QA reader missing lazy import");
+assert.doesNotMatch(readFileSync("src/learn/presentation.js","utf8"),/id:"learn\.apologetics"|id:"learn\.church_crisis"/,"preview has become public");
+
+function fakeWindow(lang="en"){
+  const nodes=new Map();
+  return {
+    location:{search:"?aoFormationResearchPreview=1"},
+    AO_RUNTIME_V8:{store:{getState:()=>({language:lang})}},
+    document:{
+      documentElement:{lang},
+      body:{append(el){nodes.set(el.id,el);}},
+      getElementById(id){return nodes.get(id)||null;},
+      createElement(){return {
+        id:"",lang:"",hidden:false,innerHTML:"",
+        setAttribute(){},addEventListener(){},scrollTo(){},querySelector(){return null;},
+        remove(){nodes.delete(this.id);}
+      };}
+    }
+  };
+}
+const en=fakeWindow("en"),api=createFormationResearchPreview(en);
+assert.equal(api.status().published,false);
+assert.equal(api.open(),true);
+assert.equal(api.status().open,true);
+assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Internal editorial preview/);
+assert.equal(api.openQuestion("BAQ-06"),true);
+assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Infancy Gospel of Thomas|Infancy Gospel/);
+assert.equal(api.openQuestion("BAQ-14"),true);
+assert.equal(api.openDebate("SDV-01"),true);
+assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Sedevacantist argument/);
+assert.equal(api.back(),true);
+assert.equal(api.status().view,"question");
+assert.equal(api.back(),true);
+assert.equal(api.status().view,"list");
+assert.equal(api.close(),true);
+assert.equal(api.status().open,false);
+const french=fakeWindow("fr"),fa=createFormationResearchPreview(french);
+assert.equal(fa.open(),true);
+assert.equal(fa.openQuestion("BAQ-23"),true);
+assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Édom|Edom/);
+assert.equal(fa.openQuestion("BAQ-14"),true);
+assert.equal(fa.openDebate("SDV-01"),true);
+assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Argument sédévacantiste/);
+assert.equal(fa.close(),true);
+console.log("Formation research preview: PASS — 26 questions, 22 answers, 8 debates, 211 bilingual sourced paragraphs, internal gate, back navigation");

@@ -5,7 +5,7 @@ import {
   SEASONAL_PRACTICES_V381,
   TRADITIONAL_LEARN_SOURCES_V381,
 } from "../src/learn/traditional-life-data.js";
-import { TRADITIONAL_LEARN_ROUTES } from "../src/learn/traditional-life.js";
+import { TRADITIONAL_LEARN_ALIASES, TRADITIONAL_LEARN_ROUTES } from "../src/learn/traditional-life.js";
 import { LEARN_MODULE_IDS } from "../src/learn/presentation.js";
 
 const expected=[
@@ -17,7 +17,6 @@ const expected=[
   "learn.rites.matrimony",
   "learn.serve_mass.responses",
   "learn.scapular",
-  "learn.seasonal_rites",
 ];
 
 assert.deepEqual(Object.keys(TRADITIONAL_LEARN_ROUTES),expected,"traditional Learn route identity/order changed");
@@ -50,8 +49,9 @@ assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentHolyOrders,/vatican\.va/,"Hol
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentHolyOrdersCanons,/vatican\.va/,"Holy Orders lost current canon-law authority");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.ministeriaQuaedam,/vatican\.va/,"Holy Orders lost Ministeria quaedam historical/current discipline source");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.frenchHolyOrders,/icrsp-lille\.fr/,"Holy Orders lost its French-world traditional witness");
-const visibleTraditional=expected.filter(id=>id!=="learn.seasonal_rites");
-assert.ok(visibleTraditional.every(id=>LEARN_MODULE_IDS.includes(id)),"recovered traditional routes are not visible in modular Learn");
+assert.ok(expected.every(id=>LEARN_MODULE_IDS.includes(id)),"recovered traditional routes are not visible in modular Learn");
+assert.equal(TRADITIONAL_LEARN_ALIASES["learn.seasonal_rites"]?.target,"calendar","retired seasonal Learn route no longer resolves as a Calendar compatibility alias");
+assert.equal(Object.hasOwn(TRADITIONAL_LEARN_ROUTES,"learn.seasonal_rites"),false,"Seasonal Catholic Practice returned as an active Learn owner");
 assert.equal(LEARN_MODULE_IDS.includes("learn.seasonal_rites"),false,"final v38.4 donor dedupe requires Seasonal Catholic Practice to remain a compatibility alias, not a duplicate Learn launcher");
 
 const runtime=readFileSync("src/learn/traditional-life.js","utf8");
@@ -159,7 +159,8 @@ assert.match(runtime,/aoLearnTradGuideHint/,"Formation guide hint styling hook d
 assert.match(runtime,/Formation/,"traditional Learn child shell lost Formation identity");
 assert.doesNotMatch(sickSection,/DISCERNMENT & ENGAGEMENT|Courtship is discernment|CANONICAL PREPARATION/,"Serious Illness regained misplaced Matrimony content");
 assert.doesNotMatch(runtime,/<span aria-hidden="true"><\/span><\/header>/,"traditional Learn child shell regressed to a blank trailing spacer");
-assert.match(runtime,/canonical==="learn\.seasonal_rites"[\s\S]*navigate\?\.\("calendar"\)/,"Seasonal compatibility alias no longer hands off to the richer Calendar\/liturgical-year owner");
+assert.match(runtime,/id==="learn\.seasonal_rites"[\s\S]*canonicalId:"calendar"[\s\S]*navigate\?\.\("calendar"\)/,"Seasonal compatibility alias no longer hands off to the richer Calendar/liturgical-year owner");
+assert.doesNotMatch(runtime,/else node\.innerHTML=seasonal\(win\)/,"retired Seasonal Catholic Practice returned as the generic Traditional Learn renderer fallback");
 assert.doesNotMatch(runtime,/AO_TRADITION_V38/,"historical Traditions monolith was restored as a runtime owner");
 assert.match(browser,/ensureTraditionalLearnRegistry/);
 assert.match(browser,/TRADITIONAL_LEARN_ROUTES\[id\]/);
@@ -175,4 +176,4 @@ assert.match(assets,/"learn\.serve_mass\.responses"\s*:\s*"ao-refined-study"/);
 assert.match(assets,/"learn\.scapular"\s*:\s*"ao-rich-our-lady-marian-devotions"/);
 assert.match(assets,/"learn\.seasonal_rites"\s*:\s*"ao-refined-calendar-upcoming"/);
 
-console.log("PASS modular v38.5 traditional Learn after-death and family absorption on shared shell");
+console.log("PASS modular v38.6 traditional Learn ownership cleanup on shared shell");
