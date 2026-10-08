@@ -14,7 +14,8 @@
     "end": "TLM075",
     "question_count": 50,
     "bilingual_draft": 50,
-    "paragraphs": 142
+    "paragraphs": 149,
+    "substantive_paragraphs": 141
   },
   "verified_reference_spot_checks": [
     {
@@ -54,7 +55,7 @@
       "confidence": "DIRECT_OFFICIAL_LEGISLATIVE_IMPLEMENTATION"
     }
   ],
-  "review_scope_limitation": "Reference-specific checks are not verification of every citation and every theological proposition. The manuscript remains an internal research draft; no blanket content approval may be inferred.",
+  "review_scope_limitation": "Fifteen TLM051–065 case source locators were checked or scoped; seven directly against core original Church documents, eight with secondary-historical provenance explicitly qualified. This is not independent human theological approval, nor a claim-level certification of the other 35 cases.",
   "required_before_public_release": [
     "Check each of 134 substantive claims against linked editions or identified author positions; do not treat generic document links as proof.",
     "Proofread 142 French passages, including eight labeled internal follow-ups.",
@@ -416,212 +417,242 @@
     {
       "id": "TLM051",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "PRIMARY_DOCUMENT_SPECIFIC_LOCI_REVIEWED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM052",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "PRIMARY_DOCUMENT_SPECIFIC_LOCI_REVIEWED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM053",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM054",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM055",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM056",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM057",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM058",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM059",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM060",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "CONTEMPORANEOUS_AND_SECONDARY_EVIDENCE_SCOPED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM061",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "PRIMARY_DOCUMENT_SPECIFIC_LOCI_REVIEWED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM062",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "PRIMARY_DOCUMENT_SPECIFIC_LOCI_REVIEWED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM063",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "PRIMARY_DOCUMENT_SPECIFIC_LOCI_REVIEWED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM064",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "PRIMARY_DOCUMENT_SPECIFIC_LOCI_REVIEWED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM065",
       "canonical_owner_source": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-      "editorial_stage": "BILINGUAL_NORMALIZED_SOURCE_LINKED_SUMMARY",
-      "source_quality": "30_PARAGRAPHS_STILL_NEED_CLAIM_LEVEL_REVIEW",
+      "editorial_stage": "EN_FR_SOURCE_SCOPED_NORMALIZED_SUMMARY_WITH_REFORM_RATIONALE_WHERE_APPLICABLE",
+      "source_quality": "PRIMARY_DOCUMENT_SPECIFIC_LOCI_REVIEWED",
       "translation": "FR_DRAFT_NOT_NATIVE_REVIEWED",
       "attribution": "EDITORIAL_QUESTION_TITLES_NOT_EXTERNAL_QUOTES",
       "publication_ready": false,
       "release_blockers": [
         "Final independent theological and historical copy review remains open.",
         "Native French theological and liturgical terminology review remains open.",
-        "Summary is not the original complete debate; sources and opposing proponents require deepening."
-      ]
+        "Summary is not the original complete debate; sources and opposing proponents require deepening.",
+        "Independent theological and French editorial signoff remains outstanding; source-link presence is not automatic claim certification."
+      ],
+      "source_review_completed": true
     },
     {
       "id": "TLM066",
@@ -763,5 +794,14 @@
         "Disputed historical and juridical claims require edition-specific final review."
       ]
     }
-  ]
+  ],
+  "research_review_progress": {
+    "date": "2026-10-08",
+    "tlm_051_065_reviewed": 15,
+    "primary_text_explicitly_checked": 7,
+    "secondary_or_archival_cases_qualified": 8,
+    "source_scoped_bilingual_paragraphs": 37,
+    "final_approved_for_publication": 0,
+    "remaining_unreviewed_cases": 35
+  }
 }

@@ -553,9 +553,9 @@
     },
     "french_drafts": {
       "tlm_026_050": 82,
-      "tlm_051_065": 30,
+      "tlm_051_065": 37,
       "tlm_066_075": 30,
-      "status": "ALL_RECOVERED_INDEXED_TLM026_075_IN_BILINGUAL_DRAFT_NOT_PUBLISHED"
+      "status": "149_BILINGUAL_DRAFT_PARAGRAPHS_15_SOURCE_SCOPED_STILL_UNPUBLISHED"
     },
     "followups": {
       "count": 8,
@@ -582,7 +582,14 @@
       "publication_allowed": false,
       "french_draft_complete": true,
       "formal_theological_copy_review_complete": false,
-      "remaining_unrecovered": "TLM001-TLM025"
+      "remaining_unrecovered": "TLM001-TLM025",
+      "review_progress": "15/50 source-scoped; independent editorial approval still required"
+    },
+    "editorial_status_20261008": {
+      "fifteen_claims_scoped": 15,
+      "seven_primary": 7,
+      "eight_secondary_or_mixed": 8,
+      "published": 0
     }
   }
 }

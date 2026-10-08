@@ -430,14 +430,14 @@
     "bilingual_draft": 50,
     "published": 0,
     "new_canonical_dossiers": 0,
-    "underlying_substantive_paragraphs": 134,
+    "underlying_substantive_paragraphs": 141,
     "unattributed_followup_challenges": 0,
     "legacy_026_050_source_records_collated": 74,
     "legacy_026_050_blocked": 0,
     "legacy_026_050_corrected_pending_approval": 7,
     "legacy_026_050_french_draft_paragraphs": 82,
     "legacy_026_050_editorial_followup_questions": 8,
-    "tlm_051_065_french_draft_paragraphs": 30
+    "tlm_051_065_french_draft_paragraphs": 37
   },
   "citation_review_tlm026_050": {
     "source_file": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
@@ -479,7 +479,7 @@
     },
     "tlm_051_065": {
       "questions": 15,
-      "paragraphs": 30,
+      "paragraphs": 37,
       "status": "COMPLETE_DRAFT_HUMAN_REVIEW_PENDING"
     },
     "tlm_066_075": {
@@ -487,7 +487,7 @@
       "paragraphs": 30,
       "status": "COMPLETE_DRAFT_HUMAN_REVIEW_PENDING"
     },
-    "french_translation_draft_total_substantive_and_followups": 142
+    "french_translation_draft_total_substantive_and_followups": 149
   },
   "followup_provenance_status": {
     "questions": 8,
@@ -512,5 +512,36 @@
     "french_draft_complete": true,
     "formal_theological_copy_review_complete": false,
     "remaining_unrecovered": "TLM001-TLM025"
+  },
+  "editorial_review_batch": {
+    "date": "2026-10-08",
+    "reviewed_ids": [
+      "TLM051",
+      "TLM052",
+      "TLM053",
+      "TLM054",
+      "TLM055",
+      "TLM056",
+      "TLM057",
+      "TLM058",
+      "TLM059",
+      "TLM060",
+      "TLM061",
+      "TLM062",
+      "TLM063",
+      "TLM064",
+      "TLM065"
+    ],
+    "primary_text_cases": [
+      "TLM051",
+      "TLM052",
+      "TLM061",
+      "TLM062",
+      "TLM063",
+      "TLM064",
+      "TLM065"
+    ],
+    "remaining_35_require_editorial_quality_review": true,
+    "all_questions_published": false
   }
 }

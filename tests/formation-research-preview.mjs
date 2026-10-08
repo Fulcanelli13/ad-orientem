@@ -18,8 +18,13 @@ assert.equal(TLM.questions.length,50);
 const gate=JSON.parse(readFileSync("data/learn/traditional-mass-publication-gates.v1.json","utf8"));
 assert.equal(gate.publication_allowed,false,"TLM research accidentally approved");
 assert.equal(gate.records.length,50);
-assert.equal(gate.recovered.paragraphs,142);
+assert.equal(gate.recovered.paragraphs,149);
 assert.equal(gate.canonical_navigation_additions,0);
+assert.equal(gate.research_review_progress.tlm_051_065_reviewed,15);
+assert.equal(gate.research_review_progress.primary_text_explicitly_checked,7);
+assert.equal(gate.research_review_progress.final_approved_for_publication,0);
+assert.equal(TLM.questions.find(x=>x.id==="TLM061").paragraphs.length,3);
+assert.ok(TLM.questions.find(x=>x.id==="TLM061").paragraphs.some(x=>x.role==="documented_reform_rationale"));
 assert.deepEqual(gate.records.map(x=>x.id),TLM.questions.map(x=>x.id));
 assert.ok(TLM.questions.every(x=>x.publication_ready===false&&x.reviewer_approval==="NOT_GRANTED"));
 assert.ok(TLM.questions.every(x=>x.quality_gate_version===gate.version));
@@ -71,7 +76,7 @@ for(const [name,,count] of sourcePacks){
     }
   }
 }
-assert.equal(tlmParagraphCount,142);
+assert.equal(tlmParagraphCount,149);
 assert.equal(editorialFollowups,8);
 assert.equal(DATA.canonical_navigation_locked,true);
 assert.equal(DATA.questions.length,26);
@@ -154,6 +159,9 @@ assert.equal(api.status().view,"question");
 assert.equal(api.back(),true);
 assert.equal(api.status().view,"list");
 assert.equal(api.openQuestion("TLM001"),false);
+assert.equal(api.openQuestion("TLM061"),true);
+assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Documented reform rationale/);
+assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Normalized research summary/);
 assert.equal(api.openQuestion("TLM039"),true);
 assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Joint Liturgical Group/);
 assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/https:\/\//);
@@ -172,6 +180,8 @@ assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).inn
 assert.equal(fa.openQuestion("BAQ-14"),true);
 assert.equal(fa.openDebate("SDV-01"),true);
 assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Argument sédévacantiste/);
+assert.equal(fa.openQuestion("TLM061"),true);
+assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Justification documentée de la réforme/);
 assert.equal(fa.openQuestion("TLM056"),true);
 assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Missa normativa|évêques/i);
 assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/https:\/\//);

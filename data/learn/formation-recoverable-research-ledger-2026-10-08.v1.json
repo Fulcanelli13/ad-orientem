@@ -17,11 +17,11 @@
       "CONTEMPORARY_CASE_PACK_2": 12,
       "TRADITIONAL_MASS_OBJECTION": 50
     },
-    "source_bearing_blocks": 481,
-    "blocks_with_french": 353,
+    "source_bearing_blocks": 488,
+    "blocks_with_french": 360,
     "blocks_without_french": 128,
     "blocks_without_source_ids": 0,
-    "source_id_links": 1130,
+    "source_id_links": 1145,
     "unknown_source_ids": 0,
     "biblical_patristic_question_only": [
       "BAQ-13",
@@ -4409,8 +4409,8 @@
     {
       "id": "TLM051",
       "bank": "TRADITIONAL_MASS_OBJECTION",
-      "question_original": "Vatican II ordered the creation of the Novus Ordo, so criticizing it means rejecting the Council.",
-      "question_fr": "Vatican II a-t-il ordonné la création du nouvel Ordo de la messe ?",
+      "question_original": "Did Vatican II itself prescribe every change in the 1969–1970 Roman Missal?",
+      "question_fr": "Vatican II a-t-il lui-même prescrit toutes les modifications du missel romain de 1969–1970 ?",
       "canonical_owner": "CR-LIT-02",
       "originality": "NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL",
       "content_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
@@ -4418,11 +4418,11 @@
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 2,
+        "source_bearing_blocks": 3,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 2,
+        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 5,
+        "source_id_links": 7,
         "source_ids": [
           "MR69",
           "SA64",
@@ -4448,8 +4448,8 @@
     {
       "id": "TLM052",
       "bank": "TRADITIONAL_MASS_OBJECTION",
-      "question_original": "The reform merely simplified the old Mass. There was no substantial change.",
-      "question_fr": "La réforme n’a-t-elle fait que simplifier la messe traditionnelle ?",
+      "question_original": "Was the 1969–1970 reform merely a simplification of the older Mass?",
+      "question_fr": "La réforme de 1969–1970 s'est-elle limitée à simplifier l'ancienne messe ?",
       "canonical_owner": "CR-LIT-05",
       "originality": "NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL",
       "content_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
@@ -4457,11 +4457,11 @@
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 2,
+        "source_bearing_blocks": 3,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 2,
+        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 4,
+        "source_id_links": 6,
         "source_ids": [
           "AUD19",
           "MR69",
@@ -4617,7 +4617,7 @@
         "blocks_no_fr": 0,
         "blocks_with_fr": 2,
         "blocks_without_source_ids": 0,
-        "source_id_links": 4,
+        "source_id_links": 3,
         "source_ids": [
           "CHIRON",
           "NOT67"
@@ -4651,10 +4651,11 @@
         "blocks_no_fr": 0,
         "blocks_with_fr": 2,
         "blocks_without_source_ids": 0,
-        "source_id_links": 6,
+        "source_id_links": 7,
         "source_ids": [
           "CHIRON",
-          "GIM70",
+          "GIRM75",
+          "IGMR69_ORIGINAL",
           "MR69",
           "NOT67"
         ],
@@ -4665,8 +4666,12 @@
             "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
           },
           {
-            "id": "GIM70",
+            "id": "GIRM75",
             "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+          },
+          {
+            "id": "IGMR69_ORIGINAL",
+            "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
           },
           {
             "id": "MR69",
@@ -4695,10 +4700,11 @@
         "blocks_no_fr": 0,
         "blocks_with_fr": 2,
         "blocks_without_source_ids": 0,
-        "source_id_links": 4,
+        "source_id_links": 6,
         "source_ids": [
           "CHIRON",
-          "GIM70",
+          "GIRM75",
+          "IGMR69_ORIGINAL",
           "MR69",
           "OTT69"
         ],
@@ -4709,8 +4715,12 @@
             "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
           },
           {
-            "id": "GIM70",
+            "id": "GIRM75",
             "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+          },
+          {
+            "id": "IGMR69_ORIGINAL",
+            "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
           },
           {
             "id": "MR69",
@@ -4739,10 +4749,11 @@
         "blocks_no_fr": 0,
         "blocks_with_fr": 2,
         "blocks_without_source_ids": 0,
-        "source_id_links": 4,
+        "source_id_links": 5,
         "source_ids": [
           "CHIRON",
-          "GIM70",
+          "GIRM75",
+          "IGMR69_ORIGINAL",
           "MR69",
           "OTT69"
         ],
@@ -4753,8 +4764,12 @@
             "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
           },
           {
-            "id": "GIM70",
+            "id": "GIRM75",
             "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+          },
+          {
+            "id": "IGMR69_ORIGINAL",
+            "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
           },
           {
             "id": "MR69",
@@ -4783,10 +4798,11 @@
         "blocks_no_fr": 0,
         "blocks_with_fr": 2,
         "blocks_without_source_ids": 0,
-        "source_id_links": 4,
+        "source_id_links": 5,
         "source_ids": [
           "CHIRON",
-          "GIM70",
+          "GIRM75",
+          "IGMR69_ORIGINAL",
           "MR69"
         ],
         "unresolved_source_ids": [],
@@ -4796,8 +4812,12 @@
             "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
           },
           {
-            "id": "GIM70",
+            "id": "GIRM75",
             "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+          },
+          {
+            "id": "IGMR69_ORIGINAL",
+            "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
           },
           {
             "id": "MR69",
@@ -4809,8 +4829,8 @@
     {
       "id": "TLM061",
       "bank": "TRADITIONAL_MASS_OBJECTION",
-      "question_original": "Vatican II required the Mass to be celebrated entirely in the vernacular.",
-      "question_fr": "Vatican II a-t-il imposé la messe entièrement en langue vernaculaire ?",
+      "question_original": "Did Vatican II require Mass to be celebrated entirely in the vernacular?",
+      "question_fr": "Vatican II a-t-il imposé la célébration de la messe entièrement en langue vernaculaire ?",
       "canonical_owner": "CR-LIT-09",
       "originality": "NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL",
       "content_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
@@ -4818,16 +4838,21 @@
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 2,
+        "source_bearing_blocks": 3,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 2,
+        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 2,
+        "source_id_links": 4,
         "source_ids": [
+          "AUD26",
           "SC63"
         ],
         "unresolved_source_ids": [],
         "source_links": [
+          {
+            "id": "AUD26",
+            "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691126.html"
+          },
           {
             "id": "SC63",
             "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
@@ -4838,8 +4863,8 @@
     {
       "id": "TLM062",
       "bank": "TRADITIONAL_MASS_OBJECTION",
-      "question_original": "Paul VI dismissed the loss of Latin and Gregorian chant as unimportant.",
-      "question_fr": "Paul VI considérait-il la disparition du latin et du chant grégorien comme insignifiante ?",
+      "question_original": "Did Paul VI consider the loss of Latin and Gregorian chant unimportant?",
+      "question_fr": "Paul VI jugeait-il insignifiante la perte du latin et du chant grégorien ?",
       "canonical_owner": "CR-LIT-09",
       "originality": "NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL",
       "content_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
@@ -4847,11 +4872,11 @@
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 2,
+        "source_bearing_blocks": 3,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 2,
+        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 3,
+        "source_id_links": 4,
         "source_ids": [
           "AUD26",
           "SC63"
@@ -4872,8 +4897,8 @@
     {
       "id": "TLM063",
       "bank": "TRADITIONAL_MASS_OBJECTION",
-      "question_original": "Gregorian chant belongs to the old Mass and is incompatible with the modern liturgy.",
-      "question_fr": "Le chant grégorien est-il incompatible avec la liturgie réformée ?",
+      "question_original": "Is Gregorian chant confined to Masses celebrated with the 1962 Missal?",
+      "question_fr": "Le chant grégorien est-il réservé aux messes célébrées selon le missel de 1962 ?",
       "canonical_owner": "CR-LIT-09",
       "originality": "NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL",
       "content_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
@@ -4881,11 +4906,11 @@
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 2,
+        "source_bearing_blocks": 3,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 2,
+        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 3,
+        "source_id_links": 5,
         "source_ids": [
           "GIRM",
           "SC63"
@@ -4906,8 +4931,8 @@
     {
       "id": "TLM064",
       "bank": "TRADITIONAL_MASS_OBJECTION",
-      "question_original": "Vatican II and the new Missal introduced Communion in the hand.",
-      "question_fr": "Vatican II a-t-il institué la communion dans la main ?",
+      "question_original": "Did Vatican II introduce or mandate Communion in the hand?",
+      "question_fr": "Vatican II a-t-il introduit ou imposé la communion dans la main ?",
       "canonical_owner": "CR-LIT-11",
       "originality": "NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL",
       "content_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
@@ -4915,11 +4940,11 @@
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 2,
+        "source_bearing_blocks": 3,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 2,
+        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 3,
+        "source_id_links": 4,
         "source_ids": [
           "MEM69",
           "SC63"
@@ -4940,8 +4965,8 @@
     {
       "id": "TLM065",
       "bank": "TRADITIONAL_MASS_OBJECTION",
-      "question_original": "The reform of the liturgical calendar was simply an attack on traditional saints and feasts.",
-      "question_fr": "La réforme du calendrier liturgique visait-elle les saints traditionnels ?",
+      "question_original": "Was the 1969 calendar reform intended to suppress devotion to the saints?",
+      "question_fr": "La réforme du calendrier de 1969 visait-elle à supprimer la dévotion envers les saints ?",
       "canonical_owner": "CR-LIT-05",
       "originality": "NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL",
       "content_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
@@ -4949,11 +4974,11 @@
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 2,
+        "source_bearing_blocks": 3,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 2,
+        "blocks_with_fr": 3,
         "blocks_without_source_ids": 0,
-        "source_id_links": 3,
+        "source_id_links": 4,
         "source_ids": [
           "MP69",
           "SC63"
@@ -5421,5 +5446,13 @@
         ]
       }
     }
-  ]
+  ],
+  "review_update": {
+    "date": "2026-10-08",
+    "source_batch": "TLM051–065",
+    "changed_question_records": 15,
+    "source_bearing_paragraphs_added": 7,
+    "source_ledger_recomputed_from_current_research_text": true,
+    "publication_approved": false
+  }
 }
