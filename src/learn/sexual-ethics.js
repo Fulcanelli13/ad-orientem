@@ -1,4 +1,5 @@
 import {
+import { clearReturnStack, hasReturnPoint, pushReturnPoint, returnToPrevious } from "../app/return-stack.js";
   CSE_QUESTIONS,
   CSE_QUESTION_MAP,
   CSE_SECTIONS,
@@ -177,7 +178,7 @@ export function createSexualEthicsRuntime(win=globalThis){
     node.setAttribute("role","region");node.setAttribute("aria-label",L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"));
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button,a");if(!target)return;
-      if(target.matches("[data-ao-cse-home]")){event.preventDefault?.();close(false);void win?.AO_APP_SHELL_V1?.navigate?.("home");return;}
+      if(target.matches("[data-ao-cse-home]")){event.preventDefault?.();clearReturnStack();close(false);void win?.AO_APP_SHELL_V1?.navigate?.("home");return;}
       if(target.matches("[data-ao-cse-back]")){event.preventDefault?.();back();return;}
       if(target.dataset.aoCseSection){event.preventDefault?.();openSection(target.dataset.aoCseSection);return;}
       if(target.dataset.aoCseQuestion){event.preventDefault?.();openQuestion(target.dataset.aoCseQuestion);return;}
@@ -212,8 +213,27 @@ export function createSexualEthicsRuntime(win=globalThis){
   }
   function openSection(id){if(!CSE_SECTION_MAP[id])return false;state.sectionId=id;state.questionId=null;state.view="section";state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;}
   function openQuestion(id){const item=CSE_QUESTION_MAP[id];if(!item)return false;state.returnView=state.query?"sections":"section";state.questionId=id;state.sectionId=item.section;state.view="question";state.reveal=false;render();root()?.scrollTo?.(0,0);return true;}
-  function openRelated(id){
+  function captureReturnPoint(){
+    const node=root();
+    const snapshot={view:state.view,sectionId:state.sectionId,questionId:state.questionId,query:state.query,reveal:state.reveal,returnView:state.returnView,scrollTop:node?.scrollTop??0};
+    return pushReturnPoint({
+      id:"formation-child:"+SEXUAL_ETHICS_ROUTE+":"+(snapshot.questionId||snapshot.sectionId||snapshot.view),
+      label:SEXUAL_ETHICS_ROUTE,
+      resume:async()=>{
+        const nav=await win?.AO_APP_SHELL_V1?.navigate?.("learn");
+        if(nav?.ok===false)return false;
+        const opened=await win?.AO_LEARN_APP_V1?.openModule?.(SEXUAL_ETHICS_ROUTE);
+        if(opened===false)return false;
+        Object.assign(state,snapshot);
+        render();
+        queueMicrotask(()=>{const node=root();if(node)node.scrollTop=snapshot.scrollTop});
+        return true;
+      },
+    });
+  }
+    function openRelated(id){
     const target=CSE_RELATED_TARGETS[id];if(!target)return false;
+    captureReturnPoint();
     close(false);
     if(target.surface==="learn"){
       try{return win?.AO_MODULES?.open?.(id,{from:SEXUAL_ETHICS_ROUTE})??false;}catch{return false;}
@@ -246,6 +266,7 @@ export function createSexualEthicsRuntime(win=globalThis){
   async function openApostolateHandoff(questionId=state.questionId){
     const record=CSE_SOT_BY_ID[questionId];
     if(!record?.apostolateHandoff)return Object.freeze({ok:false,reason:"NO_APOSTOLATE_HANDOFF",questionId});
+    captureReturnPoint();
     close(false);
     const nav=await win?.AO_APP_SHELL_V1?.navigate?.("apostolate");
     if(nav?.ok===false)return Object.freeze({ok:false,reason:nav.reason||"APOSTOLATE_NAVIGATION_FAILED",questionId});
@@ -255,6 +276,7 @@ export function createSexualEthicsRuntime(win=globalThis){
   function back(){
     if(state.view==="question"){state.questionId=null;state.reveal=false;state.view=state.returnView==="sections"?"sections":"section";render();return true;}
     if(state.view==="section"){state.view="sections";state.sectionId=null;render();return true;}
+    if(hasReturnPoint()){close(false);void returnToPrevious();return true;}
     return close(true);
   }
   function close(returnToLearn=false){const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoSexualEthicsOpen");state.view="sections";state.sectionId=null;state.questionId=null;state.query="";state.reveal=false;if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());return true;}
