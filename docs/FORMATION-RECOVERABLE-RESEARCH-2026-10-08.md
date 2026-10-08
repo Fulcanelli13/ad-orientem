@@ -12,7 +12,7 @@ The 102 indexed research entries below are **real individual questions or case d
 | **Distinct indexed entries** | **102** |
 
 ## Source-link inventory (structure, not factual certification)
-The indexed individual entries contain **488 nested source-bearing text blocks** and **1150 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 128 of these source-bearing blocks lack French text, while 360 carry French text.
+The indexed individual entries contain **488 nested source-bearing text blocks** and **1227 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 104 of these source-bearing blocks lack French text, while 404 carry French text.
 
 These figures do **not** certify every claim or objection as properly sourced, nor the source's actual applicability. The currently indexed blocks all carry nonempty source IDs. The eight hypothetical TLM026–050 follow-up questions are now explicitly classified as **editorial prompts, not externally attributed objections**, and retain source references for topic context only. The per-source-pack metrics are held in the linked JSON.
 
@@ -34,3 +34,7 @@ Topic rows lacking explicit source-pack references: abu-dhabi; singapore-religio
 ## 8 October final TLM source-scope pass
 
 All 50 surviving TLM026–075 questions have a recorded **research source scope**, including 25 editorial question prompts (TLM026–050), 15 normalized postconciliar reform questions, and 10 *Traditionis custodes* cases. These annotations do **not** certify all paragraphs as theologically correct, all historical inferences as independently proven, or translations as final. Five of the 2021-law cases now correctly distinguish editorial critical arguments from quotations by named opponents. The 2023 rescript URL and the particular faculties in the 2022 FSSP decree have been corrected. **Zero items are approved for public Formation publication.** TLM001–025 exact originals remain unavailable.
+
+## 8 October — canonical dossier integration and precision repair
+
+The **50 recovered TLM026–075 subquestions** are now indexed as **unpublished research references within 22 existing Church Crisis canonical dossiers**; they are not a new public Formation module. The internal QA reader shows the owner title and groups questions by owner. TLM001–025 source text remains missing and is **not fabricated**. The 2000 Congregation for Divine Worship response to GIRM 299 corrects the inference that Mass *versus populum* is obligatory; the canonical original *Sacrosanctum Concilium* source URL replaces a broken host; eight normalized 1950s–1960s reform titles are recast as explicitly editorial questions. Legacy source review now distinguishes **36 direct, 30 interpretive and 8 corrected substantive arguments**. All remain subject to final doctrinal/French editorial approval, with **zero published**.
