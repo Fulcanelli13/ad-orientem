@@ -137,7 +137,7 @@ function monthIndexList(monthId,selected,view){
       ?L("Observed days belonging to the temporal cycle and movable season.","Jours observés appartenant au cycle temporal et aux temps mobiles.")
       :view==="sanctorale"
         ?L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.")
-        :L("Date-bound traditional practices, programmes and source-locked novena starts from the shared Calendar Intelligence registry.","Pratiques traditionnelles datées, programmes et débuts de neuvaines sourcées provenant du registre commun de Calendar Intelligence.");
+        :L("Date-bound traditional practices, programmes and sourced novena starts from the shared Calendar Intelligence registry.","Pratiques traditionnelles datées, programmes et débuts de neuvaines sourcées provenant du registre commun de Calendar Intelligence.");
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
     ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" ${view==="sanctorale"?`data-cal-saint-date="${x.date}"`:""} class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
