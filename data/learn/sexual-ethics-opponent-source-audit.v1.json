@@ -4,12 +4,14 @@
   "status": "STRUCTURAL_55_CASE_SOURCE_AUDIT_WITH_SELECTED_DIRECT_PASSAGE_CHECKS_NO_CLAIM_OF_55_FULLY_VERIFIED",
   "summary": {
     "records": 55,
-    "selected_primary_position_checks": 23,
+    "selected_primary_position_checks": 34,
     "remaining_full_passage_review": 55,
     "high_priority": 24,
     "book_catalog_preview_cases": 33,
     "unmapped_opponent_sources": 0,
-    "missing_canonical_urls": 0
+    "missing_canonical_urls": 0,
+    "book_cases_with_new_original_support": 13,
+    "precisely_excerped_opponent_positions": 6
   },
   "policy": [
     "The debate text is authored synthesis/paraphrase unless an individually attributed literal quotation has been independently verified.",
@@ -82,6 +84,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "MILL_IV_FULL",
+          "locator": "Chapter IV · limits of social authority, not a complete sexual ethic",
+          "title": "John Stuart Mill · On Liberty, Chapter IV (original 1869 fourth edition)",
+          "url": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=4",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
+        {
           "source_id": "MILL1859",
           "locator": "Ch. IV · Of the Limits to the Authority of Society over the Individual",
           "title": "John Stuart Mill · On Liberty (1859)",
@@ -90,12 +100,21 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "MILL_IV_FULL"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_PRIMARY_DIRECT_THEME",
+        "scope": "Mill IV limits social jurisdiction. Mill's thesis does NOT entail the Church cannot offer moral criticism.",
+        "source_ids": [
+          "MILL_IV_FULL"
+        ]
+      }
     },
     {
       "id": "CSE007",
@@ -123,9 +142,10 @@
         "PP_CONSENT"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE008",
@@ -151,9 +171,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE010",
@@ -179,9 +200,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE012",
@@ -199,9 +221,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE013",
@@ -219,14 +242,23 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE014",
       "priority": "HIGH",
       "opponent_provenance": [
+        {
+          "source_id": "CURRAN1987",
+          "locator": "paras. on changes in sexual teaching, non-infallible dissent, historical development",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "CURRAN1992",
           "locator": "living tradition and development in Catholic moral theology",
@@ -244,17 +276,34 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "CURRAN1987"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_PRIMARY_DIRECT_THEME",
+        "scope": "Curran explicitly argues that official sexual teaching may be historically revisable and discusses non-infallible dissent.",
+        "source_ids": [
+          "CURRAN1987"
+        ]
+      }
     },
     {
       "id": "CSE016",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "CURRAN1987",
+          "locator": "paras. on public theological dissent from non-infallible teaching; not automatic priority of private conscience",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "CURRAN2006",
           "locator": "conscience, dissent and hierarchical teaching office",
@@ -264,17 +313,34 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "CURRAN1987"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_PRIMARY_CONTEXT_ONLY",
+        "scope": "Curran's article supports dissent under certain conditions; it does not assert that any sincere conscience makes a sexual act right.",
+        "source_ids": [
+          "CURRAN1987"
+        ]
+      }
     },
     {
       "id": "CSE018",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "CURRAN1987",
+          "locator": "paras. on contested teaching and dissent; does not teach every disputed choice is free",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "CURRAN2006",
           "locator": "theological dissent and magisterial authority",
@@ -284,12 +350,21 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "CURRAN1987"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_PRIMARY_CONTEXT_ONLY",
+        "scope": "Curran discusses legitimate dissent; not that any disagreement immediately makes all options equally valid.",
+        "source_ids": [
+          "CURRAN1987"
+        ]
+      }
     },
     {
       "id": "CSE020",
@@ -323,9 +398,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE021",
@@ -343,9 +419,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE029",
@@ -363,9 +440,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE031",
@@ -399,9 +477,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE035",
@@ -427,9 +506,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE038",
@@ -455,9 +535,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE039",
@@ -485,9 +566,10 @@
         "PP_CONSENT"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE040",
@@ -513,14 +595,23 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE043",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "p. 293 same-sex civil marriage; p. 295 same-sex relationships",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "same-sex relationships, marriage and family",
@@ -538,17 +629,34 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "FARLEY_QUOTED2012"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "DOCUMENTED_AUTHOR_EXCERPT",
+        "scope": "Farley p.293 supports civil same-sex marriage and p.295 her approval of same-sex relations.",
+        "source_ids": [
+          "FARLEY_QUOTED2012"
+        ]
+      }
     },
     {
       "id": "CSE044",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "pp. 293,295 on same-sex relationships; does not explicitly advance sterility analogy",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "same-sex relationships, marriage and family",
@@ -566,12 +674,21 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "FARLEY_QUOTED2012"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_EXCERPT_CONTEXT_ONLY",
+        "scope": "Farley addresses same-sex marriage but does not state this specific infertility analogy in the cited excerpt.",
+        "source_ids": [
+          "FARLEY_QUOTED2012"
+        ]
+      }
     },
     {
       "id": "CSE045",
@@ -589,14 +706,23 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE049",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "pp. 304–305 on marriage commitment and possible release",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "divorce and second marriage",
@@ -606,17 +732,42 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "FARLEY_QUOTED2012"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "DOCUMENTED_AUTHOR_EXCERPT",
+        "scope": "Farley pp.304–305 explicitly argues that some permanently intended marriage obligations can end.",
+        "source_ids": [
+          "FARLEY_QUOTED2012"
+        ]
+      }
     },
     {
       "id": "CSE050",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "p. 310 on remarriage after divorce",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
+        {
+          "source_id": "CURRAN1987",
+          "locator": "author discusses divorce and proposed change in moral teaching",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "divorce and second marriage",
@@ -634,12 +785,23 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "FARLEY_QUOTED2012",
+        "CURRAN1987"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "DOCUMENTED_AUTHOR_EXCERPT",
+        "scope": "Farley p.310 explicitly defends the possibility of remarriage; Curran also questions indissolubility.",
+        "source_ids": [
+          "FARLEY_QUOTED2012",
+          "CURRAN1987"
+        ]
+      }
     },
     {
       "id": "CSE051",
@@ -667,9 +829,10 @@
         "PP_CONSENT"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE054",
@@ -697,9 +860,10 @@
         "PP_CONSENT"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE055",
@@ -725,9 +889,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE056",
@@ -755,9 +920,10 @@
         "PP_OPEN"
       ],
       "verified_finding": "Planned Parenthood explains consensual open relationships descriptively, including negotiated external sexual/romantic partners. The article does not establish a claim that all consensual conduct is morally acceptable.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE058",
@@ -783,14 +949,23 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE061",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "CURRAN1987",
+          "locator": "paras. on physicalism criticism and contraception",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "PP_BIRTHCONTROL",
           "locator": "birth control methods and pregnancy prevention",
@@ -808,19 +983,35 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
       "verified_primary_source_ids": [
-        "PP_BIRTHCONTROL"
+        "PP_BIRTHCONTROL",
+        "CURRAN1987"
       ],
       "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_PRIMARY_DIRECT_THEME",
+        "scope": "Curran directly challenges unconditional contraception condemnation as physicalism.",
+        "source_ids": [
+          "CURRAN1987"
+        ]
+      }
     },
     {
       "id": "CSE063",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "CURRAN1987",
+          "locator": "paras. on contraception and moral object, not NFP analogy verbatim",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "PP_BIRTHCONTROL",
           "locator": "birth control and fertility awareness",
@@ -838,19 +1029,35 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
       "verified_primary_source_ids": [
-        "PP_BIRTHCONTROL"
+        "PP_BIRTHCONTROL",
+        "CURRAN1987"
       ],
       "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_PRIMARY_CONTEXT_ONLY",
+        "scope": "Curran's contraception argument supports the surrounding moral dispute, not the exact NFP equivalence wording.",
+        "source_ids": [
+          "CURRAN1987"
+        ]
+      }
     },
     {
       "id": "CSE064",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "CURRAN1987",
+          "locator": "paras. on contraception and physicalism, not NFP analogy verbatim",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "PP_BIRTHCONTROL",
           "locator": "birth control and fertility-awareness methods",
@@ -868,14 +1075,22 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
       "verified_primary_source_ids": [
-        "PP_BIRTHCONTROL"
+        "PP_BIRTHCONTROL",
+        "CURRAN1987"
       ],
       "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_PRIMARY_CONTEXT_ONLY",
+        "scope": "Curran's article does not present the precise NFP 'Catholic contraception' retort.",
+        "source_ids": [
+          "CURRAN1987"
+        ]
+      }
     },
     {
       "id": "CSE070",
@@ -903,14 +1118,23 @@
         "PP_BIRTHCONTROL"
       ],
       "verified_finding": "Planned Parenthood's primary birth-control directory supplies methods and efficacy information. It supports a practical acceptance of contraception, not claims about historic Catholic doctrine.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE071",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "p. 236 directly quoted argument regarding masturbation",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "PP_MAST",
           "locator": "masturbation described as normal and healthy",
@@ -920,14 +1144,22 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
       "verified_primary_source_ids": [
-        "PP_MAST"
+        "PP_MAST",
+        "FARLEY_QUOTED2012"
       ],
       "verified_finding": "Planned Parenthood's primary page explicitly describes masturbation as normal, safe and sometimes beneficial. It provides a real opposing institutional position.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "DOCUMENTED_AUTHOR_EXCERPT",
+        "scope": "Farley p.236 directly argues that masturbation's morality depends chiefly on empirical help/harm; Planned Parenthood also has an own-voice position.",
+        "source_ids": [
+          "FARLEY_QUOTED2012"
+        ]
+      }
     },
     {
       "id": "CSE074",
@@ -947,9 +1179,10 @@
         "PP_PORN"
       ],
       "verified_finding": "Planned Parenthood's own pornography page defines adult material and also cautions that porn can create unhealthy ideas about sex, relationships and gender. Do not misattribute an unqualified claim that pornography can never harm.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE076",
@@ -977,14 +1210,23 @@
         "PP_PORN"
       ],
       "verified_finding": "Planned Parenthood's own pornography page defines adult material and also cautions that porn can create unhealthy ideas about sex, relationships and gender. Do not misattribute an unqualified claim that pornography can never harm.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE083",
       "priority": "HIGH",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "p. 295 direct statement on same-sex relations",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "same-sex relationships and just love",
@@ -1002,17 +1244,34 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "FARLEY_QUOTED2012"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "DOCUMENTED_AUTHOR_EXCERPT",
+        "scope": "Farley p.295 states her own approval of same-sex relationships; CDF gives page.",
+        "source_ids": [
+          "FARLEY_QUOTED2012"
+        ]
+      }
     },
     {
       "id": "CSE084",
       "priority": "HIGH",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "p. 295 on same-sex relationships; does not assert specific infertility analogy",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "same-sex relationships, marriage and family",
@@ -1030,12 +1289,21 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "FARLEY_QUOTED2012"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "AUTHOR_EXCERPT_CONTEXT_ONLY",
+        "scope": "Farley p.295 directly supports same-sex relations but not the separate infertility comparison.",
+        "source_ids": [
+          "FARLEY_QUOTED2012"
+        ]
+      }
     },
     {
       "id": "CSE087",
@@ -1053,9 +1321,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE088",
@@ -1073,14 +1342,23 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE089",
       "priority": "HIGH",
       "opponent_provenance": [
+        {
+          "source_id": "FARLEY_QUOTED2012",
+          "locator": "p. 293 on civil recognition and marriage of same-sex couples",
+          "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "APA_LGB",
           "locator": "same-sex relationships and discrimination",
@@ -1098,12 +1376,21 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "FARLEY_QUOTED2012"
+      ],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "DOCUMENTED_AUTHOR_EXCERPT",
+        "scope": "Farley p.293 directly advocates civil marriage for same-sex partners.",
+        "source_ids": [
+          "FARLEY_QUOTED2012"
+        ]
+      }
     },
     {
       "id": "CSE093",
@@ -1131,9 +1418,10 @@
         "APA_TRANS"
       ],
       "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE094",
@@ -1161,9 +1449,10 @@
         "APA_TRANS"
       ],
       "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE095",
@@ -1191,9 +1480,10 @@
         "APA_TRANS"
       ],
       "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE096",
@@ -1219,9 +1509,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE101",
@@ -1241,9 +1532,10 @@
         "ASRM_ART"
       ],
       "verified_finding": "ASRM's 2023 ethics opinion supports fully informed patient consent within assisted reproduction. It does not by itself demonstrate that every reproductive procedure is morally permissible.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE104",
@@ -1263,9 +1555,10 @@
         "ASRM_GC"
       ],
       "verified_finding": "ASRM's 2023 ethics opinion deems gestational carrier arrangements ethically justifiable under informed consent and additional safeguards; it discusses coercion and legal risks. Its position is conditional, not unconditional.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE112",
@@ -1293,9 +1586,10 @@
         "PP_CONSENT"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE117",
@@ -1323,9 +1617,10 @@
         "PP_CONSENT"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE123",
@@ -1361,9 +1656,10 @@
         "ACOG_ABORTION"
       ],
       "verified_finding": "ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE124",
@@ -1391,14 +1687,31 @@
         "ACOG_ABORTION"
       ],
       "verified_finding": "ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE125",
       "priority": "HIGH",
       "opponent_provenance": [
+        {
+          "source_id": "ACOG_ECTOPIC",
+          "locator": "clinical FAQ: life-threatening rupture, methotrexate and surgery; not moral permissibility",
+          "title": "ACOG · Ectopic Pregnancy, clinical FAQ (reviewed April 2026)",
+          "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+          "role": "empirical",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
+        {
+          "source_id": "ACOG_ECTOPIC_GUIDELINE",
+          "locator": "Practice Bulletin 193: rapid intervention for unstable tubal ectopic pregnancy; abstract only",
+          "title": "ACOG · Tubal Ectopic Pregnancy, Practice Bulletin 193 (2018)",
+          "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/03/tubal-ectopic-pregnancy",
+          "role": "empirical",
+          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+        },
         {
           "source_id": "ACOG_ABORTION",
           "locator": "life- and health-threatening pregnancy complications",
@@ -1408,14 +1721,24 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "opposition_passage_status": "SOME_PRIMARY_EVIDENCE_CHECKED_FULL_EIGHT_STAGE_TEXT_UNVERIFIED",
       "verified_primary_source_ids": [
-        "ACOG_ABORTION"
+        "ACOG_ABORTION",
+        "ACOG_ECTOPIC",
+        "ACOG_ECTOPIC_GUIDELINE"
       ],
       "verified_finding": "ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": {
+        "grade": "CLINICAL_DIRECT_NOT_MORAL",
+        "scope": "ACOG FAQ and practice bulletin give actual ectopic management, urgency and medication/surgery methods; they do NOT adjudicate Catholic moral-object distinctions.",
+        "source_ids": [
+          "ACOG_ECTOPIC",
+          "ACOG_ECTOPIC_GUIDELINE"
+        ]
+      }
     },
     {
       "id": "CSE141",
@@ -1441,9 +1764,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE142",
@@ -1461,9 +1785,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE143",
@@ -1489,9 +1814,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE145",
@@ -1525,9 +1851,10 @@
       "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
       "verified_primary_source_ids": [],
       "verified_finding": null,
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
-      "correction_needed": "Find author’s full text and exact page/section; Google Books catalog alone is not passage verification.",
-      "not_a_direct_quotation": true
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     },
     {
       "id": "CSE149",
@@ -1573,9 +1900,10 @@
         "ACOG_ABORTION"
       ],
       "verified_finding": "The APA's published explainer distinguishes biological sex, gender roles and gender identity. It does not, by itself, prove a moral conclusion about every medical intervention. ASRM's 2023 ethics opinion supports fully informed patient consent within assisted reproduction. It does not by itself demonstrate that every reproductive procedure is morally permissible. ACOG's primary policy explicitly endorses abortion access as healthcare and mentions rape, incest and illness among circumstances. It does not supply exact procedure-specific treatment proof for every maternal emergency.",
-      "stage_precision": "SHARED_SOURCE_POOL_FOR_OPPOSITION_APPEAL_COUNTER; NOT A UNIQUE CLAIM_TO_EXACT_PASSAGE_MATCH",
+      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
       "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
-      "not_a_direct_quotation": true
+      "not_a_direct_quotation": true,
+      "new_primary_evidence": null
     }
   ],
   "primary_source_accuracy_alerts": [
@@ -1584,5 +1912,93 @@
     "CSE104: ASRM approves gestational carrier arrangements conditionally under safeguards; do not erase its coercion and autonomy caveats.",
     "CSE125: ACOG general abortion access page cannot substitute for a clinical guideline in life-threatening pregnancy cases.",
     "Gender-related APA definitions do not support imputing support for every intervention or a blanket clinical outcome claim."
-  ]
+  ],
+  "original_source_batch": {
+    "date": "2026-10-08",
+    "status": "DOCUMENTED_PRIMARY_AUTHOR_EXCERPTS_AND_FULL_1987_ARTICLE_WITH_CLEAR_SCOPE_LIMITS",
+    "direct_documentation": [
+      {
+        "kind": "author_original_full_text",
+        "author": "Charles E. Curran",
+        "work": "Roman Catholic Sexual Ethics: A Dissenting View (1987)",
+        "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+        "verified_themes": [
+          "critique of physicalism in sexual morality",
+          "contraception",
+          "doctrinal development",
+          "non-infallible theological dissent"
+        ],
+        "does_not_establish": [
+          "all modern acts separately justified",
+          "specific personal guilt in NFP or reluctant spouse cases"
+        ]
+      },
+      {
+        "kind": "author_original_exact_excerpts_via_cdf",
+        "author": "Margaret A. Farley",
+        "work": "Just Love, pp. 236,293,295,304-305,310 quoted in CDF Notification (2012)",
+        "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+        "verified_themes": [
+          "masturbation",
+          "same-sex relations and civil unions",
+          "marriage obligations",
+          "remarriage"
+        ],
+        "does_not_establish": [
+          "a particular infertility analogy",
+          "blanket pornography permissibility",
+          "every natural-law argument"
+        ]
+      },
+      {
+        "kind": "author_direct_response",
+        "author": "Margaret A. Farley",
+        "work": "Statement on notification (2012)",
+        "url": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley",
+        "verified_themes": [
+          "author distinguishes proposal from official Catholic teaching"
+        ]
+      },
+      {
+        "kind": "official_correspondence",
+        "author": "CDF",
+        "work": "Letter to Charles Curran (1986)",
+        "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html",
+        "verified_themes": [
+          "records exact subjects and grounds of dissent"
+        ]
+      },
+      {
+        "kind": "clinical_primary",
+        "author": "ACOG",
+        "work": "Ectopic Pregnancy FAQ and PB193",
+        "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+        "verified_themes": [
+          "rupture emergency",
+          "medical and surgical management"
+        ],
+        "does_not_establish": [
+          "Catholic morality of procedure under double effect",
+          "permissibility of each possible treatment"
+        ]
+      },
+      {
+        "kind": "original_philosophical_text",
+        "author": "John Stuart Mill",
+        "work": "On Liberty, chapter IV",
+        "url": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=4",
+        "verified_themes": [
+          "private liberty and scope of social sanctions"
+        ],
+        "does_not_establish": [
+          "absence of all personal moral duties"
+        ]
+      }
+    ],
+    "unresolved": [
+      "Still no full text or page-level verification of Fletcher's and all Farley/Curran catalogued volumes.",
+      "Every eight-stage objection/refutation needs paragraph-specific alignment before certification.",
+      "Clinical debate CSE125 needs individual case-by-case moral analysis; medical methods are not morally interchangeable."
+    ]
+  }
 }

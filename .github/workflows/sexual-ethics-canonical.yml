@@ -22,3 +22,5 @@ jobs:
         run: node tests/sexual-ethics.mjs
       - name: Canonical dossier and source-audit regression
         run: node tests/sexual-ethics-canonical-50.mjs
+      - name: Primary-author source evidence and provenance boundaries
+        run: node tests/sexual-ethics-opponent-primary.mjs
