@@ -63,6 +63,7 @@ export function createFormationResearchPreview(win=globalThis){
       critical_assessment:["Critical assessment","Examen critique"],
       assessment:["Assessment","Appréciation"],
       editorial_followup_question:["Editorial follow-up — not a quotation","Question éditoriale — non citée"],
+      documented_reform_rationale:["Documented reform rationale","Justification documentée de la réforme"],
     };
     const paragraphs=q.paragraphs.map(p=>{
       const label=labels[p.role]||["Source-linked research","Recherche sourcée"];
@@ -71,7 +72,7 @@ export function createFormationResearchPreview(win=globalThis){
         : "";
       return `<section class="aoFRPart"><div class="aoFRLead">${esc(L(win,...label))}</div><p>${inline(body(win,p))}</p>${notice}${links(p.source_ids,q.source_group)}</section>`;
     }).join("");
-    const note=q.editorial_stage==="NORMALIZED_SUMMARY_NOT_VERBATIM_RESEARCH_DRAFT"
+    const note=q.editorial_stage?.includes("NORMALIZED")
       ? L(win,"Normalized research summary, not a verbatim recovery of the earlier draft.","Synthèse de recherche, non reproduction intégrale de la version antérieure.")
       : L(win,"Source-linked bilingual research draft. Final source and theological approval pending.","Projet bilingue sourcé. Validation finale des sources et de la théologie à effectuer.");
     const gate=q.publication_ready===false?`<div class="aoFRMeta">${esc(L(win,"Unapproved research · Do not publish","Recherche non approuvée · Ne pas publier"))}</div>`:"";
