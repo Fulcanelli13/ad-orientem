@@ -215,6 +215,9 @@ try{
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
+  // This isolated chrome interaction must have a visible dock. The opening
+  // moment can legitimately have no Schola track; real cue activation is audited below.
+  await scholaDock.evaluate(el=>{el.dataset.active="true";});
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
   const scholaHitGeometry=await page.evaluate(()=>{
