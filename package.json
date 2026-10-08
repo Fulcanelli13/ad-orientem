@@ -84,7 +84,7 @@
     "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs",
     "test:nonmass-convergence-e2e": "node tests/nonmass-d3-d6-e2e.mjs",
     "test:asset-bank-contract": "node tests/asset-bank-contract.mjs",
-    "test:learn-owner": "node tests/learn-owner.mjs && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs && npm run test:catholic-life-retirement && npm run test:catholic-life-final-absorption && npm run test:formation-gap-ownership && npm run test:spiritual-life-sot && npm run test:spiritual-life-course && npm run test:spiritual-life-runtime && npm run test:sexual-ethics && npm run test:formation-commentary-style && npm run test:mass-formation",
+    "test:learn-owner": "node tests/learn-owner.mjs && npm run test:content-ownership && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs && npm run test:catholic-life-retirement && npm run test:catholic-life-final-absorption && npm run test:formation-gap-ownership && npm run test:spiritual-life-sot && npm run test:spiritual-life-course && npm run test:spiritual-life-runtime && npm run test:sexual-ethics && npm run test:formation-commentary-style && npm run test:mass-formation",
     "test:learn-owner-e2e": "node tests/learn-owner-e2e.mjs",
     "test:nonmass-assets": "node tests/nonmass-asset-consumers.mjs",
     "test:settings-owner": "node tests/settings-owner.mjs",
@@ -137,7 +137,8 @@
     "test:french-parity": "node tests/french-parity.mjs",
     "test:glossary": "node tests/glossary-navigation-sot.mjs && node tests/glossary-corpus-integrity.mjs && node tests/glossary-definition-completeness.mjs && node tests/glossary-runtime.mjs",
     "test:directory-icksp-quality": "node tools/directory/audit-icksp-quality.mjs",
-    "directory:geocode:icksp-research": "node tools/directory/geocode-research-icksp.mjs"
+    "directory:geocode:icksp-research": "node tools/directory/geocode-research-icksp.mjs",
+    "test:content-ownership": "node tests/content-ownership-registry.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
