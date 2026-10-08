@@ -486,6 +486,7 @@ try{
 
   // Exact v3.14 Angelus ritual rail: the rail belongs to the reading grid.
   // On phone it reflows above the prayer cards as a horizontal cue row.
+  await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
   const angelusRails=await page.evaluate(()=>{
@@ -576,6 +577,7 @@ try{
 
   // Exact-donor devotional rails: Adoration arrival is transient genuflection,
   // then yields to persistent silence without changing reader geometry.
+  await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
   const adorationLanding=await page.evaluate(()=>({
@@ -612,6 +614,7 @@ try{
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Benediction rail follows the public rite rather than presenting one generic card.
+  await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-rich-adoration']").count(),1,"Benediction Exposition rail lost its Eucharistic owner");
@@ -651,6 +654,7 @@ try{
 
   // Confession remains private/read-only; only the exact in-confessional moment
   // owns the transient Sign-of-Cross rail cue.
+  await page.locator("#aoPray435930 [data-p435930-family='penance']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
   for(let i=0;i<2;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
@@ -669,6 +673,7 @@ try{
 
   // Rosary opens directly into the preserved canonical engine: no intermediate
   // configuration page, no second launcher, and no ritual-grid width collapse.
+  await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
@@ -1345,6 +1350,7 @@ try{
   assert.ok(wideHub.titleWidth>=210&&wideHub.descriptionWidth>=210,"PRAY wide module text collapsed inside its canonical icon column: "+JSON.stringify(wideHub));
   assert.ok(wideHub.titleLeft>=wideHub.iconRight+6,"PRAY wide module text overlaps its canonical icon column: "+JSON.stringify(wideHub));
 
+  await wide.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await wide.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await wide.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await wide.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
