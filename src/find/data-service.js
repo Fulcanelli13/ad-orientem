@@ -12,6 +12,7 @@ const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"sspx-oct-americas",file:"sspx-oct26-americas.v1.json"}),
   Object.freeze({key:"sspx-oct-poland",file:"sspx-oct26-poland.v1.json"}),
   Object.freeze({key:"sspx-asia-central-americas",file:"sspx-asia-central-americas.v1.json"}),
+  Object.freeze({key:"sspx-north-america",file:"sspx-north-america-20261008.v1.json"}),
   Object.freeze({key:"aasjmv",file:"aasjmv.v1.json"}),
   Object.freeze({key:"fsvf",file:"fsvf.v1.json"}),
   Object.freeze({key:"canons",file:"canons-st-john-cantius.v1.json"}),
@@ -262,7 +263,7 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
 export function publishableDirectoryRecords(records){
   return safeArray(records).filter(record=>{
     if(auditVenue(record?.venue).length!==0)return false;
-    if(["SSPX_DISTRICT_SEED","SSPX_FRANCE_FIRST_PARTY","SSPX_FRANCE_SECOND_PASS","SSPX_FOUR_DISTRICT_BULK","SSPX_OCT26_MULTIREGION","SSPX_OCT26_AMERICAS","SSPX_OCT26_POLAND","SSPX_ASIA_CENTRAL_AMERICAS_20261008"].includes(record?.venue?.upstream?.provider_id)){
+    if(["SSPX_DISTRICT_SEED","SSPX_FRANCE_FIRST_PARTY","SSPX_FRANCE_SECOND_PASS","SSPX_FOUR_DISTRICT_BULK","SSPX_OCT26_MULTIREGION","SSPX_OCT26_AMERICAS","SSPX_OCT26_POLAND","SSPX_ASIA_CENTRAL_AMERICAS_20261008","SSPX_NA_DISTRICTS_20261008"].includes(record?.venue?.upstream?.provider_id)){
       if(!["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record?.venue?.publication_state))return false;
       const valid=safeArray(record?.ministries).some(m=>m.community_id==="SSPX" &&
         safeArray(m?.schedules).some(s=>s.service_type==="MASS" &&
