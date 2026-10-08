@@ -3,10 +3,10 @@ import {auditWorldwideDirectory} from "../tools/directory/audit-worldwide-corpus
 
 const result=auditWorldwideDirectory();
 assert.equal(result.schema,"AO_DIRECTORY_WORLDWIDE_COVERAGE_AUDIT_V1");
-assert.equal(result.source_venue_records,1291);
-assert.equal(result.mass_evidenced_records,1054);
+assert.equal(result.source_venue_records,1411);
+assert.equal(result.mass_evidenced_records,1174);
 assert.equal(result.without_mass_assertion,237);
-assert.equal(result.by_provider.length,20);
+assert.equal(result.by_provider.length,21);
 const byId=new Map(result.by_provider.map(p=>[p.provider,p]));
 assert.equal(byId.get("FSSP_LIVE").records,404);
 assert.equal(byId.get("FSSP_LIVE").mass_evidenced_records,196);
@@ -29,7 +29,9 @@ assert.equal(byId.get("SSPX_OCT26_POLAND").records,38);
 assert.equal(byId.get("SSPX_OCT26_POLAND").mass_evidenced_records,38);
 assert.equal(byId.get("SSPX_ASIA_CENTRAL_AMERICAS_20261008").records,47);
 assert.equal(byId.get("SSPX_ASIA_CENTRAL_AMERICAS_20261008").mass_evidenced_records,47);
-assert.equal(result.benchmark_context.sspx_raw_count_shortfall_non_authoritative,342);
+assert.equal(byId.get("SSPX_NA_DISTRICTS_20261008").records,120);
+assert.equal(byId.get("SSPX_NA_DISTRICTS_20261008").mass_evidenced_records,120);
+assert.equal(result.benchmark_context.sspx_raw_count_shortfall_non_authoritative,222);
 assert.equal(result.controls.missing_worldwide_venue_count,null,
   "Do not invent missing venue count from incompatible global indexes");
 assert.equal(result.controls.has_worldwide_physical_dedupe,false);
