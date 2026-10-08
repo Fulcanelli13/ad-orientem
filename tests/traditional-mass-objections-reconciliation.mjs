@@ -45,7 +45,7 @@ for(const [pack,sourceMap] of [[a,aSources],[b,bSources]]){
       assert.ok(p.source_ids?.length,"uncited claim "+rec.id);
       for(const source of p.source_ids)assert.ok(sourceMap.has(source),"unknown source "+source+" "+rec.id);
       checkedParagraphs++;
-      if(rec.id<="TLM050"){assert.equal(p.source_verification,"SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW");assert.ok(Number.isInteger(p.legacy_placeholder_index));legacyCitations++;}
+      if(rec.id<="TLM050"){assert.ok(["TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED","INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED","CLAIM_CORRECTION_REQUIRED"].includes(p.source_verification));assert.ok(Number.isInteger(p.legacy_placeholder_index));assert.ok(p.citation_review?.evidence_locator);assert.ok(p.citation_review?.reviewed_on);assert.equal(p.citation_review.hyperlinked_sources.length,p.source_ids.length);for(const link of p.citation_review.hyperlinked_sources){assert.ok(sourceMap.has(link.source_id));assert.equal(link.url,sourceMap.get(link.source_id).url);assert.match(link.url,/^https:\/\//);}legacyCitations++;}
     }
   }
 }
@@ -58,8 +58,16 @@ for(const rec of tc.debates){
     checkedParagraphs++;
   }
 }
+
+assert.deepEqual(a.claim_level_audit.status_counts,{DIRECT_TEXT_ANCHORED:37,SOURCED_INTERPRETIVE:30,BLOCKED:7});
+assert.equal(a.claim_level_audit.publication_ready,false);
+assert.equal(a.source_registry.length,30);
+assert.equal(a.claim_level_audit.unattributed_followup_challenges,8);
+const blockedAudit=a.records.flatMap(x=>x.paragraphs).filter(p=>p.citation_review?.status==="BLOCKED");
+assert.equal(blockedAudit.length,7);
+assert.ok(blockedAudit.every(p=>p.citation_review.editorial_issue&&p.citation_review.suggested_replacement));
 assert.equal(legacyCitations,74);
 assert.equal(unattributedChallenges,8);
 assert.equal(checkedParagraphs,134);
 assert.equal(register.counts.underlying_substantive_paragraphs,checkedParagraphs);
-console.log(JSON.stringify({validation:"PASS",indexed:register.records.length,unrecovered:25,substantiveParagraphs:checkedParagraphs,sourceCandidatesForLegacy:legacyCitations,unattributedChallenges,newNavigationDossiers:0,publications:0},null,2));
+console.log(JSON.stringify({validation:"PASS",indexed:register.records.length,unrecovered:25,substantiveParagraphs:checkedParagraphs,sourceCandidatesForLegacy:legacyCitations,directTextAnchored:37,interpretive:30,blockedForCorrection:7,unattributedChallenges,newNavigationDossiers:0,publications:0},null,2));
