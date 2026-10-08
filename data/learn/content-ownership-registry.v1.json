@@ -695,7 +695,10 @@
       "id": "apologetics",
       "disposition": "MERGE",
       "target": "~60 canonical dossiers",
-      "note": "Do not publish projected A001-A318 as a flat question wall."
+      "note": "Freeze 60 canonical dossiers; do not publish A001-A318 as a flat wall. Legacy A-series reconciliation is evidence-limited and never inferred from range alone.",
+      "canonical_registry": "data/learn/apologetics-canonical.v1.json",
+      "reconciliation": "data/learn/apologetics-reconciliation.v1.json",
+      "live_scenario_mapping": "AQ01-AQ08"
     },
     {
       "id": "church-crisis",
