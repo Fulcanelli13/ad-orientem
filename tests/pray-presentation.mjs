@@ -123,7 +123,7 @@ assert.equal(resolveAngelusPosture({form:"regina",weekday:2}).posture,"stand");
 for(const form of ["angelus","regina"]){
  for(const language of ["en","fr","la"]){
   const raw=PRAY_CANONICAL_DATA_V435930[form][language];
-  const initial=raw.trim().split(/\n\s*\n/)[0];
+  const initial=raw.trim().split("\n").slice(0,2).join("\n");
   const lines=splitAngelusVersicleResponse(initial);
   assert.equal(lines.length,2,form+" "+language+" opening versicle/response did not split");
   assert.equal(lines[0].role,"leader");
