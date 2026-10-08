@@ -16,7 +16,7 @@ const batches=[
 ];
 
 assert.equal(curriculum.schema,"ao-learn-the-faith-curriculum-v1");
-assert.equal(curriculum.status,"CURRICULUM_FROZEN_NOT_PUBLISHED");
+assert.equal(curriculum.status,"QUESTION_MAPPING_COMPLETE_NOT_PUBLISHED");
 assert.equal(curriculum.proposed_route,"learn.faith");
 assert.equal(curriculum.publication_gate.published,false);
 assert.equal(curriculum.publication_gate.mapping_complete,true);
@@ -32,18 +32,18 @@ assert.deepEqual(
     ["revelation-faith",6],
     ["creed",15],
     ["grace-sacraments",10],
-    ["moral-life",14],
+    ["moral-life",15],
     ["prayer-christian-life",9],
   ],
 );
 
-assert.equal(curriculum.lessons.length,54);
+assert.equal(curriculum.lessons.length,55);
 assert.equal(curriculum.coverage_summary.direct,48);
 assert.equal(curriculum.coverage_summary.partial,6);
 assert.equal(curriculum.coverage_summary.unmapped,0);
-assert.equal(new Set(curriculum.lessons.map(x=>x.id)).size,54);
+assert.equal(new Set(curriculum.lessons.map(x=>x.id)).size,55);
 assert.equal(curriculum.lessons[0].id,"LTF-001");
-assert.equal(curriculum.lessons.at(-1).id,"LTF-054");
+assert.equal(curriculum.lessons.at(-1).id,"LTF-055");
 assert.equal(curriculum.lessons.reduce((n,l)=>n+l.catechismRefs.length,0),709);
 assert.equal(curriculum.lessons.filter(l=>l.sourceResolution==="SUPPLEMENT_REQUIRED").length,0);
 
@@ -89,6 +89,15 @@ assert.ok(draftLessons.find(x=>x.id==="LTF-049").claims.some(c=>c.sourceRefs.som
 assert.ok(draftLessons.find(x=>x.id==="LTF-052").claims.some(c=>c.sourceRefs.some(r=>r.source==="PIUS_XII_MEDIATOR_DEI_165")),"liturgical-year theology source missing");
 assert.match(draftLessons.find(x=>x.id==="LTF-052").claims[1].text.en,/changed over time/i,"historical discipline safeguard missing from liturgical-year lesson");
 
+const primary=curriculum.lessons.flatMap(x=>x.primaryCatechismRefs);
+assert.equal(primary.length,433,"not every St Pius X question has exactly one primary guided owner");
+assert.equal(new Set(primary).size,433,"a St Pius X question has multiple primary guided owners");
+assert.deepEqual([...new Set(primary)].sort((a,b)=>a-b),Array.from({length:433},(_,i)=>i+1),"primary mapping does not cover Q1-Q433 exactly");
+assert.equal(curriculum.coverage.primaryMappedQuestionCount,433);
+assert.deepEqual(curriculum.coverage.unmappedPrimaryQuestions,[]);
+assert.ok(curriculum.coverage.lessonsRequiringSupplement.includes("LTF-033"),"Natural law supplement gate disappeared");
+assert.ok(curriculum.coverage.lessonsRequiringSupplement.includes("LTF-034"),"Conscience supplement gate disappeared");
+assert.ok(curriculum.lessons.find(x=>x.id==="LTF-046")?.title?.en==="The Precepts of the Church","Precepts of the Church lesson missing");
 assert.equal(curriculum.relationship_to_existing["learn.catechism"].includes("Full searchable"),true);
 assert.equal(curriculum.relationship_to_existing["learn.catechism.daily"].includes("Daily review"),true);
 assert.equal(curriculum.source_policy.no_unsourced_synthesis,true);
