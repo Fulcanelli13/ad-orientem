@@ -6,19 +6,22 @@ import {
 } from "./traditional-life-data.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
-export const TRADITIONAL_LEARN_VERSION="38.5-after-death-family-absorption";
+export const TRADITIONAL_LEARN_VERSION="38.6-content-ownership-cleanup";
 export const TRADITIONAL_LEARN_ROOT_ID="ao-learn-traditional-root";
 
 export const TRADITIONAL_LEARN_ROUTES=Object.freeze({
-  "learn.rites.sick":Object.freeze({id:"learn.rites.sick",type:"module",domain:"learn",category:"catholic-life",title:"Serious Illness & Dying"}),
-  "learn.rites.baptism":Object.freeze({id:"learn.rites.baptism",type:"module",domain:"learn",category:"catholic-life",title:"Baptism · Parents & Godparents"}),
-  "learn.rites.first_communion":Object.freeze({id:"learn.rites.first_communion",type:"module",domain:"learn",category:"catholic-life",title:"First Holy Communion · Child & Family"}),
-  "learn.rites.confirmation":Object.freeze({id:"learn.rites.confirmation",type:"module",domain:"learn",category:"catholic-life",title:"Confirmation · Candidate & Sponsor"}),
-  "learn.rites.holy_orders":Object.freeze({id:"learn.rites.holy_orders",type:"module",domain:"learn",category:"catholic-life",title:"Holy Orders · Understand the Ordinations"}),
-  "learn.rites.matrimony":Object.freeze({id:"learn.rites.matrimony",type:"module",domain:"learn",category:"catholic-life",title:"Matrimony · Bride & Groom"}),
+  "learn.rites.sick":Object.freeze({id:"learn.rites.sick",type:"module",domain:"learn",category:"sacramental-formation",title:"Serious Illness & Dying"}),
+  "learn.rites.baptism":Object.freeze({id:"learn.rites.baptism",type:"module",domain:"learn",category:"sacramental-formation",title:"Baptism · Parents & Godparents"}),
+  "learn.rites.first_communion":Object.freeze({id:"learn.rites.first_communion",type:"module",domain:"learn",category:"sacramental-formation",title:"First Holy Communion · Child & Family"}),
+  "learn.rites.confirmation":Object.freeze({id:"learn.rites.confirmation",type:"module",domain:"learn",category:"sacramental-formation",title:"Confirmation · Candidate & Sponsor"}),
+  "learn.rites.holy_orders":Object.freeze({id:"learn.rites.holy_orders",type:"module",domain:"learn",category:"sacramental-formation",title:"Holy Orders · Understand the Ordinations"}),
+  "learn.rites.matrimony":Object.freeze({id:"learn.rites.matrimony",type:"module",domain:"learn",category:"sacramental-formation",title:"Matrimony · Bride & Groom"}),
   "learn.serve_mass.responses":Object.freeze({id:"learn.serve_mass.responses",type:"module",domain:"learn",category:"mass-formation",title:"Low Mass Responses"}),
-  "learn.scapular":Object.freeze({id:"learn.scapular",type:"module",domain:"learn",category:"catholic-life",title:"Brown Scapular"}),
-  "learn.seasonal_rites":Object.freeze({id:"learn.seasonal_rites",type:"module",domain:"learn",category:"liturgical-life",title:"Seasonal Catholic Practice"}),
+  "learn.scapular":Object.freeze({id:"learn.scapular",type:"module",domain:"learn",category:"spiritual-moral",title:"Brown Scapular"}),
+});
+
+export const TRADITIONAL_LEARN_ALIASES=Object.freeze({
+  "learn.seasonal_rites":Object.freeze({id:"learn.seasonal_rites",type:"alias",domain:"learn",category:"calendar",target:"calendar",title:"Seasonal Catholic Practice"}),
 });
 
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -308,12 +311,6 @@ export function createTraditionalLearnRuntime(win=globalThis){
   function open(id,opts={}){
     const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;
     if(!TRADITIONAL_LEARN_ROUTES[canonical])return false;
-    if(canonical==="learn.seasonal_rites"){
-      close();
-      win?.AO_CALENDAR_APP_V1?.setView?.("year");
-      void win?.AO_APP_SHELL_V1?.navigate?.("calendar");
-      return true;
-    }
     state.route=canonical;state.screen="module";state.prayerId=null;state.trainerIndex=0;state.trainerReveal=false;state.returnFocus=opts.trigger||win?.document?.activeElement||null;
     ensureRoot();render();return true;
   }
@@ -359,11 +356,12 @@ export function ensureTraditionalLearnRegistry(win=globalThis){
   const base=win?.AO_MODULES;if(!base)return null;
   const runtime=win.AO_TRADITIONAL_LEARN_V381||createTraditionalLearnRuntime(win);win.AO_TRADITIONAL_LEARN_V381=runtime;
   const alias=Object.freeze({id:"learn.serve_mass",type:"alias",domain:"learn",category:"mass-formation",title:"Low Mass Responses"});
+  const seasonalAlias=TRADITIONAL_LEARN_ALIASES["learn.seasonal_rites"];
   const wrapper={...base,__aoTraditionalLearnV381:true,
-    get(id){if(id==="learn.serve_mass")return alias;return TRADITIONAL_LEARN_ROUTES[id]||base.get?.(id)||null},
-    resolve(id){if(id==="learn.serve_mass")return {ok:true,input:id,id:"learn.serve_mass.responses",defaults:{},chain:["learn.serve_mass","learn.serve_mass.responses"],definition:TRADITIONAL_LEARN_ROUTES["learn.serve_mass.responses"]};if(TRADITIONAL_LEARN_ROUTES[id])return {ok:true,input:id,id,defaults:{},chain:[id],definition:TRADITIONAL_LEARN_ROUTES[id]};return base.resolve?.(id)},
-    async open(id,opts={}){const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;if(TRADITIONAL_LEARN_ROUTES[canonical])return {ok:runtime.open(canonical,opts),input:String(id),canonicalId:canonical,type:"module",domain:"learn",options:opts,aliasChain:id===canonical?[id]:[id,canonical],error:null};return base.open?.(id,opts)},
-    list(filter={}){const prior=[...(base.list?.(filter)||[])].filter(x=>!TRADITIONAL_LEARN_ROUTES[x?.id]);if((!filter.type||filter.type==="module")&&(!filter.domain||String(filter.domain).toLowerCase()==="learn"))prior.push(...Object.values(TRADITIONAL_LEARN_ROUTES));return prior}
+    get(id){if(id==="learn.serve_mass")return alias;if(id==="learn.seasonal_rites")return seasonalAlias;return TRADITIONAL_LEARN_ROUTES[id]||base.get?.(id)||null},
+    resolve(id){if(id==="learn.serve_mass")return {ok:true,input:id,id:"learn.serve_mass.responses",defaults:{},chain:["learn.serve_mass","learn.serve_mass.responses"],definition:TRADITIONAL_LEARN_ROUTES["learn.serve_mass.responses"]};if(id==="learn.seasonal_rites")return {ok:true,input:id,id:"calendar",defaults:{view:"year",monthView:"practices"},chain:["learn.seasonal_rites","calendar"],definition:seasonalAlias};if(TRADITIONAL_LEARN_ROUTES[id])return {ok:true,input:id,id,defaults:{},chain:[id],definition:TRADITIONAL_LEARN_ROUTES[id]};return base.resolve?.(id)},
+    async open(id,opts={}){const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;if(canonical==="learn.seasonal_rites"){runtime.close();win?.AO_CALENDAR_APP_V1?.setView?.("year");await win?.AO_APP_SHELL_V1?.navigate?.("calendar");return {ok:true,input:String(id),canonicalId:"calendar",type:"alias",domain:"learn",options:opts,aliasChain:["learn.seasonal_rites","calendar"],error:null}}if(TRADITIONAL_LEARN_ROUTES[canonical])return {ok:runtime.open(canonical,opts),input:String(id),canonicalId:canonical,type:"module",domain:"learn",options:opts,aliasChain:id===canonical?[id]:[id,canonical],error:null};return base.open?.(id,opts)},
+    list(filter={}){const prior=[...(base.list?.(filter)||[])].filter(x=>x?.id!=="learn.seasonal_rites"&&!TRADITIONAL_LEARN_ROUTES[x?.id]);if((!filter.type||filter.type==="module")&&(!filter.domain||String(filter.domain).toLowerCase()==="learn"))prior.push(...Object.values(TRADITIONAL_LEARN_ROUTES));return prior}
   };
   win.AO_MODULES=wrapper;win.AO_MODULE_REGISTRY_V36=wrapper;return wrapper;
 }
