@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {buildRecoveryReviewRows,createFormationRecoveryReview,RECOVERY_REVIEW_ROOT,RECOVERY_REVIEW_SECTION_KEYS,RECOVERY_REVIEW_CHILD_KEYS} from "../src/learn/formation-recovery-review.js";
+import {buildRecoveryReviewRows,buildRecoveryDossierCoverage,createFormationRecoveryReview,RECOVERY_REVIEW_ROOT,RECOVERY_REVIEW_SECTION_KEYS,RECOVERY_REVIEW_CHILD_KEYS} from "../src/learn/formation-recovery-review.js";
 import {LEARN_MODULE_IDS} from "../src/learn/presentation.js";
 const names=[
   ["BAQ questions","biblical-patristic-and-sedevacantist-question-supplement.v1.json"],
@@ -10,7 +10,9 @@ const names=[
   ["Contemporary II","contemporary-controversies-batch2-source-pack.v1.json"],
   ["Traditional Mass I","traditional-mass-objections-026-050-recovered.v1.json"],
   ["Traditional Mass II","traditional-mass-objections-051-065-reconciled.v1.json"],
-  ["Traditionis custodes","traditionis-custodes-debates.v1.json"]
+  ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
+  ["Apologetics dossiers","apologetics-canonical.v1.json"],
+  ["Church Crisis dossiers","church-crisis-canonical.v1.json"]
 ];
 const packs=names.map(([label,name])=>({label,doc:JSON.parse(readFileSync("data/learn/"+name,"utf8"))}));
 const rows=buildRecoveryReviewRows(packs);
@@ -19,6 +21,17 @@ const ap=JSON.parse(readFileSync("data/learn/apologetics-canonical.v1.json","utf
 const cr=JSON.parse(readFileSync("data/learn/church-crisis-canonical.v1.json","utf8"));
 const owners=new Set([...ap.dossiers,...cr.dossiers].map(x=>x.id));
 assert.equal(rows.length,102);
+const coverage=buildRecoveryDossierCoverage(rows,packs);
+assert.equal(coverage.dossiers.length,141);
+assert.equal(coverage.covered,42);
+assert.equal(coverage.linked,97);
+assert.equal(coverage.external.length,5);
+assert.equal(coverage.dossiers.filter(d=>d.corpus==="apologetics" && d.research.length).length,10);
+assert.equal(coverage.dossiers.filter(d=>d.corpus==="crisis" && d.research.length).length,32);
+assert.equal(coverage.dossiers.find(d=>d.id==="CR-LIT-05").research.length,5);
+assert.equal(coverage.dossiers.find(d=>d.id==="APOL-012").research.length,7);
+assert.ok(coverage.external.some(x=>x.id==="cremation"));
+
 assert.deepEqual(rows.map(x=>x.id).sort(),known.recovered_research.map(x=>x.id).sort());
 assert.equal(new Set(rows.map(x=>x.id)).size,102);
 assert.deepEqual(Object.fromEntries([...new Set(rows.map(x=>x.bank))].map(k=>[k,rows.filter(x=>x.bank===k).length])),{
@@ -101,22 +114,36 @@ const live=createFormationRecoveryReview(windowLike);
 assert.equal(await live.open(),true,"QA source files failed to mount");
 assert.equal(live.status().researchRecords,102);
 const node=nodes.get(RECOVERY_REVIEW_ROOT);
-assert.ok(node.innerHTML.includes("Recovery source review"));
-assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'));
-const makeClick=({id,back=false,home=false})=>({
+assert.equal(live.status().canonicalDossiers,141);
+assert.equal(live.status().coveredDossiers,42);
+assert.equal(live.status().externalRecords,5);
+assert.ok(node.innerHTML.includes("Formation recovery by topic"));
+assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'));
+
+const makeClick=({id,dossier,mode,back=false,home=false})=>({
   preventDefault(){},
   target:{closest:()=>({
-    hasAttribute:key=>back&&key==="data-rr-back"||home&&key==="data-rr-home",
-    dataset:{rrId:id}
+    hasAttribute:key=>(back&&key==="data-rr-back")||(home&&key==="data-rr-home"),
+    dataset:{rrId:id,rrDossier:dossier,rrMode:mode}
   })}
 });
+node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
+assert.ok(node.innerHTML.includes("CR-LIT-05"),"dossier title not rendered");
+assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"dossier's researched subquestions missing");
 node.listeners.click(makeClick({id:"TLM026"}));
-assert.ok(node.innerHTML.includes("TLM026"),"detail not rendered");
+assert.ok(node.innerHTML.includes("TLM026"),"research detail not rendered");
 assert.ok(node.innerHTML.includes("BEN07")||node.innerHTML.includes("Benedict"),"linked original sources unavailable");
 assert.ok(node.innerHTML.includes("https://www.vatican.va/"),"source URLs missing in detail");
 node.listeners.click(makeClick({back:true}));
-assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"hierarchical back did not restore list");
+assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"Back did not restore canonical dossier");
+node.listeners.click(makeClick({back:true}));
+assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'),"Back did not restore dossier index");
+node.listeners.click(makeClick({mode:"records"}));
+assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"record search tab lost existing records");
+node.listeners.click(makeClick({id:"TLM026"}));
+node.listeners.click(makeClick({back:true}));
+assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"Back did not restore flat research list");
 live.close();
 assert.equal(live.status().open,false);
 
-console.log(JSON.stringify({sourcePacks:packs.length,rows:rows.length,qa:"INTERNAL_QUERY_FLAG_ONLY",publicFormationRoutesAdded:0,canonicalDossiers:owners.size,publicationCertified:false},null,2));
+console.log(JSON.stringify({sourcePacks:packs.length,dossiers:coverage.dossiers.length,linkedDossiers:coverage.covered,linkedResearch:coverage.linked,externalResearch:coverage.external.length,rows:rows.length,qa:"INTERNAL_QUERY_FLAG_ONLY",publicFormationRoutesAdded:0,canonicalDossiers:owners.size,publicationCertified:false},null,2));

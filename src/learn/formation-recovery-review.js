@@ -10,7 +10,9 @@ const PACKS = Object.freeze([
   ["Contemporary II","contemporary-controversies-batch2-source-pack.v1.json"],
   ["Traditional Mass I","traditional-mass-objections-026-050-recovered.v1.json"],
   ["Traditional Mass II","traditional-mass-objections-051-065-reconciled.v1.json"],
-  ["Traditionis custodes","traditionis-custodes-debates.v1.json"]
+  ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
+  ["Apologetics dossiers","apologetics-canonical.v1.json"],
+  ["Church Crisis dossiers","church-crisis-canonical.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -57,6 +59,9 @@ const css = [
   "#ao-formation-recovery-review .rrFields{display:grid;gap:9px;margin:12px 0}",
   "#ao-formation-recovery-review input,#ao-formation-recovery-review select{width:100%;min-height:46px;padding:10px 12px;color:inherit;background:var(--ao-surface-1,#101821);border:1px solid var(--ao-rule,#3d3d40);border-radius:10px;font:1rem var(--ao-font-ui,system-ui)}",
   "#ao-formation-recovery-review .rrList{display:grid;gap:9px;margin-top:15px}",
+  "#ao-formation-recovery-review .rrTabs{display:flex;gap:9px;margin:14px 0}",
+  "#ao-formation-recovery-review .rrTabs button{padding:10px 12px;min-height:44px;border:1px solid var(--ao-rule,#3d3d40);background:transparent;border-radius:10px;font:.82rem var(--ao-font-ui,system-ui)}",
+  "#ao-formation-recovery-review .rrTabs button[aria-pressed=true]{border-color:var(--liturgical,#c9ad78)}",
   "#ao-formation-recovery-review .rrList button{text-align:left;padding:13px 14px;background:var(--ao-surface-1,#101821);border:1px solid var(--ao-rule,#3d3d40);border-radius:11px;font:1rem/1.4 var(--ao-font-body,Georgia,serif)}",
   "#ao-formation-recovery-review .rrList small{display:block;font:.7rem var(--ao-font-ui,system-ui);color:var(--ao-text-muted,#a9a5a0);margin-bottom:5px}",
   "#ao-formation-recovery-review .rrSources{display:flex;gap:5px 12px;flex-wrap:wrap;font:.72rem/1.6 var(--ao-font-ui,system-ui);margin:4px 0 15px}",
@@ -94,8 +99,28 @@ export function buildRecoveryReviewRows(packs) {
   return out;
 }
 
+export function buildRecoveryDossierCoverage(rows,packs) {
+  const apo=packs.find(p=>p.label==="Apologetics dossiers")?.doc?.dossiers||[];
+  const crisis=packs.find(p=>p.label==="Church Crisis dossiers")?.doc?.dossiers||[];
+  if(apo.length!==60 || crisis.length!==81)throw new Error("Canonical Formation dossier inventory has changed");
+  const owners=new Map([...apo,...crisis].map(d=>[d.id,[]]));
+  if(owners.size!==141)throw new Error("Duplicate canonical dossier identifiers");
+  const external=[];
+  for(const record of rows){
+    const target=owners.get(record.owner);
+    if(target)target.push(record);
+    else external.push(record);
+  }
+  const dossiers=[
+    ...apo.map(d=>({...d,corpus:"apologetics",research:owners.get(d.id)})),
+    ...crisis.map(d=>({...d,corpus:"crisis",research:owners.get(d.id)}))
+  ];
+  return Object.freeze({dossiers,external,covered:dossiers.filter(d=>d.research.length).length,
+    linked:dossiers.reduce((n,d)=>n+d.research.length,0)});
+}
+
 export function createFormationRecoveryReview(win=globalThis) {
-  const state={open:false,view:"list",id:null,bank:"all",query:"",rows:[],error:"",loading:false};
+  const state={open:false,view:"list",mode:"dossiers",corpus:"all",dossierId:null,returnTo:"list",id:null,bank:"all",query:"",rows:[],dossiers:[],external:[],error:"",loading:false};
   const root=()=>win?.document?.getElementById?.(RECOVERY_REVIEW_ROOT);
   const selected=()=>state.rows.find(x=>x.id===state.id);
   const ttl=r=>isFr(win)?r.title_fr||r.title_en:r.title_en;
@@ -128,6 +153,28 @@ export function createFormationRecoveryReview(win=globalThis) {
     if(!text&&!html)html='<p class="rrMuted">No substantive text in this record.</p>';
     return html;
   };
+  const dossierRows=()=>{
+    const q=state.query.toLowerCase().trim();
+    const selected=state.dossiers.filter(x=>(state.corpus==="all"||x.corpus===state.corpus)&&
+      [x.id,x.title,x.family,...x.research.map(y=>y.title_en)].some(v=>String(v||"").toLowerCase().includes(q)));
+    return selected.map(x=>'<button type="button" data-rr-dossier="'+esc(x.id)+'"><small>'+
+      esc(x.id)+' · '+esc(x.family)+' · '+esc(x.research.length+' linked research '+(x.research.length===1?'record':'records'))+
+      '</small>'+esc(x.title)+'</button>').join("")||
+      '<p class="rrMuted">'+esc(pick(win,"No matching dossiers.","Aucun dossier correspondant."))+'</p>';
+  };
+  const dossierDetail=()=>{
+    const d=state.dossiers.find(x=>x.id===state.dossierId);
+    if(!d)return listView();
+    return '<div class="rrMuted">'+esc(d.id)+' · '+esc(d.family)+'</div><h1>'+esc(d.title)+'</h1>'+
+      '<div class="rrWarning">'+esc(pick(win,"This is an unpublished editorial dossier index. Associated research is not a certified completed answer.",
+        "Index éditorial non publié. La recherche associée n’est pas une réponse complète certifiée."))+'</div>'+
+      '<h2>'+esc(pick(win,"Associated original research","Recherches originales associées"))+' ('+d.research.length+')</h2>'+
+      (d.research.length?'<div class="rrList">'+d.research.map(x=>
+        '<button type="button" data-rr-id="'+esc(x.id)+'"><small>'+esc(x.id)+' · '+esc(x.bank)+'</small>'+
+        esc(ttl(x))+'</button>').join("")+'</div>':
+        '<p class="rrMuted">'+esc(pick(win,"No direct entry in the recovered 102-record corpus. Other research may exist outside this source bank.",
+        "Aucune entrée directe dans les 102 dossiers récupérés. D’autres recherches peuvent exister ailleurs."))+'</p>');
+  };
   const listRows=()=>{
     const q=state.query.toLowerCase().trim();
     const hits=state.rows.filter(x=>(state.bank==="all"||x.bank===state.bank)&&
@@ -136,18 +183,35 @@ export function createFormationRecoveryReview(win=globalThis) {
       esc(x.owner||"external owner")+' · '+esc(x.bank)+'</small>'+esc(ttl(x))+'</button>').join("")||
       '<p class="rrMuted">'+esc(pick(win,"No matching records.","Aucun résultat."))+'</p>';
   };
-  const listView=()=>'<div class="rrMuted">'+esc(pick(win,"Editorial research only · not published",
+  const listView=()=>{
+    const dossierMode=state.mode==="dossiers";
+    return '<div class="rrMuted">'+esc(pick(win,"Editorial research only · not published",
       "Recherche éditoriale · non publiée"))+'</div>'+
-    '<h1>'+esc(pick(win,"Recovery source review","Examen des sources récupérées"))+'</h1>'+
-    '<p class="rrWarning">'+esc(pick(win,
-      "This is a source inspection tool, not an approved Formation course. A registered link does not certify a claim or attribution.",
-      "Outil de vérification des sources, non cours de formation approuvé. Un lien enregistré ne certifie ni une affirmation ni son attribution."))+'</p>'+
-    '<div class="rrFields"><input data-rr-search type="search" value="'+esc(state.query)+
-    '" placeholder="'+esc(pick(win,"Search 102 research records","Rechercher dans 102 dossiers"))+'">'+
-    '<select data-rr-bank aria-label="Research bank">'+
-      ["all",...new Set(state.rows.map(x=>x.bank))].map(v=>'<option value="'+esc(v)+'"'+
-      (state.bank===v?" selected":"")+'>'+esc(v==="all"?pick(win,"All banks","Toutes les collections"):v)+'</option>').join("")+
-    '</select></div><div class="rrList" data-rr-list>'+listRows()+'</div>';
+      '<h1>'+esc(pick(win,"Formation recovery by topic","Récupération par sujet"))+'</h1>'+
+      '<p class="rrWarning">'+esc(pick(win,
+      "Research links are not an approval of the text. Empty dossiers here mean no record in this recovered pack, not that the question was never researched.",
+      "Ces liens ne valent pas approbation. Un dossier vide ici signifie seulement qu’aucune entrée de cette collection n’y est associée."))+'</p>'+
+      '<div class="rrMuted">'+esc(state.dossiers.filter(x=>x.research.length).length)+' / 141 '+
+      esc(pick(win,"dossiers have a direct source-pack entry; 5 records are owned elsewhere.",
+      "dossiers ont une entrée directe ; 5 recherches appartiennent à d’autres modules."))+'</div>'+
+      '<div class="rrTabs" role="group" aria-label="Review mode">'+
+      [['dossiers',pick(win,"Dossiers (141)","Dossiers (141)")],
+       ['records',pick(win,"Research (102)","Recherches (102)")]].map(([value,label])=>
+       '<button type="button" data-rr-mode="'+value+'" aria-pressed="'+(state.mode===value)+'">'+esc(label)+'</button>').join("")+
+      '</div>'+
+      '<div class="rrFields"><input data-rr-search type="search" value="'+esc(state.query)+
+      '" placeholder="'+esc(dossierMode?pick(win,"Search dossiers and their questions","Rechercher les dossiers et questions"):
+        pick(win,"Search 102 research records","Rechercher les 102 recherches"))+'">'+
+      (dossierMode?'<select data-rr-corpus aria-label="Dossier collection">'+
+       [['all',pick(win,"All dossiers","Tous les dossiers")],
+        ['apologetics',pick(win,"Apologetics","Apologétique")],
+        ['crisis',pick(win,"Church Crisis","Crise de l’Église")]].map(([value,label])=>
+        '<option value="'+value+'"'+(state.corpus===value?" selected":"")+'>'+esc(label)+'</option>').join("")+'</select>':
+       '<select data-rr-bank aria-label="Research bank">'+
+        ["all",...new Set(state.rows.map(x=>x.bank))].map(v=>'<option value="'+esc(v)+'"'+
+        (state.bank===v?" selected":"")+'>'+esc(v==="all"?pick(win,"All banks","Toutes les collections"):v)+'</option>').join("")+
+       '</select>')+'</div><div class="rrList" data-rr-list>'+(dossierMode?dossierRows():listRows())+'</div>';
+  };
   const detailView=()=>{
     const x=selected();if(!x)return listView();
     const qSource=x.bank==="BAQ"?x.raw?.question_provenance_ids||[]:
@@ -171,20 +235,32 @@ export function createFormationRecoveryReview(win=globalThis) {
     el.setAttribute("aria-label","Formation editorial recovery review");
     el.addEventListener("click",e=>{
       const b=e.target?.closest?.("button");if(!b)return;
-      if(b.hasAttribute("data-rr-back")){e.preventDefault?.();if(state.view==="detail"){state.view="list";state.id=null;paint();}else close();return;}
+      if(b.hasAttribute("data-rr-back")){e.preventDefault?.();if(state.view==="detail"){state.view=state.returnTo;state.id=null;paint();}
+        else if(state.view==="dossier-detail"){state.view="list";state.dossierId=null;paint();}else close();return;}
       if(b.hasAttribute("data-rr-home")){e.preventDefault?.();close();win?.AO_APP_SHELL_V1?.navigate?.("home");return;}
-      if(b.dataset.rrId){e.preventDefault?.();state.id=b.dataset.rrId;state.view="detail";paint();root()?.scrollTo?.(0,0);}
+      if(b.dataset.rrMode){e.preventDefault?.();state.mode=b.dataset.rrMode;state.view="list";state.query="";paint();return;}
+      if(b.dataset.rrDossier){e.preventDefault?.();state.dossierId=b.dataset.rrDossier;state.view="dossier-detail";paint();root()?.scrollTo?.(0,0);return;}
+      if(b.dataset.rrId){e.preventDefault?.();state.returnTo=state.view;state.id=b.dataset.rrId;state.view="detail";paint();root()?.scrollTo?.(0,0);}
     });
-    el.addEventListener("input",e=>{if(e.target?.hasAttribute?.("data-rr-search")){state.query=e.target.value;const n=root()?.querySelector?.("[data-rr-list]");if(n)n.innerHTML=listRows();}});
-    el.addEventListener("change",e=>{if(e.target?.hasAttribute?.("data-rr-bank")){state.bank=e.target.value;const n=root()?.querySelector?.("[data-rr-list]");if(n)n.innerHTML=listRows();}});
-    el.addEventListener("keydown",e=>{if(e.key==="Escape"){e.preventDefault?.();if(state.view==="detail"){state.view="list";state.id=null;paint();}else close();}});
+    el.addEventListener("input",e=>{if(e.target?.hasAttribute?.("data-rr-search")){state.query=e.target.value;const n=root()?.querySelector?.("[data-rr-list]");if(n)n.innerHTML=state.mode==="dossiers"?dossierRows():listRows();}});
+    el.addEventListener("change",e=>{
+      if(e.target?.hasAttribute?.("data-rr-bank"))state.bank=e.target.value;
+      else if(e.target?.hasAttribute?.("data-rr-corpus"))state.corpus=e.target.value;
+      else return;
+      const n=root()?.querySelector?.("[data-rr-list]");
+      if(n)n.innerHTML=state.mode==="dossiers"?dossierRows():listRows();
+    });
+    el.addEventListener("keydown",e=>{if(e.key==="Escape"){e.preventDefault?.();
+      if(state.view==="detail"){state.view=state.returnTo;state.id=null;paint();}
+      else if(state.view==="dossier-detail"){state.view="list";state.dossierId=null;paint();}
+      else close();}});
     doc.body.append(el);return el;
   }
   function paint(){
     const el=ensure();if(!el||!state.open)return false;
     el.lang=isFr(win)?"fr":"en";
     const inner=state.loading?'<p class="rrMuted">Loading original source files…</p>':
-      state.error?'<p class="rrWarning">'+esc(state.error)+'</p>':state.view==="list"?listView():detailView();
+      state.error?'<p class="rrWarning">'+esc(state.error)+'</p>':state.view==="list"?listView():state.view==="dossier-detail"?dossierDetail():detailView();
     el.innerHTML='<style>'+css+'</style><header class="rrTop"><button type="button" data-rr-back aria-label="Back">‹</button>'+
       '<strong>'+esc(pick(win,"Source review · Unpublished","Examen des sources · Non publié"))+'</strong>'+
       '<button type="button" data-rr-home aria-label="Home">⌂</button></header><main>'+inner+'</main>';
@@ -201,6 +277,9 @@ export function createFormationRecoveryReview(win=globalThis) {
         return {label,doc:await response.json()};
       }));
       state.rows=buildRecoveryReviewRows(docs);
+      const coverage=buildRecoveryDossierCoverage(state.rows,docs);
+      state.dossiers=coverage.dossiers;
+      state.external=coverage.external;
       state.questionSources=docs.find(x=>x.label==="BAQ questions")?.doc?.source_registry||[];
       state.error="";
     }catch(error){
@@ -210,10 +289,10 @@ export function createFormationRecoveryReview(win=globalThis) {
   }
   function close(){
     const el=root();try{el?.querySelector?.(":focus")?.blur?.();}catch{}
-    el?.remove?.();state.open=false;state.view="list";state.id=null;return true;
+    el?.remove?.();state.open=false;state.view="list";state.id=null;state.dossierId=null;return true;
   }
   function status(){return Object.freeze({version:RECOVERY_REVIEW_VERSION,open:state.open,
-    researchRecords:state.rows.length,loading:state.loading,error:state.error,public:false});}
+    researchRecords:state.rows.length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
   return Object.freeze({open,close,paint,status});
 }
 export function installFormationRecoveryReview(win=globalThis) {
