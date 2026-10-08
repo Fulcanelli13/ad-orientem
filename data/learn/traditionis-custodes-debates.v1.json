@@ -1,7 +1,7 @@
 {
   "version": "TRADITIONIS_CUSTODES_DEBATES_V1",
   "created_at": "2026-10-08",
-  "status": "BILINGUAL_10_CASES_SOURCE_SCOPED_EDITORIAL_DRAFT_UNPUBLISHED",
+  "status": "BILINGUAL_30_PARAGRAPHS_DOCUMENTARY_VETTED_NOT_CERTIFIED_UNPUBLISHED",
   "canonical_role": "Deep-source debate questions subsumed under the existing 81 Church Crisis dossiers; no new navigation dossier and no duplicate standalone canonical owner.",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_policy": {
@@ -85,9 +85,9 @@
     },
     {
       "id": "CIC4",
-      "title": "1983 Code of Canon Law, canon 838",
-      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-839_en.html",
-      "type": "CANON_LAW"
+      "title": "1983 Code of Canon Law (as amended 2017), canon 838, in Book IV canons 834–878",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html",
+      "type": "CURRENT_CANON_LAW_PRIMARY_VERIFIED"
     },
     {
       "id": "SC63",
@@ -148,10 +148,37 @@
           },
           "source_ids": [
             "TCL21",
-            "TC21"
+            "TC21",
+            "COURT21"
           ],
           "source_locator": "Francis 16 July 2021 accompanying letter, 2020 consultation rationale",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "TCL21",
+                "passage": "paras starting With the passage of thirteen years through final reason",
+                "source_url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "preamble, art.3§1",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              },
+              {
+                "source_id": "COURT21",
+                "passage": "self-description does not prove all groups share allegations",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "identified_objection",
@@ -164,7 +191,28 @@
             "COURT21"
           ],
           "source_locator": "FSSP 20 July 2021; Courtalain 31 Aug 2021 statement",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "NAMED_PROPONENT_OR_DOCUMENTED_PUBLIC_POSITION",
+            "pinpoints": [
+              {
+                "source_id": "FSSP21",
+                "passage": "July 20 2021 official communique, adherence to magisterium and Roman Pontiff",
+                "source_url": "https://fssp.com/official-communique-following-the-publication-of-the-motu-proprio-traditionis-custodes/"
+              },
+              {
+                "source_id": "COURT21",
+                "passage": "31 Aug 2021 paragraphs 1–6, institutes affirm full communion",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -178,7 +226,33 @@
             "COURT21"
           ],
           "source_locator": "CIC 838; papal letter; Courtalain requests",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC4",
+                "passage": "canon 838 §§1,4 liturgical governance",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html"
+              },
+              {
+                "source_id": "TCL21",
+                "passage": "intention to restore unity",
+                "source_url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "COURT21",
+                "passage": "requests personal dialogue, self-described fidelity",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -215,7 +289,28 @@
             "TCL21"
           ],
           "source_locator": "Francis accompanying letter and TC original motivation",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "TC21",
+                "passage": "preamble 2020 CDF consultation and episcopate wishes",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              },
+              {
+                "source_id": "TCL21",
+                "passage": "letter: episcopal responses concerned Francis",
+                "source_url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "identified_objection",
@@ -229,13 +324,34 @@
             "MONT25"
           ],
           "source_locator": "Montagna document excerpts, 1 July 2025; AP syndicated independent assessment",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "NAMED_PROPONENT_OR_DOCUMENTED_PUBLIC_POSITION",
+            "pinpoints": [
+              {
+                "source_id": "MONT25",
+                "passage": "1 July 2025 article, Overall Assessment claims attributed to leaked report; NOT independently released Vatican originals",
+                "source_url": "https://dianemontagna.substack.com/p/exclusive-official-vatican-report"
+              },
+              {
+                "source_id": "AP25_REPRINT",
+                "passage": "AP syndicated contextual reporting",
+                "source_url": "https://cruxnow.com/vatican/2025/07/debate-over-latin-mass-heats-up-after-apparent-leak-of-vatican-documents-that-undermine-pope-francis"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
           "text": {
-            "en": "Vatican spokesman Matteo Bruni declined to confirm the leaked documents' authenticity and described the publicly released texts as a very partial and incomplete account of the decision-making process: other confidential reports and additional consultations also informed the process. The release therefore raises a legitimate documentary question but does not establish a verified majority of all consulted bishops, or the complete basis of Francis's decision.",
-            "fr": "Le porte-parole du Vatican Matteo Bruni n'a pas confirmé l'authenticité des documents divulgués et a décrit les textes publiés comme une présentation très partielle et incomplète du processus de décision : d'autres rapports confidentiels et consultations ultérieures ont également été pris en compte. Cette publication soulève donc une question documentaire légitime sans établir une majorité vérifiée de tous les évêques consultés ni l'ensemble des motifs de la décision de François."
+            "en": "Vatican spokesman Matteo Bruni said the released texts permitted only a very partial and incomplete reconstruction of the decision-making process: further confidential reports and consultations had been considered. His statement neither authenticated the leaked document nor published the complete questionnaire returns. Montagna's excerpts, if authentic and representative of the reported CDF synthesis, are evidence of episcopal resistance to new restrictions, but cannot establish a verified majority of all bishops consulted or the complete basis of Francis's decision.",
+            "fr": "Le porte-parole du Vatican Matteo Bruni a déclaré que les textes rendus publics ne permettaient qu'une reconstitution très partielle et incomplète du processus de décision : d'autres rapports confidentiels et consultations avaient été pris en compte. Sa déclaration ne constitue ni une authentification du document divulgué ni une publication de toutes les réponses épiscopales. Les extraits publiés par Montagna, s'ils sont authentiques et représentatifs de la synthèse attribuée à la CDF, témoignent de réserves épiscopales face à de nouvelles restrictions, sans établir la majorité vérifiée de tous les évêques consultés ni l'ensemble des motifs de la décision de François."
           },
           "source_ids": [
             "AP25_REPRINT",
@@ -257,10 +373,42 @@
                 "MONT25"
               ],
               "reason": "Correct source scope or canonical specificity"
+            },
+            {
+              "date": "2026-10-08",
+              "text_en": "Vatican spokesman Matteo Bruni declined to confirm the leaked documents' authenticity and described the publicly released texts as a very partial and incomplete account of the decision-making process: other confidential reports and additional consultations also informed the process. The release therefore raises a legitimate documentary question but does not establish a verified majority of all consulted bishops, or the complete basis of Francis's decision.",
+              "text_fr": "Le porte-parole du Vatican Matteo Bruni n'a pas confirmé l'authenticité des documents divulgués et a décrit les textes publiés comme une présentation très partielle et incomplète du processus de décision : d'autres rapports confidentiels et consultations ultérieures ont également été pris en compte. Cette publication soulève donc une question documentaire légitime sans établir une majorité vérifiée de tous les évêques consultés ni l'ensemble des motifs de la décision de François.",
+              "reason": "Remove unsupported wording implying explicit denial of authentication; distinguish reported excerpt from complete response population."
             }
           ],
           "source_locator": "Bruni 3 July 2025 press conference final paragraph; Montagna excerpts; AP",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "BRUNI25",
+                "passage": "3 July 2025 Vatican News final paragraph Chiarimenti circa Traditionis custodes",
+                "source_url": "https://www.vaticannews.va/it/vaticano/news/2025-07/ecologia-integrale-papa-celebrazione-formulario-culto-divino.html"
+              },
+              {
+                "source_id": "MONT25",
+                "passage": "source of published excerpt, not full sample",
+                "source_url": "https://dianemontagna.substack.com/p/exclusive-official-vatican-report"
+              },
+              {
+                "source_id": "TCL21",
+                "passage": "Francis stated motivation",
+                "source_url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -298,7 +446,28 @@
             "TC21"
           ],
           "source_locator": "Summorum Pontificum 2007 articles 1 and 5; TC 2021 arts 1–8",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "SP07",
+                "passage": "2007 arts 1–5 broader faculties and no abrogation statement",
+                "source_url": "https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "2021 arts 2–5,8 replace incompatible norms",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "source_based_critical_argument",
@@ -312,7 +481,28 @@
           ],
           "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
           "source_locator": "Benedict 2007 accompanying letter on holiness of older liturgical usage",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "EDITORIAL_REASONED_ARGUMENT",
+            "pinpoints": [
+              {
+                "source_id": "SPL07",
+                "passage": "Benedict 2007 accompanying letter older usage sacred and valued",
+                "source_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "TCL21",
+                "passage": "Francis 2021 rationale and time-limited transition",
+                "source_url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -327,7 +517,33 @@
             "SPL07"
           ],
           "source_locator": "CIC 838 and TC 2021 art 8; contrasting juridical positions",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC4",
+                "passage": "canon 838 liturgical disciplinary authority",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "art.8 disciplinary abrogation",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              },
+              {
+                "source_id": "SPL07",
+                "passage": "Benedict's continuity argument is theological, not future legislative veto",
+                "source_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -365,7 +581,28 @@
             "RESP21"
           ],
           "source_locator": "TC art 1; arts 2–5",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "TC21",
+                "passage": "art.1 unique lex orandi versus arts 2–5 continued restricted celebrations",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              },
+              {
+                "source_id": "RESP21",
+                "passage": "interpretive note: concession not ordinary parish liturgy",
+                "source_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "source_based_critical_argument",
@@ -380,7 +617,28 @@
           ],
           "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
           "source_locator": "Summorum Pontificum art 1 and Benedict accompanying letter",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "EDITORIAL_REASONED_ARGUMENT",
+            "pinpoints": [
+              {
+                "source_id": "SP07",
+                "passage": "2007 art.1 two usages of one Roman rite",
+                "source_url": "https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html"
+              },
+              {
+                "source_id": "SPL07",
+                "passage": "2007 accompanying theological rationale",
+                "source_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -394,7 +652,28 @@
             "SPL07"
           ],
           "source_locator": "Responsa 2021 introductory explanatory notes",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "RESP21",
+                "passage": "explanatory introduction and parish church question",
+                "source_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "art.1 norm vs arts 2–5 legal permission",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -432,7 +711,28 @@
             "SC63"
           ],
           "source_locator": "CIC 838; SC 22–23",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC4",
+                "passage": "canon 838 §§1–4 as amended by Magnum Principium 2017",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html"
+              },
+              {
+                "source_id": "SC63",
+                "passage": "SC 22–23 governance and organic development",
+                "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "source_based_critical_argument",
@@ -446,7 +746,28 @@
           ],
           "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
           "source_locator": "SC 23 organic growth and Benedict 2007 accompanying letter",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "EDITORIAL_REASONED_ARGUMENT",
+            "pinpoints": [
+              {
+                "source_id": "SC63",
+                "passage": "SC 23: novelties require genuine good and organic growth",
+                "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "SPL07",
+                "passage": "Benedict 2007 holy inherited liturgy",
+                "source_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -460,7 +781,28 @@
             "TC21"
           ],
           "source_locator": "CIC 838; SC 22–23; TC enactment",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC4",
+                "passage": "canon 838 legislative competence not absolute prudential guarantee",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "arts 2–8 concrete restriction",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -498,7 +840,28 @@
             "TC21"
           ],
           "source_locator": "CIC 213–214 and 223; TC bishops' permissions",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC2",
+                "passage": "canons 213–214,223; liturgical rights under legitimate pastors",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "arts 2–5 authorizations required",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "identified_objection",
@@ -511,7 +874,28 @@
             "FSSP22"
           ],
           "source_locator": "Courtalain petition and 2022 FSSP particular decree",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "NAMED_PROPONENT_OR_DOCUMENTED_PUBLIC_POSITION",
+            "pinpoints": [
+              {
+                "source_id": "COURT21",
+                "passage": "approved constitutions and earlier institutional assurances",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              },
+              {
+                "source_id": "FSSP22",
+                "passage": "particular 2022 faculty",
+                "source_url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -524,7 +908,28 @@
             "TC21"
           ],
           "source_locator": "CIC 212–214, 223; TC permission regime",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC2",
+                "passage": "canons 212–214 and 223 pastoral petition/legal scope",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "specific permission regime",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -562,7 +967,28 @@
             "FSSP21"
           ],
           "source_locator": "TC generalized restrictions; FSSP official communiqué",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "TC21",
+                "passage": "arts 3–5 regulate groups broadly, no individual canonical guilt test",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              },
+              {
+                "source_id": "FSSP21",
+                "passage": "institute itself professes fidelity",
+                "source_url": "https://fssp.com/official-communique-following-the-publication-of-the-motu-proprio-traditionis-custodes/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "identified_objection",
@@ -575,7 +1001,28 @@
             "COURT21"
           ],
           "source_locator": "FSSP communiqué; Courtalain open letter",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "NAMED_PROPONENT_OR_DOCUMENTED_PUBLIC_POSITION",
+            "pinpoints": [
+              {
+                "source_id": "FSSP21",
+                "passage": "communique challenges blanket description",
+                "source_url": "https://fssp.com/official-communique-following-the-publication-of-the-motu-proprio-traditionis-custodes/"
+              },
+              {
+                "source_id": "COURT21",
+                "passage": "communique describes concrete harm and assurances",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -589,7 +1036,33 @@
             "COURT21"
           ],
           "source_locator": "TC legal character versus penal sanctions; papal accompanying letter",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "TC21",
+                "passage": "norm not a canonical penalty under penal law",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              },
+              {
+                "source_id": "TCL21",
+                "passage": "pastoral stated purpose",
+                "source_url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "COURT21",
+                "passage": "named institutes question proportionality",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -628,7 +1101,33 @@
             "RES23"
           ],
           "source_locator": "TC arts 2–5; Responsa 2021 Ritual/Pontifical question; 2023 rescript reservations",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "TC21",
+                "passage": "art.3/4/5 permissions for 1962 Missal",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              },
+              {
+                "source_id": "RESP21",
+                "passage": "Rituale (1952), not Pontificale in ordinary diocesan regime",
+                "source_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html"
+              },
+              {
+                "source_id": "RES23",
+                "passage": "reserved dispensation from parish church restriction and post-2021 ordinations",
+                "source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "source_based_critical_argument",
@@ -643,7 +1142,28 @@
           ],
           "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
           "source_locator": "Responsa: limits of ritual books; 2023 apostolic reserved dispensation",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "EDITORIAL_REASONED_ARGUMENT",
+            "pinpoints": [
+              {
+                "source_id": "RESP21",
+                "passage": "restrictions/dispensations on former books",
+                "source_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html"
+              },
+              {
+                "source_id": "RES23",
+                "passage": "specific reserved matters; does not prohibit all Masses",
+                "source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -670,7 +1190,28 @@
             }
           ],
           "source_locator": "11 Feb 2022 specific papal FSSP decree, own churches versus local ordinary",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "FSSP22",
+                "passage": "11 Feb 2022 decree: 1962 Missal/Ritual/Pontifical/Breviary, own churches and outside consent",
+                "source_url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/"
+              },
+              {
+                "source_id": "FSSP22FR",
+                "passage": "original decree translated French, same scope",
+                "source_url": "https://www.fssp.org/fr/decret-du-pape-francois-confirmant-lusage-des-livres-liturgiques-de-1962/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -708,7 +1249,28 @@
             "FSSP22"
           ],
           "source_locator": "Courtalain 31 Aug 2021 canonical institute signatories; 2022 FSSP decree",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "COURT21",
+                "passage": "FSSP and ICKSP among Courtalain 2021 signatories, full communion statement",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              },
+              {
+                "source_id": "FSSP22",
+                "passage": "2022 decree particular to FSSP",
+                "source_url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "identified_objection",
@@ -721,7 +1283,28 @@
             "SPL07"
           ],
           "source_locator": "Pagliarani own SSPX July 2021 position, distinguished from Benedict XVI",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "NAMED_PROPONENT_OR_DOCUMENTED_PUBLIC_POSITION",
+            "pinpoints": [
+              {
+                "source_id": "SSPX21",
+                "passage": "Pagliarani French letter 2021 paragraphs on hermeneutics and incompatible ecclesiology",
+                "source_url": "https://sspx.news/fr/publications/lettre-labbe-pagliarani-au-sujet-du-motu-proprio-traditionis-custodes-36239"
+              },
+              {
+                "source_id": "SPL07",
+                "passage": "Benedict's contrary 2007 hermeneutic",
+                "source_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
@@ -735,7 +1318,33 @@
             "SSPX21"
           ],
           "source_locator": "Courtalain response versus SSPX statement; Catholic canonical status distinctions",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "COURT21",
+                "passage": "institutes' loyal unity statement",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              },
+              {
+                "source_id": "FSSP22",
+                "passage": "Papal 2022 particular faculty",
+                "source_url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/"
+              },
+              {
+                "source_id": "SSPX21",
+                "passage": "SSPX own statement",
+                "source_url": "https://sspx.news/fr/publications/lettre-labbe-pagliarani-au-sujet-du-motu-proprio-traditionis-custodes-36239"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -774,7 +1383,28 @@
             "TC21"
           ],
           "source_locator": "CIC 212 on obedience and complaints; TC legal disciplinary decision",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC2",
+                "passage": "canon 212§1 Christian obedience; 212§2–3 petitions/opinion",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "TC21",
+                "passage": "normative papal disciplinary provisions",
+                "source_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "source_based_critical_argument",
@@ -805,13 +1435,39 @@
           ],
           "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
           "source_locator": "Principle concerning divine law and lawfulness; CIC 212 and 1732–1739 recourse",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "EDITORIAL_REASONED_ARGUMENT",
+            "pinpoints": [
+              {
+                "source_id": "CIC2",
+                "passage": "canon 212 does not prescribe obedience to sin",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "CIC1752",
+                "passage": "recourse canons 1732–1739 for singular administrative decrees",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1732-1752_en.html"
+              },
+              {
+                "source_id": "SC63",
+                "passage": "no sin obedience principle is theological inference, not quoted verbatim from this text",
+                "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         },
         {
           "role": "assessment",
           "text": {
-            "en": "Faithful Catholics can seek permissions, request changes, explain concrete pastoral harm, and use lawful avenues of petition or recourse. The Courtalain institutes sought dialogue and their canonical guarantees; this is a documented form of serious criticism without making contempt or rejection of authority a condition of fidelity to Tradition.",
-            "fr": "Les catholiques peuvent demander des permissions, solliciter des changements, exposer un dommage pastoral concret et recourir aux voies légitimes de requête. Les instituts de Courtalain ont demandé le dialogue et le respect de leurs garanties canoniques ; cet exemple atteste qu’une critique sérieuse n’exige ni mépris ni rejet de l’autorité."
+            "en": "Faithful Catholics may request permissions, state pastoral concerns respectfully, and seek reconsideration of concrete administrative decisions. Canons 1732–1739 concern recourse against singular administrative decrees, however; they are not a general appeal that suspends universal papal legislation, and recourse itself is not automatically suspensive. The Courtalain institutes' petition for dialogue exemplifies serious and lawful criticism without contempt for authority, not a right to disregard Traditionis custodes.",
+            "fr": "Les fidèles peuvent solliciter des permissions, exprimer leurs difficultés pastorales avec respect et demander le réexamen de décisions administratives particulières. Les canons 1732 à 1739 concernent toutefois les recours contre les décrets administratifs singuliers : ils ne constituent pas un appel général suspendant une loi pontificale universelle, et un recours n'a pas automatiquement d'effet suspensif. La demande de dialogue des instituts de Courtalain illustre une critique grave et licite, sans mépris de l'autorité, et non un droit d'ignorer Traditionis custodes."
           },
           "source_ids": [
             "CIC2",
@@ -820,7 +1476,46 @@
             "CIC1752"
           ],
           "source_locator": "CIC 212, 1732–1739; Courtalain petition and FSSP particular faculties",
-          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "text_en": "Faithful Catholics can seek permissions, request changes, explain concrete pastoral harm, and use lawful avenues of petition or recourse. The Courtalain institutes sought dialogue and their canonical guarantees; this is a documented form of serious criticism without making contempt or rejection of authority a condition of fidelity to Tradition.",
+              "text_fr": "Les catholiques peuvent demander des permissions, solliciter des changements, exposer un dommage pastoral concret et recourir aux voies légitimes de requête. Les instituts de Courtalain ont demandé le dialogue et le respect de leurs garanties canoniques ; cet exemple atteste qu’une critique sérieuse n’exige ni mépris ni rejet de l’autorité.",
+              "reason": "Distinguish administrative decrees, universal legislation and suspension requirements in canon 1732–1739."
+            }
+          ],
+          "documentary_audit": {
+            "reviewed_on": "2026-10-08",
+            "evidence_kind": "LEGISLATIVE_OR_DOCUMENTARY_ANALYSIS",
+            "pinpoints": [
+              {
+                "source_id": "CIC2",
+                "passage": "canon 212§2–3 petitions",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "CIC1752",
+                "passage": "canons 1732–1739 singular administrative decrees, suspensive effect restricted",
+                "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1732-1752_en.html"
+              },
+              {
+                "source_id": "COURT21",
+                "passage": "request for dialogue in Courtalain communiqué",
+                "source_url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/"
+              },
+              {
+                "source_id": "FSSP22",
+                "passage": "alternative faculties example",
+                "source_url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/"
+              }
+            ],
+            "source_link_scope": "Primary text or named proponent verified for key assertion; legal/historical interpretation remains an editorial synthesis, not an ecclesiastical ruling.",
+            "originality_check": "NO_UNATTRIBUTED_EXTERNAL_QUOTATION",
+            "final_theological_approval": false,
+            "final_french_approval": false,
+            "public_release_allowed": false
+          }
         }
       ],
       "evidence_review": {
@@ -870,6 +1565,36 @@
     "broken_links_removed": 0,
     "human_source_approval": false,
     "human_theological_approval": false,
+    "public_release_allowed": false
+  },
+  "documentary_audit_20261008": {
+    "reviewed_paragraphs": 30,
+    "source_anchors_with_specific_passages": true,
+    "verified_specifics": [
+      "Traditionis custodes arts 1–8",
+      "Francis 2021 accompanying letter",
+      "Responsa ad dubia 2021 (Rituale vs Pontificale)",
+      "2023 rescript two reserved dispensations",
+      "FSSP 2022 decree particular scope",
+      "Courtalain named institute statement",
+      "Pagliarani SSPX public letter",
+      "1983 Canon 838 current amended location",
+      "Canons 1732–1739 versus universal legislation",
+      "Bruni 3 July 2025 partial record and Montagna 1 July 2025 excerpt"
+    ],
+    "corrections_applied": [
+      "TLM067_PARA3_UNCONFIRMED_DOCUMENT_AUTHENTICITY_LANGUAGE",
+      "TLM075_PARA3_SINGULAR_ADMINISTRATIVE_RECOURSE"
+    ],
+    "url_corrected": [
+      "CIC4"
+    ],
+    "open_questions": [
+      "2020 CDF total response archive not publicly released",
+      "Pastoral prudence of 2021 restrictions not proved by document existence",
+      "No independent human-theological approval granted"
+    ],
+    "final_human_approval": false,
     "public_release_allowed": false
   }
 }
