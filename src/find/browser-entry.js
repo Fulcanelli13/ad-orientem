@@ -7,7 +7,7 @@ import {
   projectExploreDataset,
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
-import { mountExploreMap } from "./map-runtime.js";
+import { mapViewport, mountExploreMap } from "./map-runtime.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 
 const VERSION="explore-v1";
@@ -81,6 +81,7 @@ function installStyle(win){
 
 export function createFindOwner(win=globalThis){
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null;
+  let lastMapView=null,lastMapLens=null;
   const state={
     lens:"tlm",
     view:"list",
@@ -149,11 +150,17 @@ export function createFindOwner(win=globalThis){
     node.innerHTML=renderExploreToString(vm);
     node.dataset.open=openState?"true":"false";
     node.dataset.exploreLens=state.lens;
+    if(mapHandle&&state.view==="map"){
+      lastMapView=mapViewport(mapHandle.map);lastMapLens=state.lens;
+    }
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
       try{
-        mapHandle=await mountExploreMap(mapNode,items,{win,onSelect:id=>{state.selectedPlaceId=null;state.selectedId=id;void paint()}});
+        mapHandle=await mountExploreMap(mapNode,items,{
+          win,initialViewport:lastMapLens===state.lens?lastMapView:null,
+          onSelect:id=>{state.selectedPlaceId=null;state.selectedId=id;void paint()},
+        });
       }catch(error){
         const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
         if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
@@ -178,7 +185,8 @@ export function createFindOwner(win=globalThis){
   }
 
   function close(){
-    openState=false;state.selectedId=null;state.selectedPlaceId=null;mapHandle?.destroy?.();mapHandle=null;
+    openState=false;state.selectedId=null;state.selectedPlaceId=null;
+    lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
   }
@@ -187,7 +195,8 @@ export function createFindOwner(win=globalThis){
     if(key==="view")state.view=value==="map"?"map":"list";
     else if(key==="lens"&&EXPLORE_LENSES.includes(value))state.lens=value;
     else if(Object.hasOwn(state,key))state[key]=value;
-    state.selectedId=null;state.selectedPlaceId=null;void paint();
+    state.selectedId=null;state.selectedPlaceId=null;
+    lastMapView=null;lastMapLens=null;void paint();
   }
 
   function onClick(event){
