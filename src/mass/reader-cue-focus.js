@@ -65,7 +65,11 @@ export function activeCueFromScrollContainer(container,options={}){
 export function markActiveCue(container,cueId){
   if(!container?.querySelectorAll)return;
   for(const node of container.querySelectorAll(".ao-reader-paragraph[data-cue-id]")){
-    node.dataset.active=String(Boolean(cueId && node.dataset.cueId===cueId));
+    const next=String(Boolean(cueId && node.dataset.cueId===cueId));
+    // Preserve the existing node state when the cue has not changed. Writing
+    // data-active for every paragraph at each geometry refresh needlessly
+    // invalidates CSS and triggers DOM observers during the LIVE scroll loop.
+    if(node.dataset.active!==next)node.dataset.active=next;
   }
 }
 
