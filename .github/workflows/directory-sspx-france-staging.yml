@@ -1,0 +1,78 @@
+name: SSPX France first-party bulk staging
+
+on:
+  pull_request:
+    paths:
+      - "tools/directory/acquire-sspx-france-lpl.mjs"
+      - "tests/directory-sspx-france-lpl.mjs"
+      - ".github/workflows/directory-sspx-france-staging.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sspx-france-staging-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  official-france-source:
+    if: startsWith(github.head_ref || github.ref_name, 'directory/sspx-france-bulk-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test source distinction
+        run: node tests/directory-sspx-france-lpl.mjs
+      - name: Install browser
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Acquire 11-page official location archive and details
+        id: acquisition
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/lpl-france"
+          node tools/directory/acquire-sspx-france-lpl.mjs --out="$RUNNER_TEMP/lpl-france" \
+            > "$RUNNER_TEMP/lpl-france/acquisition.log" 2>&1 || {
+              cat "$RUNNER_TEMP/lpl-france/acquisition.log"
+              exit 1
+            }
+          cat "$RUNNER_TEMP/lpl-france/sspx-france-acquisition-report.v1.json"
+      - name: Upload full source staging and any diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sspx-france-20261008-first-party-staging
+          path: ${{ runner.temp }}/lpl-france
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Persist nonpublishing staging data on PR branch only
+        if: steps.acquisition.outcome == 'success' && github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          mkdir -p data/directory/research/staging/sspx-france-lpl
+          cp "$RUNNER_TEMP/lpl-france/"*.json data/directory/research/staging/sspx-france-lpl/
+          git config user.name "ao-directory-source-importer"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/directory/research/staging/sspx-france-lpl/
+          if ! git diff --cached --quiet; then
+            git commit -m "Directory: stage complete official SSPX France source crawl [skip ci]"
+            git push origin "HEAD:${{ github.head_ref }}"
+          fi
+      - name: Confirm no production promotion
+        if: steps.acquisition.outcome == 'success'
+        run: |
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const p=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+
+              "/lpl-france/sspx-france-acquisition-report.v1.json","utf8"));
+            if(!p.staging_only||p.publication_eligible_venues!==0)process.exit(1);
+            console.log("PASS: source discovery only; production Find unchanged.");
+          '
