@@ -39,11 +39,16 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   }
 
   async function open(){
+    try{win?.__AO_CI_TRACE?.("pray-owner:enter")}catch{}
     const api=await resolveDonor();
+    try{win?.__AO_CI_TRACE?.("pray-owner:donor-resolved")}catch{}
     if(typeof api?.open!=="function")return false;
+    try{win?.__AO_CI_TRACE?.("pray-owner:donor-open:start")}catch{}
     const opened=api.open("pray.hub",{returnContext:null});
+    try{win?.__AO_CI_TRACE?.("pray-owner:donor-open:done")}catch{}
     if(opened===false)return false;
     stamp(win);
+    try{win?.__AO_CI_TRACE?.("pray-owner:stamp:done")}catch{}
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
     return true;
   }
