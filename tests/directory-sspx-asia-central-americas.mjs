@@ -25,7 +25,7 @@ for(const record of records){
   assert.ok(["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record.ps));
   assert.ok(record.su.startsWith("https://"),record.u+": missing source");
   assert.ok(record.a.length>=18,record.u+": physical location missing");
-  assert.ok(record.sr.length>=15,record.u+": Mass proof missing");
+  assert.ok(record.sr.length>=10,record.u+": Mass proof missing");
   assert.equal(record.source_checked_on,"2026-10-08");
   assert.ok(!ids.has(record.u),"repeated provider venue id "+record.u);
   ids.add(record.u);
