@@ -102,20 +102,29 @@
         "frozenLesson": 33
       },
       {
-        "lemma": "corona",
-        "partOfSpeech": "noun",
+        "lemma": "invicem",
+        "partOfSpeech": "adverb",
         "gloss": {
-          "en": "crown",
-          "fr": "couronne"
+          "en": "mutually / one another",
+          "fr": "mutuellement / l’un l’autre"
         },
         "frozenLesson": 33
       },
       {
-        "lemma": "lapis",
-        "partOfSpeech": "noun",
+        "lemma": "aio",
+        "partOfSpeech": "verb",
         "gloss": {
-          "en": "stone",
-          "fr": "pierre"
+          "en": "say / assert",
+          "fr": "dire / affirmer"
+        },
+        "frozenLesson": 33
+      },
+      {
+        "lemma": "abeo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "go away / depart",
+          "fr": "s’en aller / partir"
         },
         "frozenLesson": 33
       }
@@ -295,6 +304,30 @@
       },
       "trackedLesson": 36,
       "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "corona",
+      "forms": [
+        "corona"
+      ],
+      "gloss": {
+        "en": "crown",
+        "fr": "couronne"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "lapis",
+      "forms": [
+        "lapis"
+      ],
+      "gloss": {
+        "en": "stone",
+        "fr": "pierre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
     }
   ],
   "sources": [
@@ -407,6 +440,30 @@
       "corpusReferenceIds": [
         "corpus-vulgata-clementina-1592"
       ]
+    },
+    {
+      "id": "vulg-lk1-39-abiit-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 1:39",
+      "sourceLatin": "Exsurgens autem Maria in diebus illis, abiit in montana cum festinatione, in civitatem Juda.",
+      "provenanceNote": "Certified Gospel vocabulary: abeo; short authentic Latin excerpt with independent Vulgate witness.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ],
+      "sourceUrl": "https://biblehub.com/vul/luke/1.htm"
+    },
+    {
+      "id": "vulg-lk1-46-ait-l33",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 1:46",
+      "sourceLatin": "Et ait Maria: Magnificat anima mea Dominum.",
+      "provenanceNote": "Certified Gospel vocabulary: aio; short authentic Latin excerpt with independent Vulgate witness.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ],
+      "sourceUrl": "https://biblehub.com/vul/luke/1.htm"
     }
   ],
   "casePanel": {
@@ -572,8 +629,8 @@
       "type": "transfer",
       "title": "These biblical meanings migrate into the liturgy",
       "learnerCopy": {
-        "en": "Once you know the scriptural range of corona, lapis, grex, mandatum or inimicus, later antiphons, propers, saints' texts and devotional prayers become easier because they reuse an inherited semantic world.",
-        "fr": "Une fois connu le champ scripturaire de corona, lapis, grex, mandatum ou inimicus, les antiennes, propres, textes des saints et prières dévotionnelles deviennent plus lisibles parce qu'ils réemploient le même univers sémantique."
+        "en": "Once you know the scriptural range of corona, lapis, grex, mandatum or inimicus, later antiphons, propers, saints' texts and devotional prayers become easier because they reuse an inherited semantic world. In John 13:34, invicem means 'one another'; in Luke 1:39, abiit is a form of abeo ('depart'); and in Luke 1:46, ait belongs to the defective verb aio ('say'). These are tracked because they occur in genuine biblical witnesses; corona and lapis remain reading support, not Core-350 targets.",
+        "fr": "Une fois connu le champ scripturaire de corona, lapis, grex, mandatum ou inimicus, les antiennes, propres, textes des saints et prières dévotionnelles deviennent plus lisibles parce qu'ils réemploient le même univers sémantique. En Jean 13,34, invicem signifie « les uns les autres » ; en Luc 1,39, abiit est une forme de abeo (« partir ») ; et en Luc 1,46, ait relève du verbe défectif aio (« dire »). Ces trois lemmes s'appuient sur les textes bibliques ; corona et lapis restent des aides de lecture."
       },
       "referenceIds": [
         "grammar-nunn-1922",
@@ -765,10 +822,11 @@
         "et",
         "do",
         "tu",
-        "corona",
         "vita"
       ],
-      "supportLemmas": []
+      "supportLemmas": [
+        "corona"
+      ]
     },
     {
       "id": "l33-p10",
@@ -780,7 +838,6 @@
         "fr": "La pierre qu'ont rejetée les bâtisseurs est devenue la pierre d'angle."
       },
       "targetLemmas": [
-        "lapis",
         "qui/quae/quod",
         "hic/haec/hoc",
         "facio",
@@ -790,8 +847,37 @@
         "reprobo",
         "aedifico",
         "angulus",
-        "caput"
+        "caput",
+        "lapis"
       ]
+    },
+    {
+      "id": "l33-p11",
+      "sourceId": "vulg-lk1-39-abiit-l33",
+      "sourceLatin": "Exsurgens autem Maria in diebus illis, abiit in montana cum festinatione, in civitatem Juda.",
+      "instructionalDisplay": "Exsurgens autem Maria in diebus illis, abiit in montana cum festinatione, in civitatem Juda.",
+      "translation": {
+        "en": "Mary arose in those days and went into the hill country with haste, into a city of Juda.",
+        "fr": "En ces jours-là, Marie se leva et se rendit en hâte vers la montagne, dans une ville de Juda."
+      },
+      "targetLemmas": [
+        "abeo"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l33-p12",
+      "sourceId": "vulg-lk1-46-ait-l33",
+      "sourceLatin": "Et ait Maria: Magnificat anima mea Dominum.",
+      "instructionalDisplay": "Et ait Maria: Magnificat anima mea Dominum.",
+      "translation": {
+        "en": "And Mary said: My soul doth magnify the Lord.",
+        "fr": "Et Marie dit : Mon âme glorifie le Seigneur."
+      },
+      "targetLemmas": [
+        "aio"
+      ],
+      "supportLemmas": []
     }
   ],
   "exercises": [
@@ -1258,11 +1344,12 @@
       "generatio",
       "sermo",
       "inimicus",
-      "corona",
-      "lapis"
+      "invicem",
+      "aio",
+      "abeo"
     ],
     "silentIntroductions": [],
-    "authenticSourceCount": 10,
+    "authenticSourceCount": 12,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
     "answersResolved": true,
@@ -1293,5 +1380,19 @@
         "Transférer le vocabulaire de la Vulgate vers la lecture liturgique ultérieure."
       ]
     }
+  },
+  "reconciliation": {
+    "date": "2026-10-08",
+    "source": "data/learn/core-latin-201-350.v1.0.json",
+    "retiredTracked": [
+      "corona",
+      "lapis"
+    ],
+    "promotedTracked": [
+      "invicem",
+      "aio",
+      "abeo"
+    ],
+    "note": "Displaced words are not presented as certified Core; authenticated readings retain their support lexicon."
   }
 }
