@@ -15,6 +15,7 @@ on:
       - ".github/workflows/mass-batch-a.yml"
       - "tests/mass-batch-a-schola-nav.mjs"
       - "tests/mass-visual-acceptance.mjs"
+      - "tests/mass-batch-a-touch.mjs"
   workflow_dispatch:
 
 permissions:
@@ -69,3 +70,16 @@ jobs:
           path: artifacts/visual-acceptance
           if-no-files-found: warn
 
+
+  real-touch-guide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Guide open and close via real mobile touch events
+        run: timeout --signal=TERM --kill-after=5s 75s node tests/mass-batch-a-touch.mjs
