@@ -527,7 +527,7 @@
   },
   "traditional_mass_objections_001_075": {
     "file": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-    "status": "50_RECONCILED_74_TLM_026_050_CITATIONS_COLLATED_7_BLOCKED_UNPUBLISHED",
+    "status": "50_RECONCILED_25_TLM_026_050_BILINGUAL_DRAFTS_7_CORRECTIONS_RECORDED_UNPUBLISHED",
     "prior_draft_exists_but_not_recovered": "TLM001-TLM025",
     "source_exact_English": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
     "source_linked_summary": "data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
@@ -535,33 +535,21 @@
     "canonical_ownership": "Existing CR (81) dossiers, no new canonical/navigation dossiers; search or browse surface links only",
     "editorial_blockers": [
       "Exact TLM001–025 recovery",
-      "TLM026–050: all 74 citations collated with hyperlink evidence; 37 text anchored, 30 interpretive, 7 blocked for explicit corrections; still not approved for publication",
+      "TLM026–050: 74 source-linked paragraphs; seven originally unsupported claims corrected with historical revision records; 30 interpretive assessments still require independent editorial approval.",
       "Eight unattributed rebuttal prompts require evidence of identifiable proponents or restatement as editorial follow-up questions",
-      "TLM026–050 English-only and TLM051–065 titles-only French parity; all user-facing paragraphs require vetted translation",
+      "TLM026–050 French parity complete as 82 draft paragraphs (including eight hypothetical follow-up prompts); translation requires native theological editorial review.",
       "TLM051–065 are normalized summaries, not original full draft",
       "UI/index projection and runtime tests not yet published"
     ],
     "test": "tests/traditional-mass-objections-reconciliation.mjs",
     "citation_audit": {
       "source_file": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
-      "status": "74_SOURCE_RECORDS_COLLATED_NOT_PUBLICATION_APPROVED",
-      "direct_text_anchored": 37,
-      "sourced_interpretive": 30,
-      "blocked_for_correction": 7,
-      "blocked_placeholder_indices": [
-        9,
-        16,
-        27,
-        30,
-        38,
-        41,
-        65
-      ],
-      "unattributed_followup_challenges": 8,
-      "review_date": "2026-10-08",
-      "source_count": 30,
-      "original_wording_preserved": true,
-      "gate": "Every blocked claim must be corrected and its replacement reviewed before publication; 30 argumentative syntheses require editorial assent."
+      "status": "FRENCH_DRAFT_COMPLETE_7_CORRECTED_30_INTERPRETIVE_EDITORIAL_APPROVAL_PENDING",
+      "claim_count": 74,
+      "corrected": 7,
+      "interpretive_reviewed": 30,
+      "paragraphs_translated_to_french": 82,
+      "ready_for_publication": false
     }
   }
 }
