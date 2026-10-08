@@ -12,9 +12,9 @@ const states=new Map();
 assert.equal(corpus.records.length,254);
 assert.equal(sourceSlugs.size,254);
 assert.equal(first.records.length,89);
-assert.equal(second.records.length,29);
+assert.equal(second.records.length,30);
 assert.equal(matrix.remaining_source_entries_before_review,165);
-assert.equal(matrix.new_public_mass_venues,29);
+assert.equal(matrix.new_public_mass_venues,30);
 assert.equal(matrix.entries.length,165);
 for(const p of matrix.entries){
   assert.ok(sourceSlugs.has(p.slug),"review matrix invents a source row");
@@ -36,17 +36,17 @@ for(const p of second.records){
   assert.equal(states.get(p.source_profile_slug),p.ps);
   assert.ok(/\b\d{5}\b/.test(p.a));
 }
-assert.equal(new Set(second.records.map(p=>p.u)).size,29);
+assert.equal(new Set(second.records.map(p=>p.u)).size,30);
 assert.equal(firstSlugs.size+states.size,sourceSlugs.size);
 const tally={};
 for(const p of matrix.entries)tally[p.state]=(tally[p.state]||0)+1;
 assert.deepEqual(tally,matrix.states);
-assert.equal(tally.CURRENT_PUBLIC_MASS,25);
+assert.equal(tally.CURRENT_PUBLIC_MASS,26);
 assert.equal(tally.CONDITIONAL_MASS,4);
 assert.equal(tally.DUPLICATE_SOURCE_ROW,8);
 assert.equal(tally.INSTITUTION_ONLY,53);
-assert.equal(tally.PENDING_CURRENT_EVIDENCE,71);
+assert.equal(tally.PENDING_CURRENT_EVIDENCE,70);
 assert.equal(tally.PROVIDER_HOUSE_ONLY,4);
 assert.equal(second.records.some(p=>p.source_profile_slug==="fort-de-france/guyane"),false);
 assert.equal(second.records.some(p=>p.n.startsWith("École")),false);
-console.log("SSPX France 165-case adjudication ledger: PASS (29 promoted; 136 held)");
+console.log("SSPX France 165-case adjudication ledger: PASS (30 promoted; 135 held)");
