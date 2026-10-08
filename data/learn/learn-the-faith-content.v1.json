@@ -1,13 +1,13 @@
 {
   "schema": "ao-learn-the-faith-content-v1",
   "version": "1.0.0",
-  "status": "DRAFT_SOURCE_MAPPED_NOT_PUBLISHED",
+  "status": "FULL_54_LESSON_DRAFT_SOURCE_MAPPED_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "curriculum": "data/learn/learn-the-faith-curriculum.v1.json",
   "batches": {
     "batch1": "LTF-001–LTF-018",
     "batch2": "LTF-019–LTF-036",
-    "batch3": "PENDING"
+    "batch3": "LTF-037–LTF-054"
   },
   "lessons": [
     {
@@ -2520,6 +2520,1297 @@
         }
       ],
       "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-037",
+      "title": {
+        "en": "Virtue and vice",
+        "fr": "Vertu et vice"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q227",
+        "PX1912-Q228",
+        "PX1912-Q229",
+        "PX1912-Q230",
+        "PX1912-Q252",
+        "PX1912-Q253",
+        "PX1912-Q254",
+        "PX1912-Q255",
+        "PX1912-Q256",
+        "PX1912-Q257",
+        "PX1912-Q258",
+        "PX1912-Q259",
+        "PX1912-Q260",
+        "PX1912-Q261",
+        "PX1912-Q262",
+        "PX1912-Q263"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-037-C01",
+          "text": {
+            "en": "Virtue is a stable disposition toward the good; vice is a stable disposition toward evil.",
+            "fr": "La vertu est une disposition stable au bien ; le vice est une disposition stable au mal."
+          },
+          "catechismRefs": [
+            "PX1912-Q227",
+            "PX1912-Q228",
+            "PX1912-Q229",
+            "PX1912-Q230",
+            "PX1912-Q252",
+            "PX1912-Q253",
+            "PX1912-Q254",
+            "PX1912-Q255",
+            "PX1912-Q256",
+            "PX1912-Q257",
+            "PX1912-Q258",
+            "PX1912-Q259",
+            "PX1912-Q260",
+            "PX1912-Q261",
+            "PX1912-Q262",
+            "PX1912-Q263"
+          ]
+        },
+        {
+          "id": "LTF-037-C02",
+          "text": {
+            "en": "Christian growth therefore requires not only avoiding isolated sins but forming habits that make good action more prompt, firm and joyful.",
+            "fr": "La croissance chrétienne exige donc non seulement d’éviter des péchés isolés, mais aussi de former des habitudes qui rendent l’action bonne plus prompte, ferme et joyeuse."
+          },
+          "catechismRefs": [
+            "PX1912-Q227",
+            "PX1912-Q228",
+            "PX1912-Q229",
+            "PX1912-Q230",
+            "PX1912-Q252",
+            "PX1912-Q253",
+            "PX1912-Q254",
+            "PX1912-Q255",
+            "PX1912-Q256",
+            "PX1912-Q257",
+            "PX1912-Q258",
+            "PX1912-Q259",
+            "PX1912-Q260",
+            "PX1912-Q261",
+            "PX1912-Q262",
+            "PX1912-Q263"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-038",
+      "title": {
+        "en": "The theological virtues",
+        "fr": "Les vertus théologales"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q229",
+        "PX1912-Q230",
+        "PX1912-Q231",
+        "PX1912-Q232",
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235",
+        "PX1912-Q236",
+        "PX1912-Q237",
+        "PX1912-Q238",
+        "PX1912-Q239",
+        "PX1912-Q240",
+        "PX1912-Q241",
+        "PX1912-Q242",
+        "PX1912-Q243",
+        "PX1912-Q244",
+        "PX1912-Q245",
+        "PX1912-Q246",
+        "PX1912-Q247",
+        "PX1912-Q248",
+        "PX1912-Q249"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-038-C01",
+          "text": {
+            "en": "Faith, hope and charity are the theological virtues because they have God directly as their object and are infused by Him.",
+            "fr": "La foi, l’espérance et la charité sont les vertus théologales parce qu’elles ont Dieu directement pour objet et qu’elles sont infusées par Lui."
+          },
+          "catechismRefs": [
+            "PX1912-Q229",
+            "PX1912-Q230",
+            "PX1912-Q231",
+            "PX1912-Q232",
+            "PX1912-Q233",
+            "PX1912-Q234",
+            "PX1912-Q235",
+            "PX1912-Q236",
+            "PX1912-Q237",
+            "PX1912-Q238",
+            "PX1912-Q239",
+            "PX1912-Q240",
+            "PX1912-Q241",
+            "PX1912-Q242",
+            "PX1912-Q243",
+            "PX1912-Q244",
+            "PX1912-Q245",
+            "PX1912-Q246",
+            "PX1912-Q247",
+            "PX1912-Q248",
+            "PX1912-Q249"
+          ]
+        },
+        {
+          "id": "LTF-038-C02",
+          "text": {
+            "en": "Charity is the greatest of them because it unites the soul to God by love and orders love of neighbor for God’s sake.",
+            "fr": "La charité est la plus grande d’entre elles parce qu’elle unit l’âme à Dieu par l’amour et ordonne l’amour du prochain pour l’amour de Dieu."
+          },
+          "catechismRefs": [
+            "PX1912-Q229",
+            "PX1912-Q230",
+            "PX1912-Q231",
+            "PX1912-Q232",
+            "PX1912-Q233",
+            "PX1912-Q234",
+            "PX1912-Q235",
+            "PX1912-Q236",
+            "PX1912-Q237",
+            "PX1912-Q238",
+            "PX1912-Q239",
+            "PX1912-Q240",
+            "PX1912-Q241",
+            "PX1912-Q242",
+            "PX1912-Q243",
+            "PX1912-Q244",
+            "PX1912-Q245",
+            "PX1912-Q246",
+            "PX1912-Q247",
+            "PX1912-Q248",
+            "PX1912-Q249"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-039",
+      "title": {
+        "en": "The cardinal virtues",
+        "fr": "Les vertus cardinales"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q252",
+        "PX1912-Q253",
+        "PX1912-Q254",
+        "PX1912-Q255",
+        "PX1912-Q256",
+        "PX1912-Q257",
+        "PX1912-Q258"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-039-C01",
+          "text": {
+            "en": "Prudence, justice, fortitude and temperance are called cardinal virtues because the moral life turns around them as principal habits.",
+            "fr": "La prudence, la justice, la force et la tempérance sont dites vertus cardinales parce que la vie morale s’articule autour d’elles comme habitudes principales."
+          },
+          "catechismRefs": [
+            "PX1912-Q252",
+            "PX1912-Q253",
+            "PX1912-Q254",
+            "PX1912-Q255",
+            "PX1912-Q256",
+            "PX1912-Q257",
+            "PX1912-Q258"
+          ]
+        },
+        {
+          "id": "LTF-039-C02",
+          "text": {
+            "en": "They govern right judgment, giving what is due, perseverance amid difficulty and moderation of the passions.",
+            "fr": "Elles gouvernent le jugement droit, le fait de rendre à chacun ce qui lui est dû, la persévérance dans la difficulté et la modération des passions."
+          },
+          "catechismRefs": [
+            "PX1912-Q252",
+            "PX1912-Q253",
+            "PX1912-Q254",
+            "PX1912-Q255",
+            "PX1912-Q256",
+            "PX1912-Q257",
+            "PX1912-Q258"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-040",
+      "title": {
+        "en": "The First, Second and Third Commandments",
+        "fr": "Les trois premiers Commandements"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q169",
+        "PX1912-Q170",
+        "PX1912-Q171",
+        "PX1912-Q172",
+        "PX1912-Q173",
+        "PX1912-Q174",
+        "PX1912-Q175",
+        "PX1912-Q176",
+        "PX1912-Q177",
+        "PX1912-Q178",
+        "PX1912-Q179",
+        "PX1912-Q180",
+        "PX1912-Q181",
+        "PX1912-Q182",
+        "PX1912-Q183",
+        "PX1912-Q184",
+        "PX1912-Q185",
+        "PX1912-Q186",
+        "PX1912-Q187",
+        "PX1912-Q188",
+        "PX1912-Q189"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-040-C01",
+          "text": {
+            "en": "The first three commandments order man directly toward God through faith, worship, reverence for His name and sanctification of the Lord’s day.",
+            "fr": "Les trois premiers commandements ordonnent directement l’homme vers Dieu par la foi, le culte, le respect de son Nom et la sanctification du jour du Seigneur."
+          },
+          "catechismRefs": [
+            "PX1912-Q169",
+            "PX1912-Q170",
+            "PX1912-Q171",
+            "PX1912-Q172",
+            "PX1912-Q173",
+            "PX1912-Q174",
+            "PX1912-Q175",
+            "PX1912-Q176",
+            "PX1912-Q177",
+            "PX1912-Q178",
+            "PX1912-Q179",
+            "PX1912-Q180",
+            "PX1912-Q181",
+            "PX1912-Q182",
+            "PX1912-Q183",
+            "PX1912-Q184",
+            "PX1912-Q185",
+            "PX1912-Q186",
+            "PX1912-Q187",
+            "PX1912-Q188",
+            "PX1912-Q189"
+          ]
+        },
+        {
+          "id": "LTF-040-C02",
+          "text": {
+            "en": "External worship is necessary because man is body and soul: inward devotion should be expressed through fitting outward acts.",
+            "fr": "Le culte extérieur est nécessaire parce que l’homme est corps et âme : la dévotion intérieure doit s’exprimer par des actes extérieurs convenables."
+          },
+          "catechismRefs": [
+            "PX1912-Q169",
+            "PX1912-Q170",
+            "PX1912-Q171",
+            "PX1912-Q172",
+            "PX1912-Q173",
+            "PX1912-Q174",
+            "PX1912-Q175",
+            "PX1912-Q176",
+            "PX1912-Q177",
+            "PX1912-Q178",
+            "PX1912-Q179",
+            "PX1912-Q180",
+            "PX1912-Q181",
+            "PX1912-Q182",
+            "PX1912-Q183",
+            "PX1912-Q184",
+            "PX1912-Q185",
+            "PX1912-Q186",
+            "PX1912-Q187",
+            "PX1912-Q188",
+            "PX1912-Q189"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-041",
+      "title": {
+        "en": "The Fourth and Fifth Commandments",
+        "fr": "Les quatrième et cinquième Commandements"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q190",
+        "PX1912-Q191",
+        "PX1912-Q192",
+        "PX1912-Q193",
+        "PX1912-Q194",
+        "PX1912-Q195",
+        "PX1912-Q196",
+        "PX1912-Q197",
+        "PX1912-Q198",
+        "PX1912-Q199",
+        "PX1912-Q200"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-041-C01",
+          "text": {
+            "en": "The fourth commandment governs duties toward parents and legitimate authority; the fifth protects human life and rejects unjust harm.",
+            "fr": "Le quatrième commandement règle les devoirs envers les parents et l’autorité légitime ; le cinquième protège la vie humaine et rejette tout dommage injuste."
+          },
+          "catechismRefs": [
+            "PX1912-Q190",
+            "PX1912-Q191",
+            "PX1912-Q192",
+            "PX1912-Q193",
+            "PX1912-Q194",
+            "PX1912-Q195",
+            "PX1912-Q196",
+            "PX1912-Q197",
+            "PX1912-Q198",
+            "PX1912-Q199",
+            "PX1912-Q200"
+          ]
+        },
+        {
+          "id": "LTF-041-C02",
+          "text": {
+            "en": "Authority is obeyed because it participates in an order willed by God, while charity also forbids hatred, scandal and unjust injury to others.",
+            "fr": "On obéit à l’autorité parce qu’elle participe à un ordre voulu par Dieu, tandis que la charité interdit aussi la haine, le scandale et tout préjudice injuste envers autrui."
+          },
+          "catechismRefs": [
+            "PX1912-Q190",
+            "PX1912-Q191",
+            "PX1912-Q192",
+            "PX1912-Q193",
+            "PX1912-Q194",
+            "PX1912-Q195",
+            "PX1912-Q196",
+            "PX1912-Q197",
+            "PX1912-Q198",
+            "PX1912-Q199",
+            "PX1912-Q200"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-042",
+      "title": {
+        "en": "The Sixth and Ninth Commandments",
+        "fr": "Les sixième et neuvième Commandements"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q201",
+        "PX1912-Q202",
+        "PX1912-Q209",
+        "PX1912-Q210"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-042-C01",
+          "text": {
+            "en": "The sixth and ninth commandments govern sexual acts and desires according to chastity and purity.",
+            "fr": "Les sixième et neuvième commandements règlent les actes et les désirs sexuels selon la chasteté et la pureté."
+          },
+          "catechismRefs": [
+            "PX1912-Q201",
+            "PX1912-Q202",
+            "PX1912-Q209",
+            "PX1912-Q210"
+          ]
+        },
+        {
+          "id": "LTF-042-C02",
+          "text": {
+            "en": "The doctrinal lesson teaches the commandments themselves; concrete questions about particular sexual acts and relationships belong to Sexual Ethics.",
+            "fr": "La leçon doctrinale enseigne les commandements eux-mêmes ; les questions concrètes sur des actes sexuels particuliers et les relations relèvent de la Morale sexuelle."
+          },
+          "catechismRefs": [
+            "PX1912-Q201",
+            "PX1912-Q202",
+            "PX1912-Q209",
+            "PX1912-Q210"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-043",
+      "title": {
+        "en": "The Seventh and Tenth Commandments",
+        "fr": "Les septième et dixième Commandements"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q203",
+        "PX1912-Q204",
+        "PX1912-Q205",
+        "PX1912-Q211",
+        "PX1912-Q212"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-043-C01",
+          "text": {
+            "en": "The seventh and tenth commandments protect justice in property and restrain unjust desire for another’s goods.",
+            "fr": "Les septième et dixième commandements protègent la justice concernant les biens et répriment le désir injuste des biens d’autrui."
+          },
+          "catechismRefs": [
+            "PX1912-Q203",
+            "PX1912-Q204",
+            "PX1912-Q205",
+            "PX1912-Q211",
+            "PX1912-Q212"
+          ]
+        },
+        {
+          "id": "LTF-043-C02",
+          "text": {
+            "en": "Justice can require restitution or repair when another person has been deprived of what is due to him.",
+            "fr": "La justice peut exiger restitution ou réparation lorsqu’une personne a été privée de ce qui lui est dû."
+          },
+          "catechismRefs": [
+            "PX1912-Q203",
+            "PX1912-Q204",
+            "PX1912-Q205",
+            "PX1912-Q211",
+            "PX1912-Q212"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-044",
+      "title": {
+        "en": "The Eighth Commandment",
+        "fr": "Le huitième Commandement"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q206",
+        "PX1912-Q207",
+        "PX1912-Q208"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-044-C01",
+          "text": {
+            "en": "The eighth commandment forbids lying, false witness, calumny and unjust injury to another person’s reputation.",
+            "fr": "Le huitième commandement interdit le mensonge, le faux témoignage, la calomnie et l’atteinte injuste à la réputation d’autrui."
+          },
+          "catechismRefs": [
+            "PX1912-Q206",
+            "PX1912-Q207",
+            "PX1912-Q208"
+          ]
+        },
+        {
+          "id": "LTF-044-C02",
+          "text": {
+            "en": "Truth and justice may require reparation when false accusation or detraction has damaged another’s good name.",
+            "fr": "La vérité et la justice peuvent exiger réparation lorsqu’une fausse accusation ou la médisance a porté atteinte à la réputation d’autrui."
+          },
+          "catechismRefs": [
+            "PX1912-Q206",
+            "PX1912-Q207",
+            "PX1912-Q208"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-045",
+      "title": {
+        "en": "Scandal, cooperation and occasions of sin",
+        "fr": "Scandale, coopération et occasions de péché"
+      },
+      "catechismCoverage": "PARTIAL",
+      "catechismRefs": [
+        "PX1912-Q198",
+        "PX1912-Q199",
+        "PX1912-Q370",
+        "PX1912-Q371"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
+      ],
+      "claims": [
+        {
+          "id": "LTF-045-C01",
+          "text": {
+            "en": "Scandal is conduct that leads another person toward sin, and deliberately causing grave scandal can itself be gravely sinful.",
+            "fr": "Le scandale est une conduite qui pousse une autre personne vers le péché, et provoquer délibérément un scandale grave peut être en soi gravement pécheur."
+          },
+          "catechismRefs": [
+            "PX1912-Q198",
+            "PX1912-Q199",
+            "PX1912-Q370",
+            "PX1912-Q371"
+          ]
+        },
+        {
+          "id": "LTF-045-C02",
+          "text": {
+            "en": "The Catechism also requires flight from proximate occasions of sin; a full treatment of cooperation with another person’s evil act needs deeper moral-theology sources.",
+            "fr": "Le Catéchisme exige aussi de fuir les occasions prochaines de péché ; un traitement complet de la coopération à l’acte mauvais d’autrui exige des sources plus approfondies de théologie morale."
+          },
+          "catechismRefs": [
+            "PX1912-Q198",
+            "PX1912-Q199",
+            "PX1912-Q370",
+            "PX1912-Q371"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-046",
+      "title": {
+        "en": "What prayer is",
+        "fr": "Ce qu’est la prière"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q414",
+        "PX1912-Q415",
+        "PX1912-Q416",
+        "PX1912-Q417",
+        "PX1912-Q418",
+        "PX1912-Q419",
+        "PX1912-Q420",
+        "PX1912-Q421",
+        "PX1912-Q422",
+        "PX1912-Q423"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-046-C01",
+          "text": {
+            "en": "Prayer is the raising of the mind and heart to God in adoration, thanksgiving, petition and sorrow for sin.",
+            "fr": "La prière est l’élévation de l’esprit et du cœur vers Dieu dans l’adoration, l’action de grâces, la demande et la douleur du péché."
+          },
+          "catechismRefs": [
+            "PX1912-Q414",
+            "PX1912-Q415",
+            "PX1912-Q416",
+            "PX1912-Q417",
+            "PX1912-Q418",
+            "PX1912-Q419",
+            "PX1912-Q420",
+            "PX1912-Q421",
+            "PX1912-Q422",
+            "PX1912-Q423"
+          ]
+        },
+        {
+          "id": "LTF-046-C02",
+          "text": {
+            "en": "Prayer must be persevering, humble and trusting, while remaining subject to God’s wisdom and will.",
+            "fr": "La prière doit être persévérante, humble et confiante, tout en demeurant soumise à la sagesse et à la volonté de Dieu."
+          },
+          "catechismRefs": [
+            "PX1912-Q414",
+            "PX1912-Q415",
+            "PX1912-Q416",
+            "PX1912-Q417",
+            "PX1912-Q418",
+            "PX1912-Q419",
+            "PX1912-Q420",
+            "PX1912-Q421",
+            "PX1912-Q422",
+            "PX1912-Q423"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-047",
+      "title": {
+        "en": "The Our Father",
+        "fr": "Le Notre Père"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q424",
+        "PX1912-Q425",
+        "PX1912-Q426",
+        "PX1912-Q427",
+        "PX1912-Q428"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-047-C01",
+          "text": {
+            "en": "The Our Father is the prayer taught by Christ and contains in ordered form the principal goods Christians should ask from God.",
+            "fr": "Le Notre Père est la prière enseignée par le Christ et contient de manière ordonnée les principaux biens que les chrétiens doivent demander à Dieu."
+          },
+          "catechismRefs": [
+            "PX1912-Q424",
+            "PX1912-Q425",
+            "PX1912-Q426",
+            "PX1912-Q427",
+            "PX1912-Q428"
+          ]
+        },
+        {
+          "id": "LTF-047-C02",
+          "text": {
+            "en": "Calling God ‘Our Father’ expresses both filial confidence in God and fraternal charity toward those for whom we pray.",
+            "fr": "Appeler Dieu « Notre Père » exprime à la fois la confiance filiale envers Dieu et la charité fraternelle envers ceux pour qui nous prions."
+          },
+          "catechismRefs": [
+            "PX1912-Q424",
+            "PX1912-Q425",
+            "PX1912-Q426",
+            "PX1912-Q427",
+            "PX1912-Q428"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-048",
+      "title": {
+        "en": "The Hail Mary and Marian prayer",
+        "fr": "L’Ave Maria et la prière mariale"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q429",
+        "PX1912-Q430",
+        "PX1912-Q431",
+        "PX1912-Q432",
+        "PX1912-Q433"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-048-C01",
+          "text": {
+            "en": "The Hail Mary joins praise of the Blessed Virgin with a petition for her intercession now and at the hour of death.",
+            "fr": "L’Ave Maria unit la louange de la Très Sainte Vierge à une demande de son intercession maintenant et à l’heure de notre mort."
+          },
+          "catechismRefs": [
+            "PX1912-Q429",
+            "PX1912-Q430",
+            "PX1912-Q431",
+            "PX1912-Q432",
+            "PX1912-Q433"
+          ]
+        },
+        {
+          "id": "LTF-048-C02",
+          "text": {
+            "en": "Marian prayer does not compete with Christ’s mediation; the saints intercede only through the grace and merits of Christ.",
+            "fr": "La prière mariale ne concurrence pas la médiation du Christ ; les saints n’intercèdent que par la grâce et les mérites du Christ."
+          },
+          "catechismRefs": [
+            "PX1912-Q429",
+            "PX1912-Q430",
+            "PX1912-Q431",
+            "PX1912-Q432",
+            "PX1912-Q433"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-049",
+      "title": {
+        "en": "The Blessed Virgin Mary",
+        "fr": "La Très Sainte Vierge Marie"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q082",
+        "PX1912-Q083",
+        "PX1912-Q138",
+        "PX1912-Q429",
+        "PX1912-Q430",
+        "PX1912-Q431",
+        "PX1912-Q432",
+        "PX1912-Q433"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-049-C01",
+          "text": {
+            "en": "Mary is the Mother of Jesus Christ, true God and true man, and by a singular grace was preserved from original sin.",
+            "fr": "Marie est la Mère de Jésus-Christ, vrai Dieu et vrai homme, et par une grâce singulière elle a été préservée du péché originel."
+          },
+          "catechismRefs": [
+            "PX1912-Q082",
+            "PX1912-Q083",
+            "PX1912-Q138",
+            "PX1912-Q429",
+            "PX1912-Q430",
+            "PX1912-Q431",
+            "PX1912-Q432",
+            "PX1912-Q433"
+          ]
+        },
+        {
+          "id": "LTF-049-C02",
+          "text": {
+            "en": "Catholic devotion to Mary flows from her unique relation to Christ and her place in the Communion of Saints, while all grace remains ultimately from God.",
+            "fr": "La dévotion catholique envers Marie découle de sa relation unique au Christ et de sa place dans la Communion des saints, tandis que toute grâce vient ultimement de Dieu."
+          },
+          "catechismRefs": [
+            "PX1912-Q082",
+            "PX1912-Q083",
+            "PX1912-Q138",
+            "PX1912-Q429",
+            "PX1912-Q430",
+            "PX1912-Q431",
+            "PX1912-Q432",
+            "PX1912-Q433"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-050",
+      "title": {
+        "en": "The saints, relics and sacred images",
+        "fr": "Les saints, les reliques et les images sacrées"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q174",
+        "PX1912-Q175",
+        "PX1912-Q176",
+        "PX1912-Q177",
+        "PX1912-Q178",
+        "PX1912-Q122",
+        "PX1912-Q123",
+        "PX1912-Q429",
+        "PX1912-Q430"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-050-C01",
+          "text": {
+            "en": "Catholics venerate the saints because God has glorified them and because they remain united with the Church in the Communion of Saints.",
+            "fr": "Les catholiques vénèrent les saints parce que Dieu les a glorifiés et parce qu’ils demeurent unis à l’Église dans la Communion des saints."
+          },
+          "catechismRefs": [
+            "PX1912-Q174",
+            "PX1912-Q175",
+            "PX1912-Q176",
+            "PX1912-Q177",
+            "PX1912-Q178",
+            "PX1912-Q122",
+            "PX1912-Q123",
+            "PX1912-Q429",
+            "PX1912-Q430"
+          ]
+        },
+        {
+          "id": "LTF-050-C02",
+          "text": {
+            "en": "Relics and sacred images are honored relatively, not adored as gods; the honor passes to the persons represented or whose remains are venerated.",
+            "fr": "Les reliques et les images sacrées reçoivent un honneur relatif, non l’adoration due à Dieu ; l’honneur se rapporte aux personnes représentées ou dont les restes sont vénérés."
+          },
+          "catechismRefs": [
+            "PX1912-Q174",
+            "PX1912-Q175",
+            "PX1912-Q176",
+            "PX1912-Q177",
+            "PX1912-Q178",
+            "PX1912-Q122",
+            "PX1912-Q123",
+            "PX1912-Q429",
+            "PX1912-Q430"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-051",
+      "title": {
+        "en": "Sacramentals and blessings",
+        "fr": "Sacramentaux et bénédictions"
+      },
+      "catechismCoverage": "PARTIAL",
+      "catechismRefs": [
+        "PX1912-Q176",
+        "PX1912-Q177",
+        "PX1912-Q183"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
+      ],
+      "claims": [
+        {
+          "id": "LTF-051-C01",
+          "text": {
+            "en": "Sacred objects, blessings and other sacramentals dispose Christians to receive grace and sanctify circumstances of ordinary life through the prayer of the Church.",
+            "fr": "Les objets sacrés, les bénédictions et les autres sacramentaux disposent les chrétiens à recevoir la grâce et sanctifient les circonstances de la vie ordinaire par la prière de l’Église."
+          },
+          "catechismRefs": [
+            "PX1912-Q176",
+            "PX1912-Q177",
+            "PX1912-Q183"
+          ]
+        },
+        {
+          "id": "LTF-051-C02",
+          "text": {
+            "en": "The short Catechism offers only partial material here, so the published lesson must distinguish sacramentals clearly from the seven sacraments and use deeper liturgical/catechetical sources.",
+            "fr": "Le Petit Catéchisme n’offre ici qu’un matériau partiel ; la leçon publiée devra donc distinguer clairement les sacramentaux des sept sacrements et utiliser des sources liturgiques et catéchétiques plus approfondies."
+          },
+          "catechismRefs": [
+            "PX1912-Q176",
+            "PX1912-Q177",
+            "PX1912-Q183"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-052",
+      "title": {
+        "en": "The liturgical year",
+        "fr": "L’année liturgique"
+      },
+      "catechismCoverage": "PARTIAL",
+      "catechismRefs": [
+        "PX1912-Q184",
+        "PX1912-Q185",
+        "PX1912-Q186",
+        "PX1912-Q187",
+        "PX1912-Q188",
+        "PX1912-Q189",
+        "PX1912-Q213",
+        "PX1912-Q214",
+        "PX1912-Q215",
+        "PX1912-Q216",
+        "PX1912-Q217",
+        "PX1912-Q218",
+        "PX1912-Q219",
+        "PX1912-Q220",
+        "PX1912-Q221",
+        "PX1912-Q222",
+        "PX1912-Q223",
+        "PX1912-Q224",
+        "PX1912-Q225",
+        "PX1912-Q226"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED",
+        "ROMAN-CATECHISM",
+        "SPIRAGO-1899"
+      ],
+      "claims": [
+        {
+          "id": "LTF-052-C01",
+          "text": {
+            "en": "The Church sanctifies time through Sundays, feasts, fasts and seasons that order Christian life around the mysteries of Christ and the saints.",
+            "fr": "L’Église sanctifie le temps par les dimanches, les fêtes, les jeûnes et les temps liturgiques qui ordonnent la vie chrétienne autour des mystères du Christ et des saints."
+          },
+          "catechismRefs": [
+            "PX1912-Q184",
+            "PX1912-Q185",
+            "PX1912-Q186",
+            "PX1912-Q187",
+            "PX1912-Q188",
+            "PX1912-Q189",
+            "PX1912-Q213",
+            "PX1912-Q214",
+            "PX1912-Q215",
+            "PX1912-Q216",
+            "PX1912-Q217",
+            "PX1912-Q218",
+            "PX1912-Q219",
+            "PX1912-Q220",
+            "PX1912-Q221",
+            "PX1912-Q222",
+            "PX1912-Q223",
+            "PX1912-Q224",
+            "PX1912-Q225",
+            "PX1912-Q226"
+          ]
+        },
+        {
+          "id": "LTF-052-C02",
+          "text": {
+            "en": "The 1912 Catechism directly teaches feast-day duties and ecclesiastical precepts but not a complete theology of the liturgical year, so fuller liturgical sources are required.",
+            "fr": "Le Catéchisme de 1912 enseigne directement les devoirs des jours de fête et les préceptes ecclésiastiques, mais non une théologie complète de l’année liturgique ; des sources liturgiques plus complètes sont donc nécessaires."
+          },
+          "catechismRefs": [
+            "PX1912-Q184",
+            "PX1912-Q185",
+            "PX1912-Q186",
+            "PX1912-Q187",
+            "PX1912-Q188",
+            "PX1912-Q189",
+            "PX1912-Q213",
+            "PX1912-Q214",
+            "PX1912-Q215",
+            "PX1912-Q216",
+            "PX1912-Q217",
+            "PX1912-Q218",
+            "PX1912-Q219",
+            "PX1912-Q220",
+            "PX1912-Q221",
+            "PX1912-Q222",
+            "PX1912-Q223",
+            "PX1912-Q224",
+            "PX1912-Q225",
+            "PX1912-Q226"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-053",
+      "title": {
+        "en": "Growth in holiness and perseverance",
+        "fr": "Croissance dans la sainteté et persévérance"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q015",
+        "PX1912-Q027",
+        "PX1912-Q277",
+        "PX1912-Q227",
+        "PX1912-Q228",
+        "PX1912-Q229",
+        "PX1912-Q230",
+        "PX1912-Q231",
+        "PX1912-Q232",
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235",
+        "PX1912-Q236",
+        "PX1912-Q237",
+        "PX1912-Q238",
+        "PX1912-Q239",
+        "PX1912-Q240",
+        "PX1912-Q241",
+        "PX1912-Q242",
+        "PX1912-Q243",
+        "PX1912-Q244",
+        "PX1912-Q245",
+        "PX1912-Q246",
+        "PX1912-Q247",
+        "PX1912-Q248",
+        "PX1912-Q249",
+        "PX1912-Q250",
+        "PX1912-Q251",
+        "PX1912-Q252",
+        "PX1912-Q253",
+        "PX1912-Q254",
+        "PX1912-Q255",
+        "PX1912-Q256",
+        "PX1912-Q257",
+        "PX1912-Q258",
+        "PX1912-Q259",
+        "PX1912-Q260",
+        "PX1912-Q261",
+        "PX1912-Q262",
+        "PX1912-Q263",
+        "PX1912-Q264",
+        "PX1912-Q265",
+        "PX1912-Q266"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-053-C01",
+          "text": {
+            "en": "Growth in holiness requires grace, the virtues, prayer, the sacraments and persevering cooperation with God in ordinary duties.",
+            "fr": "La croissance dans la sainteté exige la grâce, les vertus, la prière, les sacrements et une coopération persévérante avec Dieu dans les devoirs ordinaires."
+          },
+          "catechismRefs": [
+            "PX1912-Q015",
+            "PX1912-Q027",
+            "PX1912-Q277",
+            "PX1912-Q227",
+            "PX1912-Q228",
+            "PX1912-Q229",
+            "PX1912-Q230",
+            "PX1912-Q231",
+            "PX1912-Q232",
+            "PX1912-Q233",
+            "PX1912-Q234",
+            "PX1912-Q235",
+            "PX1912-Q236",
+            "PX1912-Q237",
+            "PX1912-Q238",
+            "PX1912-Q239",
+            "PX1912-Q240",
+            "PX1912-Q241",
+            "PX1912-Q242",
+            "PX1912-Q243",
+            "PX1912-Q244",
+            "PX1912-Q245",
+            "PX1912-Q246",
+            "PX1912-Q247",
+            "PX1912-Q248",
+            "PX1912-Q249",
+            "PX1912-Q250",
+            "PX1912-Q251",
+            "PX1912-Q252",
+            "PX1912-Q253",
+            "PX1912-Q254",
+            "PX1912-Q255",
+            "PX1912-Q256",
+            "PX1912-Q257",
+            "PX1912-Q258",
+            "PX1912-Q259",
+            "PX1912-Q260",
+            "PX1912-Q261",
+            "PX1912-Q262",
+            "PX1912-Q263",
+            "PX1912-Q264",
+            "PX1912-Q265",
+            "PX1912-Q266"
+          ]
+        },
+        {
+          "id": "LTF-053-C02",
+          "text": {
+            "en": "Perseverance is not spiritual self-reliance: Christian fidelity depends on God’s grace and on repeated acts that strengthen virtue and resist vice.",
+            "fr": "La persévérance n’est pas une autosuffisance spirituelle : la fidélité chrétienne dépend de la grâce de Dieu et d’actes répétés qui fortifient la vertu et résistent au vice."
+          },
+          "catechismRefs": [
+            "PX1912-Q015",
+            "PX1912-Q027",
+            "PX1912-Q277",
+            "PX1912-Q227",
+            "PX1912-Q228",
+            "PX1912-Q229",
+            "PX1912-Q230",
+            "PX1912-Q231",
+            "PX1912-Q232",
+            "PX1912-Q233",
+            "PX1912-Q234",
+            "PX1912-Q235",
+            "PX1912-Q236",
+            "PX1912-Q237",
+            "PX1912-Q238",
+            "PX1912-Q239",
+            "PX1912-Q240",
+            "PX1912-Q241",
+            "PX1912-Q242",
+            "PX1912-Q243",
+            "PX1912-Q244",
+            "PX1912-Q245",
+            "PX1912-Q246",
+            "PX1912-Q247",
+            "PX1912-Q248",
+            "PX1912-Q249",
+            "PX1912-Q250",
+            "PX1912-Q251",
+            "PX1912-Q252",
+            "PX1912-Q253",
+            "PX1912-Q254",
+            "PX1912-Q255",
+            "PX1912-Q256",
+            "PX1912-Q257",
+            "PX1912-Q258",
+            "PX1912-Q259",
+            "PX1912-Q260",
+            "PX1912-Q261",
+            "PX1912-Q262",
+            "PX1912-Q263",
+            "PX1912-Q264",
+            "PX1912-Q265",
+            "PX1912-Q266"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
+    },
+    {
+      "id": "LTF-054",
+      "title": {
+        "en": "Preparing for death and eternity",
+        "fr": "Se préparer à la mort et à l’éternité"
+      },
+      "catechismCoverage": "DIRECT",
+      "catechismRefs": [
+        "PX1912-Q015",
+        "PX1912-Q016",
+        "PX1912-Q017",
+        "PX1912-Q018",
+        "PX1912-Q095",
+        "PX1912-Q096",
+        "PX1912-Q097",
+        "PX1912-Q098",
+        "PX1912-Q099",
+        "PX1912-Q100",
+        "PX1912-Q101",
+        "PX1912-Q102",
+        "PX1912-Q103",
+        "PX1912-Q104",
+        "PX1912-Q156",
+        "PX1912-Q157",
+        "PX1912-Q158",
+        "PX1912-Q159",
+        "PX1912-Q392",
+        "PX1912-Q393",
+        "PX1912-Q394",
+        "PX1912-Q395",
+        "PX1912-Q396"
+      ],
+      "sourceRefs": [
+        "PX1912-EN-STRUCTURED",
+        "PX1912-FR-STRUCTURED"
+      ],
+      "claims": [
+        {
+          "id": "LTF-054-C01",
+          "text": {
+            "en": "Christian preparation for death begins by living in God’s grace, receiving the sacraments and ordering life toward judgment and eternity.",
+            "fr": "La préparation chrétienne à la mort commence par la vie dans la grâce de Dieu, la réception des sacrements et l’orientation de toute la vie vers le jugement et l’éternité."
+          },
+          "catechismRefs": [
+            "PX1912-Q015",
+            "PX1912-Q016",
+            "PX1912-Q017",
+            "PX1912-Q018",
+            "PX1912-Q095",
+            "PX1912-Q096",
+            "PX1912-Q097",
+            "PX1912-Q098",
+            "PX1912-Q099",
+            "PX1912-Q100",
+            "PX1912-Q101",
+            "PX1912-Q102",
+            "PX1912-Q103",
+            "PX1912-Q104",
+            "PX1912-Q156",
+            "PX1912-Q157",
+            "PX1912-Q158",
+            "PX1912-Q159",
+            "PX1912-Q392",
+            "PX1912-Q393",
+            "PX1912-Q394",
+            "PX1912-Q395",
+            "PX1912-Q396"
+          ]
+        },
+        {
+          "id": "LTF-054-C02",
+          "text": {
+            "en": "In serious illness the Church provides sacramental help and prayer; the doctrinal lesson explains the last things, while urgent practical steps belong to the Serious Illness & Dying guide.",
+            "fr": "Dans la maladie grave, l’Église apporte l’aide des sacrements et de la prière ; la leçon doctrinale explique les fins dernières, tandis que les démarches urgentes relèvent du guide Maladie grave & fin de vie."
+          },
+          "catechismRefs": [
+            "PX1912-Q015",
+            "PX1912-Q016",
+            "PX1912-Q017",
+            "PX1912-Q018",
+            "PX1912-Q095",
+            "PX1912-Q096",
+            "PX1912-Q097",
+            "PX1912-Q098",
+            "PX1912-Q099",
+            "PX1912-Q100",
+            "PX1912-Q101",
+            "PX1912-Q102",
+            "PX1912-Q103",
+            "PX1912-Q104",
+            "PX1912-Q156",
+            "PX1912-Q157",
+            "PX1912-Q158",
+            "PX1912-Q159",
+            "PX1912-Q392",
+            "PX1912-Q393",
+            "PX1912-Q394",
+            "PX1912-Q395",
+            "PX1912-Q396"
+          ]
+        }
+      ],
+      "publicationStatus": "DRAFT"
     }
-  ]
+  ],
+  "lessonCount": 54
 }
