@@ -55,7 +55,8 @@ try{
     pray:"ao-nav-pray",
     learn:"ao-nav-learn",
     calendar:"ao-nav-calendar",
-    settings:"ao-nav-settings",
+    // The sixth permanent ribbon slot is Explore; Settings remains a contextual overlay.
+    find:"ao-ui-search",
   };
   const ribbonAssets=await page.evaluate(expected=>Object.fromEntries(
     Object.entries(expected).map(([surface,assetId])=>{
@@ -77,7 +78,8 @@ try{
     assert.equal(actual.iconAsset,assetId,surface+" ribbon icon is not the canonical asset");
     assert.equal(actual.renderer,"mask",surface+" ribbon icon did not use the canonical mask renderer");
     assert.equal(actual.legacySvg,0,surface+" ribbon icon still contains inherited legacy SVG artwork");
-    assert.match(actual.mask,new RegExp(assetId+"\\.png"),surface+" ribbon mask does not resolve to the frozen navigation PNG");
+    const extension=surface==="find"?"svg":"png";
+    assert.match(actual.mask,new RegExp(assetId+"\\."+extension),surface+" ribbon mask does not resolve to its canonical artwork");
   }
 
   const homeAudit=await page.evaluate(()=>({
