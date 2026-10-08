@@ -56,7 +56,7 @@ function actions(items){
   return `<div class="aoLearnTradActions">${items.map(item=>`<button type="button" class="${item.primary?"primary":""}" ${item.route?`data-ao-tradlearn-route="${esc(item.route)}"`:""} ${item.prayer?`data-ao-tradlearn-prayer="${esc(item.prayer)}"`:""} ${item.mass?"data-ao-tradlearn-mass":""} ${item.nuptial?"data-ao-tradlearn-nuptial":""}>${esc(item.label)}</button>`).join("")}</div>`;
 }
 function top(win,title){
-  return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-tradlearn-close aria-label="${esc(L(win,"Close","Fermer"))}">${uiIcon("ao-ui-close")}</button></header>`;
+  return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-tradlearn-home aria-label="${esc(L(win,"Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
 }
 function shell(win,title,intro,status,body){
   const progressive=String(body||"").replace('<details class="aoLearnTradCard">','<details class="aoLearnTradCard" open>');
@@ -341,7 +341,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
   function onClick(e){
     const b=e.target?.closest?.("button,[data-ao-tradlearn-flip]");if(!b)return;
     if(b.matches("[data-ao-tradlearn-back]")){e.preventDefault();if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render()}else close();return}
-    if(b.matches("[data-ao-tradlearn-close]")){e.preventDefault();close();return}
+    if(b.matches("[data-ao-tradlearn-home]")){e.preventDefault();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(b.matches("[data-ao-tradlearn-flip]")){e.preventDefault();const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return}
     if(b.dataset.aoTradlearnPrayer){e.preventDefault();state.screen="prayer";state.prayerId=b.dataset.aoTradlearnPrayer;render();return}
     if(b.dataset.aoTradlearnRoute){e.preventDefault();void handoff(b.dataset.aoTradlearnRoute);return}
