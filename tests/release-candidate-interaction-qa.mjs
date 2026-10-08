@@ -83,7 +83,9 @@ try{
     return !curtain || curtain.classList.contains("aoCinemaBootDone") &&
       getComputedStyle(curtain).pointerEvents==="none";
   },null,{timeout:15000});
-  await page.locator("[data-ao-app-surface='pray']").click();
+  // This is a touch-device acceptance journey; exercise the real mobile tap,
+  // rather than a desktop mouse click against an isMobile browser context.
+  await page.locator("[data-ao-app-surface='pray']").tap({timeout:15000});
   await page.waitForSelector("#aoPray435930.open",{state:"visible",timeout:15000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
 
