@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CSE_SOURCE_MAP,CSE_SOURCES} from "../src/learn/sexual-ethics-data/sources.js";
 import {CSE_DEBATE_POSITION_REFS,CSE_POSITION_SOURCE_IDS,paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
+import {CSE_HIGH_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-high24.js";
+import {CSE_REMAINING_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-remaining31.js";
 import {CSE_QUESTION_MAP} from "../src/learn/sexual-ethics-data/index.js";
 
 const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-audit.v1.json","utf8"));
@@ -31,7 +33,11 @@ for(const record of audit.cases){
    assert.ok(item.locator);
  }
  for(const stage of ["opposition","appeal","counter"]){
-   assert.deepEqual(paragraphRefsFor(CSE_QUESTION_MAP[record.id],"debate",stage),live);
+   const chosen=CSE_HIGH_STAGE_SOURCE_IDS[record.id]?.[stage]||CSE_REMAINING_STAGE_SOURCE_IDS[record.id]?.[stage];
+   const expected=chosen
+     ?chosen.map(id=>new Map([...CSE_QUESTION_MAP[record.id].refs,...live].map(ref=>[ref[0],ref])).get(id))
+     :[...live];
+   assert.deepEqual(paragraphRefsFor(CSE_QUESTION_MAP[record.id],"debate",stage),expected);
  }
  if(record.new_primary_evidence){
    assert.ok(record.new_primary_evidence.scope);

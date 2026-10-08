@@ -24,3 +24,7 @@ jobs:
         run: node tests/sexual-ethics-canonical-50.mjs
       - name: Primary-author source evidence and provenance boundaries
         run: node tests/sexual-ethics-opponent-primary.mjs
+      - name: High-priority stage-specific evidence and exact locator integrity
+        run: node tests/sexual-ethics-stage-evidence-high24.mjs
+      - name: Complete eight-stage source chain integrity for all 55 debates
+        run: node tests/sexual-ethics-stage-evidence-55.mjs
