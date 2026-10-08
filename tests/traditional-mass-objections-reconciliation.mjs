@@ -109,7 +109,26 @@ assert.equal(a.records.flatMap(x=>x.paragraphs).filter(p=>p.role==="unattributed
 assert.equal(b.translation_progress.paragraphs_fr_draft,30);
 assert.equal(b.translation_progress.questions_with_complete_paragraphs_fr_draft,15);
 assert.equal(b.translation_progress.human_review_completed,false);
-assert.equal(b.source_registry.length,14);
+assert.equal(b.source_registry.length,15);
+assert.equal(tc.source_registry.length,16);
+assert.equal(b.source_audit_20261008.human_theological_approval,false);
+assert.deepEqual(b.source_audit_20261008.reviewed_cases,["TLM056","TLM058","TLM059","TLM060"]);
+const q56=b.records.find(x=>x.id==="TLM056");
+assert.ok(q56.paragraphs[1].text.includes("Orate, fratres"));
+assert.ok(q56.paragraphs[1].text_fr.includes("Orate, fratres"));
+assert.ok(q56.paragraphs[1].source_ids.includes("NOT67"));
+assert.ok(b.records.find(x=>x.id==="TLM058").paragraphs[0].source_ids.includes("IGMR69_ORIGINAL"));
+const s67=tc.debates.find(x=>x.id==="TLM067");
+assert.ok(s67.paragraphs[1].source_ids.includes("MONT25"));
+assert.ok(s67.paragraphs[2].source_ids.includes("BRUNI25"));
+assert.equal(tc.audit_20261008.human_theological_approval,false);
+const gate=load("data/learn/traditional-mass-publication-gates.v1.json");
+assert.equal(gate.publication_allowed,false);
+assert.equal(gate.records.length,50);
+assert.deepEqual(gate.records.map(x=>x.id),ids(26,50));
+assert.equal(gate.recovered.paragraphs,142);
+assert.ok(gate.records.every(x=>x.publication_ready===false));
+
 assert.equal(b.editorial_provenance.removed_unsupported_identified_reply_roles,3);
 assert.equal(checkedParagraphs,134);
 assert.equal(register.counts.underlying_substantive_paragraphs,checkedParagraphs);
