@@ -7,7 +7,7 @@
     "selected_primary_position_checks": 51,
     "remaining_full_passage_review": 55,
     "high_priority": 24,
-    "book_catalog_preview_cases": 32,
+    "book_catalog_preview_cases": 31,
     "unmapped_opponent_sources": 0,
     "missing_canonical_urls": 0,
     "book_cases_with_new_original_support": 13,
@@ -28,7 +28,9 @@
     "stage_specific_mapping_records": 440,
     "stage_specific_mapping_references": 605,
     "stage_full_text_certified": 0,
-    "stage_specific_mapping_pending": 0
+    "stage_specific_mapping_pending": 0,
+    "original_author_excerpts_via_secondary": 3,
+    "original_coauthor_publisher_chapter_abstracts": 1
   },
   "policy": [
     "The debate text is authored synthesis/paraphrase unless an individually attributed literal quotation has been independently verified.",
@@ -195,6 +197,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "FLETCHER_EXCERPTS",
+          "locator": "1966 book excerpts reproduced verbatim with footnotes in John Murray's 1982 critique, not original full-volume collation",
+          "title": "Fletcher · Situation Ethics excerpts reproduced by John Murray",
+          "url": "https://www.christianstudylibrary.org/article/situation-ethics",
+          "role": "opposing_position",
+          "source_type": "ORIGINAL_AUTHOR_QUOTED_IN_SECONDARY_COMMENTARY"
+        },
+        {
           "source_id": "FLETCHER_TABLET",
           "locator": "six propositions 1–2 and 5: charity as ruling norm; secondary explanation, not a direct author quotation",
           "title": "The Tablet education · Joseph Fletcher's six propositions of situation ethics (secondary exposition)",
@@ -249,12 +259,27 @@
         "review_status": "ORIGINAL_OPPONENT_UNVERIFIED",
         "fully_certified": false,
         "primary_normative_anchor": "VS"
+      },
+      "verification_batch_5": {
+        "grade": "PRIMARY_AUTHOR_PASSAGE_QUOTED_BY_SECONDARY_NOT_FULL_BOOK",
+        "finding": "Actual attributed original Fletcher paragraphs on love as sole unexceptionable norm appear in the reproduced 1982 critical essay. Distinguish Fletcher's agape from modern 'love is love' catchphrase.",
+        "source_ids": [
+          "FLETCHER_EXCERPTS"
+        ]
       }
     },
     {
       "id": "CSE010",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FLETCHER_EXCERPTS",
+          "locator": "1966 book excerpts reproduced verbatim with footnotes in John Murray's 1982 critique, not original full-volume collation",
+          "title": "Fletcher · Situation Ethics excerpts reproduced by John Murray",
+          "url": "https://www.christianstudylibrary.org/article/situation-ethics",
+          "role": "opposing_position",
+          "source_type": "ORIGINAL_AUTHOR_QUOTED_IN_SECONDARY_COMMENTARY"
+        },
         {
           "source_id": "FLETCHER_TABLET",
           "locator": "six propositions 2, 5, 6: context and ends/means; secondary not original Fletcher book text",
@@ -310,6 +335,13 @@
         "review_status": "ORIGINAL_OPPONENT_UNVERIFIED",
         "fully_certified": false,
         "primary_normative_anchor": "VS"
+      },
+      "verification_batch_5": {
+        "grade": "PRIMARY_AUTHOR_PASSAGE_QUOTED_BY_SECONDARY_NOT_FULL_BOOK",
+        "finding": "Actual attributed original Fletcher paragraphs on love as sole unexceptionable norm appear in the reproduced 1982 critical essay. Distinguish Fletcher's agape from modern 'love is love' catchphrase.",
+        "source_ids": [
+          "FLETCHER_EXCERPTS"
+        ]
       }
     },
     {
@@ -2729,12 +2761,12 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
-          "source_id": "SINGER2011",
-          "locator": "abortion and moral status in applied ethics",
-          "title": "Peter Singer · Practical Ethics",
-          "url": "https://books.google.com/books/about/Practical_Ethics.html?id=lNgnV0eDtM0C",
+          "source_id": "SINGER_KUHSE1990",
+          "locator": "original coauthored chapter accessible author's own abstract; §§ I-II in publisher summary",
+          "title": "Kuhse & Singer · Individuals, Humans and Persons: Moral Status",
+          "url": "https://www.cambridge.org/core/books/abs/embryo-experimentation/individuals-humans-and-persons-the-issue-of-moral-status/85C3B73D8F316DBB23FCE99C7080F2B0",
           "role": "opposing_position",
-          "source_type": "BOOK_CATALOG_OR_PREVIEW"
+          "source_type": "AUTHOR_ORIGINAL_CHAPTER_PUBLISHER_SUMMARY_NOT_FULL_TEXT"
         }
       ],
       "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
@@ -2768,6 +2800,13 @@
         "review_status": "PARTIAL_ORIGINAL_EVIDENCE_CHECKED_FULL_CERTIFICATION_OPEN",
         "fully_certified": false,
         "primary_normative_anchor": "ABORT74"
+      },
+      "verification_batch_5": {
+        "grade": "ORIGINAL_AUTHOR_COAUTHORED_CHAPTER_SUMMARY_NOT_COMPLETE_TEXT",
+        "finding": "The coauthored chapter's publisher summary explicitly disputes the individual human embryo's right to life; no need to invent an argument from a Practical Ethics bibliographic listing. Full chapter text remains unreviewed.",
+        "source_ids": [
+          "SINGER_KUHSE1990"
+        ]
       }
     },
     {
@@ -3114,6 +3153,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "FLETCHER_EXCERPTS",
+          "locator": "1966 book excerpts reproduced verbatim with footnotes in John Murray's 1982 critique, not original full-volume collation",
+          "title": "Fletcher · Situation Ethics excerpts reproduced by John Murray",
+          "url": "https://www.christianstudylibrary.org/article/situation-ethics",
+          "role": "opposing_position",
+          "source_type": "ORIGINAL_AUTHOR_QUOTED_IN_SECONDARY_COMMENTARY"
+        },
+        {
           "source_id": "FLETCHER_TABLET",
           "locator": "six propositions 1–2 and 5: love as intrinsic good and norm; secondary position account not literal Fletcher quotation",
           "title": "The Tablet education · Joseph Fletcher's six propositions of situation ethics (secondary exposition)",
@@ -3176,6 +3223,13 @@
         "review_status": "ORIGINAL_OPPONENT_UNVERIFIED",
         "fully_certified": false,
         "primary_normative_anchor": "VS"
+      },
+      "verification_batch_5": {
+        "grade": "PRIMARY_AUTHOR_PASSAGE_QUOTED_BY_SECONDARY_NOT_FULL_BOOK",
+        "finding": "Actual attributed original Fletcher paragraphs on love as sole unexceptionable norm appear in the reproduced 1982 critical essay. Distinguish Fletcher's agape from modern 'love is love' catchphrase.",
+        "source_ids": [
+          "FLETCHER_EXCERPTS"
+        ]
       }
     },
     {
@@ -3589,5 +3643,17 @@
       "publication_approval": false
     },
     "explicit_publication_gate": "NO CLAIM THAT ALL 55 HAVE BEEN FULLY CERTIFIED"
+  },
+  "catalogue_cleanup_v1": {
+    "date": "2026-10-08",
+    "removed_live_catalogue_only_references": 6,
+    "remaining_live_book_catalogue_references": 0,
+    "replaced_with_original_author_excerpt_cases": [
+      "CSE008",
+      "CSE010",
+      "CSE145"
+    ],
+    "publisher_original_coauthor_abstract_case": "CSE123",
+    "original_full_book_access_for_fletcher": false
   }
 }
