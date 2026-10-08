@@ -84,7 +84,7 @@
     "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs",
     "test:nonmass-convergence-e2e": "node tests/nonmass-d3-d6-e2e.mjs",
     "test:asset-bank-contract": "node tests/asset-bank-contract.mjs",
-    "test:learn-owner": "node tests/learn-owner.mjs && npm run test:content-ownership && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs && npm run test:catholic-life-retirement && npm run test:catholic-life-final-absorption && npm run test:formation-gap-ownership && npm run test:spiritual-life-sot && npm run test:spiritual-life-course && npm run test:spiritual-life-runtime && npm run test:sexual-ethics && npm run test:formation-commentary-style && npm run test:mass-formation",
+    "test:learn-owner": "node tests/learn-owner.mjs && npm run test:learn-faith-curriculum && npm run test:content-ownership && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs && npm run test:catholic-life-retirement && npm run test:catholic-life-final-absorption && npm run test:formation-gap-ownership && npm run test:spiritual-life-sot && npm run test:spiritual-life-course && npm run test:spiritual-life-runtime && npm run test:sexual-ethics && npm run test:formation-commentary-style && npm run test:mass-formation",
     "test:learn-owner-e2e": "node tests/learn-owner-e2e.mjs",
     "test:nonmass-assets": "node tests/nonmass-asset-consumers.mjs",
     "test:settings-owner": "node tests/settings-owner.mjs",
@@ -141,7 +141,8 @@
     "test:content-ownership": "node tests/content-ownership-registry.mjs",
     "test:directory-sspx-france-second": "node tests/directory-sspx-france-second-pass.mjs",
     "test:directory-sspx-oct26-bulk": "node tests/directory-sspx-oct26-bulk.mjs",
-    "test:directory-sspx-asia-central-americas": "node tests/directory-sspx-asia-central-americas.mjs"
+    "test:directory-sspx-asia-central-americas": "node tests/directory-sspx-asia-central-americas.mjs",
+    "test:learn-faith-curriculum": "node tests/learn-faith-curriculum.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
