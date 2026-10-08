@@ -33,6 +33,7 @@ for(const r of rows){
   for(const s of r.sourceRegistry.values())assert.ok(/^https:\/\//.test(s.url),r.id+" invalid source URL");
 }
 assert.equal(rows.filter(x=>x.bank==="BAQ" && !x.content).length,4);
+assert.equal(rows.filter(x=>x.bank==="BAQ" && x.title_fr).length,22,"BAQ French original answer titles not reused");
 const countAllSources = value => {
   let count=0;
   function walk(x){
