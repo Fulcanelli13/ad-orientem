@@ -328,11 +328,16 @@ try{
   }));
   console.log("Mass visual Schola-to-navigation preflight:",JSON.stringify(navPreflight));
   assert.equal(navPreflight.present,true,"Mass overlay vanished during Schola chrome checks: "+JSON.stringify(navPreflight));
+  console.log("Full visual: BEFORE section-menu tap");
   await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").tap();
+  console.log("Full visual: AFTER section-menu tap");
   const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
   assert.equal(await hostSection.count(),1,"source-first section menu exposes no Host Consecration");
+  console.log("Full visual: BEFORE Host Consecration tap");
   await hostSection.tap();
+  console.log("Full visual: AFTER Host Consecration tap");
   await page.waitForFunction(()=>/Consecration/i.test(document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent??""),null,{timeout:5000});
+  console.log("Full visual: Host Consecration rendered");
 
   const consecration=await page.evaluate(()=>{
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
@@ -372,7 +377,9 @@ try{
   assert.equal(consecration.stageRight,"true","donor LIVE audio rail disappeared at the Consecration");
   assert.notEqual(consecration.guideShort,"","short Guide rubric is not visible in the state ribbon");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
+  console.log("Full visual: BEFORE Consecration screenshot");
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
+  console.log("Full visual: AFTER Consecration screenshot");
 
   const wordsCue=page.locator("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0173']");
   const elevationCue=page.locator("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0174']");
@@ -525,6 +532,7 @@ try{
     }),cueId);
   }
 
+  console.log("Full visual: elevation complete; beginning ritual cue salience");
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
   assert.equal(gloriaBow.posture,"STAND","Gloria posture did not remain visible in the faithful state ribbon");
@@ -608,7 +616,9 @@ try{
   assert.equal(wide.rightRailDisplay,"flex","right ritual rail is not persistent in LIVE");
   if(wide.nonActiveOpacityMin!=null)assert.ok(wide.nonActiveOpacityMin>=0.39,
     "surrounding prayer text became unreadably dark again: "+JSON.stringify(wide));
+  console.log("Full visual: beginning wide-layout screenshot");
   await page.screenshot({path:resolve(out,"13-mass-wide-donor-shell.png"),fullPage:false});
+  console.log("Full visual: wide-layout screenshot complete");
 
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,consecration,wordsState,elevationState,
