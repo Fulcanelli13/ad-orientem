@@ -18,14 +18,14 @@
   "source_registry": [
     {
       "id": "BEL-2-30",
-      "title": "St Robert Bellarmine, De Romano Pontifice II.30, translation by Ryan Grant excerpted on proponent site",
-      "url": "https://novusordowatch.org/2015/06/can-heretical-pope-be-deposed/",
-      "classification": "PRECONCILIAR_AUTHOR_TRANSLATED_IN_PROPONENT_PUBLICATION"
+      "title": "St Robert Bellarmine, De Romano Pontifice II.30, complete Ryan Grant translation hosted by a sedevacantist editor",
+      "url": "https://novusordowatch.org/de-romano-pontifice-book2-chapter30/",
+      "classification": "PATRISTIC_ERA_NOT_APPLICABLE_PRECONCILIAR_AUTHOR_PRIMARY_TRANSLATION_HOSTED_BY_PARTISAN_SITE"
     },
     {
       "id": "BEL-4-67",
-      "title": "Bellarmine, De Romano Pontifice IV.6–7, translation discussed by sedevacantist editor",
-      "url": "https://novusordowatch.org/2016/04/bellarmine-pope-heretic/",
+      "title": "St Robert Bellarmine, De Romano Pontifice IV.6–7, complete Ryan Grant translation hosted by a sedevacantist editor",
+      "url": "https://novusordowatch.org/de-romano-pontifice-book4-chapters6-7/",
       "classification": "PRECONCILIAR_AUTHOR_TRANSLATION_REQUIRES_LATIN_CHECK"
     },
     {
@@ -201,6 +201,12 @@
       "title": "Catholic Encyclopedia, The Church, visible profession and juridical membership",
       "url": "https://www.newadvent.org/cathen/03744a.htm",
       "classification": "PRECONCILIAR_REFERENCE"
+    },
+    {
+      "id": "GUERARD-FR",
+      "title": "Mgr Michel-Louis Guérard des Lauriers, first-person French interview explaining the Cassiciacum thesis, reprinted by Sodalitium",
+      "url": "https://www.sodalitium.eu/interview-de-monseigneur-guerard-lauriers/",
+      "classification": "FIRST_PERSON_FRENCH_PRIMARY_PROPONENT_REPRINT_DATE_AND_EDITION_PENDING"
     }
   ],
   "debates": [
@@ -396,7 +402,22 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "evidence_review_20261008": {
+        "bellarmine_full_book2_ch30_translation_url_corrected": true,
+        "bellarmine_full_book4_ch6_7_translation_url_corrected": true,
+        "latin_edition_collation_complete": false,
+        "conditional_argument_is_not_an_automatically_verified_modern_application": true,
+        "public_release": false
+      },
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     },
     {
       "id": "SDV-02",
@@ -580,7 +601,15 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     },
     {
       "id": "SDV-03",
@@ -767,7 +796,15 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     },
     {
       "id": "SDV-04",
@@ -956,7 +993,15 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     },
     {
       "id": "SDV-05",
@@ -1121,7 +1166,15 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     },
     {
       "id": "SDV-06",
@@ -1134,7 +1187,8 @@
       "question_provenance_ids": [
         "NOWMATERIAL",
         "CASS",
-        "NOWMATER"
+        "NOWMATER",
+        "GUERARD-FR"
       ],
       "short_answer": [
         {
@@ -1142,7 +1196,8 @@
           "source_ids": [
             "NOWMATERIAL",
             "CASS",
-            "NOWMATER"
+            "NOWMATER",
+            "GUERARD-FR"
           ],
           "text_fr": "La thèse matérialiter-formaliter du P. Guérard des Lauriers distingue un homme légalement désigné au pontificat matériellement et la possession formelle de la juridiction. Un obstacle à la foi ou à l’intention empêcherait, selon cette théorie, la réception de l’autorité."
         },
@@ -1150,7 +1205,8 @@
           "text": "The theory is a theological proposal within the sedevacantist world, not a dogma, and it is contested by other sedevacantists. Its particular attraction is that it leaves a proposed chain of papal designation that might be converted into fully legitimate jurisdiction.",
           "source_ids": [
             "NOWMATERIAL",
-            "NOWMATER"
+            "NOWMATER",
+            "GUERARD-FR"
           ],
           "text_fr": "Cette proposition théologique n’est pas un dogme et demeure contestée, y compris entre sédévacantistes. Elle cherche surtout à conserver une chaîne de désignation susceptible de conduire à une autorité légitime future."
         },
@@ -1160,19 +1216,21 @@
             "V1",
             "BILLOT",
             "PIUS1945",
-            "NOWMATERIAL"
+            "NOWMATERIAL",
+            "GUERARD-FR"
           ],
           "text_fr": "La question est de savoir si une distinction philosophique de matière et de forme s’applique ainsi à la papauté tout en préservant la primauté de droit divin, la mission ecclésiastique et les règles historiques d’élection."
         }
       ],
       "sedevacantist_case": {
-        "attributed_to": "Guérard des Lauriers tradition and later sedeprivationist defenders",
+        "attributed_to": "Michel-Louis Guérard des Lauriers, in his own French explanation; later Cassiciacum/sedeprivationist defenders",
         "paragraphs": [
           {
             "text": "If electors designate a claimant who maintains a habitual obstacle to the Church's supernatural end, he retains the legal designation and continuity of office as potentiality while lacking Christ's actual jurisdiction. The disappearance of true rulers therefore does not entail loss of the public line capable of restoring the papacy.",
             "source_ids": [
               "CASS",
-              "NOWMATERIAL"
+              "NOWMATERIAL",
+              "GUERARD-FR"
             ],
             "text_fr": "Des électeurs pourraient désigner un sujet durablement empêché de recevoir la juridiction par son opposition à la fin surnaturelle de l’Église. Il conserverait la désignation matérielle en attente de disparition de l’obstacle."
           },
@@ -1180,7 +1238,8 @@
             "text": "The crisis is uniquely difficult; the theory endeavors to preserve both preconciliar dogma and a juridical continuity with the body that controls current papal elections, without conceding doctrinal legitimacy to the disputed authorities.",
             "source_ids": [
               "NOWMATER",
-              "NOWMATERIAL"
+              "NOWMATERIAL",
+              "GUERARD-FR"
             ],
             "text_fr": "La crise exigerait ce mécanisme exceptionnel pour concilier les dogmes préconciliaires avec une continuité légale de l’organe électoral, sans reconnaître l’autorité doctrinale des prétendants contestés."
           }
@@ -1192,7 +1251,8 @@
           "source_ids": [
             "PIUS1945",
             "BILLOT",
-            "NOWMATERIAL"
+            "NOWMATERIAL",
+            "GUERARD-FR"
           ],
           "text_fr": "Cette théorie est plus élaborée qu’une simple succession invisible, mais la désignation matérielle suppose elle-même des électeurs compétents et un acte valide. On ne peut les présupposer en niant l’autorité de presque tous les participants."
         },
@@ -1202,7 +1262,8 @@
             "V1",
             "BILLOT",
             "LEO",
-            "CASS"
+            "CASS",
+            "GUERARD-FR"
           ],
           "text_fr": "Il faut expliquer l’obstacle, sa persistance, sa levée et sa reconnaissance publique. Sans ce mécanisme, la distinction risque de seulement renommer l’absence d’autorité."
         },
@@ -1210,7 +1271,8 @@
           "text": "Some sedevacantists reject the material-formal thesis as unnecessary or wrong. That disagreement is not automatically a refutation, but it defeats any presentation of the thesis as the settled Catholic answer to the vacancy question.",
           "source_ids": [
             "NOWMATERIAL",
-            "NOWMATER"
+            "NOWMATER",
+            "GUERARD-FR"
           ],
           "text_fr": "Des sédévacantistes refusent aussi cette théorie. Leur désaccord ne la réfute pas à lui seul, mais empêche de la présenter comme solution unanime à la vacance."
         }
@@ -1221,7 +1283,8 @@
             "text": "The material line guarantees that future electors exist, so visibility is preserved.",
             "source_ids": [
               "CASS",
-              "NOWMATERIAL"
+              "NOWMATERIAL",
+              "GUERARD-FR"
             ],
             "text_fr": "La chaîne de désignation matérielle garantirait les électeurs futurs et donc la visibilité."
           },
@@ -1240,7 +1303,8 @@
             "text": "The formal obstacle can disappear upon retraction of Vatican II errors, with full papal authority then received.",
             "source_ids": [
               "CASS",
-              "NOWMATERIAL"
+              "NOWMATERIAL",
+              "GUERARD-FR"
             ],
             "text_fr": "La rétractation des erreurs conciliaires ferait disparaître l’obstacle et conférerait alors l’autorité formelle."
           },
@@ -1276,7 +1340,7 @@
         }
       ],
       "unresolved_source_checks": [
-        "Cite Guérard des Lauriers' original French thesis, not only secondary English explanations, before publication.",
+        "A first-person French interview reprint by Guérard des Lauriers is now linked; collate its original publication date/edition and the Cahiers de Cassiciacum (1979) text before textual certification.",
         "Treat conclavism as a distinct issue: self-appointed papal elections require independent canonical scrutiny.",
         "Do not equate every sedevacantist with sedeprivationism."
       ],
@@ -1288,7 +1352,8 @@
           "source_ids": [
             "NOWMATERIAL",
             "CASS",
-            "NOWMATER"
+            "NOWMATER",
+            "GUERARD-FR"
           ]
         },
         {
@@ -1296,7 +1361,8 @@
           "source_ids": [
             "PIUS1945",
             "BILLOT",
-            "NOWMATERIAL"
+            "NOWMATERIAL",
+            "GUERARD-FR"
           ]
         },
         {
@@ -1308,7 +1374,23 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "evidence_review_20261008": {
+        "primary_proponent_found": true,
+        "original_french_wording_reprinted": true,
+        "original_cahiers_editional_collation_completed": false,
+        "partisan_host_attribution_explicit": true,
+        "doctrinal_assent": false,
+        "public_release": false
+      },
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     },
     {
       "id": "SDV-07",
@@ -1489,7 +1571,15 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     },
     {
       "id": "SDV-08",
@@ -1674,7 +1764,15 @@
           ]
         }
       ],
-      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD"
+      "editorial_status": "FULL_EN_FR_DRAFT_PARITY_NEEDS_PROOFREAD",
+      "source_integrity_review": {
+        "date": "2026-10-08",
+        "preserve_named_proponent_case": true,
+        "claim_source_ids_resolved": true,
+        "latin_or_french_original_collation_finished": false,
+        "human_theological_approval": false,
+        "public_release": false
+      }
     }
   ],
   "translation": {
@@ -1686,5 +1784,21 @@
       "All original source_ids retained; no new dossier owner created.",
       "Historical Latin source collation and theological editorial approval remain required before app publication."
     ]
+  },
+  "attribution_source_audit_20261008": {
+    "source_registry_count": 32,
+    "debate_count": 8,
+    "primary_improvements": [
+      "Bellarmine Book II.30 and IV.6-7 full direct chapter translation URLs",
+      "Guérard des Lauriers' own French first-person explanation, not just the general seminary hub"
+    ],
+    "limitations": [
+      "Bellarmine translations remain on a polemical proponent site; Latin text collation outstanding.",
+      "Guérard interview is a first-person reprint, not certified as the original 1979 Cahiers edition.",
+      "All named contemporary opponent arguments must be checked against actual original texts before publication.",
+      "Even a valid hypothetical about a manifest heretical pope does not itself certify application to any claimant."
+    ],
+    "human_approval": false,
+    "public_release": false
   }
 }
