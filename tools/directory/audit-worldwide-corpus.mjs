@@ -8,7 +8,7 @@ const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const LIVE=Object.freeze(["fssp","icksp","ibp"]);
 const RESEARCH=Object.freeze([
   "diocesan","aasjmv","fsvf","canons-st-john-cantius","cmri","rci",
-  "cspv","smmd","icksp-federated","sspx-district-seed","sspx-france-first-party","sspx-france-second-pass","sspx-four-district-bulk","sspx-oct26-europe","sspx-oct26-americas","sspx-oct26-poland",
+  "cspv","smmd","icksp-federated","sspx-district-seed","sspx-france-first-party","sspx-france-second-pass","sspx-four-district-bulk","sspx-oct26-europe","sspx-oct26-americas","sspx-oct26-poland","sspx-asia-central-americas",
 ]);
 function file(relative){
   return JSON.parse(fs.readFileSync(path.join(ROOT,relative),"utf8"));
@@ -93,7 +93,8 @@ export function auditWorldwideDirectory(){
         (providers.find(x=>x.provider==="SSPX_FOUR_DISTRICT_BULK")?.mass_evidenced_records??0)+
         (providers.find(x=>x.provider==="SSPX_OCT26_MULTIREGION")?.mass_evidenced_records??0)+
         (providers.find(x=>x.provider==="SSPX_OCT26_AMERICAS")?.mass_evidenced_records??0)+
-        (providers.find(x=>x.provider==="SSPX_OCT26_POLAND")?.mass_evidenced_records??0),
+        (providers.find(x=>x.provider==="SSPX_OCT26_POLAND")?.mass_evidenced_records??0)+
+        (providers.find(x=>x.provider==="SSPX_ASIA_CENTRAL_AMERICAS_20261008")?.mass_evidenced_records??0),
       sspx_raw_count_shortfall_non_authoritative:798-
         ((providers.find(x=>x.provider==="SSPX_DISTRICT_SEED")?.mass_evidenced_records??0)+
          (providers.find(x=>x.provider==="SSPX_FRANCE_FIRST_PARTY")?.mass_evidenced_records??0)+
@@ -101,7 +102,8 @@ export function auditWorldwideDirectory(){
         (providers.find(x=>x.provider==="SSPX_FOUR_DISTRICT_BULK")?.mass_evidenced_records??0)+
         (providers.find(x=>x.provider==="SSPX_OCT26_MULTIREGION")?.mass_evidenced_records??0)+
         (providers.find(x=>x.provider==="SSPX_OCT26_AMERICAS")?.mass_evidenced_records??0)+
-        (providers.find(x=>x.provider==="SSPX_OCT26_POLAND")?.mass_evidenced_records??0)),
+        (providers.find(x=>x.provider==="SSPX_OCT26_POLAND")?.mass_evidenced_records??0)+
+        (providers.find(x=>x.provider==="SSPX_ASIA_CENTRAL_AMERICAS_20261008")?.mass_evidenced_records??0)),
       note:"Provider historical/public statistics are neither a unique physical count nor a date-matched missing-site inventory.",
     },
   };
