@@ -8,7 +8,10 @@ const drafts=read("data/learn/contemporary-controversies-bulk-21-debates-2026-10
 assert.equal(drafts.cases.length,21);
 assert.equal(drafts.metrics.paragraphs,84);
 assert.equal(drafts.metrics.fr_paragraphs,84);
-assert.equal(drafts.metrics.primary_link_instances,140);
+assert.equal(drafts.metrics.primary_link_instances,153);
+assert.equal(drafts.cases.flatMap(c=>c.paragraphs).reduce((n,p)=>n+p.source_ids.length,0),153);
+assert.equal(drafts.metrics.externally_named_opposing_position_cases,2);
+assert.equal(drafts.metrics.documentary_and_editorial_position_cases,19);
 assert.equal(drafts.public_release,false);
 const ap=read("data/learn/apologetics-canonical.v1.json");
 const cr=read("data/learn/church-crisis-canonical.v1.json");
@@ -39,6 +42,10 @@ for(const rec of map.records){
  assert.equal(draft.canonical_owner,rec.canonical_owner);
  assert.equal(draft.paragraphs.length,4);
  assert.ok(draft.paragraphs.every(p=>p.text.en&&p.text.fr&&p.source_ids.length&&p.approval));
+ assert.ok(draft.paragraphs.every(p=>p.source_links.length===p.source_ids.length&&p.source_links.every(l=>p.source_ids.includes(l.id)&&draft.source_registry.some(s=>s.id===l.id&&s.url===l.url))));
+ assert.ok(draft.paragraphs[3].text.en.length>=250&&draft.paragraphs[3].text.fr.length>=250,"weak traditional argument: "+rec.slug);
+ assert.equal(draft.editorial_governance.substantive_claim_audit_finished,false);
+ assert.equal(draft.editorial_governance.published,false);
  assert.deepEqual(draft.paragraphs.map(p=>p.role),["answer","documented_position_or_source_based_objection","critical_response","traditional_catholic_argument"]);
  for(const p of draft.paragraphs)for(const id of p.source_ids)assert.ok(draft.source_registry.some(s=>s.id===id&&s.url.startsWith("https://")));
  assert.equal(d.primary_source_scaffold.slug,rec.slug);
@@ -56,6 +63,9 @@ assert.equal(bridge.controversy_source_anchor_review_20261008.cases_added_to_exi
 assert.equal(map.public_release,false);
 assert.equal(bridge.counts.indexed_questions_and_cases,102);
 assert.equal(bridge.controversy_draft_completion_20261008.reviewer_all_records,123);
+assert.equal(bridge.controversy_draft_completion_20261008.newly_authored_source_references,153);
+assert.equal(bridge.controversy_draft_completion_20261008.argument_strengthening_20261008.full_drafts_revised,21);
+assert.equal(bridge.controversy_draft_completion_20261008.argument_strengthening_20261008.published,0);
 assert.equal(bridge.controversy_draft_completion_20261008.canonical_dossiers_with_editorial_research,53);
 assert.equal(ap.dossiers.length,60);assert.equal(cr.dossiers.length,81);
 console.log(JSON.stringify({status:"PASS",controversies:43,case_pack_associations:22,primary_source_scaffolds:21,verified_urls_registered:43,new_public_dossiers:0,published:0}));
