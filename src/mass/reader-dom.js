@@ -1510,7 +1510,10 @@ export function createReaderDomAdapter({
       guideButton.title=current.guide?.text??"Guide";
     }
     const pop=root.querySelector('[data-role="guide-popover"]');
-    if(pop){pop.hidden=true;pop.replaceChildren?.();}
+    // Cue-focus and posture changes refresh state without changing prayer cards.
+    // Never dismiss an open Guide on those routine updates; only a card transition
+    // invalidates its content and deliberately closes the panel.
+    if(pop && current.cardUpdate){pop.hidden=true;pop.replaceChildren?.();}
 
     const body=root.querySelector('[data-role="paragraphs"]');
     if(body && current.cardUpdate){
