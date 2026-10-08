@@ -569,6 +569,22 @@ const DEVOTIONAL_UX_CSS=`
 html[data-reduced-motion="true"] #aoPray435930 .aoP435930LitFlow button{transition:none!important}
 `;
 
+
+const ANGELUS_GUIDE_RITUAL_CSS=`
+#aoPray435930 .aoAngelusGuideBody{display:grid;gap:0}
+#aoPray435930 .aoAngelusGuideSection{padding:12px 0;border-bottom:1px solid var(--border,rgba(255,255,255,.12))}
+#aoPray435930 .aoAngelusGuideSection:last-child{border-bottom:0}
+#aoPray435930 .aoAngelusGuideSection h3{font:650 14px/1.3 var(--ao-font-display,Georgia,serif);color:var(--text,#f3ead7);margin:0 0 6px}
+#aoPray435930 .aoAngelusGuideSection p{font-size:13px;line-height:1.6;margin:0;color:var(--muted,#aeb2b8)}
+#aoPray435930 .aoAngelusGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
+#aoPray435930 [data-ao-angelus-recitation] .aoAngelusDialogue{display:grid;gap:11px;width:100%;text-align:left}
+#aoPray435930 .aoAngelusDialogueLine{display:grid;grid-template-columns:2em minmax(0,1fr);gap:9px;align-items:start}
+#aoPray435930 .aoAngelusDialogueLine>b{color:var(--liturgical,#d8bd7d);font-family:var(--ao-font-display,Georgia,serif);font-weight:650}
+#aoPray435930 [data-ao-angelus-recitation="group"] .aoAngelusDialogueLine.response{border-left:2px solid var(--liturgical,#d8bd7d);padding:8px 8px 8px 10px;background:color-mix(in srgb,var(--liturgical,#d8bd7d) 8%,transparent);border-radius:4px 9px 9px 4px}
+#aoPray435930 .aoAngelusVespers{margin:0}
+@media(prefers-reduced-motion:reduce){#aoPray435930 .aoAngelusDialogueLine{transition:none}}
+`;
+
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
   const style=doc.createElement("style");
@@ -582,6 +598,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
   ensureStyle(doc,"ao-pray-devotional-ux-contract-style",DEVOTIONAL_UX_CSS);
+  ensureStyle(doc,"ao-pray-angelus-guide-ritual-style",ANGELUS_GUIDE_RITUAL_CSS);
   ensureStyle(doc,"ao-pray-modular-shell-integration-style",MODULAR_SHELL_CSS);
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);
   ensureStyle(doc,"ao-pray-semantic-rails-style",SEMANTIC_RAIL_CSS);
