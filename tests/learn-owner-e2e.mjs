@@ -261,7 +261,8 @@ try{
   await page.waitForFunction(()=>
     !document.getElementById("ao-glossary-root") &&
     !document.getElementById("ao-learn-modular-root")?.hidden &&
-    globalThis.AO_LEARN_APP_V1?.status?.().child==null,
+    globalThis.AO_LEARN_APP_V1?.status?.().child==null &&
+    globalThis.AO_LEARN_APP_V1?.status?.().family==="reference",
     null,{timeout:10000}
   );
   await assertNoMass("Glossary -> Formation");
