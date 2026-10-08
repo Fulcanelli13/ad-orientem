@@ -36,8 +36,8 @@ assert.equal(match.holds.length,1);
 assert.equal(match.matched[0].geo.precision,"locality");
 assert.equal(match.matched[0].geo.source_ref,"SSPX:OPE-001");
 assert.equal(isMapPublishableGeo(match.matched[0].geo,"FR"),true);
-assert.equal(isMapPublishableGeo(match.matched[0].geo,"GB"),true,
-  "Source country must be verified through matched venue context");
+assert.equal(isMapPublishableGeo(match.matched[0].geo,"GB"),false,
+  "Official source coordinates must fail if mapped to another country");
 assert.equal(match.matched[0].country_code,"FR");
 const two={provider:"SSPX_OTHER",filename:"other.v1.json",records:[
   {u:"duplicate-source-row",cc:"FR",l:"Lyon",n:"Saint Pius X Chapel",ps:"CURRENT_PUBLIC_MASS"},
