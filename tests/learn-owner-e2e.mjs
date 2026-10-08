@@ -6,6 +6,8 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
 const repoRoot=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const expectedTraditionalLearnOwner=(await readFile(resolve(repoRoot,"src/learn/traditional-life.js"),"utf8")).match(/TRADITIONAL_LEARN_VERSION="([^"]+)"/)?.[1];
+assert.ok(expectedTraditionalLearnOwner,"Traditional Formation owner version must be declared");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp"};
 const server=http.createServer(async(req,res)=>{
   try{
@@ -374,7 +376,7 @@ try{
       donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
       priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
     }});
-    assert.equal(child.owner,"38.5-after-death-family-absorption",id+": wrong child owner");
+    assert.equal(child.owner,expectedTraditionalLearnOwner,id+": wrong child owner");
     assert.ok(child.width>300,id+": child collapsed on phone");
     assert.ok(child.overflow<=1,id+": child has horizontal overflow");
     assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
