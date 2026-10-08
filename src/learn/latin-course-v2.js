@@ -120,7 +120,7 @@ function css(){return `
 `}
 
 function top(lang,title,back=true){
-  return `<style>${css()}</style><header class="aoL2Top"><button type="button" data-l2-back aria-label="${esc(L(lang,"Back","Retour"))}">${uiIcon(back?"ao-ui-back":"ao-ui-close")}</button><div class="aoL2Title"><small>FORMATION · LATIN</small><strong>${esc(title)}</strong></div><button type="button" data-l2-home aria-label="${esc(L(lang,"Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
+  return `<style>${css()}</style><header class="aoL2Top"><button type="button" data-l2-back aria-label="${esc(L(lang,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div class="aoL2Title"><small>FORMATION · LATIN</small><strong>${esc(title)}</strong></div><button type="button" data-l2-home aria-label="${esc(L(lang,"Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
 }
 function sources(lesson,ids,lang){
   if(!Array.isArray(ids)||!ids.length)return "";
