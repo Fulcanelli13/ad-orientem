@@ -1,0 +1,611 @@
+{
+  "version": "TRADITIONIS_CUSTODES_DEBATES_V1",
+  "created_at": "2026-10-08",
+  "status": "BILINGUAL_SOURCE_BACKED_DRAFT_NOT_PUBLISHED",
+  "canonical_role": "Deep-source debate questions subsumed under the existing 81 Church Crisis dossiers; no new navigation dossier and no duplicate standalone canonical owner.",
+  "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
+  "source_policy": {
+    "every_substantive_paragraph_sourced": true,
+    "source_provenance": "Primary Holy See texts for law and official rationale; direct institute or SSPX publications for attributed positions; independent reporting for the 2025 leaked-consultation controversy.",
+    "role_values": [
+      "answer",
+      "identified_objection",
+      "assessment"
+    ],
+    "translation_status": "FRENCH_ENGLISH_DRAFT_REQUIRES_EDITORIAL_REVIEW",
+    "uncertainty": "2025 released consultation excerpts are partial, and the Vatican says additional confidential material was considered.",
+    "publication_gate": "NO_RUNTIME_IMPORT_UNTIL_VERIFIED_AND_APPROVED"
+  },
+  "source_registry": [
+    {
+      "id": "TC21",
+      "title": "Francis, Traditionis custodes (2021)",
+      "url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html",
+      "type": "PAPAL_LEGISLATION"
+    },
+    {
+      "id": "TCL21",
+      "title": "Francis, accompanying letter to bishops (2021)",
+      "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html",
+      "type": "PAPAL_EXPLANATION"
+    },
+    {
+      "id": "SP07",
+      "title": "Benedict XVI, Summorum Pontificum (2007)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html",
+      "type": "PAPAL_LEGISLATION"
+    },
+    {
+      "id": "SPL07",
+      "title": "Benedict XVI, accompanying letter to bishops (2007)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html",
+      "type": "PAPAL_EXPLANATION"
+    },
+    {
+      "id": "RESP21",
+      "title": "Congregation for Divine Worship, Responsa ad dubia (2021)",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html",
+      "type": "VATICAN_IMPLEMENTATION"
+    },
+    {
+      "id": "RES23",
+      "title": "Dicastery for Divine Worship, Rescriptum (2023)",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html",
+      "type": "VATICAN_IMPLEMENTATION"
+    },
+    {
+      "id": "FSSP21",
+      "title": "FSSP, official communiqué (20 July 2021)",
+      "url": "https://fssp.com/official-communique-following-the-publication-of-the-motu-proprio-traditionis-custodes/",
+      "type": "TRADITIONAL_INSTITUTE_PRIMARY"
+    },
+    {
+      "id": "COURT21",
+      "title": "Twelve Ecclesia Dei superiors, Courtalain communiqué (31 August 2021)",
+      "url": "https://fssp.com/communique-of-the-superiors-general-of-the-ecclesia-dei-communities/",
+      "type": "TRADITIONAL_INSTITUTES_PRIMARY"
+    },
+    {
+      "id": "FSSP22",
+      "title": "Francis, FSSP decree of 11 February 2022 (Latin text and translation)",
+      "url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/",
+      "type": "PARTICULAR_DECREE"
+    },
+    {
+      "id": "SSPX21",
+      "title": "Davide Pagliarani, SSPX response (July 2021)",
+      "url": "https://sspx.news/fr/publications/lettre-labbe-pagliarani-au-sujet-du-motu-proprio-traditionis-custodes-36239",
+      "type": "SSPX_POSITION"
+    },
+    {
+      "id": "CIC2",
+      "title": "1983 Code of Canon Law, canons 212–214 and 221–223",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
+      "type": "CANON_LAW"
+    },
+    {
+      "id": "CIC4",
+      "title": "1983 Code of Canon Law, canon 838",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-839_en.html",
+      "type": "CANON_LAW"
+    },
+    {
+      "id": "SC63",
+      "title": "Sacrosanctum Concilium, articles 21–23 (1963)",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "type": "ECUMENICAL_COUNCIL"
+    },
+    {
+      "id": "AP25",
+      "title": "Associated Press, leaked survey and Vatican response (July 2025)",
+      "url": "https://apnews.com/article/5c15ea6c49b255a7d98cde9276a46acd",
+      "type": "INDEPENDENT_REPORT_OF_DISPUTE"
+    }
+  ],
+  "debates": [
+    {
+      "id": "TLM066",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-ECC-03",
+      "crossLinks": [
+        "CR-AUT-07",
+        "CR-AUT-09"
+      ],
+      "title": {
+        "en": "Did Francis restrict the 1962 Missal because traditionalist communities threatened ecclesial unity?",
+        "fr": "François a-t-il restreint le missel de 1962 à cause des divisions ecclésiales ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Francis said that the concessions of his predecessors had sometimes been used to reject the Council and the postconciliar liturgical reform, aggravating divisions. His accompanying letter identifies these concerns, and the 2020 episcopal consultation, as motives for restricting use of the 1962 Missal.",
+            "fr": "François affirme que les concessions de ses prédécesseurs ont parfois servi à rejeter le Concile et la réforme liturgique, aggravant les divisions. Sa lettre d’accompagnement invoque ces inquiétudes et la consultation épiscopale de 2020 pour justifier les restrictions."
+          },
+          "source_ids": [
+            "TCL21",
+            "TC21"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "In its own response the FSSP affirmed fidelity to the Pope and the Magisterium. The twelve traditional institutes meeting at Courtalain likewise said they did not recognize themselves in the charge of rejecting the Church and asked that their particular circumstances be heard.",
+            "fr": "Dans sa réponse, la FSSP réaffirme sa fidélité au pape et au Magistère. Les douze instituts réunis à Courtalain déclarent également ne pas se reconnaître dans l’accusation de rejeter l’Église et demandent que leur situation soit entendue."
+          },
+          "source_ids": [
+            "FSSP21",
+            "COURT21"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "The Apostolic See has responsibility for ecclesial unity and liturgical discipline; the legitimacy of that responsibility does not alone establish that broadly applicable restrictions were the best or most proportionate remedy. The evidence for problems in some communities should not automatically be projected onto every community.",
+            "fr": "Le Saint-Siège a la responsabilité de l’unité ecclésiale et de la discipline liturgique ; cette responsabilité ne prouve pas à elle seule que des restrictions générales constituaient le remède le plus proportionné. Des difficultés dans certaines communautés ne doivent pas être attribuées sans examen à toutes."
+          },
+          "source_ids": [
+            "CIC4",
+            "TCL21",
+            "COURT21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM067",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-AUT-07",
+      "crossLinks": [
+        "CR-ECC-03"
+      ],
+      "title": {
+        "en": "Did most bishops ask Francis to restrict the Traditional Mass?",
+        "fr": "La majorité des évêques demandait-elle des restrictions contre la messe traditionnelle ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Francis stated that he had considered the wishes of the episcopate and the results of the 2020 consultation. The full set of episcopal replies was not published with the motu proprio, so its accompanying letter does not itself establish a numerical majority requesting restrictions.",
+            "fr": "François dit avoir pris en compte les souhaits de l’épiscopat et les résultats de la consultation de 2020. Toutes les réponses épiscopales n’ont pas été publiées avec le motu proprio : sa lettre ne prouve donc pas, à elle seule, qu’une majorité demandait des restrictions."
+          },
+          "source_ids": [
+            "TC21",
+            "TCL21"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "Excerpts presented publicly in July 2025 as internal Vatican assessments suggested that many responding bishops considered Summorum Pontificum fruitful and feared that restriction would cause more harm than good. The excerpts are evidence of a contested reading of the consultation, not the complete underlying returns.",
+            "fr": "Des extraits présentés en juillet 2025 comme des évaluations internes du Vatican suggèrent que de nombreux évêques répondants appréciaient Summorum Pontificum et redoutaient qu’une restriction fasse plus de mal que de bien. Ces extraits éclairent un désaccord sur la consultation, mais n’en constituent pas le dossier complet."
+          },
+          "source_ids": [
+            "AP25",
+            "SP07"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "Vatican spokesman Matteo Bruni said the leaked documents offered a partial reconstruction and that other confidential reports and consultations informed the decision. The publicly available record therefore supports serious questions about the claimed episcopal consensus, not proof of the complete deliberation or the Pope's subjective intentions.",
+            "fr": "Le porte-parole Matteo Bruni a indiqué que les documents divulgués offraient une reconstitution partielle et que d’autres rapports et consultations confidentiels avaient été considérés. Les documents publics permettent donc d’interroger un prétendu consensus épiscopal, non de démontrer l’intégralité des délibérations ni les intentions subjectives du pape."
+          },
+          "source_ids": [
+            "AP25",
+            "TCL21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM068",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-AUT-07",
+      "crossLinks": [
+        "CR-AUT-06",
+        "CR-ECC-03"
+      ],
+      "title": {
+        "en": "Does Traditionis custodes contradict Summorum Pontificum?",
+        "fr": "Traditionis custodes contredit-il Summorum Pontificum ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Benedict XVI's 2007 law granted relatively broad faculties for use of the 1962 Missal and declared that it had never been juridically abrogated. Francis's 2021 law displaced incompatible earlier provisions and restored a restrictive permission regime. The disciplinary policy plainly changed.",
+            "fr": "La loi de Benoît XVI de 2007 accordait de larges facultés d’usage du missel de 1962 et précisait qu’il n’avait jamais été juridiquement abrogé. Celle de François, en 2021, abrogeait les dispositions antérieures incompatibles et rétablissait un régime restrictif d’autorisations. La politique disciplinaire a clairement changé."
+          },
+          "source_ids": [
+            "SP07",
+            "TC21"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "Benedict defended the older Missal as an inheritance that had remained sacred across generations. Traditional critics consequently ask how a liturgy commended in 2007 as a lasting ecclesial treasure can be treated in 2021 as a concession destined for limitation.",
+            "fr": "Benoît XVI défendait l’ancien missel comme un héritage sacré transmis par les générations. Les critiques traditionalistes demandent donc comment une liturgie présentée en 2007 comme un trésor durable peut être traitée en 2021 comme une concession appelée à être restreinte."
+          },
+          "source_ids": [
+            "SPL07",
+            "TCL21"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "A later pope may change ordinary disciplinary law; Benedict's statement about historical non-abrogation was not itself an irreformable prohibition on future regulation. The contrasting pastoral and theological judgments about continuity still merit evaluation without confusing disciplinary reversal with formal repudiation of dogma.",
+            "fr": "Un pape ultérieur peut modifier une loi disciplinaire ordinaire ; le constat historique de non-abrogation formulé par Benoît XVI n’interdisait pas irréformablement toute réglementation future. Les jugements divergents sur la continuité méritent néanmoins un examen sans confondre changement disciplinaire et négation formelle du dogme."
+          },
+          "source_ids": [
+            "CIC4",
+            "SP07",
+            "TC21",
+            "SPL07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM069",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-ECC-03",
+      "crossLinks": [
+        "CR-AUT-07",
+        "CR-LIT-05"
+      ],
+      "title": {
+        "en": "What does the unique expression of the lex orandi mean if the 1962 Missal remains permitted?",
+        "fr": "Que signifie l’« unique expression de la lex orandi » si le missel de 1962 reste autorisé ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Article 1 of Traditionis custodes calls the reformed liturgical books the unique expression of the Roman Rite's lex orandi. Yet articles 2–5 still authorize some celebrations using the 1962 Missal. The legal designation of the reformed books as normative must therefore be distinguished from a claim that every older celebration is invalid or outside Catholic worship.",
+            "fr": "L’article premier de Traditionis custodes appelle les livres réformés l’unique expression de la lex orandi du rite romain. Pourtant les articles 2 à 5 permettent encore certaines célébrations selon le missel de 1962. Il faut donc distinguer la désignation juridique des livres normatifs d’une affirmation selon laquelle toute célébration ancienne serait invalide ou étrangère au culte catholique."
+          },
+          "source_ids": [
+            "TC21",
+            "RESP21"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "Benedict had called the two Missals two usages of one Roman Rite and affirmed their compatibility at the level of faith. The change of wording raises a substantive question about how juridical unicity relates to the received liturgical patrimony of the Roman Church.",
+            "fr": "Benoît XVI parlait de deux usages d’un même rite romain et affirmait leur compatibilité quant à la foi. Le changement de vocabulaire pose une question réelle sur le rapport entre unicité juridique et patrimoine liturgique reçu de l’Église romaine."
+          },
+          "source_ids": [
+            "SP07",
+            "SPL07",
+            "TC21"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "The 2021 Responsa presents the reformed books as the direction of liturgical unity. That is a governing interpretation, not a historical erasure of the doctrinal and devotional content of older Roman worship. Claims of doctrinal contradiction require more than the tension of the two formulas alone.",
+            "fr": "Les Responsa de 2021 présentent les livres réformés comme la direction de l’unité liturgique. Il s’agit d’une orientation normative, non d’un effacement historique du contenu doctrinal et spirituel de l’ancien culte romain. Une contradiction doctrinale ne se démontre pas par la seule tension entre les deux formules."
+          },
+          "source_ids": [
+            "RESP21",
+            "TC21",
+            "SPL07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM070",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-AUT-06",
+      "crossLinks": [
+        "CR-AUT-07",
+        "CR-ECC-03"
+      ],
+      "title": {
+        "en": "Can a pope restrict the ancient Roman liturgy?",
+        "fr": "Un pape peut-il restreindre l’ancienne liturgie romaine ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Canon 838 assigns the regulation of the sacred liturgy to competent ecclesiastical authority, including the Apostolic See. Successive Roman pontiffs have legislated changes to liturgical books. Authority over liturgical discipline is real, although it is exercised in service of the received faith, not as a power to negate divine law or sacramental doctrine.",
+            "fr": "Le canon 838 confie la réglementation liturgique à l’autorité ecclésiastique compétente, notamment au Siège apostolique. Plusieurs papes ont légiféré sur les livres liturgiques. Cette autorité disciplinaire est réelle, mais elle sert la foi reçue et n’autorise pas à contredire le droit divin ou la doctrine sacramentelle."
+          },
+          "source_ids": [
+            "CIC4",
+            "SC63"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "The Council required that innovation preserve sound tradition and arise organically from received forms. Consequently the fact that a restriction can be promulgated does not by itself establish its prudence or its service to Catholic continuity.",
+            "fr": "Le Concile a demandé que toute innovation sauvegarde la saine tradition et procède organiquement des formes reçues. La possibilité juridique de promulguer une restriction ne suffit donc pas à prouver sa prudence ni son service de la continuité catholique."
+          },
+          "source_ids": [
+            "SC63",
+            "SPL07"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "The proposition that no pope may ever regulate an ancient Missal is stronger than the cited sources sustain. Equally, papal competence is not an argument that every exercise of it is pastorally optimal. Lawfulness, theological continuity and prudence must be assessed separately.",
+            "fr": "L’affirmation selon laquelle aucun pape ne pourrait jamais réglementer un ancien missel dépasse ce que démontrent ces sources. Inversement, la compétence pontificale ne prouve pas que chacune de ses décisions soit pastoralement optimale. Licéité, continuité théologique et prudence doivent être appréciées séparément."
+          },
+          "source_ids": [
+            "CIC4",
+            "SC63",
+            "TC21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM071",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-AUT-07",
+      "crossLinks": [
+        "CR-AUT-03",
+        "CR-ECC-03"
+      ],
+      "title": {
+        "en": "Do the faithful have an unconditional right to the Traditional Mass?",
+        "fr": "Les fidèles ont-ils un droit inconditionnel à la messe traditionnelle ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Canons 213 and 214 protect access to the Church's spiritual goods and worship according to an approved rite. These provisions do not expressly create an unrestricted individual entitlement to every historically approved edition of the Roman Missal; canon 223 also addresses regulation of rights for the common good.",
+            "fr": "Les canons 213 et 214 protègent l’accès aux biens spirituels de l’Église et le culte selon un rite approuvé. Ils ne créent pas expressément un droit individuel illimité à chaque édition historique du missel romain ; le canon 223 prévoit aussi la réglementation des droits en vue du bien commun."
+          },
+          "source_ids": [
+            "CIC2",
+            "TC21"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "The signatories of the Courtalain communiqué relied on their institutes' canonical foundations and approved constitutions, arguing that their members had made durable commitments trusting assurances of continued traditional liturgical life.",
+            "fr": "Les signataires du communiqué de Courtalain invoquent les fondations canoniques et constitutions approuvées de leurs instituts : leurs membres ont pris des engagements durables en se fiant aux assurances concernant la continuité de leur vie liturgique traditionnelle."
+          },
+          "source_ids": [
+            "COURT21",
+            "FSSP22"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "An acknowledged spiritual interest and an enforceable legal faculty are not identical. The faithful may make needs known and seek suitable remedies, but the right to do so does not automatically nullify specific ecclesiastical regulations in force.",
+            "fr": "Un intérêt spirituel reconnu et une faculté juridique opposable ne sont pas identiques. Les fidèles peuvent exprimer leurs besoins et demander des recours appropriés, sans que ce droit abolisse automatiquement une réglementation ecclésiastique particulière en vigueur."
+          },
+          "source_ids": [
+            "CIC2",
+            "TC21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM072",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-ECC-03",
+      "crossLinks": [
+        "CR-AUT-07",
+        "CR-AUT-09"
+      ],
+      "title": {
+        "en": "Did the restrictions collectively penalize faithful traditional communities?",
+        "fr": "Les restrictions ont-elles frappé indistinctement des communautés traditionnelles fidèles ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Traditionis custodes regulates the 1962 Missal generally rather than imposing a canonical penalty only on persons proven to have promoted division. Its restrictions therefore affected communities that professed fidelity to the Pope and acceptance of ecclesiastical authority.",
+            "fr": "Traditionis custodes réglemente globalement l’usage du missel de 1962 et n’inflige pas une peine canonique aux seules personnes reconnues coupables de divisions. Ses restrictions ont donc touché aussi des communautés affirmant leur fidélité au pape et à l’autorité ecclésiastique."
+          },
+          "source_ids": [
+            "TC21",
+            "FSSP21"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "The FSSP and other Courtalain signatories rejected the generalizing description of their spiritual lives and warned of practical harm to priests, families and institutes formed under earlier papal assurances. This objection concerns proportionality and the consequences of broad legal measures.",
+            "fr": "La FSSP et les autres signataires de Courtalain contestent la généralisation de leurs situations spirituelles et signalent des conséquences concrètes pour les prêtres, familles et instituts formés sous les assurances pontificales précédentes. Cette objection porte sur la proportionnalité et les effets d’une mesure générale."
+          },
+          "source_ids": [
+            "FSSP21",
+            "COURT21"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "A restrictive disciplinary norm is not automatically a formal penal sanction. Nevertheless, its burden can be substantial and its proportionality is a legitimate subject of criticism. The determination that measures serve unity should be considered alongside their effects upon communities demonstrably in communion with Rome.",
+            "fr": "Une norme disciplinaire restrictive n’est pas nécessairement une sanction pénale. Son poids peut toutefois être considérable et sa proportionnalité discutée. L’objectif d’unité doit être évalué avec ses effets sur des communautés réellement en communion avec Rome."
+          },
+          "source_ids": [
+            "TC21",
+            "TCL21",
+            "COURT21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM073",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-AUT-07",
+      "crossLinks": [
+        "CR-AUT-06",
+        "CR-LIT-12"
+      ],
+      "title": {
+        "en": "Did the 2021–2023 measures completely prohibit the 1962 Missal and older sacraments?",
+        "fr": "Les mesures de 2021–2023 ont-elles totalement interdit le missel de 1962 et les anciens rituels ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The 2021 motu proprio imposed conditions rather than a universal absolute prohibition of the 1962 Mass. The 2021 Responsa constrained permission for the older Rituale Romanum and Pontificale Romanum; the February 2023 rescript reserved specified dispensations to the Apostolic See.",
+            "fr": "Le motu proprio de 2021 impose des conditions sans interdire absolument et universellement la messe selon le missel de 1962. Les Responsa de 2021 limitent les permissions relatives aux anciens Rituale et Pontificale ; le rescrit de février 2023 réserve certaines dispenses au Siège apostolique."
+          },
+          "source_ids": [
+            "TC21",
+            "RESP21",
+            "RES23"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "The progressively more restrictive interpretation raised concerns that lawful celebration could become practically inaccessible in some dioceses. Those concerns must be assessed against the actual permissions and exemptions rather than assuming either complete suppression or unrestricted access.",
+            "fr": "L’interprétation de plus en plus restrictive suscite la crainte que la célébration licite devienne pratiquement inaccessible dans certains diocèses. Cette crainte doit être examinée à partir des permissions et exceptions réelles, sans présumer une suppression totale ni un accès sans restriction."
+          },
+          "source_ids": [
+            "RESP21",
+            "RES23",
+            "TC21"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "Francis's decree of 11 February 2022 specifically granted members of the FSSP faculties to use the liturgical books in force in 1962, with conditions. This particular grant does not extend automatically to every diocesan priest or institute; it also shows that the general regime admits distinct particular arrangements.",
+            "fr": "Le décret de François du 11 février 2022 accorde expressément aux membres de la FSSP l’usage, sous conditions, des livres liturgiques en vigueur en 1962. Cette concession particulière ne s’étend pas automatiquement à tous les prêtres diocésains ou instituts ; elle montre néanmoins que le régime général permet des situations propres."
+          },
+          "source_ids": [
+            "FSSP22",
+            "TC21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM074",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-ECC-05",
+      "crossLinks": [
+        "CR-AUT-07",
+        "CR-ECC-06"
+      ],
+      "title": {
+        "en": "Did FSSP, ICKSP and SSPX respond to Traditionis custodes in the same way?",
+        "fr": "La FSSP, l’ICRSP et la FSSPX ont-ils réagi de la même manière à Traditionis custodes ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The FSSP and ICKSP joined other canonical institutes in affirming their fidelity to the Pope, bishops and the Magisterium while asking for a personal dialogue about their liturgical vocation. The FSSP later received its specific 2022 papal decree.",
+            "fr": "La FSSP et l’ICRSP ont rejoint d’autres instituts canoniques pour réaffirmer leur fidélité au pape, aux évêques et au Magistère, tout en demandant un dialogue personnel sur leur vocation liturgique. La FSSP a ensuite obtenu un décret pontifical particulier en 2022."
+          },
+          "source_ids": [
+            "COURT21",
+            "FSSP22"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "SSPX Superior General Davide Pagliarani treated the 2021 restrictions as evidence of a deeper incompatibility between the inherited liturgy and the postconciliar liturgical settlement, explicitly rejecting Benedict XVI's proposed hermeneutic of continuity. This documents the SSPX's own position; it does not prove that assessment.",
+            "fr": "Le supérieur général de la FSSPX, Davide Pagliarani, voit dans les restrictions de 2021 l’indice d’une incompatibilité plus profonde entre l’ancienne liturgie et la réforme postconciliaire ; il récuse explicitement l’herméneutique de continuité proposée par Benoît XVI. Il s’agit de la position propre de la FSSPX, non de sa démonstration."
+          },
+          "source_ids": [
+            "SSPX21",
+            "SPL07"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "The organizations share attachment to older Roman worship but differ in canonical position and in their practical response to Roman jurisdiction. A critique of Traditionis custodes must not collapse these positions or equate membership of a canonically recognized institute with SSPX membership.",
+            "fr": "Ces organisations partagent l’attachement à l’ancien culte romain, mais diffèrent par leur situation canonique et leur réponse pratique à la juridiction romaine. La critique de Traditionis custodes ne doit ni fusionner leurs positions ni assimiler l’appartenance à un institut canoniquement reconnu à celle de la FSSPX."
+          },
+          "source_ids": [
+            "COURT21",
+            "FSSP22",
+            "SSPX21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TLM075",
+      "legacy_series": "TLM",
+      "canonical_owner": "CR-AUT-03",
+      "crossLinks": [
+        "CR-AUT-01",
+        "CR-AUT-02",
+        "CR-AUT-10"
+      ],
+      "title": {
+        "en": "May Catholics disobey Traditionis custodes when they judge it unjust?",
+        "fr": "Un catholique peut-il désobéir à Traditionis custodes s’il le juge injuste ?"
+      },
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Canon 212 requires Christian obedience in matters legitimately established by sacred pastors, while allowing the faithful to make known their spiritual needs and, when appropriate, publicly express concerns with reverence. Disagreement with a prudential disciplinary decision does not by itself suspend the obligation to observe it.",
+            "fr": "Le canon 212 impose l’obéissance chrétienne aux décisions légitimes des pasteurs, tout en permettant aux fidèles d’exprimer leurs besoins spirituels et, selon les circonstances, leurs préoccupations avec révérence. Un désaccord prudentiel avec une décision disciplinaire ne suspend pas à lui seul l’obligation de l’observer."
+          },
+          "source_ids": [
+            "CIC2",
+            "TC21"
+          ]
+        },
+        {
+          "role": "identified_objection",
+          "text": {
+            "en": "Obedience is not unlimited: no ecclesiastical superior can require sin or violation of divine law. Nevertheless, the claim that a liturgical restriction is harmful or imprudent is not identical to proving a divine-law obligation to disobey that particular norm.",
+            "fr": "L’obéissance n’est pas illimitée : aucun supérieur ecclésiastique ne peut commander le péché ou la violation du droit divin. Cependant, juger une restriction liturgique nuisible ou imprudente ne prouve pas qu’il existe une obligation de droit divin d’enfreindre cette norme précise."
+          },
+          "source_ids": [
+            "CIC2",
+            "CIC4",
+            "SC63"
+          ]
+        },
+        {
+          "role": "assessment",
+          "text": {
+            "en": "Faithful Catholics can seek permissions, request changes, explain concrete pastoral harm, and use lawful avenues of petition or recourse. The Courtalain institutes sought dialogue and their canonical guarantees; this is a documented form of serious criticism without making contempt or rejection of authority a condition of fidelity to Tradition.",
+            "fr": "Les catholiques peuvent demander des permissions, solliciter des changements, exposer un dommage pastoral concret et recourir aux voies légitimes de requête. Les instituts de Courtalain ont demandé le dialogue et le respect de leurs garanties canoniques ; cet exemple atteste qu’une critique sérieuse n’exige ni mépris ni rejet de l’autorité."
+          },
+          "source_ids": [
+            "CIC2",
+            "COURT21",
+            "FSSP22"
+          ]
+        }
+      ]
+    }
+  ],
+  "ownership_summary": {
+    "questions_registered": 10,
+    "new_canonical_dossiers": 0,
+    "canonical_owners": [
+      "CR-ECC-03",
+      "CR-AUT-07",
+      "CR-AUT-06",
+      "CR-ECC-05",
+      "CR-AUT-03"
+    ],
+    "related_but_not_canonical": "Mass Formation/TLM objections browsing list may link to these cases; Authority and Ecclesiological Crisis render the canonical substantive dossiers."
+  }
+}
