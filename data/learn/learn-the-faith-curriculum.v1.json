@@ -15,9 +15,10 @@
     "current_reference_route": "learn.catechism",
     "current_daily_route": "learn.catechism.daily",
     "mapping_complete": true,
-    "lesson_prose_complete": false,
-    "paragraph_sources_complete": false,
-    "note": "Exact St Pius X question mapping is complete. Publication remains blocked until each lesson's prose is drafted bilingually and every substantive paragraph resolves to sources."
+    "lesson_prose_complete": true,
+    "paragraph_sources_complete": true,
+    "note": "All 54 lessons now have bilingual source-linked draft prose and exact St Pius X mappings. Publication remains blocked pending final editorial review, source-link verification and deduplication acceptance.",
+    "editorial_review_complete": false
   },
   "relationship_to_existing": {
     "learn.catechism.daily": "Daily review and spaced encounter with the existing question bank; not the guided doctrine course.",
@@ -1996,5 +1997,35 @@
     "mapping_status": "ALL_54_LESSONS_MAPPED_TO_EXACT_QUESTION_REFS",
     "source_map": "data/learn/pius-x-catechism-source-map.v1.json",
     "source_chapters": 21
+  },
+  "content_batches": [
+    {
+      "path": "data/learn/learn-the-faith-content.batch1.v1.json",
+      "scope": "LTF-001–LTF-018",
+      "lessons": 18,
+      "claims": 54,
+      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "path": "data/learn/learn-the-faith-content.batch2.v1.json",
+      "scope": "LTF-019–LTF-036",
+      "lessons": 18,
+      "claims": 64,
+      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "path": "data/learn/learn-the-faith-content.batch3.v1.json",
+      "scope": "LTF-037–LTF-054",
+      "lessons": 18,
+      "claims": 58,
+      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
+    }
+  ],
+  "metrics": {
+    "lesson_count": 54,
+    "content_batches": 3,
+    "source_linked_claims": 176,
+    "unresolved_source_gaps": 0,
+    "public_route_exposed": false
   }
 }
