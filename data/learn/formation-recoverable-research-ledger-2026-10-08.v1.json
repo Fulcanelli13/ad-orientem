@@ -17,18 +17,13 @@
       "CONTEMPORARY_CASE_PACK_2": 12,
       "TRADITIONAL_MASS_OBJECTION": 50
     },
-    "source_bearing_blocks": 508,
-    "blocks_with_french": 404,
+    "source_bearing_blocks": 538,
+    "blocks_with_french": 434,
     "blocks_without_french": 104,
     "blocks_without_source_ids": 0,
-    "source_id_links": 1225,
+    "source_id_links": 1304,
     "unknown_source_ids": 0,
-    "biblical_patristic_question_only": [
-      "BAQ-13",
-      "BAQ-14",
-      "BAQ-15",
-      "BAQ-16"
-    ]
+    "biblical_patristic_question_only": []
   },
   "controversy_topics": {
     "counts": {
@@ -1273,21 +1268,45 @@
         }
       ],
       "canonical_owner": "CR-ECC-04",
-      "content_status": "QUESTION_ONLY_NO_ANSWER",
+      "content_status": "NEW_BILINGUAL_SUBSTANTIVE_ANSWER_DRAFT_20261008_NOT_LEGACY_VERBATIM",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
-      "answer_path": null,
+      "answer_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-answers.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 0,
+        "source_bearing_blocks": 6,
+        "blocks_with_fr": 6,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 0,
         "blocks_without_source_ids": 0,
-        "source_id_links": 0,
-        "source_ids": [],
+        "source_id_links": 13,
+        "source_ids": [
+          "ANTIPOPES",
+          "PASTORET",
+          "PIUS-ELECT45",
+          "SCHISM-1913"
+        ],
         "unresolved_source_ids": [],
-        "source_links": []
+        "source_links": [
+          {
+            "id": "ANTIPOPES",
+            "url": "https://www.newadvent.org/cathen/01582a.htm"
+          },
+          {
+            "id": "PASTORET",
+            "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+          },
+          {
+            "id": "PIUS-ELECT45",
+            "url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19451208_vacantis-apostolicae-sedis.html"
+          },
+          {
+            "id": "SCHISM-1913",
+            "url": "https://www.newadvent.org/cathen/13539a.htm"
+          }
+        ]
       },
-      "review_notes": []
+      "review_notes": [
+        "2026-10-08: New answer authored against original surviving BAQ question; NOT recovery of A/C legacy question text; editorial citation approval pending."
+      ]
     },
     {
       "id": "BAQ-14",
@@ -1309,21 +1328,65 @@
         }
       ],
       "canonical_owner": "CR-ECC-04",
-      "content_status": "QUESTION_ONLY_NO_ANSWER",
+      "content_status": "NEW_BILINGUAL_SUBSTANTIVE_ANSWER_DRAFT_20261008_NOT_LEGACY_VERBATIM",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
-      "answer_path": null,
+      "answer_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-answers.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 0,
+        "source_bearing_blocks": 8,
+        "blocks_with_fr": 8,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 0,
         "blocks_without_source_ids": 0,
-        "source_id_links": 0,
-        "source_ids": [],
+        "source_id_links": 20,
+        "source_ids": [
+          "BELL-II30",
+          "BELL-IV67",
+          "LEO",
+          "MYSTICI",
+          "PASTORET",
+          "SALZA-REPLY",
+          "SEDEVBELL",
+          "SEDEVOP"
+        ],
         "unresolved_source_ids": [],
-        "source_links": []
+        "source_links": [
+          {
+            "id": "BELL-II30",
+            "url": "https://novusordowatch.org/de-romano-pontifice-book2-chapter30/"
+          },
+          {
+            "id": "BELL-IV67",
+            "url": "https://novusordowatch.org/de-romano-pontifice-book4-chapters6-7/"
+          },
+          {
+            "id": "LEO",
+            "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html"
+          },
+          {
+            "id": "MYSTICI",
+            "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html"
+          },
+          {
+            "id": "PASTORET",
+            "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+          },
+          {
+            "id": "SALZA-REPLY",
+            "url": "https://www.trueorfalsepope.com/p/bellarmine-and-suarez-on-question-of.html"
+          },
+          {
+            "id": "SEDEVBELL",
+            "url": "https://novusordowatch.org/2015/06/can-heretical-pope-be-deposed/"
+          },
+          {
+            "id": "SEDEVOP",
+            "url": "https://novusordowatch.org/2016/04/bellarmine-pope-heretic/"
+          }
+        ]
       },
-      "review_notes": []
+      "review_notes": [
+        "2026-10-08: New answer authored against original surviving BAQ question; NOT recovery of A/C legacy question text; editorial citation approval pending."
+      ]
     },
     {
       "id": "BAQ-15",
@@ -1345,21 +1408,65 @@
         }
       ],
       "canonical_owner": "CR-ECC-08",
-      "content_status": "QUESTION_ONLY_NO_ANSWER",
+      "content_status": "NEW_BILINGUAL_SUBSTANTIVE_ANSWER_DRAFT_20261008_NOT_LEGACY_VERBATIM",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
-      "answer_path": null,
+      "answer_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-answers.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 0,
+        "source_bearing_blocks": 8,
+        "blocks_with_fr": 8,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 0,
         "blocks_without_source_ids": 0,
-        "source_id_links": 0,
-        "source_ids": [],
+        "source_id_links": 24,
+        "source_ids": [
+          "BELL-II30",
+          "BILLOT-29",
+          "CIC-1404",
+          "CIC-194",
+          "DALY-PRIVATE",
+          "LEO",
+          "PASTORET",
+          "SALZA-REPLY"
+        ],
         "unresolved_source_ids": [],
-        "source_links": []
+        "source_links": [
+          {
+            "id": "BELL-II30",
+            "url": "https://novusordowatch.org/de-romano-pontifice-book2-chapter30/"
+          },
+          {
+            "id": "BILLOT-29",
+            "url": "https://novusordowatch.org/billot-de-ecclesia-thesis29/"
+          },
+          {
+            "id": "CIC-1404",
+            "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1400-1500_en.html"
+          },
+          {
+            "id": "CIC-194",
+            "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann145-196_en.html"
+          },
+          {
+            "id": "DALY-PRIVATE",
+            "url": "https://novusordowatch.org/2015/12/sede-private-judgment/"
+          },
+          {
+            "id": "LEO",
+            "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html"
+          },
+          {
+            "id": "PASTORET",
+            "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+          },
+          {
+            "id": "SALZA-REPLY",
+            "url": "https://www.trueorfalsepope.com/p/bellarmine-and-suarez-on-question-of.html"
+          }
+        ]
       },
-      "review_notes": []
+      "review_notes": [
+        "2026-10-08: New answer authored against original surviving BAQ question; NOT recovery of A/C legacy question text; editorial citation approval pending."
+      ]
     },
     {
       "id": "BAQ-16",
@@ -1389,21 +1496,60 @@
         }
       ],
       "canonical_owner": "CR-ECC-08",
-      "content_status": "QUESTION_ONLY_NO_ANSWER",
+      "content_status": "NEW_BILINGUAL_SUBSTANTIVE_ANSWER_DRAFT_20261008_NOT_LEGACY_VERBATIM",
       "publication_status": "UNPUBLISHED",
       "source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
-      "answer_path": null,
+      "answer_path": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-answers.v1.json",
       "source_metrics": {
-        "source_bearing_blocks": 0,
+        "source_bearing_blocks": 8,
+        "blocks_with_fr": 8,
         "blocks_no_fr": 0,
-        "blocks_with_fr": 0,
         "blocks_without_source_ids": 0,
-        "source_id_links": 0,
-        "source_ids": [],
+        "source_id_links": 22,
+        "source_ids": [
+          "BILLOT-29",
+          "IRENAEUS",
+          "LEO",
+          "MYSTICI",
+          "NOW-VIS",
+          "PASTORET",
+          "PIUS-ELECT45"
+        ],
         "unresolved_source_ids": [],
-        "source_links": []
+        "source_links": [
+          {
+            "id": "BILLOT-29",
+            "url": "https://novusordowatch.org/billot-de-ecclesia-thesis29/"
+          },
+          {
+            "id": "IRENAEUS",
+            "url": "https://www.newadvent.org/fathers/0103303.htm"
+          },
+          {
+            "id": "LEO",
+            "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html"
+          },
+          {
+            "id": "MYSTICI",
+            "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html"
+          },
+          {
+            "id": "NOW-VIS",
+            "url": "https://novusordowatch.org/2015/12/have-gates-of-hell-prevailed/"
+          },
+          {
+            "id": "PASTORET",
+            "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+          },
+          {
+            "id": "PIUS-ELECT45",
+            "url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19451208_vacantis-apostolicae-sedis.html"
+          }
+        ]
       },
-      "review_notes": []
+      "review_notes": [
+        "2026-10-08: New answer authored against original surviving BAQ question; NOT recovery of A/C legacy question text; editorial citation approval pending."
+      ]
     },
     {
       "id": "BAQ-17",
@@ -5529,5 +5675,16 @@
     "human_approval": false,
     "public_release": false,
     "full_claim_by_claim_verification": false
+  },
+  "baq_13_16_new_answer_pass_20261008": {
+    "ids": [
+      "BAQ-13",
+      "BAQ-14",
+      "BAQ-15",
+      "BAQ-16"
+    ],
+    "source_bearing_blocks_added": 30,
+    "newly_written_not_legacy_recovery": true,
+    "editorial_approval": false
   }
 }
