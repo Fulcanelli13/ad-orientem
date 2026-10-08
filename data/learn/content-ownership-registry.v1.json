@@ -1,0 +1,713 @@
+{
+  "version": "CONTENT_OWNERSHIP_REGISTRY_V1",
+  "status": "ACTIVE_CONVERGENCE_BASELINE",
+  "created_at": "2026-10-08",
+  "repository": "Fulcanelli13/ad-orientem",
+  "baseline_main": "8f9b93c7be8a21c09b750c638b20a3706b6c08a7",
+  "governing_rules": [
+    "One concern has one canonical owner; other surfaces reference or hand off.",
+    "Large research corpora may remain searchable, but navigation exposes compressed canonical dossiers.",
+    "Catechism owns positive doctrine; Apologetics owns defence; Church Crisis owns controversy/change/history-of-crisis.",
+    "PRAY owns prayer execution; Mass owns liturgical execution; Calendar owns temporal logic; Customary owns local/traditional practice.",
+    "A retired owner must not survive as a route, cross-link target, or taxonomy bucket except in migration aliases."
+  ],
+  "dispositions": [
+    "KEEP",
+    "MERGE",
+    "MOVE",
+    "REFERENCE",
+    "RETIRE"
+  ],
+  "current_app_surfaces": {
+    "home": {
+      "disposition": "KEEP"
+    },
+    "mass": {
+      "disposition": "KEEP"
+    },
+    "pray": {
+      "disposition": "KEEP"
+    },
+    "learn": {
+      "disposition": "KEEP",
+      "canonical_role": "learning hub"
+    },
+    "calendar": {
+      "disposition": "KEEP"
+    },
+    "find": {
+      "disposition": "KEEP"
+    },
+    "settings": {
+      "disposition": "KEEP",
+      "canonical_role": "utility overlay"
+    },
+    "apostolate": {
+      "disposition": "KEEP",
+      "canonical_role": "scenario/practice layer"
+    }
+  },
+  "formation_routes": [
+    {
+      "id": "learn.catechism.daily",
+      "disposition": "REFERENCE",
+      "owner": "learn.catechism",
+      "note": "Daily programme is a study/review view, not a second doctrine owner."
+    },
+    {
+      "id": "learn.catechism",
+      "disposition": "KEEP",
+      "owner": "catechism",
+      "note": "Positive doctrine/reference owner."
+    },
+    {
+      "id": "learn.spiritual_life",
+      "disposition": "KEEP",
+      "owner": "spiritual-life",
+      "note": "14 sourced lessons; focused formation strand."
+    },
+    {
+      "id": "learn.sexual_ethics",
+      "disposition": "MERGE",
+      "owner": "sexual-ethics",
+      "note": "Keep all 150 records searchable; compress normal navigation to 50 canonical dossiers."
+    },
+    {
+      "id": "learn.scapular",
+      "disposition": "KEEP",
+      "owner": "formation-devotional-guide",
+      "note": "Formation owns meaning/preparation; prayer/devotional execution should reference PRAY."
+    },
+    {
+      "id": "learn.mass",
+      "disposition": "KEEP",
+      "owner": "mass-formation"
+    },
+    {
+      "id": "learn.serve_mass.responses",
+      "disposition": "KEEP",
+      "owner": "mass-formation-practice"
+    },
+    {
+      "id": "learn.rites.sick",
+      "disposition": "KEEP",
+      "owner": "sacramental-formation"
+    },
+    {
+      "id": "learn.rites.baptism",
+      "disposition": "KEEP",
+      "owner": "sacramental-formation"
+    },
+    {
+      "id": "learn.rites.first_communion",
+      "disposition": "KEEP",
+      "owner": "sacramental-formation"
+    },
+    {
+      "id": "learn.rites.confirmation",
+      "disposition": "KEEP",
+      "owner": "sacramental-formation"
+    },
+    {
+      "id": "learn.rites.holy_orders",
+      "disposition": "KEEP",
+      "owner": "sacramental-formation"
+    },
+    {
+      "id": "learn.rites.matrimony",
+      "disposition": "KEEP",
+      "owner": "sacramental-formation"
+    },
+    {
+      "id": "learn.latin",
+      "disposition": "KEEP",
+      "owner": "latin",
+      "note": "Course owner; reference/context views should share same corpus."
+    },
+    {
+      "id": "learn.glossary",
+      "disposition": "KEEP",
+      "owner": "glossary",
+      "note": "Shared semantic infrastructure; 450 concepts plus Latin lexemes/phrases."
+    },
+    {
+      "id": "learn.seasonal_rites",
+      "disposition": "RETIRE",
+      "owner": "calendar/customary/pray",
+      "note": "Hidden surviving route; move seasonal practice records to Calendar/Customary/PRAY and remove Learn route after handoffs are migrated."
+    },
+    {
+      "id": "learn.catholic_life",
+      "disposition": "RETIRE",
+      "owner": null,
+      "note": "Explicitly prohibited catch-all owner. Must not remain a route or valid handoff target."
+    }
+  ],
+  "metadata_migrations": [
+    {
+      "source": "src/learn/traditional-life.js",
+      "issue": "Surviving sacramental routes and Brown Scapular still carry legacy category 'catholic-life'.",
+      "disposition": "MOVE",
+      "target_categories": [
+        "sacramental-formation",
+        "spiritual-moral",
+        "mass-formation",
+        "liturgical-life"
+      ]
+    },
+    {
+      "source": "src/learn/sexual-ethics-data/index.js",
+      "issue": "allowedCrossTargets still whitelists retired learn.catholic_life.",
+      "disposition": "RETIRE"
+    }
+  ],
+  "apostolate": {
+    "route": "apostolate",
+    "disposition": "KEEP",
+    "scenario_count": 36,
+    "skill_count": 9,
+    "families": [
+      {
+        "prefix": "AQ",
+        "count": 8,
+        "disposition": "REFERENCE",
+        "target": "future canonical Apologetics dossiers",
+        "note": "Keep concise conversational/practice layer; do not let AQ become a second apologetics owner."
+      },
+      {
+        "prefix": "HS",
+        "count": 7,
+        "disposition": "KEEP"
+      },
+      {
+        "prefix": "FH",
+        "count": 8,
+        "disposition": "KEEP"
+      },
+      {
+        "prefix": "TF",
+        "count": 5,
+        "disposition": "KEEP"
+      },
+      {
+        "prefix": "DV",
+        "count": 5,
+        "disposition": "KEEP"
+      },
+      {
+        "prefix": "WC",
+        "count": 3,
+        "disposition": "KEEP"
+      }
+    ],
+    "skills": {
+      "ids": [
+        "APF01",
+        "APF02",
+        "APF03",
+        "APF04",
+        "APF05",
+        "APF06",
+        "APF07",
+        "APF08",
+        "APF09"
+      ],
+      "disposition": "KEEP"
+    }
+  },
+  "sexual_ethics": {
+    "source_question_count": 150,
+    "canonical_navigation_target": 50,
+    "full_search_retained": true,
+    "dead_handoffs": [
+      {
+        "id": "CSE138",
+        "retire_target": "learn.catholic_life",
+        "move_to": [
+          "pray.confession",
+          "learn.spiritual_life"
+        ]
+      },
+      {
+        "id": "CSE140",
+        "retire_target": "learn.catholic_life",
+        "move_to": [
+          "pray.confession",
+          "learn.spiritual_life"
+        ]
+      }
+    ],
+    "canonical_dossiers": [
+      {
+        "id": "SEX-CORE-01",
+        "title": "Why the Church teaches about sexuality",
+        "sources": [
+          "CSE001",
+          "CSE002",
+          "CSE003"
+        ]
+      },
+      {
+        "id": "SEX-CORE-02",
+        "title": "Natural law, harm, consent, intention and intrinsic evil",
+        "sources": [
+          "CSE004",
+          "CSE005",
+          "CSE006",
+          "CSE007",
+          "CSE008",
+          "CSE009",
+          "CSE010"
+        ]
+      },
+      {
+        "id": "SEX-CORE-03",
+        "title": "Authority, Scripture, history and development",
+        "sources": [
+          "CSE011",
+          "CSE012",
+          "CSE013",
+          "CSE014",
+          "CSE015"
+        ]
+      },
+      {
+        "id": "SEX-CORE-04",
+        "title": "Conscience, disagreement and culpability",
+        "sources": [
+          "CSE016",
+          "CSE017",
+          "CSE018",
+          "CSE019",
+          "CSE020"
+        ]
+      },
+      {
+        "id": "SEX-CORE-05",
+        "title": "Chastity, desire, temptation and involuntary reactions",
+        "sources": [
+          "CSE021",
+          "CSE022",
+          "CSE023",
+          "CSE024",
+          "CSE025",
+          "CSE026",
+          "CSE027"
+        ]
+      },
+      {
+        "id": "SEX-CORE-06",
+        "title": "Virginity, celibacy and marriage",
+        "sources": [
+          "CSE028",
+          "CSE029"
+        ]
+      },
+      {
+        "id": "SEX-CORE-07",
+        "title": "Modesty",
+        "sources": [
+          "CSE030"
+        ]
+      },
+      {
+        "id": "SEX-CORE-08",
+        "title": "Premarital sex, engagement and physical boundaries",
+        "sources": [
+          "CSE031",
+          "CSE032",
+          "CSE033",
+          "CSE034"
+        ]
+      },
+      {
+        "id": "SEX-CORE-09",
+        "title": "Cohabitation",
+        "sources": [
+          "CSE035",
+          "CSE036"
+        ]
+      },
+      {
+        "id": "SEX-CORE-10",
+        "title": "Occasions of sin, deliberate looking and flirting",
+        "sources": [
+          "CSE037",
+          "CSE038",
+          "CSE039"
+        ]
+      },
+      {
+        "id": "SEX-CORE-11",
+        "title": "Specific sexual acts before marriage",
+        "sources": [
+          "CSE040"
+        ]
+      },
+      {
+        "id": "SEX-CORE-12",
+        "title": "Nature, goods and ends of marriage",
+        "sources": [
+          "CSE041",
+          "CSE042",
+          "CSE043",
+          "CSE044",
+          "CSE045",
+          "CSE046"
+        ]
+      },
+      {
+        "id": "SEX-CORE-13",
+        "title": "Infertility and the marital act",
+        "sources": [
+          "CSE047",
+          "CSE048",
+          "CSE060"
+        ]
+      },
+      {
+        "id": "SEX-CORE-14",
+        "title": "Indissolubility and remarriage",
+        "sources": [
+          "CSE049",
+          "CSE050"
+        ]
+      },
+      {
+        "id": "SEX-CORE-15",
+        "title": "Marital consent, debt, refusal and coercion",
+        "sources": [
+          "CSE051",
+          "CSE052",
+          "CSE053",
+          "CSE054",
+          "CSE059"
+        ]
+      },
+      {
+        "id": "SEX-CORE-16",
+        "title": "Limits of sexual acts within marriage",
+        "sources": [
+          "CSE055",
+          "CSE056",
+          "CSE057",
+          "CSE058"
+        ]
+      },
+      {
+        "id": "SEX-CORE-17",
+        "title": "Why contraception is wrong",
+        "sources": [
+          "CSE061"
+        ]
+      },
+      {
+        "id": "SEX-CORE-18",
+        "title": "Avoiding pregnancy and NFP",
+        "sources": [
+          "CSE062",
+          "CSE063",
+          "CSE064",
+          "CSE065",
+          "CSE066",
+          "CSE067"
+        ]
+      },
+      {
+        "id": "SEX-CORE-19",
+        "title": "Sterilization, medical side effects and unilateral contraception",
+        "sources": [
+          "CSE068",
+          "CSE069",
+          "CSE070"
+        ]
+      },
+      {
+        "id": "SEX-CORE-20",
+        "title": "Masturbation and culpability",
+        "sources": [
+          "CSE071",
+          "CSE072",
+          "CSE073"
+        ]
+      },
+      {
+        "id": "SEX-CORE-21",
+        "title": "Pornography, erotic media and habitual use",
+        "sources": [
+          "CSE074",
+          "CSE075",
+          "CSE076",
+          "CSE077",
+          "CSE078",
+          "CSE079",
+          "CSE080"
+        ]
+      },
+      {
+        "id": "SEX-CORE-22",
+        "title": "Same-sex attraction versus chosen acts",
+        "sources": [
+          "CSE081",
+          "CSE082"
+        ]
+      },
+      {
+        "id": "SEX-CORE-23",
+        "title": "Same-sex relationships, fidelity and civil marriage",
+        "sources": [
+          "CSE083",
+          "CSE084",
+          "CSE085",
+          "CSE086",
+          "CSE087",
+          "CSE088",
+          "CSE089"
+        ]
+      },
+      {
+        "id": "SEX-CORE-24",
+        "title": "Celibate friendship and identity language",
+        "sources": [
+          "CSE090",
+          "CSE099"
+        ]
+      },
+      {
+        "id": "SEX-CORE-25",
+        "title": "Male and female, sex and gender roles",
+        "sources": [
+          "CSE091",
+          "CSE092",
+          "CSE093"
+        ]
+      },
+      {
+        "id": "SEX-CORE-26",
+        "title": "Gender dysphoria, affirmation, intervention and DSD",
+        "sources": [
+          "CSE094",
+          "CSE095",
+          "CSE096",
+          "CSE097",
+          "CSE098"
+        ]
+      },
+      {
+        "id": "SEX-CORE-27",
+        "title": "Parents and gender-identity questions",
+        "sources": [
+          "CSE100"
+        ]
+      },
+      {
+        "id": "SEX-CORE-28",
+        "title": "IVF, replacing the marital act, donors and surrogacy",
+        "sources": [
+          "CSE101",
+          "CSE102",
+          "CSE103",
+          "CSE104"
+        ]
+      },
+      {
+        "id": "SEX-CORE-29",
+        "title": "Embryo selection, freezing and existing frozen embryos",
+        "sources": [
+          "CSE105",
+          "CSE109",
+          "CSE110"
+        ]
+      },
+      {
+        "id": "SEX-CORE-30",
+        "title": "Permissible fertility treatment and new technologies",
+        "sources": [
+          "CSE106",
+          "CSE107",
+          "CSE108"
+        ]
+      },
+      {
+        "id": "SEX-CORE-31",
+        "title": "Sexual assault, coercion, involuntary response and grooming",
+        "sources": [
+          "CSE111",
+          "CSE112",
+          "CSE113",
+          "CSE114",
+          "CSE115",
+          "CSE117",
+          "CSE118",
+          "CSE120"
+        ]
+      },
+      {
+        "id": "SEX-CORE-32",
+        "title": "Incest",
+        "sources": [
+          "CSE116"
+        ]
+      },
+      {
+        "id": "SEX-CORE-33",
+        "title": "Abuse survivors and Confession",
+        "sources": [
+          "CSE119"
+        ]
+      },
+      {
+        "id": "SEX-CORE-34",
+        "title": "Teaching children about sexuality",
+        "sources": [
+          "CSE121",
+          "CSE122"
+        ]
+      },
+      {
+        "id": "SEX-CORE-35",
+        "title": "Abortion and hard pregnancy cases",
+        "sources": [
+          "CSE123",
+          "CSE124",
+          "CSE125"
+        ]
+      },
+      {
+        "id": "SEX-CORE-36",
+        "title": "Children encountering pornography",
+        "sources": [
+          "CSE126"
+        ]
+      },
+      {
+        "id": "SEX-CORE-37",
+        "title": "Sexting and private intimate images",
+        "sources": [
+          "CSE127",
+          "CSE128"
+        ]
+      },
+      {
+        "id": "SEX-CORE-38",
+        "title": "Virtual infidelity and sexual interaction with AI",
+        "sources": [
+          "CSE129",
+          "CSE130"
+        ]
+      },
+      {
+        "id": "SEX-CORE-39",
+        "title": "How to confess sexual sins",
+        "sources": [
+          "CSE131",
+          "CSE132",
+          "CSE133",
+          "CSE134",
+          "CSE135"
+        ]
+      },
+      {
+        "id": "SEX-CORE-40",
+        "title": "Scrupulosity, intrusive thoughts and consent",
+        "sources": [
+          "CSE136",
+          "CSE137"
+        ]
+      },
+      {
+        "id": "SEX-CORE-41",
+        "title": "Repeated falls and a practical programme of chastity",
+        "sources": [
+          "CSE138",
+          "CSE140"
+        ]
+      },
+      {
+        "id": "SEX-CORE-42",
+        "title": "Holy Communion after sexual sin",
+        "sources": [
+          "CSE139"
+        ]
+      },
+      {
+        "id": "SEX-CORE-43",
+        "title": "Obsession, impossibility, guilt and shame",
+        "sources": [
+          "CSE141",
+          "CSE142",
+          "CSE143"
+        ]
+      },
+      {
+        "id": "SEX-CORE-44",
+        "title": "Mercy and difficult cases",
+        "sources": [
+          "CSE144"
+        ]
+      },
+      {
+        "id": "SEX-CORE-45",
+        "title": "Why 'love is love' is not enough",
+        "sources": [
+          "CSE145"
+        ]
+      },
+      {
+        "id": "SEX-CORE-46",
+        "title": "Does common behaviour become morally acceptable?",
+        "sources": [
+          "CSE146"
+        ]
+      },
+      {
+        "id": "SEX-CORE-47",
+        "title": "Why a non-Catholic should take the argument seriously",
+        "sources": [
+          "CSE147"
+        ]
+      },
+      {
+        "id": "SEX-CORE-48",
+        "title": "How to explain Catholic sexual morality without sounding judgmental",
+        "sources": [
+          "CSE148"
+        ]
+      },
+      {
+        "id": "SEX-CORE-49",
+        "title": "Modern science and traditional sexual morality",
+        "sources": [
+          "CSE149"
+        ]
+      },
+      {
+        "id": "SEX-CORE-50",
+        "title": "The positive Catholic vision of sexuality",
+        "sources": [
+          "CSE150"
+        ]
+      }
+    ]
+  },
+  "research_not_yet_live": [
+    {
+      "id": "apologetics",
+      "disposition": "MERGE",
+      "target": "~60 canonical dossiers",
+      "note": "Do not publish projected A001-A318 as a flat question wall."
+    },
+    {
+      "id": "church-crisis",
+      "disposition": "MERGE",
+      "target": "~70-80 canonical dossiers",
+      "note": "Compress existing C corpus plus Mass Crisis, Origins, Ecumenism, Synodality, Governance and Moral research."
+    },
+    {
+      "id": "church-history",
+      "disposition": "REFERENCE",
+      "target": "~35-40 timeline nodes",
+      "note": "Chronology/context support layer; avoid duplicating Crisis."
+    }
+  ]
+}
