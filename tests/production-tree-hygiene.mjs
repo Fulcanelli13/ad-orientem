@@ -23,6 +23,7 @@ const reviewBranchMutationWorkflows=new Map([
   ["directory-snapshot-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
   ["directory-geocode-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
   ["directory-icksp-research-geocode.yml",/branches:\s*\n\s*-\s*["']directory\/icksp-quality-\*["']/i],
+  ["directory-sspx-france-staging.yml",/if:\s*startsWith\(github\.head_ref\s*\|\|\s*github\.ref_name,\s*[']directory\/sspx-france-bulk-[']\)/i],
 ]);
 for(const name of workflows){
   const path=join(workflowDir,name);
@@ -40,8 +41,19 @@ for(const name of workflows){
       name+" must never target main");
     assert.match(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
       name+" review-branch promotion requires explicit contents: write");
-    assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
-      name+" must push only back to the triggering review branch");
+    if(name==="directory-sspx-france-staging.yml"){
+      assert.match(source,/if:\s*steps\.acquisition\.outcome\s*==\s*'success'\s*&&\s*github\.event_name\s*==\s*'pull_request'/i,
+        name+" must only stage successful pulls, not workflow_dispatch or main");
+      assert.match(source,/git\s+add\s+data\/directory\/research\/staging\/sspx-france-lpl\//i,
+        name+" must stage only the isolated SSPX France research path");
+      assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{\{\s*github\.head_ref\s*\}\}["']/i,
+        name+" must push only back to its originating research PR branch");
+      assert.doesNotMatch(source,/git\s+push\s+origin\s+["']?HEAD:main/i,
+        name+" may not push main");
+    }else{
+      assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
+        name+" must push only back to the triggering review branch");
+    }
   }else{
     assert.doesNotMatch(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
       name+" regained contents: write");
