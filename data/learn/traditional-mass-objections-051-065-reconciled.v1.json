@@ -1,6 +1,6 @@
 {
   "version": "TLM_OBJECTIONS_051_065_RECONCILED_V1",
-  "status": "BILINGUAL_37_PARAGRAPHS_7_PRIMARY_TEXT_AUDITED_NOT_PUBLIC",
+  "status": "BILINGUAL_37_PARAGRAPHS_15_CLAIM_SCOPES_REVIEWED_NOT_PUBLIC",
   "created_at": "2026-10-08",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_transformation_notice": "This pack preserves all 15 earlier titles and principal claims, but the substantive passages were normalized/rephrased from chat draft, not exact verbatim migration. Consult previous in-chat TLM051–065 for complete draft language.",
@@ -275,8 +275,10 @@
             "TA67",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "L’instruction *Inter Oecumenici* de 1964 et *Tres abhinc annos* de 1967 modifièrent progressivement la messe alors en usage avant la promulgation de l’Ordo de 1969. La *Missa normativa* expérimentale précéda également la publication définitive."
+          "source_review": "DIRECT_TEXT_CHRONOLOGY_CHECKED_SECONDARY_CONTINUITY_ASSESSMENT",
+          "text_fr": "L’instruction *Inter Oecumenici* de 1964 et *Tres abhinc annos* de 1967 modifièrent progressivement la messe alors en usage avant la promulgation de l’Ordo de 1969. La *Missa normativa* expérimentale précéda également la publication définitive.",
+          "source_locator": "Inter Oecumenici (1964), opening mandate and revised rites; Tres abhinc annos (1967), title and rubrics",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "assessment",
@@ -285,8 +287,10 @@
             "SC63",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "La succession chronologique de révisions officielles établit une continuité institutionnelle, mais ne démontre pas à elle seule que chaque modification constituait un développement liturgique organique. Un tel jugement doit s’appuyer sur les critères énoncés par le Concile."
+          "source_review": "DIRECT_TEXT_CHRONOLOGY_CHECKED_SECONDARY_CONTINUITY_ASSESSMENT",
+          "text_fr": "La succession chronologique de révisions officielles établit une continuité institutionnelle, mais ne démontre pas à elle seule que chaque modification constituait un développement liturgique organique. Un tel jugement doit s’appuyer sur les critères énoncés par le Concile.",
+          "source_locator": "Chiron 2021: chronology of 1964/1967 transitional reforms and 1967 experiment",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -297,7 +301,18 @@
         "SC63"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "DIRECT_TEXT_CHRONOLOGY_CHECKED_SECONDARY_CONTINUITY_ASSESSMENT",
+        "source_anchors": [
+          "Inter Oecumenici (1964), opening mandate and revised rites; Tres abhinc annos (1967), title and rubrics",
+          "Chiron 2021: chronology of 1964/1967 transitional reforms and 1967 experiment"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM054",
@@ -316,8 +331,10 @@
             "CHIRON",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Mgr Annibale Bugnini exerça une influence majeure dans la coordination de la réforme ; néanmoins, des commissions, des évêques, des consulteurs et, en dernier ressort, Paul VI participèrent à la rédaction, à l’examen et à l’autorisation du nouveau missel. Attribuer l’ensemble de la réforme à un seul homme masque le processus documenté."
+          "source_review": "HISTORICAL_SECONDARY_NARRATIVE_NOT_INDEPENDENT_ARCHIVE_COLLATION",
+          "text_fr": "Mgr Annibale Bugnini exerça une influence majeure dans la coordination de la réforme ; néanmoins, des commissions, des évêques, des consulteurs et, en dernier ressort, Paul VI participèrent à la rédaction, à l’examen et à l’autorisation du nouveau missel. Attribuer l’ensemble de la réforme à un seul homme masque le processus documenté.",
+          "source_locator": "Chiron 2021: role of Consilium/Paul VI, multiple committees and detailed interventions",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "assessment",
@@ -325,8 +342,10 @@
           "source_ids": [
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Les procédures suivies, le choix des experts et la rapidité de certaines étapes de rédaction peuvent légitimement être critiqués. Il convient toutefois d’appuyer ces critiques sur des documents, et non sur l’idée d’un auteur unique auquel tout serait imputable."
+          "source_review": "HISTORICAL_SECONDARY_NARRATIVE_NOT_INDEPENDENT_ARCHIVE_COLLATION",
+          "text_fr": "Les procédures suivies, le choix des experts et la rapidité de certaines étapes de rédaction peuvent légitimement être critiqués. Il convient toutefois d’appuyer ces critiques sur des documents, et non sur l’idée d’un auteur unique auquel tout serait imputable.",
+          "source_locator": "Chiron 2021: historical critique supported by detailed examples",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -335,7 +354,18 @@
         "MR69"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "HISTORICAL_SECONDARY_NARRATIVE_NOT_INDEPENDENT_ARCHIVE_COLLATION",
+        "source_anchors": [
+          "Chiron 2021: role of Consilium/Paul VI, multiple committees and detailed interventions",
+          "Chiron 2021: historical critique supported by detailed examples"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM055",
@@ -354,8 +384,10 @@
             "CHIRON",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Paul VI intervint personnellement sur les projets, notamment au sujet du Canon romain et de la forme du nouvel Ordo Missae. La reconstitution historique de Chiron fait état d’objections et de révisions au cours des travaux ; la promulgation pontificale constitua un exercice de sa propre autorité juridique."
+          "source_review": "HISTORICAL_SECONDARY_NARRATIVE_WITH_PRIMARY_LEGISLATION",
+          "text_fr": "Paul VI intervint personnellement sur les projets, notamment au sujet du Canon romain et de la forme du nouvel Ordo Missae. La reconstitution historique de Chiron fait état d’objections et de révisions au cours des travaux ; la promulgation pontificale constitua un exercice de sa propre autorité juridique.",
+          "source_locator": "Chiron 2021: June 1966 and January 1968 Paul VI interventions and 1968 marginal notes",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "assessment",
@@ -365,8 +397,10 @@
             "CHIRON",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "L’approbation personnelle du pape engage sa responsabilité dans la réforme légalement promulguée ; elle doit cependant être distinguée des innovations non autorisées apparues dans certaines célébrations ultérieures. Les éléments disponibles ne permettent pas de présenter Paul VI comme un simple signataire passif."
+          "source_review": "HISTORICAL_SECONDARY_NARRATIVE_WITH_PRIMARY_LEGISLATION",
+          "text_fr": "L’approbation personnelle du pape engage sa responsabilité dans la réforme légalement promulguée ; elle doit cependant être distinguée des innovations non autorisées apparues dans certaines célébrations ultérieures. Les éléments disponibles ne permettent pas de présenter Paul VI comme un simple signataire passif.",
+          "source_locator": "Chiron 2021: papal review and legal approval; Missale Romanum (1969)",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -376,7 +410,18 @@
         "SC63"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "HISTORICAL_SECONDARY_NARRATIVE_WITH_PRIMARY_LEGISLATION",
+        "source_anchors": [
+          "Chiron 2021: June 1966 and January 1968 Paul VI interventions and 1968 marginal notes",
+          "Chiron 2021: papal review and legal approval; Missale Romanum (1969)"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM056",
@@ -395,9 +440,11 @@
             "NOT67",
             "CHIRON"
           ],
-          "source_review": "PRIMARY_DOCUMENT_ANCHORED_REQUIRES_EDITORIAL_REVIEW",
+          "source_review": "CONTEMPORANEOUS_OFFICIAL_PRIMARY_VOTE",
           "text_fr": "Pour la structure générale de la *Missa normativa* de 1967, les suffrages rapportés furent de 71 *placet*, 43 *non placet*, 62 *placet iuxta modum* et quatre abstentions. Une approbation sous conditions n’est pas un rejet ; elle n’est pas non plus une approbation sans réserve.",
-          "evidence_locator": "Notitiae (November 1967) pp. 357, 363: Ad I 71 placet, 43 non placet, 62 placet iuxta modum, 4 abstentions"
+          "evidence_locator": "Notitiae (November 1967) pp. 357, 363: Ad I 71 placet, 43 non placet, 62 placet iuxta modum, 4 abstentions",
+          "source_locator": "Notitiae 35 (1967) official ballot 71/43/62/4",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "assessment",
@@ -405,7 +452,7 @@
           "source_ids": [
             "NOT67"
           ],
-          "source_review": "PRIMARY_CONTEMPORARY_OBJECTIONS_ANCHORED_FINAL_EDITORIAL_REVIEW_PENDING",
+          "source_review": "CONTEMPORANEOUS_OFFICIAL_PRIMARY_VOTE",
           "text_fr": "Le vote concernait une Missa normativa provisoire, non l'édition typique définitive de 1970. Le même compte rendu des Notitiae de 1967 rapporte des réserves concrètes d'évêques : certains demandaient davantage de signes de croix, de génuflexions et de prières dites à voix basse ; d'autres jugeaient l'offertoire trop réduit et souhaitaient conserver l'Orate, fratres. Il s'agit de critiques contemporaines documentées de choix liturgiques proposés, non d'une preuve de l'invalidité doctrinale du rite finalement promulgué.",
           "revision_history": [
             {
@@ -415,7 +462,9 @@
               "reason": "Added the contemporary Synod's concrete objections rather than reducing its objections to a vote total."
             }
           ],
-          "evidence_locator": "Notitiae 35 (1967), pp. 357–359 (scan pp. 11–13), general Missa normativa ballot and episcopal modorum"
+          "evidence_locator": "Notitiae 35 (1967), pp. 357–359 (scan pp. 11–13), general Missa normativa ballot and episcopal modorum",
+          "source_locator": "Notitiae 35 (1967) recorded proposed modifications and contemporary criticisms",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -424,7 +473,18 @@
         "CHIRON"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "CONTEMPORANEOUS_OFFICIAL_PRIMARY_VOTE",
+        "source_anchors": [
+          "Notitiae 35 (1967) official ballot 71/43/62/4",
+          "Notitiae 35 (1967) recorded proposed modifications and contemporary criticisms"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM057",
@@ -444,8 +504,10 @@
             "MR69",
             "NOT67"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "La *Missa normativa* de 1967 était une étape dans l’élaboration du rite. D’autres consultations, révisions et approbations pontificales eurent lieu avant la promulgation de l’Ordo Missae en 1969 et la publication de l’édition typique latine complète en 1970."
+          "source_review": "PRIMARY_CHRONOLOGY_AND_SECONDARY_RECONSTRUCTION",
+          "text_fr": "La *Missa normativa* de 1967 était une étape dans l’élaboration du rite. D’autres consultations, révisions et approbations pontificales eurent lieu avant la promulgation de l’Ordo Missae en 1969 et la publication de l’édition typique latine complète en 1970.",
+          "source_locator": "Notitiae 35 (1967) experimental rite; Chiron 2021 subsequent drafts; Missale Romanum (1969)",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "assessment",
@@ -456,8 +518,10 @@
             "IGMR69_ORIGINAL",
             "NOT67"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Une critique formulée contre une version provisoire doit préciser ce qui fut conservé dans le texte définitif. Inversement, les révisions ultérieures n’effacent pas l’importance historique des réserves épiscopales précédentes."
+          "source_review": "PRIMARY_CHRONOLOGY_AND_SECONDARY_RECONSTRUCTION",
+          "text_fr": "Une critique formulée contre une version provisoire doit préciser ce qui fut conservé dans le texte définitif. Inversement, les révisions ultérieures n’effacent pas l’importance historique des réserves épiscopales précédentes.",
+          "source_locator": "Chiron 2021 1968 changes; later typical edition, interpretation distinct",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -469,7 +533,18 @@
         "IGMR69_ORIGINAL"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "PRIMARY_CHRONOLOGY_AND_SECONDARY_RECONSTRUCTION",
+        "source_anchors": [
+          "Notitiae 35 (1967) experimental rite; Chiron 2021 subsequent drafts; Missale Romanum (1969)",
+          "Chiron 2021 1968 changes; later typical edition, interpretation distinct"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM058",
@@ -490,9 +565,11 @@
             "OTT69",
             "IGMR69_ORIGINAL"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "source_review": "DIRECT_DOCUMENTS_BUT_HISTORICAL_EDITION_TRANSLATIONS_REQUIRE_PROOFREAD",
           "text_fr": "La *Brève étude critique du nouvel Ordo Missae*, publiée en 1969, reprochait à la première rédaction du paragraphe 7 de ne pas exprimer assez explicitement des doctrines eucharistiques essentielles, notamment le caractère sacrificiel de la messe et la présence substantielle du Christ.",
-          "evidence_locator": "1969 Institutio generalis no. 7 as reproduced, compared with 1970 amendments"
+          "evidence_locator": "1969 Institutio generalis no. 7 as reproduced, compared with 1970 amendments",
+          "source_locator": "Ottaviani/Bacci criticism (1969), exact subject IGMR n.7 original historical reprint",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "answer",
@@ -503,9 +580,11 @@
             "MR69",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "source_review": "DIRECT_DOCUMENTS_BUT_HISTORICAL_EDITION_TRANSLATIONS_REQUIRE_PROOFREAD",
           "text_fr": "L’introduction générale initiale fut ensuite complétée et corrigée, tandis que la constitution apostolique de Paul VI parlait déjà du sacrifice eucharistique. Le caractère doctrinalement incomplet d’une phrase explicative ne démontre pas, à lui seul, que le rite promulgué rejette la doctrine eucharistique catholique.",
-          "evidence_locator": "Original 1969 n. 7; 1970 doctrinal preamble and revised no. 7; 1969 Missale Romanum"
+          "evidence_locator": "Original 1969 n. 7; 1970 doctrinal preamble and revised no. 7; 1969 Missale Romanum",
+          "source_locator": "Historic 1969/1970 IGMR edition comparison; Missale Romanum sacrificial language",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -517,7 +596,18 @@
         "CHIRON"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "DIRECT_DOCUMENTS_BUT_HISTORICAL_EDITION_TRANSLATIONS_REQUIRE_PROOFREAD",
+        "source_anchors": [
+          "Ottaviani/Bacci criticism (1969), exact subject IGMR n.7 original historical reprint",
+          "Historic 1969/1970 IGMR edition comparison; Missale Romanum sacrificial language"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM059",
@@ -537,8 +627,10 @@
           "source_ids": [
             "OTT69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "En 1969, les cardinaux Ottaviani et Bacci transmirent une *Brève étude critique* dénonçant, selon leurs auteurs, des écarts notables par rapport à la théologie du sacrifice eucharistique formulée au concile de Trente. Cette étude constitue une critique contemporaine sérieuse et documentée, non une condamnation magistérielle obligatoire."
+          "source_review": "OPPOSITION_AUTHENTICALLY_ATTRIBUTED_CONCLUSION_NOT_BINDING_MAGISTERIUM",
+          "text_fr": "En 1969, les cardinaux Ottaviani et Bacci transmirent une *Brève étude critique* dénonçant, selon leurs auteurs, des écarts notables par rapport à la théologie du sacrifice eucharistique formulée au concile de Trente. Cette étude constitue une critique contemporaine sérieuse et documentée, non une condamnation magistérielle obligatoire.",
+          "source_locator": "1969 Ottaviani/Bacci short critical study, full text",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "assessment",
@@ -549,9 +641,11 @@
             "IGMR69_ORIGINAL",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "source_review": "OPPOSITION_AUTHENTICALLY_ATTRIBUTED_CONCLUSION_NOT_BINDING_MAGISTERIUM",
           "text_fr": "Soutenir qu’un rite exprime moins clairement la doctrine du sacrifice ne revient pas automatiquement à démontrer son invalidité ou une hérésie formelle. Les corrections ultérieures et le langage sacrificiel expressément présent dans la réforme doivent aussi entrer dans l’examen.",
-          "evidence_locator": "1969 Short Critical Study compared with 1970 revisions and Paul VI's apostolic constitution"
+          "evidence_locator": "1969 Short Critical Study compared with 1970 revisions and Paul VI's apostolic constitution",
+          "source_locator": "Missale Romanum on Eucharistic sacrifice; original 1969 and revised 1970 IGMR, theological judgment",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -563,7 +657,18 @@
         "CHIRON"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "OPPOSITION_AUTHENTICALLY_ATTRIBUTED_CONCLUSION_NOT_BINDING_MAGISTERIUM",
+        "source_anchors": [
+          "1969 Ottaviani/Bacci short critical study, full text",
+          "Missale Romanum on Eucharistic sacrifice; original 1969 and revised 1970 IGMR, theological judgment"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM060",
@@ -583,9 +688,11 @@
             "IGMR69_ORIGINAL",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "source_review": "EDITION_COMPARISON_PRIMARY_WITH_SECONDARY_CAUSAL_ATTRIBUTION",
           "text_fr": "La Présentation générale du Missel romain fut modifiée en 1970, notamment par l’ajout d’un préambule doctrinal explicite et par la clarification du langage eucharistique, après la controverse suscitée par la première édition.",
-          "evidence_locator": "1970 revised no. 7 and Preface compared with the 1969 original; chronology corroborated by 1975 GIRM reprint"
+          "evidence_locator": "1970 revised no. 7 and Preface compared with the 1969 original; chronology corroborated by 1975 GIRM reprint",
+          "source_locator": "Original and revised introductory texts and theological preface; Chiron chronology",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         },
         {
           "role": "critical_assessment",
@@ -594,8 +701,10 @@
             "MR69",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Ces corrections explicatives ne rétablirent pas pour autant l’ancien agencement de l’offertoire, le Canon romain comme unique prière eucharistique ni les autres structures rituelles antérieures. On peut critiquer ces choix tout en reconnaissant que des corrections ont eu lieu."
+          "source_review": "EDITION_COMPARISON_PRIMARY_WITH_SECONDARY_CAUSAL_ATTRIBUTION",
+          "text_fr": "Ces corrections explicatives ne rétablirent pas pour autant l’ancien agencement de l’offertoire, le Canon romain comme unique prière eucharistique ni les autres structures rituelles antérieures. On peut critiquer ces choix tout en reconnaissant que des corrections ont eu lieu.",
+          "source_locator": "Missale Romanum and Chiron on Offertory and Eucharistic Prayer structure",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -606,7 +715,18 @@
         "MR69"
       ],
       "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
-      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands.",
+      "evidence_review": {
+        "completed_on": "2026-10-08",
+        "method": "EDITION_COMPARISON_PRIMARY_WITH_SECONDARY_CAUSAL_ATTRIBUTION",
+        "source_anchors": [
+          "Original and revised introductory texts and theological preface; Chiron chronology",
+          "Missale Romanum and Chiron on Offertory and Eucharistic Prayer structure"
+        ],
+        "final_theology_approval": false,
+        "final_french_approval": false,
+        "ready_for_publication": false
+      }
     },
     {
       "id": "TLM061",
@@ -1042,6 +1162,23 @@
       "Memoriale Domini (1969)",
       "Mysterii Paschalis (1969)"
     ],
-    "human_approval": false
+    "human_approval": false,
+    "remainder": {
+      "ids": [
+        "TLM053",
+        "TLM054",
+        "TLM055",
+        "TLM056",
+        "TLM057",
+        "TLM058",
+        "TLM059",
+        "TLM060"
+      ],
+      "reviewed": 8,
+      "documentary_status": "CLAIM_BASIS_IDENTIFIED_AND_SECONDARY_CASES_FLAGGED",
+      "human_approval": false
+    },
+    "reviewed_questions": 15,
+    "total_paragraphs": 37
   }
 }
