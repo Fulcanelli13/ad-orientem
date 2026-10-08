@@ -1,5 +1,6 @@
 import "./canonical-data.js";
 import "./presentation-styles.js";
+import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
@@ -48,14 +49,13 @@ const moduleIcon=route=>{
  if(!icon)return'';
  return `<span class="aoP435930ModuleIcon" data-ao-pray-module-route="${esc(route)}" data-ao-pray-module-asset="${esc(assetId)}">${icon}</span>`;
 };
-// TODO(ANGELUS_POSTURE_SATURDAY_VESPERS): standing from Saturday Vespers needs a liturgical-day boundary authority.
- // Do not infer this from a fixed civil-clock hour; current state only certifies civil Sunday plus Regina Cæli.
-function selectedSunday(){
- const raw=core()?.selectedDate;
- if(!/^\d{4}-\d{2}-\d{2}$/.test(String(raw||'')))return new Date().getDay()===0;
- const d=new Date(String(raw)+'T12:00:00');
- return !Number.isNaN(d.getTime())&&d.getDay()===0;
+// Vespers boundary is supplied by the user, never inferred from a civil-clock hour.
+let angelusSaturdayVespersDate=null;
+function selectedWeekday(){
+ const d=new Date(selectedDateKey()+'T12:00:00');
+ return Number.isNaN(d.getTime())?new Date().getDay():d.getDay();
 }
+function selectedSunday(){return selectedWeekday()===0}
 function semanticRailChip(assetId,label,value='',opts={}){
  if(!assetId||!label)return'';
  const channel=opts.channel==='transient'?'transient':'persistent';
@@ -70,7 +70,9 @@ function ritualSlotMarkup(channel,assetId,label,{emphasis=false,value=''}={}){
  return `<div class="aoRitualSlot${emphasis?' is-emphasis':''}" data-channel="${esc(channel)}" data-value="${esc(value||label)}"${emphasis?' role="status" aria-live="polite"':''}>${assetIcon(assetId,'aoRitualIcon')}<span class="aoRitualMeta"><span class="aoRitualKey">${esc(ritualChannelLabel(channel))}</span><span class="aoRitualValue">${esc(label)}</span></span></div>`;
 }
 function angelusExactPosture(){
- const form=angelusChoice().form,stand=form==='regina'||selectedSunday();
+ const form=angelusChoice().form;
+ const choice=resolveAngelusPosture({form,weekday:selectedWeekday(),saturdayAfterVespers:angelusSaturdayVespersDate===selectedDateKey()});
+ const stand=choice.stand;
  return {form,stand,assetId:stand?'ao-live-stand':'ao-live-kneel',label:stand?L('Stand','Debout'):L('Kneel','À genoux')};
 }
 function angelusExactRailMarkup(){
@@ -491,17 +493,30 @@ function angelusUnits(text,form){
  }
  return out;
 }
+function angelusGuideMarkup(form){
+ const sections=angelusGuideSections(form,lang());
+ return `<details class="aoP435930GuideInfo aoAngelusGuide" data-ao-devotional-guide="${esc(form)}"><summary>${esc(L('Guide · history, meaning & practice','Guide · histoire, sens et pratique'))}</summary><div class="aoAngelusGuideBody">${sections.map(entry=>`<section class="aoAngelusGuideSection"><h3>${esc(entry.heading)}</h3><p>${esc(entry.body)} <a href="${esc(entry.source.url)}" target="_blank" rel="noopener noreferrer">${esc(entry.source.label)} ↗</a></p></section>`).join('')}</div></details>`;
+}
+function angelusUtterance(text,type){
+ if(type!=='vr')return nl(text);
+ const pair=splitAngelusVersicleResponse(text);
+ if(pair.length!==2)return nl(text);
+ return `<span class="aoAngelusDialogue">${pair.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><b aria-hidden="true">${part.role==='leader'?'℣.':'℟.'}</b><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+}
 function renderAngelus(){
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
  const unitsV=angelusUnits(vern,form),unitsL=angelusUnits(lat,form);
  const authority=c.auto&&!c.authority.ok?callout(esc(L('Automatic seasonal selection could not read the canonical liturgical context, so Angelus is shown. You can choose Regina Cæli manually.','La sélection saisonnière automatique n’a pas pu lire le contexte liturgique canonique ; l’Angelus est donc affiché. Vous pouvez choisir manuellement le Regina Cæli.')),'warn'):'';
  const labels={vr:L('Versicle & response','Verset & répons'),hail:L('Hail Mary','Je vous salue Marie'),collect:L('Collect','Oraison'),prayer:L('Prayer','Prière')};
+ const saturday=selectedWeekday()===6&&form==='angelus';
+ const vespersToggle=saturday?`<label class="aoP435930Toggle aoAngelusVespers"><input type="checkbox" data-p435930-angelus-vespers ${angelusSaturdayVespersDate===selectedDateKey()?'checked':''}><span><b>${esc(L('After Saturday Vespers','Après les vêpres du samedi'))}</b><small>${esc(L('Traditional standing custom · select only when Vespers has begun','Usage traditionnel : debout · activer seulement après le début des vêpres'))}</small></span></label>`:'';
+ const recitationMode=nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],S.rosary.recitation);
  const units=unitsV.map((u,i)=>{
   const la=unitsL[i]?.text||'';
   const incarnation=form==='angelus'&&u.type==='vr'&&/(Word was made flesh|Verbum caro factum est|Verbe s[’']est fait chair)/i.test(u.text+' '+la);
-  return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(u.text)}</span><span data-face-la hidden>${nl(la)}</span></button></article>`;
+  return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${angelusUtterance(u.text,u.type)}</span><span data-face-la hidden>${angelusUtterance(la,u.type)}</span></button></article>`;
  }).join('');
- return `${head(form==='regina'?'Regina Cæli':'Angelus',L('Season-aware daily Marian prayer','Prière mariale quotidienne selon le temps liturgique'))}<main class="aoP435930Body" data-ao-angelus-form="${form}">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${authority}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section><label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}> <span><b>${esc(L('Historical conclusion','Conclusion historique'))}</b><small>${esc(L('Optional · off by default','Facultative · désactivée par défaut'))}</small></span></label>${S.angelusHistoricalConclusion?`<article class="aoP435930Appendix"><h3>${esc(L('Traditional conclusion','Conclusion traditionnelle'))}</h3><button type="button" class="aoP435930AppendixFlip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
+ return `${head(form==='regina'?'Regina Cæli':'Angelus',L('Season-aware daily Marian prayer','Prière mariale quotidienne selon le temps liturgique'))}<main class="aoP435930Body" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${authority}${vespersToggle}${angelusGuideMarkup(form)}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section><label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}> <span><b>${esc(L('Historical conclusion','Conclusion historique'))}</b><small>${esc(L('Optional · off by default','Facultative · désactivée par défaut'))}</small></span></label>${S.angelusHistoricalConclusion?`<article class="aoP435930Appendix"><h3>${esc(L('Traditional conclusion','Conclusion traditionnelle'))}</h3><button type="button" class="aoP435930AppendixFlip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
 }
 function normalizeRosaryPrefs(raw=S.rosary){
  return Object.freeze({
@@ -1243,7 +1258,7 @@ function onClick(e){
  }
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
- const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){S.angelusMode=seg;save()}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
+ const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){if(['individual','group'].includes(seg))setRecitationMode(seg);else if(['auto','angelus','regina'].includes(seg)){S.angelusMode=seg;save()}}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
  if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930ConfStage!=null){CONF.stage=+b.dataset.p435930ConfStage;return render()}
  if(b.matches('[data-p435930-conf-prev]')){CONF.stage=Math.max(0,CONF.stage-1);return render()}
@@ -1318,6 +1333,7 @@ function onChange(e){const x=e.target;
  if(x.matches('[data-p435930-ff-tracking]')){S.firstFriday.tracking=x.checked;save();return render()}
  if(x.matches('[data-p435930-fs-tracking]')){S.firstSaturday.tracking=x.checked;save();return render()}
  if(x.matches('[data-p435930-angelus-appendix]')){S.angelusHistoricalConclusion=x.checked;save();return render()}
+ if(x.matches('[data-p435930-angelus-vespers]')){angelusSaturdayVespersDate=x.checked&&selectedWeekday()===6?selectedDateKey():null;return render()}
  if(x.matches('[data-p435930-grave-reviewed]')){CONF.graveReviewed=x.checked;return}
  if(x.matches('[data-p435930-ben-praises]')){BEN.divinePraises=x.checked;return render()}
  if(x.matches('[data-p435930-station-stabat]')){S.stations.stabat=x.checked;save();return render()}
