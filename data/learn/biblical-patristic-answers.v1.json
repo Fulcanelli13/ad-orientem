@@ -46,13 +46,17 @@
       "id": "CORPUSBIRDS",
       "title": "Corpus Coranicum, Infancy Gospel of Thomas and Quran 3:49",
       "url": "https://corpuscoranicum.de/en/verse-navigator/sura/3/verse/49/intertexts/458",
-      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP"
+      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP",
+      "verification": "INDEXED_SCHOLARLY_RECORD_EXISTS_DIRECT_PAGE_REQUIRES_JAVASCRIPT",
+      "support_limit": "Linked intertext entry exists in indexed search but direct HTML reading requires JavaScript; do not claim full text personally verified."
     },
     {
       "id": "CORPUSPALM",
       "title": "Corpus Coranicum, Pseudo-Matthew and Quran 19:23",
       "url": "https://corpuscoranicum.de/en/verse-navigator/sura/19/verse/23/intertexts/459",
-      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP"
+      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP",
+      "verification": "INDEXED_SCHOLARLY_RECORD_EXISTS_DIRECT_PAGE_REQUIRES_JAVASCRIPT",
+      "support_limit": "Linked intertext entry exists in indexed search but direct HTML reading requires JavaScript; do not claim full text personally verified."
     },
     {
       "id": "QURAN1928",
@@ -182,17 +186,17 @@
     },
     {
       "id": "FATIMAFR",
-      "title": "CDF The Message of Fatima, 2000 (French)",
+      "title": "CDF, Le Message de Fatima, 2000 (French)",
       "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_fr.html",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "OFFICIAL_MAGISTERIAL_FRENCH",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "JEREMIAH-DSS",
-      "title": "Biblical Archaeology Society, two ancient editions of Jeremiah and Qumran 4QJerb/4QJerd",
+      "title": "Biblical Archaeology Review, two Jeremiah recensions and 4QJerb/4QJerd",
       "url": "https://library.biblicalarchaeology.org/sidebar/which-says-what-a-thumbnail-guide-to-the-two-editions-of-jeremiah/",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "TEXTUAL_SCHOLARSHIP",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "AUG-CANON",
@@ -203,17 +207,17 @@
     },
     {
       "id": "JEROME-CANON",
-      "title": "Jerome, Prologus Galeatus / Helmeted Prologue; text and provenance",
-      "url": "https://lapide.org/index/bibliography/jerome/prologus-galeatus.html",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "title": "St Jerome, Prologus Galeatus (Preface to Kings), full translated text",
+      "url": "https://www.tertullian.org/fathers/jerome_preface_kings.htm",
+      "type": "PATRISTIC_PRIMARY_TRANSLATION",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "COE-ARTICLE-VI",
-      "title": "Church of England, Thirty-Nine Articles, Article VI (Protestant canon position)",
-      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/articles-religion",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "title": "Thirty-Nine Articles, Article VI, 1571/1662 text",
+      "url": "https://sourcebooks.web.fordham.edu/mod/1571-39articles.asp",
+      "type": "PROTESTANT_CONFESSIONAL_PRIMARY",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "QURAN-349",
@@ -231,24 +235,24 @@
     },
     {
       "id": "MUSLIM-2135",
-      "title": "Sahih Muslim 2135, response about Mary as sister of Aaron",
-      "url": "https://sunnah.com/muslim:2135",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "title": "Sahih Muslim 2135, book 38 hadith 13: Mary as sister of Aaron",
+      "url": "https://sunnah.com/muslim/38/13",
+      "type": "ISLAMIC_PRIMARY",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "JW-JOHN",
-      "title": "Jehovah's Witnesses: John 1:1 explained (own interpretation)",
+      "title": "Jehovah’s Witnesses, John 1:1—In the Beginning Was the Word",
       "url": "https://www.jw.org/en/bible-teachings/bible-verses/john-1-1/",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "OPPONENT_OWN_WORDS",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "JW-MICHAEL",
-      "title": "Jehovah's Witnesses: Who is the Archangel Michael?",
+      "title": "Jehovah’s Witnesses, The Archangel Michael—Who Is He?",
       "url": "https://www.jw.org/en/bible-teachings/questions/archangel-michael/",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "OPPONENT_OWN_WORDS",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "HEBREWS-1",
@@ -280,10 +284,10 @@
     },
     {
       "id": "KOESTER-666",
-      "title": "Craig R. Koester, 2016 peer-reviewed textual study of 666 and 616",
+      "title": "Craig Koester, The Number of the Beast in Revelation 13 in Light of Papyri, Graffiti and Inscriptions",
       "url": "https://digitalcommons.luthersem.edu/faculty_articles/15/",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "ACADEMIC_SCHOLARSHIP",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "1JOHN-2",
@@ -308,10 +312,10 @@
     },
     {
       "id": "CRAMPON-1904",
-      "title": "1904 Crampon Bible, original French publication and preface",
+      "title": "Bible Crampon 1904, transcribed historic French Bible",
       "url": "https://fr.wikisource.org/wiki/Bible_Crampon_1904",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "HISTORIC_FRENCH_BIBLE",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "AUG-PATRISTIC",
@@ -329,17 +333,38 @@
     },
     {
       "id": "PS-MATTHEW",
-      "title": "Gospel of Pseudo-Matthew, historical text and source-critical framing",
+      "title": "Gospel of Pseudo-Matthew, ch. 20, palm tree during flight to Egypt",
       "url": "https://www.newadvent.org/fathers/0848.htm",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "APOCRYPHAL_PRIMARY_TRANSLATION",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     },
     {
       "id": "JUSTIN-TRY",
-      "title": "Justin Martyr, Dialogue with Trypho 71–73 (original in translation)",
+      "title": "St Justin Martyr, Dialogue with Trypho chs. 71–73",
       "url": "https://www.newadvent.org/fathers/01286.htm",
-      "type": "PRIMARY_OR_SCHOLARLY",
-      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+      "type": "PATRISTIC_PRIMARY_TRANSLATION",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
+    },
+    {
+      "id": "EDOM-RABBAH",
+      "title": "Bereshit Rabbah 65:1, Esau with Rome's wicked empire",
+      "url": "https://www.sefaria.org/Bereshit_Rabbah.65.1",
+      "type": "RABBINIC_PRIMARY_TRANSLATION",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
+    },
+    {
+      "id": "EDOM-PESACHIM",
+      "title": "Pesachim 118b, Rome treated as descendants of Edom",
+      "url": "https://www.sefaria.org/Pesachim.118b",
+      "type": "RABBINIC_PRIMARY_TRANSLATION",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
+    },
+    {
+      "id": "PSMAT20",
+      "title": "Pseudo-Matthew, ch.20, palm tree and flight into Egypt",
+      "url": "https://www.newadvent.org/fathers/0848.htm",
+      "type": "APOCRYPHAL_PRIMARY_TRANSLATION",
+      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
     }
   ],
   "answers": [
@@ -631,14 +656,16 @@
           "source_ids": [
             "QURAN-1923",
             "CORPUSPALM",
-            "APOCRYPHA"
+            "APOCRYPHA",
+            "PSMAT20"
           ]
         },
         {
           "text": "The dating and textual development of Pseudo-Matthew are disputed, and oral or other Christian infancy traditions may be common intermediaries. It would be historically careless to assert without qualification that the Quran directly copied the extant late Latin text.",
           "source_ids": [
             "CORPUSPALM",
-            "APOCRYPHA"
+            "APOCRYPHA",
+            "PSMAT20"
           ]
         }
       ],
@@ -655,7 +682,8 @@
             "text": "Independent revelation cannot be disproved from resemblance alone; nevertheless, older and parallel Christian literary traditions make historical transmission an important possibility requiring chronological analysis.",
             "source_ids": [
               "CORPUSPALM",
-              "APOCRYPHA"
+              "APOCRYPHA",
+              "PSMAT20"
             ]
           }
         }
@@ -1074,7 +1102,7 @@
           "text": "The Church affirms Christ's final return, judgment and resurrection of the dead. Augustine's interpretation warns against conflating those dogmatic realities with a speculative intermediate worldly kingdom.",
           "source_ids": [
             "AUG20",
-            "CCC120"
+            "AUG-PATRISTIC"
           ]
         }
       ],
@@ -1171,15 +1199,15 @@
         {
           "text": "Some rabbinic Jewish traditions apply Edom or Esau as a symbolic name for Rome, and sometimes for Christian power after Rome's Christianization. This exegetical identification is a historical metaphor arising from imperial relations and biblical sibling rivalry; it is not a demonstrated biological descent of Romans from Edomites.",
           "source_ids": [
-            "ESAU",
-            "AUG18"
+            "EDOM-RABBAH",
+            "EDOM-PESACHIM"
           ]
         },
         {
           "text": "Neither Jewish symbolism about Edom nor Christian symbolism about Babylon establishes that an identifiable modern people secretly possesses an inherited evil nature. Exact claims about named rabbinic passages require citing those primary texts rather than presenting every later formulation as ancient consensus.",
           "source_ids": [
-            "ESAU",
-            "AUG18"
+            "EDOM-PESACHIM",
+            "ESAU"
           ]
         }
       ],
@@ -1187,12 +1215,13 @@
       "traditional_argument": {
         "text": "Traditional biblical typology cannot override the literal historical meaning of the passage or be turned into a collective accusation against Jews, Christians or any other modern group.",
         "source_ids": [
-          "ESAU",
-          "AUG18"
+          "EDOM-RABBAH",
+          "EDOM-PESACHIM"
         ]
       },
       "verification_pending": [
-        "Primary rabbinic text with chapter/folio still required for scholarly publication; this remains interpretive summary, not a final citation-resolved historical proof."
+        "Original rabbinic sources now anchored: Bereshit Rabbah 65:1 and Pesachim 118b; check dating and manuscript/redaction history before detailed chronology claims.",
+        "Do not extrapolate medieval political metaphor into modern genetic descent or moral blame."
       ],
       "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
     },
@@ -1332,5 +1361,23 @@
     "Latin/French parity and substantive objection/refutation where required.",
     "Separate textual hypotheses, manuscript evidence and doctrinal claims.",
     "No publication or runtime change approved by this source-pack commit."
-  ]
+  ],
+  "editorial_verification": {
+    "checked_at": "2026-10-08",
+    "actions": [
+      "Replaced Jerome locator with complete historical original translation",
+      "Replaced Anglican canon source with readable primary Article VI",
+      "Located original rabbinic Edom/Rome passages in Bereshit Rabbah 65:1 and Pesachim 118b",
+      "Checked Fatima manuscript, Justin ch. 71–73, Augustine, Pius XII, Sahih Muslim, Pseudo-Matthew and JW self-descriptions",
+      "Scoped Quranic intertext references as index-verified but JavaScript-dependent",
+      "Removed irrelevant Catechism canon reference from Augustine millennium answer"
+    ],
+    "partial": true,
+    "unresolved": [
+      "Quranic intertext database direct page requires JavaScript",
+      "Original Latin/Greek manuscript collation for selected disputed textual readings",
+      "Edition-grade review and direct source links for some canon and patristic interpretations",
+      "Independent French native-language editorial review"
+    ]
+  }
 }
