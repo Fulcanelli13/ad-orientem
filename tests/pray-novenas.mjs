@@ -126,8 +126,11 @@ assert.match(runtime,/data-n1-mode/,"Guided\/Simple control disappeared");
 assert.match(runtime,/class="aoP435930Back" data-n1-back/,"Novena header lost donor Back control");
 assert.match(runtime,/class="aoP435930Home" data-n1-home/,"Novena header lost explicit global Home control");
 assert.doesNotMatch(runtime,/data-n1-close/,"Novena header regressed to ambiguous Close control");
-assert.match(runtime,/data-ao-asset-id="ao-ui-back"/,"Novena header lost canonical Back utility artwork");
-assert.match(runtime,/data-ao-asset-id="ao-nav-home"/,"Novena header lost canonical Home utility artwork");
+// The live artwork is resolved through n1UiIcon(id), so the literal asset attribute
+// is generated at render time rather than embedded verbatim in head().
+assert.match(runtime,/resolveCanonicalAssetUrl\(id\)/,"Novena header lost canonical asset resolution");
+assert.match(runtime,/n1UiIcon\('ao-ui-back'\)/,"Novena header lost canonical Back utility artwork");
+assert.match(runtime,/n1UiIcon\('ao-nav-home'\)/,"Novena header lost canonical Home utility artwork");
 assert.match(runtime,/function goHome\(\)/,"Novena global Home action is missing");
 assert.match(runtime,/if\(N\.screen===\'day\'\).*N\.screen=\'detail\'/,"Novena Back no longer returns Day to Novena detail");
 assert.match(runtime,/if\(N\.screen===\'detail\'\).*N\.screen=\'overview\'/,"Novena Back no longer returns detail to Novena overview");
