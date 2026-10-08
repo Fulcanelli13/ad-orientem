@@ -6,6 +6,8 @@ const curriculum=JSON.parse(readFileSync("data/learn/learn-the-faith-curriculum.
 const ownership=JSON.parse(readFileSync("data/learn/content-ownership-registry.v1.json","utf8"));
 const sources=JSON.parse(readFileSync("data/learn/learn-the-faith-sources.v1.json","utf8"));
 const batch1=JSON.parse(readFileSync("data/learn/learn-the-faith-lessons-001-018.v1.json","utf8"));
+const batch2=JSON.parse(readFileSync("data/learn/learn-the-faith-lessons-019-036.v1.json","utf8"));
+const batch3=JSON.parse(readFileSync("data/learn/learn-the-faith-lessons-037-054.v1.json","utf8"));
 const sourceMap=JSON.parse(readFileSync("data/learn/pius-x-catechism-source-map.v1.json","utf8"));
 const batches=[
   JSON.parse(readFileSync("data/learn/learn-the-faith-content.batch1.v1.json","utf8")),
@@ -88,6 +90,10 @@ assert.equal(curriculum.relationship_to_existing["learn.catechism"].includes("Fu
 assert.equal(curriculum.relationship_to_existing["learn.catechism.daily"].includes("Daily review"),true);
 assert.equal(curriculum.source_policy.no_unsourced_synthesis,true);
 assert.equal(curriculum.source_policy.no_duplicate_question_bank,true);
+assert.equal(curriculum.content_draft.status,"ALL_54_SOURCE_LINKED_DRAFTED");
+assert.equal(curriculum.content_draft.lessons,54);
+assert.equal(curriculum.content_draft.paragraphs,162);
+assert.equal(curriculum.content_draft.published,false);
 
 assert.equal(ownership.guided_formation.learn_the_faith.registry,"data/learn/learn-the-faith-curriculum.v1.json");
 assert.equal(ownership.guided_formation.learn_the_faith.visible,false);
@@ -105,9 +111,13 @@ const sourceIds=new Set(sources.sources.map(x=>x.id));
 for(const id of ["PX1912","V1-DEI-FILIUS","TRENT-CATECHISM","TRENT-DECREES","LEO13-PROVIDENTISSIMUS","PIUS12-MYSTICI","AQUINAS-ST"])assert.ok(sourceIds.has(id),id+" missing from Learn the Faith source registry");
 
 assert.equal(batch1.batch,"LTF-001–LTF-018");
-assert.equal(batch1.lessons.length,18);
-assert.equal(batch1.lessons.reduce((n,x)=>n+x.paragraphs.length,0),54);
-for(const lesson of batch1.lessons){
+assert.equal(batch2.batch,"LTF-019–LTF-036");
+assert.equal(batch3.batch,"LTF-037–LTF-054");
+const drafted=[...batch1.lessons,...batch2.lessons,...batch3.lessons];
+assert.equal(drafted.length,54);
+assert.equal(new Set(drafted.map(x=>x.id)).size,54);
+assert.equal(drafted.reduce((n,x)=>n+x.paragraphs.length,0),162);
+for(const lesson of drafted){
   const canonical=curriculum.lessons.find(x=>x.id===lesson.id);
   assert.ok(canonical,lesson.id+" missing from canonical curriculum");
   assert.deepEqual(lesson.catechismRefs,canonical.catechismRefs,lesson.id+" draft refs diverge from curriculum mapping");
@@ -124,5 +134,6 @@ console.log(JSON.stringify({
   published:false,
   existingCatechismUntouched:true,
   px1912MappedLessons:52,
-  sourceLinkedDraftLessons:18
+  sourceLinkedDraftLessons:54,
+  sourceLinkedDraftParagraphs:162
 },null,2));
