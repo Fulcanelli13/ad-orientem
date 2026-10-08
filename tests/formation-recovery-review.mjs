@@ -71,4 +71,51 @@ const browser=readFileSync("src/learn/browser-entry.js","utf8");
 assert.ok(browser.includes("aoFormationRecoveryReview=1"),"explicit URL gate not found");
 assert.ok(browser.includes('import("./formation-recovery-review.js")'),"lazy QA import missing");
 assert.ok(!browser.includes('import { createFormationRecoveryReview'),"QA reader must not be eager");
+
+const nodes=new Map();
+const fakeDocument={
+  baseURI:"https://example.test/ad-orientem/index.html",
+  documentElement:{lang:"en"},
+  getElementById:id=>nodes.get(id)||null,
+  createElement:tag=>{
+    const el={tagName:tag,innerHTML:"",id:"",listeners:{},attributes:{},setAttribute(k,v){this.attributes[k]=v;},
+      addEventListener(type,fn){this.listeners[type]=fn;},
+      querySelector:()=>null,scrollTo(){},remove(){nodes.delete(this.id);}};
+    return el;
+  },
+  body:{append(el){nodes.set(el.id,el);}}
+};
+const packLookup=new Map(names.map(([label,file])=>[file,packs.find(x=>x.label===label).doc]));
+const windowLike={
+  document:fakeDocument,
+  location:{search:"?aoFormationRecoveryReview=1"},
+  fetch:async url=>{
+    const file=String(url).split("/").pop();
+    const data=packLookup.get(file);
+    return {ok:!!data,status:data?200:404,json:async()=>data};
+  },
+  AO_RUNTIME_V8:{store:{getState:()=>({language:"en"})}}
+};
+const live=createFormationRecoveryReview(windowLike);
+assert.equal(await live.open(),true,"QA source files failed to mount");
+assert.equal(live.status().researchRecords,102);
+const node=nodes.get(RECOVERY_REVIEW_ROOT);
+assert.ok(node.innerHTML.includes("Recovery source review"));
+assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'));
+const makeClick=({id,back=false,home=false})=>({
+  preventDefault(){},
+  target:{closest:()=>({
+    hasAttribute:key=>back&&key==="data-rr-back"||home&&key==="data-rr-home",
+    dataset:{rrId:id}
+  })}
+});
+node.listeners.click(makeClick({id:"TLM026"}));
+assert.ok(node.innerHTML.includes("TLM026"),"detail not rendered");
+assert.ok(node.innerHTML.includes("BEN07")||node.innerHTML.includes("Benedict"),"linked original sources unavailable");
+assert.ok(node.innerHTML.includes("https://www.vatican.va/"),"source URLs missing in detail");
+node.listeners.click(makeClick({back:true}));
+assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"hierarchical back did not restore list");
+live.close();
+assert.equal(live.status().open,false);
+
 console.log(JSON.stringify({sourcePacks:packs.length,rows:rows.length,qa:"INTERNAL_QUERY_FLAG_ONLY",publicFormationRoutesAdded:0,canonicalDossiers:owners.size,publicationCertified:false},null,2));
