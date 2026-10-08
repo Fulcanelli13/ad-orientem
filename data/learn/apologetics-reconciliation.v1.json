@@ -249,5 +249,22 @@
       ]
     }
   ],
-  "rule": "Any recovered legacy question must be reconciled by actual text before publication. Range membership alone is insufficient to create a per-ID mapping."
+  "rule": "Any recovered legacy question must be reconciled by actual text before publication. Range membership alone is insufficient to create a per-ID mapping.",
+  "biblical_and_sedevacantist_question_supplement": {
+    "file": "data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
+    "status": "26_RESEARCH_QUESTIONS_REGISTERED_NOT_PUBLISHED",
+    "role": "Sourced subquestion anchors within existing canonical dossiers, not 26 new navigation dossiers",
+    "question_count_total": 26,
+    "canonical_owners_in_this_module": [
+      "APOL-004",
+      "APOL-008",
+      "APOL-010",
+      "APOL-012",
+      "APOL-013",
+      "APOL-042",
+      "APOL-044",
+      "APOL-046"
+    ],
+    "source_policy": "Question provenance is linked; full answers and opposing arguments remain editorially incomplete."
+  }
 }
