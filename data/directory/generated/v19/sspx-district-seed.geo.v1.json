@@ -1,0 +1,122 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_GEO_OVERLAY_V1",
+  "provider": "SSPX_DISTRICT_SEED",
+  "generated_at": "2026-10-08T11:18:40Z",
+  "official_source": "https://map.fsspx.org/api/v1/places",
+  "precision_policy": "locality_approximate_not_building",
+  "approval": "STRICT_PROVIDER_NAME_CITY_MATCH_0_90",
+  "records": [
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-af-za-roodepoort",
+      "geo": {
+        "lat": -26.15934,
+        "lng": 27.86445,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001485",
+        "source_url": "https://map.fsspx.org/en/places/priory-our-lady-of-sorrows",
+        "matched_country_code": "ZA",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-af-za-folweni",
+      "geo": {
+        "lat": -29.99616,
+        "lng": 30.81768,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002085",
+        "source_url": "https://map.fsspx.org/en/places/st-paul-s-mission",
+        "matched_country_code": "ZA",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-af-za-portelizabeth",
+      "geo": {
+        "lat": -33.93366,
+        "lng": 25.53166,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002082",
+        "source_url": "https://map.fsspx.org/en/places/st-philomena-chapel",
+        "matched_country_code": "ZA",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-af-ng-abuja",
+      "geo": {
+        "lat": 9.06281,
+        "lng": 7.46208,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002058",
+        "source_url": "https://map.fsspx.org/en/places/sacred-heart-chapel",
+        "matched_country_code": "NG",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-af-ng-portharcourt",
+      "geo": {
+        "lat": 4.8842,
+        "lng": 7.00087,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002059",
+        "source_url": "https://map.fsspx.org/en/places/immaculate-heart-of-mary-chapel-port-harcourt",
+        "matched_country_code": "NG",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-af-ga-kango",
+      "geo": {
+        "lat": -0.18244,
+        "lng": 10.37177,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002062",
+        "source_url": "https://map.fsspx.org/en/places/chapelle-saint-patrick",
+        "matched_country_code": "GA",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-ca-on-markham",
+      "geo": {
+        "lat": 43.89386,
+        "lng": -79.37268,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002704",
+        "source_url": "https://map.fsspx.org/en/places/cathedral-of-the-transfiguration",
+        "matched_country_code": "CA",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-district-seed-sspx-ca-qc-beauceville",
+      "geo": {
+        "lat": 46.20357,
+        "lng": -70.73744,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001995",
+        "source_url": "https://map.fsspx.org/en/places/chapelle-marie-reine",
+        "matched_country_code": "CA",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    }
+  ]
+}

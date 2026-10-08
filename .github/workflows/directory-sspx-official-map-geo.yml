@@ -1,0 +1,46 @@
+name: SSPX Official Global Map Geolocation
+
+on:
+  pull_request:
+    paths:
+      - "tools/directory/acquire-sspx-official-map-geo.mjs"
+      - "src/find/geo-provenance.js"
+      - "tests/directory-sspx-official-map-geo.mjs"
+      - ".github/workflows/directory-sspx-official-map-geo.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sspx-map-source-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reconcile-first-party-geopoints:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test first-party geo identity safeguards
+        run: node tests/directory-sspx-official-map-geo.mjs
+      - name: Harvest official geolocated SSPX inventory
+        run: |
+          mkdir -p "$RUNNER_TEMP/sspx-official-map"
+          node tools/directory/acquire-sspx-official-map-geo.mjs --out="$RUNNER_TEMP/sspx-official-map" \
+            > "$RUNNER_TEMP/sspx-official-map/harvest.log" 2>&1 || {
+              cat "$RUNNER_TEMP/sspx-official-map/harvest.log"
+              exit 1
+            }
+          cat "$RUNNER_TEMP/sspx-official-map/harvest.log"
+      - name: Preserve first-party geolocation research without publishing
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sspx-official-global-map-reconciliation
+          path: ${{ runner.temp }}/sspx-official-map/
+          retention-days: 30
+          if-no-files-found: warn
