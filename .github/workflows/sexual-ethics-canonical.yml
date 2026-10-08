@@ -1,0 +1,24 @@
+name: Sexual Ethics canonical and source audit
+on:
+  pull_request:
+    paths:
+      - 'src/learn/sexual-ethics.js'
+      - 'src/learn/sexual-ethics-data/**'
+      - 'tests/sexual-ethics*.mjs'
+      - 'data/learn/sexual-ethics-opponent-source-audit.v1.json'
+      - '.github/workflows/sexual-ethics-canonical.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Existing 150-question validation
+        run: node tests/sexual-ethics.mjs
+      - name: Canonical dossier and source-audit regression
+        run: node tests/sexual-ethics-canonical-50.mjs
