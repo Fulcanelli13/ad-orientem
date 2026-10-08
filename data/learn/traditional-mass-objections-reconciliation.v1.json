@@ -495,5 +495,22 @@
     "original_prose_retained": true,
     "linked_sources_are_only_topic_context": true,
     "not_proven_external_claims": true
+  },
+  "publication_gate": {
+    "file": "data/learn/traditional-mass-publication-gates.v1.json",
+    "version": "TLM_PUBLICATION_GATE_20261008",
+    "status": "NON_PUBLIC_SOURCE_REVIEW_50_CASES_UNAPPROVED",
+    "source_claims_spot_checked": [
+      "NOT67",
+      "IGMR69_ORIGINAL",
+      "GIRM75",
+      "MONT25",
+      "BRUNI25",
+      "RESP21"
+    ],
+    "publication_allowed": false,
+    "french_draft_complete": true,
+    "formal_theological_copy_review_complete": false,
+    "remaining_unrecovered": "TLM001-TLM025"
   }
 }
