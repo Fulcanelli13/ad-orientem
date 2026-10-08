@@ -65,10 +65,12 @@ function rehydrateRemainingHomeDonors(win){
   // Coming Up and Daily Catechism Home presentation are modular now.
   // Keep unrelated donor services, then physically retire any historical
   // Home cards they recreate as compatibility side effects.
-  try{win?.AO_EUCHARISTIC_V354?.ensureHome?.();}catch{}
-  try{win?.AO_V37_SHELL?.ensureHome?.();}catch{}
-  retireLegacyHomeEnrichers(win);
-  retireUnresolvedSaintArt(win);
+  const trace=label=>{try{win?.__AO_CI_TRACE?.(label)}catch{}};
+  trace('home:rehydrate:start');
+  trace('home:eucharistic:start');try{win?.AO_EUCHARISTIC_V354?.ensureHome?.();}catch{}trace('home:eucharistic:done');
+  trace('home:v37ensure:start');try{win?.AO_V37_SHELL?.ensureHome?.();}catch{}trace('home:v37ensure:done');
+  trace('home:retireLegacy:start');retireLegacyHomeEnrichers(win);trace('home:retireLegacy:done');
+  trace('home:retireSaint:start');retireUnresolvedSaintArt(win);trace('home:retireSaint:done');
 }
 
 function watchRetiredHomeEnrichers(win,onMutation){
