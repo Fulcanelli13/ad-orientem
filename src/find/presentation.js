@@ -61,6 +61,7 @@ function venueCard(record,vm){
   const v=record.venue??{},m=arr(record.ministries)[0]??{},label=communityLabel(m.community_id,vm.communities),una=communion(record);
   const schedule=rawSchedules(record)[0]?.schedule;
   const freshness=schedule? scheduleFreshnessLabel(schedule,vm.language):null;
+  const checked=schedule? checkedDateLabel(schedule,vm.language):null;
   const status=una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":"STATUS UNKNOWN";
   return '<button type="button" class="aoFindCard" data-find-venue="'+esc(v.venue_id)+'">'
     +'<span class="aoFindCardTop"><small>'+esc(label)+'</small><i class="aoFindStatus" data-state="'+esc(una)+'">'+esc(status)+'</i></span>'
@@ -69,6 +70,7 @@ function venueCard(record,vm){
     +'<em>'+esc(usageLabel(m))+'</em>'
     +(schedule?.payload?.raw?'<p>'+esc(String(schedule.payload.raw).slice(0,180))+'</p>':"")
     +(freshness?'<span class="aoFindFreshness" data-state="REVIEW_DUE">'+esc(freshness)+'</span>':"")
+    +(checked?'<small class="aoFindChecked">'+esc(checked)+'</small>':"")
     +'</button>';
 }
 function emptyState(vm){
@@ -118,7 +120,7 @@ function detailSheet(vm){
   return html;
 }
 export function renderFindToString(vm){
-  const f=vm.filters??{},aff=arr(f.affiliations),loaded=vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():"";
+  const f=vm.filters??{},aff=arr(f.affiliations),loaded=arr(vm.loadedProviders).length?arr(vm.loadedProviders).join(" · ").toUpperCase():"";
   let html='<section class="aoFindSurface" data-ao-find-owner="AO_FIND_APP_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">←</button><div><small>AD ORIENTEM · DIRECTORY</small><h1>'+esc(L(vm.language,"Find a Mass","Trouver une messe"))+'</h1></div><span>'+esc(loaded)+'</span></header>';
   html+='<div class="aoFindSearch"><input type="search" data-find-query value="'+esc(f.query||"")+'" placeholder="'+esc(L(vm.language,"City, church, diocese or country","Ville, église, diocèse ou pays"))+'"></div>';
