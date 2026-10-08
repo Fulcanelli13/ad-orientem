@@ -133,12 +133,13 @@
     "test:sexual-ethics": "node tests/sexual-ethics.mjs",
     "test:formation-commentary-style": "node tests/formation-commentary-style.mjs",
     "test:reader-rubric-events": "node tests/reader-rubric-events.mjs",
-    "test:mass-formation": "node tests/mass-formation.mjs",
+    "test:mass-formation": "node tests/mass-formation.mjs && npm run test:mass-knowledge",
     "test:french-parity": "node tests/french-parity.mjs",
     "test:glossary": "node tests/glossary-navigation-sot.mjs && node tests/glossary-corpus-integrity.mjs && node tests/glossary-definition-completeness.mjs && node tests/glossary-runtime.mjs",
     "test:directory-icksp-quality": "node tools/directory/audit-icksp-quality.mjs",
     "directory:geocode:icksp-research": "node tools/directory/geocode-research-icksp.mjs",
-    "test:content-ownership": "node tests/content-ownership-registry.mjs"
+    "test:content-ownership": "node tests/content-ownership-registry.mjs",
+    "test:mass-knowledge": "node tests/mass-knowledge-ownership.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
