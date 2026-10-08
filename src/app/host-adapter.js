@@ -191,8 +191,10 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     defer(task) {
+      trace('defer:queued');
       return new Promise((resolve, reject) => {
         const run = () => {
+          trace('defer:running');
           try {
             resolve(task());
           } catch (error) {
