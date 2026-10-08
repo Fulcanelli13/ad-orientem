@@ -27,7 +27,7 @@ await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4190,"127.
 
 let browser,page;
 try{
-  browser=await chromium.launch({headless:true});
+  browser=await chromium.launch({headless:true,channel:"chromium"});
   const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-GB"});
   page=await context.newPage();
   page.setDefaultTimeout(9000); // fail fast with actionable diagnostics instead of repeated 30-second locator hangs
