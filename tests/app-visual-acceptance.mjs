@@ -1198,6 +1198,9 @@ try{
   assert.match(catechismMask,/ao-module-catechism\.png/,"Traditional Catechism canonical mask did not resolve to the frozen PNG");
   await page.locator("#ao-learn-modular-root [data-ao-learn-back]").click();
   await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
+  // Formation repaints its hero when returning from a family. Presentation FX
+  // decorates that newly-created node on the next scheduled frame/scan.
+  await page.waitForFunction(()=>document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero==="modular-presentation-fx-v3",null,{timeout:5000});
   const learnFx=await page.evaluate(()=>({
     hero:document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("ao-learn-modular-root")?.dataset?.aoPresentationFxArtScan??null,
