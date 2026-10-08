@@ -795,7 +795,9 @@ function setText(root, role, value){
 
 function setChannel(root, channel, value){
   const item=root.querySelector(`[data-channel="${channel}"]`);
-  if(item) item.dataset.active = String(Boolean(textValue(value)));
+  if(!item)return;
+  const next=String(Boolean(textValue(value)));
+  if(item.dataset.active!==next)item.dataset.active=next;
 }
 
 function syncRailVisibility(root){
