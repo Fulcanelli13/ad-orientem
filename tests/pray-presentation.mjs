@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
+import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "../src/pray/angelus-guide-data.js";
 import { directChildAnchor } from "../src/pray/dom-anchor.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pray/devotional-ux-contract.js";
 
@@ -97,7 +98,39 @@ assert.match(runtime,/aoRitualReaderGrid aoAngelusRitualGrid/,"Angelus lost the 
 assert.match(runtime,/data-ao-ritual-module="angelus"/,"Angelus lost its exact donor rail ownership marker");
 assert.match(runtime,/data-ao-ritual-channels="posture,gesture"/,"Angelus exact donor channel contract changed");
 assert.match(runtime,/data-ao-incarnation="true"/,"Angelus lost the exact Incarnation focus marker");
-assert.match(runtime,/TODO\(ANGELUS_POSTURE_SATURDAY_VESPERS\)/,"Angelus Saturday-Vespers posture blocker lost its explicit TODO");
+assert.doesNotMatch(runtime,/TODO\(ANGELUS_POSTURE_SATURDAY_VESPERS\)/,"unresolved Saturday posture TODO still present");
+assert.match(runtime,/angelusSaturdayVespersDate===selectedDateKey\(\)/,"Saturday Vespers must use a date-scoped explicit preference");
+assert.match(runtime,/data-p435930-angelus-vespers/,"Saturday Vespers context control not rendered");
+assert.match(runtime,/angelusGuideMarkup\(form\)/,"Angelus seasonal guide not wired");
+assert.match(runtime,/data-ao-angelus-recitation/,"Angelus group recitation presentation state missing");
+assert.match(runtime,/angelusUtterance\(u.text,u.type\)/,"vernacular leader/response lines not split");
+assert.match(styles,/aoAngelusDialogueLine\.response/,"group response emphasis styling not present");
+for(const form of ["angelus","regina"]){
+ for(const language of ["en","fr"]){
+  const sections=angelusGuideSections(form,language);
+  assert.ok(sections.length>=4,form+" must have multiple sourced history/practice sections");
+  for(const section of sections){
+   assert.ok(section.body.length>75,form+" Guide has an empty or thin body");
+   assert.match(section.source.url,/^https:\/\//,form+" Guide source is not linked");
+  }
+ }
+}
+assert.equal(resolveAngelusPosture({form:"angelus",weekday:3}).posture,"kneel");
+assert.equal(resolveAngelusPosture({form:"angelus",weekday:0}).posture,"stand");
+assert.equal(resolveAngelusPosture({form:"angelus",weekday:6}).posture,"kneel");
+assert.equal(resolveAngelusPosture({form:"angelus",weekday:6,saturdayAfterVespers:true}).posture,"stand");
+assert.equal(resolveAngelusPosture({form:"regina",weekday:2}).posture,"stand");
+for(const form of ["angelus","regina"]){
+ for(const language of ["en","fr","la"]){
+  const raw=PRAY_CANONICAL_DATA_V435930[form][language];
+  const initial=raw.trim().split(/\n\s*\n/)[0];
+  const lines=splitAngelusVersicleResponse(initial);
+  assert.equal(lines.length,2,form+" "+language+" opening versicle/response did not split");
+  assert.equal(lines[0].role,"leader");
+  assert.equal(lines[1].role,"response");
+  assert.ok(lines[0].text.length>12&&lines[1].text.length>12);
+ }
+}
 const angelusPostureSource=runtime.match(/function selectedSunday\(\)[\s\S]*?function semanticRailChip/)?.[0]||"";
 assert.doesNotMatch(angelusPostureSource,/getHours|getMinutes|18:00|6\s*PM/i,"Angelus Saturday-Vespers posture must not use a crude civil-clock heuristic");
 assert.match(runtime,/ritualSlotMarkup\('gesture','ao-live-profound-bow'/,"Angelus lost the donor profound-bow gesture slot");
