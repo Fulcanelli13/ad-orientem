@@ -14,6 +14,7 @@ on:
       - "tests/reader-rubric-events.mjs"
       - ".github/workflows/mass-batch-a.yml"
       - "tests/mass-batch-a-schola-nav.mjs"
+      - "tests/mass-visual-acceptance.mjs"
   workflow_dispatch:
 
 permissions:
@@ -38,7 +39,7 @@ jobs:
 
   real-shell-navigation:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 9
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -48,3 +49,12 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Schola-to-section real-shell navigation
         run: node tests/mass-batch-a-schola-nav.mjs
+      - name: Full Mass visual acceptance with bounded locator waits
+        run: node tests/mass-visual-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mass-batch-a-visual
+          path: artifacts/visual-acceptance
+          if-no-files-found: warn
+
