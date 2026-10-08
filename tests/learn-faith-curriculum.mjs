@@ -50,7 +50,7 @@ assert.equal(curriculum.lessons.filter(l=>l.sourceResolution==="SUPPLEMENT_REQUI
 for(const lesson of curriculum.lessons){
   assert.equal(lesson.owner,"learn-the-faith");
   assert.equal(lesson.doctrineOwner,"catechism");
-  assert.equal(lesson.status,"CURRICULUM_ONLY");
+  assert.equal(lesson.status,"CATECHISM_MAPPED");
   assert.ok(lesson.title?.en&&lesson.title?.fr,lesson.id+" lost bilingual title");
   assert.ok(lesson.catechismRefs.length>0,lesson.id+" lost exact Catechism mapping");
   assert.ok(lesson.catechismRefs.every(ref=>/^PXQ\d{3}$/.test(ref)),lesson.id+" has malformed Catechism ref");
@@ -93,6 +93,15 @@ assert.equal(curriculum.relationship_to_existing["learn.catechism"].includes("Fu
 assert.equal(curriculum.relationship_to_existing["learn.catechism.daily"].includes("Daily review"),true);
 assert.equal(curriculum.source_policy.no_unsourced_synthesis,true);
 assert.equal(curriculum.source_policy.no_duplicate_question_bank,true);
+
+assert.equal(curriculum.catechism_source_index.questionCount,433);
+assert.equal(curriculum.mapping_coverage.lessonsMapped,54);
+assert.equal(curriculum.mapping_coverage.catechismQuestionsCovered,433);
+assert.deepEqual(curriculum.mapping_coverage.unmappedQuestions,[]);
+assert.equal(curriculum.mapping_coverage.publicationReady,false);
+const mappedQuestionNumbers=new Set(curriculum.lessons.flatMap(lesson=>lesson.catechismRefs.map(ref=>Number(ref.slice(1)))));
+assert.equal(mappedQuestionNumbers.size,433,"Not all 433 Catechism questions are represented in the guided curriculum");
+for(let n=1;n<=433;n++)assert.ok(mappedQuestionNumbers.has(n),"Catechism Q"+n+" is missing from Learn the Faith");
 assert.equal(curriculum.catechism_source_map,"data/learn/st-pius-x-catechism-source-map.v1.json");
 const sourceMap=JSON.parse(readFileSync(curriculum.catechism_source_map,"utf8"));
 assert.equal(sourceMap.corpus.questionCount,433);
