@@ -118,8 +118,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     node.setAttribute("role","region");
     node.setAttribute("aria-label","Formation");
     node.addEventListener("click",event=>{
-      const home=event.target?.closest?.("[data-ao-learn-home]");
-      if(home){
+      const back=event.target?.closest?.("[data-ao-learn-back]");
+      if(back){
         event.preventDefault?.();
         if(state.family){
           state.lastFamily=state.family;
@@ -129,6 +129,12 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           queue(()=>root(win)?.querySelector?.(`[data-ao-learn-family="${state.lastFamily}"]`)?.focus?.({preventScroll:true}));
           return;
         }
+        void win?.AO_APP_SHELL_V1?.navigate?.("home");
+        return;
+      }
+      const home=event.target?.closest?.("[data-ao-learn-home]");
+      if(home){
+        event.preventDefault?.();
         void win?.AO_APP_SHELL_V1?.navigate?.("home");
         return;
       }
@@ -201,7 +207,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         ?`[data-ao-learn-module="${state.lastLauncher}"]`
         :state.family
           ?"[data-ao-learn-module]"
-          :"[data-ao-learn-home]";
+          :"[data-ao-learn-back]";
       const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
       queue(()=>root(win)?.querySelector?.(selector)?.focus?.({preventScroll:true}));
     }
