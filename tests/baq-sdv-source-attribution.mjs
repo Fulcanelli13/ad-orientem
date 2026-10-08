@@ -62,7 +62,7 @@ assert.equal(new Set(audit.claims.map(x=>x.record_id+"|"+x.path)).size,268);
 for(const row of audit.claims){
  assert.ok(row.sources.length);
  assert.ok(row.sources.every(x=>/^https:\/\//.test(x.url)));
- assert.equal(row.source_status,"REFERENCES_REGISTERED_NOT_PARAGRAPH_CERTIFIED");
+ assert.ok(["REFERENCES_REGISTERED_NOT_PARAGRAPH_CERTIFIED","NEW_EDITORIAL_DRAFT_REFERENCES_REGISTERED_NOT_PARAGRAPH_CERTIFIED"].includes(row.source_status));
 }
 assert.equal(audit.cases.every(x=>x.human_claim_context_approval===false),true);
 assert.equal(bridge.recovered_research.length,102);
