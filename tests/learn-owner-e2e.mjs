@@ -80,7 +80,7 @@ try{
     const status=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.()??null);
     if(status?.family===id)return;
     if(status?.family){
-      await page.locator("#ao-learn-modular-root [data-ao-learn-home]").tap();
+      await page.locator("#ao-learn-modular-root [data-ao-learn-back]").tap();
       await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
     }
     await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).tap();
