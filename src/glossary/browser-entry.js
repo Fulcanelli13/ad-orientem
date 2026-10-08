@@ -319,7 +319,7 @@ export function createGlossaryRuntime(win=globalThis){
     return true;
   }
 
-  function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(state.open&&root(win)),loaded:state.loaded,entries:state.data?.entries?.length||0,lexemes:state.data?.lexemes?.length||0,phrases:state.data?.phrases?.length||0,categories:state.data?.nav?.categories?.length||0,view:state.view,detailId:state.detailId,detailType:state.detailType})}
+  function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(state.open&&root(win)),loaded:state.loaded,error:state.error||null,entries:state.data?.entries?.length||0,lexemes:state.data?.lexemes?.length||0,phrases:state.data?.phrases?.length||0,categories:state.data?.nav?.categories?.length||0,view:state.view,detailId:state.detailId,detailType:state.detailType})}
   return Object.freeze({version:VERSION,open,openEntry,openLexeme,openPhrase,openTerms,search,close,back,render,status});
 }
 
