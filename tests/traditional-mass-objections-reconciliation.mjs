@@ -23,7 +23,7 @@ assert.deepEqual(register.records.map(x=>x.id),ids(26,50));
 assert.equal(register.counts.new_canonical_dossiers,0);
 assert.equal(register.counts.published,0);
 
-let checkedParagraphs=0,legacyCitations=0,unattributedChallenges=0;
+let checkedParagraphs=0,legacyCitations=0,editorialFollowups=0;
 function sources(pack){
   const s=new Map(pack.source_registry.map(x=>[x.id,x]));
   assert.equal(s.size,pack.source_registry.length,"duplicate source ID");
@@ -35,17 +35,33 @@ for(const [pack,sourceMap] of [[a,aSources],[b,bSources]]){
   for(const rec of pack.records){
     assert.ok(owners.has(rec.canonical_owner),"missing canonical owner "+rec.id);
     assert.ok(rec.paragraphs.length>=2,"missing draft "+rec.id);
+    assert.ok(rec.question_fr, "missing French title "+rec.id);
+    if(rec.id<="TLM050"){
+      assert.equal(rec.translation_review,"FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW");
+    }else{
+      assert.equal(rec.translation_review,"BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW");
+      assert.equal(rec.question_provenance,"EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR");
+      assert.ok(rec.question_source_ids.length>=1);
+      assert.ok(rec.question_source_ids.every(id=>sourceMap.has(id)));
+      assert.ok(rec.paragraphs.every(p=>p.text_fr?.length>25),"French paragraph missing "+rec.id);
+      assert.ok(rec.paragraphs.every(p=>p.role!=="identified_reply"),"unsupported attribution "+rec.id);
+    }
     for(const p of rec.paragraphs){
-      if(p.role==="unattributed_challenge"){
-        unattributedChallenges++;
-        assert.match(p.provenance,/REQUIRES_ACTUAL_PROPONENT/);
+      if(p.role==="editorial_followup_question"){
+        editorialFollowups++;
+        assert.equal(p.provenance,"SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION");
+        assert.equal(p.source_attribution,"TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING");
+        assert.ok(p.original_challenge_text && p.original_challenge_text_fr);
+        assert.ok(p.text_fr && p.text && p.text.endsWith("?"));
+        assert.ok(p.source_ids.length>0);
+        for(const source of p.source_ids)assert.ok(sourceMap.has(source),"invalid follow-up context source "+source);
         continue;
       }
       assert.ok(p.text&&!/chatgpt-content-reference/.test(p.text),"missing/redundant text "+rec.id);
       assert.ok(p.source_ids?.length,"uncited claim "+rec.id);
       for(const source of p.source_ids)assert.ok(sourceMap.has(source),"unknown source "+source+" "+rec.id);
       checkedParagraphs++;
-      if(rec.id<="TLM050"){assert.equal(p.source_verification,"SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW");assert.ok(Number.isInteger(p.legacy_placeholder_index));legacyCitations++;}
+      if(rec.id<="TLM050"){assert.ok(["TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED","INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED","CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW"].includes(p.source_verification));assert.ok(Number.isInteger(p.legacy_placeholder_index));assert.ok(p.text_fr && p.text_fr.length>25,"missing French paragraph "+rec.id);assert.ok(p.citation_review?.evidence_locator);assert.ok(p.citation_review?.reviewed_on);assert.equal(p.citation_review.hyperlinked_sources.length,p.source_ids.length);for(const link of p.citation_review.hyperlinked_sources){assert.ok(sourceMap.has(link.source_id));assert.equal(link.url,sourceMap.get(link.source_id).url);assert.match(link.url,/^https:\/\//);}legacyCitations++;}
     }
   }
 }
@@ -58,8 +74,43 @@ for(const rec of tc.debates){
     checkedParagraphs++;
   }
 }
+
+
+assert.deepEqual(a.claim_level_audit.status_counts,{
+  DIRECT_TEXT_ANCHORED:37,
+  SOURCED_INTERPRETIVE:30,
+  BLOCKED:0,
+  CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW:7
+});
+assert.equal(a.claim_level_audit.publication_ready,false);
+assert.equal(a.source_registry.length,36);
+assert.equal(a.claim_level_audit.unattributed_followup_challenges,0);
+assert.equal(a.claim_level_audit.reclassified_synthetic_followups,8);
+assert.equal(a.followup_reclassification.count,8);
+assert.equal(a.translation_progress.question_titles_fr_draft,25);
+assert.equal(a.translation_progress.paragraphs_fr_draft,82);
+assert.equal(a.translation_progress.remaining_english_only_questions,0);
+assert.equal(a.translation_progress.translation_stage,"COMPLETE_DRAFT_NOT_HUMAN_REVIEWED");
+assert.equal(a.interpretive_review_summary.reviewed,30);
+assert.equal(a.interpretive_review_summary.qualified_or_narrowed,7);
+const all=a.records.flatMap(x=>x.paragraphs);
+assert.equal(all.length,82,"lost challenge paragraphs");
+const corrected=all.filter(p=>p.citation_review?.status==="CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW");
+assert.equal(corrected.length,7);
+assert.ok(corrected.every(p=>p.revision_history?.length&&p.citation_review.correction_reason),"lost correction provenance");
+const interpretive=all.filter(p=>p.citation_review?.status==="SOURCED_INTERPRETIVE");
+assert.equal(interpretive.length,30);
+assert.ok(interpretive.every(p=>p.citation_review.interpretive_review?.final_approval==="PENDING_EDITORIAL_REVIEW"));
+assert.equal(all.filter(p=>p.citation_review?.status==="BLOCKED").length,0);
+assert.ok(all.every(p=>p.text_fr && p.text_fr.length>10),"missing French paragraph");
 assert.equal(legacyCitations,74);
-assert.equal(unattributedChallenges,8);
+assert.equal(editorialFollowups,8);
+assert.equal(a.records.flatMap(x=>x.paragraphs).filter(p=>p.role==="unattributed_challenge").length,0);
+assert.equal(b.translation_progress.paragraphs_fr_draft,30);
+assert.equal(b.translation_progress.questions_with_complete_paragraphs_fr_draft,15);
+assert.equal(b.translation_progress.human_review_completed,false);
+assert.equal(b.source_registry.length,14);
+assert.equal(b.editorial_provenance.removed_unsupported_identified_reply_roles,3);
 assert.equal(checkedParagraphs,134);
 assert.equal(register.counts.underlying_substantive_paragraphs,checkedParagraphs);
-console.log(JSON.stringify({validation:"PASS",indexed:register.records.length,unrecovered:25,substantiveParagraphs:checkedParagraphs,sourceCandidatesForLegacy:legacyCitations,unattributedChallenges,newNavigationDossiers:0,publications:0},null,2));
+console.log(JSON.stringify({validation:"PASS",indexed:register.records.length,unrecovered:25,substantiveParagraphs:checkedParagraphs,sourceCandidatesForLegacy:legacyCitations,directTextAnchored:37,interpretive:30,correctedPendingApproval:7,frenchDraftParagraphs:82,frenchDraftParagraphs051065:30,editorialFollowups,newNavigationDossiers:0,publications:0},null,2));

@@ -1,0 +1,73 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_FRANCE_STAGING_REPORT_V1",
+  "retrieved_at": "2026-10-08T08:44:27.584Z",
+  "first_party_source": "https://laportelatine.org/lieux",
+  "archive_expected": 254,
+  "archive_recovered": 254,
+  "archive_pages_expected": 11,
+  "archive_pages_read": 11,
+  "profile_details_requested": true,
+  "profile_details_recovered": 254,
+  "candidates_with_mass_evidence": 158,
+  "conditional_candidates": 3,
+  "not_sspx_or_unverified": 51,
+  "staging_only": true,
+  "publication_eligible_venues": 0,
+  "complete_source_index": true,
+  "complete_detail_review": true,
+  "details_failures": [],
+  "review_states": {
+    "OFFICIAL_MASS_SCHEDULE_CANDIDATE": 158,
+    "MASS_TEXT_NEEDS_MANUAL_REVIEW": 16,
+    "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT": 51,
+    "NO_PUBLISHED_MASS_SECTION": 26,
+    "SEASONAL_OR_DATE_SPECIFIC_HOLD": 3
+  },
+  "per_page": [
+    {
+      "page": 1,
+      "parsed": 24
+    },
+    {
+      "page": 2,
+      "parsed": 24
+    },
+    {
+      "page": 3,
+      "parsed": 24
+    },
+    {
+      "page": 4,
+      "parsed": 24
+    },
+    {
+      "page": 5,
+      "parsed": 24
+    },
+    {
+      "page": 6,
+      "parsed": 24
+    },
+    {
+      "page": 7,
+      "parsed": 24
+    },
+    {
+      "page": 8,
+      "parsed": 24
+    },
+    {
+      "page": 9,
+      "parsed": 24
+    },
+    {
+      "page": 10,
+      "parsed": 24
+    },
+    {
+      "page": 11,
+      "parsed": 14
+    }
+  ],
+  "note": "254-class official archive contains schools, priories, outside-district homes and friendly communities. NOT a public Mass location count."
+}

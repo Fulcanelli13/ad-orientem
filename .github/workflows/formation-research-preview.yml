@@ -6,6 +6,11 @@ on:
       - 'src/learn/formation-research-preview-data.js'
       - 'src/learn/browser-entry.js'
       - 'tests/formation-research-preview.mjs'
+      - 'tests/formation-forensic-recovery.mjs'
+      - 'data/learn/forensic-recovery-register-2026-10-08.v1.json'
+      - 'data/learn/formation-recoverable-research-ledger-2026-10-08.v1.json'
+      - 'docs/FORMATION-FORENSIC-RECOVERY-2026-10-08.md'
+      - 'docs/FORMATION-RECOVERABLE-RESEARCH-2026-10-08.md'
       - 'data/learn/biblical-patristic-answers.v1.json'
       - 'data/learn/sedevacantism-preconciliar-debates.v1.json'
       - 'data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json'
@@ -29,6 +34,8 @@ jobs:
           node-version: '22'
       - name: Check bilingual source-linked Formation preview
         run: node tests/formation-research-preview.mjs
+      - name: Verify forensic A/C/TLM recovery holds and surviving 102 research records
+        run: node tests/formation-forensic-recovery.mjs
       - name: Check Traditional Mass objections and canonical ownership
         run: node tests/traditional-mass-objections-reconciliation.mjs
       - name: Check Traditionis custodes bilingual debate sources

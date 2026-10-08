@@ -1,0 +1,2495 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_FRANCE_REVIEW_MATRIX_V1",
+  "reviewed_on": "2026-10-08",
+  "first_pass_count": 89,
+  "remaining_source_entries_before_review": 165,
+  "new_public_mass_venues": 30,
+  "states": {
+    "PENDING_CURRENT_EVIDENCE": 70,
+    "INSTITUTION_ONLY": 53,
+    "CURRENT_PUBLIC_MASS": 26,
+    "PROVIDER_HOUSE_ONLY": 4,
+    "DUPLICATE_SOURCE_ROW": 8,
+    "CONDITIONAL_MASS": 4
+  },
+  "gate": "Decisions refer to distinct physical chapels or a documented recurring public Mass at source address. Duplicate source entities and apostolate houses are excluded from Find. No GPS inferred. School-campus chapels may be listed only when independently identified by name/address with explicit Sunday Mass evidence; the associated school record never creates a second venue.",
+  "entries": [
+    {
+      "slug": "gastines/angers-2",
+      "source_url": "https://laportelatine.org/lieux/gastines/angers-2",
+      "title": "Oratoire Bienheureux Noël Pinot",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "54 rue Delaâge, 49000 Angers",
+      "sunday_excerpt": [
+        "se renseigner"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "assais/angouleme",
+      "source_url": "https://laportelatine.org/lieux/assais/angouleme",
+      "title": "Chapelle Saint-Aptone",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "355-357, rue de Périgueux et 6 boulevard Chanzy 16000 Angoulême",
+      "sunday_excerpt": [
+        "9h00",
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "1er vendredi du mois: 18h30",
+        "1er samedi du mois: 09h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "morgon/anse",
+      "source_url": "https://laportelatine.org/lieux/morgon/anse",
+      "title": "Église Saint-Cyr",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Ambérieux d'Azergues 69480 Anse",
+      "sunday_excerpt": [
+        "8h30",
+        "10h",
+        "Carte"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "priorij-van-het-allerheiligste-sacrament",
+      "source_url": "https://laportelatine.org/lieux/priorij-van-het-allerheiligste-sacrament",
+      "title": "Prieuré du Très-Saint-Sacrement",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Hemelstraat, 21 - 2018 Antwerpen",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "assais",
+      "source_url": "https://laportelatine.org/lieux/assais",
+      "title": "Chapelle Notre-Dame-des-Anges",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "10 Place des Tilleuls, 79600 Assais-les-Jumeaux",
+      "sunday_excerpt": [
+        "9h00",
+        "10h30",
+        "Vêpres à 17h00"
+      ],
+      "weekday_excerpt": [
+        "7h50",
+        "1er vendredi du mois: 18h30"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "gastines/avrille-dominicaines",
+      "source_url": "https://laportelatine.org/lieux/gastines/avrille-dominicaines",
+      "title": "Monastère Saint-Joseph",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "10, avenue Jeanne de Laval 49240 Avrillé",
+      "sunday_excerpt": [
+        "se renseigner (8hou 9h50)"
+      ],
+      "weekday_excerpt": [
+        "09h50",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "villepreux/ecole-villepreux",
+      "source_url": "https://laportelatine.org/lieux/villepreux/ecole-villepreux",
+      "title": "École Saint-Bernard",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "5, rue de Chaponval 78870 Bailly",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "11h50 - Messe basse (9h - le mardi)",
+        "Pas de messes pendant les vacances scolaires"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "moulin-du-pin",
+      "source_url": "https://laportelatine.org/lieux/moulin-du-pin",
+      "title": "Prieuré Notre-Dame du Sacré-Cœur",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Moulin du Pin 53290 Beaumont-Pied-de-Boeuf",
+      "sunday_excerpt": [
+        "10h45"
+      ],
+      "weekday_excerpt": [
+        "07h30 en principe",
+        "Abbé Guy Castelain"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "gastines",
+      "source_url": "https://laportelatine.org/lieux/gastines",
+      "title": "Prieuré Saint-Louis-Marie-Grignion-de-Montfort",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "1 chemin de Gastines, Faye-d'Anjou 49380 Bellevigne-en-Layon",
+      "sunday_excerpt": [
+        "Vêpres à 18h00"
+      ],
+      "weekday_excerpt": [
+        "7h30",
+        "Abbé Sébastien Gabard"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "bergerac",
+      "source_url": "https://laportelatine.org/lieux/bergerac",
+      "title": "Prieuré Sainte Jeanne d'Arc – Église Saint-Jean-des-Cordeliers",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2 rue Clairat 24100, Bergerac",
+      "sunday_excerpt": [
+        "10h00 Confessions",
+        "10h30 Messe chantée"
+      ],
+      "weekday_excerpt": [
+        "Horaires variables : voir la feuille d'annonces ci-dessous",
+        "Abbé Joël Malassagne"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "bergerac/ecole-bergerac",
+      "source_url": "https://laportelatine.org/lieux/bergerac/ecole-bergerac",
+      "title": "École Sainte Jeanne d'Arc",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "48 rue Jules Michelet, 24100, Bergerac",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "dijon/besancon-2",
+      "source_url": "https://laportelatine.org/lieux/dijon/besancon-2",
+      "title": "Chapelle de la Visitation",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "Chapelle de la Visitation 25000 Besançon",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PROVIDER_HOUSE_ONLY",
+      "reason": "No public Mass section; status provisional pending external official chapel bulletin"
+    },
+    {
+      "slug": "guipavas/ecole-brest",
+      "source_url": "https://laportelatine.org/lieux/guipavas/ecole-brest",
+      "title": "École Stella Maris",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "89, rue de Bohars 29200 Brest",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Période scolaire: 07h15 sauf jeudi: 11h15",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "brout-vernet",
+      "source_url": "https://laportelatine.org/lieux/brout-vernet",
+      "title": "Prieuré Notre-Dame-du-Pointet",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Prieuré ND-du-Pointet, 35 Route du Village d'Escolle - 03110 Broût-Vernet",
+      "sunday_excerpt": [
+        "09h00 et 10h30"
+      ],
+      "weekday_excerpt": [
+        "07h30",
+        "1ER VENDREDI ET 1ER SAMEDI DU MOIS"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "brout-vernet/ecole-brout-vernet",
+      "source_url": "https://laportelatine.org/lieux/brout-vernet/ecole-brout-vernet",
+      "title": "Cours Notre-Dame de France",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "4, Village d'Escolles 03110 Broût-Vernet",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "bruges",
+      "source_url": "https://laportelatine.org/lieux/bruges",
+      "title": "Prieuré Sainte-Marie",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "19, avenue Charles De Gaulle 33520 Bruges",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Jean-Marie Mavel"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "bruges/ecole-bruges",
+      "source_url": "https://laportelatine.org/lieux/bruges/ecole-bruges",
+      "title": "École Saint-Georges",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "19, avenue du Général de Gaulle 33520 Bruges",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "camblain",
+      "source_url": "https://laportelatine.org/lieux/camblain",
+      "title": "Prieuré Saint-Jean-Baptiste-de-la-Salle",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "5, chemin Perroy 62690 Camblain-l'Abbé",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "7h30 et 17h50",
+        "VACANCES SCOLAIRES"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "camblain/ecole-camblain",
+      "source_url": "https://laportelatine.org/lieux/camblain/ecole-camblain",
+      "title": "École Saint-Jean-Baptiste-de-la-Salle",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "5, chemin Perroy 62690 Camblain-l'Abbé",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "aurenque/ecole-aurenque",
+      "source_url": "https://laportelatine.org/lieux/aurenque/ecole-aurenque",
+      "title": "École Notre-Dame Divine Bergère",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Hameau d'Aurenque 32500 Castelnau-d'Arbieu",
+      "sunday_excerpt": [
+        "7h00",
+        "10h00",
+        "Vêpres à 17h30"
+      ],
+      "weekday_excerpt": [
+        "7h00",
+        "1er vendredi et samedi du mois et fêtes: 16h45"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "caussade",
+      "source_url": "https://laportelatine.org/lieux/caussade",
+      "title": "Prieuré Saint-François-Xavier",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "634, route du Treilhou 82300 Caussade",
+      "sunday_excerpt": [
+        "Confessions : 7h50",
+        "Messe lue : 08h00",
+        "Confessions : 9h30"
+      ],
+      "weekday_excerpt": [
+        "En semaine, messe lue à 7h15",
+        "Les premiers samedi du mois : Confessions à 10h30 ; à 11h00 messe lue suivie du chapelet."
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "fort-de-france/guyane",
+      "source_url": "https://laportelatine.org/lieux/fort-de-france/guyane",
+      "title": "Guyane",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "-",
+      "sunday_excerpt": [
+        "prochaines missions en Guyane :"
+      ],
+      "weekday_excerpt": [
+        "Pour le programme détaillé des missions en Guyane, rejoindre le groupe wathsapp via le lien \"site internet\"",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Mission notices without stable physical address or known next public Mass"
+    },
+    {
+      "slug": "prieure-saint-martin",
+      "source_url": "https://laportelatine.org/lieux/prieure-saint-martin",
+      "title": "Prieuré Saint-Martin",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Domaine de la Choisille, Route de Rouziers, 37390, Chanceaux-sur-Choisille",
+      "sunday_excerpt": [
+        "Messes à l'église Saint Grégoire des Minimes"
+      ],
+      "weekday_excerpt": [
+        "Période scolaire",
+        "Messe à 7h15"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "prieure-saint-martin/ecole-tours",
+      "source_url": "https://laportelatine.org/lieux/prieure-saint-martin/ecole-tours",
+      "title": "École de la Sainte Face",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "Domaine de la Choisille, Route de Rouziers, 37390 Chanceaux-sur-Choisille",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "prieure-le-bremien/chartres",
+      "source_url": "https://laportelatine.org/lieux/prieure-le-bremien/chartres",
+      "title": "Chapelle Saint-Pie X",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "11 Bis rue des Jubelines, 28000, Chartres",
+      "sunday_excerpt": [
+        "08h30 et 10h30",
+        "vacances: 10h30"
+      ],
+      "weekday_excerpt": [
+        "voir annonces ci-dessous",
+        "Carte"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "prieure-le-bremien/ecole-chartres",
+      "source_url": "https://laportelatine.org/lieux/prieure-le-bremien/ecole-chartres",
+      "title": "École Saint Joseph",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "11, Bis rue des Jubelines 28000 Chartres",
+      "sunday_excerpt": [
+        "voir chapelle Saint-Pie-X"
+      ],
+      "weekday_excerpt": [
+        "voir chapelle Saint-Pie-X",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "la-placeliere",
+      "source_url": "https://laportelatine.org/lieux/la-placeliere",
+      "title": "École Saint-Martin La Placelière",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "La Placelière 44690 Château-Thébaud",
+      "sunday_excerpt": [
+        "8hmesse basse",
+        "9hmesse basse",
+        "10h30 messe chantée"
+      ],
+      "weekday_excerpt": [
+        "07h15 messe basse",
+        "En vacances : 11h30"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "chapelle-la-placeliere",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "pssjb-le-rafflay",
+      "source_url": "https://laportelatine.org/lieux/pssjb-le-rafflay",
+      "title": "Communauté des Petites Servantes de Saint Jean Baptiste",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "3, Le Rafflay, 44690, Château-Thébaud",
+      "sunday_excerpt": [
+        "7h30 messe chantée"
+      ],
+      "weekday_excerpt": [
+        "7h30 messe basse",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "chateau-thebaud",
+      "source_url": "https://laportelatine.org/lieux/chateau-thebaud",
+      "title": "Cours Saint Albert le Grand",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "5, Le Rafflay, 44690, Château-Thébaud",
+      "sunday_excerpt": [
+        "7h30 ou 8h00"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "chapelle-la-placeliere",
+      "source_url": "https://laportelatine.org/lieux/chapelle-la-placeliere",
+      "title": "Chapelle de l'école Saint-Martin",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "La Placelière 44690 Château-Thébaud",
+      "sunday_excerpt": [
+        "8hmesse basse",
+        "9hmesse basse",
+        "10h30 messe chantée"
+      ],
+      "weekday_excerpt": [
+        "07h15 messe basse",
+        "En vacances : 11h30"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published distinct school-campus chapel with explicit official public Sunday Mass times; school's institution row points here, not a separate Mass venue"
+    },
+    {
+      "slug": "mantes-la-jolie/conflans",
+      "source_url": "https://laportelatine.org/lieux/mantes-la-jolie/conflans",
+      "title": "Chapelle Sainte-Honorine",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "66, rue Maurice Berteaux 78700 Conflans-Sainte-Honorine",
+      "sunday_excerpt": [
+        " Les horaires des messes dominicales du 5 juillet au 30 août : Messe basse au prieuré à 8h30 (pas systématique) – Messe chantée à Jouy-Mauvoisin à 11h00 – Messe chantée à Conflans-Sainte-Honorine à 9h00 - pas de messe (rite romain) à Pontoise sauf le 30 août, messe basse à 8h00 - messe (rite chaldéen) à Pontoise 9h15."
+      ],
+      "weekday_excerpt": [
+        "jeudi: 08h30",
+        "vendredi: 18h30 (se renseigner)"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "marseille/corse-afa",
+      "source_url": "https://laportelatine.org/lieux/marseille/corse-afa",
+      "title": "Chapelle de ND de l’Assomption",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "11 Stretta Di U Caso",
+      "sunday_excerpt": [
+        "10h00 : Grand'Messe chantée"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "couloutre",
+      "source_url": "https://laportelatine.org/lieux/couloutre",
+      "title": "Cours Notre-Dame de la Sainte Espérance",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "1,le Château 58220 Couloutre",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "Variable (se renseigner)",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "cour-cheverny",
+      "source_url": "https://laportelatine.org/lieux/cour-cheverny",
+      "title": "Chapelle Notre-Dame de Compassion",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Domaine de Pontchardon 41700 Cour-Cheverny",
+      "sunday_excerpt": [
+        "7h00 et 10h00"
+      ],
+      "weekday_excerpt": [
+        "7h00",
+        "1er vendredi : 16h45"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "cressia",
+      "source_url": "https://laportelatine.org/lieux/cressia",
+      "title": "Cours Notre-Dame de l'Annonciation",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Le Château 39270 Cressia",
+      "sunday_excerpt": [
+        "10hFêtes et 1er vendredi du mois: se renseigner"
+      ],
+      "weekday_excerpt": [
+        "lundi et samedi: 08h00",
+        "mardi à jeudi: 07h15"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "croix",
+      "source_url": "https://laportelatine.org/lieux/croix",
+      "title": "Prieuré de la Sainte Croix",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "50, rue de la Gare 59170 Croix",
+      "sunday_excerpt": [
+        "08h30"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Bruno Lajoinie"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "dijon",
+      "source_url": "https://laportelatine.org/lieux/dijon",
+      "title": "Prieuré de la Sainte Famille",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "4, rue Pierre Thévenot 21000 Dijon",
+      "sunday_excerpt": [
+        "Confessions 9h15",
+        "Messe à 10h00"
+      ],
+      "weekday_excerpt": [
+        "Messe à 07h30 et/ou 18h30, sauf jeudi et samedi à 11h30.",
+        "Confession, à 18.00 les mercredi, vendredi et samedi. Autrement sur rendez-vous."
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "etcharry/domezain",
+      "source_url": "https://laportelatine.org/lieux/etcharry/domezain",
+      "title": "Cours l'Immaculée Conception",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "Chemin Etchegorria, 64120, Domezain-Berraute",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "seminaire-international-saint-pie-x-econe-suisse",
+      "source_url": "https://laportelatine.org/lieux/seminaire-international-saint-pie-x-econe-suisse",
+      "title": "Séminaire International Saint-Pie X",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Chemin du Séminaire 5, 1908 Riddes, Suisse",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "eguelshardt",
+      "source_url": "https://laportelatine.org/lieux/eguelshardt",
+      "title": "Prieuré Étoile-du-Matin",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "112, route forestière du Hanau 57230 Eguelshardt",
+      "sunday_excerpt": [
+        "7h30",
+        "10h00"
+      ],
+      "weekday_excerpt": [
+        "Période scolaire: 7h15",
+        "Vacances scolaires: se renseigner"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "eguelshardt/ecole-eguelshardt",
+      "source_url": "https://laportelatine.org/lieux/eguelshardt/ecole-eguelshardt",
+      "title": "École Étoile-du-Matin",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "112, route forestière du Hanau 57230 Eguelshardt",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "camblain/lens-nd",
+      "source_url": "https://laportelatine.org/lieux/camblain/lens-nd",
+      "title": "École Notre-Dame",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "20, rue Gabriel Péri, 62300 Éleu-dit-Leauwette",
+      "sunday_excerpt": [
+        "8h00"
+      ],
+      "weekday_excerpt": [
+        "7h00 sauf:",
+        "jeudi 8h40"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "enney",
+      "source_url": "https://laportelatine.org/lieux/enney",
+      "title": "Maison « Domus Dei »",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Route de la Vudalla 30, 1667 Enney",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "etcharry",
+      "source_url": "https://laportelatine.org/lieux/etcharry",
+      "title": "Prieuré Saint-Michel-Garicoïtz – Château Oihenartia",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Château Oihenartia, 2 route de Mauléon, 64120 Etcharry",
+      "sunday_excerpt": [
+        "Messe chantée à 8h30 et 10h30"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Guillaume Scarcella"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "etcharry/ecole-etcharry",
+      "source_url": "https://laportelatine.org/lieux/etcharry/ecole-etcharry",
+      "title": "École Saint-Michel Garicoïtz",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Château Oihenartia, 2 route de Mauléon, 64120 Etcharry",
+      "sunday_excerpt": [
+        "Messe chantée à 8h30 et 10h30"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "ECOLE"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "etcharry",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "bergerac/eynesse",
+      "source_url": "https://laportelatine.org/lieux/bergerac/eynesse",
+      "title": "Carmel du Cœur Immaculé de Marie",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "1105, route de Barrail 33220 Eynesse",
+      "sunday_excerpt": [
+        "08h00"
+      ],
+      "weekday_excerpt": [
+        "08h00",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "fabregues",
+      "source_url": "https://laportelatine.org/lieux/fabregues",
+      "title": "Prieuré Saint-François de Sales",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "1, rue Neuve des Horts 34690 Fabrègues",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "Voir dans l'onglet ci-dessous : \"Annonces\"",
+        "Abbé Louis-Marie Berthe"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "fabregues/ecole-fabregues",
+      "source_url": "https://laportelatine.org/lieux/fabregues/ecole-fabregues",
+      "title": "École Saint-Dominique Savio",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "1, rue Neuve des Horts, 34690, Fabrègues",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "fanjeaux",
+      "source_url": "https://laportelatine.org/lieux/fanjeaux",
+      "title": "Cours Saint Dominique-du-Cammazou – La Clarté Dieu",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "1 chemin du Cammazou 11270 Fanjeaux",
+      "sunday_excerpt": [
+        "8h20 (idem pour fêtes d'obligation)"
+      ],
+      "weekday_excerpt": [
+        "07h15 et 11h40, sauf lundi, samedi et vacances scolaires: 8h00",
+        "Fêtes et 1er vendredi du mois: se renseigner"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "flavigny",
+      "source_url": "https://laportelatine.org/lieux/flavigny",
+      "title": "Séminaire Saint-Curé-d’Ars",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Maison Lacordaire 21150 Flavigny-sur-Ozerain",
+      "sunday_excerpt": [
+        "10h15",
+        "7h20 (se renseigner)",
+        "Vêpres: 17h00"
+      ],
+      "weekday_excerpt": [
+        "7h15 en général sauf fête à 6h50",
+        "juillet, août, septembre: 7h45"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "aurenque",
+      "source_url": "https://laportelatine.org/lieux/aurenque",
+      "title": "Couvent Saint-Antoine",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "32 route de la Pétarde, Aurenque 32500 Castelnau d'Arbieu",
+      "sunday_excerpt": [
+        "7h00",
+        "10h00",
+        "Vêpres à 17h30"
+      ],
+      "weekday_excerpt": [
+        "7h00",
+        "1er vendredi et samedi du mois et fêtes: 16h45"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "fabregues/font-romeu",
+      "source_url": "https://laportelatine.org/lieux/fabregues/font-romeu",
+      "title": "Sainte-Colombe de Vià",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "6 Rue des Jonquilles, 66120 Font-Romeu-Odeillo-Via",
+      "sunday_excerpt": [
+        "Messe à 18h00 certains dimanches et fêtes d'été",
+        "Carte"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "villepreux/ternay",
+      "source_url": "https://laportelatine.org/lieux/villepreux/ternay",
+      "title": "Cours Sainte-Clotilde",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "41, rue René Dorme 78330 Fontenay-Le-Fleury",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "fort-de-france/ecole-martinique",
+      "source_url": "https://laportelatine.org/lieux/fort-de-france/ecole-martinique",
+      "title": "École Saint Dominique Savio",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "40, av. Martin Luther King 97200 Fort-de-France",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "fort-de-france",
+      "source_url": "https://laportelatine.org/lieux/fort-de-france",
+      "title": "Prieuré Notre Dame de la Délivrande",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "40, avenue Martin Luther King 97200 Fort-de-France",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PROVIDER_HOUSE_ONLY",
+      "reason": "No public Mass section; status provisional pending external official chapel bulletin"
+    },
+    {
+      "slug": "montierchaume/bourges",
+      "source_url": "https://laportelatine.org/lieux/montierchaume/bourges",
+      "title": "École Sainte Jeanne-de-France",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "1, chemin des Chardons 18110 FUSSY",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "1er samedi du mois à 18h00 sauf juillet-août-septembre.",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "gavrus",
+      "source_url": "https://laportelatine.org/lieux/gavrus",
+      "title": "Prieuré Saint-Jean-Eudes",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "1 rue des Prébendes 14210 Gavrus",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Variable: se renseigner",
+        "ECOLE"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "gavrus/ecole-gavrus",
+      "source_url": "https://laportelatine.org/lieux/gavrus/ecole-gavrus",
+      "title": "École Saint Jean-Eudes",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "1, rue des Prébendes 14210 Gavrus",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "mjcf-gentilly",
+      "source_url": "https://laportelatine.org/lieux/mjcf-gentilly",
+      "title": "Oratoire Saint-Dominique",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "41, avenue Pasteur 94250 Gentilly",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "1ER VENDREDI DU MOIS:",
+        "19h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "mantes-la-jolie/goussonville",
+      "source_url": "https://laportelatine.org/lieux/mantes-la-jolie/goussonville",
+      "title": "Cours Notre-Dame-de-la-Sablonnière",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "5, rue de la Sablonnière 78930 Goussonville",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Période scolaire, en principe 07h20 sauf vendredi 11h15 et samedi 08h00"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "gragnague",
+      "source_url": "https://laportelatine.org/lieux/gragnague",
+      "title": "Prieuré Saint-Dominique",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2245, avenue des Platanes 31380 Gragnague",
+      "sunday_excerpt": [
+        "ATTENTION ! En aout, il n'y aura pas de messe de 8hle dimanche, mais seulement à 9het 10h30.Retour à la normale le dimanche 30 aout.",
+        "En semaine l'été, il n'y a ni permanence ni messe le mercredi au Férétra, à Toulouse, mais une messe à 8hau Prieuré de Gragnague.",
+        "Les autres jours, permanence à 17h30 et messe à 18h30."
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Bruno France"
+      ],
+      "state": "CONDITIONAL_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "kernabat",
+      "source_url": "https://laportelatine.org/lieux/kernabat",
+      "title": "Cours Sainte-Anne",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "2 rue de l'Eglise Kernabat-en-Plouisy 22200 Guingamp",
+      "sunday_excerpt": [
+        "10h00"
+      ],
+      "weekday_excerpt": [
+        "Variable (se renseigner)",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "guipavas",
+      "source_url": "https://laportelatine.org/lieux/guipavas",
+      "title": "Prieuré Saint-Yves",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "26, rue des Sittelles, Kermeur - Coataudon 29490 Guipavas",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Pierre-Yves Chrissement"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "meylan/huez",
+      "source_url": "https://laportelatine.org/lieux/meylan/huez",
+      "title": "Eglise Notre-Dame des Neiges",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "77 chemin de la chapelle 38750 Huez",
+      "sunday_excerpt": [
+        "Messe occasionnelle. se renseigner auprès du prieuré Saint-Pierre Julien Eymard.",
+        "Carte",
+        "Annonces"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "les-fournils/ile-de-re",
+      "source_url": "https://laportelatine.org/lieux/les-fournils/ile-de-re",
+      "title": "Chapelle de l'Île de Ré",
+      "source_review_state": "SEASONAL_OR_DATE_SPECIFIC_HOLD",
+      "address_text": "Chemin du Grand-Bois-Jamain 17580 Le-Bois-Plage-en-Ré",
+      "sunday_excerpt": [
+        "12h30 messe lue, suivie des confessions.",
+        "Seulement en période estivale, tous les dimanches du 19 juillet au 30 août 2026 (samedi 15 août compris).",
+        "Carte"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Only seasonal or date-specific source evidence; no currently confirmed recurrence"
+    },
+    {
+      "slug": "prieure-le-bremien",
+      "source_url": "https://laportelatine.org/lieux/prieure-le-bremien",
+      "title": "Prieuré Saint Bernard",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2, rue de l'Orée du Bois, 27770, Illiers l'Evêque",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "11h",
+        "Abbé Jean de l'Estourbeillon"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "prieure-le-bremien/le-bremien",
+      "source_url": "https://laportelatine.org/lieux/prieure-le-bremien/le-bremien",
+      "title": "Maison de retraite \"Le Brémien Notre-Dame\"",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2, rue de l'Orée du Bois 27770 Illiers-l'Evêque",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "11h",
+        "Abbé Pierre Buron"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "prieure-le-bremien",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "nancy/joinville",
+      "source_url": "https://laportelatine.org/lieux/nancy/joinville",
+      "title": "Couvent des Annonciades",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "22, avenue Irma Masson 52300 Joinville",
+      "sunday_excerpt": [
+        "Messe à 17h00",
+        "CONFESSIONS",
+        "à partir de 16h30"
+      ],
+      "weekday_excerpt": [
+        "Messe à 10h00 le premier samedi du mois",
+        "Suivie de l'adoration du Très Saint Sacrement"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "mantes-la-jolie/jouy-mauvoisin",
+      "source_url": "https://laportelatine.org/lieux/mantes-la-jolie/jouy-mauvoisin",
+      "title": "Église Sainte-Foy",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Route de Mantes 78200 Jouy-Mauvoisin",
+      "sunday_excerpt": [
+        " Les horaires des messes dominicales du 5 juillet au 30 août : Messe basse au prieuré à 8h30 (pas systématique) – Messe chantée à Jouy-Mauvoisin à 11h00 – Messe chantée à Conflans-Sainte-Honorine à 9h00 - pas de messe (rite romain) à Pontoise sauf le 30 août, messe basse à 8h00 - messe (rite chaldéen) à Pontoise 9h15.",
+        "Carte",
+        "Prieuré"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "paita",
+      "source_url": "https://laportelatine.org/lieux/paita",
+      "title": "Chapelle Saint-Joseph",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Route Territoriale 1, Lotissement les Fougères, Katiramona, Arrêt de bus \"Les Pétroglyphes\"",
+      "sunday_excerpt": [
+        "27 septembre 2026 (18ème dimanche après la Pentecôte), messe à 9 heures.",
+        "Cliquez sur l'icône \"Publication\" ci-dessous puis naviguez à l'aide des flèches pour consulter le calendrier des messes dominicales pour 2026"
+      ],
+      "weekday_excerpt": [
+        "Veuillez cliquer sur l’icône \"Publication\" ci-dessous pour trouver les horaires des messes, à la fin du bulletin.",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "fabregues/cabanous",
+      "source_url": "https://laportelatine.org/lieux/fabregues/cabanous",
+      "title": "Chapelle Saint Georges de Lodève",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "370 allée du Puech du Mus, 12230 La Cavalerie",
+      "sunday_excerpt": [
+        "Voir la feuille d'annonce pour les horaires des messes",
+        "Carte",
+        "Annonces"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "brignolles",
+      "source_url": "https://laportelatine.org/lieux/brignolles",
+      "title": "Cours Saint-Dominique",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "3100, route de Roquebrussanne 83170 La Celle (Brignoles)",
+      "sunday_excerpt": [
+        "11h00"
+      ],
+      "weekday_excerpt": [
+        "Lundi: 7h30",
+        "samedi: 08h00"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "guipavas/lannedern",
+      "source_url": "https://laportelatine.org/lieux/guipavas/lannedern",
+      "title": "Chapelle Notre-Dame de Coat ar Roch",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Coat ar Roch 29190 Lannedern",
+      "sunday_excerpt": [
+        "Prochaines messes dominicales : le dimanche 31 août à 10h30 à l'occasion du pardon. Le dimanche 14 septembre à 11h."
+      ],
+      "weekday_excerpt": [
+        "Prochaine messe en semaine : samedi 6 septembre à 11h.",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "lanvallay",
+      "source_url": "https://laportelatine.org/lieux/lanvallay",
+      "title": "Prieuré Sainte-Anne",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "82, avenue de Beauvais 22100 Lanvallay",
+      "sunday_excerpt": [
+        "8h00 Messe basse",
+        "9h15 Messe basse",
+        "10h30 Messe chantée"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Fabrice Loschi"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "laragne",
+      "source_url": "https://laportelatine.org/lieux/laragne",
+      "title": "Domaine Notre-Dame",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Salérans 05300 Laragne",
+      "sunday_excerpt": [
+        "11h00 (en principe)"
+      ],
+      "weekday_excerpt": [
+        "11h30 (en principe)",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "le-herie",
+      "source_url": "https://laportelatine.org/lieux/le-herie",
+      "title": "Cours Notre-Dame des Victoires",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "18 rue du Château 02120 Le Hérie-La-Viéville",
+      "sunday_excerpt": [
+        "8h30",
+        "Fêtes: se renseigner"
+      ],
+      "weekday_excerpt": [
+        "Variable",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "le-trevoux",
+      "source_url": "https://laportelatine.org/lieux/le-trevoux",
+      "title": "Monastère Saint-François-d'Assise",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "75 domaine de Lanorgard 29380 Le Trévoux",
+      "sunday_excerpt": [
+        "07h15 et 10h30",
+        "sauf Rameaux: 10hVêpres: 17h00"
+      ],
+      "weekday_excerpt": [
+        "7h15 sauf grandes fêtes: 10h30",
+        "Abbé Philippe François"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "les-rousses",
+      "source_url": "https://laportelatine.org/lieux/les-rousses",
+      "title": "Chapelle Notre-Dame de Lourdes",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "2770, Route du lac, Le Vivier 39220 Les Rousses",
+      "sunday_excerpt": [
+        "10h00",
+        "fêtes: se renseigner"
+      ],
+      "weekday_excerpt": [
+        "Samedi: 18h00",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "leyritz-moncassin",
+      "source_url": "https://laportelatine.org/lieux/leyritz-moncassin",
+      "title": "Sanctuaire Notre-Dame-des-Prés",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "route Notre-Dame-des-prés 47700 Leyritz-Moncassin",
+      "sunday_excerpt": [
+        "Desservi occasionnellement par les Capucins d’Aurenque",
+        "se renseigner au 06 24 11 04 89",
+        "nddespres47@yahoo.com"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "mission-saint-pie-x-gabon",
+      "source_url": "https://laportelatine.org/lieux/mission-saint-pie-x-gabon",
+      "title": "Mission Saint Pie X",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Impasse saint Pie X, Quartier La Peyrie, Libreville, Gabon",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "merigny/limoges",
+      "source_url": "https://laportelatine.org/lieux/merigny/limoges",
+      "title": "Chapelle Saint-Martial",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "7, rue Guillaumin 87000 Limoges",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "1er vendredi du mois: 18h00",
+        "1er samedi du mois: 9h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "lourdes-saint-ignace",
+      "source_url": "https://laportelatine.org/lieux/lourdes-saint-ignace",
+      "title": "Maison Saint-Ignace",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "22, rue du Sacré-Cœur 65100 Lourdes",
+      "sunday_excerpt": [
+        "9h00"
+      ],
+      "weekday_excerpt": [
+        "11h00",
+        "Abbé Charles Moulin"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "lyon/chapelle-saint-irenee",
+      "source_url": "https://laportelatine.org/lieux/lyon/chapelle-saint-irenee",
+      "title": "Chapelle Saint-Irénée",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "23 quai Perrache, 69002, Lyon",
+      "sunday_excerpt": [
+        "8h30, 10h"
+      ],
+      "weekday_excerpt": [
+        "18h30",
+        "sauf samedi 11h"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "mantes-la-jolie",
+      "source_url": "https://laportelatine.org/lieux/mantes-la-jolie",
+      "title": "Prieuré Saint-Jean",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2, rue Jean Hoët 78200 Mantes-la-Jolie",
+      "sunday_excerpt": [
+        " Les horaires des messes dominicales du 5 juillet au 30 août : Messe basse au prieuré à 8h30 (pas systématique) – Messe chantée à Jouy-Mauvoisin à 11h00 – Messe chantée à Conflans-Sainte-Honorine à 9h00 - pas de messe (rite romain) à Pontoise sauf le 30 août, messe basse à 8h00 - messe (rite chaldéen) à Pontoise 9h15."
+      ],
+      "weekday_excerpt": [
+        "SAMEDI",
+        "11h15"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "marlieux",
+      "source_url": "https://laportelatine.org/lieux/marlieux",
+      "title": "Prieuré Saint-Jean-Bosco",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "264 allée des platanes, 01240 Marlieux",
+      "sunday_excerpt": [
+        "09h00 en période scolaire",
+        "10h30 (chantée)"
+      ],
+      "weekday_excerpt": [
+        "07h15 sauf samedi à 07h30",
+        "1er vendredi du mois: 18h30"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "marlieux/ecole-marlieux",
+      "source_url": "https://laportelatine.org/lieux/marlieux/ecole-marlieux",
+      "title": "École Saint-Jean-Bosco",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "264 allée des platanes, 01240 Marlieux",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "marseille",
+      "source_url": "https://laportelatine.org/lieux/marseille",
+      "title": "Prieuré Saint-Ferréol",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "40, chemin de Fondacle 13012 Marseille",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Habituellement : 07h15 en semaine (se renseigner)",
+        "Abbé Benoît Laurent"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "marseille/ecole-marseille",
+      "source_url": "https://laportelatine.org/lieux/marseille/ecole-marseille",
+      "title": "École Saint-Ferréol",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "40 chemin de Fondacle 13012 Marseille",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "gastines/mauleon",
+      "source_url": "https://laportelatine.org/lieux/gastines/mauleon",
+      "title": "École Saint Louis-Marie Grignion de Montfort",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "55, lieu dit La Croix Saint Michel, 79700 Mauléon",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "menzingen",
+      "source_url": "https://laportelatine.org/lieux/menzingen",
+      "title": "Maison Générale, Priorat Mariae Verkündigung",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Schwandegg, 6313 Menzingen, Suisse",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "merigny/merigny",
+      "source_url": "https://laportelatine.org/lieux/merigny/merigny",
+      "title": "Maison Saint-Jean",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "11 place de l'Eglise 36220 Mérigny",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "7h50",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "merigny",
+      "source_url": "https://laportelatine.org/lieux/merigny",
+      "title": "Maison Saint Joseph",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Le Bois 36220 Mérigny",
+      "sunday_excerpt": [
+        "9h00 et 10h30",
+        "Vêpres à 17h00"
+      ],
+      "weekday_excerpt": [
+        "07h50",
+        "1er vendredi du mois: 07h50 et 18h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "meylan",
+      "source_url": "https://laportelatine.org/lieux/meylan",
+      "title": "Prieuré Saint-Pierre-Julien-Eymard",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "22, chemin du Bachais 38240 Meylan",
+      "sunday_excerpt": [
+        "08h00 (se renseigner)",
+        "18h30"
+      ],
+      "weekday_excerpt": [
+        "Voir la feuille d'annonces",
+        "Abbé Jean-Marie Salaün"
+      ],
+      "state": "CONDITIONAL_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "meylan/ecole-meylan",
+      "source_url": "https://laportelatine.org/lieux/meylan/ecole-meylan",
+      "title": "École Saint-Pierre-Julien-Eymard",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "22, chemin du Bachais 38240 Meylan",
+      "sunday_excerpt": [
+        "08h00 (se renseigner)",
+        "18h30"
+      ],
+      "weekday_excerpt": [
+        "Voir la feuille d'annonces",
+        "ECOLE"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "meylan",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "montagnac",
+      "source_url": "https://laportelatine.org/lieux/montagnac",
+      "title": "Monastère de l'Immaculée",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "583 route de la grange 24140 Montagnac-la-Crempse",
+      "sunday_excerpt": [
+        "10h00"
+      ],
+      "weekday_excerpt": [
+        "10h00",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "caussade/montauban",
+      "source_url": "https://laportelatine.org/lieux/caussade/montauban",
+      "title": "Cours Notre-Dame de l'Assomption",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "93, avenue Marceau Hamecher 82000 Montauban",
+      "sunday_excerpt": [
+        "8h15 Messe lue",
+        "9h30 Confessions",
+        "10h00 Messe chantée"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "montgardin",
+      "source_url": "https://laportelatine.org/lieux/montgardin",
+      "title": "La Maison Notre-Dame",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Maison Notre-Dame, 2 impasse de Notre-Dame, 05230 Montgardin",
+      "sunday_excerpt": [
+        "7h25 messe basse",
+        "10h30 Messe chantée"
+      ],
+      "weekday_excerpt": [
+        "7h20",
+        "11h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "montierchaume",
+      "source_url": "https://laportelatine.org/lieux/montierchaume",
+      "title": "Prieuré Saint Michel - La Martinerie",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "La Martinerie - Route départementale 96, 36130, Montierchaume",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "En période scolaire : 7h10",
+        "En période de vacances : 7h30"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "montierchaume/ecole-philibert-vrau",
+      "source_url": "https://laportelatine.org/lieux/montierchaume/ecole-philibert-vrau",
+      "title": "Ecole professionnelle Philibert Vrau",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "La Martinerie, Rte départementale 96, 36130, Montierchaume",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "En période scolaire : 7h10",
+        "En période de vacances : 7h30"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "montierchaume",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "montierchaume/la-martinerie",
+      "source_url": "https://laportelatine.org/lieux/montierchaume/la-martinerie",
+      "title": "École Saint Michel - La Martinerie",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "La Martinerie - Route départementale 96, 36130, Montierchaume",
+      "sunday_excerpt": [
+        "Messe chantée : 10h30"
+      ],
+      "weekday_excerpt": [
+        "PÉRIODES SCOLAIRES",
+        "Messe lue : 7h10 tous les jours"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "montierchaume",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "merigny/montlucon",
+      "source_url": "https://laportelatine.org/lieux/merigny/montlucon",
+      "title": "Chapelle Notre-Dame de Fatima",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "10, Passage Barathon-Grands Prés 03100 Montluçon",
+      "sunday_excerpt": [
+        "10h00"
+      ],
+      "weekday_excerpt": [
+        "1er vendredi du mois : 18h30",
+        "1er samedi du mois : 9h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "fabregues/aumonerie-montpellier",
+      "source_url": "https://laportelatine.org/lieux/fabregues/aumonerie-montpellier",
+      "title": "Aumônerie Saint-Pie X",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "45, rue de Barcelone 34070 Montpellier",
+      "sunday_excerpt": [
+        "Pas de messe le dimanche"
+      ],
+      "weekday_excerpt": [
+        "mardi - mercredi (à vérifier sur l'onglet \"Annonces\")",
+        "17h30 : permanence du prêtre pour confessions ou entretiens"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "montreal-de-laude",
+      "source_url": "https://laportelatine.org/lieux/montreal-de-laude",
+      "title": "Prieuré Saint Joseph-des-Carmes",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Domaine des Carmes 11290 Montréal-de-l'Aude",
+      "sunday_excerpt": [
+        "08h00 et 10h00"
+      ],
+      "weekday_excerpt": [
+        "6h45 et 11h30",
+        "Vacances scolaires: se renseigner"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "montreal-de-laude/saint-joseph-des-carmes",
+      "source_url": "https://laportelatine.org/lieux/montreal-de-laude/saint-joseph-des-carmes",
+      "title": "École Saint-Joseph-des-Carmes",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "Domaine des Carmes 11290 Montréal-de-l'Aude",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "montrottier",
+      "source_url": "https://laportelatine.org/lieux/montrottier",
+      "title": "École de la Péraudière",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "3209 route de saint Martin 69770 Montrottier",
+      "sunday_excerpt": [
+        "se renseigner",
+        "ECOLE",
+        "Huitième à Terminale pour garçons. Sections L et ES."
+      ],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "guipavas/morlaix",
+      "source_url": "https://laportelatine.org/lieux/guipavas/morlaix",
+      "title": "Monastère Notre-Dame des Fontaines",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "\"Traonfeunteuniou\", 29600 Morlaix",
+      "sunday_excerpt": [
+        "08h30",
+        "fêtes 8h30 ou 10h30 (se renseigner)"
+      ],
+      "weekday_excerpt": [
+        "7h15",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "moussy",
+      "source_url": "https://laportelatine.org/lieux/moussy",
+      "title": "Maison du Cœur Immaculé",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "5, Rue de la Croix 58700 Moussy",
+      "sunday_excerpt": [
+        "9h30 (préférable de téléphoner)"
+      ],
+      "weekday_excerpt": [
+        "07h30 (préférable de téléphoner)",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "mulhouse",
+      "source_url": "https://laportelatine.org/lieux/mulhouse",
+      "title": "Prieuré Marie-Reine",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "195, rue de Bâle 68100 Mulhouse",
+      "sunday_excerpt": [
+        "10h45",
+        "Rameaux:10h15",
+        "Fête-Dieu et Assomption:9h30"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Jean-Luc Radier"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "nancy",
+      "source_url": "https://laportelatine.org/lieux/nancy",
+      "title": "Prieuré Saint Nicolas – Chapelle du Sacré-Cœur",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "65, rue du Maréchal Oudinot 54000 Nancy",
+      "sunday_excerpt": [
+        "11h00 en juillet et août",
+        "CONFESSIONS",
+        "à partir de 10h30"
+      ],
+      "weekday_excerpt": [
+        "Messes à 18h15 sauf le samedi",
+        "Messes à 7h15 du lundi au vendredi"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "nancy/ecole-nancy",
+      "source_url": "https://laportelatine.org/lieux/nancy/ecole-nancy",
+      "title": "Cours Sainte Philomène",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "65, rue du Maréchal Oudinot 54000 Nancy",
+      "sunday_excerpt": [
+        "Horaires de la chapelle du Sacré-Cœur."
+      ],
+      "weekday_excerpt": [
+        "JEUDI",
+        "Messe d'école à 11h15 pendant l'année scolaire."
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "nantes",
+      "source_url": "https://laportelatine.org/lieux/nantes",
+      "title": "Prieuré Saint-Louis – Église Saint Émilien",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "25, rue François Bruneau 44000 Nantes",
+      "sunday_excerpt": [
+        "08h30 - 10h30 - 18h30",
+        "VÊPRES",
+        "17h30"
+      ],
+      "weekday_excerpt": [
+        "7h15 et 18h30",
+        "CONFESSIONS"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "nice",
+      "source_url": "https://laportelatine.org/lieux/nice",
+      "title": "Prieuré Saint Joseph – Chapelle de la Visitation",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "17 Place Sainte-Claire 06300 Nice",
+      "sunday_excerpt": [
+        "10h00"
+      ],
+      "weekday_excerpt": [
+        "18h30",
+        "Abbé Jacques Laguérie"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "nice/ecole-nice",
+      "source_url": "https://laportelatine.org/lieux/nice/ecole-nice",
+      "title": "Ecole Maris Stella",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "29 Corniche Bellevue 06000 Nice",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "assais/niort",
+      "source_url": "https://laportelatine.org/lieux/assais/niort",
+      "title": "Chapelle et école Saint-Martin",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "4 ter, rue Roselia Rousseil 79000 Niort",
+      "sunday_excerpt": [
+        "8h30 et 10h30"
+      ],
+      "weekday_excerpt": [
+        "1ER VENDREDI DU MOIS",
+        "18h30"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "fabregues/moyrazes",
+      "source_url": "https://laportelatine.org/lieux/fabregues/moyrazes",
+      "title": "Chapelle Sainte-Emilie-de-Rodat",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "1180 route de la Mouline - 12510 Olemps",
+      "sunday_excerpt": [
+        "Voir la feuille d'annonce pour les horaires des messes",
+        "Carte",
+        "Annonces"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "geneve",
+      "source_url": "https://laportelatine.org/lieux/geneve",
+      "title": "Prieuré Saint François de Sales",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Chemin de la Genevrière 10, 1213 Onex, Suisse",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "chardonnet/iuspx",
+      "source_url": "https://laportelatine.org/lieux/chardonnet/iuspx",
+      "title": "Institut Universitaire Saint-Pie X",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "21, rue du Cherche-Midi 75006 Paris",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "12h15 sauf le samedi",
+        "vacances universitaires: fermé"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "suresnes/paris-rue-gerbert",
+      "source_url": "https://laportelatine.org/lieux/suresnes/paris-rue-gerbert",
+      "title": "Chapelle de Jésus, Roi de France",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "20, rue Gerbert 75015 Paris",
+      "sunday_excerpt": [
+        "8h30 confessions / 9h00 messe lue (sauf en juillet-août)",
+        "10h00 confessions / 10h30 messe chantée (sauf en août)",
+        "Août : chapelle fermée"
+      ],
+      "weekday_excerpt": [
+        "Sauf en juillet-août",
+        "Le mercredi (sauf exception) : de 16h15 à 18h30 confessions et permanence sacerdotale / 18h00 chapelet pour la France / 18h30 messe lue."
+      ],
+      "state": "CONDITIONAL_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "chardonnet/petit-musc",
+      "source_url": "https://laportelatine.org/lieux/chardonnet/petit-musc",
+      "title": "École Saint Louis",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "10 rue du Petit-Musc",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "paris-consolation",
+      "source_url": "https://laportelatine.org/lieux/paris-consolation",
+      "title": "Prieuré et Chapelle Notre-Dame de Consolation",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "23 rue Jean Goujon 75008 Paris",
+      "sunday_excerpt": [
+        "9h00 (crypte)",
+        "10h15 (chapelle)",
+        "11h45 (crypte) (sauf vacances d'été)"
+      ],
+      "weekday_excerpt": [
+        "du lundi au vendredi: 7h45 et 18h30",
+        "samedi: 11h00 et 18h30"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "assais/parthenay",
+      "source_url": "https://laportelatine.org/lieux/assais/parthenay",
+      "title": "Cours Notre-Dame du Sacré-Cœur",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "La Couldre, 28, rue de la citadelle, 79200 Parthenay",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Lundi et Fêtes: 11h30",
+        "mardi à vendredi: 7h15"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "fabregues/perpignan",
+      "source_url": "https://laportelatine.org/lieux/fabregues/perpignan",
+      "title": "Prieuré du Christ-Roi",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "113, avenue Maréchal Joffre 66000 Perpignan",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "Voir dans l'onglet ci-dessous : \"Annonces\"",
+        "Carte"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "fabregues/ecole-perpignan",
+      "source_url": "https://laportelatine.org/lieux/fabregues/ecole-perpignan",
+      "title": "École Primaire Notre-Dame du Mont Carmel",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "12, rue Ampère 66000 Perpignan",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "plauzat",
+      "source_url": "https://laportelatine.org/lieux/plauzat",
+      "title": "Prieuré de l'Enfant-Jésus",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "1, rue des Écloses 63730 Plauzat",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Voir bulletin mensuel ou site internet (ci-dessus).",
+        "Abbé Sébastien Cartier"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "merigny/poitiers",
+      "source_url": "https://laportelatine.org/lieux/merigny/poitiers",
+      "title": "Chapelle de l'Immaculée Conception",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "44, rue Jean Jaurès 86000 Poitiers",
+      "sunday_excerpt": [
+        "9h00 et 10h30"
+      ],
+      "weekday_excerpt": [
+        "1er vendredi du mois: 18h30",
+        "1er samedi du mois: 09h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "moulin-du-pin/pontmain",
+      "source_url": "https://laportelatine.org/lieux/moulin-du-pin/pontmain",
+      "title": "Chapelle Notre-Dame de Pontmain",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2 rue de la grange, 53220, Pontmain",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Tous les 17 de l'année : 10h30",
+        "Carte"
+      ],
+      "state": "CONDITIONAL_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "mantes-la-jolie/pontoise",
+      "source_url": "https://laportelatine.org/lieux/mantes-la-jolie/pontoise",
+      "title": "Chapelle Saint-Mathias",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "3, Boulevard des Cordeliers 95300 Pontoise",
+      "sunday_excerpt": [
+        " Les horaires des messes dominicales du 5 juillet au 30 août : Messe basse au prieuré à 8h30 (pas systématique) – Messe chantée à Jouy-Mauvoisin à 11h00 – Messe chantée à Conflans-Sainte-Honorine à 9h00 - pas de messe (rite romain) à Pontoise sauf le 30 août, messe basse à 8h00 - messe (rite chaldéen) à Pontoise 9h15."
+      ],
+      "weekday_excerpt": [
+        "Mercredi: 11h00 (se renseigner)",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "flavigny/pouilly-en-auxois",
+      "source_url": "https://laportelatine.org/lieux/flavigny/pouilly-en-auxois",
+      "title": "Cours Saint-Dominique",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "1, Rue de Velard 21320 Pouilly-en-Auxois",
+      "sunday_excerpt": [
+        "10h45"
+      ],
+      "weekday_excerpt": [
+        "Variable",
+        "vacances scolaire: se renseigner"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "valdevesle/ecole-prunay",
+      "source_url": "https://laportelatine.org/lieux/valdevesle/ecole-prunay",
+      "title": "École Saint-Rémi",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "3 rue Charles Barbelet 51360 Prunay",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "les-fournils/puybelliard",
+      "source_url": "https://laportelatine.org/lieux/les-fournils/puybelliard",
+      "title": "École de l'Épiphanie",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "15, rue des Dames 85110 Puybelliard",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "romagne",
+      "source_url": "https://laportelatine.org/lieux/romagne",
+      "title": "Cours Saint-Thomas-d'Aquin",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "1 Le Parc 86700 Romagne",
+      "sunday_excerpt": [
+        "10h00 messe chantée",
+        "Fêtes: se renseigner"
+      ],
+      "weekday_excerpt": [
+        "Période scolaire : lundi, 8h00 ; mardi, mercredi et jeudi, 07h15 ; vendredi, 11h15, samedi, 8h00",
+        "vacances scolaires: 8h00"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "rouen",
+      "source_url": "https://laportelatine.org/lieux/rouen",
+      "title": "Prieuré Sainte Thérèse – Église Saint-François-de-Sales",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "310-312, boulevard Jean Jaurès 76000 Rouen",
+      "sunday_excerpt": [
+        "08h30 messe basse",
+        "10h30 messe chantée"
+      ],
+      "weekday_excerpt": [
+        "lundi 11h00 (prédication) et 18h30",
+        "mardi 07h15 et 18h30"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "ruffec",
+      "source_url": "https://laportelatine.org/lieux/ruffec",
+      "title": "Noviciat Notre-Dame de Compassion",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "3, route de Belâbre 36300 Ruffec-Le-Château",
+      "sunday_excerpt": [
+        "9h30"
+      ],
+      "weekday_excerpt": [
+        "7h15",
+        "Abbé Emeric Baudot"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "bruges/ecole-verdelais",
+      "source_url": "https://laportelatine.org/lieux/bruges/ecole-verdelais",
+      "title": "École Notre-Dame de Verdelais",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "10 rue du Viaduc, 33490, Saint-Macaire",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "saint-paul-de-serre",
+      "source_url": "https://laportelatine.org/lieux/saint-paul-de-serre",
+      "title": "Frères de Notre-Dame du Rosaire",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "105 route du Rossignol, Le Bourg 24380 Saint Paul-de-Serre",
+      "sunday_excerpt": [
+        "10h00 (se renseigner)",
+        "Carte"
+      ],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "les-fournils",
+      "source_url": "https://laportelatine.org/lieux/les-fournils",
+      "title": "Prieuré Notre-Dame du Rosaire",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2 Les Fournils, 85110 Saint-Germain-de-Prinçay",
+      "sunday_excerpt": [
+        "8h30 : messe basse",
+        "10h30 : messe chantée"
+      ],
+      "weekday_excerpt": [
+        "Voir feuille d'annonces",
+        "Abbé Laurent Ramé"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "prieure-saint-martin/ecole-saint-jean-de-la-ruelle",
+      "source_url": "https://laportelatine.org/lieux/prieure-saint-martin/ecole-saint-jean-de-la-ruelle",
+      "title": "École des Saints-Anges-Gardiens",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "26 bis Rue Abbé de l'Épée, 45140 Saint-Jean-de-la-Ruelle",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Ordinairement : Lundi à 9hen période scolaire (9h30 les jours de rentrée de vacances) dans la chapelle de l'Immaculée.",
+        "ECOLE"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "prieure-saint-martin/saint-jean-de-la-ruelle",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "assais/lamaire",
+      "source_url": "https://laportelatine.org/lieux/assais/lamaire",
+      "title": "Maison Notre-Dame du bon conseil",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "23 rue St Léger, Lamairé 79600 Saint-Loup-Lamairé",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "08h00 se renseigner",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "saint-macaire",
+      "source_url": "https://laportelatine.org/lieux/saint-macaire",
+      "title": "Cours Notre-Dame-du-Rosaire",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "3 cours Gambetta, 33490 Saint-Macaire",
+      "sunday_excerpt": [
+        "8h00",
+        "10h00",
+        "Fêtes: se renseigner"
+      ],
+      "weekday_excerpt": [
+        "Lundi et samedi: 08h00",
+        "Autres jours: se renseigner"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "gavrus/saint-manvieu",
+      "source_url": "https://laportelatine.org/lieux/gavrus/saint-manvieu",
+      "title": "Cours Sainte-Catherine de Sienne",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "Manoir de la mare 14740 Saint-Manvieu-Norrey",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "abbaye-saint-michel",
+      "source_url": "https://laportelatine.org/lieux/abbaye-saint-michel",
+      "title": "Abbaye Saint-Michel",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "7 allée du Château, 36290 Saint-Michel-en-Brenne",
+      "sunday_excerpt": [
+        "10h30"
+      ],
+      "weekday_excerpt": [
+        "7h15 (en général)",
+        "grandes fêtes: se renseigner"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "saint-nolff",
+      "source_url": "https://laportelatine.org/lieux/saint-nolff",
+      "title": "Prieuré Saint Vincent Ferrier",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Kerglas 56250 Saint-Nolff",
+      "sunday_excerpt": [
+        "8h15 et 10h (chapelle Sainte Anne)",
+        "10h (chapelle Saint Yves)"
+      ],
+      "weekday_excerpt": [
+        "07h15 au prieuré (7h45 pendant les vacances)",
+        "18h à la chapelle Sainte Anne"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "ecole-sainte-marie",
+      "source_url": "https://laportelatine.org/lieux/ecole-sainte-marie",
+      "title": "École Sainte-Marie",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "Le Bois Martin 35430 Saint-Père",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "7h15",
+        "11h40"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "lyon/ecole-saint-symphorien-d-ozon",
+      "source_url": "https://laportelatine.org/lieux/lyon/ecole-saint-symphorien-d-ozon",
+      "title": "École Notre-Dame des Mariniers",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "La Vautière, 87 avenue Claude de la Colombière, 69360 Saint-Symphorien d'Ozon",
+      "sunday_excerpt": [
+        "ECOLE",
+        "Maternelle et primaire pour garçons et filles.",
+        "Abbé Pierre-Marie Berthe"
+      ],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "lyon",
+      "source_url": "https://laportelatine.org/lieux/lyon",
+      "title": "Prieuré Saint-Irénée",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "La Vautière, 87 avenue Claude de la Colombière, 69360 Saint-Symphorien d'Ozon",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Pierre-Marie Berthe"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "sorgues/saze",
+      "source_url": "https://laportelatine.org/lieux/sorgues/saze",
+      "title": "Cours Saint Pierre de Provence",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "6 route d'Aramon 30650 Saze",
+      "sunday_excerpt": [
+        "Pas de messe"
+      ],
+      "weekday_excerpt": [
+        "se renseigner",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "prieure-saint-pie-x-siege-du-district-dasie",
+      "source_url": "https://laportelatine.org/lieux/prieure-saint-pie-x-siege-du-district-dasie",
+      "title": "Prieuré Saint-Pie X",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "286 Upper Thomson Road",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "District listing may describe outside or friendly community; affiliation and Mass site unverified"
+    },
+    {
+      "slug": "sorgues",
+      "source_url": "https://laportelatine.org/lieux/sorgues",
+      "title": "Prieuré Saint Bénezet",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "484, allée de Brantes 84700 Sorgues",
+      "sunday_excerpt": [
+        "Pas de messe"
+      ],
+      "weekday_excerpt": [
+        "Samedi : 11hPremier vendredi du mois : 18h30",
+        "Abbé Jean Manuel Espi"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "suresnes",
+      "source_url": "https://laportelatine.org/lieux/suresnes",
+      "title": "Maison Saint-Pie X - Siège du District de France",
+      "source_review_state": "MASS_TEXT_NEEDS_MANUAL_REVIEW",
+      "address_text": "11, rue Cluseret 92280 Suresnes Cedex",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "se renseigner",
+        "Abbé Gonzague Peignot"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Text mentions Mass, but recurrence/time or location not sufficiently established"
+    },
+    {
+      "slug": "gastines/ecole-notre-dame-de-la-sagesse-terranjou",
+      "source_url": "https://laportelatine.org/lieux/gastines/ecole-notre-dame-de-la-sagesse-terranjou",
+      "title": "École Notre-Dame de la Sagesse",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "9 place de la Mairie Chavagnes-les-Eaux 49380 Terranjou",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "marseille/toulon",
+      "source_url": "https://laportelatine.org/lieux/marseille/toulon",
+      "title": "Maison Saint-Maximin",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "2221, avenue de la Résistance 83000 Toulon",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Messe uniquement le lundi à 6h45.",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "gragnague/ecole-toulouse",
+      "source_url": "https://laportelatine.org/lieux/gragnague/ecole-toulouse",
+      "title": "École Saint Jean-Bosco",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "14, rue des Artistes 31200 Toulouse",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "bergerac/tursac",
+      "source_url": "https://laportelatine.org/lieux/bergerac/tursac",
+      "title": "Sanctuaire Notre-Dame-de-Fontpeyrine",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "D706, 24620 Tursac",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PROVIDER_HOUSE_ONLY",
+      "reason": "No public Mass section; status provisional pending external official chapel bulletin"
+    },
+    {
+      "slug": "unieux",
+      "source_url": "https://laportelatine.org/lieux/unieux",
+      "title": "Prieuré Saint-François-Régis",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "31, rue Holtzer 42240 Unieux",
+      "sunday_excerpt": [
+        "10h30 messe chantée",
+        "18h30 messe basse (sauf 15 août)"
+      ],
+      "weekday_excerpt": [
+        "07h15 en période scolaire",
+        "07h45 durant les vacances"
+      ],
+      "state": "CURRENT_PUBLIC_MASS",
+      "reason": "Published second tranche with a named physical address, original district source and explicit Sunday/periodic schedule"
+    },
+    {
+      "slug": "unieux/ecole-unieux",
+      "source_url": "https://laportelatine.org/lieux/unieux/ecole-unieux",
+      "title": "École Sainte-Catherine-de-Sienne",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "31 rue Holtzer, 42240, Unieux",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "urmatt/le-mullerhof",
+      "source_url": "https://laportelatine.org/lieux/urmatt/le-mullerhof",
+      "title": "Cours Saint-Thomas-d'Aquin, Le Mullerhof",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "1C rue du Château Muhlbach-sur-Bruche 67280 Urmatt",
+      "sunday_excerpt": [
+        "8h30 / Lieu : se renseigner au prieuré d'Urmatt"
+      ],
+      "weekday_excerpt": [
+        "Voir feuille d'annonces",
+        "ECOLE"
+      ],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "urmatt",
+      "source_url": "https://laportelatine.org/lieux/urmatt",
+      "title": "Prieuré Saint-Florent",
+      "source_review_state": "NO_PUBLISHED_MASS_SECTION",
+      "address_text": "93, rue du Général de Gaulle, 67280 Urmatt",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "PROVIDER_HOUSE_ONLY",
+      "reason": "No public Mass section; status provisional pending external official chapel bulletin"
+    },
+    {
+      "slug": "valdevesle",
+      "source_url": "https://laportelatine.org/lieux/valdevesle",
+      "title": "Prieuré Notre-Dame-de-Fatima",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "1 rue de la victoire, 51360 Val-de-Vesle",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "Seulement une Messe le mercredi à 7h15",
+        "Abbé Jérôme Bakhmeteff"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Needs independent physical venue, service ownership, date/schedule verification or separation of multi-venue source note"
+    },
+    {
+      "slug": "saint-nolff/ecole-saint-nolff",
+      "source_url": "https://laportelatine.org/lieux/saint-nolff/ecole-saint-nolff",
+      "title": "École Sainte Philomène",
+      "source_review_state": "OFFICIAL_MASS_SCHEDULE_CANDIDATE",
+      "address_text": "20, rue Aristide Briand 56000 Vannes",
+      "sunday_excerpt": [
+        "8h15 et 10h (chapelle Sainte Anne)",
+        "10h (chapelle Saint Yves)"
+      ],
+      "weekday_excerpt": [
+        "07h15 au prieuré (7h45 pendant les vacances)",
+        "18h à la chapelle Sainte Anne"
+      ],
+      "state": "DUPLICATE_SOURCE_ROW",
+      "canonical_slug": "saint-nolff/vannes",
+      "reason": "Co-located institution/school duplicates an already catalogued physical Mass venue"
+    },
+    {
+      "slug": "villepreux/versailles",
+      "source_url": "https://laportelatine.org/lieux/villepreux/versailles",
+      "title": "Chapelle Notre-Dame de l'Espérance",
+      "source_review_state": "SEASONAL_OR_DATE_SPECIFIC_HOLD",
+      "address_text": "37, rue du Maréchal Joffre 78000 Versailles",
+      "sunday_excerpt": [
+        "8h, 9h, 10h15",
+        "12h (sauf Pentecôte)",
+        "18h30 (sauf Noël, Pâques, Pentecôte)"
+      ],
+      "weekday_excerpt": [
+        "7h25",
+        "19h"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Only seasonal or date-specific source evidence; no currently confirmed recurrence"
+    },
+    {
+      "slug": "villepreux",
+      "source_url": "https://laportelatine.org/lieux/villepreux",
+      "title": "Prieuré Saint Vincent de Paul",
+      "source_review_state": "SEASONAL_OR_DATE_SPECIFIC_HOLD",
+      "address_text": "La Croix Notre-Dame, 2 Chemin de Grand’Maisons, 78450 Villepreux",
+      "sunday_excerpt": [
+        "2 CHEMIN DE GRAND’MAISONS 78450 VILLEPREUX",
+        "8h30 et 12hMesse basse",
+        "10hMesse chantée"
+      ],
+      "weekday_excerpt": [
+        "7h15 (se renseigner)",
+        "11h25 le samedi"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Only seasonal or date-specific source evidence; no currently confirmed recurrence"
+    },
+    {
+      "slug": "morgon",
+      "source_url": "https://laportelatine.org/lieux/morgon",
+      "title": "Couvent Saint-François",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "78, passage de la Morcille, Morgon 69910 Villié-Morgon",
+      "sunday_excerpt": [
+        "8h00",
+        "10h00",
+        "18h00"
+      ],
+      "weekday_excerpt": [
+        "7h00",
+        "17h00"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "morgon/morgon-clarisses",
+      "source_url": "https://laportelatine.org/lieux/morgon/morgon-clarisses",
+      "title": "Monastère Sainte-Claire",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Monastère Sainte-Claire 852 Voie Romaine 69910 Villié-Morgon",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [
+        "07h15",
+        "Carte"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    },
+    {
+      "slug": "morgon/ecole-morgon",
+      "source_url": "https://laportelatine.org/lieux/morgon/ecole-morgon",
+      "title": "École de la Providence",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Ecole La Providence 69910 Villié-Morgon",
+      "sunday_excerpt": [],
+      "weekday_excerpt": [],
+      "state": "INSTITUTION_ONLY",
+      "reason": "Institutional place requires independent public-chapel evidence; do not infer accessibility from school Mass times"
+    },
+    {
+      "slug": "perdechat",
+      "source_url": "https://laportelatine.org/lieux/perdechat",
+      "title": "Monastère Notre-Dame de toute Confiance",
+      "source_review_state": "OTHER_COMMUNITY_OR_OUTSIDE_DISTRICT",
+      "address_text": "Perdechat 63330 Virlet",
+      "sunday_excerpt": [
+        "10h00 en hiver",
+        "11h00 en été"
+      ],
+      "weekday_excerpt": [
+        "10h00 en hiver",
+        "11h00 en été, sauf jeudi en principe: 6h30 en hiver"
+      ],
+      "state": "PENDING_CURRENT_EVIDENCE",
+      "reason": "Independent religious house: public Mass and ministering community must be adjudicated"
+    }
+  ]
+}

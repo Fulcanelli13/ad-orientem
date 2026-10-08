@@ -8,7 +8,7 @@ const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const LIVE=Object.freeze(["fssp","icksp","ibp"]);
 const RESEARCH=Object.freeze([
   "diocesan","aasjmv","fsvf","canons-st-john-cantius","cmri","rci",
-  "cspv","smmd","icksp-federated","sspx-district-seed",
+  "cspv","smmd","icksp-federated","sspx-district-seed","sspx-france-first-party","sspx-france-second-pass",
 ]);
 function file(relative){
   return JSON.parse(fs.readFileSync(path.join(ROOT,relative),"utf8"));
@@ -86,9 +86,14 @@ export function auditWorldwideDirectory(){
     },
     benchmark_context:{
       sspx_published_mass_locations_reference:798,
-      sspx_seed_mass_records:providers.find(x=>x.provider==="SSPX_DISTRICT_SEED")?.mass_evidenced_records??0,
+      sspx_seed_mass_records:
+        (providers.find(x=>x.provider==="SSPX_DISTRICT_SEED")?.mass_evidenced_records??0)+
+        (providers.find(x=>x.provider==="SSPX_FRANCE_FIRST_PARTY")?.mass_evidenced_records??0)+
+        (providers.find(x=>x.provider==="SSPX_FRANCE_SECOND_PASS")?.mass_evidenced_records??0),
       sspx_raw_count_shortfall_non_authoritative:798-
-        (providers.find(x=>x.provider==="SSPX_DISTRICT_SEED")?.mass_evidenced_records??0),
+        ((providers.find(x=>x.provider==="SSPX_DISTRICT_SEED")?.mass_evidenced_records??0)+
+         (providers.find(x=>x.provider==="SSPX_FRANCE_FIRST_PARTY")?.mass_evidenced_records??0)+
+        (providers.find(x=>x.provider==="SSPX_FRANCE_SECOND_PASS")?.mass_evidenced_records??0)),
       note:"Provider historical/public statistics are neither a unique physical count nor a date-matched missing-site inventory.",
     },
   };

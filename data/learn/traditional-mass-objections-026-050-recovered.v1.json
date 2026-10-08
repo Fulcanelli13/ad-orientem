@@ -1,7 +1,7 @@
 {
   "version": "TLM_OBJECTIONS_026_050_RECOVERED_V1",
   "created_at": "2026-10-08",
-  "status": "EXACT_ENGLISH_SOURCE_TEXT_RECOVERED_DRAFT_NOT_PUBLISHED",
+  "status": "BILINGUAL_COMPLETE_DRAFT_7_CORE_CORRECTIONS_30_INTERPRETATIONS_REVIEWED_NOT_PUBLISHED",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "publication_policy": "No mass-app or Formation runtime integration until original question provenance, source claim support and French translation are verified. Candidate links are not certified citations.",
   "original_source_issue": "74 prior chatgpt-content-reference indices were non-resolving placeholders; numerical provenance retained for editorial investigation. These are not links.",
@@ -22,7 +22,7 @@
     {
       "id": "SC63",
       "title": "Sacrosanctum Concilium (1963)",
-      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
       "type": "COUNCIL_PRIMARY"
     },
     {
@@ -45,8 +45,8 @@
     },
     {
       "id": "COR11",
-      "title": "1 Corinthians 11, head covering at worship",
-      "url": "https://bible.usccb.org/bible/1corinthians/11",
+      "title": "1 Corinthians 11, Vatican NAB chapter",
+      "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM",
       "type": "SCRIPTURE_PRIMARY"
     },
     {
@@ -105,15 +105,123 @@
     },
     {
       "id": "GS65",
-      "title": "Gaudium et spes §43 (1965)",
-      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
+      "title": "Gaudium et spes (1965)",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
       "type": "COUNCIL_PRIMARY"
     },
     {
       "id": "CIC83",
-      "title": "1983 Code of Canon Law, book III (canons 230 and others)",
+      "title": "1983 Code, Book II (including canon 230)",
       "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
       "type": "CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "CAN1917",
+      "title": "1917 Code, canon 1262 §2 (Latin/French)",
+      "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026",
+      "type": "CANON_LAW_ORIGINAL_REPRINT"
+    },
+    {
+      "id": "CIC6",
+      "title": "1983 Code, canon 6 abrogation",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html",
+      "type": "CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "LEC81",
+      "title": "General Introduction to Lectionary, §§65–66",
+      "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913",
+      "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "OFF1962",
+      "title": "1962 Missal Offertory, Latin text",
+      "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html",
+      "type": "LITURGICAL_PRIMARY_REPRINT"
+    },
+    {
+      "id": "RAT2000",
+      "title": "Joseph Ratzinger, Spirit of the Liturgy, Ch 3 excerpt",
+      "url": "https://www.ratzinger.us/The-Altar-and-the-Direction-of-Liturgical-Prayer/",
+      "type": "THEOLOGICAL_AUTHOR_PRIMARY_REPRINT"
+    },
+    {
+      "id": "VAT2010",
+      "title": "Vatican liturgical office, orientation and Ratzinger (2010)",
+      "url": "https://www.vatican.va/news_services/liturgy/2010/documents/ns_lit_doc_20100907_mistero-celebrato_en.html",
+      "type": "VATICAN_LITURGICAL_EXPLANATION"
+    },
+    {
+      "id": "CUCHET",
+      "title": "Guillaume Cuchet, Comment notre monde a cessé d’être chrétien (2018) abstract",
+      "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr",
+      "type": "HISTORICAL_BOOK_ABSTRACT"
+    },
+    {
+      "id": "PO1954",
+      "title": "CNRS history, worker-priest controversy (1947–1954)",
+      "url": "https://histoire-sociale.cnrs.fr/la-presse-et-la-question-des-pretres-ouvriers-de-1947-a-1954-le-traitement-de-laffaire-des-pretres-ouvriers-par-la-presse-nationale-francaise-au-lendemain-de-leur-naissance-jusqua/",
+      "type": "HISTORICAL_ACADEMIC"
+    },
+    {
+      "id": "JLG1966",
+      "title": "Joint Liturgical Group, eyewitness institutional history of Protestant observers",
+      "url": "https://jlg.org.uk/the-birth-of-jlg/",
+      "type": "PROTESTANT_PARTICIPANT_HISTORY"
+    },
+    {
+      "id": "SSPX_PROT",
+      "title": "SSPX Australia, claim concerning six Protestant advisers",
+      "url": "https://sspx.au/en/traditional-mass-vs-new-mass-33860",
+      "type": "NAMED_TRADITIONALIST_OBJECTION"
+    },
+    {
+      "id": "DAVIES",
+      "title": "Michael Davies observer-role claims in reported interview",
+      "url": "https://www.newliturgicalmovement.org/2017/09/a-discussion-on-liturgical-reform-in.html",
+      "type": "TRADITIONALIST_INTERVIEW_REPORT"
+    },
+    {
+      "id": "VATICAN76",
+      "title": "1976 Vatican denial quoted in historical discussion (2025)",
+      "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/",
+      "type": "SECONDARY_REPRINT_OF_VATICAN_STATEMENT"
+    },
+    {
+      "id": "LANG05",
+      "title": "Uwe Michael Lang, Turning Towards the Lord, Adoremus 2005 (liturgical orientation and historical rubrics)",
+      "url": "https://adoremus.org/2005/04/turning-towards-the-lord/",
+      "type": "SCHOLARLY_LITURGICAL_HISTORICAL"
+    },
+    {
+      "id": "BEN07FR",
+      "title": "Benoît XVI, lettre aux évêques, Summorum Pontificum (2007), texte français",
+      "url": "https://www.vatican.va/content/benedict-xvi/fr/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html",
+      "type": "PAPAL_PRIMARY_FR"
+    },
+    {
+      "id": "CCC1350",
+      "title": "Catechism of the Catholic Church §1350, preparation of the offerings",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_3/iv_the_liturgical_celebration_of_the_eucharist.html",
+      "type": "DOCTRINAL_PRIMARY"
+    },
+    {
+      "id": "MD47",
+      "title": "Pius XII, Mediator Dei §§46–49, liturgy and faith",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "type": "PAPAL_PRIMARY"
+    },
+    {
+      "id": "CAN212",
+      "title": "1983 Code of Canon Law §212, expression of concern and obedience",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
+      "type": "CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "CUCHET26",
+      "title": "Guillaume Cuchet, interview, Vatican News (September 2026)",
+      "url": "https://www.vaticannews.va/fr/eglise/news/2026-09/pape-mutations-catholicisme-francais-entretien-guillaume-cuchet.html",
+      "type": "HISTORIAN_DIRECT_INTERVIEW"
     }
   ],
   "records": [
@@ -132,14 +240,38 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 0
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 0,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: younger Catholics",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "Cette explication ne rend pas compte de l’attachement de catholiques qui n’ont jamais connu l’époque préconciliaire. Benoît XVI constatait expressément, en 2007, que des jeunes découvraient l’ancienne liturgie, s’y sentaient attirés et y trouvaient une rencontre particulièrement appropriée avec le mystère eucharistique ; François rappelait cette observation dans sa lettre de 2021 accompagnant *Traditionis custodes*."
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“Young people can still romanticize a past they never lived.”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
+          "role": "editorial_followup_question",
+          "text": "Can younger Catholics idealize a past they never experienced?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
+          "source_ids": [
+            "BEN07",
+            "FR21"
+          ],
+          "text_fr": "Les jeunes catholiques peuvent-ils idéaliser un passé qu’ils n’ont jamais connu ?",
+          "original_challenge_text": "“Young people can still romanticize a past they never lived.”",
+          "original_challenge_text_fr": "« Les jeunes peuvent pourtant idéaliser un passé qu’ils n’ont jamais vécu. »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
         },
         {
           "role": "substantive",
@@ -148,8 +280,30 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 1
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 1,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: exaggerated social attitudes",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Certainement. On peut être attiré par un passé imaginé ; Benoît XVI reconnaissait lui-même que certains comportements sociaux excessifs s’étaient parfois associés à l’attachement à l’ancienne tradition liturgique. Cette possibilité ne prouve cependant pas que toute préférence relève de la nostalgie : il faut examiner les raisons avancées par les fidèles au lieu de les réduire à un mécanisme psychologique."
         },
         {
           "role": "substantive",
@@ -158,10 +312,34 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 2
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 2,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: sacrality, two Missals",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Une défense sérieuse de la messe traditionnelle doit donc reposer sur ses caractéristiques liturgiques réelles — textes, structure rituelle, silence, latin, chant, orientation, calendrier et continuité — et non sur l’idée que ses fidèles auraient des intentions plus pures que les autres. Benoît XVI associait son estime de l’ancienne liturgie à une reconnaissance explicite de la légitimité et de la sainteté du missel réformé."
         }
-      ]
+      ],
+      "question_fr": "« La messe traditionnelle n’est qu’une nostalgie des années 1950. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM027",
@@ -178,14 +356,38 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 3
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 3,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: young persons",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "La nouveauté peut attirer vers presque n’importe quel mouvement religieux ; l’intérêt des jeunes ne démontre donc pas à lui seul la supériorité de la messe traditionnelle. Mais l’argument inverse ne vaut pas davantage : cette attirance ne peut être écartée comme une nostalgie héritée, puisque Benoît XVI relevait précisément que des personnes sans souvenir vécu de l’ancienne liturgie la découvraient par elles-mêmes."
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“So the fact that young people like it proves nothing.”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
+          "role": "editorial_followup_question",
+          "text": "Does young people's attraction to the traditional liturgy prove its superiority?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
+          "source_ids": [
+            "BEN07",
+            "FR21"
+          ],
+          "text_fr": "L’attrait de l’ancienne liturgie pour les jeunes suffit-il à démontrer sa supériorité ?",
+          "original_challenge_text": "“So the fact that young people like it proves nothing.”",
+          "original_challenge_text_fr": "« L’attrait de la messe traditionnelle pour les jeunes ne prouve donc rien. »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
         },
         {
           "role": "substantive",
@@ -194,10 +396,34 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 4
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 4,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 and Francis 2021: different concerns",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "En effet. La démographie ne tranche pas une question de théologie liturgique. Il faut rechercher *pourquoi* ces jeunes sont attirés et si ce qui les attire correspond à de véritables biens liturgiques catholiques. Benoît XVI associait l’ancienne forme au sens du sacré et à la rencontre eucharistique ; François estimait plus tard que, dans certains cas, cet attachement s’accompagnait d’un rejet du Concile et de divisions ecclésiales. Il faut distinguer ces phénomènes au lieu de les ramener à une seule explication."
         }
-      ]
+      ],
+      "question_fr": "« Si les jeunes aiment la messe traditionnelle, c’est seulement parce qu’elle est exotique et anticonformiste. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM028",
@@ -214,8 +440,24 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 5
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 5,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: Latin and formation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          },
+          "text_fr": "Benoît XVI reconnaissait ouvertement que l’usage de l’ancien missel suppose une certaine formation liturgique et une familiarité avec le latin, toutes deux peu répandues. L’objection relative à l’accessibilité n’est donc pas imaginaire."
         },
         {
           "role": "substantive",
@@ -224,14 +466,44 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 6
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 6,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: 1988 rightful aspirations",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Cette difficulté ne rend pas le rite intrinsèquement élitiste. Jean-Paul II parlait des « justes aspirations » des catholiques attachés aux formes liturgiques antérieures ; Benoît XVI distinguait cet attachement du rejet du pape ou de Vatican II. Catéchèse, traductions et fréquentation du rite peuvent lever les obstacles de formation sans conclure qu’une forme historiquement reçue du culte romain serait réservée à une élite sociale."
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“But a parish liturgy should be immediately accessible without special training.”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
+          "role": "editorial_followup_question",
+          "text": "Should parish worship be immediately intelligible without special preparation?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
+          "source_ids": [
+            "BEN07",
+            "SC63"
+          ],
+          "text_fr": "La liturgie paroissiale doit-elle être immédiatement compréhensible sans préparation particulière ?",
+          "original_challenge_text": "“But a parish liturgy should be immediately accessible without special training.”",
+          "original_challenge_text_fr": "« Mais la liturgie paroissiale devrait être immédiatement accessible sans formation particulière. »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
         },
         {
           "role": "substantive",
@@ -240,10 +512,34 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 7
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 7,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 14,19,35",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "L’intelligibilité immédiate des paroles constitue un véritable bien pastoral, mais la liturgie catholique exige une formation même lorsqu’elle est célébrée en langue vernaculaire. Vatican II a largement insisté sur l’instruction liturgique, car comprendre le sens théologique du culte eucharistique ne se réduit pas à comprendre le vocabulaire prononcé à haute voix."
         }
-      ]
+      ],
+      "question_fr": "« La messe traditionnelle est élitiste : il faut connaître le latin et avoir une formation liturgique pour la suivre. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM029",
@@ -261,32 +557,148 @@
             "CODE83",
             "VEIL"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 8
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 8,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1 Cor 11:3–16",
+            "hyperlinked_sources": [
+              {
+                "source_id": "COR11",
+                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
+              },
+              {
+                "source_id": "CODE83",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html"
+              },
+              {
+                "source_id": "VEIL",
+                "url": "https://uscatholic.org/articles/201606/hats-in-church-a-heady-issue/"
+              }
+            ]
+          },
+          "text_fr": "Le voilement de la tête des femmes dans le culte chrétien trouve un précédent explicite dans le Nouveau Testament, en 1 Corinthiens 11 ; on ne peut donc le présenter honnêtement comme une invention traditionaliste moderne. Saint Paul traite de cette pratique dans le contexte de la prière et de l’assemblée chrétiennes."
         },
         {
           "role": "substantive",
-          "text": "At the same time, wearing a chapel veil is **not a universal requirement of current Latin canon law**. The 1917 Code contained a head-covering norm, but that Code was superseded by the 1983 Code, which contains no equivalent obligation. Canonist Edward Peters explains the canonical history directly.",
+          "text": "At the same time, wearing a chapel veil is **not a universal requirement of current Latin canon law**. Canon 1262 §2 of the 1917 Code required women to cover their heads when attending sacred rites; that Code was abrogated by canon 6 §1(1) of the 1983 Code, which introduced no equivalent universal requirement.",
           "source_ids": [
-            "COR11",
-            "CODE83",
-            "VEIL"
+            "CAN1917",
+            "CIC6",
+            "COR11"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 9
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+          "legacy_placeholder_index": 9,
+          "citation_review": {
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1917 c.1262§2; 1983 c.6",
+            "hyperlinked_sources": [
+              {
+                "source_id": "CAN1917",
+                "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026"
+              },
+              {
+                "source_id": "CIC6",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html"
+              },
+              {
+                "source_id": "COR11",
+                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
+              }
+            ],
+            "editorial_issue": "False author attribution: Edward Peters is not author of the linked Brian Baker article; cite 1917 c.1262§2 and 1983 c.6 instead.",
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Replaced unsourced Edward Peters attribution and distinguished pre-1983 law from current law."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "At the same time, wearing a chapel veil is **not a universal requirement of current Latin canon law**. The 1917 Code contained a head-covering norm, but that Code was superseded by the 1983 Code, which contains no equivalent obligation. Canonist Edward Peters explains the canonical history directly.",
+              "original_source_ids": [
+                "COR11",
+                "CODE83",
+                "VEIL",
+                "CAN1917",
+                "CIC6"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Replaced unsourced Edward Peters attribution and distinguished pre-1983 law from current law."
+            }
+          ],
+          "text_fr": "En même temps, **le port d’un voile à l’église n’est pas une obligation universelle du droit canonique latin actuellement en vigueur**. Le canon 1262 §2 du Code de 1917 exigeait que les femmes se couvrent la tête pendant les rites sacrés ; ce Code a été abrogé par le canon 6 §1, 1°, du Code de 1983, qui n’a pas introduit d’obligation universelle équivalente."
         },
         {
           "role": "substantive",
-          "text": "A woman who voluntarily veils may therefore understand it as a devotional expression of reverence, modesty or continuity with older Catholic custom; another Catholic woman is not thereby violating current universal law by attending Mass unveiled. Treating either woman with contempt goes beyond what the Church currently legislates.",
+          "text": "A woman who voluntarily covers her head may see it as an expression of reverence, modesty or continuity with an older Catholic custom; a woman who does not cover her head is not thereby violating a universal rule of the current Latin Code. Neither choice justifies a rash judgment about another's faith or dignity.",
           "source_ids": [
             "COR11",
             "CODE83",
-            "VEIL"
+            "VEIL",
+            "CAN1917",
+            "CIC6",
+            "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 10
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 10,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1 Cor 11 and 1983 c.6",
+            "hyperlinked_sources": [
+              {
+                "source_id": "COR11",
+                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
+              },
+              {
+                "source_id": "CODE83",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html"
+              },
+              {
+                "source_id": "VEIL",
+                "url": "https://uscatholic.org/articles/201606/hats-in-church-a-heady-issue/"
+              },
+              {
+                "source_id": "CAN1917",
+                "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026"
+              },
+              {
+                "source_id": "CIC6",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "QUALIFIED_OR_NARROWED",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Une femme peut porter librement un voile comme expression de révérence, de modestie ou de continuité avec un ancien usage catholique ; celle qui ne se couvre pas la tête ne contrevient pas pour autant à une règle universelle du Code latin actuel. Aucun de ces choix ne justifie de jugement téméraire sur la foi ou la dignité d’autrui.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "A woman who voluntarily veils may therefore understand it as a devotional expression of reverence, modesty or continuity with older Catholic custom; another Catholic woman is not thereby violating current universal law by attending Mass unveiled. Treating either woman with contempt goes beyond what the Church currently legislates.",
+              "original_text_fr": "Une femme peut donc porter librement un voile comme expression de révérence, de modestie ou de continuité avec un ancien usage catholique ; une autre ne contrevient pas pour autant au droit universel actuel en assistant à la messe tête nue. Mépriser l’une ou l’autre dépasse ce que l’Église prescrit aujourd’hui.",
+              "original_source_ids": [
+                "COR11",
+                "CODE83",
+                "VEIL",
+                "CAN1917",
+                "CIC6"
+              ],
+              "reason": "Narrow or distinguish unverified empirical inference from source-supported doctrinal/history claim"
+            }
+          ]
         }
-      ]
+      ],
+      "question_fr": "« Le port du voile par les femmes à la messe traditionnelle est sexiste. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM030",
@@ -303,8 +715,24 @@
             "CCC_MOD",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 11
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 11,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2521–2524",
+            "hyperlinked_sources": [
+              {
+                "source_id": "CCC_MOD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_9/ii_the_battle_for_purity.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          },
+          "text_fr": "La doctrine catholique comprend réellement la modestie. Selon le Catéchisme, elle concerne la présentation du corps, les attitudes, les regards, les sentiments et le vêtement, en lien avec la dignité humaine et la chasteté. Il précise toutefois que ses formes concrètes varient selon les cultures."
         },
         {
           "role": "substantive",
@@ -313,8 +741,30 @@
             "CCC_MOD",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 12
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 12,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2524",
+            "hyperlinked_sources": [
+              {
+                "source_id": "CCC_MOD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_9/ii_the_battle_for_purity.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "On ne saurait donc réduire cette doctrine à une longueur universelle de jupe, à un vêtement obligatoire ou à un règlement établi sur Internet. La modestie n’incombe pas seulement aux femmes : cette vertu régit la manière dont chacun se présente et regarde autrui."
         },
         {
           "role": "substantive",
@@ -323,10 +773,28 @@
             "CCC_MOD",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 13
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 13,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2477–2478",
+            "hyperlinked_sources": [
+              {
+                "source_id": "CCC_MOD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_9/ii_the_battle_for_purity.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          },
+          "text_fr": "Les catholiques traditionalistes ne disposent pas non plus d’une permission morale de porter des jugements téméraires. Le Catéchisme condamne expressément le fait de supposer, sans fondement suffisant, une faute morale chez autrui et demande d’interpréter autant que possible ses actes avec charité."
         }
-      ]
+      ],
+      "question_fr": "« Les catholiques traditionalistes ne pensent qu’à surveiller la tenue des femmes. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM031",
@@ -344,8 +812,28 @@
             "CIC83",
             "ORD94"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 14
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 14,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1994 CDW communication nn.1,3–4; canon 230§2",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SERV94",
+                "url": "https://www.ewtn.com/catholicism/library/vatican-communication-on-female-altar-servers-29771"
+              },
+              {
+                "source_id": "CIC83",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "ORD94",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1994/documents/hf_jp-ii_apl_19940522_ordinatio-sacerdotalis.html"
+              }
+            ]
+          },
+          "text_fr": "La discipline latine actuelle permet aux évêques diocésains d’autoriser les femmes et les filles à servir à l’autel en vertu du canon 230 §2. L’interprétation authentique publiée par le Saint-Siège précise également qu’il ne s’agit pas d’un droit individuel et qu’aucun évêque n’est tenu d’introduire cette pratique."
         },
         {
           "role": "substantive",
@@ -355,27 +843,94 @@
             "CIC83",
             "ORD94"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 15
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 15,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1994 CDW n.2",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SERV94",
+                "url": "https://www.ewtn.com/catholicism/library/vatican-communication-on-female-altar-servers-29771"
+              },
+              {
+                "source_id": "CIC83",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "ORD94",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1994/documents/hf_jp-ii_apl_19940522_ordinatio-sacerdotalis.html"
+              }
+            ]
+          },
+          "text_fr": "La clarification de 1994 encourage expressément le maintien de la tradition des garçons servant à l’autel et souligne son lien historique avec les vocations sacerdotales. Une communauté traditionnelle qui conserve des servants masculins suit ainsi une discipline reconnue comme légitime par le Saint-Siège ; cela ne signifie pas qu’elle nie l’égale dignité baptismale des femmes."
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“But isn't exclusion from a liturgical role still discrimination?”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
-        },
-        {
-          "role": "substantive",
-          "text": "Catholic doctrine does not equate human equality with interchangeability of every ecclesial role. The CDF's teaching on the male priesthood expressly rejects the idea that baptism creates a personal entitlement to every public ministry in the Church.",
+          "role": "editorial_followup_question",
+          "text": "Does excluding girls from a liturgical role constitute discrimination?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
           "source_ids": [
             "SERV94",
             "CIC83",
             "ORD94"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 16
+          "text_fr": "Le fait de ne pas admettre de filles à une fonction liturgique constitue-t-il une discrimination ?",
+          "original_challenge_text": "“But isn't exclusion from a liturgical role still discrimination?”",
+          "original_challenge_text_fr": "« Mais exclure une personne d’une fonction liturgique n’est-il pas malgré tout discriminatoire ? »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
+        },
+        {
+          "role": "substantive",
+          "text": "Equal baptismal dignity does not imply an individual entitlement to every ecclesiastical ministry. The 1994 Congregation for Divine Worship communication explicitly says that temporary liturgical service is not a right belonging to any layperson, whether male or female. Pope John Paul II's *Ordinatio sacerdotalis* addresses the separate question of priestly ordination, not altar-serving rights.",
+          "source_ids": [
+            "SERV94",
+            "CIC83",
+            "ORD94"
+          ],
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+          "legacy_placeholder_index": 16,
+          "citation_review": {
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ordinatio sacerdotalis §4; 1994 CDW",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SERV94",
+                "url": "https://www.ewtn.com/catholicism/library/vatican-communication-on-female-altar-servers-29771"
+              },
+              {
+                "source_id": "CIC83",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              },
+              {
+                "source_id": "ORD94",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1994/documents/hf_jp-ii_apl_19940522_ordinatio-sacerdotalis.html"
+              }
+            ],
+            "editorial_issue": "Misattributed as CDF doctrine: Ordinatio sacerdotalis is by John Paul II. Change agency or obtain an actual CDF original.",
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Corrected attribution to John Paul II and distinguished priestly ordination from lay altar service."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Catholic doctrine does not equate human equality with interchangeability of every ecclesial role. The CDF's teaching on the male priesthood expressly rejects the idea that baptism creates a personal entitlement to every public ministry in the Church.",
+              "original_source_ids": [
+                "SERV94",
+                "CIC83",
+                "ORD94"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Corrected attribution to John Paul II and distinguished priestly ordination from lay altar service."
+            }
+          ],
+          "text_fr": "L’égale dignité baptismale ne confère pas à chacun un droit individuel d’exercer tous les ministères ecclésiastiques. La communication de 1994 de la Congrégation pour le culte divin précise expressément que le service liturgique temporaire ne constitue un droit pour aucun fidèle laïc, homme ou femme. L’*Ordinatio sacerdotalis* de Jean-Paul II traite de la question distincte de l’ordination sacerdotale, et non du droit de servir à l’autel."
         }
-      ]
+      ],
+      "question_fr": "« Refuser les filles comme servants d’autel prouve que les communautés traditionnelles jugent les femmes inférieures. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM032",
@@ -391,8 +946,20 @@
           "source_ids": [
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 17
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 17,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 295",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          },
+          "text_fr": "La liturgie catholique maintient elle-même une distinction entre le sanctuaire et la nef. La Présentation générale du Missel romain actuel précise que le sanctuaire est le lieu de l’autel et des ministères sacrés, qu’il doit être distingué du reste de l’église par une élévation, une structure ou une décoration, tout en manifestant l’unité de l’ensemble du peuple."
         },
         {
           "role": "substantive",
@@ -400,14 +967,39 @@
           "source_ids": [
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 18
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 18,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 295 applied to rail",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Le banc de communion constitue donc une manière architecturale d’exprimer une distinction que la liturgie réformée reconnaît encore : l’unité n’exige pas l’absence de toute différenciation spatiale. La question théologique est de savoir si cette séparation manifeste l’ordre sacré, la distinction des ministères et la révérence eucharistique, non si toute limite matérielle exprime une exclusion sociale."
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“But doesn't a rail imply the laity are second-class Catholics?”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
+          "role": "editorial_followup_question",
+          "text": "Does an altar rail imply that lay people are second-class Catholics?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
+          "source_ids": [
+            "GIRM"
+          ],
+          "text_fr": "Le banc de communion laisse-t-il entendre que les laïcs seraient des catholiques de seconde catégorie ?",
+          "original_challenge_text": "“But doesn't a rail imply the laity are second-class Catholics?”",
+          "original_challenge_text_fr": "« Mais le banc de communion ne suggère-t-il pas que les laïcs seraient des catholiques de seconde catégorie ? »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
         },
         {
           "role": "substantive",
@@ -415,10 +1007,30 @@
           "source_ids": [
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 19
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 19,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 294–295",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "La Présentation générale affirme simultanément une différenciation hiérarchique des ministères et l’unité du peuple de Dieu assemblé. L’ordre liturgique catholique considère donc la distinction des fonctions et l’égale dignité chrétienne comme compatibles."
         }
-      ]
+      ],
+      "question_fr": "« Les bancs de communion séparent le peuple de Dieu. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM033",
@@ -433,22 +1045,72 @@
           "text": "Vatican II deliberately required the biblical treasures to be opened more abundantly and called for a more representative portion of Scripture to be read over a multi-year cycle. The reformed lectionary genuinely implements that objective, and traditional apologetics should not deny it.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 20
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 20,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 51; Lectionary introduction 65–66",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ]
+          },
+          "text_fr": "Vatican II a expressément demandé que les trésors bibliques soient plus largement ouverts et qu’une part plus représentative de l’Écriture soit lue sur plusieurs années. Le lectionnaire réformé répond réellement à cet objectif ; l’apologétique traditionnelle ne devrait pas le nier."
         },
         {
           "role": "substantive",
           "text": "Quantity of passages read publicly, however, is not the only possible measure of liturgical quality. The comparison must also consider how readings are selected, repeated, connected to the sanctoral and temporal cycles, and integrated with Propers and other scriptural liturgical texts; the Council itself required reform in continuity with sound tradition rather than identifying “more readings” with the entire criterion of liturgical excellence.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 21
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 21,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 23,51; Lectionary introduction 65–66",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Le nombre de passages proclamés n’est toutefois pas le seul critère possible de qualité liturgique. Il faut également considérer le choix des lectures, leur répétition, leurs rapports avec le temporal et le sanctoral, ainsi que leur intégration aux propres de la messe et aux autres textes scripturaires du rite. Le Concile exigeait lui-même une réforme fidèle à la saine tradition, sans identifier la seule multiplication des lectures à l’ensemble de l’excellence liturgique."
         }
-      ]
+      ],
+      "question_fr": "« Le Novus Ordo contient beaucoup plus de lectures bibliques : il est donc manifestement supérieur. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM034",
@@ -463,32 +1125,109 @@
           "text": "The older system undeniably exposes the congregation to a narrower range of biblical pericopes at Mass than the postconciliar multi-year lectionary. Vatican II explicitly wanted a broader representative portion of Scripture read to the faithful, and the contemporary lectionary was built to fulfil that mandate.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 22
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 22,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Lectionary introduction 65–66; MR62",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ]
+          },
+          "text_fr": "Le système ancien fait indéniablement entendre à la messe un éventail de péricopes bibliques moins étendu que le lectionnaire pluriannuel postconciliaire. Vatican II souhaitait explicitement qu’une part représentative plus large de l’Écriture fût proclamée aux fidèles ; le lectionnaire actuel a été conçu pour répondre à ce mandat."
         },
         {
           "role": "substantive",
           "text": "That fact does not settle every comparative question. A one-year cycle can create strong annual repetition and stable association between particular Sundays, feasts and passages, whereas a multi-year cycle maximizes breadth. These are different liturgical goods, and deciding between them requires more than counting verses. *Sacrosanctum Concilium* itself combines expansion of Scripture with the principle that liturgical reform should preserve sound tradition and proceed organically.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 23
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 23,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Lectionary introduction 65–66",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Ce constat ne règle pas toutes les questions de comparaison. Un cycle annuel peut favoriser une forte répétition et une association stable entre dimanches, fêtes et passages bibliques ; un cycle pluriannuel élargit le choix des textes. Ce sont des biens liturgiques distincts, dont l’évaluation exige davantage qu’un simple décompte de versets. *Sacrosanctum Concilium* associe l’élargissement des lectures au principe d’une réforme qui conserve la saine tradition et procède organiquement."
         },
         {
           "role": "substantive",
           "text": "Claims that the reformed lectionary systematically suppresses difficult themes should not be made from anecdotes or raw word counts. They require an actual contextual comparison of omissions, truncations, optional passages and thematic redistribution across both lectionaries.",
           "source_ids": [
             "SC63",
-            "GIRM"
+            "GIRM",
+            "LEC81"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 24
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 24,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Compare actual reading schedules; methodological statement",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "LEC81",
+                "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "On ne devrait pas affirmer, sur la base d’anecdotes ou de simples comptages de mots, que le lectionnaire réformé élimine systématiquement les thèmes difficiles. Cette thèse exige une comparaison contextualisée des omissions, coupures, passages facultatifs et redistributions thématiques dans les deux lectionnaires."
         }
-      ]
+      ],
+      "question_fr": "« Le lectionnaire annuel traditionnel est pauvre à côté du cycle moderne de trois ans. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM035",
@@ -505,8 +1244,24 @@
             "SC63",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 25
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 25,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 52; GIRM 65",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          },
+          "text_fr": "Vatican II a renforcé le statut liturgique de l’homélie et demandé qu’elle ne soit normalement pas omise les dimanches et jours de fête. La Présentation générale actuelle en fait également une partie de la liturgie, ordinairement consacrée à expliquer les lectures ou un autre texte liturgique en rapport avec le mystère célébré et les besoins des fidèles."
         },
         {
           "role": "substantive",
@@ -515,26 +1270,89 @@
             "SC63",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 26
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 26,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 52; GIRM 65",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Un catholique attaché à la tradition n’a donc aucune raison de défendre une prédication mauvaise, expéditive ou pauvre doctrinalement. Le fait que les rubriques de 1962 situent le sermon différemment de la liturgie actuelle ne rend pas la prédication sans importance pour la formation catholique. L’insistance du Concile répondait à un véritable besoin pastoral."
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“Then isn't the modern arrangement simply better?”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
-        },
-        {
-          "role": "substantive",
-          "text": "It may be pastorally advantageous in this respect, but the quality of preaching depends primarily upon the doctrine, preparation and ability of the preacher rather than the rubric locating the sermon. Modern law itself contains extensive norms because liturgical placement alone does not guarantee good preaching.",
+          "role": "editorial_followup_question",
+          "text": "Is the reformed liturgy's arrangement of the homily necessarily superior?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
           "source_ids": [
             "SC63",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 27
+          "text_fr": "L’organisation de l’homélie dans la liturgie réformée est-elle nécessairement supérieure ?",
+          "original_challenge_text": "“Then isn't the modern arrangement simply better?”",
+          "original_challenge_text_fr": "« L’organisation moderne n’est-elle donc pas tout simplement meilleure ? »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
+        },
+        {
+          "role": "substantive",
+          "text": "The reformed rite explicitly treats the homily as part of the liturgy, a genuine difference in its arrangement. The Council's requirement of serious preaching does not establish that every homily is well prepared or doctrinally sound; the quality of a particular sermon must be judged from what is actually preached.",
+          "source_ids": [
+            "SC63",
+            "GIRM"
+          ],
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+          "legacy_placeholder_index": 27,
+          "citation_review": {
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 52; GIRM 65 (not comparative quality study)",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ],
+            "editorial_issue": "A claim that preaching quality is primarily determined by the preacher rather than rubrics is not demonstrated by SC and GIRM.",
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Removed unsupported comparative claim that preacher characteristics rather than rubric primarily determine quality."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "It may be pastorally advantageous in this respect, but the quality of preaching depends primarily upon the doctrine, preparation and ability of the preacher rather than the rubric locating the sermon. Modern law itself contains extensive norms because liturgical placement alone does not guarantee good preaching.",
+              "original_source_ids": [
+                "SC63",
+                "GIRM"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Removed unsupported comparative claim that preacher characteristics rather than rubric primarily determine quality."
+            }
+          ],
+          "text_fr": "Le rite réformé intègre expressément l’homélie à la liturgie : c’est une différence réelle. L’exigence conciliaire d’une prédication sérieuse ne prouve toutefois pas que chaque homélie soit bien préparée ou doctrinalement solide ; la qualité d’un sermon particulier doit être jugée d’après son contenu effectif."
         }
-      ]
+      ],
+      "question_fr": "« La messe traditionnelle accorde trop peu d’importance à la prédication. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM036",
@@ -550,40 +1368,164 @@
           "source_ids": [
             "MR62",
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "OFF1962"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 28
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 28,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 Offertory: Suscipe sancte Pater/Offerimus/Veni sanctificator",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              }
+            ]
+          },
+          "text_fr": "L’offertoire de 1962 comporte des prières comme *Suscipe, sancte Pater* et *Offerimus tibi, Domine*, qui évoquent l’offrande d’une hostie sans tache, les péchés, le salut et le sacrifice avant la consécration. Le missel ultérieur emploie pour le pain et le vin les formules *Benedictus es, Domine Deus universi* et conserve un langage expressément sacrificiel ailleurs, notamment dans l’*Orate, fratres* et la prière eucharistique. La différence textuelle est réelle."
         },
         {
           "role": "substantive",
-          "text": "The traditional theological answer is not that unconsecrated bread is already the Body of Christ. Liturgical language can anticipate the sacrificial reality toward which the gifts are ordered, just as the rite can call the bread an offering before the consecration without confusing natural substance with the consecrated victim. The same 1962 Offertory explicitly asks God to sanctify the sacrifice being prepared.",
+          "text": "The traditional theological explanation need not treat unconsecrated bread as already the Body of Christ. The 1962 Offertory speaks in anticipation of the sacrificial offering being prepared; the Catechism likewise distinguishes the presentation of bread and wine from the Eucharistic sacrifice in which they will become Christ's Body and Blood. The rite's sacrificial language should be interpreted without confusing these stages.",
           "source_ids": [
             "MR62",
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "OFF1962",
+            "CCC1350"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 29
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 29,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 Offertory: Veni sanctificator (anticipatory reading)",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              },
+              {
+                "source_id": "CCC1350",
+                "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_3/iv_the_liturgical_celebration_of_the_eucharist.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "QUALIFIED_OR_NARROWED",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "L’explication théologique traditionnelle n’a pas à considérer que le pain non consacré serait déjà le Corps du Christ. L’offertoire de 1962 anticipe dans son langage l’offrande sacrificielle en préparation ; le Catéchisme distingue lui aussi la présentation du pain et du vin du sacrifice eucharistique dans lequel ils deviendront le Corps et le Sang du Christ. Ce langage sacrificiel doit être interprété sans confondre ces étapes.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "The traditional theological answer is not that unconsecrated bread is already the Body of Christ. Liturgical language can anticipate the sacrificial reality toward which the gifts are ordered, just as the rite can call the bread an offering before the consecration without confusing natural substance with the consecrated victim. The same 1962 Offertory explicitly asks God to sanctify the sacrifice being prepared.",
+              "original_text_fr": "La réponse théologique traditionnelle n’affirme pas que le pain non consacré soit déjà le Corps du Christ. Le langage liturgique peut anticiper la réalité sacrificielle vers laquelle les dons sont ordonnés, tout comme il peut appeler le pain « offrande » avant la consécration sans confondre sa substance naturelle et la victime consacrée. Le même offertoire de 1962 demande explicitement à Dieu de sanctifier le sacrifice en préparation.",
+              "original_source_ids": [
+                "MR62",
+                "MR69",
+                "CHIRON",
+                "OFF1962"
+              ],
+              "reason": "Narrow or distinguish unverified empirical inference from source-supported doctrinal/history claim"
+            }
+          ]
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“Then why did the reform change it?”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
+          "role": "editorial_followup_question",
+          "text": "What reasons were given for changing the traditional Offertory?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
+          "source_ids": [
+            "MR62",
+            "MR69",
+            "CHIRON",
+            "OFF1962",
+            "CCC1350"
+          ],
+          "text_fr": "Quels motifs furent avancés pour modifier l’offertoire traditionnel ?",
+          "original_challenge_text": "“Then why did the reform change it?”",
+          "original_challenge_text_fr": "« Pourquoi la réforme l’a-t-elle donc modifié ? »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
         },
         {
           "role": "substantive",
-          "text": "Paul VI described the revised Missal as part of a broader reorganization intended to clarify the parts of the Mass and renew the rite according to conciliar principles. Whether the older Offertory's anticipatory sacrificial language was pastorally obscure or instead theologically valuable remains a legitimate comparative question; its removal cannot simply be explained by claiming it taught literal pre-consecration transubstantiation.",
+          "text": "Paul VI's *Missale Romanum* gives broad reasons for revising the Roman Missal, including the clearer presentation of its parts. Those general reasons do not establish why each specific Offertory prayer was replaced. The traditional prayers' anticipatory sacrificial language remains an intelligible theological feature, but any account of the drafting committee's detailed intentions requires its records or direct testimony.",
           "source_ids": [
-            "MR62",
             "MR69",
+            "OFF1962",
             "CHIRON"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 30
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+          "legacy_placeholder_index": 30,
+          "citation_review": {
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "MR69 general preface, not committee's specific rationale",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "editorial_issue": "General aims of Paul VI do not directly document the particular motives for removing each Offertory formula.",
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Separated documented general reform rationale from still-unverified reasons for individual Offertory removals."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Paul VI described the revised Missal as part of a broader reorganization intended to clarify the parts of the Mass and renew the rite according to conciliar principles. Whether the older Offertory's anticipatory sacrificial language was pastorally obscure or instead theologically valuable remains a legitimate comparative question; its removal cannot simply be explained by claiming it taught literal pre-consecration transubstantiation.",
+              "original_source_ids": [
+                "MR62",
+                "MR69",
+                "CHIRON"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Separated documented general reform rationale from still-unverified reasons for individual Offertory removals."
+            }
+          ],
+          "text_fr": "Dans *Missale Romanum*, Paul VI expose les motifs généraux de la révision du missel romain, notamment le souci de rendre plus claire l’articulation de ses parties. Ces motifs généraux n’établissent pas pourquoi chacune des prières particulières de l’offertoire a été remplacée. Leur langage sacrificiel anticipateur demeure théologiquement intelligible, mais toute affirmation sur les intentions précises de la commission de rédaction demande des archives ou des témoignages directs."
         }
-      ]
+      ],
+      "question_fr": "« Les prières de l’offertoire ancien sont compliquées et semblent présenter le pain et le vin comme le sacrifice du Christ avant même la consécration. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM037",
@@ -600,18 +1542,73 @@
             "MR69",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 31
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 31,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "MR69: three new Eucharistic Prayers",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          },
+          "text_fr": "Paul VI qualifia lui-même l’introduction de prières eucharistiques supplémentaires d’innovation majeure. Il rappelait la remarquable stabilité du Canon romain pendant de nombreux siècles et l’ajout de trois nouvelles prières eucharistiques offrant d’autres accents théologiques et des thèmes plus variés d’action de grâces."
         },
         {
           "role": "substantive",
-          "text": "A traditional Catholic can therefore acknowledge a real advantage in legitimate textual variety without pretending the Roman tradition suffered from having one stable Canon. Stability itself can be a liturgical good because repeated prayer forms shape memory, theological instinct and continuity across generations. Paul VI's own explanation confirms that the addition of several Canons represented a significant change to long-standing Roman usage.",
+          "text": "A traditional Catholic may regard the stable use of the Roman Canon as a liturgical good, since recurrent common prayer can reinforce shared memory and continuity. That is a theological and pastoral assessment, not a demonstrated claim that textual variety causes diminished belief. Paul VI's constitution establishes the historical introduction of additional Eucharistic Prayers, not its long-term pastoral effects.",
           "source_ids": [
             "MR69",
-            "GIRM"
+            "GIRM",
+            "MD47"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 32
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 32,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "MR69: stable Roman Canon and innovation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "MD47",
+                "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "QUALIFIED_OR_NARROWED",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Un catholique attaché à la tradition peut considérer la stabilité du Canon romain comme un bien liturgique, puisque la répétition d’une prière commune peut renforcer la mémoire partagée et la continuité. C’est une appréciation théologique et pastorale, non la démonstration que la diversité des textes affaiblit la foi. La constitution de Paul VI atteste l’introduction historique de nouvelles prières eucharistiques, non ses effets pastoraux à long terme.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "A traditional Catholic can therefore acknowledge a real advantage in legitimate textual variety without pretending the Roman tradition suffered from having one stable Canon. Stability itself can be a liturgical good because repeated prayer forms shape memory, theological instinct and continuity across generations. Paul VI's own explanation confirms that the addition of several Canons represented a significant change to long-standing Roman usage.",
+              "original_text_fr": "Un catholique traditionaliste peut donc reconnaître un avantage réel à la diversité légitime des textes sans prétendre que la tradition romaine souffrait de posséder un Canon stable. Cette stabilité peut être un bien liturgique : la répétition des mêmes prières façonne la mémoire, le sens théologique et la continuité entre les générations. L’explication donnée par Paul VI confirme que l’ajout de plusieurs anaphores représentait une modification importante de l’usage romain ancien.",
+              "original_source_ids": [
+                "MR69",
+                "GIRM"
+              ],
+              "reason": "Narrow or distinguish unverified empirical inference from source-supported doctrinal/history claim"
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -620,10 +1617,28 @@
             "MR69",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 33
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 33,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 365",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          },
+          "text_fr": "Le missel actuel conserve le Canon romain comme première prière eucharistique, utilisable en de nombreuses circonstances, et propose aussi d’autres prières. Le débat ne se réduit donc pas à « Canon catholique contre nouvelles prières invalides » : il porte sur la question de savoir si cet élargissement a renforcé ou affaibli l’identité liturgique romaine héritée."
         }
-      ]
+      ],
+      "question_fr": "« Pourquoi s’attacher à l’unique Canon romain alors que les nouvelles prières eucharistiques offrent davantage de variété ? »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM038",
@@ -640,18 +1655,55 @@
             "MR62",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 34
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 34,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 2; SC 47",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ]
+          },
+          "text_fr": "La doctrine eucharistique catholique comprend le sacrifice aussi bien que l’action de grâces, la communion et la Résurrection. La Présentation générale actuelle désigne elle-même l’autel comme le lieu où le sacrifice de la Croix est rendu sacramentellement présent, et Paul VI présente constamment l’Eucharistie comme sacrifice. Le langage sacrificiel n’est donc pas un défaut théologique préconciliaire."
         },
         {
           "role": "substantive",
           "text": "The traditional Missal does use abundant penitential, sacrificial and propitiatory vocabulary, especially in the Offertory and Canon. Its prayers explicitly refer to sins, salvation, sacrifice, the living and dead and the acceptability of the offering before God.",
           "source_ids": [
             "MR62",
-            "GIRM"
+            "GIRM",
+            "OFF1962"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 35
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 35,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 Offertory and Canon",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              }
+            ]
+          },
+          "text_fr": "Le missel traditionnel emploie effectivement un vocabulaire pénitentiel, sacrificiel et propitiatoire abondant, notamment dans l’offertoire et le Canon. Ses prières évoquent expressément les péchés, le salut, le sacrifice, les vivants et les défunts, ainsi que l’acceptation de l’offrande par Dieu."
         },
         {
           "role": "substantive",
@@ -660,10 +1712,34 @@
             "MR62",
             "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 36
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 36,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 2 on propitiation and thanksgiving",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR62",
+                "url": "https://archive.org/details/sp07mr62-editio-typica"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Une théologie catholique équilibrée ne doit pas transformer cette richesse en opposition factice. L’Eucharistie est aussi action de grâces, louange, communion et proclamation de la Résurrection du Christ ; le missel moderne entend manifester ces multiples dimensions. La comparaison porte réellement sur la place et la visibilité des thèmes sacrificiels et propitiatoires dans les textes réformés, non sur leur appartenance à la doctrine catholique."
         }
-      ]
+      ],
+      "question_fr": "« L’ancienne messe est obsédée par le péché, le sacrifice et la propitiation au lieu de célébrer la Résurrection. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM039",
@@ -678,32 +1754,143 @@
           "text": "That formulation is too crude to be used as a serious historical argument. Protestant observers were present around the postconciliar liturgical reform process, but presence as observers or consultants is not the same thing as possessing juridical authorship of the Roman Missal, which was promulgated by Pope Paul VI under Catholic ecclesiastical authority. Paul VI's apostolic constitution is the juridical act establishing the revised Missal.",
           "source_ids": [
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "JLG1966",
+            "SSPX_PROT"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 37
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 37,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "JLG institutional history; MR69 promulgation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "JLG1966",
+                "url": "https://jlg.org.uk/the-birth-of-jlg/"
+              },
+              {
+                "source_id": "SSPX_PROT",
+                "url": "https://sspx.au/en/traditional-mass-vs-new-mass-33860"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Cette formulation est trop sommaire pour constituer un argument historique sérieux. Des observateurs protestants ont assisté à certains travaux de la réforme liturgique postconciliaire ; mais être observateur ou conseiller n’équivaut pas à être l’auteur juridique du missel romain, promulgué sous l’autorité ecclésiastique catholique par Paul VI. Sa constitution apostolique constitue l’acte juridique établissant le missel révisé."
         },
         {
           "role": "substantive",
-          "text": "Traditionalist historians are nevertheless entitled to investigate ecumenical influence on the reform. Even traditionalist-friendly accounts that emphasize Protestantizing tendencies acknowledge that the observers' actual role has to be distinguished from slogans about them “writing the Mass”; one such review notes scholarship judging their direct role comparatively limited while still treating their presence and the reformers' ecumenical aims as historically relevant.",
+          "text": "The role of Protestant observers is documented but disputed in its precise extent. The Joint Liturgical Group describes attendance and dialogue at Consilium meetings; a 1976 Vatican statement denied that the observers composed the new Missal, while Michael Davies reported a participant describing active discussions. Those are different kinds of testimony. Mere presence does not establish authorship, but categorical claims that observers had no opportunity to offer views also require evidence.",
           "source_ids": [
-            "MR69",
-            "CHIRON"
+            "JLG1966",
+            "VATICAN76",
+            "DAVIES",
+            "MR69"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 38
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+          "legacy_placeholder_index": 38,
+          "citation_review": {
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "JLG eyewitness vs Vatican 1976 disclaimer vs Davies account",
+            "hyperlinked_sources": [
+              {
+                "source_id": "JLG1966",
+                "url": "https://jlg.org.uk/the-birth-of-jlg/"
+              },
+              {
+                "source_id": "VATICAN76",
+                "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/"
+              },
+              {
+                "source_id": "DAVIES",
+                "url": "https://www.newliturgicalmovement.org/2017/09/a-discussion-on-liturgical-reform-in.html"
+              },
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "editorial_issue": "Protestant observer influence is materially contested (1976 Vatican denial versus participant accounts and Davies); present the differences explicitly.",
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Distinguished first-party Protestant attendance history, Vatican denial of authorship and reported testimony about discussion, without inventing a consensus."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Traditionalist historians are nevertheless entitled to investigate ecumenical influence on the reform. Even traditionalist-friendly accounts that emphasize Protestantizing tendencies acknowledge that the observers' actual role has to be distinguished from slogans about them “writing the Mass”; one such review notes scholarship judging their direct role comparatively limited while still treating their presence and the reformers' ecumenical aims as historically relevant.",
+              "original_source_ids": [
+                "MR69",
+                "CHIRON",
+                "JLG1966",
+                "DAVIES",
+                "VATICAN76",
+                "SSPX_PROT"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Distinguished first-party Protestant attendance history, Vatican denial of authorship and reported testimony about discussion, without inventing a consensus."
+            }
+          ],
+          "text_fr": "La présence d’observateurs protestants est documentée, mais l’étendue exacte de leur influence reste discutée. Le Joint Liturgical Group évoque leur présence et le dialogue aux réunions du Consilium ; une déclaration vaticane de 1976 niait qu’ils aient composé le nouveau missel, tandis que Michael Davies rapportait le témoignage d’un participant au sujet de discussions actives. Ces témoignages ne sont pas de même nature. La présence n’établit pas la qualité d’auteur, mais affirmer catégoriquement qu’aucun avis n’a pu être donné requiert également des preuves."
         },
         {
           "role": "substantive",
           "text": "The stronger argument therefore examines particular textual changes and documented reform principles. If an Offertory prayer disappeared, a rubric changed or a theological emphasis became less explicit, that can be demonstrated directly from the liturgical books; invoking “six Protestants” does not itself establish that the resulting text is Protestant.",
           "source_ids": [
             "MR69",
-            "CHIRON"
+            "CHIRON",
+            "OFF1962",
+            "JLG1966"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 39
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 39,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "1962 vs 1969 primary texts",
+            "hyperlinked_sources": [
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
+              },
+              {
+                "source_id": "JLG1966",
+                "url": "https://jlg.org.uk/the-birth-of-jlg/"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "L’argument le plus solide examine donc les modifications précises des textes et les principes documentés de la réforme. La disparition d’une prière d’offertoire, le changement d’une rubrique ou la moindre explicitation d’un thème théologique peuvent être constatés dans les livres liturgiques eux-mêmes ; invoquer « six protestants » ne démontre pas que le texte issu de la réforme soit protestant."
         }
-      ]
+      ],
+      "question_fr": "« Six protestants ont rédigé le Novus Ordo. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM040",
@@ -720,30 +1907,118 @@
             "GIRM",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 40
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 40,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GIRM 299",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          },
+          "text_fr": "Le missel romain actuel permet et facilite souvent la célébration face au peuple : la Présentation générale, au n° 299, souhaite que l’autel soit construit séparé du mur pour permettre de célébrer *versus populum*, ce qui est présenté comme souhaitable là où cela est possible. On ne peut nier que la législation actuelle favorise cette possibilité architecturale."
         },
         {
           "role": "substantive",
-          "text": "That does not prove a simple historical narrative in which the primitive Church universally celebrated across a table facing the congregation until medieval clericalism reversed the priest. Liturgical orientation developed in relation to church architecture, eastward prayer, apsidal design and local practice; current legislation itself does not claim that versus populum was the universal apostolic norm.",
+          "text": "The early history of liturgical orientation is more complex than a single universal arrangement. Cardinal Ratzinger and Uwe Michael Lang document the antiquity of common prayer toward the East and discuss early basilicas whose architecture permitted the celebrant to face the congregation physically while praying eastward. Neither that diversity nor later *versus populum* arrangements proves that priests universally faced congregants across an altar in apostolic times.",
           "source_ids": [
-            "GIRM",
-            "SC63"
+            "RAT2000",
+            "LANG05",
+            "GIRM"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 41
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+          "legacy_placeholder_index": 41,
+          "citation_review": {
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ratzinger ch.3; architectural variance needs independent corroboration",
+            "hyperlinked_sources": [
+              {
+                "source_id": "RAT2000",
+                "url": "https://www.ratzinger.us/The-Altar-and-the-Direction-of-Liturgical-Prayer/"
+              },
+              {
+                "source_id": "LANG05",
+                "url": "https://adoremus.org/2005/04/turning-towards-the-lord/"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              }
+            ],
+            "editorial_issue": "Ancient orientation has complex disputed history; Ratzinger is a substantial argument, not independent confirmation of every basilica arrangement.",
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Substituted historical liturgical scholarship for an inference from modern legislation."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "That does not prove a simple historical narrative in which the primitive Church universally celebrated across a table facing the congregation until medieval clericalism reversed the priest. Liturgical orientation developed in relation to church architecture, eastward prayer, apsidal design and local practice; current legislation itself does not claim that versus populum was the universal apostolic norm.",
+              "original_source_ids": [
+                "GIRM",
+                "SC63",
+                "RAT2000",
+                "VAT2010"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Substituted historical liturgical scholarship for an inference from modern legislation."
+            }
+          ],
+          "text_fr": "L’histoire ancienne de l’orientation liturgique est plus complexe qu’un arrangement universel unique. Le cardinal Ratzinger et Uwe Michael Lang documentent l’ancienneté de la prière commune vers l’Orient et examinent des basiliques anciennes dans lesquelles le célébrant pouvait physiquement faire face à l’assemblée tout en priant vers l’est. Ni cette diversité ni les usages ultérieurs *versus populum* ne prouvent que les prêtres faisaient universellement face aux fidèles par-dessus l’autel à l’époque apostolique."
         },
         {
           "role": "substantive",
           "text": "The strongest traditional defence of *ad orientem* is consequently theological rather than mythological: priest and people share a common liturgical orientation toward God. The current General Instruction itself retains the concepts of sanctuary, hierarchical ordering and the altar as the center toward which the whole assembly is directed, so Catholic worship is not reducible to priest and people visually facing one another.",
           "source_ids": [
             "GIRM",
-            "SC63"
+            "SC63",
+            "RAT2000",
+            "VAT2010"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 42
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 42,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ratzinger ch.3; GIRM 295",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "RAT2000",
+                "url": "https://www.ratzinger.us/The-Altar-and-the-Direction-of-Liturgical-Prayer/"
+              },
+              {
+                "source_id": "VAT2010",
+                "url": "https://www.vatican.va/news_services/liturgy/2010/documents/ns_lit_doc_20100907_mistero-celebrato_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "La meilleure défense traditionnelle d’*ad orientem* est donc théologique plutôt que mythologique : prêtre et fidèles adoptent ensemble une orientation de la prière vers Dieu. La Présentation générale actuelle conserve elle-même les notions de sanctuaire, d’ordre hiérarchique et d’autel comme centre vers lequel l’assemblée converge ; le culte catholique ne se réduit donc pas au face-à-face visuel du prêtre et du peuple."
         }
-      ]
+      ],
+      "question_fr": "« La célébration face au peuple était la norme des premiers chrétiens ; l’orientation ad orientem est une invention médiévale. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM041",
@@ -761,8 +2036,28 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 43
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 43,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 22(3)",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "Exact. Un abus constitue, par définition, un écart par rapport à ce que l’Église autorise. On ne peut donc imputer directement au texte du missel les célébrations fantaisistes, improvisées ou non autorisées. Vatican II interdit explicitement aux prêtres d’ajouter, de supprimer ou de modifier la liturgie de leur propre autorité."
         },
         {
           "role": "substantive",
@@ -772,8 +2067,28 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 44
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 44,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 on abuses; Francis 2021 abuses on all sides",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "Benoît XVI témoignait toutefois que, dans de nombreux lieux, le nouveau missel avait été interprété comme autorisant, voire imposant, une créativité qui avait produit des déformations profondément douloureuses. François reconnaissait ensuite des abus « des deux côtés » et exigeait la fidélité aux livres réformés. Les deux papes reconnaissent donc la réalité historique des abus, même si ceux-ci ne doivent pas être confondus avec le missel lui-même."
         },
         {
           "role": "substantive",
@@ -783,10 +2098,38 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 45
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 45,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 22 and GIRM 24",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Une critique sérieuse distingue au moins trois questions : ce que prescrivent effectivement les livres réformés, les options licites qu’ils permettent et les innovations introduites sans autorisation par le clergé. Confondre ces catégories affaiblit, plutôt qu’il ne renforce, l’argument traditionaliste."
         }
-      ]
+      ],
+      "question_fr": "« Les abus liturgiques ne sont pas la faute du nouveau missel. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM042",
@@ -798,14 +2141,64 @@
       "paragraphs": [
         {
           "role": "substantive",
-          "text": "That is historically unsustainable. Secularization, demographic change, theological dissent, cultural revolution, sexual revolution, institutional weakness and pre-existing pastoral problems cannot all be reduced to a single liturgical reform. Serious historical work on the post-1960 Catholic crisis treats it as a complex interaction of ecclesial and societal causes.",
+          "text": "The history of Catholic practice in France cannot be explained by a single reform. Studies of the mid-twentieth-century decline consider religious practice alongside wider social changes and inherited pastoral difficulties. Evidence about France supports a complex French case, not an automatic explanation for every country or community.",
           "source_ids": [
             "BEN07",
             "FR21",
-            "BERTH22"
+            "BERTH22",
+            "CUCHET",
+            "CUCHET26"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 46
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 46,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018, Berthe 2022",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              },
+              {
+                "source_id": "CUCHET26",
+                "url": "https://www.vaticannews.va/fr/eglise/news/2026-09/pape-mutations-catholicisme-francais-entretien-guillaume-cuchet.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "QUALIFIED_OR_NARROWED",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "L’histoire de la pratique catholique en France ne peut être expliquée par une seule réforme. Les travaux consacrés au recul du milieu du XXe siècle étudient la pratique religieuse en lien avec les transformations sociales et les difficultés pastorales héritées. Les données françaises éclairent un cas complexe propre à la France, et non une explication valable automatiquement pour tous les pays ou toutes les communautés.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "That is historically unsustainable. Secularization, demographic change, theological dissent, cultural revolution, sexual revolution, institutional weakness and pre-existing pastoral problems cannot all be reduced to a single liturgical reform. Serious historical work on the post-1960 Catholic crisis treats it as a complex interaction of ecclesial and societal causes.",
+              "original_text_fr": "Cette explication est historiquement insoutenable. Sécularisation, transformations démographiques, contestation théologique, bouleversements culturels et sexuels, faiblesses institutionnelles et difficultés pastorales antérieures au Concile ne peuvent tous être ramenés à une seule réforme liturgique. Les travaux historiques sérieux envisagent la crise catholique postérieure aux années 1960 comme l’interaction complexe de causes ecclésiales et sociales.",
+              "original_source_ids": [
+                "BEN07",
+                "FR21",
+                "BERTH22",
+                "CUCHET"
+              ],
+              "reason": "Narrow or distinguish unverified empirical inference from source-supported doctrinal/history claim"
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -815,21 +2208,104 @@
             "FR21",
             "BERTH22"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 47
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 47,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 and Francis 2021",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "On peut néanmoins étudier la réforme liturgique comme un facteur parmi d’autres. Benoît XVI associait certaines déformations liturgiques arbitraires à de véritables souffrances pastorales, tandis que François présente la réforme postconciliaire comme un renouvellement voulu du culte romain. Aucune de ces positions n’autorise à prétendre que la liturgie n’aurait eu aucune conséquence."
         },
         {
           "role": "substantive",
-          "text": "The defensible traditionalist claim is therefore narrower: changes in worship may influence belief, religious identity and ecclesial culture, so the reform deserves historical and theological evaluation. It is not necessary—and usually not credible—to claim it single-handedly caused every decline in Catholic life.",
+          "text": "Changes in worship may shape the way faith is articulated and experienced: Pius XII described the liturgy as a public profession of Catholic faith, while also insisting that liturgy does not independently determine doctrine. This warrants examining theological and pastoral consequences of reform; it does not establish that liturgical change was the sole or principal cause of any measured religious decline.",
           "source_ids": [
             "BEN07",
             "FR21",
-            "BERTH22"
+            "BERTH22",
+            "CUCHET",
+            "MD47",
+            "CUCHET26"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 48
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 48,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018, Berthe 2022",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              },
+              {
+                "source_id": "MD47",
+                "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+              },
+              {
+                "source_id": "CUCHET26",
+                "url": "https://www.vaticannews.va/fr/eglise/news/2026-09/pape-mutations-catholicisme-francais-entretien-guillaume-cuchet.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "QUALIFIED_OR_NARROWED",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Les changements du culte peuvent influer sur la manière dont la foi est exprimée et vécue : Pie XII décrit la liturgie comme une profession publique de la foi catholique, tout en précisant qu’elle ne détermine pas indépendamment la doctrine. Cela justifie l’étude des conséquences théologiques et pastorales d’une réforme, sans démontrer qu’un changement liturgique ait été la cause unique ou principale d’un déclin religieux mesuré.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "The defensible traditionalist claim is therefore narrower: changes in worship may influence belief, religious identity and ecclesial culture, so the reform deserves historical and theological evaluation. It is not necessary—and usually not credible—to claim it single-handedly caused every decline in Catholic life.",
+              "original_text_fr": "L’argument traditionaliste défendable est donc plus précis : les changements dans le culte peuvent influencer la croyance, l’identité religieuse et la culture ecclésiale ; la réforme mérite par conséquent une évaluation historique et théologique. Il n’est ni nécessaire ni, le plus souvent, crédible de prétendre qu’elle aurait provoqué seule tous les déclins de la vie catholique.",
+              "original_source_ids": [
+                "BEN07",
+                "FR21",
+                "BERTH22",
+                "CUCHET"
+              ],
+              "reason": "Narrow or distinguish unverified empirical inference from source-supported doctrinal/history claim"
+            }
+          ]
         }
-      ]
+      ],
+      "question_fr": "« Les traditionalistes attribuent tous les problèmes postconciliaires à la nouvelle messe. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM043",
@@ -844,32 +2320,114 @@
           "text": "The premise needs qualification. In France, major pastoral and intellectual difficulties clearly existed before Vatican II, including worker-priest controversies, de-Christianization in some regions and serious attempts to respond to a changing society. The Church did not enter 1962 from an untouched golden age.",
           "source_ids": [
             "BERTH22",
-            "CHIRON"
+            "CHIRON",
+            "PO1954",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 49
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 49,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CNRS worker-priest preconciliar dispute; Cuchet",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "PO1954",
+                "url": "https://histoire-sociale.cnrs.fr/la-presse-et-la-question-des-pretres-ouvriers-de-1947-a-1954-le-traitement-de-laffaire-des-pretres-ouvriers-par-la-presse-nationale-francaise-au-lendemain-de-leur-naissance-jusqua/"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Cette prémisse doit être nuancée. En France, d’importantes difficultés pastorales et intellectuelles existaient avant Vatican II : crise des prêtres-ouvriers, déchristianisation de certaines régions et tentatives sérieuses de répondre aux mutations sociales. L’Église n’est pas entrée dans l’année 1962 à partir d’un âge d’or intact."
         },
         {
           "role": "substantive",
           "text": "At the same time, historical research places the sharp French collapse in regular religious practice mainly in the 1960s and later rather than describing a uniform pre-1962 collapse. Guillaume Cuchet's work identifies a dramatic break around the mid-1960s, while other scholarship describes relative stability in French Sunday practice from roughly 1930 to 1960 followed by a later collapse.",
           "source_ids": [
             "BERTH22",
-            "CHIRON"
+            "CHIRON",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 50
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 50,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018 mid-1960s break; Berthe 2022",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ]
+          },
+          "text_fr": "Les recherches historiques situent toutefois la rupture majeure de la pratique religieuse régulière en France principalement à partir des années 1960, et non dans un effondrement uniforme antérieur à 1962. Guillaume Cuchet relève une cassure spectaculaire au milieu de cette décennie ; d’autres travaux décrivent une relative stabilité de la pratique dominicale française entre environ 1930 et 1960, suivie d’une chute ultérieure."
         },
         {
           "role": "substantive",
           "text": "That chronology does not by itself prove Vatican II or the liturgical reform caused the collapse. Temporal sequence is not sufficient evidence of causation, and historians debate interacting religious, cultural and social factors. It does, however, make the opposite slogan—“everything was already collapsing anyway”—equally inadequate.",
           "source_ids": [
             "BERTH22",
-            "CHIRON"
+            "CHIRON",
+            "CUCHET"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 51
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 51,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Cuchet 2018 and Berthe 2022, no single cause",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BERTH22",
+                "url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene"
+              },
+              {
+                "source_id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "source_id": "CUCHET",
+                "url": "https://shs.cairn.info/comment-notre-monde-a-cesse-d-etre-chretien--9782021021295?lang=fr"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Cette chronologie ne prouve pas, à elle seule, que Vatican II ou la réforme liturgique aient causé l’effondrement. La succession temporelle ne suffit pas à établir une causalité, et les historiens discutent l’interaction de facteurs religieux, culturels et sociaux. Elle rend cependant tout aussi insuffisant le slogan inverse selon lequel « tout était déjà en train de s’effondrer »."
         }
-      ]
+      ],
+      "question_fr": "« Si l’ancienne messe était si bonne, pourquoi le catholicisme s’effondrait-il déjà avant Vatican II ? »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM044",
@@ -886,8 +2444,24 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 52
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 52,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007, Liturgical Movement's prior formation",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          },
+          "text_fr": "Cette affirmation est trop générale. Benoît XVI rappelait que, dans certains pays, le Mouvement liturgique avait procuré à de nombreux catholiques une formation solide et une grande familiarité avec l’ancienne forme, tout en reconnaissant que la connaissance du latin et la formation liturgique étaient loin d’être universelles."
         },
         {
           "role": "substantive",
@@ -896,20 +2470,77 @@
             "BEN07",
             "SC63"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 53
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 53,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 14,48",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ]
+          },
+          "text_fr": "La demande conciliaire d’une participation plus consciente et plus complète montre cependant que les évêques jugeaient la formation existante insuffisante dans bien des lieux. Le Concile souhaitait expressément que les rites et les prières fussent mieux compris et que la participation des fidèles fût renforcée."
         },
         {
           "role": "substantive",
-          "text": "The accurate conclusion is therefore mixed: some Catholics followed the old Mass intelligently and intensely; others attended with limited understanding. The pastoral failure of the latter group argues for better formation, but does not establish that the rite itself was unintelligible or spiritually fruitless.",
+          "text": "The sources show why a sweeping assertion that no one understood the earlier Mass is untenable: Benedict XVI describes substantial formation among some faithful, while the Council called for wider understanding and active participation. Those texts do not supply a numerical estimate of how many worshippers understood particular prayers, and the historical distribution of liturgical comprehension requires separate research.",
           "source_ids": [
             "BEN07",
-            "SC63"
+            "SC63",
+            "BEN07FR"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 54
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 54,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007; SC 14,48",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07FR",
+                "url": "https://www.vatican.va/content/benedict-xvi/fr/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "QUALIFIED_OR_NARROWED",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Les sources rendent insoutenable l’affirmation générale selon laquelle personne ne comprenait l’ancienne messe : Benoît XVI décrit la formation solide de certains fidèles, tandis que le Concile demandait une compréhension et une participation plus étendues. Ces textes ne donnent pas de proportion chiffrée des personnes comprenant telle ou telle prière ; la répartition historique de cette compréhension requiert une étude distincte.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "The accurate conclusion is therefore mixed: some Catholics followed the old Mass intelligently and intensely; others attended with limited understanding. The pastoral failure of the latter group argues for better formation, but does not establish that the rite itself was unintelligible or spiritually fruitless.",
+              "original_text_fr": "La conclusion exacte est donc nuancée : certains catholiques suivaient l’ancienne messe avec intelligence et ferveur ; d’autres y assistaient avec une compréhension limitée. Les difficultés de ce second groupe justifient une meilleure formation, mais ne démontrent ni l’inintelligibilité intrinsèque du rite ni son absence de fécondité spirituelle.",
+              "original_source_ids": [
+                "BEN07",
+                "SC63"
+              ],
+              "reason": "Narrow or distinguish unverified empirical inference from source-supported doctrinal/history claim"
+            }
+          ]
         }
-      ]
+      ],
+      "question_fr": "« Avant Vatican II, les catholiques ordinaires ne comprenaient rien à la messe. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM045",
@@ -926,8 +2557,24 @@
             "BEN07",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 55
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 55,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: exaggerations",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          },
+          "text_fr": "Certains se comportent ainsi, et Benoît XVI reconnaissait expressément des « exagérations » et des attitudes sociales problématiques parmi les fidèles attachés à l’ancienne tradition liturgique. Aucune préférence liturgique ne garantit l’humilité ou la sainteté."
         },
         {
           "role": "substantive",
@@ -936,8 +2583,24 @@
             "BEN07",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 56
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 56,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2477–2478",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          },
+          "text_fr": "La morale catholique condamne directement le jugement téméraire, la médisance et les atteintes injustes à la réputation d’autrui. Un catholique traditionaliste qui considère automatiquement les fidèles du Novus Ordo comme ignorants, infidèles ou moralement inférieurs contrevient aux principes ordinaires de la morale catholique, quels que soient ses arguments liturgiques."
         },
         {
           "role": "substantive",
@@ -946,10 +2609,34 @@
             "BEN07",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 57
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 57,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: loyal adherents",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "La généralisation inverse est tout aussi invalide. Les manquements de certains fidèles de la messe traditionnelle ne prouvent pas qu’une forme liturgique, ou tous ceux qui y sont attachés, soient spirituellement défectueux. Benoît XVI distinguait expressément les fidèles de l’ancienne liturgie loyaux envers le pape et le Concile de ceux dont l’attachement devenait séparation idéologique."
         }
-      ]
+      ],
+      "question_fr": "« Les catholiques traditionalistes se croient plus saints que tous les autres. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM046",
@@ -967,8 +2654,28 @@
             "FR21",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 58
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 58,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Francis 2021 vs Benedict 2007",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          },
+          "text_fr": "La formation d’une identité religieuse dans un contexte de conflit peut favoriser l’esprit de parti. Dans sa lettre de 2021, François reproche à certains adeptes de l’ancien missel de l’employer pour accentuer les divisions et rejeter les institutions de l’Église ; Benoît XVI avait auparavant reconnu des attitudes excessives dans ce milieu. Ces critiques ne doivent pas être simplement écartées."
         },
         {
           "role": "substantive",
@@ -978,8 +2685,28 @@
             "FR21",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 59
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 59,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: hurt faithful",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ]
+          },
+          "text_fr": "Les catholiques traditionalistes peuvent aussi invoquer des expériences suscitant la colère : expérimentations liturgiques non autorisées, restrictions imposées au culte hérité et traitement dédaigneux d’aspirations légitimes. Benoît XVI écrivait lui-même que des déformations liturgiques arbitraires avaient causé de profondes souffrances et que les fidèles attachés à l’ancien missel avaient des aspirations légitimes méritant une attention pastorale."
         },
         {
           "role": "substantive",
@@ -989,10 +2716,38 @@
             "FR21",
             "CCC_JUD"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 60
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 60,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "CCC 2477–2478",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              },
+              {
+                "source_id": "CCC_JUD",
+                "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_8/iii_offenses_against_truth.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "Aucun de ces parcours n’autorise l’amertume. La morale catholique exige toujours charité, véracité et retenue dans le jugement d’autrui ; la colère suscitée par une injustice réelle ne transforme ni le mépris, ni la calomnie, ni l’esprit de faction en vertus."
         }
-      ]
+      ],
+      "question_fr": "« Pourquoi les catholiques traditionalistes sont-ils si colériques et combatifs ? »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM047",
@@ -1010,8 +2765,28 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 61
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 61,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "SC 21–23; Francis 2021",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "Le Concile est réellement pertinent : la réforme liturgique postconciliaire fut explicitement entreprise en application de *Sacrosanctum Concilium*, et François présente encore les livres liturgiques de Paul VI et Jean-Paul II comme l’expression de la réforme voulue par Vatican II. La question de la messe traditionnelle croise donc inévitablement celle de l’interprétation du Concile."
         },
         {
           "role": "substantive",
@@ -1021,8 +2796,28 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 62
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 62,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: accepted Council",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "Cela ne signifie pas que toute conversation paroissiale, pratique dévotionnelle ou divergence doive devenir un référendum sur Vatican II. Benoît XVI décrivait expressément de nombreux catholiques qui reconnaissaient le caractère obligatoire du Concile et restaient fidèles au pape et aux évêques tout en souhaitant l’ancienne liturgie. L’attachement à cette messe et le rejet obsessionnel du Concile ne sont pas des propositions identiques."
         },
         {
           "role": "substantive",
@@ -1032,10 +2827,32 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 63
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 63,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Francis 2021: anti-Council concern",
+            "hyperlinked_sources": [
+              {
+                "source_id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "La préoccupation différente de François doit aussi être représentée fidèlement : il jugeait que, dans certaines communautés, l’ancien missel s’était étroitement associé au rejet de Vatican II et de l’Église postconciliaire. La réponse apologétique correcte distingue donc l’attachement liturgique des positions doctrinales réellement professées, au lieu de nier que cette dérive puisse exister."
         }
-      ]
+      ],
+      "question_fr": "« Pourquoi les catholiques attachés à la messe traditionnelle ramènent-ils tout à Vatican II ? »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM048",
@@ -1052,18 +2869,65 @@
             "GS65",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 64
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 64,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GS 43",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GS65",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          },
+          "text_fr": "L’attachement catholique à une forme liturgique n’impose pas un programme politique unique. Vatican II reconnaît expressément que des catholiques agissant sincèrement à partir de la même foi peuvent légitimement parvenir à des jugements politiques concrets différents ; il avertit également qu’on ne doit pas identifier sa solution politique personnelle à l’autorité exclusive de l’Évangile."
         },
         {
           "role": "substantive",
-          "text": "Traditionalist communities can nevertheless develop strong political subcultures, and Benedict XVI acknowledged that social attitudes had sometimes become unduly attached to older-liturgical identity. It is therefore fair to criticize a community when prudential politics becomes a test of Catholic orthodoxy.",
+          "text": "Attachment to a liturgy does not determine political identity. A particular community may form associated social or political habits, but such a claim requires evidence about that community, and it cannot be established merely from Benedict XVI's general caution about social attitudes that became associated with attachment to earlier rites.",
           "source_ids": [
-            "GS65",
-            "BEN07"
+            "BEN07",
+            "GS65"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 65
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+          "legacy_placeholder_index": 65,
+          "citation_review": {
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: social aspects only, not empirical politics",
+            "hyperlinked_sources": [
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "GS65",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+              }
+            ],
+            "editorial_issue": "Empirical implication about political subculture is not established by Benedict's generic reference to social aspects.",
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Removed unsupported implied empirical generalization about present-day TLM communities."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Traditionalist communities can nevertheless develop strong political subcultures, and Benedict XVI acknowledged that social attitudes had sometimes become unduly attached to older-liturgical identity. It is therefore fair to criticize a community when prudential politics becomes a test of Catholic orthodoxy.",
+              "original_source_ids": [
+                "GS65",
+                "BEN07"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Removed unsupported implied empirical generalization about present-day TLM communities."
+            }
+          ],
+          "text_fr": "L’attachement à une liturgie ne détermine pas l’identité politique. Une communauté donnée peut développer des habitudes sociales ou politiques qui lui sont associées, mais il faut des éléments propres à cette communauté pour l’établir ; on ne saurait le déduire du seul avertissement général de Benoît XVI concernant certaines attitudes sociales liées aux anciennes formes liturgiques."
         },
         {
           "role": "substantive",
@@ -1072,10 +2936,34 @@
             "GS65",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 66
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 66,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "GS 43,51,73–76",
+            "hyperlinked_sources": [
+              {
+                "source_id": "GS65",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "THEOLOGICAL_OR_EDITORIAL_INFERENCE",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "La doctrine catholique impose néanmoins des limites morales à l’action politique. La diversité légitime ne signifie donc pas un relativisme concernant l’avortement, la justice, le mariage, la dignité humaine ou la loi naturelle. Il faut distinguer les principes moraux obligatoires des différentes stratégies politiques prudentielles permettant de les mettre en œuvre."
         }
-      ]
+      ],
+      "question_fr": "« Les catholiques traditionalistes forment essentiellement un mouvement politique de droite. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM049",
@@ -1092,8 +2980,24 @@
             "ED88",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 67
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 67,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 3–5",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          },
+          "text_fr": "Le catholicisme exige la communion avec l’autorité ecclésiastique légitime. Dans *Ecclesia Dei*, Jean-Paul II a expressément condamné les consécrations épiscopales illicites de Mgr Lefebvre en 1988 comme un grave acte de désobéissance touchant à l’unité de l’Église ; il a mis en garde contre une conception de la Tradition détachée du Pontife romain et du collège épiscopal."
         },
         {
           "role": "substantive",
@@ -1102,20 +3006,77 @@
             "ED88",
             "BEN07"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 68
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 68,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 liturgical abuses",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              }
+            ]
+          },
+          "text_fr": "La méfiance peut cependant naître de défaillances réelles du gouvernement ou de la discipline liturgique, sans impliquer logiquement le rejet de la papauté. Benoît XVI reconnaissait des déformations liturgiques non autorisées largement répandues et admettait que des catholiques profondément enracinés dans l’Église en avaient souffert."
         },
         {
           "role": "substantive",
-          "text": "A traditional Catholic response therefore has to distinguish **criticism of a decision**, **serious theological difficulty**, **disobedience**, and **rejection of legitimate authority**. Treating every criticism as schism is inaccurate; treating personal distrust as permission to ignore the hierarchy whenever one disagrees is equally incompatible with Catholic ecclesiology.",
+          "text": "Criticism of an ecclesiastical decision, serious theological difficulty, unlawful disobedience and rejection of legitimate authority are different categories. Canon 212 recognizes both the faithful's duty of Christian obedience and their right, at times their duty, to make concerns known with reverence. Neither every criticism nor every act of personal distrust should therefore be equated with schism or with permission to disregard lawful governance.",
           "source_ids": [
             "ED88",
-            "BEN07"
+            "BEN07",
+            "CAN212"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 69
+          "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 69,
+          "citation_review": {
+            "status": "SOURCED_INTERPRETIVE",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 3–6; Benedict 2007",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "CAN212",
+                "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html"
+              }
+            ],
+            "interpretive_review": {
+              "reviewed_on": "2026-10-08",
+              "kind": "QUALIFIED_OR_NARROWED",
+              "source_scope": "Sources anchor the doctrinal/historical baseline; appraisal is not an independently measured causal assertion.",
+              "final_approval": "PENDING_EDITORIAL_REVIEW"
+            }
+          },
+          "text_fr": "La critique d’une décision ecclésiastique, une difficulté théologique sérieuse, la désobéissance illicite et le rejet de l’autorité légitime sont des catégories distinctes. Le canon 212 reconnaît à la fois le devoir d’obéissance chrétienne et le droit — parfois le devoir — des fidèles de faire connaître leurs préoccupations avec révérence. On ne saurait donc assimiler toute critique au schisme, ni considérer la méfiance personnelle comme une autorisation d’ignorer le gouvernement légitime.",
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "A traditional Catholic response therefore has to distinguish **criticism of a decision**, **serious theological difficulty**, **disobedience**, and **rejection of legitimate authority**. Treating every criticism as schism is inaccurate; treating personal distrust as permission to ignore the hierarchy whenever one disagrees is equally incompatible with Catholic ecclesiology.",
+              "original_text_fr": "La réponse traditionnelle doit donc distinguer **la critique d’une décision**, **une difficulté théologique sérieuse**, **la désobéissance** et **le rejet de l’autorité légitime**. Assimiler toute critique à un schisme est inexact ; prendre sa méfiance personnelle pour une permission d’ignorer la hiérarchie à chaque désaccord est tout aussi incompatible avec l’ecclésiologie catholique.",
+              "original_source_ids": [
+                "ED88",
+                "BEN07"
+              ],
+              "reason": "Narrow or distinguish unverified empirical inference from source-supported doctrinal/history claim"
+            }
+          ]
         }
-      ]
+      ],
+      "question_fr": "« Les fidèles de la messe traditionnelle se méfient du pape et des évêques : comment cela peut-il être catholique ? »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     },
     {
       "id": "TLM050",
@@ -1133,8 +3094,28 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 70
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 70,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 3–5; Francis 2021",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "L’association historique est suffisamment réelle pour expliquer cette inquiétude. L’attachement à l’ancien missel est devenu un signe distinctif du mouvement de Mgr Lefebvre ; Jean-Paul II qualifiait les consécrations épiscopales de 1988 d’actes schismatiques. François a affirmé plus tard que l’usage du missel de 1962 avait parfois été associé au rejet du Concile et de l’Église institutionnelle."
         },
         {
           "role": "substantive",
@@ -1144,14 +3125,43 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 71
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 71,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007 faithful adherents; Ecclesia Dei 6",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "Mais il est faux de conclure que l’attachement à la messe traditionnelle équivaut en soi à l’adhésion à la FSSPX ou au sédévacantisme. Benoît XVI écrivait expressément que beaucoup de fidèles attachés à l’ancienne forme acceptaient le caractère obligatoire de Vatican II et restaient fidèles au pape et aux évêques ; le Saint-Siège a aussi reconnu des communautés conservant les formes spirituelles et liturgiques traditionnelles en pleine communion ecclésiale."
         },
         {
-          "role": "unattributed_challenge",
-          "text": "“But doesn't traditionalism naturally lead people to reject the Church once they start criticizing the reform?”",
-          "provenance": "UNATTRIBUTED_PARAPHRASE_REQUIRES_ACTUAL_PROPONENT",
-          "source_ids": []
+          "role": "editorial_followup_question",
+          "text": "Does criticism of the liturgical reform necessarily lead to rejecting the Church?",
+          "provenance": "SYNTHETIC_EDITORIAL_QUESTION_NOT_A_QUOTE_OR_ATTRIBUTED_OPPOSITION",
+          "source_ids": [
+            "ED88",
+            "BEN07",
+            "FR21"
+          ],
+          "text_fr": "La critique de la réforme liturgique conduit-elle nécessairement au rejet de l’Église ?",
+          "original_challenge_text": "“But doesn't traditionalism naturally lead people to reject the Church once they start criticizing the reform?”",
+          "original_challenge_text_fr": "« La critique de la réforme ne conduit-elle pas naturellement les traditionalistes à rejeter l’Église ? »",
+          "source_attribution": "TOPIC_CONTEXT_ONLY_NO_SOURCE_CLAIMED_AS_PROPOSING_THIS_WORDING",
+          "publication_gate": "REQUIRES_EDITORIAL_APPROVAL_AS_INTERNAL_FOLLOWUP_NOT_EXTERNAL_OBJECTION"
         },
         {
           "role": "substantive",
@@ -1161,8 +3171,28 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 72
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 72,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Ecclesia Dei 4: Tradition and Magisterium",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "Cette dérive est possible si toute critique liturgique devient la preuve que l’Église aurait défailli, toute erreur papale une vacance du siège apostolique et toute restriction canonique une persécution exercée par une fausse Église. Jean-Paul II a directement mis en garde contre une notion de Tradition opposée au Magistère vivant et à l’unité ecclésiale."
         },
         {
           "role": "substantive",
@@ -1172,15 +3202,93 @@
             "BEN07",
             "FR21"
           ],
-          "source_verification": "SOURCE_CANDIDATE_NEEDS_CLAIM_LEVEL_REVIEW",
-          "legacy_placeholder_index": 73
+          "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
+          "legacy_placeholder_index": 73,
+          "citation_review": {
+            "status": "DIRECT_TEXT_ANCHORED",
+            "reviewed_on": "2026-10-08",
+            "evidence_locator": "Benedict 2007: two Missals and Holy See authority",
+            "hyperlinked_sources": [
+              {
+                "source_id": "ED88",
+                "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html"
+              },
+              {
+                "source_id": "BEN07",
+                "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "FR21",
+                "url": "https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html"
+              }
+            ]
+          },
+          "text_fr": "L’inférence inverse est également fausse : défendre la continuité du culte romain reçu n’oblige pas logiquement à juger optimale chaque décision prudente ou liturgique postconciliaire. Benoît XVI défendait précisément l’ancienne liturgie tout en reconnaissant le missel réformé et l’autorité ecclésiastique ; il démontrait ainsi que l’attachement à la messe traditionnelle n’est pas intrinsèquement incompatible avec la communion romaine."
         }
-      ]
+      ],
+      "question_fr": "« La messe traditionnelle est une porte d’entrée vers la FSSPX, le sédévacantisme et le schisme. »",
+      "translation_review": "FRENCH_DRAFT_REQUIRES_EDITORIAL_REVIEW"
     }
   ],
   "counts": {
     "questions": 25,
     "legacy_placeholder_count": 74,
     "new_canonical_dossiers": 0
+  },
+  "source_verification_method": "Original or documentary reprints located and inspected by topic/section; direct textual statements distinguished from interpretive claims; linked sources do not imply final theological/editorial approval.",
+  "claim_level_audit": {
+    "reviewed_on": "2026-10-08",
+    "legacy_paragraphs": 74,
+    "status_counts": {
+      "DIRECT_TEXT_ANCHORED": 37,
+      "SOURCED_INTERPRETIVE": 30,
+      "BLOCKED": 0,
+      "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW": 7
+    },
+    "blocked_legacy_indices": [],
+    "unattributed_followup_challenges": 0,
+    "publication_ready": false,
+    "corrected_legacy_indices": [
+      9,
+      16,
+      27,
+      30,
+      38,
+      41,
+      65
+    ],
+    "corrected_claims_require_final_approval": true,
+    "reclassified_synthetic_followups": 8
+  },
+  "translation_progress": {
+    "question_titles_fr_draft": 25,
+    "paragraphs_fr_draft": 82,
+    "remaining_english_only_questions": 0,
+    "translation_stage": "COMPLETE_DRAFT_NOT_HUMAN_REVIEWED"
+  },
+  "interpretive_review_summary": {
+    "reviewed": 30,
+    "unchanged_but_scoped": 23,
+    "qualified_or_narrowed": 7,
+    "publication_ready": false,
+    "changed_indices": [
+      10,
+      29,
+      32,
+      46,
+      48,
+      54,
+      69
+    ],
+    "interpretations_are_not_independent_empirical_evidence": true
+  },
+  "source_registry_count": 36,
+  "followup_reclassification": {
+    "date": "2026-10-08",
+    "count": 8,
+    "status": "ALL_EXPLICITLY_IDENTIFIED_AS_INTERNAL_EDITORIAL_FOLLOWUP_NOT_EXTERNAL_QUOTATIONS",
+    "original_wording_preserved": true,
+    "topical_links_are_not_opponent_provenance": true,
+    "editorial_review_required": true
   }
 }

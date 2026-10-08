@@ -527,7 +527,7 @@
   },
   "traditional_mass_objections_001_075": {
     "file": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-    "status": "50_RECONCILED_RESEARCH_QUESTIONS_UNPUBLISHED_25_SOURCE_MISSING",
+    "status": "50_RECONCILED_40_TLM026_065_BILINGUAL_DRAFTS_10_TC_BILINGUAL_DRAFTS_UNPUBLISHED",
     "prior_draft_exists_but_not_recovered": "TLM001-TLM025",
     "source_exact_English": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
     "source_linked_summary": "data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
@@ -535,12 +535,37 @@
     "canonical_ownership": "Existing CR (81) dossiers, no new canonical/navigation dossiers; search or browse surface links only",
     "editorial_blockers": [
       "Exact TLM001–025 recovery",
-      "74 linkless 026–050 citation placeholders: candidate source IDs require claim-level verification",
-      "Eight unattributed rebuttal prompts require evidence of identifiable proponents or restatement as editorial follow-up questions",
-      "TLM026–050 English-only and TLM051–065 titles-only French parity; all user-facing paragraphs require vetted translation",
-      "TLM051–065 are normalized summaries, not original full draft",
+      "TLM026–050: 74 source-linked paragraphs; seven originally unsupported claims corrected with historical revision records; 30 interpretive assessments still require independent editorial approval.",
+      "Eight TLM026–050 follow-up questions explicitly reclassified as synthetic editorial prompts; contextual hyperlinks are not falsely presented as quotations from named critics.",
+      "TLM026–050 French parity complete as 82 draft paragraphs (including eight hypothetical follow-up prompts); translation requires native theological editorial review.",
+      "TLM051–065 now have all 30 French draft paragraphs, but remain normalized summaries rather than the full original chat drafts; 30 source claims require editorial approval.",
       "UI/index projection and runtime tests not yet published"
     ],
-    "test": "tests/traditional-mass-objections-reconciliation.mjs"
+    "test": "tests/traditional-mass-objections-reconciliation.mjs",
+    "citation_audit": {
+      "source_file": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+      "status": "FRENCH_DRAFT_COMPLETE_7_CORRECTED_30_INTERPRETIVE_EDITORIAL_APPROVAL_PENDING",
+      "claim_count": 74,
+      "corrected": 7,
+      "interpretive_reviewed": 30,
+      "paragraphs_translated_to_french": 82,
+      "ready_for_publication": false
+    },
+    "french_drafts": {
+      "tlm_026_050": 82,
+      "tlm_051_065": 30,
+      "tlm_066_075": 30,
+      "status": "ALL_RECOVERED_INDEXED_TLM026_075_IN_BILINGUAL_DRAFT_NOT_PUBLISHED"
+    },
+    "followups": {
+      "count": 8,
+      "status": "EDITORIAL_NOT_ATTRIBUTED_NOT_QUOTATIONS",
+      "exact_previous_wording_preserved": true
+    },
+    "source_research_primary_added": {
+      "id": "NOT67",
+      "detail": "1967 Consilium Notitiae, official 71/43/62/4 Missa normativa voting record, added to TLM056–057",
+      "source_file": "data/learn/traditional-mass-objections-051-065-reconciled.v1.json"
+    }
   }
 }
