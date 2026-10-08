@@ -77,7 +77,8 @@ jobs:
       - run: npm run check:app-release
 
   app-shell-phone:
-    if: github.event_name == 'push'
+    # Run real phone interaction coverage on pull requests before merge too.
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     needs: app-shell-contract
     runs-on: ubuntu-latest
     steps:
