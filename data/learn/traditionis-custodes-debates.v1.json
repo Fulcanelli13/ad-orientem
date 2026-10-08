@@ -1,7 +1,7 @@
 {
   "version": "TRADITIONIS_CUSTODES_DEBATES_V1",
   "created_at": "2026-10-08",
-  "status": "BILINGUAL_10_CASES_SOURCE_SCOPED_EDITORIAL_DRAFT_UNPUBLISHED",
+  "status": "BILINGUAL_10_CASES_SOURCE_SCOPED_EXPANDED_EDITORIAL_DRAFT_UNPUBLISHED",
   "canonical_role": "Deep-source debate questions subsumed under the existing 81 Church Crisis dossiers; no new navigation dossier and no duplicate standalone canonical owner.",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_policy": {
@@ -124,6 +124,12 @@
       "title": "1983 Code of Canon Law, Book VII, canons 1732–1739 and 1752 (administrative recourse and salus animarum)",
       "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1732-1752_en.html",
       "type": "CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "AQU104",
+      "title": "St Thomas Aquinas, Summa theologiae II–II q.104 a.5, limits of obedience",
+      "url": "https://www.newadvent.org/summa/3104.htm#article5",
+      "type": "CLASSICAL_THEOLOGICAL_PRIMARY_TRANSLATION"
     }
   ],
   "debates": [
@@ -179,6 +185,34 @@
           ],
           "source_locator": "CIC 838; papal letter; Courtalain requests",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "A community that explicitly acknowledges papal jurisdiction and Vatican II cannot be presumed disloyal merely because it worships according to the 1962 books. The FSSP and Courtalain superiors positively profess that fidelity, and their canonically approved liturgical identity is an ecclesial good requiring an individualized judgment.",
+            "fr": "Une communauté qui reconnaît expressément la juridiction du pape et Vatican II ne saurait être réputée déloyale du seul fait qu’elle prie selon les livres de 1962. La FSSP et les supérieurs de Courtalain professent cette fidélité ; leur identité liturgique approuvée canoniquement mérite un discernement particulier."
+          },
+          "source_ids": [
+            "FSSP21",
+            "COURT21",
+            "CIC2"
+          ],
+          "source_locator": "FSSP communique 20 July 2021 and Courtalain 31 Aug 2021 professions; CIC 212–214",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "The fact that an institute professes fidelity does not settle every individual case, just as evidence of divisive behavior by some adherents cannot establish guilt in all. Francis identifies unity as the purpose of his law; its proportionality must therefore be argued from the actual harms, not from the mere existence of differing liturgical preferences.",
+            "fr": "Une profession de fidélité ne tranche pas tous les cas individuels ; inversement, des comportements de division chez certains fidèles ne rendent pas tous les autres coupables. François invoque l’unité comme fin de sa loi ; sa proportionnalité se juge sur les dommages concrets, non sur la seule diversité des préférences liturgiques."
+          },
+          "source_ids": [
+            "TCL21",
+            "FSSP21",
+            "COURT21"
+          ],
+          "source_locator": "Francis accompanying letter, unity rationale, compared with Courtalain and FSSP response",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -189,7 +223,8 @@
         "edition_specific_legal_check": false,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -261,6 +296,34 @@
           ],
           "source_locator": "Bruni 3 July 2025 press conference final paragraph; Montagna excerpts; AP",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "The extracts published in July 2025 are serious evidence that some episcopal responses favored retaining the 2007 permissions and feared restrictive measures. Catholics may ask how those concerns were weighed without asserting that the publication itself contains the complete consultation or an authenticated census of every bishop.",
+            "fr": "Les extraits publiés en juillet 2025 indiquent sérieusement que des réponses épiscopales souhaitaient maintenir les permissions de 2007 et craignaient les restrictions. On peut demander comment ces avertissements ont été appréciés, sans présenter cette publication comme la consultation intégrale ni comme un recensement authentifié de tous les évêques."
+          },
+          "source_ids": [
+            "MONT25",
+            "AP25_REPRINT",
+            "TCL21"
+          ],
+          "source_locator": "Montagna 1 July 2025 partial 2020 CDF survey excerpts; AP 2 July 2025",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "The Vatican spokesman stated that additional confidential reports and consultations were also considered. Since those materials and all individual episcopal returns are not public, neither the claim that a majority demanded restrictions nor its categorical opposite can be certified from the released extracts alone.",
+            "fr": "Le porte-parole du Vatican a précisé que d’autres rapports confidentiels et consultations furent aussi pris en compte. Faute d’accès à ces documents et à toutes les réponses individuelles, les extraits publics ne permettent de certifier ni qu’une majorité demandait les restrictions ni l’affirmation catégoriquement inverse."
+          },
+          "source_ids": [
+            "BRUNI25",
+            "AP25_REPRINT",
+            "TCL21"
+          ],
+          "source_locator": "Vatican News, Bruni 3 July 2025 on further confidential reports and consultations",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -271,7 +334,8 @@
         "edition_specific_legal_check": false,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -328,6 +392,34 @@
           ],
           "source_locator": "CIC 838 and TC 2021 art 8; contrasting juridical positions",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "The fact that the 1962 Missal was never abrogated in 2007 was tied by Benedict XVI to the principle that a received liturgy cannot simply be dismissed as harmful. The abrupt change of permissions in 2021 therefore raises a legitimate question about continuity and pastoral assurances even where there is no formal contradiction of defined dogma.",
+            "fr": "En 2007, Benoît XVI liait la non-abrogation du missel de 1962 au principe qu’une liturgie reçue ne peut être simplement rejetée comme nuisible. Le brusque changement des permissions en 2021 pose donc une question légitime de continuité et de confiance pastorale, sans constituer nécessairement une contradiction d’un dogme défini."
+          },
+          "source_ids": [
+            "SP07",
+            "SPL07",
+            "TC21"
+          ],
+          "source_locator": "Summorum Pontificum art. 1; Benedict XVI 2007 accompanying letter; TC art. 8",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "The previous legislation supplied a legal faculty, not a promise that all disciplinary provisions could never be changed. The remaining issue is not whether laws can be revised, but whether the reasons and restrictions respect the spiritual patrimony that the earlier papal letter instructed Catholics to preserve.",
+            "fr": "La loi précédente établissait une faculté juridique, non une promesse d’immutabilité de toute disposition disciplinaire. La question demeure de savoir si les motifs et restrictions respectent le patrimoine spirituel que la lettre pontificale antérieure demandait de conserver."
+          },
+          "source_ids": [
+            "SP07",
+            "TC21",
+            "SPL07"
+          ],
+          "source_locator": "Summorum Pontificum permission regime; TC art. 8; Benedict 2007 on preservation",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -338,7 +430,8 @@
         "edition_specific_legal_check": true,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -395,6 +488,34 @@
           ],
           "source_locator": "Responsa 2021 introductory explanatory notes",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "An approved ancient Roman liturgical form cannot be treated as a foreign religion or as doctrinally false merely because a later law gives the reformed books normative pre-eminence. Benedict XVI affirmed a single faith across the two missals, while Francis continued to permit celebration with the older Missal under specified conditions.",
+            "fr": "Une forme ancienne et approuvée de la liturgie romaine ne devient ni une religion étrangère ni une doctrine fausse du seul fait qu’une loi ultérieure privilégie les livres réformés. Benoît XVI affirmait une même foi dans les deux missels, et François continuait d’autoriser sous conditions l’usage de l’ancien."
+          },
+          "source_ids": [
+            "SPL07",
+            "SP07",
+            "TC21"
+          ],
+          "source_locator": "Summorum Pontificum art. 1 and 2007 accompanying letter; TC arts. 1–5",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "The formula of a unique lex orandi is a claim about the governing status of liturgical books, not a declaration that the former Missal lacked the Catholic Eucharistic sacrifice. Nevertheless, it marks a genuine shift from Benedict XVI's account of two usages and should not be explained as if the policies were identical.",
+            "fr": "La formule de l’unique lex orandi concerne le statut normatif des livres liturgiques ; elle ne déclare pas que l’ancien missel était dépourvu du sacrifice eucharistique catholique. Elle marque cependant un réel changement par rapport aux deux usages décrits par Benoît XVI et ne doit pas être présentée comme une continuité de politique sans différence."
+          },
+          "source_ids": [
+            "TC21",
+            "RESP21",
+            "SP07"
+          ],
+          "source_locator": "TC art. 1, arts. 2–5; 2021 Responsa introduction; Summorum Pontificum art. 1",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -405,7 +526,8 @@
         "edition_specific_legal_check": true,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -461,6 +583,33 @@
           ],
           "source_locator": "CIC 838; SC 22–23; TC enactment",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "Sacred liturgy transmits revealed faith and is not a possession that ecclesiastical authority may refashion at will. Sacrosanctum Concilium requires the preservation of sound tradition and development that grows organically from received forms. Catholic criticism may therefore examine whether a disciplinary restriction serves those ends.",
+            "fr": "La liturgie sacrée transmet la foi révélée ; l’autorité ecclésiastique ne peut en disposer arbitrairement. Sacrosanctum Concilium exige la sauvegarde de la saine tradition et un développement organique à partir des formes reçues. Une critique catholique peut donc examiner si une restriction disciplinaire sert ces fins."
+          },
+          "source_ids": [
+            "SC63",
+            "CIC4"
+          ],
+          "source_locator": "Sacrosanctum Concilium 22–23 on liturgical authority, sound tradition and organic change; CIC 838",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "The conciliar principle of organic growth directly addresses liturgical revision; applying it to the pastoral wisdom of restricting an older Missal involves a further argument. It cannot by itself prove that every restriction is unlawful, nor can canonical authority alone prove that each concrete restriction is prudent.",
+            "fr": "Le principe conciliaire de croissance organique vise directement la révision des rites ; l’appliquer à la prudence pastorale d’une restriction de l’ancien missel demande une argumentation supplémentaire. Il ne démontre ni l’illégalité de toute restriction ni la prudence automatique de chaque usage de l’autorité canonique."
+          },
+          "source_ids": [
+            "SC63",
+            "CIC4",
+            "TC21"
+          ],
+          "source_locator": "Sacrosanctum Concilium 23 pertains liturgical revision; CIC 838 and TC restrictions",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -471,7 +620,8 @@
         "edition_specific_legal_check": true,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -525,6 +675,34 @@
           ],
           "source_locator": "CIC 212–214, 223; TC permission regime",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "A Catholic's genuine spiritual benefit from the older Roman liturgy deserves serious pastoral consideration. Communities which made lifelong commitments within institutes established and approved for that liturgical vocation possess concrete canonical interests that cannot fairly be dismissed as private taste.",
+            "fr": "Le bien spirituel réel qu’un catholique reçoit de l’ancienne liturgie romaine mérite une attention pastorale sérieuse. Des communautés engagées pour la vie dans des instituts établis et approuvés pour cette vocation liturgique ont des intérêts canoniques concrets que l’on ne saurait réduire à des préférences privées."
+          },
+          "source_ids": [
+            "CIC2",
+            "COURT21",
+            "FSSP22"
+          ],
+          "source_locator": "CIC 212–214 and 223; Courtalain 31 Aug 2021; FSSP 2022 decree",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "Canon 214 protects worship according to a lawfully approved rite; canon 223 permits ecclesiastical regulation of rights for the common good. The existence of a spiritual good calls for proportionate provision and a path of petition, not an automatic claim that any individual may disregard the applicable liturgical discipline.",
+            "fr": "Le canon 214 protège le culte selon un rite légitimement approuvé ; le canon 223 permet la réglementation des droits pour le bien commun. L’existence d’un bien spirituel appelle une prise en compte proportionnée et des voies de requête, non le droit automatique pour chacun d’écarter la discipline liturgique en vigueur."
+          },
+          "source_ids": [
+            "CIC2",
+            "TC21",
+            "COURT21"
+          ],
+          "source_locator": "CIC 214, 223 and TC arts. 2–5; Courtalain requests",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -535,7 +713,8 @@
         "edition_specific_legal_check": false,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -590,6 +769,34 @@
           ],
           "source_locator": "TC legal character versus penal sanctions; papal accompanying letter",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "The superiors who publicly professed fidelity to Rome also described real fear, suffering, and the difficulty of maintaining their founding vocation under a more restrictive framework. To hear those testimonies is not to deny the authority of the Holy See but to acknowledge a moral duty to attend to foreseeable effects on innocent faithful.",
+            "fr": "Les supérieurs qui professaient publiquement leur fidélité à Rome ont aussi décrit la souffrance, la crainte et la difficulté de maintenir leur vocation fondatrice sous un régime plus restrictif. Entendre ces témoignages ne nie pas l’autorité du Saint-Siège ; c’est reconnaître l’obligation morale de considérer les effets prévisibles sur des fidèles innocents."
+          },
+          "source_ids": [
+            "COURT21",
+            "FSSP21",
+            "CIC2"
+          ],
+          "source_locator": "Courtalain 31 Aug 2021 discussion of suffering, canonically approved identities; FSSP communique",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "A legal restriction can have widespread burdens without constituting a canonical punishment. Francis gave ecclesial unity as his objective, but a judgment about whether this means was proportionate cannot be made from its stated end alone; the situations of different institutes and dioceses must be distinguished.",
+            "fr": "Une restriction juridique peut imposer de lourdes charges sans constituer une peine canonique. François a invoqué l’unité ecclésiale, mais la proportionnalité du moyen ne se déduit pas de la seule fin déclarée : les situations des instituts et des diocèses doivent être distinguées."
+          },
+          "source_ids": [
+            "TC21",
+            "TCL21",
+            "COURT21"
+          ],
+          "source_locator": "TC general discipline arts. 3–5; Francis accompanying letter; Courtalain effects",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -600,7 +807,8 @@
         "edition_specific_legal_check": false,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -671,6 +879,34 @@
           ],
           "source_locator": "11 Feb 2022 specific papal FSSP decree, own churches versus local ordinary",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "A restriction of the old Ritual and Pontifical is a serious liturgical change and ought not to be concealed under a vague statement that 'the old rites remain permitted'. The 2021 Responsa disallow the older Pontifical under the general provision and sharply limit permission for the Ritual; nevertheless Francis's separate 2022 decree grants the FSSP the faculties it expressly describes.",
+            "fr": "Restreindre l’ancien Rituel et l’ancien Pontifical constitue un changement liturgique sérieux que ne doit pas masquer une affirmation vague selon laquelle « les anciens rites demeurent permis ». Les Responsa de 2021 excluent l’ancien Pontifical dans leur régime général et limitent fortement le Rituel ; un décret distinct de 2022 accorde toutefois à la FSSP les facultés qu’il définit expressément."
+          },
+          "source_ids": [
+            "RESP21",
+            "FSSP22",
+            "RES23"
+          ],
+          "source_locator": "2021 Responsa on Rituale/Pontificale; FSSP particular decree 11 Feb 2022; 2023 rescript",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "The FSSP decree names its own beneficiaries and imposes conditions outside their churches or oratories; it does not give an identical faculty to every priest. Conversely, the ordinary restrictions cannot be described as a complete universal abolition when particular permission is demonstrably in force.",
+            "fr": "Le décret accordé à la FSSP nomme ses bénéficiaires et impose des conditions hors de ses églises et oratoires ; il ne confère pas la même faculté à chaque prêtre. Inversement, les restrictions générales ne peuvent être décrites comme une abolition universelle totale lorsqu’une permission particulière est expressément en vigueur."
+          },
+          "source_ids": [
+            "FSSP22",
+            "RESP21",
+            "TC21"
+          ],
+          "source_locator": "FSSP 11 Feb 2022 decree beneficiaries and churches; Responsa 2021; TC arts. 2–5",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -681,7 +917,8 @@
         "edition_specific_legal_check": true,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -736,6 +973,34 @@
           ],
           "source_locator": "Courtalain response versus SSPX statement; Catholic canonical status distinctions",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "The FSSP and the ICKSP, through the Courtalain statement, expressly affirmed adhesion to the papal and episcopal jurisdiction and Vatican II as understood according to Catholic assent. The SSPX Superior General instead argued that the old Mass embodies an ecclesiology fundamentally incompatible with that of Vatican II. These are distinct theological judgments, not interchangeable expressions of a single 'traditionalist response'.",
+            "fr": "La FSSP et l’ICRSP, par la déclaration de Courtalain, ont expressément affirmé leur soumission à la juridiction pontificale et épiscopale et leur adhésion à Vatican II selon l’assentiment catholique. Le supérieur général de la FSSPX soutient au contraire que l’ancienne messe exprime une ecclésiologie fondamentalement incompatible avec celle issue du Concile. Il s’agit de jugements théologiques distincts, non de variantes interchangeables d’une « réaction traditionaliste »."
+          },
+          "source_ids": [
+            "COURT21",
+            "SSPX21",
+            "FSSP21"
+          ],
+          "source_locator": "Courtalain signatories and Magisterium professions; Pagliarani 22 July 2021 SSPX statement",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "Pagliarani's claim concerns an incompatibility of doctrinal outlook, and must be evaluated as his stated thesis rather than silently adopted as settled doctrine. Its existence cannot negate the documented adherence to the Magisterium by other traditional institutes or erase their distinct canonical status.",
+            "fr": "La thèse de l’abbé Pagliarani porte sur l’incompatibilité d’orientations doctrinales : elle doit être examinée comme sa position propre, non admise tacitement comme une doctrine démontrée. Elle n’annule ni l’adhésion documentée au Magistère d’autres instituts traditionnels ni leurs statuts canoniques distincts."
+          },
+          "source_ids": [
+            "SSPX21",
+            "COURT21",
+            "FSSP22"
+          ],
+          "source_locator": "Pagliarani 22 July 2021 statement of incompatibility; Courtalain; FSSP 2022 decree",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -746,7 +1011,8 @@
         "edition_specific_legal_check": false,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     },
     {
@@ -786,7 +1052,8 @@
             "CIC2",
             "CIC4",
             "SC63",
-            "CIC1752"
+            "CIC1752",
+            "AQU104"
           ],
           "revision_history": [
             {
@@ -804,7 +1071,7 @@
             }
           ],
           "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
-          "source_locator": "Principle concerning divine law and lawfulness; CIC 212 and 1732–1739 recourse",
+          "source_locator": "Principle concerning divine law and lawfulness; CIC 212 and 1732–1739 recourse; St Thomas Aquinas II-II q.104 a.5, limits of human obedience",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
@@ -821,6 +1088,33 @@
           ],
           "source_locator": "CIC 212, 1732–1739; Courtalain petition and FSSP particular faculties",
           "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
+        },
+        {
+          "role": "traditional_argument",
+          "text": {
+            "en": "St Thomas Aquinas teaches that obedience to human superiors is limited by the divine order and by the superior's sphere of authority. No command to sin can bind; nevertheless, moral limits upon obedience are not established by merely asserting that a lawful liturgical rule is unwise, painful, or disproportionate.",
+            "fr": "Saint Thomas d’Aquin enseigne que l’obéissance aux supérieurs humains est limitée par l’ordre divin et le domaine de leur autorité. Aucun commandement de pécher ne peut obliger ; toutefois, la limite morale de l’obéissance ne se démontre pas en affirmant simplement qu’une règle liturgique licite est peu sage, pénible ou disproportionnée."
+          },
+          "source_ids": [
+            "AQU104",
+            "CIC2"
+          ],
+          "source_locator": "Aquinas Summa II-II q104 a5 limits of obedience to human superiors; CIC 212",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
+        },
+        {
+          "role": "reply_to_objection",
+          "text": {
+            "en": "Canon 212 couples Christian obedience with the right and sometimes duty to raise concerns respectfully. The Courtalain superiors pursued precisely such an appeal, and the FSSP later received a particular decree. Disagreement and lawful recourse remain possible without turning a personal judgment into an ecclesiastical act of exemption.",
+            "fr": "Le canon 212 unit l’obéissance chrétienne au droit, parfois au devoir, de formuler respectueusement des préoccupations. Les supérieurs de Courtalain ont emprunté cette voie, et la FSSP a ensuite reçu un décret particulier. La contestation et les recours légitimes demeurent possibles sans ériger un jugement personnel en dispense ecclésiastique."
+          },
+          "source_ids": [
+            "CIC2",
+            "COURT21",
+            "FSSP22"
+          ],
+          "source_locator": "CIC 212; Courtalain petition; FSSP particular decree 11 Feb 2022",
+          "source_review": "SUBSTANTIVE_NEW_EDITORIAL_ARGUMENT_OR_REPLY_SOURCE_SCOPED_FINAL_SIGNOFF_PENDING"
         }
       ],
       "evidence_review": {
@@ -831,7 +1125,8 @@
         "edition_specific_legal_check": true,
         "french_draft_reviewed_for_source_concordance": true,
         "final_theological_approval": false,
-        "public_release_allowed": false
+        "public_release_allowed": false,
+        "five_paragraph_bilingual_expansion": 2
       }
     }
   ],
@@ -871,5 +1166,21 @@
     "human_source_approval": false,
     "human_theological_approval": false,
     "public_release_allowed": false
+  },
+  "editorial_enrichment_20261008": {
+    "status": "FIVE_PARAGRAPH_DRAFT_RECONCILED_WITH_PRIOR_30_CLAIM_AUDIT",
+    "date": "2026-10-08",
+    "additional_paragraphs": 20,
+    "paragraphs_total": 50,
+    "preserves_existing_claim_locators": true,
+    "original_source_review_preserved": true,
+    "human_editorial_approval": false,
+    "public_release": false,
+    "caveats": [
+      "2025 episcopal survey public extracts not complete respondent record.",
+      "Canonical competence and prudential justification distinct.",
+      "SSPX view attributed, not adopted as doctrinal conclusion.",
+      "Aquinas on limits of obedience does not prove right to ignore particular law."
+    ]
   }
 }
