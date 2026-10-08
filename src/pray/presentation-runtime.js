@@ -863,16 +863,18 @@ function declutterRosaryDonor(r){
    setRosaryPrayerLanguage(host,'vernacular');
  });
 }
+let rosaryGuideOpen=false;
 function ensureRosaryGuide(r){
  const shell=r?.querySelector?.('.pbShell');if(!shell)return null;
  const language=lang();
  let guide=shell.querySelector('[data-ao-rosary-guide]');
  if(guide&&guide.dataset.aoRosaryGuideLanguage===language)return guide;
- const wasOpen=guide?.open===true;
+ const wasOpen=guide ? guide.open===true : rosaryGuideOpen;
  if(!guide){
    guide=document.createElement('details');
    guide.className='aoRosaryGuide';
    guide.dataset.aoRosaryGuide='';
+   guide.addEventListener('toggle',()=>{rosaryGuideOpen=guide.open===true});
    const bar=shell.querySelector('.aoP435930RosaryBar');
    const header=shell.querySelector('.lab-view-head,.pbTop,.pbHead,header');
    if(bar)bar.insertAdjacentElement('afterend',guide);
@@ -883,6 +885,7 @@ function ensureRosaryGuide(r){
  guide.dataset.aoRosaryGuideLanguage=language;
  guide.innerHTML=`<summary>${esc(L('Guide · history, mysteries & practice','Guide · histoire, mystères et pratique'))}</summary><div class="aoRosaryGuideBody">${rosaryGuideSections(language).map(section=>`<section class="aoRosaryGuideSection"><h3>${esc(section.heading)}</h3><p>${esc(section.body)} <a href="${esc(section.source.url)}" target="_blank" rel="noopener noreferrer">${esc(section.source.label)} ↗</a></p></section>`).join('')}</div>`;
  guide.open=wasOpen;
+ rosaryGuideOpen=guide.open===true;
  return guide;
 }
 function decorateRosary(){
