@@ -113,6 +113,9 @@ const browser=readFileSync("src/pray/browser-entry.js","utf8");
 const assets=readFileSync("src/assets/asset-registry.js","utf8");
 
 assert.match(runtime,/44\.0-bilingual-novenas-v1/);
+assert.doesNotMatch(runtime,/CURATED CORE · V4|NOYAU SÉLECTIONNÉ · V4|V4 is deliberately frozen|source-of-truth version|V4 · \$\{items\.length\}/,"Novenas leaked internal versioning/governance language into the UI");
+assert.match(runtime,/TRADITIONAL NOVENAS/,"Novenas overview lost its user-facing collection label");
+assert.match(runtime,/bilingual sourced novenas/,"Novenas overview lost sourced bilingual summary");
 assert.match(runtime,/NOVENA_CORPUS_V4 as CORPUS/,"Novenas runtime is not consuming completed V4 corpus");
 assert.match(runtime,/pray\.novenas/,"Novenas route is not registered");
 assert.doesNotMatch(runtime,/function injectHome|aoN1InsertedSection|MutationObserver/,"Novenas regained DOM-based PRAY hub injection");
