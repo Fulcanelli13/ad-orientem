@@ -35,6 +35,9 @@ const researchSnapshots = [
   readJson("../data/directory/generated/v19/sspx-france-first-party.v1.json"),
   readJson("../data/directory/generated/v19/sspx-france-second-pass.v1.json"),
   readJson("../data/directory/generated/v19/sspx-four-district-bulk.v1.json"),
+  readJson("../data/directory/generated/v19/sspx-oct26-europe.v1.json"),
+  readJson("../data/directory/generated/v19/sspx-oct26-americas.v1.json"),
+  readJson("../data/directory/generated/v19/sspx-oct26-poland.v1.json"),
   readJson("../data/directory/generated/v19/aasjmv.v1.json"),
   readJson("../data/directory/generated/v19/fsvf.v1.json"),
   readJson("../data/directory/generated/v19/canons-st-john-cantius.v1.json"),
@@ -51,6 +54,9 @@ const expectedResearchCounts = new Map([
   ["SSPX_FRANCE_FIRST_PARTY",89],
   ["SSPX_FRANCE_SECOND_PASS",30],
   ["SSPX_FOUR_DISTRICT_BULK",113],
+  ["SSPX_OCT26_MULTIREGION",61],
+  ["SSPX_OCT26_AMERICAS",44],
+  ["SSPX_OCT26_POLAND",38],
   ["AASJMV",6],
   ["FSVF",1],
   ["CANONS_ST_JOHN_CANTIUS",4],
@@ -108,6 +114,18 @@ for(const snapshot of researchSnapshots){
       venue,ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}],
     })));
     assert.equal(visible.length,30,"Held SSPX France source was incorrectly published or promoted venues disappeared");
+  }
+  if(["SSPX_OCT26_MULTIREGION","SSPX_OCT26_AMERICAS","SSPX_OCT26_POLAND"].includes(snapshot.provider)){
+    const expected={"SSPX_OCT26_MULTIREGION":61,"SSPX_OCT26_AMERICAS":44,"SSPX_OCT26_POLAND":38};
+    assert.equal(expanded.venues.length,expected[snapshot.provider]);
+    assert.ok(expanded.venues.every(v=>["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(v.publication_state)));
+    assert.ok(expanded.ministries.every(m=>m.community_id==="SSPX" && m.liturgical_usage.books==="1962"));
+    assert.ok(expanded.venues.every(v=>v.address.formatted && v.contact.schedule_url.some(u=>u.startsWith("https://"))));
+    assert.ok(expanded.schedules.every(s=>s.service_type==="MASS" && s.payload?.raw?.length>=10));
+    const rows=expanded.venues.map((venue,i)=>({venue,
+      ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}]}));
+    assert.equal(publishableDirectoryRecords(rows).length,expected[snapshot.provider],
+      "Source-backed 2026 district provider gate drift");
   }
   if(snapshot.provider==="SSPX_FOUR_DISTRICT_BULK"){
     assert.equal(expanded.venues.length,113);
@@ -172,7 +190,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,636,"research projection incl four SSPX district batch count drift");
+assert.equal(researchVenueCount,779,"research projection incl 143 SSPX Oct26 district records drift");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);

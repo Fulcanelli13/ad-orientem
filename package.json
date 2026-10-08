@@ -107,7 +107,7 @@
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
-    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second",
+    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second && npm run test:directory-sspx-oct26-bulk",
     "directory:import:sspx": "node tools/directory/import-sspx.mjs",
     "test:sacramental-sot": "node tests/sacramental-formation-sot.mjs",
     "directory:import:fssp": "node tools/directory/import-fssp.mjs",
@@ -139,7 +139,8 @@
     "test:directory-icksp-quality": "node tools/directory/audit-icksp-quality.mjs",
     "directory:geocode:icksp-research": "node tools/directory/geocode-research-icksp.mjs",
     "test:content-ownership": "node tests/content-ownership-registry.mjs",
-    "test:directory-sspx-france-second": "node tests/directory-sspx-france-second-pass.mjs"
+    "test:directory-sspx-france-second": "node tests/directory-sspx-france-second-pass.mjs",
+    "test:directory-sspx-oct26-bulk": "node tests/directory-sspx-oct26-bulk.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
