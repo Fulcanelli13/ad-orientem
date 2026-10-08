@@ -25,11 +25,11 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4190,"127.0.0.1",ok)});
 
-let browser;
+let browser,page;
 try{
   browser=await chromium.launch({headless:true});
   const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-GB"});
-  const page=await context.newPage();
+  page=await context.newPage();
   page.setDefaultTimeout(9000); // fail fast with actionable diagnostics instead of repeated 30-second locator hangs
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
@@ -323,6 +323,19 @@ try{
   assert.equal(sectionCount,48,"section menu lost 48 source-first display cards");
   console.log("Batch A Schola navigation: PASS",JSON.stringify({navPreflight,sectionCount}));
   await context.close();
+}catch(error){
+  const snapshot=await page?.evaluate(()=>({
+    route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+    trace:globalThis.__AO_MASS_VISUAL_REMOVAL_TRACE??[],
+    mounted:!!document.getElementById("ao-r17-native-reader-preview"),
+    previewOwned:!!globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected,
+    massRuntime:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+    appShell:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+    engine:document.documentElement.dataset.aoMassEngine??null,
+    schola:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.outerHTML?.slice(0,400)??null,
+  })).catch(e=>({diagnosticError:String(e)}));
+  console.error("Batch A real-shell failure snapshot:",JSON.stringify(snapshot));
+  throw error;
 }finally{
   await browser?.close();
   await new Promise(resolve=>server.close(resolve));
