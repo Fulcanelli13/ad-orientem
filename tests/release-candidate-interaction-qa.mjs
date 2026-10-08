@@ -83,6 +83,19 @@ try{
     return !curtain || curtain.classList.contains("aoCinemaBootDone") &&
       getComputedStyle(curtain).pointerEvents==="none";
   },null,{timeout:15000});
+  // Temporary CI diagnostics: distinguish blocked input from a frozen app event loop.
+  page.on("console",message=>{
+    if(message.text().startsWith("AO_TOUCH_TRACE "))process.stdout.write(message.text()+"\\n");
+  });
+  await page.evaluate(()=>{
+    const trace=(event)=>console.log("AO_TOUCH_TRACE "+event+
+      " active="+String(globalThis.AO_APP_SHELL_V1?.getActive?.()||"none"));
+    for(const name of ["pointerdown","touchstart","touchend","click"])
+      document.addEventListener(name,()=>trace(name),{capture:true,once:true});
+    setTimeout(()=>trace("heartbeat-3s"),3000);
+    setTimeout(()=>trace("heartbeat-9s"),9000);
+  });
+
   // This is a touch-device acceptance journey; exercise the real mobile tap,
   // rather than a desktop mouse click against an isMobile browser context.
   await page.locator("[data-ao-app-surface='pray']").tap({timeout:15000});
