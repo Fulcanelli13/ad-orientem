@@ -52,5 +52,6 @@ assert.equal(audit.summary.remaining_full_passage_review,55);
 for(const id of ["CSE112","CSE117"])assert.ok(CSE_MISCONCEPTION_REBUTTAL_IDS.includes(id));
 for(const id of ["CSE035","CSE038","CSE045","CSE141","CSE142","CSE143"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id));
 const close=raw.CSE125.source_scope_caveat;
-assert.match(close,/NOT a source for Catholic moral classifications/);
+assert.match(close,/ACOG gives clinical treatment options, not moral permission/);
+assert.match(close,/NCBC is a non-magisterial application/);
 console.log("PASS Sexual Ethics 55/55 debate stage mappings: 440 distinct stage citation chains, 609 original source references, no invented locators, 0 claimed certified.");
