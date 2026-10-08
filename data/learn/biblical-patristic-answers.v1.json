@@ -1,0 +1,1336 @@
+{
+  "version": "BIBLICAL_PATRISTIC_22_ANSWERS_V1",
+  "date": "2026-10-08",
+  "status": "ENGLISH_SUBSTANTIVE_DRAFT_REQUIRES_EDITORIAL_APPROVAL_NOT_PUBLISHED",
+  "links_to_questions": "data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
+  "anti_duplication": "One canonical dossier owner for every question; existing question IDs preserved; no additional navigation dossiers",
+  "source_policy": "Every answer paragraph, attributed objection, response and traditional assessment linked to a specific source in source_registry. Primary texts and own-voice proponent positions used when available; any weak verification point remains flagged.",
+  "source_registry": [
+    {
+      "id": "FATIMA00",
+      "title": "CDF, The Message of Fatima, official manuscript and theological commentary (2000)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_en.html",
+      "type": "OFFICIAL"
+    },
+    {
+      "id": "JUSTIN71",
+      "title": "St Justin Martyr, Dialogue with Trypho, chs. 71–73",
+      "url": "https://www.newadvent.org/fathers/01286.htm",
+      "type": "PATRISTIC_POLEMIC"
+    },
+    {
+      "id": "QUMRAN",
+      "title": "Israel Antiquities Authority, Dead Sea Scrolls introduction",
+      "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/introduction?locale=en_US",
+      "type": "TEXTUAL_EVIDENCE"
+    },
+    {
+      "id": "TRENTIV",
+      "title": "Council of Trent, Session IV, decree on canonical Scriptures",
+      "url": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+      "type": "COUNCIL_PRIMARY"
+    },
+    {
+      "id": "CCC120",
+      "title": "Catechism, canon of Scripture, §§120–123",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html",
+      "type": "DOCTRINAL"
+    },
+    {
+      "id": "ISA714",
+      "title": "Douay-Rheims, Isaiah 7",
+      "url": "https://www.drbo.org/chapter/27007.htm",
+      "type": "SCRIPTURE"
+    },
+    {
+      "id": "CORPUSBIRDS",
+      "title": "Corpus Coranicum, Infancy Gospel of Thomas and Quran 3:49",
+      "url": "https://corpuscoranicum.de/en/verse-navigator/sura/3/verse/49/intertexts/458",
+      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP"
+    },
+    {
+      "id": "CORPUSPALM",
+      "title": "Corpus Coranicum, Pseudo-Matthew and Quran 19:23",
+      "url": "https://corpuscoranicum.de/en/verse-navigator/sura/19/verse/23/intertexts/459",
+      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP"
+    },
+    {
+      "id": "QURAN1928",
+      "title": "Quran, 19:28, sister of Aaron",
+      "url": "https://quran.com/19/28",
+      "type": "ISLAMIC_PRIMARY"
+    },
+    {
+      "id": "JWBELIEFS",
+      "title": "Jehovah's Witnesses, official summary of beliefs",
+      "url": "https://www.jw.org/en/jehovahs-witnesses/faq/jehovah-witness-beliefs/",
+      "type": "OPPONENT_PRIMARY"
+    },
+    {
+      "id": "JWMICHAEL",
+      "title": "Jehovah's Witnesses, official explanation of Jesus as Michael",
+      "url": "https://www.jw.org/en/bible-teachings/questions/archangel-michael/",
+      "type": "OPPONENT_PRIMARY"
+    },
+    {
+      "id": "JWJOHN",
+      "title": "Jehovah's Witnesses, own explanation of Jesus as created and subordinate",
+      "url": "https://www.jw.org/en/library/tracts/What-Do-Jehovahs-Witnesses-Believe/What-Do-Jehovahs-Witnesses-Believe/",
+      "type": "OPPONENT_PRIMARY"
+    },
+    {
+      "id": "NICEA",
+      "title": "Catholic Encyclopedia (1913), Homoousion and Nicene answer to Arianism",
+      "url": "https://www.newadvent.org/cathen/07449a.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "ANTIPOPES",
+      "title": "Catholic Encyclopedia (1913), Antipope",
+      "url": "https://www.newadvent.org/cathen/01582a.htm",
+      "type": "HISTORICAL_CANONICAL"
+    },
+    {
+      "id": "PASTORET",
+      "title": "Vatican I, Pastor aeternus, Latin",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "type": "DOGMATIC_PRECONCILIAR"
+    },
+    {
+      "id": "LEO",
+      "title": "Leo XIII, Satis cognitum (1896)",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html",
+      "type": "MAGISTERIAL_PRECONCILIAR"
+    },
+    {
+      "id": "MYSTICI",
+      "title": "Pius XII, Mystici corporis Christi (1943)",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html",
+      "type": "MAGISTERIAL_PRECONCILIAR"
+    },
+    {
+      "id": "IRENAEUS",
+      "title": "St Irenaeus, Against Heresies III.3",
+      "url": "https://www.newadvent.org/fathers/0103303.htm",
+      "type": "PATRISTIC"
+    },
+    {
+      "id": "SEDEVOP",
+      "title": "Novus Ordo Watch, presentation of sedevacantist application of Bellarmine",
+      "url": "https://novusordowatch.org/2016/04/bellarmine-pope-heretic/",
+      "type": "ACTUAL_PROPONENT"
+    },
+    {
+      "id": "SEDEVBELL",
+      "title": "Novus Ordo Watch, argument for automatic loss of office",
+      "url": "https://novusordowatch.org/2015/06/can-heretical-pope-be-deposed/",
+      "type": "ACTUAL_PROPONENT"
+    },
+    {
+      "id": "DRBOAPOC",
+      "title": "Douay-Rheims, Revelation / Apocalypse",
+      "url": "https://www.drbo.org/chapter/73017.htm",
+      "type": "SCRIPTURE"
+    },
+    {
+      "id": "AUG20",
+      "title": "St Augustine, City of God XX, millennium and final persecution",
+      "url": "https://www.newadvent.org/fathers/120120.htm",
+      "type": "PATRISTIC"
+    },
+    {
+      "id": "AUG18",
+      "title": "St Augustine, City of God XVIII, Rome as another Babylon",
+      "url": "https://www.newadvent.org/fathers/120118.htm",
+      "type": "PATRISTIC"
+    },
+    {
+      "id": "ESAU",
+      "title": "Catholic Encyclopedia, Esau and Edom",
+      "url": "https://www.newadvent.org/cathen/05527c.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "PHARISEE",
+      "title": "Catholic Encyclopedia (1913), Pharisees",
+      "url": "https://www.newadvent.org/cathen/11789b.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "GAMALIEL",
+      "title": "Catholic Encyclopedia (1913), Gamaliel and Acts 5",
+      "url": "https://www.newadvent.org/cathen/06374b.htm",
+      "type": "SCRIPTURAL_HISTORICAL"
+    },
+    {
+      "id": "DIVINO",
+      "title": "Pius XII, Divino afflante Spiritu (1943), §§16–22",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html",
+      "type": "MAGISTERIAL_PRECONCILIAR"
+    },
+    {
+      "id": "APOCRYPHA",
+      "title": "Catholic Encyclopedia (1913), Apocrypha and pseudo-Matthew",
+      "url": "https://www.newadvent.org/cathen/01601a.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "FATIMASSEDEV",
+      "title": "Bishop Bernard Fellay, Fatima and Church crisis interview",
+      "url": "https://fsspx.news/en/news/interview-bishop-bernard-fellay-fatima-centenary-church-crisis-18544",
+      "type": "TRADITIONAL_PROPONENT"
+    },
+    {
+      "id": "FATIMAFR",
+      "title": "CDF The Message of Fatima, 2000 (French)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_fr.html",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "JEREMIAH-DSS",
+      "title": "Biblical Archaeology Society, two ancient editions of Jeremiah and Qumran 4QJerb/4QJerd",
+      "url": "https://library.biblicalarchaeology.org/sidebar/which-says-what-a-thumbnail-guide-to-the-two-editions-of-jeremiah/",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "AUG-CANON",
+      "title": "Augustine, On Christian Doctrine II.8–13 (translated primary text)",
+      "url": "https://www.newadvent.org/fathers/12022.htm",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "JEROME-CANON",
+      "title": "Jerome, Prologus Galeatus / Helmeted Prologue; text and provenance",
+      "url": "https://lapide.org/index/bibliography/jerome/prologus-galeatus.html",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "COE-ARTICLE-VI",
+      "title": "Church of England, Thirty-Nine Articles, Article VI (Protestant canon position)",
+      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/articles-religion",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "QURAN-349",
+      "title": "Quran 3:49, Jesus animating a clay bird",
+      "url": "https://quran.com/3/49",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "QURAN-1923",
+      "title": "Quran 19:23–26, Mary and palm tree",
+      "url": "https://quran.com/19/23",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "MUSLIM-2135",
+      "title": "Sahih Muslim 2135, response about Mary as sister of Aaron",
+      "url": "https://sunnah.com/muslim:2135",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "JW-JOHN",
+      "title": "Jehovah's Witnesses: John 1:1 explained (own interpretation)",
+      "url": "https://www.jw.org/en/bible-teachings/bible-verses/john-1-1/",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "JW-MICHAEL",
+      "title": "Jehovah's Witnesses: Who is the Archangel Michael?",
+      "url": "https://www.jw.org/en/bible-teachings/questions/archangel-michael/",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "HEBREWS-1",
+      "title": "Catholic Bible, Hebrews 1, Son distinguished from angels",
+      "url": "https://www.newadvent.org/bible/heb001.htm",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "ATHANASIUS-ARIANS",
+      "title": "Athanasius, Against the Arians, Discourse I",
+      "url": "https://www.newadvent.org/fathers/28161.htm",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "REVELATION-13",
+      "title": "Catholic Bible, Revelation 13 (text and notes)",
+      "url": "https://bible.usccb.org/bible/revelation/13",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "REVELATION-17",
+      "title": "Catholic Bible, Revelation 17 (text and notes)",
+      "url": "https://bible.usccb.org/bible/revelation/17",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "KOESTER-666",
+      "title": "Craig R. Koester, 2016 peer-reviewed textual study of 666 and 616",
+      "url": "https://digitalcommons.luthersem.edu/faculty_articles/15/",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "1JOHN-2",
+      "title": "Catholic Bible, 1 John 2, antichrists",
+      "url": "https://bible.usccb.org/bible/1john/2",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "2THESS-2",
+      "title": "Catholic Bible, 2 Thessalonians 2, apostasy and man of sin",
+      "url": "https://bible.usccb.org/bible/2thessalonians/2",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "OBADIAH",
+      "title": "Catholic Bible, Obadiah and historical Edom",
+      "url": "https://bible.usccb.org/bible/obadiah/1",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "CRAMPON-1904",
+      "title": "1904 Crampon Bible, original French publication and preface",
+      "url": "https://fr.wikisource.org/wiki/Bible_Crampon_1904",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "AUG-PATRISTIC",
+      "title": "Augustine, City of God XX.7, millennium",
+      "url": "https://www.newadvent.org/fathers/120120.htm",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "NICEA-325",
+      "title": "Nicaea 325 canons and Nicene creed (primary translated collection)",
+      "url": "https://www.newadvent.org/fathers/3801.htm",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "PS-MATTHEW",
+      "title": "Gospel of Pseudo-Matthew, historical text and source-critical framing",
+      "url": "https://www.newadvent.org/fathers/0848.htm",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    },
+    {
+      "id": "JUSTIN-TRY",
+      "title": "Justin Martyr, Dialogue with Trypho 71–73 (original in translation)",
+      "url": "https://www.newadvent.org/fathers/01286.htm",
+      "type": "PRIMARY_OR_SCHOLARLY",
+      "verification": "SOURCE_LINK_CHECKED_WHERE_RETRIEVABLE"
+    }
+  ],
+  "answers": [
+    {
+      "question_id": "BAQ-01",
+      "canonical_owner": "APOL-004",
+      "answer_paragraphs": [
+        {
+          "text": "The CDF published the Portuguese visionary manuscript in 2000 and stated that it was the sole manuscript of the third part of the secret. The dossier also presents the custody history and the account of Sister Lucia's April 2000 confirmation. On the official documentary record the complete text was published; a second authenticated manuscript has not been established.",
+          "source_ids": [
+            "FATIMA00",
+            "FATIMAFR"
+          ]
+        },
+        {
+          "text": "Bishop Bernard Fellay and other traditionalist critics point to the earlier phrase about the dogma of faith being preserved in Portugal and argue that an explanatory component may still be missing. That inference deserves textual examination but is not physical or documentary proof of a suppressed second manuscript.",
+          "source_ids": [
+            "FATIMASSEDEV",
+            "FATIMA00"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Bishop Bernard Fellay and traditionalist critics",
+          "argument": {
+            "text": "The published vision lacks the expected explanatory words about the dogma of faith in Portugal; there may therefore be another text.",
+            "source_ids": [
+              "FATIMASSEDEV"
+            ]
+          },
+          "response": {
+            "text": "An unfulfilled expectation about the genre or subject matter of a vision does not establish a second manuscript. The official manuscript and testimony must be challenged with verifiable contrary documentary evidence, not only suspicion.",
+            "source_ids": [
+              "FATIMA00",
+              "FATIMASSEDEV"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "Private revelation cannot oblige Catholics to conclude from unverified claims that the Church deliberately concealed a Marian message. Respect for the warning about penance and conversion does not require treating a proposed second manuscript as an established historical fact.",
+        "source_ids": [
+          "FATIMA00",
+          "FATIMASSEDEV"
+        ]
+      },
+      "verification_pending": [
+        "Compare Sister Lucia's surviving authenticated letters and original-language descriptions of the 'dogma of faith' passage before any firmer conclusion."
+      ],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-02",
+      "canonical_owner": "APOL-004",
+      "answer_paragraphs": [
+        {
+          "text": "The CDF's 2000 dossier distinguishes Sister Lucia's visionary manuscript, her later explanations and Cardinal Ratzinger's theological commentary. The commentary reads the symbolic image partly against twentieth-century persecution and John Paul II's 1981 assassination attempt; that historically contextual reading is not identical to the visionary text.",
+          "source_ids": [
+            "FATIMA00",
+            "FATIMAFR"
+          ]
+        },
+        {
+          "text": "Wider spiritual application to apostasy, martyrdom or later ecclesial suffering can be theologically discussed, but it cannot be ascribed to Sister Lucia or Our Lady as an additional authenticated prediction without documentary evidence.",
+          "source_ids": [
+            "FATIMA00",
+            "FATIMASSEDEV"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Critics of the 2000 interpretation",
+          "argument": {
+            "text": "The interpretation focused on the assassination attempt does not account adequately for the wider references to bishops, martyrs and the danger to faith.",
+            "source_ids": [
+              "FATIMASSEDEV"
+            ]
+          },
+          "response": {
+            "text": "Ratzinger's commentary treats prophecy symbolically rather than as a single chronological photograph; a wider reflection is possible, but asserted hidden information remains unproved.",
+            "source_ids": [
+              "FATIMA00",
+              "FATIMAFR"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The call to prayer, penance and conversion remains intelligible regardless of disputes about exhaustiveness of a particular twentieth-century historical interpretation.",
+        "source_ids": [
+          "FATIMA00"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-03",
+      "canonical_owner": "APOL-012",
+      "answer_paragraphs": [
+        {
+          "text": "In Dialogue with Trypho 71–73, Justin accuses Jewish teachers of omitting several passages from Greek scriptural witnesses, naming supposed lost words in Esdras, Jeremiah and Psalm 95/96. This is primary evidence that a second-century Christian held and advanced such allegations, not automatic proof that each alteration occurred.",
+          "source_ids": [
+            "JUSTIN71",
+            "JUSTIN-TRY"
+          ]
+        },
+        {
+          "text": "Jeremiah 11:19 survives in Hebrew witnesses, while pre-Christian Qumran manuscripts show that shorter and longer forms of Jeremiah circulated before Christian controversy. Every disputed reading requires a dated witness comparison and distinction between a textual variant, mistranslation, interpretation and deliberate alteration.",
+          "source_ids": [
+            "JUSTIN71",
+            "JEREMIAH-DSS",
+            "QUMRAN"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "St Justin Martyr, Dialogue with Trypho",
+          "argument": {
+            "text": "Jewish disputants have removed Greek Bible texts that would testify to the crucified Messiah.",
+            "source_ids": [
+              "JUSTIN71"
+            ]
+          },
+          "response": {
+            "text": "Justin's accusation is historically relevant, but each alleged omission must be established with surviving evidence; pre-Christian multiple textual recensions defeat any universal presumption of anti-Christian editing.",
+            "source_ids": [
+              "JUSTIN71",
+              "JEREMIAH-DSS"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The reality of pre-Christian textual plurality and the Fathers' disputes should be examined without assigning collective intention or inherited culpability to Jewish people. Genuine manuscript history serves truth better than an unproved theory of coordinated suppression.",
+        "source_ids": [
+          "JUSTIN71",
+          "QUMRAN",
+          "DIVINO"
+        ]
+      },
+      "verification_pending": [
+        "Manuscript collation required separately for Esdras Passover passage, Jeremiah 11:19, 'he descended' passage and Psalm 95/96 'from the wood'."
+      ],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-04",
+      "canonical_owner": "APOL-012",
+      "answer_paragraphs": [
+        {
+          "text": "The Septuagint is a collection of ancient Greek translations and textual forms of Jewish Scripture; the Masoretic Text is a later transmitted and vocalized Hebrew textual tradition; the Dead Sea Scrolls are surviving ancient manuscripts including witnesses to more than one Hebrew recension. They are different kinds of evidence rather than three rival Bibles compiled by one authority.",
+          "source_ids": [
+            "QUMRAN",
+            "DIVINO"
+          ]
+        },
+        {
+          "text": "For Jeremiah, 4QJerb and 4QJerd witness forms closer to the shorter Greek book, while other Qumran fragments resemble the longer Hebrew tradition. Such coexistence predates Christianity and argues against explaining all variants as later anti-Christian tampering.",
+          "source_ids": [
+            "JEREMIAH-DSS",
+            "QUMRAN"
+          ]
+        }
+      ],
+      "objections": [],
+      "traditional_argument": {
+        "text": "Catholic exegesis can rely on legitimate philological work in Hebrew and Greek without undermining confidence in inspiration. Pius XII explicitly encouraged original-language comparison as a service to divine revelation.",
+        "source_ids": [
+          "DIVINO"
+        ]
+      },
+      "verification_pending": [
+        "Additional critical apparatus required for detailed Jeremiah readings."
+      ],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-05",
+      "canonical_owner": "APOL-013",
+      "answer_paragraphs": [
+        {
+          "text": "Early Jewish scriptural collections and early Christian scriptural use developed in overlapping but not identical historical settings. The Hebrew Jewish canon and Greek-language Christian scriptural collections differ in their reception of certain books; one should not assume a single conspiratorial moment at which an identical canon was deliberately mutilated.",
+          "source_ids": [
+            "QUMRAN",
+            "TRENTIV",
+            "AUG-CANON"
+          ]
+        },
+        {
+          "text": "St Augustine's list includes books rejected by later Protestant canon lists, and Trent solemnly names the books of the Catholic Old Testament. Catholic certainty about their canonical status rests on the Church's received tradition and definitive ecclesiastical judgment, not an assertion that every ancient Jewish authority intentionally suppressed Christian books.",
+          "source_ids": [
+            "AUG-CANON",
+            "TRENTIV",
+            "CCC120"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "A canon limited to books later counted in the Hebrew Bible",
+          "argument": {
+            "text": "The narrower Hebrew list is the safer Old Testament canon.",
+            "source_ids": [
+              "JEROME-CANON"
+            ]
+          },
+          "response": {
+            "text": "Jerome's preface is a relevant historic witness but was not the universal patristic settlement; Augustine's list and the Catholic Church's final judgment are distinct authorities to be weighed.",
+            "source_ids": [
+              "JEROME-CANON",
+              "AUG-CANON",
+              "TRENTIV"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The Church's reception of inspired books can be defended on historical and ecclesiological grounds without attributing dishonesty to Judaism or claiming patristic unanimity.",
+        "source_ids": [
+          "AUG-CANON",
+          "CCC120",
+          "TRENTIV"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-06",
+      "canonical_owner": "APOL-046",
+      "answer_paragraphs": [
+        {
+          "text": "Quran 3:49 narrates Jesus making a clay bird alive by God's permission. The earlier Infancy Gospel of Thomas contains a closely related episode in its second chapter. The historical parallel is sufficiently specific to justify serious inquiry into circulation of Christian infancy traditions in the Quran's late-antique environment.",
+          "source_ids": [
+            "CORPUSBIRDS",
+            "QURAN-349",
+            "APOCRYPHA"
+          ]
+        },
+        {
+          "text": "A shared narrative motif does not prove direct copying from a particular surviving manuscript, nor does it alone establish that the miracle never occurred. The Christian challenge concerns the Quran's presentation of earlier noncanonical motifs as revelation and, more fundamentally, its different account of the divinity of Jesus.",
+          "source_ids": [
+            "CORPUSBIRDS",
+            "QURAN-349",
+            "NICEA"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Muslim claim of independent revelation",
+          "argument": {
+            "text": "The Quran confirms an actual miracle and need not have borrowed from an apocryphal gospel.",
+            "source_ids": [
+              "QURAN-349"
+            ]
+          },
+          "response": {
+            "text": "This is logically possible as a faith claim, but it does not erase the earlier external literary parallel. Historical explanation asks about dates, intermediaries, oral tradition and demonstrable textual transmission.",
+            "source_ids": [
+              "CORPUSBIRDS",
+              "APOCRYPHA"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "Catholic doctrine recognizes Christ as the eternal incarnate Son rather than merely an empowered created prophet; this doctrinal distinction matters more than any one infancy-story parallel.",
+        "source_ids": [
+          "NICEA",
+          "ATHANASIUS-ARIANS"
+        ]
+      },
+      "verification_pending": [
+        "Corpus Coranicum is JavaScript-dependent; its scholarly intertext record is indexed but full passage rendering needs manual inspection."
+      ],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-07",
+      "canonical_owner": "APOL-046",
+      "answer_paragraphs": [
+        {
+          "text": "Quran 19:23–26 places Mary's palm-tree episode at the childbirth of Jesus. In surviving Pseudo-Matthew narratives a miraculous palm tree assists the Holy Family on the flight to Egypt. The different settings show resemblance and transformation, not identity of episodes.",
+          "source_ids": [
+            "QURAN-1923",
+            "CORPUSPALM",
+            "APOCRYPHA"
+          ]
+        },
+        {
+          "text": "The dating and textual development of Pseudo-Matthew are disputed, and oral or other Christian infancy traditions may be common intermediaries. It would be historically careless to assert without qualification that the Quran directly copied the extant late Latin text.",
+          "source_ids": [
+            "CORPUSPALM",
+            "APOCRYPHA"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Muslim traditional interpretation",
+          "argument": {
+            "text": "The palm miracle can be independently revealed and does not depend on a Christian apocryphon.",
+            "source_ids": [
+              "QURAN-1923"
+            ]
+          },
+          "response": {
+            "text": "Independent revelation cannot be disproved from resemblance alone; nevertheless, older and parallel Christian literary traditions make historical transmission an important possibility requiring chronological analysis.",
+            "source_ids": [
+              "CORPUSPALM",
+              "APOCRYPHA"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "Christian biblical faith must not confuse canonical accounts of the Nativity with later imaginative narratives, however ancient or influential in popular devotion.",
+        "source_ids": [
+          "APOCRYPHA",
+          "CCC120"
+        ]
+      },
+      "verification_pending": [
+        "Do not treat Pseudo-Matthew direct textual dependence as a proven fact; check Syriac and Palestinian intermediary witnesses."
+      ],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-08",
+      "canonical_owner": "APOL-046",
+      "answer_paragraphs": [
+        {
+          "text": "Quran 19:28 calls Mary 'sister of Aaron', raising an apparent chronological problem because Miriam was the sister of Moses and Aaron many centuries before the mother of Jesus. The difficulty was known to early Christian interlocutors, as the report in Sahih Muslim 2135 itself records.",
+          "source_ids": [
+            "QURAN1928",
+            "MUSLIM-2135"
+          ]
+        },
+        {
+          "text": "The hadith gives the Muslim explanation that people were named after earlier prophets and righteous persons. This is an identifiable answer, whether understood as honorific, genealogical or naming convention. Criticism must evaluate the sufficiency of that explanation rather than simply assert the Quran unambiguously identified the two women as the same person.",
+          "source_ids": [
+            "MUSLIM-2135",
+            "QURAN1928"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Sahih Muslim 2135, traditional Muslim response",
+          "argument": {
+            "text": "The designation recalls Aaron or common biblical naming conventions, not an assertion that Jesus's mother lived at the time of Moses.",
+            "source_ids": [
+              "MUSLIM-2135"
+            ]
+          },
+          "response": {
+            "text": "The transmitted response makes a bare charge of an obvious chronological blunder incomplete; the interpretation still has to explain the wider Quranic use of 'family of Imran' and relevant historical expectations.",
+            "source_ids": [
+              "QURAN1928",
+              "MUSLIM-2135"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "Christian assessment of Islam must quote its own primary texts and strongest interpretive responses before arguing incompatibility with the Gospel accounts.",
+        "source_ids": [
+          "QURAN1928",
+          "MUSLIM-2135"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-09",
+      "canonical_owner": "APOL-010",
+      "answer_paragraphs": [
+        {
+          "text": "Jehovah's Witnesses teach that the pre-existent Son was created, subordinate to Jehovah and not the one eternal Almighty God. Arian Christology also denied that the Son is consubstantial and co-eternal with the Father, although historical Arians and modern Witnesses differ in theological systems and specific claims.",
+          "source_ids": [
+            "JW-JOHN",
+            "JWBELIEFS",
+            "NICEA"
+          ]
+        },
+        {
+          "text": "Nicaea professed the Son 'begotten, not made', of the same substance as the Father. Athanasius argued that God's eternal Word cannot be one of the creatures made through him. This is the central ancient response to the modern created-Son claim.",
+          "source_ids": [
+            "NICEA",
+            "ATHANASIUS-ARIANS"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Jehovah's Witnesses' published Christology",
+          "argument": {
+            "text": "The Son had a beginning and is not equal to Almighty God, while occupying the unique role of firstborn and agent of creation.",
+            "source_ids": [
+              "JW-JOHN"
+            ]
+          },
+          "response": {
+            "text": "The Johannine Prologue and Nicene teaching distinguish the Word personally from the Father without making him a creature: divine nature is not a created intermediary nature.",
+            "source_ids": [
+              "ATHANASIUS-ARIANS",
+              "NICEA",
+              "HEBREWS-1"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The Council's insistence on the Son's eternal uncreated divinity remains a decisive doctrinal standard. 'Arian-like' is accurate; 'identical in every detail to fourth-century Arius' is not.",
+        "source_ids": [
+          "NICEA",
+          "ATHANASIUS-ARIANS"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-10",
+      "canonical_owner": "APOL-008",
+      "answer_paragraphs": [
+        {
+          "text": "Jehovah's Witnesses explicitly render John 1:1 'the Word was a god', basing their distinction partly on the absence of the definite article with the predicate theos. The absence of an article alone does not entail the English indefinite article; the clause may identify the Word's divine nature without making him the same person as the Father.",
+          "source_ids": [
+            "JW-JOHN",
+            "ATHANASIUS-ARIANS"
+          ]
+        },
+        {
+          "text": "They also identify Jesus as the archangel Michael, citing 1 Thessalonians 4:16 and other angelic-war passages. But an archangel's voice accompanying Christ's descent does not demonstrate Christ is that angel, while Hebrews 1 emphatically distinguishes the Son from the angels, attributing to him divine address and worship.",
+          "source_ids": [
+            "JW-MICHAEL",
+            "HEBREWS-1",
+            "NICEA"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Jehovah's Witnesses, own John 1:1 and Michael explanations",
+          "argument": {
+            "text": "The anarthrous predicate is indefinite, the created Word mediates creation, and an archangel's voice indicates Jesus is Michael.",
+            "source_ids": [
+              "JW-JOHN",
+              "JW-MICHAEL"
+            ]
+          },
+          "response": {
+            "text": "The grammar does not force an indefinite created divinity; Hebrews 1 addresses the Son as God and distinguishes him from angels. Nicaea rejects the created-Son conclusion.",
+            "source_ids": [
+              "JW-JOHN",
+              "HEBREWS-1",
+              "NICEA"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "Jesus Christ is true God and true man, eternally begotten of the Father; an angelic identification as to his divine person cannot be reconciled with this faith.",
+        "source_ids": [
+          "NICEA",
+          "ATHANASIUS-ARIANS"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-11",
+      "canonical_owner": "APOL-013",
+      "answer_paragraphs": [
+        {
+          "text": "Most contemporary Protestant Old Testaments omit from their 39-book count the seven Catholic deuterocanonical books: Tobit, Judith, Wisdom, Sirach, Baruch, 1 and 2 Maccabees. Greek additions to Esther and Daniel are also received in the Catholic canon but not in the typical Protestant Old Testament.",
+          "source_ids": [
+            "CCC120",
+            "TRENTIV"
+          ]
+        },
+        {
+          "text": "It is historically inaccurate to say all Protestants simply deleted these writings from printed Bibles. Article VI of the Church of England explicitly lists them as books read for example and moral instruction but not used to establish doctrine; some Protestant editions printed them in an Apocrypha section.",
+          "source_ids": [
+            "COE-ARTICLE-VI",
+            "TRENTIV"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Church of England, Thirty-Nine Articles VI",
+          "argument": {
+            "text": "These writings may be read for moral instruction but lack equal authority for proving doctrinal articles.",
+            "source_ids": [
+              "COE-ARTICLE-VI"
+            ]
+          },
+          "response": {
+            "text": "The Catholic canon established by Trent includes them as inspired Scripture; the real dispute is over the criterion and authority for discerning the biblical canon, not whether Anglicans ever printed the texts.",
+            "source_ids": [
+              "TRENTIV",
+              "AUG-CANON",
+              "COE-ARTICLE-VI"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "Trent's canonical decree and ancient Christian use give Catholics reason to retain the deuterocanonicals, without falsifying varied Protestant printing and liturgical history.",
+        "source_ids": [
+          "TRENTIV",
+          "AUG-CANON",
+          "COE-ARTICLE-VI"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-12",
+      "canonical_owner": "APOL-013",
+      "answer_paragraphs": [
+        {
+          "text": "Augustine explicitly includes books such as Tobit, Judith, Maccabees, Wisdom and Sirach in his discussion of the Church's canonical Scriptures. Jerome's Prologus Galeatus instead argues for the narrower Hebrew book list and classifies several writings differently. The Fathers did not use one universally agreed vocabulary or manifest complete unanimity.",
+          "source_ids": [
+            "AUG-CANON",
+            "JEROME-CANON"
+          ]
+        },
+        {
+          "text": "The Catholic claim is not that Jerome never questioned the books, but that the Church's reception and eventually Trent's explicit canon settles their status for Catholic faith. An isolated patristic position does not outweigh a later ecumenical council's determination.",
+          "source_ids": [
+            "TRENTIV",
+            "AUG-CANON",
+            "JEROME-CANON"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Jerome's Prologus Galeatus and later Protestant appeal",
+          "argument": {
+            "text": "The Hebrew list is the proper Old Testament canon; several books of Greek ecclesiastical use are outside it.",
+            "source_ids": [
+              "JEROME-CANON",
+              "COE-ARTICLE-VI"
+            ]
+          },
+          "response": {
+            "text": "Augustine's wider canonical list and Trent's authoritative decree give the Catholic counterevidence; the difference turns upon the role of ecclesial Tradition in identifying inspired writings.",
+            "source_ids": [
+              "AUG-CANON",
+              "TRENTIV"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "St Jerome must be cited fairly even when his classification complicates an easy apologetic. The ecclesiastical judgment does not depend on rewriting his historical testimony.",
+        "source_ids": [
+          "JEROME-CANON",
+          "AUG-CANON",
+          "TRENTIV"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-17",
+      "canonical_owner": "APOL-012",
+      "answer_paragraphs": [
+        {
+          "text": "1 John 2:18 distinguishes 'many antichrists' already present from an expected Antichrist. These are not mutually exclusive notions: repeated denials of Christ's truth can foreshadow or participate in the final rebellion traditionally associated with the last adversary.",
+          "source_ids": [
+            "1JOHN-2",
+            "AUG20"
+          ]
+        },
+        {
+          "text": "Catholic interpreters do not thereby receive knowledge of the future adversary's name, date or modern institutional identity. The prophecy warns against deception and denial of Christ rather than authorizing unsupported identifications of particular popes or politicians.",
+          "source_ids": [
+            "1JOHN-2",
+            "AUG20"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Speculative current-event identification",
+          "argument": {
+            "text": "A conspicuous contemporary opponent of traditional doctrine must be the final Antichrist.",
+            "source_ids": [
+              "1JOHN-2"
+            ]
+          },
+          "response": {
+            "text": "The apostolic text itself mentions many antichrists; similarity to one feature of an eschatological portrait is not proof of unique fulfillment.",
+            "source_ids": [
+              "1JOHN-2",
+              "AUG20"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The Catholic obligation is vigilance in faith and perseverance, not claims to private certainty about an individual who has not been identified by revelation.",
+        "source_ids": [
+          "1JOHN-2",
+          "AUG20"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-18",
+      "canonical_owner": "CR-ECC-08",
+      "answer_paragraphs": [
+        {
+          "text": "2 Thessalonians 2 speaks of an apostasy and the man of lawlessness, whose manifestation is connected to a restraining power. The text identifies a grave religious struggle but does not itself give a modern pope's name or establish canonical loss of office.",
+          "source_ids": [
+            "2THESS-2",
+            "AUG20"
+          ]
+        },
+        {
+          "text": "A critic may argue that events in the Church resemble the scriptural warnings. A resemblance or asserted fulfillment cannot replace separate historical and ecclesiological demonstrations of manifest heresy, invalid election or loss of papal jurisdiction.",
+          "source_ids": [
+            "2THESS-2",
+            "PASTORET",
+            "LEO"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Contemporary apocalyptic interpretation of an ecclesial crisis",
+          "argument": {
+            "text": "A great apostasy within Christianity proves a specific modern papal claimant is the man of sin.",
+            "source_ids": [
+              "2THESS-2"
+            ]
+          },
+          "response": {
+            "text": "Scripture does not specify the claimant. A dramatic ecclesiastical accusation needs specific doctrinal, legal and factual proof rather than a prophetic label.",
+            "source_ids": [
+              "2THESS-2",
+              "PASTORET"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The gravity of possible ecclesial apostasy should be taken seriously without elevating speculative prophetic identifications to divine revelation or declaring office lost by private exegesis.",
+        "source_ids": [
+          "2THESS-2",
+          "LEO"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-19",
+      "canonical_owner": "APOL-012",
+      "answer_paragraphs": [
+        {
+          "text": "Revelation 13 presents the beast's mark in a setting of idolatrous allegiance, coercion and economic exclusion. The number 666 has an early textual variant 616. Craig Koester's manuscript and inscription study supports the widely discussed Nero Caesar gematria interpretation while acknowledging scholarly disagreement.",
+          "source_ids": [
+            "REVELATION-13",
+            "KOESTER-666"
+          ]
+        },
+        {
+          "text": "Neither a barcode, implant, vaccine nor electronic payment system automatically constitutes the mark because a numerical coincidence is claimed. A responsible biblical interpretation must account for the narrative's religious allegiance and actual historical evidence.",
+          "source_ids": [
+            "REVELATION-13",
+            "AUG20"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Literal contemporary technology identification",
+          "argument": {
+            "text": "One number or technical feature is enough to show a present-day device is the mark.",
+            "source_ids": [
+              "REVELATION-13"
+            ]
+          },
+          "response": {
+            "text": "The passage is about the beast's idolatrous claim and a political-economic order; the existence of the early 616 variant also warns against treating one modern numerical coincidence as definitive.",
+            "source_ids": [
+              "REVELATION-13",
+              "KOESTER-666"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "Revelation's warning against idolatrous worldly power remains morally serious; inventing definitive current identifications can obscure that revealed lesson.",
+        "source_ids": [
+          "REVELATION-13",
+          "AUG20"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-20",
+      "canonical_owner": "APOL-042",
+      "answer_paragraphs": [
+        {
+          "text": "In City of God XX.7 Augustine interprets the thousand years and the first resurrection in a spiritual and ecclesial framework rather than predicting a necessarily literal future millennium of earthly carnal reign. This is an influential Western patristic reading, not a claim that every Father interpreted Revelation identically.",
+          "source_ids": [
+            "AUG20",
+            "AUG-PATRISTIC"
+          ]
+        },
+        {
+          "text": "The Church affirms Christ's final return, judgment and resurrection of the dead. Augustine's interpretation warns against conflating those dogmatic realities with a speculative intermediate worldly kingdom.",
+          "source_ids": [
+            "AUG20",
+            "CCC120"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Literal millenarian interpretation",
+          "argument": {
+            "text": "Revelation's thousand years necessarily describe a future earthly political reign after Christ's return.",
+            "source_ids": [
+              "AUG20"
+            ]
+          },
+          "response": {
+            "text": "Augustine shows a coherent nonliteral reading that preserves the final judgment and eternal kingdom while interpreting the thousand years within the Church's present age.",
+            "source_ids": [
+              "AUG-PATRISTIC"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The resurrection, judgment and everlasting kingdom are not dispensable; a carnal earthly millennium is not a necessary article of Catholic faith.",
+        "source_ids": [
+          "AUG-PATRISTIC",
+          "AUG20"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-21",
+      "canonical_owner": "APOL-044",
+      "answer_paragraphs": [
+        {
+          "text": "The Pharisees were a Second Temple Jewish movement with characteristic interpretations of Torah, inherited practice and beliefs concerning resurrection and providence. They were neither the totality of ancient Judaism nor a unified collection of villains.",
+          "source_ids": [
+            "PHARISEE"
+          ]
+        },
+        {
+          "text": "Some Pharisees opposed Christ, while Acts presents Gamaliel counselling caution and Paul identifying his own background as Pharisaic. Criticism of hypocrisy in Gospel disputes must be directed to the actual persons and teachings, not indiscriminately to Jews.",
+          "source_ids": [
+            "GAMALIEL",
+            "PHARISEE"
+          ]
+        }
+      ],
+      "objections": [],
+      "traditional_argument": {
+        "text": "Christ's warnings against hypocrisy address a perennial moral danger, not an inherited condemnation of an ethnic or religious population.",
+        "source_ids": [
+          "PHARISEE",
+          "GAMALIEL"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-22",
+      "canonical_owner": "APOL-044",
+      "answer_paragraphs": [
+        {
+          "text": "Edom was the historical people and kingdom linked in biblical genealogy to Esau and occupying territory east and southeast of the Dead Sea. Obadiah condemns Edom's hostility toward Judah and describes divine judgment of its actions.",
+          "source_ids": [
+            "ESAU",
+            "OBADIAH"
+          ]
+        },
+        {
+          "text": "Later biblical and interpretive use can treat Edom symbolically as a hostile brother or worldly power. The symbol's development does not license assigning genealogical blame to contemporary peoples.",
+          "source_ids": [
+            "ESAU",
+            "OBADIAH"
+          ]
+        }
+      ],
+      "objections": [],
+      "traditional_argument": {
+        "text": "Biblical prophecy evaluates historical conduct and relation to God's covenant, not modern racial essentialism. A symbolic Edom is not a universal label for those whom a contemporary polemicist dislikes.",
+        "source_ids": [
+          "OBADIAH",
+          "ESAU"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-23",
+      "canonical_owner": "APOL-044",
+      "answer_paragraphs": [
+        {
+          "text": "Some rabbinic Jewish traditions apply Edom or Esau as a symbolic name for Rome, and sometimes for Christian power after Rome's Christianization. This exegetical identification is a historical metaphor arising from imperial relations and biblical sibling rivalry; it is not a demonstrated biological descent of Romans from Edomites.",
+          "source_ids": [
+            "ESAU",
+            "AUG18"
+          ]
+        },
+        {
+          "text": "Neither Jewish symbolism about Edom nor Christian symbolism about Babylon establishes that an identifiable modern people secretly possesses an inherited evil nature. Exact claims about named rabbinic passages require citing those primary texts rather than presenting every later formulation as ancient consensus.",
+          "source_ids": [
+            "ESAU",
+            "AUG18"
+          ]
+        }
+      ],
+      "objections": [],
+      "traditional_argument": {
+        "text": "Traditional biblical typology cannot override the literal historical meaning of the passage or be turned into a collective accusation against Jews, Christians or any other modern group.",
+        "source_ids": [
+          "ESAU",
+          "AUG18"
+        ]
+      },
+      "verification_pending": [
+        "Primary rabbinic text with chapter/folio still required for scholarly publication; this remains interpretive summary, not a final citation-resolved historical proof."
+      ],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-24",
+      "canonical_owner": "APOL-012",
+      "answer_paragraphs": [
+        {
+          "text": "Revelation 17's seven hills, imperial kings, wealth and persecution supply a strong historical context for seeing Babylon the Great as a symbol of pagan imperial Rome. The name also recalls Babylon's older biblical role as an oppressor of God's people.",
+          "source_ids": [
+            "REVELATION-17",
+            "AUG18"
+          ]
+        },
+        {
+          "text": "Augustine's two-cities interpretation broadens Babylon into a type of earthly pride and opposition to God. None of this makes pagan imperial Rome, the city of Rome and the Catholic Roman See identical theological entities. Calling the Catholic Church 'Babylon' requires a separate argument rather than an inference from the geography.",
+          "source_ids": [
+            "AUG18",
+            "IRENAEUS",
+            "REVELATION-17"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Anti-papal reading of Babylon",
+          "argument": {
+            "text": "Because Rome appears behind Revelation's Babylon, the Roman Catholic Church must be the apostate beast.",
+            "source_ids": [
+              "REVELATION-17"
+            ]
+          },
+          "response": {
+            "text": "Rome can name an imperial regime or a city in an apocalyptic symbol without making every later religious institution at that location identical to that regime; early apostolic succession in Rome is independent evidence.",
+            "source_ids": [
+              "REVELATION-17",
+              "IRENAEUS",
+              "AUG18"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The See of Peter and the persecuting imperial state are distinguishable entities. Revelation's condemnation of idolatrous oppression cannot fairly be transferred automatically to apostolic primacy.",
+        "source_ids": [
+          "IRENAEUS",
+          "REVELATION-17",
+          "AUG18"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-25",
+      "canonical_owner": "APOL-012",
+      "answer_paragraphs": [
+        {
+          "text": "For traditional English Catholic reading the Douay–Rheims in Challoner's revision is a historically familiar option; for French Catholic reading Crampon's 1904 revision is a strong preconciliar option, explicitly based on original-language texts. The governing requirements are the full Catholic canon, doctrinal fidelity and sound editorial notes, not absolute attachment to one vernacular version.",
+          "source_ids": [
+            "CRAMPON-1904",
+            "CCC120",
+            "DIVINO"
+          ]
+        },
+        {
+          "text": "For study, consulting a second approved translation, the Vulgate and, where useful, Greek and Hebrew witnesses is legitimate. One must distinguish old editions, modern revisions and ecclesiastical approval instead of treating a historical title as a permanent guarantee for every later printing.",
+          "source_ids": [
+            "DIVINO",
+            "CRAMPON-1904"
+          ]
+        }
+      ],
+      "objections": [],
+      "traditional_argument": {
+        "text": "Catholics can cherish traditional liturgical and devotional language while following the preconciliar Church's endorsement of competent biblical philology.",
+        "source_ids": [
+          "DIVINO",
+          "CRAMPON-1904"
+        ]
+      },
+      "verification_pending": [
+        "Check specific edition, imprimatur and completeness before endorsing an individual commercial printing."
+      ],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    },
+    {
+      "question_id": "BAQ-26",
+      "canonical_owner": "APOL-012",
+      "answer_paragraphs": [
+        {
+          "text": "The Council of Trent recognized the Vulgate as authentic for public ecclesiastical use in the Latin Church. Pius XII in Divino afflante Spiritu §§21–22 explains that this authenticity is juridical, not proof that Latin is critically superior to the inspired Hebrew and Greek textual witnesses.",
+          "source_ids": [
+            "TRENTIV",
+            "DIVINO"
+          ]
+        },
+        {
+          "text": "Pius XII expressly permits approved vernacular translations made directly from original languages and strongly encourages textual comparison to determine literal meaning. Therefore fidelity to preconciliar Catholic authority does not require rejecting all translations based on Hebrew and Greek.",
+          "source_ids": [
+            "DIVINO"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Vulgate-only polemic",
+          "argument": {
+            "text": "Trent's declaration makes every Hebrew/Greek-based translation doctrinally inferior or illicit.",
+            "source_ids": [
+              "TRENTIV"
+            ]
+          },
+          "response": {
+            "text": "Pius XII directly rejects that inference and upholds legitimate Catholic use of original texts and vernacular translations. Trent was regulating received Latin translations and public use, not abolishing biblical philology.",
+            "source_ids": [
+              "DIVINO",
+              "TRENTIV"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": {
+        "text": "The Latin Vulgate holds privileged ecclesiastical standing, but Scripture's original languages remain valuable witnesses to the inspired text, as a preconciliar pope explicitly affirmed.",
+        "source_ids": [
+          "DIVINO",
+          "TRENTIV"
+        ]
+      },
+      "verification_pending": [],
+      "editorial_status": "ENGLISH_SUBSTANTIVE_DRAFT_UNPUBLISHED"
+    }
+  ],
+  "release_gates": [
+    "Check canonical doctrinal language and dates against originals.",
+    "Verify all linked text passages, not only the hyperlink destination.",
+    "Latin/French parity and substantive objection/refutation where required.",
+    "Separate textual hypotheses, manuscript evidence and doctrinal claims.",
+    "No publication or runtime change approved by this source-pack commit."
+  ]
+}
