@@ -1,5 +1,6 @@
 import { CSE_SOURCE_MAP } from "./sources.js";
 import { CSE_HIGH_STAGE_SOURCE_IDS } from "./stage-evidence-high24.js";
+import { CSE_REMAINING_STAGE_SOURCE_IDS } from "./stage-evidence-remaining31.js";
 
 const freezeRefs=refs=>Object.freeze((refs||[]).map(ref=>Object.freeze([...ref])));
 const freezeMap=record=>Object.freeze(Object.fromEntries(Object.entries(record).map(([id,refs])=>[id,freezeRefs(refs)])));
@@ -87,7 +88,7 @@ export function paragraphRefsFor(item,kind,field=null){
   const position=CSE_DEBATE_POSITION_REFS[item?.id]||Object.freeze([]);
   if(kind==="question")return item?.depth==="DEBATE"&&position.length?position:catholic;
   if(kind!=="debate")return catholic;
-  const selectedIds=CSE_HIGH_STAGE_SOURCE_IDS[item?.id]?.[field];
+  const selectedIds=CSE_HIGH_STAGE_SOURCE_IDS[item?.id]?.[field]||CSE_REMAINING_STAGE_SOURCE_IDS[item?.id]?.[field];
   if(selectedIds?.length){
     // Every selected ID must already be present in this question's original sources.
     // The source excerpt locator is preserved; no invented page/chapter locators.
