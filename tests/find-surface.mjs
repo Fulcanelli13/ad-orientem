@@ -8,7 +8,7 @@ import {
   publishableDirectoryRecords,
 } from "../src/find/data-service.js";
 import { buildFindViewModel, renderFindToString } from "../src/find/presentation.js";
-import { FIND_MAP_RUNTIME } from "../src/find/map-runtime.js";
+import { FIND_MAP_RUNTIME, MASS_MAP_GROUP_COLORS, exploreMapFeatures, mapFitBounds, mapViewport, massMapProviderGroup } from "../src/find/map-runtime.js";
 
 const venues=[
   {
@@ -112,6 +112,32 @@ assert.match(empty,/No locations are being invented/);
 
 assert.match(FIND_MAP_RUNTIME.module,/maplibre-gl/);
 assert.match(FIND_MAP_RUNTIME.style,/openfreemap/);
+assert.ok(FIND_MAP_RUNTIME.style.includes("/styles/dark"));
+assert.equal(massMapProviderGroup("SSPX"),"SSPX");
+assert.equal(massMapProviderGroup("UNRECOGNISED_GROUP"),"OTHER");
+assert.equal(Object.keys(MASS_MAP_GROUP_COLORS).length,6);
+const mapItems=[{
+  lens:"tlm",item_id:"tlm:example-sspx",title:"Source-backed SSPX",
+  community_id:"SSPX",map_publishable:true,
+  geo:{lat:46.21,lng:6.12,precision:"address",approximate:false},
+},{
+  lens:"tlm",item_id:"tlm:example-fssp",title:"Source-backed FSSP",
+  community_id:"FSSP",map_publishable:true,
+  geo:{lat:48.85,lng:2.35,precision:"locality",approximate:true},
+},{
+  lens:"tlm",item_id:"tlm:address-only",title:"Address only",
+  community_id:"ICKSP",map_publishable:false,
+  geo:{lat:null,lng:null},
+}];
+const mapFeatures=exploreMapFeatures(mapItems);
+assert.equal(mapFeatures.length,2,"unverified coordinate leaked onto MapLibre map");
+assert.deepEqual(mapFeatures.map(x=>x.properties.provider_group),["SSPX","FSSP"]);
+assert.equal(mapFeatures[1].properties.approximate,true);
+assert.deepEqual(mapFitBounds(mapFeatures),[[2.35,46.21],[6.12,48.85]]);
+assert.equal(mapFitBounds([mapFeatures[0]]),null);
+assert.equal(mapViewport({getCenter:()=>({lng:6,lat:45}),getZoom:()=>8}).zoom,8);
+assert.equal(mapViewport({getCenter:()=>({lng:NaN,lat:45}),getZoom:()=>8}),null);
+
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 const explorePresentation=readFileSync("src/find/explore-presentation.js","utf8");
@@ -123,6 +149,10 @@ assert.match(browserSource,/navigate\?\.\("home"\)/);
 assert.doesNotMatch(browserSource,/Église Saint-Test|Sydney Apostolate/,"Find browser owner hardcodes fixture locations");
 assert.match(browserSource,/var\(--ao-z-surface,2147481800\)/,"Explore root is not on the shared elevation vocabulary");
 assert.match(explorePresentation,/ao-ui-back/,"Explore Back control is not using the canonical utility icon");
+assert.match(explorePresentation,/aoMapLegend/,"TLM map provider legend not wired");
+assert.match(browserSource,/initialViewport:lastMapLens===state.lens/,"Map loses viewport when a point opens");
+assert.ok(browserSource.includes("aoMapLegend>span[data-group"),"Map visual legend styling missing");
+
 assert.match(explorePresentation,/ao-ui-close/,"Explore Close control is not using the canonical utility icon");
 assert.match(explorePresentation,/data-find-glossary/,"Explore header lost contextual glossary action");
 assert.match(browserSource,/function glossaryTerms\(\)/,"Explore lost lens-aware glossary mapping");

@@ -277,6 +277,15 @@ export function renderExploreToString(vm){
           ?L(vm.language,"These records have canonical addresses, but no publishable coordinates yet. Use List for full access.","Ces fiches ont des adresses canoniques, mais pas encore de coordonnées publiables. Utilisez Liste pour tout consulter.")
           :L(vm.language,"No publishable map points in this lens yet.","Aucun point cartographique publiable dans ce volet pour le moment.")
     )+'</span></div></div>';
+    if(vm.lens==="tlm"&&vm.mapped){
+      html+='<div class="aoMapLegend" role="note" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'">'
+        +'<span class="aoMapLegendLabel">'+esc(L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
+        +'<span data-group="FSSP">FSSP</span><span data-group="ICKSP">ICKSP</span>'
+        +'<span data-group="SSPX">SSPX</span><span data-group="DIOCESAN">'+esc(L(vm.language,"Diocesan","Diocésain"))+'</span>'
+        +'<span data-group="OTHER">'+esc(L(vm.language,"Other","Autre"))+'</span>'
+        +'<small>'+esc(L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
+        +'</div>';
+    }
   }else if(vm.items.length){
     html+='<div class="aoFindList">'+vm.items.map(item=>itemCard(item,vm)).join("")+'</div>';
   }else html+=emptyState(vm);
