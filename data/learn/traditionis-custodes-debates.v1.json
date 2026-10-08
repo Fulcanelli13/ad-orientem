@@ -96,10 +96,22 @@
       "type": "ECUMENICAL_COUNCIL"
     },
     {
-      "id": "AP25",
-      "title": "Associated Press, leaked survey and Vatican response (July 2025)",
-      "url": "https://apnews.com/article/5c15ea6c49b255a7d98cde9276a46acd",
-      "type": "INDEPENDENT_REPORT_OF_DISPUTE"
+      "id": "MONT25",
+      "title": "Diane Montagna, published 2020 CDF survey assessment excerpts (1 July 2025)",
+      "url": "https://dianemontagna.substack.com/p/exclusive-official-vatican-report",
+      "type": "JOURNALIST_RELEASE_OF_DISPUTED_PARTIAL_DOCUMENTS"
+    },
+    {
+      "id": "BRUNI25",
+      "title": "Vatican News, spokesman Matteo Bruni on Traditionis custodes survey leak (3 July 2025)",
+      "url": "https://www.vaticannews.va/it/vaticano/news/2025-07/ecologia-integrale-papa-celebrazione-formulario-culto-divino.html",
+      "type": "VATICAN_NEWS_OFFICIAL_RESPONSE"
+    },
+    {
+      "id": "AP25_REPRINT",
+      "title": "Nicole Winfield, Associated Press (2 July 2025), syndicated by Crux",
+      "url": "https://cruxnow.com/vatican/2025/07/debate-over-latin-mass-heats-up-after-apparent-leak-of-vatican-documents-that-undermine-pope-francis",
+      "type": "INDEPENDENT_REPORT_SYNDICATED"
     }
   ],
   "debates": [
@@ -178,23 +190,26 @@
         {
           "role": "identified_objection",
           "text": {
-            "en": "Excerpts presented publicly in July 2025 as internal Vatican assessments suggested that many responding bishops considered Summorum Pontificum fruitful and feared that restriction would cause more harm than good. The excerpts are evidence of a contested reading of the consultation, not the complete underlying returns.",
-            "fr": "Des extraits présentés en juillet 2025 comme des évaluations internes du Vatican suggèrent que de nombreux évêques répondants appréciaient Summorum Pontificum et redoutaient qu’une restriction fasse plus de mal que de bien. Ces extraits éclairent un désaccord sur la consultation, mais n’en constituent pas le dossier complet."
+            "en": "In July 2025 Diane Montagna published excerpts that she identified as the CDF assessment of bishops responses to the 2020 survey. Those excerpts appeared to show broad episcopal satisfaction with Summorum Pontificum and concern that renewed restrictions would cause harm. They were not the full underlying set of episcopal responses, and their provenance and interpretation require careful attribution.",
+            "fr": "En juillet 2025, Diane Montagna a publié des extraits qu’elle identifiait comme l’évaluation par la CDF des réponses épiscopales à la consultation de 2020. Ces extraits semblaient montrer une large satisfaction des évêques à l’égard de Summorum Pontificum et la crainte que de nouvelles restrictions ne causent des dommages. Ils ne constituent pas l’ensemble des réponses épiscopales, et il faut distinguer soigneusement leur provenance de l’interprétation qui en est donnée."
           },
           "source_ids": [
-            "AP25",
-            "SP07"
+            "AP25_REPRINT",
+            "SP07",
+            "MONT25"
           ]
         },
         {
           "role": "assessment",
           "text": {
-            "en": "Vatican spokesman Matteo Bruni said the leaked documents offered a partial reconstruction and that other confidential reports and consultations informed the decision. The publicly available record therefore supports serious questions about the claimed episcopal consensus, not proof of the complete deliberation or the Pope's subjective intentions.",
-            "fr": "Le porte-parole Matteo Bruni a indiqué que les documents divulgués offraient une reconstitution partielle et que d’autres rapports et consultations confidentiels avaient été considérés. Les documents publics permettent donc d’interroger un prétendu consensus épiscopal, non de démontrer l’intégralité des délibérations ni les intentions subjectives du pape."
+            "en": "Vatican spokesman Matteo Bruni said the released texts gave only a very partial and incomplete reconstruction: further confidential reports and other consultations had also been considered. The disclosed record accordingly warrants questions about claims of an episcopal majority requesting restrictions, but does not establish what all respondents said, the full advice Francis received or his personal intentions.",
+            "fr": "Le porte-parole du Vatican Matteo Bruni a déclaré que les textes publiés ne livraient qu’une reconstitution très partielle et incomplète : d’autres rapports confidentiels et d’autres consultations avaient également été pris en considération. Les documents rendus publics permettent donc d’interroger l’idée d’une majorité épiscopale favorable aux restrictions, sans établir ce qu’ont dit tous les répondants, l’ensemble des avis reçus par François ni ses intentions personnelles."
           },
           "source_ids": [
-            "AP25",
-            "TCL21"
+            "AP25_REPRINT",
+            "TCL21",
+            "BRUNI25",
+            "MONT25"
           ]
         }
       ]
@@ -607,5 +622,12 @@
       "CR-AUT-03"
     ],
     "related_but_not_canonical": "Mass Formation/TLM objections browsing list may link to these cases; Authority and Ecclesiological Crisis render the canonical substantive dossiers."
+  },
+  "audit_20261008": {
+    "verified_case": "TLM067",
+    "sources": "Direct journalist release; direct Vatican spokesman statement; syndicated AP report",
+    "limitation": "Published excerpts and confidential material not publicly available do not comprise full consultation record.",
+    "human_theological_approval": false,
+    "publication_gate": "UNPUBLISHED_EDITORIAL_DRAFT"
   }
 }

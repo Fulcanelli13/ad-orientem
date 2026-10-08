@@ -373,6 +373,16 @@ function maybeOpenFormationResearchPreview(win){
   }).catch(error=>{try{win?.console?.error?.("Formation research preview unavailable",error);}catch{}});
 }
 
+function maybeOpenFormationRecoveryReview(win){
+  // Explicit QA URL gate. Not a Formation module and not an authentication boundary.
+  if(!String(win?.location?.search||"").includes("aoFormationRecoveryReview=1"))return;
+  void import("./formation-recovery-review.js").then(mod=>{
+    const review=mod.installFormationRecoveryReview(win);
+    if(win?.document?.body)void review.open();
+    else win?.document?.addEventListener?.("DOMContentLoaded",()=>void review.open(),{once:true});
+  }).catch(error=>{try{win?.console?.error?.("Formation recovery review unavailable",error);}catch{}});
+}
+
 export function installLearnBrowserOwner(win=globalThis){
   if(win?.AO_LEARN_APP_V1)return win.AO_LEARN_APP_V1;
   installTraditionalLearnModules(win);
@@ -384,6 +394,7 @@ export function installLearnBrowserOwner(win=globalThis){
   const api=createLearnOwner(win);
   win.AO_LEARN_APP_V1=api;
   maybeOpenFormationResearchPreview(win);
+  maybeOpenFormationRecoveryReview(win);
   return api;
 }
 

@@ -9,7 +9,7 @@ import {
   SEXUAL_ETHICS_VERSION,
 } from "./sexual-ethics-data/index.js";
 import { CSE_RELATED_TARGETS, CSE_SOT_MATRIX, relatedTargetsFor } from "./sexual-ethics-data/sot.js";
-import { paragraphRefsFor } from "./sexual-ethics-data/provenance.js";
+import { paragraphRefsFor, CSE_MISCONCEPTION_REBUTTAL_IDS } from "./sexual-ethics-data/provenance.js";
 import { CSE_CANONICAL_FAMILIES, CSE_CANONICAL_DOSSIERS, CSE_CANONICAL_DOSSIER_MAP, CSE_QUESTION_OWNER_MAP } from "./sexual-ethics-data/canonical.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
@@ -92,8 +92,10 @@ function paragraphSourceLinks(win,item,kind,field=null){
   const refs=paragraphRefsFor(item,kind,field);
   if(!refs.length)return "";
   const positionSide=(kind==="question"&&item?.depth==="DEBATE")||(kind==="debate"&&["opposition","appeal","counter"].includes(field));
+  const rebuttalMisconception=CSE_MISCONCEPTION_REBUTTAL_IDS.includes(item?.id)&&positionSide;
   const label=kind==="question"
     ?L(win,"Question source:","Source de la question :")
+    :rebuttalMisconception?L(win,"Evidence rebutting this misconception (not proponents):","Preuves réfutant cette idée fausse (et non ses défenseurs) :")
     :positionSide?L(win,"Opposing-position references:","Références de la position adverse :"):L(win,"Sources:","Sources :");
   const links=refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";

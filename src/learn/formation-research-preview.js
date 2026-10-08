@@ -1,10 +1,13 @@
 import { FORMATION_RESEARCH_PREVIEW_DATA as DATA } from "./formation-research-preview-data.js";
+import { TRADITIONAL_MASS_RESEARCH_PREVIEW_DATA as TLM } from "./traditional-mass-research-preview-data.js";
 
 export const FORMATION_RESEARCH_PREVIEW_ROOT="ao-formation-research-preview";
 export const FORMATION_RESEARCH_PREVIEW_VERSION="FORMATION_RESEARCH_PREVIEW_V1";
 const answerMap=new Map(DATA.answers.map(x=>[x.question_id,x]));
 const debateMap=new Map(DATA.debates.map(x=>[x.id,x]));
+const allQuestions=[...DATA.questions,...TLM.questions];
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const inline=x=>esc(x).replace(/\*\*([^*\n]+)\*\*/g,"<strong>$1</strong>").replace(/\*([^*\n]+)\*/g,"<em>$1</em>");
 const fr=win=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||win?.document?.documentElement?.lang==="fr";
 const L=(win,en,french)=>fr(win)?french:en;
 const body=(win,p)=>fr(win)?p?.text_fr||p?.text||"":p?.text||"";
@@ -29,13 +32,14 @@ const CSS=`
 export function createFormationResearchPreview(win=globalThis){
   const state={view:"list",questionId:null,debateId:null,query:"",scope:"all",open:false,touch:null};
   const root=()=>win?.document?.getElementById?.(FORMATION_RESEARCH_PREVIEW_ROOT)||null;
-  const chosen=()=>DATA.questions.find(x=>x.id===state.questionId)||null;
+  const chosen=()=>allQuestions.find(x=>x.id===state.questionId)||null;
+  const series=()=>state.questionId?.startsWith("TLM")?TLM.questions:DATA.questions;
   const title=q=>fr(win)?q?.title_fr:q?.title_en;
   function links(ids,group){
-    const set=DATA.sourceSets[group]||{};
+    const set=DATA.sourceSets[group]||TLM.source_sets[group]||{};
     return `<nav class="aoFRSources" aria-label="Sources">${[...new Set(ids||[])].map(id=>{const s=set[id];return s?.url?.startsWith("https://")?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="${esc(s.title)}">${esc(s.title)}</a>`:""}).join("")}</nav>`;
   }
-  const para=(p,kind)=>!p?"":`<p>${esc(body(win,p))}</p>${links(p.source_ids,kind)}`;
+  const para=(p,kind)=>!p?"":`<p>${inline(body(win,p))}</p>${links(p.source_ids,kind)}`;
   const paragraphs=(ps,kind)=>(ps||[]).map(p=>para(p,kind)).join("");
   function argumentsView(items,kind){
     if(!items?.length)return "";
@@ -44,10 +48,35 @@ export function createFormationResearchPreview(win=globalThis){
     ${para(x.argument||x.objection,kind)}<div class="aoFRLead">${esc(L(win,"Reply","Réponse"))}</div>${para(x.response,kind)}</div>`).join("");
   }
   function answerView(){
+    if(chosen()?.id?.startsWith("TLM"))return traditionalMassView(chosen());
     const a=answerMap.get(state.questionId);
     if(!a)return "";
     return `${paragraphs(a.answer_paragraphs,"biblical")}${argumentsView(a.objections,"biblical")}
     <h2>${esc(L(win,"Traditional Catholic argument","Argument catholique traditionnel"))}</h2>${para(a.traditional_argument,"biblical")}`;
+  }
+  function traditionalMassView(q){
+    if(!q)return "";
+    const labels={
+      substantive:["Explanation & assessment","Explication et examen"],
+      answer:["Answer","Réponse"],
+      identified_objection:["Documented objection","Objection documentée"],
+      critical_assessment:["Critical assessment","Examen critique"],
+      assessment:["Assessment","Appréciation"],
+      editorial_followup_question:["Editorial follow-up — not a quotation","Question éditoriale — non citée"],
+      documented_reform_rationale:["Documented reform rationale","Justification documentée de la réforme"],
+    };
+    const paragraphs=q.paragraphs.map(p=>{
+      const label=labels[p.role]||["Source-linked research","Recherche sourcée"];
+      const notice=p.role==="editorial_followup_question"
+        ? `<p class="aoFRMeta">${esc(L(win,"This is an internal follow-up question, not an objection attributed to an external author. Source links provide topic context only.","Cette question interne n’est attribuée à aucun auteur extérieur. Les liens indiquent seulement le contexte documentaire."))}</p>`
+        : "";
+      return `<section class="aoFRPart"><div class="aoFRLead">${esc(L(win,...label))}</div><p>${inline(body(win,p))}</p>${notice}${links(p.source_ids,q.source_group)}</section>`;
+    }).join("");
+    const note=q.editorial_stage?.includes("NORMALIZED")
+      ? L(win,"Normalized research summary, not a verbatim recovery of the earlier draft.","Synthèse de recherche, non reproduction intégrale de la version antérieure.")
+      : L(win,"Source-linked bilingual research draft. Final source and theological approval pending.","Projet bilingue sourcé. Validation finale des sources et de la théologie à effectuer.");
+    const gate=q.publication_ready===false?`<div class="aoFRMeta">${esc(L(win,"Unapproved research · Do not publish","Recherche non approuvée · Ne pas publier"))}</div>`:"";
+    return `<div class="aoFRNotice">${esc(note)}</div>${gate}${paragraphs}`;
   }
   function debateView(){
     const d=debateMap.get(state.debateId);if(!d)return "";
@@ -59,7 +88,14 @@ export function createFormationResearchPreview(win=globalThis){
     <h2>${esc(L(win,"Traditional Catholic argument","Argument catholique traditionnel"))}</h2>${paragraphs(d.traditional_argument,"sedevacantism")}`;
   }
   function available(){
-    return DATA.questions.filter(q=>(state.scope==="all"||(state.scope==="apol"?q.owner.startsWith("APOL-"):q.owner.startsWith("CR-")))&&[q.id,q.domain,q.owner,q.title_en,q.title_fr].some(x=>String(x||"").toLowerCase().includes(state.query.toLowerCase())));
+    return allQuestions.filter(q=>{
+      const inScope=state.scope==="all"
+        ||(state.scope==="apol"&&q.owner.startsWith("APOL-")&&!q.id.startsWith("TLM"))
+        ||(state.scope==="crisis"&&q.owner.startsWith("CR-")&&!q.id.startsWith("TLM"))
+        ||(state.scope==="tlm"&&q.id.startsWith("TLM"));
+      return inScope&&[q.id,q.domain,q.owner,q.title_en,q.title_fr,q.id.startsWith("TLM")?"Traditional Mass":""].
+        some(x=>String(x||"").toLowerCase().includes(state.query.toLowerCase()));
+    });
   }
   function listItems(){
     return available().map(q=>`<button type="button" data-ao-fr-question="${esc(q.id)}"><small>${esc(q.id)} · ${esc(q.owner)}</small>${esc(title(q))}</button>`).join("")||`<p>${esc(L(win,"No matching questions.","Aucune question trouvée."))}</p>`;
@@ -69,13 +105,13 @@ export function createFormationResearchPreview(win=globalThis){
     <h1>${esc(L(win,"Apologetics & Church Crisis","Apologétique et crise de l’Église"))}</h1>
     <div class="aoFRNotice">${esc(L(win,"Research drafts only: source and theological approval pending. This material is not published.","Projets de recherche : les sources et la théologie restent à valider. Ces textes ne sont pas publiés."))}</div>
     <div class="aoFRSelect" role="group">
-    ${[["all","All","Toutes"],["apol","Apologetics","Apologétique"],["crisis","Church Crisis","Crise de l’Église"]].map(z=>`<button type="button" data-ao-fr-scope="${z[0]}" aria-pressed="${state.scope===z[0]}">${esc(L(win,z[1],z[2]))}</button>`).join("")}</div>
+    ${[["all","All","Toutes"],["apol","Apologetics","Apologétique"],["crisis","Church Crisis","Crise de l’Église"],["tlm","Traditional Mass","Messe traditionnelle"]].map(z=>`<button type="button" data-ao-fr-scope="${z[0]}" aria-pressed="${state.scope===z[0]}">${esc(L(win,z[1],z[2]))}</button>`).join("")}</div>
     <input type="search" class="aoFRSearch" data-ao-fr-search aria-label="${esc(L(win,"Search","Rechercher"))}" placeholder="${esc(L(win,"Find a question","Rechercher une question"))}" value="${esc(state.query)}">
     <div class="aoFRList" data-ao-fr-results>${listItems()}</div>`;
   }
   function questionView(){
     const q=chosen();if(!q)return listView();
-    const i=DATA.questions.findIndex(x=>x.id===q.id),prev=i>0,next=i<DATA.questions.length-1;
+    const currentSeries=series(),i=currentSeries.findIndex(x=>x.id===q.id),prev=i>0,next=i<currentSeries.length-1;
     return `<div class="aoFRMeta">${esc(q.id)} · ${esc(q.owner)}</div><h1>${esc(title(q))}</h1>
     <div class="aoFRNotice">${esc(L(win,"Unpublished editorial draft","Projet éditorial non publié"))}</div>${answerView()}
     ${q.debate_ids?.length?`<h2>${esc(L(win,"Complete debates","Débats complets"))}</h2><div class="aoFRSub">${q.debate_ids.map(id=>{const d=debateMap.get(id);return d?`<button type="button" data-ao-fr-debate="${esc(id)}">${esc(fr(win)?d.title_fr:d.title)}</button>`:""}).join("")}</div>`:""}
@@ -112,12 +148,12 @@ export function createFormationResearchPreview(win=globalThis){
     el.hidden=false;return true;
   }
   function open(){if(!ensure())return false;state.open=true;return paint();}
-  function openQuestion(id){if(!DATA.questions.some(x=>x.id===id))return false;state.questionId=id;state.debateId=null;state.view="question";paint();root()?.scrollTo?.(0,0);return true;}
+  function openQuestion(id){if(!allQuestions.some(x=>x.id===id))return false;state.questionId=id;state.debateId=null;state.view="question";paint();root()?.scrollTo?.(0,0);return true;}
   function openDebate(id){if(!chosen()?.debate_ids?.includes(id)||!debateMap.has(id))return false;state.debateId=id;state.view="debate";paint();root()?.scrollTo?.(0,0);return true;}
-  function move(delta){const n=DATA.questions.findIndex(x=>x.id===state.questionId)+delta;return DATA.questions[n]?openQuestion(DATA.questions[n].id):false;}
+  function move(delta){const questions=series(),n=questions.findIndex(x=>x.id===state.questionId)+delta;return questions[n]?openQuestion(questions[n].id):false;}
   function back(){if(state.view==="debate"){state.view="question";state.debateId=null;paint();return true;}if(state.view==="question"){state.view="list";state.questionId=null;paint();return true;}return close(true);}
   function close(toLearn=false){const el=root();try{el?.querySelector?.(":focus")?.blur?.();}catch{}el?.remove?.();state.open=false;state.view="list";state.questionId=null;state.debateId=null;if(toLearn)win?.AO_LEARN_APP_V1?.open?.();return true;}
-  function status(){return Object.freeze({version:FORMATION_RESEARCH_PREVIEW_VERSION,open:state.open,view:state.view,questions:DATA.questions.length,answered:answerMap.size,debates:debateMap.size,published:false});}
+  function status(){return Object.freeze({version:FORMATION_RESEARCH_PREVIEW_VERSION,open:state.open,view:state.view,questions:allQuestions.length,traditionalMassQuestions:TLM.questions.length,approvedTraditionalMassQuestions:0,answered:answerMap.size,debates:debateMap.size,published:false});}
   return Object.freeze({open,openQuestion,openDebate,back,close,paint,status});
 }
 export function installFormationResearchPreview(win=globalThis){
