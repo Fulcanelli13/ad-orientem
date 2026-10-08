@@ -1,6 +1,6 @@
 {
   "version": "TLM_OBJECTIONS_051_065_RECONCILED_V1",
-  "status": "BILINGUAL_30_PARAGRAPHS_DRAFT_SOURCE_REVIEW_PENDING_NOT_PUBLISHED",
+  "status": "BILINGUAL_COMPLETE_EDITORIAL_PROVENANCE_RECONCILED_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_transformation_notice": "This pack preserves all 15 earlier titles and principal claims, but the substantive passages were normalized/rephrased from chat draft, not exact verbatim migration. Consult previous in-chat TLM051–065 for complete draft language.",
@@ -96,7 +96,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -109,7 +109,7 @@
           "text_fr": "*Sacrosanctum Concilium* a demandé une révision de la liturgie romaine, mais n’a pas lui-même promulgué l’Ordo Missae complet introduit sous Paul VI. Ses principes portaient notamment sur la simplification, l’Écriture sainte, la participation des fidèles et la sauvegarde de la saine tradition."
         },
         {
-          "role": "identified_reply",
+          "role": "critical_assessment",
           "text": "The reform was carried out under papal authority through postconciliar organs; it was not an independent act of priests or consultors. That juridical fact does not eliminate the historical question of whether every concrete decision met the Council's criteria, notably its requirement of organic development.",
           "source_ids": [
             "SA64",
@@ -120,7 +120,14 @@
           "text_fr": "La réforme fut menée sous l’autorité du pape, par l’intermédiaire d’organismes postconciliaires ; elle ne fut donc pas l’initiative indépendante de prêtres ou de consulteurs. Ce fait juridique n’élimine pas la question historique de savoir si chaque décision concrète répondait aux critères du Concile, en particulier à l’exigence d’un développement organique."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "SC63",
+        "MR69",
+        "SA64"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM052",
@@ -132,7 +139,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -145,7 +152,7 @@
           "text_fr": "Paul VI présenta lui-même les modifications comme importantes : le missel postconciliaire introduisit plusieurs prières eucharistiques, un Ordo Missae réorganisé et un lectionnaire considérablement élargi. Décrire ce processus comme une simple réduction de la complexité cérémonielle en minimise la portée."
         },
         {
-          "role": "identified_reply",
+          "role": "critical_assessment",
           "text": "Sacrosanctum Concilium positively required some simplification and restoration. Criticism therefore concerns which changes were necessary and organic, rather than an argument that no liturgical revision can be legitimate.",
           "source_ids": [
             "SC63",
@@ -155,7 +162,14 @@
           "text_fr": "*Sacrosanctum Concilium* demandait effectivement certaines simplifications et restaurations. La critique porte donc sur les transformations qui étaient nécessaires et organiques, non sur l’idée que toute révision liturgique serait illégitime."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "AUD19",
+        "MR69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM053",
@@ -165,7 +179,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -189,7 +203,15 @@
           "text_fr": "La succession chronologique de révisions officielles établit une continuité institutionnelle, mais ne démontre pas à elle seule que chaque modification constituait un développement liturgique organique. Un tel jugement doit s’appuyer sur les critères énoncés par le Concile."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "IO64",
+        "TA67",
+        "CHIRON",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM054",
@@ -199,7 +221,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -221,7 +243,13 @@
           "text_fr": "Les procédures suivies, le choix des experts et la rapidité de certaines étapes de rédaction peuvent légitimement être critiqués. Il convient toutefois d’appuyer ces critiques sur des documents, et non sur l’idée d’un auteur unique auquel tout serait imputable."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "MR69"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM055",
@@ -231,7 +259,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -255,7 +283,14 @@
           "text_fr": "L’approbation personnelle du pape engage sa responsabilité dans la réforme légalement promulguée ; elle doit cependant être distinguée des innovations non autorisées apparues dans certaines célébrations ultérieures. Les éléments disponibles ne permettent pas de présenter Paul VI comme un simple signataire passif."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "MR69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM056",
@@ -265,7 +300,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -287,7 +322,13 @@
           "text_fr": "Le vote de 1967 portait sur une forme expérimentale et non sur l’édition typique définitive. Il révèle des réserves importantes, mais ne constitue pas un jugement canonique final sur le missel promulgué."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "OTT69"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM057",
@@ -297,7 +338,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -320,7 +361,14 @@
           "text_fr": "Une critique formulée contre une version provisoire doit préciser ce qui fut conservé dans le texte définitif. Inversement, les révisions ultérieures n’effacent pas l’importance historique des réserves épiscopales précédentes."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "MR69",
+        "GIM70"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM058",
@@ -332,7 +380,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "identified_objection",
@@ -355,7 +403,15 @@
           "text_fr": "L’introduction générale initiale fut ensuite complétée et corrigée, tandis que la constitution apostolique de Paul VI parlait déjà du sacrifice eucharistique. Le caractère doctrinalement incomplet d’une phrase explicative ne démontre pas, à lui seul, que le rite promulgué rejette la doctrine eucharistique catholique."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "OTT69",
+        "GIM70",
+        "MR69",
+        "CHIRON"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM059",
@@ -367,7 +423,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "identified_objection",
@@ -390,7 +446,15 @@
           "text_fr": "Soutenir qu’un rite exprime moins clairement la doctrine du sacrifice ne revient pas automatiquement à démontrer son invalidité ou une hérésie formelle. Les corrections ultérieures et le langage sacrificiel expressément présent dans la réforme doivent aussi entrer dans l’examen."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "OTT69",
+        "MR69",
+        "GIM70",
+        "CHIRON"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM060",
@@ -400,7 +464,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -413,7 +477,7 @@
           "text_fr": "La Présentation générale du Missel romain fut modifiée en 1970, notamment par l’ajout d’un préambule doctrinal explicite et par la clarification du langage eucharistique, après la controverse suscitée par la première édition."
         },
         {
-          "role": "identified_reply",
+          "role": "critical_assessment",
           "text": "These explanatory revisions did not reverse the core new arrangement of the Offertory, additional Eucharistic Prayers and other ritual changes. A critic may still object to those structural decisions without denying that corrections occurred.",
           "source_ids": [
             "MR69",
@@ -423,7 +487,14 @@
           "text_fr": "Ces corrections explicatives ne rétablirent pas pour autant l’ancien agencement de l’offertoire, le Canon romain comme unique prière eucharistique ni les autres structures rituelles antérieures. On peut critiquer ces choix tout en reconnaissant que des corrections ont eu lieu."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "GIM70",
+        "CHIRON",
+        "MR69"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM061",
@@ -433,7 +504,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -454,7 +525,12 @@
           "text_fr": "Le Concile autorisa donc un emploi accru des langues vernaculaires sous la responsabilité de l’autorité ecclésiastique compétente. Mais la disparition presque complète du latin dans certaines pratiques locales ne saurait être présentée comme une prescription explicite du Concile."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM062",
@@ -464,7 +540,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -486,7 +562,13 @@
           "text_fr": "Son explication confirme qu’il reconnaissait la valeur du patrimoine linguistique et musical hérité. La proportionnalité de ce sacrifice demeure une question historique et pastorale : il ne faut effacer ni la perte reconnue ni les bénéfices espérés."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "AUD26",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM063",
@@ -496,7 +578,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -518,7 +600,13 @@
           "text_fr": "Le missel réformé peut être célébré en latin avec chant. Si le chant grégorien est devenu presque absent de certaines paroisses, cela concerne la pratique liturgique, la formation et les moyens musicaux disponibles, non une interdiction générale dans les livres réformés."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "SC63",
+        "GIRM"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM064",
@@ -530,7 +618,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -552,7 +640,13 @@
           "text_fr": "La manière dont cette discipline s’est introduite est une question historique légitime. Là où l’autorisation a été régulièrement accordée, on ne peut simplement qualifier cette pratique d’illicite ; les préoccupations relatives à la révérence eucharistique doivent être examinées à la lumière de l’instruction elle-même."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "MEM69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM065",
@@ -562,7 +656,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -584,7 +678,13 @@
           "text_fr": "Le calendrier façonne la mémoire dévotionnelle, et chaque déplacement ou suppression de fête peut être discuté sur le fondement de son histoire. Cependant, ces modifications ne démontrent pas, à elles seules, une intention d’attaquer le culte des saints. Des papes antérieurs avaient eux aussi révisé des fêtes, vigiles et octaves."
         }
       ],
-      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW"
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "MP69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     }
   ],
   "counts": {
@@ -598,5 +698,17 @@
     "questions_with_complete_paragraphs_fr_draft": 15,
     "question_paragraph_count_expected": 30,
     "human_review_completed": false
+  },
+  "editorial_provenance": {
+    "date": "2026-10-08",
+    "titles": 15,
+    "all_titles_identified_as_editorial": true,
+    "all_30_paragraphs_source_linked_not_final_fact_checked": true,
+    "removed_unsupported_identified_reply_roles": 3,
+    "actual_named_objection_examples": [
+      "TLM058 Short Critical Study",
+      "TLM059 Ottaviani-Bacci Intervention"
+    ],
+    "no_new_navigation_dossiers": true
   }
 }
