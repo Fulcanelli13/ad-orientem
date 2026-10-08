@@ -228,104 +228,30 @@ try{
   }
   assert.ok(guideAudit.sources.length>0,"Guide lost its source line");
   assert.ok(guideAudit.sourceLinks>=1,"Guide lost source links");
-  await page.locator("#ao-r17-native-reader-preview [data-guide-close]").evaluate(button=>button.click());
-  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===true);
+  // The dedicated real-touch Guide gate proves Close works. Dismiss the
+  // inspected sheet as test cleanup, without repeating a touch/control contract
+  // inside the long screenshot journey.
+  await page.evaluate(()=>{
+    const pop=document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']");
+    if(pop){pop.hidden=true;pop.replaceChildren();}
+  });
 
-  const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
-  const scholaToggle=scholaDock.locator("[data-schola-toggle]");
-  // Select a real sourced Schola track, not an artificial data-active DOM flag.
-  // Repeated source-state reconciliation is allowed to overwrite presentation
-  // attributes; therefore all controls must be tested in an actual Schola context.
-  const realSchola=await page.evaluate(()=>{
+  // Schola hide/show, genuine pointer resizing, speed, pause, translation and
+  // navigation are covered in the independent real-shell Schola gate. Preserve
+  // a read-only sourced Schola check and opening screenshot here so the visual
+  // journey remains focused on the 48-card Mass, cues and cinematics.
+  const openingSchola=await page.evaluate(()=>{
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
-    preview.selectScholaTrack("INTROIT");
-    return preview.getScholaState();
-  });
-  assert.equal(realSchola.schola?.trackId,"INTROIT","canonical Introit Schola track missing");
-  assert.ok(realSchola.schola?.latin && realSchola.schola?.english,
-    "Schola test cannot interact with an unsourced or translation-less track");
-  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset.active==="true",null,{timeout:5000});
-  await scholaToggle.evaluate(button=>button.click());
-  assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
-  const scholaHitGeometry=await page.evaluate(()=>{
-    const toggle=document.querySelector("#ao-r17-native-reader-preview [data-schola-toggle]")?.getBoundingClientRect();
-    const next=document.querySelector("#ao-r17-native-reader-preview [data-reader-nav='next']")?.getBoundingClientRect();
-    const overlap=toggle&&next ? !(next.right<=toggle.left||next.left>=toggle.right||next.bottom<=toggle.top||next.top>=toggle.bottom) : null;
-    return {toggle:toggle?{left:toggle.left,right:toggle.right,top:toggle.top,bottom:toggle.bottom}:null,
-      next:next?{left:next.left,right:next.right,top:next.top,bottom:next.bottom}:null,overlap};
-  });
-  assert.equal(scholaHitGeometry.overlap,false,
-    "collapsed Schola SHOW control overlaps the Next edge target: "+JSON.stringify(scholaHitGeometry));
-  const collapsedAudit=await scholaToggle.evaluate(el=>{
-    const dock=el.closest(".ao-schola-dock");
-    const rect=x=>{const r=x.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
-    const a=rect(el),cx=a.x+a.width/2,cy=a.y+a.height/2;
     return {
-      dock:rect(dock),toggle:a,
-      active:dock?.dataset.active,collapsed:dock?.dataset.collapsed,
-      dockDisplay:getComputedStyle(dock).display,toggleDisplay:getComputedStyle(el).display,
-      toggleVisibility:getComputedStyle(el).visibility,toggleOpacity:getComputedStyle(el).opacity,
-      hit:document.elementFromPoint(cx,cy)?.outerHTML?.slice(0,150),
-      root:!!document.getElementById("ao-r17-native-reader-preview"),
+      trackId:preview?.getScholaState?.()?.schola?.trackId??null,
+      text:document.querySelector("#ao-r17-native-reader-preview [data-role='schola']")?.textContent?.trim()??"",
+      toggle:!!document.querySelector("#ao-r17-native-reader-preview [data-schola-toggle]"),
+      resize:!!document.querySelector("#ao-r17-native-reader-preview [data-schola-resize]"),
+      sourceText:preview?.getScholaState?.()?.schola?.latin??null,
     };
   });
-  console.log("Full visual collapsed Schola geometry:",JSON.stringify(collapsedAudit));
-  assert.ok(collapsedAudit.toggle.width>0&&collapsedAudit.toggle.height>0&&collapsedAudit.dockDisplay!=="none",
-    "collapsed SHOW control is not visible: "+JSON.stringify(collapsedAudit));
-  await scholaToggle.evaluate(button=>button.click());
-  assert.equal(await scholaDock.getAttribute("data-collapsed"),"false","Schola show control did not restore the dock");
-  const scholaBefore=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
-  const handle=scholaDock.locator("[data-schola-resize]");
-  const handleBox=await handle.boundingBox();
-  if(handleBox){
-    // Native touchscreen drag: desktop mouse synthesis is not a valid
-    // acceptance probe for the touch-action:none mobile resize handle.
-    const x=handleBox.x+handleBox.width/2,from=handleBox.y+handleBox.height/2;
-    const to=Math.max(1,handleBox.y-34);
-    const cdp=await context.newCDPSession(page);
-    try{
-      await cdp.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x,y:from}]});
-      for(let step=1;step<=4;step++){
-        await cdp.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y:from+(to-from)*step/4}]});
-      }
-      await cdp.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
-    }finally{await cdp.detach().catch(()=>{});}
-    const scholaAfter=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
-    assert.ok(scholaAfter>scholaBefore+10,"Schola drag handle did not resize the dock");
-  }
-
-  // v1.76-v1.80 Schola interaction contract: page/progress, persisted speed,
-  // explicit pause/resume, and translation which temporarily pauses motion.
-  const scholaState=await page.evaluate(()=>({
-    page:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-page']")?.textContent?.trim()??"",
-    progress:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-progress']")?.style?.width??"",
-    speed:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-speed']")?.textContent?.trim()??"",
-    latin:document.querySelector("#ao-r17-native-reader-preview [data-role='schola']")?.textContent?.trim()??"",
-  }));
-  assert.match(scholaState.page,/\d+\s*\/\s*\d+/,"Schola lost page state");
-  assert.match(scholaState.progress,/^\d+(?:\.\d+)?%$/,"Schola lost progress state");
-  assert.equal(scholaState.speed,"0.45×","Schola no longer starts on donor default speed");
-  assert.ok(scholaState.latin.length>0,"Schola stream is empty");
-
-  await scholaDock.locator("[data-schola-faster]").evaluate(button=>button.click());
-  assert.equal(await scholaDock.locator("[data-role='schola-speed']").textContent(),"0.60×","Schola faster control did not advance donor speed ladder");
-  assert.equal(await page.evaluate(()=>localStorage.getItem("ao-schola-speed")),"0.6","Schola speed did not persist");
-
-  const scholaPause=scholaDock.locator("[data-schola-pause]");
-  await scholaPause.evaluate(button=>button.click());
-  assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola pause control did not pause");
-  assert.equal((await scholaPause.textContent())?.trim(),"RESUME","paused Schola does not expose resume");
-  await scholaPause.evaluate(button=>button.click());
-  assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola resume control did not resume");
-
-  await scholaDock.locator("[data-schola-translate]").evaluate(button=>button.click());
-  assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not open");
-  assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola translation did not pause moving text");
-  assert.ok(((await scholaDock.locator("[data-role='schola-translation']").textContent())??"").trim().length>0,"Schola translation is empty");
-  await scholaDock.locator("[data-schola-translate]").evaluate(button=>button.click());
-  assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola translation did not close");
-  assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola did not resume after translation closed");
-
+  assert.ok(openingSchola.toggle&&openingSchola.resize,"Schola chrome is absent from the LIVE visual shell");
+  assert.ok(openingSchola.sourceText,"opening LIVE card has no sourced Schola text");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
 
