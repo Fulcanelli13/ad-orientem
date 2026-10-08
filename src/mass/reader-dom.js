@@ -875,6 +875,7 @@ export function createReaderDomAdapter({
   let scholaPausedBeforeTranslation=false;
   let scholaAnimation=null;
   let scholaProgressRaf=0;
+  let scholaProgressLastPaint=0;
   let scholaFallbackTimer=0;
   let scholaTickerIdentity=null;
   let suppressNavClickUntil=0;
@@ -986,6 +987,7 @@ export function createReaderDomAdapter({
       try{win?.cancelAnimationFrame?.(scholaProgressRaf)}catch{}
       scholaProgressRaf=0;
     }
+    scholaProgressLastPaint=0;
     if(scholaFallbackTimer){
       try{(win?.clearTimeout??globalThis.clearTimeout)?.call?.(win,scholaFallbackTimer)}catch{clearTimeout(scholaFallbackTimer)}
       scholaFallbackTimer=0;
@@ -1004,15 +1006,24 @@ export function createReaderDomAdapter({
     }
   }
 
-  function scholaProgressLoop(){
-    const progress=root.querySelector('[data-role="schola-progress"]');
+  function scholaProgressLoop(timestamp=0){
     const win=scholaWindow();
-    if(!scholaAnimation||scholaPaused||!progress){scholaProgressRaf=0;return}
-    const duration=Math.max(1,Number(scholaAnimation.effect?.getTiming?.().duration)||1);
-    const elapsed=Math.max(0,Number(scholaAnimation.currentTime)||0);
-    progress.style.width=Math.max(0,Math.min(100,(elapsed/duration)*100))+"%";
-    if(elapsed<duration)scholaProgressRaf=win?.requestAnimationFrame?.(scholaProgressLoop)??0;
-    else scholaProgressRaf=0;
+    if(!scholaAnimation||scholaPaused){scholaProgressRaf=0;return}
+    // The moving Schola line is composited by the browser; its tiny progress
+    // indicator does not need a layout-affecting width mutation at 60 Hz.
+    // Throttle progress painting while preserving the original WAAPI timing.
+    const now=Number(timestamp)||Date.now();
+    if(!scholaProgressLastPaint||now-scholaProgressLastPaint>=100){
+      const progress=root.querySelector('[data-role="schola-progress"]');
+      if(!progress){scholaProgressRaf=0;return}
+      const duration=Math.max(1,Number(scholaAnimation.effect?.getTiming?.().duration)||1);
+      const elapsed=Math.max(0,Number(scholaAnimation.currentTime)||0);
+      const next=Math.max(0,Math.min(100,(elapsed/duration)*100))+"%";
+      if(progress.style.width!==next)progress.style.width=next;
+      scholaProgressLastPaint=now;
+      if(elapsed>=duration){scholaProgressRaf=0;return}
+    }
+    scholaProgressRaf=win?.requestAnimationFrame?.(scholaProgressLoop)??0;
   }
 
   function finishScholaTicker(identity){
