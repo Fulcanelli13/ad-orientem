@@ -23,7 +23,9 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
     const normalized = normalizeAppSurface(surface);
     if (!normalized || normalized === active) return false;
     active = normalized;
+    try{globalThis.__AO_CI_TRACE?.("controller:setActive:before-emit")}catch{}
     emit();
+    try{globalThis.__AO_CI_TRACE?.("controller:setActive:after-emit")}catch{}
     return true;
   }
 
