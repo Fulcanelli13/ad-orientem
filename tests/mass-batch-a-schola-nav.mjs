@@ -275,10 +275,18 @@ try{
   const handle=scholaDock.locator("[data-schola-resize]");
   const handleBox=await handle.boundingBox();
   if(handleBox){
-    await page.mouse.move(handleBox.x+handleBox.width/2,handleBox.y+handleBox.height/2);
-    await page.mouse.down();
-    await page.mouse.move(handleBox.x+handleBox.width/2,Math.max(1,handleBox.y-34),{steps:4});
-    await page.mouse.up();
+    // Native touchscreen drag: desktop mouse synthesis is not a valid
+    // acceptance probe for the touch-action:none mobile resize handle.
+    const x=handleBox.x+handleBox.width/2,from=handleBox.y+handleBox.height/2;
+    const to=Math.max(1,handleBox.y-34);
+    const cdp=await context.newCDPSession(page);
+    try{
+      await cdp.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x,y:from}]});
+      for(let step=1;step<=4;step++){
+        await cdp.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y:from+(to-from)*step/4}]});
+      }
+      await cdp.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+    }finally{await cdp.detach().catch(()=>{});}
     const scholaAfter=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
     assert.ok(scholaAfter>scholaBefore+10,"Schola drag handle did not resize the dock");
   }
