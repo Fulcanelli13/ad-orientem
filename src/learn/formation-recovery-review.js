@@ -31,11 +31,14 @@ const kind = k => ({
   fr_executive_summary:"French executive summary · editorial",verification_notes:"Verification notes · editorial",
   counterargument:"Counterargument"
 }[k] || String(k).replace(/_/g," "));
+export const RECOVERY_REVIEW_SECTION_KEYS = Object.freeze(["answer_paragraphs","short_answer",
+  "sedevacantist_case","positions","critical_assessment","objections","paragraphs",
+  "traditional_argument","reply","rebuttal","fr_executive_summary","verification_notes"]);
+export const RECOVERY_REVIEW_CHILD_KEYS = Object.freeze(["paragraphs","argument","objection",
+  "challenge","response","reply","rebuttal","counterargument","short_answer"]);
 const sectionsFor = (r) => {
   if(!r) return [];
-  const order = ["answer_paragraphs","short_answer","sedevacantist_case","positions",
-    "critical_assessment","objections","paragraphs","traditional_argument","reply","rebuttal",
-    "fr_executive_summary","verification_notes"];
+  const order = RECOVERY_REVIEW_SECTION_KEYS;
   return order.filter(k=>r[k] && (!Array.isArray(r[k]) || r[k].length)).map(k=>({label:kind(k),body:r[k]}));
 };
 const css = [
@@ -117,7 +120,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     if(claimText){
       html+='<p>'+esc(claimText)+'</p>'+(Array.isArray(value.source_ids)?sourceLinks(value.source_ids,map):"");
     }else if(Array.isArray(value.source_ids))html+=sourceLinks(value.source_ids,map);
-    const childFields=["paragraphs","argument","objection","challenge","response","reply","rebuttal","counterargument","short_answer"];
+    const childFields=RECOVERY_REVIEW_CHILD_KEYS;
     for(const k of childFields)if(value[k] && (Array.isArray(value[k])||typeof value[k]==="object")){
       html+='<div class="rrNode"><h3>'+esc(kind(k))+'</h3>'+renderNode(value[k],map,depth+1)+'</div>';
     }
