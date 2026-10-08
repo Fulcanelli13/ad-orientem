@@ -138,7 +138,10 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         void win?.AO_APP_SHELL_V1?.navigate?.("home");
         return;
       }
-      const family=event.target?.closest?.("[data-ao-learn-family]");
+      // Only a family-door button changes the family. The page root also carries
+      // data-ao-learn-family to identify its active family; matching that ancestor
+      // would swallow every child module click before it reaches openModule.
+      const family=event.target?.closest?.("button[data-ao-learn-family]");
       if(family){
         event.preventDefault?.();
         const id=family.dataset?.aoLearnFamily??null;
@@ -254,7 +257,6 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   }
 
   async function openModule(id,opts={}){
-    win.__AO_LEARN_GLOSS_TRACE?.push(['learn-openModule-enter',id,Date.now(),state.open,state.child]);
     if(!state.open||!MODULE_SET.has(id))return false;
     ensureTraditionalLearnRegistry(win);
     ensureLatinCourseRegistry(win);
@@ -276,7 +278,6 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.seenChild=false;
     state.openPolls=0;
     hideHub();
-    win.__AO_LEARN_GLOSS_TRACE?.push(['learn-hidden',Date.now(),state.child]);
     let result=null;
     try{
       if(id===GLOSSARY_ROUTE_ID&&typeof win?.AO_GLOSSARY_V1?.open==="function"){
@@ -295,14 +296,12 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       showHub();
       return false;
     }
-    win.__AO_LEARN_GLOSS_TRACE?.push(['learn-open-result',Date.now(),id,JSON.stringify(result),childOpen(win,id)]);
     state.seenChild=childOpen(win,id);
     monitorChild();
     return true;
   }
 
   function close(){
-    win.__AO_LEARN_GLOSS_TRACE?.push(['learn-close',Date.now(),state.child]);
     state.open=false;
     cancelMonitor();
     if(state.child)closeChild(win,state.child);
@@ -320,7 +319,6 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   }
 
   function open(){
-    win.__AO_LEARN_GLOSS_TRACE?.push(['learn-open',Date.now(),state.child]);
     const doc=win?.document;
     if(!doc?.body||!runtime(win)?.store||typeof win?.AO_MODULES?.open!=="function")return false;
     cancelMonitor();
