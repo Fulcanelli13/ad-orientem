@@ -1,7 +1,7 @@
 {
   "version": "BIBLICAL_PATRISTIC_22_ANSWERS_V1",
   "date": "2026-10-08",
-  "status": "ENGLISH_SUBSTANTIVE_DRAFT_REQUIRES_EDITORIAL_APPROVAL_NOT_PUBLISHED",
+  "status": "BILINGUAL_26_QUESTION_ANSWER_DRAFTS_EDITORIAL_APPROVAL_NOT_PUBLISHED",
   "links_to_questions": "data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
   "anti_duplication": "One canonical dossier owner for every question; existing question IDs preserved; no additional navigation dossiers",
   "source_policy": "Every answer paragraph, attributed objection, response and traditional assessment linked to a specific source in source_registry. Primary texts and own-voice proponent positions used when available; any weak verification point remains flagged.",
@@ -371,6 +371,66 @@
       "title": "St Irenaeus, Against Heresies V.33, early expectation of a renewed earthly kingdom (primary patristic translation)",
       "url": "https://www.newadvent.org/fathers/0103533.htm",
       "type": "PATRISTIC_PRIMARY_TRANSLATION"
+    },
+    {
+      "id": "SCHISM-1913",
+      "title": "Catholic Encyclopedia (1909), Western Schism — elections, rival obediences and Council of Constance",
+      "url": "https://www.newadvent.org/cathen/13539a.htm",
+      "type": "PRECONCILIAR_HISTORICAL_REFERENCE"
+    },
+    {
+      "id": "BELL-II30",
+      "title": "St Robert Bellarmine, De Romano Pontifice II.30 — Ryan Grant full chapter translation on proponent site",
+      "url": "https://novusordowatch.org/de-romano-pontifice-book2-chapter30/",
+      "type": "PRECONCILIAR_THEOLOGIAN_PRIMARY_TRANSLATION_HOSTED_BY_PARTISAN_SITE"
+    },
+    {
+      "id": "BELL-IV67",
+      "title": "St Robert Bellarmine, De Romano Pontifice IV.6–7 — Ryan Grant translation",
+      "url": "https://novusordowatch.org/de-romano-pontifice-book4-chapters6-7/",
+      "type": "PRECONCILIAR_THEOLOGIAN_PRIMARY_TRANSLATION_HOSTED_BY_PARTISAN_SITE"
+    },
+    {
+      "id": "DALY-PRIVATE",
+      "title": "John S Daly, Michael Davies: An Evaluation, chapters 2–3, reprinted on Novus Ordo Watch 21 Dec 2015",
+      "url": "https://novusordowatch.org/2015/12/sede-private-judgment/",
+      "type": "ACTUAL_SEDEVACANTIST_PRIMARY_PROPONENT"
+    },
+    {
+      "id": "SALZA-REPLY",
+      "title": "John Salza and Robert Siscoe, Bellarmine and Suárez on ecclesiastical determination",
+      "url": "https://www.trueorfalsepope.com/p/bellarmine-and-suarez-on-question-of.html",
+      "type": "ACTUAL_NONSEDEVACANTIST_PROPONENT_ORIGINAL_WEB_TEXT_RECHECK_NEEDED"
+    },
+    {
+      "id": "CIC-1404",
+      "title": "1983 Code of Canon Law, can. 1404: The First See is judged by no one",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1400-1500_en.html",
+      "type": "CURRENT_CANON_LAW_PRIMARY"
+    },
+    {
+      "id": "CIC-194",
+      "title": "1983 Code of Canon Law, can. 194 §§1–2: public defection and enforceability of loss of ecclesiastical office",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann145-196_en.html",
+      "type": "CURRENT_CANON_LAW_PRIMARY_WITH_PAPAL_APPLICATION_QUESTION_UNRESOLVED"
+    },
+    {
+      "id": "PIUS-ELECT45",
+      "title": "Pius XII, Vacantis Apostolicae Sedis (1945), nn. 1–4 and 32–36, election law historically then applicable",
+      "url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19451208_vacantis-apostolicae-sedis.html",
+      "type": "HISTORICAL_PAPAL_ELECTION_LAW_NOT_CURRENT_LAW"
+    },
+    {
+      "id": "BILLOT-29",
+      "title": "Cardinal Louis Billot, De Ecclesia Christi, thesis 29 on peaceful universal acceptance — translation on sedevacantist site",
+      "url": "https://novusordowatch.org/billot-de-ecclesia-thesis29/",
+      "type": "PRECONCILIAR_THEOLOGIAN_TRANSLATION_HOSTED_BY_PARTISAN_SITE"
+    },
+    {
+      "id": "NOW-VIS",
+      "title": "Novus Ordo Watch, Have the Gates of Hell Prevailed? — sedevacantist visibility defense",
+      "url": "https://novusordowatch.org/2015/12/have-gates-of-hell-prevailed/",
+      "type": "ACTUAL_SEDEVACANTIST_PRIMARY_PROPONENT"
     }
   ],
   "answers": [
@@ -1133,6 +1193,438 @@
       }
     },
     {
+      "question_id": "BAQ-13",
+      "canonical_owner": "CR-ECC-04",
+      "answer_paragraphs": [
+        {
+          "text": "An antipope is a person claiming the Roman pontificate in opposition to the one legitimately holding it; an immoral, imprudent, or controversial legitimate pope does not become an antipope simply by being criticized. Establishing rival claims involves the actual election, canonical impediments, acceptance, and the public historical record, not an epithet.",
+          "text_fr": "Un antipape est un homme qui prétend au pontificat romain contre celui qui le détient légitimement ; un vrai pape, même coupable de fautes graves ou contesté, ne devient pas antipape par le seul fait d’être critiqué. L’examen porte sur l’élection, les éventuels empêchements canoniques, la reconnaissance et les faits publics, et non sur une épithète.",
+          "source_ids": [
+            "ANTIPOPES",
+            "SCHISM-1913",
+            "PASTORET"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "At the outset of the Western Schism in 1378, the cardinals elected Urban VI, initially paid him obedience, and some later elected Robert of Geneva as Clement VII at Fondi after contesting the first election. Different kingdoms and even saints adhered to opposing obediences. A serious historical dispute about a contested election is not the same as a private finding that any doctrinally disliked pope must be an antipope.",
+          "text_fr": "Au début du Grand Schisme d’Occident, en 1378, les cardinaux élurent Urbain VI et lui prêtèrent d’abord obédience ; plusieurs élurent ensuite Robert de Genève, dit Clément VII, à Fondi, après avoir contesté la première élection. Des royaumes et même des saints se répartirent entre les obédiences. Un litige historique sur une élection contestée n’équivaut pas à déclarer antipape, de sa propre autorité, tout pape dont on réprouve la doctrine.",
+          "source_ids": [
+            "SCHISM-1913",
+            "ANTIPOPES"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "The Schism's eventual resolution involved the surrender or removal of rival claims and a new recognized election; those concrete events must be studied in their own legal and historical setting. The dogmatic primacy taught by Vatican I does not depend on pretending that no faithful Catholic ever mistakenly recognized a rival claimant.",
+          "text_fr": "La résolution du Schisme passa par la fin de prétentions rivales et une nouvelle élection reconnue ; ces événements demandent une étude juridique et historique propre. La primauté définie par Vatican I n’exige pas de prétendre qu’aucun catholique de bonne foi n’a jamais suivi un prétendant rival.",
+          "source_ids": [
+            "SCHISM-1913",
+            "PASTORET",
+            "PIUS-ELECT45"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Cardinals who disputed Urban VI's election in 1378, as documented in the Catholic Encyclopedia",
+          "argument": {
+            "text": "Those supporting the Avignon obedience maintained that the Roman election was invalid because of intimidation and that a new choice was necessary.",
+            "text_fr": "Les partisans de l’obédience d’Avignon soutenaient que l’élection romaine était viciée par l’intimidation et qu’une nouvelle élection était nécessaire.",
+            "source_ids": [
+              "SCHISM-1913"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "response": {
+            "text": "The election's surrounding pressure was a real historical argument, not a proof that Clement VII was legitimate. The historical account records Urban VI's initial public acceptance by the same cardinals and subsequent repudiation; the original evidence must be considered, rather than citing the existence of a rival claim alone.",
+            "text_fr": "La pression exercée pendant l’élection était un véritable argument historique, non une preuve de la légitimité de Clément VII. Le récit rapporte la reconnaissance initiale d’Urbain VI par les mêmes cardinaux, puis leur reniement : l’ensemble des faits doit être examiné, et non la seule existence d’un prétendant rival.",
+            "source_ids": [
+              "SCHISM-1913"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "proponent_kind": "HISTORICAL_POSITION_FROM_PRECONCILIAR_HISTORY",
+          "attribution_status": "SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION",
+          "source_scope": "RECORDED_HISTORICAL_CASE",
+          "historical_qualification": "Position attested by historians; no verbatim contemporary quotation is alleged."
+        }
+      ],
+      "traditional_argument": {
+        "text": "Catholic fidelity requires accepting the Petrine office and distinguishing the objective legitimacy of a claimant from a person's good-faith confusion about contested historical facts. A historical antipope is not a precedent empowering private groups to elect or depose the pope they dislike.",
+        "text_fr": "La fidélité catholique exige le respect de l’office pétrinien et distingue la légitimité objective d’un prétendant de l’erreur éventuelle de bonne foi sur des faits historiques contestés. L’existence d’antipapes anciens ne donne pas à des groupes privés le pouvoir d’élire ou de déposer le pape qui leur déplaît.",
+        "source_ids": [
+          "PASTORET",
+          "SCHISM-1913",
+          "PIUS-ELECT45"
+        ],
+        "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+      },
+      "related_debate_ids": [
+        "SDV-05"
+      ],
+      "verification_pending": [
+        "Confirm the nuances of deposition, resignation, and election at Constance against original conciliar acts rather than treating a secondary historical summary as definitive canonical adjudication.",
+        "Distinguish the election law effective in the Schism, the historical 1945 constitution, and modern law."
+      ],
+      "question_fr": "Qu’est-ce qu’un antipape, et comment l’Église a-t-elle distingué les prétendants rivaux ?",
+      "editorial_status": "NEWLY_AUTHORED_BILINGUAL_SOURCE_SCOPED_DRAFT_NOT_LEGACY_VERBATIM",
+      "editorial_attribution_audit": {
+        "status": "REAL_NAMED_OR_HISTORICALLY_ATTESTED_OPPONENT_PROVISIONAL_CONTEXT_CHECK",
+        "checked_at": "2026-10-08",
+        "publication_ready": false,
+        "original_legacy_wording_certified": false
+      }
+    },
+    {
+      "question_id": "BAQ-14",
+      "canonical_owner": "CR-ECC-04",
+      "answer_paragraphs": [
+        {
+          "text": "In De Romano Pontifice II.30, St Robert Bellarmine argues that a genuinely manifest heretic ceases by that fact to belong to the Church and therefore cannot remain her head. He expressly rejects the account that the Church could exercise superior jurisdiction to depose a still-reigning pope. Representing his position as requiring the Church first to depose a true pope is inaccurate.",
+          "text_fr": "Dans le De Romano Pontifice II,30, saint Robert Bellarmin soutient qu’un hérétique véritablement manifeste cesse, par ce fait même, d’appartenir à l’Église et ne peut donc demeurer sa tête. Il rejette expressément l’idée que l’Église puisse déposer par juridiction supérieure un pape qui règne encore. Lui attribuer l’exigence d’une déposition préalable d’un vrai pape serait inexact.",
+          "source_ids": [
+            "BELL-II30",
+            "SEDEVBELL"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "But the hypothesis has an antecedent: the alleged heresy must actually be demonstrably manifest. A disputed phrase, imprudent act or claim of doctrinal error does not establish without further argument the person's public and obstinate rejection of revealed truth, the legal status of the person, or loss of office. Bellarmine also explores in IV.6–7 the possibility that divine providence prevents a pope's becoming a heretic.",
+          "text_fr": "Mais ce raisonnement suppose une condition préalable : l’hérésie alléguée doit être réellement et manifestement démontrée. Une formule contestée, un acte imprudent ou une erreur doctrinale supposée ne démontre pas à elle seule le rejet public et obstiné de la vérité révélée, le statut juridique de la personne ou la perte de l’office. Bellarmin examine aussi, au livre IV,6–7, la possibilité d’une préservation providentielle du pape contre l’hérésie.",
+          "source_ids": [
+            "BELL-II30",
+            "BELL-IV67",
+            "MYSTICI"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "A modern claim that a named pontiff or claimant has already lost office is a further factual and theological conclusion, not a direct quotation from Bellarmine. Vatican I defines the pope's primacy and a specifically conditioned infallibility; it neither makes every papal act inerrant nor adjudicates particular modern sedevacantist allegations.",
+          "text_fr": "Affirmer qu’un pontife nommé a déjà perdu son office est une conclusion factuelle et théologique supplémentaire, et non une citation directe de Bellarmin. Vatican I définit la primauté et une infaillibilité assortie de conditions précises : il ne rend pas infaillible chaque acte pontifical et ne tranche pas les accusations sédévacantistes particulières.",
+          "source_ids": [
+            "PASTORET",
+            "BELL-II30",
+            "SEDEVOP"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Novus Ordo Watch, citing Bellarmine II.30",
+          "argument": {
+            "text": "Since a manifest heretic is not a member of the Church, no judicial deposition can create his loss of office; a public denial of the faith can be recognized as an already accomplished vacancy.",
+            "text_fr": "Un hérétique manifeste n’étant plus membre de l’Église, aucune déposition judiciaire ne peut produire sa perte d’office ; une négation publique de la foi permettrait de constater une vacance déjà réalisée.",
+            "source_ids": [
+              "BELL-II30",
+              "SEDEVBELL"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "response": {
+            "text": "The conditional conclusion about an established manifest heretic is accurately attributed to Bellarmine. It does not verify the premise for a modern individual: precise texts, intention or pertinacity, visibility, public recognition and ecclesiological consequences still demand separate evidence.",
+            "text_fr": "La conséquence conditionnelle formulée par Bellarmin est bien restituée. Elle ne vérifie pas sa prémisse à l’égard d’une personne moderne : textes précis, intention ou obstination, caractère manifeste, reconnaissance publique et conséquences ecclésiologiques restent à démontrer.",
+            "source_ids": [
+              "BELL-II30",
+              "BELL-IV67",
+              "PASTORET"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "proponent_kind": "IDENTIFIED_EXTERNAL_AUTHOR",
+          "attribution_status": "SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION",
+          "source_scope": "NAMED_AUTHOR_PUBLICATION_WITH_EXPLICIT_TEXT_LOCATOR"
+        },
+        {
+          "proponent": "John Salza and Robert Siscoe, critics of contemporary sedevacantist application",
+          "argument": {
+            "text": "A private author's theological assessment of alleged heresy cannot by itself establish for the entire Church the loss of a publicly recognized papal office; the opposing position stresses a public ecclesial process.",
+            "text_fr": "L’appréciation d’une hérésie alléguée par un auteur privé ne suffit pas à constater pour l’Église entière la perte d’un office pontifical publiquement reconnu ; cette position adverse insiste sur une détermination ecclésiale publique.",
+            "source_ids": [
+              "SALZA-REPLY"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "response": {
+            "text": "Bellarmine's own fifth opinion must not be rewritten as a prior judicial deposition. The legitimate question is how the alleged loss, if real, would be reliably known in the Church as a public society; this issue remains debated among theologians and cannot be settled by confusing deposition with recognition.",
+            "text_fr": "Il ne faut pas réécrire la cinquième opinion de Bellarmin comme une déposition judiciaire préalable. Il reste à déterminer comment une éventuelle perte serait connue avec certitude dans l’Église, société publique ; cette question débattue ne se résout pas en confondant déposition et reconnaissance.",
+            "source_ids": [
+              "BELL-II30",
+              "PASTORET",
+              "LEO"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "proponent_kind": "IDENTIFIED_EXTERNAL_AUTHOR",
+          "attribution_status": "SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION",
+          "source_scope": "NAMED_AUTHOR_PUBLICATION_WITH_EXPLICIT_TEXT_LOCATOR"
+        }
+      ],
+      "traditional_argument": {
+        "text": "A Catholic may examine doctrinal claims and appeal to the received faith, but should neither disregard Bellarmine's real conditional thesis nor convert it into an unproved verdict on a specific pope. The unity and visibility of the Church, and the limits of what is known, remain part of the question.",
+        "text_fr": "Un catholique peut examiner des propositions doctrinales à la lumière de la foi reçue ; il ne doit ni écarter la véritable thèse conditionnelle de Bellarmin ni la transformer en sentence non démontrée contre un pape déterminé. L’unité et la visibilité de l’Église, ainsi que les limites de ce qui est établi, font partie de la question.",
+        "source_ids": [
+          "BELL-II30",
+          "PASTORET",
+          "LEO"
+        ],
+        "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+      },
+      "related_debate_ids": [
+        "SDV-01",
+        "SDV-02"
+      ],
+      "verification_pending": [
+        "Collate Bellarmine II.30 and IV.6–7 with the original Latin; current translations are proponent-hosted.",
+        "Verify Salza/Siscoe original online argument in full and distinguish declaratory discernment from juridical deposition.",
+        "Avoid naming modern individuals as demonstrably heretical without exact original quotes, doctrinal grades and evidence."
+      ],
+      "question_fr": "L’argument de saint Robert Bellarmin sur un pape hérétique manifeste prouve-t-il qu’un prétendant moderne n’est pas pape ?",
+      "editorial_status": "NEWLY_AUTHORED_BILINGUAL_SOURCE_SCOPED_DRAFT_NOT_LEGACY_VERBATIM",
+      "editorial_attribution_audit": {
+        "status": "REAL_NAMED_OR_HISTORICALLY_ATTESTED_OPPONENT_PROVISIONAL_CONTEXT_CHECK",
+        "checked_at": "2026-10-08",
+        "publication_ready": false,
+        "original_legacy_wording_certified": false
+      }
+    },
+    {
+      "question_id": "BAQ-15",
+      "canonical_owner": "CR-ECC-08",
+      "answer_paragraphs": [
+        {
+          "text": "There is no simple answer in current universal law saying that any lay Catholic, a self-appointed committee, a cardinal or a general council may depose a validly reigning pope. Canon 1404 states that the First See is judged by no one. An inquiry into whether a man was ever validly elected, or hypothetically ceased to hold the office, is not identical to asserting jurisdiction to depose a real pope.",
+          "text_fr": "Le droit universel actuel ne confère pas à un simple fidèle, à un comité autoproclamé, à un cardinal ou à un concile le pouvoir de déposer un pape régnant légitimement. Le canon 1404 dispose que le Premier Siège n’est jugé par personne. Rechercher si un homme a été validement élu ou s’il aurait hypothétiquement cessé d’exercer l’office ne revient pas à s’attribuer le pouvoir de déposer un vrai pape.",
+          "source_ids": [
+            "CIC-1404",
+            "PASTORET",
+            "BELL-II30"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "Canon 194 provides for loss of other ecclesiastical offices by public defection from the faith or communion and requires an authoritative declaration before certain removals can be enforced; applying it mechanically to the unique papal office would be an unjustified inference. Bellarmine and Cajetan disagree about the relation between manifest heresy, office loss and public ecclesial determination, so this hypothetical cannot be settled by quoting just one isolated norm.",
+          "text_fr": "Le canon 194 prévoit la perte de certains offices ecclésiastiques par défection publique de la foi ou de la communion et requiert une déclaration d’autorité pour rendre effectifs certains retraits ; l’appliquer mécaniquement à l’office pontifical, unique, serait injustifié. Bellarmin et Cajetan divergent sur les rapports entre hérésie manifeste, perte d’office et constat ecclésial : aucun canon isolé ne tranche toute cette hypothèse.",
+          "source_ids": [
+            "CIC-194",
+            "BELL-II30",
+            "CIC-1404"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "If bishops or cardinals disagree, their disagreement cannot be resolved simply by counting adherents or letting every individual claim governing authority over the Church. The Catholic problem is simultaneously one of demonstrable fact, applicable law, and the means by which the Church as a visible society recognizes its shepherd; rival private judgments are not a substitute for a public and theologically defensible determination.",
+          "text_fr": "Si des évêques ou des cardinaux divergent, il ne suffit ni de compter les partisans ni de permettre à chacun de s’arroger une juridiction sur l’Église. Le problème catholique porte ensemble sur les faits établis, le droit applicable et la manière dont l’Église, société visible, reconnaît son pasteur ; des verdicts privés concurrents ne remplacent pas une reconnaissance publique théologiquement fondée.",
+          "source_ids": [
+            "LEO",
+            "PASTORET",
+            "BILLOT-29",
+            "CIC-1404"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "John S Daly, Michael Davies: An Evaluation, Chapters 2–3, reproduced by Novus Ordo Watch",
+          "argument": {
+            "text": "An individual can know facts from objective evidence. If manifest heresy already causes loss of office, waiting for a declaration is not logically necessary in order to recognize a vacancy; equating all private reasoning with Protestant private judgment is mistaken.",
+            "text_fr": "Un individu peut reconnaître des faits sur preuves objectives. Si l’hérésie manifeste entraîne déjà la perte d’office, attendre une déclaration ne serait pas logiquement nécessaire pour constater la vacance ; toute raison individuelle n’est pas du libre examen protestant.",
+            "source_ids": [
+              "DALY-PRIVATE",
+              "BELL-II30"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "response": {
+            "text": "The distinction between sound individual reason and subjective opinion is valid. Yet it does not follow that a particular disputed claimant has been proved manifestly heretical, or that an individual's finding confers ecclesiastical competence, settles conflicting episcopal judgments or supplies a governing succession.",
+            "text_fr": "La distinction entre raison fondée et simple opinion est valide. Elle n’établit pas pour autant l’hérésie manifeste d’un prétendant contesté et ne confère à aucun individu la compétence ecclésiastique, la solution de désaccords épiscopaux ni l’organisation de la succession.",
+            "source_ids": [
+              "DALY-PRIVATE",
+              "BELL-II30",
+              "LEO"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "proponent_kind": "IDENTIFIED_EXTERNAL_AUTHOR",
+          "attribution_status": "SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION",
+          "source_scope": "NAMED_AUTHOR_PUBLICATION_WITH_EXPLICIT_TEXT_LOCATOR"
+        },
+        {
+          "proponent": "John Salza and Robert Siscoe, non-sedevacantist critics",
+          "argument": {
+            "text": "The public legitimacy of the head of the Church is not an indefinitely private doctrinal proposition; it must be established or addressed in ways consistent with the public constitution of ecclesiastical office.",
+            "text_fr": "La légitimité publique de la tête de l’Église ne peut devenir une proposition doctrinale indéfiniment privée ; elle doit être établie ou examinée d’une manière compatible avec la constitution publique de l’office ecclésiastique.",
+            "source_ids": [
+              "SALZA-REPLY",
+              "PASTORET"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "response": {
+            "text": "That concern is genuine, but no inferiors can claim ordinary jurisdiction to judge or depose a true pope. An argument for declaratory recognition of a factual loss must be distinguished carefully from a purported superior tribunal over the Roman Pontiff; identifying the competent process in an unprecedented scenario is still an open theological-canonical question.",
+            "text_fr": "Cette préoccupation est réelle, mais des inférieurs ne possèdent pas de juridiction ordinaire pour juger ou déposer un vrai pape. Un constat déclaratif d’une éventuelle perte doit être distingué d’un tribunal qui se prétendrait supérieur au Pontife romain ; la procédure compétente dans une hypothèse sans précédent reste discutée.",
+            "source_ids": [
+              "CIC-1404",
+              "BELL-II30",
+              "PASTORET"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "proponent_kind": "IDENTIFIED_EXTERNAL_AUTHOR",
+          "attribution_status": "SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION",
+          "source_scope": "NAMED_AUTHOR_PUBLICATION_WITH_EXPLICIT_TEXT_LOCATOR"
+        }
+      ],
+      "traditional_argument": {
+        "text": "The true principle is neither blind acquiescence in doctrinal error nor self-appointed ecclesiastical jurisdiction. The faithful may voice responsible objections; a grave claim about papal office requires evidence adequate to its public consequences, scrupulous respect for the Church's constitution and modesty about unresolved competent procedures.",
+        "text_fr": "Il ne s’agit ni de se soumettre aveuglément à une erreur doctrinale ni de s’instituer soi-même juge ecclésiastique. Les fidèles peuvent formuler des objections responsables ; une accusation grave concernant l’office pontifical exige des preuves à la mesure de ses conséquences publiques, le respect de la constitution de l’Église et la prudence devant les procédures incertaines.",
+        "source_ids": [
+          "PASTORET",
+          "LEO",
+          "CIC-1404",
+          "BELL-II30"
+        ],
+        "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+      },
+      "related_debate_ids": [
+        "SDV-01",
+        "SDV-02",
+        "SDV-03"
+      ],
+      "verification_pending": [
+        "Study old canon 188 §4 with the original 1917 code and comments, distinguishing its historical scope from the current CIC 194.",
+        "Check Salza/Siscoe source wording and whether it supports a specific declaratory procedural proposal.",
+        "Do not equate a council's judgment of an election fact with power to judge a reigning pontiff."
+      ],
+      "question_fr": "Qui peut établir que le pape a perdu son office lorsque les évêques sont en désaccord ?",
+      "editorial_status": "NEWLY_AUTHORED_BILINGUAL_SOURCE_SCOPED_DRAFT_NOT_LEGACY_VERBATIM",
+      "editorial_attribution_audit": {
+        "status": "REAL_NAMED_OR_HISTORICALLY_ATTESTED_OPPONENT_PROVISIONAL_CONTEXT_CHECK",
+        "checked_at": "2026-10-08",
+        "publication_ready": false,
+        "original_legacy_wording_certified": false
+      }
+    },
+    {
+      "question_id": "BAQ-16",
+      "canonical_owner": "CR-ECC-08",
+      "answer_paragraphs": [
+        {
+          "text": "An ordinary interregnum does not contradict the Church's indefectibility: the Petrine office and succession endure as an institution even while no person holds the office. Vatican I teaches the perpetuity of Peter's primacy and successors, without defining an exact maximum interval measured in months or years between occupants.",
+          "text_fr": "Une vacance ordinaire ne contredit pas l’indéfectibilité de l’Église : l’office de Pierre et la succession demeurent comme institution même sans titulaire durant l’interrègne. Vatican I enseigne la perpétuité de la primauté et des successeurs de Pierre, sans fixer en mois ou en années une durée maximale entre deux titulaires.",
+          "source_ids": [
+            "PASTORET",
+            "PIUS-ELECT45",
+            "BILLOT-29"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "A theory of vacancy over many decades makes a qualitatively more demanding claim: it must explain the continued visibility, apostolic succession, legitimate hierarchy, electoral continuity and governing mission of the Church, not merely how a future pope might someday appear. Leo XIII and Pius XII describe a visibly constituted communion with public hierarchical bonds.",
+          "text_fr": "La thèse d’une vacance de plusieurs décennies porte une charge de preuve qualitativement plus forte : il faut expliquer la visibilité, la succession apostolique, la hiérarchie légitime, la continuité électorale et la mission de gouvernement de l’Église, non seulement la possibilité qu’un pape apparaisse un jour. Léon XIII et Pie XII décrivent une communion visiblement constituée et hiérarchiquement unie.",
+          "source_ids": [
+            "LEO",
+            "MYSTICI",
+            "PASTORET"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        },
+        {
+          "text": "A fixed claim that any vacancy longer than a specified number of years is dogmatically impossible would itself require a source that supplies that numerical limit. Equally, showing that interregna are possible does not alone vindicate a theory that the recognized Church's entire governing structure has been without jurisdiction for generations.",
+          "text_fr": "Affirmer dogmatiquement qu’une vacance devient impossible après un nombre déterminé d’années exigerait une source définissant cette limite. Inversement, établir que des interrègnes sont possibles ne justifie pas, à lui seul, une théorie selon laquelle toute la structure reconnue de gouvernement de l’Église serait privée de juridiction depuis plusieurs générations.",
+          "source_ids": [
+            "BILLOT-29",
+            "PASTORET",
+            "LEO",
+            "MYSTICI"
+          ],
+          "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+        }
+      ],
+      "objections": [
+        {
+          "proponent": "Novus Ordo Watch, Have the Gates of Hell Prevailed?",
+          "argument": {
+            "text": "Christ can preserve His Church despite an extraordinarily long vacancy; the absence of an immediate visible institutional solution does not mathematically prove that the Church has defected.",
+            "text_fr": "Le Christ peut préserver son Église malgré une vacance extraordinairement longue ; l’absence de solution institutionnelle visible immédiate ne prouve pas mathématiquement la défection de l’Église.",
+            "source_ids": [
+              "NOW-VIS",
+              "PASTORET"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "response": {
+            "text": "No arbitrary numerical cut-off proves the opposite. Nevertheless a theory of decades without a recognized governing hierarchy must account positively for how the one visible, apostolic and juridically organized Church persists and how legitimate succession can occur; possibility cannot replace that account.",
+            "text_fr": "Aucune limite numérique arbitraire ne prouve le contraire. Mais une théorie de décennies sans hiérarchie gouvernante reconnue doit expliquer positivement comment subsistent l’unique Église visible, apostolique et juridiquement constituée, et comment une succession légitime pourrait s’opérer ; une possibilité abstraite n’est pas cette démonstration.",
+            "source_ids": [
+              "LEO",
+              "MYSTICI",
+              "PASTORET"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "proponent_kind": "IDENTIFIED_EXTERNAL_AUTHOR",
+          "attribution_status": "SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION",
+          "source_scope": "NAMED_AUTHOR_PUBLICATION_WITH_EXPLICIT_TEXT_LOCATOR"
+        },
+        {
+          "proponent": "Cardinal Louis Billot, De Ecclesia Christi, thesis 29, as used in debates over universal and peaceful acceptance",
+          "argument": {
+            "text": "Billot's discussion distinguishes a vacancy of the See from peaceful and universal adherence as evidence about an actually accepted pontiff. A possible long interregnum does not license disregarding the public evidence of the Church's recognition.",
+            "text_fr": "La discussion de Billot distingue la vacance du Siège de l’adhésion pacifique et universelle comme preuve concernant un pontife effectivement reconnu. Un interrègne possiblement long n’autorise pas à ignorer les indices publics de la reconnaissance de l’Église.",
+            "source_ids": [
+              "BILLOT-29"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "response": {
+            "text": "Billot is not offering a numeric veto on interregna. The application of universal acceptance to any contested period has to specify who accepted whom, when, how and under what conditions; mere election announcements or opinion polls do not replace the theological criterion.",
+            "text_fr": "Billot n’énonce aucune limite chronologique aux interrègnes. Appliquer l’acceptation universelle à une période contestée exige de préciser qui a reconnu qui, quand, comment et dans quelles conditions ; les annonces d’élection et les sondages ne remplacent pas le critère théologique.",
+            "source_ids": [
+              "BILLOT-29",
+              "PASTORET"
+            ],
+            "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+          },
+          "proponent_kind": "IDENTIFIED_EXTERNAL_AUTHOR",
+          "attribution_status": "SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION",
+          "source_scope": "NAMED_AUTHOR_PUBLICATION_WITH_EXPLICIT_TEXT_LOCATOR"
+        }
+      ],
+      "traditional_argument": {
+        "text": "The Church's visible endurance is a promise of Christ, not a guarantee of clerical virtue or uninterrupted residence of a reigning pope. It calls for modesty about hypothetical limits, seriousness toward real crises, and fidelity to the continuing public marks of apostolic communion rather than an unverified private reconstruction of the entire hierarchy.",
+        "text_fr": "La permanence visible de l’Église est une promesse du Christ, non la garantie de la vertu de chaque clerc ni d’une occupation ininterrompue du Siège. Elle demande de la retenue sur des limites hypothétiques, de la lucidité face aux crises réelles et de la fidélité aux marques publiques de la communion apostolique plutôt qu’à une reconstruction privée et non démontrée de toute la hiérarchie.",
+        "source_ids": [
+          "PASTORET",
+          "LEO",
+          "MYSTICI",
+          "IRENAEUS"
+        ],
+        "editorial_claim_state": "SOURCE_SCOPED_UNPUBLISHED_REQUIRES_CLAIM_LEVEL_APPROVAL"
+      },
+      "related_debate_ids": [
+        "SDV-03",
+        "SDV-04",
+        "SDV-06"
+      ],
+      "verification_pending": [
+        "Collate Billot Latin thesis 29 rather than solely a sedevacantist-hosted translation.",
+        "Distinguish visible jurisdiction, sacramental orders, material designation and canonical governing mission; use the existing SDV-06 debate rather than duplicating Cassiciacum.",
+        "No sourced dogmatic maximum vacancy duration has been established; do not invent one."
+      ],
+      "question_fr": "Une vacance de plusieurs décennies est-elle compatible avec la visibilité, l’indéfectibilité et la succession apostolique ?",
+      "editorial_status": "NEWLY_AUTHORED_BILINGUAL_SOURCE_SCOPED_DRAFT_NOT_LEGACY_VERBATIM",
+      "editorial_attribution_audit": {
+        "status": "REAL_NAMED_OR_HISTORICALLY_ATTESTED_OPPONENT_PROVISIONAL_CONTEXT_CHECK",
+        "checked_at": "2026-10-08",
+        "publication_ready": false,
+        "original_legacy_wording_certified": false
+      }
+    },
+    {
       "question_id": "BAQ-17",
       "canonical_owner": "APOL-012",
       "answer_paragraphs": [
@@ -1718,11 +2210,11 @@
   },
   "translation": {
     "language": "fr",
-    "questions": 22,
-    "core_paragraphs": 44,
-    "traditional": 22,
-    "objection_pairs": 17,
-    "status": "COMPLETE_FIELD_PARITY_DRAFT_NATIVE_EDITORIAL_REVIEW_PENDING",
+    "questions": 26,
+    "core_paragraphs": 56,
+    "traditional": 26,
+    "objection_pairs": 24,
+    "status": "FULL_FIELD_PARITY_DRAFT_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW_PENDING",
     "policy": "French paragraph text is attached to the exact English source IDs; translated statements retain original source attribution. No published runtime claims."
   },
   "editorial_attribution_pass_20261008": {
@@ -1738,5 +2230,21 @@
       "IRENAEUS-V33: Against Heresies V.33, early Christian eschatology",
       "AUG20: City of God XX.7, Augustine's change in position"
     ]
+  },
+  "completion_20261008": {
+    "date": "2026-10-08",
+    "new_ids": [
+      "BAQ-13",
+      "BAQ-14",
+      "BAQ-15",
+      "BAQ-16"
+    ],
+    "new_source_bearing_blocks": 30,
+    "original_legacy_question_wording_recovered": false,
+    "original_question_wording_from_existing_supplement": true,
+    "newly_written_answer_text": true,
+    "duplicate_canonical_owners_created": 0,
+    "publication_approved": false,
+    "requires_human_doctrinal_review": true
   }
 }
