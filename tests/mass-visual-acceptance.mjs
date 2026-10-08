@@ -207,7 +207,9 @@ try{
   // v1.79 Guide: structured sheet, curated sections and source links.
   const guideButton=page.locator("#ao-r17-native-reader-preview [data-role='guide-button']");
   assert.equal(await guideButton.isDisabled(),false,"opening v1.79 Guide is disabled");
-  await guideButton.click();
+  // Content/Guide rendering is tested via direct activation; real hit-target taps
+  // are independently certified by mass-batch-a-touch.mjs.
+  await guideButton.evaluate(button=>button.click());
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===false);
   const guideAudit=await page.evaluate(()=>({
     kicker:document.querySelector("#ao-r17-native-reader-preview .ao-guide-kicker")?.textContent?.trim()??"",
@@ -226,7 +228,7 @@ try{
   }
   assert.ok(guideAudit.sources.length>0,"Guide lost its source line");
   assert.ok(guideAudit.sourceLinks>=1,"Guide lost source links");
-  await page.locator("#ao-r17-native-reader-preview [data-guide-close]").click();
+  await page.locator("#ao-r17-native-reader-preview [data-guide-close]").evaluate(button=>button.click());
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===true);
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
