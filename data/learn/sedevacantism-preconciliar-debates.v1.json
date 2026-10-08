@@ -1,0 +1,1355 @@
+{
+  "version": "SEDEVACANTISM_PRECONCILIAR_DEBATES_V1",
+  "created_at": "2026-10-08",
+  "status": "SOURCE_LINKED_EDITORIAL_DRAFT_NOT_PUBLISHED",
+  "canonical_inventory": "data/learn/church-crisis-canonical.v1.json",
+  "related_questions": "data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
+  "editorial_rules": [
+    "These eight are deep debate facets of existing CR-ECC/CR-AUT dossiers, not eight new navigation dossiers.",
+    "Each claim, objection, rebuttal and substantive traditional argument must resolve to original or attributable full-text hyperlinks.",
+    "Every sedevacantist position is attributed to a real writer, not represented as a generic invented stereotype.",
+    "Use original preconciliar sources to support critique, not a circular assertion of Vatican II's authority.",
+    "Do not adjudicate disputed historical or theological facts as settled without source-level verification.",
+    "Differentiate the objective possibility of a heretical pope, actual manifest heresy, public determination of office, visibility, duration of vacancy, canonical mission and obligation of obedience.",
+    "No claim that obedience extends to commands requiring sin.",
+    "Source translation and historical-canon-law status must be verified before public release.",
+    "French text and French source parity required before publishing."
+  ],
+  "source_registry": [
+    {
+      "id": "BEL-2-30",
+      "title": "St Robert Bellarmine, De Romano Pontifice II.30, translation by Ryan Grant excerpted on proponent site",
+      "url": "https://novusordowatch.org/2015/06/can-heretical-pope-be-deposed/",
+      "classification": "PRECONCILIAR_AUTHOR_TRANSLATED_IN_PROPONENT_PUBLICATION"
+    },
+    {
+      "id": "BEL-4-67",
+      "title": "Bellarmine, De Romano Pontifice IV.6–7, translation discussed by sedevacantist editor",
+      "url": "https://novusordowatch.org/2016/04/bellarmine-pope-heretic/",
+      "classification": "PRECONCILIAR_AUTHOR_TRANSLATION_REQUIRES_LATIN_CHECK"
+    },
+    {
+      "id": "V1",
+      "title": "Vatican I, Pastor aeternus (1870), chapters 1–4, original Latin",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "classification": "ECUMENICAL_COUNCIL_PRECONCILIAR"
+    },
+    {
+      "id": "V1-IT",
+      "title": "Vatican I, Pastor aeternus, official Italian rendering",
+      "url": "https://www.vatican.va/content/pius-ix/it/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+      "classification": "COUNCIL_OFFICIAL_TRANSLATION"
+    },
+    {
+      "id": "LEO",
+      "title": "Leo XIII, Satis cognitum (1896), §§3–5 and 9–13",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html",
+      "classification": "PAPAL_ENCYCLICAL_PRECONCILIAR"
+    },
+    {
+      "id": "P12",
+      "title": "Pius XII, Mystici corporis Christi (1943), §§22–23, 40–43",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html",
+      "classification": "PAPAL_ENCYCLICAL_PRECONCILIAR"
+    },
+    {
+      "id": "P12-FR",
+      "title": "Pius XII, Mystici corporis Christi (1943), French",
+      "url": "https://www.vatican.va/content/pius-xii/fr/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html",
+      "classification": "PAPAL_ENCYCLICAL_FRENCH"
+    },
+    {
+      "id": "IRENAEUS",
+      "title": "Irenaeus of Lyons, Adversus Haereses III.3, ancient succession in Rome",
+      "url": "https://www.newadvent.org/fathers/0103303.htm",
+      "classification": "PATRISTIC_TRANSLATED"
+    },
+    {
+      "id": "CATECHURCH",
+      "title": "Catholic Encyclopedia (1908), The Church, membership, visibility and indefectibility",
+      "url": "https://www.newadvent.org/cathen/03744a.htm",
+      "classification": "PRECONCILIAR_REFERENCE"
+    },
+    {
+      "id": "ANTIPOPES",
+      "title": "Catholic Encyclopedia (1907), Antipope and historic rivals",
+      "url": "https://www.newadvent.org/cathen/01582a.htm",
+      "classification": "PRECONCILIAR_HISTORICAL_REFERENCE"
+    },
+    {
+      "id": "PIUS1945",
+      "title": "Pius XII, Vacantis Apostolicae Sedis (1945), election norms, nn. 1–4, 32–36, 90, 92",
+      "url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19451208_vacantis-apostolicae-sedis.html",
+      "classification": "PAPAL_CONSTITUTION_HISTORICAL_LAW"
+    },
+    {
+      "id": "PAULIV",
+      "title": "Paul IV, Cum ex apostolatus officio (1559), Latin historical bull",
+      "url": "https://la.wikisource.org/wiki/Cum_ex_apostolatus_officio",
+      "classification": "HISTORIC_PAPAL_BULL_REPRODUCTION"
+    },
+    {
+      "id": "BILLOT",
+      "title": "Cardinal Louis Billot SJ, De Ecclesia Christi, q.14 thesis 29 (1927), translated by Novus Ordo Watch",
+      "url": "https://novusordowatch.org/billot-de-ecclesia-thesis29/",
+      "classification": "PRECONCILIAR_THEOLOGIAN_TRANSLATION_ON_PROPONENT_SITE"
+    },
+    {
+      "id": "AQUINAS",
+      "title": "St Thomas Aquinas, Summa theologiae II-II, q.33 a.4, correcting superiors",
+      "url": "https://www.newadvent.org/summa/3033.htm",
+      "classification": "SCHOLASTIC_PRIMARY_IN_TRANSLATION"
+    },
+    {
+      "id": "NOWHERETIC",
+      "title": "Novus Ordo Watch, St Bellarmine and heretical pope (2015)",
+      "url": "https://novusordowatch.org/2015/06/can-heretical-pope-be-deposed/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "NOWIMPOSS",
+      "title": "Novus Ordo Watch, The impossibility of judging or deposing a true pope (2016)",
+      "url": "https://novusordowatch.org/2016/03/impossibility-judging-deposing-true-pope/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "NOWVIS",
+      "title": "Novus Ordo Watch, Have the Gates of Hell Prevailed? (2015)",
+      "url": "https://novusordowatch.org/2015/12/have-gates-of-hell-prevailed/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "NOWPRIVATE",
+      "title": "Novus Ordo Watch, Sedevacantism and private judgment (2015)",
+      "url": "https://novusordowatch.org/2015/12/sede-private-judgment/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "NOWACCEPT",
+      "title": "Novus Ordo Watch, Fr Cekada response on universal acceptance (2016)",
+      "url": "https://novusordowatch.org/2016/09/requiem-for-true-or-false-pope/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "NOWMATERIAL",
+      "title": "Novus Ordo Watch, Apostolic succession and material/formal thesis (2022)",
+      "url": "https://novusordowatch.org/2022/03/apostolic-succession-after-pius12-catholic-hierarchy/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "CASS",
+      "title": "Most Holy Trinity Seminary, Explanation of the Cassiciacum Thesis, French-origin school",
+      "url": "https://mostholytrinityseminary.org/articles/",
+      "classification": "ACTUAL_SEDEPRIVATIONIST_PROVIDER_HUB"
+    },
+    {
+      "id": "NOWCONCLAVE",
+      "title": "Novus Ordo Watch, present practical ecclesial responses to alleged vacancy",
+      "url": "https://novusordowatch.org/now-what/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "SALZA",
+      "title": "Robert Siscoe, Bellarmine and Suárez on a heretical pope (2014; revised 2026)",
+      "url": "https://www.trueorfalsepope.com/p/bellarmine-and-suarez-on-question-of.html",
+      "classification": "ACTUAL_NON_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "SALZADEB",
+      "title": "Salza and Siscoe, True or False Pope (2015), authors' synopsis and their reply",
+      "url": "https://www.trueorfalsepope.com/2016/01/official-release.html",
+      "classification": "ACTUAL_NON_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "SALZANEST",
+      "title": "Salza and Siscoe, argument from Nestorius and ecclesiastical determination",
+      "url": "https://www.trueorfalsepope.com/p/sedevacantism-proven-false-by-case-of.html",
+      "classification": "ACTUAL_NON_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "SSPXREV",
+      "title": "FSSPX Asia, review of True or False Pope (2016)",
+      "url": "https://fsspx.asia/en/news/true-or-false-pope-book-review-7747",
+      "classification": "TRADITIONALIST_NONSEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "PASCENDI",
+      "title": "Pius X, Pascendi dominici gregis (1907)",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "classification": "PRECONCILIAR_PAPAL_MAGISTERIUM"
+    },
+    {
+      "id": "PASCENDI-FR",
+      "title": "Pius X, Pascendi dominici gregis (1907), French",
+      "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "classification": "PRECONCILIAR_PAPAL_MAGISTERIUM_FR"
+    },
+    {
+      "id": "NOWRNR",
+      "title": "Novus Ordo Watch, Sedevacantist critique of recognise-and-resist approach",
+      "url": "https://novusordowatch.org/2015/06/stuck-in-a-rut-bergoglio/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "NOWMATER",
+      "title": "Novus Ordo Watch, summary of material-formal thesis and its disagreements",
+      "url": "https://novusordowatch.org/response-to-chazal-sspx-sedevacantism/",
+      "classification": "ACTUAL_SEDEVACANTIST_PROPONENT"
+    },
+    {
+      "id": "ECUM1913",
+      "title": "Catholic Encyclopedia, The Church, visible profession and juridical membership",
+      "url": "https://www.newadvent.org/cathen/03744a.htm",
+      "classification": "PRECONCILIAR_REFERENCE"
+    }
+  ],
+  "debates": [
+    {
+      "id": "SDV-01",
+      "title": "Does Bellarmine prove that a manifest heretic immediately loses the papacy?",
+      "canonical_owner": "CR-ECC-04",
+      "cross_references": [
+        "CR-ECC-08",
+        "CR-AUT-04"
+      ],
+      "question_provenance_ids": [
+        "BEL-2-30",
+        "NOWHERETIC",
+        "SALZA"
+      ],
+      "short_answer": [
+        {
+          "text": "St Robert Bellarmine, in De Romano Pontifice II.30, defends the hypothesis that a manifest heretic ceases to be pope by that very fact, because he is no longer a member of the visible Church. He expressly rejects the view that a still-reigning pope could be deposed by an ecclesiastical superior. Neither point may be erased to simplify an anti-sedevacantist argument.",
+          "source_ids": [
+            "BEL-2-30",
+            "NOWHERETIC"
+          ]
+        },
+        {
+          "text": "Bellarmine's reasoning is conditional: what would follow if a pope were a manifest heretic. In Book IV, chapters 6–7, he also defends the view that a pope's falling into heresy even as a private person is providentially impossible. Other classical theologians differed on both possibility and ecclesiastical determination.",
+          "source_ids": [
+            "BEL-4-67",
+            "BEL-2-30",
+            "SALZA"
+          ]
+        },
+        {
+          "text": "The disputed contemporary inference is much stronger than the historical conditional. It asserts that specific recognized papal claimants were manifest heretics in the exact theological sense, necessarily forfeited or never acquired office, and that the faithful can know the resulting vacancy with sufficient certainty.",
+          "source_ids": [
+            "NOWHERETIC",
+            "NOWIMPOSS",
+            "SALZA"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Novus Ordo Watch, using Bellarmine's translated Book II.30",
+        "paragraphs": [
+          {
+            "text": "An externally manifest heretic cannot be head of the Church because he cannot remain a member of her visible body. No declaration creates the loss; a later ecclesiastical recognition would merely recognize a vacancy already effected by public departure from the faith.",
+            "source_ids": [
+              "NOWHERETIC",
+              "BEL-2-30",
+              "P12"
+            ]
+          },
+          {
+            "text": "A pope who openly contradicts Catholic revelation or enacts false religion cannot coherently be held as the binding rule of Catholic faith. The hypothesis is therefore applied to papal claimants associated with Vatican II, not merely to a pope's private moral faults.",
+            "source_ids": [
+              "NOWHERETIC",
+              "NOWRNR",
+              "LEO"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "Bellarmine's premise is serious and cannot be rebutted with the false claim that he required a prior judicial deposition. However, the theological category 'manifest heretic' cannot be reduced to any wording perceived as doctrinally dubious, any ambiguous act, or the fact that a controversy exists. The argument requires its antecedent to be established, and its legal, ecclesiological and dogmatic consequences separately considered.",
+          "source_ids": [
+            "BEL-2-30",
+            "SALZA",
+            "P12",
+            "ECUM1913"
+          ]
+        },
+        {
+          "text": "The strength of Bellarmine's account of loss of office is not itself a demonstration that the events alleged by contemporary writers satisfy his antecedent. Neither the possibility of sin by a pope nor every non-definitive error suffices. Vatican I defined conditions for ex cathedra infallibility, and did not define every prudential decision or personal statement to be inerrant.",
+          "source_ids": [
+            "V1",
+            "SALZA",
+            "NOWHERETIC"
+          ]
+        },
+        {
+          "text": "A stronger response than 'Bellarmine was wrong' is to challenge the full application: publicly identifiable denial of a defined revealed truth, obstinacy where relevant, the role of the Church's juridical and public recognition, and consistency with the continuing visible Church's constitution.",
+          "source_ids": [
+            "P12",
+            "LEO",
+            "SALZA",
+            "V1"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "Bellarmine himself says no official condemnation is needed once heresy is manifest; therefore no clerical tribunal needs to declare a papal claimant illegitimate.",
+            "source_ids": [
+              "BEL-2-30",
+              "NOWIMPOSS"
+            ]
+          },
+          "response": {
+            "text": "That faithfully describes Bellarmine's conditional account, but it omits the real dispute: whether the purported manifest heresy was established, whether the claimant was ever peacefully accepted, and whether the Church as a public society can be governed by innumerable independent determinations of its headship.",
+            "source_ids": [
+              "BEL-2-30",
+              "BILLOT",
+              "SALZA",
+              "LEO"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "Invoking a later declaration grants the Church authority over a reigning pope, contrary to papal supremacy.",
+            "source_ids": [
+              "NOWIMPOSS",
+              "BEL-2-30"
+            ]
+          },
+          "response": {
+            "text": "The rival theories distinguish coercive deposition of a true pope from public determination of a fact concerning the loss of membership or office. Their cogency is disputed; it is wrong to collapse the claim of declaratory discernment into a purported power to depose a true pope.",
+            "source_ids": [
+              "SALZA",
+              "BEL-2-30",
+              "V1"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "Christ's constitution of the Church does not place a pope above revelation, yet neither permits the faithful to replace the Church's public unity with an indefinite sequence of private juridical verdicts. A dangerous doctrinal statement may call for responsible criticism without automatically carrying proof that the chair of Peter is vacant.",
+          "source_ids": [
+            "LEO",
+            "V1",
+            "AQUINAS",
+            "P12"
+          ]
+        },
+        {
+          "text": "Bellarmine's conditional teaching must be taken seriously. It becomes an established judgment about an actual pontificate only through a demonstration that carries the demanding theological, factual and ecclesiological burden—not merely repetition of papal scandals.",
+          "source_ids": [
+            "BEL-2-30",
+            "P12",
+            "BILLOT",
+            "SALZA"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Collate Bellarmine Book II ch.30 and Book IV chs.6–7 against a Latin edition; Ryan Grant translation is hosted on a polemical proponent site.",
+        "Do not state Cajetan/Suárez's rival theory was definitively condemned without a magisterial source.",
+        "Actual papal statements must be analyzed word-for-word and by doctrinal grade."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "SDV-02",
+      "title": "Is a private diagnosis of heresy sufficient to decide that the See is vacant?",
+      "canonical_owner": "CR-ECC-08",
+      "cross_references": [
+        "CR-ECC-04",
+        "CR-AUT-03"
+      ],
+      "question_provenance_ids": [
+        "NOWPRIVATE",
+        "NOWIMPOSS",
+        "SALZA"
+      ],
+      "short_answer": [
+        {
+          "text": "A Catholic can identify a statement contradicting defined teaching, and criticism of a superior is not intrinsically forbidden. St Thomas distinguishes respectful fraternal correction from coercive correction through jurisdiction and permits a public rebuke if the faith is endangered.",
+          "source_ids": [
+            "AQUINAS"
+          ]
+        },
+        {
+          "text": "A public theological concern, the ecclesiastical crime of heresy, pertinacious personal adherence, loss of membership and loss of governing office are related but non-identical judgments. The classical Bellarmine account and the contrary canonical approach do not license simply skipping those distinctions.",
+          "source_ids": [
+            "BEL-2-30",
+            "SALZA",
+            "CATECHURCH"
+          ]
+        },
+        {
+          "text": "The Church's succession, government and communion are public realities. When competing lay networks issue incompatible 'final' papal judgments, the missing premise is how those judgments acquire authority binding the whole Church rather than remaining theological evaluations.",
+          "source_ids": [
+            "V1",
+            "LEO",
+            "NOWPRIVATE",
+            "SALZA"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Novus Ordo Watch, 'Sedevacantism and Private Judgment'",
+        "paragraphs": [
+          {
+            "text": "Calling a heretic a heretic is not the Protestant principle of private interpretation. Recognizing an objective public contradiction of faith can be a rational and obligatory judgment based on the Church's prior definitions.",
+            "source_ids": [
+              "NOWPRIVATE",
+              "P12"
+            ]
+          },
+          {
+            "text": "A manifest apostate's departure does not depend upon permission to notice the departure. Thus the faithful need not wait for a bishop who may also adhere to the error before acknowledging that they cannot submit to a false shepherd.",
+            "source_ids": [
+              "NOWPRIVATE",
+              "NOWIMPOSS",
+              "BEL-2-30"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "The first contention is correct in part: recognizing contradictory propositions is not identical to substituting one's interpretation for revelation. The disputed move occurs when such discernment is presented as a universally binding, jurisdiction-defining verdict without a verifiable ecclesiastical means of determination.",
+          "source_ids": [
+            "NOWPRIVATE",
+            "AQUINAS",
+            "V1",
+            "LEO"
+          ]
+        },
+        {
+          "text": "The second contention raises a genuine problem in crises of authority, but a refusal to obey wrongdoing differs from creating a new determinate public fact about the headship of the entire Church. Classical fraternal correction presupposes the superior relationship even while exposing error.",
+          "source_ids": [
+            "AQUINAS",
+            "LEO",
+            "SALZA"
+          ]
+        },
+        {
+          "text": "What needs proof is not merely that a critic may recognize a doctrinal error, but that the relevant objective and subjective features satisfy the rule advanced and that the Church's visible public order survives the proposed mode of ascertainment.",
+          "source_ids": [
+            "BEL-2-30",
+            "P12",
+            "CATECHURCH",
+            "BILLOT"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "Truth does not depend on a majority vote or an ecclesiastical declaration.",
+            "source_ids": [
+              "NOWPRIVATE"
+            ]
+          },
+          "response": {
+            "text": "Correct: theological truth is not manufactured by votes. A public claim about office and communion nevertheless concerns legal and sacramental realities for the entire Church; it must be distinguished from the intellect's recognition of a proposition's falsity.",
+            "source_ids": [
+              "V1",
+              "AQUINAS",
+              "BILLOT"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "If the public hierarchy itself has defected, requiring the hierarchy to judge the matter is circular.",
+            "source_ids": [
+              "NOWPRIVATE",
+              "NOWVIS"
+            ]
+          },
+          "response": {
+            "text": "This exposes a weakness in simplistic demands to 'wait for a declaration'. But any replacement procedure must itself be shown compatible with the same visible, apostolic and juridical Church. Declaring all hierarchical recognition invalid does not by itself solve who can decide ecclesiastical facts.",
+            "source_ids": [
+              "LEO",
+              "V1",
+              "IRENAEUS",
+              "NOWVIS"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "The correction of dangerous errors can be urgent and at times public; Aquinas gives no general privilege to silence criticism solely because it concerns a prelate. Such correction remains bounded by charity and the subject's lack of coercive jurisdiction.",
+          "source_ids": [
+            "AQUINAS"
+          ]
+        },
+        {
+          "text": "The Catholic obligation to hold the faith is not a commission to construct a competing universal hierarchy by private verdict. Fidelity to doctrine and fidelity to visible ecclesial unity are obligations deriving from the same divine institution.",
+          "source_ids": [
+            "V1",
+            "LEO",
+            "IRENAEUS"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Source direct 1917 canon 188 §4, distinguishing silent historical case law from jurisdiction to assess papacy.",
+        "Do not label every sedevacantist private doctrinal assessment Protestant judgment.",
+        "Record contradictory application among sedevacantist authors as concrete evidence rather than asserting consensus."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "SDV-03",
+      "title": "Does universal and peaceful acceptance protect a pope's legitimacy?",
+      "canonical_owner": "CR-ECC-08",
+      "cross_references": [
+        "CR-ECC-01",
+        "CR-ECC-04"
+      ],
+      "question_provenance_ids": [
+        "BILLOT",
+        "NOWACCEPT",
+        "SALZADEB"
+      ],
+      "short_answer": [
+        {
+          "text": "Cardinal Louis Billot's preconciliar De Ecclesia Christi, thesis 29 (1927), teaches that peaceful adherence of the universal Church is an infallible sign of the legitimacy of the person received as pope. He grounds the argument in the Church's indefectibility, not in a claim that a large majority makes truth.",
+          "source_ids": [
+            "BILLOT",
+            "LEO",
+            "V1"
+          ]
+        },
+        {
+          "text": "Billot also allows the possibility of a considerable vacancy and contested election; thus neither a brief interregnum nor the mere existence of claimants is refuted by his thesis. The sign is the Church's peaceful universal adhesion, not the numerical result of a poll or the absence of all dissent.",
+          "source_ids": [
+            "BILLOT",
+            "ANTIPOPES"
+          ]
+        },
+        {
+          "text": "Application to a disputed historical claimant requires assessment of when and whether that adhesion occurred, who constituted the visible Church, and whether the objection concerns an election defect or a later event. These are historical and theological steps, not terms Billot defined for every possible modern dispute.",
+          "source_ids": [
+            "BILLOT",
+            "NOWACCEPT",
+            "SALZADEB"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Fr Anthony Cekada and Novus Ordo Watch on Billot's theory",
+        "paragraphs": [
+          {
+            "text": "Universal acceptance cannot mean that a body already departed from the Catholic faith creates a Catholic pontiff by accepting him. Cekada argues that the principle presupposes acceptance by the Catholic Church, not by a false body using the Catholic name.",
+            "source_ids": [
+              "NOWACCEPT",
+              "BILLOT"
+            ]
+          },
+          {
+            "text": "The objection also stresses that a once-accepted claimant may later cease to be a member of the Church through manifest heresy; Billot's rule for legitimacy upon acceptance cannot be applied without qualification to every subsequent act.",
+            "source_ids": [
+              "NOWACCEPT",
+              "BEL-2-30"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "The premise that Billot meant acceptance by the actual Catholic Church is obviously correct. The problem is how to identify that Church without first assuming that every bishop who adheres to the disputed claimant is non-Catholic. Used to exclude an inconvenient universal adherence by definitional fiat, the argument risks circularity.",
+          "source_ids": [
+            "BILLOT",
+            "LEO",
+            "V1",
+            "NOWACCEPT"
+          ]
+        },
+        {
+          "text": "Billot's text addresses a rule of ecclesial recognition and expressly allows long vacancies; neither fact proves particular pontiffs legitimate or illegitimate without historical assessment. It does, however, make a widespread, enduring hierarchy's adhesion a serious fact which any universal-invalidity theory must explain.",
+          "source_ids": [
+            "BILLOT",
+            "IRENAEUS",
+            "LEO"
+          ]
+        },
+        {
+          "text": "A different and more precise case must be developed for an alleged later loss of office than for an alleged original defective election. The two cannot simply be treated as interchangeable effects of the same papal controversy.",
+          "source_ids": [
+            "BILLOT",
+            "BEL-2-30",
+            "SALZA"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "The Church can never peacefully accept a false pope, so universal acceptance can be invoked for any person acknowledged by most bishops.",
+            "source_ids": [
+              "BILLOT",
+              "SALZADEB"
+            ]
+          },
+          "response": {
+            "text": "The thesis is stronger than a majority claim and weaker than an automatic rule for any numerical recognition. It needs genuine peaceful adherence of the Church; contested recognition and its timing require evidence.",
+            "source_ids": [
+              "BILLOT",
+              "ANTIPOPES"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "The bishops' acceptance proves nothing because all such bishops are themselves modernists.",
+            "source_ids": [
+              "NOWACCEPT",
+              "NOWVIS"
+            ]
+          },
+          "response": {
+            "text": "That conclusion must first prove the whole identifiable apostolic hierarchy ceased belonging to the Church. Otherwise it simply assumes the result at issue and immunizes the thesis against counterevidence.",
+            "source_ids": [
+              "LEO",
+              "IRENAEUS",
+              "V1",
+              "BILLOT"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "Public ecclesial recognition is not irrelevant to Catholic certainty about the papacy; Billot's explanation belongs firmly to preconciliar ecclesiology. A lay Catholic should not treat the question of valid ecclesiastical succession as if an entirely private interpretive exercise settled it.",
+          "source_ids": [
+            "BILLOT",
+            "IRENAEUS",
+            "LEO"
+          ]
+        },
+        {
+          "text": "The opposite overstatement also fails: Billot did not say that every succession dispute is resolved by a casual claim of majority support. The Catholic fact to be tested is authentic, peaceful, universal adherence.",
+          "source_ids": [
+            "BILLOT",
+            "ANTIPOPES"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Collate Billot Latin 1927 thesis 29; currently using a sedevacantist-hosted translation.",
+        "Do not calculate present-day 'universal acceptance' as percentage without ecclesial methodology.",
+        "Differentiate defect of election from alleged later vacancy."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "SDV-04",
+      "title": "Could a decades-long vacancy coexist with visibility, apostolicity and indefectibility?",
+      "canonical_owner": "CR-ECC-08",
+      "cross_references": [
+        "CR-ECC-01",
+        "CR-ECC-02"
+      ],
+      "question_provenance_ids": [
+        "NOWVIS",
+        "LEO",
+        "V1",
+        "P12"
+      ],
+      "short_answer": [
+        {
+          "text": "Christ's promise of a perpetual Petrine primacy is dogmatic. Vatican I teaches perpetual successors to Peter and a continuing Roman primacy; Leo XIII insists that the Church is a visible, organized society whose outward and inward constitution persists to the end of time.",
+          "source_ids": [
+            "V1",
+            "LEO"
+          ]
+        },
+        {
+          "text": "The resignation or death of an individual pope yields an ordinary vacancy without abolishing the papal office. Billot expressly acknowledges that providence can permit a vacancy lasting a considerable time; no cited dogma provides a universally quantified maximum duration in days or years.",
+          "source_ids": [
+            "BILLOT",
+            "PIUS1945"
+          ]
+        },
+        {
+          "text": "The difficult question is qualitative rather than arithmetic: if a theory says that almost all visible ordinaries and their successors accepted an entirely false Church over multiple generations, where is the identifiable lawful Catholic hierarchy, the bond of Roman unity and a credible provision for restored succession?",
+          "source_ids": [
+            "LEO",
+            "P12",
+            "V1",
+            "IRENAEUS",
+            "NOWVIS"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Novus Ordo Watch, 'Have the Gates of Hell Prevailed?'",
+        "paragraphs": [
+          {
+            "text": "A true papal office can survive a long or extraordinary vacancy because an office is not annihilated when unoccupied. Prophecies about general apostasy and persecution make an extraordinary crisis compatible with the Church's promised survival.",
+            "source_ids": [
+              "NOWVIS",
+              "V1",
+              "BILLOT"
+            ]
+          },
+          {
+            "text": "A reduced remnant and emergency clergy might preserve true doctrine and sacramental life despite a vastly more visible organization claiming the Catholic name. The absence of a normal-looking hierarchy cannot by itself establish the truth of doctrinal claims rejected by the remnant.",
+            "source_ids": [
+              "NOWVIS",
+              "NOWMATERIAL"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "A long vacancy is conceivable in classical sources; treating the number of years alone as a disproof of sedevacantism would therefore be irresponsible. The stronger obstacle is the requirement that the Church retain as a moral and juridical society her visible succession and unity rather than merely isolated orthodox sacraments or private convictions.",
+          "source_ids": [
+            "BILLOT",
+            "LEO",
+            "IRENAEUS",
+            "P12"
+          ]
+        },
+        {
+          "text": "Sacramental validity is not equivalent to canonical jurisdiction or visible apostolic succession. Irenaeus directs believers to public transmission through bishops and the Roman see; Vatican I and Leo XIII make the Petrine bond constitutive, not an optional badge which a disconnected network may re-create by self-designation.",
+          "source_ids": [
+            "IRENAEUS",
+            "V1",
+            "LEO"
+          ]
+        },
+        {
+          "text": "The sedevacantist must identify a non-circular continuity account: who has the authority to determine legitimate electors and bishops, how it was transmitted, and how an institutional mechanism to restore the Roman pontiff remains possible. Calling the problem a mystery is not a complete ecclesiological solution.",
+          "source_ids": [
+            "LEO",
+            "BILLOT",
+            "PIUS1945",
+            "NOWMATERIAL"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "Interregna prove the Church can lack a pope.",
+            "source_ids": [
+              "BILLOT",
+              "PIUS1945"
+            ]
+          },
+          "response": {
+            "text": "Yes, but not that the Church can indefinitely lose its intelligible public means of identifying bishops, communion and electors. The latter requires a different, positive account.",
+            "source_ids": [
+              "BILLOT",
+              "V1",
+              "LEO"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "Christ can preserve the Church supernaturally even when no institutional solution is visible.",
+            "source_ids": [
+              "NOWVIS"
+            ]
+          },
+          "response": {
+            "text": "Divine providence is certain; the Church's enduring visible and apostolic character is also part of what Christ promises. Reliance on a possible future miracle cannot replace all ordinary evidence of the continuing identifiable society.",
+            "source_ids": [
+              "LEO",
+              "IRENAEUS",
+              "V1"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "It is a mistake to refute decades-long vacancy by appealing to an invented maximum period. Billot explicitly permits considerable vacancies, and ordinary papal interregna belong to the very governance of the Church.",
+          "source_ids": [
+            "BILLOT",
+            "PIUS1945"
+          ]
+        },
+        {
+          "text": "Catholic indefectibility entails more than the private survival of correct opinions and isolated sacraments. The apostolic succession, visible society and unity established by Christ must remain real; the theory that most Catholics and their lawful pastors ceased to belong to it therefore carries an exceptionally heavy burden.",
+          "source_ids": [
+            "LEO",
+            "V1",
+            "IRENAEUS",
+            "P12"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Distinguish contested ecclesiology from subjective culpability of individual sedevacantists.",
+        "Trace individual episcopal orders separately from canonical mission or governing jurisdiction.",
+        "Do not declare 'more than X years violates dogma': no such X is sourced."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "SDV-05",
+      "title": "Are historical antipopes precedents for rejecting twentieth-century papal claimants?",
+      "canonical_owner": "CR-ECC-04",
+      "cross_references": [
+        "CR-ECC-08"
+      ],
+      "question_provenance_ids": [
+        "ANTIPOPES",
+        "PIUS1945",
+        "BILLOT"
+      ],
+      "short_answer": [
+        {
+          "text": "The historical category antipope concerns a claimant opposed to a canonically legitimate pontiff. During the Western Schism, rival papal allegiances arose from election disputes, imperfect information and competing obediences, illustrating how an objective title to office and widespread subjective belief could diverge.",
+          "source_ids": [
+            "ANTIPOPES"
+          ]
+        },
+        {
+          "text": "Historical antipopes demonstrate that a group can recognize an invalid claimant in good faith. They do not by themselves establish that later papal claimants accused of doctrinal error share the same legal circumstances, nor that a private reader can adjudicate their office by analogy.",
+          "source_ids": [
+            "ANTIPOPES",
+            "V1",
+            "BILLOT"
+          ]
+        },
+        {
+          "text": "Pius XII's 1945 election law assigned papal election to the College of Cardinals and suspended certain impediments for purposes of active and passive voting. These historical rules show how carefully legality of designation must be distinguished from claims about a candidate's fitness or subsequent teaching.",
+          "source_ids": [
+            "PIUS1945"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Sedevacantist appeal to antipopes as a counterexample",
+        "paragraphs": [
+          {
+            "text": "The Church has had false papal claimants, some accepted by large communities. Therefore the claim that recognition, episcopal allegiance or long public occupancy always proves legitimacy is historically false.",
+            "source_ids": [
+              "ANTIPOPES",
+              "NOWVIS"
+            ]
+          },
+          {
+            "text": "Once doctrinal evidence establishes that a claimant could not be pope, his outward title and support do not change the underlying fact; the history of antipopes makes withholding obedience possible in principle.",
+            "source_ids": [
+              "NOWPRIVATE",
+              "NOWIMPOSS",
+              "ANTIPOPES"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "The historical premise is valid: papal claimants can be illegitimate. The further move remains unsupported without comparison of the particular election, adhesion and legal facts of each case. Public rival elections in a schism are not automatically analogous to a putative wholesale deception of the universal hierarchy after a recognized succession.",
+          "source_ids": [
+            "ANTIPOPES",
+            "BILLOT",
+            "V1"
+          ]
+        },
+        {
+          "text": "An antipope is not simply a pope whose prudential acts are harmful or whose statements are contested. The disputed claim concerns title to office; moral quality and juridical title cannot be inferred from each other.",
+          "source_ids": [
+            "ANTIPOPES",
+            "V1",
+            "P12"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "If saints followed rival claimants, then universal acceptance can never establish legitimacy.",
+            "source_ids": [
+              "ANTIPOPES"
+            ]
+          },
+          "response": {
+            "text": "Acceptance of competing parties during a contested schism is not the same empirical condition as peaceful adhesion of the universal Church. Billot's thesis explicitly distinguishes disputed elections from peaceful universal recognition.",
+            "source_ids": [
+              "BILLOT",
+              "ANTIPOPES"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "The historical examples prove any ordinary Catholic may name the true pope by comparing doctrine alone.",
+            "source_ids": [
+              "ANTIPOPES",
+              "NOWPRIVATE"
+            ]
+          },
+          "response": {
+            "text": "No. Historical acts of allegiance, juridical election facts and eventual ecclesial settlement are part of the evidence. Doctrinal concerns alone do not substitute for this public record.",
+            "source_ids": [
+              "ANTIPOPES",
+              "V1",
+              "BILLOT"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "A Catholic is not required to pretend the Church has never had false papal claimants. Historical antipopes are undeniable and must be taught without embarrassment.",
+          "source_ids": [
+            "ANTIPOPES"
+          ]
+        },
+        {
+          "text": "The historical lesson is not that the individual believer becomes a self-constituted supreme elector or judge. The legitimacy of succession is an objective public question intertwined with the Church's legal and visible constitution.",
+          "source_ids": [
+            "V1",
+            "BILLOT",
+            "PIUS1945"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Add original Council of Constance and Gregory XII resignation documents before a detailed Western Schism comparison.",
+        "Do not use the historical term 'antipope' as a synonym for 'bad pope'."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "SDV-06",
+      "title": "Does the Cassiciacum Thesis solve the succession problem?",
+      "canonical_owner": "CR-ECC-09",
+      "cross_references": [
+        "CR-ECC-08",
+        "CR-ECC-01"
+      ],
+      "question_provenance_ids": [
+        "NOWMATERIAL",
+        "CASS",
+        "NOWMATER"
+      ],
+      "short_answer": [
+        {
+          "text": "Guérard des Lauriers' material-formal thesis distinguishes a man lawfully designated to the Roman pontificate materialiter from a holder of true jurisdiction formaliter. On this account, a claimant may occupy the outward designation without receiving the form of authority because of an obstacle in his intention or profession.",
+          "source_ids": [
+            "NOWMATERIAL",
+            "CASS",
+            "NOWMATER"
+          ]
+        },
+        {
+          "text": "The theory is a theological proposal within the sedevacantist world, not a dogma, and it is contested by other sedevacantists. Its particular attraction is that it leaves a proposed chain of papal designation that might be converted into fully legitimate jurisdiction.",
+          "source_ids": [
+            "NOWMATERIAL",
+            "NOWMATER"
+          ]
+        },
+        {
+          "text": "The central unresolved question is whether the material/formal distinction, though legitimate as an analogy in metaphysics, can be applied to the papacy while remaining compatible with divine-law primacy, public ecclesiastical mission and the actual historical legal rules of election.",
+          "source_ids": [
+            "V1",
+            "BILLOT",
+            "PIUS1945",
+            "NOWMATERIAL"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Guérard des Lauriers tradition and later sedeprivationist defenders",
+        "paragraphs": [
+          {
+            "text": "If electors designate a claimant who maintains a habitual obstacle to the Church's supernatural end, he retains the legal designation and continuity of office as potentiality while lacking Christ's actual jurisdiction. The disappearance of true rulers therefore does not entail loss of the public line capable of restoring the papacy.",
+            "source_ids": [
+              "CASS",
+              "NOWMATERIAL"
+            ]
+          },
+          {
+            "text": "The crisis is uniquely difficult; the theory endeavors to preserve both preconciliar dogma and a juridical continuity with the body that controls current papal elections, without conceding doctrinal legitimacy to the disputed authorities.",
+            "source_ids": [
+              "NOWMATER",
+              "NOWMATERIAL"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "The proposal is more sophisticated than a simple claim of invisible remnant succession and deserves serious treatment. Yet 'material designation' itself requires a historically identifiable competent electorate and valid designation. Those cannot be assumed while rejecting the juridical status of nearly every figure who participates.",
+          "source_ids": [
+            "PIUS1945",
+            "BILLOT",
+            "NOWMATERIAL"
+          ]
+        },
+        {
+          "text": "The thesis must show a principled theological and legal explanation for the supposed obstacle, its duration, removal and recognition. Without such a mechanism the distinction risks redescribing the lack of public authority rather than explaining the actual continuity of authority.",
+          "source_ids": [
+            "V1",
+            "BILLOT",
+            "LEO",
+            "CASS"
+          ]
+        },
+        {
+          "text": "Some sedevacantists reject the material-formal thesis as unnecessary or wrong. That disagreement is not automatically a refutation, but it defeats any presentation of the thesis as the settled Catholic answer to the vacancy question.",
+          "source_ids": [
+            "NOWMATERIAL",
+            "NOWMATER"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "The material line guarantees that future electors exist, so visibility is preserved.",
+            "source_ids": [
+              "CASS",
+              "NOWMATERIAL"
+            ]
+          },
+          "response": {
+            "text": "A line capable of naming a candidate is not necessarily the same as visible hierarchical jurisdiction. The theory must establish the Church's existing public office and canonical authority, not merely the possibility of a later restoration.",
+            "source_ids": [
+              "V1",
+              "LEO",
+              "PIUS1945"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "The formal obstacle can disappear upon retraction of Vatican II errors, with full papal authority then received.",
+            "source_ids": [
+              "CASS",
+              "NOWMATERIAL"
+            ]
+          },
+          "response": {
+            "text": "This is the theory's internal mechanism, but it still requires substantiation of which authority identifies the obstacle, whether subsequent designations are valid, and what makes reception of jurisdiction a recognizable public ecclesial event.",
+            "source_ids": [
+              "V1",
+              "BILLOT",
+              "PIUS1945"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "The distinction of material designation and formal possession merits careful philosophical discussion, but it cannot alone resolve juridical succession by changing labels. Catholic continuity requires an actually identifiable Church with the ecclesiastical powers instituted by Christ.",
+          "source_ids": [
+            "LEO",
+            "V1",
+            "BILLOT"
+          ]
+        },
+        {
+          "text": "A solution that requires generations of visible episcopal holders to lack jurisdiction must demonstrate why that state is reconcilable with the Church's perpetual visible and apostolic structure. The promise of Christ protects the actual Church, not merely a future reconstructable idea of it.",
+          "source_ids": [
+            "LEO",
+            "IRENAEUS",
+            "V1"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Cite Guérard des Lauriers' original French thesis, not only secondary English explanations, before publication.",
+        "Treat conclavism as a distinct issue: self-appointed papal elections require independent canonical scrutiny.",
+        "Do not equate every sedevacantist with sedeprivationism."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "SDV-07",
+      "title": "Can a Catholic correct a pope without concluding that he is an antipope?",
+      "canonical_owner": "CR-AUT-08",
+      "cross_references": [
+        "CR-AUT-03",
+        "CR-AUT-01",
+        "CR-ECC-08"
+      ],
+      "question_provenance_ids": [
+        "AQUINAS",
+        "LEO",
+        "NOWRNR"
+      ],
+      "short_answer": [
+        {
+          "text": "Aquinas expressly permits fraternal correction of prelates and, when the faith is endangered, even public rebuke, using Paul's confrontation with Peter in Galatians 2 as an example. Such correction is not a coercive act of jurisdiction, nor permission for insolence or contempt.",
+          "source_ids": [
+            "AQUINAS"
+          ]
+        },
+        {
+          "text": "Vatican I also defines a real and immediate papal jurisdiction requiring hierarchical obedience; Leo XIII rejects the theory of separated churches bound by mere preference rather than the visible primacy of Peter. Both sources must govern a defensible non-sedevacantist account.",
+          "source_ids": [
+            "V1",
+            "LEO"
+          ]
+        },
+        {
+          "text": "The problem therefore cannot be solved either by absolute, unqualified obedience to every word and act or by a 'recognize and resist' slogan that quietly makes individual opinion supreme over all genuine acts of ecclesiastical government.",
+          "source_ids": [
+            "AQUINAS",
+            "V1",
+            "NOWRNR"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Novus Ordo Watch critique of Recognize-and-Resist",
+        "paragraphs": [
+          {
+            "text": "If a man is genuinely pope, Catholics cannot treat most of his universal discipline, liturgy and ordinary teaching as disposable; otherwise recognition of his headship becomes a nominal title with no governing content.",
+            "source_ids": [
+              "NOWRNR",
+              "LEO",
+              "V1"
+            ]
+          },
+          {
+            "text": "A hierarchy perpetually promulgating false worship or a contradictory religion is incompatible with the Church's indefectibility, so the better conclusion, according to sedevacantist writers, is that the claimants do not possess the Roman pontificate.",
+            "source_ids": [
+              "NOWRNR",
+              "NOWHERETIC",
+              "NOWVIS"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "The objection against arbitrary private veto has genuine force: the faithful owe obedience to legitimate governors within their competence, and cannot appoint themselves an alternative magisterium. But the opposite inference that any harmful or confusing ecclesiastical policy proves illegitimacy exceeds the defined limits of ex cathedra infallibility and requires demonstration.",
+          "source_ids": [
+            "V1",
+            "LEO",
+            "AQUINAS"
+          ]
+        },
+        {
+          "text": "The Thomistic model supplies a narrower distinction: correction of an error and refusal to comply with sin can coexist with recognition of a superior's jurisdiction, while the form of correction and the obligation of obedience remain morally structured.",
+          "source_ids": [
+            "AQUINAS",
+            "V1"
+          ]
+        },
+        {
+          "text": "Judgment of a particular teaching requires recognizing the hierarchy of authoritative acts, the meaning of the disputed text and whether the obligation would actually require wrongdoing. It is not enough to call everything pastoral and therefore optional; nor enough to infer deposition from the presence of controversy.",
+          "source_ids": [
+            "V1",
+            "PASCENDI",
+            "AQUINAS"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "Resisting a valid pope contradicts the requirement of true obedience.",
+            "source_ids": [
+              "NOWRNR",
+              "V1"
+            ]
+          },
+          "response": {
+            "text": "True obedience concerns legitimate commands within proper authority, not the execution of sin. Aquinas allows charitable correction of a prelate, sometimes publicly, precisely without abolishing the relation of superior and subject.",
+            "source_ids": [
+              "AQUINAS",
+              "V1"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "Recognizing a pope gives every reform an irreformable guarantee.",
+            "source_ids": [
+              "NOWRNR"
+            ]
+          },
+          "response": {
+            "text": "Pastor aeternus defines infallibility under particular conditions; it does not define personal impeccability or universal prudential excellence. Necessary assent and canonical obligations must still be distinguished carefully.",
+            "source_ids": [
+              "V1",
+              "LEO"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "A faithful Catholic cannot deny the primacy of Rome or adopt a permanent personal veto over all ecclesiastical authority. Nor must he praise harmful behavior or cooperate in sin: St Thomas's account of correcting superiors is part of Catholic tradition, not a postconciliar concession.",
+          "source_ids": [
+            "V1",
+            "LEO",
+            "AQUINAS"
+          ]
+        },
+        {
+          "text": "Humility and charity govern criticism. A serious objection to a superior is not a license to declare the Church's visible governing order dissolved; doctrinal fidelity and lawful obedience, each within proper limits, must be maintained together.",
+          "source_ids": [
+            "AQUINAS",
+            "LEO",
+            "V1"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Add preconciliar moral-theology distinctions of obedience from approved manuals.",
+        "Check the precise legal authority and doctrinal status of each postconciliar act before using as an example.",
+        "Avoid flattening SSPX, independent traditionalists and all non-sedevacantist critiques into one doctrine."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "SDV-08",
+      "title": "Do disputed postconciliar teachings or rites establish that the papal office has vanished?",
+      "canonical_owner": "CR-ECC-08",
+      "cross_references": [
+        "CR-ECC-03",
+        "CR-DOC-10",
+        "CR-LIT-05"
+      ],
+      "question_provenance_ids": [
+        "NOWHERETIC",
+        "NOWRNR",
+        "V1"
+      ],
+      "short_answer": [
+        {
+          "text": "St Pius X rejected Modernism as a systematic undermining of objective revelation and the immutable deposit of faith. The preconciliar doctrinal baseline therefore permits and sometimes requires serious criticism of theological propositions that contradict the faith; no Catholic need declare all modern formulations unproblematic.",
+          "source_ids": [
+            "PASCENDI",
+            "PASCENDI-FR"
+          ]
+        },
+        {
+          "text": "Vatican I's definition of ex cathedra papal infallibility identifies a specific mode of defining doctrine, not an unconditional assertion that every text, policy, diplomatic act or pastoral experiment is itself infallible. The ordinary and universal teaching of bishops also has its own authority and conditions, which cannot be mechanically inferred from a controversial single document.",
+          "source_ids": [
+            "V1",
+            "LEO"
+          ]
+        },
+        {
+          "text": "The thesis that a particular reform is theologically poor or illicit, and the thesis that its approver never possessed the papal office, have distinct conclusions. One does not follow automatically from the other without an additional ecclesiological argument.",
+          "source_ids": [
+            "V1",
+            "NOWHERETIC",
+            "SALZA"
+          ]
+        }
+      ],
+      "sedevacantist_case": {
+        "attributed_to": "Novus Ordo Watch critique based on Catholic magisterial protection",
+        "paragraphs": [
+          {
+            "text": "The Church cannot officially teach heresy or universally enjoin evil worship. Traditionalist critics who concede that the postconciliar changes are doctrinally ruinous but retain the pope, sedevacantists say, deny the Church's own principles of infallibility and indefectibility.",
+            "source_ids": [
+              "NOWRNR",
+              "NOWVIS",
+              "LEO"
+            ]
+          },
+          {
+            "text": "A claimant who authorizes what critics regard as manifestly erroneous religious practices thereby betrays non-Catholic principles; if that follows from the primary record, office legitimacy is ruled out rather than only his prudence challenged.",
+            "source_ids": [
+              "NOWHERETIC",
+              "NOWRNR"
+            ]
+          }
+        ]
+      },
+      "critical_assessment": [
+        {
+          "text": "The protection of the Church's deposit of faith is genuine and cannot be reduced to an empty formalism: Vatican I and Pius X demand that teaching preserve the apostolic deposit. But whether a particular reform constitutes a binding universal error or a varying level of non-definitive instruction is a separate documentary question.",
+          "source_ids": [
+            "V1",
+            "PASCENDI",
+            "LEO"
+          ]
+        },
+        {
+          "text": "A liturgical judgment must identify the actual authorized text, binding force, rites and historical changes. We cannot let a rhetorical phrase like 'new religion' substitute for textual demonstration; neither should the fact that the liturgy is sacramental mean every reform was wise or pastorally beneficial.",
+          "source_ids": [
+            "NOWRNR",
+            "V1",
+            "LEO"
+          ]
+        },
+        {
+          "text": "Even after a specific doctrinal rupture is alleged, the loss of a pope's office remains a different legal and theological claim governed by the arguments about heresy, manifest status, succession, acceptance and visible hierarchy. This dossier links to the existing liturgical and doctrinal research rather than reproducing it.",
+          "source_ids": [
+            "BEL-2-30",
+            "BILLOT",
+            "V1",
+            "P12"
+          ]
+        }
+      ],
+      "objections": [
+        {
+          "objection": {
+            "text": "If a true Church authority promulgates harmful discipline, indefectibility has failed.",
+            "source_ids": [
+              "NOWRNR",
+              "NOWVIS"
+            ]
+          },
+          "response": {
+            "text": "Not every imperfect or even seriously harmful administrative judgment is equivalent to the Church's definitive imposition of heresy or inherently evil worship. Each purported example requires precise classification and proof; genuine protection of doctrine should not be emptied out either.",
+            "source_ids": [
+              "V1",
+              "PASCENDI",
+              "LEO"
+            ]
+          }
+        },
+        {
+          "objection": {
+            "text": "The only way to criticize postconciliar changes is to deny the legitimacy of the popes who adopted them.",
+            "source_ids": [
+              "NOWHERETIC",
+              "NOWRNR"
+            ]
+          },
+          "response": {
+            "text": "The classical right to correct ecclesiastical superiors and to distinguish authoritative acts is older than Vatican II. Criticism may be well-founded without amounting to a juridical demonstration of an empty See.",
+            "source_ids": [
+              "AQUINAS",
+              "V1",
+              "PASCENDI"
+            ]
+          }
+        }
+      ],
+      "traditional_argument": [
+        {
+          "text": "The deposit of faith is objective and immutable; the Church is not licensed to transform defined dogma into its contrary. Pius X's condemnation of Modernism remains a proper starting point for evaluating theological changes.",
+          "source_ids": [
+            "PASCENDI",
+            "V1"
+          ]
+        },
+        {
+          "text": "That doctrinal vigilance must also respect Christ's visible constitution of the Church. The true condition for declaring the Apostolic See empty cannot be simply the intensity of one's criticism of postconciliar practices; the facts of office, juridical communion and succession remain to be proved.",
+          "source_ids": [
+            "V1",
+            "LEO",
+            "BILLOT"
+          ]
+        }
+      ],
+      "unresolved_source_checks": [
+        "Rely on preexisting CR-DOC and CR-LIT substantive studies; do not rewrite their evidence in this case.",
+        "Separate dogmatic definition, ordinary-universal teaching, non-definitive magisterium, liturgical discipline and nonofficial speech.",
+        "Do not imply a doctrinal rupture has been conclusively established merely because a partisan argument states it."
+      ],
+      "publication_status": "FULL_DEBATE_DRAFT_EDITORIAL_REVIEW_REQUIRED"
+    }
+  ]
+}
