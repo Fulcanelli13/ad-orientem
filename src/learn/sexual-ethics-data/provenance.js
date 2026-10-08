@@ -92,7 +92,8 @@ export function paragraphRefsFor(item,kind,field=null){
   if(selectedIds?.length){
     // Every selected ID must already be present in this question's original sources.
     // The source excerpt locator is preserved; no invented page/chapter locators.
-    const byId=new Map([...position,...catholic].map(ref=>[ref[0],ref]));
+    const opponentStage=["opposition","appeal","counter"].includes(field);
+    const byId=new Map((opponentStage?[...catholic,...position]:[...position,...catholic]).map(ref=>[ref[0],ref]));
     const selected=selectedIds.map(id=>byId.get(id)).filter(Boolean);
     if(selected.length===selectedIds.length)return uniqRefs(selected);
   }
