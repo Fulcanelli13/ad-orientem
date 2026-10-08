@@ -305,7 +305,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
     else if(state.route==="learn.rites.matrimony")node.innerHTML=matrimony(win);
     else if(state.route==="learn.serve_mass.responses")node.innerHTML=trainer(win,state);
     else if(state.route==="learn.scapular")node.innerHTML=scapular(win);
-    else node.innerHTML=seasonal(win);
+    else return false;
     node.scrollTop=0;queueMicrotask(()=>node.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());return true;
   }
   function open(id,opts={}){
