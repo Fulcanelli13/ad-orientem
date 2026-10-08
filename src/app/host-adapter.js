@@ -19,6 +19,7 @@ function language(win) {
 export function createAppHostAdapter(win = globalThis) {
   const runtime = () => win?.AO_RUNTIME_V8 ?? null;
   const shell = () => win?.AO_V37_SHELL ?? null;
+  const trace = label => { try { win?.__AO_CI_TRACE?.(label); } catch {} };
 
   return Object.freeze({
     currentCoreRoute() {
@@ -47,16 +48,17 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     hardHome() {
+      trace('hardHome:entry');
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
-      try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
-      try { win?.AO_PRAY_APP_V1?.close?.(); } catch {}
-      try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
-      try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
-      try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
-      const modular = win?.AO_HOME_APP_V1;
+      trace('hardHome:learn-close:start'); try { win?.AO_LEARN_APP_V1?.close?.(); } catch {} trace('hardHome:learn-close:done');
+      trace('hardHome:pray-close:start'); try { win?.AO_PRAY_APP_V1?.close?.(); } catch {} trace('hardHome:pray-close:done');
+      trace('hardHome:calendar-close:start'); try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {} trace('hardHome:calendar-close:done');
+      trace('hardHome:find-close:start'); try { win?.AO_FIND_APP_V1?.close?.(); } catch {} trace('hardHome:find-close:done');
+      trace('hardHome:apostolate-close:start'); try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {} trace('hardHome:apostolate-close:done');
+      trace('hardHome:home-open:start'); const modular = win?.AO_HOME_APP_V1;
       if (typeof modular?.open === "function") {
-        const opened = modular.open();
+        const opened = modular.open(); trace('hardHome:home-open:done');
         if (opened !== false) return true;
       }
       const nav = win?.AO_NAV_V362;
