@@ -72,7 +72,7 @@ const countVisibleSources = value => {
 const expected=rows.reduce((n,r)=>n+countAllSources(r.content),0);
 const renderable=rows.reduce((n,r)=>n+countVisibleSources(r.content),0);
 assert.equal(expected,known.counts.source_bearing_blocks,"source-bearing text blocks diverged from indexed ledger");
-assert.equal(expected,488,"unexpected historical source-bearing count after 7 fully sourced TLM additions");
+assert.equal(expected,508,"expected prior repairs plus 20 bilingual TC source-bearing claims");
 assert.equal(renderable,expected,"reader silently hides sourced paragraphs");
 
 const fake={document:{getElementById:()=>null}};
