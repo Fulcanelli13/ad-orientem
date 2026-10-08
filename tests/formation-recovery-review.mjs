@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {buildRecoveryReviewRows,createFormationRecoveryReview,RECOVERY_REVIEW_ROOT} from "../src/learn/formation-recovery-review.js";
+import {buildRecoveryReviewRows,createFormationRecoveryReview,RECOVERY_REVIEW_ROOT,RECOVERY_REVIEW_SECTION_KEYS,RECOVERY_REVIEW_CHILD_KEYS} from "../src/learn/formation-recovery-review.js";
 import {LEARN_MODULE_IDS} from "../src/learn/presentation.js";
 const names=[
   ["BAQ questions","biblical-patristic-and-sedevacantist-question-supplement.v1.json"],
@@ -33,6 +33,33 @@ for(const r of rows){
   for(const s of r.sourceRegistry.values())assert.ok(/^https:\/\//.test(s.url),r.id+" invalid source URL");
 }
 assert.equal(rows.filter(x=>x.bank==="BAQ" && !x.content).length,4);
+const countAllSources = value => {
+  let count=0;
+  function walk(x){
+    if(Array.isArray(x))return x.forEach(walk);
+    if(!x||typeof x!=="object")return;
+    if(Array.isArray(x.source_ids))count++;
+    for(const [key,child] of Object.entries(x))if(key!=="source_ids")walk(child);
+  }
+  walk(value);
+  return count;
+};
+const countVisibleSources = value => {
+  let count=0;
+  function walk(x){
+    if(Array.isArray(x))return x.forEach(walk);
+    if(!x||typeof x!=="object")return;
+    if(Array.isArray(x.source_ids))count++;
+    for(const key of RECOVERY_REVIEW_CHILD_KEYS)if(x[key])walk(x[key]);
+  }
+  for(const key of RECOVERY_REVIEW_SECTION_KEYS)if(value?.[key])walk(value[key]);
+  return count;
+};
+const expected=rows.reduce((n,r)=>n+countAllSources(r.content),0);
+const renderable=rows.reduce((n,r)=>n+countVisibleSources(r.content),0);
+assert.equal(expected,481,"source-bearing text block count changed");
+assert.equal(renderable,expected,"reader silently hides sourced paragraphs");
+
 const fake={document:{getElementById:()=>null}};
 const preview=createFormationRecoveryReview(fake);
 assert.equal(preview.status().public,false);
