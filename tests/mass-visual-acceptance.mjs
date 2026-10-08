@@ -96,6 +96,21 @@ try{
   assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
   assert.equal(setup.mode,"LIVE");
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:30000});
+  // Diagnostic ownership: distinguish a detached Mass overlay from a slow locator.
+  await page.evaluate(()=>{
+    const id="ao-r17-native-reader-preview";
+    const root=document.getElementById(id);
+    globalThis.__AO_MASS_VISUAL_REMOVAL_TRACE=[];
+    if(root){
+      const remove=root.remove.bind(root);
+      root.remove=function(){globalThis.__AO_MASS_VISUAL_REMOVAL_TRACE.push({reason:"explicit remove",stack:new Error().stack,at:Date.now()});return remove()};
+      new MutationObserver(()=>{
+        if(!document.getElementById(id)){
+          globalThis.__AO_MASS_VISUAL_REMOVAL_TRACE.push({reason:"root detached",stack:"MutationObserver",at:Date.now()});
+        }
+      }).observe(document.body,{childList:true,subtree:true});
+    }
+  });
 
   const opening=await page.evaluate(()=>({
     uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
@@ -278,6 +293,14 @@ try{
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
 
+  const navPreflight=await page.evaluate(()=>({
+    present:Boolean(document.getElementById("ao-r17-native-reader-preview")),
+    route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+    trace:globalThis.__AO_MASS_VISUAL_REMOVAL_TRACE??[],
+    previewOwned:Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW),
+    shell:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")),
+  }));
+  assert.equal(navPreflight.present,true,"Mass overlay vanished during Schola chrome checks: "+JSON.stringify(navPreflight));
   await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
   const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
   assert.equal(await hostSection.count(),1,"source-first section menu exposes no Host Consecration");
