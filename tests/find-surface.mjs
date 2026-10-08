@@ -112,7 +112,7 @@ assert.match(empty,/No locations are being invented/);
 
 assert.match(FIND_MAP_RUNTIME.module,/maplibre-gl/);
 assert.match(FIND_MAP_RUNTIME.style,/openfreemap/);
-assert.match(FIND_MAP_RUNTIME.style,/styles\\/dark/);
+assert.ok(FIND_MAP_RUNTIME.style.includes("/styles/dark"));
 assert.equal(massMapProviderGroup("SSPX"),"SSPX");
 assert.equal(massMapProviderGroup("UNRECOGNISED_GROUP"),"OTHER");
 assert.equal(Object.keys(MASS_MAP_GROUP_COLORS).length,6);
@@ -151,7 +151,7 @@ assert.match(browserSource,/var\(--ao-z-surface,2147481800\)/,"Explore root is n
 assert.match(explorePresentation,/ao-ui-back/,"Explore Back control is not using the canonical utility icon");
 assert.match(explorePresentation,/aoMapLegend/,"TLM map provider legend not wired");
 assert.match(browserSource,/initialViewport:lastMapLens===state.lens/,"Map loses viewport when a point opens");
-assert.match(browserSource,/aoMapLegend>span\\[data-group/,"Map visual legend styling missing");
+assert.ok(browserSource.includes("aoMapLegend>span[data-group"),"Map visual legend styling missing");
 
 assert.match(explorePresentation,/ao-ui-close/,"Explore Close control is not using the canonical utility icon");
 assert.match(explorePresentation,/data-find-glossary/,"Explore header lost contextual glossary action");
