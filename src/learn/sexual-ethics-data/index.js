@@ -59,7 +59,7 @@ export { CSE_SOURCES, CSE_SOURCE_MAP };
 const errors=[];
 const seen=new Set();
 const allowedLayers=new Set(["PERENNIAL","LATER_APPLICATION","PASTORAL_CASE"]);
-const allowedCrossTargets=new Set(["learn.rites.matrimony","learn.catholic_life","pray.confession"]);
+const allowedCrossTargets=new Set(["learn.rites.matrimony","learn.spiritual_life","pray.confession"]);
 for(let n=1;n<=150;n++){
   const id=`CSE${String(n).padStart(3,"0")}`;
   const item=CSE_QUESTION_MAP[id];
