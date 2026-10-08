@@ -283,9 +283,11 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   async function open(opts={}){
+    win.__AO_LEARN_GLOSS_TRACE?.push(['glossary-open',Date.now(),JSON.stringify(opts)]);
     state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.latinStage=null;state.query=String(opts.query||"");state.detailId=null;state.detailType="concept";state.contextIds=[];state.origin=String(opts.origin||"learn");
     ensureRoot();attach();state.loading=!state.loaded;render();
     await load();state.loading=false;
+    win.__AO_LEARN_GLOSS_TRACE?.push(['glossary-loaded',Date.now(),state.loaded,state.error]);
     if(opts.categoryId&&categoryById(state.data,opts.categoryId)){state.categoryId=opts.categoryId;state.view="category"}
     if(opts.entryId&&state.data?.byId?.has(opts.entryId)){state.detailType="concept";state.detailId=opts.entryId}
     if(opts.lexemeId&&state.data?.lexemeById?.has(opts.lexemeId)){state.detailType="lexeme";state.detailId=opts.lexemeId;state.categoryId="latin_rubrics";state.view="lexemes"}
@@ -313,6 +315,7 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   function close(returnToLearn=false){
+    win.__AO_LEARN_GLOSS_TRACE?.push(['glossary-close',Date.now(),returnToLearn,Boolean(root(win))]);
     const n=root(win);try{n?.querySelector?.(":focus")?.blur?.()}catch{}n?.remove?.();
     state.open=false;state.detailId=null;state.detailType="concept";state.query="";state.contextIds=[];state.latinStage=null;
     if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
