@@ -30,7 +30,7 @@ for(const record of records){
   assert.ok(!ids.has(record.u),"repeated provider venue id "+record.u);
   ids.add(record.u);
   const key=record.cc+"|"+record.a.normalize("NFKD")
-    .replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"");
+    .toLowerCase().replace(/[^a-z0-9]+/g,"");
   assert.ok(!physical.has(key),"duplicate physical chapel "+record.u);
   physical.add(key);
 }
@@ -43,7 +43,7 @@ assert.ok(!records.some(r=>r.cc==="AE"||r.cc==="ID"||r.cc==="HK"),
 assert.ok(!records.some(r=>r.cc==="AR"&&r.l==="Pilar"),"Postal-box-only convent published");
 const sv=records.find(r=>r.cc==="SV");
 assert.equal(sv.su,"https://centroamerica.fsspx.org/es/mision-san-pio-x-san-salvador-30836");
-assert.match(sv.a,/Calle Arce No\\. 910/);
+assert.ok(sv.a.includes("Calle Arce No. 910"));
 assert.ok(held.some(h=>h.district==="CENTRAL_AMERICA"&&h.name.includes("Panama")&&
   h.state==="CONFLICTING_PHYSICAL_ADDRESS"));
 assert.ok(held.some(h=>h.district==="ASIA"&&h.name.includes("Catholic School")&&
