@@ -1,0 +1,5516 @@
+{
+  "version": "CSE_CERTIFICATION_EVIDENCE_V2",
+  "date": "2026-10-09",
+  "status": "PARTIAL_ORIGINAL_PASSAGE_REVIEW_NO_BLANKET_CERTIFICATION",
+  "rules": [
+    "Each claim and opposing argument requires a direct original paragraph and accurate source role; a secondary quotation of Fletcher is not the original book.",
+    "A source-supported inference is not a verbatim author's position. Clinical guidelines do not pronounce moral doctrine.",
+    "English and French wording must independently preserve the same limited claim; live canonical ownership must remain unchanged.",
+    "Only after all eight stages have original-passage support, documented exact opponent attribution where relevant, and detailed French proof-reading may full certification be considered.",
+    "Any named theological certification requires an independent competent human theological editor; this file does not claim imprimatur."
+  ],
+  "sources_checked": {
+    "VS": {
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "sections": "§§78–80"
+    },
+    "HV": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "sections": "§13"
+    },
+    "CASTI": {
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "sections": "§59"
+    },
+    "PH": {
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+      "sections": "§9"
+    },
+    "DP": {
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "sections": "§§12–18"
+    },
+    "DONUMV": {
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+      "sections": "II.A.3; II.B"
+    },
+    "ASRM_GC": {
+      "url": "https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+      "sections": "Key points; contractual/economic considerations"
+    },
+    "ACOG_ECTOPIC": {
+      "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+      "sections": "Symptoms, diagnosis, treatment"
+    },
+    "ABORTCLAR": {
+      "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+      "sections": "Therapeutic intervention"
+    },
+    "FLETCHER_EXCERPTS": {
+      "url": "https://www.christianstudylibrary.org/article/situation-ethics",
+      "sections": "Quoted Fletcher extracts; mediated source"
+    }
+  },
+  "summary": {
+    "total_cases": 55,
+    "total_stages": 440,
+    "substantive_case_reviews": 8,
+    "individually_assessed_stages": 64,
+    "stage_verdict_counts": {
+      "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 30,
+      "ORIGINAL_OPPONENT_POSITION": 5,
+      "ILLUSTRATIVE_CHALLENGE": 11,
+      "REASONED_INFERENCE_FROM_DOCUMENT": 12,
+      "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT": 5,
+      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 377
+    },
+    "full_case_certifications": 0
+  },
+  "cases": [
+    {
+      "id": "CSE006",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "MILL_IV_FULL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "MILL_IV_FULL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST94"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "VS",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST94",
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "MILL_IV_FULL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "VS",
+            "ST94"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST18",
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE007",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "VS",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "VS",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE008",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FLETCHER_EXCERPTS"
+          ],
+          "assessment": "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT",
+          "explanation_en": "Fletcher's agape position is corroborated through reproduced excerpts, not independent full-book collation.",
+          "explanation_fr": "Fletcher: agapè confirmée par des extraits reproduits, non par la collation autonome du livre intégral.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FLETCHER_TABLET"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Good intention influences moral analysis; 'same outward act' needs object-level qualification.",
+          "explanation_fr": "L'intention compte, mais « même acte extérieur » exige une précision sur l'objet moral.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST18"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Veritatis Splendor §78 expressly distinguishes object and intention.",
+          "explanation_fr": "Veritatis Splendor §78 distingue expressément objet et intention.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST18",
+            "VS"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Veritatis Splendor §§78–80 rejects a good end as sufficient to justify every means.",
+          "explanation_fr": "Veritatis Splendor §§78–80 rejette la suffisance d'une fin bonne pour justifier tout moyen.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "VS",
+            "SCR"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Veritatis Splendor §§78–80 directly supports object, intention and circumstances.",
+          "explanation_fr": "Veritatis Splendor §§78–80 fonde la distinction objet, intention et circonstances.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FLETCHER_EXCERPTS"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The objection is an authored analytical challenge, not Fletcher's quoted reply.",
+          "explanation_fr": "Cette objection analytique est rédigée, non citée de Fletcher.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Reasoned application of object/intention distinction rather than a literal source passage.",
+          "explanation_fr": "Application raisonnée de la distinction objet/intention, non citation littérale.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST18",
+            "VS"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Veritatis Splendor §78 explicitly affirms a good end alone is insufficient.",
+          "explanation_fr": "Veritatis Splendor §78 affirme qu'une bonne fin ne suffit pas.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE010",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FLETCHER_EXCERPTS"
+          ],
+          "assessment": "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT",
+          "explanation_en": "Fletcher's exceptionless agape norm is documented through attributed excerpts; original volume still uncollated.",
+          "explanation_fr": "La norme d'agapè de Fletcher est connue par extraits attribués ; ouvrage intégral non collationné.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FLETCHER_TABLET"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Valid attention to circumstances; not a specific verbatim Fletcher claim.",
+          "explanation_fr": "Attention légitime aux circonstances, sans citation directe de Fletcher.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Veritatis Splendor distinguishes moral object from personal blame and circumstances.",
+          "explanation_fr": "Veritatis Splendor distingue l'objet moral de la culpabilité personnelle et des circonstances.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Veritatis Splendor §§79–80 rejects situational justification of intrinsic evils.",
+          "explanation_fr": "Veritatis Splendor §§79–80 exclut la justification situationnelle des actes intrinsèquement mauvais.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Intrinsic evil depends on object, not identical blame in all actors.",
+          "explanation_fr": "Le mal intrinsèque dépend de l'objet, non d'une culpabilité identique de tous.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FLETCHER_EXCERPTS"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "An author-created question, not an actual Fletcher quotation.",
+          "explanation_fr": "Question de débat reconstruite, non citation de Fletcher.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Analytical reply based on Veritatis Splendor; identifying the moral object requires further reasoning.",
+          "explanation_fr": "Réponse analysée sur Veritatis Splendor ; définir l'objet demande un raisonnement supplémentaire.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Valid synthesis of objective norm and subjective culpability.",
+          "explanation_fr": "Synthèse valide des normes objectives et de la culpabilité subjective.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE012",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN_CDF1986"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "CURRAN_CDF1986"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN_CDF1986"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE013",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE014",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "CURRAN1987",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI",
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "VS",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "SCR",
+            "CASTI",
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "VS",
+            "TRENT6"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI",
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE016",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST19"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "VS",
+            "DONUMVER"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "VS",
+            "ST19"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "VS",
+            "DONUMVER"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE018",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "DONUMVER"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "DONUMVER"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "DONUMVER"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "DONUMVER"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "DONUMVER"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE020",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "NIDA_ADDICTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "NIDA_ADDICTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST77",
+            "CCC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST77",
+            "ST78"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CCC",
+            "ST77"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "NIDA_ADDICTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST77",
+            "CCC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST77",
+            "ST78"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE021",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FREUD1908"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FREUD1908"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FREUD1908"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE029",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PRIEST_WELLBEING2016"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PRIEST_WELLBEING2016"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PRIEST_WELLBEING2016"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE031",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN_CDF1986"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_RELATIONSHIPS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST154"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST154",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST154",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN_CDF1986"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST154",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE035",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PEW_CO2019"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PEW_CO2019"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST43"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST154",
+            "ST43"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST154",
+            "ST43"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PEW_CO2019"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST154",
+            "ST43"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST154"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE038",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_SEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "SCR",
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "SCR",
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_SEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "SCR",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "SCR",
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE039",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_RELATIONSHIPS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "SCR",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "SCR",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_RELATIONSHIPS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "SCR",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE040",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_SEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_SAFERSEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST154"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "PH",
+            "ST154"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "PH",
+            "ST154",
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_SEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "PH",
+            "ST154"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "PH",
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE043",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CDF2003",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CDF2003",
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CDF2003",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE044",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_LGB"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CIC",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CASTI",
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CIC",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE045",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PEW_CO2019"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PEW_CO2019"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PEW_CO2019"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE049",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CASTI",
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CASTI",
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CASTI",
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "SCR",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE050",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "SCR",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CIC",
+            "SCR",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CIC",
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE051",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CASTI",
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "HV",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CASTI",
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE054",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Modern reconstructed challenge about marital debt; not a direct quoted traditional authority.",
+          "explanation_fr": "Objection reconstruite sur le devoir conjugal, non citation d'une autorité précise.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "RAINN_ALCOHOL"
+          ],
+          "assessment": "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT",
+          "explanation_en": "Historic mutual marital obligations need exact primary manual/canon passage collation.",
+          "explanation_fr": "Les obligations conjugales réciproques requièrent une collation précise des textes anciens.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST64SUP"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": "Proportional reasons for refusing relations are not established by Humanae Vitae §13 alone.",
+          "explanation_fr": "Les raisons proportionnées de refus ne sont pas établies par Humanae Vitae §13 seule.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "HV",
+            "ST64SUP"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Humanae Vitae §13 explicitly excludes imposed intercourse against reasonable wishes.",
+          "explanation_fr": "Humanae Vitae §13 exclut expressément l'union imposée sans égard aux souhaits raisonnables.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST64SUP",
+            "HV"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Humanae Vitae §13 says imposed intercourse disregarding spouse's condition is not true love.",
+          "explanation_fr": "Humanae Vitae §13 exclut l'acte imposé sans considération de l'état du conjoint.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_CONSENT"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Question constructed for debate, not a quoted interlocutor.",
+          "explanation_fr": "Question illustrative, non citation d'un interlocuteur.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "HV",
+            "ST64SUP"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No coercive entitlement follows from the distinction between moral obligations and force.",
+          "explanation_fr": "Aucun droit de contrainte ne découle de la distinction entre devoir moral et force.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST64SUP"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Humanae Vitae §13 affirms no legitimate entitlement to an imposed act.",
+          "explanation_fr": "Humanae Vitae §13 refuse toute légitimation d'un acte imposé.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE055",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_SEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_SAFERSEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "MCHUGH"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "MCHUGH",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "MCHUGH",
+            "CASTI",
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_SEX"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "MCHUGH",
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "MCHUGH",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE056",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "APA_CNM",
+            "PP_OPEN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_CNM"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "SCR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "SCR",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "SCR",
+            "TRENT6",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_OPEN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "SCR",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "TRENT6",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE058",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_ANAL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_ANAL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST154"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST154",
+            "MCHUGH"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST154",
+            "MCHUGH",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_ANAL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST154",
+            "MCHUGH"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST154",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE061",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_BIRTHCONTROL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "HV",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "HV",
+            "CASTI",
+            "MIDWIVES"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "HV",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE063",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_BIRTHCONTROL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "MIDWIVES"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "HV",
+            "MIDWIVES"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "HV",
+            "MIDWIVES"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "HV",
+            "MIDWIVES"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE064",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_BIRTHCONTROL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "MIDWIVES"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "HV",
+            "MIDWIVES"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "CURRAN1987"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "MIDWIVES",
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "HV"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE070",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_BIRTHCONTROL"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Illustrative reluctant spouse dilemma; no specific identified opponent's verbatim testimony.",
+          "explanation_fr": "Dilemme illustratif du conjoint réticent, non témoignage attribué.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_BIRTHCONTROL"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Relevant difficult circumstances explicitly assumed in Casti Connubii §59.",
+          "explanation_fr": "Le cas difficile est envisagé par Casti Connubii §59.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Casti Connubii §59 distinguishes the reluctant spouse from the one committing wrong.",
+          "explanation_fr": "Casti Connubii §59 distingue le conjoint réticent de celui qui choisit le mal.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CASTI",
+            "HV"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Casti Connubii §59 supports distinct responsibility but only under stated conditions.",
+          "explanation_fr": "Casti Connubii §59 fonde la distinction sous conditions expresses.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CASTI",
+            "HV"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Grave cause, reluctant allowance and duty to dissuade are explicit in §59.",
+          "explanation_fr": "Raison grave, tolérance à contrecœur et devoir de dissuader figurent en §59.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_BIRTHCONTROL"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A constructed 'loophole' objection, not a cited proponent.",
+          "explanation_fr": "Objection illustrative de la « brèche », non thèse citée.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CASTI",
+            "ST18"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "The same §59 does not license contraception, only differentiates the other spouse's responsibility.",
+          "explanation_fr": "Le §59 distingue la responsabilité et ne rend pas la contraception licite.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Casti Connubii §59 expressly requires charity and discouraging wrongdoing.",
+          "explanation_fr": "Casti Connubii §59 exige expressément la charité et la dissuasion.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE071",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Persona Humana §9 identifies contemporary claims about masturbation, while Farley's own page-referenced view is quoted in CDF 2012.",
+          "explanation_fr": "Persona Humana §9 présente les objections modernes ; la position de Farley est reproduite avec pages par la CDF en 2012.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_MAST"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "It lacks coercion/adultery as additional acts; not equal to doctrinal innocence.",
+          "explanation_fr": "Absence de contrainte ou d'adultère n'implique pas innocence morale.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST154"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Persona Humana §9 specifically discusses immaturity, psychological imbalance and habit affecting culpability.",
+          "explanation_fr": "Persona Humana §9 décrit immaturité, déséquilibre psychologique et habitude dans la culpabilité.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "PH",
+            "ST154"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Persona Humana §9 states the moral rationale beyond harm to another person.",
+          "explanation_fr": "Persona Humana §9 donne un fondement moral distinct du dommage à autrui.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "PH",
+            "CCC"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Persona Humana §9 directly describes the chosen act and its moral category.",
+          "explanation_fr": "Persona Humana §9 décrit l'acte volontaire et sa qualification morale.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The nutrition analogy is editorial, not a quotation from Farley.",
+          "explanation_fr": "L'analogie alimentaire est illustrative, non attribuée à Farley.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "PH",
+            "ST154"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Argument by the human ends of the sexual faculty; not a direct comparative claim in §9.",
+          "explanation_fr": "Raisonnement sur la fin de la faculté sexuelle ; comparaison non littérale du §9.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "PH",
+            "CCC"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Persona Humana §9 expressly avoids presuming absence of grave responsibility.",
+          "explanation_fr": "Persona Humana §9 exclut de présumer l'absence de responsabilité grave.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE074",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_PORN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_PORN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CCC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CCC",
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CCC",
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_PORN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CCC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CCC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE076",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PP_PORN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_PORN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CCC",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CCC",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_PORN"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CCC",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CCC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE083",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012",
+            "APA_LGB"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "PH"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "PH",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "PH",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "PH",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "PH",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE084",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CIC"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CIC",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CIC",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CIC",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CIC",
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE087",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "APA_LGB_POLICY"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_LGB_POLICY"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "HOMO86",
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "HOMO86",
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "APA_LGB"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "HOMO86",
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE088",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "APA_LGB_POLICY"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_LGB"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "APA_LGB_POLICY"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE089",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FARLEY_QUOTED2012"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CDF2003"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE093",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "APA_TRANS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_TRANS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "APA_TRANS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE094",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "APA_TRANS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_SEXTHERAPY"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "APA_TRANS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE095",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "APA_TRANSCARE"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_TRANSCARE"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "APA_TRANSCARE"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE096",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "WPATH8_FULL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "WPATH8_FULL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "WPATH8_FULL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "DI2024",
+            "WPATH8_FULL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "DI2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE101",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "ASRM_ART"
+          ],
+          "assessment": "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT",
+          "explanation_en": "A sympathetic IVF proposal is reconstructed from ART practice rather than quoted as an author's philosophical defense.",
+          "explanation_fr": "La défense de la FIV est reconstruite depuis les pratiques d'AMP, non citée comme argument personnel.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "ASRM_ART"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Dignitas Personae §13 recognizes infertile couples' pain and legitimate desire for children.",
+          "explanation_fr": "Dignitas Personae §13 reconnaît la souffrance de l'infertilité et le désir légitime d'enfant.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "DONUMV"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Dignitas Personae §§12–13 expressly permits assistance restoring natural fertility.",
+          "explanation_fr": "Dignitas Personae §§12–13 permet explicitement les traitements restaurant la fertilité.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "DONUMV",
+            "DP"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Dignitas Personae §12 identifies replacement versus assistance to conjugal act.",
+          "explanation_fr": "Dignitas Personae §12 distingue remplacement et aide à l'acte conjugal.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "DONUMV",
+            "DP"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Dignitas Personae §§12–17 and Donum Vitae distinguish morally illicit IVF from lawful assistance; updated wording avoids 'merely problematic'.",
+          "explanation_fr": "Dignitas Personae §§12–17 et Donum Vitae excluent la FIV de substitution ; rédaction corrigée.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "ASRM_ART"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A hypothetical couple's objection, not a verbatim ASRM/clinical statement.",
+          "explanation_fr": "Objection hypothétique du couple, non parole citée de l'ASRM.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "DONUMV"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Dignitas Personae §16 directly grounds dignity of procreation in bodily self-giving.",
+          "explanation_fr": "Dignitas Personae §16 fonde la procréation dans le don corporel des époux.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "DONUMV",
+            "DP"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Dignitas Personae §§12–18 describes substitution and additional embryo harms.",
+          "explanation_fr": "Dignitas Personae §§12–18 traite de substitution et des dommages aux embryons.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE104",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "ASRM_GC"
+          ],
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "ASRM ethics opinion 2023 explicitly accepts gestational-carrier arrangements under safeguards; this is paraphrase, not verbatim quote.",
+          "explanation_fr": "ASRM 2023 admet la GPA sous conditions ; objection reformulée, non citation verbatim.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "ASRM_GC"
+          ],
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "ASRM acknowledges economic, familial pressure and control conflicts; modified to avoid equating no payment with no exploitation.",
+          "explanation_fr": "ASRM évoque pressions économiques/familiales et conflits médicaux ; formulation corrigée.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "DONUMV"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "An altruistic motive can be sincere without resolving every structural moral issue.",
+          "explanation_fr": "Un motif généreux peut être sincère sans trancher les difficultés structurelles.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "DONUMV"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Donum Vitae II.A.3 explicitly discusses separating gestation/parenthood.",
+          "explanation_fr": "Donum Vitae II.A.3 vise la séparation entre gestation et parentalité.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "DONUMV",
+            "DI2024"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Donum Vitae II.A.3 directly rejects surrogate motherhood, including noncommercial cases.",
+          "explanation_fr": "Donum Vitae II.A.3 exclut la maternité de substitution, même non commerciale.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "ASRM_GC"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Adoption analogy is authored for debate, not an ASRM verbatim response.",
+          "explanation_fr": "Comparaison avec l'adoption construite, non réplique littérale d'ASRM.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "DONUMV",
+            "DI2024"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Differentiates prior deprivation remedied through adoption from deliberately arranged separation.",
+          "explanation_fr": "Distingue la réparation d'une privation de la séparation organisée.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "DONUMV"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Donum Vitae II.A.3 grounds objections in the rights of child and obligations of parenthood.",
+          "explanation_fr": "Donum Vitae II.A.3 fonde la critique sur les droits de l'enfant et la parentalité.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE112",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "RAINN_CONSENT101"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "ASSAULT2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST6",
+            "ASSAULT2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ASSAULT2024",
+            "ST6"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST6",
+            "ASSAULT2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "RAINN_CONSENT101"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST6",
+            "RAINN_CONSENT101"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST6",
+            "ASSAULT2024"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE117",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "RAINN_ASSAULT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "RAINN_ALCOHOL"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST6"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST6",
+            "RAINN_ASSAULT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST6",
+            "ST76"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "RAINN_ASSAULT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST6",
+            "RAINN_ASSAULT"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST6",
+            "ST76"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE123",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "ACOG_ABORTION",
+            "SINGER_KUHSE1990"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "ACOG_ABORTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORT74"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORT74"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_ABORTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ABORT74",
+            "CASTI"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORT74"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE124",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "ACOG_ABORTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "ACOG_ABORTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ABORTCLAR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORT74"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORT74",
+            "ABORTCLAR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PP_ABORTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ABORT74",
+            "ABORTCLAR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ABORTCLAR"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE125",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "ACOG_ECTOPIC"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Emergency dilemma is reconstructed, not an attributed ACOG ethical statement.",
+          "explanation_fr": "Dilemme d'urgence reconstruit, non position morale attribuée à l'ACOG.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "ACOG_ECTOPIC_GUIDELINE"
+          ],
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "ACOG clinical original supports emergency danger and need for intervention, not a moral preference.",
+          "explanation_fr": "ACOG confirme l'urgence clinique, sans trancher la préférence morale.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "CASTI",
+            "ACOG_ECTOPIC"
+          ],
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "ACOG describes ruptured ectopic pregnancy and need for urgent care.",
+          "explanation_fr": "ACOG décrit la rupture et la nécessité de soins urgents.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORTCLAR"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "CDF 2009 differentiates direct abortion and therapeutic intervention as distinct moral objects.",
+          "explanation_fr": "La CDF 2009 distingue l'avortement direct du traitement thérapeutique.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORTCLAR",
+            "NCBC_ECTOPIC"
+          ],
+          "assessment": "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT",
+          "explanation_en": "CDF principle is magisterial; salpingectomy / methotrexate / salpingostomy classification remains non-magisterial and debated.",
+          "explanation_fr": "Principe magistériel clair ; application aux techniques précises discutée entre moralistes.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "ACOG_ABORTION"
+          ],
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Wordplay objection is illustrative, not directly published by ACOG.",
+          "explanation_fr": "Objection de « jeu de mots » illustrative, non énoncée par ACOG.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORTCLAR",
+            "ACOG_ECTOPIC"
+          ],
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Double effect distinction applied; disputed individual procedures need further text.",
+          "explanation_fr": "Application du principe à vérifier selon la technique spécifique.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "CASTI",
+            "ABORTCLAR",
+            "NCBC_ECTOPIC"
+          ],
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "CDF 2009 affirms direct-abortion ban and distinguishes certain medical treatments.",
+          "explanation_fr": "La CDF 2009 exclut l'avortement direct et distingue certains traitements.",
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE141",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FRANCIS_SPADARO2013"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FRANCIS_SPADARO2013"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FRANCIS_SPADARO2013"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE142",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FREUD1908"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "FREUD1908"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FREUD1908"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST151",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST151"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE143",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "PURITY_SHAME2026"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PURITY_SURVIVORS2026"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "HOMO86"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "HOMO86",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "HOMO86",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "PURITY_SHAME2026"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "HOMO86",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "HOMO86",
+            "SACRA"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE145",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "FLETCHER_EXCERPTS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "PP_RELATIONSHIPS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "VS",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "VS",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "FLETCHER_EXCERPTS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "VS",
+            "ST18"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "VS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    },
+    {
+      "id": "CSE149",
+      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "full_eight_stage_certified": false,
+      "stage_review_count": 8,
+      "stages": [
+        {
+          "stage": "opposition",
+          "selected_source_ids": [
+            "APA_LGB",
+            "ASRM_ART"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "appeal",
+          "selected_source_ids": [
+            "APA_TRANS"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "concession",
+          "selected_source_ids": [
+            "ST94"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "breakpoint",
+          "selected_source_ids": [
+            "ST94",
+            "DP"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "catholicCase",
+          "selected_source_ids": [
+            "ST94",
+            "DP"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "counter",
+          "selected_source_ids": [
+            "APA_TRANS",
+            "ACOG_ABORTION"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "response",
+          "selected_source_ids": [
+            "ST94",
+            "DP"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        },
+        {
+          "stage": "bottom",
+          "selected_source_ids": [
+            "ST94",
+            "DP"
+          ],
+          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
+          "explanation_en": null,
+          "explanation_fr": null,
+          "author_quote_verified": false,
+          "exact_full_passage_collated": false
+        }
+      ]
+    }
+  ]
+}
