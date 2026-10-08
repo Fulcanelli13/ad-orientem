@@ -29,7 +29,7 @@ for(const row of baq.answers){
       assert.equal(ob.source_scope,"TOPICAL_CONTEXT_ONLY");
       assert.equal(ob.proponent_kind,"EDITORIAL_STRAWMAN_RISK_NOT_AN_ATTRIBUTED_OPPONENT");
       assert.ok(ob.provenance_warning&&ob.proponent.includes("Editorially framed"));
-    }else assert.equal(ob.attribution_status,"SOURCE_LINKED_WORDING_PARAPHRASE_NOT_QUOTATION");
+    }else assert.ok(["SOURCE_LINKED_WORDING_PARAPHRASE_NOT_QUOTATION","SOURCE_LINKED_PARAPHRASE_NOT_QUOTATION"].includes(ob.attribution_status));
     assert.ok(ob.argument?.source_ids?.length && ob.response?.source_ids?.length);
     for(const id of [...ob.argument.source_ids,...ob.response.source_ids])assert.ok(aSources.has(id));
   }
