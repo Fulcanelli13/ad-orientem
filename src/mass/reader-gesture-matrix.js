@@ -1,3 +1,7 @@
+import { R17_FROZEN_ACTIVE_ICON_KEYS } from "./reader-icons.js";
+
+const V46_MASTER_KEYS=new Set(R17_FROZEN_ACTIVE_ICON_KEYS);
+
 export const READER_GESTURE_MATRIX_SCHEMA="ao-mass-gesture-matrix-v1";
 export const READER_GESTURE_MATRIX_FILE="../mass/gesture-matrix.v1.json";
 
@@ -63,6 +67,9 @@ export function validateReaderGestureMatrix(data){
     if(cueNumber(item.cueId)==null)throw new Error(item.id+": invalid cue");
     if(!ACTORS.has(item.actor))throw new Error(item.id+": invalid actor");
     if(!item.gesture||!item.label)throw new Error(item.id+": gesture/label missing");
+    if(item.iconKey&&!V46_MASTER_KEYS.has(item.iconKey))throw new Error(item.id+": icon not in frozen v4.6 bank");
+    if(item.iconStatus==="V46_SEMANTIC_BINDING"&&!item.iconKey)throw new Error(item.id+": approved icon has no key");
+    if(item.iconKey&&item.iconStatus!=="V46_SEMANTIC_BINDING")throw new Error(item.id+": icon/key status disagreement");
     if(!Number.isInteger(item.sequenceOrder)||item.sequenceOrder<1)throw new Error(item.id+": invalid sequence order");
     if(!item.sources.length||item.sources.some(id=>!sourceIds.has(id)))throw new Error(item.id+": unresolved source");
     if(item.campionPages.length&&!item.sources.includes("CAMPION_1954"))throw new Error(item.id+": Campion pages without Campion source");
@@ -78,6 +85,8 @@ export function validateReaderGestureMatrix(data){
     schema:data.schema,
     version:String(data.version??""),
     itemCount:items.length,
+    iconBoundCount:items.filter(x=>x.iconStatus==="V46_SEMANTIC_BINDING").length,
+    iconPendingCount:items.filter(x=>!x.iconKey).length,
     priestCount:items.filter(x=>x.actor==="PRIEST").length,
     faithfulCount:items.filter(x=>x.actor==="FAITHFUL").length,
     campionBackedCount:items.filter(x=>x.campionPages.length).length,
