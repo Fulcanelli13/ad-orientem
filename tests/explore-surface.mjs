@@ -157,6 +157,16 @@ const tlmVm=buildExploreViewModel({
 const tlmHtml=renderExploreToString(tlmVm);
 assert.match(tlmHtml,/data-find-filter="unaCum"/);
 assert.match(tlmHtml,/data-find-affiliation="FSSP"/);
+assert.match(tlmHtml,/aoExploreAdvancedFilters/,"TLM advanced filter disclosure is missing");
+assert.match(tlmHtml,/More filters/,"TLM advanced filter label disappeared");
+assert.match(tlmHtml,/COMMUNITY \/ PROVIDER/,"provider taxonomy lost its explicit advanced label");
+assert.match(tlmHtml,/COMMUNION STATUS/,"communion taxonomy lost its explicit advanced label");
+assert.match(tlmHtml,/LITURGY/,"liturgy taxonomy lost its explicit advanced label");
+assert.match(tlmHtml,/MASS TYPE/,"Mass-type taxonomy lost its explicit advanced label");
+assert.ok(
+  tlmHtml.indexOf('aoExploreAdvancedFilters') < tlmHtml.indexOf('data-find-affiliation="FSSP"'),
+  "provider affiliation leaked ahead of the Advanced disclosure"
+);
 assert.match(tlmHtml,/Église Saint-Test/);
 assert.match(tlmHtml,/Sunday 10:30 Sung Mass/);
 
