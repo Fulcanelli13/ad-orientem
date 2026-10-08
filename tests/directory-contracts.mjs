@@ -39,6 +39,7 @@ const researchSnapshots = [
   readJson("../data/directory/generated/v19/sspx-oct26-americas.v1.json"),
   readJson("../data/directory/generated/v19/sspx-oct26-poland.v1.json"),
   readJson("../data/directory/generated/v19/sspx-asia-central-americas.v1.json"),
+  readJson("../data/directory/generated/v19/sspx-north-america-20261008.v1.json"),
   readJson("../data/directory/generated/v19/aasjmv.v1.json"),
   readJson("../data/directory/generated/v19/fsvf.v1.json"),
   readJson("../data/directory/generated/v19/canons-st-john-cantius.v1.json"),
@@ -59,6 +60,7 @@ const expectedResearchCounts = new Map([
   ["SSPX_OCT26_AMERICAS",44],
   ["SSPX_OCT26_POLAND",38],
   ["SSPX_ASIA_CENTRAL_AMERICAS_20261008",47],
+  ["SSPX_NA_DISTRICTS_20261008",120],
   ["AASJMV",6],
   ["FSVF",1],
   ["CANONS_ST_JOHN_CANTIUS",4],
@@ -128,6 +130,16 @@ for(const snapshot of researchSnapshots){
       ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}]}));
     assert.equal(publishableDirectoryRecords(rows).length,expected[snapshot.provider],
       "Source-backed 2026 district provider gate drift");
+  }
+  if(snapshot.provider==="SSPX_NA_DISTRICTS_20261008"){
+    assert.equal(expanded.venues.length,120);
+    assert.equal(expanded.venues.filter(v=>v.publication_state==="CONDITIONAL_MASS").length,18);
+    assert.ok(expanded.ministries.every(m=>m.community_id==="SSPX"&&m.liturgical_usage.books==="1962"));
+    assert.ok(expanded.venues.every(v=>v.address.formatted&&v.contact.schedule_url.every(url=>url.includes("sspx"))));
+    assert.ok(expanded.schedules.every(s=>s.service_type==="MASS"&&s.payload?.raw.includes("Sunday Mass")&&s.source_ids.length>0));
+    const records=expanded.venues.map((venue,i)=>({venue,
+      ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}]}));
+    assert.equal(publishableDirectoryRecords(records).length,120,"North American SSPX publication gate drift");
   }
   if(snapshot.provider==="SSPX_ASIA_CENTRAL_AMERICAS_20261008"){
     assert.equal(expanded.venues.length,47);
@@ -203,7 +215,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,826,"research projection incl 47 Asian and Central American SSPX records drift");
+assert.equal(researchVenueCount,946,"research projection incl 120 SSPX North American district venues drift");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
