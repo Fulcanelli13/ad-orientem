@@ -116,24 +116,6 @@
           "fr": "eau"
         },
         "frozenLesson": 2
-      },
-      {
-        "lemma": "familia",
-        "partOfSpeech": "noun",
-        "gloss": {
-          "en": "household / family",
-          "fr": "famille"
-        },
-        "frozenLesson": 2
-      },
-      {
-        "lemma": "ira",
-        "partOfSpeech": "noun",
-        "gloss": {
-          "en": "anger / wrath",
-          "fr": "colère"
-        },
-        "frozenLesson": 2
       }
     ],
     "recycled": [
@@ -365,8 +347,8 @@
       "type": "morphology",
       "title": "First-declension shape",
       "learnerCopy": {
-        "en": "Many first-declension nouns have nominative singular -a: culpa, gratia, anima, vita, terra, gloria, ecclesia, via, iustitia, aqua, familia, ira. Do not memorize six isolated tables; learn to notice the recurring endings on the permanent case map.",
-        "fr": "De nombreux noms de la première déclinaison ont un nominatif singulier en -a : culpa, gratia, anima, vita, terra, gloria, ecclesia, via, iustitia, aqua, familia, ira. Il faut surtout reconnaître les terminaisons récurrentes sur la carte permanente des cas."
+        "en": "Many first-declension nouns have nominative singular -a: culpa, gratia, anima, vita, terra, gloria, ecclesia, via, iustitia, aqua, familia, ira. Do not memorize six isolated tables; learn to notice the recurring endings on the permanent case map. Familia and ira are useful reading vocabulary, but belong to the later, non-Core vocabulary extension.",
+        "fr": "De nombreux noms de la première déclinaison ont un nominatif singulier en -a : culpa, gratia, anima, vita, terra, gloria, ecclesia, via, iustitia, aqua, familia, ira. Il faut surtout reconnaître les terminaisons récurrentes sur la carte permanente des cas. Familia et ira restent du vocabulaire de lecture utile, mais ne font plus partie des 350 lemmes suivis."
       },
       "referenceIds": [
         "grammar-scanlon-1944",
@@ -426,8 +408,8 @@
       "type": "retrieval",
       "title": "What remains active",
       "learnerCopy": {
-        "en": "By the end of Lesson 2, recognize the twelve new first-declension lemmas, identify obvious nominative/vocative -a forms, and keep the full six-case map visible without pretending the later functions are already mastered.",
-        "fr": "À la fin de la leçon 2, reconnaissez les douze nouveaux lemmes de la première déclinaison, identifiez les formes évidentes du nominatif/vocatif en -a et gardez visibles les six cas sans prétendre maîtriser déjà leurs fonctions ultérieures."
+        "en": "By the end of Lesson 2, recognize the ten tracked first-declension lemmas, identify obvious nominative/vocative -a forms, and keep the full six-case map visible without pretending the later functions are already mastered.",
+        "fr": "À la fin de la leçon 2, reconnaissez les dix lemmes suivis de première déclinaison, identifiez les formes évidentes du nominatif/vocatif en -a et gardez visibles les six cas sans prétendre maîtriser déjà leurs fonctions ultérieures."
       },
       "referenceIds": [
         "grammar-scanlon-1944",
@@ -1018,9 +1000,7 @@
       "ecclesia",
       "via",
       "iustitia",
-      "aqua",
-      "familia",
-      "ira"
+      "aqua"
     ],
     "silentIntroductions": [],
     "authenticSourceCount": 3,
@@ -1054,5 +1034,15 @@
         "Reconnaître vita/vitam comme un même lemme à travers des formes différentes."
       ]
     }
+  },
+  "reconciliation": {
+    "date": "2026-10-08",
+    "source": "data/learn/core-latin-201-350.v1.0.json",
+    "retiredTracked": [
+      "familia",
+      "ira"
+    ],
+    "promotedTracked": [],
+    "note": "Displaced words are not presented as certified Core; authenticated readings retain their support lexicon."
   }
 }
