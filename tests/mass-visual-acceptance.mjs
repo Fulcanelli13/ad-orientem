@@ -312,7 +312,10 @@ try{
   assert.equal(consecration.stageLeft,"true","donor LIVE faithful rail disappeared when no transient cue was active");
   assert.equal(consecration.stageRight,"true","donor LIVE audio rail disappeared at the Consecration");
   assert.notEqual(consecration.guideShort,"","short Guide rubric is not visible in the state ribbon");
-  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
+  // A direct section jump opens the destination immediately. Only an exact
+  // cue-triggered elevation should create the cinematic that follows below.
+  assert.equal(await page.locator("#ao-r17-native-reader-preview [data-role='cinematic']").evaluate(el=>el.hidden),true,
+    "direct jump into Host Consecration unexpectedly played a part-transition cinematic");
   console.log("Full visual: BEFORE Consecration screenshot");
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
   console.log("Full visual: AFTER Consecration screenshot");
