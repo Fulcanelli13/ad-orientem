@@ -73,6 +73,10 @@ jobs:
             import fs from "node:fs";
             const p=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+
               "/lpl-france/sspx-france-acquisition-report.v1.json","utf8"));
-            if(!p.staging_only||p.publication_eligible_venues!==0)process.exit(1);
-            console.log("PASS: source discovery only; production Find unchanged.");
+            if(!p.staging_only||p.publication_eligible_venues!==0||
+              !p.complete_source_index||p.archive_recovered!==254||
+              p.archive_pages_read!==11)process.exit(1);
+            if(!p.complete_detail_review)console.warn(
+              "Detailed source exceptions remain: "+p.details_failures.length);
+            console.log("PASS: full district source index staged; production Find unchanged.");
           '
