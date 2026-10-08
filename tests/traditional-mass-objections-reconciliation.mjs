@@ -110,7 +110,7 @@ assert.equal(b.translation_progress.paragraphs_fr_draft,37);
 assert.equal(b.translation_progress.questions_with_complete_paragraphs_fr_draft,15);
 assert.equal(b.translation_progress.human_review_completed,false);
 assert.equal(b.source_registry.length,15);
-assert.equal(tc.source_registry.length,16);
+assert.equal(tc.source_registry.length,17);
 assert.equal(b.source_audit_20261008.human_theological_approval,false);
 assert.deepEqual(b.source_audit_20261008.reviewed_cases,["TLM056","TLM058","TLM059","TLM060"]);
 const q56=b.records.find(x=>x.id==="TLM056");
@@ -126,7 +126,7 @@ const gate=load("data/learn/traditional-mass-publication-gates.v1.json");
 assert.equal(gate.publication_allowed,false);
 assert.equal(gate.records.length,50);
 assert.deepEqual(gate.records.map(x=>x.id),ids(26,50));
-assert.equal(gate.recovered.paragraphs,149);
+assert.equal(gate.recovered.paragraphs,169);
 assert.ok(gate.records.every(x=>x.publication_ready===false));
 
 assert.equal(b.editorial_provenance.removed_unsupported_identified_reply_roles,3);
