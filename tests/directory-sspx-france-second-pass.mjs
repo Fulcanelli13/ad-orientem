@@ -34,7 +34,7 @@ for(const p of second.records){
   assert.ok(p.su.startsWith("https://laportelatine.org/lieux/"));
   assert.ok(p.sr.trim().length>15);
   assert.equal(states.get(p.source_profile_slug),p.ps);
-  assert.ok(/\\b\\d{5}\\b/.test(p.a));
+  assert.ok(/\b\d{5}\b/.test(p.a));
 }
 assert.equal(new Set(second.records.map(p=>p.u)).size,29);
 assert.equal(firstSlugs.size+states.size,sourceSlugs.size);
