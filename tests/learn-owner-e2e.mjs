@@ -438,7 +438,8 @@ try{
   await assertFocusSafe("Learn -> Calendar");
 
   await openLearn();
-  await page.locator("[data-ao-app-surface='settings']").tap();
+  // Settings is a contextual app overlay, not the sixth global ribbon tab.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings" &&
     !document.getElementById("ao-learn-modular-root"),
