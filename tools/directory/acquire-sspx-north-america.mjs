@@ -181,7 +181,7 @@ async function fallbackCards(url){
       const required=url.includes("sspx.org")?["Annunciation Chapel","Christ the King Church"]:
         ["Cathedral of the Transfiguration","Christ the King Church"];
       if(cards.length<25||!required.every(name=>cards.some(c=>c.title.includes(name)))){
-        throw new Error("incomplete mirror: "+cards.length+" cards; missing sentinels");
+        throw new Error("incomplete mirror: "+cards.length+" cards; missing sentinels; first text="+text.slice(0,1200).replace(/\\n/g," "));
       }
       return {cards,transport:"THIRD_PARTY_READ_ONLY_RENDER",mirror};
     }catch(error){errors.push(mirror+": "+String(error));}
