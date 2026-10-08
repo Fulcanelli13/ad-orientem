@@ -106,7 +106,7 @@ assert.ok(lastGospel.primaryPriestAction.campionPages.includes(95));
 const perIpsum=matrixController.project("AO.SM.C0202");
 assert.equal(perIpsum.primaryPriestAction.label,"THREE CROSSES WITH HOST OVER CHALICE");
 assert.equal(perIpsum.primaryPriestAction.owner,"GESTURE_MATRIX_SOT");
-assert.equal(perIpsum.primaryPriestAction.iconKey,null);
+assert.equal(perIpsum.primaryPriestAction.iconKey,"cross","Per ipsum triple crosses should use explicit v4.6 icon");
 assert.ok(perIpsum.primaryPriestAction.campionPages.includes(69));
 assert.ok(perIpsum.primaryPriestAction.campionPages.includes(70));
 const gospel=matrixController.project("AO.SM.C0084");
