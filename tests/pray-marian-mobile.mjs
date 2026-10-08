@@ -34,9 +34,12 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuide").evaluate(x=>x.open),true);
  await page.locator("#aoPray435930 [data-p435930-seg='group']").first().evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-angelus-recitation]").getAttribute("data-ao-angelus-recitation"),"group");
- assert.ok(await page.locator("#aoPray435930 .aoAngelusDialogueLine[data-ao-angelus-voice='leader']").count()>0);
- console.log("Angelus V/R DOM:",JSON.stringify(await page.evaluate(()=>({face:document.querySelector("#aoPray435930 [data-ao-angelus-recitation]")?.dataset.aoAngelusRecitation,leader:document.querySelectorAll("#aoPray435930 [data-ao-angelus-voice=leader]").length,response:document.querySelectorAll("#aoPray435930 [data-ao-angelus-voice=response]").length,first:document.querySelector("#aoPray435930 [data-ao-angelus-unit=vr]")?.innerHTML?.slice(0,1600)}))));
- assert.ok(await page.locator("#aoPray435930 .aoAngelusDialogueLine[data-ao-angelus-voice='response']").count()>0);
+ const dialogue=await page.evaluate(()=>{
+  const host=document.getElementById("aoPray435930");
+  return {leader:host?.querySelectorAll("[data-ao-angelus-voice=leader]").length??0,
+    response:host?.querySelectorAll("[data-ao-angelus-voice=response]").length??0};
+ });
+ assert.ok(dialogue.leader>0&&dialogue.response>0,"Group V/R pairing absent in mobile DOM: "+JSON.stringify(dialogue));
  const flip=page.locator("#aoPray435930 .aoP435930PrayerUnit [data-p435930-card-flip]").first();
  await flip.evaluate(x=>x.click());
  assert.equal(await flip.locator("[data-face-la]").evaluate(x=>x.hidden),false,"Latin replacement did not open");
