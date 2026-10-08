@@ -1,0 +1,100 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_OCT26_REVIEW_EXCEPTIONS_V1",
+  "reviewed_on": "2026-10-08",
+  "release_eligible": false,
+  "withheld_venue_count": 6,
+  "held_venues": [
+    {
+      "source_id": "SSPX-OCT26-MX-MX-CANCUN-CAPILLA-INMACULADA-CONCEPCION",
+      "country_code": "MX",
+      "name": "Capilla Inmaculada Concepción",
+      "city": "Cancún",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "source_schedule": "Fourth Sunday 09:00; preceding Friday/Saturday 18:00.",
+      "reason": "ADDRESS_UNSUITABLE_FOR_PHYSICAL_VENUE_PUBLICATION"
+    },
+    {
+      "source_id": "SSPX-OCT26-MX-MX-MERIDA-CAPILLA-SAN-ANTONIO",
+      "country_code": "MX",
+      "name": "Capilla San Antonio",
+      "city": "Mérida",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "source_schedule": "Fourth Sunday 18:30; venue address requires local confirmation.",
+      "reason": "ADDRESS_UNSUITABLE_FOR_PHYSICAL_VENUE_PUBLICATION"
+    },
+    {
+      "source_id": "SSPX-OCT26-MX-MX-XALAPA-MISION-BEATO-RAFAEL-GUIZAR-Y-VALENCI",
+      "country_code": "MX",
+      "name": "Misión Beato Rafael Guízar y Valencia",
+      "city": "Xalapa",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "source_schedule": "Fourth Sunday 18:00; venue address requires local confirmation.",
+      "reason": "ADDRESS_UNSUITABLE_FOR_PHYSICAL_VENUE_PUBLICATION"
+    },
+    {
+      "source_id": "SSPX-OCT26-SA-AR-TANDIL-CAPILLA-SAN-BENITO-DE-NURSIA",
+      "country_code": "AR",
+      "name": "Capilla San Benito de Nursia",
+      "city": "Tandil",
+      "source_url": "https://fsspx-sudamerica.org/es/capillas",
+      "source_schedule": "First Sunday 10:30.",
+      "reason": "ADDRESS_UNSUITABLE_FOR_PHYSICAL_VENUE_PUBLICATION"
+    },
+    {
+      "source_id": "SSPX-OCT26-SA-AR-SAN-LUIS-CAPILLA-SAN-LUIS",
+      "country_code": "AR",
+      "name": "Capilla San Luis",
+      "city": "San Luis",
+      "source_url": "https://fsspx-sudamerica.org/es/capillas",
+      "source_schedule": "Sunday 10:00; physical address to be confirmed.",
+      "reason": "ADDRESS_UNSUITABLE_FOR_PHYSICAL_VENUE_PUBLICATION"
+    },
+    {
+      "source_id": "SSPX-OCT26-SA-CL-TEMUCO-FAMILIA-VILLAGRA-PRIVATE-HOSTED-MASS",
+      "country_code": "CL",
+      "name": "Familia Villagra — private-hosted Mass venue",
+      "city": "Temuco",
+      "source_url": "https://fsspx-sudamerica.org/es/capillas",
+      "source_schedule": "Sunday 11:00; private home venue/address to be confirmed.",
+      "reason": "ADDRESS_UNSUITABLE_FOR_PHYSICAL_VENUE_PUBLICATION"
+    }
+  ],
+  "poland_irregular_venue_holds": [
+    {
+      "city": "Biała Podlaska",
+      "country_code": "PL",
+      "source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "reason": "NO_STABLE_PUBLIC_MASS_SCHEDULE_OR_CONFIRMED_PHYSICAL_CHAPEL"
+    },
+    {
+      "city": "Chełm",
+      "country_code": "PL",
+      "source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "reason": "NO_STABLE_PUBLIC_MASS_SCHEDULE_OR_CONFIRMED_PHYSICAL_CHAPEL"
+    },
+    {
+      "city": "Kołobrzeg",
+      "country_code": "PL",
+      "source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "reason": "NO_STABLE_PUBLIC_MASS_SCHEDULE_OR_CONFIRMED_PHYSICAL_CHAPEL"
+    },
+    {
+      "city": "Włocławek",
+      "country_code": "PL",
+      "source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "reason": "NO_STABLE_PUBLIC_MASS_SCHEDULE_OR_CONFIRMED_PHYSICAL_CHAPEL"
+    }
+  ],
+  "duplicate_resolution_note": "No exact-address collisions were found against existing SSPX seed and French/Australia/Germany records. Niterói duplicate source row collapsed before insertion.",
+  "known_precision_limitations": "Published records have source-backed physical addresses, but no independent GPS verification; no map pins may be inferred from district country-level listings.",
+  "source_index_urls": [
+    "https://fsspx.at/de/priorate-und-messzentren-0",
+    "https://fsspx.nl/nl/kerken-kapellen-benelux",
+    "https://fsspx.es/es/capillas-0",
+    "https://fsspx.it/it/cappelle-e-oratori",
+    "https://fsspx.mx/es/capillas-2",
+    "https://fsspx.com.br/pt/capelas",
+    "https://fsspx-sudamerica.org/es/capillas",
+    "https://www.piusx.org.pl/kaplice/zestawienie"
+  ]
+}
