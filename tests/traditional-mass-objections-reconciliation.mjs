@@ -12,6 +12,16 @@ const owners=new Set([...crisis.dossiers,...apol.dossiers].map(x=>x.id));
 const ids=(start,count)=>Array.from({length:count},(_,i)=>"TLM"+String(start+i).padStart(3,"0"));
 
 assert.equal(crisis.dossiers.length,81,"unexpected canonical Church Crisis count");
+const attached=crisis.dossiers.filter(x=>x.unpublished_research_subquestions);
+assert.equal(attached.length,22,"should attach existing owners only");
+const ownerIds=attached.flatMap(x=>x.unpublished_research_subquestions.ids);
+assert.equal(ownerIds.length,50);
+assert.equal(new Set(ownerIds).size,50,"duplicate research subquestion reference");
+assert.deepEqual([...ownerIds].sort(),ids(26,50));
+assert.equal(crisis.internal_research_attachments.public_navigation_added,0);
+assert.equal(crisis.internal_research_attachments.publish_allowed,false);
+assert.ok(attached.every(x=>x.unpublished_research_subquestions.public_route===false));
+
 assert.equal(apol.dossiers.length,60,"unexpected canonical Apologetics count");
 assert.equal(register.not_recovered.range,"TLM001-TLM025");
 assert.equal(register.not_recovered.count,25);
@@ -77,13 +87,15 @@ for(const rec of tc.debates){
 
 
 assert.deepEqual(a.claim_level_audit.status_counts,{
-  DIRECT_TEXT_ANCHORED:37,
+  DIRECT_TEXT_ANCHORED:36,
   SOURCED_INTERPRETIVE:30,
   BLOCKED:0,
-  CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW:7
+  CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW:8
 });
 assert.equal(a.claim_level_audit.publication_ready,false);
-assert.equal(a.source_registry.length,36);
+assert.equal(a.source_registry.length,37);
+assert.ok(a.source_registry.some(s=>s.id==="CDW2000"&&s.url.includes("on-the-orientation")));
+assert.equal(b.source_registry.find(s=>s.id==="SC63").url,"https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html");
 assert.equal(a.claim_level_audit.unattributed_followup_challenges,0);
 assert.equal(a.claim_level_audit.reclassified_synthetic_followups,8);
 assert.equal(a.followup_reclassification.count,8);
@@ -96,7 +108,7 @@ assert.equal(a.interpretive_review_summary.qualified_or_narrowed,7);
 const all=a.records.flatMap(x=>x.paragraphs);
 assert.equal(all.length,82,"lost challenge paragraphs");
 const corrected=all.filter(p=>p.citation_review?.status==="CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW");
-assert.equal(corrected.length,7);
+assert.equal(corrected.length,8);
 assert.ok(corrected.every(p=>p.revision_history?.length&&p.citation_review.correction_reason),"lost correction provenance");
 const interpretive=all.filter(p=>p.citation_review?.status==="SOURCED_INTERPRETIVE");
 assert.equal(interpretive.length,30);
@@ -127,6 +139,15 @@ assert.equal(tc.audit_20261008.human_theological_approval,false);
 const gate=load("data/learn/traditional-mass-publication-gates.v1.json");
 assert.equal(gate.publication_allowed,false);
 assert.equal(gate.records.length,50);
+assert.equal(gate.research_review_progress.canonical_owner_links,50);
+assert.equal(gate.research_review_progress.canonical_owner_dossiers,22);
+assert.ok(gate.records.every(x=>x.canonical_dossier_attachment?.published===false));
+assert.ok(gate.records.every(x=>x.canonical_dossier_id && ownerIds.includes(x.id)));
+assert.equal(a.claim_level_audit.corrected_legacy_indices.length,8);
+assert.ok(a.records.find(x=>x.id==="TLM040").paragraphs[0].citation_review.hyperlinked_sources.some(x=>x.source_id==="CDW2000"));
+assert.ok(b.records.every(x=>x.paragraphs.every(p=>p.documentary_edit?.pinpoint?.length>15)));
+assert.ok(b.records.filter(x=>x.editorial_title_revision_history).length===8);
+
 assert.deepEqual(gate.records.map(x=>x.id),ids(26,50));
 assert.equal(gate.recovered.paragraphs,169);
 assert.ok(gate.records.every(x=>x.publication_ready===false));
@@ -157,4 +178,4 @@ assert.equal(gate.research_review_progress.primary_text_explicitly_checked,7);
 assert.equal(gate.research_review_progress.final_approved_for_publication,0);
 assert.equal(checkedParagraphs,161);
 assert.equal(register.counts.underlying_substantive_paragraphs,checkedParagraphs);
-console.log(JSON.stringify({validation:"PASS",indexed:register.records.length,unrecovered:25,substantiveParagraphs:checkedParagraphs,sourceCandidatesForLegacy:legacyCitations,directTextAnchored:37,interpretive:30,correctedPendingApproval:7,frenchDraftParagraphs:82,frenchDraftParagraphs051065:37,editorialFollowups,newNavigationDossiers:0,publications:0},null,2));
+console.log(JSON.stringify({validation:"PASS",indexed:register.records.length,unrecovered:25,substantiveParagraphs:checkedParagraphs,sourceCandidatesForLegacy:legacyCitations,directTextAnchored:36,interpretive:30,correctedPendingApproval:8,frenchDraftParagraphs:82,frenchDraftParagraphs051065:37,editorialFollowups,newNavigationDossiers:0,publications:0},null,2));
