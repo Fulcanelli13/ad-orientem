@@ -17,21 +17,23 @@
     "svc": "MASS"
   },
   "review_summary": {
-    "records": 50,
-    "conditional": 23,
+    "records": 44,
+    "conditional": 18,
     "source_urls": [
       "https://fsspx.mx/es/capillas-2",
       "https://fsspx.com.br/pt/capelas",
       "https://fsspx-sudamerica.org/es/capillas"
     ],
     "by_country": {
-      "MX": 17,
+      "AR": 13,
       "BR": 13,
-      "AR": 15,
-      "CL": 3,
-      "UY": 1,
-      "PE": 1
-    }
+      "CL": 2,
+      "MX": 14,
+      "PE": 1,
+      "UY": 1
+    },
+    "hold_count": 6,
+    "hold_reason": "Published district city-level/hosted location insufficient to guide an actual visitor to the physical Mass site; hold for detailed address evidence."
   },
   "records": [
     {
@@ -77,20 +79,6 @@
       "source_checked_on": "2026-10-08"
     },
     {
-      "u": "SSPX-OCT26-MX-MX-CANCUN-CAPILLA-INMACULADA-CONCEPCION",
-      "cc": "MX",
-      "l": "Cancún",
-      "n": "Capilla Inmaculada Concepción",
-      "vt": "chapel",
-      "a": "77510 Cancún, Quintana Roo, México",
-      "sr": "Fourth Sunday 09:00; preceding Friday/Saturday 18:00.",
-      "su": "https://fsspx.mx/es/capillas-2",
-      "ps": "CONDITIONAL_MASS",
-      "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
-      "source_directory": "MX",
-      "source_checked_on": "2026-10-08"
-    },
-    {
       "u": "SSPX-OCT26-MX-MX-CIUDAD-JUAREZ-CAPILLA-NUESTRA-SENORA-DE-FATIMA",
       "cc": "MX",
       "l": "Ciudad Juárez",
@@ -126,20 +114,6 @@
       "vt": "chapel",
       "a": "Bravo Norte 564, Zona Centro, 25000 Saltillo, Coahuila, México",
       "sr": "First, third and fourth Sundays 08:00; preceding Saturday 19:00.",
-      "su": "https://fsspx.mx/es/capillas-2",
-      "ps": "CONDITIONAL_MASS",
-      "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
-      "source_directory": "MX",
-      "source_checked_on": "2026-10-08"
-    },
-    {
-      "u": "SSPX-OCT26-MX-MX-MERIDA-CAPILLA-SAN-ANTONIO",
-      "cc": "MX",
-      "l": "Mérida",
-      "n": "Capilla San Antonio",
-      "vt": "chapel",
-      "a": "Mérida, Yucatán, México",
-      "sr": "Fourth Sunday 18:30; venue address requires local confirmation.",
       "su": "https://fsspx.mx/es/capillas-2",
       "ps": "CONDITIONAL_MASS",
       "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
@@ -238,20 +212,6 @@
       "vt": "church",
       "a": "Niños Héroes de Chapultepec esquina Leona Vicario, 69800 Tlaxiaco, Oaxaca, México",
       "sr": "Third Sunday; time requires confirmation.",
-      "su": "https://fsspx.mx/es/capillas-2",
-      "ps": "CONDITIONAL_MASS",
-      "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
-      "source_directory": "MX",
-      "source_checked_on": "2026-10-08"
-    },
-    {
-      "u": "SSPX-OCT26-MX-MX-XALAPA-MISION-BEATO-RAFAEL-GUIZAR-Y-VALENCI",
-      "cc": "MX",
-      "l": "Xalapa",
-      "n": "Misión Beato Rafael Guízar y Valencia",
-      "vt": "chapel",
-      "a": "91014 Xalapa, Veracruz, México",
-      "sr": "Fourth Sunday 18:00; venue address requires local confirmation.",
       "su": "https://fsspx.mx/es/capillas-2",
       "ps": "CONDITIONAL_MASS",
       "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
@@ -539,20 +499,6 @@
       "source_checked_on": "2026-10-08"
     },
     {
-      "u": "SSPX-OCT26-SA-AR-TANDIL-CAPILLA-SAN-BENITO-DE-NURSIA",
-      "cc": "AR",
-      "l": "Tandil",
-      "n": "Capilla San Benito de Nursia",
-      "vt": "chapel",
-      "a": "B7000 Tandil, Buenos Aires, Argentina",
-      "sr": "First Sunday 10:30.",
-      "su": "https://fsspx-sudamerica.org/es/capillas",
-      "ps": "CONDITIONAL_MASS",
-      "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
-      "source_directory": "SA",
-      "source_checked_on": "2026-10-08"
-    },
-    {
       "u": "SSPX-OCT26-SA-AR-TARTAGAL-CAPILLA-SAN-FRANCISCO-DE-ASIS",
       "cc": "AR",
       "l": "Tartagal",
@@ -562,20 +508,6 @@
       "sr": "Fourth Sunday 10:30; previous Saturday 12:00.",
       "su": "https://fsspx-sudamerica.org/es/capillas",
       "ps": "CONDITIONAL_MASS",
-      "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
-      "source_directory": "SA",
-      "source_checked_on": "2026-10-08"
-    },
-    {
-      "u": "SSPX-OCT26-SA-AR-SAN-LUIS-CAPILLA-SAN-LUIS",
-      "cc": "AR",
-      "l": "San Luis",
-      "n": "Capilla San Luis",
-      "vt": "chapel",
-      "a": "San Luis, Argentina",
-      "sr": "Sunday 10:00; physical address to be confirmed.",
-      "su": "https://fsspx-sudamerica.org/es/capillas",
-      "ps": "CURRENT_PUBLIC_MASS",
       "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
       "source_directory": "SA",
       "source_checked_on": "2026-10-08"
@@ -688,20 +620,6 @@
       "sr": "Sunday 09:00; second printed hour is malformed in source and is not reproduced.",
       "su": "https://fsspx-sudamerica.org/es/capillas",
       "ps": "CURRENT_PUBLIC_MASS",
-      "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
-      "source_directory": "SA",
-      "source_checked_on": "2026-10-08"
-    },
-    {
-      "u": "SSPX-OCT26-SA-CL-TEMUCO-FAMILIA-VILLAGRA-PRIVATE-HOSTED-MASS",
-      "cc": "CL",
-      "l": "Temuco",
-      "n": "Familia Villagra — private-hosted Mass venue",
-      "vt": "chapel",
-      "a": "Temuco, Araucanía, Chile",
-      "sr": "Sunday 11:00; private home venue/address to be confirmed.",
-      "su": "https://fsspx-sudamerica.org/es/capillas",
-      "ps": "CONDITIONAL_MASS",
       "review_flag": "OFFICIAL_DISTRICT_MASS_SITE_OCT2026",
       "source_directory": "SA",
       "source_checked_on": "2026-10-08"
