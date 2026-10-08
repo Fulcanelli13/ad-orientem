@@ -79,6 +79,11 @@ const expected=rows.reduce((n,r)=>n+countAllSources(r.content),0);
 const renderable=rows.reduce((n,r)=>n+countVisibleSources(r.content),0);
 assert.equal(legacyRows.reduce((n,r)=>n+countAllSources(r.content),0),known.counts.source_bearing_blocks,"legacy source blocks diverged from historical registry");
 assert.equal(expected,622,"538 recovered plus 84 new four-part debates");
+assert.equal(known.counts.blocks_with_french,465,"31 previously unilingual contemporary passages gained French");
+assert.equal(known.counts.blocks_without_french,73,"unreviewed French parity gaps remain");
+assert.equal(known.controversy_draft_completion_20261008.externally_identified_original_opponents,10);
+assert.equal(known.controversy_draft_completion_20261008.newly_authored_source_references,180);
+
 assert.equal(renderable,expected,"reader silently hides sourced paragraphs");
 
 const fake={document:{getElementById:()=>null}};

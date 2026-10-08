@@ -8,10 +8,10 @@ const drafts=read("data/learn/contemporary-controversies-bulk-21-debates-2026-10
 assert.equal(drafts.cases.length,21);
 assert.equal(drafts.metrics.paragraphs,84);
 assert.equal(drafts.metrics.fr_paragraphs,84);
-assert.equal(drafts.metrics.primary_link_instances,153);
-assert.equal(drafts.cases.flatMap(c=>c.paragraphs).reduce((n,p)=>n+p.source_ids.length,0),153);
-assert.equal(drafts.metrics.externally_named_opposing_position_cases,2);
-assert.equal(drafts.metrics.documentary_and_editorial_position_cases,19);
+assert.equal(drafts.metrics.primary_link_instances,180);
+assert.equal(drafts.cases.flatMap(c=>c.paragraphs).reduce((n,p)=>n+p.source_ids.length,0),180);
+assert.equal(drafts.metrics.externally_named_opposing_position_cases,10);
+assert.equal(drafts.metrics.documentary_and_editorial_position_cases,11);
 assert.equal(drafts.public_release,false);
 const ap=read("data/learn/apologetics-canonical.v1.json");
 const cr=read("data/learn/church-crisis-canonical.v1.json");
@@ -63,7 +63,7 @@ assert.equal(bridge.controversy_source_anchor_review_20261008.cases_added_to_exi
 assert.equal(map.public_release,false);
 assert.equal(bridge.counts.indexed_questions_and_cases,102);
 assert.equal(bridge.controversy_draft_completion_20261008.reviewer_all_records,123);
-assert.equal(bridge.controversy_draft_completion_20261008.newly_authored_source_references,153);
+assert.equal(bridge.controversy_draft_completion_20261008.newly_authored_source_references,180);
 assert.equal(bridge.controversy_draft_completion_20261008.argument_strengthening_20261008.full_drafts_revised,21);
 assert.equal(bridge.controversy_draft_completion_20261008.argument_strengthening_20261008.published,0);
 assert.equal(bridge.controversy_draft_completion_20261008.canonical_dossiers_with_editorial_research,53);
