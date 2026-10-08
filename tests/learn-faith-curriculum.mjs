@@ -38,6 +38,9 @@ assert.deepEqual(
 );
 
 assert.equal(curriculum.lessons.length,54);
+assert.equal(curriculum.coverage_summary.direct,48);
+assert.equal(curriculum.coverage_summary.partial,6);
+assert.equal(curriculum.coverage_summary.unmapped,0);
 assert.equal(new Set(curriculum.lessons.map(x=>x.id)).size,54);
 assert.equal(curriculum.lessons[0].id,"LTF-001");
 assert.equal(curriculum.lessons.at(-1).id,"LTF-054");
@@ -90,6 +93,12 @@ assert.equal(curriculum.relationship_to_existing["learn.catechism"].includes("Fu
 assert.equal(curriculum.relationship_to_existing["learn.catechism.daily"].includes("Daily review"),true);
 assert.equal(curriculum.source_policy.no_unsourced_synthesis,true);
 assert.equal(curriculum.source_policy.no_duplicate_question_bank,true);
+assert.equal(curriculum.catechism_source_map,"data/learn/st-pius-x-catechism-source-map.v1.json");
+const sourceMap=JSON.parse(readFileSync(curriculum.catechism_source_map,"utf8"));
+assert.equal(sourceMap.corpus.questionCount,433);
+assert.equal(sourceMap.corpus.ranges[0].from,1);
+assert.equal(sourceMap.corpus.ranges.at(-1).to,433);
+for(let i=1;i<sourceMap.corpus.ranges.length;i++)assert.equal(sourceMap.corpus.ranges[i].from,sourceMap.corpus.ranges[i-1].to+1,"Catechism chapter ranges are not contiguous");
 assert.equal(curriculum.content_draft.status,"ALL_54_SOURCE_LINKED_DRAFTED");
 assert.equal(curriculum.content_draft.lessons,54);
 assert.equal(curriculum.content_draft.paragraphs,162);
