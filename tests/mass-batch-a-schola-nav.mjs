@@ -245,6 +245,19 @@ try{
   });
   assert.equal(scholaHitGeometry.overlap,false,
     "collapsed Schola SHOW control overlaps the Next edge target: "+JSON.stringify(scholaHitGeometry));
+  const afterHide=await page.evaluate(()=>({
+    readerRoot:!!document.getElementById("ao-r17-native-reader-preview"),
+    scholaToggle:!!document.querySelector("#ao-r17-native-reader-preview [data-schola-toggle]"),
+    scholaDock:!!document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock"),
+    sectionJump:!!document.querySelector("#ao-r17-native-reader-preview [data-role='section-jump']"),
+    trace:globalThis.__AO_MASS_VISUAL_REMOVAL_TRACE??[],
+    location:location.href,
+    route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+    overlayNodes:document.querySelectorAll("#ao-r17-native-reader-preview").length,
+  }));
+  console.log("Batch A after Schola hide:",JSON.stringify(afterHide));
+  assert.equal(afterHide.readerRoot,true,"Mass overlay detached by Schola hide: "+JSON.stringify(afterHide));
+  assert.equal(afterHide.scholaToggle,true,"Schola toggle removed by hide: "+JSON.stringify(afterHide));
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"false","Schola show control did not restore the dock");
   const scholaBefore=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
