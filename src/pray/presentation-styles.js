@@ -585,6 +585,17 @@ const ANGELUS_GUIDE_RITUAL_CSS=`
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoAngelusDialogueLine{transition:none}}
 `;
 
+
+const ROSARY_GUIDE_CSS=`
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuide{margin:0 0 12px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:13px;background:var(--surface-1,#151c24);position:relative;z-index:2;overflow:hidden}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuide>summary{display:flex;align-items:center;min-height:44px;padding:10px 12px;cursor:pointer;color:var(--liturgical,#d8bd7d);font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideBody{padding:0 13px 5px}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection{padding:11px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection h3{font:650 14px/1.3 var(--ao-font-display,Georgia,serif);margin:0 0 5px;color:var(--text,#f3ead7)}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection p{font:400 13px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8);margin:0}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
+`;
+
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
   const style=doc.createElement("style");
@@ -599,6 +610,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
   ensureStyle(doc,"ao-pray-devotional-ux-contract-style",DEVOTIONAL_UX_CSS);
   ensureStyle(doc,"ao-pray-angelus-guide-ritual-style",ANGELUS_GUIDE_RITUAL_CSS);
+  ensureStyle(doc,"ao-pray-rosary-guide-style",ROSARY_GUIDE_CSS);
   ensureStyle(doc,"ao-pray-modular-shell-integration-style",MODULAR_SHELL_CSS);
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);
   ensureStyle(doc,"ao-pray-semantic-rails-style",SEMANTIC_RAIL_CSS);
