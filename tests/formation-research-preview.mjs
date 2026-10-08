@@ -105,7 +105,7 @@ assert.equal(tlmParagraphCount,169);
 assert.equal(editorialFollowups,8);
 assert.equal(DATA.canonical_navigation_locked,true);
 assert.equal(DATA.questions.length,26);
-assert.equal(DATA.answers.length,22);
+assert.equal(DATA.answers.length,26);
 assert.equal(DATA.debates.length,8);
 assert.deepEqual(DATA.questions.map(x=>x.id),supplement.questions.map(x=>x.id));
 assert.deepEqual(DATA.answers.map(x=>x.question_id),answers.answers.map(x=>x.question_id));
@@ -141,7 +141,7 @@ for(const d of DATA.debates){
   const ps=[...d.short_answer,...d.sedevacantist_case.paragraphs,...d.critical_assessment,...d.objections.flatMap(x=>[x.objection,x.response]),...d.traditional_argument];
   for(const p of ps){checkParagraph(p,"sedevacantism",d.id);claimCount++;}
 }
-assert.equal(claimCount,211);
+assert.equal(claimCount,241);
 assert.equal(LEARN_MODULE_IDS.includes("learn.apologetics"),false,"unapproved module wrongly public");
 assert.equal(LEARN_MODULE_IDS.includes("learn.church_crisis"),false,"unapproved module wrongly public");
 const browser=readFileSync("src/learn/browser-entry.js","utf8");

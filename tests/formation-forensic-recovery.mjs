@@ -52,7 +52,15 @@ assert.equal(bridge.controversy_topics.counts.without_case_association,21);
 assert.equal(bridge.recovered_research.reduce((s,r)=>s+r.source_metrics.source_bearing_blocks,0),bridge.counts.source_bearing_blocks);
 assert.equal(bridge.recovered_research.reduce((s,r)=>s+r.source_metrics.blocks_without_source_ids,0),bridge.counts.blocks_without_source_ids);
 assert.equal(bridge.recovered_research.reduce((s,r)=>s+r.source_metrics.blocks_with_fr+r.source_metrics.blocks_no_fr,0),bridge.counts.source_bearing_blocks);
-assert.equal(bridge.recovered_research.filter(x=>x.bank==="BAQ" && x.content_status==="QUESTION_ONLY_NO_ANSWER").length,4);
+assert.equal(bridge.recovered_research.filter(x=>x.bank==="BAQ" && x.content_status==="QUESTION_ONLY_NO_ANSWER").length,0);
+assert.deepEqual(bridge.counts.biblical_patristic_question_only,[]);
+for (const id of ["BAQ-13","BAQ-14","BAQ-15","BAQ-16"]){
+ const record=bridge.recovered_research.find(x=>x.id===id);
+ assert.equal(record.content_status,"NEW_BILINGUAL_SUBSTANTIVE_ANSWER_DRAFT_20261008_NOT_LEGACY_VERBATIM");
+ assert.ok(record.source_metrics.source_bearing_blocks>=6);
+ assert.equal(record.publication_status,"UNPUBLISHED");
+}
+assert.equal(bridge.baq_13_16_new_answer_pass_20261008.newly_written_not_legacy_recovery,true);
 assert.equal(bridge.recovered_research.filter(x=>x.bank==="TRADITIONAL_MASS_OBJECTION" && x.originality==="VERBATIM_ENGLISH_RECOVERED").length,25);
 assert.equal(bridge.recovered_research.filter(x=>x.bank==="TRADITIONAL_MASS_OBJECTION" && x.originality==="NORMALIZED_ENGLISH_NOT_VERBATIM_ORIGINAL").length,15);
 console.log(JSON.stringify({forensicLegacyIds:a.length+c.length+t.length,
