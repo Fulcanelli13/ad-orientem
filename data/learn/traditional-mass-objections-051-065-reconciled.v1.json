@@ -83,6 +83,12 @@
       "title": "General Instruction, amendments and 1970 text",
       "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049",
       "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "NOT67",
+      "title": "Consilium, Notitiae, vol. 3 no. 8 (1967), pp. 357 and 363 — official first Synod of Bishops votes and observations",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-035-1967.pdf",
+      "type": "CONTEMPORANEOUS_CONSILIUM_PRIMARY"
     }
   ],
   "records": [
@@ -306,16 +312,18 @@
           "role": "answer",
           "text": "On the general structure of the 1967 Missa normativa, the recorded votes were 71 placet, 43 non placet, 62 placet iuxta modum and four abstentions. A conditional placet is not a rejection, but neither is it an unconditional approval.",
           "source_ids": [
-            "CHIRON",
-            "OTT69"
+            "NOT67",
+            "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
-          "text_fr": "Pour la structure générale de la *Missa normativa* de 1967, les suffrages rapportés furent de 71 *placet*, 43 *non placet*, 62 *placet iuxta modum* et quatre abstentions. Une approbation sous conditions n’est pas un rejet ; elle n’est pas non plus une approbation sans réserve."
+          "source_review": "PRIMARY_DOCUMENT_ANCHORED_REQUIRES_EDITORIAL_REVIEW",
+          "text_fr": "Pour la structure générale de la *Missa normativa* de 1967, les suffrages rapportés furent de 71 *placet*, 43 *non placet*, 62 *placet iuxta modum* et quatre abstentions. Une approbation sous conditions n’est pas un rejet ; elle n’est pas non plus une approbation sans réserve.",
+          "evidence_locator": "Notitiae (November 1967) pp. 357, 363: Ad I 71 placet, 43 non placet, 62 placet iuxta modum, 4 abstentions"
         },
         {
           "role": "assessment",
           "text": "The 1967 vote concerned an experimental form rather than the final typical edition; it demonstrates significant reservations and cannot be used as a final canonical judgment on the promulgated Missal.",
           "source_ids": [
+            "NOT67",
             "CHIRON"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
@@ -345,7 +353,8 @@
           "text": "The 1967 Missa normativa was a developmental stage. Further consultation, revisions and papal approval took place before the Order of Mass was promulgated in 1969 and the full Latin typical edition appeared in 1970.",
           "source_ids": [
             "CHIRON",
-            "MR69"
+            "MR69",
+            "NOT67"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
           "text_fr": "La *Missa normativa* de 1967 était une étape dans l’élaboration du rite. D’autres consultations, révisions et approbations pontificales eurent lieu avant la promulgation de l’Ordo Missae en 1969 et la publication de l’édition typique latine complète en 1970."
@@ -355,7 +364,8 @@
           "text": "A criticism of a provisional version must identify what carried forward into the final text. Conversely, later revisions do not make earlier episcopal reservations historically irrelevant.",
           "source_ids": [
             "CHIRON",
-            "GIM70"
+            "GIM70",
+            "NOT67"
           ],
           "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
           "text_fr": "Une critique formulée contre une version provisoire doit préciser ce qui fut conservé dans le texte définitif. Inversement, les révisions ultérieures n’effacent pas l’importance historique des réserves épiscopales précédentes."
@@ -709,6 +719,7 @@
       "TLM058 Short Critical Study",
       "TLM059 Ottaviani-Bacci Intervention"
     ],
-    "no_new_navigation_dossiers": true
+    "no_new_navigation_dossiers": true,
+    "original_vote_count_verified_in_primary": "NOT67, p. 363, vote I"
   }
 }
