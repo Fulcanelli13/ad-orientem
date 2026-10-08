@@ -35,7 +35,7 @@ const ca=[
 ];
 const caParsed=parseNorthAmericaCards(ca,{district:"CA"});
 assert.equal(caParsed.site_candidates,2);
-assert.equal(caParsed.records[0].l,"Saint-Gerard-Des-Laurentides QC");
+assert.equal(caParsed.records[0].l,"Saint-Gerard-Des-Laurentides");
 assert.equal(caParsed.records[1].ps,"CONDITIONAL_MASS");
 assert.ok(caParsed.records.every(r=>r.su===DISTRICTS.CA.url));
 assert.ok(caParsed.exceptions.some(r=>r.reason==="NO_ACTIONABLE_PHYSICAL_ADDRESS"));
