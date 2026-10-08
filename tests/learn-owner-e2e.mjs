@@ -146,18 +146,6 @@ try{
 
   // Glossary: category-first navigation, multilingual search and sourced term drawer.
   await openFormationFamily("reference");
-  await page.evaluate(()=>{
-    const trace=globalThis.__AO_LEARN_GLOSS_TRACE=[];
-    const root=document.getElementById("ao-learn-modular-root");
-    for(const name of ["pointerdown","touchstart","touchend","pointerup","click"]){
-      document.addEventListener(name,e=>{
-        if(e.target?.closest?.("[data-ao-learn-module]"))trace.push(["document-capture",name,Date.now(),e.target?.tagName,Boolean(e.defaultPrevented)]);
-      },{capture:true});
-      root?.addEventListener(name,e=>{
-        if(e.target?.closest?.("[data-ao-learn-module]"))trace.push(["learn-capture",name,Date.now(),e.target?.tagName,Boolean(e.defaultPrevented)]);
-      },{capture:true});
-    }
-  });
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
   try{
     await page.waitForFunction(()=>
@@ -175,8 +163,7 @@ try{
       registered:!!globalThis.AO_MODULES?.get?.("learn.glossary"),
       route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
       rootPresent:!!document.getElementById("ao-glossary-root"),
-      learnText:document.getElementById("ao-learn-modular-root")?.innerText?.slice(0,250)??null,
-      trace:globalThis.__AO_LEARN_GLOSS_TRACE
+      learnText:document.getElementById("ao-learn-modular-root")?.innerText?.slice(0,250)??null
     }));
     throw new Error("Glossary phone navigation state: "+JSON.stringify({diagnostic,pageErrors,error:String(error)}));
   }
