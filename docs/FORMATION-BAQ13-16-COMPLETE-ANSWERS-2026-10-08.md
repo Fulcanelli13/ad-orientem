@@ -15,7 +15,7 @@
 
 - **26/26 BAQ questions now have an answer draft**; previously four were question-only. This adds 30 substantive citation-bearing paragraphs with English/French drafts, including a cited objection, direct response and substantial traditional Catholic argument for each.
 - **66 BAQ sources** in the pack, with 10 new explicitly classified historical, canonical and identifiable-proponent entries; preexisting 56 preserved.
-- Global source bridge remains **102 research IDs** (not 106) because BAQ-13–16 already existed as question-only rows. **538 source-bearing blocks** now indexed instead of 508, with **434 French-bearing blocks**, **104 blocks without French** (existing other packs), and **1,304 source-ID references**. The French increase represents new translation drafts, not editorial approval.
+- Global source bridge remains **102 research IDs** (not 106) because BAQ-13–16 already existed as question-only rows. **538 source-bearing blocks** now indexed instead of 508, with **434 French-bearing blocks**, **104 blocks without French** (existing other packs), and **1,306 source-ID references**. The French increase represents new translation drafts, not editorial approval.
 - BAQ/SDV claim audit upgraded to **34 cases, 268 blocks**; the historical A001–A318 and C001–C233 original question bank is still missing verbatim. No invented old IDs, no original A/C wording claim.
 - All 26 BAQ answer drafts carry links to registered sources, but external original/source-context verification, Latin collation, full canonical review and native French theological copyediting remain obligatory.
 - Salza/Siscoe original web citation requires direct retrievability/context reconfirmation before release; it is not presented as a literal quotation.
