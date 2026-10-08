@@ -106,30 +106,35 @@ export function parseNorthAmericaCards(cards,{district,checkedOn="2026-10-08"}={
 }
 
 export function reconcileWithRegistry(result,existing){
-  const addresses=new Map(),names=new Map();
-  for(const r of existing){
-    if(!r?.cc||!r?.a||!r?.n||!r?.l)continue;
-    const cc=r.cc;
-    const cityKey=cc+"|"+fingerprint(r.n)+"|"+fingerprint(r.l);
-    const rawAddr=flat(r.a);
-    const addrFirst=rawAddr.split(",")[0];
-    const streetKey=cc+"|"+fingerprint(addrFirst)+"|"+fingerprint(r.l);
-    if(!names.has(cityKey))names.set(cityKey,r);
-    if(!addresses.has(streetKey))addresses.set(streetKey,r);
-  }
+  const postal=(address,cc)=>cc==="US"
+    ?String(address).match(/\b\d{5}(?:-\d{4})?\b/)?.[0]?.slice(0,5)
+    :String(address).match(/\b[A-Z]\d[A-Z]\s?\d[A-Z]\d\b/i)?.[0]?.replace(/\s/g,"").toUpperCase();
+  const streetNumber=a=>String(a).match(/^\s*(\d{1,6})\b/)?.[1]??null;
+  const cityKey=r=>fingerprint(String(r.l??"").split(",")[0].split("—")[0]);
+  const titleKey=r=>fingerprint(r.n);
+  const published=[...existing.filter(r=>["US","CA"].includes(r.cc))];
   const promoted=[],held=[...result.exceptions];
   for(const r of result.records){
-    const nameKey=r.cc+"|"+fingerprint(r.n)+"|"+fingerprint(r.l);
-    const addrKey=r.cc+"|"+fingerprint(r.a.split(",")[0])+"|"+fingerprint(r.l);
-    const same=addresses.get(addrKey)||names.get(nameKey);
-    if(same){
+    const matches=published.filter(old=>{
+      if(old.cc!==r.cc)return false;
+      const oldPost=postal(old.a,old.cc),newPost=postal(r.a,r.cc);
+      const sameTitle=titleKey(old)===titleKey(r);
+      const sameCity=cityKey(old).includes(cityKey(r))||cityKey(r).includes(cityKey(old));
+      const samePostal=Boolean(oldPost&&newPost&&oldPost===newPost);
+      const sameNumber=Boolean(streetNumber(old.a)&&streetNumber(r.a)&&
+        streetNumber(old.a)===streetNumber(r.a));
+      return (samePostal&&(sameNumber||sameTitle)) ||
+        (sameTitle&&sameCity) ||
+        (sameCity&&fingerprint(old.a.split(",")[0])===fingerprint(r.a.split(",")[0]));
+    });
+    if(matches.length){
       held.push({source_title:r.n,address:r.a,reason:"MATCHES_EXISTING_PROVIDER_VENUE",
-        canonical_source_id:same.u,source_page:r.su,country:r.cc});
+        canonical_source_id:matches[0].u,source_page:r.su,country:r.cc,
+        review_note:matches.length>1?"Ambiguous same-venue candidates; manual identity review required.":null});
       continue;
     }
-    // Do not auto-promote mixed institutional/house use, ambiguous locations.
     promoted.push({...r,source_id:r.u});
-    addresses.set(addrKey,r);names.set(nameKey,r);
+    published.push(r);
   }
   return {...result,registry_new_records:promoted,held,
     registry_new_count:promoted.length,held_total:held.length};
