@@ -51,7 +51,9 @@ for(const route of [
 }
 
 assert.match(prayRuntime,/function renderConfession\(\)/,"Canonical Confession owner disappeared");
-assert.match(prayRuntime,/Doctrine.*Prepare.*Examination.*In Confessional.*After/s,"Confession five-stage owner changed");
+assert.match(prayRuntime,/const stages=\[L\('Prepare','Préparer'\),L\('Examination','Examen'\),L\('In Confessional','Au confessionnal'\),L\('After','Après'\)\]/,"Confession four-stage practical flow changed");
+assert.doesNotMatch(prayRuntime,/\[L\('Doctrine','Doctrine'\)/,"Confession doctrine must remain in the optional Guide, not a mandatory stage");
+assert.match(prayRuntime,/devotionalGuide\('confession'\)/,"Confession lost its accessible doctrine/history Guide");
 assert.match(prayRuntime,/Put the phone away/,"Confession lost the sacramental privacy boundary");
 
 assert.match(learnRuntime,/route:"pray\.confession"/,"Sacramental Learn handoffs lost Confession reuse");
