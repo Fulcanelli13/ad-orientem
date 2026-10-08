@@ -1,4 +1,5 @@
 import "../pray/canonical-data.js";
+import { clearReturnStack, hasReturnPoint, pushReturnPoint, returnToPrevious } from "../app/return-stack.js";
 import {
   LOW_MASS_RESPONSES_V381,
   SEASONAL_PRACTICES_V381,
@@ -321,7 +322,36 @@ export function createTraditionalLearnRuntime(win=globalThis){
     const node=root();if(node){const active=win?.document?.activeElement;if(node.contains(active))try{active.blur?.()}catch{}node.remove()}
     state.route=null;state.screen="module";state.prayerId=null;state.trainerReveal=false;state.returnFocus=null;return true;
   }
+  function captureReturnPoint(){
+    const node=root();
+    const snapshot={
+      route:state.route,screen:state.screen,prayerId:state.prayerId,
+      trainerIndex:state.trainerIndex,trainerReveal:state.trainerReveal,
+      scrollTop:node?.scrollTop??0,
+      openDetails:[...(node?.querySelectorAll?.("details")??[])].map((x,i)=>x.open?i:null).filter(i=>i!==null),
+    };
+    if(!snapshot.route)return null;
+    return pushReturnPoint({
+      id:"formation-child:"+snapshot.route,
+      label:snapshot.route,
+      resume:async()=>{
+        const nav=await win?.AO_APP_SHELL_V1?.navigate?.("learn");
+        if(nav?.ok===false)return false;
+        const opened=await win?.AO_LEARN_APP_V1?.openModule?.(snapshot.route);
+        if(opened===false)return false;
+        state.screen=snapshot.screen;state.prayerId=snapshot.prayerId;state.trainerIndex=snapshot.trainerIndex;state.trainerReveal=snapshot.trainerReveal;
+        render();
+        queueMicrotask(()=>{
+          const restored=root();if(!restored)return;
+          [...restored.querySelectorAll?.("details")??[]].forEach((d,i)=>{d.open=snapshot.openDetails.includes(i)});
+          restored.scrollTop=snapshot.scrollTop;
+        });
+        return true;
+      },
+    });
+  }
   async function handoff(route){
+    captureReturnPoint();
     close();
     if(route==="calendar"){await win?.AO_APP_SHELL_V1?.navigate?.("calendar");return true}
     if(String(route).startsWith("pray.")){
@@ -340,8 +370,8 @@ export function createTraditionalLearnRuntime(win=globalThis){
   }
   function onClick(e){
     const b=e.target?.closest?.("button,[data-ao-tradlearn-flip]");if(!b)return;
-    if(b.matches("[data-ao-tradlearn-back]")){e.preventDefault();if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render()}else close();return}
-    if(b.matches("[data-ao-tradlearn-home]")){e.preventDefault();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
+    if(b.matches("[data-ao-tradlearn-back]")){e.preventDefault();if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render()}else if(hasReturnPoint()){close();void returnToPrevious()}else close();return}
+    if(b.matches("[data-ao-tradlearn-home]")){e.preventDefault();clearReturnStack();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(b.matches("[data-ao-tradlearn-flip]")){e.preventDefault();const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return}
     if(b.dataset.aoTradlearnPrayer){e.preventDefault();state.screen="prayer";state.prayerId=b.dataset.aoTradlearnPrayer;render();return}
     if(b.dataset.aoTradlearnRoute){e.preventDefault();void handoff(b.dataset.aoTradlearnRoute);return}
