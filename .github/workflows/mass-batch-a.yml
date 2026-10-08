@@ -12,6 +12,8 @@ on:
       - "tests/reader-dom.mjs"
       - "tests/reader-native-preview.mjs"
       - "tests/reader-rubric-events.mjs"
+      - "src/mass/reader-cue-focus.js"
+      - "tests/reader-cue-focus.mjs"
       - ".github/workflows/mass-batch-a.yml"
       - "tests/mass-batch-a-schola-nav.mjs"
       - "tests/mass-visual-acceptance.mjs"
@@ -37,6 +39,7 @@ jobs:
           node tests/reader-dom.mjs
           node tests/reader-native-preview.mjs
           node tests/reader-rubric-events.mjs
+          node tests/reader-cue-focus.mjs
 
   real-shell-navigation:
     runs-on: ubuntu-latest
