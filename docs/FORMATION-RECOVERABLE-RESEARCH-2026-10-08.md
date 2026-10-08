@@ -12,7 +12,7 @@ The 102 indexed research entries below are **real individual questions or case d
 | **Distinct indexed entries** | **102** |
 
 ## Source-link inventory (structure, not factual certification)
-The indexed individual entries contain **488 nested source-bearing text blocks** and **1150 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 128 of these source-bearing blocks lack French text, while 360 carry French text.
+The indexed individual entries contain **488 nested source-bearing text blocks** and **1152 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 128 of these source-bearing blocks lack French text, while 360 carry French text.
 
 These figures do **not** certify every claim or objection as properly sourced, nor the source's actual applicability. The currently indexed blocks all carry nonempty source IDs. The eight hypothetical TLM026–050 follow-up questions are now explicitly classified as **editorial prompts, not externally attributed objections**, and retain source references for topic context only. The per-source-pack metrics are held in the linked JSON.
 
@@ -34,3 +34,7 @@ Topic rows lacking explicit source-pack references: abu-dhabi; singapore-religio
 ## 8 October final TLM source-scope pass
 
 All 50 surviving TLM026–075 questions have a recorded **research source scope**, including 25 editorial question prompts (TLM026–050), 15 normalized postconciliar reform questions, and 10 *Traditionis custodes* cases. These annotations do **not** certify all paragraphs as theologically correct, all historical inferences as independently proven, or translations as final. Five of the 2021-law cases now correctly distinguish editorial critical arguments from quotations by named opponents. The 2023 rescript URL and the particular faculties in the 2022 FSSP decree have been corrected. **Zero items are approved for public Formation publication.** TLM001–025 exact originals remain unavailable.
+
+## 8 October documentary verification: *Traditionis custodes* (TLM066–TLM075)
+
+The ten bilingual dossiers now cite 30 individually pinpointed passages, including the original 2021 *motu proprio* and letter, the 2021 *Responsa*, the 2023 rescript, FSSP/Courtalain and SSPX position texts, the 2022 particular FSSP decree, and canon 838 in its 2017-amended location. The TLM067 text distinguishes the partial 2025 leaked survey extracts from the Vatican spokesman's explanation. TLM075 distinguishes administrative-decree recourse from universal papal law and cites the Holy See's 2008 instruction on the limits of obedience. The evidence has been checked against documents, but theological and French final editorial approval **has not been granted**. **No TLM debates were publicly published.**
