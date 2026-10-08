@@ -118,7 +118,7 @@ function detailSheet(vm){
   return html;
 }
 export function renderFindToString(vm){
-  const f=vm.filters??{},aff=arr(f.affiliations),loaded=vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():"";
+  const f=vm.filters??{},aff=arr(f.affiliations),providers=arr(vm.loadedProviders),loaded=providers.length?providers.join(" · ").toUpperCase():"";
   let html='<section class="aoFindSurface" data-ao-find-owner="AO_FIND_APP_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">←</button><div><small>AD ORIENTEM · DIRECTORY</small><h1>'+esc(L(vm.language,"Find a Mass","Trouver une messe"))+'</h1></div><span>'+esc(loaded)+'</span></header>';
   html+='<div class="aoFindSearch"><input type="search" data-find-query value="'+esc(f.query||"")+'" placeholder="'+esc(L(vm.language,"City, church, diocese or country","Ville, église, diocèse ou pays"))+'"></div>';
