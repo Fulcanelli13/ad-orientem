@@ -9,7 +9,7 @@ import {
   SEXUAL_ETHICS_VERSION,
 } from "./sexual-ethics-data/index.js";
 import { CSE_RELATED_TARGETS, CSE_SOT_MATRIX, relatedTargetsFor } from "./sexual-ethics-data/sot.js";
-import { paragraphRefsFor, CSE_MISCONCEPTION_REBUTTAL_IDS } from "./sexual-ethics-data/provenance.js";
+import { paragraphRefsFor, CSE_MISCONCEPTION_REBUTTAL_IDS, CSE_CONTEXT_ONLY_POSITION_IDS } from "./sexual-ethics-data/provenance.js";
 import { CSE_CANONICAL_FAMILIES, CSE_CANONICAL_DOSSIERS, CSE_CANONICAL_DOSSIER_MAP, CSE_QUESTION_OWNER_MAP } from "./sexual-ethics-data/canonical.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
@@ -96,6 +96,7 @@ function paragraphSourceLinks(win,item,kind,field=null){
   const label=kind==="question"
     ?L(win,"Question source:","Source de la question :")
     :rebuttalMisconception?L(win,"Evidence rebutting this misconception (not proponents):","Preuves réfutant cette idée fausse (et non ses défenseurs) :")
+    :positionSide&&CSE_CONTEXT_ONLY_POSITION_IDS.includes(item?.id)?L(win,"Contextual evidence (not an attributed proponent):","Sources de contexte (sans attribution à un défenseur précis) :")
     :positionSide?L(win,"Opposing-position references:","Références de la position adverse :"):L(win,"Sources:","Sources :");
   const links=refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
@@ -182,7 +183,8 @@ function questionHtml(win,item,reveal){
   const section=CSE_SECTION_MAP[item.section];
   const buttonClosed=isDebate?L(win,"Examine the argument","Examiner l’argument"):L(win,"Go deeper","Approfondir");
   const buttonOpen=isDebate?L(win,"Hide the argument","Masquer l’argument"):L(win,"Hide deeper explanation","Masquer l’explication approfondie");
-  const debateAttribution=isDebate?`<p class="aoCSEAttributionNote">${esc(L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the linked texts for the author's original words.","La position adverse est une reformulation sourcée, non une citation littérale. Consultez les textes liés pour retrouver les paroles exactes de l’auteur."))}</p>`:"";
+  const attributionIsContext=CSE_CONTEXT_ONLY_POSITION_IDS.includes(item.id);
+  const debateAttribution=isDebate?`<p class="aoCSEAttributionNote">${esc(attributionIsContext?L(win,"Illustrative objection: the linked sources document context or criticism, not a named advocate of the exact wording.","Objection illustrative : les sources liées documentent un contexte ou une critique, non un auteur défendant cette formulation exacte."):L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the linked texts for the author's original words.","La position adverse est une reformulation sourcée, non une citation littérale. Consultez les textes liés pour retrouver les paroles exactes de l’auteur."))}</p>`:"";
   const apostolateTarget=CSE_SOT_BY_ID[item.id]?.apostolateHandoff||null;
   const apostolateAction=apostolateTarget?`<button type="button" class="aoCSEBtn" data-ao-cse-apostolate>${esc(L(win,"Practise answering this objection","S’exercer à répondre à cette objection"))}</button>`:"";
   return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?debateAttribution+exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;

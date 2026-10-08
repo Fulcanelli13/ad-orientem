@@ -4,16 +4,26 @@
   "status": "STRUCTURAL_55_CASE_SOURCE_AUDIT_WITH_SELECTED_DIRECT_PASSAGE_CHECKS_NO_CLAIM_OF_55_FULLY_VERIFIED",
   "summary": {
     "records": 55,
-    "selected_primary_position_checks": 44,
+    "selected_primary_position_checks": 51,
     "remaining_full_passage_review": 55,
     "high_priority": 24,
-    "book_catalog_preview_cases": 33,
+    "book_catalog_preview_cases": 32,
     "unmapped_opponent_sources": 0,
     "missing_canonical_urls": 0,
     "book_cases_with_new_original_support": 13,
     "precisely_excerped_opponent_positions": 6,
     "new_batch_scoped_checks": 12,
-    "misconception_evidence_misattribution_corrections": 2
+    "misconception_evidence_misattribution_corrections": 2,
+    "remaining_without_any_checked_primary": [
+      "CSE008",
+      "CSE010",
+      "CSE038",
+      "CSE145"
+    ],
+    "batch_4_scope_reviewed": 11,
+    "source_scope_coverage": 55,
+    "batch_4_new_primary_evidence": 7,
+    "unverified_literally_attributed_debate_stages": 55
   },
   "policy": [
     "The debate text is authored synthesis/paraphrase unless an individually attributed literal quotation has been independently verified.",
@@ -91,7 +101,7 @@
           "title": "John Stuart Mill · On Liberty, Chapter IV (original 1869 fourth edition)",
           "url": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=4",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "MILL1859",
@@ -154,6 +164,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "FLETCHER_TABLET",
+          "locator": "six propositions 1–2 and 5: charity as ruling norm; secondary explanation, not a direct author quotation",
+          "title": "The Tablet education · Joseph Fletcher's six propositions of situation ethics (secondary exposition)",
+          "url": "https://www.thetablet.co.uk/student-zone/ocr/religion-and-ethics/situation-ethics/",
+          "role": "opposing_position",
+          "source_type": "SECONDARY_INTERPRETIVE_POSITION"
+        },
+        {
           "source_id": "FLETCHER1966",
           "locator": "situation ethics · loving concern and contextual moral judgment",
           "title": "Joseph Fletcher · Situation Ethics: The New Morality",
@@ -170,18 +188,37 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
+      "opposition_passage_status": "OPPOSING_OBJECTION_SCOPED_TO_SECONDARY_OR_HYPOTHETICAL_NO_DIRECT_PRIMARY_PROOF",
       "verified_primary_source_ids": [],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "RELIABLE_SECONDARY_EXPOSITION_NO_AUTHOR_PRIMARY_PASSAGE",
+        "source_ids": [
+          "FLETCHER_TABLET"
+        ],
+        "findings": "The Tablet explains Fletcher's love and situational norm. The precise question is an editorial reconstruction, not Fletcher's exact quotation or all Christian approaches to intention.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE010",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FLETCHER_TABLET",
+          "locator": "six propositions 2, 5, 6: context and ends/means; secondary not original Fletcher book text",
+          "title": "The Tablet education · Joseph Fletcher's six propositions of situation ethics (secondary exposition)",
+          "url": "https://www.thetablet.co.uk/student-zone/ocr/religion-and-ethics/situation-ethics/",
+          "role": "opposing_position",
+          "source_type": "SECONDARY_INTERPRETIVE_POSITION"
+        },
         {
           "source_id": "FLETCHER1966",
           "locator": "critique of absolute rules and intrinsically fixed moral judgments",
@@ -199,13 +236,24 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
+      "opposition_passage_status": "OPPOSING_OBJECTION_SCOPED_TO_SECONDARY_OR_HYPOTHETICAL_NO_DIRECT_PRIMARY_PROOF",
       "verified_primary_source_ids": [],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "RELIABLE_SECONDARY_EXPOSITION_NO_AUTHOR_PRIMARY_PASSAGE",
+        "source_ids": [
+          "FLETCHER_TABLET"
+        ],
+        "findings": "The Tablet documents situation ethics' priority of love over absolute rules. A claim that ANY act is justified in ANY exception overstates Fletcher and must be treated as a test objection, not a literal position.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE012",
@@ -217,7 +265,7 @@
           "title": "CDF · Letter to Father Charles Curran on disputed positions (25 July 1986)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html",
           "role": "primary",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "CURRAN1978",
@@ -257,7 +305,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "CURRAN1978",
@@ -297,7 +345,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "CURRAN1992",
@@ -342,7 +390,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "CURRAN2006",
@@ -379,7 +427,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "CURRAN2006",
@@ -459,6 +507,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "FREUD1908",
+          "locator": "modern sexual morality and nervousness: original criticism of sexual abstinence and repression; does not evaluate Catholic chastity as virtue",
+          "title": "Sigmund Freud · Modern Sexual Morality and Modern Nervousness (1908 original essay, translated)",
+          "url": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift",
+          "role": "opposing_position",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
+        {
           "source_id": "FARLEY2008",
           "locator": "sexuality and its meanings · Just Sex",
           "title": "Margaret A. Farley · Just Love: A Framework for Christian Sexual Ethics",
@@ -467,18 +523,39 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
+      "verified_primary_source_ids": [
+        "FREUD1908"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "HISTORICAL_PRIMARY_AUTHOR_CRITIC_OF_ABSTINENCE",
+        "source_ids": [
+          "FREUD1908"
+        ],
+        "findings": "Freud's 1908 essay directly criticizes repression and deferred sexual expression. It neither examines Catholic chastity as a freely chosen virtue nor proves such virtue intrinsically pathological.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE029",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "PRIEST_WELLBEING2016",
+          "locator": "qualitative interviews: six of 15 priests described negative celibacy effects, not population prevalence",
+          "title": "Isacco et al. · Psychological health of Catholic priests, qualitative participant findings (2016)",
+          "url": "https://journals.sagepub.com/doi/10.1177/1557988314567325",
+          "role": "empirical",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "celibacy and sexual ethics",
@@ -488,13 +565,26 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
+      "verified_primary_source_ids": [
+        "PRIEST_WELLBEING2016"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "ORIGINAL_SMALL_SAMPLE_QUALITATIVE_REPORT",
+        "source_ids": [
+          "PRIEST_WELLBEING2016"
+        ],
+        "findings": "Isacco et al. report several priests' first-person loneliness and depression experiences; 6 of 15 interviewees mention negative effects. This is not proof that lifelong freely chosen celibacy necessarily damages mental health.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE031",
@@ -506,7 +596,7 @@
           "title": "CDF · Letter to Father Charles Curran on disputed positions (25 July 1986)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html",
           "role": "primary",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "FLETCHER1966",
@@ -557,6 +647,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "PEW_CO2019",
+          "locator": "original US survey: 23% of cohabiters cited relationship testing as a major reason, 38% finances and 37% convenience",
+          "title": "Pew Research Center · Why People Get Married or Move in With a Partner, 2019 survey",
+          "url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/",
+          "role": "empirical",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
+        {
           "source_id": "PP_RELATIONSHIPS",
           "locator": "hooking up, falling in love and healthy relationships",
           "title": "Planned Parenthood · Relationships",
@@ -573,13 +671,26 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
+      "verified_primary_source_ids": [
+        "PEW_CO2019"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "ORIGINAL_SURVEY_OF_REAL_COHABITERS_NOT_NORMATIVE",
+        "source_ids": [
+          "PEW_CO2019"
+        ],
+        "findings": "Pew 2019 documents cohabiters' own reasons, including testing a relationship (23% major reason), finances (38%), and convenience (37%). It does not conclude premarital cohabitation improves marriage stability.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE038",
@@ -587,28 +698,31 @@
       "opponent_provenance": [
         {
           "source_id": "PP_SEX",
-          "locator": "different kinds of sex and personal sexual choices",
+          "locator": "descriptive sexual health material, not proponent of 'looking is not touching'; no identifiable proponent verified",
           "title": "Planned Parenthood · All About Sex",
           "url": "https://www.plannedparenthood.org/learn/teens/sex/all-about-sex",
           "role": "opposing_position",
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
-        },
-        {
-          "source_id": "FARLEY2008",
-          "locator": "sexuality and its meanings",
-          "title": "Margaret A. Farley · Just Love: A Framework for Christian Sexual Ethics",
-          "url": "https://books.google.com/books?id=L6p9ZVblRNwC",
-          "role": "opposing_position",
-          "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
+      "opposition_passage_status": "OPPOSING_OBJECTION_SCOPED_TO_SECONDARY_OR_HYPOTHETICAL_NO_DIRECT_PRIMARY_PROOF",
       "verified_primary_source_ids": [],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "ILLUSTRATIVE_OBJECTION_NO_IDENTIFIABLE_ADVOCATE",
+        "source_ids": [
+          "PP_SEX"
+        ],
+        "findings": "Neither Planned Parenthood's general sexual health page nor Farley's book catalogue documents 'looking is not touching' as a moral doctrine. Farley has been removed as purported support. This remains a hypothetical common retort; no invented proponent.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE039",
@@ -778,6 +892,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "PEW_CO2019",
+          "locator": "original survey: respondents cite love/companionship in marriage; no claim procreation is morally obsolete",
+          "title": "Pew Research Center · Why People Get Married or Move in With a Partner, 2019 survey",
+          "url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/",
+          "role": "empirical",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
+        {
           "source_id": "FARLEY2008",
           "locator": "marriage, family and just love",
           "title": "Margaret A. Farley · Just Love: A Framework for Christian Sexual Ethics",
@@ -786,13 +908,26 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
+      "verified_primary_source_ids": [
+        "PEW_CO2019"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "ORIGINAL_RESPONDENT_ATTITUDES_NOT_MARRIAGE_NORM",
+        "source_ids": [
+          "PEW_CO2019"
+        ],
+        "findings": "Pew respondents name love and companionship among marriage motives. It does not conclude the procreative end is obsolete; the contrast is an authored challenge, not an attributed Pew claim.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE049",
@@ -849,7 +984,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "FARLEY2008",
@@ -1073,7 +1208,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "PP_BIRTHCONTROL",
@@ -1119,7 +1254,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "PP_BIRTHCONTROL",
@@ -1165,7 +1300,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "PP_BIRTHCONTROL",
@@ -1424,7 +1559,7 @@
           "title": "American Psychological Association · Resolution on sexual orientation and mental health",
           "url": "https://www.apa.org/about/governance/council/policy/chapter-12b.aspx",
           "role": "opposing_position",
-          "source_type": "PRIMARY_ASSOCIATION_POLICY"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "APA_LGB",
@@ -1466,7 +1601,7 @@
           "title": "American Psychological Association · Resolution on sexual orientation and mental health",
           "url": "https://www.apa.org/about/governance/council/policy/chapter-12b.aspx",
           "role": "opposing_position",
-          "source_type": "PRIMARY_ASSOCIATION_POLICY"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "APA_LGB",
@@ -1646,7 +1781,7 @@
           "title": "Coleman et al. · WPATH Standards of Care Version 8 (2022) · full free text",
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_CLINICAL_GUIDANCE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "WPATH8",
@@ -1913,7 +2048,7 @@
           "title": "ACOG · Ectopic Pregnancy, clinical FAQ (reviewed April 2026)",
           "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
           "role": "empirical",
-          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
         },
         {
           "source_id": "ACOG_ECTOPIC_GUIDELINE",
@@ -1956,6 +2091,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "FRANCIS_SPADARO2013",
+          "locator": "original interview: warns against disproportionate repetition of selected sexual topics; does not reject Church sexual morality",
+          "title": "Francis · A Big Heart Open to God, original 2013 interview with Antonio Spadaro",
+          "url": "https://www.americamagazine.org/faith/2013/09/30/big-heart-open-god-interview-pope-francis/",
+          "role": "opposing_position",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
+        {
           "source_id": "FARLEY2008",
           "locator": "Christian sexual ethics and its scope",
           "title": "Margaret A. Farley · Just Love: A Framework for Christian Sexual Ethics",
@@ -1972,18 +2115,39 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
+      "verified_primary_source_ids": [
+        "FRANCIS_SPADARO2013"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "FIRST_PERSON_PASTORAL_CRITIQUE_NOT_DOCTRINAL_OPPOSITION",
+        "source_ids": [
+          "FRANCIS_SPADARO2013"
+        ],
+        "findings": "Francis' original Spadaro interview criticizes disproportionate repetition of abortion/contraception/marriage issues and calls for a broader Gospel setting; he does not renounce Catholic sexual ethics or say its norms are false.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE142",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FREUD1908",
+          "locator": "historical critique of enforced abstinence; no direct support for claim digital modernity makes chastity impossible",
+          "title": "Sigmund Freud · Modern Sexual Morality and Modern Nervousness (1908 original essay, translated)",
+          "url": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift",
+          "role": "opposing_position",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
         {
           "source_id": "FARLEY2008",
           "locator": "celibacy, sexuality and Christian sexual ethics",
@@ -1993,18 +2157,47 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
+      "verified_primary_source_ids": [
+        "FREUD1908"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "HISTORICAL_PRIMARY_CRITIQUE_NOT_CURRENT_DIGITAL_CLAIM",
+        "source_ids": [
+          "FREUD1908"
+        ],
+        "findings": "Freud's original 1908 critique of sexual restraint is a historical position, not evidence that twenty-first-century dating, pornography and delayed marriage make chastity impossible; the modern impossibility premise remains hypothetical.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE143",
       "priority": "HIGH",
       "opponent_provenance": [
+        {
+          "source_id": "PURITY_SHAME2026",
+          "locator": "1,273 participant correlational study: sexual shame association; explicitly no causation established",
+          "title": "Gray & Klement · Purity Culture and Sexual Shame, 2026, correlational original study",
+          "url": "https://digitalcommons.unf.edu/jcssw/vol7/iss1/1/",
+          "role": "empirical",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
+        {
+          "source_id": "PURITY_SURVIVORS2026",
+          "locator": "original paper abstract: shame and purity culture in trauma-exposed groups; evangelical, not Catholic doctrinal teaching",
+          "title": "Being Pure and Being Ashamed · Purity culture and sexual shame among survivors, 2026 abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41983601/",
+          "role": "empirical",
+          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+        },
         {
           "source_id": "APA_SEXTHERAPY",
           "locator": "sexual shame and psychotherapy",
@@ -2022,18 +2215,41 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
+      "verified_primary_source_ids": [
+        "PURITY_SHAME2026",
+        "PURITY_SURVIVORS2026"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "PRIMARY_EMPIRICAL_ASSOCIATIONS_NOT_CAUSAL_OR_CATHOLIC_WHOLE",
+        "source_ids": [
+          "PURITY_SHAME2026",
+          "PURITY_SURVIVORS2026"
+        ],
+        "findings": "Gray & Klement 2026 report correlation of purity-culture exposure with sexual shame in 1,273 respondents but explicitly no causal proof. Other 2026 trauma-group study concerns evangelical purity culture, not Catholic doctrine generally. Neither refutes Catholic chastity by itself.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE145",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "FLETCHER_TABLET",
+          "locator": "six propositions 1–2 and 5: love as intrinsic good and norm; secondary position account not literal Fletcher quotation",
+          "title": "The Tablet education · Joseph Fletcher's six propositions of situation ethics (secondary exposition)",
+          "url": "https://www.thetablet.co.uk/student-zone/ocr/religion-and-ethics/situation-ethics/",
+          "role": "opposing_position",
+          "source_type": "SECONDARY_INTERPRETIVE_POSITION"
+        },
         {
           "source_id": "FLETCHER1966",
           "locator": "agape and loving concern as the governing moral norm",
@@ -2059,13 +2275,24 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
+      "opposition_passage_status": "OPPOSING_OBJECTION_SCOPED_TO_SECONDARY_OR_HYPOTHETICAL_NO_DIRECT_PRIMARY_PROOF",
       "verified_primary_source_ids": [],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_4": {
+        "date": "2026-10-08",
+        "grade": "SECONDARY_FLETCHER_POSITION_NOT_LITERAL_ANY_LOVE_PERMITS_ALL",
+        "source_ids": [
+          "FLETCHER_TABLET"
+        ],
+        "findings": "The Tablet accurately summarizes Fletcher's agape and six propositions, but 'love is love' as any attraction justifies sexual relations is not Fletcher's stated wording. Ethical agape and mere attraction must be distinguished.",
+        "claim_to_source_stage_reviewed": false,
+        "source_scope_checked": true,
+        "not_necessarily_authored_opposition": true
+      }
     },
     {
       "id": "CSE149",
@@ -2248,5 +2475,121 @@
       "Curran source may prove historical dissent without proving the exact reconstructed objection.",
       "Sexual-assault misconception cases were inadvertently described as backed by 'opposing-position' sources even though the sources refute them. This is corrected in reader."
     ]
+  },
+  "batch_4": {
+    "date": "2026-10-08",
+    "status": "ALL_PREVIOUSLY_UNREVIEWED_CASES_HAVE_EXPLICIT_SOURCE_SCOPE_BUT_NO_COMPLETE_STAGE_LEVEL_CERTIFICATION",
+    "details": [
+      {
+        "id": "CSE008",
+        "grade": "RELIABLE_SECONDARY_EXPOSITION_NO_AUTHOR_PRIMARY_PASSAGE",
+        "source_ids": [
+          "FLETCHER_TABLET"
+        ],
+        "findings": "The Tablet explains Fletcher's love and situational norm. The precise question is an editorial reconstruction, not Fletcher's exact quotation or all Christian approaches to intention.",
+        "primary_position_support": false
+      },
+      {
+        "id": "CSE010",
+        "grade": "RELIABLE_SECONDARY_EXPOSITION_NO_AUTHOR_PRIMARY_PASSAGE",
+        "source_ids": [
+          "FLETCHER_TABLET"
+        ],
+        "findings": "The Tablet documents situation ethics' priority of love over absolute rules. A claim that ANY act is justified in ANY exception overstates Fletcher and must be treated as a test objection, not a literal position.",
+        "primary_position_support": false
+      },
+      {
+        "id": "CSE021",
+        "grade": "HISTORICAL_PRIMARY_AUTHOR_CRITIC_OF_ABSTINENCE",
+        "source_ids": [
+          "FREUD1908"
+        ],
+        "findings": "Freud's 1908 essay directly criticizes repression and deferred sexual expression. It neither examines Catholic chastity as a freely chosen virtue nor proves such virtue intrinsically pathological.",
+        "primary_position_support": true
+      },
+      {
+        "id": "CSE029",
+        "grade": "ORIGINAL_SMALL_SAMPLE_QUALITATIVE_REPORT",
+        "source_ids": [
+          "PRIEST_WELLBEING2016"
+        ],
+        "findings": "Isacco et al. report several priests' first-person loneliness and depression experiences; 6 of 15 interviewees mention negative effects. This is not proof that lifelong freely chosen celibacy necessarily damages mental health.",
+        "primary_position_support": true
+      },
+      {
+        "id": "CSE035",
+        "grade": "ORIGINAL_SURVEY_OF_REAL_COHABITERS_NOT_NORMATIVE",
+        "source_ids": [
+          "PEW_CO2019"
+        ],
+        "findings": "Pew 2019 documents cohabiters' own reasons, including testing a relationship (23% major reason), finances (38%), and convenience (37%). It does not conclude premarital cohabitation improves marriage stability.",
+        "primary_position_support": true
+      },
+      {
+        "id": "CSE038",
+        "grade": "ILLUSTRATIVE_OBJECTION_NO_IDENTIFIABLE_ADVOCATE",
+        "source_ids": [
+          "PP_SEX"
+        ],
+        "findings": "Neither Planned Parenthood's general sexual health page nor Farley's book catalogue documents 'looking is not touching' as a moral doctrine. Farley has been removed as purported support. This remains a hypothetical common retort; no invented proponent.",
+        "primary_position_support": false
+      },
+      {
+        "id": "CSE045",
+        "grade": "ORIGINAL_RESPONDENT_ATTITUDES_NOT_MARRIAGE_NORM",
+        "source_ids": [
+          "PEW_CO2019"
+        ],
+        "findings": "Pew respondents name love and companionship among marriage motives. It does not conclude the procreative end is obsolete; the contrast is an authored challenge, not an attributed Pew claim.",
+        "primary_position_support": true
+      },
+      {
+        "id": "CSE141",
+        "grade": "FIRST_PERSON_PASTORAL_CRITIQUE_NOT_DOCTRINAL_OPPOSITION",
+        "source_ids": [
+          "FRANCIS_SPADARO2013"
+        ],
+        "findings": "Francis' original Spadaro interview criticizes disproportionate repetition of abortion/contraception/marriage issues and calls for a broader Gospel setting; he does not renounce Catholic sexual ethics or say its norms are false.",
+        "primary_position_support": true
+      },
+      {
+        "id": "CSE142",
+        "grade": "HISTORICAL_PRIMARY_CRITIQUE_NOT_CURRENT_DIGITAL_CLAIM",
+        "source_ids": [
+          "FREUD1908"
+        ],
+        "findings": "Freud's original 1908 critique of sexual restraint is a historical position, not evidence that twenty-first-century dating, pornography and delayed marriage make chastity impossible; the modern impossibility premise remains hypothetical.",
+        "primary_position_support": true
+      },
+      {
+        "id": "CSE143",
+        "grade": "PRIMARY_EMPIRICAL_ASSOCIATIONS_NOT_CAUSAL_OR_CATHOLIC_WHOLE",
+        "source_ids": [
+          "PURITY_SHAME2026",
+          "PURITY_SURVIVORS2026"
+        ],
+        "findings": "Gray & Klement 2026 report correlation of purity-culture exposure with sexual shame in 1,273 respondents but explicitly no causal proof. Other 2026 trauma-group study concerns evangelical purity culture, not Catholic doctrine generally. Neither refutes Catholic chastity by itself.",
+        "primary_position_support": true
+      },
+      {
+        "id": "CSE145",
+        "grade": "SECONDARY_FLETCHER_POSITION_NOT_LITERAL_ANY_LOVE_PERMITS_ALL",
+        "source_ids": [
+          "FLETCHER_TABLET"
+        ],
+        "findings": "The Tablet accurately summarizes Fletcher's agape and six propositions, but 'love is love' as any attraction justifies sexual relations is not Fletcher's stated wording. Ethical agape and mere attraction must be distinguished.",
+        "primary_position_support": false
+      }
+    ],
+    "editorial_cautions": [
+      "Secondary accounts of Joseph Fletcher's situation ethics are NOT firsthand Fletcher quotations.",
+      "Freud critiques sexual abstinence in 1908, not the developed virtue theology of Catholic chastity.",
+      "Pew reports respondents' motivations, not a moral norm or causal marriage-outcome finding.",
+      "Priest interview and purity-culture studies are small/observational context and cannot establish universal psychological necessity.",
+      "Sexual shame studies concern particular evangelical purity-culture messaging and may not be generalized causally to Catholic doctrine.",
+      "CSE038 is an illustrative retort with no discovered individual author/proponent; readers are warned rather than provided a made-up opponent.",
+      "Prior book-preview references remain bibliographic context, not specific-page certification."
+    ],
+    "publication_gate": "FULL_EIGHT_STAGE_AUTHOR_SOURCE_AND_CATHOLIC_REBUTTAL_CLAIM_PROOF_STILL_OPEN"
   }
 }
