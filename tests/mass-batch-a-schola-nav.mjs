@@ -334,7 +334,7 @@ try{
   const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
   assert.equal(await hostSection.count(),1,"Host Consecration section not present in 48-card menu");
   console.log("Batch A Host section: before click");
-  await hostSection.click();
+  await hostSection.tap();
   console.log("Batch A Host section: click returned");
   await page.waitForFunction(()=>/Consecration/i.test(document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent??""),null,{timeout:5000});
   const hostNow=await page.evaluate(()=>({
