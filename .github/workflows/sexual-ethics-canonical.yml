@@ -32,3 +32,5 @@ jobs:
         run: node tests/sexual-ethics-substantive-highstakes.mjs
       - name: Full 55-argument editorial evidence and non-catalogue citation audit
         run: node tests/sexual-ethics-certification-audit-55.mjs
+      - name: Original-passage verdicts and certification integrity
+        run: node tests/sexual-ethics-evidence-v2.mjs
