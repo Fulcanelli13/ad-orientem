@@ -143,6 +143,6 @@ assert.ok(b.records.every(x=>x.paragraphs.every(p=>p.source_locator&&p.text_fr&&
 assert.equal(gate.research_review_progress.tlm_051_065_reviewed,15);
 assert.equal(gate.research_review_progress.primary_text_explicitly_checked,7);
 assert.equal(gate.research_review_progress.final_approved_for_publication,0);
-assert.equal(checkedParagraphs,141);
+assert.equal(checkedParagraphs,161);
 assert.equal(register.counts.underlying_substantive_paragraphs,checkedParagraphs);
 console.log(JSON.stringify({validation:"PASS",indexed:register.records.length,unrecovered:25,substantiveParagraphs:checkedParagraphs,sourceCandidatesForLegacy:legacyCitations,directTextAnchored:37,interpretive:30,correctedPendingApproval:7,frenchDraftParagraphs:82,frenchDraftParagraphs051065:37,editorialFollowups,newNavigationDossiers:0,publications:0},null,2));
