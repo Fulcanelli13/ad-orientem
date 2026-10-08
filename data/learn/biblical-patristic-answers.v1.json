@@ -47,16 +47,16 @@
       "title": "Corpus Coranicum, Infancy Gospel of Thomas and Quran 3:49",
       "url": "https://corpuscoranicum.de/en/verse-navigator/sura/3/verse/49/intertexts/458",
       "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP",
-      "verification": "INDEXED_SCHOLARLY_RECORD_EXISTS_DIRECT_PAGE_REQUIRES_JAVASCRIPT",
-      "support_limit": "Linked intertext entry exists in indexed search but direct HTML reading requires JavaScript; do not claim full text personally verified."
+      "verification": "DIRECT_ORIGINAL_GREEK_AND_QURANIC_ARABIC_READ_WITH_SCHOLARLY_COMMENTARY_2026_10_08",
+      "support_limit": "TUK_458 dates the Infancy Gospel of Thomas to late 2nd century and distinguishes shared motif from proof of direct manuscript copying."
     },
     {
       "id": "CORPUSPALM",
       "title": "Corpus Coranicum, Pseudo-Matthew and Quran 19:23",
       "url": "https://corpuscoranicum.de/en/verse-navigator/sura/19/verse/23/intertexts/459",
       "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP",
-      "verification": "INDEXED_SCHOLARLY_RECORD_EXISTS_DIRECT_PAGE_REQUIRES_JAVASCRIPT",
-      "support_limit": "Linked intertext entry exists in indexed search but direct HTML reading requires JavaScript; do not claim full text personally verified."
+      "verification": "DIRECT_LATIN_AND_ARABIC_TEXTS_WITH_SCHOLARLY_COMMENTARY_2026_10_08",
+      "support_limit": "TUK_459 dates Pseudo-Matthew to likely 7th-century Merovingian setting with 9th-century manuscripts and considers direct connection to the Quran unlikely; there may be shared earlier motifs."
     },
     {
       "id": "QURAN1928",
@@ -350,14 +350,14 @@
       "title": "Bereshit Rabbah 65:1, Esau with Rome's wicked empire",
       "url": "https://www.sefaria.org/Bereshit_Rabbah.65.1",
       "type": "RABBINIC_PRIMARY_TRANSLATION",
-      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
+      "verification": "RABBINIC_TEXT_AND_ANCIENT_ROMAN_IMPERIAL_METAPHOR_CHECKED_2026_10_08"
     },
     {
       "id": "EDOM-PESACHIM",
       "title": "Pesachim 118b, Rome treated as descendants of Edom",
       "url": "https://www.sefaria.org/Pesachim.118b",
       "type": "RABBINIC_PRIMARY_TRANSLATION",
-      "verification": "FULL_TEXT_OR_RELEVANT_PASSAGE_INSPECTED_2026_10_08"
+      "verification": "RABBINIC_TEXT_EXPLICITLY_CALLS_ROME_DESCENDANTS_OF_EDOM_2026_10_08"
     },
     {
       "id": "PSMAT20",
@@ -675,11 +675,17 @@
         ],
         "text_fr": "La confession catholique de la divinité éternelle du Christ demeure le point décisif, au-delà de la ressemblance des récits d’enfance."
       },
-      "verification_pending": [
-        "Corpus Coranicum is JavaScript-dependent; its scholarly intertext record is indexed but full passage rendering needs manual inspection."
-      ],
+      "verification_pending": [],
       "editorial_status": "BILINGUAL_FIELD_PARITY_EDITORIAL_REVIEW_PENDING",
-      "question_fr": "Le Coran a-t-il repris l’épisode des oiseaux d’argile d’un évangile apocryphe ?"
+      "question_fr": "Le Coran a-t-il repris l’épisode des oiseaux d’argile d’un évangile apocryphe ?",
+      "verification_notes": [
+        {
+          "source_ids": [
+            "CORPUSBIRDS"
+          ],
+          "finding": "TUK_458 gives original Greek Infancy Gospel of Thomas 2:1–5 and Quran 3:49; dates infancy narrative to late 2nd century; differentiates bird-creation motif from a demonstrated direct text copy; note highlights doctrinal contrast concerning Christ."
+        }
+      ]
     },
     {
       "question_id": "BAQ-07",
@@ -738,7 +744,15 @@
         "Do not treat Pseudo-Matthew direct textual dependence as a proven fact; check Syriac and Palestinian intermediary witnesses."
       ],
       "editorial_status": "BILINGUAL_FIELD_PARITY_EDITORIAL_REVIEW_PENDING",
-      "question_fr": "Le récit du palmier de Marie dans le Coran provient-il du Pseudo-Matthieu ?"
+      "question_fr": "Le récit du palmier de Marie dans le Coran provient-il du Pseudo-Matthieu ?",
+      "verification_notes": [
+        {
+          "source_ids": [
+            "CORPUSPALM"
+          ],
+          "finding": "TUK_459 places Pseudo-Matthew palm incident in flight to Egypt versus Quran during childbirth; notes likely 7th-century Pseudo-Matthew composition and extant 9th-century manuscripts; considers direct connection unlikely."
+        }
+      ]
     },
     {
       "question_id": "BAQ-08",
@@ -1329,7 +1343,16 @@
         "Do not extrapolate medieval political metaphor into modern genetic descent or moral blame."
       ],
       "editorial_status": "BILINGUAL_FIELD_PARITY_EDITORIAL_REVIEW_PENDING",
-      "question_fr": "Pourquoi certains textes rabbiniques identifient-ils Édom à Rome ?"
+      "question_fr": "Pourquoi certains textes rabbiniques identifient-ils Édom à Rome ?",
+      "verification_notes": [
+        {
+          "source_ids": [
+            "EDOM-RABBAH",
+            "EDOM-PESACHIM"
+          ],
+          "finding": "Bereshit Rabbah 65:1 maps Esau's conduct to the 'wicked empire of Rome'; Pesachim 118b explicitly calls Rome 'descendants of Edom' in a homiletic argument. These texts evidence a figurative polemical tradition, not genetic descent."
+        }
+      ]
     },
     {
       "question_id": "BAQ-24",
@@ -1494,14 +1517,16 @@
       "Located original rabbinic Edom/Rome passages in Bereshit Rabbah 65:1 and Pesachim 118b",
       "Checked Fatima manuscript, Justin ch. 71–73, Augustine, Pius XII, Sahih Muslim, Pseudo-Matthew and JW self-descriptions",
       "Scoped Quranic intertext references as index-verified but JavaScript-dependent",
-      "Removed irrelevant Catechism canon reference from Augustine millennium answer"
+      "Removed irrelevant Catechism canon reference from Augustine millennium answer",
+      "Read original Corpus Coranicum TUK_458 and TUK_459 scholarly entries including dated Greek/Latin witnesses and Quranic parallels.",
+      "Read Rabbinic Pesachim 118b and Bereshit Rabbah 65:1 for symbolic Rome/Edom comparison."
     ],
     "partial": true,
     "unresolved": [
-      "Quranic intertext database direct page requires JavaScript",
       "Original Latin/Greek manuscript collation for selected disputed textual readings",
       "Edition-grade review and direct source links for some canon and patristic interpretations",
-      "Independent French native-language editorial review"
+      "Independent French native-language editorial review",
+      "Verify date/redaction of specific midrashic recensions before making finer timeline assertions."
     ]
   },
   "translation": {
