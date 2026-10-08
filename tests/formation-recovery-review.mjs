@@ -81,8 +81,8 @@ assert.equal(legacyRows.reduce((n,r)=>n+countAllSources(r.content),0),known.coun
 assert.equal(expected,622,"538 recovered plus 84 new four-part debates");
 assert.equal(known.counts.blocks_with_french,538,"all 538 recovered source-bearing blocks now have bilingual drafts");
 assert.equal(known.counts.blocks_without_french,0,"all legacy source-bearing content must have French text");
-assert.equal(known.controversy_draft_completion_20261008.externally_identified_original_opponents,17);
-assert.equal(known.controversy_draft_completion_20261008.newly_authored_source_references,194);
+assert.equal(known.controversy_draft_completion_20261008.externally_identified_original_opponents,19);
+assert.equal(known.controversy_draft_completion_20261008.newly_authored_source_references,202);
 
 const existingI=packs.find(p=>p.label==="Contemporary I").doc;
 for(const c of existingI.cases){
