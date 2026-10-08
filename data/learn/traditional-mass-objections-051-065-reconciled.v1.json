@@ -1,6 +1,6 @@
 {
   "version": "TLM_OBJECTIONS_051_065_RECONCILED_V1",
-  "status": "BILINGUAL_37_PARAGRAPHS_15_CLAIM_SCOPES_REVIEWED_NOT_PUBLIC",
+  "status": "BILINGUAL_37_CASE_CLAIMS_DOCUMENTED_UNPUBLISHED",
   "created_at": "2026-10-08",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_transformation_notice": "This pack preserves all 15 earlier titles and principal claims, but the substantive passages were normalized/rephrased from chat draft, not exact verbatim migration. Consult previous in-chat TLM051–065 for complete draft language.",
@@ -9,8 +9,8 @@
     {
       "id": "SC63",
       "title": "Sacrosanctum Concilium (1963)",
-      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
-      "type": "COUNCIL_PRIMARY"
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "type": "ECUMENICAL_COUNCIL_PRIMARY_VERIFIED_CURRENT_URL"
     },
     {
       "id": "MR69",
@@ -107,7 +107,7 @@
         "CR-LIT-05"
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -119,8 +119,25 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "*Sacrosanctum Concilium* a demandé une révision de la liturgie romaine, mais n’a pas lui-même promulgué l’Ordo Missae complet introduit sous Paul VI. Ses principes portaient notamment sur la simplification, l’Écriture sainte, la participation des fidèles et la sauvegarde de la saine tradition.",
-          "source_locator": "Sacrosanctum Concilium 21–23, 50–51; Missale Romanum (1969) paragraphs describing implementing legislation",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "SC63 §§21–23,50–51; MR69 paragraph beginning 'The recent Second Vatican Ecumenical Council'",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §§21–23,50–51; MR69 paragraph beginning 'The recent Second Vatican Ecumenical Council'",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "documented_reform_rationale",
@@ -130,9 +147,26 @@
             "SC63",
             "MR69"
           ],
-          "source_locator": "Sacrosanctum Concilium 50–51; Paul VI, Missale Romanum introductory paragraphs",
+          "source_locator": "SC63 §§34,50; MR69 Council principles",
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §§34,50; MR69 Council principles",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "critical_assessment",
@@ -144,8 +178,29 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "La réforme fut menée sous l’autorité du pape, par l’intermédiaire d’organismes postconciliaires ; elle ne fut donc pas l’initiative indépendante de prêtres ou de consulteurs. Ce fait juridique n’élimine pas la question historique de savoir si chaque décision concrète répondait aux critères du Concile, en particulier à l’exigence d’un développement organique.",
-          "source_locator": "Sacrosanctum Concilium 23, organic development; Missale Romanum juridical act",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "SC63 §23 organic growth; MR69 promulgation of reform",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §23 organic growth; MR69 promulgation of reform",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SA64",
+                "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19640125_sacram-liturgiam.html"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -175,7 +230,10 @@
           "answer",
           "documented_reform_rationale",
           "assessment_or_critical_assessment"
-        ]
+        ],
+        "source_pinpoints": 3,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
       }
     },
     {
@@ -187,7 +245,7 @@
         "CR-LIT-02"
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -199,8 +257,25 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "Paul VI présenta lui-même les modifications comme importantes : le missel postconciliaire introduisit plusieurs prières eucharistiques, un Ordo Missae réorganisé et un lectionnaire considérablement élargi. Décrire ce processus comme une simple réduction de la complexité cérémonielle en minimise la portée.",
-          "source_locator": "Missale Romanum (1969) on new Eucharistic Prayers and the three-year lectionary",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "MR69 paragraphs 'major innovation concerns the Eucharistic Prayer' and three new Canons",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "MR69 paragraphs 'major innovation concerns the Eucharistic Prayer' and three new Canons",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "AUD19",
+                "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691119.html"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "documented_reform_rationale",
@@ -210,9 +285,26 @@
             "SC63",
             "MR69"
           ],
-          "source_locator": "Sacrosanctum Concilium 34, 50–51; Missale Romanum paragraph on the new Canon and readings",
+          "source_locator": "SC63 §§34,50; MR69 reform motives",
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §§34,50; MR69 reform motives",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "critical_assessment",
@@ -223,8 +315,25 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "*Sacrosanctum Concilium* demandait effectivement certaines simplifications et restaurations. La critique porte donc sur les transformations qui étaient nécessaires et organiques, non sur l’idée que toute révision liturgique serait illégitime.",
-          "source_locator": "SC 23 demands organically derived forms; compare Missale Romanum on major changes",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "SC63 §23; MR69 changed architecture",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §23; MR69 changed architecture",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -254,17 +363,20 @@
           "answer",
           "documented_reform_rationale",
           "assessment_or_critical_assessment"
-        ]
+        ],
+        "source_pinpoints": 3,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
       }
     },
     {
       "id": "TLM053",
-      "question_original": "The Novus Ordo appeared suddenly in 1969, without any preceding reforms.",
-      "question_fr": "Le nouvel Ordo est-il apparu sans transition en 1969 ?",
+      "question_original": "What transitional liturgical reforms preceded the new Missal of 1969–1970?",
+      "question_fr": "Quelles réformes liturgiques transitoires ont précédé le nouveau missel de 1969–1970 ?",
       "canonical_owner": "CR-LIT-03",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -277,8 +389,29 @@
           ],
           "source_review": "DIRECT_TEXT_CHRONOLOGY_CHECKED_SECONDARY_CONTINUITY_ASSESSMENT",
           "text_fr": "L’instruction *Inter Oecumenici* de 1964 et *Tres abhinc annos* de 1967 modifièrent progressivement la messe alors en usage avant la promulgation de l’Ordo de 1969. La *Missa normativa* expérimentale précéda également la publication définitive.",
-          "source_locator": "Inter Oecumenici (1964), opening mandate and revised rites; Tres abhinc annos (1967), title and rubrics",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Inter Oecumenici instruction 1964; Tres abhinc annos instruction 1967; Chiron 2021 opening paragraphs",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Inter Oecumenici instruction 1964; Tres abhinc annos instruction 1967; Chiron 2021 opening paragraphs",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "IO64",
+                "url": "https://origin.ewtn.com/catholicism/library/inter-oecumenici--instruction-on-implementing-the-constitution-on-sacred-liturgy-28955"
+              },
+              {
+                "id": "TA67",
+                "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/TresAbhinc.html"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -289,8 +422,25 @@
           ],
           "source_review": "DIRECT_TEXT_CHRONOLOGY_CHECKED_SECONDARY_CONTINUITY_ASSESSMENT",
           "text_fr": "La succession chronologique de révisions officielles établit une continuité institutionnelle, mais ne démontre pas à elle seule que chaque modification constituait un développement liturgique organique. Un tel jugement doit s’appuyer sur les critères énoncés par le Concile.",
-          "source_locator": "Chiron 2021: chronology of 1964/1967 transitional reforms and 1967 experiment",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Chiron 2021 'An Experimental Mass at the Synod of 1967'; SC63 §23",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Chiron 2021 'An Experimental Mass at the Synod of 1967'; SC63 §23",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -311,17 +461,28 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "The Novus Ordo appeared suddenly in 1969, without any preceding reforms.",
+          "original_fr": "Le nouvel Ordo est-il apparu sans transition en 1969 ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM054",
-      "question_original": "Bugnini single-handedly invented the Novus Ordo.",
-      "question_fr": "Bugnini a-t-il inventé seul le nouvel Ordo ?",
+      "question_original": "What did Bugnini, the Consilium and Paul VI each contribute to the reform?",
+      "question_fr": "Quel fut le rôle respectif de Bugnini, du Consilium et de Paul VI dans la réforme ?",
       "canonical_owner": "CR-LIT-04",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -333,8 +494,25 @@
           ],
           "source_review": "HISTORICAL_SECONDARY_NARRATIVE_NOT_INDEPENDENT_ARCHIVE_COLLATION",
           "text_fr": "Mgr Annibale Bugnini exerça une influence majeure dans la coordination de la réforme ; néanmoins, des commissions, des évêques, des consulteurs et, en dernier ressort, Paul VI participèrent à la rédaction, à l’examen et à l’autorisation du nouveau missel. Attribuer l’ensemble de la réforme à un seul homme masque le processus documenté.",
-          "source_locator": "Chiron 2021: role of Consilium/Paul VI, multiple committees and detailed interventions",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Chiron 2021 paragraphs on Consilium membership, 1965–1968 drafts and papal review",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Chiron 2021 paragraphs on Consilium membership, 1965–1968 drafts and papal review",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -344,8 +522,21 @@
           ],
           "source_review": "HISTORICAL_SECONDARY_NARRATIVE_NOT_INDEPENDENT_ARCHIVE_COLLATION",
           "text_fr": "Les procédures suivies, le choix des experts et la rapidité de certaines étapes de rédaction peuvent légitimement être critiqués. Il convient toutefois d’appuyer ces critiques sur des documents, et non sur l’idée d’un auteur unique auquel tout serait imputable.",
-          "source_locator": "Chiron 2021: historical critique supported by detailed examples",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Chiron 2021 paragraphs on 1967 objections and 1968 redrafting",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Chiron 2021 paragraphs on 1967 objections and 1968 redrafting",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -364,17 +555,28 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "Bugnini single-handedly invented the Novus Ordo.",
+          "original_fr": "Bugnini a-t-il inventé seul le nouvel Ordo ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM055",
-      "question_original": "Paul VI simply rubber-stamped whatever the Consilium proposed.",
-      "question_fr": "Paul VI a-t-il simplement approuvé sans examen le travail du Consilium ?",
+      "question_original": "Did Paul VI personally review and revise the Consilium proposals?",
+      "question_fr": "Paul VI a-t-il personnellement examiné et modifié les projets du Consilium ?",
       "canonical_owner": "CR-LIT-04",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -386,8 +588,25 @@
           ],
           "source_review": "HISTORICAL_SECONDARY_NARRATIVE_WITH_PRIMARY_LEGISLATION",
           "text_fr": "Paul VI intervint personnellement sur les projets, notamment au sujet du Canon romain et de la forme du nouvel Ordo Missae. La reconstitution historique de Chiron fait état d’objections et de révisions au cours des travaux ; la promulgation pontificale constitua un exercice de sa propre autorité juridique.",
-          "source_locator": "Chiron 2021: June 1966 and January 1968 Paul VI interventions and 1968 marginal notes",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Chiron 2021 June 20 1966 instructions and January 1968 papal experiments",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Chiron 2021 June 20 1966 instructions and January 1968 papal experiments",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -399,8 +618,29 @@
           ],
           "source_review": "HISTORICAL_SECONDARY_NARRATIVE_WITH_PRIMARY_LEGISLATION",
           "text_fr": "L’approbation personnelle du pape engage sa responsabilité dans la réforme légalement promulguée ; elle doit cependant être distinguée des innovations non autorisées apparues dans certaines célébrations ultérieures. Les éléments disponibles ne permettent pas de présenter Paul VI comme un simple signataire passif.",
-          "source_locator": "Chiron 2021: papal review and legal approval; Missale Romanum (1969)",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Chiron 2021 January 22 1968 seven suggestions; MR69 promulgation",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Chiron 2021 January 22 1968 seven suggestions; MR69 promulgation",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -420,17 +660,28 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "Paul VI simply rubber-stamped whatever the Consilium proposed.",
+          "original_fr": "Paul VI a-t-il simplement approuvé sans examen le travail du Consilium ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM056",
-      "question_original": "The bishops overwhelmingly approved the experimental new Mass in 1967.",
-      "question_fr": "Les évêques ont-ils massivement approuvé la messe expérimentale de 1967 ?",
+      "question_original": "How did the 1967 Synod of Bishops vote on the experimental Missa normativa?",
+      "question_fr": "Comment le Synode des évêques de 1967 a-t-il voté sur la Missa normativa expérimentale ?",
       "canonical_owner": "CR-LIT-04",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -443,8 +694,25 @@
           "source_review": "CONTEMPORANEOUS_OFFICIAL_PRIMARY_VOTE",
           "text_fr": "Pour la structure générale de la *Missa normativa* de 1967, les suffrages rapportés furent de 71 *placet*, 43 *non placet*, 62 *placet iuxta modum* et quatre abstentions. Une approbation sous conditions n’est pas un rejet ; elle n’est pas non plus une approbation sans réserve.",
           "evidence_locator": "Notitiae (November 1967) pp. 357, 363: Ad I 71 placet, 43 non placet, 62 placet iuxta modum, 4 abstentions",
-          "source_locator": "Notitiae 35 (1967) official ballot 71/43/62/4",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Notitiae 35 (1967), ballot on general structure, pp. 357–363: 71/43/62/4",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Notitiae 35 (1967), ballot on general structure, pp. 357–363: 71/43/62/4",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "NOT67",
+                "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-035-1967.pdf"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -463,8 +731,21 @@
             }
           ],
           "evidence_locator": "Notitiae 35 (1967), pp. 357–359 (scan pp. 11–13), general Missa normativa ballot and episcopal modorum",
-          "source_locator": "Notitiae 35 (1967) recorded proposed modifications and contemporary criticisms",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Notitiae 35 (1967) interventions and modorum pp. 357–359; not a vote on final 1970 edition",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Notitiae 35 (1967) interventions and modorum pp. 357–359; not a vote on final 1970 edition",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "NOT67",
+                "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-035-1967.pdf"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -483,17 +764,28 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "The bishops overwhelmingly approved the experimental new Mass in 1967.",
+          "original_fr": "Les évêques ont-ils massivement approuvé la messe expérimentale de 1967 ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM057",
-      "question_original": "The 1967 experimental Mass and the final 1969–1970 Missal were exactly the same.",
-      "question_fr": "La messe expérimentale de 1967 était-elle identique au missel de 1970 ?",
+      "question_original": "What changed between the 1967 Missa normativa and the 1969–1970 Roman Missal?",
+      "question_fr": "Quelles modifications séparent la Missa normativa de 1967 du missel romain de 1969–1970 ?",
       "canonical_owner": "CR-LIT-04",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -506,8 +798,29 @@
           ],
           "source_review": "PRIMARY_CHRONOLOGY_AND_SECONDARY_RECONSTRUCTION",
           "text_fr": "La *Missa normativa* de 1967 était une étape dans l’élaboration du rite. D’autres consultations, révisions et approbations pontificales eurent lieu avant la promulgation de l’Ordo Missae en 1969 et la publication de l’édition typique latine complète en 1970.",
-          "source_locator": "Notitiae 35 (1967) experimental rite; Chiron 2021 subsequent drafts; Missale Romanum (1969)",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Chiron 2021 1967 Synod and January 1968 papal experiments; NOT67 1967 test",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Chiron 2021 1967 Synod and January 1968 papal experiments; NOT67 1967 test",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "id": "NOT67",
+                "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-035-1967.pdf"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -520,8 +833,33 @@
           ],
           "source_review": "PRIMARY_CHRONOLOGY_AND_SECONDARY_RECONSTRUCTION",
           "text_fr": "Une critique formulée contre une version provisoire doit préciser ce qui fut conservé dans le texte définitif. Inversement, les révisions ultérieures n’effacent pas l’importance historique des réserves épiscopales précédentes.",
-          "source_locator": "Chiron 2021 1968 changes; later typical edition, interpretation distinct",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Chiron 2021 following 'Towards the New Mass'; MR69 legal promulgation",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Chiron 2021 following 'Towards the New Mass'; MR69 legal promulgation",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              },
+              {
+                "id": "GIRM75",
+                "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+              },
+              {
+                "id": "IGMR69_ORIGINAL",
+                "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
+              },
+              {
+                "id": "NOT67",
+                "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-035-1967.pdf"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -543,19 +881,30 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "The 1967 experimental Mass and the final 1969–1970 Missal were exactly the same.",
+          "original_fr": "La messe expérimentale de 1967 était-elle identique au missel de 1970 ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM058",
-      "question_original": "The original 1969 General Instruction reduced the Mass to a community meal.",
-      "question_fr": "L’Institutio Generalis de 1969 réduisait-elle la messe à un repas communautaire ?",
+      "question_original": "What did the 1969 General Instruction originally say about the nature of the Mass?",
+      "question_fr": "Que disait la première Présentation générale de 1969 sur la nature de la messe ?",
       "canonical_owner": "CR-LIT-07",
       "crossLinks": [
         "CR-LIT-05"
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -568,8 +917,25 @@
           "source_review": "DIRECT_DOCUMENTS_BUT_HISTORICAL_EDITION_TRANSLATIONS_REQUIRE_PROOFREAD",
           "text_fr": "La *Brève étude critique du nouvel Ordo Missae*, publiée en 1969, reprochait à la première rédaction du paragraphe 7 de ne pas exprimer assez explicitement des doctrines eucharistiques essentielles, notamment le caractère sacrificiel de la messe et la présence substantielle du Christ.",
           "evidence_locator": "1969 Institutio generalis no. 7 as reproduced, compared with 1970 amendments",
-          "source_locator": "Ottaviani/Bacci criticism (1969), exact subject IGMR n.7 original historical reprint",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Fordham transcription of Ottaviani–Bacci 1969 Short Critical Study; original GIRM §7 in IGMR69_ORIGINAL",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Fordham transcription of Ottaviani–Bacci 1969 Short Critical Study; original GIRM §7 in IGMR69_ORIGINAL",
+            "evidence_class": "CONTEMPORARY_CONTESTED_LITURGICAL_EDITIONS",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "OTT69",
+                "url": "https://sourcebooks.web.fordham.edu/mod/1969ottoviani.asp"
+              },
+              {
+                "id": "IGMR69_ORIGINAL",
+                "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "answer",
@@ -583,8 +949,33 @@
           "source_review": "DIRECT_DOCUMENTS_BUT_HISTORICAL_EDITION_TRANSLATIONS_REQUIRE_PROOFREAD",
           "text_fr": "L’introduction générale initiale fut ensuite complétée et corrigée, tandis que la constitution apostolique de Paul VI parlait déjà du sacrifice eucharistique. Le caractère doctrinalement incomplet d’une phrase explicative ne démontre pas, à lui seul, que le rite promulgué rejette la doctrine eucharistique catholique.",
           "evidence_locator": "Original 1969 n. 7; 1970 doctrinal preamble and revised no. 7; 1969 Missale Romanum",
-          "source_locator": "Historic 1969/1970 IGMR edition comparison; Missale Romanum sacrificial language",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Original 1969 §7 compared with 1970 amended §7 and doctrinal Proemium; MR69 Eucharistic Sacrifice",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Original 1969 §7 compared with 1970 amended §7 and doctrinal Proemium; MR69 Eucharistic Sacrifice",
+            "evidence_class": "CONTEMPORARY_CONTESTED_LITURGICAL_EDITIONS",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "GIRM75",
+                "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+              },
+              {
+                "id": "IGMR69_ORIGINAL",
+                "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
+              },
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -606,19 +997,30 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "The original 1969 General Instruction reduced the Mass to a community meal.",
+          "original_fr": "L’Institutio Generalis de 1969 réduisait-elle la messe à un repas communautaire ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM059",
-      "question_original": "The Ottaviani Intervention proved that the Novus Ordo was heretical or invalid.",
-      "question_fr": "L’intervention Ottaviani a-t-elle démontré l’hérésie ou l’invalidité du nouvel Ordo ?",
+      "question_original": "What did the Ottaviani–Bacci critique argue, and what does it establish?",
+      "question_fr": "Que soutenait la critique Ottaviani–Bacci, et que permet-elle de conclure ?",
       "canonical_owner": "CR-LIT-07",
       "crossLinks": [
         "CR-ECC-03"
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -629,8 +1031,21 @@
           ],
           "source_review": "OPPOSITION_AUTHENTICALLY_ATTRIBUTED_CONCLUSION_NOT_BINDING_MAGISTERIUM",
           "text_fr": "En 1969, les cardinaux Ottaviani et Bacci transmirent une *Brève étude critique* dénonçant, selon leurs auteurs, des écarts notables par rapport à la théologie du sacrifice eucharistique formulée au concile de Trente. Cette étude constitue une critique contemporaine sérieuse et documentée, non une condamnation magistérielle obligatoire.",
-          "source_locator": "1969 Ottaviani/Bacci short critical study, full text",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Fordham primary 1969 Short Critical Study and accompanying cardinals' presentation",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Fordham primary 1969 Short Critical Study and accompanying cardinals' presentation",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "OTT69",
+                "url": "https://sourcebooks.web.fordham.edu/mod/1969ottoviani.asp"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -644,8 +1059,33 @@
           "source_review": "OPPOSITION_AUTHENTICALLY_ATTRIBUTED_CONCLUSION_NOT_BINDING_MAGISTERIUM",
           "text_fr": "Soutenir qu’un rite exprime moins clairement la doctrine du sacrifice ne revient pas automatiquement à démontrer son invalidité ou une hérésie formelle. Les corrections ultérieures et le langage sacrificiel expressément présent dans la réforme doivent aussi entrer dans l’examen.",
           "evidence_locator": "1969 Short Critical Study compared with 1970 revisions and Paul VI's apostolic constitution",
-          "source_locator": "Missale Romanum on Eucharistic sacrifice; original 1969 and revised 1970 IGMR, theological judgment",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "MR69 opening sacrificial doctrine; GIRM1975 later amended content; criticism is not a ruling",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "MR69 opening sacrificial doctrine; GIRM1975 later amended content; criticism is not a ruling",
+            "evidence_class": "HISTORICAL_INTERPRETIVE_SECONDARY_WITH_PRIMARY_CHECK",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "id": "GIRM75",
+                "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+              },
+              {
+                "id": "IGMR69_ORIGINAL",
+                "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -667,17 +1107,28 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "The Ottaviani Intervention proved that the Novus Ordo was heretical or invalid.",
+          "original_fr": "L’intervention Ottaviani a-t-elle démontré l’hérésie ou l’invalidité du nouvel Ordo ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM060",
-      "question_original": "The objections to the new Mass were ignored and nothing was corrected.",
-      "question_fr": "Toutes les critiques du nouvel Ordo ont-elles été ignorées ?",
+      "question_original": "Were the early objections to the revised Missal followed by doctrinal corrections?",
+      "question_fr": "Les premières objections au missel réformé ont-elles entraîné des corrections doctrinales ?",
       "canonical_owner": "CR-LIT-05",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -691,8 +1142,29 @@
           "source_review": "EDITION_COMPARISON_PRIMARY_WITH_SECONDARY_CAUSAL_ATTRIBUTION",
           "text_fr": "La Présentation générale du Missel romain fut modifiée en 1970, notamment par l’ajout d’un préambule doctrinal explicite et par la clarification du langage eucharistique, après la controverse suscitée par la première édition.",
           "evidence_locator": "1970 revised no. 7 and Preface compared with the 1969 original; chronology corroborated by 1975 GIRM reprint",
-          "source_locator": "Original and revised introductory texts and theological preface; Chiron chronology",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Original 1969 and amended 1970 introductory GIRM and proemium; Chiron narrative",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Original 1969 and amended 1970 introductory GIRM and proemium; Chiron narrative",
+            "evidence_class": "CONTEMPORARY_CONTESTED_LITURGICAL_EDITIONS",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "GIRM75",
+                "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049"
+              },
+              {
+                "id": "IGMR69_ORIGINAL",
+                "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "critical_assessment",
@@ -703,8 +1175,25 @@
           ],
           "source_review": "EDITION_COMPARISON_PRIMARY_WITH_SECONDARY_CAUSAL_ATTRIBUTION",
           "text_fr": "Ces corrections explicatives ne rétablirent pas pour autant l’ancien agencement de l’offertoire, le Canon romain comme unique prière eucharistique ni les autres structures rituelles antérieures. On peut critiquer ces choix tout en reconnaissant que des corrections ont eu lieu.",
-          "source_locator": "Missale Romanum and Chiron on Offertory and Eucharistic Prayer structure",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "MR69 and Chiron 2021 on continued Offertory/Canon changes",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "MR69 and Chiron 2021 on continued Offertory/Canon changes",
+            "evidence_class": "CONTEMPORARY_CONTESTED_LITURGICAL_EDITIONS",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "id": "CHIRON",
+                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -725,8 +1214,19 @@
         ],
         "final_theology_approval": false,
         "final_french_approval": false,
-        "ready_for_publication": false
-      }
+        "ready_for_publication": false,
+        "source_pinpoints": 2,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
+      },
+      "editorial_title_revision_history": [
+        {
+          "date": "2026-10-08",
+          "original_en": "The objections to the new Mass were ignored and nothing was corrected.",
+          "original_fr": "Toutes les critiques du nouvel Ordo ont-elles été ignorées ?",
+          "reason": "Remove false suggestion that unnamed opponents were literally quoted; use question framing."
+        }
+      ]
     },
     {
       "id": "TLM061",
@@ -735,7 +1235,7 @@
       "canonical_owner": "CR-LIT-09",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -746,8 +1246,21 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "*Sacrosanctum Concilium*, au n° 36, demandait la conservation du latin dans les rites latins tout en admettant une place plus large pour les langues vernaculaires ; le n° 54 souhaitait aussi que les fidèles puissent réciter ou chanter en latin les parties de l’Ordinaire qui leur reviennent.",
-          "source_locator": "Sacrosanctum Concilium 36 §1 and 54: retention of Latin and Latin Ordinary",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "SC63 §§36(1),54 explicitly preserve Latin",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §§36(1),54 explicitly preserve Latin",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "documented_reform_rationale",
@@ -757,9 +1270,26 @@
             "AUD26",
             "SC63"
           ],
-          "source_locator": "Paul VI, General Audience 26 Nov 1969, 'Il passaggio alla lingua parlata'; Sacrosanctum Concilium 36, 54",
+          "source_locator": "SC63 §§36(2–4),54; Paul VI 1969-11-26 'Il passaggio alla lingua parlata'",
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §§36(2–4),54; Paul VI 1969-11-26 'Il passaggio alla lingua parlata'",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "AUD26",
+                "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691126.html"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -769,8 +1299,21 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "Le Concile autorisa donc un emploi accru des langues vernaculaires sous la responsabilité de l’autorité ecclésiastique compétente. Mais la disparition presque complète du latin dans certaines pratiques locales ne saurait être présentée comme une prescription explicite du Concile.",
-          "source_locator": "Paul VI general audience, 26 November 1969, rationale for vernacular, not council-wide mandate",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "SC63 §54 does not require excluding Latin",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §54 does not require excluding Latin",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -799,7 +1342,10 @@
           "answer",
           "documented_reform_rationale",
           "assessment_or_critical_assessment"
-        ]
+        ],
+        "source_pinpoints": 3,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
       }
     },
     {
@@ -809,7 +1355,7 @@
       "canonical_owner": "CR-LIT-09",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -820,8 +1366,21 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "Dans son audience du 26 novembre 1969, Paul VI reconnut la perte spirituelle et artistique entraînée par le passage du latin aux langues vernaculaires et mentionna particulièrement le chant grégorien. Il défendit néanmoins l’amélioration de la compréhension des paroles et de la participation du peuple comme des gains pastoraux.",
-          "source_locator": "Paul VI, General Audience, 26 Nov 1969, Il passaggio alla lingua parlata",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Paul VI 1969-11-26 Italian audience: 'È un sacrificio d'inestimabile prezzo'",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Paul VI 1969-11-26 Italian audience: 'È un sacrificio d'inestimabile prezzo'",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "AUD26",
+                "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691126.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "documented_reform_rationale",
@@ -830,9 +1389,22 @@
           "source_ids": [
             "AUD26"
           ],
-          "source_locator": "Paul VI, Udienza generale 26 novembre 1969, heading 'IL PASSAGGIO ALLA LINGUA PARLATA'",
+          "source_locator": "Paul VI 1969-11-26 'Vale di più l'intelligenza della preghiera'",
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Paul VI 1969-11-26 'Vale di più l'intelligenza della preghiera'",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "AUD26",
+                "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691126.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -843,8 +1415,25 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "Son explication confirme qu’il reconnaissait la valeur du patrimoine linguistique et musical hérité. La proportionnalité de ce sacrifice demeure une question historique et pastorale : il ne faut effacer ni la perte reconnue ni les bénéfices espérés.",
-          "source_locator": "Paul VI, General Audience, 26 Nov 1969, explicit pastoral reason",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Paul VI 1969-11-26 closing remarks; SC63 §54",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Paul VI 1969-11-26 closing remarks; SC63 §54",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "AUD26",
+                "url": "https://www.vatican.va/content/paul-vi/it/audiences/1969/documents/hf_p-vi_aud_19691126.html"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -873,7 +1462,10 @@
           "answer",
           "documented_reform_rationale",
           "assessment_or_critical_assessment"
-        ]
+        ],
+        "source_pinpoints": 3,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
       }
     },
     {
@@ -883,7 +1475,7 @@
       "canonical_owner": "CR-LIT-09",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -894,8 +1486,21 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "*Sacrosanctum Concilium*, au n° 116, affirme que le chant grégorien convient particulièrement à la liturgie romaine et qu’il doit, toutes choses égales d’ailleurs, y occuper la première place. Il n’était donc pas réservé exclusivement aux célébrations selon le missel de 1962.",
-          "source_locator": "Sacrosanctum Concilium 116: special role of Gregorian chant",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "SC63 §116 Gregorian chant pride of place",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "SC63 §116 Gregorian chant pride of place",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "documented_reform_rationale",
@@ -905,9 +1510,26 @@
             "GIRM",
             "SC63"
           ],
-          "source_locator": "GIRM (2002/2003) 41; Sacrosanctum Concilium 116",
+          "source_locator": "GIRM current §41 Gregorian chant; Latin Ordinary recommendations",
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "GIRM current §41 Gregorian chant; Latin Ordinary recommendations",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -918,8 +1540,25 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "Le missel réformé peut être célébré en latin avec chant. Si le chant grégorien est devenu presque absent de certaines paroisses, cela concerne la pratique liturgique, la formation et les moyens musicaux disponibles, non une interdiction générale dans les livres réformés.",
-          "source_locator": "GIRM 41: chant's priority and provision for other sacred music",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "GIRM §41 other music permitted",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "GIRM §41 other music permitted",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -948,7 +1587,10 @@
           "answer",
           "documented_reform_rationale",
           "assessment_or_critical_assessment"
-        ]
+        ],
+        "source_pinpoints": 3,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
       }
     },
     {
@@ -960,7 +1602,7 @@
         "CR-LIT-12"
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -972,8 +1614,25 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "*Sacrosanctum Concilium* n’a pas imposé la communion dans la main. L’instruction *Memoriale Domini* de 1969 examina la diffusion de cette pratique en certains lieux, conserva le mode de distribution établi comme principe et permit à certaines conférences épiscopales de demander l’autorisation de l’autre pratique.",
-          "source_locator": "Sacrosanctum Concilium: no prescription of Communion in the hand; Memoriale Domini 1969",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Memoriale Domini (1969), survey and retention of tongue discipline; no SC mandate",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Memoriale Domini (1969), survey and retention of tongue discipline; no SC mandate",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MEM69",
+                "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5165"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "documented_reform_rationale",
@@ -982,9 +1641,22 @@
           "source_ids": [
             "MEM69"
           ],
-          "source_locator": "Memoriale Domini (1969), passages on ancient practice, unauthorized introduction, retention of the received discipline, and exceptional requests",
+          "source_locator": "Memoriale Domini (1969) ancient practice and exceptional indults",
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Memoriale Domini (1969) ancient practice and exceptional indults",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MEM69",
+                "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5165"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -994,8 +1666,21 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "La manière dont cette discipline s’est introduite est une question historique légitime. Là où l’autorisation a été régulièrement accordée, on ne peut simplement qualifier cette pratique d’illicite ; les préoccupations relatives à la révérence eucharistique doivent être examinées à la lumière de l’instruction elle-même.",
-          "source_locator": "Memoriale Domini: acknowledges ancient use, unauthorized introductions and profanation concerns",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Memoriale Domini (1969) reverence and fragments",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Memoriale Domini (1969) reverence and fragments",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MEM69",
+                "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5165"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -1024,7 +1709,10 @@
           "answer",
           "documented_reform_rationale",
           "assessment_or_critical_assessment"
-        ]
+        ],
+        "source_pinpoints": 3,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
       }
     },
     {
@@ -1034,7 +1722,7 @@
       "canonical_owner": "CR-LIT-05",
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
-      "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
+      "editorial_status": "DOCUMENTARY_PINPOINT_REVIEW_NOT_PUBLIC",
       "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
@@ -1045,8 +1733,21 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "Dans *Mysterii Paschalis* (1969), Paul VI expliqua la réforme du calendrier par la volonté de mettre au premier plan le mystère pascal, d’alléger une surcharge du sanctoral universel et de mieux représenter les saints des diverses régions de l’Église.",
-          "source_locator": "Mysterii Paschalis, part I–II: temporal and sanctoral cycle priorities",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Mysterii Paschalis (1969) §§I–II on universal year and sanctoral",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Mysterii Paschalis (1969) §§I–II on universal year and sanctoral",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MP69",
+                "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "documented_reform_rationale",
@@ -1055,9 +1756,22 @@
           "source_ids": [
             "MP69"
           ],
-          "source_locator": "Mysterii Paschalis (14 Feb 1969), part II on the saints and revised universal calendar",
+          "source_locator": "Mysterii Paschalis II removed from universal calendar, possibility locally",
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Mysterii Paschalis II removed from universal calendar, possibility locally",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MP69",
+                "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html"
+              }
+            ],
+            "approval": false
+          }
         },
         {
           "role": "assessment",
@@ -1068,8 +1782,25 @@
           ],
           "source_review": "PRIMARY_TEXT_LOCATION_REVIEWED_EDITORIAL_COPY_PENDING",
           "text_fr": "Le calendrier façonne la mémoire dévotionnelle, et chaque déplacement ou suppression de fête peut être discuté sur le fondement de son histoire. Cependant, ces modifications ne démontrent pas, à elles seules, une intention d’attaquer le culte des saints. Des papes antérieurs avaient eux aussi révisé des fêtes, vigiles et octaves.",
-          "source_locator": "Mysterii Paschalis II: doctrinal motive distinct from pastoral consequences",
-          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL"
+          "source_locator": "Mysterii Paschalis II on rationale not ex post pastoral effect",
+          "reviewer_status": "RESEARCH_CLAIMS_REVIEWED_NOT_HUMAN_THEOLOGICAL_APPROVAL",
+          "documentary_edit": {
+            "review_date": "2026-10-08",
+            "pinpoint": "Mysterii Paschalis II on rationale not ex post pastoral effect",
+            "evidence_class": "FIRST_PARTY_PRIMARY_TEXT_ANCHORED",
+            "source_quality_scope": "Specified documents and paragraphs identified; still requires theological/copy approval and may contain historical inference.",
+            "source_refs": [
+              {
+                "id": "MP69",
+                "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html"
+              },
+              {
+                "id": "SC63",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+              }
+            ],
+            "approval": false
+          }
         }
       ],
       "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
@@ -1098,7 +1829,10 @@
           "answer",
           "documented_reform_rationale",
           "assessment_or_critical_assessment"
-        ]
+        ],
+        "source_pinpoints": 3,
+        "source_url_repair": "SC63 canonical Vatican original",
+        "human_final_approval": false
       }
     }
   ],
@@ -1180,5 +1914,25 @@
     },
     "reviewed_questions": 15,
     "total_paragraphs": 37
+  },
+  "review_20261008": {
+    "titles_recast_as_honest_editorial_questions": 8,
+    "source_specific_paragraphs": 37,
+    "source_url_issues_corrected": [
+      "SC63 404 press.vatican -> www.vatican"
+    ],
+    "first_party_docs_used": [
+      "Sacrosanctum Concilium",
+      "Missale Romanum",
+      "Paul VI Nov 26 1969",
+      "Mysterii Paschalis",
+      "GIRM §41",
+      "Memoriale Domini"
+    ],
+    "historical_source_warnings": [
+      "Chiron secondary scholarship",
+      "IGMR original reconstructed via SSPX-hosted critical transcription"
+    ],
+    "publication_ready": false
   }
 }
