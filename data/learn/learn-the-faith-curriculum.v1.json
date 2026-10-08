@@ -17,7 +17,7 @@
     "mapping_complete": true,
     "lesson_prose_complete": true,
     "paragraph_sources_complete": true,
-    "note": "All 54 lessons now have bilingual source-linked draft prose and exact St Pius X mappings. Publication remains blocked pending final editorial review, source-link verification and deduplication acceptance.",
+    "note": "All 54 lessons have bilingual draft prose, exact St Pius X refs and resolvable source IDs. Publication remains blocked pending editorial/source-fit review of the six partial lessons and cross-module deduplication.",
     "editorial_review_complete": false
   },
   "relationship_to_existing": {
@@ -144,8 +144,9 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
+        "PX1912-Q001",
         "PX1912-Q013",
         "PX1912-Q014",
         "PX1912-Q015",
@@ -154,8 +155,7 @@
         "PX1912-Q018"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -171,7 +171,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q002",
         "PX1912-Q003",
@@ -186,8 +186,7 @@
         "PX1912-Q012"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
@@ -205,17 +204,18 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q028",
+        "PX1912-Q029",
+        "PX1912-Q030",
         "PX1912-Q233",
         "PX1912-Q234",
         "PX1912-Q235",
         "PX1912-Q236"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -232,7 +232,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q232",
         "PX1912-Q237",
@@ -244,8 +244,7 @@
         "PX1912-Q249"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -261,7 +260,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q233",
         "PX1912-Q234",
@@ -269,8 +268,7 @@
         "PX1912-Q236"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -286,7 +284,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q105",
         "PX1912-Q106",
@@ -307,8 +305,7 @@
         "PX1912-Q236"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -324,7 +321,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q002",
         "PX1912-Q003",
@@ -340,8 +337,7 @@
         "PX1912-Q019"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -357,10 +353,16 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q019",
         "PX1912-Q020",
+        "PX1912-Q031",
+        "PX1912-Q032",
+        "PX1912-Q033",
+        "PX1912-Q034",
+        "PX1912-Q035",
+        "PX1912-Q036",
         "PX1912-Q037",
         "PX1912-Q038",
         "PX1912-Q039",
@@ -377,8 +379,7 @@
         "PX1912-Q050"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -394,7 +395,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q004",
         "PX1912-Q012",
@@ -403,8 +404,7 @@
         "PX1912-Q053"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -420,7 +420,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q054",
         "PX1912-Q055",
@@ -430,8 +430,7 @@
         "PX1912-Q059"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -447,7 +446,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q060",
         "PX1912-Q061",
@@ -467,8 +466,7 @@
         "PX1912-Q075"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -484,7 +482,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q022",
         "PX1912-Q023",
@@ -500,8 +498,7 @@
         "PX1912-Q088"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -517,7 +514,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q021",
         "PX1912-Q022",
@@ -536,8 +533,7 @@
         "PX1912-Q085"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -553,7 +549,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q025",
         "PX1912-Q026",
@@ -562,8 +558,7 @@
         "PX1912-Q091"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -579,7 +574,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q090",
         "PX1912-Q091",
@@ -588,8 +583,7 @@
         "PX1912-Q094"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -605,7 +599,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q020",
         "PX1912-Q038",
@@ -617,10 +611,9 @@
         "PX1912-Q050"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -638,7 +631,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q105",
         "PX1912-Q106",
@@ -655,11 +648,12 @@
         "PX1912-Q117",
         "PX1912-Q118",
         "PX1912-Q119",
-        "PX1912-Q120"
+        "PX1912-Q120",
+        "PX1912-Q131",
+        "PX1912-Q132"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -675,7 +669,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q121",
         "PX1912-Q122",
@@ -689,8 +683,7 @@
         "PX1912-Q130"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -706,7 +699,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q133",
         "PX1912-Q134",
@@ -717,8 +710,7 @@
         "PX1912-Q139"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -734,7 +726,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q095",
         "PX1912-Q096",
@@ -748,8 +740,7 @@
         "PX1912-Q160"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -765,7 +756,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q014",
         "PX1912-Q015",
@@ -780,8 +771,7 @@
         "PX1912-Q104"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -797,7 +787,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q269",
         "PX1912-Q270",
@@ -810,8 +800,7 @@
         "PX1912-Q277"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -828,7 +817,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q267",
         "PX1912-Q268",
@@ -855,8 +844,7 @@
         "PX1912-Q289"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -872,7 +860,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q290",
         "PX1912-Q291",
@@ -890,8 +878,7 @@
         "PX1912-Q303"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -907,7 +894,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q304",
         "PX1912-Q305",
@@ -923,8 +910,7 @@
         "PX1912-Q315"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -940,7 +926,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q316",
         "PX1912-Q317",
@@ -975,8 +961,7 @@
         "PX1912-Q346"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -992,7 +977,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q347",
         "PX1912-Q348",
@@ -1004,8 +989,7 @@
         "PX1912-Q354"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [
         "learn.mass",
@@ -1025,7 +1009,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q355",
         "PX1912-Q356",
@@ -1066,8 +1050,7 @@
         "PX1912-Q391"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [
         "pray.confession",
@@ -1087,7 +1070,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q392",
         "PX1912-Q393",
@@ -1096,8 +1079,7 @@
         "PX1912-Q396"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1113,7 +1095,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q397",
         "PX1912-Q398",
@@ -1126,8 +1108,7 @@
         "PX1912-Q405"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1143,17 +1124,19 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q406",
         "PX1912-Q407",
         "PX1912-Q408",
+        "PX1912-Q409",
+        "PX1912-Q410",
+        "PX1912-Q411",
         "PX1912-Q412",
         "PX1912-Q413"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [
         "learn.rites.matrimony",
@@ -1174,7 +1157,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q064",
         "PX1912-Q065",
@@ -1188,8 +1171,7 @@
         "PX1912-Q168"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1206,7 +1188,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q161",
         "PX1912-Q162",
@@ -1218,10 +1200,10 @@
         "PX1912-Q168"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "LEO_XIII_LIBERTAS"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
@@ -1239,7 +1221,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q135",
         "PX1912-Q136",
@@ -1265,10 +1247,10 @@
         "PX1912-Q255"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "VERITATIS_SPLENDOR_60_61"
       ],
       "crossLinks": [
         "APOL-051",
@@ -1290,7 +1272,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q135",
         "PX1912-Q136",
@@ -1302,8 +1284,7 @@
         "PX1912-Q142"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1319,7 +1300,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q143",
         "PX1912-Q144",
@@ -1332,8 +1313,7 @@
         "PX1912-Q151"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1349,7 +1329,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q227",
         "PX1912-Q228",
@@ -1369,8 +1349,7 @@
         "PX1912-Q263"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1386,7 +1365,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q229",
         "PX1912-Q230",
@@ -1411,8 +1390,7 @@
         "PX1912-Q249"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1428,7 +1406,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q252",
         "PX1912-Q253",
@@ -1439,8 +1417,7 @@
         "PX1912-Q258"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1456,7 +1433,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q169",
         "PX1912-Q170",
@@ -1481,8 +1458,7 @@
         "PX1912-Q189"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1498,7 +1474,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q190",
         "PX1912-Q191",
@@ -1513,8 +1489,7 @@
         "PX1912-Q200"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1530,7 +1505,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q201",
         "PX1912-Q202",
@@ -1538,8 +1513,7 @@
         "PX1912-Q210"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [
         "learn.sexual_ethics"
@@ -1558,7 +1532,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q203",
         "PX1912-Q204",
@@ -1567,8 +1541,7 @@
         "PX1912-Q212"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1584,15 +1557,14 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q206",
         "PX1912-Q207",
         "PX1912-Q208"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1608,7 +1580,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q198",
         "PX1912-Q199",
@@ -1616,10 +1588,10 @@
         "PX1912-Q371"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "CCC_1868_COOPERATION"
       ],
       "crossLinks": [
         "learn.sexual_ethics"
@@ -1640,7 +1612,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q414",
         "PX1912-Q415",
@@ -1654,8 +1626,7 @@
         "PX1912-Q423"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [
         "learn.spiritual_life"
@@ -1674,7 +1645,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q424",
         "PX1912-Q425",
@@ -1683,8 +1654,7 @@
         "PX1912-Q428"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1700,7 +1670,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q429",
         "PX1912-Q430",
@@ -1709,8 +1679,7 @@
         "PX1912-Q433"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1726,7 +1695,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q082",
         "PX1912-Q083",
@@ -1738,8 +1707,7 @@
         "PX1912-Q433"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
@@ -1756,7 +1724,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q174",
         "PX1912-Q175",
@@ -1769,8 +1737,7 @@
         "PX1912-Q430"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1786,17 +1753,16 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q176",
         "PX1912-Q177",
         "PX1912-Q183"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1814,7 +1780,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q184",
         "PX1912-Q185",
@@ -1838,10 +1804,10 @@
         "PX1912-Q226"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PIUS_X_1912",
+        "ROMAN_CATECHISM_TRENT",
+        "SPIRAGO_1899",
+        "PIUS_XII_MEDIATOR_DEI_165"
       ],
       "crossLinks": [
         "today.calendar"
@@ -1862,7 +1828,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q015",
         "PX1912-Q027",
@@ -1909,8 +1875,7 @@
         "PX1912-Q266"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [
         "learn.spiritual_life"
@@ -1930,7 +1895,7 @@
       },
       "owner": "learn-the-faith",
       "doctrineOwner": "catechism",
-      "status": "CURRICULUM_ONLY",
+      "status": "CATECHISM_MAPPED",
       "catechismRefs": [
         "PX1912-Q015",
         "PX1912-Q016",
@@ -1957,8 +1922,7 @@
         "PX1912-Q396"
       ],
       "sourceRefs": [
-        "PX1912-EN-STRUCTURED",
-        "PX1912-FR-STRUCTURED"
+        "PIUS_X_1912"
       ],
       "crossLinks": [
         "learn.rites.sick",
@@ -2062,120 +2026,35 @@
       "note": "Used for the theological meaning of the liturgical year as Christ's mysteries living in the Church, not merely a record of past events."
     }
   },
-  "catechism_corpus": {
-    "question_count": 433,
-    "partitions": [
-      {
-        "id": "intro",
-        "range": "PXQ001–PXQ027"
-      },
-      {
-        "id": "faith",
-        "range": "PXQ028–PXQ160"
-      },
-      {
-        "id": "moral",
-        "range": "PXQ161–PXQ266"
-      },
-      {
-        "id": "grace",
-        "range": "PXQ267–PXQ413"
-      },
-      {
-        "id": "prayer",
-        "range": "PXQ414–PXQ433"
-      }
-    ],
-    "mapping_status": "ALL_54_LESSONS_MAPPED_TO_EXACT_QUESTION_REFS",
-    "source_map": "data/learn/pius-x-catechism-source-map.v1.json",
-    "source_chapters": 21
-  },
-  "content_batches": [
-    {
-      "path": "data/learn/learn-the-faith-content.batch1.v1.json",
-      "scope": "LTF-001–LTF-018",
-      "lessons": 18,
-      "claims": 54,
-      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
-    },
-    {
-      "path": "data/learn/learn-the-faith-content.batch2.v1.json",
-      "scope": "LTF-019–LTF-036",
-      "lessons": 18,
-      "claims": 64,
-      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
-    },
-    {
-      "path": "data/learn/learn-the-faith-content.batch3.v1.json",
-      "scope": "LTF-037–LTF-054",
-      "lessons": 18,
-      "claims": 58,
-      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
-    }
-  ],
-  "metrics": {
-    "lesson_count": 54,
-    "content_batches": 3,
-    "source_linked_claims": 176,
-    "unresolved_source_gaps": 0,
-    "public_route_exposed": false
-  },
   "catechism_mapping": {
     "status": "PX1912_433_MAPPED",
     "corpus": "St Pius X — Catechism of Christian Doctrine (1912), 433-question shorter catechism",
     "questionRange": "Q1–Q433",
-    "parts": [
-      {
-        "id": "intro",
-        "range": "Q1–27",
-        "title": "First notions"
-      },
-      {
-        "id": "faith",
-        "range": "Q28–160",
-        "title": "The Faith / Creed"
-      },
-      {
-        "id": "moral",
-        "range": "Q161–266",
-        "title": "Christian moral life"
-      },
-      {
-        "id": "grace",
-        "range": "Q267–413",
-        "title": "Means of grace / Sacraments"
-      },
-      {
-        "id": "prayer",
-        "range": "Q414–433",
-        "title": "Prayer"
-      }
-    ],
-    "directOrPartialLessons": 52,
-    "supplementRequiredLessons": 12,
-    "zeroDirectCatechismRefLessons": [
+    "directOrPartialLessons": 54,
+    "supplementRequiredLessons": 6,
+    "partialLessons": [
+      "LTF-016",
+      "LTF-033",
       "LTF-034",
-      "LTF-051"
+      "LTF-045",
+      "LTF-051",
+      "LTF-052"
     ],
-    "rule": "Question references identify the exact Pius X material feeding each guided lesson; they do not imply that the shorter catechism alone is sufficient for every lesson."
+    "zeroDirectCatechismRefLessons": [],
+    "rule": "Question references identify the exact Pius X material feeding each guided lesson; partial lessons also require supplementary doctrinal/liturgical sources."
   },
   "content_draft": {
-    "status": "ALL_54_SOURCE_LINKED_DRAFTED",
-    "batches": [
-      "data/learn/learn-the-faith-lessons-001-018.v1.json",
-      "data/learn/learn-the-faith-lessons-019-036.v1.json",
-      "data/learn/learn-the-faith-lessons-037-054.v1.json"
-    ],
+    "status": "FULL_54_LESSON_DRAFT_SOURCE_MAPPED_NOT_PUBLISHED",
+    "file": "data/learn/learn-the-faith-content.v1.json",
     "lessons": 54,
-    "paragraphs": 162,
+    "claims": 108,
     "bilingual": true,
     "published": false,
     "remaining_before_publication": [
-      "Verify every external source URL and source-to-paragraph fit.",
-      "Resolve stronger primary sources where the current registry relies on explanatory or mirror sources.",
+      "Verify source-to-claim fit for the six PARTIAL lessons.",
       "Run cross-module deduplication against Apologetics, Church Crisis, Mass Formation, Sexual Ethics, Spiritual Life and sacramental Formation.",
-      "Editorial pass for tone, precision, disciplinary-historical qualifications and French parity.",
-      "Build the user-facing runtime only after the sourcing and deduplication gates pass."
+      "Final theological/French editorial review.",
+      "Only then expose learn.faith."
     ]
   },
   "catechism_source_map": "data/learn/st-pius-x-catechism-source-map.v1.json",
@@ -2183,5 +2062,12 @@
     "direct": 48,
     "partial": 6,
     "unmapped": 0
+  },
+  "mapping_coverage": {
+    "lessonsMapped": 54,
+    "catechismQuestionsCovered": 433,
+    "catechismQuestionTotal": 433,
+    "unmappedQuestions": [],
+    "publicationReady": false
   }
 }
