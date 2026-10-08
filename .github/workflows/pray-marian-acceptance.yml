@@ -1,0 +1,23 @@
+name: Marian devotional acceptance
+on:
+  pull_request:
+    paths:
+      - "src/pray/**"
+      - "tests/pray-presentation.mjs"
+      - "tests/pray-marian-mobile.mjs"
+      - ".github/workflows/pray-marian-acceptance.yml"
+  workflow_dispatch:
+jobs:
+  marian-mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run test:pray-owner
+      - run: npx playwright install --with-deps chromium
+      - name: Angelus and Rosary real mobile Guide
+        run: timeout --signal=TERM --kill-after=5s 160s node tests/pray-marian-mobile.mjs
