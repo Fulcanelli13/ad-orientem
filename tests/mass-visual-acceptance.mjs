@@ -252,7 +252,7 @@ try{
   });
   assert.ok(openingSchola.toggle&&openingSchola.resize,"Schola chrome is absent from the LIVE visual shell");
   assert.ok(openingSchola.sourceText,"opening LIVE card has no sourced Schola text");
-  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000,polling:250});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
 
   const navPreflight=await page.evaluate(()=>({
@@ -417,7 +417,7 @@ try{
     assert.ok(section?.sectionId,"source-first display model has no section for "+cueId);
     // Section changes legitimately show the donor part-transition cinema. Wait
     // for it to finish so salience screenshots certify the ritual cue itself.
-    await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
+    await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000,polling:250});
     const cue=page.locator(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${cueId}']`);
     assert.equal(await cue.count(),1,cueId+" is not exposed exactly once in the current source-first section");
     for(let attempt=0;attempt<5;attempt++){
