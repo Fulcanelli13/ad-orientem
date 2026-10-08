@@ -82,11 +82,13 @@ export function createAppHostAdapter(win = globalThis) {
         return Promise.resolve(celebration.openPreflight()).then((result) => result !== false);
       }
       if (domain === "pray") {
+        trace("host:pray-enter");
         const modular = win?.AO_PRAY_APP_V1;
         if (typeof modular?.open !== "function") return false;
-        // PRAY has a modular final presentation owner. Never fall back to the
-        // obsolete PrayerBook surface if that owner cannot open.
-        return Promise.resolve(modular.open()).then((opened) => opened !== false);
+        trace("host:pray-before-open");
+        const opening=modular.open();
+        trace("host:pray-after-open-invocation");
+        return Promise.resolve(opening).then((opened) => opened !== false);
       }
       if (domain === "find") {
         const modular = win?.AO_FIND_APP_V1;
