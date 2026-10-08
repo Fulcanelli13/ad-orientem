@@ -31,6 +31,7 @@ const ickspAddressPrecisionAudit = readJson("../data/directory/research/icksp-ad
 
 const researchSnapshots = [
   readJson("../data/directory/generated/v19/diocesan.v1.json"),
+  readJson("../data/directory/generated/v19/sspx-district-seed.v1.json"),
   readJson("../data/directory/generated/v19/aasjmv.v1.json"),
   readJson("../data/directory/generated/v19/fsvf.v1.json"),
   readJson("../data/directory/generated/v19/canons-st-john-cantius.v1.json"),
@@ -43,6 +44,7 @@ const researchSnapshots = [
 
 const expectedResearchCounts = new Map([
   ["DIOCESAN",46],
+  ["SSPX_DISTRICT_SEED",34],
   ["AASJMV",6],
   ["FSVF",1],
   ["CANONS_ST_JOHN_CANTIUS",4],
@@ -78,6 +80,21 @@ for(const snapshot of researchSnapshots){
     const manhattanIndex=expanded.venues.findIndex(v=>/ny-holyinnocents-manhattan/.test(v.venue_id));
     assert.ok(manhattanIndex>=0);
     assert.ok(expanded.ministries[manhattanIndex].liturgical_usage.evidence_source_ids.some(id=>/edition$/.test(id)),"Manhattan 1962 evidence must point to the edition source");
+  }
+  if(snapshot.provider==="SSPX_DISTRICT_SEED"){
+    assert.ok(expanded.ministries.every(m=>m.community_id==="SSPX"),"SSPX district source lost affiliation");
+    assert.ok(expanded.venues.every(v=>v.upstream.provider_id==="SSPX_DISTRICT_SEED"),"SSPX origin lost");
+    assert.equal(expanded.venues.filter(v=>v.publication_state==="CONDITIONAL_MASS").length,8);
+    assert.ok(expanded.venues.every(v=>v.address.formatted&&v.contact.schedule_url.length),"SSPX seed missing physical address or district source");
+    assert.ok(expanded.schedules.every(v=>v.source_ids.length===1&&v.verification?.state==="OFFICIAL_VERIFIED"),"SSPX seed requires official schedule evidence");
+    const visible=publishableDirectoryRecords(expanded.venues.map((venue,i)=>({
+      venue,ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}],
+    })));
+    assert.equal(visible.length,34,"first-party SSPX district seed not visible in Find");
+    const notVerified={...expanded.venues[0],publication_state:"PENDING_CURRENT_EVIDENCE"};
+    assert.equal(publishableDirectoryRecords([{venue:notVerified,
+      ministries:[{...expanded.ministries[0],schedules:[expanded.schedules[0]]}]}]).length,0,
+      "unverified SSPX source incorrectly published");
   }
   if(snapshot.provider==="CMRI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books!=="1962"),"CMRI was wrongly normalized to 1962");
   if(snapshot.provider==="RCI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="PRE_1955"),"RCI pre-1955 profile drifted");
@@ -117,7 +134,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,370,"v1.9 research physical projection count drift");
+assert.equal(researchVenueCount,404,"research physical projection incl SSPX district seed count drift");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
