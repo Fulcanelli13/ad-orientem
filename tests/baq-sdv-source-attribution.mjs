@@ -69,13 +69,14 @@ assert.equal(bridge.recovered_research.length,102);
 assert.equal(bridge.counts.source_bearing_blocks,508);
 assert.equal(bridge.counts.unknown_source_ids,0);
 assert.equal(bridge.baq_sdv_source_pass_20261008.public_release,false);
-for(const rec of bridge.recovered_research.filter(x=>x.bank==="BAQ"||x.bank==="SEDEVACANTISM")){
+for(const rec of bridge.recovered_research.filter(x=>(x.bank==="BAQ"||x.bank==="SEDEVACANTISM")&&audit.cases.some(y=>y.id===x.id))){
  const original=audit.cases.find(x=>x.id===rec.id);
  assert.ok(original);
  assert.equal(rec.source_metrics.source_bearing_blocks,original.source_bearing_blocks);
  assert.equal(rec.source_metrics.source_id_links,original.registered_source_links);
 }
 assert.equal(bridge.counts.indexed_questions_and_cases,102);
+assert.equal(bridge.recovered_research.filter(x=>x.bank==="BAQ"&&!audit.cases.some(y=>y.id===x.id)).length,4,"four unanswered BAQ slots must stay separately held");
 assert.equal(ap.dossiers.length,60);
 assert.equal(cr.dossiers.length,81);
 const browser=readFileSync("src/learn/browser-entry.js","utf8");
