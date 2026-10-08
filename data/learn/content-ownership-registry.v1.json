@@ -739,5 +739,14 @@
       "route": "learn.church_crisis",
       "requirement": "Do not expose the route until every substantive paragraph is source-resolved, real objections are attributed to actual proponents, and the canonical 81-dossier corpus is bilingual and publication-ready."
     }
+  },
+  "shared_knowledge_layers": {
+    "mass": {
+      "status": "CANONICAL_SHARED_LAYER",
+      "registry": "data/mass/mass-knowledge-registry.v1.json",
+      "owner": "mass-formation",
+      "runtime_projection": "mass",
+      "rule": "Mass runtime owns immediate exact-cue guidance; Mass Formation owns explanation and deeper understanding. No separate Gestures & Postures route."
+    }
   }
 }
