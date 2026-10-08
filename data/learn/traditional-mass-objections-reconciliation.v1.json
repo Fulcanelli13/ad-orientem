@@ -430,7 +430,7 @@
     "bilingual_draft": 50,
     "published": 0,
     "new_canonical_dossiers": 0,
-    "underlying_substantive_paragraphs": 141,
+    "underlying_substantive_paragraphs": 161,
     "unattributed_followup_challenges": 0,
     "legacy_026_050_source_records_collated": 74,
     "legacy_026_050_blocked": 0,
@@ -484,10 +484,10 @@
     },
     "tlm_066_075": {
       "questions": 10,
-      "paragraphs": 30,
+      "paragraphs": 50,
       "status": "COMPLETE_DRAFT_HUMAN_REVIEW_PENDING"
     },
-    "french_translation_draft_total_substantive_and_followups": 149
+    "french_translation_draft_total_substantive_and_followups": 169
   },
   "followup_provenance_status": {
     "questions": 8,
@@ -583,5 +583,13 @@
     "primary_document_cases_directly_rechecked_051_065": 7,
     "tc_primary_document_positions_audited": 10,
     "legacy_existing_74_claims_reclassified": 74
+  },
+  "tc_expansion_status": {
+    "questions": 10,
+    "added_substantive_paragraphs": 20,
+    "final_theological_approval": false,
+    "bilingual_draft_not_native_reviewed": true,
+    "public_release_allowed": false,
+    "reference": "data/learn/traditionis-custodes-debates.v1.json"
   }
 }
