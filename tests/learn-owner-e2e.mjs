@@ -146,7 +146,18 @@ try{
 
   // Glossary: category-first navigation, multilingual search and sourced term drawer.
   await openFormationFamily("reference");
-  await page.evaluate(()=>{globalThis.__AO_LEARN_GLOSS_TRACE=[]});
+  await page.evaluate(()=>{
+    const trace=globalThis.__AO_LEARN_GLOSS_TRACE=[];
+    const root=document.getElementById("ao-learn-modular-root");
+    for(const name of ["pointerdown","touchstart","touchend","pointerup","click"]){
+      document.addEventListener(name,e=>{
+        if(e.target?.closest?.("[data-ao-learn-module]"))trace.push(["document-capture",name,Date.now(),e.target?.tagName,Boolean(e.defaultPrevented)]);
+      },{capture:true});
+      root?.addEventListener(name,e=>{
+        if(e.target?.closest?.("[data-ao-learn-module]"))trace.push(["learn-capture",name,Date.now(),e.target?.tagName,Boolean(e.defaultPrevented)]);
+      },{capture:true});
+    }
+  });
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
   try{
     await page.waitForFunction(()=>
