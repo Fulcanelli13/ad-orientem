@@ -64,6 +64,7 @@ export function createFormationResearchPreview(win=globalThis){
       assessment:["Assessment","Appréciation"],
       editorial_followup_question:["Editorial follow-up — not a quotation","Question éditoriale — non citée"],
       documented_reform_rationale:["Documented reform rationale","Justification documentée de la réforme"],
+      source_based_critical_argument:["Source-based critical argument — editorial synthesis","Argument critique fondé sur des sources — synthèse éditoriale"],
     };
     const paragraphs=q.paragraphs.map(p=>{
       const label=labels[p.role]||["Source-linked research","Recherche sourcée"];
@@ -75,8 +76,10 @@ export function createFormationResearchPreview(win=globalThis){
     const note=q.editorial_stage?.includes("NORMALIZED")
       ? L(win,"Normalized research summary, not a verbatim recovery of the earlier draft.","Synthèse de recherche, non reproduction intégrale de la version antérieure.")
       : L(win,"Source-linked bilingual research draft. Final source and theological approval pending.","Projet bilingue sourcé. Validation finale des sources et de la théologie à effectuer.");
+    const prompt=q.question_prompt_provenance==="UNATTRIBUTED_EDITORIAL_PROMPT_NOT_A_QUOTATION"
+      ? `<div class="aoFRMeta">${esc(L(win,"Question formulated for editorial study, not an attributed quotation.","Question formulée pour l'étude éditoriale, non citation attribuée."))}</div>`:"";
     const gate=q.publication_ready===false?`<div class="aoFRMeta">${esc(L(win,"Unapproved research · Do not publish","Recherche non approuvée · Ne pas publier"))}</div>`:"";
-    return `<div class="aoFRNotice">${esc(note)}</div>${gate}${paragraphs}`;
+    return `<div class="aoFRNotice">${esc(note)}</div>${prompt}${gate}${paragraphs}`;
   }
   function debateView(){
     const d=debateMap.get(state.debateId);if(!d)return "";

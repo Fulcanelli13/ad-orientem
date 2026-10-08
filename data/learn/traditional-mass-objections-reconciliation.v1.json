@@ -499,7 +499,7 @@
   "publication_gate": {
     "file": "data/learn/traditional-mass-publication-gates.v1.json",
     "version": "TLM_PUBLICATION_GATE_20261008",
-    "status": "NON_PUBLIC_SOURCE_REVIEW_50_CASES_UNAPPROVED",
+    "status": "ALL_SCOPED_ZERO_CERTIFIED_PUBLICLY",
     "source_claims_spot_checked": [
       "NOT67",
       "IGMR69_ORIGINAL",
@@ -511,11 +511,37 @@
     "publication_allowed": false,
     "french_draft_complete": true,
     "formal_theological_copy_review_complete": false,
-    "remaining_unrecovered": "TLM001-TLM025"
+    "remaining_unrecovered": "TLM001-TLM025",
+    "review_progress": "50/50 case source scopes recorded; 0 final human theological or native French approvals"
   },
   "editorial_review_batch": {
     "date": "2026-10-08",
     "reviewed_ids": [
+      "TLM026",
+      "TLM027",
+      "TLM028",
+      "TLM029",
+      "TLM030",
+      "TLM031",
+      "TLM032",
+      "TLM033",
+      "TLM034",
+      "TLM035",
+      "TLM036",
+      "TLM037",
+      "TLM038",
+      "TLM039",
+      "TLM040",
+      "TLM041",
+      "TLM042",
+      "TLM043",
+      "TLM044",
+      "TLM045",
+      "TLM046",
+      "TLM047",
+      "TLM048",
+      "TLM049",
+      "TLM050",
       "TLM051",
       "TLM052",
       "TLM053",
@@ -530,7 +556,17 @@
       "TLM062",
       "TLM063",
       "TLM064",
-      "TLM065"
+      "TLM065",
+      "TLM066",
+      "TLM067",
+      "TLM068",
+      "TLM069",
+      "TLM070",
+      "TLM071",
+      "TLM072",
+      "TLM073",
+      "TLM074",
+      "TLM075"
     ],
     "primary_text_cases": [
       "TLM051",
@@ -542,6 +578,10 @@
       "TLM065"
     ],
     "remaining_35_require_editorial_quality_review": true,
-    "all_questions_published": false
+    "all_questions_published": false,
+    "all_50_evidence_scoped": true,
+    "primary_document_cases_directly_rechecked_051_065": 7,
+    "tc_primary_document_positions_audited": 10,
+    "legacy_existing_74_claims_reclassified": 74
   }
 }
