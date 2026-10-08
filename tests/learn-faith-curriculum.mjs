@@ -4,6 +4,8 @@ import { LEARN_MODULE_IDS } from "../src/learn/presentation.js";
 
 const curriculum=JSON.parse(readFileSync("data/learn/learn-the-faith-curriculum.v1.json","utf8"));
 const ownership=JSON.parse(readFileSync("data/learn/content-ownership-registry.v1.json","utf8"));
+const sources=JSON.parse(readFileSync("data/learn/learn-the-faith-sources.v1.json","utf8"));
+const batch1=JSON.parse(readFileSync("data/learn/learn-the-faith-lessons-001-018.v1.json","utf8"));
 const sourceMap=JSON.parse(readFileSync("data/learn/pius-x-catechism-source-map.v1.json","utf8"));
 const batches=[
   JSON.parse(readFileSync("data/learn/learn-the-faith-content.batch1.v1.json","utf8")),
@@ -92,6 +94,27 @@ assert.equal(ownership.guided_formation.learn_the_faith.visible,false);
 assert.equal(ownership.guided_formation.learn_the_faith.doctrine_reference,"learn.catechism");
 assert.equal(ownership.guided_formation.learn_the_faith.daily_review,"learn.catechism.daily");
 
+assert.equal(curriculum.catechism_mapping.status,"PX1912_433_MAPPED");
+assert.equal(curriculum.catechism_mapping.directOrPartialLessons,52);
+assert.equal(curriculum.catechism_mapping.supplementRequiredLessons,12);
+assert.deepEqual(curriculum.catechism_mapping.zeroDirectCatechismRefLessons,["LTF-034","LTF-051"]);
+assert.equal(curriculum.lessons.filter(x=>x.catechismRefs.length).length,52);
+
+assert.equal(sources.status,"ACTIVE_SOURCE_REGISTRY");
+const sourceIds=new Set(sources.sources.map(x=>x.id));
+for(const id of ["PX1912","V1-DEI-FILIUS","TRENT-CATECHISM","TRENT-DECREES","LEO13-PROVIDENTISSIMUS","PIUS12-MYSTICI","AQUINAS-ST"])assert.ok(sourceIds.has(id),id+" missing from Learn the Faith source registry");
+
+assert.equal(batch1.batch,"LTF-001–LTF-018");
+assert.equal(batch1.lessons.length,18);
+assert.equal(batch1.lessons.reduce((n,x)=>n+x.paragraphs.length,0),54);
+for(const lesson of batch1.lessons){
+  const canonical=curriculum.lessons.find(x=>x.id===lesson.id);
+  assert.ok(canonical,lesson.id+" missing from canonical curriculum");
+  assert.deepEqual(lesson.catechismRefs,canonical.catechismRefs,lesson.id+" draft refs diverge from curriculum mapping");
+  assert.ok(lesson.paragraphs.every(p=>p.en&&p.fr&&Array.isArray(p.sources)&&p.sources.length),lesson.id+" has unsourced/untranslated paragraph");
+  for(const p of lesson.paragraphs)for(const id of p.sources)assert.ok(sourceIds.has(id),lesson.id+" unresolved source "+id);
+}
+
 console.log(JSON.stringify({
   families:5,
   lessons:54,
@@ -99,5 +122,7 @@ console.log(JSON.stringify({
   sourceLinkedClaims:176,
   unresolvedSourceGaps:0,
   published:false,
-  existingCatechismUntouched:true
+  existingCatechismUntouched:true,
+  px1912MappedLessons:52,
+  sourceLinkedDraftLessons:18
 },null,2));
