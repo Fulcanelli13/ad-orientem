@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: sspx-france-staging-${{ github.event.pull_request.number || github.ref }}
@@ -53,19 +53,6 @@ jobs:
           path: ${{ runner.temp }}/lpl-france
           retention-days: 30
           if-no-files-found: warn
-      - name: Persist nonpublishing staging data on PR branch only
-        if: steps.acquisition.outcome == 'success' && github.event_name == 'pull_request'
-        shell: bash
-        run: |
-          mkdir -p data/directory/research/staging/sspx-france-lpl
-          cp "$RUNNER_TEMP/lpl-france/"*.json data/directory/research/staging/sspx-france-lpl/
-          git config user.name "ao-directory-source-importer"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/directory/research/staging/sspx-france-lpl/
-          if ! git diff --cached --quiet; then
-            git commit -m "Directory: stage complete official SSPX France source crawl [skip ci]"
-            git push origin "HEAD:${{ github.head_ref }}"
-          fi
       - name: Confirm no production promotion
         if: steps.acquisition.outcome == 'success'
         run: |
