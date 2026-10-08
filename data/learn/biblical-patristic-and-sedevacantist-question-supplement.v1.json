@@ -1,0 +1,590 @@
+{
+  "version": "BIBLICAL_PATRISTIC_SEDEVACANTISM_QUESTIONS_V1",
+  "created_at": "2026-10-08",
+  "status": "RESEARCH_QUESTIONS_NOT_PUBLISHED_OR_ANSWERED",
+  "canonical_ref": "data/learn/apologetics-canonical.v1.json + data/learn/church-crisis-canonical.v1.json",
+  "deduplication": "All questions are subquestions/cases under existing canonical owners; no new navigation dossier created.",
+  "editorial_gates": [
+    "Questions are registered, not answered: a source link establishes provenance, not a complete published case.",
+    "Every eventual answer paragraph, traditional argument, identified objection and rebuttal needs explicit original full-text hyperlink and accurate attribution.",
+    "In Jewish textual-history debates distinguish dated patristic polemic, textual variants, and historical proof; avoid collective accusation and unsupported claims of deliberate concealment.",
+    "In Quranic intertext debates distinguish a common older motif from direct manuscript borrowing; report source dating, uncertainty and genuine Muslim responses.",
+    "Direct sedevacantist sources document their own propositions, not independent proof of their conclusions.",
+    "Evaluate sedevacantism substantially using preconciliar magisterium, scripture, patristics, scholastic canon law and classical ecclesiology; the rebuttal must not depend entirely on postconciliar documents.",
+    "Eschatological theories must distinguish defined doctrine, legitimate tradition and speculation; no sensational dates or person-identifications.",
+    "French and Latin original-language sources should be added in the full debate stage.",
+    "Preserve compact APOL and CR navigation and searchable deep questions, not a new list of 26 independent modules."
+  ],
+  "source_registry": [
+    {
+      "id": "FATIMA00",
+      "title": "CDF, The Message of Fatima, official manuscript and theological commentary (2000)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_en.html",
+      "type": "OFFICIAL"
+    },
+    {
+      "id": "JUSTIN71",
+      "title": "St Justin Martyr, Dialogue with Trypho, chs. 71–73",
+      "url": "https://www.newadvent.org/fathers/01286.htm",
+      "type": "PATRISTIC_POLEMIC"
+    },
+    {
+      "id": "QUMRAN",
+      "title": "Israel Antiquities Authority, Dead Sea Scrolls introduction",
+      "url": "https://www.deadseascrolls.org.il/learn-about-the-scrolls/introduction?locale=en_US",
+      "type": "TEXTUAL_EVIDENCE"
+    },
+    {
+      "id": "TRENTIV",
+      "title": "Council of Trent, Session IV, decree on canonical Scriptures",
+      "url": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+      "type": "COUNCIL_PRIMARY"
+    },
+    {
+      "id": "CCC120",
+      "title": "Catechism, canon of Scripture, §§120–123",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html",
+      "type": "DOCTRINAL"
+    },
+    {
+      "id": "ISA714",
+      "title": "Douay-Rheims, Isaiah 7",
+      "url": "https://www.drbo.org/chapter/27007.htm",
+      "type": "SCRIPTURE"
+    },
+    {
+      "id": "CORPUSBIRDS",
+      "title": "Corpus Coranicum, Infancy Gospel of Thomas and Quran 3:49",
+      "url": "https://corpuscoranicum.de/en/verse-navigator/sura/3/verse/49/intertexts/458",
+      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP"
+    },
+    {
+      "id": "CORPUSPALM",
+      "title": "Corpus Coranicum, Pseudo-Matthew and Quran 19:23",
+      "url": "https://corpuscoranicum.de/en/verse-navigator/sura/19/verse/23/intertexts/459",
+      "type": "PRIMARY_INTERTEXT_AND_SCHOLARSHIP"
+    },
+    {
+      "id": "QURAN1928",
+      "title": "Quran, 19:28, sister of Aaron",
+      "url": "https://quran.com/19/28",
+      "type": "ISLAMIC_PRIMARY"
+    },
+    {
+      "id": "JWBELIEFS",
+      "title": "Jehovah's Witnesses, official summary of beliefs",
+      "url": "https://www.jw.org/en/jehovahs-witnesses/faq/jehovah-witness-beliefs/",
+      "type": "OPPONENT_PRIMARY"
+    },
+    {
+      "id": "JWMICHAEL",
+      "title": "Jehovah's Witnesses, official explanation of Jesus as Michael",
+      "url": "https://www.jw.org/en/bible-teachings/questions/archangel-michael/",
+      "type": "OPPONENT_PRIMARY"
+    },
+    {
+      "id": "JWJOHN",
+      "title": "Jehovah's Witnesses, own explanation of Jesus as created and subordinate",
+      "url": "https://www.jw.org/en/library/tracts/What-Do-Jehovahs-Witnesses-Believe/What-Do-Jehovahs-Witnesses-Believe/",
+      "type": "OPPONENT_PRIMARY"
+    },
+    {
+      "id": "NICEA",
+      "title": "Catholic Encyclopedia (1913), Homoousion and Nicene answer to Arianism",
+      "url": "https://www.newadvent.org/cathen/07449a.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "ANTIPOPES",
+      "title": "Catholic Encyclopedia (1913), Antipope",
+      "url": "https://www.newadvent.org/cathen/01582a.htm",
+      "type": "HISTORICAL_CANONICAL"
+    },
+    {
+      "id": "PASTORET",
+      "title": "Vatican I, Pastor aeternus, Latin",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "type": "DOGMATIC_PRECONCILIAR"
+    },
+    {
+      "id": "LEO",
+      "title": "Leo XIII, Satis cognitum (1896)",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html",
+      "type": "MAGISTERIAL_PRECONCILIAR"
+    },
+    {
+      "id": "MYSTICI",
+      "title": "Pius XII, Mystici corporis Christi (1943)",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html",
+      "type": "MAGISTERIAL_PRECONCILIAR"
+    },
+    {
+      "id": "IRENAEUS",
+      "title": "St Irenaeus, Against Heresies III.3",
+      "url": "https://www.newadvent.org/fathers/0103303.htm",
+      "type": "PATRISTIC"
+    },
+    {
+      "id": "SEDEVOP",
+      "title": "Novus Ordo Watch, presentation of sedevacantist application of Bellarmine",
+      "url": "https://novusordowatch.org/2016/04/bellarmine-pope-heretic/",
+      "type": "ACTUAL_PROPONENT"
+    },
+    {
+      "id": "SEDEVBELL",
+      "title": "Novus Ordo Watch, argument for automatic loss of office",
+      "url": "https://novusordowatch.org/2015/06/can-heretical-pope-be-deposed/",
+      "type": "ACTUAL_PROPONENT"
+    },
+    {
+      "id": "DRBOAPOC",
+      "title": "Douay-Rheims, Revelation / Apocalypse",
+      "url": "https://www.drbo.org/chapter/73017.htm",
+      "type": "SCRIPTURE"
+    },
+    {
+      "id": "AUG20",
+      "title": "St Augustine, City of God XX, millennium and final persecution",
+      "url": "https://www.newadvent.org/fathers/120120.htm",
+      "type": "PATRISTIC"
+    },
+    {
+      "id": "AUG18",
+      "title": "St Augustine, City of God XVIII, Rome as another Babylon",
+      "url": "https://www.newadvent.org/fathers/120118.htm",
+      "type": "PATRISTIC"
+    },
+    {
+      "id": "ESAU",
+      "title": "Catholic Encyclopedia, Esau and Edom",
+      "url": "https://www.newadvent.org/cathen/05527c.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "PHARISEE",
+      "title": "Catholic Encyclopedia (1913), Pharisees",
+      "url": "https://www.newadvent.org/cathen/11789b.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "GAMALIEL",
+      "title": "Catholic Encyclopedia (1913), Gamaliel and Acts 5",
+      "url": "https://www.newadvent.org/cathen/06374b.htm",
+      "type": "SCRIPTURAL_HISTORICAL"
+    },
+    {
+      "id": "DIVINO",
+      "title": "Pius XII, Divino afflante Spiritu (1943), §§16–22",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html",
+      "type": "MAGISTERIAL_PRECONCILIAR"
+    },
+    {
+      "id": "APOCRYPHA",
+      "title": "Catholic Encyclopedia (1913), Apocrypha and pseudo-Matthew",
+      "url": "https://www.newadvent.org/cathen/01601a.htm",
+      "type": "HISTORICAL"
+    },
+    {
+      "id": "FATIMASSEDEV",
+      "title": "Bishop Bernard Fellay, Fatima and Church crisis interview",
+      "url": "https://fsspx.news/en/news/interview-bishop-bernard-fellay-fatima-centenary-church-crisis-18544",
+      "type": "TRADITIONAL_PROPONENT"
+    }
+  ],
+  "questions": [
+    {
+      "id": "BAQ-01",
+      "domain": "Fatima",
+      "question": "Does the Vatican's 2000 publication contain the entirety of the Third Secret, and what precise evidence supports or contradicts a missing text?",
+      "canonical_owner": "APOL-004",
+      "disposition": "EXTEND_EXISTING_FATIMA_CASE",
+      "question_provenance_ids": [
+        "FATIMA00",
+        "FATIMASSEDEV"
+      ],
+      "debate_focus": "Compare manuscripts, chronological testimonies and actual critics' claims; distinguish expectation from proof.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-02",
+      "domain": "Fatima",
+      "question": "Must the Third Secret be interpreted as fulfilled in 1981, or can its imagery be applied to wider ecclesial crises?",
+      "canonical_owner": "APOL-004",
+      "disposition": "EXTEND_EXISTING_FATIMA_CASE",
+      "question_provenance_ids": [
+        "FATIMA00",
+        "FATIMASSEDEV"
+      ],
+      "debate_focus": "Distinguish visionary document, official commentary, theological interpretation and binding doctrine.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-03",
+      "domain": "Jewish textual transmission",
+      "question": "Did Jewish teachers deliberately remove or modify scriptural passages, as St Justin Martyr alleges, and what does the manuscript record establish?",
+      "canonical_owner": "APOL-012",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "JUSTIN71",
+        "QUMRAN"
+      ],
+      "debate_focus": "Quote Justin in historical context; compare each alleged passage with actual Hebrew, Greek and other witnesses. Do not impute an ancient allegation to Jews today.",
+      "related_owners": [
+        "APOL-044"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-04",
+      "domain": "Jewish textual transmission",
+      "question": "What is the real relationship between the Septuagint, Masoretic Text, Dead Sea Scrolls and Christian Old Testament?",
+      "canonical_owner": "APOL-012",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "QUMRAN",
+        "JUSTIN71",
+        "DIVINO"
+      ],
+      "debate_focus": "Explain ancient plurality of textual traditions, chronology, version differences and canon distinction.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-05",
+      "domain": "Jewish canon",
+      "question": "Did Jewish and Christian communities inherit the same canon, and can differences be explained without alleging a conspiracy to suppress Christian prophecy?",
+      "canonical_owner": "APOL-013",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "TRENTIV",
+        "CCC120",
+        "QUMRAN"
+      ],
+      "debate_focus": "Distinguish canon formation, Jewish Scripture, early Christian reading and deuterocanonical books.",
+      "related_owners": [
+        "APOL-044"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-06",
+      "domain": "Islamic sources",
+      "question": "Does the Quran's account of Jesus creating birds from clay parallel the Infancy Gospel of Thomas, and what can that prove historically?",
+      "canonical_owner": "APOL-046",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "CORPUSBIRDS",
+        "APOCRYPHA"
+      ],
+      "debate_focus": "Use both texts with relative datings; literary parallel does not alone prove a direct copy of the extant version.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-07",
+      "domain": "Islamic sources",
+      "question": "How should the Quran's palm-tree narrative concerning Mary be compared with Pseudo-Matthew and earlier Christian oral or literary traditions?",
+      "canonical_owner": "APOL-046",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "CORPUSPALM",
+        "APOCRYPHA"
+      ],
+      "debate_focus": "Do not claim Pseudo-Matthew definitely precedes or was directly copied by the Quran.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-08",
+      "domain": "Islamic sources",
+      "question": "Does the Quran confuse Mary, mother of Jesus, with Miriam, sister of Aaron, or is there a different explanation of Quran 19:28?",
+      "canonical_owner": "APOL-046",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "QURAN1928"
+      ],
+      "debate_focus": "Recover mainstream Muslim exegetical answer alongside the Christian objection; no strawman based solely on the phrase.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-09",
+      "domain": "Jehovah's Witnesses",
+      "question": "How does Jehovah's Witness Christology resemble—and differ from—the ancient Arian heresy?",
+      "canonical_owner": "APOL-010",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "JWBELIEFS",
+        "JWJOHN",
+        "NICEA"
+      ],
+      "debate_focus": "Compare created Son, divinity, eternal generation, consubstantiality and Michael identification; avoid 'identical in every respect'.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-10",
+      "domain": "Jehovah's Witnesses",
+      "question": "How should a Catholic answer the Jehovah's Witness interpretation of John 1:1 and the claim that Jesus is Michael the archangel?",
+      "canonical_owner": "APOL-008",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "JWMICHAEL",
+        "JWJOHN",
+        "NICEA"
+      ],
+      "debate_focus": "Quote real Witness exegesis; test against Greek text, Nicaea, Fathers and the distinction between divine and angelic nature.",
+      "related_owners": [
+        "APOL-010"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-11",
+      "domain": "Protestant canon",
+      "question": "Which seven Old Testament books are absent from most Protestant Bibles, and were they 'removed' at the Reformation?",
+      "canonical_owner": "APOL-013",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "TRENTIV",
+        "CCC120"
+      ],
+      "debate_focus": "List Tobit, Judith, Wisdom, Sirach, Baruch, 1–2 Maccabees; account for Greek Daniel/Esther additions and shifting early canons.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-12",
+      "domain": "Protestant canon",
+      "question": "Were the deuterocanonical books acknowledged in early Christianity, and how should Protestant objections to their authority be evaluated?",
+      "canonical_owner": "APOL-013",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "TRENTIV",
+        "CCC120"
+      ],
+      "debate_focus": "Use early canon lists, patristic practice and actual Protestant confessions as future source work; avoid invented patristic unanimity.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-13",
+      "domain": "Antipopes and sedevacantism",
+      "question": "What is an antipope, and how have Catholics historically distinguished a valid pope from a rival claimant?",
+      "canonical_owner": "CR-ECC-04",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "ANTIPOPES",
+        "PASTORET"
+      ],
+      "debate_focus": "Historical election disputes and recognition, not a modern private declaration; distinguish antipope from sinful or doctrinally mistaken pope.",
+      "related_owners": [
+        "CR-ECC-08"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-14",
+      "domain": "Antipopes and sedevacantism",
+      "question": "Does St Robert Bellarmine's argument about a manifest heretic automatically losing office establish that a particular modern claimant is not pope?",
+      "canonical_owner": "CR-ECC-04",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "SEDEVOP",
+        "SEDEVBELL",
+        "PASTORET"
+      ],
+      "debate_focus": "Represent Bellarmine and contemporary sedevacantist application accurately; distinguish theological condition, factual determination and competent judgment.",
+      "related_owners": [
+        "CR-ECC-08"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-15",
+      "domain": "Antipopes and sedevacantism",
+      "question": "Who is competent to determine that a claimant to the papacy has lost office, and what if the bishops disagree?",
+      "canonical_owner": "CR-ECC-08",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "ANTIPOPES",
+        "PASTORET",
+        "SEDEVBELL"
+      ],
+      "debate_focus": "Examine visibility, ecclesiastical competence, notorious fact, canonical procedure and practical consequences.",
+      "related_owners": [
+        "CR-AUT-03",
+        "CR-ECC-04"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-16",
+      "domain": "Antipopes and sedevacantism",
+      "question": "Can the Holy See remain vacant for decades without undermining the Church's visibility, indefectibility and apostolic succession?",
+      "canonical_owner": "CR-ECC-08",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "LEO",
+        "MYSTICI",
+        "IRENAEUS",
+        "PASTORET",
+        "SEDEVOP"
+      ],
+      "debate_focus": "Construct objection and rebuttal almost entirely on preconciliar sources, not a generic appeal to postconciliar obedience.",
+      "related_owners": [
+        "CR-ECC-01",
+        "CR-ECC-02"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-17",
+      "domain": "Biblical eschatology",
+      "question": "Does the New Testament teach one future Antichrist, many antichrists, or both?",
+      "canonical_owner": "APOL-012",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "AUG20",
+        "DRBOAPOC"
+      ],
+      "debate_focus": "Interpret Johannine antichrists, Paul, Daniel and Apocalypse; classify certainty of different theses.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-18",
+      "domain": "Biblical eschatology",
+      "question": "What do the great apostasy and the 'man of sin' in 2 Thessalonians 2 mean, and can they identify a particular modern pope?",
+      "canonical_owner": "CR-ECC-08",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "AUG20",
+        "PASTORET",
+        "MYSTICI"
+      ],
+      "debate_focus": "Separate the text's eschatological teaching from unproved contemporary identifications and sedevacantist extrapolation.",
+      "related_owners": [
+        "APOL-012"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-19",
+      "domain": "Biblical eschatology",
+      "question": "What do 666 and the mark of the beast signify, and can Catholics definitively identify them with present-day persons or technologies?",
+      "canonical_owner": "APOL-012",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "DRBOAPOC",
+        "AUG20"
+      ],
+      "debate_focus": "Distinguish textual number, symbol, historical proposals, literalism and unfounded current speculation.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-20",
+      "domain": "Biblical eschatology",
+      "question": "Does Apocalypse 20 teach a literal earthly thousand-year reign, or is St Augustine's interpretation more consonant with Catholic tradition?",
+      "canonical_owner": "APOL-042",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "AUG20"
+      ],
+      "debate_focus": "Use patristic chronology and distinguish eschatological dogma from competing readings.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-21",
+      "domain": "Second Temple Judaism",
+      "question": "Who were the Pharisees, what did they actually teach, and why should they not be equated with every Jew in Jesus' time or Jews today?",
+      "canonical_owner": "APOL-044",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "PHARISEE",
+        "GAMALIEL"
+      ],
+      "debate_focus": "Include sympathetic and critical NT examples including Gamaliel and Paul; avoid collective characterization.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-22",
+      "domain": "Edom",
+      "question": "Who were Edom and Esau's descendants historically, and how is Edom used symbolically in the prophets?",
+      "canonical_owner": "APOL-044",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "ESAU"
+      ],
+      "debate_focus": "Historical Edomite polity first; explain literary judgment texts without mapping guilt to modern communities.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-23",
+      "domain": "Edom",
+      "question": "What is the history of identifying Edom with Rome in later Jewish exegesis, and can Edom simply be equated with a modern people?",
+      "canonical_owner": "APOL-044",
+      "disposition": "SOURCE_RESEARCH_REQUIRED",
+      "question_provenance_ids": [
+        "ESAU",
+        "AUG18"
+      ],
+      "debate_focus": "Recover actual rabbinic primary sources before asserting their content; reject unsupported modern ethnic identifications.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-24",
+      "domain": "Babylon",
+      "question": "Does Babylon the Great in Revelation refer to pagan Rome, a transhistorical evil city, a future power, or the Catholic Church?",
+      "canonical_owner": "APOL-012",
+      "disposition": "NEW_TARGETED_CASE",
+      "question_provenance_ids": [
+        "DRBOAPOC",
+        "AUG18"
+      ],
+      "debate_focus": "Examine early Roman context, Augustine, patristic and Protestant interpretations; avoid claiming Rome and Catholic Church are identical entities.",
+      "related_owners": [
+        "CR-ECC-08"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-25",
+      "domain": "Bible selection",
+      "question": "Which Bible should a Catholic use for ordinary reading, serious study and traditional liturgical prayer?",
+      "canonical_owner": "APOL-012",
+      "disposition": "NEW_PRACTICAL_REFERENCE",
+      "question_provenance_ids": [
+        "DIVINO",
+        "TRENTIV",
+        "CCC120"
+      ],
+      "debate_focus": "Compare full Catholic canon, reliable approved translations, Douay-Rheims, Vulgate and original-language aids; no blanket claim old translations alone are safe.",
+      "related_owners": [
+        "APOL-013"
+      ],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    },
+    {
+      "id": "BAQ-26",
+      "domain": "Bible translation",
+      "question": "Is the Douay-Rheims/Vulgate more authoritative than translations from Hebrew and Greek, and what did Pius XII actually permit?",
+      "canonical_owner": "APOL-012",
+      "disposition": "ENRICH_EXISTING",
+      "question_provenance_ids": [
+        "DIVINO",
+        "TRENTIV"
+      ],
+      "debate_focus": "Pius XII distinguishes Vulgate juridical authenticity from critical authority of original languages; do not claim preconciliar Catholicism prohibited translations from original languages.",
+      "related_owners": [],
+      "status": "QUESTION_REGISTERED_ANSWER_NOT_YET_FULLY_RESEARCHED"
+    }
+  ]
+}
