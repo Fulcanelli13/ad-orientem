@@ -739,5 +739,19 @@
       "route": "learn.church_crisis",
       "requirement": "Do not expose the route until every substantive paragraph is source-resolved, real objections are attributed to actual proponents, and the canonical 81-dossier corpus is bilingual and publication-ready."
     }
+  },
+  "guided_formation": {
+    "learn_the_faith": {
+      "status": "FULL_54_LESSON_DRAFT_SOURCE_MAPPED_NOT_PUBLISHED",
+      "registry": "data/learn/learn-the-faith-curriculum.v1.json",
+      "content": "data/learn/learn-the-faith-content.v1.json",
+      "catechism_source_map": "data/learn/st-pius-x-catechism-source-map.v1.json",
+      "proposed_route": "learn.faith",
+      "visible": false,
+      "owner": "positive-doctrinal-formation",
+      "doctrine_reference": "learn.catechism",
+      "daily_review": "learn.catechism.daily",
+      "rule": "Guided synthesis only. Do not publish until all six partial-coverage lessons receive deeper authoritative sources and all draft claims pass editorial/source review."
+    }
   }
 }
