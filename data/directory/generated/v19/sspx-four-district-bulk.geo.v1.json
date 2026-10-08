@@ -1,0 +1,654 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_GEO_OVERLAY_V1",
+  "provider": "SSPX_FOUR_DISTRICT_BULK",
+  "generated_at": "2026-10-08T11:18:40Z",
+  "official_source": "https://map.fsspx.org/api/v1/places",
+  "precision_policy": "locality_approximate_not_building",
+  "approval": "STRICT_PROVIDER_NAME_CITY_MATCH_0_90",
+  "records": [
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-bad-friedrichshall-kapelle-sieben-schmerzen-mariens",
+      "geo": {
+        "lat": 49.23523,
+        "lng": 9.21397,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002327",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-sieben-schmerzen-mariens",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-bamberg-kapelle-hl-kaiser-heinrich",
+      "geo": {
+        "lat": 49.89165,
+        "lng": 10.89451,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002343",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-hl-kaiser-heinrich",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-dresden-kapelle-maria-rosenkranzkonigin",
+      "geo": {
+        "lat": 51.04253,
+        "lng": 13.68688,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002333",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-maria-rosenkranzkonigin",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-ettlingen-kapelle-herz-jesu",
+      "geo": {
+        "lat": 48.95211,
+        "lng": 8.38342,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002328",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-herz-jesu-ettlingen",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-freiburg-kapelle-st-antonius-von-padua",
+      "geo": {
+        "lat": 48.00992,
+        "lng": 7.81116,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002330",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-st-antonius-von-padua",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-hattersheim-kapelle-st-athanasius",
+      "geo": {
+        "lat": 50.06833,
+        "lng": 8.48797,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001832",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-st-athanasius",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-hopfgarten-kapelle-hl-elisabeth",
+      "geo": {
+        "lat": 50.98709,
+        "lng": 11.22122,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002345",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-hl-elisabeth",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-altotting-kapelle-maria-hilf",
+      "geo": {
+        "lat": 48.22841,
+        "lng": 12.67101,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001846",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-maria-hilf",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-kolbermoor-kapelle-hl-bruder-konrad",
+      "geo": {
+        "lat": 47.84178,
+        "lng": 12.04237,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002331",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-hl-bruder-konrad",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-koln-kapelle-hl-drei-konige",
+      "geo": {
+        "lat": 50.94273,
+        "lng": 7.00901,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002317",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-hl-drei-konige",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-lippstadt-kapelle-vom-guten-hirten",
+      "geo": {
+        "lat": 51.67954,
+        "lng": 8.34037,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002322",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-vom-guten-hirten",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-offenburg-kapelle-st-konrad",
+      "geo": {
+        "lat": 48.46637,
+        "lng": 7.95481,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002329",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-st-konrad",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-reutlingen-kirche-hl-kreuz",
+      "geo": {
+        "lat": 48.49477,
+        "lng": 9.17086,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002325",
+        "source_url": "https://map.fsspx.org/en/places/kirche-hl-kreuz",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-schwabisch-gmund-kapelle-mutter-vom-guten-rat",
+      "geo": {
+        "lat": 48.80196,
+        "lng": 9.79536,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002326",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-mutter-vom-guten-rat",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-trier-kapelle-st-matthias",
+      "geo": {
+        "lat": 49.77691,
+        "lng": 6.69318,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002320",
+        "source_url": "https://map.fsspx.org/en/places/kapelle-st-matthias",
+        "matched_country_code": "DE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-edinburgh-church-of-saints-margaret-and-leonard",
+      "geo": {
+        "lat": 55.94086,
+        "lng": -3.1769,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002274",
+        "source_url": "https://map.fsspx.org/en/places/church-of-saints-margaret-and-leonard",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-gateshead-church-of-the-holy-name-of-jesus",
+      "geo": {
+        "lat": 54.95496,
+        "lng": -1.60404,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002281",
+        "source_url": "https://map.fsspx.org/en/places/church-of-the-holy-name-of-jesus",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-glasgow-saint-andrew-s-church",
+      "geo": {
+        "lat": 55.86629,
+        "lng": -4.26424,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002276",
+        "source_url": "https://map.fsspx.org/en/places/st-andrew-s-church",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-groombridge-church-of-saint-pius-v",
+      "geo": {
+        "lat": 51.11511,
+        "lng": 0.18556,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002280",
+        "source_url": "https://map.fsspx.org/en/places/church-of-saint-pius-v",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-herne-church-of-saints-john-fisher-and-thomas-more",
+      "geo": {
+        "lat": 51.35045,
+        "lng": 1.13288,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002279",
+        "source_url": "https://map.fsspx.org/en/places/church-of-saints-john-fisher-and-thomas-more",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-leicester-chapel-of-saint-anne",
+      "geo": {
+        "lat": 52.62622,
+        "lng": -1.11455,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002289",
+        "source_url": "https://map.fsspx.org/en/places/chapel-of-saint-anne",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-liverpool-church-of-saints-peter-and-paul",
+      "geo": {
+        "lat": 53.39574,
+        "lng": -2.9707,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002284",
+        "source_url": "https://map.fsspx.org/en/places/church-of-saints-peter-and-paul",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-london-church-of-saints-joseph-and-padarn",
+      "geo": {
+        "lat": 51.5595,
+        "lng": -0.11785,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002286",
+        "source_url": "https://map.fsspx.org/en/places/church-of-saints-joseph-and-padarn",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-newry-our-lady-of-knock-and-saint-patrick-chapel",
+      "geo": {
+        "lat": 54.1935,
+        "lng": -6.39164,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002214",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-of-knock-and-st-patrick-chapel",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-preston-church-of-our-lady-of-victories",
+      "geo": {
+        "lat": 53.75518,
+        "lng": -2.70279,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002275",
+        "source_url": "https://map.fsspx.org/en/places/church-of-our-lady-of-victories",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-rhos-on-sea-saint-david-s-chapel",
+      "geo": {
+        "lat": 53.27492,
+        "lng": -3.79594,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002283",
+        "source_url": "https://map.fsspx.org/en/places/saint-david-s-chapel",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-taunton-church-of-our-lady-of-glastonbury",
+      "geo": {
+        "lat": 51.01476,
+        "lng": -3.09434,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002285",
+        "source_url": "https://map.fsspx.org/en/places/church-of-our-lady-of-glastonbury",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-ie-athlone-corpus-christi-church",
+      "geo": {
+        "lat": 53.42265,
+        "lng": -7.94642,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001045",
+        "source_url": "https://map.fsspx.org/en/places/corpus-christi-church",
+        "matched_country_code": "IE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-ie-cork-our-lady-of-the-rosary-church",
+      "geo": {
+        "lat": 51.89837,
+        "lng": -8.49981,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001046",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-of-the-rosary-church",
+        "matched_country_code": "IE",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-belfast-saint-pius-v-chapel",
+      "geo": {
+        "lat": 54.57541,
+        "lng": -5.98213,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002213",
+        "source_url": "https://map.fsspx.org/en/places/saint-pius-v-chapel-belfast",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-ch-ch-carouge-oratoire-saint-joseph",
+      "geo": {
+        "lat": 46.18609,
+        "lng": 6.14276,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002249",
+        "source_url": "https://map.fsspx.org/en/places/oratoire-saint-joseph",
+        "matched_country_code": "CH",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-ch-ch-delemont-eglise-du-saint-esprit",
+      "geo": {
+        "lat": 47.35893,
+        "lng": 7.34373,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001752",
+        "source_url": "https://map.fsspx.org/en/places/eglise-du-saint-esprit",
+        "matched_country_code": "CH",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-ch-ch-lausanne-chapelle-de-la-presentation-de-marie",
+      "geo": {
+        "lat": 46.51042,
+        "lng": 6.63783,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002255",
+        "source_url": "https://map.fsspx.org/en/places/chapelle-de-la-presentation-de-marie",
+        "matched_country_code": "CH",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-ch-ch-monthey-chapelle-saint-antoine",
+      "geo": {
+        "lat": 46.24679,
+        "lng": 6.96077,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001753",
+        "source_url": "https://map.fsspx.org/en/places/chapelle-saint-antoine",
+        "matched_country_code": "CH",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-wayville-saint-michael-s-church",
+      "geo": {
+        "lat": -34.94321,
+        "lng": 138.59709,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001916",
+        "source_url": "https://map.fsspx.org/en/places/st-michael-s-church",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-glenroy-our-lady-of-fatima-church",
+      "geo": {
+        "lat": -36.05734,
+        "lng": 146.91353,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002416",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-of-fatima-church-glenroy",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-mackay-our-lady-of-mount-carmel-chapel",
+      "geo": {
+        "lat": -21.11564,
+        "lng": 149.2049,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002479",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-of-mount-carmel-chapel",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-hampton-our-lady-and-saint-andrew-s-church",
+      "geo": {
+        "lat": -37.93364,
+        "lng": 145.00845,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002414",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-and-st-andrew-s-church",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-irymple-our-lady-of-compassion-church",
+      "geo": {
+        "lat": -34.23286,
+        "lng": 142.16723,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002415",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-of-compassion-church",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-jolimont-our-lady-star-of-the-sea-church",
+      "geo": {
+        "lat": -31.94736,
+        "lng": 115.80822,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-001913",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-star-of-the-sea-church",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-streaky-bay-saint-therese-s-chapel",
+      "geo": {
+        "lat": -32.79595,
+        "lng": 134.21603,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002434",
+        "source_url": "https://map.fsspx.org/en/places/st-therese-s-chapel",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-buderim-infant-jesus-of-prague-church",
+      "geo": {
+        "lat": -26.71082,
+        "lng": 153.05364,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002417",
+        "source_url": "https://map.fsspx.org/en/places/the-infant-jesus-of-prague-church",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-rockdale-child-jesus-and-saint-joseph-s-church",
+      "geo": {
+        "lat": -33.95059,
+        "lng": 151.14866,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002413",
+        "source_url": "https://map.fsspx.org/en/places/child-jesus-and-saint-joseph-s-church",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-east-greenmount-christ-the-king-church",
+      "geo": {
+        "lat": -27.77906,
+        "lng": 151.94118,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002433",
+        "source_url": "https://map.fsspx.org/en/places/christ-the-king-church-east-greenmount",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-rasmussen-saint-anne-s-catholic-church",
+      "geo": {
+        "lat": -19.34149,
+        "lng": 146.72683,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002427",
+        "source_url": "https://map.fsspx.org/en/places/st-anne-s-catholic-church",
+        "matched_country_code": "AU",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-fj-laucala-beach-estate-saint-michael-s-chapel",
+      "geo": {
+        "lat": -18.11563,
+        "lng": 178.47838,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:OPE-002460",
+        "source_url": "https://map.fsspx.org/en/places/st-michael-s-chapel-laucala-beach-estate",
+        "matched_country_code": "FJ",
+        "matched_on": "OFFICIAL_NAME_AND_CITY",
+        "source_observed_at": "2026-10-08"
+      }
+    }
+  ]
+}
