@@ -1073,7 +1073,7 @@ try{
     modularView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
   }));
   assert.equal(rosaryReturn.rosaryStep,rosaryStepBeforeBack,"Rosary visible Back advanced the preserved engine instead of returning");
-  assert.equal(rosaryReturn.modularView,"home","Rosary visible Back did not return directly to PRAY");
+  assert.equal(rosaryReturn.modularView,"family","Rosary visible Back did not restore its immediate Daily Prayer parent");
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.library",{returnContext:null}));
   await page.waitForSelector("#aoPray435930.open [data-p435930-lib-open='sacrament_act_of_contrition']",{timeout:10000});
