@@ -31,9 +31,11 @@ The audit found no missing primary owner and no duplicate primary owner requirin
 
 ### 1. Penance is an intentional cross-surface exception
 
-Confession already has a mature five-stage owner in PRAY:
+Confession has a single canonical owner in PRAY, with doctrine, history and explanatory sources available through the optional Guide. Under the newer approved devotional UX contract ([PR #422](https://github.com/Fulcanelli13/ad-orientem/pull/422)), the guided practical stages are:
 
-`Doctrine -> Prepare -> Examination -> In Confessional -> After`
+`Prepare -> Examination -> In Confessional -> After`
+
+The older mandatory **Doctrine** first stage was retired into the optional Guide; it is not a fifth practical stage.
 
 Creating `learn.rites.penance` merely to make the seven sacraments look symmetrical would duplicate doctrine, examination, contrition and aftercare. It is therefore explicitly forbidden by this freeze unless a later SOT version changes the architecture.
 
