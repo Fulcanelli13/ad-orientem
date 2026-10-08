@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { pickActiveCue } from "../src/mass/reader-cue-focus.js";
+import { pickActiveCue, markActiveCue } from "../src/mass/reader-cue-focus.js";
 
 const items=[
   {cueId:"AO.SM.C0001",top:0,bottom:34},
@@ -25,5 +25,21 @@ assert.equal(pickActiveCue({
     {cueId:"AO.SM.C0102",top:100,bottom:120},
   ],
 }),"AO.SM.C0100","default LIVE focus point no longer sits in the approved ~39% reading zone");
+
+// Replaying a focus projection must not rewrite unchanged dataset attributes.
+const writes=[];
+function cueNode(cueId){
+  const backing={cueId,active:"false"};
+  const dataset=new Proxy(backing,{set(obj,key,value){writes.push([cueId,key,value]);obj[key]=value;return true;}});
+  return {dataset};
+}
+const focusNodes=[cueNode("AO.SM.C0001"),cueNode("AO.SM.C0002")];
+const fakeScroll={querySelectorAll(){return focusNodes;}};
+markActiveCue(fakeScroll,"AO.SM.C0001");
+assert.equal(writes.length,1,"initial cue activation must change exactly one paragraph");
+markActiveCue(fakeScroll,"AO.SM.C0001");
+assert.equal(writes.length,1,"identical cue refresh rewrote paragraph state");
+markActiveCue(fakeScroll,"AO.SM.C0002");
+assert.equal(writes.length,3,"cue transition must flip previous and new active paragraphs");
 
 console.log("reader cue focus: PASS — top/bottom ownership, zero-lag geometry and 39% focus zone.");
