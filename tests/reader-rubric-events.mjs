@@ -89,7 +89,9 @@ assert.equal(gestureMatrix.invariants.primaryRubricalAuthority,"ROMAN_MISSAL_196
 assert.equal(gestureMatrix.invariants.campionRole,"DISCOVERY_CORROBORATION_AND_EXPLANATORY_PROVENANCE");
 assert.equal(gestureMatrix.invariants.iconBindingRequired,false);
 assert.equal(gestureMatrix.invariants.runtimeMustNotInferBySubstring,true);
-assert.equal(gestureMatrix.items.every(x=>x.iconKey===null),true,"gesture matrix unexpectedly hard-bound icons before icon pass");
+assert.equal(matrixAudit.iconBoundCount,127,"gesture matrix lost verified v4.6 semantic bindings");
+assert.equal(matrixAudit.iconPendingCount,15,"ambiguous gestures must stay quarantined until their exact icon master is available");
+assert.ok(gestureMatrix.items.filter(x=>x.iconKey).every(x=>x.iconStatus==="V46_SEMANTIC_BINDING"),"gesture/icon provenance is inconsistent");
 
 const matrixController=createReaderGestureMatrixController({data:gestureMatrix});
 const opening=matrixController.project("AO.SM.C0001");
