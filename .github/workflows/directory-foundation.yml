@@ -32,4 +32,6 @@ jobs:
           node-version: 22
       - run: npm run test:directory
       - run: npm run test:find
+      - run: node tests/directory-worldwide-coverage.mjs
+      - run: node tools/directory/audit-worldwide-corpus.mjs
       - run: node --check src/find/browser-entry.js
