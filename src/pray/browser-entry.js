@@ -38,7 +38,7 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     return null;
   }
 
-  async function open(){
+  async function open(options={}){
     try{win?.__AO_CI_TRACE?.("pray-owner:enter")}catch{}
     const api=await resolveDonor();
     try{win?.__AO_CI_TRACE?.("pray-owner:donor-resolved")}catch{}
@@ -49,8 +49,9 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     if(opened===false)return false;
     stamp(win);
     try{win?.__AO_CI_TRACE?.("pray-owner:stamp:done")}catch{}
-    // The caller owns top-level surface state; avoid re-entering ribbon adoption
-    // from inside a synchronous PRAY owner open (controller.go sets active).
+    // A shell-originated navigation sets its active surface after the owner opens.
+    // Direct opens still synchronize the ribbon when called outside shell navigation.
+    if(!options.shellOwned)try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
     return true;
   }
 
