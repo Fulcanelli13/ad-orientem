@@ -7,6 +7,13 @@ import {paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
 
 const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-audit.v1.json","utf8"));
 assert.equal(audit.substantive_editorial_pass_1.case_ids.length,4);
+assert.equal(audit.substantive_editorial_pass_1.selected_cases_original_passage_review_total,12);
+assert.equal(audit.substantive_editorial_pass_1.additional_original_passages_checked.length,8);
+for(const id of ["CSE040","CSE058","CSE083","CSE101","CSE104","CSE112","CSE123","CSE124"]){
+ const record=audit.cases.find(c=>c.id===id)?.substantive_editorial_pass_1;
+ assert.ok(record&&record.finding&&record.url.startsWith("https://"),id+" lacks specific original-text finding");
+ assert.match(record.scope,/FULL_CERTIFICATION_PENDING/);
+}
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
 assert.equal(audit.summary.stage_specific_mapping_references,609);
