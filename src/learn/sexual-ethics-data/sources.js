@@ -84,6 +84,7 @@ export const CSE_SOURCES=Object.freeze([
   Object.freeze({id:"PURITY_SHAME2026",title:"Gray & Klement · Purity Culture and Sexual Shame, 2026, correlational original study",authority_type:"PEER_REVIEWED_PRIMARY_CORRELATIONAL_EMPIRICAL",role:"empirical",canonical_url:"https://digitalcommons.unf.edu/jcssw/vol7/iss1/1/"}),
   Object.freeze({id:"PURITY_SURVIVORS2026",title:"Being Pure and Being Ashamed · Purity culture and sexual shame among survivors, 2026 abstract",authority_type:"PEER_REVIEWED_PRIMARY_ABSTRACT_NOT_CAUSAL",role:"empirical",canonical_url:"https://pubmed.ncbi.nlm.nih.gov/41983601/"}),
   Object.freeze({id:"FRANCIS_SPADARO2013",title:"Francis · A Big Heart Open to God, original 2013 interview with Antonio Spadaro",authority_type:"PRIMARY_PASTORAL_CRITIQUE_NOT_DOCTRINAL_DISSENT",role:"opposing_position",canonical_url:"https://www.americamagazine.org/faith/2013/09/30/big-heart-open-god-interview-pope-francis/"}),
+  Object.freeze({id:"NCBC_ECTOPIC",title:"National Catholic Bioethics Center · The Bioethics of High-Risk Pregnancy (salpingectomy and contested methods)",authority_type:"NON_MAGISTERIAL_CATHOLIC_BIOETHICS",role:"catholic_commentary",canonical_url:"https://www.ncbcenter.org/messages-from-presidents/highrisk"}),
   Object.freeze({id:"LBM",title:"Ronald Lawler, Joseph Boyle & William E. May · Catholic Sexual Ethics, 3rd ed. (2011)",authority_type:"SCHOLARLY_SYNTHESIS",role:"argument_lead",canonical_url:"https://books.google.com/books?id=1Fb8CwAAQBAJ"})
 ]);
 
