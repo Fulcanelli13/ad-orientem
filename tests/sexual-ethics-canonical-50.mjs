@@ -110,5 +110,5 @@ assert.match(reader,/data-ao-cse-home/);
 assert.match(reader,/function openSection/,"legacy deep links must remain available");
 assert.match(reader,/function openFamily/);
 assert.match(reader,/function openDossier/);
-assert.match(reader,/returnView==="dossier"/);
+assert.match(reader,/state\.returnView==="sections"/);
 console.log("PASS Sexual Ethics 50-dossier navigation: 150 unique owners, 7 families, all original debates/search retained, back/home, French, 55-source audit.");
