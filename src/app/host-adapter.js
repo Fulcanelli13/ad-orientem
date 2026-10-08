@@ -86,7 +86,7 @@ export function createAppHostAdapter(win = globalThis) {
         const modular = win?.AO_PRAY_APP_V1;
         if (typeof modular?.open !== "function") return false;
         trace("host:pray-before-open");
-        const opening=modular.open();
+        const opening=modular.open({shellOwned:true});
         trace("host:pray-after-open-invocation");
         return Promise.resolve(opening).then((opened) => opened !== false);
       }
