@@ -785,7 +785,12 @@ export function buildReaderShellMarkup(prepared = {}) {
 
 function setText(root, role, value){
   const el=root.querySelector(`[data-role="${role}"]`);
-  if(el) el.textContent=value == null || value === "" ? "—" : String(value);
+  if(!el)return;
+  const next=value == null || value === "" ? "—" : String(value);
+  // Cue-focus can project repeatedly while the user scrolls or a Schola
+  // animation is running. Replacing identical text nodes on every refresh
+  // causes unnecessary layout/observer churn and can disturb the ticker.
+  if(el.textContent!==next)el.textContent=next;
 }
 
 function setChannel(root, channel, value){
