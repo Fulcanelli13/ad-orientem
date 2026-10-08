@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'src/learn/formation-research-preview.js'
+      - 'src/learn/formation-recovery-review.js'
+      - 'tests/formation-recovery-review.mjs'
       - 'src/learn/formation-research-preview-data.js'
       - 'src/learn/browser-entry.js'
       - 'tests/formation-research-preview.mjs'
@@ -36,6 +38,8 @@ jobs:
         run: node tests/formation-research-preview.mjs
       - name: Verify forensic A/C/TLM recovery holds and surviving 102 research records
         run: node tests/formation-forensic-recovery.mjs
+      - name: Check source-first recovery review (102 research records)
+        run: node tests/formation-recovery-review.mjs
       - name: Check Traditional Mass objections and canonical ownership
         run: node tests/traditional-mass-objections-reconciliation.mjs
       - name: Check Traditionis custodes bilingual debate sources
