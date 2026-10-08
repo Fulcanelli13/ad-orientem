@@ -12,9 +12,9 @@ The 102 indexed research entries below are **real individual questions or case d
 | **Distinct indexed entries** | **102** |
 
 ## Source-link inventory (structure, not factual certification)
-The indexed individual entries contain **488 nested source-bearing text blocks** and **1145 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 128 of these source-bearing blocks lack French text, while 360 carry French text.
+The indexed individual entries contain **488 nested source-bearing text blocks** and **1150 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 128 of these source-bearing blocks lack French text, while 360 carry French text.
 
-These figures do **not** certify every claim or objection as properly sourced, nor the source's actual applicability. The currently indexed blocks all carry nonempty source IDs. This **does not resolve attribution** of eight generic hypothetical follow-up/challenge objections in TLM026–050; proponent identification and original evidence must still be checked before treating them as attributed objections. The per-source-pack metrics are held in the linked JSON.
+These figures do **not** certify every claim or objection as properly sourced, nor the source's actual applicability. The currently indexed blocks all carry nonempty source IDs. The eight hypothetical TLM026–050 follow-up questions are now explicitly classified as **editorial prompts, not externally attributed objections**, and retain source references for topic context only. The per-source-pack metrics are held in the linked JSON.
 
 The recent [TLM French/correction merge #441](https://github.com/Fulcanelli13/ad-orientem/pull/441) has advanced TLM026–050: 82 source-bearing blocks have French draft text. TLM051–065 now have **37 French draft paragraph translations**, following an additional October 8 merge; ten Traditionis custodes TLM066–075 debates contain 30 bilingual source-bearing blocks. These are drafts, not native-French editorial certification.
 
@@ -30,3 +30,7 @@ Topic rows lacking explicit source-pack references: abu-dhabi; singapore-religio
 4. Complete French, attribution, and genuine source-context checks in the 102 recoverable entries. Only then implement user-facing content under the 60/81 canonical owners, with subsidiary-question search.
 
 **JSON bridge:** `data/learn/formation-recoverable-research-ledger-2026-10-08.v1.json` contains precise questions, owner IDs, provenance links, source-pointers, individual citation/translation metrics and the 43 contemporary topic dispositions.
+
+## 8 October final TLM source-scope pass
+
+All 50 surviving TLM026–075 questions have a recorded **research source scope**, including 25 editorial question prompts (TLM026–050), 15 normalized postconciliar reform questions, and 10 *Traditionis custodes* cases. These annotations do **not** certify all paragraphs as theologically correct, all historical inferences as independently proven, or translations as final. Five of the 2021-law cases now correctly distinguish editorial critical arguments from quotations by named opponents. The 2023 rescript URL and the particular faculties in the 2022 FSSP decree have been corrected. **Zero items are approved for public Formation publication.** TLM001–025 exact originals remain unavailable.

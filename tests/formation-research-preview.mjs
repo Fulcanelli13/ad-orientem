@@ -20,7 +20,15 @@ assert.equal(gate.publication_allowed,false,"TLM research accidentally approved"
 assert.equal(gate.records.length,50);
 assert.equal(gate.recovered.paragraphs,149);
 assert.equal(gate.canonical_navigation_additions,0);
-assert.equal(gate.research_review_progress.tlm_051_065_reviewed,15);
+assert.equal(gate.research_review_progress.source_scoped_questions,50);
+assert.equal(gate.research_review_progress.legacy_research_cases_scoped,25);
+assert.equal(gate.research_review_progress.traditionis_custodes_cases_scoped,10);
+assert.equal(gate.research_review_progress.remaining_unscoped_cases,0);
+assert.equal(TLM.questions.filter(x=>x.question_prompt_provenance==="UNATTRIBUTED_EDITORIAL_PROMPT_NOT_A_QUOTATION").length,25);
+assert.equal(TLM.questions.filter(x=>x.source_review_state==="10_REVIEWED_30_PRIMARY_OR_PROPONENT_LOCATORS_ZERO_FINAL_APPROVAL").length,10);
+assert.equal(TLM.questions.find(x=>x.id==="TLM075").paragraphs[1].role,"source_based_critical_argument");
+assert.ok(TLM.questions.every(x=>x.publication_ready===false));
+assert.equal(gate.research_review_progress.formerly_reviewed_reform_cases,15);
 assert.equal(gate.research_review_progress.primary_text_explicitly_checked,7);
 assert.equal(gate.research_review_progress.final_approved_for_publication,0);
 assert.equal(TLM.questions.find(x=>x.id==="TLM061").paragraphs.length,3);
@@ -169,6 +177,10 @@ assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHT
 assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Unapproved research/);
 assert.equal(api.back(),true);
 assert.equal(api.openQuestion("TLM026"),true);
+assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Question formulated for editorial study/);
+assert.equal(api.openQuestion("TLM075"),true);
+assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Source-based critical argument/);
+assert.equal(api.openQuestion("TLM026"),true);
 assert.match(en.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/not a quotation/i);
 assert.equal(api.back(),true);
 assert.equal(api.close(),true);
@@ -185,6 +197,8 @@ assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).inn
 assert.equal(fa.openQuestion("TLM056"),true);
 assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Missa normativa|évêques/i);
 assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/https:\/\//);
+assert.equal(fa.openQuestion("TLM075"),true);
+assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Argument critique fondé sur des sources/);
 assert.equal(fa.openQuestion("TLM026"),true);
 assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Recherche non approuvée/);
 assert.match(french.document.getElementById(FORMATION_RESEARCH_PREVIEW_ROOT).innerHTML,/Question éditoriale/);

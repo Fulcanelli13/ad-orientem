@@ -527,7 +527,7 @@
   },
   "traditional_mass_objections_001_075": {
     "file": "data/learn/traditional-mass-objections-reconciliation.v1.json",
-    "status": "50_RECONCILED_40_TLM026_065_BILINGUAL_DRAFTS_10_TC_BILINGUAL_DRAFTS_UNPUBLISHED",
+    "status": "50_RESEARCH_CASES_SOURCE_SCOPED_BILINGUAL_DRAFTS_UNPUBLISHED",
     "prior_draft_exists_but_not_recovered": "TLM001-TLM025",
     "source_exact_English": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
     "source_linked_summary": "data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
@@ -586,10 +586,13 @@
       "review_progress": "15/50 source-scoped; independent editorial approval still required"
     },
     "editorial_status_20261008": {
-      "fifteen_claims_scoped": 15,
-      "seven_primary": 7,
-      "eight_secondary_or_mixed": 8,
-      "published": 0
+      "source_scoped": 50,
+      "legacy25": 25,
+      "normalized15": 15,
+      "tc10": 10,
+      "published": 0,
+      "editorial_theological_certification": "OUTSTANDING",
+      "french_final_review": "OUTSTANDING"
     }
   }
 }

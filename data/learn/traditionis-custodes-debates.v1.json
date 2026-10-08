@@ -1,7 +1,7 @@
 {
   "version": "TRADITIONIS_CUSTODES_DEBATES_V1",
   "created_at": "2026-10-08",
-  "status": "BILINGUAL_SOURCE_BACKED_DRAFT_NOT_PUBLISHED",
+  "status": "BILINGUAL_10_CASES_SOURCE_SCOPED_EDITORIAL_DRAFT_UNPUBLISHED",
   "canonical_role": "Deep-source debate questions subsumed under the existing 81 Church Crisis dossiers; no new navigation dossier and no duplicate standalone canonical owner.",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_policy": {
@@ -50,7 +50,7 @@
     {
       "id": "RES23",
       "title": "Dicastery for Divine Worship, Rescriptum (2023)",
-      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html",
+      "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html",
       "type": "VATICAN_IMPLEMENTATION"
     },
     {
@@ -103,15 +103,27 @@
     },
     {
       "id": "BRUNI25",
-      "title": "Vatican News, spokesman Matteo Bruni on Traditionis custodes survey leak (3 July 2025)",
+      "title": "Vatican News, press conference on Mass for Care of Creation, closing section 'Chiarimenti circa Traditionis custodes': Matteo Bruni's 3 July 2025 statement",
       "url": "https://www.vaticannews.va/it/vaticano/news/2025-07/ecologia-integrale-papa-celebrazione-formulario-culto-divino.html",
-      "type": "VATICAN_NEWS_OFFICIAL_RESPONSE"
+      "type": "VATICAN_NEWS_VERIFIED_STATEMENT_IN_FINAL_SECTION"
     },
     {
       "id": "AP25_REPRINT",
       "title": "Nicole Winfield, Associated Press (2 July 2025), syndicated by Crux",
       "url": "https://cruxnow.com/vatican/2025/07/debate-over-latin-mass-heats-up-after-apparent-leak-of-vatican-documents-that-undermine-pope-francis",
       "type": "INDEPENDENT_REPORT_SYNDICATED"
+    },
+    {
+      "id": "FSSP22FR",
+      "title": "FSSP, Pope Francis's decree of 11 February 2022 confirming books of 1962, French translation and Latin original",
+      "url": "https://www.fssp.org/fr/decret-du-pape-francois-confirmant-lusage-des-livres-liturgiques-de-1962/",
+      "type": "PARTICULAR_PAPAL_DECREE_FRENCH_PRIMARY_REPRINT"
+    },
+    {
+      "id": "CIC1752",
+      "title": "1983 Code of Canon Law, Book VII, canons 1732–1739 and 1752 (administrative recourse and salus animarum)",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1732-1752_en.html",
+      "type": "CANON_LAW_PRIMARY"
     }
   ],
   "debates": [
@@ -137,7 +149,9 @@
           "source_ids": [
             "TCL21",
             "TC21"
-          ]
+          ],
+          "source_locator": "Francis 16 July 2021 accompanying letter, 2020 consultation rationale",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "identified_objection",
@@ -148,7 +162,9 @@
           "source_ids": [
             "FSSP21",
             "COURT21"
-          ]
+          ],
+          "source_locator": "FSSP 20 July 2021; Courtalain 31 Aug 2021 statement",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -160,9 +176,21 @@
             "CIC4",
             "TCL21",
             "COURT21"
-          ]
+          ],
+          "source_locator": "CIC 838; papal letter; Courtalain requests",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": true,
+        "synthetic_arguments_not_misattributed": false,
+        "edition_specific_legal_check": false,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM067",
@@ -185,7 +213,9 @@
           "source_ids": [
             "TC21",
             "TCL21"
-          ]
+          ],
+          "source_locator": "Francis accompanying letter and TC original motivation",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "identified_objection",
@@ -197,22 +227,52 @@
             "AP25_REPRINT",
             "SP07",
             "MONT25"
-          ]
+          ],
+          "source_locator": "Montagna document excerpts, 1 July 2025; AP syndicated independent assessment",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
           "text": {
-            "en": "Vatican spokesman Matteo Bruni said the released texts gave only a very partial and incomplete reconstruction: further confidential reports and other consultations had also been considered. The disclosed record accordingly warrants questions about claims of an episcopal majority requesting restrictions, but does not establish what all respondents said, the full advice Francis received or his personal intentions.",
-            "fr": "Le porte-parole du Vatican Matteo Bruni a déclaré que les textes publiés ne livraient qu’une reconstitution très partielle et incomplète : d’autres rapports confidentiels et d’autres consultations avaient également été pris en considération. Les documents rendus publics permettent donc d’interroger l’idée d’une majorité épiscopale favorable aux restrictions, sans établir ce qu’ont dit tous les répondants, l’ensemble des avis reçus par François ni ses intentions personnelles."
+            "en": "Vatican spokesman Matteo Bruni declined to confirm the leaked documents' authenticity and described the publicly released texts as a very partial and incomplete account of the decision-making process: other confidential reports and additional consultations also informed the process. The release therefore raises a legitimate documentary question but does not establish a verified majority of all consulted bishops, or the complete basis of Francis's decision.",
+            "fr": "Le porte-parole du Vatican Matteo Bruni n'a pas confirmé l'authenticité des documents divulgués et a décrit les textes publiés comme une présentation très partielle et incomplète du processus de décision : d'autres rapports confidentiels et consultations ultérieures ont également été pris en compte. Cette publication soulève donc une question documentaire légitime sans établir une majorité vérifiée de tous les évêques consultés ni l'ensemble des motifs de la décision de François."
           },
           "source_ids": [
             "AP25_REPRINT",
             "TCL21",
             "BRUNI25",
             "MONT25"
-          ]
+          ],
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "prior_text": {
+                "en": "Vatican spokesman Matteo Bruni said the released texts gave only a very partial and incomplete reconstruction: further confidential reports and other consultations had also been considered. The disclosed record accordingly warrants questions about claims of an episcopal majority requesting restrictions, but does not establish what all respondents said, the full advice Francis received or his personal intentions.",
+                "fr": "Le porte-parole du Vatican Matteo Bruni a déclaré que les textes publiés ne livraient qu’une reconstitution très partielle et incomplète : d’autres rapports confidentiels et d’autres consultations avaient également été pris en considération. Les documents rendus publics permettent donc d’interroger l’idée d’une majorité épiscopale favorable aux restrictions, sans établir ce qu’ont dit tous les répondants, l’ensemble des avis reçus par François ni ses intentions personnelles."
+              },
+              "prior_source_ids": [
+                "AP25_REPRINT",
+                "TCL21",
+                "BRUNI25",
+                "MONT25"
+              ],
+              "reason": "Correct source scope or canonical specificity"
+            }
+          ],
+          "source_locator": "Bruni 3 July 2025 press conference final paragraph; Montagna excerpts; AP",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": true,
+        "synthetic_arguments_not_misattributed": false,
+        "edition_specific_legal_check": false,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM068",
@@ -236,10 +296,12 @@
           "source_ids": [
             "SP07",
             "TC21"
-          ]
+          ],
+          "source_locator": "Summorum Pontificum 2007 articles 1 and 5; TC 2021 arts 1–8",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
-          "role": "identified_objection",
+          "role": "source_based_critical_argument",
           "text": {
             "en": "Benedict defended the older Missal as an inheritance that had remained sacred across generations. Traditional critics consequently ask how a liturgy commended in 2007 as a lasting ecclesial treasure can be treated in 2021 as a concession destined for limitation.",
             "fr": "Benoît XVI défendait l’ancien missel comme un héritage sacré transmis par les générations. Les critiques traditionalistes demandent donc comment une liturgie présentée en 2007 comme un trésor durable peut être traitée en 2021 comme une concession appelée à être restreinte."
@@ -247,7 +309,10 @@
           "source_ids": [
             "SPL07",
             "TCL21"
-          ]
+          ],
+          "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
+          "source_locator": "Benedict 2007 accompanying letter on holiness of older liturgical usage",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -260,9 +325,21 @@
             "SP07",
             "TC21",
             "SPL07"
-          ]
+          ],
+          "source_locator": "CIC 838 and TC 2021 art 8; contrasting juridical positions",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": false,
+        "synthetic_arguments_not_misattributed": true,
+        "edition_specific_legal_check": true,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM069",
@@ -286,10 +363,12 @@
           "source_ids": [
             "TC21",
             "RESP21"
-          ]
+          ],
+          "source_locator": "TC art 1; arts 2–5",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
-          "role": "identified_objection",
+          "role": "source_based_critical_argument",
           "text": {
             "en": "Benedict had called the two Missals two usages of one Roman Rite and affirmed their compatibility at the level of faith. The change of wording raises a substantive question about how juridical unicity relates to the received liturgical patrimony of the Roman Church.",
             "fr": "Benoît XVI parlait de deux usages d’un même rite romain et affirmait leur compatibilité quant à la foi. Le changement de vocabulaire pose une question réelle sur le rapport entre unicité juridique et patrimoine liturgique reçu de l’Église romaine."
@@ -298,7 +377,10 @@
             "SP07",
             "SPL07",
             "TC21"
-          ]
+          ],
+          "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
+          "source_locator": "Summorum Pontificum art 1 and Benedict accompanying letter",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -310,9 +392,21 @@
             "RESP21",
             "TC21",
             "SPL07"
-          ]
+          ],
+          "source_locator": "Responsa 2021 introductory explanatory notes",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": false,
+        "synthetic_arguments_not_misattributed": true,
+        "edition_specific_legal_check": true,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM070",
@@ -336,10 +430,12 @@
           "source_ids": [
             "CIC4",
             "SC63"
-          ]
+          ],
+          "source_locator": "CIC 838; SC 22–23",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
-          "role": "identified_objection",
+          "role": "source_based_critical_argument",
           "text": {
             "en": "The Council required that innovation preserve sound tradition and arise organically from received forms. Consequently the fact that a restriction can be promulgated does not by itself establish its prudence or its service to Catholic continuity.",
             "fr": "Le Concile a demandé que toute innovation sauvegarde la saine tradition et procède organiquement des formes reçues. La possibilité juridique de promulguer une restriction ne suffit donc pas à prouver sa prudence ni son service de la continuité catholique."
@@ -347,7 +443,10 @@
           "source_ids": [
             "SC63",
             "SPL07"
-          ]
+          ],
+          "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
+          "source_locator": "SC 23 organic growth and Benedict 2007 accompanying letter",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -359,9 +458,21 @@
             "CIC4",
             "SC63",
             "TC21"
-          ]
+          ],
+          "source_locator": "CIC 838; SC 22–23; TC enactment",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": false,
+        "synthetic_arguments_not_misattributed": true,
+        "edition_specific_legal_check": true,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM071",
@@ -385,7 +496,9 @@
           "source_ids": [
             "CIC2",
             "TC21"
-          ]
+          ],
+          "source_locator": "CIC 213–214 and 223; TC bishops' permissions",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "identified_objection",
@@ -396,7 +509,9 @@
           "source_ids": [
             "COURT21",
             "FSSP22"
-          ]
+          ],
+          "source_locator": "Courtalain petition and 2022 FSSP particular decree",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -407,9 +522,21 @@
           "source_ids": [
             "CIC2",
             "TC21"
-          ]
+          ],
+          "source_locator": "CIC 212–214, 223; TC permission regime",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": true,
+        "synthetic_arguments_not_misattributed": false,
+        "edition_specific_legal_check": false,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM072",
@@ -433,7 +560,9 @@
           "source_ids": [
             "TC21",
             "FSSP21"
-          ]
+          ],
+          "source_locator": "TC generalized restrictions; FSSP official communiqué",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "identified_objection",
@@ -444,7 +573,9 @@
           "source_ids": [
             "FSSP21",
             "COURT21"
-          ]
+          ],
+          "source_locator": "FSSP communiqué; Courtalain open letter",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -456,9 +587,21 @@
             "TC21",
             "TCL21",
             "COURT21"
-          ]
+          ],
+          "source_locator": "TC legal character versus penal sanctions; papal accompanying letter",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": true,
+        "synthetic_arguments_not_misattributed": false,
+        "edition_specific_legal_check": false,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM073",
@@ -483,10 +626,12 @@
             "TC21",
             "RESP21",
             "RES23"
-          ]
+          ],
+          "source_locator": "TC arts 2–5; Responsa 2021 Ritual/Pontifical question; 2023 rescript reservations",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
-          "role": "identified_objection",
+          "role": "source_based_critical_argument",
           "text": {
             "en": "The progressively more restrictive interpretation raised concerns that lawful celebration could become practically inaccessible in some dioceses. Those concerns must be assessed against the actual permissions and exemptions rather than assuming either complete suppression or unrestricted access.",
             "fr": "L’interprétation de plus en plus restrictive suscite la crainte que la célébration licite devienne pratiquement inaccessible dans certains diocèses. Cette crainte doit être examinée à partir des permissions et exceptions réelles, sans présumer une suppression totale ni un accès sans restriction."
@@ -495,20 +640,49 @@
             "RESP21",
             "RES23",
             "TC21"
-          ]
+          ],
+          "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
+          "source_locator": "Responsa: limits of ritual books; 2023 apostolic reserved dispensation",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
           "text": {
-            "en": "Francis's decree of 11 February 2022 specifically granted members of the FSSP faculties to use the liturgical books in force in 1962, with conditions. This particular grant does not extend automatically to every diocesan priest or institute; it also shows that the general regime admits distinct particular arrangements.",
-            "fr": "Le décret de François du 11 février 2022 accorde expressément aux membres de la FSSP l’usage, sous conditions, des livres liturgiques en vigueur en 1962. Cette concession particulière ne s’étend pas automatiquement à tous les prêtres diocésains ou instituts ; elle montre néanmoins que le régime général permet des situations propres."
+            "en": "Francis's 11 February 2022 decree gave the members of the FSSP permission to celebrate Mass, sacraments, other rites and the Divine Office with the Missal, Ritual, Pontifical and Breviary in force in 1962. It allows use in the Fraternity's own churches and oratories, elsewhere with the local ordinary's consent, except private Masses. This particular concession is not a universal permission for every institute or diocesan priest.",
+            "fr": "Le décret du 11 février 2022 de François a accordé aux membres de la FSSP la faculté de célébrer la messe, les sacrements, les autres rites et l'Office divin selon le Missel, le Rituel, le Pontifical et le Bréviaire en vigueur en 1962. Il en permet l'usage dans les églises et oratoires propres de la Fraternité ; ailleurs, le consentement de l'ordinaire du lieu est requis, sauf pour les messes privées. Cette concession particulière ne constitue pas une permission universelle pour tous les instituts ou prêtres diocésains."
           },
           "source_ids": [
             "FSSP22",
-            "TC21"
-          ]
+            "FSSP22FR"
+          ],
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "prior_text": {
+                "en": "Francis's decree of 11 February 2022 specifically granted members of the FSSP faculties to use the liturgical books in force in 1962, with conditions. This particular grant does not extend automatically to every diocesan priest or institute; it also shows that the general regime admits distinct particular arrangements.",
+                "fr": "Le décret de François du 11 février 2022 accorde expressément aux membres de la FSSP l’usage, sous conditions, des livres liturgiques en vigueur en 1962. Cette concession particulière ne s’étend pas automatiquement à tous les prêtres diocésains ou instituts ; elle montre néanmoins que le régime général permet des situations propres."
+              },
+              "prior_source_ids": [
+                "FSSP22",
+                "TC21"
+              ],
+              "reason": "Correct source scope or canonical specificity"
+            }
+          ],
+          "source_locator": "11 Feb 2022 specific papal FSSP decree, own churches versus local ordinary",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": false,
+        "synthetic_arguments_not_misattributed": true,
+        "edition_specific_legal_check": true,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM074",
@@ -532,7 +706,9 @@
           "source_ids": [
             "COURT21",
             "FSSP22"
-          ]
+          ],
+          "source_locator": "Courtalain 31 Aug 2021 canonical institute signatories; 2022 FSSP decree",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "identified_objection",
@@ -543,7 +719,9 @@
           "source_ids": [
             "SSPX21",
             "SPL07"
-          ]
+          ],
+          "source_locator": "Pagliarani own SSPX July 2021 position, distinguished from Benedict XVI",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -555,9 +733,21 @@
             "COURT21",
             "FSSP22",
             "SSPX21"
-          ]
+          ],
+          "source_locator": "Courtalain response versus SSPX statement; Catholic canonical status distinctions",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": true,
+        "synthetic_arguments_not_misattributed": false,
+        "edition_specific_legal_check": false,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     },
     {
       "id": "TLM075",
@@ -582,19 +772,40 @@
           "source_ids": [
             "CIC2",
             "TC21"
-          ]
+          ],
+          "source_locator": "CIC 212 on obedience and complaints; TC legal disciplinary decision",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
-          "role": "identified_objection",
+          "role": "source_based_critical_argument",
           "text": {
-            "en": "Obedience is not unlimited: no ecclesiastical superior can require sin or violation of divine law. Nevertheless, the claim that a liturgical restriction is harmful or imprudent is not identical to proving a divine-law obligation to disobey that particular norm.",
-            "fr": "L’obéissance n’est pas illimitée : aucun supérieur ecclésiastique ne peut commander le péché ou la violation du droit divin. Cependant, juger une restriction liturgique nuisible ou imprudente ne prouve pas qu’il existe une obligation de droit divin d’enfreindre cette norme précise."
+            "en": "The limits of obedience remain a serious theological issue: an ecclesiastical superior cannot require a person to commit sin or violate divine law. But an adverse judgment about a disciplinary rule's prudence does not, without further argument, establish that compliance with that rule is sinful. The Code also protects lawful expression of concerns, petition and procedural recourse; these rights should not be confused with a unilateral power to suspend law.",
+            "fr": "Les limites de l'obéissance constituent une question théologique sérieuse : un supérieur ecclésiastique ne peut exiger que l'on commette un péché ou viole la loi divine. Toutefois, estimer une règle disciplinaire imprudente ne démontre pas, sans argument supplémentaire, que son observation serait un péché. Le Code protège aussi l'expression légitime des préoccupations, les requêtes et les voies de recours ; ces droits ne doivent pas être confondus avec un pouvoir unilatéral de suspendre la loi."
           },
           "source_ids": [
             "CIC2",
             "CIC4",
-            "SC63"
-          ]
+            "SC63",
+            "CIC1752"
+          ],
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "prior_text": {
+                "en": "Obedience is not unlimited: no ecclesiastical superior can require sin or violation of divine law. Nevertheless, the claim that a liturgical restriction is harmful or imprudent is not identical to proving a divine-law obligation to disobey that particular norm.",
+                "fr": "L’obéissance n’est pas illimitée : aucun supérieur ecclésiastique ne peut commander le péché ou la violation du droit divin. Cependant, juger une restriction liturgique nuisible ou imprudente ne prouve pas qu’il existe une obligation de droit divin d’enfreindre cette norme précise."
+              },
+              "prior_source_ids": [
+                "CIC2",
+                "CIC4",
+                "SC63"
+              ],
+              "reason": "Correct source scope or canonical specificity"
+            }
+          ],
+          "provenance": "EDITORIAL_SYNTHESIS_OF_CITED_PRIMARY_MATERIAL_NOT_VERBATIM_OR_EXTERNAL_AUTHOR_ARGUMENT",
+          "source_locator": "Principle concerning divine law and lawfulness; CIC 212 and 1732–1739 recourse",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         },
         {
           "role": "assessment",
@@ -605,10 +816,23 @@
           "source_ids": [
             "CIC2",
             "COURT21",
-            "FSSP22"
-          ]
+            "FSSP22",
+            "CIC1752"
+          ],
+          "source_locator": "CIC 212, 1732–1739; Courtalain petition and FSSP particular faculties",
+          "source_review": "PRIMARY_OR_IDENTIFIED_PROPONENT_LOCATOR_SCOPED_FINAL_EDIT_NOT_APPROVED"
         }
-      ]
+      ],
+      "evidence_review": {
+        "date": "2026-10-08",
+        "all_three_paragraphs_have_source_locators": true,
+        "identified_opponent_material_scoped": false,
+        "synthetic_arguments_not_misattributed": true,
+        "edition_specific_legal_check": true,
+        "french_draft_reviewed_for_source_concordance": true,
+        "final_theological_approval": false,
+        "public_release_allowed": false
+      }
     }
   ],
   "ownership_summary": {
@@ -629,5 +853,23 @@
     "limitation": "Published excerpts and confidential material not publicly available do not comprise full consultation record.",
     "human_theological_approval": false,
     "publication_gate": "UNPUBLISHED_EDITORIAL_DRAFT"
+  },
+  "audit_batch_20261008": {
+    "question_count": 10,
+    "paragraphs_checked": 30,
+    "identified_opposition_with_named_proponents": 5,
+    "synthetic_objection_roles_corrected": 5,
+    "substantive_para_edits": 3,
+    "primary_url_repairs": [
+      "RES23",
+      "RESP21"
+    ],
+    "primary_french_text_added": [
+      "FSSP22FR"
+    ],
+    "broken_links_removed": 0,
+    "human_source_approval": false,
+    "human_theological_approval": false,
+    "public_release_allowed": false
   }
 }
