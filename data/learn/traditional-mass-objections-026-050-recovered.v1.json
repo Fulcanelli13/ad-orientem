@@ -222,6 +222,12 @@
       "title": "Guillaume Cuchet, interview, Vatican News (September 2026)",
       "url": "https://www.vaticannews.va/fr/eglise/news/2026-09/pape-mutations-catholicisme-francais-entretien-guillaume-cuchet.html",
       "type": "HISTORIAN_DIRECT_INTERVIEW"
+    },
+    {
+      "id": "CDW2000",
+      "title": "Congregation for Divine Worship, 25 September 2000 formal reply on GIRM 299 and liturgical orientation, Prot. 2036/00/L",
+      "url": "https://origin.ewtn.com/catholicism/library/on-the-orientation-of-the-priest-at-mass-29753",
+      "type": "DICASTERY_PRIMARY_DECISION_REPRINT"
     }
   ],
   "records": [
@@ -1327,7 +1333,7 @@
       "paragraphs": [
         {
           "role": "substantive",
-          "text": "Vatican II deliberately required the biblical treasures to be opened more abundantly and called for a more representative portion of Scripture to be read over a multi-year cycle. The reformed lectionary genuinely implements that objective, and traditional apologetics should not deny it.",
+          "text": "Vatican II expressly required that the biblical treasures be opened more abundantly to the faithful across a multi-year cycle. The reformed Lectionary satisfies that objective by proclaiming a broader selection of scriptural passages at Mass than the older annual cycle. That is a real and relevant advantage of the reform, even though it does not alone resolve the question of liturgical excellence.",
           "source_ids": [
             "SC63",
             "GIRM",
@@ -1354,13 +1360,21 @@
               }
             ]
           },
-          "text_fr": "Vatican II a expressément demandé que les trésors bibliques soient plus largement ouverts et qu’une part plus représentative de l’Écriture soit lue sur plusieurs années. Le lectionnaire réformé répond réellement à cet objectif ; l’apologétique traditionnelle ne devrait pas le nier.",
+          "text_fr": "Vatican II demanda expressément que les trésors de l'Écriture soient ouverts plus largement aux fidèles au cours d'un cycle pluriannuel. Le lectionnaire réformé répond à cet objectif en proclamant à la messe un choix de passages bibliques plus étendu que le cycle annuel antérieur. C'est un avantage réel et pertinent de la réforme, sans que cela suffise à trancher toute la question de l'excellence liturgique.",
           "evidence_review": {
             "kind": "DOCUMENTARY_TEXTUAL_ANCHOR",
             "source_locator": "SC 51; Lectionary introduction 65–66",
             "limitation": "Numbers of readings are not a comprehensive measure of liturgical value.",
             "final_approval": false
-          }
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Vatican II deliberately required the biblical treasures to be opened more abundantly and called for a more representative portion of Scripture to be read over a multi-year cycle. The reformed lectionary genuinely implements that objective, and traditional apologetics should not deny it.",
+              "original_text_fr": "Vatican II a expressément demandé que les trésors bibliques soient plus largement ouverts et qu’une part plus représentative de l’Écriture soit lue sur plusieurs années. Le lectionnaire réformé répond réellement à cet objectif ; l’apologétique traditionnelle ne devrait pas le nier.",
+              "reason": "Replace meta-editorial statement about apologetics with substantive liturgical comparison"
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -2457,35 +2471,53 @@
       "paragraphs": [
         {
           "role": "substantive",
-          "text": "The current Roman Missal clearly permits and often facilitates celebration facing the people: GIRM 299 says altars should ordinarily be built apart from the wall so Mass can be celebrated *versus populum*, which it describes as desirable wherever possible. A traditionalist should not deny that current Roman legislation favours architectural possibility for that orientation.",
+          "text": "GIRM 299 encourages a freestanding altar so it can be walked around and *versus populum* celebration is possible. The Congregation for Divine Worship clarified on 25 September 2000 that *expedit* is a recommendation, **not a requirement**, and that the traditional orientation *versus absidem* is not excluded. The rule concerns the arrangement and possibilities of the altar; Vatican II did not require the priest to face the congregation.",
           "source_ids": [
             "GIRM",
+            "CDW2000",
             "SC63"
           ],
           "source_verification": "TEXTUAL_ANCHOR_CHECKED_EDITORIAL_REVIEW_REQUIRED",
           "legacy_placeholder_index": 40,
           "citation_review": {
-            "status": "DIRECT_TEXT_ANCHORED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
-            "evidence_locator": "GIRM 299",
+            "evidence_locator": "GIRM §299 (English text), and CDW 25 September 2000 response to Schönborn's dubium: 'negative' to exclusion of versus absidem; expedit is not obligation; SC63 no law facing people",
             "hyperlinked_sources": [
               {
                 "source_id": "GIRM",
                 "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
               },
               {
+                "source_id": "CDW2000",
+                "url": "https://origin.ewtn.com/catholicism/library/on-the-orientation-of-the-priest-at-mass-29753"
+              },
+              {
                 "source_id": "SC63",
                 "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
               }
-            ]
+            ],
+            "revision_status": "CORRECTED_AFTER_PRIMARY_DICASTERY_INTERPRETATION"
           },
-          "text_fr": "Le missel romain actuel permet et facilite souvent la célébration face au peuple : la Présentation générale, au n° 299, souhaite que l’autel soit construit séparé du mur pour permettre de célébrer *versus populum*, ce qui est présenté comme souhaitable là où cela est possible. On ne peut nier que la législation actuelle favorise cette possibilité architecturale.",
+          "text_fr": "Le n° 299 de la Présentation générale recommande un autel dégagé du mur afin de pouvoir en faire le tour et, le cas échéant, de célébrer *versus populum*. Le 25 septembre 2000, la Congrégation pour le culte divin précisa que le terme *expedit* est une recommandation, **non une obligation**, et que l'orientation traditionnelle *versus absidem* n'est pas exclue. Cette norme concerne la disposition de l'autel et les possibilités de célébration ; Vatican II n'a pas imposé au prêtre de faire face à l'assemblée.",
           "evidence_review": {
-            "kind": "DOCUMENTARY_TEXTUAL_ANCHOR",
-            "source_locator": "GIRM 299",
+            "kind": "CORRECTED_AND_SOURCE_LINKED",
+            "source_locator": "GIRM §299 (English text), and CDW 25 September 2000 response to Schönborn's dubium: 'negative' to exclusion of versus absidem; expedit is not obligation; SC63 no law facing people",
             "limitation": "An ancient universal orientation claim requires independent archaeological evidence.",
             "final_approval": false
-          }
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "The current Roman Missal clearly permits and often facilitates celebration facing the people: GIRM 299 says altars should ordinarily be built apart from the wall so Mass can be celebrated *versus populum*, which it describes as desirable wherever possible. A traditionalist should not deny that current Roman legislation favours architectural possibility for that orientation.",
+              "original_text_fr": "Le missel romain actuel permet et facilite souvent la célébration face au peuple : la Présentation générale, au n° 299, souhaite que l’autel soit construit séparé du mur pour permettre de célébrer *versus populum*, ce qui est présenté comme souhaitable là où cela est possible. On ne peut nier que la législation actuelle favorise cette possibilité architecturale.",
+              "original_sources": [
+                "GIRM",
+                "SC63"
+              ],
+              "reason": "Official 25 Sep 2000 response says GIRM 299 does not exclude ad orientem; 'expedit' is advice and is not obligation."
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -2548,14 +2580,15 @@
             "GIRM",
             "SC63",
             "RAT2000",
-            "VAT2010"
+            "VAT2010",
+            "CDW2000"
           ],
           "source_verification": "INTERPRETIVE_SYNTHESIS_ANCHORED_EDITORIAL_REVIEW_REQUIRED",
           "legacy_placeholder_index": 42,
           "citation_review": {
             "status": "SOURCED_INTERPRETIVE",
             "reviewed_on": "2026-10-08",
-            "evidence_locator": "Ratzinger ch.3; GIRM 295",
+            "evidence_locator": "CDW 2000: regardless of bodily position the spiritual direction of the Eucharistic sacrifice is towards God; GIRM §295",
             "hyperlinked_sources": [
               {
                 "source_id": "GIRM",
@@ -2572,6 +2605,10 @@
               {
                 "source_id": "VAT2010",
                 "url": "https://www.vatican.va/news_services/liturgy/2010/documents/ns_lit_doc_20100907_mistero-celebrato_en.html"
+              },
+              {
+                "source_id": "CDW2000",
+                "url": "https://origin.ewtn.com/catholicism/library/on-the-orientation-of-the-priest-at-mass-29753"
               }
             ],
             "interpretive_review": {
@@ -2584,7 +2621,7 @@
           "text_fr": "La meilleure défense traditionnelle d’*ad orientem* est donc théologique plutôt que mythologique : prêtre et fidèles adoptent ensemble une orientation de la prière vers Dieu. La Présentation générale actuelle conserve elle-même les notions de sanctuaire, d’ordre hiérarchique et d’autel comme centre vers lequel l’assemblée converge ; le culte catholique ne se réduit donc pas au face-à-face visuel du prêtre et du peuple.",
           "evidence_review": {
             "kind": "THEOLOGICAL_OR_HISTORICAL_INFERENCE",
-            "source_locator": "Ratzinger ch.3; GIRM 295",
+            "source_locator": "CDW 2000: regardless of bodily position the spiritual direction of the Eucharistic sacrifice is towards God; GIRM §295",
             "limitation": "An ancient universal orientation claim requires independent archaeological evidence.",
             "final_approval": false
           }
@@ -4286,5 +4323,19 @@
     "independently_approved_for_publication": 0,
     "human_theology_approved": false,
     "comments": "Evidence-level classification is not certification that every linked full-text passage independently proves each phrase."
+  },
+  "additional_source_corrections_20261008": {
+    "cdw2000_orientation": {
+      "id": "TLM040",
+      "paragraph_index": 40,
+      "corrected_girm299_as_not_a_versus_populum_obligation": true,
+      "original_pre_correction_text_preserved": true
+    },
+    "meta_phrasing": {
+      "id": "TLM033",
+      "paragraph_index": 20,
+      "replaced_commentary_about_apologetics_with_liturgical_argument": true
+    },
+    "final_theological_approval": false
   }
 }
