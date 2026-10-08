@@ -16,7 +16,7 @@ const batches=[
 ];
 
 assert.equal(curriculum.schema,"ao-learn-the-faith-curriculum-v1");
-assert.equal(curriculum.status,"QUESTION_MAPPING_COMPLETE_NOT_PUBLISHED");
+assert.equal(curriculum.status,"FULL_DRAFT_SOURCE_LINKED_NOT_PUBLISHED");
 assert.equal(curriculum.proposed_route,"learn.faith");
 assert.equal(curriculum.publication_gate.published,false);
 assert.equal(curriculum.publication_gate.mapping_complete,true);
@@ -38,6 +38,8 @@ assert.deepEqual(
 );
 
 assert.equal(curriculum.lessons.length,55);
+assert.equal(curriculum.content_progress.draftedLessons,55);
+assert.equal(curriculum.content_progress.allLessonDraftsPresent,true);
 assert.equal(curriculum.coverage_summary.direct,48);
 assert.equal(curriculum.coverage_summary.partial,6);
 assert.equal(curriculum.coverage_summary.unmapped,0);
