@@ -186,11 +186,11 @@
       ],
       "sourceRefs": [
         "PIUS_X_1912",
-        "SPIRAGO_1899"
+        "SPIRAGO_1899",
+        "VATICAN_I_DEI_FILIUS_CH2"
       ],
       "crossLinks": [],
-      "sourceResolution": "SUPPLEMENT_REQUIRED",
-      "sourceGap": "St Pius X gives divine attributes but not a developed natural-theology demonstration."
+      "sourceResolution": "SOURCE_MAPPED"
     },
     {
       "id": "LTF-003",
@@ -1930,6 +1930,12 @@
       "title": "Joseph Spirago — The Catechism Explained (1899)",
       "role": "TRADITIONAL_EXPLANATORY_REFERENCE",
       "url": "https://archive.org/details/catechismexplain00spiruoft"
+    },
+    "VATICAN_I_DEI_FILIUS_CH2": {
+      "title": "First Vatican Council — Dei Filius, ch. II (Revelation)",
+      "role": "DOGMATIC_PRIMARY",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html",
+      "note": "Supports the Church's teaching that God can be known with certainty from created things by the natural light of human reason, while supernatural Revelation remains distinct and necessary for man's supernatural end."
     }
   },
   "catechism_corpus": {
