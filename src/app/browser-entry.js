@@ -103,9 +103,11 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
 
 
   function paintActive() {
+    try{win?.__AO_CI_TRACE?.("ribbon:paint:enter")}catch{}
     if (!nav?.querySelectorAll) return;
     const active = controller.getActive?.();
     syncHomeIsolation(active);
+    try{win?.__AO_CI_TRACE?.("ribbon:paint:isolated")}catch{}
     for (const button of nav.querySelectorAll("[data-ao-app-surface]")) {
       const current = button.dataset?.aoAppSurface === active;
       button.classList?.toggle?.("active", current);
@@ -197,6 +199,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   }
 
   function adopt() {
+    try{win?.__AO_CI_TRACE?.("ribbon:adopt:enter")}catch{}
     if (disposed) return false;
     nav = doc.getElementById("ao-global-ribbon");
     if (!nav?.querySelectorAll) return false;
@@ -233,6 +236,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
         : "partial";
     }
     paintActive();
+    try{win?.__AO_CI_TRACE?.("ribbon:adopt:exit")}catch{}
     return state.visibleOwner;
   }
 
