@@ -9,6 +9,12 @@ on:
       - 'data/learn/biblical-patristic-answers.v1.json'
       - 'data/learn/sedevacantism-preconciliar-debates.v1.json'
       - 'data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json'
+      - 'data/learn/traditional-mass-objections-*.json'
+      - 'data/learn/traditionis-custodes-debates.v1.json'
+      - 'data/learn/church-crisis-canonical.v1.json'
+      - 'data/learn/church-crisis-reconciliation.v1.json'
+      - 'tests/traditional-mass-objections-reconciliation.mjs'
+      - 'tests/traditionis-custodes-debates.mjs'
       - '.github/workflows/formation-research-preview.yml'
   workflow_dispatch:
 permissions:
@@ -23,3 +29,7 @@ jobs:
           node-version: '22'
       - name: Check bilingual source-linked Formation preview
         run: node tests/formation-research-preview.mjs
+      - name: Check Traditional Mass objections and canonical ownership
+        run: node tests/traditional-mass-objections-reconciliation.mjs
+      - name: Check Traditionis custodes bilingual debate sources
+        run: node tests/traditionis-custodes-debates.mjs
