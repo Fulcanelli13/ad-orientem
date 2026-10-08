@@ -1,7 +1,7 @@
 {
   "schema": "ao-learn-the-faith-curriculum-v1",
   "version": "1.1.0",
-  "status": "QUESTION_MAPPING_COMPLETE_NOT_PUBLISHED",
+  "status": "FULL_DRAFT_SOURCE_LINKED_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "proposed_route": "learn.faith",
   "title": {
@@ -11,7 +11,7 @@
   "purpose": "Guided positive Catholic doctrine in a coherent order between the Daily Catechism and the full Traditional Catechism reference.",
   "publication_gate": {
     "published": false,
-    "rule": "Do not expose learn.faith until every lesson has paragraph-level source-resolved bilingual prose. The 433-question St Pius X corpus is now fully mapped, but several lessons require explicit supplementary traditional/magisterial sources.",
+    "rule": "Do not expose learn.faith until all 55 bilingual lesson drafts pass theological/editorial review, every supplementary-source gap is resolved, and paragraph-level source links are verified. The St Pius X Q1-Q433 mapping and first source-linked bilingual draft are complete.",
     "current_reference_route": "learn.catechism",
     "current_daily_route": "learn.catechism.daily",
     "mapping_complete": true,
@@ -4796,7 +4796,63 @@
         422,
         423
       ],
-      "supplementRequired": false
+      "supplementRequired": false,
+      "summary": {
+        "en": "Prayer is the raising of mind and heart to God in adoration, thanksgiving, contrition and petition; it is necessary for the Christian life.",
+        "fr": "La prière est l’élévation de l’esprit et du cœur vers Dieu dans l’adoration, l’action de grâces, la contrition et la demande ; elle est nécessaire à la vie chrétienne."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-047-P01",
+          "text": {
+            "en": "Prayer can be mental or vocal. Both require attention to God and an interior disposition rather than empty repetition.",
+            "fr": "La prière peut être mentale ou vocale. L’une et l’autre exigent l’attention à Dieu et une disposition intérieure plutôt qu’une répétition vide."
+          },
+          "catechismRefs": [
+            414,
+            415,
+            416,
+            417,
+            418
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-047-P02",
+          "text": {
+            "en": "Prayer is necessary because we depend upon God for grace and perseverance; Christ teaches us to ask the Father in His name.",
+            "fr": "La prière est nécessaire parce que nous dépendons de Dieu pour la grâce et la persévérance ; le Christ nous apprend à demander au Père en son nom."
+          },
+          "catechismRefs": [
+            419,
+            420,
+            421
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-047-P03",
+          "text": {
+            "en": "God does not promise to grant every request exactly as imagined; Christian petition must be ordered to what truly serves salvation and the divine will.",
+            "fr": "Dieu ne promet pas d’accorder toute demande exactement comme nous l’imaginons ; la prière chrétienne doit être ordonnée à ce qui sert véritablement le salut et la volonté divine."
+          },
+          "catechismRefs": [
+            422,
+            423
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-048",
@@ -4829,7 +4885,58 @@
         427,
         428
       ],
-      "supplementRequired": false
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Our Father, taught by Christ Himself, gives the basic order of Christian desire: God’s glory first, then the goods needed for faithful life and salvation.",
+        "fr": "Le Notre Père, enseigné par le Christ Lui-même, donne l’ordre fondamental du désir chrétien : d’abord la gloire de Dieu, puis les biens nécessaires à une vie fidèle et au salut."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-048-P01",
+          "text": {
+            "en": "The Our Father is the most excellent vocal prayer because Christ Himself gave it to His disciples.",
+            "fr": "Le Notre Père est la prière vocale la plus excellente parce que le Christ Lui-même l’a donnée à ses disciples."
+          },
+          "catechismRefs": [
+            424,
+            425
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-048-P02",
+          "text": {
+            "en": "Its petitions teach us to seek first God’s name, kingdom and will, and then to ask rightly for daily needs, forgiveness, protection from temptation and deliverance from evil.",
+            "fr": "Ses demandes nous apprennent à rechercher d’abord le Nom de Dieu, son règne et sa volonté, puis à demander avec droiture les besoins quotidiens, le pardon, la protection dans la tentation et la délivrance du mal."
+          },
+          "catechismRefs": [
+            426,
+            427
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-048-P03",
+          "text": {
+            "en": "Calling God 'Our Father' expresses both adoption by grace and the fraternal character of Christian prayer: we do not pray as isolated individuals.",
+            "fr": "Appeler Dieu « Notre Père » exprime à la fois l’adoption par la grâce et le caractère fraternel de la prière chrétienne : nous ne prions pas comme des individus isolés."
+          },
+          "catechismRefs": [
+            428
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-049",
@@ -4862,7 +4969,59 @@
         431,
         432
       ],
-      "supplementRequired": false
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Hail Mary joins biblical praise of the Blessed Virgin to the Church’s petition for her intercession now and at the hour of death.",
+        "fr": "L’Ave Maria unit la louange biblique de la Très Sainte Vierge à la demande de l’Église pour son intercession maintenant et à l’heure de notre mort."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-049-P01",
+          "text": {
+            "en": "The Hail Mary is the Church’s principal traditional prayer of invocation to the Blessed Virgin.",
+            "fr": "L’Ave Maria est la principale prière traditionnelle de l’Église pour invoquer la Très Sainte Vierge."
+          },
+          "catechismRefs": [
+            431
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-049-P02",
+          "text": {
+            "en": "In it we honour Mary for the gifts of God and ask her maternal intercession, especially for perseverance and a holy death.",
+            "fr": "Nous y honorons Marie pour les dons de Dieu et demandons son intercession maternelle, spécialement pour la persévérance et une sainte mort."
+          },
+          "catechismRefs": [
+            432
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-049-P03",
+          "text": {
+            "en": "Marian prayer is Christ-centred when rightly understood: honour given to Mary recognizes the work of God in her and seeks her prayer, not divine worship.",
+            "fr": "La prière mariale est centrée sur le Christ lorsqu’elle est correctement comprise : l’honneur rendu à Marie reconnaît l’œuvre de Dieu en elle et demande sa prière, sans lui rendre le culte divin."
+          },
+          "catechismRefs": [
+            429,
+            430,
+            433
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-050",
@@ -4895,7 +5054,61 @@
       "supplementarySourceNeed": "The shorter catechism has Marian material but no complete standalone Mariology lesson; supplement from authoritative Marian doctrine.",
       "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
       "primaryCatechismRefs": [],
-      "supplementRequired": true
+      "supplementRequired": true,
+      "summary": {
+        "en": "Mary is the Virgin Mother of Jesus Christ, preserved by a singular grace from original sin and honoured above the saints because of her unique relation to the Incarnate Word.",
+        "fr": "Marie est la Vierge Mère de Jésus-Christ, préservée par une grâce singulière du péché originel et honorée au-dessus des saints en raison de sa relation unique avec le Verbe incarné."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-050-P01",
+          "text": {
+            "en": "Jesus Christ was truly born of the Blessed Virgin Mary; Saint Joseph was not His natural father.",
+            "fr": "Jésus-Christ est véritablement né de la Très Sainte Vierge Marie ; saint Joseph n’était pas son père naturel."
+          },
+          "catechismRefs": [
+            82,
+            83
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-050-P02",
+          "text": {
+            "en": "The catechism explicitly identifies Mary as the unique child of Adam preserved from original sin, expressing the doctrine of the Immaculate Conception.",
+            "fr": "Le catéchisme identifie explicitement Marie comme l’unique enfant d’Adam préservé du péché originel, exprimant ainsi la doctrine de l’Immaculée Conception."
+          },
+          "catechismRefs": [
+            138
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-050-P03",
+          "text": {
+            "en": "Catholic devotion distinguishes the supreme worship due to God from the singular honour shown to Mary and from the veneration of the saints; her intercession is entirely dependent upon Christ.",
+            "fr": "La dévotion catholique distingue l’adoration suprême due à Dieu de l’honneur singulier rendu à Marie et de la vénération des saints ; son intercession dépend entièrement du Christ."
+          },
+          "catechismRefs": [
+            429,
+            430,
+            433
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM",
+            "SPIRAGO-1899"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-051",
@@ -4932,7 +5145,65 @@
         430,
         433
       ],
-      "supplementRequired": false
+      "supplementRequired": false,
+      "summary": {
+        "en": "The saints remain united with the Church in Christ; Catholics honour them, ask their intercession and venerate relics and sacred images without giving creatures the worship owed to God.",
+        "fr": "Les saints demeurent unis à l’Église dans le Christ ; les catholiques les honorent, demandent leur intercession et vénèrent les reliques et les images sacrées sans rendre aux créatures l’adoration due à Dieu."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-051-P01",
+          "text": {
+            "en": "The Communion of Saints includes the Church on earth, the blessed in heaven and the souls in purgatory, united through Christ in spiritual goods.",
+            "fr": "La Communion des saints comprend l’Église sur terre, les bienheureux au ciel et les âmes du purgatoire, unis par le Christ dans les biens spirituels."
+          },
+          "catechismRefs": [
+            121,
+            122,
+            123
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-051-P02",
+          "text": {
+            "en": "Veneration of saints, relics and sacred images is relative honour directed to persons and holy realities connected with God; it is not adoration of created things.",
+            "fr": "La vénération des saints, des reliques et des images sacrées est un honneur relatif dirigé vers les personnes et les réalités saintes liées à Dieu ; elle n’est pas l’adoration de choses créées."
+          },
+          "catechismRefs": [
+            174,
+            175,
+            176,
+            177,
+            178
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-051-P03",
+          "text": {
+            "en": "Asking the saints to pray for us does not rival Christ’s unique mediation, because every grace and every intercession has its efficacy through Him.",
+            "fr": "Demander aux saints de prier pour nous ne rivalise pas avec l’unique médiation du Christ, car toute grâce et toute intercession tirent leur efficacité de Lui."
+          },
+          "catechismRefs": [
+            429,
+            430,
+            433
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-052",
@@ -4975,7 +5246,67 @@
         35,
         36
       ],
-      "supplementRequired": true
+      "supplementRequired": true,
+      "summary": {
+        "en": "Sacramentals are sacred signs and practices instituted by the Church that dispose Christians toward grace and sanctify circumstances of life without being sacraments.",
+        "fr": "Les sacramentaux sont des signes et pratiques sacrés institués par l’Église qui disposent les chrétiens à la grâce et sanctifient les circonstances de la vie sans être des sacrements."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-052-P01",
+          "text": {
+            "en": "The Sign of the Cross is a fundamental Christian sacramental gesture: it professes the Trinity and the Redemption and should be used with faith rather than mechanically.",
+            "fr": "Le signe de la Croix est un geste sacramental chrétien fondamental : il professe la Trinité et la Rédemption et doit être fait avec foi plutôt que mécaniquement."
+          },
+          "catechismRefs": [
+            32,
+            33,
+            34,
+            35,
+            36
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-052-P02",
+          "text": {
+            "en": "Blessings, sacred objects, relics and images belong to the Church’s wider sacramental life; their value comes from prayer, ecclesial institution and their reference to divine realities.",
+            "fr": "Les bénédictions, objets sacrés, reliques et images appartiennent à la vie sacramentale plus large de l’Église ; leur valeur vient de la prière, de l’institution ecclésiale et de leur référence aux réalités divines."
+          },
+          "catechismRefs": [
+            174,
+            175,
+            176,
+            177,
+            178
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-052-P03",
+          "text": {
+            "en": "Sacramentals must be distinguished from the seven sacraments: they do not confer sacramental grace in the same manner and should never be treated as magical objects.",
+            "fr": "Les sacramentaux doivent être distingués des sept sacrements : ils ne confèrent pas la grâce sacramentelle de la même manière et ne doivent jamais être traités comme des objets magiques."
+          },
+          "catechismRefs": [
+            267,
+            268,
+            269
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-053",
@@ -5024,7 +5355,66 @@
       "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
       "supplementNeeded": "The short catechism covers feast-day duties and Church precepts, not a full theology/structure of the liturgical year.",
       "primaryCatechismRefs": [],
-      "supplementRequired": true
+      "supplementRequired": true,
+      "summary": {
+        "en": "The liturgical year orders Christian time around the mysteries of Christ, the feasts of Our Lady and the saints, and the Church’s recurring seasons of worship, penance and joy.",
+        "fr": "L’année liturgique ordonne le temps chrétien autour des mystères du Christ, des fêtes de Notre-Dame et des saints, et des temps récurrents de culte, de pénitence et de joie de l’Église."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-053-P01",
+          "text": {
+            "en": "Christian feast days sanctify time through public worship, especially the Holy Sacrifice of the Mass, and remind the faithful that worship is a communal duty rather than a purely private preference.",
+            "fr": "Les jours de fête chrétiens sanctifient le temps par le culte public, spécialement le Saint Sacrifice de la Messe, et rappellent aux fidèles que le culte est un devoir communautaire et non une simple préférence privée."
+          },
+          "catechismRefs": [
+            184,
+            185,
+            186,
+            189,
+            216,
+            217
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "MISSAL-1962"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-053-P02",
+          "text": {
+            "en": "The Roman liturgical year presents the mysteries of Christ and the saints in an ordered cycle; its seasons and feasts teach doctrine through repeated worship and Scripture.",
+            "fr": "L’année liturgique romaine présente les mystères du Christ et les saints dans un cycle ordonné ; ses temps et ses fêtes enseignent la doctrine par la répétition du culte et de l’Écriture."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "MISSAL-1962",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-053-P03",
+          "text": {
+            "en": "Fasting, abstinence and other seasonal disciplines express this sanctification of time, but specific legal obligations can change and must be distinguished from the enduring spiritual principles.",
+            "fr": "Le jeûne, l’abstinence et les autres disciplines saisonnières expriment cette sanctification du temps, mais les obligations juridiques précises peuvent changer et doivent être distinguées des principes spirituels permanents."
+          },
+          "catechismRefs": [
+            218,
+            219,
+            220,
+            221,
+            222,
+            226
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "MISSAL-1962"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-054",
@@ -5084,7 +5474,79 @@
         251,
         277
       ],
-      "supplementRequired": false
+      "supplementRequired": false,
+      "summary": {
+        "en": "Growth in holiness is the gradual perfection of grace through prayer, sacraments, virtue, self-denial and faithful fulfilment of one’s duties.",
+        "fr": "La croissance dans la sainteté est la perfection progressive de la grâce par la prière, les sacrements, la vertu, le renoncement à soi et l’accomplissement fidèle de ses devoirs."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-054-P01",
+          "text": {
+            "en": "Holiness is not reserved to a spiritual elite: every Christian is called to live in grace, resist sin and exercise the virtues according to his state of life.",
+            "fr": "La sainteté n’est pas réservée à une élite spirituelle : tout chrétien est appelé à vivre en grâce, à résister au péché et à exercer les vertus selon son état de vie."
+          },
+          "catechismRefs": [
+            15,
+            27,
+            155,
+            227,
+            230
+          ],
+          "sourceRefs": [
+            "PIUSX-1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-054-P02",
+          "text": {
+            "en": "The theological virtues, moral virtues, evangelical counsels and Beatitudes give an ordered picture of Christian perfection rather than a collection of disconnected devotions.",
+            "fr": "Les vertus théologales, les vertus morales, les conseils évangéliques et les Béatitudes donnent une vision ordonnée de la perfection chrétienne plutôt qu’un ensemble de dévotions sans lien."
+          },
+          "catechismRefs": [
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            263,
+            264,
+            265,
+            266
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "SPIRAGO-1899"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-054-P03",
+          "text": {
+            "en": "Perseverance requires cooperation with grace: preserving sacramental grace, prayer, regular conversion and fidelity in ordinary duties are more fundamental than chasing unusual experiences.",
+            "fr": "La persévérance exige la coopération avec la grâce : conserver la grâce sacramentelle, prier, se convertir régulièrement et être fidèle aux devoirs ordinaires sont plus fondamentaux que la recherche d’expériences extraordinaires."
+          },
+          "catechismRefs": [
+            277
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "SPIRAGO-1899"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     },
     {
       "id": "LTF-055",
@@ -5136,7 +5598,79 @@
       "mappingStatus": "CATECHISM_MAPPED",
       "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
       "primaryCatechismRefs": [],
-      "supplementRequired": false
+      "supplementRequired": false,
+      "summary": {
+        "en": "Christian preparation for death means living in grace, receiving the Church’s sacramental help, making peace with God and neighbour, and keeping the last things before the mind without despair.",
+        "fr": "La préparation chrétienne à la mort consiste à vivre en grâce, recevoir l’aide sacramentelle de l’Église, se réconcilier avec Dieu et le prochain, et garder les fins dernières présentes à l’esprit sans désespoir."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-055-P01",
+          "text": {
+            "en": "Death is followed by particular judgment; Christian readiness therefore begins long before the final illness with a life ordered toward God and repentance from mortal sin.",
+            "fr": "La mort est suivie du jugement particulier ; la préparation chrétienne commence donc bien avant la dernière maladie par une vie ordonnée à Dieu et le repentir du péché mortel."
+          },
+          "catechismRefs": [
+            95,
+            96,
+            97,
+            98,
+            99,
+            156,
+            157,
+            158,
+            159
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-055-P02",
+          "text": {
+            "en": "The Church accompanies serious illness with Confession when possible, Extreme Unction and the Eucharist as Viaticum; these are not merely funeral customs but sacramental helps for the living.",
+            "fr": "L’Église accompagne la maladie grave par la Confession lorsque cela est possible, l’Extrême-Onction et l’Eucharistie comme Viatique ; il ne s’agit pas de simples coutumes funéraires mais d’aides sacramentelles pour les vivants."
+          },
+          "catechismRefs": [
+            392,
+            393,
+            394,
+            395,
+            396
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "ROMAN-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-055-P03",
+          "text": {
+            "en": "Meditation on heaven, purgatory, hell and judgment should produce conversion, hope and seriousness, not morbid curiosity or despair.",
+            "fr": "La méditation sur le ciel, le purgatoire, l’enfer et le jugement doit produire conversion, espérance et sérieux, non curiosité morbide ni désespoir."
+          },
+          "catechismRefs": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            100,
+            101,
+            102,
+            103,
+            104
+          ],
+          "sourceRefs": [
+            "PIUSX-1912",
+            "SPIRAGO-1899"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
     }
   ],
   "ownership_boundaries": [
@@ -5529,8 +6063,9 @@
     "mappingRule": "Each St Pius X question has exactly one primary guided lesson owner. Supporting catechismRefs may overlap where a doctrine legitimately informs more than one lesson."
   },
   "content_progress": {
-    "draftedLessons": 46,
+    "draftedLessons": 55,
     "totalLessons": 55,
-    "lastBatch": "LTF-022–LTF-046"
+    "lastBatch": "LTF-047–LTF-055",
+    "allLessonDraftsPresent": true
   }
 }
