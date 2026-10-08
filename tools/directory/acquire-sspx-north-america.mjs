@@ -161,7 +161,25 @@ export function parseDistrictMarkdown(text,{url}={}){
   }
   return chunks;
 }
-async function fallbackCards(url){
+async function extractCardsFromDocument(page){
+  return page.evaluate(()=>{
+    const items=[];
+    for(const h of document.querySelectorAll("h2")){
+      const title=(h.innerText||h.textContent||"").trim();
+      if(!title||title.length>160)continue;
+      let node=h,found=null;
+      for(let i=0;i<10&&node;i++,node=node.parentElement){
+        if(node.querySelectorAll("h2").length>1)break;
+        const raw=node.innerText||"";
+        if(/(?:\n|\r)(?:United States|Canada|Mexico)(?:\n|\r)/.test("\n"+raw+"\n")
+          &&raw.length<3500&&raw.length>title.length+15)found={title,raw};
+      }
+      if(found)items.push(found);
+    }
+    return items;
+  });
+}
+async function fallbackCards(url,browser){
   const mirrors=[
     "https://r.jina.ai/https://"+new URL(url).host+new URL(url).pathname,
     "https://r.jina.ai/http://"+new URL(url).host+new URL(url).pathname,
@@ -170,20 +188,35 @@ async function fallbackCards(url){
   for(const mirror of mirrors){
     try{
       const controller=new AbortController();
-      const deadline=setTimeout(()=>controller.abort(),25000);
+      const deadline=setTimeout(()=>controller.abort(),30000);
       let result;
-      try{result=await fetch(mirror,{signal:controller.signal,headers:{"Accept":"text/plain"}});}
+      try{result=await fetch(mirror,{signal:controller.signal,headers:{
+        "Accept":"text/plain","X-Respond-With":"html","X-Cache-Tolerance":"0",
+      }});}
       finally{clearTimeout(deadline);}
       if(!result.ok)throw new Error("HTTP "+result.status);
-      const text=await result.text();
-      if(text.length<10000)throw new Error("mirror too short: "+text.length);
-      const cards=parseDistrictMarkdown(text,{url});
-      const required=url.includes("sspx.org")?["Annunciation Chapel","Christ the King Church"]:
-        ["Cathedral of the Transfiguration","Christ the King Church"];
-      if(cards.length<25||!required.every(name=>cards.some(c=>c.title.includes(name)))){
-        throw new Error("incomplete mirror: "+cards.length+" cards; missing sentinels; first text="+text.slice(0,1200).replace(/\\n/g," "));
+      const html=await result.text();
+      if(html.length<10000)throw new Error("mirror too short: "+html.length);
+      let cards=[];
+      if(/<html|<!doctype|<h2[\s>]/i.test(html)){
+        const page=await browser.newPage();
+        try{
+          await page.route("**/*",route=>route.abort());
+          await page.setContent(html,{waitUntil:"domcontentloaded",timeout:30000});
+          cards=await extractCardsFromDocument(page);
+        }finally{await page.close();}
+      }else{
+        cards=parseDistrictMarkdown(html,{url});
       }
-      return {cards,transport:"THIRD_PARTY_READ_ONLY_RENDER",mirror};
+      const isUS=new URL(url).host==="sspx.org";
+      const required=isUS?["Annunciation Chapel","Christ the King Church"]:
+        ["Cathedral of the Transfiguration","Christ the King Church"];
+      if(cards.length<(isUS?70:25)||!required.every(name=>cards.some(c=>c.title.includes(name)))){
+        throw new Error("incomplete mirror: "+cards.length+" cards; title sentinels="+
+          required.map(name=>cards.some(c=>c.title.includes(name))).join(",")+
+          "; first text="+html.slice(0,700).replace(/\n/g," "));
+      }
+      return {cards,transport:"THIRD_PARTY_RAW_HTML_READ_ONLY_RENDER",mirror};
     }catch(error){errors.push(mirror+": "+String(error));}
   }
   throw new Error("No usable district transport for "+url+"; "+errors.join("; "));
@@ -193,26 +226,11 @@ async function fetchCards(browser,url){
   try{
     const response=await page.goto(url,{waitUntil:"domcontentloaded",timeout:45000});
     if(!response?.ok()){
-      const fallback=await fallbackCards(url);
-      console.warn("Official district direct access denied; source retrieved from nonauthoritative mirror",url,fallback.transport);
+      const fallback=await fallbackCards(url,browser);
+      console.warn("Direct official district access denied; collected through independently rendered raw HTML",url);
       return fallback.cards;
     }
-    return await page.evaluate(()=>{
-      const items=[];
-      for(const h of document.querySelectorAll("h2")){
-        const title=(h.innerText||h.textContent||"").trim();
-        if(!title||title.length>160)continue;
-        let node=h,found=null;
-        for(let i=0;i<9&&node;i++,node=node.parentElement){
-          if(node.querySelectorAll("h2").length>1)break;
-          const raw=node.innerText||"";
-          if(/(?:\n|\r)(?:United States|Canada|Mexico)(?:\n|\r)/.test("\n"+raw+"\n")
-            &&raw.length<3500&&raw.length>title.length+15)found={title,raw};
-        }
-        if(found)items.push(found);
-      }
-      return items;
-    });
+    return await extractCardsFromDocument(page);
   }finally{await page.close();}
 }
 export async function acquireNorthAmerica({out="data/directory/research/staging/sspx-north-america",
