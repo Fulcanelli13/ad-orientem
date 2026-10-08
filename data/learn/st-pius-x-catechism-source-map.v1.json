@@ -1,0 +1,298 @@
+{
+  "schema": "ao-st-pius-x-catechism-source-map-v1",
+  "version": "1.0.0",
+  "status": "CANONICAL_REFERENCE_MAP",
+  "created_at": "2026-10-08",
+  "corpus": {
+    "title": "St Pius X — Catechism of Christian Doctrine / Shorter Catechism (1912)",
+    "questionCount": 433,
+    "ranges": [
+      {
+        "id": "intro",
+        "from": 1,
+        "to": 27,
+        "title": "First notions of the Faith",
+        "part": "intro",
+        "enPath": "lezione-preliminare.md",
+        "frPath": "0-intro/premieres-notions.json"
+      },
+      {
+        "id": "mysteries",
+        "from": 28,
+        "to": 36,
+        "title": "Principal mysteries & Sign of the Cross",
+        "part": "faith",
+        "enPath": "credo-misteri-principali.md",
+        "frPath": "1-credo/1-mysteres-principaux.json"
+      },
+      {
+        "id": "trinity",
+        "from": 37,
+        "to": 50,
+        "title": "Unity and Trinity of God",
+        "part": "faith",
+        "enPath": "credo-unita-trinita.md",
+        "frPath": "1-credo/2-lunite-et-la-trinite.json"
+      },
+      {
+        "id": "creation",
+        "from": 51,
+        "to": 77,
+        "title": "Creation, man and the Fall",
+        "part": "faith",
+        "enPath": "credo-creazione.md",
+        "frPath": "1-credo/3-creation-du-monde.json"
+      },
+      {
+        "id": "incarnation",
+        "from": 78,
+        "to": 91,
+        "title": "Incarnation, Passion and Death",
+        "part": "faith",
+        "enPath": "credo-incarnazione.md",
+        "frPath": "1-credo/4-lincarnation.json"
+      },
+      {
+        "id": "lastthings",
+        "from": 92,
+        "to": 104,
+        "title": "Second Coming and the judgments",
+        "part": "faith",
+        "enPath": "credo-venuta.md",
+        "frPath": "1-credo/5-venue-de-jesus.json"
+      },
+      {
+        "id": "church",
+        "from": 105,
+        "to": 127,
+        "title": "The Catholic Church & Communion of Saints",
+        "part": "faith",
+        "enPath": "credo-chiesa.md",
+        "frPath": "1-credo/6-leglise-catholique.json"
+      },
+      {
+        "id": "sin",
+        "from": 128,
+        "to": 155,
+        "title": "Forgiveness of sins & sin",
+        "part": "faith",
+        "enPath": "credo-remissione-peccati.md",
+        "frPath": "1-credo/7-remission-des-peches.json"
+      },
+      {
+        "id": "resurrection",
+        "from": 156,
+        "to": 160,
+        "title": "Resurrection & life everlasting",
+        "part": "faith",
+        "enPath": "credo-risurrezione.md",
+        "frPath": "1-credo/8-resurrection.json"
+      },
+      {
+        "id": "commandments",
+        "from": 161,
+        "to": 212,
+        "title": "Commandments of God",
+        "part": "moral",
+        "enPath": "legge-comandamenti.md",
+        "frPath": "2-morale/1-commandements.json"
+      },
+      {
+        "id": "precepts",
+        "from": 213,
+        "to": 226,
+        "title": "Precepts of the Church",
+        "part": "moral",
+        "enPath": "legge-precetti.md",
+        "frPath": "2-morale/2-preceptes-de-leglise.json"
+      },
+      {
+        "id": "virtues",
+        "from": 227,
+        "to": 266,
+        "title": "Virtues and Christian life",
+        "part": "moral",
+        "enPath": "legge-virtu.md",
+        "frPath": "2-morale/3-vertus.json"
+      },
+      {
+        "id": "sacraments",
+        "from": 267,
+        "to": 289,
+        "title": "Sacraments in general",
+        "part": "grace",
+        "enPath": "sacramenti-in-generale.md",
+        "frPath": "3-moyens-grace/1-sacrements.json"
+      },
+      {
+        "id": "baptism",
+        "from": 290,
+        "to": 303,
+        "title": "Baptism",
+        "part": "grace",
+        "enPath": "sacramento-battesimo.md",
+        "frPath": "3-moyens-grace/2-bapteme.json"
+      },
+      {
+        "id": "confirmation",
+        "from": 304,
+        "to": 315,
+        "title": "Confirmation",
+        "part": "grace",
+        "enPath": "sacramento-cresima.md",
+        "frPath": "3-moyens-grace/3-confirmation.json"
+      },
+      {
+        "id": "eucharist",
+        "from": 316,
+        "to": 354,
+        "title": "Eucharist & Holy Mass",
+        "part": "grace",
+        "enPath": "sacramento-eucaristia.md",
+        "frPath": "3-moyens-grace/4-leucharistie.json"
+      },
+      {
+        "id": "penance",
+        "from": 355,
+        "to": 391,
+        "title": "Penance",
+        "part": "grace",
+        "enPath": "sacramento-penitenza.md",
+        "frPath": "3-moyens-grace/5-penitence.json"
+      },
+      {
+        "id": "unction",
+        "from": 392,
+        "to": 396,
+        "title": "Extreme Unction",
+        "part": "grace",
+        "enPath": "sacramento-estrema-unzione.md",
+        "frPath": "3-moyens-grace/6-lextreme-onction.json"
+      },
+      {
+        "id": "orders",
+        "from": 397,
+        "to": 405,
+        "title": "Holy Orders",
+        "part": "grace",
+        "enPath": "sacramento-ordine.md",
+        "frPath": "3-moyens-grace/7-lordre.json"
+      },
+      {
+        "id": "matrimony",
+        "from": 406,
+        "to": 413,
+        "title": "Matrimony",
+        "part": "grace",
+        "enPath": "sacramento-matrimonio.md",
+        "frPath": "3-moyens-grace/8-mariage.json"
+      },
+      {
+        "id": "prayer",
+        "from": 414,
+        "to": 433,
+        "title": "Prayer",
+        "part": "prayer",
+        "enPath": "orazione.md",
+        "frPath": "3-moyens-grace/9-priere-moyen.json"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "PX1912-EN-STRUCTURED",
+      "title": "Ember open Catholic corpus — Pius X Catechism English study translation",
+      "url": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
+      "role": "STRUCTURED_EN_REFERENCE"
+    },
+    {
+      "id": "PX1912-FR-STRUCTURED",
+      "title": "CatéchismeCatholique.fr — Petit Catéchisme de Saint Pie X",
+      "url": "https://catechismecatholique.fr/petit-catechisme",
+      "role": "STRUCTURED_FR_REFERENCE"
+    },
+    {
+      "id": "PX1912-FR-HISTORICAL",
+      "title": "Catéchisme de la doctrine chrétienne — Emmanuel Bailly translation, 1913 edition line",
+      "url": "https://www.liberius.net/livres/Catechisme_de_la_doctrine_chretienne_000000426.pdf",
+      "role": "HISTORICAL_FR_REFERENCE"
+    },
+    {
+      "id": "ROMAN-CATECHISM",
+      "title": "Roman Catechism / Catechism of the Council of Trent",
+      "url": "https://en.wikisource.org/wiki/The_catechism_of_the_Council_of_Trent",
+      "role": "DEEPER_CATECHETICAL_REFERENCE"
+    },
+    {
+      "id": "SPIRAGO-1899",
+      "title": "Joseph Spirago — The Catechism Explained",
+      "url": "https://archive.org/details/catechismexplain00spiruoft",
+      "role": "TRADITIONAL_EXPLANATORY_REFERENCE"
+    }
+  ],
+  "historical_discipline_flags": [
+    {
+      "questions": [
+        100
+      ],
+      "issue": "Limbo is a traditional theological hypothesis, not defined dogma."
+    },
+    {
+      "questions": [
+        218,
+        219,
+        220,
+        221
+      ],
+      "issue": "Fasting and abstinence discipline has changed since 1912."
+    },
+    {
+      "questions": [
+        226
+      ],
+      "issue": "Marriage-season discipline has changed since 1912."
+    },
+    {
+      "questions": [
+        303
+      ],
+      "issue": "Current law expresses infant-Baptism timing differently."
+    },
+    {
+      "questions": [
+        339,
+        340
+      ],
+      "issue": "Historical Eucharistic fast; present Roman discipline differs."
+    },
+    {
+      "questions": [
+        390
+      ],
+      "issue": "Old days/years terminology for partial indulgences was abolished."
+    },
+    {
+      "questions": [
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400
+      ],
+      "issue": "Terminology and disciplinary details around Extreme Unction/Holy Orders require current-law distinction."
+    },
+    {
+      "questions": [
+        408,
+        409,
+        410,
+        411,
+        412
+      ],
+      "issue": "Some canonical/civil marriage details reflect the 1912 context."
+    }
+  ]
+}
