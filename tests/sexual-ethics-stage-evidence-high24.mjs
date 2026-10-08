@@ -53,4 +53,4 @@ for(const id of pending){
  const item=CSE_QUESTION_MAP[id];
  assert.ok(paragraphRefsFor(item,"debate","opposition").length>0);
 }
-console.log("PASS 24 high-priority debates: 192 stage-resolved chains, 280 existing source locators, 31 unchanged fallback cases; no false publication or certification.");
+console.log("PASS high-priority Sexual Ethics: 192 stage-resolved chains and 280 intact original source locators; 31 additional debates are verified in separate stage-mapping test.");
