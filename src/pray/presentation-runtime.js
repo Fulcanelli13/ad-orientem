@@ -3,6 +3,7 @@ import "./presentation-styles.js";
 import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
+import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -232,14 +233,17 @@ function applySettingsPreferences(raw={}){
   angelus:{seasonalForm:S.angelusMode==='regina'?'regina_caeli':S.angelusMode,traditionalConclusion:!!S.angelusHistoricalConclusion}
  };
 }
+let prayTouch=null;
 function shell(){
   let r=document.getElementById(ROOT_ID);if(r)return r;
-  r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');
+  r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');r.dataset.aoDevotionalUx=DEVOTIONAL_UX_CONTRACT_VERSION;
   r.innerHTML='<section class="aoP435930Sheet" role="dialog" aria-modal="true" aria-labelledby="aoP435930Title"><div class="aoP435930Mount"></div></section>';
   document.body.appendChild(r);
   r.addEventListener('click',onClick);
   r.addEventListener('change',onChange);
   r.addEventListener('input',onInput);
+  r.addEventListener('touchstart',onPrayTouchStart,{passive:true});
+  r.addEventListener('touchend',onPrayTouchEnd,{passive:true});
   return r;
 }
 function mount(){return shell().querySelector('.aoP435930Mount')}
@@ -272,17 +276,19 @@ function open(id,opts={}){
   queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());
   return true;
 }
-function close({silent=false}={}){
+function close({silent=false,preserve=false}={}){
   stopTimer();const r=document.getElementById(ROOT_ID);r?.classList.remove('open');r?.setAttribute('aria-hidden','true');document.body.classList.remove('aoP435930Open');
-  // Hard privacy boundary: examination state exists only for this open session.
-  CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
-  BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
-  if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
-  const ret=returnContext;returnContext=null;if(!silent){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>window.AO_NAV_V362?.restore?.(ret));
+  if(!preserve){
+    // Privacy-sensitive preparation is memory-only and is cleared on a true close.
+    CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
+    BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
+    if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
+  }
+  const ret=returnContext;returnContext=null;if(!silent&&!preserve){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>window.AO_NAV_V362?.restore?.(ret));
   try{returnFocus?.focus?.()}catch{} returnFocus=null;
 }
 function head(title,sub=''){
- const trailing=`<button type="button" class="aoP435930Close" data-p435930-close aria-label="${esc(L('Close','Fermer'))}">${assetIcon('ao-ui-close')}</button>`;
+ const trailing=`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>`;
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
@@ -992,6 +998,51 @@ function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr|
 let prayerReturnView=null,prayerId=null;
 function pushView(v=view){if(v)navStack.push(v);return navStack.length}
 function popView(fallback='home'){view=navStack.length?navStack.pop():fallback;return view}
+function backToParent(){
+ if(view==='family'){view='home';familyId=null;navStack=[];return render()}
+ if(view==='adoration'&&ADOR.mode!=='home'){ADOR.mode='home';return render()}
+ if(view==='library'&&LIB.open){LIB.open=null;return render()}
+ if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}
+ if(view!=='home'&&navStack.length){popView();return render()}
+ if(view!=='home'&&familyId){view='family';return render()}
+ return close();
+}
+function goGlobalHome(){
+ externalResume=captureResume();
+ close({silent:true,preserve:true});
+ const nav=window?.AO_APP_SHELL_V1?.navigate?.('home');
+ if(nav&&typeof nav.catch==='function')nav.catch(()=>window.AO_NAV_V362?.openHome?.());
+ else if(!nav)window.AO_NAV_V362?.openHome?.();
+ return true;
+}
+function touchBlocked(target){return !!target?.closest?.('button,a,input,textarea,select,summary,[contenteditable="true"],[data-p435930-flip],[data-p435930-card-flip]')}
+function horizontalStep(direction){
+ const d=direction>0?1:-1;
+ if(view==='stations'){STATIONS.step=Math.max(0,Math.min(13,STATIONS.step+d));render();return true}
+ if(view==='confession'){CONF.stage=Math.max(0,Math.min(3,CONF.stage+d));render();return true}
+ if(view==='benediction'){BEN.step=Math.max(0,Math.min(BEN_STAGES.length-1,BEN.step+d));render();return true}
+ if(view==='adoration'&&ADOR.mode==='visit'){ADOR.visitStep=Math.max(0,Math.min(visitSteps().length-1,ADOR.visitStep+d));render();return true}
+ if(view==='adoration'&&ADOR.mode==='holy'){ADOR.holyStep=Math.max(0,Math.min(holySteps().length-1,ADOR.holyStep+d));render();return true}
+ if(view==='adoration'&&ADOR.mode==='four'){ADOR.fourStep=Math.max(0,Math.min(fourSteps().length-1,ADOR.fourStep+d));render();return true}
+ if(view==='penitential'){PEN.step=Math.max(0,Math.min(6,PEN.step+d));render();return true}
+ if(view==='litany'&&LIT.sections?.length){LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step+d));render();return true}
+ if(view==='sevenWords'){SEVEN.step=Math.max(0,Math.min(6,SEVEN.step+d));render();return true}
+ if(view==='fortyHours'){FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step+d));render();return true}
+ if(view==='firstFriday'){FF.step=Math.max(0,Math.min(FF_STAGES.length-1,FF.step+d));render();return true}
+ if(view==='firstSaturday'){FS.step=Math.max(0,Math.min(FS_STAGES.length-1,FS.step+d));render();return true}
+ return false;
+}
+function onPrayTouchStart(e){
+ const t=e.touches?.[0];if(!t||touchBlocked(e.target)){prayTouch=null;return}
+ prayTouch={x:t.clientX,y:t.clientY,at:Date.now()};
+}
+function onPrayTouchEnd(e){
+ if(!prayTouch)return;
+ const t=e.changedTouches?.[0],start=prayTouch;prayTouch=null;if(!t)return;
+ const dx=t.clientX-start.x,dy=t.clientY-start.y,elapsed=Date.now()-start.at;
+ if(elapsed>1300||Math.abs(dx)<72||Math.abs(dx)<Math.abs(dy)*1.35)return;
+ horizontalStep(dx<0?1:-1);
+}
 function captureResume(){return {view,familyId,navStack:[...navStack],prayerReturnView,prayerId}}
 function reopenResume(snapshot){
  if(!snapshot)return false;
@@ -1102,7 +1153,8 @@ function openPrayerOnly(id){prayerReturnView=view;prayerId=id;view='prayerOnly';
 function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.matches('[data-p435930-close]'))return close();
- if(b.matches('[data-p435930-back]')){if(view==='family'){view='home';familyId=null;navStack=[];return render()}if(view==='adoration'&&ADOR.mode!=='home'){ADOR.mode='home';return render()}if(view==='library'&&LIB.open){LIB.open=null;return render()}if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}if(view!=='home'&&navStack.length){popView();return render()}return close()}
+ if(b.matches('[data-p435930-home]'))return goGlobalHome();
+ if(b.matches('[data-p435930-back]'))return backToParent()
  if(b.dataset.p435930Family){familyId=b.dataset.p435930Family;view='family';navStack=[];return render()}
  if(b.dataset.p435930External){
   const route=b.dataset.p435930External,returnFamily=familyId;
@@ -1291,7 +1343,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={version:VERSION,open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
