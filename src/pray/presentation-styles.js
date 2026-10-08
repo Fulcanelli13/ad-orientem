@@ -4,7 +4,7 @@ const MODULAR_SHELL_CSS="body.aoP435930Open #ao-global-ribbon{z-index:2147483300
 const VISIBLE_REGRESSION_GUARD_CSS=`
 #aoPray435930 svg.aoP435930UiIcon,#aoPray435930 svg.aoRitualIcon,#aoPray435930 svg.aoP435930SemanticRailIcon{background:none!important;-webkit-mask:none!important;mask:none!important;overflow:visible!important}
 #aoPray435930 .aoP435930Head button::before,#aoPray435930 .aoP435930Head button::after{content:none!important;display:none!important}
-#aoPray435930 .aoP435930Head button>:not([data-ao-inline-asset-id]){display:none!important}
+#aoPray435930 .aoP435930Head button>:not([data-ao-inline-asset-id]):not([data-ao-asset-id]){display:none!important}
 #aoPray435930 .aoP435930HomeIntro.aoModularHeroIn{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
 #aoPray435930 .aoP435930ModuleCard{grid-template-columns:44px minmax(0,1fr) auto!important;grid-template-rows:auto auto 1fr!important;column-gap:10px!important;row-gap:3px!important}
 #aoPray435930 .aoP435930ModuleCard>.aoP435930ModuleIcon{grid-column:1!important;grid-row:1/4!important;align-self:center!important}
