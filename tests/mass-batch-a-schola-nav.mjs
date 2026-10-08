@@ -330,7 +330,20 @@ try{
   assert.equal(await menu.isVisible(),true,"section jump menu did not open");
   const sectionCount=await page.locator("#ao-r17-native-reader-preview [data-reader-section]").count();
   assert.equal(sectionCount,48,"section menu lost 48 source-first display cards");
-  console.log("Batch A Schola navigation: PASS",JSON.stringify({navPreflight,sectionCount}));
+  console.log("Batch A Schola navigation: section menu open",JSON.stringify({navPreflight,sectionCount}));
+  const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
+  assert.equal(await hostSection.count(),1,"Host Consecration section not present in 48-card menu");
+  console.log("Batch A Host section: before click");
+  await hostSection.click();
+  console.log("Batch A Host section: click returned");
+  await page.waitForFunction(()=>/Consecration/i.test(document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent??""),null,{timeout:5000});
+  const hostNow=await page.evaluate(()=>({
+    section:document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent?.trim()??"",
+    livePreview:!!globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected,
+    card:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+  }));
+  assert.equal(hostNow.livePreview,true,"Host jump detached the native reader");
+  console.log("Batch A Schola-to-Host navigation: PASS",JSON.stringify({hostNow,sectionCount}));
   await context.close();
 }catch(error){
   const snapshot=await page?.evaluate(()=>({
