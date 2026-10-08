@@ -88,6 +88,7 @@ try{
     if(message.text().startsWith("AO_TOUCH_TRACE "))process.stdout.write(message.text()+"\\n");
   });
   await page.evaluate(()=>{
+    globalThis.__AO_CI_TRACE=(step)=>console.log("AO_TOUCH_TRACE "+step);
     const trace=(event)=>console.log("AO_TOUCH_TRACE "+event+
       " active="+String(globalThis.AO_APP_SHELL_V1?.getActive?.()||"none"));
     for(const name of ["pointerdown","touchstart","touchend","click"])
