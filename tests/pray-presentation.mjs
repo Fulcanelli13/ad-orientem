@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "../src/pray/angelus-guide-data.js";
+import { rosaryGuideSections } from "../src/pray/rosary-guide-data.js";
 import { directChildAnchor } from "../src/pray/dom-anchor.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pray/devotional-ux-contract.js";
 
@@ -196,6 +197,9 @@ assert.match(styles,/@media\(max-width:720px\)[\s\S]*grid-template-columns:minma
 assert.match(styles,/@media\(max-width:620px\)[\s\S]*\.aoRitualRail\{top:70px;flex-direction:row/,"Angelus exact donor rail lost mobile horizontal cue row");
 assert.match(styles,/@keyframes aoRitualHalo\{0%\{opacity:\.5;transform:scale\(\.72\)\}100%\{opacity:0;transform:scale\(1\.42\)\}\}/,"Angelus gesture halo no longer matches donor motion");
 assert.match(runtime,/function decorateRosaryExact\(r\)/,"Rosary lost its exact-donor presentation owner");
+assert.match(runtime,/function ensureRosaryGuide\(r\)/,"Sourced Rosary Guide not present");
+assert.match(styles,/aoRosaryGuide>summary/,"Rosary Guide not styled");
+for(const language of ["en","fr"]){for(const x of rosaryGuideSections(language)){assert.ok(x.body.length>95);assert.match(x.source.url,/^https:/);}}
 assert.match(runtime,/function storeRosaryDonorReturn\(snapshot\)/,"Rosary donor return lost its root-owned snapshot writer");
 assert.match(runtime,/root\.dataset\.aoPrayRosaryReturn=JSON\.stringify\(snapshot\)/,"Rosary donor return snapshot is no longer anchored on the preserved PrayerBook root");
 assert.match(runtime,/function readRosaryDonorReturn\(\)/,"Rosary donor return lost its root-owned snapshot reader");
@@ -239,7 +243,7 @@ assert.match(runtime,/prayerRubric&&info\?\.step\?\.phase!=='opening'/,"Rosary n
 assert.match(runtime,/beadStage&&info\?\.step\?\.kind==='mystery'/,"Rosary no longer defers empty decade beads until prayer begins");
 assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,2200}ensureRosaryDonorOverview\(r,info\)/,"Rosary exact decorator still injects permanent Overview chrome");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
-assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary legacy progress projection helper disappeared unexpectedly");
+assert.doesNotMatch(runtime,/function rosaryDonorProgress\(info\)/,"Unused duplicate progress injector survived");
 assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,1400}ensureRosaryDonorProgress\(r,info\)/,"Rosary exact decorator still injects a duplicate five-segment progress bar");
 assert.match(runtime,/querySelectorAll\('\.rosary-decade-bar-v15\[data-ao-exact-donor-progress\]'\)\.forEach\(node=>node\.remove\(\)\)/,"Rosary does not actively remove stale injected progress surfaces");
 assert.match(runtime,/function ensureRosaryDonorRecitation\(r\)/,"Rosary lost donor head recitation control");
