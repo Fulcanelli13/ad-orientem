@@ -132,7 +132,7 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
     syncLoading(st.getState()); return true;
   }
   function finishBoot(reason="ready"){
-    if(bootFinished) return false; bootFinished=true;
+    if(bootFinished) return false; bootFinished=true; win.clearTimeout?.(bootWatchdog);
     const el=d.getElementById(BOOT_ID); if(!el) return false;
     const s=state(),status=q("[data-ao-cinema-boot-status]",el),title=s?.resolution?.proper?.data?.name||s?.resolution?.day?.main?.title||"";
     if(status){status.textContent=title?(title+" · "+L("Ready","Prêt")):L("Ready","Prêt");status.classList.add("ready");}
@@ -143,6 +143,10 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
     return true;
   }
   function homeReady(){const s=state();return Boolean(s&&d.querySelector?.(".homeScreen")&&!s.resolving&&s.resolution&&(!d.fonts||d.fonts.status==="loaded"));}
+  // A suspended requestAnimationFrame must not leave a visible, pointer-blocking
+  // launch curtain over an otherwise usable app indefinitely. Keep the usual
+  // home-stability path; this independent wall-clock guard is the fallback.
+  const bootWatchdog=win.setTimeout?.(()=>finishBoot("guard-timeout"),8000);
   const started=win.performance?.now?.()||Date.now(); let stable=0;
   const bootTick=()=>{
     installStore(); stable=homeReady()?stable+1:0;

@@ -103,6 +103,8 @@ for(const id of ["ao-cinema-boot","ao-cinema-transition","ao-cinema-loader"]){
   assert.ok(cinemaSource.includes(id),"recovered cinematic runtime lost "+id);
 }
 assert.match(cinemaSource,/AO_CINEMATIC_V4312/,"recovered v43.12 cinematic API is not exported to production");
+assert.match(cinemaSource,/const bootWatchdog=win\.setTimeout\?\.\(\(\)=>finishBoot\("guard-timeout"\),8000\)/,"startup curtain can trap pointer events if animation frames stall");
+assert.match(cinemaSource,/win\.clearTimeout\?\.\(bootWatchdog\)/,"startup watchdog must be cancelled when home becomes stable");
 assert.match(cinemaSource,/220/,"v43.12 workload-loader delay changed");
 assert.match(cinemaSource,/enter-prepare/,"Preparation semantic transition missing");
 assert.match(cinemaSource,/enter-thanksgiving/,"Thanksgiving semantic transition missing");

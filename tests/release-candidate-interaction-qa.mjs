@@ -77,6 +77,12 @@ try{
     null,{timeout:30000}
   );
 
+  // A ready app must never be obstructed indefinitely by the cinematic boot.
+  await page.waitForFunction(()=>{
+    const curtain=document.getElementById("ao-cinema-boot");
+    return !curtain || curtain.classList.contains("aoCinemaBootDone") &&
+      getComputedStyle(curtain).pointerEvents==="none";
+  },null,{timeout:15000});
   await page.locator("[data-ao-app-surface='pray']").click();
   await page.waitForSelector("#aoPray435930.open",{state:"visible",timeout:15000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
