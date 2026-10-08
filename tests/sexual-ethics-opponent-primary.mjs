@@ -8,16 +8,18 @@ const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-au
 const preview=readFileSync("src/learn/sexual-ethics.js","utf8");
 const directIds=["CURRAN1987","FARLEY_QUOTED2012","FARLEY_RESPONSE2012","CURRAN_CDF1986","ACOG_ECTOPIC","ACOG_ECTOPIC_GUIDELINE","MILL_IV_FULL"];
 assert.equal(new Set(CSE_SOURCES.map(s=>s.id)).size,CSE_SOURCES.length);
-assert.equal(CSE_SOURCES.length,74);
+assert.equal(CSE_SOURCES.length,79);
 for(const id of directIds){assert.match(CSE_SOURCE_MAP[id].canonical_url,/^https:\/\//);assert.ok(CSE_SOURCE_MAP[id].title);}
 assert.equal(audit.summary.records,55);
 assert.equal(audit.cases.length,55);
 assert.deepEqual(audit.cases.map(c=>c.id),[...CSE_POSITION_SOURCE_IDS]);
-assert.equal(audit.summary.selected_primary_position_checks,34);
+assert.equal(audit.summary.selected_primary_position_checks,44);
 assert.equal(audit.summary.book_catalog_preview_cases,33);
 assert.equal(audit.summary.book_cases_with_new_original_support,13);
 assert.equal(audit.summary.precisely_excerped_opponent_positions,6);
 assert.equal(audit.summary.remaining_full_passage_review,55);
+assert.equal(audit.summary.new_batch_scoped_checks,12);
+assert.equal(audit.summary.misconception_evidence_misattribution_corrections,2);
 const enhanced=audit.cases.filter(c=>c.new_primary_evidence);
 assert.equal(enhanced.length,16);
 for(const record of audit.cases){
@@ -49,4 +51,11 @@ assert.match(preview,/The opposing position is a sourced reconstruction, not a v
 assert.match(preview,/La position adverse est une reformulation sourcée/);
 assert.match(preview,/Opposing-position references:/);
 assert.match(preview,/Références de la position adverse/);
-console.log("PASS Sexual Ethics source evidence: 55 source chains, 16 improved original-text cases, 6 exact author excerpts, 34 partial primary checks, unsupported stages explicitly disclosed.");
+for(const id of ["CSE112","CSE117"]){
+ const c=audit.cases.find(x=>x.id===id);
+ assert.equal(c.verification_batch_3.grade,"EXPLICIT_REBUTTAL_NOT_OPPOSING_AUTHOR");
+ assert.ok(c.opponent_provenance.some(x=>x.source_type==="REBUTTAL_EVIDENCE_NOT_OPPONENT"));
+}
+assert.match(preview,/Evidence rebutting this misconception \(not proponents\)/);
+assert.match(preview,/Preuves réfutant cette idée fausse/);
+console.log("PASS Sexual Ethics source evidence: 55 source chains, 44 scoped primary checks, 6 documented Farley positions, and rebuttal-versus-proponent labeling.");
