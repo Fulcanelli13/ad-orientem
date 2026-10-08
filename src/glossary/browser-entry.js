@@ -315,7 +315,11 @@ export function createGlossaryRuntime(win=globalThis){
   function close(returnToLearn=false){
     const n=root(win);try{n?.querySelector?.(":focus")?.blur?.()}catch{}n?.remove?.();
     state.open=false;state.detailId=null;state.detailType="concept";state.query="";state.contextIds=[];state.latinStage=null;
-    if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    // If Glossary was launched as a Formation child, its parent is already
+    // mounted and monitoring this child. Let that owner restore the exact
+    // Reference family, rather than reopening Formation at its landing page.
+    const hasLiveParent=win?.AO_LEARN_APP_V1?.status?.()?.child===ROUTE_ID;
+    if(returnToLearn&&!hasLiveParent)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     return true;
   }
 
