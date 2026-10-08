@@ -18,7 +18,7 @@ assert.equal(TLM.questions.length,50);
 const gate=JSON.parse(readFileSync("data/learn/traditional-mass-publication-gates.v1.json","utf8"));
 assert.equal(gate.publication_allowed,false,"TLM research accidentally approved");
 assert.equal(gate.records.length,50);
-assert.equal(gate.recovered.paragraphs,149);
+assert.equal(gate.recovered.paragraphs,169);
 assert.equal(gate.canonical_navigation_additions,0);
 assert.equal(gate.research_review_progress.tlm_051_065_reviewed,15);
 assert.equal(gate.research_review_progress.primary_text_explicitly_checked,7);
@@ -76,7 +76,7 @@ for(const [name,,count] of sourcePacks){
     }
   }
 }
-assert.equal(tlmParagraphCount,149);
+assert.equal(tlmParagraphCount,169);
 assert.equal(editorialFollowups,8);
 assert.equal(DATA.canonical_navigation_locked,true);
 assert.equal(DATA.questions.length,26);
