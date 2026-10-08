@@ -109,6 +109,7 @@ export function projectDirectoryItems(records,{communities=[]}={}){
       source_id:venue.venue_id,
       lens:"tlm",
       kind:"TLM_VENUE",
+      community_id:ministry?.community_id??"OTHER",
       eyebrow:label,
       status,
       title:venue?.name?.official||"Unnamed venue",
