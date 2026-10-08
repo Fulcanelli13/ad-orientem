@@ -245,6 +245,22 @@ try{
   });
   assert.equal(scholaHitGeometry.overlap,false,
     "collapsed Schola SHOW control overlaps the Next edge target: "+JSON.stringify(scholaHitGeometry));
+  const collapsedAudit=await scholaToggle.evaluate(el=>{
+    const dock=el.closest(".ao-schola-dock");
+    const rect=x=>{const r=x.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
+    const a=rect(el),cx=a.x+a.width/2,cy=a.y+a.height/2;
+    return {
+      dock:rect(dock),toggle:a,
+      active:dock?.dataset.active,collapsed:dock?.dataset.collapsed,
+      dockDisplay:getComputedStyle(dock).display,toggleDisplay:getComputedStyle(el).display,
+      toggleVisibility:getComputedStyle(el).visibility,toggleOpacity:getComputedStyle(el).opacity,
+      hit:document.elementFromPoint(cx,cy)?.outerHTML?.slice(0,150),
+      root:!!document.getElementById("ao-r17-native-reader-preview"),
+    };
+  });
+  console.log("Full visual collapsed Schola geometry:",JSON.stringify(collapsedAudit));
+  assert.ok(collapsedAudit.toggle.width>0&&collapsedAudit.toggle.height>0&&collapsedAudit.dockDisplay!=="none",
+    "collapsed SHOW control is not visible: "+JSON.stringify(collapsedAudit));
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"false","Schola show control did not restore the dock");
   const scholaBefore=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
