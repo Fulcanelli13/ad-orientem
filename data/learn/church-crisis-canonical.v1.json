@@ -1,0 +1,582 @@
+{
+  "version": "CHURCH_CRISIS_CANONICAL_V1",
+  "status": "FROZEN_TARGET_NOT_YET_PUBLISHED",
+  "created_at": "2026-10-08",
+  "canonical_role": "Investigate contested change, continuity, rupture, authority, institutional failure and postconciliar controversy without duplicating positive Catechism doctrine, general Apologetics, Church History chronology or practical Sexual Ethics.",
+  "pastoral_governing_conclusion": "Virtue, humility, charity, fidelity to the Church and lawful obedience take precedence over factional identity, contempt or private certainty. Obedience is not absolute and never requires sin or compliance with a command contrary to divine law.",
+  "source_policy": {
+    "paragraph_rule": "Every substantive user-facing paragraph requires explicit inline source support.",
+    "objection_rule": "Objections must be sourced to actual proponents, including SSPX, sedevacantist, una-cum and other traditionalist authors where those positions are discussed.",
+    "assessment_rule": "Synthetic assessments must be anchored to primary magisterial, canonical, historical or serious scholarly sources.",
+    "distinction_rule": "Always distinguish validity, liceity, orthodoxy, prudential quality, continuity and pastoral success where those categories differ.",
+    "weak_source_rule": "Use secondary or partisan sources to document the position of their own proponents; prefer primary texts for doctrine, law and official acts."
+  },
+  "dossier_schema": [
+    "title",
+    "short_answer",
+    "why_it_matters",
+    "doctrinal_baseline",
+    "historical_record",
+    "case_for_continuity",
+    "traditional_critique",
+    "other_serious_objections",
+    "reply",
+    "what_is_certain",
+    "what_is_disputed",
+    "practical_conclusion",
+    "sources",
+    "sourceRefs",
+    "crossLinks"
+  ],
+  "families": [
+    {
+      "id": "origins",
+      "title": "Origins / Preconciliar Crisis",
+      "prefix": "CR-ORG",
+      "count": 9
+    },
+    {
+      "id": "liturgical",
+      "title": "Liturgical Crisis",
+      "prefix": "CR-LIT",
+      "count": 12
+    },
+    {
+      "id": "doctrinal",
+      "title": "Doctrinal Crisis",
+      "prefix": "CR-DOC",
+      "count": 10
+    },
+    {
+      "id": "ecclesiological",
+      "title": "Ecclesiological Crisis",
+      "prefix": "CR-ECC",
+      "count": 12
+    },
+    {
+      "id": "authority",
+      "title": "Authority Crisis",
+      "prefix": "CR-AUT",
+      "count": 10
+    },
+    {
+      "id": "moral",
+      "title": "Moral Crisis",
+      "prefix": "CR-MOR",
+      "count": 8
+    },
+    {
+      "id": "identity-mission",
+      "title": "Identity & Mission Crisis",
+      "prefix": "CR-IDM",
+      "count": 10
+    },
+    {
+      "id": "governance",
+      "title": "Governance / Institutional Crisis",
+      "prefix": "CR-GOV",
+      "count": 10
+    }
+  ],
+  "dossiers": [
+    {
+      "id": "CR-ORG-01",
+      "title": "Was there already a crisis before Vatican II?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-02",
+      "title": "Why did John XXIII call Vatican II?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-03",
+      "title": "Modernism, nouvelle théologie and ressourcement: renewal or return of errors?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-04",
+      "title": "Was the Liturgical Movement already divided before the Council?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-05",
+      "title": "Was Europe already dechristianising before Vatican II? — the French case",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-06",
+      "title": "How did war, technology, democracy and decolonisation change the Church’s situation?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-07",
+      "title": "Why were major preparatory schemas rejected or rewritten?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-08",
+      "title": "Was Vatican II captured, hijacked or legitimately redirected?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-ORG-09",
+      "title": "Did Vatican II cause, expose, accelerate or fail to cure an existing crisis?",
+      "family": "origins"
+    },
+    {
+      "id": "CR-LIT-01",
+      "title": "How far had Roman liturgical reform already gone before Vatican II?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-02",
+      "title": "What did Sacrosanctum Concilium actually require—and what did it not require?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-03",
+      "title": "What changed in the 1964–1967 transitional reforms and experiments?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-04",
+      "title": "Who produced the postconciliar reform? — Consilium, Bugnini, Missa normativa and Protestant observers",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-05",
+      "title": "Is the 1969/70 Missal an organic development of the Roman Rite or a substantial reconstruction?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-06",
+      "title": "What changed in the Offertory, Roman Canon and Eucharistic Prayers?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-07",
+      "title": "Did sacrificial, propitiatory, penitential and ascetical language become less explicit?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-08",
+      "title": "Did the new lectionary simply give Catholics more Scripture, or did selection and omission matter?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-09",
+      "title": "What happened to Latin, vernacular worship and Gregorian chant?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-10",
+      "title": "Did Vatican II require Mass facing the people? — orientation and ad populum",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-11",
+      "title": "What happened to Communion discipline? — hand/tongue, kneeling, rails and tabernacle practice",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-LIT-12",
+      "title": "Which postconciliar practices were law, permission, experiment, custom, toleration or abuse?",
+      "family": "liturgical"
+    },
+    {
+      "id": "CR-DOC-01",
+      "title": "What was Modernism, and did it really disappear after its condemnation?",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-02",
+      "title": "Can doctrine develop without contradicting earlier doctrine?",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-03",
+      "title": "Did Vatican II change doctrine, language, pastoral method—or all three?",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-04",
+      "title": "Religious liberty: development, correction or contradiction?",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-05",
+      "title": "Church and State, Social Kingship and the postconciliar settlement",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-06",
+      "title": "Ecumenism and the claim that the Catholic Church is the one true Church",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-07",
+      "title": "Extra Ecclesiam nulla salus: did Catholic teaching on salvation outside the Church change?",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-08",
+      "title": "Judaism, the Old Covenant and the mission of the Church",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-09",
+      "title": "How may ambiguous or non-definitive magisterial teaching be questioned, clarified or corrected?",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-DOC-10",
+      "title": "Continuity and rupture: what is the right method for judging disputed teaching?",
+      "family": "doctrinal"
+    },
+    {
+      "id": "CR-ECC-01",
+      "title": "What does indefectibility actually guarantee?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-02",
+      "title": "Can the Church undergo catastrophic institutional failure without defecting?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-03",
+      "title": "Can Church authority impose harmful discipline or a seriously deficient liturgical reform?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-04",
+      "title": "Can a pope become a heretic, and what follows if he does?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-05",
+      "title": "What is the canonical and ecclesial status of the SSPX?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-06",
+      "title": "Supplied jurisdiction and a claimed state of necessity: how strong is the SSPX case?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-07",
+      "title": "Were Archbishop Lefebvre’s 1988 consecrations schismatic?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-08",
+      "title": "What is the strongest sedevacantist argument, and where does it fail or remain disputed?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-09",
+      "title": "Sedeprivationism and conclavism: do they solve the visibility problem?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-10",
+      "title": "What does una cum signify, and what can legitimately be inferred from it?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-11",
+      "title": "From collegiality to synodality: organic development or new ecclesiology?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-ECC-12",
+      "title": "Does modern synodality change who teaches, governs or decides in the Church?",
+      "family": "ecclesiological"
+    },
+    {
+      "id": "CR-AUT-01",
+      "title": "What is Catholic obedience—and what is it not?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-02",
+      "title": "When may or must a Catholic refuse an order?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-03",
+      "title": "When may Catholics resist, correct or publicly criticise ecclesiastical superiors?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-04",
+      "title": "What levels of assent are owed to different kinds of magisterial teaching?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-05",
+      "title": "What should a Catholic do when he has serious difficulty with non-definitive teaching?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-06",
+      "title": "How much authority does the Pope have over the liturgy and ancient rites?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-07",
+      "title": "Can Church authority restrict a rite that was not juridically abrogated?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-08",
+      "title": "Is ‘recognise and resist’ a coherent Catholic position?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-09",
+      "title": "When does criticism become contempt, factionalism or private judgment?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-AUT-10",
+      "title": "How should an ordinary Catholic live faithfully during an ecclesial crisis?",
+      "family": "authority"
+    },
+    {
+      "id": "CR-MOR-01",
+      "title": "Did the crisis in moral theology begin before Vatican II?",
+      "family": "moral"
+    },
+    {
+      "id": "CR-MOR-02",
+      "title": "Conscience: judge of moral truth or creator of moral truth?",
+      "family": "moral"
+    },
+    {
+      "id": "CR-MOR-03",
+      "title": "Why did Humanae vitae become a crisis of authority and moral method?",
+      "family": "moral"
+    },
+    {
+      "id": "CR-MOR-04",
+      "title": "Is ‘responsible dissent’ from non-infallible moral teaching legitimate?",
+      "family": "moral"
+    },
+    {
+      "id": "CR-MOR-05",
+      "title": "Proportionalism and consequentialism: can good consequences justify an otherwise evil act?",
+      "family": "moral"
+    },
+    {
+      "id": "CR-MOR-06",
+      "title": "Fundamental option, mortal sin and intrinsically evil acts",
+      "family": "moral"
+    },
+    {
+      "id": "CR-MOR-07",
+      "title": "Did Veritatis splendor settle the postconciliar moral-theology crisis?",
+      "family": "moral"
+    },
+    {
+      "id": "CR-MOR-08",
+      "title": "Amoris laetitia: continuity, qualification or conflict with prior sacramental and moral discipline?",
+      "family": "moral"
+    },
+    {
+      "id": "CR-IDM-01",
+      "title": "Did Catholic mission change from conversion to dialogue?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-02",
+      "title": "Did Vatican II abandon the conversion of non-Catholic Christians?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-03",
+      "title": "Mortalium animos and Vatican II: contradiction or development in ecumenism?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-04",
+      "title": "Imperfect communion, subsistit in and ‘sister Churches’: what do these expressions mean?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-05",
+      "title": "Common prayer, ecumenical cooperation and sacramental sharing: what changed?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-06",
+      "title": "What does ‘proselytism’ mean, and does rejecting it weaken missionary conversion?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-07",
+      "title": "Assisi 1986: legitimate peace witness or objectively indifferentist sign?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-08",
+      "title": "Inculturation versus syncretism: where is the boundary?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-09",
+      "title": "Why have some Catholic schools, universities and institutions lost a distinct Catholic identity?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-IDM-10",
+      "title": "Did the postconciliar missionary strategy slow or accelerate secularisation?",
+      "family": "identity-mission"
+    },
+    {
+      "id": "CR-GOV-01",
+      "title": "Who was actually responsible when the postconciliar crisis unfolded?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-02",
+      "title": "What happened to seminaries and priestly formation?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-03",
+      "title": "What happened to religious orders, discipline and charism?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-04",
+      "title": "Why was theological dissent so difficult to control?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-05",
+      "title": "Did episcopal conferences and bureaucracy diffuse personal responsibility?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-06",
+      "title": "Why did liturgical abuse persist despite Roman prohibitions?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-07",
+      "title": "Why were canon law and ecclesiastical discipline so often under-enforced?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-08",
+      "title": "The abuse crisis: what failed in episcopal governance and accountability?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-09",
+      "title": "Financial, institutional and personnel oversight: where did governance fail?",
+      "family": "governance"
+    },
+    {
+      "id": "CR-GOV-10",
+      "title": "Does synodality repair weak governance or diffuse responsibility further?",
+      "family": "governance"
+    }
+  ],
+  "research_gaps": [
+    {
+      "id": "CR-GAP-01",
+      "title": "1962 ↔ 1970/2002 Latin corpus comparison",
+      "scope": [
+        "sin",
+        "culpa",
+        "merit",
+        "grace",
+        "punishment",
+        "judgment",
+        "hell",
+        "devil",
+        "conversion",
+        "propitiation",
+        "satisfaction",
+        "sacrifice",
+        "offering",
+        "fasting",
+        "asceticism",
+        "saints",
+        "earthly goods",
+        "heavenly goods"
+      ],
+      "method": "Contextual comparison, not raw word counts.",
+      "feeds": [
+        "CR-LIT-07"
+      ]
+    },
+    {
+      "id": "CR-GAP-02",
+      "title": "Lectionary omission audit",
+      "method": "Compare expanded Scripture coverage with omissions, truncations, optionality and thematic redistribution.",
+      "feeds": [
+        "CR-LIT-08"
+      ]
+    },
+    {
+      "id": "CR-GAP-03",
+      "title": "Preconciliar experiment database 1920–1962",
+      "method": "Classify each practice as universal law, explicitly permitted, episcopally authorised, experimental concession, legitimate local custom, tolerated, disputed or unauthorised abuse.",
+      "feeds": [
+        "CR-ORG-04",
+        "CR-LIT-01",
+        "CR-LIT-12"
+      ]
+    },
+    {
+      "id": "CR-GAP-04",
+      "title": "Country implementation 1945–1975",
+      "emphasis": "France",
+      "feeds": [
+        "CR-ORG-05",
+        "CR-LIT-03",
+        "CR-GOV-01",
+        "CR-GOV-06"
+      ]
+    }
+  ],
+  "hard_factual_corrections": [
+    "The second Confiteor before Communion was already removed from the normative 1962 order through the 1960 rubrical reform; do not attribute that change to Paul VI or the 1970 Missal.",
+    "Protestant observers were present during the reform process, but the claim that 'six Protestants wrote the Mass' is unsupported; distinguish presence, consultation, influence and authorship.",
+    "Eucharistic Prayer II draws on the Apostolic Tradition/Hippolytus tradition but is a modern composition; provenance claims require qualification.",
+    "Sacrosanctum Concilium did not command celebration versus populum, abolish Latin or abolish Gregorian chant.",
+    "Existence of versus-populum celebrations before 1969 does not establish them as the universal norm.",
+    "Memoriale Domini in 1969 retained Communion on the tongue as the general discipline while permitting an indult mechanism where contrary usage had developed.",
+    "The 1955 reform suppressed or altered major vigils, octaves and Holy Week structures before Vatican II; reform trajectory must not be narrated as beginning in 1963."
+  ],
+  "ownership_boundaries": [
+    {
+      "topic": "Positive doctrine without crisis controversy",
+      "owner": "catechism"
+    },
+    {
+      "topic": "Why Catholic doctrine is credible against a general objection",
+      "owner": "apologetics"
+    },
+    {
+      "topic": "Historical chronology without a crisis judgment",
+      "owner": "church-history"
+    },
+    {
+      "topic": "Concrete sexual/marital act",
+      "owner": "sexual-ethics"
+    },
+    {
+      "topic": "How to speak to a person about a crisis issue",
+      "owner": "apostolate"
+    },
+    {
+      "topic": "How to follow the 1962 Mass now",
+      "owner": "mass / mass-formation"
+    }
+  ]
+}
