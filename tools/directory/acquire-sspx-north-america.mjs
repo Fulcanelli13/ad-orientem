@@ -177,7 +177,7 @@ export async function acquireNorthAmerica({out="data/directory/research/staging/
   try{
     for(const district of ["US","CA"]){
       const cards=await fetchCards(browser,DISTRICTS[district].url);
-      invariant(cards.length>=district==="US"?60:20,"insufficient visible cards: "+district);
+      invariant(cards.length>=(district==="US"?70:25),"insufficient visible cards: "+district+": "+cards.length);
       const snapshot=parseNorthAmericaCards(cards,{district,checkedOn});
       const current=await readExistingSspxSnapshots();
       const reconciled=reconcileWithRegistry(snapshot,current);
