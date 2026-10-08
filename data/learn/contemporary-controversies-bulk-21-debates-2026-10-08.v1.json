@@ -1148,6 +1148,13 @@
           "scope": "2023 DDF reply",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "UGLEFAQ",
+          "url": "https://www.ugle.org.uk/discover-freemasonry/frequently-asked-questions",
+          "scope": "United Grand Lodge of England, organizational self-description, members from diverse religions, no declared religious affiliation, ceremonies and civic values",
+          "role": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
+          "verification": "ORIGINAL_WEB_DOCUMENT_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -1177,12 +1184,13 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The official reason is incompatibility between Catholic faith and the basic principles judged characteristic of Freemasonry; the claim concerns an association's principles, not a verdict on each member's personal conscience.",
-            "fr": "L'autorité doctrinale juge les principes de la franc-maçonnerie incompatibles avec la foi catholique ; cette proposition porte sur l'association et non sur la culpabilité subjective de chaque membre."
+            "en": "The United Grand Lodge of England presents Freemasonry as an organization without political or religious affiliation, welcoming members from different faiths and cultures. It portrays lodge ceremonies as moral and civic instruction in integrity, service and tolerance rather than replacement religious worship. This is the order's own defense of its public identity; the FAQ does not itself refute the Church's distinct claim about religious indifferentism inherent in membership.",
+            "fr": "La Grande Loge unie d'Angleterre présente la franc-maçonnerie comme une organisation sans affiliation politique ni religieuse, accueillant des membres de différentes croyances et cultures. Elle décrit les cérémonies de loge comme une éducation morale et civique à l'intégrité, au service et à la tolérance, et non comme un culte destiné à remplacer les religions. C'est l'auto-présentation de cette obédience ; cette page ne réfute pas directement l'argument distinct de l'Église sur l'indifférentisme religieux que pourrait impliquer l'adhésion."
           },
           "source_ids": [
             "MASON1983",
-            "MASON2023"
+            "MASON2023",
+            "UGLEFAQ"
           ],
           "source_links": [
             {
@@ -1192,11 +1200,15 @@
             {
               "id": "MASON2023",
               "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231113_richiesta-cortes-massoneria_en.html"
+            },
+            {
+              "id": "UGLEFAQ",
+              "url": "https://www.ugle.org.uk/discover-freemasonry/frequently-asked-questions"
             }
           ],
           "attribution": {
-            "voice": "CDF 1983 and DDF 2023, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "United Grand Lodge of England, official public FAQ (general institutional position, not a rebuttal to the Catholic prohibition)",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -1204,12 +1216,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A common counterclaim is that contemporary lodges differ, and many members practice charity or are unaware of religious implications. The 1983 declaration addresses this by retaining the general prohibition rather than authorizing local redefinitions; a factual accusation about a particular lodge must nevertheless be documented separately.",
-            "fr": "Une objection courante relève la diversité des loges et les bonnes œuvres de certains membres. La déclaration maintient pourtant l'interdit général sans admettre une redéfinition locale ; les accusations factuelles contre une loge précise exigent toutefois leurs propres preuves."
+            "en": "The 1983 declaration and the CDF's detailed 1985 explanation do not rest on the allegation that every lodge directly instructs Catholics to abandon worship or plots against the Church. They question whether the member's ritual and institutional assent practically recasts adherence to revealed truth as one among equal forms of religion. The United Grand Lodge's claims about charity and diversity therefore deserve acknowledgment but do not, on their own, overcome the Catholic norm on membership; accusations against specific lodges require independent evidence.",
+            "fr": "Le décret de 1983 et l'explication détaillée de la CDF en 1985 ne reposent pas sur l'idée que toute loge ordonne aux catholiques d'abandonner le culte ou conspire contre l'Église. Ils interrogent le sens d'une adhésion rituelle et institutionnelle qui pourrait faire de l'adhésion à la vérité révélée une forme religieuse parmi d'autres, tenues pour équivalentes. Les affirmations de la Grande Loge sur la charité et la diversité doivent donc être reconnues sans suffire à écarter l'interdiction catholique ; toute accusation contre une loge particulière appelle des preuves indépendantes."
           },
           "source_ids": [
             "MASON1983",
-            "MASON2023"
+            "MASON2023",
+            "UGLEFAQ"
           ],
           "source_links": [
             {
@@ -1219,6 +1232,10 @@
             {
               "id": "MASON2023",
               "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231113_richiesta-cortes-massoneria_en.html"
+            },
+            {
+              "id": "UGLEFAQ",
+              "url": "https://www.ugle.org.uk/discover-freemasonry/frequently-asked-questions"
             }
           ],
           "attribution": null,
@@ -1250,7 +1267,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -1289,6 +1306,13 @@
           "scope": "Rerum novarum: property rights and particular protection due workers and the poor",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "MARX1848",
+          "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch02.htm",
+          "scope": "Karl Marx and Friedrich Engels, Communist Manifesto Part II (1848), original Communist case concerning property, class, political power, religion",
+          "role": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
+          "verification": "ORIGINAL_AUTHOR_PUBLISHED_TEXT_LOCATED_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -1313,21 +1337,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "Pius XI specifically argues that the person, family, religion and natural society cannot legitimately be absorbed by a totalizing political-economic system.",
-            "fr": "Pie XI soutient que la personne, la famille, la religion et les sociétés naturelles ne doivent pas être absorbées par un système politico-économique totalisant."
+            "en": "Marx and Engels distinguish the abolition of bourgeois capital as class power from the destruction of every personal possession. Their argument is that modern property relations rest on exploitation, so proletarian political rule and the centralization of productive resources would dismantle that domination. The Manifesto also treats traditional religious and moral ideas as historically conditioned by class relations. These are the founders' actual programmatic claims, not a Catholic description of all policies labeled socialist.",
+            "fr": "Marx et Engels distinguent l'abolition du capital bourgeois comme pouvoir de classe de la suppression de tout bien personnel. Selon eux, la propriété moderne repose sur l'exploitation ; le pouvoir politique du prolétariat et la centralisation des moyens de production supprimeraient cette domination. Le Manifeste traite également les conceptions religieuses et morales traditionnelles comme historiquement conditionnées par les rapports de classe. Il s'agit des affirmations programmatiques de ses auteurs, non d'une description catholique de toute politique dite socialiste."
           },
           "source_ids": [
-            "DR1937"
+            "DR1937",
+            "MARX1848"
           ],
           "source_links": [
             {
               "id": "DR1937",
               "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19370319_divini-redemptoris.html"
+            },
+            {
+              "id": "MARX1848",
+              "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch02.htm"
             }
           ],
           "attribution": {
-            "voice": "Pius XI, Divini redemptoris, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Karl Marx and Friedrich Engels, Manifesto of the Communist Party, chapter II (1848), original proponent argument",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -1335,12 +1364,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Some political counterarguments appeal to economic equality or relief of poverty. Those aims warrant moral consideration, but they do not justify atheistic anthropology or the suppression of fundamental freedoms; concrete policies require separate economic and historical analysis.",
-            "fr": "Certains arguments politiques invoquent égalité économique et secours des pauvres. Ces fins méritent considération morale sans justifier une anthropologie athée ni la suppression des libertés fondamentales ; chaque politique exige une analyse distincte."
+            "en": "The distinction between personal possessions and bourgeois class property deserves accuracy: the Manifesto is not simply a demand to seize every worker's household objects. But its radical political rupture, treatment of religion and morality as class-linked historical forms, and program of state-directed property challenge the personal, familial and religious rights emphasized in Divini redemptoris. The Christian duty to defend exploited workers and just wages remains real, without requiring assent to a materialist theory of history.",
+            "fr": "La distinction entre biens personnels et propriété bourgeoise de classe doit être respectée : le Manifeste ne demande pas simplement la saisie de tous les objets domestiques des travailleurs. Mais sa rupture politique radicale, son interprétation de la religion et de la morale comme formes historiques liées aux classes et son programme de propriété dirigée par l'État contestent les droits personnels, familiaux et religieux défendus par Divini redemptoris. Le devoir chrétien de protéger les travailleurs exploités et d'assurer un juste salaire demeure entier, sans imposer une théorie matérialiste de l'histoire."
           },
           "source_ids": [
             "DR1937",
-            "QP1925"
+            "QP1925",
+            "MARX1848"
           ],
           "source_links": [
             {
@@ -1350,6 +1380,10 @@
             {
               "id": "QP1925",
               "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html"
+            },
+            {
+              "id": "MARX1848",
+              "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch02.htm"
             }
           ],
           "attribution": null,
@@ -1386,7 +1420,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -1418,6 +1452,13 @@
           "scope": "Scripture and literary/philological interpretation",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "BEHE2000",
+          "url": "https://www.discovery.org/a/443/",
+          "scope": "Michael J. Behe, Irreducible Complexity and the Evolutionary Literature (2000), critique of alleged insufficiency of gradual mechanisms to explain specified biochemical systems",
+          "role": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
+          "verification": "ORIGINAL_AUTHOR_PUBLISHED_TEXT_LOCATED_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -1442,12 +1483,13 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The encyclical calls for disciplined discussion of evidence and objections by competent scholars, treating revealed theology and natural inquiry without confusing their methods.",
-            "fr": "L'encyclique requiert l'examen discipliné des arguments par des savants compétents, sans confondre méthode scientifique et révélation."
+            "en": "Michael Behe argues that some complex biochemical systems require several coordinated components for their current function, and that cited evolutionary literature has not adequately shown plausible gradual routes to all such systems. His criticism concerns the explanatory sufficiency of particular Darwinian mechanisms and the available scientific literature; it should not be rewritten as a demonstrated incompatibility between any bodily evolution and Catholic doctrine.",
+            "fr": "Michael Behe soutient que certains systèmes biochimiques complexes exigent plusieurs éléments coordonnés pour fonctionner et que les études évolutionnistes invoquées n'ont pas établi des voies graduelles satisfaisantes pour tous ces systèmes. Sa critique porte sur la portée explicative de mécanismes darwiniens précis et sur la littérature scientifique disponible ; elle ne démontre pas l'incompatibilité de toute évolution corporelle avec la doctrine catholique."
           },
           "source_ids": [
             "HG1950",
-            "DA1943"
+            "DA1943",
+            "BEHE2000"
           ],
           "source_links": [
             {
@@ -1457,11 +1499,15 @@
             {
               "id": "DA1943",
               "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html"
+            },
+            {
+              "id": "BEHE2000",
+              "url": "https://www.discovery.org/a/443/"
             }
           ],
           "attribution": {
-            "voice": "Pius XII, Humani generis §36, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Michael J. Behe, original 2000 critique of gradual Darwinian mechanisms in cellular complexity (not a blanket denial of common descent)",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -1469,12 +1515,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A sweeping objection that 'evolution means atheism' confuses a biological hypothesis with a philosophical claim that matter is all that exists. Conversely, appealing to evolution alone cannot establish or disprove the creation of an immaterial rational soul.",
-            "fr": "Dire que « l'évolution est l'athéisme » confond une hypothèse biologique avec l'affirmation philosophique que seule la matière existe. Inversement, l'évolution ne peut par elle-même établir ou nier la création de l'âme immatérielle."
+            "en": "The existence of an unresolved biochemical pathway at a particular date does not logically demonstrate supernatural intervention or falsify all evolutionary ancestry, just as methodological naturalism cannot establish metaphysical atheism. Humani generis allows disciplined study of bodily origins while safeguarding the immediate creation of the rational soul. Behe's empirical assertions must be weighed against updated research on each named mechanism, not treated as a ready-made theological proof.",
+            "fr": "L'absence d'une voie biochimique élucidée à une date donnée ne démontre logiquement ni une intervention surnaturelle ni l'invalidité de toute ascendance évolutive, pas plus que le naturalisme méthodologique ne prouve l'athéisme métaphysique. Humani generis permet l'étude rigoureuse de l'origine corporelle en sauvegardant la création immédiate de l'âme raisonnable. Les affirmations empiriques de Behe doivent être confrontées aux recherches actualisées sur chaque mécanisme mentionné, et non utilisées comme preuve théologique toute faite."
           },
           "source_ids": [
             "HG1950",
-            "DA1943"
+            "DA1943",
+            "BEHE2000"
           ],
           "source_links": [
             {
@@ -1484,6 +1531,10 @@
             {
               "id": "DA1943",
               "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html"
+            },
+            {
+              "id": "BEHE2000",
+              "url": "https://www.discovery.org/a/443/"
             }
           ],
           "attribution": null,
@@ -1510,7 +1561,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -1542,6 +1593,13 @@
           "scope": "Genre of scriptural statements",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "BIOLOGOS2014",
+          "url": "https://biologos.org/series/genetics-and-the-historical-adam-responses-to-popular-arguments/articles/adam-eve-and-human-population-genetics",
+          "scope": "BioLogos editorial research article, original 2014 with 2021 corrections, effective breeding population versus literal unique progenitor pair in genetic ancestry",
+          "role": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
+          "verification": "ORIGINAL_AUTHOR_PUBLISHED_TEXT_LOCATED_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -1566,21 +1624,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The magisterial concern is to preserve the historical and universal transmission of original sin rather than leave it as a mere metaphor for universal social wrong.",
-            "fr": "La préoccupation magistérielle est de maintenir le caractère historique et universel de la transmission du péché originel, non de la réduire à une métaphore des fautes sociales."
+            "en": "BioLogos argues from population-genetic patterns that the mean breeding population ancestral to present humanity was far larger than two in the period studied. Its corrected article expressly distinguishes effective population estimates from a census count and recognizes time-depth limitations. This is a published empirical position about genetic ancestry and a recent unique bottleneck, not a scientific demonstration that original sin or a historical theological Adam is false.",
+            "fr": "BioLogos déduit de données de génétique des populations que la population reproductrice moyenne ancestrale de l'humanité actuelle était bien supérieure à deux durant la période étudiée. Son article corrigé distingue expressément la population efficace du recensement réel et reconnaît les limites de profondeur temporelle. Il s'agit d'une thèse empirique publiée sur l'ascendance génétique et un éventuel goulot d'étranglement récent, non d'une démonstration scientifique que le péché originel ou un Adam théologique historique seraient faux."
           },
           "source_ids": [
-            "HG1950"
+            "HG1950",
+            "BIOLOGOS2014"
           ],
           "source_links": [
             {
               "id": "HG1950",
               "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html"
+            },
+            {
+              "id": "BIOLOGOS2014",
+              "url": "https://biologos.org/series/genetics-and-the-historical-adam-responses-to-popular-arguments/articles/adam-eve-and-human-population-genetics"
             }
           ],
           "attribution": {
-            "voice": "Pius XII, Humani generis §37, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "BioLogos editorial authors with Dennis Venema's scientific contributions (2014, corrected 2021)",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -1588,12 +1651,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Some hypotheses postulate multiple biological ancestors or population bottlenecks. Their empirical merit should be tested by scientific methods; they cannot simply be declared theologically reconciled by removing Adam's role from revealed history.",
-            "fr": "Certaines hypothèses proposent plusieurs ancêtres biologiques ou des goulots de population. Leur valeur empirique relève des sciences ; elles ne sont pas théologiquement conciliées par la suppression de la place d'Adam dans l'histoire révélée."
+            "en": "Humani generis §37 is concerned with a doctrinal transmission from an original human fault, not with assigning an effective population size from allele frequencies. A purely recent unique-genetic-pair account faces substantial empirical objections; conversely, an ancestral population-genetic model does not by itself decide whether a historical pair could be genealogical ancestors, or how the dogma of original sin applies. Any reconciliation is a theological argument to be defended, not a fact automatically established by either discipline.",
+            "fr": "Humani generis §37 concerne la transmission doctrinale d'une faute originelle, non le calcul d'une taille de population efficace à partir de fréquences alléliques. L'hypothèse d'un couple génétique unique et récent se heurte à d'importantes objections empiriques ; inversement, un modèle d'ascendance génétique ne tranche pas à lui seul la possibilité d'ancêtres généalogiques historiques ni l'application du dogme du péché originel. Toute conciliation exige une argumentation théologique explicite : aucune des deux disciplines ne l'établit automatiquement."
           },
           "source_ids": [
             "HG1950",
-            "DA1943"
+            "DA1943",
+            "BIOLOGOS2014"
           ],
           "source_links": [
             {
@@ -1603,6 +1667,10 @@
             {
               "id": "DA1943",
               "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html"
+            },
+            {
+              "id": "BIOLOGOS2014",
+              "url": "https://biologos.org/series/genetics-and-the-historical-adam-responses-to-popular-arguments/articles/adam-eve-and-human-population-genetics"
             }
           ],
           "attribution": null,
@@ -1629,7 +1697,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -1661,6 +1729,13 @@
           "scope": "Gaudium et spes §§79–81",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "DAY1940",
+          "url": "https://catholicworker.org/360-html/",
+          "scope": "Dorothy Day, Our Stand, Catholic Worker June 1940, first-person Catholic pacifist position on war, Christian means and efficacy",
+          "role": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
+          "verification": "ORIGINAL_AUTHOR_PUBLISHED_TEXT_LOCATED_CONTEXT_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -1690,21 +1765,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "Catechism 2309 entrusts applying the criteria to the prudential judgment of authorities responsible for the common good; the text does not give an automatic license whenever a government declares itself attacked.",
-            "fr": "Le Catéchisme 2309 confie l'application des critères au jugement prudentiel des responsables du bien commun ; il ne donne pas un permis automatique à tout gouvernement se proclamant agressé."
+            "en": "In her June 1940 Catholic Worker statement Dorothy Day rejected war as a means to save Christianity, civilization or democracy; she grounded the movement's nonviolence in the commandment of charity and its refusal to employ evil means for a good end. She doubted that the demanding conditions of just war could be met in the modern conflicts at issue. This is her documented Catholic pacifist position, not proof that the universal Church doctrinally excludes every conceivable armed defense.",
+            "fr": "Dans sa déclaration de juin 1940 pour le Catholic Worker, Dorothy Day rejette la guerre comme moyen de sauver le christianisme, la civilisation ou la démocratie ; elle fonde la non-violence du mouvement sur la charité et sur le refus d'employer de mauvais moyens pour atteindre un bien. Elle doute que les conditions exigeantes d'une guerre juste soient satisfaites dans les conflits contemporains qu'elle examine. C'est sa position pacifiste catholique attestée, et non une preuve que l'Église universelle exclut doctrinalement toute défense armée concevable."
           },
           "source_ids": [
-            "WAR2309"
+            "WAR2309",
+            "DAY1940"
           ],
           "source_links": [
             {
               "id": "WAR2309",
               "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/iii_safeguarding_peace.index.html"
+            },
+            {
+              "id": "DAY1940",
+              "url": "https://catholicworker.org/360-html/"
             }
           ],
           "attribution": {
-            "voice": "Catechism of the Catholic Church §2309, documented official position",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Dorothy Day, Catholic Worker, Our Stand (June 1940), original personal and movement pacifist position",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -1712,12 +1792,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Pacifist objection can invoke the enormous evils of war and the duty to exhaust peaceful alternatives. That is a serious moral warning, but neither text asserts that every conceivable defense of innocent populations is always illicit.",
-            "fr": "L'objection pacifiste invoque les maux immenses de la guerre et le devoir d'épuiser les moyens pacifiques. Cette mise en garde est sérieuse, mais les textes ne déclarent pas toujours illicite toute défense imaginable des innocents."
+            "en": "Day's insistence that one must not commit evil for a good end is consonant with the Church's prohibition of indiscriminate attacks and revenge. Her personal refusal to participate in war is morally serious; nevertheless, Catechism §2309 permits legitimate defense under cumulative strict conditions and entrusts assessment to lawful authorities. A particular war must be judged on verifiable facts and means, not on a demand that all Catholics share Day's categorical pacifism.",
+            "fr": "L'exigence de Day de ne pas faire le mal pour obtenir un bien rejoint l'interdiction catholique des attaques indiscriminées et de la vengeance. Son refus personnel de participer à la guerre mérite un examen moral sérieux ; néanmoins, le Catéchisme §2309 admet une défense légitime sous des conditions strictes et cumulatives et en confie l'appréciation aux autorités compétentes. Une guerre déterminée doit être jugée d'après des faits et des moyens vérifiables, sans imposer à tous les catholiques le pacifisme catégorique de Day."
           },
           "source_ids": [
             "WAR2309",
-            "GS1965"
+            "GS1965",
+            "DAY1940"
           ],
           "source_links": [
             {
@@ -1727,6 +1808,10 @@
             {
               "id": "GS1965",
               "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+            },
+            {
+              "id": "DAY1940",
+              "url": "https://catholicworker.org/360-html/"
             }
           ],
           "attribution": null,
@@ -1758,7 +1843,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -2087,6 +2172,13 @@
           "scope": "Creation of spiritual soul",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "HPLUS2009",
+          "url": "https://www.humanityplus.org/the-transhumanist-declaration",
+          "scope": "Humanity+ Transhumanist Declaration, adopted 2009; enhancement, alleviation of suffering, potential moral consideration of artificial sentience",
+          "role": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
+          "verification": "ORIGINAL_WEB_DOCUMENT_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -2116,21 +2208,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The note is concerned with preserving human dignity and ensuring technologies serve persons rather than allowing a reduction of human worth to productivity or intelligence tests.",
-            "fr": "La note veut protéger la dignité humaine et subordonner les technologies aux personnes plutôt que réduire la valeur humaine à la productivité ou aux tests d'intelligence."
+            "en": "The Humanity+ Transhumanist Declaration advocates broadening human potential through science, reducing aging, suffering and cognitive limitations, and maintaining personal autonomy in the use of enhancement technologies. It calls for consideration of possible future artificial intellects and other sentient beings. Its text is an authentic advocacy statement, not a claim to have proved that AI possesses an immaterial soul or that disabled people lack human dignity.",
+            "fr": "La Déclaration transhumaniste adoptée par Humanity+ défend l'élargissement des capacités humaines par la science, la diminution du vieillissement, des souffrances et des limites cognitives ainsi que l'autonomie dans le choix des techniques d'amélioration. Elle demande aussi de considérer d'éventuelles intelligences artificielles et autres êtres sensibles futurs. Il s'agit d'un plaidoyer authentique, non d'une preuve que l'IA possède une âme immatérielle ou que les personnes handicapées seraient privées de dignité."
           },
           "source_ids": [
-            "AIN2025"
+            "AIN2025",
+            "HPLUS2009"
           ],
           "source_links": [
             {
               "id": "AIN2025",
               "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_en.html"
+            },
+            {
+              "id": "HPLUS2009",
+              "url": "https://www.humanityplus.org/the-transhumanist-declaration"
             }
           ],
           "attribution": {
-            "voice": "Dicasteries for Doctrine/Culture, Antiqua et nova 2025",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Humanity+ Board, 2009 Transhumanist Declaration (organizational original position; does not itself pronounce on ensoulment)",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -2138,12 +2235,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Transhumanist proposals can seek health benefits or claim that technical enhancement changes what humanity is. Their scientific and ethical claims must be separated: improving therapy is not itself denial of the soul, but treating dignity as optional functionality conflicts with the personalist moral baseline.",
-            "fr": "Des projets transhumanistes cherchent parfois à soigner, parfois à transformer l'identité humaine. Il faut séparer science et éthique : une thérapie n'est pas négation de l'âme ; réduire la dignité à la performance contredit la morale de la personne."
+            "en": "Disease treatment, relief of suffering and prudent scientific inquiry can serve authentic human flourishing. The unresolved moral question is whether the technology remains ordered to embodied persons and their inviolable dignity, or whether autonomy, performance and artificial sentience are treated as sufficient to redefine personhood. Antiqua et nova judges the anthropology, not the mere desirability of technical progress; scientific hypotheses about consciousness require separate empirical and philosophical argument.",
+            "fr": "Le soin des maladies, le soulagement de la souffrance et une recherche scientifique prudente peuvent servir l'épanouissement humain véritable. La question morale est de savoir si la technologie reste ordonnée à la personne incarnée et à sa dignité inviolable, ou si l'autonomie, la performance et la sensibilité artificielle suffiraient à redéfinir la personne. Antiqua et nova juge ici une anthropologie, non le simple désir du progrès technique ; les hypothèses sur la conscience exigent une argumentation scientifique et philosophique distincte."
           },
           "source_ids": [
             "AIN2025",
-            "HG1950"
+            "HG1950",
+            "HPLUS2009"
           ],
           "source_links": [
             {
@@ -2153,6 +2251,10 @@
             {
               "id": "HG1950",
               "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html"
+            },
+            {
+              "id": "HPLUS2009",
+              "url": "https://www.humanityplus.org/the-transhumanist-declaration"
             }
           ],
           "attribution": null,
@@ -2179,7 +2281,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -2211,6 +2313,13 @@
           "scope": "Responsible technological stewardship",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "RAMAGE2023",
+          "url": "https://www.catholicworldreport.com/2023/10/05/important-points-in-laudate-deum-are-overshadowed-by-missed-opportunities/",
+          "scope": "Matthew J. Ramage, 5 October 2023, authored critical analysis of Laudate Deum, scientific rhetoric, omissions in human ecology and pastoral reception",
+          "role": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
+          "verification": "ORIGINAL_WEB_DOCUMENT_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -2235,21 +2344,26 @@
         {
           "role": "documented_position_or_source_based_objection",
           "text": {
-            "en": "The papal exhortation frames care for the common home as a moral duty toward persons vulnerable to ecological harm, not merely an aesthetic preference.",
-            "fr": "L'exhortation présente le soin de la maison commune comme une obligation envers les personnes vulnérables aux atteintes écologiques, non une simple préférence esthétique."
+            "en": "Matthew Ramage's published review welcomes the Christian stewardship of creation expressed in Laudate Deum but criticizes its sometimes overconfident presentation of climate evidence, its limited treatment of human ecology, and its failure to address legitimate concerns about environmental policy and population-control proposals. He does not claim that Catholic faith requires rejecting every climate finding: his objection concerns the way a theological exhortation frames empirical and political judgments.",
+            "fr": "Dans son analyse publiée, le théologien Matthew Ramage accueille la responsabilité chrétienne envers la création exprimée dans Laudate Deum, mais critique certaines formulations trop assurées sur les données climatiques, la faible place de l'écologie humaine et le silence sur des inquiétudes légitimes concernant les politiques environnementales et le contrôle démographique. Il ne soutient pas que la foi catholique oblige à nier toute donnée climatique : son objection porte sur la manière dont une exhortation théologique présente des jugements empiriques et politiques."
           },
           "source_ids": [
-            "LD2023"
+            "LD2023",
+            "RAMAGE2023"
           ],
           "source_links": [
             {
               "id": "LD2023",
               "url": "https://www.vatican.va/content/francesco/en/apost_exhortations/documents/20231004-laudate-deum.html"
+            },
+            {
+              "id": "RAMAGE2023",
+              "url": "https://www.catholicworldreport.com/2023/10/05/important-points-in-laudate-deum-are-overshadowed-by-missed-opportunities/"
             }
           ],
           "attribution": {
-            "voice": "Pope Francis, Laudate Deum 2023",
-            "type": "DOCUMENTED_OFFICIAL_POSITION_OR_EDITORIALLY_FRAMED_COUNTERARGUMENT",
+            "voice": "Matthew J. Ramage, theologian, original 5 October 2023 review of Laudate Deum",
+            "type": "IDENTIFIED_EXTERNAL_ORIGINAL_POSITION",
             "verbatim_quote": false
           },
           "approval": "SOURCE_LINKED_DRAFT_NOT_CLAIM_BY_CLAIM_CERTIFIED"
@@ -2257,16 +2371,21 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A political counterargument can dispute costs, alternatives or reliability of a given climate forecast. Such empirical disagreement need not reject Catholic stewardship; conversely invoking stewardship does not settle an energy policy without examining evidence and trade-offs.",
-            "fr": "Une critique politique peut contester les coûts, les alternatives ou la fiabilité d'une prévision. Ce désaccord empirique n'abolit pas la sauvegarde catholique de la création ; mais celle-ci ne tranche pas sans preuves une politique énergétique."
+            "en": "The distinction is decisive: moral care for creation does not prove a specific climate model, nor does disagreement with a proposed policy annul the duty of stewardship. Conversely, criticism of a papal document's tone does not refute its empirical citations; objections about trends, causal attribution, emission pathways and competing technologies require independent specialist studies. Ramage's article is evidence of his argument, not independent scientific verification of every assertion in that argument.",
+            "fr": "Il faut distinguer les plans : le devoir moral de sauvegarder la création ne démontre pas un modèle climatique particulier, et un désaccord sur une politique ne supprime pas ce devoir. Inversement, critiquer le ton d'un texte pontifical ne réfute pas ses références empiriques ; les désaccords sur les tendances, les causes, les émissions et les technologies concurrentes exigent des études spécialisées indépendantes. L'article de Ramage atteste son argument, non la validité scientifique autonome de chacune de ses affirmations."
           },
           "source_ids": [
-            "LD2023"
+            "LD2023",
+            "RAMAGE2023"
           ],
           "source_links": [
             {
               "id": "LD2023",
               "url": "https://www.vatican.va/content/francesco/en/apost_exhortations/documents/20231004-laudate-deum.html"
+            },
+            {
+              "id": "RAMAGE2023",
+              "url": "https://www.catholicworldreport.com/2023/10/05/important-points-in-laudate-deum-are-overshadowed-by-missed-opportunities/"
             }
           ],
           "attribution": null,
@@ -2293,7 +2412,7 @@
       ],
       "original_case_pack_association": false,
       "related_full_existing_case_ids": [],
-      "outside_opponent_documented": false,
+      "outside_opponent_documented": true,
       "editorial_governance": {
         "new_research_draft": true,
         "canonical_owner_only": true,
@@ -3072,9 +3191,9 @@
     "case_count": 21,
     "paragraphs": 84,
     "fr_paragraphs": 84,
-    "primary_link_instances": 180,
-    "externally_named_opposing_position_cases": 10,
-    "documentary_and_editorial_position_cases": 11,
+    "primary_link_instances": 194,
+    "externally_named_opposing_position_cases": 17,
+    "documentary_and_editorial_position_cases": 4,
     "canonical_dossiers_added": 0
   },
   "policy": [
@@ -3084,7 +3203,9 @@
     "Opposing arguments that are only editorial frames may not be presented as an authentic opponent's published words.",
     "2026-10-08 bulk strengthening expanded the traditional arguments in all 21 drafts, with selected critical replies and six additional original documentary authorities; all claims still need independent claim-to-source and native French signoff.",
     "2026-10-08 original-proponent batch: named critics are only attributed when the linked original source has been located; links prove the author's argument, not the theological truth of the criticism; claim-level review remains open.",
-    "The SSPX canonical-status entry must not regress to the pre-July-2026 2009–2017 position: original DDF decree and explanatory note plus disputed Society recourse must remain attached; follow-up canonical rulings may supersede this state."
+    "The SSPX canonical-status entry must not regress to the pre-July-2026 2009–2017 position: original DDF decree and explanatory note plus disputed Society recourse must remain attached; follow-up canonical rulings may supersede this state.",
+    "2026-10-09: original positions from UGLE, Humanity+ and theologian Matthew Ramage added as expressly scoped arguments, not assumed opposition to entire magisterial documents nor proof of empirical claims; claim-by-claim review remains open.",
+    "2026-10-09 second actual-proponent batch: Marx and Engels, Behe, BioLogos, and Dorothy Day cited to their own statements; their factual or policy claims are not treated as independently proven by proponent sources."
   ],
   "public_release": false
 }

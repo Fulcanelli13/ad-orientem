@@ -79,11 +79,21 @@ const expected=rows.reduce((n,r)=>n+countAllSources(r.content),0);
 const renderable=rows.reduce((n,r)=>n+countVisibleSources(r.content),0);
 assert.equal(legacyRows.reduce((n,r)=>n+countAllSources(r.content),0),known.counts.source_bearing_blocks,"legacy source blocks diverged from historical registry");
 assert.equal(expected,622,"538 recovered plus 84 new four-part debates");
-assert.equal(known.counts.blocks_with_french,465,"31 previously unilingual contemporary passages gained French");
-assert.equal(known.counts.blocks_without_french,73,"unreviewed French parity gaps remain");
-assert.equal(known.controversy_draft_completion_20261008.externally_identified_original_opponents,10);
-assert.equal(known.controversy_draft_completion_20261008.newly_authored_source_references,180);
+assert.equal(known.counts.blocks_with_french,538,"all 538 recovered source-bearing blocks now have bilingual drafts");
+assert.equal(known.counts.blocks_without_french,0,"all legacy source-bearing content must have French text");
+assert.equal(known.controversy_draft_completion_20261008.externally_identified_original_opponents,17);
+assert.equal(known.controversy_draft_completion_20261008.newly_authored_source_references,194);
 
+const existingI=packs.find(p=>p.label==="Contemporary I").doc;
+for(const c of existingI.cases){
+ const sections=[...c.short_answer,...c.positions.map(p=>p.argument),...c.objections.flatMap(p=>[p.challenge,p.reply]),...c.traditional_argument];
+ assert.ok(sections.every(p=>p.text&&p.text_fr&&p.source_ids.length),"missing first-pack bilingual source block "+c.id);
+}
+const baqAnswers=packs.find(p=>p.label==="BAQ answers").doc;
+for(const id of ["BAQ-06","BAQ-07","BAQ-23"]){
+ const row=baqAnswers.answers.find(r=>r.question_id===id);
+ assert.ok(row.verification_notes[0].text_fr,"missing BAQ verification-note translation "+id);
+}
 assert.equal(renderable,expected,"reader silently hides sourced paragraphs");
 
 const fake={document:{getElementById:()=>null}};
