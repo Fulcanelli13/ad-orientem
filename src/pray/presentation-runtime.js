@@ -4,6 +4,7 @@ import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetU
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
+import { clearReturnStack, hasReturnPoint, returnToPrevious } from "../app/return-stack.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -1080,9 +1081,15 @@ function backToParent(){
  if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}
  if(view!=='home'&&navStack.length){popView();return render()}
  if(view!=='home'&&familyId){view='family';return render()}
+ if(hasReturnPoint()){
+   close({silent:true});
+   void returnToPrevious();
+   return true;
+ }
  return close();
 }
 function goGlobalHome(){
+ clearReturnStack();
  externalResume=captureResume();
  close({silent:true,preserve:true});
  const nav=window?.AO_APP_SHELL_V1?.navigate?.('home');
