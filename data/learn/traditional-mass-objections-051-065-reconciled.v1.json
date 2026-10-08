@@ -1,6 +1,6 @@
 {
   "version": "TLM_OBJECTIONS_051_065_RECONCILED_V1",
-  "status": "ENGLISH_SOURCE_LINKED_NORMALIZED_SUMMARIES_NOT_PUBLISHED",
+  "status": "BILINGUAL_COMPLETE_EDITORIAL_PROVENANCE_RECONCILED_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "source_transformation_notice": "This pack preserves all 15 earlier titles and principal claims, but the substantive passages were normalized/rephrased from chat draft, not exact verbatim migration. Consult previous in-chat TLM051–065 for complete draft language.",
@@ -83,6 +83,12 @@
       "title": "General Instruction, amendments and 1970 text",
       "url": "https://www.ewtn.com/catholicism/library/documents-on-the-general-instruction-of-the-roman-missal-29049",
       "type": "DICASTERY_PRIMARY_REPRINT"
+    },
+    {
+      "id": "NOT67",
+      "title": "Consilium, Notitiae, vol. 3 no. 8 (1967), pp. 357 and 363 — official first Synod of Bishops votes and observations",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-035-1967.pdf",
+      "type": "CONTEMPORANEOUS_CONSILIUM_PRIMARY"
     }
   ],
   "records": [
@@ -96,7 +102,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -105,19 +111,29 @@
             "SC63",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium* a demandé une révision de la liturgie romaine, mais n’a pas lui-même promulgué l’Ordo Missae complet introduit sous Paul VI. Ses principes portaient notamment sur la simplification, l’Écriture sainte, la participation des fidèles et la sauvegarde de la saine tradition."
         },
         {
-          "role": "identified_reply",
+          "role": "critical_assessment",
           "text": "The reform was carried out under papal authority through postconciliar organs; it was not an independent act of priests or consultors. That juridical fact does not eliminate the historical question of whether every concrete decision met the Council's criteria, notably its requirement of organic development.",
           "source_ids": [
             "SA64",
             "SC63",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La réforme fut menée sous l’autorité du pape, par l’intermédiaire d’organismes postconciliaires ; elle ne fut donc pas l’initiative indépendante de prêtres ou de consulteurs. Ce fait juridique n’élimine pas la question historique de savoir si chaque décision concrète répondait aux critères du Concile, en particulier à l’exigence d’un développement organique."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "SC63",
+        "MR69",
+        "SA64"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM052",
@@ -129,7 +145,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -138,18 +154,28 @@
             "AUD19",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Paul VI présenta lui-même les modifications comme importantes : le missel postconciliaire introduisit plusieurs prières eucharistiques, un Ordo Missae réorganisé et un lectionnaire considérablement élargi. Décrire ce processus comme une simple réduction de la complexité cérémonielle en minimise la portée."
         },
         {
-          "role": "identified_reply",
+          "role": "critical_assessment",
           "text": "Sacrosanctum Concilium positively required some simplification and restoration. Criticism therefore concerns which changes were necessary and organic, rather than an argument that no liturgical revision can be legitimate.",
           "source_ids": [
             "SC63",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium* demandait effectivement certaines simplifications et restaurations. La critique porte donc sur les transformations qui étaient nécessaires et organiques, non sur l’idée que toute révision liturgique serait illégitime."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "AUD19",
+        "MR69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM053",
@@ -159,7 +185,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -169,7 +195,8 @@
             "TA67",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "L’instruction *Inter Oecumenici* de 1964 et *Tres abhinc annos* de 1967 modifièrent progressivement la messe alors en usage avant la promulgation de l’Ordo de 1969. La *Missa normativa* expérimentale précéda également la publication définitive."
         },
         {
           "role": "assessment",
@@ -178,9 +205,19 @@
             "SC63",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La succession chronologique de révisions officielles établit une continuité institutionnelle, mais ne démontre pas à elle seule que chaque modification constituait un développement liturgique organique. Un tel jugement doit s’appuyer sur les critères énoncés par le Concile."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "IO64",
+        "TA67",
+        "CHIRON",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM054",
@@ -190,7 +227,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -199,7 +236,8 @@
             "CHIRON",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Mgr Annibale Bugnini exerça une influence majeure dans la coordination de la réforme ; néanmoins, des commissions, des évêques, des consulteurs et, en dernier ressort, Paul VI participèrent à la rédaction, à l’examen et à l’autorisation du nouveau missel. Attribuer l’ensemble de la réforme à un seul homme masque le processus documenté."
         },
         {
           "role": "assessment",
@@ -207,9 +245,17 @@
           "source_ids": [
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Les procédures suivies, le choix des experts et la rapidité de certaines étapes de rédaction peuvent légitimement être critiqués. Il convient toutefois d’appuyer ces critiques sur des documents, et non sur l’idée d’un auteur unique auquel tout serait imputable."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "MR69"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM055",
@@ -219,7 +265,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -228,7 +274,8 @@
             "CHIRON",
             "MR69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Paul VI intervint personnellement sur les projets, notamment au sujet du Canon romain et de la forme du nouvel Ordo Missae. La reconstitution historique de Chiron fait état d’objections et de révisions au cours des travaux ; la promulgation pontificale constitua un exercice de sa propre autorité juridique."
         },
         {
           "role": "assessment",
@@ -238,9 +285,18 @@
             "CHIRON",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "L’approbation personnelle du pape engage sa responsabilité dans la réforme légalement promulguée ; elle doit cependant être distinguée des innovations non autorisées apparues dans certaines célébrations ultérieures. Les éléments disponibles ne permettent pas de présenter Paul VI comme un simple signataire passif."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "MR69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM056",
@@ -250,26 +306,37 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
           "text": "On the general structure of the 1967 Missa normativa, the recorded votes were 71 placet, 43 non placet, 62 placet iuxta modum and four abstentions. A conditional placet is not a rejection, but neither is it an unconditional approval.",
           "source_ids": [
-            "CHIRON",
-            "OTT69"
+            "NOT67",
+            "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "PRIMARY_DOCUMENT_ANCHORED_REQUIRES_EDITORIAL_REVIEW",
+          "text_fr": "Pour la structure générale de la *Missa normativa* de 1967, les suffrages rapportés furent de 71 *placet*, 43 *non placet*, 62 *placet iuxta modum* et quatre abstentions. Une approbation sous conditions n’est pas un rejet ; elle n’est pas non plus une approbation sans réserve.",
+          "evidence_locator": "Notitiae (November 1967) pp. 357, 363: Ad I 71 placet, 43 non placet, 62 placet iuxta modum, 4 abstentions"
         },
         {
           "role": "assessment",
           "text": "The 1967 vote concerned an experimental form rather than the final typical edition; it demonstrates significant reservations and cannot be used as a final canonical judgment on the promulgated Missal.",
           "source_ids": [
+            "NOT67",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Le vote de 1967 portait sur une forme expérimentale et non sur l’édition typique définitive. Il révèle des réserves importantes, mais ne constitue pas un jugement canonique final sur le missel promulgué."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "OTT69"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM057",
@@ -279,27 +346,39 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
           "text": "The 1967 Missa normativa was a developmental stage. Further consultation, revisions and papal approval took place before the Order of Mass was promulgated in 1969 and the full Latin typical edition appeared in 1970.",
           "source_ids": [
             "CHIRON",
-            "MR69"
+            "MR69",
+            "NOT67"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La *Missa normativa* de 1967 était une étape dans l’élaboration du rite. D’autres consultations, révisions et approbations pontificales eurent lieu avant la promulgation de l’Ordo Missae en 1969 et la publication de l’édition typique latine complète en 1970."
         },
         {
           "role": "assessment",
           "text": "A criticism of a provisional version must identify what carried forward into the final text. Conversely, later revisions do not make earlier episcopal reservations historically irrelevant.",
           "source_ids": [
             "CHIRON",
-            "GIM70"
+            "GIM70",
+            "NOT67"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Une critique formulée contre une version provisoire doit préciser ce qui fut conservé dans le texte définitif. Inversement, les révisions ultérieures n’effacent pas l’importance historique des réserves épiscopales précédentes."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "CHIRON",
+        "MR69",
+        "GIM70"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM058",
@@ -311,7 +390,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "identified_objection",
@@ -319,7 +398,8 @@
           "source_ids": [
             "OTT69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La *Brève étude critique du nouvel Ordo Missae*, publiée en 1969, reprochait à la première rédaction du paragraphe 7 de ne pas exprimer assez explicitement des doctrines eucharistiques essentielles, notamment le caractère sacrificiel de la messe et la présence substantielle du Christ."
         },
         {
           "role": "answer",
@@ -329,9 +409,19 @@
             "MR69",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "L’introduction générale initiale fut ensuite complétée et corrigée, tandis que la constitution apostolique de Paul VI parlait déjà du sacrifice eucharistique. Le caractère doctrinalement incomplet d’une phrase explicative ne démontre pas, à lui seul, que le rite promulgué rejette la doctrine eucharistique catholique."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "OTT69",
+        "GIM70",
+        "MR69",
+        "CHIRON"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM059",
@@ -343,7 +433,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "identified_objection",
@@ -351,7 +441,8 @@
           "source_ids": [
             "OTT69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "En 1969, les cardinaux Ottaviani et Bacci transmirent une *Brève étude critique* dénonçant, selon leurs auteurs, des écarts notables par rapport à la théologie du sacrifice eucharistique formulée au concile de Trente. Cette étude constitue une critique contemporaine sérieuse et documentée, non une condamnation magistérielle obligatoire."
         },
         {
           "role": "assessment",
@@ -361,9 +452,19 @@
             "GIM70",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Soutenir qu’un rite exprime moins clairement la doctrine du sacrifice ne revient pas automatiquement à démontrer son invalidité ou une hérésie formelle. Les corrections ultérieures et le langage sacrificiel expressément présent dans la réforme doivent aussi entrer dans l’examen."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "OTT69",
+        "MR69",
+        "GIM70",
+        "CHIRON"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM060",
@@ -373,7 +474,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -382,18 +483,28 @@
             "GIM70",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La Présentation générale du Missel romain fut modifiée en 1970, notamment par l’ajout d’un préambule doctrinal explicite et par la clarification du langage eucharistique, après la controverse suscitée par la première édition."
         },
         {
-          "role": "identified_reply",
+          "role": "critical_assessment",
           "text": "These explanatory revisions did not reverse the core new arrangement of the Offertory, additional Eucharistic Prayers and other ritual changes. A critic may still object to those structural decisions without denying that corrections occurred.",
           "source_ids": [
             "MR69",
             "CHIRON"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Ces corrections explicatives ne rétablirent pas pour autant l’ancien agencement de l’offertoire, le Canon romain comme unique prière eucharistique ni les autres structures rituelles antérieures. On peut critiquer ces choix tout en reconnaissant que des corrections ont eu lieu."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "GIM70",
+        "CHIRON",
+        "MR69"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM061",
@@ -403,7 +514,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -411,7 +522,8 @@
           "source_ids": [
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium*, au n° 36, demandait la conservation du latin dans les rites latins tout en admettant une place plus large pour les langues vernaculaires ; le n° 54 souhaitait aussi que les fidèles puissent réciter ou chanter en latin les parties de l’Ordinaire qui leur reviennent."
         },
         {
           "role": "assessment",
@@ -419,9 +531,16 @@
           "source_ids": [
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Le Concile autorisa donc un emploi accru des langues vernaculaires sous la responsabilité de l’autorité ecclésiastique compétente. Mais la disparition presque complète du latin dans certaines pratiques locales ne saurait être présentée comme une prescription explicite du Concile."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM062",
@@ -431,7 +550,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -439,7 +558,8 @@
           "source_ids": [
             "AUD26"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Dans son audience du 26 novembre 1969, Paul VI reconnut la perte spirituelle et artistique entraînée par le passage du latin aux langues vernaculaires et mentionna particulièrement le chant grégorien. Il défendit néanmoins l’amélioration de la compréhension des paroles et de la participation du peuple comme des gains pastoraux."
         },
         {
           "role": "assessment",
@@ -448,9 +568,17 @@
             "AUD26",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Son explication confirme qu’il reconnaissait la valeur du patrimoine linguistique et musical hérité. La proportionnalité de ce sacrifice demeure une question historique et pastorale : il ne faut effacer ni la perte reconnue ni les bénéfices espérés."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "AUD26",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM063",
@@ -460,7 +588,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -468,7 +596,8 @@
           "source_ids": [
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium*, au n° 116, affirme que le chant grégorien convient particulièrement à la liturgie romaine et qu’il doit, toutes choses égales d’ailleurs, y occuper la première place. Il n’était donc pas réservé exclusivement aux célébrations selon le missel de 1962."
         },
         {
           "role": "assessment",
@@ -477,9 +606,17 @@
             "GIRM",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Le missel réformé peut être célébré en latin avec chant. Si le chant grégorien est devenu presque absent de certaines paroisses, cela concerne la pratique liturgique, la formation et les moyens musicaux disponibles, non une interdiction générale dans les livres réformés."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "SC63",
+        "GIRM"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM064",
@@ -491,7 +628,7 @@
       ],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -500,7 +637,8 @@
             "MEM69",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "*Sacrosanctum Concilium* n’a pas imposé la communion dans la main. L’instruction *Memoriale Domini* de 1969 examina la diffusion de cette pratique en certains lieux, conserva le mode de distribution établi comme principe et permit à certaines conférences épiscopales de demander l’autorisation de l’autre pratique."
         },
         {
           "role": "assessment",
@@ -508,9 +646,17 @@
           "source_ids": [
             "MEM69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "La manière dont cette discipline s’est introduite est une question historique légitime. Là où l’autorisation a été régulièrement accordée, on ne peut simplement qualifier cette pratique d’illicite ; les préoccupations relatives à la révérence eucharistique doivent être examinées à la lumière de l’instruction elle-même."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "MEM69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     },
     {
       "id": "TLM065",
@@ -520,7 +666,7 @@
       "crossLinks": [],
       "source_material": "IN_CHAT_TLM051_065_PREVIOUS_DRAFT_NORMALIZED_SUMMARY",
       "editorial_status": "SOURCE_LINKED_SUMMARY_NOT_VERBATIM_OF_CHAT_DRAFT_UNPUBLISHED",
-      "question_provenance": "GENERIC_OBJECTION_REQUIRE_ATTRIBUTION",
+      "question_provenance": "EDITORIAL_DEBATE_PROMPT_NOT_ATTRIBUTED_TO_AN_EXTERNAL_AUTHOR",
       "paragraphs": [
         {
           "role": "answer",
@@ -528,7 +674,8 @@
           "source_ids": [
             "MP69"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Dans *Mysterii Paschalis* (1969), Paul VI expliqua la réforme du calendrier par la volonté de mettre au premier plan le mystère pascal, d’alléger une surcharge du sanctoral universel et de mieux représenter les saints des diverses régions de l’Église."
         },
         {
           "role": "assessment",
@@ -537,14 +684,42 @@
             "MP69",
             "SC63"
           ],
-          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED"
+          "source_review": "DRAFT_CLAIM_LEVEL_REVIEW_REQUIRED",
+          "text_fr": "Le calendrier façonne la mémoire dévotionnelle, et chaque déplacement ou suppression de fête peut être discuté sur le fondement de son histoire. Cependant, ces modifications ne démontrent pas, à elles seules, une intention d’attaquer le culte des saints. Des papes antérieurs avaient eux aussi révisé des fêtes, vigiles et octaves."
         }
-      ]
+      ],
+      "translation_review": "BILINGUAL_DRAFT_REQUIRES_NATIVE_THEOLOGICAL_EDITORIAL_REVIEW",
+      "question_source_ids": [
+        "MP69",
+        "SC63"
+      ],
+      "question_source_meaning": "The listed original or historical sources establish the topic, not an external author's exact wording of this question.",
+      "adversarial_review": "RESEARCH_NOTE_NOT_FULL_PRO_CONTRA_DEBATE: attributed primary objections required where controversy demands."
     }
   ],
   "counts": {
     "questions": 15,
     "substantive_paragraphs": 30,
     "new_canonical_dossiers": 0
+  },
+  "translation_progress": {
+    "question_titles_fr_draft": 15,
+    "paragraphs_fr_draft": 30,
+    "questions_with_complete_paragraphs_fr_draft": 15,
+    "question_paragraph_count_expected": 30,
+    "human_review_completed": false
+  },
+  "editorial_provenance": {
+    "date": "2026-10-08",
+    "titles": 15,
+    "all_titles_identified_as_editorial": true,
+    "all_30_paragraphs_source_linked_not_final_fact_checked": true,
+    "removed_unsupported_identified_reply_roles": 3,
+    "actual_named_objection_examples": [
+      "TLM058 Short Critical Study",
+      "TLM059 Ottaviani-Bacci Intervention"
+    ],
+    "no_new_navigation_dossiers": true,
+    "original_vote_count_verified_in_primary": "NOT67, p. 363, vote I"
   }
 }
