@@ -71,7 +71,8 @@ const countVisibleSources = value => {
 };
 const expected=rows.reduce((n,r)=>n+countAllSources(r.content),0);
 const renderable=rows.reduce((n,r)=>n+countVisibleSources(r.content),0);
-assert.equal(expected,481,"source-bearing text block count changed");
+assert.equal(expected,known.counts.source_bearing_blocks,"source-bearing text blocks diverged from indexed ledger");
+assert.equal(expected,488,"unexpected historical source-bearing count after 7 fully sourced TLM additions");
 assert.equal(renderable,expected,"reader silently hides sourced paragraphs");
 
 const fake={document:{getElementById:()=>null}};
