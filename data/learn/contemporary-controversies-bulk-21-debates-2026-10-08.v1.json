@@ -26,6 +26,20 @@
           "scope": "Dignitatis humanae §§1–2 on immunity from coercion",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "LIB1888",
+          "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+          "scope": "Libertas §§30–35: truth, civil conscience, prudent toleration and error",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "DI2000",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+          "scope": "Dominus Iesus §§13–17, 20–22: unique mediation of Christ and the Church",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
       ],
       "paragraphs": [
@@ -77,12 +91,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "The text does not explain the positive/permissive distinction. Therefore one cannot simply pretend the theological ambiguity is absent; but the disputed sentence alone does not demonstrate that Catholic worship and contradictory religions are formally declared salvifically identical.",
-            "fr": "Le texte ne précise pas la distinction entre volonté positive et permissive. On ne peut donc nier son ambiguïté théologique ; toutefois cette formule ne proclame pas formellement toutes les religions identiques pour le salut."
+            "en": "The practical aim of protecting religious fraternity is compatible with civil peace, but it does not resolve the theological assertion that pluralism is 'willed by God'. In the older distinction between permission and approbation, a tolerated error does not acquire a right to be considered revealed truth; the controversial sentence must be read in that light, rather than suppressed or assumed to define equal salvific paths.",
+            "fr": "L'objectif pratique de fraternité religieuse peut servir la paix civile, mais ne résout pas l'affirmation théologique selon laquelle le pluralisme est « voulu par Dieu ». Dans la distinction classique entre permission et approbation, une erreur tolérée n'acquiert aucun droit à être tenue pour une vérité révélée ; la formule contestée doit être évaluée à cette lumière, sans être effacée ni érigée en définition de voies de salut équivalentes."
           },
           "source_ids": [
             "AD2019",
-            "DH1965"
+            "DH1965",
+            "LIB1888"
           ],
           "source_links": [
             {
@@ -92,6 +107,10 @@
             {
               "id": "DH1965",
               "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html"
+            },
+            {
+              "id": "LIB1888",
+              "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
             }
           ],
           "attribution": null,
@@ -100,12 +119,14 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Christ's unique truth and the obligation to witness to it are not annulled by civil respect for persons of another religion. Fraternity requires charity without indifferentism, and criticism requires the original clause rather than selective slogans.",
-            "fr": "L'unique vérité du Christ et le devoir d'en témoigner ne sont pas abolis par le respect civil des personnes d'autres religions. La fraternité suppose la charité sans indifférentisme ; la critique doit porter sur les mots réels."
+            "en": "God's permission of religious error is not God's positive willing of contradictory doctrines as equally true. Leo XIII distinguishes toleration of error for the sake of a greater good from approval of error itself; Dominus Iesus affirms the unique and universal mediation of Christ and the Church. Religious peace therefore entails charity and civil justice toward non-Catholics, not renunciation of the duty to profess and announce the true faith. This doctrinal test leaves the unusual wording of the 2019 clause open to warranted criticism rather than silently rewriting it.",
+            "fr": "La permission divine de l'erreur religieuse n'est pas une volonté positive de doctrines contradictoires également vraies. Léon XIII distingue la tolérance de l'erreur pour un bien supérieur de son approbation ; Dominus Iesus affirme l'unicité et l'universalité de la médiation du Christ et de l'Église. La paix religieuse suppose donc charité et justice civile envers les non-catholiques, non l'abandon du devoir de confesser et d'annoncer la vraie foi. Cette règle doctrinale permet de critiquer la formule de 2019 sans la réécrire tacitement."
           },
           "source_ids": [
             "AD2019",
-            "DH1965"
+            "DH1965",
+            "LIB1888",
+            "DI2000"
           ],
           "source_links": [
             {
@@ -115,6 +136,14 @@
             {
               "id": "DH1965",
               "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html"
+            },
+            {
+              "id": "LIB1888",
+              "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
+            },
+            {
+              "id": "DI2000",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html"
             }
           ],
           "attribution": null,
@@ -153,6 +182,13 @@
           "id": "AD2019",
           "url": "https://www.vatican.va/content/francesco/en/travels/2019/outside/documents/papa-francesco_20190204_documento-fratellanza-umana.html",
           "scope": "Related Abu Dhabi declaration",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "DI2000",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+          "scope": "Dominus Iesus §§13–17, 20–22: unique mediation of Christ and the Church",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
@@ -224,12 +260,13 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "No vague interreligious metaphor supplies permission to deny the unique mediation of Christ or the Church's missionary duty. Nor does every infelicitous phrase constitute a new binding dogma.",
-            "fr": "Aucune métaphore interreligieuse vague n'autorise à nier la médiation unique du Christ ou la mission de l'Église. Mais toute formule malheureuse ne devient pas pour autant un dogme obligatoire."
+            "en": "The decisive distinction is between a person's sincere religious search and the truth and salvific efficacy of the religion professed. Dominus Iesus teaches that salvation is through Christ and remains related to his Church, even where a person's subjective situation is known fully to God alone. An analogy comparing religions to languages cannot establish that mutually exclusive beliefs mediate salvation on equal terms; it must be measured against this explicit doctrinal rule, while the informal remarks are not misrepresented as a dogmatic decree.",
+            "fr": "Il faut distinguer la recherche religieuse sincère d'une personne de la vérité et de l'efficacité salvifique de la religion qu'elle professe. Dominus Iesus enseigne que le salut vient du Christ et demeure lié à son Église, même lorsque la situation subjective d'une personne n'est pleinement connue que de Dieu. Comparer les religions à des langues ne peut établir que des croyances incompatibles procurent le salut à égalité ; l'analogie doit être jugée d'après cette règle doctrinale explicite, sans transformer des paroles improvisées en décret dogmatique."
           },
           "source_ids": [
             "SING2024",
-            "AD2019"
+            "AD2019",
+            "DI2000"
           ],
           "source_links": [
             {
@@ -239,6 +276,10 @@
             {
               "id": "AD2019",
               "url": "https://www.vatican.va/content/francesco/en/travels/2019/outside/documents/papa-francesco_20190204_documento-fratellanza-umana.html"
+            },
+            {
+              "id": "DI2000",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html"
             }
           ],
           "attribution": null,
@@ -379,8 +420,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "A person may be blessed while being called to conversion; an illicit union cannot be affirmed as morally good. Prudence must assess whether the recipient, words and public setting genuinely convey the former without appearing to effect the latter.",
-            "fr": "Une personne peut être bénie en étant appelée à la conversion ; une union illicite ne peut être affirmée moralement bonne. La prudence doit juger si les paroles, les destinataires et le cadre public signifient vraiment la première sans suggérer la seconde."
+            "en": "A blessing invoked upon sinners as persons can implore grace and conversion without endorsing sinful acts. But the moral object communicated by blessing a publicly presented 'couple' cannot be judged by the celebrant's private intention alone: the wording, recipients and foreseeable public signification also matter. The 2021 responsum bars blessing unions as such, while the 2023 declaration and 2024 clarification distinguish brief, non-ritual blessings from marriage-like ceremonies. Whether a concrete blessing actually preserves that distinction is a prudential and theological question, not one settled merely by describing the rite as informal.",
+            "fr": "Une bénédiction donnée à des pécheurs en tant que personnes peut demander la grâce et la conversion sans approuver leurs actes. Toutefois, le sens moral communiqué par la bénédiction d'un « couple » publiquement présenté ne dépend pas seulement de l'intention privée du ministre : les paroles, les destinataires et la signification publique prévisible importent aussi. Le responsum de 2021 exclut la bénédiction des unions comme telles ; la déclaration de 2023 et la précision de 2024 distinguent les bénédictions brèves et non rituelles des cérémonies analogues au mariage. La question de savoir si une bénédiction concrète respecte réellement cette distinction ne se résout pas par le seul qualificatif d'« informelle »."
           },
           "source_ids": [
             "FS2021",
@@ -525,8 +566,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The indissolubility of marriage, objective moral norms, adequate formation of conscience and reverence for the Eucharist must remain simultaneously operative. Neither automatic condemnation of persons nor abolition of objective discipline follows from the cited texts.",
-            "fr": "L'indissolubilité, les normes morales objectives, la formation de la conscience et le respect de l'Eucharistie doivent être maintenus ensemble. Ni la condamnation automatique des personnes ni l'abolition de la discipline objective ne découlent des textes."
+            "en": "An attenuating circumstance can reduce subjective culpability without changing the objective moral species of adultery or the enduring bond of a valid marriage. Familiaris consortio §84 joins solicitude for divorced and remarried persons to a determinate Eucharistic discipline; Amoris laetitia §§300–305 calls for discernment and refers, in a footnote, to sacramental assistance. The dispute cannot be solved by equating every case or by replacing the publicly applicable sacramental question with an assertion about hidden personal guilt. Both the permanence of moral norms and the ecclesial coherence of sacramental discipline require an explicit account.",
+            "fr": "Une circonstance atténuante peut réduire l'imputabilité subjective sans changer l'espèce morale objective de l'adultère ni la permanence d'un mariage valide. Familiaris consortio §84 unit la sollicitude pour les divorcés remariés à une discipline eucharistique déterminée ; Amoris laetitia §§300–305 demande le discernement et mentionne, en note, une aide sacramentelle. Le débat ne se résout ni en assimilant tous les cas ni en remplaçant la question sacramentelle publiquement applicable par une hypothèse sur la culpabilité intérieure. Il faut rendre compte explicitement de la permanence des normes morales et de la cohérence ecclésiale de la discipline sacramentelle."
           },
           "source_ids": [
             "FC1981",
@@ -578,6 +619,20 @@
           "id": "ASSISI-END",
           "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1986/october/documents/hf_jp-ii_spe_19861027_prayer-peace-assisi-final.html",
           "scope": "Pope's final address clarifying diverse content",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "MA1928",
+          "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280106_mortalium-animos.html",
+          "scope": "Mortalium animos: visible unity of the Church and integrity of revealed doctrine",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "DI2000",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+          "scope": "Dominus Iesus §§13–17, 20–22: unique mediation of Christ and the Church",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
@@ -659,12 +714,14 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Peaceful coexistence cannot require Catholics to conceal religious truth. Equally, objection to potentially ambiguous public symbols must distinguish documented actions from false reports and may not impute internal idolatrous intention without evidence.",
-            "fr": "La coexistence pacifique n'exige pas de cacher la vérité religieuse. La critique de signes publics possiblement ambigus doit distinguer les faits attestés des récits erronés et ne pas attribuer d'intention idolâtre sans preuve."
+            "en": "Religious peace is a legitimate temporal good, but it does not make incompatible worship interchangeable. Mortalium animos rejects an ecclesial unity built by setting revealed doctrines aside; Dominus Iesus preserves the unique mediation of Christ. The 1986 papal arrangements distinguished being together for prayer from composing one common interreligious prayer, so an accusation of a single syncretistic rite exceeds the documented facts. The separate and serious question is whether the event's public symbolism nonetheless appeared to place distinct worships on an equivalent footing.",
+            "fr": "La paix religieuse est un bien temporel légitime, mais elle ne rend pas interchangeables des cultes incompatibles. Mortalium animos refuse une unité ecclésiale construite par l'abandon des vérités révélées ; Dominus Iesus maintient l'unique médiation du Christ. En 1986, les dispositions pontificales distinguaient la réunion pour prier d'une prière interreligieuse commune : parler d'un rite syncrétiste unique excéderait donc les faits documentés. Reste la question, distincte et sérieuse, de l'impression d'équivalence entre cultes que pouvait produire la symbolique publique de la rencontre."
           },
           "source_ids": [
             "ASSISI-START",
-            "ASSISI-END"
+            "ASSISI-END",
+            "MA1928",
+            "DI2000"
           ],
           "source_links": [
             {
@@ -674,6 +731,14 @@
             {
               "id": "ASSISI-END",
               "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1986/october/documents/hf_jp-ii_spe_19861027_prayer-peace-assisi-final.html"
+            },
+            {
+              "id": "MA1928",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280106_mortalium-animos.html"
+            },
+            {
+              "id": "DI2000",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html"
             }
           ],
           "attribution": null,
@@ -712,6 +777,13 @@
           "id": "ASSISI-START",
           "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1986/october/documents/hf_jp-ii_spe_19861027_prayer-peace-assisi.html",
           "scope": "Separate interreligious prayer scenario",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "MA1928",
+          "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280106_mortalium-animos.html",
+          "scope": "Mortalium animos: visible unity of the Church and integrity of revealed doctrine",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
@@ -783,16 +855,21 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The faithful must retain Catholic truth about the Eucharist and Church unity while respecting actual lawful distinctions. Abuse of one permission is not evidence that every permitted form of common prayer is inherently indifferentist.",
-            "fr": "Il faut conserver la vérité catholique sur l'Eucharistie et l'unité en respectant les distinctions légitimes. Un abus ne prouve pas que toute prière commune autorisée soit intrinsèquement indifférentiste."
+            "en": "The unity sought in Christian prayer cannot be purchased by treating opposed doctrines as interchangeable: Mortalium animos insists upon unity in the same faith under the Church's visible government. At the same time, the 1993 Ecumenical Directory regulates forms of common non-sacramental prayer among baptized Christians and distinguishes them from restricted sacramental sharing. The concrete judgment must identify participants, words, purpose and rite; prayer for unity, Eucharistic intercommunion and multireligious worship are not one undifferentiated action.",
+            "fr": "L'unité recherchée dans la prière chrétienne ne peut s'acheter au prix de doctrines contradictoires réputées interchangeables : Mortalium animos exige l'unité dans une même foi sous le gouvernement visible de l'Église. Le Directoire œcuménique de 1993 règle néanmoins certaines prières communes non sacramentelles entre baptisés et les distingue du partage sacramentel plus restreint. Il faut examiner concrètement les participants, les paroles, la fin et le rite ; prière pour l'unité, intercommunion eucharistique et culte multireligieux ne constituent pas un seul acte indifférencié."
           },
           "source_ids": [
-            "ECUM1993"
+            "ECUM1993",
+            "MA1928"
           ],
           "source_links": [
             {
               "id": "ECUM1993",
               "url": "https://www.christianunity.va/content/unitacristiani/en/documenti/testo-in-inglese.html"
+            },
+            {
+              "id": "MA1928",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280106_mortalium-animos.html"
             }
           ],
           "attribution": null,
@@ -831,6 +908,20 @@
           "id": "QP1925",
           "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
           "scope": "Christ's kingship, §§18–20 and 31",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "LIB1888",
+          "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+          "scope": "Libertas §§30–35: truth, civil conscience, prudent toleration and error",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "IMM1885",
+          "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+          "scope": "Immortale Dei §§4, 36, 48: civil authority, political forms and religious toleration",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
@@ -907,12 +998,14 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The State cannot compel interior faith, and persons remain obliged to seek truth. Catholics may challenge inconsistent interpretations without treating religious indifference as a Catholic principle or ascribing every civil protection to relativism.",
-            "fr": "L'État ne peut imposer la foi intérieure ; chacun demeure tenu de rechercher la vérité. On peut critiquer les interprétations incohérentes sans faire de l'indifférence religieuse un principe catholique ni qualifier toute protection civile de relativisme."
+            "en": "Leo XIII's Libertas distinguishes the duty to adhere to truth, a State's possible toleration of erroneous worship for the common good, and the wrong of coercing religious assent. Immortale Dei also recognizes legitimate civil prudence without equating false worship with true religion. Dignitatis humanae speaks instead of immunity from coercion for persons and communities, subject to due limits of public order. The contested question is whether the latter's general juridical language can be reconciled with the former account of public duties and toleration; the mere claim that one text concerns 'truth' and the other 'persons' is an important distinction, not by itself a complete historical demonstration.",
+            "fr": "Léon XIII, dans Libertas, distingue le devoir d'adhérer à la vérité, la tolérance éventuelle d'un culte erroné pour le bien commun et l'illicéité de contraindre l'adhésion religieuse. Immortale Dei reconnaît également la prudence civile légitime sans placer le faux culte à égalité avec le vrai. Dignitatis humanae énonce, pour sa part, une immunité de contrainte des personnes et des communautés, dans les limites de l'ordre public juste. La question contestée est de savoir si cette formulation juridique générale se concilie avec la doctrine antérieure des devoirs publics et de la tolérance ; distinguer « vérité » et « personnes » est nécessaire, mais ne constitue pas à soi seul une démonstration historique complète."
           },
           "source_ids": [
             "DH1965",
-            "QP1925"
+            "QP1925",
+            "LIB1888",
+            "IMM1885"
           ],
           "source_links": [
             {
@@ -922,6 +1015,14 @@
             {
               "id": "QP1925",
               "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html"
+            },
+            {
+              "id": "LIB1888",
+              "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
+            },
+            {
+              "id": "IMM1885",
+              "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html"
             }
           ],
           "attribution": null,
@@ -1041,8 +1142,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "A Catholic should not join an incompatible secret-society system; at the same time, denunciations of specific persons or conspiracies must not exceed the evidence. The canonical conclusion does not authorize calumny.",
-            "fr": "Un catholique ne doit pas adhérer à un système associatif jugé incompatible avec la foi ; pourtant la dénonciation de personnes ou de complots précis doit rester fondée sur des preuves. La norme n'autorise pas la calomnie."
+            "en": "The 1983 doctrinal declaration does not make a lodge's charitable work an exemption from the Church's judgment on incompatible Masonic principles; the 2023 reply confirms the prohibition. The external act of affiliation and the objective rule must be distinguished from a confessor's judgment of subjective ignorance or responsibility. Equally, the existence of a general ecclesial prohibition does not prove unverified claims that named individuals, particular lodges or public events form a conspiracy. Catholic truthfulness binds the accusation as much as the doctrinal judgment.",
+            "fr": "La déclaration doctrinale de 1983 ne fait pas de l'œuvre charitable d'une loge une exception au jugement de l'Église sur l'incompatibilité des principes maçonniques ; la réponse de 2023 confirme l'interdiction. L'acte extérieur d'adhésion et la règle objective doivent être distingués de l'appréciation de l'ignorance ou de la responsabilité subjective d'une personne. De même, l'interdiction ecclésiale générale ne prouve pas des allégations non vérifiées sur une conspiration de personnes, de loges ou d'événements déterminés. L'exigence catholique de vérité s'applique autant à l'accusation qu'au jugement doctrinal."
           },
           "source_ids": [
             "MASON1983",
@@ -1094,6 +1195,13 @@
           "id": "QP1925",
           "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
           "scope": "Public obligations and the common good",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "RN1891",
+          "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15051891_rerum-novarum.html",
+          "scope": "Rerum novarum: property rights and particular protection due workers and the poor",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
@@ -1165,12 +1273,13 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The Church's criticism of atheist communism coexists with duties of justice, solidarity and the common good. The rejection of ideology must not become an excuse for ignoring the poor or for caricaturing every opponent.",
-            "fr": "La critique du communisme athée coexiste avec les devoirs de justice, solidarité et bien commun. Rejeter une idéologie ne dispense pas de secourir les pauvres ni ne justifie la caricature de chaque adversaire."
+            "en": "Divini redemptoris rejects atheistic communism not because the poor ask for justice, but because its materialist conception of man subordinates the person, family and religion to a total political order. Rerum novarum had already defended both private property and the special claim of workers and the poor to legal protection. A Catholic can therefore reject class hatred and the abolition of fundamental rights while insisting on a just wage, protection of labor and assistance to the vulnerable. Neither ideology's denunciation nor its promise of equality substitutes for that twofold moral test.",
+            "fr": "Divini redemptoris condamne le communisme athée non parce que les pauvres réclament justice, mais parce que son anthropologie matérialiste subordonne la personne, la famille et la religion à un ordre politique total. Rerum novarum défendait déjà tant la propriété privée que le droit particulier des ouvriers et des pauvres à la protection juridique. Un catholique peut donc rejeter la haine des classes et la suppression des droits fondamentaux tout en exigeant un salaire juste, la protection du travail et le secours des plus faibles. Ni la condamnation d'une idéologie ni sa promesse d'égalité ne remplacent cette double exigence morale."
           },
           "source_ids": [
             "DR1937",
-            "QP1925"
+            "QP1925",
+            "RN1891"
           ],
           "source_links": [
             {
@@ -1180,6 +1289,10 @@
             {
               "id": "QP1925",
               "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html"
+            },
+            {
+              "id": "RN1891",
+              "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15051891_rerum-novarum.html"
             }
           ],
           "attribution": null,
@@ -1294,8 +1407,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Scientific findings deserve factual evaluation, yet the unity of human nature and the divine origin of spiritual life remain theological principles. An apologetic answer should neither claim nonexistent experimental proof nor prohibit an inquiry expressly allowed.",
-            "fr": "Les découvertes scientifiques méritent examen factuel, tandis que l'unité de la nature humaine et l'origine divine de la vie spirituelle demeurent des principes théologiques. Il ne faut inventer ni preuve expérimentale ni interdit contraire au texte."
+            "en": "Humani generis §36 permits inquiry into whether the human body arose from pre-existing living matter while expressly excluding any account that derives the spiritual soul from matter. This conditional permission does not decide every claim of evolutionary biology and does not abolish the doctrinal questions of creation, the human person's unity and original sin. Conversely, a biological account of descent does not by itself establish materialism: explanations of bodily processes and the immediate divine creation of the rational soul address different kinds of causality.",
+            "fr": "Humani generis §36 permet l'enquête sur l'origine éventuelle du corps humain à partir d'une matière vivante préexistante, tout en excluant expressément une explication matérielle de l'âme spirituelle. Cette permission conditionnelle ne tranche pas toutes les thèses de la biologie évolutive et ne supprime pas les questions doctrinales de la création, de l'unité de la personne et du péché originel. Inversement, une explication biologique de la descendance n'établit pas par elle-même le matérialisme : les processus corporels et la création immédiate de l'âme raisonnable par Dieu relèvent de causalités différentes."
           },
           "source_ids": [
             "HG1950"
@@ -1413,8 +1526,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Do not portray an uncertain biological reconstruction as dogma, or pretend original sin can be rejected because present models are complicated. The theological question must be answered on its actual doctrinal terms.",
-            "fr": "Il ne faut ériger une reconstitution biologique incertaine en dogme, ni écarter le péché originel au nom de la complexité des modèles. La question théologique exige une réponse selon ses vrais principes."
+            "en": "Pius XII's caution in Humani generis §37 concerns the compatibility of polygenism with original sin proceeding from an original fault and being transmitted to all human beings; it is not a numerical prediction about prehistoric effective population size. A genetic model may illuminate ancestry but cannot, without a theological account, settle the historical and doctrinal claims about Adam and original sin. The obligation is to preserve what the teaching actually asserts and neither canonize one speculative genetics model nor dissolve original sin into a poetic name for social evil.",
+            "fr": "La réserve de Pie XII dans Humani generis §37 porte sur la compatibilité du polygénisme avec un péché originel procédant d'une faute initiale et transmis à tous les hommes ; ce n'est pas une prédiction chiffrée sur la taille des populations préhistoriques. Un modèle génétique peut éclairer les ascendances sans trancher, faute d'une argumentation théologique, les affirmations historiques et doctrinales concernant Adam et le péché originel. Il faut garder la portée réelle de cet enseignement, sans ériger un modèle génétique hypothétique en dogme ni réduire le péché originel à un simple nom poétique du mal social."
           },
           "source_ids": [
             "HG1950"
@@ -1537,8 +1650,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The criterion is not national glory or vengeance but justice, lawful authority, necessity and limits on means. Judging a named contemporary war demands independently verified historical facts beyond these general norms.",
-            "fr": "Le critère n'est ni gloire nationale ni vengeance, mais justice, autorité légitime, nécessité et limites des moyens. Juger une guerre concrète exige des faits historiques vérifiés indépendamment."
+            "en": "Legitimate authority, a grave and lasting injury, exhaustion of peaceful means, serious prospects of success and proportionality are cumulative moral restraints, not five slogans that automatically justify a preferred conflict. The Catechism further excludes direct attacks on non-combatants, so justice in the cause cannot excuse an unjust means. An appeal to patriotism, humanitarian intention or ecclesiastical rhetoric is insufficient without verified facts about necessity, conduct and likely consequences. The presumption favoring peace therefore shapes, rather than abolishes, the narrow right of defense.",
+            "fr": "Autorité légitime, dommage grave et durable, épuisement des moyens pacifiques, chances sérieuses de succès et proportionnalité sont des contraintes morales cumulatives, non cinq formules justifiant automatiquement une guerre souhaitée. Le Catéchisme interdit en outre les attaques directes contre les non-combattants : la justice de la cause ne peut excuser l'injustice des moyens. Patriotisme, intention humanitaire ou rhétorique ecclésiastique ne suffisent pas sans faits vérifiés sur la nécessité, les opérations et les conséquences probables. La présomption favorable à la paix encadre ainsi, sans l'abolir, le droit strict de défense."
           },
           "source_ids": [
             "WAR2309",
@@ -1666,8 +1779,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Catholic judgment must never separate peace-seeking ends from lawful means. General principles are firm; conclusions about specific weapons, command structures and policies require detailed evidence.",
-            "fr": "Le jugement catholique ne sépare jamais la paix recherchée de la licéité des moyens. Les principes sont fermes ; les jugements sur des armes et politiques précises requièrent des éléments détaillés."
+            "en": "A strategy cannot make the deliberate destruction of civilian populations licit merely by calling it a threat rather than an act: Gaudium et spes §80 condemns indiscriminate annihilation. But a claim about the deterrent effect of particular forces is a prudential and empirical proposition, not a self-authenticating moral permission, and not every form of possession has the same intended target or operational doctrine. The first inquiry must separate mere possession, declared targeting, actual intent, proportionality and escalation risk. A peaceable end never excuses an intrinsically unjust means.",
+            "fr": "Une stratégie ne rend pas licite la destruction délibérée de populations civiles en la désignant comme menace plutôt que comme acte : Gaudium et spes §80 condamne l'anéantissement sans discrimination. Toutefois, l'effet dissuasif d'armes déterminées relève d'un jugement prudentiel et empirique, non d'une permission morale automatique ; toute possession n'implique pas la même doctrine de ciblage. Il faut distinguer possession, cibles annoncées, intention réelle, proportionnalité et risque d'escalade. Une fin pacifique ne justifie jamais un moyen intrinsèquement injuste."
           },
           "source_ids": [
             "GS1965",
@@ -1719,6 +1832,13 @@
           "id": "DH1965",
           "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
           "scope": "Religious freedom and civil ordering",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "IMM1885",
+          "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+          "scope": "Immortale Dei §§4, 36, 48: civil authority, political forms and religious toleration",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
@@ -1800,12 +1920,13 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The common good has moral content, and legitimate public authority has limits. Historical judgments about one regime's merits are not interchangeable with the Church's doctrinal principles.",
-            "fr": "Le bien commun a un contenu moral et l'autorité légitime connaît des limites. Les mérites d'un régime historique ne se confondent pas avec les principes doctrinaux de l'Église."
+            "en": "Immortale Dei expressly declines to condemn monarchy, republic or other legitimate forms of civil government simply on account of their constitutional form. The same document requires rulers to act justly under God, while Quas primas rejects the exclusion of Christ's sovereignty from public life. Consequently, a confessional monarchy that governs unjustly is not vindicated by its title, and a republic is not thereby outside the range of legitimate forms. The concrete dispute concerns public duties toward religion and the common good, not the romantic preference for a dynastic label.",
+            "fr": "Immortale Dei refuse expressément de condamner monarchie, république ou autre forme légitime de gouvernement du seul fait de sa constitution. Le même texte exige des gouvernants justice et soumission à Dieu, tandis que Quas primas refuse l'exclusion de la souveraineté du Christ de la vie publique. Une monarchie confessionnelle injuste n'est donc pas justifiée par son titre, et une république n'est pas par nature illégitime. Le débat concret porte sur les devoirs publics envers la religion et le bien commun, non sur une préférence sentimentale pour une étiquette dynastique."
           },
           "source_ids": [
             "QP1925",
-            "DH1965"
+            "DH1965",
+            "IMM1885"
           ],
           "source_links": [
             {
@@ -1815,6 +1936,10 @@
             {
               "id": "DH1965",
               "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html"
+            },
+            {
+              "id": "IMM1885",
+              "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html"
             }
           ],
           "attribution": null,
@@ -1929,8 +2054,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Human dignity belongs to the person, including the weak and dependent; it is not acquired through performance. Avoid claiming to have scientifically disproved machine consciousness where the sources articulate a theological anthropology.",
-            "fr": "La dignité appartient à toute personne, même faible ou dépendante ; elle ne s'acquiert pas par la performance. Ne pas prétendre démontrer scientifiquement l'absence de conscience artificielle lorsqu'on expose une anthropologie théologique."
+            "en": "Human dignity inheres in a rational creature and does not rise or fall with productivity, memory, computational capacity or dependence on care. Antiqua et nova distinguishes technological performance from the whole embodied and morally responsible life of human persons; Humani generis safeguards the spiritual soul's immediate creation. Neither source proves a blanket empirical claim that a machine could never imitate a specified cognitive task, nor permits one to redefine weak or disabled human beings as less fully persons. Therapeutic assistance and a program to replace moral anthropology with technical optimization require different judgments.",
+            "fr": "La dignité humaine appartient à la créature raisonnable ; elle ne varie pas selon la productivité, la mémoire, la puissance de calcul ou la dépendance envers autrui. Antiqua et nova distingue la performance technique de la vie incarnée et moralement responsable de la personne ; Humani generis sauvegarde la création immédiate de l'âme spirituelle. Aucun de ces textes ne démontre empiriquement l'impossibilité pour une machine d'imiter une tâche cognitive donnée ni ne permet de diminuer la personnalité des êtres humains faibles ou handicapés. Aide thérapeutique et remplacement de l'anthropologie morale par l'optimisation technique appellent donc des jugements distincts."
           },
           "source_ids": [
             "AIN2025"
@@ -2043,8 +2168,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Conscience requires care for neighbors and future generations, prudence about uncertain outcomes and refusal to make party allegiance a measure of orthodoxy. Each scientific assertion needs appropriate scientific sources.",
-            "fr": "La conscience exige soin du prochain et des générations futures, prudence face aux résultats incertains et refus de faire de l'appartenance partisane une mesure d'orthodoxie. Chaque assertion scientifique demande des sources scientifiques adaptées."
+            "en": "Moral responsibility toward neighbors, vulnerable communities and future generations does not cease when the relevant harms are environmental. Laudate Deum joins that responsibility to claims about climatic processes, but theological assent to stewardship cannot replace scientific evidence for a causal model or prudential comparison of proposed policies. Neither denial of every ecological risk nor uncritical adoption of one regulatory package is a necessary consequence of Catholic faith. Quantified scientific claims should have distinct scientific references before any final publication.",
+            "fr": "La responsabilité morale envers le prochain, les populations vulnérables et les générations futures ne disparaît pas lorsque les dommages sont environnementaux. Laudate Deum associe ce devoir à des affirmations sur les processus climatiques ; toutefois l'adhésion au devoir de sauvegarde ne remplace ni les preuves scientifiques d'un modèle causal ni la comparaison prudente des politiques proposées. Ni la négation de tout risque écologique ni l'adoption sans examen d'un ensemble de mesures réglementaires ne découlent nécessairement de la foi catholique. Les affirmations scientifiques chiffrées devront recevoir des références scientifiques distinctes avant publication."
           },
           "source_ids": [
             "LD2023"
@@ -2157,8 +2282,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Traditional Catholic polemic has no license to turn suspicion into certainty. Protecting the truth includes correcting institutional abuses while respecting the reputations of persons and peoples.",
-            "fr": "La polémique catholique traditionnelle ne peut transformer un soupçon en certitude. Défendre la vérité comprend la correction des abus et le respect de la réputation des personnes et des peuples."
+            "en": "The moral rules against rash judgment, detraction and calumny do not prohibit exposing a genuine conspiracy; they prohibit reaching conclusions about identifiable persons without proportionate evidence. A responsible accusation requires demonstrable acts, authentic documents, independent corroboration and attention to alternative explanations; the mere existence of secrecy or institutional power proves none of those elements. The same standard applies to allegations against Catholic officeholders and to allegations against religious or ethnic groups, whose collective reputation may not be sacrificed to suspicion.",
+            "fr": "Les règles morales contre le jugement téméraire, la médisance et la calomnie n'interdisent pas de dévoiler un complot réel ; elles interdisent de conclure contre des personnes identifiables sans preuve proportionnée. Une accusation responsable exige des actes démontrables, des documents authentiques, des confirmations indépendantes et l'examen d'explications concurrentes ; le seul secret ou le pouvoir institutionnel ne démontre aucun de ces éléments. Cette exigence vaut tant pour les responsables catholiques que pour les groupes religieux ou ethniques, dont la réputation collective ne doit pas être sacrifiée au soupçon."
           },
           "source_ids": [
             "TRUTH2477"
@@ -2276,8 +2401,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Consultation is valuable only when ordered to revealed truth and lawful hierarchy; neither factional veto nor the elimination of real episcopal responsibility follows from Catholic ecclesiology.",
-            "fr": "La consultation n'a de valeur qu'ordonnée à la vérité révélée et à la hiérarchie légitime ; ni veto factionnel ni effacement de la responsabilité épiscopale ne découlent de l'ecclésiologie catholique."
+            "en": "Consultation by the baptized cannot displace the bishops' responsibility to teach and govern in communion with the Roman Pontiff. The International Theological Commission describes participation within a differentiated hierarchy, not a mechanism in which voting creates revealed truth; the cardinals' 2023 questions show why doctrinal limits need explicit articulation. A synodal process is judged by its actual juridical competences, fidelity to received doctrine and accountability for decisions. Neither enthusiasm for participation nor rejection of every consultative forum resolves the question of who has authority to decide and teach.",
+            "fr": "La consultation des baptisés ne peut se substituer à la responsabilité des évêques d'enseigner et de gouverner en communion avec le Pontife romain. La Commission théologique internationale décrit la participation dans une hiérarchie différenciée, non un mécanisme où le vote créerait la vérité révélée ; les questions cardinalices de 2023 montrent pourquoi les limites doctrinales doivent être explicites. Un processus synodal se juge à ses compétences juridiques réelles, à sa fidélité à la doctrine reçue et à la responsabilité des décideurs. Ni l'enthousiasme participatif ni le refus de toute consultation ne résolvent la question de l'autorité d'enseigner et de décider."
           },
           "source_ids": [
             "SYN2018",
@@ -2329,6 +2454,13 @@
           "id": "SSPXL2009",
           "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html",
           "scope": "Papal letter, distinctions of persons and institute",
+          "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
+          "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
+        },
+        {
+          "id": "PCED2017",
+          "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2017/04/04/170404d.html",
+          "scope": "Pontifical Commission Ecclesia Dei: 2017 SSPX confessional and marriage faculties",
           "role": "PRIMARY_OR_OFFICIAL_TEXT_LOCATOR",
           "verification": "ORIGINAL_PAGE_LOCATED_CLAIM_LEVEL_REVIEW_PENDING"
         }
@@ -2387,12 +2519,13 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "The traditionalist counterclaim appeals to necessity, preservation of received rites and the spiritual good of souls. Those interests are serious arguments for pastoral accommodation but cannot alone be substituted for an official canonical act declaring regular status; later confession and marriage faculties require their own exact norms.",
-            "fr": "Une réponse traditionaliste invoque la nécessité, la sauvegarde des rites reçus et le salut des âmes. Ces motifs comptent pour l'accompagnement pastoral, mais ne remplacent pas un acte canonique reconnaissant un statut régulier ; les facultés ultérieures de confession et de mariage demandent leurs normes propres."
+            "en": "The claimed state of necessity explains the Society's argument for its ministry but, by itself, is not an act granting regular canonical status. Conversely, the Holy See's concrete faculties for confession and conditional arrangements for marriage show that irregular institutional status does not warrant treating every sacrament uniformly. In marriage cases, the 2017 letter explicitly contemplates delegation to a regular priest to receive consent or, where appropriate, to an SSPX priest; such specificity must govern any answer.",
+            "fr": "L'état de nécessité invoqué expose l'argument de la Fraternité en faveur de son ministère, mais ne constitue pas en lui-même un acte accordant un statut canonique régulier. Inversement, les facultés concrètes pour la confession et les dispositions conditionnelles pour le mariage montrent que l'irrégularité institutionnelle ne permet pas de traiter tous les sacrements indistinctement. Pour le mariage, la lettre de 2017 envisage expressément la délégation à un prêtre régulier pour recevoir les consentements ou, dans certaines conditions, à un prêtre de la Fraternité ; c'est cette précision qui doit gouverner la réponse."
           },
           "source_ids": [
             "SSPX2009",
-            "SSPXL2009"
+            "SSPXL2009",
+            "PCED2017"
           ],
           "source_links": [
             {
@@ -2402,6 +2535,10 @@
             {
               "id": "SSPXL2009",
               "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html"
+            },
+            {
+              "id": "PCED2017",
+              "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2017/04/04/170404d.html"
             }
           ],
           "attribution": null,
@@ -2410,12 +2547,13 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Careful pastoral counsel must distinguish validity, liceity, jurisdiction, personal culpability, and concrete permissions, and avoid telling Catholics either that all SSPX activity has been fully regularized or that all sacraments are automatically null.",
-            "fr": "Le conseil pastoral doit distinguer validité, licéité, juridiction, culpabilité personnelle et permissions concrètes, sans prétendre que toute la FSSPX est entièrement régularisée ni que tous ses sacrements seraient nuls."
+            "en": "A remission of individual episcopal excommunications in 2009 was not the canonical regularization of the Society; Benedict XVI said the distinction expressly. Yet the Holy See subsequently granted SSPX priests faculties for valid and licit sacramental absolution and authorized local ordinaries to arrange marriage faculties under specified conditions in 2017. These measures do not remove the institute's irregular standing, but they preclude blanket assertions that all its sacraments are invalid or that nothing has changed. Pastoral counsel must specify which sacrament, time, faculty and juridical question is actually at issue.",
+            "fr": "La remise en 2009 des excommunications de certains évêques ne constituait pas la régularisation canonique de la Fraternité : Benoît XVI l'a dit expressément. Le Saint-Siège a néanmoins accordé ensuite aux prêtres de la FSSPX la faculté d'absoudre validement et licitement et permis aux Ordinaires locaux d'organiser, à certaines conditions, des facultés matrimoniales en 2017. Ces mesures ne suppriment pas l'irrégularité de l'institut, mais excluent l'affirmation globale selon laquelle tous ses sacrements seraient invalides ou que rien n'aurait changé. Le conseil pastoral doit préciser le sacrement, la date, la faculté et la question juridique réellement en cause."
           },
           "source_ids": [
             "SSPX2009",
-            "SSPXL2009"
+            "SSPXL2009",
+            "PCED2017"
           ],
           "source_links": [
             {
@@ -2425,6 +2563,10 @@
             {
               "id": "SSPXL2009",
               "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html"
+            },
+            {
+              "id": "PCED2017",
+              "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2017/04/04/170404d.html"
             }
           ],
           "attribution": null,
@@ -2539,8 +2681,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Holiness is compatible with human limitation and non-definitive judgments. Genuine reverence for saints need not require suppression of well-founded historical inquiry, and criticism of history must not become contempt for duly recognized sanctity.",
-            "fr": "La sainteté demeure compatible avec des limites humaines et des décisions non définitives. Vénérer les saints n'impose pas d'interdire l'enquête historique sérieuse, et cette enquête ne justifie pas le mépris de la sainteté reconnue."
+            "en": "The act of canonization proposes persons for the Church's public veneration and imitation in sanctity; it is not a proposition that every act of their administration, every liturgical decision or every historical judgment was prudent. The question whether papal canonizations are infallible, and under which theological classification, cannot be established simply by citing Vatican I's definition of papal infallibility in general; the classical theological authorities and the form of the specific act require separate examination. Criticism of particular decisions should therefore be historically evidenced and kept distinct from an indiscriminate denial of recognized sanctity.",
+            "fr": "La canonisation propose des personnes à la vénération publique de l'Église et à l'imitation de leur sainteté ; elle n'affirme pas la prudence de chacun de leurs actes de gouvernement, choix liturgiques ou jugements historiques. La question de l'infaillibilité des canonisations et de sa qualification théologique ne se résout pas par la seule définition générale de l'infaillibilité pontificale à Vatican I ; elle exige l'étude des autorités théologiques classiques et de la forme de l'acte particulier. La critique de décisions déterminées doit donc reposer sur des faits historiques et rester distincte d'un déni indistinct de sainteté reconnue."
           },
           "source_ids": [
             "CANON2014",
@@ -2673,8 +2815,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Catholic fidelity requires rejecting the errors actually condemned and studying modern writers accurately. Intellectual rigor is part of defending tradition, not a concession to the very subjectivism Pascendi opposes.",
-            "fr": "La fidélité catholique impose de rejeter les erreurs effectivement condamnées et d'étudier loyalement les auteurs modernes. La rigueur fait partie de la défense de la tradition, non d'une concession au subjectivisme."
+            "en": "Pascendi identifies a connected doctrinal system: religious agnosticism, immanence, the reduction of revelation to an inner experience and the treatment of dogma as a mutable symbol of that experience. Those positions cannot be reconciled with the objective deposit of faith by merely changing their vocabulary. But a writer's use of historical method, new terminology or critical scholarship is not itself evidence of subscribing to every condemned thesis. A just accusation must cite that author's actual proposition and show its precise correspondence with a condemned error, rather than make 'modernist' a substitute for argument.",
+            "fr": "Pascendi décrit un système doctrinal cohérent : agnosticisme religieux, immanence, réduction de la révélation à l'expérience intérieure et transformation du dogme en symbole changeant de cette expérience. Un simple changement de vocabulaire ne rend pas ces positions conciliables avec le dépôt objectif de la foi. Cependant, l'emploi de la méthode historique, d'une terminologie nouvelle ou de la critique savante ne prouve pas qu'un auteur adhère aux thèses condamnées. Une accusation juste doit citer sa proposition effective et établir précisément son rapport avec l'erreur censurée, au lieu de faire de « moderniste » un substitut au raisonnement."
           },
           "source_ids": [
             "PAS1907",
@@ -2711,7 +2853,7 @@
     "case_count": 21,
     "paragraphs": 84,
     "fr_paragraphs": 84,
-    "primary_link_instances": 140,
+    "primary_link_instances": 153,
     "externally_named_opposing_position_cases": 2,
     "documentary_and_editorial_position_cases": 19,
     "canonical_dossiers_added": 0
@@ -2720,7 +2862,8 @@
     "Full debate means answer, identifiable documented or explicitly editorial contrast, reply, and substantive traditional conclusion; no pretend attributed opponent.",
     "Sources are hyperlinks to candidate original passages, not complete theological or FR text-level certification.",
     "This supplement is not added to public Formation navigation or the original 102 recovered legacy research register.",
-    "Opposing arguments that are only editorial frames may not be presented as an authentic opponent's published words."
+    "Opposing arguments that are only editorial frames may not be presented as an authentic opponent's published words.",
+    "2026-10-08 bulk strengthening expanded the traditional arguments in all 21 drafts, with selected critical replies and six additional original documentary authorities; all claims still need independent claim-to-source and native French signoff."
   ],
   "public_release": false
 }
