@@ -1545,14 +1545,14 @@
       ],
       "sourceRefs": [
         "PIUS_X_1912",
-        "SPIRAGO_1899"
+        "SPIRAGO_1899",
+        "CCC_1868_COOPERATION"
       ],
       "crossLinks": [
         "learn.sexual_ethics"
       ],
       "note": "Teach moral grammar; concrete case analysis remains with the relevant practical owner.",
-      "sourceResolution": "SUPPLEMENT_REQUIRED",
-      "sourceGap": "Scandal and occasions of sin are covered; cooperation with evil still requires a traditional moral-theology source."
+      "sourceResolution": "SOURCE_MAPPED"
     },
     {
       "id": "LTF-046",
@@ -1654,11 +1654,11 @@
       "sourceRefs": [
         "PIUS_X_1912",
         "ROMAN_CATECHISM_TRENT",
-        "SPIRAGO_1899"
+        "SPIRAGO_1899",
+        "PIUS_XII_MUNIFICENTISSIMUS_DEUS"
       ],
       "crossLinks": [],
-      "sourceResolution": "SUPPLEMENT_REQUIRED",
-      "sourceGap": "The corpus supports Mother of God/intercession and Immaculate Conception indirectly; fuller Marian dogma requires additional source resolution."
+      "sourceResolution": "SOURCE_MAPPED"
     },
     {
       "id": "LTF-050",
@@ -1752,14 +1752,14 @@
       ],
       "sourceRefs": [
         "PIUS_X_1912",
-        "SPIRAGO_1899"
+        "SPIRAGO_1899",
+        "PIUS_XII_MEDIATOR_DEI_165"
       ],
       "crossLinks": [
         "today.calendar"
       ],
       "note": "Teach meaning of the liturgical year; temporal logic belongs to Calendar.",
-      "sourceResolution": "SUPPLEMENT_REQUIRED",
-      "sourceGap": "Feast-day obligations are covered; the liturgical year as a coherent cycle requires additional Formation sources."
+      "sourceResolution": "SOURCE_MAPPED"
     },
     {
       "id": "LTF-053",
@@ -1949,6 +1949,24 @@
       "role": "MAGISTERIAL_CONSCIENCE_SYNTHESIS",
       "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
       "note": "Used for the judgment of conscience as witness to objective moral truth rather than creator of moral law."
+    },
+    "CCC_1868_COOPERATION": {
+      "title": "Catechism of the Catholic Church §1868 — Cooperation in the sins of others",
+      "role": "MAGISTERIAL_MORAL_SYNTHESIS",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/v_the_proliferation_of_sin.html",
+      "note": "Used narrowly to distinguish responsibility for another person's sin through direct participation, counsel/approval, culpable omission, or protection of wrongdoing."
+    },
+    "PIUS_XII_MUNIFICENTISSIMUS_DEUS": {
+      "title": "Pius XII — Munificentissimus Deus (1950)",
+      "role": "DOGMATIC_PRIMARY",
+      "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "note": "Used for the defined dogma of the bodily Assumption of the Blessed Virgin Mary, especially §44."
+    },
+    "PIUS_XII_MEDIATOR_DEI_165": {
+      "title": "Pius XII — Mediator Dei §165",
+      "role": "MAGISTERIAL_LITURGICAL_THEOLOGY",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "note": "Used for the theological meaning of the liturgical year as Christ's mysteries living in the Church, not merely a record of past events."
     }
   },
   "catechism_corpus": {
