@@ -12,7 +12,7 @@ The 102 indexed research entries below are **real individual questions or case d
 | **Distinct indexed entries** | **102** |
 
 ## Source-link inventory (structure, not factual certification)
-The indexed individual entries contain **488 nested source-bearing text blocks** and **1213 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 128 of these source-bearing blocks lack French text, while 360 carry French text.
+The indexed individual entries contain **488 nested source-bearing text blocks** and **1227 source-ID references**. **0 blocks have empty source ID arrays**; all nonempty referenced source IDs resolve in their respective source registries. 104 of these source-bearing blocks lack French text, while 404 carry French text.
 
 These figures do **not** certify every claim or objection as properly sourced, nor the source's actual applicability. The currently indexed blocks all carry nonempty source IDs. The eight hypothetical TLM026–050 follow-up questions are now explicitly classified as **editorial prompts, not externally attributed objections**, and retain source references for topic context only. The per-source-pack metrics are held in the linked JSON.
 
