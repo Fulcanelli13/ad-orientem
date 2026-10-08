@@ -36,3 +36,7 @@
 
 ## Integration reconciliation
 The parallel ten-case source-check merge was retained: its 30 original paragraph locators, five corrections to generic-attribution labels, three substantive edits, 2023 rescript link correction, original French FSSP 2022 grant and existing canon-law appeal source are preserved in the expanded data. The additional 20 paragraphs carry their own locators, and all 19 sources are registry-linked. This pass extends research substance; neither automated tests nor the editor have granted theological publication approval.
+
+## Post-convergence precision corrections (8 October 2026)
+
+The five-paragraph-per-question corpus is retained in full. The canon 838 link has been repaired to the current Vatican Book IV canons 834–878. The TLM067 response now distinguishes Bruni's comment on an incomplete public record from explicit authentication or rejection of document authenticity. TLM075 distinguishes recourse against singular administrative decrees from a supposed universal-law suspension and adds the Holy See's 2008 instruction *The Service of Authority and Obedience* alongside Aquinas for the limits of ecclesiastical obedience. The recovery inventory now counts **1,211 source references**, all registered. No public publication or final external theological approval is asserted.
