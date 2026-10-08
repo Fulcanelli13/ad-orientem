@@ -1191,11 +1191,11 @@
       "sourceRefs": [
         "PIUS_X_1912",
         "ROMAN_CATECHISM_TRENT",
-        "SPIRAGO_1899"
+        "SPIRAGO_1899",
+        "LEO_XIII_LIBERTAS"
       ],
       "crossLinks": [],
-      "sourceResolution": "SUPPLEMENT_REQUIRED",
-      "sourceGap": "Natural law is implicit in the moral-law/Decalogue material but not treated as a dedicated question."
+      "sourceResolution": "SOURCE_MAPPED"
     },
     {
       "id": "LTF-034",
@@ -1219,15 +1219,15 @@
       ],
       "sourceRefs": [
         "PIUS_X_1912",
-        "SPIRAGO_1899"
+        "SPIRAGO_1899",
+        "VERITATIS_SPLENDOR_60_61"
       ],
       "crossLinks": [
         "APOL-051",
         "CR-MOR-02"
       ],
       "note": "Teach conscience positively; apologetic and crisis disputes remain elsewhere.",
-      "sourceResolution": "SUPPLEMENT_REQUIRED",
-      "sourceGap": "Conscience is not treated as a dedicated 433-question topic; a traditional moral-theology source is still required."
+      "sourceResolution": "SOURCE_MAPPED"
     },
     {
       "id": "LTF-035",
@@ -1936,6 +1936,18 @@
       "role": "DOGMATIC_PRIMARY",
       "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html",
       "note": "Supports the Church's teaching that God can be known with certainty from created things by the natural light of human reason, while supernatural Revelation remains distinct and necessary for man's supernatural end."
+    },
+    "LEO_XIII_LIBERTAS": {
+      "title": "Leo XIII — Libertas praestantissimum (1888)",
+      "role": "MAGISTERIAL_MORAL_THEOLOGY",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+      "note": "Used for freedom, law and the natural law as rational participation in the eternal law."
+    },
+    "VERITATIS_SPLENDOR_60_61": {
+      "title": "John Paul II — Veritatis splendor §§60–61",
+      "role": "MAGISTERIAL_CONSCIENCE_SYNTHESIS",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "note": "Used for the judgment of conscience as witness to objective moral truth rather than creator of moral law."
     }
   },
   "catechism_corpus": {
