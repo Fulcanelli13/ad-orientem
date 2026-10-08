@@ -1,0 +1,558 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_NORTH_AMERICA_BULK_REVIEW_V1",
+  "reviewed_on": "2026-10-08",
+  "source_entries": 167,
+  "candidate_rows_before_existing_dedupe": 135,
+  "existing_venue_collisions": 15,
+  "new_physical_venue_records": 120,
+  "held_source_entries": 47,
+  "exclusions_by_reason": {
+    "OUT_OF_DISTRICT_COUNTRY": 1,
+    "INSTITUTIONAL_PUBLIC_ACCESS_REVIEW": 5,
+    "NO_PUBLIC_SUNDAY_TAG": 21,
+    "NO_ACTIONABLE_PHYSICAL_ADDRESS": 5,
+    "MATCHES_EXISTING_PROVIDER_VENUE": 15
+  },
+  "source_urls": [
+    "https://sspx.org/en/list-sspx-chapels",
+    "https://fsspx.ca/en/list-sspx-chapels-4"
+  ],
+  "review_state": "OFFICIAL_DISTRICT_SOURCE_CONTENT_RETRIEVED_THROUGH_PROXY",
+  "no_geo_inferred": true,
+  "duplicate_matches": [
+    {
+      "name": "Annunciation Chapel",
+      "address": "290 E. County Road 56, Fort Collins, CO 80524-9544",
+      "new_source_id": "SSPX-NA-US-ANNUNCIATION-CHAPEL-FORT-COLLINS-290-E-COUNTY-ROAD-56",
+      "existing_source_id": "SSPX-US-CO-FORTCOLLINS",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Assumption of the BVM Chapel",
+      "address": "426 County Road 152, Clayton, TX 75633-5820",
+      "new_source_id": "SSPX-NA-US-ASSUMPTION-OF-THE-BVM-CHAPEL-CLAYTON-426-COUNTY-ROAD-152",
+      "existing_source_id": "SSPX-US-TX-CLAYTON",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Immaculate Conception Church",
+      "address": "500 Morrill Street, Gilford, NH 03249",
+      "new_source_id": "SSPX-NA-US-IMMACULATE-CONCEPTION-CHURCH-GILFORD-500-MORRILL-STREET",
+      "existing_source_id": "SSPX-US-NH-GILFORD",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of Fatima Chapel",
+      "address": "5217 Futura Avenue, Richmond, VA 23231-3920",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-FATIMA-CHAPEL-RICHMOND-5217-FUTURA-AVENUE",
+      "existing_source_id": "SSPX-US-VA-RICHMOND",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of Lourdes Mission",
+      "address": "Eaton Square, 438 Hobron Lane Suite 300, Honolulu (Waikiki), HI 96815",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-LOURDES-MISSION-HONOLULU-WAIKIKI-EATON-SQUARE-438-HOBRON-LANE-SUI",
+      "existing_source_id": "SSPX-US-HI-HONOLULU",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of the Angels Church",
+      "address": "1100 W. Duarte Road, Arcadia, CA 91007-7726",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-THE-ANGELS-CHURCH-ARCADIA-1100-W-DUARTE-ROAD",
+      "existing_source_id": "SSPX-US-CA-ARCADIA",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of Victory Church",
+      "address": "1575 E. Windmill Lane, Las Vegas, NV 89123-1913",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-VICTORY-CHURCH-LAS-VEGAS-1575-E-WINDMILL-LANE",
+      "existing_source_id": "SSPX-US-NV-LASVEGAS",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Saint Joseph's Church",
+      "address": "245 W Broadway Street, Greenwood, IN 46142-3515",
+      "new_source_id": "SSPX-NA-US-SAINT-JOSEPH-S-CHURCH-GREENWOOD-245-W-BROADWAY-STREET",
+      "existing_source_id": "SSPX-US-IN-GREENWOOD",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Saint Robert Bellarmine Church",
+      "address": "430 8th Avenue S., Saint Cloud, MN 56301-4220",
+      "new_source_id": "SSPX-NA-US-SAINT-ROBERT-BELLARMINE-CHURCH-SAINT-CLOUD-430-8TH-AVENUE-S",
+      "existing_source_id": "SSPX-US-MN-SAINTCLOUD",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Saint Therese, Patroness of Alaska Mission",
+      "address": "7653 Cranberry Road, Anchorage, AK 99502",
+      "new_source_id": "SSPX-NA-US-SAINT-THERESE-PATRONESS-OF-ALASKA-MISSION-ANCHORAGE-7653-CRANBERRY-ROAD",
+      "existing_source_id": "SSPX-US-AK-ANCHORAGE",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Church of the Transfiguration",
+      "address": "11, Aldgate Avenue, Etobicoke, Toronto ON M8Y 3L4",
+      "new_source_id": "SSPX-NA-CA-CHURCH-OF-THE-TRANSFIGURATION-ETOBICOKE-TORONTO-11-ALDGATE-AVENUE",
+      "existing_source_id": "SSPX-CA-ON-ETOBICOKE",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    }
+  ],
+  "held": [
+    {
+      "source_title": "Capilla Nuestra Señora de Fátima",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "MX",
+      "source_raw": "Capilla Nuestra Señora de Fátima\n\nCalle Saturno 1535\nFracc. Satélite\n32540 Ciudad Juarez, Chih.\nMexico\n\nSunday 3:00pm\n\nPhone: +52 656 297 64 22\nMisa dominical",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "OUT_OF_DISTRICT_COUNTRY"
+    },
+    {
+      "source_title": "Carmel of the Holy Trinity",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Carmel of the Holy Trinity\n\n4027 S. Wilbur Road\nSpokane, WA 99206-9407\nUnited States\n\nSunday: 8:00 am | Saturday: 8:00 am\n\nPhone: +1 509 928 0114\nSunday Mass\nWeekday Mass\nConvent",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": true,
+      "reason": "INSTITUTIONAL_PUBLIC_ACCESS_REVIEW",
+      "address": "4027 S. Wilbur Road, Spokane, WA 99206-9407"
+    },
+    {
+      "source_title": "Convent of Christ the King",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Convent of Christ the King\n\n1409 E. Meyer Boulevard\nKansas City, MO 64131-1209\nUnited States\n\nPhone: +1 816 333 1463\nE-mail us\nVisit the website\nConvent",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "1409 E. Meyer Boulevard, Kansas City, MO 64131-1209"
+    },
+    {
+      "source_title": "Holy Name of Jesus Academy",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Holy Name of Jesus Academy\n\n337 Trippany Road\nMassena, NY 13662-3290\nUnited States\n\nSunday: 9:00 am (call first)\n\nPhone: +1 315 769 6030\nVisit the website\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": false,
+      "reason": "INSTITUTIONAL_PUBLIC_ACCESS_REVIEW",
+      "address": "337 Trippany Road, Massena, NY 13662-3290"
+    },
+    {
+      "source_title": "Immaculate Heart of Mary Chapel & Academy",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Immaculate Heart of Mary Chapel & Academy\n\n777 221st Avenue N.W.\nOak Grove, MN 55011-4633\nUnited States\n\nPhone: +1 763 753 8614\nE-mail us\nVisit the website\nWeekday Mass\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": true,
+      "reason": "INSTITUTIONAL_PUBLIC_ACCESS_REVIEW",
+      "address": "777 221st Avenue N.W., Oak Grove, MN 55011-4633"
+    },
+    {
+      "source_title": "Our Lady Help of Christians",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Our Lady Help of Christians\n\n9621 Bixby Ave\nGarden Grove, CA 92841\nUnited States\n\nPhone: +1 714 530 6840\nVisit the website",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "9621 Bixby Ave, Garden Grove, CA 92841"
+    },
+    {
+      "source_title": "Our Lady Immaculate Priory",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Our Lady Immaculate Priory\n\n7011 W. Addison Street\nChicago, IL 60634-3615\nUnited States\n\nPhone: +1 773 930 3009\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "7011 W. Addison Street, Chicago, IL 60634-3615"
+    },
+    {
+      "source_title": "Our Lady of Fatima Church",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Our Lady of Fatima Church\n\n37745 Church Ave\nDade City, FL 33525\nUnited States\n\nPhone: +1 407 872 1007\nVisit the website",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "37745 Church Ave, Dade City, FL 33525"
+    },
+    {
+      "source_title": "Our Lady of Good Counsel",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Our Lady of Good Counsel\n\n8616 N Dixie Dr\nDayton, OH 45414\nUnited States\n\nMass: 1st & 3rd Sun at 3pm\nCall ahead to confirm\n\nPhone: +1 937 603 5144\nE-mail us",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "8616 N Dixie Dr, Dayton, OH 45414"
+    },
+    {
+      "source_title": "Our Lady of Mount Carmel Church",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Our Lady of Mount Carmel Church\n\n3900 Scruggs Drive\nNorth Richland Hills, TX 76180-8820\nUnited States\n\nFind our Mass times on fsspx.today.\n\n \n\nPhone: +1 817 284 4809\nVisit the website\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": false,
+      "reason": "INSTITUTIONAL_PUBLIC_ACCESS_REVIEW",
+      "address": "3900 Scruggs Drive, North Richland Hills, TX 76180-8820"
+    },
+    {
+      "source_title": "Our Lady of the Angels Priory",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Our Lady of the Angels Priory\n\n11 West Sycamore\nArcadia, CA 91006\nUnited States\n\nPhone: +1 626 355 0845\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "11 West Sycamore, Arcadia, CA 91006"
+    },
+    {
+      "source_title": "Our Lady of the Assumption Priory",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Our Lady of the Assumption Priory\n\n12120 Mc Coy's Fork Road\nWalton, KY 41094-8242\nUnited States\n\nPhone: +1 859 919 0271\nE-mail us\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "12120 Mc Coy's Fork Road, Walton, KY 41094-8242"
+    },
+    {
+      "source_title": "Sacred Heart Novitiate",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Sacred Heart Novitiate\n\n540 W. 8th Street\nBrowerville, MN 56438-9802\nUnited States\n\nFind our Mass times on fsspx.today.\n\n \n\nPhone: +1 320 594 2944\nVisit the website\nSunday Mass\nWeekday Mass\nConvent",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": true,
+      "reason": "INSTITUTIONAL_PUBLIC_ACCESS_REVIEW",
+      "address": "540 W. 8th Street, Browerville, MN 56438-9802"
+    },
+    {
+      "source_title": "Saint Francis of Assisi Mission",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Saint Francis of Assisi Mission\n\nAustin, TX 78704\nUnited States\n\nPlease call for address:\n2nd & 4th Sunday: 4:00 pm\n\nPhone: +1 512 439 9702\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": false,
+      "reason": "NO_ACTIONABLE_PHYSICAL_ADDRESS"
+    },
+    {
+      "source_title": "Saint Isidore's Priory",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Saint Isidore's Priory\n\n277 South Watkins Road\nWatkins, CO 80137\nUnited States\n\nPhone: +1 303 325 7558\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "277 South Watkins Road, Watkins, CO 80137"
+    },
+    {
+      "source_title": "Saint John Vianney Priory",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Saint John Vianney Priory\n\n820 Saint John's Avenue\nBrowerville, MN 56438-9492\nUnited States\n\n \n\n \n\nPhone: +1 320 594 2221\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "820 Saint John's Avenue, Browerville, MN 56438-9492"
+    },
+    {
+      "source_title": "Saint Joseph's Priory",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Saint Joseph's Priory\n\n23511 Armada Center Road\nArmada, MI 48005\nUnited States\n\nPhone: +1 586 784 8405\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "23511 Armada Center Road, Armada, MI 48005"
+    },
+    {
+      "source_title": "Saint Michael the Archangel Chapel",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Saint Michael the Archangel Chapel\n\n3001 W. Golf Course Road\nMidland, TX 79701\nUnited States\n\nPhone: +1 432 553 5841",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "3001 W. Golf Course Road, Midland, TX 79701"
+    },
+    {
+      "source_title": "Saint Therese Priory",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Saint Therese Priory\n\n3427 State Hwy 11B\nNicholville, NY 12965\nUnited States\n\nPhone: +1 315 674 4035\nE-mail us\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "3427 State Hwy 11B, Nicholville, NY 12965"
+    },
+    {
+      "source_title": "Society of Saint Pius X | Regina Coeli House",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "Society of Saint Pius X | Regina Coeli House\n\n11485 N. Farley Road\nPlatte City, MO 64079-8201\nUnited States\n\nFind our Mass times on fsspx.today.\n\nPhone: +1 816 753 0073\nVisit the website\nPriests' Residence\nWeekday Mass\nDistrict House",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": true,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "11485 N. Farley Road, Platte City, MO 64079-8201"
+    },
+    {
+      "source_title": "St. Isaac Jogues Mission",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "St. Isaac Jogues Mission\n\nBlackmer Funeral Home\n305 N Mill St\nGrangeville, ID 83530\nUnited States\n\nVisit the website",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "Blackmer Funeral Home, 305 N Mill St, Grangeville, ID 83530"
+    },
+    {
+      "source_title": "St. Michael the Archangel Chapel",
+      "source_page": "https://sspx.org/en/list-sspx-chapels",
+      "source_country": "US",
+      "source_raw": "St. Michael the Archangel Chapel\n\n1950 Bartram Rd.\nJacksonville, FL 32207\nUnited States\n\nFind our Mass times on fsspx.today.\n\n \n\nPhone: +1 904 725 5470\nVisit the website\nWeekday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": true,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "1950 Bartram Rd., Jacksonville, FL 32207"
+    },
+    {
+      "source_title": "Maritimes Missions - NB",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Maritimes Missions - NB\n\nNB\nCanada\n\nPhone: +1 450 390 1323\nE-mail us\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": false,
+      "reason": "NO_ACTIONABLE_PHYSICAL_ADDRESS"
+    },
+    {
+      "source_title": "Maritimes Missions - NS",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Maritimes Missions - NS\n\nNS\nCanada\n\nPhone: +1 450 390 1323\nE-mail us\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": false,
+      "reason": "NO_ACTIONABLE_PHYSICAL_ADDRESS"
+    },
+    {
+      "source_title": "Mission Atikokan",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Mission Atikokan\n\nAtikokan ON\nCanada\n\nCall for Mass Times.\n\nPhone: +1 807 597 4415\nVisit the website\nWeekday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": true,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": null
+    },
+    {
+      "source_title": "Mission Thunder Bay",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Mission Thunder Bay\n\nThunder Bay ON\nCanada\n\nCall for Mass Times\n\nPhone: +1 807 627 5776\n\nPhone: +1 204 589 4524\nVisit the website\nWeekday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": true,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": null
+    },
+    {
+      "source_title": "Our Lady Help of Christians Educational Institute",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Our Lady Help of Christians Educational Institute\n\n712 Fortalice Crescent SE\nCalgary AB T2A 2E1\nCanada\n\nMap\n\nPhone: +1 403 233 0031\nVisit the website",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "712 Fortalice Crescent SE, Calgary AB T2A 2E1"
+    },
+    {
+      "source_title": "Our Lady of Good Success Mission",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Our Lady of Good Success Mission\n\nTimmins ON\nCanada\n\nPhone: +1 416 251 0499\nVisit the website\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": false,
+      "reason": "NO_ACTIONABLE_PHYSICAL_ADDRESS"
+    },
+    {
+      "source_title": "Our Lady of Mount Carmel Academy",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Our Lady of Mount Carmel Academy\n\n2483 Bleams Road\nNew Hamburg ON N3A 3J2\nCanada\n\nMap\n\nPhone: +1 519 634 4932\nVisit the website\nPriests' Residence\nWeekday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": true,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "2483 Bleams Road, New Hamburg ON N3A 3J2"
+    },
+    {
+      "source_title": "Prieuré Saint Raphaël",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Prieuré Saint Raphaël\n\n480 McKenzie Street\nWinnipeg MB R2W 5B9\nCanada\n\nMap\n\nPhone: +1 204 589 4524\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "480 McKenzie Street, Winnipeg MB R2W 5B9"
+    },
+    {
+      "source_title": "Saint Michael's Priory",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Saint Michael's Priory\n\n45 Guthrie Avenue\nToronto ON M8Y 3L2\nCanada\n\nMap\n\nPhone: +1 416 251 0499\nE-mail us\nVisit the website\nPriests' Residence",
+      "checked_on": "2026-10-08",
+      "sunday_tag": false,
+      "weekday_tag": false,
+      "reason": "NO_PUBLIC_SUNDAY_TAG",
+      "address": "45 Guthrie Avenue, Toronto ON M8Y 3L2"
+    },
+    {
+      "source_title": "Saint Theresa of the Child Jesus Chapel",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "source_country": "CA",
+      "source_raw": "Saint Theresa of the Child Jesus Chapel\n\n324 McIntyre Drive\nDryden ON\nCanada\n\nMap\n\nPhone: +1 807 937 6631\nVisit the website\nSunday Mass",
+      "checked_on": "2026-10-08",
+      "sunday_tag": true,
+      "weekday_tag": false,
+      "reason": "NO_ACTIONABLE_PHYSICAL_ADDRESS"
+    },
+    {
+      "source_title": "Cathedral of the Transfiguration",
+      "address": "10350 Victoria Square Blvd, Markham ON L6C 1H9",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE",
+      "canonical_source_id": "SSPX-CA-ON-MARKHAM",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "country": "CA"
+    },
+    {
+      "source_title": "Centre Saint-Joseph",
+      "address": "1395 rue Notre-Dame, Saint-Césaire QC J0L 1T0",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE",
+      "canonical_source_id": "SSPX-CA-QC-CESAIRE",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "country": "CA"
+    },
+    {
+      "source_title": "Chapelle Marie Reine",
+      "address": "301, 41ème rue, Beauceville QC G5X 2K9",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE",
+      "canonical_source_id": "SSPX-CA-QC-BEAUCEVILLE",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "country": "CA"
+    },
+    {
+      "source_title": "Christ the King Church & Priory",
+      "address": "22630 - 48th Avenue, Langley BC V2Z 2T6",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE",
+      "canonical_source_id": "SSPX-CA-BC-LANGLEY",
+      "source_page": "https://fsspx.ca/en/list-sspx-chapels-4",
+      "country": "CA"
+    },
+    {
+      "name": "Annunciation Chapel",
+      "address": "290 E. County Road 56, Fort Collins, CO 80524-9544",
+      "new_source_id": "SSPX-NA-US-ANNUNCIATION-CHAPEL-FORT-COLLINS-290-E-COUNTY-ROAD-56",
+      "existing_source_id": "SSPX-US-CO-FORTCOLLINS",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Assumption of the BVM Chapel",
+      "address": "426 County Road 152, Clayton, TX 75633-5820",
+      "new_source_id": "SSPX-NA-US-ASSUMPTION-OF-THE-BVM-CHAPEL-CLAYTON-426-COUNTY-ROAD-152",
+      "existing_source_id": "SSPX-US-TX-CLAYTON",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Immaculate Conception Church",
+      "address": "500 Morrill Street, Gilford, NH 03249",
+      "new_source_id": "SSPX-NA-US-IMMACULATE-CONCEPTION-CHURCH-GILFORD-500-MORRILL-STREET",
+      "existing_source_id": "SSPX-US-NH-GILFORD",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of Fatima Chapel",
+      "address": "5217 Futura Avenue, Richmond, VA 23231-3920",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-FATIMA-CHAPEL-RICHMOND-5217-FUTURA-AVENUE",
+      "existing_source_id": "SSPX-US-VA-RICHMOND",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of Lourdes Mission",
+      "address": "Eaton Square, 438 Hobron Lane Suite 300, Honolulu (Waikiki), HI 96815",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-LOURDES-MISSION-HONOLULU-WAIKIKI-EATON-SQUARE-438-HOBRON-LANE-SUI",
+      "existing_source_id": "SSPX-US-HI-HONOLULU",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of the Angels Church",
+      "address": "1100 W. Duarte Road, Arcadia, CA 91007-7726",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-THE-ANGELS-CHURCH-ARCADIA-1100-W-DUARTE-ROAD",
+      "existing_source_id": "SSPX-US-CA-ARCADIA",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Our Lady of Victory Church",
+      "address": "1575 E. Windmill Lane, Las Vegas, NV 89123-1913",
+      "new_source_id": "SSPX-NA-US-OUR-LADY-OF-VICTORY-CHURCH-LAS-VEGAS-1575-E-WINDMILL-LANE",
+      "existing_source_id": "SSPX-US-NV-LASVEGAS",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Saint Joseph's Church",
+      "address": "245 W Broadway Street, Greenwood, IN 46142-3515",
+      "new_source_id": "SSPX-NA-US-SAINT-JOSEPH-S-CHURCH-GREENWOOD-245-W-BROADWAY-STREET",
+      "existing_source_id": "SSPX-US-IN-GREENWOOD",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Saint Robert Bellarmine Church",
+      "address": "430 8th Avenue S., Saint Cloud, MN 56301-4220",
+      "new_source_id": "SSPX-NA-US-SAINT-ROBERT-BELLARMINE-CHURCH-SAINT-CLOUD-430-8TH-AVENUE-S",
+      "existing_source_id": "SSPX-US-MN-SAINTCLOUD",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Saint Therese, Patroness of Alaska Mission",
+      "address": "7653 Cranberry Road, Anchorage, AK 99502",
+      "new_source_id": "SSPX-NA-US-SAINT-THERESE-PATRONESS-OF-ALASKA-MISSION-ANCHORAGE-7653-CRANBERRY-ROAD",
+      "existing_source_id": "SSPX-US-AK-ANCHORAGE",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    },
+    {
+      "name": "Church of the Transfiguration",
+      "address": "11, Aldgate Avenue, Etobicoke, Toronto ON M8Y 3L4",
+      "new_source_id": "SSPX-NA-CA-CHURCH-OF-THE-TRANSFIGURATION-ETOBICOKE-TORONTO-11-ALDGATE-AVENUE",
+      "existing_source_id": "SSPX-CA-ON-ETOBICOKE",
+      "reason": "MATCHES_EXISTING_PROVIDER_VENUE"
+    }
+  ]
+}
