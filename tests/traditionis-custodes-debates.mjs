@@ -23,7 +23,10 @@ for(const d of debates.debates){
   assert.ok(ids.has(d.canonical_owner),"unknown owner "+d.id);
   assert.ok(d.crossLinks.every(x=>ids.has(x)),"unknown cross-link "+d.id);
   assert.ok(d.title.en && d.title.fr,"untranslated title "+d.id);
-  assert.deepEqual(d.paragraphs.map(x=>x.role),["answer","identified_objection","assessment"]);
+  assert.deepEqual(d.paragraphs.map(x=>x.role).slice(0,1),["answer"]);
+  assert.equal(d.paragraphs.length,5);
+  assert.deepEqual(d.paragraphs.slice(-2).map(x=>x.role),["traditional_argument","reply_to_objection"]);
+  assert.ok(["identified_objection","historical_or_theological_objection","documented_reporting_of_objection","doctrinal_qualification"].includes(d.paragraphs[1].role));
   for(const p of d.paragraphs){
     assert.ok(p.text.en && p.text.fr,"missing bilingual paragraph "+d.id);
     assert.ok(Array.isArray(p.source_ids) && p.source_ids.length,"unsourced paragraph "+d.id);
@@ -31,5 +34,7 @@ for(const d of debates.debates){
     paragraphs++;
   }
 }
-assert.equal(paragraphs,30);
-console.log("Traditionis custodes dossier: PASS — 10 questions, 30 sourced bilingual paragraphs, 14 hyperlinked sources, 0 new navigation dossiers.");
+assert.equal(paragraphs,50);
+assert.equal(debates.source_registry.length,17);
+assert.equal(debates.editorial_enrichment_20261008.human_editorial_approval,false);
+console.log("Traditionis custodes dossier: PASS — 10 questions, 50 sourced bilingual paragraphs, 17 hyperlinked sources, 0 new navigation dossiers.");
