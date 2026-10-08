@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {parseNorthAmericaCards,reconcileWithRegistry,DISTRICTS} from "../tools/directory/acquire-sspx-north-america.mjs";
+import {parseNorthAmericaCards,parseDistrictMarkdown,reconcileWithRegistry,DISTRICTS} from "../tools/directory/acquire-sspx-north-america.mjs";
 
 const us=[
   {title:"Saint Francis Chapel",raw:"Saint Francis Chapel\n125 Parish Street\nBelmont, NC 28012\nUnited States\nPhone: +1 123 456 7890\n1. Sunday Mass"},
@@ -40,4 +40,10 @@ assert.equal(caParsed.records[1].ps,"CONDITIONAL_MASS");
 assert.ok(caParsed.records.every(r=>r.su===DISTRICTS.CA.url));
 assert.ok(caParsed.exceptions.some(r=>r.reason==="NO_ACTIONABLE_PHYSICAL_ADDRESS"));
 assert.throws(()=>parseNorthAmericaCards([],{district:"FR"}),/unknown district/);
+const mirror="Title: Official chapel directory\nURL Source: https://sspx.org/en/list-sspx-chapels\n"+
+  "## Saint Francis Chapel\n\n* 125 Parish Street\nBelmont, NC 28012\nUnited States\n* Sunday Mass\n\n"+
+  "## Saint Anne Mission\n\n* Four Seasons Motel\n230 Union Road\nPortland, ME 04101\nUnited States\n* Sunday Mass\n\n";
+const mirrored=parseDistrictMarkdown(mirror,{url:DISTRICTS.US.url});
+assert.equal(mirrored.length,2);
+assert.equal(parseNorthAmericaCards(mirrored,{district:"US"}).site_candidates,2);
 console.log("SSPX US/Canada bulk directory parsing and deduplication: PASS");
