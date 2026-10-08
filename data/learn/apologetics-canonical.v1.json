@@ -1,0 +1,746 @@
+{
+  "version": "APOLOGETICS_CANONICAL_V1",
+  "status": "FROZEN_TARGET_NOT_YET_PUBLISHED",
+  "created_at": "2026-10-08",
+  "canonical_role": "Defend Catholic doctrine against objections without duplicating positive Catechism teaching, Church Crisis controversy, Mass Formation explanation, Sexual Ethics application, Church History chronology, or Apostolate conversation strategy.",
+  "source_policy": {
+    "rule": "Every substantive user-facing paragraph must resolve to explicit sources; prefer original/primary texts where available.",
+    "objection_rule": "Objections must be traceable to real proponents or identifiable traditions; no invented strawmen.",
+    "doctrine_rule": "Positive doctrinal baselines should reference canonical Catechism/doctrine records rather than be rewritten independently."
+  },
+  "navigation_families": [
+    {
+      "id": "god-revelation",
+      "title": "God & Revelation",
+      "range": [
+        "APOL-001",
+        "APOL-006"
+      ]
+    },
+    {
+      "id": "christ",
+      "title": "Jesus Christ",
+      "range": [
+        "APOL-007",
+        "APOL-011"
+      ]
+    },
+    {
+      "id": "scripture-church-authority",
+      "title": "Scripture, Church & Authority",
+      "range": [
+        "APOL-012",
+        "APOL-022"
+      ]
+    },
+    {
+      "id": "sacraments-worship",
+      "title": "Sacraments & Catholic Worship",
+      "range": [
+        "APOL-023",
+        "APOL-031"
+      ]
+    },
+    {
+      "id": "mary-saints",
+      "title": "Mary, Saints & Sacred Things",
+      "range": [
+        "APOL-032",
+        "APOL-037"
+      ]
+    },
+    {
+      "id": "salvation-last-things",
+      "title": "Salvation & the Last Things",
+      "range": [
+        "APOL-038",
+        "APOL-043"
+      ]
+    },
+    {
+      "id": "religions-pluralism",
+      "title": "Judaism, Islam & Religious Pluralism",
+      "range": [
+        "APOL-044",
+        "APOL-049"
+      ]
+    },
+    {
+      "id": "moral-social",
+      "title": "Moral & Social Foundations",
+      "range": [
+        "APOL-050",
+        "APOL-053"
+      ]
+    },
+    {
+      "id": "history-objections",
+      "title": "History, Scandal & Rival Claims",
+      "range": [
+        "APOL-054",
+        "APOL-060"
+      ]
+    }
+  ],
+  "dossiers": [
+    {
+      "id": "APOL-001",
+      "title": "Does God exist?",
+      "family": "god-revelation",
+      "topics": [
+        "philosophical proofs",
+        "objections",
+        "limits of proof"
+      ]
+    },
+    {
+      "id": "APOL-002",
+      "title": "Are faith and reason opposed?",
+      "family": "god-revelation",
+      "topics": [
+        "science",
+        "philosophy",
+        "revelation"
+      ]
+    },
+    {
+      "id": "APOL-003",
+      "title": "If God is good, why is there evil and suffering?",
+      "family": "god-revelation",
+      "topics": [
+        "problem of evil",
+        "suffering",
+        "providence"
+      ]
+    },
+    {
+      "id": "APOL-004",
+      "title": "Are miracles possible and credible?",
+      "family": "god-revelation",
+      "topics": [
+        "miracles",
+        "prayer",
+        "providence",
+        "supernatural intervention"
+      ]
+    },
+    {
+      "id": "APOL-005",
+      "title": "Why do we need revelation at all?",
+      "family": "god-revelation",
+      "topics": [
+        "natural religion",
+        "revealed religion"
+      ]
+    },
+    {
+      "id": "APOL-006",
+      "title": "How can anyone know which religion is true?",
+      "family": "god-revelation",
+      "topics": [
+        "credibility",
+        "religious truth",
+        "revelation"
+      ]
+    },
+    {
+      "id": "APOL-007",
+      "title": "Can we trust what we know about the historical Jesus?",
+      "family": "christ",
+      "topics": [
+        "Gospels",
+        "historicity"
+      ]
+    },
+    {
+      "id": "APOL-008",
+      "title": "Did Jesus really claim to be divine?",
+      "family": "christ",
+      "topics": [
+        "divinity of Christ"
+      ]
+    },
+    {
+      "id": "APOL-009",
+      "title": "Did Jesus really rise from the dead?",
+      "family": "christ",
+      "topics": [
+        "Resurrection",
+        "alternative explanations"
+      ]
+    },
+    {
+      "id": "APOL-010",
+      "title": "Do the Trinity and Incarnation make sense?",
+      "family": "christ",
+      "topics": [
+        "Trinity",
+        "Incarnation",
+        "Christology"
+      ]
+    },
+    {
+      "id": "APOL-011",
+      "title": "Why is Christ the unique Saviour and mediator?",
+      "family": "christ",
+      "topics": [
+        "unique mediation",
+        "salvation"
+      ]
+    },
+    {
+      "id": "APOL-012",
+      "title": "Is the Bible inspired and trustworthy?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "inspiration",
+        "reliability",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "APOL-013",
+      "title": "How do we know which books belong in the Bible?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "canon"
+      ]
+    },
+    {
+      "id": "APOL-014",
+      "title": "Is sola Scriptura biblical or historically credible?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "sola Scriptura",
+        "authority"
+      ]
+    },
+    {
+      "id": "APOL-015",
+      "title": "What is Apostolic Tradition, and why is it authoritative?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "Tradition",
+        "deposit of faith"
+      ]
+    },
+    {
+      "id": "APOL-016",
+      "title": "Why did Christ establish a visible Church?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "one Church",
+        "four marks",
+        "visibility"
+      ]
+    },
+    {
+      "id": "APOL-017",
+      "title": "How can the Church be holy when Catholics and clergy sin so badly?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "holiness of Church",
+        "scandal"
+      ]
+    },
+    {
+      "id": "APOL-018",
+      "title": "Did Christ give Peter a unique office?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "Peter",
+        "primacy"
+      ]
+    },
+    {
+      "id": "APOL-019",
+      "title": "Why believe in apostolic succession?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "bishops",
+        "Holy Orders",
+        "succession"
+      ]
+    },
+    {
+      "id": "APOL-020",
+      "title": "What does papal and ecclesial infallibility actually mean?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "papal infallibility",
+        "magisterium"
+      ]
+    },
+    {
+      "id": "APOL-021",
+      "title": "Can doctrine develop without changing the faith?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "development of doctrine"
+      ]
+    },
+    {
+      "id": "APOL-022",
+      "title": "Is Anglicanism a branch of the Catholic Church, and are Anglican Orders valid?",
+      "family": "scripture-church-authority",
+      "topics": [
+        "Anglicanism",
+        "Apostolicae curae",
+        "orders"
+      ]
+    },
+    {
+      "id": "APOL-023",
+      "title": "Why did Christ give the Church sacraments?",
+      "family": "sacraments-worship",
+      "topics": [
+        "sacrament",
+        "grace",
+        "ex opere operato"
+      ]
+    },
+    {
+      "id": "APOL-024",
+      "title": "Does Baptism really regenerate, and why baptise infants?",
+      "family": "sacraments-worship",
+      "topics": [
+        "Baptism",
+        "infant baptism"
+      ]
+    },
+    {
+      "id": "APOL-025",
+      "title": "What does Confirmation actually do?",
+      "family": "sacraments-worship",
+      "topics": [
+        "Confirmation"
+      ]
+    },
+    {
+      "id": "APOL-026",
+      "title": "Why confess sins to a priest?",
+      "family": "sacraments-worship",
+      "topics": [
+        "Penance",
+        "Confession",
+        "power of keys"
+      ]
+    },
+    {
+      "id": "APOL-027",
+      "title": "What is Anointing / Extreme Unction, and is it biblical?",
+      "family": "sacraments-worship",
+      "topics": [
+        "Anointing",
+        "Extreme Unction"
+      ]
+    },
+    {
+      "id": "APOL-028",
+      "title": "Why is Christian marriage sacramental and indissoluble?",
+      "family": "sacraments-worship",
+      "topics": [
+        "Matrimony",
+        "indissolubility"
+      ]
+    },
+    {
+      "id": "APOL-029",
+      "title": "Why does the Church need a sacramental priesthood?",
+      "family": "sacraments-worship",
+      "topics": [
+        "priesthood",
+        "orders"
+      ]
+    },
+    {
+      "id": "APOL-030",
+      "title": "Is Christ really present in the Eucharist?",
+      "family": "sacraments-worship",
+      "topics": [
+        "Real Presence",
+        "transubstantiation"
+      ]
+    },
+    {
+      "id": "APOL-031",
+      "title": "Is the Mass really a sacrifice—and does it re-sacrifice Christ?",
+      "family": "sacraments-worship",
+      "topics": [
+        "Mass sacrifice",
+        "Calvary",
+        "memorial"
+      ]
+    },
+    {
+      "id": "APOL-032",
+      "title": "Why call Mary Mother of God, and was she perpetually virgin?",
+      "family": "mary-saints",
+      "topics": [
+        "Theotokos",
+        "perpetual virginity"
+      ]
+    },
+    {
+      "id": "APOL-033",
+      "title": "Why believe in the Immaculate Conception and Assumption?",
+      "family": "mary-saints",
+      "topics": [
+        "Immaculate Conception",
+        "Assumption"
+      ]
+    },
+    {
+      "id": "APOL-034",
+      "title": "Do Catholics worship Mary?",
+      "family": "mary-saints",
+      "topics": [
+        "veneration",
+        "Mary",
+        "mediation"
+      ]
+    },
+    {
+      "id": "APOL-035",
+      "title": "Why ask saints to pray for us?",
+      "family": "mary-saints",
+      "topics": [
+        "Communion of Saints",
+        "intercession"
+      ]
+    },
+    {
+      "id": "APOL-036",
+      "title": "Are statues, icons and sacred images idolatry?",
+      "family": "mary-saints",
+      "topics": [
+        "images",
+        "icons",
+        "idolatry"
+      ]
+    },
+    {
+      "id": "APOL-037",
+      "title": "Why venerate relics and other sacred things?",
+      "family": "mary-saints",
+      "topics": [
+        "relics",
+        "sacramentals"
+      ]
+    },
+    {
+      "id": "APOL-038",
+      "title": "Are we saved by faith, works, grace—or all three?",
+      "family": "salvation-last-things",
+      "topics": [
+        "justification",
+        "merit",
+        "faith and works"
+      ]
+    },
+    {
+      "id": "APOL-039",
+      "title": "Is there salvation outside the Catholic Church?",
+      "family": "salvation-last-things",
+      "topics": [
+        "extra Ecclesiam nulla salus",
+        "ignorance",
+        "grace"
+      ]
+    },
+    {
+      "id": "APOL-040",
+      "title": "Why believe in Purgatory and pray for the dead?",
+      "family": "salvation-last-things",
+      "topics": [
+        "Purgatory",
+        "suffrages",
+        "indulgences"
+      ]
+    },
+    {
+      "id": "APOL-041",
+      "title": "Is Hell real, eternal and compatible with a loving God?",
+      "family": "salvation-last-things",
+      "topics": [
+        "Hell",
+        "eternity",
+        "justice"
+      ]
+    },
+    {
+      "id": "APOL-042",
+      "title": "What does Christianity actually mean by Heaven, resurrection and eternal life?",
+      "family": "salvation-last-things",
+      "topics": [
+        "Heaven",
+        "resurrection",
+        "eternal life"
+      ]
+    },
+    {
+      "id": "APOL-043",
+      "title": "Predestination, free will and assurance: can a Catholic know he is saved?",
+      "family": "salvation-last-things",
+      "topics": [
+        "predestination",
+        "free will",
+        "assurance"
+      ]
+    },
+    {
+      "id": "APOL-044",
+      "title": "What is the relationship between biblical Israel, Judaism and the Catholic Church?",
+      "family": "religions-pluralism",
+      "topics": [
+        "Israel",
+        "Judaism",
+        "Church"
+      ]
+    },
+    {
+      "id": "APOL-045",
+      "title": "Did the Old Covenant end, continue or change in Christ?",
+      "family": "religions-pluralism",
+      "topics": [
+        "Old Covenant",
+        "New Covenant",
+        "election"
+      ]
+    },
+    {
+      "id": "APOL-046",
+      "title": "Christianity and Islam: where do they agree and fundamentally differ?",
+      "family": "religions-pluralism",
+      "topics": [
+        "Islam",
+        "Christianity"
+      ]
+    },
+    {
+      "id": "APOL-047",
+      "title": "Can people in non-Christian religions be saved?",
+      "family": "religions-pluralism",
+      "topics": [
+        "religions",
+        "salvation"
+      ]
+    },
+    {
+      "id": "APOL-048",
+      "title": "Are all religions different paths to the same God?",
+      "family": "religions-pluralism",
+      "topics": [
+        "religious pluralism",
+        "indifferentism"
+      ]
+    },
+    {
+      "id": "APOL-049",
+      "title": "What is the Catholic answer to atheism and secular humanism?",
+      "family": "religions-pluralism",
+      "topics": [
+        "atheism",
+        "secular humanism"
+      ]
+    },
+    {
+      "id": "APOL-050",
+      "title": "Is morality objective, and what is natural law?",
+      "family": "moral-social",
+      "topics": [
+        "natural law",
+        "objective morality"
+      ]
+    },
+    {
+      "id": "APOL-051",
+      "title": "What is conscience, and can conscience be wrong?",
+      "family": "moral-social",
+      "topics": [
+        "conscience"
+      ]
+    },
+    {
+      "id": "APOL-052",
+      "title": "Can a good end justify a bad means?",
+      "family": "moral-social",
+      "topics": [
+        "moral object",
+        "intention",
+        "circumstances",
+        "intrinsic evil"
+      ]
+    },
+    {
+      "id": "APOL-053",
+      "title": "Does Catholicism claim anything about society and political authority?",
+      "family": "moral-social",
+      "topics": [
+        "common good",
+        "Church and State",
+        "Social Kingship"
+      ]
+    },
+    {
+      "id": "APOL-054",
+      "title": "Were the Crusades simply wars of Catholic aggression?",
+      "family": "history-objections",
+      "topics": [
+        "Crusades"
+      ]
+    },
+    {
+      "id": "APOL-055",
+      "title": "What was the Inquisition, and was it uniquely cruel?",
+      "family": "history-objections",
+      "topics": [
+        "Inquisition"
+      ]
+    },
+    {
+      "id": "APOL-056",
+      "title": "Did the Church persecute science?",
+      "family": "history-objections",
+      "topics": [
+        "Galileo",
+        "science"
+      ]
+    },
+    {
+      "id": "APOL-057",
+      "title": "Does corruption, abuse or scandal disprove Catholicism?",
+      "family": "history-objections",
+      "topics": [
+        "scandal",
+        "abuse",
+        "holiness"
+      ]
+    },
+    {
+      "id": "APOL-058",
+      "title": "What is the Catholic record on slavery, colonialism and treatment of other peoples?",
+      "family": "history-objections",
+      "topics": [
+        "slavery",
+        "colonialism"
+      ]
+    },
+    {
+      "id": "APOL-059",
+      "title": "Why has the Church opposed Communism, radical secularism and certain modern ideologies?",
+      "family": "history-objections",
+      "topics": [
+        "Communism",
+        "secularism",
+        "ideology"
+      ]
+    },
+    {
+      "id": "APOL-060",
+      "title": "Why has the Church condemned Freemasonry and secret-society ideology?",
+      "family": "history-objections",
+      "topics": [
+        "Freemasonry",
+        "secret societies"
+      ]
+    }
+  ],
+  "move_out_rules": [
+    {
+      "topic": "Vatican II continuity/rupture",
+      "owner": "church-crisis"
+    },
+    {
+      "topic": "SSPX, sedevacantism, una cum, papal-heretic crisis, resistance",
+      "owner": "church-crisis"
+    },
+    {
+      "topic": "Detailed Mass history, gestures, posture, orientation, Latin-as-liturgical-formation",
+      "owner": "mass-formation"
+    },
+    {
+      "topic": "Concrete sexual acts and relationship cases",
+      "owner": "sexual-ethics"
+    },
+    {
+      "topic": "Situation ethics, proportionalism, Humanae vitae dissent, Veritatis splendor, Amoris laetitia controversy",
+      "owner": "church-crisis:moral"
+    },
+    {
+      "topic": "Historical chronology when not itself an objection",
+      "owner": "church-history"
+    },
+    {
+      "topic": "How to speak to a real person",
+      "owner": "apostolate"
+    }
+  ],
+  "live_apostolate_mapping": [
+    {
+      "scenario": "AQ01",
+      "disposition": "REFERENCE",
+      "canonical": [
+        "APOL-034",
+        "APOL-035"
+      ],
+      "note": "Apostolate keeps concise conversational response."
+    },
+    {
+      "scenario": "AQ02",
+      "disposition": "REFERENCE",
+      "canonical": [
+        "APOL-026"
+      ]
+    },
+    {
+      "scenario": "AQ03",
+      "disposition": "REFERENCE",
+      "canonical": [
+        "APOL-020"
+      ],
+      "crisis_crosslink": "authority crisis for papal error/resistance questions"
+    },
+    {
+      "scenario": "AQ04",
+      "disposition": "REFERENCE",
+      "canonical": [
+        "APOL-031"
+      ]
+    },
+    {
+      "scenario": "AQ05",
+      "disposition": "REFERENCE",
+      "canonical": [
+        "APOL-030"
+      ]
+    },
+    {
+      "scenario": "AQ06",
+      "disposition": "MOVE",
+      "canonical": [],
+      "owner": "mass-formation",
+      "note": "Latin/traditional Mass explanation is Formation; Apostolate may retain only the conversation shell."
+    },
+    {
+      "scenario": "AQ07",
+      "disposition": "REFERENCE",
+      "canonical": [
+        "APOL-040"
+      ]
+    },
+    {
+      "scenario": "AQ08",
+      "disposition": "REFERENCE",
+      "canonical": [
+        "APOL-014",
+        "APOL-015"
+      ]
+    }
+  ],
+  "projected_research_policy": {
+    "previous_projection": "A001-A318",
+    "repo_state": "NOT_PRESENT_AS_LIVE_CORPUS",
+    "decision": "Do not implement the projection as a flat 318-item module. Future recovered or newly written research records must declare absorbedBy: APOL-xxx or a MOVE owner before publication."
+  }
+}
