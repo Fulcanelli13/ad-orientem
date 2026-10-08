@@ -8,7 +8,9 @@ const ids = new Set([...crisis.dossiers, ...apol.dossiers].map(x => x.id));
 const sources = new Map(debates.source_registry.map(s => [s.id, s]));
 const expected = Array.from({length:10},(_,i)=>"TLM"+String(66+i).padStart(3,"0"));
 
-assert.equal(debates.status, "BILINGUAL_10_CASES_SOURCE_SCOPED_EDITORIAL_DRAFT_UNPUBLISHED");
+assert.equal(debates.status, "BILINGUAL_30_PARAGRAPHS_DOCUMENTARY_VETTED_NOT_CERTIFIED_UNPUBLISHED");
+assert.equal(debates.documentary_audit_20261008.reviewed_paragraphs,30);
+assert.equal(debates.documentary_audit_20261008.public_release_allowed,false);
 assert.equal(debates.audit_batch_20261008.question_count,10);
 assert.equal(debates.audit_batch_20261008.paragraphs_checked,30);
 assert.equal(debates.audit_batch_20261008.synthetic_objection_roles_corrected,5);
@@ -37,6 +39,14 @@ for(const d of debates.debates){
   for(const p of d.paragraphs){
     assert.ok(p.text.en && p.text.fr,"missing bilingual paragraph "+d.id);
     assert.ok(p.source_locator && p.source_review, "missing source locator "+d.id);
+    assert.ok(p.documentary_audit?.pinpoints?.length>=1, "claim missing pinpoint "+d.id);
+    assert.equal(p.documentary_audit.final_theological_approval,false);
+    assert.equal(p.documentary_audit.public_release_allowed,false);
+    for(const evidence of p.documentary_audit.pinpoints){
+      assert.ok(p.source_ids.includes(evidence.source_id), "pinpoint without paragraph citation "+d.id);
+      assert.equal(evidence.source_url,sources.get(evidence.source_id)?.url, "stale source URL "+d.id);
+      assert.ok(evidence.passage.length>24, "unusable passage locator "+d.id);
+    }
     assert.ok(Array.isArray(p.source_ids) && p.source_ids.length,"unsourced paragraph "+d.id);
     for(const sid of p.source_ids)assert.ok(sources.has(sid),"broken source reference "+sid);
     paragraphs++;
@@ -45,9 +55,15 @@ for(const d of debates.debates){
 assert.equal(paragraphs,30);
 assert.equal(namedProponentArguments,5);
 assert.equal(syntheticArguments,5);
-assert.equal(sources.size,18);
+assert.equal(sources.size,19);
+assert.equal(sources.get("CIC4").url,"https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann834-878_en.html");
+assert.ok(sources.get("OBED08").url.includes("autorita-obbedienza"));
+assert.ok(debates.debates.find(x=>x.id==="TLM075").paragraphs[1].source_ids.includes("OBED08"));
+assert.match(debates.debates.find(x=>x.id==="TLM075").paragraphs[2].text.en,/singular administrative decrees/);
+assert.match(debates.debates.find(x=>x.id==="TLM067").paragraphs[2].text.en,/neither authenticated/);
+
 assert.equal(sources.get("RES23").url,"https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html");
 assert.ok(sources.get("FSSP22FR").url.includes("/fr/"));
 assert.ok(debates.debates.find(x=>x.id==="TLM073").paragraphs[2].source_ids.includes("FSSP22FR"));
 assert.ok(debates.debates.find(x=>x.id==="TLM075").paragraphs[1].source_ids.includes("CIC1752"));
-console.log("Traditionis custodes dossier: PASS — 10 questions, 30 sourced bilingual paragraphs, 18 hyperlinked sources, 5 attributed objections, 5 editorial arguments, 0 new navigation dossiers.");
+console.log("Traditionis custodes dossier: PASS — 10 questions, 30 sourced bilingual paragraphs, 19 hyperlinked sources, 5 attributed objections, 5 editorial arguments, 0 new navigation dossiers.");
