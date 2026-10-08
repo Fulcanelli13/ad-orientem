@@ -197,6 +197,6 @@ export function renderApostolatePresentation(root,state,{scenarios,skills,source
   else if(state.view==="skill")body=skillDetailMarkup(selectedSkill,state,sources);
   else body=homeMarkup(state);
   const canBack=state.view!=="home";
-  root.innerHTML=`<style data-ao-apostolate-style>${apostolateCss()}</style><header class="aoApostolateTop"><button type="button" data-ao-ap-back aria-label="${esc(L(state,canBack?"Back":"Back to Formation",canBack?"Retour":"Retour à la Formation"))}">${icon("ao-ui-back")}</button><div class="aoApostolateTopTitle"><small>APOSTOLATE</small><strong>${esc(L(state,"Apostolate","Apostolat"))}</strong></div><button type="button" data-ao-ap-close aria-label="${esc(L(state,"Close","Fermer"))}">${icon("ao-ui-close")}</button></header><main class="aoApostolateWrap">${body}</main>`;
+  root.innerHTML=`<style data-ao-apostolate-style>${apostolateCss()}</style><header class="aoApostolateTop"><button type="button" data-ao-ap-back aria-label="${esc(L(state,canBack?"Back":"Back to Formation",canBack?"Retour":"Retour à la Formation"))}">${icon("ao-ui-back")}</button><div class="aoApostolateTopTitle"><small>APOSTOLATE</small><strong>${esc(L(state,"Apostolate","Apostolat"))}</strong></div><button type="button" data-ao-ap-home aria-label="${esc(L(state,"Home","Accueil"))}">${icon("ao-nav-home")}</button></header><main class="aoApostolateWrap">${body}</main>`;
   return true;
 }
