@@ -455,18 +455,24 @@
       "related_owners": [
         "CR-ECC-08"
       ],
-      "status": "SUBSTANTIVE_DEBATE_DRAFT_NOT_PUBLISHED",
+      "status": "NEW_COMPLETE_BILINGUAL_ANSWER_DRAFT_NOT_PUBLISHED",
       "substantive_debate_draft": {
         "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
         "debate_ids": [
           "SDV-05"
         ],
-        "status": "EDITORIAL_DRAFT_NOT_PUBLISHED"
+        "status": "SEPARATE_DEEP_DEBATE_STILL_UNPUBLISHED_REFERENCE_OWNER"
       },
       "question_fr": "Qu’est-ce qu’un antipape, et comment l’Église a-t-elle distingué les prétendants rivaux ?",
       "french_content_reference": {
-        "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
-        "status": "FRENCH_SUMMARIES_NOT_FULL_DEBATE_PARITY"
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "status": "FULL_BILINGUAL_ANSWER_FIELD_DRAFT_NATIVE_REVIEW_PENDING"
+      },
+      "answer_draft": {
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "question_id": "BAQ-13",
+        "source": "NEWLY_WRITTEN_2026_10_08_NOT_VERBATIM_LEGACY",
+        "status": "SOURCE_LINKED_HUMAN_REVIEW_PENDING"
       }
     },
     {
@@ -484,19 +490,25 @@
       "related_owners": [
         "CR-ECC-08"
       ],
-      "status": "SUBSTANTIVE_DEBATE_DRAFT_NOT_PUBLISHED",
+      "status": "NEW_COMPLETE_BILINGUAL_ANSWER_DRAFT_NOT_PUBLISHED",
       "substantive_debate_draft": {
         "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
         "debate_ids": [
           "SDV-01",
           "SDV-02"
         ],
-        "status": "EDITORIAL_DRAFT_NOT_PUBLISHED"
+        "status": "SEPARATE_DEEP_DEBATE_STILL_UNPUBLISHED_REFERENCE_OWNER"
       },
       "question_fr": "L’argument de saint Robert Bellarmin sur un pape hérétique manifeste prouve-t-il qu’un prétendant moderne n’est pas pape ?",
       "french_content_reference": {
-        "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
-        "status": "FRENCH_SUMMARIES_NOT_FULL_DEBATE_PARITY"
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "status": "FULL_BILINGUAL_ANSWER_FIELD_DRAFT_NATIVE_REVIEW_PENDING"
+      },
+      "answer_draft": {
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "question_id": "BAQ-14",
+        "source": "NEWLY_WRITTEN_2026_10_08_NOT_VERBATIM_LEGACY",
+        "status": "SOURCE_LINKED_HUMAN_REVIEW_PENDING"
       }
     },
     {
@@ -515,19 +527,25 @@
         "CR-AUT-03",
         "CR-ECC-04"
       ],
-      "status": "SUBSTANTIVE_DEBATE_DRAFT_NOT_PUBLISHED",
+      "status": "NEW_COMPLETE_BILINGUAL_ANSWER_DRAFT_NOT_PUBLISHED",
       "substantive_debate_draft": {
         "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
         "debate_ids": [
           "SDV-02",
           "SDV-03"
         ],
-        "status": "EDITORIAL_DRAFT_NOT_PUBLISHED"
+        "status": "SEPARATE_DEEP_DEBATE_STILL_UNPUBLISHED_REFERENCE_OWNER"
       },
       "question_fr": "Qui peut établir que le pape a perdu son office lorsque les évêques sont en désaccord ?",
       "french_content_reference": {
-        "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
-        "status": "FRENCH_SUMMARIES_NOT_FULL_DEBATE_PARITY"
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "status": "FULL_BILINGUAL_ANSWER_FIELD_DRAFT_NATIVE_REVIEW_PENDING"
+      },
+      "answer_draft": {
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "question_id": "BAQ-15",
+        "source": "NEWLY_WRITTEN_2026_10_08_NOT_VERBATIM_LEGACY",
+        "status": "SOURCE_LINKED_HUMAN_REVIEW_PENDING"
       }
     },
     {
@@ -548,7 +566,7 @@
         "CR-ECC-01",
         "CR-ECC-02"
       ],
-      "status": "SUBSTANTIVE_DEBATE_DRAFT_NOT_PUBLISHED",
+      "status": "NEW_COMPLETE_BILINGUAL_ANSWER_DRAFT_NOT_PUBLISHED",
       "substantive_debate_draft": {
         "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
         "debate_ids": [
@@ -556,12 +574,18 @@
           "SDV-04",
           "SDV-06"
         ],
-        "status": "EDITORIAL_DRAFT_NOT_PUBLISHED"
+        "status": "SEPARATE_DEEP_DEBATE_STILL_UNPUBLISHED_REFERENCE_OWNER"
       },
       "question_fr": "Une vacance de plusieurs décennies est-elle compatible avec la visibilité, l’indéfectibilité et la succession apostolique ?",
       "french_content_reference": {
-        "file": "data/learn/sedevacantism-preconciliar-debates.v1.json",
-        "status": "FRENCH_SUMMARIES_NOT_FULL_DEBATE_PARITY"
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "status": "FULL_BILINGUAL_ANSWER_FIELD_DRAFT_NATIVE_REVIEW_PENDING"
+      },
+      "answer_draft": {
+        "file": "data/learn/biblical-patristic-answers.v1.json",
+        "question_id": "BAQ-16",
+        "source": "NEWLY_WRITTEN_2026_10_08_NOT_VERBATIM_LEGACY",
+        "status": "SOURCE_LINKED_HUMAN_REVIEW_PENDING"
       }
     },
     {
@@ -776,12 +800,23 @@
     "answer_count": 22,
     "source_registry_entries": 52,
     "paragraph_level_source_references": true,
-    "not_fully_verifed_or_published": true
+    "not_fully_verifed_or_published": true,
+    "remaining_unanswered": 0,
+    "published": 0,
+    "answer_status": "ALL_26_DRAFTED_NOT_PUBLISHED"
   },
   "translation_state": {
     "question_titles_fr": 4,
     "other_22_question_title_source": "data/learn/biblical-patristic-answers.v1.json",
     "debate_detailed_fr": "COMPLETE_DRAFT_HUMAN_REVIEW_PENDING",
-    "status": "ALL_26_FRENCH_QUESTIONS_AND_SUBSTANTIVE_ANSWER_DRAFTS_PRESENT_UNPUBLISHED"
+    "status": "ALL_26_BILINGUAL_ANSWER_DRAFTS_NOT_EDITORIALLY_APPROVED",
+    "full_bilingual_answers_draft": 26,
+    "fully_missing_answer_drafts": 0,
+    "new_answers_needing_review": [
+      "BAQ-13",
+      "BAQ-14",
+      "BAQ-15",
+      "BAQ-16"
+    ]
   }
 }
