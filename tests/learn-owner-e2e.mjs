@@ -147,13 +147,26 @@ try{
   // Glossary: category-first navigation, multilingual search and sourced term drawer.
   await openFormationFamily("reference");
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
-  await page.waitForFunction(()=>
-    globalThis.AO_GLOSSARY_V1?.status?.().open===true &&
-    globalThis.AO_GLOSSARY_V1?.status?.().loaded===true &&
-    globalThis.AO_GLOSSARY_V1?.status?.().entries===450 &&
-    Boolean(document.getElementById("ao-glossary-root")),
-    null,{timeout:10000}
-  );
+  try{
+    await page.waitForFunction(()=>
+      globalThis.AO_GLOSSARY_V1?.status?.().open===true &&
+      globalThis.AO_GLOSSARY_V1?.status?.().loaded===true &&
+      globalThis.AO_GLOSSARY_V1?.status?.().entries===450 &&
+      Boolean(document.getElementById("ao-glossary-root")),
+      null,{timeout:10000}
+    );
+  }catch(error){
+    const diagnostic=await page.evaluate(()=>({
+      glossary:globalThis.AO_GLOSSARY_V1?.status?.()??null,
+      learn:globalThis.AO_LEARN_APP_V1?.status?.()??null,
+      registryWrapper:!!globalThis.AO_MODULES?.__aoGlossaryV1,
+      registered:!!globalThis.AO_MODULES?.get?.("learn.glossary"),
+      route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+      rootPresent:!!document.getElementById("ao-glossary-root"),
+      learnText:document.getElementById("ao-learn-modular-root")?.innerText?.slice(0,250)??null
+    }));
+    throw new Error("Glossary phone navigation state: "+JSON.stringify({diagnostic,pageErrors,error:String(error)}));
+  }
   const glossaryLanding=await page.evaluate(()=>{
     const root=document.getElementById("ao-glossary-root");
     return {
