@@ -1,7 +1,7 @@
 {
   "version": "TLM_OBJECTIONS_026_050_RECOVERED_V1",
   "created_at": "2026-10-08",
-  "status": "ENGLISH_RECOVERED_74_REFERENCES_COLLATED_7_BLOCKED_NOT_PUBLISHED",
+  "status": "ENGLISH_RECOVERED_74_REFERENCES_COLLATED_7_CORRECTED_FINAL_REVIEW_PENDING",
   "canonical_sot": "data/learn/church-crisis-canonical.v1.json",
   "publication_policy": "No mass-app or Formation runtime integration until original question provenance, source claim support and French translation are verified. Candidate links are not certified citations.",
   "original_source_issue": "74 prior chatgpt-content-reference indices were non-resolving placeholders; numerical provenance retained for editorial investigation. These are not links.",
@@ -186,6 +186,12 @@
       "title": "1976 Vatican denial quoted in historical discussion (2025)",
       "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/",
       "type": "SECONDARY_REPRINT_OF_VATICAN_STATEMENT"
+    },
+    {
+      "id": "LANG05",
+      "title": "Uwe Michael Lang, Turning Towards the Lord, Adoremus 2005 (liturgical orientation and historical rubrics)",
+      "url": "https://adoremus.org/2005/04/turning-towards-the-lord/",
+      "type": "SCHOLARLY_LITURGICAL_HISTORICAL"
     }
   ],
   "records": [
@@ -477,33 +483,19 @@
         },
         {
           "role": "substantive",
-          "text": "At the same time, wearing a chapel veil is **not a universal requirement of current Latin canon law**. The 1917 Code contained a head-covering norm, but that Code was superseded by the 1983 Code, which contains no equivalent obligation. Canonist Edward Peters explains the canonical history directly.",
+          "text": "At the same time, wearing a chapel veil is **not a universal requirement of current Latin canon law**. Canon 1262 §2 of the 1917 Code required women to cover their heads when attending sacred rites; that Code was abrogated by canon 6 §1(1) of the 1983 Code, which introduced no equivalent universal requirement.",
           "source_ids": [
-            "COR11",
-            "CODE83",
-            "VEIL",
             "CAN1917",
-            "CIC6"
+            "CIC6",
+            "COR11"
           ],
-          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
           "legacy_placeholder_index": 9,
           "citation_review": {
-            "status": "BLOCKED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
             "evidence_locator": "1917 c.1262§2; 1983 c.6",
             "hyperlinked_sources": [
-              {
-                "source_id": "COR11",
-                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
-              },
-              {
-                "source_id": "CODE83",
-                "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html"
-              },
-              {
-                "source_id": "VEIL",
-                "url": "https://uscatholic.org/articles/201606/hats-in-church-a-heady-issue/"
-              },
               {
                 "source_id": "CAN1917",
                 "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026"
@@ -511,11 +503,31 @@
               {
                 "source_id": "CIC6",
                 "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html"
+              },
+              {
+                "source_id": "COR11",
+                "url": "https://www.vatican.va/archive/ENG0839/_PZG.HTM"
               }
             ],
             "editorial_issue": "False author attribution: Edward Peters is not author of the linked Brian Baker article; cite 1917 c.1262§2 and 1983 c.6 instead.",
-            "suggested_replacement": "At the same time, wearing a chapel veil is not a universal requirement of current Latin canon law. Canon 1262 §2 of the 1917 Code required women's head covering during sacred rites, but canon 6 §1(1) of the 1983 Code abrogated the former Code without retaining an equivalent universal obligation."
-          }
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Replaced unsourced Edward Peters attribution and distinguished pre-1983 law from current law."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "At the same time, wearing a chapel veil is **not a universal requirement of current Latin canon law**. The 1917 Code contained a head-covering norm, but that Code was superseded by the 1983 Code, which contains no equivalent obligation. Canonist Edward Peters explains the canonical history directly.",
+              "original_source_ids": [
+                "COR11",
+                "CODE83",
+                "VEIL",
+                "CAN1917",
+                "CIC6"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Replaced unsourced Edward Peters attribution and distinguished pre-1983 law from current law."
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -720,16 +732,16 @@
         },
         {
           "role": "substantive",
-          "text": "Catholic doctrine does not equate human equality with interchangeability of every ecclesial role. The CDF's teaching on the male priesthood expressly rejects the idea that baptism creates a personal entitlement to every public ministry in the Church.",
+          "text": "Equal baptismal dignity does not imply an individual entitlement to every ecclesiastical ministry. The 1994 Congregation for Divine Worship communication explicitly says that temporary liturgical service is not a right belonging to any layperson, whether male or female. Pope John Paul II's *Ordinatio sacerdotalis* addresses the separate question of priestly ordination, not altar-serving rights.",
           "source_ids": [
             "SERV94",
             "CIC83",
             "ORD94"
           ],
-          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
           "legacy_placeholder_index": 16,
           "citation_review": {
-            "status": "BLOCKED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
             "evidence_locator": "Ordinatio sacerdotalis §4; 1994 CDW",
             "hyperlinked_sources": [
@@ -747,8 +759,22 @@
               }
             ],
             "editorial_issue": "Misattributed as CDF doctrine: Ordinatio sacerdotalis is by John Paul II. Change agency or obtain an actual CDF original.",
-            "suggested_replacement": "Catholic doctrine does not equate human equality with interchangeability of every ecclesial office. Pope John Paul II's Ordinatio sacerdotalis concerns priestly ordination; the 1994 Vatican communication treats altar service as a delegated lay function rather than an individual entitlement."
-          }
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Corrected attribution to John Paul II and distinguished priestly ordination from lay altar service."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Catholic doctrine does not equate human equality with interchangeability of every ecclesial role. The CDF's teaching on the male priesthood expressly rejects the idea that baptism creates a personal entitlement to every public ministry in the Church.",
+              "original_source_ids": [
+                "SERV94",
+                "CIC83",
+                "ORD94"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Corrected attribution to John Paul II and distinguished priestly ordination from lay altar service."
+            }
+          ]
         }
       ]
     },
@@ -1064,15 +1090,15 @@
         },
         {
           "role": "substantive",
-          "text": "It may be pastorally advantageous in this respect, but the quality of preaching depends primarily upon the doctrine, preparation and ability of the preacher rather than the rubric locating the sermon. Modern law itself contains extensive norms because liturgical placement alone does not guarantee good preaching.",
+          "text": "The reformed rite explicitly treats the homily as part of the liturgy, a genuine difference in its arrangement. The Council's requirement of serious preaching does not establish that every homily is well prepared or doctrinally sound; the quality of a particular sermon must be judged from what is actually preached.",
           "source_ids": [
             "SC63",
             "GIRM"
           ],
-          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
           "legacy_placeholder_index": 27,
           "citation_review": {
-            "status": "BLOCKED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
             "evidence_locator": "SC 52; GIRM 65 (not comparative quality study)",
             "hyperlinked_sources": [
@@ -1086,8 +1112,21 @@
               }
             ],
             "editorial_issue": "A claim that preaching quality is primarily determined by the preacher rather than rubrics is not demonstrated by SC and GIRM.",
-            "suggested_replacement": "The reformed rite explicitly places the homily within the liturgy, a genuine difference. The rubric alone does not establish how well a homily communicates Catholic doctrine or serves those attending."
-          }
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Removed unsupported comparative claim that preacher characteristics rather than rubric primarily determine quality."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "It may be pastorally advantageous in this respect, but the quality of preaching depends primarily upon the doctrine, preparation and ability of the preacher rather than the rubric locating the sermon. Modern law itself contains extensive norms because liturgical placement alone does not guarantee good preaching.",
+              "original_source_ids": [
+                "SC63",
+                "GIRM"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Removed unsupported comparative claim that preacher characteristics rather than rubric primarily determine quality."
+            }
+          ]
         }
       ]
     },
@@ -1177,26 +1216,26 @@
         },
         {
           "role": "substantive",
-          "text": "Paul VI described the revised Missal as part of a broader reorganization intended to clarify the parts of the Mass and renew the rite according to conciliar principles. Whether the older Offertory's anticipatory sacrificial language was pastorally obscure or instead theologically valuable remains a legitimate comparative question; its removal cannot simply be explained by claiming it taught literal pre-consecration transubstantiation.",
+          "text": "Paul VI's *Missale Romanum* gives broad reasons for revising the Roman Missal, including the clearer presentation of its parts. Those general reasons do not establish why each specific Offertory prayer was replaced. The traditional prayers' anticipatory sacrificial language remains an intelligible theological feature, but any account of the drafting committee's detailed intentions requires its records or direct testimony.",
           "source_ids": [
-            "MR62",
             "MR69",
+            "OFF1962",
             "CHIRON"
           ],
-          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
           "legacy_placeholder_index": 30,
           "citation_review": {
-            "status": "BLOCKED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
             "evidence_locator": "MR69 general preface, not committee's specific rationale",
             "hyperlinked_sources": [
               {
-                "source_id": "MR62",
-                "url": "https://archive.org/details/sp07mr62-editio-typica"
-              },
-              {
                 "source_id": "MR69",
                 "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+              },
+              {
+                "source_id": "OFF1962",
+                "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html"
               },
               {
                 "source_id": "CHIRON",
@@ -1204,8 +1243,22 @@
               }
             ],
             "editorial_issue": "General aims of Paul VI do not directly document the particular motives for removing each Offertory formula.",
-            "suggested_replacement": "Paul VI set out general objectives for the reform in Missale Romanum, but the particular reasons for eliminating each traditional Offertory prayer require committee documents or direct testimony."
-          }
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Separated documented general reform rationale from still-unverified reasons for individual Offertory removals."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Paul VI described the revised Missal as part of a broader reorganization intended to clarify the parts of the Mass and renew the rite according to conciliar principles. Whether the older Offertory's anticipatory sacrificial language was pastorally obscure or instead theologically valuable remains a legitimate comparative question; its removal cannot simply be explained by claiming it taught literal pre-consecration transubstantiation.",
+              "original_source_ids": [
+                "MR62",
+                "MR69",
+                "CHIRON"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Separated documented general reform rationale from still-unverified reasons for individual Offertory removals."
+            }
+          ]
         }
       ]
     },
@@ -1429,50 +1482,57 @@
         },
         {
           "role": "substantive",
-          "text": "Traditionalist historians are nevertheless entitled to investigate ecumenical influence on the reform. Even traditionalist-friendly accounts that emphasize Protestantizing tendencies acknowledge that the observers' actual role has to be distinguished from slogans about them “writing the Mass”; one such review notes scholarship judging their direct role comparatively limited while still treating their presence and the reformers' ecumenical aims as historically relevant.",
+          "text": "The role of Protestant observers is documented but disputed in its precise extent. The Joint Liturgical Group describes attendance and dialogue at Consilium meetings; a 1976 Vatican statement denied that the observers composed the new Missal, while Michael Davies reported a participant describing active discussions. Those are different kinds of testimony. Mere presence does not establish authorship, but categorical claims that observers had no opportunity to offer views also require evidence.",
           "source_ids": [
-            "MR69",
-            "CHIRON",
             "JLG1966",
-            "DAVIES",
             "VATICAN76",
-            "SSPX_PROT"
+            "DAVIES",
+            "MR69"
           ],
-          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
           "legacy_placeholder_index": 38,
           "citation_review": {
-            "status": "BLOCKED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
             "evidence_locator": "JLG eyewitness vs Vatican 1976 disclaimer vs Davies account",
             "hyperlinked_sources": [
               {
-                "source_id": "MR69",
-                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
-              },
-              {
-                "source_id": "CHIRON",
-                "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/"
-              },
-              {
                 "source_id": "JLG1966",
                 "url": "https://jlg.org.uk/the-birth-of-jlg/"
-              },
-              {
-                "source_id": "DAVIES",
-                "url": "https://www.newliturgicalmovement.org/2017/09/a-discussion-on-liturgical-reform-in.html"
               },
               {
                 "source_id": "VATICAN76",
                 "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/"
               },
               {
-                "source_id": "SSPX_PROT",
-                "url": "https://sspx.au/en/traditional-mass-vs-new-mass-33860"
+                "source_id": "DAVIES",
+                "url": "https://www.newliturgicalmovement.org/2017/09/a-discussion-on-liturgical-reform-in.html"
+              },
+              {
+                "source_id": "MR69",
+                "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
               }
             ],
             "editorial_issue": "Protestant observer influence is materially contested (1976 Vatican denial versus participant accounts and Davies); present the differences explicitly.",
-            "suggested_replacement": "The participation of Protestant observers is documented, but their precise influence is disputed. The Joint Liturgical Group records attendance and exchange; a Vatican spokesman denied in 1976 that they composed the Missal, while Michael Davies reported a participant describing active discussion. Consultation and legal authorship must be distinguished."
-          }
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Distinguished first-party Protestant attendance history, Vatican denial of authorship and reported testimony about discussion, without inventing a consensus."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Traditionalist historians are nevertheless entitled to investigate ecumenical influence on the reform. Even traditionalist-friendly accounts that emphasize Protestantizing tendencies acknowledge that the observers' actual role has to be distinguished from slogans about them “writing the Mass”; one such review notes scholarship judging their direct role comparatively limited while still treating their presence and the reformers' ecumenical aims as historically relevant.",
+              "original_source_ids": [
+                "MR69",
+                "CHIRON",
+                "JLG1966",
+                "DAVIES",
+                "VATICAN76",
+                "SSPX_PROT"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Distinguished first-party Protestant attendance history, Vatican denial of authorship and reported testimony about discussion, without inventing a consensus."
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -1546,40 +1606,50 @@
         },
         {
           "role": "substantive",
-          "text": "That does not prove a simple historical narrative in which the primitive Church universally celebrated across a table facing the congregation until medieval clericalism reversed the priest. Liturgical orientation developed in relation to church architecture, eastward prayer, apsidal design and local practice; current legislation itself does not claim that versus populum was the universal apostolic norm.",
+          "text": "The early history of liturgical orientation is more complex than a single universal arrangement. Cardinal Ratzinger and Uwe Michael Lang document the antiquity of common prayer toward the East and discuss early basilicas whose architecture permitted the celebrant to face the congregation physically while praying eastward. Neither that diversity nor later *versus populum* arrangements proves that priests universally faced congregants across an altar in apostolic times.",
           "source_ids": [
-            "GIRM",
-            "SC63",
             "RAT2000",
-            "VAT2010"
+            "LANG05",
+            "GIRM"
           ],
-          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
           "legacy_placeholder_index": 41,
           "citation_review": {
-            "status": "BLOCKED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
             "evidence_locator": "Ratzinger ch.3; architectural variance needs independent corroboration",
             "hyperlinked_sources": [
-              {
-                "source_id": "GIRM",
-                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
-              },
-              {
-                "source_id": "SC63",
-                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
-              },
               {
                 "source_id": "RAT2000",
                 "url": "https://www.ratzinger.us/The-Altar-and-the-Direction-of-Liturgical-Prayer/"
               },
               {
-                "source_id": "VAT2010",
-                "url": "https://www.vatican.va/news_services/liturgy/2010/documents/ns_lit_doc_20100907_mistero-celebrato_en.html"
+                "source_id": "LANG05",
+                "url": "https://adoremus.org/2005/04/turning-towards-the-lord/"
+              },
+              {
+                "source_id": "GIRM",
+                "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
               }
             ],
             "editorial_issue": "Ancient orientation has complex disputed history; Ratzinger is a substantial argument, not independent confirmation of every basilica arrangement.",
-            "suggested_replacement": "Ratzinger defended the antiquity of eastward common prayer; early churches, however, had diverse architectural arrangements. No claim of a universal apostolic configuration can be established from GIRM 299 or Sacrosanctum Concilium alone."
-          }
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Substituted historical liturgical scholarship for an inference from modern legislation."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "That does not prove a simple historical narrative in which the primitive Church universally celebrated across a table facing the congregation until medieval clericalism reversed the priest. Liturgical orientation developed in relation to church architecture, eastward prayer, apsidal design and local practice; current legislation itself does not claim that versus populum was the universal apostolic norm.",
+              "original_source_ids": [
+                "GIRM",
+                "SC63",
+                "RAT2000",
+                "VAT2010"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Substituted historical liturgical scholarship for an inference from modern legislation."
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -2338,30 +2408,43 @@
         },
         {
           "role": "substantive",
-          "text": "Traditionalist communities can nevertheless develop strong political subcultures, and Benedict XVI acknowledged that social attitudes had sometimes become unduly attached to older-liturgical identity. It is therefore fair to criticize a community when prudential politics becomes a test of Catholic orthodoxy.",
+          "text": "Attachment to a liturgy does not determine political identity. A particular community may form associated social or political habits, but such a claim requires evidence about that community, and it cannot be established merely from Benedict XVI's general caution about social attitudes that became associated with attachment to earlier rites.",
           "source_ids": [
-            "GS65",
-            "BEN07"
+            "BEN07",
+            "GS65"
           ],
-          "source_verification": "CLAIM_CORRECTION_REQUIRED",
+          "source_verification": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
           "legacy_placeholder_index": 65,
           "citation_review": {
-            "status": "BLOCKED",
+            "status": "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW",
             "reviewed_on": "2026-10-08",
             "evidence_locator": "Benedict 2007: social aspects only, not empirical politics",
             "hyperlinked_sources": [
               {
-                "source_id": "GS65",
-                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
-              },
-              {
                 "source_id": "BEN07",
                 "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html"
+              },
+              {
+                "source_id": "GS65",
+                "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
               }
             ],
             "editorial_issue": "Empirical implication about political subculture is not established by Benedict's generic reference to social aspects.",
-            "suggested_replacement": "Some liturgical communities may also develop political and social subcultures. Whether any particular community has done so must be established with evidence rather than inferred from attachment to the older liturgy."
-          }
+            "correction_applied_on": "2026-10-08",
+            "correction_reason": "Removed unsupported implied empirical generalization about present-day TLM communities."
+          },
+          "revision_history": [
+            {
+              "date": "2026-10-08",
+              "original_text": "Traditionalist communities can nevertheless develop strong political subcultures, and Benedict XVI acknowledged that social attitudes had sometimes become unduly attached to older-liturgical identity. It is therefore fair to criticize a community when prudential politics becomes a test of Catholic orthodoxy.",
+              "original_source_ids": [
+                "GS65",
+                "BEN07"
+              ],
+              "old_status": "BLOCKED",
+              "reason": "Removed unsupported implied empirical generalization about present-day TLM communities."
+            }
+          ]
         },
         {
           "role": "substantive",
@@ -2624,9 +2707,13 @@
     "status_counts": {
       "DIRECT_TEXT_ANCHORED": 37,
       "SOURCED_INTERPRETIVE": 30,
-      "BLOCKED": 7
+      "BLOCKED": 0,
+      "CORRECTED_SOURCE_ANCHORED_EDITORIAL_REVIEW": 7
     },
-    "blocked_legacy_indices": [
+    "blocked_legacy_indices": [],
+    "unattributed_followup_challenges": 8,
+    "publication_ready": false,
+    "corrected_legacy_indices": [
       9,
       16,
       27,
@@ -2635,7 +2722,6 @@
       41,
       65
     ],
-    "unattributed_followup_challenges": 8,
-    "publication_ready": false
+    "corrected_claims_require_final_approval": true
   }
 }
