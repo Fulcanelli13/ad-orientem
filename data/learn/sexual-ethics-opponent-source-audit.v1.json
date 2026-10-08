@@ -26,7 +26,7 @@
     "unverified_literally_attributed_debate_stages": 55,
     "stage_specific_mapping_debates": 55,
     "stage_specific_mapping_records": 440,
-    "stage_specific_mapping_references": 607,
+    "stage_specific_mapping_references": 609,
     "stage_full_text_certified": 0,
     "stage_specific_mapping_pending": 0
   },
@@ -1308,6 +1308,24 @@
         "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
         "caveat": "McHugh-Callan §1624 is the directly relevant preconciliar moral-manual text; neither PP page is a Christian moral argument.",
         "review_focus": "Avoid a blanket condemnation of every nonconsummated marital caress; distinguish deliberate sexual completion."
+      },
+      "substantive_editorial_pass_1": {
+        "reviewed_on": "2026-10-08",
+        "scope": "SELECTED_ORIGINAL_PASSAGES_CHECKED_BOTH_LANGUAGES_REVISED_NOT_EIGHT_STAGE_APPROVED",
+        "verified_stage": [
+          "concession",
+          "catholicCase",
+          "bottom"
+        ],
+        "original_primary": [
+          {
+            "source_id": "MCHUGH",
+            "section": "§1624",
+            "url": "https://gorettipub.org/mchugh_moral.html",
+            "finding": "Non-consummated acts as accessories to the marital act OR to foster/preserve conjugal affection; not an all-devices rule."
+          }
+        ],
+        "residual": "Specific modern-device practices and borderline incomplete acts remain disputed; no universal device authorization."
       }
     },
     {
@@ -1595,6 +1613,22 @@
         "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
         "caveat": "Casti Connubii §59 explicitly recognizes differences in cooperation and responsibility between spouses.",
         "review_focus": "Do not call a coerced or unwilling spouse equally guilty, or imply any formal participation is automatically excused."
+      },
+      "substantive_editorial_pass_1": {
+        "reviewed_on": "2026-10-08",
+        "scope": "SELECTED_ORIGINAL_PASSAGES_CHECKED_BOTH_LANGUAGES_REVISED_NOT_EIGHT_STAGE_APPROVED",
+        "verified_stage": [
+          "bottom"
+        ],
+        "original_primary": [
+          {
+            "source_id": "CASTI",
+            "section": "§59",
+            "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+            "finding": "Grave cause, reluctant allowance, lack of participation in the wrong, obligation of charity to dissuade."
+          }
+        ],
+        "residual": "Must still determine material/formal cooperation in each concrete case; no automatic permission."
       }
     },
     {
@@ -1640,6 +1674,23 @@
         "stage_count": 8,
         "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
         "caveat": "Farley's masturbation proposition is directly quoted with page reference by CDF."
+      },
+      "substantive_editorial_pass_1": {
+        "reviewed_on": "2026-10-08",
+        "scope": "SELECTED_ORIGINAL_PASSAGES_CHECKED_BOTH_LANGUAGES_REVISED_NOT_EIGHT_STAGE_APPROVED",
+        "verified_stage": [
+          "concession",
+          "bottom"
+        ],
+        "original_primary": [
+          {
+            "source_id": "PH",
+            "section": "§9",
+            "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+            "finding": "Masturbation's objective moral disorder and potential diminished subjective responsibility from immaturity, psychological imbalance and habit; absence of grave responsibility cannot be presumed generally."
+          }
+        ],
+        "residual": "No individual culpability determination is possible from a general article."
       }
     },
     {
@@ -2461,6 +2512,37 @@
         "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
         "caveat": "ACOG describes methotrexate and surgery for ectopic pregnancy, but explicitly is NOT a source for Catholic moral classifications.",
         "review_focus": "Do not declare methotrexate, salpingectomy and salpingostomy morally interchangeable; case-specific physician and competent moral advice."
+      },
+      "substantive_editorial_pass_1": {
+        "reviewed_on": "2026-10-08",
+        "scope": "SELECTED_ORIGINAL_PASSAGES_CHECKED_BOTH_LANGUAGES_REVISED_NOT_EIGHT_STAGE_APPROVED",
+        "verified_stage": [
+          "concession",
+          "catholicCase",
+          "response",
+          "bottom"
+        ],
+        "original_primary": [
+          {
+            "source_id": "ABORTCLAR",
+            "section": "CDF Clarification 2009, therapeutic intervention distinction",
+            "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+            "finding": "Direct abortion forbidden; necessary maternal pathology treatment with unwanted death distinguished."
+          },
+          {
+            "source_id": "ACOG_ECTOPIC",
+            "section": "ACOG ectopic FAQ 2026",
+            "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+            "finding": "Ectopic emergency rupture risk and clinical use of surgery/methotrexate; medical guidance is not Catholic moral ruling."
+          },
+          {
+            "source_id": "NCBC_ECTOPIC",
+            "section": "NCBC high-risk pregnancy analysis",
+            "url": "https://www.ncbcenter.org/messages-from-presidents/highrisk",
+            "finding": "Non-magisterial commentary favoring salpingectomy and opposing methotrexate. Catholic bioethicists disagree about some other ectopic methods."
+          }
+        ],
+        "residual": "Do not present NCBC's application as a dogma; disputed salpingostomy and methotrexate analyses need further expert collation. Emergency care must not be delayed."
       }
     },
     {
@@ -3012,22 +3094,10 @@
     "status": "ALL_55_STAGE_CITATION_MAPS_SELECTED_EDITORIAL_PROOF_PENDING",
     "passages_confirmed": [
       {
-        "question": "CSE055",
-        "original": "McHugh and Callan, Moral Theology §1624",
-        "url": "https://gorettipub.org/mchugh_moral.html",
-        "finding": "§1624 distinguishes lawful accessory/non-consummated acts from acts directed to non-conjugal completion. Not a catalog of forbidden anatomical body parts."
-      },
-      {
         "question": "CSE070",
         "original": "Pius XI, Casti Connubii §59",
         "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
         "finding": "§59 exempts a reluctant spouse for grave reason under defined conditions; moral responsibility is not identical with the contracepting spouse."
-      },
-      {
-        "question": "CSE125",
-        "original": "ACOG, Ectopic Pregnancy clinical FAQ",
-        "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
-        "finding": "Clinical FAQ documents methotrexate, surgery and rupture danger; it does not determine Catholic moral permissibility or whether methods have equivalent moral objects."
       },
       {
         "question": "CSE040",
@@ -3046,14 +3116,41 @@
         "original": "John Paul II, Veritatis Splendor §§74–83",
         "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
         "finding": "Intention/circumstance distinguishable from moral object; absolute negative moral norms remain. Does not alone prove absence of every historical teaching development."
+      },
+      {
+        "question": "CSE055",
+        "original": "McHugh-Callan Moral Theology §1624",
+        "url": "https://gorettipub.org/mchugh_moral.html",
+        "finding": "Expressly permits non-consummated gestures as accessories to marital intercourse OR to foster/preserve conjugal affection; deliberate non-conjugal sexual completion is not thereby justified."
+      },
+      {
+        "question": "CSE125",
+        "original": "CDF 2009 clarification; ACOG 2026 FAQ; NCBC non-magisterial analysis",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+        "finding": "Binding direct/indirect doctrine distinguished from emergency medical recommendations and disputed specific moral-object applications."
       }
     ],
     "qualification": "These are selected documentary passages, not a complete verification of all 192 stage texts.",
     "high_priority_file": "data/learn/sexual-ethics-stage-evidence-high24.v1.json",
     "remaining_file": "data/learn/sexual-ethics-stage-evidence-remaining31.v1.json",
     "stage_maps_total": 440,
-    "stage_source_refs_total": 607,
+    "stage_source_refs_total": 609,
     "full_passage_review_remaining": 55,
     "warning": "Each selected stage has an appropriate existing source locator, but the presence of a locator does NOT certify a literal quotation, a precise proponent attribution, or the truth of every premise. Human theological/source editorial signoff is pending."
+  },
+  "substantive_editorial_pass_1": {
+    "status": "FOUR_HIGH_STAKES_CASES_SELECTED_ORIGINAL_PASSAGE_REVIEWED_DOCTRINAL_SIGNOFF_PENDING",
+    "case_ids": [
+      "CSE055",
+      "CSE070",
+      "CSE071",
+      "CSE125"
+    ],
+    "bilingual_debate_fields_corrected": 10,
+    "question_records_amended": 4,
+    "source_locator_correction": "CSE040 Persona Humana §§7 and 9",
+    "new_secondary_source": "NCBC_ECTOPIC",
+    "non_magisterial_warning": true,
+    "still_uncertified_full_debates": 55
   }
 }
