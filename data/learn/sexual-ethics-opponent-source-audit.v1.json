@@ -4,14 +4,16 @@
   "status": "STRUCTURAL_55_CASE_SOURCE_AUDIT_WITH_SELECTED_DIRECT_PASSAGE_CHECKS_NO_CLAIM_OF_55_FULLY_VERIFIED",
   "summary": {
     "records": 55,
-    "selected_primary_position_checks": 34,
+    "selected_primary_position_checks": 44,
     "remaining_full_passage_review": 55,
     "high_priority": 24,
     "book_catalog_preview_cases": 33,
     "unmapped_opponent_sources": 0,
     "missing_canonical_urls": 0,
     "book_cases_with_new_original_support": 13,
-    "precisely_excerped_opponent_positions": 6
+    "precisely_excerped_opponent_positions": 6,
+    "new_batch_scoped_checks": 12,
+    "misconception_evidence_misattribution_corrections": 2
   },
   "policy": [
     "The debate text is authored synthesis/paraphrase unless an individually attributed literal quotation has been independently verified.",
@@ -89,7 +91,7 @@
           "title": "John Stuart Mill · On Liberty, Chapter IV (original 1869 fourth edition)",
           "url": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=4",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "MILL1859",
@@ -210,6 +212,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "CURRAN_CDF1986",
+          "locator": "lists sexual topics contested by Curran; not a direct claim about what Jesus explicitly said",
+          "title": "CDF · Letter to Father Charles Curran on disputed positions (25 July 1986)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html",
+          "role": "primary",
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+        },
+        {
           "source_id": "CURRAN1978",
           "locator": "sexual ethics and critique of traditional manualism",
           "title": "Charles E. Curran · Issues in Sexual and Medical Ethics",
@@ -218,18 +228,37 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "CURRAN_CDF1986"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "PRIMARY_RESPONDENT_TOPIC_NOT_EXACT_OBJECTION",
+        "source_ids": [
+          "CURRAN_CDF1986"
+        ],
+        "finding": "CDF's 1986 letter lists Curran's actual disputed premarital, contraceptive and other positions; does not attribute a claim 'Jesus never explicitly condemned X'.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE013",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "CURRAN1987",
+          "locator": "dissenting framework and scriptural sources; not a passage directly attributing Paul's ethics to culture",
+          "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
+          "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+          "role": "opposing_position",
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+        },
         {
           "source_id": "CURRAN1978",
           "locator": "sexual morality and contemporary moral theology",
@@ -239,13 +268,24 @@
           "source_type": "BOOK_CATALOG_OR_PREVIEW"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "CURRAN1987"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "PRIMARY_AUTHOR_GENERAL_METHOD_ONLY",
+        "source_ids": [
+          "CURRAN1987"
+        ],
+        "finding": "Curran argues for reforming methods of sexual morality, but the quoted source does not establish that he made the specific objection about Paul's cultural assumptions.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE014",
@@ -257,7 +297,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "CURRAN1992",
@@ -302,7 +342,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "CURRAN2006",
@@ -339,7 +379,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "CURRAN2006",
@@ -395,13 +435,24 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "NIDA_ADDICTION"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "EMPIRICAL_RELATED_FIELD_NOT_SPECIFIC_SEXUAL_BEHAVIOUR",
+        "source_ids": [
+          "NIDA_ADDICTION"
+        ],
+        "finding": "NIDA demonstrates compulsive substance use and altered self-control; extrapolation to every recurrent sexual act or automatic absence of moral guilt is unjustified.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE021",
@@ -450,6 +501,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "CURRAN_CDF1986",
+          "locator": "documents Curran's dissent about premarital intercourse; not a direct 'engaged couple' argument",
+          "title": "CDF · Letter to Father Charles Curran on disputed positions (25 July 1986)",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html",
+          "role": "primary",
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
+        },
+        {
           "source_id": "FLETCHER1966",
           "locator": "premarital sex as potentially right depending on circumstances",
           "title": "Joseph Fletcher · Situation Ethics: The New Morality",
@@ -474,13 +533,24 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "CURRAN_CDF1986"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification.",
+      "correction_needed": "Book catalogue remains bibliographic only; use linked direct evidence where its subject matches. Do not assert exact page-level book verification. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "PRIMARY_DOCUMENTS_AUTHOR_DISSENT_NOT_EXACT_SCENARIO",
+        "source_ids": [
+          "CURRAN_CDF1986"
+        ],
+        "finding": "CDF explicitly identifies Curran's premarital-intercourse dissent. It does not say he advanced the specific fiancé 'ceremony' argument in this case.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE035",
@@ -592,13 +662,26 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "PP_SEX",
+        "PP_SAFERSEX"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "OWN_VOICE_DESCRIPTIVE_NOT_PREMARITAL_MORAL_CLAIM",
+        "source_ids": [
+          "PP_SEX",
+          "PP_SAFERSEX"
+        ],
+        "finding": "Planned Parenthood lists oral/manual/genital activities and consent and STI prevention; it does not specifically defend those acts for engaged Catholics as a moral compromise.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE043",
@@ -610,7 +693,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "FARLEY2008",
@@ -655,7 +738,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "FARLEY2008",
@@ -721,7 +804,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "FARLEY2008",
@@ -758,7 +841,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "CURRAN1987",
@@ -766,7 +849,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "FARLEY2008",
@@ -886,13 +969,26 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "PP_SEX",
+        "PP_SAFERSEX"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "OWN_VOICE_DESCRIPTIVE_NOT_MARRIED_MORAL_CLAIM",
+        "source_ids": [
+          "PP_SEX",
+          "PP_SAFERSEX"
+        ],
+        "finding": "Planned Parenthood describes these sexual practices and safety; it does not decide traditional Catholic moral theology about completed marital acts.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE056",
@@ -933,7 +1029,7 @@
           "source_id": "PP_ANAL",
           "locator": "anal sex, consent and risk reduction",
           "title": "Planned Parenthood · What’s anal sex? What are the risks of it?",
-          "url": "https://www.plannedparenthood.org/learn/ask-experts/whats-anal-sex-what-are-the-risks-of-it",
+          "url": "https://www.plannedparenthood.org/blog/whats-anal-sex-what-are-the-risks-of-it",
           "role": "opposing_position",
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
@@ -946,13 +1042,26 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "PP_ANAL",
+        "PP_SEX"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "OWN_VOICE_PRACTICE_DESCRIPTION_NOT_CATHOLIC_MORAL_OBJECT",
+        "source_ids": [
+          "PP_ANAL",
+          "PP_SEX"
+        ],
+        "finding": "Planned Parenthood discusses anal sex, voluntary choice and physical risks; it does not directly assert the norm 'if married, all anal acts are morally identical'.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE061",
@@ -964,7 +1073,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "PP_BIRTHCONTROL",
@@ -1010,7 +1119,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "PP_BIRTHCONTROL",
@@ -1056,7 +1165,7 @@
           "title": "Charles E. Curran · Roman Catholic Sexual Ethics: A Dissenting View (1987) · complete article",
           "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "PP_BIRTHCONTROL",
@@ -1133,7 +1242,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "PP_MAST",
@@ -1225,7 +1334,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "FARLEY2008",
@@ -1270,7 +1379,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "FARLEY2008",
@@ -1310,6 +1419,14 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
+          "source_id": "APA_LGB_POLICY",
+          "locator": "APA resolution on discrimination and psychological harms; clinical/public policy not Catholic moral doctrine",
+          "title": "American Psychological Association · Resolution on sexual orientation and mental health",
+          "url": "https://www.apa.org/about/governance/council/policy/chapter-12b.aspx",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_ASSOCIATION_POLICY"
+        },
+        {
           "source_id": "APA_LGB",
           "locator": "stigma, prejudice and sexual orientation",
           "title": "American Psychological Association · Understanding sexual orientation and homosexuality",
@@ -1318,18 +1435,39 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "APA_LGB",
+        "APA_LGB_POLICY"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "OWN_VOICE_DIRECT_INSTITUTIONAL_POSITION",
+        "source_ids": [
+          "APA_LGB",
+          "APA_LGB_POLICY"
+        ],
+        "finding": "APA documents social prejudice and adverse mental-health effects and rejects stigmatization. Clinical/social findings alone do not adjudicate Catholic moral argument.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE088",
       "priority": "NORMAL",
       "opponent_provenance": [
+        {
+          "source_id": "APA_LGB_POLICY",
+          "locator": "APA resolution affirming homosexuality is not a psychiatric disorder; does not resolve whether sexual conduct is moral",
+          "title": "American Psychological Association · Resolution on sexual orientation and mental health",
+          "url": "https://www.apa.org/about/governance/council/policy/chapter-12b.aspx",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_ASSOCIATION_POLICY"
+        },
         {
           "source_id": "APA_LGB",
           "locator": "homosexuality is not classified as mental illness",
@@ -1339,13 +1477,26 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "APA_LGB",
+        "APA_LGB_POLICY"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "OWN_VOICE_DIRECT_INSTITUTIONAL_POSITION",
+        "source_ids": [
+          "APA_LGB",
+          "APA_LGB_POLICY"
+        ],
+        "finding": "APA directly states that homosexuality is not a mental disorder. This does not logically establish that every moral norm about conduct is medically obsolete.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE089",
@@ -1357,7 +1508,7 @@
           "title": "Margaret Farley · Just Love pp. 236, 293, 295, 304–305, 310 · exact excerpts in CDF Notification (2012)",
           "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
           "role": "opposing_position",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "APA_LGB",
@@ -1490,6 +1641,14 @@
       "priority": "HIGH",
       "opponent_provenance": [
         {
+          "source_id": "WPATH8_FULL",
+          "locator": "Standards of Care 8, clinical assessment and intervention, individualization and limitations",
+          "title": "Coleman et al. · WPATH Standards of Care Version 8 (2022) · full free text",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/",
+          "role": "opposing_position",
+          "source_type": "PRIMARY_CLINICAL_GUIDANCE"
+        },
+        {
           "source_id": "WPATH8",
           "locator": "Standards of Care Version 8",
           "title": "WPATH · Standards of Care Version 8",
@@ -1506,13 +1665,26 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "TOPICALLY_LINKED_NOT_ORIGINAL_PASSAGE_VERIFIED",
-      "verified_primary_source_ids": [],
+      "opposition_passage_status": "PRIMARY_CONTEXT_CHECKED_SPECIFIC_OPPOSITION_RECONSTRUCTED_UNVERIFIED",
+      "verified_primary_source_ids": [
+        "WPATH8_FULL",
+        "APA_TRANSCARE"
+      ],
       "verified_finding": null,
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic.",
+      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Direct source verifies scoped facts only; authored opposition and rebuttal still require stage-by-stage certification.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "OWN_VOICE_DIRECT_GUIDELINE_WITH_EVIDENCE_LIMITS",
+        "source_ids": [
+          "WPATH8_FULL",
+          "APA_TRANSCARE"
+        ],
+        "finding": "WPATH SOC8 is freely accessible with criteria and individualized safeguards; APA 2024 explicitly acknowledges limits of evidence and noncoercive care. Neither by itself defines Catholic moral permissibility.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE101",
@@ -1565,12 +1737,20 @@
       "priority": "HIGH",
       "opponent_provenance": [
         {
+          "source_id": "RAINN_CONSENT101",
+          "locator": "explicitly REFUTES inference from physiological response to consent; this is rebuttal evidence, not a proponent",
+          "title": "RAINN · Consent 101: involuntary bodily arousal is not consent",
+          "url": "https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust",
+          "role": "empirical",
+          "source_type": "REBUTTAL_EVIDENCE_NOT_OPPONENT"
+        },
+        {
           "source_id": "ASSAULT2024",
           "locator": "physiological response during non-consensual sexual activity",
           "title": "Physiological sexual responses during non-consensual sexual activity · scoping review (2024)",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
           "role": "empirical",
-          "source_type": "ACADEMIC_ABSTRACT_OR_INDEX"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "PP_CONSENT",
@@ -1581,20 +1761,40 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "opposition_passage_status": "OBJECTION_IS_FALSE_MISCONCEPTION_LINKED_SOURCES_REFUTE_IT",
       "verified_primary_source_ids": [
-        "PP_CONSENT"
+        "PP_CONSENT",
+        "RAINN_CONSENT101",
+        "ASSAULT2024"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
+      "correction_needed": "Reader explicitly labels these sources as rebuttal evidence, not original advocates; no false-proponent attribution allowed.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "EXPLICIT_REBUTTAL_NOT_OPPOSING_AUTHOR",
+        "source_ids": [
+          "RAINN_CONSENT101",
+          "ASSAULT2024"
+        ],
+        "finding": "RAINN expressly states physiological arousal, lubrication and orgasm do not constitute consent. The original objection is a misconception, not RAINN's position.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE117",
       "priority": "HIGH",
       "opponent_provenance": [
+        {
+          "source_id": "RAINN_ASSAULT",
+          "locator": "explicitly supports incapacity and coercion limits on consent; not an opponent advocating impaired consent",
+          "title": "RAINN · Facts about assault, intoxication and inability to consent",
+          "url": "https://rainn.org/get-the-facts-about-sexual-assault-rape",
+          "role": "empirical",
+          "source_type": "REBUTTAL_EVIDENCE_NOT_OPPONENT"
+        },
         {
           "source_id": "RAINN_ALCOHOL",
           "locator": "significant impairment and consent",
@@ -1612,15 +1812,26 @@
           "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         }
       ],
-      "opposition_passage_status": "SELECTED_PRIMARY_POSITION_CHECKED_NOT_COMPLETE_STAGED_TEXT_VERIFICATION",
+      "opposition_passage_status": "OBJECTION_IS_FALSE_MISCONCEPTION_LINKED_SOURCES_REFUTE_IT",
       "verified_primary_source_ids": [
-        "PP_CONSENT"
+        "PP_CONSENT",
+        "RAINN_ASSAULT"
       ],
       "verified_finding": "Planned Parenthood's own FRIES consent page validates consent as necessary for sexual activity. It does NOT establish that consent is a sufficient criterion of moral goodness; any claim of sufficiency is a constructed argument, not an attributed Planned Parenthood quotation.",
       "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Review the precise proponent wording and whether the linked source covers the specific objection, rather than an adjacent topic. Checked organizational text is not a literal eight-stage debate transcript; precise stage attribution remains pending.",
+      "correction_needed": "Reader explicitly labels these sources as rebuttal evidence, not original advocates; no false-proponent attribution allowed.",
       "not_a_direct_quotation": true,
-      "new_primary_evidence": null
+      "new_primary_evidence": null,
+      "verification_batch_3": {
+        "date": "2026-10-08",
+        "grade": "EXPLICIT_REBUTTAL_NOT_OPPOSING_AUTHOR",
+        "source_ids": [
+          "RAINN_ASSAULT",
+          "PP_CONSENT"
+        ],
+        "finding": "RAINN identifies intoxication/impairment as conditions limiting capacity for free consent. It does not endorse 'drunken yes is consent'.",
+        "full_eight_stage_check": false
+      }
     },
     {
       "id": "CSE123",
@@ -1702,7 +1913,7 @@
           "title": "ACOG · Ectopic Pregnancy, clinical FAQ (reviewed April 2026)",
           "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
           "role": "empirical",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "ACOG_ECTOPIC_GUIDELINE",
@@ -1710,7 +1921,7 @@
           "title": "ACOG · Tubal Ectopic Pregnancy, Practice Bulletin 193 (2018)",
           "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/03/tubal-ectopic-pregnancy",
           "role": "empirical",
-          "source_type": "PRIMARY_DIRECT_TEXT_OR_DOCUMENTARY_QUOTATION"
+          "source_type": "ORIGINAL_INSTITUTION_OR_AUTHOR_PAGE"
         },
         {
           "source_id": "ACOG_ABORTION",
@@ -1999,6 +2210,43 @@
       "Still no full text or page-level verification of Fletcher's and all Farley/Curran catalogued volumes.",
       "Every eight-stage objection/refutation needs paragraph-specific alignment before certification.",
       "Clinical debate CSE125 needs individual case-by-case moral analysis; medical methods are not morally interchangeable."
+    ]
+  },
+  "batch_3": {
+    "date": "2026-10-08",
+    "status": "SCOPED_PRIMARY_PASSAGE_BATCH_AND_FALSE_ATTRIBUTION_FIX_NOT_FULL_EDITORIAL_CERTIFICATION",
+    "checked_case_ids": [
+      "CSE012",
+      "CSE013",
+      "CSE020",
+      "CSE031",
+      "CSE040",
+      "CSE055",
+      "CSE058",
+      "CSE087",
+      "CSE088",
+      "CSE096",
+      "CSE112",
+      "CSE117"
+    ],
+    "primary_readings": [
+      "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/",
+      "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html",
+      "https://www.plannedparenthood.org/learn/teens/sex/all-about-sex",
+      "https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/safer-sex",
+      "https://www.plannedparenthood.org/blog/whats-anal-sex-what-are-the-risks-of-it",
+      "https://www.apa.org/topics/lgbtq/orientation",
+      "https://www.apa.org/about/governance/council/policy/chapter-12b.aspx",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/",
+      "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care",
+      "https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust",
+      "https://rainn.org/get-the-facts-about-sexual-assault-rape",
+      "https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction"
+    ],
+    "important_scope": [
+      "Descriptive clinical or health-education pages do not establish a Catholic or secular moral argument outside their own stated scope.",
+      "Curran source may prove historical dissent without proving the exact reconstructed objection.",
+      "Sexual-assault misconception cases were inadvertently described as backed by 'opposing-position' sources even though the sources refute them. This is corrected in reader."
     ]
   }
 }
