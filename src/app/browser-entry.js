@@ -243,7 +243,9 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     if (!surface) return;
     event.preventDefault?.();
     event.stopPropagation?.();
+    try{win?.__AO_CI_TRACE?.("ribbon-click:before-navigation");}catch{}
     void (presentationFx?.navigate?.(surface, () => controller.go(surface)) ?? controller.go(surface));
+    try{win?.__AO_CI_TRACE?.("ribbon-click:after-navigation-dispatch");}catch{}
   }
 
   function syncExternalNavigation(event) {
