@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
+      - run: npm run test:calendar
       - run: npx playwright install --with-deps chromium
       - name: Exhaustive 2026 production resolver sweep and independent checkpoints
         run: node tests/calendar-1962-full-year-audit.mjs
