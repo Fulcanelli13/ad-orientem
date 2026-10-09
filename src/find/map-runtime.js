@@ -115,9 +115,15 @@ export async function mountFindMap(container,records,{win=globalThis,onSelect=()
 
 export function exploreMapFeatures(items){
   const out=[];
+  const relicPlaces=new Set();
   for(const item of Array.isArray(items)?items:[]){
     const g=item?.geo??{},lat=Number(g.lat),lng=Number(g.lng);
     if(!item?.map_publishable||!Number.isFinite(lat)||lat<-90||lat>90||!Number.isFinite(lng)||lng<-180||lng>180)continue;
+    // One map marker per physical relic custodian; individual records remain available in place profiles.
+    if(item.lens==="relics"&&item.place_id){
+      if(relicPlaces.has(item.place_id))continue;
+      relicPlaces.add(item.place_id);
+    }
     out.push({
       type:"Feature",
       geometry:{type:"Point",coordinates:[lng,lat]},
