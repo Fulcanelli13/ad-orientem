@@ -5,6 +5,8 @@ import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleRespon
 import { rosaryGuideSections } from "../src/pray/rosary-guide-data.js";
 import { directChildAnchor } from "../src/pray/dom-anchor.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pray/devotional-ux-contract.js";
+import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "../src/pray/devotional-witness-links.v1.js";
+import { parseSevenWordsHistoricalWitness } from "../src/pray/seven-words-witness.v1.js";
 import { LITANY_SOURCE_WITNESSES, extractLitanyProper, paginateLitanyProper } from "../src/pray/litany-source.js";
 
 const prayers=PRAY_CANONICAL_DATA_V435930?.prayers??{};
@@ -307,3 +309,60 @@ for(const code of ["en","fr"]){
 assert.match(runtime,/data-p435930-lit-retry/);
 assert.match(runtime,/litanySourceDisclosure\(\)/);
 assert.doesNotMatch(runtime,/A Manual of Prayers for the Use of the Catholic Laity\/Litany of the Saints/,"unavailable historical Wikisource title returned");
+
+
+// Editorial source contract: every historical devotional source drawer links an
+// independently identified original-text witness, not just an imprint name.
+for(const id of ["stations","penitential","sevenWords","fortyHours"]){
+ const witness=DEVOTIONAL_WITNESSES[id];
+ assert.ok(witness?.links?.length>=1,id+" has no original witness");
+ assert.ok(witness.type.length>15,"source certainty is not classified: "+id);
+ for(const link of witness.links){
+  assert.match(link.url,/^https:\/\//,id+" external historical witness is not HTTPS");
+  assert.ok(link.title.length>25,id+" source label is not specific");
+ }
+ assert.match(runtime,new RegExp("'"+id+"'\\)\\}"),"the "+id+" route never binds its witness source drawer");
+}
+assert.match(runtime,/noopener noreferrer/,"historical source links must be isolated");
+assert.doesNotMatch(runtime,/Saint Andrew Daily Missal · 1951 · special Forty Hours Litany/,"unverified 1951 original witness attribution was reintroduced");
+
+const hope=PRAYER_WITNESSED_VARIANTS.foundations_act_of_hope;
+assert.equal(hope.language,"fr");
+assert.match(hope.url,/vatican\.va/);
+assert.match(hope.noteFr,/Dans cette foi/);
+assert.equal(prayers.foundations_act_of_hope.fr.includes("Dans cette foi"),true,"keep the published French Compendium wording until separately sourced emendation");
+assert.match(runtime,/PRAYER_WITNESSED_VARIANTS\[p\.id\]/,"live source disclosure must expose the original-witness anomaly");
+
+// The Baltimore Manual appends Marian prayers after the seventh meditation.
+// Those must be accessible as a *separate conclusion*, not swallowed by Word 7.
+const ordinals=["First","Second","Third","Fourth","Fifth","Sixth","Seventh"];
+const sevenFixture="Intro\n"+ordinals.map((name,i)=>"The "+name+" Word.\n"+
+ "Word "+(i+1)+" has a historical prayer and response. ".repeat(4)).join("\n")+
+ "\nA Prayer to our Blessed Lady of Sorrows.\n"+("Holy Mother, pray for us. ".repeat(8));
+const segmented=parseSevenWordsHistoricalWitness(sevenFixture);
+assert.equal(segmented.sections.length,7);
+assert.match(segmented.sections[6].text,/Word 7/);
+assert.doesNotMatch(segmented.sections[6].text,/Blessed Lady of Sorrows/);
+assert.match(segmented.appendix,/A Prayer to our Blessed Lady/);
+assert.throws(()=>parseSevenWordsHistoricalWitness(sevenFixture.replace("A Prayer to our Blessed Lady of Sorrows.","")),/Cannot separate/);
+assert.match(runtime,/SEVEN\.appendix/,"Seven Words conclusion is not rendered");
+
+
+// Exactly 48 canonical Prayer texts and 16 canonical Novenas are in the
+// cross-module edition inventory. Presence of a source link never certifies it.
+const sourceInventory=JSON.parse(readFileSync("data/pray/prayer-source-certification-inventory.v2.json","utf8"));
+assert.equal(sourceInventory.prayers.length,48);
+assert.equal(sourceInventory.novenas.length,16);
+assert.equal(sourceInventory.counts.prayers,48);
+assert.equal(sourceInventory.counts.novenas,16);
+assert.equal(new Set([...sourceInventory.prayers,...sourceInventory.novenas].map(x=>x.id)).size,64);
+for(const record of sourceInventory.prayers){
+ assert.ok(prayers[record.id],"edition audit contains unknown prayer "+record.id);
+ assert.deepEqual(record.languages,Object.fromEntries(["en","fr","la"].map(l=>[l,!!prayers[record.id][l]])));
+ assert.match(record.editorial,/PENDING_INDEPENDENT/,"record falsely certified without original collation: "+record.id);
+}
+for(const record of sourceInventory.novenas){
+ assert.match(record.editorial,/PENDING_INDEPENDENT/,"novena falsely certified without original collation: "+record.id);
+ assert.ok(record.sourceWork,"missing historical identity for "+record.id);
+ assert.match(record.sourceUrl,/^https:\/\//,"novena source must carry a URL: "+record.id);
+}
