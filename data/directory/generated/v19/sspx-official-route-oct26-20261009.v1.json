@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "generated_at": "2026-10-09T05:54:57.637Z",
   "provider": "SSPX_OFFICIAL_ROUTE_OCT26_20261009",
-  "purpose": "Three independently sourced SSPX street-addressed Sunday Mass venues in Germany and France, drawn from October 2026 first-party Mass schedule and French Swiss district publications. Exact physical map route destinations with address precision; no invented dates.",
+  "purpose": "Two distinct current first-party Sunday Mass chapels in Passau and Les Rousses. Le Laus is owned by the earlier SSPX_FRANCE_FIRST_PARTY snapshot and must never appear as a second physical venue.",
   "defaults": {
     "c": "SSPX",
     "f": "ROMAN",
@@ -18,11 +18,11 @@
   },
   "review_summary": {
     "before_sspx_mass": 611,
-    "new_mass_venues": 3,
-    "after_sspx_mass": 614,
+    "new_mass_venues": 2,
+    "after_sspx_mass": 613,
     "regular_public": 2,
-    "conditional": 1,
-    "verified_first_party_directions_geo": 3,
+    "conditional": 0,
+    "verified_first_party_directions_geo": 2,
     "source_checked_on": "2026-10-09"
   },
   "records": [
@@ -59,25 +59,6 @@
       "schedule_caveat": "HOLIDAY_TIME_VERIFY",
       "source_checked_on": "2026-10-09",
       "schedule_source_last_updated": "2026-06-01",
-      "source_directory": "SSPX_OFFICIAL_MAP_CURRENT_DISTRICT",
-      "review_flag": "EXACT_OFFICIAL_PHYSICAL_SUNDAY_MASS_SITE_AND_ROUTE",
-      "geo_source_status": "EXACT_FIRST_PARTY_MAP_DIRECTIONS_ADDRESS_LEVEL"
-    },
-    {
-      "u": "SSPX-SSPXMAP-20261009-FR-LE-LAUS-ND-ROSAIRE",
-      "cc": "FR",
-      "l": "Le Laus",
-      "n": "Chapelle Notre-Dame du Rosaire",
-      "vt": "chapel",
-      "a": "388 Grande Rue, 05130 Notre-Dame du Laus, France",
-      "sr": "Sunday Mass 09:00 listed on the current first-party La Porte Latine chapel page; international map schedule last updated November 2024, so confirm the upcoming Sunday before travel.",
-      "ps": "CONDITIONAL_MASS",
-      "su": "https://laportelatine.org/lieux/montgardin/le-laus",
-      "official_map_source_place_id": "chapelle-notre-dame-du-rosaire",
-      "official_map_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-du-rosaire",
-      "schedule_caveat": "OFFICIAL_LISTING_2024_TIME_RECONFIRM",
-      "source_checked_on": "2026-10-09",
-      "schedule_source_last_updated": "2024-11-04",
       "source_directory": "SSPX_OFFICIAL_MAP_CURRENT_DISTRICT",
       "review_flag": "EXACT_OFFICIAL_PHYSICAL_SUNDAY_MASS_SITE_AND_ROUTE",
       "geo_source_status": "EXACT_FIRST_PARTY_MAP_DIRECTIONS_ADDRESS_LEVEL"
