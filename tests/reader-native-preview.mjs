@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard } from "../src/mass/reader-native-preview.js";
+import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard, palmGospelFocusedRow } from "../src/mass/reader-native-preview.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -115,6 +115,28 @@ aspergesReady.aspergesController.setActuallySprinkled(true);
 assert.equal(aspergesReady.aspergesController.project().faithfulGesture,"MAKE_FULL_SIGN_OF_CROSS");
 aspergesReady.aspergesController.goTo("ASP-R05");
 assert.equal(aspergesReady.aspergesController.project().handoff,"FOOT_CLUSTER");
+
+// The Palm Gospel-crosses are an instant attached to the source proclamation
+// heading, not a gesture held for the entirety of Matthew's narrative.
+const palmRows=[
+  {id:"PALM-R03-01",top:22,bottom:64},
+  {id:"PALM-R03-02",top:68,bottom:101},
+  {id:"PALM-R03-03",top:108,bottom:1300},
+  {id:"PALM-R03-04",top:1312,bottom:1340},
+];
+assert.equal(palmGospelFocusedRow({
+  scrollTop:0,clientHeight:640,scrollHeight:1700,items:palmRows
+}),"PALM-R03-01","Gospel crosses unavailable at the precise heading");
+assert.equal(palmGospelFocusedRow({
+  scrollTop:120,clientHeight:640,scrollHeight:1700,items:palmRows
+}),"PALM-R03-03","Gospel crosses persisted while the narrative was being read");
+assert.equal(palmGospelFocusedRow({
+  scrollTop:1050,clientHeight:640,scrollHeight:1700,items:palmRows
+}),"PALM-R03-04","Gospel crosses remained active into the concluding response");
+assert.equal(palmGospelFocusedRow({
+  scrollTop:0,clientHeight:640,scrollHeight:1700,
+  items:[{id:"UNREGISTERED_GESTURE",top:0,bottom:100}]
+}),null,"unknown text was accepted as a Palm gesture source");
 
 const palmProcessionPrepared={
   ...livePrepared,
