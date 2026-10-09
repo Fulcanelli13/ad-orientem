@@ -98,8 +98,16 @@ try {
   await page.locator("#ao-test-scripture-context-launcher").evaluate(node=>node.remove());
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:26–38")),true);
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
+  const annunciationWitness=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
+  assert.equal(await annunciationWitness.count(),1,
+    "Verified Annunciation commentary must be exposed for Luke 1:26–38");
+  assert.match(await annunciationWitness.getAttribute("href")||"",/\/catena\/untitled-62\.shtml$/,
+    "Annunciation must link to the verified Luke Catena Aurea witness");
+  await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:68")),true);
+  await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
   assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").count(),0,
-    "Uncollated passage must not receive a fabricated commentary");
+    "Uncollated Luke 1:68 must not receive a fabricated commentary");
   await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
 
   // Daily Rule remains actionable even if its legacy static-sheet handler
