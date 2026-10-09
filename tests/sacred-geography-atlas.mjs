@@ -31,6 +31,21 @@ assert.ok(sacred.apparitions.some(x=>x.phenomenon_family==="SAINT_JOSEPH"));
 assert.ok(sacred.apparitions.some(x=>x.phenomenon_family==="SAINT_MICHAEL"));
 assert.ok(sacred.apparitions.some(x=>x.phenomenon_family==="MARY"));
 assert.ok(sacred.apparitions.some(x=>x.recognition_record==="MEDIEVAL_LEGEND"));
+const zeitoun=sacred.apparitions.find(x=>x.id==="apparition:EG:zeitoun");
+assert.equal(zeitoun.recognition_record,"COPTIC_ORTHODOX_RECOGNITION");
+assert.match(zeitoun.summary_en,/not a Catholic diocesan approval/);
+const sanNicolas=sacred.apparitions.find(x=>x.id==="apparition:AR:san-nicolas");
+assert.equal(sanNicolas.calendar_semantic_key,"observance.san_nicolas_september25");
+const croce=sacred.relics.filter(x=>x.place_id==="place:IT:santa-croce-gerusalemme-rome");
+assert.equal(croce.length,8);
+assert.ok(croce.every(x=>x.access_notice_en?.includes("temporarily closed")&&x.access_notice_fr?.includes("fermée")));
+assert.ok(croce.every(x=>x.authentication==="NOT_INDEPENDENTLY_CERTIFIED_BY_APP"));
+const romeItem=projectExploreDataset({geography:geo,sacredPhenomena:sacred}).byLens.relics.find(x=>x.source_id==="relic:IT:santa-croce-true-cross");
+assert.ok(romeItem.sections.some(x=>x.label==="Visitor access"&&x.body_fr?.includes("fermée")));
+const romeUi=renderExploreToString(buildExploreViewModel({language:"fr",lens:"relics",view:"list",
+items:[romeItem],counts:{relics:1},selectedId:romeItem.item_id}));
+assert.match(romeUi,/Chapelle des reliques temporairement fermée/);
+
 assert.ok(sacred.relics.some(x=>x.relic_kind==="REPUTED_PASSION_RELIC"));
 assert.ok(sacred.relics.every(x=>x.authentication==="NOT_INDEPENDENTLY_CERTIFIED_BY_APP"));
 const projection=projectExploreDataset({geography:geo,sacredPhenomena:sacred});
