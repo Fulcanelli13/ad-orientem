@@ -36,6 +36,7 @@ try {
   await panel.waitFor({state:"visible"});
   assert.equal(await panel.locator("select[data-guided-select] option").count(),55);
   assert.equal(await panel.locator(".aoCatechismGuidedDraft").count(),1);
+  assert.ok(await panel.locator('a[aria-label*="French printed 1913"]').count()>0,"A question must link to the French 1913 historical scan");
   await panel.locator('select[data-guided-select]').selectOption("LTF-046");
   await panel.locator('[data-guided-question="213"]').tap();
   await page.waitForFunction(()=>globalThis.AO_TRADITIONAL_CATECHISM?.getState?.().detail===213,null,{timeout:30000});
