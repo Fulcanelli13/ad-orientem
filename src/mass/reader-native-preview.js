@@ -481,6 +481,7 @@ export async function mountNativeReaderPreview({
     let deathCueRunning=false;
     let formulaCueRunning=false;
     let formulaKneelRecord=null;
+    let formulaKneelScrollTop=null;
     const kneelRecord=id=>/^GF-SOP-\d\d-K$/.test(id??"")||/^GF-X-52[123]$/.test(id??"");
     const r28Posture=state=>kneelRecord(state.step?.recordId) &&
       formulaKneelRecord!==state.step.recordId ? "STAND" : state.posture;
@@ -696,14 +697,22 @@ export async function mountNativeReaderPreview({
         items:items.filter(row=>row.cueId===expected),
       });
       if(!reached)return;
+      // Rendering the kneeling cue does not constitute a second scroll.
+      // Chromium may dispatch a deferred native scroll event after the
+      // explicit first focus event; it must not immediately stand at Levate.
+      // Require forward movement after Flectamus, or the explicit stand action.
+      if(formulaKneelRecord===id && /^GF-SOP-\\d\\d-K$/.test(id) &&
+        card.scrollTop<=(formulaKneelScrollTop??card.scrollTop)+2)return;
       formulaCueRunning=true;
       try{
         if(reached===id && formulaKneelRecord!==id){
           formulaKneelRecord=id;
+          formulaKneelScrollTop=card.scrollTop;
           showGoodFriday();
         }else if(/^GF-SOP-\d\d-R$/.test(reached) &&
           reached===id.replace(/-K$/,"-R") && formulaKneelRecord===id){
           formulaKneelRecord=null;
+          formulaKneelScrollTop=null;
           controller.goToRecord(reached);
           showGoodFriday();
         }
@@ -732,6 +741,7 @@ export async function mountNativeReaderPreview({
       if(!personalSteps[id] && id!=="GF-PASS-320" &&
         formulaKneelRecord!==id)return;
       formulaKneelRecord=null;
+      formulaKneelScrollTop=null;
       controller.next();
       showGoodFriday();
     }
@@ -832,6 +842,7 @@ export async function mountNativeReaderPreview({
     function moveGoodFriday(direction){
       const state=controller.project();
       formulaKneelRecord=null;
+      formulaKneelScrollTop=null;
       if(direction==="next" && !state.atEnd)controller.next();
       else if(direction==="previous" && !state.atStart)controller.previous();
       return showGoodFriday();
@@ -886,6 +897,7 @@ export async function mountNativeReaderPreview({
       previous:()=>moveGoodFriday("previous"),
       goToGoodFridayRecord:id=>{
         formulaKneelRecord=null;
+        formulaKneelScrollTop=null;
         controller.goToRecord(id);
         return showGoodFriday();
       },
