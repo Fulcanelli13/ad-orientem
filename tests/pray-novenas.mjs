@@ -161,3 +161,8 @@ assert.doesNotMatch(browser,/^import "\.\/novena-runtime\.js";/m,"Novenas should
 assert.match(assets,/"pray\.novenas"\s*:\s*"ao-rich-novenas"/,"Novenas lost canonical V4 asset identity");
 
 console.log("PASS complete 16-target bilingual Novenas corpus with French prayer-body parity");
+
+// Prayer-stage copy should address the person praying, not describe app telemetry.
+assert.doesNotMatch(runtime,/Ad Orientem|devotional streak|completion score/i,"Novena reader reverted to self-referential interface narration");
+assert.match(runtime,/Choose a novena/);
+assert.match(runtime,/Choisissez une neuvaine/);

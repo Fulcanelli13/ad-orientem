@@ -142,3 +142,8 @@ assert.match(assets,/"pray\.good_death"\s*:\s*"ao-rich-st-joseph"/);
 assert.match(assets,/"pray\.dying_companion"\s*:\s*"ao-rich-holy-souls"/);
 
 console.log("PASS modular v38.4 traditional PRAY + Good Death / Dying Companion convergence");
+
+// Historical edition information may remain, but the prayer screen is not a development memo.
+assert.doesNotMatch(runtime,/Ad Orientem keeps the historical form|the app’s existing|app’s existing Pius XI|l’application réutilise ici son corpus/i,"Traditional prayer displayed implementation commentary");
+assert.match(runtime,/Dwell in thanksgiving after Communion/);
+assert.match(runtime,/Demeurez en action de grâces après la Communion/);
