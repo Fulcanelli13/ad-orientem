@@ -87,7 +87,7 @@ async function stageSnapshot(){
   await caches.delete(STAGE);
   const staging=await caches.open(STAGE);
   const source=await safeFetch(ROOT),html=await source.clone().text();
-  if(!html.includes("src/mass/browser-entry.js")||!html.includes("src/app/browser-entry.js"))fail("UNRECOGNISED_HTML");
+  if(!html.includes("src/mass/browser-entry.js")||!html.includes("ao-packed-"))fail("UNRECOGNISED_HTML");
   const initialHash=await hash(utf8(html));
   const queue=[ROOT,...urlsInHtml(html)];
   const processed=new Set(),digests=[];
