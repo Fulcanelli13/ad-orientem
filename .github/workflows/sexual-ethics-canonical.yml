@@ -53,3 +53,5 @@ jobs:
         run: node tests/sexual-ethics-95-short-answers-original-source-v1.mjs
       - name: Second original passage pass over 95 questions (72 bounded checks)
         run: node tests/sexual-ethics-95-short-answers-original-source-v2.mjs
+      - name: Original source passage confirmation for CSE015 and CSE144
+        run: node tests/sexual-ethics-short-answer-passage-confirmations-v1.mjs

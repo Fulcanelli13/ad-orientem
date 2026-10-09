@@ -1,0 +1,40 @@
+{
+  "version": "CSE_SHORT_ANSWER_PRIMARY_PASSAGES_CONFIRMATIONS_V1",
+  "date": "2026-10-09",
+  "baseline": "data/learn/sexual-ethics-95-short-answer-source-pass-20261009.v2.json",
+  "status": "TWO_BOUNDED_PRIMARY_PASSAGE_CHECKS_ADDED_NOT_FULL_QUESTION_CERTIFICATION",
+  "summary": {
+    "baseline_bounded": 72,
+    "new_bounded": 2,
+    "total_bounded": 74,
+    "still_pending": 21,
+    "total_short_questions": 95,
+    "fully_certified_questions": 0
+  },
+  "records": [
+    {
+      "id": "CSE015",
+      "primary_source_id": "VS",
+      "source_en": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "locator": "§53",
+      "finding_en": "Paragraph 53 explicitly admits the need to develop adequate formulations of universal permanent norms across cultures, while maintaining that the substance of those norms remains valid. It supports development without necessarily licensing contradictory intrinsic moral objects.",
+      "finding_fr": "Le paragraphe 53 admet explicitement la nécessité de reformuler et préciser des normes morales permanentes selon les cultures, tout en maintenant leur validité substantielle. Il confirme un développement sans autoriser un changement contradictoire de l'objet moral intrinsèque.",
+      "original_english_section_examined": true,
+      "original_french_section_independently_collated": false,
+      "all_answer_claims_certified": false,
+      "human_theology_approved": false
+    },
+    {
+      "id": "CSE144",
+      "primary_source_id": "VS",
+      "source_en": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "locator": "§§79–82",
+      "finding_en": "Paragraphs 79–82 state that the object of a deliberately chosen act determines moral species, and that even compassionate purposes or good intentions cannot turn an intrinsically evil object into a good choice. These paragraphs do NOT independently establish the answer's separate claim about reduced individual guilt or every pastoral response.",
+      "finding_fr": "Les paragraphes 79–82 affirment que l'objet de l'acte volontaire détermine son espèce morale et qu'une bonne intention, même miséricordieuse, ne transforme pas en bien un objet intrinsèquement mauvais. Ces paragraphes ne démontrent pas séparément l'atténuation de la culpabilité individuelle ni la réponse pastorale propre à tout cas.",
+      "original_english_section_examined": true,
+      "original_french_section_independently_collated": false,
+      "all_answer_claims_certified": false,
+      "human_theology_approved": false
+    }
+  ]
+}
