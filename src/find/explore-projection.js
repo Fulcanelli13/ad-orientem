@@ -382,7 +382,7 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
       source_links:sourceLinks([...arr(pilgrimage?.source_ids),...localCustoms.flatMap(att=>arr(att?.source_ids)),...relatedNovenas.flatMap(link=>arr(link.source_ids))],sourceMap),
       actions:freezeList([...(placeMapsUrl(place)?[{label:"Destination",url:placeMapsUrl(place)}]:[]),...novenaActions(relatedNovenas,novenaMap)]),
       note:"Pilgrimage destination, saints, local customs and novenas are linked only where sources establish the association. Calendar alone resolves recurring dates, and nearby Mass venues are not inferred.",
-      search_text:itemSearch([pilgrimage?.name,pilgrimage?.scope_note,shrine?.name,addressLabel(place?.address),linkedRoutes.map(route=>route.name),linkedTemporal.map(link=>link.source_event_label),saints,relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id))),localCustoms.map(att=>[customMap.get(att.custom_id)?.name,att.evidence_note])]),
+      search_text:itemSearch([pilgrimage?.name,pilgrimage?.scope_note,shrine?.name,addressLabel(place?.address),linkedRoutes.map(route=>route.name),linkedTemporal.map(link=>link.source_event_label),saints,relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
       raw:Object.freeze({pilgrimage,shrine,place,routes:linkedRoutes,temporalLinks:linkedTemporal}),
     });
   }));
