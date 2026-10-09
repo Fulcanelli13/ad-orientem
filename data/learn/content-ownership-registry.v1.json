@@ -887,5 +887,20 @@
     "published_as_formation_module": false,
     "new_canonical_dossiers_added": 0,
     "original_question_texts_synthetically_recreated": 0
+  },
+  "learn_the_faith_certification": {
+    "batch_001_018": {
+      "status": "SOURCE_MAPPING_RECONCILED_EDITORIAL_REVIEW_PENDING",
+      "overlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "recoveredCorpus": "data/learn/learn-the-faith-recovered-54.v1.json",
+      "lessons": 18,
+      "sourceContextVerifiedForSelectedClaims": true,
+      "catechismEnglishWordingCollated": true,
+      "frenchSourceWitnessCollated": false,
+      "frenchNativeEdited": false,
+      "crossModuleDeduplicationReviewed": true,
+      "publicationApproved": false,
+      "rule": "Certification overlays may select, narrow or strengthen recovered drafts but must not overwrite branch-origin evidence or create a public learn.faith route before final editorial approval."
+    }
   }
 }
