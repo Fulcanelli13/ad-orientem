@@ -227,6 +227,17 @@ export const VERIFIED_MASS_FEAST_READINGS=Object.freeze([
         "latinIncipit": "Ante diem festum Paschae"
       }
     }
+  },
+  {
+    "sourcePath": "Tempora/Quad6-3",
+    "title": "Holy Wednesday · Mass second lesson (first lesson separately source-ordered)",
+    "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Isaiah 53:1–12",
+        "latinIncipit": "Dixit Isaias Domine quis credidit auditui nostro"
+      }
+    }
   }
 ]);
 export const VERIFIED_MASS_FEAST_VERSION="1962-MASS-FEAST-READING-CONTEXT-SUPPLEMENT-V1";
