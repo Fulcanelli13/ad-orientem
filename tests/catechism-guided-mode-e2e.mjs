@@ -36,6 +36,15 @@ try {
   await panel.waitFor({state:"visible"});
   assert.equal(await panel.locator("select[data-guided-select] option").count(),55);
   assert.equal(await panel.locator(".aoCatechismGuidedDraft").count(),1);
+  assert.equal(await panel.getAttribute("role"),"dialog");
+  assert.equal(await panel.getAttribute("aria-modal"),"true");
+  assert.equal(await panel.locator(".aoCatechismGuidedClaim").count(),(await panel.locator(".aoCatechismGuidedClaim p").count()));
+  assert.ok(await panel.locator("details.aoCatechismGuidedEvidence").count()>0);
+  assert.equal(await panel.locator("details.aoCatechismGuidedEvidence[open]").count(),0);
+  await panel.locator("details.aoCatechismGuidedEvidence summary").first().tap();
+  assert.equal(await panel.locator("details.aoCatechismGuidedEvidence[open]").count(),1);
+  assert.ok(await panel.locator("details.aoCatechismGuidedEvidence[open] a[href]").count()>0);
+
   assert.ok(await panel.locator('a[aria-label*="French printed 1913"]').count()>0,"A question must link to the French 1913 historical scan");
   assert.match(await panel.locator(".aoCatechismGuidedPosition").innerText(),/1 \/ 55/);
   assert.equal(await panel.locator("[data-guided-prev]").isDisabled(),true);
