@@ -37,9 +37,13 @@
 - The default ICKSP and IBP providers include additional schedules; ICKSP must be reconciled against the existing federated 104 before any global summation.
 
 
-### Example of existing coverage not represented in competitor country list
-- [Latin Mass Directory lists five Mauritius ICKSP venues](https://www.latinmassdir.org/country/mu/?view=list) (Curepipe and Port Louis), and our federated ICKSP corpus also contains five Mauritius source entries. By contrast, Mauritius is absent from [AdOrientem.church's country index](https://adorientem.church/find/countries). This is a specific geographic coverage advantage, although current schedules need their normal official-source verification and one must avoid double counting multiple Mass venues served by one chaplaincy.
+### Geographic category gaps and candidate Mass sites
+- [Latin Mass Directory lists five Mauritius ICKSP venues](https://www.latinmassdir.org/country/mu/?view=list) (Curepipe and Port Louis), and our federated ICKSP corpus also contains five Mauritius source entries. By contrast, Mauritius is absent from [AdOrientem.church's country index](https://adorientem.church/find/countries). This is a specific *country-index* coverage advantage, not proof that all competitor records were exhaustively searched. In particular Martinique may appear under France, so a missing country category does not necessarily prove an absent church. Current schedules need their normal official-source verification and one must avoid double counting multiple Mass venues served by one chaplaincy.
 - The [Mauritius listing for Maison Bienheureux-Père-Laval](https://www.latinmassdir.org/venue/chapelle-de-la-maison-bienheureux-pere-laval-curepipe-mauritius/) points to the local ICKSP site; that site returned a fetch error in this research session, so do not promote its published Mass timetable to freshly officially verified on that basis.
+
+
+- Independent Latin Mass Directory has eight country/territory **categories** absent from the competitor's 77-category country index (Benin, Bolivia, Ecuador, Falkland Islands, Gibraltar, Israel, Martinique, Mauritius). The two source-index categories have union 85. This does **not** prove the competitor lacks every individual venue in those territories; some may be filed under larger countries.
+- Prioritizable scheduled Mass *leads* among those extra categories include [Benin](https://www.latinmassdir.org/country/bj/?view=list) (two venues with Sunday schedules), [Ecuador](https://www.latinmassdir.org/country/ec/?view=list) (three venues, including Guale's Sunday FSSP listing), [Israel](https://www.latinmassdir.org/country/il/?view=list) (one Jerusalem venue with a Sunday listing), and [Martinique](https://www.latinmassdir.org/country/mq/?view=list) (two Sunday listings). All require an original parish/diocesan/institute check before release. Bolivia's two directory entries show an unspecified 'Other' day, so do not count a weekly public Mass without clarification.
 
 ## 3. Targeted acquisition ranking
 
