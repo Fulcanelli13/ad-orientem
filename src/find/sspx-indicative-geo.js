@@ -182,7 +182,7 @@ export function applyIndicativeOtherCommunities(records){
   }
   const summary={eligible:0,already_mapped:0,locality_added:0,region_added:0,country_added:0,unresolved:0};
   const enriched=input.map(record=>{
-    if(sspx(record))return record;
+    if(sspx(record)||record?.venue?.publication_state==="DIRECTORY_LISTED_UNVERIFIED")return record;
     summary.eligible++;
     if(isExistingGeo(record)){summary.already_mapped++;return record}
     const v=record?.venue??{},cc=String(v.address?.country_code||"").toUpperCase();
