@@ -401,13 +401,13 @@ try{
         return r.width>=44&&r.height>=44&&r.left>=bounds.left-1&&r.right<=bounds.right+1&&style.visibility!=="hidden";
       };
       return {tabs:tabs.length,tabVisible:tabs.every(visible),allFive:[...new Set(tabs.map(x=>x.dataset.calMonthView))].length===5,
-       buttons:shifts.length,shiftVisible:shifts.every(visible),overflow:root.scrollWidth-root.clientWidth,
+       buttons:shifts.length,shiftVisible:shifts.every(visible),shiftRects:shifts.map(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,width:r.width,height:r.height,inside:visible(el)};}),rootLeft:bounds.left,rootRight:bounds.right,overflow:root.scrollWidth-root.clientWidth,
        navScroll:document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs").scrollWidth-document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs").clientWidth};
     });
     assert.equal(geometry.tabs,5,"Month tabs lost at "+width+"px");
     assert.equal(geometry.allFive,true,"Month category identity repeated at "+width+"px");
     assert.equal(geometry.tabVisible,true,"A month filter, including Practices, is clipped or smaller than 44px at "+width+"px");
-    assert.equal(geometry.shiftVisible,true,"Month direction button clipped at "+width+"px");
+    assert.equal(geometry.shiftVisible,true,"Month direction button clipped at "+width+"px: "+JSON.stringify(geometry));
     assert.ok(geometry.overflow<=1&&geometry.navScroll<=1,"Horizontal overflow hides month controls at "+width+"px: "+JSON.stringify(geometry));
   }
   await page.setViewportSize({width:390,height:844});
