@@ -72,7 +72,7 @@ function canonBaseId(blockId){
   if(n===52)return "AO.SM.M15";
   if(n===53)return "AO.SM.M16";
   if(n>=54&&n<=58)return "AO.SM.M17";
-  if(n>=59&&n<=60)return "AO.SM.M18";
+  if(n>=59&&n<=61)return "AO.SM.M18";
   throw new Error("Unexpected certified Canon block "+blockId);
 }
 
