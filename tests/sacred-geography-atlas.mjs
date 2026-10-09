@@ -8,11 +8,11 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
-assert.equal(geo.places.length,135);
+assert.equal(geo.places.length,155);
 assert.equal(sacred.apparitions.length,32);
-assert.equal(sacred.relics.length,75);
+assert.equal(sacred.relics.length,95);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
-assert.equal(assertExploreGeographyRegistry(geo).counts.places,135);
+assert.equal(assertExploreGeographyRegistry(geo).counts.places,155);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
 const ids=new Set();
 for(const record of [...sacred.apparitions,...sacred.relics]){
@@ -77,7 +77,7 @@ assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditi
 for(const lens of ["apparitions","relics"]){
   const items=projection.byLens[lens],records=sacred[lens];
   assert.equal(items.length,records.length);
-  assert.equal(exploreMapFeatures(items).length,records.length);
+  assert.equal(exploreMapFeatures(items).length,lens==="relics"?new Set(items.map(x=>x.place_id)).size:records.length,"Relic map has one physical Place marker while retaining all source records");
   assert.ok(items.every(x=>x.map_publishable===true&&x.source_links.length===1));
   assert.ok(items.every(x=>!x.actions.some(a=>a.novena_id)),"unsourced novena associations must not be inferred");
 }
@@ -99,7 +99,7 @@ assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);
 assert.match(detail,/aucune authentification canonique indépendante/);
 const profiles=buildExplorePlaceProfiles({geography:geo},projection,{today:"2026-10-09"});
-assert.equal(profiles.length,135);
+assert.equal(profiles.length,155);
 const cotignac=profiles.find(p=>p.place_id==="place:FR:saint-joseph-bessillon");
 assert.equal(cotignac.counts.apparitions,1);
 assert.equal(cotignac.counts.relics,0);
@@ -114,4 +114,4 @@ assert.equal(notreDame.counts.apparitions,0);
 assert.equal(notreDame.counts.relics,3);
 assert.equal(geo.directoryPlaceLinks.some(link=>link.place_id==="place:FR:abbaye-mont-saint-michel"),false,
   "historical shrine is not automatically a TLM directory venue");
-console.log("PASS 32 documented apparition traditions, 75 relic holdings, 135 GPS-shared Places, bilingual status and no TLM/calendar inference");
+console.log("PASS 32 documented apparition traditions, 95 relic holdings, 155 GPS-shared Places, bilingual status and no TLM/calendar inference");

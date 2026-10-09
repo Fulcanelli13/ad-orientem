@@ -1,0 +1,318 @@
+{
+  "schema": "SACRED_ATLAS_RELIC_BULK_PUBLICATION_V1",
+  "as_of": "2026-10-09",
+  "mode": "SITE_LEVEL_NOT_EVERY_FRAGMENT",
+  "source_shortlist": "data/explore/relic-atlas-site-selection.review.v1.json",
+  "sites": [
+    {
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "relic_id": "relic:IT:amalfi-sant-andrea",
+      "shrine_id": "shrine:IT:amalfi-sant-andrea",
+      "selection_ids": [
+        "selection:saint-andrew-the-apostle:duomosantandreaamalfi"
+      ],
+      "subject_ids": [
+        "subject:saint-andrew-the-apostle"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/254643211",
+      "original_custodian_sources": [
+        "https://museodiocesanoamalfi.it/app/it/la-cripta/"
+      ]
+    },
+    {
+      "place_id": "place:IT:ortona-san-tommaso",
+      "relic_id": "relic:IT:ortona-san-tommaso",
+      "shrine_id": "shrine:IT:ortona-san-tommaso",
+      "selection_ids": [
+        "selection:saint-thomas-the-apostle:basilicaconcattedraledisantommasoortona"
+      ],
+      "subject_ids": [
+        "subject:saint-thomas-the-apostle"
+      ],
+      "geo_source": "https://mapy.com/en/?id=12439035&source=osm",
+      "original_custodian_sources": [
+        "https://diocesilanciano.it/?p=6295"
+      ]
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "relic_id": "relic:IT:salerno-duomo",
+      "shrine_id": "shrine:IT:salerno-duomo",
+      "selection_ids": [
+        "selection:saint-matthew-the-apostle:cattedraledisalerno"
+      ],
+      "subject_ids": [
+        "subject:saint-matthew-the-apostle"
+      ],
+      "geo_source": "https://mapcarta.com/34599454",
+      "original_custodian_sources": [
+        "https://www.cattedraledisalerno.it/la-cripta.html",
+        "https://www.cattedraledisalerno.it/la-basilica.html"
+      ]
+    },
+    {
+      "place_id": "place:DE:trier-sankt-matthias",
+      "relic_id": "relic:DE:trier-sankt-matthias",
+      "shrine_id": "shrine:DE:trier-sankt-matthias",
+      "selection_ids": [
+        "selection:saint-matthias-the-apostle:benediktinerabteistmatthiastrier"
+      ],
+      "subject_ids": [
+        "subject:saint-matthias-the-apostle"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/136513654",
+      "original_custodian_sources": [
+        "https://www.trierer-dom.de/gottesdienste/innenstadtkirchen/sankt-matthias/index.html"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "relic_id": "relic:IT:san-bartolomeo-isola",
+      "shrine_id": "shrine:IT:san-bartolomeo-isola",
+      "selection_ids": [
+        "selection:saint-bartholomew-the-apostle:basilicasanbartolomeoallisolarome"
+      ],
+      "subject_ids": [
+        "subject:saint-bartholomew-the-apostle"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/49591745",
+      "original_custodian_sources": [
+        "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html"
+      ]
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "relic_id": "relic:IT:sant-ambrogio-milano",
+      "shrine_id": "shrine:IT:sant-ambrogio-milano",
+      "selection_ids": [
+        "selection:saint-ambrose-of-milan:basilicasantambrogiomilan",
+        "selection:saint-gervasius-of-milan:basilicasantambrogiomilan",
+        "selection:saint-protasius-of-milan:basilicasantambrogiomilan"
+      ],
+      "subject_ids": [
+        "subject:saint-ambrose-of-milan",
+        "subject:saint-gervasius-of-milan",
+        "subject:saint-protasius-of-milan"
+      ],
+      "geo_source": "https://www.wikidata.org/wiki/Q1071570",
+      "original_custodian_sources": [
+        "https://www.basilicasantambrogio.it/en/mappa-della-basilica"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "relic_id": "relic:IT:san-pietro-ciel-doro",
+      "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+      "selection_ids": [
+        "selection:saint-augustine-of-hippo:basilicasanpietroincieldoropavia"
+      ],
+      "subject_ids": [
+        "subject:saint-augustine-of-hippo"
+      ],
+      "geo_source": "https://www.wikidata.org/wiki/Q2036332",
+      "original_custodian_sources": [
+        "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-giustina-padova",
+      "relic_id": "relic:IT:santa-giustina-padova",
+      "shrine_id": "shrine:IT:santa-giustina-padova",
+      "selection_ids": [
+        "selection:saint-luke-the-evangelist:abbaziadisantagiustinapadua"
+      ],
+      "subject_ids": [
+        "subject:saint-luke-the-evangelist"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/131798543",
+      "original_custodian_sources": [
+        "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/"
+      ]
+    },
+    {
+      "place_id": "place:IT:duomo-milano",
+      "relic_id": "relic:IT:duomo-milano",
+      "shrine_id": "shrine:IT:duomo-milano",
+      "selection_ids": [
+        "selection:saint-charles-borromeo:duomodimilano"
+      ],
+      "subject_ids": [
+        "subject:saint-charles-borromeo"
+      ],
+      "geo_source": "https://mapcarta.com/25735328",
+      "original_custodian_sources": [
+        "https://www.duomomilano.it/en/restoration-scurolo-st-carlo-duomo/"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-chiara-assisi",
+      "relic_id": "relic:IT:santa-chiara-assisi",
+      "shrine_id": "shrine:IT:santa-chiara-assisi",
+      "selection_ids": [
+        "selection:saint-clare-of-assisi:basilicadisantachiaraassisi"
+      ],
+      "subject_ids": [
+        "subject:saint-clare-of-assisi"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/36994747",
+      "original_custodian_sources": [
+        "https://www.assisisantachiara.it/la-cripta-e-le-reliquie/il-corpo-di-santa-chiara/?print=pdf"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "relic_id": "relic:IT:santa-maria-minerva-rome",
+      "shrine_id": "shrine:IT:santa-maria-minerva-rome",
+      "selection_ids": [
+        "selection:saint-catherine-of-siena:santamariasopraminervarome"
+      ],
+      "subject_ids": [
+        "subject:saint-catherine-of-siena"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/25400176",
+      "original_custodian_sources": [
+        "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html"
+      ]
+    },
+    {
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "relic_id": "relic:IT:chiesa-gesu-rome",
+      "shrine_id": "shrine:IT:chiesa-gesu-rome",
+      "selection_ids": [
+        "selection:saint-ignatius-of-loyola:chiesadelgesurome"
+      ],
+      "subject_ids": [
+        "subject:saint-ignatius-of-loyola"
+      ],
+      "geo_source": "https://turismoroma.it/en/places/church-jesus",
+      "original_custodian_sources": [
+        "https://gesuiti.it/chi-siamo/ignazio-di-loyola/"
+      ]
+    },
+    {
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "relic_id": "relic:FR:couvent-jacobins-toulouse",
+      "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
+      "selection_ids": [
+        "selection:saint-thomas-aquinas:couventdesjacobinstoulouse"
+      ],
+      "subject_ids": [
+        "subject:saint-thomas-aquinas"
+      ],
+      "geo_source": "https://mapcarta.com/37336496",
+      "original_custodian_sources": [
+        "https://jacobins.toulouse.fr/fr/histoire/"
+      ]
+    },
+    {
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "relic_id": "relic:FR:collegiale-sainte-marthe-tarascon",
+      "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
+      "selection_ids": [
+        "selection:saint-martha-of-bethany:collegialesaintemarthedetarascon"
+      ],
+      "subject_ids": [
+        "subject:saint-martha-of-bethany"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/107869413",
+      "original_custodian_sources": [
+        "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/"
+      ]
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "relic_id": "relic:FR:basilique-visitation-annecy",
+      "shrine_id": "shrine:FR:basilique-visitation-annecy",
+      "selection_ids": [
+        "selection:saint-francis-de-sales:basiliquedelavisitationannecy",
+        "selection:saint-jane-frances-de-chantal:basiliquedelavisitationannecy"
+      ],
+      "subject_ids": [
+        "subject:saint-francis-de-sales",
+        "subject:saint-jane-frances-de-chantal"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/112145208",
+      "original_custodian_sources": [
+        "https://visitationannecy.org/la-basilique-dannecy/"
+      ]
+    },
+    {
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "relic_id": "relic:IT:sant-agostino-campo-marzio",
+      "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
+      "selection_ids": [
+        "selection:saint-monica:basilicasantagostinoincampomarziorome"
+      ],
+      "subject_ids": [
+        "subject:saint-monica"
+      ],
+      "geo_source": "https://www.openstreetmap.org/way/798082894",
+      "original_custodian_sources": [
+        "https://www.santagostinoroma.it/"
+      ]
+    },
+    {
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "relic_id": "relic:IT:maria-ausiliatrice-torino",
+      "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
+      "selection_ids": [
+        "selection:saint-john-bosco:basilicamariaausiliatriceturin"
+      ],
+      "subject_ids": [
+        "subject:saint-john-bosco"
+      ],
+      "geo_source": "https://piemonteoutdoor.it/it/interessi/abbazie-e-chiese/basilica-di-maria-ausiliatrice",
+      "original_custodian_sources": [
+        "https://salesians.org/blog/salesian-house-built-living-stones"
+      ]
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "relic_id": "relic:IT:sant-alfonso-pagani",
+      "shrine_id": "shrine:IT:sant-alfonso-pagani",
+      "selection_ids": [
+        "selection:saint-alphonsus-liguori:basilicasantalfonsodeliguoripagani"
+      ],
+      "subject_ids": [
+        "subject:saint-alphonsus-liguori"
+      ],
+      "geo_source": "https://www.urbipedia.org/hoja/Bas%C3%ADlica_de_San_Alfonso_Mar%C3%ADa_de_Ligorio",
+      "original_custodian_sources": [
+        "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/"
+      ]
+    },
+    {
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "relic_id": "relic:IT:cattedrale-sant-agata-catania",
+      "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
+      "selection_ids": [
+        "selection:saint-agatha-of-sicily:basilicacattedraledicatania"
+      ],
+      "subject_ids": [
+        "subject:saint-agatha-of-sicily"
+      ],
+      "geo_source": "https://www.wikidata.org/wiki/Q1499188",
+      "original_custodian_sources": [
+        "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/"
+      ]
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "relic_id": "relic:IT:duomo-sant-eusebio-vercelli",
+      "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+      "selection_ids": [
+        "selection:saint-eusebius-of-vercelli:cattedraledisanteusebiovercelli"
+      ],
+      "subject_ids": [
+        "subject:saint-eusebius-of-vercelli"
+      ],
+      "geo_source": "https://www.openstreetmap.org/node/10076134019",
+      "original_custodian_sources": [
+        "https://tesorodelduomovc.it/opere/urna-di-eusebio/"
+      ]
+    }
+  ],
+  "classification": "REPUTED_BODILY_REMAINS IS NOT CANONICAL AUTHENTICATION; INDIVIDUAL OBJECT CLASS IS STILL SUBJECT TO REVIEW",
+  "visitor_access": "UNVERIFIED; DEFER TO INSTITUTIONAL LINKS",
+  "one_relic_aggregate_per_site": true
+}

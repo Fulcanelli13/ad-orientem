@@ -53,6 +53,6 @@ assert.equal(stats.priority_subjects_screened_in_six_waves,133);
 assert.equal(stats.priority_subjects_unaddressed_in_six_waves,0);
 assert.equal(stats.research_not_a_complete_worldwide_census,true);
 assert.equal(stats.published_place_impact,0);
-assert.equal(prod.relics.length,75);
+assert.ok(prod.relics.length>=75);
 assert.ok(places.places.length>=135&&shrines.shrines.length>=131);
 console.log("PASS wave6: 23 previously outstanding subjects screened in 25 independently qualified cases; 133/133 initial targets reached at screening level, 0 authenticated objects or new map pins implied");
