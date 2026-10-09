@@ -685,7 +685,8 @@ try{
   assert.equal(confessionRail.left,"ao-live-sign-cross","Confession in-confessional stage lost the donor Sign-of-Cross cue");
   assert.equal(confessionRail.right,"ao-rich-confession","Confession lost its persistent sacramental identity rail");
   assert.match(confessionRail.stage,/Before entering|Avant d.enter/,"Confession rail must describe preparation, not a simulated in-confessional experience");
-  await shot("03h-pray-confession-before-entering");
+  // Preserve the historical visual-acceptance artifact name used by donor comparison.
+  await shot("03h-pray-confession-in-confessional");
   // Once the first rehearsal card is past, the transient cross cue disappears.
   await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Sign-of-Cross cue must not persist throughout rehearsal");
