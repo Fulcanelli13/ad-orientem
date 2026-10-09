@@ -6,6 +6,7 @@ import "./prayer-source-anchor-triage.mjs";
 import "./prayer-reviewed18-variants.mjs";
 import "./prayer-locale-collation.mjs";
 import "./prayer-compendium-whole-form.mjs";
+import "./prayer-eight-full-boundaries.mjs";
 import {parseScriptureContext,verifiedScriptureCommentary} from "../src/scripture/context.js";
 import { readFileSync } from "node:fs";
 import {
