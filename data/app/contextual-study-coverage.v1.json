@@ -71,7 +71,13 @@
     "count": 48,
     "source_visible_true": 14,
     "source_visible_false": 34,
-    "source_url_registered": 46
+    "source_url_registered": 46,
+    "interpretation": "SOURCE_VISIBLE_IS_METADATA_NOT_PROOF_OF_PROVENANCE_CONTROL_VISIBILITY",
+    "library_control": "PRAYER_LIBRARY_DETAIL_ALWAYS_CALLS_SOURCE_LINE",
+    "item_level_audit": "data/pray/prayer-source-presentation-audit.v1.json",
+    "anchor_reviewed_not_fully_certified": 18,
+    "not_anchor_reviewed": 30,
+    "fully_certified": 0
   },
   "specific_witnesses": [
     {
@@ -1738,8 +1744,8 @@
     {
       "priority": "P1",
       "owner": "Prayer",
-      "scope": "48 canonical prayer items: 34 marked source_visible=false, 46 with source_url; investigate display and provenance at the actual reader",
-      "change_policy": "no duplicated Prayer objects or extra top-level cards"
+      "scope": "48 canonical prayers: 34 source_visible=false is metadata; provenance accordion is called for every Library detail; 30 anchors unreviewed, 18 anchor-reviewed not fully verbatim; zero fully certified",
+      "change_policy": "Audit source accuracy and inline readability in existing reader; no duplicated source buttons"
     },
     {
       "priority": "P1",
