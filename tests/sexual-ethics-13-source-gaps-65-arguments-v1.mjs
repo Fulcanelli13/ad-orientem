@@ -1,0 +1,56 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {CSE_DEBATE_IDS,CSE_DEBATE_FIELDS,CSE_DEBATE_MAP} from "../src/learn/sexual-ethics-data/debates.js";
+import {CSE_SOURCE_MAP,CSE_QUESTIONS} from "../src/learn/sexual-ethics-data/index.js";
+import {CSE_HIGH_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-high24.js";
+import {CSE_REMAINING_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-remaining31.js";
+import {paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
+const j=JSON.parse(readFileSync("data/learn/sexual-ethics-13-source-gaps-65-arguments-20261009.v1.json","utf8"));
+const prior=JSON.parse(readFileSync("data/learn/sexual-ethics-catholic-five-stage-remaining38-20261009.v1.json","utf8"));
+const sourceMap={...CSE_HIGH_STAGE_SOURCE_IDS,...CSE_REMAINING_STAGE_SOURCE_IDS};
+const questions=new Map(CSE_QUESTIONS.map(x=>[x.id,x]));
+const five=["concession","breakpoint","catholicCase","response","bottom"];
+assert.equal(CSE_DEBATE_IDS.length,55);
+assert.equal(CSE_DEBATE_FIELDS.length,8);
+assert.equal(j.cases.length,13);
+assert.equal(j.summary.source_contexts_now_read,13);
+assert.equal(j.summary.distinct_bounded_stage_arguments,65);
+assert.equal(j.summary.bilingual_live_stage_revisions,4);
+assert.equal(j.summary.full_eight_stage_original_certifications,0);
+assert.equal(j.summary.independent_theological_approvals,0);
+assert.equal(j.summary.independent_native_french_approvals,0);
+assert.equal(j.summary.full_2024_scoping_review_text_collated,false);
+assert.equal(new Set(j.cases.map(x=>x.id)).size,13);
+for(const entry of j.cases){
+ assert.ok(CSE_DEBATE_IDS.includes(entry.id));
+ assert.equal(prior.cases.find(x=>x.id===entry.id).original_context_grade,"REGISTERED_SOURCE_NOT_INDEPENDENTLY_COLLATED_THIS_BATCH");
+ assert.equal(entry.original_section_text_read,true);
+ assert.ok(entry.original_passage_locator.length>=5);
+ assert.ok(entry.scope_caveat.length>=70);
+ assert.match(entry.original_context_url,/^https:\/\//);
+ assert.ok(CSE_SOURCE_MAP[entry.original_source_id],entry.id+" unknown original source");
+ assert.equal(entry.complete_case_certification,false);
+ assert.equal(entry.human_doctrinal_approval,false);
+ assert.equal(entry.native_french_approval,false);
+ assert.deepEqual(entry.stage_claims.map(x=>x.stage),five);
+ for(const claim of entry.stage_claims){
+  assert.ok(claim.bounded_argument.length>=18,entry.id+" "+claim.stage+" thin proof scope");
+  assert.deepEqual([claim.live_text_en,claim.live_text_fr],CSE_DEBATE_MAP[entry.id][claim.stage],entry.id+" "+claim.stage+" EN/FR drift");
+  assert.deepEqual(claim.selected_source_ids,sourceMap[entry.id][claim.stage],entry.id+" "+claim.stage+" citation drift");
+  assert.deepEqual(paragraphRefsFor(questions.get(entry.id),"debate",claim.stage).map(x=>x[0]),claim.selected_source_ids,entry.id+" "+claim.stage+" silently substituted citations");
+  assert.equal(claim.claim_entirely_certified,false);
+ }
+}
+assert.match(CSE_DEBATE_MAP.CSE020.catholicCase[0],/voluntary choice helped create/);
+assert.match(CSE_DEBATE_MAP.CSE020.catholicCase[1],/choix volontaire antérieur/);
+assert.match(CSE_DEBATE_MAP.CSE039.catholicCase[0],/§73/);
+assert.match(CSE_DEBATE_MAP.CSE039.catholicCase[1],/§73/);
+assert.match(CSE_DEBATE_MAP.CSE084.catholicCase[0],/canon 1098/);
+assert.match(CSE_DEBATE_MAP.CSE084.catholicCase[1],/canon 1098/);
+assert.match(CSE_DEBATE_MAP.CSE117.response[0],/neither has the capacity/);
+assert.match(CSE_DEBATE_MAP.CSE117.response[1],/aucune ne peut donner/);
+const q84=questions.get("CSE084").refs.find(x=>x[0]==="CIC")[1];
+assert.match(q84,/1098/);
+const q39=questions.get("CSE039").refs.find(x=>x[0]==="CASTI")[1];
+assert.match(q39,/73/);
+console.log("PASS thirteen original principal-source gaps bounded; 65 Catholic stage claim fragments cross-checked against live EN/FR and effective citations; four bilingual fixes; zero fabricated full approvals");
