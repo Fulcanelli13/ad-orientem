@@ -16,7 +16,7 @@ export function mapHistoricalBookName(name) {
  */
 export function normalizeScrollmapperSource(raw,editionId,{requireCompleteCanon=true}={}){
  if(!Array.isArray(raw?.books))throw new Error("Upstream must contain books array");
- const mapped=[],held=[],seen=new Set(),issues=[],emptyVerses=[];
+ const mapped=[],held=[],seen=new Set(),issues=[],emptyVerses=[],trailingBlankSlots=[],internalBlankSlots=[];
  for(const book of raw.books) {
    const id=mapHistoricalBookName(book?.name);
    if(!id){
@@ -36,7 +36,13 @@ export function normalizeScrollmapperSource(raw,editionId,{requireCompleteCanon=
      const verses=ch.verses.map(v=>({number:v?.verse,text:v?.text}));
      const invalid=verses.filter(v=>!Number.isSafeInteger(v.number)||v.number<1||typeof v.text!=="string");
      const empty=verses.filter(v=>typeof v.text==="string"&&!v.text.trim());
-     for(const v of empty)emptyVerses.push({book:id,chapter,verse:v.number});
+     const lastNonblank=verses.findLastIndex(v=>typeof v.text==="string"&&v.text.trim());
+     for(const v of empty){
+       const entry={book:id,chapter,verse:v.number};
+       emptyVerses.push(entry);
+       const index=verses.indexOf(v);
+       (index>lastNonblank?trailingBlankSlots:internalBlankSlots).push(entry);
+     }
      if(!verses.length||invalid.length)issues.push(id+" "+chapter+" malformed verses "+
        JSON.stringify(invalid.slice(0,5).map(v=>({number:v.number,type:typeof v.text}))));
      chapters.push({number:chapter,verses});
@@ -49,7 +55,7 @@ export function normalizeScrollmapperSource(raw,editionId,{requireCompleteCanon=
  const chapterCount=mapped.reduce((n,b)=>n+b.chapters.length,0);
  const verseCount=mapped.reduce((n,b)=>n+b.chapters.reduce((m,c)=>m+c.verses.length,0),0);
  if(requireCompleteCanon&&(chapterCount<1100||verseCount<30000))throw new Error("Incomplete source chapter/verse coverage");
- return Object.freeze({editionId,books:mapped,held,emptyVerses,
+ return Object.freeze({editionId,books:mapped,held,emptyVerses,trailingBlankSlots,internalBlankSlots,
    bookCount:mapped.length,chapterCount,verseCount,
    status:emptyVerses.length?"RESEARCH_ONLY_HAS_UNRESOLVED_EMPTY_VERSES":"RESEARCH_ONLY_REQUIRES_EDITION_VERSIFICATION_RIGHTS_REVIEW"});
 }
