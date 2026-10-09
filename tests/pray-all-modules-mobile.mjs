@@ -37,7 +37,51 @@ try{
  assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,
    "The lightweight Prayer host must lazy-load the real prayer reader");
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
- // Real card-by-card traditional prayers: preserve each canonical prayer once.
+ // Confession paths must remain under one sacramental owner, with no sins entered.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
+ const conf="#aoPray435930.open";
+ assert.equal(await page.locator(conf+" [data-p435930-conf-path]").count(),3);
+ assert.equal(await page.locator(conf+" [data-p435930-conf-next]").isDisabled(),true);
+ const press=async selector=>{
+   const pressed=await page.evaluate(s=>{const el=document.querySelector(s);if(!el)return false;el.click();return true},selector);
+   assert.equal(pressed,true,"Missing Confession step button: "+selector);
+ };
+ await page.locator(conf+" [data-p435930-conf-path='regular']").tap();
+ assert.equal(await page.locator(conf+" [data-p435930-conf-path='regular']").getAttribute("aria-pressed"),"true");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" .aoP435930Exam details").count(),10,"Quick Confession must cover all Commandments");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").count(),0);
+ await press(conf+" [data-p435930-conf-next]");
+ assert.match(await page.locator(conf+" .aoP435930GuideNow").innerText(),/grave sins.*kind and number/);
+ await press(conf+" [data-p435930-conf-step='0']");
+ await press(conf+" [data-p435930-conf-path='returning']");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"return-priest");
+ for(let n=1;n<13;n++){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-conf-exam-step]").getAttribute("data-conf-exam-step"),String(n));
+ }
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"ready");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.match(await page.locator(conf+" .aoP435930GuideNow").innerText(),/long absence/);
+ await press(conf+" [data-p435930-conf-step='0']");
+ await press(conf+" [data-p435930-conf-path='general']");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"general-scope");
+ assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/general absolution/i);
+ for(let n=1;n<14;n++){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-conf-exam-step]").getAttribute("data-conf-exam-step"),String(n));
+ }
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"ready");
+ assert.equal(await page.locator(conf+" [data-p435930-since]").count(),0,"Time estimate must only appear on preparation card");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0,"Do not record sins");
+ assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2);
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.close());
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
+ assert.equal(await page.locator(conf+" [data-p435930-conf-path][aria-pressed='true']").count(),0,
+   "Confession path must clear on close and never become a persisted preference");
+  // Real card-by-card traditional prayers: preserve each canonical prayer once.
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.morning_evening",{returnContext:null}));
  const daily="#aoPray435930.open [data-ao-pray-guide-card]";
  await page.waitForSelector(daily);

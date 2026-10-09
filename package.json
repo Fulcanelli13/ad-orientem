@@ -79,7 +79,7 @@
     "check:app-release": "node tests/app-release-gate.mjs",
     "test:app-live-guards": "node tests/app-live-session-guards.mjs",
     "test:home-owner": "node tests/home-owner.mjs",
-    "test:pray-owner": "node tests/pray-presentation.mjs && node tests/pray-novenas.mjs && node tests/novena-context-sot.mjs && node tests/pray-focus.mjs && node tests/pray-traditional-life.mjs && node tests/pray-owner.mjs && npm run test:rosary-scripture-policy && node tests/pray-editorial-editions.mjs && node tests/pray-guided-cards.mjs",
+    "test:pray-owner": "node tests/pray-presentation.mjs && node tests/pray-novenas.mjs && node tests/novena-context-sot.mjs && node tests/pray-focus.mjs && node tests/pray-traditional-life.mjs && node tests/pray-owner.mjs && npm run test:rosary-scripture-policy && node tests/pray-editorial-editions.mjs && node tests/pray-guided-cards.mjs && node tests/pray-confession-paths.mjs",
     "test:home-presentation": "node tests/home-presentation.mjs",
     "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs",
     "test:nonmass-convergence-e2e": "node tests/nonmass-d3-d6-e2e.mjs",

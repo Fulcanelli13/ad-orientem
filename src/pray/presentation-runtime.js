@@ -1,3 +1,5 @@
+import "./confession-path-styles.js";
+import { confessionExaminationCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
 import "./canonical-data.js";
 import "./presentation-styles.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
@@ -184,7 +186,8 @@ function load(){
 }
 let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
-let CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
+function freshConfessionState(){return {stage:0,path:null,examStep:0,marked:new Set(),since:'',graveReviewed:false,contrition:false}}
+let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
 let FF={step:0,intention:false,communion:false};
@@ -278,7 +281,7 @@ function open(id,opts={}){
     view='home';navStack=[];
     return launchRosaryPlayer({view:'home',navStack:[],prayerReturnView:null,prayerId:null});
   }
-  else if(id==='pray.confession')view='confession';
+  else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();}
   else if(id==='pray.benediction')view='benediction';
   else if(id==='pray.adoration')view='adoration';
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
@@ -301,7 +304,7 @@ function close({silent=false,preserve=false}={}){
   stopTimer();const r=document.getElementById(ROOT_ID);r?.classList.remove('open');r?.setAttribute('aria-hidden','true');document.body.classList.remove('aoP435930Open');
   if(!preserve){
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
-    CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
+    CONF=freshConfessionState();
     BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
     if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
   }
@@ -938,14 +941,55 @@ function decorateRosary(){
  ensureRosaryGuide(r);
  declutterRosaryDonor(r);
 }
+function confessionModeLabel(path){
+ const p=confessionPath(path);
+ return p?esc(isFr()?p.titleFr:p.titleEn):esc(L("Choose your preparation","Choisissez votre préparation"));
+}
+function confessionExaminationView(ex){
+ if(CONF.path==="regular")return `${guideNow(L('Examine your conscience','Examinez votre conscience'),L('Read through the Commandments. Do not omit remembered grave sins, even in a short Confession; move on when your examination is sufficient.','Parcourez les commandements. N’omettez pas les péchés graves dont vous vous souvenez, même lors d’une confession brève ; avancez lorsque votre examen est suffisant.'))}<p class="aoP435930Lead">${esc(ex?.intro||'')}</p><div class="aoP435930Exam aoP435930ExamReadOnly">${(ex?.sections||[]).map(sec=>`<details><summary>${esc(sec[0])}</summary><ul>${sec[1].map(q=>`<li>${esc(q)}</li>`).join('')}</ul></details>`).join('')}</div>${guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition','Acte de contrition')}])}`;
+ const cards=confessionExaminationCards(CONF.path,ex?.sections);
+ const pos=confessionStepAt(CONF.examStep,cards.length),card=cards[pos],count=cards.length;
+ const title=card.kind==="questions"?card.title:isFr()?card.fr:card.en;
+ const body=card.kind==="questions"
+  ?`<ul class="aoP435930ConfQuestions">${card.questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ul>`
+  :`<p>${esc(isFr()?card.bodyFr:card.bodyEn)}</p>`;
+ return `<section class="aoP435930ConfOneCard" data-ao-confession-card="${esc(card.id)}" data-conf-exam-step="${pos}" aria-label="${esc(L('Examination step','Étape de l’examen'))+' '+(pos+1)}">
+   <small>${esc(L('Examination','Examen'))} · ${pos+1} / ${count}</small>
+   <h2 tabindex="-1">${esc(title)}</h2>${body}
+   </section>${pos===count-1?guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition','Acte de contrition')}]):''}`;
+}
 function renderConfession(){
  const stages=[L('Prepare','Préparer'),L('Examination','Examen'),L('In Confessional','Au confessionnal'),L('After','Après')];
- const ex=isFr()?DATA.examFr:DATA.exam;let body='';
- if(CONF.stage===0)body=`${guideNow(L('Prepare before God','Se préparer devant Dieu'),L('Become recollected, ask for light, recall approximately how long it has been since your last Confession, and prepare sufficiently without chasing absolute certainty.','Recueillez-vous, demandez la lumière, rappelez-vous approximativement depuis combien de temps remonte votre dernière confession et préparez-vous suffisamment sans rechercher une certitude absolue.'))}<div class="aoP435930Checklist"><label><span>${esc(L('Since my last Confession','Depuis ma dernière confession'))}</span><input type="text" autocomplete="off" data-p435930-since value="${esc(CONF.since)}" placeholder="${esc(L('e.g. 3 weeks','p. ex. 3 semaines'))}"></label></div>${callout(esc(L('This field is session-only and is cleared on a true exit from Confession.','Ce champ n’existe que pendant cette session et est effacé lors d’une véritable sortie de Confession.')),'privacy')}${guidePrayers([{id:'sacrament_come_holy_spirit',kicker:L('Prayer for light','Prière pour demander la lumière')}])}`;
- if(CONF.stage===1)body=`${guideNow(L('Examine your conscience','Examinez votre conscience'),L('Move through the prompts slowly. They are points for reflection, not boxes to tick. Stop when the examination is sufficient and move to contrition.','Parcourez lentement les questions. Ce sont des points de réflexion, non des cases à cocher. Arrêtez lorsque l’examen est suffisant et passez à la contrition.'))}<p class="aoP435930Lead">${esc(ex?.intro||'')}</p><div class="aoP435930Exam aoP435930ExamReadOnly">${(ex?.sections||[]).map(sec=>`<details><summary>${esc(sec[0])}</summary><ul>${sec[1].map(q=>`<li>${esc(q)}</li>`).join('')}</ul></details>`).join('')}</div>${guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition','Acte de contrition')}])}`;
- if(CONF.stage===2)body=`${guideNow(L('In the confessional','Au confessionnal'),L('Put the phone away. Confess remembered grave sins by kind and number; if a number is genuinely uncertain, give the best truthful estimate and say that you are estimating. Then confess other sins you wish to bring. Listen to the priest, receive the penance, make the Act of Contrition when directed, and attend to absolution.','Rangez le téléphone. Confessez les péchés graves dont vous vous souvenez selon leur espèce et leur nombre ; si le nombre est réellement incertain, donnez votre meilleure estimation sincère et précisez qu’il s’agit d’une estimation. Confessez ensuite les autres péchés que vous souhaitez accuser. Écoutez le prêtre, recevez la pénitence, faites l’Acte de contrition lorsqu’il vous y invite et soyez attentif à l’absolution.'))}${callout(esc(L('No recording, transcription or simulated absolution occurs here.','Aucun enregistrement, aucune transcription et aucune absolution simulée n’ont lieu ici.')),'privacy')}`;
+ const ex=isFr()?DATA.examFr:DATA.exam;
+ const path=confessionPath(CONF.path);
+ let body='';
+ if(CONF.stage===0){
+  const choices=Object.values(CONFESSION_PATHS).map(p=>`<button type="button" data-p435930-conf-path="${esc(p.id)}" aria-pressed="${CONF.path===p.id}" class="${CONF.path===p.id?'selected':''}">
+   <strong>${esc(isFr()?p.titleFr:p.titleEn)}</strong>
+   <span>${esc(isFr()?p.descriptionFr:p.descriptionEn)}</span></button>`).join('');
+  body=`${guideNow(L('What kind of Confession?','Quelle préparation à la confession ?'),L('Select the situation that fits. The length of time since your last Confession does not automatically mean you need a general Confession.','Choisissez votre situation. Une longue absence ne signifie pas automatiquement qu’une confession générale est nécessaire.'))}
+  <div class="aoP435930ConfPathCards" role="group" aria-label="${esc(L('Confession preparation path','Parcours de préparation'))}">${choices}</div>
+  <div class="aoP435930Checklist"><label><span>${esc(L('Time since last good Confession (optional)','Depuis votre dernière bonne confession (facultatif)'))}</span><input type="text" autocomplete="off" data-p435930-since value="${esc(CONF.since)}" placeholder="${esc(L('e.g. 3 weeks / several years','p. ex. 3 semaines / plusieurs années'))}"></label></div>
+  ${callout(esc(L('This time estimate remains only in this session. The app never asks you to enter, mark or save sins.','Cette indication n’existe que pendant cette session. L’application ne demande jamais de saisir, cocher ou enregistrer vos péchés.')),'privacy')}
+  ${guidePrayers([{id:'sacrament_come_holy_spirit',kicker:L('Prayer for light','Prière pour demander la lumière')}])}`;
+ }
+ if(CONF.stage===1)body=confessionExaminationView(ex);
+ if(CONF.stage===2){
+  const intro=CONF.path==='returning'
+   ?L("Begin by telling the priest that you are returning after a long absence and would appreciate guidance. Then confess remembered grave sins by kind and number as honestly as you can.","Commencez par dire au prêtre que vous revenez après une longue absence et que vous avez besoin d’aide. Confessez ensuite sincèrement les péchés graves dont vous vous souvenez selon leur espèce et leur nombre.")
+   :CONF.path==='general'
+   ?L("Tell the priest you wish to make a general Confession and agree its scope with him. It is an individual Confession, not the collective rite of general absolution.","Dites au prêtre que vous souhaitez faire une confession générale et convenez avec lui de sa portée. C’est une confession individuelle, non le rite collectif d’absolution générale.")
+   :L("Confess the grave sins you remember by kind and number after an adequate examination.","Confessez, selon leur espèce et leur nombre, les péchés graves dont vous vous souvenez après un examen suffisant.");
+  body=`${guideNow(L('In the confessional','Au confessionnal'),intro+' '+L("Put the phone away. If a number is genuinely uncertain, give your best truthful estimate. Listen to the priest, accept the penance, pray the Act of Contrition when directed and attend to absolution.","Rangez le téléphone. Si un nombre est incertain, donnez votre meilleure estimation sincère. Écoutez le prêtre, acceptez la pénitence, faites l’Acte de contrition lorsqu’il vous y invite et soyez attentif à l’absolution."))}
+  ${callout(esc(L('No recording, transcription or simulated absolution occurs here.','Aucun enregistrement, aucune transcription et aucune absolution simulée n’ont lieu ici.')),'privacy')}`;
+ }
  if(CONF.stage===3)body=`${guideNow(L('Give thanks and complete what was given','Rendez grâce et accomplissez ce qui vous a été donné'),L('Thank God for His mercy. Carry out the penance promptly, make restitution where justice requires it, and choose one concrete amendment.','Remerciez Dieu pour sa miséricorde. Accomplissez rapidement la pénitence, faites restitution lorsque la justice l’exige et choisissez une résolution concrète.'))}<div class="aoP435930Doctrine"><article><h3>${esc(L('Penance','Pénitence'))}</h3><p>${esc(L('Do it as soon as reasonably possible.','Accomplissez-la dès que raisonnablement possible.'))}</p></article><article><h3>${esc(L('Repair','Réparation'))}</h3><p>${esc(L('Repair concrete harm where justice requires it and where this can prudently be done.','Réparez le tort concret lorsque la justice l’exige et que cela peut être fait prudemment.'))}</p></article><article><h3>${esc(L('Amendment','Résolution'))}</h3><p>${esc(L('Choose one specific amendment rather than reopening the whole examination.','Choisissez une résolution précise plutôt que de recommencer tout l’examen.'))}</p></article></div><button class="aoP435930Danger" type="button" data-p435930-conf-clear>${esc(L('Clear this preparation now','Effacer cette préparation maintenant'))}</button>`;
- return `${head(L('Confession','Confession'),L('Prepare · examination · in Confessional · after','Préparer · examen · au confessionnal · après'))}${guideRail(stages,CONF.stage,'conf')}<main class="aoP435930Body">${devotionalGuide('confession')}${body}${guideNav('conf',CONF.stage,stages.length,L('Return','Retour'))}</main>`;
+ const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
+   <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
+   ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer">${esc(src.label)} ↗</a>`).join('')}</details>`;
+ const navigation=guideNav('conf',CONF.stage,stages.length,L('Return','Retour'));
+ const guarded=CONF.stage===0&&!path?navigation.replace('data-p435930-conf-next','data-p435930-conf-next disabled aria-disabled="true"'):navigation;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}${guideRail(stages,CONF.stage,'conf')}<main class="aoP435930Body">${devotionalGuide('confession')}${body}${sources}${guarded}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -1127,7 +1171,7 @@ function touchBlocked(target){return !!target?.closest?.('button,a,input,textare
 function horizontalStep(direction){
  const d=direction>0?1:-1;
  if(view==='stations'){STATIONS.step=Math.max(0,Math.min(13,STATIONS.step+d));render();return true}
- if(view==='confession'){CONF.stage=Math.max(0,Math.min(3,CONF.stage+d));render();return true}
+ if(view==='confession'){if(!CONF.path)return false;CONF.stage=Math.max(0,Math.min(3,CONF.stage+d));render();return true}
  if(view==='benediction'){BEN.step=Math.max(0,Math.min(BEN_STAGES.length-1,BEN.step+d));render();return true}
  if(view==='adoration'&&ADOR.mode==='visit'){ADOR.visitStep=Math.max(0,Math.min(visitSteps().length-1,ADOR.visitStep+d));render();return true}
  if(view==='adoration'&&ADOR.mode==='holy'){ADOR.holyStep=Math.max(0,Math.min(holySteps().length-1,ADOR.holyStep+d));render();return true}
@@ -1158,7 +1202,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,familyId||'',CONF.stage,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
@@ -1278,10 +1322,30 @@ function onClick(e){
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){if(['individual','group'].includes(seg))setRecitationMode(seg);else if(['auto','angelus','regina'].includes(seg)){S.angelusMode=seg;save()}}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
  if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
- if(b.dataset.p435930ConfStage!=null){CONF.stage=+b.dataset.p435930ConfStage;return render()}
- if(b.matches('[data-p435930-conf-prev]')){CONF.stage=Math.max(0,CONF.stage-1);return render()}
- if(b.matches('[data-p435930-conf-next]')){if(CONF.stage>=3){CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};return backToParent()}CONF.stage++;return render()}
- if(b.matches('[data-p435930-conf-clear]')){CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};return render()}
+ if(b.dataset.p435930ConfPath!=null){
+   if(!confessionPath(b.dataset.p435930ConfPath))return;
+   CONF.path=b.dataset.p435930ConfPath;CONF.examStep=0;return render();
+ }
+ if(b.dataset.p435930ConfStep!=null||b.dataset.p435930ConfStage!=null){
+   const target=Number(b.dataset.p435930ConfStep??b.dataset.p435930ConfStage);
+   if(!CONF.path&&target>0)return;
+   CONF.stage=Math.max(0,Math.min(3,Number.isInteger(target)?target:0));CONF.examStep=0;return render();
+ }
+ if(b.matches('[data-p435930-conf-prev]')){
+   if(CONF.stage===1&&CONF.path!=='regular'&&CONF.examStep>0)CONF.examStep--;
+   else CONF.stage=Math.max(0,CONF.stage-1);
+   return render();
+ }
+ if(b.matches('[data-p435930-conf-next]')){
+   if(!CONF.path)return;
+   if(CONF.stage>=3){CONF=freshConfessionState();return backToParent()}
+   if(CONF.stage===1&&CONF.path!=='regular'){
+     const count=confessionExaminationCards(CONF.path,(isFr()?DATA.examFr:DATA.exam)?.sections).length;
+     if(CONF.examStep<count-1){CONF.examStep++;return render()}
+   }
+   CONF.stage++;return render();
+ }
+ if(b.matches('[data-p435930-conf-clear]')){CONF=freshConfessionState();return render()}
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
  if(b.matches('[data-p435930-ben-prev]')){BEN.step=Math.max(0,BEN.step-1);return render()}
  if(b.matches('[data-p435930-ben-next]')){if(BEN.step===BEN_STAGES.length-1){setAdorationPresence('reserved');BEN={step:0,divinePraises:false};popView('home');return render()}BEN.step++;return render()}
@@ -1459,7 +1523,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
