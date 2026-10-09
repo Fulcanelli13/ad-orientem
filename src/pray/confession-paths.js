@@ -30,8 +30,8 @@ export const CONFESSION_PATHS=Object.freeze({
  })
 });
 export const CONFESSION_SOURCE_LINKS=Object.freeze([
- Object.freeze({label:"Catechism §§1454–1458",url:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.html"}),
- Object.freeze({label:"Canon law, can. 987–989",url:"https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html"})
+ Object.freeze({label:"Catechism §§1450–1460",labelFr:"Compendium du Catéchisme, nos 302–306 (CEC 1450–1460)",url:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.html",urlFr:"https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"}),
+ Object.freeze({label:"Canon law, can. 987–989",labelFr:"Code de droit canonique, can. 987–989",url:"https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",urlFr:"https://press.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann987-991_fr.html"})
 ]);
 const returningPrelude=Object.freeze([
  Object.freeze({id:"return-priest",en:"Return to Confession",fr:"Revenir à la confession",
