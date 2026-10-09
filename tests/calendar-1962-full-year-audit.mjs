@@ -94,6 +94,54 @@ try{
     },chunk);
     rows.push(...response);
   }
+  // Issue #721: test the *real* pinned resolver across 2024–2029,
+  // not only synthetic calendar cards or vernacular matching.
+  // The independent rubric oracle below continues to adjudicate rank,
+  // colour, feast and commemorations separately.
+  const firstSundayAfterEpiphany=year=>{
+    const jan7=new Date(Date.UTC(year,0,7));
+    jan7.setUTCDate(jan7.getUTCDate()+(7-jan7.getUTCDay())%7);
+    return jan7.toISOString().slice(0,10);
+  };
+  const lastOctoberSunday=year=>{
+    const d=new Date(Date.UTC(year,9,31));
+    d.setUTCDate(d.getUTCDate()-d.getUTCDay());
+    return d.toISOString().slice(0,10);
+  };
+  const cycleCases=[];
+  for(const year of [2024,2025,2026,2027,2028,2029]){
+    for(const [date,cycle,reason] of [
+      [lastOctoberSunday(year),"temporale","Christ the King"],
+      [firstSundayAfterEpiphany(year),"temporale","Holy Family"],
+      [year+"-01-06","temporale","Epiphany"],
+      [year+"-12-25","temporale","Christmas"],
+      [year+"-08-15","sanctorale","Assumption"],
+      [year+"-12-08","sanctorale","Immaculate Conception"],
+    ])cycleCases.push({date,cycle,reason});
+  }
+  cycleCases.push(
+    {date:"2027-03-25",cycle:"temporale",reason:"Holy Thursday overrides Annunciation"},
+    {date:"2027-04-05",cycle:"sanctorale",reason:"transferred Annunciation"},
+    {date:"2024-03-25",cycle:"temporale",reason:"Holy Monday overrides Annunciation"},
+    {date:"2024-04-08",cycle:"sanctorale",reason:"transferred Annunciation"}
+  );
+  const cycleEvidence=await page.evaluate(async cases=>{
+    const {observedCycle}=await import("/src/calendar/observed-cycle.js");
+    const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+    return Promise.all(cases.map(async x=>{
+      try{
+        const r=await resolver.resolveDay(x.date);
+        // Changing display-language alias cannot change cycle ownership.
+        const alias={...r,day:{...r?.day,main:{...r?.day?.main,title:"Unrelated display alias"}}};
+        return {...x,actual:observedCycle(r),alias:observedCycle(alias),id:r?.day?.main?.id||null,failed:r?.status==="failed"||!r?.day?.main};
+      }catch(error){return {...x,failed:true,error:String(error)}}
+    }));
+  },cycleCases);
+  for(const x of cycleEvidence){
+    assert.ok(!x.failed, "Cannot certify category; day did not resolve "+x.date+": "+JSON.stringify(x));
+    assert.equal(x.actual,x.cycle, x.date+" "+x.reason+": "+JSON.stringify(x));
+    assert.equal(x.alias,x.cycle, x.date+" "+x.reason+" changes classification when translated");
+  }
   const checks=[];
   for(const check of fixture.checks){
     const row=rows.find(x=>x.date===check.date);

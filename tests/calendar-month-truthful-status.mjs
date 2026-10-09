@@ -1,3 +1,4 @@
+import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar/liturgical-year.js";
@@ -26,3 +27,42 @@ for(const pattern of [/function retryFailedMonth\(\)/,/data-cal-day-retry/,/data
 const {execFileSync}=await import("node:child_process");
 execFileSync(process.execPath,["--check","src/calendar/calendar-runtime.js"],{stdio:"pipe"});
 console.log("PASS calendar source truthfulness, retries, Good Friday, accessibility and JS syntax");
+
+// Stable *observed* identity; bilingual display labels and Sundays cannot
+// reassign an impeded saint or an unknown source to another cycle.
+const principal=(id, title="Translated alias",extra={})=>({status:"ready",day:{main:{id,title,...extra}}});
+for(const [id,expected] of [
+  ["sancti:10-DU:1:w","temporale"], // Christ the King
+  ["tempora:Epi1-0:2:w","temporale"], // Holy Family
+  ["sancti:12-25m1:1:w","temporale"], // Christmas midnight
+  ["sancti:12-25m2:1:w","temporale"],
+  ["sancti:12-25m3:1:w","temporale"],
+  ["sancti:01-06:1:w","temporale"], // Epiphany
+  ["sancti:01-01:1:w","temporale"], // Octave Nativity
+  ["sancti:01-13:2:w","temporale"], // Baptism of Our Lord
+  ["tempora:Quad6-4:1:v","temporale"], // Holy Week
+  ["tempora:Quadp3-4:3:v","temporale"], // Ember Day
+  ["sancti:08-15:1:w","sanctorale"], // Assumption even on Sunday
+  ["sancti:12-08:1:w","sanctorale"], // Immaculate Conception
+  ["sancti:11-30:2:r","sanctorale"], // St Andrew during Advent
+]){
+  assert.equal(observedCycle(principal(id)),expected,id);
+  for(const title of ["Our Lord's Sunday", "Dimanche de la fête", "Feria", "Saint le Christ-Roi", "Unrelated alias"]){
+    assert.equal(observedCycle(principal(id,title)),expected,id+" must ignore "+title);
+  }
+}
+for(const year of [2024,2025,2026,2027,2028,2029]){
+  assert.equal(observedCycle(principal("sancti:08-15:1:w","Sunday "+year)),"sanctorale");
+  assert.equal(observedCycle(principal("sancti:10-DU:1:w","Sunday "+year)),"temporale");
+}
+assert.equal(observedCycle(principal("","Christ the King")),"unknown");
+assert.equal(observedCycle(principal("","Dimanche")),"unknown");
+assert.equal(observedCycle({status:"failed",day:{main:{id:"sancti:08-15:1:w"}}}),"unknown");
+assert.equal(observedCycle({day:{main:{id:"sancti:08-15:1:w",principalCycle:"temporale"}}}),"temporale","Explicit resolver ownership wins");
+assert.equal(cycleFromCanonicalIdentity("Sancti/10-DU"),"temporale");
+assert.equal(cycleFromCanonicalIdentity("Sancti/12-08"),"sanctorale");
+assert.equal(cycleFromCanonicalIdentity("some-unsupported-id"),"unknown");
+assert.match(runtime,/import \{ observedCycle \} from "\.\/observed-cycle\.js";/);
+assert.doesNotMatch(runtime,/const temporal=\//,"Title-based cycle regex must not recur");
+assert.match(runtime,/data-cal-unclassified/,"Unknown resolved days need a visible fail-closed explanation");
+console.log("PASS language-neutral observed cycle and unclassified-day disclosure");
