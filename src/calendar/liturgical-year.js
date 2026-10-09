@@ -65,6 +65,22 @@ export function annunciationObservanceDate(civilYear){
   if(dateFromIso(original).getDay()===0)return addDaysIso(original,1);
   return original;
 }
+// St Joseph (19 March) is a 1st-class feast. Under the 1960 General
+// Rubrics nn. 15, 95-99, a Lenten Sunday / Holy Week / Easter octave
+// takes precedence. Exception n. 96(a) reserves the Monday after Low
+// Sunday for a transferred Annunciation, so Joseph follows on Tuesday.
+// This is ONLY a candidate-date projection; Calendar must still resolve
+// the observed Mass and its rank before displaying an upcoming feast.
+export function saintJosephObservanceDate(civilYear){
+  const original=`${civilYear}-03-19`,easter=gregorianEaster(civilYear);
+  const palm=addDaysIso(easter,-7),lowSunday=addDaysIso(easter,7);
+  if(original>=palm&&original<=lowSunday){
+    const first=addDaysIso(lowSunday,1);
+    return first===annunciationObservanceDate(civilYear)?addDaysIso(first,1):first;
+  }
+  if(dateFromIso(original).getDay()===0)return addDaysIso(original,1);
+  return original;
+}
 export function allSoulsObservanceDate(civilYear){
   const original=`${civilYear}-11-02`;
   return dateFromIso(original).getDay()===0?addDaysIso(original,1):original;
@@ -96,7 +112,7 @@ export function buildMajorCelebrations(selectedId){
     celebration(lent2,"Second Sunday of Lent","Deuxième dimanche de Carême","sunday"),
     celebration(lent3,"Third Sunday of Lent","Troisième dimanche de Carême","sunday"),
     celebration(lent4,"Fourth Sunday of Lent · Laetare","Quatrième dimanche de Carême · Laetare","sunday"),
-    celebration(`${y+1}-03-19`,"Saint Joseph, Spouse of the Blessed Virgin Mary","Saint Joseph, époux de la Sainte Vierge","sanctorale"),
+    celebration(saintJosephObservanceDate(y+1),"Saint Joseph, Spouse of the Blessed Virgin Mary","Saint Joseph, époux de la Sainte Vierge","sanctorale","major",`${y+1}-03-19`),
     celebration(passion,"Passion Sunday","Dimanche de la Passion","sunday"),
     celebration(annunciationObservanceDate(y+1),"Annunciation of the Blessed Virgin Mary","Annonciation de la Bienheureuse Vierge Marie","sanctorale","major",`${y+1}-03-25`),
     celebration(palm,"Palm Sunday","Dimanche des Rameaux","sunday"),

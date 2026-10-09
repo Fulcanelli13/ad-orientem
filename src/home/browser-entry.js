@@ -186,7 +186,31 @@ export function createHomeOwner(win=globalThis){
     const stat=target?.closest?.("[data-home-cu-static]");
     if(stat){
       event.preventDefault?.();
-      try{if(win?.AO_RULE_V411?.openStatic?.(stat.dataset?.homeCuStatic))return;}catch{}
+      const id=stat.dataset?.homeCuStatic||"";
+      const fallback=()=>{
+        // The rule sheet is a legacy service; the modular Home must never
+        // display an inert daily-practice control when that service is absent.
+        const routes={
+          rosary:"pray.rosary",
+          angelus:"pray.angelus_regina",
+          morning:"pray.morning_evening",
+          evening:"pray.morning_evening",
+          examen:"pray.nightly_examen",
+        };
+        return routes[id]?openRoute(routes[id]):win?.AO_APP_SHELL_V1?.navigate?.("pray");
+      };
+      const openStatic=win?.AO_RULE_V411?.openStatic;
+      if(typeof openStatic!=="function"){void fallback();return;}
+      try{
+        const opened=openStatic.call(win.AO_RULE_V411,id);
+        if(opened&&typeof opened.then==="function"){
+          void Promise.resolve(opened).then(value=>value===false?fallback():true)
+            .catch(error=>{win?.console?.error?.("Home Daily Rule unavailable",error);return fallback()});
+        }else if(opened===false)void fallback();
+      }catch(error){
+        win?.console?.error?.("Home Daily Rule unavailable",error);
+        void fallback();
+      }
       return;
     }
     const route=target?.closest?.("[data-home-cu-route]");

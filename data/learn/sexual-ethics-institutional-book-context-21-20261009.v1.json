@@ -1,0 +1,311 @@
+{
+  "version": "CSE_INSTITUTIONAL_PRIMARY_13_AND_FLETCHER_FARLEY_20261009_V1",
+  "date": "2026-10-09",
+  "scope": "13 institutional/empirical opponent cases plus two Fletcher and six Farley book-context cases. Specific original policy, original survey, original study, author's responses, and excerpted text inspected; not every whole original work or clinical outcome claim verified.",
+  "summary": {
+    "cases": 21,
+    "institutional_empirical_cases": 13,
+    "fletcher_cases": 2,
+    "farley_cases": 6,
+    "bilingual_opposition_text_revisions": 5,
+    "original_first_party_texts_or_excerpts_documented": 12,
+    "whole_eight_stage_debates_certified": 0,
+    "independent_theological_approvals": 0,
+    "independent_french_approvals": 0
+  },
+  "source_examples": [
+    {
+      "source_id": "FREUD1924_FULL",
+      "url": "https://www.freudedition.net/werke/sexual-morality-and-modern-nervousness/druckschrift",
+      "verification": "FULL_TRANSLATED_ORIGINAL_PAGE_ACCESS"
+    },
+    {
+      "source_id": "APA_TRANSCARE_FULL2024",
+      "url": "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care.pdf",
+      "verification": "FOUR_PAGE_PRIMARY_POLICY_PDF_P0_IMAGE_CHECKED"
+    },
+    {
+      "source_id": "PRIEST_WELLBEING2016",
+      "url": "https://journals.sagepub.com/doi/10.1177/1557988314567325",
+      "verification": "ORIGINAL_EMPIRICAL_FULL_HTML"
+    },
+    {
+      "source_id": "PEW_CO2019",
+      "url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/",
+      "verification": "ORIGINAL_SURVEY_FULL_HTML"
+    },
+    {
+      "source_id": "APA_LGB_POLICY",
+      "url": "https://www.apa.org/about/governance/council/policy/chapter-12b.aspx",
+      "verification": "ORIGINAL_POLICY_MANUAL_TEXT"
+    },
+    {
+      "source_id": "WPATH8_FULL",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/",
+      "verification": "OPEN_ACCESS_ORIGINAL_FOUND_BUT_LATER_PAGE_CHALLENGE"
+    },
+    {
+      "source_id": "FRANCIS_SPADARO2013",
+      "url": "https://www.vatican.va/content/francesco/en/speeches/2013/september/documents/papa-francesco_20130921_intervista-spadaro.html",
+      "verification": "ORIGINAL_PASTORAL_INTERVIEW"
+    },
+    {
+      "source_id": "FARLEY_RESPONSE2012",
+      "url": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley",
+      "verification": "ORIGINAL_FIRST_PERSON_RESPONSE"
+    },
+    {
+      "source_id": "FARLEY_QUOTED2012",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+      "verification": "ORIGINAL_AUTHOR_EXCERPTS_IN_CDF_DOCUMENT"
+    },
+    {
+      "source_id": "FLETCHER_EXCERPTS",
+      "url": "https://www.christianstudylibrary.org/article/situation-ethics",
+      "verification": "MEDIATED_AUTHOR_EXCERPTS"
+    },
+    {
+      "source_id": "PP_CONSENT",
+      "url": "https://www.plannedparenthood.org/learn/relationships/sexual-consent",
+      "verification": "INDEXED_ORIGINAL_TEXT_DIRECT_OPEN_403"
+    },
+    {
+      "source_id": "ASRM_ART",
+      "url": "https://www.asrm.org/practice-guidance/ethics-opinions/informed-consent-in-assisted-reproduction-an-ethics-committee-opinion-2023/",
+      "verification": "FULL_ORIGINAL_ETHICS_OPINION"
+    }
+  ],
+  "cases": [
+    {
+      "id": "CSE007",
+      "verification_scope": "INDEXED_FIRST_PARTY_EXCERPT",
+      "original_source_id": "PP_CONSENT",
+      "argument_summary_en": "Planned Parenthood FRIES consent requirements are explicit on its original indexed page, but direct open returned 403; the further claim that consent suffices morally is a reasoned challenge, not Planned Parenthood's documented assertion.",
+      "argument_summary_fr": "Les cinq critères de consentement figurent sur la page officielle indexée, mais l'accès direct renvoie 403 ; prétendre que le consentement suffit moralement est une objection reconstruite, non une citation de Planned Parenthood.",
+      "limit": "FRIES voluntary informed reversible specific, not a full normative sexual ethic.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE021",
+      "verification_scope": "COMPLETE_ORIGINAL_AUTHOR_TRANSLATION",
+      "original_source_id": "FREUD1924_FULL",
+      "argument_summary_en": "The complete 1924 English translation of Freud's 1908 essay discusses cultural sexual restrictions, nervous distress and differing powers of sublimation, but does not study Catholic virtue by today's clinical methods.",
+      "argument_summary_fr": "La traduction anglaise intégrale de 1924 de l'essai de 1908 expose la critique freudienne de restrictions culturelles et les différences de sublimation ; elle ne mesure pas la vertu de chasteté selon les méthodes cliniques actuelles.",
+      "limit": "Historic analytic argument, not contemporary quantitative outcome evidence.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE029",
+      "verification_scope": "ORIGINAL_QUALITATIVE_STUDY",
+      "original_source_id": "PRIEST_WELLBEING2016",
+      "argument_summary_en": "Isacco et al. interviewed 15 Mid-Atlantic US priests. Their original qualitative paper describes positive faith-related effects and mixed experiences of celibacy and obedience; it is not a representative prevalence survey.",
+      "argument_summary_fr": "Isacco et ses coauteurs ont interrogé quinze prêtres américains. Leur étude qualitative rapporte des bienfaits associés à la foi et des expériences diverses du célibat et de l'obéissance ; ce n'est pas une enquête représentative.",
+      "limit": "Fifteen participants; cannot generalize rates to all Catholic clergy.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE035",
+      "verification_scope": "ORIGINAL_CROSS_SECTIONAL_SURVEY",
+      "original_source_id": "PEW_CO2019",
+      "argument_summary_en": "Pew 2019 reports 23% of cohabiters citing a test of the relationship as a major reason for moving in. This establishes a reported motive, not that cohabitation causes better marriages.",
+      "argument_summary_fr": "Pew rapporte que 23 % des cohabitants interrogés en 2019 invoquaient l'essai de leur relation parmi les raisons majeures. Ce motif déclaré ne prouve pas que la cohabitation améliore le mariage.",
+      "limit": "This is a self-reported US survey about motives for cohabitation, not causal evidence that testing a relationship by cohabiting improves subsequent marital stability or fidelity.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE087",
+      "verification_scope": "APA_FULL_FIRST_PARTY_POLICY",
+      "original_source_id": "APA_LGB_POLICY",
+      "argument_summary_en": "The APA policy manual explicitly rejects harassment and stigma and identifies social harms; its professional public-policy conclusions are not a direct argument about the theological moral species of sexual acts.",
+      "argument_summary_fr": "Le manuel de politiques de l'APA rejette expressément le harcèlement et la stigmatisation ; ses conclusions de politique professionnelle ne déterminent pas l'espèce morale théologique des actes sexuels.",
+      "limit": "Do not attribute all criticized conduct to the doctrine itself.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE088",
+      "verification_scope": "APA_FULL_FIRST_PARTY_POLICY",
+      "original_source_id": "APA_LGB_POLICY",
+      "argument_summary_en": "APA original policy explicitly states that homosexuality per se is not a psychiatric disorder and advises against sexual-orientation-change efforts; neither is identical to a theological judgment about chosen conduct.",
+      "argument_summary_fr": "La politique officielle de l'APA affirme que l'homosexualité en soi n'est pas un trouble psychiatrique et déconseille les tentatives de changement d'orientation ; il ne s'agit pas d'un jugement théologique sur les actes librement choisis.",
+      "limit": "Clinical taxonomy, intervention evidence, moral object and personal guilt are distinct.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE093",
+      "verification_scope": "APA_FIRST_PARTY_EXPLANATORY_DOCUMENT",
+      "original_source_id": "APA_TRANS",
+      "argument_summary_en": "APA distinguishes sex-related development, social gender roles and identity; its explanatory webpage does not demonstrate that sexed embodiment is merely a changeable convention.",
+      "argument_summary_fr": "L'APA distingue développement sexué, rôles sociaux de genre et identité ; sa page explicative ne démontre pas que le corps sexué soit une simple convention révisable.",
+      "limit": "Clinical and social categories are not interchangeable with Catholic anthropology.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE094",
+      "verification_scope": "APA_ORIGINAL_POLICY_PDF_VISUALLY_INSPECTED",
+      "original_source_id": "APA_TRANSCARE_FULL2024",
+      "argument_summary_en": "The APA February 2024 policy PDF explicitly advocates evidence-based individualized affirming care, noncoercive support and acknowledges scientific limits. That position supports a serious clinical objection but is not itself a systematic treatment-outcome meta-analysis.",
+      "argument_summary_fr": "Le texte original de l'APA de février 2024 défend les soins individualisés fondés sur les données et non contraignants, tout en reconnaissant les limites scientifiques. Cette politique ne constitue pas une méta-analyse exhaustive des résultats cliniques.",
+      "limit": "Original PDF p.1 screenshot checked, other text paragraphs reviewed; no blanket efficacy certification.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE095",
+      "verification_scope": "APA_POLICY_PLUS_ILLUSTRATIVE_LANGUAGE_INFERENCE",
+      "original_source_id": "APA_TRANSCARE_FULL2024",
+      "argument_summary_en": "The APA policy urges respectful individualized care and addresses harm from rejection. It does not stipulate a mandatory form of address for every social setting; the debate's linguistic example is an independent prudential inference.",
+      "argument_summary_fr": "L'APA demande des soins individualisés et respectueux et critique les dommages du rejet. Elle n'édicte pas une formule d'adresse obligatoire dans toute situation sociale : l'exemple linguistique relève d'un raisonnement prudentiel distinct.",
+      "limit": "No invented quotation requiring universal pronouns or wording.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE096",
+      "verification_scope": "OPEN_ACCESS_SOC8_PRIMARY_INDEXED_CONTEXT",
+      "original_source_id": "WPATH8_FULL",
+      "argument_summary_en": "The open-access SOC8 sets out clinical recommendations, evaluation, shared decision-making and individualized options. The relevant original opening sections were indexed and consulted, but automated retrieval later met a PMC challenge; full 259-page line-by-line certification remains open.",
+      "argument_summary_fr": "Les recommandations SOC8 exposent l'évaluation clinique, la décision partagée et des options individualisées. Les sections originales indexées ont été consultées, mais un contrôle ultérieur de PMC a été bloqué ; les 259 pages ne sont pas certifiées ligne par ligne.",
+      "limit": "Clinical guideline is not an experimentally demonstrated outcome for every proposed intervention.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE141",
+      "verification_scope": "ORIGINAL_PAPAL_PASTORAL_INTERVIEW",
+      "original_source_id": "FRANCIS_SPADARO2013",
+      "argument_summary_en": "Francis explicitly says that abortion, same-sex marriage and contraception cannot be the sole focus of proclamation, while also stating that Church teaching is clear; his 2013 interview is a pastoral priority critique, not his rejection of Catholic moral doctrine.",
+      "argument_summary_fr": "François affirme qu'on ne peut limiter la prédication à l'avortement, aux unions homosexuelles et à la contraception, tout en rappelant la clarté de l'enseignement ecclésial ; son entretien de 2013 traite des priorités pastorales, non d'un rejet doctrinal.",
+      "limit": "Pastoral emphasis does not by itself cancel the substantive norm.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE142",
+      "verification_scope": "FREUD_AUTHOR_PLUS_CURRENT_ILLUSTRATION",
+      "original_source_id": "FREUD1924_FULL",
+      "argument_summary_en": "Freud's 1908 essay argues about culturally imposed restrictions and different capacities for sublimation. Modern loneliness, digital media and lifelong singleness are extensions proposed by the debate, not historical Freud quotations.",
+      "argument_summary_fr": "Freud expose en 1908 les effets de certaines restrictions culturelles et des capacités variables de sublimation. La solitude actuelle et les médias numériques relèvent de l'objection contemporaine, non de citations historiques de Freud.",
+      "limit": "Do not portray a historical essay as a controlled modern longitudinal study.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE149",
+      "verification_scope": "COMPOSITE_MULTIPLE_FIRST_PARTY_BODIES",
+      "original_source_id": "ASRM_ART",
+      "argument_summary_en": "The original ASRM 2023 ethics opinion requires informed voluntary decisions and examination of risks and alternatives; APA policy documents make separate clinical and civil-rights claims. No single association asserts that science has experimentally disproved Catholic sexual ethics.",
+      "argument_summary_fr": "L'avis d'éthique original de l'ASRM de 2023 exige une décision libre et éclairée, portant sur les risques et les alternatives ; les politiques APA formulent d'autres affirmations cliniques. Aucun organisme unique ne prétend avoir scientifiquement réfuté la morale sexuelle catholique.",
+      "limit": "Professional ethics positions and scientific findings must not be conflated.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE008",
+      "verification_scope": "FLETCHER_MEDIATED_EXCERPTS_AND_1966_BOOK_CATALOGUE",
+      "original_source_id": "FLETCHER_EXCERPTS",
+      "argument_summary_en": "Book chapters and six propositions are supported by mediated author quotations and secondary education; Open Library identifies the 1966 176-page edition but it remains borrow/preview access, not independently collated full text.",
+      "argument_summary_fr": "Les citations reproduites et présentations secondaires étayent la structure des six propositions ; Open Library identifie l'édition de 1966 (176 pages), accessible sous conditions, sans collation intégrale du texte.",
+      "limit": "Do not elevate reconstructed doctrine to direct quotation of unread chapters, and do not confuse agape with unqualified romantic feeling.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE010",
+      "verification_scope": "FLETCHER_MEDIATED_EXCERPTS_AND_1966_BOOK_CATALOGUE",
+      "original_source_id": "FLETCHER_EXCERPTS",
+      "argument_summary_en": "Book chapters and six propositions are supported by mediated author quotations and secondary education; Open Library identifies the 1966 176-page edition but it remains borrow/preview access, not independently collated full text.",
+      "argument_summary_fr": "Les citations reproduites et présentations secondaires étayent la structure des six propositions ; Open Library identifie l'édition de 1966 (176 pages), accessible sous conditions, sans collation intégrale du texte.",
+      "limit": "Do not elevate reconstructed doctrine to direct quotation of unread chapters, and do not confuse agape with unqualified romantic feeling.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE043",
+      "verification_scope": "FARLEY_CDF_DIRECT_EXCERPT_PLUS_FIRST_PERSON_RESPONSE",
+      "original_source_id": "FARLEY_QUOTED2012",
+      "argument_summary_en": "The CDF 2012 Notification reproduces attributed Farley passages from Just Love and the author's published 2012 response explains her general justice-based framework. The whole 336-page book is not independently collated.",
+      "argument_summary_fr": "La Notification de la CDF (2012) reproduit des passages attribués à Farley ; sa réponse publique explique son éthique fondée sur la justice. L'ensemble des 336 pages de Just Love n'a pas été collationné indépendamment.",
+      "limit": "Distinguish author excerpts in an opponent's evaluation from complete original-book context; Farley's framework makes justice criteria, not unrestricted autonomy, decisive.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE049",
+      "verification_scope": "FARLEY_CDF_DIRECT_EXCERPT_PLUS_FIRST_PERSON_RESPONSE",
+      "original_source_id": "FARLEY_QUOTED2012",
+      "argument_summary_en": "The CDF 2012 Notification reproduces attributed Farley passages from Just Love and the author's published 2012 response explains her general justice-based framework. The whole 336-page book is not independently collated.",
+      "argument_summary_fr": "La Notification de la CDF (2012) reproduit des passages attribués à Farley ; sa réponse publique explique son éthique fondée sur la justice. L'ensemble des 336 pages de Just Love n'a pas été collationné indépendamment.",
+      "limit": "Distinguish author excerpts in an opponent's evaluation from complete original-book context; Farley's framework makes justice criteria, not unrestricted autonomy, decisive.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE050",
+      "verification_scope": "FARLEY_CDF_DIRECT_EXCERPT_PLUS_FIRST_PERSON_RESPONSE",
+      "original_source_id": "FARLEY_QUOTED2012",
+      "argument_summary_en": "The CDF 2012 Notification reproduces attributed Farley passages from Just Love and the author's published 2012 response explains her general justice-based framework. The whole 336-page book is not independently collated.",
+      "argument_summary_fr": "La Notification de la CDF (2012) reproduit des passages attribués à Farley ; sa réponse publique explique son éthique fondée sur la justice. L'ensemble des 336 pages de Just Love n'a pas été collationné indépendamment.",
+      "limit": "Distinguish author excerpts in an opponent's evaluation from complete original-book context; Farley's framework makes justice criteria, not unrestricted autonomy, decisive.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE071",
+      "verification_scope": "FARLEY_CDF_DIRECT_EXCERPT_PLUS_FIRST_PERSON_RESPONSE",
+      "original_source_id": "FARLEY_QUOTED2012",
+      "argument_summary_en": "The CDF 2012 Notification reproduces attributed Farley passages from Just Love and the author's published 2012 response explains her general justice-based framework. The whole 336-page book is not independently collated.",
+      "argument_summary_fr": "La Notification de la CDF (2012) reproduit des passages attribués à Farley ; sa réponse publique explique son éthique fondée sur la justice. L'ensemble des 336 pages de Just Love n'a pas été collationné indépendamment.",
+      "limit": "Distinguish author excerpts in an opponent's evaluation from complete original-book context; Farley's framework makes justice criteria, not unrestricted autonomy, decisive.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE083",
+      "verification_scope": "FARLEY_CDF_DIRECT_EXCERPT_PLUS_FIRST_PERSON_RESPONSE",
+      "original_source_id": "FARLEY_QUOTED2012",
+      "argument_summary_en": "The CDF 2012 Notification reproduces attributed Farley passages from Just Love and the author's published 2012 response explains her general justice-based framework. The whole 336-page book is not independently collated.",
+      "argument_summary_fr": "La Notification de la CDF (2012) reproduit des passages attribués à Farley ; sa réponse publique explique son éthique fondée sur la justice. L'ensemble des 336 pages de Just Love n'a pas été collationné indépendamment.",
+      "limit": "Distinguish author excerpts in an opponent's evaluation from complete original-book context; Farley's framework makes justice criteria, not unrestricted autonomy, decisive.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    },
+    {
+      "id": "CSE089",
+      "verification_scope": "FARLEY_CDF_DIRECT_EXCERPT_PLUS_FIRST_PERSON_RESPONSE",
+      "original_source_id": "FARLEY_QUOTED2012",
+      "argument_summary_en": "The CDF 2012 Notification reproduces attributed Farley passages from Just Love and the author's published 2012 response explains her general justice-based framework. The whole 336-page book is not independently collated.",
+      "argument_summary_fr": "La Notification de la CDF (2012) reproduit des passages attribués à Farley ; sa réponse publique explique son éthique fondée sur la justice. L'ensemble des 336 pages de Just Love n'a pas été collationné indépendamment.",
+      "limit": "Distinguish author excerpts in an opponent's evaluation from complete original-book context; Farley's framework makes justice criteria, not unrestricted autonomy, decisive.",
+      "full_named_position_original_context_certified": false,
+      "independent_theological_signoff": false,
+      "independent_french_signoff": false
+    }
+  ]
+}

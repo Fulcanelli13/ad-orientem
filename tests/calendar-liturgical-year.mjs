@@ -6,6 +6,7 @@ import {
   buildMajorCelebrations,
   nextMajorCelebration,
   annunciationObservanceDate,
+  saintJosephObservanceDate,
   allSoulsObservanceDate,
 } from "../src/calendar/liturgical-year.js";
 import { v384Dates, v384Events, v384Event } from "../src/calendar/traditional-year-v384.js";
@@ -102,6 +103,37 @@ assert.equal(nextMajorCelebration("2027-04-04")?.en,"Annunciation of the Blessed
 const allSouls2025=buildMajorCelebrations("2025-11-02").filter(x=>/Faithful Departed/.test(x.en));
 assert.deepEqual(allSouls2025.map(x=>x.date),["2025-11-03"]);
 assert.equal(allSouls2025[0].transferredFrom,"2025-11-02");
+// These dates are independently witnessed in actual published 1962 ordo
+// calendars (not in the Ordinary Form). Keep the audit fixture separately
+// from the code under test and verify both observed and original dates.
+const transferOracle=JSON.parse(fs.readFileSync(new URL("../data/calendar/1962-transfer-oracle.v1.json",import.meta.url),"utf8"));
+assert.equal(transferOracle.schema,"ao-1962-observance-transfer-oracle-v1");
+for(const witness of transferOracle.witnesses){
+  assert.match(witness.source,/^https:\/\//,"Published independent witness required: "+witness.id);
+  const matches=buildMajorCelebrations(witness.original).filter(x=>x.en===witness.name);
+  assert.equal(matches.length,1,"Exactly one curated candidate: "+witness.id);
+  assert.equal(matches[0].date,witness.observed,"Independent 1962 observed date disagreement: "+witness.id);
+  if(witness.original!==witness.observed){
+    assert.equal(matches[0].transferredFrom,witness.original,"Original assignment lost: "+witness.id);
+    assert.equal(matches.some(x=>x.date===witness.original),false,"Transferred feast incorrectly remains at its old date: "+witness.id);
+  }
+}
+// The independent 2028 witness is a critical regression: the Third Sunday
+// of Lent wins on 19 March; St Joseph is observed Monday 20 March.
+assert.equal(saintJosephObservanceDate(2028),"2028-03-20");
+assert.equal(nextMajorCelebration("2028-03-19")?.date,"2028-03-20");
+assert.equal(nextMajorCelebration("2028-03-19")?.en,"Saint Joseph, Spouse of the Blessed Virgin Mary");
+assert.equal(saintJosephObservanceDate(2026),"2026-03-19");
+assert.equal(saintJosephObservanceDate(2034),"2034-03-20");
+// 2035 is a distinct collision with Holy Week and an Annunciation
+// transferred to Monday after Low Sunday; n. 96(a) reserves Monday
+// for the Annunciation, and n. 96 places St Joseph on Tuesday.
+assert.equal(annunciationObservanceDate(2035),"2035-04-02");
+assert.equal(saintJosephObservanceDate(2035),"2035-04-03");
+const joseph2035=buildMajorCelebrations("2035-03-19").find(x=>x.en==="Saint Joseph, Spouse of the Blessed Virgin Mary");
+assert.equal(joseph2035?.date,"2035-04-03");
+assert.equal(joseph2035?.transferredFrom,"2035-03-19");
+
 const conception2024=buildMajorCelebrations("2024-12-08").find(x=>/Immaculate Conception/.test(x.en));
 assert.equal(conception2024?.date,"2024-12-08","Do not import the 2024 Ordinary Form December 9 transfer into the 1962 calendar");
 

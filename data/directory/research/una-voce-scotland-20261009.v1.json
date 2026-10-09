@@ -1,0 +1,175 @@
+{
+  "schema": "AO_UVS_SCOTLAND_20261009_SOURCE_RECONCILIATION_V1",
+  "reviewed_on": "2026-10-09",
+  "regional_source": "https://unavocescotland.org/find-a-latin-mass/",
+  "counting_note": "These are regionally published location leads, not separate verified physical sites. FSSP pair are existing provider records; one diocesan venue is already in canonical corpus. Ordinariate Divine Worship is a distinct liturgy from the 1962 Roman Missal.",
+  "records": [
+    {
+      "id": "uvs-fetternear",
+      "name": "Our Lady of the Garioch & St John the Evangelist",
+      "country": "GB",
+      "place": "Fetternear, Inverurie",
+      "kind": "TLM",
+      "decision": "HOLD_REGIONAL_ASSOCIATION_2026",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://www.dioceseofaberdeen.org/",
+      "reason": "Weekly Mass supported by July 2026 public reporting, original diocesan schedule not verified here."
+    },
+    {
+      "id": "uvs-ravelston",
+      "name": "St Andrew's Church",
+      "country": "GB",
+      "place": "Ravelston, Edinburgh",
+      "kind": "TLM",
+      "decision": "EXISTING_FSSP_OFFICIAL_SOURCE",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://fsspscotland.org/",
+      "reason": "FSSP original site confirms Sunday 12:00. Reconcile FSSP ministry ID before adding a distinct canonical venue."
+    },
+    {
+      "id": "uvs-belford",
+      "name": "St Cuthbert's House Chapel",
+      "country": "GB",
+      "place": "Belford Park, Edinburgh",
+      "kind": "TLM",
+      "decision": "EXISTING_FSSP_OFFICIAL_SOURCE",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://fsspscotland.org/",
+      "reason": "FSSP original site confirms weekday 18:00 and Saturday 09:00. Physical location separate from St Andrew's."
+    },
+    {
+      "id": "uvs-eriskay",
+      "name": "St Michael's",
+      "country": "GB",
+      "place": "Eriskay",
+      "kind": "TLM",
+      "decision": "HOLD_LITURGICAL_FORM_NOT_CORROBORATED",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://www.rcdai.org.uk/rcdaiparishes/eriskay/",
+      "reason": "Diocesan site confirms church but lists Gaelic/English regular Mass and does not verify the association's Tuesday 1962 Mass."
+    },
+    {
+      "id": "uvs-lawside",
+      "name": "St Joseph's Chapel, Lawside",
+      "country": "GB",
+      "place": "Dundee",
+      "kind": "TLM",
+      "decision": "ALREADY_IN_DIOCESAN",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://dundeelatinmass.com/",
+      "reason": "Already in diocesan registry. Local apostolate reconfirms Sunday 13:00 starting 21 June 2026."
+    },
+    {
+      "id": "uvs-thornliebank",
+      "name": "St Vincent de Paul",
+      "country": "GB",
+      "place": "Thornliebank, Glasgow",
+      "kind": "TLM",
+      "decision": "PUBLISHED_REGIONAL_APOSTOLATE_2026",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://glasgowlatinmass.co.uk/",
+      "reason": "Original local Mass apostolate provides current Sunday 12:00 celebrations dated October 2026."
+    },
+    {
+      "id": "uvs-cleland",
+      "name": "St Mary's, Cleland",
+      "country": "GB",
+      "place": "Cleland",
+      "kind": "TLM",
+      "decision": "PUBLISHED_DIOCESE_2026",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://www.rcdom.org.uk/st-marys-cleland",
+      "reason": "Diocese confirms Thursday 19:00 Mass in Extraordinary Form."
+    },
+    {
+      "id": "uvs-coatbridge",
+      "name": "St James",
+      "country": "GB",
+      "place": "Coatbridge",
+      "kind": "TLM",
+      "decision": "HOLD_FIRST_SATURDAY_NOT_ON_PRIMARY",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://stjamescoatbridge.co.uk/",
+      "reason": "Association claims first Saturday 10:00; current parish/diocese schedule does not advertise 1962 Mass."
+    },
+    {
+      "id": "uvs-port-glasgow",
+      "name": "St Francis of Assisi",
+      "country": "GB",
+      "place": "Port Glasgow",
+      "kind": "TLM",
+      "decision": "HOLD_SECOND_SATURDAY_NOT_ON_PRIMARY",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://saintfrancisportglasgow.co.uk/",
+      "reason": "Association claims second Saturday 09:30; primary parish homepage lists ordinary 09:30 Saturday without identifying 1962 Mass."
+    },
+    {
+      "id": "uvs-whittingham",
+      "name": "St Mary Immaculate",
+      "country": "GB",
+      "place": "Whittingham, Alnwick",
+      "kind": "TLM",
+      "decision": "HOLD_CURRENT_ORIGINAL_SCHEDULE_REQUIRED",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://lms.org.uk/list-of-churches",
+      "reason": "Regional association lists Tuesday 18:30 and urges telephone confirmation; no current original parish schedule located."
+    },
+    {
+      "id": "uvs-carlisle",
+      "name": "St Margaret Mary's",
+      "country": "GB",
+      "place": "Carlisle",
+      "kind": "TLM",
+      "decision": "PUBLISHED_PARISH_2026",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "primary": "https://www.carlislecatholicchurch.org/mass-times",
+      "reason": "Original parish schedule confirms Saturday 10:00 Mass in Extraordinary Form."
+    },
+    {
+      "id": "uvs-ordinariate-inverness",
+      "name": "The Oratory of St Joseph",
+      "country": "GB",
+      "place": "Inverness",
+      "kind": "ORDINARIATE_DIVINE_WORSHIP",
+      "decision": "EXCLUDE_1962_ROMAN_MASS",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/"
+    },
+    {
+      "id": "uvs-ordinariate-nairn",
+      "name": "St Mary's",
+      "country": "GB",
+      "place": "Nairn",
+      "kind": "ORDINARIATE_DIVINE_WORSHIP",
+      "decision": "EXCLUDE_1962_ROMAN_MASS",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/"
+    },
+    {
+      "id": "uvs-ordinariate-edinburgh",
+      "name": "St Patrick's",
+      "country": "GB",
+      "place": "Edinburgh Cowgate",
+      "kind": "ORDINARIATE_DIVINE_WORSHIP",
+      "decision": "EXCLUDE_1962_ROMAN_MASS",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/"
+    },
+    {
+      "id": "uvs-ordinariate-whithorn",
+      "name": "St Martin and St Ninian",
+      "country": "GB",
+      "place": "Whithorn",
+      "kind": "ORDINARIATE_DIVINE_WORSHIP",
+      "decision": "EXCLUDE_1962_ROMAN_MASS",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/"
+    },
+    {
+      "id": "uvs-closed-st-brigids",
+      "name": "St Brigid's",
+      "country": "GB",
+      "place": "Glasgow",
+      "kind": "DISCONTINUED",
+      "decision": "EXCLUDE_DISCONTINUED_2025",
+      "origin": "https://unavocescotland.org/find-a-latin-mass/",
+      "reason": "Directory states site discontinued and moved to St Vincent's in September 2025."
+    }
+  ]
+}

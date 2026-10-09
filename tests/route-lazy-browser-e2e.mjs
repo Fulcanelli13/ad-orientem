@@ -56,6 +56,26 @@ try {
   assert.equal(statusBefore.mass,true,"Native Mass bridge missing");
   assert.equal(statusBefore.pray,true,"PRAY boot bridge missing");
 
+  // Daily Rule remains actionable even if its legacy static-sheet handler
+  // explicitly rejects opening. The fallback must dispatch Rosary.
+  const homeRule=await page.evaluate(()=>{
+    const oldRule=globalThis.AO_RULE_V411,oldRegistry=globalThis.AO_MODULES;
+    const calls=[];
+    try{
+      globalThis.AO_RULE_V411={...oldRule,openStatic:()=>false};
+      globalThis.AO_MODULES={...oldRegistry,open:id=>{calls.push(id);return{ok:true}}};
+      const button=document.createElement("button");
+      button.type="button";button.dataset.homeCuStatic="rosary";
+      document.querySelector(".homeScreen").append(button);
+      button.click();button.remove();
+      return calls;
+    }finally{
+      globalThis.AO_RULE_V411=oldRule;
+      globalThis.AO_MODULES=oldRegistry;
+    }
+  });
+  assert.deepEqual(homeRule,["pray.rosary"],"Home Daily Rule became inert when the legacy owner failed");
+
   const find=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("find"));
   assert.equal(find.ok,true,"Lazy Explore failed to navigate: "+JSON.stringify(find));
   assert.ok(hits.some(row=>row.path==="/src/find/browser-entry.js"),"Explore dynamic import not requested");
@@ -105,6 +125,14 @@ try {
   assert.equal(await page.locator("#aoPray435930 [data-n1-begin]").count(),1,
     "Explore launched the Novenas overview instead of its selected novena");
   assert.ok(selectedNovena,"Place novena action has no linked ID");
+  // The reverse Novena → Explore link must navigate through the app shell,
+  // rather than opening the old Explore owner behind the Prayer sheet.
+  const customSummary=page.locator("#aoPray435930 details:has([data-n1-explore]) > summary").first();
+  const crossLink=page.locator("#aoPray435930 [data-n1-explore]").first();
+  await customSummary.click();
+  await crossLink.click();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="find",null,{timeout:15000});
+  await page.locator("#ao-find-modular-root [data-find-query]").waitFor({state:"visible",timeout:15000});
   await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("find"));
   await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
     lens:"shrines",view:"list",query:"Lourdes",
