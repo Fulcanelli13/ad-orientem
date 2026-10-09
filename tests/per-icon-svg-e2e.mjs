@@ -87,6 +87,8 @@ try{
   await page.waitForTimeout(400);
   const cold=requests.slice();
   assert.equal(cold.filter(x=>oldBundles.has(x.path)).length,0,"Home still requests a monolithic original SVG sprite");
+  const loadedIcons=cold.filter(x=>newIcons.has(x.path)).length;
+  assert.ok(loadedIcons<manifest.icons.length,"Home eagerly loaded all twenty refined icon images");
   const symbols=manifest.icons.map(x=>({
     id:x.id,old:"./"+x.sourceBundle+"#"+x.id,
     path:x.path
@@ -135,7 +137,8 @@ try{
     coldRequests:cold.length,
     coldBytesServed:cold.reduce((n,x)=>n+x.bytes,0),
     coldOriginalBundleRequests:cold.filter(x=>oldBundles.has(x.path)).length,
-    coldIndividualIconRequests:cold.filter(x=>newIcons.has(x.path)).length,
+    coldIndividualIconRequests:loadedIcons,
+    lazyRegistry:await page.evaluate(()=>globalThis.AO_LAZY_REFINED_ICONS_V1?.status?.()??null),
     totalIconsParityChecked:symbols.length,
   };
   console.log("PASS all 20 refined icon visuals identical to original sprite assets, including GitHub Pages project-prefix URLs.");
