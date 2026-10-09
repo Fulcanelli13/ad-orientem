@@ -55,3 +55,7 @@ The new [24-record EN/FR/Latin evidence register](../data/pray/prayer-eight-full
 - Independent original **1962** Breviary verification, textual permissions, French source authorship and full diplomatic collation remain unapproved. **Zero** prayers newly certified verbatim.
 
 Next evidence gate: obtain original 1962 Breviary canticle rubrics and isolate doxology as a context-specific liturgical appendix where justified, verify the French domestic graces against original French printed Catholic prayer books, and audit the exact historical source of the Salve Regina versicle/response before changing canonical bodies.
+
+## Calendar visual gate reconciliation
+
+The earlier capture failure for this Prayer-only PR was traced to an asynchronous Calendar Day repaint collapsing the currently expanded discipline disclosure (Issue [#803](https://github.com/Fulcanelli13/ad-orientem/issues/803)). The independent Calendar UI fix in [PR #805](https://github.com/Fulcanelli13/ad-orientem/pull/805) was merged into `main` after contract, year, directory, visual capture and phone tests passed. This Prayer PR does **not** duplicate that Calendar fix; its CI must be rerun against the corrected baseline before merge.
