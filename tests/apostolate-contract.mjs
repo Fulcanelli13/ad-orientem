@@ -490,7 +490,13 @@ assert.equal(owner.receiveHandoff(toApostolateSkill).skill.id,"APF04");
 assert.equal(owner.handoffToFormation({fromId:"AQ01",targetRoute:"learn.catechism",reason:"Study"}).targetSurface,"learn");
 
 const appSource=readFileSync("src/app/browser-entry.js","utf8");
-assert.match(appSource,/import "\.\.\/apostolate\/browser-entry\.js";/,"Apostolate owner is not installed by the app entry");
+assert.doesNotMatch(appSource,/^import ["']\\.\\.\\/apostolate\\/browser-entry\\.js["'];/m,
+ "Apostolate corpus must not be eagerly fetched on Home");
+const appHostSource=readFileSync("src/app/host-adapter.js","utf8");
+assert.match(appHostSource,/import\\(["']\\.\\.\\/apostolate\\/browser-entry\\.js["']\\)/,
+ "Apostolate owner must be installed by the app host on first route access");
+assert.match(appHostSource,/loadDomainOnce\\(domain\\)/,
+ "Apostolate first-use imports must be cached and share route ownership");
 assert.doesNotMatch(appSource,/data-ao-app-surface=["']apostolate["']/,"Apostolate UI leaked into the ribbon");
 assert.doesNotMatch(readFileSync("src/home/presentation.js","utf8"),/apostolate/i,"Apostolate leaked into Home presentation");
 const formationPresentation=readFileSync("src/learn/presentation.js","utf8");
