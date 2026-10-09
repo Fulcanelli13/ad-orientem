@@ -21,12 +21,12 @@ const dataset={
   customs:{...customs,sources:customSources.sources},
   novenas:{records:novenas.novenas,links:bridge.links,sources:bridge.sources},
 };
-assert.equal(shrines.shrines.length,78);
-assert.equal(shrines.pilgrimages.length,106);
+assert.equal(shrines.shrines.length,106);
+assert.equal(shrines.pilgrimages.length,134);
 assert.equal(shrines.routes.length,20);
 assert.equal(shrines.temporalLinks.length,75);
 const projection=projectExploreDataset(dataset);
-assert.equal(projection.byLens.pilgrimages.length,106);
+assert.equal(projection.byLens.pilgrimages.length,134);
 const allShrineIds=new Set(shrines.shrines.map(shrine=>shrine.shrine_id));
 assert.ok(shrines.pilgrimages.every(p=>allShrineIds.has(p.destination_shrine_id)),
   "a pilgrimage lost its actual destination shrine");
@@ -48,6 +48,30 @@ assert.equal(parayProfile.novenas[0].id,"sacred_heart");
 assert.equal(parayProfile.novenas[0].notes.length,2,"both source-specific novena relationships must survive");
 const lourdesProfile=profiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.equal(lourdesProfile.novenas[0].id,"immaculate_conception");
+const linksToResolve={
+  "novena-place:st_therese:lisieux":["place:FR:basilique-sainte-therese-lisieux","st_therese"],
+  "novena-place:corpus_christi:liege":["place:BE:sanctuaire-sainte-julienne-cornillon","corpus_christi"],
+  "novena-place:annunciation:le-puy":["place:FR:cathedrale-notre-dame-le-puy","annunciation"],
+  "novena-place:seven_sorrows:notre-dame-victoires":["place:FR:basilique-notre-dame-victoires-paris","seven_sorrows"],
+  "novena-place:perpetual_help:paris":["place:FR:basilique-notre-dame-perpetuel-secours-paris","perpetual_help"],
+  "novena-place:st_anthony:brive":["place:FR:grottes-saint-antoine-brive","st_anthony_nine_tuesdays"],
+  "novena-place:immaculate_heart:notre-dame-victoires":["place:FR:basilique-notre-dame-victoires-paris","immaculate_heart"],
+};
+for(const [linkId,[placeId,novenaId]] of Object.entries(linksToResolve)){
+  const link=bridge.links.find(x=>x.link_id===linkId);
+  assert.equal(link?.map_policy,"PLACE",linkId+" not promoted to canonical Place");
+  assert.equal(link.place_id,placeId);
+  const profile=profiles.find(x=>x.place_id===placeId);
+  assert.ok(profile?.novenas.some(x=>x.id===novenaId),linkId+" absent from Place's reverse novena relationships");
+  const pilgrimage=projection.byLens.pilgrimages.find(x=>x.place_id===placeId);
+  assert.ok(pilgrimage?.actions.some(x=>x.novena_id===novenaId),linkId+" absent from pilgrimage's prayer actions");
+}
+assert.equal(bridge.links.filter(x=>x.map_policy==="PLACE_PENDING").length,0,
+  "no researched named Novena Place link may remain unlocated");
+assert.equal(profiles.find(x=>x.place_id==="place:FR:basilique-notre-dame-victoires-paris").counts.novenas,2,
+  "two independent devotion families at Notre Dame des Victoires");
+assert.ok(!profiles.find(x=>x.place_id==="place:FR:carmel-lisieux").novenas.some(x=>x.id==="st_therese"),
+  "Basilica novena source cannot be silently reassigned to Thérèse's relics at the Carmel");
 const loughDergProfile=profiles.find(p=>p.place_id==="place:IE:lough-derg-station-island");
 assert.equal(loughDergProfile.calendar.length,0,"seasonal journey must not invent a fixed date");
 assert.equal(loughDergProfile.seasonal_pilgrimages.length,1);
@@ -85,4 +109,4 @@ assert.match(calendarBrowser,/pilgrimagePlacesForCalendarKeys/);
 assert.match(calendarBrowser,/find:pilgrimages:/);
 assert.match(exploreBrowser,/state\.calendarKey/);
 assert.match(exploreBrowser,/data-explore-calendar-date/);
-console.log("PASS 78 shrines; 106 pilgrimages; saints, novenas, local devotions, 44 bound links/35 Calendar keys, date navigation");
+console.log("PASS 106 shrines; 134 pilgrimages; saints, novenas, local devotions, 44 bound links/35 Calendar keys, date navigation");

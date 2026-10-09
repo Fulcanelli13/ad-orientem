@@ -111,8 +111,8 @@ assert.equal(exactChristmas.relationship,"EXACT_FORM_FRENCH_ATTESTATION");
 assert.match(exactChristmas.place_name_hint,/Corsica/);
 
 const corpusOrigin=bridge.links.find(x=>x.novena_id==="corpus_christi");
-assert.equal(corpusOrigin.map_policy,"PLACE_PENDING");
-assert.match(corpusOrigin.place_name_hint,/Liège/);
+assert.equal(corpusOrigin.map_policy,"PLACE");
+assert.equal(corpusOrigin.place_id,"place:BE:sanctuaire-sainte-julienne-cornillon");
 
 const immaculateLourdes=bridge.links.find(x=>x.novena_id==="immaculate_conception");
 assert.equal(immaculateLourdes.place_id,"place:FR:sanctuaire-notre-dame-de-lourdes");
@@ -128,7 +128,7 @@ assert.equal(stMichael.place_id,"place:FR:abbaye-mont-saint-michel");
 const assumptionParis=bridge.links.find(x=>x.link_id==="novena-place:assumption:notre-dame-paris");
 assert.equal(assumptionParis.map_policy,"PLACE");
 assert.equal(assumptionParis.place_id,"place:FR:notre-dame-paris");
-assert.ok(bridge.links.filter(x=>x.map_policy==="PLACE_PENDING").length===7,"Only genuine unlinked novena sites should remain pending");
+assert.ok(bridge.links.filter(x=>x.map_policy==="PLACE_PENDING").length===0,"All seven named novena sites must be linked to canonical Places");
 
 for(const id of ["holy_ghost","annunciation","assumption","seven_sorrows","perpetual_help","st_anthony_nine_tuesdays","immaculate_heart"]){
   assert.ok(bridgeNovenaIds.has(id),id+" lost its researched French-world bridge");

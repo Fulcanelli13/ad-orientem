@@ -175,14 +175,15 @@
       "relationship": "DEVOTIONAL_FAMILY_SHRINE_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Sanctuaire Sainte-Thérèse de Lisieux",
-      "map_policy": "PLACE_PENDING",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "place_name_hint": null,
+      "map_policy": "PLACE",
       "source_ids": [
         "LISIEUX-NOVENA"
       ],
       "confidence": "HIGH",
-      "note": "Official Lisieux material attests a St Thérèse novena and the shrine context. It does not prove that the sanctuary uses AO's exact Twenty-Four Glory Bes form."
+      "note": "Official Lisieux material attests a St Thérèse novena and the shrine context. It does not prove that the sanctuary uses AO's exact Twenty-Four Glory Bes form. Shared canonical place ID established 2026-10-09. Location/devotional family link only, not certification of the exact app novena text.",
+      "geographic_precision": "PLACE"
     },
     {
       "link_id": "novena-area:st_joseph:france",
@@ -237,15 +238,15 @@
       "relationship": "DEVOTIONAL_ORIGIN_PLACE_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:world",
-      "place_id": null,
-      "place_name_hint": "Sanctuaire de sainte Julienne de Cornillon, Liège, Belgium",
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "LIEGE-CORPUS-ORIGIN"
       ],
       "confidence": "HIGH",
-      "note": "Liège is the documented birthplace of the Fête-Dieu under St Julienne of Cornillon. This is feast/devotional origin context, not proof that AO's exact frozen novena was used there."
+      "note": "Liège is the documented birthplace of the Fête-Dieu under St Julienne of Cornillon. This is feast/devotional origin context, not proof that AO's exact frozen novena was used there. Shared canonical place ID established 2026-10-09. Location/devotional family link only, not certification of the exact app novena text."
     },
     {
       "link_id": "novena-place:immaculate_conception:lourdes",
@@ -270,15 +271,15 @@
       "relationship": "FEAST_JUBILEE_SHRINE_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Cathédrale Notre-Dame du Puy, Le Puy-en-Velay",
+      "place_id": "place:FR:cathedrale-notre-dame-le-puy",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "LEPUY-ANNUNCIATION-JUBILEE"
       ],
       "confidence": "HIGH",
-      "note": "Notre-Dame du Puy is explicitly dedicated to the mystery of the Annunciation and celebrates the Grand Pardon when 25 March coincides with Good Friday. The Jubilee is a separate local custom, not part of the novena."
+      "note": "Notre-Dame du Puy is explicitly dedicated to the mystery of the Annunciation and celebrates the Grand Pardon when 25 March coincides with Good Friday. The Jubilee is a separate local custom, not part of the novena. Shared canonical place ID established 2026-10-09. Location/devotional family link only, not certification of the exact app novena text."
     },
     {
       "link_id": "novena-place:assumption:notre-dame-paris",
@@ -302,15 +303,15 @@
       "relationship": "DEVOTIONAL_FAMILY_PLACE_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Basilique Notre-Dame des Victoires, Paris",
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "NDV-SORROWS"
       ],
       "confidence": "MEDIUM_HIGH",
-      "note": "Notre-Dame des Victoires publicly observes Notre-Dame des Douleurs. This links the devotional family to a French Marian sanctuary without claiming AO's exact Seven Sorrows novena form."
+      "note": "Notre-Dame des Victoires publicly observes Notre-Dame des Douleurs. This links the devotional family to a French Marian sanctuary without claiming AO's exact Seven Sorrows novena form. Shared canonical place ID established 2026-10-09. Location/devotional family link only, not certification of the exact app novena text."
     },
     {
       "link_id": "novena-place:perpetual_help:paris",
@@ -318,15 +319,15 @@
       "relationship": "PUBLIC_NOVENA_PLACE_ATTESTATION",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Basilique Notre-Dame du Perpétuel-Secours, Paris",
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "DIOCESE-PARIS-PERPETUAL-NOVENA"
       ],
       "confidence": "HIGH",
-      "note": "The Diocese of Paris directly documents a nine-day public novena at the Basilica of Our Lady of Perpetual Help, including prayer before the icon. The exact daily meditations are not identified with AO's frozen text."
+      "note": "The Diocese of Paris directly documents a nine-day public novena at the Basilica of Our Lady of Perpetual Help, including prayer before the icon. The exact daily meditations are not identified with AO's frozen text. Shared canonical place ID established 2026-10-09. Location/devotional family link only, not certification of the exact app novena text."
     },
     {
       "link_id": "novena-place:st_anthony:brive",
@@ -334,15 +335,15 @@
       "relationship": "WEEKLY_TUESDAY_SHRINE_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Sanctuaire des Grottes de Saint Antoine, Brive",
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "FRANCISCANS-BRIVE-ANTHONY"
       ],
       "confidence": "HIGH",
-      "note": "The Franciscan shrine at Brive has a regular Tuesday pilgrimage Mass, strongly supporting the Tuesday devotional association in France. It does not by itself prove AO's exact nine-Tuesdays prayer body."
+      "note": "The Franciscan shrine at Brive has a regular Tuesday pilgrimage Mass, strongly supporting the Tuesday devotional association in France. It does not by itself prove AO's exact nine-Tuesdays prayer body. Shared canonical place ID established 2026-10-09. Location/devotional family link only, not certification of the exact app novena text."
     },
     {
       "link_id": "novena-area:christ_the_king:french-world",
@@ -366,15 +367,15 @@
       "relationship": "HISTORICAL_DEVOTIONAL_CENTER_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Basilique Notre-Dame des Victoires, Paris",
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "NDV-IMMACULATE-HEART"
       ],
       "confidence": "HIGH",
-      "note": "Notre-Dame des Victoires is the historic home of the Archconfraternity of the Immaculate Heart of Mary for the conversion of sinners, founded from the 1836 parish consecration. This is strong devotional-family context, not proof of AO's exact novena."
+      "note": "Notre-Dame des Victoires is the historic home of the Archconfraternity of the Immaculate Heart of Mary for the conversion of sinners, founded from the 1836 parish consecration. This is strong devotional-family context, not proof of AO's exact novena. Shared canonical place ID established 2026-10-09. Location/devotional family link only, not certification of the exact app novena text."
     },
     {
       "link_id": "novena-place:st_michael:mont-saint-michel",
