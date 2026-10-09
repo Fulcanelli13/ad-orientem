@@ -13,6 +13,7 @@ import {
 import { CSE_RELATED_TARGETS, CSE_SOT_MATRIX, relatedTargetsFor } from "./sexual-ethics-data/sot.js";
 import { paragraphRefsFor, CSE_MISCONCEPTION_REBUTTAL_IDS, CSE_CONTEXT_ONLY_POSITION_IDS } from "./sexual-ethics-data/provenance.js";
 import { cseSourceTargets } from "./sexual-ethics-data/source-targets.js";
+import { scriptureContextCapsule } from "../scripture/context.js";
 import { CSE_CANONICAL_FAMILIES, CSE_CANONICAL_DOSSIERS, CSE_CANONICAL_DOSSIER_MAP, CSE_QUESTION_OWNER_MAP } from "./sexual-ethics-data/canonical.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { CSE_MARRIAGE_AUTHORITY_DEBATES, CSE_MARRIAGE_AUTHORITY_SOURCES } from "./sexual-ethics-data/marriage-authority-debates.js";
@@ -118,7 +119,7 @@ function paragraphSourceLinks(win,item,kind,field=null){
       const witness=target.witness?` · ${target.witness}`:"";
       const scope=target.scope==="chapter"?L(win,"Opens cited chapter; locate the listed verses.","Ouvre le chapitre cité ; repérez les versets indiqués."):target.scope==="index"?L(win,"Source index only; passage link not verified.","Index uniquement ; lien au passage non vérifié."):"";
       const full=`${source.title} · ${target.locator}${witness}${scope?` · ${scope}`:""}`;
-      return `<a class="aoCSEInlineRef" data-ao-cse-inline-source="${esc(sourceId)}" data-ao-cse-link-scope="${esc(target.scope)}" href="${esc(target.url)}" target="_blank" rel="noopener noreferrer" title="${esc(full)}">${esc(visible)} ↗</a>`;
+      return `<a class="aoCSEInlineRef" data-ao-cse-inline-source="${esc(sourceId)}" data-ao-cse-link-scope="${esc(target.scope)}" href="${esc(target.url)}" target="_blank" rel="noopener noreferrer" title="${esc(full)}">${esc(visible)} ↗</a>${sourceId==="SCR"?scriptureContextCapsule(target.locator,{french:isFr(win)}):""}`;
     }).join("");
   }).filter(Boolean).join("");
   return links?`<span class="aoCSEInlineRefs" data-label="${esc(label)}">${links}</span>`:"";
