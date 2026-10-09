@@ -1,15 +1,225 @@
 {
   "schema": "ao-1962-sunday-reading-secondary-witness-v1",
-  "version": "2026-10-10-R1",
-  "scope": "Ten Sundays after Pentecost (X–XIX), two Scripture slots per Sunday; second published witness confirms printed Scripture boundaries, not independent provenance of the historical manuscript.",
-  "status": "20_OF_20_PUBLISHED_CITATIONS_RECONCILED_AFTER_TWO_BOUNDARY_CORRECTIONS",
+  "version": "2026-10-10-R2",
+  "scope": "All 23 post-Pentecost Sunday source identities II–XXIV: 46 Epistle/Gospel citation boundaries checked against original Latin Proper and a separately published 1962 reading. Excludes Trinity Sunday and calendar date selection.",
+  "status": "46_OF_46_CITATION_BOUNDARIES_RECONCILED; 44_UNCHANGED_AND_TWO_PREVIOUSLY_CORRECTED",
   "sourceHierarchy": {
     "originalLatin": "Exact Divinum Officium Latin Tempora Proper file (first-party source-text identity guard, not a claim the digital edition is normative by itself)",
     "secondPublishedWitness": "1962missal.com independent publisher, per-Sunday Epistola and Evangelium headings; separate publication is not proof of independent transcription",
     "thirdConfirmationForCorrections": "MissaleMeum provides a separate published 1962 witness to the discontinuous Galatians text; Missale Online shows Latin beginning at 5:25 despite a short linked chapter label",
-    "liturgicalAuthority": "The 1962 Roman Missal and rubrics control the appointed reading and Sunday selection; external websites are evidence, not autonomous rubrical authorities"
+    "liturgicalAuthority": "The 1962 Roman Missal and rubrics control the appointed reading and Sunday selection; external websites are evidence, not autonomous rubrical authorities",
+    "secondaryQualityGate": "Separate digital missal may abridge visible text and contains independent editorial choices. Compare citation boundaries and visible Latin openings only; do not declare line-by-line or independent printed-Missal collation.",
+    "conditionalIdentityGate": "Keep explicit Proper delegation for Pentecost III and the last Sunday, and retain Pentecost XXIII Philippians segmented citation."
   },
   "results": [
+    {
+      "sourcePath": "Tempora/Pent02-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent02-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent02-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-ii-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "1 John 3:13-18",
+          "GOSPEL": "Luc 14:16-24"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "1 Io 3:13-18",
+          "GOSPEL": "Luc 14:16-24"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "1John 3:13–18",
+        "GOSPEL": "Luke 14:16–24"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent03-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent03-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent03-0r.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-iii-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "1 Pet. 5:6-11",
+          "GOSPEL": "Luc 15:1-10"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "1 Petr 5:6-11",
+          "GOSPEL": "Luc 15:1-10"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "1Peter 5:6–11",
+        "GOSPEL": "Luke 15:1–10"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": "Selected Proper delegates to Pent03-0r for both printed readings."
+    },
+    {
+      "sourcePath": "Tempora/Pent04-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent04-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent04-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-iv-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Rom 8:18-23",
+          "GOSPEL": "Luc 5:1-11"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Rom 8:18-23",
+          "GOSPEL": "Luc 5:1-11"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Romans 8:18–23",
+        "GOSPEL": "Luke 5:1–11"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent05-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent05-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent05-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-v-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "1 Pet 3:8-15",
+          "GOSPEL": "Matt 5:20-24"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "1 Petr 3:8-15",
+          "GOSPEL": "Mt 5:20-24"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "1Peter 3:8–15",
+        "GOSPEL": "Matthew 5:20–24"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent06-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent06-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent06-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-vi-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Rom 6:3-11",
+          "GOSPEL": "Marc 8:1-9"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Rom 6:3-11",
+          "GOSPEL": "Mc 8:1-9"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Romans 6:3–11",
+        "GOSPEL": "Mark 8:1–9"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent07-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent07-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent07-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-vii-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Rom 6:19-23",
+          "GOSPEL": "Matt 7:15-21"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Rom 6:19-23",
+          "GOSPEL": "Mt 7:15-21"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Romans 6:19–23",
+        "GOSPEL": "Matthew 7:15–21"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent08-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent08-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent08-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-viii-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Rom 8:12-17",
+          "GOSPEL": "Luc 16:1-9"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Rom 8:12-17",
+          "GOSPEL": "Luc 16:1-9"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Romans 8:12–17",
+        "GOSPEL": "Luke 16:1–9"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent09-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent09-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent09-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-ix-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "1 Cor 10:6-13",
+          "GOSPEL": "Luc 19:41-47"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "1 Cor 10:6-13",
+          "GOSPEL": "Luc 19:41-47"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "1Corinthians 10:6–13",
+        "GOSPEL": "Luke 19:41–47"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
     {
       "sourcePath": "Tempora/Pent10-0",
       "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent10-0.txt",
@@ -149,14 +359,144 @@
         "GOSPEL": "MATCH"
       },
       "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent20-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent20-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent20-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xx-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Ephes 5:15-21",
+          "GOSPEL": "Joannes 4:46-53"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Eph 5:15-21",
+          "GOSPEL": "John 4:46-53"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Ephesians 5:15–21",
+        "GOSPEL": "John 4:46–53"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent21-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent21-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent21-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xxi-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Ephes 6:10-17",
+          "GOSPEL": "Matt 18:23-35"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Eph 6:10-17",
+          "GOSPEL": "Matt 18:23-35"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Ephesians 6:10–17",
+        "GOSPEL": "Matthew 18:23–35"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xxii-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Phil 1:6-11",
+          "GOSPEL": "Matt 22:15-21"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Phil 1:6-11",
+          "GOSPEL": "Matt 22:15-21"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Philippians 1:6–11",
+        "GOSPEL": "Matthew 22:15–21"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": null
+    },
+    {
+      "sourcePath": "Tempora/Pent23-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xxiii-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Phil 3:17-21; 4:1-3",
+          "GOSPEL": "Matt 9:18-26"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Phil 3:17-21; 4:1-3",
+          "GOSPEL": "Matt 9:18-26"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Philippians 3:17–21; 4:1–3",
+        "GOSPEL": "Matthew 9:18–26"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": "Split Philippians Epistle must retain both ordered chapters; reader already uses segmented owner."
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent24-0.txt",
+      "originalReadingSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent24-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xxiv-post-pentecosten/",
+      "printedCitations": {
+        "originalLatin": {
+          "EPISTLE_OR_LESSON": "Col 1:9-14",
+          "GOSPEL": "Matt 24:15-35"
+        },
+        "separatePublished": {
+          "EPISTLE_OR_LESSON": "Col 1:9-14",
+          "GOSPEL": "Matt 24:15-35"
+        }
+      },
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Colossians 1:9–14",
+        "GOSPEL": "Matthew 24:15–35"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "verificationLevel": "ORIGINAL_LATIN_CITATION_AND_OPENING_COMPARED_WITH_SEPARATELY_PUBLISHED_READING_NOT_COMPLETE_TEXT_COLLATION",
+      "notes": "Last Sunday has partial non-reading inheritance from Pent23-0 but prints its own Epistle and Gospel."
     }
   ],
   "totals": {
-    "sundayProperIdentities": 10,
-    "readingSlots": 20,
-    "agreedWithoutCorrection": 18,
+    "sundayProperIdentities": 23,
+    "readingSlots": 46,
+    "agreedWithoutCorrection": 44,
     "correctedBoundaryErrors": 2,
     "unresolvedInBatch": 0
   },
-  "excluded": "No new Bible translations, Gospel text reproduction, alternative calendar-date rules or non-X–XIX assertions."
+  "excluded": "Does not verify full text of any Bible edition, full 1962 printed-Missal collation, Calendar dates, local translational rights, the Trinity Proper, feasts or weekdays."
 }

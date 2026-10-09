@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-temporal-sunday-scripture-source-batch-v1",
-  "version": "2026-10-10-R3",
+  "version": "2026-10-10-R4",
   "status": "DIRECT_LATIN_SOURCE_BOUND_WITH_1962_RUBRICS_CONTEXT; NOT_GLOBAL_DOUBLE-COLLATION",
   "policy": [
     "Only exact sourcePath + displayed original Latin incipit unlocks the shared Bible Context capsule.",
@@ -10,7 +10,8 @@
     "Discontinuous biblical sections have distinct segmented-register owners; missing or redirected files must fail closed and cannot be guessed.",
     "Unpublished texts, procession readings, optional branch state and local translation texts remain outside this batch.",
     "A resumed Epiphany alias inherits biblical reading content only from its explicit source-owner pointer; the 1960 Code of Rubrics §18 and 1962 Calendar own when the resumed Proper is selected. Never deduce celebration from the alias's name.",
-    "All references must preserve precise verse starts and discontinuities. Ten Pentecost Sunday sources (X–XIX) were checked against a separate published witness; 2 initial boundaries were repaired; review file: data/mass/scripture-temporal-sunday-second-witness-audit.v1.json."
+    "All references must preserve precise verse starts and discontinuities. Ten Pentecost Sunday sources (X–XIX) were checked against a separate published witness; 2 initial boundaries were repaired; review file: data/mass/scripture-temporal-sunday-second-witness-audit.v1.json.",
+    "All 23 post-Pentecost Sunday identities II–XXIV and 46 reading citation boundaries were compared to separate published 1962 evidence; two verse-boundary mistakes were corrected previously. This is not full textual or liturgical editorial certification."
   ],
   "corpus": {
     "legacySingleRangeSundaySources": 8,
@@ -23,7 +24,12 @@
     "resolvedPreviouslyHeldSourcePaths": 5,
     "resolvedPreviouslyHeldReadingReferences": 10,
     "correctedEarlierSundaySingleReferences": 1,
-    "correctedEarlierSundayToSegmented": 1
+    "correctedEarlierSundayToSegmented": 1,
+    "secondPublishedWitnessSundayIdentities": 23,
+    "secondPublishedWitnessReadingSlots": 46,
+    "secondPublishedWitnessPreviouslyCorrectedBoundaries": 2,
+    "secondPublishedWitnessNewlyReviewedSundayIdentities": 13,
+    "secondPublishedWitnessNewlyReviewedReadingSlots": 26
   },
   "originalWitnesses": [
     {
@@ -681,7 +687,7 @@
   "deferred": {
     "missingFullMassSource": [],
     "resumedEpiphanySundays": [],
-    "independentTextCollation": "Ten Sunday source identities (X–XIX) / 20 reading slots compared against a separately published witness; two citation boundary errors corrected. This is a second published digital witness, not a complete independent 1962 print-edition collation. All other Sundays, Proper branches, weekday and feast references still require systematic secondary editorial audit."
+    "independentTextCollation": "Post-Pentecost II–XXIV: 23 Sunday Proper identities and 46 biblical citation slots collated to original Latin and separately published 1962 reading headings (44 matches, two previously corrected). Other seasons, independent printed 1962 witnesses, full verse-by-verse Latin and EN/FR text collation, feasts, weekdays and conditional Proper branches remain open."
   },
   "independentlyCorroboratedExamples": [
     {
