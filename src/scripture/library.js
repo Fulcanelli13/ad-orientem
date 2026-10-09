@@ -7,6 +7,7 @@ import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./re
 import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
 import { verifiedScriptureCommentary } from "./context.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
+import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -46,7 +47,13 @@ export function mountScriptureLibrary(root,{
  const stored=Boolean(storage?.getItem?.("ao-scripture-v1"));
  const preference=stored?prefs.load().language:language;
  let lang=["en","fr"].includes(preference)?preference:"en";
- let location=passage?scripturePassage(passage):scripturePassage({book:"Luke",chapter:1,verseStart:28});
+ let segmentSet=context?.segments?scriptureSegments(context.segments):null;
+ if(segmentSet && context.reference!==scriptureSegmentsReference(segmentSet))
+  throw new Error("Segmented Scripture citation and coordinates disagree");
+ let activeSegmentIndex=segmentSet?0:-1;
+ let location=segmentSet?segmentSet[0]:
+  passage?scripturePassage(passage):scripturePassage({book:"Luke",chapter:1,verseStart:28});
+ const leaveSourceSegments=()=>{segmentSet=null;activeSegmentIndex=-1;};
  let query="";
  let section="read";
  let contextDepth="selected";
@@ -138,7 +145,7 @@ export function mountScriptureLibrary(root,{
    const books=element("select");
    for(const book of scriptureBookCatalogue()){const opt=element("option",book);opt.value=book;books.append(opt);}
    books.value=location.book;
-   books.addEventListener("change",()=>{location=scripturePassage({book:books.value,chapter:1,verseStart:1});draw();});
+   books.addEventListener("change",()=>{leaveSourceSegments();location=scripturePassage({book:books.value,chapter:1,verseStart:1});draw();});
    bookControl.append(books);nav.append(bookControl);
    for(const [field,value] of [[t.chapter,location.chapter],[t.verse,location.verseStart]]){
      const label=element("label",field);const input=element("input");
@@ -146,6 +153,7 @@ export function mountScriptureLibrary(root,{
      input.addEventListener("change",()=>{
        const n=Number(input.value);
        if(!Number.isSafeInteger(n)||n<1||n>(field===t.chapter?scriptureChapterLimit(location.book):200)){input.value=String(value);return;}
+       leaveSourceSegments();
        location=field===t.chapter
          ? scripturePassage({book:location.book,chapter:n,verseStart:1})
          : scripturePassage({book:location.book,chapter:location.chapter,verseStart:n});
@@ -161,6 +169,24 @@ export function mountScriptureLibrary(root,{
      contextBar.dataset.aoScriptureContextReader=context.reference;
      const title=element("p",(lang==="fr"?"Passage cité · ":"Cited passage · ")+context.reference,"aoScriptureContextTitle");
      contextBar.append(title);
+     if(segmentSet?.length>1){
+       const sequence=element("nav",null,"aoScriptureSegments");
+       sequence.setAttribute("aria-label",lang==="fr"?"Passages de la lecture":"Reading passages");
+       segmentSet.forEach((segment,index)=>{
+         const label=segment.chapter+":"+segment.verseStart+
+           (segment.verseStart===segment.verseEnd?"":"–"+segment.verseEnd);
+         const step=element("button",label);
+         step.type="button";step.dataset.scriptureSegmentIndex=String(index);
+         step.setAttribute("aria-pressed",String(activeSegmentIndex===index));
+         step.setAttribute("aria-label",(lang==="fr"?"Passage ":"Passage ")+(index+1)+" / "+segmentSet.length+": "+segment.book+" "+label);
+         step.addEventListener("click",()=>{activeSegmentIndex=index;location=segmentSet[index];contextDepth="selected";commentaryVisible=false;draw();});
+         sequence.append(step);
+       });
+       contextBar.append(sequence);
+       contextBar.append(element("p",lang==="fr"
+         ?"Les segments sont dans l’ordre liturgique. Les versets omis ne sont pas rétablis."
+         :"Segments follow the liturgical reading. Omitted verses are not restored.","aoScriptureNotice"));
+     }
      const controls=element("div",null,"aoScriptureContextControls");
      for(const [key,en,fr] of [["selected","Verses","Versets"],["chapter","Chapter","Chapitre"],["commentary","Commentary","Commentaire"]]){
        const button=element("button",lang==="fr"?fr:en);
@@ -254,7 +280,7 @@ export function mountScriptureLibrary(root,{
    for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
      const button=element("button",label);button.type="button";
      button.disabled=direction<0 ? location.chapter===1 : location.chapter>=scriptureChapterLimit(location.book);
-     button.addEventListener("click",()=>{location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
+     button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
      actions.append(button);
    }
    main.append(actions);wrap.append(main);
@@ -270,11 +296,11 @@ export function mountScriptureLibrary(root,{
      if(!matches.length&&!bookMatches.length)resultArea.append(element("p",t.none));
      for(const book of bookMatches){
        const button=element("button",book);button.type="button";
-       button.addEventListener("click",()=>{location=scripturePassage({book,chapter:1,verseStart:1});draw();});resultArea.append(button);
+       button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage({book,chapter:1,verseStart:1});draw();});resultArea.append(button);
      }
      for(const match of matches){
        const button=element("button",passageReference(match)+" — "+match.text.slice(0,140));button.type="button";
-       button.addEventListener("click",()=>{location=scripturePassage(match);draw();});resultArea.append(button);
+       button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage(match);draw();});resultArea.append(button);
      }
    };
    searchField.addEventListener("input",()=>{query=searchField.value;paintResults();});
@@ -285,7 +311,7 @@ export function mountScriptureLibrary(root,{
    if(!marks.length)savedSection.append(element("p",t.noBookmarks));
    for(const mark of marks){
      const button=element("button",passageReference(mark));button.type="button";
-     button.addEventListener("click",()=>{location=scripturePassage(mark);draw();});
+     button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage(mark);draw();});
      savedSection.append(button);
    }
    wrap.append(savedSection);
@@ -305,7 +331,7 @@ export function mountScriptureLibrary(root,{
    for(const [id,item] of Object.entries(ROSARY_SCRIPTURE_LINKS)){
      const line=element("div",null,"aoScriptureMystery");
      const button=element("button",id+" · "+passageReference(item.passage));button.type="button";
-     button.addEventListener("click",()=>{location=item.passage;draw();});
+     button.addEventListener("click",()=>{leaveSourceSegments();location=item.passage;draw();});
      line.append(button,element("p",item.editorialSummary[lang]));rosary.append(line);
    }
    wrap.append(rosary);
@@ -313,9 +339,9 @@ export function mountScriptureLibrary(root,{
  draw();
  return Object.freeze({
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
-   setPassage(next){location=scripturePassage(next);draw();},
+   setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
    setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");records=next;draw();},
-   status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,bookmarks:prefs.load().bookmarks.length});},
+   status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
 }
