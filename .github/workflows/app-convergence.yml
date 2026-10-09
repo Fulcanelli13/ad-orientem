@@ -11,6 +11,11 @@ on:
       - "src/settings/**"
       - "src/mass/browser-entry.js"
       - "index.html"
+      - "assets/generated-sprites/**"
+      - "data/presentation/startup-sprite-report.v1.json"
+      - "tests/external-svg-sprite-e2e.mjs"
+      - "tests/startup-payload-contract.mjs"
+      - "tools/externalize-svg-sprites.mjs"
       - "package.json"
       - "data/presentation/app-release-gate.v1.json"
       - "tests/app-release-gate.mjs"
@@ -37,6 +42,11 @@ on:
       - "src/learn/**"
       - "src/mass/browser-entry.js"
       - "index.html"
+      - "assets/generated-sprites/**"
+      - "data/presentation/startup-sprite-report.v1.json"
+      - "tests/external-svg-sprite-e2e.mjs"
+      - "tests/startup-payload-contract.mjs"
+      - "tools/externalize-svg-sprites.mjs"
       - "package.json"
       - "data/presentation/app-release-gate.v1.json"
       - "tests/app-release-gate.mjs"
@@ -89,6 +99,7 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: node tests/external-svg-sprite-e2e.mjs
       - run: npm run test:rc-interaction-qa
       - run: npm run test:phone
       - run: node tests/app-shell-journey-e2e.mjs
