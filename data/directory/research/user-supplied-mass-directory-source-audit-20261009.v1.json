@@ -1,0 +1,71 @@
+{
+  "schema": "AO_MASS_DIRECTORY_EXTERNAL_WITNESSES_V1",
+  "reviewed_on": "2026-10-09",
+  "sourcePolicy": "Cross-check original parish/institute/diocese authority; source directories are witnesses rather than ownership or confirmation of liturgical edition. Keep personally maintained affiliations distinct.",
+  "sources": [
+    {
+      "id": "mass-of-ages-tradvillage",
+      "requested_url": "https://www.latinmass.com/find-latin-mass",
+      "directory_url": "https://viewer.mapme.com/tradvillage",
+      "organization": "Mass of the Ages Society",
+      "scope": "MULTINATIONAL",
+      "content_type": "EMBEDDED_MAPME_DIRECTORY",
+      "intake": "INTERFACE_BENCHMARK_AND_DISCREPANCY_DISCOVERY",
+      "priority": 1,
+      "source_quality": "SECONDARY_CROWDSOURCED",
+      "publish_directly": false,
+      "reason": "The embed is TradVillage; avoid treating map points as independent parish confirmations, require original sites and physical dedup."
+    },
+    {
+      "id": "lms-autumn-2026",
+      "requested_url": "https://lms.org.uk/sites/default/files/mass-listing/mass_listings_-_augutmn_2026_05.pdf",
+      "directory_url": "https://lms.org.uk/list-of-churches",
+      "organization": "Latin Mass Society",
+      "scope": "ENGLAND_WALES",
+      "content_type": "REGIONAL_ASSOCIATION_CHURCH_LIST_AND_SEASONAL_PDF",
+      "intake": "DISCOVER_AND_VALIDATE_WITH_PARISH_SOURCE",
+      "priority": 2,
+      "source_quality": "REGIONAL_TRADITIONAL_ASSOCIATION",
+      "publish_directly": false,
+      "reason": "PDF supplied was inaccessible from web; church list publicly indexed but membership may be needed for detailed schedules. Do not represent the PDF as inspected."
+    },
+    {
+      "id": "unavoce-scotland",
+      "requested_url": "https://unavocescotland.org/find-a-latin-mass/",
+      "organization": "Una Voce Scotland",
+      "scope": "SCOTLAND_NORTH_ENGLAND",
+      "content_type": "REGIONAL_LIVE_DIRECTORY",
+      "intake": "SOURCE_CROSSWALK_WITH_LITURGICAL_KIND_FILTER",
+      "priority": 1,
+      "source_quality": "REGIONAL_TRADITIONAL_ASSOCIATION",
+      "publish_directly": false,
+      "reason": "Mixes Roman 1962, Ordinariate Divine Worship and a discontinued St Brigid venue. Requires rite and current-status filter."
+    },
+    {
+      "id": "scribd-cmri-2025",
+      "requested_url": "https://www.scribd.com/document/1026836594/Traditional-Latin-Mass-Directory-Print-Version",
+      "directory_url": "https://cmri.org/cmri-directory-of-traditional-latin-masses/",
+      "original_pdf": "https://www.cmri.org/pdfs/traditional-latin-mass-directory-print-version.pdf",
+      "organization": "CMRI",
+      "scope": "CMRI_AFFILIATED",
+      "content_type": "FOUR_PAGE_2025_PDF_COPY",
+      "intake": "COMPARE_TO_ORIGINAL_CMRI_CURRENT_PAGES",
+      "priority": 3,
+      "source_quality": "THIRD_PARTY_COPY_OF_OLDER_INSTITUTE_RECORDS",
+      "publish_directly": false,
+      "reason": "Not a worldwide cross-institute compilation. Original institute publishes a current directory; already covered by a sizable CMRI corpus."
+    },
+    {
+      "id": "traditio-2026",
+      "requested_url": "https://www.traditio.com/tradlib/masslat.pdf",
+      "organization": "National Registry of Traditional Latin Masses / Fr M E Morrison",
+      "scope": "NORTH_AMERICA_WITH_OVERSEAS_APPENDIX",
+      "content_type": "231_PAGE_COPYRIGHTED_MONTHLY_PDF",
+      "intake": "HISTORICAL_OR_COMPARATIVE_DISCOVERY_ONLY",
+      "priority": 4,
+      "source_quality": "INDEPENDENT_EDITORIAL_DIRECTORY",
+      "publish_directly": false,
+      "reason": "All-rights-reserved reproduction restriction and ideological treatment that excludes 1962 Masses from its definition of traditional; its own preface says listings are not independently verified. Never use editorial negative classifications as liturgical or ecclesial facts."
+    }
+  ]
+}
