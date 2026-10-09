@@ -238,6 +238,57 @@ export const VERIFIED_MASS_FEAST_READINGS=Object.freeze([
         "latinIncipit": "Dixit Isaias Domine quis credidit auditui nostro"
       }
     }
+  },
+  {
+    "sourcePath": "Tempora/093-3",
+    "title": "September Ember Wednesday (1962)",
+    "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-23?theme=light",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Nehemiah 8:1–10",
+        "latinIncipit": "in diebus illis congregatus est omnis populus quasi vir unus ad plateam quae est ante portam aquarum et"
+      },
+      "GOSPEL": {
+        "reference": "Mark 9:16–28",
+        "latinIncipit": "in illo tempore respondens unus de turba dixit ad jesum magister attuli filium meum ad te habentem spiritum"
+      }
+    },
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-3.txt",
+    "note": "The supplementary Amos 9:13–15 is the source-ordered LectioL1, not this later ordinary Nehemiah Epistle."
+  },
+  {
+    "sourcePath": "Tempora/093-5",
+    "title": "September Ember Friday (1962)",
+    "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-25?theme=light",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Hosea 14:2–10",
+        "latinIncipit": "haec dicit dominus deus convertere israel ad dominum deum tuum quoniam corruisti in iniquitate tua tollite vobiscum verba"
+      },
+      "GOSPEL": {
+        "reference": "Luke 7:36–50",
+        "latinIncipit": "in illo tempore rogabat jesum quidam de pharisaeis ut manducaret cum illo et ingressus domum pharisaei discubuit et"
+      }
+    },
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-5.txt",
+    "note": "The Luke Gospel source is inherited from Sancti/07-22; matched Latin is verified against the resolved Proper and not inferred from a date."
+  },
+  {
+    "sourcePath": "Tempora/093-6",
+    "title": "September Ember Saturday (1962)",
+    "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-26?theme=light",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Hebrews 9:2–12",
+        "latinIncipit": "fratres tabernaculum factum est primum in quo erant candelabra et mensa et propositio panum quae dicitur sancta post"
+      },
+      "GOSPEL": {
+        "reference": "Luke 13:6–17",
+        "latinIncipit": "in illo tempore dicebat jesus turbis hanc similitudinem arborem fici habebat quidam plantatam in vinea sua et venit"
+      }
+    },
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-6.txt",
+    "note": "The five preparatory lessons are separate from the Hebrews 9:2–12 ordinary Mass Epistle; Sept Ember shorter/longer form is source-controlled."
   }
 ]);
 export const VERIFIED_MASS_FEAST_VERSION="1962-MASS-FEAST-READING-CONTEXT-SUPPLEMENT-V1";

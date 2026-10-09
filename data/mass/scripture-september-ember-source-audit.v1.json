@@ -1,0 +1,169 @@
+{
+  "schema": "ao-1962-september-ember-scripture-source-audit-v1",
+  "version": "2026-10-09-A",
+  "policy": "Primary 1960/1962 Proper source-section identity and Latin read text; source-order not suffix order; no implicit season-week path, no date-only binding, and no copying of Greek/English biblical numbering into Vulgate coordinates.",
+  "liturgicalYear2026": {
+    "wednesday": "2026-09-23",
+    "friday": "2026-09-25",
+    "saturday": "2026-09-26",
+    "source": "https://www.missalemeum.com/en/calendar"
+  },
+  "days": [
+    {
+      "date": "2026-09-23",
+      "sourcePath": "Tempora/093-3",
+      "latinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-3.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-23?theme=light",
+      "sourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1",
+        "Lectio",
+        "Graduale",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Amos 9:13–15",
+          "status": "LINKED_ONLY_IF_SOURCE_ORDER_AND_LATIN_MATCH"
+        }
+      ],
+      "ordinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "sourceSectionId": "Lectio",
+          "reference": "Nehemiah 8:1–10",
+          "note": "The Latin source calls Nehemiah Esdras and the English source labels the book 2 Esdras; canonical context ID is Nehemiah."
+        },
+        {
+          "slot": "GOSPEL",
+          "sourceSectionId": "Evangelium",
+          "reference": "Mark 9:16–28"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "sourcePath": "Tempora/093-5",
+      "latinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-5.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-25?theme=light",
+      "sourceSectionOrder": [
+        "Lectio",
+        "Graduale",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [],
+      "ordinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "sourceSectionId": "Lectio",
+          "reference": "Hosea 14:2–10"
+        },
+        {
+          "slot": "GOSPEL",
+          "sourceSectionId": "Evangelium",
+          "reference": "Luke 7:36–50",
+          "sourceOwner": "Sancti/07-22",
+          "note": "Inherited source section. Context requires actual resolved Gospel Latin in the selected Ember Friday Proper."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "sourcePath": "Tempora/093-6",
+      "latinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-6.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-26?theme=light",
+      "rule": "(rubrica 1960) celebranda aut forma longior aut forma brevior",
+      "longFormSupplementaryReadingIds": [
+        "LectioL1",
+        "LectioL2",
+        "LectioL3",
+        "LectioL4",
+        "LectioL5"
+      ],
+      "shortFormSupplementaryReadingIds": [
+        "LectioL1",
+        "LectioL5"
+      ],
+      "fullSourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1",
+        "LectioL2",
+        "GradualeL2",
+        "OratioL2",
+        "LectioL3",
+        "GradualeL3",
+        "OratioL3",
+        "LectioL4",
+        "GradualeL4",
+        "OratioL4",
+        "LectioL5",
+        "OratioL5",
+        "Lectio",
+        "Graduale",
+        "Evangelium"
+      ],
+      "note": "This array records source section order of the Latin long-form file; generated shorter-form manifest must be established by the upstream liturgical rule, not computed here.",
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Leviticus 23:26–32",
+          "status": "LINKED_ONLY_IF_SOURCE_ORDER_AND_LATIN_MATCH"
+        },
+        {
+          "sourceSectionId": "LectioL2",
+          "reference": "Leviticus 23:39–43",
+          "status": "LINKED_ONLY_IF_PRESENT_IN_LONG_FORM_AND_LATIN_MATCH"
+        },
+        {
+          "sourceSectionId": "LectioL3",
+          "reference": "Micah 7:14; 7:16; 7:18–20",
+          "status": "LINKED_ONLY_IF_PRESENT_IN_LONG_FORM_AND_LATIN_MATCH"
+        },
+        {
+          "sourceSectionId": "LectioL4",
+          "reference": "Zechariah 8:14–19",
+          "status": "LINKED_ONLY_IF_PRESENT_IN_LONG_FORM_AND_LATIN_MATCH"
+        },
+        {
+          "sourceSectionId": "LectioL5",
+          "reference": "Daniel 3:47–51",
+          "status": "HELD_LITURGICAL_VERSE_ORDER_DIFFERS_FROM_CANONICAL_BIBLE_ORDER",
+          "observedLatinHeader": "Dan 3:47-51",
+          "observedFrenchHeader": "Dan 3:47-51",
+          "observedEnglishHeader": "Dan 3:49-51",
+          "actualLatinTextOrder": [
+            "Daniel 3:49",
+            "Daniel 3:47–48",
+            "Daniel 3:50–51"
+          ],
+          "hymnSeparate": "Daniel 3:52–59 (liturgical Hymnus, separately displayed, not the same prose Lesson)",
+          "explanation": "The Latin text begins Angelus Domini descendit (canonical Vulgate 3:49), then includes flamma effundebatur and erupit (3:47–48), then 3:50–51. The English source header omits 47–48 despite containing the text. The shared Scripture segment reader requires canonical ascending order; do not publish this as an ordinary in-order liturgical selection until contextual annotation is supported.",
+          "independentVulgateWitness": "https://www.newadvent.org/bible/dan003.htm"
+        }
+      ],
+      "ordinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "sourceSectionId": "Lectio",
+          "reference": "Hebrews 9:2–12"
+        },
+        {
+          "slot": "GOSPEL",
+          "sourceSectionId": "Evangelium",
+          "reference": "Luke 13:6–17"
+        }
+      ]
+    }
+  ],
+  "forbidden": [
+    "Never treat September Ember 2026 as 16/18/19 Sep according to older rule.",
+    "Never attach Amos or Leviticus preparatory lessons to the later ordinary Epistle slot.",
+    "Never silently order Micah 7:14,16,18–20 as 7:14–20.",
+    "Never turn Graduale or Oratio sections into Scripture Lessons.",
+    "Never reuse a held Daniel superspan as though the Missal presents it in canonical Bible verse order.",
+    "Never infer long-form lessons on a selected short-form reader."
+  ]
+}
