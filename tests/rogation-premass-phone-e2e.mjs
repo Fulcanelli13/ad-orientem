@@ -38,6 +38,12 @@ try{
    });
   },{date,lang});
   await page.waitForSelector("[data-ao-rogation-preflight]");
+  const ordered=await page.evaluate(()=>{
+    const flow=document.querySelector("#ao-mass-flow-v1");
+    return [...flow.children].indexOf(flow.querySelector("[data-ao-rogation-preflight]"))<
+      [...flow.children].indexOf(flow.querySelector(".aoFlowActions"));
+  });
+  assert.equal(ordered,true,"Rogation choice must precede the Start Mass action");
   await page.locator("[data-ao-rogation-preflight] summary").click();
   await page.waitForFunction(()=>document.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]')?.disabled===true);
   const status=await page.locator("[data-rogation-status]").textContent();
