@@ -116,6 +116,27 @@ assert.equal(aspergesReady.aspergesController.project().faithfulGesture,"MAKE_FU
 aspergesReady.aspergesController.goTo("ASP-R05");
 assert.equal(aspergesReady.aspergesController.project().handoff,"FOOT_CLUSTER");
 
+const palmPrepared={
+  ...livePrepared,
+  session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["PALM"]},
+    plan:{...livePrepared.session.plan,precedingGraphs:["PALM"],normalLastGospel:false},
+  },
+};
+const palmReady=await prepareNativeReaderPreview({
+  prepared:palmPrepared,presentationData:data,eventData,cueRegistries,guideData,palmData
+});
+palmReady.palmController.goTo("PALM-R04");
+assert.equal(palmReady.palmController.project().posture,null,
+  "native Palm prelude imposed participant-only posture");
+palmReady.palmController.setProcessionParticipant(true);
+assert.equal(palmReady.palmController.project().posture,"PROCESSIONAL");
+palmReady.palmController.setProcessionParticipant(false);
+assert.equal(palmReady.palmController.project().posture,null);
+palmReady.palmController.goTo("PALM-R07");
+assert.equal(palmReady.palmController.project().handoff,"INTROIT");
+
 const candlemasPrepared={
   ...livePrepared,
   session:{
@@ -142,6 +163,14 @@ assert.equal(candlemasReady.candlemasController.massCandleState("MC-COM-030").st
 assert.equal(candlemasReady.candlemasController.massCandleState("MC-COM-040").state,null);
 candlemasReady.candlemasController.goTo("CND-R07");
 assert.equal(candlemasReady.candlemasController.project().handoff,"INTROIT");
+candlemasReady.candlemasController.goTo("CND-R05");
+candlemasReady.candlemasController.setProcessionParticipant(false);
+assert.equal(candlemasReady.candlemasController.project().posture,null,
+  "native Candlemas prelude would show procession posture to someone who stayed behind");
+assert.equal(candlemasReady.candlemasController.project().candleState,"BLESSED_CANDLE_HELD");
+candlemasReady.candlemasController.setProcessionParticipant(true);
+assert.equal(candlemasReady.candlemasController.project().posture,"PROCESSIONAL");
+candlemasReady.candlemasController.goTo("CND-R07");
 
 const rogationsPrepared={
   ...livePrepared,
@@ -198,6 +227,9 @@ for(const [followingAction,fixture,controllerKey,firstId,ending] of followingFix
   assert.equal(readyFollowing.lifecycleRuntime.contract.followingAction.active,true);
   if(followingAction==="REQUIEM_ABSOLUTION"){
     const abs=readyFollowing.requiemAbsolutionController;
+    const pilgrim=abs.project();
+    assert.equal(pilgrim.burialParticipant,false,
+      "Requiem personal burial participation was inferred without a choice");
     assert.equal(readyFollowing.lifecycleRuntime.contract.massBoundary.anchor,
       "AFTER_PLAN_DEFINED_MASS_END__LAST_GOSPEL_SUPPRESSED",
       "Requiem Absolution handoff incorrectly forced an ordinary Last Gospel");
