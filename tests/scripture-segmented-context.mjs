@@ -67,7 +67,7 @@ assert.deepEqual(source.readings[2].segments,part);
 assert.equal(source.readings[2].segments[0].verseEnd,12);
 assert.equal(source.readings[2].segments[1].verseStart,14,"Sacred Heart liturgical Epistle omits Ephesians 3:13");
 const excluded=load("../data/mass/distinct-rite-scripture-order.v1.json");
-assert.equal(excluded.status,"SOURCE_VERIFIED_ORDER_RESEARCH_ONLY_NOT_UI_LINKED");
+assert.equal(excluded.status,"SOURCE_VERIFIED_PARTIALLY_NATIVE_CONTEXT_LINKED");
 assert.equal(excluded.rites[0].entries[2].nativeStateIds.length,3,"Good Friday death pause must stay separate");
 assert.equal(excluded.rites[1].entries.length,4,"Easter Vigil 1962 retains exactly four prophecies");
 let single=0,multi=0;
