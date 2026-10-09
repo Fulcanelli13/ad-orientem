@@ -2,6 +2,7 @@ import { NOVENA_CORPUS_V3 } from "./novena-corpus.js";
 import { NOVENA_FRENCH_BODY_V1 } from "./novena-french-body-v1.js";
 import { NOVENA_FRENCH_BODY_V1_MARIAN } from "./novena-french-body-v1-marian.js";
 import { NOVENA_FRENCH_BODY_V1_DEVOTIONAL } from "./novena-french-body-v1-devotional.js";
+import { NOVENA_FRENCH_GUIDE_PARITY_V1 } from "./novena-french-guide-parity.v1.js";
 
 export const NOVENA_CORPUS_V4_VERSION="bilingual-16-target-v1";
 
@@ -43,10 +44,15 @@ function translatedSourceBody(n,t){
   for(const key of ["repeatText","opening","churchPrayer","ejaculation","sharedClosingText"]){
     if(n[key])out[key]=bi(n[key],t?.[key]);
   }
-  out.days=A((n.days||[]).map((d,i)=>F({
-    ...d,
-    ...(d.text?{text:bi(d.text,t?.days?.[i])}:{})
-  })));
+  out.days=A((n.days||[]).map((d,i)=>{
+    const frGuide=NOVENA_FRENCH_GUIDE_PARITY_V1[n.id]?.[i]||null;
+    return F({
+      ...d,
+      ...(frGuide?.theme?{theme:bi(d.theme.en,frGuide.theme)}:{}),
+      ...(frGuide?.guide?{guide:bi(d.guide.en,frGuide.guide)}:{}),
+      ...(d.text?{text:bi(d.text,t?.days?.[i])}:{})
+    });
+  }));
   return F(out);
 }
 
