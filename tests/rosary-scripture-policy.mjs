@@ -29,6 +29,17 @@ for(const [id,meditations] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1))
   relationshipCounts[citation.relationship]=(relationshipCounts[citation.relationship]||0)+1;
  }
 }
+const biblicalLinks=Object.values(ROSARY_GUIDED_BEAD_EVIDENCE_V1).flat().filter(x=>/^https:\/\/fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\//.test(x.frenchPrimaryUrl));
+assert.equal(biblicalLinks.length,190,"expected 190 chapter-specific Crampon links and 10 doctrinal witnesses");
+for(const citation of biblicalLinks){
+ const chapter=citation.reference.match(/\b(\d+):\d+/)?.[1];
+ assert.ok(chapter,"cannot identify Bible chapter in "+citation.reference);
+ assert.equal(new URL(citation.frenchPrimaryUrl).hash,"#"+chapter,
+   "French Scripture source must open at chapter rather than at the book's title page: "+citation.reference);
+}
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2[4].primaryUrl,
+ "https://www.biblegateway.com/passage/?search=Isaiah%2053%3A5&version=DRA",
+ "Isaias 53 must use the stable Douay–Rheims BibleGateway passage, not stale CCEL path");
 assert.equal(Object.values(relationshipCounts).reduce((x,y)=>x+y,0),200);
 assert.equal(relationshipCounts.MARIAN_TYPOLOGICAL_READING,6);
 assert.equal(relationshipCounts.DEFINED_DOCTRINE,2);
