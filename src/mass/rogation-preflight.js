@@ -19,13 +19,20 @@ export function isLesserRogationDay(date){
   const offset=Math.round((Date.parse(date+"T00:00:00Z")-easter.getTime())/86400000);
   return [36,37,38].includes(offset);
 }
-export function resolvedRogationCandidate(legacy){
-  const rank=Number(legacy?.calendarRank??legacy?.calendarDay?.rank);
-  const source=String(legacy?.properSource??legacy?.calendarDay?.path??"");
+export function resolvedRogationCandidate(legacy, resolvedDay=null,{requireResolver=false}={}){
+  const normalized=resolvedDay?.proper?.data??null;
+  const verifiedDay=resolvedDay?.status==="ready"&&
+    resolvedDay?.proper?.status==="ready"&&Number(resolvedDay?.day?.main?.rank)===4&&
+    (normalized?.sourcePath??normalized?.meta?.path??normalized?.source?.path)==="Tempora/Pasc5-0";
+  const rank=Number(resolvedDay?.day?.main?.rank??legacy?.calendarRank??legacy?.calendarDay?.rank);
+  const source=String(normalized?.sourcePath??normalized?.meta?.path??
+    legacy?.properSource??legacy?.calendarDay?.path??"");
   const eligible=legacy?.canStart===true&&isLesserRogationDay(legacy.date)&&
-    rank===4&&source.startsWith("Tempora/Pasc5-0")&&
-    (legacy?.requestedCelebrationId??"mass_of_day")==="mass_of_day";
-  return Object.freeze({eligible,date:eligible?legacy.date:null,dayClass:eligible?rank:null});
+    rank===4&&source==="Tempora/Pasc5-0"&&
+    (legacy?.requestedCelebrationId??"mass_of_day")==="mass_of_day"&&
+    (!requireResolver||verifiedDay);
+  return Object.freeze({eligible,date:eligible?legacy.date:null,dayClass:eligible?rank:null,
+    authority:verifiedDay?"DAY_RESOLVER":eligible?"LEGACY_PREFLIGHT":null});
 }
 export function rogationPrefaceReady(preface){
   if(preface?.schema!=="AO_1962_ROGATION_EASTER_PREFACE_V1" ||
@@ -59,9 +66,10 @@ export function rogationPublicChoiceReady(library){
     rogationPrefaceReady(library?.preface));
 }
 export function projectRogationPreflight({
- legacy,choice="DAY_MASS",service=null,library=null
+ legacy,choice="DAY_MASS",service=null,library=null,
+ resolvedDay=null,requireResolver=false
 }={}){
-  const candidate=resolvedRogationCandidate(legacy);
+  const candidate=resolvedRogationCandidate(legacy,resolvedDay,{requireResolver});
   if(!candidate.eligible)return Object.freeze({visible:false,choice:"DAY_MASS",selection:null});
   if(![null,"PUBLIC_PROCESSION","ORDINARY_AUTHORIZED_SUPPLICATIONS"].includes(service))
     throw new Error("ROGATION_PUBLIC_SERVICE_INVALID");
@@ -87,9 +95,10 @@ export function projectRogationPreflight({
   return Object.freeze({visible:true,available,choice,selection});
 }
 
-export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis.fetch,language=()=> "en"}={}){
+export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetchImpl=globalThis.fetch,language=()=> "en"}={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")throw new TypeError("Rogation DOM and resolver required");
   let choice="DAY_MASS",service=null,library=null,loading=false,disposed=false,root=null,lastDate=null;
+  let verifiedDay=null,verifiedDate=null,pendingDate=null;
   const container=()=>doc.getElementById("ao-mass-flow-v1");
   const mount=()=>container()?.querySelector(".aoFlowActions")??container()?.querySelector("[data-ao-start-live]")?.parentElement;
   const labels=()=>String(language()).startsWith("fr")?{
@@ -108,9 +117,25 @@ export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis
   function refresh(){
     if(disposed)return;
     let legacy=null;try{legacy=getResolvedMass()}catch{return}
-    const candidate=resolvedRogationCandidate(legacy);
-    if(!candidate.eligible){root?.remove();root=null;choice="DAY_MASS";service=null;lastDate=null;return}
-    if(lastDate!==candidate.date){choice="DAY_MASS";service=null;lastDate=candidate.date;}
+    const date=legacy?.date??null;
+    if(date!==lastDate){
+      choice="DAY_MASS";service=null;lastDate=date;
+      verifiedDate=null;verifiedDay=null;pendingDate=null;
+    }
+    if(typeof resolveDay==="function"&&isLesserRogationDay(date)&&
+      legacy?.canStart===true&&verifiedDate!==date&&pendingDate!==date){
+      pendingDate=date;
+      void Promise.resolve().then(()=>resolveDay(date)).then(day=>{
+        if(disposed||lastDate!==date)return;
+        verifiedDay=day;verifiedDate=date;pendingDate=null;refresh();
+      }).catch(()=>{
+        if(disposed||lastDate!==date)return;
+        verifiedDay={status:"unavailable"};verifiedDate=date;pendingDate=null;refresh();
+      });
+    }
+    const candidate=resolvedRogationCandidate(legacy,
+      verifiedDate===date?verifiedDay:null,{requireResolver:typeof resolveDay==="function"});
+    if(!candidate.eligible){root?.remove();root=null;choice="DAY_MASS";service=null;return}
     const anchor=mount();if(!anchor)return;
     if(root&&!root.isConnected)root=null;
     if(!root){
@@ -155,7 +180,11 @@ export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis
     }
   }
   function selectionFor(legacy){
-    const snapshot=projectRogationPreflight({legacy,choice,service,library});
+    const snapshot=projectRogationPreflight({
+      legacy,choice,service,library,
+      resolvedDay:verifiedDate===legacy?.date?verifiedDay:null,
+      requireResolver:typeof resolveDay==="function"
+    });
     if(snapshot.choice==="ROGATION_MASS"&&!snapshot.available)
       throw new Error("ROGATION_PROPER_NOT_PUBLISHED");
     return snapshot.selection;
