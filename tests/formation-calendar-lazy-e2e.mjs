@@ -167,10 +167,22 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-export-ics='2026-10']").waitFor({state:"visible",timeout:12000});
- await page.waitForFunction(()=>{
-   const el=document.querySelector("#ao-calendar-modular-root [data-cal-export-ics='2026-10']");
-   return Boolean(el&&!el.disabled);
- },null,{timeout:90000});
+ try{
+   await page.waitForFunction(()=>{
+     const el=document.querySelector("#ao-calendar-modular-root [data-cal-export-ics='2026-10']");
+     return Boolean(el&&!el.disabled);
+   },null,{timeout:90000});
+ }catch(error){
+   const diagnostics=await page.evaluate(()=>{
+     const month="2026-10",api=globalThis.AO_CALENDAR_APP_V1,cache=globalThis.AO_CALENDAR_WEEK_CACHE_V4345;
+     const days=api?.monthGridIds?.(month)?.filter(d=>d.startsWith(month))||[];
+     return {status:api?.status?.(),days:days.map(d=>{
+       const r=cache?.get?.(d);
+       return {date:d,status:r?.status||null,day:Boolean(r?.day?.main),title:r?.day?.main?.title||null,rank:r?.day?.main?.rank||null,properStatus:r?.proper?.status||null,rawError:r?.error||null};
+     })};
+   });
+   throw new Error("Month export remained unavailable: "+String(error?.message||error)+" · "+JSON.stringify(diagnostics));
+ }
  const [calendarDownload]=await Promise.all([
    page.waitForEvent("download",{timeout:15000}),
    page.locator("#ao-calendar-modular-root [data-cal-export-ics='2026-10']").click()
