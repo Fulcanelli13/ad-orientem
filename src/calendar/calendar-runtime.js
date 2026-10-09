@@ -119,6 +119,11 @@ function sourceHints(r){
 }
 function observedCycle(r,id){
   if(!r||r.status==="failed"||!r.day)return "unknown";
+  // Observance identity takes precedence over the weekday: a solemnity of
+  // Our Lady or a saint celebrated on Sunday remains sanctorale.
+  const observedId=String(r.day.main?.id||"").toLowerCase();
+  if(observedId.startsWith("sancti:"))return "sanctorale";
+  if(observedId.startsWith("tempora:"))return "temporale";
   // Classify the observed celebration, never a projected date which might be
   // impeded or transferred under the 1962 rubrics.
   const hints=sourceHints(r);
