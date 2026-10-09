@@ -296,6 +296,37 @@ export function createFindOwner(win=globalThis){
     lastMapView=null;lastMapLens=null;void paint();
   }
 
+  async function handoff(surface,openExact,label){
+    const shell=win?.AO_APP_SHELL_V1;
+    actionError("");
+    try{
+      const routed=await shell?.navigate?.(surface);
+      if(routed?.ok===true){
+        const exact=await openExact();
+        if(exact===true||exact?.ok===true)return true;
+      }
+    }catch(error){
+      try{win?.console?.error?.("Explore handoff unavailable",surface,error)}catch{}
+    }
+    // The canonical shell performs a hard-Home reset before every routed
+    // destination. A refused destination therefore cannot rely on the
+    // previous Explore sheet still being visible. Restore its existing
+    // exact lens before showing the recoverable bilingual error.
+    try{
+      if(shell?.getActive?.()!=="find"){
+        const recovered=await shell?.navigate?.("find");
+        if(recovered?.ok!==true){
+          try{win?.console?.error?.("Explore handoff restoration unavailable",surface)}catch{}
+          return false;
+        }
+      }
+      actionError(label);
+    }catch(error){
+      try{win?.console?.error?.("Explore handoff restoration failed",error)}catch{}
+    }
+    return false;
+  }
+
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
@@ -349,11 +380,8 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();event.stopPropagation?.();
       const date=calendarDate.dataset.exploreCalendarDate;
       if(/^\d{4}-\d{2}-\d{2}$/.test(date||"")){
-        close();
-        void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("calendar")).then(result=>{
-          if(result?.ok===true)return win?.AO_CALENDAR_APP_V1?.select?.(date);
-          return false;
-        }).catch(error=>console.error("Explore Calendar deep link failed",error));
+        void handoff("calendar",()=>win?.AO_CALENDAR_APP_V1?.select?.(date),
+          language(win)==="fr"?"Impossible d’ouvrir cette date. Réessayez.":"Could not open this date. Please retry.");
       }
       return;
     }
@@ -362,14 +390,11 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();event.stopPropagation?.();
       const novenaId=novena.dataset.exploreOpenNovena;
       if(!novenaId)return;
-      // Explore is available before the Prayer reader has been imported.
-      // Enter through the canonical shell to load PRAY; only then deep-link.
-      close();
-      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("pray"))
-        .then(result=>result?.ok===true
-          ?win?.AO_PRAY_V435930?.open?.("pray.novenas",{novenaId,returnContext:{surface:"find"}})
-          :false)
-        .catch(error=>console.error("Explore novena navigation failed",error));
+      // Shell loads the canonical Prayer owner before opening the specific
+      // Novena. On failure return to this Explore lens, not generic Pray.
+      void handoff("pray",()=>win?.AO_PRAY_V435930?.open?.("pray.novenas",
+        {novenaId,returnContext:{surface:"find"}}),
+        language(win)==="fr"?"Impossible d’ouvrir cette neuvaine. Réessayez.":"Could not open this novena. Please retry.");
       return;
     }
     if(target?.closest?.("[data-find-show-more]")){
