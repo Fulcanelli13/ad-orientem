@@ -1299,7 +1299,11 @@ export async function mountNativeReaderPreview({
       : matrixAction;
     const priestAction=cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
     const attention=readerAttentionForState({priestVoice,response});
-    const postureCue=cueNative && cueProjection?.posture?.cueId===activeCueId
+    // A native source transition may animate the selected posture owner.
+    // Never issue a conflicting instruction when a local/observed profile
+    // deliberately resolved a different faithful posture.
+    const postureCue=cueNative && cueProjection?.posture?.cueId===activeCueId &&
+      String(posture?.value??posture?.label??"")===String(cueProjection.posture.value??cueProjection.posture.label??"")
       ? cueProjection.posture : null;
     const iconKeys=iconKeysForReaderState({
       priestPosition,posture,gesture,response,priestVoice,
