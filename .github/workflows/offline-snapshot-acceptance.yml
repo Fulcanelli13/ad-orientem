@@ -1,0 +1,30 @@
+name: Offline snapshot acceptance
+on:
+  pull_request:
+    paths:
+      - "sw.js"
+      - "src/app/offline-boot.js"
+      - "src/app/browser-entry.js"
+      - "tests/offline-snapshot-e2e.mjs"
+      - ".github/workflows/offline-snapshot-acceptance.yml"
+  push:
+    branches: [main]
+    paths:
+      - "sw.js"
+      - "src/app/offline-boot.js"
+      - "src/app/browser-entry.js"
+      - "tests/offline-snapshot-e2e.mjs"
+permissions:
+  contents: read
+jobs:
+  offline-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/offline-snapshot-e2e.mjs
