@@ -3,6 +3,7 @@
 // Legacy DOM/state is consulted only when an explicit rollback/shadow donor is supplied.
 
 import { createMassReaderModel } from "./reader-model.js";
+import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { loadReaderPresentationData } from "./reader-data.js";
@@ -1049,6 +1050,52 @@ export async function mountNativeReaderPreview({
     return api;
   }
 
+  // Print is sourced from the canonical 30-section MISSAL text model,
+  // including AO.SM.B061 (Canon Per omnia / Amen), rather than from the
+  // 39/48-step LIVE presentation. Mode and visible LIVE cards are unchanged.
+  let bookletModel=null,printAssessment={ok:false},massPrintControl=null;
+  try{
+    bookletModel=buildReaderModeModels({
+      prepared:ready.prepared,data:ready.data,mode:"MISSAL"
+    }).sourceModel;
+    printAssessment=assessMassTextPrint({
+      prepared,model:bookletModel,
+      guideRegistry:ready.guide?.registry??null,
+      language:prepared?.readerPreferences?.language??"en"
+    });
+  }catch(error){
+    // Fail closed; the native reader remains usable without print.
+    printAssessment={ok:false,reason:String(error?.message??error)};
+  }
+  if(printAssessment.ok){
+    const print=doc.createElement("button");
+    print.type="button";
+    print.dataset.aoNativeMassPrint="source-text";
+    print.textContent=String(prepared?.readerPreferences?.language??"en").startsWith("fr")?"Imprimer":"Print text";
+    print.setAttribute("aria-label",String(prepared?.readerPreferences?.language??"en").startsWith("fr")?"Imprimer les textes bilingues de la messe":"Print bilingual Mass texts");
+    print.title=String(prepared?.readerPreferences?.language??"en").startsWith("fr")
+      ?"Ordinaire et Propre, sans les rubriques complètes"
+      :"Ordinary and Propers; detailed ceremonial rubrics not included";
+    print.className="ao-mass-prefs-more";
+    print.style.cssText="min-height:44px;font-size:11px;";
+    print.addEventListener("click",()=>{
+      try{
+        const popup=doc.defaultView?.open?.("","_blank");
+        if(!popup)throw new Error("PRINT_POPUP_BLOCKED");
+        popup.opener=null;
+        const html=renderMassTextPrintHtml({prepared,model:bookletModel,guideRegistry:ready.guide.registry,language:prepared?.readerPreferences?.language??"en"});
+        popup.document.open();popup.document.write(html);popup.document.close();
+        root.dataset.aoNativePrintStatus="READY";
+      }catch(error){
+        root.dataset.aoNativePrintStatus="UNAVAILABLE";
+        console.error("Native reader Mass text print failed closed",error);
+        print.title=String(prepared?.readerPreferences?.language??"en").startsWith("fr")
+          ?"Impression indisponible; vérifier l’autorisation des fenêtres"
+          :"Print unavailable; check browser pop-up permissions";
+      }
+    });
+    massPrintControl=print;
+  }
   let sourceModel=ready.model;
   let readerModel=ready.presentationModel??ready.model;
   let current=readerModel.cardBySequence(1);
@@ -2110,6 +2157,12 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
+  // The existing Mass preferences surface owns secondary tools: no floating
+  // button over the section selector or the 48-step LIVE ribbon.
+  const nativePreferences=host.querySelector('[data-role="mass-preferences"]');
+  if(massPrintControl&&nativePreferences)nativePreferences.append(massPrintControl);
+  root.dataset.aoNativePrintGate=printAssessment.ok?"READY":String(printAssessment.reason||"SOURCE_UNAVAILABLE");
+  root.dataset.aoNativePrintMounted=String(Boolean(host.querySelector('[data-ao-native-mass-print]')));
   createRiteChoice();
   root.addEventListener?.("click",onRiteChoiceClick);
   if(inRogations)showRogations();

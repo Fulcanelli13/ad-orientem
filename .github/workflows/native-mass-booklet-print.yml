@@ -1,0 +1,29 @@
+name: Native Mass booklet print acceptance
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/mass/reader-print-booklet.js"
+      - "src/mass/reader-native-preview.js"
+      - "tests/reader-print-booklet.mjs"
+      - "tests/reader-phone-acceptance.mjs"
+      - "tests/fixtures/reader-phone-harness.html"
+      - ".github/workflows/native-mass-booklet-print.yml"
+  workflow_dispatch:
+
+jobs:
+  print-source-and-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Full 96-block source and language-model contract
+        run: node tests/reader-print-booklet.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Real 390px phone print popup in English and French
+        run: node tests/reader-phone-acceptance.mjs

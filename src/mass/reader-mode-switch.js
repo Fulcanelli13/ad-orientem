@@ -21,6 +21,7 @@ export function buildReaderModeModels({prepared,data,mode}={}){
     sungCorpus:data.sungCorpus,
     canonSourceMap:data.canonSourceMap,
     nuptialData:data.nuptialData,
+    frenchOrdinary:data.frenchOrdinary,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
   const presentationModel=projectSourceFirst48Presentation(sourceModel);

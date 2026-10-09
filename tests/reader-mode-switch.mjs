@@ -13,6 +13,7 @@ const data={
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
   canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
   nuptialData:load("../data/presentation/reader-nuptial.v1.json"),
+  frenchOrdinary:load("../data/presentation/reader-french-ordinary.v1.json"),
 };
 const t=(lat,en)=>({lat,en});
 const proper={
@@ -95,5 +96,28 @@ const nuptialSimple=buildReaderModeModels({prepared:nuptialPrepared,data,mode:"S
 assert.equal(nuptialSimple.sourceModel.totalCards,33);
 assert.equal(findReaderModeAnchorCard(nuptialSimple.presentationModel,insertionAnchor).sectionId,"AO.NUPTIAL.02",
   "Nuptial insertion identity was lost across mode switch");
+
+// French mode-switch used to lose the required certified French Ordinary map.
+// Preserve its explicit source pin in every reader presentation rebuild.
+const translateFixture=value=>{
+ if(Array.isArray(value))return value.map(translateFixture);
+ if(value&&typeof value==="object"){
+   const next=Object.fromEntries(Object.entries(value).map(([key,entry])=>[key,translateFixture(entry)]));
+   if(typeof next.lat==="string"&&typeof next.en==="string")next.fr="Français : "+next.en;
+   return next;
+ }
+ return value;
+};
+const frPrepared={
+ ...prepared,readerPreferences:{...prepared.readerPreferences,language:"fr"},
+ session:{...prepared.session,resolvedMass:{...resolvedMass,proper:{status:"READY",data:translateFixture(proper),sourcePath:"Sancti/10-07"}}}
+};
+const frenchMissal=buildReaderModeModels({prepared:frPrepared,data,mode:"MISSAL"});
+assert.equal(frenchMissal.sourceModel.totalCards,30);
+const sourceFrench=data.frenchOrdinary.byCue["AO.SM.C0001"];
+assert.ok(sourceFrench&&sourceFrench.length>5,"Certified Ordinary source missing French opener");
+assert.ok(frenchMissal.sourceModel.cards.some(card=>(card.paragraphs??[]).some(p=>
+  String(p.primary??"").includes(sourceFrench)||String(p.secondary??"").includes(sourceFrench)
+)),"French cue vanished when switching LIVE to MISSAL");
 
 console.log("reader mode switch: PASS — MISSAL/SIMPLE/LIVE rebuild presentation only and preserve exact source anchors.");
