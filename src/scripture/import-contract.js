@@ -8,6 +8,7 @@ import { SCRIPTURE_EDITIONS } from "./catalogue.js";
  */
 export function validateScriptureImport(input,{requireCompleteCanon=true}={}){
  const failures=[], ids=new Set(), verses=[];
+ let chapterCount=0;
  const edition=SCRIPTURE_EDITIONS[input?.editionId];
  if(!edition)failures.push("Unknown Catholic edition");
  const provenance=input?.provenance;
@@ -30,6 +31,7 @@ export function validateScriptureImport(input,{requireCompleteCanon=true}={}){
        failures.push(book.id+" invalid chapter");continue;
      }
      chapters.add(chapter.number);
+     chapterCount++;
      if(!Array.isArray(chapter.verses)||!chapter.verses.length){
        failures.push(book.id+" "+chapter.number+" has no verses");continue;
      }
@@ -47,13 +49,16 @@ export function validateScriptureImport(input,{requireCompleteCanon=true}={}){
          sourceEdition:provenance.sourceEdition,licenceId:provenance.licenceId
        }));
      }
+     if(numbers.size && Math.max(...numbers)!==numbers.size)failures.push(book.id+" "+chapter.number+" verse sequence has gaps");
    }
    if(Math.max(...chapters)!==chapters.size)failures.push(book.id+" chapter sequence has gaps");
  }
  if(requireCompleteCanon&&ids.size!==73)failures.push("Incomplete Catholic canon: "+ids.size+"/73 books");
+ if(requireCompleteCanon&&chapterCount<1100)failures.push("Incomplete Bible chapters: "+chapterCount);
+ if(requireCompleteCanon&&verses.length<30000)failures.push("Incomplete Bible verses: "+verses.length);
  return Object.freeze({
    valid:failures.length===0,
-   bookCount:ids.size,verseCount:verses.length,
+   bookCount:ids.size,chapterCount,verseCount:verses.length,
    failures:Object.freeze(failures),
    records:Object.freeze(failures.length?[]:verses)
  });
