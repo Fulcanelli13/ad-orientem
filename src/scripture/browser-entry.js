@@ -69,10 +69,24 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!parsed)return false;
    return open({passage:parsed.passage,context:parsed,language});
  }
- function openSegments(segments,{language=null,reference=null,provenance=null}={}){
+ function openSegments(segments,{language=null,reference=null,provenance=null,liturgicalArrangement=null}={}){
    try{
      const context=scriptureSegmentContext(segments,{reference,provenance});
-     return open({passage:context.passage,context,language});
+     // The shared reader remains in canonical biblical order. A rare 1962
+    // liturgical transposition (Ember Saturday Daniel) is explained visibly;
+    // this note never changes verse coordinates, editions or source rights.
+    if(liturgicalArrangement){
+      const a=liturgicalArrangement;
+      if(a.schema!=="ao-liturgical-bible-verse-order-v1" ||
+         a.canonicalReference!==context.reference ||
+         context.reference!=="Daniel 3:47–51" ||
+         !Array.isArray(a.liturgicalVerseOrder) ||
+         a.liturgicalVerseOrder.join("|")!=="Daniel 3:49|Daniel 3:47–48|Daniel 3:50–51" ||
+         typeof a.noteEn!=="string"||typeof a.noteFr!=="string" ||
+         a.noteEn.length<80||a.noteFr.length<80)return false;
+      return open({passage:context.passage,context:Object.freeze({...context,liturgicalArrangement:a}),language});
+    }
+    return open({passage:context.passage,context,language});
    }catch{return false;}
  }
  const click=e=>{

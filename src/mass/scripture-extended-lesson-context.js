@@ -37,8 +37,26 @@ export function extendedLessonScriptureContext(card,prepared){
  const latin=paragraphs.map(p=>String(p.alternate??p.latin??"")).join(" ");
  const expected=normal(row.latinIncipit);
  if(expected.length<20||!normal(latin).includes(expected))return null;
+ // A fifth Ember-Saturday lesson (Daniel) is proclaimed in a different
+ // verse order from the canonical Bible. Its Context is allowed only if
+ // the full, distinct source moments match in the right liturgical order.
+ if(row.liturgicalArrangement){
+  if(row.liturgicalArrangement.schema!=="ao-liturgical-bible-verse-order-v1" ||
+     row.liturgicalArrangement.canonicalReference!==row.reference||
+     !row.liturgicalArrangement.noteEn||!row.liturgicalArrangement.noteFr||
+     !Array.isArray(row.latinContinuityGuard)||
+     row.latinContinuityGuard.length!==3)return null;
+  const text=normal(latin);
+  let cursor=-1;
+  for(const marker of row.latinContinuityGuard){
+    const i=text.indexOf(normal(marker),cursor+1);
+    if(i<=cursor)return null;
+    cursor=i;
+  }
+ }
  const citation=scriptureSegmentContext(row.segments,{
    reference:row.reference,provenance:"EXTENDED_LESSON_SOURCE_ORDER_AND_LATIN_BOUND"});
  return Object.freeze({state:"READY",...citation,role:row.role,
+   ...(row.liturgicalArrangement?{liturgicalArrangement:row.liturgicalArrangement}:{}),
    sourceSectionId:row.sourceSectionId,witnessUrl:row.witnessUrl});
 }

@@ -1,4 +1,4 @@
-// Generated from data/mass/scripture-segmented-proper.v1.json; contract enforces exact parity.
+// Generated from data/mass/scripture-segmented-proper.v1.json; tests enforce parity.
 export const VERIFIED_SEGMENTED_MASS_READINGS=Object.freeze([
   {
     "sourcePath": "Tempora/Quad6-0",
@@ -87,6 +87,30 @@ export const VERIFIED_SEGMENTED_MASS_READINGS=Object.freeze([
       }
     ],
     "reference": "Luke 22:39–71; 23:1–53"
+  },
+  {
+    "sourcePath": "Tempora/Pasc7-5",
+    "title": "Pentecost Octave Ember Friday · Joel prophecy with omitted verse",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-29?theme=light",
+    "latinIncipit": "haec dicit dominus deus exsultate filii sion et laetamini in domino deo vestro quia dedit vobis doctorem",
+    "segments": [
+      {
+        "book": "Joel",
+        "chapter": 2,
+        "verseStart": 23,
+        "verseEnd": 24
+      },
+      {
+        "book": "Joel",
+        "chapter": 2,
+        "verseStart": 26,
+        "verseEnd": 27
+      }
+    ],
+    "reference": "Joel 2:23–24; 2:26–27",
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-5.txt",
+    "omittedVerse": "Joel 2:25"
   }
 ]);
 export const VERIFIED_SEGMENTED_MASS_VERSION="1962-MASS-PROPER-SEGMENTED-SCRIPTURE-V1";

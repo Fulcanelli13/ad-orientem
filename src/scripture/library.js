@@ -169,6 +169,17 @@ export function mountScriptureLibrary(root,{
      contextBar.dataset.aoScriptureContextReader=context.reference;
      const title=element("p",(lang==="fr"?"Passage cité · ":"Cited passage · ")+context.reference,"aoScriptureContextTitle");
      contextBar.append(title);
+     if(context.liturgicalArrangement){
+       const arrangement=context.liturgicalArrangement;
+       if(arrangement.schema!=="ao-liturgical-bible-verse-order-v1"||
+          arrangement.canonicalReference!==context.reference)
+         throw new Error("Liturgical verse-order notice does not match cited Bible coordinates");
+       const notice=element("p",lang==="fr"?arrangement.noteFr:arrangement.noteEn,
+         "aoScriptureNotice aoScriptureLiturgicalOrderNote");
+       notice.setAttribute("data-scripture-liturgical-order",arrangement.canonicalReference);
+       notice.setAttribute("role","note");
+       contextBar.append(notice);
+     }
      if(segmentSet?.length>1){
        const sequence=element("nav",null,"aoScriptureSegments");
        sequence.setAttribute("aria-label",lang==="fr"?"Passages de la lecture":"Reading passages");

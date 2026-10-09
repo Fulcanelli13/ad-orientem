@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-september-ember-scripture-source-audit-v1",
-  "version": "2026-10-09-A",
+  "version": "2026-10-10-DANIEL-TRANSPOSITION-V2",
   "policy": "Primary 1960/1962 Proper source-section identity and Latin read text; source-order not suffix order; no implicit season-week path, no date-only binding, and no copying of Greek/English biblical numbering into Vulgate coordinates.",
   "liturgicalYear2026": {
     "wednesday": "2026-09-23",
@@ -130,7 +130,7 @@
         {
           "sourceSectionId": "LectioL5",
           "reference": "Daniel 3:47–51",
-          "status": "HELD_LITURGICAL_VERSE_ORDER_DIFFERS_FROM_CANONICAL_BIBLE_ORDER",
+          "status": "BIBLE_CONTEXT_CANONICAL_ORDER_WITH_MANDATORY_LITURGICAL_TRANSPOSITION_NOTE",
           "observedLatinHeader": "Dan 3:47-51",
           "observedFrenchHeader": "Dan 3:47-51",
           "observedEnglishHeader": "Dan 3:49-51",
@@ -141,7 +141,8 @@
           ],
           "hymnSeparate": "Daniel 3:52–59 (liturgical Hymnus, separately displayed, not the same prose Lesson)",
           "explanation": "The Latin text begins Angelus Domini descendit (canonical Vulgate 3:49), then includes flamma effundebatur and erupit (3:47–48), then 3:50–51. The English source header omits 47–48 despite containing the text. The shared Scripture segment reader requires canonical ascending order; do not publish this as an ordinary in-order liturgical selection until contextual annotation is supported.",
-          "independentVulgateWitness": "https://www.newadvent.org/bible/dan003.htm"
+          "independentVulgateWitness": "https://www.newadvent.org/bible/dan003.htm",
+          "resolution": "Shared Bible Context opens Daniel 3:47–51 in canonical verse order, but visibly identifies the actual Roman Missal Latin 3:49, 3:47–48, 3:50–51 reading sequence in English and French. Runtime fails closed unless source-ordered LectioL5 and three distinct Latin passage anchors match. The Hymn 3:52–59 remains separate."
         }
       ],
       "ordinaryReadings": [
@@ -163,7 +164,7 @@
     "Never attach Amos or Leviticus preparatory lessons to the later ordinary Epistle slot.",
     "Never silently order Micah 7:14,16,18–20 as 7:14–20.",
     "Never turn Graduale or Oratio sections into Scripture Lessons.",
-    "Never reuse a held Daniel superspan as though the Missal presents it in canonical Bible verse order.",
+    "Never reuse a Daniel superspan as though the Mass proclaims it in canonical order. Bible Context is permitted only with the bilingual transposition note and all three original Latin-section checks.",
     "Never infer long-form lessons on a selected short-form reader."
   ]
 }
