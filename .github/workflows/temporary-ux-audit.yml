@@ -1,0 +1,20 @@
+name: Temporary read-only UI audit
+on:
+  push:
+    branches: [audit/cross-section-ux-readonly-20261009]
+    paths:
+      - .github/workflows/temporary-ux-audit.yml
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/cross-section-ux-readonly-audit.mjs
