@@ -23,7 +23,7 @@ assert.equal(calendarObservanceHeadline(sample("2027-12-02","sancti:12-02:3:r"),
 assert.equal(calendarObservanceHeadline(sample("2024-12-14","tempora:Adv2-6:3:v")),"Saturday after the Second Sunday of Advent");
 assert.equal(calendarObservanceHeadline(sample("2024-12-14","tempora:Adv2-6:3:v"),"fr"),"Samedi après le deuxième dimanche de l’Avent");
 assert.equal(calendarObservanceHeadline(sample("2024-06-09","commune:C10t:4:w")),null,"Sunday votive Mass cannot become BVM Saturday");
-assert.equal(calendarObservanceHeadline(sample("2024-06-08","commune:C10t:4:w",{selectedMassOption:{id:"explicit"}})),null,"Explicit Mass option must win");
+assert.equal(calendarObservanceHeadline(sample("2024-06-08","commune:C10t:4:w",{selectedMassOption:{id:"auto-default"}})),"Blessed Virgin Mary on Saturday","An auto-selected Mass does not suppress the canonical day headline");
 assert.equal(calendarObservanceHeadline(sample("2024-10-27","sancti:10-DU:1:w")),null,"Do not alter Christ the King or hide missing commemoration correction");
 assert.equal(calendarObservanceHeadline({status:"failed"}),null);
 assert.equal(calendarObservanceHeadline(sample("2024-03-25","tempora:Quad6-1:1:v")),null,"No blanket seasonal-title overrides");
