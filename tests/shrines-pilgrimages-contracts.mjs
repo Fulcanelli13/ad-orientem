@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:106,
-  pilgrimages:134,
+  shrines:117,
+  pilgrimages:145,
   routes:20,
-  temporalLinks:75,
-  sources:188,
+  temporalLinks:77,
+  sources:199,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -126,6 +126,17 @@ const requiredPlaces=new Set([
   "place:NL:maastricht-sterre-der-zee",
   "place:PT:fatima-sanctuary",
   "place:PT:sameiro-braga",
+  "place:VA:saint-peter-vatican",
+  "place:IT:saint-paul-outside-walls-rome",
+  "place:IT:santa-maria-maggiore-rome",
+  "place:IT:scala-santa-rome",
+  "place:ES:santiago-compostela-cathedral",
+  "place:ES:basilica-del-pilar-zaragoza",
+  "place:ES:santo-toribio-liebana",
+  "place:ES:carmel-alba-tormes",
+  "place:PS:holy-sepulchre-jerusalem",
+  "place:PS:nativity-bethlehem",
+  "place:JP:our-lady-akita-convent",
   "place:FR:basilique-sainte-therese-lisieux",
   "place:BE:sanctuaire-sainte-julienne-cornillon",
   "place:FR:cathedrale-notre-dame-le-puy",
@@ -148,6 +159,8 @@ for(const shrine of corpus.shrines){
 }
 
 assert.equal(calendarDateForSemanticKey("feast.saint_anne",2026),"2026-07-26");
+assert.equal(calendarDateForSemanticKey("observance.pilar_oct12",2026),"2026-10-12");
+assert.equal(calendarDateForSemanticKey("observance.santa_maria_maggiore_aug5",2026),"2026-08-05");
 assert.equal(calendarDateForSemanticKey("observance.san_nicolas_september25",2026),"2026-09-25");
 assert.equal(calendarDateForSemanticKey("observance.siluva_silines",2026),"2026-09-08");
 assert.equal(calendarDateForSemanticKey("observance.gietrzwald_september8",2026),"2026-09-08");

@@ -8,11 +8,11 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
-assert.equal(geo.places.length,110);
-assert.equal(sacred.apparitions.length,29);
-assert.equal(sacred.relics.length,43);
+assert.equal(geo.places.length,121);
+assert.equal(sacred.apparitions.length,32);
+assert.equal(sacred.relics.length,59);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
-assert.equal(assertExploreGeographyRegistry(geo).counts.places,110);
+assert.equal(assertExploreGeographyRegistry(geo).counts.places,121);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
 const ids=new Set();
 for(const record of [...sacred.apparitions,...sacred.relics]){
@@ -47,6 +47,30 @@ items:[romeItem],counts:{relics:1},selectedId:romeItem.item_id}));
 assert.match(romeUi,/Chapelle des reliques temporairement fermée/);
 
 assert.ok(sacred.relics.some(x=>x.relic_kind==="REPUTED_PASSION_RELIC"));
+
+for(const [id,status] of [
+  ["apparition:ES:pilar-zaragoza","HISTORICAL_TRADITION"],
+  ["apparition:IT:liberian-snow-dream","HISTORICAL_TRADITION"],
+  ["apparition:JP:akita","HISTORICALLY_APPROVED"],
+]){
+  const apparition=sacred.apparitions.find(x=>x.id===id);
+  assert.equal(apparition?.recognition_record,status,"recognition status incorrectly collapsed for "+id);
+  assert.ok(projectionDoesNotAssertDogma(apparition),"historical phenomena may not assert required dogma");
+}
+function projectionDoesNotAssertDogma(record){
+  return !/is infallibly proven|must believe this apparition|is universally approved/.test(record.summary_en??"");
+}
+for(const [placeId,count] of [
+  ["place:PT:fatima-sanctuary",3],
+  ["place:ES:carmel-alba-tormes",3],
+  ["place:IT:santa-maria-maggiore-rome",3],
+  ["place:IT:scala-santa-rome",2],
+]){
+  assert.equal(sacred.relics.filter(r=>r.place_id===placeId).length,count);
+}
+assert.ok(!sacred.relics.some(r=>["place:PS:holy-sepulchre-jerusalem","place:PS:nativity-bethlehem"].includes(r.place_id)),
+  "empty tomb and Nativity grotto are pilgrimage holy places, not bodily relics");
+
 assert.ok(sacred.relics.every(x=>x.authentication==="NOT_INDEPENDENTLY_CERTIFIED_BY_APP"));
 const projection=projectExploreDataset({geography:geo,sacredPhenomena:sacred});
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
@@ -75,7 +99,7 @@ assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);
 assert.match(detail,/aucune authentification canonique indépendante/);
 const profiles=buildExplorePlaceProfiles({geography:geo},projection,{today:"2026-10-09"});
-assert.equal(profiles.length,110);
+assert.equal(profiles.length,121);
 const cotignac=profiles.find(p=>p.place_id==="place:FR:saint-joseph-bessillon");
 assert.equal(cotignac.counts.apparitions,1);
 assert.equal(cotignac.counts.relics,0);
@@ -90,4 +114,4 @@ assert.equal(notreDame.counts.apparitions,0);
 assert.equal(notreDame.counts.relics,3);
 assert.equal(geo.directoryPlaceLinks.some(link=>link.place_id==="place:FR:abbaye-mont-saint-michel"),false,
   "historical shrine is not automatically a TLM directory venue");
-console.log("PASS 29 documented apparition traditions, 43 relic holdings, 110 GPS-shared Places, bilingual status and no TLM/calendar inference");
+console.log("PASS 32 documented apparition traditions, 59 relic holdings, 121 GPS-shared Places, bilingual status and no TLM/calendar inference");

@@ -371,6 +371,20 @@ export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
     sourceIds:Object.freeze(["SHR-SAN-NICOLAS-EPC"]),
   }),
 
+  "observance.santa_maria_maggiore_aug5":Object.freeze({
+    key:"observance.santa_maria_maggiore_aug5",title:Object.freeze({en:"Dedication of Santa Maria Maggiore — Basilica anniversary",fr:"Dédicace de Sainte-Marie-Majeure — anniversaire basilical"}),
+    schedule:Object.freeze({type:"FIXED",month:8,day:5}),
+    route:"find",exploreLens:"pilgrimages",priority:66,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-PIL-IT-santa-maria-maggiore-rome"]),
+  }),
+  "observance.pilar_oct12":Object.freeze({
+    key:"observance.pilar_oct12",title:Object.freeze({en:"Our Lady of the Pillar — Zaragoza local feast",fr:"Notre-Dame du Pilier — fête locale de Saragosse"}),
+    schedule:Object.freeze({type:"FIXED",month:10,day:12}),
+    route:"find",exploreLens:"pilgrimages",priority:66,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-PIL-ES-basilica-del-pilar-zaragoza"]),
+  }),
 });
 
 function semanticDateForDefinition(def,year){
