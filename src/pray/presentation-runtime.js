@@ -6,6 +6,7 @@ import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleRespon
 import { rosaryGuideSections } from "./rosary-guide-data.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
+import { glossaryContextCapsule } from "../app/contextual-study.js";
 import {prayerScriptureOrigin,stationScriptureOrigin} from "./scripture-origins.js";
 import { prayEditionWitness } from "./prayer-edition-witnesses.v1.js";
 import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
@@ -524,7 +525,7 @@ function renderPrayHome(){
 function renderPrayFamily(){
  const family=prayFamilies()[familyId];
  if(!family){familyId=null;view='home';return renderPrayHome()}
- return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}</div></main>`;
+ return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}</div></main>`;
 }
 function openFamily(id){
  const family=prayFamilies()[String(id??'')];
