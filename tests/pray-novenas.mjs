@@ -251,7 +251,7 @@ assert.equal(latestNovenaReview.counts.repeatFormAnchorReviewsThisPass,2);
 assert.equal(latestNovenaReview.counts.fullEnglishDigitalLineByLineCertificates,0);
 assert.equal(latestNovenaReview.counts.completePrintEditionCertificates,0);
 assert.equal(latestNovenaReview.counts.independentOriginalFrenchPrintCertificates,0);
-assert.equal(latestNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,27);
+assert.equal(latestNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,0);
 
 const latestSourceReviews=Object.fromEntries(latestNovenaReview.records.map(x=>[x.id,x]));
 let verifiedDigitalAnchors=0;
@@ -400,6 +400,20 @@ for(const id of missingHistorical){
  assert.match(source.note.en,/editorial/);
  assert.match(source.note.fr,/rédactionnel/);
 }
+assert.equal(latestNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,0);
+assert.equal(latestNovenaReview.counts.embeddedHammerMeditationPracticeDayPairs,27);
+assert.equal(latestNovenaReview.counts.fullOriginalPrintCertificates,0);
+assert.equal(latestNovenaReview.counts.verifiedOriginalFrenchHammerMeditations,0);
+for(const id of ["annunciation","seven_sorrows","assumption"]){
+ for(let day=1;day<=9;day++){
+  const source=hammerHistoricalDayText(id,day);
+  assert.ok(source&&source.meditation.length>50&&source.practice.length>50,`Original Hammer day text incomplete: ${id} day ${day}`);
+  assert.equal(hammerHistoricalDayWitness(id,day)?.day,day);
+ }
+}
+assert.ok(!/not yet reproduced|ne sont pas encore reproduits/i.test(
+ ["annunciation","seven_sorrows","assumption"].map(id=>novenaSourceAccess(id).note.en+" "+novenaSourceAccess(id).note.fr).join(" ")
+),"User-facing provenance still claims embedded Hammer text is missing");
 assert.ok(!historicalNovenaReview.records.some(x=>x.dayBodySourceReview?.some(d=>d.completePrintEditionCertification!=="NOT_CERTIFIED")),"Premature original facsimile certification");
 
 
