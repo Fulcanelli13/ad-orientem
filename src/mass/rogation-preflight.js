@@ -98,7 +98,7 @@ export function projectRogationPreflight({
 export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetchImpl=globalThis.fetch,language=()=> "en"}={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")throw new TypeError("Rogation DOM and resolver required");
   let choice="DAY_MASS",service=null,library=null,loading=false,disposed=false,root=null,lastDate=null;
-  let verifiedDay=null,verifiedDate=null,pendingDate=null;
+  let verifiedDay=null,verifiedDate=null,pendingDate=null,loadError=null;
   const container=()=>doc.getElementById("ao-mass-flow-v1");
   const mount=()=>container()?.querySelector(".aoFlowActions")??container()?.querySelector("[data-ao-start-live]")?.parentElement;
   const labels=()=>String(language()).startsWith("fr")?{
@@ -106,13 +106,17 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
     procession:"Procession publique",supplications:"Supplications publiques autorisées",
     mass:"Messe",day:"Messe du jour",proper:"Messe des Rogations · Exaudivit",
     ready:"La messe des Rogations exige des litanies publiques expressément choisies.",
-    blocked:"Le propre des Rogations n'est pas encore certifié ; la messe du jour reste possible après les litanies publiques."
+    blocked:"Le propre des Rogations n'est pas encore certifié ; la messe du jour reste possible après les litanies publiques.",
+    loading:"Vérification du propre et de la préface…",
+    unavailable:"Les sources des Rogations ne peuvent être chargées ; la messe du jour reste disponible."
   }:{
     summary:"Rogation observance",service:"Public rite",none:"No public litanies",
     procession:"Public procession",supplications:"Authorized public supplications",
     mass:"Mass",day:"Mass of the day",proper:"Rogation Mass · Exaudivit",
     ready:"The Rogation Mass requires explicitly selected public litanies.",
-    blocked:"The Rogation Proper is not yet certified; the Mass of the day remains available after public litanies."
+    blocked:"The Rogation Proper is not yet certified; the Mass of the day remains available after public litanies.",
+    loading:"Checking the Proper and Easter Preface…",
+    unavailable:"The Rogation source files could not be loaded; the Mass of the day remains available."
   };
   function refresh(){
     if(disposed)return;
@@ -171,11 +175,14 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
     masses.options[1].textContent=l.proper;
     root.querySelector("[data-rogation-service]").value=service??"";
     root.querySelector("[data-rogation-choice]").value=choice;
-    root.querySelector("[data-rogation-status]").textContent=enabled?l.ready:l.blocked;
+    root.querySelector("[data-rogation-status]").textContent=loadError?l.unavailable:
+      loading?l.loading:enabled?l.ready:l.blocked;
     if(!loading&&!library){
       loading=true;
-      void loadRogationPreflightLibrary({fetchImpl}).then(value=>{library=value;refresh()}).catch(()=>{
-        library={};refresh();
+      void loadRogationPreflightLibrary({fetchImpl}).then(value=>{
+        library=value;loadError=null;refresh();
+      }).catch(error=>{
+        library={};loadError=String(error?.message??error);refresh();
       }).finally(()=>{loading=false});
     }
   }
@@ -197,7 +204,10 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
           node.querySelector?.("#ao-mass-flow-v1")))))refresh();
     }):null;
   observer?.observe(doc.body,{childList:true,subtree:true});
-  return Object.freeze({refresh,selectionFor,dispose(){
+  return Object.freeze({refresh,selectionFor,
+    status:()=>Object.freeze({verifiedDate,lastDate,ready:rogationPublicChoiceReady(library),
+      sourceError:loadError,sourceLoading:loading,visible:Boolean(root?.isConnected)}),
+    dispose(){
     disposed=true;observer?.disconnect();root?.remove();root=null;
   }});
 }
