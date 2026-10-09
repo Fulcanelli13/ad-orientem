@@ -1,6 +1,6 @@
 {
   "version": "1962-MASS-FEAST-READING-CONTEXT-SUPPLEMENT-V1",
-  "status": "SOURCE_AUDITED_SELECT_MAJOR_FEASTS_AND_HOLY_WEEK",
+  "status": "SOURCE_GATED_MAJOR_FEASTS_HOLY_WEEK_EMBER_AND_26_ORDINARY_LENTEN_WEEKDAYS",
   "sourceConvention": "DIVINUM_1962_PROPER_PATH_PINS_PLUS_TEXT_MATCH",
   "governance": "Additions require an original-source liturgical witness; mismatched Latin incipit disables the contextual reader. No date-only or transferred-feast guess.",
   "importantNotes": [
@@ -18,7 +18,10 @@
     "Holy Wednesday: LectioL1 (Isaiah 62:11; 63:1–7) belongs to the ordered extended-lesson index and requires its actual Latin node; the later Epistle/Lectio is Isaiah 53:1–12 and uses this separate single-range Proper guard. Luke Passion is separately indexed by segments.",
     "1962 September Ember Wednesday/Friday/Saturday are Tempora/093-3, 093-5, 093-6, not Pent17-3/5/6. Wednesday Amos preparatory lesson, Saturday preparatory lessons and Saturday post-preparatory Hebrews Epistle remain separate source owners. Saturday has source-pinned long/short variants.",
     "Remaining 1962 Ember cycles: Advent Tempora/Adv3-3,5,6; Lent Tempora/Quad1-3,5,6; Pentecost octave Tempora/Pasc7-3,5,6. 2026 seasonal dates 16/18/19 Dec, 25/27/28 Feb, 27/29/30 May. Bible context is always gated by actual selected Proper Latin.",
-    "Pentecost Ember Friday Joel 2:23–24; 2:26–27 belongs exclusively to the segmented Bible context index, because Joel 2:25 is omitted."
+    "Pentecost Ember Friday Joel 2:23–24; 2:26–27 belongs exclusively to the segmented Bible context index, because Joel 2:25 is omitted.",
+    "26 additional ordinary Lenten weekday Proper paths in Quad1/2/3/4/5; Quad1 Ember slots 3/5/6 already have their own source index. Quad5-5 is NOT an ordinary ferial default: the original source is the Seven Sorrows/Our Lady of Compassion formulary with the 1962 general-calendar Friday feria versus local/SSPX feast distinction; it remains unregistered here pending exact ordinary-feria source selection.",
+    "The omitted-verse Epistles for Quad2-3 (Esther 13), Quad3-5 (Numbers 20), Quad3-6 (Susanna, Daniel 13), Quad5-3 (Leviticus 19), and Quad5-4 (Daniel 3) are deliberately absent from single-range slots and must be separately linked by the segmented index.",
+    "Quad4-3 includes a separate source-ordered preparatory Ezekiel 36:23–28 Lesson before the later Isaiah 1:16–19 Mass Epistle; do not coalesce them or link the chant/collect to either passage."
   ],
   "holds": [
     {
@@ -859,6 +862,153 @@
       "sourceOriginalHeadings": {
         "Lectio": "!Is 1:16-19",
         "Evangelium": "!Joann 9:1-38"
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad4-4",
+      "title": "Feria Quinta infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-4.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "2Kings 4:25–38",
+          "latinIncipit": "in diebus illis venit mulier sunamitis ad eliseum in montem carmeli cumque vidisset eam vir dei e contra ait"
+        },
+        "GOSPEL": {
+          "reference": "Luke 7:11–16",
+          "latinIncipit": "in illo tempore ibat jesus in civitatem quae vocatur naim et ibant cum eo discipuli ejus et turba copiosa"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!4 Reg 4:25-38",
+        "Evangelium": "!Luc 7:11-16"
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad4-5",
+      "title": "Feria Sexta infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-5.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Kings 17:17–24",
+          "latinIncipit": "in diebus illis aegrotavit filius mulieris matris familias et erat languor fortissimus ita ut non remaneret in eo halitus"
+        },
+        "GOSPEL": {
+          "reference": "John 11:1–45",
+          "latinIncipit": "in illo tempore erat quidam languens lazarus a bethania de castello mariae et marthae sororis ejus maria autem erat"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!3 Reg 17:17-24",
+        "Evangelium": "!Joann 11:1-45"
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad4-6",
+      "title": "Sabbato infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-6.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 49:8–15",
+          "latinIncipit": "haec dicit dominus in tempore placito exaudivi te et in die salutis auxiliatus sum tui et servavi te et"
+        },
+        "GOSPEL": {
+          "reference": "John 8:12–20",
+          "latinIncipit": "in illo tempore locutus est jesus turbis judaeorum dicens ego sum lux mundi qui sequitur me non ambulat in"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!Isa 49:8-15",
+        "Evangelium": "!Joann 8:12-20"
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-1",
+      "title": "Feria Secunda infra Hebdomadam Passionis · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-1.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Jonah 3:1–10",
+          "latinIncipit": "in diebus illis factum est verbum domini ad jonam prophetam secundo dicens surge et vade in niniven civitatem magnam"
+        },
+        "GOSPEL": {
+          "reference": "John 7:32–39",
+          "latinIncipit": "in illo tempore miserunt principes et pharisaei ministros ut apprehenderent jesum dixit ergo eis jesus adhuc modicum tempus vobiscum"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!Jonæ 3:1-10",
+        "Evangelium": "!Joann 7:32-39"
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-2",
+      "title": "Feria Tertia infra Hebdomadam Passionis · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-2.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Daniel 14:27–42",
+          "latinIncipit": "in diebus illis congregati sunt babylonii ad regem et dixerunt ei trade nobis danielem qui bel destruxit et draconem"
+        },
+        "GOSPEL": {
+          "reference": "John 7:1–13",
+          "latinIncipit": "in illo tempore ambulabat jesus in galilaeam non enim volebat in judaeam ambulare quia quaerebant eum judaei interficere erat"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!Dan 14:27, 28-42",
+        "Evangelium": "!Joann 7:1-13"
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-3",
+      "title": "Feria Quarta infra Hebdomadam Passionis · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-3.txt",
+      "readings": {
+        "GOSPEL": {
+          "reference": "John 10:22–38",
+          "latinIncipit": "in illo tempore facta sunt encaenia in jerosolymis et hiems erat et ambulabat jesus in templo in porticu salomonis"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!Lev 19:1-2, 11-19, 25",
+        "Evangelium": "!Joann 10:22-38"
+      },
+      "note": "Original Epistle omits intermediate Vulgate verses; indexed as multiple ordered Bible segments, never one continuous chapter range."
+    },
+    {
+      "sourcePath": "Tempora/Quad5-4",
+      "title": "Feria Quinta infra Hebdomadam Passionis · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-4.txt",
+      "readings": {
+        "GOSPEL": {
+          "reference": "Luke 7:36–50",
+          "latinIncipit": "in illo tempore rogabat jesum quidam de pharisaeis ut manducaret cum illo et ingressus domum pharisaei discubuit et ecce"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!Dan 3:25, 34-45",
+        "Evangelium": "@Sancti/07-22"
+      },
+      "gospelInheritedFrom": "Sancti/07-22",
+      "note": "Original Epistle omits intermediate Vulgate verses; indexed as multiple ordered Bible segments, never one continuous chapter range."
+    },
+    {
+      "sourcePath": "Tempora/Quad5-6",
+      "title": "Sabbato infra Hebdomadam Passionis · source-verified Latin Proper",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-6.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Jeremiah 18:18–23",
+          "latinIncipit": "in diebus illis dixerunt impii judaei ad invicem venite et cogitemus contra justum cogitationes non enim peribit lex a"
+        },
+        "GOSPEL": {
+          "reference": "John 12:10–36",
+          "latinIncipit": "in illo tempore cogitaverunt principes sacerdotum ut et lazarum interficerent quia multi propter illum abibant ex judaeis et credebant"
+        }
+      },
+      "sourceOriginalHeadings": {
+        "Lectio": "!Jer 18:18-23",
+        "Evangelium": "!Joann 12:10-36"
       }
     }
   ]
