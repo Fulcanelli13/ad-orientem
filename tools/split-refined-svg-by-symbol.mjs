@@ -16,7 +16,9 @@ const baseline=JSON.parse(readFileSync(SOURCE,"utf8"));
 if(verify){
   const existing=JSON.parse(readFileSync(OUTPUT,"utf8"));
   const html=readFileSync("index.html","utf8");
-  if(bytes(html)!==(existing.lazyHtmlBytes??existing.reducedHtmlBytes))throw Error("Index disagrees with per-icon manifest");
+  const thinPath="data/presentation/startup-thin-shell.v1.json";
+  const thin=existsSync(thinPath)?JSON.parse(readFileSync(thinPath,"utf8")):null;
+  if(bytes(html)!==(thin?.shellBytes??existing.lazyHtmlBytes??existing.reducedHtmlBytes))throw Error("Index disagrees with per-icon manifest");
   if(existing.icons.length!==20)throw Error("Historical 20 refined icons not preserved");
   for(const icon of existing.icons){
     if(!existsSync(icon.path))throw Error("Missing per-icon SVG "+icon.path);
