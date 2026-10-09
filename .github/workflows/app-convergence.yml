@@ -64,6 +64,7 @@ jobs:
           node-version: 22
       - run: npm run test:app-shell-contract
       - run: npm run test:tree-hygiene
+      - run: node tests/startup-payload-contract.mjs
       - run: npm run test:app-live-guards
       - run: npm run test:presentation-fx
       - run: npm run test:home-owner
