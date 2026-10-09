@@ -141,6 +141,16 @@ assert.deepEqual(
     "place:NL:maastricht-sterre-der-zee",
     "place:PT:fatima-sanctuary",
     "place:PT:sameiro-braga",
+  "place:FR:basilique-sainte-therese-lisieux",
+  "place:BE:sanctuaire-sainte-julienne-cornillon",
+  "place:FR:cathedrale-notre-dame-le-puy",
+  "place:FR:basilique-notre-dame-victoires-paris",
+  "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+  "place:FR:grottes-saint-antoine-brive",
+  "place:FR:basilique-saint-martin-tours",
+  "place:FR:basilique-montfort-saint-laurent",
+  "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+  "place:FR:abbaye-fleury-saint-benoit-loire",
     "place:PL:gietrzwald-basilica",
     "place:LT:siluva-apparition-chapel",
     "place:NI:cuapa-national-shrine",
@@ -206,7 +216,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 31,
-  places: 101,
+  places: 111,
   directoryPlaceLinks: 1,
 });
 
