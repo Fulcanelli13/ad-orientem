@@ -60,7 +60,7 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
         </select>
       </nav>
       <article><h2>${escapeHtml(lesson.title[lang])}</h2>
-        ${lesson.claims.map(c => `<p>${escapeHtml(c[lang])} <span class="aoCatechismGuidedSources">${c.sources.map(s => `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.ref)}</a>${s.originalLanguageUrl ? ` <a href="${escapeHtml(s.originalLanguageUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${text("Italian original", "Original italien", lang)}">IT</a>` : ""}`).join(" · ")}</span></p>`).join("")}
+        ${lesson.claims.map(c => `<p>${escapeHtml(c[lang])} <span class="aoCatechismGuidedSources">${c.sources.map(s => `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.ref)}</a>${s.originalLanguageUrl ? ` <a href="${escapeHtml(s.originalLanguageUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${text("1912 Italian text (transcription)", "Texte italien de 1912 (transcription)", lang)}">IT</a>` : ""}`).join(" · ")}</span></p>`).join("")}
         <h3>${text("Original Catechism questions", "Questions du Catéchisme original", lang)}</h3>
         <div class="aoCatechismGuidedQuestions">${lesson.primaryQuestions.map(n => `<button type="button" data-guided-question="${n}" title="${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}">Q${n} · ${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}</button>`).join(" ")}</div>
       </article>
