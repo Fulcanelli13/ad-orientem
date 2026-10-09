@@ -99,14 +99,14 @@ export function createAppHostAdapter(win = globalThis) {
           const opened = modular.open();
           if (opened && typeof opened.then === "function") {
             return Promise.resolve(opened).then(
-              result => result === false ? fallbackHome() : true,
+              result => openedSuccessfully(result) ? true : fallbackHome(),
               error => {
                 try { win?.console?.error?.("Modular Home failed to open", error); } catch {}
                 return fallbackHome();
               }
             );
           }
-          if (opened !== false) return true;
+          if (openedSuccessfully(opened)) return true;
         } catch (error) {
           try { win?.console?.error?.("Modular Home failed to open", error); } catch {}
         }

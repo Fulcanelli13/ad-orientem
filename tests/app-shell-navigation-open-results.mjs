@@ -30,6 +30,8 @@ for(const returned of failures){
  assert.equal(await host.openCalendar(),false,"Calendar accepted unsuccessful open");
  assert.equal(await host.openSettings(),false,"Settings accepted unsuccessful open");
  assert.equal(await host.openModule("learn.catechism"),false,"Module accepted unsuccessful open");
+ const hardHome=createAppHostAdapter({...windowFor(returned),AO_HOME_APP_V1:{open:()=>returned},AO_NAV_V362:{home:()=>false}});
+ assert.equal(await hardHome.hardHome(),false,"Home announced success despite both owners declining to open");
  const c=createAppShellController({host});
  const gone=await c.go("learn");
  assert.equal(gone.ok,false,"App navigation reported failed Learn open as success");
@@ -44,6 +46,8 @@ for(const returned of positives){
  assert.equal(await host.openCalendar(),true);
  assert.equal(await host.openSettings(),true);
  assert.equal(await host.openModule("learn.catechism"),true);
+ const hardHome=createAppHostAdapter({...windowFor(returned),AO_HOME_APP_V1:{open:()=>returned},AO_NAV_V362:{home:()=>false}});
+ assert.equal(await hardHome.hardHome(),true,"Home rejected explicitly successful modular owner");
  const c=createAppShellController({host});
  assert.equal((await c.go("learn")).ok,true);
  assert.equal(c.getActive(),"learn");
