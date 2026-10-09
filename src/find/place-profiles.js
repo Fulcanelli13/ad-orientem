@@ -117,6 +117,16 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     const tlm=exactTlmItems(dataset,projection,placeId);
     const allItems=[...related.shrines,...related.traditions,...related.pilgrimages];
     const calendar=temporalRows(related.pilgrimages,today);
+    const seasonal=new Map();
+    for(const pilgrimage of related.pilgrimages){
+      for(const link of arr(pilgrimage?.raw?.temporalLinks)){
+        if(link?.binding_state!=="NO_FIXED_CALENDAR_BINDING")continue;
+        const id=link.temporal_link_id;
+        if(!id||seasonal.has(id))continue;
+        seasonal.set(id,Object.freeze({temporal_link_id:id,title:link.source_event_label??pilgrimage.title,pilgrimage_id:pilgrimage.source_id}));
+      }
+    }
+    const seasonal_pilgrimages=Object.freeze([...seasonal.values()]);
     const saints=[...new Set(related.shrines.flatMap(item=>arr(item?.raw?.shrine?.associated_saints)).filter(Boolean))];
     const shrineIds=new Set(related.shrines.map(item=>item?.raw?.shrine?.shrine_id).filter(Boolean));
     const novenaMap=new Map(arr(dataset?.novenas?.records).map(record=>[record?.id,record]).filter(([id])=>id));
@@ -155,6 +165,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       saints:Object.freeze(saints),
       novenas,
       calendar,
+      seasonal_pilgrimages,
       sources:uniqueSourceLinks(allItems,place),
       exact_tlm_link_state:tlm.length?"VERIFIED":"NONE",
       exact_tlm_note:tlm.length
