@@ -6,6 +6,7 @@ import { NOVENA_FRENCH_GUIDE_PARITY_V1, NOVENA_FRENCH_GUIDE_PARITY_STATUS } from
 import { NOVENA_SOURCE_HOLDS, NOVENA_TARGET_IDS, NOVENA_TARGET_REGISTRY_V1 } from "../src/calendar/devotional-registry.js";
 import { NOVENA_SOURCE_ACCESS_V1, novenaSourceAccess } from "../src/pray/novena-source-access.v1.js";
 import { HAMMER_DAY_SECTIONS_V1, HAMMER_DAY_SOURCE_URL_V1, hammerHistoricalDayWitness } from "../src/pray/novena-hammer-day-witness.v1.js";
+import { HAMMER_HISTORICAL_1909_V1, hammerHistoricalDayText } from "../src/pray/novena-hammer-original-texts.v1.js";
 
 const donorExpected=[
   "holy_ghost","christmas","corpus_christi","sacred_heart",
@@ -284,6 +285,29 @@ for(const id of ["annunciation","seven_sorrows","assumption"]){
   assert.equal(witness.practice,"PRESENT_IN_ORIGINAL_NOT_EMBEDDED");
  }
 }
+let completeHistoricalPairs=0;
+for(const id of ["annunciation","seven_sorrows","assumption"]){
+ for(let day=1;day<=9;day++){
+  const row=hammerHistoricalDayText(id,day),w=hammerHistoricalDayWitness(id,day);
+  assert.equal(row.day,day);
+  assert.equal(row.heading.toLowerCase().replace(/[^a-z]/g,""),w.title.toLowerCase().replace(/[^a-z]/g,""),id+" day heading mismatch");
+  assert.ok(row.meditation.length>=400,id+" day "+day+" meditation appears truncated");
+  assert.ok(row.practice.length>=350,id+" day "+day+" practice appears truncated");
+  assert.equal(row.language,"en");
+  assert.equal(row.originalUrl,w.url);
+  assert.ok(!/PRAYER OF THE CHURCH|Litany of Loreto/i.test(row.meditation+" "+row.practice),id+" day source boundary spill");
+  completeHistoricalPairs++;
+ }
+}
+assert.equal(completeHistoricalPairs,27);
+assert.equal(HAMMER_HISTORICAL_1909_V1.source.originalPrintFacsimileCollated,false);
+assert.equal(hammerHistoricalDayText("immaculate_conception",1),null);
+const runtimeWithMeditations=readFileSync("src/pray/novena-runtime.js","utf8");
+assert.match(runtimeWithMeditations,/import \{ hammerHistoricalDayText \}/);
+assert.match(runtimeWithMeditations,/nl\(historical\.meditation\)/);
+assert.match(runtimeWithMeditations,/nl\(historical\.practice\)/);
+assert.match(runtimeWithMeditations,/lang="en"/);
+
 assert.equal(hammerHistoricalDayWitness("holy_souls",1),null);
 assert.equal(hammerHistoricalDayWitness("annunciation",10),null);
 for(const id of ["corpus_christi","sacred_heart"]){

@@ -1,6 +1,7 @@
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
 import { novenaSourceAccess } from "./novena-source-access.v1.js";
 import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
+import { hammerHistoricalDayText } from "./novena-hammer-original-texts.v1.js";
 import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
@@ -100,10 +101,10 @@ function commonNote(n){if(n.commonNote)return txt(n.commonNote);return n.id==='s
 function hammerChurchStage(n){return `${sourceWitness(n.churchPrayer,L('Historical “Prayer of the Church”','« Prière de l’Église » historique'))}${n.loretoCanonical?canonicalPrayer(n.loretoCanonical,1):''}`}
 function hammerTailStage(n){return `<div class="aoN1Info"><h3>${esc(L('Hail Mary & invocation','Je vous salue Marie et invocation'))}</h3><p>${esc(commonNote(n))}</p></div>${commonPrayers(n)}${sourceWitness(n.ejaculation,L('Historical ejaculation','Invocation historique'))}`}
 function hammerSourceDayDetails(n){
- const witness=hammerHistoricalDayWitness(n.id,N.day);
- if(!witness)return "";
+ const witness=hammerHistoricalDayWitness(n.id,N.day),historical=hammerHistoricalDayText(n.id,N.day);
+ if(!witness||!historical)return "";
  const title=esc(witness.title),url=esc(witness.url);
- return `<details class="aoN1Details" data-n1-hammer-source-day="${witness.day}" data-n1-hammer-source-novena="${esc(n.id)}"><summary>${esc(L('Original meditation & practice','Méditation et pratique historiques'))}</summary><p><b>${title}</b> · ${esc(L('Day','Jour'))} ${witness.day}</p><p class="aoN1Fine">${esc(L('The 1909 edition includes a complete meditation and practical resolution for this day. The short guide is separate editorial guidance. Open the original English source to read both historical passages.','L’édition de 1909 contient une méditation et une résolution pratique complètes pour ce jour. Le bref guide est rédactionnel. Consultez la source originale en anglais pour lire ces deux passages historiques.'))}</p><p><a href="${url}" target="_blank" rel="noopener noreferrer">${esc(L('Read the original day in Hammer (1909)','Lire le jour original chez Hammer (1909)'))} ↗</a></p></details>`;
+ return `<details class="aoN1Details" data-n1-hammer-source-day="${witness.day}" data-n1-hammer-source-novena="${esc(n.id)}"><summary>${esc(L('Original meditation & practice','Méditation et pratique historiques'))}</summary><p><b>${title}</b> · ${esc(L('Day','Jour'))} ${witness.day}</p><p class="aoN1Fine">${esc(L('Historical English source (1909). An original French translation has not been certified. These longer texts are distinct from the short editorial day guide.','Source historique anglaise (1909). Aucune traduction française originale n’a été certifiée. Ces textes développés sont distincts du bref guide rédactionnel.'))}</p><h3>${esc(L('Meditation (1909)','Méditation (1909, anglais)'))}</h3><p lang="en">${nl(historical.meditation)}</p><h3>${esc(L('Practice (1909)','Pratique (1909, anglais)'))}</h3><p lang="en">${nl(historical.practice)}</p><p><a href="${url}" target="_blank" rel="noopener noreferrer">${esc(L('Original edition transcription','Transcription de l’édition originale'))} ↗</a></p></details>`;
 }
 function stageContent(n,d){
  const p=novenaPattern(n);
