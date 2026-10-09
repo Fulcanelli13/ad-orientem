@@ -1,3 +1,4 @@
+import { isCatholicBookId } from "./canon.js";
 /**
  * Shared Catholic Scripture catalogue.
  * Metadata only: no Bible text may ship until its exact edition and digital rights are verified.
@@ -36,7 +37,7 @@ export const DEFAULT_SCRIPTURE_EDITION = Object.freeze({
  * verified mapping table, never silently guessed.
  */
 export function scripturePassage({ book, chapter, verseStart, verseEnd = verseStart }) {
-  if (!/^[1-3]?[A-Za-z][A-Za-z0-9]*$/.test(book || "")) throw new Error("Invalid canonical book ID");
+  if (!isCatholicBookId(book)) throw new Error("Invalid canonical Catholic book ID");
   if (![chapter, verseStart, verseEnd].every(Number.isSafeInteger)
       || chapter < 1 || verseStart < 1 || verseEnd < verseStart) {
     throw new Error("Invalid passage coordinates");
