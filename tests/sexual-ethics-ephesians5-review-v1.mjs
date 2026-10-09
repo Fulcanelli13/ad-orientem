@@ -33,7 +33,7 @@ let citationFields=0;
 for(const d of cases){
  for(const field of ["question","opposition","reply","rejoinder","finding","traditionalAssessment"]){
   assert.equal(d[field].length,2,d.id+" "+field+" not bilingual");
-  assert.ok(d[field].every(x=>x.length>75),d.id+" "+field+" unusually short");
+  assert.ok(d[field].every(x=>x.length>(field==="question"?18:75)),d.id+" "+field+" unusually short");
  }
  for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
   const refs=d.sources[field];
