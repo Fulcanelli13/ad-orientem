@@ -7,6 +7,8 @@ const L=(language,en,fr)=>language==="fr"?fr:en;
 const LENS_LABELS=Object.freeze({
   tlm:["TLM","TLM"],
   shrines:["Shrines","Sanctuaires"],
+  apparitions:["Apparitions","Apparitions"],
+  relics:["Relics","Reliques"],
   traditions:["Traditions","Traditions"],
   pilgrimages:["Pilgrimages","Pèlerinages"],
 });
@@ -21,6 +23,9 @@ const FACT_LABELS=Object.freeze({
   Class:["Class","Classe"],
   Period:["Period","Période"],
   Confidence:["Confidence","Confiance"],
+  Category:["Category","Catégorie"],
+  "Witness / tradition":["Witness / tradition","Témoin / tradition"],
+  "Associated person":["Associated person","Personne associée"],
   Kind:["Kind","Type"],
   Route:["Route","Itinéraire"],
   Calendar:["Calendar","Calendrier"],
@@ -131,6 +136,12 @@ function placeSheet(vm){
       html+='<article><strong>'+esc(row.title)+'</strong><span>'+esc(L(vm.language,"Check local programme","Voir le programme local"))+'</span></article>';
     }
     html+='</section>';
+  }
+  if(arr(profile.apparitions).length){
+    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"APPARITION HISTORIES","HISTOIRE DES APPARITIONS"))+'</small>'+placeRecordRows(profile.apparitions,vm.language)+'</section>';
+  }
+  if(arr(profile.relics).length){
+    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"RELICS & CUSTODY","RELIQUES ET LIEUX DE CONSERVATION"))+'</small>'+placeRecordRows(profile.relics,vm.language)+'</section>';
   }
   if(arr(profile.shrines).length){
     html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"SACRED SITE","LIEU SACRÉ"))+'</small>'+placeRecordRows(profile.shrines,vm.language)+'</section>';
@@ -290,7 +301,7 @@ export function renderExploreToString(vm){
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
   html+='<nav class="aoExploreLensTabs">';
-  for(const lens of ["tlm","shrines","traditions","pilgrimages"]){
+  for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
     const label=lensLabel(vm.language,lens);
     const count=vm.counts?.[lens];
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+esc(lens)+'" class="'+(vm.lens===lens?"active":"")+'" aria-pressed="'+String(vm.lens===lens)+'"><span>'+esc(label)+'</span>'+(Number.isFinite(Number(count))?'<small>'+esc(count)+'</small>':"")+'</button>';
@@ -302,6 +313,8 @@ export function renderExploreToString(vm){
   html+='<div class="aoFindSearch"><input type="search" data-find-query value="'+esc(f.query||"")+'" placeholder="'+esc(
     vm.lens==="tlm"?L(vm.language,"City, church, diocese or country","Ville, église, diocèse ou pays"):
     vm.lens==="shrines"?L(vm.language,"Shrine, saint or place","Sanctuaire, saint ou lieu"):
+    vm.lens==="apparitions"?L(vm.language,"Apparition, witness, place","Apparition, témoin, lieu"):
+    vm.lens==="relics"?L(vm.language,"Relic, saint, place","Relique, saint, lieu"):
     vm.lens==="traditions"?L(vm.language,"Custom, region, period or place","Coutume, région, période ou lieu"):
     L(vm.language,"Pilgrimage, shrine, route or place","Pèlerinage, sanctuaire, itinéraire ou lieu")
   )+'"></div>';
@@ -309,7 +322,7 @@ export function renderExploreToString(vm){
   html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
 
-  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="traditions"?L(vm.language,"attestations","attestations"):L(vm.language,"pilgrimages","pèlerinages");
+  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,"attestations","attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
@@ -324,6 +337,7 @@ export function renderExploreToString(vm){
           ?L(vm.language,"These records have canonical addresses, but no publishable coordinates yet. Use List for full access.","Ces fiches ont des adresses canoniques, mais pas encore de coordonnées publiables. Utilisez Liste pour tout consulter.")
           :L(vm.language,"No publishable map points in this lens yet.","Aucun point cartographique publiable dans ce volet pour le moment.")
     )+'</span></div></div>';
+    if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
       html+='<div class="aoMapLegend" role="note" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'">'
         +'<span class="aoMapLegendLabel">'+esc(L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
