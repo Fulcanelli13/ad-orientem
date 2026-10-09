@@ -69,8 +69,8 @@
     "sourceScopeDeskReview20261009": {
       "claimCount": 122,
       "reviewed": 122,
-      "numberedItalianRefs": 359,
-      "supplementaryAuthorityReferences": 13,
+      "numberedItalianRefs": 361,
+      "supplementaryAuthorityReferences": 14,
       "claimsWithSpecificEditorialFlags": 31,
       "bilingualTextRevisions": 4,
       "newPrimarySourceAuthorities": [
@@ -97,6 +97,19 @@
       ],
       "certifiedForPublication": false,
       "scope": "Bilingual candidate textual precision. No native-French, external theologian, or 1913 facsimile page-level signoff."
+    },
+    "practicalEditorialLanguageReview20261009": {
+      "revisedClaimCount": 7,
+      "revisionIds": [
+        "LTF-019:3",
+        "LTF-023:3",
+        "LTF-031:2",
+        "LTF-036:1",
+        "LTF-040:2",
+        "LTF-051:3",
+        "LTF-053:3"
+      ],
+      "approvalStatus": "EDITORIAL_DRAFT_ONLY_INDEPENDENT_SIGNOFF_OUTSTANDING"
     }
   },
   "curriculumReconciliation": {
@@ -249,19 +262,31 @@
           }
         },
         {
-          "en": "Grace lost through mortal sin may be recovered through worthy sacramental confession or perfect contrition; perfect contrition does not cancel the obligation to confess the mortal sins.",
-          "fr": "La grâce perdue par le péché mortel peut être recouvrée par une bonne confession sacramentelle ou par la contrition parfaite ; celle-ci ne supprime pas l'obligation de confesser les péchés mortels.",
+          "en": "Perfect contrition, arising from love of God above all things, reconciles a person with God before sacramental confession when it includes the firm intention to confess mortal sins as soon as possible; it never replaces that obligation.",
+          "fr": "La contrition parfaite, née de l’amour de Dieu par-dessus toute chose, réconcilie avec Dieu avant la confession sacramentelle lorsqu’elle comprend la ferme résolution de confesser les péchés mortels dès que possible ; elle ne dispense jamais de cette obligation.",
           "sources": [
             {
               "source": "PIUS_X_1912",
               "refs": [
-                "PXQ146"
+                "PXQ146",
+                "PXQ363",
+                "PXQ364"
               ],
               "locators": [
                 {
                   "ref": "PX1912-Q146",
                   "stem": "How is the grace of God,",
                   "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+                },
+                {
+                  "ref": "PX1912-Q363",
+                  "stem": "What is perfect sorrow, or contrition?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+                },
+                {
+                  "ref": "PX1912-Q364",
+                  "stem": "Why is contrition perfect sorrow?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
                 }
               ],
               "verification": "NUMBER_LOCATED_IN_PINNED_ENGLISH_WITNESS_NOT_FULL_DOCTRINAL_APPROVAL",
@@ -269,6 +294,16 @@
                 {
                   "ref": "PX1912-Q146",
                   "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md",
+                  "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
+                },
+                {
+                  "ref": "PX1912-Q363",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md",
+                  "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
+                },
+                {
+                  "ref": "PX1912-Q364",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md",
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
@@ -280,10 +315,13 @@
             "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
             "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
             "italianQuestionRefs": [
-              "PX1912-Q146"
+              "PX1912-Q146",
+              "PX1912-Q363",
+              "PX1912-Q364"
             ],
             "originalLanguageLinks": [
-              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
             ],
             "supplementaryAuthorityLinks": [],
             "reviewFlags": [
@@ -294,6 +332,14 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "practicalEditorialPass20261009": {
+            "status": "CANDIDATE_REVISED_SOURCE_LINKS_PRESERVED",
+            "issue": "State essential intention and sacramental-confession obligation, not a vague alternative route.",
+            "sourceCount": 1,
+            "independentTheologyApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "canonicalSignoff": false
           }
         }
       ],
@@ -1309,8 +1355,8 @@
           }
         },
         {
-          "en": "A sacrament requires matter, form and a qualified minister acting with the intention of doing what the Church does.",
-          "fr": "Un sacrement requiert une matière, une forme et un ministre qualifié ayant l’intention de faire ce que fait l’Église.",
+          "en": "Each sacrament has a sensible sign, traditionally described by matter and form; its valid celebration also requires the minister and intention appropriate to that sacrament.",
+          "fr": "Chaque sacrement possède un signe sensible, traditionnellement décrit par une matière et une forme ; sa célébration valide exige aussi le ministre et l’intention requis pour ce sacrement.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -1390,6 +1436,14 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "practicalEditorialPass20261009": {
+            "status": "CANDIDATE_REVISED_SOURCE_LINKS_PRESERVED",
+            "issue": "Avoid asserting a single class of 'qualified minister' for every sacrament regardless of its proper ministers.",
+            "sourceCount": 1,
+            "independentTheologyApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "canonicalSignoff": false
           }
         },
         {
@@ -4199,8 +4253,8 @@
           }
         },
         {
-          "en": "The spouses confer matrimonial consent. In the Latin Church, valid celebration ordinarily requires the prescribed canonical form, before an authorized ecclesiastical assistant and two witnesses, subject to the exceptions provided by law.",
-          "fr": "Les époux échangent leur consentement matrimonial. Dans l’Église latine, la validité du mariage exige ordinairement la forme canonique prescrite, devant un assistant ecclésiastique habilité et deux témoins, sous réserve des exceptions prévues par le droit.",
+          "en": "Matrimony is brought about by the spouses’ consent. For Catholics subject to canonical form in the Latin Church, that consent ordinarily must be expressed before an authorized Church assistant and two witnesses for valid celebration, subject to the exceptions provided by law.",
+          "fr": "Le Mariage est constitué par le consentement des époux. Pour les catholiques soumis à la forme canonique dans l’Église latine, ce consentement doit ordinairement être échangé devant un assistant de l’Église habilité et deux témoins pour que le mariage soit valide, sous réserve des exceptions prévues par le droit.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -4271,6 +4325,14 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "practicalEditorialPass20261009": {
+            "status": "CANDIDATE_REVISED_SOURCE_LINKS_PRESERVED",
+            "issue": "Clarify who is bound by canonical form, and distinguish consent from form.",
+            "sourceCount": 2,
+            "independentTheologyApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "canonicalSignoff": false
           }
         },
         {
@@ -5299,8 +5361,8 @@
       },
       "claims": [
         {
-          "en": "Mortal sin involves grave matter, full advertence and deliberate consent.",
-          "fr": "Le péché mortel comporte une matière grave, une pleine advertance et un consentement délibéré.",
+          "en": "Mortal sin requires grave matter, full knowledge and deliberate consent.",
+          "fr": "Le péché mortel suppose une matière grave, une pleine connaissance et un consentement délibéré.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -5344,6 +5406,14 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "practicalEditorialPass20261009": {
+            "status": "CANDIDATE_REVISED_SOURCE_LINKS_PRESERVED",
+            "issue": "Replace unnatural or archaic 'pleine advertance' with intelligible and standard moral-theology language.",
+            "sourceCount": 1,
+            "independentTheologyApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "canonicalSignoff": false
           }
         },
         {
@@ -6529,8 +6599,8 @@
           }
         },
         {
-          "en": "Veneration of angels and saints is distinct from the adoration due to God alone; relics and sacred images are honored in relation to the persons they represent.",
-          "fr": "La vénération des anges et des saints se distingue de l’adoration due à Dieu seul ; les reliques et les images sacrées sont honorées en relation avec les personnes qu’elles représentent.",
+          "en": "Angels and saints may be venerated, but adoration belongs to God alone. Relics are honored out of reverence for the saints to whom they belong; sacred images are honored in reference to those whom they represent.",
+          "fr": "On peut vénérer les anges et les saints, mais l’adoration est due à Dieu seul. Les reliques sont honorées par respect pour les saints auxquels elles appartiennent ; les images sacrées sont honorées en référence aux personnes qu’elles représentent.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -6620,6 +6690,14 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "practicalEditorialPass20261009": {
+            "status": "CANDIDATE_REVISED_SOURCE_LINKS_PRESERVED",
+            "issue": "Avoid implying bodily relics represent saints in the same sense as images.",
+            "sourceCount": 1,
+            "independentTheologyApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "canonicalSignoff": false
           }
         },
         {
@@ -9252,8 +9330,8 @@
           }
         },
         {
-          "en": "Their use is distinct from the seven sacraments instituted by Christ, which are efficacious signs conferring sacramental grace.",
-          "fr": "Leur usage se distingue des sept sacrements institués par le Christ, qui sont des signes efficaces conférant la grâce sacramentelle.",
+          "en": "Unlike the seven sacraments, sacramentals do not confer grace by the rite itself. Through the Church’s prayer they prepare the faithful to receive grace and help sanctify the circumstances of daily life.",
+          "fr": "À la différence des sept sacrements, les sacramentaux ne confèrent pas la grâce par le rite lui-même. Par la prière de l’Église, ils préparent les fidèles à recevoir la grâce et contribuent à sanctifier les circonstances de la vie quotidienne.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -9319,6 +9397,14 @@
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
+            },
+            {
+              "source": "CCC_1667_1671",
+              "refs": [
+                "§§1667–1671"
+              ],
+              "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+              "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
           "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
@@ -9336,13 +9422,23 @@
             "originalLanguageLinks": [
               "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
             ],
-            "supplementaryAuthorityLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html"
+            ],
             "reviewFlags": [],
             "original1912PrintedFacsimileVerified": false,
             "independentDoctrinalApproved": false,
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "practicalEditorialPass20261009": {
+            "status": "CANDIDATE_REVISED_SOURCE_LINKS_PRESERVED",
+            "issue": "Remove nearly identical repetition of claim 1 and explain the actual theological distinction.",
+            "sourceCount": 1,
+            "independentTheologyApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "canonicalSignoff": false
           }
         }
       ],
@@ -9896,8 +9992,8 @@
           }
         },
         {
-          "en": "The grace received in the sacraments requires our correspondence through doing good and avoiding evil.",
-          "fr": "La grâce reçue dans les sacrements demande notre correspondance par la pratique du bien et l’évitement du mal.",
+          "en": "We must cooperate with the grace received through the sacraments by doing good and avoiding evil.",
+          "fr": "Nous devons coopérer à la grâce reçue par les sacrements en faisant le bien et en évitant le mal.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -9975,6 +10071,14 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "practicalEditorialPass20261009": {
+            "status": "CANDIDATE_REVISED_SOURCE_LINKS_PRESERVED",
+            "issue": "Replace unnatural French expression with practical, idiomatic teaching.",
+            "sourceCount": 1,
+            "independentTheologyApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "canonicalSignoff": false
           }
         },
         {

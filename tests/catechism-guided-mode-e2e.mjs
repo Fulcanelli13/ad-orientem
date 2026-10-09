@@ -37,6 +37,31 @@ try {
   assert.equal(await panel.locator("select[data-guided-select] option").count(),55);
   assert.equal(await panel.locator(".aoCatechismGuidedDraft").count(),1);
   assert.ok(await panel.locator('a[aria-label*="French printed 1913"]').count()>0,"A question must link to the French 1913 historical scan");
+  assert.match(await panel.locator(".aoCatechismGuidedPosition").innerText(),/1 \/ 55/);
+  assert.equal(await panel.locator("[data-guided-prev]").isDisabled(),true);
+  await panel.locator("[data-guided-next]").tap();
+  assert.equal(await panel.locator("select[data-guided-select]").inputValue(),"LTF-002");
+  assert.match(await panel.locator(".aoCatechismGuidedPosition").innerText(),/2 \/ 55/);
+  await panel.locator("select[data-guided-select]").selectOption("LTF-055");
+  assert.equal(await panel.locator("[data-guided-next]").isDisabled(),true);
+  await panel.locator("[data-guided-prev]").tap();
+  assert.equal(await panel.locator("select[data-guided-select]").inputValue(),"LTF-054");
+  // The French reader must not substitute English source stems for French question buttons.
+  const french=await page.evaluate(async ()=>{
+    const base=["data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json","data/learn/learn-the-faith-certification-001-018.v1.json","data/learn/learn-the-faith-certification-019-054.v1.json","data/learn/ltfaith-pius-x-en-witness-index.v1.json","data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json"];
+    const [crosswalk,first,second,witnessIndex,frenchIndex]=await Promise.all(base.map(async p=>{const r=await fetch(p);if(!r.ok)throw Error(p);return r.json();}));
+    const container=document.createElement("div");document.body.append(container);
+    const {renderCatechismGuidedStudy}=await import("./src/learn/catechism-guided-reader.js");
+    const view=renderCatechismGuidedStudy(container,{crosswalk,first,second,witnessIndex,frenchIndex},{preview:true,language:"fr",lessonId:"LTF-046"});
+    const result={label:container.querySelector("nav label")?.textContent,question:container.querySelector('[data-guided-question="213"]')?.textContent,title:container.querySelector("article h2")?.textContent,originalFrenchLinks:container.querySelectorAll('a[aria-label*="Original français"]').length};
+    view.destroy();container.remove();
+    return result;
+  });
+  assert.equal(french.label,"Leçon");
+  assert.equal(french.question,"Question 213");
+  assert.equal(french.title,"Les Préceptes de l’Église");
+  assert.ok(french.originalFrenchLinks>0);
+
   await panel.locator('select[data-guided-select]').selectOption("LTF-046");
   await panel.locator('[data-guided-question="213"]').tap();
   await page.waitForFunction(()=>globalThis.AO_TRADITIONAL_CATECHISM?.getState?.().detail===213,null,{timeout:30000});
@@ -49,6 +74,12 @@ try {
   assert.equal(await panel.locator("select[data-guided-select]").inputValue(),"LTF-046");
   await panel.locator('button[aria-label="Close guided study preview"],button[aria-label="Close guided study"]').first().tap();
   await panel.waitFor({state:"hidden"});
+  await toggle.tap();
+  await panel.waitFor({state:"visible"});
+  await page.keyboard.press("Escape");
+  await panel.waitFor({state:"hidden"});
+  assert.equal(await toggle.evaluate(el=>el===document.activeElement),true);
+
   const metrics=await page.evaluate(()=>({
     originalVisible:!document.getElementById("ao-cate-root")?.hidden,
     question:globalThis.AO_TRADITIONAL_CATECHISM?.getState?.().detail,
