@@ -627,6 +627,46 @@
       "locator": "Cardinal Ratzinger, Worthiness to Receive Holy Communion: General Principles (2004 memorandum)",
       "provenance": "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
       "original_context_approved": false
+    },
+    {
+      "id": "AL-BA2016",
+      "title": "Francis, letter to Buenos Aires bishops and their original 2016 pastoral criteria for Amoris laetitia VIII",
+      "url": "https://www.vatican.va/content/francesco/es/letters/2016/documents/papa-francesco_20160905_regione-pastorale-buenos-aires.html",
+      "locator": "5 September 2016 original Spanish papal endorsement and episcopal criteria §§5–6, 8–10; particular discernment and sacramental integration; distinguish letter from universal norms",
+      "original_context_approved": false,
+      "passage_review_status": "original_Spanish_issuer_document_examined_bounded"
+    },
+    {
+      "id": "DUBIA2016-FULL",
+      "title": "Four Cardinals, Five Dubia on Amoris laetitia (19 September 2016), full first-person signed publication",
+      "url": "https://www.ncregister.com/blog/full-text-and-explanatory-notes-of-cardinals-questions-on-amoris-laetitia",
+      "locator": "Cardinals Brandmüller, Burke, Caffarra and Meisner, public full text Nov 14 2016, especially question 1 on AL §305 note 351 and FC §84; original first-person documents reprinted",
+      "original_context_approved": false,
+      "passage_review_status": "original_signed_document_reprint_examined_bounded"
+    },
+    {
+      "id": "CIC1245",
+      "title": "Code of Canon Law, canons 1245, 1247 and 1248 on dispensations and Sunday obligation",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
+      "locator": "1983 CIC canons 1245, 1247–1248; individual pastor dispensation as provided in law distinct from episcopal public dispensations",
+      "original_context_approved": false,
+      "passage_review_status": "original_canonical_text_scope_documented"
+    },
+    {
+      "id": "BA2016-ORIGINAL-LETTER",
+      "title": "Buenos Aires Regional Bishops, Original Basic Criteria for AL VIII, jointly reproduced with Pope's letter",
+      "url": "https://www.vatican.va/content/francesco/es/letters/2016/documents/papa-francesco_20160905_regione-pastorale-buenos-aires.html",
+      "locator": "Criterios básicos para la aplicación del capítulo VIII, especially nn. 5–6 and 8–10, original Spanish, embedded after papal 5 Sept 2016 letter",
+      "original_context_approved": false,
+      "passage_review_status": "original_Buenos_Aires_criteria_published_with_papal_letter"
+    },
+    {
+      "id": "SYN2023-DUBIA-DIRECT",
+      "title": "Five Cardinals 10 July 2023 dubia and Pope Francis's 11 July answers, official DDF publication",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_risposta-dubia-2023_en.html",
+      "locator": "Dubium 3 on synodality, 10 July 2023; Francis's response to Question 3, 11 July 2023; DDF publication on 25 Sept 2023",
+      "original_context_approved": false,
+      "passage_review_status": "official_firsthand_questions_and_papal_answers_bounded"
     }
   ],
   "dossiers": [
@@ -798,28 +838,30 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The 2018 Catechism revision calls the death penalty inadmissible in present circumstances and links that judgement to human dignity and changed penal possibilities. In Evangelium vitae §56, John Paul II had already insisted that cases requiring execution were very rare or practically nonexistent. Critics such as Edward Feser argue that some official explanations risk implying a categorical denial of what earlier doctrine permitted.",
-            "fr": "La révision de 2018 du Catéchisme qualifie la peine de mort d'inadmissible et relie ce jugement à la dignité humaine et aux moyens pénitentiaires actuels. Evangelium vitae (§56) avait déjà indiqué que les cas où l'exécution s'imposait étaient très rares, voire pratiquement inexistants. Des critiques, dont Edward Feser, estiment que certaines explications peuvent suggérer une négation de principe de ce qu'une doctrine antérieure permettait."
+            "en": "The revised Catechism §2267 in 2018 describes capital punishment as inadmissible because it attacks the inviolability and dignity of the person, while the CDF's accompanying letter §2 explicitly says that earlier political conditions had made it an acceptable means to protect the common good and cites improved detention and moral understanding. John Paul II's Evangelium vitae §56 had already judged absolute need in present conditions very rare or practically nonexistent. Edward Feser's 2018 article contends that such reformulation is dangerously close to contradicting the previously recognised intrinsic permissibility in principle. Those original formulations belong side by side.",
+            "fr": "Le §2267 du Catéchisme révisé en 2018 qualifie la peine capitale d'inadmissible comme atteinte à l'inviolabilité et à la dignité de la personne, tandis que la lettre explicative de la CDF §2 reconnaît expressément que des circonstances anciennes avaient pu en faire un moyen acceptable de défense du bien commun, et invoque nouvelles conditions pénitentiaires et compréhension morale. Evangelium vitae §56 jugeait déjà la nécessité absolue aujourd'hui très rare, voire inexistante. Edward Feser objecta en 2018 que la formulation nouvelle risquait de contredire la permission intrinsèque reconnue autrefois. Ces textes originaux doivent être confrontés."
           },
           "source_ids": [
             "CCC2267",
+            "CDFDEATH",
             "EV56",
             "FESER"
           ],
-          "attribution": "DDF/Catechism 2018; Edward Feser's published critique",
+          "attribution": "CDF's original 2018 catechism wording and explanatory letter, John Paul II's 1995 Evangelium vitae, and Edward Feser's signed 2018 criticism",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "A current claim that particular states should not execute criminals is not logically identical to a timeless claim that no legitimate authority could ever impose a capital sentence. Yet simply repeating the word 'development' fails to answer criticism if a text appears to teach the second proposition. Responsible examination must quote the older and revised formulations in context and state which interpretation the text can bear.",
-            "fr": "Affirmer qu'aujourd'hui les États ne doivent pas exécuter les condamnés n'est pas identique à soutenir qu'aucune autorité légitime n'aurait jamais pu infliger une peine capitale. Mais répéter le mot « développement » ne répond pas à la difficulté si un texte semble enseigner la seconde proposition. Il faut citer les formulations anciennes et nouvelles dans leur contexte et préciser leur portée possible."
+            "en": "The CDF's own explanatory letter distinguishes historically tolerated or acceptable executions from its present abolitionist judgement; therefore describing the 2018 revision as an express declaration that the Church always considered execution intrinsically evil would misquote the accompanying document. Yet the Catechism's appeal to inviolability and dignity raises a genuine question about whether the principle of legitimate public authority changed or only its permitted application in current conditions. A serious reply to Feser and Steven Long must compare exact theological object, competent authority and level of doctrinal claim, rather than declare either continuity or rupture by fiat.",
+            "fr": "La lettre explicative de la CDF distingue elle-même des exécutions jadis tolérées ou admises de son jugement abolitionniste actuel : présenter la révision de 2018 comme une déclaration explicite que l'Église considéra toujours l'exécution intrinsèquement mauvaise déformerait ce document. Pourtant l'invocation de l'inviolabilité et de la dignité dans le Catéchisme soulève une vraie question sur le principe d'autorité publique ou seulement son application dans les circonstances présentes. Répondre sérieusement à Feser et Steven Long impose de confronter objet moral, compétence et degré d'enseignement plutôt que décréter la continuité ou la rupture."
           },
           "source_ids": [
-            "EV56",
             "CDFDEATH",
             "CCC2267",
+            "EV56",
+            "FESER",
             "LONG"
           ],
           "attribution": null,
@@ -1169,27 +1211,28 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Five cardinals' 2023 dubia asked whether the current synodal process could reconfigure the Church's constitutive hierarchy, and the Pope's published reply addressed the nature of participation and authority. The 2024 Synod's final document received papal approval as a reference for implementation. Neither the question nor the reply should be stripped of its actual status and recast as an invented declaration that doctrine will henceforth be decided by referendum.",
-            "fr": "Les dubia présentés par cinq cardinaux en 2023 interrogent la possibilité que le processus synodal reconfigure la hiérarchie constitutive de l'Église ; la réponse pontificale publiée traite des rapports entre participation et autorité. Le document final du Synode de 2024 a reçu l'approbation du pape pour guider son application. Ni la question ni la réponse ne doivent être transformées en affirmation imaginaire que le dogme sera soumis à référendum."
+            "en": "The five cardinals Brandmüller, Burke, Sandoval Íñiguez, Sarah and Zen wrote dubium 3 on 10 July 2023 asking whether calling synodality constitutive could make it a supreme principle of governance against the authority of pope and episcopal college. The DDF subsequently published Francis's 11 July response, which distinguished forms of participation while retaining the Church's hierarchical constitution. The 2024 Synod final text belongs to a further stage of implementation; neither the original five-cardinal question nor Francis's reply is a formal abolition of apostolic governance.",
+            "fr": "Les cinq cardinaux Brandmüller, Burke, Sandoval Íñiguez, Sarah et Zen posèrent leur troisième dubium le 10 juillet 2023 : parler de synodalité constitutive pourrait-il en faire un principe suprême de gouvernement contraire à l'autorité du pape et du collège épiscopal ? La CDF publia ensuite la réponse de François du 11 juillet, qui distingue participation et constitution hiérarchique. Le document final du Synode de 2024 relève d'une étape ultérieure d'application ; ni la question originale ni la réponse ne suppriment formellement le gouvernement apostolique."
           },
           "source_ids": [
-            "SYN5CARD23",
+            "SYN2023-DUBIA-DIRECT",
             "EPICOM18",
             "SYNODFINAL24"
           ],
-          "attribution": "Five cardinals' 2023 dubia and papal reply; 2024 synodal final document",
+          "attribution": "Five named cardinals, original 10 July 2023 dubium 3, and Francis's 11 July reply formally published by DDF in Sept 2023",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "Every consultation must separate the faithful's sensus fidei from an opinion poll, the deliberative or consultative force of an assembly, and the personal responsibility of a bishop to teach apostolic doctrine. If an implementing policy appears to place binding judgements in the hands of an unaccountable body, the concern requires its exact text and legal force. Conversely, inclusion of lay testimony alone is not a denial of apostolic succession.",
-            "fr": "Toute consultation doit distinguer sensus fidei des sondages, portée consultative ou délibérative d'une assemblée et responsabilité personnelle de l'évêque d'enseigner la foi apostolique. Si une procédure semble confier des décisions obligatoires à une instance sans responsabilité propre, il faut examiner son texte et sa force juridique. À l'inverse, écouter des témoignages laïcs ne nie pas la succession apostolique."
+            "en": "Francis's response to the five cardinals is not a statement that doctrinal questions may henceforth be settled by polling. The juridical status of a synodal vote still depends on papal approval and the norms governing the assembly. Conversely, the cardinals' concern about the Church's immutable hierarchical constitution is not disproved merely because a consultative process is said to be pastorally inclusive. The correct analysis identifies whether a particular 2024–26 proposal is consultation, doctrine, disciplinary law or an authorised papal act, then measures it against Lumen gentium §22 and Episcopalis communio.",
+            "fr": "La réponse de François aux cinq cardinaux ne déclare pas que la doctrine sera désormais tranchée par sondage. Le statut juridique d'un vote synodal reste lié à l'approbation pontificale et aux règles de l'assemblée. Inversement, l'inquiétude des cardinaux sur la constitution hiérarchique immuable de l'Église ne disparaît pas sous prétexte qu'une consultation serait pastoralement inclusive. Il faut préciser si une proposition de 2024–26 est consultation, doctrine, loi disciplinaire ou acte pontifical autorisé, puis la confronter à Lumen gentium §22 et Episcopalis communio."
           },
           "source_ids": [
-            "SYN2018",
+            "SYN2023-DUBIA-DIRECT",
             "EPICOM18",
+            "SYN2018",
             "V1"
           ],
           "attribution": null,
@@ -1753,12 +1796,14 @@
         {
           "role": "answer",
           "text": {
-            "en": "The Church maintains the indissolubility of valid marriage and the binding character of moral law, while requiring careful pastoral discernment in difficult situations. The dispute over Amoris laetitia chapter VIII concerns whether some sacramental applications fit the earlier conditions of Familiaris consortio §84. The bare assertion that the exhortation abolished the doctrine of marriage is not a faithful description of its text.",
-            "fr": "L'Église maintient l'indissolubilité du mariage valide et le caractère obligatoire de la loi morale tout en demandant un discernement pastoral attentif dans les situations difficiles. La controverse sur Amoris laetitia VIII demande si certaines applications sacramentelles s'accordent avec Familiaris consortio §84. Affirmer simplement que l'exhortation aurait aboli la doctrine du mariage n'en restitue pas fidèlement le texte."
+            "en": "The 2016 exhortation Amoris laetitia chapter VIII retains marriage's indissolubility and asks for discernment of personal responsibility in irregular situations. Its §305 and footnote 351 say that, in certain cases, discernment may include the help of the sacraments. The Argentine bishops' September 2016 guidelines envisage access in some difficult cases, and Francis explicitly endorsed their reading. This is a concrete disputed sacramental application, not a declaration that an existing valid marriage can simply be dissolved.",
+            "fr": "L'exhortation Amoris laetitia de 2016, chapitre VIII, maintient l'indissolubilité du mariage et demande un discernement de la responsabilité personnelle en situation irrégulière. Son §305, note 351, envisage dans certains cas l'aide des sacrements. Les critères des évêques argentins de septembre 2016 envisagent un accès dans des cas difficiles, et François en approuva expressément la lecture. Il s'agit d'une application sacramentelle contestée, non d'une déclaration qu'un mariage valide peut être simplement dissous."
           },
           "source_ids": [
             "AL2016",
-            "FC1981"
+            "FC1981",
+            "AL-BA2016",
+            "BA2016-ORIGINAL-LETTER"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -1767,28 +1812,30 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Four cardinals' 2016 dubia asked whether sacramental discipline for civilly remarried people living more uxorio without a commitment to continence remains in force and whether negative moral norms admit exceptions. These questions were documented and concerned real interpretations of Amoris laetitia. They should be given their full sense instead of dismissed as hostility to persons whose family lives are difficult.",
-            "fr": "Les dubia de quatre cardinaux en 2016 demandaient si la discipline sacramentelle envers les remariés civils vivant maritalement sans engagement à la continence demeurait en vigueur et si des normes morales négatives admettaient des exceptions. Ces questions documentées visaient de réelles interprétations d'Amoris laetitia ; il faut les restituer sans y voir une hostilité envers les personnes éprouvées."
+            "en": "The four cardinals' signed dubia, dated 19 September 2016 and made public in November, asked specifically whether Amoris laetitia §§300–305, especially note 351, permitted sacramental admission of divorced and civilly remarried people living as spouses without fulfilling Familiaris consortio §84's condition of continence. Their other questions concerned absolute negative precepts, conscience and grave objective evil. Francis's 5 September letter to the Buenos Aires bishops, by contrast, commended their guidelines' discernment of some cases of sacramental access and said their chapter VIII interpretation was the correct one. These are original statements of the opposed positions.",
+            "fr": "Les dubia signés de quatre cardinaux, datés du 19 septembre 2016 et publiés en novembre, demandaient précisément si Amoris laetitia §§300–305, surtout la note 351, permettait les sacrements aux divorcés remariés vivant maritalement sans respecter la continence demandée par Familiaris consortio §84. Les autres questions concernaient interdits absolus, conscience et mal objectif grave. La lettre de François aux évêques de Buenos Aires, du 5 septembre, approuvait au contraire leurs critères de discernement permettant dans certains cas l'accès sacramentel. Ce sont les paroles originales des parties."
           },
           "source_ids": [
-            "DUBIA2016",
+            "DUBIA2016-FULL",
+            "FC1981",
             "AL2016",
-            "FC1981"
+            "AL-BA2016"
           ],
-          "attribution": "Four cardinals' five published dubia, 2016",
+          "attribution": "Four cardinals Brandmüller, Burke, Caffarra, Meisner (2016 signed five dubia) contrasted with Francis's own 5 September 2016 letter to Buenos Aires bishops",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "A reduction of subjective culpability does not mean that an objectively wrong act has become good. Yet discerning a private person's responsibility does not by itself settle public Eucharistic discipline or the risk of scandal. A credible resolution must read Amoris laetitia §§300–305 and its notes alongside Familiaris consortio §84, stating precisely what each allows and forbids.",
-            "fr": "Une culpabilité subjective diminuée ne rend pas bon un acte objectivement mauvais. Mais discerner la responsabilité privée d'une personne ne règle pas automatiquement la discipline eucharistique publique ni le risque de scandale. Une solution crédible doit lire Amoris laetitia §§300–305 et ses notes avec Familiaris consortio §84, en précisant les permissions et interdictions de chaque texte."
+            "en": "Familiaris consortio §84 expressly excludes divorced and civilly remarried people living as spouses from Eucharistic Communion while the prior marriage bond persists, and envisages reception of the sacraments when a couple undertakes to live in continence, avoiding scandal. The Buenos Aires criteria read Amoris laetitia as allowing more particular discernment, even sacramental access in some cases where continence is not feasible. The dispute therefore cannot be settled by pretending the new guidance mentioned only abstract mercy; nor should it be described as a formally promulgated definition that adultery is morally good. Objective moral norms, reduced subjective culpability and public sacramental admission are distinct propositions requiring explicit theological reconciliation.",
+            "fr": "Familiaris consortio §84 écarte expressément de la communion eucharistique les divorcés remariés vivant maritalement tant que subsiste le premier lien, et envisage les sacrements avec engagement de continence et prévention du scandale. Les critères de Buenos Aires lisent Amoris laetitia comme autorisant un discernement plus particulier, jusqu'à un accès sacramentel dans certaines situations où la continence serait difficile. On ne peut donc réduire le texte récent à la seule miséricorde abstraite, ni prétendre qu'il définit solennellement l'adultère comme bon. Norme morale objective, culpabilité subjective diminuée et discipline publique sont trois propositions à concilier explicitement."
           },
           "source_ids": [
-            "AL2016",
             "FC1981",
-            "DUBIA2016"
+            "AL2016",
+            "BA2016-ORIGINAL-LETTER",
+            "DUBIA2016-FULL"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -1797,13 +1844,14 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Sacramental marriage and the Eucharist demand both truth and mercy. Pastoral accompaniment should be patient toward complex personal histories but cannot present conduct contrary to divine law as a new good. Clear sacramental discipline, repentance, conscience and charity toward struggling families belong together, not to opposing ideological camps.",
-            "fr": "Le mariage sacramentel et l'Eucharistie exigent vérité et miséricorde. L'accompagnement doit être patient devant les histoires personnelles complexes sans présenter une conduite contraire à la loi divine comme un bien nouveau. Discipline sacramentelle claire, repentir, conscience et charité envers les familles éprouvées vont ensemble et ne doivent pas former des camps idéologiques opposés."
+            "en": "The validity and indissolubility of sacramental marriage and the Eucharist's holiness cannot be reduced to decisions of pastoral convenience. The Church must help persons in complex family histories with justice, truth, confession and practical support, while being clear about what continence and sacramental reconciliation require. Fidelity demands answering the cardinals' actual question and the actual Argentine criteria instead of replacing either with slogans; charity toward people who struggle never requires denial of divine law or judgment of souls from appearances.",
+            "fr": "La validité et l'indissolubilité du mariage sacramentel ainsi que la sainteté de l'Eucharistie ne dépendent pas de la seule commodité pastorale. L'Église doit aider avec justice, vérité, confession et assistance concrète les personnes dont l'histoire familiale est difficile, tout en précisant les exigences de continence et de réconciliation sacramentelle. La fidélité demande de répondre aux questions réelles des cardinaux et aux critères argentins, non à des slogans ; la charité envers les personnes éprouvées n'exige ni négation de la loi divine ni jugement des âmes sur les apparences."
           },
           "source_ids": [
             "FC1981",
             "AL2016",
-            "CCC1753"
+            "DUBIA2016-FULL",
+            "BA2016-ORIGINAL-LETTER"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -1840,27 +1888,28 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The 2019 Abu Dhabi declaration mentions religious pluralism when describing divine will; SSPX Superior General Davide Pagliarani publicly objected that its wording endangers the uniqueness of Christ and his Church. This is an actual attributable objection. Its force depends on the exact declaration, the theological distinction of permissive will and the critic's documented argument.",
-            "fr": "La déclaration d'Abou Dhabi de 2019 mentionne le pluralisme religieux en décrivant la volonté divine ; le supérieur général de la FSSPX, Davide Pagliarani, a publiquement objecté que ce langage menaçait l'unicité du Christ et de son Église. Il s'agit d'une objection réelle et attribuable, qui exige la lecture précise du texte et la distinction de la volonté divine permissive."
+            "en": "The Abu Dhabi document signed by Francis and Ahmad al-Tayyeb on 4 February 2019 uses the expression that religious pluralism is willed by God, in a passage also mentioning diversity of sex, colour, race and language. SSPX Superior General Davide Pagliarani publicly objected that such phrasing threatens the unique claim of Christ as Saviour and could confuse the distinction between God's positive will and his permission of false religious beliefs. Dominus Iesus §§13–17, 20–22 rejects treating different religious revelations as equivalent. A signed diplomatic-theological declaration and its original traditionalist criticism are the proper opposing documents.",
+            "fr": "Le document d'Abou Dhabi signé par François et Ahmad al-Tayyeb le 4 février 2019 emploie la formule selon laquelle le pluralisme religieux est voulu par Dieu, dans un passage mentionnant aussi les différences de sexe, couleur, race et langue. Le supérieur général de la FSSPX, Davide Pagliarani, objecta publiquement que cette formule menace l'unicité du Christ Sauveur et risque de confondre volonté positive de Dieu et permission de croyances fausses. Dominus Iesus §§13–17, 20–22 refuse l'équivalence de révélations opposées. Il faut confronter le texte signé et sa critique traditionnelle originale."
           },
           "source_ids": [
             "AD2019",
             "ABUPAG19",
             "DI2000"
           ],
-          "attribution": "Abu Dhabi Declaration; Davide Pagliarani's published February 2019 critique",
+          "attribution": "Francis and Ahmad al-Tayyeb, 4 Feb 2019 signed Human Fraternity declaration, versus Davide Pagliarani's published SSPX General House objection",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "God may permit adherence to false religious propositions in providence without positively revealing contradictions. Reading a difficult text charitably does not eliminate the need for clarification where the distinction remains unclear. Neither truthful rejection of indifferentism nor peaceful coexistence with non-Christians requires coercion, contempt or misrepresentation of their beliefs.",
-            "fr": "Dieu peut permettre providentiellement l'adhésion à des propositions religieuses fausses sans révéler positivement des contradictions. Lire un texte difficile avec charité n'écarte pas une clarification nécessaire. Ni le rejet véridique de l'indifférentisme ni la coexistence pacifique avec des non-chrétiens ne requiert contrainte, mépris ou déformation de leurs croyances."
+            "en": "God's providential permission that human beings adopt divergent religions does not imply that he positively reveals mutually contradictory claims about Jesus Christ. The Abu Dhabi phrase does not specify that distinction, so the theological request for clarification is substantive rather than a contrived insult. Conversely, dialogue about civic coexistence and the rejection of religious coercion do not, without more, assert that the Incarnation and Resurrection are optional myths. A defensible reading must preserve both the original wording and Catholic doctrine's exclusive assertion of Christ's mediation.",
+            "fr": "La permission providentielle de Dieu envers des religions divergentes ne signifie pas qu'il révèle positivement des affirmations contradictoires sur Jésus-Christ. La formule d'Abou Dhabi ne précise pas cette distinction ; la demande d'éclaircissement théologique est donc substantielle, non une attaque inventée. Inversement, le dialogue civil et le refus de la contrainte religieuse ne font pas en eux-mêmes de l'Incarnation ou de la Résurrection des mythes facultatifs. Une lecture défendable garde la lettre exacte et l'unique médiation du Christ."
           },
           "source_ids": [
             "AD2019",
             "DI2000",
+            "ABUPAG19",
             "DH1965"
           ],
           "attribution": null,
@@ -1972,8 +2021,8 @@
         {
           "role": "answer",
           "text": {
-            "en": "At Assisi on 27 October 1986, John Paul II invited members of other religions to pray for peace and explained that the programme distinguished separate prayers from a common syncretistic rite. Whether the public staging nevertheless suggested religious equivalence is a distinct prudential and theological question. A fair judgment must reconstruct actual words and actions rather than rely on one alarming image or an asserted intention alone.",
-            "fr": "À Assise, le 27 octobre 1986, Jean-Paul II invita des représentants d'autres religions à prier pour la paix et expliqua que le programme distinguait les prières séparées d'un rite syncrétique commun. La question de savoir si la mise en scène suggérait néanmoins une équivalence religieuse est distincte. Un jugement loyal reconstitue paroles et gestes réels au lieu de s'appuyer sur une photographie inquiétante ou sur l'intention alléguée seulement."
+            "en": "At Assisi on 27 October 1986, John Paul II invited leaders of Christian communities and other religions for a peace gathering. In his opening address he rejected negotiating a religious consensus or relativism and described this actual sequence: each religion would pray separately in its traditional place and rite; participants would walk together in silence; prayers would then be presented one after another in the square. This was not one single jointly recited liturgical text. Whether the overall public staging nevertheless conveyed misleading religious equivalence remains an important prudential and theological question.",
+            "fr": "À Assise, le 27 octobre 1986, Jean-Paul II convia des responsables chrétiens et d'autres religions à une journée pour la paix. Dans son discours d'ouverture, il refusa le consensus religieux et le relativisme et décrivit la séquence réelle : chaque religion prierait séparément selon son rite et en son lieu, les participants marcheraient ensemble en silence, puis les prières seraient présentées successivement sur la place. Il ne s'agissait pas d'un texte liturgique unique récité en commun. Le risque que l'ensemble de la mise en scène suggère une équivalence religieuse reste une question prudentielle et théologique sérieuse."
           },
           "source_ids": [
             "ASSISI-START",
@@ -1986,28 +2035,29 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Archbishop Marcel Lefebvre and Bishop Antônio de Castro Mayer issued a joint declaration in December 1986 warning that Assisi could obscure the confession that Christ alone saves. John Paul II's addresses explained that representatives were assembled to witness to a common concern for peace, not to fashion one composite religious worship. Both are first-person documentary accounts of the controversy.",
-            "fr": "Mgr Marcel Lefebvre et Mgr Antônio de Castro Mayer publièrent en décembre 1986 une déclaration craignant qu'Assise n'obscurcisse la confession du salut par le Christ seul. Dans ses allocutions, Jean-Paul II précisa que les représentants s'étaient réunis pour témoigner d'une préoccupation commune pour la paix, non pour composer un culte religieux unique. Les deux positions reposent sur des textes originaux."
+            "en": "Lefebvre and de Castro Mayer's signed Buenos Aires declaration of 2 December 1986 goes beyond a general worry about ambiguity: it calls the Assisi events a public sin and a climactic rupture, claiming John Paul II encouraged adherents of false religions to pray to false gods. John Paul II's own 27 October address expressly said the gathering was not a doctrinal consensus or relativism; it organised separate and successive prayers for peace. These two attributable primary documents disagree about the religious meaning of the public event, and should be quoted as actual opposed judgements without pretending that intentions alone prove its prudence.",
+            "fr": "La déclaration signée à Buenos Aires le 2 décembre 1986 par Lefebvre et de Castro Mayer dépasse une inquiétude abstraite : elle qualifie Assise de péché public et de rupture culminante, accusant Jean-Paul II d'encourager les adeptes de fausses religions à prier leurs faux dieux. Dans son discours du 27 octobre, Jean-Paul II affirma au contraire que la rencontre ne visait ni accord doctrinal ni relativisme, et organisa des prières séparées et successives pour la paix. Les deux sources primaires s'opposent sur la signification religieuse de l'événement ; les intentions seules ne démontrent pas sa prudence."
           },
           "source_ids": [
             "ASSISILEF86",
             "ASSISI-START",
             "ASSISI-END"
           ],
-          "attribution": "Lefebvre and de Castro Mayer (1986); John Paul II (1986)",
+          "attribution": "Marcel Lefebvre and Antônio de Castro Mayer, signed declaration 2 Dec 1986, versus John Paul II opening and final addresses, 27 Oct 1986",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "An organiser's express rejection of syncretism is important but does not automatically settle the symbolism others perceived. Equally, one cannot treat every photograph of religious leaders together as proof that they all worshipped a common deity through a single rite. The prudent assessment asks who prayed, what was said, which spaces and objects were used and whether confusion was foreseeable.",
-            "fr": "Le refus explicite du syncrétisme par un organisateur importe sans dissiper automatiquement toute ambiguïté publique. Mais une photographie de chefs religieux réunis ne démontre pas qu'ils aient tous adoré une divinité commune dans un seul rite. L'évaluation prudente demande qui priait, quelles paroles furent dites, quels lieux et objets furent employés et si la confusion était prévisible."
+            "en": "One cannot equate successive prayers by different religions in one public programme with a single intercommunion or shared liturgical rite; the pope stated a concrete separation. Nevertheless, an organiser's intended distinction does not settle whether the public setting and successive invocations objectively risked scandal by visually associating incompatible claims about God. A conclusive judgement requires the rites actually used and material evidence of the staging, rather than only the declaration of either party. The Catholic prohibition of religious indifferentism and the right to seek civic peace must both be taken seriously.",
+            "fr": "On ne peut identifier des prières successives de religions différentes dans un même programme à une intercommunion ou un rite liturgique unique ; le pape décrivit une séparation concrète. Cependant l'intention de l'organisateur ne démontre pas que la présentation publique et les invocations successives ne risquaient aucun scandale en rapprochant visuellement des doctrines incompatibles. Le jugement complet exige les rites effectivement employés et des preuves de mise en scène, non seulement les déclarations des parties. Il faut garder le refus catholique de l'indifférentisme et la recherche légitime de la paix."
           },
           "source_ids": [
             "ASSISI-START",
             "ASSISI-END",
-            "ASSISILEF86"
+            "ASSISILEF86",
+            "DI2000"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -2060,28 +2110,28 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The SSPX's French publication explicitly described veneration of the Amazon statues as objectively idolatrous, while Pope Francis's reported remarks rejected the interpretation that they had been intended as objects of idolatrous worship. These are traceable and opposed judgements that must be retained in their own voices. The documentary evidence about particular rites remains the key question.",
-            "fr": "Une publication française de la FSSPX a expressément décrit la vénération des statuettes amazoniennes comme objectivement idolâtrique, tandis que des propos rapportés du pape François récusaient leur destination à un culte idolâtre. Ce sont des jugements opposés et vérifiables qui doivent être restitués dans leurs propres termes. Le dossier rituel concret reste la question décisive."
+            "en": "On 25 October 2019 Francis described the Amazonian statues taken from Santa Maria in Traspontina as 'pachamama' and said they had been placed there without idolatrous intentions; the Holy See Press Office disseminated his remarks. The French SSPX publication published on 29 October argued instead that the veneration shown to the figures was objectively idolatrous. The papal statement gives evidence of professed intention, while the Society disputes the religious meaning of particular gestures. Neither document, standing alone, is a complete eyewitness liturgical transcript of every ceremony at the Amazon Synod.",
+            "fr": "Le 25 octobre 2019, François appela « pachamama » les statuettes amazoniennes enlevées de Santa Maria in Traspontina et déclara qu'elles y avaient été placées sans intention idolâtrique ; ses paroles furent diffusées par la Salle de presse. Une publication française de la FSSPX du 29 octobre soutint au contraire que la vénération des figurines était objectivement idolâtrique. La déclaration pontificale renseigne l'intention professée, tandis que la Fraternité conteste la signification de gestes précis. Aucun des deux textes n'est une transcription oculaire intégrale de toutes les cérémonies du Synode."
           },
           "source_ids": [
-            "PACHFR",
             "FRANCIS",
+            "PACHFR",
             "PACHSSPX"
           ],
-          "attribution": "FSSPX Actualités 2019 and Francis's reported comments",
+          "attribution": "Francis, first-person 25 October 2019 speech transcribed by Vatican News, versus FSSPX Actualités French editorial of 29 October 2019",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "A statue's resemblance to pre-Christian imagery does not alone establish idolatry; conversely an official assurance about intentions may not resolve what particular gestures objectively signified. The evidence should identify the recipients of reverence, spoken formulas, ritual setting and foreseeable public meaning. Wholesale accusations against indigenous peoples or every observer do not meet that test.",
-            "fr": "La ressemblance d'une statuette avec des images préchrétiennes ne démontre pas seule l'idolâtrie ; inversement une assurance officielle sur les intentions ne résout pas nécessairement la signification objective des gestes. Les preuves doivent désigner les destinataires des honneurs, les paroles, le contexte rituel et la portée publique prévisible. Des accusations globales contre les peuples autochtones ou les témoins ne satisfont pas ce test."
+            "en": "Francis's claim about non-idolatrous intentions must be acknowledged rather than misrepresented as approval of idol worship. It is equally legitimate to ask whether a ritual gesture directed toward an ambiguous image could objectively signify worship and create foreseeable scandal, even if participants deny that intention. The Catechism §§2110–2114 condemns idolatry; applying that rule to a real event requires identifying the agent, gesture, accompanying words and intended religious object. Neither cultural stereotype nor a simple assertion of good intentions completes this factual enquiry.",
+            "fr": "Le témoignage de François sur l'absence d'intention idolâtrique doit être rapporté, non déformé en approbation du culte des idoles. Il reste légitime de demander si un geste rituel vers une image ambiguë pouvait objectivement signifier un culte et causer un scandale prévisible, même en présence d'intentions déclarées contraires. Le Catéchisme §§2110–2114 condamne l'idolâtrie ; appliquer cette règle à un fait exige d'identifier acteur, geste, paroles et objet religieux visé. Ni stéréotype culturel ni simple affirmation de bonne intention n'achève l'enquête."
           },
           "source_ids": [
-            "CCC2112",
             "FRANCIS",
-            "PACHFR"
+            "PACHFR",
+            "CCC2112"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -2134,8 +2184,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Pius XII's Ad Apostolorum Principis condemned Chinese Communist state interference in episcopal appointments and illicit episcopal consecrations. The Holy See announced a four-year extension of its provisional China agreement in 2024 and documented a particular bishop's appointment in 2026. Critics argue that secrecy and state influence imperil ecclesial freedom; defenders seek workable episcopal appointments under difficult conditions.",
-            "fr": "Ad Apostolorum Principis de Pie XII condamnait l'ingérence de l'État communiste chinois dans la nomination des évêques et les consécrations illicites. Le Saint-Siège annonça en 2024 une prolongation de quatre ans de son accord provisoire et documenta une nomination épiscopale en 2026. Les critiques dénoncent le secret et l'influence étatique ; les défenseurs recherchent des nominations possibles malgré des conditions difficiles."
+            "en": "Pius XII's Ad Apostolorum Principis (1958) condemned episcopal appointments and consecrations imposed by the Communist Chinese state against the Holy See. The Holy See announced on 22 October 2024 a further four-year extension of the provisional agreement on episcopal appointments, expressly calling it fruitful after consultation; it also announced a specific appointment in Chifeng in July 2026. Critics such as Cardinal Joseph Zen argue that secrecy and state control threaten the liberty of the Church. Because the actual bilateral agreement is not publicly reproduced in these sources, neither the full appointment mechanism nor actual veto rights may be asserted as if examined.",
+            "fr": "Dans Ad Apostolorum Principis (1958), Pie XII condamna les nominations et consécrations épiscopales imposées par l'État communiste chinois contre le Saint-Siège. Le 22 octobre 2024, Rome annonça une nouvelle prorogation de quatre ans de l'accord provisoire sur les nominations, le jugeant fructueux après consultation ; elle annonça aussi une nomination à Chifeng en juillet 2026. Des critiques comme le cardinal Joseph Zen estiment que secret et contrôle étatique menacent la liberté de l'Église. Le texte bilatéral intégral n'étant pas publié dans ces sources, on ne peut prétendre connaître en détail mécanismes de sélection ni veto."
           },
           "source_ids": [
             "PIUSCHINA",
@@ -2143,20 +2193,20 @@
             "CHINA2026",
             "ZENSCHOLAR"
           ],
-          "attribution": "Pius XII (1958), Holy See documents (2024/2026), published critical analysis",
+          "attribution": "Pius XII's 1958 encyclical and Holy See 2024/2026 official acts contrasted with documented criticism of Cardinal Zen via Beatrice Leung's 2024 analysis",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "One publicly announced appointment does not establish the freedom of all other selections, and a diplomatic agreement cannot be presumed sound when essential terms are unavailable. Equally, a policy's uncertain outcome does not prove every negotiator intentionally betrayed the Church. A responsible account asks who selects or vetoes candidates, what pressures occur and whether the Catholic faithful are protected.",
-            "fr": "Une nomination annoncée publiquement ne prouve pas la liberté des autres choix, et un accord diplomatique ne peut être présumé bon quand ses termes essentiels demeurent indisponibles. Inversement, un résultat incertain ne démontre pas l'intention de trahir chez tous les négociateurs. Un examen responsable demande qui choisit ou refuse les candidats, quelles pressions surviennent et comment sont protégés les fidèles."
+            "en": "The 2024 extension demonstrates Rome's decision to continue a diplomatic arrangement, not the publication of its clauses or evidence that every bishop was freely selected. A particular 2026 appointment demonstrates an outcome, not the absence of pressure on candidates or the complete mechanism used. Conversely, opaque diplomacy is not itself evidence that every negotiator intended apostasy. The serious historical questions concern the state role in vetting episcopal candidates, the ability of underground Catholics to practise safely, and the Holy See's freedom to reject unsuitable nominees; first-person Cardinal Zen texts and the agreement itself still need fuller examination.",
+            "fr": "La prorogation de 2024 établit la décision romaine de poursuivre l'accord, non la publication de ses clauses ou la liberté certaine de chaque nomination. Une nomination en 2026 prouve un résultat, non l'absence de pressions ni le mécanisme complet. Le secret diplomatique ne prouve pas non plus que chaque négociateur voulait apostasier. Les questions historiques sérieuses concernent le contrôle étatique des candidats, la sécurité des fidèles clandestins et la liberté du Saint-Siège de refuser un nom ; les textes personnels du cardinal Zen et l'accord lui-même demandent encore examen plus approfondi."
           },
           "source_ids": [
-            "PIUSCHINA",
             "CHINA2024",
             "CHINA2026",
+            "PIUSCHINA",
             "ZENSCHOLAR"
           ],
           "attribution": null,
@@ -2268,12 +2318,12 @@
         {
           "role": "answer",
           "text": {
-            "en": "Canonical enforcement must distinguish personal sin from publicly imputable misconduct, a pastor's duty from a judge's competence, and private conscience from public sacramental discipline. Canon 915 sets conditions for admission to Communion, while canon 916 addresses the prospective recipient's own conscience. Confusion between these rules makes both neglect and excessive discipline easier.",
-            "fr": "L'application du droit canonique distingue péché personnel et faute publiquement imputable, devoir pastoral et compétence judiciaire, conscience privée et discipline sacramentelle publique. Le canon 915 fixe des conditions d'admission à la communion, tandis que le canon 916 concerne la conscience du communiant. Leur confusion facilite l'inaction autant que les sanctions excessives."
+            "en": "Canon 915 regulates the minister's duty not to admit those under the stated canonical categories, including persons obstinately persevering in manifest grave sin; canon 916 regulates the recipient's obligation not to receive while conscious of grave sin without the lawful conditions for an exception. They are not interchangeable and do not create a universal rule excluding every politician of a named party. Cardinal Ratzinger's 2004 memorandum addresses a concrete example of obstinate public support for permissive abortion or euthanasia legislation.",
+            "fr": "Le canon 915 régit le devoir du ministre de ne pas admettre les personnes relevant des catégories prévues, dont ceux qui persévèrent obstinément dans un péché grave manifeste ; le canon 916 régit le devoir du fidèle conscient d'un péché grave de ne pas communier hors des conditions légales d'exception. Ils ne sont pas interchangeables et n'excluent pas automatiquement tout responsable d'un parti donné. Le mémorandum de Ratzinger de 2004 vise précisément le soutien obstiné et public à des lois permissives sur l'avortement ou l'euthanasie."
           },
           "source_ids": [
             "CAN915",
-            "CIC4"
+            "RATZ2004"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -2282,27 +2332,27 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Cardinal Ratzinger's 2004 memorandum addressed the case of a Catholic politician obstinately supporting permissive abortion laws, and the pastoral steps that can precede withholding Communion. It is a specific attributable guidance text, not evidence that every public official associated with a disputed policy has already met the same legal conditions or incurred a penalty.",
-            "fr": "Le mémorandum du cardinal Ratzinger en 2004 examinait le cas d'un responsable catholique soutenant obstinément des lois favorables à l'avortement et les démarches pastorales pouvant précéder un refus de communion. C'est un texte identifiable et circonstancié, non la preuve que tout élu lié à une politique contestée remplit déjà les mêmes conditions canoniques."
+            "en": "In his 2004 memorandum Worthiness to Receive Holy Communion, Cardinal Joseph Ratzinger described a Catholic politician whose formal cooperation consists in campaigning and voting for permissive abortion and euthanasia laws, and he specified that the pastor should meet the person, explain Church teaching, inform him not to present himself for Communion and warn of eventual refusal. He did not declare an automatic Eucharistic exclusion for every politician regardless of conduct or pastoral process. His text is cardinal-prefect guidance addressed to U.S. bishops, not a later solemn universal legislative enactment.",
+            "fr": "Dans son mémorandum de 2004 Worthiness to Receive Holy Communion, le cardinal Joseph Ratzinger décrivit un élu catholique dont la coopération formelle consiste à promouvoir et voter des lois permissives sur l'avortement ou l'euthanasie. Le pasteur doit rencontrer l'intéressé, expliquer la doctrine, l'avertir de ne pas se présenter à la communion et annoncer la possibilité d'un refus. Il ne déclare pas exclu automatiquement tout élu sans distinction d'actes ou de démarche pastorale. Il s'agit d'une directive du cardinal-préfet destinée à des évêques américains, non d'une nouvelle loi universelle solennellement promulguée."
           },
           "source_ids": [
             "RATZ2004",
             "CAN915"
           ],
-          "attribution": "Cardinal Joseph Ratzinger, Eucharistic admission memorandum (2004)",
+          "attribution": "Joseph Ratzinger, 2004 signed memorandum Worthiness to Receive Holy Communion, points 3–6",
           "original_context_approved": false,
           "french_final_approved": false
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "A pastor must establish any manifest and obstinate public circumstance according to the actual law rather than infer it from party membership or reputation. Yet private conscience cannot erase the Church's responsibility for public Eucharistic discipline. Reviewing poor enforcement demands evidence about what competent authorities knew, which legal measures were possible and how they responded.",
-            "fr": "Le pasteur doit établir une situation publique manifeste et obstinée conformément au droit, non la déduire de l'appartenance à un parti ou d'une réputation. Mais la conscience privée ne supprime pas la responsabilité de l'Église concernant la discipline eucharistique publique. Examiner une application défaillante exige de savoir ce que l'autorité compétente connaissait, quelles mesures étaient possibles et quelle fut sa réaction."
+            "en": "Public, manifest and obstinate conduct must be ascertained in fact and according to canon 915 rather than deduced from electoral affiliation or an unverified allegation. Canon 916 leaves the communicant's private duty intact even where a minister cannot establish all public conditions for exclusion. Conversely, the private-conscience rule does not excuse a competent minister from applying canon 915 where its public legal conditions truly exist. The Ratzinger memorandum's staged warning makes disciplinary precision and charity complementary.",
+            "fr": "La conduite publique, manifeste et obstinée doit être établie en fait selon le canon 915, non déduite d'une appartenance électorale ou d'une rumeur. Le canon 916 conserve le devoir personnel du communiant même lorsque le ministre ne peut établir toutes les conditions publiques d'exclusion. Inversement, la règle de conscience privée ne dispense pas le ministre compétent d'appliquer le canon 915 lorsque ses conditions légales sont réellement présentes. L'avertissement progressif décrit par Ratzinger unit précision disciplinaire et charité."
           },
           "source_ids": [
             "CAN915",
             "RATZ2004",
-            "CIC4"
+            "CCC212"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -2334,7 +2384,7 @@
     "canonical_dossiers": 23,
     "english_substantive_paragraphs": 92,
     "french_substantive_paragraphs": 92,
-    "source_registry_entries": 78,
+    "source_registry_entries": 83,
     "public_routes_added": 0,
     "independent_approvals": 0
   }
