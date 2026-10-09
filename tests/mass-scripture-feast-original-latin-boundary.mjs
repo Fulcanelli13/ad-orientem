@@ -3,7 +3,7 @@ import {readFileSync} from "node:fs";
 import {VERIFIED_MASS_FEAST_READINGS} from "../src/mass/scripture-feast-reading-index.js";
 import {VERIFIED_SEGMENTED_MASS_READINGS} from "../src/mass/scripture-segmented-reading-index.js";
 const source=JSON.parse(readFileSync(new URL("../data/mass/scripture-feast-original-latin-boundary-audit.v1.json",import.meta.url),"utf8"));
-const expected={sourcePaths:29,scriptureSlots:58,single:53,segmented:5,DIRECT_LATIN:47,DIRECT_SEGMENTED_LATIN:4,EXPLICIT_INHERITED_LATIN:2,COMMON_TARGET_UNRESOLVED:2,MASS_BRANCH_UNRESOLVED:2,"1962_PASSION_VARIANT":1};
+const expected={sourcePaths:29,scriptureSlots:58,single:53,segmented:5,DIRECT_LATIN:47,DIRECT_SEGMENTED_LATIN:4,EXPLICIT_INHERITED_LATIN:2,COMMON_TARGET_UNRESOLVED:2,RESOLVED_1962_HOLY_THURSDAY_MASS_BRANCH:2,RESOLVED_1962_PASSION_BRANCH:1};
 assert.equal(source.schema,"ao-major-mass-scripture-original-latin-citation-audit-v1");
 assert.deepEqual(source.totals,expected);
 assert.equal(source.rows.length,29);
@@ -25,13 +25,13 @@ for(const row of source.rows){
   assert.equal(item.reference,(single??split).reference);
   assert.equal(item.kind,split?"SEGMENTED":"SINGLE");
   status[item.status]=(status[item.status]??0)+1;
-  if(["DIRECT_LATIN","DIRECT_SEGMENTED_LATIN","EXPLICIT_INHERITED_LATIN"].includes(item.status)){
+  if(["DIRECT_LATIN","DIRECT_SEGMENTED_LATIN","EXPLICIT_INHERITED_LATIN","RESOLVED_1962_HOLY_THURSDAY_MASS_BRANCH","RESOLVED_1962_PASSION_BRANCH"].includes(item.status)){
     assert.equal(normalize(item.originalLatinCitation),normalize(item.reference),row.sourcePath+" "+slot);
   }
   if(item.status==="EXPLICIT_INHERITED_LATIN")assert.ok(item.owner);
   if(item.status==="COMMON_TARGET_UNRESOLVED")assert.equal(item.alias,"@Commune/C10a");
-  if(item.status==="MASS_BRANCH_UNRESOLVED")assert.equal(row.sourcePath,"Tempora/Quad6-4");
-  if(item.status==="1962_PASSION_VARIANT"){
+  if(item.status==="RESOLVED_1962_HOLY_THURSDAY_MASS_BRANCH"){assert.equal(row.sourcePath,"Tempora/Quad6-4");assert.equal(item.owner,"Tempora/Quad6-4rm2");}
+  if(item.status==="RESOLVED_1962_PASSION_BRANCH"){
     assert.equal(row.sourcePath,"Tempora/Quad6-0");
     assert.equal(slot,"GOSPEL");
     assert.equal(item.oldHeader,"Matt 26:1-75; 27:1-66");
@@ -41,5 +41,5 @@ for(const row of source.rows){
 }
 assert.equal(ids.size,29);
 for(const [key,count] of Object.entries(status))assert.equal(source.totals[key],count);
-assert.equal(source.unresolvedOriginalOwnerSlots.length,4);
-console.log("PASS major Mass original Latin citation/source-owner census: 29 source paths / 58 slots with 51 direct, 2 inherited, 4 explicit unresolved and one 1962 Passion variant");
+assert.equal(source.unresolvedOriginalOwnerSlots.length,2);
+console.log("PASS major Mass original Latin citation/source-owner census: 29 source paths / 58 slots with 51 direct, 2 inherited, 3 resolved branch sources and 2 unresolved Common targets");
