@@ -83,6 +83,7 @@ function closeChild(win,id){
 }
 
 export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
+  let launchEpoch=0;
   const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false,guidedAttempted:false,discoveryQuery:"",referenceEntries:[],referenceStatus:"idle",lastDiscoveryReference:null};
 
   function cancelMonitor(){
@@ -306,6 +307,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       state.externalReturn=null;
       if(external?.surface==="apostolate"||external?.surface==="pray"){
         state.open=false;
+        ++launchEpoch;
         cancelMonitor();
         const node=root(win);
         releaseFocus(win,node);
@@ -340,9 +342,15 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
 
   async function openModule(id,opts={}){
     if(!state.open||!MODULE_SET.has(id))return false;
+    const attempt=++launchEpoch;
+    const current=()=>state.open&&launchEpoch===attempt;
     try{
       await ensureLearnModule(id,win);
+      // Import results must never revive a child after Home/Back or a newer
+      // module entry superseded the request.
+      if(!current())return false;
     }catch(error){
+      if(!current())return false;
       try{win?.console?.error?.("Formation module import failed",error);}catch{}
       state.error=L(win,"This module could not be opened.","Ce module n’a pas pu être ouvert.");
       paint();return false;
@@ -373,13 +381,20 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           ...(opts?.lexemeId?{lexemeId:opts.lexemeId}:{}),
           ...(opts?.phraseId?{phraseId:opts.phraseId}:{})
         });
-        result={ok:opened!==false,canonicalId:GLOSSARY_ROUTE_ID};
+        result={ok:opened===true||opened?.ok===true,canonicalId:GLOSSARY_ROUTE_ID};
       }else result=await registry.open(id);
     }catch(error){
       try{win?.console?.error?.("Modular Learn module launch failed",error);}catch{}
     }
+    if(!current()){
+      // The child owner may have mounted after its parent was closed. Close
+      // only the stale child, never a newer request for that same module.
+      if(!state.open||state.child!==id)closeChild(win,id);
+      return false;
+    }
     if(result?.ok!==true){
       state.child=null;
+      state.externalReturn=null;
       state.error=L(win,"This module could not be opened.","Ce module n’a pas pu être ouvert.");
       showHub();
       return false;
@@ -390,6 +405,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   }
 
   function close(){
+    ++launchEpoch;
     state.open=false;
     cancelMonitor();
     if(state.child)closeChild(win,state.child);
@@ -410,6 +426,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   }
 
   function open(){
+    ++launchEpoch;
     const doc=win?.document;
     if(!doc?.body||!runtime(win)?.store||typeof win?.AO_MODULES?.open!=="function")return false;
     cancelMonitor();
