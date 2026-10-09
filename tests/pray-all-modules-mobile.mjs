@@ -49,10 +49,28 @@ try{
  await page.locator(conf+" [data-p435930-conf-path='regular']").tap();
  assert.equal(await page.locator(conf+" [data-p435930-conf-path='regular']").getAttribute("aria-pressed"),"true");
  await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" .aoP435930Exam details").count(),10,"Quick Confession must cover all Commandments");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").count(),0);
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"quick-commandments-1");
+ assert.equal(await page.locator(conf+" [data-conf-exam-step]").getAttribute("data-conf-exam-step"),"0");
+ for(let n=1;n<5;n++){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-conf-exam-step]").getAttribute("data-conf-exam-step"),String(n));
+ }
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"ready");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0);
  await press(conf+" [data-p435930-conf-next]");
- assert.match(await page.locator(conf+" .aoP435930GuideNow").innerText(),/grave sins.*kind and number/);
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
+ assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/phone away/i);
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"say-sins");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"contrition-penance");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
+ for(const id of ["satisfaction","amendment"]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id);
+ }
+ assert.match(await page.locator(conf+" [data-p435930-conf-next]").innerText(),/Finish/);
  await press(conf+" [data-p435930-conf-step='0']");
  await press(conf+" [data-p435930-conf-path='returning']");
  await press(conf+" [data-p435930-conf-next]");
@@ -63,7 +81,7 @@ try{
  }
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"ready");
  await press(conf+" [data-p435930-conf-next]");
- assert.match(await page.locator(conf+" .aoP435930GuideNow").innerText(),/long absence/);
+ assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/a long time since/i);
  await press(conf+" [data-p435930-conf-step='0']");
  await press(conf+" [data-p435930-conf-path='general']");
  await press(conf+" [data-p435930-conf-next]");
@@ -74,6 +92,13 @@ try{
    assert.equal(await page.locator(conf+" [data-conf-exam-step]").getAttribute("data-conf-exam-step"),String(n));
  }
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"ready");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
+ assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/general Confession/);
+ await press(conf+" [data-p435930-conf-next]");
+ await press(conf+" [data-p435930-conf-next]");
+ await press(conf+" [data-p435930-conf-next]");
+ assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  assert.equal(await page.locator(conf+" [data-p435930-since]").count(),0,"Time estimate must only appear on preparation card");
  assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0,"Do not record sins");
  assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2);
