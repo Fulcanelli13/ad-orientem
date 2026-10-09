@@ -160,7 +160,11 @@
       "date": "2026-03-29",
       "principalRegex": "Palm Sunday",
       "rank": 1,
-      "colourRegex": "violet"
+      "colourRegex": "violet",
+      "colourPhases": [
+        "red",
+        "violet"
+      ]
     },
     {
       "date": "2026-03-30",
@@ -184,7 +188,11 @@
       "date": "2026-04-04",
       "principalRegex": "Easter Vigil|Holy Saturday",
       "rank": 1,
-      "colourRegex": "white"
+      "colourRegex": "white",
+      "colourPhases": [
+        "violet",
+        "white"
+      ]
     },
     {
       "date": "2026-04-05",
@@ -258,7 +266,11 @@
       "date": "2026-05-23",
       "principalRegex": "Pentecost|Vigil",
       "rank": 1,
-      "colourRegex": "red"
+      "colourRegex": "red",
+      "colourPhases": [
+        "violet",
+        "red"
+      ]
     },
     {
       "date": "2026-05-24",
