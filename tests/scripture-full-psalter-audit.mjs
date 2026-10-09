@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {overlapRatio,inspectPsalmChapter,auditFullPsalter} from "../tools/scripture/audit-full-catholic-psalter.mjs";
+import {PSALTER_IDENTITY_VERSE_COUNTS,psalterIdentityVerse} from "../src/scripture/psalter-identity-crosswalk.js";
 assert.equal(overlapRatio("The mighty Lord dwells among the heavens","The mighty Lord dwells among the heavens"),1);
 assert.ok(overlapRatio("Great merciful king of Judah","Angelic lamps shine upon the valley")<.16);
 const sample=new Map([[1,"The mighty Lord dwells among the heavens"],[2,"The Lord guides the faithful through the wilderness"]]);
@@ -25,4 +26,10 @@ for(const n of [13,42,92,150])assert.equal(audit.candidateChapterNumbers.include
 dr.books[0].chapters[30].verses[0].text="A different fragment with no matching vocabulary";
 const bad=auditFullPsalter(raw,dr);
 assert.equal(bad.candidateChapterNumbers.includes(31),false);
-console.log("150-Psalm source audit contracts passed, no false automatic-release status");
+assert.equal(Object.keys(PSALTER_IDENTITY_VERSE_COUNTS).length,133);
+assert.equal(PSALTER_IDENTITY_VERSE_COUNTS[22],6);
+assert.equal(PSALTER_IDENTITY_VERSE_COUNTS[118],176);
+assert.equal(psalterIdentityVerse({book:"Psalms",chapter:22,verseStart:1,verseEnd:1},"cpdv-2009","dr-challoner").verseStart,1);
+assert.equal(psalterIdentityVerse({book:"Psalms",chapter:22,verseStart:7,verseEnd:7},"cpdv-2009","dr-challoner"),null);
+for(const n of [13,16,42,64,73,75,76,77,88,92,101,108,111,115,120,137,150])assert.equal(PSALTER_IDENTITY_VERSE_COUNTS[n],undefined);
+console.log("150-Psalm audit and 133 source-verified coordinate bounds passed; publication still blocked");
