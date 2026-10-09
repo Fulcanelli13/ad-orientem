@@ -1,0 +1,52 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {CSE_DEBATE_MAP,CSE_DEBATE_IDS,CSE_DEBATE_FIELDS} from "../src/learn/sexual-ethics-data/debates.js";
+import {CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/sources.js";
+import {CSE_QUESTION_MAP} from "../src/learn/sexual-ethics-data/index.js";
+const evidence=JSON.parse(readFileSync("data/learn/sexual-ethics-certification-evidence.v2.json","utf8"));
+assert.equal(evidence.cases.length,55);
+assert.equal(evidence.readiness_v3.case_scope_count,55);
+assert.equal(evidence.readiness_v3.new_case_specific_reviews,47);
+assert.equal(evidence.readiness_v3.previous_detailed_eight_stage_reviews,8);
+assert.equal(evidence.readiness_v3.full_debates_certified,0);
+assert.equal(evidence.readiness_v3.human_theological_approval,false);
+assert.equal(evidence.summary.full_case_certifications,0);
+assert.deepEqual(evidence.cases.map(x=>x.id).sort(),[...CSE_DEBATE_IDS].sort());
+assert.equal(new Set(evidence.cases.map(x=>x.id)).size,55);
+const pending=evidence.cases.filter(x=>x.case_substantive_review_v3);
+const prior=evidence.cases.filter(x=>x.case_status==="EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL");
+assert.equal(pending.length,47);
+assert.equal(prior.length,8);
+let stageNotes=0;
+for(const record of evidence.cases){
+  assert.equal(record.stages.length,8,record.id+" incomplete 8 stages");
+  assert.deepEqual(record.stages.map(x=>x.stage),[...CSE_DEBATE_FIELDS]);
+  assert.equal(record.full_eight_stage_certified,false,"false certification "+record.id);
+  const item=CSE_DEBATE_MAP[record.id];
+  const question=CSE_QUESTION_MAP[record.id];
+  assert.ok(item&&question,record.id);
+  if(!record.case_substantive_review_v3)continue;
+  const x=record.case_substantive_review_v3;
+  assert.match(x.critical_finding,/.{35}/,record.id+" missing actual limitation");
+  assert.equal(x.french_editorial_approval,false);
+  assert.equal(x.stage_role_notes.length,8);
+  for(const stage of x.stage_role_notes){
+     const original=item[stage.stage];
+     assert.ok(original?.[0]?.length>=12&&original?.[1]?.length>=12,record.id+"."+stage.stage+" not bilingual");
+     assert.ok(stage.selected_source_ids.length>0);
+     for(const id of stage.selected_source_ids)assert.ok(CSE_SOURCE_MAP[id],"unknown source "+id);
+     assert.equal(stage.source_document_checked_for_this_specific_stage,false,"false source certification");
+     stageNotes++;
+  }
+}
+assert.equal(stageNotes,47*8);
+assert.equal(evidence.readiness_v3.read_primary_documents.length,21);
+for(const x of evidence.readiness_v3.read_primary_documents)assert.match(x.url,/^https:\/\//);
+assert.match(CSE_DEBATE_MAP.CSE006.opposition[0],/state coercion/);
+assert.match(CSE_DEBATE_MAP.CSE006.opposition[1],/contrainte étatique/);
+assert.match(CSE_DEBATE_MAP.CSE093.opposition[0],/atypical sex development/);
+assert.match(CSE_DEBATE_MAP.CSE093.opposition[1],/développement sexuel atypique/);
+assert.doesNotMatch(CSE_DEBATE_MAP.CSE141.counter[0],/module/);
+assert.doesNotMatch(CSE_DEBATE_MAP.CSE141.response[0],/focused reference|the module|app/);
+assert.match(CSE_DEBATE_MAP.CSE141.response[1],/justice/);
+console.log("PASS Sexual Ethics 55-case editorial scope QA: 47 newly reviewed, 8 previously examined, 376 unc ertified stage-level proof checks accurately held, 3 EN/FR argument corrections.");
