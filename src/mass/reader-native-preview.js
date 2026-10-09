@@ -6,7 +6,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { loadReaderPresentationData } from "./reader-data.js";
-import { createReaderDomAdapter } from "./reader-dom.js";
+import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
 import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
 import { loadReaderCueRegistries } from "./reader-cue-state.js";
@@ -461,6 +461,92 @@ export async function mountNativeReaderPreview({
   if(ready.goodFridayController){
     const controller=ready.goodFridayController;
     let reader=null;
+    let shownSurface=null;
+    let personalControls=null;
+    let deathCueRunning=false;
+    const personalSteps=Object.freeze({
+      "GF-VEN-600":Object.freeze({title:"Your Cross veneration",label:"It is my turn"}),
+      "GF-VEN-610":Object.freeze({title:"Approach the Cross",label:"I am at the Cross"}),
+      "GF-VEN-620":Object.freeze({title:"One simple genuflection",label:"I have genuflected"}),
+      "GF-VEN-630":Object.freeze({title:"Venerate the Cross",label:"I have venerated"}),
+      "GF-VEN-640":Object.freeze({title:"Return to your place",label:"Continue"}),
+    });
+
+    function createGoodFridayControls(){
+      const stage=host.querySelector?.(".ao-reader-stage");
+      if(!stage)return;
+      const panel=doc.createElement("div");
+      panel.className="ao-rite-choice ao-good-friday-choice";
+      panel.dataset.role="good-friday-personal";
+      panel.hidden=true;
+      panel.setAttribute("role","group");
+      panel.setAttribute("aria-label","Your Good Friday action");
+      const title=doc.createElement("span");
+      title.className="ao-rite-choice-label";
+      title.dataset.role="good-friday-choice-title";
+      const action=doc.createElement("button");
+      action.type="button";
+      action.dataset.goodFridayAdvance="true";
+      action.setAttribute("aria-label","Continue personal Good Friday action");
+      panel.append(title,action);
+      stage.append(panel);
+      personalControls=panel;
+    }
+
+    function updateGoodFridayControls(){
+      if(!personalControls)return;
+      const state=controller.project(),id=state?.step?.recordId;
+      const action=personalSteps[id]??(id==="GF-PASS-320"
+        ? {title:"At the death of Our Lord",label:"Continue the Passion"}:null);
+      personalControls.hidden=!action;
+      const stage=personalControls.closest(".ao-reader-stage");
+      if(stage)stage.dataset.riteChoice=String(Boolean(action));
+      if(!action)return;
+      personalControls.querySelector('[data-role="good-friday-choice-title"]').textContent=action.title;
+      personalControls.querySelector("[data-good-friday-advance]").textContent=action.label;
+    }
+
+    function deathPhraseRect(){
+      const card=host.querySelector?.(".ao-prayer-card");
+      const paragraph=card?.querySelector?.('.ao-reader-paragraph[data-cue-id="GF-PASS-320"]');
+      const primary=paragraph?.querySelector?.(".ao-line-primary");
+      if(!card||!primary||!doc.createRange)return null;
+      const needle="tradidit spiritum";
+      const walker=doc.createTreeWalker(primary,4);
+      let node;
+      while((node=walker.nextNode())){
+        const text=String(node.textContent??"");
+        const i=text.toLowerCase().lastIndexOf(needle);
+        if(i<0)continue;
+        const range=doc.createRange();
+        range.setStart(node,i);
+        range.setEnd(node,i+needle.length);
+        return {card,rect:range.getBoundingClientRect(),viewport:card.getBoundingClientRect()};
+      }
+      return null;
+    }
+
+    function syncGoodFridayDeath(){
+      if(deathCueRunning||controller.project()?.step?.recordId!=="GF-PASS-310")return;
+      const loc=deathPhraseRect();
+      if(!loc)return;
+      const threshold=loc.viewport.top+loc.card.clientHeight*.39;
+      // The actual Latin death words, not the card start, own the kneeling pause.
+      if((loc.card.scrollTop||0)<=8||loc.rect.top>threshold||loc.rect.bottom<loc.viewport.top)return;
+      deathCueRunning=true;
+      try{controller.goToRecord("GF-PASS-320");showGoodFriday();}
+      finally{deathCueRunning=false;}
+    }
+
+    function onGoodFridayAction(event){
+      const target=event.target?.closest?.("[data-good-friday-advance]");
+      if(!target||personalControls?.hidden||!personalControls?.contains?.(target))return;
+      event.stopPropagation?.();
+      const state=controller.project();
+      if(!personalSteps[state.step?.recordId] && state.step?.recordId!=="GF-PASS-320")return;
+      controller.next();
+      showGoodFriday();
+    }
 
     function goodFridayMoment(){
       const state=controller.project();
@@ -471,7 +557,10 @@ export async function mountNativeReaderPreview({
         id:step.recordId,
         sectionTitle:"Good Friday",
         cardTitle:card.title,
-        cardUpdate:card.cardUpdate!==false,
+        // Compare the last rendered surface. Going directly to a later
+        // source step must load its text, but an in-group temporary posture
+        // change must retain scroll and prayer focus.
+        cardUpdate:shownSurface!==step.surfaceKey,
         paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
           id:row.id,
           kind:row.kind,
@@ -481,16 +570,43 @@ export async function mountNativeReaderPreview({
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
         posture:state.posture ? Object.freeze({label:state.posture}) : null,
-        gesture:state.action ? Object.freeze({label:state.action}) : null,
+        postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[state.posture]??null,
+        gesture:step.recordId==="GF-PASS-320"
+          ? Object.freeze({
+              label:"Kneel · pause briefly",action:"Pause at the death of Our Lord",
+              canonicalCueId:"GF-PASS-320",anchorLat:"tradidit spiritum",
+              owner:"R28_GF_PASSION_DEATH_SOURCE",
+            })
+          : state.action ? Object.freeze({label:state.action}) : null,
         guide:null,
       });
     }
 
     function showGoodFriday(){
+      const state=controller.project(),step=state.step;
       const moment=goodFridayMoment();
       if(moment)reader.renderMoment(moment);
-      root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
-      return controller.project().card??null;
+      if(step && step.surfaceKey!==shownSurface){
+        const card=host.querySelector?.(".ao-prayer-card");
+        if(card)card.scrollTop=0;
+      }
+      shownSurface=step?.surfaceKey??null;
+      const dying=step?.recordId==="GF-PASS-320";
+      const paragraph=host.querySelector?.('.ao-reader-paragraph[data-cue-id="GF-PASS-320"]');
+      if(paragraph){
+        paragraph.dataset.active=String(dying);
+        syncReaderRitualHighlights(host,moment?.gesture??null);
+      }
+      updateGoodFridayControls();
+      root.dataset.r17NativeRiteRecord=step?.recordId??"none";
+      root.dataset.r17OwnerGesture=dying?"R28_GF_PASSION_DEATH_SOURCE":
+        state.action?"R28_GF_CEREMONIAL":"R28_GF_EXACT_NONE";
+      globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+        specialRite:"GOOD_FRIDAY",recordId:step?.recordId??null,
+        posture:state.posture,personalState:state.personalState,
+        objectState:state.objectState,deathPause:dying,
+      });
+      return state.card??null;
     }
 
     function moveGoodFriday(direction){
@@ -509,6 +625,8 @@ export async function mountNativeReaderPreview({
     });
 
     function destroyGoodFriday(){
+      host.querySelector?.(".ao-prayer-card")?.removeEventListener?.("scroll",syncGoodFridayDeath);
+      host.removeEventListener?.("click",onGoodFridayAction);
       reader.destroy?.();
       root.remove?.();
       if(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root===root){
@@ -522,6 +640,9 @@ export async function mountNativeReaderPreview({
     root.dataset.r17StateOwner="R28_GOOD_FRIDAY_GRAPH";
     doc.body.appendChild(root);
     reader.mount(prepared);
+    createGoodFridayControls();
+    host.addEventListener?.("click",onGoodFridayAction);
+    host.querySelector?.(".ao-prayer-card")?.addEventListener?.("scroll",syncGoodFridayDeath,{passive:true});
     showGoodFriday();
 
     const api=Object.freeze({
