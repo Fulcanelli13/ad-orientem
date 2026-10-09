@@ -197,6 +197,35 @@ try{
  assert.doesNotMatch(icsContent,/\bLOCATION:|BEGIN:VALARM/,"Calendar export must not invent Mass places or times");
  console.log("PASS Calendar monthly .ics download: visible button, all 31 source-resolved days, Holy Rosary, no invented Mass times");
 
+ // Date-specific Latin/vernacular print is limited to structurally complete
+ // ordinary Proper sheets. No false claim to a complete 1962 Mass booklet.
+ const candidates=await page.evaluate(async()=>{
+   const mod=await import("/src/calendar/print-proper.js");
+   const cache=globalThis.AO_CALENDAR_WEEK_CACHE_V4345;
+   return ["2026-10-07","2026-10-04","2026-10-11","2026-10-15"].map(date=>{
+     const r=cache?.get?.(date),assessment=mod.assessPrintableProper(r,{language:"en"});
+     return {date,ok:assessment.ok,reason:assessment.reason,missing:assessment.missing||[]};
+   });
+ });
+ const printableCandidate=candidates.find(x=>x.ok);
+ assert.ok(printableCandidate,"No October 2026 ordinary Mass has printable bilingual Propers: "+JSON.stringify(candidates));
+ assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),printableCandidate.date),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day")),true);
+ const printButton=page.locator("#ao-calendar-modular-root [data-cal-print-proper]");
+ await printButton.waitFor({state:"visible",timeout:15000});
+ const popupPromise=page.waitForEvent("popup",{timeout:15000});
+ await printButton.click();
+ const printed=await popupPromise;
+ await printed.locator("header h1").waitFor({state:"visible",timeout:12000});
+ const printContent=await printed.locator("body").innerText();
+ assert.match(printContent,/LATIN/);
+ assert.match(printContent,/ENGLISH/);
+ assert.match(printContent,/Mass Proper only/);
+ assert.ok((await printed.locator(".cols").count())>=8,"Printable source omitted basic ordinary Proper sections");
+ await printed.close();
+ console.log("PASS Calendar bilingual Proper print opens faithful two-column source-bound extract; no claim to a complete Missal");
+
+
  // Clean Calendar boot: Glossary must load only after its own contextual click.
  const glossaryUrl="/src/glossary/browser-entry.js";
  assert.equal(hits.some(x=>x.path===glossaryUrl),false,"Glossary unexpectedly loaded before its Calendar button");

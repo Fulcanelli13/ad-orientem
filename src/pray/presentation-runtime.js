@@ -12,6 +12,7 @@ import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetU
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
+import { LITANY_SOURCE_WITNESSES, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -197,7 +198,7 @@ let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
 let FF={step:0,intention:false,communion:false};
 let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0};
 let PEN={step:0,token:0};
-let LIT={step:0,sections:null,loading:false,error:'',token:0};
+let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
 let SEVEN={step:0,sections:null,loading:false,error:'',srcToken:0,scriptToken:0};
 let FORTY={step:0};
 let STATIONS={step:0};
@@ -1252,7 +1253,11 @@ async function guidedWsText(title,key,language='en'){
  const ck='ao2:v435930:ws:'+language+':'+key;try{const c=localStorage.getItem(ck);if(c)return c}catch{}
  const host=language==='fr'?'fr.wikisource.org':'en.wikisource.org',api='https://'+host+'/w/api.php?action=parse&format=json&origin=*&prop=text&page='+encodeURIComponent(title),ac=new AbortController(),tm=setTimeout(()=>ac.abort(),8000);let r;
  try{r=await fetch(api,{signal:ac.signal})}finally{clearTimeout(tm)}if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json(),html=j?.parse?.text?.['*']||j?.parse?.text;if(!html)throw new Error('Source text unavailable');
- const doc=new DOMParser().parseFromString(html,'text/html');doc.querySelectorAll('script,style,.mw-editsection,.navbox,.metadata,.sistersitebox,.ws-noexport').forEach(n=>n.remove());let txt=(doc.querySelector('.mw-parser-output')||doc.body).innerText||'';txt=txt.replace(/\n{3,}/g,'\n\n').replace(/\[edit\]/g,'').trim();try{localStorage.setItem(ck,txt)}catch{}return txt
+ const doc=new DOMParser().parseFromString(html,'text/html');doc.querySelectorAll('script,style,.mw-editsection,.navbox,.metadata,.sistersitebox,.ws-noexport').forEach(n=>n.remove());const content=doc.querySelector('.mw-parser-output')||doc.body;
+  const clone=content.cloneNode(true);
+  clone.querySelectorAll('br').forEach(node=>node.replaceWith(doc.createTextNode('\n')));
+  clone.querySelectorAll('p,dd,li,h2,h3,pre').forEach(node=>node.appendChild(doc.createTextNode('\n')));
+  let txt=(content.innerText||'').trim()||clone.textContent||'';txt=txt.replace(/\n{3,}/g,'\n\n').replace(/\[edit\]/g,'').trim();try{localStorage.setItem(ck,txt)}catch{}return txt
 }
 
 function stationFlip(la,vern,label){
@@ -1296,20 +1301,37 @@ function renderPenitential(){
  const final=i===6;
  return `${head(L('Seven Penitential Psalms','Sept psaumes pénitentiels'),L('Traditional penitential psalmody · guided sequence','Psalmodie pénitentielle traditionnelle · séquence guidée'))}<main class="aoP435930Body">${callout(esc(L('Pray the seven Psalms in their traditional order. The app guides the sequence; it does not add a new penitential prayer around them.','Priez les sept Psaumes dans leur ordre traditionnel. L’application guide la séquence ; elle n’ajoute pas une nouvelle prière pénitentielle autour d’eux.')),'rubric')}${guideRail(labels,i,'pen')}${scriptureContextCapsule(ref,{french:isFr()})}${guideNow(`Psalm ${p.trad}${modern}`,L('Pray this Psalm slowly. Let the words themselves carry the act of repentance; do not rush to the next Psalm when you reach the final verse.','Priez lentement ce Psaume. Laissez les paroles elles-mêmes porter l’acte de pénitence ; ne passez pas immédiatement au Psaume suivant après le dernier verset.'))}<div class="aoP435930GuidedScripture" data-p435930-pen-scripture><p class="aoP435930Loading">${esc(L('Loading Scripture…','Chargement de l’Écriture…'))}</p></div>${guideCue(L('PAUSE','PAUSE'),L('Remain briefly in silence after the doxology or final verse, then continue when ready.','Demeurez brièvement en silence après la doxologie ou le dernier verset, puis continuez lorsque vous êtes prêt.'))}<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-pen-prev ${i===0?'disabled':''}>${esc(L('Previous Psalm','Psaume précédent'))}</button>${final?`<button type="button" class="aoP435930Primary" data-p435930-pen-litany>${esc(L('Continue with Litany of the Saints','Continuer avec les Litanies des saints'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-pen-next>${esc(L('Next Psalm','Psaume suivant'))}</button>`}</div>${devotionalSource('Baltimore Manual · Seven Penitential Psalms and Litany of the Saints',L('Traditional sequence; Scripture text supplied by the app Scripture service.','Séquence traditionnelle ; texte de l’Écriture fourni par le service biblique de l’application.'))}</main>`
 }
-function litanyLines(txt){return String(txt||'').replace(/\r/g,'').split(/\n+/).map(x=>x.trim()).filter(x=>x&&x.length<320&&!/^(contents|navigation|see also|notes|references)$/i.test(x))}
-function buildLitanySections(txt){
- let lines=litanyLines(txt);if(!lines.length)return[];const n=6,size=Math.ceil(lines.length/n),names=isFr()?['Ouverture','Marie et les anges','Apôtres et martyrs','Pasteurs et saints','Supplications','Conclusion']:['Opening','Mary & the angels','Apostles & martyrs','Pastors & saints','Supplications','Conclusion'];
- return names.map((title,i)=>({title,lines:lines.slice(i*size,Math.min(lines.length,(i+1)*size))})).filter(x=>x.lines.length)
-}
+// The downloaded pages contain material *after* the Litany. Extract only the
+// bounded historical witness; do not present Psalm 69 and collects as invocations.
 async function ensureLitany(){
- if(LIT.sections||LIT.loading)return;LIT.loading=true;LIT.error='';const token=++LIT.token;try{let txt='';if(isFr()){txt=await guidedWsText('Œuvres de P. Corneille (Marty-Laveaux)/Tome 9/Les sept psaumes pénitentiaux','litany-saints-fr','fr');const k=txt.search(/LES LITANIES DES SAINTS|LITANIES DES SAINTS/i);if(k>=0)txt=txt.slice(k)}else{for(const title of ['A Manual of Prayers for the Use of the Catholic Laity/Litany of the Saints','A Manual of Prayers for the Use of the Catholic Laity/The Litany of the Saints']){try{txt=await guidedWsText(title,'litany-saints-en','en');if(txt)break}catch{}}const k=txt.search(/Lord, have mercy|Kyrie/i);if(k>0)txt=txt.slice(k)}if(token!==LIT.token)return;LIT.sections=buildLitanySections(txt);if(!LIT.sections.length)throw new Error('No litany sections');LIT.loading=false;render()}catch(e){if(token!==LIT.token)return;LIT.loading=false;LIT.error=String(e?.message||e);render()}
+ if(LIT.sections||LIT.loading)return;
+ LIT.loading=true;LIT.error='';
+ const token=++LIT.token;
+ const witness=LITANY_SOURCE_WITNESSES[lang()]||LITANY_SOURCE_WITNESSES.en;
+ try{
+  const raw=await guidedWsText(witness.title,witness.cacheKey,lang());
+  if(token!==LIT.token)return;
+  LIT.sections=paginateLitanyProper(extractLitanyProper(raw,lang()),lang());
+  LIT.step=0;LIT.loading=false;render();
+ }catch(error){
+  if(token!==LIT.token)return;
+  LIT.loading=false;LIT.sections=null;LIT.error=String(error?.message||error);render();
+ }
+}
+function litanySourceDisclosure(){
+ const witness=LITANY_SOURCE_WITNESSES[lang()]||LITANY_SOURCE_WITNESSES.en;
+ return `<details class="aoP435930Source"><summary>${esc(L('Historical text and edition','Texte historique et édition'))}</summary><p><a href="${esc(witness.url)}" target="_blank" rel="noopener noreferrer">${esc(witness.label)} ↗</a></p><p>${esc(L('Historical transcription, not collated against a 1962 liturgical edition. Only the Litany proper is shown; the source also contains an appended psalm and prayers.','Transcription historique non collationnée sur une édition liturgique de 1962. Seules les litanies proprement dites sont affichées ; la source comprend également un psaume et des oraisons.'))}</p></details>`;
 }
 function renderLitany(){
+ // A preference change must not retain the other language's historical edition.
+ if(LIT.language!==lang()){
+  LIT.language=lang();LIT.token++;LIT.sections=null;LIT.loading=false;LIT.error='';LIT.step=0;
+ }
  if(!LIT.sections&&!LIT.loading&&!LIT.error)setTimeout(ensureLitany,0);
- if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${callout(esc(L('The Litany text could not be loaded. No substitute text is generated.','Le texte des Litanies n’a pas pu être chargé. Aucun texte de remplacement n’est généré.')),'warn')}${devotionalSource(isFr()?'Marty-Laveaux 1862 · Litanies des saints':'Baltimore Manual · Litany of the Saints')}</main>`;
+ if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;
  if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body"><p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
  LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step));const st=LIT.sections[LIT.step],final=LIT.step===LIT.sections.length-1;
- return `${head(L('Litany of the Saints','Litanies des saints'),L('Call · response · guided in sections','Invocation · réponse · guidées par sections'))}<main class="aoP435930Body">${nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],S.rosary.recitation)}${guideRail(LIT.sections.map(x=>x.title),LIT.step,'lit')}${guideNow(st.title,L('Pray the invocations in order. In Group mode the invocation belongs to the leader and the repeated answer to the group; do not race through the names.','Priez les invocations dans l’ordre. En mode Groupe, l’invocation revient au meneur et la réponse répétée au groupe ; ne précipitez pas les noms.'))}<article class="aoP435930Prayer ${S.rosary.recitation==='group'?'aoP435930GroupRecitation':''}"><div class="aoP435930Text">${nl(st.lines.join('\n'))}</div></article>${guideCue(L('PACE','RYTHME'),L('Leave a small breath between invocations. The repetition is part of the prayer, not text to skim.','Laissez un léger souffle entre les invocations. La répétition fait partie de la prière ; ce n’est pas un texte à parcourir rapidement.'))}<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-lit-prev ${LIT.step===0?'disabled':''}>${esc(L('Previous section','Section précédente'))}</button>${final?`<button type="button" class="aoP435930Primary" data-p435930-lit-done>${esc(L('Finish litany','Terminer les litanies'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-lit-next>${esc(L('Continue','Continuer'))}</button>`}</div>${devotionalSource(isFr()?'Marty-Laveaux 1862 · Litanies des saints':'Baltimore Manual · Litany of the Saints')}</main>`
+ return `${head(L('Litany of the Saints','Litanies des saints'),L('Call · response · guided in sections','Invocation · réponse · guidées par sections'))}<main class="aoP435930Body">${nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],S.rosary.recitation)}${guideRail(LIT.sections.map(x=>x.title),LIT.step,'lit')}${guideNow(st.title,L('Pray the historical wording in order. In a group, agree who leads the responses; this transcription does not assign every voice.','Priez le texte historique dans l’ordre. En groupe, convenez de la répartition des répons ; cette transcription n’attribue pas chaque voix.'))}<article class="aoP435930Prayer ${S.rosary.recitation==='group'?'aoP435930GroupRecitation':''}"><div class="aoP435930Text">${nl(st.lines.join('\n'))}</div></article>${guideCue(L('PACE','RYTHME'),L('Leave a small breath between invocations. The repetition is part of the prayer, not text to skim.','Laissez un léger souffle entre les invocations. La répétition fait partie de la prière ; ce n’est pas un texte à parcourir rapidement.'))}<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-lit-prev ${LIT.step===0?'disabled':''}>${esc(L('Previous section','Section précédente'))}</button>${final?`<button type="button" class="aoP435930Primary" data-p435930-lit-done>${esc(L('Finish litany','Terminer les litanies'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-lit-next>${esc(L('Continue','Continuer'))}</button>`}</div>${litanySourceDisclosure()}</main>`
 }
 function splitSevenWords(txt){const re=/The (First|Second|Third|Fourth|Fifth|Sixth|Seventh) Word\.?/gi,ms=[...String(txt||'').matchAll(re)];if(ms.length<7)return null;return ms.slice(0,7).map((m,i)=>({title:m[0].replace(/\s+/g,' ').trim(),text:txt.slice(m.index+m[0].length,i+1<ms.length?ms[i+1].index:txt.length).trim()}))}
 async function ensureSevenWords(){if(SEVEN.sections||SEVEN.loading)return;SEVEN.loading=true;SEVEN.error='';const token=++SEVEN.srcToken;try{const txt=await guidedWsText('A Manual of Prayers for the Use of the Catholic Laity/The Devotion of the Seven Words upon the Cross','seven-words','en');if(token!==SEVEN.srcToken)return;SEVEN.sections=splitSevenWords(txt);if(!SEVEN.sections)throw new Error('Could not divide Seven Words');SEVEN.loading=false;render()}catch(e){if(token!==SEVEN.srcToken)return;SEVEN.loading=false;SEVEN.error=String(e?.message||e);render()}}
@@ -1421,6 +1443,7 @@ function onClick(e){
  if(b.matches('[data-p435930-pen-next]')){PEN.step=Math.min(6,PEN.step+1);return render()}
  if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
+ if(b.matches('[data-p435930-lit-retry]')){LIT.error='';LIT.sections=null;LIT.step=0;return render()}
  if(b.matches('[data-p435930-lit-prev]')){LIT.step=Math.max(0,LIT.step-1);return render()}
  if(b.matches('[data-p435930-lit-next]')){LIT.step=Math.min((LIT.sections?.length||1)-1,LIT.step+1);return render()}
  if(b.matches('[data-p435930-lit-done]')){if(navStack.at(-1)==='penitential'){navStack.pop();popView('home')}else popView('home');return render()}
