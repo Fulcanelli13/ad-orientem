@@ -526,8 +526,12 @@ export async function mountNativeReaderPreview({
           {title:"Silent adoration of the Cross",label:"Rise after adoration"} :
           {title:"Kneel at Flectamus genua",label:"Stand at Levate"}
       ) : null;
+      const unveilingPending=/^GF-X-52[123]$/.test(id??"") &&
+        formulaKneelRecord!==id
+        ? {title:"At Venite, adoremus",label:"Kneel for adoration"}:null;
       const action=personalSteps[id]??(id==="GF-PASS-320"
-        ? {title:"At the death of Our Lord",label:"Continue the Passion"}:formulaAction);
+        ? {title:"At the death of Our Lord",label:"Continue the Passion"}:
+          formulaAction??unveilingPending);
       personalControls.hidden=!action;
       const stage=personalControls.closest(".ao-reader-stage");
       if(stage)stage.dataset.riteChoice=String(Boolean(action));
@@ -620,8 +624,17 @@ export async function mountNativeReaderPreview({
       if(!target||personalControls?.hidden||!personalControls?.contains?.(target))return;
       event.stopPropagation?.();
       const state=controller.project();
-      if(!personalSteps[state.step?.recordId] && state.step?.recordId!=="GF-PASS-320" &&
-        formulaKneelRecord!==state.step?.recordId)return;
+      const id=state.step?.recordId??"";
+      if(/^GF-X-52[123]$/.test(id) && formulaKneelRecord!==id){
+        // Three short unveiling cards have no scroll travel. A deliberate
+        // user activation at the response is required: never guess the
+        // source ceremony's timing from the card becoming visible.
+        formulaKneelRecord=id;
+        showGoodFriday();
+        return;
+      }
+      if(!personalSteps[id] && id!=="GF-PASS-320" &&
+        formulaKneelRecord!==id)return;
       formulaKneelRecord=null;
       controller.next();
       showGoodFriday();
