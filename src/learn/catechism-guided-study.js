@@ -55,6 +55,14 @@ export function buildCatechismGuidedStudy(crosswalk, first, second, witnessIndex
             const witness = entry.sourceWitnesses.find(w => Number(w.ref.slice(-3)) === n);
             return { ref: sourceQuestion(n), url: witnessByNumber.get(n) ?? witness?.sourceUrl ?? null, originalLanguageUrl: witness?.italianOriginalLanguageUrl ?? null };
           });
+      // A printed historical translation is an additional witness, not a replacement
+      // for the numbered 1912 Italian and English Catechism references.
+      if (!original && c.french1913PrintSource) {
+        const print = c.french1913PrintSource;
+        if (!/^https:\/\//.test(print.url) || !print.ref)
+          throw new Error("Invalid printed French source at " + entry.displayLessonId);
+        sources.push({ ref: print.ref, url: print.url, originalLanguageUrl: null });
+      }
       if (!sources.length || sources.some(s => !s.url))
         throw new Error("Unresolved source link at " + entry.displayLessonId + " claim " + (j + 1));
       return Object.freeze({ en: c.en, fr: c.fr, sources: Object.freeze(sources.map(Object.freeze)) });
