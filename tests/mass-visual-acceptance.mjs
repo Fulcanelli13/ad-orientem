@@ -89,6 +89,7 @@ try{
     const mod=await import("/src/mass/browser-entry.js?mass-visual-audit=1");
     const controller=mod.createBrowserMassController();
     const prepared=await controller.enter();
+    globalThis.__AO_SPECIAL_RITE_VISUAL_PREPARED=prepared;
     return {schema:prepared.schema,form:prepared.session.resolvedMass.form,mode:prepared.readerPreferences.mode};
   });
 
@@ -759,10 +760,162 @@ try{
     "surrounding prayer text became unreadably dark again: "+JSON.stringify(wide));
   await page.screenshot({path:resolve(out,"13-mass-wide-donor-shell.png"),fullPage:false});
 
+  // Run the same R17 production shell with real 1962 Palm/Candlemas/
+  // Requiem prelude graphs. Assertions exercise actual clickable buttons and
+  // the Gospel-word gesture, not mock snapshots or an isolated CSS example.
+  await page.setViewportSize({width:390,height:844});
+  async function mountSpecialRite(kind){
+    return page.evaluate(async kind=>{
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.destroy?.();
+      const {mountNativeReaderPreview}=await import("/src/mass/reader-native-preview.js");
+      const base=globalThis.__AO_SPECIAL_RITE_VISUAL_PREPARED;
+      const previous=base.session.resolvedMass;
+      const prelude=kind==="PALM"?"PALM":kind==="CANDLEMAS"?"CANDLEMAS":null;
+      const following=kind==="REQUIEM"?"REQUIEM_ABSOLUTION":null;
+      const resolvedMass={
+        ...previous,
+        precedingRites:prelude?[prelude]:[],
+        followingActions:following?[following]:[],
+        overlays:following?["REQUIEM"]:previous.overlays,
+        provenance:{
+          ...previous.provenance,
+          ...(following?{requiemAbsolution:{bodyPresent:true,burialProcession:true}}:{}),
+        },
+      };
+      const plan={
+        ...base.session.plan,
+        precedingGraphs:prelude?[prelude]:[],
+        followingGraphs:following?[following]:[],
+        overlayGraphs:following?["REQUIEM"]:base.session.plan.overlayGraphs,
+        massEntry:prelude?"INTROIT":"FOOT",
+        normalLastGospel:kind!=="PALM"&&kind!=="REQUIEM",
+        blessingAllowed:kind!=="REQUIEM",
+      };
+      delete plan.lifecycle;
+      const prepared={...base,session:{...base.session,resolvedMass,plan}};
+      const api=await mountNativeReaderPreview({prepared});
+      globalThis.__AO_SPECIAL_RITE_VISUAL_API=api;
+      return {first:api.getCurrentCard()?.id,hasRoot:Boolean(api.root)};
+    },kind);
+  }
+  async function advanceRiteTo(target,max=10){
+    for(let attempt=0;attempt<max;attempt++){
+      const current=await page.evaluate(()=>{
+        const api=globalThis.__AO_SPECIAL_RITE_VISUAL_API;
+        return api?.getCurrentCard()?.id??api?.getCurrentCard()?.sectionId??null;
+      });
+      if(current===target)return;
+      await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+      await page.waitForTimeout(390);
+    }
+    const final=await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API?.getCurrentCard()?.id);
+    assert.equal(final,target,"special rite navigation did not reach "+target);
+  }
+
+  const palmStart=await mountSpecialRite("PALM");
+  assert.equal(palmStart.first,"PALM-R01");
+  assert.equal(await page.locator("#ao-r17-native-reader-preview [data-role='rite-choice']:visible").count(),0,
+    "Palm participation capsule permanently cluttered the common blessing");
+  await advanceRiteTo("PALM-R03");
+  const palmOpening=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const target=root.querySelector('[data-paragraph-id="PALM-R03-01"]');
+    return {
+      sourceCue:target?.dataset.cueId,
+      active:target?.dataset.active,
+      anchorWords:[...target?.querySelectorAll(".ao-ritual-trigger-live")??[]].map(x=>x.textContent.trim()),
+      gesture:root.querySelector('[data-role="gesture"]')?.textContent?.trim()??"",
+      iconVisible:root.querySelector('[data-icon-slot="gesture"]')?.hidden===false,
+    };
+  });
+  assert.equal(palmOpening.sourceCue,"PALM-R03-01",
+    "Palm crosses assigned to a whole Gospel source block instead of its heading");
+  assert.equal(palmOpening.active,"true");
+  assert.ok(palmOpening.anchorWords.some(word=>/Sequ[eé]ntia sancti Evang[eé]lii/i.test(word.normalize("NFD").replace(/[\\u0300-\\u036f]/g,""))),
+    "Palm Gospel crosses missing exact source-text highlight: "+JSON.stringify(palmOpening));
+  assert.match(palmOpening.gesture,/Forehead.*lips.*breast/i);
+  assert.equal(palmOpening.iconVisible,true,"Palm Gospel heading has no dedicated small-cross icon");
+  await page.locator("#ao-r17-native-reader-preview .ao-prayer-card").evaluate(card=>{
+    card.scrollTop=220;
+    card.dispatchEvent(new Event("scroll"));
+  });
+  await page.waitForTimeout(160);
+  const palmReading=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const opening=root.querySelector('[data-paragraph-id="PALM-R03-01"]');
+    return {
+      active:opening?.dataset.active,
+      highlighted:opening?.querySelectorAll(".ao-ritual-trigger-live").length??0,
+      railActive:root.querySelector('[data-channel="gesture"]')?.dataset.active,
+      owner:root.dataset.r17OwnerGesture,
+    };
+  });
+  assert.equal(palmReading.active,"false","Palm Gospel crosses held past proclamation heading");
+  assert.equal(palmReading.highlighted,0,"Palm heading words remained highlighted during the reading");
+  assert.equal(palmReading.railActive,"false","Palm Gospel-cross icon remained in rail throughout the reading");
+  await advanceRiteTo("PALM-R04");
+  const palmChoice=page.locator("#ao-r17-native-reader-preview [data-role='rite-choice']");
+  assert.equal(await palmChoice.isVisible(),true,"Palm processional choice not shown at procession");
+  assert.equal(await palmChoice.locator('[data-rite-participation="false"]').getAttribute("aria-pressed"),"true");
+  await page.setViewportSize({width:320,height:700});
+  const choiceBox=await palmChoice.boundingBox();
+  assert.ok(choiceBox&&choiceBox.left>=0&&choiceBox.width<=320,
+    "procession control overflows a 320px device");
+  const joinPalm=palmChoice.locator('[data-rite-participation="true"]');
+  const joinBox=await joinPalm.boundingBox();
+  assert.ok(joinBox&&joinBox.height>=44,"procession Join target is below 44px");
+  await page.touchscreen.tap(joinBox.x+joinBox.width/2,joinBox.y+joinBox.height/2);
+  assert.equal(await joinPalm.getAttribute("aria-pressed"),"true",
+    "touch selection failed to commit Palm personal participation");
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getPalmState().posture),"PROCESSIONAL");
+  await page.locator('[data-rite-participation="false"]').click();
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getPalmState().posture),null);
+  await advanceRiteTo("PALM-R06");
+  assert.equal(await palmChoice.isVisible(),false,"Palm choice persisted into common final prayer");
+
+  await page.setViewportSize({width:390,height:844});
+  const candlemasStart=await mountSpecialRite("CANDLEMAS");
+  assert.equal(candlemasStart.first,"CND-R01");
+  await advanceRiteTo("CND-R03");
+  await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.setCandlemasRecipientState("RECEIVE_CANDLE"));
+  await advanceRiteTo("CND-R05");
+  const candleChoice=page.locator("#ao-r17-native-reader-preview [data-role='rite-choice']");
+  assert.equal(await candleChoice.isVisible(),true);
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getCandlemasState().candleState),
+    "BLESSED_CANDLE_HELD");
+  await candleChoice.locator('[data-rite-participation="true"]').click();
+  const candleJoined=await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getCandlemasState());
+  assert.equal(candleJoined.posture,"PROCESSIONAL");
+  assert.equal(candleJoined.candleState,"CANDLE_LIT");
+  await candleChoice.locator('[data-rite-participation="false"]').click();
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getCandlemasState().posture),null);
+
+  const requiemStart=await mountSpecialRite("REQUIEM");
+  assert.ok(requiemStart.hasRoot);
+  await page.evaluate(()=>{
+    const api=globalThis.__AO_SPECIAL_RITE_VISUAL_API;
+    const lastAllowed=api.model.cards.findLast(card=>Number(card.sourceSequence)!==30);
+    api.showSection(lastAllowed.sectionId);
+  });
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+  await page.waitForTimeout(390);
+  await advanceRiteTo("ABS-R05",7);
+  const burialChoice=page.locator("#ao-r17-native-reader-preview [data-role='rite-choice']");
+  assert.equal(await burialChoice.isVisible(),true,"Requiem burial procession choice missing");
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getRequiemAbsolutionState().posture),null);
+  await burialChoice.locator('[data-rite-participation="true"]').click();
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getRequiemAbsolutionState().posture),
+    "PROCESSIONAL");
+  await burialChoice.locator('[data-rite-participation="false"]').click();
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getRequiemAbsolutionState().posture),null);
+
+  const specialRites={palmOpening,palmReading,palmStart,candlemasStart,requiemStart};
+  await page.screenshot({path:resolve(out,"14-special-rite-participation.png"),fullPage:false});
+
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,hierarchy,consecration,wordsState,elevationState,
     salience:{gloriaAdoramus,gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
-    wide,phoneAudit,
+    wide,phoneAudit,specialRites,
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
