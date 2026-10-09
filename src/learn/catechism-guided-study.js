@@ -44,7 +44,7 @@ export function buildCatechismGuidedStudy(crosswalk, first, second, witnessIndex
       if (!c.en || !c.fr) throw new Error("Missing translation at " + entry.displayLessonId);
       const sources = original
         ? c.sources.flatMap(s => (s.locators?.length
-          ? s.locators.map(l => ({ ref: l.ref, url: l.url }))
+          ? s.locators.map((l, i) => ({ ref: l.ref, url: l.url, originalLanguageUrl: s.italianOriginalLanguageLocators?.[i]?.url ?? null }))
           : s.refs.map(ref => {
               const n = /^PXQ[0-9]{3}$/.test(ref) ? Number(ref.slice(-3)) : null;
               const witness = n === null ? null : entry.sourceWitnesses.find(w => Number(w.ref.slice(-3)) === n);
