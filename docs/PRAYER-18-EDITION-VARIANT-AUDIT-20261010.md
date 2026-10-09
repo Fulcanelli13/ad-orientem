@@ -52,3 +52,7 @@ The previously anchor-reviewed **18/18** canonical Prayer records have been recl
 Before changing a user-facing attribution or approving a formula as verbatim: identify exact original edition, link to the correct section, compare entire EN/FR/LA texts by segments including endings and responses, classify authorised local variations, obtain independent editorial sign-off, then test bilingual on phone, return-state and offline/error handling. Source-URL existence alone does not satisfy any of these gates.
 
 **No R17, Calendar, prayer wording, reader layout, sources owner, ribbon, or publication-state change in this batch.**
+
+## Exact-form source correction included
+
+For `foundations_grace_after_meals`, the existing Prayer provenance control now uses [Blessed Sacrament Book, *benefits*](https://en.wikisource.org/wiki/Blessed_Sacrament_Book/Prayers_During_the_Day) as its main English printed witness and retains [Baltimore Manual, *mercies*](https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers) as supplementary variant. Duplicate URLs are filtered from the extra collation-links subsection. Prayer texts, translations, language selectors, and certification flags are unmodified.
