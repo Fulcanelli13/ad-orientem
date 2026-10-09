@@ -119,8 +119,13 @@ function sourceHints(r){
 }
 function observedCycle(r,id){
   if(!r||r.status==="failed"||!r.day)return "unknown";
-  // Observance identity takes precedence over the weekday: a solemnity of
-  // Our Lady or a saint celebrated on Sunday remains sanctorale.
+  // Temporale is a liturgical classification, not strictly a source folder:
+  // Christ the King, Christmas and Epiphany are stored under Sancti upstream.
+  const title=String(titleOf(r)||"").toLowerCase();
+  const temporal=/\b(?:feria|sunday|dimanche|f[eé]rie|ember|quatre[- ]temps|rogation|ash wednesday|mercredi des cendres|septuagesima|septuag[eé]sime|sexagesima|sexag[eé]sime|quinquagesima|quinquag[eé]sime|lent|car[eê]me|passion sunday|dimanche de la passion|palm sunday|rameaux|holy monday|lundi saint|holy tuesday|mardi saint|holy wednesday|mercredi saint|holy thursday|jeudi saint|good friday|vendredi saint|holy saturday|samedi saint|easter|p[aâ]ques|ascension|pentecost|pentec[oô]te|trinity|trinit[eé]|corpus christi|f[eê]te[- ]dieu|sacred heart|sacr[eé][ -]c[oœ]ur|christ the king|christ[- ]roi|advent|avent|nativity of our lord|nativit[eé] de notre[- ]seigneur|epiphany of our lord|[eé]piphanie de notre[- ]seigneur|circumcision of our lord|circoncision de notre[- ]seigneur)\b/;
+  if(temporal.test(title))return "temporale";
+  // For other observed celebrations, the actual principal Mass identity
+  // takes precedence over a generic Sunday classification.
   const observedId=String(r.day.main?.id||"").toLowerCase();
   if(observedId.startsWith("sancti:"))return "sanctorale";
   if(observedId.startsWith("tempora:"))return "temporale";
@@ -130,9 +135,7 @@ function observedCycle(r,id){
   if(/\b(?:sanct|sanctor|fixed[-_ ]?feast|saint)\b/.test(hints))return "sanctorale";
   if(/\b(?:temp|tempor|season|feria|sunday)\b/.test(hints))return "temporale";
   if(dateOf(id).getDay()===0)return "temporale";
-  const title=String(titleOf(r)||"").toLowerCase();
-  const temporal=/\b(?:feria|sunday|dimanche|f[eé]rie|ember|quatre[- ]temps|rogation|ash wednesday|mercredi des cendres|septuagesima|septuag[eé]sime|sexagesima|sexag[eé]sime|quinquagesima|quinquag[eé]sime|lent|car[eê]me|passion sunday|dimanche de la passion|palm sunday|rameaux|holy monday|lundi saint|holy tuesday|mardi saint|holy wednesday|mercredi saint|holy thursday|jeudi saint|good friday|vendredi saint|holy saturday|samedi saint|easter|p[aâ]ques|ascension|pentecost|pentec[oô]te|trinity|trinit[eé]|corpus christi|f[eê]te[- ]dieu|sacred heart|sacr[eé][ -]c[oœ]ur|christ the king|christ[- ]roi|advent|avent|nativity of our lord|nativit[eé] de notre[- ]seigneur|epiphany of our lord|[eé]piphanie de notre[- ]seigneur|circumcision of our lord|circoncision de notre[- ]seigneur)\b/;
-  if(temporal.test(title))return "temporale";
+
   const generic=/^(?:liturgical day|jour liturgique|calendar unavailable|calendrier indisponible)$/;
   return generic.test(title.trim())?"unknown":"sanctorale";
 }
