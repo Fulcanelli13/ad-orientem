@@ -443,8 +443,17 @@ try{
 
   await page.evaluate(async()=>{await globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-09");globalThis.AO_CALENDAR_APP_V1?.setView?.("day")});
   await page.waitForSelector("#ao-calendar-modular-root .aoCalPracticeDiscipline",{state:"visible",timeout:5000});
-  await page.locator("#ao-calendar-modular-root .aoCalPracticeDiscipline > summary").click();
-  const earlyDisciplineText=await page.locator("#ao-calendar-modular-root .aoCalPracticeDiscipline").innerText();
+  const disciplineSelector="#ao-calendar-modular-root .aoCalPracticeDiscipline";
+  await page.locator(disciplineSelector+" > summary").click();
+  await page.waitForFunction(selector=>{
+    const element=document.querySelector(selector);
+    return element?.open===true&&element.innerText.includes("At least one hour before Holy Communion");
+  },disciplineSelector,{timeout:10000});
+  // Same-date cache refreshes must not discard the opened state.
+  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.paint?.());
+  assert.equal(await page.locator(disciplineSelector).evaluate(node=>node.open),true,
+    "Calendar rerender discarded the expanded discipline reference");
+  const earlyDisciplineText=await page.locator(disciplineSelector).innerText();
   assert.match(earlyDisciplineText,/At least one hour before Holy Communion/);
   assert.match(earlyDisciplineText,/three hours from solid food and alcoholic drink/);
   assert.match(earlyDisciplineText,/SOURCE-SENSITIVE/);
