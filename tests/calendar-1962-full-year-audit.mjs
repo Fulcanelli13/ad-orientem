@@ -150,7 +150,10 @@ try{
     {date:"2027-05-15",id:"tempora:Pasc6-6:1:r",en:"Vigil of Pentecost",fr:"Vigile de la Pentecôte"},
     {date:"2024-12-02",id:"sancti:12-02:3:r",en:"St Bibiana, Virgin and Martyr",fr:"Sainte Bibiane, vierge et martyre"},
     {date:"2027-12-02",id:"sancti:12-02:3:r",en:"St Bibiana, Virgin and Martyr",fr:"Sainte Bibiane, vierge et martyre"},
-    {date:"2027-06-30",id:"sancti:06-30:3:r",en:"Commemoration of St Paul, Apostle",fr:"Commémoraison de saint Paul, apôtre"}
+    {date:"2027-06-30",id:"sancti:06-30:3:r",en:"Commemoration of St Paul, Apostle",fr:"Commémoraison de saint Paul, apôtre"},
+    {date:"2024-06-08",id:"commune:C10t:4:w",en:"Blessed Virgin Mary on Saturday",fr:"Sainte Vierge Marie le samedi"},
+    {date:"2027-01-02",id:"commune:C10b:4:w",en:"Blessed Virgin Mary on Saturday",fr:"Sainte Vierge Marie le samedi"},
+    {date:"2024-12-14",id:"tempora:Adv2-6:3:v",en:"Saturday after the Second Sunday of Advent",fr:"Samedi après le deuxième dimanche de l’Avent"}
   ];
   const observedLabels=await page.evaluate(async cases=>{
     const {calendarObservanceAlias}=await import("/src/calendar/observance-title.js");
