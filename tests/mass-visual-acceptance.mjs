@@ -1201,8 +1201,8 @@ try{
   assert.equal(await communionChoice.isVisible(),true,
     "the faithful cannot select personal Communion during preparation");
   const receive=communionChoice.locator('[data-gf-communion="true"]');
-  const remain=communionChoice.locator('[data-gf-communion="false"]');
-  assert.equal(await remain.getAttribute("aria-pressed"),"true",
+  const communionRemain=communionChoice.locator('[data-gf-communion="false"]');
+  assert.equal(await communionRemain.getAttribute("aria-pressed"),"true",
     "Good Friday silently assumed personal reception without authorization");
   const receiverBox=await receive.boundingBox();
   assert.ok(receiverBox?.height>=44,"Communion participation control is not touch safe");
@@ -1239,8 +1239,8 @@ try{
   assert.equal(await gfPanel.isVisible(),false,"personal Communion action persisted after completion");
 
   await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord("GF-COM-840"));
-  await remain.click();
-  assert.equal(await remain.getAttribute("aria-pressed"),"true");
+  await communionRemain.click();
+  assert.equal(await communionRemain.getAttribute("aria-pressed"),"true");
   await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
   const nonCommunicant=await page.evaluate(()=>{
     const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
