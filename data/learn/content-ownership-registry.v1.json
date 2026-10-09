@@ -869,5 +869,24 @@
     "published_as_formation_module": false,
     "new_canonical_dossiers_added": 0,
     "original_question_texts_synthetically_recreated": 0
+  },
+  "guided_formation": {
+    "learn_the_faith": {
+      "status": "FULL_55_LESSON_DRAFT_SOURCE_LINKED_NOT_PUBLISHED",
+      "registry": "data/learn/learn-the-faith-curriculum.v1.json",
+      "proposed_route": "learn.faith",
+      "visible": false,
+      "owner": "positive-doctrinal-formation",
+      "doctrine_reference": "learn.catechism",
+      "daily_review": "learn.catechism.daily",
+      "lesson_count": 55,
+      "teaching_point_count": 166,
+      "mapped_catechism_questions": 433,
+      "catechism_question_index": "data/learn/pius-x-1912-question-index.v1.json",
+      "source_registry": "data/learn/learn-the-faith-sources.v1.json",
+      "duplicate_content_representations": 0,
+      "publication_gate": "DEDUP_EDITORIAL_FRENCH_SOURCE_VERIFICATION_REQUIRED",
+      "rule": "Guided synthesis only. Do not duplicate the full Catechism Q&A bank, Apologetics objections, Mass Formation ceremonial explanation, Sexual Ethics concrete cases, or Spiritual Life practice."
+    }
   }
 }
