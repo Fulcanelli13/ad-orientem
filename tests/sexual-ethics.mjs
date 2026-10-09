@@ -48,11 +48,11 @@ assert.equal(CSE_MARRIAGE_AUTHORITY_DEBATES.length,8,"Eight internal disputation
 assert.equal(new Set(CSE_MARRIAGE_AUTHORITY_DEBATES.map(d=>d.id)).size,8);
 for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
  assert.match(entry.id,/^MAR-0[1-8]$/);
- for(const field of ["question","opposition","reply","rejoinder","finding"]){
+ for(const field of ["question","opposition","reply","rejoinder","finding","traditionalAssessment"]){
    assert.equal(entry[field]?.length,2,entry.id+" "+field+" must be bilingual");
    for(const text of entry[field])assert.ok(text.length>(field==="question"?18:65),entry.id+" "+field+" too thin");
  }
- for(const field of ["opposition","reply","rejoinder","finding"]){
+ for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
    const refs=entry.sources?.[field]||[];
    assert.ok(refs.length>0,entry.id+" "+field+" without evidence");
    for(const key of refs)assert.match(CSE_MARRIAGE_AUTHORITY_SOURCES[key]?.[1]||"",/^https:\/\//,entry.id+" "+field+" source "+key);
@@ -68,6 +68,7 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
 }
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("KEENER_2021")||d.sources.opposition.includes("GROOTHUIS")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
+assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.every(d=>d.traditionalAssessment[0].length>200 && d.traditionalAssessment[1].length>200));
 
 assert.deepEqual(CSE_EDITORIAL_ARCHIVE_IDS,["CSE055","CSE056","CSE058"]);
 assert.equal(CSE_PUBLIC_QUESTIONS.length,147);
@@ -323,6 +324,7 @@ assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/paragraphSourceLinks/);
 assert.match(runtime,/data-ao-cse-inline-source/);
 assert.match(runtime,/function marriageDisputationsHtml/);
+assert.match(runtime,/Traditional Catholic assessment/);
 assert.match(runtime,/CSE_MARRIAGE_AUTHORITY_DEBATES/);
 assert.match(runtime,/data-ao-cse-disputation/);
 assert.match(runtime,/marriageDisputationsHtml\(win,item\)/);
