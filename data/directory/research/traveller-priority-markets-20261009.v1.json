@@ -1,0 +1,320 @@
+{
+  "schema": "AO_FIND_TRAVELLER_MARKETS_V1",
+  "created_at": "2026-10-09",
+  "mission": "Travel-grade 1962 Mass locator for anglophone and francophone users; regional accuracy over world record volume",
+  "primary_market_codes": [
+    "US",
+    "GB",
+    "FR",
+    "ES",
+    "PT",
+    "IT",
+    "MU",
+    "IN"
+  ],
+  "primary": [
+    {
+      "code": "US",
+      "name": "United States",
+      "travel_hubs": [
+        "New York",
+        "Boston",
+        "Washington DC",
+        "Miami",
+        "Orlando",
+        "Chicago",
+        "Los Angeles",
+        "San Francisco",
+        "San Diego",
+        "Dallas",
+        "Houston"
+      ],
+      "sources": [
+        {
+          "url": "https://sspx.org/en/list-sspx-chapels",
+          "type": "SSPX district original"
+        },
+        {
+          "url": "https://fssp.com/locations-list/",
+          "type": "FSSP province original"
+        }
+      ],
+      "gap": "Diocesan 1962 Mass centres and major tourist cities; distinguish FSSP permanent churches from occasional parish hosts"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "travel_hubs": [
+        "London",
+        "Edinburgh",
+        "Glasgow",
+        "Oxford",
+        "Cambridge",
+        "Birmingham",
+        "York",
+        "Manchester",
+        "Liverpool"
+      ],
+      "sources": [
+        {
+          "url": "https://lms.org.uk/list-of-churches",
+          "type": "Latin Mass Society discovery witness — confirm with parishes"
+        },
+        {
+          "url": "https://unavocescotland.org/find-a-latin-mass/",
+          "type": "Regional association discovery witness"
+        },
+        {
+          "url": "https://icksp.org.uk/",
+          "type": "Institute original"
+        }
+      ],
+      "gap": "Finish England/Wales diocesan crosswalk, Scotland and Northern Ireland; exclude Ordinariate and discontinued sites"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "travel_hubs": [
+        "Paris",
+        "Lyon",
+        "Marseille",
+        "Bordeaux",
+        "Toulouse",
+        "Lille",
+        "Nantes",
+        "Nice",
+        "Strasbourg",
+        "Lourdes",
+        "Lisieux"
+      ],
+      "sources": [
+        {
+          "url": "https://icrspfrance.fr/?page=apostolates",
+          "type": "ICKSP official French province"
+        },
+        {
+          "url": "https://map.fsspx.org/fr/",
+          "type": "SSPX official map"
+        },
+        {
+          "url": "https://www.fssp.org/en/find-us/",
+          "type": "FSSP international official entry"
+        }
+      ],
+      "gap": "In-country traditional associations plus diocesan Masses; official calendars for periodic Sunday/weekday venues"
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "travel_hubs": [
+        "Madrid",
+        "Barcelona",
+        "Seville",
+        "Granada",
+        "Valencia",
+        "Bilbao",
+        "Málaga",
+        "Santiago de Compostela"
+      ],
+      "sources": [
+        {
+          "url": "https://fsspx.es/es/capillas-0",
+          "type": "SSPX Spain and Portugal district official"
+        },
+        {
+          "url": "https://map.fsspx.org/fr/countries/es",
+          "type": "Official SSPX country list"
+        }
+      ],
+      "gap": "SSPX district crosswalk beyond existing six SSPX source rows; FSSP, ICKSP and diocesan permitted Masses"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "travel_hubs": [
+        "Lisbon",
+        "Porto",
+        "Fátima",
+        "Braga",
+        "Coimbra",
+        "Sintra"
+      ],
+      "sources": [
+        {
+          "url": "https://www.fssp.pt/hor%C3%A1rios",
+          "type": "FSSP Portugal original, dated Oct 2026"
+        },
+        {
+          "url": "https://fsspx.es/es/capillas-0",
+          "type": "SSPX Spain and Portugal district official"
+        }
+      ],
+      "gap": "High-priority severe thinness in current v19 registry; distinguish FSSP Fatima from SSPX Fatima/Lisbon/Porto and check recurring monthly services"
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "travel_hubs": [
+        "Rome",
+        "Vatican City",
+        "Florence",
+        "Venice",
+        "Milan",
+        "Naples",
+        "Assisi",
+        "Bologna",
+        "Turin",
+        "Padua"
+      ],
+      "sources": [
+        {
+          "url": "https://www.fssp.org/en/find-us/",
+          "type": "FSSP international official"
+        },
+        {
+          "url": "https://map.fsspx.org/fr/",
+          "type": "SSPX global source"
+        }
+      ],
+      "gap": "Rome and pilgrimage circuits require accurate addresses, holiday exceptions, different liturgical rites and cancellation notices"
+    },
+    {
+      "code": "MU",
+      "name": "Mauritius",
+      "travel_hubs": [
+        "Port Louis",
+        "Curepipe",
+        "Quatre Bornes",
+        "Rose Hill",
+        "Grand Baie",
+        "Mahebourg"
+      ],
+      "sources": [
+        {
+          "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+          "type": "Local ICKSP original liturgical timetable"
+        }
+      ],
+      "gap": "Five ICKSP canonical source rows but check every distinct physical site and confirm October 2026 actual timetable; stale 'next dates' must not masquerade as current"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "travel_hubs": [
+        "Goa",
+        "Mumbai",
+        "Delhi NCR",
+        "Chennai",
+        "Bengaluru",
+        "Kochi",
+        "Kolkata",
+        "Hyderabad",
+        "Pondicherry"
+      ],
+      "sources": [
+        {
+          "url": "https://map.fsspx.org/fr/countries/in",
+          "type": "Official SSPX country catalogue"
+        }
+      ],
+      "gap": "Current seven SSPX v19 Mass records vs 12 official place entries of mixed types: physical and Mass presence crosswalk, not automatic five missing chapels; diocesan Masses separate"
+    }
+  ],
+  "secondary": [
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "reason": "English-speaking pilgrimage and travel"
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "reason": "English and French; Quebec and other major cities"
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "reason": "French-speaking Europe"
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "reason": "French-speaking cantons, pilgrimage and travel"
+    },
+    {
+      "code": "RE",
+      "name": "Réunion",
+      "reason": "French-speaking Indian Ocean, near Mauritius"
+    },
+    {
+      "code": "GP",
+      "name": "Guadeloupe",
+      "reason": "French overseas travel"
+    },
+    {
+      "code": "MQ",
+      "name": "Martinique",
+      "reason": "French overseas travel"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "reason": "English-speaking travel"
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "reason": "English-speaking travel"
+    }
+  ],
+  "other_countries": "On demand; maintain existing canon but do not spend new research effort solely to increase world country coverage",
+  "quality": {
+    "traveller_ready_fields": [
+      "exact_physical_venue_name",
+      "street_address_or_explicit_location_only_status",
+      "city_country",
+      "institute_or_diocesan_status",
+      "liturgical_rite_or_editional_uncertainty",
+      "original_source_url",
+      "sunday_and_weekday_frequency_or_explicit_unknown",
+      "source_last_checked",
+      "schedule_next_review",
+      "date_and_occasion_exceptions",
+      "directions_only_with_verified_coordinates"
+    ],
+    "publish_statuses": [
+      "CONFIRMED_CURRENT_SCHEDULE",
+      "OFFICIALLY_LISTED_TIMES_UNCONFIRMED",
+      "ASSOCIATION_LISTED_NEEDS_FIRST_PARTY_CHECK",
+      "PAUSED_OR_DISCONTINUED_ARCHIVED"
+    ],
+    "release_rules": [
+      "One physical location, multiple ministries and Mass services if applicable; never count each affiliation as a second church.",
+      "For travel searches, official timetable > third-party directory > stale PDFs. Do not silently use seasonal historical Mass times.",
+      "Original local language evidence must be accessible; translate interface summaries into French and English without altering church names.",
+      "Keep 1962 Roman, Dominican Old Rite, Ordinariate Divine Worship, Eastern Catholic, and ordinary-form Latin as distinct liturgies.",
+      "No made-up coordinates; map only verified navigable destinations, otherwise city-only evidence link with an explicit location uncertainty.",
+      "The ability to filter for Mass on a specific future date does not mean an unverified Sunday time is a guaranteed open Mass.",
+      "Special closures, temporary moves, summer schedules and feast-day exceptions outrank generic week patterns."
+    ],
+    "targets": {
+      "official_directory_reconciliation": "Document every known official apostolate/church source inventory per tier-one country with explicit reviewed/matched/held records; do not claim exhaustive before this is complete",
+      "original_source_links": "100% of visible listings",
+      "cross_community_physical_dupe": "0 known unresolved duplicated public venue IDs",
+      "outdated_fixed_time": "0 publishable assertions past review date without a visible warning",
+      "traveller_ready_major_hubs": "Work toward coverage in named hubs, then regional completeness country by country"
+    },
+    "scheduling_policy": {
+      "fixed_weekly_review_days": 90,
+      "variable_monthly_review_days": 30,
+      "feast_and_exception": "Recheck immediately for requested trip dates; verify on original source",
+      "existence_review_days": 180
+    }
+  },
+  "display_languages": [
+    "en",
+    "fr"
+  ],
+  "source_of_truth": "Repository v19 research corpus plus live official FSSP/ICKSP/IBP providers; independently deduplicate physical venue across provider streams.",
+  "geographic_note": "Ireland (IE), Réunion (RE), Guadeloupe (GP), Martinique (MQ), and Vatican City (VA) must not silently be filed as British, French mainland or Italian venues; retain actual ISO country code."
+}
