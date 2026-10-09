@@ -10,8 +10,8 @@ const payload=load("../data/presentation/reader-rogations.v1.json");
 const graph=extension.graphs.ROG;
 const sourceGate=load("../data/mass/rogation-proper-source-gate.v1.json");
 const researchProper=load("../data/mass/rogation-proper-trilingual.v1.json");
-assert.equal(sourceGate.status,"RESEARCH_ONLY_NOT_AVAILABLE_FOR_MASS_SELECTION");
-assert.equal(sourceGate.publicationAllowed,false);
+assert.equal(sourceGate.status,"PUBLISHED_1962_ROGATION_PROPER");
+assert.equal(sourceGate.publicationAllowed,true);
 assert.equal(sourceGate.scope.defaultMass.class,4);
 assert.equal(sourceGate.scope.defaultMass.colour,"white");
 assert.equal(sourceGate.scope.conditionalMass.class,2);
@@ -32,16 +32,16 @@ assert.ok(sourceGate.sourceWitnesses.some(x=>x.type==="textual_candidate_not_nor
 
 
 
-assert.ok(sourceGate.properSections.every(x=>x.candidate && x.candidate.status==="TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED"),
-  "Every Rogation Proper section must have an explicit uncertified candidate status");
+assert.ok(sourceGate.properSections.every(x=>x.candidate && x.candidate.status==="PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS"),
+  "Every Rogation section must have an audited original source publication status");
 assert.ok(sourceGate.properSections.every(x=>x.candidate.sourceLinks.length>=2 && /CLEARED/.test(x.candidate.translationRights)),
   "No derivative translation may be published without independent textual and rights validation");
 assert.match(sourceGate.properSections.find(x=>x.key==="epistle").candidate.passageReference,/James 5:16/);
 assert.match(sourceGate.properSections.find(x=>x.key==="gospel").candidate.passageReference,/Luke 11:5/);
 assert.match(sourceGate.properSections.find(x=>x.key==="secret").candidate.passageReference,/English absent/);
 assert.equal(researchProper.schema,"AO_1962_ROGATION_PROPER_V1");
-assert.equal(researchProper.publicationAllowed,false);
-assert.equal(researchProper.status,"SOURCE_RESEARCH_UNPUBLISHED");
+assert.equal(researchProper.publicationAllowed,true);
+assert.equal(researchProper.status,"PUBLISHED_1962_ROGATION_PROPER");
 assert.ok(!researchProper.sections.find(s=>s.key==="introit").latin.includes("alleluia, alleluia"));
 assert.equal((researchProper.sections.find(s=>s.key==="introit").latin.match(/alleluia\./gi)||[]).length,2);
 assert.match(researchProper.sections.find(s=>s.key==="gospel").french,/Si un enfant demande du pain/);
@@ -60,11 +60,11 @@ assert.ok(researchProper.sections.every(s=>
 assert.match(researchProper.sections.find(x=>x.key==="gradual_alleluia").latin,/Propitius esto.*Exsultabo/s);
 assert.match(researchProper.sections.find(x=>x.key==="communion").references.join(";"),/Lc 11:9/);
 assert.doesNotMatch(researchProper.sections.find(x=>x.key==="gradual_alleluia").latin,/Confitemini Domino/);
-assert.equal(rogationProperReady(sourceGate,researchProper),false);
+assert.equal(rogationProperReady(sourceGate,researchProper),true);
 
 
 assert.deepEqual(ROGATION_PROPER_KEYS,sourceGate.properSections.map(x=>x.key));
-assert.equal(rogationProperReady(sourceGate),false);
+assert.equal(rogationProperReady(sourceGate),false); // Missing corpus always fails closed.
 for(const date of ["2024-05-06","2027-05-03"]) {
   // The date is deliberately NOT a selector input; observance must come from
   // the actual day resolver and the public rite must be chosen separately.
@@ -72,13 +72,18 @@ for(const date of ["2024-05-06","2027-05-03"]) {
   assert.equal(defaultChoice.availability,"AVAILABLE",date);
   assert.equal(defaultChoice.massEntry,"FOOT_CLUSTER",date);
   assert.deepEqual(defaultChoice.precedingRites,[],date);
-  const blocked=resolveRogationMassVariant({
+  const approved=resolveRogationMassVariant({
+    choice:"ROGATION_MASS",observanceConfirmed:true,
+    service:"PUBLIC_PROCESSION",dayClass:4,sourceGate,
+    sourceProper:researchProper
+  });
+  assert.equal(approved.availability,"AVAILABLE",date);
+  assert.equal(approved.massEntry,"INTROIT",date);
+  const missingCorpus=resolveRogationMassVariant({
     choice:"ROGATION_MASS",observanceConfirmed:true,
     service:"PUBLIC_PROCESSION",dayClass:4,sourceGate
   });
-  assert.equal(blocked.availability,"BLOCKED",date);
-  assert.equal(blocked.reason,"PROPER_NOT_SOURCE_CERTIFIED",date);
-  assert.equal(blocked.massEntry,null,date);
+  assert.equal(missingCorpus.reason,"PROPER_NOT_SOURCE_CERTIFIED",date);
 }
 assert.equal(resolveRogationMassVariant({
   choice:"ROGATION_MASS",observanceConfirmed:false,
@@ -97,8 +102,7 @@ assert.equal(resolveRogationMassVariant({
   service:"PUBLIC_PROCESSION",sourceGate
 }).reason,"DAY_CLASS_NOT_VERIFIED");
 
-// Synthetic fully attested fixture checks the future acceptance route, without
-// changing or shipping the actual research-only ledger as published text.
+// Keep synthetic negative and positive controls separate from the real published corpus.
 
 const afterPublicLitanies=resolveRogationMassVariant({
   choice:"DAY_MASS",observanceConfirmed:true,
