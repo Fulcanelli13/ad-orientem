@@ -56,7 +56,7 @@ const rubaga=wave3.custody_claims.filter(x=>x.reported_custodian.includes("Rubag
 assert.ok(rubaga.every(x=>x.material_classification==="UNDETERMINED_NO_FIRST_CLASS_EVIDENCE"));
 assert.equal(prod.relics.length,wave1.legacy_object_crosswalk.length,"production relics must remain intact");
 const stats=JSON.parse(execFileSync(process.execPath,["tools/atlas/report-world-relic-census.mjs"],{encoding:"utf8"}));
-assert.equal(stats.total_screened_claims,77);
+assert.equal(stats.first_wave_claims+stats.second_wave_claims+stats.third_wave_claims,77);
 assert.equal(stats.historical_case_reviews,19);
 assert.equal(stats.backlog_total,133);
 assert.equal(stats.backlog_with_at_least_one_screened_case,62);
