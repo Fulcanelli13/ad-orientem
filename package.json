@@ -149,7 +149,7 @@
     "test:directory-sspx-worldwide-index": "node tests/directory-sspx-worldwide-index.mjs && node tests/directory-sspx-worldwide-corpus.mjs",
     "test:directory-sspx-worldwide-evidence": "node tests/directory-sspx-worldwide-evidence.mjs",
     "test:directory-sspx-mexico-completion": "node tests/directory-sspx-mexico-completion.mjs",
-    "test:rosary-scripture-policy": "node tests/rosary-scripture-policy.mjs",
+    "test:rosary-scripture-policy": "node tests/rosary-scripture-policy.mjs && node tests/rosary-primary-edition-review.mjs",
     "test:directory-sspx-priority-districts": "node tests/directory-sspx-priority-districts.mjs",
     "test:directory-sspx-post-alias-audit": "node tests/directory-sspx-post-alias-audit.mjs",
     "test:scripture": "node tests/scripture-catalogue.mjs && node tests/scripture-canon.mjs && node tests/scripture-passages.mjs && node tests/scripture-rosary-audit.mjs",
