@@ -7,10 +7,10 @@ const JEWISH_VARIANTS=new Set(["PRINTED_1962","HOLY_SEE_2008"]);
 const VENERATION_MODES=new Set(["PERSONAL","CORPORATE_SILENT"]);
 
 function freeze(v){return Object.freeze(v)}
-function textRow(id,latin,kind="TEXT",sourceIds=[]){
+function textRow(id,latin,kind="TEXT",sourceIds=[],speaker=null){
   const value=String(latin??"").trim();
   if(!value)throw new Error("Good Friday text missing for "+id);
-  return freeze({id,kind,latin:value,sourceIds:freeze([...sourceIds])});
+  return freeze({id,kind,latin:value,sourceIds:freeze([...sourceIds]),...(speaker?{speaker}:{})});
 }
 function rows(prefix,values,sourceIds=[]){
   return freeze((values??[]).map((v,i)=>textRow(prefix+String(i+1),v,"TEXT",sourceIds)));
@@ -161,32 +161,34 @@ function surfaceFor(record,payload,jewishPrayerVariant){
     key:"SACRAMENT_RETURN",title:"Return of the Blessed Sacrament",
     paragraphs:rows("GF-COM-810-",payload.cross.returnAntiphons,["GF-COM-810"])
   });
+  // Speaker ownership is display-only: the Good Friday Pater is recited by all,
+  // unlike the celebrant's introduction and Libera nos. No liturgical text changes.
   if(id==="GF-COM-820"||id==="GF-COM-830")return freeze({
     key:"PATER_LIBERA",title:"Pater noster · Libera nos",
     paragraphs:freeze([
-      textRow("GF-COM-P-I",payload.communion.paterIntro,"TEXT",["GF-COM-830"]),
-      textRow("GF-COM-P",payload.communion.pater,"TEXT",["GF-COM-830"]),
-      textRow("GF-COM-L",payload.communion.libera,"TEXT",["GF-COM-830"]),
-      textRow("GF-COM-A",payload.communion.amen,"RESPONSE",["GF-COM-830"])
+      textRow("GF-COM-P-I",payload.communion.paterIntro,"TEXT",["GF-COM-830"],"CELEBRANT"),
+      textRow("GF-COM-P",payload.communion.pater,"TEXT",["GF-COM-830"],"ALL"),
+      textRow("GF-COM-L",payload.communion.libera,"TEXT",["GF-COM-830"],"CELEBRANT"),
+      textRow("GF-COM-A",payload.communion.amen,"RESPONSE",["GF-COM-830"],"ALL")
     ])
   });
   if(id==="GF-COM-840")return freeze({
     key:"IMMEDIATE_COMMUNION_PREP",title:"Preparation for Holy Communion",
     paragraphs:freeze([
-      textRow("GF-COM-PER",payload.communion.perceptio,"TEXT",["GF-COM-840"]),
-      textRow("GF-COM-DNSD",payload.communion.priestDomineNonSumDignus,"TEXT",["GF-COM-840"]),
-      textRow("GF-COM-CORP",payload.communion.priestCommunion,"TEXT",["GF-COM-840"]),
-      textRow("GF-COM-MIS",payload.communion.misereatur,"TEXT",["GF-COM-840"]),
-      textRow("GF-COM-IND",payload.communion.indulgentiam,"TEXT",["GF-COM-840"]),
-      textRow("GF-COM-ECCE",payload.communion.ecce,"TEXT",["GF-COM-840"]),
-      textRow("GF-COM-FDNSD",payload.communion.faithfulDomineNonSumDignus,"TEXT",["GF-COM-840"])
+      textRow("GF-COM-PER",payload.communion.perceptio,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-DNSD",payload.communion.priestDomineNonSumDignus,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-CORP",payload.communion.priestCommunion,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-MIS",payload.communion.misereatur,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-IND",payload.communion.indulgentiam,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-ECCE",payload.communion.ecce,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-FDNSD",payload.communion.faithfulDomineNonSumDignus,"TEXT",["GF-COM-840"],"COMMUNICANTS")
     ])
   });
   if(id==="GF-COM-850")return freeze({
     key:"PERSONAL_COMMUNION",title:"Holy Communion",
     paragraphs:freeze([
-      textRow("GF-COM-850-E",payload.communion.ecce,"TEXT",["GF-COM-850"]),
-      textRow("GF-COM-850-D",payload.communion.faithfulDomineNonSumDignus,"TEXT",["GF-COM-850"])
+      textRow("GF-COM-850-E",payload.communion.ecce,"TEXT",["GF-COM-850"],"CELEBRANT"),
+      textRow("GF-COM-850-D",payload.communion.faithfulDomineNonSumDignus,"TEXT",["GF-COM-850"],"COMMUNICANTS")
     ])
   });
   if(id==="GF-COM-860")return freeze({
