@@ -8,7 +8,7 @@ const normalize=value=>String(value??"").normalize("NFKD")
 const source=relative=>JSON.parse(fs.readFileSync(path.join(ROOT,relative),"utf8"));
 const directory="data/directory/generated/v19";
 export function loadSspxSnapshotRows(){
-  const names=fs.readdirSync(path.join(ROOT,directory)).filter(n=>n.endsWith(".v1.json"));
+  const names=fs.readdirSync(path.join(ROOT,directory)).filter(n=>n.endsWith(".v1.json")&&!n.endsWith(".geo.v1.json"));
   const rows=[];
   for(const name of names){
     const doc=source(directory+"/"+name);
