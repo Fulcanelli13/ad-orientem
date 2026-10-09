@@ -10,7 +10,7 @@ import {createHash} from "node:crypto";
 import {gzipSync} from "node:zlib";
 const INPUT="index.html",REPORT="data/presentation/startup-thin-shell.v1.json";
 const SOURCE="data/presentation/startup-per-icon-report.v1.json";
-const DIR="assets/generated-boot";
+const DIR=".";
 const html=readFileSync(INPUT,"utf8"),B=x=>Buffer.byteLength(x,"utf8");
 const hash=x=>createHash("sha256").update(x).digest("hex").slice(0,20);
 const baseline=JSON.parse(readFileSync(SOURCE,"utf8"));
@@ -57,7 +57,7 @@ for(const m of html.matchAll(regex)){
   continue;
  }
  const ext=isJs?"js":"css";
- const path=DIR+"/ao-inline-"+hash(kind+"\0"+source)+"."+ext;
+ const path="ao-inline-"+hash(kind+"\0"+source)+"."+ext;
  const replacement=isJs
  ? "<script"+attrs+' src="./'+path+'"></script>'
  : '<link rel="stylesheet"'+attrs+' href="./'+path+'">';
