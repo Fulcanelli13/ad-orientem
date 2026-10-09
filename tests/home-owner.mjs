@@ -115,3 +115,4 @@ assert.match(ownerSource,/role","alert"/,"Home failed shortcut has no accessible
 console.log("PASS modular Home navigation/reset owner");
 
 await import("./home-exact-shortcut-retry.mjs");
+await import("./home-navigation-failed-shortcuts.mjs");

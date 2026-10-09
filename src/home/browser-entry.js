@@ -140,11 +140,43 @@ export function createHomeOwner(win=globalThis){
     win?.document?.querySelectorAll?.(".homeScreen [data-home-shortcut-error]")?.forEach?.(node=>node.remove?.());
   }
 
+  function navigateHomeShortcut(surface,{trigger=null,routeId=surface}={}){
+    // An unsuccessful shell navigation is not a successful click. Preserve
+    // the selected target and provide a visible retry on the Home card.
+    return Promise.resolve().then(()=>win?.AO_APP_SHELL_V1?.navigate?.(surface))
+      .then(result=>{
+        if(routeAccepted(result)){clearRouteError();return true;}
+        showRouteError(routeId,trigger);
+        return false;
+      }).catch(error=>{
+        try{win?.console?.error?.("Home destination unavailable",surface,error)}catch{}
+        showRouteError(routeId,trigger);
+        return false;
+      });
+  }
+
+  async function openCustomsAtlas(trigger){
+    const ok=await navigateHomeShortcut("find",{trigger,routeId:"find.traditions"});
+    if(!ok)return false;
+    try{
+      const result=await win?.AO_FIND_APP_V1?.open?.({lens:"traditions",view:"map",query:""});
+      if(routeAccepted(result))return true;
+    }catch(error){
+      try{win?.console?.error?.("Customs Atlas unavailable",error)}catch{}
+    }
+    // Do not display a general Explore screen as if the selected lens opened.
+    await navigateHomeShortcut("home",{trigger,routeId:"find.traditions"});
+    showRouteError("find.traditions",trigger);
+    return false;
+  }
+
   function openRoute(route,{trigger=null}={}){
     const id=String(route??"");
     if(!id)return false;
-    if(id==="mass.current")return win?.AO_APP_SHELL_V1?.navigate?.("mass")??false;
-    if(id==="today.calendar"||id==="calendar")return win?.AO_APP_SHELL_V1?.navigate?.("calendar")??false;
+    if(id==="mass.current")return navigateHomeShortcut("mass",{trigger,routeId:id});
+    if(id==="today.calendar"||id==="calendar")return navigateHomeShortcut("calendar",{trigger,routeId:id});
+    if(id==="find.traditions")return openCustomsAtlas(trigger);
+    if(["settings","find","mass","calendar"].includes(id))return navigateHomeShortcut(id,{trigger,routeId:id});
     if(id.startsWith("pray.")||id.startsWith("learn.")){
       const exactFallback=()=>{
         try{
@@ -199,53 +231,41 @@ export function createHomeOwner(win=globalThis){
     if(resumeMass){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
-      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>{
-        console.error("Modular Home Mass resume failed",error);
-      });
+      void navigateHomeShortcut("mass",{trigger:resumeMass,routeId:"mass.current"});
       return;
     }
     const massEntry=target?.closest?.("[data-home-mass-entry]");
     if(massEntry){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
-      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>{
-        console.error("Modular Home Mass entry failed",error);
-      });
+      void navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"});
       return;
     }
     const calendar=target?.closest?.("[data-home-calendar]");
     if(calendar){
       event.preventDefault?.();
-      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("calendar")).catch(error=>{
-        try{win?.console?.error?.("Today full Calendar unavailable",error)}catch{}
-      });
+      void navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
       return;
     }
     const settings=target?.closest?.("[data-home-settings]");
     if(settings){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
-      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("settings")).catch(error=>{
-        console.error("Modular Home Settings navigation failed",error);
-      });
+      void navigateHomeShortcut("settings",{trigger:settings,routeId:"settings"});
       return;
     }
     const customsAtlas=target?.closest?.("[data-home-customs-atlas]");
     if(customsAtlas){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
-      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("find"))
-        .then(result=>result?.ok?win?.AO_FIND_APP_V1?.open?.({lens:"traditions",view:"map",query:""}):false)
-        .catch(error=>{console.error("Customs Atlas navigation failed",error)});
+      void openCustomsAtlas(customsAtlas);
       return;
     }
     const find=target?.closest?.("[data-home-find]");
     if(find){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
-      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("find")).catch(error=>{
-        console.error("Modular Home Find navigation failed",error);
-      });
+      void navigateHomeShortcut("find",{trigger:find,routeId:"find"});
       return;
     }
     const daily=target?.closest?.("[data-home-daily-catechism]");
@@ -302,7 +322,7 @@ export function createHomeOwner(win=globalThis){
     const all=target?.closest?.("[data-home-cu-all]");
     if(all){
       event.preventDefault?.();
-      void win?.AO_APP_SHELL_V1?.navigate?.("calendar");
+      void navigateHomeShortcut("calendar",{trigger:all,routeId:"calendar"});
     }
   }
 
@@ -348,7 +368,8 @@ export function createHomeOwner(win=globalThis){
     ensureRetiredEnricherWatch();
     attachPresentation();
     paint(state(win));
-    markOwner();
+    const visible=markOwner();
+    if(!visible)return false;
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("home");}catch{}
     return true;
   }
