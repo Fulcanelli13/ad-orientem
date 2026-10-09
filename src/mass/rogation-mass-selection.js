@@ -43,7 +43,22 @@ export function resolveRogationMassVariant({
     massEntry: "FOOT_CLUSTER", properOwner: "DAY_RESOLVER",
     precedingRites: Object.freeze([])
   });
-  if (choice === "DAY_MASS") return ordinary;
+  const validPublicService = ["PUBLIC_PROCESSION", "ORDINARY_AUTHORIZED_SUPPLICATIONS"].includes(service);
+  if (choice === "DAY_MASS") {
+    if (service === null) return ordinary;
+    if (observanceConfirmed !== true) return Object.freeze({
+      ...ordinary, availability:"BLOCKED", reason:"ROGATION_OBSERVANCE_NOT_CONFIRMED"
+    });
+    if (!validPublicService) return Object.freeze({
+      ...ordinary, availability:"BLOCKED", reason:"PUBLIC_RITE_NOT_CONFIRMED"
+    });
+    // RG 347: even when the votive is impeded, the Mass of the day is part
+    // of the same action following the public procession or supplications.
+    return Object.freeze({
+      ...ordinary, massEntry:"INTROIT", omitOpeningPrayers:true,
+      precedingRites:Object.freeze(["ROGATIONS"]), selectedService:service
+    });
+  }
   function block(reason) {
     return Object.freeze({
       selection: "ROGATION_MASS", availability: "BLOCKED", reason,
@@ -52,7 +67,7 @@ export function resolveRogationMassVariant({
     });
   }
   if (observanceConfirmed !== true) return block("ROGATION_OBSERVANCE_NOT_CONFIRMED");
-  if (!["PUBLIC_PROCESSION", "ORDINARY_AUTHORIZED_SUPPLICATIONS"].includes(service)) {
+  if (!validPublicService) {
     return block("PUBLIC_RITE_NOT_CONFIRMED");
   }
   if (![1, 2, 3, 4].includes(dayClass)) return block("DAY_CLASS_NOT_VERIFIED");
