@@ -46,6 +46,21 @@ export function verifiedScriptureCommentary(passage){
       note:"Collected verse-by-verse patristic commentary on Mary's canticle; not inspired Scripture."
     });
   }
+  if(passage?.book==="Psalms"&&Number.isInteger(passage.chapter)&&
+     passage.chapter>=1&&passage.chapter<=150){
+    // The linked 1866 English translation contains a separate titled section
+    // for every Vulgate-numbered Psalm, including all seven penitential psalms.
+    // It is a full-work entry, not an invented verse-specific deep link.
+    return Object.freeze({
+      title:"St Robert Bellarmine · Commentary on Psalm "+passage.chapter,
+      url:"https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml",
+      type:"HISTORIC_CATHOLIC_EXEGESIS",
+      scope:"PSALM_SECTION_IN_COMPLETE_WORK",
+      language:"en",psalmNumbering:"VULGATE_TRADITIONAL",
+      note:"Full 1866 English translation of Bellarmine's commentary. Use the contents to open Psalm "+passage.chapter+
+        ". The selected Bible's Psalm numbering may differ; this commentary is not inspired Scripture."
+    });
+  }
   return null; // Never invent a verse-specific Father, commentary, or locator.
 }
 export function scriptureContextCapsule(reference,{french=false}={}){
