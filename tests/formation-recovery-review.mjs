@@ -13,7 +13,8 @@ const names=[
   ["Traditional Mass II","traditional-mass-objections-051-065-reconciled.v1.json"],
   ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
   ["Apologetics dossiers","apologetics-canonical.v1.json"],
-  ["Church Crisis dossiers","church-crisis-canonical.v1.json"]
+  ["Church Crisis dossiers","church-crisis-canonical.v1.json"],
+  ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"]
 ];
 const packs=names.map(([label,name])=>({label,doc:JSON.parse(readFileSync("data/learn/"+name,"utf8"))}));
 const legacyRows=buildRecoveryReviewRows(packs);
@@ -31,6 +32,17 @@ assert.equal(coverage.dossiers.length,141);
 assert.equal(coverage.covered,53);
 assert.equal(coverage.linked,118);
 assert.equal(coverage.external.length,5);
+const evidence=JSON.parse(readFileSync("data/learn/formation-141-absorption-evidence-2026-10-09.v1.json","utf8"));
+assert.equal(coverage.dossiers.every(d=>d.evidence?.id===d.id),true,"every canonical dossier must receive its source evidence disposition");
+assert.equal(coverage.dossiers.filter(d=>d.evidence?.direct_source_bearing_research_ids?.length).length,53);
+assert.equal(coverage.dossiers.filter(d=>!d.research.length&&d.evidence?.legacy_thematic_and_research_bank_leads?.length).length,57);
+assert.equal(coverage.dossiers.filter(d=>!d.research.length&&!d.evidence?.legacy_thematic_and_research_bank_leads?.length).length,31);
+for(const d of coverage.dossiers){
+  assert.deepEqual(d.research.map(r=>r.id),d.evidence.direct_source_bearing_research_ids,d.id+" source reader diverges from the 141-dossier evidence inventory");
+  assert.equal(d.evidence.dossier_content_fully_certified,false);
+  assert.equal(d.evidence.released_as_public_apologetics_or_crisis_module,false);
+}
+
 assert.equal(coverage.dossiers.filter(d=>d.corpus==="apologetics" && d.research.length).length,14);
 assert.equal(coverage.dossiers.filter(d=>d.corpus==="crisis" && d.research.length).length,39);
 assert.equal(coverage.dossiers.find(d=>d.id==="CR-LIT-05").research.length,5);
@@ -139,6 +151,7 @@ assert.equal(live.status().newContemporaryDrafts,21);
 const node=nodes.get(RECOVERY_REVIEW_ROOT);
 assert.equal(live.status().canonicalDossiers,141);
 assert.equal(live.status().coveredDossiers,53);
+assert.equal(live.status().assembledDossierReadings,53);
 assert.equal(live.status().externalRecords,5);
 assert.ok(node.innerHTML.includes("Formation recovery by topic"));
 assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'));
@@ -153,6 +166,11 @@ const makeClick=({id,dossier,mode,back=false,home=false})=>({
 node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
 assert.ok(node.innerHTML.includes("CR-LIT-05"),"dossier title not rendered");
 assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"dossier's researched subquestions missing");
+assert.ok(node.innerHTML.includes('data-rr-article="TLM026"'),"TLM subquestion is not assembled as a complete source-linked reading");
+assert.ok(node.innerHTML.includes('class="rrArticleSection"'),"substantive source-bearing sections are missing");
+assert.ok(node.innerHTML.includes('class="rrSources"'),"original paragraph links are not carried into dossier reading");
+assert.ok(node.innerHTML.includes("The Traditional Mass is just nostalgia"),"existing authored argument has been replaced by an index-only shell");
+
 node.listeners.click(makeClick({id:"TLM026"}));
 assert.ok(node.innerHTML.includes("TLM026"),"research detail not rendered");
 assert.ok(node.innerHTML.includes("BEN07")||node.innerHTML.includes("Benedict"),"linked original sources unavailable");
@@ -161,6 +179,14 @@ node.listeners.click(makeClick({back:true}));
 assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"Back did not restore canonical dossier");
 node.listeners.click(makeClick({back:true}));
 assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'),"Back did not restore dossier index");
+for(const d of coverage.dossiers.filter(d=>d.research.length)){
+  node.listeners.click(makeClick({back:true}));
+  node.listeners.click(makeClick({dossier:d.id}));
+  assert.ok(node.innerHTML.includes('data-rr-article="'+d.research[0].id+'"'),d.id+" lacks rendered source-linked article");
+  for(const record of d.research)assert.ok(node.innerHTML.includes('data-rr-article="'+record.id+'"'),"Missing original source-based case "+record.id);
+  assert.ok(node.innerHTML.includes('https://'),d.id+" lost paragraph source hyperlinks");
+}
+node.listeners.click(makeClick({back:true}));
 node.listeners.click(makeClick({mode:"records"}));
 assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"record search tab lost existing records");
 node.listeners.click(makeClick({id:"TLM026"}));
