@@ -29,7 +29,7 @@ for(const book of ["Esther","Psalms","SongOfSongs"]){
  assert.ok(scriptureReferenceWarning(book,"en"));
  assert.ok(scriptureReferenceWarning(book,"fr"));
  if(book==="Esther")assert.equal(scriptureParallelReferenceState({book,chapter:1,verseStart:1},"cpdv-2009","dr-challoner").canAutoParallel,true);
- else assert.equal(scriptureParallelReferenceState({book,chapter:1,verseStart:1},"cpdv-2009","dr-challoner").canAutoParallel,false);
+ else assert.equal(scriptureParallelReferenceState({book,chapter:1,verseStart:1},"cpdv-2009","dr-challoner").canAutoParallel,book==="SongOfSongs");
 }
 const j=scriptureParallelReferenceState({book:"John",chapter:1,verseStart:1},"cpdv-2009","dr-challoner");
 assert.equal(j.kind,"provisional-coordinates-only");assert.equal(j.canAutoParallel,false);

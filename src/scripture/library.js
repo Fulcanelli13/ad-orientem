@@ -56,7 +56,14 @@ export function mountScriptureLibrary(root,{
    // A source-collated one-verse Esther reference can be translated exactly,
    // including its rearranged Greek additions. Other unverified source moves
    // restore a previously chosen edition position rather than fabricate one.
-   if(parallel.canAutoParallel&&parallel.reference)location=parallel.reference;
+   if(parallel.canAutoParallel&&parallel.reference){
+     const target=parallel.reference;
+     // Preserve an existing precise edition position when it lies inside
+     // a source-aligned combined verse; e.g. CPDV Psalm 13:5 inside Douay 13:3.
+     if(saved?.book===target.book && saved.chapter===target.chapter &&
+        saved.verseStart>=target.verseStart && saved.verseEnd<=target.verseEnd)location=saved;
+     else location=target;
+   }
    else if(saved?.book===location.book)location=saved;
    else if(scriptureReferenceWarning(location.book,lang))
      location=scripturePassage({book:location.book,chapter:1,verseStart:1});

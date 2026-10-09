@@ -1,5 +1,7 @@
 import { scripturePassage } from "./catalogue.js";
 import { estherParallelVerse } from "./esther-catholic-crosswalk.js";
+import { songParallelVerse } from "./song-catholic-crosswalk.js";
+import { psalterParallelVerse } from "./psalter-exception-crosswalk.js";
 
 /**
  * No fabricated cross-version Bible references. These three books have
@@ -7,8 +9,8 @@ import { estherParallelVerse } from "./esther-catholic-crosswalk.js";
  */
 export const UNALIGNED_CATHOLIC_BOOKS=Object.freeze({
  Esther:Object.freeze({en:"Esther’s Greek additions have a different chapter order. One-verse correspondences are source-collated; longer passages still need checking.",fr:"Les additions grecques d’Esther suivent un ordre différent. Les correspondances par verset ont été relevées ; les passages plus longs exigent une vérification."}),
- SongOfSongs:Object.freeze({en:"The Song of Songs has edition-specific verse divisions and speaker assignments. Automatic verse switching is unavailable.",fr:"Le Cantique des cantiques comporte des divisions et des indications de locuteurs différentes. Le changement automatique de verset est indisponible."}),
- Psalms:Object.freeze({en:"Psalm numbering, titles and pause marks require an edition-specific correspondence. Do not assume the same verse number identifies the same text.",fr:"La numérotation des psaumes et des versets varie suivant l'édition. Il faut vérifier la correspondance."})
+ SongOfSongs:Object.freeze({en:"All 116 Douay verses are aligned with 127 CPDV verse divisions. Single-verse references can switch to their corresponding passage; multi-verse ranges still require checking.",fr:"Les 116 versets Douay correspondent aux 127 divisions CPDV. Les références unitaires suivent la correspondance établie ; les passages plus longs restent à vérifier."}),
+ Psalms:Object.freeze({en:"Verified span mappings cover exceptional Psalms 13, 42, 92 and 150 only. Other Psalm references cannot automatically switch editions until their individual passages are aligned.",fr:"Les correspondances particulières sont établies pour les psaumes 13, 42, 92 et 150 seulement. Les autres références exigent une vérification avant basculement."})
 });
 const supported=new Set(["cpdv-2009","dr-challoner"]);
 /**
@@ -27,6 +29,16 @@ export function scriptureParallelReferenceState(passage,fromEdition,toEdition){
    kind:"source-collated-esther-single-verse",canAutoParallel:true,
    reference:scripturePassage(mapped),
    note:"Catholic source correspondence, not a theological certification."
+  });
+ }
+ if(p.book==="SongOfSongs"||p.book==="Psalms"){
+  const mapped=p.book==="SongOfSongs"
+    ? songParallelVerse(p,fromEdition,toEdition)
+    : psalterParallelVerse(p,fromEdition,toEdition);
+  if(mapped)return Object.freeze({
+   kind:"source-collated-catholic-verse-span",canAutoParallel:true,
+   reference:scripturePassage(mapped),
+   note:"Corresponding source text span; translation and doctrinal certification remain separate."
   });
  }
  const warning=UNALIGNED_CATHOLIC_BOOKS[p.book];
