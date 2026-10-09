@@ -38,7 +38,18 @@ try{
  const errs=[];page.on("pageerror",e=>errs.push(String(e.message||e)));
  const origin="http://127.0.0.1:4208/ad-orientem/index.html?aoOfflineTest=1";
  await page.goto(origin,{waitUntil:"load",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:25000});
+ try{
+   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:25000});
+ }catch(e){
+   console.error("OFFLINE_PREFIX_BOOT_DIAGNOSTIC="+JSON.stringify(await page.evaluate(()=>({
+     href:location.href,readyState:document.readyState,app:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+     offline:globalThis.AO_OFFLINE_APP_V1?.status??null,
+     native:typeof globalThis.AO_R17_BROWSER_ENTRY,
+     title:document.title,bodyText:document.body?.innerText?.slice(0,280)
+   }))));
+   console.error("OFFLINE_PREFIX_PAGE_ERRORS="+JSON.stringify(errs));
+   throw e;
+ }
  await page.waitForFunction(()=>globalThis.AO_OFFLINE_APP_V1?.status?.ready===true,null,{timeout:120000});
  let original=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.ok(original.version,"First coherent cache has no version");
