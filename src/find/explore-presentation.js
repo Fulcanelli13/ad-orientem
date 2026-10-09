@@ -199,9 +199,9 @@ function detailSheet(vm){
   if(arr(item.sections).length){
     html+='<section class="aoFindSchedules aoExploreSections">';
     for(const section of item.sections){
-      html+='<article><small>'+esc(section.label||"")+'</small>';
-      if(section.title)html+='<strong>'+esc(section.title)+'</strong>';
-      if(section.body)html+='<p>'+esc(section.body)+'</p>';
+      html+='<article><small>'+esc(vm.language==="fr"&&section.label_fr?section.label_fr:section.label||"")+'</small>';
+      if(section.title)html+='<strong>'+esc(vm.language==="fr"&&section.title_fr?section.title_fr:section.title)+'</strong>';
+      if(section.body)html+='<p>'+esc(vm.language==="fr"&&section.body_fr?section.body_fr:section.body)+'</p>';
       html+='</article>';
     }
     html+='</section>';
