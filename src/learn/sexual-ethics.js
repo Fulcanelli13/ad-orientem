@@ -14,6 +14,7 @@ import { CSE_RELATED_TARGETS, CSE_SOT_MATRIX, relatedTargetsFor } from "./sexual
 import { paragraphRefsFor, CSE_MISCONCEPTION_REBUTTAL_IDS, CSE_CONTEXT_ONLY_POSITION_IDS } from "./sexual-ethics-data/provenance.js";
 import { CSE_CANONICAL_FAMILIES, CSE_CANONICAL_DOSSIERS, CSE_CANONICAL_DOSSIER_MAP, CSE_QUESTION_OWNER_MAP } from "./sexual-ethics-data/canonical.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { CSE_MARRIAGE_AUTHORITY_DEBATES, CSE_MARRIAGE_AUTHORITY_SOURCES } from "./sexual-ethics-data/marriage-authority-debates.js";
 
 export const SEXUAL_ETHICS_ROOT_ID="ao-sexual-ethics-root";
 const CSE_FAMILY_MAP=Object.freeze(Object.fromEntries(CSE_CANONICAL_FAMILIES.map(f=>[f.id,f])));
@@ -64,6 +65,7 @@ function css(){
 .aoCSEList{display:grid;border-top:1px solid var(--border,rgba(255,255,255,.13))}.aoCSERow{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 2px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));background:transparent;color:inherit;text-align:left}.aoCSERow strong{font:600 1rem/1.3 var(--font-display,Georgia,serif)}.aoCSERow span{color:var(--muted,rgba(238,233,223,.62));font-size:var(--ao-type-ui-sm,12px)}.aoCSERow:hover,.aoCSERow:focus-visible{outline:none;background:rgba(255,255,255,.025)}
 .aoCSESectionMeta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:5px}.aoCSEBadge{display:inline-flex;padding:3px 7px;border:1px solid var(--liturgical-border,rgba(199,174,109,.35));border-radius:999px;color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;text-transform:uppercase}.aoCSELayer{color:var(--muted);font-size:var(--ao-type-ui-xs,11px)}
 .aoCSEQNum{color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em}.aoCSEQuestion{margin:6px 0 14px;font:600 clamp(1.45rem,6vw,2.2rem)/1.12 var(--font-display,Georgia,serif)}.aoCSEAnswer{margin:0;padding:16px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:13px;background:var(--surface-1,#102235);font-size:1rem;line-height:1.62}
+.aoCSEMaritalDisputations{margin:20px 0 8px;padding-top:15px;border-top:1px solid var(--border,rgba(255,255,255,.16))}.aoCSEMaritalDisputations h2{font:600 1.2rem/1.3 var(--font-display,Georgia,serif);margin:0 0 8px}.aoCSEMaritalDisputations>p{color:var(--muted);line-height:1.52;margin:0 0 12px}.aoCSEDisputation{margin:8px 0;border:1px solid var(--border,rgba(255,255,255,.18));border-radius:10px;background:var(--surface-1,#102235);overflow:hidden}.aoCSEDisputation summary{padding:13px 14px;cursor:pointer;font-weight:600;line-height:1.45}.aoCSEDisputation[open] summary{border-bottom:1px solid var(--border,rgba(255,255,255,.14));color:var(--liturgical,#c7ae6d)}.aoCSEDisputation .aoCSEDebateStep{border-radius:0;background:transparent}.aoCSEDisputation .aoCSEDebateStep:last-child{border-bottom:0}.aoCSEDisputation .aoCSEDebateStep[data-stage="traditionalAssessment"]{border-left:3px solid var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07))}.aoCSEDisputation .aoCSEDebateStep[data-stage="traditionalAssessment"] p{font-weight:550}.aoCSEDisputationRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font:var(--ao-type-ui-xs,11px)/1.4 var(--ao-font-ui,system-ui,sans-serif)}.aoCSEDisputationRefs a{border:1px solid var(--liturgical-border,rgba(199,174,109,.30));border-radius:6px;padding:3px 6px;text-decoration:none;color:var(--liturgical,#c7ae6d)}
 .aoCSEExplore{margin-top:12px}.aoCSEDetail{margin-top:12px;padding:14px;border-left:2px solid var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07));line-height:1.62}.aoCSEDetail[hidden]{display:none!important}
 .aoCSEDebate{display:grid;gap:0;padding:0;border-left:0;background:transparent}.aoCSEDebateStep{padding:14px 14px 15px;border-left:2px solid var(--border,rgba(255,255,255,.16));border-bottom:1px solid var(--border,rgba(255,255,255,.10));background:var(--surface-1,#102235)}.aoCSEDebateStep:first-child{border-left-color:var(--liturgical,#c7ae6d);border-radius:12px 12px 0 0}.aoCSEDebateStep:last-child{border-left-color:var(--liturgical,#c7ae6d);border-bottom:0;border-radius:0 0 12px 12px}.aoCSEDebateStep small{display:block;margin-bottom:6px;color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase}.aoCSEDebateStep p{margin:0;line-height:1.6}.aoCSEAttributionNote{padding:10px 12px;margin:0;color:var(--muted,rgba(238,233,223,.76));font:var(--ao-type-ui-sm,12px)/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoCSEDebateStep[data-stage="opposition"] p,.aoCSEDebateStep[data-stage="counter"] p{font-style:italic}.aoCSEDebateStep[data-stage="bottom"] p{font-weight:600}
 .aoCSERelated{margin:17px 0 0;padding-top:11px;border-top:1px solid var(--border,rgba(255,255,255,.13))}.aoCSERelated small{display:block;margin-bottom:8px;color:var(--muted);font-size:var(--ao-type-ui-xs,11px);text-transform:uppercase;letter-spacing:.08em}.aoCSERelatedButtons{display:flex;gap:8px;flex-wrap:wrap}.aoCSERelated .aoCSEBtn{font-size:var(--ao-type-ui-sm,12px)}
@@ -131,7 +133,7 @@ function searchQuestions(query,win){
   if(!needle)return [];
   return CSE_PUBLIC_QUESTIONS.filter(item=>{
     const debateText=item.debate?Object.values(item.debate).flat():[];
-    const hay=[...item.q,...item.a,...(item.d||[]),...(item.aliases||[]),...debateText].map(norm).join(" ");
+    const hay=[...item.q,...item.a,...(item.d||[]),...(item.aliases||[]),...debateText,...(item.id==="CSE045"?CSE_MARRIAGE_AUTHORITY_DEBATES.flatMap(d=>[...d.question,...d.opposition,...d.reply,...d.rejoinder,...d.finding]):[])].map(norm).join(" ");
     return hay.includes(needle);
   });
 }
@@ -180,6 +182,29 @@ function debateDetails(win,item){
   }).join("");
 }
 
+const MARRIAGE_DEBATE_STAGE_LABELS=Object.freeze({
+ opposition:["Strong objection / source position","Objection forte / position sourcée"],
+ reply:["Classical Catholic response","Réponse catholique classique"],
+ rejoinder:["Difficult counterargument","Contre-argument difficile"],
+ finding:["Doctrinal and practical synthesis","Synthèse doctrinale et pratique"],
+ traditionalAssessment:["Traditional Catholic assessment","Appréciation catholique traditionnelle"]
+});
+function marriageDisputationsHtml(win,item){
+  if(item.id!=="CSE045")return "";
+  const stages=Object.keys(MARRIAGE_DEBATE_STAGE_LABELS);
+  const entries=CSE_MARRIAGE_AUTHORITY_DEBATES.map(entry=>{
+    const body=stages.map(stage=>{
+      const citations=(entry.sources[stage]||[]).map(key=>{
+        const source=CSE_MARRIAGE_AUTHORITY_SOURCES[key];
+        return source?`<a href="${esc(source[1])}" target="_blank" rel="noopener noreferrer">${esc(source[0])} ↗</a>`:"";
+      }).join("");
+      return `<section class="aoCSEDebateStep" data-stage="${esc(stage)}"><small>${esc(stage==="opposition"&&entry.oppositionKind==="REASONED_APPLICATION_NOT_NAMED_OPPONENT"?L(win,"Reasoned objection (not attributed to a named proponent)","Objection raisonnée (sans attribution à un auteur précis)"):pick(win,MARRIAGE_DEBATE_STAGE_LABELS[stage]))}</small><p>${esc(pick(win,entry[stage]))}</p><nav class="aoCSEDisputationRefs" aria-label="${esc(L(win,"References","Références"))}">${citations}</nav></section>`;
+    }).join("");
+    return `<details class="aoCSEDisputation" data-ao-cse-disputation="${esc(entry.id)}"><summary>${esc(pick(win,entry.question))}</summary>${body}</details>`;
+  }).join("");
+  return `<section class="aoCSEMaritalDisputations" aria-label="${esc(L(win,"Ephesians 5 marriage debates","Débats sur le mariage et Éphésiens 5"))}"><h2>${esc(L(win,"Ephesians 5: eight examined objections","Éphésiens 5 : huit objections examinées"))}</h2><p>${esc(L(win,"Arguments attributed to named authors paraphrase the linked original texts; the engagement question is an explicit reasoning exercise, not a fabricated opponent. The papal texts differ in emphasis and require contextual examination. These debates remain subject to independent doctrinal and French review.","Les arguments attribués à des auteurs précis reformulent les textes originaux liés ; la question des fiançailles présente un raisonnement explicite, non un adversaire inventé. Les textes pontificaux diffèrent par leurs accents et exigent un examen contextuel. Ces débats restent soumis à une vérification doctrinale et française indépendante."))}</p>${entries}</section>`;
+}
+
 function questionHtml(win,item,reveal){
   const detail=item.d?pick(win,item.d):"";
   const isDebate=item.depth==="DEBATE"&&item.debate;
@@ -192,7 +217,7 @@ function questionHtml(win,item,reveal){
   const debateAttribution=isDebate?`<p class="aoCSEAttributionNote">${esc(attributionIsContext?L(win,"Illustrative objection: the linked sources document context or criticism, not a named advocate of the exact wording.","Objection illustrative : les sources liées documentent un contexte ou une critique, non un auteur défendant cette formulation exacte."):L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the linked texts for the author's original words.","La position adverse est une reformulation sourcée, non une citation littérale. Consultez les textes liés pour retrouver les paroles exactes de l’auteur."))}</p>`:"";
   const apostolateTarget=CSE_SOT_BY_ID[item.id]?.apostolateHandoff||null;
   const apostolateAction=apostolateTarget?`<button type="button" class="aoCSEBtn" data-ao-cse-apostolate>${esc(L(win,"Practise answering this objection","S’exercer à répondre à cette objection"))}</button>`:"";
-  return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?debateAttribution+exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+  return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?debateAttribution+exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${marriageDisputationsHtml(win,item)}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
 }
 
 export function createSexualEthicsRuntime(win=globalThis){

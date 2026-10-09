@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { CSE_MARRIAGE_AUTHORITY_DEBATES, CSE_MARRIAGE_AUTHORITY_SOURCES } from "../src/learn/sexual-ethics-data/marriage-authority-debates.js";
 import { readFileSync } from "node:fs";
 import { APOSTOLATE_SKILLS } from "../src/apostolate/contracts.js";
 import {
@@ -43,6 +44,32 @@ assert.equal(SEXUAL_ETHICS_VERSION,"1.4.0");
 assert.equal(SEXUAL_ETHICS_ROUTE,"learn.sexual_ethics");
 assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
+assert.equal(CSE_MARRIAGE_AUTHORITY_DEBATES.length,8,"Eight internal disputations, not new question IDs");
+assert.equal(new Set(CSE_MARRIAGE_AUTHORITY_DEBATES.map(d=>d.id)).size,8);
+for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
+ assert.match(entry.id,/^MAR-0[1-8]$/);
+ for(const field of ["question","opposition","reply","rejoinder","finding","traditionalAssessment"]){
+   assert.equal(entry[field]?.length,2,entry.id+" "+field+" must be bilingual");
+   for(const text of entry[field])assert.ok(text.length>(field==="question"?18:65),entry.id+" "+field+" too thin");
+ }
+ for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
+   const refs=entry.sources?.[field]||[];
+   assert.ok(refs.length>0,entry.id+" "+field+" without evidence");
+   for(const key of refs)assert.match(CSE_MARRIAGE_AUTHORITY_SOURCES[key]?.[1]||"",/^https:\/\//,entry.id+" "+field+" source "+key);
+ }
+}
+for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
+ for(const field of ["opposition","reply","rejoinder"]){
+  for(const text of entry[field])assert.ok(text.length>=400,entry.id+" "+field+" lacks sufficient substantive reasoning");
+ }
+ assert.ok(entry.oppositionKind,entry.id+" must classify the objection as sourced or reasoned");
+ if(entry.oppositionKind==="REASONED_APPLICATION_NOT_NAMED_OPPONENT")
+  assert.ok(!entry.sources.opposition.includes("GROOTHUIS"),entry.id+" improperly attributes a constructed argument to a scholar");
+}
+assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("KEENER_2021")||d.sources.opposition.includes("GROOTHUIS")));
+assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
+assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.every(d=>d.traditionalAssessment[0].length>200 && d.traditionalAssessment[1].length>200));
+
 assert.deepEqual(CSE_EDITORIAL_ARCHIVE_IDS,["CSE055","CSE056","CSE058"]);
 assert.equal(CSE_PUBLIC_QUESTIONS.length,147);
 assert.equal(CSE_PUBLIC_QUESTIONS.filter(item=>item.depth==="DEBATE").length,52);
@@ -296,6 +323,11 @@ assert.match(runtime,/CSE_ARCHIVED_REDIRECTS/);
 assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/paragraphSourceLinks/);
 assert.match(runtime,/data-ao-cse-inline-source/);
+assert.match(runtime,/function marriageDisputationsHtml/);
+assert.match(runtime,/Traditional Catholic assessment/);
+assert.match(runtime,/CSE_MARRIAGE_AUTHORITY_DEBATES/);
+assert.match(runtime,/data-ao-cse-disputation/);
+assert.match(runtime,/marriageDisputationsHtml\(win,item\)/);
 assert.match(runtime,/Question source:/);
 assert.match(runtime,/Opposing-position references:/);
 assert.match(runtime,/The opposing position is a sourced reconstruction/);
