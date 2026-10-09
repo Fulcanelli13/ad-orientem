@@ -918,6 +918,35 @@
       "independentTheologicalReview": false,
       "publicationApproved": false,
       "rule": "Historical witness retained unchanged; Catechism is doctrine owner, Learn the Faith is explanatory. Practical Mass, sacraments, Sexual Ethics, PRAY and Spiritual Life stay with live owners."
+    },
+    "batch_001_018": {
+      "status": "SOURCE_MAPPING_RECONCILED_EDITORIAL_REVIEW_PENDING",
+      "overlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "recoveredCorpus": "data/learn/learn-the-faith-recovered-54.v1.json",
+      "lessons": 18,
+      "sourceContextVerifiedForSelectedClaims": true,
+      "catechismEnglishWordingCollated": true,
+      "frenchSourceWitnessCollated": false,
+      "frenchNativeEdited": false,
+      "crossModuleDeduplicationReviewed": true,
+      "publicationApproved": false,
+      "rule": "Certification overlays may select, narrow or strengthen recovered drafts but must not overwrite branch-origin evidence or create a public learn.faith route before final editorial approval."
+    },
+    "canonical_course_review_20261009": {
+      "reviewedHistoricLessons": 54,
+      "firstBatch": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "secondBatch": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "allClaimsDraftBilingual": true,
+      "originalVariantsPreserved": true,
+      "fullSourceCertification": false,
+      "nativeFrenchApproval": false,
+      "ecclesiasticalApproval": false,
+      "publicRoute": false,
+      "rule": "The 433 numbered Pius X Q&A items own primary doctrine; 54 recovered catechetical lessons are researched explanatory text; proposed 55th precepts insertion is separate re-numbering candidate only.",
+      "reconciled55Candidate": "data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json",
+      "preceptsInsertedAtDisplayLesson": "LTF-046",
+      "originalHistoricalLTF046NowDisplay": "LTF-047",
+      "all433PiusXQuestionsHaveOnePrimaryLesson": true
     }
   }
 }
