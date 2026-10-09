@@ -18,7 +18,7 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
   "crampon-1923": Object.freeze({
     id: "crampon-1923", language: "fr", title: "Bible Crampon (1923 text)",
     tradition: "Catholic", role: "default",
-    rights: "pending-edition-and-digital-rights-review", enabled: false
+    rights: "cleared", sourceReview: "printed-1923-collation-pending", enabled: false
   }),
   "vulgate-clementine": Object.freeze({
     id: "vulgate-clementine", language: "la", title: "Biblia Sacra Vulgata (Clementine)",
