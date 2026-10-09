@@ -64,6 +64,7 @@ for(const record of after){
  assert.ok(record.venue.contact.website.length,"Preserve canonical official link");
 }
 const ickspMapped=after.filter(r=>isMapPublishableGeo(r.venue.geo,r.venue.address.country_code)).length;
+assert.equal(ickspMapped,mass.length,"All ICKSP federated Mass sites require non-routing discovery indicator or sourced geometry");
 console.log("ICKSP federated indicative coverage:",JSON.stringify({mass:mass.length,mapped:ickspMapped,unmapped:mass.length-ickspMapped,missingCountries:after.filter(r=>!isMapPublishableGeo(r.venue.geo,r.venue.address.country_code)).map(r=>r.venue.address.country_code)}));
 console.log("FSSP/ICKSP bulk indicative regression: PASS; existing official pins preserved; coarse points non-routing; no fictitious venue creation; ICKSP federated records checked:",mass.length);
 
