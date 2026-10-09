@@ -1,0 +1,5797 @@
+{
+  "schema": "ao-learn-the-faith-curriculum-v1",
+  "version": "1.1.0",
+  "status": "FULL_55_LESSON_DRAFT_SOURCE_LINKED_NOT_PUBLISHED",
+  "created_at": "2026-10-08",
+  "proposed_route": "learn.faith",
+  "title": {
+    "en": "Learn the Faith",
+    "fr": "Apprendre la Foi"
+  },
+  "purpose": "Guided positive Catholic doctrine in a coherent order between the Daily Catechism and the full Traditional Catechism reference.",
+  "publication_gate": {
+    "published": false,
+    "mapping_complete": true,
+    "lesson_prose_complete": true,
+    "paragraph_sources_complete": true,
+    "cross_module_dedup_complete": false,
+    "theological_editorial_review_complete": false,
+    "french_editorial_review_complete": false,
+    "source_url_verification_complete": false,
+    "rule": "Do not expose learn.faith until cross-module deduplication, theological/editorial review, French review and final source-link verification pass."
+  },
+  "relationship_to_existing": {
+    "learn.catechism.daily": "Daily review and spaced encounter with the existing question bank; not the guided doctrine course.",
+    "learn.catechism": "Full searchable Traditional Catechism reference and exact Q&A owner.",
+    "learn.faith": "Guided synthesis only; it references rather than replaces or duplicates the Catechism corpus.",
+    "apologetics": "Defence against objections; not positive doctrinal instruction.",
+    "church-crisis": "Contested development, rupture/continuity and authority questions; not baseline doctrine."
+  },
+  "source_policy": {
+    "primary_doctrine": "Use the existing Traditional Catechism corpus as the immediate doctrinal reference layer, then resolve substantive prose to original Scripture, councils, catechisms and authoritative Magisterium where available.",
+    "paragraph_rule": "Every substantive published paragraph must carry explicit source support.",
+    "no_unsourced_synthesis": true,
+    "no_duplicate_question_bank": true
+  },
+  "families": [
+    {
+      "id": "revelation-faith",
+      "title": {
+        "en": "God, Revelation & Faith",
+        "fr": "Dieu, Révélation & Foi"
+      },
+      "lessonIds": [
+        "LTF-001",
+        "LTF-002",
+        "LTF-003",
+        "LTF-004",
+        "LTF-005",
+        "LTF-006"
+      ]
+    },
+    {
+      "id": "creed",
+      "title": {
+        "en": "The Creed",
+        "fr": "Le Credo"
+      },
+      "lessonIds": [
+        "LTF-007",
+        "LTF-008",
+        "LTF-009",
+        "LTF-010",
+        "LTF-011",
+        "LTF-012",
+        "LTF-013",
+        "LTF-014",
+        "LTF-015",
+        "LTF-016",
+        "LTF-017",
+        "LTF-018",
+        "LTF-019",
+        "LTF-020",
+        "LTF-021"
+      ]
+    },
+    {
+      "id": "grace-sacraments",
+      "title": {
+        "en": "Grace & the Sacraments",
+        "fr": "Grâce & Sacrements"
+      },
+      "lessonIds": [
+        "LTF-022",
+        "LTF-023",
+        "LTF-024",
+        "LTF-025",
+        "LTF-026",
+        "LTF-027",
+        "LTF-028",
+        "LTF-029",
+        "LTF-030",
+        "LTF-031"
+      ]
+    },
+    {
+      "id": "moral-life",
+      "title": {
+        "en": "The Moral Life",
+        "fr": "La Vie morale"
+      },
+      "lessonIds": [
+        "LTF-032",
+        "LTF-033",
+        "LTF-034",
+        "LTF-035",
+        "LTF-036",
+        "LTF-037",
+        "LTF-038",
+        "LTF-039",
+        "LTF-040",
+        "LTF-041",
+        "LTF-042",
+        "LTF-043",
+        "LTF-044",
+        "LTF-045",
+        "LTF-046"
+      ]
+    },
+    {
+      "id": "prayer-christian-life",
+      "title": {
+        "en": "Prayer & Christian Life",
+        "fr": "Prière & Vie chrétienne"
+      },
+      "lessonIds": [
+        "LTF-047",
+        "LTF-048",
+        "LTF-049",
+        "LTF-050",
+        "LTF-051",
+        "LTF-052",
+        "LTF-053",
+        "LTF-054",
+        "LTF-055"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "LTF-001",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Why man exists",
+        "fr": "Pourquoi l’homme existe"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        1,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        1,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Human life has a final end: we are created by God for communion with Him, and every part of Christian life must be ordered toward that end.",
+        "fr": "La vie humaine a une fin dernière : nous sommes créés par Dieu pour la communion avec Lui, et toute la vie chrétienne doit être ordonnée à cette fin."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-001-P01",
+          "text": {
+            "en": "God is our Creator, not merely one good among others. Our existence is received from Him and remains dependent upon Him.",
+            "fr": "Dieu est notre Créateur, et non simplement un bien parmi d’autres. Notre existence est reçue de Lui et demeure dépendante de Lui."
+          },
+          "catechismRefs": [
+            1
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-001-P02",
+          "text": {
+            "en": "The traditional catechetical formula gives the purpose of life with great clarity: to know God, love Him and serve Him here, and to enjoy Him eternally in heaven.",
+            "fr": "La formule catéchétique traditionnelle exprime avec grande clarté le but de la vie : connaître Dieu, L’aimer et Le servir ici-bas, afin de jouir de Lui éternellement au ciel."
+          },
+          "catechismRefs": [
+            13,
+            14,
+            15
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-001-P03",
+          "text": {
+            "en": "Judgment, reward and punishment are therefore not detached doctrines; they express the seriousness of freely directing one’s life toward or away from its true end.",
+            "fr": "Le jugement, la récompense et le châtiment ne sont donc pas des doctrines isolées ; ils expriment le sérieux de l’orientation libre de notre vie vers sa véritable fin ou loin d’elle."
+          },
+          "catechismRefs": [
+            16,
+            17,
+            18
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-002",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Knowing God by reason",
+        "fr": "Connaître Dieu par la raison"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "V1-DEI-FILIUS",
+        "TRENT-CATECHISM"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "St Pius X supplies the doctrine of God and His attributes but not a developed natural-theology demonstration from reason; add Scripture/Vatican I/Thomistic sources for the lesson argument.",
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "catechismNote": "St Pius X gives the attributes and providence of God, not a developed philosophical proof of God's existence.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true,
+      "summary": {
+        "en": "Human reason can truly know that God exists and can recognize something of His attributes from creation, even though reason cannot exhaust the mystery of God.",
+        "fr": "La raison humaine peut véritablement connaître l’existence de Dieu et reconnaître quelque chose de ses attributs à partir de la création, sans pouvoir épuiser le mystère de Dieu."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-002-P01",
+          "text": {
+            "en": "The First Vatican Council teaches that God, the origin and end of all things, can be known with certainty by natural human reason from created things.",
+            "fr": "Le premier concile du Vatican enseigne que Dieu, principe et fin de toutes choses, peut être connu avec certitude par la raison humaine naturelle à partir des choses créées."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "V1-DEI-FILIUS"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-002-P02",
+          "text": {
+            "en": "The catechism describes God as infinitely perfect, Creator and Lord, pure spirit, eternal, all-knowing, almighty, good, wise and provident.",
+            "fr": "Le catéchisme décrit Dieu comme infiniment parfait, Créateur et Seigneur, pur esprit, éternel, omniscient, tout-puissant, bon, sage et providentiel."
+          },
+          "catechismRefs": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-002-P03",
+          "text": {
+            "en": "Reason can know real truths about God, but it does not make revelation unnecessary: God can disclose truths about Himself and His saving plan that surpass what unaided reason could discover.",
+            "fr": "La raison peut connaître de vraies vérités sur Dieu, mais elle ne rend pas la Révélation inutile : Dieu peut révéler sur Lui-même et sur son dessein de salut des vérités qui dépassent ce que la raison laissée à elle-même pourrait découvrir."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "V1-DEI-FILIUS",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-003",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Divine Revelation",
+        "fr": "La Révélation divine"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        28,
+        29,
+        30,
+        31,
+        232,
+        233,
+        234,
+        235,
+        236
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "V1-DEI-FILIUS",
+        "TRENT-CATECHISM"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The 1912 catechism presupposes Revelation more than it systematically defines revelation, inspiration and transmission; supplement with authoritative doctrinal sources.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Revelation is God’s communication of saving truth; the Creed gathers its principal mysteries into a form that can be professed, taught and handed on.",
+        "fr": "La Révélation est la communication par Dieu de la vérité qui sauve ; le Credo rassemble ses principaux mystères sous une forme qui peut être professée, enseignée et transmise."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-003-P01",
+          "text": {
+            "en": "The truths of faith are received because God reveals them and cannot deceive or be deceived; faith is therefore grounded in God’s truthfulness.",
+            "fr": "Les vérités de foi sont reçues parce que Dieu les révèle et ne peut ni tromper ni se tromper ; la foi repose donc sur la véracité de Dieu."
+          },
+          "catechismRefs": [
+            28
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "V1-DEI-FILIUS"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-003-P02",
+          "text": {
+            "en": "The Apostles’ Creed is a compact profession of the principal mysteries and truths revealed by God through Christ and the Apostles and taught by the Church.",
+            "fr": "Le Symbole des Apôtres est une profession condensée des principaux mystères et vérités révélés par Dieu par le Christ et les Apôtres et enseignés par l’Église."
+          },
+          "catechismRefs": [
+            29,
+            30,
+            31
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-003-P03",
+          "text": {
+            "en": "Revelation is transmitted in Sacred Scripture and Apostolic Tradition and is authentically proposed by the Church’s teaching authority.",
+            "fr": "La Révélation est transmise dans l’Écriture Sainte et la Tradition apostolique et proposée authentiquement par l’autorité enseignante de l’Église."
+          },
+          "catechismRefs": [
+            233,
+            234,
+            235,
+            236
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "V1-DEI-FILIUS"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-004",
+      "family": "revelation-faith",
+      "title": {
+        "en": "The virtue of faith",
+        "fr": "La vertu de foi"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        28,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        244,
+        245,
+        246,
+        247
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "V1-DEI-FILIUS",
+        "TRENT-CATECHISM"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        232,
+        237
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Faith is a supernatural virtue by which we assent to what God has revealed because of the authority of God revealing.",
+        "fr": "La foi est une vertu surnaturelle par laquelle nous adhérons à ce que Dieu a révélé à cause de l’autorité de Dieu qui révèle."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-004-P01",
+          "text": {
+            "en": "Faith is not mere religious feeling or probability; it is the supernatural virtue by which we firmly believe what God has revealed and the Church proposes for belief.",
+            "fr": "La foi n’est ni un simple sentiment religieux ni une probabilité ; elle est la vertu surnaturelle par laquelle nous croyons fermement ce que Dieu a révélé et que l’Église propose à croire."
+          },
+          "catechismRefs": [
+            232,
+            237
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "V1-DEI-FILIUS"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-004-P02",
+          "text": {
+            "en": "Faith must be lived and professed. The catechism connects acts of faith with prayer, temptation, danger and the public confession of the Catholic faith.",
+            "fr": "La foi doit être vécue et professée. Le catéchisme relie les actes de foi à la prière, à la tentation, au danger et à la confession publique de la foi catholique."
+          },
+          "catechismRefs": [
+            244,
+            245,
+            246,
+            247
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-004-P03",
+          "text": {
+            "en": "Faith and reason come from the same God; genuine faith does not require rejecting reason, and sound reason cannot finally contradict what God truly reveals.",
+            "fr": "La foi et la raison viennent du même Dieu ; la vraie foi n’exige pas le rejet de la raison, et la raison droite ne peut finalement contredire ce que Dieu révèle véritablement."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "V1-DEI-FILIUS"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-005",
+      "family": "revelation-faith",
+      "title": {
+        "en": "Sacred Scripture and Tradition",
+        "fr": "Écriture Sainte et Tradition"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        28,
+        232,
+        233,
+        234,
+        235,
+        236
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        233,
+        234,
+        235
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The deposit of faith is handed on through Sacred Scripture and Apostolic Tradition; neither is an isolated private source detached from the Church.",
+        "fr": "Le dépôt de la foi est transmis par l’Écriture Sainte et la Tradition apostolique ; ni l’une ni l’autre ne constitue une source privée isolée de l’Église."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-005-P01",
+          "text": {
+            "en": "Sacred Scripture is the written word of God entrusted to the Church.",
+            "fr": "L’Écriture Sainte est la parole de Dieu mise par écrit et confiée à l’Église."
+          },
+          "catechismRefs": [
+            233,
+            234
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-005-P02",
+          "text": {
+            "en": "Tradition is the body of revealed truths taught by Christ and the Apostles and transmitted in the Church even where they are not contained explicitly in the written biblical text.",
+            "fr": "La Tradition est l’ensemble des vérités révélées enseignées par le Christ et les Apôtres et transmises dans l’Église, même lorsqu’elles ne sont pas contenues explicitement dans le texte biblique écrit."
+          },
+          "catechismRefs": [
+            235
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-005-P03",
+          "text": {
+            "en": "Scripture and Tradition require authentic interpretation; Catholic doctrine is not built by each reader independently reconstructing Christianity from the Bible.",
+            "fr": "L’Écriture et la Tradition requièrent une interprétation authentique ; la doctrine catholique ne se construit pas par chaque lecteur reconstruisant indépendamment le christianisme à partir de la Bible."
+          },
+          "catechismRefs": [
+            236
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-006",
+      "family": "revelation-faith",
+      "title": {
+        "en": "The Church as teacher",
+        "fr": "L’Église enseignante"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        105,
+        106,
+        107,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        119,
+        236
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        114,
+        115,
+        116,
+        236
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Christ gave His Church a real teaching office so that revealed truth could be preserved, explained and handed on with authority.",
+        "fr": "Le Christ a donné à son Église un véritable office d’enseignement afin que la vérité révélée puisse être conservée, expliquée et transmise avec autorité."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-006-P01",
+          "text": {
+            "en": "The Pope and the bishops united with him constitute the teaching Church; their authority serves the revelation received from Christ rather than creating a new revelation.",
+            "fr": "Le Pape et les évêques unis à lui constituent l’Église enseignante ; leur autorité est au service de la Révélation reçue du Christ et ne crée pas une nouvelle révélation."
+          },
+          "catechismRefs": [
+            112,
+            113,
+            114,
+            236
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-006-P02",
+          "text": {
+            "en": "The Church’s indefectible teaching mission includes true infallibility in the conditions in which the Church teaches definitively what God has revealed.",
+            "fr": "La mission enseignante indéfectible de l’Église comporte une véritable infaillibilité dans les conditions où l’Église enseigne définitivement ce que Dieu a révélé."
+          },
+          "catechismRefs": [
+            115,
+            116
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-006-P03",
+          "text": {
+            "en": "This lesson establishes the positive doctrine of teaching authority; disputed questions about non-definitive teaching, papal error or resistance belong to Church Crisis rather than being smuggled into basic catechesis.",
+            "fr": "Cette leçon établit la doctrine positive de l’autorité enseignante ; les questions disputées sur l’enseignement non définitif, l’erreur papale ou la résistance relèvent de Crise dans l’Église et ne doivent pas être introduites subrepticement dans la catéchèse fondamentale."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-007",
+      "family": "creed",
+      "title": {
+        "en": "God and His attributes",
+        "fr": "Dieu et ses attributs"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "God is the infinitely perfect Creator and Lord of all that exists, eternal, spiritual, all-knowing, almighty, good, just and provident.",
+        "fr": "Dieu est le Créateur infiniment parfait et le Seigneur de tout ce qui existe, éternel, spirituel, omniscient, tout-puissant, bon, juste et providentiel."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-007-P01",
+          "text": {
+            "en": "God possesses every perfection without defect or limit; created perfections exist in a finite way, while God is not one being among others.",
+            "fr": "Dieu possède toute perfection sans défaut ni limite ; les perfections créées existent d’une manière finie, tandis que Dieu n’est pas un être parmi d’autres."
+          },
+          "catechismRefs": [
+            2,
+            3
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-007-P02",
+          "text": {
+            "en": "As Creator and Lord, God gives being to creatures, preserves them and directs them providentially toward their end.",
+            "fr": "Comme Créateur et Seigneur, Dieu donne l’être aux créatures, les conserve et les conduit providentiellement vers leur fin."
+          },
+          "catechismRefs": [
+            4,
+            5,
+            12
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-007-P03",
+          "text": {
+            "en": "God is pure spirit, eternal, omnipresent, omniscient and omnipotent; His inability to do evil is not weakness but the perfection of infinite goodness.",
+            "fr": "Dieu est pur esprit, éternel, présent partout, omniscient et tout-puissant ; son incapacité de faire le mal n’est pas une faiblesse mais la perfection de sa bonté infinie."
+          },
+          "catechismRefs": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-008",
+      "family": "creed",
+      "title": {
+        "en": "The Most Holy Trinity",
+        "fr": "La Très Sainte Trinité"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        19,
+        20,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        19,
+        20,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "There is one God in three really distinct, equal and eternal Persons: Father, Son and Holy Ghost.",
+        "fr": "Il y a un seul Dieu en trois Personnes réellement distinctes, égales et éternelles : le Père, le Fils et le Saint-Esprit."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-008-P01",
+          "text": {
+            "en": "Christian faith professes one divine nature, not three gods, and three really distinct Persons.",
+            "fr": "La foi chrétienne professe une seule nature divine, non trois dieux, et trois Personnes réellement distinctes."
+          },
+          "catechismRefs": [
+            19,
+            20,
+            37,
+            38,
+            39,
+            48
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-008-P02",
+          "text": {
+            "en": "The Father is unbegotten, the Son is eternally begotten of the Father, and the Holy Ghost proceeds eternally; these relations distinguish the Persons without dividing the one Godhead.",
+            "fr": "Le Père n’est pas engendré, le Fils est éternellement engendré du Père, et le Saint-Esprit procède éternellement ; ces relations distinguent les Personnes sans diviser l’unique divinité."
+          },
+          "catechismRefs": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-008-P03",
+          "text": {
+            "en": "The three Persons are equal in divinity, power, wisdom and eternity. The mystery exceeds our comprehension without being contradictory.",
+            "fr": "Les trois Personnes sont égales en divinité, puissance, sagesse et éternité. Le mystère dépasse notre compréhension sans être contradictoire."
+          },
+          "catechismRefs": [
+            40,
+            47,
+            49,
+            50
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-009",
+      "family": "creed",
+      "title": {
+        "en": "Creation and Providence",
+        "fr": "Création et Providence"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        51,
+        52,
+        53
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        51,
+        52,
+        53
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "All creation depends upon God, who creates freely, preserves what He has made and governs it by Providence.",
+        "fr": "Toute la création dépend de Dieu, qui crée librement, conserve ce qu’Il a fait et le gouverne par sa Providence."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-009-P01",
+          "text": {
+            "en": "God is Creator of heaven and earth: the whole created order, visible and invisible, receives existence from Him.",
+            "fr": "Dieu est Créateur du ciel et de la terre : tout l’ordre créé, visible et invisible, reçoit de Lui l’existence."
+          },
+          "catechismRefs": [
+            4,
+            51,
+            52,
+            53
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-009-P02",
+          "text": {
+            "en": "Creation is not abandonment. Divine Providence preserves creatures and orders them wisely, justly and goodness toward their proper ends.",
+            "fr": "La création n’est pas un abandon. La Providence divine conserve les créatures et les ordonne avec sagesse, justice et bonté à leurs fins propres."
+          },
+          "catechismRefs": [
+            12
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-009-P03",
+          "text": {
+            "en": "The existence of created spiritual beings reminds us that reality is not exhausted by what is material or measurable.",
+            "fr": "L’existence d’êtres spirituels créés rappelle que la réalité ne s’épuise pas dans ce qui est matériel ou mesurable."
+          },
+          "catechismRefs": [
+            53,
+            54
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-010",
+      "family": "creed",
+      "title": {
+        "en": "The angels",
+        "fr": "Les anges"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Angels are created pure spirits who serve God; some remained faithful, while the fallen angels became demons.",
+        "fr": "Les anges sont de purs esprits créés qui servent Dieu ; certains sont demeurés fidèles, tandis que les anges déchus sont devenus les démons."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-010-P01",
+          "text": {
+            "en": "The angels are personal, created spiritual beings; they are not symbols or impersonal forces.",
+            "fr": "Les anges sont des êtres spirituels personnels et créés ; ils ne sont ni des symboles ni des forces impersonnelles."
+          },
+          "catechismRefs": [
+            54,
+            55,
+            56,
+            57
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-010-P02",
+          "text": {
+            "en": "Catholics owe the holy angels reverence and gratitude for their service under God’s Providence, while worship belongs to God alone.",
+            "fr": "Les catholiques doivent aux saints anges respect et gratitude pour leur service sous la Providence de Dieu, tandis que l’adoration appartient à Dieu seul."
+          },
+          "catechismRefs": [
+            58
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-010-P03",
+          "text": {
+            "en": "The demons are fallen angels who freely rebelled against God; acknowledging their reality does not diminish God’s sovereignty.",
+            "fr": "Les démons sont des anges déchus qui se sont librement révoltés contre Dieu ; reconnaître leur réalité ne diminue en rien la souveraineté de Dieu."
+          },
+          "catechismRefs": [
+            59
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-011",
+      "family": "creed",
+      "title": {
+        "en": "Man, original justice and the Fall",
+        "fr": "L’homme, la justice originelle et la Chute"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Man is a unity of body and rational soul, created for God and originally elevated by grace, but wounded through the Fall and original sin.",
+        "fr": "L’homme est une unité de corps et d’âme raisonnable, créé pour Dieu et originellement élevé par la grâce, mais blessé par la Chute et le péché originel."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-011-P01",
+          "text": {
+            "en": "The human soul is spiritual and immortal; bodily death does not destroy the soul.",
+            "fr": "L’âme humaine est spirituelle et immortelle ; la mort du corps ne détruit pas l’âme."
+          },
+          "catechismRefs": [
+            60,
+            61,
+            62,
+            63
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-011-P02",
+          "text": {
+            "en": "Human freedom is real. Freedom makes moral responsibility possible; it does not mean that evil becomes good simply because it is freely chosen.",
+            "fr": "La liberté humaine est réelle. Elle rend possible la responsabilité morale ; elle ne signifie pas que le mal devient bon simplement parce qu’il est librement choisi."
+          },
+          "catechismRefs": [
+            64,
+            65
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-011-P03",
+          "text": {
+            "en": "Adam and Eve were created in a state of original justice and grace; through the first sin humanity lost that privileged state and inherited original sin and its wounds.",
+            "fr": "Adam et Ève furent créés dans un état de justice originelle et de grâce ; par le premier péché, l’humanité a perdu cet état privilégié et a hérité du péché originel et de ses blessures."
+          },
+          "catechismRefs": [
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-012",
+      "family": "creed",
+      "title": {
+        "en": "Jesus Christ",
+        "fr": "Jésus-Christ"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        78,
+        79,
+        86,
+        87,
+        88
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        22,
+        23,
+        24,
+        86,
+        87,
+        88
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Jesus Christ is the eternal Son of God made man: one divine Person with a true divine nature and a true human nature.",
+        "fr": "Jésus-Christ est le Fils éternel de Dieu fait homme : une seule Personne divine possédant une vraie nature divine et une vraie nature humaine."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-012-P01",
+          "text": {
+            "en": "Jesus Christ is not merely a prophet or holy man; He is the second Person of the Trinity, true God and true man.",
+            "fr": "Jésus-Christ n’est pas seulement un prophète ou un homme saint ; Il est la deuxième Personne de la Trinité, vrai Dieu et vrai homme."
+          },
+          "catechismRefs": [
+            22,
+            23,
+            24,
+            78,
+            79
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-012-P02",
+          "text": {
+            "en": "His earthly life, teaching and miracles manifest His mission and confirm His divine authority.",
+            "fr": "Sa vie terrestre, son enseignement et ses miracles manifestent sa mission et confirment son autorité divine."
+          },
+          "catechismRefs": [
+            86,
+            87,
+            88
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-012-P03",
+          "text": {
+            "en": "Because the acting Person is the divine Son, everything Christ does and suffers in His humanity belongs to the one Person of the Word incarnate.",
+            "fr": "Parce que la Personne agissante est le Fils divin, tout ce que le Christ fait et souffre dans son humanité appartient à l’unique Personne du Verbe incarné."
+          },
+          "catechismRefs": [
+            78,
+            79,
+            89
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-013",
+      "family": "creed",
+      "title": {
+        "en": "The Incarnation",
+        "fr": "L’Incarnation"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        21,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "In the Incarnation the eternal Son truly assumed human nature without ceasing to be God.",
+        "fr": "Dans l’Incarnation, le Fils éternel a véritablement assumé la nature humaine sans cesser d’être Dieu."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-013-P01",
+          "text": {
+            "en": "Of the three divine Persons, the Son became man; the Incarnation does not mean that the divine nature changed into a human nature.",
+            "fr": "Parmi les trois Personnes divines, le Fils s’est fait homme ; l’Incarnation ne signifie pas que la nature divine s’est transformée en nature humaine."
+          },
+          "catechismRefs": [
+            21,
+            76,
+            77,
+            78,
+            79
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-013-P02",
+          "text": {
+            "en": "Christ was conceived and born of the Blessed Virgin Mary; Saint Joseph is truly His legal and virginal guardian, not His natural father.",
+            "fr": "Le Christ a été conçu et est né de la Très Sainte Vierge Marie ; saint Joseph est véritablement son gardien légal et virginal, non son père naturel."
+          },
+          "catechismRefs": [
+            82,
+            83
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-013-P03",
+          "text": {
+            "en": "The poverty and hiddenness of Bethlehem belong to the mystery of the Incarnation and teach the divine condescension of the Son who came to save us.",
+            "fr": "La pauvreté et l’humilité de Bethléem appartiennent au mystère de l’Incarnation et manifestent l’abaissement du Fils venu nous sauver."
+          },
+          "catechismRefs": [
+            84,
+            85
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-014",
+      "family": "creed",
+      "title": {
+        "en": "The Redemption",
+        "fr": "La Rédemption"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        25,
+        26,
+        89,
+        90,
+        91
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        25,
+        26,
+        89,
+        90,
+        91
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Son of God became man to redeem fallen humanity; by His Passion and death He offered satisfaction for sin and reopened the way to eternal life.",
+        "fr": "Le Fils de Dieu s’est fait homme pour racheter l’humanité déchue ; par sa Passion et sa mort, Il a satisfait pour le péché et rouvert le chemin de la vie éternelle."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-014-P01",
+          "text": {
+            "en": "The purpose of the Incarnation is saving: Christ came to redeem us from sin and restore the supernatural destiny lost through the Fall.",
+            "fr": "Le but de l’Incarnation est le salut : le Christ est venu nous racheter du péché et restaurer la destinée surnaturelle perdue par la Chute."
+          },
+          "catechismRefs": [
+            25
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-014-P02",
+          "text": {
+            "en": "Christ saves by teaching the truth and, above all, by suffering and offering Himself on the Cross in satisfaction for sin.",
+            "fr": "Le Christ sauve en enseignant la vérité et surtout en souffrant et en s’offrant sur la Croix en satisfaction pour le péché."
+          },
+          "catechismRefs": [
+            26,
+            89
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-014-P03",
+          "text": {
+            "en": "At death Christ’s soul was separated from His body, while both remained united to the divine Person; His body rested in the tomb until the Resurrection.",
+            "fr": "À la mort du Christ, son âme fut séparée de son corps, tandis que l’une et l’autre demeuraient unies à la Personne divine ; son corps reposa au tombeau jusqu’à la Résurrection."
+          },
+          "catechismRefs": [
+            89,
+            90,
+            91
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-015",
+      "family": "creed",
+      "title": {
+        "en": "The Resurrection and Ascension",
+        "fr": "La Résurrection et l’Ascension"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Christ truly rose from the dead, remained with His disciples and ascended into heaven; His risen life grounds Christian hope.",
+        "fr": "Le Christ est véritablement ressuscité d’entre les morts, est demeuré avec ses disciples puis est monté au ciel ; sa vie ressuscitée fonde l’espérance chrétienne."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-015-P01",
+          "text": {
+            "en": "After rising, Christ remained on earth for forty days, confirming His disciples in faith and preparing them for the Church’s mission.",
+            "fr": "Après sa Résurrection, le Christ demeura quarante jours sur la terre, confirmant ses disciples dans la foi et les préparant à la mission de l’Église."
+          },
+          "catechismRefs": [
+            92,
+            93
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-015-P02",
+          "text": {
+            "en": "Christ ascended into heaven in His glorified humanity, while as God He is present everywhere.",
+            "fr": "Le Christ est monté au ciel dans son humanité glorifiée, tandis qu’en tant que Dieu Il est présent partout."
+          },
+          "catechismRefs": [
+            94
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-015-P03",
+          "text": {
+            "en": "The same Christ who ascended will come again visibly in glory; Christian expectation is therefore directed toward His definitive return and judgment.",
+            "fr": "Le même Christ qui est monté reviendra visiblement dans la gloire ; l’attente chrétienne est donc orientée vers son retour définitif et le jugement."
+          },
+          "catechismRefs": [
+            95
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-016",
+      "family": "creed",
+      "title": {
+        "en": "The Holy Ghost",
+        "fr": "Le Saint-Esprit"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        20,
+        46
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The shorter catechism is very compressed on the Holy Ghost as Person and mission; supplement with Creed/Scripture/catechetical sources.",
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "The 433-question catechism gives Trinitarian identity/procession but little developed pneumatology or Pentecost/ecclesial mission.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true,
+      "summary": {
+        "en": "The Holy Ghost is the third divine Person, equal and eternal with the Father and the Son, and the divine source of sanctification in the Church and souls.",
+        "fr": "Le Saint-Esprit est la troisième Personne divine, égale et éternelle au Père et au Fils, et la source divine de la sanctification dans l’Église et dans les âmes."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-016-P01",
+          "text": {
+            "en": "The Holy Ghost is not merely an influence or symbol; He is the third Person of the Most Holy Trinity and is truly God.",
+            "fr": "Le Saint-Esprit n’est pas simplement une influence ou un symbole ; Il est la troisième Personne de la Très Sainte Trinité et Il est véritablement Dieu."
+          },
+          "catechismRefs": [
+            20,
+            43,
+            46,
+            47
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-016-P02",
+          "text": {
+            "en": "The divine Persons are distinguished by their eternal relations without inequality of nature, power or eternity.",
+            "fr": "Les Personnes divines se distinguent par leurs relations éternelles sans aucune inégalité de nature, de puissance ou d’éternité."
+          },
+          "catechismRefs": [
+            38,
+            39,
+            46,
+            47,
+            48,
+            49,
+            50
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-016-P03",
+          "text": {
+            "en": "The Holy Ghost sanctifies the Church and the faithful by grace and brings Christ’s saving work to fruit in souls.",
+            "fr": "Le Saint-Esprit sanctifie l’Église et les fidèles par la grâce et porte à son fruit dans les âmes l’œuvre salvifique du Christ."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "TRENT-CATECHISM",
+            "SPIRAGO"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-017",
+      "family": "creed",
+      "title": {
+        "en": "The Catholic Church",
+        "fr": "L’Église catholique"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        117,
+        118,
+        119,
+        120,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Catholic Church is the visible society founded by Jesus Christ, one, holy, catholic and apostolic, through which He continues His saving mission.",
+        "fr": "L’Église catholique est la société visible fondée par Jésus-Christ, une, sainte, catholique et apostolique, par laquelle Il poursuit sa mission de salut."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-017-P01",
+          "text": {
+            "en": "The Church is founded by Christ and can be identified by the marks of unity, holiness, catholicity and apostolicity.",
+            "fr": "L’Église est fondée par le Christ et peut être reconnue par les notes d’unité, de sainteté, de catholicité et d’apostolicité."
+          },
+          "catechismRefs": [
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-017-P02",
+          "text": {
+            "en": "Its visible constitution includes legitimate pastors, the bishops and the Pope, while its purpose is to continue Christ’s teaching and sanctifying mission.",
+            "fr": "Sa constitution visible comprend les pasteurs légitimes, les évêques et le Pape, tandis que sa finalité est de poursuivre la mission d’enseignement et de sanctification du Christ."
+          },
+          "catechismRefs": [
+            112,
+            113,
+            118,
+            119
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-017-P03",
+          "text": {
+            "en": "Membership, separation and salvation must be treated with theological precision: the Church is necessary for salvation, but culpability, ignorance and the action of grace cannot be reduced to slogans.",
+            "fr": "L’appartenance, la séparation et le salut doivent être traités avec précision théologique : l’Église est nécessaire au salut, mais la culpabilité, l’ignorance et l’action de la grâce ne peuvent être réduites à des slogans."
+          },
+          "catechismRefs": [
+            117,
+            120,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-018",
+      "family": "creed",
+      "title": {
+        "en": "The Communion of Saints",
+        "fr": "La Communion des saints"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        105,
+        107,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        121,
+        122,
+        123
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Communion of Saints is the supernatural solidarity of Christ’s members: the faithful on earth, the blessed in heaven and the souls being purified remain united in the Church’s life of grace.",
+        "fr": "La Communion des saints est la solidarité surnaturelle des membres du Christ : les fidèles sur terre, les bienheureux au ciel et les âmes en purification demeurent unis dans la vie de grâce de l’Église."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-018-P01",
+          "text": {
+            "en": "The faithful are called saints because Baptism and grace consecrate them to God, even though they still need conversion and growth in holiness.",
+            "fr": "Les fidèles sont appelés saints parce que le Baptême et la grâce les consacrent à Dieu, même s’ils ont encore besoin de conversion et de croissance dans la sainteté."
+          },
+          "catechismRefs": [
+            121
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-018-P02",
+          "text": {
+            "en": "Communion means a real sharing in spiritual goods—faith, sacraments, prayers and merits—within the Mystical Body.",
+            "fr": "La communion signifie un véritable partage des biens spirituels — foi, sacrements, prières et mérites — dans le Corps mystique."
+          },
+          "catechismRefs": [
+            122
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-018-P03",
+          "text": {
+            "en": "The blessed in heaven and the souls in purgatory are not cut off from the Church; this communion grounds intercession for one another and prayer for the dead.",
+            "fr": "Les bienheureux du ciel et les âmes du purgatoire ne sont pas séparés de l’Église ; cette communion fonde l’intercession mutuelle et la prière pour les défunts."
+          },
+          "catechismRefs": [
+            123
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-019",
+      "family": "creed",
+      "title": {
+        "en": "The forgiveness of sins",
+        "fr": "La rémission des péchés"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        133,
+        134,
+        135,
+        139,
+        146,
+        355,
+        380
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        133,
+        134
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Christ entrusted to His Church real means for the forgiveness of sins, above all Baptism and Penance, so that fallen Christians can be reconciled to God.",
+        "fr": "Le Christ a confié à son Église de véritables moyens de rémission des péchés, surtout le Baptême et la Pénitence, afin que les chrétiens tombés puissent être réconciliés avec Dieu."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-019-P01",
+          "text": {
+            "en": "The Creed’s profession of the forgiveness of sins is concrete: Christ gave His Church sacramental means by which sins are truly remitted.",
+            "fr": "La profession du Credo concernant la rémission des péchés est concrète : le Christ a donné à son Église des moyens sacramentels par lesquels les péchés sont véritablement remis."
+          },
+          "catechismRefs": [
+            133,
+            134
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-019-P02",
+          "text": {
+            "en": "Original sin is remitted by Baptism; mortal sin committed after Baptism is ordinarily remitted through the sacrament of Penance.",
+            "fr": "Le péché originel est remis par le Baptême ; le péché mortel commis après le Baptême est ordinairement remis par le sacrement de Pénitence."
+          },
+          "catechismRefs": [
+            139,
+            146,
+            274,
+            355
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-019-P03",
+          "text": {
+            "en": "Forgiveness restores communion with God; it does not make sin unreal or remove the need for conversion, restitution and satisfaction where these are due.",
+            "fr": "Le pardon restaure la communion avec Dieu ; il ne rend pas le péché irréel et ne supprime pas la nécessité de la conversion, de la restitution et de la satisfaction lorsqu’elles sont dues."
+          },
+          "catechismRefs": [
+            205,
+            380,
+            381,
+            382,
+            384
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-020",
+      "family": "creed",
+      "title": {
+        "en": "Death, judgment and the resurrection of the body",
+        "fr": "Mort, jugement et résurrection de la chair"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        96,
+        97,
+        98,
+        99,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        96,
+        97,
+        98,
+        99,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Each person faces death and particular judgment, while history moves toward Christ’s final coming, the general judgment and the resurrection of the body.",
+        "fr": "Chaque personne rencontre la mort et le jugement particulier, tandis que l’histoire s’achemine vers le retour final du Christ, le jugement général et la résurrection de la chair."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-020-P01",
+          "text": {
+            "en": "At death the soul is judged personally; the particular judgment determines its state while awaiting the final resurrection.",
+            "fr": "À la mort, l’âme est jugée personnellement ; le jugement particulier détermine son état dans l’attente de la résurrection finale."
+          },
+          "catechismRefs": [
+            96,
+            97,
+            98,
+            99,
+            156
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-020-P02",
+          "text": {
+            "en": "At the end of the world Christ will judge publicly, and human bodies will rise and be reunited with their souls.",
+            "fr": "À la fin du monde, le Christ jugera publiquement et les corps humains ressusciteront pour être réunis à leurs âmes."
+          },
+          "catechismRefs": [
+            95,
+            97,
+            157,
+            158
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-020-P03",
+          "text": {
+            "en": "Eternal life is not an abstraction but the definitive state toward which earthly freedom, grace and moral responsibility are ordered.",
+            "fr": "La vie éternelle n’est pas une abstraction, mais l’état définitif auquel sont ordonnées la liberté terrestre, la grâce et la responsabilité morale."
+          },
+          "catechismRefs": [
+            159,
+            160
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-021",
+      "family": "creed",
+      "title": {
+        "en": "Heaven, Purgatory and Hell",
+        "fr": "Ciel, Purgatoire et Enfer"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        156,
+        157,
+        158,
+        159
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Heaven is the eternal possession of God; purgatory is purification for those who die in grace but still need cleansing; hell is the definitive loss of God through unrepented mortal sin.",
+        "fr": "Le ciel est la possession éternelle de Dieu ; le purgatoire est la purification de ceux qui meurent en grâce mais ont encore besoin d’être purifiés ; l’enfer est la perte définitive de Dieu par le péché mortel non repenti."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-021-P01",
+          "text": {
+            "en": "Heaven is the eternal enjoyment of God and the fulfilment of the supernatural end for which man was created.",
+            "fr": "Le ciel est la jouissance éternelle de Dieu et l’accomplissement de la fin surnaturelle pour laquelle l’homme a été créé."
+          },
+          "catechismRefs": [
+            14,
+            15
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-021-P02",
+          "text": {
+            "en": "Purgatory is a temporary state of purification for souls who die in God’s grace but are not yet fully purified; the faithful can assist them by prayer and suffrage.",
+            "fr": "Le purgatoire est un état temporaire de purification pour les âmes qui meurent dans la grâce de Dieu sans être encore pleinement purifiées ; les fidèles peuvent les aider par la prière et les suffrages."
+          },
+          "catechismRefs": [
+            99,
+            101,
+            102
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-021-P03",
+          "text": {
+            "en": "Hell is eternal separation from God for those who die in mortal sin. Historical catechetical opinions about the fate of unbaptized infants must be distinguished from defined doctrine.",
+            "fr": "L’enfer est la séparation éternelle de Dieu pour ceux qui meurent en état de péché mortel. Les opinions catéchétiques historiques concernant le sort des enfants morts sans baptême doivent être distinguées de la doctrine définie."
+          },
+          "catechismRefs": [
+            16,
+            17,
+            18,
+            100,
+            103,
+            104
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-022",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Sanctifying and actual grace",
+        "fr": "Grâce sanctifiante et grâce actuelle"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        269,
+        270,
+        271,
+        273,
+        274,
+        275,
+        277
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The sacramental section directly defines sanctifying and sacramental grace but is not a full treatise on actual grace; supplement accordingly.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        270
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Grace is God’s supernatural gift: sanctifying grace gives a stable share in divine life, while actual grace is God’s help moving us toward good.",
+        "fr": "La grâce est le don surnaturel de Dieu : la grâce sanctifiante donne une participation stable à la vie divine, tandis que la grâce actuelle est l’aide de Dieu qui nous meut vers le bien."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-022-P01",
+          "text": {
+            "en": "Sanctifying grace is an habitual supernatural gift in the soul that makes us just, friends and adopted children of God, and heirs of eternal life.",
+            "fr": "La grâce sanctifiante est un don surnaturel habituel dans l’âme qui nous rend justes, amis et enfants adoptifs de Dieu, et héritiers de la vie éternelle."
+          },
+          "catechismRefs": [
+            270
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-022-P02",
+          "text": {
+            "en": "The sacraments either confer sanctifying grace where it is absent or increase it where it is already possessed, together with sacramental graces ordered to their proper ends.",
+            "fr": "Les sacrements confèrent la grâce sanctifiante là où elle est absente ou l’augmentent là où elle est déjà possédée, avec des grâces sacramentelles ordonnées à leurs fins propres."
+          },
+          "catechismRefs": [
+            269,
+            271,
+            273,
+            274,
+            275
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-022-P03",
+          "text": {
+            "en": "Actual grace is a divine help given for particular acts of conversion, faith and charity; it must be distinguished from the stable state of sanctifying grace.",
+            "fr": "La grâce actuelle est une aide divine donnée pour des actes particuliers de conversion, de foi et de charité ; elle doit être distinguée de l’état stable de la grâce sanctifiante."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "TRENT-CATECHISM",
+            "SPIRAGO"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-023",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "What a sacrament is",
+        "fr": "Ce qu’est un sacrement"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        267,
+        268,
+        269,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "A sacrament is an efficacious sign instituted by Christ to confer grace; the seven sacraments structure the supernatural life of the Christian.",
+        "fr": "Un sacrement est un signe efficace institué par le Christ pour conférer la grâce ; les sept sacrements structurent la vie surnaturelle du chrétien."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-023-P01",
+          "text": {
+            "en": "The sacraments do not merely symbolize grace: Christ instituted them as efficacious signs that truly confer what they signify.",
+            "fr": "Les sacrements ne symbolisent pas seulement la grâce : le Christ les a institués comme des signes efficaces qui confèrent réellement ce qu’ils signifient."
+          },
+          "catechismRefs": [
+            267,
+            268,
+            272,
+            273
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-023-P02",
+          "text": {
+            "en": "Some sacraments restore supernatural life, while others increase grace already possessed; receiving a sacrament unworthily can itself be gravely sinful.",
+            "fr": "Certains sacrements restaurent la vie surnaturelle, tandis que d’autres augmentent la grâce déjà possédée ; recevoir indignement un sacrement peut lui-même constituer un péché grave."
+          },
+          "catechismRefs": [
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-023-P03",
+          "text": {
+            "en": "Baptism, Confirmation and Holy Orders imprint a permanent sacramental character and therefore are not repeated; every sacrament also has matter, form and a minister.",
+            "fr": "Le Baptême, la Confirmation et l’Ordre impriment un caractère sacramentel permanent et ne sont donc pas répétés ; tout sacrement comporte aussi une matière, une forme et un ministre."
+          },
+          "catechismRefs": [
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-024",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Baptism",
+        "fr": "Baptême"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Baptism is the sacrament of regeneration: it remits sin, gives grace, incorporates us into Christ and binds us to live as Christians.",
+        "fr": "Le Baptême est le sacrement de la régénération : il remet le péché, donne la grâce, nous incorpore au Christ et nous oblige à vivre en chrétiens."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-024-P01",
+          "text": {
+            "en": "Baptism uses true water with the Trinitarian form and can be administered in necessity by any person who intends to do what the Church does.",
+            "fr": "Le Baptême emploie de l’eau véritable avec la forme trinitaire et peut, en cas de nécessité, être administré par toute personne ayant l’intention de faire ce que fait l’Église."
+          },
+          "catechismRefs": [
+            290,
+            291,
+            292,
+            293,
+            294
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-024-P02",
+          "text": {
+            "en": "Its effects include the remission of sin, sanctifying grace, incorporation into the Church and the permanent baptismal character.",
+            "fr": "Ses effets comprennent la rémission du péché, la grâce sanctifiante, l’incorporation à l’Église et le caractère baptismal permanent."
+          },
+          "catechismRefs": [
+            295,
+            296,
+            297
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-024-P03",
+          "text": {
+            "en": "The baptismal promises include renunciation of the devil and commitment to Christian life; godparents speak for infants and assume a real duty of Christian assistance.",
+            "fr": "Les promesses baptismales comprennent la renonciation au démon et l’engagement à la vie chrétienne ; les parrains parlent au nom des enfants et assument un véritable devoir d’assistance chrétienne."
+          },
+          "catechismRefs": [
+            298,
+            299,
+            300,
+            301,
+            302,
+            303
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-025",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Confirmation",
+        "fr": "Confirmation"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Confirmation strengthens baptismal grace and equips the Christian to confess and defend the faith with greater firmness.",
+        "fr": "La Confirmation fortifie la grâce baptismale et équipe le chrétien pour confesser et défendre la foi avec plus de fermeté."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-025-P01",
+          "text": {
+            "en": "Confirmation is a true sacrament in which the bishop ordinarily anoints with sacred chrism and invokes the Holy Ghost.",
+            "fr": "La Confirmation est un véritable sacrement dans lequel l’évêque oint ordinairement avec le saint chrême et invoque le Saint-Esprit."
+          },
+          "catechismRefs": [
+            304,
+            305,
+            306,
+            307,
+            308,
+            312
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-025-P02",
+          "text": {
+            "en": "Its distinctive grace strengthens the baptized person as a mature witness and soldier of Christ.",
+            "fr": "Sa grâce propre fortifie le baptisé comme témoin mûr et soldat du Christ."
+          },
+          "catechismRefs": [
+            309,
+            313,
+            314
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-025-P03",
+          "text": {
+            "en": "Reception requires suitable preparation and disposition; the sponsor’s role expresses ecclesial support in the confirmed person’s Christian responsibility.",
+            "fr": "La réception exige une préparation et des dispositions convenables ; le rôle du parrain ou de la marraine exprime le soutien ecclésial à la responsabilité chrétienne du confirmé."
+          },
+          "catechismRefs": [
+            310,
+            311,
+            315
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-026",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "The Holy Eucharist",
+        "fr": "La Sainte Eucharistie"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Eucharist is Christ Himself truly present under the appearances of bread and wine, given as sacrifice, sacrament and spiritual food.",
+        "fr": "L’Eucharistie est le Christ Lui-même réellement présent sous les apparences du pain et du vin, donné comme sacrifice, sacrement et nourriture spirituelle."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-026-P01",
+          "text": {
+            "en": "Christ instituted the Eucharist at the Last Supper; after consecration the substance of bread and wine is changed into His Body and Blood while the appearances remain.",
+            "fr": "Le Christ a institué l’Eucharistie à la Cène ; après la consécration, la substance du pain et du vin est changée en son Corps et son Sang tandis que les apparences demeurent."
+          },
+          "catechismRefs": [
+            316,
+            317,
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-026-P02",
+          "text": {
+            "en": "The whole Christ is present under either species and in every part of the consecrated species; breaking the Host does not divide Christ.",
+            "fr": "Le Christ tout entier est présent sous chacune des espèces et dans chaque partie des espèces consacrées ; rompre l’Hostie ne divise pas le Christ."
+          },
+          "catechismRefs": [
+            331,
+            332,
+            333,
+            334
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-026-P03",
+          "text": {
+            "en": "Worthy Communion requires the state of grace, awareness of whom one receives and observance of the Church’s Eucharistic discipline; it increases grace and charity and strengthens against sin.",
+            "fr": "Une Communion digne exige l’état de grâce, la conscience de Celui que l’on reçoit et l’observance de la discipline eucharistique de l’Église ; elle augmente la grâce et la charité et fortifie contre le péché."
+          },
+          "catechismRefs": [
+            335,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            344,
+            345,
+            346
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-027",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "The Holy Sacrifice of the Mass",
+        "fr": "Le Saint Sacrifice de la Messe"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        316,
+        320,
+        321,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.mass",
+        "APOL-031"
+      ],
+      "note": "Teach doctrine of the Mass; ritual explanation remains Mass Formation.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Mass is the unbloody sacramental offering of the same Christ who offered Himself on Calvary; it is the Church’s supreme act of worship.",
+        "fr": "La Messe est l’offrande sacramentelle non sanglante du même Christ qui s’est offert au Calvaire ; elle est l’acte suprême du culte de l’Église."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-027-P01",
+          "text": {
+            "en": "Sacrifice is an offering made to God in recognition of His supreme dominion; the Mass is the sacramental sacrifice of Christ offered through the ministry of the priest.",
+            "fr": "Le sacrifice est une offrande faite à Dieu en reconnaissance de sa souveraineté suprême ; la Messe est le sacrifice sacramentel du Christ offert par le ministère du prêtre."
+          },
+          "catechismRefs": [
+            347,
+            348
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-027-P02",
+          "text": {
+            "en": "The Mass and Calvary are not two independent sacrifices: the Victim is the same Christ, while the manner of offering differs.",
+            "fr": "La Messe et le Calvaire ne sont pas deux sacrifices indépendants : la Victime est le même Christ, tandis que le mode d’offrande diffère."
+          },
+          "catechismRefs": [
+            349,
+            350
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-027-P03",
+          "text": {
+            "en": "The Mass is offered for adoration, thanksgiving, propitiation and petition; assisting fruitfully requires interior union with the Church’s sacrificial prayer.",
+            "fr": "La Messe est offerte pour l’adoration, l’action de grâces, la propitiation et la demande ; y assister fructueusement exige une union intérieure à la prière sacrificielle de l’Église."
+          },
+          "catechismRefs": [
+            351,
+            352,
+            353,
+            354
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-028",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Penance and Confession",
+        "fr": "Pénitence et Confession"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "pray.confession",
+        "APOL-026"
+      ],
+      "note": "Teach sacramental doctrine; practical confession flow remains PRAY → Confession.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Penance reconciles the baptized sinner to God through contrition, confession, absolution and satisfaction.",
+        "fr": "La Pénitence réconcilie le pécheur baptisé avec Dieu par la contrition, la confession, l’absolution et la satisfaction."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-028-P01",
+          "text": {
+            "en": "A good confession requires examination of conscience, sorrow for sin, a firm purpose of amendment, sincere confession and satisfaction.",
+            "fr": "Une bonne confession exige l’examen de conscience, la douleur des péchés, un ferme propos, une confession sincère et la satisfaction."
+          },
+          "catechismRefs": [
+            355,
+            356,
+            357,
+            358,
+            359,
+            360,
+            361,
+            362,
+            363,
+            364,
+            365,
+            366,
+            367,
+            368,
+            369
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-028-P02",
+          "text": {
+            "en": "Mortal sins must be confessed sincerely according to kind and number as far as possible; deliberate concealment of a mortal sin invalidates the confession.",
+            "fr": "Les péchés mortels doivent être confessés sincèrement selon leur espèce et leur nombre autant que possible ; cacher délibérément un péché mortel invalide la confession."
+          },
+          "catechismRefs": [
+            372,
+            373,
+            374,
+            375,
+            376,
+            377,
+            378,
+            379,
+            380
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-028-P03",
+          "text": {
+            "en": "Absolution remits guilt, while temporal punishment may remain; sacramental penance, other works of penance and indulgences belong to the Church’s discipline of satisfaction and remission.",
+            "fr": "L’absolution remet la faute, tandis qu’une peine temporelle peut demeurer ; la pénitence sacramentelle, les autres œuvres de pénitence et les indulgences appartiennent à la discipline de satisfaction et de rémission de l’Église."
+          },
+          "catechismRefs": [
+            381,
+            382,
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            391
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-029",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Extreme Unction / Anointing of the Sick",
+        "fr": "Extrême-Onction / Onction des malades"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        392,
+        393,
+        394,
+        395,
+        396
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        392,
+        393,
+        394,
+        395,
+        396
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Extreme Unction is the sacrament given to the seriously ill to strengthen, purify and prepare them for the final passage when appropriate.",
+        "fr": "L’Extrême-Onction est le sacrement donné aux malades gravement atteints pour les fortifier, les purifier et les préparer, lorsqu’il convient, au dernier passage."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-029-P01",
+          "text": {
+            "en": "Extreme Unction is a true sacrament administered by a priest with holy oil according to the Church’s rite.",
+            "fr": "L’Extrême-Onction est un véritable sacrement administré par un prêtre avec l’huile sainte selon le rite de l’Église."
+          },
+          "catechismRefs": [
+            392,
+            393,
+            394
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-029-P02",
+          "text": {
+            "en": "Its effects include strengthening the soul, remission of remaining sins when necessary and suitable disposition for death; bodily recovery may be granted if conducive to salvation.",
+            "fr": "Ses effets comprennent la force de l’âme, la rémission des péchés qui demeurent lorsque cela est nécessaire et une disposition convenable à la mort ; la guérison corporelle peut être accordée si elle convient au salut."
+          },
+          "catechismRefs": [
+            395
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-029-P03",
+          "text": {
+            "en": "The sacrament is for grave illness, not merely the final seconds of life; precise terminology and discipline must be distinguished from the enduring sacramental doctrine.",
+            "fr": "Le sacrement est destiné à la maladie grave, et non seulement aux toutes dernières secondes de la vie ; la terminologie et la discipline précises doivent être distinguées de la doctrine sacramentelle permanente."
+          },
+          "catechismRefs": [
+            396
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-030",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Holy Orders",
+        "fr": "Ordre"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Holy Orders configures ordained ministers for sacred service and establishes the sacramental ministry of bishops, priests and deacons in the Church.",
+        "fr": "L’Ordre configure les ministres ordonnés au service sacré et établit dans l’Église le ministère sacramentel des évêques, prêtres et diacres."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-030-P01",
+          "text": {
+            "en": "Holy Orders is a sacrament that consecrates ministers for divine worship and the service of the Church, ordinarily conferred by a bishop.",
+            "fr": "L’Ordre est un sacrement qui consacre des ministres au culte divin et au service de l’Église, ordinairement conféré par un évêque."
+          },
+          "catechismRefs": [
+            397,
+            398,
+            399,
+            400
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-030-P02",
+          "text": {
+            "en": "The priesthood has a distinct sacred dignity because of its relation to the Eucharistic sacrifice, sacramental absolution and pastoral ministry.",
+            "fr": "Le sacerdoce possède une dignité sacrée particulière en raison de son rapport au sacrifice eucharistique, à l’absolution sacramentelle et au ministère pastoral."
+          },
+          "catechismRefs": [
+            401
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-030-P03",
+          "text": {
+            "en": "A vocation is not self-appointment: candidates must seek God’s will and the judgment of the Church, while the faithful should pray for and support genuine vocations.",
+            "fr": "Une vocation n’est pas une auto-désignation : les candidats doivent rechercher la volonté de Dieu et le jugement de l’Église, tandis que les fidèles doivent prier pour les véritables vocations et les soutenir."
+          },
+          "catechismRefs": [
+            402,
+            403,
+            404,
+            405
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-031",
+      "family": "grace-sacraments",
+      "title": {
+        "en": "Matrimony",
+        "fr": "Mariage"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.rites.matrimony",
+        "learn.sexual_ethics"
+      ],
+      "note": "Teach sacramental doctrine; preparation and concrete sexual ethics remain with their canonical owners.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "catechismNote": "Q409–Q411 are intentionally excluded from the doctrinal core because they concern historical Italian civil-law arrangements.",
+      "primaryCatechismRefs": [
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Matrimony is the covenant by which a baptized man and woman give themselves to one another in a stable union ordered to family life and elevated by Christ to a sacrament.",
+        "fr": "Le Mariage est l’alliance par laquelle un homme et une femme baptisés se donnent l’un à l’autre dans une union stable ordonnée à la vie familiale et élevée par le Christ à la dignité de sacrement."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-031-P01",
+          "text": {
+            "en": "Christian Matrimony is a true sacrament; the spouses mutually confer it through valid matrimonial consent.",
+            "fr": "Le Mariage chrétien est un véritable sacrement ; les époux se le confèrent mutuellement par un consentement matrimonial valide."
+          },
+          "catechismRefs": [
+            406,
+            407,
+            408
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-031-P02",
+          "text": {
+            "en": "Marriage should be entered in the state of grace and with serious preparation because sacramental consent creates lasting duties before God.",
+            "fr": "Le mariage doit être contracté en état de grâce et avec une préparation sérieuse, car le consentement sacramentel crée des devoirs durables devant Dieu."
+          },
+          "catechismRefs": [
+            412,
+            413
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-031-P03",
+          "text": {
+            "en": "Civil and canonical procedures can change across time and countries; historical disciplinary questions in the 1912 text must not be mistaken for timeless universal law.",
+            "fr": "Les procédures civiles et canoniques peuvent changer selon les époques et les pays ; les questions disciplinaires historiques du texte de 1912 ne doivent pas être prises pour une loi universelle immuable."
+          },
+          "catechismRefs": [
+            409,
+            410,
+            411
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-032",
+      "family": "moral-life",
+      "title": {
+        "en": "Christian freedom and moral law",
+        "fr": "Liberté chrétienne et loi morale"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        27,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The catechism covers freedom and commandments but not a full modern moral-theology account of moral law; supplement with authoritative moral theology.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        27,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Christian moral life presupposes real freedom under God’s law: freedom is ordered to the good and perfected by grace, not defined as the power to make good and evil interchangeable.",
+        "fr": "La vie morale chrétienne suppose une véritable liberté sous la loi de Dieu : la liberté est ordonnée au bien et perfectionnée par la grâce, non définie comme le pouvoir de rendre interchangeables le bien et le mal."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-032-P01",
+          "text": {
+            "en": "Human beings are free and therefore morally responsible; the possibility of choosing evil does not make evil an authentic fulfilment of freedom.",
+            "fr": "Les êtres humains sont libres et donc moralement responsables ; la possibilité de choisir le mal ne fait pas du mal un accomplissement authentique de la liberté."
+          },
+          "catechismRefs": [
+            64,
+            65
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-032-P02",
+          "text": {
+            "en": "God’s commandments express objective duties toward God and neighbour and can be observed with the help of grace.",
+            "fr": "Les commandements de Dieu expriment des devoirs objectifs envers Dieu et le prochain et peuvent être observés avec l’aide de la grâce."
+          },
+          "catechismRefs": [
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-032-P03",
+          "text": {
+            "en": "Christian conduct therefore joins revealed truth, moral commandments, grace, sacraments and prayer rather than treating morality as an isolated rulebook.",
+            "fr": "La conduite chrétienne unit donc la vérité révélée, les commandements moraux, la grâce, les sacrements et la prière au lieu de traiter la morale comme un code isolé."
+          },
+          "catechismRefs": [
+            27
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-033",
+      "family": "moral-life",
+      "title": {
+        "en": "Natural law",
+        "fr": "Loi naturelle"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM",
+        "AQUINAS-ST"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "Natural law is not directly developed in the 433-question corpus; requires supplementary doctrinal sources.",
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "The short catechism teaches divine/moral law and commandments but does not give a developed natural-law treatise.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true,
+      "summary": {
+        "en": "Natural law is the rational creature’s participation in God’s eternal law: basic moral goods and duties are rooted in human nature and can be known by reason.",
+        "fr": "La loi naturelle est la participation de la créature raisonnable à la loi éternelle de Dieu : les biens et devoirs moraux fondamentaux sont enracinés dans la nature humaine et peuvent être connus par la raison."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-033-P01",
+          "text": {
+            "en": "Natural law means that moral truth is not created by individual preference or social agreement; it is grounded in the order of human nature under God.",
+            "fr": "La loi naturelle signifie que la vérité morale n’est pas créée par la préférence individuelle ou l’accord social ; elle est fondée dans l’ordre de la nature humaine sous Dieu."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "AQUINAS-ST",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-033-P02",
+          "text": {
+            "en": "The first principles of practical reason direct us toward good and away from evil and unfold in duties concerning life, family, truth, society and worship.",
+            "fr": "Les premiers principes de la raison pratique nous orientent vers le bien et loin du mal et se déploient dans des devoirs concernant la vie, la famille, la vérité, la société et le culte."
+          },
+          "catechismRefs": [
+            161,
+            162,
+            163,
+            164
+          ],
+          "sourceRefs": [
+            "AQUINAS-ST",
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-033-P03",
+          "text": {
+            "en": "The revealed commandments do not abolish natural moral knowledge; they clarify, confirm and elevate the moral life of fallen man.",
+            "fr": "Les commandements révélés n’abolissent pas la connaissance morale naturelle ; ils clarifient, confirment et élèvent la vie morale de l’homme déchu."
+          },
+          "catechismRefs": [
+            165,
+            166,
+            167,
+            168
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-034",
+      "family": "moral-life",
+      "title": {
+        "en": "Conscience and its formation",
+        "fr": "La conscience et sa formation"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        155,
+        165,
+        166,
+        167,
+        168,
+        227,
+        252,
+        255
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
+      ],
+      "crossLinks": [
+        "APOL-051",
+        "CR-MOR-02"
+      ],
+      "note": "Teach conscience positively; apologetic and crisis disputes remain elsewhere.",
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "SUPPLEMENT_REQUIRED",
+      "supplementarySourceNeed": "Conscience is not directly treated as a standalone doctrine in the 433-question corpus; requires supplementary doctrinal sources.",
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "Conscience as proximate moral judgment and its formation require deeper catechetical/Magisterial sources.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true,
+      "summary": {
+        "en": "Conscience is the judgment by which a person applies moral truth to a concrete act; it must be formed and followed rightly, but it does not create good and evil.",
+        "fr": "La conscience est le jugement par lequel une personne applique la vérité morale à un acte concret ; elle doit être formée et suivie avec droiture, mais elle ne crée pas le bien et le mal."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-034-P01",
+          "text": {
+            "en": "Conscience is an act of practical judgment, not an independent source of moral law. Its dignity depends upon its relation to truth.",
+            "fr": "La conscience est un acte de jugement pratique, et non une source indépendante de la loi morale. Sa dignité dépend de son rapport à la vérité."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "AQUINAS-ST",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-034-P02",
+          "text": {
+            "en": "Because conscience can be mistaken or poorly formed, Christians have a duty to seek truth through God’s law, sound teaching, prayer and virtue.",
+            "fr": "Parce que la conscience peut se tromper ou être mal formée, les chrétiens ont le devoir de rechercher la vérité par la loi de Dieu, un enseignement sûr, la prière et la vertu."
+          },
+          "catechismRefs": [
+            155,
+            165,
+            166,
+            167,
+            168
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "AQUINAS-ST"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-034-P03",
+          "text": {
+            "en": "A well-formed conscience does not excuse deliberate self-deception; prudence and the other virtues help reason judge concrete circumstances honestly.",
+            "fr": "Une conscience bien formée n’excuse pas l’auto-illusion délibérée ; la prudence et les autres vertus aident la raison à juger honnêtement les circonstances concrètes."
+          },
+          "catechismRefs": [
+            227,
+            252,
+            255
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "AQUINAS-ST"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-035",
+      "family": "moral-life",
+      "title": {
+        "en": "Sin",
+        "fr": "Le péché"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Sin is a voluntary transgression of God’s law; its gravity depends upon the act, knowledge, consent and circumstances, and some sins are objectively more serious than others.",
+        "fr": "Le péché est une transgression volontaire de la loi de Dieu ; sa gravité dépend de l’acte, de la connaissance, du consentement et des circonstances, et certains péchés sont objectivement plus graves que d’autres."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-035-P01",
+          "text": {
+            "en": "Actual sin is committed knowingly and willingly against God’s law, in thought, desire, word, deed or omission.",
+            "fr": "Le péché actuel est commis avec connaissance et volonté contre la loi de Dieu, en pensée, désir, parole, action ou omission."
+          },
+          "catechismRefs": [
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-035-P02",
+          "text": {
+            "en": "Not all sins are equal. Some offenses are graver because of their object, the dignity of the person offended, the harm caused or a more direct opposition to God and neighbour.",
+            "fr": "Tous les péchés ne sont pas égaux. Certaines fautes sont plus graves en raison de leur objet, de la dignité de la personne offensée, du tort causé ou d’une opposition plus directe à Dieu et au prochain."
+          },
+          "catechismRefs": [
+            151,
+            152,
+            153,
+            154
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-035-P03",
+          "text": {
+            "en": "Practical avoidance of sin requires more than abstract knowledge: remembrance of the last things, prayer, vigilance and flight from dangerous occasions form moral judgment.",
+            "fr": "Éviter pratiquement le péché exige plus qu’une connaissance abstraite : le souvenir des fins dernières, la prière, la vigilance et la fuite des occasions dangereuses forment le jugement moral."
+          },
+          "catechismRefs": [
+            155
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-036",
+      "family": "moral-life",
+      "title": {
+        "en": "Mortal and venial sin",
+        "fr": "Péché mortel et péché véniel"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Mortal sin destroys sanctifying grace in the soul; venial sin wounds charity without extinguishing supernatural life.",
+        "fr": "Le péché mortel détruit la grâce sanctifiante dans l’âme ; le péché véniel blesse la charité sans éteindre la vie surnaturelle."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-036-P01",
+          "text": {
+            "en": "Mortal sin is grave because it turns the person away from God as final end and deprives the soul of sanctifying grace.",
+            "fr": "Le péché mortel est grave parce qu’il détourne la personne de Dieu comme fin dernière et prive l’âme de la grâce sanctifiante."
+          },
+          "catechismRefs": [
+            143,
+            144
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-036-P02",
+          "text": {
+            "en": "Even in mortal sin good natural or preparatory acts are not pointless, but supernatural merit is restored only with reconciliation and the recovery of grace.",
+            "fr": "Même en état de péché mortel, les bonnes actions naturelles ou préparatoires ne sont pas inutiles, mais le mérite surnaturel n’est restauré qu’avec la réconciliation et le retour à la grâce."
+          },
+          "catechismRefs": [
+            145,
+            146,
+            147
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-036-P03",
+          "text": {
+            "en": "Venial sin does not kill supernatural life, yet it weakens fervour, disposes toward greater faults and must never be treated as morally insignificant.",
+            "fr": "Le péché véniel ne tue pas la vie surnaturelle, mais il affaiblit la ferveur, dispose à des fautes plus graves et ne doit jamais être traité comme moralement insignifiant."
+          },
+          "catechismRefs": [
+            148,
+            149,
+            150
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-037",
+      "family": "moral-life",
+      "title": {
+        "en": "Virtue and vice",
+        "fr": "Vertu et vice"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        227,
+        228,
+        229,
+        230,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        227,
+        228,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Virtue is a stable disposition toward good; vice is the corresponding habitual disorder, and Christian formation aims at transforming character rather than merely avoiding isolated faults.",
+        "fr": "La vertu est une disposition stable au bien ; le vice est le désordre habituel correspondant, et la formation chrétienne vise à transformer le caractère plutôt qu’à seulement éviter des fautes isolées."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-037-P01",
+          "text": {
+            "en": "Virtue makes good action more prompt, stable and fitting; Christian virtue includes both supernatural and moral virtues.",
+            "fr": "La vertu rend l’action bonne plus prompte, stable et conforme ; la vertu chrétienne comprend les vertus surnaturelles et morales."
+          },
+          "catechismRefs": [
+            227,
+            228
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-037-P02",
+          "text": {
+            "en": "Passions are not sins simply because they are felt; they must be governed by reason and virtue rather than allowed to govern the person.",
+            "fr": "Les passions ne sont pas des péchés simplement parce qu’elles sont ressenties ; elles doivent être gouvernées par la raison et la vertu plutôt que gouverner la personne."
+          },
+          "catechismRefs": [
+            259
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-037-P03",
+          "text": {
+            "en": "Vices and capital sins deform character, while their contrary virtues and the Beatitudes describe the shape of genuinely Christian happiness.",
+            "fr": "Les vices et les péchés capitaux déforment le caractère, tandis que les vertus contraires et les Béatitudes décrivent la forme du véritable bonheur chrétien."
+          },
+          "catechismRefs": [
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-038",
+      "family": "moral-life",
+      "title": {
+        "en": "The theological virtues",
+        "fr": "Les vertus théologales"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        227,
+        228,
+        229,
+        230,
+        231,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        229,
+        230,
+        231,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Faith, hope and charity are theological virtues because they are infused by God and have God Himself as their ultimate object.",
+        "fr": "La foi, l’espérance et la charité sont des vertus théologales parce qu’elles sont infusées par Dieu et ont Dieu Lui-même pour objet ultime."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-038-P01",
+          "text": {
+            "en": "The theological virtues are supernatural gifts received by grace, not merely habits acquired through natural effort.",
+            "fr": "Les vertus théologales sont des dons surnaturels reçus par la grâce, et non de simples habitudes acquises par l’effort naturel."
+          },
+          "catechismRefs": [
+            229,
+            230,
+            231
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-038-P02",
+          "text": {
+            "en": "Faith believes God’s revelation, hope trusts God for eternal life and the necessary graces, and charity loves God above all things and neighbour for God’s sake.",
+            "fr": "La foi croit la Révélation de Dieu, l’espérance se confie en Dieu pour la vie éternelle et les grâces nécessaires, et la charité aime Dieu par-dessus tout et le prochain pour Dieu."
+          },
+          "catechismRefs": [
+            232,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-038-P03",
+          "text": {
+            "en": "These virtues must be exercised concretely through acts of faith, hope and charity, especially in temptation, danger, prayer and Christian witness.",
+            "fr": "Ces vertus doivent être exercées concrètement par des actes de foi, d’espérance et de charité, surtout dans la tentation, le danger, la prière et le témoignage chrétien."
+          },
+          "catechismRefs": [
+            244,
+            245,
+            246,
+            247,
+            248,
+            249
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-039",
+      "family": "moral-life",
+      "title": {
+        "en": "The cardinal virtues",
+        "fr": "Les vertus cardinales"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        227,
+        228,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Prudence, justice, fortitude and temperance are cardinal virtues because the moral life turns around them and many other virtues are ordered through them.",
+        "fr": "La prudence, la justice, la force et la tempérance sont des vertus cardinales parce que la vie morale s’articule autour d’elles et que de nombreuses autres vertus s’ordonnent par elles."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-039-P01",
+          "text": {
+            "en": "Moral virtue perfects human powers so that reason and appetite act well according to their proper object.",
+            "fr": "La vertu morale perfectionne les puissances humaines afin que la raison et l’appétit agissent bien selon leur objet propre."
+          },
+          "catechismRefs": [
+            252,
+            253,
+            254
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-039-P02",
+          "text": {
+            "en": "Prudence judges rightly what should be done; justice gives each his due; fortitude remains firm in difficulty; temperance moderates sensible desires.",
+            "fr": "La prudence juge correctement ce qu’il faut faire ; la justice rend à chacun ce qui lui est dû ; la force demeure ferme dans la difficulté ; la tempérance modère les désirs sensibles."
+          },
+          "catechismRefs": [
+            255,
+            256,
+            257,
+            258
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-039-P03",
+          "text": {
+            "en": "The cardinal virtues do not compete with grace: in Christian life they are healed and elevated so that moral action serves the supernatural end.",
+            "fr": "Les vertus cardinales ne s’opposent pas à la grâce : dans la vie chrétienne, elles sont guéries et élevées afin que l’action morale serve la fin surnaturelle."
+          },
+          "catechismRefs": [
+            227,
+            228
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-040",
+      "family": "moral-life",
+      "title": {
+        "en": "The First, Second and Third Commandments",
+        "fr": "Les trois premiers Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The first three Commandments order our relationship with God: worship Him alone, honour His holy Name and sanctify the times set apart for divine worship.",
+        "fr": "Les trois premiers Commandements ordonnent notre relation avec Dieu : L’adorer Lui seul, honorer son saint Nom et sanctifier les temps consacrés au culte divin."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-040-P01",
+          "text": {
+            "en": "The First Commandment requires faith, hope, charity and true worship of God, while excluding idolatry, superstition, irreligion and false worship.",
+            "fr": "Le premier Commandement exige la foi, l’espérance, la charité et le vrai culte de Dieu, tout en excluant l’idolâtrie, la superstition, l’irréligion et le faux culte."
+          },
+          "catechismRefs": [
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-040-P02",
+          "text": {
+            "en": "The Second Commandment protects the holiness of God’s Name and governs oaths, blasphemy and vows.",
+            "fr": "Le deuxième Commandement protège la sainteté du Nom de Dieu et régit les serments, le blasphème et les vœux."
+          },
+          "catechismRefs": [
+            179,
+            180,
+            181,
+            182,
+            183
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-040-P03",
+          "text": {
+            "en": "The Third Commandment requires public and interior worship and the sanctification of feast days; Christian worship is bodily and social as well as interior.",
+            "fr": "Le troisième Commandement exige le culte public et intérieur et la sanctification des jours de fête ; le culte chrétien est corporel et social aussi bien qu’intérieur."
+          },
+          "catechismRefs": [
+            184,
+            185,
+            186,
+            187,
+            188,
+            189
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-041",
+      "family": "moral-life",
+      "title": {
+        "en": "The Fourth and Fifth Commandments",
+        "fr": "Les quatrième et cinquième Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        200
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        200
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Fourth and Fifth Commandments protect rightful authority, family duties and human life, while requiring positive love and care for neighbour.",
+        "fr": "Les quatrième et cinquième Commandements protègent l’autorité légitime, les devoirs familiaux et la vie humaine, tout en exigeant un amour positif et le soin du prochain."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-041-P01",
+          "text": {
+            "en": "The Fourth Commandment governs honour and obedience toward parents and other legitimate superiors, always within the higher obedience owed to God.",
+            "fr": "Le quatrième Commandement régit l’honneur et l’obéissance envers les parents et les autres supérieurs légitimes, toujours dans les limites de l’obéissance supérieure due à Dieu."
+          },
+          "catechismRefs": [
+            190,
+            191,
+            192
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-041-P02",
+          "text": {
+            "en": "The Fifth Commandment forbids unjust killing and serious harm to oneself or others, including suicide and other violations of the duty to preserve life.",
+            "fr": "Le cinquième Commandement interdit le meurtre injuste et les graves atteintes à soi-même ou au prochain, y compris le suicide et les autres violations du devoir de préserver la vie."
+          },
+          "catechismRefs": [
+            193,
+            194,
+            195,
+            196,
+            197
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-041-P03",
+          "text": {
+            "en": "The commandment is not merely negative: it requires active concern for the bodily and spiritual good of neighbour.",
+            "fr": "Le commandement n’est pas seulement négatif : il exige un souci actif du bien corporel et spirituel du prochain."
+          },
+          "catechismRefs": [
+            200
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-042",
+      "family": "moral-life",
+      "title": {
+        "en": "The Sixth and Ninth Commandments",
+        "fr": "Les sixième et neuvième Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        201,
+        202,
+        209,
+        210
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.sexual_ethics"
+      ],
+      "note": "Teach the commandments and chastity at doctrinal level; concrete acts remain Sexual Ethics.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        201,
+        202,
+        209,
+        210
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Sixth and Ninth Commandments protect chastity in actions, desires and imagination, ordering sexuality according to the vocation and state of life.",
+        "fr": "Les sixième et neuvième Commandements protègent la chasteté dans les actes, les désirs et l’imagination, en ordonnant la sexualité selon la vocation et l’état de vie."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-042-P01",
+          "text": {
+            "en": "The Sixth Commandment forbids deliberate impure acts and requires chastity appropriate to one’s state of life.",
+            "fr": "Le sixième Commandement interdit les actes impurs délibérés et exige la chasteté propre à l’état de vie de chacun."
+          },
+          "catechismRefs": [
+            201,
+            202
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-042-P02",
+          "text": {
+            "en": "The Ninth Commandment extends moral responsibility to deliberately entertained impure desires and requires purity of heart.",
+            "fr": "Le neuvième Commandement étend la responsabilité morale aux désirs impurs volontairement entretenus et exige la pureté du cœur."
+          },
+          "catechismRefs": [
+            209,
+            210
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-042-P03",
+          "text": {
+            "en": "This lesson gives the doctrinal baseline only; concrete questions about dating, sexual acts, pornography, marriage and culpability belong to Sexual Ethics.",
+            "fr": "Cette leçon donne seulement la base doctrinale ; les questions concrètes sur les fréquentations, les actes sexuels, la pornographie, le mariage et la culpabilité relèvent de la Morale sexuelle."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-043",
+      "family": "moral-life",
+      "title": {
+        "en": "The Seventh and Tenth Commandments",
+        "fr": "Les septième et dixième Commandements"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        203,
+        204,
+        205,
+        211,
+        212
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        203,
+        204,
+        205,
+        211,
+        212
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Seventh and Tenth Commandments govern justice concerning material goods and the desires that can lead to injustice.",
+        "fr": "Les septième et dixième Commandements régissent la justice concernant les biens matériels et les désirs qui peuvent conduire à l’injustice."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-043-P01",
+          "text": {
+            "en": "The Seventh Commandment forbids unjust taking, retention or damage of another’s goods and requires justice in economic relations.",
+            "fr": "Le septième Commandement interdit de prendre, retenir ou endommager injustement les biens d’autrui et exige la justice dans les relations économiques."
+          },
+          "catechismRefs": [
+            203,
+            204
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-043-P02",
+          "text": {
+            "en": "Restitution is not optional where injustice has deprived another of what is due; forgiveness ordinarily requires a sincere will to repair the harm when possible.",
+            "fr": "La restitution n’est pas facultative lorsqu’une injustice a privé autrui de ce qui lui est dû ; le pardon exige ordinairement une volonté sincère de réparer le tort lorsque cela est possible."
+          },
+          "catechismRefs": [
+            205
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-043-P03",
+          "text": {
+            "en": "The Tenth Commandment governs disordered desire for another’s goods and trains the heart in justice, gratitude and freedom from envy.",
+            "fr": "Le dixième Commandement régit le désir désordonné des biens d’autrui et forme le cœur à la justice, à la gratitude et à la liberté vis-à-vis de l’envie."
+          },
+          "catechismRefs": [
+            211,
+            212
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-044",
+      "family": "moral-life",
+      "title": {
+        "en": "The Eighth Commandment",
+        "fr": "Le huitième Commandement"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        206,
+        207,
+        208
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        206,
+        207,
+        208
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Eighth Commandment protects truth, reputation and trust in human society.",
+        "fr": "Le huitième Commandement protège la vérité, la réputation et la confiance dans la société humaine."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-044-P01",
+          "text": {
+            "en": "The commandment forbids false witness, lying, calumny, detraction and other unjust injuries against truth and a neighbour’s good name.",
+            "fr": "Le commandement interdit le faux témoignage, le mensonge, la calomnie, la médisance et les autres atteintes injustes à la vérité et à la bonne réputation du prochain."
+          },
+          "catechismRefs": [
+            206
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-044-P02",
+          "text": {
+            "en": "It positively requires truthfulness and respect for the legitimate reputation of others.",
+            "fr": "Il exige positivement la véracité et le respect de la réputation légitime d’autrui."
+          },
+          "catechismRefs": [
+            207
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-044-P03",
+          "text": {
+            "en": "When speech has unjustly harmed another’s reputation, justice can require retraction, correction or other proportionate repair.",
+            "fr": "Lorsque la parole a injustement nui à la réputation d’autrui, la justice peut exiger une rétractation, une correction ou une autre réparation proportionnée."
+          },
+          "catechismRefs": [
+            208
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-045",
+      "family": "moral-life",
+      "title": {
+        "en": "Scandal, cooperation and occasions of sin",
+        "fr": "Scandale, coopération et occasions de péché"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        135,
+        140,
+        141,
+        142,
+        143,
+        148,
+        198,
+        199,
+        370,
+        371
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.sexual_ethics"
+      ],
+      "note": "Teach moral grammar; concrete case analysis remains with the relevant practical owner.",
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "Scandal and occasions of sin are direct; cooperation with evil is not developed and requires supplementary moral-theology sources.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "supplementNeeded": "Scandal and occasions of sin are directly covered; formal/material cooperation with evil needs deeper moral-theology sources.",
+      "primaryCatechismRefs": [
+        198,
+        199,
+        370,
+        371
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Christian prudence must consider not only one’s own act but also scandal, cooperation with another’s wrongdoing and situations that make serious sin more likely.",
+        "fr": "La prudence chrétienne doit considérer non seulement son propre acte, mais aussi le scandale, la coopération au mal d’autrui et les situations qui rendent le péché grave plus probable."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-045-P01",
+          "text": {
+            "en": "Scandal is conduct that becomes an occasion of spiritual harm to another; causing serious scandal can itself be gravely sinful.",
+            "fr": "Le scandale est une conduite qui devient pour autrui une occasion de dommage spirituel ; provoquer un scandale grave peut lui-même constituer un péché grave."
+          },
+          "catechismRefs": [
+            198,
+            199
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-045-P02",
+          "text": {
+            "en": "A near occasion of sin is a situation that creates serious danger of falling; genuine purpose of amendment includes willingness to avoid such occasions where reasonably possible.",
+            "fr": "Une occasion prochaine de péché est une situation qui crée un danger sérieux de chute ; un véritable ferme propos comprend la volonté d’éviter de telles occasions lorsqu’il est raisonnablement possible de le faire."
+          },
+          "catechismRefs": [
+            369,
+            370,
+            371
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-045-P03",
+          "text": {
+            "en": "Cooperation with another’s wrongdoing must be judged according to intention, causal contribution, proximity and proportionate reason; this part requires fuller traditional moral-theology sourcing before publication.",
+            "fr": "La coopération au mal d’autrui doit être jugée selon l’intention, la contribution causale, la proximité et la raison proportionnée ; cette partie exige une source plus complète de théologie morale traditionnelle avant publication."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-046",
+      "family": "moral-life",
+      "title": {
+        "en": "The Precepts of the Church",
+        "fr": "Les Préceptes de l’Église"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CURRICULUM_ONLY",
+      "catechismRefs": [
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "primaryCatechismRefs": [
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "today.calendar",
+        "learn.rites.matrimony",
+        "pray.confession"
+      ],
+      "note": "Teach the Church's authority to establish disciplinary precepts and their enduring principles; explicitly distinguish the 1912 fasting, abstinence and marriage-season discipline from current law.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Church has authority to establish disciplinary precepts for the Christian life; their enduring principles must be distinguished from disciplinary details that can change.",
+        "fr": "L’Église a l’autorité d’établir des préceptes disciplinaires pour la vie chrétienne ; leurs principes permanents doivent être distingués des détails disciplinaires susceptibles de changer."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-046-P01",
+          "text": {
+            "en": "The precepts of the Church concretize duties of worship, sacramental life, penance and support of the Church under legitimate ecclesiastical authority.",
+            "fr": "Les préceptes de l’Église concrétisent les devoirs de culte, de vie sacramentelle, de pénitence et de soutien de l’Église sous l’autorité ecclésiastique légitime."
+          },
+          "catechismRefs": [
+            213,
+            214,
+            215,
+            216,
+            217,
+            223,
+            224,
+            225
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-046-P02",
+          "text": {
+            "en": "Fasting and abstinence express the Church’s authority to prescribe communal penance, but the detailed ages, days and forms found in the 1912 catechism belong to historical discipline and must not be presented as current universal law.",
+            "fr": "Le jeûne et l’abstinence expriment l’autorité de l’Église pour prescrire une pénitence commune, mais les âges, jours et formes détaillés du catéchisme de 1912 relèvent d’une discipline historique et ne doivent pas être présentés comme le droit universel actuel."
+          },
+          "catechismRefs": [
+            218,
+            219,
+            220,
+            221,
+            222
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-046-P03",
+          "text": {
+            "en": "Likewise, historical restrictions on solemn wedding celebrations in particular seasons illustrate disciplinary application rather than an immutable element of the sacrament itself.",
+            "fr": "De même, les restrictions historiques concernant la célébration solennelle des mariages à certaines périodes illustrent une application disciplinaire plutôt qu’un élément immuable du sacrement lui-même."
+          },
+          "catechismRefs": [
+            226
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-047",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "What prayer is",
+        "fr": "Ce qu’est la prière"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [
+        "learn.spiritual_life"
+      ],
+      "note": "Teach what prayer is; sustained practice belongs to Spiritual Life.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Prayer is the raising of mind and heart to God in adoration, thanksgiving, contrition and petition; it is necessary for the Christian life.",
+        "fr": "La prière est l’élévation de l’esprit et du cœur vers Dieu dans l’adoration, l’action de grâces, la contrition et la demande ; elle est nécessaire à la vie chrétienne."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-047-P01",
+          "text": {
+            "en": "Prayer can be mental or vocal. Both require attention to God and an interior disposition rather than empty repetition.",
+            "fr": "La prière peut être mentale ou vocale. L’une et l’autre exigent l’attention à Dieu et une disposition intérieure plutôt qu’une répétition vide."
+          },
+          "catechismRefs": [
+            414,
+            415,
+            416,
+            417,
+            418
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-047-P02",
+          "text": {
+            "en": "Prayer is necessary because we depend upon God for grace and perseverance; Christ teaches us to ask the Father in His name.",
+            "fr": "La prière est nécessaire parce que nous dépendons de Dieu pour la grâce et la persévérance ; le Christ nous apprend à demander au Père en son nom."
+          },
+          "catechismRefs": [
+            419,
+            420,
+            421
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-047-P03",
+          "text": {
+            "en": "God does not promise to grant every request exactly as imagined; Christian petition must be ordered to what truly serves salvation and the divine will.",
+            "fr": "Dieu ne promet pas d’accorder toute demande exactement comme nous l’imaginons ; la prière chrétienne doit être ordonnée à ce qui sert véritablement le salut et la volonté divine."
+          },
+          "catechismRefs": [
+            422,
+            423
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-048",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The Our Father",
+        "fr": "Le Notre Père"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        424,
+        425,
+        426,
+        427,
+        428
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        424,
+        425,
+        426,
+        427,
+        428
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Our Father, taught by Christ Himself, gives the basic order of Christian desire: God’s glory first, then the goods needed for faithful life and salvation.",
+        "fr": "Le Notre Père, enseigné par le Christ Lui-même, donne l’ordre fondamental du désir chrétien : d’abord la gloire de Dieu, puis les biens nécessaires à une vie fidèle et au salut."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-048-P01",
+          "text": {
+            "en": "The Our Father is the most excellent vocal prayer because Christ Himself gave it to His disciples.",
+            "fr": "Le Notre Père est la prière vocale la plus excellente parce que le Christ Lui-même l’a donnée à ses disciples."
+          },
+          "catechismRefs": [
+            424,
+            425
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-048-P02",
+          "text": {
+            "en": "Its petitions teach us to seek first God’s name, kingdom and will, and then to ask rightly for daily needs, forgiveness, protection from temptation and deliverance from evil.",
+            "fr": "Ses demandes nous apprennent à rechercher d’abord le Nom de Dieu, son règne et sa volonté, puis à demander avec droiture les besoins quotidiens, le pardon, la protection dans la tentation et la délivrance du mal."
+          },
+          "catechismRefs": [
+            426,
+            427
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-048-P03",
+          "text": {
+            "en": "Calling God 'Our Father' expresses both adoption by grace and the fraternal character of Christian prayer: we do not pray as isolated individuals.",
+            "fr": "Appeler Dieu « Notre Père » exprime à la fois l’adoption par la grâce et le caractère fraternel de la prière chrétienne : nous ne prions pas comme des individus isolés."
+          },
+          "catechismRefs": [
+            428
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-049",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The Hail Mary and Marian prayer",
+        "fr": "L’Ave Maria et la prière mariale"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        82,
+        83,
+        138,
+        429,
+        430,
+        431,
+        432,
+        433
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        431,
+        432
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The Hail Mary joins biblical praise of the Blessed Virgin to the Church’s petition for her intercession now and at the hour of death.",
+        "fr": "L’Ave Maria unit la louange biblique de la Très Sainte Vierge à la demande de l’Église pour son intercession maintenant et à l’heure de notre mort."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-049-P01",
+          "text": {
+            "en": "The Hail Mary is the Church’s principal traditional prayer of invocation to the Blessed Virgin.",
+            "fr": "L’Ave Maria est la principale prière traditionnelle de l’Église pour invoquer la Très Sainte Vierge."
+          },
+          "catechismRefs": [
+            431
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-049-P02",
+          "text": {
+            "en": "In it we honour Mary for the gifts of God and ask her maternal intercession, especially for perseverance and a holy death.",
+            "fr": "Nous y honorons Marie pour les dons de Dieu et demandons son intercession maternelle, spécialement pour la persévérance et une sainte mort."
+          },
+          "catechismRefs": [
+            432
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-049-P03",
+          "text": {
+            "en": "Marian prayer is Christ-centred when rightly understood: honour given to Mary recognizes the work of God in her and seeks her prayer, not divine worship.",
+            "fr": "La prière mariale est centrée sur le Christ lorsqu’elle est correctement comprise : l’honneur rendu à Marie reconnaît l’œuvre de Dieu en elle et demande sa prière, sans lui rendre le culte divin."
+          },
+          "catechismRefs": [
+            429,
+            430,
+            433
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-050",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The Blessed Virgin Mary",
+        "fr": "La Très Sainte Vierge Marie"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        82,
+        83,
+        138,
+        429,
+        430,
+        431,
+        432,
+        433
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO",
+        "PIUS9-INEFFABILIS",
+        "PIUS12-MUNIFICENTISSIMUS"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The shorter catechism has Marian material but no complete standalone Mariology lesson; supplement from authoritative Marian doctrine.",
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true,
+      "summary": {
+        "en": "Mary is the Virgin Mother of Jesus Christ, preserved by a singular grace from original sin and honoured above the saints because of her unique relation to the Incarnate Word.",
+        "fr": "Marie est la Vierge Mère de Jésus-Christ, préservée par une grâce singulière du péché originel et honorée au-dessus des saints en raison de sa relation unique avec le Verbe incarné."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-050-P01",
+          "text": {
+            "en": "Jesus Christ was truly born of the Blessed Virgin Mary; Saint Joseph was not His natural father.",
+            "fr": "Jésus-Christ est véritablement né de la Très Sainte Vierge Marie ; saint Joseph n’était pas son père naturel."
+          },
+          "catechismRefs": [
+            82,
+            83
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-050-P02",
+          "text": {
+            "en": "The catechism explicitly identifies Mary as the unique child of Adam preserved from original sin, expressing the doctrine of the Immaculate Conception.",
+            "fr": "Le catéchisme identifie explicitement Marie comme l’unique enfant d’Adam préservé du péché originel, exprimant ainsi la doctrine de l’Immaculée Conception."
+          },
+          "catechismRefs": [
+            138
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "PIUS9-INEFFABILIS"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-050-P03",
+          "text": {
+            "en": "Catholic devotion distinguishes the supreme worship due to God from the singular honour shown to Mary and from the veneration of the saints; her intercession is entirely dependent upon Christ.",
+            "fr": "La dévotion catholique distingue l’adoration suprême due à Dieu de l’honneur singulier rendu à Marie et de la vénération des saints ; son intercession dépend entièrement du Christ."
+          },
+          "catechismRefs": [
+            429,
+            430,
+            433
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM",
+            "SPIRAGO"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-050-P04",
+          "text": {
+            "en": "The Church also teaches as divinely revealed that the Immaculate Mother of God, ever Virgin, after completing the course of her earthly life, was assumed body and soul into heavenly glory.",
+            "fr": "L’Église enseigne aussi comme divinement révélé que l’Immaculée Mère de Dieu, toujours Vierge, après avoir achevé le cours de sa vie terrestre, fut élevée corps et âme dans la gloire céleste."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "PIUS12-MUNIFICENTISSIMUS"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-051",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The saints, relics and sacred images",
+        "fr": "Les saints, les reliques et les images sacrées"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        121,
+        122,
+        123,
+        174,
+        175,
+        176,
+        177,
+        178,
+        429,
+        430,
+        433
+      ],
+      "sourceRefs": [
+        "PX1912"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        429,
+        430,
+        433
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "The saints remain united with the Church in Christ; Catholics honour them, ask their intercession and venerate relics and sacred images without giving creatures the worship owed to God.",
+        "fr": "Les saints demeurent unis à l’Église dans le Christ ; les catholiques les honorent, demandent leur intercession et vénèrent les reliques et les images sacrées sans rendre aux créatures l’adoration due à Dieu."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-051-P01",
+          "text": {
+            "en": "The Communion of Saints includes the Church on earth, the blessed in heaven and the souls in purgatory, united through Christ in spiritual goods.",
+            "fr": "La Communion des saints comprend l’Église sur terre, les bienheureux au ciel et les âmes du purgatoire, unis par le Christ dans les biens spirituels."
+          },
+          "catechismRefs": [
+            121,
+            122,
+            123
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-051-P02",
+          "text": {
+            "en": "Veneration of saints, relics and sacred images is relative honour directed to persons and holy realities connected with God; it is not adoration of created things.",
+            "fr": "La vénération des saints, des reliques et des images sacrées est un honneur relatif dirigé vers les personnes et les réalités saintes liées à Dieu ; elle n’est pas l’adoration de choses créées."
+          },
+          "catechismRefs": [
+            174,
+            175,
+            176,
+            177,
+            178
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-051-P03",
+          "text": {
+            "en": "Asking the saints to pray for us does not rival Christ’s unique mediation, because every grace and every intercession has its efficacy through Him.",
+            "fr": "Demander aux saints de prier pour nous ne rivalise pas avec l’unique médiation du Christ, car toute grâce et toute intercession tirent leur efficacité de Lui."
+          },
+          "catechismRefs": [
+            429,
+            430,
+            433
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-052",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "Sacramentals and blessings",
+        "fr": "Sacramentaux et bénédictions"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        169,
+        174,
+        175,
+        176,
+        177,
+        178
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
+      ],
+      "crossLinks": [],
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "SUPPLEMENT_REQUIRED",
+      "supplementarySourceNeed": "Sacramentals and blessings are not adequately developed in the 433-question corpus; requires supplementary catechetical/liturgical sources.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "supplementNeeded": "Relics, sacred things and vows are present, but a proper doctrine of sacramentals/blessings needs deeper catechetical and liturgical sources.",
+      "primaryCatechismRefs": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "supplementRequired": true,
+      "summary": {
+        "en": "Sacramentals are sacred signs and practices instituted by the Church that dispose Christians toward grace and sanctify circumstances of life without being sacraments.",
+        "fr": "Les sacramentaux sont des signes et pratiques sacrés institués par l’Église qui disposent les chrétiens à la grâce et sanctifient les circonstances de la vie sans être des sacrements."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-052-P01",
+          "text": {
+            "en": "The Sign of the Cross is a fundamental Christian sacramental gesture: it professes the Trinity and the Redemption and should be used with faith rather than mechanically.",
+            "fr": "Le signe de la Croix est un geste sacramental chrétien fondamental : il professe la Trinité et la Rédemption et doit être fait avec foi plutôt que mécaniquement."
+          },
+          "catechismRefs": [
+            32,
+            33,
+            34,
+            35,
+            36
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-052-P02",
+          "text": {
+            "en": "Blessings, sacred objects, relics and images belong to the Church’s wider sacramental life; their value comes from prayer, ecclesial institution and their reference to divine realities.",
+            "fr": "Les bénédictions, objets sacrés, reliques et images appartiennent à la vie sacramentale plus large de l’Église ; leur valeur vient de la prière, de l’institution ecclésiale et de leur référence aux réalités divines."
+          },
+          "catechismRefs": [
+            174,
+            175,
+            176,
+            177,
+            178
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-052-P03",
+          "text": {
+            "en": "Sacramentals must be distinguished from the seven sacraments: they do not confer sacramental grace in the same manner and should never be treated as magical objects.",
+            "fr": "Les sacramentaux doivent être distingués des sept sacrements : ils ne confèrent pas la grâce sacramentelle de la même manière et ne doivent jamais être traités comme des objets magiques."
+          },
+          "catechismRefs": [
+            267,
+            268,
+            269
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-053",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "The liturgical year",
+        "fr": "L’année liturgique"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO",
+        "PIUS12-MEDIATOR"
+      ],
+      "crossLinks": [
+        "today.calendar"
+      ],
+      "note": "Teach meaning of the liturgical year; temporal logic belongs to Calendar.",
+      "sourceResolution": "SOURCE_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The catechism treats Sundays, feasts, fasting and Church precepts, but not the liturgical year as a coherent theology; supplement from liturgical sources.",
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "supplementNeeded": "The short catechism covers feast-day duties and Church precepts, not a full theology/structure of the liturgical year.",
+      "primaryCatechismRefs": [],
+      "supplementRequired": true,
+      "summary": {
+        "en": "The liturgical year orders Christian time around the mysteries of Christ, the feasts of Our Lady and the saints, and the Church’s recurring seasons of worship, penance and joy.",
+        "fr": "L’année liturgique ordonne le temps chrétien autour des mystères du Christ, des fêtes de Notre-Dame et des saints, et des temps récurrents de culte, de pénitence et de joie de l’Église."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-053-P01",
+          "text": {
+            "en": "Christian feast days sanctify time through public worship, especially the Holy Sacrifice of the Mass, and remind the faithful that worship is a communal duty rather than a purely private preference.",
+            "fr": "Les jours de fête chrétiens sanctifient le temps par le culte public, spécialement le Saint Sacrifice de la Messe, et rappellent aux fidèles que le culte est un devoir communautaire et non une simple préférence privée."
+          },
+          "catechismRefs": [
+            184,
+            185,
+            186,
+            189,
+            216,
+            217
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "PIUS12-MEDIATOR"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-053-P02",
+          "text": {
+            "en": "The liturgical year is not merely a record of past events: Christ lives in His Church, and the mysteries of His life are renewed in the Church’s worship as examples of perfection and sources of grace.",
+            "fr": "L’année liturgique n’est pas un simple récit d’événements passés : le Christ vit dans Son Église, et les mystères de Sa vie sont renouvelés dans le culte de l’Église comme exemples de perfection et sources de grâce."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "PIUS12-MEDIATOR",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-053-P03",
+          "text": {
+            "en": "Fasting, abstinence and other seasonal disciplines express this sanctification of time, but specific legal obligations can change and must be distinguished from the enduring spiritual principles.",
+            "fr": "Le jeûne, l’abstinence et les autres disciplines saisonnières expriment cette sanctification du temps, mais les obligations juridiques précises peuvent changer et doivent être distinguées des principes spirituels permanents."
+          },
+          "catechismRefs": [
+            218,
+            219,
+            220,
+            221,
+            222,
+            226
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "PIUS12-MEDIATOR"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-054",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "Growth in holiness and perseverance",
+        "fr": "Croissance dans la sainteté et persévérance"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        15,
+        27,
+        155,
+        227,
+        230,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        277
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "SPIRAGO"
+      ],
+      "crossLinks": [
+        "learn.spiritual_life"
+      ],
+      "note": "Teach positive doctrine of sanctification; practical rule of life belongs to Spiritual Life.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED_PLUS_SUPPLEMENT",
+      "supplementarySourceNeed": "The corpus supplies virtues and means of sanctification, but a coherent lesson on growth/perseverance needs broader ascetical and doctrinal sources.",
+      "catechismCoverage": "PRIMARY_1912_COVERAGE",
+      "primaryCatechismRefs": [
+        250,
+        251,
+        277
+      ],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Growth in holiness is the gradual perfection of grace through prayer, sacraments, virtue, self-denial and faithful fulfilment of one’s duties.",
+        "fr": "La croissance dans la sainteté est la perfection progressive de la grâce par la prière, les sacrements, la vertu, le renoncement à soi et l’accomplissement fidèle de ses devoirs."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-054-P01",
+          "text": {
+            "en": "Holiness is not reserved to a spiritual elite: every Christian is called to live in grace, resist sin and exercise the virtues according to his state of life.",
+            "fr": "La sainteté n’est pas réservée à une élite spirituelle : tout chrétien est appelé à vivre en grâce, à résister au péché et à exercer les vertus selon son état de vie."
+          },
+          "catechismRefs": [
+            15,
+            27,
+            155,
+            227,
+            230
+          ],
+          "sourceRefs": [
+            "PX1912"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-054-P02",
+          "text": {
+            "en": "The theological virtues, moral virtues, evangelical counsels and Beatitudes give an ordered picture of Christian perfection rather than a collection of disconnected devotions.",
+            "fr": "Les vertus théologales, les vertus morales, les conseils évangéliques et les Béatitudes donnent une vision ordonnée de la perfection chrétienne plutôt qu’un ensemble de dévotions sans lien."
+          },
+          "catechismRefs": [
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            263,
+            264,
+            265,
+            266
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "SPIRAGO"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-054-P03",
+          "text": {
+            "en": "Perseverance requires cooperation with grace: preserving sacramental grace, prayer, regular conversion and fidelity in ordinary duties are more fundamental than chasing unusual experiences.",
+            "fr": "La persévérance exige la coopération avec la grâce : conserver la grâce sacramentelle, prier, se convertir régulièrement et être fidèle aux devoirs ordinaires sont plus fondamentaux que la recherche d’expériences extraordinaires."
+          },
+          "catechismRefs": [
+            277
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "SPIRAGO"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    },
+    {
+      "id": "LTF-055",
+      "family": "prayer-christian-life",
+      "title": {
+        "en": "Preparing for death and eternity",
+        "fr": "Se préparer à la mort et à l’éternité"
+      },
+      "owner": "learn-the-faith",
+      "doctrineOwner": "catechism",
+      "status": "CATECHISM_MAPPED",
+      "catechismRefs": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        156,
+        157,
+        158,
+        159,
+        392,
+        393,
+        394,
+        395,
+        396
+      ],
+      "sourceRefs": [
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
+      ],
+      "crossLinks": [
+        "learn.rites.sick",
+        "pray.dying_companion"
+      ],
+      "note": "Teach death/judgment/Christian preparation; urgent practical action remains in dedicated guides.",
+      "sourceResolution": "CATECHISM_MAPPED",
+      "mappingStatus": "CATECHISM_MAPPED",
+      "catechismCoverage": "SUPPORTING_1912_COVERAGE_NEEDS_SUPPLEMENT",
+      "primaryCatechismRefs": [],
+      "supplementRequired": false,
+      "summary": {
+        "en": "Christian preparation for death means living in grace, receiving the Church’s sacramental help, making peace with God and neighbour, and keeping the last things before the mind without despair.",
+        "fr": "La préparation chrétienne à la mort consiste à vivre en grâce, recevoir l’aide sacramentelle de l’Église, se réconcilier avec Dieu et le prochain, et garder les fins dernières présentes à l’esprit sans désespoir."
+      },
+      "teachingPoints": [
+        {
+          "id": "LTF-055-P01",
+          "text": {
+            "en": "Death is followed by particular judgment; Christian readiness therefore begins long before the final illness with a life ordered toward God and repentance from mortal sin.",
+            "fr": "La mort est suivie du jugement particulier ; la préparation chrétienne commence donc bien avant la dernière maladie par une vie ordonnée à Dieu et le repentir du péché mortel."
+          },
+          "catechismRefs": [
+            95,
+            96,
+            97,
+            98,
+            99,
+            156,
+            157,
+            158,
+            159
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-055-P02",
+          "text": {
+            "en": "The Church accompanies serious illness with Confession when possible, Extreme Unction and the Eucharist as Viaticum; these are not merely funeral customs but sacramental helps for the living.",
+            "fr": "L’Église accompagne la maladie grave par la Confession lorsque cela est possible, l’Extrême-Onction et l’Eucharistie comme Viatique ; il ne s’agit pas de simples coutumes funéraires mais d’aides sacramentelles pour les vivants."
+          },
+          "catechismRefs": [
+            392,
+            393,
+            394,
+            395,
+            396
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "TRENT-CATECHISM"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-055-P03",
+          "text": {
+            "en": "Meditation on heaven, purgatory, hell and judgment should produce conversion, hope and seriousness, not morbid curiosity or despair.",
+            "fr": "La méditation sur le ciel, le purgatoire, l’enfer et le jugement doit produire conversion, espérance et sérieux, non curiosité morbide ni désespoir."
+          },
+          "catechismRefs": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            100,
+            101,
+            102,
+            103,
+            104
+          ],
+          "sourceRefs": [
+            "PX1912",
+            "SPIRAGO"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        }
+      ]
+    }
+  ],
+  "ownership_boundaries": [
+    {
+      "content": "positive doctrine",
+      "owner": "learn.faith / catechism"
+    },
+    {
+      "content": "exact catechism Q&A",
+      "owner": "learn.catechism"
+    },
+    {
+      "content": "why believe / answer objection",
+      "owner": "apologetics"
+    },
+    {
+      "content": "Vatican II, SSPX, sedevacantism, liturgical reform controversy",
+      "owner": "church-crisis"
+    },
+    {
+      "content": "Mass ceremonial meaning and how the rite unfolds",
+      "owner": "learn.mass"
+    },
+    {
+      "content": "concrete sexual act or relationship case",
+      "owner": "learn.sexual_ethics"
+    },
+    {
+      "content": "practical spiritual habit and rule of life",
+      "owner": "learn.spiritual_life"
+    },
+    {
+      "content": "actual prayer or devotion execution",
+      "owner": "pray"
+    },
+    {
+      "content": "sacramental preparation and reception",
+      "owner": "sacramental-formation"
+    }
+  ],
+  "catechism_corpus": {
+    "question_count": 433,
+    "question_index": "data/learn/pius-x-1912-question-index.v1.json",
+    "source_chapters": 21,
+    "primary_mapping_status": "ALL_433_QUESTIONS_HAVE_EXACTLY_ONE_PRIMARY_GUIDED_OWNER",
+    "parts": [
+      {
+        "id": "intro",
+        "from": 1,
+        "to": 27
+      },
+      {
+        "id": "faith",
+        "from": 28,
+        "to": 160
+      },
+      {
+        "id": "moral",
+        "from": 161,
+        "to": 266
+      },
+      {
+        "id": "grace",
+        "from": 267,
+        "to": 413
+      },
+      {
+        "id": "prayer",
+        "from": 414,
+        "to": 433
+      }
+    ]
+  },
+  "metrics": {
+    "lesson_count": 54,
+    "content_batches": 3,
+    "source_linked_claims": 176,
+    "unresolved_source_gaps": 0,
+    "public_route_exposed": false
+  },
+  "coverage": {
+    "catechismQuestionCount": 433,
+    "primaryMappedQuestionCount": 433,
+    "unmappedPrimaryQuestions": [],
+    "duplicatePrimaryQuestions": [],
+    "guidedLessonCount": 55,
+    "lessonsWithPrimaryPiusXCoverage": 48,
+    "lessonsWithoutPrimaryPiusXOwner": [
+      "LTF-002",
+      "LTF-016",
+      "LTF-033",
+      "LTF-034",
+      "LTF-050",
+      "LTF-053",
+      "LTF-055"
+    ],
+    "mappingRule": "Each St Pius X question has exactly one primary guided lesson owner. Supporting catechismRefs may overlap where a doctrine informs more than one lesson."
+  },
+  "content_progress": {
+    "draftedLessons": 55,
+    "totalLessons": 55,
+    "teachingPoints": 166,
+    "bilingualSummaries": 55,
+    "bilingualTeachingPoints": 166,
+    "allLessonDraftsPresent": true
+  },
+  "source_registry_file": "data/learn/learn-the-faith-sources.v1.json"
+}
