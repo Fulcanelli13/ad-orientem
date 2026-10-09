@@ -250,13 +250,21 @@ const SHELL_STYLE = `
 .ao-rail-item[data-channel="posture"],.ao-rail-item[data-channel="priest-voice"]{opacity:.88}
 .ao-rail-item[data-active="true"]{opacity:1;color:#edf0e9}
 .ao-rail-item[data-channel="gesture"][data-active="false"],
+.ao-rail-item[data-channel="posture-change"][data-active="false"],
+.ao-rail-item[data-channel="attention"][data-active="false"],
 .ao-rail-item[data-channel="response"][data-active="false"],
 .ao-rail-item[data-channel="priest-action"][data-active="false"],
 .ao-rail-item[data-channel="bell"][data-active="false"]{display:none}
 .ao-rail-item[data-channel="gesture"][data-active="true"],
+.ao-rail-item[data-channel="posture-change"][data-active="true"],
+.ao-rail-item[data-channel="attention"][data-active="true"],
 .ao-rail-item[data-channel="response"][data-active="true"],
 .ao-rail-item[data-channel="priest-action"][data-active="true"],
 .ao-rail-item[data-channel="bell"][data-active="true"]{animation:aoCueIn .42s cubic-bezier(.18,.8,.22,1) both}
+.ao-rail-item[data-channel="attention"][data-active="true"]{border-color:rgba(159,193,168,.38);background:rgba(28,43,33,.91)}
+.ao-rail-item[data-channel="posture"][data-change="true"]{
+  border-color:rgba(214,202,166,.48);box-shadow:0 0 0 2px rgba(214,202,166,.07)
+}
 .ao-rail-item[data-channel="response"][data-active="true"]{border-color:rgba(198,217,232,.48);background:rgba(28,43,54,.94);color:var(--ao-response)}
 .ao-rail-item[data-channel="bell"][data-active="true"]{border-color:rgba(214,202,166,.45);background:rgba(49,43,29,.96)}
 .ao-rail-item[data-major="true"]{width:64px;height:64px;min-height:64px;z-index:8;transform:scale(1.06)}
@@ -797,6 +805,9 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     posture:persist(moment.posture, previous.posture),
     gesture:moment.gesture ?? null,
     response:moment.response ?? null,
+    postureCue:moment.postureCue ?? null,
+    attention:moment.attention ?? null,
+    attentionIconKey:moment.attentionIconKey ?? null,
     bell:moment.bell ?? null,
     cinematic:moment.cinematic ?? null,
     priestPosition:persist(moment.priestPosition, previous.priestPosition),
@@ -809,6 +820,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     priestPositionIconKey:moment.priestPositionIconKey ?? null,
     priestActionIconKey:moment.priestActionIconKey ?? null,
     postureIconKey:moment.postureIconKey ?? null,
+    postureChangeIconKey:moment.postureChangeIconKey ?? null,
     gestureIconKey:moment.gestureIconKey ?? null,
     responseIconKey:moment.responseIconKey ?? null,
     priestVoiceIconKey:moment.priestVoiceIconKey ?? null,
@@ -923,6 +935,8 @@ export function buildReaderShellMarkup(prepared = {}) {
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
     <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
       <div class="ao-rail-item" data-channel="posture" data-active="true"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
+      <div class="ao-rail-item" data-channel="posture-change" data-active="false" aria-label="Change posture"><span class="ao-icon-mask" data-icon-slot="posture-change" hidden></span></div>
+      <div class="ao-rail-item" data-channel="attention" data-active="false" aria-label="Listen to priest"><span class="ao-icon-mask" data-icon-slot="attention" hidden></span></div>
       <div class="ao-rail-item" data-channel="gesture" data-active="false"><span class="ao-icon-mask" data-icon-slot="gesture" hidden></span><span class="ao-rail-copy" data-role="gesture">—</span></div>
       <div class="ao-rail-item" data-channel="response" data-active="false"><span class="ao-icon-mask" data-icon-slot="response" hidden></span><span class="ao-rail-copy" data-role="response">—</span></div>
     </aside>
@@ -1823,6 +1837,12 @@ export function createReaderDomAdapter({
     }
 
     setChannel(root,"posture",current.posture);
+    const postureCueDistinct=Boolean(current.postureCue &&
+      textValue(current.postureCue)!==textValue(current.posture));
+    setChannel(root,"posture-change",postureCueDistinct ? current.postureCue : null);
+    const postureRail=root.querySelector('.ao-rail-left [data-channel="posture"]');
+    if(postureRail)postureRail.dataset.change=String(Boolean(current.postureCue&&!postureCueDistinct));
+    setChannel(root,"attention",current.attention);
     setChannel(root,"priest-action",current.priestAction);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
@@ -1838,6 +1858,8 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
+    applyIcon(root,"posture-change",postureCueDistinct ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
+    applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
     applyIcon(root,"response",current.responseIconKey,iconResolver);
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
