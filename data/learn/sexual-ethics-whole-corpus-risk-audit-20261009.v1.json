@@ -1,0 +1,2685 @@
+{
+  "version": "CSE_WHOLE_CORPUS_RISK_AUDIT_V1",
+  "date": "2026-10-09",
+  "scope": "Complete structural, canonical ownership, bilingual field and registered reference audit of 150 questions. Prior bounded original-passage evidence reconciled by version; NOT newly performed full claim-by-claim original-text certification.",
+  "review_sources": [
+    "data/learn/sexual-ethics-95-short-answer-source-pass-20261009.v2.json",
+    "data/learn/sexual-ethics-short-answer-passage-confirmations-20261009.v1.json",
+    "data/learn/sexual-ethics-remaining-21-passage-checks-20261009.v1.json",
+    "data/learn/sexual-ethics-certification-evidence.v2.json",
+    "data/learn/sexual-ethics-certification-audit.v1.json"
+  ],
+  "summary": {
+    "canonical_questions": 150,
+    "canonical_dossier_owners": 50,
+    "public_questions": 147,
+    "archived_questions": 3,
+    "principal_debates": 55,
+    "principal_debate_stages": 440,
+    "short_questions": 95,
+    "short_bounded_original_paragraph_checks_reconciled": 95,
+    "complete_claim_by_claim_original_passage_certifications": 0,
+    "independent_theological_approvals": 0,
+    "independent_french_approvals": 0,
+    "missing_bilingual_question_or_answer": 0,
+    "missing_registered_source_refs": 0,
+    "unknown_source_ids": 0,
+    "question_ids_without_canonical_owner": 0,
+    "overlapping_canonical_question_owners": 0,
+    "headship_subdebates_after_owner_dedup": 6,
+    "headship_topics_transferred_to_existing_owners": {
+      "MAR-06": "CSE054",
+      "MAR-07": "CSE032"
+    }
+  },
+  "findings": [
+    {
+      "severity": "P1",
+      "id": "CSE-STRUCT-01",
+      "issue": "A separate Ephesians5 review test still asserted the obsolete bespoke five-stage schema after the live app migrated to the standard eight stages.",
+      "resolution": "Test updated to enforce shared stage labels, bilingual evidence and current canonical owner mapping."
+    },
+    {
+      "severity": "P1",
+      "id": "CSE-OWNER-02",
+      "issue": "CSE045 repeated substantially the same engagement and marital-coercion discussions already owned by CSE032 and CSE054.",
+      "resolution": "Remove duplicated MAR-06 and MAR-07 subdebates; link from CSE045 to the existing question owners, keep their original public IDs and CSE054 full debate."
+    },
+    {
+      "severity": "P1",
+      "id": "CSE-SEARCH-03",
+      "issue": "CSE045 search still indexed deleted 5-stage property names and missed most current eight-stage text.",
+      "resolution": "Search now indexes Object.keys(DEBATE_LABELS) instead of obsolete properties."
+    },
+    {
+      "severity": "P2",
+      "id": "CSE-LANGUAGE-04",
+      "issue": "A few learner-visible CSE054 and practical-sexual-ethics phrases spoke about how to write an answer instead of stating the Catholic argument.",
+      "resolution": "Two concrete bilingual editorial-text repairs in existing principal debate fields."
+    },
+    {
+      "severity": "P1",
+      "id": "CSE-EVIDENCE-05",
+      "issue": "The older short-answer source ledger reported 23 unchecked cases, but two confirmations and a later 21-case bounded source pass resolved that count. This did not certify full question claims.",
+      "resolution": "Report distinguishes 95 bounded original paragraph scope checks from zero fully certified answers; leaves independent French/theological approval open."
+    },
+    {
+      "severity": "P1",
+      "id": "CSE-THEOLOGY-06",
+      "issue": "The headship / mutual submission texts do not use identical language: Casti Connubii §§26–29 asserts domestic primacy; Mulieris Dignitatem §24 states mutual subjection. The precise reconciliation and concrete authority claims need independent theological assessment.",
+      "resolution": "No invented theological signoff. Preserve primary-source citations, challenge both sides accurately, mark claim-level certification outstanding."
+    },
+    {
+      "severity": "P1",
+      "id": "CSE-ATTRIBUTION-07",
+      "issue": "Existing 55-debate certification audit identifies partial original-proponent attribution risks and records zero full stage-by-stage primary passage certification.",
+      "resolution": "Retain original-opponent validation gates. Do not infer original author endorsement merely from source presence."
+    }
+  ],
+  "cases": [
+    {
+      "id": "CSE001",
+      "canonical_owner": "SEX-CORE-01",
+      "section": "foundations",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SCR",
+        "TRENT6"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE002",
+      "canonical_owner": "SEX-CORE-01",
+      "section": "foundations",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SCR",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE003",
+      "canonical_owner": "SEX-CORE-01",
+      "section": "foundations",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST94",
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE004",
+      "canonical_owner": "SEX-CORE-02",
+      "section": "foundations",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST94"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE005",
+      "canonical_owner": "SEX-CORE-02",
+      "section": "foundations",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST94"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE006",
+      "canonical_owner": "SEX-CORE-02",
+      "section": "foundations",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST18",
+        "ST94",
+        "VS",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE007",
+      "canonical_owner": "SEX-CORE-02",
+      "section": "foundations",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST18",
+        "VS",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE008",
+      "canonical_owner": "SEX-CORE-02",
+      "section": "foundations",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "ST18",
+        "VS"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE009",
+      "canonical_owner": "SEX-CORE-02",
+      "section": "foundations",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST18",
+        "VS"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE010",
+      "canonical_owner": "SEX-CORE-02",
+      "section": "foundations",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "VS"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE011",
+      "canonical_owner": "SEX-CORE-03",
+      "section": "authority",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE012",
+      "canonical_owner": "SEX-CORE-03",
+      "section": "authority",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE013",
+      "canonical_owner": "SEX-CORE-03",
+      "section": "authority",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SCR",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE014",
+      "canonical_owner": "SEX-CORE-03",
+      "section": "authority",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "TRENT6",
+        "CASTI",
+        "VS",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE015",
+      "canonical_owner": "SEX-CORE-03",
+      "section": "authority",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "VS"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE016",
+      "canonical_owner": "SEX-CORE-04",
+      "section": "authority",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST19",
+        "VS",
+        "DONUMVER",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE017",
+      "canonical_owner": "SEX-CORE-04",
+      "section": "authority",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST76",
+        "VS"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE018",
+      "canonical_owner": "SEX-CORE-04",
+      "section": "authority",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DONUMVER"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE019",
+      "canonical_owner": "SEX-CORE-04",
+      "section": "authority",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "PIUSX",
+        "ST76",
+        "ST77"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE020",
+      "canonical_owner": "SEX-CORE-04",
+      "section": "authority",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST77",
+        "ST78",
+        "CCC",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE021",
+      "canonical_owner": "SEX-CORE-05",
+      "section": "chastity",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST151",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE022",
+      "canonical_owner": "SEX-CORE-05",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST151",
+        "ST77"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE023",
+      "canonical_owner": "SEX-CORE-05",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST77",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE024",
+      "canonical_owner": "SEX-CORE-05",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "ST77"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE025",
+      "canonical_owner": "SEX-CORE-05",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST77",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE026",
+      "canonical_owner": "SEX-CORE-05",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST6",
+        "ST77",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE027",
+      "canonical_owner": "SEX-CORE-05",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "ST77",
+        "ST154"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE028",
+      "canonical_owner": "SEX-CORE-06",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "ST152",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE029",
+      "canonical_owner": "SEX-CORE-06",
+      "section": "chastity",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SACRA",
+        "PRIEST_WELLBEING2016"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE030",
+      "canonical_owner": "SEX-CORE-07",
+      "section": "chastity",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST169",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE031",
+      "canonical_owner": "SEX-CORE-08",
+      "section": "courtship",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST154",
+        "CASTI",
+        "CIC",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE032",
+      "canonical_owner": "SEX-CORE-08",
+      "section": "courtship",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI",
+        "CIC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE033",
+      "canonical_owner": "SEX-CORE-08",
+      "section": "courtship",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST154"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE034",
+      "canonical_owner": "SEX-CORE-08",
+      "section": "courtship",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST154"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE035",
+      "canonical_owner": "SEX-CORE-09",
+      "section": "courtship",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST154",
+        "ST43"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE036",
+      "canonical_owner": "SEX-CORE-09",
+      "section": "courtship",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST43",
+        "ST154"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE037",
+      "canonical_owner": "SEX-CORE-10",
+      "section": "courtship",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SACRA",
+        "ST43"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE038",
+      "canonical_owner": "SEX-CORE-10",
+      "section": "courtship",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "ST151",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE039",
+      "canonical_owner": "SEX-CORE-10",
+      "section": "courtship",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "CASTI",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE040",
+      "canonical_owner": "SEX-CORE-11",
+      "section": "courtship",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "PH",
+        "ST154",
+        "SCR"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE041",
+      "canonical_owner": "SEX-CORE-12",
+      "section": "marriage",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI",
+        "CIC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE042",
+      "canonical_owner": "SEX-CORE-12",
+      "section": "marriage",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE043",
+      "canonical_owner": "SEX-CORE-12",
+      "section": "marriage",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "CIC",
+        "CDF2003",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE044",
+      "canonical_owner": "SEX-CORE-12",
+      "section": "marriage",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "CIC",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE045",
+      "canonical_owner": "SEX-CORE-12",
+      "section": "marriage",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCRIPT_EPH5",
+        "CASTI",
+        "MULIERIS",
+        "CIC"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE046",
+      "canonical_owner": "SEX-CORE-12",
+      "section": "marriage",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE047",
+      "canonical_owner": "SEX-CORE-13",
+      "section": "marriage",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE048",
+      "canonical_owner": "SEX-CORE-13",
+      "section": "marriage",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST18",
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE049",
+      "canonical_owner": "SEX-CORE-14",
+      "section": "marriage",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "CASTI",
+        "CIC",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE050",
+      "canonical_owner": "SEX-CORE-14",
+      "section": "marriage",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "CASTI",
+        "CIC",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE051",
+      "canonical_owner": "SEX-CORE-15",
+      "section": "marital",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE052",
+      "canonical_owner": "SEX-CORE-15",
+      "section": "marital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST64SUP",
+        "CASTI",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE053",
+      "canonical_owner": "SEX-CORE-15",
+      "section": "marital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST64SUP",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE054",
+      "canonical_owner": "SEX-CORE-15",
+      "section": "marital",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST64SUP",
+        "HV",
+        "CIC",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE055",
+      "canonical_owner": "SEX-CORE-16",
+      "section": "marital",
+      "public": false,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "MCHUGH",
+        "CASTI",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE056",
+      "canonical_owner": "SEX-CORE-16",
+      "section": "marital",
+      "public": false,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "SCR",
+        "CASTI",
+        "TRENT6"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE057",
+      "canonical_owner": "SEX-CORE-16",
+      "section": "marital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE058",
+      "canonical_owner": "SEX-CORE-16",
+      "section": "marital",
+      "public": false,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST154",
+        "MCHUGH",
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE059",
+      "canonical_owner": "SEX-CORE-15",
+      "section": "marital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST64SUP",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE060",
+      "canonical_owner": "SEX-CORE-13",
+      "section": "marital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI",
+        "HV",
+        "CIC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE061",
+      "canonical_owner": "SEX-CORE-17",
+      "section": "contraception",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "MIDWIVES",
+        "HV",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE062",
+      "canonical_owner": "SEX-CORE-18",
+      "section": "contraception",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "MIDWIVES",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE063",
+      "canonical_owner": "SEX-CORE-18",
+      "section": "contraception",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "MIDWIVES",
+        "HV",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE064",
+      "canonical_owner": "SEX-CORE-18",
+      "section": "contraception",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "MIDWIVES",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE065",
+      "canonical_owner": "SEX-CORE-18",
+      "section": "contraception",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "MIDWIVES",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE066",
+      "canonical_owner": "SEX-CORE-18",
+      "section": "contraception",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE067",
+      "canonical_owner": "SEX-CORE-18",
+      "section": "contraception",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "MIDWIVES",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE068",
+      "canonical_owner": "SEX-CORE-19",
+      "section": "contraception",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "MIDWIVES",
+        "HEMATOLOGY",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE069",
+      "canonical_owner": "SEX-CORE-19",
+      "section": "contraception",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "HEMATOLOGY",
+        "HV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE070",
+      "canonical_owner": "SEX-CORE-19",
+      "section": "contraception",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "HV",
+        "ST18",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE071",
+      "canonical_owner": "SEX-CORE-20",
+      "section": "pornography",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST154",
+        "PH",
+        "CCC",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE072",
+      "canonical_owner": "SEX-CORE-20",
+      "section": "pornography",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST78",
+        "CCC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE073",
+      "canonical_owner": "SEX-CORE-20",
+      "section": "pornography",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "PH",
+        "CCC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE074",
+      "canonical_owner": "SEX-CORE-21",
+      "section": "pornography",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CCC",
+        "ST151",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE075",
+      "canonical_owner": "SEX-CORE-21",
+      "section": "pornography",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CCC",
+        "ST151"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE076",
+      "canonical_owner": "SEX-CORE-21",
+      "section": "pornography",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CCC",
+        "ST18",
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE077",
+      "canonical_owner": "SEX-CORE-21",
+      "section": "pornography",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST151",
+        "CCC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE078",
+      "canonical_owner": "SEX-CORE-21",
+      "section": "pornography",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SACRA",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE079",
+      "canonical_owner": "SEX-CORE-21",
+      "section": "pornography",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST18",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE080",
+      "canonical_owner": "SEX-CORE-21",
+      "section": "pornography",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SACRA",
+        "CCC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE081",
+      "canonical_owner": "SEX-CORE-22",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "HOMO86",
+        "CCC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE082",
+      "canonical_owner": "SEX-CORE-22",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "HOMO86",
+        "ST6"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE083",
+      "canonical_owner": "SEX-CORE-23",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "PH",
+        "CDF2003",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE084",
+      "canonical_owner": "SEX-CORE-23",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CIC",
+        "CDF2003",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE085",
+      "canonical_owner": "SEX-CORE-23",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "PH",
+        "HOMO86"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE086",
+      "canonical_owner": "SEX-CORE-23",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "HOMO86",
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE087",
+      "canonical_owner": "SEX-CORE-23",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "HOMO86",
+        "DI2024",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE088",
+      "canonical_owner": "SEX-CORE-23",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "APA_LGB_POLICY",
+        "HOMO86"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE089",
+      "canonical_owner": "SEX-CORE-23",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CDF2003"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE090",
+      "canonical_owner": "SEX-CORE-24",
+      "section": "homosexuality",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "HOMO86",
+        "CCC"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE091",
+      "canonical_owner": "SEX-CORE-25",
+      "section": "gender",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SCR",
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE092",
+      "canonical_owner": "SEX-CORE-25",
+      "section": "gender",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE093",
+      "canonical_owner": "SEX-CORE-25",
+      "section": "gender",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE094",
+      "canonical_owner": "SEX-CORE-26",
+      "section": "gender",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "APA_TRANSCARE",
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE095",
+      "canonical_owner": "SEX-CORE-26",
+      "section": "gender",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE096",
+      "canonical_owner": "SEX-CORE-26",
+      "section": "gender",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "WPATH8_FULL",
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE097",
+      "canonical_owner": "SEX-CORE-26",
+      "section": "gender",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE098",
+      "canonical_owner": "SEX-CORE-26",
+      "section": "gender",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DI2024",
+        "HOMO86"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE099",
+      "canonical_owner": "SEX-CORE-24",
+      "section": "gender",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "HOMO86",
+        "DI2024"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE100",
+      "canonical_owner": "SEX-CORE-27",
+      "section": "gender",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DI2024",
+        "DIVINI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE101",
+      "canonical_owner": "SEX-CORE-28",
+      "section": "reproduction",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "DONUMV",
+        "DP",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE102",
+      "canonical_owner": "SEX-CORE-28",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DONUMV",
+        "DP"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE103",
+      "canonical_owner": "SEX-CORE-28",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DONUMV",
+        "DP"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE104",
+      "canonical_owner": "SEX-CORE-28",
+      "section": "reproduction",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DONUMV",
+        "DI2024",
+        "ASRM_GC"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE105",
+      "canonical_owner": "SEX-CORE-29",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DP"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE106",
+      "canonical_owner": "SEX-CORE-30",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DP"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE107",
+      "canonical_owner": "SEX-CORE-30",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "DP",
+        "DONUMV"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE108",
+      "canonical_owner": "SEX-CORE-30",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "PH",
+        "DONUMV",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE109",
+      "canonical_owner": "SEX-CORE-29",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DONUMV",
+        "DP"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE110",
+      "canonical_owner": "SEX-CORE-29",
+      "section": "reproduction",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DP"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE111",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "ST154"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE112",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST6",
+        "ASSAULT2024"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE113",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "ST151",
+        "ASSAULT2024"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE114",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "ST77"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE115",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST18",
+        "ST6"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE116",
+      "canonical_owner": "SEX-CORE-32",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST154"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE117",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "ST76"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE118",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST18",
+        "ST6"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE119",
+      "canonical_owner": "SEX-CORE-33",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "PIUSX",
+        "CIC_PENANCE"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE120",
+      "canonical_owner": "SEX-CORE-31",
+      "section": "violence",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "RAINN_CONSENT101"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE121",
+      "canonical_owner": "SEX-CORE-34",
+      "section": "family-digital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DIVINI",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE122",
+      "canonical_owner": "SEX-CORE-34",
+      "section": "family-digital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "DIVINI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE123",
+      "canonical_owner": "SEX-CORE-35",
+      "section": "family-digital",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "ABORT74"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE124",
+      "canonical_owner": "SEX-CORE-35",
+      "section": "family-digital",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "ABORT74",
+        "ABORTCLAR"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE125",
+      "canonical_owner": "SEX-CORE-35",
+      "section": "family-digital",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "CASTI",
+        "ABORTCLAR",
+        "NCBC_ECTOPIC"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE126",
+      "canonical_owner": "SEX-CORE-36",
+      "section": "family-digital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CCC",
+        "DIVINI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE127",
+      "canonical_owner": "SEX-CORE-37",
+      "section": "family-digital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST151",
+        "CCC",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE128",
+      "canonical_owner": "SEX-CORE-37",
+      "section": "family-digital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST18",
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE129",
+      "canonical_owner": "SEX-CORE-38",
+      "section": "family-digital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CASTI",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE130",
+      "canonical_owner": "SEX-CORE-38",
+      "section": "family-digital",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST151",
+        "ST18",
+        "CASTI"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE131",
+      "canonical_owner": "SEX-CORE-39",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CIC_PENANCE",
+        "CIC_PENANCE_MINISTER",
+        "PIUSX",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE132",
+      "canonical_owner": "SEX-CORE-39",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CIC_PENANCE",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE133",
+      "canonical_owner": "SEX-CORE-39",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CIC_PENANCE",
+        "CIC_PENANCE_MINISTER",
+        "PIUSX",
+        "ST18"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE134",
+      "canonical_owner": "SEX-CORE-39",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "PIUSX",
+        "CIC_PENANCE"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE135",
+      "canonical_owner": "SEX-CORE-39",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CIC_PENANCE",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE136",
+      "canonical_owner": "SEX-CORE-40",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST6",
+        "ST77",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE137",
+      "canonical_owner": "SEX-CORE-40",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST6",
+        "ST77",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE138",
+      "canonical_owner": "SEX-CORE-41",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SACRA",
+        "PIUSX"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE139",
+      "canonical_owner": "SEX-CORE-42",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "CIC_EUCHARIST",
+        "PIUSX",
+        "ST76"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE140",
+      "canonical_owner": "SEX-CORE-41",
+      "section": "confession",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "SACRA",
+        "ST151",
+        "CIC_EUCHARIST"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE141",
+      "canonical_owner": "SEX-CORE-43",
+      "section": "popular",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "FRANCIS_SPADARO2013",
+        "ST151",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE142",
+      "canonical_owner": "SEX-CORE-43",
+      "section": "popular",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST151",
+        "SACRA",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE143",
+      "canonical_owner": "SEX-CORE-43",
+      "section": "popular",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "HOMO86",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE144",
+      "canonical_owner": "SEX-CORE-44",
+      "section": "popular",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "VS",
+        "HOMO86"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE145",
+      "canonical_owner": "SEX-CORE-45",
+      "section": "popular",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "ST18",
+        "VS",
+        "LBM"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE146",
+      "canonical_owner": "SEX-CORE-46",
+      "section": "popular",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "PH",
+        "ST76"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE147",
+      "canonical_owner": "SEX-CORE-47",
+      "section": "popular",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST94",
+        "VS"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE148",
+      "canonical_owner": "SEX-CORE-48",
+      "section": "popular",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST18",
+        "HOMO86"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE149",
+      "canonical_owner": "SEX-CORE-49",
+      "section": "popular",
+      "public": true,
+      "kind": "PRINCIPAL_EIGHT_STAGE_DEBATE",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": true,
+      "source_ids": [
+        "APA_LGB_POLICY",
+        "ST94",
+        "HOMO86",
+        "DP"
+      ],
+      "stage_or_source_scope_review": "EIGHT_STAGE_SEMANTIC_ASSESSMENT_PARTIAL_ORIGINAL_PASSAGES",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    },
+    {
+      "id": "CSE150",
+      "canonical_owner": "SEX-CORE-50",
+      "section": "popular",
+      "public": true,
+      "kind": "SHORT_STANDARD_OR_EXPANDED",
+      "en_fr_question_and_answer_present": true,
+      "has_bilingual_detail": false,
+      "source_ids": [
+        "ST151",
+        "CASTI",
+        "SACRA"
+      ],
+      "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
+      "full_claim_by_claim_certified": false,
+      "independent_fr_signed": false,
+      "independent_theology_signed": false
+    }
+  ]
+}

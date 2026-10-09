@@ -2,54 +2,64 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CSE_MARRIAGE_AUTHORITY_DEBATES as cases,CSE_MARRIAGE_AUTHORITY_SOURCES as sources} from "../src/learn/sexual-ethics-data/marriage-authority-debates.js";
 import {CSE_QUESTIONS,CSE_QUESTION_MAP,CSE_PUBLIC_QUESTIONS,CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/index.js";
+import {CSE_DEBATE_FIELDS,CSE_DEBATE_MAP} from "../src/learn/sexual-ethics-data/debates.js";
+
 const runtime=readFileSync("src/learn/sexual-ethics.js","utf8");
-assert.equal(CSE_QUESTIONS.length,150,"No extra duplicate public question");
-assert.equal(CSE_PUBLIC_QUESTIONS.length,147);
-assert.equal(cases.length,8);
-assert.deepEqual(cases.map(d=>d.id),Array.from({length:8},(_,i)=>"MAR-0"+(i+1)));
+assert.equal(CSE_QUESTIONS.length,150,"No new or missing canonical questions");
+assert.equal(CSE_PUBLIC_QUESTIONS.length,147,"Three archived questions remain out of public navigation");
+assert.deepEqual(cases.map(d=>d.id),["MAR-01","MAR-02","MAR-03","MAR-04","MAR-05","MAR-08"],"Marriage headship keeps only independently owned issues");
+assert.equal(CSE_DEBATE_FIELDS.length,8,"Reuse the shared eight-stage debate model");
 const owner=CSE_QUESTION_MAP.CSE045;
 assert.match(owner.q[0],/headship and submission/);
 assert.match(owner.q[1],/soumission/);
-assert.match(owner.a[0],/primacy/);
-assert.match(owner.a[1],/primauté/);
-assert.ok(owner.refs.some(([id,loc])=>id==="MULIERIS"&&loc==="§24"));
-assert.ok(owner.refs.some(([id])=>id==="CASTI"));
-assert.ok(owner.refs.some(([id])=>id==="SCRIPT_EPH5"));
-assert.ok(owner.refs.some(([id,loc])=>id==="CIC"&&loc.includes("1135")));
+for(const id of ["MULIERIS","CASTI","SCRIPT_EPH5"])assert.ok(owner.refs.some(r=>r[0]===id));
 assert.match(CSE_SOURCE_MAP.MULIERIS.canonical_url,/vatican.va.+mulieris-dignitatem.html$/);
 assert.match(CSE_SOURCE_MAP.MULIERIS.canonical_url_fr,/\/fr\/apost_letters/);
-assert.match(runtime,/function marriageDisputationsHtml/);
-assert.match(runtime,/\.\.\.d\.traditionalAssessment/,"Traditional Catholic responses must be searchable");
-assert.match(runtime,/isFr\(win\)&&source\[2\]\?source\[2\]:source\[1\]/,"Sources must honor selected language");
+
+const render=runtime.slice(runtime.indexOf("function marriageDisputationsHtml"),runtime.indexOf("function relatedMarriageQuestionsHtml"));
+assert.match(render,/Object\.entries\(DEBATE_LABELS\)/,"Same headings and stages as every other debate");
+assert.match(render,/aoCSEInlineRef/,"Same source-chip visual surface");
+assert.match(render,/isFr\(win\)&&source\[2\]\?source\[2\]:source\[1\]/,"Official source links should follow selected language");
+assert.doesNotMatch(render,/traditionalAssessment|rejoinder|finding|research-stage|methodological/);
+assert.match(runtime,/function relatedMarriageQuestionsHtml/);
+assert.match(runtime,/\["CSE032"/);
+assert.match(runtime,/\["CSE054"/);
+assert.match(runtime,/Object\.keys\(DEBATE_LABELS\)\.flatMap\(field=>d\[field\]\|\|\[\]\)/,"Full eight-stage search coverage");
+assert.ok(CSE_QUESTION_MAP.CSE032&&CSE_QUESTION_MAP.CSE054);
+assert.ok(CSE_DEBATE_MAP.CSE054,"Marital coercion keeps the existing standard debate owner");
+
 for(const id of ["CASTI","ARCANUM","MULIERIS","HV","LIBERTAS","AL"]){
- assert.equal(sources[id].length,3,id+" missing language-selectable official originals");
+ assert.equal(sources[id].length,3,id+" must include EN and FR official original");
  assert.match(sources[id][1],/^https:\/\/www\.vatican\.va\//);
  assert.match(sources[id][2],/^https:\/\/www\.vatican\.va\//);
  assert.notEqual(sources[id][1],sources[id][2]);
 }
 assert.match(sources.AL[1],/_en\.pdf$/);
 assert.match(sources.AL[2],/\/fr\/apost_exhortations/);
-let citationFields=0;
+let stageCount=0;
 for(const d of cases){
- for(const field of ["question","opposition","reply","rejoinder","finding","traditionalAssessment"]){
-  assert.equal(d[field].length,2,d.id+" "+field+" not bilingual");
-  assert.ok(d[field].every(x=>x.length>(field==="question"?18:75)),d.id+" "+field+" unusually short");
+ assert.equal(d.question.length,2,d.id+" bilingual question");
+ let wordsTotal=0;
+ for(const field of CSE_DEBATE_FIELDS){
+  assert.equal(d[field].length,2,d.id+" "+field+" bilingual");
+  for(const [lang,passage] of d[field].entries()){
+   const words=passage.trim().split(/\s+/).length;
+   assert.ok(words>=7&&words<=70,d.id+" "+field+" "+lang+" lacks standard compactness");
+   assert.doesNotMatch(passage,/this module|a specialist must|the answer must|méthodologiquement faible/i);
+   if(!lang)wordsTotal+=words;
+  }
+  const refs=d.sources[field]||[];
+  assert.ok(refs.length,d.id+" "+field+" has no documented source");
+  for(const ref of refs)assert.ok(sources[ref]?.[1]?.startsWith("https://"),d.id+" "+field+" missing "+ref);
+  stageCount++;
  }
- for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
-  const refs=d.sources[field];
-  assert.ok(refs.length>0,d.id+" "+field+" missing citations");
-  for(const id of refs)assert.ok(sources[id]&&/^https:\/\//.test(sources[id][1]),d.id+" "+field+" broken ref "+id);
-  citationFields++;
- }
+ assert.ok(wordsTotal>=110&&wordsTotal<=240,d.id+" has an abnormal combined length");
+ assert.equal(d.traditionalAssessment,undefined,"No ninth/special traditional-only stage");
  assert.ok(d.oppositionKind);
 }
-assert.equal(citationFields,40);
-assert.equal(cases[6].oppositionKind,"REASONED_APPLICATION_NOT_NAMED_OPPONENT");
-assert.ok(!cases[6].sources.opposition.includes("GROOTHUIS"));
-assert.ok(cases[3].opposition[0].includes("Groothuis"));
-assert.match(cases[3].traditionalAssessment[0],/not equivalent to an automatic deciding vote/);
-assert.match(cases[4].traditionalAssessment[0],/cannot require sin/);
-assert.match(cases[5].traditionalAssessment[0],/not a legitimate way of obtaining a marital act/);
-assert.match(cases[7].traditionalAssessment[0],/conscience/);
+assert.equal(stageCount,48);
+assert.ok(cases.find(d=>d.id==="MAR-01").bottom[0].includes("headship"));
+assert.ok(cases.find(d=>d.id==="MAR-05").bottom[0].includes("divine law"));
+assert.ok(cases.find(d=>d.id==="MAR-08").bottom[0].includes("freedom"));
 assert.ok(!/approved by theologian|imprimatur granted/i.test(runtime));
-console.log("PASS CSE045 eight original-linked bilingual submission debates and 40 paragraph citation fields, searchable assessments, EN/FR primary links, and source-limited theological boundaries");
+console.log("PASS 150 questions, 55 principal debates, six canonical Ephesians headship subdebates/48 linked stages, two owner links, EN/FR and unified reader format.");
