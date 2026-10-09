@@ -17,7 +17,7 @@ const pagesCount=Number(info.match(/^Pages:\s*(\d+)/m)?.[1]);
 assert.equal(pagesCount,68,"Unexpected Italian edition PDF identity/pages");
 const extracted=execFileSync("pdftotext",["-raw",pdf,"-"],{encoding:"utf8",maxBuffer:12000000,timeout:30000});
 const body=extracted.split("\f").slice(3,60).join("\n");
-const candidates=[...body.matchAll(/^[ \t]*[*•]?\s*(\d{1,3})\.[ \t]+([^\r\n]{3,})/gm)];
+const candidates=[...body.matchAll(/^[ \t]*[*•]?\s*(\d{1,3})\.?[ \t]+([^\r\n]{3,})/gm)];
 let started=false,last=0;const found=[];
 for(const m of candidates){
   const n=+m[1],line=m[2];
