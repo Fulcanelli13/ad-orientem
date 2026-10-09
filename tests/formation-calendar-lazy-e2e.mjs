@@ -211,9 +211,9 @@ try{
  // orations under their original [Rule] Oratio Dominica.
  for(const [date,pattern,expectedCommSource] of [
    ["2026-05-23",/Vigil of Pentecost/,null],
-   ["2026-11-01",/All Saints/,/Tempora\\/Pent[0-9]+-0/],
-   ["2026-11-30",/Andrew/,/Tempora\\/Adv1-1/],
-   ["2026-12-08",/Immaculate Conception/,/Tempora\\/Adv2-2/],
+   ["2026-11-01",/All Saints/,new RegExp("^Tempora/Pent[0-9]+-0")],
+   ["2026-11-30",/Andrew/,new RegExp("^Tempora/Adv1-1")],
+   ["2026-12-08",/Immaculate Conception/,new RegExp("^Tempora/Adv2-2")],
  ]){
    assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),date),true);
    const r=await page.evaluate(id=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.get?.(id),date);
