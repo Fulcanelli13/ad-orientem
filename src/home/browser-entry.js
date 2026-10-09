@@ -110,13 +110,35 @@ export function createHomeOwner(win=globalThis){
     if(!id)return false;
     if(id==="mass.current")return win?.AO_APP_SHELL_V1?.navigate?.("mass")??false;
     if(id==="today.calendar"||id==="calendar")return win?.AO_APP_SHELL_V1?.navigate?.("calendar")??false;
-    if(id.startsWith("pray.")){
-      try{const result=win?.AO_MODULES?.open?.(id);if(result)return result;}catch{}
-      try{return win?.AO_PRAY_APP_V1?.open?.()??false;}catch{return false;}
-    }
-    if(id.startsWith("learn.")){
-      try{const result=win?.AO_MODULES?.open?.(id);if(result)return result;}catch{}
-      try{return win?.AO_LEARN_APP_V1?.openModule?.(id)??false;}catch{return false;}
+    if(id.startsWith("pray.")||id.startsWith("learn.")){
+      const fallback=()=>{
+        try{
+          if(id.startsWith("pray."))return win?.AO_PRAY_APP_V1?.open?.()??false;
+          return win?.AO_LEARN_APP_V1?.openModule?.(id)??false;
+        }catch(error){
+          try{win?.console?.error?.("Home module fallback failed",id,error)}catch{}
+          return false;
+        }
+      };
+      try{
+        const registry=win?.AO_MODULES;
+        if(typeof registry?.open!=="function")return fallback();
+        const opened=registry.open(id);
+        // Module registries return {ok:false} (often asynchronously) when a
+        // lazy reader could not launch. A Promise itself is not a success.
+        if(opened&&typeof opened.then==="function"){
+          return Promise.resolve(opened).then(value=>
+            value===false||value?.ok===false?fallback():value
+          ).catch(error=>{
+            try{win?.console?.error?.("Home module route failed",id,error)}catch{}
+            return fallback();
+          });
+        }
+        return opened===false||opened?.ok===false?fallback():opened;
+      }catch(error){
+        try{win?.console?.error?.("Home module route failed",id,error)}catch{}
+        return fallback();
+      }
     }
     try{return win?.AO_MODULES?.open?.(id)??false;}catch{return false;}
   }
