@@ -7,6 +7,8 @@ on:
       - "src/find/**"
       - "tools/directory/**"
       - "tests/directory-*.mjs"
+      - "tests/explore-surface.mjs"
+      - "tests/customs-atlas.mjs"
       - ".github/workflows/directory-foundation.yml"
   push:
     branches:
@@ -32,6 +34,11 @@ jobs:
           node-version: 22
       - run: npm run test:directory
       - run: npm run test:find
+      - run: npm run test:explore-surface
+      - run: npm run test:customs-atlas
+      - run: npm run test:explore-geography
+      - run: node --check src/find/customs-atlas-filters.js
+      - run: node --check src/find/explore-presentation.js
       - run: node tests/directory-worldwide-coverage.mjs
       - run: node tools/directory/audit-worldwide-corpus.mjs
       - run: node --check src/find/browser-entry.js
