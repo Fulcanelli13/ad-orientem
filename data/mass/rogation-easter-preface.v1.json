@@ -1,7 +1,7 @@
 {
   "schema": "AO_1962_ROGATION_EASTER_PREFACE_V1",
-  "status": "SOURCE_VERIFIED_TRANSLATIONS_REVIEWED_PRODUCTION_GATED",
-  "published": false,
+  "status": "PUBLISHED_1962_EASTER_PREFACE",
+  "published": true,
   "selection": "IN_HOC_POTISSIMUM",
   "source": {
     "edition": "Missale Romanum (1962), Vatican typical edition, Praefatio solemnis paschalis, pp. 234–235",
@@ -22,13 +22,15 @@
     "en": "It is truly fitting and just, right and for our salvation, to proclaim your glory at every time, O Lord, but especially in this season, when Christ our Passover has been sacrificed. For he is the true Lamb who took away the sins of the world; by dying he destroyed our death, and by rising restored our life. And therefore, with the Angels and Archangels, with the Thrones and Dominions, and with all the hosts of heaven, we sing the hymn of your glory, saying without end:",
     "fr": "Il est vraiment digne et juste, équitable et salutaire, de proclamer votre gloire en tout temps, Seigneur, mais plus particulièrement en ce temps où le Christ, notre Pâque, a été immolé. Il est en effet le véritable Agneau qui a enlevé les péchés du monde ; en mourant, il a détruit notre mort, et en ressuscitant, il nous a rendu la vie. C'est pourquoi, avec les Anges et les Archanges, les Trônes et les Dominations et toute l'armée céleste, nous chantons l'hymne de votre gloire en disant sans fin :"
   },
-  "translationStatus": "ORIGINAL_EN_FR_DRAFTS_SEMANTICALLY_REVIEWED_AGAINST_VERIFIED_LATIN",
-  "publicationAllowed": false,
+  "translationStatus": "ORIGINAL_EN_FR_INTERNAL_REVIEW_PUBLISHED_EASTERTIDE_MINOR_ROGATIONS",
+  "publicationAllowed": true,
   "editorialReview": {
     "latin": "PRINT_SOURCE_VERIFIED",
     "english": "INTERNAL_SEMANTIC_REVIEW",
     "french": "INTERNAL_SEMANTIC_REVIEW",
     "ecclesiasticalApprobation": "NOT_CLAIMED",
-    "publicationPending": "Full selected preflight-to-R17 production browser acceptance and Major Litany scope reconciliation"
-  }
+    "publicationPending": null,
+    "publishedScope": "Source-bound Easter Preface only for Minor Rogations in Eastertide; ecclesiastical imprimatur not claimed"
+  },
+  "releaseScope": "MINOR_ROGATIONS_EASTERTIDE_IN_HOC_POTISSIMUM_ONLY"
 }
