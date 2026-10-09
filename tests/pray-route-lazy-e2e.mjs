@@ -59,6 +59,30 @@ try{
   assert.equal(reopened.ok,true,"Second Prayer entry failed");
   for(let i=0;i<deferred.length;i++)assert.equal(hits.filter(x=>x.path===deferred[i]).length,once[i],"Prayer scripts reloaded on second entry");
   assert.deepEqual(errors.filter(x=>/module|SyntaxError|ReferenceError|TypeError|Failed to fetch/i.test(x)),[],"Deferred Prayer caused page errors");
+
+  // Calendar and Coming Up deep-links invoke AO_MODULES directly; they must
+  // not require visiting the Prayer tab first.
+  const direct=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
+  try{
+    await direct.goto("http://127.0.0.1:4197/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+    await direct.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:20000});
+    const beforeDirect=await direct.evaluate(()=>({
+      nav:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+      registered:globalThis.AO_MODULES?.get?.("pray.novenas")?.id,
+      traditional:globalThis.AO_MODULES?.get?.("pray.good_death")?.id,
+      readerLoaded:globalThis.AO_PRAY_APP_V1?.status?.()?.readerLoaded
+    }));
+    assert.equal(beforeDirect.nav,"home");
+    assert.equal(beforeDirect.readerLoaded,false);
+    assert.equal(beforeDirect.registered,"pray.novenas","Calendar Novena deep-link unregistered");
+    assert.equal(beforeDirect.traditional,"pray.good_death","Traditional Prayer deep-link unregistered");
+    const a=await direct.evaluate(()=>globalThis.AO_MODULES.open("pray.novenas",{returnContext:{surface:"calendar"}}));
+    assert.equal(a?.ok,true,"Novenas did not open from Calendar-style first-use deep-link: "+JSON.stringify(a));
+    const b=await direct.evaluate(()=>globalThis.AO_MODULES.open("pray.good_death",{returnContext:{surface:"calendar"}}));
+    assert.equal(b?.ok,true,"Good Death did not open from direct module registry: "+JSON.stringify(b));
+    assert.equal(await direct.evaluate(()=>globalThis.AO_PRAY_APP_V1?.status?.()?.readerLoaded),true);
+  }finally{await direct.close();}
+
   console.log("PASS Prayer first-use module loading; Rosary/Novenas/traditional/focus runtime APIs and Home re-entry");
   console.log("PRAY_LAZY_METRICS="+JSON.stringify({
     coldMs,openedMs,coldRequests:cold.length,coldBytes:cold.reduce((n,x)=>n+x.bytes,0),
