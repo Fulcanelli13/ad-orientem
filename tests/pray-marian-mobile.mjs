@@ -60,6 +60,33 @@ try{
  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.rosary",{returnContext:null}));
  await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:15000});
  assert.equal(await page.locator("#aoPrayerBookRoot.open .aoRosaryGuide").evaluate(x=>x.open),true,"reopened Rosary player lost Guide state");
+ // The 200 inherited English cue extracts are archived for verification, not
+ // rendered as authoritative Scripture in the actively selected decade.
+ const setButton=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
+ if(await setButton.count())await setButton.evaluate(x=>x.click());
+ await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:12000});
+ const firstMystery=await page.evaluate(()=>{
+   const api=globalThis.AO_ROSARY_V381,idx=api.steps().findIndex(x=>x.kind==="mystery");
+   if(idx<1)return -1;
+   api.setStep(idx-1); // Place donor immediately before the mystery
+   return idx;
+ });
+ assert.ok(firstMystery>=0,"Joyful mystery is not reachable");
+ // Real button dispatch activates the canonical modular presentation owner.
+ // Direct API.setStep only redraws the archived donor and is not a UI journey.
+ await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").evaluate(x=>x.click());
+ await page.waitForSelector("#aoPrayerBookRoot.open [data-ao-rosary-scripture-opening='joy1']",{timeout:8000});
+ assert.match(await page.locator("#aoPrayerBookRoot.open .aoRosaryScriptureOpening").innerText(),/Luke 1:26-38/);
+ const firstCue=await page.evaluate(()=>{
+   const api=globalThis.AO_ROSARY_V381,idx=api.steps().findIndex(x=>x.cue);
+   if(idx<1)return -1;api.setStep(idx-1);return idx;
+ });
+ assert.ok(firstCue>=0,"Rosary cue-bearing Hail Mary is not reachable");
+ await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").evaluate(x=>x.click());
+ assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-cue").count(),0,
+   "Unreviewed bead Scripture still presented as certified English/French quotation");
+ assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-actions").count(),0,
+   "Unreviewed bead-specific commentary still attached to potentially truncated Scripture");
  assert.equal(pageErrors.filter(x=>/angelus-guide|rosary-guide|presentation-runtime|undefined/i.test(x)).length,0,"Marian reader threw a runtime error: "+pageErrors.join(" | "));
  console.log("PASS Marian Angelus/Regina Caeli and Rosary mobile Guide acceptance");
  await context.close();

@@ -1,0 +1,2171 @@
+{
+  "schema": "ao-rosary-scripture-editorial-inventory-v1",
+  "version": "1.0.0",
+  "reviewedAt": "2026-10-09",
+  "totalMysteries": 20,
+  "totalBeadExcerpts": 200,
+  "scope": "Original donor English cue bank, not the separate French Crampon JSON corpus",
+  "source": "legacy/v43.33.parts/chunk-007-p00.txt · const AO_ROSARY_DEPTH",
+  "disposition": "PRESERVED_RESEARCH_ONLY_NOT_PUBLIC_QUOTATIONS",
+  "judgment": "Heuristic fragmentation flags identify review candidates, not a 200-verse proof of misquotation. Exact wording, verse boundaries, French alignment, narrative suitability and typological qualification each require primary-edition verification.",
+  "findings": {
+    "verseSplit": 8,
+    "openSentence": 11,
+    "editorialEllipsis": 36,
+    "unfinishedClause": 1,
+    "typology": 20
+  },
+  "requiredCertification": [
+    "Verify each English excerpt against exact Douay–Rheims verses or rewrite as a clearly labeled paraphrase.",
+    "Verify French Crampon and Latin independently; never reuse an English excerpt in a French-labelled Scripture cue.",
+    "Reject arbitrary a/b sentence splits and fragment-ending punctuation unless context is supplied.",
+    "Separately label typological Scripture for Assumption and Coronation.",
+    "Preserve 20 mystery IDs and 10 Hail Marys per decade; source audit does not control Rosary player state."
+  ],
+  "rows": [
+    {
+      "id": "joy1.b1",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 1,
+      "sourceReference": "Luke 1:26–27",
+      "legacyEnglishExcerpt": "And in the sixth month, the angel Gabriel was sent from God into a city of Galilee, called Nazareth, to a virgin espoused to a man whose name was Joseph, of the house of David: and the virgin's name was Mary.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy1.b2",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 2,
+      "sourceReference": "Luke 1:28",
+      "legacyEnglishExcerpt": "Hail, full of grace, the Lord is with thee: blessed art thou among women.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy1.b3",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 3,
+      "sourceReference": "Luke 1:29–30",
+      "legacyEnglishExcerpt": "Who having heard, was troubled at his saying and thought with herself what manner of salutation this should be. And the angel said to her: Fear not, Mary, for thou hast found grace with God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy1.b4",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 4,
+      "sourceReference": "Luke 1:31",
+      "legacyEnglishExcerpt": "Behold thou shalt conceive in thy womb and shalt bring forth a son: and thou shalt call his name Jesus.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy1.b5",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 5,
+      "sourceReference": "Luke 1:32–33",
+      "legacyEnglishExcerpt": "He shall be great and shall be called the Son of the Most High … and he shall reign in the house of Jacob for ever. And of his kingdom there shall be no end.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy1.b6",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 6,
+      "sourceReference": "Luke 1:34",
+      "legacyEnglishExcerpt": "And Mary said to the angel: How shall this be done, because I know not man?",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy1.b7",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 7,
+      "sourceReference": "Luke 1:35",
+      "legacyEnglishExcerpt": "The Holy Ghost shall come upon thee and the power of the Most High shall overshadow thee.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy1.b8",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 8,
+      "sourceReference": "Luke 1:36–37",
+      "legacyEnglishExcerpt": "And behold thy cousin Elizabeth, she also hath conceived a son in her old age … Because no word shall be impossible with God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy1.b9",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 9,
+      "sourceReference": "Luke 1:38a",
+      "legacyEnglishExcerpt": "Behold the handmaid of the Lord:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT",
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "joy1.b10",
+      "mysteryId": "joy1",
+      "mysteryTitle": "The Annunciation",
+      "bead": 10,
+      "sourceReference": "Luke 1:38b",
+      "legacyEnglishExcerpt": "be it done to me according to thy word.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT"
+      ]
+    },
+    {
+      "id": "joy2.b1",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 1,
+      "sourceReference": "Luke 1:39–40",
+      "legacyEnglishExcerpt": "And Mary rising up in those days, went into the hill country with haste into a city of Juda. And she entered into the house of Zachary and saluted Elizabeth.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy2.b2",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 2,
+      "sourceReference": "Luke 1:41",
+      "legacyEnglishExcerpt": "When Elizabeth heard the salutation of Mary, the infant leaped in her womb. And Elizabeth was filled with the Holy Ghost.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy2.b3",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 3,
+      "sourceReference": "Luke 1:42",
+      "legacyEnglishExcerpt": "Blessed art thou among women and blessed is the fruit of thy womb.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy2.b4",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 4,
+      "sourceReference": "Luke 1:43–44",
+      "legacyEnglishExcerpt": "And whence is this to me that the mother of my Lord should come to me? … the infant in my womb leaped for joy.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy2.b5",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 5,
+      "sourceReference": "Luke 1:45",
+      "legacyEnglishExcerpt": "And blessed art thou that hast believed, because those things shall be accomplished that were spoken to thee by the Lord.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy2.b6",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 6,
+      "sourceReference": "Luke 1:46–47",
+      "legacyEnglishExcerpt": "My soul doth magnify the Lord. And my spirit hath rejoiced in God my Saviour.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy2.b7",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 7,
+      "sourceReference": "Luke 1:48–49",
+      "legacyEnglishExcerpt": "Because he hath regarded the humility of his handmaid: for behold from henceforth all generations shall call me blessed. Because he that is mighty hath done great things to me.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy2.b8",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 8,
+      "sourceReference": "Luke 1:50–52",
+      "legacyEnglishExcerpt": "And his mercy is from generation unto generations, to them that fear him … He hath put down the mighty from their seat and hath exalted the humble.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy2.b9",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 9,
+      "sourceReference": "Luke 1:53–55",
+      "legacyEnglishExcerpt": "He hath filled the hungry with good things … being mindful of his mercy … to Abraham and to his seed for ever.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy2.b10",
+      "mysteryId": "joy2",
+      "mysteryTitle": "The Visitation",
+      "bead": 10,
+      "sourceReference": "Luke 1:56",
+      "legacyEnglishExcerpt": "And Mary abode with her about three months. And she returned to her own house.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b1",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 1,
+      "sourceReference": "Luke 2:4–5",
+      "legacyEnglishExcerpt": "And Joseph also went up from Galilee, out of the city of Nazareth, into Judea, to the city of David, which is called Bethlehem: because he was of the house and family of David. To be enrolled with Mary his espoused wife, who was with child.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b2",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 2,
+      "sourceReference": "Luke 2:6",
+      "legacyEnglishExcerpt": "And it came to pass that when they were there, her days were accomplished that she should be delivered.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b3",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 3,
+      "sourceReference": "Luke 2:7",
+      "legacyEnglishExcerpt": "And she brought forth her first born son and wrapped him up in swaddling clothes and laid him in a manger: because there was no room for them in the inn.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b4",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 4,
+      "sourceReference": "Luke 2:8–9",
+      "legacyEnglishExcerpt": "And there were in the same country shepherds watching and keeping the night watches over their flock. And behold an angel of the Lord stood by them and the brightness of God shone round about them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b5",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 5,
+      "sourceReference": "Luke 2:10",
+      "legacyEnglishExcerpt": "Fear not; for, behold, I bring you good tidings of great joy that shall be to all the people:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "joy3.b6",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 6,
+      "sourceReference": "Luke 2:11–12",
+      "legacyEnglishExcerpt": "This day is born to you a Saviour, who is Christ the Lord, in the city of David. And this shall be a sign unto you. You shall find the infant wrapped in swaddling clothes and laid in a manger.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b7",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 7,
+      "sourceReference": "Luke 2:13–14",
+      "legacyEnglishExcerpt": "And suddenly there was with the angel a multitude of the heavenly army, praising God and saying: Glory to God in the highest: and on earth peace to men of good will.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b8",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 8,
+      "sourceReference": "Luke 2:15–16",
+      "legacyEnglishExcerpt": "Let us go over to Bethlehem and let us see this word that is come to pass, which the Lord hath shewed to us. And they came with haste: and they found Mary and Joseph, and the infant lying in the manger.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy3.b9",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 9,
+      "sourceReference": "Luke 2:17–19",
+      "legacyEnglishExcerpt": "And seeing, they understood of the word that had been spoken to them concerning this child … But Mary kept all these words, pondering them in her heart.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy3.b10",
+      "mysteryId": "joy3",
+      "mysteryTitle": "The Nativity",
+      "bead": 10,
+      "sourceReference": "Luke 2:20",
+      "legacyEnglishExcerpt": "And the shepherds returned, glorifying and praising God for all the things they had heard and seen, as it was told unto them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy4.b1",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 1,
+      "sourceReference": "Luke 2:22–24",
+      "legacyEnglishExcerpt": "They carried him to Jerusalem, to present him to the Lord … And to offer a sacrifice, according as it is written in the law of the Lord, a pair of turtledoves or two young pigeons.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy4.b2",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 2,
+      "sourceReference": "Luke 2:25",
+      "legacyEnglishExcerpt": "There was a man in Jerusalem named Simeon: and this man was just and devout, waiting for the consolation of Israel. And the Holy Ghost was in him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy4.b3",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 3,
+      "sourceReference": "Luke 2:26",
+      "legacyEnglishExcerpt": "And he had received an answer from the Holy Ghost, that he should not see death before he had seen the Christ of the Lord.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy4.b4",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 4,
+      "sourceReference": "Luke 2:27–28",
+      "legacyEnglishExcerpt": "And he came by the Spirit into the temple … He also took him into his arms and blessed God and said",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS",
+        "UNFINISHED_CLAUSE"
+      ]
+    },
+    {
+      "id": "joy4.b5",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 5,
+      "sourceReference": "Luke 2:29–30",
+      "legacyEnglishExcerpt": "Now thou dost dismiss thy servant, O Lord, according to thy word in peace: Because my eyes have seen thy salvation,",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "joy4.b6",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 6,
+      "sourceReference": "Luke 2:31–32",
+      "legacyEnglishExcerpt": "Which thou hast prepared before the face of all peoples: A light to the revelation of the Gentiles and the glory of thy people Israel.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy4.b7",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 7,
+      "sourceReference": "Luke 2:33–34",
+      "legacyEnglishExcerpt": "And his father and mother were wondering at those things which were spoken concerning him. And Simeon blessed them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy4.b8",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 8,
+      "sourceReference": "Luke 2:35",
+      "legacyEnglishExcerpt": "And thy own soul a sword shall pierce, that, out of many hearts thoughts may be revealed.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy4.b9",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 9,
+      "sourceReference": "Luke 2:36–38",
+      "legacyEnglishExcerpt": "And there was one Anna, a prophetess … Now she, at the same hour, coming in, confessed to the Lord: and spoke of him to all that looked for the redemption of Israel.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy4.b10",
+      "mysteryId": "joy4",
+      "mysteryTitle": "The Presentation of the Child Jesus in the Temple",
+      "bead": 10,
+      "sourceReference": "Luke 2:39–40",
+      "legacyEnglishExcerpt": "They returned into Galilee, to their city Nazareth. And the child grew and waxed strong, full of wisdom: and the grace of God was in him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b1",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 1,
+      "sourceReference": "Luke 2:41–42",
+      "legacyEnglishExcerpt": "And his parents went every year to Jerusalem, at the solemn day of the pasch. And when he was twelve years old, they going up into Jerusalem, according to the custom of the feast,",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "joy5.b2",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 2,
+      "sourceReference": "Luke 2:43–44",
+      "legacyEnglishExcerpt": "The child Jesus remained in Jerusalem. And his parents knew it not … and sought him among their kinsfolks and acquaintance.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "joy5.b3",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 3,
+      "sourceReference": "Luke 2:45",
+      "legacyEnglishExcerpt": "And not finding him, they returned into Jerusalem, seeking him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b4",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 4,
+      "sourceReference": "Luke 2:46",
+      "legacyEnglishExcerpt": "After three days, they found him in the temple, sitting in the midst of the doctors, hearing them and asking them questions.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b5",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 5,
+      "sourceReference": "Luke 2:47",
+      "legacyEnglishExcerpt": "And all that heard him were astonished at his wisdom and his answers.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b6",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 6,
+      "sourceReference": "Luke 2:48",
+      "legacyEnglishExcerpt": "Son, why hast thou done so to us? Behold thy father and I have sought thee sorrowing.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b7",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 7,
+      "sourceReference": "Luke 2:49",
+      "legacyEnglishExcerpt": "How is it that you sought me? Did you not know that I must be about my father's business?",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b8",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 8,
+      "sourceReference": "Luke 2:50",
+      "legacyEnglishExcerpt": "And they understood not the word that he spoke unto them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b9",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 9,
+      "sourceReference": "Luke 2:51",
+      "legacyEnglishExcerpt": "And he went down with them and came to Nazareth and was subject to them. And his mother kept all these words in her heart.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "joy5.b10",
+      "mysteryId": "joy5",
+      "mysteryTitle": "The Finding of the Child Jesus in the Temple",
+      "bead": 10,
+      "sourceReference": "Luke 2:52",
+      "legacyEnglishExcerpt": "And Jesus advanced in wisdom and age and grace with God and men.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum1.b1",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 1,
+      "sourceReference": "John 1:29",
+      "legacyEnglishExcerpt": "Behold the Lamb of God. Behold him who taketh away the sin of the world.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum1.b2",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 2,
+      "sourceReference": "Matthew 3:13",
+      "legacyEnglishExcerpt": "Then cometh Jesus from Galilee to the Jordan, unto John, to be baptized by him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum1.b3",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 3,
+      "sourceReference": "Matthew 3:14",
+      "legacyEnglishExcerpt": "I ought to be baptized by thee, and comest thou to me?",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum1.b4",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 4,
+      "sourceReference": "Matthew 3:15",
+      "legacyEnglishExcerpt": "Suffer it to be so now. For so it becometh us to fulfil all justice.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum1.b5",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 5,
+      "sourceReference": "Luke 3:21a",
+      "legacyEnglishExcerpt": "Jesus also being baptized",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT"
+      ]
+    },
+    {
+      "id": "lum1.b6",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 6,
+      "sourceReference": "Luke 3:21b",
+      "legacyEnglishExcerpt": "Jesus also being baptized and praying, heaven was opened.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT"
+      ]
+    },
+    {
+      "id": "lum1.b7",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 7,
+      "sourceReference": "Luke 3:22a",
+      "legacyEnglishExcerpt": "And the Holy Ghost descended in a bodily shape, as a dove, upon him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT"
+      ]
+    },
+    {
+      "id": "lum1.b8",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 8,
+      "sourceReference": "Luke 3:22b",
+      "legacyEnglishExcerpt": "Thou art my beloved Son. In thee I am well pleased.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT"
+      ]
+    },
+    {
+      "id": "lum1.b9",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 9,
+      "sourceReference": "John 1:32",
+      "legacyEnglishExcerpt": "I saw the Spirit coming down, as a dove from heaven; and he remained upon him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum1.b10",
+      "mysteryId": "lum1",
+      "mysteryTitle": "The Baptism of the Lord in the Jordan",
+      "bead": 10,
+      "sourceReference": "John 1:33–34",
+      "legacyEnglishExcerpt": "He upon whom thou shalt see the Spirit descending and remaining upon him, he it is that baptizeth with the Holy Ghost. And I saw: and I gave testimony that this is the Son of God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b1",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 1,
+      "sourceReference": "John 2:1",
+      "legacyEnglishExcerpt": "And the third day, there was a marriage in Cana of Galilee: and the mother of Jesus was there.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b2",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 2,
+      "sourceReference": "John 2:2",
+      "legacyEnglishExcerpt": "And Jesus also was invited, and his disciples, to the marriage.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b3",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 3,
+      "sourceReference": "John 2:3",
+      "legacyEnglishExcerpt": "And the wine failing, the mother of Jesus saith to him: They have no wine.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b4",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 4,
+      "sourceReference": "John 2:4",
+      "legacyEnglishExcerpt": "And Jesus saith to her: Woman, what is that to me and to thee? My hour is not yet come.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b5",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 5,
+      "sourceReference": "John 2:5",
+      "legacyEnglishExcerpt": "His mother saith to the waiters: Whatsoever he shall say to you, do ye.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b6",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 6,
+      "sourceReference": "John 2:6",
+      "legacyEnglishExcerpt": "Now there were set there six waterpots of stone, according to the manner of the purifying of the Jews, containing two or three measures apiece.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b7",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 7,
+      "sourceReference": "John 2:7",
+      "legacyEnglishExcerpt": "Jesus saith to them: Fill the waterpots with water. And they filled them up to the brim.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b8",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 8,
+      "sourceReference": "John 2:8",
+      "legacyEnglishExcerpt": "And Jesus saith to them: Draw out now and carry to the chief steward of the feast. And they carried it.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum2.b9",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 9,
+      "sourceReference": "John 2:9–10",
+      "legacyEnglishExcerpt": "And when the chief steward had tasted the water made wine … But thou hast kept the good wine until now.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "lum2.b10",
+      "mysteryId": "lum2",
+      "mysteryTitle": "The Wedding Feast at Cana",
+      "bead": 10,
+      "sourceReference": "John 2:11",
+      "legacyEnglishExcerpt": "This beginning of miracles did Jesus in Cana of Galilee and manifested his glory. And his disciples believed in him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum3.b1",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 1,
+      "sourceReference": "Mark 1:14",
+      "legacyEnglishExcerpt": "And after that John was delivered up, Jesus came in Galilee, preaching the gospel of the kingdom of God,",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "lum3.b2",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 2,
+      "sourceReference": "Mark 1:15",
+      "legacyEnglishExcerpt": "The time is accomplished and the kingdom of God is at hand. Repent and believe the gospel:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "lum3.b3",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 3,
+      "sourceReference": "John 3:3",
+      "legacyEnglishExcerpt": "Amen, amen, I say to thee, unless a man be born again, he cannot see the kingdom of God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum3.b4",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 4,
+      "sourceReference": "John 3:5",
+      "legacyEnglishExcerpt": "Amen, amen, I say to thee, unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum3.b5",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 5,
+      "sourceReference": "Luke 4:18–19",
+      "legacyEnglishExcerpt": "The spirit of the Lord is upon me. Wherefore he hath anointed me to preach the gospel to the poor … to preach the acceptable year of the Lord and the day of reward.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "lum3.b6",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 6,
+      "sourceReference": "Matthew 5:3",
+      "legacyEnglishExcerpt": "Blessed are the poor in spirit: for theirs is the kingdom of heaven.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum3.b7",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 7,
+      "sourceReference": "Matthew 6:33",
+      "legacyEnglishExcerpt": "Seek ye therefore first the kingdom of God, and his justice, and all these things shall be added unto you.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum3.b8",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 8,
+      "sourceReference": "Luke 15:7",
+      "legacyEnglishExcerpt": "I say to you that even so there shall be joy in heaven upon one sinner that doth penance, more than upon ninety-nine just who need not penance.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum3.b9",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 9,
+      "sourceReference": "Matthew 10:7–8",
+      "legacyEnglishExcerpt": "And going, preach, saying: The kingdom of heaven is at hand. Heal the sick, raise the dead, cleanse the lepers, cast out devils: freely have you received, freely give.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum3.b10",
+      "mysteryId": "lum3",
+      "mysteryTitle": "The Proclamation of the Kingdom and the Call to Conversion",
+      "bead": 10,
+      "sourceReference": "John 18:36",
+      "legacyEnglishExcerpt": "My kingdom is not of this world. If my kingdom were of this world, my servants would certainly strive that I should not be delivered to the Jews: but now my kingdom is not from hence.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum4.b1",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 1,
+      "sourceReference": "Matthew 17:1",
+      "legacyEnglishExcerpt": "And after six days Jesus taketh unto him Peter and James, and John his brother, and bringeth them up into a high mountain apart:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "lum4.b2",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 2,
+      "sourceReference": "Luke 9:28",
+      "legacyEnglishExcerpt": "And it came to pass, about eight days after these words, that he took Peter and James and John and went up into a mountain to pray.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum4.b3",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 3,
+      "sourceReference": "Matthew 17:2",
+      "legacyEnglishExcerpt": "And he was transfigured before them. And his face did shine as the sun: and his garments became white as snow.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum4.b4",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 4,
+      "sourceReference": "Matthew 17:3",
+      "legacyEnglishExcerpt": "And behold there appeared to them Moses and Elias talking with him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum4.b5",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 5,
+      "sourceReference": "Luke 9:31",
+      "legacyEnglishExcerpt": "Appearing in majesty. And they spoke of his decease that he should accomplish in Jerusalem.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum4.b6",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 6,
+      "sourceReference": "Matthew 17:4",
+      "legacyEnglishExcerpt": "Lord, it is good for us to be here:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "lum4.b7",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 7,
+      "sourceReference": "Luke 9:34",
+      "legacyEnglishExcerpt": "And as he spoke these things, there came a cloud and overshadowed them. And they were afraid when they entered into the cloud.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum4.b8",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 8,
+      "sourceReference": "Luke 9:35",
+      "legacyEnglishExcerpt": "And a voice came out of the cloud; saying: This is my beloved son. Hear him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum4.b9",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 9,
+      "sourceReference": "Matthew 17:6–8",
+      "legacyEnglishExcerpt": "And the disciples hearing fell upon their face, and were very much afraid … And they lifting up their eyes, saw no one, but only Jesus.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "lum4.b10",
+      "mysteryId": "lum4",
+      "mysteryTitle": "The Transfiguration",
+      "bead": 10,
+      "sourceReference": "Matthew 17:9",
+      "legacyEnglishExcerpt": "Tell the vision to no man, till the Son of man be risen from the dead.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum5.b1",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 1,
+      "sourceReference": "Luke 22:14–15",
+      "legacyEnglishExcerpt": "And when the hour was come, he sat down: and the twelve apostles with him. And he said to them: With desire I have desired to eat this pasch with you, before I suffer.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum5.b2",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 2,
+      "sourceReference": "Matthew 26:26",
+      "legacyEnglishExcerpt": "Take ye and eat. This is my body.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum5.b3",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 3,
+      "sourceReference": "Matthew 26:27–28",
+      "legacyEnglishExcerpt": "Drink ye all of this. For this is my blood of the new testament, which shall be shed for many unto remission of sins.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum5.b4",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 4,
+      "sourceReference": "1 Corinthians 11:26",
+      "legacyEnglishExcerpt": "For as often as you shall eat this bread and drink the chalice, you shall shew the death of the Lord, until he come.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum5.b5",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 5,
+      "sourceReference": "John 6:35",
+      "legacyEnglishExcerpt": "I am the bread of life. He that cometh to me shall not hunger: and he that believeth in me shall never thirst.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum5.b6",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 6,
+      "sourceReference": "John 6:48–52",
+      "legacyEnglishExcerpt": "I am the bread of life … I am the living bread which came down from heaven … the bread that I will give is my flesh, for the life of the world.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "lum5.b7",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 7,
+      "sourceReference": "John 6:54",
+      "legacyEnglishExcerpt": "Amen, amen, I say unto you: except you eat the flesh of the Son of man and drink his blood, you shall not have life in you.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "lum5.b8",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 8,
+      "sourceReference": "John 6:55–56",
+      "legacyEnglishExcerpt": "He that eateth my flesh and drinketh my blood hath everlasting life … For my flesh is meat indeed: and my blood is drink indeed.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "lum5.b9",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 9,
+      "sourceReference": "John 6:57–58",
+      "legacyEnglishExcerpt": "He that eateth my flesh and drinketh my blood abideth in me: and I in him … so he that eateth me, the same also shall live by me.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "lum5.b10",
+      "mysteryId": "lum5",
+      "mysteryTitle": "The Institution of the Holy Eucharist",
+      "bead": 10,
+      "sourceReference": "John 6:59",
+      "legacyEnglishExcerpt": "He that eateth this bread shall live for ever.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b1",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 1,
+      "sourceReference": "Matthew 26:36–37",
+      "legacyEnglishExcerpt": "Then Jesus came with them into a country place which is called Gethsemani. … And taking with him Peter and the two sons of Zebedee, he began to grow sorrowful and to be sad.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "sor1.b2",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 2,
+      "sourceReference": "Matthew 26:38",
+      "legacyEnglishExcerpt": "My soul is sorrowful even unto death. Stay you here and watch with me.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b3",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 3,
+      "sourceReference": "Matthew 26:39",
+      "legacyEnglishExcerpt": "My Father, if it be possible, let this chalice pass from me. Nevertheless, not as I will but as thou wilt.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b4",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 4,
+      "sourceReference": "Luke 22:41–42",
+      "legacyEnglishExcerpt": "And kneeling down, he prayed. Saying: Father, if thou wilt, remove this chalice from me: but yet not my will, but thine be done.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b5",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 5,
+      "sourceReference": "Luke 22:43",
+      "legacyEnglishExcerpt": "And there appeared to him an angel from heaven, strengthening him. And being in an agony, he prayed the longer.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b6",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 6,
+      "sourceReference": "Luke 22:44",
+      "legacyEnglishExcerpt": "And his sweat became as drops of blood, trickling down upon the ground.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b7",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 7,
+      "sourceReference": "Matthew 26:40",
+      "legacyEnglishExcerpt": "What? Could you not watch one hour with me?",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b8",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 8,
+      "sourceReference": "Matthew 26:41",
+      "legacyEnglishExcerpt": "Watch ye: and pray that ye enter not into temptation. The spirit indeed is willing, but the flesh weak.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b9",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 9,
+      "sourceReference": "Matthew 26:42",
+      "legacyEnglishExcerpt": "My Father, if this chalice may not pass away, but I must drink it, thy will be done.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor1.b10",
+      "mysteryId": "sor1",
+      "mysteryTitle": "The Agony in the Garden",
+      "bead": 10,
+      "sourceReference": "Matthew 26:45–46",
+      "legacyEnglishExcerpt": "Behold the hour is at hand: and the Son of man shall be betrayed into the hands of sinners. Rise: let us go. Behold he is at hand that will betray me.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b1",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 1,
+      "sourceReference": "John 18:38",
+      "legacyEnglishExcerpt": "I find no cause in him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b2",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 2,
+      "sourceReference": "Luke 23:14–15",
+      "legacyEnglishExcerpt": "And behold I, having examined him before you, find no cause in this man, in those things wherein you accuse him. No, nor Herod neither.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b3",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 3,
+      "sourceReference": "Luke 23:16",
+      "legacyEnglishExcerpt": "I will chastise him therefore and release him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b4",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 4,
+      "sourceReference": "Matthew 27:24",
+      "legacyEnglishExcerpt": "I am innocent of the blood of this just man. Look you to it.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b5",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 5,
+      "sourceReference": "Matthew 27:26",
+      "legacyEnglishExcerpt": "Then he released to them Barabbas: and having scourged Jesus, delivered him unto them to be crucified.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b6",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 6,
+      "sourceReference": "John 19:1",
+      "legacyEnglishExcerpt": "Then therefore Pilate took Jesus and scourged him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b7",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 7,
+      "sourceReference": "Isaias 53:3",
+      "legacyEnglishExcerpt": "Despised, and the most abject of men, a man of sorrows, and acquainted with infirmity.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b8",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 8,
+      "sourceReference": "Isaias 53:4",
+      "legacyEnglishExcerpt": "Surely he hath borne our infirmities and carried our sorrows.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor2.b9",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 9,
+      "sourceReference": "Isaias 53:5",
+      "legacyEnglishExcerpt": "But he was wounded for our iniquities, he was bruised for our sins: … and by his bruises we are healed.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "sor2.b10",
+      "mysteryId": "sor2",
+      "mysteryTitle": "The Scourging at the Pillar",
+      "bead": 10,
+      "sourceReference": "Isaias 53:7",
+      "legacyEnglishExcerpt": "He was offered because it was his own will, and he opened not his mouth: he shall be led as a sheep to the slaughter.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b1",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 1,
+      "sourceReference": "Matthew 27:27",
+      "legacyEnglishExcerpt": "Then the soldiers of the governor, taking Jesus into the hall, gathered together unto him the whole band.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b2",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 2,
+      "sourceReference": "Matthew 27:28",
+      "legacyEnglishExcerpt": "And stripping him, they put a scarlet cloak about him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b3",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 3,
+      "sourceReference": "Matthew 27:29a",
+      "legacyEnglishExcerpt": "And platting a crown of thorns, they put it upon his head, and a reed in his right hand.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT"
+      ]
+    },
+    {
+      "id": "sor3.b4",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 4,
+      "sourceReference": "Matthew 27:29b",
+      "legacyEnglishExcerpt": "And bowing the knee before him, they mocked him, saying: Hail, King of the Jews.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "VERSE_SPLIT"
+      ]
+    },
+    {
+      "id": "sor3.b5",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 5,
+      "sourceReference": "Matthew 27:30",
+      "legacyEnglishExcerpt": "And spitting upon him, they took the reed and struck his head.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b6",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 6,
+      "sourceReference": "John 19:2",
+      "legacyEnglishExcerpt": "And the soldiers platting a crown of thorns, put it upon his head: and they put on him a purple garment.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b7",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 7,
+      "sourceReference": "John 19:3",
+      "legacyEnglishExcerpt": "And they came to him and said: Hail, king of the Jews. And they gave him blows.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b8",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 8,
+      "sourceReference": "John 19:4",
+      "legacyEnglishExcerpt": "Behold, I bring him forth unto you, that you may know that I find no cause in him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b9",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 9,
+      "sourceReference": "John 19:5",
+      "legacyEnglishExcerpt": "(Jesus therefore came forth, bearing the crown of thorns and the purple garment.) And he saith to them: Behold the Man.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor3.b10",
+      "mysteryId": "sor3",
+      "mysteryTitle": "The Crowning with Thorns",
+      "bead": 10,
+      "sourceReference": "Matthew 27:31",
+      "legacyEnglishExcerpt": "And after they had mocked him, they took off the cloak from him and put on him his own garments and led him away to crucify him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b1",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 1,
+      "sourceReference": "Matthew 16:24",
+      "legacyEnglishExcerpt": "If any man will come after me, let him deny himself, and take up his cross, and follow me.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b2",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 2,
+      "sourceReference": "John 19:16–17",
+      "legacyEnglishExcerpt": "And they took Jesus and led him forth. And bearing his own cross, he went forth to the place which is called Calvary, but in Hebrew Golgotha.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b3",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 3,
+      "sourceReference": "Luke 23:26",
+      "legacyEnglishExcerpt": "And they laid the cross on him to carry after Jesus.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b4",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 4,
+      "sourceReference": "Luke 23:27",
+      "legacyEnglishExcerpt": "And there followed him a great multitude of people and of women, who bewailed and lamented him.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b5",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 5,
+      "sourceReference": "Luke 23:28",
+      "legacyEnglishExcerpt": "Daughters of Jerusalem, weep not over me; but weep for yourselves and for your children.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b6",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 6,
+      "sourceReference": "Luke 23:29",
+      "legacyEnglishExcerpt": "For behold, the days shall come, wherein they will say: Blessed are the barren and the wombs that have not borne and the paps that have not given suck.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b7",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 7,
+      "sourceReference": "Luke 23:30",
+      "legacyEnglishExcerpt": "Then shall they begin to say to the mountains: Fall upon us. And to the hills: Cover us.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b8",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 8,
+      "sourceReference": "Luke 23:31",
+      "legacyEnglishExcerpt": "For if in the green wood they do these things, what shall be done in the dry?",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b9",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 9,
+      "sourceReference": "Luke 23:32",
+      "legacyEnglishExcerpt": "And there were also two other malefactors led with him to be put to death.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor4.b10",
+      "mysteryId": "sor4",
+      "mysteryTitle": "The Carrying of the Cross",
+      "bead": 10,
+      "sourceReference": "Luke 23:33",
+      "legacyEnglishExcerpt": "And when they were come to the place which is called Calvary, they crucified him there.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b1",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 1,
+      "sourceReference": "John 19:17–18",
+      "legacyEnglishExcerpt": "And bearing his own cross, he went forth to the place which is called Calvary, but in Hebrew Golgotha. Where they crucified him, and with him two others, one on each side, and Jesus in the midst.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b2",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 2,
+      "sourceReference": "Luke 23:34",
+      "legacyEnglishExcerpt": "Father, forgive them, for they know not what they do.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b3",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 3,
+      "sourceReference": "Luke 23:42–43",
+      "legacyEnglishExcerpt": "Lord, remember me when thou shalt come into thy kingdom. And Jesus said to him: Amen I say to thee: This day thou shalt be with me in paradise.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b4",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 4,
+      "sourceReference": "John 19:25",
+      "legacyEnglishExcerpt": "Now there stood by the cross of Jesus, his mother … and Mary Magdalen.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "sor5.b5",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 5,
+      "sourceReference": "John 19:26–27",
+      "legacyEnglishExcerpt": "Woman, behold thy son. … Behold thy mother. And from that hour, the disciple took her to his own.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "sor5.b6",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 6,
+      "sourceReference": "John 19:28",
+      "legacyEnglishExcerpt": "Afterwards, Jesus knowing that all things were now accomplished, that the scripture might be fulfilled, said: I thirst.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b7",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 7,
+      "sourceReference": "John 19:29",
+      "legacyEnglishExcerpt": "And they, putting a sponge full of vinegar about hyssop, put it to his mouth.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b8",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 8,
+      "sourceReference": "John 19:30",
+      "legacyEnglishExcerpt": "It is consummated. And bowing his head, he gave up the ghost.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b9",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 9,
+      "sourceReference": "Luke 23:46",
+      "legacyEnglishExcerpt": "Father, into thy hands I commend my spirit. And saying this, he gave up the ghost.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "sor5.b10",
+      "mysteryId": "sor5",
+      "mysteryTitle": "The Crucifixion and Death of Our Lord",
+      "bead": 10,
+      "sourceReference": "John 19:34–35",
+      "legacyEnglishExcerpt": "But one of the soldiers with a spear opened his side: and immediately there came out blood and water. And he that saw it hath given testimony.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo1.b1",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 1,
+      "sourceReference": "John 20:1",
+      "legacyEnglishExcerpt": "Mary Magdalen cometh early, when it was yet dark, unto the sepulchre: and she saw the stone taken away from the sepulchre.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo1.b2",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 2,
+      "sourceReference": "John 20:3–8",
+      "legacyEnglishExcerpt": "Peter therefore went out, and the other disciple: and they came to the sepulchre. … Then that other disciple also went in … and he saw and believed.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b3",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 3,
+      "sourceReference": "John 20:11–13",
+      "legacyEnglishExcerpt": "But Mary stood at the sepulchre without, weeping. … They say to her: Woman, why weepest thou?",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b4",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 4,
+      "sourceReference": "John 20:14–16",
+      "legacyEnglishExcerpt": "When she had thus said, she turned herself back and saw Jesus standing. … Jesus saith to her: Mary. She turning, saith to him: Rabboni (which is to say, Master).",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b5",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 5,
+      "sourceReference": "John 20:17–18",
+      "legacyEnglishExcerpt": "Go to my brethren and say to them: I ascend to my Father and to your Father, to my God and to your God. … I have seen the Lord.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b6",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 6,
+      "sourceReference": "John 20:19–20",
+      "legacyEnglishExcerpt": "Jesus came and stood in the midst and said to them: Peace be to you. … The disciples therefore were glad, when they saw the Lord.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b7",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 7,
+      "sourceReference": "John 20:21–23",
+      "legacyEnglishExcerpt": "As the Father hath sent me, I also send you. … Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b8",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 8,
+      "sourceReference": "John 20:24–25",
+      "legacyEnglishExcerpt": "Now Thomas … was not with them when Jesus came. … Except I shall see in his hands the print of the nails … I will not believe.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b9",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 9,
+      "sourceReference": "John 20:26–28",
+      "legacyEnglishExcerpt": "Jesus cometh, the doors being shut, and stood in the midst and said: Peace be to you. … Thomas answered and said to him: My Lord and my God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo1.b10",
+      "mysteryId": "glo1",
+      "mysteryTitle": "The Resurrection",
+      "bead": 10,
+      "sourceReference": "John 20:29",
+      "legacyEnglishExcerpt": "Because thou hast seen me, Thomas, thou hast believed: blessed are they that have not seen and have believed.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo2.b1",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 1,
+      "sourceReference": "Acts 1:3",
+      "legacyEnglishExcerpt": "To whom also he shewed himself alive after his passion, by many proofs, for forty days appearing to them, and speaking of the kingdom of God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo2.b2",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 2,
+      "sourceReference": "Acts 1:4–5",
+      "legacyEnglishExcerpt": "He commanded them, that they should not depart from Jerusalem, but should wait for the promise of the Father. … You shall be baptized with the Holy Ghost, not many days hence.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo2.b3",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 3,
+      "sourceReference": "Acts 1:8",
+      "legacyEnglishExcerpt": "You shall receive the power of the Holy Ghost coming upon you, and you shall be witnesses unto me … even to the uttermost part of the earth.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo2.b4",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 4,
+      "sourceReference": "Luke 24:50",
+      "legacyEnglishExcerpt": "And he led them out as far as Bethania: and lifting up his hands, he blessed them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo2.b5",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 5,
+      "sourceReference": "Acts 1:9",
+      "legacyEnglishExcerpt": "And when he had said these things, while they looked on, he was raised up: and a cloud received him out of their sight.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo2.b6",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 6,
+      "sourceReference": "Acts 1:10",
+      "legacyEnglishExcerpt": "And while they were beholding him going up to heaven, behold two men stood by them in white garments.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo2.b7",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 7,
+      "sourceReference": "Acts 1:11",
+      "legacyEnglishExcerpt": "This Jesus who is taken up from you into heaven, shall so come as you have seen him going into heaven.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo2.b8",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 8,
+      "sourceReference": "Matthew 28:18",
+      "legacyEnglishExcerpt": "All power is given to me in heaven and in earth.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo2.b9",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 9,
+      "sourceReference": "Matthew 28:19–20",
+      "legacyEnglishExcerpt": "Going therefore, teach ye all nations: baptizing them in the name of the Father and of the Son and of the Holy Ghost. … And behold I am with you all days, even to the consummation of the world.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo2.b10",
+      "mysteryId": "glo2",
+      "mysteryTitle": "The Ascension of Our Lord",
+      "bead": 10,
+      "sourceReference": "Mark 16:19",
+      "legacyEnglishExcerpt": "And the Lord Jesus, after he had spoken to them, was taken up into heaven and sitteth on the right hand of God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b1",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 1,
+      "sourceReference": "Acts 1:14",
+      "legacyEnglishExcerpt": "All these were persevering with one mind in prayer with the women, and Mary the mother of Jesus, and with his brethren.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b2",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 2,
+      "sourceReference": "Acts 2:1",
+      "legacyEnglishExcerpt": "And when the days of the Pentecost were accomplished, they were all together in one place:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE"
+      ]
+    },
+    {
+      "id": "glo3.b3",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 3,
+      "sourceReference": "Acts 2:2",
+      "legacyEnglishExcerpt": "And suddenly there came a sound from heaven, as of a mighty wind coming: and it filled the whole house where they were sitting.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b4",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 4,
+      "sourceReference": "Acts 2:3",
+      "legacyEnglishExcerpt": "And there appeared to them parted tongues, as it were of fire: and it sat upon every one of them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b5",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 5,
+      "sourceReference": "Acts 2:4",
+      "legacyEnglishExcerpt": "And they were all filled with the Holy Ghost: and they began to speak with divers tongues, according as the Holy Ghost gave them to speak.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b6",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 6,
+      "sourceReference": "Acts 2:6",
+      "legacyEnglishExcerpt": "Every man heard them speak in his own tongue.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b7",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 7,
+      "sourceReference": "Acts 2:11",
+      "legacyEnglishExcerpt": "We have heard them speak in our own tongues the wonderful works of God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b8",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 8,
+      "sourceReference": "Acts 2:14",
+      "legacyEnglishExcerpt": "But Peter standing up with the eleven, lifted up his voice, and spoke to them.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo3.b9",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 9,
+      "sourceReference": "Acts 2:37–38",
+      "legacyEnglishExcerpt": "They had compunction in their heart. … But Peter said to them: Do penance: and be baptized every one of you … And you shall receive the gift of the Holy Ghost.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS"
+      ]
+    },
+    {
+      "id": "glo3.b10",
+      "mysteryId": "glo3",
+      "mysteryTitle": "The Descent of the Holy Ghost at Pentecost",
+      "bead": 10,
+      "sourceReference": "Acts 2:41",
+      "legacyEnglishExcerpt": "They therefore that received his word were baptized: and there were added in that day about three thousand souls.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": []
+    },
+    {
+      "id": "glo4.b1",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 1,
+      "sourceReference": "Psalm 131:8",
+      "legacyEnglishExcerpt": "Arise, O Lord, into thy resting place: thou and the ark, which thou hast sanctified.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b2",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 2,
+      "sourceReference": "Canticles 2:10",
+      "legacyEnglishExcerpt": "Arise, make haste, my love, my dove, my beautiful one, and come.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b3",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 3,
+      "sourceReference": "Canticles 2:11",
+      "legacyEnglishExcerpt": "For winter is now past, the rain is over and gone.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b4",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 4,
+      "sourceReference": "Canticles 2:12–13",
+      "legacyEnglishExcerpt": "The flowers have appeared in our land … The fig tree hath put forth her green figs: the vines in flower yield their sweet smell. Arise, my love, my beautiful one, and come:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE",
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b5",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 5,
+      "sourceReference": "Canticles 2:14",
+      "legacyEnglishExcerpt": "My dove in the clefts of the rock, in the hollow places of the wall, shew me thy face, let thy voice sound in my ears: for thy voice is sweet, and thy face comely.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b6",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 6,
+      "sourceReference": "Psalm 44:10",
+      "legacyEnglishExcerpt": "The queen stood on thy right hand, in gilded clothing; surrounded with variety.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b7",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 7,
+      "sourceReference": "Psalm 44:14–16",
+      "legacyEnglishExcerpt": "All the glory of the king's daughter is within in golden borders, clothed round about with varieties. … They shall be brought with gladness and rejoicing: they shall be brought into the temple of the king.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b8",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 8,
+      "sourceReference": "Apocalypse 11:19",
+      "legacyEnglishExcerpt": "And the temple of God was opened in heaven: and the ark of his testament was seen in his temple.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b9",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 9,
+      "sourceReference": "Apocalypse 12:1",
+      "legacyEnglishExcerpt": "And a great sign appeared in heaven: A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo4.b10",
+      "mysteryId": "glo4",
+      "mysteryTitle": "The Assumption of Our Lady",
+      "bead": 10,
+      "sourceReference": "Judith 13:23",
+      "legacyEnglishExcerpt": "Blessed art thou, O daughter, by the Lord the most high God, above all women upon the earth.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b1",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 1,
+      "sourceReference": "Apocalypse 12:1",
+      "legacyEnglishExcerpt": "A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b2",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 2,
+      "sourceReference": "Psalm 44:10",
+      "legacyEnglishExcerpt": "The queen stood on thy right hand, in gilded clothing; surrounded with variety.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b3",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 3,
+      "sourceReference": "Psalm 44:11–12",
+      "legacyEnglishExcerpt": "Hearken, O daughter, and see, and incline thy ear: and forget thy people and thy father's house. And the king shall greatly desire thy beauty; for he is the Lord thy God.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b4",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 4,
+      "sourceReference": "Psalm 44:14–16",
+      "legacyEnglishExcerpt": "All the glory of the king's daughter is within in golden borders, clothed round about with varieties. … They shall be brought with gladness and rejoicing: they shall be brought into the temple of the king.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b5",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 5,
+      "sourceReference": "Canticles 6:8",
+      "legacyEnglishExcerpt": "One is my dove, my perfect one is but one … The daughters saw her, and declared her most blessed: the queens and concubines, and they praised her.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b6",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 6,
+      "sourceReference": "Canticles 6:9",
+      "legacyEnglishExcerpt": "Who is she that cometh forth as the morning rising, fair as the moon, bright as the sun, terrible as an army set in array?",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b7",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 7,
+      "sourceReference": "Judith 13:23",
+      "legacyEnglishExcerpt": "Blessed art thou, O daughter, by the Lord the most high God, above all women upon the earth.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b8",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 8,
+      "sourceReference": "Judith 13:25",
+      "legacyEnglishExcerpt": "Because he hath so magnified thy name this day, that thy praise shall not depart out of the mouth of men who shall be mindful of the power of the Lord for ever.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b9",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 9,
+      "sourceReference": "Judith 15:10",
+      "legacyEnglishExcerpt": "Thou art the glory of Jerusalem, thou art the joy of Israel, thou art the honour of our people:",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "OPEN_SENTENCE",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    },
+    {
+      "id": "glo5.b10",
+      "mysteryId": "glo5",
+      "mysteryTitle": "The Coronation of Our Lady in Heaven",
+      "bead": 10,
+      "sourceReference": "Luke 1:48",
+      "legacyEnglishExcerpt": "For behold from henceforth all generations shall call me blessed.",
+      "reviewStatus": "PRIMARY_PASSAGE_COLLATION_PENDING",
+      "flags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ]
+    }
+  ]
+}

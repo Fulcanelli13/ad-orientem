@@ -1,0 +1,742 @@
+{
+  "schema": "ao-pray-source-remediation-v1",
+  "version": "1.0.0",
+  "generatedAt": "2026-10-09",
+  "scope": "Canonical 48-prayer library only; seasonal Angelus, Rosary mysteries, stations and module guides have separate owners",
+  "source": "src/pray/canonical-data.js · PRAY_CANONICAL_DATA_V435930.prayers",
+  "interpretation": "A missing newer sourceStatus or provenance field is a documentation migration gap, NOT proof that the prayer lacks an authentic historical source. Source URLs are inventory pointers, not live-link-verification findings.",
+  "counts": {
+    "records": 48,
+    "unclassified": 9,
+    "noUrl": 2,
+    "missingFrench": 1,
+    "missingLatin": 1,
+    "withProvenance": 39
+  },
+  "highestPriority": [
+    "Confirm exact source and link for 1962 Confiteor and Domine non sum dignus (missing direct URL).",
+    "Maintain deliberately English-only Immaculate Heart consecration until exact same-formula French/Latin witnesses are verified; use explicit English-source notice rather than blank text.",
+    "Reconcile nine legacy prayer records onto the provenance metadata scheme without changing their texts.",
+    "Audit French historical editions and old/current Loreto, St Joseph and Veni Sancte differences against exact originals before editorial certification."
+  ],
+  "records": [
+    {
+      "id": "foundations_sign_of_cross",
+      "title": "Sign of the Cross",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_our_father",
+      "title": "Our Father",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_hail_mary",
+      "title": "Hail Mary",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_glory_be",
+      "title": "Glory Be",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_apostles_creed",
+      "title": "Apostles’ Creed",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "sacrament_act_of_contrition",
+      "title": "Act of Contrition",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_act_of_faith",
+      "title": "Act of Faith",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_act_of_hope",
+      "title": "Act of Hope",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_act_of_love",
+      "title": "Act of Love",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "title": "Guardian Angel Prayer",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_grace_before_meals",
+      "title": "Grace Before Meals",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_grace_after_meals",
+      "title": "Grace After Meals",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_morning_offering",
+      "title": "Morning Offering",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Fr François-Xavier Gautrelet · 1844",
+      "sourceUrl": "https://www.usccb.org/prayers/morning-offering",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_prayer_of_adoration",
+      "title": "My Lord and My God",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://bible.usccb.org/bible/john/20",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "mass_confiteor",
+      "title": "Confiteor",
+      "category": "essentials",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Missale Romanum 1962 · Prayers at the Foot of the Altar",
+      "sourceUrl": null,
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "title": "Hail Holy Queen (Salve Regina)",
+      "category": "marian",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "marian_memorare",
+      "title": "Memorare (to Mary)",
+      "category": "marian",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "weekday_magnificat",
+      "title": "Magnificat (Mary)",
+      "category": "marian",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "marian_consecration_immaculate_heart",
+      "title": "Consecration to Immaculate Heart",
+      "category": "marian",
+      "availableLanguages": [
+        "en"
+      ],
+      "sourceStatus": "VERIFIED_SECONDARY",
+      "legacySourceText": "Traditional Fatima consecration",
+      "sourceUrl": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/",
+      "provenanceRecorded": true,
+      "reviewDisposition": "ENGLISH_ONLY_SOURCE_HOLD"
+    },
+    {
+      "id": "adoration_anima_christi",
+      "title": "Anima Christi",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "adoration_spiritual_communion",
+      "title": "Spiritual Communion",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "St Alphonsus Liguori",
+      "sourceUrl": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "benediction_o_salutaris",
+      "title": "O Salutaris Hostia",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "St Thomas Aquinas",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "benediction_tantum_ergo",
+      "title": "Tantum Ergo",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "St Thomas Aquinas",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "benediction_divine_praises",
+      "title": "Divine Praises",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Eucharistic Worship outside Mass · no. 99",
+      "sourceUrl": "https://www.usccb.org/prayers/divine-praises",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "adoration_litany_blessed_sacrament",
+      "title": "Litany of the Most Blessed Sacrament",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Lasance · With God · 1911",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Litanies",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "benediction_versicles",
+      "title": "Versicle & Prayer (English)",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Traditional Benediction",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "adoration_lord_i_am_not_worthy",
+      "title": "Lord, I Am Not Worthy",
+      "category": "massdev",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Missale Romanum 1962 · Communion formula",
+      "sourceUrl": null,
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "mass_devotion_leonine",
+      "title": "Leonine Prayers After Low Mass",
+      "category": "massdev",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_SECONDARY",
+      "legacySourceText": "Prayers after Low Mass · historical Leonine form",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/Prayers_after_Low-Mass",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "sacrament_come_holy_spirit",
+      "title": "Come, Holy Spirit",
+      "category": "holyghost",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.usccb.org/prayers/prayer-holy-spirit",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "weekday_benedictus",
+      "title": "Benedictus (Zechariah)",
+      "category": "canticles",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "devotion_prayer_st_michael",
+      "title": "Prayer to St. Michael",
+      "category": "saints",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Leo XIII",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "devotion_memorare_st_joseph",
+      "title": "Memorare to St. Joseph",
+      "category": "saints",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_SECONDARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.scd.org/stjoseph/prayers",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "devotion_consecration_christ_king",
+      "title": "Consecration to Christ the King",
+      "category": "saints",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_SECONDARY",
+      "legacySourceText": "Prayer to Christ the Universal King · Pius XI era · 1923",
+      "sourceUrl": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "church_prayer_for_pope",
+      "title": "Prayer for the Pope",
+      "category": "saints",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Roman Rite prayer for the Supreme Pontiff",
+      "sourceUrl": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "devotion_st_anthony_lost_items",
+      "title": "Si quæris miracula — St Anthony for Lost Things",
+      "category": "saints",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_SECONDARY",
+      "legacySourceText": "Si quæris miracula · Franciscan Office tradition · Raccolta no. 531",
+      "sourceUrl": "https://www.preces-latinae.org/thesaurus/Sancti/SAntoniusDePadova/SiQuaeris.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "sacred_heart_short_prayer",
+      "title": "Act of Reparation to the Sacred Heart of Jesus",
+      "category": "hearts",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Pius XI · Miserentissimus Redemptor · Act of Reparation · 1928",
+      "sourceUrl": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "sacred_heart_aspiration_trust",
+      "title": "Sacred Heart Aspiration",
+      "category": "hearts",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_SECONDARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.usccb.org/novena-sacred-heart-jesus",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "foundations_eternal_rest",
+      "title": "Eternal Rest (Requiem)",
+      "category": "dead",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "dead_de_profundis",
+      "title": "De Profundis — Psalm 129",
+      "category": "dead",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "devotion_litany_st_joseph",
+      "title": "Litany of Saint Joseph",
+      "category": "saints",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Current 2021 invocation set. English: AELF Committee on Divine Worship approved translation, freely publishable. Latin: Holy See current text. French: retained as a traditional vernacular rendering with the seven 2021 titles; not represented as an episcopal-conference official recension pending exact source lock.",
+      "sourceUrl": "https://www.usccb.org/prayers/litany-saint-joseph",
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "devotion_ad_te_beate_ioseph",
+      "title": "To Thee, O Blessed Joseph",
+      "category": "saints",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Prayer attached by Leo XIII to Quamquam pluries (1889). Latin is retained as the canonical traditional text; English follows the historical Holy See translation; French follows a historical Catholic translation.",
+      "sourceUrl": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html",
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "traditional_veni_sancte_sequence",
+      "title": "Veni Sancte Spiritus · Pentecost Sequence",
+      "category": "holyghost",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Traditional Pentecost Sequence, also used devotionally to invoke the Holy Spirit. Latin is the received sequence; English is the public-domain Caswall translation printed in the 1857 Raccolta; French is a historical public-domain translation (Douniol, 1858).",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/The_Hymn%2C_%22Veni_Creator_Spiritus%22%2C_and_the_Sequence%2C_%22Veni_Sancte_piritus%22",
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "dead_fidelium_deus",
+      "title": "Prayer for All the Faithful Departed",
+      "category": "dead",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Traditional Roman collect for all the faithful departed. English and French are historical Catholic translations; Latin is the received traditional text.",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Prayers_for_the_Dead",
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "dead_eternal_rest_singular",
+      "title": "Eternal Rest · for one deceased person",
+      "category": "dead",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Traditional singular form of Requiem aeternam for one deceased person.",
+      "sourceUrl": "https://www.ctsbooks.org/prayers-for-the-dead/",
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "sub_tuum",
+      "title": "Sub Tuum Praesidium",
+      "category": "marian",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": null,
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "benediction_adoremus_ps116",
+      "title": "Adoremus in aeternum · Psalm 116/117",
+      "category": "eucharistic",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "VERIFIED_PRIMARY",
+      "legacySourceText": "Traditional Benediction",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book",
+      "provenanceRecorded": true,
+      "reviewDisposition": "SOURCE_METADATA_RECORDED_NOT_REVIEWED_HERE"
+    },
+    {
+      "id": "litany_loreto_1962",
+      "title": "Litany of Loreto · 1962-era form",
+      "category": "marian",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Holy See Litany of Loreto; 1962-era form omits later invocations",
+      "sourceUrl": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    },
+    {
+      "id": "litany_loreto_current",
+      "title": "Litany of Loreto · current invocations",
+      "category": "marian",
+      "availableLanguages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceStatus": "LEGACY_STATUS_UNSPECIFIED",
+      "legacySourceText": "Holy See · current Litany of Loreto",
+      "sourceUrl": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
+      "provenanceRecorded": false,
+      "reviewDisposition": "SOURCE_METADATA_RECONCILIATION"
+    }
+  ]
+}

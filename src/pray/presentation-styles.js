@@ -596,6 +596,33 @@ const ROSARY_GUIDE_CSS=`
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
 `;
 
+const ROSARY_SCRIPTURE_POLICY_CSS=`
+/* Hide legacy fragment cards synchronously, including the frame before JS decoration. */
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-sheet .lab-scripture-cue,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-sheet .lab-scripture-actions,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-contemplation .lab-scripture-actions{
+  display:none!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening{
+  display:grid;gap:5px;margin:14px 0;padding:12px 13px;border-left:2px solid var(--liturgical,#d8bd7d);
+  background:color-mix(in srgb,var(--liturgical,#d8bd7d) 5%,transparent);
+  color:var(--text,#f3ead7);border-radius:0 10px 10px 0;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening small{
+  color:var(--liturgical,#d8bd7d);font:650 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening p{
+  margin:0;color:var(--text,#f3ead7);font:400 14px/1.5 var(--ao-font-liturgical,Georgia,serif);
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening .aoRosaryTypologyNote{
+  color:var(--muted,#aeb2b8);font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening a{
+  display:inline-block;align-self:start;padding:7px 0;min-height:36px;color:var(--liturgical,#d8bd7d);
+  text-decoration:underline;text-underline-offset:3px;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+`;
+
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
   const style=doc.createElement("style");
@@ -611,6 +638,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-devotional-ux-contract-style",DEVOTIONAL_UX_CSS);
   ensureStyle(doc,"ao-pray-angelus-guide-ritual-style",ANGELUS_GUIDE_RITUAL_CSS);
   ensureStyle(doc,"ao-pray-rosary-guide-style",ROSARY_GUIDE_CSS);
+  ensureStyle(doc,"ao-pray-rosary-scripture-policy-style",ROSARY_SCRIPTURE_POLICY_CSS);
   ensureStyle(doc,"ao-pray-modular-shell-integration-style",MODULAR_SHELL_CSS);
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);
   ensureStyle(doc,"ao-pray-semantic-rails-style",SEMANTIC_RAIL_CSS);
