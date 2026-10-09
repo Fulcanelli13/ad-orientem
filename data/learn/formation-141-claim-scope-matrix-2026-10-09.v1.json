@@ -19,14 +19,15 @@
     "data/learn/formation-primary-context-review-4-2026-10-09.v1.json",
     "data/learn/formation-primary-context-review-5-2026-10-09.v1.json",
     "data/learn/formation-primary-context-review-6-2026-10-09.v1.json",
-    "data/learn/formation-primary-context-review-7-2026-10-09.v1.json"
+    "data/learn/formation-primary-context-review-7-2026-10-09.v1.json",
+    "data/learn/formation-primary-context-review-8-2026-10-09.v1.json"
   ],
   "metrics": {
     "canonical_dossiers": 141,
     "substantive_sections": 564,
-    "bounded_source_review_findings": 235,
-    "distinct_sections_with_bounded_review": 194,
-    "distinct_sections_without_bounded_review": 370,
+    "bounded_source_review_findings": 285,
+    "distinct_sections_with_bounded_review": 244,
+    "distinct_sections_without_bounded_review": 320,
     "dossiers_with_any_bounded_review": 141,
     "dossiers_without_any_bounded_review": 0,
     "dossiers_independently_certified": 0,
@@ -3050,13 +3051,11 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -3084,7 +3083,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-001"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -3092,7 +3093,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-002"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -3209,13 +3212,11 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -3243,7 +3244,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-003"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -3251,7 +3254,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-004"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -3368,13 +3373,11 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "documented_position",
-        "critical_response",
-        "traditional_catholic_argument"
+        "documented_position"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -3402,7 +3405,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-005"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -3410,7 +3415,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-006"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -3421,13 +3428,11 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -3455,7 +3460,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-007"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -3463,7 +3470,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-008"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -4588,12 +4597,9 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
-      "unreviewed_roles": [
-        "critical_response",
-        "traditional_catholic_argument"
-      ],
-      "review_findings": 2,
+      "sections_with_bounded_review": 4,
+      "unreviewed_roles": [],
+      "review_findings": 4,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -4623,7 +4629,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-009"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -4631,7 +4639,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-010"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -4855,13 +4865,11 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -4889,7 +4897,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-011"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -4897,7 +4907,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-012"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -4908,12 +4920,11 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 2,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -4951,7 +4962,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-013"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -4962,13 +4975,12 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 2,
       "unreviewed_roles": [
         "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "critical_response"
       ],
-      "review_findings": 1,
+      "review_findings": 2,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -5004,7 +5016,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-016"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -5015,13 +5029,11 @@
       "canonical_owner": "APOLOGETICS",
       "source_file": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "documented_position",
-        "critical_response",
-        "traditional_catholic_argument"
+        "documented_position"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -5049,7 +5061,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-014"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -5057,7 +5071,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-015"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -5818,11 +5834,9 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 3,
-      "unreviewed_roles": [
-        "traditional_catholic_argument"
-      ],
-      "review_findings": 5,
+      "sections_with_bounded_review": 4,
+      "unreviewed_roles": [],
+      "review_findings": 6,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -5864,7 +5878,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-017"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -5875,12 +5891,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 4,
+      "review_findings": 5,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -5920,7 +5935,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-018"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -5931,12 +5948,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 3,
+      "review_findings": 4,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -5975,7 +5991,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-019"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6041,13 +6059,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6075,7 +6091,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-020"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6083,7 +6101,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-021"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6094,13 +6114,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6128,7 +6146,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-022"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6136,7 +6156,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-023"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6367,12 +6389,9 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
-      "unreviewed_roles": [
-        "critical_response",
-        "traditional_catholic_argument"
-      ],
-      "review_findings": 3,
+      "sections_with_bounded_review": 4,
+      "unreviewed_roles": [],
+      "review_findings": 5,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6403,7 +6422,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-024"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6411,7 +6432,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-025"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6422,13 +6445,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 2,
+      "review_findings": 4,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6457,7 +6478,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-026"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6465,7 +6488,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-027"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6476,13 +6501,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6510,7 +6533,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-028"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6518,7 +6543,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-029"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6529,13 +6556,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6563,7 +6588,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-030"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6571,7 +6598,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-031"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6582,13 +6611,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6616,7 +6643,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-032"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6624,7 +6653,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-033"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6635,13 +6666,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6669,7 +6698,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-034"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6677,7 +6708,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-035"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6688,12 +6721,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 3,
+      "review_findings": 4,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6732,7 +6764,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-036"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6801,13 +6835,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 2,
+      "review_findings": 4,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6836,7 +6868,9 @@
           "role": "critical_response",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-037"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6844,7 +6878,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-038"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6855,13 +6891,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6889,7 +6923,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-039"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -6897,7 +6933,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-040"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6908,12 +6946,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 2,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -6951,7 +6988,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-041"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -6962,12 +7001,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 2,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -7005,7 +7043,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-042"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -7016,12 +7056,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 3,
+      "review_findings": 4,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -7060,7 +7099,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 4,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-043"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -7071,13 +7112,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -7105,7 +7144,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-044"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -7113,7 +7154,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-045"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -7336,13 +7379,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -7370,7 +7411,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-046"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -7378,7 +7421,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 2,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-047"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -7389,13 +7434,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 1,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "critical_response",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 1,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -7423,7 +7466,9 @@
           "role": "critical_response",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-048"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         },
@@ -7431,7 +7476,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-049"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
@@ -7549,12 +7596,11 @@
       "canonical_owner": "CHURCH_CRISIS",
       "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
       "section_count": 4,
-      "sections_with_bounded_review": 2,
+      "sections_with_bounded_review": 3,
       "unreviewed_roles": [
-        "answer",
-        "traditional_catholic_argument"
+        "answer"
       ],
-      "review_findings": 2,
+      "review_findings": 3,
       "current_state": "PARTIAL_SOURCE_CONTEXT_REVIEW",
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
@@ -7592,7 +7638,9 @@
           "role": "traditional_catholic_argument",
           "source_id_count": 3,
           "unresolved_source_ids": [],
-          "bounded_findings": [],
+          "bounded_findings": [
+            "PSV8-050"
+          ],
           "original_context_expert_approved": false,
           "native_french_expert_approved": false
         }
