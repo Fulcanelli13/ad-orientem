@@ -158,7 +158,7 @@ try{
  // https://gcatholic.org/calendar/2027/Extraordinary-en
  // https://missale.online/festkalender/en/2027/druck
  const roman1962Cases=[
-   ["2024-03-25",/Holy Monday|Lundi saint/i],
+   ["2024-03-25",/Holy Monday|Monday of Holy Week|Feria II of Holy Week|Lundi saint/i],
    ["2024-04-08",/Annunciation|Annonciation/i],
    ["2024-12-08",/Immaculate Conception|Immaculée Conception/i],
    ["2027-02-10",/Ash Wednesday|Mercredi des Cendres/i],
