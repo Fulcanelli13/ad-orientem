@@ -9,6 +9,8 @@ const root=resolve(fileURLToPath(new URL('../..',import.meta.url)));
 const output=resolve(root,'artifacts/calendar-1962-full-year-audit.json');
 const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const years=[2024,2027],strict=process.argv.includes('--strict');
+const disputedEvidence=JSON.parse(await readFile(new URL('../../data/calendar/1962-ordo-corrections.v1.json',import.meta.url),'utf8')).disputes;
+const disputesByDate=new Map(disputedEvidence.map(x=>[x.date,x]));
 const numberOfDays=y=>(new Date(Date.UTC(y+1,0,1))-new Date(Date.UTC(y,0,1)))/86400000;
 const normalColour=v=>String(v||'').trim().toLowerCase().replace('purple','violet');
 const simpleName=s=>String(s||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase()
@@ -109,12 +111,19 @@ try{
    report.summaries.push({year,status:'APP_UNAVAILABLE',expectedDays:numberOfDays(year),sourceDays:independent.length});continue;
   }
   const oracle=new Map(independent.map(r=>[r.date,r])),appDays=new Map(resolved.map(r=>[r.date,r]));
-  const tally={compatible:0,needs_editorial_review:0,potential_liturgical_conflict:0,oracle_unrecorded:0,source_missing:0,app_missing:0};
+  const tally={compatible:0,needs_editorial_review:0,potential_liturgical_conflict:0,source_disputed:0,oracle_unrecorded:0,source_missing:0,app_missing:0};
   const anomalies=[];
   for(let i=0;i<numberOfDays(year);i++){
    const date=new Date(Date.UTC(year,0,i+1)).toISOString().slice(0,10),a=appDays.get(date),o=oracle.get(date);
-   const finding=compare(a,o);tally[finding.status]=(tally[finding.status]||0)+1;
-   if(finding.status!=='compatible')anomalies.push({date,status:finding.status,conflicts:finding.conflicts||[],warnings:finding.warnings||[],similarity:finding.similarity,
+   let finding=compare(a,o);
+   const dispute=disputesByDate.get(date);
+   if(finding.status==='potential_liturgical_conflict'&&dispute&&finding.conflicts.length===1&&
+      finding.conflicts[0]===dispute.field&&normalColour(a?.colour)===normalColour(dispute.app)&&
+      normalColour(o?.colour)===normalColour(dispute.firstSource)){
+     finding={...finding,status:'source_disputed',note:dispute.note};
+   }
+   tally[finding.status]=(tally[finding.status]||0)+1;
+   if(finding.status!=='compatible')anomalies.push({date,status:finding.status,disputeNote:finding.note||null,conflicts:finding.conflicts||[],warnings:finding.warnings||[],similarity:finding.similarity,
     app:a&&{id:a.id,title:a.title,rank:a.rank,colour:a.colour,commemorationCount:a.commemorations.length},
     independent:o&&{title:o.title,rank:o.rank,colour:o.colour,commemorationCount:o.commemorations},source:sourceUrl});
   }
