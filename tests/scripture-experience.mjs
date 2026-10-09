@@ -1,0 +1,32 @@
+import assert from "node:assert/strict";
+import {createScripturePreferences} from "../src/scripture/preferences.js";
+import {searchScriptureBooks,searchCertifiedScripture} from "../src/scripture/search.js";
+import {cacheApprovedScripturePack} from "../src/scripture/offline.js";
+import {validateScriptureImport} from "../src/scripture/import-contract.js";
+import {installScriptureBrowserOwner} from "../src/scripture/browser-entry.js";
+import {readFileSync} from "node:fs";
+const memory=new Map(),storage={
+ getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value)
+};
+const prefs=createScripturePreferences(storage);
+assert.deepEqual(prefs.load(),{language:"en",bookmarks:[]});
+assert.equal(prefs.setLanguage("fr"),true);
+const passage={book:"Luke",chapter:1,verseStart:28};
+assert.equal(prefs.toggleBookmark(passage),true);
+assert.equal(prefs.load().bookmarks.length,1);
+assert.equal(prefs.toggleBookmark(passage),false);
+assert.equal(prefs.load().bookmarks.length,0);
+assert.equal(prefs.load().language,"fr");
+assert.deepEqual(searchScriptureBooks("tob"),["Tobit"]);
+assert.equal(searchCertifiedScripture([{editionId:"knox",book:"Luke",chapter:1,verseStart:28,text:"Uncleared example",reviewed:true,licenceId:"x",sourceEdition:"x",sourceUrl:"x"}],{query:"Uncleared"}).length,0);
+await assert.rejects(cacheApprovedScripturePack({editionId:"knox",records:[{text:"x"}]}),/not certified/);
+const invalid=validateScriptureImport({editionId:"dr-challoner",books:[],provenance:{}});
+assert.equal(invalid.valid,false);
+assert.ok(invalid.failures.some(x=>x.includes("rights")||x.includes("clearance")));
+assert.ok(invalid.failures.some(x=>x.includes("73")));
+assert.equal(typeof installScriptureBrowserOwner,"function");
+const app=readFileSync(new URL("../src/app/browser-entry.js",import.meta.url),"utf8");
+const home=readFileSync(new URL("../src/home/presentation.js",import.meta.url),"utf8");
+assert.match(app,/scripture\/browser-entry/);
+assert.match(home,/data-home-scripture/);
+console.log("Scripture user experience, bookmarks, import rights and Home entry contracts passed");
