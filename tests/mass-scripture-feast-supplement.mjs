@@ -9,8 +9,10 @@ import {registeredMassReading,massScriptureContextForCard}
 const data=JSON.parse(readFileSync(new URL("../data/mass/scripture-feast-reading-supplement.v1.json",import.meta.url),"utf8"));
 assert.equal(VERIFIED_MASS_FEAST_VERSION,data.version);
 assert.deepEqual(VERIFIED_MASS_FEAST_READINGS,data.celebrations,"Feast runtime mirror drifted from documented source of truth");
-assert.equal(data.celebrations.length,13);
-assert.equal(data.holds.length,4);
+assert.equal(data.celebrations.length,16);
+assert.equal(data.holds.length,7);
+assert.ok(data.holds.some(x=>x.sourcePath==="Tempora/Quad6-3"&&x.reason.includes("MULTIPLE_DISTINCT_LESSONS")&&x.biblicalSections.includes("Isaiah 62:11")));
+assert.ok(data.holds.some(x=>x.sourcePath==="Tempora/Quad6-2"&&x.slot==="GOSPEL"));
 const witnessPaths=new Set();
 const slots={GOSPEL:["gospel",{blocks:[{properSlot:"GOSPEL"}]}],
  EPISTLE_OR_LESSON:["epistle",{blocks:[{properSlot:"EPISTLE_OR_LESSON"}]}]};
@@ -19,7 +21,7 @@ const prep=proper=>({session:{resolvedMass:{proper:{status:"READY",sourcePath:pr
 for(const row of data.celebrations){
  assert.ok(!witnessPaths.has(row.sourcePath),"Duplicate Major Feast Proper "+row.sourcePath);
  witnessPaths.add(row.sourcePath);
- assert.match(row.witnessUrl,/^https:\/\/missale\.online\/proprium\/en\//);
+ assert.ok(/^https:\/\/(?:missale\.online\/proprium\/en\/|www\.missalemeum\.com\/(?:en\/widgets\/propers\/|en\/calendar\/))/.test(row.witnessUrl),"Invalid external 1962 witness: "+row.witnessUrl);
  for(const [slot,entry] of Object.entries(row.readings)){
    assert.ok(Object.hasOwn(slots,slot),"Unexpected source slot");
    const [field,card]=slots[slot];
@@ -55,8 +57,8 @@ for(const row of data.celebrations){
    assert.equal(massScriptureContextForCard(card,prep(proper)).state,"UNRESOLVED_REFERENCE");
  }
 }
-assert.equal(refs,24);
-assert.equal(witnessPaths.size,13);
+assert.equal(refs,29);
+assert.equal(witnessPaths.size,16);
 const held=new Set(data.holds.map(x=>x.sourcePath+"|"+x.slot));
 assert.ok(held.has("Tempora/Pent02-5|EPISTLE_OR_LESSON"));
 assert.ok(held.has("Tempora/Quad6-0|GOSPEL"));
@@ -73,4 +75,4 @@ const annunciation=data.celebrations.find(x=>x.sourcePath==="Sancti/03-25");
 assert.equal(annunciation.readings.EPISTLE_OR_LESSON.reference,"Isaiah 7:10–15");
 const trinity=data.celebrations.find(x=>x.sourcePath==="Tempora/Pent01-0");
 assert.equal(trinity.readings.EPISTLE_OR_LESSON.reference,"Romans 11:33–36");
-console.log("PASS Major Feast Scripture supplement: 13 source-verified Propers, 24 safe contextual links, 4 explicit source holds, 1962 bounds and branch guards");
+console.log("PASS Feast + Holy Week Scripture supplement: 16 source-verified Propers, 29 guarded contextual references, 7 explicit source holds");

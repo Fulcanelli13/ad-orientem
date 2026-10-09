@@ -1,16 +1,19 @@
 {
   "version": "1962-MASS-FEAST-READING-CONTEXT-SUPPLEMENT-V1",
-  "status": "SOURCE_AUDITED_SELECT_MAJOR_FEASTS",
+  "status": "SOURCE_AUDITED_SELECT_MAJOR_FEASTS_AND_HOLY_WEEK",
   "sourceConvention": "DIVINUM_1962_PROPER_PATH_PINS_PLUS_TEXT_MATCH",
   "governance": "Additions require an original-source liturgical witness; mismatched Latin incipit disables the contextual reader. No date-only or transferred-feast guess.",
   "importantNotes": [
     "Trinity Sunday: Missale Online labels Romans 11:32–36; the Latin incipit starts Romans 11:33. The corrected 11:33–36 is independently corroborated by https://mylatinmass.com/readings/trinity-sunday/.",
     "Annunciation: Missale Online labels Isaiah 7:11–15; its supplied Latin begins at Isaiah 7:10. The corrected 7:10–15 is independently corroborated by https://mylatinmass.com/readings/annunciation-of-the-blessed-virgin-mary/.",
     "Sacred Heart: Epistle uses Ephesians 3:8–12 and 3:14–19, not one continuous passage. Since the shared reader cannot represent separated ranges, the Epistle is held, not approximated.",
-    "Palm Sunday: Epistle is indexed only for Mass. Its processional Gospel and cross-chapter Passion are excluded pending distinct-rite/source-order integration.",
+    "Palm Sunday: the Epistle is indexed in the Mass Proper. The procession Gospel Matthew 21:1–9 and Mass Passion Matthew 26:36–75; 27:1–60 now have separately witnessed research identities in the distinct-rite Scripture ledger, but are not yet activated as Scripture Context controls.",
     "Christmas has three distinct Mass forms, not a blanket Christmas-day reading. A single generic reading would be wrong.",
     "Good Friday and Easter Vigil have distinct, non-Ordinary source-order graphs and are excluded from this Ordinary Mass Proper supplement.",
-    "The separately governed Good Friday and Easter Vigil owners must receive Scripture context from their own approved rite-state references; no proxy link to Palm Sunday or Easter Sunday is accepted."
+    "The separately governed Good Friday and Easter Vigil owners must receive Scripture context from their own approved rite-state references; no proxy link to Palm Sunday or Easter Sunday is accepted.",
+    "Holy Tuesday and Wednesday Passions are cross-chapter readings: Mark 14:32–72; 15:1–46 and Luke 22:39–71; 23:1–53. Neither can be projected into the one-chapter Scripture Context reference parser.",
+    "Holy Wednesday first lesson's source heading says Isaiah 63:1–7, but the Latin begins with Isaiah 62:11 (Dicite filiae Sion); this is explicitly held pending segmented native lesson linking. The second lesson is Isaiah 53:1–12 and must retain its separate source-order identity.",
+    "Holy Thursday's Mass Gospel John 13:1–15 is not a proxy for the optional Mandatum and its separate associated chants."
   ],
   "holds": [
     {
@@ -42,6 +45,37 @@
       "sourcePath": "Tempora/Quad6-6",
       "slot": "DISTINCT_EASTER_VIGIL",
       "reason": "FOUR_PROPHECY_SOURCE_ORDER_MUST_BE_VERIFIED"
+    },
+    {
+      "sourcePath": "Tempora/Quad6-2",
+      "slot": "GOSPEL",
+      "reason": "PASSION_SPANS_CHAPTERS_NOT_SINGLE_RANGE",
+      "biblicalSections": [
+        "Mark 14:32–72",
+        "Mark 15:1–46"
+      ],
+      "corroborationUrl": "https://www.missalemeum.com/en/widgets/propers/2026-03-31?theme=light"
+    },
+    {
+      "sourcePath": "Tempora/Quad6-3",
+      "slot": "EPISTLE_OR_LESSON",
+      "reason": "MULTIPLE_DISTINCT_LESSONS_AND_DISCONTIGUOUS_FIRST_LESSON",
+      "biblicalSections": [
+        "Isaiah 62:11",
+        "Isaiah 63:1–7",
+        "Isaiah 53:1–12"
+      ],
+      "corroborationUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light"
+    },
+    {
+      "sourcePath": "Tempora/Quad6-3",
+      "slot": "GOSPEL",
+      "reason": "PASSION_SPANS_CHAPTERS_NOT_SINGLE_RANGE",
+      "biblicalSections": [
+        "Luke 22:39–71",
+        "Luke 23:1–53"
+      ],
+      "corroborationUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light"
     }
   ],
   "celebrations": [
@@ -229,6 +263,47 @@
         "GOSPEL": {
           "reference": "Luke 1:26–38",
           "latinIncipit": "Missus est Angelus Gabriel a Deo"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-1",
+      "title": "Holy Monday · Mass",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-03-30?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 50:5–10",
+          "latinIncipit": "Dominus Deus aperuit mihi aurem"
+        },
+        "GOSPEL": {
+          "reference": "John 12:1–9",
+          "latinIncipit": "Ante sex dies Paschae venit Jesus Bethaniam"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-2",
+      "title": "Holy Tuesday · Mass lesson, Passion held",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-03-31?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Jeremiah 11:18–20",
+          "latinIncipit": "Domine demonstrasti mihi et cognovi"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-4",
+      "title": "Holy Thursday · Mass of the Lord's Supper",
+      "witnessUrl": "https://www.missalemeum.com/en/calendar/2026-04-02",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1 Corinthians 11:20–32",
+          "latinIncipit": "Convenientibus vobis in unum"
+        },
+        "GOSPEL": {
+          "reference": "John 13:1–15",
+          "latinIncipit": "Ante diem festum Paschae"
         }
       }
     }
