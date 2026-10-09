@@ -136,11 +136,13 @@ function semanticRails(){
    left=semanticRailChip(cue[0],cue[1],cue[2],{channel:cue[3]});
    right=semanticRailChip('ao-rich-adoration',L('Forty Hours','Quarante-Heures'),L(FORTY_STAGES[stage]?.[0]||'',FORTY_STAGES[stage]?.[1]||''),{channel:'persistent'});
  }else if(view==='confession'){
-   if(CONF.stage===2)left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('In Confessional','Au confessionnal'),{channel:'transient'});
+   // The phone accompanies preparation only. The sign-of-cross cue belongs
+   // to the first rehearsal card, not to every card or an implied live rite.
+   if(CONF.stage===2&&CONF.riteStep===0)left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('Before entering','Avant d’entrer'),{channel:'transient'});
    right=semanticRailChip(
      'ao-rich-confession',
      L('Confession','Confession'),
-     [L('Prepare','Préparer'),L('Examination','Examen'),L('In Confessional','Au confessionnal'),L('After','Après')][CONF.stage]||L('Preparation','Préparation'),
+     [L('Prepare','Préparer'),L('Examination','Examen'),L('Before entering','Avant d’entrer'),L('After','Après')][CONF.stage]||L('Preparation','Préparation'),
      {channel:'persistent'}
    );
  }
