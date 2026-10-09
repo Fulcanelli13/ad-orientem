@@ -99,14 +99,30 @@ try{
    resolved=await app.evaluate(async year=>{
     await globalThis.AO_RUNTIME_V8.resolver.resolveDay(String(year)+'-01-01');
     const built=await globalThis.AO_RUNTIME_V8.resolver.calendarEngine.getCalendar(year);
-    return [...built.cal.entries()].map(([date,raw])=>{
+    return Promise.all([...built.cal.entries()].map(async ([date,raw])=>{
      const obs=raw.celebration?.[0]||null;
-     return {date,id:obs?.id||null,title:obs?.title||null,rank:obs?.rank??null,
+     // Source-native title may be a donor's older descriptive caption.
+     // Audit the actual resolved Mass headline for the Pentecost Vigil,
+     // without overwriting or losing the source wording as evidence.
+     let displayedTitle=obs?.title||null;
+     if(obs?.id?.startsWith("tempora:Pasc6-6:")){
+       const hydrated=await globalThis.AO_RUNTIME_V8.resolver.resolveDay(date);
+       if(hydrated?.status!=="ready")throw new Error("Vigil Mass resolution failed on "+date+": "+(hydrated?.error||"unknown"));
+       if(hydrated?.day?.main?.id!==obs.id)throw new Error("Vigil resolver identity differs on "+date);
+       displayedTitle=hydrated?.day?.main?.title||null;
+       if(displayedTitle!=="Vigil of Pentecost")throw new Error("Incorrect 1962 Pentecost Vigil headline on "+date);
+     }
+     // Christ the King is assigned to this Sunday by n. 17(d) itself:
+     // no displaced second-class Sunday commemoration or orations.
+     if(obs?.id==="sancti:10-DU:1:w"){
+       if((raw.commemoration?.length||0)!==0)throw new Error("Forbidden Sunday commemoration under Christ the King on "+date);
+     }
+     return {date,id:obs?.id||null,title:displayedTitle,sourceTitle:obs?.title||null,rank:obs?.rank??null,
       colour:obs?.color||null,commemorations:(raw.commemoration||[]).map(x=>x.id),
       temporale:(raw.tempora||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title})),
       sanctorale:(raw.sancti||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title})),
       displaced:(raw.displaced||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title}))};
-    });
+    }));
    },year);
    assert.equal(resolved.length,numberOfDays(year),'App returned incomplete calendar year');
   }catch(e){
@@ -118,7 +134,7 @@ try{
   const anomalies=[];
   for(let i=0;i<numberOfDays(year);i++){
    const date=new Date(Date.UTC(year,0,i+1)).toISOString().slice(0,10),a=appDays.get(date),o=oracle.get(date);
-   report.dayRows.push({date,app:a?{id:a.id,title:a.title,rank:a.rank,colour:a.colour,commemorations:a.commemorations,temporale:a.temporale,sanctorale:a.sanctorale,displaced:a.displaced}:null,
+   report.dayRows.push({date,app:a?{id:a.id,title:a.title,sourceTitle:a.sourceTitle,rank:a.rank,colour:a.colour,commemorations:a.commemorations,temporale:a.temporale,sanctorale:a.sanctorale,displaced:a.displaced}:null,
     independent:o?{title:o.title,rank:o.rank,colour:o.colour,commemorations:o.commemorations,unrecorded:o.unrecorded}:null});
    let finding=compare(a,o);
    const dispute=disputesByDate.get(date);
