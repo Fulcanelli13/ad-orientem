@@ -1,0 +1,28 @@
+name: Approved source country gap recovery
+on:
+  workflow_dispatch:
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Encoded-venue parser regression
+        run: node tests/directory-approved-country-gap-recovery.mjs
+      - name: Recover missing source-page records
+        run: |
+          mkdir -p out/census-recovery
+          node tools/directory/recover-approved-world-source-gaps.mjs --remote --out=out/census-recovery/approved-mass-worldwide-complete.json
+      - name: Upload complete source-discovery data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: approved-source-worldwide-gap-recovery
+          path: out/census-recovery/approved-mass-worldwide-complete.json
+          if-no-files-found: warn
+          retention-days: 7
