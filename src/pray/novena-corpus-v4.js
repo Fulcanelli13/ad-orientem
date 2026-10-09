@@ -252,8 +252,8 @@ const ST_ANTHONY=F({
     fr:"Recourir à l’intercession de saint Antoine pendant neuf mardis successifs, en subordonnant la demande à la volonté de Dieu et au salut de l’âme."
   }),
   how:F({
-    en:"On each of nine consecutive Tuesdays, pray the same traditional prayers. Older manuals recommend, when possible, Confession, Holy Communion and prayer in church, but Ad Orientem does not present historical indulgence conditions as current law.",
-    fr:"Lors de chacun des neuf mardis consécutifs, récitez les mêmes prières traditionnelles. Les anciens manuels recommandent, lorsque cela est possible, la Confession, la Sainte Communion et la prière à l’église, mais Ad Orientem ne présente pas les anciennes conditions d’indulgence comme droit actuel."
+    en:"Each Tuesday, recite the two customary prayers, then one Our Father, one Hail Mary and one Glory Be, followed by the traditional responsory Si quæris miracula. This is the suggested sequence in the 1966 Franciscan pamphlet, not a universally prescribed form. Older recommendations on Confession and Communion are historical context.",
+    fr:"Chaque mardi, récitez les deux prières usuelles, puis un Notre Père, un Je vous salue Marie et un Gloire au Père, suivis du répons traditionnel Si quæris miracula. Il s’agit de la séquence proposée dans le livret franciscain de 1966, non d’une forme universellement prescrite. Les anciennes recommandations sur la Confession et la Communion relèvent du contexte historique."
   }),
   source:F({
     work:"Devotion of the Nine Tuesdays to St Anthony",
@@ -262,7 +262,7 @@ const ST_ANTHONY=F({
     approval:"Traditional devotional form; no single prayer text historically mandatory",
     url:"https://www.pamphlets.info/Australia/acts1014/",
     status:"SOURCE_LOCKED_TRADITIONAL_ENGLISH · FRENCH_EDITORIAL_TRANSLATION · FRENCH_WORLD_PRACTICE_WITNESS",
-    adaptation:"English common prayers retained; French translated editorially. The weekly Tuesday cadence is preserved exactly as a weekly devotion."
+    adaptation:"Two historical prayers are reproduced; the Our Father, Hail Mary, Glory Be and Si quæris responsory are reused from the canonical Prayer corpus. French is an editorial translation of the source; older indulgence conditions are historical only."
   }),
   historySources:A([
     F({label:"Benedict O’Donoghue OFM · Say a Prayer to Saint Anthony · ACTS 1014 (1966)",url:"https://www.pamphlets.info/Australia/acts1014/"}),
