@@ -174,14 +174,21 @@ try{
    ["2027-11-01",/All Saints|Toussaint/i]
  ];
  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
+ const oracleFindings=[],oracleMismatch=[];
  for(const [date,expected] of roman1962Cases){
    const opened=await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),date);
-   assert.equal(opened,true,"Failed to resolve 1962 reference date "+date);
    const title=await page.locator("#ao-calendar-modular-root .aoCalV2Hero h2").textContent();
-   assert.match(title||"",expected,"1962 daily Mass disagrees with independent reference on "+date);
-   const status=await page.evaluate(id=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.get?.(id)?.status,date);
-   assert.notEqual(status,"failed","Daily calendar resolver failed for "+date);
+   const resolved=await page.evaluate(id=>{
+     const r=globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.get?.(id);
+     const p=r?.proper?.data,day=r?.day?.main;
+     return {status:r?.status,rank:p?.rank||day?.rank||null,colour:p?.color||day?.color||null};
+   },date);
+   const ok=opened===true&&resolved.status!=="failed"&&expected.test(title||"");
+   oracleFindings.push({date,title,status:resolved.status,rank:resolved.rank,colour:resolved.colour,ok});
+   if(!ok)oracleMismatch.push({date,actual:title,expected:String(expected),status:resolved.status});
  }
+ console.log("CALENDAR_1962_ORACLE_FINDINGS="+JSON.stringify(oracleFindings));
+ assert.deepEqual(oracleMismatch,[],"1962 resolved Masses disagree with independent sample");
  assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-04-05"),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("major")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({state:"visible",timeout:12000});
