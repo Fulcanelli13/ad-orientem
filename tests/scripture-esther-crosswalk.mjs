@@ -20,7 +20,7 @@ for(const verse of [12,13])assert.deepEqual(
  {book:"Esther",chapter:7,verseStart:14,verseEnd:14});
 assert.equal(estherParallelVerse({book:"Esther",chapter:4,verseStart:11,verseEnd:15},"dr-challoner","cpdv-2009"),null);
 assert.equal(scriptureParallelReferenceState({book:"Esther",chapter:4,verseStart:11,verseEnd:15},"dr-challoner","cpdv-2009").canAutoParallel,false);
-assert.equal(scriptureParallelReferenceState({book:"SongOfSongs",chapter:1,verseStart:1},"dr-challoner","cpdv-2009").canAutoParallel,false);
+assert.equal(scriptureParallelReferenceState({book:"SongOfSongs",chapter:1,verseStart:1},"dr-challoner","cpdv-2009").canAutoParallel,true);
 assert.equal(scriptureParallelReferenceState({book:"Psalms",chapter:22,verseStart:1},"dr-challoner","cpdv-2009").canAutoParallel,false);
 assert.equal(scriptureParallelReferenceState({book:"Esther",chapter:11,verseStart:2},"dr-challoner","cpdv-2009").reference.chapter,1);
 console.log("Catholic Esther 274-to-275 chapter/verse crosswalk and merged-verse safeguards passed");
