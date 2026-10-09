@@ -95,6 +95,10 @@ assert.ok(newRows.every(x=>x.venue.contact.website.length>0),"All venues retain 
 assert.ok(newRows.filter(x=>x.venue.geo?.indicative_only).every(x=>x.venue.geo.routing_eligible===false));
 const ids=new Set(newRows.map(x=>x.venue.venue_id));
 assert.equal(ids.size,613,"Geo enrichment must not add duplicate physical SSPX venues");
+const missingPlaces=newRows.filter(x=>!isMapPublishableGeo(x.venue.geo,x.venue.address.country_code));
+const missingCountries=Object.fromEntries([...new Set(missingPlaces.map(x=>x.venue.address.country_code))].map(cc=>
+ [cc,missingPlaces.filter(x=>x.venue.address.country_code===cc).length]));
+console.log("SSPX unresolved geographic countries: "+JSON.stringify(missingCountries));
 console.log("SSPX indicative map bulk: PASS — offline "+mapped+"/613 mapped ("+
   allIndicative.summary.locality_added+" new locality, "+allIndicative.summary.region_added+
   " region, "+allIndicative.summary.country_added+" country, "+allIndicative.summary.unresolved+
