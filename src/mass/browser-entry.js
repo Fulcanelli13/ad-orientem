@@ -240,20 +240,69 @@ function massGlossaryTerms(preview){
   return [...new Set(rows)];
 }
 
+// The glossary is a lazy Formation module. Production Mass can be the user's
+// very first destination, so its contextual reference must install on demand.
+export async function openReaderGlossaryContext(preview,{
+  win=globalThis,
+  loader=()=>import("../glossary/browser-entry.js"),
+}={}){
+  let glossary=win?.AO_GLOSSARY_V1;
+  if(typeof glossary?.openTerms!=="function"){
+    const mod=await loader();
+    glossary=mod?.installGlossaryModule?.(win)??win?.AO_GLOSSARY_V1;
+  }
+  if(typeof glossary?.openTerms!=="function")throw new Error("MASS_GLOSSARY_NOT_READY");
+  const result=await glossary.openTerms(massGlossaryTerms(preview),{origin:"mass"});
+  if(result===false)throw new Error("MASS_GLOSSARY_CONTEXT_UNAVAILABLE");
+  return true;
+}
+
 function installReaderGlossaryBridge(preview){
   const button=preview?.root?.querySelector?.("[data-reader-glossary]");
   if(!button?.addEventListener)return null;
-  const onClick=(event)=>{
-    const glossary=globalThis.AO_GLOSSARY_V1;
-    if(typeof glossary?.openTerms!=="function")return;
+  let opening=false,disposed=false;
+  const onClick=event=>{
+    // Always own this button. Missing lazy owners must never mean a silent tap.
     event.preventDefault?.();
     event.stopImmediatePropagation?.();
-    void Promise.resolve(glossary.openTerms(massGlossaryTerms(preview),{origin:"mass"})).catch(error=>{
+    if(opening||disposed)return;
+    opening=true;
+    button.disabled=true;
+    button.setAttribute?.("aria-busy","true");
+    button.removeAttribute?.("data-ao-r17-glossary-error");
+    const status=button.ownerDocument?.createElement?.("p");
+    const panel=button.closest?.('[data-role="mass-preferences"]');
+    panel?.querySelector?.(".aoMassGlossaryError")?.remove?.();
+    const fr=String(globalThis.AO_R17_ACTIVE_MASS?.readerPreferences?.language??"en").startsWith("fr");
+    void openReaderGlossaryContext(preview).catch(error=>{
+      if(disposed)return;
       console.error("R17 reader glossary failed",error);
+      button.dataset.aoR17GlossaryError="true";
+      if(status){
+        status.className="aoMassGlossaryError";
+        status.setAttribute("role","alert");
+        status.style.cssText="margin:6px 0;color:var(--muted,#b9b3a9);font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)";
+        status.textContent=fr
+          ?"Impossible d’ouvrir le glossaire. La Messe reste disponible."
+          :"Glossary could not open. Mass remains available.";
+        button.insertAdjacentElement?.("afterend",status);
+      }
+    }).finally(()=>{
+      opening=false;
+      if(!disposed){
+        button.disabled=false;
+        button.removeAttribute?.("aria-busy");
+      }
     });
   };
   button.addEventListener("click",onClick,true);
-  return Object.freeze({dispose(){button.removeEventListener?.("click",onClick,true);}});
+  return Object.freeze({dispose(){
+    disposed=true;
+    button.removeEventListener?.("click",onClick,true);
+    button.disabled=false;
+    button.removeAttribute?.("aria-busy");
+    button.closest?.('[data-role="mass-preferences"]')?.querySelector?.(".aoMassGlossaryError")?.remove?.();
+  }});
 }
 
 function installReaderScriptureBridge(preview,prepared){
