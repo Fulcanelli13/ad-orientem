@@ -7,6 +7,7 @@ import {
   nextMajorCelebration,
 } from "../src/calendar/liturgical-year.js";
 import { v384Dates, v384Events, v384Event } from "../src/calendar/traditional-year-v384.js";
+import { SEASON_GUIDE, yearSegmentGeometry, renderYearJourney } from "../src/calendar/year-journey.js";
 
 function assertContinuous(year) {
   assert.equal(year.periods.reduce((sum, period) => sum + period.days, 0), year.totalDays);
@@ -32,6 +33,26 @@ assert.equal(rosary.periodDayIndex, 130);
 assert.ok(Math.abs(rosary.periodProgress - (130 / 182)) < 1e-12);
 assert.ok(Math.abs(rosary.progress - (312 / 364)) < 1e-12);
 assertContinuous(rosary);
+const segments=yearSegmentGeometry(rosary);
+assert.equal(segments.length,9,"1962 seasonal year must contain nine periods");
+assert.equal(Object.keys(SEASON_GUIDE).length,9,"Each period needs bilingual formation text");
+assert.ok(Math.abs(segments.reduce((n,p)=>n+p.widthPercent,0)-100)<1e-8,"Timeline geometry must sum to 100%");
+assert.ok(Math.abs(segments.at(-1).endPercent-100)<1e-8,"Timeline must end at liturgical year boundary");
+assert.ok(segments.every(p=>p.days>0&&p.endPercent>p.startPercent),"Timeline segment must represent actual day duration");
+assert.ok(segments.find(p=>p.id==="pentecost").widthPercent<3,"Short Pentecost octave must remain proportionally short");
+const yearHtml=renderYearJourney({year:rosary,selectedDate:"2026-10-07",formatDate:id=>id});
+assert.equal((yearHtml.match(/data-cal-year-segment=/g)||[]).length,9,"Year track must render each period exactly once");
+assert.equal((yearHtml.match(/data-cal-year-period=/g)||[]).length,9,"All nine period cards must be selectable");
+assert.equal((yearHtml.match(/data-cal-year-open-day=/g)||[]).length,1,"Only the expanded period must expose its date actions");
+assert.match(yearHtml,/data-cal-year-open-day="2026-05-31"/,"Current period start day is computed from the year model");
+assert.match(yearHtml,/data-cal-year-month="2026-05"/,"Current period month navigation must be grounded");
+assert.match(yearHtml,/data-cal-year-stage="present"/,"Current period must be distinguished visually");
+const yearFrench=renderYearJourney({year:rosary,selectedDate:"2026-10-07",fr:true,focusedPeriodId:"advent",formatDate:id=>id});
+assert.match(yearFrench,/Ouvrir le premier jour/,"French period controls are not translated");
+assert.match(yearFrench,/data-cal-year-open-day="2025-11-30"/,"Selecting a different period must change details");
+const following=buildLiturgicalYear("2026-11-29");
+assert.equal(yearSegmentGeometry(following).length,9,"Advent rollover must build a fresh year");
+assert.equal(yearSegmentGeometry(following)[0].start,following.start,"Following liturgical year starts on new Advent");
 
 const next = nextMajorCelebration("2026-10-07");
 assert.equal(next?.date, "2026-10-25");
@@ -114,9 +135,13 @@ assert.match(browser, /calendarView==="picker"\)return \`\$\{tabsMarkup\(\)\}\$\
 assert.match(browser, /data-cal-view/);
 assert.match(browser, /aoCalV2Ring/, "Liturgical Year lost its sourced progress ring");
 assert.match(browser, /aoCalV2YearIdentity/, "Liturgical Year lost selected-day and period identity");
-assert.match(browser, /aoCalV2PeriodProgress/, "Liturgical Year lost the period-progress presentation");
+assert.match(browser, /renderYearJourney\(\{year:y/, "Liturgical Year lost the proportional timeline and period journey");
+assert.match(browser, /yearJourneyCss/, "Liturgical Year did not import responsive journey styles");
 assert.match(browser, /aoCalV2Coming/, "Liturgical Year lost its next major celebration and season transitions");
 assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
+assert.match(browser,/data-cal-year-open-day/,"Period to Day journey navigation is missing");
+assert.match(browser,/data-cal-year-month/,"Period to Month journey navigation is missing");
+assert.match(browser,/data-cal-year-period/,"Expandable period card navigation is missing");
 assert.doesNotMatch(browser, /v384Companion/,"redundant v38.4 Traditional Liturgical Year companion returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-panel/,"retired v38.4 year\/discipline UI returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-era/,"retired duplicate discipline-era tabs returned");
