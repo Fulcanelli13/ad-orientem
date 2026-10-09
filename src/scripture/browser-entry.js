@@ -52,7 +52,7 @@ export function installScriptureBrowserOwner(win=globalThis){
          if(win?.console?.debug)win.console.debug("Scripture edition is not locally available",error);
        }finally{inflight.delete(key);}
      },
-     openExternal(url)=>win.open?.(url,"_blank","noopener,noreferrer")
+     openExternal:(url)=>win.open?.(url,"_blank","noopener,noreferrer")
    });
    node.hidden=false;
    node.querySelector?.("[data-scripture-close]")?.focus?.();
