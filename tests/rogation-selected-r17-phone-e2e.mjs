@@ -31,6 +31,12 @@ try{
   const context=await browser.newContext({viewport:{width:390,height:844},
     isMobile:true,hasTouch:true,deviceScaleFactor:2,serviceWorkers:"block"});
   const page=await context.newPage();
+  // Avoid a second, automatically installed preflight owning the same surface:
+  // this test wires one explicit synthetic-certified preflight to the actual
+  // production R17 controller. Normal auto-install is covered by shell tests.
+  await page.addInitScript(()=>{
+   globalThis.AO_R17_BROWSER_ENTRY=Object.freeze({installed:true});
+  });
   const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
   try{
    await page.goto("http://127.0.0.1:"+server.address().port+
@@ -136,6 +142,8 @@ try{
     console.error("ROGATION_SELECTED_PREFLIGHT_DIAGNOSTIC",date,language,JSON.stringify(diagnostic));
     throw error;
    }
+   assert.equal(await page.locator('[data-ao-rogation-preflight]').count(),1,
+     "Duplicated Mass preflight would create conflicting rite choices");
    const area=page.locator('[data-ao-rogation-preflight]');
    await area.locator("summary").click();
    await page.selectOption("[data-rogation-service]","PUBLIC_PROCESSION");
