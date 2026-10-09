@@ -1,10 +1,13 @@
 import { mountScriptureLibrary } from "./library.js";
 import { installScriptureStyles } from "./styles.js";
+import { loadScriptureBook } from "./pack-loader.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
  const doc=win.document;
  let reader=null,previousFocus=null;
+ const loaded=new Map();
+ const inflight=new Set();
  function overlay(){
    if(!doc?.createElement)return null;
    let root=doc.getElementById("ao-scripture-overlay");
@@ -33,6 +36,22 @@ export function installScriptureBrowserOwner(win=globalThis){
    reader=mountScriptureLibrary(node,{
      passage,language:current==="fr"?"fr":"en",storage:win.localStorage,
      onClose:close,
+     onNeedBook:async({book,editionId})=>{
+       const key=editionId+":"+book;
+       if(inflight.has(key))return;
+       if(loaded.has(key)){return;}
+       inflight.add(key);
+       try{
+         const records=await loadScriptureBook(editionId,book,{
+           fetcher:win.fetch?.bind(win),cacheStorage:win.caches,cryptoProvider:win.crypto
+         });
+         loaded.set(key,records);
+         if(reader)reader.setRecords([...loaded.values()].flat());
+       }catch(error){
+         // Unavailable or unapproved translations remain external-link-only.
+         if(win?.console?.debug)win.console.debug("Scripture edition is not locally available",error);
+       }finally{inflight.delete(key);}
+     },
      openExternal(url)=>win.open?.(url,"_blank","noopener,noreferrer")
    });
    node.hidden=false;
