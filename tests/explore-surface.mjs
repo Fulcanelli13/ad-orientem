@@ -78,8 +78,8 @@ assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditi
 assert.deepEqual(projection.counts,{
   tlm:1,
   shrines:72,
-  apparitions:19,
-  relics:13,
+  apparitions:23,
+  relics:25,
   traditions:89,
   pilgrimages:100,
 });
