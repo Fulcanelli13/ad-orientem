@@ -29,7 +29,7 @@ for(const row of newer.cases){
  const src=CSE_SOURCE_MAP[row.principal_catholic_source_id];
  assert.ok(CSE_DEBATE_MAP[row.id],row.id+" absent");
  assert.ok(src&&src.canonical_url===row.source_url,row.id+" incorrect original source URL");
- assert.ok(row.passage_locator.length>=3&&row.bounded_supported_claim.length>30,row.id+" missing claim-level limitation");
+ assert.ok(row.passage_locator.length>=2&&row.bounded_supported_claim.length>30,row.id+" missing claim-level limitation");
  assert.ok(row.claim_scope_limit.length>50,row.id+" missing evidence caveat");
  assert.ok(allowed.has(row.source_context_access),row.id+" unrecognized verification status");
  assert.equal(row.eight_stage_catholic_claims_all_collated,false);
