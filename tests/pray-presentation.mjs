@@ -8,6 +8,7 @@ import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pra
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "../src/pray/devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "../src/pray/seven-words-witness.v1.js";
 import { LITANY_SOURCE_WITNESSES, extractLitanyProper, paginateLitanyProper } from "../src/pray/litany-source.js";
+import { PRAY_COLLATION_NOTICES_V1, prayCollationNotice } from "../src/pray/source-collation-notices.v1.js";
 
 const prayers=PRAY_CANONICAL_DATA_V435930?.prayers??{};
 assert.equal(Object.keys(prayers).length,48,"locked v43.59.30 corpus must contain exactly 48 prayer records");
@@ -366,3 +367,40 @@ for(const record of sourceInventory.novenas){
  assert.ok(record.sourceWork,"missing historical identity for "+record.id);
  assert.match(record.sourceUrl,/^https:\/\//,"novena source must carry a URL: "+record.id);
 }
+
+
+// Anchor-level English/French source checking cannot silently upgrade all 64
+// canonical prayer/novena texts to independent trilingual certification.
+const sourceV3=JSON.parse(readFileSync("data/pray/prayer-source-certification-inventory.v3.json","utf8"));
+assert.equal(sourceV3.prayers.length,48);
+assert.equal(sourceV3.novenas.length,16);
+assert.equal(sourceV3.counts.anchorReviewed,18);
+assert.equal(sourceV3.counts.fullyCertified,0);
+assert.equal(sourceV3.counts.notReviewed,46);
+assert.equal(new Set([...sourceV3.prayers,...sourceV3.novenas].map(x=>x.id)).size,64);
+const v3Indexed=new Map(sourceV3.prayers.map(x=>[x.id,x]));
+for(const p of sourceV3.prayers){
+ assert.deepEqual(p.languages,Object.fromEntries(["en","fr","la"].map(l=>[l,!!prayers[p.id][l]])));
+ assert.match(p.editorial,/PENDING_INDEPENDENT/,"Uncollated prayer falsely certified: "+p.id);
+ assert.ok(["NOT_REVIEWED","ANCHOR_REVIEWED_NOT_FULL_VERBATIM"].includes(p.collation.status));
+}
+for(const n of sourceV3.novenas){
+ assert.equal(n.collation.status,"NOT_REVIEWED");
+ assert.match(n.editorial,/PENDING_INDEPENDENT/,"Uncollated novena falsely certified: "+n.id);
+}
+const sourceNotices=Object.entries(PRAY_COLLATION_NOTICES_V1);
+assert.equal(sourceNotices.length,7,"Seven discovered edition differences must be signalled in the Prayer source drawer");
+for(const [id,notice] of sourceNotices){
+ const audit=v3Indexed.get(id)?.collation;
+ assert.ok(audit,"Source notice lacks a ledger record: "+id);
+ assert.deepEqual(notice.notice,audit.uiNotice);
+ assert.deepEqual(notice.relatedWitnesses,audit.relatedWitnesses);
+ assert.equal(prayCollationNotice(id),notice);
+ assert.ok(notice.notice.en.length>50&&notice.notice.fr.length>50);
+}
+assert.equal(prayCollationNotice("foundations_act_of_hope"),null,"The published French hope anomaly already has one separate canonical UI disclosure");
+assert.match(runtime,/prayCollationNotice\(p\.id\)/,"Canonical Prayer reader must consume source collation notices");
+assert.match(runtime,/aoP435930SourceEditionVariant/,"Bilingual historical edition disclosure was not rendered");
+assert.ok(prayers.foundations_our_father.fr.includes("ne nous laissez pas succomber"),"Traditional French Our Father must not be silently modernized");
+assert.ok(prayers.marian_memorare.fr.includes("Verbe incarné"),"Traditional French Memorare must not be silently modernized");
+assert.ok(prayers.foundations_eternal_rest.fr.includes("lumière éternelle"),"Traditional Eternal Rest must not be silently modernized");
