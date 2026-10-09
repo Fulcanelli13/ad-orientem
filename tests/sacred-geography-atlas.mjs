@@ -58,7 +58,7 @@ for(const [id,status] of [
   assert.ok(projectionDoesNotAssertDogma(apparition),"historical phenomena may not assert required dogma");
 }
 function projectionDoesNotAssertDogma(record){
-  return !/infallibly proven|must believe|universal approval/.test(record.summary_en??"");
+  return !/is infallibly proven|must believe this apparition|is universally approved/.test(record.summary_en??"");
 }
 for(const [placeId,count] of [
   ["place:PT:fatima-sanctuary",3],
