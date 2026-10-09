@@ -1,5 +1,7 @@
 // Download-only RFC 5545 serializer for verified general Roman 1962
 // Calendar days. No network fetch, second ordo, Mass times or recurrence.
+// An observed day is exportable even if its separate Mass text fetch failed;
+// all identifiers, rank, colour, title and commemoration remain from day.main.
 import { calendarMassColour } from "./colour-projection.js";
 
 const validDay=/^\d{4}-\d{2}-\d{2}$/;
@@ -51,9 +53,9 @@ function commemorationNames(resolved,language){
 function strictlyResolvedDay(row){
   const id=row?.date;
   if(!validDay.test(String(id??""))||isoNextDay(id).length!==10 ||
-    row.status!=="ready"||!row.day?.main||row.proper?.status!=="ready"||!row.proper.data)
+    row.status==="failed"||!row.day?.main)
     throw new Error("Unverified or unavailable 1962 observance: "+String(id||"unknown"));
-  const proper=row.proper.data;
+  const proper=row.proper?.status==="ready"?(row.proper.data||{}):{};
   if(!String(proper.name||row.day.main.title||"").trim()||!String(proper.rank||row.day.main.rank||"").trim()||!calendarMassColour(row).trim())
     throw new Error("Missing canonical title, class or colour: "+id);
   return row;
@@ -80,7 +82,7 @@ export function serialize1962CalendarMonth(monthId,rows,{language="en",now=new D
   for(let d=1;d<=last;d++){
     const id=monthId+"-"+String(d).padStart(2,"0");
     const r=strictlyResolvedDay(byDate.get(id));
-    const proper=r.proper.data;
+    const proper=r.proper?.status==="ready"?(r.proper.data||{}):{};
     const title=String(language==="fr"
       ?(proper.nameFr||r.day.main.titleFr||proper.name||r.day.main.title)
       :(proper.name||r.day.main.title)).trim();
@@ -93,7 +95,8 @@ export function serialize1962CalendarMonth(monthId,rows,{language="en",now=new D
       (language==="fr"?"Couleur de la liturgie : ":"Liturgical colour: ")+colour,
     ];
     if(comms.length)parts.push((language==="fr"?"Commémorations : ":"Commemorations: ")+comms.join("; "));
-    if(proper.sourcePath)parts.push((language==="fr"?"Propre-source : ":"Proper source: ")+proper.sourcePath);
+    const sourcePath=proper.sourcePath||r.day.main.path;
+    if(sourcePath)parts.push((language==="fr"?"Propre-source : ":"Proper source: ")+sourcePath);
     parts.push(language==="fr"
       ?"Célébration liturgique, pas un horaire de messe. Les propres locaux doivent être vérifiés."
       :"Liturgical observance, not a Mass schedule. Local propers must be checked.");
