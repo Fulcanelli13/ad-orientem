@@ -43,3 +43,5 @@ jobs:
         run: node tests/sexual-ethics-highstakes-original-source-v1.mjs
       - name: Moral-reasoning bulk original-source classification, 80 stages
         run: node tests/sexual-ethics-moral-reasoning-source-batch-v1.mjs
+      - name: Practical relationships, marriage and chastity original-scope batch (120 stages)
+        run: node tests/sexual-ethics-practical-relationships-120-stage-v1.mjs

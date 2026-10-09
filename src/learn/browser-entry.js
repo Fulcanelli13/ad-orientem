@@ -76,7 +76,7 @@ function closeChild(win,id){
     if(id==="learn.sexual_ethics"){win?.AO_SEXUAL_ETHICS_V1?.close?.();return true;}
     if(id===SPIRITUAL_LIFE_ROUTE_ID){win?.AO_SPIRITUAL_LIFE_V1?.close?.();return true;}
     if(TRADITIONAL_LEARN_ROUTES[id]){win?.AO_TRADITIONAL_LEARN_V381?.close?.();return true;}
-    if(id==="learn.catechism"){win?.AO_TRADITIONAL_CATECHISM?.close?.();return true;}
+    if(id==="learn.catechism"){win?.AO_CATECHISM_GUIDED_MODE_V1?.dispose?.();win?.AO_TRADITIONAL_CATECHISM?.close?.();return true;}
     if(id==="learn.catechism.daily"){win?.AO_DAILY_CATECHISM?.close?.();return true;}
     if(id==="today.saint"&&win?.AO_NAV_V25?.getState?.()?.panel==="saint"){win.AO_NAV_V25.closePanel?.();return true;}
     if(id==="today.gospel"&&appState(win)?.route==="scripture"){runtime(win)?.store?.dispatch?.({type:"scripture-close"});return true;}
@@ -85,7 +85,7 @@ function closeChild(win,id){
 }
 
 export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
-  const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false};
+  const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false,guidedAttempted:false};
 
   function cancelMonitor(){
     if(state.monitor&&typeof win?.clearTimeout==="function")win.clearTimeout(state.monitor);
@@ -222,7 +222,13 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(!state.open||!state.child)return;
     const openNow=childOpen(win,state.child);
     if(openNow)state.seenChild=true;
+    if(openNow&&state.child==="learn.catechism"&&!state.guidedAttempted){
+      state.guidedAttempted=true;
+      void import("./catechism-guided-preview-bridge.js").then(mod=>mod.installCatechismGuidedMode(win)).catch(error=>win?.console?.error?.("Catechism guided integration failed",error));
+    }
     if(state.seenChild&&!openNow){
+      win?.AO_CATECHISM_GUIDED_MODE_V1?.dispose?.();
+      state.guidedAttempted=false;
       state.child=null;
       state.openPolls=0;
       state.seenChild=false;
@@ -273,6 +279,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     retireHistoricalLearnSurface(win);
     try{win?.AO_NAV_V362?.clearExternalReturn?.();}catch{}
     state.child=id;
+    state.guidedAttempted=false;
     state.externalReturn=opts?.returnContext??null;
     state.error="";
     state.seenChild=false;
@@ -306,6 +313,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     cancelMonitor();
     if(state.child)closeChild(win,state.child);
     state.child=null;
+    state.guidedAttempted=false;
     state.family=null;
     state.lastFamily=null;
     state.externalReturn=null;

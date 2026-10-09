@@ -42,10 +42,10 @@ for(const id of CSE_DEBATE_IDS){
  }
 }
 assert.equal(stageCount,440);
-assert.equal(referenceCount,605);
+assert.equal(referenceCount,612);
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,605);
+assert.equal(audit.summary.stage_specific_mapping_references,612);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.remaining_full_passage_review,55);
@@ -54,4 +54,4 @@ for(const id of ["CSE035","CSE038","CSE045","CSE141","CSE142","CSE143"])assert.o
 const close=raw.CSE125.source_scope_caveat;
 assert.match(close,/ACOG gives clinical treatment options, not moral permission/);
 assert.match(close,/NCBC is a non-magisterial application/);
-console.log("PASS Sexual Ethics 55/55 debate stage mappings: 440 distinct stage citation chains, 605 original source references, no invented locators, 0 claimed certified.");
+console.log("PASS Sexual Ethics 55/55 debate stage mappings: 440 distinct stage citation chains, 612 original source references, no invented locators, 0 claimed certified.");
