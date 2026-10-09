@@ -30,8 +30,8 @@
     {
       "key": "generic_feria",
       "count": 55,
-      "status": "REVIEW_NOT_CLEARED",
-      "reason": "Main observed ID was the synthetic :feria:4:w and displayed 'Feria'. Resolve source-of-day lineage/week before making contextual titles; NEVER relabel a weekday as a Sunday, and DO NOT infer the week from the civil date.",
+      "status": "DISPLAY_HEADLINE_CORRECTED_CANONICAL_TEMPORALE_OR_INHERITED_EPIPHANY_PROPER",
+      "reason": "All 55 observed IV-class ferias get bilingual weekday headlines from *actual* source identities: 53 have exactly one matching observed Temporale weekday and 2 (2027-01-07/08) inherit the Epiphany Mass Sancti/01-06 with no candidate Temporale. Guard canonical class, exact weekday, Proper availability and rubric n.72 Jan 7–12. Six Epi4 weekdays after Pentecost are explicitly marked as transferred per n.18. No title inferred solely from a date; no ordo or Mass text mutation.",
       "dates": [
         "2024-01-09",
         "2024-01-10",
@@ -245,12 +245,24 @@
       "nonGeneric": 72
     },
     "archivedFlagsNotComparableAsSimpleRemainingCount": 132,
-    "historicCalendarHeadlineCorrections": 30,
-    "archivedUnclearedFlagsAfterDisplayWork": 102,
+    "historicCalendarHeadlineCorrections": 85,
+    "archivedUnclearedFlagsAfterDisplayWork": 47,
     "principalRankColourNewUnclassifiedConflicts": 0,
     "currentChristKingSundayCommemorations": 0,
     "alternativeRogationMassCertified": false,
     "allPropersCertified": false,
-    "note": "The current 127 raw-calendar title-similarity flags are not 127 verified user-facing headline errors. The first-source audit captures unhydrated donor titles and its 127 count is not a correction ledger; 30 historically flagged displays now have source-ID UI aliases or resolver hydration. Source completeness and appointed Proper certification remain separate."
+    "note": "The 127 raw donor-title flags are not unresolved on-screen errors; 85 historical bilingual Calendar day headlines now have source-identity projection, including 55 ferias. The remaining 47 historical flags require original-source adjudication. Raw comparison, commemoration orations and full Mass-Propers certification remain separate.",
+    "feriaReconciliation": {
+      "historical": 55,
+      "year2024": 29,
+      "year2027": 26,
+      "observedTemporaleWeekday": 53,
+      "observedEpiphanyProperWithoutTemporale": 2,
+      "resumedEpiphanyWeekdaysAfterPentecost": 6,
+      "source": "https://github.com/Fulcanelli13/ad-orientem/pull/764",
+      "dateOnlyPatches": 0,
+      "calendarWeekdayToSundayRenamings": 0,
+      "verifiesFullMassPropers": false
+    }
   }
 }

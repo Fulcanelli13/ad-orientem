@@ -15,7 +15,7 @@ const counts=new Map([
   ["advent_saturday_wording",1],
 ]);
 const displayCorrected=new Set([
-  "saturday_bvm_mass_title","pentecost_vigil_mislabel",
+  "generic_feria","saturday_bvm_mass_title","pentecost_vigil_mislabel",
   "bibiana_mislabel","paul_latin_only","advent_saturday_wording",
 ]);
 const seen=new Set();
@@ -40,8 +40,8 @@ for(const group of registry.groups){
   }
 }
 assert.equal(seen.size,registry.totals.flags);
-assert.equal(addressed,30);
-assert.equal(stillOpen,102);
+assert.equal(addressed,85);
+assert.equal(stillOpen,47);
 const current=registry.currentReaudit;
 assert.equal(current.editorialFlagsCurrentlyDetectedFromRawSource.year2024,65);
 assert.equal(current.editorialFlagsCurrentlyDetectedFromRawSource.year2027,62);
@@ -55,4 +55,9 @@ assert.equal(current.currentChristKingSundayCommemorations,0);
 assert.equal(current.alternativeRogationMassCertified,false);
 assert.equal(current.allPropersCertified,false);
 assert.match(current.workflow,/\/actions\/runs\/37958564284$/);
-console.log("PASS Calendar editorial historical 132-date worklist: 30 display corrections, 102 open; latest raw-source audit 127 and zero new class/colour conflicts");
+assert.deepEqual(current.feriaReconciliation.historical,55);
+assert.equal(current.feriaReconciliation.observedTemporaleWeekday,53);
+assert.equal(current.feriaReconciliation.observedEpiphanyProperWithoutTemporale,2);
+assert.equal(current.feriaReconciliation.resumedEpiphanyWeekdaysAfterPentecost,6);
+assert.equal(current.feriaReconciliation.dateOnlyPatches,0);
+console.log("PASS Calendar editorial historical 132-date worklist: 85 source-backed display headlines, 47 open; newer raw-source audit 127");
