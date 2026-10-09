@@ -252,6 +252,19 @@ try{
      }
    }
    assert.ok(prayer.source.length>=5,"Prayer source/witness presentation lost: "+id);
+   if(["foundations_our_father","foundations_apostles_creed","foundations_grace_after_meals","marian_hail_holy_queen","marian_memorare","adoration_anima_christi","foundations_eternal_rest"].includes(id)){
+     const notice=page.locator("#aoPray435930.open .aoP435930SourceEditionVariant");
+     assert.equal(await notice.count(),1,"Material EN/FR historical edition discrepancy not disclosed: "+id);
+     assert.ok((await notice.textContent()).trim().length>=50,"Empty edition classification: "+id);
+   }
+   if(id==="marian_memorare"){
+     const witnesses=await page.locator("#aoPray435930.open .aoP435930Source a").evaluateAll(nodes=>nodes.map(x=>x.href));
+     assert.ok(witnesses.some(x=>x.includes("fssp.org/fr/consecration")),"FSSP French Memorare witness missing");
+   }
+   if(id==="foundations_our_father"){
+     const witnesses=await page.locator("#aoPray435930.open .aoP435930Source a").evaluateAll(nodes=>nodes.map(x=>x.href));
+     assert.ok(witnesses.some(x=>x.includes("wikisource.org/wiki/Page:")),"historical French Our Father witness missing");
+   }
    if(id==="foundations_act_of_hope"){
      assert.match(prayer.source,/Dans cette foi/,"published French textual anomaly must be explicitly recorded");
      const links=await page.locator("#aoPray435930.open .aoP435930SourceWitnessNote a").evaluateAll(nodes=>nodes.map(n=>n.href));
