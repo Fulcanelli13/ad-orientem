@@ -231,6 +231,11 @@ try{
    assert.equal(await primary.getAttribute("rel"),"noopener noreferrer");
    if(id==="holy_ghost")assert.match(await source.textContent(),/NOVENA FOR PENTECOST/,"Source points to Christmas page without Pentecost section identity");
    if(id==="perpetual_help")assert.match(await source.textContent(),/not proofread/i,"Unproofread source transcription is represented as certified");
+   if(["annunciation","seven_sorrows","assumption"].includes(id)){
+     const evidence=await source.textContent();
+     assert.match(evidence,/MEDITATION and PRACTICE/,"The source drawer does not disclose omitted historical daily meditations: "+id);
+     assert.match(evidence,/short.*guide|short editorial/i,"An editorial summary must not masquerade as original 1909 text: "+id);
+   }
    if(id==="st_anthony_nine_tuesdays"){
      await detail.locator("[data-n1-mode='simple']").tap();
      await detail.locator("[data-n1-begin]").tap();

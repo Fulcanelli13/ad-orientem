@@ -1,0 +1,845 @@
+{
+  "schema": "ao.prayer.novena-source-review.v2",
+  "date": "2026-10-09",
+  "relationship": "Supplement to prayer-source-certification-inventory.v3.json, NOT a parallel canonical prayer corpus",
+  "scope": "Sixteen novena source links, digital-witness source-page type, original practice requirements, material reading caveats",
+  "counts": {
+    "records": 16,
+    "originalTextFullCollations": 0,
+    "sourcePagesNeedingDefinitivePrintCollation": 16,
+    "daySpecificNovenas": 8,
+    "uniqueDayPrayerBodies": 72,
+    "additionalSharedOrRepeatBodies": 19,
+    "sourceDayBodyReviews": 27,
+    "frenchEditorialTranslationReviews": 27,
+    "completePrintEditionCertificates": 0,
+    "omittedHammerMeditationPracticeDayPairs": 27,
+    "namedOriginalHistoricalMeditationSections": 27
+  },
+  "sourceMethod": "Identified principal online witness pages and section/context from historical transcriptions and the existing donor register. URL access is not proofread facsimile collation. Unchecked entries are explicitly noted.",
+  "records": [
+    {
+      "id": "holy_ghost",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "edition": "New York: P. J. Kenedy & Sons, 1925",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "SHARED_PAGE_SECTION",
+      "finding": "The book's page is titled Christmas but contains a separate complete Pentecost section with nine numbered days.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
+      "dayBodySourceReview": [
+        {
+          "day": 1,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "First Day",
+          "htmlWitnessApproxLine": 174,
+          "sourceIncipit": "Come, O Holy Ghost, the Lord and Life-giver;",
+          "sourceExplicit": "iving water springing up into life everlasting.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 2,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Second Day",
+          "htmlWitnessApproxLine": 180,
+          "sourceIncipit": "Come, O Spirit of Wisdom, and reveal to my s",
+          "sourceExplicit": "them, and hold them hereafter, my own forever.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 3,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Third Day",
+          "htmlWitnessApproxLine": 185,
+          "sourceIncipit": "Come, O Spirit of Understanding, and enlight",
+          "sourceExplicit": "lear vision of Thee and the Father and the Son.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 4,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Fourth Day",
+          "htmlWitnessApproxLine": 190,
+          "sourceIncipit": "Come, O Spirit of Counsel, help and guide me",
+          "sourceExplicit": "s to the goal of eternal life for which I long.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 5,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Fifth Day",
+          "htmlWitnessApproxLine": 195,
+          "sourceIncipit": "Come, O Spirit of Fortitude, and give fortit",
+          "sourceExplicit": "may be able to resist the attacks of the devil.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 6,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Sixth Day",
+          "htmlWitnessApproxLine": 200,
+          "sourceIncipit": "Come, O Spirit of Knowledge, and make us und",
+          "sourceExplicit": "putting Thy rewards before every earthly gift.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 7,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Seventh Day",
+          "htmlWitnessApproxLine": 205,
+          "sourceIncipit": "Come, O Spirit of Piety, possess my heart; i",
+          "sourceExplicit": "eek Thee, and find Thee my best, my truest joy.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 8,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Eighth Day",
+          "htmlWitnessApproxLine": 210,
+          "sourceIncipit": "Come, O Spirit of holy Fear, penetrate my in",
+          "sourceExplicit": "e Ever-blessed Trinity, God, world without end.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 9,
+          "witnessSection": "NOVENA FOR PENTECOST",
+          "witnessDayHeading": "Ninth Day",
+          "htmlWitnessApproxLine": 215,
+          "sourceIncipit": "Come, O Holy Comforter, and grant us a relis",
+          "sourceExplicit": "f good, we may attain unto eternal blessedness.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        }
+      ]
+    },
+    {
+      "id": "christmas",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "edition": "New York: P. J. Kenedy & Sons, 1925",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "SHARED_PAGE_SECTION",
+      "finding": "The same page opens with dated Christmas prayers; Pentecost is a separate following chapter heading.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
+      "dayBodySourceReview": [
+        {
+          "day": 1,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 16",
+          "htmlWitnessApproxLine": 107,
+          "sourceIncipit": "O Shepherd that rulest Israel, Thou that lea",
+          "sourceExplicit": "eph like a sheep, come to guide and comfort us.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 2,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 17",
+          "htmlWitnessApproxLine": 112,
+          "sourceIncipit": "O Wisdom that comest out of the mouth of the",
+          "sourceExplicit": "sweetly, come to teach us the way of prudence!",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 3,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 18",
+          "htmlWitnessApproxLine": 120,
+          "sourceIncipit": "O Adonai, and Ruler of the house of Israel,",
+          "sourceExplicit": "ai, come to redeem us with an outstretched arm!",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 4,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 19",
+          "htmlWitnessApproxLine": 125,
+          "sourceIncipit": "O Root of Jesse, which standest for an ensig",
+          "sourceExplicit": "s shall seek, come to deliver us, do not tarry.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 5,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 20",
+          "htmlWitnessApproxLine": 130,
+          "sourceIncipit": "O Key of David, and Sceptre of the house of",
+          "sourceExplicit": "at sit in darkness, and in the shadow of death.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 6,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 21",
+          "htmlWitnessApproxLine": 135,
+          "sourceIncipit": "O Dayspring, Brightness of the everlasting l",
+          "sourceExplicit": "hat sit in darkness and in the shadow of death!",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 7,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 22",
+          "htmlWitnessApproxLine": 143,
+          "sourceIncipit": "O King of the Gentiles, yea, and desire ther",
+          "sourceExplicit": "om Thou hast made out of the dust of the earth!",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 8,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 23",
+          "htmlWitnessApproxLine": 149,
+          "sourceIncipit": "O Emmanuel, our King and our Law-giver, Long",
+          "sourceExplicit": "ation thereof, come to save us, O Lord our God!",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 9,
+          "witnessSection": "NOVENA FOR CHRISTMAS",
+          "witnessDayHeading": "December 24",
+          "htmlWitnessApproxLine": 155,
+          "sourceIncipit": "O Thou that sittest upon the cherubim, God o",
+          "sourceExplicit": "ts, come, show Thy face, and we shall be saved.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        }
+      ]
+    },
+    {
+      "id": "corpus_christi",
+      "form": "REPEAT_FORM",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Festival_of_Corpus_Christi",
+      "edition": "Dublin: Browne & Nolan, 1883",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "HISTORICAL_NOVENA_PAGE",
+      "finding": "1883 book explicitly instructs beginning Wednesday in Pentecost week; the nine prayer days may include feast day.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "sacred_heart",
+      "form": "REPEAT_FORM",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Feast_of_the_Sacred_Heart",
+      "edition": "Dublin: Browne & Nolan, 1883",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "HISTORICAL_NOVENA_PAGE",
+      "finding": "Linked historical Sacred Heart Novena present; full French literal witness still pending.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "immaculate_conception",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_in_Preparation_for_the_Feast_of_the_Immaculate_Conception",
+      "edition": "Dublin: Browne & Nolan, 1883",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "HISTORICAL_NOVENA_PAGE",
+      "finding": "1883 text prescribes 29 November opening and multiple shared prayer elements.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "annunciation",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "url": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "edition": "Benziger Brothers, 1909",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_PROJECT_GUTENBERG",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "FULL_HISTORICAL_EBOOK_SECTION",
+      "finding": "Hammer Section III has nine Annunciation days; transfer-aware 1962 annual feast date not yet consistently bound.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
+      "omittedHistoricalMaterial": {
+        "status": "27_HISTORICAL_MEDITATIONS_AND_PRACTICES_NOT_REPRODUCED",
+        "source": "Bonaventure Hammer, Mary Help of Christians (Benziger, 1909), respective section III–V",
+        "missingPerDay": [
+          "full MEDITATION prose",
+          "full PRACTICE/resolution prose"
+        ],
+        "currentlyAvailable": [
+          "short French-English editorial day guide",
+          "historical preparatory and proper prayer excerpts",
+          "direct full source-page link in Sources & edition"
+        ],
+        "remediation": "Preserve 1909 full original prose under optional day-specific context, separated clearly from prayers and commentary; do not invent French original text.",
+        "originalDaySections": [
+          {
+            "day": 1,
+            "originalEnglishTitle": "The Annunciation",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 2,
+            "originalEnglishTitle": "The Import of the Angel’s Salutation",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 3,
+            "originalEnglishTitle": "The Effect of the Angel’s Salutation",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 4,
+            "originalEnglishTitle": "Mary’s Question",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 5,
+            "originalEnglishTitle": "The Solution",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 6,
+            "originalEnglishTitle": "Mary’s Consent",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 7,
+            "originalEnglishTitle": "Mary’s Fortitude in Suffering",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 8,
+            "originalEnglishTitle": "Mary, the Mother of God",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 9,
+            "originalEnglishTitle": "Mary Our Mother",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "assumption",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "url": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "edition": "Benziger Brothers, 1909",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_PROJECT_GUTENBERG",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "FULL_HISTORICAL_EBOOK_SECTION",
+      "finding": "Hammer Section V contains nine Assumption meditations, not a separate nine-page book.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
+      "omittedHistoricalMaterial": {
+        "status": "27_HISTORICAL_MEDITATIONS_AND_PRACTICES_NOT_REPRODUCED",
+        "source": "Bonaventure Hammer, Mary Help of Christians (Benziger, 1909), respective section III–V",
+        "missingPerDay": [
+          "full MEDITATION prose",
+          "full PRACTICE/resolution prose"
+        ],
+        "currentlyAvailable": [
+          "short French-English editorial day guide",
+          "historical preparatory and proper prayer excerpts",
+          "direct full source-page link in Sources & edition"
+        ],
+        "remediation": "Preserve 1909 full original prose under optional day-specific context, separated clearly from prayers and commentary; do not invent French original text.",
+        "originalDaySections": [
+          {
+            "day": 1,
+            "originalEnglishTitle": "Mary’s Death Was Without Pain",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 2,
+            "originalEnglishTitle": "At Mary’s Tomb",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 3,
+            "originalEnglishTitle": "The Empty Tomb",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 4,
+            "originalEnglishTitle": "Reasons for the Bodily Assumption of Mary into Heaven",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 5,
+            "originalEnglishTitle": "Mary’s Glorious Entrance into Heaven",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 6,
+            "originalEnglishTitle": "Mary Crowned in Heaven",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 7,
+            "originalEnglishTitle": "Mary’s Bliss in Heaven",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 8,
+            "originalEnglishTitle": "Mary, the Queen of Mercy",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 9,
+            "originalEnglishTitle": "Mary in Heaven the Help of Christians on Earth",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "seven_sorrows",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "url": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "edition": "Benziger Brothers, 1909",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_PROJECT_GUTENBERG",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "FULL_HISTORICAL_EBOOK_SECTION",
+      "finding": "Hammer Section IV contains nine distinct Seven Sorrows texts.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
+      "omittedHistoricalMaterial": {
+        "status": "27_HISTORICAL_MEDITATIONS_AND_PRACTICES_NOT_REPRODUCED",
+        "source": "Bonaventure Hammer, Mary Help of Christians (Benziger, 1909), respective section III–V",
+        "missingPerDay": [
+          "full MEDITATION prose",
+          "full PRACTICE/resolution prose"
+        ],
+        "currentlyAvailable": [
+          "short French-English editorial day guide",
+          "historical preparatory and proper prayer excerpts",
+          "direct full source-page link in Sources & edition"
+        ],
+        "remediation": "Preserve 1909 full original prose under optional day-specific context, separated clearly from prayers and commentary; do not invent French original text.",
+        "originalDaySections": [
+          {
+            "day": 1,
+            "originalEnglishTitle": "Devotion to the Seven Sorrows of Mary",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 2,
+            "originalEnglishTitle": "Mary’s First Sorrow: Simeon’s Prophecy in the Temple",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 3,
+            "originalEnglishTitle": "Mary’s Second Sorrow: The Flight into Egypt",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 4,
+            "originalEnglishTitle": "Mary’s Third Sorrow: Jesus Lost in Jerusalem",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 5,
+            "originalEnglishTitle": "Mary’s Fourth Sorrow: She Meets Jesus Carrying His Cross",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 6,
+            "originalEnglishTitle": "Mary’s Fifth Sorrow: Beneath the Cross",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 7,
+            "originalEnglishTitle": "Mary’s Sixth Sorrow: The Taking Down of Jesus’ Body from the Cross",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 8,
+            "originalEnglishTitle": "Mary’s Seventh Sorrow: Jesus Is Buried",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          },
+          {
+            "day": 9,
+            "originalEnglishTitle": "Why Mary Had to Suffer",
+            "originalUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+            "historicalMeditationStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "historicalPracticeStatus": "PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP",
+            "frenchOriginalStatus": "NO_INDEPENDENT_FRENCH_EDITION_SELECTED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "st_joseph",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_of_St._Joseph",
+      "edition": "Dublin: Browne & Nolan, 1883",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "HISTORICAL_NOVENA_PAGE",
+      "finding": "1883 prayer-book St Joseph novena; independent trilingual collation outstanding.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
+      "dayBodySourceReview": [
+        {
+          "day": 1,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE FIRST DAY",
+          "htmlWitnessApproxLine": 106,
+          "sourceIncipit": "Blessed St. Joseph, chosen to be the guardia",
+          "sourceExplicit": "re eternal: Through our Lord Jesus Christ, etc.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 2,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE SECOND DAY",
+          "htmlWitnessApproxLine": 108,
+          "sourceIncipit": "Omnipotent Creator, whose unerring providenc",
+          "sourceExplicit": "he temple: Through Jesus Christ our Lord. Amen.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 3,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE THIRD DAY",
+          "htmlWitnessApproxLine": 111,
+          "sourceIncipit": "Omnipotent God, at whose command every tree ",
+          "sourceExplicit": "the infinite merits of Jesus, my Saviour. Amen.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 4,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE FOURTH DAY",
+          "htmlWitnessApproxLine": 114,
+          "sourceIncipit": "Holy Ghost, God of all comfort! If Thou sees",
+          "sourceExplicit": "rough the merits of our Lord Jesus Christ, etc.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 5,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE FIFTH DAY",
+          "htmlWitnessApproxLine": 120,
+          "sourceIncipit": "O infinite God! how truly may it be said of ",
+          "sourceExplicit": "n, to restore Thee to Thy blessed Mother. Amen.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 6,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE SIXTH DAY",
+          "htmlWitnessApproxLine": 123,
+          "sourceIncipit": "Jesus, my Maker and my Master, without whose",
+          "sourceExplicit": "Father and Holy Ghost, world without end. Amen.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        },
+        {
+          "day": 7,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE SEVENTH DAY",
+          "htmlWitnessApproxLine": 129,
+          "sourceIncipit": "Omnipotent God, who didst descend from heave",
+          "sourceExplicit": " praise, and love Thee for ever and ever. Amen.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "witnessTranscriptionIssue": "Wikisource renders 'as 1 ought'; app uses clearly intended 'as I ought'. Printed page not yet facsimile-checked."
+        },
+        {
+          "day": 8,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "On the Eighth day",
+          "htmlWitnessApproxLine": 132,
+          "sourceIncipit": "O most glorious Patriarch, my dear Patron! b",
+          "sourceExplicit": " and reignest one God, for ever and ever. Amen.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "witnessTranscriptionIssue": "Wikisource renders 'of your, unworthy client' and 'divine, favour'; app repairs obvious punctuation anomalies; printed page not yet facsimile-checked."
+        },
+        {
+          "day": 9,
+          "witnessSection": "Novena of St. Joseph",
+          "witnessDayHeading": "ON THE NINTH DAY",
+          "htmlWitnessApproxLine": 137,
+          "sourceIncipit": "Holy St. Joseph, you who are that good and f",
+          "sourceExplicit": " and dying in the love of Jesus and Mary. Amen.",
+          "enTextComparison": "SOURCE_TEXT_CONTENT_CORRESPONDS_WITH_NORMALIZED_CAPITALIZATION_AND_PUNCTUATION",
+          "frTextComparison": "EDITORIAL_TRANSLATION_REVIEWED_FOR_MEANING; NO ORIGINAL_FRENCH_BOOK_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED"
+        }
+      ]
+    },
+    {
+      "id": "holy_souls",
+      "form": "DAY_SPECIFIC",
+      "sourceWork": "Novena for the Holy Souls in Purgatory",
+      "url": "https://www.ecatholic2000.com/life/prayer108.shtml",
+      "edition": "Traditional English prayer-book recension; public-domain original",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · MULTI-WITNESS_DIGITAL_TRANSCRIPTION",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "EXISTING_LINK_UNCHECKED",
+      "finding": "Original printed attribution and digital transcription still require independent checking.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "perpetual_help",
+      "form": "REPEAT_FORM",
+      "sourceWork": "With God: A Book of Prayers and Reflections",
+      "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
+      "edition": "Benziger Brothers, 1911",
+      "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · WIKISOURCE_DIGITAL_WITNESS",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "UNPROOFREAD_SCAN_TRANSCRIPTION",
+      "finding": "Wikisource page 699 is explicitly flagged not proofread: do not assert word-for-word source certification.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "st_therese",
+      "form": "REPEAT_FORM",
+      "sourceWork": "Novena of the Twenty-Four Glory Bes to St Thérèse of Lisieux",
+      "url": "https://www.ewtn.com/catholicism/devotions/novena-of-the-twentyfour-glory-bes-to-st-therese-the-little-flower-293",
+      "edition": "Traditional English form, originating 1925",
+      "languageClaim": "PUBLIC_DOMAIN_1925_TRADITIONAL_FORM · MODERN_DIGITAL_WITNESS",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "MODERN_DEVOTIONAL_REPRODUCTION",
+      "finding": "EWTN reproduces a described 1925 devotion: 24 Glory Bes daily, ninth to seventeenth monthly preferred, not an original 1925 manuscript.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "st_anthony_nine_tuesdays",
+      "form": "REPEAT_FORM",
+      "sourceWork": "Devotion of the Nine Tuesdays to St Anthony",
+      "url": "https://www.pamphlets.info/Australia/acts1014/",
+      "edition": "Australian Catholic Truth Society Franciscan pamphlet (1966) recording the older devotion; French Franciscan practice witness",
+      "languageClaim": "SOURCE_LOCKED_TRADITIONAL_ENGLISH · FRENCH_EDITORIAL_TRANSLATION · FRENCH_WORLD_PRACTICE_WITNESS",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "1966_FRANCISCAN_CUSTOMARY_RITE",
+      "finding": "1966 Franciscan pamphlet says no particular prayer mandatory, but suggests two invocations, three common prayers and Si quaeris.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "christ_the_king",
+      "form": "REPEAT_FORM",
+      "sourceWork": "Preces et Pia Opera / Thésaurisons pour le Ciel",
+      "url": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
+      "edition": "French collection aligned to Preces et Pia Opera, 1938",
+      "languageClaim": "SOURCE_LOCKED_TRADITIONAL_FRENCH · ENGLISH_EDITORIAL_ALIGNMENT",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "HISTORICAL_FRENCH_COLLECTION_UNCOLLATED",
+      "finding": "The linked French historical prayer is adopted as a repeated novena form, without claiming one obligatory 9-day text.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "immaculate_heart",
+      "form": "REPEAT_FORM",
+      "sourceWork": "The Raccolta · Prayer to the Immaculate Heart of Mary",
+      "url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
+      "edition": "English Raccolta witness, 1857; traditional French devotional witness",
+      "languageClaim": "SOURCE_LOCKED_TRADITIONAL_ENGLISH · FRENCH_WORLD_TRADITIONAL_WITNESS",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "1857_RACCOLTA_PRAYER_AS_NOVENA_FORM",
+      "finding": "The linked Raccolta page witnesses a devotional prayer, not a day-specific nine-part novena.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    },
+    {
+      "id": "st_michael",
+      "form": "REPEAT_FORM",
+      "sourceWork": "Leonine Prayer to St Michael the Archangel",
+      "url": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel",
+      "edition": "Traditional English/French form",
+      "languageClaim": "SOURCE_LOCKED_TRADITIONAL_FRENCH · TRADITIONAL_ENGLISH_FORM",
+      "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
+      "dayCount": 9,
+      "sourceType": "TRADITIONAL_FRENCH_PRAYER_AS_NOVENA_FORM",
+      "finding": "Nine repetitions of a traditional prayer are a suggested devotion, not nine individually authored source days.",
+      "verbatimStatus": "NOT_CERTIFIED",
+      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+    }
+  ],
+  "supersedes": "data/pray/novena-source-review.v1.json",
+  "reviewLimit": "27 English day-specific prayer bodies across 1925 Christmas/Pentecost and 1883 St Joseph digital transcriptions manually checked for textual correspondence with normalized punctuation and obvious text-transcription blemishes, not yet certified against printed facsimiles; 27 French editorial translations are distinct, not historical French original witnesses.",
+  "historicalBookUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm"
+}
