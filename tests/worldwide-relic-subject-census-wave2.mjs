@@ -53,7 +53,7 @@ assert.ok(serra.some(x=>x.material_kind==="COFFIN_CONTACT_OBJECT")&&serra.some(x
 assert.ok(wave2.adversarial_historical_reviews.some(x=>x.subject_id==="subject:saint-thomas-becket"));
 assert.equal(live.relics.length,wave1.legacy_object_crosswalk.length,"Research work must preserve current published relics");
 const report=JSON.parse(execFileSync(process.execPath,["tools/atlas/report-world-relic-census.mjs"],{encoding:"utf8"}));
-assert.equal(report.total_screened_claims,51);
+assert.equal(report.first_wave_claims+report.second_wave_claims,51);
 assert.equal(report.backlog_total,133);
 assert.equal(report.backlog_new_custody,23);
 assert.equal(report.backlog_historical_only,3);
