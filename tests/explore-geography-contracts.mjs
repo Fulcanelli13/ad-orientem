@@ -113,6 +113,9 @@ assert.deepEqual(
     "place:CA:notre-dame-du-cap",
     "place:CA:oratoire-saint-joseph-montreal",
     "place:FR:basilique-saint-denis",
+    "place:FR:basilique-saint-denys-argenteuil",
+    "place:FR:cathedrale-notre-dame-amiens",
+    "place:FR:basilique-sainte-marie-madeleine-vezelay",
     "place:PL:sanktuarium-jana-pawla-ii-krakow",
     "place:CA:martyrs-shrine-midland",
     "place:IT:loreto-santa-casa",
@@ -230,7 +233,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 35,
-  places: 125,
+  places: 128,
   directoryPlaceLinks: 1,
 });
 

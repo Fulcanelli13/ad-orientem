@@ -5197,6 +5197,120 @@
       "source_ids": [
         "SHR-JPII-KRAKOW-OFFICIAL"
       ]
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "name": {
+        "official": "Basilique Saint-Denys d’Argenteuil",
+        "aliases": [
+          "Holy Tunic Sanctuary, Argenteuil"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.942462,
+        "lng": 2.246492,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q22442779",
+        "source_ref": "wikidata:Q22442779",
+        "attribution": "Wikidata contributors, CC0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "17 rue des Ouches",
+        "line2": null,
+        "postal_code": "95100",
+        "city": "Argenteuil",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "17 rue des Ouches, 95100 Argenteuil, France"
+      },
+      "source_ids": [
+        "SHR-FR-ARGENTEUIL-TUNIQUE"
+      ]
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "name": {
+        "official": "Cathédrale Notre-Dame d’Amiens",
+        "aliases": [
+          "Amiens Cathedral"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.89462,
+        "lng": 2.30208,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/309089736",
+        "source_ref": "osm:way:309089736",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Place Notre-Dame",
+        "line2": null,
+        "postal_code": "80000",
+        "city": "Amiens",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place Notre-Dame, 80000 Amiens, France"
+      },
+      "source_ids": [
+        "SHR-FR-AMIENS-JEAN-BAPTISTE"
+      ]
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "name": {
+        "official": "Basilique Sainte-Marie-Madeleine de Vézelay",
+        "aliases": [
+          "Vézelay Basilica"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.46633,
+        "lng": 3.74852,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/179739514",
+        "source_ref": "osm:way:179739514",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Place de la Basilique",
+        "line2": null,
+        "postal_code": "89450",
+        "city": "Vézelay",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place de la Basilique, 89450 Vézelay, France"
+      },
+      "source_ids": [
+        "SHR-FR-VEZELAY-MADELEINE"
+      ]
     }
   ],
   "directoryPlaceLinks": [

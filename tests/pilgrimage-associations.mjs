@@ -21,12 +21,12 @@ const dataset={
   customs:{...customs,sources:customSources.sources},
   novenas:{records:novenas.novenas,links:bridge.links,sources:bridge.sources},
 };
-assert.equal(shrines.shrines.length,120);
-assert.equal(shrines.pilgrimages.length,148);
+assert.equal(shrines.shrines.length,123);
+assert.equal(shrines.pilgrimages.length,151);
 assert.equal(shrines.routes.length,20);
 assert.equal(shrines.temporalLinks.length,77);
 const projection=projectExploreDataset(dataset);
-assert.equal(projection.byLens.pilgrimages.length,148);
+assert.equal(projection.byLens.pilgrimages.length,151);
 const allShrineIds=new Set(shrines.shrines.map(shrine=>shrine.shrine_id));
 assert.ok(shrines.pilgrimages.every(p=>allShrineIds.has(p.destination_shrine_id)),
   "a pilgrimage lost its actual destination shrine");
@@ -109,4 +109,4 @@ assert.match(calendarBrowser,/pilgrimagePlacesForCalendarKeys/);
 assert.match(calendarBrowser,/find:pilgrimages:/);
 assert.match(exploreBrowser,/state\.calendarKey/);
 assert.match(exploreBrowser,/data-explore-calendar-date/);
-console.log("PASS 120 shrines; 148 pilgrimages; saints, novenas, local devotions, 46 bound links/37 Calendar keys, date navigation");
+console.log("PASS 123 shrines; 151 pilgrimages; saints, novenas, local devotions, 46 bound links/37 Calendar keys, date navigation");

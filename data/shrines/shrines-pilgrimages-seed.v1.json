@@ -1898,6 +1898,54 @@
         "SHR-JPII-KRAKOW-OFFICIAL"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "name": "Basilique Saint-Denys d’Argenteuil",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Denis; Sainte Tunique du Christ",
+      "origin_summary": "Diocesan sanctuary preserving the Holy Tunic traditionally attributed to Christ's Passion; permanent veneration is distinct from exceptional public exposition.",
+      "associated_saints": [
+        "Saint Denis of Paris"
+      ],
+      "source_ids": [
+        "SHR-FR-ARGENTEUIL-TUNIQUE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "name": "Cathédrale Notre-Dame d’Amiens",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame; relic of Saint John the Baptist",
+      "origin_summary": "Cathedral treasury preserves a reliquary traditionally identified as the head of Saint John the Baptist, reported there since 1206.",
+      "associated_saints": [
+        "Saint John the Baptist"
+      ],
+      "source_ids": [
+        "SHR-FR-AMIENS-JEAN-BAPTISTE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Sainte Marie-Madeleine",
+      "origin_summary": "Historic pilgrimage basilica whose crypt conserves relics traditionally attributed to Saint Mary Magdalene; distinct from Saint-Maximin relic records.",
+      "associated_saints": [
+        "Saint Mary Magdalene"
+      ],
+      "source_ids": [
+        "SHR-FR-VEZELAY-MADELEINE"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -4065,6 +4113,45 @@
       "scope_note": "Documented worship and pilgrimage destination; no new feast date or traditional Latin Mass service inferred.",
       "source_ids": [
         "SHR-JPII-KRAKOW-OFFICIAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:basilique-saint-denys-argenteuil:destination",
+      "name": "Pilgrimage to Basilique Saint-Denys d’Argenteuil",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Diocesan sanctuary preserving the Holy Tunic traditionally attributed to Christ's Passion; permanent veneration is distinct from exceptional public exposition. No particular Latin Mass provision or annual procession date inferred.",
+      "source_ids": [
+        "SHR-FR-ARGENTEUIL-TUNIQUE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:cathedrale-notre-dame-amiens:destination",
+      "name": "Pilgrimage to Cathédrale Notre-Dame d’Amiens",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Cathedral treasury preserves a reliquary traditionally identified as the head of Saint John the Baptist, reported there since 1206. No particular Latin Mass provision or annual procession date inferred.",
+      "source_ids": [
+        "SHR-FR-AMIENS-JEAN-BAPTISTE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:basilique-sainte-marie-madeleine-vezelay:destination",
+      "name": "Pilgrimage to Basilique Sainte-Marie-Madeleine de Vézelay",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic pilgrimage basilica whose crypt conserves relics traditionally attributed to Saint Mary Magdalene; distinct from Saint-Maximin relic records. No particular Latin Mass provision or annual procession date inferred.",
+      "source_ids": [
+        "SHR-FR-VEZELAY-MADELEINE"
       ],
       "confidence": "HIGH"
     }
