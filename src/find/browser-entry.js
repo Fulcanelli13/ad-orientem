@@ -55,6 +55,8 @@ function installStyle(win){
     ".aoCustomsAtlasFoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}.aoCustomsAtlasFoot span{color:#978d7e;font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoCustomsAtlasFoot button{flex:none;border:1px solid rgba(217,197,154,.28);border-radius:999px;background:transparent;color:#e6d4b4;padding:9px 11px;cursor:pointer;font:650 11px var(--ao-font-ui,system-ui,sans-serif)}",
     "@media(max-width:700px){.aoCustomsAtlasHeading{display:block}.aoCustomsAtlasHeading p{max-width:none;margin-top:9px}.aoCustomsAtlasFacets{grid-template-columns:1fr}.aoCustomsAtlasFoot{align-items:flex-start;flex-direction:column}}",
     ".aoFindSearch{padding:12px 16px 14px}.aoFindSearch input{width:100%;box-sizing:border-box;padding:14px 15px;border-radius:12px;border:1px solid rgba(217,197,154,.18);background:#111923;color:#fff;font:16px/1.2 inherit}",
+    ".aoFindExternalSource{margin:0 16px 12px;padding:12px 14px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px solid rgba(217,197,154,.18);background:rgba(217,197,154,.035);border-radius:12px}.aoFindExternalSource>div{display:grid;gap:5px;flex:1;min-width:190px}.aoFindExternalSource strong{color:#dfcba3;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoFindExternalSource span{color:#a99f8d;font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}.aoFindExternalSource a{color:#f0dfbc;text-decoration:none;border:1px solid rgba(217,197,154,.27);border-radius:999px;padding:10px 12px;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoFindExternalSource a:focus-visible{outline:2px solid #d9c59a;outline-offset:3px}",
+    ".aoFindMore{padding:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:#9f937d;font:12px var(--ao-font-ui,system-ui,sans-serif)}.aoFindMore button{border:1px solid rgba(217,197,154,.27);background:#101822;color:#e9d9b9;padding:12px 18px;border-radius:999px;min-height:44px;cursor:pointer}.aoFindMore button:focus-visible{outline:2px solid #d9c59a;outline-offset:3px}",
     ".aoFindViewTabs{display:flex;gap:6px;padding:0 16px 10px}",
     ".aoFindViewTabs button,.aoFindFilters button{border:1px solid rgba(217,197,154,.16);background:#0e151e;color:#c9bea8;border-radius:var(--ao-pill-radius,999px);padding:9px 12px;font:650 var(--ao-type-ui-sm,12px)/1 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoExploreQuickFilters{display:flex;align-items:center;gap:7px;flex-wrap:wrap}",
@@ -108,6 +110,7 @@ export function createFindOwner(win=globalThis){
     calendarKey:null,
     selectedId:null,
     selectedPlaceId:null,
+    displayLimit:120,
   };
 
   function glossaryTerms(){
@@ -164,6 +167,7 @@ export function createFindOwner(win=globalThis){
       view:state.view,
       filters:state,
       selectedId:state.selectedId,
+      displayLimit:state.displayLimit,
       placeProfiles,
       selectedPlaceId:state.selectedPlaceId,
     });
@@ -218,6 +222,7 @@ export function createFindOwner(win=globalThis){
     else if(key==="lens"&&EXPLORE_LENSES.includes(value)){state.lens=value;state.calendarKey=null;}
     else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;
+    state.displayLimit=120;
     mapHandle?.destroy?.();mapHandle=null;
     lastMapView=null;lastMapLens=null;void paint();
   }
@@ -276,6 +281,13 @@ export function createFindOwner(win=globalThis){
       try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
       return;
     }
+    if(target?.closest?.("[data-find-show-more]")){
+      event.preventDefault?.();
+      const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
+      state.displayLimit+=120;
+      void paint().then(()=>{const scroller=getRoot(win)?.querySelector?.(".aoFindSurface");if(scroller)scroller.scrollTop=previousScroll;});
+      return;
+    }
     const item=target?.closest?.("[data-explore-item]");if(item){state.selectedPlaceId=null;state.selectedId=item.dataset.exploreItem;void paint();return}
     const aff=target?.closest?.("[data-find-affiliation]");
     if(aff&&state.lens==="tlm"){
@@ -289,7 +301,7 @@ export function createFindOwner(win=globalThis){
   function onInput(event){
     if(!openState)return;
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
-    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;void paint();
+    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.displayLimit=120;void paint();
   }
 
   function onChange(event){

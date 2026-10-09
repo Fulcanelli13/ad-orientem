@@ -274,6 +274,7 @@ export function buildExploreViewModel({
   selectedId=null,
   placeProfiles=[],
   selectedPlaceId=null,
+  displayLimit=120,
 }={}){
   const list=arr(items);
   const selected=list.find(item=>item?.item_id===selectedId)??null;
@@ -294,6 +295,7 @@ export function buildExploreViewModel({
     selectedPlace,
     mapped,
     addressOnly,
+    displayLimit:Number.isFinite(Number(displayLimit))?Math.max(60,Math.floor(Number(displayLimit))):120,
   });
 }
 
@@ -321,6 +323,11 @@ export function renderExploreToString(vm){
     L(vm.language,"Pilgrimage, shrine, route or place","Pèlerinage, sanctuaire, itinéraire ou lieu")
   )+'"></div>';
 
+  if(vm.lens==="tlm")html+='<section class="aoFindExternalSource" role="note">'
+    +'<div><strong>'+esc(L(vm.language,"More Mass locations","Autres lieux de messe"))+'</strong>'
+    +'<span>'+esc(L(vm.language,"Browse Latin Mass Directory directly. External listings and schedules are not independently verified by this app.","Consultez directement Latin Mass Directory. Ces lieux et horaires externes ne sont pas vérifiés indépendamment par cette application."))+'</span></div>'
+    +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Open worldwide directory ↗","Ouvrir l’annuaire mondial ↗"))+'</a>'
+    +'</section>';
   html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
 
@@ -328,6 +335,10 @@ export function renderExploreToString(vm){
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
+  if(vm.lens==="tlm"){
+    const listed=vm.items.filter(x=>x.status==="SCHEDULE UNVERIFIED").length;
+    if(listed)html+='<span> · '+String(listed)+' '+esc(L(vm.language,"directory-listed, unverified","répertoriés, non vérifiés"))+'</span>';
+  }
   html+='</div>';
 
   html+='<div class="aoFindBody" data-find-view="'+esc(vm.view)+'" data-explore-lens="'+esc(vm.lens)+'">';
@@ -350,7 +361,10 @@ export function renderExploreToString(vm){
         +'</div>';
     }
   }else if(vm.items.length){
-    html+='<div class="aoFindList">'+vm.items.map(item=>itemCard(item,vm)).join("")+'</div>';
+    const visible=vm.items.slice(0,vm.displayLimit);
+    html+='<div class="aoFindList">'+visible.map(item=>itemCard(item,vm)).join("")+'</div>';
+    if(visible.length<vm.items.length)html+='<div class="aoFindMore"><span>'+esc(L(vm.language,"Showing ","Affichage de "))+visible.length+' / '+vm.items.length+'</span>'
+      +'<button type="button" data-find-show-more>'+esc(L(vm.language,"Show more results","Afficher plus de résultats"))+'</button></div>';
   }else html+=emptyState(vm);
   html+='</div>'+(vm.selectedPlace?placeSheet(vm):detailSheet(vm))+'</section>';
   return html;

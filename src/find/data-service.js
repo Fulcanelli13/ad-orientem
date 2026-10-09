@@ -1,4 +1,5 @@
 import { auditVenue } from "./contracts.js";
+import { expandLicensedDirectoryFeed } from "./licensed-source-bridge.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
 import {applyIndicativeSspxLocations,applyIndicativeOtherCommunities,fetchOfficialSspxPlaceIndex} from "./sspx-indicative-geo.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
@@ -320,7 +321,13 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     merged.sources.push(...expanded.sources);
   }
   const joined=joinDirectoryRecords({...merged,communityProfiles});
-  const records=publishableDirectoryRecords(joined);
+  const sourceRecords=publishableDirectoryRecords(joined);
+  // Licensed feeds are optional and fail closed: the existing research-only
+  // Latin Mass Directory census is intentionally NOT a production input.
+  const licensedFeed=await fetchJson(moduleUrl("../../data/directory/licensed/approved-mass.v1.json"),{fetchImpl,optional:true});
+  const licensed=expandLicensedDirectoryFeed(licensedFeed,{existingRecords:sourceRecords});
+  const records=[...sourceRecords,...licensed.records];
+  if(licensed.records.length)loaded.push("licensed-external-listings");
   // One bulk locality pass: first-party existing registry points work offline.
   // Online, the official SSPX public place index improves local matches.
   // Country-only indicators are explicitly non-routing and never replace surveyed points.
@@ -333,7 +340,8 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     records:other.records,
     indicativeGeoSummary:indicated.summary,
     otherCommunitiesIndicativeGeoSummary:other.summary,
-    skippedInvalidRecords:joined.length-records.length,
+    skippedInvalidRecords:joined.length-sourceRecords.length,
+    licensedListingSummary:licensed.summary,
     communities:safeArray(communityData?.communities),
     communityProfiles,
     loadedProviders:loaded,
