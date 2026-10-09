@@ -9,7 +9,7 @@ const L={
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
-  readable:"Struggling with Douay–Rheims? Try the Catholic Public Domain Version (CPDV). Its English is more contemporary but still quite literal. The free complete text is being checked for correct verse alignment.",
+  readable:"Douay–Rheims is the traditional reading. CPDV is the selected free alternative for easier English, but its wording and verse numbering still require verification before full text can appear inside the app.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
  fr:{heading:"Sainte Écriture",notice:"Bible catholique traditionnelle. Le texte intégral n'apparaît qu'après validation et intégration d'une édition autorisée.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
