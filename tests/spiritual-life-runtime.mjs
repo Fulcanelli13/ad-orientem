@@ -14,6 +14,7 @@ import {
   createSpiritualLifeRuntime,
   ensureSpiritualLifeRegistry,
   installSpiritualLifeModule,
+  resolveSpiritualLifeSourceTarget,
 } from "../src/learn/spiritual-life.js";
 
 assert.equal(SPIRITUAL_LIFE_ROUTE_ID,"learn.spiritual_life");
@@ -60,7 +61,34 @@ assert.equal(registry.list().some(item=>item.id==="learn.catechism"),true);
 for(const [id,item] of Object.entries(SPIRITUAL_LIFE_SOURCE_MAP)){
   assert.match(item.canonical_url,/^https:\/\//,id+" has an invalid public source destination");
 }
+// External witnesses were verified against the actual original-text section
+// and official canons 992–997 in both language editions, not a generic index.
+const en={document:{documentElement:{lang:"en"}}};
+const fr={document:{documentElement:{lang:"fr"}}};
+const tanquerey=SPIRITUAL_LIFE_SOURCE_MAP["SL-TANQUEREY-1930"];
+const indulgences=SPIRITUAL_LIFE_SOURCE_MAP["SL-CIC83-992-997"];
+assert.equal(resolveSpiritualLifeSourceTarget(en,tanquerey,["SL03-Q05"]),
+  "https://www.ewtn.com/catholicism/library/spiritual-life-12636",
+  "Mental prayer points to the wrong Tanquerey chapter; §688 is in the continuation");
+assert.equal(resolveSpiritualLifeSourceTarget(en,tanquerey,["SL04-Q02"]),
+  tanquerey.continuation_url,"The Saint-Sulpice method §700 is not in the first Tanquerey page");
+for(const lesson of ["SL01-Q03","SL02-Q01","SL06-Q02","SL08-Q02","SL10-Q03"]){
+  assert.equal(resolveSpiritualLifeSourceTarget(en,tanquerey,[lesson]),tanquerey.canonical_url,
+    lesson+": general means point to the wrong Tanquerey witness");
+}
+assert.equal(resolveSpiritualLifeSourceTarget(en,indulgences,["SL12-Q02"]),
+  "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html");
+assert.equal(resolveSpiritualLifeSourceTarget(fr,indulgences,["SL12-Q02"]),
+  "https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann992-997_fr.html");
+assert.equal(resolveSpiritualLifeSourceTarget(fr,tanquerey,["SL03-Q02"]),tanquerey.continuation_url,
+  "Do not invent a French Tanquerey translation where only English is verified");
+
 const source=readFileSync("src/learn/spiritual-life.js","utf8");
+assert.match(source,/\.aoSLSources summary\{[^\n]*min-height:44px/,
+  "Spiritual Life source summary tap target regressed");
+assert.match(source,/\.aoSLInlineSources\{[^\n]*font-family:var\(--ao-font-ui/,
+  "Spiritual Life citation metadata lost shared UI typography");
+
 assert.match(source,/Sources & provenance/);
 assert.match(source,/claimSourceMarkup\(win,block\.claims\)/,"Lesson explanations must carry claim-specific links");
 assert.match(source,/claimSourceMarkup\(win,lesson\.practice\.claims\)/,"Practical counsel must carry claim-specific links");

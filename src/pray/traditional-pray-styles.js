@@ -18,8 +18,8 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoTP381PrayerCard{padding:14px 0;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));border-radius:0;background:transparent}
 #aoPray435930 .aoTP381PrayerCard h3{margin:0 0 8px;font:600 1.04rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif))}
 #aoPray435930 .aoTP381PrayerCard button[data-tp381-flip]{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:400 1.02rem/1.68 var(--ao-font-liturgical,var(--font-liturgical,Georgia,serif))}
-#aoPray435930 .aoTP381Source{margin-top:10px;padding:0;border:0;font-size:.72rem}
-#aoPray435930 .aoTP381Source summary{cursor:pointer;min-height:0;display:block;color:var(--muted,rgba(238,233,223,.58));font:400 .72rem/1.35 var(--ao-font-display,var(--font-display,system-ui))}
+#aoPray435930 .aoTP381Source{margin-top:10px;padding:0;border:0;font:400 max(13px,.8125rem)/1.55 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
+#aoPray435930 .aoTP381Source summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted,rgba(238,233,223,.72));font:500 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
 #aoPray435930 .aoTP381Source a{color:var(--liturgical,#c7ae6d)}
 #aoPray435930 .aoTP381Fail{padding:10px 12px;border:0;border-left:2px solid var(--liturgical,#c7ae6d);border-radius:0;background:var(--liturgical-soft,rgba(199,174,109,.08));color:var(--muted,#b7bec5);font-size:.82rem;line-height:1.45;margin:10px 0}
 #aoPray435930 .aoTP381InsertedSection .aoP435930ModuleCard{min-height:88px}
