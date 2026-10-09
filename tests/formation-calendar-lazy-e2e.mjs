@@ -76,6 +76,35 @@ try{
  assert.equal(calendar.status?.open,true);
  assert.equal(calendar.root,"ao-calendar-modular-root");
  assert.equal(calendar.week?.version,"43.45-modular-exact");
+ // Liturgical Year is usable on first visit, with one proportional track
+ // and navigable cards even before the whole year's Masses are loaded.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("year")),true);
+ await page.locator("#ao-calendar-modular-root .aoCalYearTrack").waitFor({state:"visible",timeout:5000});
+ assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-segment]").count(),9);
+ assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period]").count(),9);
+ const yearSize=await page.evaluate(()=>{
+   const root=document.getElementById("ao-calendar-modular-root");
+   const track=root.querySelector(".aoCalYearTrack");
+   const pieces=[...root.querySelectorAll(".aoCalYearSegment")];
+   return {
+     horizontalOverflow:root.scrollWidth-root.clientWidth,
+     trackWidth:track?.getBoundingClientRect().width,
+     partsWidth:pieces.reduce((sum,x)=>sum+x.getBoundingClientRect().width,0),
+     expanded:root.querySelectorAll("[data-cal-year-period][aria-expanded=true]").length
+   };
+ });
+ assert.ok(yearSize.trackWidth>150,"Year timeline has no usable phone width");
+ assert.ok(Math.abs(yearSize.partsWidth-yearSize.trackWidth)<5,"Period widths are not proportional inside track");
+ assert.ok(yearSize.horizontalOverflow<=2,"Year view causes horizontal overflow on phone");
+ assert.equal(yearSize.expanded,1,"Only one year period may be expanded");
+ await page.locator("#ao-calendar-modular-root [data-cal-year-period='advent']").click();
+ assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period='advent']").getAttribute("aria-expanded"),"true","Year period tap did not expand details");
+ assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period='after-pentecost']").getAttribute("aria-expanded"),"false","Previously expanded period was not collapsed");
+ const firstMonth=await page.locator("#ao-calendar-modular-root [data-cal-year-id='advent'] [data-cal-year-month]").getAttribute("data-cal-year-month");
+ await page.locator("#ao-calendar-modular-root [data-cal-year-id='advent'] [data-cal-year-month]").click();
+ await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid").waitFor({state:"visible",timeout:5000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.status().pickerMonthId),firstMonth,"Year period Month navigation selected the wrong month");
+
  // Calendar must preserve working day/year/month controls on actual mobile DOM.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
