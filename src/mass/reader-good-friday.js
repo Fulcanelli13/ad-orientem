@@ -251,8 +251,8 @@ export function buildGoodFridayReader({
 }
 
 export function createGoodFridayReaderController(args={}){
-  const built=buildGoodFridayReader(args);
-  let index=0;
+  const initial=buildGoodFridayReader(args);
+  let built=initial,index=0;
   function project(){
     const step=built.steps[index]??null;
     return freeze({
@@ -270,12 +270,32 @@ export function createGoodFridayReaderController(args={}){
       personalOnly:Boolean(step?.personalOnly),
       personalState:step?.personalState??null,
       objectState:step?.objectState??null,
+      willReceiveCommunion:built.willReceiveCommunion,
     });
   }
   function next(){index=Math.min(index+1,built.steps.length-1);return project()}
   function previous(){index=Math.max(index-1,0);return project()}
   function goToRecord(id){const hit=built.steps.findIndex(x=>x.recordId===id);if(hit>=0)index=hit;return project()}
-  return freeze({schema:"ao-r28-good-friday-reader-controller-v1",built,project,next,previous,goToRecord});
+  function setWillReceiveCommunion(value){
+    // This is a personal choice, never inferred from the celebrant's
+    // Communion prayers or the appearance of Ecce Agnus Dei.
+    const nextChoice=value===true;
+    if(nextChoice===built.willReceiveCommunion)return project();
+    const previousId=built.steps[index]?.recordId??null;
+    const previousIndex=index;
+    built=buildGoodFridayReader({...args,willReceiveCommunion:nextChoice});
+    const same=built.steps.findIndex(step=>step.recordId===previousId);
+    // An opt-out while already on GF-COM-850 falls through to GF-COM-860.
+    const conclusion=built.steps.findIndex(step=>step.recordId==="GF-COM-860");
+    index=same>=0?same:previousId==="GF-COM-850"&&conclusion>=0?
+      conclusion:Math.min(previousIndex,built.steps.length-1);
+    return project();
+  }
+  return freeze({
+    schema:"ao-r28-good-friday-reader-controller-v1",
+    get built(){return built},
+    project,next,previous,goToRecord,setWillReceiveCommunion,
+  });
 }
 
 async function readJson(fetchImpl,url,label){
