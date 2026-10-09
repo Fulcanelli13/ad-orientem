@@ -268,13 +268,25 @@
             {
               "source": "PIUS_X_1912",
               "refs": [
-                "PXQ146"
+                "PXQ146",
+                "PXQ363",
+                "PXQ364"
               ],
               "locators": [
                 {
                   "ref": "PX1912-Q146",
                   "stem": "How is the grace of God,",
                   "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+                },
+                {
+                  "ref": "PX1912-Q363",
+                  "stem": "What is perfect sorrow, or contrition?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+                },
+                {
+                  "ref": "PX1912-Q364",
+                  "stem": "Why is contrition perfect sorrow?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
                 }
               ],
               "verification": "NUMBER_LOCATED_IN_PINNED_ENGLISH_WITNESS_NOT_FULL_DOCTRINAL_APPROVAL",
@@ -282,6 +294,16 @@
                 {
                   "ref": "PX1912-Q146",
                   "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md",
+                  "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
+                },
+                {
+                  "ref": "PX1912-Q363",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md",
+                  "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
+                },
+                {
+                  "ref": "PX1912-Q364",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md",
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
@@ -9372,6 +9394,14 @@
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
+            },
+            {
+              "source": "CCC_1667_1671",
+              "refs": [
+                "§§1667–1671"
+              ],
+              "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+              "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
           "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
