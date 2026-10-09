@@ -115,6 +115,10 @@ assert.deepEqual(
     "place:FR:basilique-saint-denis",
     "place:FR:basilique-saint-denys-argenteuil",
     "place:FR:basilique-saint-sernin-toulouse",
+    "place:CH:abbaye-saint-maurice-agaune",
+    "place:DE:kolner-dom-three-kings",
+    "place:IT:basilica-san-marco-venezia",
+    "place:IT:basilica-san-domenico-bologna",
     "place:FR:basilique-saint-nicolas-de-port",
     "place:FR:basilique-saint-quentin-aisne",
     "place:FR:cathedrale-saint-etienne-sens",
@@ -237,7 +241,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 35,
-  places: 132,
+  places: 136,
   directoryPlaceLinks: 1,
 });
 
