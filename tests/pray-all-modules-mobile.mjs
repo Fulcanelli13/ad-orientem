@@ -84,6 +84,13 @@ try{
    });
    assert.ok(prayer.body.length>=25,"Blank or unrendered canonical prayer: "+id);
    assert.ok(prayer.source.length>=5,"Prayer source/witness presentation lost: "+id);
+   if(["mass_confiteor","adoration_lord_i_am_not_worthy","litany_loreto_1962","litany_loreto_current","devotion_litany_st_joseph"].includes(id)){
+     const sourceLinks=await page.locator("#aoPray435930.open .aoP435930Prayer .aoP435930Source a").evaluateAll(nodes=>nodes.map(n=>n.href));
+     assert.ok(sourceLinks.length>=2,"Missing primary/secondary edition references for "+id);
+     assert.ok(sourceLinks.every(x=>x.startsWith("https://")),"Non-secure edition link: "+id);
+     assert.match(prayer.source,/1962|2020|2021|traditional|traditionnelles|augmentée|expanded/i,
+       "Version of prayer not distinguished in source disclosure: "+id);
+   }
    await page.locator("#aoPray435930.open [data-p435930-lib-back]").tap({timeout:9000});
  }
  assert.deepEqual(errors.filter(x=>/presentation-runtime|rosary-scripture|TypeError|ReferenceError/i.test(x)),[],
