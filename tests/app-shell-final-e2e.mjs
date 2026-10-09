@@ -949,9 +949,9 @@ try{
   await exerciseRealShellSpecialRite(browser,{
     kind:"ROGATIONS",
     insertedRite:"rogations",
-    date:"2027-05-10",
+    date:"2027-05-03",
     celebrationId:"feria-rogationum",
-    properSource:"Tempora/Rogation",
+    properSource:"Tempora/Pasc5-0",
     firstId:"ROG-R01",
     stateCardId:"ROG-R02",
     expectedState:"KNEEL",
