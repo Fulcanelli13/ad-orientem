@@ -26,7 +26,7 @@ export const CPDV_EDITORIAL_CHECKLIST = Object.freeze([
   ["John",20,23,"Forgiveness and retention of sins","sacraments"],
   ["Matthew",28,19,"Trinitarian baptism","trinity"],
   ["1Timothy",3,15,"Church as pillar of truth","ecclesiology"],
-  ["2Thessalonians",2,15,"Holding traditions","tradition"],
+  ["2Thessalonians",2,14,"Holding traditions; original Catholic numbering differs from common numbering","tradition"],
   ["James",2,24,"Justification and works","soteriology"],
   ["Romans",8,28,"Providence and cooperation with grace","soteriology"],
   ["Matthew",5,28,"Lust and adultery","morality"],
@@ -36,7 +36,7 @@ export const CPDV_EDITORIAL_CHECKLIST = Object.freeze([
   ["Psalms",22,1,"Vulgate Psalm 22 vs modern 23","versification"],
   ["Sirach",24,1,"Deuterocanonical wisdom, Marian traditional application","deuterocanon"],
   ["Tobit",12,9,"Almsgiving and sin","deuterocanon"],
-  ["2Maccabees",12,45,"Prayer for the dead","deuterocanon"],
+  ["2Maccabees",12,46,"Prayer for the dead; confirm printed Vulgate verse references","deuterocanon"],
   ["Wisdom",2,12,"Suffering of the just","deuterocanon"],
   ["Baruch",3,36,"Wisdom, revelation and Christological reading","deuterocanon"],
   ["Revelation",12,1,"Woman clothed with the sun","marian"]
