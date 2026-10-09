@@ -17,8 +17,6 @@ on:
       - "tools/directory/**"
       - "tools/atlas/**"
       - "package.json"
-      - "tools/atlas/**"
-      - "package.json"
       - "tests/directory-*.mjs"
       - "tests/explore-surface.mjs"
       - "tests/customs-atlas.mjs"
@@ -39,6 +37,8 @@ on:
       - "tests/explore-place-profiles.mjs"
       - "src/find/**"
       - "tools/directory/**"
+      - "tools/atlas/**"
+      - "package.json"
       - "tests/directory-*.mjs"
       - ".github/workflows/directory-foundation.yml"
 
