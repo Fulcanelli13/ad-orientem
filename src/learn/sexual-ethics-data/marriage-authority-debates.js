@@ -130,9 +130,19 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
         "CASTI",
         "MULIERIS",
         "AL"
+      ],
+      "traditionalAssessment": [
+        "EPH",
+        "ARCANUM",
+        "CASTI",
+        "MULIERIS"
       ]
     },
-    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT"
+    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT",
+    "traditionalAssessment": [
+      "The traditional Catholic reading retains the apostolic distinction: the husband is called head, the wife is called to willing submission, and the husband must love by self-sacrifice. Leo XIII and Pius XI explicitly teach familial primacy rather than merely interchangeable roles. John Paul II's reciprocal submission can rightly insist that authority is never selfish or one-sided in charity; it cannot simply be used to erase what the earlier teaching expressly affirms. Where the later formulation is read as abolishing all distinct headship, the disagreement must be named and tested against Scripture and the prior teaching, not decided by recency alone.",
+      "La lecture catholique traditionnelle conserve la distinction apostolique : le mari est appelé chef, l'épouse est appelée à une soumission volontaire, et le mari doit aimer jusqu'au sacrifice de lui-même. Léon XIII et Pie XI enseignent expressément la primauté familiale, non la simple interchangeabilité des rôles. La soumission réciproque mise en avant par Jean-Paul II peut justement rappeler que l'autorité n'est ni égoïste ni unilatérale dans la charité ; elle ne saurait servir, à elle seule, à effacer l'enseignement antérieur explicite. Si l'on interprète la formule postérieure comme supprimant toute primauté distincte, il faut nommer et examiner cette divergence à la lumière de l'Écriture et de la doctrine antérieure, non trancher par la seule nouveauté."
+    ]
   },
   {
     "id": "MAR-02",
@@ -175,9 +185,18 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
         "ARCANUM",
         "CASTI",
         "CIC"
+      ],
+      "traditionalAssessment": [
+        "CASTI",
+        "ARCANUM",
+        "CHRYSOSTOM"
       ]
     },
-    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT"
+    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT",
+    "traditionalAssessment": [
+      "The traditional position affirms an actual order of family responsibility, not headship reduced to a poetic description of affection. Pius XI calls it primacy in governance and simultaneously rules out treating the wife as a minor or servant. Thus the husband should lead by prudence, justice, sacrificial example and real attention to his wife's counsel; coercive ownership, infallibility and unreviewable personal commands have no warrant in this teaching. The earlier doctrine must not be softened into meaninglessness, and it must not be exaggerated into powers never granted by the sources.",
+      "La position traditionnelle affirme un véritable ordre de responsabilité familiale, non une primauté réduite à une image poétique de l'affection. Pie XI parle de primauté dans le gouvernement tout en refusant de traiter l'épouse comme mineure ou servante. Le mari doit donc diriger avec prudence, justice, exemple sacrificiel et véritable attention au conseil de son épouse ; l'appropriation coercitive, l'infaillibilité et les ordres personnels incontrôlables ne découlent pas de cet enseignement. Il ne faut ni affadir la doctrine ancienne jusqu'à la vider de sens, ni lui ajouter des pouvoirs que les sources n'accordent pas."
+    ]
   },
   {
     "id": "MAR-03",
@@ -220,9 +239,18 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
         "CASTI",
         "CIC",
         "FAMILY_CHARTER"
+      ],
+      "traditionalAssessment": [
+        "CASTI",
+        "CIC",
+        "MULIERIS"
       ]
     },
-    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT"
+    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT",
+    "traditionalAssessment": [
+      "The traditional distinction concerns personal equality and ordered domestic duties, not a natural inferiority of women. Pius XI explicitly safeguards the wife's liberty, dignity and exercise of rights while retaining differentiated functions. Canon 1135's equal rights and duties must be read seriously, but its general formula does not, without further argument, demonstrate that all traditional distinctions were false. Any claimed marital privilege that humiliates, isolates or strips the wife of lawful rights is incompatible with the very papal text invoked to defend headship.",
+      "La distinction traditionnelle concerne l'égalité des personnes et un ordre des devoirs domestiques, non une infériorité naturelle de la femme. Pie XI protège expressément la liberté, la dignité et l'exercice des droits de l'épouse tout en conservant des fonctions différenciées. L'égalité des droits et devoirs du canon 1135 doit être prise au sérieux, mais cette formule générale ne démontre pas, sans argument supplémentaire, que toute distinction traditionnelle serait fausse. Tout privilège conjugal allégué qui humilie, isole ou prive l'épouse de ses droits légitimes contredit le texte pontifical même auquel on prétend se référer."
+    ]
   },
   {
     "id": "MAR-04",
@@ -263,9 +291,19 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "finding": [
         "CASTI",
         "CIC"
+      ],
+      "traditionalAssessment": [
+        "EPH",
+        "CASTI",
+        "ARCANUM",
+        "CIC"
       ]
     },
-    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT"
+    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT",
+    "traditionalAssessment": [
+      "The husband traditionally bears a primacy of domestic direction, which involves taking responsibility and seeking the household's common good rather than shirking difficult decisions. That is not equivalent to an automatic deciding vote in every dispute. Neither Ephesians 5 nor Pius XI provides a rule for each choice of residence, work or spending. Claiming that every preference must prevail because 'the husband is head' is an unsupported addition to the traditional principle; reducing his role to no special responsibility is an equally inaccurate description of the classical papal position.",
+      "Le mari possède traditionnellement une primauté dans la direction du foyer : il doit assumer ses responsabilités et rechercher le bien commun familial plutôt que fuir les décisions difficiles. Cela n'équivaut pas à une voix automatiquement décisive dans tout désaccord. Ni Éphésiens 5 ni Pie XI ne donnent de règle propre à chaque choix de résidence, de travail ou de dépense. Prétendre qu'une préférence doit toujours l'emporter au seul motif que « le mari est chef » ajoute sans fondement au principe traditionnel ; réduire son rôle à l'absence de responsabilité particulière déforme tout autant la position pontificale classique."
+    ]
   },
   {
     "id": "MAR-05",
@@ -308,9 +346,18 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
         "EPH",
         "AQUINAS",
         "CASTI"
+      ],
+      "traditionalAssessment": [
+        "EPH",
+        "AQUINAS",
+        "CASTI"
       ]
     },
-    "oppositionKind": "CLASSICAL_TEXTUAL_DIFFICULTY"
+    "oppositionKind": "CLASSICAL_TEXTUAL_DIFFICULTY",
+    "traditionalAssessment": [
+      "Submission is a real moral duty within the traditional Christian vision of marriage, not mere agreement with what one already prefers. But Aquinas and Pius XI explicitly place human obedience under divine law, right reason, justice and the proper limits of authority. The words 'in all things' cannot require sin, degrade a person or confer control over every sphere of her life. Where an ordinary prudent decision is contested, neither disobedience by default nor limitless command follows: the matter must be judged according to legitimate responsibility and the rights of both spouses.",
+      "La soumission est un devoir moral réel dans la vision chrétienne traditionnelle du mariage, non le simple acquiescement à ce que l'on préfère déjà. Cependant, saint Thomas et Pie XI subordonnent expressément l'obéissance humaine à la loi divine, à la droite raison, à la justice et aux limites de l'autorité. Les mots « en toutes choses » n'imposent ni le péché ni l'humiliation d'une personne et ne donnent pas pouvoir sur tous les domaines de sa vie. Dans un désaccord prudentiel ordinaire, ni la désobéissance systématique ni le commandement illimité ne se déduisent du texte : il faut considérer les responsabilités légitimes et les droits des deux conjoints."
+    ]
   },
   {
     "id": "MAR-06",
@@ -355,9 +402,19 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
         "AQUINAS_MARITAL",
         "HV",
         "AL"
+      ],
+      "traditionalAssessment": [
+        "COR7",
+        "AQUINAS_MARITAL",
+        "HV",
+        "CIC"
       ]
     },
-    "oppositionKind": "CLASSICAL_TEXTUAL_DIFFICULTY"
+    "oppositionKind": "CLASSICAL_TEXTUAL_DIFFICULTY",
+    "traditionalAssessment": [
+      "The traditional marital duty is reciprocal, as St Paul and Aquinas make clear. It expresses justice and charity between spouses, and therefore cannot be reduced to a unilateral male entitlement. Equally clear is that force, intimidation or assault is not a legitimate way of obtaining a marital act: Paul VI rejects an imposed act, and grave danger can justify separation under canon law. Neither denial of the historical obligation nor its coercive enforcement is a faithful traditional Catholic conclusion.",
+      "Le devoir conjugal traditionnel est réciproque, comme l'enseignent saint Paul et saint Thomas. Il relève de la justice et de la charité entre époux et ne peut donc être réduit à un privilège masculin unilatéral. Il est tout aussi clair que la force, l'intimidation ou l'agression ne constituent jamais un moyen légitime d'obtenir un acte conjugal : Paul VI rejette l'acte imposé, et le droit canonique prévoit la séparation en cas de danger grave. Ni la négation du devoir historique ni son exécution coercitive ne sont une conclusion catholique traditionnelle fidèle."
+    ]
   },
   {
     "id": "MAR-07",
@@ -397,9 +454,17 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "finding": [
         "CIC",
         "FAMILY_CHARTER"
+      ],
+      "traditionalAssessment": [
+        "CIC",
+        "CASTI"
       ]
     },
-    "oppositionKind": "REASONED_APPLICATION_NOT_NAMED_OPPONENT"
+    "oppositionKind": "REASONED_APPLICATION_NOT_NAMED_OPPONENT",
+    "traditionalAssessment": [
+      "The traditional duties of husband and wife belong to an actual marriage, not to an anticipated one. Canon law grounds matrimony in the freely exchanged consent of the spouses; betrothal is a promise that does not create the conjugal bond. A future husband may demonstrate responsibility, and his fiancée may freely test their compatibility, but he has no present matrimonial jurisdiction over her. Treating engagement as an opportunity to compel submission confuses preparation for a sacrament with possession of its rights.",
+      "Les devoirs traditionnels du mari et de la femme appartiennent au mariage effectivement contracté, non à son anticipation. Le droit canonique fonde le mariage sur le consentement librement échangé des époux ; les fiançailles sont une promesse qui ne crée pas le lien conjugal. Un futur mari peut faire preuve de responsabilité, et sa fiancée peut discerner librement leur compatibilité, mais il ne détient sur elle aucune autorité matrimoniale actuelle. Faire des fiançailles un moyen d'exiger la soumission confond préparation au sacrement et possession de ses droits."
+    ]
   },
   {
     "id": "MAR-08",
@@ -444,8 +509,19 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
         "AL",
         "CASTI",
         "CIC"
+      ],
+      "traditionalAssessment": [
+        "LIBERTAS",
+        "AQUINAS",
+        "CASTI",
+        "MULIERIS",
+        "AL"
       ]
     },
-    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT"
+    "oppositionKind": "ATTRIBUTED_SCHOLARLY_OR_MAGISTERIAL_ARGUMENT",
+    "traditionalAssessment": [
+      "Christian liberty, in the classical Catholic sense, is perfected by truth and rightly ordered duties, not by the refusal of every human obligation. Marriage freely establishes real bonds of fidelity, charity and shared responsibility; it does not terminate either spouse's conscience or human dignity. The traditional order of headship must therefore be defended where genuinely taught, but its content must be derived from Scripture and authoritative teaching rather than from social convention or male preference. A postconciliar interpretation that merely clarifies sacrificial reciprocity may deepen the account; one presented as cancelling prior doctrine must face a direct, source-based critique.",
+      "La liberté chrétienne, au sens catholique classique, se perfectionne par la vérité et des devoirs justement ordonnés, non par le refus de toute obligation humaine. Le mariage établit librement des liens réels de fidélité, de charité et de responsabilité commune ; il ne supprime ni la conscience ni la dignité de l'un des époux. L'ordre traditionnel de la primauté doit donc être défendu là où il est réellement enseigné, mais son contenu doit venir de l'Écriture et du magistère, non des conventions sociales ou des préférences masculines. Une interprétation postconciliaire précisant la réciprocité sacrificielle peut approfondir la doctrine ; si elle est présentée comme abrogeant un enseignement antérieur, elle appelle une critique directe fondée sur les sources."
+    ]
   }
 ]);
