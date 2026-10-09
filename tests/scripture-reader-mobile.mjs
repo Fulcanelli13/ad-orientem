@@ -68,6 +68,21 @@ try{
  await dialog.locator(".aoScriptureSearch input").fill("Tob");
  await dialog.locator(".aoScriptureResults button").first().click();
  assert.match(await dialog.locator(".aoScriptureReading h3").innerText(),/Tobit 1:1/);
+ // Test terminal chapter, numeric input clamping and live chapter count on phone.
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Tobit");
+ assert.equal(await dialog.locator(".aoScriptureNav input").first().getAttribute("max"),"14");
+ await dialog.locator(".aoScriptureNav input").first().fill("14");
+ await dialog.locator(".aoScriptureNav input").first().dispatchEvent("change");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Tobit 14:1");
+ assert.equal(await dialog.getByRole("button",{name:"Next chapter"}).isDisabled(),true);
+ await dialog.locator(".aoScriptureNav input").first().fill("15");
+ await dialog.locator(".aoScriptureNav input").first().dispatchEvent("change");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Tobit 14:1");
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Luke");
+ assert.equal(await dialog.locator(".aoScriptureNav input").first().getAttribute("max"),"24");
+ await dialog.locator(".aoScriptureNav input").first().fill("24");
+ await dialog.locator(".aoScriptureNav input").first().dispatchEvent("change");
+ assert.equal(await dialog.getByRole("button",{name:"Next chapter"}).isDisabled(),true);
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Esther");
  assert.equal(await dialog.locator("[data-crosswalk-unverified=Esther]").count(),1);
  assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/different chapter order/i);
