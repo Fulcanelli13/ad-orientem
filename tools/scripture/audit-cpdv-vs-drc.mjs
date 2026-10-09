@@ -1,3 +1,4 @@
+import { annotateCpdvReview } from "./cpdv-first-pass.mjs";
 #!/usr/bin/env node
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
@@ -94,13 +95,14 @@ export function buildCpdvEditorialComparison(douay,cpdv){
 async function main(){
   const base=process.argv[2]||"artifacts/scripture-candidates";
   const [a,b]=await Promise.all(["DRC","CPDV"].map(x=>readFile(resolve(base,x+"-canonical-candidate.json"),"utf8").then(JSON.parse)));
-  const report=buildCpdvEditorialComparison(a,b);
+  const report=annotateCpdvReview(buildCpdvEditorialComparison(a,b));
   await mkdir(resolve(base),{recursive:true});
   await writeFile(resolve(base,"CPDV-vs-Douay-theological-review.json"),JSON.stringify(report,null,2)+"\n");
   console.log(JSON.stringify({
     comparisonItems:report.totalReviewItems,coordinateAvailable:report.coordinateAvailable,
     automaticallyFlagged:report.automatedFlagged,doctrinallyCertified:0,
-    verseCollationCertified:0,status:"AWAITING HUMAN CATHOLIC EDITORIAL VERIFICATION"
+    verseCollationCertified:0,firstPassReviewed:report.firstPassReviewed,
+    priorityCount:report.priorityCount,status:"AWAITING ORIGINAL-EDITION AND THEOLOGICAL CERTIFICATION"
   }));
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(resolve(process.argv[1])).href)await main();
