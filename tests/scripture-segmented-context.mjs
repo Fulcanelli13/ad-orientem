@@ -12,7 +12,7 @@ const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const source=load("../data/mass/scripture-segmented-proper.v1.json");
 assert.equal(VERIFIED_SEGMENTED_MASS_VERSION,source.version);
 assert.deepEqual(VERIFIED_SEGMENTED_MASS_READINGS,source.readings,"Compiled segmented witness diverged from source ledger");
-assert.equal(source.readings.length,3);
+assert.equal(source.readings.length,4);
 const bible=(book,chapter,a,b)=>({book,chapter,verseStart:a,verseEnd:b});
 const part=[bible("Ephesians",3,8,12),bible("Ephesians",3,14,19)];
 assert.equal(scriptureSegmentsReference(part),"Ephesians 3:8–12; 3:14–19");
