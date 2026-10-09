@@ -406,12 +406,19 @@ try{
       width:b?.width??0,
       donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
       priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
+      sourceLinks:[...r.querySelectorAll(".aoLearnTradSource a[href]")].map(a=>({href:a.href,rel:a.rel})),
     }});
     assert.equal(child.owner,expectedTraditionalLearnOwner,id+": wrong child owner");
     assert.ok(child.width>300,id+": child collapsed on phone");
     assert.ok(child.overflow<=1,id+": child has horizontal overflow");
     assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
     assert.equal(child.priestCeremonialExposed,false,id+": priest-only ceremonial scope leaked");
+    if(id==="learn.rites.sick")assert.ok(child.sourceLinks.length>=4,
+      "Serious Illness Formation lost its primary and current-source witnesses");
+    for(const link of child.sourceLinks){
+      assert.match(link.href,/^https:\/\//,id+": invalid Formation source link");
+      assert.match(link.rel,/noreferrer/,id+": external Formation sources need noreferrer");
+    }
     await assertFocusSafe(id+" open");
     await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").tap();
     await page.waitForFunction(()=>
