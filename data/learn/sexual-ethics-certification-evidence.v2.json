@@ -55,15 +55,15 @@
   "summary": {
     "total_cases": 55,
     "total_stages": 440,
-    "substantive_case_reviews": 8,
-    "individually_assessed_stages": 64,
+    "substantive_case_reviews": 23,
+    "individually_assessed_stages": 184,
     "stage_verdict_counts": {
-      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 377,
+      "ILLUSTRATIVE_CHALLENGE": 34,
+      "REASONED_INFERENCE_FROM_DOCUMENT": 87,
+      "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 45,
       "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT": 5,
-      "REASONED_INFERENCE_FROM_DOCUMENT": 12,
-      "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 30,
-      "ILLUSTRATIVE_CHALLENGE": 11,
-      "ORIGINAL_OPPONENT_POSITION": 3,
+      "ORIGINAL_OPPONENT_POSITION": 10,
+      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 257,
       "DIRECT_ORIGINAL_CLINICAL_CONTEXT": 2
     },
     "full_case_certifications": 0
@@ -71,7 +71,7 @@
   "cases": [
     {
       "id": "CSE006",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -80,9 +80,9 @@
           "selected_source_ids": [
             "MILL_IV_FULL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Mill's original argument limits civil/social coercion and does not silence religious moral criticism.",
+          "explanation_fr": "Mill limite la contrainte civile et sociale et ne supprime pas le jugement moral religieux.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -91,9 +91,9 @@
           "selected_source_ids": [
             "MILL_IV_FULL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Mill's original argument limits civil/social coercion and does not silence religious moral criticism.",
+          "explanation_fr": "Mill limite la contrainte civile et sociale et ne supprime pas le jugement moral religieux.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -102,9 +102,9 @@
           "selected_source_ids": [
             "ST94"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas I–II q18 and Veritatis Splendor §§78–80 ground distinct judgments about an act's object beyond state prohibition.",
+          "explanation_fr": "La Somme I–II, q.18 et Veritatis Splendor §§78–80 distinguent l'objet moral de la possibilité d'une interdiction civile.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -114,9 +114,9 @@
             "VS",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The corrected objection fairly separates civil liberty from ethical approval.",
+          "explanation_fr": "L'objection corrigée distingue réellement liberté civile et approbation morale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -126,9 +126,9 @@
             "ST94",
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Aquinas I–II q18 and Veritatis Splendor §§78–80 ground distinct judgments about an act's object beyond state prohibition.",
+          "explanation_fr": "La Somme I–II, q.18 et Veritatis Splendor §§78–80 distinguent l'objet moral de la possibilité d'une interdiction civile.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -137,9 +137,9 @@
           "selected_source_ids": [
             "MILL_IV_FULL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The corrected objection fairly separates civil liberty from ethical approval.",
+          "explanation_fr": "L'objection corrigée distingue réellement liberté civile et approbation morale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -149,9 +149,9 @@
             "VS",
             "ST94"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The corrected objection fairly separates civil liberty from ethical approval.",
+          "explanation_fr": "L'objection corrigée distingue réellement liberté civile et approbation morale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -161,9 +161,9 @@
             "ST18",
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas I–II q18 and Veritatis Splendor §§78–80 ground distinct judgments about an act's object beyond state prohibition.",
+          "explanation_fr": "La Somme I–II, q.18 et Veritatis Splendor §§78–80 distinguent l'objet moral de la possibilité d'une interdiction civile.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -251,11 +251,17 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE007",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -264,9 +270,9 @@
           "selected_source_ids": [
             "PP_CONSENT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Planned Parenthood establishes consent as necessary; sufficiency is an additional hypothetical inference.",
+          "explanation_fr": "Planned Parenthood établit la nécessité du consentement ; sa suffisance morale est une déduction hypothétique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -275,9 +281,9 @@
           "selected_source_ids": [
             "PP_CONSENT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Planned Parenthood establishes consent as necessary; sufficiency is an additional hypothetical inference.",
+          "explanation_fr": "Planned Parenthood établit la nécessité du consentement ; sa suffisance morale est une déduction hypothétique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -286,9 +292,9 @@
           "selected_source_ids": [
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The difference between free assent and the object of an act follows from Aquinas q18.",
+          "explanation_fr": "La différence entre assentiment libre et objet moral suit de la Somme, I–II, q.18.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -297,9 +303,9 @@
           "selected_source_ids": [
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No source is quoted as explicitly saying every consensual sexual choice is good.",
+          "explanation_fr": "Aucune source n'est citée comme affirmant expressément que tout acte sexuel consenti serait bon.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -309,9 +315,9 @@
             "VS",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "The difference between free assent and the object of an act follows from Aquinas q18.",
+          "explanation_fr": "La différence entre assentiment libre et objet moral suit de la Somme, I–II, q.18.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -320,9 +326,9 @@
           "selected_source_ids": [
             "PP_CONSENT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "No source is quoted as explicitly saying every consensual sexual choice is good.",
+          "explanation_fr": "Aucune source n'est citée comme affirmant expressément que tout acte sexuel consenti serait bon.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -332,9 +338,9 @@
             "VS",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No source is quoted as explicitly saying every consensual sexual choice is good.",
+          "explanation_fr": "Aucune source n'est citée comme affirmant expressément que tout acte sexuel consenti serait bon.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -343,9 +349,9 @@
           "selected_source_ids": [
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The difference between free assent and the object of an act follows from Aquinas q18.",
+          "explanation_fr": "La différence entre assentiment libre et objet moral suit de la Somme, I–II, q.18.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -431,6 +437,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -630,7 +642,7 @@
     },
     {
       "id": "CSE012",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -639,9 +651,9 @@
           "selected_source_ids": [
             "CURRAN_CDF1986"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The silence of Jesus on modern terminology is genuine, but is not a decisive argument about principles.",
+          "explanation_fr": "Le silence de Jésus sur la terminologie moderne est réel, mais ne tranche pas l'application des principes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -650,9 +662,9 @@
           "selected_source_ids": [
             "CURRAN_CDF1986"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The silence of Jesus on modern terminology is genuine, but is not a decisive argument about principles.",
+          "explanation_fr": "Le silence de Jésus sur la terminologie moderne est réel, mais ne tranche pas l'application des principes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -661,9 +673,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Jesus's teaching on marriage, lust and adultery, apostolic texts and natural-law interpretation must be distinguished.",
+          "explanation_fr": "Il faut distinguer les paroles du Christ sur mariage, désir et adultère, les textes apostoliques et leur application par la loi naturelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -672,9 +684,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The disputed issue is legitimate development, not whether modern words occur verbatim in the Gospels.",
+          "explanation_fr": "Le débat porte sur un développement légitime, non sur la présence littérale de mots modernes dans les Évangiles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -683,9 +695,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Jesus's teaching on marriage, lust and adultery, apostolic texts and natural-law interpretation must be distinguished.",
+          "explanation_fr": "Il faut distinguer les paroles du Christ sur mariage, désir et adultère, les textes apostoliques et leur application par la loi naturelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -694,9 +706,9 @@
           "selected_source_ids": [
             "CURRAN_CDF1986"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The disputed issue is legitimate development, not whether modern words occur verbatim in the Gospels.",
+          "explanation_fr": "Le débat porte sur un développement légitime, non sur la présence littérale de mots modernes dans les Évangiles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -705,9 +717,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The disputed issue is legitimate development, not whether modern words occur verbatim in the Gospels.",
+          "explanation_fr": "Le débat porte sur un développement légitime, non sur la présence littérale de mots modernes dans les Évangiles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -716,9 +728,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Jesus's teaching on marriage, lust and adultery, apostolic texts and natural-law interpretation must be distinguished.",
+          "explanation_fr": "Il faut distinguer les paroles du Christ sur mariage, désir et adultère, les textes apostoliques et leur application par la loi naturelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -802,11 +814,17 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE013",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -815,9 +833,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Paul's historical context is real; no cited first-person critic has proved that all his moral arguments depend on discredited anthropology.",
+          "explanation_fr": "Le contexte historique de Paul est réel ; aucune critique citée ne prouve que toute sa morale repose sur une anthropologie dépassée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -826,9 +844,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Paul's historical context is real; no cited first-person critic has proved that all his moral arguments depend on discredited anthropology.",
+          "explanation_fr": "Le contexte historique de Paul est réel ; aucune critique citée ne prouve que toute sa morale repose sur une anthropologie dépassée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -837,9 +855,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "His appeals to holiness, creation and the body in Christ must be evaluated instead of dismissed as mere custom.",
+          "explanation_fr": "Ses arguments sur la sainteté, la création et le corps du Christ doivent être examinés plutôt que réduits aux coutumes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -848,9 +866,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The reply is an exegetical inference requiring passage-level historical work for particular texts.",
+          "explanation_fr": "La réponse demeure une inférence exégétique qui exige l'étude historique des passages concernés.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -859,9 +877,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "His appeals to holiness, creation and the body in Christ must be evaluated instead of dismissed as mere custom.",
+          "explanation_fr": "Ses arguments sur la sainteté, la création et le corps du Christ doivent être examinés plutôt que réduits aux coutumes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -870,9 +888,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The reply is an exegetical inference requiring passage-level historical work for particular texts.",
+          "explanation_fr": "La réponse demeure une inférence exégétique qui exige l'étude historique des passages concernés.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -881,9 +899,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The reply is an exegetical inference requiring passage-level historical work for particular texts.",
+          "explanation_fr": "La réponse demeure une inférence exégétique qui exige l'étude historique des passages concernés.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -892,9 +910,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "His appeals to holiness, creation and the body in Christ must be evaluated instead of dismissed as mere custom.",
+          "explanation_fr": "Ses arguments sur la sainteté, la création et le corps du Christ doivent être examinés plutôt que réduits aux coutumes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -978,11 +996,17 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE014",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -991,9 +1015,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Curran explicitly argued for reconsideration and potential fallibility of nondefinitive sexual teaching in 1987.",
+          "explanation_fr": "Curran a explicitement plaidé en 1987 pour réexaminer certains enseignements sexuels non définitifs.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1003,9 +1027,9 @@
             "CURRAN1987",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Curran explicitly argued for reconsideration and potential fallibility of nondefinitive sexual teaching in 1987.",
+          "explanation_fr": "Curran a explicitement plaidé en 1987 pour réexaminer certains enseignements sexuels non définitifs.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1015,9 +1039,9 @@
             "CASTI",
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii and Veritatis Splendor distinguish doctrinal norms from disciplinary forms and technical developments.",
+          "explanation_fr": "Casti Connubii et Veritatis Splendor distinguent normes doctrinales, disciplines et évolutions techniques.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1027,9 +1051,9 @@
             "VS",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Neither total changelessness of every application nor automatic reversibility follows from development.",
+          "explanation_fr": "Le développement ne prouve ni l'immuabilité de chaque application ni la réversibilité automatique des normes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1040,9 +1064,9 @@
             "CASTI",
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Casti Connubii and Veritatis Splendor distinguish doctrinal norms from disciplinary forms and technical developments.",
+          "explanation_fr": "Casti Connubii et Veritatis Splendor distinguent normes doctrinales, disciplines et évolutions techniques.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1051,9 +1075,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Neither total changelessness of every application nor automatic reversibility follows from development.",
+          "explanation_fr": "Le développement ne prouve ni l'immuabilité de chaque application ni la réversibilité automatique des normes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1063,9 +1087,9 @@
             "VS",
             "TRENT6"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Neither total changelessness of every application nor automatic reversibility follows from development.",
+          "explanation_fr": "Le développement ne prouve ni l'immuabilité de chaque application ni la réversibilité automatique des normes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1075,9 +1099,9 @@
             "CASTI",
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii and Veritatis Splendor distinguish doctrinal norms from disciplinary forms and technical developments.",
+          "explanation_fr": "Casti Connubii et Veritatis Splendor distinguent normes doctrinales, disciplines et évolutions techniques.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -1168,11 +1192,17 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE016",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -1181,9 +1211,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The independent-infallibility claim about individual conscience is an illustrative inference, not Curran's exact quote.",
+          "explanation_fr": "L'infaillibilité privée de la conscience est une déduction illustrative, non une citation littérale de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1192,9 +1222,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The independent-infallibility claim about individual conscience is an illustrative inference, not Curran's exact quote.",
+          "explanation_fr": "L'infaillibilité privée de la conscience est une déduction illustrative, non une citation littérale de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1203,9 +1233,9 @@
           "selected_source_ids": [
             "ST19"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Veritatis Splendor and Donum Veritatis require both sincere moral judgment and adequate formation.",
+          "explanation_fr": "Veritatis Splendor et Donum Veritatis exigent sincérité du jugement et formation correcte de la conscience.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1215,9 +1245,9 @@
             "VS",
             "DONUMVER"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No private conscience is treated as a source that creates the objective moral law.",
+          "explanation_fr": "La conscience individuelle n'est jamais présentée comme créatrice de la loi morale objective.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1227,9 +1257,9 @@
             "VS",
             "ST19"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Veritatis Splendor and Donum Veritatis require both sincere moral judgment and adequate formation.",
+          "explanation_fr": "Veritatis Splendor et Donum Veritatis exigent sincérité du jugement et formation correcte de la conscience.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1238,9 +1268,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "No private conscience is treated as a source that creates the objective moral law.",
+          "explanation_fr": "La conscience individuelle n'est jamais présentée comme créatrice de la loi morale objective.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1250,9 +1280,9 @@
             "VS",
             "DONUMVER"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No private conscience is treated as a source that creates the objective moral law.",
+          "explanation_fr": "La conscience individuelle n'est jamais présentée comme créatrice de la loi morale objective.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1261,9 +1291,9 @@
           "selected_source_ids": [
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Veritatis Splendor and Donum Veritatis require both sincere moral judgment and adequate formation.",
+          "explanation_fr": "Veritatis Splendor et Donum Veritatis exigent sincérité du jugement et formation correcte de la conscience.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -1350,11 +1380,17 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE018",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -1363,9 +1399,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Curran argues for theological dissent; the assertion that any disagreement implies total personal freedom is an illustrative leap.",
+          "explanation_fr": "Curran défend la discussion théologique ; en déduire une liberté illimitée en cas de désaccord est un saut illustratif.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1374,9 +1410,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Curran argues for theological dissent; the assertion that any disagreement implies total personal freedom is an illustrative leap.",
+          "explanation_fr": "Curran défend la discussion théologique ; en déduire une liberté illimitée en cas de désaccord est un saut illustratif.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1385,9 +1421,9 @@
           "selected_source_ids": [
             "DONUMVER"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Donum Veritatis distinguishes difficulties requiring careful inquiry from dismissing the Magisterium as an ordinary competing opinion.",
+          "explanation_fr": "Donum Veritatis distingue les difficultés à examiner du traitement du Magistère comme simple opinion concurrente.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1396,9 +1432,9 @@
           "selected_source_ids": [
             "DONUMVER"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Magisterial weight and the exact contested proposition determine whether a question remains open.",
+          "explanation_fr": "Le poids magistériel et la proposition discutée déterminent si la question demeure ouverte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1407,9 +1443,9 @@
           "selected_source_ids": [
             "DONUMVER"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Donum Veritatis distinguishes difficulties requiring careful inquiry from dismissing the Magisterium as an ordinary competing opinion.",
+          "explanation_fr": "Donum Veritatis distingue les difficultés à examiner du traitement du Magistère comme simple opinion concurrente.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1418,9 +1454,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Magisterial weight and the exact contested proposition determine whether a question remains open.",
+          "explanation_fr": "Le poids magistériel et la proposition discutée déterminent si la question demeure ouverte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1429,9 +1465,9 @@
           "selected_source_ids": [
             "DONUMVER"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Magisterial weight and the exact contested proposition determine whether a question remains open.",
+          "explanation_fr": "Le poids magistériel et la proposition discutée déterminent si la question demeure ouverte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1440,9 +1476,9 @@
           "selected_source_ids": [
             "DONUMVER"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Donum Veritatis distinguishes difficulties requiring careful inquiry from dismissing the Magisterium as an ordinary competing opinion.",
+          "explanation_fr": "Donum Veritatis distingue les difficultés à examiner du traitement du Magistère comme simple opinion concurrente.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -1526,6 +1562,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -2072,7 +2114,7 @@
     },
     {
       "id": "CSE031",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -2081,9 +2123,9 @@
           "selected_source_ids": [
             "CURRAN_CDF1986"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The ceremony-is-only-formality objection is an illustrative argument about engagement, not an identified Curran quotation.",
+          "explanation_fr": "Réduire la cérémonie à une formalité est une objection illustrative sur les fiançailles, non une citation de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2092,9 +2134,9 @@
           "selected_source_ids": [
             "PP_RELATIONSHIPS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The ceremony-is-only-formality objection is an illustrative argument about engagement, not an identified Curran quotation.",
+          "explanation_fr": "Réduire la cérémonie à une formalité est une objection illustrative sur les fiançailles, non une citation de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2103,9 +2145,9 @@
           "selected_source_ids": [
             "ST154"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic marriage arises from present matrimonial consent and has present obligations, not simply future intention.",
+          "explanation_fr": "Le mariage catholique naît du consentement matrimonial présent et crée des devoirs actuels, non une simple intention future.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2115,9 +2157,9 @@
             "ST154",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The couple's affection and fidelity can be good without turning engagement into a present marriage.",
+          "explanation_fr": "L'affection et la fidélité des fiancés peuvent être bonnes sans transformer les fiançailles en mariage actuel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2127,9 +2169,9 @@
             "ST154",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Catholic marriage arises from present matrimonial consent and has present obligations, not simply future intention.",
+          "explanation_fr": "Le mariage catholique naît du consentement matrimonial présent et crée des devoirs actuels, non une simple intention future.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2138,9 +2180,9 @@
           "selected_source_ids": [
             "CURRAN_CDF1986"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The couple's affection and fidelity can be good without turning engagement into a present marriage.",
+          "explanation_fr": "L'affection et la fidélité des fiancés peuvent être bonnes sans transformer les fiançailles en mariage actuel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2150,9 +2192,9 @@
             "ST154",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The couple's affection and fidelity can be good without turning engagement into a present marriage.",
+          "explanation_fr": "L'affection et la fidélité des fiancés peuvent être bonnes sans transformer les fiançailles en mariage actuel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2161,9 +2203,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic marriage arises from present matrimonial consent and has present obligations, not simply future intention.",
+          "explanation_fr": "Le mariage catholique naît du consentement matrimonial présent et crée des devoirs actuels, non une simple intention future.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -2250,11 +2292,17 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE035",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -2263,9 +2311,9 @@
           "selected_source_ids": [
             "PEW_CO2019"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Pew's original 2019 survey records actual cohabiters' motives, not an asserted causal relationship-success outcome.",
+          "explanation_fr": "L'enquête Pew de 2019 documente les motifs réels de cohabitation, non un résultat causal sur la réussite conjugale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2274,9 +2322,9 @@
           "selected_source_ids": [
             "PEW_CO2019"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Pew's original 2019 survey records actual cohabiters' motives, not an asserted causal relationship-success outcome.",
+          "explanation_fr": "L'enquête Pew de 2019 documente les motifs réels de cohabitation, non un résultat causal sur la réussite conjugale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2285,9 +2333,9 @@
           "selected_source_ids": [
             "ST43"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral evaluation distinguishes fornication from shared accommodation without sexual relations.",
+          "explanation_fr": "L'évaluation morale distingue la fornication du logement partagé sans relations sexuelles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2297,9 +2345,9 @@
             "ST154",
             "ST43"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Risk-reduction benefits of cohabitation require separate empirical evidence and cannot be claimed from Pew motive statistics.",
+          "explanation_fr": "Les bénéfices causaux de la cohabitation exigent des preuves distinctes des statistiques de motivation Pew.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2309,9 +2357,9 @@
             "ST154",
             "ST43"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Moral evaluation distinguishes fornication from shared accommodation without sexual relations.",
+          "explanation_fr": "L'évaluation morale distingue la fornication du logement partagé sans relations sexuelles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2320,9 +2368,9 @@
           "selected_source_ids": [
             "PEW_CO2019"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Risk-reduction benefits of cohabitation require separate empirical evidence and cannot be claimed from Pew motive statistics.",
+          "explanation_fr": "Les bénéfices causaux de la cohabitation exigent des preuves distinctes des statistiques de motivation Pew.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2332,9 +2380,9 @@
             "ST154",
             "ST43"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Risk-reduction benefits of cohabitation require separate empirical evidence and cannot be claimed from Pew motive statistics.",
+          "explanation_fr": "Les bénéfices causaux de la cohabitation exigent des preuves distinctes des statistiques de motivation Pew.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2343,9 +2391,9 @@
           "selected_source_ids": [
             "ST154"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral evaluation distinguishes fornication from shared accommodation without sexual relations.",
+          "explanation_fr": "L'évaluation morale distingue la fornication du logement partagé sans relations sexuelles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -2432,6 +2480,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -2990,7 +3044,7 @@
     },
     {
       "id": "CSE043",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -2999,9 +3053,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Farley's pp. 293 and 295 arguments for same-sex relationships and legal recognition are documented in an official quotation.",
+          "explanation_fr": "Les positions de Farley sur les relations entre personnes de même sexe et leur reconnaissance figurent aux pages 293 et 295 citées officiellement.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3010,9 +3064,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Farley's pp. 293 and 295 arguments for same-sex relationships and legal recognition are documented in an official quotation.",
+          "explanation_fr": "Les positions de Farley sur les relations entre personnes de même sexe et leur reconnaissance figurent aux pages 293 et 295 citées officiellement.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3021,9 +3075,9 @@
           "selected_source_ids": [
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The CDF distinguishes personal dignity from the moral status and legal definition of sexual unions.",
+          "explanation_fr": "La CDF distingue la dignité des personnes du jugement moral et de la définition juridique des unions.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3033,9 +3087,9 @@
             "CDF2003",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Genuine affection, fidelity and generosity must not be denied or equated with the specific sexual act's moral status.",
+          "explanation_fr": "L'affection, la fidélité et la générosité réelles ne doivent pas être niées ni confondues avec le statut moral des actes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3045,9 +3099,9 @@
             "CDF2003",
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "The CDF distinguishes personal dignity from the moral status and legal definition of sexual unions.",
+          "explanation_fr": "La CDF distingue la dignité des personnes du jugement moral et de la définition juridique des unions.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3056,9 +3110,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Genuine affection, fidelity and generosity must not be denied or equated with the specific sexual act's moral status.",
+          "explanation_fr": "L'affection, la fidélité et la générosité réelles ne doivent pas être niées ni confondues avec le statut moral des actes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3068,9 +3122,9 @@
             "CDF2003",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Genuine affection, fidelity and generosity must not be denied or equated with the specific sexual act's moral status.",
+          "explanation_fr": "L'affection, la fidélité et la générosité réelles ne doivent pas être niées ni confondues avec le statut moral des actes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3079,9 +3133,9 @@
           "selected_source_ids": [
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The CDF distinguishes personal dignity from the moral status and legal definition of sexual unions.",
+          "explanation_fr": "La CDF distingue la dignité des personnes du jugement moral et de la définition juridique des unions.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -3168,6 +3222,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -3530,7 +3590,7 @@
     },
     {
       "id": "CSE049",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -3539,9 +3599,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Farley explicitly raises the possible cessation of originally intended marital obligations, reported from pp. 304–305.",
+          "explanation_fr": "Farley envisage explicitement la fin de certains devoirs conjugaux initialement perpétuels, selon les pages 304–305.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3550,9 +3610,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Farley explicitly raises the possible cessation of originally intended marital obligations, reported from pp. 304–305.",
+          "explanation_fr": "Farley envisage explicitement la fin de certains devoirs conjugaux initialement perpétuels, selon les pages 304–305.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3561,9 +3621,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Christ's teaching about enduring marriage must be distinguished from lawful separation where common life is dangerous.",
+          "explanation_fr": "L'enseignement du Christ sur la permanence du mariage se distingue de la séparation licite lorsque la vie commune est dangereuse.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3573,9 +3633,9 @@
             "CASTI",
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Protective civil measures do not by themselves annul a valid matrimonial bond.",
+          "explanation_fr": "Les mesures civiles de protection n'annulent pas à elles seules un lien matrimonial valide.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3585,9 +3645,9 @@
             "CASTI",
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Christ's teaching about enduring marriage must be distinguished from lawful separation where common life is dangerous.",
+          "explanation_fr": "L'enseignement du Christ sur la permanence du mariage se distingue de la séparation licite lorsque la vie commune est dangereuse.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3596,9 +3656,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Protective civil measures do not by themselves annul a valid matrimonial bond.",
+          "explanation_fr": "Les mesures civiles de protection n'annulent pas à elles seules un lien matrimonial valide.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3608,9 +3668,9 @@
             "CASTI",
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Protective civil measures do not by themselves annul a valid matrimonial bond.",
+          "explanation_fr": "Les mesures civiles de protection n'annulent pas à elles seules un lien matrimonial valide.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3620,9 +3680,9 @@
             "SCR",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Christ's teaching about enduring marriage must be distinguished from lawful separation where common life is dangerous.",
+          "explanation_fr": "L'enseignement du Christ sur la permanence du mariage se distingue de la séparation licite lorsque la vie commune est dangereuse.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -3710,11 +3770,17 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE050",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -3723,9 +3789,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Farley's p. 310 argument for remarriage is directly documented; its moral conditions differ from a simplistic 'everyone may remarry' slogan.",
+          "explanation_fr": "Le plaidoyer de Farley pour le remariage, p. 310, est documenté ; ses conditions diffèrent du slogan « tous peuvent se remarier ».",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3734,9 +3800,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Farley's p. 310 argument for remarriage is directly documented; its moral conditions differ from a simplistic 'everyone may remarry' slogan.",
+          "explanation_fr": "Le plaidoyer de Farley pour le remariage, p. 310, est documenté ; ses conditions diffèrent du slogan « tous peuvent se remarier ».",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3745,9 +3811,9 @@
           "selected_source_ids": [
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Marriage nullity judges absent validity at inception; divorce and separation are different legal acts.",
+          "explanation_fr": "La nullité juge l'absence de validité dès l'origine ; divorce et séparation sont des actes juridiques distincts.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3757,9 +3823,9 @@
             "SCR",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A finding of first-marriage invalidity cannot be presented as a discretionary dissolution of a known valid bond.",
+          "explanation_fr": "Constater l'invalidité initiale ne signifie pas dissoudre arbitrairement un lien valide.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3770,9 +3836,9 @@
             "SCR",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Marriage nullity judges absent validity at inception; divorce and separation are different legal acts.",
+          "explanation_fr": "La nullité juge l'absence de validité dès l'origine ; divorce et séparation sont des actes juridiques distincts.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3781,9 +3847,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A finding of first-marriage invalidity cannot be presented as a discretionary dissolution of a known valid bond.",
+          "explanation_fr": "Constater l'invalidité initiale ne signifie pas dissoudre arbitrairement un lien valide.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3793,9 +3859,9 @@
             "CIC",
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A finding of first-marriage invalidity cannot be presented as a discretionary dissolution of a known valid bond.",
+          "explanation_fr": "Constater l'invalidité initiale ne signifie pas dissoudre arbitrairement un lien valide.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3804,9 +3870,9 @@
           "selected_source_ids": [
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Marriage nullity judges absent validity at inception; divorce and separation are different legal acts.",
+          "explanation_fr": "La nullité juge l'absence de validité dès l'origine ; divorce et séparation sont des actes juridiques distincts.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -3894,6 +3960,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -5846,7 +5918,7 @@
     },
     {
       "id": "CSE083",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -5855,9 +5927,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Farley's p.295 directly defends same-sex relationships; a stable relationship's virtues are valid empirical and ethical considerations.",
+          "explanation_fr": "Farley défend directement les relations entre personnes de même sexe, p.295 ; leurs vertus relationnelles doivent être reconnues.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5867,9 +5939,9 @@
             "FARLEY_QUOTED2012",
             "APA_LGB"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Farley's p.295 directly defends same-sex relationships; a stable relationship's virtues are valid empirical and ethical considerations.",
+          "explanation_fr": "Farley défend directement les relations entre personnes de même sexe, p.295 ; leurs vertus relationnelles doivent être reconnues.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5878,9 +5950,9 @@
           "selected_source_ids": [
             "PH"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Persona Humana §8 separates moral evaluation of acts from persons' responsibility for their inclinations.",
+          "explanation_fr": "Persona Humana §8 distingue l'évaluation des actes de la responsabilité des personnes pour leurs inclinations.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5890,9 +5962,9 @@
             "PH",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No claim that same-sex orientation is a psychiatric disorder or that every person bears identical guilt is warranted.",
+          "explanation_fr": "Aucun diagnostic psychiatrique ni culpabilité identique ne découle de l'orientation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5902,9 +5974,9 @@
             "PH",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Persona Humana §8 separates moral evaluation of acts from persons' responsibility for their inclinations.",
+          "explanation_fr": "Persona Humana §8 distingue l'évaluation des actes de la responsabilité des personnes pour leurs inclinations.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5913,9 +5985,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "No claim that same-sex orientation is a psychiatric disorder or that every person bears identical guilt is warranted.",
+          "explanation_fr": "Aucun diagnostic psychiatrique ni culpabilité identique ne découle de l'orientation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5925,9 +5997,9 @@
             "PH",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No claim that same-sex orientation is a psychiatric disorder or that every person bears identical guilt is warranted.",
+          "explanation_fr": "Aucun diagnostic psychiatrique ni culpabilité identique ne découle de l'orientation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5937,9 +6009,9 @@
             "PH",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Persona Humana §8 separates moral evaluation of acts from persons' responsibility for their inclinations.",
+          "explanation_fr": "Persona Humana §8 distingue l'évaluation des actes de la responsabilité des personnes pour leurs inclinations.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -6028,6 +6100,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -6574,7 +6652,7 @@
     },
     {
       "id": "CSE089",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -6583,9 +6661,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Farley p.293 really proposes civil legal recognition; she is not merely a fictional opponent.",
+          "explanation_fr": "Farley propose réellement une reconnaissance civile, p.293 ; elle n'est pas un adversaire inventé.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6594,9 +6672,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Farley p.293 really proposes civil legal recognition; she is not merely a fictional opponent.",
+          "explanation_fr": "Farley propose réellement une reconnaissance civile, p.293 ; elle n'est pas un adversaire inventé.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6605,9 +6683,9 @@
           "selected_source_ids": [
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The CDF 2003 argument concerns institutional legal meaning and does not itself prove quantitative causal harms.",
+          "explanation_fr": "L'argument de la CDF de 2003 concerne le sens juridique d'une institution, non des dommages causaux chiffrés.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6616,9 +6694,9 @@
           "selected_source_ids": [
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The source does not prove that a particular civil union directly destroys any one other marriage.",
+          "explanation_fr": "Le texte ne prouve pas qu'une union civile donnée détruise directement un autre mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6627,9 +6705,9 @@
           "selected_source_ids": [
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "The CDF 2003 argument concerns institutional legal meaning and does not itself prove quantitative causal harms.",
+          "explanation_fr": "L'argument de la CDF de 2003 concerne le sens juridique d'une institution, non des dommages causaux chiffrés.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6638,9 +6716,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The source does not prove that a particular civil union directly destroys any one other marriage.",
+          "explanation_fr": "Le texte ne prouve pas qu'une union civile donnée détruise directement un autre mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6649,9 +6727,9 @@
           "selected_source_ids": [
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The source does not prove that a particular civil union directly destroys any one other marriage.",
+          "explanation_fr": "Le texte ne prouve pas qu'une union civile donnée détruise directement un autre mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6660,9 +6738,9 @@
           "selected_source_ids": [
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The CDF 2003 argument concerns institutional legal meaning and does not itself prove quantitative causal harms.",
+          "explanation_fr": "L'argument de la CDF de 2003 concerne le sens juridique d'une institution, non des dommages causaux chiffrés.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -6746,6 +6824,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -8497,7 +8581,7 @@
     },
     {
       "id": "CSE141",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -8506,9 +8590,9 @@
           "selected_source_ids": [
             "FRANCIS_SPADARO2013"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Francis's 2013 interview actually warns against a distorted proportion of repeatedly emphasized sexual controversies.",
+          "explanation_fr": "L'entretien de François en 2013 met réellement en garde contre la présentation disproportionnée de controverses sexuelles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8517,9 +8601,9 @@
           "selected_source_ids": [
             "FRANCIS_SPADARO2013"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Francis's 2013 interview actually warns against a distorted proportion of repeatedly emphasized sexual controversies.",
+          "explanation_fr": "L'entretien de François en 2013 met réellement en garde contre la présentation disproportionnée de controverses sexuelles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8528,9 +8612,9 @@
           "selected_source_ids": [
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Christian virtue also requires charity, justice, mercy, truth and worship; chastity cannot substitute for them.",
+          "explanation_fr": "La vertu chrétienne exige aussi charité, justice, miséricorde, vérité et culte ; la chasteté ne les remplace pas.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8540,9 +8624,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The meta response defending the existence of a module was replaced with a substantive moral response.",
+          "explanation_fr": "La réponse métarédactionnelle défendant un module a été remplacée par un argument moral substantiel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8552,9 +8636,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "DIRECT_PRIMARY_NORMATIVE_PASSAGE",
+          "explanation_en": "Christian virtue also requires charity, justice, mercy, truth and worship; chastity cannot substitute for them.",
+          "explanation_fr": "La vertu chrétienne exige aussi charité, justice, miséricorde, vérité et culte ; la chasteté ne les remplace pas.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8563,9 +8647,9 @@
           "selected_source_ids": [
             "FRANCIS_SPADARO2013"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The meta response defending the existence of a module was replaced with a substantive moral response.",
+          "explanation_fr": "La réponse métarédactionnelle défendant un module a été remplacée par un argument moral substantiel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8575,9 +8659,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The meta response defending the existence of a module was replaced with a substantive moral response.",
+          "explanation_fr": "La réponse métarédactionnelle défendant un module a été remplacée par un argument moral substantiel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8586,9 +8670,9 @@
           "selected_source_ids": [
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Christian virtue also requires charity, justice, mercy, truth and worship; chastity cannot substitute for them.",
+          "explanation_fr": "La vertu chrétienne exige aussi charité, justice, miséricorde, vérité et culte ; la chasteté ne les remplace pas.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -8675,6 +8759,12 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "normative_text_consulted": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -9542,6 +9632,11 @@
         "scope": "Pastoral balance of the Gospel and disproportionate focus"
       }
     ],
-    "primary_consultation_limit": "These are original text or original-author quotations used to check scope. Access to a page alone is NOT a comprehensive collation of every section or every linked stage, and does not warrant declaring a full debate certified."
+    "primary_consultation_limit": "These are original text or original-author quotations used to check scope. Access to a page alone is NOT a comprehensive collation of every section or every linked stage, and does not warrant declaring a full debate certified.",
+    "additional_semantic_stage_cases": 15,
+    "additional_semantic_stage_assessments": 120,
+    "total_semantic_stage_assessments": 184,
+    "remaining_unassessed_stage_claims": 256,
+    "full_original_passage_certification_remains_open": true
   }
 }
