@@ -18,7 +18,13 @@ function fromReading(reading){
   return [reading.scriptureReference,reading.scriptureRef,reading.reference,
     reading.citation,reading.source?.scriptureReference,
     reading.source?.reference,reading.provenance?.scriptureReference,
-    reading.passage?.reference].filter(value=>typeof value==="string"&&value.trim());
+    reading.passage?.reference,
+    ...["en","fr","lat","la","vernacular"].flatMap(key=>
+      typeof reading[key]==="string"
+        ?reading[key].split(/\\r?\\n/).slice(0,12).map(line=>line.trim())
+          .filter(line=>parseScriptureContext(line))
+        :[])
+  ].filter(value=>typeof value==="string"&&value.trim());
 }
 function candidateReferences(proper,slot){
   const names=SLOT_FIELDS[slot]??[];
