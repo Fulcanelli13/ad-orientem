@@ -1087,9 +1087,9 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     },
     {
       "bead": 7,
-      "reference": "1 Peter 2:24",
+      "reference": "1 Peter 2:24-25",
       "relationship": "SCRIPTURAL_PASSION_INTERPRETATION",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=1%20Peter%202%3A24&version=DRA",
+      "primaryUrl": "https://www.biblegateway.com/passage/?search=1%20Peter%202%3A24-25&version=DRA",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
       "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/1_Pierre#2"
@@ -1272,7 +1272,7 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     {
       "bead": 7,
       "reference": "Luke 23:28-31",
-      "relationship": "DEVOTIONAL_REFLECTION",
+      "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A28-31&version=DRA",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
@@ -1309,6 +1309,24 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
   "sor5": [
     {
       "bead": 1,
+      "reference": "John 19:18",
+      "relationship": "SCRIPTURAL_PARAPHRASE",
+      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A18&version=DRA",
+      "isDirectQuotation": false,
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean#19"
+    },
+    {
+      "bead": 2,
+      "reference": "John 19:19",
+      "relationship": "SCRIPTURAL_PARAPHRASE",
+      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A19&version=DRA",
+      "isDirectQuotation": false,
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean#19"
+    },
+    {
+      "bead": 3,
       "reference": "John 19:25",
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A25&version=DRA",
@@ -1317,16 +1335,7 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean#19"
     },
     {
-      "bead": 2,
-      "reference": "John 19:25-26",
-      "relationship": "SCRIPTURAL_PARAPHRASE",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A25-26&version=DRA",
-      "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean#19"
-    },
-    {
-      "bead": 3,
+      "bead": 4,
       "reference": "John 19:26",
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A26&version=DRA",
@@ -1335,19 +1344,10 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean#19"
     },
     {
-      "bead": 4,
-      "reference": "John 19:26-27",
-      "relationship": "SCRIPTURAL_PARAPHRASE",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A26-27&version=DRA",
-      "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean#19"
-    },
-    {
       "bead": 5,
-      "reference": "John 19:27",
+      "reference": "John 19:26",
       "relationship": "SCRIPTURAL_PARAPHRASE",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A27&version=DRA",
+      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A26&version=DRA",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
       "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean#19"

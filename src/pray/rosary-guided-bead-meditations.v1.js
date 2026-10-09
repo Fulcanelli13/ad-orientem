@@ -7,7 +7,7 @@
  * Ten prayer prompts replace previously withheld unsound per-bead excerpts.
  * Simple mode and the canonical prayer/state engine are unchanged.
  */
-export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
+export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1=Object.freeze({
   "joy1": [
     {
       "bead": 1,
@@ -670,8 +670,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 8,
-      "en": "They spit upon the face of the Lord.",
-      "fr": "Ils crachent au visage du Seigneur."
+      "en": "They spit upon the Lord in mockery.",
+      "fr": "Ils crachent sur le Seigneur."
     },
     {
       "bead": 9,
@@ -717,8 +717,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 7,
-      "en": "He calls them to repentance and vigilance.",
-      "fr": "Il les appelle à la conversion et à la vigilance."
+      "en": "Jesus warns the women of sufferings yet to come.",
+      "fr": "Jésus avertit les femmes des souffrances qui vont venir."
     },
     {
       "bead": 8,
@@ -739,43 +739,43 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
   "sor5": [
     {
       "bead": 1,
+      "en": "Jesus is crucified on Calvary between two others.",
+      "fr": "Jésus est crucifié au Calvaire entre deux autres condamnés."
+    },
+    {
+      "bead": 2,
+      "en": "An inscription over the Cross names Jesus King of the Jews.",
+      "fr": "Une inscription sur la Croix proclame Jésus Roi des Juifs."
+    },
+    {
+      "bead": 3,
       "en": "Mary stands beside the Cross of her Son.",
       "fr": "Marie se tient près de la Croix de son Fils."
     },
     {
-      "bead": 2,
-      "en": "The beloved disciple remains there with her.",
-      "fr": "Le disciple bien-aimé demeure auprès d’elle."
-    },
-    {
-      "bead": 3,
-      "en": "Jesus sees His Mother in her sorrow.",
-      "fr": "Jésus voit sa Mère dans sa douleur."
-    },
-    {
       "bead": 4,
-      "en": "He entrusts her to the beloved disciple.",
-      "fr": "Il la confie au disciple bien-aimé."
+      "en": "The beloved disciple stands beside Mary.",
+      "fr": "Le disciple bien-aimé se tient auprès de Marie."
     },
     {
       "bead": 5,
-      "en": "He entrusts the disciple to His Mother.",
-      "fr": "Il confie le disciple à sa Mère."
+      "en": "Jesus entrusts the beloved disciple to His Mother.",
+      "fr": "Jésus confie le disciple bien-aimé à sa Mère."
     },
     {
       "bead": 6,
-      "en": "The disciple receives Mary into his care.",
-      "fr": "Le disciple accueille Marie chez lui."
+      "en": "He entrusts His Mother to the beloved disciple.",
+      "fr": "Il confie sa Mère au disciple bien-aimé."
     },
     {
       "bead": 7,
-      "en": "Jesus expresses His thirst upon the Cross.",
+      "en": "Jesus says that He thirsts upon the Cross.",
       "fr": "Jésus exprime sa soif sur la Croix."
     },
     {
       "bead": 8,
-      "en": "He receives the vinegar offered to Him.",
-      "fr": "Il reçoit le vinaigre qu’on lui présente."
+      "en": "A sponge dipped in vinegar is brought to His mouth.",
+      "fr": "On porte à sa bouche une éponge imbibée de vinaigre."
     },
     {
       "bead": 9,
