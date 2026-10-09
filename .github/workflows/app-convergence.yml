@@ -124,6 +124,7 @@ jobs:
       - run: npm run test:nonmass-convergence
       - run: npm run test:pray-owner
       - run: npm run test:learn-owner
+      - run: node tests/catechism-guided-study.mjs
       - run: npm run test:source-transport
       - run: npm run check:app-release
 
