@@ -34,8 +34,10 @@ export function normalizeScrollmapperSource(raw,editionId,{requireCompleteCanon=
        issues.push(id+" malformed chapter");continue;
      }
      const verses=ch.verses.map(v=>({number:v?.verse,text:v?.text}));
-     if(!verses.length||verses.some(v=>!Number.isSafeInteger(v.number)||v.number<1||
-       typeof v.text!=="string" || !v.text.trim()))issues.push(id+" "+chapter+" invalid verse");
+     const invalid=verses.filter(v=>!Number.isSafeInteger(v.number)||v.number<1||
+       typeof v.text!=="string" || !v.text.trim());
+     if(!verses.length||invalid.length)issues.push(id+" "+chapter+" invalid verses "+
+       JSON.stringify(invalid.slice(0,5).map(v=>({number:v.number,type:typeof v.text,length:typeof v.text==="string"?v.text.length:null}))));
      chapters.push({number:chapter,verses});
    }
    mapped.push({id,chapters});
