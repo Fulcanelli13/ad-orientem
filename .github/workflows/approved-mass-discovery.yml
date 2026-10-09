@@ -1,0 +1,61 @@
+name: Approved Mass source discovery
+
+on:
+  pull_request:
+    paths:
+      - "tools/directory/discover-approved-mass-worldwide.mjs"
+      - "tests/directory-approved-mass-discovery.mjs"
+      - ".github/workflows/approved-mass-discovery.yml"
+  workflow_dispatch:
+    inputs:
+      countries:
+        description: "Country codes, comma separated (set all to inspect entire approved directory)"
+        default: "MU,FR,US"
+        required: true
+        type: string
+      max_pages:
+        description: "Maximum number of country list pages (up to 200)"
+        default: "150"
+        required: true
+        type: string
+      max_details:
+        description: "Maximum venue detail pages to inspect"
+        default: "0"
+        required: true
+        type: string
+
+jobs:
+  research-snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Offline parser and provenance regression
+        run: node tests/directory-approved-mass-discovery.mjs
+      - name: Bounded source snapshot (research only)
+        env:
+          COUNTRY_CODES: ${{ github.event_name == 'workflow_dispatch' && inputs.countries || 'MU,FR,US' }}
+          PAGE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.max_pages || '6' }}
+          DETAIL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.max_details || '5' }}
+        run: |
+          mkdir -p out/source-discovery
+          node tools/directory/discover-approved-mass-worldwide.mjs \
+            --remote \
+            --countries="$COUNTRY_CODES" \
+            --max-pages="$PAGE_LIMIT" \
+            --max-details="$DETAIL_LIMIT" \
+            --delay-ms=1800 \
+            --out=out/source-discovery/approved-mass-candidates.json
+      - name: Upload unpublished source-discovery candidates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: approved-mass-source-discovery
+          path: out/source-discovery/approved-mass-candidates.json
+          if-no-files-found: warn
+          retention-days: 14
