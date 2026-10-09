@@ -37,27 +37,6 @@ try{
  assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,
    "The lightweight Prayer host must lazy-load the real prayer reader");
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
- const snapshots=[];
- for(const [id,view] of routes){
-  const opened=await page.evaluate(route=>globalThis.AO_PRAY_V435930.open(route,{returnContext:null}),id);
-  assert.equal(opened,true,id+" cannot open");
-  await page.waitForFunction(expected=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView===expected,view,{timeout:12000});
-  const result=await page.evaluate(()=>{
-   const shell=document.querySelector("#aoPray435930.open");
-   const mount=shell?.querySelector(".aoP435930Mount");
-   const bodyText=mount?.innerText?.trim()||"";
-   const r=shell?.getBoundingClientRect();
-   return {bodyLength:bodyText.length,buttons:mount?.querySelectorAll("button").length||0,
-     viewport:innerWidth,shellWidth:r?.width||0,overflow:document.documentElement.scrollWidth-innerWidth,
-     ariaHidden:shell?.getAttribute("aria-hidden"),view:mount?.dataset?.aoPrayView};
-  });
-  assert.ok(result.bodyLength>=30,id+" produced blank or unusably short text: "+JSON.stringify(result));
-  assert.ok(result.buttons>=1,id+" lacks navigation/actions");
-  assert.ok(result.shellWidth<=result.viewport+1,id+" exceeds phone viewport");
-  assert.ok(result.overflow<=1,id+" causes document horizontal overflow: "+result.overflow);
-  assert.equal(result.ariaHidden,"false",id+" is inaccessible despite opening");
-  snapshots.push({id,view,bodyLength:result.bodyLength});
- }
  // Real card-by-card traditional prayers: preserve each canonical prayer once.
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.morning_evening",{returnContext:null}));
  const daily="#aoPray435930.open [data-ao-pray-guide-card]";
@@ -109,6 +88,28 @@ try{
  for(let step=1;step<=4;step++)await tapStep("#aoPray435930.open [data-tp381-examen-step='"+step+"']",step);
  assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"resolve");
  assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Standalone examen must show sourced Act of Contrition");
+
+ const snapshots=[];
+ for(const [id,view] of routes){
+  const opened=await page.evaluate(route=>globalThis.AO_PRAY_V435930.open(route,{returnContext:null}),id);
+  assert.equal(opened,true,id+" cannot open");
+  await page.waitForFunction(expected=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView===expected,view,{timeout:12000});
+  const result=await page.evaluate(()=>{
+   const shell=document.querySelector("#aoPray435930.open");
+   const mount=shell?.querySelector(".aoP435930Mount");
+   const bodyText=mount?.innerText?.trim()||"";
+   const r=shell?.getBoundingClientRect();
+   return {bodyLength:bodyText.length,buttons:mount?.querySelectorAll("button").length||0,
+     viewport:innerWidth,shellWidth:r?.width||0,overflow:document.documentElement.scrollWidth-innerWidth,
+     ariaHidden:shell?.getAttribute("aria-hidden"),view:mount?.dataset?.aoPrayView};
+  });
+  assert.ok(result.bodyLength>=30,id+" produced blank or unusably short text: "+JSON.stringify(result));
+  assert.ok(result.buttons>=1,id+" lacks navigation/actions");
+  assert.ok(result.shellWidth<=result.viewport+1,id+" exceeds phone viewport");
+  assert.ok(result.overflow<=1,id+" causes document horizontal overflow: "+result.overflow);
+  assert.equal(result.ariaHidden,"false",id+" is inaccessible despite opening");
+  snapshots.push({id,view,bodyLength:result.bodyLength});
+ }
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
  const ids=await page.locator("#aoPray435930 [data-p435930-lib-open]").evaluateAll(nodes=>nodes.map(x=>x.dataset.p435930LibOpen));
