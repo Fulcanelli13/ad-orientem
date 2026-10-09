@@ -44,7 +44,7 @@ export function buildCatechismGuidedStudy(crosswalk, first, second, { preview = 
         ? c.sources.flatMap(s => (s.locators?.length
           ? s.locators.map(l => ({ ref: l.ref, url: l.url }))
           : s.refs.map(ref => {
-              const n = Number(ref.replace(/\\D/g, ""));
+              const n = Number(ref.slice(-3));
               const witness = entry.sourceWitnesses.find(w => Number(w.ref.slice(-3)) === n);
               return { ref: sourceQuestion(n), url: witness?.sourceUrl ?? null };
             })))
