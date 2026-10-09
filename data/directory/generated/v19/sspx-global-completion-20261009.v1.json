@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
   "version": "1.0.0",
-  "generated_at": "2026-10-09T05:37:00Z",
+  "generated_at": "2026-10-09T05:41:43.290Z",
   "provider": "SSPX_GLOBAL_COMPLETION_20261009",
   "purpose": "Six additional distinct official SSPX visitor-addressed Sunday Mass sites in Guatemala, Colombia, Argentina, Paraguay and Brazil, reconciled against 604 already published SSPX Mass source records; monthly/undated sites conditional, no fabricated geography.",
   "defaults": {
@@ -17,21 +17,22 @@
     "svc": "MASS"
   },
   "review_summary": {
-    "new_mass_venues": 6,
+    "new_mass_venues": 7,
     "previous_sspx_mass_records": 604,
-    "resulting_sspx_mass_records": 610,
+    "resulting_sspx_mass_records": 611,
     "conditional_mass_venues": 5,
-    "regular_sunday_mass_venues": 1,
+    "regular_sunday_mass_venues": 2,
     "checked_against_prior_sspx_records": 604,
-    "first_party_sunday_evidence": 6,
-    "first_party_physical_address": 6,
-    "not_geolocated_yet": 6,
+    "first_party_sunday_evidence": 7,
+    "first_party_physical_address": 7,
+    "not_geolocated_yet": 7,
     "country_totals": {
       "GT": 1,
       "CO": 2,
       "AR": 1,
       "PY": 1,
-      "BR": 1
+      "BR": 1,
+      "GB": 1
     }
   },
   "records": [
@@ -46,7 +47,6 @@
       "su": "https://centroamerica.fsspx.org/es/capillas-1",
       "ps": "CONDITIONAL_MASS",
       "source_checked_on": "2026-10-09",
-      "source_schedule_last_updated": "2026-10-09",
       "official_map_url": "https://map.fsspx.org/de/places/mision-san-pio-x",
       "official_map_source_place_id": "mision-san-pio-x",
       "first_party_district_url": "https://centroamerica.fsspx.org/es/capillas-1",
@@ -65,7 +65,6 @@
       "su": "https://centroamerica.fsspx.org/es/capillas-1",
       "ps": "CONDITIONAL_MASS",
       "source_checked_on": "2026-10-09",
-      "source_schedule_last_updated": "2026-10-09",
       "official_map_url": "https://map.fsspx.org/de/places/capilla-sagrados-corazones-de-jyeus-y-de-maria",
       "official_map_source_place_id": "capilla-sagrados-corazones-de-jyeus-y-de-maria",
       "first_party_district_url": "https://centroamerica.fsspx.org/es/capillas-1",
@@ -84,7 +83,6 @@
       "su": "https://centroamerica.fsspx.org/es/capillas-1",
       "ps": "CONDITIONAL_MASS",
       "source_checked_on": "2026-10-09",
-      "source_schedule_last_updated": "2026-10-09",
       "official_map_url": "https://map.fsspx.org/de/places/priorato-santa-teresita-del-nino-jesus",
       "official_map_source_place_id": "priorato-santa-teresita-del-nino-jesus",
       "first_party_district_url": "https://centroamerica.fsspx.org/es/capillas-1",
@@ -103,7 +101,6 @@
       "su": "https://fsspx.ar/es/capillas",
       "ps": "CONDITIONAL_MASS",
       "source_checked_on": "2026-10-09",
-      "source_schedule_last_updated": "2026-10-09",
       "official_map_url": "https://map.fsspx.org/de/places/capilla-san-jose-laferrere-la-matanza",
       "official_map_source_place_id": "capilla-san-jose-laferrere-la-matanza",
       "first_party_district_url": "https://fsspx.ar/es/capillas",
@@ -122,7 +119,6 @@
       "su": "https://fsspx.ar/es/capillas",
       "ps": "CONDITIONAL_MASS",
       "source_checked_on": "2026-10-09",
-      "source_schedule_last_updated": "2026-10-09",
       "official_map_url": "https://map.fsspx.org/de/places/iglesia-nuestra-senora-de-lourdes",
       "official_map_source_place_id": "iglesia-nuestra-senora-de-lourdes",
       "first_party_district_url": "https://fsspx.ar/es/capillas",
@@ -141,12 +137,29 @@
       "su": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
       "ps": "CURRENT_PUBLIC_MASS",
       "source_checked_on": "2026-10-09",
-      "source_schedule_last_updated": "2026-10-09",
       "official_map_url": "https://map.fsspx.org/de/places/capela-nossa-senhora-fatima",
       "official_map_source_place_id": "capela-nossa-senhora-fatima",
       "first_party_district_url": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "FOURTH_SUNDAY_EXCEPTION",
+      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+    },
+    {
+      "u": "SSPX-GLOBAL-20261009-07-CHURCH-OF-THE-HOLY-CROSS",
+      "cc": "GB",
+      "l": "Woking",
+      "n": "Church of the Holy Cross",
+      "vt": "church",
+      "a": "Sandy Lane, Maybury, Woking GU22 8BA, United Kingdom",
+      "sr": "Sunday Mass every Sunday at the Church of the Holy Cross; verify current hour in the SSPX district schedule before travel.",
+      "su": "https://fsspx.uk/en/holy-cross-church-woking-32341",
+      "ps": "CURRENT_PUBLIC_MASS",
+      "source_checked_on": "2026-10-09",
+      "official_map_url": "https://map.fsspx.org/de/places/church-of-the-holy-cross",
+      "official_map_source_place_id": "church-of-the-holy-cross",
+      "first_party_district_url": "https://fsspx.uk/en/holy-cross-church-woking-32341",
+      "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
+      "schedule_caveat": "SUNDAY_HOUR_REVERIFY",
       "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
     }
   ]
