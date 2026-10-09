@@ -49,3 +49,5 @@ jobs:
         run: node tests/sexual-ethics-last14-public-source-scope-v1.mjs
       - name: Final three archive-only debate stage source findings (24 stages)
         run: node tests/sexual-ethics-final-three-archived-scope-v1.mjs
+      - name: All 95 short questions, original primary-source scope and 193 links
+        run: node tests/sexual-ethics-95-short-answers-original-source-v1.mjs
