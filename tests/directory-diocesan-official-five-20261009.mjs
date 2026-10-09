@@ -10,7 +10,7 @@ const additions=[
  ["DIO-US-VEN-AVEMARIA-PARISH","SUNDAY_12:30_EXTRAORDINARY_FORM","avemariaparish.org"],
  ["DIO-US-BOS-HOLYCROSS-CATHEDRAL","SUNDAY_10:00_EXTRAORDINARY_FORM","bostoncathedral.com"],
 ];
-assert.equal(snapshot.records.length,57);
+assert.equal(snapshot.records.length,65);
 assert.equal(new Set(snapshot.records.map(r=>r.u)).size,snapshot.records.length);
 const joined=publishableDirectoryRecords(joinDirectoryRecords(expandResearchProviderSnapshot(snapshot)));
 for(const [id,schedule,domain] of additions){

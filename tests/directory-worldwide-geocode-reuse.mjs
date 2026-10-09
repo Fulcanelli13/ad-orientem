@@ -35,7 +35,7 @@ assert.equal(report.schema,"AO_DIRECTORY_WORLDWIDE_GEO_CACHE_REUSE_V1");
 assert.equal(report.mode,"OFFLINE_CACHED_EVIDENCE_ONLY");
 assert.equal(report.network_requests,0);
 assert.equal(report.source_snapshot_count,23);
-assert.equal(report.records_examined,994);
+assert.equal(report.records_examined,1002);
 assert.ok(report.already_mappable>=90);
 assert.equal(report.total_map_eligible,report.already_mappable+report.accepted_from_cache);
 assert.ok(report.providers.every(p=>p.source_records>=1));

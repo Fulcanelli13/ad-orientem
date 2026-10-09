@@ -1,0 +1,163 @@
+{
+  "schema": "AO_ENGLAND_WALES_PRIMARY_SOURCES_20261009_V1",
+  "reviewed_at": "2026-10-09",
+  "licensing_basis": "Individual independently verified factual parish or organising-association assertions, not an LMS database mirror.",
+  "context_sources": [
+    "https://lms.org.uk/list-of-churches",
+    "https://birmingham-lms-rep.blogspot.com/2026/10/",
+    "https://therosaryshop.co.uk/latin-masses-in-london-the-south/"
+  ],
+  "imported": [
+    {
+      "id": "DIO-GB-SOUTHWARK-CLAPHAM-ST-BEDE",
+      "source_url": "https://stbedesclaphampark.org.uk/traditional-latin-mass/",
+      "reason": "Parish explicitly describes traditional Latin Mass and current Sunday/weekday timetable",
+      "community": "DIOCESAN"
+    },
+    {
+      "id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",
+      "source_url": "https://www.caterhamcatholic.co.uk/index.html",
+      "reason": "Current parish Wednesday 10:15 Latin (EF); supersedes association old 10:00",
+      "community": "DIOCESAN"
+    },
+    {
+      "id": "ORD-GB-BIRMINGHAM-ORATORY-IMMACULATE-CONCEPTION",
+      "source_url": "https://birminghamoratory.org.uk/mass-times/",
+      "edition_source": "https://birmingham-lms-rep.blogspot.com/2026/10/",
+      "reason": "Oratory primary Latin timetable and current LMS traditional-Mass organiser; must not classify all Latin Masses generically as 1962 without association check",
+      "community": "ORATORIAN"
+    },
+    {
+      "id": "DIO-GB-BIRMINGHAM-WOLVERHAMPTON-OLPS",
+      "source_url": "https://birmingham-lms-rep.blogspot.com/2026/10/",
+      "edition_source": "https://birmingham-lms-rep.blogspot.com/2026/03/",
+      "reason": "Original regional traditional-Mass organiser lists Friday 18:30 and explicitly 1962 Missal at this church in Holy Week",
+      "community": "DIOCESAN",
+      "source_role": "DIRECT_ASSOCIATION_NOT_PARISH"
+    },
+    {
+      "id": "ORD-GB-OXFORD-ORATORY-ST-ALOYSIUS",
+      "source_url": "https://www.oxfordoratory.org.uk/blog/post/9372-holy-week-times/",
+      "reason": "Oratory 2026 service information distinguishes Sunday 08:00 Extraordinary Form from 11:00 modern Latin solemn service",
+      "community": "ORATORIAN",
+      "source_age_note": "March 2026 schedule; recheck routine Sundays at publication"
+    },
+    {
+      "id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY",
+      "source_url": "https://birmingham-lms-rep.blogspot.com/2026/10/",
+      "reason": "6 October 2026 organising representative confirms Thursdays 18:00 Vetus Ordo; current parish general schedule only says see bulletin",
+      "community": "DIOCESAN",
+      "source_role": "DIRECT_ASSOCIATION_NOT_PARISH"
+    },
+    {
+      "id": "DIO-GB-BIRMINGHAM-EVESHAM-ST-EGWIN",
+      "source_url": "https://www.catholiceveshamandbroadway.org/about-us",
+      "reason": "Original parish explicitly states 1962 Missal Latin Rite each Tuesday 18:30",
+      "community": "DIOCESAN"
+    },
+    {
+      "id": "DIO-GB-BRENTWOOD-BARKING-ST-MARY-ETHELBURGA",
+      "source_url": "https://smebarking.com/service-times/",
+      "reason": "Original parish explicitly labels Sunday 12:05 and weekday Old Rite Masses, unlike ordinary Latin in modern rite",
+      "community": "DIOCESAN"
+    },
+    {
+      "id": "ORD-GB-LONDON-BROMPTON-ORATORY-IMMACULATE-HEART",
+      "source_url": "https://www.bromptonoratory.co.uk/regular-mass-service-times",
+      "reason": "Oratory's current first-party schedule explicitly distinguishes Sunday 09:00 and weekday 08:00 (1962 Missal) from Sunday 11:00 Solemn Latin newer rite",
+      "community": "ORATORIAN"
+    }
+  ],
+  "held": [
+    {
+      "id": "DIO-GB-GLASGOW-TORYGLEN",
+      "name": "St Brigid's, Toryglen",
+      "decision": "ARCHIVED_DISCONTINUED",
+      "reason": "Una Voce Scotland: discontinued and moved to Thornliebank in September 2025",
+      "source": "https://unavocescotland.org/find-a-latin-mass/"
+    },
+    {
+      "id": "WITNESS-GB-WESTMINSTER-WILLESDEN",
+      "name": "Our Lady of Willesden",
+      "decision": "EXISTING_CANONICAL",
+      "reason": "Already present; current parish 2026 1962 Sunday 17:30",
+      "source": "https://parish.rcdow.org.uk/willesden/"
+    },
+    {
+      "id": "WITNESS-GB-MAIDENLANE-CORPUS",
+      "name": "Corpus Christi, Maiden Lane",
+      "decision": "EXISTING_FREQUENCY_REVIEW",
+      "reason": "Existing source record; occasional 1962 Masses must be distinguished from routine 11:30 Sunday Latin Novus Ordo and Ordinariate uses",
+      "source": "https://corpuschristimaidenlane.org.uk/octave/"
+    },
+    {
+      "id": "WITNESS-GB-WESTMINSTER-SPANISH-PLACE",
+      "name": "St James, Spanish Place",
+      "decision": "HOLD_ORIGINAL_1962_SITE_SCHEDULE",
+      "reason": "LMS 2026 list supplies Sunday Low Mass; need original parish Sunday confirmation",
+      "source": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "id": "WITNESS-GB-WESTMINSTER-HENDON",
+      "name": "Our Lady of Dolours, Hendon",
+      "decision": "HOLD_ORIGINAL_1962_SITE_SCHEDULE",
+      "reason": "LMS shows Thursday Low Mass; present original parish corroboration not yet documented",
+      "source": "https://lms.org.uk/church/our-lady-dolours-hendon"
+    },
+    {
+      "id": "WITNESS-GB-SOUTHWARK-MOLESEY",
+      "name": "St Barnabas, Molesey",
+      "decision": "HOLD_LITURGICAL_EDITION",
+      "reason": "Parish 2026 newsletter records Saturday Latin Mass; definitive recurring 1962 evidence still to be reconciled to parish and association",
+      "source": "https://www.stbarnabasmolesey.org/"
+    },
+    {
+      "id": "WITNESS-GB-ARUNDEL-LEWES",
+      "name": "St Pancras, Lewes",
+      "decision": "HOLD_CHANGEABLE_SATURDAY_MASS",
+      "reason": "Parish Jan 2026 newsletter explicitly cancels one Latin Saturday; do not copy a fixed timetable without later confirmation",
+      "source": "https://www.stpancrascatholicchurchlewes.co.uk/"
+    },
+    {
+      "id": "WITNESS-GB-BIRMINGHAM-KIDDERMINSTER",
+      "name": "St Ambrose, Kidderminster",
+      "decision": "HOLD_RECURRING_FREQUENCY_CONFLICT",
+      "reason": "Association says first Sunday 18:00, parish website labels monthly Sunday Latin and confusing First Friday wording",
+      "source": "https://stambrosekidderminster.org.uk/"
+    },
+    {
+      "id": "WITNESS-GB-WESTMINSTER-ROSARY-SHRINE",
+      "name": "Dominican Rosary Shrine, Haverstock Hill",
+      "decision": "HOLD_SEPARATE_DOMINICAN_OLD_RITE",
+      "reason": "Official 2025-26 scholarship advertises Dominican Old Rite monthly third Sunday; not the 1962 Roman Missal and differs from older weekly claims",
+      "source": "https://rosaryshrine.co.uk/"
+    },
+    {
+      "id": "WITNESS-GB-WESTMINSTER-CATHEDRAL",
+      "name": "Westminster Cathedral",
+      "decision": "EXCLUDE_ORDINARY_LATIN_RITE",
+      "reason": "Latin Ordinary Form music/Mass does not establish a recurring 1962 Mass",
+      "source": "https://westminstercathedral.org.uk/"
+    },
+    {
+      "id": "WITNESS-GB-BIRMINGHAM-SS-GREGORY-AUGUSTINE",
+      "name": "SS Gregory and Augustine, Oxford",
+      "decision": "EXISTING_CANONICAL",
+      "reason": "Already in diocesan corpus with original old-rite source",
+      "source": "https://www.ssgregoryandaugustine.org/mass-in-the-extraordinary-form"
+    },
+    {
+      "id": "WITNESS-GB-SOUTHWARK-CHISLEHURST",
+      "name": "St Mary's, Chislehurst",
+      "decision": "HOLD_ORIGINAL_1962_SITE_SCHEDULE",
+      "reason": "First-party page confirms physical church only; tertiary schedule lists 11:00 Sunday Latin EF without current parish confirmation",
+      "source": "https://www.stmarys-chislehurst.com/"
+    }
+  ],
+  "release_policy": {
+    "narrow_claims": "Do not infer 1962 from Latin language alone; association claims preserved with distinct source role",
+    "route": "No invented church coordinates",
+    "revision": "Parish/institute schedule takes precedence over older seasonal directory",
+    "quality": "Discontinued sites not publishable; keep archival provenance in research registry"
+  }
+}
