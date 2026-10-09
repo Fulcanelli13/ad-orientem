@@ -1,3 +1,5 @@
+import { resolveRogationMassVariant } from "./rogation-mass-selection.js";
+import { compileRogationReaderProper } from "./rogation-reader-proper.js";
 // Compatibility bridge from the proven v3.4.6 pre-Mass architecture
 // into the R17 modular session engine.
 // This file intentionally does not depend on window/globalThis or DOM.
@@ -73,7 +75,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     requestedId!=="mass_of_day" &&
     resultId!=="mass_of_day";
 
-  const requestedCelebration=explicit
+  let requestedCelebration=explicit
     ? celebrationObject(resultId,legacy.celebrationType??"SPECIAL_FORMULARY",options.celebrationTitle??null)
     : null;
 
@@ -86,7 +88,28 @@ export function adaptV346ResolvedMass(legacy, options={}) {
   const profile=String(legacy.exceptionalProfile??"").toLowerCase();
   const distinctRite=options.distinctRite??LEGACY_EXCEPTIONAL[profile]??null;
 
-  const proper=properEnvelope(options.proper??null,legacy);
+  // Explicit Rogation variant is owned by the central Mass resolver, not
+  // by the calendar or insertion of the procession card on its own.
+  const rogationSelection=options.rogationSelection==null ? null :
+    resolveRogationMassVariant(options.rogationSelection);
+  if(rogationSelection?.availability==="BLOCKED")
+    throw new Error("ROGATION_SELECTION_"+rogationSelection.reason);
+  let selectedProper=options.proper??null;
+  if(rogationSelection?.selection==="ROGATION_MASS"){
+    selectedProper=compileRogationReaderProper({
+      sourceGate:options.rogationSelection.sourceGate,
+      sourceProper:options.rogationSelection.sourceProper,
+      preface:options.rogationSelection.preface
+    });
+    requestedCelebration=celebrationObject(
+      "rogation-mass-1962","VOTIVE","Missa de Rogationibus · Exaudivit");
+    if(!overlays.includes("VOTIVE_PROPER"))overlays.push("VOTIVE_PROPER");
+  }
+  const proper=properEnvelope(selectedProper,legacy);
+  const precedingRites=[...new Set([
+    ...(options.precedingRites??[]),
+    ...(rogationSelection?.precedingRites??[])
+  ])];
   const adapted=makeResolvedMass({
     date:legacy.date,
     form:legacyForm(options.form??options.celebrationForm),
@@ -95,7 +118,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     requestedCelebration,
     proper,
     overlays,
-    precedingRites:options.precedingRites??[],
+    precedingRites,
     followingActions:options.followingActions??[],
     distinctRite,
     localProfile:options.localProfile??null,
@@ -103,11 +126,11 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       adapter:"V346_RESOLVED_MASS",
       properSource:legacy.properSource??null,
       calendarRank:legacy.calendarRank??null,
-      votiveClass:legacy.votiveClass??null,
+      votiveClass:rogationSelection?.selection==="ROGATION_MASS"?2:(legacy.votiveClass??null),
       requiemClass:legacy.requiemClass??null,
-      colour:legacy.colour??null,
-      gloria:legacy.gloria??proper?.data?.hasGloria??proper?.hasGloria??null,
-      credo:legacy.credo??proper?.data?.hasCredo??proper?.hasCredo??null,
+      colour:rogationSelection?.selection==="ROGATION_MASS"?"violet":(legacy.colour??null),
+      gloria:rogationSelection?.selection==="ROGATION_MASS"?false:(legacy.gloria??proper?.data?.hasGloria??proper?.hasGloria??null),
+      credo:rogationSelection?.selection==="ROGATION_MASS"?false:(legacy.credo??proper?.data?.hasCredo??proper?.hasCredo??null),
       sequencePresent:options.sequencePresent??legacy.sequencePresent??null,
       chantSetting:options.chantSetting??legacy.chantSetting??null,
       faithfulCommunicantsPresent:options.faithfulCommunicantsPresent??legacy.faithfulCommunicantsPresent??null,
@@ -123,6 +146,12 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       rubricSources:[...(legacy.rubricSources??[])],
       languageCoverage:legacy.languageCoverage??null,
       sourceDiagnostics:legacy.sourceDiagnostics??null,
+      rogationSelection:rogationSelection ? {
+        selection:rogationSelection.selection,
+        selectedService:rogationSelection.selectedService??null,
+        properOwner:rogationSelection.properOwner,
+        sourceVerified:rogationSelection.selection==="ROGATION_MASS",
+      } : null,
     },
   });
 
