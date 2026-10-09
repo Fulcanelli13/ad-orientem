@@ -3,16 +3,16 @@ import {auditWorldwideDirectory} from "../tools/directory/audit-worldwide-corpus
 
 const result=auditWorldwideDirectory();
 assert.equal(result.schema,"AO_DIRECTORY_WORLDWIDE_COVERAGE_AUDIT_V1");
-assert.equal(result.source_venue_records,1438);
-assert.equal(result.mass_evidenced_records,1201);
+assert.equal(result.source_venue_records,1437);
+assert.equal(result.mass_evidenced_records,1200);
 assert.equal(result.without_mass_assertion,237);
 assert.equal(result.by_provider.length,21);
 const byId=new Map(result.by_provider.map(p=>[p.provider,p]));
 assert.equal(byId.get("FSSP_LIVE").records,404);
 assert.equal(byId.get("FSSP_LIVE").mass_evidenced_records,196);
 assert.equal(byId.get("ICKSP_LIVE").records,27);
-assert.equal(byId.get("ICKSP_FEDERATED_V13").records,120);
-assert.equal(byId.get("ICKSP_FEDERATED_V13").mass_evidenced_records,104);
+assert.equal(byId.get("ICKSP_FEDERATED_V13").records,119);
+assert.equal(byId.get("ICKSP_FEDERATED_V13").mass_evidenced_records,103);
 assert.equal(byId.get("SSPX_DISTRICT_SEED").records,34);
 assert.equal(byId.get("SSPX_DISTRICT_SEED").mass_evidenced_records,34);
 assert.equal(byId.get("SSPX_FRANCE_FIRST_PARTY").records,89);
