@@ -8,6 +8,7 @@ on:
       - "ao-boot-*.js"
       - "data/calendar/1962-ordo-corrections.v1.json"
       - "tests/calendar-ordo-corrections.mjs"
+      - "tools/calendar/secondary-1962-oracle.mjs"
   workflow_dispatch:
 
 permissions:
@@ -32,10 +33,14 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Inspect both full civil years against independent 1962 calendar
         run: node tools/calendar/full-year-1962-oracle.mjs --strict
+      - name: Reconcile full years with independent second 1962 calendar
+        run: node tools/calendar/secondary-1962-oracle.mjs
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: calendar-1962-full-year-comparison
-          path: artifacts/calendar-1962-full-year-audit.json
+          path: |
+            artifacts/calendar-1962-full-year-audit.json
+            artifacts/calendar-1962-secondary-reconciliation.json
           if-no-files-found: error

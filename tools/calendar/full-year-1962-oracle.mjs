@@ -54,7 +54,7 @@ const report={schema:'AO_CALENDAR_1962_FULL_YEAR_AUDIT_V1',createdAt:new Date().
  independentSource:'Missale Online annual print calendar; missing records are not proof of agreement',
  secondaryReference:'https://gcatholic.org/calendar/2027/Extraordinary-en',
  method:'Compare all civil dates; rank/colour divergences flagged; title and commemoration-count differences require human review. Optional rose is a warning.',
- summaries:[],reviews:[],failures:[]};
+ summaries:[],reviews:[],dayRows:[],failures:[]};
 try{
  browser=await chromium.launch({headless:true});
  const app=await browser.newPage({serviceWorkers:'block'});
@@ -102,7 +102,10 @@ try{
     return [...built.cal.entries()].map(([date,raw])=>{
      const obs=raw.celebration?.[0]||null;
      return {date,id:obs?.id||null,title:obs?.title||null,rank:obs?.rank??null,
-      colour:obs?.color||null,commemorations:(raw.commemoration||[]).map(x=>x.id)};
+      colour:obs?.color||null,commemorations:(raw.commemoration||[]).map(x=>x.id),
+      temporale:(raw.tempora||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title})),
+      sanctorale:(raw.sancti||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title})),
+      displaced:(raw.displaced||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title}))};
     });
    },year);
    assert.equal(resolved.length,numberOfDays(year),'App returned incomplete calendar year');
@@ -111,19 +114,21 @@ try{
    report.summaries.push({year,status:'APP_UNAVAILABLE',expectedDays:numberOfDays(year),sourceDays:independent.length});continue;
   }
   const oracle=new Map(independent.map(r=>[r.date,r])),appDays=new Map(resolved.map(r=>[r.date,r]));
-  const tally={compatible:0,needs_editorial_review:0,potential_liturgical_conflict:0,source_disputed:0,oracle_unrecorded:0,source_missing:0,app_missing:0};
+  const tally={compatible:0,needs_editorial_review:0,potential_liturgical_conflict:0,source_disputed:0,source_adjudicated_rubrical:0,oracle_unrecorded:0,source_missing:0,app_missing:0};
   const anomalies=[];
   for(let i=0;i<numberOfDays(year);i++){
    const date=new Date(Date.UTC(year,0,i+1)).toISOString().slice(0,10),a=appDays.get(date),o=oracle.get(date);
+   report.dayRows.push({date,app:a?{id:a.id,title:a.title,rank:a.rank,colour:a.colour,commemorations:a.commemorations,temporale:a.temporale,sanctorale:a.sanctorale,displaced:a.displaced}:null,
+    independent:o?{title:o.title,rank:o.rank,colour:o.colour,commemorations:o.commemorations,unrecorded:o.unrecorded}:null});
    let finding=compare(a,o);
    const dispute=disputesByDate.get(date);
    if(finding.status==='potential_liturgical_conflict'&&dispute&&finding.conflicts.length===1&&
       finding.conflicts[0]===dispute.field&&normalColour(a?.colour)===normalColour(dispute.app)&&
       normalColour(o?.colour)===normalColour(dispute.firstSource)){
-     finding={...finding,status:'source_disputed',note:dispute.note};
+     finding={...finding,status:dispute.status==='ADJUDICATED_FROM_1960_RUBRICS'?'source_adjudicated_rubrical':'source_disputed',note:dispute.note,authority:dispute.authority||null};
    }
    tally[finding.status]=(tally[finding.status]||0)+1;
-   if(finding.status!=='compatible')anomalies.push({date,status:finding.status,disputeNote:finding.note||null,conflicts:finding.conflicts||[],warnings:finding.warnings||[],similarity:finding.similarity,
+   if(finding.status!=='compatible')anomalies.push({date,status:finding.status,disputeNote:finding.note||null,rubricalAuthority:finding.authority||null,conflicts:finding.conflicts||[],warnings:finding.warnings||[],similarity:finding.similarity,
     app:a&&{id:a.id,title:a.title,rank:a.rank,colour:a.colour,commemorationCount:a.commemorations.length},
     independent:o&&{title:o.title,rank:o.rank,colour:o.colour,commemorationCount:o.commemorations},source:sourceUrl});
   }
