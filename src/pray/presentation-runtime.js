@@ -1,3 +1,4 @@
+import "./confession-path-styles.js";
 import { confessionExaminationCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
 import "./canonical-data.js";
 import "./presentation-styles.js";
