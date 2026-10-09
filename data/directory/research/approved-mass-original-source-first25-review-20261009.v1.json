@@ -1,9 +1,14 @@
 {
   "schema": "AO_APPROVED_FIRST25_SOURCE_REVIEW_V1",
   "review_date": "2026-10-09",
-  "interpretation": "Research status only. No source row is automatically promoted to a physical public Mass venue. Monasteries need correct ownership and form labels; original pages supersede third-party schedule claims.",
+  "interpretation": "25 third-party detail pages, including two without original links. Current first-party pages supersede directory times. Monastic public Masses need correct institutional ownership. This audit does not certify every held site.",
   "summary": {
-    "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW": 23
+    "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW": 12,
+    "PUBLISHED_DIOCESAN_OFFICIAL": 5,
+    "VERIFIED_MONASTIC_MASS_OWNERSHIP_REVIEW": 2,
+    "ALREADY_IN_CANONICAL_DIOCESAN": 3,
+    "NO_ORIGINAL_SOURCE_LINK_HOLD": 2,
+    "FSSP_ASSOCIATED_SITE_RECONCILE": 1
   },
   "records": [
     {
@@ -21,7 +26,7 @@
         "https://benedictinesofmary.org/schedule/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -55,7 +60,8 @@
         "https://www.latinmassmiami.org/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "evidence_limit": "Occasional, non-fixed Mass announcements; no reproducible public weekly schedule",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -77,8 +83,8 @@
       "linked_original_sources": [
         "https://asccsanford.org/"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -110,8 +116,8 @@
       "linked_original_sources": [
         "http://www.annunciationcc.org/"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -129,7 +135,9 @@
         "http://annunciation-fatima.com/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "official_url": "https://annunciation-fatima.com/",
+      "evidence_limit": "Official site shows 14:00 Sunday Latin Mass without explicit liturgical edition",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -156,8 +164,11 @@
       "linked_original_sources": [
         "https://www.poorclaresofjoliet.org/liturgical-schedule"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "VERIFIED_MONASTIC_MASS_OWNERSHIP_REVIEW",
+      "official_url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+      "official_schedule": "MON-SAT_08:00; SUN_07:00",
+      "discrepancy": "Third party claims MON-SAT 07:00 and SUN 10:00, whereas monastery currently says 08:00 and SUN 07:00",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -184,8 +195,8 @@
       "linked_original_sources": [
         "https://www.avemariaparish.org/"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -203,7 +214,9 @@
         "https://www.goodshepherdparishnola.com/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "official_url": "https://www.goodshepherdparishnola.com/",
+      "evidence_limit": "Current first Friday Latin Mass, but specific 1962 liturgical form not confirmed",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -221,8 +234,8 @@
         "https://www.unavocemaine.org/",
         "https://princeofpeace.me/mass-confession-times"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "ALREADY_IN_CANONICAL_DIOCESAN",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -240,7 +253,23 @@
         "http://thestmaryparish.org/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:bishop-ryan-chapel-minot-united-states",
+      "name": "Bishop Ryan Chapel North Dakota, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/bishop-ryan-chapel-minot-united-states/",
+      "claimed_services": [
+        {
+          "day": "Other",
+          "time": null,
+          "service": "Mass Once a month, sometimes (but not always) on a Sunday. Check https://www.facebook.com/MinotTLM/"
+        }
+      ],
+      "linked_original_sources": [],
+      "decision": "NO_ORIGINAL_SOURCE_LINK_HOLD",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -283,7 +312,7 @@
         "http://www.myblessedsacrament.org/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -305,8 +334,8 @@
       "linked_original_sources": [
         "https://blessedsacramentpauoa.blogspot.com/p/latin-mass.html"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "ALREADY_IN_CANONICAL_DIOCESAN",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -329,7 +358,8 @@
         "http://fairfieldcarmelites.org/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "evidence_limit": "Carmelite Rite, not automatically Roman Missal 1962; requires separate rite classification",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -382,7 +412,7 @@
         "https://www.lincolndiocese.org/directory/women-religious/217-carmelite-sisters"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -415,8 +445,10 @@
         "https://www.olmcfssp.org/index.php/olmc/post/new_mass_schedule_parish_information",
         "https://carmeliteslittleton.org/"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "FSSP_ASSOCIATED_SITE_RECONCILE",
+      "official_url": "https://www.olmcfssp.org/",
+      "provider": "FSSP serves monastery; do not double count same venue under FSSP and OTHER",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -435,7 +467,7 @@
         "https://www.dallascarmelites.com/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -457,8 +489,12 @@
       "linked_original_sources": [
         "https://carmeloftraversecity.org/liturgy-parent/mass-schedule-and-other-events/"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "VERIFIED_MONASTIC_MASS_OWNERSHIP_REVIEW",
+      "official_url": "https://carmeloftraversecity.org/liturgy-parent/mass-schedule-and-other-events/",
+      "official_schedule": "DAILY_07:30",
+      "edition": "1962",
+      "public_mass": true,
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -476,7 +512,8 @@
         "http://smcsf.org/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "evidence_limit": "Occasional Mass date/form require current confirmation",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -498,8 +535,8 @@
       "linked_original_sources": [
         "http://holycrossboston.com/"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -527,7 +564,23 @@
         "http://immaculateconceptioncathedral.com/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:chapel-of-our-lady-of-orchard-lake-west-bloomfield-township-united-states",
+      "name": "Chapel of Our Lady of Orchard Lake Michigan, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/chapel-of-our-lady-of-orchard-lake-west-bloomfield-township-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "09:00",
+          "service": "Sung Mass"
+        }
+      ],
+      "linked_original_sources": [],
+      "decision": "NO_ORIGINAL_SOURCE_LINK_HOLD",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -545,7 +598,7 @@
         "https://www.smumn.edu/"
       ],
       "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -602,8 +655,8 @@
       "linked_original_sources": [
         "https://htdiocese.org/blessedsacramentchapel"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
       "reviewed_on": "2026-10-09"
     },
     {
@@ -620,8 +673,8 @@
       "linked_original_sources": [
         "http://www.saintjohnleesburg.org/"
       ],
-      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
-      "release": "HELD",
+      "decision": "ALREADY_IN_CANONICAL_DIOCESAN",
+      "release": "HELD_OR_EXISTING",
       "reviewed_on": "2026-10-09"
     }
   ]
