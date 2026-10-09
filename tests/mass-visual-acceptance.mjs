@@ -779,7 +779,8 @@ try{
       const base=globalThis.__AO_SPECIAL_RITE_VISUAL_PREPARED;
       const previous=base.session.resolvedMass;
       const prelude=kind==="PALM"?"PALM":kind==="CANDLEMAS"?"CANDLEMAS":null;
-      const following=kind==="REQUIEM"?"REQUIEM_ABSOLUTION":null;
+      const following=kind==="REQUIEM"?"REQUIEM_ABSOLUTION":
+        kind==="HOLY_THURSDAY"?"HOLY_THURSDAY_POST":null;
       const resolvedMass={
         ...previous,
         precedingRites:prelude?[prelude]:[],
@@ -796,8 +797,8 @@ try{
         followingGraphs:following?[following]:[],
         overlayGraphs:following?["REQUIEM"]:base.session.plan.overlayGraphs,
         massEntry:prelude?"INTROIT":"FOOT",
-        normalLastGospel:kind!=="PALM"&&kind!=="REQUIEM",
-        blessingAllowed:kind!=="REQUIEM",
+        normalLastGospel:!["PALM","REQUIEM","HOLY_THURSDAY"].includes(kind),
+        blessingAllowed:!["REQUIEM","HOLY_THURSDAY"].includes(kind),
       };
       delete plan.lifecycle;
       const prepared={...base,session:{...base.session,resolvedMass,plan}};
@@ -1065,10 +1066,63 @@ try{
   const goodFriday={beforeDeath,atDeath,afterDeath,venerationSteps:venerationRecords.length};
   await page.screenshot({path:resolve(out,"16-good-friday-veneration-exit.png"),fullPage:false});
 
+  // Holy Thursday joining is a choice, not an automatic transition from
+  // kneeling to walking. After following, the return genuflection is personal.
+  const holyThursdayStart=await mountSpecialRite("HOLY_THURSDAY");
+  assert.ok(holyThursdayStart.hasRoot);
+  const holyJump=await page.evaluate(()=>{
+    const api=globalThis.__AO_SPECIAL_RITE_VISUAL_API;
+    const card=api.model.cards.findLast(c=>
+      Number(c.sourceSequence)===29 && !c.blocks?.some(b=>b.blockId==="AO.SM.B092"));
+    const shown=api.showSection(card.sectionId);
+    return {requested:card.sectionId,shown:shown?.sectionId??null};
+  });
+  assert.equal(holyJump.shown,holyJump.requested,
+    "Holy Thursday's suppressed final blessing could not be bypassed");
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+  await advanceRiteTo("HT-R02",5);
+  const holyPanel=page.locator("#ao-r17-native-reader-preview [data-role='rite-choice']");
+  assert.equal(await holyPanel.isVisible(),true,"Holy Thursday participant choice is not visible");
+  const waiting=await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getHolyThursdayPostState());
+  assert.equal(waiting.joiningState,"WAITING");
+  assert.equal(waiting.posture,"KNEEL","waiting for the Sacrament to pass must not become walking");
+  assert.equal(await holyPanel.locator('[data-rite-participation="true"]').getAttribute("aria-pressed"),"false");
+  assert.equal(await holyPanel.locator('[data-rite-participation="false"]').getAttribute("aria-pressed"),"false");
+  await holyPanel.locator('[data-rite-participation="false"]').click();
+  const remain=await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getHolyThursdayPostState());
+  assert.equal(remain.joiningState,"NOT_JOINING");
+  assert.equal(remain.posture,"LOCAL_OR_INHERIT");
+  await holyPanel.locator('[data-rite-participation="true"]').click();
+  const following=await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getHolyThursdayPostState());
+  assert.equal(following.joiningState,"JOINING");
+  assert.equal(following.posture,"STAND_WALK");
+  await advanceRiteTo("HT-R03",2);
+  assert.equal(await holyPanel.isVisible(),false,"Holy Thursday choice cluttered altar-of-repose prayer");
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getHolyThursdayPostState().posture),"KNEEL");
+  await advanceRiteTo("HT-R04",2);
+  assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getHolyThursdayPostState().posture),
+    "STAND_DOUBLE_KNEE_GENUFLECTION_STAND",
+    "Holy Thursday's personal return reverence was not preserved");
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']").click();
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']").click();
+  assert.equal(await holyPanel.isVisible(),true);
+  await holyPanel.locator('[data-rite-participation="false"]').click();
+  await advanceRiteTo("HT-R04",3);
+  const localReturn=await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getHolyThursdayPostState());
+  assert.equal(localReturn.joiningState,"NOT_JOINING");
+  assert.equal(localReturn.posture,"LOCAL_OR_INHERIT",
+    "Holy Thursday return genuflection was imposed on a nonparticipant");
+  await advanceRiteTo("HT-R05",2);
+  assert.equal(await holyPanel.isVisible(),false);
+
+  const holyThursday={waiting:waiting.joiningState,remain:remain.joiningState,
+    followed:following.joiningState,return:localReturn.posture};
+  await page.screenshot({path:resolve(out,"17-holy-thursday-personal-joining.png"),fullPage:false});
+
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,hierarchy,consecration,wordsState,elevationState,
     salience:{gloriaAdoramus,gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
-    wide,phoneAudit,specialRites,goodFriday,
+    wide,phoneAudit,specialRites,goodFriday,holyThursday,
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
