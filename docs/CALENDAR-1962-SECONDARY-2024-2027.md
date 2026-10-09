@@ -44,6 +44,14 @@ These counts reflect the published versions retrieved at the audit date, not the
 - **Classification pipeline:** [Issue #721](https://github.com/Fulcanelli13/ad-orientem/issues/721) tracks the source-identity replacement for bilingual title-regex Temporale/Sanctorale classification. [PR #727](https://github.com/Fulcanelli13/ad-orientem/pull/727) is **merged**, with year, app-shell contract and full phone convergence checks passed. Its correction is language-neutral and does not certify the full calendar.
 
 
+## Completion of the historical editorial queue
+
+[PR #767](https://github.com/Fulcanelli13/ad-orientem/pull/767) has been merged after every required acceptance workflow passed. Its [reconciled historical crosswalk](../data/calendar/1962-editorial-reconciliation-2024-2027.v1.json) adjudicates all 47 previously unreviewed dates: four additional bilingual saint aliases, 28 legitimate abbreviated saint names, six legitimate day/Mass naming distinctions, six genuine Mass-prayer corrections (January 25 and February 22 in both audited years; December 4 in both years) and three previously corrected commemoration days.
+
+**Live bounded historical result:** 132 original flagged dates partition into **89 corrected Calendar titles** and **43 historical cases reviewed without requiring an additional title change**; **zero unadjudicated dates remain in the original cohort**. The old 85/47 counters above and the later donor-title 127 counter are retained as time-stamped comparisons, not the live issue backlog.
+
+This statement does **not** close 61 first-source coverage gaps, independently certify all 731 Mass Propers and commemorative orations, certify English/French translations against a critical edition, or complete optional violet Rogation Mass selection ([#714](https://github.com/Fulcanelli13/ad-orientem/issues/714), [#718](https://github.com/Fulcanelli13/ad-orientem/issues/718)).
+
 ## Release gate
 The strict 2024/2027 comparison fails on any unclassified class/colour disagreement, a failed source download, a missing second-source day, or inability to resolve any app day. The [9 October rerun](https://github.com/Fulcanelli13/ad-orientem/actions/runs/37958564284) passed all stages, with **0 new unclassified secondary class/colour conflicts**, 61 first-source unrecorded dates and two documented original-rubrical colour adjudications per witness pair. Ordinary Rogation defaults, 2027 commemorations and the Christ the King forbidden Sunday commemoration are corrected. **The explicit violet Rogation Mass remains open**, the remaining names need an original-source editorial review, and the 731 appointed Propers are not individually certified.
 
