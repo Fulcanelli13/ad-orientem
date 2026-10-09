@@ -3,6 +3,7 @@ import { scriptureBookCatalogue, sourceReadingLink, ROSARY_SCRIPTURE_LINKS } fro
 import { passageReference } from "./passages.js";
 import { createScripturePreferences } from "./preferences.js";
 import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
+import { scriptureReferenceWarning } from "./reference-safety.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -120,6 +121,13 @@ export function mountScriptureLibrary(root,{
      label.append(input);nav.append(label);
    }
    wrap.append(nav);
+   const crosswalkWarning=scriptureReferenceWarning(location.book,lang);
+   if(crosswalkWarning){
+     const notice=element("p",crosswalkWarning,"aoScriptureNotice aoScriptureReferenceWarning");
+     notice.setAttribute("role","status");
+     notice.setAttribute("data-crosswalk-unverified",location.book);
+     wrap.append(notice);
+   }
    const main=element("div",null,"aoScriptureReading");
    main.append(element("h3",passageReference(location)));
    const chapterEntries=records.filter(r=>validatedRecord(r,editionId)&&r.book===location.book&&r.chapter===location.chapter)
