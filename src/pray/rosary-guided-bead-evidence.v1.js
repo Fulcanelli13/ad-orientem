@@ -7,6 +7,7 @@
  * DEFINED_DOCTRINE = teaching established by the cited papal document, not a Bible scene.
  * SCRIPTURAL_PASSION_INTERPRETATION = OT prophecy or apostolic reading applied to Christ.
  * DOGMATIC_TEACHING = the Church's explicit Eucharistic doctrine, beyond the Gospel narrative.
+ * MAGISTERIAL_TEACHING = an authoritative papal teaching, without implying a new solemn definition.
  * For papal doctrine without a verified complete French translation at the Vatican,
  * French mode links to the actual original Latin text instead of an English translation.
  * For the French witness, use the corresponding Crampon 1923 chapter
@@ -1749,7 +1750,7 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     {
       "bead": 9,
       "reference": "Munificentissimus Deus §§40-42",
-      "relationship": "DEFINED_DOCTRINE",
+      "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
@@ -1759,7 +1760,7 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     {
       "bead": 10,
       "reference": "Munificentissimus Deus §§40-42",
-      "relationship": "DEFINED_DOCTRINE",
+      "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
@@ -1825,7 +1826,7 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     {
       "bead": 7,
       "reference": "Ad Caeli Reginam",
-      "relationship": "DEVOTIONAL_REFLECTION",
+      "relationship": "MAGISTERIAL_TEACHING",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
@@ -1835,7 +1836,7 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     {
       "bead": 8,
       "reference": "Ad Caeli Reginam",
-      "relationship": "DEVOTIONAL_REFLECTION",
+      "relationship": "MAGISTERIAL_TEACHING",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
