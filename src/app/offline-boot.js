@@ -3,7 +3,7 @@
  * pack storage and from the Mass reader's state/lifecycle.
  */
 const BASE=new URL("../../",import.meta.url);
-const URL=new URL("sw.js",BASE);
+const WORKER_URL=new URL("sw.js",BASE);
 const TEST= new URL(globalThis.location?.href||BASE).searchParams.has("aoOfflineTest");
 const eligible=typeof navigator!=="undefined"&&"serviceWorker" in navigator&&
  (globalThis.location?.protocol==="https:"||
@@ -90,7 +90,7 @@ async function initialise(){
  registered=true;
  try{
   navigator.serviceWorker.addEventListener("message",onMessage);
-  const reg=await navigator.serviceWorker.register(URL.href,{scope:BASE.pathname,updateViaCache:"none"});
+  const reg=await navigator.serviceWorker.register(WORKER_URL.href,{scope:BASE.pathname,updateViaCache:"none"});
   controller=reg.active||reg.waiting;
   const s=await send("STATUS");
   ready=Boolean(s?.active);version=s?.active||null;
