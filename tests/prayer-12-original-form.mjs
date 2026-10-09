@@ -1,0 +1,37 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
+const review=JSON.parse(readFileSync("data/pray/prayer-12-original-form-review.v1.json","utf8"));
+const previous=JSON.parse(readFileSync("data/pray/prayer-source-anchor-triage.v1.json","utf8"));
+const original=JSON.parse(readFileSync("data/pray/prayer-source-certification-inventory.v3.json","utf8"));
+assert.equal(review.schema,"AO_PRAYER_12_ORIGINAL_FORM_REVIEW_V1");
+assert.equal(review.items.length,12);
+assert.equal(review.counts.prayers,12);
+assert.equal(review.counts.language_cells,36);
+assert.equal(review.counts.independent_french_collation_completed,0);
+assert.equal(review.counts.full_text_original_languages_certified,0);
+const ids=new Set();
+for(const item of review.items){
+ assert.equal(ids.has(item.id),false,"repeated source owner "+item.id);ids.add(item.id);
+ assert.ok(original.prayers.some(x=>x.id===item.id),"uncanonical review "+item.id);
+ const p=PRAY_CANONICAL_DATA_V435930.prayers[item.id];
+ assert.ok(p?.en&&p?.fr&&p?.la,"missing source language "+item.id);
+ assert.equal(item.canonical_text_unchanged,true);
+ assert.equal(item.full_original_text_language_certified,false);
+ const prior=previous.items.find(x=>x.id===item.id);
+ assert.equal(item.canonical_source_url_at_review,prior?.reference);
+ assert.equal(item.source_url_matches_selected_reference,true);
+ assert.ok(item.en.finding.length>65);
+ assert.ok(item.fr.finding.length>65);
+ assert.ok(item.la.finding.length>65);
+ assert.equal(item.fr.outcome,"FRENCH_TRANSLATION_UNCERTIFIED");
+ assert.match(item.source_url,/^https:\/\//);
+}
+const sub=review.items.find(x=>x.id==="sub_tuum");
+assert.equal(sub.la.outcome,"LATIN_EXTRA_NOSTRIS");
+assert.match(PRAY_CANONICAL_DATA_V435930.prayers.sub_tuum.la,/necessitatibus nostris/);
+assert.equal(review.items.find(x=>x.id==="devotion_memorare_st_joseph").en.outcome,"EN_PROTECTOR_ADJECTIVE_VARIANT");
+assert.equal(review.items.find(x=>x.id==="sacred_heart_aspiration_trust").en.outcome,"EN_RELATED_ASPIRATION_WITH_ADDED_MOST");
+assert.equal(review.items.find(x=>x.id==="church_prayer_for_pope").en.outcome,"EN_RELATED_NOT_SAME_FORM");
+assert.equal(review.items.find(x=>x.id==="benediction_divine_praises").en.outcome,"EN_14_INVOCATIONS_MATCH_CASE");
+console.log("PASS Prayer twelve original-source form checks, 36 locale holds, no invented French verification");
