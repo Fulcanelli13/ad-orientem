@@ -16,10 +16,10 @@ export async function openNativeCatechismQuestion(win, number, language = "en") 
   const api = win?.AO_TRADITIONAL_CATECHISM;
   if (typeof api?.openQuestion !== "function") return false;
   try {
-    if (api.openQuestion(number) === true) return true;
+    if (await api.openQuestion(number) === true) return true;
     if (typeof api.load === "function") {
       await api.load(language === "fr" ? "fr" : "en");
-      return api.openQuestion(number) === true;
+      return (await api.openQuestion(number)) === true;
     }
   } catch (error) {
     win?.console?.error?.("Catechism native question navigation failed", error);
