@@ -896,14 +896,37 @@ try{
 
   const requiemStart=await mountSpecialRite("REQUIEM");
   assert.ok(requiemStart.hasRoot);
-  await page.evaluate(()=>{
+  const requiemJump=await page.evaluate(()=>{
     const api=globalThis.__AO_SPECIAL_RITE_VISUAL_API;
-    const lastAllowed=api.model.cards.findLast(card=>Number(card.sourceSequence)!==30);
-    api.showSection(lastAllowed.sectionId);
+    const cards=api.model.cards;
+    const terminal=cards.at(-1);
+    const lastAllowed=cards.findLast(card=>
+      String(card.sourceSectionId??card.sectionId)!=="AO.CARD.030" &&
+      Number(card.sourceSequence)!==30);
+    const shown=api.showSection(lastAllowed.sectionId);
+    return {
+      terminal:{sectionId:terminal?.sectionId,sourceSequence:terminal?.sourceSequence,sourceSectionId:terminal?.sourceSectionId},
+      lastAllowed:{sectionId:lastAllowed?.sectionId,sourceSequence:lastAllowed?.sourceSequence,sourceSectionId:lastAllowed?.sourceSectionId},
+      shown:shown?.sectionId??null,
+      current:api.getCurrentCard()?.sectionId??null,
+      following:api.getLifecycleState()?.contract?.followingAction??null,
+    };
   });
+  assert.equal(requiemJump.shown,requiemJump.lastAllowed.sectionId,
+    "Requiem source-plan last card could not be selected: "+JSON.stringify(requiemJump));
   await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
-  await page.waitForTimeout(390);
-  await advanceRiteTo("ABS-R05",7);
+  await page.waitForTimeout(500);
+  const requiemFirst=await page.evaluate(()=>{
+    const api=globalThis.__AO_SPECIAL_RITE_VISUAL_API;
+    return {
+      card:api.getCurrentCard()?.id??api.getCurrentCard()?.sectionId??null,
+      active:api.getRequiemAbsolutionState()?.card?.id??null,
+      lifecycle:api.getLifecycleState()?.stage??null
+    };
+  });
+  assert.equal(requiemFirst.active,"ABS-R01",
+    "Mass/Requiem Absolution handoff failed: "+JSON.stringify({requiemJump,requiemFirst}));
+  await advanceRiteTo("ABS-R05",10);
   const burialChoice=page.locator("#ao-r17-native-reader-preview [data-role='rite-choice']");
   assert.equal(await burialChoice.isVisible(),true,"Requiem burial procession choice missing");
   assert.equal(await page.evaluate(()=>globalThis.__AO_SPECIAL_RITE_VISUAL_API.getRequiemAbsolutionState().posture),null);
