@@ -1,0 +1,256 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_18_NEW_GEO_PINS_REVIEW_20261009_V1",
+  "checked_on": "2026-10-09",
+  "previous_official_sspx_pins": 373,
+  "additional_existing_sspx_pins": 18,
+  "after_official_sspx_pins": 391,
+  "sspx_mass_records": 614,
+  "still_without_verified_geo": 223,
+  "new_mass_records": 0,
+  "location_counts": {
+    "northern_eastern_europe_pacific": 11,
+    "mexico": 2,
+    "switzerland_nz_australia": 5
+  },
+  "precision_counts": {
+    "address": 17,
+    "locality": 1
+  },
+  "source_method": "Official map.fsspx.org individual place page > Route link > Google Maps direction URL destination lat/lng; map pin precision reflects verified source granularity, never building-survey certainty",
+  "unpin_hold": {
+    "official_place_id": "east-devonport",
+    "registered_address": "Corner of Church and Thomas Street, East Devonport TAS 7310",
+    "official_map_route_destination": {
+      "lat": -41.28405,
+      "lng": 146.50718
+    },
+    "reason": "First-party route destination is visibly displaced from the source's East Devonport town/street address toward inland Sassafras. Site identity/destination conflict requires confirmation; no pin published."
+  },
+  "controls": {
+    "all_coordinates_transcribed_from_first_party_directions_links": true,
+    "no_city_centroid_substituted": true,
+    "no_new_mass_venues": true,
+    "no_existing_overlays_replaced": true,
+    "old_336_original_official_CRM_points_retained": true,
+    "no_conflicting_East_Devonport_pin": true,
+    "nonweekly_missions_retained_as_conditional": true
+  },
+  "cases": [
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-01-bergen",
+      "official_map_place_id": "bergen",
+      "route_destination": {
+        "lat": 60.42097,
+        "lng": 5.52594
+      },
+      "precision": "address",
+      "matched_country": "NO",
+      "official_url": "https://map.fsspx.org/de/places/bergen"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-02-chapel-of-ol-of-fatima",
+      "official_map_place_id": "chapel-of-ol-of-fatima",
+      "route_destination": {
+        "lat": 59.94513,
+        "lng": 30.35201
+      },
+      "precision": "address",
+      "matched_country": "RU",
+      "official_url": "https://map.fsspx.org/de/places/chapel-of-ol-of-fatima"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-03-chapel-of-the-immaculate-heart-of-mary",
+      "official_map_place_id": "chapel-of-the-immaculate-heart-of-mary",
+      "route_destination": {
+        "lat": 55.77082,
+        "lng": 37.70479
+      },
+      "precision": "address",
+      "matched_country": "RU",
+      "official_url": "https://map.fsspx.org/de/places/chapel-of-the-immaculate-heart-of-mary"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-04-chapel-of-the-sacred-heart",
+      "official_map_place_id": "chapel-of-the-sacred-heart",
+      "route_destination": {
+        "lat": 53.88686,
+        "lng": 27.52274
+      },
+      "precision": "address",
+      "matched_country": "BY",
+      "official_url": "https://map.fsspx.org/de/places/chapel-of-the-sacred-heart"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-05-chapelle-saint-olaf",
+      "official_map_place_id": "chapelle-saint-olaf",
+      "route_destination": {
+        "lat": 59.92623,
+        "lng": 10.63982
+      },
+      "precision": "address",
+      "matched_country": "NO",
+      "official_url": "https://map.fsspx.org/de/places/chapelle-saint-olaf"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-06-church-of-the-immaculate-heart-of-mary",
+      "official_map_place_id": "church-of-the-immaculate-heart-of-mary",
+      "route_destination": {
+        "lat": 59.37221,
+        "lng": 24.64319
+      },
+      "precision": "address",
+      "matched_country": "EE",
+      "official_url": "https://map.fsspx.org/de/places/church-of-the-immaculate-heart-of-mary"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-07-spiritual-centre-of-saint-berthold",
+      "official_map_place_id": "spiritual-centre-of-saint-berthold",
+      "route_destination": {
+        "lat": 56.95202,
+        "lng": 24.05855
+      },
+      "precision": "address",
+      "matched_country": "LV",
+      "official_url": "https://map.fsspx.org/de/places/spiritual-centre-of-saint-berthold"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-08-sv-juozapo-koplycia",
+      "official_map_place_id": "sv-juozapo-koplycia",
+      "route_destination": {
+        "lat": 55.93698,
+        "lng": 23.32534
+      },
+      "precision": "address",
+      "matched_country": "LT",
+      "official_url": "https://map.fsspx.org/de/places/sv-juozapo-koplycia"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-09-svc-mergeles-marijos-rozancines-koplycia",
+      "official_map_place_id": "svc-mergeles-marijos-rozancines-koplycia",
+      "route_destination": {
+        "lat": 54.68018,
+        "lng": 25.25859
+      },
+      "precision": "address",
+      "matched_country": "LT",
+      "official_url": "https://map.fsspx.org/de/places/svc-mergeles-marijos-rozancines-koplycia"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-10-chapelle-saint-joseph-paita",
+      "official_map_place_id": "chapelle-saint-joseph-paita",
+      "route_destination": {
+        "lat": -22.13606819141412,
+        "lng": 166.4191478491307
+      },
+      "precision": "address",
+      "matched_country": "NC",
+      "official_url": "https://map.fsspx.org/de/places/chapelle-saint-joseph-paita"
+    },
+    {
+      "provider_file": "sspx-priority-europe-pacific-20261009",
+      "venue_id": "ao-research-sspx-priority-europe-pacific-20261009-sspx-priority-20261009-11-hill-end",
+      "official_map_place_id": "hill-end",
+      "route_destination": {
+        "lat": -33.03708,
+        "lng": 149.41635
+      },
+      "precision": "address",
+      "matched_country": "AU",
+      "official_url": "https://map.fsspx.org/de/places/hill-end"
+    },
+    {
+      "provider_file": "sspx-mexico-completion-20261009",
+      "venue_id": "ao-research-sspx-mexico-completion-20261009-sspx-mx-comp-20261009-03-mision-ensenada",
+      "official_map_place_id": "mision-ensenada",
+      "route_destination": {
+        "lat": 31.86553,
+        "lng": -116.63696
+      },
+      "precision": "address",
+      "matched_country": "MX",
+      "official_url": "https://map.fsspx.org/de/places/mision-ensenada"
+    },
+    {
+      "provider_file": "sspx-mexico-completion-20261009",
+      "venue_id": "ao-research-sspx-mexico-completion-20261009-sspx-mx-comp-20261009-07-mision-s-ignacio",
+      "official_map_place_id": "mision-s-ignacio",
+      "route_destination": {
+        "lat": 20.74664,
+        "lng": -102.53154
+      },
+      "precision": "address",
+      "matched_country": "MX",
+      "official_url": "https://map.fsspx.org/de/places/mision-s-ignacio"
+    },
+    {
+      "provider_file": "sspx-four-district-bulk",
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-nz-hamilton-saint-joseph-s-chapel",
+      "official_map_place_id": "chapel-of-st-joseph",
+      "route_destination": {
+        "lat": -37.75295,
+        "lng": 175.26768
+      },
+      "precision": "address",
+      "matched_country": "NZ",
+      "official_url": "https://map.fsspx.org/de/places/chapel-of-st-joseph"
+    },
+    {
+      "provider_file": "sspx-four-district-bulk",
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-nz-wellington-saint-michael-the-archangel-chapel",
+      "official_map_place_id": "chapel-of-st-michael-the-archangel",
+      "route_destination": {
+        "lat": -41.15982,
+        "lng": 174.83061
+      },
+      "precision": "address",
+      "matched_country": "NZ",
+      "official_url": "https://map.fsspx.org/de/places/chapel-of-st-michael-the-archangel"
+    },
+    {
+      "provider_file": "sspx-four-district-bulk",
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-ch-ch-sion-eglise-de-la-sainte-famille",
+      "official_map_place_id": "chapelle-de-la-sainte-famille",
+      "route_destination": {
+        "lat": 46.22455,
+        "lng": 7.35754
+      },
+      "precision": "address",
+      "matched_country": "CH",
+      "official_url": "https://map.fsspx.org/de/places/chapelle-de-la-sainte-famille"
+    },
+    {
+      "provider_file": "sspx-four-district-bulk",
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-singleton-sacred-heart-of-jesus-and-mary-church",
+      "official_map_place_id": "sacred-heart-of-jesus-and-mary-mission",
+      "route_destination": {
+        "lat": -32.56298,
+        "lng": 151.17389
+      },
+      "precision": "address",
+      "matched_country": "AU",
+      "official_url": "https://map.fsspx.org/de/places/sacred-heart-of-jesus-and-mary-mission"
+    },
+    {
+      "provider_file": "sspx-four-district-bulk",
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-nz-whangarei-saint-peter-chanel-mission",
+      "official_map_place_id": "maungatapere-memorial-chapel",
+      "route_destination": {
+        "lat": -35.75758,
+        "lng": 174.20444
+      },
+      "precision": "locality",
+      "matched_country": "NZ",
+      "official_url": "https://map.fsspx.org/de/places/maungatapere-memorial-chapel"
+    }
+  ]
+}

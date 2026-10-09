@@ -775,6 +775,76 @@
         "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_MATCHING_STREET_ADDRESS_DIRECTIONS_POINT",
         "source_observed_at": "2026-10-09"
       }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-nz-hamilton-saint-joseph-s-chapel",
+      "geo": {
+        "lat": -37.75295,
+        "lng": 175.26768,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:chapel-of-st-joseph",
+        "source_url": "https://map.fsspx.org/de/places/chapel-of-st-joseph",
+        "matched_country_code": "NZ",
+        "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-nz-wellington-saint-michael-the-archangel-chapel",
+      "geo": {
+        "lat": -41.15982,
+        "lng": 174.83061,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:chapel-of-st-michael-the-archangel",
+        "source_url": "https://map.fsspx.org/de/places/chapel-of-st-michael-the-archangel",
+        "matched_country_code": "NZ",
+        "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-ch-ch-sion-eglise-de-la-sainte-famille",
+      "geo": {
+        "lat": 46.22455,
+        "lng": 7.35754,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:chapelle-de-la-sainte-famille",
+        "source_url": "https://map.fsspx.org/de/places/chapelle-de-la-sainte-famille",
+        "matched_country_code": "CH",
+        "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-singleton-sacred-heart-of-jesus-and-mary-church",
+      "geo": {
+        "lat": -32.56298,
+        "lng": 151.17389,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:sacred-heart-of-jesus-and-mary-mission",
+        "source_url": "https://map.fsspx.org/de/places/sacred-heart-of-jesus-and-mary-mission",
+        "matched_country_code": "AU",
+        "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-nz-whangarei-saint-peter-chanel-mission",
+      "geo": {
+        "lat": -35.75758,
+        "lng": 174.20444,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:maungatapere-memorial-chapel",
+        "source_url": "https://map.fsspx.org/de/places/maungatapere-memorial-chapel",
+        "matched_country_code": "NZ",
+        "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_LOCALITY_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
     }
   ],
   "geolocation_expansion_20261009": {
@@ -784,5 +854,15 @@
       "address": 8,
       "locality": 1
     }
+  },
+  "geolocation_expansion_20261009_second_batch": {
+    "new_count": 5,
+    "verified_on": "2026-10-09",
+    "evidence_source": "exact first-party map directions destinations",
+    "precision_counts": {
+      "address": 4,
+      "locality": 1
+    },
+    "excluded_conflicting_address_slug": "east-devonport"
   }
 }
