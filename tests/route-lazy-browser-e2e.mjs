@@ -92,8 +92,10 @@ try {
   await novenaAction.click();
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().readerLoaded===true,null,{timeout:20000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:15000});
-  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930?.state?.()?.view==="novenas"),true,
-    "Explore clicked Novena without opening the selected Prayer reader");
+  assert.equal(await page.evaluate(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="novenas"),true,
+    "Explore clicked Novena without opening the Novenas reader");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-begin]").count(),1,
+    "Explore launched the Novenas overview instead of its selected novena");
   assert.ok(selectedNovena,"Place novena action has no linked ID");
   await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("find"));
   await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
