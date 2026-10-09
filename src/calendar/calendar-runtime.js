@@ -112,12 +112,14 @@ function monthCellData(id){
 function monthDateIds(monthId){
   return monthGridIds(monthId).filter(id=>id.slice(0,7)===String(monthId||""));
 }
-// Never export projected feast candidates or partially resolved months.
+// Never export projected feast candidates, unverified liturgical identities
+// or a month missing even one resolved principal observance. Proper-text
+// transport failures must not block exporting an otherwise resolved Ordo.
 function exportableMonthRows(monthId){
   const ids=monthDateIds(monthId);
   if(!ids.length)return null;
   const rows=ids.map(id=>weekCache.get(id));
-  return rows.every((r,i)=>r?.date===ids[i]&&r?.status==="ready"&&r?.day?.main&&r?.proper?.status==="ready"&&r?.proper?.data)
+  return rows.every((r,i)=>r?.date===ids[i]&&r?.status!=="failed"&&r?.day?.main&&String(r.day.main.title||r.proper?.data?.name||"").trim()&&String(r.day.main.rank||r.proper?.data?.rank||"").trim()&&calendarMassColour(r).trim())
     ?rows:null;
 }
 function downloadMonthIcs(monthId){
