@@ -101,6 +101,7 @@ export function mountScriptureLibrary(root,{
    });
    editionControl.append(editionSelect);nav.append(editionControl);
    if(lang==="en")wrap.append(element("p",t.readable,"aoScriptureNotice"));
+   if(editionId==="cpdv-2009")wrap.append(element("p","The source opens this book; the chapter and verse must be located there manually.","aoScriptureNotice"));
    const bookControl=element("label",t.book);
    const books=element("select");
    for(const book of scriptureBookCatalogue()){const opt=element("option",book);opt.value=book;books.append(opt);}
