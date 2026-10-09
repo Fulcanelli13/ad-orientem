@@ -442,6 +442,24 @@
       "source_review_scope": "CUSTODIAN_OR_HISTORICAL_DESCRIPTION_REVIEWED_NOT_FULL_PROVENANCE_CHAIN",
       "new_map_pin": false,
       "publishable_as_authenticated_relic": false
+    },
+    {
+      "case_id": "evidence:relic:wave5:025",
+      "subject_id": "subject:saint-maurice-of-agaunum",
+      "title_en": "Great reliquary of St Maurice, containing relics attributed to Maurice",
+      "material_kind": "BODILY_RELICS_REPORTED",
+      "claimed_custodian": "Abbaye de Saint-Maurice d'Agaune, Switzerland",
+      "country_code": "CH",
+      "source_url": "https://www.abbaye-stmaurice.ch/fr/fondation-de-l-abbaye/patrimoine/reliquaires-tresor-de-l-abbaye/",
+      "source_role": "CATHOLIC_ABBEY_PRIMARY",
+      "custody_status": "PERMANENT_RELIC_CUSTODY_REPORTED",
+      "devotional_significance_signal": "TRANSREGIONAL_HISTORICAL_CULT",
+      "source_interpretation": "Abbey's foundation states its Great Shrine contains relics of Saint Maurice. An individual relic is distinct from the mixed Theban-martyr treasury record already on the map.",
+      "ecclesiastical_authentication": "NOT_ASSIGNED",
+      "relic_class": "FIRST_CLASS_CANDIDATE_IF_ATTRIBUTION_ACCEPTED",
+      "source_review_scope": "CUSTODIAN_OR_HISTORICAL_DESCRIPTION_REVIEWED_NOT_FULL_PROVENANCE_CHAIN",
+      "new_map_pin": false,
+      "publishable_as_authenticated_relic": false
     }
   ],
   "reviewed_subject_ids": [
@@ -465,7 +483,8 @@
     "subject:saint-joseph-mukasa-balikuddembe",
     "subject:saint-john-de-britto",
     "subject:saint-paul-chong-hasang",
-    "subject:saint-philip-of-jesus"
+    "subject:saint-philip-of-jesus",
+    "subject:saint-maurice-of-agaunum"
   ],
   "pending_subject_ids_before": [
     "subject:saint-bartholomew-the-apostle",
@@ -531,7 +550,6 @@
     "subject:saint-john-damascene",
     "subject:saint-olaf-of-norway",
     "subject:saint-louis-ix",
-    "subject:saint-maurice-of-agaunum",
     "subject:saint-gonsalo-garcia",
     "subject:saint-andrew-kim-taegon",
     "subject:saint-laurent-imbert",
@@ -541,8 +559,8 @@
     "subject:saint-jose-de-anchieta"
   ],
   "coverage_notes": {
-    "covered_in_wave5": 21,
-    "still_missing_specific_screened_case": 24,
+    "covered_in_wave5": 22,
+    "still_missing_specific_screened_case": 23,
     "first_three_waves_totals_not_reinterpreted": true
   }
 }
