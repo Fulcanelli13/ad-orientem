@@ -55,6 +55,12 @@
 
 Useful additional discovery sources: [Latin Mass Society listings UK](https://lms.org.uk/mass-listings-map), [LMS church register](https://lms.org.uk/list-of-churches), [Una Voce Polonia](https://www.mszatrydencka.pl/), [FSSP North American locations](https://fssp.com/locations-list/), and [SSPX United States chapels](https://sspx.org/en/list-sspx-chapels).
 
+
+### Liturgical-form false-positive gate — Natitingou (Benin)
+- [Latin Mass Directory Benin index](https://www.latinmassdir.org/country/bj/?view=list) places both Église Saint-Jean-Baptiste (Sunday 07:30 and 09:00) and Lycée des Jeunes Filles (Sunday 08:30) inside its Traditional Latin Mass catalogue.
+- However, the [Diocèse de Natitingou's 2025 directory](https://www.fichier-pdf.fr/2025/03/19/annuaire-du-diocese-de-natitingou-2025/) documents this area's general diocesan Sunday Mass schedule, with overlapping times, and describes ordinary diocesan parish operations. That source does **not** establish that those services use the 1962 Missal. Nor does overlap disprove every possible traditional celebration. Thus neither entry may be promoted to a *verified* Traditional Latin Mass venue without distinct evidence of the liturgical form and the exact physical Mass service.
+- Editorial release gate: the presence of a Mass timetable is not enough; validate the service's liturgical edition/rite when the provider is a general Catholic parish, otherwise classify as `LITURGICAL_FORM_UNCONFIRMED` and keep it out of certified 1962 Mass totals. Never infer the liturgical form merely from the directory's category.
+
 ## 4. Engineering and release acceptance
 
 - Preserve a permanent **venue entity identity** independent of congregation, ministry, service and third-party directory record.
