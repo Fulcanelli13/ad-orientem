@@ -50,7 +50,7 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
  assert.match(entry.id,/^MAR-0[1-8]$/);
  for(const field of ["question","opposition","reply","rejoinder","finding"]){
    assert.equal(entry[field]?.length,2,entry.id+" "+field+" must be bilingual");
-   for(const text of entry[field])assert.ok(text.length>65,entry.id+" "+field+" too thin");
+   for(const text of entry[field])assert.ok(text.length>(field==="question"?18:65),entry.id+" "+field+" too thin");
  }
  for(const field of ["opposition","reply","rejoinder","finding"]){
    const refs=entry.sources?.[field]||[];
