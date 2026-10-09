@@ -14,6 +14,9 @@ const graph=core.graphs.EV;
 
 assert.equal(graph.length,38);
 assert.equal(payload.schema,"ao-r33-easter-vigil-payload-v1");
+assert.match(payload.donor.prophecies.lat,/Isaias 4:2–6/);
+assert.match(payload.donor.prophecies.en,/Isaiah 4:2–6/);
+assert.doesNotMatch(payload.donor.prophecies.lat,/Isaias 4:1–6/);
 assert.ok(payload.donor.exsultet.lat.length>3500);
 assert.ok(payload.donor.lauds.lat.includes("Benedíctus"));
 

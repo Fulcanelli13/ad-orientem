@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import "./distinct-rite-scripture-order.mjs";
+import "./native-rite-scripture-context.mjs";
 import { readFileSync } from "node:fs";
 import { buildGoodFridayReader, createGoodFridayReaderController } from "../src/mass/reader-good-friday.js";
 import { compileMassPlan, makeResolvedMass } from "../src/mass/session-engine.js";

@@ -1,10 +1,10 @@
 {
   "version": "1962-DISTINCT-RITE-SCRIPTURE-ORDER-V1",
-  "status": "SOURCE_VERIFIED_ORDER_RESEARCH_ONLY_NOT_UI_LINKED",
+  "status": "SOURCE_VERIFIED_PARTIALLY_NATIVE_CONTEXT_LINKED",
   "policy": {
     "owner": "Canonical Good Friday/Easter Vigil native scripture order, Palm preceding-rite Gospel and source-verified separate Mass handoffs",
     "verseModel": "Ordered segments with explicit start/end book/chapter/verse; no fake single-chapter reference for cross-chapter readings",
-    "presentation": "GF/EV native rites and the Palm preceding-rite Gospel remain editorial-only with no Scripture capsule until native-state text binding is independently proven. The Palm Mass Passion is separately available only through the ordinary Proper's Latin-matched segmented-context bridge.",
+    "presentation": "Native GF lessons and pre-/post-death Passion, plus Palm preceding-rite Gospel, can open the shared Scripture context only when actual native state and displayed Latin body match. GF death-pause state, Easter Vigil summaries and unresolved Holy Wednesday/Ember lessons remain held.",
     "graphLink": "Source-owned GF/EV native lesson and Passion states; Palm procession source state; Easter Vigil post-Kyrie readings identified only by ordinary Mass Proper slot, never invented EV reading states"
   },
   "rites": [
@@ -29,7 +29,7 @@
           ],
           "displayReference": "Hosea 6:1–6",
           "latinIncipit": "Haec dicit Dominus In tribulatione sua mane consurgent",
-          "status": "NOT_YET_RUNTIME_LINKED"
+          "status": "NATIVE_CONTEXT_LINKED_SOURCE_TEXT_BOUND"
         },
         {
           "order": 2,
@@ -47,7 +47,7 @@
           ],
           "displayReference": "Exodus 12:1–11",
           "latinIncipit": "Dixit Dominus ad Moysen et Aaron in terra Aegypti",
-          "status": "NOT_YET_RUNTIME_LINKED"
+          "status": "NATIVE_CONTEXT_LINKED_SOURCE_TEXT_BOUND"
         },
         {
           "order": 3,
@@ -73,7 +73,7 @@
           ],
           "displayReference": "John 18:1–40; 19:1–42",
           "latinIncipit": "Egressus est Iesus cum discipulis suis trans torrentem Cedron",
-          "status": "CROSS_CHAPTER_AND_MULTI_STATE_REQUIRES_SOURCE_BOUNDARY_REVIEW"
+          "status": "PARTIALLY_NATIVE_CONTEXT_LINKED_SPLIT_PRE_POST_NO_DEATH_PAUSE_LINK"
         }
       ]
     },
@@ -205,7 +205,7 @@
   ],
   "excludedFromTheseReadings": [
     "Responsories, tracts, canticles and collects are liturgically distinct from each numbered lesson; do not confuse them with the associated Bible readings.",
-    "Good Friday has a Passion death pause dividing an identified biblical passage; no per-state verse boundary is asserted here.",
+    "The Good Friday Passion's pre-death source is John 18:1–40; 19:1–30, and post-death source is John 19:31–42. The GF-PASS-320 kneeling/death-pause native state is not a separate biblical reading and never receives an inferred verse boundary or study control.",
     "Easter Vigil's post-litany Mass Epistle/Gospel are separately sourced Proper slots; neither is a fifth prophecy nor an EV native reading state.",
     "Older twelve-prophecy Easter Vigil source order must never replace the 1962 four-prophecy selection."
   ],
@@ -226,7 +226,7 @@
       ],
       "displayReference": "Matthew 21:1–9",
       "latinIncipit": "Cum appropinquasset Jesus Jerosolymis",
-      "status": "SOURCE_VERIFIED_NATIVE_TEXT_NOT_UI_LINKED"
+      "status": "NATIVE_CONTEXT_LINKED_SOURCE_TEXT_BOUND"
     },
     "massPassion": {
       "role": "MASS_PASSION_GOSPEL",
