@@ -10,6 +10,7 @@ import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
+import {massScriptureContextForCard} from "./scripture-reading-context.js";
 
 export const VERSION = "final-browser-entry-v2";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
@@ -255,6 +256,54 @@ function installReaderGlossaryBridge(preview){
   return Object.freeze({dispose(){button.removeEventListener?.("click",onClick,true);}});
 }
 
+function installReaderScriptureBridge(preview,prepared){
+  const root=preview?.root,panel=root?.querySelector?.('[data-role="mass-preferences"]');
+  if(!panel?.ownerDocument)return null;
+  const doc=panel.ownerDocument,fr=String(prepared?.readerPreferences?.language||"en").startsWith("fr");
+  const box=doc.createElement("section");
+  box.className="aoMassScriptureStudy";
+  box.dataset.readerScriptureStudy="";
+  box.hidden=true;
+  const button=doc.createElement("button");
+  button.type="button";button.className="ao-mass-prefs-more";
+  button.dataset.readerScriptureContext="";
+  button.textContent=fr?"Lire l’Écriture en contexte":"Read Scripture in context";
+  const status=doc.createElement("small");status.className="aoMassScriptureStudyStatus";
+  status.setAttribute("role","status");
+  box.append(button,status);panel.append(box);
+  function refresh(){
+    const context=massScriptureContextForCard(preview?.getCurrentCard?.(),prepared);
+    box.hidden=!context;
+    if(!context)return null;
+    button.hidden=context.state!=="READY";
+    button.disabled=context.state!=="READY";
+    if(context.state==="READY"){
+      button.dataset.massReadingReference=context.reference;
+      status.textContent=(fr?"Étude facultative · ":"Optional study · ")+context.reference;
+    }else{
+      delete button.dataset.massReadingReference;
+      status.textContent=fr
+        ?"Référence biblique exacte non vérifiée. Le texte liturgique reste inchangé."
+        :"Exact Bible reference unverified. Liturgical text remains unchanged.";
+    }
+    return context;
+  }
+  const onClick=event=>{
+    if(event.target?.closest?.("[data-reader-preferences]")){refresh();return}
+    if(!event.target?.closest?.("[data-reader-scripture-context]"))return;
+    event.preventDefault?.();event.stopImmediatePropagation?.();
+    const context=refresh();if(context?.state!=="READY")return;
+    const opened=globalThis.AO_SCRIPTURE_CONTEXT_V1?.open?.(context.reference,{language:fr?"fr":"en"});
+    if(!opened){
+      status.textContent=fr?"Le contexte biblique n’a pas pu être ouvert. La Messe reste disponible."
+        :"Scripture context could not open. Mass remains available.";
+      status.setAttribute("role","alert");
+    }
+  };
+  root.addEventListener("click",onClick,true);refresh();
+  return Object.freeze({refresh,dispose(){root.removeEventListener("click",onClick,true);box.remove()}});
+}
+
 function installReaderParametersBridge(preview) {
   const button=preview?.root?.querySelector?.("[data-reader-parameters]");
   if(!button?.addEventListener)return null;
@@ -390,6 +439,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderCloseBridge(previewState.preview);
   installReaderParametersBridge(previewState.preview);
   installReaderGlossaryBridge(previewState.preview);
+  installReaderScriptureBridge(previewState.preview,prepared);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,
