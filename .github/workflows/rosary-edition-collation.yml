@@ -6,6 +6,9 @@ on:
       - '.github/workflows/rosary-edition-collation.yml'
       - 'data/pray/rosary-scripture-editorial-inventory.v1.json'
       - 'data/pray/rosary-primary-edition-review.v1.json'
+      - 'data/pray/rosary-drc-crampon-collation.v1.json'
+      - 'tests/rosary-drc-crampon-collation.mjs'
+      - 'package.json'
   workflow_dispatch:
 permissions:
   contents: read
@@ -31,6 +34,10 @@ jobs:
           echo "FR_FILE=/tmp/rosary-crampon.json" >> "$GITHUB_ENV"
       - name: Collate all 200 original Rosary cues without publishing Bible text
         run: node tools/scripture/collate-rosary-editions.mjs "$EN_FILE" "$FR_FILE" /tmp/rosary-edition-collation.json
+      - name: Enforce committed edition-pinned comparison and production display hold
+        run: |
+          node tests/rosary-drc-crampon-collation.mjs /tmp/rosary-edition-collation.json
+          npm run test:rosary-scripture-policy
       - uses: actions/upload-artifact@v4
         with:
           name: rosary-catholic-edition-collation
