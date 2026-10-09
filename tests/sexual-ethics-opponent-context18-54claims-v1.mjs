@@ -61,7 +61,7 @@ assert.match(CSE_DEBATE_MAP.CSE021.opposition[1],/contexte historique/);
 assert.match(CSE_DEBATE_MAP.CSE029.opposition[0],/cannot establish how common/);
 assert.match(CSE_DEBATE_MAP.CSE029.opposition[1],/ne mesure pas la fréquence/);
 assert.match(CSE_DEBATE_MAP.CSE035.opposition[0],/reported motive/);
-assert.match(CSE_DEBATE_MAP.CSE035.opposition[1],/motif déclaré/);
+assert.match(CSE_DEBATE_MAP.CSE035.opposition[1],/motifs? déclarés?/);
 const farley=cseSourceTargets("FARLEY_QUOTED2012","Just Love p.295",CSE_SOURCE_MAP.FARLEY_QUOTED2012)[0];
 assert.equal(farley.scope,"author-excerpt-in-cdf");
 assert.match(farley.witness,/complete book not collated/);
