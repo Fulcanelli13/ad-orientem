@@ -290,8 +290,8 @@ assert.doesNotMatch(runtime,/Related in Ad Orientem|À voir aussi dans Ad Orient
 assert.match(presentation,/id:"learn\.sexual_ethics"/);
 assert.match(owner,/installLazyLearnRegistry/);
 assert.match(readFileSync("src/learn/lazy-module-registry.js","utf8"),/mod\.installSexualEthicsModule\(win\)/,"Sexual Ethics must install on demand, retaining the canonical owner");
-assert.match(owner,/ensureSexualEthicsRegistry/);
-assert.match(owner,/AO_SEXUAL_ETHICS_V1/);
+assert.match(owner,/await ensureLearnModule\(id,win\)/);
+assert.match(readFileSync("src/learn/lazy-module-registry.js","utf8"),/\.\/sexual-ethics\.js/);
 assert.match(runtime,/CSE_PUBLIC_QUESTIONS\.length/);
 assert.match(runtime,/CSE_ARCHIVED_REDIRECTS/);
 assert.match(runtime,/Sources & provenance/);
