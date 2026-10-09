@@ -347,8 +347,8 @@
         {
           "role": "documented_objection",
           "text": {
-            "en": "The Westminster Confession of Faith, chapter I §§2–3, explicitly excludes the books called Apocrypha from the Protestant canon as uninspired. This is an identifiable Reformed confessional position, not a fictitious modern objection. It raises a real question about which ecclesial testimony and historical reception establish the rule of faith.",
-            "fr": "La Confession de foi de Westminster (I, §§2–3) exclut explicitement du canon réformé les livres qu'elle appelle « apocryphes », jugés non inspirés. C'est une position confessionnelle protestante identifiable, et non une objection imaginée. Elle pose réellement la question du témoignage ecclésial et de la réception historique qui permettent de reconnaître la règle de foi."
+            "en": "The Westminster Confession I.2 names its Old Testament books without the seven Catholic deuterocanonical titles, and I.3 says the books called Apocrypha are not divinely inspired or authoritative Scripture, although they can be read as ordinary human writings. This is a definite Reformed criterion of canon rather than simple ignorance of ancient Christian usage. It challenges Catholics to identify what authority establishes a canonical list and whether later Church definitions merely ratify or illegitimately add books.",
+            "fr": "La Confession de Westminster (I, 2) énumère les livres de l'Ancien Testament sans les sept livres deutérocanoniques catholiques ; en I, 3, elle juge les livres dits « apocryphes » non inspirés et sans autorité scripturaire, tout en permettant de les lire comme des écrits humains. Il ne s'agit pas d'une simple ignorance du christianisme ancien, mais d'un critère réformé déterminé du canon. L'objection demande quelle autorité fixe la liste biblique et si des définitions ecclésiastiques postérieures ratifient ou ajoutent indûment des livres."
           },
           "source_ids": [
             "WESTMINSTER",
@@ -356,7 +356,11 @@
           ],
           "attribution": "Westminster Confession of Faith, chapter 1 §§2–4",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WESTMINSTER": "Confession I.2–3; explicit Old Testament list and exclusion of books called Apocrypha",
+            "TRENTIV": "Council of Trent Session IV, decree concerning canonical Scriptures"
+          }
         },
         {
           "role": "critical_response",
