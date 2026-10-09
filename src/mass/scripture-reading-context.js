@@ -41,7 +41,7 @@ function candidateReferences(proper,slot){
 }
 const WITNESS_BY_PATH=new Map(VERIFIED_MASS_SCRIPTURE_READINGS.map(item=>[item.sourcePath,item]));
 function normalizeWitnessLatin(value){
- return String(value??"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")
+ return String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
    .replaceAll("æ","ae").replaceAll("Æ","ae").replaceAll("œ","oe")
    .toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 }
@@ -57,7 +57,7 @@ export function registeredMassReading(proper,slot,{sourcePath=null}={}){
  if(!spec||!reading)return null;
  const latin=normalizeWitnessLatin(reading.lat??reading.la);
  const expected=normalizeWitnessLatin(spec.latinIncipit);
- if(expected.length<12||!latin.includes(expected))return null;
+ if(expected.length<10||!latin.includes(expected))return null;
  const parsed=parseScriptureContext(spec.reference);
  return parsed?Object.freeze({...parsed,slot,witnessUrl:witness.witnessUrl,
    provenance:"MATCHED_1962_PROPER_PATH_AND_LATIN_INCIPIT"}):null;
