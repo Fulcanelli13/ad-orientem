@@ -12,6 +12,7 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
 import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
+import {extendedLessonScriptureContext} from "./scripture-extended-lesson-context.js";
 
 export const VERSION = "final-browser-entry-v2";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
@@ -394,8 +395,10 @@ function installReaderScriptureBridge(preview,prepared){
   let opening=false,disposed=false;
   function refresh(){
     if(disposed)return null;
+    const card=preview?.getCurrentCard?.();
     const context=nativeRiteScriptureContext(preview,prepared)
-      ?? massScriptureContextForCard(preview?.getCurrentCard?.(),prepared);
+      ?? extendedLessonScriptureContext(card,prepared)
+      ?? massScriptureContextForCard(card,prepared);
     box.hidden=!context;
     if(!context)return null;
     button.hidden=context.state!=="READY";
