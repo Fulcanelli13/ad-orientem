@@ -1377,6 +1377,35 @@
       "summary": "Five-destination Today + Calendar consolidation has not been user-accepted.",
       "module": "shell",
       "action": "Prove Calendar is one-tap discoverable before shipping"
+    },
+    {
+      "id": "RCH-011",
+      "severity": "P2",
+      "type": "SOURCE_LEVEL_ORPHANED_PLACE_PROFILE",
+      "summary": "Two geographic Place objects are built into place profiles but have no relationship to any Explore-lens items, directory-place links or novena-context links; source-level path lacks a linked lens result to enter these profiles.",
+      "module": "explore",
+      "action": "Verify local relationship to nearby primary shrine/chapel and add a sourced relationship or appropriate location discovery entry; retain independent Place IDs, do not invent coordinates or mass schedules.",
+      "records": [
+        {
+          "place_id": "place:DE:kevelaer-kerzenkapelle",
+          "title": "Kerzenkapelle Kevelaer",
+          "city": "Kevelaer, Germany",
+          "candidate_related_place_id": "place:DE:kevelaer-gnadenkapelle",
+          "relationship_status": "NOT_VERIFIED",
+          "site_name_similarity_only": true,
+          "geometry_status": "NO_PIN_COORDINATES"
+        },
+        {
+          "place_id": "place:GB:holywell-st-winefride-church",
+          "title": "St Winefride's RC Church, Holywell",
+          "city": "Holywell, Wales",
+          "candidate_related_place_id": "place:GB:holywell-st-winefride",
+          "relationship_status": "NOT_VERIFIED",
+          "site_name_similarity_only": true,
+          "geometry_status": "NO_PIN_COORDINATES"
+        }
+      ],
+      "normal_browser_unreachable_proven": false
     }
   ],
   "summary": {
@@ -1401,7 +1430,12 @@
     "confirmed_unreachable_public_items": 0,
     "intentionally_unpublished_dossier_navigation": 2,
     "conditionally_risky_home_fallbacks": 1,
-    "required_manual_acceptance": true
+    "required_manual_acceptance": true,
+    "geographical_place_profiles_without_source_lens_relationships": 2,
+    "geographical_place_profile_count": 181,
+    "geographical_place_profiles_with_known_lens_relationship": 179,
+    "source_level_orphan_place_records": 2,
+    "geographical_place_ids_individually_browser_verified": 0
   },
   "acceptance_to_run": [
     "Six global ribbon routes under cold/return/error",
@@ -1411,5 +1445,25 @@
     "Scripture contexts/edition rights and no false installed text claim",
     "Home→Calendar date; Calendar→Novena; Explore→Prayer; Prayer→Bible→same place",
     "English/French phone keyboard and touch, offline/error and source link accessibility"
+  ],
+  "orphaned_place_profile_candidates": [
+    {
+      "place_id": "place:DE:kevelaer-kerzenkapelle",
+      "title": "Kerzenkapelle Kevelaer",
+      "city": "Kevelaer, Germany",
+      "candidate_related_place_id": "place:DE:kevelaer-gnadenkapelle",
+      "relationship_status": "NOT_VERIFIED",
+      "site_name_similarity_only": true,
+      "geometry_status": "NO_PIN_COORDINATES"
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride-church",
+      "title": "St Winefride's RC Church, Holywell",
+      "city": "Holywell, Wales",
+      "candidate_related_place_id": "place:GB:holywell-st-winefride",
+      "relationship_status": "NOT_VERIFIED",
+      "site_name_similarity_only": true,
+      "geometry_status": "NO_PIN_COORDINATES"
+    }
   ]
 }
