@@ -183,11 +183,11 @@ function debateDetails(win,item){
 }
 
 const MARRIAGE_DEBATE_STAGE_LABELS=Object.freeze({
- opposition:["Strong objection / source position","Objection forte / position sourcée"],
- reply:["Classical Catholic response","Réponse catholique classique"],
- rejoinder:["Difficult counterargument","Contre-argument difficile"],
- finding:["Doctrinal and practical synthesis","Synthèse doctrinale et pratique"],
- traditionalAssessment:["Traditional Catholic assessment","Appréciation catholique traditionnelle"]
+ opposition:["Objection","Objection"],
+ reply:["Catholic reply","Réponse catholique"],
+ rejoinder:["Further objection","Nouvelle objection"],
+ finding:["Conclusion","Conclusion"],
+ traditionalAssessment:["Traditional Catholic teaching","Enseignement catholique traditionnel"]
 });
 function marriageDisputationsHtml(win,item){
   if(item.id!=="CSE045")return "";
@@ -198,11 +198,11 @@ function marriageDisputationsHtml(win,item){
         const source=CSE_MARRIAGE_AUTHORITY_SOURCES[key];
         return source?`<a href="${esc(source[1])}" target="_blank" rel="noopener noreferrer">${esc(source[0])} ↗</a>`:"";
       }).join("");
-      return `<section class="aoCSEDebateStep" data-stage="${esc(stage)}"><small>${esc(stage==="opposition"&&entry.oppositionKind==="REASONED_APPLICATION_NOT_NAMED_OPPONENT"?L(win,"Reasoned objection (not attributed to a named proponent)","Objection raisonnée (sans attribution à un auteur précis)"):pick(win,MARRIAGE_DEBATE_STAGE_LABELS[stage]))}</small><p>${esc(pick(win,entry[stage]))}</p><nav class="aoCSEDisputationRefs" aria-label="${esc(L(win,"References","Références"))}">${citations}</nav></section>`;
+      return `<section class="aoCSEDebateStep" data-stage="${esc(stage)}"><small>${esc(pick(win,MARRIAGE_DEBATE_STAGE_LABELS[stage]))}</small><p>${esc(pick(win,entry[stage]))}</p><nav class="aoCSEDisputationRefs" aria-label="${esc(L(win,"References","Références"))}">${citations}</nav></section>`;
     }).join("");
     return `<details class="aoCSEDisputation" data-ao-cse-disputation="${esc(entry.id)}"><summary>${esc(pick(win,entry.question))}</summary>${body}</details>`;
   }).join("");
-  return `<section class="aoCSEMaritalDisputations" aria-label="${esc(L(win,"Ephesians 5 marriage debates","Débats sur le mariage et Éphésiens 5"))}"><h2>${esc(L(win,"Ephesians 5: eight examined objections","Éphésiens 5 : huit objections examinées"))}</h2><p>${esc(L(win,"Arguments attributed to named authors paraphrase the linked original texts; the engagement question is an explicit reasoning exercise, not a fabricated opponent. The papal texts differ in emphasis and require contextual examination. These debates remain subject to independent doctrinal and French review.","Les arguments attribués à des auteurs précis reformulent les textes originaux liés ; la question des fiançailles présente un raisonnement explicite, non un adversaire inventé. Les textes pontificaux diffèrent par leurs accents et exigent un examen contextuel. Ces débats restent soumis à une vérification doctrinale et française indépendante."))}</p>${entries}</section>`;
+  return `<section class="aoCSEMaritalDisputations" aria-label="${esc(L(win,"Ephesians 5 marriage debates","Débats sur le mariage et Éphésiens 5"))}"><h2>${esc(L(win,"Marriage, headship and freedom","Mariage, primauté et liberté"))}</h2>${entries}</section>`;
 }
 
 function questionHtml(win,item,reveal){
@@ -214,7 +214,7 @@ function questionHtml(win,item,reveal){
   const buttonClosed=isDebate?L(win,"Examine the argument","Examiner l’argument"):L(win,"Go deeper","Approfondir");
   const buttonOpen=isDebate?L(win,"Hide the argument","Masquer l’argument"):L(win,"Hide deeper explanation","Masquer l’explication approfondie");
   const attributionIsContext=CSE_CONTEXT_ONLY_POSITION_IDS.includes(item.id);
-  const debateAttribution=isDebate?`<p class="aoCSEAttributionNote">${esc(attributionIsContext?L(win,"Illustrative objection: the linked sources document context or criticism, not a named advocate of the exact wording.","Objection illustrative : les sources liées documentent un contexte ou une critique, non un auteur défendant cette formulation exacte."):L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the linked texts for the author's original words.","La position adverse est une reformulation sourcée, non une citation littérale. Consultez les textes liés pour retrouver les paroles exactes de l’auteur."))}</p>`:"";
+  const debateAttribution=isDebate&&item.id!=="CSE045"?`<p class="aoCSEAttributionNote">${esc(attributionIsContext?L(win,"Illustrative objection: the linked sources document context or criticism, not a named advocate of the exact wording.","Objection illustrative : les sources liées documentent un contexte ou une critique, non un auteur défendant cette formulation exacte."):L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the linked texts for the author's original words.","La position adverse est une reformulation sourcée, non une citation littérale. Consultez les textes liés pour retrouver les paroles exactes de l’auteur."))}</p>`:"";
   const apostolateTarget=CSE_SOT_BY_ID[item.id]?.apostolateHandoff||null;
   const apostolateAction=apostolateTarget?`<button type="button" class="aoCSEBtn" data-ao-cse-apostolate>${esc(L(win,"Practise answering this objection","S’exercer à répondre à cette objection"))}</button>`:"";
   return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?debateAttribution+exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${marriageDisputationsHtml(win,item)}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
