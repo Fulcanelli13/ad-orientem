@@ -647,13 +647,19 @@
       "attribution_class": "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
+        "FREUD1924_FULL",
         "FREUD1908"
       ],
       "opposition_position_reference_ids": [
+        "FREUD1924_FULL",
         "FREUD1908",
         "FARLEY2008"
       ],
       "opposition_primary_links": [
+        {
+          "source_id": "FREUD1924_FULL",
+          "link": "https://www.freudedition.net/werke/sexual-morality-and-modern-nervousness/druckschrift"
+        },
         {
           "source_id": "FREUD1908",
           "link": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift"
@@ -665,9 +671,11 @@
       ],
       "stage_source_ids": {
         "opposition": [
+          "FREUD1924_FULL",
           "FREUD1908"
         ],
         "appeal": [
+          "FREUD1924_FULL",
           "FREUD1908"
         ],
         "concession": [
@@ -681,6 +689,7 @@
           "SACRA"
         ],
         "counter": [
+          "FREUD1924_FULL",
           "FREUD1908"
         ],
         "response": [
@@ -695,7 +704,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required."
+      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required. A full first-party source is now independently linked and bounded in the next evidence batch; retain prior attribution-class label until a separate author-context signoff."
     },
     {
       "id": "CSE029",
@@ -1054,6 +1063,7 @@
         "FARLEY_QUOTED2012"
       ],
       "opposition_position_reference_ids": [
+        "FARLEY_RESPONSE2012",
         "FARLEY_QUOTED2012",
         "FARLEY2008",
         "APA_LGB"
@@ -1062,6 +1072,10 @@
         {
           "source_id": "FARLEY_QUOTED2012",
           "link": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html"
+        },
+        {
+          "source_id": "FARLEY_RESPONSE2012",
+          "link": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley"
         },
         {
           "source_id": "FARLEY2008",
@@ -1105,7 +1119,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated."
+      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated. The author's first-person 2012 response now provides additional context but does not replace an independent whole-book reading."
     },
     {
       "id": "CSE044",
@@ -1229,6 +1243,7 @@
         "FARLEY_QUOTED2012"
       ],
       "opposition_position_reference_ids": [
+        "FARLEY_RESPONSE2012",
         "FARLEY_QUOTED2012",
         "FARLEY2008"
       ],
@@ -1236,6 +1251,10 @@
         {
           "source_id": "FARLEY_QUOTED2012",
           "link": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html"
+        },
+        {
+          "source_id": "FARLEY_RESPONSE2012",
+          "link": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley"
         },
         {
           "source_id": "FARLEY2008",
@@ -1279,7 +1298,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated."
+      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated. The author's first-person 2012 response now provides additional context but does not replace an independent whole-book reading."
     },
     {
       "id": "CSE050",
@@ -1289,6 +1308,7 @@
         "FARLEY_QUOTED2012"
       ],
       "opposition_position_reference_ids": [
+        "FARLEY_RESPONSE2012",
         "FARLEY_QUOTED2012",
         "CURRAN1987",
         "FARLEY2008",
@@ -1298,6 +1318,10 @@
         {
           "source_id": "FARLEY_QUOTED2012",
           "link": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html"
+        },
+        {
+          "source_id": "FARLEY_RESPONSE2012",
+          "link": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley"
         },
         {
           "source_id": "CURRAN1987",
@@ -1346,7 +1370,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated."
+      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated. The author's first-person 2012 response now provides additional context but does not replace an independent whole-book reading."
     },
     {
       "id": "CSE051",
@@ -1885,6 +1909,7 @@
         "FARLEY_QUOTED2012"
       ],
       "opposition_position_reference_ids": [
+        "FARLEY_RESPONSE2012",
         "FARLEY_QUOTED2012",
         "PP_MAST"
       ],
@@ -1892,6 +1917,10 @@
         {
           "source_id": "FARLEY_QUOTED2012",
           "link": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html"
+        },
+        {
+          "source_id": "FARLEY_RESPONSE2012",
+          "link": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley"
         },
         {
           "source_id": "PP_MAST",
@@ -1932,7 +1961,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated."
+      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated. The author's first-person 2012 response now provides additional context but does not replace an independent whole-book reading."
     },
     {
       "id": "CSE074",
@@ -2048,6 +2077,7 @@
         "FARLEY_QUOTED2012"
       ],
       "opposition_position_reference_ids": [
+        "FARLEY_RESPONSE2012",
         "FARLEY_QUOTED2012",
         "FARLEY2008",
         "APA_LGB"
@@ -2056,6 +2086,10 @@
         {
           "source_id": "FARLEY_QUOTED2012",
           "link": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html"
+        },
+        {
+          "source_id": "FARLEY_RESPONSE2012",
+          "link": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley"
         },
         {
           "source_id": "FARLEY2008",
@@ -2101,7 +2135,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated."
+      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated. The author's first-person 2012 response now provides additional context but does not replace an independent whole-book reading."
     },
     {
       "id": "CSE084",
@@ -2282,6 +2316,7 @@
         "FARLEY_QUOTED2012"
       ],
       "opposition_position_reference_ids": [
+        "FARLEY_RESPONSE2012",
         "FARLEY_QUOTED2012",
         "APA_LGB",
         "FARLEY2008"
@@ -2290,6 +2325,10 @@
         {
           "source_id": "FARLEY_QUOTED2012",
           "link": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html"
+        },
+        {
+          "source_id": "FARLEY_RESPONSE2012",
+          "link": "https://www.ncronline.org/news/vatican/statement-mercy-sister-margaret-farley"
         },
         {
           "source_id": "APA_LGB",
@@ -2330,7 +2369,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated."
+      "original_context_note": "Farley's words excerpted verbatim in the CDF 2012 Notification; full book context has not been independently collated. The author's first-person 2012 response now provides additional context but does not replace an independent whole-book reading."
     },
     {
       "id": "CSE093",
@@ -2390,13 +2429,19 @@
       "attribution_class": "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
+        "APA_TRANSCARE_FULL2024",
         "APA_TRANSCARE"
       ],
       "opposition_position_reference_ids": [
+        "APA_TRANSCARE_FULL2024",
         "APA_TRANS",
         "APA_SEXTHERAPY"
       ],
       "opposition_primary_links": [
+        {
+          "source_id": "APA_TRANSCARE_FULL2024",
+          "link": "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care.pdf"
+        },
         {
           "source_id": "APA_TRANSCARE",
           "link": "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care"
@@ -2412,9 +2457,11 @@
       ],
       "stage_source_ids": {
         "opposition": [
+          "APA_TRANSCARE_FULL2024",
           "APA_TRANSCARE"
         ],
         "appeal": [
+          "APA_TRANSCARE_FULL2024",
           "APA_TRANSCARE"
         ],
         "concession": [
@@ -2427,6 +2474,7 @@
           "DI2024"
         ],
         "counter": [
+          "APA_TRANSCARE_FULL2024",
           "APA_TRANSCARE"
         ],
         "response": [
@@ -2440,20 +2488,26 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required."
+      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required. A full first-party source is now independently linked and bounded in the next evidence batch; retain prior attribution-class label until a separate author-context signoff."
     },
     {
       "id": "CSE095",
       "attribution_class": "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
+        "APA_TRANSCARE_FULL2024",
         "APA_TRANSCARE"
       ],
       "opposition_position_reference_ids": [
+        "APA_TRANSCARE_FULL2024",
         "APA_TRANSCARE",
         "APA_TRANS"
       ],
       "opposition_primary_links": [
+        {
+          "source_id": "APA_TRANSCARE_FULL2024",
+          "link": "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care.pdf"
+        },
         {
           "source_id": "APA_TRANSCARE",
           "link": "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care"
@@ -2465,9 +2519,11 @@
       ],
       "stage_source_ids": {
         "opposition": [
+          "APA_TRANSCARE_FULL2024",
           "APA_TRANSCARE"
         ],
         "appeal": [
+          "APA_TRANSCARE_FULL2024",
           "APA_TRANSCARE"
         ],
         "concession": [
@@ -2480,6 +2536,7 @@
           "DI2024"
         ],
         "counter": [
+          "APA_TRANSCARE_FULL2024",
           "APA_TRANSCARE"
         ],
         "response": [
@@ -2493,7 +2550,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required."
+      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required. A full first-party source is now independently linked and bounded in the next evidence batch; retain prior attribution-class label until a separate author-context signoff."
     },
     {
       "id": "CSE096",
@@ -3033,13 +3090,19 @@
       "attribution_class": "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
+        "FREUD1924_FULL",
         "FREUD1908"
       ],
       "opposition_position_reference_ids": [
+        "FREUD1924_FULL",
         "FREUD1908",
         "FARLEY2008"
       ],
       "opposition_primary_links": [
+        {
+          "source_id": "FREUD1924_FULL",
+          "link": "https://www.freudedition.net/werke/sexual-morality-and-modern-nervousness/druckschrift"
+        },
         {
           "source_id": "FREUD1908",
           "link": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift"
@@ -3051,9 +3114,11 @@
       ],
       "stage_source_ids": {
         "opposition": [
+          "FREUD1924_FULL",
           "FREUD1908"
         ],
         "appeal": [
+          "FREUD1924_FULL",
           "FREUD1908"
         ],
         "concession": [
@@ -3068,6 +3133,7 @@
           "SACRA"
         ],
         "counter": [
+          "FREUD1924_FULL",
           "FREUD1908"
         ],
         "response": [
@@ -3082,7 +3148,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required."
+      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required. A full first-party source is now independently linked and bounded in the next evidence batch; retain prior attribution-class label until a separate author-context signoff."
     },
     {
       "id": "CSE143",
