@@ -1,0 +1,38 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_GEO_OVERLAY_V1",
+  "provider": "SSPX_MEXICO_COMPLETION_20261009",
+  "generated_at": "2026-10-09T06:36:41.500Z",
+  "official_source": "https://map.fsspx.org",
+  "precision_policy": "address-level source route destinations, not surveyed building footprint",
+  "approval": "EXACT_OFFICIAL_PLACE_SLUG_REGISTERED_ADDRESS_DIRECTIONS_MATCH_20261009",
+  "records": [
+    {
+      "venue_id": "ao-research-sspx-mexico-completion-20261009-sspx-mx-comp-20261009-03-mision-ensenada",
+      "geo": {
+        "lat": 31.86553,
+        "lng": -116.63696,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:mision-ensenada",
+        "source_url": "https://map.fsspx.org/de/places/mision-ensenada",
+        "matched_country_code": "MX",
+        "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_ADDRESS_AND_DIRECTIONS_DESTINATION",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-mexico-completion-20261009-sspx-mx-comp-20261009-07-mision-s-ignacio",
+      "geo": {
+        "lat": 20.74664,
+        "lng": -102.53154,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:mision-s-ignacio",
+        "source_url": "https://map.fsspx.org/de/places/mision-s-ignacio",
+        "matched_country_code": "MX",
+        "matched_on": "EXACT_OFFICIAL_PLACE_SLUG_ADDRESS_AND_DIRECTIONS_DESTINATION",
+        "source_observed_at": "2026-10-09"
+      }
+    }
+  ]
+}
