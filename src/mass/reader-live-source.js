@@ -10,15 +10,24 @@ function freezeCard(card){
 }
 
 function canonCardFromBlock(baseCard,segment,sequence){
-  const meta=(baseCard.blocks??[]).find(block=>block.blockId===segment.blockIds[0]);
-  if(!meta)throw new Error(segment.id+": source block "+segment.blockIds[0]+" not found in base reader model");
-  if(meta.firstParagraphIndex==null || !meta.paragraphCount){
-    throw new Error(segment.id+": source block has no reader paragraphs");
+  // Canon conclusion spans B060 (minor elevation) and B061 (Per omnia / Amen).
+  // Keep both source blocks on the existing 14th Canon presentation card:
+  // no extra LIVE card, no duplicated response on Pater noster.
+  const sourceBlocks=segment.blockIds.map(blockId=>{
+    const meta=(baseCard.blocks??[]).find(block=>block.blockId===blockId);
+    if(!meta)throw new Error(segment.id+": source block "+blockId+" not found in base reader model");
+    if(meta.firstParagraphIndex==null || !meta.paragraphCount){
+      throw new Error(segment.id+": source block "+blockId+" has no reader paragraphs");
+    }
+    return meta;
+  });
+  const paragraphs=[];
+  const blocks=[];
+  for(const meta of sourceBlocks){
+    const rows=baseCard.paragraphs.slice(meta.firstParagraphIndex,meta.firstParagraphIndex+meta.paragraphCount);
+    blocks.push(Object.freeze({...meta,firstParagraphIndex:paragraphs.length,paragraphCount:rows.length}));
+    paragraphs.push(...rows);
   }
-  const paragraphs=baseCard.paragraphs.slice(
-    meta.firstParagraphIndex,
-    meta.firstParagraphIndex+meta.paragraphCount
-  );
   if(!paragraphs.length)throw new Error(segment.id+": source block projected blank");
   const sourceCueIds=new Set(paragraphs.flatMap(p=>p.sourceCueIds??[]).map(String));
   if(!sourceCueIds.has(segment.cueStart) || !sourceCueIds.has(segment.cueEnd)){
@@ -33,7 +42,7 @@ function canonCardFromBlock(baseCard,segment,sequence){
     sourceSequence:baseCard.sequence,
     sourceSectionId:baseCard.sectionId,
     paragraphs,
-    blocks:[Object.freeze({...meta,firstParagraphIndex:0})],
+    blocks,
     eventIds:segment.eventIds,
     cueStart:segment.cueStart,
     cueEnd:segment.cueEnd,
@@ -43,6 +52,7 @@ function canonCardFromBlock(baseCard,segment,sequence){
       liveStructure:"SOURCE_FIRST_CANON",
       canonSegmentId:segment.id,
       sourceBlockId:segment.blockIds[0],
+      sourceBlockIds:Object.freeze([...segment.blockIds]),
       canonicalTextMutation:false,
     }),
   });
@@ -83,6 +93,9 @@ export function projectSourceFirstLiveModel(baseModel,canonSourceMap){
   for(const segment of resolver.segments){
     const owner=blockOwner.get(segment.blockIds[0]);
     if(!owner)throw new Error(segment.id+": certified Canon block has no base-card owner");
+    for(const blockId of segment.blockIds){
+      if(blockOwner.get(blockId)!==owner)throw new Error(segment.id+": Canon source blocks must share their base-macro owner: "+blockId);
+    }
     cards.push(canonCardFromBlock(owner,segment,cards.length+1));
   }
   for(const card of baseModel.cards.filter(x=>x.sequence>=19)){
