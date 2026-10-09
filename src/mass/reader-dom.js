@@ -1506,7 +1506,9 @@ export function createReaderDomAdapter({
       guideButton.title=current.guide?.text??"Guide";
     }
     const pop=root.querySelector('[data-role="guide-popover"]');
-    if(pop){pop.hidden=true;pop.replaceChildren?.();}
+    // Preserve an open Guide during in-card gesture, posture and Schola updates.
+    // Only a genuine card transition invalidates its contextual content.
+    if(pop && current.cardUpdate){pop.hidden=true;pop.replaceChildren?.();}
 
     const body=root.querySelector('[data-role="paragraphs"]');
     if(body && current.cardUpdate){
