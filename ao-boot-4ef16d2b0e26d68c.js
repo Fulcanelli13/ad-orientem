@@ -148,7 +148,7 @@ class DayResolver {
                 path,
                 properId: `calendar:${dateKey}:${path}`,
                 name: day.main.title || 'Feria',
-                nameFr: day.main.title || 'Férie',
+                nameFr: path === 'Tempora/Pasc6-6' ? 'Vigile de la Pentecôte' : (day.main.title || 'Férie'),
                 rank: (0, calendar_engine_1.classLabel)(day.main.rank || 4),
                 color: day.main.color || 'White',
                 profile: 'ordinary_mass',
@@ -706,7 +706,7 @@ class CalendarEngine {
         if (observance.path === 'Tempora/Pasc6-6')
             title = 'Vigil of Pentecost';
         this.titleCache.set(observance.path, title);
-        return { ...observance, title };
+        return { ...observance, title, ...(sourceTitle !== title ? { sourceTitle } : {}) };
     }
     async resolveCalendarDay(date, diagnostic, formularyIndex = 0) {
         const { cal } = await this.getCalendar(date.getFullYear(), diagnostic);
