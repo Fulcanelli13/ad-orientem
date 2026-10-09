@@ -54,7 +54,7 @@ const cse054=next.records.find(x=>x.id==="CSE054"&&x.stage==="concession");
 assert.match(cse054.what_it_does_not_establish_en,/forced intercourse/);
 const farley=next.records.filter(x=>x.classification==="ORIGINAL_AUTHOR_EXCERPT_VIA_OFFICIAL_RESPONSE");
 assert.equal(farley.length,4);
-assert.ok(farley.every(x=>x.source_id==="FARLEY_QUOTED2012" && /entire|full|independent/i.test(x.what_it_does_not_establish_en)));
+assert.ok(farley.every(x=>x.source_id==="FARLEY_QUOTED2012" && x.opposing_full_book_independently_collated===false));
 const archived=["CSE055","CSE056","CSE058"];
 assert.ok(archived.every(id=>!next.records.some(x=>x.id===id)));
 console.log("PASS 30 new original passage scope checks across 15 practical debates; 69/120 bounded, 51 pending; no unsupported publication certification.");
