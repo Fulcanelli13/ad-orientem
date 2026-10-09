@@ -44,6 +44,8 @@ jobs:
         run: node tools/scripture/collate-cpdv-master.mjs artifacts/scripture-candidates 73
       - name: Build all 73 original-author CPDV book packs as unpublished staging assets
         run: node tools/scripture/stage-cpdv-original-packs.mjs artifacts/scripture-candidates artifacts/scripture-candidates/cpdv-staged-offline-books
+      - name: Quantify Psalm and Song of Songs verse differences
+        run: node tools/scripture/audit-psalms-song-divergence.mjs artifacts/scripture-candidates
       - name: Generate side-by-side doctrinal and readability review dossier
         run: node tools/scripture/audit-cpdv-vs-drc.mjs
       - uses: actions/upload-artifact@v4
