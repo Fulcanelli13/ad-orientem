@@ -52,7 +52,7 @@ export const R17_ICON_KEYS=Object.freeze({
     SILENT:"priest_silent",
     SECRET:"priest_silent",
     INAUDIBLE:"priest_silent",
-    LISTENS:"priest_silent",
+    LISTENS:"listen",
     NONE:"priest_silent",
   }),
 });
