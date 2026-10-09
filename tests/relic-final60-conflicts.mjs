@@ -16,8 +16,8 @@ assert.equal(batch.schema,"SACRED_ATLAS_RELIC_FINAL_SIXTY_CANDIDATE_SCREEN_V1");
 assert.equal(batch.publication_status,"RESEARCH_ONLY_NOT_CERTIFIED_NOT_ALL_60_SOURCE_VERIFIED");
 assert.equal(batch.total_new_subject_leads,60);
 assert.equal(batch.cases.length,60);
-assert.equal(batch.source_reviewed_cases,12);
-assert.equal(batch.cases_without_source_review,48);
+assert.equal(batch.source_reviewed_cases,40);
+assert.equal(batch.cases_without_source_review,20);
 const old=new Set(prior.subjects.map(s=>s.subject_id)),newIds=new Set();
 for(const c of batch.cases){
  assert.ok(!old.has(c.subject_id),c.subject_id+" was already researched in earlier inventory");
@@ -66,4 +66,4 @@ const projected=projectExploreDataset({geography,sacredPhenomena:sacred});
 const markers=exploreMapFeatures(projected.byLens.relics);
 assert.equal(markers.length,new Set(projected.byLens.relics.filter(x=>x.map_publishable).map(x=>x.place_id)).size);
 assert.equal(markers.filter(x=>x.properties.item_id==="relics:relic:IT:montecassino-abbey").length,1);
-console.log("PASS final relic census: 60 additional deduplicated subject leads (12 cited, 48 explicit holds), 2 competing-custody dossiers, Montecassino published with 1 Place marker, 122 relic records");
+console.log("PASS final relic census: 60 additional deduplicated subject leads (40 source-reviewed, 20 with no institutional source yet), 2 competing-custody dossiers, Montecassino published with 1 Place marker, 122 relic records");
