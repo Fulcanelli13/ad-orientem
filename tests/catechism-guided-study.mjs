@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { buildCatechismGuidedStudy, findGuidedLessonForQuestion, guidedStudyReleaseApproved } from "../src/learn/catechism-guided-study.js";
+import { openNativeCatechismQuestion } from "../src/learn/catechism-guided-reader.js";
 const load = path => JSON.parse(readFileSync(path, "utf8"));
 const crosswalk = load("data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json");
 const first = load("data/learn/learn-the-faith-certification-001-018.v1.json");
@@ -30,4 +31,16 @@ for (const lesson of preview.lessons) for (const claim of lesson.claims) {
 assert.throws(() => buildCatechismGuidedStudy(
   { ...crosswalk, lessons: crosswalk.lessons.slice(1) }, first, second, witnesses, { preview: true }
 ));
+// Native Q&A handoff is real, not an external source chapter redirect.
+const opened = [];
+const api = { openQuestion: n => { opened.push(n); return true; } };
+assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: api }, 213, "en"), true);
+assert.deepEqual(opened, [213]);
+assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: api }, 0), false);
+assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: api }, 434), false);
+let loaded = false;
+const retryApi = { openQuestion: n => loaded && n === 433, async load(lang) { assert.equal(lang, "fr"); loaded = true; } };
+assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: retryApi }, 433, "fr"), true);
+assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: { openQuestion: () => false } }, 1), false);
+assert.equal(await openNativeCatechismQuestion({}, 1), false);
 console.log(JSON.stringify({ status: "PASS", publicLessons: 0, previewLessons: 55, sourceClaims: 181, mappedQuestions: 433 }));
