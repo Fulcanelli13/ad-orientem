@@ -251,7 +251,7 @@ assert.equal(latestNovenaReview.counts.repeatFormAnchorReviewsThisPass,2);
 assert.equal(latestNovenaReview.counts.fullEnglishDigitalLineByLineCertificates,0);
 assert.equal(latestNovenaReview.counts.completePrintEditionCertificates,0);
 assert.equal(latestNovenaReview.counts.independentOriginalFrenchPrintCertificates,0);
-assert.equal(latestNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,27);
+assert.equal(latestNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,0);
 
 const latestSourceReviews=Object.fromEntries(latestNovenaReview.records.map(x=>[x.id,x]));
 let verifiedDigitalAnchors=0;
