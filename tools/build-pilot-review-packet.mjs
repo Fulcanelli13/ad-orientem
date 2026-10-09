@@ -97,12 +97,12 @@ const client=[
 'document.getElementById("export").addEventListener("click",()=>{const name=reviewer.value.trim();if(!name){alert("Enter reviewer identity before export.");reviewer.focus();return;}const decisions=getDecisions();const payload={schema:"ao-rosary-human-review-decisions-v1",corpusFingerprint:document.body.dataset.corpus,reviewer:name,recordedAt:new Date().toISOString(),status:"SUBMITTED_FOR_EDITORIAL_REVIEW_NOT_RELEASE_AUTHORIZATION",decisionCounts:Object.fromEntries(["APPROVE","REVISE","HOLD","UNREVIEWED"].map(s=>[s,decisions.filter(x=>x.verdict===s).length])),decisions};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));const a=document.createElement("a");a.href=url;a.download="rosary-review-decisions-"+Date.now()+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});update();'
 ].join("\n");
 const html=[
-'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rosary · 200-bilingual-meditiation review</title><style>',css,'</style></head>',
+'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rosary · 200 bilingual meditation review</title><style>',css,'</style></head>',
 '<body data-corpus="',corpusFingerprint,'"><header><main><h1>Rosary · 200 bilingual meditations</h1>',
 '<p>Independent editorial review packet, not a theological approval, imprimatur, verbatim Scripture edition or app release clearance. All 200 entries are original contemplations; source links are contextual witnesses. Check EN, FR, doctrinal role and links separately. Exports are bound to this corpus fingerprint.</p>',
 '<p class="muted">Corpus SHA-256: ',corpusFingerprint,'</p></main></header><main>',
 '<div class="controls"><label>Reviewer identity<input id="reviewer" placeholder="Full name or reviewer ID"></label><label>Filter mystery ID<input id="filter" placeholder="e.g. sor5 or joy1.b3"></label>',
-'<button id="export">Export signed review decisions (JSON)</button><span id="counts"></span></div>',
+'<button id="export">Export review decisions (JSON)</button><span id="counts"></span></div>',
 '<div class="tablebox"><table id="reviewTable"><thead><tr><th>ID and source role</th><th>English meditation</th><th>Méditation française</th><th>Original context</th><th>Reviewer verdict and evidence</th></tr></thead><tbody>',
 tr,'</tbody></table></div></main><script>',client,'</script></body></html>'
 ].join("");
