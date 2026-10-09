@@ -14,7 +14,8 @@
     "Holy Tuesday and Wednesday Passions are cross-chapter readings: Mark 14:32–72; 15:1–46 and Luke 22:39–71; 23:1–53. Neither can be projected into the one-chapter Scripture Context reference parser.",
     "Holy Wednesday first lesson's source heading says Isaiah 63:1–7, but the Latin begins with Isaiah 62:11 (Dicite filiae Sion); this is explicitly held pending segmented native lesson linking. The second lesson is Isaiah 53:1–12 and must retain its separate source-order identity.",
     "Holy Thursday's Mass Gospel John 13:1–15 is not a proxy for the optional Mandatum and its separate associated chants.",
-    "Holy Tuesday's Gospel Passion Mark 14:32–72; 15:1–46 is excluded from this legacy single-range supplement, but available in the independently witnessed segmented Mass Proper index with a Latin-incpit and source-path guard."
+    "Holy Tuesday's Gospel Passion Mark 14:32–72; 15:1–46 is excluded from this legacy single-range supplement, but available in the independently witnessed segmented Mass Proper index with a Latin-incpit and source-path guard.",
+    "Holy Wednesday: LectioL1 (Isaiah 62:11; 63:1–7) belongs to the ordered extended-lesson index and requires its actual Latin node; the later Epistle/Lectio is Isaiah 53:1–12 and uses this separate single-range Proper guard. Luke Passion is separately indexed by segments."
   ],
   "holds": [
     {
@@ -66,7 +67,8 @@
         "Isaiah 63:1–7",
         "Isaiah 53:1–12"
       ],
-      "corroborationUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light"
+      "corroborationUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light",
+      "resolution": "INDEXED_SEPARATELY_IF_SOURCE_PATH_NATIVE_ORDER_AND_LATIN_TEXT_MATCH; HISTORIC_SINGLE_SLOT_OR_CONTINUOUS_PASSAGE_STILL_EXCLUDED"
     },
     {
       "sourcePath": "Tempora/Quad6-3",
@@ -76,7 +78,8 @@
         "Luke 22:39–71",
         "Luke 23:1–53"
       ],
-      "corroborationUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light"
+      "corroborationUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light",
+      "resolution": "INDEXED_SEPARATELY_IF_SOURCE_PATH_NATIVE_ORDER_AND_LATIN_TEXT_MATCH; HISTORIC_SINGLE_SLOT_OR_CONTINUOUS_PASSAGE_STILL_EXCLUDED"
     }
   ],
   "celebrations": [
@@ -305,6 +308,17 @@
         "GOSPEL": {
           "reference": "John 13:1–15",
           "latinIncipit": "Ante diem festum Paschae"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-3",
+      "title": "Holy Wednesday · Mass second lesson (first lesson separately source-ordered)",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 53:1–12",
+          "latinIncipit": "Dixit Isaias Domine quis credidit auditui nostro"
         }
       }
     }
