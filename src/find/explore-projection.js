@@ -2,7 +2,7 @@ import { communionValue } from "./data-service.js";
 import { directoryGeoLabel, isMapPublishableGeo } from "./geo-provenance.js";
 import { isMapPublishablePlaceGeo } from "./geography-contracts.js";
 
-export const EXPLORE_LENSES=Object.freeze(["tlm","shrines","traditions","pilgrimages"]);
+export const EXPLORE_LENSES=Object.freeze(["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
 
 const arr=value=>Array.isArray(value)?value:[];
 const text=value=>String(value??"").trim();
@@ -388,8 +388,65 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
   }));
 }
 
+
+const sacredFamilyNames=Object.freeze({
+  MARY:"Blessed Virgin Mary",OUR_LORD:"Our Lord Jesus Christ",SAINT_JOSEPH:"Saint Joseph",
+  SAINT_MICHAEL:"Saint Michael",OTHER_SAINT:"Saint / blessed",
+});
+const sacredStatusNames=Object.freeze({
+  HISTORICALLY_APPROVED:"Historic ecclesiastical recognition",
+  SHRINE_ATTESTED:"Shrine-documented account",
+  HISTORICAL_TRADITION:"Historical devotional tradition",
+  DIOCESAN_TRADITION:"Diocesan devotional tradition",
+  MEDIEVAL_LEGEND:"Medieval hagiographical tradition",
+});
+export function projectSacredSiteItems({records=[],places=[],kind="apparitions"}={}){
+  const placeMap=new Map(arr(places).map(row=>[row?.place_id,row]));
+  if(!["apparitions","relics"].includes(kind))throw new TypeError("Invalid sacred-site lens");
+  return Object.freeze(arr(records).map(record=>{
+    const place=placeMap.get(record?.place_id)??null;
+    const mapped=isMapPublishablePlaceGeo(place?.geo,place?.address?.country_code);
+    const geo=mapped?normalizeGeo(place.geo):null;
+    const apparition=kind==="apparitions";
+    const family=sacredFamilyNames[record?.phenomenon_family]??record?.phenomenon_family??"";
+    const evidence=apparition?(sacredStatusNames[record?.recognition_record]??"Historic tradition"):(
+      record?.relic_kind==="REPUTED_PASSION_RELIC"?"Traditional identification; authenticity not independently assessed":"Custody attested; authenticity not independently assessed");
+    const date=record?.period_label??null;
+    const title=record?.title_en??record?.title_fr??record?.id??"";
+    const notes=apparition
+      ?"Apparition reports are private revelation or historical tradition. The existence of a shrine or permitted devotion does not independently certify supernatural origin."
+      :"The cited institution or publication describes custody/veneration, not proof of canonical or scientific authentication. Relics may move; verify current custodianship before travelling.";
+    return Object.freeze({
+      item_id:kind+":"+record.id,
+      source_id:record.id,
+      place_id:place?.place_id??null,
+      lens:kind,
+      kind:apparition?"APPARITION_TRADITION":"RELIC_HOLDING",
+      eyebrow:apparition?"APPARITION · "+String(record?.phenomenon_family??"").replaceAll("_"," "):"RELIC · "+String(record?.relic_kind??"").replaceAll("_"," "),
+      status:apparition?(sacredStatusNames[record?.recognition_record]??"Source-attributed tradition"):"LOCATION ATTESTED",
+      title,subtitle:place?.name?.official??"",
+      summary:record?.summary_en??"",
+      address:place?.address??null,geo,
+      map_publishable:Boolean(mapped&&geo),
+      map_state:mapped?"MAPPED":place?"ADDRESS_ONLY":"PLACE_PENDING",
+      facts:freezeList([
+        apparition?{label:"Category",value:family}:{label:"Associated person",value:record?.associated_person},
+        date?{label:"Period",value:date}:null,
+        {label:"Evidence",value:evidence},
+        apparition?{label:"Witness / tradition",value:record?.witness_or_tradition}:null,
+      ].filter(x=>x?.value)),
+      sections:freezeList([{label:"Source scope",title:"",body:notes}]),
+      source_links:freezeList([record?.source_url?{id:record.id,title:title,issuer:"Documented source",url:record.source_url}:null].filter(Boolean)),
+      actions:freezeList(placeMapsUrl(place)?[{label:"Destination",url:placeMapsUrl(place)}]:[]),
+      note:notes,
+      search_text:itemSearch([record?.title_en,record?.title_fr,record?.associated_person,record?.witness_or_tradition,record?.period_label,record?.phenomenon_family,record?.relic_kind,place?.name?.official,addressLabel(place?.address)]),
+      raw:Object.freeze({record,place}),
+    });
+  }));
+}
+
 export function projectExploreDataset(dataset={}){
-  const geography=dataset?.geography??{},customs=dataset?.customs??{},shrines=dataset?.shrines??{},directory=dataset?.directory??{},novenas=dataset?.novenas??{};
+  const geography=dataset?.geography??{},customs=dataset?.customs??{},shrines=dataset?.shrines??{},directory=dataset?.directory??{},novenas=dataset?.novenas??{},sacredPhenomena=dataset?.sacredPhenomena??{};
   const novenaSources=[...arr(customs?.sources),...arr(shrines?.sources),...arr(novenas?.sources)];
   const customTraditions=projectTraditionItems({
     customs:customs?.customs,attestations:customs?.attestations,places:geography?.places,geoAreas:geography?.geoAreas,sources:customs?.sources,
@@ -401,6 +458,8 @@ export function projectExploreDataset(dataset={}){
   const byLens=Object.freeze({
     tlm:projectDirectoryItems(directory?.records,{communities:directory?.communities}),
     shrines:projectShrineItems({shrines:shrines?.shrines,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records}),
+    apparitions:projectSacredSiteItems({records:sacredPhenomena?.apparitions,places:geography?.places,kind:"apparitions"}),
+    relics:projectSacredSiteItems({records:sacredPhenomena?.relics,places:geography?.places,kind:"relics"}),
     traditions:Object.freeze([...customTraditions,...novenaTraditions]),
     pilgrimages:projectPilgrimageItems({pilgrimages:shrines?.pilgrimages,shrines:shrines?.shrines,routes:shrines?.routes,temporalLinks:shrines?.temporalLinks,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records,customs:customs?.customs,attestations:customs?.attestations,customSources:customs?.sources,novenaSources:novenas?.sources}),
   });
