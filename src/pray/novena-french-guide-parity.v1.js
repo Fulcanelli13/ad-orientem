@@ -2,6 +2,8 @@
  * French editorial translations of English day headings and guide sentences.
  * Do not confuse editorial navigation with original devotional prayer texts.
  * The V3 canonical historical corpus remains immutable.
+ * Note: the Sacred Heart heading « Adoration » already is correct French, so
+ * no duplicate translation entry is needed for it.
  */
 export const NOVENA_FRENCH_GUIDE_PARITY_V1=Object.freeze({
  christmas:[
@@ -25,9 +27,6 @@ export const NOVENA_FRENCH_GUIDE_PARITY_V1=Object.freeze({
   {theme:"Conversion de la vie"},
   {theme:"Source de grâce"},
   {theme:"Adoration en la fête"}
- ],
- sacred_heart:[
-  {theme:"Adoration"}
  ],
  annunciation:[
   {theme:"L’Annonciation",guide:"L’humilité devant l’initiative divine"},
