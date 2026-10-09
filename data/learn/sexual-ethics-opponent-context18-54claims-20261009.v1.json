@@ -307,12 +307,12 @@
       "documented_opponent_or_provider_source_id": "PEW_CO2019",
       "source_original_url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/",
       "access_grade": "ORIGINAL_SURVEY_SUMMARY_READ",
-      "original_passage_locator": "Why People Get Married or Move in With a Partner (2019), 23% relationship test as major reason",
-      "limitations": "Descriptive cross-sectional survey motive; do not infer causal benefit, US universality or moral norm.",
+      "original_passage_locator": "Pew Research Center 2019, 'About four-in-ten cohabiting adults cite finances and convenience as major reasons' (38% and 37%); separate relationship-seriousness section defines the unrelated 23% figure",
+      "limitations": "Original survey measured cohabiters' self-reported motives: 38% major financial and 37% convenience reasons. Its 23% is relationship seriousness (neither engaged nor very serious), not a testing motive. Do not infer causal marital outcomes or moral approval.",
       "stages": [
         {
           "stage": "opposition",
-          "bounded_focal_claim": "23% is a reported MAJOR MOTIVE among cohabiting US respondents, not proven future marital outcome",
+          "bounded_focal_claim": "38% financial and 37% convenience were reported major cohabitation motives; prior 23% testing-compatibility assertion was factually misattributed to Pew",
           "original_proponent_ref_for_stage": true,
           "selected_source_ids": [
             "PEW_CO2019"
@@ -323,8 +323,8 @@
               "url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/"
             }
           ],
-          "live_en": "In a 2019 Pew Research Center survey of US cohabiting adults, 23% described testing their relationship as a major reason for moving in together. This measures a reported motive, not whether cohabitation improves subsequent marriage. How should the legitimate wish to discover practical compatibility be weighed against the moral risks of living together before marriage?",
-          "live_fr": "Dans une enquête du Pew Research Center menée en 2019 auprès d'adultes cohabitants aux États-Unis, 23 % désignaient la mise à l'épreuve de leur relation comme une raison majeure d'emménager ensemble. Il s'agit d'un motif déclaré, non d'une preuve que la cohabitation améliore un mariage ultérieur. Comment concilier le désir légitime d'évaluer la compatibilité quotidienne avec les risques moraux de la vie commune avant le mariage ?",
+          "live_en": "Pew's 2019 US survey found that 38% of cohabiters cited finances and 37% cited convenience as major reasons for moving in together. That survey described reported motives, not whether cohabitation improves marriage outcomes. Can the desire to understand daily compatibility justify cohabitation before marriage?",
+          "live_fr": "Selon l'enquête américaine Pew de 2019, 38 % des personnes en cohabitation invoquaient les finances et 37 % la commodité comme raisons majeures d'emménager ensemble. L'enquête rapporte des motifs déclarés, sans démontrer que la cohabitation améliore les mariages ultérieurs. Le désir de connaître sa compatibilité quotidienne justifie-t-il la vie commune avant le mariage ?",
           "attribution_grade": "ORIGINAL_SURVEY_SUMMARY_READ",
           "all_stage_sentences_independently_certified": false
         },
@@ -367,7 +367,8 @@
       ],
       "full_eight_stage_certification": false,
       "independent_theology_signoff": false,
-      "independent_native_french_signoff": false
+      "independent_native_french_signoff": false,
+      "original_source_correction_applied": "2026-10-09 direct original Pew report audit: original 23% claim did not appear; see 38% and 37% actual major cohabitation motives."
     },
     {
       "id": "CSE043",
