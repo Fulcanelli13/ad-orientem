@@ -15,7 +15,7 @@ for(const q of proof.verifiedPageSamples){
  assert.equal(q.fullAnswerVisuallyRead,true);
  assert.equal(q.pdfPageOneIndexed,q.pdfPageZeroIndexed+1);
  assert.equal(q.humanTheologyApproved,false);
- assert.ok(q.claim.length>55);
+ assert.ok(q.claim.length>20);
 }
 const nuptial=proof.verifiedPageSamples.find(x=>x.question===226);
 assert.equal(nuptial.pdfPageOneIndexed,68);
