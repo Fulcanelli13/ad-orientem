@@ -1,0 +1,280 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
+  "version": "1.0.0",
+  "provider": "VERIFIED_GLOBAL_ROUND19_20261010",
+  "generated_at": "2026-10-10T00:00:00Z",
+  "scope_note": "Six additional first-party or organizer-current traditional Mass venues from Brazil, Poland, Spain, Puerto Rico and Australia. No geocoding inferred. Re-check source before travel; season/weekday conflicts are explicit, not hidden. This is distinct from the older source-discovery-only queue.",
+  "defaults": {
+    "f": "ROMAN",
+    "mf": "TRADITIONAL_LATIN",
+    "rel": "served_by",
+    "ac": "DIRECT",
+    "svc": "MASS",
+    "vs": "OFFICIAL_VERIFIED",
+    "vv": "2026-10-10",
+    "cp": "UNKNOWN",
+    "az": "NOT_PUBLICLY_ESTABLISHED",
+    "pc": "UNKNOWN",
+    "ad": "NO_PUBLIC_EVIDENCE",
+    "ps": "CURRENT_PUBLIC_MASS",
+    "gs": "SOURCE_ADDRESS_ONLY"
+  },
+  "records": [
+    {
+      "u": "VG19-BR-UBERLANDIA-CSTA",
+      "c": "UNKNOWN",
+      "cc": "BR",
+      "j": "Diocese of Uberlândia",
+      "l": "Uberlândia – Martins",
+      "n": "Capela do Colégio Santo Tomás de Aquino",
+      "vt": "chapel",
+      "a": "Rua Rafael Rinaldi 1485, Martins, Uberlândia, Minas Gerais, Brazil",
+      "b": "UNKNOWN",
+      "sr": "Sunday Low Mass 07:00 and Sung Mass 09:00. Weekday timetables differ between organizer and college pages: consult organizer; weekdays are not certified in this record.",
+      "su": "https://irmandadedocarmo.org/pagina-inicial/locais-de-missa/",
+      "st": "COMMUNITY_OFFICIAL",
+      "sa": "PRIMARY",
+      "ac": "UNKNOWN",
+      "rr": {
+        "timezone": "America/Sao_Paulo",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "07:00",
+            "mass_type": "LOW"
+          },
+          {
+            "day": "SU",
+            "time": "09:00",
+            "mass_type": "SUNG"
+          }
+        ],
+        "weekday_rule": "HELD_SOURCE_CONFLICT"
+      },
+      "origin_source_id": "LMD:capela-colegio-santo-tomas-de-aquino-saint-thomas-aquinas-college-chapel-uberlandia-state-of-minas-gerais-brazil"
+    },
+    {
+      "u": "VG19-BR-PETROLINA-JUDAS",
+      "c": "DIOCESAN",
+      "cc": "BR",
+      "j": "Diocese of Petrolina",
+      "l": "Petrolina – Maria Auxiliadora",
+      "n": "Capela São Judas Tadeu",
+      "vt": "chapel",
+      "a": "Rua Dona Justina Freire de Souza, Maria Auxiliadora, Petrolina – PE 56306-415, Brazil",
+      "b": "1962",
+      "sr": "Sunday 11:00; Wednesday 18:30; first Friday of the month 06:00. Confirm seasonal announcements with Oratório Santo Antônio.",
+      "su": "https://www.oratoriosantoantonio.org/missa",
+      "eu": "https://www.oratoriosantoantonio.org/missa",
+      "st": "COMMUNITY_OFFICIAL",
+      "et": "COMMUNITY_OFFICIAL",
+      "sa": "PRIMARY",
+      "rr": {
+        "timezone": "America/Recife",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "11:00"
+          },
+          {
+            "day": "WE",
+            "time": "18:30"
+          }
+        ],
+        "monthly_nth_weekday": [
+          {
+            "day": "FR",
+            "nth": 1,
+            "time": "06:00"
+          }
+        ]
+      },
+      "origin_source_id": "LMD:capela-sao-judas-tadeu-petrolina-pernambuco-brazil"
+    },
+    {
+      "u": "VG19-PL-LODZ-ALL-SAINTS",
+      "c": "DIOCESAN",
+      "cc": "PL",
+      "j": "Archdiocese of Łódź",
+      "l": "Łódź – Bałuty",
+      "n": "Kaplica Wszystkich Świętych",
+      "vt": "chapel",
+      "a": "ul. Żubardzka 28, 91-022 Łódź, Poland",
+      "b": "UNKNOWN",
+      "sr": "Sunday 11:00 Sung Mass; extra 16:00 on 1st, 3rd, 4th and possible 5th Sundays; second Sundays 19:00 (Nov–Mar), 20:00 (Apr–Jun, Sep–Oct), 16:00 (July–Aug). Exception: 11 Oct 2026 extra 08:30 and 19:00, replacing the normally indicated second-Sunday 20:00. Weekday 19:00 only if announced.",
+      "su": "https://www.tradycjalodz.com/news-and-events",
+      "st": "COMMUNITY_OFFICIAL",
+      "sa": "PRIMARY",
+      "rr": {
+        "timezone": "Europe/Warsaw",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "11:00",
+            "mass_type": "SUNG"
+          }
+        ],
+        "monthly_nth_weekday": [
+          {
+            "day": "SU",
+            "nth": 1,
+            "time": "16:00"
+          },
+          {
+            "day": "SU",
+            "nth": 3,
+            "time": "16:00"
+          },
+          {
+            "day": "SU",
+            "nth": 4,
+            "time": "16:00"
+          },
+          {
+            "day": "SU",
+            "nth": 5,
+            "time": "16:00",
+            "conditional": true
+          },
+          {
+            "day": "SU",
+            "nth": 2,
+            "time": "19:00",
+            "months": [
+              11,
+              12,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "day": "SU",
+            "nth": 2,
+            "time": "20:00",
+            "months": [
+              4,
+              5,
+              6,
+              9,
+              10
+            ]
+          },
+          {
+            "day": "SU",
+            "nth": 2,
+            "time": "16:00",
+            "months": [
+              7,
+              8
+            ]
+          }
+        ],
+        "date_overrides": [
+          {
+            "date": "2026-10-11",
+            "replace_time": "20:00",
+            "time": "19:00",
+            "additional_times": [
+              "08:30"
+            ]
+          }
+        ],
+        "weekday_rule": "BY_ANNOUNCEMENT_ONLY"
+      },
+      "origin_source_id": "LMD:kaplica-wszystkich-swietych-lodz-poland"
+    },
+    {
+      "u": "VG19-ES-VALENCIA-CORPUS",
+      "c": "UNKNOWN",
+      "cc": "ES",
+      "j": "Archdiocese of Valencia",
+      "l": "València",
+      "n": "Antiguo Convento del Corpus Christi",
+      "vt": "church",
+      "a": "Carrer de Guillem de Castro 169, 46008 València, Spain",
+      "b": "UNKNOWN",
+      "sr": "Sunday and holy days of obligation 10:00 Traditional Mass. August/holiday arrangements must be checked with Juventutem Valencia; no blanket annual closure is assumed.",
+      "su": "https://t.me/juventutem_valencia",
+      "st": "COMMUNITY_OFFICIAL",
+      "sa": "PRIMARY",
+      "ac": "UNKNOWN",
+      "rr": {
+        "timezone": "Europe/Madrid",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "10:00"
+          }
+        ],
+        "feast_days": [
+          {
+            "time": "10:00",
+            "deduplicate_when": "SUNDAY"
+          }
+        ],
+        "seasonal_uncertainty": "VERIFY_AUGUST_DIRECTLY"
+      },
+      "address_source_url": "https://www.valencia.es/es/-/infociudad-convento-de-corpus-christi",
+      "origin_source_id": "LMD:antiguo-convento-del-corpus-christi-valencia-spain"
+    },
+    {
+      "u": "VG19-PR-ARECIBO-MARTIN",
+      "c": "DIOCESAN",
+      "cc": "PR",
+      "j": "Diocese of Arecibo",
+      "l": "Arecibo",
+      "n": "Parroquia Santuario San Martín de Porres",
+      "vt": "church",
+      "a": "Urbanización University Gardens, Calle Almácigo F-12A, Arecibo, Puerto Rico",
+      "b": "UNKNOWN",
+      "sr": "Sunday 13:00 Traditional Mass (effective 22 February 2026, per Una Voce Puerto Rico). Older diocesan 14:00 listing is superseded; confirm current time before travel.",
+      "su": "https://unavocepr.blogspot.com/2026/02/cambio-de-horario-de-misa-tradicional.html",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "INDEPENDENT_ASSOCIATION_WITH_PARISH",
+      "rr": {
+        "timezone": "America/Puerto_Rico",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "13:00",
+            "effective_from": "2026-02-22"
+          }
+        ],
+        "supersedes": "SUNDAY_14:00_LEGACY"
+      },
+      "address_source_url": "https://www.diocesisdearecibo.org/wp-content/uploads/2018/02/directorio.pdf",
+      "origin_source_id": "LMD:parroquia-san-martin-de-porres-arecibo-puerto-rico"
+    },
+    {
+      "u": "VG19-AU-KELMSCOTT-ORIGINAL-CHAPEL",
+      "c": "DIOCESAN",
+      "cc": "AU",
+      "j": "Archdiocese of Perth",
+      "l": "Kelmscott, Western Australia",
+      "n": "Chapel of the Good Shepherd (original church)",
+      "vt": "chapel",
+      "a": "42 Streich Avenue, Kelmscott WA 6111, Australia",
+      "b": "1962",
+      "sr": "Sunday 08:30 Sung Traditional Latin Mass, in the ORIGINAL chapel rather than the newer Good Shepherd church.",
+      "su": "https://www.goodshepherdlatinmass.com/location",
+      "eu": "https://www.goodshepherdkelmscott.com/parish/activities/latin-mass",
+      "st": "COMMUNITY_OFFICIAL",
+      "et": "PARISH_OFFICIAL",
+      "sa": "PRIMARY",
+      "rr": {
+        "timezone": "Australia/Perth",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "08:30",
+            "mass_type": "SUNG"
+          }
+        ],
+        "physical_space": "ORIGINAL_CHAPEL_SEPARATE_FROM_NEW_PARISH_CHURCH"
+      },
+      "origin_source_id": "LMD:chapel-of-the-good-shepherd-kelmscott-western-australia"
+    }
+  ]
+}
