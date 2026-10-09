@@ -109,6 +109,19 @@ function placeSheet(vm){
     +'<div><small>TLM</small><strong>'+esc(profile.counts?.tlm??0)+'</strong></div>'
     +'</div>';
 
+  if(arr(profile.related_places).length){
+    html+='<section class="aoExplorePlaceGroup" data-explore-related-places><small>'+esc(L(vm.language,"RELATED PLACES","LIEUX ASSOCIÉS"))+'</small><div class="aoExplorePlaceRows">';
+    for(const related of profile.related_places){
+      const description=vm.language==="fr"?related.description_fr:related.description_en;
+      html+='<button type="button" class="aoExplorePlaceRow" data-explore-open-place="'+esc(related.place_id)+'">'
+        +'<span><strong>'+esc(related.title)+'</strong>'
+        +(description?'<small>'+esc(description)+'</small>':"")
+        +(related.address_label?'<small>'+esc(related.address_label)+'</small>':"")
+        +'</span></button>';
+    }
+    html+='</div></section>';
+  }
+
   if(arr(profile.saints).length){
     html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"ASSOCIATED SAINTS","SAINTS ASSOCIÉS"))+'</small><p>'+esc(profile.saints.join(" · "))+'</p></section>';
   }
