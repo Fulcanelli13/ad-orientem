@@ -33,7 +33,10 @@
     "uniquePrimaryQuestionNumbers": 433,
     "humanApprovedLessons": 0,
     "publishedLessons": 0,
-    "originalLanguageItalianQuestionLocators": 433
+    "originalLanguageItalianQuestionLocators": 433,
+    "sourceScopeDeskReviewedClaims": 181,
+    "sourceScopeDeskReviewedLessonCount": 55,
+    "sourceScopeDeskReviewAwaitingIndependentApproval": true
   },
   "publicationGate": {
     "researchBilingual": true,
@@ -3881,7 +3884,35 @@
           "draftOnly": true,
           "sourceOriginalItalianUrlList": [
             "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-precetti.md"
-          ]
+          ],
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "italianQuestionRefs": [
+              "PX1912-Q213",
+              "PX1912-Q214",
+              "PX1912-Q215",
+              "PX1912-Q216",
+              "PX1912-Q217",
+              "PX1912-Q223",
+              "PX1912-Q224",
+              "PX1912-Q225"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-precetti.md"
+            ],
+            "reviewFlags": [
+              "ECCLESIASTICAL_PRECEPTS_DIFFER_FROM_DIVINE_LAW",
+              "HISTORIC_NUMBERING_OF_PRECEPTS_MUST_NOT_BE_UNIVERSALIZED"
+            ],
+            "additionalSourceLinks": [],
+            "sourcePassageComparison": "1912 Italian legge-precetti.md Q213–226 read in full",
+            "originalPrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Fasting and abstinence express the Church’s authority to prescribe communal penance, but the detailed ages, days and forms found in the 1912 catechism belong to historical discipline and must not be presented as current universal law.",
@@ -3902,11 +3933,36 @@
           "draftOnly": true,
           "sourceOriginalItalianUrlList": [
             "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-precetti.md"
-          ]
+          ],
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "italianQuestionRefs": [
+              "PX1912-Q218",
+              "PX1912-Q219",
+              "PX1912-Q220",
+              "PX1912-Q221",
+              "PX1912-Q222"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-precetti.md"
+            ],
+            "reviewFlags": [
+              "1912_FAST_AGES_DAYS_MEALS_NOT_CURRENT",
+              "PARTICULAR_LAW_DEPENDS_ON_LOCATION"
+            ],
+            "additionalSourceLinks": [],
+            "sourcePassageComparison": "1912 Italian legge-precetti.md Q213–226 read in full",
+            "originalPrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
-          "en": "Likewise, historical restrictions on solemn wedding celebrations in particular seasons illustrate disciplinary application rather than an immutable element of the sacrament itself.",
-          "fr": "De même, les restrictions historiques concernant la célébration solennelle des mariages à certaines périodes illustrent une application disciplinaire plutôt qu’un élément immuable du sacrement lui-même.",
+          "en": "Under the discipline recorded in 1912, the nuptial Mass with the special blessing of the spouses was not celebrated from the First Sunday of Advent to Christmas or from Ash Wednesday to Easter Sunday; this was a restriction on solemn celebration, not on matrimonial consent itself.",
+          "fr": "Selon la discipline exposée en 1912, la messe nuptiale avec la bénédiction spéciale des époux n’était pas célébrée du premier dimanche de l’Avent à Noël, ni du mercredi des Cendres au dimanche de Pâques ; cette restriction concernait la célébration solennelle, non le consentement matrimonial lui-même.",
           "sourceIds": [
             "PIUS_X_1912"
           ],
@@ -3919,7 +3975,37 @@
           "draftOnly": true,
           "sourceOriginalItalianUrlList": [
             "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-precetti.md"
-          ]
+          ],
+          "supplementaryAuthorityLinks": [
+            {
+              "title": "1983 Code of Canon Law, canons 1057 and 1108",
+              "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+              "status": "CURRENT_CANONICAL_FORM_REFERENCE_NOT_ORIGINAL_1912_RUBRIC"
+            }
+          ],
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "italianQuestionRefs": [
+              "PX1912-Q226"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-precetti.md"
+            ],
+            "reviewFlags": [
+              "1912_NUPTIAL_BLESSING_PROHIBITION_HISTORICAL",
+              "MARRIAGE_VALIDITY_NOT_EQUATED_WITH_NUPTIAL_MASS"
+            ],
+            "additionalSourceLinks": [
+              "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html"
+            ],
+            "sourcePassageComparison": "1912 Italian legge-precetti.md Q213–226 read in full",
+            "originalPrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "sourceScopeAlert": "Original 1912 Q218–221 fasting ages, days, meals and Q226 marriage season rules are period-specific historical legislation; don't teach as current canon law."
