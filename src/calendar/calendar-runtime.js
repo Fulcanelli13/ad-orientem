@@ -743,7 +743,25 @@ async function openCalendarGlossary(){
     return false;
   }finally{button?.removeAttribute("aria-busy")}
 }
-function paint(){const r=root();if(!r)return false;const body=r.querySelector("[data-cal-body]");if(!body)return false;const active=globalThis.document?.activeElement,existing=body.querySelector("[data-cal-input]"),editing=active===existing,value=editing?existing.value:null,start=editing?existing.selectionStart:null,end=editing?existing.selectionEnd:null;body.innerHTML=bodyMarkup();if(editing){const input=body.querySelector("[data-cal-input]");if(input){input.value=value;input.focus({preventScroll:true});if(start!==null&&end!==null)input.setSelectionRange(start,end)}}r.dataset.aoCalendarOwner=VERSION;r.dataset.aoCalendarView=calendarView;requestAnimationFrame(()=>centerSelectedDay(r));return true}
+function paint(){
+  const r=root();if(!r)return false;
+  const body=r.querySelector("[data-cal-body]");if(!body)return false;
+  const selected=state()?.selectedDate||"",isSameDay=calendarView==="day"&&r.dataset.aoCalendarPaintDate===selected&&r.dataset.aoCalendarPaintView==="day";
+  // Date/week-cache subscriptions may repaint after a person expands this
+  // disclosure. Preserve it only on a same-date Day repaint.
+  const oldDiscipline=isSameDay?body.querySelector(".aoCalPracticeDiscipline"):null;
+  const wasDisciplineOpen=oldDiscipline?.open===true;
+  const hadDisciplineFocus=Boolean(oldDiscipline?.querySelector("summary")?.contains(globalThis.document?.activeElement));
+  const active=globalThis.document?.activeElement,existing=body.querySelector("[data-cal-input]"),editing=active===existing,value=editing?existing.value:null,start=editing?existing.selectionStart:null,end=editing?existing.selectionEnd:null;
+  body.innerHTML=bodyMarkup();
+  if(wasDisciplineOpen){
+    const next=body.querySelector(".aoCalPracticeDiscipline");
+    if(next){next.open=true;if(hadDisciplineFocus)next.querySelector("summary")?.focus?.({preventScroll:true})}
+  }
+  if(editing){const input=body.querySelector("[data-cal-input]");if(input){input.value=value;input.focus({preventScroll:true});if(start!==null&&end!==null)input.setSelectionRange(start,end)}}
+  r.dataset.aoCalendarOwner=VERSION;r.dataset.aoCalendarView=calendarView;r.dataset.aoCalendarPaintView=calendarView;r.dataset.aoCalendarPaintDate=selected;
+  requestAnimationFrame(()=>centerSelectedDay(r));return true;
+}
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
 function close({surface="home"}={}){cancelPendingNavigation();root()?.remove?.();try{unsub?.()}catch{}unsub=null;syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
 async function waitForResolution(target,{attempts=120,delay=50}={}){
