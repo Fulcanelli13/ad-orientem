@@ -466,6 +466,7 @@ export async function mountNativeReaderPreview({
     function showGoodFriday(){
       const moment=goodFridayMoment();
       if(moment)reader.renderMoment(moment);
+      root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
       return controller.project().card??null;
     }
 
@@ -558,6 +559,7 @@ export async function mountNativeReaderPreview({
       stage="VIGIL_ACTIVE";
       const moment=easterVigilMoment();
       if(moment)reader.renderMoment(moment);
+      root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
       return controller.project().card??null;
@@ -577,6 +579,7 @@ export async function mountNativeReaderPreview({
         progress:String(card.sequence)+" / "+String(model.totalCards)+" · Easter Vigil Mass",
         guide:null,
       });
+      root.dataset.r17NativeRiteRecord="MASS:"+card.sectionId;
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_MASS_PROJECTION";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_MASS";
       return card;
@@ -949,6 +952,7 @@ export async function mountNativeReaderPreview({
     transientGuard.begin();
     reader.renderMoment(projected.moment);
     root.dataset.r17NativeEvent=kind.toLowerCase();
+    root.dataset.r17NativeRiteRecord=kind+":"+(projected.state.card?.id??"none");
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner="R23_"+kind+"_NATIVE";
     root.dataset.r17OwnerGesture=projected.moment.gesture ? "R23_"+kind+"_PAYLOAD" : "R23_"+kind+"_EXACT_NONE";
