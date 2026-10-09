@@ -367,5 +367,242 @@
     "phone_acceptance": "NOT_PERFORMED",
     "editorial_source_certification": "NOT_PERFORMED"
   },
-  "code_change_policy": "None of these records changes the production app. Treat navigation proposal as an unapproved migration until the 5-destination UX has passed phone acceptance."
+  "code_change_policy": "None of these records changes the production app. Treat navigation proposal as an unapproved migration until the 5-destination UX has passed phone acceptance.",
+  "entry_point_contracts": {
+    "prayer": {
+      "current_route": "pray.library",
+      "mode": "PRAYER_LIBRARY_ENTRY",
+      "proposed_destination": "pray",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "novena": {
+      "current_route": "pray.novenas",
+      "mode": "DEVOTION_ENTRY",
+      "proposed_destination": "pray",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "devotional-programme": {
+      "current_route": "programme.first_friday|programme.first_saturday",
+      "mode": "SOT_REGISTERED_PROGRAMME",
+      "proposed_destination": "pray",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "rosary-mystery": {
+      "current_route": "pray.rosary",
+      "mode": "NESTED_IN_EXPERIENCE",
+      "proposed_destination": "pray",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "stations-stage": {
+      "current_route": "pray.stations",
+      "mode": "NESTED_IN_EXPERIENCE",
+      "proposed_destination": "pray",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "apologetics-dossier": {
+      "current_route": null,
+      "mode": "UNPUBLISHED_NO_LAUNCHER",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "church-crisis-dossier": {
+      "current_route": null,
+      "mode": "UNPUBLISHED_NO_LAUNCHER",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "catechism-question-witness": {
+      "current_route": "learn.catechism",
+      "mode": "SOURCE_WITNESS_INDEX_NOT_RENDER_CONFIRMATION",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "learn-faith-archival-lesson": {
+      "current_route": null,
+      "mode": "UNPUBLISHED_RESEARCH",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "learn-faith-order-candidate": {
+      "current_route": null,
+      "mode": "UNPUBLISHED_CANDIDATE_VARIANT",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "formation-research-evidence": {
+      "current_route": null,
+      "mode": "NONPUBLIC_EDITORIAL_EVIDENCE",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "spiritual-life-lesson": {
+      "current_route": "learn.spiritual_life",
+      "mode": "COURSE_MODULE",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "latin-lesson": {
+      "current_route": "learn.latin",
+      "mode": "COURSE_MODULE",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "sexual-ethics-question": {
+      "current_route": "learn.sexual_ethics",
+      "mode": "QUESTIONS_SEARCH",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "sexual-ethics-topic": {
+      "current_route": "learn.sexual_ethics",
+      "mode": "BROWSE_PROJECTION",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "sexual-ethics-debate": {
+      "current_route": "learn.sexual_ethics",
+      "mode": "EXPANDED_QUESTION_READER",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "glossary-concept": {
+      "current_route": "learn.glossary",
+      "mode": "REFERENCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "latin-lexeme": {
+      "current_route": "learn.glossary",
+      "mode": "REFERENCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "latin-phrase": {
+      "current_route": "learn.glossary",
+      "mode": "REFERENCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "glossary-bibliographical-source": {
+      "current_route": "learn.glossary",
+      "mode": "CONTEXTUAL_SOURCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "scripture-edition": {
+      "current_route": "scripture",
+      "mode": "CATALOGUE_ONLY_TEXT_DISABLED",
+      "proposed_destination": "reference-service",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "geo-area": {
+      "current_route": "find",
+      "mode": "MAP_FILTER_INFRASTRUCTURE",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "place": {
+      "current_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "place-directory-link": {
+      "current_route": "find",
+      "mode": "VENUE_PLACE_RELATIONSHIP",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "shrine": {
+      "current_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "pilgrimage": {
+      "current_route": "find",
+      "mode": "PILGRIMAGE_LENS",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "pilgrimage-route": {
+      "current_route": "find",
+      "mode": "PILGRIMAGE_LENS",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "temporal-link": {
+      "current_route": "find|calendar",
+      "mode": "CALENDAR_EXPLORE_HANDOFF",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "apparition": {
+      "current_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "relic": {
+      "current_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "custom": {
+      "current_route": "find",
+      "mode": "TRADITIONS_LENS",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "custom-attestation": {
+      "current_route": "find",
+      "mode": "EVIDENCE_CONTEXT",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "shrine-bibliographical-source": {
+      "current_route": "find",
+      "mode": "CONTEXTUAL_SOURCE_LOOKUP",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "custom-bibliographical-source": {
+      "current_route": "find",
+      "mode": "CONTEXTUAL_SOURCE_LOOKUP",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "apostolate-scenario": {
+      "current_route": "apostolate",
+      "mode": "SCENARIO_READER",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "apostolate-skill": {
+      "current_route": "apostolate",
+      "mode": "PRACTICE_SUPPORT",
+      "proposed_destination": "learn",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "provider-venue-evidence": {
+      "current_route": "find",
+      "mode": "DIRECTORY_PROVIDER_EVIDENCE_UNVERIFIED",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "community": {
+      "current_route": "find",
+      "mode": "DIRECTORY_FILTER_REFERENCE",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    },
+    "directory-bibliographical-source": {
+      "current_route": "find",
+      "mode": "DIRECTORY_SOURCE_REFERENCE",
+      "proposed_destination": "explore",
+      "route_acceptance": "NOT_BROWSER_VERIFIED"
+    }
+  },
+  "entry_point_policy": "The entry-point contract is descriptive or proposed, not proof of a functional tap action. A null route means intentional research/publication hold rather than a broken public link."
 }
