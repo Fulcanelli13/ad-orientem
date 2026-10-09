@@ -484,8 +484,9 @@ assert.equal(stockbridgeMercy[0].map_publishable,true);
 assert.ok(stockbridgeMercy[0].sections.some(section=>/Divine Mercy Sunday/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
 const laSaletteShrine=filterExploreItems(projection.byLens.shrines,{query:"La Salette"});
-assert.equal(laSaletteShrine.length,1);
-assert.equal(laSaletteShrine[0].map_publishable,false);
+assert.ok(laSaletteShrine.some(item=>item.source_id==="shrine:US:la-salette-attleboro"),"US La Salette replica shrine lost its original identity");
+assert.equal(laSaletteShrine.find(item=>item.source_id==="shrine:US:la-salette-attleboro").map_publishable,false,"US address-only shrine must not borrow France GPS");
+assert.ok(laSaletteShrine.some(item=>item.place_id==="place:FR:notre-dame-la-salette-fallavaux"),"French original sanctuary absent from expanded search");
 
 const litchfieldShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes in Litchfield"});
 assert.equal(litchfieldShrine.length,1);
