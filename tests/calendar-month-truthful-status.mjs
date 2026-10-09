@@ -18,4 +18,11 @@ assert.equal(annunciationObservanceDate(2027),"2027-04-05");
 const mar=buildMajorCelebrations("2027-03-25");
 assert.ok(mar.some(x=>x.date==="2027-04-05"&&/Annunciation/.test(x.en)));
 assert.ok(!mar.some(x=>x.date==="2027-03-25"&&/Annunciation/.test(x.en)));
-console.log("PASS calendar monthly list loading/partial/verified distinctions, routed buttons and Annunciation transfer");
+// Fetched calendar data are not an independently certified 1962 ordo.
+assert.doesNotMatch(runtime,/liturgical month verified|mois liturgique vérifié/);
+assert.match(runtime,/1962 calendar · 42 day entries loaded/);
+assert.match(runtime,/Calendrier 1962 · 42 jours chargés/);
+for(const pattern of [/function retryFailedMonth\(\)/,/data-cal-day-retry/,/data-cal-month-retry/,/data-cal-next-major-retry/,/nextMajorResults\.get\(selected\)\?\.unavailable===true/,/Open the Good Friday liturgy/,/AAS-52-1960-ocr\.pdf#page=597/,/Sources & scope/,/input\.setSelectionRange\(start,end\)/,/for="ao-cal-exact-date"/])assert.match(runtime,pattern);
+const {execFileSync}=await import("node:child_process");
+execFileSync(process.execPath,["--check","src/calendar/calendar-runtime.js"],{stdio:"pipe"});
+console.log("PASS calendar source truthfulness, retries, Good Friday, accessibility and JS syntax");
