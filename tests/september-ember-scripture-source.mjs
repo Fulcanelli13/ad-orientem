@@ -21,10 +21,10 @@ assert.deepEqual(VERIFIED_EXTENDED_LESSON_READINGS,ext.readings);
 const septExtra=VERIFIED_EXTENDED_LESSON_READINGS.filter(r=>/^Tempora\/093-/.test(r.sourcePath));
 assert.equal(septExtra.length,6);
 assert.deepEqual(septExtra.map(x=>x.sourceSectionId),[
- "LectioL1","LectioL1","LectioL2","LectioL3","LectioL4"]);
+ "LectioL1","LectioL1","LectioL2","LectioL3","LectioL4","LectioL5"]);
 assert.deepEqual(septExtra.map(x=>x.reference),[
  "Amos 9:13–15","Leviticus 23:26–32","Leviticus 23:39–43",
- "Micah 7:14; 7:16; 7:18–20","Zechariah 8:14–19"]);
+ "Micah 7:14; 7:16; 7:18–20","Zechariah 8:14–19","Daniel 3:47–51"]);
 const micah=septExtra.find(x=>x.sourceSectionId==="LectioL3");
 assert.equal(micah.segments.length,3,"Three disjoint Micah source ranges must be preserved");
 assert.equal(scriptureSegmentsReference(micah.segments),micah.reference);
