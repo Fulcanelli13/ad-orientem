@@ -83,6 +83,19 @@ try{
  assert.equal(hits.some(x=>x.path==="/src/glossary/browser-entry.js"),true,"Calendar Glossary button did not load its owner");
  assert.equal(await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.status?.().open),true,"Calendar Glossary click did not open real content");
  await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.close?.());
+ // Regression oracle: two independent 1962 calendars put Annunciation on
+ // 2027-04-05, not Holy Thursday (2027-03-25).
+ // https://missale.online/festkalender/en/2027/druck
+ // https://gcatholic.org/calendar/2027/Extraordinary-en
+ for(const {date,expected} of [
+   {date:"2027-03-25",expected:/holy thursday|maundy thursday|jeudi saint/i},
+   {date:"2027-04-05",expected:/annunciation|annonciation|annuntiatio/i}
+ ]){
+   assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),date),true,"Resolver could not select "+date);
+   const identity=await page.locator("#ao-calendar-modular-root .aoCalV2Hero h2").textContent();
+   assert.match(identity||"",expected,"1962 daily resolution disagrees with published oracle on "+date);
+ }
+
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
  const fetchedBefore=hits.filter(x=>x.path==="/src/calendar/calendar-runtime.js").length;
  const second=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("calendar"));
