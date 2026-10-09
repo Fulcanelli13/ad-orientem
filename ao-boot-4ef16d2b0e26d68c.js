@@ -75,8 +75,8 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
             for (const language of ['la', 'en', 'fr'])
                 sources[language] = await resolver.resolveSource(commemoration.path, language, diagnostic);
             const collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
-            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta')[0];
-            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio')[0];
+            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta', true)[0];
+            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio', true)[0];
             if (collect)
                 proper.collects.push(collect);
             if (secret)
@@ -2080,10 +2080,10 @@ function normalizeProper(meta, sources, preface, diagnostic) {
         sequence: textFrom(sources, "Sequentia"),
         gospel: textFrom(sources, "Evangelium"),
         offertory: textFrom(sources, "Offertorium"),
-        secrets: numbered(sources, "Secreta"),
+        secrets: numbered(sources, "Secreta", true),
         preface,
         communion: textFrom(sources, "Communio"),
-        postcommunions: numbered(sources, "Postcommunio"),
+        postcommunions: numbered(sources, "Postcommunio", true),
         preparatoryLessons,
         specialSections,
         showGloria: meta.gloria,
