@@ -5,6 +5,7 @@ on:
       - performance/split-startup-payload-20261009
     paths:
       - tools/split-production-html.mjs
+      - tools/externalize-inline-art.mjs
       - .github/workflows/temporary-startup-split.yml
 permissions:
   contents: write
@@ -27,8 +28,10 @@ jobs:
         run: |
           node tools/split-production-html.mjs --apply > /tmp/ao-split-report.json
           node -e 'let a=require("/tmp/ao-split-report.json"); console.log("HTML BEFORE",a.originalHtmlBytes,"HTML AFTER",a.reducedHtmlBytes,"EXTRACTED",a.extractedCount,"GIN ORIGINAL",a.originalGzipBytes,"GIN AFTER",a.reducedGzipBytes); console.log("RETAINED",JSON.stringify(a.retainedLargeBlocks))'
+          node tools/externalize-inline-art.mjs --apply > /tmp/ao-art-report.json
+          node -e 'let a=require("/tmp/ao-art-report.json");console.log("EXTERNALIZED",a.replacedImages,"IMAGES",a.uniqueImages,"TEXT BYTES SAVED",a.savedFromTextBytes,"IMAGE ASSET BYTES",a.imageBinaryBytes)'
           node tools/split-production-html.mjs --verify > /tmp/ao-split-verify.log
-          cat /tmp/ao-split-verify.log | tail -3
+          tail -3 /tmp/ao-split-verify.log
       - name: Install browser test dependencies
         run: |
           npm install --no-audit --no-fund
@@ -43,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html data/presentation/startup-split-report.v1.json
+          git add index.html data/presentation/startup-split-report.v1.json data/presentation/startup-art-report.v1.json assets/generated-inline
           find . -maxdepth 1 -type f -name 'ao-boot-*' -print0 | xargs -0 -r git add --
           git diff --cached --stat
           if ! git diff --cached --quiet; then
