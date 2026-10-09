@@ -101,6 +101,10 @@ export async function installCatechismGuidedMode(win = globalThis) {
   const onKeyDown = event => {
     if (event.key === "Escape" && !panel.hidden) {
       event.preventDefault();
+      // Esc belongs to the open modal; do not let the surrounding Catechism
+      // reader handle the same keystroke and move focus elsewhere.
+      event.stopImmediatePropagation?.();
+      event.stopPropagation?.();
       closeGuided();
     }
   };
