@@ -55,8 +55,12 @@ const shrineIds=new Set(shr.shrines.map(x=>x.shrine_id));
 const relicIds=new Set(phen.relics.map(x=>x.id));
 assert.equal(sites.length,corpus("published-relic-principal-sites").count);
 assert.ok(sites.every(x=>places.has(x.place_id)&&shrineIds.has(x.shrine_id)&&relicIds.has(x.relic_id)),"relic sites must already exist; never duplicate import");
-const editions=Object.keys(readFileSync("src/scripture/catalogue.js","utf8").match(/export const SCRIPTURE_EDITIONS = Object.freeze\(\{([\s\S]*?)\n\}\);/)?.[1]?.match(/\n\s+"[^"]+": Object.freeze/g)||{}).length;
+const scriptureCatalogue=readFileSync("src/scripture/catalogue.js","utf8");
 assert.equal(corpus("scripture-editions").count,4);
+for(const editionId of ["dr-challoner","cpdv-2009","crampon-1923","vulgate-clementine"]){
+ assert.ok(scriptureCatalogue.includes('"'+editionId+'"'),"missing Scripture edition "+editionId);
+}
+assert.equal((scriptureCatalogue.match(/enabled: false/g)||[]).length,4,"Scripture edition readiness changed; review registry before enabling");
 assert.equal(registry.navigation.prayer_current_families.length,6);
 assert.equal(registry.navigation.explore_families.flatMap(x=>x.lenses).length,6);
 assert.equal(registry.migrations.length,9);
