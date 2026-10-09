@@ -1,27 +1,12 @@
 import { rogationProperReady } from "./rogation-mass-selection.js";
+import { isLesserRogationDay, isMajorLitanyDay, litanyObservanceOn } from "./litany-dates.js";
+export { isLesserRogationDay, isMajorLitanyDay, majorLitanyDate, litanyObservanceOn } from "./litany-dates.js";
 
 // Eligibility describes the liturgical observance, NEVER selects a procession.
 // The actual DayResolver can appoint a saint on a Minor Rogation weekday:
 // for example, St Monica III class on 2027-05-04. Public Litanies
 // still belong to that weekday; the II-class processional Mass has
 // a separate impediment gate on a I-class celebration.
-function gregorianEaster(year){
-  const a=year%19,b=Math.floor(year/100),c=year%100;
-  const d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25);
-  const g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30;
-  const i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k+700)%7;
-  const m=Math.floor((a+11*h+22*l)/451);
-  const month=Math.floor((h+l-7*m+114)/31);
-  const day=((h+l-7*m+114)%31)+1;
-  return new Date(Date.UTC(year,month-1,day));
-}
-export function isLesserRogationDay(date){
-  if(typeof date!=="string"||!/^(19|20)\d\d-\d\d-\d\d$/.test(date))return false;
-  const year=Number(date.slice(0,4));
-  const easter=gregorianEaster(year);
-  const offset=Math.round((Date.parse(date+"T00:00:00Z")-easter.getTime())/86400000);
-  return [36,37,38].includes(offset);
-}
 export function resolvedRogationCandidate(legacy, resolvedDay=null,{requireResolver=false}={}){
   const normalized=resolvedDay?.proper?.data??null;
   const rank=Number(resolvedDay?.day?.main?.rank??legacy?.calendarRank??legacy?.calendarDay?.rank);
@@ -36,12 +21,14 @@ export function resolvedRogationCandidate(legacy, resolvedDay=null,{requireResol
   // Legacy fallback is conservative: only the familiar IV-class Feria is
   // admitted without independent proof from the shared DayResolver.
   const legacyFeria=rank===4 && source==="Tempora/Pasc5-0";
-  const eligible=legacy?.canStart===true && isLesserRogationDay(legacy.date) &&
+  const observance=litanyObservanceOn(legacy?.date);
+  const eligible=legacy?.canStart===true && observance!==null &&
     (legacy?.requestedCelebrationId??"mass_of_day")==="mass_of_day" &&
-    (requireResolver?verifiedDay:(verifiedDay||legacyFeria));
+    (requireResolver?verifiedDay:(verifiedDay||legacyFeria&&observance==="MINOR"));
   return Object.freeze({
     eligible,date:eligible?legacy.date:null,dayClass:eligible?rank:null,
-    votiveAllowed:eligible&&rank!==1,
+    observance:eligible?observance:null,
+    votiveAllowed:eligible&&rank!==1 && observance==="MINOR",
     defaultProperSource:eligible?source:null,
     authority:verifiedDay?"DAY_RESOLVER":eligible?"LEGACY_FERIA_PREFLIGHT":null
   });
@@ -87,6 +74,9 @@ export function projectRogationPreflight({
     throw new Error("ROGATION_PUBLIC_SERVICE_INVALID");
   if(!["DAY_MASS","ROGATION_MASS"].includes(choice))throw new Error("ROGATION_CHOICE_INVALID");
   const available=rogationPublicChoiceReady(library) && candidate.votiveAllowed;
+  if(choice==="ROGATION_MASS"&&candidate.observance==="MAJOR")return Object.freeze({
+    visible:true,available:false,choice,selection:null,reason:"MAJOR_LITANY_VOTIVE_NOT_SOURCE_CERTIFIED"
+  });
   if(choice==="ROGATION_MASS"&&!candidate.votiveAllowed)return Object.freeze({
     visible:true,available:false,choice,selection:null,reason:"VOTIVE_II_CLASS_IMPEDED"
   });
@@ -94,7 +84,7 @@ export function projectRogationPreflight({
     visible:true,available:false,choice,selection:null,reason:"PROPER_OR_PREFACE_UNPUBLISHED"
   });
   const selection=choice==="DAY_MASS"&&service===null?null:{
-    choice,observanceConfirmed:true,dayClass:candidate.dayClass,service,
+    choice,observanceConfirmed:true,observance:candidate.observance,dayClass:candidate.dayClass,service,
     ...(choice==="ROGATION_MASS"?{
       sourceGate:library.sourceGate,sourceProper:library.sourceProper,
       preface:{
@@ -117,23 +107,27 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
   const container=()=>doc.getElementById("ao-mass-flow-v1");
   const mount=()=>container()?.querySelector(".aoFlowActions")??container()?.querySelector("[data-ao-start-live]")?.parentElement;
   const labels=()=>String(language()).startsWith("fr")?{
-    summary:"Observance des Rogations",service:"Office public",none:"Sans litanies publiques",
+    summary:"Observance des Rogations",summaryMajor:"Litanies majeures",service:"Office public",none:"Sans litanies publiques",
     procession:"Procession publique",supplications:"Supplications publiques autorisées",
     mass:"Messe",day:"Messe du jour",proper:"Messe des Rogations · Exaudivit",
+    properMajor:"Messe votive des Litanies majeures · non disponible",
     ready:"La messe des Rogations exige des litanies publiques expressément choisies.",
     blocked:"Le propre des Rogations n'est pas encore certifié ; la messe du jour reste possible après les litanies publiques.",
     loading:"Vérification du propre et de la préface…",
     unavailable:"Les sources des Rogations ne peuvent être chargées ; la messe du jour reste disponible.",
-    impeded:"Une célébration de Ire classe empêche la messe votive des Rogations ; la messe du jour demeure possible après les litanies publiques."
+    impeded:"Une célébration de Ire classe empêche la messe votive des Rogations ; la messe du jour demeure possible après les litanies publiques.",
+    majorBlocked:"La messe votive propre aux Litanies majeures n'est pas encore certifiée. Après une procession ou des supplications publiques, la messe du jour peut être célébrée."
   }:{
-    summary:"Rogation observance",service:"Public rite",none:"No public litanies",
+    summary:"Rogation observance",summaryMajor:"Greater Litanies",service:"Public rite",none:"No public litanies",
     procession:"Public procession",supplications:"Authorized public supplications",
     mass:"Mass",day:"Mass of the day",proper:"Rogation Mass · Exaudivit",
+    properMajor:"Greater Litany votive Mass · unavailable",
     ready:"The Rogation Mass requires explicitly selected public litanies.",
     blocked:"The Rogation Proper is not yet certified; the Mass of the day remains available after public litanies.",
     loading:"Checking the Proper and Easter Preface…",
     unavailable:"The Rogation source files could not be loaded; the Mass of the day remains available.",
-    impeded:"A first-class celebration prevents the Rogation votive Mass; the Mass of the day remains available after public litanies."
+    impeded:"A first-class celebration prevents the Rogation votive Mass; the Mass of the day remains available after public litanies.",
+    majorBlocked:"The separate Greater Litany votive Mass is not yet certified for this season. The Mass of the day remains available after an explicitly selected public rite."
   };
   function refresh(){
     if(disposed)return;
@@ -143,7 +137,7 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
       choice="DAY_MASS";service=null;lastDate=date;
       verifiedDate=null;verifiedDay=null;pendingDate=null;
     }
-    if(typeof resolveDay==="function"&&isLesserRogationDay(date)&&
+    if(typeof resolveDay==="function"&&litanyObservanceOn(date)!==null&&
       legacy?.canStart===true&&verifiedDate!==date&&pendingDate!==date){
       pendingDate=date;
       void Promise.resolve().then(()=>resolveDay(date)).then(day=>{
@@ -180,7 +174,7 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
     dedicated.disabled=!enabled;
     if(!enabled&&choice==="ROGATION_MASS")choice="DAY_MASS";
     const l=labels();
-    root.querySelector("summary").textContent=l.summary;
+    root.querySelector("summary").textContent=candidate.observance==="MAJOR"?l.summaryMajor:l.summary;
     const services=root.querySelector("[data-rogation-service]");
     services.closest("label").firstChild.textContent=l.service+" ";
     services.options[0].textContent=l.none;
@@ -189,11 +183,12 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
     const masses=root.querySelector("[data-rogation-choice]");
     masses.closest("label").firstChild.textContent=l.mass+" ";
     masses.options[0].textContent=l.day;
-    masses.options[1].textContent=l.proper;
+    masses.options[1].textContent=candidate.observance==="MAJOR"?l.properMajor:l.proper;
     root.querySelector("[data-rogation-service]").value=service??"";
     root.querySelector("[data-rogation-choice]").value=choice;
     root.querySelector("[data-rogation-status]").textContent=loadError?l.unavailable:
-      loading?l.loading:!candidate.votiveAllowed?l.impeded:enabled?l.ready:l.blocked;
+      loading?l.loading:candidate.observance==="MAJOR"?l.majorBlocked:
+      !candidate.votiveAllowed?l.impeded:enabled?l.ready:l.blocked;
     if(!loading&&!library){
       loading=true;
       void loadRogationPreflightLibrary({fetchImpl}).then(value=>{
@@ -210,7 +205,7 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
       requireResolver:typeof resolveDay==="function"
     });
     if(snapshot.choice==="ROGATION_MASS"&&!snapshot.available)
-      throw new Error("ROGATION_PROPER_NOT_PUBLISHED");
+      throw new Error(snapshot.reason??"ROGATION_PROPER_NOT_PUBLISHED");
     return snapshot.selection;
   }
   refresh();
