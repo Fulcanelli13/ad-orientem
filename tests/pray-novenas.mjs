@@ -391,8 +391,8 @@ for(const id of missingHistorical){
   assert.equal(g.originalDaySections[i].day,i+1);
   assert.ok(g.originalDaySections[i].originalEnglishTitle.length>10);
   assert.match(g.originalDaySections[i].originalUrl,/gutenberg\.org/);
-  assert.equal(g.originalDaySections[i].historicalMeditationStatus,"ENGLISH_DIGITAL_TRANSCRIPTION_EMBEDDED_NOT_PRINT_CERTIFIED");
-  assert.equal(g.originalDaySections[i].historicalPracticeStatus,"ENGLISH_DIGITAL_TRANSCRIPTION_EMBEDDED_NOT_PRINT_CERTIFIED");
+  assert.equal(g.originalDaySections[i].historicalMeditationStatus,"PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP");
+  assert.equal(g.originalDaySections[i].historicalPracticeStatus,"PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP");
  }
  const source=novenaSourceAccess(id);
  assert.match(source.note.en,/MEDITATION and PRACTICE/);
@@ -400,10 +400,10 @@ for(const id of missingHistorical){
  assert.match(source.note.en,/editorial/);
  assert.match(source.note.fr,/rédactionnel/);
 }
-assert.equal(historicalNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,0);
-assert.equal(historicalNovenaReview.counts.embeddedHammerMeditationPracticeDayPairs,27);
-assert.equal(historicalNovenaReview.counts.fullOriginalPrintCertificates,0);
-assert.equal(historicalNovenaReview.counts.verifiedOriginalFrenchHammerMeditations,0);
+assert.equal(latestNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,0);
+assert.equal(latestNovenaReview.counts.embeddedHammerMeditationPracticeDayPairs,27);
+assert.equal(latestNovenaReview.counts.fullOriginalPrintCertificates,0);
+assert.equal(latestNovenaReview.counts.verifiedOriginalFrenchHammerMeditations,0);
 for(const id of ["annunciation","seven_sorrows","assumption"]){
  for(let day=1;day<=9;day++){
   const source=hammerHistoricalDayText(id,day);
