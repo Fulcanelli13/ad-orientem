@@ -1,0 +1,54 @@
+{
+  "version": "LTFAITH_1912_ITALIAN_ORIGINAL_PRINT_ACQUISITION_V1",
+  "date": "2026-10-09",
+  "requiredEdition": "Catechismo della dottrina cristiana, 433 numbered Q&A, prescribed by Pius X letter of 18 October 1912",
+  "excludeWrongEditions": [
+    "Compendio della dottrina cristiana, 1905 (993 questions)",
+    "Primi elementi della dottrina cristiana (abridged for younger children)"
+  ],
+  "primaryApprovalLetter": "https://www.vatican.va/content/pius-x/it/letters/documents/hf_p-x_let_19121018_catechismo.html",
+  "locatedBibliographicWitnesses": [
+    {
+      "kind": "PHOTOGRAPH_OF_1913_ITALIAN_PRINT_FRONT_COVER_ONLY",
+      "editionYear": 1913,
+      "publisher": "Fratelli Lanzani, tipografi editori",
+      "url": "https://commons.wikimedia.org/wiki/File:Catechismo_della_Dottrina_Cristiana_(2).jpg",
+      "supports": "Photograph of actual historical Italian edition's cover, NOT any numbered question page; not proof of 1912 wording",
+      "usableAsFullQaCollation": false
+    },
+    {
+      "kind": "CATALOG_OF_PHYSICAL_PRINTED_EDITION",
+      "editionYear": 1927,
+      "publisher": "Libreria Vaticana",
+      "pages": 136,
+      "oclc": "54899221",
+      "url": "https://openlibrary.org/books/OL53110648M/Catechismo_della_dottrina_Cristiana_pubblicato_per_ordine_di_sua_Santit%C3%A0_Papa_Pio_X.",
+      "supports": "Identifies printed 1927 library copy but offers no verified open digitized full-image copy",
+      "usableAsFullQaCollation": false
+    },
+    {
+      "kind": "PUBLIC_DIGITAL_PDF_WITH_TYPESCRIPT_ERRORS",
+      "editionYear": null,
+      "pages": 68,
+      "url": "https://www.corsiadeiservi.it/public/content/testi%20e%20documenti/Catechismo_PioX.pdf",
+      "supports": "Independent Italian electronic question-answer comparator; at least four demonstrable numeric mistakes, so no historical-print fidelity",
+      "usableAsFullQaCollation": false,
+      "numberingErrors": [
+        138,
+        263,
+        264,
+        355
+      ]
+    }
+  ],
+  "searchOutcome": "NO_COMPLETE_PHOTOGRAPHIC_SCAN_OF_AN_AUTHENTIC_1912_ITALIAN_PRINTING_VERIFIED_IN_THIS_PASS",
+  "necessaryForApproval": [
+    "Obtain photographed original 1912 Italian printed edition: cover/title, imprint, official approval letter and all numbered Q&A pages.",
+    "Record scan provenance, page-image fingerprint and original print pagination; compare all 433 numbered texts with pinned Italian transcription.",
+    "Resolve documented Q226 Italian/French time-period discrepancy against first-edition 1912 Italian printed page.",
+    "Have independently qualified reviewer sign doctrinal, canon-law and native French approvals after textual collation."
+  ],
+  "original1912PrintEditionLocatedAndVerified": false,
+  "original1912NumberedAnswersImageCollated": 0,
+  "publishedGuidedStudyApproved": false
+}
