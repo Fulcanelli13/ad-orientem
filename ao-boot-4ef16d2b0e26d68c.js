@@ -95,6 +95,34 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
                 postcommunion = postcommunion || (0, proper_resolver_1.numbered)(sundaySources, 'Postcommunio', true)[0];
                 prayerSourcePath = sundayPath;
             }
+            // The universal Dec 4 St Barbara commemoration draws its
+            // Latin named Collect from pinned Sancti/12-04pl and its Secret/
+            // Postcommunion from the Virgin-Martyr Common. The latter
+            // intentionally contain an N. placeholder: fill it with the
+            // named saint rather than showing a liturgically invalid formula.
+            // EN/FR Collect translations below are explicit editorial
+            // translations of the pinned Latin original, not false claims
+            // of a translation present in the donor source.
+            if (commemoration.id === 'commemoration:12-04-barbara:4:r') {
+                if (!collect || !secret || !postcommunion)
+                    throw new Error('The three sourced St Barbara commemorative prayers are incomplete.');
+                const endings = {
+                  lat: 'Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. Amen.',
+                  en: 'Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.',
+                  fr: 'Lui qui vit et règne avec vous dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il.'
+                };
+                collect = {...collect,
+                  lat: String(collect.lat||'').replace(/\$Qui tecum\b/g,endings.lat),
+                  en: 'May the intercession of blessed Barbara, Thy Virgin and Martyr, we beseech Thee, O Lord, protect us from all adversity; and through her glorious intercession may we be worthy, before the day of our death, to receive the Sacrament of the most holy Body and Blood of our Lord Jesus Christ through true penance and sincere confession. ' + endings.en,
+                  fr: 'Que l’intercession de la bienheureuse Barbe, votre Vierge et Martyre, nous protège, Seigneur, contre toute adversité. Que, par sa glorieuse intercession, nous méritions de recevoir avant notre mort, par une véritable pénitence et une confession sincère, le très saint Sacrement du Corps et du Sang de Notre-Seigneur Jésus-Christ. ' + endings.fr
+                };
+                const saintNames={lat:'Bárbaræ',en:'Barbara',fr:'Barbe'};
+                const nameInPrayer=prayer=>Object.fromEntries(
+                  ['lat','en','fr'].map(lang=>[lang,
+                    String(prayer?.[lang]||'').replace(/\bN\./g,saintNames[lang])]));
+                secret={...secret,...nameInPrayer(secret)};
+                postcommunion={...postcommunion,...nameInPrayer(postcommunion)};
+            }
             if (collect)
                 proper.collects.push(collect);
             if (secret)
