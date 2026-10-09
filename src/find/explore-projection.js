@@ -177,7 +177,7 @@ function novenaActions(links,recordMap){
   return Object.freeze(out);
 }
 
-export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=[],novenas=[]}={}){
+export function projectShrineItems({shrines=[],places=[],placeRelationships=[],sources=[],novenaLinks=[],novenas=[]}={}){
   const placeMap=new Map(arr(places).map(place=>[place?.place_id,place]).filter(([id])=>id));
   const sourceMap=new Map(arr(sources).map(source=>[source?.id,source]).filter(([id])=>id));
   const novenaMap=novenaRecordMap(novenas);
@@ -187,6 +187,12 @@ export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=
     const mapped=isMapPublishablePlaceGeo(place?.geo,place?.address?.country_code);
     const geo=mapped?normalizeGeo(place.geo):null;
     const relatedNovenas=novenaLinksForShrine(shrine,novenaLinks);
+    const relatedPlaceNames=arr(placeRelationships).flatMap(link=>{
+      const otherId=link?.source_place_id===shrine?.place_id?link?.target_place_id:
+        link?.target_place_id===shrine?.place_id?link?.source_place_id:null;
+      const other=placeMap.get(otherId);
+      return other&&link?.source_url?[other?.name?.official,...arr(other?.name?.aliases)]:[];
+    }).filter(Boolean);
     const facts=[
       {label:"Dedication",value:shrine?.dedication},
       {label:"Type",value:String(shrine?.shrine_kind??"").replaceAll("_"," ")},
@@ -219,7 +225,7 @@ export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=
         ...novenaActions(relatedNovenas,novenaMap),
       ]),
       note:mapped?"Canonical shrine identity with provenance-locked shared Place coordinates.":"Canonical shrine identity. Map pin withheld until shared Place coordinates have their own provenance lock.",
-      search_text:itemSearch([shrine?.name,shrine?.dedication,shrine?.origin_summary,saints,addressLabel(address),relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
+      search_text:itemSearch([shrine?.name,shrine?.dedication,shrine?.origin_summary,saints,addressLabel(address),relatedPlaceNames,relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
       raw:Object.freeze({shrine,place}),
     });
   }));
@@ -465,7 +471,7 @@ export function projectExploreDataset(dataset={}){
   });
   const byLens=Object.freeze({
     tlm:projectDirectoryItems(directory?.records,{communities:directory?.communities}),
-    shrines:projectShrineItems({shrines:shrines?.shrines,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records}),
+    shrines:projectShrineItems({shrines:shrines?.shrines,places:geography?.places,placeRelationships:geography?.placeRelationships,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records}),
     apparitions:projectSacredSiteItems({records:sacredPhenomena?.apparitions,places:geography?.places,kind:"apparitions"}),
     relics:projectSacredSiteItems({records:sacredPhenomena?.relics,places:geography?.places,kind:"relics"}),
     traditions:Object.freeze([...customTraditions,...novenaTraditions]),
