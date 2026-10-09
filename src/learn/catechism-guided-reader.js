@@ -80,7 +80,7 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
       </nav>
       <p class="aoCatechismGuidedPosition">${text("Lesson", "Leçon", lang)} ${idx + 1} / ${study.lessons.length}</p>
       <article><h2>${escapeHtml(lesson.title[lang])}</h2>
-        ${lesson.claims.map(c => `<p>${escapeHtml(c[lang])} <span class="aoCatechismGuidedSources">${c.sources.map(renderSource).join(" · ")}</span></p>`).join("")}
+        ${lesson.claims.map((c, j) => `<div class="aoCatechismGuidedClaim"><p>${escapeHtml(c[lang])}</p><details class="aoCatechismGuidedEvidence"><summary>${text("Sources", "Sources", lang)} · ${c.sources.length}</summary><div class="aoCatechismGuidedSources" aria-label="${text("Original documents for this explanation", "Documents originaux de cette explication", lang)}">${c.sources.map(renderSource).join(" · ")}</div></details></div>`).join("")}
         <h3>${text("Original Catechism questions", "Questions du Catéchisme original", lang)}</h3>
         <div class="aoCatechismGuidedQuestions">${lesson.primaryQuestions.map(n => `<button type="button" data-guided-question="${n}" aria-label="${text("Open original question", "Ouvrir la question originale", lang)} ${n}">${lang === "fr" ? `Question ${n}` : `Q${n} · ${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}`}</button>`).join(" ")}</div>
       </article>
