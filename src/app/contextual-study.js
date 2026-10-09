@@ -28,6 +28,20 @@ export function installContextualStudyBridge(win=globalThis){
  const doc=win?.document;
  if(!doc?.addEventListener)return null;
  if(win.AO_CONTEXTUAL_STUDY_V1)return win.AO_CONTEXTUAL_STUDY_V1;
+ if(doc?.createElement&&!doc?.getElementById?.("ao-contextual-study-style")){
+  const style=doc.createElement("style");
+  style.id="ao-contextual-study-style";
+  style.textContent=`
+    .aoContextualGlossaryCapsule{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:44px;padding:7px 13px;border:1px solid var(--ao-rule,rgba(201,173,120,.35));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,rgba(16,24,33,.94));color:var(--ao-text-primary,#e9e4d9);font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+    .aoContextualGlossaryCapsule span{color:var(--liturgical,#c9ad78)}
+    .aoContextualGlossaryCapsule:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
+    .aoContextualGlossaryCapsule:disabled{opacity:.6}
+    .aoContextualStudyError{display:block;margin-top:5px;color:var(--ao-text-muted,#a9a5a0);font:500 12px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+    .ao-guide-contextual-term,.aoSLContextTerm,.aoP435930ContextRow{margin-top:12px}
+    @media(prefers-reduced-motion:reduce){.aoContextualGlossaryCapsule{transition:none!important}}
+  `;
+  (doc.head||doc.documentElement)?.append?.(style);
+ }
  let inFlight=false;
  const error=(target,message)=>{
   const parent=target?.parentElement;
