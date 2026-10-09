@@ -9,6 +9,24 @@ const language = value => value === "fr" ? "fr" : "en";
 const text = (en, fr, lang) => lang === "fr" ? fr : en;
 const questionRef = n => "PX1912-Q" + String(n).padStart(3, "0");
 
+// The canonical 433-question reader already implements openQuestion(number).
+// Use that controller instead of simulating clicks or sending users to GitHub.
+export async function openNativeCatechismQuestion(win, number, language = "en") {
+  if (!Number.isInteger(number) || number < 1 || number > 433) return false;
+  const api = win?.AO_TRADITIONAL_CATECHISM;
+  if (typeof api?.openQuestion !== "function") return false;
+  try {
+    if (api.openQuestion(number) === true) return true;
+    if (typeof api.load === "function") {
+      await api.load(language === "fr" ? "fr" : "en");
+      return api.openQuestion(number) === true;
+    }
+  } catch (error) {
+    win?.console?.error?.("Catechism native question navigation failed", error);
+  }
+  return false;
+}
+
 export function renderCatechismGuidedStudy(root, inputs, options = {}) {
   if (!root || typeof root.replaceChildren !== "function")
     throw new TypeError("Guided study requires a DOM root");
