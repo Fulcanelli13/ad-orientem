@@ -8,6 +8,7 @@ on:
       - "ao-boot-*.js"
       - "data/calendar/1962-ordo-corrections.v1.json"
       - "tests/calendar-ordo-corrections.mjs"
+      - "tools/calendar/secondary-1962-probe.mjs"
   workflow_dispatch:
 
 permissions:
@@ -30,6 +31,8 @@ jobs:
         run: |
           npm install --no-save --no-package-lock @playwright/test
           npx playwright install --with-deps chromium
+      - name: Inspect secondary 1962 oracle
+        run: node tools/calendar/secondary-1962-probe.mjs
       - name: Inspect both full civil years against independent 1962 calendar
         run: node tools/calendar/full-year-1962-oracle.mjs --strict
       - name: Upload independent calendar audit report
