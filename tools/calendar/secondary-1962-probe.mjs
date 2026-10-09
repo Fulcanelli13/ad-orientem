@@ -11,6 +11,7 @@ try{
        return {
          title:document.title,
          pageChars:document.body.innerText.length,
+         largeTables:[...document.querySelectorAll("table")].filter(t=>t.querySelectorAll("tr").length>20).slice(0,2).map(t=>({class:t.className,id:t.id,html:t.outerHTML.slice(0,8500),rowCount:t.querySelectorAll("tr").length})),
          tables:[...document.querySelectorAll("table")].map(t=>({
            class:t.className,id:t.id,
            rowCount:t.querySelectorAll("tr").length,
@@ -22,7 +23,7 @@ try{
          firstText:trim(document.body.innerText).slice(0,900)
        };
      });
-     console.log("GCATHOLIC_PROBE "+JSON.stringify({year,status:response.status(),details}).slice(0,11700));
+     console.log("GCATHOLIC_PROBE "+JSON.stringify({year,status:response.status(),details}).slice(0,17000));
      const responseICS=await page.request.get("https://gcatholic.org/calendar/ics/"+year+"-en-Extraordinary.ics?v=3",{timeout:30000});
      const icsBody=await responseICS.text();
      console.log("GCATHOLIC_ICS "+JSON.stringify({year,status:responseICS.status(),contentType:responseICS.headers()["content-type"],bytes:icsBody.length,first:icsBody.slice(0,1000),eventCount:(icsBody.match(/BEGIN:VEVENT/g)||[]).length}));
