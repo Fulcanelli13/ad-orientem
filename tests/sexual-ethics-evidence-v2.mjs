@@ -46,8 +46,8 @@ assert.equal(stageCount,440);
 assert.equal(individuallyReviewed,440);
 for(const key of ["VS","HV","CASTI","PH","DP","DONUMV","ASRM_GC","ACOG_ECTOPIC","ABORTCLAR"])
  assert.ok(evidence.sources_checked[key]?.url?.startsWith("https://"));
-assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[0],/judges IVF morally illicit/);
-assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[1],/FIV moralement illicite/);
+assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[0],/Donum Vitae II\.B\.5 rejects homologous IVF/);
+assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[1],/Donum Vitae \(II\.B\.5\) rejette la FIV homologue/);
 assert.match(CSE_DEBATE_MAP.CSE104.appeal[0],/unpaid arrangements can still involve family pressure/);
 assert.match(CSE_DEBATE_MAP.CSE104.appeal[1],/pressions familiales/);
 const verifiedCounts={};
