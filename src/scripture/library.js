@@ -33,7 +33,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},passage=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},passage=null
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -62,6 +62,9 @@ export function mountScriptureLibrary(root,{
  function draw(){
    const t=L[lang];
    wrap.replaceChildren();
+   if(SCRIPTURE_EDITIONS[editionId]?.enabled && SCRIPTURE_EDITIONS[editionId]?.rights==="cleared") {
+     queueMicrotask(()=>onNeedBook({book:location.book,editionId}));
+   }
    const heading=element("header",null,"aoScriptureHeader");
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
@@ -144,7 +147,7 @@ export function mountScriptureLibrary(root,{
      resultArea.replaceChildren();
      const matches=searchCertifiedScripture(records,{query,editionId,limit:50})
        .filter(r=>validatedRecord(records.find(x=>x.editionId===r.editionId&&x.book===r.book&&x.chapter===r.chapter&&x.verseStart===r.verseStart),editionId));
-     const bookMatches=searchScriptureBooks(query).slice(0,20);
+     const bookMatches=query.trim()?searchScriptureBooks(query).slice(0,20):[];
      if(!matches.length&&!bookMatches.length)resultArea.append(element("p",t.none));
      for(const book of bookMatches){
        const button=element("button",book);button.type="button";
@@ -181,6 +184,7 @@ export function mountScriptureLibrary(root,{
  return Object.freeze({
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");lang=next;editionId=DEFAULT_SCRIPTURE_EDITION[lang];draw();},
    setPassage(next){location=scripturePassage(next);draw();},
+   setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");records=next;draw();},
    status(){return Object.freeze({language:lang,editionId,passage:location,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
