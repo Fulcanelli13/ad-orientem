@@ -1678,6 +1678,176 @@
         "SHR-PIL-BULK-FR-notre-dame-paris"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+      "place_id": "place:VA:saint-peter-vatican",
+      "name": "St Peter's Basilica — Vatican",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Peter the Apostle",
+      "origin_summary": "Source-documented pilgrimage destination: Saint Peter the Apostle. No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [
+        "Saint Peter the Apostle"
+      ],
+      "source_ids": [
+        "SHR-PIL-VA-saint-peter-vatican"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "name": "Basilica Papale di San Paolo fuori le Mura",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Paul the Apostle",
+      "origin_summary": "Source-documented pilgrimage destination: Saint Paul the Apostle. No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [
+        "Saint Paul the Apostle"
+      ],
+      "source_ids": [
+        "SHR-PIL-IT-saint-paul-outside-walls-rome"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:santa-maria-maggiore-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "name": "Basilica Papale di Santa Maria Maggiore",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Mary Major and Salus Populi Romani",
+      "origin_summary": "Source-documented pilgrimage destination: Saint Mary Major and Salus Populi Romani. No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PIL-IT-santa-maria-maggiore-rome"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+      "place_id": "place:IT:scala-santa-rome",
+      "name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Holy Stairs and Sancta Sanctorum",
+      "origin_summary": "Source-documented pilgrimage destination: Holy Stairs and Sancta Sanctorum. No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [
+        "Saint Helena"
+      ],
+      "source_ids": [
+        "SHR-PIL-IT-scala-santa-rome"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "name": "Catedral de Santiago de Compostela",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint James the Greater",
+      "origin_summary": "Source-documented pilgrimage destination: Saint James the Greater. No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [
+        "Saint James the Greater"
+      ],
+      "source_ids": [
+        "SHR-PIL-ES-santiago-compostela-cathedral"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:basilica-del-pilar-zaragoza",
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "name": "Basílica de Nuestra Señora del Pilar",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of the Pillar",
+      "origin_summary": "Source-documented pilgrimage destination: Our Lady of the Pillar. No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PIL-ES-basilica-del-pilar-zaragoza"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+      "place_id": "place:ES:santo-toribio-liebana",
+      "name": "Monasterio de Santo Toribio de Liébana",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Holy Cross (Lignum Crucis)",
+      "origin_summary": "Source-documented pilgrimage destination: Holy Cross (Lignum Crucis). No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [
+        "Saint Turibius of Astorga"
+      ],
+      "source_ids": [
+        "SHR-PIL-ES-santo-toribio-liebana"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "name": "Monasterio de la Anunciación — Carmelitas Descalzas",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Teresa of Jesus and relics",
+      "origin_summary": "Source-documented pilgrimage destination: Saint Teresa of Jesus and relics. No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [
+        "Saint Teresa of Ávila"
+      ],
+      "source_ids": [
+        "SHR-PIL-ES-carmel-alba-tormes"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:20261009:PS:holy-sepulchre-jerusalem",
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "name": "Church of the Holy Sepulchre — shared Christian sanctuary",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Calvary and the Empty Tomb of the Risen Christ",
+      "origin_summary": "Source-documented pilgrimage destination: Calvary and the Empty Tomb of the Risen Christ. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PIL-PS-holy-sepulchre-jerusalem"
+      ],
+      "confidence": "HIGH",
+      "access_notice": "Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "ownership_note": "Ecumenical shared holy place; not exclusive Catholic property or TLM Directory evidence."
+    },
+    {
+      "shrine_id": "shrine:20261009:PS:nativity-bethlehem",
+      "place_id": "place:PS:nativity-bethlehem",
+      "name": "Church of the Nativity — shared Christian sanctuary",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Grotto and Basilica of the Nativity",
+      "origin_summary": "Source-documented pilgrimage destination: Grotto and Basilica of the Nativity. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PIL-PS-nativity-bethlehem"
+      ],
+      "confidence": "HIGH",
+      "access_notice": "Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "ownership_note": "Ecumenical shared holy place; not exclusive Catholic property or TLM Directory evidence."
+    },
+    {
+      "shrine_id": "shrine:20261009:JP:our-lady-akita-convent",
+      "place_id": "place:JP:our-lady-akita-convent",
+      "name": "Seitai Hoshikai — Our Lady of Akita Chapel",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Akita (historically approved local account)",
+      "origin_summary": "Source-documented pilgrimage destination: Our Lady of Akita (historically approved local account). No particular traditional Latin Mass or rite is implied.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PIL-JP-our-lady-akita-convent"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "pilgrimages": [
@@ -3661,6 +3831,153 @@
         "SHR-PIL-BULK-FR-notre-dame-paris"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:VA:saint-peter-vatican:destination",
+      "name": "Pilgrimage to St Peter's Basilica — Vatican",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Saint Peter the Apostle. No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-VA-saint-peter-vatican"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:IT:saint-paul-outside-walls-rome:destination",
+      "name": "Pilgrimage to Basilica Papale di San Paolo fuori le Mura",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Saint Paul the Apostle. No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-IT-saint-paul-outside-walls-rome"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:IT:santa-maria-maggiore-rome:destination",
+      "name": "Pilgrimage to Basilica Papale di Santa Maria Maggiore",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:IT:santa-maria-maggiore-rome",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:20261009:IT:santa-maria-maggiore-rome:commemoration"
+      ],
+      "scope_note": "Source-documented pilgrimage destination: Saint Mary Major and Salus Populi Romani. No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-IT-santa-maria-maggiore-rome"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:IT:scala-santa-rome:destination",
+      "name": "Pilgrimage to Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:IT:scala-santa-rome",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Holy Stairs and Sancta Sanctorum. No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-IT-scala-santa-rome"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:ES:santiago-compostela-cathedral:destination",
+      "name": "Pilgrimage to Catedral de Santiago de Compostela",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Saint James the Greater. No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-ES-santiago-compostela-cathedral"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:ES:basilica-del-pilar-zaragoza:destination",
+      "name": "Pilgrimage to Basílica de Nuestra Señora del Pilar",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:ES:basilica-del-pilar-zaragoza",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:20261009:ES:basilica-del-pilar-zaragoza:commemoration"
+      ],
+      "scope_note": "Source-documented pilgrimage destination: Our Lady of the Pillar. No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-ES-basilica-del-pilar-zaragoza"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:ES:santo-toribio-liebana:destination",
+      "name": "Pilgrimage to Monasterio de Santo Toribio de Liébana",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Holy Cross (Lignum Crucis). No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-ES-santo-toribio-liebana"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:ES:carmel-alba-tormes:destination",
+      "name": "Pilgrimage to Monasterio de la Anunciación — Carmelitas Descalzas",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Saint Teresa of Jesus and relics. No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-ES-carmel-alba-tormes"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:PS:holy-sepulchre-jerusalem:destination",
+      "name": "Pilgrimage to Church of the Holy Sepulchre — shared Christian sanctuary",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:PS:holy-sepulchre-jerusalem",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Calvary and the Empty Tomb of the Risen Christ. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "source_ids": [
+        "SHR-PIL-PS-holy-sepulchre-jerusalem"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:PS:nativity-bethlehem:destination",
+      "name": "Pilgrimage to Church of the Nativity — shared Christian sanctuary",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:PS:nativity-bethlehem",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Grotto and Basilica of the Nativity. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "source_ids": [
+        "SHR-PIL-PS-nativity-bethlehem"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:20261009:JP:our-lady-akita-convent:destination",
+      "name": "Pilgrimage to Seitai Hoshikai — Our Lady of Akita Chapel",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:20261009:JP:our-lady-akita-convent",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-documented pilgrimage destination: Our Lady of Akita (historically approved local account). No particular traditional Latin Mass or rite is implied.",
+      "source_ids": [
+        "SHR-PIL-JP-our-lady-akita-convent"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "routes": [
@@ -4984,6 +5301,34 @@
         "SHR-SANTA-CROCE-RELICS"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:20261009:IT:santa-maria-maggiore-rome:commemoration",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:20261009:IT:santa-maria-maggiore-rome:destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.santa_maria_maggiore_aug5",
+      "source_event_label": "Dedication of the Papal Basilica of Saint Mary Major — 5 August",
+      "source_ids": [
+        "SHR-PIL-IT-santa-maria-maggiore-rome"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:20261009:ES:basilica-del-pilar-zaragoza:commemoration",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:20261009:ES:basilica-del-pilar-zaragoza:destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.pilar_oct12",
+      "source_event_label": "Our Lady of the Pillar — local observance on 12 October",
+      "source_ids": [
+        "SHR-PIL-ES-basilica-del-pilar-zaragoza"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
     }
   ]
 }
