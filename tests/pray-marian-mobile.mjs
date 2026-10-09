@@ -113,6 +113,10 @@ try{
  });
  assert.ok(firstCue>=0,"Rosary cue-bearing Hail Mary is not reachable");
  await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").evaluate(x=>x.click());
+ const guidedCue=page.locator("#aoPrayerBookRoot.open [data-ao-rosary-guided-bead]");
+ assert.equal(await guidedCue.count(),1,"Guided Hail Mary lacks its original coherent bilingual meditation");
+ assert.match(await guidedCue.innerText(),/God sends Gabriel|Dieu envoie Gabriel/);
+ assert.equal(await guidedCue.getAttribute("data-ao-rosary-context"),"editorial-meditation");
  assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-cue").count(),0,
    "Unreviewed bead Scripture still presented as certified English/French quotation");
  assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-actions").count(),0,

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {ROSARY_SCRIPTURE_REFERENCE_V1,ROSARY_SCRIPTURE_POLICY_V1,rosaryScripturePassage} from "../src/pray/rosary-scripture-policy.js";
 import {ROSARY_MYSTERY_CONTEXT_V1} from "../src/pray/rosary-mystery-context.v1.js";
+import {ROSARY_GUIDED_BEAD_MEDITATIONS_V1} from "../src/pray/rosary-guided-bead-meditations.v1.js";
 
 const audit=JSON.parse(readFileSync("data/pray/rosary-scripture-editorial-inventory.v1.json","utf8"));
 const entries=Object.entries(ROSARY_SCRIPTURE_REFERENCE_V1);
@@ -10,6 +11,18 @@ assert.deepEqual(entries.map(([id])=>id),[
   "joy1","joy2","joy3","joy4","joy5","lum1","lum2","lum3","lum4","lum5",
   "sor1","sor2","sor3","sor4","sor5","glo1","glo2","glo3","glo4","glo5"
 ]);
+assert.equal(Object.keys(ROSARY_GUIDED_BEAD_MEDITATIONS_V1).length,20,"all 20 mysteries need guided bead meditations");
+for(const [id,moments] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1)){
+ assert.ok(ROSARY_SCRIPTURE_REFERENCE_V1[id],id+" lacks source passage");
+ assert.equal(moments.length,10,id+" must provide exactly ten sequential meditations");
+ for(const [index,moment] of moments.entries()){
+   assert.equal(moment.bead,index+1,id+" bead order drift");
+   for(const language of ["en","fr"]){
+      assert.ok(moment[language].length>=25,id+" "+index+" empty "+language+" meditation");
+      assert.ok(!/\.\.\.|…|\[\s*\.\.\.\s*\]/.test(moment[language]),"ellipsis in "+id+" "+language);
+   }
+ }
+}
 assert.equal(Object.keys(ROSARY_MYSTERY_CONTEXT_V1).length,20,
  "all 20 mysteries must have coherent bilingual contextual Scripture meditations");
 assert.equal(ROSARY_SCRIPTURE_POLICY_V1.readingMode,"SOURCE_LINKED_BILINGUAL_MYSTERY_CONTEXT");
@@ -35,6 +48,9 @@ for(const [id,ctx] of Object.entries(ROSARY_MYSTERY_CONTEXT_V1)){
    id+" has no French Catholic edition link");
  assert.ok(passage.href.includes("version=DRA"),id+" English link not Douay–Rheims");
 }
+assert.match(rosaryScripturePassage("glo4").doctrinalHref,/munificentissimus-deus\.html$/);
+assert.match(rosaryScripturePassage("glo5").doctrinalHref,/ad-caeli-reginam\.html$/);
+assert.equal(rosaryScripturePassage("joy1").doctrinalHref,null);
 assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo4.kind,"related_scripture_for_doctrinal_mystery");
 assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo5.kind,"traditional_marian_typology");
 assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo4.summary.en,/assumed body and soul into heavenly glory/);

@@ -1,4 +1,5 @@
 import { ROSARY_MYSTERY_CONTEXT_V1 } from "./rosary-mystery-context.v1.js";
+import { ROSARY_GUIDED_BEAD_MEDITATIONS_V1 } from "./rosary-guided-bead-meditations.v1.js";
 
 /**
  * Rosary Scripture display policy — editorial safety gate, 9 October 2026.
@@ -122,7 +123,12 @@ export function rosaryScripturePassage(id){
     // Verbatim wording lives in these Catholic editions, never in the
     // editorial summaries, which are expressly NOT Scripture quotations.
     href:"https://www.biblegateway.com/passage/?search="+encodeURIComponent(item.reference)+"&version=DRA",
-    hrefFr:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/"+encodeURIComponent(context.bookFr)+"#"+item.reference.split(" ").pop().split(":")[0]
+    hrefFr:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/"+encodeURIComponent(context.bookFr)+"#"+item.reference.split(" ").pop().split(":")[0],
+    doctrinalHref:id==="glo4"
+      ?"https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+      :id==="glo5"
+      ?"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
+      :null
   });
 }
 
@@ -136,6 +142,24 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
   // until all original edition/reference mappings receive editorial review.
   for(const el of root.querySelectorAll(".lab-prayer-sheet .lab-scripture-cue,.lab-prayer-sheet .lab-scripture-actions")){
     el.remove();
+  }
+  // Original editorial contemplations, never represented as Bible quotations.
+  // Canonical Rosary player still owns bead count, prayer text and progression.
+  for(const old of root.querySelectorAll("[data-ao-rosary-guided-bead]"))old.remove();
+  if(guided&&info.step.cue&&Number.isInteger(info.mi)){
+    const family={joyful:"joy",sorrowful:"sor",glorious:"glo",luminous:"lum"}[String(info.set||"")];
+    const id=family+String(info.mi+1),bead=Number(info.step.bead||0);
+    const moment=ROSARY_GUIDED_BEAD_MEDITATIONS_V1[id]?.[bead-1];
+    const prayer=root.querySelector(".lab-prayer-sheet");
+    if(prayer&&moment&&moment.bead===bead){
+      const note=root.ownerDocument.createElement("p");
+      note.className="aoRosaryGuidedBeadMeditation";
+      note.dataset.aoRosaryGuidedBead=id+".b"+bead;
+      note.dataset.aoRosaryContext="editorial-meditation";
+      note.lang=french?"fr":"en";
+      note.textContent=moment[french?"fr":"en"];
+      prayer.appendChild(note);
+    }
   }
   const contemplation=root.querySelector(".lab-contemplation");
   if(!contemplation || info.step.kind!=="mystery")return true;
@@ -197,6 +221,17 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
     link.dataset.aoRosaryScriptureEdition=french?"crampon-1923":"douay-rheims-challoner";
     link.textContent=french?"Lire le passage · Bible Crampon 1923 ↗":"Read the passage · Douay–Rheims ↗";
     section.appendChild(link);
+    if(passage.doctrinalHref){
+      const doctrine=root.ownerDocument.createElement("a");
+      doctrine.href=passage.doctrinalHref;
+      doctrine.target="_blank";
+      doctrine.rel="noopener noreferrer";
+      doctrine.dataset.aoRosaryDoctrinalWitness=id;
+      doctrine.textContent=french
+        ?"Enseignement de l’Église · Pie XII ↗"
+        :"Church teaching · Pius XII ↗";
+      section.appendChild(doctrine);
+    }
   }
   return true;
 }

@@ -739,7 +739,7 @@ function rosaryExactState(info){
  if(guided&&kind==='mystery'){
    action={value:'mystery-silence',label:L('Pause · contemplate','Pause · contemplez'),symbol:'·',persistent:true};
  }else if(guided&&hasCue){
-   action={value:'scripture-silence',label:L('Scripture · brief silence','Écriture · bref silence'),symbol:'·',persistent:false};
+   action={value:'scripture-silence',label:L('Meditate · brief silence','Méditez · bref silence'),symbol:'·',persistent:false};
  }
  return{gesture,action,key,entering};
 }
