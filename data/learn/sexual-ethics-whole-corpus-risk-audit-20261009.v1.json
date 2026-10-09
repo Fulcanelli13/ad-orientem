@@ -74,6 +74,12 @@
       "id": "CSE-ATTRIBUTION-07",
       "issue": "Existing 55-debate certification audit identifies partial original-proponent attribution risks and records zero full stage-by-stage primary passage certification.",
       "resolution": "Retain original-opponent validation gates. Do not infer original author endorsement merely from source presence."
+    },
+    {
+      "severity": "P2",
+      "id": "CSE-PRIMARY-20261009-01",
+      "issue": "CSE119 cited a general voluntariness passage but not the direct traditional text on a victim's chastity under sexual violence.",
+      "resolution": "Add Aquinas II-II q.151 a.1 ad 2 as a bounded original normative source, with the live source record and 150-case snapshot reconciled in the high-risk original-source batch."
     }
   ],
   "cases": [
@@ -2129,6 +2135,7 @@
       "has_bilingual_detail": false,
       "source_ids": [
         "ST6",
+        "ST151",
         "PIUSX",
         "CIC_PENANCE"
       ],
