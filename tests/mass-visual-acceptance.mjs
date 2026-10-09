@@ -181,6 +181,40 @@ try{
   assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
 
+  // LIVE visual hierarchy: one instance for persistent posture and priest
+  // action, while surrounding prose remains readable at rest.
+  await page.waitForTimeout(400);
+  const hierarchy=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const postureTop=root?.querySelector('[data-icon-slot="posture-top"]');
+    const postureRail=root?.querySelector('.ao-rail-left [data-channel="posture"]');
+    const badge=root?.querySelector(".ao-priest-action-badge");
+    const active=root?.querySelector('.ao-reader-paragraph[data-active="true"]');
+    const inactive=[...root?.querySelectorAll?.('.ao-reader-paragraph[data-kind="TEXT"]:not([data-active="true"])')??[]];
+    const next=root?.querySelector('[data-reader-nav="next"]');
+    const previous=root?.querySelector('[data-reader-nav="previous"]');
+    return {
+      postureTopVisible:postureTop && !postureTop.hidden,
+      postureRailDisplay:postureRail?getComputedStyle(postureRail).display:null,
+      badgeDisplay:badge?getComputedStyle(badge).display:null,
+      activeOpacity:active?Number.parseFloat(getComputedStyle(active).opacity):null,
+      inactiveOpacity:inactive.length?Number.parseFloat(getComputedStyle(inactive[inactive.length-1]).opacity):null,
+      nextOpacity:next?Number.parseFloat(getComputedStyle(next).opacity):null,
+      nextHeight:next?.getBoundingClientRect().height,
+      previousHeight:previous?.getBoundingClientRect().height,
+    };
+  });
+  assert.equal(hierarchy.postureTopVisible,true,"top posture owner became unavailable");
+  assert.equal(hierarchy.postureRailDisplay,"none","persistent posture is duplicated in LIVE rail and top state ribbon");
+  assert.equal(hierarchy.badgeDisplay,"none","priest action appears in both top badge and right action rail");
+  assert.ok(hierarchy.activeOpacity>=.95,"active prayer lost primary visual focus: "+JSON.stringify(hierarchy));
+  assert.ok(hierarchy.inactiveOpacity>=.59&&hierarchy.inactiveOpacity<=.7,
+    "surrounding prayer text is unreadably dim or overwhelms active text: "+JSON.stringify(hierarchy));
+  assert.ok(hierarchy.nextOpacity>=.2&&hierarchy.nextOpacity<=.35,
+    "resting card arrow distracts from prayer focus: "+JSON.stringify(hierarchy));
+  assert.ok(hierarchy.nextHeight>=44&&hierarchy.previousHeight>=44,
+    "reducing arrow chrome accidentally reduced touch targets: "+JSON.stringify(hierarchy));
+
   // Phone ergonomics acceptance at standard and narrow widths. Test computed
   // hitboxes, not a CSS string or desktop hover state.
   const phoneAudit=[];
@@ -211,8 +245,8 @@ try{
         scholaDock:rect(".ao-schola-dock"),
         prayerBody:rect(".ao-prayer-body"),
         prayerCard:rect(".ao-prayer-card"),
-        leftRail:rect(".ao-rail-left .ao-rail-item"),
-        rightRail:rect(".ao-rail-right .ao-rail-item"),
+        leftRail:rect(".ao-rail-left"),
+        rightRail:rect(".ao-rail-right"),
         stateLabels:[...root.querySelectorAll(".ao-state-label")].map(el=>({
           text:el.textContent.trim(),
           width:el.getBoundingClientRect().width,
@@ -399,6 +433,17 @@ try{
   assert.ok(consecration.consecrationWordsCount>=1,"Words of Consecration lost dedicated salience");
   assert.equal(consecration.stageLeft,"true","donor LIVE faithful rail disappeared when no transient cue was active");
   assert.equal(consecration.stageRight,"true","donor LIVE audio rail disappeared at the Consecration");
+  const rubricPresentation=await page.evaluate(()=>{
+    const rubric=[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-kind='RUBRIC']")]
+      .find(el=>getComputedStyle(el).display!=="none");
+    if(!rubric)return null;
+    const cs=getComputedStyle(rubric);
+    return {headingDisplay:getComputedStyle(rubric,"::before").display,fontSize:Number.parseFloat(cs.fontSize),text:rubric.textContent.trim()};
+  });
+  assert.ok(rubricPresentation?.text.length>0,"LIVE rubric source text disappeared");
+  assert.equal(rubricPresentation.headingDisplay,"none","LIVE rubric regained repeated micro-sized RUBRIC headings");
+  assert.ok(rubricPresentation.fontSize>=12,"LIVE rubrics remain too small to read");
+
   assert.notEqual(consecration.guideShort,"","short Guide rubric is not visible in the state ribbon");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
@@ -648,7 +693,7 @@ try{
   await page.screenshot({path:resolve(out,"13-mass-wide-donor-shell.png"),fullPage:false});
 
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
-    setup,opening,consecration,wordsState,elevationState,
+    setup,opening,hierarchy,consecration,wordsState,elevationState,
     salience:{gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
     wide,phoneAudit,
     errors

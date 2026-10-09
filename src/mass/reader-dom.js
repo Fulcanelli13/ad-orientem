@@ -540,6 +540,39 @@ button.ao-schola-control{cursor:pointer}
     -webkit-line-clamp:3;max-height:3.5em;font-size:10.5px;line-height:1.12
   }
 }
+/* LIVE hierarchy: a persistent state gets one visual owner. The top
+   ribbon holds posture and priest position; rails hold transient cues and
+   priest voice. Keep the corresponding DOM nodes for cue ownership/tests. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail-left .ao-rail-item[data-channel="posture"],
+.ao-reader-shell[data-mode="LIVE"] .ao-priest-action-badge{display:none}
+
+/* A readable background to the active line, without flattening the focus
+   hierarchy. Preserve the recovered donor values above as the baseline for
+   other presentation modes. */
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{opacity:.62}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.62}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.86}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.75}
+
+/* Rubrics are identifiable by their quiet inset and rule, not a repeated
+   seven-pixel RUBRIC heading on every paragraph. Keep the complete source. */
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]{
+  margin:8px 0 10px;padding:8px 10px;
+  font-size:.78rem;line-height:1.5;font-weight:500
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]::before{display:none}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.73}
+
+/* Keep full-sized edge targets, but let prayer text rather than arrows own
+   the resting state. Touch-focus/keyboard and edge-handoff remain salient. */
+@media(max-width:760px){
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-nav button{opacity:.25}
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-nav button:hover,
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-nav button:focus-visible{opacity:.92}
+  .ao-reader-shell[data-mode="LIVE"][data-handoff="next"] .ao-reader-nav button[data-reader-nav="next"],
+  .ao-reader-shell[data-mode="LIVE"][data-handoff="previous"] .ao-reader-nav button[data-reader-nav="previous"]{opacity:.56}
+}
 @media(prefers-reduced-motion:reduce){
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}

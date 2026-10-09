@@ -386,4 +386,17 @@ expect(html.includes('content:"READ FULL RUBRIC"'),
 expect(readerDomSource.includes('node.setAttribute("aria-expanded","false")'),
   "expandable rubrics did not receive accessible collapsed semantics");
 
+expect(html.includes("LIVE hierarchy: a persistent state gets one visual owner"),
+  "LIVE one-state/one-surface hierarchy correction disappeared");
+expect(html.includes('.ao-rail-left .ao-rail-item[data-channel="posture"]'),
+  "persistent posture repeat suppression was removed");
+expect(html.includes('.ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.86}'),
+  "the post-focus near-line contrast hierarchy regressed");
+expect(html.includes('opacity:.62'),
+  "LIVE unfocused liturgical text reverted to unreadably dim donor presentation");
+expect(html.includes('.ao-priest-action-badge{display:none}'),
+  "LIVE action icon duplication was reintroduced");
+expect(html.includes('content:"RUBRIC";display:block'),
+  "non-LIVE source rubric differentiation was removed while decluttering LIVE");
+
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
