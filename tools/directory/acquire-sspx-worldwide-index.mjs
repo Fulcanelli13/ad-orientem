@@ -84,7 +84,6 @@ async function readHtml(page,url,{fetchImpl=fetch}={}){
       if(!response.ok)throw new Error("HTTP "+response.status);
       const html=await response.text();
       if(html.length<500)throw new Error("insufficient HTML "+html.length);
-      await page.route("**/*",route=>route.abort());
       await page.setContent(html,{waitUntil:"domcontentloaded",timeout:15000});
       const links=await captureLinks(page);
       if(links.length<10)throw new Error("source DOM not preserved: links="+links.length);
