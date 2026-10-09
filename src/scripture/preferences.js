@@ -21,6 +21,14 @@ export function createScripturePreferences(storage = globalThis.localStorage) {
       const language = allowed.has(raw.language)?raw.language:"en";
       return {language, bookmarks};
     },
+    englishEdition() {
+      const requested = read(storage).englishEdition;
+      return ["dr-challoner","ncb-2019"].includes(requested) ? requested : "dr-challoner";
+    },
+    setEnglishEdition(editionId) {
+      if (!["dr-challoner","ncb-2019"].includes(editionId)) throw new Error("Unavailable English reader preference");
+      return save({...read(storage),englishEdition:editionId});
+    },
     setLanguage(language) {
       if(!allowed.has(language)) throw new Error("Unsupported Scripture language");
       return save({...read(storage),language});
