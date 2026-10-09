@@ -1,0 +1,46 @@
+name: Temporary per-icon extraction
+on:
+  push:
+    branches:
+      - performance/per-icon-sprite-requests-20261009
+    paths:
+      - ".github/workflows/temporary-per-icon-extraction.yml"
+permissions:
+  contents: write
+jobs:
+  extract-validate:
+    if: github.ref == 'refs/heads/performance/per-icon-sprite-requests-20261009'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: performance/per-icon-sprite-requests-20261009
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate per-icon SVGs from certified historical sprite geometry
+        run: |
+          node tools/split-refined-svg-by-symbol.mjs --apply
+          node tools/split-refined-svg-by-symbol.mjs --verify
+          node tests/startup-payload-contract.mjs
+      - name: Install phone browser
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Prove per-icon pixel parity, first-load bytes, and app navigation
+        run: |
+          node tests/per-icon-svg-e2e.mjs
+          node tests/route-lazy-browser-e2e.mjs
+          npm run test:app-shell-contract
+          npm run test:rc-interaction-qa
+          npm run test:phone
+      - name: Commit generated assets only after successful acceptance
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html data/presentation/startup-per-icon-report.v1.json assets/generated-symbols
+          git diff --cached --stat
+          git commit -m "Replace three cold SVG sprite requests with individually cacheable symbol assets"
+          git push origin HEAD:refs/heads/performance/per-icon-sprite-requests-20261009
