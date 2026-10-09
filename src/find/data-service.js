@@ -14,6 +14,7 @@ const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"sspx-priority-europe-pacific",file:"sspx-priority-europe-pacific-20261009.v1.json"}),
   Object.freeze({key:"sspx-oct26-followup-65",file:"sspx-oct26-followup-65.v1.json",geoFile:"sspx-oct26-followup-65.geo.v1.json"}),
   Object.freeze({key:"sspx-global-completion-20261009",file:"sspx-global-completion-20261009.v1.json",geoFile:"sspx-global-completion-20261009.geo.v1.json"}),
+  Object.freeze({key:"sspx-official-route-oct26",file:"sspx-official-route-oct26-20261009.v1.json",geoFile:"sspx-official-route-oct26-20261009.geo.v1.json"}),
   Object.freeze({key:"sspx-oct-poland",file:"sspx-oct26-poland.v1.json",geoFile:"sspx-oct26-poland.geo.v1.json"}),
   Object.freeze({key:"sspx-asia-central-americas",file:"sspx-asia-central-americas.v1.json",geoFile:"sspx-asia-central-americas.geo.v1.json"}),
   Object.freeze({key:"sspx-north-america",file:"sspx-north-america-20261008.v1.json",geoFile:"sspx-north-america-20261008.geo.v1.json"}),
