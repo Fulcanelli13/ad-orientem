@@ -47,6 +47,20 @@ ctrl.goTo("PALM-R04");
 state=ctrl.project();
 assert.equal(state.card.actorScope,"FAITHFUL_PARTICIPATING");
 assert.equal(state.card.posture,"PROCESSIONAL");
+assert.equal(state.posture,null,"Palm procession posture imposed on a non-participant");
+assert.equal(state.processionParticipant,false);
+ctrl.setProcessionParticipant(true);
+assert.equal(ctrl.project().posture,"PROCESSIONAL",
+  "a participant in Palm procession is missing the processional posture");
+ctrl.goTo("PALM-R05");
+assert.equal(ctrl.project().posture,"PROCESSIONAL",
+  "Palm return processional posture lost after card transition");
+ctrl.setProcessionParticipant(false);
+assert.equal(ctrl.project().posture,null,
+  "declining Palm procession retained a participant-only posture");
+ctrl.goTo("PALM-R01");
+assert.equal(ctrl.project().posture,"STAND",
+  "nonparticipant filtering accidentally hid the common blessing posture");
 
 ctrl.goTo("PALM-R07");
 state=ctrl.project();
