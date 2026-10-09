@@ -127,7 +127,7 @@ export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis
         if(e.target?.matches?.("[data-rogation-choice]"))choice=e.target.value;
         refresh();
       });
-      anchor.insertAdjacentElement("afterend",root);
+      anchor.insertAdjacentElement("beforebegin",root);
     }
     const enabled=rogationPublicChoiceReady(library);
     const dedicated=root.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]');
