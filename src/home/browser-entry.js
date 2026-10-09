@@ -154,7 +154,7 @@ export function createHomeOwner(win=globalThis){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
       void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("find"))
-        .then(()=>win?.AO_FIND_APP_V1?.open?.({lens:"traditions",view:"map",query:""}))
+        .then(result=>result?.ok?win?.AO_FIND_APP_V1?.open?.({lens:"traditions",view:"map",query:""}):false)
         .catch(error=>{console.error("Customs Atlas navigation failed",error)});
       return;
     }
