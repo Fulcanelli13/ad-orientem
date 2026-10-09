@@ -7,6 +7,14 @@ assert.equal(tally.reduce((n,c)=>n+c,0),2288);
 assert.equal(benchmark.reported_homepage.active_locations,2284);
 assert.equal(benchmark.country_index.sum_of_listed_country_counts-benchmark.reported_homepage.active_locations,4);
 assert.equal(benchmark.observed_duplicate_pairs.length,2);
+const independentCountryCounts=benchmark.independent_official_source.latinmassdir_country_counts;
+assert.equal(Object.keys(independentCountryCounts).length,65);
+assert.equal(Object.values(independentCountryCounts).reduce((a,b)=>a+b,0),1573);
+const competitorCountries=new Set(Object.keys(benchmark.country_index.counts));
+const absent=Object.keys(independentCountryCounts).filter(cc=>!competitorCountries.has(cc)).sort();
+assert.deepEqual(absent,["BJ","BO","EC","FK","GI","IL","MQ","MU"]);
+assert.equal(new Set([...Object.keys(independentCountryCounts),...competitorCountries]).size,85);
+
 const rows=["sspx-district-seed","sspx-france-first-party","sspx-france-second-pass","sspx-four-district-bulk","sspx-oct26-europe","sspx-oct26-americas","sspx-oct26-poland","sspx-asia-central-americas","sspx-north-america-20261008","sspx-priority-europe-pacific-20261009","sspx-mexico-completion-20261009","sspx-oct26-followup-65","sspx-global-completion-20261009","sspx-official-route-oct26-20261009"];
 const byCountry={};let count=0;
 for(const name of rows){
