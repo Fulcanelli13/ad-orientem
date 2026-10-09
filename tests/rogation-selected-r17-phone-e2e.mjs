@@ -203,12 +203,31 @@ try{
     null,{timeout:5000});
    // Release gate: this violet II-class Mass must never display Gloria/Credo.
    const takeNext=async expectedSource=>{
+    const before=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId);
     const box=await next.boundingBox();assert.ok(box&&box.height>=44);
     await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-    await page.waitForFunction(expected=>
-     (globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sourceSectionId ??
-      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId)===expected,
-     expectedSource,{timeout:5000});
+    await page.waitForTimeout(120);
+    try {
+     await page.waitForFunction(expected=>
+      (globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sourceSectionId ??
+       globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId)===expected,
+      expectedSource,{timeout:4500});
+    }catch(error){
+     const diagnostic=await page.evaluate(()=>{
+      const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()??null;
+      const mass=globalThis.AO_R17_ACTIVE_MASS??null;
+      const reader=globalThis.AO_R17_NATIVE_READER_PREVIEW??null;
+      return {
+       card:{sectionId:card?.sectionId,sourceSectionId:card?.sourceSectionId,title:card?.title},
+       actualCelebration:mass?.session?.resolvedMass?.actualCelebration??mass?.resolvedMass?.actualCelebration??null,
+       provenance:mass?.session?.resolvedMass?.provenance??null,
+       sectionIds:reader?.root?.querySelectorAll?.("[data-reader-section]")?.length??0,
+       rootData:reader?.root?.dataset?{...reader.root.dataset}:null
+      };
+     });
+     throw new Error("ROGATION_NEXT_FAILED from "+before+" to "+expectedSource+
+       "; active="+JSON.stringify(diagnostic)+"; original="+String(error));
+    }
    };
    await takeNext("AO.CARD.001");
    await takeNext("AO.CARD.002");
