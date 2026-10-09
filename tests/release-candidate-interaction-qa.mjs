@@ -72,8 +72,7 @@ try{
   await page.goto("http://127.0.0.1:4194/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true &&
-    globalThis.AO_PRAY_APP_V1?.status?.().installed===true &&
-    typeof globalThis.AO_PRAY_V435930?.open==="function",
+    globalThis.AO_PRAY_APP_V1?.status?.().installed===true,
     null,{timeout:30000}
   );
 
@@ -91,6 +90,11 @@ try{
   },null,{timeout:15000});
   await page.locator("[data-ao-app-surface='pray']").tap({timeout:15000});
   await page.waitForSelector("#aoPray435930.open",{state:"visible",timeout:15000});
+  await page.waitForFunction(()=>
+    typeof globalThis.AO_PRAY_V435930?.open==="function" &&
+    globalThis.AO_PRAY_APP_V1?.status?.().readerLoaded===true,
+    null,{timeout:15000}
+  );
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
 
   async function directOpen(id,view){
