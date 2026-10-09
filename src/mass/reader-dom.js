@@ -512,6 +512,23 @@ button.ao-schola-control{cursor:pointer}
   .ao-schola-dock[data-collapsed="true"]{min-height:44px;height:44px!important;padding-top:7px;padding-bottom:5px}
   .ao-reader-nav button{opacity:.42}
 }
+/* Compact phones: keep the 48px transient cue rails and 19px liturgical
+   text, reclaim only redundant inset space, and let live labels wrap. */
+@media(max-width:760px){
+  .ao-state-label{
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+    white-space:normal;text-overflow:clip;overflow:hidden;
+    line-height:1.14;max-height:2.32em;overflow-wrap:break-word
+  }
+}
+@media(max-width:360px){
+  .ao-prayer-card{padding-left:0;padding-right:0}
+  .ao-state-cell{gap:4px;padding-left:3px;padding-right:3px}
+  .ao-state-cell>.ao-icon-mask{width:40px;height:40px;flex-basis:40px}
+  .ao-state-label{
+    -webkit-line-clamp:3;max-height:3.5em;font-size:10.5px;line-height:1.12
+  }
+}
 @media(prefers-reduced-motion:reduce){
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
