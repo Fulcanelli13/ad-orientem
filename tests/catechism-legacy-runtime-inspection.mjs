@@ -16,7 +16,7 @@ const source = read(controller.path);
 assert.match(source, /window\.AO_TRADITIONAL_CATECHISM\s*=\s*\{open:openCate/);
 assert.match(source, /openQuestion\s*:\s*\(n\)\s*=>\s*\{const x=getQ\(n\);if\(!x\)return false;state\.detail=Number\(n\)/);
 assert.match(source, /render\(\);return true\}/, "Native question handoff must render the opened Q&A");
-assert.match(html, /['"]ao-cate-root['"]/);
+assert.match(source, /['"]ao-cate-root['"]/, "Native Catechism root is created by the extracted controller");
 
 const packed = manifest.pack?.entries?.find(entry => entry.source === controller.path);
 if (packed) {
