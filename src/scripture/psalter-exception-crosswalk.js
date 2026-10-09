@@ -43,7 +43,7 @@ export const PSALTER_EXCEPTION_STATUS=Object.freeze({
  sourceReview:"actual CPDV author master and Douay–Rheims Catholic witness",
  unmappedCpdv:Object.freeze(["92:1"]),
  unmappedDouay:Object.freeze(["150:6 (empty third-party slot)"]),
- otherChapters:"NOT_CERTIFIED_FOR_AUTOMATIC_PARALLEL"
+ otherChapters:"133 SOURCE-ALIGNED CHAPTERS IN psalter-identity-crosswalk.js; REMAINING CHAPTERS BLOCKED"
 });
 export function psalterParallelVerse(reference,from,to){
  if(reference?.book!=="Psalms"||reference.verseStart!==reference.verseEnd)return null;
