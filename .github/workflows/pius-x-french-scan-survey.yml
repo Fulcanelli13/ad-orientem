@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'tests/learn-faith-1913-print-ocr-page-candidates.mjs'
+      - 'tests/learn-faith-french-1913-ocr-answer-candidates.mjs'
+      - 'data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json'
       - '.github/workflows/pius-x-french-scan-survey.yml'
   workflow_dispatch:
 permissions:
@@ -18,3 +20,11 @@ jobs:
           node-version: '22'
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
       - run: node tests/learn-faith-1913-print-ocr-page-candidates.mjs
+      - name: Extract 433 original French Q&A provisional OCR candidates
+        run: node tests/learn-faith-french-1913-ocr-answer-candidates.mjs
+      - name: Save unapproved French OCR source-review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pius-x-1913-french-qa-ocr-candidates
+          path: artifacts/pius-x-collation/french-1913-qa-ocr-candidates.json
+          if-no-files-found: error
