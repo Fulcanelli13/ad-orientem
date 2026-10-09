@@ -23,10 +23,10 @@ export function createScripturePreferences(storage = globalThis.localStorage) {
     },
     englishEdition() {
       const requested = read(storage).englishEdition;
-      return ["dr-challoner","ncb-2019"].includes(requested) ? requested : "dr-challoner";
+      return ["dr-challoner","cpdv-2009"].includes(requested) ? requested : "dr-challoner";
     },
     setEnglishEdition(editionId) {
-      if (!["dr-challoner","ncb-2019"].includes(editionId)) throw new Error("Unavailable English reader preference");
+      if (!["dr-challoner","cpdv-2009"].includes(editionId)) throw new Error("Unavailable English reader preference");
       return save({...read(storage),englishEdition:editionId});
     },
     setLanguage(language) {

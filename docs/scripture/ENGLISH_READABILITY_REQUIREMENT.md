@@ -1,23 +1,28 @@
-# Scripture reader — English readability correction (9 October 2026)
+# Ad Orientem Scripture — public-domain-only policy (9 October 2026)
 
-## Governing user need
-The extra English translation exists **primarily to help people who cannot comfortably read archaic Douay–Rheims English**. Traditional Catholic provenance remains essential, but the alternate edition must be noticeably easier to understand, not just historically esteemed. No Protestant Bible is included.
+## Decisions
+- English traditional: Douay–Rheims (Challoner), preferably a verified 1899 witness.
+- English contemporary **candidate**: Catholic Public Domain Version (Ronald L. Conte Jr., 2009), Vulgate-derived, full 73-book Catholic canon. Author expressly dedicates his translation to the public domain. His own notes caution that literal wording can be awkward; this is not certified as an easy-reading translation or approved by an ecclesiastical authority.
+- French: Crampon revised 1923; use original printed source or public-domain transcription.
+- Latin: Clementine Vulgate (historical editions).
+- Remove paid-permission Bibles (NCB, Knox, RSV, etc.) from selectable app choices and stop licence procurement work. Do not present an unapproved personal translation as official Catholic Scripture.
 
-### Present choices
-- **Douay–Rheims (Challoner)**: historical/traditional English reference, currently externally linked via a matching verse reference.
-- **New Catholic Bible (2019)**: explicit **clear-English Catholic reading alternative**. Produced by Catholic Book Publishing Corp. under Rev. Jude Winkler OFM Conv.; 73-book Catholic canon, Church approval from the Catholic Bishops' Conference in the Philippines. This is **not** a preconciliar TLM-era Bible or evidence of widespread use at TLM chapels; it is a contemporary Catholic accessibility choice and must pass doctrinal/editorial review before in-app distribution.
-- **Knox**: fully Catholic, Vulgate-based, and historically associated with traditional Catholic publishing, but literary diction makes it *not a guaranteed simpler alternative*. Keep as a separate optional edition pending rights rather than label it 'easy'.
-- **French**: Crampon 1923 only. **Latin**: Clementine Vulgate reference only; no change to the Mass reader.
+## Canon and source gates
+All 73 books and Catholic additions are required. Map each edition's *actual* Psalms / Esther / Daniel versification before allowing language switching to claim the same exact passage. Do not infer equivalents or invent missing text. The 12 DRC and 124 Crampon source blank slots require printed-edition reconciliation; blanks at the end of a shared grid may be padding rather than absent biblical verses.
 
-### Reader behaviour
-1. Preserve the same canonical book/chapter/verse when switching English editions.
-2. Persist the English edition preference separately from the app language. A French language selection must not destroy the English preference.
-3. Pending permission to distribute the New Catholic Bible digitally, selecting it opens the exact passage on the publisher-authorised Bible Gateway edition (version=NCB). **Do not display or cache the unlicensed Bible text within Ad Orientem.** This source handoff is a temporary compromise, not a completed in-app translation switch.
-4. Do not substitute D–R wording when NCB is selected or imply that two editions are displayed in-app.
-5. The preferred future workflow is single-tap **clear English ↔ traditional English** switch within the reader once the NCB text is licensed and passage-by-passage verified.
+Public domain removes the publisher-licensing dependency, **not** data-quality, versification, text provenance or ecclesiastical editorial review. Catalogue options may link externally while their canonical offline packs are incomplete; no misleading in-app Scripture text substitutions.
 
-### Sources and rights
-- Publisher and provenance: https://catholicbookpublishing.com/pages/ncb-faq
-- NCB edition and copyright: https://www.biblegateway.com/versions/New-Catholic-Bible-NCB-Bible/
-- NCB allows limited verse quotation under specified conditions, **not general redistribution of the full Bible or free offline caching**. Request explicit rights for full in-app use.
-- The Confraternity New Testament (1941) is a worthwhile historically TLM-era readability candidate, but **is not a self-contained modern-English 73-book Bible**, so it cannot solve the whole-Bible problem.
+## Source of truth
+- Douay 1899 verified public-domain edition: https://ebible.org/details.php?id=engDRA
+- CPDV author statement: https://ronconte.com/catholic-bible/
+- CPDV original master files: https://sacredbible.org/catholic/index.htm
+- CPDV author explains readability limitations: https://ronconte.com/catholic-bible/
+- Crampon revised 1923 source: https://fr.wikisource.org/wiki/Bible_Crampon_1923
+- Pinned open machine sources used for candidate import: scrollmapper/bible_databases commit e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c
+
+## Delivery definition
+1. Acquire all three candidate complete textual corpora and verify hashes and book identities.
+2. Compare candidate text against original edition, in particular CPDV against author's SacredBible.org master, and flag missing/unusual verse numbering.
+3. Compile 73 per-book packs and a manifest for *each* certified edition. Use the existing offline source-integrity and SHA-256 checks, and avoid loading the entire Bible on app startup.
+4. Offer traditional ↔ contemporary English at the same confirmed passage, with persistent preferences and without routing to paid copyrighted editions.
+5. Run phone/desktop text, bookmark, search, offline and Rosary/Formation regression checks. No changing authentic Mass text.

@@ -14,7 +14,7 @@ assert.equal(ROSARY_SCRIPTURE_LINKS.glo5.relation,"traditional_marian_typology")
 assert.deepEqual(parseScriptureReference("Luke 1:26-38"),{book:"Luke",chapter:1,verseStart:26,verseEnd:38});
 assert.throws(()=>parseScriptureReference("GospelOfThomas 1:1"));
 assert.throws(()=>parseScriptureReference("Luke 1:38-26"));
-assert.throws(()=>sourceReadingLink({book:"Luke",chapter:1,verseStart:28},"knox"));
-assert.match(sourceReadingLink({book:"Luke",chapter:1,verseStart:28},"ncb-2019"),/version=NCB&search=Luke%201%3A28/);
+assert.throws(()=>sourceReadingLink({book:"Luke",chapter:1,verseStart:28},"ncb-2019"));
+assert.match(sourceReadingLink({book:"Luke",chapter:1,verseStart:28},"cpdv-2009"),/sacredbible\.org\/catholic\/index\.htm/);
 assert.equal(typeof mountScriptureLibrary,"function");
 console.log("Scripture library/Rosary bridge contracts passed");

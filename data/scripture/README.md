@@ -11,7 +11,8 @@ generated Scripture verses may be used as filler.
   textual witness; Scrollmapper `FreCrampon` is a candidate machine-readable
   transcription, not independent proof of accuracy.
 - Clementine Vulgate: compare against a named Clementine print edition.
-- Knox: **no copy may be imported or redistributed without permission**.
+- Catholic Public Domain Version (2009): expressly placed in the public domain by its author; compare pinned digital candidate against https://sacredbible.org/catholic/index.htm and review independent translation before certification.
+- Knox and NCB: excluded from the public-domain-only edition shortlist.
 
 Before running `node tools/scripture/compile-books.mjs INPUT OUTPUT`:
 1. Confirm the exact printing, bibliographic details, rights for redistribution

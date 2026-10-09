@@ -6,6 +6,8 @@ const PIN="e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c";
 const SOURCES=[
  {id:"dr-challoner",tag:"DRC",path:"sources/en/DRC/DRC.json",
    sha1:"3cc9190cb18ef900585b47cb9a00bca8171394b8"},
+ {id:"cpdv-2009",tag:"CPDV",path:"sources/en/CPDV/CPDV.json",
+   sha1:"a78e21ca67eae82a998b9fbf8dee7a29dab40628"},
  {id:"crampon-1923",tag:"FreCrampon",path:"sources/fr/FreCrampon/FreCrampon.json",
    sha1:"d00e7f91c6f20c9e5c6a970deb655bf041dcfdbd"}
 ];
@@ -57,4 +59,4 @@ for(const source of SOURCES) {
  console.log(source.tag+" verses shape: "+JSON.stringify(shape(json.books?.[0]?.chapters?.[0]?.verses)).slice(0,2000));
 }
 await writeFile(out+"/source-report.json",JSON.stringify(report,null,2)+"\n");
-console.log("Two source snapshots byte-verified; neither is approved for in-app import.");
+console.log("Public-domain Catholic text candidates byte-verified; transcription and versification approval remain separate.");

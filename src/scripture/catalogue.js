@@ -8,27 +8,22 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
   "dr-challoner": Object.freeze({
     id: "dr-challoner", language: "en", title: "Douay–Rheims (Challoner)",
     tradition: "Catholic; Vulgate-derived", role: "default",
-    rights: "pending-edition-and-digital-rights-review", enabled: false
+    rights: "cleared", sourceReview: "1899-text-collation-pending", enabled: false
   }),
-  "knox": Object.freeze({
-    id: "knox", language: "en", title: "Knox Bible",
-    tradition: "Catholic; Vulgate-based with original-language consultation",
-    role: "literary-catholic-alternative", rights: "permission-required", enabled: false
-  }),
-  "ncb-2019": Object.freeze({
-    id: "ncb-2019", language: "en", title: "New Catholic Bible (2019) · Clear English",
-    tradition: "Catholic; 73-book contemporary translation by Catholic biblical scholars",
-    role: "readability-alternative", rights: "permission-required", enabled: false
+  "cpdv-2009": Object.freeze({
+    id: "cpdv-2009", language: "en", title: "Catholic Public Domain Version (2009)",
+    tradition: "Catholic; independent contemporary-English translation from Clementine Vulgate",
+    role: "readability-candidate", rights: "cleared", sourceReview: "author-master-text-review-pending", enabled: false
   }),
   "crampon-1923": Object.freeze({
     id: "crampon-1923", language: "fr", title: "Bible Crampon (1923 text)",
     tradition: "Catholic", role: "default",
-    rights: "pending-edition-and-digital-rights-review", enabled: false
+    rights: "cleared", sourceReview: "printed-1923-collation-pending", enabled: false
   }),
   "vulgate-clementine": Object.freeze({
     id: "vulgate-clementine", language: "la", title: "Biblia Sacra Vulgata (Clementine)",
     tradition: "Catholic Latin", role: "reference",
-    rights: "pending-source-and-digital-rights-review", enabled: false
+    rights: "cleared", sourceReview: "clementine-edition-review-pending", enabled: false
   })
 });
 
