@@ -180,13 +180,12 @@ assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"Back did not restore c
 node.listeners.click(makeClick({back:true}));
 assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'),"Back did not restore dossier index");
 for(const d of coverage.dossiers.filter(d=>d.research.length)){
-  node.listeners.click(makeClick({back:true}));
   node.listeners.click(makeClick({dossier:d.id}));
   assert.ok(node.innerHTML.includes('data-rr-article="'+d.research[0].id+'"'),d.id+" lacks rendered source-linked article");
   for(const record of d.research)assert.ok(node.innerHTML.includes('data-rr-article="'+record.id+'"'),"Missing original source-based case "+record.id);
   assert.ok(node.innerHTML.includes('https://'),d.id+" lost paragraph source hyperlinks");
+  node.listeners.click(makeClick({back:true}));
 }
-node.listeners.click(makeClick({back:true}));
 node.listeners.click(makeClick({mode:"records"}));
 assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"record search tab lost existing records");
 node.listeners.click(makeClick({id:"TLM026"}));
