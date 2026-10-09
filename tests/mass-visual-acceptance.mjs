@@ -331,6 +331,9 @@ try{
   assert.match(scholaState.progress,/^\d+(?:\.\d+)?%$/,"Schola lost progress state");
   assert.equal(scholaState.speed,"0.45×","Schola no longer starts on donor default speed");
   assert.ok(scholaState.latin.length>0,"Schola stream is empty");
+  const scholaBacking=await scholaDock.evaluate(el=>getComputedStyle(el).backgroundColor);
+  assert.equal(scholaBacking,"rgb(17, 25, 20)",
+    "Schola dock is translucent and shows competing Latin prayer text behind the controls");
 
   await scholaDock.locator("[data-schola-faster]").click();
   assert.equal(await scholaDock.locator("[data-role='schola-speed']").textContent(),"0.60×","Schola faster control did not advance donor speed ladder");
@@ -475,6 +478,14 @@ try{
     "native state projection dropped the Host elevation action after cue resolution");
   assert.equal(elevationState.projectedActionIconKey,"priest_elevate_host_rich","Host elevation cue lost its exact v4.6 action key");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
+  const elevationBackdrop=await page.locator("#ao-r17-native-reader-preview [data-role='cinematic']").evaluate(el=>({
+    backgroundColor:getComputedStyle(el).backgroundColor,
+    backgroundImage:getComputedStyle(el).backgroundImage,
+  }));
+  assert.equal(elevationBackdrop.backgroundColor,"rgb(7, 11, 8)",
+    "Host Elevation illustration is competing with the underlying RUBRIC through a transparent backdrop");
+  assert.match(elevationBackdrop.backgroundImage,/radial-gradient/,
+    "Host Elevation lost its restrained radial sacred-light treatment");
   assert.equal(elevationState.cinematicTitle,"ELEVATION");
   assert.equal(elevationState.cinematicSub,"SACRED HOST");
   assert.equal(elevationState.cinematicIcon.hidden,false,"Host elevation master is hidden");
