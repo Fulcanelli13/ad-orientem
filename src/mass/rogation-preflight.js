@@ -183,7 +183,7 @@ export function mountRogationPreflight({doc,getResolvedMass,resolveDay=null,fetc
         library=value;loadError=null;refresh();
       }).catch(error=>{
         library={};loadError=String(error?.message??error);refresh();
-      }).finally(()=>{loading=false});
+      }).finally(()=>{loading=false;refresh()});
     }
   }
   function selectionFor(legacy){
