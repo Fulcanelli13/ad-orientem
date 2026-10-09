@@ -1,0 +1,681 @@
+{
+  "schema": "AO_APPROVED_FIRST25_SOURCE_REVIEW_V1",
+  "review_date": "2026-10-09",
+  "interpretation": "25 third-party detail pages, including two without original links. Current first-party pages supersede directory times. Monastic public Masses need correct institutional ownership. This audit does not certify every held site.",
+  "summary": {
+    "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW": 12,
+    "PUBLISHED_DIOCESAN_OFFICIAL": 5,
+    "VERIFIED_MONASTIC_MASS_OWNERSHIP_REVIEW": 2,
+    "ALREADY_IN_CANONICAL_DIOCESAN": 3,
+    "NO_ORIGINAL_SOURCE_LINK_HOLD": 2,
+    "FSSP_ASSOCIATED_SITE_RECONCILE": 1
+  },
+  "records": [
+    {
+      "source_id": "LMD:abbey-of-our-lady-of-ephesus-gower-united-states",
+      "name": "Abbey of Our Lady of Ephesus Missouri, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/abbey-of-our-lady-of-ephesus-gower-united-states/",
+      "claimed_services": [
+        {
+          "day": "Daily",
+          "time": "11:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://benedictinesofmary.org/schedule/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:agrupacion-catolica-universitaria-miami-united-states",
+      "name": "Agrupación Católica Universitaria Florida, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/agrupacion-catolica-universitaria-miami-united-states/",
+      "claimed_services": [
+        {
+          "day": "Occasional Mondays",
+          "time": "07:00",
+          "service": "Low Mass"
+        },
+        {
+          "day": "Occasional Tuesdays",
+          "time": "07:00",
+          "service": "Low Mass"
+        },
+        {
+          "day": "Occasional Wednesdays",
+          "time": "07:00",
+          "service": "Low Mass"
+        },
+        {
+          "day": "Occasional Fridays",
+          "time": "07:00",
+          "service": "Low Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://fb.com/Miamiensis",
+        "https://www.latinmassmiami.org/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "evidence_limit": "Occasional, non-fixed Mass announcements; no reproducible public weekly schedule",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:all-souls-historic-chapel-sanford-united-states",
+      "name": "All Souls Historic Chapel Florida, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/all-souls-historic-chapel-sanford-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "14:00",
+          "service": "Mass 1st/3rd Sunday - Low Mass; 2nd/4th Sunday - High Mass; 5th Sunday - Alternating"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": "17:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://asccsanford.org/"
+      ],
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:annunciation-church-houston-united-states",
+      "name": "Annunciation Church Texas, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/annunciation-church-houston-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "11:00",
+          "service": "Solemn Mass"
+        },
+        {
+          "day": "Every Tuesday",
+          "time": "12:10",
+          "service": "Low Mass"
+        },
+        {
+          "day": "Every Thursday",
+          "time": "12:10",
+          "service": "Low Mass"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": null,
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "http://www.annunciationcc.org/"
+      ],
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:annunciation-church-yonkers-united-states",
+      "name": "Annunciation Church New York, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/annunciation-church-yonkers-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "14:00",
+          "service": "Sung Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "http://annunciation-fatima.com/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "official_url": "https://annunciation-fatima.com/",
+      "evidence_limit": "Official site shows 14:00 Sunday Latin Mass without explicit liturgical edition",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:annunciation-monastery-of-the-poor-clare-colettine-nuns-minooka-united-states",
+      "name": "Annunciation Monastery of the Poor Clare Colettine Nuns Illinois, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/annunciation-monastery-of-the-poor-clare-colettine-nuns-minooka-united-states/",
+      "claimed_services": [
+        {
+          "day": "Monday to Saturday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": "09:30",
+          "service": "Mass Check schedule on link below."
+        },
+        {
+          "day": "Every Sunday",
+          "time": "10:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://www.poorclaresofjoliet.org/liturgical-schedule"
+      ],
+      "decision": "VERIFIED_MONASTIC_MASS_OWNERSHIP_REVIEW",
+      "official_url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+      "official_schedule": "MON-SAT_08:00; SUN_07:00",
+      "discrepancy": "Third party claims MON-SAT 07:00 and SUN 10:00, whereas monastery currently says 08:00 and SUN 07:00",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:ave-maria-church-ave-maria-united-states",
+      "name": "Ave Maria Church Florida, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/ave-maria-church-ave-maria-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "12:30",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Tuesday",
+          "time": "07:30",
+          "service": "Low Mass"
+        },
+        {
+          "day": "Every Thursday",
+          "time": "07:30",
+          "service": "Low Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://www.avemariaparish.org/"
+      ],
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:basilica-of-saint-stephen-new-orleans-united-states",
+      "name": "Basilica of Saint Stephen Louisiana, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/basilica-of-saint-stephen-new-orleans-united-states/",
+      "claimed_services": [
+        {
+          "day": "1st Friday",
+          "time": "18:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://www.goodshepherdparishnola.com/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "official_url": "https://www.goodshepherdparishnola.com/",
+      "evidence_limit": "Current first Friday Latin Mass, but specific 1962 liturgical form not confirmed",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:basilica-of-saints-peter-paul-lewiston-united-states",
+      "name": "Basilica of Saints Peter & Paul Maine, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/basilica-of-saints-peter-paul-lewiston-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "08:30",
+          "service": "Mass Upper Church - listed in parish bulletin under: 1962 Missal"
+        }
+      ],
+      "linked_original_sources": [
+        "https://www.unavocemaine.org/",
+        "https://princeofpeace.me/mass-confession-times"
+      ],
+      "decision": "ALREADY_IN_CANONICAL_DIOCESAN",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:basilica-shrine-of-saint-mary-wilmington-united-states",
+      "name": "Basilica Shrine of Saint Mary North Carolina, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/basilica-shrine-of-saint-mary-wilmington-united-states/",
+      "claimed_services": [
+        {
+          "day": "4th Sunday",
+          "time": "17:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "http://thestmaryparish.org/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:bishop-ryan-chapel-minot-united-states",
+      "name": "Bishop Ryan Chapel North Dakota, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/bishop-ryan-chapel-minot-united-states/",
+      "claimed_services": [
+        {
+          "day": "Other",
+          "time": null,
+          "service": "Mass Once a month, sometimes (but not always) on a Sunday. Check https://www.facebook.com/MinotTLM/"
+        }
+      ],
+      "linked_original_sources": [],
+      "decision": "NO_ORIGINAL_SOURCE_LINK_HOLD",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:blessed-sacrament-church-birmingham-united-states",
+      "name": "Blessed Sacrament Church Alabama, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/blessed-sacrament-church-birmingham-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Sunday",
+          "time": "10:45",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Tuesday",
+          "time": "08:30",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Thursday",
+          "time": "08:30",
+          "service": "Mass"
+        },
+        {
+          "day": "1st Friday",
+          "time": "18:30",
+          "service": "Mass"
+        },
+        {
+          "day": "1st Saturday",
+          "time": "08:30",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "http://www.myblessedsacrament.org/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:blessed-sacrament-church-honolulu-united-states",
+      "name": "Blessed Sacrament Church Hawaii, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/blessed-sacrament-church-honolulu-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "10:00",
+          "service": "Mass"
+        },
+        {
+          "day": "1st Saturday",
+          "time": "09:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://blessedsacramentpauoa.blogspot.com/p/latin-mass.html"
+      ],
+      "decision": "ALREADY_IN_CANONICAL_DIOCESAN",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:carmel-of-jesus-mary-joseph-fairfield-united-states",
+      "name": "Carmel of Jesus, Mary & Joseph Pennsylvania, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/carmel-of-jesus-mary-joseph-fairfield-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "09:00",
+          "service": "Sung Mass Carmelite Rite"
+        },
+        {
+          "day": "Monday to Saturday",
+          "time": "06:00",
+          "service": "Low Mass Carmelite Rite"
+        }
+      ],
+      "linked_original_sources": [
+        "http://fairfieldcarmelites.org/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "evidence_limit": "Carmelite Rite, not automatically Roman Missal 1962; requires separate rite classification",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:carmel-of-jesus-mary-joseph-valparaiso-united-states",
+      "name": "Carmel of Jesus, Mary & Joseph Nebraska, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/carmel-of-jesus-mary-joseph-valparaiso-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Monday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Tuesday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Wednesday",
+          "time": "06:30",
+          "service": "Mass"
+        },
+        {
+          "day": "2nd Wednesday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Thursday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Friday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Saturday",
+          "time": "08:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Sunday",
+          "time": "08:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://www.lincolndiocese.org/directory/women-religious/217-carmelite-sisters"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:carmel-of-the-holy-spirit-littleton-united-states",
+      "name": "Carmel of the Holy Spirit Colorado, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/carmel-of-the-holy-spirit-littleton-united-states/",
+      "claimed_services": [
+        {
+          "day": "Monday to Saturday",
+          "time": "06:30",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Sunday",
+          "time": "06:30",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Friday",
+          "time": "11:00",
+          "service": "Benediction Adoration of the Blessed Sacrament begins after Mass every Friday and continues until Benediction at 11:00 am."
+        },
+        {
+          "day": "Daily",
+          "time": "06:00",
+          "service": "Confessions Confessions are half-an-hour before Mass."
+        }
+      ],
+      "linked_original_sources": [
+        "https://www.olmcfssp.org/index.php/olmc/post/new_mass_schedule_parish_information",
+        "https://carmeliteslittleton.org/"
+      ],
+      "decision": "FSSP_ASSOCIATED_SITE_RECONCILE",
+      "official_url": "https://www.olmcfssp.org/",
+      "provider": "FSSP serves monastery; do not double count same venue under FSSP and OTHER",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:carmel-of-the-infant-jesus-of-prague-saint-joseph-dallas-united-states",
+      "name": "Carmel of the Infant Jesus of Prague & Saint Joseph Texas, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/carmel-of-the-infant-jesus-of-prague-saint-joseph-dallas-united-states/",
+      "claimed_services": [
+        {
+          "day": "Daily",
+          "time": "07:00",
+          "service": "Mass This mass is offered daily by FSSP priests at Mater Dei Parish"
+        }
+      ],
+      "linked_original_sources": [
+        "https://materdeiparish.com/masses-devotions/",
+        "https://www.dallascarmelites.com/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:carmelite-monastery-of-the-infant-of-prague-traverse-city-united-states",
+      "name": "Carmelite Monastery of the Infant of Prague Michigan, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/carmelite-monastery-of-the-infant-of-prague-traverse-city-united-states/",
+      "claimed_services": [
+        {
+          "day": "Daily",
+          "time": "07:30",
+          "service": "Low/Sung Mass"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": "07:30",
+          "service": "Low/Sung Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://carmeloftraversecity.org/liturgy-parent/mass-schedule-and-other-events/"
+      ],
+      "decision": "VERIFIED_MONASTIC_MASS_OWNERSHIP_REVIEW",
+      "official_url": "https://carmeloftraversecity.org/liturgy-parent/mass-schedule-and-other-events/",
+      "official_schedule": "DAILY_07:30",
+      "edition": "1962",
+      "public_mass": true,
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:cathedral-of-saint-mary-of-the-assumption-san-francisco-united-states",
+      "name": "Cathedral of Saint Mary of the Assumption California, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/cathedral-of-saint-mary-of-the-assumption-san-francisco-united-states/",
+      "claimed_services": [
+        {
+          "day": "1st Wednesday",
+          "time": "15:00",
+          "service": "Mass Call or check the website in case of changes."
+        }
+      ],
+      "linked_original_sources": [
+        "http://smcsf.org/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "evidence_limit": "Occasional Mass date/form require current confirmation",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:cathedral-of-the-holy-cross-blessed-sacrament-chapel-boston-united-states",
+      "name": "Cathedral of the Holy Cross Blessed Sacrament Chapel Massachusetts, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/cathedral-of-the-holy-cross-blessed-sacrament-chapel-boston-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "10:00",
+          "service": "Sung Mass"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": null,
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "http://holycrossboston.com/"
+      ],
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:cathedral-of-the-immaculate-conception-lake-charles-united-states",
+      "name": "Cathedral of the Immaculate Conception Louisiana, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/cathedral-of-the-immaculate-conception-lake-charles-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "12:45",
+          "service": "Mass Usually a high mass is celebrated"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": "17:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Monday to Friday",
+          "time": "17:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "http://immaculateconceptioncathedral.com/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:chapel-of-our-lady-of-orchard-lake-west-bloomfield-township-united-states",
+      "name": "Chapel of Our Lady of Orchard Lake Michigan, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/chapel-of-our-lady-of-orchard-lake-west-bloomfield-township-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "09:00",
+          "service": "Sung Mass"
+        }
+      ],
+      "linked_original_sources": [],
+      "decision": "NO_ORIGINAL_SOURCE_LINK_HOLD",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:chapel-of-saint-mary-of-the-angels-winona-united-states",
+      "name": "Chapel of Saint Mary of the Angels Minnesota, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/chapel-of-saint-mary-of-the-angels-winona-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "11:45",
+          "service": "Mass Sometimes Mass begins at 11:30."
+        }
+      ],
+      "linked_original_sources": [
+        "https://www.smumn.edu/"
+      ],
+      "decision": "PRIMARY_SOURCE_LITURGICAL_FORM_REVIEW",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:chapel-of-the-blessed-sacrament-gibson-united-states",
+      "name": "Chapel of the Blessed Sacrament Louisiana, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/chapel-of-the-blessed-sacrament-gibson-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "08:00",
+          "service": "Low Mass"
+        },
+        {
+          "day": "Every Sunday",
+          "time": "10:00",
+          "service": "Sung Mass"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Holy Days of Obligation",
+          "time": "18:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Tuesday",
+          "time": "18:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Wednesday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Thursday",
+          "time": "18:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Friday",
+          "time": "07:00",
+          "service": "Mass"
+        },
+        {
+          "day": "Every Saturday",
+          "time": "08:00",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "https://htdiocese.org/blessedsacramentchapel"
+      ],
+      "decision": "PUBLISHED_DIOCESAN_OFFICIAL",
+      "release": "CANONICAL_V19",
+      "reviewed_on": "2026-10-09"
+    },
+    {
+      "source_id": "LMD:chapel-of-the-immaculate-conception-at-saint-john-the-apostle-church-leesburg-united-states",
+      "name": "Chapel of the Immaculate Conception at Saint John the Apostle Church Virginia, United States",
+      "third_party_url": "https://www.latinmassdir.org/venue/chapel-of-the-immaculate-conception-at-saint-john-the-apostle-church-leesburg-united-states/",
+      "claimed_services": [
+        {
+          "day": "Every Sunday",
+          "time": "10:30",
+          "service": "Mass"
+        }
+      ],
+      "linked_original_sources": [
+        "http://www.saintjohnleesburg.org/"
+      ],
+      "decision": "ALREADY_IN_CANONICAL_DIOCESAN",
+      "release": "HELD_OR_EXISTING",
+      "reviewed_on": "2026-10-09"
+    }
+  ]
+}
