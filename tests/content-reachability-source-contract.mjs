@@ -77,6 +77,27 @@ for(const id of ["dr-challoner","cpdv-2009","crampon-1923","vulgate-clementine"]
  assert.ok(cat.includes('"'+id+'"'),"missing edition "+id);
 const findings=new Map(audit.findings.map(f=>[f.id,f]));
 assert.equal(findings.get("RCH-004").normal_path_defect_confirmed,false);
+
+const g=json("data/geography/seed-registry.v1.json");
+const sh=json("data/shrines/shrines-pilgrimages-seed.v1.json");
+const p=json("data/explore/sacred-phenomena-seed.v1.json");
+const c=json("data/customs/customs-atlas-seed.v1.json");
+const n=json("data/customs/novena-context-links.v1.json");
+const relatedPlaceIds=new Set([
+ ...sh.shrines.map(x=>x.place_id),
+ ...p.relics.map(x=>x.place_id),
+ ...p.apparitions.map(x=>x.place_id),
+ ...c.attestations.map(x=>x.place_id).filter(Boolean),
+ ...g.directoryPlaceLinks.map(x=>x.place_id),
+ ...n.links.map(x=>x.place_id).filter(Boolean)
+]);
+const orphanIds=g.places.filter(x=>!relatedPlaceIds.has(x.place_id)).map(x=>x.place_id).sort();
+const reviewedIds=audit.orphaned_place_profile_candidates.map(x=>x.place_id).sort();
+assert.deepEqual(orphanIds,reviewedIds,"unlinked Place records changed: reconcile with Explore audit, not new duplicate imports");
+assert.equal(g.places.length,audit.summary.geographical_place_profile_count);
+assert.equal(g.places.length-orphanIds.length,audit.summary.geographical_place_profiles_with_known_lens_relationship);
+assert.ok(audit.orphaned_place_profile_candidates.every(x=>x.relationship_status==="NOT_VERIFIED"));
+
 console.log(JSON.stringify({
  status:"SOURCE_CONTRACT_PASS",
  global_destinations:counts.NAV_DESTINATION,
