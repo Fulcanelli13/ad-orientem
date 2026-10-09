@@ -125,6 +125,13 @@ function placeSheet(vm){
     html+='</section>';
   }
 
+  if(arr(profile.seasonal_pilgrimages).length){
+    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"SEASONAL / VARIABLE PILGRIMAGE DATES","PÈLERINAGES SAISONNIERS / DATES VARIABLES"))+'</small>';
+    for(const row of profile.seasonal_pilgrimages){
+      html+='<article><strong>'+esc(row.title)+'</strong><span>'+esc(L(vm.language,"Check local programme","Voir le programme local"))+'</span></article>';
+    }
+    html+='</section>';
+  }
   if(arr(profile.shrines).length){
     html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"SACRED SITE","LIEU SACRÉ"))+'</small>'+placeRecordRows(profile.shrines,vm.language)+'</section>';
   }
