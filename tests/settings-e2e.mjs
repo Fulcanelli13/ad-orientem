@@ -103,6 +103,16 @@ try{
   assert.match(about,/Messe romaine de 1962/);
   assert.match(about,/Éditions de l’Écriture/);
   assert.match(about,/Version/);
+  assert.equal(await page.locator("#ao-settings-modular-root [data-settings-info]").count(),7,
+    "Informational About rows must not masquerade as clickable buttons");
+  assert.equal(await page.locator("#ao-settings-modular-root button.aoSetRow").count(),1,
+    "Only Privacy & Data is an actionable row in About");
+  await page.locator("#ao-settings-modular-root .aoSetSource summary").first().click();
+  assert.equal(await page.locator("#ao-settings-modular-root .aoSetSource").first().evaluate(el=>el.open),true,
+    "Source methodology categories must expand");
+  await page.locator('[data-settings-route="/settings/privacy-data"]').click();
+  assert.match(await page.locator("#ao-settings-modular-root").innerText(),/Confidentialité|données/i);
+  await page.locator("[data-settings-back]").click();
   await page.locator("[data-settings-back]").click();
 
   const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao2:preferences:v1")||"null"));
