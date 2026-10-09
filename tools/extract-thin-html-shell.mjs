@@ -19,12 +19,13 @@ const apply=process.argv.includes("--apply"),verify=process.argv.includes("--ver
 const sizeBefore=B(html);
 if(verify){
  const audit=JSON.parse(readFileSync(REPORT,"utf8"));
- if(sizeBefore!==audit.shellBytes)throw Error("Thin shell byte-size regression");
+ if(sizeBefore!==(audit.packedShellBytes??audit.shellBytes))throw Error("Thin shell byte-size regression");
  for(const e of audit.entries){
   if(!existsSync(e.path))throw Error("Missing critical script/style "+e.path);
   const source=readFileSync(e.path,"utf8");
   if(B(source)!==e.bytes||hash(source)!==e.sha)throw Error("Boot asset mutated: "+e.path);
-  if(!html.includes("./"+e.path))throw Error("Boot asset unlinked: "+e.path);
+  const inPack=Boolean(e.tag==="script"&&audit.pack?.entries?.some(item=>item.source===e.path));
+  if(!inPack&&!html.includes("./"+e.path))throw Error("Boot asset unlinked: "+e.path);
  }
  console.log("PASS thin HTML content-addressed assets: "+sizeBefore+" HTML bytes, "+audit.entries.length+" extracted parser-order dependencies");
  process.exit(0);
