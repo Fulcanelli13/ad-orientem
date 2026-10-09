@@ -281,8 +281,13 @@ const expandedIcksp=expandResearchProviderSnapshot(ickspFederated);
 const currentIckspMassSchedules=expandedIcksp.schedules.filter(schedule=>schedule.service_type==="MASS");
 assert.equal(RESEARCH_MASS_REVIEW_DAYS,120);
 assert.equal(scheduleFreshnessPolicy.rules.research_current_mass.review_days,RESEARCH_MASS_REVIEW_DAYS);
-assert.ok(currentIckspMassSchedules.every(schedule=>/^2026-10-07T00:00:00Z$/.test(schedule.verification.checked_at)),"ICKSP current Mass schedules must preserve venue verification day");
-assert.ok(currentIckspMassSchedules.every(schedule=>/^2027-02-04T23:59:59Z$/.test(schedule.verification.review_due_at)),"ICKSP current Mass schedules must carry review dates");
+const isMauritiusIckspMass=schedule=>/icksp-stg-09[2456]/i.test(schedule.ministry_id);
+assert.ok(currentIckspMassSchedules.every(schedule=>
+  schedule.verification.checked_at===(isMauritiusIckspMass(schedule)?"2026-10-09T00:00:00Z":"2026-10-07T00:00:00Z")),
+  "ICKSP current Mass schedules must preserve their country-specific original source review day");
+assert.ok(currentIckspMassSchedules.every(schedule=>
+  schedule.verification.review_due_at===(isMauritiusIckspMass(schedule)?"2027-02-06T23:59:59Z":"2027-02-04T23:59:59Z")),
+  "ICKSP current Mass schedules must retain their own date-specific review deadlines");
 assert.ok(currentIckspMassSchedules.every(schedule=>scheduleFreshnessState(schedule,{now:new Date("2026-10-08T00:00:00Z")})==="CURRENT"));
 assert.equal(scheduleFreshnessState(currentIckspMassSchedules[0],{now:new Date("2027-02-05T00:00:00Z")}),"REVIEW_DUE");
 assert.equal(ickspOverlapAudit.scope.icksp_federated_physical_venues,120);
