@@ -6,6 +6,10 @@
  * MARIAN_TYPOLOGICAL_READING = accommodation of a symbolic passage, not a direct report;
  * DEFINED_DOCTRINE = teaching established by the cited papal document, not a Bible scene.
  * SCRIPTURAL_PASSION_INTERPRETATION = OT prophecy or apostolic reading applied to Christ.
+ * DOGMATIC_TEACHING = the Church's explicit Eucharistic doctrine, beyond the Gospel narrative.
+ * MAGISTERIAL_TEACHING = an authoritative papal teaching, without implying a new solemn definition.
+ * For papal doctrine without a verified complete French translation at the Vatican,
+ * French mode links to the actual original Latin text instead of an English translation.
  * For the French witness, use the corresponding Crampon 1923 chapter
  * already linked in rosaryScripturePassage(), unless citing a papal document.
  */
@@ -913,21 +917,23 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     },
     {
       "bead": 9,
-      "reference": "Luke 22:19-20",
-      "relationship": "DEVOTIONAL_REFLECTION",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19-20&version=DRA",
+      "reference": "Council of Trent · Session XXII, chs. 1–2",
+      "relationship": "DOGMATIC_TEACHING",
+      "primaryUrl": "https://www.ewtn.com/catholicism/library/twentysecond-session-of-the-council-of-trent-1489",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      "frenchPrimaryUrl": "https://laportelatine.org/formation/magistere/doctrines-et-canons-sur-le-sacrifice-de-la-messe",
+      "referenceFr": "Concile de Trente · session XXII, ch. 1–2"
     },
     {
       "bead": 10,
-      "reference": "Luke 22:19-20",
-      "relationship": "DEVOTIONAL_REFLECTION",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19-20&version=DRA",
+      "reference": "Council of Trent · Session XIII, chs. 1, 5",
+      "relationship": "DOGMATIC_TEACHING",
+      "primaryUrl": "https://www.ewtn.com/catholicism/library/thirteenth-session-of-the-council-of-trent-1479",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      "frenchPrimaryUrl": "https://laportelatine.org/formation/magistere/decret-sur-le-sacrement-de-leucharistie",
+      "referenceFr": "Concile de Trente · session XIII, ch. 1 et 5"
     }
   ],
   "sor1": [
@@ -1264,7 +1270,7 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     {
       "bead": 7,
       "reference": "Luke 23:28-31",
-      "relationship": "SCRIPTURAL_PARAPHRASE",
+      "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A28-31&version=DRA",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
@@ -1728,7 +1734,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "frenchWitnessLanguage": "la"
     },
     {
       "bead": 8,
@@ -1737,25 +1744,28 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "frenchWitnessLanguage": "la"
     },
     {
       "bead": 9,
       "reference": "Munificentissimus Deus §§40-42",
-      "relationship": "DEFINED_DOCTRINE",
+      "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "frenchWitnessLanguage": "la"
     },
     {
       "bead": 10,
       "reference": "Munificentissimus Deus §§40-42",
-      "relationship": "DEFINED_DOCTRINE",
+      "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "frenchWitnessLanguage": "la"
     }
   ],
   "glo5": [
@@ -1816,20 +1826,22 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     {
       "bead": 7,
       "reference": "Ad Caeli Reginam",
-      "relationship": "DEVOTIONAL_REFLECTION",
+      "relationship": "MAGISTERIAL_TEACHING",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
+      "frenchWitnessLanguage": "la"
     },
     {
       "bead": 8,
       "reference": "Ad Caeli Reginam",
-      "relationship": "DEVOTIONAL_REFLECTION",
+      "relationship": "MAGISTERIAL_TEACHING",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
+      "frenchWitnessLanguage": "la"
     },
     {
       "bead": 9,
@@ -1838,7 +1850,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
+      "frenchWitnessLanguage": "la"
     },
     {
       "bead": 10,
@@ -1847,7 +1860,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
+      "frenchWitnessLanguage": "la"
     }
   ]
 });
