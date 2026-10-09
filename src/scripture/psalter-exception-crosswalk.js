@@ -7,6 +7,7 @@
  * region of the opposite edition; it is not proof of word-for-word identity.
  */
 import {psalterIdentityVerse} from "./psalter-identity-crosswalk.js";
+import {psalterRemainderParallelVerse} from "./psalter-remainder-crosswalk.js";
 const ENTRIES=[
  // Psalm 13: Douay verse 3 contains the wording split into CPDV verses 3–6.
  [13,1,1,1],[13,2,2,2],[13,3,3,3],[13,4,3,3],
@@ -43,12 +44,12 @@ export const PSALTER_EXCEPTION_STATUS=Object.freeze({
  sourceReview:"actual CPDV author master and Douay–Rheims Catholic witness",
  unmappedCpdv:Object.freeze(["92:1"]),
  unmappedDouay:Object.freeze(["150:6 (empty third-party slot)"]),
- otherChapters:"133 SOURCE-ALIGNED CHAPTERS IN psalter-identity-crosswalk.js; REMAINING CHAPTERS BLOCKED"
+ otherChapters:"133 SOURCE-ALIGNED CHAPTERS + 254 VERIFIED VERSES IN 13 MORE; 53 STILL BLOCKED"
 });
 export function psalterParallelVerse(reference,from,to){
  if(reference?.book!=="Psalms"||reference.verseStart!==reference.verseEnd)return null;
  const key=reference.chapter+":"+reference.verseStart;
- if(from==="cpdv-2009"&&to==="dr-challoner")return cpMap.get(key)??psalterIdentityVerse(reference,from,to);
- if(from==="dr-challoner"&&to==="cpdv-2009")return drMap.get(key)??psalterIdentityVerse(reference,from,to);
+ if(from==="cpdv-2009"&&to==="dr-challoner")return cpMap.get(key)??psalterIdentityVerse(reference,from,to)??psalterRemainderParallelVerse(reference,from,to);
+ if(from==="dr-challoner"&&to==="cpdv-2009")return drMap.get(key)??psalterIdentityVerse(reference,from,to)??psalterRemainderParallelVerse(reference,from,to);
  return null;
 }

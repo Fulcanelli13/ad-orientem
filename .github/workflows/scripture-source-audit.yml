@@ -12,6 +12,7 @@ on:
       - 'tests/scripture-esther-crosswalk.mjs'
       - 'tests/scripture-song-psalter-crosswalk.mjs'
       - 'tests/scripture-full-psalter-audit.mjs'
+      - 'tests/scripture-remaining-psalms.mjs'
       - '.github/workflows/scripture-source-audit.yml'
   workflow_dispatch:
 jobs:
@@ -40,6 +41,8 @@ jobs:
         run: node tests/scripture-song-psalter-crosswalk.mjs
       - name: Test all 150 Psalm source comparison safeguards
         run: node tests/scripture-full-psalter-audit.mjs
+      - name: Test unresolved Psalms strict per-verse safeguards
+        run: node tests/scripture-remaining-psalms.mjs
       - name: Fetch and verify historical Catholic text witnesses
         run: node tools/scripture/fetch-upstream.mjs
       - name: Check primary publisher text and correct only attested errata in research snapshots
@@ -56,6 +59,8 @@ jobs:
         run: node tools/scripture/audit-song-psalter-crosswalk.mjs artifacts/scripture-candidates
       - name: Inspect every Psalm for same-number Catholic source correspondence
         run: node tools/scripture/audit-full-catholic-psalter.mjs artifacts/scripture-candidates
+      - name: Triage all 13 remaining Catholic Psalms verse by verse
+        run: node tools/scripture/audit-remaining-catholic-psalms.mjs artifacts/scripture-candidates
       - name: Generate side-by-side doctrinal and readability review dossier
         run: node tools/scripture/audit-cpdv-vs-drc.mjs
       - uses: actions/upload-artifact@v4

@@ -4,6 +4,7 @@ import { passageReference } from "./passages.js";
 import { createScripturePreferences } from "./preferences.js";
 import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
 import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./reference-safety.js";
+import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -169,6 +170,18 @@ export function mountScriptureLibrary(root,{
      }
    } else textBlock.append(element("p",t.unavailable));
    main.append(textBlock);
+   const textualNotes=cpdvTextualNotesFor(editionId,location);
+   for(const note of textualNotes){
+     const details=element("details",null,"aoScriptureSourceNote");
+     details.dataset.scriptureSourceNote=note.reference;
+     details.append(element("summary","Text and traditional interpretation"));
+     details.append(element("p",note.text));
+     for(const [label,url] of [["CPDV original",note.authorSource],["Douay–Rheims",note.traditionalSource]]){
+       const link=element("a",label);link.href=url;link.target="_blank";link.rel="noopener noreferrer";
+       details.append(link);
+     }
+     main.append(details);
+   }
    const actions=element("div",null,"aoScriptureActions");
    const source=element("button",t.open);source.type="button";
    const url=editionSource();source.disabled=!url;

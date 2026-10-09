@@ -49,6 +49,16 @@ try{
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.reader?.editionId),"cpdv-2009");
+  await dialog.locator(".aoScriptureNav input").nth(1).fill("43");
+  await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
+  assert.equal(await dialog.locator("[data-scripture-source-note='Luke 1:43']").count(),1);
+  await dialog.locator(".aoScriptureSourceNote summary").click();
+  assert.match(await dialog.locator(".aoScriptureSourceNote").innerText(),/Mother of her Lord/);
+  assert.equal(await dialog.locator(".aoScriptureSourceNote a").count(),2);
+  assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"critical note must not publish uncleared Scripture");
+  await dialog.locator(".aoScriptureNav input").nth(1).fill("28");
+  await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
+  assert.equal(await dialog.locator(".aoScriptureSourceNote").count(),0);
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
  const mark=dialog.getByRole("button",{name:"Bookmark",exact:true});
  await mark.click();
