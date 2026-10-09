@@ -1,5 +1,6 @@
 import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { searchDiscovery } from "./discovery.js";
 
 export const LEARN_PRESENTATION_VERSION="modular-learn-presentation-v1";
 export const LEARN_DONOR_RELEASE="43.59.30";
@@ -144,6 +145,40 @@ function familyById(id){
   return LEARN_LAYOUT.sections.find(section=>section.id===id)||null;
 }
 
+function discoveryLabel(result,state){
+ const langFr=isFr(state);
+ return result.kind==="reference"
+  ?(langFr?"Définition · Glossaire":"Definition · Glossary"):
+  result.kind==="module"?(langFr?"Formation":"Learn"):
+  result.kind==="family"?(langFr?"Domaine":"Subject"):
+  (langFr?"Autre rubrique":"Elsewhere");
+}
+
+export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],referenceStatus="idle"}={}){
+ const langFr=isFr(state),results=searchDiscovery(query,{sections:LEARN_LAYOUT.sections,referenceEntries,limit:24});
+ if(!query.trim())return "";
+ const items=results.map(result=>{
+  const type=result.kind;
+  const attrs=type==="module"
+    ?`data-ao-learn-module="${esc(result.id)}" data-ao-learn-discovery-family="${esc(result.familyId)}"`
+    :type==="family"?`data-ao-learn-family="${esc(result.id)}"`
+    :type==="surface"?`data-ao-learn-discovery-surface="${esc(result.id)}"`
+    :`data-ao-learn-module="learn.glossary" data-ao-learn-reference-id="${esc(result.id)}" data-ao-learn-reference-kind="${esc(result.referenceKind)}"`;
+  const description=pick(result.subtitle||["",""],state);
+  return `<button type="button" class="aoLearnDiscoveryResult" ${attrs}>
+    <span class="aoLearnDiscoveryResultInfo"><small>${esc(discoveryLabel(result,state))}</small><strong>${esc(pick(result.title,state))}</strong>${description?`<span>${esc(description)}</span>`:""}</span>
+    ${assetMask("ao-ui-next")}
+  </button>`;
+ }).join("");
+ const note=referenceStatus==="loading"?(langFr?"Recherche dans les références…":"Searching references…"):
+  referenceStatus==="unavailable"?(langFr?"Index des références indisponible. Les rubriques restent accessibles.":"Reference index unavailable. Sections remain accessible."):"";
+ return `<div class="aoLearnDiscoveryResultsMeta" role="status">${results.length
+   ?esc((langFr?"Résultats : ":"Results: ")+results.length)
+   :esc(referenceStatus==="loading"?(langFr?"Recherche en cours…":"Searching…"):(langFr?"Aucun résultat disponible":"No available result"))}
+   ${note?`<span>${esc(note)}</span>`:""}
+ </div><div class="aoLearnDiscoveryList">${items}</div>`;
+}
+
 export function learnPresentationCss(){
   return `
 #ao-learn-modular-root{position:fixed;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;z-index:var(--ao-z-surface,2147481800);background:var(--ao-bg-canvas,var(--bg,#080c12));color:var(--ao-text-primary,var(--text,#e9e4d9));overflow:auto;overscroll-behavior:contain;font-family:var(--ao-font-body,var(--font-body,Georgia,serif))}
@@ -151,13 +186,14 @@ export function learnPresentationCss(){
 .aoLearnModTop{position:sticky;top:0;z-index:4;display:grid;grid-template-columns:46px minmax(0,1fr) 46px;align-items:center;gap:10px;padding:calc(10px + var(--safe-top,0px)) max(var(--ao-page-gutter,14px),env(safe-area-inset-right)) 10px max(var(--ao-page-gutter,14px),env(safe-area-inset-left));background:color-mix(in srgb,var(--ao-bg-canvas,var(--bg,#080c12)) 94%,transparent);backdrop-filter:blur(var(--ao-topbar-blur,16px));border-bottom:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}
 .aoLearnModTop button{width:var(--ao-control-h,44px);height:var(--ao-control-h,44px);border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.16)));border-radius:var(--ao-pill-radius,999px);background:var(--ao-surface-1,var(--surface-1,#101821));color:var(--ao-text-primary,var(--text,#e9e4d9));font-size:20px}.aoLearnModTopTitle{min-width:0;text-align:center}.aoLearnModTopTitle small{display:block;color:var(--muted,#9ba5b1);font:.61rem/1.2 var(--ao-font-display,var(--ao-font-display,var(--font-display,Georgia,serif)));letter-spacing:.13em}.aoLearnModTopTitle strong{display:block;margin-top:3px;font:600 1rem/1.2 var(--ao-font-display,var(--ao-font-display,var(--font-display,Georgia,serif)));letter-spacing:.035em}.aoLearnModTopSpacer{width:44px;height:44px}
 .aoLearnModWrap{width:min(var(--ao-content-max,760px),100%);margin:0 auto;padding:18px var(--ao-page-gutter,14px) 42px}.aoLearnModHero{padding:18px 2px 24px}.aoLearnModHero .kicker{color:var(--liturgical,#c9ad78);font:.67rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.14em}.aoLearnModHero h1{margin:7px 0 9px;font:500 clamp(2rem,8vw,3.35rem)/1.03 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModHero p{max-width:680px;margin:0;color:var(--muted,#9ba5b1);font-size:1rem;line-height:1.5}.aoLearnModContext{margin-top:12px;color:var(--muted,#9ba5b1);font-size:.76rem}.aoLearnModError{margin:0 0 16px;padding:11px 12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.38));border-radius:var(--ao-control-radius,11px);background:var(--liturgical-soft,rgba(201,173,120,.08));font-size:.82rem}.aoLearnApostolateBridge{width:100%;min-height:58px;display:grid;grid-template-columns:28px minmax(0,1fr) 18px;gap:10px;align-items:center;margin:0 0 18px;padding:10px 12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.38));border-radius:var(--ao-control-radius,11px);background:var(--liturgical-soft,rgba(201,173,120,.08));color:inherit;text-align:left}.aoLearnApostolateBridge>.aoLearnControlIcon:first-child{width:24px!important;height:24px!important;color:var(--liturgical,#c9ad78)}.aoLearnApostolateBridge strong{display:block;font:600 .95rem/1.2 var(--ao-font-display,Georgia,serif)}.aoLearnApostolateBridge small{display:block;margin-top:3px;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.aoLearnDiscovery{margin:0 0 18px}.aoLearnDiscovery label{display:block;margin-bottom:7px;color:var(--ao-text-muted,#a9a5a0);font:500 var(--ao-type-ui-sm,12px)/1.4 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnDiscovery input{display:block;width:100%;min-height:48px;padding:11px 13px;border:1px solid var(--ao-rule,rgba(255,255,255,.18));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);font:inherit}.aoLearnDiscovery input:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}.aoLearnDiscoveryResultsMeta{color:var(--ao-text-muted,#a9a5a0);font:500 var(--ao-type-ui-xs,11px)/1.4 var(--ao-font-ui,system-ui,sans-serif);margin:10px 0}.aoLearnDiscoveryResultsMeta span{display:block;margin-top:4px}.aoLearnDiscoveryList{display:grid;gap:5px}.aoLearnDiscoveryResult{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px;text-align:left;padding:10px 12px;border:1px solid var(--ao-rule,rgba(255,255,255,.13));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,#101821);color:inherit}.aoLearnDiscoveryResult:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}.aoLearnDiscoveryResultInfo{display:grid;gap:2px;min-width:0}.aoLearnDiscoveryResultInfo small{color:var(--liturgical,#c9ad78);font:.67rem var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.055em}.aoLearnDiscoveryResultInfo strong{font:600 1rem var(--ao-font-display,Georgia,serif)}.aoLearnDiscoveryResultInfo>span{font:.79rem/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0)}
 .aoLearnModSection{padding:18px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}.aoLearnModSectionHead{margin:0 0 10px}.aoLearnModSectionHead h2{margin:0;font:600 1rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.02em}.aoLearnModSectionHead p{max-width:640px;margin:5px 0 0;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-sm,12px)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnModGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.aoLearnFamilyGrid .aoLearnModCardMain{min-height:132px}.aoLearnFamilyDoor strong{font-size:1.08rem}.aoLearnModCard{min-width:0;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-card-radius,15px);background:var(--surface-1,#101821);overflow:hidden}.aoLearnModCard.featured{border-color:var(--liturgical-border,rgba(201,173,120,.4));background:linear-gradient(145deg,var(--liturgical-soft,rgba(201,173,120,.08)),var(--surface-1,#101821))}
 .aoLearnModCardMain{position:relative;width:100%;min-height:112px;padding:13px 13px 14px;border:0;background:transparent;color:var(--text,#e9e4d9);text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:6px}.aoLearnModCardMain.iconized{padding-left:61px}.aoLearnModCardMain>.aoLearnModIcon{position:absolute;left:13px;top:15px;width:36px;height:36px;color:var(--liturgical,#c9ad78)}.aoLearnModCardMain .type{color:var(--liturgical,#c9ad78);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}.aoLearnModCardMain strong{font:600 1rem/1.22 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModCardMain p{margin:0;color:var(--muted,#9ba5b1);font-size:.82rem;line-height:1.4}.aoLearnModCardMain:hover,.aoLearnModCardMain:focus-visible{outline:none;background:rgba(255,255,255,.025)}.aoLearnModCardMain:focus-visible{box-shadow:inset 0 0 0 2px var(--liturgical,#c9ad78)}
 @media(max-width:430px){.aoLearnModWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}.aoLearnModGrid{grid-template-columns:1fr}.aoLearnModCardMain{min-height:96px}.aoLearnModHero{padding-top:14px}.aoLearnModHero h1{font-size:2.35rem}}
 `;
 }
 
-export function renderLearnPresentation(root,state,win,{error="",familyId=null}={}){
+export function renderLearnPresentation(root,state,win,{error="",familyId=null,discoveryQuery="",referenceEntries=[],referenceStatus="idle"}={}){
   if(!root)return false;
   const langFr=isFr(state);
   const family=familyById(familyId);
@@ -175,6 +211,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null}=
     </header>
     <main class="aoLearnModWrap">
       <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(heroTitle)}</h1><p>${esc(heroIntro)}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
+      <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus})}</div></section>
       ${family?"":`<button type="button" class="aoLearnApostolateBridge" data-ao-learn-apostolate>${assetMask("ao-refined-help")}<span><strong>${esc(langFr?"Apostolat":"Apostolate")}</strong><small>${esc(langFr?"Répondre · aider · s’exercer":"Answer · help · practise")}</small></span>${assetMask("ao-ui-next")}</button>`}
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
       ${family
