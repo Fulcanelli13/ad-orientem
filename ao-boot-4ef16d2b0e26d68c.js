@@ -536,15 +536,6 @@ function resolveConcurrency(calendar, source) {
                 feria.colorCode = day.tempora[0].colorCode;
                 feria.color = colorLabel(feria.colorCode);
             }
-            // The generic source fallback can inherit a stale white tempora.
-            // The Epiphany weekdays from Holy Family until Septuagesima are
-            // green regardless of that incidental default. See audit registry.
-            const y = day.date.getFullYear();
-            if (day.date > (0, date_utils_1.holyFamily)(y) && day.date < (0, date_utils_1.septuagesima)(y)) {
-                feria.colors = ['g'];
-                feria.colorCode = 'g';
-                feria.color = colorLabel('g');
-            }
             celebration = [feria];
         }
         day.celebration = celebration;
