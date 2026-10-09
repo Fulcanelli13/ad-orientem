@@ -62,6 +62,21 @@ try{
  assert.equal(new Set(ids).size,48,"Duplicate library identity");
  for(const id of ids){
    await page.locator("#aoPray435930 [data-p435930-lib-open='"+id+"']").evaluate(el=>el.click());
+   await page.waitForFunction(()=>{
+     const card=document.querySelector("#aoPray435930.open .aoP435930Prayer");
+     const text=card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"";
+     return text.length>=25;
+   },null,{timeout:7000}).catch(async failure=>{
+     const diag=await page.evaluate(()=>{
+       const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+       return {view:mount?.dataset?.aoPrayView,
+         cards:document.querySelectorAll("#aoPray435930.open .aoP435930Prayer").length,
+         prayerHTML:document.querySelector("#aoPray435930.open .aoP435930Prayer")?.outerHTML?.slice(0,1900),
+         currentTitle:document.querySelector("#aoPray435930.open .aoP435930PrayerHead h3")?.textContent,
+         errors:globalThis.AO_PRAY_V435930?.qa?.()};
+     });
+     throw new Error("Prayer reading did not render for "+id+": "+JSON.stringify(diag)+"; "+String(failure));
+   });
    const prayer=await page.evaluate(()=>{
      const root=document.querySelector("#aoPray435930.open"),card=root?.querySelector(".aoP435930Prayer");
      return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"",
