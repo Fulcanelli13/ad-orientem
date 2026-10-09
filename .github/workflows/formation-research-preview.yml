@@ -33,6 +33,8 @@ on:
       - 'tests/learn-faith-125-source-scope-desk-review.mjs'
       - 'tests/learn-faith-french-historic-witness-review.mjs'
       - 'tests/learn-faith-french-1913-printed-pages.mjs'
+      - 'tests/learn-faith-fr-1913-priority-70-photographic-review.mjs'
+      - 'data/learn/ltfaith-pius-x-italian-1912-original-print-acquisition.v1.json'
       - 'tests/learn-faith-french-1913-all-433-page-locators.mjs'
       - 'tests/learn-faith-secondary-italian-digital-audit.mjs'
       - 'data/learn/ltfaith-pius-x-secondary-italian-digital-audit.v1.json'
@@ -108,6 +110,8 @@ jobs:
         run: node tests/learn-faith-secondary-italian-digital-audit.mjs
       - name: Validate all 433 provisional French 1913 scan-page candidate locators
         run: node tests/learn-faith-french-1913-all-433-page-locators.mjs
+      - name: Check 70 photographed French 1913 QA and 1912 Italian original-print acquisition holds
+        run: node tests/learn-faith-fr-1913-priority-70-photographic-review.mjs
       - name: Check scanned 1913 French printed page evidence and historic nuptial-date variant
         run: node tests/learn-faith-french-1913-printed-pages.mjs
       - name: Verify completed 125-claim source-scope desk review and publication holds
