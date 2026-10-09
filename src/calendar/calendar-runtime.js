@@ -57,21 +57,27 @@ function majorIndexFor(id){
 }
 function majorForDate(id){return majorIndexFor(id)?.get(id)||null}
 function rankTier(r,id){
+  // A major-date index is an indicative list, not an ordo deciding rank or precedence.
+  // Never manufacture a Roman class for an unresolved day.
+  if(!r||r.status==="failed"||!r.day)return 0;
   const rank=rankOf(r).trim().toLowerCase();
   if(/\b(?:i|1st|first|1)\s*(?:class|classe)\b/.test(rank))return 1;
   if(/\b(?:ii|2nd|second|2)\s*(?:class|classe)\b/.test(rank))return 2;
-  if(majorForDate(id))return 2;
-  if(dateOf(id).getDay()===0)return 3;
   if(/\b(?:iii|3rd|third|3)\s*(?:class|classe)\b/.test(rank))return 3;
-  return 4;
+  if(/\b(?:iv|4th|fourth|4)\s*(?:class|classe)\b/.test(rank))return 4;
+  return 0;
 }
 function monthCellData(id){
   const raw=weekCache.get(id),r=raw?.status!=="failed"&&raw?.day?raw:null,major=majorForDate(id),sunday=dateOf(id).getDay()===0,tier=rankTier(r,id);
-  const name=major?celebrationName(major):(r&&(tier<=2||sunday)?titleOf(r):(sunday?L("Sunday","Dimanche"):""));
-  const accent=r?liturgicalAccent(r):periodUiColour(buildLiturgicalYear(id).currentPeriod.color);
+  // The resolved 1962 ordo is authoritative. A computed major-day index must
+  // never overwrite a transferred feast, impeded celebration, or commemoration.
+  const resolvedName=r?titleOf(r):"";
+  const name=r?(tier>0&&tier<=2||sunday?resolvedName:""):(major?celebrationName(major):sunday?L("Sunday","Dimanche"):"");
+  const projected=!r&&Boolean(major);
+  const accent=r?liturgicalAccent(r):"#59626c";
   const rank=r?rankOf(r):"",colour=r?colourOf(r):"";
-  const aria=[displayDate(id),name,rank,colour].filter(Boolean).join(" · ");
-  return {r,major,sunday,tier,name,accent,rank,colour,aria,ready:weekCache.has(id)};
+  const aria=[displayDate(id),name,projected?L("Unverified date · awaiting calendar resolution","Date indicative · en attente de vérification"):null,rank,colour].filter(Boolean).join(" · ");
+  return {r,major,sunday,tier,name,projected,accent,rank,colour,aria,ready:!!r};
 }
 
 function monthDateIds(monthId){
@@ -331,12 +337,9 @@ function liturgicalAccent(r){
     black:"#66666a",rose:"#9a6a76"
   })[key]||"#8f7d5e";
 }
-function yearProgress(id){
-  const d=dateOf(id),start=new Date(d.getFullYear(),0,1,12),end=new Date(d.getFullYear()+1,0,1,12);
-  return Math.max(0,Math.min(1,(d-start)/(end-start)));
-}
 function yearWheel(selected,r){
-  const d=dateOf(selected),loc=fr()?"fr-FR":"en-GB",angle=(yearProgress(selected)*360).toFixed(2),season=seasonOf(r);
+  // The compact fallback wheel must agree with the canonical Advent-to-Advent dashboard.
+  const d=dateOf(selected),loc=fr()?"fr-FR":"en-GB",angle=(buildLiturgicalYear(selected).progress*360).toFixed(2),season=seasonOf(r);
   return `<div class="aoCalYearWheel" style="--ao-cal-year-angle:${angle}deg;--ao-cal-liturgical:${esc(liturgicalAccent(r))}" role="img" aria-label="${esc(L("Position in the year","Position dans l’année"))}">
     <div class="aoCalYearTicks" aria-hidden="true"></div><div class="aoCalYearMarker" aria-hidden="true"></div>
     <div class="aoCalYearCore"><small>${esc(season||L("Sacred time","Temps sacré"))}</small><strong>${esc(String(d.getDate()))}</strong><span>${esc(d.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</span></div>
