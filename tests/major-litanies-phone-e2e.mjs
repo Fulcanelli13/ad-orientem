@@ -108,7 +108,25 @@ try{
    await page.waitForFunction(()=>globalThis.__majorPreflight?.status?.().sourceLoading===false,
     null,{timeout:10000});
    const option=page.locator('[data-rogation-choice] option[value="ROGATION_MASS"]');
-   assert.equal(await option.isDisabled(),true,"Major votive must remain independently unpublished");
+   const eligibility=await page.evaluate(async()=>{
+    const m=await import("/src/mass/rogation-preflight.js");
+    const legacy=globalThis.AO_CELEBRATION_API.getResolvedMass();
+    const resolved=globalThis.__majorLitanyDay;
+    const opt=document.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]');
+    return {
+      candidate:m.resolvedRogationCandidate(legacy,resolved,{requireResolver:true}),
+      domOptionDisabled:opt?.disabled,disabledAttr:opt?.getAttribute("disabled"),
+      selectorValue:document.querySelector("[data-rogation-choice]")?.value,
+      preflight:globalThis.__majorPreflight?.status?.(),
+      rootCount:document.querySelectorAll("[data-ao-rogation-preflight]").length,
+      date:legacy?.date,originalDaySource:resolved?.proper?.data?.sourcePath
+    };
+   });
+   console.log("MAJOR_VOTIVE_BROWSER_ELIGIBILITY",JSON.stringify(eligibility));
+   assert.equal(eligibility.candidate.observance,"MAJOR");
+   assert.equal(eligibility.candidate.votiveAllowed,false);
+   assert.equal(eligibility.domOptionDisabled,true,"Major votive must remain independently unpublished");
+   assert.equal(await option.getAttribute("disabled"),"","Disabled Major votive must have a real DOM attribute");
    assert.match((await page.locator("[data-rogation-status]").textContent())??"",
     language==="fr"?/pas encore certifiée/i:/not yet certified/i);
    const before=await page.evaluate(()=>globalThis.__majorPreflight.selectionFor(
