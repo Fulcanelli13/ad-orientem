@@ -90,7 +90,8 @@ const CHRIST_KING=F({
   }),
   historySources:A([
     F({label:"Thésaurisons pour le Ciel · Christ-Roi",url:"https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf"}),
-    F({label:"Family Liturgy and Religious Practices · Christ the King novena/triduum · 1955",url:"https://www.ewtn.com/catholicism/library/how-to-make-your-house-a-home-family-liturgy-and-religious-practices-10449"})
+    F({label:"Family Liturgy and Religious Practices · Christ the King novena/triduum · 1955",url:"https://www.ewtn.com/catholicism/library/how-to-make-your-house-a-home-family-liturgy-and-religious-practices-10449"}),
+    F({label:"Au Christ Roi universel · 1923 Catholic Penitentiary prayer witness",url:"https://www.spiritualite-chretienne.com/s_coeur/priere_a.html"})
   ]),
   frenchTextStatus:"SOURCE_LOCKED_TRADITIONAL_FRENCH",
   repeatText:bi(
@@ -220,8 +221,8 @@ const ST_ANTHONY=F({
     fr:"Préparation suggérée à la fête : neuf mardis consécutifs conduisant vers le 13 juin ; la dévotion traditionnelle elle-même peut être accomplie pendant neuf mardis consécutifs à d’autres moments"
   }),
   history:F({
-    en:"The Tuesday devotion developed from the tradition that St Anthony died on a Tuesday. French traditional sources attest the pious exercises of nine or thirteen Tuesdays, while older devotional manuals note that no single prayer text was prescribed. This form retains the commonly used prayers and preserves the weekly cadence instead of converting the devotion into nine consecutive days.",
-    fr:"La dévotion du mardi s’est développée à partir de la tradition selon laquelle saint Antoine mourut un mardi. Les sources traditionnelles françaises attestent les pieux exercices de neuf ou treize mardis, tandis que les anciens manuels de dévotion précisent qu’aucun texte de prière unique n’était prescrit. Cette forme conserve les prières couramment employées et respecte le rythme hebdomadaire au lieu de transformer la dévotion en neuf jours consécutifs."
+    en:"The Tuesday devotion recalls the solemn burial of St Anthony on the Tuesday following his death. The traditional Nine Tuesdays are nine consecutive weeks, distinct from the thirteen-day 'treizaine' before his feast. Catholic devotional witnesses state that no single prayer text is prescribed for the Nine Tuesdays; this form retains the commonly used prayers instead of inventing nine different daily meditations.",
+    fr:"La dévotion du mardi rappelle l’inhumation solennelle de saint Antoine le mardi qui suivit sa mort. Les neuf mardis se célèbrent pendant neuf semaines consécutives, à distinguer de la « treizaine » de treize jours avant sa fête. Les témoins catholiques de cette dévotion ne prescrivent pas une formule unique : on garde les prières traditionnellement employées sans inventer neuf méditations quotidiennes distinctes."
   }),
   meaning:F({
     en:"Seek St Anthony’s intercession over nine successive Tuesdays while subordinating the petition to God’s will and the salvation of the soul.",
@@ -234,15 +235,15 @@ const ST_ANTHONY=F({
   source:F({
     work:"Devotion of the Nine Tuesdays to St Anthony",
     authors:"Traditional Franciscan devotional practice",
-    edition:"Pre-conciliar English devotional pamphlet; French-world traditional attestation",
+    edition:"Australian Catholic Truth Society Franciscan pamphlet (1966) recording the older devotion; French Franciscan practice witness",
     approval:"Traditional devotional form; no single prayer text historically mandatory",
     url:"https://www.pamphlets.info/Australia/acts1014/",
     status:"SOURCE_LOCKED_TRADITIONAL_ENGLISH · FRENCH_EDITORIAL_TRANSLATION · FRENCH_WORLD_PRACTICE_WITNESS",
     adaptation:"English common prayers retained; French translated editorially. The weekly Tuesday cadence is preserved exactly as a weekly devotion."
   }),
   historySources:A([
-    F({label:"Traditional Nine Tuesdays pamphlet",url:"https://www.pamphlets.info/Australia/acts1014/"}),
-    F({label:"La Porte Latine · St Anthony · nine/thirteen Tuesdays attested",url:"https://laportelatine.org/spiritualite/vies-de-saints/13-juin-saint-antoine-de-padoue"})
+    F({label:"Benedict O’Donoghue OFM · Say a Prayer to Saint Anthony · ACTS 1014 (1966)",url:"https://www.pamphlets.info/Australia/acts1014/"}),
+    F({label:"Messager de saint Antoine · Les neuf mardis et la treizaine (2023)",url:"https://www.messagerdesaintantoine.com/node/5972"})
   ]),
   frenchTextStatus:"EDITORIAL_TRANSLATION_ALIGNED_TO_TRADITIONAL_ENGLISH_SOURCE",
   repeatText:bi(
