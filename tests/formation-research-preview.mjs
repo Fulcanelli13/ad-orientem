@@ -12,17 +12,17 @@ const apol=JSON.parse(readFileSync("data/learn/apologetics-canonical.v1.json","u
 const crisis=JSON.parse(readFileSync("data/learn/church-crisis-canonical.v1.json","utf8"));
 // Apologetics / Church Crisis research remains unpublished. A missing or
 // unsafe documentary reference must appear as an editorial hold, never vanish.
-const en={document:{documentElement:{lang:"en"}}},fr={document:{documentElement:{lang:"fr"}}};
-const one=formationResearchSourceLinks(en,["FATIMA00","UNVERIFIED-REFERENCE-XYZ"],"biblical");
+const sourceEn={document:{documentElement:{lang:"en"}}},sourceFr={document:{documentElement:{lang:"fr"}}};
+const one=formationResearchSourceLinks(sourceEn,["FATIMA00","UNVERIFIED-REFERENCE-XYZ"],"biblical");
 assert.match(one,/data-ao-fr-source-hold="UNVERIFIED-REFERENCE-XYZ"/);
 assert.match(one,/Source not verified/);
 assert.match(one,/rc_con_cfaith_doc_20000626_message-fatima_en.html/);
 assert.equal((one.match(/<a /g)||[]).length,1,"Missing references must not become clickable sources");
-assert.match(formationResearchSourceLinks(fr,["NOT-A-SOURCE"],"sedevacantism"),/Source non vérifiée/);
-assert.match(formationResearchSourceLinks(en,[],"biblical"),/No documentary source attached/);
-assert.match(formationResearchSourceLinks(fr,[],"biblical"),/Aucune source documentaire jointe/);
-assert.match(formationResearchSourceLinks(en,["TC21"],"custodes"),/traditionis-custodes/);
-assert.match(formationResearchSourceLinks(en,["SC63"],"reform"),/sacrosanctum-concilium/);
+assert.match(formationResearchSourceLinks(sourceFr,["NOT-A-SOURCE"],"sedevacantism"),/Source non vérifiée/);
+assert.match(formationResearchSourceLinks(sourceEn,[],"biblical"),/No documentary source attached/);
+assert.match(formationResearchSourceLinks(sourceFr,[],"biblical"),/Aucune source documentaire jointe/);
+assert.match(formationResearchSourceLinks(sourceEn,["TC21"],"custodes"),/traditionis-custodes/);
+assert.match(formationResearchSourceLinks(sourceEn,["SC63"],"reform"),/sacrosanctum-concilium/);
 // Existing preview data currently resolves; this protects all underlying
 // reference IDs without declaring the underlying arguments certified.
 let referenceCount=0;
