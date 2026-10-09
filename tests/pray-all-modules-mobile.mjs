@@ -83,6 +83,19 @@ try{
        source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||""};
    });
    assert.ok(prayer.body.length>=25,"Blank or unrendered canonical prayer: "+id);
+   const flip=page.locator("#aoPray435930.open .aoP435930Prayer [data-p435930-flip]");
+   if(await flip.count()){
+     const faces=await flip.evaluate(x=>({vernHidden:x.querySelector("[data-face-v]")?.hidden,
+       latinHidden:x.querySelector("[data-face-la]")?.hidden}));
+     assert.deepEqual(faces,{vernHidden:false,latinHidden:true},
+       "Library prayer should open in the reader's vernacular; Latin appears on tap: "+id);
+     if(id==="foundations_our_father"){
+       await flip.tap({timeout:9000});
+       assert.equal(await flip.locator("[data-face-la]").evaluate(x=>x.hidden),false,
+         "Latin replacement unavailable after tapping the language control");
+       assert.equal(await flip.locator("[data-face-v]").evaluate(x=>x.hidden),true);
+     }
+   }
    assert.ok(prayer.source.length>=5,"Prayer source/witness presentation lost: "+id);
    if(["mass_confiteor","adoration_lord_i_am_not_worthy","litany_loreto_1962","litany_loreto_current","devotion_litany_st_joseph"].includes(id)){
      const sourceLinks=await page.locator("#aoPray435930.open .aoP435930Prayer .aoP435930Source a").evaluateAll(nodes=>nodes.map(n=>n.href));
