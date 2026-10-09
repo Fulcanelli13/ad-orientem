@@ -285,7 +285,6 @@ for(const id of ["annunciation","seven_sorrows","assumption"]){
   assert.equal(witness.practice,"PRESENT_IN_ORIGINAL_NOT_EMBEDDED");
  }
 }
-
 let completeHistoricalPairs=0;
 for(const id of ["annunciation","seven_sorrows","assumption"]){
  for(let day=1;day<=9;day++){
@@ -402,3 +401,19 @@ for(const id of missingHistorical){
  assert.match(source.note.fr,/rédactionnel/);
 }
 assert.ok(!historicalNovenaReview.records.some(x=>x.dayBodySourceReview?.some(d=>d.completePrintEditionCertification!=="NOT_CERTIFIED")),"Premature original facsimile certification");
+
+
+// St Anthony Nine Tuesdays: preserve the common-prayer handoff without
+// restoring a second copy of the responsory in its bilingual weekly text.
+const stAnthony=NOVENA_CORPUS_V4.st_anthony_nine_tuesdays;
+assert.deepEqual(stAnthony.commonPrayers,[
+ ["foundations_our_father",1],["foundations_hail_mary",1],["foundations_glory_be",1]
+]);
+assert.equal(stAnthony.closingCanonical,"devotion_st_anthony_lost_items");
+assert.match(stAnthony.how.en,/not a universally prescribed form/i);
+assert.match(stAnthony.how.fr,/non d’une forme universellement prescrite/i);
+assert.match(stAnthony.commonNote.fr,/Notre Père.*Je vous salue Marie.*Gloire au Père/);
+assert.ok(stAnthony.historySources.some(x=>x.url==="https://www.pamphlets.info/Australia/acts1014/"));
+assert.equal(stAnthony.days.length,9);
+assert.ok(!stAnthony.repeatText.en.includes("Si quæris miracula"));
+assert.equal(stAnthony.startKind,NOVENA_START_KIND.SUGGESTED);
