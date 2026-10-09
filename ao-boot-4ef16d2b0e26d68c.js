@@ -418,6 +418,15 @@ function applyRules(calendar, source, date, shifted) {
     }
     if ((x = matchFirst(obs, C.TEMPORA_QUAD5_5)) && (y = matchFirst(obs, C.TEMPORA_QUAD5_5C)) && !matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2))
         return ret([x], [y]);
+    // 1960 General Rubrics nn. 25, 108, 111: a III-class Advent feria
+    // yields to a I/II-class sanctoral feast but remains a privileged
+    // commemoration (Collect, Secret and Postcommunion).
+    if (!isSun && date.getMonth() === 11 && date.getDate() <= 16) {
+        const advent = matchFirst(obs, PAT.PATTERN_ADVENT);
+        const saint = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2);
+        if (advent && advent.rank === 3 && saint && saint.rank < advent.rank)
+            return ret([saint], [advent]);
+    }
     x = !isSun ? matchFirst(obs, [...source.ember, PAT.PATTERN_ADVENT]) : null;
     if (x) {
         y = matchFirst(obs, PAT.PATTERN_SANCTI);
@@ -466,8 +475,14 @@ function applyRules(calendar, source, date, shifted) {
         y = matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2);
         return ret(x ? [x] : [], y ? [y] : []);
     }
-    if ((x = matchFirst([...obs].sort((a, b) => a.priority - b.priority), PAT.PATTERN_CLASS_1)))
-        return ret([x]);
+    if ((x = matchFirst([...obs].sort((a, b) => a.priority - b.priority), PAT.PATTERN_CLASS_1))) {
+        // On a sanctoral I-class feast, a displaced II-class Sunday
+        // receives its privileged commemoration; Sundays of the Lord
+        // expressly excluded by the earlier Jesus-feast rule stay omitted.
+        const sunday = isSun && x.flexibility === 'sancti'
+            ? matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2) : null;
+        return ret([x], sunday ? [sunday] : []);
+    }
     if (matchFirst(obs, [C.SANCTI_09_14, C.SANCTI_11_09].filter(Boolean)) && isSun) {
         x = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_2);
         if (x)
@@ -683,6 +698,13 @@ class CalendarEngine {
         }
         catch { /* title fallback is safe */ }
         title = title || observance.name || 'Feria';
+        // The 1962 first-class vigil is identified by the canonical
+        // Temporale source path, not by a hardcoded civil date.
+        // The upstream "Saturday after the Ascension" is retained as
+        // sourceTitle for provenance rather than replacing Proper texts.
+        const sourceTitle = title;
+        if (observance.path === 'Tempora/Pasc6-6')
+            title = 'Vigil of Pentecost';
         this.titleCache.set(observance.path, title);
         return { ...observance, title };
     }
