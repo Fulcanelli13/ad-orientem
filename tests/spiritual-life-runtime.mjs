@@ -76,9 +76,9 @@ for(const lesson of ["SL01-Q03","SL02-Q01","SL06-Q02","SL08-Q02","SL10-Q03"]){
   assert.equal(resolveSpiritualLifeSourceTarget(en,tanquerey,[lesson]),tanquerey.canonical_url,
     lesson+": general means point to the wrong Tanquerey witness");
 }
-assert.equal(resolveSpiritualLifeSourceTarget(en,indulgences,["SL12-Q01"]),
+assert.equal(resolveSpiritualLifeSourceTarget(en,indulgences,["SL12-Q02"]),
   "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html");
-assert.equal(resolveSpiritualLifeSourceTarget(fr,indulgences,["SL12-Q01"]),
+assert.equal(resolveSpiritualLifeSourceTarget(fr,indulgences,["SL12-Q02"]),
   "https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann992-997_fr.html");
 assert.equal(resolveSpiritualLifeSourceTarget(fr,tanquerey,["SL03-Q02"]),tanquerey.continuation_url,
   "Do not invent a French Tanquerey translation where only English is verified");
