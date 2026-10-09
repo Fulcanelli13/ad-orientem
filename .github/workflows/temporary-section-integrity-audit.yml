@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/temporary-section-integrity-audit.yml"
       - "tests/ux-section-negative-audit.mjs"
+      - "tests/ux-detail-probe.mjs"
 permissions:
   contents: read
 jobs:
@@ -19,3 +20,4 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/ux-section-negative-audit.mjs
+      - run: node tests/ux-detail-probe.mjs
