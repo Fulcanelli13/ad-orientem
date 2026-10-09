@@ -40,7 +40,7 @@ export function validateCanonSourceMap(map,{sungCorpus=null,sectionMap=null}={})
     if(s.sequence!==i+1)throw new Error("Canon segment sequence must be contiguous");
     if(!/^AO\.CANON\.\d{2}$/.test(s.id) || ids.has(s.id))throw new Error("Invalid/duplicate Canon segment id "+s.id);
     ids.add(s.id);
-    if(s.blockIds.length!==1)throw new Error(s.id+": exactly one canonical prayer block required");
+    if(s.blockIds.length!==(s.id==="AO.CANON.14"?2:1))throw new Error(s.id+": canonical prayer block count changed");
     for(const b of s.blockIds){
       if(blocks.has(b))throw new Error("Duplicate Canon block "+b);
       blocks.add(b);
@@ -51,16 +51,19 @@ export function validateCanonSourceMap(map,{sungCorpus=null,sectionMap=null}={})
     }
   }
 
-  const expectedBlocks=Array.from({length:14},(_,i)=>"AO.SM.B"+String(47+i).padStart(3,"0"));
-  if(JSON.stringify([...blocks])!==JSON.stringify(expectedBlocks))throw new Error("Canon block coverage must be exactly B047-B060");
+  const expectedBlocks=Array.from({length:15},(_,i)=>"AO.SM.B"+String(47+i).padStart(3,"0"));
+  if(JSON.stringify([...blocks])!==JSON.stringify(expectedBlocks))throw new Error("Canon block coverage must be exactly B047-B061");
+  if(JSON.stringify(map.invariants?.blockRange)!==JSON.stringify(["AO.SM.B047","AO.SM.B061"]) || JSON.stringify(map.invariants?.cueRange)!==JSON.stringify(["AO.SM.C0150","AO.SM.C0207"]))throw new Error("Canon source boundaries omit the final Per omnia / Amen");
 
   if(sungCorpus){
     const byBlock=new Map((sungCorpus.blocks??[]).map(b=>[b.Block_ID,b]));
     for(const s of segments){
-      const block=byBlock.get(s.blockIds[0]);
-      if(!block)throw new Error(s.id+": missing corpus block "+s.blockIds[0]);
-      const cues=(block.units??[]).map(u=>u.cue_id);
-      if(cues[0]!==s.cueStart || cues.at(-1)!==s.cueEnd)throw new Error(s.id+": cue range does not match canonical block");
+      const cues=s.blockIds.flatMap(blockId=>{
+        const block=byBlock.get(blockId);
+        if(!block)throw new Error(s.id+": missing corpus block "+blockId);
+        return (block.units??[]).map(u=>u.cue_id);
+      });
+      if(cues[0]!==s.cueStart || cues.at(-1)!==s.cueEnd)throw new Error(s.id+": cue range does not match canonical block sequence");
     }
   }
 
