@@ -3,6 +3,7 @@ import {
   extractCanonicalCueId,
   resolveFaithfulGestureForCue,
   GLORIA_CREDO_FAITHFUL_GESTURES,
+  ORDINARY_SUNG_GESTURE_ANCHORS,
 } from "../src/mass/faithful-gesture-cues.js";
 
 assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"GUIDED_1962"}),null,
@@ -57,6 +58,29 @@ for(const [cueId,spec] of Object.entries(GLORIA_CREDO_FAITHFUL_GESTURES)){
       actual.toLocaleLowerCase().includes(fragment.toLocaleLowerCase())),
       cueId+" "+name+" word highlight is not a substring of its pinned source witness");
   }
+}
+
+const sourceGestureRegistry=JSON.parse(readFileSync("data/presentation/reader-gestures.v1.json","utf8"));
+const registered=new Set(sourceGestureRegistry.items.map(row=>row.cueId));
+assert.equal(Object.keys(ORDINARY_SUNG_GESTURE_ANCHORS).length,27,
+  "ordinary source-backed gesture anchor coverage unexpectedly drifted");
+for(const [cueId,spec] of Object.entries(ORDINARY_SUNG_GESTURE_ANCHORS)){
+  const source=sourced.get(cueId);
+  assert.ok(registered.has(cueId),"Unregistered cue gained presentation-only gesture words: "+cueId);
+  assert.ok(source?.latin && source?.english && french.byCue[cueId],
+    cueId+": source witness missing for multilingual cue");
+  for(const [label,anchor,sourceText] of [
+    ["Latin",spec.anchorLat,source.latin],
+    ["English",spec.anchorEn,source.english],
+    ["French",spec.anchorFr,french.byCue[cueId]],
+  ]){
+    assert.ok(anchor && sourceText.toLocaleLowerCase().includes(anchor.toLocaleLowerCase()),
+      cueId+" "+label+" cue anchor diverged from the corresponding pinned source text");
+  }
+}
+for(const unsourced of ["AO.SM.C0197","AO.SM.C0198","AO.SM.C0246"]){
+  assert.ok(!ORDINARY_SUNG_GESTURE_ANCHORS[unsourced],
+    unsourced+" is a false instant or private voice and must never acquire a word cue");
 }
 
 console.log("faithful Gloria/Credo cue ownership: PASS");
