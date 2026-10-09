@@ -10,10 +10,11 @@
     "opposition_class_counts": {
       "AUTHOR_FULL_FIRST_PERSON": 5,
       "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED": 13,
-      "AUTHOR_EXCERPTS_MEDIATED": 2,
+      "DIGITIZED_1966_AUTHOR_PASSAGES_BOUNDED_NOT_COLLATED": 2,
       "REASONED_OR_ILLUSTRATIVE_NOT_NAMED_AUTHOR": 27,
       "AUTHOR_EXCERPTS_CDF": 6,
-      "MISCONCEPTION_NOT_AN_AUTHOR": 2
+      "MISCONCEPTION_NOT_AN_AUTHOR": 2,
+      "AUTHOR_EXCERPTS_MEDIATED": 0
     },
     "whole_debates_certified": 0,
     "independent_theological_approvals": 0,
@@ -162,10 +163,10 @@
     },
     {
       "id": "CSE008",
-      "attribution_class": "AUTHOR_EXCERPTS_MEDIATED",
+      "attribution_class": "DIGITIZED_1966_AUTHOR_PASSAGES_BOUNDED_NOT_COLLATED",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
-        "FLETCHER_EXCERPTS"
+        "FLETCHER1966"
       ],
       "opposition_position_reference_ids": [
         "FLETCHER_EXCERPTS",
@@ -184,7 +185,7 @@
         },
         {
           "source_id": "FLETCHER1966",
-          "link": "https://books.google.com/books/about/Situation_Ethics.html?id=Y4759nkMFq0C"
+          "link": "https://books.google.com/books/about/Situation_Ethics.html?id=E2JqAAAAMAAJ"
         },
         {
           "source_id": "FARLEY2008",
@@ -193,10 +194,10 @@
       ],
       "stage_source_ids": {
         "opposition": [
-          "FLETCHER_EXCERPTS"
+          "FLETCHER1966"
         ],
         "appeal": [
-          "FLETCHER_TABLET"
+          "FLETCHER1966"
         ],
         "concession": [
           "ST18"
@@ -210,7 +211,7 @@
           "SCR"
         ],
         "counter": [
-          "FLETCHER_EXCERPTS"
+          "FLETCHER1966"
         ],
         "response": [
           "VS"
@@ -224,14 +225,14 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Fletcher's proposition wording supported by excerpts and secondary education, not an independent complete original book collation."
+      "original_context_note": "The 1966 Westminster edition is identifiable; the full original chapter passages are inspectable in a third-party digitized copy, but exact printed-page collation and reconstructed counterquestion wording are not certified."
     },
     {
       "id": "CSE010",
-      "attribution_class": "AUTHOR_EXCERPTS_MEDIATED",
+      "attribution_class": "DIGITIZED_1966_AUTHOR_PASSAGES_BOUNDED_NOT_COLLATED",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
-        "FLETCHER_EXCERPTS"
+        "FLETCHER1966"
       ],
       "opposition_position_reference_ids": [
         "FLETCHER_EXCERPTS",
@@ -250,7 +251,7 @@
         },
         {
           "source_id": "FLETCHER1966",
-          "link": "https://books.google.com/books/about/Situation_Ethics.html?id=Y4759nkMFq0C"
+          "link": "https://books.google.com/books/about/Situation_Ethics.html?id=E2JqAAAAMAAJ"
         },
         {
           "source_id": "CURRAN2006",
@@ -259,10 +260,10 @@
       ],
       "stage_source_ids": {
         "opposition": [
-          "FLETCHER_EXCERPTS"
+          "FLETCHER1966"
         ],
         "appeal": [
-          "FLETCHER_TABLET"
+          "FLETCHER1966"
         ],
         "concession": [
           "VS"
@@ -274,7 +275,7 @@
           "VS"
         ],
         "counter": [
-          "FLETCHER_EXCERPTS"
+          "FLETCHER1966"
         ],
         "response": [
           "VS"
@@ -287,7 +288,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Fletcher's proposition wording supported by excerpts and secondary education, not an independent complete original book collation."
+      "original_context_note": "The 1966 Westminster edition is identifiable; the full original chapter passages are inspectable in a third-party digitized copy, but exact printed-page collation and reconstructed counterquestion wording are not certified."
     },
     {
       "id": "CSE012",
