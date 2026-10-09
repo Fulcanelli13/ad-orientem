@@ -321,6 +321,11 @@ export function renderExploreToString(vm){
     L(vm.language,"Pilgrimage, shrine, route or place","Pèlerinage, sanctuaire, itinéraire ou lieu")
   )+'"></div>';
 
+  if(vm.lens==="tlm")html+='<section class="aoFindExternalSource" role="note">'
+    +'<div><strong>'+esc(L(vm.language,"More Mass locations","Autres lieux de messe"))+'</strong>'
+    +'<span>'+esc(L(vm.language,"Browse Latin Mass Directory directly. External listings and schedules are not independently verified by this app.","Consultez directement Latin Mass Directory. Ces lieux et horaires externes ne sont pas vérifiés indépendamment par cette application."))+'</span></div>'
+    +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Open worldwide directory ↗","Ouvrir l’annuaire mondial ↗"))+'</a>'
+    +'</section>';
   html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
 
