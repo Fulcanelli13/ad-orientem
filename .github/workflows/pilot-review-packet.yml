@@ -1,0 +1,44 @@
+name: Pilot review packet
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "tools/build-pilot-review-packet.mjs"
+      - "tests/pilot-review-packet.mjs"
+      - "docs/PILOT-HANDSET-EDITORIAL-HANDOFF.md"
+      - ".github/workflows/pilot-review-packet.yml"
+      - "src/pray/rosary-guided-bead-meditations.v1.js"
+      - "src/pray/rosary-guided-bead-evidence.v1.js"
+  push:
+    branches: [main]
+    paths:
+      - "tools/build-pilot-review-packet.mjs"
+      - "tests/pilot-review-packet.mjs"
+      - "docs/PILOT-HANDSET-EDITORIAL-HANDOFF.md"
+      - ".github/workflows/pilot-review-packet.yml"
+      - "src/pray/rosary-guided-bead-meditations.v1.js"
+      - "src/pray/rosary-guided-bead-evidence.v1.js"
+
+permissions:
+  contents: read
+
+jobs:
+  build-packet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate all 200 review rows and blank signoffs
+        run: node tests/pilot-review-packet.mjs
+      - name: Generate fingerprinted, offline handoff
+        run: node tools/build-pilot-review-packet.mjs artifacts/pilot-review-handoff
+      - name: Archive review handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-pilot-review-handoff
+          path: artifacts/pilot-review-handoff/*
+          if-no-files-found: error
+          retention-days: 30
