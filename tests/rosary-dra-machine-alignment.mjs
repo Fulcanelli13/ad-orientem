@@ -2,6 +2,14 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const audit=JSON.parse(readFileSync("data/pray/rosary-dra-machine-alignment.v1.json","utf8"));
 const donor=JSON.parse(readFileSync("data/pray/rosary-scripture-editorial-inventory.v1.json","utf8"));
+const canonical=JSON.parse(readFileSync("data/pray/rosary-drc-crampon-collation.v1.json","utf8"));
+assert.equal(canonical.rows.length,200);
+assert.equal(canonical.counts.englishFoundAllSourceVerses,200);
+assert.equal(canonical.counts.frenchFoundAllSourceVerses,197);
+assert.equal(canonical.counts.permittedPublication,0);
+assert.notEqual(canonical.editionInput.sourceRepo,audit.source.repository,
+ "Independent English Challoner comparison must not silently replace the paired Catholic canonical SOT");
+
 const rowMap=new Map(donor.rows.map(r=>[r.id,r]));
 assert.equal(rowMap.size,200);
 assert.equal(audit.rows.length,200);
@@ -20,6 +28,9 @@ for(const row of audit.rows){
  ids.add(row.id);
  const original=rowMap.get(row.id);
  assert.equal(row.sourceReference,original.sourceReference);
+ const index=audit.rows.indexOf(row);
+ assert.equal(row.id,canonical.rows[index].id,"Independent Challoner comparison drifted from paired Catholic SOT");
+ assert.equal(row.sourceReference,canonical.rows[index].citation,"Mismatch in source citation ownership");
  assert.equal(row.mysteryId,original.mysteryId);
  assert.equal(row.certifiedForDisplay,false);
  assert.equal(row.frenchTextStatus,"NOT_COLLATED_TO_CRAMPON_1923");
