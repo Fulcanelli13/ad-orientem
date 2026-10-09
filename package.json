@@ -152,7 +152,7 @@
     "test:rosary-scripture-policy": "node tests/rosary-scripture-policy.mjs",
     "test:directory-sspx-priority-districts": "node tests/directory-sspx-priority-districts.mjs",
     "test:directory-sspx-post-alias-audit": "node tests/directory-sspx-post-alias-audit.mjs",
-    "test:scripture": "node tests/scripture-catalogue.mjs && node tests/scripture-canon.mjs && node tests/scripture-passages.mjs && node tests/scripture-rosary-audit.mjs && node tests/scripture-library.mjs && node tests/scripture-experience.mjs"
+    "test:scripture": "node tests/scripture-catalogue.mjs && node tests/scripture-canon.mjs && node tests/scripture-passages.mjs && node tests/scripture-rosary-audit.mjs && node tests/scripture-library.mjs && node tests/scripture-experience.mjs && node tests/scripture-import.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
