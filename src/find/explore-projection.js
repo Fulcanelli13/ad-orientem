@@ -432,14 +432,15 @@ export function projectSacredSiteItems({records=[],places=[],kind="apparitions"}
       map_state:mapped?"MAPPED":place?"ADDRESS_ONLY":"PLACE_PENDING",
       facts:freezeList([
         apparition?{label:"Category",value:family}:{label:"Associated person",value:record?.associated_person},
+        !apparition&&record?.material_category?{label:"Object tradition",value:record.material_category.replaceAll("_"," ").toLowerCase()}:null,
         date?{label:"Period",value:date}:null,
         {label:"Evidence",value:evidence},
         apparition?{label:"Witness / tradition",value:record?.witness_or_tradition}:null,
       ].filter(x=>x?.value)),
-      sections:freezeList([{label:"Source scope",label_fr:"Portée de la source",title:"",body:notes,body_fr:apparition?"Les récits d’apparitions relèvent des révélations privées ou de traditions historiques ; l’existence d’un sanctuaire ne constitue pas une déclaration universelle sur leur origine surnaturelle.":"Le lieu de conservation ou de vénération est attribué à sa source, sans authentification canonique ou scientifique indépendante."},...(record?.access_notice_en?[{label:"Visitor access",label_fr:"Accès des visiteurs",title:"Temporary closure",title_fr:"Fermeture temporaire",body:record.access_notice_en,body_fr:record.access_notice_fr??record.access_notice_en}]:[])]),
+      sections:freezeList([{label:"Source scope",label_fr:"Portée de la source",title:"",body:notes,body_fr:apparition?"Les récits d’apparitions relèvent des révélations privées ou de traditions historiques ; l’existence d’un sanctuaire ne constitue pas une déclaration universelle sur leur origine surnaturelle.":"Le lieu de conservation ou de vénération est attribué à sa source, sans authentification canonique ou scientifique indépendante."},...(record?.access_notice_en?[{label:"Visitor access",label_fr:"Accès des visiteurs",title:"Temporary closure",title_fr:"Fermeture temporaire",body:record.access_notice_en,body_fr:record.access_notice_fr??record.access_notice_en}]:[]),...(record?.display_notice_en?[{label:"Exposition & visitor access",label_fr:"Ostension et accès",title:"",title_fr:"",body:record.display_notice_en,body_fr:record.display_notice_fr??record.display_notice_en}]:[])]),
       source_links:freezeList([record?.source_url?{id:record.id,title:title,issuer:"Documented source",url:record.source_url}:null].filter(Boolean)),
       actions:freezeList(placeMapsUrl(place)?[{label:"Destination",url:placeMapsUrl(place)}]:[]),
-      note:notes+(record?.access_notice_en?" "+record.access_notice_en:""),
+      note:notes+(record?.access_notice_en?" "+record.access_notice_en:"")+(record?.display_notice_en?" "+record.display_notice_en:""),
       search_text:itemSearch([record?.title_en,record?.title_fr,record?.associated_person,record?.witness_or_tradition,record?.period_label,record?.phenomenon_family,record?.relic_kind,place?.name?.official,addressLabel(place?.address)]),
       raw:Object.freeze({record,place}),
     });
