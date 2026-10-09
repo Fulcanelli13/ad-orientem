@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,confessionPath,confessionStepAt} from "../src/pray/confession-paths.js";
+import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,confessionRiteCards,confessionAfterCards,confessionPath,confessionStepAt} from "../src/pray/confession-paths.js";
 assert.deepEqual(Object.keys(CONFESSION_PATHS),["regular","returning","general"]);
 assert.equal(confessionPath("general").id,"general");
 assert.equal(confessionPath("unknown"),null);
@@ -10,7 +10,11 @@ for(const [key,value] of Object.entries(CONFESSION_PATHS)){
 }
 assert.match(CONFESSION_PATHS.general.descriptionEn,/Not required simply because it has been years/i);
 const sourceSections=Array.from({length:10},(_,i)=>[(i+1)+" · Commandment",[ "A distinct first duty", "A second consideration" ]]);
-assert.deepEqual(confessionExaminationCards("regular",sourceSections),[]);
+const quick=confessionExaminationCards("regular",sourceSections);
+assert.equal(quick.length,5);
+assert.deepEqual(quick.map(x=>x.id),["quick-commandments-1","quick-commandments-2","quick-commandments-3","quick-commandments-4","ready"]);
+assert.deepEqual(quick.slice(0,4).map(x=>x.questions.length),[6,4,4,6]);
+assert.deepEqual(quick.slice(0,4).flatMap(x=>x.questions),sourceSections.flatMap(x=>x[1]));
 const returning=confessionExaminationCards("returning",sourceSections);
 assert.equal(returning.length,13);
 assert.deepEqual(returning.slice(0,2).map(x=>x.id),["return-priest","return-period"]);
@@ -24,10 +28,28 @@ assert.match(general[0].bodyEn,/not collective/i);
 assert.match(general[2].bodyEn,/need not be confessed again/i);
 assert.ok(general.filter(x=>x.kind==="questions").every(x=>x.questions.length===2));
 assert.ok(returning.filter(x=>x.kind==="questions").every(x=>x.questions.length===2));
+for(const path of ["regular","returning","general"]){
+ const rite=confessionRiteCards(path);
+ assert.deepEqual(rite.map(x=>x.id),["at-priest","say-sins","contrition-penance"]);
+ assert.ok(rite.every(x=>x.kind==="reflection"&&x.bodyEn.length>110&&x.bodyFr.length>110));
+ assert.ok(rite.every(x=>["canon","catechism"].includes(x.source)));
+ assert.match(rite[0].bodyEn,/phone away/);
+ assert.match(rite[1].bodyEn,/kind and number/);
+ assert.match(rite[2].bodyEn,/not pronounce or simulate absolution/);
+}
+assert.match(confessionRiteCards("returning")[0].bodyEn,/a long time since/);
+assert.match(confessionRiteCards("general")[0].bodyEn,/general Confession/);
+const after=confessionAfterCards();
+assert.deepEqual(after.map(x=>x.id),["thanksgiving","satisfaction","amendment"]);
+assert.ok(after.every(x=>x.bodyEn.length>100&&x.bodyFr.length>100));
+assert.match(after[0].bodyEn,/only the priest/);
+assert.match(after[1].bodyEn,/restitution/);
+assert.match(after[2].bodyEn,/near occasion/);
+assert.throws(()=>confessionRiteCards("unknown"),/Unknown/);
 assert.equal(confessionStepAt(-4,14),0);
 assert.equal(confessionStepAt(100,14),13);
 assert.equal(confessionStepAt(3.8,14),3);
 assert.throws(()=>confessionExaminationCards("general",sourceSections.slice(1)),/ten original/);
 assert.throws(()=>confessionExaminationCards("unknown",sourceSections),/Unknown/);
 assert.throws(()=>confessionStepAt(0,0),/Empty/);
-console.log("Confession quick, returning and optional general guidance contracts passed (0/13/14 examination cards)");
+console.log("Confession quick, returning and optional general guidance contracts passed (5/13/14 examinations plus 3 priest-prep and 3 aftercare cards)");
