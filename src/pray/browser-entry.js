@@ -30,6 +30,13 @@ export function ensurePrayReader({win=globalThis}={}){
     const coherence=win?.AO_PRAY_COHERENCE_V435930;
     const focus=win?.AO_PRAY_FOCUS_V3410;
     if(!coherence||!focus)throw new Error("Prayer presentation or focus owner missing");
+    // Settings is eagerly available while this reader is not. Apply any
+    // already-persisted Rosary, Stations and Angelus preferences now, before
+    // the first Prayer frame is painted, instead of losing early edits.
+    const prayerPreferences=win?.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.prayer;
+    if(prayerPreferences && typeof win?.AO_PRAY_V435930?.applySettingsPreferences==="function"){
+      win.AO_PRAY_V435930.applySettingsPreferences(prayerPreferences);
+    }
     readerReady=true;
     readerError=null;
     return true;
