@@ -983,21 +983,26 @@ function renderConfession(){
  }
  if(CONF.stage===1)body=confessionExaminationView(ex);
  if(CONF.stage===2){
-  const intro=CONF.path==='returning'
-   ?L("Begin by telling the priest that you are returning after a long absence and would appreciate guidance. Then confess remembered grave sins by kind and number as honestly as you can.","Commencez par dire au prêtre que vous revenez après une longue absence et que vous avez besoin d’aide. Confessez ensuite sincèrement les péchés graves dont vous vous souvenez selon leur espèce et leur nombre.")
-   :CONF.path==='general'
-   ?L("Tell the priest you wish to make a general Confession and agree its scope with him. It is an individual Confession, not the collective rite of general absolution.","Dites au prêtre que vous souhaitez faire une confession générale et convenez avec lui de sa portée. C’est une confession individuelle, non le rite collectif d’absolution générale.")
-   :L("Confess the grave sins you remember by kind and number after an adequate examination.","Confessez, selon leur espèce et leur nombre, les péchés graves dont vous vous souvenez après un examen suffisant.");
-  body=`${guideNow(L('In the confessional','Au confessionnal'),intro+' '+L("Put the phone away. If a number is genuinely uncertain, give your best truthful estimate. Listen to the priest, accept the penance, pray the Act of Contrition when directed and attend to absolution.","Rangez le téléphone. Si un nombre est incertain, donnez votre meilleure estimation sincère. Écoutez le prêtre, acceptez la pénitence, faites l’Acte de contrition lorsqu’il vous y invite et soyez attentif à l’absolution."))}
-  ${callout(esc(L('No recording, transcription or simulated absolution occurs here.','Aucun enregistrement, aucune transcription et aucune absolution simulée n’ont lieu ici.')),'privacy')}`;
+  // Read these rehearsal cards before entering; never encourage reading the phone during absolution.
+  const cards=confessionRiteCards(CONF.path),pos=confessionStepAt(CONF.riteStep,cards.length);
+  body=`${guideNow(L('Before you enter the confessional','Avant d\'entrer au confessionnal'),L('Review these simple steps, then put your phone away. The sacrament takes place with the priest, not in this app.','Relisez ces étapes, puis rangez votre téléphone. Le sacrement a lieu avec le prêtre, non dans cette application.'))}
+  ${confessionSingleCard(cards[pos],pos,cards.length,"rite")}
+  ${pos===cards.length-1?guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition · read before entering','Acte de contrition · à relire avant d\'entrer')}]):''}
+  ${callout(esc(L('No audio recording, transcript, stored sins or simulated absolution.','Aucun enregistrement audio, aucune transcription, aucun péché conservé, aucune absolution simulée.')),'privacy')}`;
  }
- if(CONF.stage===3)body=`${guideNow(L('Give thanks and complete what was given','Rendez grâce et accomplissez ce qui vous a été donné'),L('Thank God for His mercy. Carry out the penance promptly, make restitution where justice requires it, and choose one concrete amendment.','Remerciez Dieu pour sa miséricorde. Accomplissez rapidement la pénitence, faites restitution lorsque la justice l’exige et choisissez une résolution concrète.'))}<div class="aoP435930Doctrine"><article><h3>${esc(L('Penance','Pénitence'))}</h3><p>${esc(L('Do it as soon as reasonably possible.','Accomplissez-la dès que raisonnablement possible.'))}</p></article><article><h3>${esc(L('Repair','Réparation'))}</h3><p>${esc(L('Repair concrete harm where justice requires it and where this can prudently be done.','Réparez le tort concret lorsque la justice l’exige et que cela peut être fait prudemment.'))}</p></article><article><h3>${esc(L('Amendment','Résolution'))}</h3><p>${esc(L('Choose one specific amendment rather than reopening the whole examination.','Choisissez une résolution précise plutôt que de recommencer tout l’examen.'))}</p></article></div><button class="aoP435930Danger" type="button" data-p435930-conf-clear>${esc(L('Clear this preparation now','Effacer cette préparation maintenant'))}</button>`;
+ if(CONF.stage===3){
+  const cards=confessionAfterCards(),pos=confessionStepAt(CONF.afterStep,cards.length);
+  body=`${guideNow(L('After Confession','Après la confession'),L('Give thanks, complete your assigned penance and repair harm where justice requires. These steps do not imply that absolution occurred merely by navigating the app.','Rendez grâce, accomplissez la pénitence reçue et réparez le tort lorsque la justice l\'exige. Naviguer dans l\'application ne signifie pas qu\'une absolution a été reçue.'))}
+  ${confessionSingleCard(cards[pos],pos,cards.length,"after")}
+  ${pos===cards.length-1?`<button class="aoP435930Danger" type="button" data-p435930-conf-clear>${esc(L('Clear this preparation now','Effacer cette préparation maintenant'))}</button>`:''}`;
+ }
  const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
    <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
    ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer">${esc(src.label)} ↗</a>`).join('')}</details>`;
- const navigation=guideNav('conf',CONF.stage,stages.length,L('Return','Retour'));
- const guarded=CONF.stage===0&&!path?navigation.replace('data-p435930-conf-next','data-p435930-conf-next disabled aria-disabled="true"'):navigation;
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}${guideRail(stages,CONF.stage,'conf')}<main class="aoP435930Body">${devotionalGuide('confession')}${body}${sources}${guarded}</main>`;
+ const lastCard=CONF.stage===3&&CONF.afterStep===confessionAfterCards().length-1;
+ const navigation=`<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-conf-prev ${CONF.stage===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>
+ <button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):L('Continue','Continuer'))}</button></div>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}${guideRail(stages,CONF.stage,'conf')}<main class="aoP435930Body">${devotionalGuide('confession')}${body}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
