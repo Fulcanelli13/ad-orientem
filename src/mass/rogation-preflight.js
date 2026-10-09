@@ -1,0 +1,143 @@
+import { rogationProperReady } from "./rogation-mass-selection.js";
+
+// Eligibility describes the liturgical day; it NEVER selects a procession.
+// The host's date, IV-class rank and resolved Tempora Proper must all agree.
+function gregorianEaster(year){
+  const a=year%19,b=Math.floor(year/100),c=year%100;
+  const d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25);
+  const g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30;
+  const i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k+700)%7;
+  const m=Math.floor((a+11*h+22*l)/451);
+  const month=Math.floor((h+l-7*m+114)/31);
+  const day=((h+l-7*m+114)%31)+1;
+  return new Date(Date.UTC(year,month-1,day));
+}
+export function isLesserRogationDay(date){
+  if(typeof date!=="string"||!/^(19|20)\d\d-\d\d-\d\d$/.test(date))return false;
+  const year=Number(date.slice(0,4));
+  const easter=gregorianEaster(year);
+  const offset=Math.round((Date.parse(date+"T00:00:00Z")-easter.getTime())/86400000);
+  return [36,37,38].includes(offset);
+}
+export function resolvedRogationCandidate(legacy){
+  const rank=Number(legacy?.calendarRank??legacy?.calendarDay?.rank);
+  const source=String(legacy?.properSource??legacy?.calendarDay?.path??"");
+  const eligible=legacy?.canStart===true&&isLesserRogationDay(legacy.date)&&
+    rank===4&&source.startsWith("Tempora/Pasc5-0")&&
+    (legacy?.requestedCelebrationId??"mass_of_day")==="mass_of_day";
+  return Object.freeze({eligible,date:eligible?legacy.date:null,dayClass:eligible?rank:null});
+}
+export function rogationPrefaceReady(preface){
+  if(preface?.schema!=="AO_1962_ROGATION_EASTER_PREFACE_V1" ||
+    preface?.status!=="PUBLISHED_1962_EASTER_PREFACE"||
+    preface?.published!==true || preface?.publicationAllowed!==true ||
+    preface?.selection!=="IN_HOC_POTISSIMUM" ||
+    !preface?.source?.url || !preface?.source?.edition)return false;
+  const t=preface.text;
+  return ["lat","en","fr"].every(k=>typeof t?.[k]==="string"&&t[k].trim().length>100)&&
+    /in hoc potissimum/i.test(t.lat)&&
+    !/in hac potissimum die|in hac potissimum nocte/i.test(t.lat);
+}
+export async function loadRogationPreflightLibrary({
+  fetchImpl=globalThis.fetch,baseUrl=import.meta.url
+}={}){
+  if(typeof fetchImpl!=="function")throw new TypeError("ROGATION_FETCH_REQUIRED");
+  const paths=[
+    "../../data/mass/rogation-proper-source-gate.v1.json",
+    "../../data/mass/rogation-proper-trilingual.v1.json",
+    "../../data/mass/rogation-easter-preface.v1.json"
+  ];
+  const out=await Promise.all(paths.map(async path=>{
+    const response=await fetchImpl(new URL(path,baseUrl));
+    if(!response?.ok)throw new Error("ROGATION_SOURCE_UNAVAILABLE");
+    return response.json();
+  }));
+  return Object.freeze({sourceGate:out[0],sourceProper:out[1],preface:out[2]});
+}
+export function rogationPublicChoiceReady(library){
+  return Boolean(rogationProperReady(library?.sourceGate,library?.sourceProper) &&
+    rogationPrefaceReady(library?.preface));
+}
+export function projectRogationPreflight({
+ legacy,choice="DAY_MASS",service=null,library=null
+}={}){
+  const candidate=resolvedRogationCandidate(legacy);
+  if(!candidate.eligible)return Object.freeze({visible:false,choice:"DAY_MASS",selection:null});
+  if(![null,"PUBLIC_PROCESSION","ORDINARY_AUTHORIZED_SUPPLICATIONS"].includes(service))
+    throw new Error("ROGATION_PUBLIC_SERVICE_INVALID");
+  if(!["DAY_MASS","ROGATION_MASS"].includes(choice))throw new Error("ROGATION_CHOICE_INVALID");
+  const available=rogationPublicChoiceReady(library);
+  if(choice==="ROGATION_MASS"&&!available)return Object.freeze({
+    visible:true,available:false,choice,selection:null,reason:"PROPER_OR_PREFACE_UNPUBLISHED"
+  });
+  const selection=choice==="DAY_MASS"&&service===null?null:{
+    choice,observanceConfirmed:true,dayClass:candidate.dayClass,service,
+    ...(choice==="ROGATION_MASS"?{
+      sourceGate:library.sourceGate,sourceProper:library.sourceProper,
+      preface:{
+        ...library.preface.text,
+        sourceRef:library.preface.source.edition,
+        sourceUrl:library.preface.source.url
+      }
+    }:{})
+  };
+  if(choice==="ROGATION_MASS"&&!service)return Object.freeze({
+    visible:true,available,choice,selection:null,reason:"PUBLIC_RITE_NOT_SELECTED"
+  });
+  return Object.freeze({visible:true,available,choice,selection});
+}
+
+export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis.fetch}={}){
+  if(!doc?.createElement||typeof getResolvedMass!=="function")throw new TypeError("Rogation DOM and resolver required");
+  let choice="DAY_MASS",service=null,library=null,loading=false,disposed=false,root=null,lastDate=null;
+  const container=doc.getElementById("ao-mass-flow-v1");
+  if(!container)return Object.freeze({selectionFor:()=>null,refresh:()=>{},dispose:()=>{}});
+  const mount=()=>container.querySelector(".aoFlowActions")??container.querySelector("[data-ao-start-live]")?.parentElement;
+  function refresh(){
+    if(disposed)return;
+    let legacy=null;try{legacy=getResolvedMass()}catch{return}
+    const candidate=resolvedRogationCandidate(legacy);
+    if(!candidate.eligible){root?.remove();root=null;choice="DAY_MASS";service=null;lastDate=null;return}
+    if(lastDate!==candidate.date){choice="DAY_MASS";service=null;lastDate=candidate.date;}
+    const anchor=mount();if(!anchor)return;
+    if(!root){
+      root=doc.createElement("details");
+      root.className="aoRogationPreflight";
+      root.setAttribute("data-ao-rogation-preflight","");
+      root.innerHTML='<summary>Rogation observance</summary><label>Public rite <select data-rogation-service><option value="">No public litanies</option><option value="PUBLIC_PROCESSION">Public procession</option><option value="ORDINARY_AUTHORIZED_SUPPLICATIONS">Authorized public supplications</option></select></label><label>Mass <select data-rogation-choice><option value="DAY_MASS">Mass of the day</option><option value="ROGATION_MASS">Rogation Mass · Exaudivit</option></select></label><p data-rogation-status role="status"></p>';
+      root.style.cssText="margin:9px 0;padding:12px 14px;border:1px solid var(--liturgical-border,rgba(197,174,116,.28));border-radius:12px;background:var(--liturgical-soft,rgba(255,255,255,.025));color:var(--text,#ede4d9);font:inherit";
+      root.querySelector("summary").style.cssText="cursor:pointer;font-weight:600";
+      root.querySelectorAll("label").forEach(x=>x.style.cssText="display:block;margin-top:11px;font-size:.83rem");
+      root.querySelectorAll("select").forEach(x=>x.style.cssText="display:block;max-width:100%;margin-top:4px;padding:7px;border:1px solid var(--liturgical-border,rgba(255,255,255,.2));border-radius:8px;background:var(--surface-1,#12202c);color:inherit");
+      root.addEventListener("change",e=>{
+        if(e.target?.matches?.("[data-rogation-service]"))service=e.target.value||null;
+        if(e.target?.matches?.("[data-rogation-choice]"))choice=e.target.value;
+        refresh();
+      });
+      anchor.insertAdjacentElement("afterend",root);
+    }
+    const enabled=rogationPublicChoiceReady(library);
+    const dedicated=root.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]');
+    dedicated.disabled=!enabled;
+    if(!enabled&&choice==="ROGATION_MASS")choice="DAY_MASS";
+    root.querySelector("[data-rogation-service]").value=service??"";
+    root.querySelector("[data-rogation-choice]").value=choice;
+    root.querySelector("[data-rogation-status]").textContent=enabled?
+      "A processional Mass requires explicit public litanies; the Mass of the day remains available.":
+      "The distinct processional Proper is not yet certified; the Mass of the day remains available after public litanies.";
+    if(!loading&&!library){
+      loading=true;
+      void loadRogationPreflightLibrary({fetchImpl}).then(value=>{library=value;refresh()}).catch(()=>{
+        library={};refresh();
+      }).finally(()=>{loading=false});
+    }
+  }
+  function selectionFor(legacy){
+    const snapshot=projectRogationPreflight({legacy,choice,service,library});
+    if(snapshot.choice==="ROGATION_MASS"&&!snapshot.available)
+      throw new Error("ROGATION_PROPER_NOT_PUBLISHED");
+    return snapshot.selection;
+  }
+  refresh();
+  return Object.freeze({refresh,selectionFor,dispose(){disposed=true;root?.remove();root=null}});
+}
