@@ -13,7 +13,21 @@ assert.ok(htmlBytes+chunkBytes<=13_500_000,"Critical text payload exceeds 13.5 M
 assert.ok(report.replacedImages>=90,"Historic base64 image payload was reintroduced");
 assert.ok(report.uniqueImages>=80,"Externalized image registry unexpectedly shrank");
 assert.ok(report.savedFromTextBytes>=25_000_000,"Text weight recovered less than expected");
-assert.equal(split.postArtHtmlBytes,htmlBytes,"Current HTML has changed without updating startup measurement");
+const sprites=JSON.parse(readFileSync("data/presentation/startup-sprite-report.v1.json","utf8"));
+assert.equal(sprites.reducedHtmlBytes,htmlBytes,"Current HTML changed without a matching sprite manifest");
+assert.equal(sprites.originalHtmlBytes,split.postArtHtmlBytes,"SVG extraction did not start from the certified post-art HTML");
+assert.ok(htmlBytes<3_000_000,"Cold HTML budget: refined SVG assets must remain external");
+assert.ok(sprites.entries.length===3,"Three large refined SVG sprite assets required");
+for(const entry of sprites.entries){
+  assert.ok(existsSync(entry.path),"Missing refined SVG asset: "+entry.path);
+  const svg=readFileSync(entry.path,"utf8");
+  assert.ok(svg.includes('xmlns="http://www.w3.org/2000/svg"'),"External sprite lacks SVG namespace");
+  for(const id of entry.symbols){
+    assert.ok(html.includes('id="'+id+'"'),"Legacy symbol not present in lightweight proxy: "+id);
+    assert.ok(html.includes(entry.path+"#"+id),"Symbol proxy lost content address: "+id);
+    assert.ok(svg.includes('id="'+id+'"'),"External asset lost referenced symbol: "+id);
+  }
+}
 
 const encoded=/data:image\/(?:webp|jpeg|png|gif);base64,[A-Za-z0-9+/]{4096,}/i;
 for(const path of ["index.html",...chunks]){
