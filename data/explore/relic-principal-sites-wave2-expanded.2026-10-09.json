@@ -1,0 +1,2173 @@
+{
+  "schema": "SACRED_ATLAS_RELIC_WAVE2_EXPANSION_V1",
+  "as_of": "2026-10-09",
+  "n_new_places": 19,
+  "n_subject_associations": 20,
+  "additional_geo_areas": [
+    {
+      "geo_area_id": "geo:country:GR",
+      "name": {
+        "official": "Greece",
+        "aliases": [
+          "Grèce"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GR"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SV",
+      "name": {
+        "official": "El Salvador",
+        "aliases": [
+          "Salvador"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SV"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LB",
+      "name": {
+        "official": "Lebanon",
+        "aliases": [
+          "Liban"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LB"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PE",
+      "name": {
+        "official": "Peru",
+        "aliases": [
+          "Pérou"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PE"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LU",
+      "name": {
+        "official": "Luxembourg",
+        "aliases": [
+          "Luxembourg"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LU"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:HU",
+      "name": {
+        "official": "Hungary",
+        "aliases": [
+          "Hongrie"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "HU"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "place": {
+        "place_id": "place:ES:convento-san-juan-cruz-segovia",
+        "name": {
+          "official": "Convento de San Juan de la Cruz, Segovia",
+          "aliases": [
+            "Couvent Saint-Jean-de-la-Croix, Ségovie"
+          ]
+        },
+        "place_type": "convent",
+        "geo_area_ids": [
+          "geo:country:ES"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 40.95561,
+          "lng": -4.13335,
+          "precision": "site",
+          "geocoding_source": "WIKIDATA",
+          "source_url": "https://www.wikidata.org/wiki/Q19949835",
+          "source_ref": "wikidata:Q19949835",
+          "attribution": "Heritage location data, source as linked",
+          "matched_country_code": "ES",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Segovia",
+          "region": null,
+          "country_code": "ES",
+          "country": "Spain",
+          "formatted": "Convento de San Juan de la Cruz, Segovia, Segovia, ES"
+        },
+        "source_ids": [
+          "SHR-ES-convento-san-juan-cruz-segovia"
+        ]
+      },
+      "source": {
+        "id": "SHR-ES-convento-san-juan-cruz-segovia",
+        "title": "Convento de San Juan de la Cruz, Segovia: reported relic custody and pilgrimage heritage",
+        "issuer": "Named public heritage or tourism authority",
+        "directness": "SECONDARY",
+        "url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+        "place_id": "place:ES:convento-san-juan-cruz-segovia",
+        "name": "Convento de San Juan de la Cruz, Segovia",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint John of the Cross",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint John of the Cross; this is not independent authentication.",
+        "associated_saints": [
+          "Saint John of the Cross"
+        ],
+        "source_ids": [
+          "SHR-ES-convento-san-juan-cruz-segovia"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:ES:convento-san-juan-cruz-segovia:destination",
+        "name": "Pilgrimage to Convento de San Juan de la Cruz, Segovia",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-ES-convento-san-juan-cruz-segovia"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:ES:convento-san-juan-cruz-segovia",
+        "place_id": "place:ES:convento-san-juan-cruz-segovia",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint John of the Cross",
+        "title_fr": "Reliques traditionnellement attribuées à saint Jean de la Croix",
+        "associated_person": "Saint John of the Cross",
+        "source_url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Convento de San Juan de la Cruz, Segovia with the tomb or relic veneration of Saint John of the Cross. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Convento de San Juan de la Cruz, Segovia à la tombe ou aux reliques de saint Jean de la Croix. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:ES:convento-san-juan-cruz-segovia",
+        "relic_id": "relic:ES:convento-san-juan-cruz-segovia",
+        "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+        "selection_ids": [
+          "selection:saint-john-of-the-cross:conventosanjuandelacruzsegovia"
+        ],
+        "subject_ids": [
+          "subject:saint-john-of-the-cross"
+        ],
+        "geo_source": "https://www.wikidata.org/wiki/Q19949835",
+        "original_custodian_sources": [
+          "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/"
+        ],
+        "source_grade": "SECONDARY",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+        "name": {
+          "official": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
+          "aliases": [
+            "Sanctuaire Sainte-Lucie, église San Geremia, Venise"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:IT"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 45.44266,
+          "lng": 12.32532,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/138843633",
+          "source_ref": "osm:way:138843633",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "IT",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Venezia",
+          "region": null,
+          "country_code": "IT",
+          "country": "Italy",
+          "formatted": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia, Venezia, IT"
+        },
+        "source_ids": [
+          "SHR-IT-san-geremia-santa-lucia-venezia"
+        ]
+      },
+      "source": {
+        "id": "SHR-IT-san-geremia-santa-lucia-venezia",
+        "title": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_DIOCESAN",
+        "url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+        "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+        "name": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Lucy of Syracuse",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Lucy of Syracuse; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Lucy of Syracuse"
+        ],
+        "source_ids": [
+          "SHR-IT-san-geremia-santa-lucia-venezia"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:IT:san-geremia-santa-lucia-venezia:destination",
+        "name": "Pilgrimage to Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-IT-san-geremia-santa-lucia-venezia"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:IT:san-geremia-santa-lucia-venezia",
+        "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Lucy of Syracuse",
+        "title_fr": "Reliques traditionnellement attribuées à sainte Lucie de Syracuse",
+        "associated_person": "Saint Lucy of Syracuse",
+        "source_url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Santuario di Santa Lucia — Chiesa di San Geremia, Venezia with the tomb or relic veneration of Saint Lucy of Syracuse. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Santuario di Santa Lucia — Chiesa di San Geremia, Venezia à la tombe ou aux reliques de sainte Lucie de Syracuse. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+        "relic_id": "relic:IT:san-geremia-santa-lucia-venezia",
+        "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+        "selection_ids": [
+          "selection:saint-lucy-of-syracuse:santuariodisantaluciasangeremiavenezia"
+        ],
+        "subject_ids": [
+          "subject:saint-lucy-of-syracuse"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/138843633",
+        "original_custodian_sources": [
+          "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/"
+        ],
+        "source_grade": "OFFICIAL_DIOCESAN",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:GR:saint-titus-heraklion",
+        "name": {
+          "official": "Church of Saint Titus, Heraklion",
+          "aliases": [
+            "Église Saint-Tite, Héraklion"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:GR"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 35.3401,
+          "lng": 25.13466,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/91031227",
+          "source_ref": "osm:way:91031227",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "GR",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Heraklion",
+          "region": null,
+          "country_code": "GR",
+          "country": "Greece",
+          "formatted": "Church of Saint Titus, Heraklion, Heraklion, GR"
+        },
+        "source_ids": [
+          "SHR-GR-saint-titus-heraklion"
+        ]
+      },
+      "source": {
+        "id": "SHR-GR-saint-titus-heraklion",
+        "title": "Church of Saint Titus, Heraklion: reported relic custody and pilgrimage heritage",
+        "issuer": "Named public heritage or tourism authority",
+        "directness": "SECONDARY",
+        "url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:GR:saint-titus-heraklion",
+        "place_id": "place:GR:saint-titus-heraklion",
+        "name": "Church of Saint Titus, Heraklion",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Titus",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Titus; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Titus"
+        ],
+        "source_ids": [
+          "SHR-GR-saint-titus-heraklion"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:GR:saint-titus-heraklion:destination",
+        "name": "Pilgrimage to Church of Saint Titus, Heraklion",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:GR:saint-titus-heraklion",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-GR-saint-titus-heraklion"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:GR:saint-titus-heraklion",
+        "place_id": "place:GR:saint-titus-heraklion",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Titus",
+        "title_fr": "Reliques traditionnellement attribuées à saint Tite",
+        "associated_person": "Saint Titus",
+        "source_url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Church of Saint Titus, Heraklion with the tomb or relic veneration of Saint Titus. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Church of Saint Titus, Heraklion à la tombe ou aux reliques de saint Tite. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:GR:saint-titus-heraklion",
+        "relic_id": "relic:GR:saint-titus-heraklion",
+        "shrine_id": "shrine:GR:saint-titus-heraklion",
+        "selection_ids": [
+          "selection:saint-titus:orthodoxchurchofsainttitusheraklion"
+        ],
+        "subject_ids": [
+          "subject:saint-titus"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/91031227",
+        "original_custodian_sources": [
+          "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html"
+        ],
+        "source_grade": "SECONDARY",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+        "name": {
+          "official": "Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+          "aliases": [
+            "Cathédrale-basilique Saints-Pierre-et-Paul, Philadelphie"
+          ]
+        },
+        "place_type": "cathedral",
+        "geo_area_ids": [
+          "geo:country:US"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 39.9574,
+          "lng": -75.16855,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/252221811",
+          "source_ref": "osm:way:252221811",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "US",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Philadelphia",
+          "region": null,
+          "country_code": "US",
+          "country": "United States",
+          "formatted": "Cathedral Basilica of Saints Peter and Paul, Philadelphia, Philadelphia, US"
+        },
+        "source_ids": [
+          "SHR-US-cathedral-katharine-drexel-philadelphia"
+        ]
+      },
+      "source": {
+        "id": "SHR-US-cathedral-katharine-drexel-philadelphia",
+        "title": "Cathedral Basilica of Saints Peter and Paul, Philadelphia: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_CHURCH",
+        "url": "https://cathedralphila.org/drexel/about/history/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+        "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+        "name": "Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Katharine Drexel",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Katharine Drexel; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Katharine Drexel"
+        ],
+        "source_ids": [
+          "SHR-US-cathedral-katharine-drexel-philadelphia"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:US:cathedral-katharine-drexel-philadelphia:destination",
+        "name": "Pilgrimage to Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-US-cathedral-katharine-drexel-philadelphia"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:US:cathedral-katharine-drexel-philadelphia",
+        "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Katharine Drexel",
+        "title_fr": "Reliques traditionnellement attribuées à sainte Catherine Drexel",
+        "associated_person": "Saint Katharine Drexel",
+        "source_url": "https://cathedralphila.org/drexel/about/history/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Cathedral Basilica of Saints Peter and Paul, Philadelphia with the tomb or relic veneration of Saint Katharine Drexel. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Cathedral Basilica of Saints Peter and Paul, Philadelphia à la tombe ou aux reliques de sainte Catherine Drexel. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+        "relic_id": "relic:US:cathedral-katharine-drexel-philadelphia",
+        "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+        "selection_ids": [
+          "selection:saint-katharine-drexel:cathedralbasilicasaintspeterandpaulphiladelph"
+        ],
+        "subject_ids": [
+          "subject:saint-katharine-drexel"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/252221811",
+        "original_custodian_sources": [
+          "https://cathedralphila.org/drexel/about/history/"
+        ],
+        "source_grade": "OFFICIAL_CHURCH",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:SV:catedral-metropolitana-san-salvador",
+        "name": {
+          "official": "Catedral Metropolitana de San Salvador",
+          "aliases": [
+            "Cathédrale métropolitaine de San Salvador"
+          ]
+        },
+        "place_type": "cathedral",
+        "geo_area_ids": [
+          "geo:country:SV"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 13.69855,
+          "lng": -89.19109,
+          "precision": "site",
+          "geocoding_source": "WIKIDATA",
+          "source_url": "https://www.wikidata.org/wiki/Q2942929",
+          "source_ref": "wikidata:Q2942929",
+          "attribution": "Heritage location data, source as linked",
+          "matched_country_code": "SV",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "San Salvador",
+          "region": null,
+          "country_code": "SV",
+          "country": "El Salvador",
+          "formatted": "Catedral Metropolitana de San Salvador, San Salvador, SV"
+        },
+        "source_ids": [
+          "SHR-SV-catedral-metropolitana-san-salvador"
+        ]
+      },
+      "source": {
+        "id": "SHR-SV-catedral-metropolitana-san-salvador",
+        "title": "Catedral Metropolitana de San Salvador: reported relic custody and pilgrimage heritage",
+        "issuer": "Named public heritage or tourism authority",
+        "directness": "SECONDARY",
+        "url": "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+        "place_id": "place:SV:catedral-metropolitana-san-salvador",
+        "name": "Catedral Metropolitana de San Salvador",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Oscar Romero",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Oscar Romero; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Oscar Romero"
+        ],
+        "source_ids": [
+          "SHR-SV-catedral-metropolitana-san-salvador"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:SV:catedral-metropolitana-san-salvador:destination",
+        "name": "Pilgrimage to Catedral Metropolitana de San Salvador",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-SV-catedral-metropolitana-san-salvador"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:SV:catedral-metropolitana-san-salvador",
+        "place_id": "place:SV:catedral-metropolitana-san-salvador",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Oscar Romero",
+        "title_fr": "Reliques traditionnellement attribuées à saint Oscar Romero",
+        "associated_person": "Saint Oscar Romero",
+        "source_url": "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Catedral Metropolitana de San Salvador with the tomb or relic veneration of Saint Oscar Romero. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Catedral Metropolitana de San Salvador à la tombe ou aux reliques de saint Oscar Romero. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:SV:catedral-metropolitana-san-salvador",
+        "relic_id": "relic:SV:catedral-metropolitana-san-salvador",
+        "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+        "selection_ids": [
+          "selection:saint-oscar-romero:catedralmetropolitanadesansalvador"
+        ],
+        "subject_ids": [
+          "subject:saint-oscar-romero"
+        ],
+        "geo_source": "https://www.wikidata.org/wiki/Q2942929",
+        "original_custodian_sources": [
+          "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/"
+        ],
+        "source_grade": "SECONDARY",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:LB:monastery-saint-maron-annaya",
+        "name": {
+          "official": "Monastery of Saint Maron — Annaya",
+          "aliases": [
+            "Monastère Saint-Maron d’Annaya"
+          ]
+        },
+        "place_type": "monastery",
+        "geo_area_ids": [
+          "geo:country:LB"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 34.12091,
+          "lng": 35.7533,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/306249530",
+          "source_ref": "osm:way:306249530",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "LB",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Annaya",
+          "region": null,
+          "country_code": "LB",
+          "country": "Lebanon",
+          "formatted": "Monastery of Saint Maron — Annaya, Annaya, LB"
+        },
+        "source_ids": [
+          "SHR-LB-monastery-saint-maron-annaya"
+        ]
+      },
+      "source": {
+        "id": "SHR-LB-monastery-saint-maron-annaya",
+        "title": "Monastery of Saint Maron — Annaya: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_SHRINE",
+        "url": "https://saintcharbel.com/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+        "place_id": "place:LB:monastery-saint-maron-annaya",
+        "name": "Monastery of Saint Maron — Annaya",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Charbel Makhlouf",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Charbel Makhlouf; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Charbel Makhlouf"
+        ],
+        "source_ids": [
+          "SHR-LB-monastery-saint-maron-annaya"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:LB:monastery-saint-maron-annaya:destination",
+        "name": "Pilgrimage to Monastery of Saint Maron — Annaya",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-LB-monastery-saint-maron-annaya"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:LB:monastery-saint-maron-annaya",
+        "place_id": "place:LB:monastery-saint-maron-annaya",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Charbel Makhlouf",
+        "title_fr": "Reliques traditionnellement attribuées à saint Charbel Makhlouf",
+        "associated_person": "Saint Charbel Makhlouf",
+        "source_url": "https://saintcharbel.com/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Monastery of Saint Maron — Annaya with the tomb or relic veneration of Saint Charbel Makhlouf. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Monastery of Saint Maron — Annaya à la tombe ou aux reliques de saint Charbel Makhlouf. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:LB:monastery-saint-maron-annaya",
+        "relic_id": "relic:LB:monastery-saint-maron-annaya",
+        "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+        "selection_ids": [
+          "selection:saint-charbel-makhlouf:monasteryofsaintmaronannaya"
+        ],
+        "subject_ids": [
+          "subject:saint-charbel-makhlouf"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/306249530",
+        "original_custodian_sources": [
+          "https://saintcharbel.com/"
+        ],
+        "source_grade": "OFFICIAL_SHRINE",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+        "name": {
+          "official": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio",
+          "aliases": [
+            "Église de la Sainte-Famille — sainte Joséphine Bakhita, Schio"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:IT"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 45.714131,
+          "lng": 11.36249,
+          "precision": "site",
+          "geocoding_source": "OTHER",
+          "source_url": "https://www.outdooractive.com/it/poi/vicenza/chiesa-della-sacra-famiglia/57228876/",
+          "source_ref": "outdooractive:57228876",
+          "attribution": "Heritage location data, source as linked",
+          "matched_country_code": "IT",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Schio",
+          "region": null,
+          "country_code": "IT",
+          "country": "Italy",
+          "formatted": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio, Schio, IT"
+        },
+        "source_ids": [
+          "SHR-IT-sacra-famiglia-bakhita-schio"
+        ]
+      },
+      "source": {
+        "id": "SHR-IT-sacra-famiglia-bakhita-schio",
+        "title": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio: reported relic custody and pilgrimage heritage",
+        "issuer": "Named public heritage or tourism authority",
+        "directness": "SECONDARY",
+        "url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+        "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+        "name": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Josephine Bakhita",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Josephine Bakhita; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Josephine Bakhita"
+        ],
+        "source_ids": [
+          "SHR-IT-sacra-famiglia-bakhita-schio"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:IT:sacra-famiglia-bakhita-schio:destination",
+        "name": "Pilgrimage to Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-IT-sacra-famiglia-bakhita-schio"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:IT:sacra-famiglia-bakhita-schio",
+        "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Josephine Bakhita",
+        "title_fr": "Reliques traditionnellement attribuées à sainte Joséphine Bakhita",
+        "associated_person": "Saint Josephine Bakhita",
+        "source_url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio with the tomb or relic veneration of Saint Josephine Bakhita. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio à la tombe ou aux reliques de sainte Joséphine Bakhita. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+        "relic_id": "relic:IT:sacra-famiglia-bakhita-schio",
+        "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+        "selection_ids": [
+          "selection:saint-josephine-bakhita:santuariosantagiuseppinabakhitaschio"
+        ],
+        "subject_ids": [
+          "subject:saint-josephine-bakhita"
+        ],
+        "geo_source": "https://www.outdooractive.com/it/poi/vicenza/chiesa-della-sacra-famiglia/57228876/",
+        "original_custodian_sources": [
+          "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita"
+        ],
+        "source_grade": "SECONDARY",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:US:carmel-mission-basilica-serra",
+        "name": {
+          "official": "Carmel Mission Basilica — Saint Junípero Serra",
+          "aliases": [
+            "Basilique de la mission du Carmel — saint Junípero Serra"
+          ]
+        },
+        "place_type": "basilica",
+        "geo_area_ids": [
+          "geo:country:US"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 36.54288,
+          "lng": -121.9203,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/1251791840",
+          "source_ref": "osm:way:1251791840",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "US",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Carmel-by-the-Sea",
+          "region": null,
+          "country_code": "US",
+          "country": "United States",
+          "formatted": "Carmel Mission Basilica — Saint Junípero Serra, Carmel-by-the-Sea, US"
+        },
+        "source_ids": [
+          "SHR-US-carmel-mission-basilica-serra"
+        ]
+      },
+      "source": {
+        "id": "SHR-US-carmel-mission-basilica-serra",
+        "title": "Carmel Mission Basilica — Saint Junípero Serra: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_SHRINE",
+        "url": "https://carmelmission.org/serra-grave/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+        "place_id": "place:US:carmel-mission-basilica-serra",
+        "name": "Carmel Mission Basilica — Saint Junípero Serra",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Junípero Serra",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Junípero Serra; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Junípero Serra"
+        ],
+        "source_ids": [
+          "SHR-US-carmel-mission-basilica-serra"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:US:carmel-mission-basilica-serra:destination",
+        "name": "Pilgrimage to Carmel Mission Basilica — Saint Junípero Serra",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:US:carmel-mission-basilica-serra",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-US-carmel-mission-basilica-serra"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:US:carmel-mission-basilica-serra",
+        "place_id": "place:US:carmel-mission-basilica-serra",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Junípero Serra",
+        "title_fr": "Reliques traditionnellement attribuées à saint Junípero Serra",
+        "associated_person": "Saint Junípero Serra",
+        "source_url": "https://carmelmission.org/serra-grave/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Carmel Mission Basilica — Saint Junípero Serra with the tomb or relic veneration of Saint Junípero Serra. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Carmel Mission Basilica — Saint Junípero Serra à la tombe ou aux reliques de saint Junípero Serra. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:US:carmel-mission-basilica-serra",
+        "relic_id": "relic:US:carmel-mission-basilica-serra",
+        "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+        "selection_ids": [
+          "selection:saint-junipero-serra:carmelmissionbasilicacalifornia"
+        ],
+        "subject_ids": [
+          "subject:saint-junipero-serra"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/1251791840",
+        "original_custodian_sources": [
+          "https://carmelmission.org/serra-grave/"
+        ],
+        "source_grade": "OFFICIAL_SHRINE",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:PE:convento-santo-domingo-lima",
+        "name": {
+          "official": "Basílica y Convento de Santo Domingo, Lima",
+          "aliases": [
+            "Basilique et couvent Saint-Dominique, Lima"
+          ]
+        },
+        "place_type": "convent",
+        "geo_area_ids": [
+          "geo:country:PE"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": -12.04409,
+          "lng": -77.03161,
+          "precision": "complex_anchor",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/node/1932068186",
+          "source_ref": "osm:node:1932068186",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "PE",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Lima",
+          "region": null,
+          "country_code": "PE",
+          "country": "Peru",
+          "formatted": "Basílica y Convento de Santo Domingo, Lima, Lima, PE"
+        },
+        "source_ids": [
+          "SHR-PE-convento-santo-domingo-lima"
+        ]
+      },
+      "source": {
+        "id": "SHR-PE-convento-santo-domingo-lima",
+        "title": "Basílica y Convento de Santo Domingo, Lima: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_CHURCH",
+        "url": "https://www.conventosantodomingo.com.pe/basilica/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+        "place_id": "place:PE:convento-santo-domingo-lima",
+        "name": "Basílica y Convento de Santo Domingo, Lima",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Rose of Lima; Saint Martin de Porres",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Rose of Lima and Saint Martin de Porres; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Rose of Lima",
+          "Saint Martin de Porres"
+        ],
+        "source_ids": [
+          "SHR-PE-convento-santo-domingo-lima"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:PE:convento-santo-domingo-lima:destination",
+        "name": "Pilgrimage to Basílica y Convento de Santo Domingo, Lima",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:PE:convento-santo-domingo-lima",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-PE-convento-santo-domingo-lima"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:PE:convento-santo-domingo-lima",
+        "place_id": "place:PE:convento-santo-domingo-lima",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Rose of Lima and Saint Martin de Porres",
+        "title_fr": "Reliques traditionnellement attribuées à sainte Rose de Lima et saint Martin de Porrès",
+        "associated_person": "Saint Rose of Lima; Saint Martin de Porres",
+        "source_url": "https://www.conventosantodomingo.com.pe/basilica/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Basílica y Convento de Santo Domingo, Lima with the tomb or relic veneration of Saint Rose of Lima and Saint Martin de Porres. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Basílica y Convento de Santo Domingo, Lima à la tombe ou aux reliques de sainte Rose de Lima et saint Martin de Porrès. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:PE:convento-santo-domingo-lima",
+        "relic_id": "relic:PE:convento-santo-domingo-lima",
+        "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+        "selection_ids": [
+          "selection:saint-rose-of-lima:conventosantodomingolima",
+          "selection:saint-martin-de-porres:conventosantodomingolima"
+        ],
+        "subject_ids": [
+          "subject:saint-rose-of-lima",
+          "subject:saint-martin-de-porres"
+        ],
+        "geo_source": "https://www.openstreetmap.org/node/1932068186",
+        "original_custodian_sources": [
+          "https://www.conventosantodomingo.com.pe/basilica/"
+        ],
+        "source_grade": "OFFICIAL_CHURCH",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:GB:westminster-abbey-st-edward",
+        "name": {
+          "official": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+          "aliases": [
+            "Abbaye de Westminster — sanctuaire de saint Édouard le Confesseur"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:GB"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 51.4994,
+          "lng": -0.12739,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/364313092",
+          "source_ref": "osm:way:364313092",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "GB",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "London",
+          "region": null,
+          "country_code": "GB",
+          "country": "United Kingdom",
+          "formatted": "Westminster Abbey — Shrine of Saint Edward the Confessor, London, GB"
+        },
+        "source_ids": [
+          "SHR-GB-westminster-abbey-st-edward"
+        ]
+      },
+      "source": {
+        "id": "SHR-GB-westminster-abbey-st-edward",
+        "title": "Westminster Abbey — Shrine of Saint Edward the Confessor: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "PRIMARY_INSTITUTIONAL",
+        "url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+        "place_id": "place:GB:westminster-abbey-st-edward",
+        "name": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Edward the Confessor",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Edward the Confessor; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Edward the Confessor"
+        ],
+        "source_ids": [
+          "SHR-GB-westminster-abbey-st-edward"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:GB:westminster-abbey-st-edward:destination",
+        "name": "Pilgrimage to Westminster Abbey — Shrine of Saint Edward the Confessor",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:GB:westminster-abbey-st-edward",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-GB-westminster-abbey-st-edward"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:GB:westminster-abbey-st-edward",
+        "place_id": "place:GB:westminster-abbey-st-edward",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Edward the Confessor",
+        "title_fr": "Reliques traditionnellement attribuées à saint Édouard le Confesseur",
+        "associated_person": "Saint Edward the Confessor",
+        "source_url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Westminster Abbey — Shrine of Saint Edward the Confessor with the tomb or relic veneration of Saint Edward the Confessor. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Westminster Abbey — Shrine of Saint Edward the Confessor à la tombe ou aux reliques de saint Édouard le Confesseur. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:GB:westminster-abbey-st-edward",
+        "relic_id": "relic:GB:westminster-abbey-st-edward",
+        "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+        "selection_ids": [
+          "selection:saint-edward-the-confessor:westminsterabbeylondon"
+        ],
+        "subject_ids": [
+          "subject:saint-edward-the-confessor"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/364313092",
+        "original_custodian_sources": [
+          "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward"
+        ],
+        "source_grade": "PRIMARY_INSTITUTIONAL",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:LU:basilica-st-willibrord-echternach",
+        "name": {
+          "official": "Basilica of Saint Willibrord, Echternach",
+          "aliases": [
+            "Basilique Saint-Willibrord, Echternach"
+          ]
+        },
+        "place_type": "basilica",
+        "geo_area_ids": [
+          "geo:country:LU"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 49.8134,
+          "lng": 6.42172,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/87262794",
+          "source_ref": "osm:way:87262794",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "LU",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Echternach",
+          "region": null,
+          "country_code": "LU",
+          "country": "Luxembourg",
+          "formatted": "Basilica of Saint Willibrord, Echternach, Echternach, LU"
+        },
+        "source_ids": [
+          "SHR-LU-basilica-st-willibrord-echternach"
+        ]
+      },
+      "source": {
+        "id": "SHR-LU-basilica-st-willibrord-echternach",
+        "title": "Basilica of Saint Willibrord, Echternach: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_SHRINE",
+        "url": "https://basilika.lu/en/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+        "place_id": "place:LU:basilica-st-willibrord-echternach",
+        "name": "Basilica of Saint Willibrord, Echternach",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Willibrord",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Willibrord; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Willibrord"
+        ],
+        "source_ids": [
+          "SHR-LU-basilica-st-willibrord-echternach"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:LU:basilica-st-willibrord-echternach:destination",
+        "name": "Pilgrimage to Basilica of Saint Willibrord, Echternach",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-LU-basilica-st-willibrord-echternach"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:LU:basilica-st-willibrord-echternach",
+        "place_id": "place:LU:basilica-st-willibrord-echternach",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Willibrord",
+        "title_fr": "Reliques traditionnellement attribuées à saint Willibrord",
+        "associated_person": "Saint Willibrord",
+        "source_url": "https://basilika.lu/en/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Basilica of Saint Willibrord, Echternach with the tomb or relic veneration of Saint Willibrord. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Basilica of Saint Willibrord, Echternach à la tombe ou aux reliques de saint Willibrord. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:LU:basilica-st-willibrord-echternach",
+        "relic_id": "relic:LU:basilica-st-willibrord-echternach",
+        "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+        "selection_ids": [
+          "selection:saint-willibrord:stwillibrordbasilicaechternach"
+        ],
+        "subject_ids": [
+          "subject:saint-willibrord"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/87262794",
+        "original_custodian_sources": [
+          "https://basilika.lu/en/"
+        ],
+        "source_grade": "OFFICIAL_SHRINE",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:PL:wawel-cathedral-stanislaus",
+        "name": {
+          "official": "Wawel Cathedral, Kraków",
+          "aliases": [
+            "Cathédrale du Wawel, Cracovie"
+          ]
+        },
+        "place_type": "cathedral",
+        "geo_area_ids": [
+          "geo:country:PL"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 50.05464,
+          "lng": 19.93548,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/85151350",
+          "source_ref": "osm:way:85151350",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "PL",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Kraków",
+          "region": null,
+          "country_code": "PL",
+          "country": "Poland",
+          "formatted": "Wawel Cathedral, Kraków, Kraków, PL"
+        },
+        "source_ids": [
+          "SHR-PL-wawel-cathedral-stanislaus"
+        ]
+      },
+      "source": {
+        "id": "SHR-PL-wawel-cathedral-stanislaus",
+        "title": "Wawel Cathedral, Kraków: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_CHURCH",
+        "url": "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+        "place_id": "place:PL:wawel-cathedral-stanislaus",
+        "name": "Wawel Cathedral, Kraków",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Stanislaus of Kraków",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Stanislaus of Kraków; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Stanislaus of Kraków"
+        ],
+        "source_ids": [
+          "SHR-PL-wawel-cathedral-stanislaus"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:PL:wawel-cathedral-stanislaus:destination",
+        "name": "Pilgrimage to Wawel Cathedral, Kraków",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-PL-wawel-cathedral-stanislaus"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:PL:wawel-cathedral-stanislaus",
+        "place_id": "place:PL:wawel-cathedral-stanislaus",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Stanislaus of Kraków",
+        "title_fr": "Reliques traditionnellement attribuées à saint Stanislas de Cracovie",
+        "associated_person": "Saint Stanislaus of Kraków",
+        "source_url": "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Wawel Cathedral, Kraków with the tomb or relic veneration of Saint Stanislaus of Kraków. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Wawel Cathedral, Kraków à la tombe ou aux reliques de saint Stanislas de Cracovie. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:PL:wawel-cathedral-stanislaus",
+        "relic_id": "relic:PL:wawel-cathedral-stanislaus",
+        "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+        "selection_ids": [
+          "selection:saint-stanislaus-of-krakow:wawelcathedralkrakow"
+        ],
+        "subject_ids": [
+          "subject:saint-stanislaus-of-krakow"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/85151350",
+        "original_custodian_sources": [
+          "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/"
+        ],
+        "source_grade": "OFFICIAL_CHURCH",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:LT:vilnius-cathedral-st-casimir",
+        "name": {
+          "official": "Vilnius Cathedral — Chapel of Saint Casimir",
+          "aliases": [
+            "Cathédrale de Vilnius — chapelle Saint-Casimir"
+          ]
+        },
+        "place_type": "cathedral",
+        "geo_area_ids": [
+          "geo:country:LT"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 54.68589,
+          "lng": 25.2878,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/4870323",
+          "source_ref": "osm:way:4870323",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "LT",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Vilnius",
+          "region": null,
+          "country_code": "LT",
+          "country": "Lithuania",
+          "formatted": "Vilnius Cathedral — Chapel of Saint Casimir, Vilnius, LT"
+        },
+        "source_ids": [
+          "SHR-LT-vilnius-cathedral-st-casimir"
+        ]
+      },
+      "source": {
+        "id": "SHR-LT-vilnius-cathedral-st-casimir",
+        "title": "Vilnius Cathedral — Chapel of Saint Casimir: reported relic custody and pilgrimage heritage",
+        "issuer": "Named public heritage or tourism authority",
+        "directness": "SECONDARY",
+        "url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+        "place_id": "place:LT:vilnius-cathedral-st-casimir",
+        "name": "Vilnius Cathedral — Chapel of Saint Casimir",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Casimir",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Casimir; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Casimir"
+        ],
+        "source_ids": [
+          "SHR-LT-vilnius-cathedral-st-casimir"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:LT:vilnius-cathedral-st-casimir:destination",
+        "name": "Pilgrimage to Vilnius Cathedral — Chapel of Saint Casimir",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-LT-vilnius-cathedral-st-casimir"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:LT:vilnius-cathedral-st-casimir",
+        "place_id": "place:LT:vilnius-cathedral-st-casimir",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Casimir",
+        "title_fr": "Reliques traditionnellement attribuées à saint Casimir",
+        "associated_person": "Saint Casimir",
+        "source_url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Vilnius Cathedral — Chapel of Saint Casimir with the tomb or relic veneration of Saint Casimir. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Vilnius Cathedral — Chapel of Saint Casimir à la tombe ou aux reliques de saint Casimir. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:LT:vilnius-cathedral-st-casimir",
+        "relic_id": "relic:LT:vilnius-cathedral-st-casimir",
+        "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+        "selection_ids": [
+          "selection:saint-casimir:vilniuscathedralsaintcasimirchapel"
+        ],
+        "subject_ids": [
+          "subject:saint-casimir"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/4870323",
+        "original_custodian_sources": [
+          "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus"
+        ],
+        "source_grade": "SECONDARY",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:HU:st-stephen-basilica-budapest",
+        "name": {
+          "official": "Saint Stephen's Basilica, Budapest",
+          "aliases": [
+            "Basilique Saint-Étienne, Budapest"
+          ]
+        },
+        "place_type": "basilica",
+        "geo_area_ids": [
+          "geo:country:HU"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 47.50051,
+          "lng": 19.05349,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/node/4795379802",
+          "source_ref": "osm:node:4795379802",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "HU",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Budapest",
+          "region": null,
+          "country_code": "HU",
+          "country": "Hungary",
+          "formatted": "Saint Stephen's Basilica, Budapest, Budapest, HU"
+        },
+        "source_ids": [
+          "SHR-HU-st-stephen-basilica-budapest"
+        ]
+      },
+      "source": {
+        "id": "SHR-HU-st-stephen-basilica-budapest",
+        "title": "Saint Stephen's Basilica, Budapest: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_CHURCH",
+        "url": "https://bazilikabudapest.hu/2024/04/12/szentjobb/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+        "place_id": "place:HU:st-stephen-basilica-budapest",
+        "name": "Saint Stephen's Basilica, Budapest",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Stephen of Hungary",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Stephen of Hungary; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Stephen of Hungary"
+        ],
+        "source_ids": [
+          "SHR-HU-st-stephen-basilica-budapest"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:HU:st-stephen-basilica-budapest:destination",
+        "name": "Pilgrimage to Saint Stephen's Basilica, Budapest",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-HU-st-stephen-basilica-budapest"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:HU:st-stephen-basilica-budapest",
+        "place_id": "place:HU:st-stephen-basilica-budapest",
+        "relic_kind": "BODILY_FRAGMENT",
+        "title_en": "Traditionally attributed relics of Saint Stephen of Hungary",
+        "title_fr": "Reliques traditionnellement attribuées à saint Étienne de Hongrie",
+        "associated_person": "Saint Stephen of Hungary",
+        "source_url": "https://bazilikabudapest.hu/2024/04/12/szentjobb/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Saint Stephen's Basilica, Budapest with the tomb or relic veneration of Saint Stephen of Hungary. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Saint Stephen's Basilica, Budapest à la tombe ou aux reliques de saint Étienne de Hongrie. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:HU:st-stephen-basilica-budapest",
+        "relic_id": "relic:HU:st-stephen-basilica-budapest",
+        "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+        "selection_ids": [
+          "selection:saint-stephen-of-hungary:szentistvanbazilikabudapest"
+        ],
+        "subject_ids": [
+          "subject:saint-stephen-of-hungary"
+        ],
+        "geo_source": "https://www.openstreetmap.org/node/4795379802",
+        "original_custodian_sources": [
+          "https://bazilikabudapest.hu/2024/04/12/szentjobb/"
+        ],
+        "source_grade": "OFFICIAL_CHURCH",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:PL:gniezno-cathedral-adalbert",
+        "name": {
+          "official": "Gniezno Cathedral — Saint Adalbert",
+          "aliases": [
+            "Cathédrale de Gniezno — saint Adalbert"
+          ]
+        },
+        "place_type": "cathedral",
+        "geo_area_ids": [
+          "geo:country:PL"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 52.53682,
+          "lng": 17.59259,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/74413264",
+          "source_ref": "osm:way:74413264",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "PL",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Gniezno",
+          "region": null,
+          "country_code": "PL",
+          "country": "Poland",
+          "formatted": "Gniezno Cathedral — Saint Adalbert, Gniezno, PL"
+        },
+        "source_ids": [
+          "SHR-PL-gniezno-cathedral-adalbert"
+        ]
+      },
+      "source": {
+        "id": "SHR-PL-gniezno-cathedral-adalbert",
+        "title": "Gniezno Cathedral — Saint Adalbert: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_DIOCESAN",
+        "url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+        "place_id": "place:PL:gniezno-cathedral-adalbert",
+        "name": "Gniezno Cathedral — Saint Adalbert",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Adalbert of Prague",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Adalbert of Prague; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Adalbert of Prague"
+        ],
+        "source_ids": [
+          "SHR-PL-gniezno-cathedral-adalbert"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:PL:gniezno-cathedral-adalbert:destination",
+        "name": "Pilgrimage to Gniezno Cathedral — Saint Adalbert",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-PL-gniezno-cathedral-adalbert"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:PL:gniezno-cathedral-adalbert",
+        "place_id": "place:PL:gniezno-cathedral-adalbert",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Adalbert of Prague",
+        "title_fr": "Reliques traditionnellement attribuées à saint Adalbert de Prague",
+        "associated_person": "Saint Adalbert of Prague",
+        "source_url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Gniezno Cathedral — Saint Adalbert with the tomb or relic veneration of Saint Adalbert of Prague. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Gniezno Cathedral — Saint Adalbert à la tombe ou aux reliques de saint Adalbert de Prague. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:PL:gniezno-cathedral-adalbert",
+        "relic_id": "relic:PL:gniezno-cathedral-adalbert",
+        "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+        "selection_ids": [
+          "selection:saint-adalbert-of-prague:archcathedralbasilicagniezno"
+        ],
+        "subject_ids": [
+          "subject:saint-adalbert-of-prague"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/74413264",
+        "original_custodian_sources": [
+          "https://archidiecezja.pl/co-kryja-relikwiarze/"
+        ],
+        "source_grade": "OFFICIAL_DIOCESAN",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:IT:abbey-san-colombano-bobbio",
+        "name": {
+          "official": "Abbazia di San Colombano, Bobbio",
+          "aliases": [
+            "Abbaye Saint-Colomban, Bobbio"
+          ]
+        },
+        "place_type": "monastery",
+        "geo_area_ids": [
+          "geo:country:IT"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 44.76797,
+          "lng": 9.38539,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/184660224",
+          "source_ref": "osm:way:184660224",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "IT",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Bobbio",
+          "region": null,
+          "country_code": "IT",
+          "country": "Italy",
+          "formatted": "Abbazia di San Colombano, Bobbio, Bobbio, IT"
+        },
+        "source_ids": [
+          "SHR-IT-abbey-san-colombano-bobbio"
+        ]
+      },
+      "source": {
+        "id": "SHR-IT-abbey-san-colombano-bobbio",
+        "title": "Abbazia di San Colombano, Bobbio: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_DIOCESAN",
+        "url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+        "place_id": "place:IT:abbey-san-colombano-bobbio",
+        "name": "Abbazia di San Colombano, Bobbio",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Columbanus",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Columbanus; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Columbanus"
+        ],
+        "source_ids": [
+          "SHR-IT-abbey-san-colombano-bobbio"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:IT:abbey-san-colombano-bobbio:destination",
+        "name": "Pilgrimage to Abbazia di San Colombano, Bobbio",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-IT-abbey-san-colombano-bobbio"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:IT:abbey-san-colombano-bobbio",
+        "place_id": "place:IT:abbey-san-colombano-bobbio",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Columbanus",
+        "title_fr": "Reliques traditionnellement attribuées à saint Colomban",
+        "associated_person": "Saint Columbanus",
+        "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Abbazia di San Colombano, Bobbio with the tomb or relic veneration of Saint Columbanus. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Abbazia di San Colombano, Bobbio à la tombe ou aux reliques de saint Colomban. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:IT:abbey-san-colombano-bobbio",
+        "relic_id": "relic:IT:abbey-san-colombano-bobbio",
+        "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+        "selection_ids": [
+          "selection:saint-columbanus:basilicasancolombanobobbio"
+        ],
+        "subject_ids": [
+          "subject:saint-columbanus"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/184660224",
+        "original_custodian_sources": [
+          "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/"
+        ],
+        "source_grade": "OFFICIAL_DIOCESAN",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+        "name": {
+          "official": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+          "aliases": [
+            "Pátio do Colégio — saint José de Anchieta, São Paulo"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:BR"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": -23.548035,
+          "lng": -46.632671,
+          "precision": "complex_anchor",
+          "geocoding_source": "OTHER",
+          "source_url": "https://visite.museus.gov.br/instituicoes/museu-anchieta-pateo-do-collegio/",
+          "source_ref": "museus.gov.br:anchieta-pateo",
+          "attribution": "Heritage location data, source as linked",
+          "matched_country_code": "BR",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "São Paulo",
+          "region": null,
+          "country_code": "BR",
+          "country": "Brazil",
+          "formatted": "Pateo do Collegio — Saint José de Anchieta, São Paulo, São Paulo, BR"
+        },
+        "source_ids": [
+          "SHR-BR-pateo-do-collegio-sao-paulo"
+        ]
+      },
+      "source": {
+        "id": "SHR-BR-pateo-do-collegio-sao-paulo",
+        "title": "Pateo do Collegio — Saint José de Anchieta, São Paulo: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "OFFICIAL_CHURCH",
+        "url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+        "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+        "name": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint José de Anchieta",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint José de Anchieta; this is not independent authentication.",
+        "associated_saints": [
+          "Saint José de Anchieta"
+        ],
+        "source_ids": [
+          "SHR-BR-pateo-do-collegio-sao-paulo"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:BR:pateo-do-collegio-sao-paulo:destination",
+        "name": "Pilgrimage to Pateo do Collegio — Saint José de Anchieta, São Paulo",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-BR-pateo-do-collegio-sao-paulo"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:BR:pateo-do-collegio-sao-paulo",
+        "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint José de Anchieta",
+        "title_fr": "Reliques traditionnellement attribuées à saint José de Anchieta",
+        "associated_person": "Saint José de Anchieta",
+        "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Pateo do Collegio — Saint José de Anchieta, São Paulo with the tomb or relic veneration of Saint José de Anchieta. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Pateo do Collegio — Saint José de Anchieta, São Paulo à la tombe ou aux reliques de saint José de Anchieta. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+        "relic_id": "relic:BR:pateo-do-collegio-sao-paulo",
+        "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+        "selection_ids": [
+          "selection:saint-jose-de-anchieta:pateodocollegiosaopaulo"
+        ],
+        "subject_ids": [
+          "subject:saint-jose-de-anchieta"
+        ],
+        "geo_source": "https://visite.museus.gov.br/instituicoes/museu-anchieta-pateo-do-collegio/",
+        "original_custodian_sources": [
+          "https://www.pateodocollegio.com.br/sao-jose-de-anchieta"
+        ],
+        "source_grade": "OFFICIAL_CHURCH",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+        "name": {
+          "official": "Église Saint-Hilaire-le-Grand, Poitiers",
+          "aliases": [
+            "Église Saint-Hilaire-le-Grand, Poitiers"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:FR"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 46.5773,
+          "lng": 0.33275,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/38676352",
+          "source_ref": "osm:way:38676352",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "FR",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Poitiers",
+          "region": null,
+          "country_code": "FR",
+          "country": "France",
+          "formatted": "Église Saint-Hilaire-le-Grand, Poitiers, Poitiers, FR"
+        },
+        "source_ids": [
+          "SHR-FR-saint-hilaire-le-grand-poitiers"
+        ]
+      },
+      "source": {
+        "id": "SHR-FR-saint-hilaire-le-grand-poitiers",
+        "title": "Église Saint-Hilaire-le-Grand, Poitiers: reported relic custody and pilgrimage heritage",
+        "issuer": "Named public heritage or tourism authority",
+        "directness": "SECONDARY",
+        "url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+        "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+        "name": "Église Saint-Hilaire-le-Grand, Poitiers",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Hilary of Poitiers",
+        "origin_summary": "Historic pilgrimage church of Saint Hilary; the present material and attribution of its relics remain to be checked.",
+        "associated_saints": [
+          "Saint Hilary of Poitiers"
+        ],
+        "source_ids": [
+          "SHR-FR-saint-hilaire-le-grand-poitiers"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:FR:saint-hilaire-le-grand-poitiers:destination",
+        "name": "Pilgrimage to Église Saint-Hilaire-le-Grand, Poitiers",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-FR-saint-hilaire-le-grand-poitiers"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:FR:saint-hilaire-le-grand-poitiers",
+        "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+        "relic_kind": "RELIC_COLLECTION",
+        "title_en": "Historic Saint Hilary relic tradition",
+        "title_fr": "Tradition des reliques de saint Hilaire",
+        "associated_person": "Saint Hilary of Poitiers",
+        "source_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The historic church preserves a devotion to Saint Hilary; the nature and present extent of any surviving remains need separate verification. One marker identifies the church.",
+        "summary_fr": "Cette église historique conserve le culte de saint Hilaire ; la nature et l'étendue des reliques aujourd'hui conservées restent à vérifier. Un seul repère désigne l'église.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+        "relic_id": "relic:FR:saint-hilaire-le-grand-poitiers",
+        "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+        "selection_ids": [
+          "selection:saint-hilary-of-poitiers:eglisesainthilairelegrandpoitiers"
+        ],
+        "subject_ids": [
+          "subject:saint-hilary-of-poitiers"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/38676352",
+        "original_custodian_sources": [
+          "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/"
+        ],
+        "source_grade": "SECONDARY",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    },
+    {
+      "place": {
+        "place_id": "place:IT:santa-maria-vallicella-rome",
+        "name": {
+          "official": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+          "aliases": [
+            "Chiesa Nuova — Sainte-Marie-in-Vallicella, Rome"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:IT"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 41.89848,
+          "lng": 12.4692,
+          "precision": "site",
+          "geocoding_source": "OSM",
+          "source_url": "https://www.openstreetmap.org/way/29181216",
+          "source_ref": "osm:way:29181216",
+          "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+          "matched_country_code": "IT",
+          "verified_at": "2026-10-09"
+        },
+        "address": {
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "city": "Roma",
+          "region": null,
+          "country_code": "IT",
+          "country": "Italy",
+          "formatted": "Chiesa Nuova — Santa Maria in Vallicella, Rome, Roma, IT"
+        },
+        "source_ids": [
+          "SHR-IT-santa-maria-vallicella-rome"
+        ]
+      },
+      "source": {
+        "id": "SHR-IT-santa-maria-vallicella-rome",
+        "title": "Chiesa Nuova — Santa Maria in Vallicella, Rome: reported relic custody and pilgrimage heritage",
+        "issuer": "Named original custodian or ecclesiastical institution",
+        "directness": "PRIMARY_INSTITUTIONAL",
+        "url": "https://www.oratoriosanfilippo.org/la-roma-filippina/",
+        "contribution": "Documents the named saint-associated destination and/or reputed tomb or relic custody, without certifying authenticity, current exhibition, or regular access."
+      },
+      "shrine": {
+        "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+        "place_id": "place:IT:santa-maria-vallicella-rome",
+        "name": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+        "shrine_kind": "SAINT",
+        "recognition_class": "OTHER_OFFICIAL",
+        "dedication": "Saint Philip Neri",
+        "origin_summary": "Historic devotional and reputed relic destination for Saint Philip Neri; this is not independent authentication.",
+        "associated_saints": [
+          "Saint Philip Neri"
+        ],
+        "source_ids": [
+          "SHR-IT-santa-maria-vallicella-rome"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "pilgrimage": {
+        "pilgrimage_id": "pilgrimage:IT:santa-maria-vallicella-rome:destination",
+        "name": "Pilgrimage to Chiesa Nuova — Santa Maria in Vallicella, Rome",
+        "kind": "DESTINATION_PILGRIMAGE",
+        "destination_shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+        "route_ids": [],
+        "temporal_link_ids": [],
+        "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
+        "source_ids": [
+          "SHR-IT-santa-maria-vallicella-rome"
+        ],
+        "confidence": "MEDIUM_HIGH"
+      },
+      "relic": {
+        "id": "relic:IT:santa-maria-vallicella-rome",
+        "place_id": "place:IT:santa-maria-vallicella-rome",
+        "relic_kind": "REPUTED_BODILY_REMAINS",
+        "title_en": "Traditionally attributed relics of Saint Philip Neri",
+        "title_fr": "Reliques traditionnellement attribuées à saint Philippe Néri",
+        "associated_person": "Saint Philip Neri",
+        "source_url": "https://www.oratoriosanfilippo.org/la-roma-filippina/",
+        "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
+        "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+        "summary_en": "The named institution associates Chiesa Nuova — Santa Maria in Vallicella, Rome with the tomb or relic veneration of Saint Philip Neri. The material identity has not been independently authenticated; one site marker groups the associations.",
+        "summary_fr": "La source citée associe Chiesa Nuova — Santa Maria in Vallicella, Rome à la tombe ou aux reliques de saint Philippe Néri. L'identité matérielle n'est pas authentifiée de manière indépendante ; un seul repère désigne ce lieu.",
+        "calendar_semantic_key": null
+      },
+      "publication": {
+        "place_id": "place:IT:santa-maria-vallicella-rome",
+        "relic_id": "relic:IT:santa-maria-vallicella-rome",
+        "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+        "selection_ids": [
+          "selection:saint-philip-neri:chiesasantamariainvallicellachiesanuovarome"
+        ],
+        "subject_ids": [
+          "subject:saint-philip-neri"
+        ],
+        "geo_source": "https://www.openstreetmap.org/way/29181216",
+        "original_custodian_sources": [
+          "https://www.oratoriosanfilippo.org/la-roma-filippina/"
+        ],
+        "source_grade": "PRIMARY_INSTITUTIONAL",
+        "visitor_access": "RECHECK_WITH_INSTITUTION"
+      }
+    }
+  ]
+}
