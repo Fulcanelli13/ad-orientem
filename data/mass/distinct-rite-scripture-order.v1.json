@@ -4,8 +4,8 @@
   "policy": {
     "owner": "Distinct Good Friday and Easter Vigil state graphs, not standard 1962 Mass Proper slots",
     "verseModel": "Ordered segments with explicit start/end book/chapter/verse; no fake single-chapter reference for cross-chapter readings",
-    "presentation": "No Scripture Context capsules or edition substitutions until each actual native state has text-bound verification; existing reader text and rubrics unchanged",
-    "graphLink": "Only original GF-LESS, GF-PASS, EV-LESS native state IDs; no ordinal L-suffix inference or grouping adjacent unrelated rites"
+    "presentation": "These are source-led editorial research mappings, not active distinct-rite Scripture capsules. Each actual native state/Proper text must pass an independent Latin-bound UI gate before activation.",
+    "graphLink": "Source-owned GF/EV native lesson and Passion states; Palm procession source state; Easter Vigil post-Kyrie readings identified only by ordinary Mass Proper slot, never invented EV reading states"
   },
   "rites": [
     {
@@ -162,13 +162,93 @@
           "displayReference": "Deuteronomy 31:22–30",
           "status": "NOT_YET_RUNTIME_LINKED"
         }
-      ]
+      ],
+      "afterLitanyMass": {
+        "phase": "MASS_AFTER_LITANY",
+        "handoffNativeStateId": "EV-MASS-700",
+        "status": "SOURCE_VERIFIED_POST_HANDOFF_PROPER_SLOTS_NOT_UI_LINKED",
+        "note": "Both Gospel and Epistle belong to the Mass after the second litany, not to the four preceding prophecies. EV-MASS-700 is the Kyrie handoff, not an Epistle or Gospel reading state.",
+        "readings": [
+          {
+            "role": "EPISTLE_OR_LESSON",
+            "properSlot": "EPISTLE_OR_LESSON",
+            "scriptureSegments": [
+              {
+                "book": "Colossians",
+                "chapter": 3,
+                "verseStart": 1,
+                "verseEnd": 4
+              }
+            ],
+            "displayReference": "Colossians 3:1–4",
+            "latinIncipit": "Si consurrexistis cum Christo",
+            "status": "PROPER_TEXT_HANDOFF_MATCH_REQUIRED"
+          },
+          {
+            "role": "GOSPEL",
+            "properSlot": "GOSPEL",
+            "scriptureSegments": [
+              {
+                "book": "Matthew",
+                "chapter": 28,
+                "verseStart": 1,
+                "verseEnd": 7
+              }
+            ],
+            "displayReference": "Matthew 28:1–7",
+            "latinIncipit": "Vespere autem sabbati",
+            "status": "PROPER_TEXT_HANDOFF_MATCH_REQUIRED"
+          }
+        ]
+      }
     }
   ],
   "excludedFromTheseReadings": [
     "Responsories, tracts, canticles and collects are liturgically distinct from each numbered lesson; do not confuse them with the associated Bible readings.",
     "Good Friday has a Passion death pause dividing an identified biblical passage; no per-state verse boundary is asserted here.",
-    "Easter Vigil Mass after the litany requires a separately authenticated Epistle/Gospel, not an arbitrary fifth prophecy.",
+    "Easter Vigil's post-litany Mass Epistle/Gospel are separately sourced Proper slots; neither is a fifth prophecy nor an EV native reading state.",
     "Older twelve-prophecy Easter Vigil source order must never replace the 1962 four-prophecy selection."
-  ]
+  ],
+  "palmSunday": {
+    "riteId": "PALM_SUNDAY_1962",
+    "canonicalSourcePath": "Tempora/Quad6-0",
+    "witnessUrl": "https://www.missalemeum.com/en/calendar/1962-04-15",
+    "precedingRiteGospel": {
+      "role": "PALM_PROCESSION_GOSPEL",
+      "nativeStateId": "PALM-GSP-020",
+      "scriptureSegments": [
+        {
+          "book": "Matthew",
+          "chapter": 21,
+          "verseStart": 1,
+          "verseEnd": 9
+        }
+      ],
+      "displayReference": "Matthew 21:1–9",
+      "latinIncipit": "Cum appropinquasset Jesus Jerosolymis",
+      "status": "SOURCE_VERIFIED_NATIVE_TEXT_NOT_UI_LINKED"
+    },
+    "massPassion": {
+      "role": "MASS_PASSION_GOSPEL",
+      "standardMassProperSlot": "GOSPEL",
+      "scriptureSegments": [
+        {
+          "book": "Matthew",
+          "chapter": 26,
+          "verseStart": 36,
+          "verseEnd": 75
+        },
+        {
+          "book": "Matthew",
+          "chapter": 27,
+          "verseStart": 1,
+          "verseEnd": 60
+        }
+      ],
+      "displayReference": "Matthew 26:36–75; 27:1–60",
+      "latinIncipit": "Tunc venit Jesus cum illis in villam",
+      "status": "CROSS_CHAPTER_MASS_PASSION_REQUIRES_MULTI_SEGMENT_READER",
+      "note": "Never bind to PALM-GSP-020: that native state contains Matthew 21:1–9, a different Gospel preceding the procession."
+    }
+  }
 }
