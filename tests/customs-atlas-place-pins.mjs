@@ -13,8 +13,8 @@ const novenas=read("data/pray/novena-sot.v1.json");
 const evidence=read("data/geography/customs-atlas-place-geo-evidence.2026-10-09.json");
 const places=new Map(geography.places.map(place=>[place.place_id,place]));
 const published=geography.places.filter(place=>isMapPublishablePlaceGeo(place.geo,place.address?.country_code));
-assert.equal(published.length,64,"canonical shared Places must expose 63 verified coordinates");
-assert.equal(evidence.records.length,57,"two curated coordinate batches and Fiskdale need provenance evidence");
+assert.equal(published.length,65,"65 shared places must have publishable geo, including indicative Russell");
+assert.equal(evidence.records.length,58,"58 source-attributed coordinate promotions required");
 assert.equal(new Set(evidence.records.map(e=>e.place_id)).size,evidence.records.length,"duplicate GPS provenance");
 for(const record of evidence.records){
   const place=places.get(record.place_id);
@@ -35,13 +35,23 @@ const traditions=projectTraditionItems({
 const exact=traditions.filter(x=>x.raw.attestation.map_policy==="PLACE");
 const mapped=exact.filter(item=>item.map_publishable);
 assert.equal(exact.length,58,"exact geographical custom attestations changed");
-assert.equal(mapped.length,57,"Customs Atlas must plot 56 published exact-site attestations");
-assert.equal(exploreMapFeatures(mapped).length,57,"MapLibre feature projection lost customs pins");
+assert.equal(mapped.length,58,"Customs Atlas must map all 58 site-specific attestations");
+assert.equal(exploreMapFeatures(mapped).length,58,"MapLibre feature projection lost an attestation pin");
 assert.ok(traditions.filter(item=>item.raw.attestation.map_policy==="AREA_CONTEXT").every(item=>!item.map_publishable),
   "regional/cultural custom was falsely pinned to a random central point");
-assert.deepEqual(exact.filter(item=>!item.map_publishable).map(item=>item.place_id).sort(),[
-  "place:NZ:st-peter-chanel-russell",
-],"unresolved precise-site pins were silently fabricated or dropped");
+assert.deepEqual(exact.filter(item=>!item.map_publishable).map(item=>item.place_id).sort(),[],"every exact-site custom must now have an indicative or site-specific map point");
+const chanel=places.get("place:NZ:st-peter-chanel-russell");
+assert.equal(chanel.geo.indicative_only,true,"Russell must not be shown as exact-site geocoding");
+assert.equal(chanel.geo.precision,"locality");
+assert.equal(chanel.geo.source_ref,"NEARBY_RUSSELL_SCHOOL_BAKER_ST_NOT_SHRINE");
+assert.equal(chanel.geo.lat,-35.262172);
+assert.equal(chanel.geo.lng,174.123766);
+const chanelItem=exact.find(item=>item.place_id===chanel.place_id);
+assert.equal(chanelItem.geo.indicative_only,true);
+const chanelFeature=exploreMapFeatures([chanelItem])[0];
+assert.equal(chanelFeature.properties.approximate,true);
+assert.equal(chanelFeature.properties.indicative_only,true);
+assert.equal(traditions.filter(item=>item.raw.attestation.map_policy==="AREA_CONTEXT"&&item.map_publishable).length,0);
 // Independently decode the full Open Location Code recovered from the shrine-affiliated
 // Ugwogo Nike contact address; never silently substitute the conflicting WorldPlaces pin.
 const charset="23456789CFGHJMPQRVWX", digits="6FR9JH95+W9J".replace("+","");
@@ -63,4 +73,4 @@ assert.equal(shrine.geo.lat,Math.round((derivedLat+cellLat/2)*1e8)/1e8);
 assert.equal(shrine.geo.lng,Math.round((derivedLng+cellLng/2)*1e8)/1e8);
 assert.equal(shrine.geo.source_ref,"OLC:6FR9JH95+W9J");
 assert.equal(shrine.geo.precision,"complex_anchor");
-console.log("PASS 64 shared Place pins, 57 real Customs Atlas map markers, Plus Code proof and 1 exact-site hold");
+console.log("PASS 65 shared Places, 58/58 customs site markers, Russell indicative locality label, Plus Code proof");

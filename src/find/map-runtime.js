@@ -96,6 +96,7 @@ export function exploreMapFeatures(items){
         name:String(item.title??""),
         precision:String(g.precision??"unknown"),
         approximate:Boolean(g.approximate),
+        indicative_only:Boolean(g.indicative_only),
         provider_group:item?.lens==="tlm"?massMapProviderGroup(item?.community_id):"OTHER",
       },
     });
