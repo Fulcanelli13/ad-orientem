@@ -752,7 +752,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-page" data-role="schola-page"></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
-    <div class="ao-schola-main" data-schola-translate role="button" tabindex="-1" aria-label="Show Schola translation" aria-pressed="false" aria-disabled="true" title="Show translation"><span data-role="schola">—</span></div>
+    <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Show Schola translation" aria-pressed="false" aria-disabled="true"><span data-role="schola">—</span></div>
     <div class="ao-schola-translation" data-role="schola-translation" aria-live="polite"></div>
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
