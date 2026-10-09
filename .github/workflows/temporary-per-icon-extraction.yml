@@ -25,6 +25,8 @@ jobs:
         run: |
           node tools/split-refined-svg-by-symbol.mjs --apply
           node tools/split-refined-svg-by-symbol.mjs --verify
+          node tools/defer-refined-symbol-geometry.mjs --apply
+          node tools/defer-refined-symbol-geometry.mjs --verify
           node tests/startup-payload-contract.mjs
       - name: Install phone browser
         run: |
