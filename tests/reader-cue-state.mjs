@@ -98,6 +98,9 @@ assert.equal(ctrl.project("AO.SM.C0276").priestAction,null,"sedilia position tra
 
 state=ctrl.project("AO.SM.C0265");
 assert.match(state.gesture.action,/Sign of the Cross/i);
+assert.equal(state.gesture.anchorLat,"Pater, et Fílius, ✠");
+assert.equal(state.gesture.anchorEn,"the Father, and the Son, ✠");
+assert.equal(state.gesture.anchorFr,"le Père, le Fils, ✠");
 state=ctrl.project("AO.SM.C0269");
 assert.match(state.gesture.action,/Forehead.*lips.*breast/i);
 state=ctrl.project("AO.SM.C0273");
@@ -157,5 +160,49 @@ assert.equal(low.supported,false);
 state=low.project("AO.SM.C0068");
 assert.equal(state.gesture,null);
 assert.match(state.reason,/NOT_CERTIFIED_FOR_LOW/);
+
+// Exact projected response ownership: evaluate all 279 canonical cues so
+// the 23 registered responses never persist after their source trigger ends.
+const sourceUnits=sung.blocks.flatMap(block=>block.units??[]);
+const allConditions=new Set([
+  ...V180_ORDINARY_SUNG_PRESENTATION_FLAGS,
+  "GLORIA_APPOINTED","CREDO_APPOINTED","AGNUS_DEI_PUBLIC","LAST_GOSPEL_PRESENT",
+  "SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED","POST_CONSECRATION_STAND_PROFILE",
+  "LOCAL_PROFILE_SIT_AFTER_COMMUNION","LOCAL_PROFILE_KNEEL_FOR_BLESSING",
+  "PERSONALLY_SINGING_OR_PROFILE_STAND",
+]);
+const knownResponses=new Map(registries.responses.items.map(item=>[item.cueId,item]));
+const knownPostures=registries.postures.items.filter(item=>item.cueId);
+assert.equal(knownPostures.length,18,"posture timeline's canonical trigger count drifted");
+for(const unit of sourceUnits){
+  const id=unit.cue_id;
+  const observed=ctrl.project(id,{conditions:[...allConditions]});
+  const expected=knownResponses.get(id)?.text??null;
+  assert.equal(observed.response?.text??null,expected,
+    id+": response projected outside its exact canonical utterance");
+}
+for(const row of knownPostures){
+  const observed=ctrl.project(row.cueId,{conditions:[...allConditions]});
+  assert.equal(observed.posture?.value,row.posture,
+    row.cueId+": required source-backed posture transition was lost or shifted");
+}
+for(const cueId of ["AO.SM.C0197","AO.SM.C0198","AO.SM.C0246"]){
+  const observed=ctrl.project(cueId);
+  assert.equal(observed.gesture,null,
+    cueId+": duplicated Nobis quoque breast strike or private-formula Holy Name bow leaked");
+}
+for(const cueId of ["AO.SM.C0001","AO.SM.C0022","AO.SM.C0145","AO.SM.C0196",
+                      "AO.SM.C0222","AO.SM.C0223","AO.SM.C0224","AO.SM.C0243",
+                      "AO.SM.C0244","AO.SM.C0245","AO.SM.C0265","AO.SM.C0273","AO.SM.C0274"]){
+  const observed=ctrl.project(cueId);
+  assert.ok(observed.gesture?.anchorLat && observed.gesture?.anchorEn && observed.gesture?.anchorFr,
+    cueId+": supported transient gesture lacks source-paired Latin/English/French word anchor");
+}
+for(const cueId of ["AO.SM.C0235","AO.SM.C0236","AO.SM.C0237","AO.SM.C0240"]){
+  assert.equal(ctrl.project(cueId).gesture,null,
+    cueId+": optional second Confiteor gesture leaked without local-custom consent");
+  assert.ok(ctrl.project(cueId,{conditions:[...allConditions]}).gesture?.anchorLat,
+    cueId+": locally enabled second Confiteor has no exact-source gesture anchor");
+}
 
 console.log("reader cue state: PASS — exact source cues, v1.80 priest actions, conditional fail-closed, persistent route/voice/posture transitions.");
