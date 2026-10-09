@@ -1,9 +1,9 @@
 {
-  "version": "1962-MASS-READING-CONTEXT-REGISTER-V1",
+  "version": "1962-MASS-READING-CONTEXT-REGISTER-V2",
   "status": "EXTERNAL_MISSAL_READING_CITATIONS_WITH_LATIN_IDENTITY_GUARD",
   "policy": {
     "identity": "EXACT_RESOLVED_PROPER_SOURCE_PATH_AND_MATCHING_LATIN_READINGS",
-    "source": "Missale Online 1962 Proper pages linked per celebration",
+    "source": "Original approved Missale Online Proper pages or the exact Divinum Officium Latin Roman Missal file (source role explicitly marked per entry). Inherited or discontinuous sections are gated in sourceHolds unless independently collated.",
     "order": "Only Epistle/Lesson and Gospel. Extended lessons require a separate source-order registry.",
     "language": "Latin incipit checked; English/French Bible editions remain separately rights-gated",
     "precedence": "An explicit contradictory reading citation always vetoes an indexed citation. A missing or differing Latin incipit also vetoes.",
@@ -127,6 +127,159 @@
         "GOSPEL": {
           "reference": "Matthew 24:15–35",
           "latinIncipit": "Cum videritis"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv1-0",
+      "title": "Dominica I Adventus",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 13:11–14",
+          "latinIncipit": "fratres scientes quia hora est jam nos de somno surgere nunc enim propior est nostra salus quam cum"
+        },
+        "GOSPEL": {
+          "reference": "Luke 21:25–33",
+          "latinIncipit": "in illo tempore dixit jesus discipulis suis erunt signa in sole et luna et stellis et in terris"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv2-0",
+      "title": "Dominica II Adventus",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv2-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 15:4–13",
+          "latinIncipit": "fratres quaecumque scripta sunt ad nostram doctrinam scripta sunt ut per patientiam et consolationem scripturarum spem habeamus deus"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 11:2–10",
+          "latinIncipit": "in illo tempore cum audisset joannes in vinculis opera christi mittens duos de discipulis suis ait illi tu"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv3-0",
+      "title": "Dominica III Adventus",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Philippians 4:4–7",
+          "latinIncipit": "fratres gaudete in domino semper iterum dico gaudete modestia vestra nota sit omnibus hominibus dominus prope est nihil"
+        },
+        "GOSPEL": {
+          "reference": "John 1:19–28",
+          "latinIncipit": "in illo tempore miserunt judaei ab jerosolymis sacerdotes et levitas ad joannem ut interrogarent eum tu quis es"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv4-0",
+      "title": "Dominica IV Adventus",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv4-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Corinthians 4:1–5",
+          "latinIncipit": "fratres sic nos existimet homo ut ministros christi et dispensatores mysteriorum dei hic jam quaeritur inter dispensatores ut"
+        }
+      },
+      "sourceHolds": [
+        {
+          "slot": "GOSPEL",
+          "reason": "INHERITED_SOURCE_SECTION_REQUIRE_EXPLICIT_RESOLUTION",
+          "inheritedFrom": "@Tempora/Adv3-6"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Nat1-0",
+      "title": "Dominica Infra Octavam Nativitatis",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat1-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Galatians 4:1–7",
+          "latinIncipit": "fratres quanto tempore heres parvulus est nihil differt a servo cum sit dominus omnium sed sub tutoribus et"
+        },
+        "GOSPEL": {
+          "reference": "Luke 2:33–40",
+          "latinIncipit": "in illo tempore erat joseph et maria mater jesu mirantes super his quae dicebantur de illo et benedixit"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Nat2-0",
+      "title": "Sanctissimi Nominis Jesu",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat2-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Acts 4:8–12",
+          "latinIncipit": "in diebus illis petrus repletus spiritu sancto dixit principes populi et seniores audite si nos hodie dijudicamur in"
+        },
+        "GOSPEL": {
+          "reference": "Luke 2:21",
+          "latinIncipit": "in illo tempore postquam consummati sunt dies octo ut circumcideretur puer vocatum est nomen ejus jesus quod vocatum"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Epi1-0",
+      "title": "Sanctæ Familiæ Jesu Mariæ Joseph",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi1-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Colossians 3:12–17",
+          "latinIncipit": "fratres induite vos sicut electi dei sancti et dilecti viscera misericordiae benignitatem humilitatem modestiam patientiam supportantes invicem et"
+        },
+        "GOSPEL": {
+          "reference": "Luke 2:42–52",
+          "latinIncipit": "cum factus esset jesus annorum duodecim ascendentibus illis jerosolymam secundum consuetudinem diei festi consummatisque diebus cum redirent remansit"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Epi2-0",
+      "title": "Dominica II post Epiphaniam",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi2-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 12:6–16",
+          "latinIncipit": "fratres habentes donationes secundum gratiam quae data est nobis differentes sive prophetiam secundum rationem fidei sive ministerium in"
+        },
+        "GOSPEL": {
+          "reference": "John 2:1–11",
+          "latinIncipit": "in illo tempore nuptiae factae sunt in cana galilaeae et erat mater jesu ibi vocatus est autem et"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Epi3-0",
+      "title": "Dominica III Post Epiphaniam",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 12:16–21",
+          "latinIncipit": "fratres nolite esse prudentes apud vosmetipsos nulli malum pro malo reddentes providentes bona non tantum coram deo sed"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 8:1–13",
+          "latinIncipit": "in illo tempore cum descendisset jesus de monte secutae sunt eum turbae multae et ecce leprosus veniens adorabat"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Epi4-0",
+      "title": "Dominica IV Post Epiphaniam",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi4-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 13:8–10",
+          "latinIncipit": "fratres nemini quidquam debeatis nisi ut invicem diligatis qui enim diligit proximum legem implevit nam non adulterabis non"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 8:23–27",
+          "latinIncipit": "in illo tempore ascendente jesu in naviculam secuti sunt eum discipuli ejus et ecce motus magnus factus est"
         }
       }
     }
