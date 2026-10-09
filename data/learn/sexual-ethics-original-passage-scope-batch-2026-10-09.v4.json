@@ -7,9 +7,9 @@
   "summary": {
     "debates_reviewed": 6,
     "stages_reviewed": 48,
-    "source_scope_supported": 32,
+    "source_scope_supported": 34,
     "synthetic_objections_explicitly_identified": 8,
-    "original_checks_still_open": 8,
+    "original_checks_still_open": 6,
     "full_eight_stage_certifications": 0,
     "corpus_stages": 440
   },
@@ -425,33 +425,43 @@
         },
         {
           "stage": "appeal",
-          "status": "ORIGINAL_PASSAGE_CHECK_STILL_OPEN",
+          "status": "ORIGINAL_PASSAGE_SCOPE_SUPPORTED",
           "selected_sources": [
             {
-              "id": "PP_BIRTHCONTROL",
-              "url": "https://www.plannedparenthood.org/learn/birth-control"
+              "id": "CURRAN1987",
+              "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
             }
           ],
-          "original_passages_examined": [],
-          "precise_original_locator": "PP_BIRTHCONTROL exact text unavailable",
-          "claim_scope_en": "Practical method claims of this source remain uncollated.",
-          "claim_scope_fr": "Les affirmations pratiques de cette source ne sont pas collationnées.",
+          "original_passages_examined": [
+            {
+              "id": "CURRAN1987",
+              "url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "precise_original_locator": "Curran 1987, paragraphs on physicalism and good of marriage",
+          "claim_scope_en": "Curran's original criticism values personal and matrimonial ends rather than a purely biological description.",
+          "claim_scope_fr": "La critique originale de Curran fait valoir les biens de la personne et du mariage contre une lecture purement biologique.",
           "verbatim_opponent_quote_verified": false,
           "independent_french_editorial_approval": false
         },
         {
           "stage": "concession",
-          "status": "ORIGINAL_PASSAGE_CHECK_STILL_OPEN",
+          "status": "ORIGINAL_PASSAGE_SCOPE_SUPPORTED",
           "selected_sources": [
             {
-              "id": "CASTI",
-              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+              "id": "MIDWIVES",
+              "url": "https://www.vatican.va/content/pius-xii/it/speeches/1951/documents/hf_p-xii_spe_19511029_ostetriche.html"
             }
           ],
-          "original_passages_examined": [],
-          "precise_original_locator": "Casti Connubii does not specify prolonged avoidance as claimed",
-          "claim_scope_en": "This stage also needs Pius XII 1951, not merely CASTI.",
-          "claim_scope_fr": "Cette étape exige aussi Pie XII 1951, pas seulement CASTI.",
+          "original_passages_examined": [
+            {
+              "id": "MIDWIVES",
+              "url": "https://www.vatican.va/content/pius-xii/it/speeches/1951/documents/hf_p-xii_spe_19511029_ostetriche.html"
+            }
+          ],
+          "precise_original_locator": "Pius XII 1951, paragraphs on serious reasons and prolonged use of infertile periods",
+          "claim_scope_en": "Pius XII recognizes potentially prolonged avoidance of pregnancy when serious grounds exist.",
+          "claim_scope_fr": "Pie XII reconnaît la possibilité d'éviter durablement une grossesse pour de sérieux motifs.",
           "verbatim_opponent_quote_verified": false,
           "independent_french_editorial_approval": false
         },
