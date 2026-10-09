@@ -10,7 +10,7 @@ import { psalterParallelVerse } from "./psalter-exception-crosswalk.js";
 export const UNALIGNED_CATHOLIC_BOOKS=Object.freeze({
  Esther:Object.freeze({en:"Esther’s Greek additions have a different chapter order. One-verse correspondences are source-collated; longer passages still need checking.",fr:"Les additions grecques d’Esther suivent un ordre différent. Les correspondances par verset ont été relevées ; les passages plus longs exigent une vérification."}),
  SongOfSongs:Object.freeze({en:"All 116 Douay verses are aligned with 127 CPDV verse divisions. Single-verse references can switch to their corresponding passage; multi-verse ranges still require checking.",fr:"Les 116 versets Douay correspondent aux 127 divisions CPDV. Les références unitaires suivent la correspondance établie ; les passages plus longs restent à vérifier."}),
- Psalms:Object.freeze({en:"Verified span mappings cover exceptional Psalms 13, 42, 92 and 150 only. Other Psalm references cannot automatically switch editions until their individual passages are aligned.",fr:"Les correspondances particulières sont établies pour les psaumes 13, 42, 92 et 150 seulement. Les autres références exigent une vérification avant basculement."})
+ Psalms:Object.freeze({en:"Verse references are source-aligned for 133 Psalms, plus selected exceptional spans in Psalms 13, 42, 92 and 150. The remaining Psalm references require further comparison.",fr:"Les références sont vérifiées dans 133 psaumes ainsi que certains passages particuliers des psaumes 13, 42, 92 et 150. Les autres passages exigent une vérification."})
 });
 const supported=new Set(["cpdv-2009","dr-challoner"]);
 /**
