@@ -14,7 +14,8 @@
     "originalLanguageItalianWitness": "data/learn/ltfaith-pius-x-it-witness-index.v1.json",
     "historicalFrenchWitnessReview": "data/learn/ltfaith-pius-x-french-historical-witness-review.v1.json",
     "firstFrenchPrintedPageEvidence": "data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json",
-    "french1913PrintPageCandidates": "data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json"
+    "french1913PrintPageCandidates": "data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json",
+    "italianSecondaryDigitalComparison": "data/learn/ltfaith-pius-x-secondary-italian-digital-audit.v1.json"
   },
   "governance": [
     "The original 54 lesson IDs are permanent archival reference IDs, not overwritten by the proposed 55-title teaching order.",
@@ -47,7 +48,11 @@
     "french1913AutomatedPageHeadingDetections": 414,
     "french1913BoundedQuestionPageCandidates": 433,
     "french1913PrintedQuestionAnswersStillNeedFullIndependentReview": 410,
-    "french1913OcrMissingHeadingsResolvedVisually": 19
+    "french1913OcrMissingHeadingsResolvedVisually": 19,
+    "italianSecondaryDigitalQuestionsParsed": 429,
+    "italianSecondaryDigitalNumberingErrors": 4,
+    "french1913ProvisionalOCRAnswerCandidates": 433,
+    "french1913SourcePrintAnswersVisuallyChecked": 23
   },
   "publicationGate": {
     "researchBilingual": true,
