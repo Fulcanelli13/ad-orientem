@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -186,6 +186,25 @@ assert.deepEqual(
     "place:PS:holy-sepulchre-jerusalem",
     "place:PS:nativity-bethlehem",
     "place:JP:our-lady-akita-convent",
+    "place:ES:convento-san-juan-cruz-segovia",
+    "place:IT:san-geremia-santa-lucia-venezia",
+    "place:GR:saint-titus-heraklion",
+    "place:US:cathedral-katharine-drexel-philadelphia",
+    "place:SV:catedral-metropolitana-san-salvador",
+    "place:LB:monastery-saint-maron-annaya",
+    "place:IT:sacra-famiglia-bakhita-schio",
+    "place:US:carmel-mission-basilica-serra",
+    "place:PE:convento-santo-domingo-lima",
+    "place:GB:westminster-abbey-st-edward",
+    "place:LU:basilica-st-willibrord-echternach",
+    "place:PL:wawel-cathedral-stanislaus",
+    "place:LT:vilnius-cathedral-st-casimir",
+    "place:HU:st-stephen-basilica-budapest",
+    "place:PL:gniezno-cathedral-adalbert",
+    "place:IT:abbey-san-colombano-bobbio",
+    "place:BR:pateo-do-collegio-sao-paulo",
+    "place:FR:saint-hilaire-le-grand-poitiers",
+    "place:IT:santa-maria-vallicella-rome",
   "place:FR:basilique-sainte-therese-lisieux",
   "place:BE:sanctuaire-sainte-julienne-cornillon",
   "place:FR:cathedrale-notre-dame-le-puy",
@@ -260,8 +279,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 35,
-  places: 156,
+  geoAreas: 41,
+  places: 175,
   directoryPlaceLinks: 1,
 });
 

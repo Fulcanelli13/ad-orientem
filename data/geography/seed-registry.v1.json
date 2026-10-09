@@ -615,6 +615,112 @@
       "codes": {
         "iso_alpha2": "JP"
       }
+    },
+    {
+      "geo_area_id": "geo:country:GR",
+      "name": {
+        "official": "Greece",
+        "aliases": [
+          "Grèce"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GR"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SV",
+      "name": {
+        "official": "El Salvador",
+        "aliases": [
+          "Salvador"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SV"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LB",
+      "name": {
+        "official": "Lebanon",
+        "aliases": [
+          "Liban"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LB"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PE",
+      "name": {
+        "official": "Peru",
+        "aliases": [
+          "Pérou"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PE"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LU",
+      "name": {
+        "official": "Luxembourg",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LU"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:HU",
+      "name": {
+        "official": "Hungary",
+        "aliases": [
+          "Hongrie"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "HU"
+      }
     }
   ],
   "places": [
@@ -6318,6 +6424,728 @@
       },
       "source_ids": [
         "SHR-IT-duomo-sant-eusebio-vercelli"
+      ]
+    },
+    {
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "name": {
+        "official": "Convento de San Juan de la Cruz, Segovia",
+        "aliases": [
+          "Couvent Saint-Jean-de-la-Croix, Ségovie"
+        ]
+      },
+      "place_type": "convent",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.95561,
+        "lng": -4.13335,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q19949835",
+        "source_ref": "wikidata:Q19949835",
+        "attribution": "Heritage location data, source as linked",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Segovia",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Convento de San Juan de la Cruz, Segovia, Segovia, ES"
+      },
+      "source_ids": [
+        "SHR-ES-convento-san-juan-cruz-segovia"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "name": {
+        "official": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
+        "aliases": [
+          "Sanctuaire Sainte-Lucie, église San Geremia, Venise"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.44266,
+        "lng": 12.32532,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/138843633",
+        "source_ref": "osm:way:138843633",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Venezia",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia, Venezia, IT"
+      },
+      "source_ids": [
+        "SHR-IT-san-geremia-santa-lucia-venezia"
+      ]
+    },
+    {
+      "place_id": "place:GR:saint-titus-heraklion",
+      "name": {
+        "official": "Church of Saint Titus, Heraklion",
+        "aliases": [
+          "Église Saint-Tite, Héraklion"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:GR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 35.3401,
+        "lng": 25.13466,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/91031227",
+        "source_ref": "osm:way:91031227",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "GR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Heraklion",
+        "region": null,
+        "country_code": "GR",
+        "country": "Greece",
+        "formatted": "Church of Saint Titus, Heraklion, Heraklion, GR"
+      },
+      "source_ids": [
+        "SHR-GR-saint-titus-heraklion"
+      ]
+    },
+    {
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "name": {
+        "official": "Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+        "aliases": [
+          "Cathédrale-basilique Saints-Pierre-et-Paul, Philadelphie"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 39.9574,
+        "lng": -75.16855,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/252221811",
+        "source_ref": "osm:way:252221811",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Philadelphia",
+        "region": null,
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "Cathedral Basilica of Saints Peter and Paul, Philadelphia, Philadelphia, US"
+      },
+      "source_ids": [
+        "SHR-US-cathedral-katharine-drexel-philadelphia"
+      ]
+    },
+    {
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "name": {
+        "official": "Catedral Metropolitana de San Salvador",
+        "aliases": [
+          "Cathédrale métropolitaine de San Salvador"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:SV"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 13.69855,
+        "lng": -89.19109,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q2942929",
+        "source_ref": "wikidata:Q2942929",
+        "attribution": "Heritage location data, source as linked",
+        "matched_country_code": "SV",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "San Salvador",
+        "region": null,
+        "country_code": "SV",
+        "country": "El Salvador",
+        "formatted": "Catedral Metropolitana de San Salvador, San Salvador, SV"
+      },
+      "source_ids": [
+        "SHR-SV-catedral-metropolitana-san-salvador"
+      ]
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "name": {
+        "official": "Monastery of Saint Maron — Annaya",
+        "aliases": [
+          "Monastère Saint-Maron d’Annaya"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:LB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 34.12091,
+        "lng": 35.7533,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/306249530",
+        "source_ref": "osm:way:306249530",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LB",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Annaya",
+        "region": null,
+        "country_code": "LB",
+        "country": "Lebanon",
+        "formatted": "Monastery of Saint Maron — Annaya, Annaya, LB"
+      },
+      "source_ids": [
+        "SHR-LB-monastery-saint-maron-annaya"
+      ]
+    },
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "name": {
+        "official": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio",
+        "aliases": [
+          "Église de la Sainte-Famille — sainte Joséphine Bakhita, Schio"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.714131,
+        "lng": 11.36249,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.outdooractive.com/it/poi/vicenza/chiesa-della-sacra-famiglia/57228876/",
+        "source_ref": "outdooractive:57228876",
+        "attribution": "Heritage location data, source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Schio",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio, Schio, IT"
+      },
+      "source_ids": [
+        "SHR-IT-sacra-famiglia-bakhita-schio"
+      ]
+    },
+    {
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "name": {
+        "official": "Carmel Mission Basilica — Saint Junípero Serra",
+        "aliases": [
+          "Basilique de la mission du Carmel — saint Junípero Serra"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 36.54288,
+        "lng": -121.9203,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/1251791840",
+        "source_ref": "osm:way:1251791840",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Carmel-by-the-Sea",
+        "region": null,
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "Carmel Mission Basilica — Saint Junípero Serra, Carmel-by-the-Sea, US"
+      },
+      "source_ids": [
+        "SHR-US-carmel-mission-basilica-serra"
+      ]
+    },
+    {
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "name": {
+        "official": "Basílica y Convento de Santo Domingo, Lima",
+        "aliases": [
+          "Basilique et couvent Saint-Dominique, Lima"
+        ]
+      },
+      "place_type": "convent",
+      "geo_area_ids": [
+        "geo:country:PE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -12.04409,
+        "lng": -77.03161,
+        "precision": "complex_anchor",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/1932068186",
+        "source_ref": "osm:node:1932068186",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PE",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Lima",
+        "region": null,
+        "country_code": "PE",
+        "country": "Peru",
+        "formatted": "Basílica y Convento de Santo Domingo, Lima, Lima, PE"
+      },
+      "source_ids": [
+        "SHR-PE-convento-santo-domingo-lima"
+      ]
+    },
+    {
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "name": {
+        "official": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+        "aliases": [
+          "Abbaye de Westminster — sanctuaire de saint Édouard le Confesseur"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 51.4994,
+        "lng": -0.12739,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/364313092",
+        "source_ref": "osm:way:364313092",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "GB",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "London",
+        "region": null,
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "Westminster Abbey — Shrine of Saint Edward the Confessor, London, GB"
+      },
+      "source_ids": [
+        "SHR-GB-westminster-abbey-st-edward"
+      ]
+    },
+    {
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "name": {
+        "official": "Basilica of Saint Willibrord, Echternach",
+        "aliases": [
+          "Basilique Saint-Willibrord, Echternach"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:LU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.8134,
+        "lng": 6.42172,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/87262794",
+        "source_ref": "osm:way:87262794",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LU",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Echternach",
+        "region": null,
+        "country_code": "LU",
+        "country": "Luxembourg",
+        "formatted": "Basilica of Saint Willibrord, Echternach, Echternach, LU"
+      },
+      "source_ids": [
+        "SHR-LU-basilica-st-willibrord-echternach"
+      ]
+    },
+    {
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "name": {
+        "official": "Wawel Cathedral, Kraków",
+        "aliases": [
+          "Cathédrale du Wawel, Cracovie"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 50.05464,
+        "lng": 19.93548,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/85151350",
+        "source_ref": "osm:way:85151350",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kraków",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Wawel Cathedral, Kraków, Kraków, PL"
+      },
+      "source_ids": [
+        "SHR-PL-wawel-cathedral-stanislaus"
+      ]
+    },
+    {
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "name": {
+        "official": "Vilnius Cathedral — Chapel of Saint Casimir",
+        "aliases": [
+          "Cathédrale de Vilnius — chapelle Saint-Casimir"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:LT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 54.68589,
+        "lng": 25.2878,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/4870323",
+        "source_ref": "osm:way:4870323",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Vilnius",
+        "region": null,
+        "country_code": "LT",
+        "country": "Lithuania",
+        "formatted": "Vilnius Cathedral — Chapel of Saint Casimir, Vilnius, LT"
+      },
+      "source_ids": [
+        "SHR-LT-vilnius-cathedral-st-casimir"
+      ]
+    },
+    {
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "name": {
+        "official": "Saint Stephen's Basilica, Budapest",
+        "aliases": [
+          "Basilique Saint-Étienne, Budapest"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:HU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.50051,
+        "lng": 19.05349,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/4795379802",
+        "source_ref": "osm:node:4795379802",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "HU",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Budapest",
+        "region": null,
+        "country_code": "HU",
+        "country": "Hungary",
+        "formatted": "Saint Stephen's Basilica, Budapest, Budapest, HU"
+      },
+      "source_ids": [
+        "SHR-HU-st-stephen-basilica-budapest"
+      ]
+    },
+    {
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "name": {
+        "official": "Gniezno Cathedral — Saint Adalbert",
+        "aliases": [
+          "Cathédrale de Gniezno — saint Adalbert"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 52.53682,
+        "lng": 17.59259,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/74413264",
+        "source_ref": "osm:way:74413264",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Gniezno",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Gniezno Cathedral — Saint Adalbert, Gniezno, PL"
+      },
+      "source_ids": [
+        "SHR-PL-gniezno-cathedral-adalbert"
+      ]
+    },
+    {
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "name": {
+        "official": "Abbazia di San Colombano, Bobbio",
+        "aliases": [
+          "Abbaye Saint-Colomban, Bobbio"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.76797,
+        "lng": 9.38539,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/184660224",
+        "source_ref": "osm:way:184660224",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Bobbio",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Abbazia di San Colombano, Bobbio, Bobbio, IT"
+      },
+      "source_ids": [
+        "SHR-IT-abbey-san-colombano-bobbio"
+      ]
+    },
+    {
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "name": {
+        "official": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+        "aliases": [
+          "Pátio do Colégio — saint José de Anchieta, São Paulo"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:BR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -23.548035,
+        "lng": -46.632671,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://visite.museus.gov.br/instituicoes/museu-anchieta-pateo-do-collegio/",
+        "source_ref": "museus.gov.br:anchieta-pateo",
+        "attribution": "Heritage location data, source as linked",
+        "matched_country_code": "BR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "São Paulo",
+        "region": null,
+        "country_code": "BR",
+        "country": "Brazil",
+        "formatted": "Pateo do Collegio — Saint José de Anchieta, São Paulo, São Paulo, BR"
+      },
+      "source_ids": [
+        "SHR-BR-pateo-do-collegio-sao-paulo"
+      ]
+    },
+    {
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "name": {
+        "official": "Église Saint-Hilaire-le-Grand, Poitiers",
+        "aliases": [
+          "Église Saint-Hilaire-le-Grand, Poitiers"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 46.5773,
+        "lng": 0.33275,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/38676352",
+        "source_ref": "osm:way:38676352",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Poitiers",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Église Saint-Hilaire-le-Grand, Poitiers, Poitiers, FR"
+      },
+      "source_ids": [
+        "SHR-FR-saint-hilaire-le-grand-poitiers"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "name": {
+        "official": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+        "aliases": [
+          "Chiesa Nuova — Sainte-Marie-in-Vallicella, Rome"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.89848,
+        "lng": 12.4692,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/29181216",
+        "source_ref": "osm:way:29181216",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Roma",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Chiesa Nuova — Santa Maria in Vallicella, Rome, Roma, IT"
+      },
+      "source_ids": [
+        "SHR-IT-santa-maria-vallicella-rome"
       ]
     }
   ],
