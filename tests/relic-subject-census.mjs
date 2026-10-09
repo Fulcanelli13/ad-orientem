@@ -1,0 +1,16 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {execFileSync} from "node:child_process";
+const existing=JSON.parse(readFileSync("data/explore/sacred-phenomena-seed.v1.json","utf8")).relics;
+const report=JSON.parse(execFileSync(process.execPath,["tools/atlas/audit-relic-subjects.mjs","--json"],{encoding:"utf8"}));
+assert.equal(report.schema,"SACRED_ATLAS_RELIC_LEGACY_TRIAGE_V1");
+assert.equal(report.counts.records,existing.length);
+assert.equal(report.findings.length,existing.length);
+assert.deepEqual(new Set(report.findings.map(f=>f.legacy_relic_id)),new Set(existing.map(r=>r.id)));
+assert.ok(report.counts.raw_subject_labels>=report.counts.normalized_subject_hints);
+assert.ok(report.findings.every(f=>f.canonical_subject_id===null&&f.publish_decision==="PENDING_SUBJECT_FIRST_REVIEW"),"Never auto-authenticate or publish relic claims");
+assert.ok(report.findings.every(f=>f.material_research_bucket&&f.source_url));
+assert.ok(report.findings.filter(f=>f.relic_kind==="REPUTED_PASSION_RELIC").every(f=>f.material_research_bucket.startsWith("EXCEPTIONAL_")));
+assert.ok(report.findings.some(f=>f.review_flags.includes("TOMB_CUSTODY_NOT_INFERRED")));
+assert.ok(report.findings.some(f=>f.review_flags.includes("COLLECTIVE_OR_MULTIPLE_SUBJECTS")));
+console.log("PASS subject-first inventory triages "+existing.length+" legacy records without granting class, authentication, fame, or new map pins");
