@@ -2,6 +2,20 @@
  * Witness links/identifications do NOT constitute three-language verbatim certification.
  */
 export const PRAY_EDITION_WITNESSES_V1=Object.freeze({
+  "foundations_grace_after_meals": {
+    "edition": "BENEFITS_FORM_HISTORICAL_PRAYER",
+    "witnessType": "HISTORICAL_PRINTED_BENEFITS_FORM_NOT_TRILINGUAL_COLLATED",
+    "url": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book/Prayers_During_the_Day",
+    "secondaryUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+    "label": {
+      "en": "Grace After Meals · historic benefits form",
+      "fr": "Grâces après les repas · forme historique « bienfaits »"
+    },
+    "note": {
+      "en": "The main witness prints 'benefits', the English form used in this prayer; the additional Baltimore Manual prints 'mercies'. These are comparable historical English variants, not certification of the full French or Latin translations. Additional responsories in the books are not silently appended to this prayer.",
+      "fr": "Le témoin principal donne « benefits », conforme à la prière anglaise retenue, tandis que le manuel de Baltimore donne « mercies ». Il s’agit de variantes historiques anglaises ; les versions française et latine ne sont pas certifiées par ce rapprochement. Les autres répons des livres ne sont pas ajoutés à cette prière."
+    }
+  },
   "mass_confiteor": {
     "edition": "ROMAN_MISSAL_1962",
     "witnessType": "PRINTED_MISSAL_FACSIMILE_UNCOLLATED",
