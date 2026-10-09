@@ -3,7 +3,7 @@
   "source": "https://github.com/samayo/country-json/tree/master/src",
   "source_abbreviations": "https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-abbreviation.json",
   "source_geographic_extents": "https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-geo-coordinates.json",
-  "method": "bbox midpoint is a country-level reference only; never street, chapel, or surveyed centroid",
+  "method": "Midpoint of validated country-level geographic bounding box, not a building/city GPS point; invalid, empty, or dateline-spanning geometries intentionally omitted",
   "generated_at": "2026-10-09",
   "countries": {
     "AF": [
@@ -33,10 +33,6 @@
     "AI": [
       18.2251,
       -63.0722
-    ],
-    "AQ": [
-      -75.2577,
-      0
     ],
     "AG": [
       17.3632,
@@ -186,10 +182,6 @@
       -10.4915,
       105.623
     ],
-    "CC": [
-      0,
-      0
-    ],
     "CO": [
       4.5773,
       -74.2989
@@ -197,10 +189,6 @@
     "KM": [
       -11.8751,
       43.877
-    ],
-    "CG": [
-      0,
-      0
     ],
     "CK": [
       -15.9836,
@@ -285,10 +273,6 @@
     "FO": [
       61.8978,
       -6.9288
-    ],
-    "FJ": [
-      0,
-      0
     ],
     "FI": [
       64.9524,
@@ -378,10 +362,6 @@
       -53.0507,
       73.2278
     ],
-    "VA": [
-      0,
-      0
-    ],
     "HN": [
       14.7463,
       -86.2531
@@ -442,17 +422,9 @@
       31.2768,
       37.1306
     ],
-    "KZ": [
-      0,
-      0
-    ],
     "KE": [
       0.1709,
       37.904
-    ],
-    "KI": [
-      -3.3637,
-      9.6705
     ],
     "KW": [
       29.3102,
@@ -481,10 +453,6 @@
     "LR": [
       6.4524,
       -9.4286
-    ],
-    "LY": [
-      0,
-      0
     ],
     "LI": [
       47.1595,
@@ -554,10 +522,6 @@
       23.6248,
       -102.5787
     ],
-    "FM": [
-      0,
-      0
-    ],
     "MD": [
       46.9796,
       28.3772
@@ -586,10 +550,6 @@
       -18.6703,
       35.5302
     ],
-    "MM": [
-      0,
-      0
-    ],
     "NA": [
       -22.9657,
       18.4861
@@ -606,17 +566,9 @@
       52.133,
       5.2953
     ],
-    "AN": [
-      0,
-      0
-    ],
     "NC": [
       -21.1239,
       165.847
-    ],
-    "NZ": [
-      -40.8379,
-      -6.6425
     ],
     "NI": [
       12.8667,
@@ -641,10 +593,6 @@
     "KP": [
       40.3397,
       127.4955
-    ],
-    "GB": [
-      0,
-      0
     ],
     "MP": [
       17.3318,
@@ -690,10 +638,6 @@
       12.882,
       121.767
     ],
-    "PN": [
-      0,
-      0
-    ],
     "PL": [
       51.9228,
       19.1368
@@ -717,10 +661,6 @@
     "RO": [
       45.9471,
       24.9806
-    ],
-    "RU": [
-      0,
-      0
     ],
     "RW": [
       -1.9471,
@@ -765,10 +705,6 @@
     "SN": [
       14.4994,
       -14.4456
-    ],
-    "RS": [
-      22.005,
-      10.503
     ],
     "SC": [
       -7.0188,
@@ -818,10 +754,6 @@
       39.8958,
       -2.4869
     ],
-    "LK": [
-      0,
-      0
-    ],
     "SD": [
       15.4585,
       30.2176
@@ -857,10 +789,6 @@
     "TH": [
       13.0366,
       101.4923
-    ],
-    "CD": [
-      0,
-      0
     ],
     "TG": [
       8.6217,
@@ -918,10 +846,6 @@
       36.9664,
       -95.8439
     ],
-    "UM": [
-      0,
-      0
-    ],
     "UY": [
       -32.5315,
       -55.7583
@@ -941,14 +865,6 @@
     "VN": [
       15.9742,
       105.8065
-    ],
-    "VG": [
-      0,
-      0
-    ],
-    "VI": [
-      0,
-      0
     ],
     "WF": [
       -13.7657,
@@ -970,5 +886,31 @@
       -19.0132,
       29.1467
     ]
-  }
+  },
+  "excluded_invalid_extents": [
+    "AQ",
+    "CC",
+    "CG",
+    "England",
+    "FJ",
+    "VA",
+    "KZ",
+    "KI",
+    "LY",
+    "FM",
+    "MM",
+    "AN",
+    "NZ",
+    "GB",
+    "PN",
+    "RU",
+    "Scotland",
+    "RS",
+    "LK",
+    "CD",
+    "UM",
+    "VG",
+    "VI",
+    "Wales"
+  ]
 }
