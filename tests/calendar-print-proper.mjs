@@ -31,7 +31,7 @@ assert.match(french,/Ordinaire/);
 assert.match(french,/window\.print\(\)/);
 assert.doesNotMatch(french,/<introït>/,"Never execute upstream Proper text as HTML");
 assert.match(french,/&lt;introït&gt;/);
-assert.equal((french.match(/class="item"/g)||[]).length,11);
+assert.equal((french.match(/class="item"/g)||[]).length,12);
 const english=renderPrintableProperHtml(r,{language:"en"});
 assert.match(english,/Our Lady of the Holy Rosary/);
 assert.match(english,/Lord epistle/);
