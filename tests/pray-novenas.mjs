@@ -254,6 +254,18 @@ assert.match(NOVENA_SOURCE_ACCESS_V1.holy_souls.note.en,/prayer108.*prayer116/);
 assert.match(NOVENA_SOURCE_ACCESS_V1.immaculate_conception.note.en,/Litany.*OR.*Tota pulchra/);
 assert.equal(historicalNovenaReview.records.find(x=>x.id==="holy_souls").dayBodySourceReview.length,9);
 assert.match(readFileSync("src/pray/novena-runtime.js","utf8"),/Moran directs the Litany of Loreto or the Tota pulchra hymn/);
+assert.match(litSource,/const prayerStage=p==='OPENING_DAY_COMMON_CLOSE'\\?3:1;/,
+ "Guided Immaculate Conception day prayer must follow common Hail Marys and Glory Be");
+assert.match(litSource,/const commonStage=2;/,
+ "Guided Immaculate Conception canonical prayers must precede the day prayer");
+assert.match(litSource,/sourceWitness\\(n\\.opening,L\\('Common opening','Ouverture commune'\\)\\)\\+commonPrayers\\(n\\)/,
+ "Simple Immaculate Conception must show the canonical prayers immediately after the opening");
+assert.match(litSource,/p==='OPENING_DAY_COMMON_CLOSE'\\?'':commonPrayers\\(n\\)/,
+ "Simple Immaculate Conception must not repeat the nine Hail Marys after the day prayer");
+assert.deepEqual(NOVENA_CORPUS_V4.immaculate_conception.commonPrayers,
+ [["foundations_hail_mary",9],["foundations_glory_be",1]],
+ "The 1883 nine Aves and single Gloria sequence changed");
+
 
 assert.equal(historicalNovenaReview.counts.daySpecificNovenas,8);
 assert.equal(historicalNovenaReview.counts.uniqueDayPrayerBodies,72);
