@@ -1,0 +1,72 @@
+{
+  "version": "PIUS_X_SECONDARY_ITALIAN_DIGITAL_68_PAGE_AUDIT_V1",
+  "date": "2026-10-09",
+  "sourcePdf": "https://www.corsiadeiservi.it/public/content/testi%20e%20documenti/Catechismo_PioX.pdf",
+  "pdfPages": 68,
+  "provenance": "Secondary typeset digital document, not verified original 1912 photographic printing",
+  "comparisonWorkflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37895171762",
+  "pinnedOriginalLanguageSource": "data/learn/ltfaith-pius-x-it-witness-index.v1.json",
+  "comparison": {
+    "totalQuestions": 433,
+    "pdfHeadingsMatched": 429,
+    "highLexicalMatchCandidates": 399,
+    "partialMatchReviewCandidates": 14,
+    "mediumMatchReviewCandidates": 15,
+    "lowMatchCandidates": 1,
+    "numberedHeadingsMissing": 4,
+    "thresholdsAreHeuristicsNotTheologicalJudgments": true
+  },
+  "visuallyConfirmedDigitalPdfNumberErrors": [
+    {
+      "expectedQuestionNumber": 138,
+      "printedQuestionNumber": 135,
+      "pdfPageOneIndexed": 15,
+      "topic": "Immaculate Conception: whether anyone was preserved from original sin",
+      "risk": "Collides with actual Q135; Q138 is missing as a printed number",
+      "source": "secondary digital PDF page 15"
+    },
+    {
+      "expectedQuestionNumber": 263,
+      "printedQuestionNumber": 363,
+      "pdfPageOneIndexed": 28,
+      "topic": "Moral virtues recommended in the Beatitudes",
+      "risk": "Fabricates a duplicate Q363 and leaves Q263 unnumbered",
+      "source": "secondary digital PDF page 28"
+    },
+    {
+      "expectedQuestionNumber": 264,
+      "printedQuestionNumber": 364,
+      "pdfPageOneIndexed": 28,
+      "topic": "Enumeration of the evangelical Beatitudes",
+      "risk": "Fabricates a duplicate Q364 and leaves Q264 unnumbered",
+      "source": "secondary digital PDF page 28"
+    },
+    {
+      "expectedQuestionNumber": 355,
+      "printedQuestionNumber": 335,
+      "pdfPageOneIndexed": 36,
+      "topic": "Definition of the sacrament of Penance",
+      "risk": "Collides with authentic Eucharistic Q335 and omits Q355",
+      "source": "secondary digital PDF page 36"
+    }
+  ],
+  "independentItalianQ226Corroboration": {
+    "expected": 226,
+    "pdfPageOneIndexed": 24,
+    "lexicalSimilarity": 0.9003,
+    "wording": "First Sunday of Advent to Christmas and Ash Wednesday to Easter Sunday",
+    "agreement": "Agrees with pinned Italian transcription, not with historical authorized French 1913 Q226",
+    "original1912PrintVerified": false
+  },
+  "qualityVerdict": "UNSAFE_FOR_UNREVIEWED_IMPORT_OR_PRIMARY_Q_NUMBER_ASSIGNMENT",
+  "actions": [
+    "Keep pinned 433 numbered Italian question corpus authoritative for internal indexing",
+    "Retain secondary Italian PDF solely as comparison evidence",
+    "Require photographed 1912 Italian edition verification before original-first-edition certification",
+    "Investigate all lower-similarity matches by question before content replacements"
+  ],
+  "original1912PrintedEditionCollated": false,
+  "independentFrenchEditorialApproved": false,
+  "canonicalDoctrinalCertified": false,
+  "publicReleaseApproved": false
+}
