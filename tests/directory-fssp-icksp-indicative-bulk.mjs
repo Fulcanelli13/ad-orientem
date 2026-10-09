@@ -64,3 +64,14 @@ for(const record of after){
  assert.ok(record.venue.contact.website.length,"Preserve canonical official link");
 }
 console.log("FSSP/ICKSP bulk indicative regression: PASS; existing official pins preserved; coarse points non-routing; no fictitious venue creation; ICKSP federated records checked:",mass.length);
+
+const fsspMinistries=read("data/directory/generated/fssp/ministries.v1.json").records;
+const fsspSources=read("data/directory/generated/fssp/sources.v1.json").records;
+assert.ok(fsspMinistries.length>=300,"FSSP canonical ministry corpus unexpectedly contracted");
+assert.ok(fsspSources.length>=300,"FSSP source evidence unexpectedly contracted");
+const fsspSourceIds=new Set(fsspSources.map(s=>s.source_id));
+for(const m of fsspMinistries){
+ assert.equal(m.community_id,"FSSP","FSSP provider must not silently mix community ownership");
+ assert.ok(m.source_ids?.some(id=>fsspSourceIds.has(id)),"Every FSSP ministry requires linked source evidence");
+}
+console.log("FSSP ministry/source inventory audit: PASS; records:",fsspMinistries.length,"sources:",fsspSources.length);
