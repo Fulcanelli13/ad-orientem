@@ -1,0 +1,101 @@
+{
+  "schema": "ao-learn-the-faith-sources-v1",
+  "version": "1.0.0",
+  "status": "ACTIVE_SOURCE_REGISTRY",
+  "sources": [
+    {
+      "id": "PX1912",
+      "title": "St Pius X — Catechism of Christian Doctrine (1912)",
+      "type": "CATECHISM_PRIMARY",
+      "urls": {
+        "en": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
+        "fr": "https://catechismecatholique.fr/petit-catechisme"
+      },
+      "role": "Immediate doctrine/reference layer for the 433-question corpus."
+    },
+    {
+      "id": "V1-DEI-FILIUS",
+      "title": "First Vatican Council — Dei Filius",
+      "type": "ECUMENICAL_COUNCIL",
+      "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+      "role": "Reason and God, revelation, faith and the relationship of faith and reason."
+    },
+    {
+      "id": "TRENT-CATECHISM",
+      "title": "Roman Catechism / Catechism of the Council of Trent",
+      "type": "CATECHISM_PRIMARY",
+      "url": "https://en.wikisource.org/wiki/The_catechism_of_the_Council_of_Trent",
+      "role": "Long-form traditional doctrinal exposition supplementing the shorter Pius X answers."
+    },
+    {
+      "id": "TRENT-DECREES",
+      "title": "Council of Trent — Decrees and Canons",
+      "type": "ECUMENICAL_COUNCIL",
+      "url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "role": "Sacraments, justification, Eucharist, Mass, Penance and related doctrinal definitions."
+    },
+    {
+      "id": "LEO13-PROVIDENTISSIMUS",
+      "title": "Leo XIII — Providentissimus Deus",
+      "type": "PAPAL_ENCYCLICAL",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_18111893_providentissimus-deus.html",
+      "role": "Sacred Scripture, inspiration and interpretation."
+    },
+    {
+      "id": "PIUS12-MYSTICI",
+      "title": "Pius XII — Mystici Corporis Christi",
+      "type": "PAPAL_ENCYCLICAL",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061943_mystici-corporis-christi.html",
+      "role": "Nature, unity and membership of the Church and the Mystical Body."
+    },
+    {
+      "id": "PIUS12-MEDIATOR",
+      "title": "Pius XII — Mediator Dei",
+      "type": "PAPAL_ENCYCLICAL",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "role": "Liturgy, sacrifice, worship and participation."
+    },
+    {
+      "id": "AQUINAS-ST",
+      "title": "St Thomas Aquinas — Summa Theologiae",
+      "type": "THEOLOGICAL_REFERENCE",
+      "url": "https://www.newadvent.org/summa/",
+      "role": "Traditional systematic theological explanation where a concise catechism answer needs conceptual development."
+    },
+    {
+      "id": "SPIRAGO",
+      "title": "Joseph Spirago — The Catechism Explained (1899)",
+      "type": "TRADITIONAL_EXPLANATORY",
+      "url": "https://archive.org/details/catechismexplain00spiruoft",
+      "role": "Traditional explanatory and pedagogical material, always subordinate to primary doctrine."
+    },
+    {
+      "id": "LEO13-LIBERTAS",
+      "title": "Leo XIII — Libertas praestantissimum",
+      "type": "PAPAL_ENCYCLICAL",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+      "role": "Human freedom, natural law, moral law and the relation of liberty to truth and the good."
+    },
+    {
+      "id": "PIUS11-CASTI",
+      "title": "Pius XI — Casti connubii",
+      "type": "PAPAL_ENCYCLICAL",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "role": "Marriage, its goods, duties and indissolubility."
+    },
+    {
+      "id": "PIUS9-INEFFABILIS",
+      "title": "Pius IX — Ineffabilis Deus",
+      "type": "PAPAL_DEFINITION",
+      "url": "https://www.papalencyclicals.net/pius09/p9ineff.htm",
+      "role": "Immaculate Conception and Marian doctrine."
+    },
+    {
+      "id": "PIUS12-MUNIFICENTISSIMUS",
+      "title": "Pius XII — Munificentissimus Deus",
+      "type": "PAPAL_DEFINITION",
+      "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "role": "Assumption and Marian doctrine."
+    }
+  ]
+}
