@@ -53,7 +53,7 @@ export function buildCatechismGuidedStudy(crosswalk, first, second, witnessIndex
             })))
         : c.sourceQuestionNumbers.map(n => {
             const witness = entry.sourceWitnesses.find(w => Number(w.ref.slice(-3)) === n);
-            return { ref: sourceQuestion(n), url: witnessByNumber.get(n) ?? witness?.sourceUrl ?? null };
+            return { ref: sourceQuestion(n), url: witnessByNumber.get(n) ?? witness?.sourceUrl ?? null, originalLanguageUrl: witness?.italianOriginalLanguageUrl ?? null };
           });
       if (!sources.length || sources.some(s => !s.url))
         throw new Error("Unresolved source link at " + entry.displayLessonId + " claim " + (j + 1));
