@@ -58,6 +58,14 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
    for(const key of refs)assert.match(CSE_MARRIAGE_AUTHORITY_SOURCES[key]?.[1]||"",/^https:\/\//,entry.id+" "+field+" source "+key);
  }
 }
+for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
+ for(const field of ["opposition","reply","rejoinder"]){
+  for(const text of entry[field])assert.ok(text.length>=400,entry.id+" "+field+" lacks sufficient substantive reasoning");
+ }
+ assert.ok(entry.oppositionKind,entry.id+" must classify the objection as sourced or reasoned");
+ if(entry.oppositionKind==="REASONED_APPLICATION_NOT_NAMED_OPPONENT")
+  assert.ok(!entry.sources.opposition.includes("GROOTHUIS"),entry.id+" improperly attributes a constructed argument to a scholar");
+}
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("CBE")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
 
