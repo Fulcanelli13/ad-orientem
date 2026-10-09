@@ -20,7 +20,7 @@ assert.equal(first.rows.length,200);
 assert.equal(report.counts.donorRows,200);
 assert.equal(report.counts.matchedToArchive,200);
 assert.equal(report.counts.englishFoundAllSourceVerses,200);
-assert.equal(report.counts.frenchFoundAllSourceVerses,196);
+assert.equal(report.counts.frenchFoundAllSourceVerses,197);
 assert.equal(report.counts.englishEditorialApproved,0);
 assert.equal(report.counts.frenchQuotationCollated,0);
 assert.equal(report.counts.permittedPublication,0);
@@ -48,7 +48,18 @@ for(let i=0;i<200;i++){
 assert.equal(seen.size,200);
 assert.deepEqual(counts,report.counts.englishAutomaticResults);
 assert.deepEqual(counts,{NORMALIZED_FULL_PASSAGE_MATCH:77,CONTIGUOUS_EXCERPT_MATCH:74,ORDERED_WITH_OMISSIONS:33,EDITION_OR_REFERENCE_UNRESOLVED:16});
-assert.deepEqual(issues.sort(),["glo4.b1","glo4.b10","glo5.b7","glo5.b8"].sort(),"Unresolved French numbering cases must not be erased");
+assert.deepEqual(issues.sort(),["glo4.b10","glo5.b7","glo5.b8"].sort(),"Absent French digital keys must not be erased");
+const exceptions=JSON.parse(readFileSync("data/pray/rosary-edition-exceptions.v1.json","utf8"));
+assert.deepEqual(exceptions.exceptions.map(x=>x.id).sort(),["glo4.b1","glo4.b10","glo5.b7","glo5.b8"].sort());
+const psalm=report.rows.find(x=>x.id==="glo4.b1");
+assert.equal(psalm.frVerseAlias.chapter,132);
+assert.equal(psalm.frVerseAlias.verseStart,8);
+assert.equal(psalm.frVersesLocated,1);
+assert.equal(psalm.frVerseAlias.verified,"Crampon_1923_printed_psalter");
+assert.equal(exceptions.republicationAuthorised,false);
+assert.equal(exceptions.humanFrenchVerbatimCertification,0);
+assert.ok(exceptions.exceptions.filter(x=>x.finding==="PRINTED_VERSE_PRESENT_DIGITAL_KEY_ABSENT").length===3);
+for(const e of exceptions.exceptions)assert.match(e.printedWitnessUrl,/^https:\/\/fr\.wikisource\.org\/wiki\//);
 assert.equal(new Set(report.rows.map(x=>x.mysteryId)).size,20);
 const displayed=readFileSync("src/pray/rosary-scripture-policy.js","utf8");
 assert.match(displayed,/\.lab-prayer-sheet \.lab-scripture-cue/);
@@ -56,4 +67,4 @@ assert.doesNotMatch(displayed,/from ["'].*rosary-drc-crampon-collation/,"Machine
 if(expectedOutput){
  assert.deepEqual(expectedOutput,report,"A newer remote digital witness silently replaced the pinned comparison");
 }
-console.log("PASS paired Rosary editions: all 200 Challoner verses located, 196 Crampon verses located, four French numbering holds, 184 non-typological English automatic wording matches, zero quotations approved.");
+console.log("PASS paired Rosary editions: all 200 Challoner verses located, 197 Crampon verses located, three secondary-dataset Judith gaps, one verified Psalm alias, 184 non-typological English automatic wording matches, zero quotations approved.");
