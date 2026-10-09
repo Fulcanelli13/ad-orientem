@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import "./scripture-context-mass-pray.mjs";
+import "./contextual-study.mjs";
 import {parseScriptureContext,verifiedScriptureCommentary} from "../src/scripture/context.js";
 import { readFileSync } from "node:fs";
 import {

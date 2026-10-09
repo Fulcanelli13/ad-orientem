@@ -67,7 +67,7 @@ const latinStageOf=x=>x?.first_lesson?Math.ceil(Number(x.first_lesson)/5):0;
 
 
 export function createGlossaryRuntime(win=globalThis){
-  const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,latinStage:null,query:"",detailId:null,detailType:"concept",contextIds:[],origin:"learn",data:null,unsub:null,lastLanguage:null};
+  const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,latinStage:null,query:"",detailId:null,detailType:"concept",contextIds:[],origin:"learn",contextReturn:null,data:null,unsub:null,lastLanguage:null};
 
   async function load(){
     if(state.loaded)return state.data;
@@ -283,6 +283,14 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   async function open(opts={}){
+    // A contextual launch owns no route. Preserve the actual trigger and the
+    // scrollable reading surface; never reset its parent to the Formation hub.
+    if(opts.origin==="context"){
+      const trigger=opts.trigger??win?.document?.activeElement??null;
+      let scrollNode=trigger?.parentElement??null;
+      while(scrollNode&&!(scrollNode.scrollHeight>scrollNode.clientHeight+2))scrollNode=scrollNode.parentElement;
+      state.contextReturn={trigger,scrollNode,scrollTop:scrollNode?.scrollTop??0};
+    }else state.contextReturn=null;
     state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.latinStage=null;state.query=String(opts.query||"");state.detailId=null;state.detailType="concept";state.contextIds=[];state.origin=String(opts.origin||"learn");
     ensureRoot();attach();state.loading=!state.loaded;render();
     await load();state.loading=false;
@@ -290,7 +298,9 @@ export function createGlossaryRuntime(win=globalThis){
     if(opts.entryId&&state.data?.byId?.has(opts.entryId)){state.detailType="concept";state.detailId=opts.entryId}
     if(opts.lexemeId&&state.data?.lexemeById?.has(opts.lexemeId)){state.detailType="lexeme";state.detailId=opts.lexemeId;state.categoryId="latin_rubrics";state.view="lexemes"}
     if(opts.phraseId&&state.data?.phraseById?.has(opts.phraseId)){state.detailType="phrase";state.detailId=opts.phraseId;state.categoryId="latin_rubrics";state.view="phrases"}
-    render();return true;
+    render();
+    if(state.origin==="context")root(win)?.querySelector?.("[data-gloss-close],[data-gloss-back]")?.focus?.({preventScroll:true});
+    return true;
   }
 
   async function openEntry(id){return open({entryId:String(id||"")})}
@@ -313,12 +323,18 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   function close(returnToLearn=false){
+    const returning=state.origin==="context"?state.contextReturn:null;
     const n=root(win);try{n?.querySelector?.(":focus")?.blur?.()}catch{}n?.remove?.();
     state.open=false;state.detailId=null;state.detailType="concept";state.query="";state.contextIds=[];state.latinStage=null;
     // If Glossary was launched as a Formation child, its parent is already
     // mounted and monitoring this child. Let that owner restore the exact
     // Reference family, rather than reopening Formation at its landing page.
     const hasLiveParent=win?.AO_LEARN_APP_V1?.status?.()?.child===ROUTE_ID;
+    if(returning){
+      try{if(returning.scrollNode?.isConnected)returning.scrollNode.scrollTop=returning.scrollTop}catch{}
+      try{if(returning.trigger?.isConnected)returning.trigger.focus?.({preventScroll:true})}catch{}
+    }
+    state.contextReturn=null;
     if(returnToLearn&&!hasLiveParent)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     return true;
   }
