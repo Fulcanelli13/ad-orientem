@@ -81,6 +81,22 @@
       "historicalAndDoctrinalHumanApprovals": 0,
       "nativeFrenchApprovals": 0,
       "scope": "All 122 claims inspected against Italian Catechism passage witnesses or identified original supplementary source paragraphs; desk-level sourcing and candidate copy only, not printed original collation or independent theological/canonical approval."
+    },
+    "frenchReadabilityCorrections20261009": {
+      "count": 9,
+      "reviewedClaimPairIds": [
+        "LTF-024:2",
+        "LTF-026:4",
+        "LTF-030:1",
+        "LTF-031:1",
+        "LTF-041:3",
+        "LTF-045:1",
+        "LTF-049:2",
+        "LTF-051:1",
+        "LTF-052:1"
+      ],
+      "certifiedForPublication": false,
+      "scope": "Bilingual candidate textual precision. No native-French, external theologian, or 1913 facsimile page-level signoff."
     }
   },
   "curriculumReconciliation": {
@@ -1576,8 +1592,8 @@
           }
         },
         {
-          "en": "Its essential rite uses natural water with the Trinitarian form; the ordinary minister is a priest, though in necessity another person can baptize with the Church's intention.",
-          "fr": "Son rite essentiel emploie l’eau naturelle avec la formule trinitaire ; le ministre ordinaire est le prêtre, bien qu’en cas de nécessité une autre personne puisse baptiser avec l’intention de l’Église.",
+          "en": "Baptism uses natural water and the Trinitarian form. A priest is ordinarily its minister; in necessity anyone can validly baptize if they intend to do what the Church does.",
+          "fr": "Le Baptême requiert l’eau naturelle et la formule trinitaire. Son ministre est ordinairement le prêtre ; en cas de nécessité, toute personne peut baptiser validement si elle a l’intention de faire ce que fait l’Église.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -1657,6 +1673,22 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Restate explicit ministerial intention criterion of Pius X Q293; replace vague 'intention of the Church'.",
+            "piusXQuestionNumbers": [
+              291,
+              292,
+              293,
+              294
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {
@@ -2449,8 +2481,8 @@
           }
         },
         {
-          "en": "Worthy Communion requires the state of grace, faith and reverent preparation, and it preserves and increases grace in the soul.",
-          "fr": "La Communion digne requiert l’état de grâce, la foi et une préparation révérencieuse ; elle conserve et augmente la grâce dans l’âme.",
+          "en": "To receive Holy Communion worthily one must be in the state of grace, know and consider whom one is receiving, and approach with living faith, humility and proper preparation; Communion preserves and increases grace in the soul.",
+          "fr": "Pour communier dignement, il faut être en état de grâce, savoir et considérer qui l’on reçoit, et s’approcher avec une foi vive, de l’humilité et la préparation requise ; la Communion conserve et augmente la grâce dans l’âme.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -2566,6 +2598,21 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Replace unnatural 'préparation révérencieuse' and preserve Q335 and Q338 qualifications while avoiding obsolete midnight-fast claim.",
+            "piusXQuestionNumbers": [
+              335,
+              338,
+              345
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         }
       ],
@@ -3708,8 +3755,8 @@
       },
       "claims": [
         {
-          "en": "Holy Orders gives sacred power for actions concerning the Eucharist and the salvation of souls and imprints a permanent character.",
-          "fr": "L’Ordre confère un pouvoir sacré pour les actions concernant l’Eucharistie et le salut des âmes et imprime un caractère permanent.",
+          "en": "The sacrament of Holy Orders consecrates ministers for sacred acts concerning the Eucharist and the salvation of souls, and imprints a permanent character.",
+          "fr": "Le sacrement de l’Ordre consacre des ministres aux actes sacrés qui concernent l’Eucharistie et le salut des âmes, et imprime un caractère permanent.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -3800,6 +3847,23 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Improve French naturalness without changing permanent character doctrine in Q397.",
+            "piusXQuestionNumbers": [
+              282,
+              283,
+              284,
+              285,
+              397
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {
@@ -4076,8 +4140,8 @@
       },
       "claims": [
         {
-          "en": "Matrimony unites man and woman indissolubly and gives grace for holy common life and Christian parenthood.",
-          "fr": "Le Mariage unit indissolublement l’homme et la femme et donne la grâce pour une vie commune sainte et la parentalité chrétienne.",
+          "en": "Matrimony unites a man and a woman indissolubly and gives them grace to live together in holiness and raise their children as Christians.",
+          "fr": "Le Mariage unit indissolublement un homme et une femme et leur donne la grâce de vivre saintement ensemble et d’élever chrétiennement leurs enfants.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -4119,6 +4183,19 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Remove English-influenced 'parentalité chrétienne'; restore children's Christian upbringing directly from Q406.",
+            "piusXQuestionNumbers": [
+              406
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {
@@ -6951,8 +7028,8 @@
           }
         },
         {
-          "en": "It positively requires willing the good of others, including enemies, and repairing bodily or spiritual harm we have caused.",
-          "fr": "Il exige positivement de vouloir le bien d’autrui, y compris de nos ennemis, et de réparer le dommage corporel ou spirituel que nous avons causé.",
+          "en": "The Fifth Commandment also requires us to love others, including our enemies, and to repair the bodily or spiritual harm we have caused them.",
+          "fr": "Le cinquième commandement nous oblige aussi à aimer notre prochain, y compris nos ennemis, et à réparer autant que possible le tort causé à son corps ou à son âme.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -6994,6 +7071,19 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Natural French phrasing closer to original Italian Q200.",
+            "piusXQuestionNumbers": [
+              200
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         }
       ],
@@ -7620,8 +7710,8 @@
       },
       "claims": [
         {
-          "en": "Scandal is conduct that gives another an occasion of sin and can itself be gravely sinful.",
-          "fr": "Le scandale est une conduite qui donne au prochain une occasion de pécher et peut lui-même être gravement coupable.",
+          "en": "Scandal consists in leading another person toward sin by wrongful conduct; it can itself constitute grave sin.",
+          "fr": "Le scandale consiste à donner au prochain une occasion de pécher par une conduite mauvaise ; il peut lui-même constituer un péché grave.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -7675,6 +7765,20 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Correct French categorical miscue of scandal as 'coupable' subject; preserve Q198–199.",
+            "piusXQuestionNumbers": [
+              198,
+              199
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {
@@ -8521,8 +8625,8 @@
           }
         },
         {
-          "en": "By a unique privilege she was preserved from original sin from the first instant of her existence, which the Church celebrates as the Immaculate Conception.",
-          "fr": "Par un privilège unique, elle fut préservée du péché originel dès le premier instant de son existence, ce que l’Église célèbre comme l’Immaculée Conception.",
+          "en": "By a unique grace and privilege of God, in view of the merits of Jesus Christ, Mary was preserved from every stain of original sin from the first instant of her conception: this is the Immaculate Conception.",
+          "fr": "Par une grâce et un privilège singuliers de Dieu, en vue des mérites de Jésus-Christ, Marie fut préservée de toute tache du péché originel dès le premier instant de sa conception : c’est l’Immaculée Conception.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -8582,6 +8686,19 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Use doctrinally exact first instant of conception and Christological merit from Ineffabilis Deus instead of vague 'existence'.",
+            "piusXQuestionNumbers": [
+              138
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {
@@ -8993,8 +9110,8 @@
       },
       "claims": [
         {
-          "en": "Blessed objects and Church prayers, including holy water and blessings, are sacramentals: sacred signs instituted by the Church to dispose the faithful toward grace, not additional sacraments instituted by Christ.",
-          "fr": "Les objets bénits et les prières de l'Église, notamment l'eau bénite et les bénédictions, relèvent des sacramentaux : des signes sacrés institués par l'Église pour disposer les fidèles à la grâce, non des sacrements supplémentaires institués par le Christ.",
+          "en": "Sacramentals, such as holy water and blessings, are sacred signs instituted by the Church that dispose the faithful to receive grace; unlike the seven sacraments they were not instituted by Christ as sacraments.",
+          "fr": "Les sacramentaux, comme l’eau bénite et les bénédictions, sont des signes sacrés institués par l’Église qui disposent les fidèles à recevoir la grâce ; ils se distinguent des sept sacrements institués par le Christ.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -9048,6 +9165,19 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Make sacramentals precise and remove awkward 'objets bénits et prières relèvent des sacramentaux'.",
+            "piusXQuestionNumbers": [
+              385
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {
@@ -9262,8 +9392,8 @@
       },
       "claims": [
         {
-          "en": "The Church sanctifies feast days by outward worship, especially the Holy Mass, while directing the faithful toward the good of the soul.",
-          "fr": "L’Église sanctifie les jours de fête par le culte extérieur, spécialement la Sainte Messe, tout en orientant les fidèles vers le bien de l’âme.",
+          "en": "Feast days are sanctified by worship offered to God, especially the Holy Mass, and should also be spent in prayer, Christian instruction, works of charity and suitable rest.",
+          "fr": "Les jours de fête se sanctifient par le culte rendu à Dieu, surtout par la sainte Messe, ainsi que par la prière, l’instruction chrétienne, les œuvres de charité et le repos convenable.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -9329,6 +9459,21 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Replace broad editorial 'oriente les fidèles vers le bien de l’âme' with catechism Q184–189 concrete practices.",
+            "piusXQuestionNumbers": [
+              184,
+              185,
+              189
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {

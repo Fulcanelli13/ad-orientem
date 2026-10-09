@@ -59,6 +59,14 @@
       "italianTranscriptionSectionsRead": 9,
       "printFacsimileItalianCollationComplete": false,
       "bilingualSubstantiveCorrections": 1
+    },
+    "frenchReadabilityCorrections20261009": {
+      "count": 1,
+      "reviewedClaimPairIds": [
+        "LTF-011:2"
+      ],
+      "certifiedForPublication": false,
+      "scope": "Bilingual candidate textual precision. No native-French, external theologian, or 1913 facsimile page-level signoff."
     }
   },
   "lessons": [
@@ -2757,8 +2765,8 @@
           }
         },
         {
-          "en": "The first human beings, Adam and Eve, were created in a state elevated by grace and supernatural gifts.",
-          "fr": "Les premiers êtres humains, Adam et Ève, furent créés dans un état élevé par la grâce et des dons surnaturels.",
+          "en": "Adam and Eve were created in a state of original holiness, endowed with sanctifying grace and with gifts that protected them from suffering and the necessity of death, provided they remained faithful to God.",
+          "fr": "Adam et Ève furent créés dans l’état de sainteté originelle, avec la grâce sanctifiante et des dons qui les préservaient de la souffrance et de la nécessité de mourir tant qu’ils demeuraient fidèles à Dieu.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -2844,6 +2852,21 @@
             "nativeFrenchEdited": false,
             "editorialNote": null,
             "italian1912TranscriptionRead": true
+          },
+          "frenchEditorialDesk20261009": {
+            "status": "EDITORIAL_CANDIDATE_REVISED_NOT_NATIVE_FRENCH_APPROVED",
+            "rationale": "Clarify supernatural grace versus immunity gifts rather than classifying all as undifferentiated supernatural gifts.",
+            "piusXQuestionNumbers": [
+              67,
+              68,
+              69
+            ],
+            "comparisonSources": [
+              "1912 Italian Pius X transcription",
+              "1913 French Bailly reference edition (bibliographic witness only; no complete page-level collation)"
+            ],
+            "independentFrenchApproval": false,
+            "independentTheologyApproval": false
           }
         },
         {
