@@ -105,6 +105,23 @@ assert.equal(allSouls2025[0].transferredFrom,"2025-11-02");
 const conception2024=buildMajorCelebrations("2024-12-08").find(x=>/Immaculate Conception/.test(x.en));
 assert.equal(conception2024?.date,"2024-12-08","Do not import the 2024 Ordinary Form December 9 transfer into the 1962 calendar");
 
+// For every civil date in both 2024 and 2027, verify model continuity and
+// non-overlap; documentary parity for observed rank/colour is checked separately
+// against a bounded original-calendar oracle in the browser test.
+for(const civilYear of [2024,2027]){
+  let date=`${civilYear}-01-01`,count=0;
+  while(date<=`${civilYear}-12-31`){
+    const model=buildLiturgicalYear(date);
+    assertContinuous(model);
+    assert.ok(model.currentPeriod.start<=date&&date<=model.currentPeriod.end,"Selected date outside computed liturgical season: "+date);
+    assert.equal(model.periods.filter(p=>p.start<=date&&date<=p.end).length,1,"Multiple computed seasons claim "+date);
+    assert.ok(model.progress>0&&model.progress<=1,"Liturgical progress outside 0–100%: "+date);
+    assert.ok(model.periodProgress>0&&model.periodProgress<=1,"Season progress outside 0–100%: "+date);
+    date=addDaysIso(date,1);count++;
+  }
+  assert.ok(count>=365,"Full civil year date sweep incomplete");
+}
+
 const traditional=v384Dates(2026);
 assert.equal(traditional.easter,"2026-04-05");
 assert.equal(traditional.septuagesima,"2026-02-01");
@@ -204,9 +221,13 @@ assert.match(browser, /overflow-y:auto;overflow-x:hidden/, "Calendar root must s
 assert.match(browser, /height:66px!important/, "Calendar liturgical month lost its phone-readable cell height");
 assert.match(browser, /grid-template-columns:repeat\(3,1fr\)/, "Calendar top navigation did not collapse to Day · Month · Liturgical Year");
 assert.match(browser, /observedCycle\(r,id\)/, "Month Temporale\/Sanctorale classification is missing");
-assert.match(browser, /majorForDate\(id\)/, "Month classification stopped using resolved major-day metadata");
-assert.match(browser,/const name=r\?\(/,"Month must prefer the resolved observed celebration to the projected major index");
-assert.match(browser,/projected=!r&&Boolean\(major\)/,"Unresolved feast projections must be identified explicitly");
+assert.doesNotMatch(browser, /majorForDate\(/, "Month may not classify observed feasts from an independent candidate table");
+assert.match(browser, /const name=r&&\(tier>0/, "Month labels must come from resolved days only");
+assert.match(browser, /nextResolvedMajorCelebration\(selected\)/, "Upcoming major dates must be verified by the daily resolver");
+assert.match(browser, /await resolveOne\(date\)/, "Upcoming date must be checked against the observed Mass");
+assert.match(browser, /nextMajorResults\.set\(selected,found/, "Upcoming result must retain verified day resolution");
+assert.match(browser, /await ensureLearnModule\("learn\.glossary",globalThis\)/, "Calendar must lazy-load the Glossary on demand");
+assert.match(browser, /data-cal-glossary-error/, "Missing Glossary must provide visible failure state");
 assert.match(browser,/monthVerified\(monthId\)/,"Partial or failed month cannot be marked fully verified");
 assert.match(browser,/calendarView="day";pickerMonthId=iso\(new Date\(\)\)\.slice\(0,7\)/,"Today must navigate to the day, not leave user stranded in the month picker");
 assert.doesNotMatch(browser,/function yearProgress\(/,"Gregorian civil-year progress cannot drive a liturgical wheel");
