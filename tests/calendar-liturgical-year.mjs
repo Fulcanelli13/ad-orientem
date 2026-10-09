@@ -27,6 +27,7 @@ for(const [name,first,mass] of [
   assert.equal(calendarMassColour(r),mass,name+" calendar colour must refer to the Mass");
   assert.deepEqual(r.colourPlan.sequence.map(x=>x[1]),[first,mass],name+" colour plan was mutated");
 }
+assert.equal(calendarMassColour({day:{main:{id:"tempora:Quad6-5r:1:bv",color:"Black / Violet"}},proper:{data:{color:"Black"}},colourPlan:{primary:"Black",massColor:"Violet",sequence:[["Passion liturgy","Black"],["Communion","Violet"]]}}),"Black","Good Friday is not a Mass: Calendar identity must remain black");
 assert.equal(calendarMassColour({proper:{data:{color:"Green"}},day:{main:{color:"Green"}}}),"Green");
 assert.equal(calendarMassColour({day:{main:{color:"White"}}}),"White");
 
