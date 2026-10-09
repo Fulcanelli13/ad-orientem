@@ -1,0 +1,21 @@
+# Formation — third substantive original-argument comparison (9 Oct 2026)
+
+No new dossiers, duplicate questions, or meta-commentary. Updates **11 existing canonical Church Crisis dossiers**, including re-argued EN/FR positions and rebuttals, with **30 source-to-role bounded verification findings**. The two earlier passes remain intact (17 + 18 findings). The authority and real proponent texts are distinguished, and release gates remain fully false.
+
+## Materially corrected arguments
+
+**Religious liberty — CR-DOC-05, CR-ORG-08:** Original **Leo XIII, Libertas §§30–35**, **Dignitatis humanae §§1–2**, and the SSPX General House's own [religious-liberty objection](https://fsspx.org/en/religious-liberty-30946) with the Society's [2012 four-point criticism](https://sspx.org/en/sspx-heretical-31303). Catholic civil immunity against compulsion differs conceptually from a moral right to false worship; that analytic distinction does **not by itself settle** the precise argument that a State's duties to truth changed. All four actual SSPX alleged conflicts (DH §2; LG §8; UR §3; LG §22) now have named documentary attribution, without inventing a Council 'secret capture' thesis.
+
+**Ecumenism — CR-DOC-06, CR-IDM-02/03:** **Pius XI Mortalium animos §§2,6–10** did more than express a generic dislike of ecumenism: it condemned federated pan-Christian schemes of incompatible creeds and prohibited Catholic participation. **Unitatis redintegratio §§3–4,11** authorised dialogue and common work under full Catholic identity. This is a genuine historical change in permission for some forms of contact, not simply identical pastoral policy. **Hierarchy of truths** is theological order, *not* freedom to reject any divinely revealed article. Preserve both propositions instead of inventing automatic continuity or a proven formal contradiction.
+
+**Ecclesiology — CR-IDM-04:** SSPX 2012 objection to **subsistit in** answered with **CDF 2007 Responses Q1–Q5**, the issued **CDF commentary**, Lumen gentium §8, and Dominus Iesus §§16–17. The official CDF denies a branch-federation theory; identifies unique Catholic subsistence; recognises valid Eastern apostolic Churches with an impaired Roman communion; and calls communities without valid episcopacy ecclesial communities rather than Churches in the proper theological sense. Source material contains contrary named contentions; **no independent doctrinal signoff**.
+
+**Salvation and Judaism — CR-DOC-07/08:** Pinpoint original Lumen gentium §§14–16 and Dominus Iesus §§20–22 on salvation's unique mediation and subjective culpability. Rom. 11:1–2,17–29 and Hebrews 8:6–13 read with **Nostra aetate §4**, preserving Christian fulfilment, the enduring significance of Israel, and explicit rejection of collective guilt and anti-Semitism. No unsupported blanket claim that contemporary rabbinic Judaism is simply the Temple cult or that Jews are collectively conspiratorial.
+
+**Una cum — CR-ECC-10:** Previously a generic sedevacantist heretical-pope essay was the only 'opposing' link. Now the actual **Rev Martin Stepanich OFM 2009 argument** as republished by CMRI and **CMRI bishop Mark Pivarunas's contrary pastoral judgement** (including the original 2002 statement) demonstrate disagreement even inside the sedevacantist camp. It is not established that all attendees incur mortal sin. **Their issuing pages and excerpts were located but not independently text-collated**, explicitly marked limited in the ledger.
+
+**Assent and resistance — CR-AUT-04/05:** Recheck the CDF's actual **1998 Professio fidei** doctrinal commentary's three grades of assent, **Donum veritatis** non-definitive difficulties and **1983 CIC canon 212 §3**. The position permits conscientious and reverent criticism with legal limits, not either blind obedience to sin or a private unlimited magisterium.
+
+## Tests and limits
+
+`tests/formation-primary-context-review-3.mjs` checks that all **30** source findings resolve to actually rendered bilingual claims, document URL is correct, false public/theological/French gates, named split of CMRI extracts, and no mistaken approval of any pack. The **35 earlier findings** remain. True native French, original-language collation and independent theological/canonical certification are untouched. No public release is authorised.

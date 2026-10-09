@@ -28,6 +28,8 @@ on:
       - 'data/learn/formation-primary-context-review-2026-10-09.v1.json'
       - 'data/learn/formation-primary-context-review-2-2026-10-09.v1.json'
       - 'tests/formation-primary-context-review-2.mjs'
+      - 'data/learn/formation-primary-context-review-3-2026-10-09.v1.json'
+      - 'tests/formation-primary-context-review-3.mjs'
       - 'tests/formation-canonical-sourcefirst-batch5.mjs'
       - 'tests/formation-canonical-sourcefirst-batch4.mjs'
       - 'tests/formation-canonical-synthesis-batch3.mjs'
@@ -149,6 +151,8 @@ jobs:
         run: node tests/formation-primary-context-review.mjs
       - name: Validate firsthand proportionalist case and 1962 schema review
         run: node tests/formation-primary-context-review-2.mjs
+      - name: Validate primary Catholic and traditionalist original-argument debates
+        run: node tests/formation-primary-context-review-3.mjs
       - name: Bulk-validate all 21 unresolved controversy source maps
         run: node tests/contemporary-controversies-21-source-scaffold.mjs
       - name: Verify all 123 source-claim audit gates without claiming certification
