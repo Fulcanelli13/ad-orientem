@@ -1,7 +1,7 @@
 {
   "version": "1962-SOURCE-ORDER-EXTENDED-LESSON-SCRIPTURE-V4",
   "status": "SOURCE_MATCHED_ACTUAL_LATIN_ONLY",
-  "policy": "Only exact preGospelSequence SOURCE_ORDER node with canonical Proper path, sourceRef, record ID, type LESSON and displayed Latin text. Do not infer reading by ordinal or date. September 1962 Ember Saturday may be long (five preparatory Lessons) or short (first and fifth); publish only cards actually in the selected source-resolved sequence, with the exact sourcePath and Latin text. Do not infer from the calendar date. Advent 2026, Lent 2026 and Pentecost octave 2026 read actual Divinum Officium Tempora/Adv3, Quad1, Pasc7 sources; long Saturday may select L1–L5, shorter form only L1 and L5. Fifth Daniel reading held until explicit liturgical order versus canonical Biblical verse order can be presented. The fifth Saturday Daniel reading is available as BIBLE_CONTEXT_CANONICAL_ORDER_WITH_EXPLICIT_1962_LITURGICAL_ORDER_NOTE; never present the canonical Bible verse order as the order proclaimed at Mass. Its introductory, intermediate and closing Latin cues must match the displayed source text, and the Bible reader must visibly show the transposition note in both languages.",
+  "policy": "Only exact preGospelSequence SOURCE_ORDER node with canonical Proper path, sourceRef, record ID, type LESSON and displayed Latin text. Do not infer reading by ordinal or date. September 1962 Ember Saturday may be long (five preparatory Lessons) or short (first and fifth); publish only cards actually in the selected source-resolved sequence, with the exact sourcePath and Latin text. Do not infer from the calendar date. Advent 2026, Lent 2026 and Pentecost octave 2026 read actual Divinum Officium Tempora/Adv3, Quad1, Pasc7 sources; long Saturday may select L1–L5, shorter form only L1 and L5. Fifth Daniel reading held until explicit liturgical order versus canonical Biblical verse order can be presented. The fifth Saturday Daniel reading is available as BIBLE_CONTEXT_CANONICAL_ORDER_WITH_EXPLICIT_1962_LITURGICAL_ORDER_NOTE; never present the canonical Bible verse order as the order proclaimed at Mass. Its introductory, intermediate and closing Latin cues must match the displayed source text, and the Bible reader must visibly show the transposition note in both languages. Fourth Lent Wednesday additional first lesson Ezekiel 36:23–28 uses verified Tempora/Quad4-3:LectioL1, distinct from the later Mass Epistle Isaiah 1:16–19. No source order, no Scripture link.",
   "readings": [
     {
       "sourcePath": "Tempora/Quad6-3",
@@ -558,6 +558,24 @@
       "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-30?theme=light",
       "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6.txt",
       "note": "Source readings place Daniel 3:49 first, then 47–48 and 50–51. The citation points to the Bible in canonical order ONLY, with mandatory bilingual explanation of the liturgical transposition. Hymn Daniel 3:52–59 remains separate. The Latin rubric source does not authorize reordering the ceremony."
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3",
+      "sourceSectionId": "LectioL1",
+      "role": "LENT_FOURTH_WEEK_WEDNESDAY_BAPTISMAL_FIRST_LESSON",
+      "reference": "Ezekiel 36:23–28",
+      "segments": [
+        {
+          "book": "Ezekiel",
+          "chapter": 36,
+          "verseStart": 23,
+          "verseEnd": 28
+        }
+      ],
+      "latinIncipit": "haec dicit dominus deus sanctificabo nomen meum magnum quod pollutum est inter gentes quod polluistis in medio",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-3.txt",
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-3.txt",
+      "note": "First preparatory lesson, not the later Isaiah 1:16–19 Mass Epistle. The gradual and collect between them are distinct non-Scripture reader slots; active only for source-order matched cards."
     }
   ]
 }
