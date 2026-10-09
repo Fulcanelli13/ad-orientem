@@ -37,17 +37,20 @@ assert.deepEqual(
 
 const presentation=readFileSync("src/learn/presentation.js","utf8");
 const owner=readFileSync("src/learn/browser-entry.js","utf8");
+const lazy=readFileSync("src/learn/lazy-module-registry.js","utf8");
+assert.match(owner,/installLazyLearnRegistry/,"Formation first-use registry must remain installed during Home");
+assert.match(owner,/await ensureLearnModule\(id,win\)/,"Formation children must load before invoking registry");
 const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const host=readFileSync("src/app/host-adapter.js","utf8");
 
 assert.match(owner,/AO_LEARN_APP_V1/);
-assert.match(owner,/installLatinCourseModule/,"Latin course is not installed by the Formation owner");
-assert.match(owner,/installSexualEthicsModule/,"Catholic Sexual Ethics is not installed by the Formation owner");
-assert.match(owner,/installSpiritualLifeModule/,"Spiritual Life is not installed by the Formation owner");
-assert.match(owner,/ensureSpiritualLifeRegistry/,"Spiritual Life registry is not composed into Formation");
-assert.match(owner,/ensureLatinCourseRegistry/,"Latin course registry is not composed into Formation");
-assert.match(owner,/installGlossaryModule/,"Glossary module is not installed by the Formation owner");
-assert.match(owner,/ensureGlossaryRegistry/,"Glossary registry is not composed into Formation");
+assert.match(lazy,/installLatinCourseModule/,"Latin course is not installed by the Formation owner");
+assert.match(lazy,/installSexualEthicsModule/,"Catholic Sexual Ethics is not installed by the Formation owner");
+assert.match(lazy,/installSpiritualLifeModule/,"Spiritual Life is not installed by the Formation owner");
+assert.match(lazy,/ensureLearnModule/,"Spiritual Life registry is not composed into Formation");
+assert.match(lazy,/ensureLearnModule/,"Latin course registry is not composed into Formation");
+assert.match(lazy,/installGlossaryModule/,"Glossary module is not installed by the Formation owner");
+assert.match(lazy,/ensureLearnModule/,"Glossary registry is not composed into Formation");
 assert.match(presentation,/id:"learn\.glossary"/,"Glossary launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.spiritual_life"/,"Spiritual Life launcher is missing from Formation");
