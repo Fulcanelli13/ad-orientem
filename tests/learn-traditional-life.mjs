@@ -57,6 +57,10 @@ assert.equal(LEARN_MODULE_IDS.includes("learn.seasonal_rites"),false,"final v38.
 for(const [id,url] of Object.entries(TRADITIONAL_LEARN_SOURCES_V381)){
   assert.match(url,/^https:\/\//,id+" lacks a verified-scheme Formation source");
 }
+assert.match(readFileSync("src/learn/traditional-life.js","utf8"),
+  /\.aoLearnTradSource\{[^\n]*max\(13px,\.8125rem\)/,
+  "Traditional Formation source typography must match the readable metadata system");
+
 const runtime=readFileSync("src/learn/traditional-life.js","utf8");
 const browser=readFileSync("src/learn/browser-entry.js","utf8");
 const presentation=readFileSync("src/learn/presentation.js","utf8");
