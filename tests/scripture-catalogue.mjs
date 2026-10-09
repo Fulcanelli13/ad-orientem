@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./scripture-catholic-chapter-limits.mjs";
 import { SCRIPTURE_EDITIONS, DEFAULT_SCRIPTURE_EDITION, scripturePassage, scriptureEditionFor, assertScriptureTextReady } from "../src/scripture/catalogue.js";
 
 assert.deepEqual(Object.keys(SCRIPTURE_EDITIONS).sort(), ["crampon-1923","cpdv-2009","dr-challoner","vulgate-clementine"].sort());
