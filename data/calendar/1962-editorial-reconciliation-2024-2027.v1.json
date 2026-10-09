@@ -487,11 +487,11 @@
           "2024-01-25",
           "2027-01-25"
         ],
-        "disposition": "PRESENT_ORACLE_COUNT_VARIANCE",
+        "disposition": "RESTORED_INSEPARABLE_APOSTOLIC_PR_767",
         "expectedCommemorated": [
           "sancti:01-25c:4:w"
         ],
-        "rationale": "St Peter's linked apostolic commemoration is present in the shared resolver; first witness counts zero but second names Peter"
+        "rationale": "St Peter's linked apostolic commemoration is present in the shared resolver; first witness counts zero but second names Peter; the previously silent source-loader failure omitted the actual Peter/Paul prayer text; PR #767 composes the pinned named apostolic prayer with the principal Collect, Secret and Postcommunion UNDER ONE conclusion (1960 rubric 110), retaining a separate Lenten privileged feria where it occurs."
       },
       {
         "canonicalId": "sancti:02-22",
@@ -499,12 +499,12 @@
           "2024-02-22",
           "2027-02-22"
         ],
-        "disposition": "PRESENT_ORACLE_COUNT_VARIANCE",
+        "disposition": "RESTORED_INSEPARABLE_APOSTOLIC_PR_767",
         "expectedCommemorated": [
           "sancti:02-22c:4:r",
           "tempora:Quad"
         ],
-        "rationale": "St Paul and the Lent feria are both present; first witness counts only one, independent second lists both"
+        "rationale": "St Paul and the Lent feria are both present; first witness counts only one, independent second lists both; the previously silent source-loader failure omitted the actual Peter/Paul prayer text; PR #767 composes the pinned named apostolic prayer with the principal Collect, Secret and Postcommunion UNDER ONE conclusion (1960 rubric 110), retaining a separate Lenten privileged feria where it occurs."
       },
       {
         "canonicalId": "sancti:12-04",
@@ -557,7 +557,10 @@
     "editorialNameAliasDates": 4,
     "approvedEquivalentNameDates": 28,
     "approvedDayVersusMassNameDates": 6,
-    "validCommemorationCountVarianceOrPriorRepairs": 7,
-    "restoredStBarbaraDates": 2
+    "validCommemorationCountVarianceOrPriorRepairs": 3,
+    "restoredStBarbaraDates": 2,
+    "restoredInseparableApostolicDates": 4,
+    "actualMassPrayerDefectDates": 6,
+    "note": "Four Jan25/Feb22 source-owner omissions (inseparable St Peter/St Paul joined under one conclusion) and two Dec4 St Barbara omissions were actual Mass-text defects. Do not classify those as mere differences in counted day labels."
   }
 }
