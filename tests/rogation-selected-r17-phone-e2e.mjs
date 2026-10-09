@@ -164,6 +164,23 @@ try{
    await page.touchscreen.tap(backBox.x+backBox.width/2,backBox.y+backBox.height/2);
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R06",
     null,{timeout:5000});
+   // Release gate: this violet II-class Mass must never display Gloria/Credo.
+   const takeNext=async expectedSource=>{
+    const box=await next.boundingBox();assert.ok(box&&box.height>=44);
+    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+    await page.waitForFunction(expected=>
+     (globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sourceSectionId ??
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId)===expected,
+     expectedSource,{timeout:5000});
+   };
+   await takeNext("AO.CARD.001");
+   await takeNext("AO.CARD.002");
+   await takeNext("AO.CARD.004"); // Kyrie -> Collect: no Gloria
+   for(const id of ["AO.CARD.005","AO.CARD.006","AO.CARD.007","AO.CARD.008","AO.CARD.010"]){
+    await takeNext(id);
+   }
+   const card=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.());
+   assert.match(card.title,/Offertory/i);
    assert.deepEqual(errors,[],language+" produced a browser exception");
   }finally{await context.close()}
  }
