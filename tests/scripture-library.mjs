@@ -6,11 +6,11 @@ assert.equal(Object.keys(ROSARY_SCRIPTURE_LINKS).length,20);
 for(const [id,entry] of Object.entries(ROSARY_SCRIPTURE_LINKS)) {
  assert.ok(entry.editorialSummary.en && entry.editorialSummary.fr,id);
  assert.ok(entry.prayerIntention.en && entry.prayerIntention.fr,id);
- assert.ok(entry.relation==="scriptural_event" || entry.relation==="traditional_typology",id);
+ assert.ok(["scriptural_event","related_scripture_for_doctrinal_mystery","traditional_marian_typology"].includes(entry.relation),id);
  assert.ok(sourceReadingLink(entry.passage).includes("version=DRA"),id);
 }
-assert.equal(ROSARY_SCRIPTURE_LINKS.glo4.relation,"traditional_typology");
-assert.equal(ROSARY_SCRIPTURE_LINKS.glo5.relation,"traditional_typology");
+assert.equal(ROSARY_SCRIPTURE_LINKS.glo4.relation,"related_scripture_for_doctrinal_mystery");
+assert.equal(ROSARY_SCRIPTURE_LINKS.glo5.relation,"traditional_marian_typology");
 assert.deepEqual(parseScriptureReference("Luke 1:26-38"),{book:"Luke",chapter:1,verseStart:26,verseEnd:38});
 assert.throws(()=>parseScriptureReference("GospelOfThomas 1:1"));
 assert.throws(()=>parseScriptureReference("Luke 1:38-26"));
