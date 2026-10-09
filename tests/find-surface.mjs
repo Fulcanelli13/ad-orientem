@@ -164,4 +164,14 @@ assert.match(browserSource,/grid-template-columns:44px minmax\(0,1fr\) 44px auto
 assert.match(glossarySource,/z-index:2147483600/,"Context glossary no longer renders above Explore/Mass surfaces");
 assert.doesNotMatch(explorePresentation,/>×<\/button>|>←<\/button>/,"Explore shell regained raw Unicode navigation controls");
 
+// Control regressions: search focus, nested modal actions and cross-route success gates.
+assert.ok(browserSource.includes("preserveSearchFocus:true"),"Explore input still loses keyboard focus");
+assert.ok(browserSource.includes('target?.closest?.("button[data-find-close-detail]")'),"Detail close is not button-specific");
+assert.ok(browserSource.includes('target?.matches?.(".aoFindSheetBackdrop[data-find-close-detail]")'),"Detail backdrop dismissal is missing");
+assert.ok(!browserSource.includes('target?.closest?.("[data-find-close-detail]")'),"Sheet contents are still swallowed by backdrop dismissal");
+assert.ok(browserSource.includes("result?.ok===true"),"Explore Calendar link does not require successful shell navigation");
+const calendarRuntime=readFileSync("src/calendar/calendar-runtime.js","utf8");
+assert.ok(calendarRuntime.includes("result?.ok===true?globalThis.AO_FIND_APP_V1"),
+  "Calendar Explore link does not require successful shell navigation");
+
 console.log("PASS Find a Mass modular surface");
