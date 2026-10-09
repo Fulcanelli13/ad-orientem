@@ -85,7 +85,7 @@ function rawSchedules(record){
 function normalizeGeo(geo){
   const lat=Number(geo?.lat),lng=Number(geo?.lng);
   return Number.isFinite(lat)&&lat>=-90&&lat<=90&&Number.isFinite(lng)&&lng>=-180&&lng<=180
-    ?Object.freeze({lat,lng,precision:text(geo?.precision)||"unknown",approximate:["complex_anchor","address","street","locality"].includes(text(geo?.precision)),attribution:text(geo?.attribution)})
+    ?Object.freeze({lat,lng,precision:text(geo?.precision)||"unknown",approximate:Boolean(geo?.indicative_only)||["complex_anchor","address","street","locality"].includes(text(geo?.precision)),indicative_only:Boolean(geo?.indicative_only),reference_point_name:text(geo?.reference_point_name),attribution:text(geo?.attribution)})
     :null;
 }
 function itemSearch(parts){return parts.flatMap(value=>Array.isArray(value)?value:[value]).map(text).filter(Boolean).join(" ").toLowerCase();}
