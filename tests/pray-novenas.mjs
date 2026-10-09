@@ -305,8 +305,8 @@ assert.equal(HAMMER_HISTORICAL_1909_V1.source.originalPrintFacsimileCollated,fal
 assert.equal(hammerHistoricalDayText("immaculate_conception",1),null);
 const runtimeWithMeditations=readFileSync("src/pray/novena-runtime.js","utf8");
 assert.match(runtimeWithMeditations,/import \{ hammerHistoricalDayText \}/);
-assert.match(runtimeWithMeditations,/nl\\(historical\\.meditation\\)/);
-assert.match(runtimeWithMeditations,/nl\\(historical\\.practice\\)/);
+assert.match(runtimeWithMeditations,/nl\(historical\.meditation\)/);
+assert.match(runtimeWithMeditations,/nl\(historical\.practice\)/);
 assert.match(runtimeWithMeditations,/lang="en"/);
 
 assert.equal(hammerHistoricalDayWitness("holy_souls",1),null);
