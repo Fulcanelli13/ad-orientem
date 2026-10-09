@@ -39,7 +39,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.novenaBridge,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.novenaSot,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.sacredPhenomena,{fetchImpl}),
-    fetchJson(EXPLORE_DATA_URLS.relatedPlaces,{fetchImpl}),
+    fetchJson(EXPLORE_DATA_URLS.relatedPlaces,{fetchImpl,optional:true}),
   ]);
   return Object.freeze({
     directory,
