@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import {OUTSTANDING_PSALMS,inspectRemainingPsalmChapter,auditRemainingPsalms} from "../tools/scripture/audit-remaining-catholic-psalms.mjs";
+import {PSALTER_REMAINDER_VERIFIED,psalterRemainderParallelVerse} from "../src/scripture/psalter-remainder-crosswalk.js";
+import {scriptureParallelReferenceState} from "../src/scripture/reference-safety.js";
 assert.deepEqual(OUTSTANDING_PSALMS,[16,64,73,75,76,77,88,101,108,111,115,120,137]);
 const strong=[
 "The Lord is my strength and I will rejoice in his salvation",
@@ -30,4 +32,19 @@ assert.equal(report.totalCandidateVerses,65);
 assert.equal(report.totalUnresolvedVerses,0);
 assert.equal(report.textApprovedForPublication,false);
 assert.equal(report.status,"REVIEW-REQUIRED-BEFORE-INCORPORATING-ANY-VERSE");
-console.log("13 unresolved Catholic Psalms: conservative per-verse and source-context audit contracts passed");
+assert.equal(Object.keys(PSALTER_REMAINDER_VERIFIED).length,13);
+assert.equal(Object.values(PSALTER_REMAINDER_VERIFIED).reduce((n,v)=>n+v.length,0),254);
+for(const [chapter,verses] of Object.entries(PSALTER_REMAINDER_VERIFIED)){
+ for(const verseStart of verses){
+  const p={book:"Psalms",chapter:Number(chapter),verseStart,verseEnd:verseStart};
+  assert.deepEqual(psalterRemainderParallelVerse(p,"cpdv-2009","dr-challoner"),p);
+  assert.deepEqual(psalterRemainderParallelVerse(p,"dr-challoner","cpdv-2009"),p);
+  assert.equal(scriptureParallelReferenceState(p,"cpdv-2009","dr-challoner").canAutoParallel,true);
+ }
+}
+for(const [chapter,verseStart] of [[16,7],[64,14],[73,22],[75,5],[77,29],[88,37],[101,8],[108,12],[111,6],[115,1],[120,8],[137,6]]){
+ assert.equal(psalterRemainderParallelVerse({book:"Psalms",chapter,verseStart,verseEnd:verseStart},"cpdv-2009","dr-challoner"),null);
+ assert.equal(scriptureParallelReferenceState({book:"Psalms",chapter,verseStart},"dr-challoner","cpdv-2009").canAutoParallel,false);
+}
+assert.equal(psalterRemainderParallelVerse({book:"Psalms",chapter:16,verseStart:1,verseEnd:2},"cpdv-2009","dr-challoner"),null);
+console.log("13-Psalm audit plus 254 verified mappings and unresolved fail-closed references passed");
