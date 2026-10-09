@@ -1,0 +1,25 @@
+name: Prayer guided cards
+
+on:
+  pull_request:
+    paths:
+      - "src/pray/**"
+      - "tests/pray-guided-cards.mjs"
+      - "tests/pray-all-modules-mobile.mjs"
+      - ".github/workflows/pray-guided-acceptance.yml"
+  workflow_dispatch:
+
+jobs:
+  cards-and-prayers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: node tests/pray-guided-cards.mjs
+      - run: node tests/pray-traditional-life.mjs
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/pray-all-modules-mobile.mjs
