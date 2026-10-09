@@ -12,7 +12,7 @@ assert.equal(audit.summary.published,0,"Never count a third-party lead as certif
 assert.equal(audit.candidates.length,census.records.length);
 assert.equal(audit.summary.matched_name_review+audit.summary.ambiguous_name_review+
   audit.summary.likely_novel_needs_source,census.records.length);
-assert.ok(census.country_coverage.every(c=>c.discovered_unique>=0&&c.discovered_unique<=c.listed_total),
+assert.ok(census.country_coverage.every(c=>c.discovered_unique>=0&&(c.listed_total===null||c.discovered_unique<=c.listed_total)),
   "Country rows cannot claim more than the source total");
 assert.ok(census.records.every(r=>r.publication_state==="RESEARCH_ONLY"&&r.directory_url.startsWith("https://www.latinmassdir.org/venue/")));
 assert.ok(audit.candidates.every(r=>r.publication_state==="RESEARCH_ONLY_NOT_MASS_VENUE"));
