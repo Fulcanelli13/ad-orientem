@@ -856,18 +856,23 @@ export async function mountNativeReaderPreview({
     const id=state?.card?.id;
     const eligible=(kind==="PALM"&&["PALM-R04","PALM-R05"].includes(id)) ||
       (kind==="CANDLEMAS"&&["CND-R05","CND-R06"].includes(id)) ||
-      (kind==="REQUIEM_ABSOLUTION"&&id==="ABS-R05");
+      (kind==="REQUIEM_ABSOLUTION"&&id==="ABS-R05") ||
+      (kind==="HOLY_THURSDAY_POST"&&id==="HT-R02");
     riteChoice.hidden=!eligible;
     const stage=riteChoice.closest(".ao-reader-stage");
     if(stage)stage.dataset.riteChoice=String(eligible);
     if(!eligible)return;
     riteChoice.dataset.rite=kind;
     riteChoice.querySelector("[data-rite-choice-title]").textContent=
-      kind==="REQUIEM_ABSOLUTION"?"Follow the burial procession?":"Join this procession?";
+      kind==="REQUIEM_ABSOLUTION"?"Follow the burial procession?":
+      kind==="HOLY_THURSDAY_POST"?"After the Sacrament passes, will you follow?":"Join this procession?";
     const selected=kind==="PALM" ? state.processionParticipant :
-      kind==="CANDLEMAS" ? state.processionParticipant : state.burialParticipant;
+      kind==="CANDLEMAS" ? state.processionParticipant :
+      kind==="HOLY_THURSDAY_POST" ? (state.joiningState==="WAITING"
+        ? null : state.joiningState==="JOINING") : state.burialParticipant;
     for(const button of riteChoice.querySelectorAll("[data-rite-participation]")){
-      button.setAttribute("aria-pressed",String(button.dataset.riteParticipation===String(Boolean(selected))));
+      button.setAttribute("aria-pressed",String(selected!==null &&
+        button.dataset.riteParticipation===String(Boolean(selected))));
     }
   }
 
@@ -913,6 +918,11 @@ export async function mountNativeReaderPreview({
       ready.candlemasController.setProcessionParticipant(participating);showCandlemas();
     }else if(riteChoice.dataset.rite==="REQUIEM_ABSOLUTION"&&inRequiemAbsolution){
       ready.requiemAbsolutionController.setBurialParticipant(participating);showRequiemAbsolution();
+    }else if(riteChoice.dataset.rite==="HOLY_THURSDAY_POST"&&inHolyThursdayPost){
+      // Choosing Follow is itself the moment of joining, after the
+      // Sacrament passes: WAITING must never become STAND_WALK by default.
+      ready.holyThursdayPostController.setJoiningState(participating?"JOINING":"NOT_JOINING");
+      showHolyThursdayPost();
     }else return;
     if(scroll)scroll.scrollTop=position;
   }
