@@ -1,0 +1,677 @@
+{
+  "schema": "ao-1962-lent-weekday-scripture-source-matrix-v1",
+  "version": "2026-10-10",
+  "status": "SOURCE_PATH_AND_LATIN_GATED; NOT_DATE_DEFAULTED",
+  "scope": "Ordinary Monday–Saturday Propers in Lent weeks I–V excluding Ember Wednesday/Friday/Saturday and separate Passion Week Friday Marian formularium",
+  "count": {
+    "ordinaryWeekdayPropers": 26,
+    "singleRangeProperReferences": 47,
+    "segmentedProperReadings": 5,
+    "additionalSourceOrderedLessons": 1
+  },
+  "specialCases": [
+    {
+      "sourcePath": "Tempora/Quad1-3, Tempora/Quad1-5, Tempora/Quad1-6",
+      "disposition": "ALREADY_REGISTERED_IN_EMBER_SOURCE_MATRIX",
+      "note": "Use the prior Ember architecture; no duplicate Lenten ownership."
+    },
+    {
+      "sourcePath": "Tempora/Quad2-3",
+      "disposition": "SEGMENTED_VULGATE_ESTHER",
+      "reference": "Esther 13:8–11; 13:15–17",
+      "note": "Greek additions/book ordering require the existing Esther cross-edition warning; never invent a parallel citation."
+    },
+    {
+      "sourcePath": "Tempora/Quad3-5",
+      "disposition": "SEGMENTED",
+      "reference": "Numbers 20:1; 20:3; 20:6–13"
+    },
+    {
+      "sourcePath": "Tempora/Quad3-6",
+      "disposition": "SEGMENTED",
+      "reference": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62"
+    },
+    {
+      "sourcePath": "Tempora/Quad5-3",
+      "disposition": "SEGMENTED",
+      "reference": "Leviticus 19:1–2; 19:11–19; 19:25"
+    },
+    {
+      "sourcePath": "Tempora/Quad5-4",
+      "disposition": "SEGMENTED",
+      "reference": "Daniel 3:25; 3:34–45",
+      "note": "Gospel source inherited from Sancti/07-22 (Luke 7:36–50); do not adopt the Magdalene feast rank/collects."
+    },
+    {
+      "sourcePath": "Tempora/Quad3-4",
+      "disposition": "INHERITED_GOSPEL",
+      "originalSource": "Tempora/Pasc7-6:Evangelium",
+      "reference": "Luke 4:38–44",
+      "note": "Text belongs to the Lenten day and source owner, not to Pentecost liturgical day."
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3",
+      "disposition": "TWO_DISTINCT_LESSONS",
+      "sourceOrderedFirst": "Ezekiel 36:23–28",
+      "laterMassEpistle": "Isaiah 1:16–19",
+      "note": "Only source-ordered LectioL1 receives Ezekiel; intervening collect and gradual have no Bible button."
+    },
+    {
+      "sourcePath": "Tempora/Quad5-5",
+      "disposition": "HOLD_NOT_A_GENERIC_1962_FRIDAY_PROPER",
+      "originalLatinFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-5.txt",
+      "rubricalWitness": "https://1962ordo.today/day/feria-vi-in-passion-week-2-2-2-2-2-2-2-2/",
+      "note": "File is Seven Sorrows of BVM, whose Friday observance and Mass formularies differ by 1962 general calendar vs local/SSPX uses. Until the actual ordinary ferial sourcePath is verified, do not make this Marian source the universal Passion Friday default."
+    }
+  ],
+  "policy": [
+    "Source-file identity and actual selected Latin Epistle/Gospel incipit required; no date or word-search fallback.",
+    "Preserve Vulgate original verse groups; omitting a verse must remain visible in the semicolon-separated reference.",
+    "Do not infer Vulgate-to-CPDV/Crampon/Greek Esther concordance from one label.",
+    "Original Missal Latin order/extra lessons and reader state/rails cannot be overridden by this optional shared Bible overlay.",
+    "No new Scripture text licence, duplicate Bible reader, or rite adaptation."
+  ],
+  "days": [
+    {
+      "sourcePath": "Tempora/Quad1-1",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-1.txt",
+      "officium": "Feria Secunda infra Hebdomadam I in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Ezekiel 34:11–16",
+          "latinIncipit": "haec dicit dominus deus ecce ego ipse requiram oves meas et visitabo eas sicut visitat pastor gregem suum in"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 25:31–46",
+          "latinIncipit": "in illo tempore dixit jesus discipulis suis cum venerit filius hominis in majestate sua et omnes angeli cum eo"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad1-2",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-2.txt",
+      "officium": "Feria Tertia infra Hebdomadam I in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Isaiah 55:6–11",
+          "latinIncipit": "in diebus illis locutus est isaias propheta dicens quaerite dominum dum inveniri potest invocate eum dum prope est derelinquat"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 21:10–17",
+          "latinIncipit": "in illo tempore cum intrasset jesus jerosolymam commota est universa civitas dicens quis est hic populi autem dicebant hic"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad1-4",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-4.txt",
+      "officium": "Feria Quinta infra Hebdomadam I in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Ezekiel 18:1–9",
+          "latinIncipit": "in diebus illis factus est sermo domini ad me dicens quid est quod inter vos parabolam vertitis in proverbium"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 15:21–28",
+          "latinIncipit": "in illo tempore egressus jesus secessit in partes tyri et sidonis et ecce mulier chananaea a finibus illis egressa"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad2-1",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-1.txt",
+      "officium": "Feria Secunda infra Hebdomadam II in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Daniel 9:15–19",
+          "latinIncipit": "in diebus illis oravit daniel dominum dicens domine deus noster qui eduxisti populum tuum de terra aegypti in manu"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 8:21–29",
+          "latinIncipit": "in illo tempore dixit jesus turbis judaeorum ego vado et quaeretis me et in peccato vestro moriemini quo ego"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad2-2",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-2.txt",
+      "officium": "Feria Tertia infra Hebdomadam II in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "1Kings 17:8–16",
+          "latinIncipit": "in diebus illis factus est sermo domini ad eliam thesbiten dicens surge et vade in sarephta sidoniorum et manebis"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 23:1–12",
+          "latinIncipit": "in illo tempore locutus est jesus ad turbas et ad discipulos suos dicens super cathedram moysi sederunt scribae et"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad2-3",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-3.txt",
+      "officium": "Feria Quarta infra Hebdomadam II in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 20:17–28",
+          "latinIncipit": "in illo tempore ascendens jesus jerosolymam assumpsit duodecim discipulos secreto et ait illis ecce ascendimus jerosolymam et filius hominis"
+        }
+      ],
+      "segmentedReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Esther 13:8–11; 13:15–17",
+          "originalHeader": "!Esth 13:8-11; 13:15-17",
+          "segments": [
+            {
+              "book": "Esther",
+              "chapter": 13,
+              "verseStart": 8,
+              "verseEnd": 11
+            },
+            {
+              "book": "Esther",
+              "chapter": 13,
+              "verseStart": 15,
+              "verseEnd": 17
+            }
+          ]
+        }
+      ],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad2-4",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-4.txt",
+      "officium": "Feria Quinta infra Hebdomadam II in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Jeremiah 17:5–10",
+          "latinIncipit": "haec dicit dominus deus maledictus homo qui confidit in homine et ponit carnem brachium suum et a domino recedit"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 16:19–31",
+          "latinIncipit": "in illo tempore dixit jesus pharisaeis homo quidam erat dives qui induebatur purpura et bysso et epulabatur cotidie splendide"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad2-5",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-5.txt",
+      "officium": "Feria Sexta infra Hebdomadam II in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Genesis 37:6–22",
+          "latinIncipit": "in diebus illis dixit joseph fratribus suis audite somnium meum quod vidi putabam nos ligare manipulos in agro et"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 21:33–46",
+          "latinIncipit": "in illo tempore dixit jesus turbis judaeorum et principibus sacerdotum parabolam hanc homo erat paterfamilias qui plantavit vineam et"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad2-6",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-6.txt",
+      "officium": "Sabbato infra Hebdomadam II in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Genesis 27:6–40",
+          "latinIncipit": "in diebus illis dixit rebecca filio suo jacob audivi patrem tuum loquentem cum esau fratre tuo et dicentem ei"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 15:11–32",
+          "latinIncipit": "in illo tempore dixit jesus pharisaeis et scribis parabolam istam homo quidam habuit duos filios et dixit adolescentior ex"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad3-1",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-1.txt",
+      "officium": "Feria Secunda infra Hebdomadam III in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "2Kings 5:1–15",
+          "latinIncipit": "in diebus illis naaman princeps militiae regis syriae erat vir magnus apud dominum suum et honoratus per illum enim"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 4:23–30",
+          "latinIncipit": "in illo tempore dixit jesus pharisaeis utique dicetis mihi hanc similitudinem medice cura teipsum quanta audivimus facta in capharnaum"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad3-2",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-2.txt",
+      "officium": "Feria Tertia infra Hebdomadam III in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "2Kings 4:1–7",
+          "latinIncipit": "in diebus illis mulier quaedam clamabat ad eliseum prophetam dicens servus tuus vir meus mortuus est et tu nosti"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 18:15–22",
+          "latinIncipit": "in illo tempore dixit jesus discipulis suis si peccaverit in te frater tuus vade et corripe eum inter te"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad3-3",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-3.txt",
+      "officium": "Feria Quarta infra Hebdomadam III in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Exodus 20:12–24",
+          "latinIncipit": "haec dicit dominus deus honora patrem tuum et matrem tuam ut sis longaevus super terram quam dominus deus tuus"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 15:1–20",
+          "latinIncipit": "in illo tempore accesserunt ad jesum ab jerosolymis scribae et pharisaei dicentes quare discipuli tui transgrediuntur traditionem seniorum non"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad3-4",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-4.txt",
+      "officium": "Feria Quinta infra Hebdomadam III in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Jeremiah 7:1–7",
+          "latinIncipit": "in diebus illis factum est verbum domini ad me dicens sta in porta domus domini et praedica ibi verbum"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 4:38–44",
+          "latinIncipit": "in illo tempore surgens jesus de synagoga introivit in domum simonis socrus autem simonis tenebatur magnis febribus et rogaverunt"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": [],
+      "inheritedGospelFrom": "Tempora/Pasc7-6"
+    },
+    {
+      "sourcePath": "Tempora/Quad3-5",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-5.txt",
+      "officium": "Feria Sexta infra Hebdomadam III in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "GOSPEL",
+          "reference": "John 4:5–42",
+          "latinIncipit": "in illo tempore venit jesus in civitatem samariae quae dicitur sichar juxta praedium quod dedit jacob joseph filio suo"
+        }
+      ],
+      "segmentedReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Numbers 20:1; 20:3; 20:6–13",
+          "originalHeader": "!Num 20:1, 3, 6-13",
+          "segments": [
+            {
+              "book": "Numbers",
+              "chapter": 20,
+              "verseStart": 1,
+              "verseEnd": 1
+            },
+            {
+              "book": "Numbers",
+              "chapter": 20,
+              "verseStart": 3,
+              "verseEnd": 3
+            },
+            {
+              "book": "Numbers",
+              "chapter": 20,
+              "verseStart": 6,
+              "verseEnd": 13
+            }
+          ]
+        }
+      ],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad3-6",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-6.txt",
+      "officium": "Sabbato infra Hebdomadam III in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "GOSPEL",
+          "reference": "John 8:1–11",
+          "latinIncipit": "in illo tempore perrexit jesus in montem oliveti et diluculo iterum venit in templum et omnis populus venit ad"
+        }
+      ],
+      "segmentedReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+          "originalHeader": "!Dan 13:1-9, 15-17, 19-30, 33-62",
+          "segments": [
+            {
+              "book": "Daniel",
+              "chapter": 13,
+              "verseStart": 1,
+              "verseEnd": 9
+            },
+            {
+              "book": "Daniel",
+              "chapter": 13,
+              "verseStart": 15,
+              "verseEnd": 17
+            },
+            {
+              "book": "Daniel",
+              "chapter": 13,
+              "verseStart": 19,
+              "verseEnd": 30
+            },
+            {
+              "book": "Daniel",
+              "chapter": 13,
+              "verseStart": 33,
+              "verseEnd": 62
+            }
+          ]
+        }
+      ],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad4-1",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-1.txt",
+      "officium": "Feria Secunda infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "1Kings 3:16–28",
+          "latinIncipit": "in diebus illis venerunt duae mulieres meretrices ad regem salomonem steteruntque coram eo quarum una ait obsecro mi domine"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 2:13–25",
+          "latinIncipit": "in illo tempore prope erat pascha judaeorum et ascendit jesus jerosolymam et invenit in templo vendentes boves et oves"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad4-2",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-2.txt",
+      "officium": "Feria Tertia infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Exodus 32:7–14",
+          "latinIncipit": "in diebus illis locutus est dominus ad moysen dicens descende de monte peccavit populus tuus quem eduxisti de terra"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 7:14–31",
+          "latinIncipit": "in illo tempore jam die festo mediante ascendit jesus in templum et docebat et mirabantur judaei dicentes quomodo hic"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-3.txt",
+      "officium": "Feria Quarta infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Isaiah 1:16–19",
+          "latinIncipit": "haec dicit dominus deus lavamini mundi estote auferte malum cogitationum vestrarum ab oculis meis quiescite agere perverse discite benefacere"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 9:1–38",
+          "latinIncipit": "in illo tempore praeteriens jesus vidit hominem caecum a nativitate et interrogaverunt eum discipuli ejus rabbi quis peccavit hic"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "role": "LENT_FOURTH_WEEK_WEDNESDAY_BAPTISMAL_FIRST_LESSON",
+          "reference": "Ezekiel 36:23–28"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-4",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-4.txt",
+      "officium": "Feria Quinta infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "2Kings 4:25–38",
+          "latinIncipit": "in diebus illis venit mulier sunamitis ad eliseum in montem carmeli cumque vidisset eam vir dei e contra ait"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 7:11–16",
+          "latinIncipit": "in illo tempore ibat jesus in civitatem quae vocatur naim et ibant cum eo discipuli ejus et turba copiosa"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad4-5",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-5.txt",
+      "officium": "Feria Sexta infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "1Kings 17:17–24",
+          "latinIncipit": "in diebus illis aegrotavit filius mulieris matris familias et erat languor fortissimus ita ut non remaneret in eo halitus"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 11:1–45",
+          "latinIncipit": "in illo tempore erat quidam languens lazarus a bethania de castello mariae et marthae sororis ejus maria autem erat"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad4-6",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-6.txt",
+      "officium": "Sabbato infra Hebdomadam IV in Quadragesima · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Isaiah 49:8–15",
+          "latinIncipit": "haec dicit dominus in tempore placito exaudivi te et in die salutis auxiliatus sum tui et servavi te et"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 8:12–20",
+          "latinIncipit": "in illo tempore locutus est jesus turbis judaeorum dicens ego sum lux mundi qui sequitur me non ambulat in"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad5-1",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-1.txt",
+      "officium": "Feria Secunda infra Hebdomadam Passionis · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Jonah 3:1–10",
+          "latinIncipit": "in diebus illis factum est verbum domini ad jonam prophetam secundo dicens surge et vade in niniven civitatem magnam"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 7:32–39",
+          "latinIncipit": "in illo tempore miserunt principes et pharisaei ministros ut apprehenderent jesum dixit ergo eis jesus adhuc modicum tempus vobiscum"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad5-2",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-2.txt",
+      "officium": "Feria Tertia infra Hebdomadam Passionis · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Daniel 14:27–42",
+          "latinIncipit": "in diebus illis congregati sunt babylonii ad regem et dixerunt ei trade nobis danielem qui bel destruxit et draconem"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 7:1–13",
+          "latinIncipit": "in illo tempore ambulabat jesus in galilaeam non enim volebat in judaeam ambulare quia quaerebant eum judaei interficere erat"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad5-3",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-3.txt",
+      "officium": "Feria Quarta infra Hebdomadam Passionis · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "GOSPEL",
+          "reference": "John 10:22–38",
+          "latinIncipit": "in illo tempore facta sunt encaenia in jerosolymis et hiems erat et ambulabat jesus in templo in porticu salomonis"
+        }
+      ],
+      "segmentedReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Leviticus 19:1–2; 19:11–19; 19:25",
+          "originalHeader": "!Lev 19:1-2, 11-19, 25",
+          "segments": [
+            {
+              "book": "Leviticus",
+              "chapter": 19,
+              "verseStart": 1,
+              "verseEnd": 2
+            },
+            {
+              "book": "Leviticus",
+              "chapter": 19,
+              "verseStart": 11,
+              "verseEnd": 19
+            },
+            {
+              "book": "Leviticus",
+              "chapter": 19,
+              "verseStart": 25,
+              "verseEnd": 25
+            }
+          ]
+        }
+      ],
+      "supplementaryReadings": []
+    },
+    {
+      "sourcePath": "Tempora/Quad5-4",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-4.txt",
+      "officium": "Feria Quinta infra Hebdomadam Passionis · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 7:36–50",
+          "latinIncipit": "in illo tempore rogabat jesum quidam de pharisaeis ut manducaret cum illo et ingressus domum pharisaei discubuit et ecce"
+        }
+      ],
+      "segmentedReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Daniel 3:25; 3:34–45",
+          "originalHeader": "!Dan 3:25, 34-45",
+          "segments": [
+            {
+              "book": "Daniel",
+              "chapter": 3,
+              "verseStart": 25,
+              "verseEnd": 25
+            },
+            {
+              "book": "Daniel",
+              "chapter": 3,
+              "verseStart": 34,
+              "verseEnd": 45
+            }
+          ]
+        }
+      ],
+      "supplementaryReadings": [],
+      "inheritedGospelFrom": "Sancti/07-22"
+    },
+    {
+      "sourcePath": "Tempora/Quad5-6",
+      "primaryLatinSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-6.txt",
+      "officium": "Sabbato infra Hebdomadam Passionis · source-verified Latin Proper",
+      "properOrdinaryReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Jeremiah 18:18–23",
+          "latinIncipit": "in diebus illis dixerunt impii judaei ad invicem venite et cogitemus contra justum cogitationes non enim peribit lex a"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 12:10–36",
+          "latinIncipit": "in illo tempore cogitaverunt principes sacerdotum ut et lazarum interficerent quia multi propter illum abibant ex judaeis et credebant"
+        }
+      ],
+      "segmentedReadings": [],
+      "supplementaryReadings": []
+    }
+  ]
+}

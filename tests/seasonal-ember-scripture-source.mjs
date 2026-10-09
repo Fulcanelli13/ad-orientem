@@ -13,7 +13,7 @@ const audit=read("../data/mass/scripture-seasonal-ember-source-matrix.v1.json");
 const readings=read("../data/mass/scripture-extended-lesson.v1.json").readings;
 assert.equal(audit.schema,"ao-1962-three-season-ember-source-order-matrix-v1");
 assert.deepEqual(VERIFIED_EXTENDED_LESSON_READINGS,readings);
-assert.equal(readings.length,25);
+assert.equal(readings.length,26);
 assert.equal(audit.days.length,9);
 assert.deepEqual(audit.days.map(x=>x.sourcePath),[
  "Tempora/Adv3-3","Tempora/Adv3-5","Tempora/Adv3-6",
@@ -34,8 +34,8 @@ assert.equal(ex.filter(x=>x.liturgicalArrangement).length,3);
 const actualProper=VERIFIED_MASS_FEAST_READINGS.filter(x=>audit.days.some(d=>d.sourcePath===x.sourcePath));
 assert.equal(actualProper.length,9);
 assert.equal(actualProper.reduce((n,x)=>n+Object.keys(x.readings).length,0),17);
-assert.equal(VERIFIED_MASS_FEAST_READINGS.length,29);
-assert.equal(VERIFIED_SEGMENTED_MASS_READINGS.length,10);
+assert.equal(VERIFIED_MASS_FEAST_READINGS.length,55);
+assert.equal(VERIFIED_SEGMENTED_MASS_READINGS.length,15);
 function mock(order,path){
  const nodes=order.map((id,i)=>({
   id:"PRE_GOSPEL."+String(i+1).padStart(2,"0")+"."+id,

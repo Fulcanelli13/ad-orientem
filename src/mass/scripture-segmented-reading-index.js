@@ -1,4 +1,4 @@
-// Generated from data/mass/scripture-segmented-proper.v1.json; regression tests enforce exact parity.
+// Generated from data/mass/scripture-segmented-proper.v1.json; tests enforce exact parity.
 export const VERIFIED_SEGMENTED_MASS_READINGS=Object.freeze([
   {
     "sourcePath": "Tempora/Quad6-0",
@@ -231,6 +231,150 @@ export const VERIFIED_SEGMENTED_MASS_READINGS=Object.freeze([
       "https://www.missalemeum.com/en/widgets/propers/2025-09-21?theme=light"
     ],
     "editorialReason": "Original Latin Epistle begins at 5:25, continues at 5:26 then 6:1–10; a chapter-6-only link silently loses two verses."
+  },
+  {
+    "sourcePath": "Tempora/Quad2-3",
+    "title": "Feria Quarta infra Hebdomadam II in Quadragesima · disjoint liturgical Epistle",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-3.txt",
+    "latinIncipit": "in diebus illis oravit mardochaeus ad dominum dicens domine domine rex omnipotens in dicione enim tua cuncta sunt posita",
+    "segments": [
+      {
+        "book": "Esther",
+        "chapter": 13,
+        "verseStart": 8,
+        "verseEnd": 11
+      },
+      {
+        "book": "Esther",
+        "chapter": 13,
+        "verseStart": 15,
+        "verseEnd": 17
+      }
+    ],
+    "reference": "Esther 13:8–11; 13:15–17",
+    "sourceOriginalHeading": "!Esth 13:8-11; 13:15-17",
+    "note": "Vulgate Esther chapter 13 includes Greek additions; do not assert cross-edition Greek Esther chapter equivalence."
+  },
+  {
+    "sourcePath": "Tempora/Quad3-5",
+    "title": "Feria Sexta infra Hebdomadam III in Quadragesima · disjoint liturgical Epistle",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-5.txt",
+    "latinIncipit": "in diebus illis convenerunt filii israel adversum moysen et aaron et versi in seditionem dixerunt date nobis aquam ut",
+    "segments": [
+      {
+        "book": "Numbers",
+        "chapter": 20,
+        "verseStart": 1,
+        "verseEnd": 1
+      },
+      {
+        "book": "Numbers",
+        "chapter": 20,
+        "verseStart": 3,
+        "verseEnd": 3
+      },
+      {
+        "book": "Numbers",
+        "chapter": 20,
+        "verseStart": 6,
+        "verseEnd": 13
+      }
+    ],
+    "reference": "Numbers 20:1; 20:3; 20:6–13",
+    "sourceOriginalHeading": "!Num 20:1, 3, 6-13",
+    "note": "Never add omitted Bible verses or replace source section boundaries with a continuous range."
+  },
+  {
+    "sourcePath": "Tempora/Quad3-6",
+    "title": "Sabbato infra Hebdomadam III in Quadragesima · disjoint liturgical Epistle",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-6.txt",
+    "latinIncipit": "in diebus illis erat vir habitans in babylone et nomen ejus joakim et accepit uxorem nomine susannam filiam helciae",
+    "segments": [
+      {
+        "book": "Daniel",
+        "chapter": 13,
+        "verseStart": 1,
+        "verseEnd": 9
+      },
+      {
+        "book": "Daniel",
+        "chapter": 13,
+        "verseStart": 15,
+        "verseEnd": 17
+      },
+      {
+        "book": "Daniel",
+        "chapter": 13,
+        "verseStart": 19,
+        "verseEnd": 30
+      },
+      {
+        "book": "Daniel",
+        "chapter": 13,
+        "verseStart": 33,
+        "verseEnd": 62
+      }
+    ],
+    "reference": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+    "sourceOriginalHeading": "!Dan 13:1-9, 15-17, 19-30, 33-62",
+    "note": "Susanna/Daniel 13 omits verses 10–14, 18, 31–32; retain four strict segments."
+  },
+  {
+    "sourcePath": "Tempora/Quad5-3",
+    "title": "Feria Quarta infra Hebdomadam Passionis · disjoint liturgical Epistle",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-3.txt",
+    "latinIncipit": "in diebus illis locutus est dominus ad moysen dicens loquere ad omnem coetum filiorum israel et dices ad eos",
+    "segments": [
+      {
+        "book": "Leviticus",
+        "chapter": 19,
+        "verseStart": 1,
+        "verseEnd": 2
+      },
+      {
+        "book": "Leviticus",
+        "chapter": 19,
+        "verseStart": 11,
+        "verseEnd": 19
+      },
+      {
+        "book": "Leviticus",
+        "chapter": 19,
+        "verseStart": 25,
+        "verseEnd": 25
+      }
+    ],
+    "reference": "Leviticus 19:1–2; 19:11–19; 19:25",
+    "sourceOriginalHeading": "!Lev 19:1-2, 11-19, 25",
+    "note": "Never add omitted Bible verses or replace source section boundaries with a continuous range."
+  },
+  {
+    "sourcePath": "Tempora/Quad5-4",
+    "title": "Feria Quinta infra Hebdomadam Passionis · disjoint liturgical Epistle",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-4.txt",
+    "latinIncipit": "in diebus illis oravit azarias dominum dicens domine deus noster ne quaesumus tradas nos in perpetuum propter nomen tuum",
+    "segments": [
+      {
+        "book": "Daniel",
+        "chapter": 3,
+        "verseStart": 25,
+        "verseEnd": 25
+      },
+      {
+        "book": "Daniel",
+        "chapter": 3,
+        "verseStart": 34,
+        "verseEnd": 45
+      }
+    ],
+    "reference": "Daniel 3:25; 3:34–45",
+    "sourceOriginalHeading": "!Dan 3:25, 34-45",
+    "note": "Azariah prayer skips Vulgate Daniel 3:26–33; do not silently restore them."
   }
 ]);
 export const VERIFIED_SEGMENTED_MASS_VERSION="1962-MASS-PROPER-SEGMENTED-SCRIPTURE-V1";

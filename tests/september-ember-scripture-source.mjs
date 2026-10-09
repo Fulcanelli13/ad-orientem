@@ -15,7 +15,7 @@ const ext=load("../data/mass/scripture-extended-lesson.v1.json");
 assert.equal(audit.schema,"ao-1962-september-ember-scripture-source-audit-v1");
 assert.deepEqual(audit.days.map(x=>x.date),["2026-09-23","2026-09-25","2026-09-26"]);
 assert.deepEqual(audit.days.map(x=>x.sourcePath),["Tempora/093-3","Tempora/093-5","Tempora/093-6"]);
-assert.equal(VERIFIED_EXTENDED_LESSON_READINGS.length,25);
+assert.equal(VERIFIED_EXTENDED_LESSON_READINGS.length,26);
 assert.deepEqual(VERIFIED_EXTENDED_LESSON_READINGS,ext.readings);
 
 const septExtra=VERIFIED_EXTENDED_LESSON_READINGS.filter(r=>/^Tempora\/093-/.test(r.sourcePath));
