@@ -1,7 +1,7 @@
 {
   "version": "1962-MASS-PROPER-SEGMENTED-SCRIPTURE-V1",
   "status": "SOURCE_VERIFIED_EXACT_PROPER_AND_LATIN_GATED",
-  "policy": "Only actual canonical Mass Proper Epistle/Gospel slots; no preceding rite Gospel, native Good Friday/Easter Vigil state, unverified per-state Passion death boundary, or invented continuous verses.",
+  "policy": "Only actual canonical Mass Proper Epistle/Gospel slots; no preceding rite Gospel, native Good Friday/Easter Vigil state, unverified per-state Passion death boundary, or invented continuous verses. Pentecost Ember Friday Joel omits 2:25; use separate ordered segments on actual Pasc7-5 Latin Proper text, never a continuous 2:23–27 reference.",
   "readings": [
     {
       "sourcePath": "Tempora/Quad6-0",
@@ -90,6 +90,30 @@
         }
       ],
       "reference": "Luke 22:39–71; 23:1–53"
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-5",
+      "title": "Pentecost Octave Ember Friday · Joel prophecy with omitted verse",
+      "slot": "EPISTLE_OR_LESSON",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-29?theme=light",
+      "latinIncipit": "joel 2 23 24 2 26 27 haec dicit dominus deus exsultate filii sion et laetamini in domino deo",
+      "segments": [
+        {
+          "book": "Joel",
+          "chapter": 2,
+          "verseStart": 23,
+          "verseEnd": 24
+        },
+        {
+          "book": "Joel",
+          "chapter": 2,
+          "verseStart": 26,
+          "verseEnd": 27
+        }
+      ],
+      "reference": "Joel 2:23–24; 2:26–27",
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-5.txt",
+      "omittedVerse": "Joel 2:25"
     }
   ]
 }
