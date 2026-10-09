@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import "./extended-lesson-scripture-context.mjs";
 import "./september-ember-scripture-source.mjs";
+import "./seasonal-ember-scripture-source.mjs";
 import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
 import { buildEmberInsertionCards } from "../src/mass/reader-ember-lessons.js";
