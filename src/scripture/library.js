@@ -181,9 +181,13 @@ export function mountScriptureLibrary(root,{
        area.setAttribute("aria-label",lang==="fr"?"Commentaire vérifié":"Verified commentary");
        if(verified){
          area.append(element("p",verified.title));
-         area.append(element("p",lang==="fr"
-           ?"Compilation patristique attribuée ; commentaire distinct du texte inspiré."
-           :"Attributed patristic compilation, distinct from inspired Scripture."));
+         area.append(element("p",verified.type==="PATRISTIC_COMPILATION"
+           ?(lang==="fr"?"Compilation patristique attribuée, distincte du texte inspiré.":"Attributed patristic compilation, distinct from inspired Scripture.")
+           :(lang==="fr"?"Exégèse catholique historique ; interprétation humaine, non texte inspiré.":"Historical Catholic exegesis; human interpretation, not inspired Scripture.")));
+         if(verified.scope==="PSALM_SECTION_IN_COMPLETE_WORK"){
+           area.append(element("p",(lang==="fr"?"Ouvrez le sommaire à Psaume ":"Use the contents for Psalm ")+location.chapter+
+             (lang==="fr"?" ; numérotation traditionnelle.":"; traditional numbering.")));
+         }
          const link=element("a",lang==="fr"?"Lire le commentaire à la source ↗":"Read commentary at source ↗");
          link.href=verified.url;link.target="_blank";link.rel="noopener noreferrer";
          link.dataset.scriptureCommentarySource="verified";area.append(link);
