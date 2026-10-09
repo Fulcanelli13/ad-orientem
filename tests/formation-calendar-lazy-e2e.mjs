@@ -76,6 +76,13 @@ try{
  assert.equal(calendar.status?.open,true);
  assert.equal(calendar.root,"ao-calendar-modular-root");
  assert.equal(calendar.week?.version,"43.45-modular-exact");
+ // A clean Calendar boot must load the deferred Glossary owner when requested.
+ assert.equal(hits.some(x=>x.path==="/src/glossary/browser-entry.js"),false,"Glossary must remain deferred until its button is pressed");
+ await page.locator("#ao-calendar-modular-root [data-cal-glossary]").click();
+ await page.locator("#ao-glossary-root").waitFor({state:"visible",timeout:30000});
+ assert.equal(hits.some(x=>x.path==="/src/glossary/browser-entry.js"),true,"Calendar Glossary button did not load its owner");
+ assert.equal(await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.status?.().open),true,"Calendar Glossary click did not open real content");
+ await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.close?.());
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
  const fetchedBefore=hits.filter(x=>x.path==="/src/calendar/calendar-runtime.js").length;
  const second=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("calendar"));
