@@ -5,7 +5,7 @@ const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const corpus=load("../data/mass/distinct-rite-scripture-order.v1.json");
 const graphs=load("../data/mass/special-days-core.v1.1.json").graphs;
 assert.equal(corpus.rites.length,2);
-assert.equal(corpus.status,"SOURCE_VERIFIED_PARTIALLY_NATIVE_CONTEXT_LINKED");
+assert.equal(corpus.status,"SOURCE_VERIFIED_NATIVE_GOOD_FRIDAY_PALM_AND_EASTER_VIGIL_LESSONS_CONTEXT_LINKED");
 const expected=[
  ["GOOD_FRIDAY_1962","GF",["Hosea","Exodus","John"]],
  ["EASTER_VIGIL_1962","EV",["Genesis","Exodus","Isaiah","Deuteronomy"]]
@@ -41,7 +41,7 @@ for(const [riteId,graphId,bookOrder] of expected){
   if(spans)crossChapter++;
   assert.match(entry.status,riteId==="GOOD_FRIDAY_1962"
     ? /(NATIVE_CONTEXT_LINKED_SOURCE_TEXT_BOUND|PARTIALLY_NATIVE_CONTEXT_LINKED_SPLIT_PRE_POST_NO_DEATH_PAUSE_LINK)/
-    : /(NOT_YET_RUNTIME_LINKED|CROSS_CHAPTER)/,
+    : /NATIVE_CONTEXT_LINKED_FULL_LATIN_TEXT_WITH_SEPARATE_CANTICLE_AND_COLLECT/,
     "Native and held Scripture state publication flags must remain explicit");
   assert.ok(!Object.hasOwn(entry,"commentaryUrl"),"No improvised patristic attribution");
   count++;
