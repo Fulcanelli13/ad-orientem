@@ -347,6 +347,12 @@ function handleClick(e){
             returnContext:{surface:"pray",route:prayerRoute}
           });
           if(launched!==true)throw new Error("Formation child did not open");
+          // The app-shell can leave the Prayer donor sheet open during a
+          // cross-domain child launch. Explicitly release that interactive
+          // overlay after Formation owns the child, or its Back button is
+          // visually present but blocked by Prayer's higher z-index.
+          if(window?.AO_PRAY_APP_V1?.status?.()?.open===true)
+            window.AO_PRAY_APP_V1.close();
         }catch(error){
           try{window?.console?.error?.("Prayer to Formation handoff failed",error)}catch{}
           const recovered=await window?.AO_APP_SHELL_V1?.navigate?.("pray");
