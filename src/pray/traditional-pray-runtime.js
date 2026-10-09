@@ -271,17 +271,21 @@ function render(){
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   injectGlossaryAction();
   m.scrollTop=0;
-  queueMicrotask(()=>m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());
+  queueMicrotask(()=>m.querySelector("[data-ao-guided-focus]")?.focus?.()||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());
   return true;
 }
 function open(route,opts={}){
   if(!ROUTES[route])return false;
-  OPEN_OPTS={...opts};S={...S,route,screen:"module",prayerId:null};
+  OPEN_OPTS={...opts};S={...S,route,screen:"module",prayerId:null,
+    ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyStep:0,returnToDaily:false}:{})
+   ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{})};
   BASE_OPEN("pray.hub",opts);
   render();return true;
 }
 function back(){
   if(S.screen==="prayer"){S.screen="module";S.prayerId=null;return render()}
+  if(S.route==="pray.nightly_examen"&&S.returnToDaily){S.route="pray.morning_evening";S.returnToDaily=false;return render()}
+  if(S.route==="pray.morning_evening"&&S.dailyMode==="guided"){S.dailyMode="list";return render()}
   BASE_OPEN("pray.hub",OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);return true;
 }
 function goHome(){
@@ -293,13 +297,30 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip],[data-tp381-glossary]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
   if(b.matches("[data-tp381-glossary]")){const g=window?.AO_GLOSSARY_V1;if(typeof g?.openTerms==="function")void g.openTerms(glossaryTermsForState(),{origin:"pray"});return;}
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
-  if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";return render()}
+  if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";S.dailyStep=0;return render()}
+   if(b.dataset.tp381DailyMode){S.dailyMode=b.dataset.tp381DailyMode==="list"?"list":"guided";return render()}
+   if(b.hasAttribute("data-tp381-daily-step")){
+     S.dailyStep=clampPrayerCardStep(Number(b.dataset.tp381DailyStep),guidedDailyCards(S.daypart).length);return render();
+   }
+   if(b.hasAttribute("data-tp381-daily-overview")){S.dailyMode="list";return render()}
+   if(b.hasAttribute("data-tp381-daily-examen")){
+     S.route="pray.nightly_examen";S.screen="module";S.examenStep=0;S.returnToDaily=true;return render();
+   }
+   if(b.hasAttribute("data-tp381-examen-step")){
+     S.examenStep=clampPrayerCardStep(Number(b.dataset.tp381ExamenStep),NIGHTLY_EXAMEN_CARDS.length);return render();
+   }
+   if(b.hasAttribute("data-tp381-examen-return")){
+     S.route="pray.morning_evening";S.returnToDaily=false;S.dailyMode="guided";
+     S.dailyStep=Math.min(S.dailyStep+1,guidedDailyCards("evening").length);return render();
+   }
+   if(b.hasAttribute("data-tp381-examen-overview")){S.examenStep=0;return render()}
+
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
