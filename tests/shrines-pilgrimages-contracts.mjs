@@ -190,8 +190,15 @@ const requiredPlaces=new Set([
 ]);
 assert.ok(requiredPlaces.size>=131,"frozen place identities must not silently shrink");
 for(const id of ["place:FR:saint-joseph-bessillon","place:FR:notre-dame-graces-cotignac","place:FR:notre-dame-la-salette-fallavaux","place:FR:abbaye-mont-saint-michel","place:IT:san-michele-gargano","place:FR:carmel-lisieux","place:FR:espace-bernadette-nevers","place:FR:basilique-ars","place:FR:notre-dame-du-laus","place:PL:divine-mercy-plock","place:IT:basilica-sant-antonio-padova","place:IT:basilica-san-francesco-assisi","place:IT:basilica-santa-rita-cascia","place:IT:basilica-san-nicola-bari","place:IT:santuario-san-pio-rotondo","place:IN:basilica-bom-jesus-old-goa","place:RW:sanctuaire-kibeho","place:FR:notre-dame-paris"])assert.ok(corpus.shrines.some(x=>x.place_id===id),id+" source-recovered shrine missing");
+// Freeze the historic minimum separately. New source-reviewed shrine additions
+// may legitimately expand the shared place registry beyond that older snapshot.
+const actualSharedPlaces=new Set(geography.places.map(place=>place.place_id));
+for(const frozenId of requiredPlaces){
+  assert.ok(actualSharedPlaces.has(frozenId),frozenId+" frozen place identity disappeared");
+}
 for(const shrine of corpus.shrines){
-  assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
+  assert.ok(actualSharedPlaces.has(shrine.place_id),
+    shrine.shrine_id+" is not registered in the shared geography place registry");
 }
 
 assert.equal(calendarDateForSemanticKey("feast.saint_anne",2026),"2026-07-26");
