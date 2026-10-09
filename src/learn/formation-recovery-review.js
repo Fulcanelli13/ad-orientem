@@ -16,7 +16,8 @@ const PACKS = Object.freeze([
   ["Church Crisis dossiers","church-crisis-canonical.v1.json"],
   ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"],
   ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"],
-  ["Canonical syntheses II","formation-canonical-synthesis-batch2-2026-10-09.v1.json"]
+  ["Canonical syntheses II","formation-canonical-synthesis-batch2-2026-10-09.v1.json"],
+  ["Canonical syntheses III","formation-canonical-synthesis-batch3-2026-10-09.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -135,7 +136,8 @@ export function buildRecoveryDossierCoverage(rows,packs) {
     throw new Error("Unapproved dossier source status");
   const synthPacks=[
     ["Canonical syntheses","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH1_V1",10],
-    ["Canonical syntheses II","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH2_V1",20]
+    ["Canonical syntheses II","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH2_V1",20],
+    ["Canonical syntheses III","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH3_V1",23]
   ];
   const synthMap=new Map();
   for(const [label,version,count] of synthPacks){
@@ -374,7 +376,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
       state.synthesisSources=new Map();
-      for(const label of ["Canonical syntheses","Canonical syntheses II"]){
+      for(const label of ["Canonical syntheses","Canonical syntheses II","Canonical syntheses III"]){
         const doc=docs.find(x=>x.label===label)?.doc;
         for(const s of doc?.source_registry||[])state.synthesisSources.set(s.id,s);
       }
