@@ -6,20 +6,21 @@
   "importantNotes": [
     "Trinity Sunday: Missale Online labels Romans 11:32–36; the Latin incipit starts Romans 11:33. The corrected 11:33–36 is independently corroborated by https://mylatinmass.com/readings/trinity-sunday/.",
     "Annunciation: Missale Online labels Isaiah 7:11–15; its supplied Latin begins at Isaiah 7:10. The corrected 7:10–15 is independently corroborated by https://mylatinmass.com/readings/annunciation-of-the-blessed-virgin-mary/.",
-    "Sacred Heart: Epistle uses Ephesians 3:8–12 and 3:14–19, not one continuous passage. Since the shared reader cannot represent separated ranges, the Epistle is held, not approximated.",
-    "Palm Sunday: the Epistle is indexed in the Mass Proper. The procession Gospel Matthew 21:1–9 and Mass Passion Matthew 26:36–75; 27:1–60 now have separately witnessed research identities in the distinct-rite Scripture ledger, but are not yet activated as Scripture Context controls.",
+    "Sacred Heart: Epistle uses Ephesians 3:8–12 and 3:14–19, not one continuous passage. It is excluded from the historical single-range index; the independently source- and Latin-matched segmented Proper index now supplies it.",
+    "Palm Sunday: Mass Epistle remains in the single-range Proper index. The pre-procession Gospel Matthew 21:1–9 belongs only to the native Palm rite and is not UI-linked. The Mass Passion Matthew 26:36–75; 27:1–60 is source-matched in the segmented Proper index, not to the procession Gospel.",
     "Christmas has three distinct Mass forms, not a blanket Christmas-day reading. A single generic reading would be wrong.",
     "Good Friday and Easter Vigil have distinct, non-Ordinary source-order graphs and are excluded from this Ordinary Mass Proper supplement.",
     "The separately governed Good Friday and Easter Vigil owners must receive Scripture context from their own approved rite-state references; no proxy link to Palm Sunday or Easter Sunday is accepted.",
     "Holy Tuesday and Wednesday Passions are cross-chapter readings: Mark 14:32–72; 15:1–46 and Luke 22:39–71; 23:1–53. Neither can be projected into the one-chapter Scripture Context reference parser.",
     "Holy Wednesday first lesson's source heading says Isaiah 63:1–7, but the Latin begins with Isaiah 62:11 (Dicite filiae Sion); this is explicitly held pending segmented native lesson linking. The second lesson is Isaiah 53:1–12 and must retain its separate source-order identity.",
-    "Holy Thursday's Mass Gospel John 13:1–15 is not a proxy for the optional Mandatum and its separate associated chants."
+    "Holy Thursday's Mass Gospel John 13:1–15 is not a proxy for the optional Mandatum and its separate associated chants.",
+    "Holy Tuesday's Gospel Passion Mark 14:32–72; 15:1–46 is excluded from this legacy single-range supplement, but available in the independently witnessed segmented Mass Proper index with a Latin-incpit and source-path guard."
   ],
   "holds": [
     {
       "sourcePath": "Tempora/Pent02-5",
       "slot": "EPISTLE_OR_LESSON",
-      "reason": "DISCONTIGUOUS_PASSAGE_NOT_SUPPORTED",
+      "reason": "EXCLUDED_FROM_SINGLE_RANGE_INDEX_NOW_COVERED_BY_SOURCE_GUARDED_SEGMENTS",
       "biblicalSections": [
         "Ephesians 3:8–12",
         "Ephesians 3:14–19"
