@@ -23,6 +23,12 @@
       "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html",
       "verification": "Chapters II–IV and the corresponding canons checked for the reason/revelation/faith claims in LTF-002, LTF-003 and LTF-005.",
       "originalLatinUrl": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html"
+    },
+    {
+      "id": "PIUS_X_1912_IT_TRANSCRIPTION",
+      "title": "Pius X, Catechismo della dottrina cristiana (1912), Italian-language transcription",
+      "url": "https://github.com/gustavo-depaula/ember/tree/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it",
+      "verification": "114 active numbered Italian question-answer passages located and read; not independently collated against original printed facsimile"
     }
   ],
   "batchFindings": {
@@ -47,7 +53,12 @@
       "original1912ItalianCollationComplete": false,
       "nativeFrenchEditorialApprovalCount": 0,
       "independentDoctrineApprovalCount": 0,
-      "description": "Full numbered questions and answers read from fixed modern-English 1912 short-catechism witness, Vatican I sections located in original Latin. Evidence reconciliation, not historical/original-language certification."
+      "description": "Original-language Italian Q&A transcription compared with pinned English witness, plus Vatican I Latin chapter/canon locators. No printed 1912 facsimile collation, native French or independent theological approval.",
+      "distinctCompleteItalianTranscriptionQARead": 114,
+      "distinctActiveEnglishQAReferenced": 114,
+      "italianTranscriptionSectionsRead": 9,
+      "printFacsimileItalianCollationComplete": false,
+      "bilingualSubstantiveCorrections": 1
     }
   },
   "lessons": [
@@ -97,7 +108,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q001",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "a40322b2",
+                  "italianAnswerWitnessCharacters": 38,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -107,7 +127,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -174,7 +195,51 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q013",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "b23a2435",
+                  "italianAnswerWitnessCharacters": 144,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q014",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "3ee204d7",
+                  "italianAnswerWitnessCharacters": 133,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q015",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "c144fd00",
+                  "italianAnswerWitnessCharacters": 122,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q016",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "ee083c8c",
+                  "italianAnswerWitnessCharacters": 161,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q017",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "6650fd56",
+                  "italianAnswerWitnessCharacters": 148,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q018",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "18ae166f",
+                  "italianAnswerWitnessCharacters": 121,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -184,7 +249,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -206,7 +272,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q027",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "d4a78566",
+                  "italianAnswerWitnessCharacters": 231,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -216,7 +291,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -283,7 +359,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -377,7 +454,72 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q002",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "d60c60ad",
+                  "italianAnswerWitnessCharacters": 87,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q003",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "3806c83d",
+                  "italianAnswerWitnessCharacters": 172,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q004",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "e0bced3d",
+                  "italianAnswerWitnessCharacters": 91,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q005",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "6904c125",
+                  "italianAnswerWitnessCharacters": 91,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q006",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "bdeb638e",
+                  "italianAnswerWitnessCharacters": 67,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q007",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "462e8471",
+                  "italianAnswerWitnessCharacters": 73,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q008",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "e1c4dc0c",
+                  "italianAnswerWitnessCharacters": 73,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q009",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "a3b0309f",
+                  "italianAnswerWitnessCharacters": 77,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q010",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "2ca5484a",
+                  "italianAnswerWitnessCharacters": 76,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -387,7 +529,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -418,7 +561,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q012",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "d28a8555",
+                  "italianAnswerWitnessCharacters": 166,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q052",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "c52801d9",
+                  "italianAnswerWitnessCharacters": 181,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -428,7 +587,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -480,7 +640,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q028",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-misteri-principali.md",
+                  "italianAnswerWitnessFingerprint": "6823ae2a",
+                  "italianAnswerWitnessCharacters": 270,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
@@ -504,7 +673,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -526,7 +696,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q029",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-misteri-principali.md",
+                  "italianAnswerWitnessFingerprint": "10f41302",
+                  "italianAnswerWitnessCharacters": 225,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -536,7 +715,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -558,7 +738,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q030",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-misteri-principali.md",
+                  "italianAnswerWitnessFingerprint": "d2e58222",
+                  "italianAnswerWitnessCharacters": 122,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
@@ -588,7 +777,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -643,7 +833,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q232",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "6e10c4e3",
+                  "italianAnswerWitnessCharacters": 171,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -653,7 +852,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -675,7 +875,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q237",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "0f0e1a19",
+                  "italianAnswerWitnessCharacters": 424,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -685,7 +894,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -734,7 +944,37 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q244",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "2eadb916",
+                  "italianAnswerWitnessCharacters": 262,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q245",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "c7cac0d7",
+                  "italianAnswerWitnessCharacters": 237,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q246",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "a8fa8594",
+                  "italianAnswerWitnessCharacters": 188,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q247",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "a449d7f4",
+                  "italianAnswerWitnessCharacters": 220,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -744,7 +984,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -799,7 +1040,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q233",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "fcd40df4",
+                  "italianAnswerWitnessCharacters": 216,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q234",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "08a86598",
+                  "italianAnswerWitnessCharacters": 192,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
@@ -823,7 +1080,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -854,7 +1112,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q233",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "fcd40df4",
+                  "italianAnswerWitnessCharacters": 216,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q235",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "d4101a08",
+                  "italianAnswerWitnessCharacters": 165,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
@@ -878,7 +1152,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -900,7 +1175,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q236",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "1703c441",
+                  "italianAnswerWitnessCharacters": 382,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
@@ -924,7 +1208,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -987,7 +1272,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q106",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "cd2baa24",
+                  "italianAnswerWitnessCharacters": 243,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -997,7 +1291,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1037,7 +1332,30 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q112",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "c1705b46",
+                  "italianAnswerWitnessCharacters": 136,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q113",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "818a7184",
+                  "italianAnswerWitnessCharacters": 264,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q114",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "c60667a9",
+                  "italianAnswerWitnessCharacters": 343,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1047,7 +1365,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1078,7 +1397,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q115",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "e5840b10",
+                  "italianAnswerWitnessCharacters": 265,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q116",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "fee09ab4",
+                  "italianAnswerWitnessCharacters": 282,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1088,7 +1423,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": "Maintain distinction between protected definitive Magisterium and non-definitive teachings; scope must not imply every episcopal or papal utterance is infallible."
+            "editorialNote": "Maintain distinction between protected definitive Magisterium and non-definitive teachings; scope must not imply every episcopal or papal utterance is infallible.",
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1128,7 +1464,30 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q118",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "fa95f820",
+                  "italianAnswerWitnessCharacters": 165,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q119",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "ec5a845b",
+                  "italianAnswerWitnessCharacters": 276,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q236",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md",
+                  "italianAnswerWitnessFingerprint": "1703c441",
+                  "italianAnswerWitnessCharacters": 382,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1138,7 +1497,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -1227,7 +1587,37 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q002",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "d60c60ad",
+                  "italianAnswerWitnessCharacters": 87,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q003",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "3806c83d",
+                  "italianAnswerWitnessCharacters": 172,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q004",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "e0bced3d",
+                  "italianAnswerWitnessCharacters": 91,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q005",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "6904c125",
+                  "italianAnswerWitnessCharacters": 91,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1237,7 +1627,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1295,7 +1686,44 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q006",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "bdeb638e",
+                  "italianAnswerWitnessCharacters": 67,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q007",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "462e8471",
+                  "italianAnswerWitnessCharacters": 73,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q008",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "e1c4dc0c",
+                  "italianAnswerWitnessCharacters": 73,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q009",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "a3b0309f",
+                  "italianAnswerWitnessCharacters": 77,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q010",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "2ca5484a",
+                  "italianAnswerWitnessCharacters": 76,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1305,7 +1733,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1345,7 +1774,30 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q011",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "e4d745ea",
+                  "italianAnswerWitnessCharacters": 195,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q012",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "d28a8555",
+                  "italianAnswerWitnessCharacters": 166,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q018",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "18ae166f",
+                  "italianAnswerWitnessCharacters": 121,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1355,7 +1807,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -1492,7 +1945,72 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q019",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "94c9cfb8",
+                  "italianAnswerWitnessCharacters": 103,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q020",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "3f58b5c2",
+                  "italianAnswerWitnessCharacters": 146,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q037",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "fa1dfe96",
+                  "italianAnswerWitnessCharacters": 76,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q038",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "6369c28b",
+                  "italianAnswerWitnessCharacters": 151,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q039",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "9b98efdb",
+                  "italianAnswerWitnessCharacters": 166,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q040",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "b543b1db",
+                  "italianAnswerWitnessCharacters": 224,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q041",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "87d96e42",
+                  "italianAnswerWitnessCharacters": 106,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q042",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "a9bf509a",
+                  "italianAnswerWitnessCharacters": 114,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q043",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "78b9c1b5",
+                  "italianAnswerWitnessCharacters": 114,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1502,7 +2020,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1542,7 +2061,30 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q044",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "82cfa777",
+                  "italianAnswerWitnessCharacters": 225,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q045",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "163765be",
+                  "italianAnswerWitnessCharacters": 214,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q046",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "2f38d089",
+                  "italianAnswerWitnessCharacters": 175,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1552,7 +2094,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1601,7 +2144,37 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q047",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "a07cb12d",
+                  "italianAnswerWitnessCharacters": 96,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q048",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "d185ccce",
+                  "italianAnswerWitnessCharacters": 186,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q049",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "2da293fb",
+                  "italianAnswerWitnessCharacters": 358,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q050",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "8a2678ed",
+                  "italianAnswerWitnessCharacters": 228,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1611,7 +2184,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -1675,7 +2249,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q004",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "e0bced3d",
+                  "italianAnswerWitnessCharacters": 91,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q051",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "69e21dd0",
+                  "italianAnswerWitnessCharacters": 174,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1685,7 +2275,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1707,7 +2298,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q052",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "c52801d9",
+                  "italianAnswerWitnessCharacters": 181,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1717,7 +2317,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1748,7 +2349,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q011",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "e4d745ea",
+                  "italianAnswerWitnessCharacters": 195,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q012",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "d28a8555",
+                  "italianAnswerWitnessCharacters": 166,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1758,7 +2375,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -1846,7 +2464,30 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q053",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "41269365",
+                  "italianAnswerWitnessCharacters": 158,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q054",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "464d4a1d",
+                  "italianAnswerWitnessCharacters": 80,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q055",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "e284fe29",
+                  "italianAnswerWitnessCharacters": 107,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1856,7 +2497,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1887,7 +2529,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q057",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "ee12c616",
+                  "italianAnswerWitnessCharacters": 143,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q058",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "36d3a8bf",
+                  "italianAnswerWitnessCharacters": 236,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1897,7 +2555,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -1919,7 +2578,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q059",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "aa56e1f5",
+                  "italianAnswerWitnessCharacters": 155,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -1929,7 +2597,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ]
@@ -2029,7 +2698,51 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q060",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "d18f0c43",
+                  "italianAnswerWitnessCharacters": 78,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q061",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "908db295",
+                  "italianAnswerWitnessCharacters": 153,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q062",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "61edb5cc",
+                  "italianAnswerWitnessCharacters": 115,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q063",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "bc4f4f34",
+                  "italianAnswerWitnessCharacters": 185,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q064",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "5a7a68e0",
+                  "italianAnswerWitnessCharacters": 155,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q065",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "2dfd945d",
+                  "italianAnswerWitnessCharacters": 181,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2039,7 +2752,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2088,7 +2802,37 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q066",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "c5d9ce58",
+                  "italianAnswerWitnessCharacters": 183,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q067",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "d6210639",
+                  "italianAnswerWitnessCharacters": 188,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q068",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "c4b7f67f",
+                  "italianAnswerWitnessCharacters": 278,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q069",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "3d09aa45",
+                  "italianAnswerWitnessCharacters": 279,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2098,7 +2842,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2165,7 +2910,51 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q070",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "3488456d",
+                  "italianAnswerWitnessCharacters": 106,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q071",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "69693585",
+                  "italianAnswerWitnessCharacters": 295,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q072",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "3fa1779c",
+                  "italianAnswerWitnessCharacters": 273,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q073",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "1dc74f9f",
+                  "italianAnswerWitnessCharacters": 273,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q074",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "b60bc52f",
+                  "italianAnswerWitnessCharacters": 306,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q075",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "5df4c73a",
+                  "italianAnswerWitnessCharacters": 278,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2175,7 +2964,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": "In final French and Italian collation distinguish loss of sanctifying grace, preternatural gifts, and wounded human nature without implying human nature was destroyed."
+            "editorialNote": "In final French and Italian collation distinguish loss of sanctifying grace, preternatural gifts, and wounded human nature without implying human nature was destroyed.",
+            "italian1912TranscriptionRead": true
           }
         }
       ]
@@ -2261,7 +3051,37 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q021",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "a1434930",
+                  "italianAnswerWitnessCharacters": 183,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q022",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "096d849c",
+                  "italianAnswerWitnessCharacters": 103,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q023",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "0116da5d",
+                  "italianAnswerWitnessCharacters": 117,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q024",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "dd7220e1",
+                  "italianAnswerWitnessCharacters": 68,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2271,7 +3091,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2302,7 +3123,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q080",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "9749f4f3",
+                  "italianAnswerWitnessCharacters": 343,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q086",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "f14b11cf",
+                  "italianAnswerWitnessCharacters": 341,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2312,7 +3149,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2343,7 +3181,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q087",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "e8648e67",
+                  "italianAnswerWitnessCharacters": 166,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q088",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "5877d5d1",
+                  "italianAnswerWitnessCharacters": 429,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2353,7 +3207,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -2464,7 +3319,51 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q021",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "a1434930",
+                  "italianAnswerWitnessCharacters": 183,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q022",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "096d849c",
+                  "italianAnswerWitnessCharacters": 103,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q023",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "0116da5d",
+                  "italianAnswerWitnessCharacters": 117,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q024",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "dd7220e1",
+                  "italianAnswerWitnessCharacters": 68,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q076",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "37544fce",
+                  "italianAnswerWitnessCharacters": 205,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q077",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md",
+                  "italianAnswerWitnessFingerprint": "f4d174ec",
+                  "italianAnswerWitnessCharacters": 179,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2474,7 +3373,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2505,7 +3405,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q078",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "cbd1f39a",
+                  "italianAnswerWitnessCharacters": 102,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q079",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "888a11ea",
+                  "italianAnswerWitnessCharacters": 163,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2515,7 +3431,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2546,7 +3463,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q082",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "23d0bba4",
+                  "italianAnswerWitnessCharacters": 123,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q083",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "dba37c8b",
+                  "italianAnswerWitnessCharacters": 193,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2556,7 +3489,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -2607,7 +3541,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q025",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "896e8519",
+                  "italianAnswerWitnessCharacters": 150,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2617,7 +3560,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2648,7 +3592,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q026",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "39191c8d",
+                  "italianAnswerWitnessCharacters": 173,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q086",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "f14b11cf",
+                  "italianAnswerWitnessCharacters": 341,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2658,7 +3618,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2698,7 +3659,30 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q089",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "7a6e4318",
+                  "italianAnswerWitnessCharacters": 117,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q090",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "d5b710d0",
+                  "italianAnswerWitnessCharacters": 233,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q091",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "239fce06",
+                  "italianAnswerWitnessCharacters": 199,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2708,7 +3692,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -2764,7 +3749,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q090",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "d5b710d0",
+                  "italianAnswerWitnessCharacters": 233,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q091",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md",
+                  "italianAnswerWitnessFingerprint": "239fce06",
+                  "italianAnswerWitnessCharacters": 199,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2774,7 +3775,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2805,7 +3807,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q092",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md",
+                  "italianAnswerWitnessFingerprint": "858773fd",
+                  "italianAnswerWitnessCharacters": 189,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q093",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md",
+                  "italianAnswerWitnessFingerprint": "9288763e",
+                  "italianAnswerWitnessCharacters": 291,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2815,7 +3833,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2846,7 +3865,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q092",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md",
+                  "italianAnswerWitnessFingerprint": "858773fd",
+                  "italianAnswerWitnessCharacters": 189,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q094",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md",
+                  "italianAnswerWitnessFingerprint": "c0d04442",
+                  "italianAnswerWitnessCharacters": 181,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2856,7 +3891,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -2918,7 +3954,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q020",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+                  "italianAnswerWitnessFingerprint": "3f58b5c2",
+                  "italianAnswerWitnessCharacters": 146,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q043",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "78b9c1b5",
+                  "italianAnswerWitnessCharacters": 114,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2928,7 +3980,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -2986,7 +4039,44 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q046",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "2f38d089",
+                  "italianAnswerWitnessCharacters": 175,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q047",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "a07cb12d",
+                  "italianAnswerWitnessCharacters": 96,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q048",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "d185ccce",
+                  "italianAnswerWitnessCharacters": 186,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q049",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "2da293fb",
+                  "italianAnswerWitnessCharacters": 358,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q050",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md",
+                  "italianAnswerWitnessFingerprint": "8a2678ed",
+                  "italianAnswerWitnessCharacters": 228,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -2996,7 +4086,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -3027,7 +4118,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q106",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "cd2baa24",
+                  "italianAnswerWitnessCharacters": 243,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q115",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "e5840b10",
+                  "italianAnswerWitnessCharacters": 265,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3037,7 +4144,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -3112,7 +4220,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q105",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "a5a49246",
+                  "italianAnswerWitnessCharacters": 210,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q106",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "cd2baa24",
+                  "italianAnswerWitnessCharacters": 243,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3122,7 +4246,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -3180,7 +4305,44 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q107",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "fa2fea19",
+                  "italianAnswerWitnessCharacters": 165,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q108",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "1369c2de",
+                  "italianAnswerWitnessCharacters": 280,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q109",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "6b1faa9f",
+                  "italianAnswerWitnessCharacters": 289,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q110",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "88faa707",
+                  "italianAnswerWitnessCharacters": 148,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q111",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "689c000b",
+                  "italianAnswerWitnessCharacters": 270,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3190,7 +4352,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -3230,7 +4393,30 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q118",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "fa95f820",
+                  "italianAnswerWitnessCharacters": 165,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q119",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "ec5a845b",
+                  "italianAnswerWitnessCharacters": 276,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q120",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "143863c8",
+                  "italianAnswerWitnessCharacters": 324,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3240,12 +4426,13 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
-          "en": "The necessity of the Church must be stated together with the distinction between culpable separation and being outside her through no fault of one’s own.",
-          "fr": "La nécessité de l’Église doit être affirmée avec la distinction entre la séparation coupable et la situation de celui qui se trouve hors d’elle sans faute de sa part.",
+          "en": "The Church is necessary for salvation. One who remains outside her through his own fault and dies without perfect contrition is not saved; a person outside her through no fault of his own may be saved through charity uniting him to God and, spiritually, to the Church.",
+          "fr": "L’Église est nécessaire au salut. Celui qui demeure hors d’elle par sa propre faute et meurt sans contrition parfaite n’est pas sauvé ; une personne qui se trouve hors d’elle sans faute de sa part peut être sauvée par la charité qui l’unit à Dieu et, spirituellement, à l’Église.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -3271,7 +4458,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q131",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md",
+                  "italianAnswerWitnessFingerprint": "9ee309be",
+                  "italianAnswerWitnessCharacters": 230,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q132",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md",
+                  "italianAnswerWitnessFingerprint": "1b960699",
+                  "italianAnswerWitnessCharacters": 287,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3281,7 +4484,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": "Retain explicit distinction between culpable refusal and inculpable separation. Separate doctrinal necessity of Church from any inference that all non-Catholics are culpable."
+            "editorialNote": "Replaced meta-instruction with substantive catechetical answer, closely paraphrasing Q131–132. Final doctrinal review must verify terminology on perfect contrition, ecclesial membership and the necessity of the Church.",
+            "italian1912TranscriptionRead": true
           }
         }
       ],
@@ -3352,7 +4556,23 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q120",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "143863c8",
+                  "italianAnswerWitnessCharacters": 324,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                },
+                {
+                  "ref": "PX1912-Q121",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "401643a0",
+                  "italianAnswerWitnessCharacters": 218,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3362,7 +4582,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -3384,7 +4605,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q122",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "0fa04b2d",
+                  "italianAnswerWitnessCharacters": 275,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3394,7 +4624,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": "Condition on participation in spiritual goods must not be read as an automatic judgment of an individual person's juridical Church membership."
+            "editorialNote": "Condition on participation in spiritual goods must not be read as an automatic judgment of an individual person's juridical Church membership.",
+            "italian1912TranscriptionRead": true
           }
         },
         {
@@ -3416,7 +4647,16 @@
                   "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
                 }
               ],
-              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL",
+              "italianOriginalLanguageLocators": [
+                {
+                  "ref": "PX1912-Q123",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+                  "italianAnswerWitnessFingerprint": "fee778c4",
+                  "italianAnswerWitnessCharacters": 347,
+                  "verification": "FULL_ITALIAN_1912_TRANSCRIPTION_QA_READ_NOT_PRINT_FACSIMILE_COLLATED"
+                }
+              ]
             }
           ],
           "witnessPassageReview": {
@@ -3426,7 +4666,8 @@
             "original1912ItalianCollated": false,
             "nativeFrenchSourceCollated": false,
             "nativeFrenchEdited": false,
-            "editorialNote": null
+            "editorialNote": null,
+            "italian1912TranscriptionRead": true
           }
         }
       ],
