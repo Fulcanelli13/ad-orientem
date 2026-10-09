@@ -15,7 +15,7 @@ assert.equal(review.cases.length,23);
 assert.equal(review.added_existing_sspx_mass_site_coordinates,21);
 assert.equal(review.added_new_venue_coordinates,2);
 assert.equal(review.total_sspx_map_coordinates,373);
-assert.equal(review.not_yet_geolocated,241);
+assert.equal(review.not_yet_geolocated,240);
 assert.deepEqual(review.precision_counts,{address:22,locality:1});
 const ids=new Set(),refs=new Set(),newRows=[];
 const seen=new Map();
