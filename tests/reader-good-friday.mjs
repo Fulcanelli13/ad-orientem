@@ -141,4 +141,21 @@ assert.equal(noPersonal.goToRecord("GF-VEN-620").step.recordId,"GF-OPEN-010",
 noPersonal.goToRecord("GF-VEN-650");
 assert.equal(noPersonal.project().action,"SILENT_ADORATION_FROM_PLACE");
 
+// Sacramental object movement is a separate 1962 source state; accompanying
+// antiphons cannot imply that the Blessed Sacrament has reached the altar.
+const objectRite=createGoodFridayReaderController({graph,payload});
+for(const [record,posture,object] of [
+  ["GF-COM-810","KNEEL","BLESSED_SACRAMENT_RETURNING"],
+  ["GF-COM-820","STAND","BLESSED_SACRAMENT_AT_ALTAR"],
+  ["GF-COM-830","STAND",null],
+  ["GF-COM-840","KNEEL",null],
+  ["GF-COM-860","STAND",null],
+]){
+  objectRite.goToRecord(record);
+  const state=objectRite.project();
+  assert.equal(state.posture,posture,record+" lost its distinct temporary posture");
+  assert.equal(state.objectState,object,record+" retained a stale sacramental object state");
+}
+assert.equal(objectRite.project().step.recordId,"GF-COM-860");
+
 console.log("Good Friday distinct rite: PASS — 56-state graph, Passion death pause, nine Solemn Prayers, three unveilings, personal veneration/Communion and 1962 prayer policy.");
