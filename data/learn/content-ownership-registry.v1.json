@@ -739,5 +739,135 @@
       "route": "learn.church_crisis",
       "requirement": "Do not expose the route until every substantive paragraph is source-resolved, real objections are attributed to actual proponents, and the canonical 81-dossier corpus is bilingual and publication-ready."
     }
+  },
+  "formation_master_inventory_20261009": {
+    "status": "RECONCILED_METADATA_NOT_NEW_QUESTION_BANK",
+    "reporting_document": "docs/FORMATION-MASTER-INVENTORY-2026-10-09.md",
+    "existing_authoritative_records": {
+      "canonical_apologetics": "data/learn/apologetics-canonical.v1.json",
+      "canonical_church_crisis": "data/learn/church-crisis-canonical.v1.json",
+      "historical_recovery_evidence": "data/learn/forensic-recovery-register-2026-10-08.v1.json",
+      "recovered_research": "data/learn/formation-recoverable-research-ledger-2026-10-08.v1.json",
+      "claim_source_quality": "data/learn/formation-123-source-claim-gates-2026-10-09.v1.json"
+    },
+    "unique_count_definitions": {
+      "canonical_navigation_dossiers": {
+        "apologetics": 60,
+        "church_crisis": 81,
+        "total": 141,
+        "status": "FROZEN_UNPUBLISHED"
+      },
+      "legacy_expected_positions": {
+        "A001_A318": 318,
+        "C001_C233": 233,
+        "TLM001_TLM075": 75,
+        "not_additive_distinct_question_count": true
+      },
+      "legacy_evidence": {
+        "A_per_question_exact_originals_established": 0,
+        "A001_A075_theme_only": 75,
+        "A076_A318_not_verified_per_question": 243,
+        "C_per_question_exact_originals_established": 0,
+        "C_band_only": 233,
+        "TLM026_TLM050_exact_prompt_texts": 25,
+        "TLM051_TLM065_normalized_texts": 15,
+        "TLM066_TLM075_authored_debates": 10,
+        "TLM001_TLM025_originals_not_located": 25
+      },
+      "indexed_research": {
+        "legacy_individual_question_or_case_records": 102,
+        "new_contemporary_debate_drafts": 21,
+        "total": 123,
+        "mapped_to_APOL_CR": 118,
+        "external_owner_or_null": 5,
+        "APOL_CR_dossiers_with_linked_research": 53,
+        "APOL_CR_dossiers_without_linked_research": 88,
+        "source_bearing_bilingual_draft_blocks": 622,
+        "source_pointer_instances": 1508,
+        "original_source_spot_checked_records": 17,
+        "original_source_spot_checked_passages": 18,
+        "fully_independently_certified_records": 0
+      },
+      "research_source_categories": {
+        "BAQ": 26,
+        "SEDEVACANTISM": 8,
+        "CONTEMPORARY_BATCH1": 6,
+        "CONTEMPORARY_BATCH2": 12,
+        "TRADITIONAL_MASS_OBJECTIONS_SURVIVING": 50,
+        "CONTEMPORARY_21_NEW": 21
+      },
+      "other_formation": {
+        "pius_x_catechism_questions": 433,
+        "sexual_ethics_live_questions": 150,
+        "sexual_ethics_deep_debates": 55,
+        "sexual_ethics_fully_certified_debates": 0,
+        "spiritual_life_live_lessons": 14,
+        "latin_course_lesson_files": 40,
+        "glossary_concept_records": 450,
+        "mass_formation_campion_stages": 8,
+        "sacramental_formation_sacraments_in_sot": 7
+      }
+    },
+    "unmerged_recoverable_branch_family": {
+      "course_id_range": "LTF-001–LTF-054",
+      "unique_lesson_ids": 54,
+      "belongs_with": "learn.catechism",
+      "new_route_approved": false,
+      "currently_on_main": false,
+      "variants": [
+        {
+          "branch": "formation/learn-the-faith-content-v1",
+          "commit": "9c02e36f124d7ebbe13ee2bbefa38dd73a09ee90",
+          "paths": [
+            "data/learn/learn-the-faith-lessons-001-018.v1.json",
+            "data/learn/learn-the-faith-lessons-019-036.v1.json",
+            "data/learn/learn-the-faith-lessons-037-054.v1.json"
+          ],
+          "distinct_lessons": 54,
+          "bilingual_source_linked_paragraphs": 162
+        },
+        {
+          "branch": "formation/learn-the-faith-content-v2",
+          "commit": "8a3cf4244980e2bf70aa26a8937bf8410ce9efa4",
+          "paths": [
+            "data/learn/learn-the-faith-content.batch1.v1.json",
+            "data/learn/learn-the-faith-content.batch2.v1.json",
+            "data/learn/learn-the-faith-content.batch3.v1.json"
+          ],
+          "distinct_lessons": 54,
+          "bilingual_source_linked_claims": 176
+        },
+        {
+          "branch": "formation/learn-the-faith-content-v1-clean",
+          "commit": "1314866241c2f025171f2d3b1f01280e5a92bb63",
+          "paths": [
+            "data/learn/learn-the-faith-content.v1.json"
+          ],
+          "distinct_lessons": 54,
+          "bilingual_source_linked_claims": 108,
+          "pius_x_question_coverage": 433
+        }
+      ],
+      "governing_action": "DO_NOT_COUNT_VERSIONS_ADDITIVELY; preserve branch and source provenance, compare semantic overlap and catechism ownership before selective absorption; no blind merge"
+    },
+    "ownership_boundaries": {
+      "catechism": "positive doctrine; Learn the Faith is a proposed pedagogical course under catechism owner, not 54 new Apologetics debates",
+      "apologetics": "defence of doctrine; reuse existing APOL IDs",
+      "church_crisis": "contested ecclesial change and its history; reuse CR IDs",
+      "sexual_ethics": "separate 150 live QAs and 55 deep debates",
+      "mass": "liturgical execution/gestures; Mass Formation instructional route remains its own owner",
+      "sacramental_pray_calendar_customs": "do not convert external-owner research into duplicate Apologetics questions"
+    },
+    "blocking_gates": [
+      "Individual A/C original wording not recovered or owner-verified; theme-band and canonical title are not original historical question evidence.",
+      "TLM001–025 exact original questions still absent from current main and indexed research.",
+      "88 APOL/CR dossiers have no linked entry in the specific 123-record recovery ledger; assess each for other research instead of saying 88 topics are empty.",
+      "Bilingual draft presence and internal source-pointer resolution do not constitute paragraph-level factual or theological approval.",
+      "Learn the Faith branch versions need explicit deduplication vs 433-question catechism and source-claim review before any public route.",
+      "Apologetics and Church Crisis are absent from public Learn navigation, require tested user-facing preview and staged publication."
+    ],
+    "published_as_formation_module": false,
+    "new_canonical_dossiers_added": 0,
+    "original_question_texts_synthetically_recreated": 0
   }
 }
