@@ -1,0 +1,130 @@
+{
+  "schema": "AO_1962_ROGATION_MASS_SOURCE_GATE_V1",
+  "status": "RESEARCH_ONLY_NOT_AVAILABLE_FOR_MASS_SELECTION",
+  "owner": "Shared DayResolver / R17 Mass Proper; not Calendar overlay",
+  "issue": "https://github.com/Fulcanelli13/ad-orientem/issues/714",
+  "scope": {
+    "dates": [
+      "2024-05-06",
+      "2027-05-03"
+    ],
+    "defaultMass": {
+      "class": 4,
+      "colour": "white",
+      "sourcePath": "Tempora/Pasc5-0"
+    },
+    "conditionalMass": {
+      "class": 2,
+      "colour": "violet",
+      "incipit": "Exaudivit de templo sancto suo",
+      "requires": "explicit public litanies or procession",
+      "handoff": "INTROIT",
+      "omitOpeningPrayers": true,
+      "gloria": false,
+      "credo": false
+    }
+  },
+  "sourceWitnesses": [
+    {
+      "type": "original1962",
+      "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+      "status": "TEXT_EXTRACTION_AND_PASSAGE_COLLATION_PENDING"
+    },
+    {
+      "type": "rubrics",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=609",
+      "sections": [
+        "87-90",
+        "346-347",
+        "431-432"
+      ],
+      "status": "SELECTION_CONTRACT_SUPPORTED"
+    },
+    {
+      "type": "digital_secondary",
+      "url": "https://1962ordo.today/day/vigil-of-ascension-2-2-2-2-2-2-2-2/",
+      "status": "II_CLASS_VIOLET_MASS_SEPARATE_FROM_DATE_ONLY_SUPPORTED"
+    },
+    {
+      "type": "textual_candidate_not_normative_for_class",
+      "url": "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+      "status": "FORMULARY_TEXT_CANDIDATE_ONLY",
+      "warning": "Page describes III-class white Rogation Week with Gloria and is NOT itself evidence of II-class violet processional Mass rubrics; do not copy the ordinary preparation or ceremonial parts."
+    }
+  ],
+  "properSections": [
+    {
+      "key": "introit",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "collect",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "epistle",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "gradual_alleluia",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "gospel",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "offertory",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "secret",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "communion",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    },
+    {
+      "key": "postcommunion",
+      "latinVerified": false,
+      "englishVerified": false,
+      "frenchVerified": false,
+      "exactSourceLocator": null
+    }
+  ],
+  "releaseGate": [
+    "Each section has a precise original Missal locator and verified Latin",
+    "Translations independently source-bound and rights cleared",
+    "Processional action explicitly selected and lawful for day",
+    "II-class violet correct only in conditional route; IV white unchanged otherwise",
+    "No Júdica/Confiteor or additional foot prayers before Introit handoff",
+    "No Gloria or Credo; Easter preface verified",
+    "Phone EN/FR first-entry/back-navigation proves complete content and mode isolation"
+  ],
+  "publicationAllowed": false
+}
