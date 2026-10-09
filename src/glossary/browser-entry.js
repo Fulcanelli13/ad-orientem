@@ -298,7 +298,9 @@ export function createGlossaryRuntime(win=globalThis){
     if(opts.entryId&&state.data?.byId?.has(opts.entryId)){state.detailType="concept";state.detailId=opts.entryId}
     if(opts.lexemeId&&state.data?.lexemeById?.has(opts.lexemeId)){state.detailType="lexeme";state.detailId=opts.lexemeId;state.categoryId="latin_rubrics";state.view="lexemes"}
     if(opts.phraseId&&state.data?.phraseById?.has(opts.phraseId)){state.detailType="phrase";state.detailId=opts.phraseId;state.categoryId="latin_rubrics";state.view="phrases"}
-    render();return true;
+    render();
+    if(state.origin==="context")root(win)?.querySelector?.("[data-gloss-close],[data-gloss-back]")?.focus?.({preventScroll:true});
+    return true;
   }
 
   async function openEntry(id){return open({entryId:String(id||"")})}
