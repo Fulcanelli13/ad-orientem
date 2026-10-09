@@ -2997,12 +2997,14 @@
         ],
         "breakpoint": [
           "CASTI",
-          "ABORTCLAR"
+          "ABORTCLAR",
+          "USCCB_DIRECT2010"
         ],
         "catholicCase": [
           "CASTI",
           "ABORTCLAR",
-          "NCBC_ECTOPIC"
+          "NCBC_ECTOPIC",
+          "USCCB_DIRECT2010"
         ],
         "counter": [
           "ACOG_ABORTION"
@@ -3010,12 +3012,14 @@
         "response": [
           "CASTI",
           "ABORTCLAR",
-          "ACOG_ECTOPIC"
+          "ACOG_ECTOPIC",
+          "USCCB_DIRECT2010"
         ],
         "bottom": [
           "CASTI",
           "ABORTCLAR",
-          "NCBC_ECTOPIC"
+          "NCBC_ECTOPIC",
+          "USCCB_DIRECT2010"
         ]
       },
       "prior_semantic_stage_review_count": 8,
