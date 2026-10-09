@@ -1,0 +1,33 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const load=p=>JSON.parse(readFileSync(p,"utf8"));
+const it=load("data/learn/ltfaith-pius-x-it-witness-index.v1.json");
+const audit=load("data/learn/ltfaith-pius-x-secondary-italian-digital-audit.v1.json");
+const crosswalk=load("data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json");
+assert.equal(it.questionCount,433);
+assert.equal(new Set(it.entries.map(q=>q.q)).size,433);
+assert.equal(it.secondaryItalianDigitalSourceIsNotPrimary,true);
+assert.equal(it.secondaryDigitalPdfConfirmedNumberingErrors,4);
+assert.equal(it.original1912PrintedFacsimileCollated,false);
+assert.equal(audit.pdfPages,68);
+assert.equal(audit.comparison.totalQuestions,433);
+assert.equal(audit.comparison.pdfHeadingsMatched,429);
+assert.equal(audit.comparison.highLexicalMatchCandidates,399);
+assert.equal(audit.comparison.numberedHeadingsMissing,4);
+assert.deepEqual(audit.visuallyConfirmedDigitalPdfNumberErrors.map(x=>x.expectedQuestionNumber),[138,263,264,355]);
+assert.deepEqual(audit.visuallyConfirmedDigitalPdfNumberErrors.map(x=>x.printedQuestionNumber),[135,363,364,335]);
+for(const item of audit.visuallyConfirmedDigitalPdfNumberErrors){
+  assert.ok(item.pdfPageOneIndexed>=1 && item.pdfPageOneIndexed<=68);
+  assert.notEqual(item.expectedQuestionNumber,item.printedQuestionNumber);
+  assert.ok(item.risk.length>30);
+}
+assert.equal(audit.qualityVerdict,"UNSAFE_FOR_UNREVIEWED_IMPORT_OR_PRIMARY_Q_NUMBER_ASSIGNMENT");
+assert.equal(audit.original1912PrintedEditionCollated,false);
+assert.equal(audit.publicReleaseApproved,false);
+assert.equal(crosswalk.metrics.italianSecondaryDigitalQuestionsParsed,429);
+assert.equal(crosswalk.metrics.italianSecondaryDigitalNumberingErrors,4);
+assert.equal(crosswalk.metrics.french1913ProvisionalOCRAnswerCandidates,433);
+assert.equal(crosswalk.metrics.french1913SourcePrintAnswersVisuallyChecked,23);
+assert.equal(crosswalk.authority.italianSecondaryDigitalComparison,"data/learn/ltfaith-pius-x-secondary-italian-digital-audit.v1.json");
+for(const f of ["fullOriginalPassageHumanVerification","editorialApproval","canonicalReview","frenchOriginalCollation","nativeFrenchEdit","publicRouteAdded","italianOriginalPrintedEditionCollated"])assert.equal(crosswalk.publicationGate[f],false);
+console.log(JSON.stringify({status:"PASS",pinnedQuestions:433,secondaryPdfParsed:429,confirmedSecondaryNumberingErrors:4,frenchReviewCandidates:433,visuallyCheckedFrenchAnswers:23,publicReleased:0}));
