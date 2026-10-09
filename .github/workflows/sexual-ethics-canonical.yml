@@ -61,3 +61,5 @@ jobs:
         run: node tests/sexual-ethics-practical-original-passages-15-v1.mjs
       - name: Original texts for 18 moral-reasoning stages
         run: node tests/sexual-ethics-moral-original-18-v1.mjs
+      - name: Fletcher 1966 original book evidence and attribution scope
+        run: node tests/sexual-ethics-fletcher-original-book-v1.mjs
