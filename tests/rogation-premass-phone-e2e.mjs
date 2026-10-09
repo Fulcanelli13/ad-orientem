@@ -34,10 +34,14 @@ try{
    });
    globalThis.__rogation=m.mountRogationPreflight({
     doc:document,getResolvedMass:globalThis.__legacy,
+    resolveDay:async date=>{
+      await new Promise(resolve=>setTimeout(resolve,10));
+      return {status:"ready",day:{main:{rank:4}},proper:{status:"ready",data:{sourcePath:"Tempora/Pasc5-0"}}};
+    },
     language:()=>globalThis.__lang
    });
   },{date,lang});
-  await page.waitForSelector("[data-ao-rogation-preflight]");
+  await page.waitForSelector("[data-ao-rogation-preflight]",{timeout:10000});
   const ordered=await page.evaluate(()=>{
     const flow=document.querySelector("#ao-mass-flow-v1");
     return [...flow.children].indexOf(flow.querySelector("[data-ao-rogation-preflight]"))<
