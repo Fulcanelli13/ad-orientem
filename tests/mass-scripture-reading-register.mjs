@@ -11,7 +11,7 @@ const raw=JSON.parse(readFileSync(new URL("../data/mass/scripture-reading-witnes
 assert.equal(VERIFIED_MASS_SCRIPTURE_VERSION,raw.version);
 assert.deepEqual(VERIFIED_MASS_SCRIPTURE_READINGS,raw.celebrations,
  "Compiled reading index diverged from the auditable source register");
-assert.equal(raw.celebrations.length,45);
+assert.equal(raw.celebrations.length,50);
 assert.equal(raw.policy.identity,"EXACT_RESOLVED_PROPER_SOURCE_PATH_AND_MATCHING_LATIN_READINGS");
 const paths=new Set();
 const gospelCard={blocks:[{properSlot:"GOSPEL",blockId:"AO.SM.B018"}]};
@@ -65,10 +65,32 @@ for(const witness of raw.celebrations){
   count++;
  }
 }
-assert.equal(count,86);
+assert.equal(count,96);
 const special={sourcePath:"Tempora/Pent19-0",
  gospel:{lat:"Loquebatur Jesus principibus sacerdotum"},
  epistle:{lat:"Renovamini spiritu mentis"}};
 assert.equal(massScriptureContextForCard({blocks:[{properSlot:"GOSPEL"},{properSlot:"EPISTLE_OR_LESSON"}]},prep(special)).state,
  "UNRESOLVED_REFERENCE","Never arbitrarily pick one of two Scripture readings on a mixed card");
-console.log("PASS 45 source-checked temporal Sunday Mass Proper identities / 86 single-range Scripture references, exact Latin/source identity and inherited/split-reading holds; explicit conflicts veto the index");
+// All five formerly deferred paths are source-owned, not calendar-created fallbacks.
+const inheritedSourcePaths={
+ "Tempora/Pent03-0":"Tempora/Pent03-0r",
+ "Tempora/PentEpi3-0":"Tempora/Epi3-0",
+ "Tempora/PentEpi4-0":"Tempora/Epi4-0",
+ "Tempora/PentEpi5-0":"Tempora/Epi5-0",
+ "Tempora/PentEpi6-0":"Tempora/Epi6-0"
+};
+for(const [sourcePath,sourceOwner] of Object.entries(inheritedSourcePaths)){
+ const alias=raw.celebrations.find(row=>row.sourcePath===sourcePath);
+ assert.ok(alias,sourcePath+" requires source-bound entry");
+ assert.equal(alias.witnessUrl.endsWith("/"+sourcePath.split("/")[1]+".txt"),true);
+ for(const [slot,spec] of Object.entries(alias.readings)){
+  assert.equal(spec.sourceOwner,sourceOwner,sourcePath+" "+slot+" source owner");
+  const field=slot==="GOSPEL"?"gospel":"epistle";
+  const proper={sourcePath,[field]:{lat:"Lectio. "+spec.latinIncipit+"."}};
+  assert.equal(registeredMassReading(proper,slot)?.reference,spec.reference);
+  assert.equal(registeredMassReading({...proper,sourcePath:"Tempora/UNLISTED-0"},slot),null);
+  assert.equal(registeredMassReading({...proper,[field]:{lat:"Unrelated text"}},slot),null);
+ }
+}
+assert.equal(raw.celebrations.length,50);
+console.log("PASS 50 source-checked temporal Sunday Mass Proper identities / 96 single-range Scripture references, exact Latin/source identity and inherited/split-reading holds; explicit conflicts veto the index");
