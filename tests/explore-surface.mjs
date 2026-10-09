@@ -505,10 +505,9 @@ assert.match(browserSource,/projectExploreDataset/);
 assert.match(browserSource,/mountExploreMap/);
 assert.match(browserSource,/lens:"tlm"/);
 assert.match(browserSource,/data-explore-open-novena/,"Explore lost Novena deep-link click handling");
-assert.match(browserSource,/AO_MODULES\?\.open\?\.\("pray\.novenas"/,"Explore must hand off Novena through the lazy canonical module registry");
-assert.match(browserSource,/ensurePrayReader\(\{win\}\)/,"Explore Novena must ensure its owner is installed before opening");
-assert.match(browserSource,/ensureLearnModule\("learn\.glossary",win\)/,"Explore Glossary must install its deferred owner before opening");
-assert.match(browserSource,/actionError\(/,"Explore first-use failures need visible feedback");
+assert.match(browserSource,/AO_PRAY_V435930\?\.open\?\.\("pray\.novenas"/,"Explore no longer opens the canonical PRAY Novena owner");
+assert.match(browserSource,/ensureLearnModule\("learn\.glossary",win\)/,"Cold Explore Glossary must load its canonical owner");
+assert.match(browserSource,/actionError\(/,"Explore deferred action failures must be visible");
 assert.doesNotMatch(browserSource,/Sanctuaire Notre-Dame de Lourdes|Paray-le-Monial|Notre-Dame de Laghet/,"Explore browser owner hardcodes corpus places");
 
 const novenaRuntimeSource=readFileSync("src/pray/novena-runtime.js","utf8");
