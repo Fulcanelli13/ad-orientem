@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import {SPIRITUAL_LIFE_LESSONS,SPIRITUAL_LIFE_CLAIM_MAP,SPIRITUAL_LIFE_SOURCE_MAP} from "../src/learn/spiritual-life-data.js";
 
 const repoRoot=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const expectedTraditionalLearnOwner=(await readFile(resolve(repoRoot,"src/learn/traditional-life.js"),"utf8")).match(/TRADITIONAL_LEARN_VERSION="([^"]+)"/)?.[1];
@@ -335,6 +336,36 @@ try{
   await assertNoMass("Spiritual Life Lesson 1");
   await assertFocusSafe("Spiritual Life Lesson 1");
 
+  // Every explanation and exercise must link the exact authority records
+  // assigned to its frozen claims, not just list sources in a distant drawer.
+  const inlineAudit=await page.evaluate(ids=>ids.map(id=>{
+    globalThis.AO_SPIRITUAL_LIFE_V1.openLesson(id);
+    const root=document.getElementById("ao-spiritual-life-root");
+    return {id,scopeLinks:[...root.querySelectorAll(".aoSLBlock,.aoSLPractice")].map(node=>({
+      ids:node.querySelector("[data-ao-sl-claim-sources]")?.dataset?.aoSlClaimSources?.split(" ")||[],
+      links:[...node.querySelectorAll(".aoSLInlineSources a[href]")].map(a=>a.href),
+    })),overflow:root.scrollWidth-root.clientWidth};
+  }),SPIRITUAL_LIFE_LESSONS.map(x=>x.id));
+  assert.equal(inlineAudit.length,14,"Spiritual Life source audit missed a lesson");
+  for(const audit of inlineAudit){
+    const lesson=SPIRITUAL_LIFE_LESSONS.find(x=>x.id===audit.id);
+    const scopes=[...lesson.blocks,lesson.practice];
+    assert.equal(audit.scopeLinks.length,scopes.length,audit.id+": inline source block coverage");
+    for(let i=0;i<scopes.length;i++){
+      const actual=audit.scopeLinks[i],expected=scopes[i];
+      assert.deepEqual(actual.ids,expected.claims,audit.id+": wrong source claims at section "+i);
+      const urls=[...new Set(expected.claims.flatMap(cid=>
+        SPIRITUAL_LIFE_CLAIM_MAP[cid].source_ids.map(sid=>
+          new URL(SPIRITUAL_LIFE_SOURCE_MAP[sid].canonical_url).href)))];
+      assert.deepEqual([...actual.links].sort(),urls.sort(),
+        audit.id+": hyperlinks mismatch frozen source IDs at section "+i);
+      assert.ok(actual.links.every(url=>url.startsWith("https://")),
+        audit.id+": unsafe source link at section "+i);
+    }
+    assert.ok(audit.overflow<=1,audit.id+": inline citations overflow phone");
+  }
+  await page.evaluate(()=>globalThis.AO_SPIRITUAL_LIFE_V1.openLesson("SL01"));
+
   await page.locator("#ao-spiritual-life-root [data-ao-sl-next]").tap();
   await page.waitForFunction(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().lessonId==="SL02",null,{timeout:10000});
   assert.equal((await page.locator("#ao-spiritual-life-root .aoSLLessonHead h1").textContent())?.trim(),"Living in God's Presence","Spiritual Life next navigation failed");
@@ -375,12 +406,19 @@ try{
       width:b?.width??0,
       donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
       priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
+      sourceLinks:[...r.querySelectorAll(".aoLearnTradSource a[href]")].map(a=>({href:a.href,rel:a.rel})),
     }});
     assert.equal(child.owner,expectedTraditionalLearnOwner,id+": wrong child owner");
     assert.ok(child.width>300,id+": child collapsed on phone");
     assert.ok(child.overflow<=1,id+": child has horizontal overflow");
     assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
     assert.equal(child.priestCeremonialExposed,false,id+": priest-only ceremonial scope leaked");
+    if(id==="learn.rites.sick")assert.ok(child.sourceLinks.length>=4,
+      "Serious Illness Formation lost its primary and current-source witnesses");
+    for(const link of child.sourceLinks){
+      assert.match(link.href,/^https:\/\//,id+": invalid Formation source link");
+      assert.match(link.rel,/noreferrer/,id+": external Formation sources need noreferrer");
+    }
     await assertFocusSafe(id+" open");
     await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").tap();
     await page.waitForFunction(()=>
