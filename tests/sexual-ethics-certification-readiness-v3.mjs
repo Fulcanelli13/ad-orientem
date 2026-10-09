@@ -14,9 +14,15 @@ assert.equal(evidence.summary.full_case_certifications,0);
 assert.deepEqual(evidence.cases.map(x=>x.id).sort(),[...CSE_DEBATE_IDS].sort());
 assert.equal(new Set(evidence.cases.map(x=>x.id)).size,55);
 const pending=evidence.cases.filter(x=>x.case_substantive_review_v3);
-const prior=evidence.cases.filter(x=>x.case_status==="EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL");
+const prior=evidence.cases.filter(x=>!x.case_substantive_review_v3);
 assert.equal(pending.length,47);
 assert.equal(prior.length,8);
+assert.equal(evidence.cases.filter(c=>c.case_status==="EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL").length,55);
+assert.equal(evidence.summary.substantive_case_reviews,55);
+assert.equal(evidence.summary.individually_assessed_stages,440);
+assert.equal(evidence.readiness_v3.additional_semantic_stage_assessments,376);
+assert.equal(evidence.readiness_v3.remaining_unassessed_stage_claims,0);
+assert.equal(evidence.readiness_v3.full_original_passage_certification_remains_open,true);
 let stageNotes=0;
 for(const record of evidence.cases){
   assert.equal(record.stages.length,8,record.id+" incomplete 8 stages");
@@ -49,4 +55,4 @@ assert.match(CSE_DEBATE_MAP.CSE093.opposition[1],/développement sexuel atypique
 assert.doesNotMatch(CSE_DEBATE_MAP.CSE141.counter[0],/module/);
 assert.doesNotMatch(CSE_DEBATE_MAP.CSE141.response[0],/focused reference|the module|app/);
 assert.match(CSE_DEBATE_MAP.CSE141.response[1],/justice/);
-console.log("PASS Sexual Ethics 55-case editorial scope QA: 47 newly reviewed, 8 previously examined, 376 unc ertified stage-level proof checks accurately held, 3 EN/FR argument corrections.");
+console.log("PASS 55 Sexual Ethics debates / 440 stage-level semantic assessments, 47 added cases + 8 earlier, 0 falsely certified original-text debates, 3 EN/FR argument repairs.");
