@@ -8,6 +8,7 @@ import {
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { mapViewport, mountExploreMap } from "./map-runtime.js";
+import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 
 const VERSION="explore-v1";
@@ -95,6 +96,9 @@ export function createFindOwner(win=globalThis){
     unaCum:"ANY",
     liturgy:"ANY",
     massType:"ANY",
+    atlasArea:"ANY",
+    atlasPeriod:"ANY",
+    atlasCalendar:"ANY",
     selectedId:null,
     selectedPlaceId:null,
   };
@@ -130,6 +134,7 @@ export function createFindOwner(win=globalThis){
       const records=filterDirectoryRecords(dataset.directory?.records??[],state);
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
     }
+    if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
     return filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
   }
 
@@ -143,6 +148,7 @@ export function createFindOwner(win=globalThis){
       items,
       lens:state.lens,
       counts:projection?.counts??{},
+      atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:data.directory?.loadedProviders??[],
       unavailableProviders:data.directory?.unavailableProviders??[],
       view:state.view,
@@ -179,6 +185,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
     openState=true;
@@ -208,6 +215,11 @@ export function createFindOwner(win=globalThis){
     if(!openState)return;
     const target=event?.target;
     if(target?.closest?.("[data-find-glossary]")){event.preventDefault?.();event.stopPropagation?.();openGlossary();return}
+    if(state.lens==="traditions"&&target?.closest?.("[data-atlas-clear]")){
+      event.preventDefault?.();
+      state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
+      state.selectedId=null;state.selectedPlaceId=null;void paint();return;
+    }
     if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(target?.closest?.("[data-find-close-detail]")){state.selectedId=null;void paint();return}
     if(target?.closest?.("[data-find-close-place]")){state.selectedPlaceId=null;void paint();return}
@@ -253,8 +265,16 @@ export function createFindOwner(win=globalThis){
     state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;void paint();
   }
 
+  function onChange(event){
+    if(!openState||state.lens!=="traditions")return;
+    const field=event?.target?.closest?.("[data-atlas-filter]");
+    if(!field)return;
+    setFilter(field.dataset.atlasFilter,field.value);
+  }
+
   win?.document?.addEventListener?.("click",onClick,true);
   win?.document?.addEventListener?.("input",onInput,true);
+  win?.document?.addEventListener?.("change",onChange,true);
   installStyle(win);ensureRoot(win);
 
   return Object.freeze({
@@ -277,6 +297,7 @@ export function createFindOwner(win=globalThis){
       close();
       win?.document?.removeEventListener?.("click",onClick,true);
       win?.document?.removeEventListener?.("input",onInput,true);
+      win?.document?.removeEventListener?.("change",onChange,true);
       getRoot(win)?.remove?.();
     }
   });
