@@ -21,7 +21,7 @@ const CSS=`
 .aoFRWrap{max-width:780px;padding:18px 15px 55px;margin:0 auto}.aoFRWrap h1{font:500 clamp(1.7rem,6vw,2.4rem)/1.2 var(--ao-font-display,Georgia,serif);margin:8px 0 22px}.aoFRWrap h2{font:600 1.22rem var(--ao-font-display,Georgia,serif);margin:27px 0 12px}
 .aoFRWrap p{margin:0 0 12px;line-height:1.65}.aoFRMeta{font:.7rem system-ui;letter-spacing:.06em;color:var(--ao-text-muted,#a9a5a0)}
 .aoFRNotice{border-left:2px solid var(--liturgical,#c9ad78);margin:14px 0;padding:12px;color:var(--ao-text-muted,#bdb6ab);font:.8rem/1.5 system-ui}
-.aoFRSources{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 21px;font:.73rem/1.6 system-ui}.aoFRSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;overflow-wrap:anywhere}
+.aoFRSources{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 21px;font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoFRSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;overflow-wrap:anywhere}.aoFRSourceHold{color:var(--ao-text-muted,#bdb6ab);font-style:italic;overflow-wrap:anywhere}
 .aoFRList{display:grid;gap:8px;margin-top:18px}.aoFRList button,.aoFRSub button{display:block;width:100%;padding:13px;text-align:left;border:1px solid var(--ao-rule,#3d3d40);border-radius:12px;background:var(--ao-surface-1,#101821);color:inherit;font:1rem/1.4 var(--ao-font-body,Georgia,serif)}
 .aoFRList small{display:block;font:.7rem/1.4 system-ui;color:var(--ao-text-muted,#a9a5a0);margin-bottom:5px}
 .aoFRSearch{display:block;width:100%;padding:12px;border:1px solid var(--ao-rule,#3d3d40);border-radius:12px;background:var(--ao-surface-1,#101821);color:inherit;font:1rem system-ui}
@@ -29,16 +29,34 @@ const CSS=`
 .aoFRPart{border-top:1px solid var(--ao-rule,#3d3d40);padding:12px 0}.aoFRLead{color:var(--liturgical,#c9ad78);font:.72rem/1.6 system-ui;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
 .aoFRPrevNext{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.aoFRPrevNext button{font:.8rem system-ui}.aoFRPrevNext button:disabled{opacity:.35}
 @media(max-width:440px){.aoFRWrap{padding:15px 12px 45px}}@media(prefers-reduced-motion:reduce){#ao-formation-research-preview{scroll-behavior:auto!important}}`;
+// Internal research must expose unresolved evidence rather than silently
+// dropping absent source IDs or non-document destinations from a paragraph.
+export function formationResearchSourceLinks(win,ids,group){
+  const set=DATA.sourceSets[group]||TLM.source_sets[group]||{};
+  const unique=[...new Set(ids||[])];
+  const items=(unique.length?unique:[null]).map(id=>{
+    const record=id===null?null:set[id];
+    let destination="";
+    try{
+      const parsed=new URL(record?.url||"");
+      if(parsed.protocol==="https:")destination=parsed.href;
+    }catch{}
+    return destination
+      ?`<a href="${esc(destination)}" target="_blank" rel="noopener noreferrer" title="${esc(record.title||id)}">${esc(record.title||id)} ↗</a>`
+      :`<span class="aoFRSourceHold" data-ao-fr-source-hold="${esc(id??"none")}">${esc(id===null
+        ?L(win,"No documentary source attached — review required","Aucune source documentaire jointe — examen requis")
+        :L(win,"Source not verified","Source non vérifiée")+": "+id)}</span>`;
+  }).join("");
+  return `<nav class="aoFRSources" aria-label="${esc(L(win,"Sources and unresolved references","Sources et références non vérifiées"))}">${items}</nav>`;
+}
+
 export function createFormationResearchPreview(win=globalThis){
   const state={view:"list",questionId:null,debateId:null,query:"",scope:"all",open:false,touch:null};
   const root=()=>win?.document?.getElementById?.(FORMATION_RESEARCH_PREVIEW_ROOT)||null;
   const chosen=()=>allQuestions.find(x=>x.id===state.questionId)||null;
   const series=()=>state.questionId?.startsWith("TLM")?TLM.questions:DATA.questions;
   const title=q=>fr(win)?q?.title_fr:q?.title_en;
-  function links(ids,group){
-    const set=DATA.sourceSets[group]||TLM.source_sets[group]||{};
-    return `<nav class="aoFRSources" aria-label="Sources">${[...new Set(ids||[])].map(id=>{const s=set[id];return s?.url?.startsWith("https://")?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="${esc(s.title)}">${esc(s.title)}</a>`:""}).join("")}</nav>`;
-  }
+  const links=(ids,group)=>formationResearchSourceLinks(win,ids,group);
   const para=(p,kind)=>!p?"":`<p>${inline(body(win,p))}</p>${links(p.source_ids,kind)}`;
   const paragraphs=(ps,kind)=>(ps||[]).map(p=>para(p,kind)).join("");
   function argumentsView(items,kind){

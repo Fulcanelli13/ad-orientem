@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {FORMATION_RESEARCH_PREVIEW_DATA as DATA} from "../src/learn/formation-research-preview-data.js";
 import {TRADITIONAL_MASS_RESEARCH_PREVIEW_DATA as TLM} from "../src/learn/traditional-mass-research-preview-data.js";
-import {createFormationResearchPreview,FORMATION_RESEARCH_PREVIEW_ROOT} from "../src/learn/formation-research-preview.js";
+import {createFormationResearchPreview,FORMATION_RESEARCH_PREVIEW_ROOT,formationResearchSourceLinks} from "../src/learn/formation-research-preview.js";
 import {LEARN_MODULE_IDS} from "../src/learn/presentation.js";
 
 const answers=JSON.parse(readFileSync("data/learn/biblical-patristic-answers.v1.json","utf8"));
@@ -10,6 +10,42 @@ const debates=JSON.parse(readFileSync("data/learn/sedevacantism-preconciliar-deb
 const supplement=JSON.parse(readFileSync("data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json","utf8"));
 const apol=JSON.parse(readFileSync("data/learn/apologetics-canonical.v1.json","utf8"));
 const crisis=JSON.parse(readFileSync("data/learn/church-crisis-canonical.v1.json","utf8"));
+// Apologetics / Church Crisis research remains unpublished. A missing or
+// unsafe documentary reference must appear as an editorial hold, never vanish.
+const sourceEn={document:{documentElement:{lang:"en"}}},sourceFr={document:{documentElement:{lang:"fr"}}};
+const one=formationResearchSourceLinks(sourceEn,["FATIMA00","UNVERIFIED-REFERENCE-XYZ"],"biblical");
+assert.match(one,/data-ao-fr-source-hold="UNVERIFIED-REFERENCE-XYZ"/);
+assert.match(one,/Source not verified/);
+assert.match(one,/rc_con_cfaith_doc_20000626_message-fatima_en.html/);
+assert.equal((one.match(/<a /g)||[]).length,1,"Missing references must not become clickable sources");
+assert.match(formationResearchSourceLinks(sourceFr,["NOT-A-SOURCE"],"sedevacantism"),/Source non vérifiée/);
+assert.match(formationResearchSourceLinks(sourceEn,[],"biblical"),/No documentary source attached/);
+assert.match(formationResearchSourceLinks(sourceFr,[],"biblical"),/Aucune source documentaire jointe/);
+assert.match(formationResearchSourceLinks(sourceEn,["TC21"],"custodes"),/traditionis-custodes/);
+assert.match(formationResearchSourceLinks(sourceEn,["SC63"],"reform"),/sacrosanctum-concilium/);
+// Existing preview data currently resolves; this protects all underlying
+// reference IDs without declaring the underlying arguments certified.
+let referenceCount=0;
+const registries={...DATA.sourceSets,...TLM.source_sets};
+function checkResearch(node,group){
+  if(Array.isArray(node)){node.forEach(x=>checkResearch(x,group));return;}
+  if(!node||typeof node!=="object")return;
+  if(Array.isArray(node.source_ids))for(const id of node.source_ids){
+    referenceCount++;
+    const source=registries[group]?.[id];
+    assert.ok(source,"Unresolved research source "+group+":"+id);
+    assert.match(source.url,/^https:\/\//,"Unsafe research document URL "+group+":"+id);
+  }
+  for(const [key,value] of Object.entries(node))if(key!=="source_ids")checkResearch(value,group);
+}
+for(const record of DATA.answers)checkResearch(record,"biblical");
+for(const record of DATA.debates)checkResearch(record,"sedevacantism");
+for(const record of TLM.questions)checkResearch(record,record.source_group);
+assert.ok(referenceCount>=1000,"Research source-reference audit unexpectedly lost coverage");
+const researchMarkup=readFileSync("src/learn/formation-research-preview.js","utf8");
+assert.match(researchMarkup,/\.aoFRSourceHold\{/,"Unresolved source witness should have visible UI");
+assert.match(researchMarkup,/max\(13px,\.8125rem\)/,"Source metadata too small for review");
+
 assert.equal(DATA.status,"INTERNAL_REVIEW_UNPUBLISHED");
 assert.equal(TLM.status,"INTERNAL_REVIEW_UNPUBLISHED");
 assert.equal(TLM.canonical_navigation_locked,true);
