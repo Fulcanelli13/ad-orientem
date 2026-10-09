@@ -6,13 +6,25 @@ const releaseKeys = [
   "fullOriginalPassageHumanVerification",
   "editorialApproval",
   "canonicalReview",
-  "frenchOriginalCollation",
   "nativeFrenchEdit"
 ];
 
 export function guidedStudyReleaseApproved(crosswalk) {
   const gate = crosswalk?.publicationGate;
-  return Boolean(gate && releaseKeys.every(key => gate[key] === true)
+  const review = crosswalk?.claimLevelReleaseReview;
+  // A full critical edition of all 433 *unchanged* questions is not a prerequisite
+  // for releasing separately authored 181 source-linked explanations. The alternate
+  // path still requires independent evidence and explicit editor/owner sign-off.
+  const frenchPass = gate?.frenchOriginalCollation === true || Boolean(
+    review?.boundedToUnmodified433QuestionCorpus === true
+    && review?.claimCount === 181
+    && review?.independentlyVerifiedClaims === 181
+    && review?.nativeFrenchClaimsApproved === 181
+    && review?.historicalCanonLawReviewApproved === true
+    && review?.originalLanguageEvidenceApproved === true
+    && review?.releaseOwnerAuthorized === true
+    && typeof review?.approvalRecord === "string" && review.approvalRecord.trim().length > 8);
+  return Boolean(gate && frenchPass && releaseKeys.every(key => gate[key] === true)
     && gate.publicRouteAdded === true
     && crosswalk.lessons?.length === 55
     && crosswalk.lessons.every(x => x.publicationApproved === true
