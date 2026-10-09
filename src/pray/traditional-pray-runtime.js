@@ -335,7 +335,9 @@ function handleClick(e){
     if(ROUTES[route])return open(route,{trigger:b});
     if(String(route).startsWith("learn.")){
       const prayerRoute=S.route;
-      BASE_CLOSE();
+      // This is a deliberate cross-domain handoff. Do not schedule the
+      // historical donor's return-context navigation while Learn is opening.
+      BASE_CLOSE({silent:true});
       void (async()=>{
         try{
           const navigation=await window?.AO_APP_SHELL_V1?.navigate?.("learn");
@@ -352,7 +354,7 @@ function handleClick(e){
           // overlay after Formation owns the child, or its Back button is
           // visually present but blocked by Prayer's higher z-index.
           if(window?.AO_PRAY_APP_V1?.status?.()?.open===true)
-            window.AO_PRAY_APP_V1.close();
+            window?.AO_PRAY_V435930?.close?.({silent:true});
         }catch(error){
           try{window?.console?.error?.("Prayer to Formation handoff failed",error)}catch{}
           const recovered=await window?.AO_APP_SHELL_V1?.navigate?.("pray");
