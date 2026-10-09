@@ -4,6 +4,7 @@ import {
   R17_FROZEN_ACTIVE_ICON_KEYS,
   R17_FROZEN_EXCLUDED_ICON_KEYS,
   iconKeysForReaderState,
+  readerAttentionForState,
   createHostIconResolver,
   auditHostIconBank,
 } from "../src/mass/reader-icons.js";
@@ -64,5 +65,38 @@ keys=iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}});
 assert.equal(keys.priestActionIconKey,"lavabo");
 keys=iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}});
 assert.equal(keys.priestActionIconKey,null,"unmapped action guessed an unrelated icon");
+
+// Source-owned gesture matrix uses labels different from the 77-row
+// action inventory. They must still resolve to the exact donor bank.
+for(const [label,key] of [
+  ["BOWS HEAD","head_bow"],
+  ["BOWS SLIGHTLY","head_bow"],
+  ["BOWS OVER THE ALTAR","priest_profound_bow_rich"],
+  ["RAISES EYES AND HANDS","priest_centre_arms_rich"],
+  ["CROSSES WITH CHALICE","cross"],
+  ["THREE CROSSES WITH PARTICLE","cross"],
+  ["HANDS OVER OBLATIONS","priest_centre_hands_rich"],
+]){
+  assert.equal(iconKeysForReaderState({priestAction:{label}}).priestActionIconKey,key,
+    "unbound primary gesture matrix label: "+label);
+}
+assert.equal(iconKeysForReaderState({
+  priestVoice:{label:"NO COMPETING PUBLIC PRIEST TEXT"},
+}).priestVoiceIconKey,null,"absence of priest speech wrongly rendered as audible");
+assert.equal(iconKeysForReaderState({
+  priestVoice:{label:"LISTENS"},
+}).priestVoiceIconKey,"listen");
+assert.equal(iconKeysForReaderState({
+  priestVoice:{label:"SUNG / CLEAR"},
+}).priestVoiceIconKey,"priest_audible");
+assert.equal(readerAttentionForState({
+  priestVoice:{label:"SUNG / CLEAR"},response:null,
+})?.iconKey,"listen","public reading lost the faithful LISTEN cue");
+assert.equal(readerAttentionForState({
+  priestVoice:{label:"SUNG / CLEAR"},response:{label:"Amen"},
+}),null,"response and attention must not duplicate the same cue");
+assert.equal(readerAttentionForState({
+  priestVoice:{label:"SECRET / QUIET"},
+}),null,"silent priest text wrongly generated a listening instruction");
 
 console.log("reader icons: PASS — v1.77 plain position pictograms and exact v4.6 rich action art remain separately owned.");
