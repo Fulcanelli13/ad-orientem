@@ -189,6 +189,24 @@ try{
  }
  console.log("CALENDAR_1962_ORACLE_FINDINGS="+JSON.stringify(oracleFindings));
  assert.deepEqual(oracleMismatch,[],"1962 resolved Masses disagree with independent sample");
+ // In Passion Week 2027 the first-class Mass of St Joseph displaces the
+ // third-class Friday, which survives as a commemoration. Confirm all three
+ // facets of precedence: principal observance, class/colour, commemoration.
+ const josephResolution=await page.evaluate(()=>{
+   const r=globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.get?.("2027-03-19");
+   return {
+     id:r?.day?.main?.id,
+     rank:r?.day?.main?.rank,
+     colour:r?.day?.main?.color,
+     commemorations:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title}))
+   };
+ });
+ assert.equal(josephResolution.id,"sancti:03-19:1:w","St Joseph must own the principal Mass instead of Passion Friday");
+ assert.equal(josephResolution.rank,1,"St Joseph must be I class under the 1962 ordo");
+ assert.match(josephResolution.colour||"",/white/i,"St Joseph must be white, not Passion Friday violet");
+ assert.ok(josephResolution.commemorations.some(x=>/quad5|passion|feria vi/i.test(String(x.id||"")+" "+String(x.title||""))),
+   "Friday of Passion Week must remain commemorated under St Joseph");
+
  assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-04-05"),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("major")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({state:"visible",timeout:12000});
