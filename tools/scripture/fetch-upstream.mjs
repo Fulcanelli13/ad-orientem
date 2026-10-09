@@ -1,3 +1,4 @@
+import { normalizeScrollmapperSource } from "./normalize-scrollmapper.mjs";
 #!/usr/bin/env node
 import { mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
@@ -32,13 +33,22 @@ for(const source of SOURCES) {
  if(hash!==source.sha1)throw new Error("Pinned Git blob SHA mismatch "+source.tag+": "+hash);
  const json=JSON.parse(bytes.toString("utf8"));
  const inspection=shape(json);
+ const normalized=normalizeScrollmapperSource(json,source.id);
  const filename=out+"/"+source.tag+".json";
  await writeFile(filename,bytes);
+ await writeFile(out+"/"+source.tag+"-canonical-candidate.json",JSON.stringify({
+   editionId:source.id,provenance:{rightsReview:"pending",versificationReview:"pending",editionReview:"pending",
+     sourceUrl:url,sourceEdition:source.tag+" (historical source candidate)",licenceId:"PENDING",reviewer:null,reviewDate:null},
+   books:normalized.books
+ }));
  report.push({editionId:source.id,path:source.path,url,
    gitCommit:PIN,gitBlobSha:hash,bytes:bytes.length,
    sha256:createHash("sha256").update(bytes).digest("hex"),inspection,
-   status:"RESEARCH_ONLY_NOT_CERTIFIED_OR_PUBLISHABLE"});
+   status:"RESEARCH_ONLY_NOT_CERTIFIED_OR_PUBLISHABLE",
+   normalized:{bookCount:normalized.bookCount,chapterCount:normalized.chapterCount,
+     verseCount:normalized.verseCount,held:normalized.held}});
  console.log(source.tag+" verified "+bytes.length+" bytes. Shape: "+JSON.stringify(inspection).slice(0,3000));
+ console.log(source.tag+" canonical 73-book normalization: "+JSON.stringify({books:normalized.bookCount,chapters:normalized.chapterCount,verses:normalized.verseCount,held:normalized.held}));
  console.log(source.tag+" book names: "+JSON.stringify(json.books?.map(b=>b.name)));
  console.log(source.tag+" chapter shape: "+JSON.stringify(shape(json.books?.[0]?.chapters)).slice(0,2000));
  console.log(source.tag+" verses shape: "+JSON.stringify(shape(json.books?.[0]?.chapters?.[0]?.verses)).slice(0,2000));
