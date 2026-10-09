@@ -108,7 +108,16 @@ for(const r of donor.rows){
   if(!audit)throw Error("Unmatched donor "+r.id);
   const p=audit.passage;
   const e=passage(en,p.sourceBook,"en",p.chapter,p.verseStart,p.verseEnd);
-  const f=passage(fr,p.sourceBook,"fr",p.chapter,p.verseStart,p.verseEnd);
+  // Explicit cross-edition alias verified in the 1923 Crampon printed Psalter:
+  // Ps. cxxxii (Vulg. cxxxi). Never apply +1 to Psalms indiscriminately.
+  const psalmCramponAlias=r.id==="glo4.b1"
+    ?{book:"Psalm",chapter:132,verseStart:8,verseEnd:8,
+      source:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_5"}
+    :null;
+  const f=passage(fr,psalmCramponAlias?.book||p.sourceBook,"fr",
+    psalmCramponAlias?.chapter||p.chapter,
+    psalmCramponAlias?.verseStart||p.verseStart,
+    psalmCramponAlias?.verseEnd||p.verseEnd);
   const hold=!!p.partialVerse || r.flags.some(x=>["OPEN_SENTENCE","VERSE_SPLIT","EDITORIAL_ELLIPSIS","UNFINISHED_CLAUSE"].includes(x));
   const mismatchMap=["Psalm","Judith","Canticles"].includes(p.sourceBook);
   const provisional=e.foundVerses===e.requestedVerses && !mismatchMap?compare(r.legacyEnglishExcerpt,e.passage):{status:"EDITION_OR_REFERENCE_UNRESOLVED",matchRatio:null};
@@ -119,6 +128,7 @@ for(const r of donor.rows){
     enAutomaticResult:provisional.status,enTokenOverlap:provisional.matchRatio,
     frVersesLocated:f.foundVerses,frVersesExpected:f.requestedVerses,
     frBookKey:f.bookName,frPassageSha256:f.passage?digest(f.passage):null,
+    frVerseAlias:psalmCramponAlias?{...psalmCramponAlias,verified:"Crampon_1923_printed_psalter"}:null,
     frenchQuotationsChecked:0,
     excerptHold:hold,typologyOrVersificationHold:mismatchMap || r.flags.includes("TRADITIONAL_TYPOLOGICAL_APPLICATION"),
     editorialApproved:false,permissionToRepublish:false
