@@ -21,13 +21,14 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   customs:moduleUrl("../../data/customs/customs-atlas-seed.v1.json"),
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
+  sacredPhenomena:moduleUrl("../../data/explore/sacred-phenomena-seed.v1.json"),
   shrineSources:moduleUrl("../../data/shrines/source-registry.v1.json"),
   novenaBridge:moduleUrl("../../data/customs/novena-context-links.v1.json"),
   novenaSot:moduleUrl("../../data/pray/novena-sot.v1.json"),
 });
 
 export async function loadExploreDataset({fetchImpl=fetch}={}){
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -36,6 +37,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.shrineSources,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.novenaBridge,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.novenaSot,{fetchImpl}),
+    fetchJson(EXPLORE_DATA_URLS.sacredPhenomena,{fetchImpl}),
   ]);
   return Object.freeze({
     directory,
@@ -49,6 +51,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
       attestations:safeArray(customs?.attestations),
       sources:safeArray(customSources?.sources),
     }),
+    sacredPhenomena:Object.freeze({apparitions:safeArray(sacredPhenomena?.apparitions),relics:safeArray(sacredPhenomena?.relics),norms:sacredPhenomena?.norms??null}),
     shrines:Object.freeze({
       shrines:safeArray(shrines?.shrines),
       pilgrimages:safeArray(shrines?.pilgrimages),
