@@ -1,0 +1,33 @@
+name: Content architecture census
+
+on:
+  pull_request:
+    paths:
+      - "data/app/**"
+      - "docs/CONTENT-*.md"
+      - "tests/content-*.mjs"
+      - ".github/workflows/content-architecture-census.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/app/**"
+      - "tests/content-*.mjs"
+      - ".github/workflows/content-architecture-census.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  content-census-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify canonical navigation inventory
+        run: node tests/content-navigation-registry.mjs
+      - name: Verify 3,849 typed item references
+        run: node tests/content-item-census.mjs
+      - name: Verify route access and resolved two-place relationship
+        run: node tests/content-reachability-source-contract.mjs
