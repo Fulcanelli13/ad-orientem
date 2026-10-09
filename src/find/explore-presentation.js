@@ -326,8 +326,9 @@ export function renderExploreToString(vm){
 
   if(vm.lens==="tlm")html+='<section class="aoFindExternalSource" role="note">'
     +'<div><strong>'+esc(L(vm.language,"More Mass locations","Autres lieux de messe"))+'</strong>'
-    +'<span>'+esc(L(vm.language,"Browse Latin Mass Directory directly. External listings and schedules are not independently verified by this app.","Consultez directement Latin Mass Directory. Ces lieux et horaires externes ne sont pas vérifiés indépendamment par cette application."))+'</span></div>'
-    +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Open worldwide directory ↗","Ouvrir l’annuaire mondial ↗"))+'</a>'
+    +'<span>'+esc(L(vm.language,"Other directories may have additional locations. Always confirm current Mass times with the priest or parish.","D’autres annuaires peuvent signaler des lieux supplémentaires. Vérifiez toujours les horaires actuels auprès du prêtre ou de la paroisse."))+'</span></div>'
+    +'<a href="https://www.latinmass.com/find-latin-mass" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Mass of the Ages map ↗","Carte Mass of the Ages ↗"))+'</a>'
+    +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Latin Mass Directory ↗","Latin Mass Directory ↗"))+'</a>'
     +'</section>';
   html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
