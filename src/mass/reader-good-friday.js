@@ -15,13 +15,16 @@ function textRow(id,latin,kind="TEXT",sourceIds=[]){
 function rows(prefix,values,sourceIds=[]){
   return freeze((values??[]).map((v,i)=>textRow(prefix+String(i+1),v,"TEXT",sourceIds)));
 }
-function prayerRows(prefix,intention,prayer,sourceIds=[]){
+function prayerRows(prefix,intention,prayer){
+  // K/R state records own only their respective spoken formulas, not
+  // the intention, Oremus or entire following collect. Both records share
+  // one visible card; its exact cue identities remain independently usable.
   return freeze([
-    textRow(prefix+"-I",intention,"TEXT",sourceIds),
-    textRow(prefix+"-O","Oremus.","VERSICLE",sourceIds),
-    textRow(prefix+"-K","Flectamus genua.","VERSICLE",sourceIds),
-    textRow(prefix+"-R","Levate.","RESPONSE",sourceIds),
-    textRow(prefix+"-P",prayer,"TEXT",sourceIds),
+    textRow(prefix+"-I",intention,"TEXT"),
+    textRow(prefix+"-O","Oremus.","VERSICLE"),
+    textRow(prefix+"-K","Flectamus genua.","VERSICLE",[prefix+"-K"]),
+    textRow(prefix+"-R","Levate.","RESPONSE",[prefix+"-R"]),
+    textRow(prefix+"-P",prayer,"TEXT"),
   ]);
 }
 function recordMap(graph){return new Map(graph.map(x=>[x.id,x]))}
@@ -111,7 +114,7 @@ function surfaceFor(record,payload,jewishPrayerVariant){
     const item=solemnPrayer(payload,base.key,jewishPrayerVariant);
     return freeze({
       key:"SOLEMN_PRAYER_"+sop[1],title:(n+". "+item.title),
-      paragraphs:prayerRows("GF-SOP-"+sop[1],item.intention,item.prayer,[id])
+      paragraphs:prayerRows("GF-SOP-"+sop[1],item.intention,item.prayer)
     });
   }
   if(id==="GF-XPREP-500")return freeze({
@@ -132,9 +135,9 @@ function surfaceFor(record,payload,jewishPrayerVariant){
     return freeze({
       key:"UNVEILING_"+count,title:"Unveiling of the Cross · "+count+" / 3",
       paragraphs:freeze([
-        textRow("GF-X-"+count+"-V",payload.cross.unveiling.versicle,"VERSICLE",[id]),
-        textRow("GF-X-"+count+"-R",payload.cross.unveiling.response,"RESPONSE",[id]),
-        ...(isKneel?[textRow("GF-X-"+count+"-S","Adoratio in silentio.","RUBRIC",[id])]:[])
+        textRow("GF-X-"+count+"-V",payload.cross.unveiling.versicle,"VERSICLE"),
+        textRow("GF-X-"+count+"-R",payload.cross.unveiling.response,"RESPONSE",["GF-X-52"+count]),
+        ...(isKneel?[textRow("GF-X-"+count+"-S","Adoratio in silentio.","RUBRIC")]:[])
       ])
     });
   }
