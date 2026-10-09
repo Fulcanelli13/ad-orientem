@@ -1,11 +1,11 @@
 {
   "schema": "ao-startup-html-split-v1",
-  "originalHtmlBytes": 37964045,
-  "reducedHtmlBytes": 28014541,
-  "originalGzipBytes": 22140914,
-  "reducedGzipBytes": 15198120,
-  "extractedBytes": 9949540,
-  "extractedCount": 1,
+  "originalHtmlBytes": 28014541,
+  "reducedHtmlBytes": 18202275,
+  "originalGzipBytes": 15198120,
+  "reducedGzipBytes": 7843296,
+  "extractedBytes": 9812420,
+  "extractedCount": 4,
   "retainedLargeBlocks": [
     {
       "kind": "script",
@@ -15,41 +15,40 @@
     },
     {
       "kind": "script",
-      "bytes": 6442233,
-      "type": "",
-      "reason": "attributes"
-    },
-    {
-      "kind": "script",
-      "bytes": 1621465,
-      "type": "",
-      "reason": "attributes"
-    },
-    {
-      "kind": "script",
-      "bytes": 1450716,
-      "type": "",
-      "reason": "attributes"
-    },
-    {
-      "kind": "script",
       "bytes": 470535,
-      "type": "",
-      "reason": "attributes"
-    },
-    {
-      "kind": "style",
-      "bytes": 298006,
       "type": "",
       "reason": "attributes"
     }
   ],
   "entries": [
     {
-      "filename": "ao-boot-4ef16d2b0e26d68c.js",
+      "filename": "ao-boot-51d0ce27ca7db1ae.css",
+      "kind": "style",
+      "originalBytes": 298006,
+      "order": 1,
+      "packagedBytes": 1198
+    },
+    {
+      "filename": "ao-boot-891c72ac945cfbbc.js",
       "kind": "script",
-      "originalBytes": 9949540,
-      "order": 1
+      "originalBytes": 1450716,
+      "order": 2,
+      "packagedBytes": 59560
+    },
+    {
+      "filename": "ao-boot-d5cc4e55fdbc34f2.js",
+      "kind": "script",
+      "originalBytes": 1621465,
+      "order": 3,
+      "packagedBytes": 17485
+    },
+    {
+      "filename": "ao-boot-61e8e41b5e1992e2.js",
+      "kind": "script",
+      "originalBytes": 6442233,
+      "order": 4,
+      "packagedBytes": 7885
     }
-  ]
+  ],
+  "postArtHtmlBytes": 9939091
 }
