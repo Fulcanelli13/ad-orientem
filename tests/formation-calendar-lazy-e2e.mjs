@@ -353,18 +353,28 @@ try{
  assert.equal(second?.ok,true);
  assert.equal(hits.filter(x=>x.path==="/src/calendar/calendar-runtime.js").length,fetchedBefore,"Calendar code fetched again on re-entry");
 
- // Calendar explanations are body copy, not secondary labels.
+ // The compact Day layout must preserve the saint/source action without
+ // restoring a boilerplate paragraph and must fit small physical viewports.
  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2027-08-15")),true);
- await page.locator("#ao-calendar-modular-root .aoCalV2Saint p").waitFor({state:"visible",timeout:12000});
+ await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").waitFor({state:"visible",timeout:12000});
  for(const width of [320,360,390,430]){
    await page.setViewportSize({width,height:844});
    const result=await page.evaluate(()=>{
      const root=document.getElementById("ao-calendar-modular-root");
-     const el=root.querySelector(".aoCalV2Saint p");
-     return {size:parseFloat(getComputedStyle(el).fontSize),overflow:root.scrollWidth-root.clientWidth};
+     const action=root.querySelector(".aoCalV2Saint [data-cal-saint-date]");
+     const rect=action.getBoundingClientRect();
+     return {
+       size:parseFloat(getComputedStyle(action).fontSize),
+       height:rect.height,
+       visible:rect.width>0&&getComputedStyle(action).visibility!=="hidden",
+       boilerplate:root.querySelector(".aoCalV2Saint p")?.textContent?.trim()??"",
+       overflow:root.scrollWidth-root.clientWidth,
+     };
    });
-   assert.ok(result.size>=14,"Calendar explanatory text below 14px at "+width+": "+JSON.stringify(result));
+   assert.ok(result.visible&&result.height>=44,"Calendar saint/source action is inaccessible at "+width+": "+JSON.stringify(result));
+   assert.ok(result.size>=11,"Calendar saint/source action text is illegible at "+width+": "+JSON.stringify(result));
+   assert.equal(result.boilerplate,"","Redundant Calendar saint description returned at "+width);
    assert.ok(result.overflow<=2,"Calendar text overflows at "+width+": "+JSON.stringify(result));
  }
  const learnReturn=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn"));

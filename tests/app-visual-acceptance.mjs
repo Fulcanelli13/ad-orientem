@@ -277,7 +277,9 @@ try{
     version:globalThis.AO_CALENDAR_APP_V1?.status?.().version??null,
     identity:document.querySelector("#ao-calendar-modular-root .aoCalV2Hero h2")?.textContent?.trim()??"",
     season:document.querySelector("#ao-calendar-modular-root .aoCalV2Context h3")?.textContent?.trim()??"",
-    progress:document.querySelector("#ao-calendar-modular-root .aoCalV2Progress i")?.style?.width??"",
+    progressElements:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Progress").length,
+    saintBoilerplate:document.querySelector("#ao-calendar-modular-root .aoCalV2Saint p")?.textContent?.trim()??"",
+    heroTopPadding:parseFloat(getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalV2Hero")).paddingTop),
     weekScrollable:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalV2Week");return x?x.scrollWidth>=x.clientWidth:false})(),
     rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
     displayedDate:document.querySelector("#ao-calendar-modular-root .aoCalV2DayNav strong")?.textContent?.trim()??"",
@@ -285,7 +287,9 @@ try{
   assert.equal(calendarDay.version,"modular-calendar-v2-liturgical-year","Calendar did not activate the v2 owner");
   assert.ok(calendarDay.identity.length>0,"Calendar selected feast identity is blank");
   assert.ok(calendarDay.season.length>0,"Calendar selected liturgical period is blank");
-  assert.match(calendarDay.progress,/\d+(?:\.\d+)?%/,"Calendar period progress is missing");
+  assert.equal(calendarDay.progressElements,0,"Calendar Day still displays pseudo-achievement progress");
+  assert.equal(calendarDay.saintBoilerplate,"","Calendar saint action regained repetitive filler text");
+  assert.ok(calendarDay.heroTopPadding<=20,"Calendar Day phone hero has excessive top padding");
   assert.equal(calendarDay.weekScrollable,true,"Calendar week context does not remain touch-scrollable on phone");
   assert.match(calendarDay.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Calendar Day date is not DD/MM/YYYY");
   const calendarDesign=await page.evaluate(()=>({

@@ -4,6 +4,18 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar/liturgical-year.js";
 const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
+// Calendar Day is liturgical information, not a progress/achievement dashboard.
+// Assert against the actual rendered Day template while keeping the 1962 source
+// and Mass/saint/print actions intact.
+const dayTemplate=runtime.split("function daySurface(selected,r){")[1]?.split("function ringGradient(year)")[0];
+assert.ok(dayTemplate,"Calendar Day renderer was not found");
+assert.doesNotMatch(dayTemplate,/periodPercent|aoCalV2Progress|aoCalV2SeasonMeta|periodDayIndex/);
+assert.doesNotMatch(dayTemplate,/Biography, artwork and sources for the principal observance/);
+for(const action of [/data-cal-mass/,/data-cal-saint-date/,/data-cal-print-proper/,/daySourceDetails\(r\)/,/nextResolvedMajorCelebration/])
+  assert.match(dayTemplate,action,"Calendar Day lost a principal user action or source detail");
+assert.match(runtime,/\.aoCalV2Hero\{text-align:center;padding:26px 10px 22px/);
+assert.match(runtime,/\.aoCalV2Hero \[data-cal-print-feedback\]:empty\{display:none\}/);
+
 assert.match(runtime,/function monthIndexResolutionState\(monthId,view\)/);
 assert.match(runtime,/if\(view==="practices"\)return "independent"/);
 assert.match(runtime,/monthDateIds\(monthId\)/);
