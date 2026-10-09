@@ -1,5 +1,6 @@
 import { auditVenue } from "./contracts.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
+import {applyIndicativeSspxLocations,fetchOfficialSspxPlaceIndex} from "./sspx-indicative-geo.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 export const RESEARCH_MASS_REVIEW_DAYS=120;
 const RESEARCH_PROVIDERS=Object.freeze([
@@ -320,8 +321,16 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
   }
   const joined=joinDirectoryRecords({...merged,communityProfiles});
   const records=publishableDirectoryRecords(joined);
+  // One bulk locality pass: first-party existing registry points work offline.
+  // Online, the official SSPX public place index improves local matches.
+  // Country-only indicators are explicitly non-routing and never replace surveyed points.
+  const needsSspxCoarse=records.some(r=>r.ministries?.some(m=>m.community_id==="SSPX")
+    &&!isMapPublishableGeo(r.venue?.geo,r.venue?.address?.country_code));
+  const mapIndex=needsSspxCoarse?await fetchOfficialSspxPlaceIndex({fetchImpl}):[];
+  const indicated=applyIndicativeSspxLocations(records,{officialPlaces:mapIndex});
   return Object.freeze({
-    records,
+    records:indicated.records,
+    indicativeGeoSummary:indicated.summary,
     skippedInvalidRecords:joined.length-records.length,
     communities:safeArray(communityData?.communities),
     communityProfiles,
