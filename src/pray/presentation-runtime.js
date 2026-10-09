@@ -1,5 +1,5 @@
 import "./confession-path-styles.js";
-import { confessionExaminationCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
+import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
 import "./canonical-data.js";
 import "./presentation-styles.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
@@ -186,7 +186,7 @@ function load(){
 }
 let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
-function freshConfessionState(){return {stage:0,path:null,examStep:0,marked:new Set(),since:'',graveReviewed:false,contrition:false}}
+function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
@@ -945,19 +945,27 @@ function confessionModeLabel(path){
  const p=confessionPath(path);
  return p?esc(isFr()?p.titleFr:p.titleEn):esc(L("Choose your preparation","Choisissez votre préparation"));
 }
-function confessionExaminationView(ex){
- if(CONF.path==="regular")return `${guideNow(L('Examine your conscience','Examinez votre conscience'),L('Read through the Commandments. Do not omit remembered grave sins, even in a short Confession; move on when your examination is sufficient.','Parcourez les commandements. N’omettez pas les péchés graves dont vous vous souvenez, même lors d’une confession brève ; avancez lorsque votre examen est suffisant.'))}<p class="aoP435930Lead">${esc(ex?.intro||'')}</p><div class="aoP435930Exam aoP435930ExamReadOnly">${(ex?.sections||[]).map(sec=>`<details><summary>${esc(sec[0])}</summary><ul>${sec[1].map(q=>`<li>${esc(q)}</li>`).join('')}</ul></details>`).join('')}</div>${guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition','Acte de contrition')}])}`;
- const cards=confessionExaminationCards(CONF.path,ex?.sections);
- const pos=confessionStepAt(CONF.examStep,cards.length),card=cards[pos],count=cards.length;
+function confessionSingleCard(card,pos,count,context){
  const title=card.kind==="questions"?card.title:isFr()?card.fr:card.en;
  const body=card.kind==="questions"
   ?`<ul class="aoP435930ConfQuestions">${card.questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ul>`
   :`<p>${esc(isFr()?card.bodyFr:card.bodyEn)}</p>`;
- return `<section class="aoP435930ConfOneCard" data-ao-confession-card="${esc(card.id)}" data-conf-exam-step="${pos}" aria-label="${esc(L('Examination step','Étape de l’examen'))+' '+(pos+1)}">
-   <small>${esc(L('Examination','Examen'))} · ${pos+1} / ${count}</small>
+ return `<section class="aoP435930ConfOneCard" data-ao-confession-card="${esc(card.id)}" data-conf-${esc(context)}-step="${pos}" aria-label="${esc(L('Confession step','Étape de la confession'))+' '+(pos+1)}">
+   <small>${esc(L('Step','Étape'))} · ${pos+1} / ${count}</small>
    <h2 tabindex="-1">${esc(title)}</h2>${body}
-   </section>${pos===count-1?guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition','Acte de contrition')}]):''}`;
+   </section>`;
 }
+function confessionExaminationView(ex){
+ const cards=confessionExaminationCards(CONF.path,ex?.sections);
+ const pos=confessionStepAt(CONF.examStep,cards.length);
+ const note=CONF.path==="regular"
+  ?L("Four short groups cover all Ten Commandments. Pause to recall what you need to confess; no answers or sins are recorded.","Quatre groupes brefs couvrent les dix commandements. Prenez le temps de vous souvenir de ce que vous devez confesser ; aucune réponse ni aucun péché n'est enregistré.")
+  :L("Read one step at a time. A diligent but reasonable examination is enough; the confessor can help with uncertainty.","Avancez étape par étape. Un examen diligent mais raisonnable suffit ; le confesseur peut vous aider en cas de doute.");
+ return `${guideNow(L('Examine your conscience','Examinez votre conscience'),note)}
+ ${confessionSingleCard(cards[pos],pos,cards.length,"exam")}
+ ${pos===cards.length-1?guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition','Acte de contrition')}]):''}`;
+}
+
 function renderConfession(){
  const stages=[L('Prepare','Préparer'),L('Examination','Examen'),L('In Confessional','Au confessionnal'),L('After','Après')];
  const ex=isFr()?DATA.examFr:DATA.exam;
@@ -1202,7 +1210,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
