@@ -1,0 +1,29 @@
+name: Pius X Italian digital source comparison
+on:
+  pull_request:
+    paths:
+      - 'tests/learn-faith-italian-digital-1912-comparison.mjs'
+      - '.github/workflows/pius-x-italian-digital-source-comparison.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-language-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install PDF text extractor
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Compare all 433 numbered Italian texts with separate digital PDF
+        run: node tests/learn-faith-italian-digital-1912-comparison.mjs
+      - name: Retain provisional text-difference evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pius-x-italian-digital-comparison
+          path: artifacts/pius-x-collation/italian-digital-comparison.json
+          if-no-files-found: warn
