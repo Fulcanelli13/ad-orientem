@@ -7,6 +7,25 @@ const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const extension=load("../data/mass/special-days-extension.v1.3.json");
 const payload=load("../data/presentation/reader-rogations.v1.json");
 const graph=extension.graphs.ROG;
+const sourceGate=load("../data/mass/rogation-proper-source-gate.v1.json");
+assert.equal(sourceGate.status,"RESEARCH_ONLY_NOT_AVAILABLE_FOR_MASS_SELECTION");
+assert.equal(sourceGate.publicationAllowed,false);
+assert.equal(sourceGate.scope.defaultMass.class,4);
+assert.equal(sourceGate.scope.defaultMass.colour,"white");
+assert.equal(sourceGate.scope.conditionalMass.class,2);
+assert.equal(sourceGate.scope.conditionalMass.colour,"violet");
+assert.equal(sourceGate.scope.conditionalMass.requires,"explicit public litanies or procession");
+assert.equal(sourceGate.scope.conditionalMass.handoff,"INTROIT");
+assert.equal(sourceGate.scope.conditionalMass.omitOpeningPrayers,true);
+assert.equal(sourceGate.scope.conditionalMass.gloria,false);
+assert.equal(sourceGate.scope.conditionalMass.credo,false);
+assert.equal(sourceGate.properSections.length,9);
+assert.equal(new Set(sourceGate.properSections.map(x=>x.key)).size,9);
+assert.ok(sourceGate.properSections.every(x=>!x.latinVerified&&!x.englishVerified&&!x.frenchVerified&&!x.exactSourceLocator),
+  "Rogation Proper cannot be marked complete without passage-by-passage source collation");
+assert.ok(sourceGate.sourceWitnesses.some(x=>x.type==="textual_candidate_not_normative_for_class"&&/NOT itself/.test(x.warning)),
+  "A general online Rogation-week Proper must not certify processional class/rubrics");
+
 
 assert.equal(graph.length,6);
 const built=buildRogationsPayload({graph,payload});
