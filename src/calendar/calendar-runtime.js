@@ -159,7 +159,7 @@ function monthIndexList(monthId,selected,view){
         :L("Date-bound traditional practices, programmes and sourced novena starts from the shared Calendar Intelligence registry.","Pratiques traditionnelles datées, programmes et débuts de neuvaines sourcées provenant du registre commun de Calendar Intelligence.");
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
-    ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" ${view==="sanctorale"?`data-cal-saint-date="${x.date}"`:""} class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
+    ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
       <time>${esc(displayDate(x.date))}</time>
       <span class="aoCalMonthIndexText"><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small>${view==="sanctorale"?`<em>${esc(L("Life & sources","Vie & sources"))} →</em>`:""}</span>
       <i aria-hidden="true"></i>
@@ -508,16 +508,17 @@ function yearSurface(selected,r){
           <h3>${esc(periodName(p))}</h3>
           <p class="aoCalV2SelectedFeast">${esc(r?.day?titleOf(r):L("Mass of the day awaiting resolution","Messe du jour en attente de résolution"))}</p>
           <dl><div><dt>${esc(L("Year","Année"))}</dt><dd>${esc(y.label)}</dd></div><div><dt>${esc(L("Current period","Période actuelle"))}</dt><dd>${esc(L(`Day ${y.periodDayIndex} of ${p.days}`,`Jour ${y.periodDayIndex} sur ${p.days}`))}</dd></div></dl>
-          ${next?`<div class="aoCalV2MajorLine"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><button type="button" data-cal-date="${next.date}">${esc(celebrationName(next))} · ${esc(shortDate(next.date))}</button></div>`:""}
+          ${next?`<div class="aoCalV2MajorLine"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><button type="button" data-cal-open-date="${next.date}">${esc(celebrationName(next))} · ${esc(shortDate(next.date))}</button></div>`:""}
           <div class="aoCalV2PeriodProgress"><div><small>${esc(L("PROGRESS IN ","PROGRESSION DANS "))}${esc(periodName(p).toUpperCase())}</small><strong>${periodPct}%</strong></div><span><i style="width:${periodPct}%"></i></span></div>
         </div>
       </div>
     </section>
+    <div class="aoCalYearProvenance">${esc(L("Dates follow the 1962 Roman calendar; transferred feasts appear on their observed date.","Les dates suivent le calendrier romain de 1962 ; les fêtes transférées figurent à leur date de célébration."))} <a href="https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html" target="_blank" rel="noopener noreferrer">${esc(L("1960 General Rubrics · nn. 95–99 ↗","Rubriques générales de 1960 · nos 95–99 ↗"))}</a></div>
     <section class="aoCalV2Coming">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("WHAT NOW?","ET MAINTENANT ?"))}</small><h3>${esc(L("Coming next","Les prochains repères"))}</h3></div></div>
       <div class="aoCalV2ComingGrid">
-        <button type="button" data-cal-date="${nextSeason.start}"><small>${esc(L("NEXT CHANGE OF SEASON","PROCHAIN CHANGEMENT DE TEMPS"))}</small><strong>${esc(periodName(nextSeason))}</strong><span>${esc(longDate(nextSeason.start))} · ${dayCount(selected,nextSeason.start)} ${esc(L("days","jours"))}</span></button>
-        ${next?`<button type="button" data-cal-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:""}
+        <button type="button" data-cal-open-date="${nextSeason.start}"><small>${esc(L("NEXT CHANGE OF SEASON","PROCHAIN CHANGEMENT DE TEMPS"))}</small><strong>${esc(periodName(nextSeason))}</strong><span>${esc(longDate(nextSeason.start))} · ${dayCount(selected,nextSeason.start)} ${esc(L("days","jours"))}</span></button>
+        ${next?`<button type="button" data-cal-open-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:""}
       </div>
       <button class="aoCalV2TextLink" type="button" data-cal-open-month="major">${esc(L("Major days this month","Jours majeurs de ce mois"))} →</button>
     </section>
@@ -659,6 +660,7 @@ function setMonthView(view,{openMonth=true}={}){
   const next=String(view||"").toLowerCase();
   if(!MONTH_INDEX_VIEWS.has(next))return false;
   calendarMonthView=next;
+  if(openMonth&&calendarView!=="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   if(openMonth)calendarView="picker";
   if(!root()){requestedView=openMonth?"picker":requestedView;requestedMonthView=next;return true}
   if(calendarView==="picker"&&!pickerMonthId)pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
@@ -694,6 +696,9 @@ function bind(r){
     const pick=event.target.closest?.("[data-cal-pick-date]");if(pick){event.preventDefault();calendarView="day";void select(pick.dataset.calPickDate);return}
     const saintDetail=event.target.closest?.("[data-cal-saint-date]");if(saintDetail){event.preventDefault();event.stopPropagation?.();void openSaintDetail(saintDetail.dataset.calSaintDate);return}
     const intelligenceRoute=event.target.closest?.("[data-cal-intelligence-route]");if(intelligenceRoute){event.preventDefault();const route=intelligenceRoute.dataset.calIntelligenceRoute||"";if(route==="mass.current"){void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar practice Mass route failed",error));return}if(route==="today.calendar"){calendarView="day";paint();return}if(route.startsWith("find:")){const [lens,calendarKey]=route.slice(5).split(":");void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("find")).then(ok=>ok===false?false:globalThis.AO_FIND_APP_V1?.open?.({lens:lens||"pilgrimages",view:"map",calendarKey:calendarKey||null,query:""})).catch(error=>console.error("Calendar Explore route failed",error));return}void Promise.resolve(globalThis.AO_MODULES?.open?.(route,{returnContext:{surface:"calendar",view:"day",date:state()?.selectedDate||null}})).catch(error=>console.error("Calendar practice route failed",error));return}
+    // Year milestones open the selected celebration rather than silently changing a year statistic.
+    const openDate=event.target.closest?.("[data-cal-open-date]");
+    if(openDate){event.preventDefault();calendarView="day";void select(openDate.dataset.calOpenDate);return}
     const monthIndexDate=event.target.closest?.("[data-cal-month-index-date]");if(monthIndexDate){event.preventDefault();calendarView="day";void select(monthIndexDate.dataset.calMonthIndexDate);return}
     const mass=event.target.closest?.("[data-cal-mass]");if(mass){event.preventDefault();void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar Mass entry failed",error));return}
     const closeButton=event.target.closest?.("[data-cal-close]");if(closeButton){event.preventDefault();close();return}
