@@ -107,5 +107,10 @@ export function buildMajorCelebrations(selectedId){
   return rows.filter(x=>x.date>=year.start&&x.date<=year.end).sort((a,b)=>a.date.localeCompare(b.date));
 }
 export function nextMajorCelebration(selectedId){
-  return buildMajorCelebrations(selectedId).find(x=>x.date>selectedId)||null;
+  // The selected liturgical year's final days must still lead into next Advent.
+  // Build the adjacent liturgical year rather than returning a blank dashboard CTA.
+  const current=buildMajorCelebrations(selectedId).find(x=>x.date>selectedId);
+  if(current)return current;
+  const adjacent=addDaysIso(buildLiturgicalYear(selectedId).end,1);
+  return buildMajorCelebrations(adjacent).find(x=>x.date>selectedId)||null;
 }
