@@ -37,6 +37,10 @@ for(const citation of biblicalLinks){
  assert.equal(new URL(citation.frenchPrimaryUrl).hash,"#"+chapter,
    "French Scripture source must open at chapter rather than at the book's title page: "+citation.reference);
 }
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy5[2].en,/unaware that Jesus has stayed behind/);
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy5[2].fr,/sans savoir que Jésus est resté à Jérusalem/);
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.joy5[1].reference,"Luke 2:43-46");
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.joy5[1].frenchPrimaryUrl.endsWith("#2"),true);
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2[4].primaryUrl,
  "https://www.biblegateway.com/passage/?search=Isaiah%2053%3A5&version=DRA",
  "Isaias 53 must use the stable Douay–Rheims BibleGateway passage, not stale CCEL path");
