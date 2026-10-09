@@ -190,7 +190,7 @@ assert.deepEqual(anthony.commonPrayers,[["foundations_our_father",1],["foundatio
  "Franciscan 1966 witness prescribes the traditional three prayers after the novena invocation");
 assert.equal(anthony.closingCanonical,"devotion_st_anthony_lost_items",
  "The customary Si quaeris responsory must reuse its canonical three-language Prayer owner");
-assert.match(anthony.commonNote.en,/not.*obligatory/i,
+assert.match(anthony.commonNote.en,/no single.*obligatory/i,
  "Nine Tuesdays customary prayers must not be presented as universal obligation");
 assert.match(anthony.commonNote.fr,/n.*obligatoire/i,
  "French Nine Tuesdays rubric must distinguish a proposed custom from requirement");
