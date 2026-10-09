@@ -1,0 +1,3601 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_210_CASES_POST_OFFICIAL_MAP_COORDS_V6",
+  "as_of": "2026-10-09",
+  "source_v1_cases": 210,
+  "disposition_counts": {
+    "PENDING_PLACE_DETAIL_ADJUDICATION": 41,
+    "EXISTING_PHYSICAL_ALIAS": 95,
+    "NEW_VERIFIED_MASS_VENUE": 38,
+    "ADDRESS_CONFLICT_HOLD": 6,
+    "EXISTING_OFFICIAL_CRM_LINK": 30
+  },
+  "fully_adjudicated": 163,
+  "pending_total": 47,
+  "pending_first_party_place_detail": 41,
+  "pending_address_conflict": 6,
+  "mass_records_added_since_576_baseline": 38,
+  "current_sspx_mass_evidenced_records": 614,
+  "current_all_mass_evidenced_records": 1212,
+  "current_all_source_records": 1449,
+  "official_sspx_map_pins_after_overlay": 373,
+  "sspx_source_records_still_without_verified_coordinates": 241,
+  "new_sites": [
+    "SSPX-SSPXMAP-20261009-DE-PASSAU-ROSENKRANZ",
+    "SSPX-SSPXMAP-20261009-FR-LES-ROUSSES-ND-LOURDES",
+    "SSPX-SSPXMAP-20261009-FR-LE-LAUS-ND-ROSAIRE"
+  ],
+  "new_existing_site_coordinates": 20,
+  "source_documents": [
+    "data/directory/research/staging/sspx-world-map/worldwide-evidence-crosswalk.v2.json",
+    "data/directory/research/sspx-mexico-completion-adjudication-20261009.v1.json",
+    "data/directory/research/sspx-priority-districts-reconciliation-20261009.v1.json",
+    "data/directory/research/sspx-priority-same-city-physical-review-20261009.v2.json",
+    "data/directory/research/sspx-mexico-seven-alias-review-20261009.v2.json",
+    "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+    "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+    "data/directory/generated/v19/sspx-official-route-oct26-20261009.v1.json",
+    "data/directory/generated/v19/sspx-official-route-oct26-20261009.geo.v1.json",
+    "data/directory/research/sspx-official-directions-geo-batch-20261009.v1.json"
+  ],
+  "controls": {
+    "v1_worldwide_original_941_place_index_frozen": true,
+    "no_surveyed_building_centroid_claims": true,
+    "all_new_pins_have_exact_official_source_place_ids": true,
+    "one_armidale_locality_pin_only": true,
+    "no_new_physical_venues_from_geo_enrichment": true,
+    "old_geo_overlay_retained_without_overwrites": true,
+    "official_mass_schedule_is_time_qualified": true
+  },
+  "pending_by_district": [
+    {
+      "district": "france",
+      "pending": 7,
+      "address_conflict": 0,
+      "total": 7
+    },
+    {
+      "district": "mexico",
+      "pending": 6,
+      "address_conflict": 0,
+      "total": 6
+    },
+    {
+      "district": "asia",
+      "pending": 5,
+      "address_conflict": 0,
+      "total": 5
+    },
+    {
+      "district": "central-america",
+      "pending": 3,
+      "address_conflict": 2,
+      "total": 5
+    },
+    {
+      "district": "italy",
+      "pending": 5,
+      "address_conflict": 0,
+      "total": 5
+    },
+    {
+      "district": "south-america",
+      "pending": 4,
+      "address_conflict": 0,
+      "total": 4
+    },
+    {
+      "district": "australia",
+      "pending": 4,
+      "address_conflict": 0,
+      "total": 4
+    },
+    {
+      "district": "spain-portugal",
+      "pending": 2,
+      "address_conflict": 0,
+      "total": 2
+    },
+    {
+      "district": "poland",
+      "pending": 0,
+      "address_conflict": 2,
+      "total": 2
+    },
+    {
+      "district": "germany",
+      "pending": 2,
+      "address_conflict": 0,
+      "total": 2
+    },
+    {
+      "district": "canada",
+      "pending": 2,
+      "address_conflict": 0,
+      "total": 2
+    },
+    {
+      "district": "brazil",
+      "pending": 0,
+      "address_conflict": 1,
+      "total": 1
+    },
+    {
+      "district": "general-house",
+      "pending": 1,
+      "address_conflict": 0,
+      "total": 1
+    },
+    {
+      "district": "austria",
+      "pending": 0,
+      "address_conflict": 1,
+      "total": 1
+    }
+  ],
+  "cases": [
+    {
+      "source_place_id": "abu-dhabi-or-dubai",
+      "official_map_url": "https://map.fsspx.org/fr/places/abu-dhabi-or-dubai",
+      "label": "United Arab EmiratesMissionDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "OFFICIAL_REGION_ONLY_NO_PUBLIC_STREET_OR_PREDICTABLE_MASS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "angers-noel-pinot",
+      "official_map_url": "https://map.fsspx.org/fr/places/angers-noel-pinot",
+      "label": "Oratoire Bienheureux Noël PinotChapelle · AngersDimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "armidale",
+      "official_map_url": "https://map.fsspx.org/fr/places/armidale",
+      "label": "ArmidaleMission · ArmidaleDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-AU-ARMIDALE-ARMIDALE-MISSION-HUGHES-HOUSE"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "batea",
+      "official_map_url": "https://map.fsspx.org/fr/places/batea",
+      "label": "BateaMission · BateaDimanche",
+      "districts": [
+        "spain-portugal"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "belo-horizonte",
+      "official_map_url": "https://map.fsspx.org/fr/places/belo-horizonte",
+      "label": "Belo HorizonteMission · Belo HorizonteDimanche",
+      "districts": [
+        "brazil"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-BR-BR-BELO-HORIZONTE-MISSAO-DA-FSSPX"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "bergen",
+      "official_map_url": "https://map.fsspx.org/fr/places/bergen",
+      "label": "BergenMission · BergenDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-01-BERGEN"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "brindisi",
+      "official_map_url": "https://map.fsspx.org/fr/places/brindisi",
+      "label": "BrindisiMission · BrindisiDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-IT-IT-BRINDISI-OSPEDALE-A-DI-SUMMA-PUBLIC-MASS-VENUE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "capela-do-sagrado-coracao",
+      "official_map_url": "https://map.fsspx.org/fr/places/capela-do-sagrado-coracao",
+      "label": "Capela do Sagrado CoraçãoMission · PassosDimancheEn semaine",
+      "districts": [
+        "brazil"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "ADDRESS_CONFLICT_HOLD",
+      "venue_ids": [],
+      "basis": "OFFICIAL_SOURCES_PHYSICAL_ADDRESS_DISAGREE",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "discrepancy": {
+        "official_place_id": "capela-do-sagrado-coracao",
+        "official_map_url": "https://map.fsspx.org/fr/places/capela-do-sagrado-coracao",
+        "district": "brazil",
+        "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+        "decision": "ADDRESS_CONFLICT_HOLD",
+        "registry_address": "Rua Nebraska 526, Jardim Eldorado, Passos, MG, Brasil",
+        "alternate_official_address": "Rua Nebraska 532, Bairro São Francisco, Passos, MG, Brasil",
+        "reason": "Street number and bairro conflict across official Brazilian SSPX pages; preserve current record, do not create another physical chapel",
+        "official_url": "https://fsspx.com.br/pt/priorados-e-capelas-51589"
+      }
+    },
+    {
+      "source_place_id": "capela-nossa-senhora-fatima",
+      "official_map_url": "https://map.fsspx.org/fr/places/capela-nossa-senhora-fatima",
+      "label": "Capela Nossa Senhora FatimaMission · Varre-SaiDimancheEn semaine",
+      "districts": [
+        "brazil"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-GLOBAL-20261009-06-CAPELA-NOSSA-SENHORA-FATIMA"
+      ],
+      "basis": "FIRST_PARTY_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "source_geo_precision": "locality"
+    },
+    {
+      "source_place_id": "capela-santo-antonio",
+      "official_map_url": "https://map.fsspx.org/fr/places/capela-santo-antonio",
+      "label": "Capela Santo AntônioMission · CravinhosDimancheEn semaine",
+      "districts": [
+        "brazil"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-BR-BR-CRAVINHOS-CAPELA-SAO-PIO-X"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "capilla",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla",
+      "label": "CapillaMission · Distrito NacionalDimanche",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-ACAS-CENTRAL_AMERICA-DO-037"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "capilla-de-nuestra-senora-de-la-merced",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-de-nuestra-senora-de-la-merced",
+      "label": "Capilla de Nuestra Señora de la MercedChapelle · BarcelonaDimancheEn semaine",
+      "districts": [
+        "spain-portugal"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-multiregion-sspx-oct26-ib-es-barcelona-capilla-nuestra-senora-de-la-merced"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "label": "Capilla Sagrados Corazones de Jyeus y de MariaChapelle · BogotáDimancheEn semaine",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-GLOBAL-20261009-02-CAPILLA-SAGRADOS-CORAZONES-DE-JYEUS-Y-DE-MARIA"
+      ],
+      "basis": "FIRST_PARTY_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "source_geo_precision": "address"
+    },
+    {
+      "source_place_id": "capilla-san-jose",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-san-jose",
+      "label": "Capilla San JoséChapelle · Palmar de Ocoa, AzuaDimancheEn semaine",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "PALMAR_DE_OCOA_CITY_ONLY_OFFICIAL_SUNDAY_MASS_LOCATION",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "capilla-san-jose-laferrere-la-matanza",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-san-jose-laferrere-la-matanza",
+      "label": "Capilla San JoséChapelle · Laferrere, La MatanzaDimanche",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-GLOBAL-20261009-04-CAPILLA-SAN-JOSE-LAFERRERE-LA-MATANZA"
+      ],
+      "basis": "FIRST_PARTY_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "source_geo_precision": "address"
+    },
+    {
+      "source_place_id": "capilla-san-rafael",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-san-rafael",
+      "label": "Capilla San RafaélChapelle, Maison de retraites spirituelles · ZapotilticDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-MX-MX-ZAPOTILTIC-CAPILLA-SAN-RAFAEL-ARCANGEL"
+      ],
+      "basis": "OFFICIAL_MAP_AND_MEXICO_DIRECTORY_SAME_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "cappella-santa-caterina-da-siena",
+      "official_map_url": "https://map.fsspx.org/fr/places/cappella-santa-caterina-da-siena",
+      "label": "Cappella Santa Caterina da SienaChapelle · RomaDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-IT-IT-ROMA-CAPPELLA-S-CATERINA-DA-SIENA"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "casa-do-menino-jesus-de-praga",
+      "official_map_url": "https://map.fsspx.org/fr/places/casa-do-menino-jesus-de-praga",
+      "label": "Casa do Menino Jesus de PragaChapelle · FatimaDimancheEn semaine",
+      "districts": [
+        "spain-portugal"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-IB-PT-FATIMA-CASA-DO-MENINO-JESUS-DE-PRAGA-E-CAPELA"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "centro-de-misa-de-gonnet",
+      "official_map_url": "https://map.fsspx.org/fr/places/centro-de-misa-de-gonnet",
+      "label": "Centro de Misa de GonnetChapelle · GonnetDimanche",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-SA-AR-GONNET-ORATORIO-SAN-ANTONIO-DE-PADUA"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "centro-de-misa-de-pichi-mahuida",
+      "official_map_url": "https://map.fsspx.org/fr/places/centro-de-misa-de-pichi-mahuida",
+      "label": "Centro de Misa de Pichi-MahuidaMission · Pichi-MahuidaDimanche",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CITY_ONLY_NO_PHYSICAL_MASS_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "centrum-sw-ludwika-marii-grignion-de-montfort",
+      "official_map_url": "https://map.fsspx.org/fr/places/centrum-sw-ludwika-marii-grignion-de-montfort",
+      "label": "Centrum św. Ludwika Marii Grignion de MontfortChapelle · CzęstochowaDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "ADDRESS_CONFLICT_HOLD",
+      "venue_ids": [
+        "SSPX-OCT26-PL-CZESTOCHOWA-KAPLICA-SW-LUDWIKA-MARII-GRIGNIONA-DE-MONT"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": {
+        "old_map_address": "Tomasza Wilsona 30 (lok. B2), 42-202 Częstochowa",
+        "current_district_address": "ul. św. Jadwigi 18/20, Częstochowa, Polska"
+      },
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "chapel-of-ol-of-fatima",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapel-of-ol-of-fatima",
+      "label": "Chapel of OL of FatimaMission, Chapelle · Saint PetersburgDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-02-CHAPEL-OF-OL-OF-FATIMA"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chapel-of-st-joseph",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapel-of-st-joseph",
+      "label": "Chapel of St JosephMission · HamiltonDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-NZ-HAMILTON-SAINT-JOSEPH-S-CHAPEL"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "chapel-of-st-michael-the-archangel",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapel-of-st-michael-the-archangel",
+      "label": "Chapel of St Michael the ArchangelChapelle · TawaDimancheEn semaine",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-NZ-WELLINGTON-SAINT-MICHAEL-THE-ARCHANGEL-CHAPEL"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "chapel-of-the-immaculate-heart-of-mary",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapel-of-the-immaculate-heart-of-mary",
+      "label": "Chapel of the Immaculate Heart of MaryMission · MoscowDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-03-CHAPEL-OF-THE-IMMACULATE-HEART-OF-MARY"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chapel-of-the-immaculate-heart-of-mary-s-john",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapel-of-the-immaculate-heart-of-mary-s-john",
+      "label": "Chapel of the Immaculate Heart of Mary & S. JohnChapelle · AucklandDimancheEn semaine",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-NZ-AUCKLAND-IMMACULATE-HEART-OF-MARY-CHURCH"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "chapel-of-the-sacred-heart",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapel-of-the-sacred-heart",
+      "label": "Chapel of the Sacred HeartChapelle · MinskDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-04-CHAPEL-OF-THE-SACRED-HEART"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chapelle-de-la-sainte-famille",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-de-la-sainte-famille",
+      "label": "Chapelle de la Sainte FamilleChapelle · SionDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-SION-EGLISE-DE-LA-SAINTE-FAMILLE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-de-coat-ar-roch",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-de-coat-ar-roch",
+      "label": "Chapelle Notre-Dame de Coat ar RochChapelle · LannedernDimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-de-lourdes",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-de-lourdes",
+      "label": "Chapelle Notre-Dame de LourdesChapelle · Les RoussesDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-SSPXMAP-20261009-FR-LES-ROUSSES-ND-LOURDES"
+      ],
+      "basis": "FIRST_PARTY_OCTOBER_2026_DATED_LIVE_MASS_OR_2026_OFFICIAL_DISTRICT_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "geo_precision": "address",
+      "geo_source_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-de-lourdes"
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-du-rosaire",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-du-rosaire",
+      "label": "Chapelle Notre-Dame du RosaireChapelle · Le LausDimanche",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-SSPXMAP-20261009-FR-LE-LAUS-ND-ROSAIRE"
+      ],
+      "basis": "FIRST_PARTY_OCTOBER_2026_DATED_LIVE_MASS_OR_2026_OFFICIAL_DISTRICT_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "geo_precision": "address",
+      "geo_source_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-du-rosaire"
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-mediatrice-de-toutes-graces",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-mediatrice-de-toutes-graces",
+      "label": "Chapelle Notre-Dame Médiatrice de toutes grâcesMission · AdonisDimancheEn semaine",
+      "districts": [
+        "general-house"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "chapelle-saint-aubain",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-saint-aubain",
+      "label": "Chapelle Saint-AubainChapelle · NamurDimancheEn semaine",
+      "districts": [
+        "benelux"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-BEN-BE-NAMUR-CHAPELLE-SAINT-AUBIN"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "chapelle-saint-joseph-paita",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-saint-joseph-paita",
+      "label": "Chapelle Saint-JosephChapelle · Katiramona, Nouvelle-CalédonieDimancheEn semaine",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-10-CHAPELLE-SAINT-JOSEPH-PAITA"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chapelle-saint-mathias",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-saint-mathias",
+      "label": "Chapelle Saint-MathiasChapelle · PontoiseDimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "chapelle-saint-maurice",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-saint-maurice",
+      "label": "Chapelle saint-MauriceChapelle · PauDimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-france-first-party-sspx-lpl-lourdes-saint-ignace-pau"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "chapelle-saint-olaf",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-saint-olaf",
+      "label": "Chapelle Saint-OlafMission · OsloDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-05-CHAPELLE-SAINT-OLAF"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chapelle-sainte-emilie-de-rodat-ruols",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-sainte-emilie-de-rodat-ruols",
+      "label": "Chapelle Sainte-Emilie-de-RodatChapelle · OlempsDimanche",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "NEW_CURRENT_MASS_VENUE",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-OCT26-FOLLOWUP-01-CHAPELLE-SAINTE-EMILIE-DE-RODAT-RUOLS"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_AND_SUNDAY_SOURCE_20261009",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chapelle-ste-honorine",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-ste-honorine",
+      "label": "Chapelle Sainte-HonorineChapelle · Conflans-Sainte-HonorineDimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "NEW_CURRENT_MASS_VENUE",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-OCT26-FOLLOWUP-02-CHAPELLE-STE-HONORINE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_AND_SUNDAY_SOURCE_20261009",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chateau-de-cabanous",
+      "official_map_url": "https://map.fsspx.org/fr/places/chateau-de-cabanous",
+      "label": "Chapelle Saint Georges de LodèveMission · La CavalerieDimanche",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "NEW_CURRENT_MASS_VENUE",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-OCT26-FOLLOWUP-03-CHATEAU-DE-CABANOUS"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_AND_SUNDAY_SOURCE_20261009",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "chiesa-madonna-di-san-giovanni",
+      "official_map_url": "https://map.fsspx.org/fr/places/chiesa-madonna-di-san-giovanni",
+      "label": "Chiesa Madonna di San GiovanniMission · CoratoDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "NEW_CURRENT_MASS_VENUE",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-OCT26-FOLLOWUP-05-CHIESA-MADONNA-DI-SAN-GIOVANNI"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_AND_SUNDAY_SOURCE_20261009",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "christkonigskapelle",
+      "official_map_url": "https://map.fsspx.org/fr/places/christkonigskapelle",
+      "label": "ChristkönigskapelleChapelle · SchlierenDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-SCHLIEREN-CHAPELLE-DU-CHRIST-ROI"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "church-of-the-canadian-martyrs",
+      "official_map_url": "https://map.fsspx.org/fr/places/church-of-the-canadian-martyrs",
+      "label": "Church of the Canadian MartyrsChapelle · WarminsterDimanche",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-CA-HOLY-CANADIAN-MARTYRS-CHURCH-WARMINSTER-9767-HWY-12-W"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "church-of-the-holy-cross",
+      "official_map_url": "https://map.fsspx.org/fr/places/church-of-the-holy-cross",
+      "label": "Church of the Holy CrossChapelle · WokingDimanche",
+      "districts": [
+        "great-britain-ireland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-GLOBAL-20261009-07-CHURCH-OF-THE-HOLY-CROSS"
+      ],
+      "basis": "FIRST_PARTY_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "source_geo_precision": "address"
+    },
+    {
+      "source_place_id": "church-of-the-holy-face-of-jesus",
+      "official_map_url": "https://map.fsspx.org/fr/places/church-of-the-holy-face-of-jesus",
+      "label": "Church of the Holy Face of JesusChapelle · St. CatharinesDimanche",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-na-districts-20261008-sspx-na-ca-holy-face-of-jesus-church-st-catharines-181-lake-street"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "church-of-the-immaculate-heart-of-mary",
+      "official_map_url": "https://map.fsspx.org/fr/places/church-of-the-immaculate-heart-of-mary",
+      "label": "Church of the Immaculate Heart of MaryChapelle · TallinnDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-06-CHURCH-OF-THE-IMMACULATE-HEART-OF-MARY"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "dardanup",
+      "official_map_url": "https://map.fsspx.org/fr/places/dardanup",
+      "label": "DardanupMission · DardanupDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "MASS_MISSION_SITE_UNVERIFIED",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "debreceni-orvostudomanyi-egyetem-gyermekklinika-kapolnaja",
+      "official_map_url": "https://map.fsspx.org/fr/places/debreceni-orvostudomanyi-egyetem-gyermekklinika-kapolnaja",
+      "label": "Debreceni Orvostudományi Egyetem Gyermekklinika kápolnájaChapelle · DebrecenDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-HU-DEBRECEN-UNIVERSITATSKINDERKLINIK-KAPELLE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "dom-rekolekcyjny-pw-chrystusa-krola",
+      "official_map_url": "https://map.fsspx.org/fr/places/dom-rekolekcyjny-pw-chrystusa-krola",
+      "label": "Dom rekolekcyjny pw. Chrystusa KrólaMaison de retraites spirituelles, Chapelle · Kijewo KrólewskieDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-BAJERZE-KAPLICA-CHRYSTUSA-KROLA"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "dubbo",
+      "official_map_url": "https://map.fsspx.org/fr/places/dubbo",
+      "label": "DubboMission · RawsonvilleDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-AU-RAWSONVILLE-DUBBO-MASS-CENTRE-SOLDIER-S-MEMORIAL-HALL"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "dunstall-s-funeral-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/dunstall-s-funeral-chapel",
+      "label": "Dunstall’s Funeral ChapelMission · NapierDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-NZ-NAPIER-OUR-LADY-HELP-OF-CHRISTIANS-MISSION-DUNSTALL-S-FUNERAL-CHAPEL"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "east-devonport",
+      "official_map_url": "https://map.fsspx.org/fr/places/east-devonport",
+      "label": "East DevonportMission · East DevonportDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-AU-EAST-DEVONPORT-TASMANIAN-MISSION"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "eglise-saint-joseph-bruxelles",
+      "official_map_url": "https://map.fsspx.org/fr/places/eglise-saint-joseph-bruxelles",
+      "label": "Église Saint-JosephChapelle · BruxellesDimancheEn semaine",
+      "districts": [
+        "benelux"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-BEN-BE-BRUXELLES-SINT-JOZEFKERK-EGLISE-SAINT-JOSEPH"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "eglise-saint-raphael",
+      "official_map_url": "https://map.fsspx.org/fr/places/eglise-saint-raphael",
+      "label": "Église Saint RaphaëlMission · VunapisuDimancheEn semaine",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "VUNAPISU_FIJI_MISSION_EXACT_LOCATION_UNVERIFIED",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "eglise-sainte-foy",
+      "official_map_url": "https://map.fsspx.org/fr/places/eglise-sainte-foy",
+      "label": "Église Sainte-FoyChapelle · Jouy-MauvoisinDimanche",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "exerzitienhaus-porta-caeli",
+      "official_map_url": "https://map.fsspx.org/fr/places/exerzitienhaus-porta-caeli",
+      "label": "Exerzitienhaus Porta CaeliMaison de retraites spirituelles · LauterbachDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "gemeinde-st-petrus-canisius",
+      "official_map_url": "https://map.fsspx.org/fr/places/gemeinde-st-petrus-canisius",
+      "label": "Gemeinde St. Petrus CanisiusChapelle · KerkradeDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "NEW_CURRENT_MASS_VENUE",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-OCT26-FOLLOWUP-07-GEMEINDE-ST-PETRUS-CANISIUS"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_AND_SUNDAY_SOURCE_20261009",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "gran-canaria",
+      "official_map_url": "https://map.fsspx.org/fr/places/gran-canaria",
+      "label": "Gran CanariaMission · Las Palmas de Gran CanariaDimanche",
+      "districts": [
+        "spain-portugal"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "hervey-bay-mass-centre",
+      "official_map_url": "https://map.fsspx.org/fr/places/hervey-bay-mass-centre",
+      "label": "Hervey Bay Mass CentreMission · NikenbahDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-AU-NIKENBAH-PIALBA-HISTORICAL-VILLAGE-MUSEUM-CHAPEL"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "herz-jesu-kirche",
+      "official_map_url": "https://map.fsspx.org/fr/places/herz-jesu-kirche",
+      "label": "Herz Jesu KircheChapelle · OensingenDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "NEW_CURRENT_MASS_VENUE",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-OCT26-FOLLOWUP-06-HERZ-JESU-KIRCHE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_AND_SUNDAY_SOURCE_20261009",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "hill-end",
+      "official_map_url": "https://map.fsspx.org/fr/places/hill-end",
+      "label": "Hill EndMission · Hill EndDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-11-HILL-END"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "hong-kong",
+      "official_map_url": "https://map.fsspx.org/fr/places/hong-kong",
+      "label": "Hong-KongMission · KowloonDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "NO_CURRENT_VERIFIED_PHYSICAL_VISITOR_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "iglesia-de-nuestra-senora-de-la-soledad",
+      "official_map_url": "https://map.fsspx.org/fr/places/iglesia-de-nuestra-senora-de-la-soledad",
+      "label": "Iglesia de Nuestra Señora de la SoledadChapelle · Godoy CruzDimancheEn semaine",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-americas-sspx-oct26-sa-ar-godoy-cruz-iglesia-nuestra-senora-de-la-soledad"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "iglesia-nuestra-senora-de-lourdes",
+      "official_map_url": "https://map.fsspx.org/fr/places/iglesia-nuestra-senora-de-lourdes",
+      "label": "Iglesia Nuestra Señora de LourdesChapelle · AsunciónDimanche",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-GLOBAL-20261009-05-IGLESIA-NUESTRA-SENORA-DE-LOURDES"
+      ],
+      "basis": "FIRST_PARTY_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "source_geo_precision": "address"
+    },
+    {
+      "source_place_id": "immaculate-conception-church-gilford",
+      "official_map_url": "https://map.fsspx.org/fr/places/immaculate-conception-church-gilford",
+      "label": "Immaculate Conception ChurchChapelle · GilfordDimanche",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-US-NH-GILFORD"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "immaculate-heart-of-mary-mass-center",
+      "official_map_url": "https://map.fsspx.org/fr/places/immaculate-heart-of-mary-mass-center",
+      "label": "Immaculate Heart of Mary Mass CenterMission · TakatsukiDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-ACAS-ASIA-JP-005"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "indonesie-jakarta",
+      "official_map_url": "https://map.fsspx.org/fr/places/indonesie-jakarta",
+      "label": "IndonesiaMissionDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "NO_CURRENT_VERIFIED_PHYSICAL_VISITOR_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "kapel-van-onze-lieve-vrouw-van-de-rozenkrans",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapel-van-onze-lieve-vrouw-van-de-rozenkrans",
+      "label": "Kapel van Onze Lieve Vrouw van de RozenkransChapelle · LeidenDimancheEn semaine",
+      "districts": [
+        "benelux"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-BEN-NL-LEIDEN-KAPEL-O-L-V-VAN-DE-ROZENKRANS"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "kapela-sv-anna",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapela-sv-anna",
+      "label": "Kapela sv. AnnaMission · MariborDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-SI-MARIBOR-KAPELA-SV-DRUZINE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-der-heiligen-theresia",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-der-heiligen-theresia",
+      "label": "Kapelle der Heiligen TheresiaChapelle · BaselDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-BASEL-CHAPELLE-SAINTE-THERESE-DE-L-ENFANT-JESUS"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-heiliger-prokop",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-heiliger-prokop",
+      "label": "Kapelle Heiliger ProkopChapelle · PstružíDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-CZ-PSTRUZI-DUM-SV-PROKOPA"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-hl-prophet-elias",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-hl-prophet-elias",
+      "label": "Kapelle Hl. Prophet EliasMission, Chapelle · Ždár nad SázavouDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-CZ-ZDAR-NAD-SAZAVOU-KAPLE-SV-ELIASE-PROROKA"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-jablonec-nad-nisou",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-jablonec-nad-nisou",
+      "label": "Kapelle Jablonec nad NisouChapelle, Mission · Jablonec nad NisouDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "ADDRESS_CONFLICT_HOLD",
+      "status": "ADDRESS_CONFLICT_HOLD",
+      "venue_ids": [],
+      "discrepancy": {
+        "registry_address": "Anenské náměstí 3/4, 46601 Jablonec nad Nisou, Tschechien",
+        "official_map_address": "Jiráskova 7, Eurocentrum, 466 01 Jablonec nad Nisou, Czechia",
+        "reason": "2026-10-09 first-party international SSPX map shows a different Mass location from 2026-10-08 Austrian district import; venue may have moved; do not publish second site or silently move registered address"
+      },
+      "basis": "MOVED_SITE_OR_DIFFERENT_PHYSICAL_ADDRESS_NEEDS_ADJUDICATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-mgr-marcel-lefebvre",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-mgr-marcel-lefebvre",
+      "label": "Kapelle Mgr. Marcel LefebvreMission · Boršov nad VltavouDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-CZ-BORSOV-NAD-VLTAVOU-DUM-MSGR-MARCELA-LEFEBVRA-MASS-CHAPEL"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-pardubice",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-pardubice",
+      "label": "Kapelle PardubiceMission · PardubiceDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-CZ-PARDUBICE-SUNDAY-MASS-CENTRE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-prag",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-prag",
+      "label": "Kapelle PragChapelle · PrahaDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-CZ-PRAHA-DOMOV-SUE-RYDER-MASS-VENUE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-st-ansgar",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-st-ansgar",
+      "label": "Kapelle St. AnsgarChapelle · Seelze-LetterDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-DE-DE-HANNOVER-KAPELLE-HL-ANSGAR"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-st-blasius",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-st-blasius",
+      "label": "Kapelle St. BlasiusMission · MliniDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-HR-MLINI-KAPELA-SV-VLAHA"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-st-josef-viernheim",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-st-josef-viernheim",
+      "label": "Kapelle St. JosefChapelle · ViernheimDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-DE-DE-VIERNHEIM-KAPELLE-HL-JOSEF"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-st-pius-x",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-st-pius-x",
+      "label": "Kapelle St. Pius X.Chapelle · St. GallenDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-ST-GALLEN-CHAPELLE-SAINT-PIE-X"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-st-theresia-von-avila",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-st-theresia-von-avila",
+      "label": "Kapelle St Theresia von AvilaPrieuré, Chapelle · Hamburg-AlsterdorfDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-DE-DE-HAMBURG-KAPELLE-HL-THERESIA-VON-AVILA"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-uhersky-brod",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-uhersky-brod",
+      "label": "Kapelle Uherský BrodMission · Uherský BrodDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-CZ-UHERSKY-BROD-HRBITOVNI-KAPLE-STARY-HRBITOV"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kapelle-unsere-liebe-frau-huterin-des-glauben",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapelle-unsere-liebe-frau-huterin-des-glauben",
+      "label": "Kapelle Unsere Liebe Frau, Hüterin des GlaubenChapelle · Granges-PaccotDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-GRANGES-PACCOT-CHAPELLE-NOTRE-DAME-GARDIENNE-DE-LA-FOI"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-p-w-matki-bozej-ostrobramskiej",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-p-w-matki-bozej-ostrobramskiej",
+      "label": "Kaplica p.w. Matki Bożej OstrobramskiejChapelle · OlsztynDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-OLSZTYN-KAPLICA-MATKI-BOZEJ-OSTROBRAMSKIEJ"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-p-w-sw-wojciecha",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-p-w-sw-wojciecha",
+      "label": "Kaplica p.w. sw. WojciechaChapelle · SzczecinDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-SZCZECIN-KAPLICA-SW-WOJCIECHA"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pi-a",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pi-a",
+      "label": "Kaplica PiłaMission · PiłaDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-PI-A-KAPLICA-SW-JANA-CHRZCICIELA-I-SW-JANA-EWAN"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-jezusa-chrystusa-najwyzszego-i-wiecznego-kap-ana",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-jezusa-chrystusa-najwyzszego-i-wiecznego-kap-ana",
+      "label": "Kaplica pw. Jezusa Chrystusa Najwyższego i Wiecznego KapłanaChapelle · TarnówDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-tarnow-kaplica-jezusa-chrystusa-najwyzszego-i-wie"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-bolesnej",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-bolesnej",
+      "label": "Kaplica pw. Matki Bożej BolesnejChapelle · BydgoszczDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "ADDRESS_CONFLICT_HOLD",
+      "venue_ids": [
+        "SSPX-OCT26-PL-BYDGOSZCZ-KAPLICA-MATKI-BOZEJ-BOLESNEJ"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": {
+        "old_map_address": "Toruńska 155, 85-950 Bydgoszcz",
+        "current_district_address": "ul. Fordońska 399, Bydgoszcz, Polska"
+      },
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-dobrej-rady",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-dobrej-rady",
+      "label": "Kaplica pw. Matki Bożej Dobrej RadyChapelle · GnieznoDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-gniezno-kaplica-matki-bozej-dobrej-rady"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-rozancowej-z-pompejow",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-rozancowej-z-pompejow",
+      "label": "Kaplica pw. Matki Bożej Różańcowej z PompejówChapelle · OpoleDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-opole-kaplica-matki-bozej-rozancowej-z-pompejow"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-wspomozycielki-wiernych",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-wspomozycielki-wiernych",
+      "label": "Kaplica pw. Matki Bożej Wspomożycielki WiernychChapelle · JarosławDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-jaros-aw-kaplica-matki-bozej-wspomozycielki-wiernyc"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-nmpanny-nieustajacej-pomocy",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-nmpanny-nieustajacej-pomocy",
+      "label": "Kaplica pw. NMPanny Nieustającej PomocyChapelle · BolesławiecDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-BOLES-AWIEC-KAPLICA-NMP-NIEUSTAJACEJ-POMOCY"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-andrzeja-boboli",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-andrzeja-boboli",
+      "label": "Kaplica pw. św. Andrzeja BoboliChapelle · ZaczernieDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-RZESZOW-KAPLICA-SW-ANDRZEJA-BOBOLI"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-franciszka-z-asyzu",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-franciszka-z-asyzu",
+      "label": "Kaplica pw. św. Franciszka z AsyżuChapelle · BukowiecDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-bukowiec-kaplica-sw-franciszka-z-asyzu"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-ignacego-loyoli",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-ignacego-loyoli",
+      "label": "Kaplica pw. św. Ignacego LoyoliChapelle · SłupskDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-S-UPSK-KAPLICA-SW-IGNACEGO-LOYOLI"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-jadwigi-slaskiej",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-jadwigi-slaskiej",
+      "label": "Kaplica pw. św. Jadwigi ŚląskiejChapelle · WroclawDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-WROC-AW-KAPLICA-SW-JADWIGI-SLASKIEJ"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-jana-marii-vianneya",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-jana-marii-vianneya",
+      "label": "Kaplica pw. św. Jana Marii VianneyaChapelle · ToruńDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-torun-kaplica-sw-jana-marii-vianneya"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-jana-z-dukli",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-jana-z-dukli",
+      "label": "Kaplica pw. św. Jana z DukliChapelle · KrosnoDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-krosno-kaplica-sw-jana-z-dukli"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-kingi",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-kingi",
+      "label": "Kaplica pw. św. KingiChapelle · Nowy SączDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-NOWY-SACZ-KAPLICA-SW-KINGI"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-melchiora-grodzieckiego",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-melchiora-grodzieckiego",
+      "label": "Kaplica pw. św. Melchiora GrodzieckiegoChapelle · Bielsko-BiałaDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-BIELSKO-BIA-A-KAPLICA-SW-MELCHIORA-GRODZIECKIEGO"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-piusa-v",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-piusa-v",
+      "label": "Kaplica pw. św. Piusa VChapelle · ŁódźDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-ODZ-KAPLICA-SW-PIUSA-V"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-stanis-awa-kostki",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-stanis-awa-kostki",
+      "label": "Kaplica pw. św. Stanisława KostkiChapelle · LublinDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-lublin-kaplica-sw-stanis-awa-kostki"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-teresy-od-dzieciatka-jezus",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-teresy-od-dzieciatka-jezus",
+      "label": "Kaplica pw. św. Teresy od Dzieciątka JezusChapelle · TczewDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-tczew-kaplica-sw-teresy-od-dzieciatka-jezus"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-sw-antoniego-z-padwy",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-sw-antoniego-z-padwy",
+      "label": "Kaplica św. Antoniego z PadwyChapelle · ZamośćDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-ZAMOSC-KAPLICA-SW-ANTONIEGO-PADEWSKIEGO"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-sw-krzyza",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-sw-krzyza",
+      "label": "Kaplica św. KrzyżaChapelle · KielceDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-KIELCE-KAPLICA-SWIETEGO-KRZYZA"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kaplica-zielona-gora",
+      "official_map_url": "https://map.fsspx.org/fr/places/kaplica-zielona-gora",
+      "label": "Kaplica Zielona GóraMission · Zielona GóraDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-PL-ZIELONA-GORA-KAPLICA-SWIETYCH-PIECIU-BRACI-MECZENNIKOW"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kirche-hl-mauritius",
+      "official_map_url": "https://map.fsspx.org/fr/places/kirche-hl-mauritius",
+      "label": "Kirche Hl. MauritiusMission, Chapelle · GlisDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-GLIS-CHAPELLE-SAINT-MAURICE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kirche-mariae-verkundigung",
+      "official_map_url": "https://map.fsspx.org/fr/places/kirche-mariae-verkundigung",
+      "label": "Kirche Mariae VerkündigungChapelle · Schramberg-SulgenDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-DE-DE-SCHRAMBERG-KIRCHE-MARIA-VERKUNDIGUNG"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "kirche-st-joseph",
+      "official_map_url": "https://map.fsspx.org/fr/places/kirche-st-joseph",
+      "label": "Kirche St. JosephChapelle · MemmingenDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-DE-DE-MEMMINGEN-KIRCHE-ST-JOSEF"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "le-bremien-notre-dame",
+      "official_map_url": "https://map.fsspx.org/fr/places/le-bremien-notre-dame",
+      "label": "Maison de retraite \"Le Brémien Notre-Dame\"Résidence, Maison de retraite · Illiers-l'EvêqueDimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "magyarok-nagyasszonya-kapolna",
+      "official_map_url": "https://map.fsspx.org/fr/places/magyarok-nagyasszonya-kapolna",
+      "label": "Magyarok Nagyasszonya KápolnaChapelle · BudapestDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-HU-BUDAPEST-KAPELLE-UNSERER-LIEBEN-FRAU-VON-UNGARN"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mar-del-plata",
+      "official_map_url": "https://map.fsspx.org/fr/places/mar-del-plata",
+      "label": "Mar del PlataMission · Mar del PlataDimancheEn semaine",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CITY_ONLY_NO_PHYSICAL_MASS_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "maria-hilfe-der-christen",
+      "official_map_url": "https://map.fsspx.org/fr/places/maria-hilfe-der-christen",
+      "label": "Maria Hilfe der ChristenChapelle · GoldauDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-GOLDAU-CHAPELLE-MARIE-SECOURS-DES-CHRETIENS"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "maria-stella-maris-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/maria-stella-maris-church",
+      "label": "Maria Stella Maris ChurchChapelle · San PedroDimanche",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-US-MARIA-STELLA-MARIS-MISSION-SAN-PEDRO-3600-S-GAFFEY-STREET"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "maritimes-missions-nb",
+      "official_map_url": "https://map.fsspx.org/fr/places/maritimes-missions-nb",
+      "label": "Maritimes Missions - NBMissionDimanche",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "MULTI_LOCALITY_MISSION_NO_STABLE_MASS_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "maritimes-missions-ns",
+      "official_map_url": "https://map.fsspx.org/fr/places/maritimes-missions-ns",
+      "label": "Maritimes Missions - NSMissionDimanche",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "MULTI_LOCALITY_MISSION_NO_STABLE_MASS_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "maungatapere-memorial-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/maungatapere-memorial-chapel",
+      "label": "Maungatapere Memorial ChapelMission · WhangareiDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-NZ-WHANGAREI-SAINT-PETER-CHANEL-MISSION"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mision-aguascalientes",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-aguascalientes",
+      "label": "Misión AguascalientesMission · AguascalientesDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-01-MISION-AGUASCALIENTES"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-cancun",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-cancun",
+      "label": "Misión - CancúnMission · CancúnDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CONFLICTING_SUNDAY_HALL_AND_SATURDAY_VENUE_FUTURE_CHURCH_NOT_YET_BUILT",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "mision-de-la-fraternidad-s-pio-x",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-de-la-fraternidad-s-pio-x",
+      "label": "Misiòn de la Fraternidad S. Pio XMission · San SalvadorDimanche",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "ADDRESS_CONFLICT_HOLD",
+      "venue_ids": [],
+      "basis": "OFFICIAL_SOURCES_PHYSICAL_ADDRESS_DISAGREE",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "discrepancy": {
+        "official_place_id": "mision-de-la-fraternidad-s-pio-x",
+        "official_map_url": "https://map.fsspx.org/fr/places/mision-de-la-fraternidad-s-pio-x",
+        "district": "central-america",
+        "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+        "decision": "ADDRESS_CONFLICT_HOLD",
+        "registry_address": "Calle Arce No. 910, San Salvador, El Salvador",
+        "official_2026_district_address": "Calle Gabriela Mistral 563, San Salvador, El Salvador",
+        "reason": "Same SSPX mission; national and global first-party directory street disagreement, presumed venue move not independently adjudicated",
+        "official_url": "https://centroamerica.fsspx.org/es/capillas-1"
+      }
+    },
+    {
+      "source_place_id": "mision-don-bosco",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-don-bosco",
+      "label": "Misión Don BoscoMission · ChilapaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-02-MISION-DON-BOSCO"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-ensenada",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-ensenada",
+      "label": "Misión EnsenadaMission · EnsenadaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-03-MISION-ENSENADA"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-jalapa",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-jalapa",
+      "label": "Misión - JalapaMission · JalapaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CITY_ONLY_NO_VERIFIED_PUBLIC_STREET",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "mision-merida",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-merida",
+      "label": "Misión - MeridaMission · MéridaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CHICHI_SUAREZ_VERSUS_TEMPORARY_QUINTA_CHABLEKAL_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "mision-monterrey",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-monterrey",
+      "label": "Misión - MonterreyChapelle · Santa CatarinaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-MX-MX-SANTA-CATARINA-CAPILLA-CORAZON-INMACULADO-DE-MARIA"
+      ],
+      "basis": "OFFICIAL_MAP_AND_MEXICO_DIRECTORY_SAME_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mision-morelia",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-morelia",
+      "label": "Misión - MoreliaMission · MoreliaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-04-MISION-MORELIA"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-oaxaca",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-oaxaca",
+      "label": "Misión - OaxacaMission · OaxacaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CITY_ONLY_NO_VERIFIED_PUBLIC_STREET",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "mision-puebla",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-puebla",
+      "label": "Misión PueblaChapelle, Mission · CholulaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-MX-MX-CHOLULA-IGLESIA-NUESTRA-SENORA-DE-LOS-ANGELE"
+      ],
+      "basis": "OFFICIAL_MAP_AND_MEXICO_DIRECTORY_SAME_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mision-queretaro",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-queretaro",
+      "label": "Misión QuerétaroChapelle · CorregidoraDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-06-MISION-QUERETARO"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-s-ignacio",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-s-ignacio",
+      "label": "Misión - S. IgnacioMission · San Ignacio Cerro GordoDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-07-MISION-S-IGNACIO"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-sagrada-familia",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-sagrada-familia",
+      "label": "Misión Sagrada FamiliaChapelle · CuernavacaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-05-MISION-SAGRADA-FAMILIA"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-saltillo",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-saltillo",
+      "label": "Misión - SaltilloChapelle · SaltilloDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-MX-MX-SALTILLO-CAPILLA-SAGRADO-CORAZON"
+      ],
+      "basis": "OFFICIAL_MAP_AND_MEXICO_DIRECTORY_SAME_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mision-san-luis-rey",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-san-luis-rey",
+      "label": "Misión San Luis ReyMission, Chapelle · San Luis PotosíDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-08-MISION-SAN-LUIS-REY"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-san-pio-x",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-san-pio-x",
+      "label": "Misión San Pío XMission · QuetzaltenangoDimanche",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-GLOBAL-20261009-01-MISION-SAN-PIO-X"
+      ],
+      "basis": "FIRST_PARTY_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "source_geo_precision": "locality"
+    },
+    {
+      "source_place_id": "mision-santa-maria-goretti",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-santa-maria-goretti",
+      "label": "Misión Santa María GorettiMission · IrapuatoDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-MX-MX-IRAPUATO-MISION-FSSPX"
+      ],
+      "basis": "OFFICIAL_MAP_AND_MEXICO_DIRECTORY_SAME_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mision-tlaxiaco",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-tlaxiaco",
+      "label": "Misión - TlaxiacoChapelle · TlaxiacoDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-MX-MX-TLAXIACO-IGLESIA-SAN-NICOLAS-DE-TOLENTINO"
+      ],
+      "basis": "OFFICIAL_MAP_AND_MEXICO_DIRECTORY_SAME_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mision-toluca",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-toluca",
+      "label": "Misión - TolucaMission, Chapelle · TolucaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-09-MISION-TOLUCA"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mision-tuxtla",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-tuxtla",
+      "label": "Misión TuxtlaChapelle, Mission · Tuxtla GutiérrezDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-MX-MX-TUXTLA-GUTIERREZ-CAPILLA-SAN-JOSE"
+      ],
+      "basis": "OFFICIAL_MAP_AND_MEXICO_DIRECTORY_SAME_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mision-veracruz",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-veracruz",
+      "label": "Misión - VeracruzMission · VeracruzDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CITY_ONLY_NO_VERIFIED_PUBLIC_STREET",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "mision-zacatecas",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-zacatecas",
+      "label": "Misión - ZacatecasMission · ZacatecasDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-MX-COMP-20261009-10-MISION-ZACATECAS"
+      ],
+      "basis": "PR501_OFFICIAL_MEXICO_STREET",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "mission-of-st-peter-mary-chanel",
+      "official_map_url": "https://map.fsspx.org/fr/places/mission-of-st-peter-mary-chanel",
+      "label": "Mission of St Peter Mary ChanelMission · DarwinDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "DARWIN_MISSION_CITY_ONLY_NO_STREET",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "mission-osijek",
+      "official_map_url": "https://map.fsspx.org/fr/places/mission-osijek",
+      "label": "Mission OsijekChapelle · OsijekDimanche",
+      "districts": [
+        "austria"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-AT-HR-OSIJEK-SUNDAY-MASS-MISSION"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "mutter-v-d-immerwahrenden-hilfe",
+      "official_map_url": "https://map.fsspx.org/fr/places/mutter-v-d-immerwahrenden-hilfe",
+      "label": "Mutter v. d. Immerwährenden HilfeChapelle · FuldaDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-DE-DE-FULDA-MUTTER-VON-DER-IMMERWAHRENDEN-HILFE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "nakavu-village",
+      "official_map_url": "https://map.fsspx.org/fr/places/nakavu-village",
+      "label": "Nakavu VillageMission · Nakavu VillageDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-FJ-NAKAVU-NAKAVU-VILLAGE-MASS-CENTRE"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "notre-dame-de-lepante",
+      "official_map_url": "https://map.fsspx.org/fr/places/notre-dame-de-lepante",
+      "label": "Notre Dame de LépanteChapelle · MontreuxDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-MONTREUX-EGLISE-NOTRE-DAME-DE-LEPANTE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "ntra-sra-de-alta-gracia",
+      "official_map_url": "https://map.fsspx.org/fr/places/ntra-sra-de-alta-gracia",
+      "label": "Ntra. Sra. de Alta GraciaMission · Los MosquitosDimanche",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "LOS_MOSQUITOS_SITE_ADDRESS_NOT_PUBLISHED",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "olbia",
+      "official_map_url": "https://map.fsspx.org/fr/places/olbia",
+      "label": "OlbiaMission · OlbiaDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-IT-IT-OLBIA-SSPX-MASS-CENTRE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "oratoire-st-joseph",
+      "official_map_url": "https://map.fsspx.org/fr/places/oratoire-st-joseph",
+      "label": "GuyaneMission, Chapelle · Cayenne - Kourou - Saint-LourentDimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "oratorio-san-jose",
+      "official_map_url": "https://map.fsspx.org/fr/places/oratorio-san-jose",
+      "label": "Oratorio San JoséMission · La HabanaDimanche",
+      "districts": [
+        "mexico"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "HAVANA_CITY_ONLY_NO_VERIFIED_PUBLIC_STREET",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "oratorio-stella-maris",
+      "official_map_url": "https://map.fsspx.org/fr/places/oratorio-stella-maris",
+      "label": "Oratorio Stella MarisMission · Panama CityDimancheEn semaine",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "ADDRESS_CONFLICT_HOLD",
+      "venue_ids": [],
+      "basis": "OFFICIAL_SOURCES_PHYSICAL_ADDRESS_DISAGREE",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "discrepancy": {
+        "official_place_id": "oratorio-stella-maris",
+        "official_map_url": "https://map.fsspx.org/fr/places/oratorio-stella-maris",
+        "district": "central-america",
+        "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+        "decision": "ADDRESS_CONFLICT_HOLD",
+        "official_map_address": "Avenida Morgan 2468, Panama City",
+        "official_mass_schedule_address": "Calle Los Almendros 57, Albrook, Ancón, Panama City",
+        "reason": "Two different street addresses within the same current official SSPX mission page, so neither exact Mass venue nor pin can be asserted",
+        "official_url": "https://map.fsspx.org/de/places/oratorio-stella-maris"
+      }
+    },
+    {
+      "source_place_id": "ormoc",
+      "official_map_url": "https://map.fsspx.org/fr/places/ormoc",
+      "label": "OrmocMission · OrmocDimancheEn semaine",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "SUNDAY_FIRST_OF_MONTH_ONLY_NO_VISITOR_STREET_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "our-lady-and-st-andrew-s-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-and-st-andrew-s-church",
+      "label": "Our Lady and St. Andrew's ChurchChapelle · HamptonDimancheEn semaine",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-four-district-bulk-sspx-anz-au-hampton-our-lady-and-saint-andrew-s-church"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "our-lady-of-consolation-st-joseph-ch",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-consolation-st-joseph-ch",
+      "label": "Our Lady of Consolation & St Joseph Ch.Chapelle · Iloilo CityDimancheEn semaine",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-ACAS-ASIA-PH-021"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "our-lady-of-fatima-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-fatima-chapel",
+      "label": "Our Lady of Fatima ChapelChapelle · RichmondDimancheEn semaine",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-US-VA-RICHMOND"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "our-lady-of-knock-and-st-patrick-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-knock-and-st-patrick-chapel",
+      "label": "Our Lady of Knock and St Patrick ChapelChapelle · NewryDimanche",
+      "districts": [
+        "great-britain-ireland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-four-district-bulk-sspx-gb-gb-newry-our-lady-of-knock-and-saint-patrick-chapel"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "our-lady-of-lourdes-mission",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-lourdes-mission",
+      "label": "Our Lady of Lourdes MissionMission · Honolulu (Waikiki)Dimanche",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-US-HI-HONOLULU"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "our-lady-of-rosa-mystica-and-st-joseph-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-rosa-mystica-and-st-joseph-church",
+      "label": "Our Lady of Rosa Mystica and St. Joseph ChurchChapelle · General Santos CityDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-027"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "our-lady-of-the-most-holy-rosary-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-the-most-holy-rosary-church",
+      "label": "Our Lady of the Most Holy Rosary ChurchChapelle · WinnipegDimancheEn semaine",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-CA-OUR-LADY-OF-THE-ROSARY-CHURCH-WINNIPEG-478-MCKENZIE-STREET"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "our-lady-of-victory-church-las-vegas",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-victory-church-las-vegas",
+      "label": "Our Lady of Victory ChurchChapelle · Las VegasDimanche",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-US-NV-LASVEGAS"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "palermo",
+      "official_map_url": "https://map.fsspx.org/fr/places/palermo",
+      "label": "PalermoMission · PalermoDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "pavia-voghera",
+      "official_map_url": "https://map.fsspx.org/fr/places/pavia-voghera",
+      "label": "Pavia-VogheraMission · PaviaDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "prieure-n-d-de-la-misericorde",
+      "official_map_url": "https://map.fsspx.org/fr/places/prieure-n-d-de-la-misericorde",
+      "label": "Chapelle de ND de l’AssomptionChapelle · Corse du Sud (Ajaccio) - AFADimancheEn semaine",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "NEW_CURRENT_MASS_VENUE",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-OCT26-FOLLOWUP-04-PRIEURE-N-D-DE-LA-MISERICORDE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_AND_SUNDAY_SOURCE_20261009",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "priorat-heilige-familie",
+      "official_map_url": "https://map.fsspx.org/fr/places/priorat-heilige-familie",
+      "label": "Priorat Heilige FamilieChapelle · Neustadt/WeinstraßeDimanche",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-DE-DE-NEUSTADT-KAPELLE-HEILIGE-FAMILIE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "priorato-sagrado-corazon-de-jesus",
+      "official_map_url": "https://map.fsspx.org/fr/places/priorato-sagrado-corazon-de-jesus",
+      "label": "Priorato Sagrado Corazón de JesúsPrieuré · Santo Domingo · lieux desservis 5",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "YAMASA_PRIORY_WITH_MULTIPLE_MISSIONS_PUBLIC_ACCESS_NOT_PROVEN",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "priorato-santa-teresita-del-nino-jesus",
+      "official_map_url": "https://map.fsspx.org/fr/places/priorato-santa-teresita-del-nino-jesus",
+      "label": "Priorato Santa Teresita del Niño JesúsChapelle · BucaramangaDimanche",
+      "districts": [
+        "central-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-GLOBAL-20261009-03-PRIORATO-SANTA-TERESITA-DEL-NINO-JESUS"
+      ],
+      "basis": "FIRST_PARTY_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "source_geo_precision": "address"
+    },
+    {
+      "source_place_id": "ravanusa",
+      "official_map_url": "https://map.fsspx.org/fr/places/ravanusa",
+      "label": "RavanusaMission, Chapelle · RavanusaDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-IT-IT-RAVANUSA-SSPX-MASS-CENTRE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "rende",
+      "official_map_url": "https://map.fsspx.org/fr/places/rende",
+      "label": "RendeMission · CosenzaDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "rosenkranz-kapelle",
+      "official_map_url": "https://map.fsspx.org/fr/places/rosenkranz-kapelle",
+      "label": "Rosenkranz-KapelleChapelle · Passau-InnstadtDimanche",
+      "districts": [
+        "zaitzkofen"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-SSPXMAP-20261009-DE-PASSAU-ROSENKRANZ"
+      ],
+      "basis": "FIRST_PARTY_OCTOBER_2026_DATED_LIVE_MASS_OR_2026_OFFICIAL_DISTRICT_SUNDAY_SCHEDULE_AND_PHYSICAL_ADDRESS",
+      "new_mass_record_count": 1,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json",
+      "geo_precision": "address",
+      "geo_source_url": "https://map.fsspx.org/de/places/rosenkranz-kapelle"
+    },
+    {
+      "source_place_id": "rotuma",
+      "official_map_url": "https://map.fsspx.org/fr/places/rotuma",
+      "label": "RotumaMission · JujuDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Juju location insufficient to infer accessible building",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "sacred-heart-of-jesus-and-mary-mission",
+      "official_map_url": "https://map.fsspx.org/fr/places/sacred-heart-of-jesus-and-mary-mission",
+      "label": "Sacred Heart of Jesus and Mary MissionChapelle · SingletonDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-ANZ-AU-SINGLETON-SACRED-HEART-OF-JESUS-AND-MARY-CHURCH"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "saint-anthony-of-padua-mission",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-anthony-of-padua-mission",
+      "label": "Saint Anthony of Padua MissionChapelle · North CaldwellDimancheEn semaine",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-US-SAINT-ANTHONY-OF-PADUA-CHAPEL-NORTH-CALDWELL-103-GOULD-AVENUE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "saint-catherine-of-siena-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-catherine-of-siena-chapel",
+      "label": "Saint Catherine of Siena ChapelMission · WestonDimancheEn semaine",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-US-SAINT-CATHERINE-OF-SIENNA-MISSION-WESTON-439-BOSTON-POST-RD"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "saint-francis-xavier-priory",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-francis-xavier-priory",
+      "label": "Saint Francis Xavier PrioryChapelle · NegomboDimancheEn semaine",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-ACAS-ASIA-LK-003"
+      ],
+      "basis": "LIVE_MAP_VS_DISTRICT_ADDRESS_MATCH",
+      "discrepancy": null,
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "saint-james-catholic-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-james-catholic-church",
+      "label": "Saint James Catholic ChurchChapelle · PittsburghDimancheEn semaine",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-US-SAINT-JAMES-CHURCH-PITTSBURGH-326-S-MAIN-ST"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "saint-joseph-s-catholic-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-joseph-s-catholic-church",
+      "label": "Saint Joseph's Catholic ChurchChapelle · GreenwoodDimanche",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-US-IN-GREENWOOD"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "saint-pius-v-chapel-onithsha",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-pius-v-chapel-onithsha",
+      "label": "Saint Pius V ChapelMission · OnithshaDimanche",
+      "districts": [
+        "africa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-AF-NG-ONITSHA"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "saint-therese-patron-of-alaska-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-therese-patron-of-alaska-chapel",
+      "label": "Saint Therese, Patron of Alaska ChapelChapelle · AnchorageDimanche",
+      "districts": [
+        "usa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-US-AK-ANCHORAGE"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "saint-willibrordkerk",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-willibrordkerk",
+      "label": "Saint WillibrordkerkChapelle · UtrechtDimanche",
+      "districts": [
+        "benelux"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-BEN-NL-UTRECHT-SINT-WILLIBRORDKERK"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "sainte-marie-de-re",
+      "official_map_url": "https://map.fsspx.org/fr/places/sainte-marie-de-re",
+      "label": "Chapelle de l'Île de RéChapelle · Ile de RéDimanche",
+      "districts": [
+        "france"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "san-luis",
+      "official_map_url": "https://map.fsspx.org/fr/places/san-luis",
+      "label": "San LuisMission · San LuisDimanche",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "CITY_ONLY_NO_PHYSICAL_MASS_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "sanfre",
+      "official_map_url": "https://map.fsspx.org/fr/places/sanfre",
+      "label": "SanfrèMission · SanfrèDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "seniorenheim-st-josef",
+      "official_map_url": "https://map.fsspx.org/fr/places/seniorenheim-st-josef",
+      "label": "Seniorenheim St. JosefMaison de retraite, Chapelle · WeihungszellDimancheEn semaine",
+      "districts": [
+        "germany"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "spiritual-centre-of-saint-berthold",
+      "official_map_url": "https://map.fsspx.org/fr/places/spiritual-centre-of-saint-berthold",
+      "label": "Spiritual Centre of Saint BertholdChapelle · RigaDimancheEn semaine",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-07-SPIRITUAL-CENTRE-OF-SAINT-BERTHOLD"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "st-amanduskapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-amanduskapel",
+      "label": "St. AmanduskapelChapelle · GentDimanche",
+      "districts": [
+        "benelux"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-BEN-BE-GENT-SINT-AMANDUSKAPEL"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "st-andrew-s-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-andrew-s-church",
+      "label": "St Andrew's ChurchChapelle · GlasgowDimancheEn semaine",
+      "districts": [
+        "great-britain-ireland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-four-district-bulk-sspx-gb-gb-glasgow-saint-andrew-s-church"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-anne-s-catholic-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-anne-s-catholic-church",
+      "label": "St. Anne's Catholic ChurchMission · RasmussenDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-four-district-bulk-sspx-anz-au-rasmussen-saint-anne-s-catholic-church"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-anne-s-mission",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-anne-s-mission",
+      "label": "St. Anne's MissionMission · Medicine HatDimanche",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-CA-SAINT-ANNE-MISSION-MEDICINE-HAT-1-DUNMORE-RD-SE"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "st-anthony-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-anthony-chapel",
+      "label": "St. Anthony ChapelMission · ManbusaoDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-ACAS-ASIA-PH-018"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "st-anthony-s-chapel-singamparai",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-anthony-s-chapel-singamparai",
+      "label": "St. Anthony's ChapelChapelle · Tirunelveli Dist.Dimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-ACAS-ASIA-IN-032"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-anthony-s-shrine",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-anthony-s-shrine",
+      "label": "St Anthony's ShrineChapelle · ChennaiDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-in-033"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-bartholomew-s-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-bartholomew-s-chapel",
+      "label": "Saint Bartholomew's MissionChapelle · Vasai (W), Dist- PalgharDimancheEn semaine",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "VASAI_DISTRICT_ONLY_NO_VISITOR_STREET_ADDRESS",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "st-francis-xavier-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-francis-xavier-chapel",
+      "label": "St. Francis Xavier ChapelChapelle · TuticorinDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-in-034"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-joseph-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-joseph-chapel",
+      "label": "St. Joseph ChapelMission · BatoDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-010"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-jospeh-s-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-jospeh-s-chapel",
+      "label": "St Joseph's ChapelChapelle · TrichyDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-OCT26-ACAS-ASIA-IN-035"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-meinrad-kapelle",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-meinrad-kapelle",
+      "label": "St. Meinrad KapelleChapelle · GommiswaldDimancheEn semaine",
+      "districts": [
+        "switzerland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-CH-CH-GOMMISWALD-CHAPELLE-SAINT-MEINRAD"
+      ],
+      "basis": "OFFICIAL_MAP_STREET_LEVEL_SOURCE_RECONCILIATION",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-michael-s-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-michael-s-chapel",
+      "label": "St. Michael's ChapelMission · Koronadal CityDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-028"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-michael-s-chapel-laucala-beach-estate",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-michael-s-chapel-laucala-beach-estate",
+      "label": "St Michael's ChapelMission · Laucala Beach EstateDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-four-district-bulk-sspx-anz-fj-laucala-beach-estate-saint-michael-s-chapel"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-michael-s-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-michael-s-church",
+      "label": "St. Michael's ChurchChapelle · WayvilleDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-four-district-bulk-sspx-anz-au-wayville-saint-michael-s-church"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-paul-s-mission",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-paul-s-mission",
+      "label": "St. Paul's MissionMission · FolweniDimanche",
+      "districts": [
+        "africa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-district-seed-sspx-af-za-folweni"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-philomena-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-philomena-chapel",
+      "label": "St. Philomena ChapelChapelle · Port ElizabethDimanche",
+      "districts": [
+        "africa"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-district-seed-sspx-af-za-portelizabeth"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-philomena-chapel-tanay",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-philomena-chapel-tanay",
+      "label": "St. Philomena ChapelMission · TanayDimanche",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-015"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-philomena-mission",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-philomena-mission",
+      "label": "St. Philomena MissionMission · Greater SudburyDimanche",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-na-districts-20261008-sspx-na-ca-saint-philomena-mission-greater-sudbury-1233-paris-st"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-pius-v-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-pius-v-chapel",
+      "label": "St Pius V ChapelMission · Mandaue CityDimancheEn semaine",
+      "districts": [
+        "asia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-019"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-therese-s-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-therese-s-chapel",
+      "label": "St Therese's ChapelMission · Streaky BayDimanche",
+      "districts": [
+        "australia"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_OFFICIAL_CRM_LINK",
+      "venue_ids": [
+        "ao-research-sspx-four-district-bulk-sspx-anz-au-streaky-bay-saint-therese-s-chapel"
+      ],
+      "basis": "PR477_APPROVED_OFFICIAL_GEO_ALIAS",
+      "new_mass_record_count": 0
+    },
+    {
+      "source_place_id": "st-thomas-more-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-thomas-more-church",
+      "label": "St. Thomas More ChurchChapelle · BrinstonDimanche",
+      "districts": [
+        "canada"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-NA-CA-ST-THOMAS-MORE-CATHOLIC-CHURCH-BRINSTON-11052-GILMOUR-ROAD"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "sv-juozapo-koplycia",
+      "official_map_url": "https://map.fsspx.org/fr/places/sv-juozapo-koplycia",
+      "label": "Šv. Juozapo koplyčiaChapelle · ŠiauliaiDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-08-SV-JUOZAPO-KOPLYCIA"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "svc-mergeles-marijos-rozancines-koplycia",
+      "official_map_url": "https://map.fsspx.org/fr/places/svc-mergeles-marijos-rozancines-koplycia",
+      "label": "Švč. Mergelės Marijos Rožančinės koplyčiaChapelle · VilniusDimanche",
+      "districts": [
+        "poland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "NEW_VERIFIED_MASS_VENUE",
+      "venue_ids": [
+        "SSPX-PRIORITY-20261009-09-SVC-MERGELES-MARIJOS-ROZANCINES-KOPLYCIA"
+      ],
+      "basis": "PR511_PRIMARY_OFFICIAL_MAP_ADDRESS",
+      "new_mass_record_count": 1
+    },
+    {
+      "source_place_id": "temuco",
+      "official_map_url": "https://map.fsspx.org/fr/places/temuco",
+      "label": "TemucoMission · TemucoDimancheEn semaine",
+      "districts": [
+        "south-america"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "FAMILY_VILLAGRA_PRIVATE_HOST_NO_SPECIFIC_PUBLIC_STREET",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "the-little-house",
+      "official_map_url": "https://map.fsspx.org/fr/places/the-little-house",
+      "label": "The Little HouseMission · BingleyDimanche",
+      "districts": [
+        "great-britain-ireland"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "status": "EXISTING_PHYSICAL_ALIAS",
+      "venue_ids": [
+        "SSPX-GB-GB-BINGLEY-THE-LITTLE-HOUSE-MASS-CHAPEL"
+      ],
+      "basis": "OFFICIAL_MAP_AND_REGISTERED_PHYSICAL_LOCATION_IDENTITY",
+      "new_mass_record_count": 0,
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    },
+    {
+      "source_place_id": "verona",
+      "official_map_url": "https://map.fsspx.org/fr/places/verona",
+      "label": "VeronaMission, Chapelle · VeronaDimanche",
+      "districts": [
+        "italy"
+      ],
+      "initial_bucket": "UNRESOLVED_SUNDAY_IDENTITY",
+      "previous_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "batch_review_file": "data/directory/research/sspx-six-district-65-review-20261009.v1.json",
+      "batch_decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "venue_ids": [],
+      "basis": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted.",
+      "new_mass_record_count": 0,
+      "batch_evidence_source": "data/directory/research/sspx-last-71-source-review-20261009.v1.json"
+    }
+  ]
+}
