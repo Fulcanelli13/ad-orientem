@@ -1,6 +1,6 @@
 // GENERATED FROM data/pray/prayer-source-certification-inventory.v3.json.
-// Only the ten material edition differences requiring user disclosure are
-// loaded in the lightweight Prayer runtime. Keep the 64-entry JSON authoritative.
+// Only the twelve material edition/locale differences requiring user disclosure
+// are loaded into the lightweight Prayer source drawer. This is not a new content owner.
 export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
   "foundations_our_father": {
     "classification": "FRENCH_HISTORICAL_VARIANT",
@@ -18,8 +18,8 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
   "foundations_apostles_creed": {
     "classification": "FRENCH_HISTORICAL_VARIANT",
     "notice": {
-      "en": "The French Creed uses the traditional Saint-Esprit wording rather than the 2005 Compendium's Esprit Saint.",
-      "fr": "Le Credo français conserve « Saint-Esprit » au lieu de la formulation « Esprit Saint » du Compendium de 2005."
+      "en": "The app's French Creed preserves the traditional Saint-Esprit and Ainsi soit-il. The 2005 French Compendium instead prints Esprit Saint and ends Amen. The two French witnesses should be compared, not treated as verbatim twins.",
+      "fr": "Le Credo de l’application conserve « Saint-Esprit » et « Ainsi soit-il ». Le Compendium français de 2005 emploie « Esprit Saint » dans la profession et termine par « Amen ». Ce sont deux témoins distincts."
     },
     "relatedWitnesses": [
       {
@@ -31,8 +31,8 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
   "foundations_grace_after_meals": {
     "classification": "HISTORICAL_PRAYER_ALTERNATIVE",
     "notice": {
-      "en": "The primary historical source prints « benefits », matching this English prayer; the separately linked Baltimore Manual prints « mercies ». These are distinct witnesses, not identical editions.",
-      "fr": "Le témoin anglais principal donne « benefits », conforme à cette prière ; le manuel de Baltimore cité à titre comparatif donne « mercies ». Il s’agit de témoins différents."
+      "en": "The Blessed Sacrament Book prints benefits, matching the app's opening. Its printed sequence then includes Vouchsafe and Let us bless before the prayer for faithful departed; the app deliberately omits those intervening sections and is a shortened composite, not an uninterrupted facsimile. The Baltimore Manual uses mercies.",
+      "fr": "Le Blessed Sacrament Book donne « benefits », comme le début de la prière. Le livre intercale ensuite Vouchsafe et Let us bless avant la prière pour les défunts ; l’application omet ces passages. C’est un assemblage abrégé, non la transcription continue de la page. Le manuel de Baltimore emploie « mercies »."
     },
     "relatedWitnesses": [
       {
@@ -44,8 +44,8 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
   "marian_hail_holy_queen": {
     "classification": "FRENCH_HISTORICAL_VARIANT",
     "notice": {
-      "en": "The French Salve Regina is a traditional translation, not the exact French 2005 Compendium edition.",
-      "fr": "Le Salve Regina français est une traduction traditionnelle, non la reproduction exacte du Compendium français de 2005."
+      "en": "The French Salve Regina is a traditional translation, not the exact wording of the French 2005 Compendium. This prayer also appends Pray for us and its response; the printed Compendium reference contains only the antiphon, so the appended verses must be verified separately.",
+      "fr": "Le Salve Regina français est une traduction traditionnelle, distincte du Compendium français de 2005. La prière ajoute aussi « Priez pour nous » et sa réponse, absents de l’antienne publiée dans le Compendium ; leur témoin doit être vérifié séparément."
     },
     "relatedWitnesses": [
       {
@@ -104,6 +104,22 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
     "notice": {
       "en": "The Compendium's French Act of Contrition is shorter than its English and Latin prayers and does not print the final « Amen » shown here. The app retains that customary ending without claiming a verbatim copy.",
       "fr": "L’Acte de contrition français du Compendium est plus court que les formes anglaise et latine et n’imprime pas l’« Amen » final présent ici. Cette conclusion usuelle est conservée sans prétendre copier l’édition mot à mot."
+    },
+    "relatedWitnesses": []
+  },
+  "weekday_magnificat": {
+    "classification": "OFFICIAL_TEXT_VARIANTS",
+    "notice": {
+      "en": "The app's English Magnificat includes the appended office doxology, but French and Latin bodies finish at the biblical canticle. The 2005 Compendium publishes doxologies in its canticle forms; that is not an independently verified 1962 Breviary text. Keep the doxology context-dependent pending collation.",
+      "fr": "Le Magnificat anglais de l’application ajoute la doxologie, alors que les textes français et latin s’arrêtent au cantique biblique. Le Compendium de 2005 publie des doxologies, sans établir pour autant le texte du Bréviaire de 1962. L’ajout liturgique reste à vérifier selon le contexte."
+    },
+    "relatedWitnesses": []
+  },
+  "weekday_benedictus": {
+    "classification": "BIBLE_EDITORIAL_VARIANTS",
+    "notice": {
+      "en": "The app's English Benedictus includes a doxology, whereas French and Latin stop after the biblical verses. The French Compendium uses a distinct doxology referring to the God who is, was and is to come. Do not append an undifferentiated Gloria until the 1962 office and locale editions are collated.",
+      "fr": "Le Benedictus anglais ajoute une doxologie, tandis que le français et le latin s’arrêtent au cantique biblique. Le Compendium français donne une doxologie particulière « au Dieu qui est, qui était et qui vient ». Ne pas la remplacer sans vérification du Bréviaire de 1962 et des éditions propres à chaque langue."
     },
     "relatedWitnesses": []
   }
