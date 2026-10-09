@@ -1,0 +1,174 @@
+{
+  "version": "1962-DISTINCT-RITE-SCRIPTURE-ORDER-V1",
+  "status": "SOURCE_VERIFIED_ORDER_RESEARCH_ONLY_NOT_UI_LINKED",
+  "policy": {
+    "owner": "Distinct Good Friday and Easter Vigil state graphs, not standard 1962 Mass Proper slots",
+    "verseModel": "Ordered segments with explicit start/end book/chapter/verse; no fake single-chapter reference for cross-chapter readings",
+    "presentation": "No Scripture Context capsules or edition substitutions until each actual native state has text-bound verification; existing reader text and rubrics unchanged",
+    "graphLink": "Only original GF-LESS, GF-PASS, EV-LESS native state IDs; no ordinal L-suffix inference or grouping adjacent unrelated rites"
+  },
+  "rites": [
+    {
+      "riteId": "GOOD_FRIDAY_1962",
+      "canonicalSourcePath": "Tempora/Quad6-5",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-03?theme=light",
+      "entries": [
+        {
+          "order": 1,
+          "role": "FIRST_LESSON",
+          "nativeStateIds": [
+            "GF-LESS-110"
+          ],
+          "scriptureSegments": [
+            {
+              "book": "Hosea",
+              "chapter": 6,
+              "verseStart": 1,
+              "verseEnd": 6
+            }
+          ],
+          "displayReference": "Hosea 6:1–6",
+          "latinIncipit": "Haec dicit Dominus In tribulatione sua mane consurgent",
+          "status": "NOT_YET_RUNTIME_LINKED"
+        },
+        {
+          "order": 2,
+          "role": "SECOND_LESSON",
+          "nativeStateIds": [
+            "GF-LESS-210"
+          ],
+          "scriptureSegments": [
+            {
+              "book": "Exodus",
+              "chapter": 12,
+              "verseStart": 1,
+              "verseEnd": 11
+            }
+          ],
+          "displayReference": "Exodus 12:1–11",
+          "latinIncipit": "Dixit Dominus ad Moysen et Aaron in terra Aegypti",
+          "status": "NOT_YET_RUNTIME_LINKED"
+        },
+        {
+          "order": 3,
+          "role": "PASSION",
+          "nativeStateIds": [
+            "GF-PASS-310",
+            "GF-PASS-320",
+            "GF-PASS-330"
+          ],
+          "scriptureSegments": [
+            {
+              "book": "John",
+              "chapter": 18,
+              "verseStart": 1,
+              "verseEnd": 40
+            },
+            {
+              "book": "John",
+              "chapter": 19,
+              "verseStart": 1,
+              "verseEnd": 42
+            }
+          ],
+          "displayReference": "John 18:1–40; 19:1–42",
+          "latinIncipit": "Egressus est Iesus cum discipulis suis trans torrentem Cedron",
+          "status": "CROSS_CHAPTER_AND_MULTI_STATE_REQUIRES_SOURCE_BOUNDARY_REVIEW"
+        }
+      ]
+    },
+    {
+      "riteId": "EASTER_VIGIL_1962",
+      "canonicalSourcePath": "Tempora/Quad6-6",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light",
+      "entries": [
+        {
+          "order": 1,
+          "role": "FIRST_PROPHECY",
+          "nativeStateIds": [
+            "EV-LESS-01-READ"
+          ],
+          "scriptureSegments": [
+            {
+              "book": "Genesis",
+              "chapter": 1,
+              "verseStart": 1,
+              "verseEnd": 31
+            },
+            {
+              "book": "Genesis",
+              "chapter": 2,
+              "verseStart": 1,
+              "verseEnd": 2
+            }
+          ],
+          "displayReference": "Genesis 1:1–31; 2:1–2",
+          "status": "CROSS_CHAPTER_REQUIRES_CONTEXT_SUPPORT"
+        },
+        {
+          "order": 2,
+          "role": "SECOND_PROPHECY",
+          "nativeStateIds": [
+            "EV-LESS-02-READ"
+          ],
+          "scriptureSegments": [
+            {
+              "book": "Exodus",
+              "chapter": 14,
+              "verseStart": 24,
+              "verseEnd": 31
+            },
+            {
+              "book": "Exodus",
+              "chapter": 15,
+              "verseStart": 1,
+              "verseEnd": 1
+            }
+          ],
+          "displayReference": "Exodus 14:24–31; 15:1",
+          "status": "CROSS_CHAPTER_REQUIRES_CONTEXT_SUPPORT"
+        },
+        {
+          "order": 3,
+          "role": "THIRD_PROPHECY",
+          "nativeStateIds": [
+            "EV-LESS-03-READ"
+          ],
+          "scriptureSegments": [
+            {
+              "book": "Isaiah",
+              "chapter": 4,
+              "verseStart": 2,
+              "verseEnd": 6
+            }
+          ],
+          "displayReference": "Isaiah 4:2–6",
+          "status": "NOT_YET_RUNTIME_LINKED"
+        },
+        {
+          "order": 4,
+          "role": "FOURTH_PROPHECY",
+          "nativeStateIds": [
+            "EV-LESS-04-READ"
+          ],
+          "scriptureSegments": [
+            {
+              "book": "Deuteronomy",
+              "chapter": 31,
+              "verseStart": 22,
+              "verseEnd": 30
+            }
+          ],
+          "displayReference": "Deuteronomy 31:22–30",
+          "status": "NOT_YET_RUNTIME_LINKED"
+        }
+      ]
+    }
+  ],
+  "excludedFromTheseReadings": [
+    "Responsories, tracts, canticles and collects are liturgically distinct from each numbered lesson; do not confuse them with the associated Bible readings.",
+    "Good Friday has a Passion death pause dividing an identified biblical passage; no per-state verse boundary is asserted here.",
+    "Easter Vigil Mass after the litany requires a separately authenticated Epistle/Gospel, not an arbitrary fifth prophecy.",
+    "Older twelve-prophecy Easter Vigil source order must never replace the 1962 four-prophecy selection."
+  ]
+}
