@@ -106,6 +106,7 @@ async function compareBook(book,url){
   if(!source.has(key)||!source.get(key)?.trim())missingCandidate.push(key);
  }
  return {book:book.id,url,sha256:page.sha256,downloadBytes:page.bytes,
+  masterVerses:[...master].map(([key,text])=>({chapter:Number(key.split(":")[0]),verse:Number(key.split(":")[1]),text})),
   candidateNonblank:nonblankSource,masterNonblank:nonblankMaster,
   lexicalMismatchCount:diff.length,notInMasterCount:missingMaster.length,
   missingFromCandidateCount:missingCandidate.length,
@@ -150,7 +151,18 @@ if(process.argv[2]){
  const base=resolve(process.argv[2]),limit=Number(process.argv[3]||73);
  const data=JSON.parse(await readFile(join(base,"CPDV-canonical-candidate.json"),"utf8"));
  const report=await collateCpdvMaster(data,{maxBooks:limit});
- await writeFile(join(base,"CPDV-73-book-author-master-collation.json"),JSON.stringify(report,null,2)+"\n");
+ const output=join(base,"cpdv-author-master-books");
+ await (await import("node:fs/promises")).mkdir(output,{recursive:true});
+ for(const book of report.books.filter(x=>!x.error)){
+   await writeFile(join(output,book.book+".json"),JSON.stringify({
+     schemaVersion:1,editionId:"cpdv-2009",book:book.book,sourceUrl:book.url,
+     sourceSha256:book.sha256,edition:"Original CPDV, author-maintained master",
+     status:"RESEARCH_ONLY_AWAITING_TEXT_AND_THEOLOGICAL_CERTIFICATION",
+     verses:book.masterVerses
+   })+"\n");
+ }
+ const summary={...report,books:report.books.map(({masterVerses,...b})=>b)};
+ await writeFile(join(base,"CPDV-73-book-author-master-collation.json"),JSON.stringify(summary,null,2)+"\n");
  console.log(JSON.stringify({books:report.successfulBooks+"/"+report.selectedBooks,
   indexLinks:report.indexCoverage.foundLinks,missingIndex:report.indexCoverage.missingBooks,
   verseComparisons:report.candidateVersesCompared,lexicalDifferences:report.lexicalDifferences,
