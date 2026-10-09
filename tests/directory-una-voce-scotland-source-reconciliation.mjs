@@ -12,7 +12,7 @@ assert.equal(regional.records.filter(r=>r.kind==="DISCONTINUED").length,1);
 assert.ok(regional.records.every(r=>r.origin===regional.regional_source));
 assert.ok(regional.records.filter(r=>r.kind!=="TLM").every(r=>r.decision.startsWith("EXCLUDE_")));
 const ids=new Set(canonical.records.map(x=>x.u));
-assert.equal(canonical.records.length,57);
+assert.equal(canonical.records.length,64);
 assert.equal(ids.size,canonical.records.length);
 const expected=[
  ["DIO-GB-MOTHERWELL-CLELAND-ST-MARY","THURSDAY_19:00_MASS_IN_EXTRAORDINARY_FORM","rcdom.org.uk","PUBLISHED_DIOCESE_2026"],
