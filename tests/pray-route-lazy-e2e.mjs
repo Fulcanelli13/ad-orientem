@@ -73,6 +73,8 @@ try{
     null,{timeout:20000});
   assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().child),"learn.rites.sick",
     "Prayer launched the Formation module without registering its child owner");
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1?.status?.().open),false,
+    "Prayer overlay still intercepts the Serious Illness Formation controls");
   assert.deepEqual(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().externalReturn),
     {surface:"pray",route:"pray.dying_companion"},
     "Serious Illness guide did not retain its bedside Prayer return context");
