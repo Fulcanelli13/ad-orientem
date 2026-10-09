@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {parseScriptureContext} from "../src/scripture/context.js";
+import "./mass-scripture-feast-original-latin-boundary.mjs";
 import {VERIFIED_MASS_FEAST_READINGS,VERIFIED_MASS_FEAST_VERSION}
   from "../src/mass/scripture-feast-reading-index.js";
 import {registeredMassReading,massScriptureContextForCard}
