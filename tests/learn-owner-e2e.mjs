@@ -358,7 +358,7 @@ try{
       const urls=ids.map(sid=>{
         const source=SPIRITUAL_LIFE_SOURCE_MAP[sid];
         const prayerSection=sid==="SL-TANQUEREY-1930" &&
-          expected.claims.some(id=>/^SL0[34]-Q\\d+$/.test(id));
+          expected.claims.some(id=>/^SL0[34]-Q\d+$/.test(id));
         return new URL(prayerSection?source.continuation_url:source.canonical_url).href;
       });
       assert.deepEqual([...actual.links].sort(),urls.sort(),
