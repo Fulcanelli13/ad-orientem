@@ -55,7 +55,8 @@ try{
     pray:"ao-nav-pray",
     learn:"ao-nav-learn",
     calendar:"ao-nav-calendar",
-    settings:"ao-nav-settings",
+    // The sixth permanent ribbon slot is Explore; Settings remains a contextual overlay.
+    find:"ao-ui-search",
   };
   const ribbonAssets=await page.evaluate(expected=>Object.fromEntries(
     Object.entries(expected).map(([surface,assetId])=>{
@@ -77,7 +78,8 @@ try{
     assert.equal(actual.iconAsset,assetId,surface+" ribbon icon is not the canonical asset");
     assert.equal(actual.renderer,"mask",surface+" ribbon icon did not use the canonical mask renderer");
     assert.equal(actual.legacySvg,0,surface+" ribbon icon still contains inherited legacy SVG artwork");
-    assert.match(actual.mask,new RegExp(assetId+"\\.png"),surface+" ribbon mask does not resolve to the frozen navigation PNG");
+    const extension=surface==="find"?"svg":"png";
+    assert.match(actual.mask,new RegExp(assetId+"\\."+extension),surface+" ribbon mask does not resolve to its canonical artwork");
   }
 
   const homeAudit=await page.evaluate(()=>({
@@ -484,6 +486,7 @@ try{
 
   // Exact v3.14 Angelus ritual rail: the rail belongs to the reading grid.
   // On phone it reflows above the prayer cards as a horizontal cue row.
+  await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
   const angelusRails=await page.evaluate(()=>{
@@ -517,8 +520,11 @@ try{
   assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
   await shot("03a-pray-angelus-rails");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
+  await page.locator("#aoPray435930 [data-p435930-family='passion']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.stations']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="stations",null,{timeout:5000});
   await waitForFxSettled();
@@ -570,10 +576,13 @@ try{
   await shot("03d-pray-stations-xiv-silence");
 
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Exact-donor devotional rails: Adoration arrival is transient genuflection,
   // then yields to persistent silence without changing reader geometry.
+  await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
   const adorationLanding=await page.evaluate(()=>({
@@ -607,9 +616,12 @@ try{
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForSelector("#aoPray435930 [data-p435930-ador-mode='visit']",{state:"visible",timeout:5000});
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Benediction rail follows the public rite rather than presenting one generic card.
+  await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-rich-adoration']").count(),1,"Benediction Exposition rail lost its Eucharistic owner");
@@ -645,10 +657,13 @@ try{
   assert.ok(benBlessing.width>=30&&benBlessing.height>=30,"Benediction blessing icon collapsed below visible rail geometry");
   await shot("03g-pray-benediction-blessing");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Confession remains private/read-only; only the exact in-confessional moment
   // owns the transient Sign-of-Cross rail cue.
+  await page.locator("#aoPray435930 [data-p435930-family='penance']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
   for(let i=0;i<2;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
@@ -663,10 +678,13 @@ try{
   assert.match(confessionRail.stage,/In Confessional|Au confessionnal/,"Confession rail lost the active stage");
   await shot("03h-pray-confession-in-confessional");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Rosary opens directly into the preserved canonical engine: no intermediate
   // configuration page, no second launcher, and no ritual-grid width collapse.
+  await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
@@ -984,8 +1002,20 @@ try{
   assert.equal(rosaryMysteryFx.artBackdrop,true,"Rosary Mystery I lost the donor sacred-art backdrop");
   assert.ok(rosaryMysteryFx.artValue.includes("url("),"Rosary mystery backdrop has no resolved artwork");
   assert.ok(rosaryMysteryFx.contemplation>=1,"Rosary Mystery I lost the donor contemplation sheet");
-  assert.match(rosaryMysteryFx.headerTitle,/Glorious Mysteries|Mystères glorieux/i,"Rosary header repeats the active mystery instead of identifying the mystery set");
-  assert.match(rosaryMysteryFx.contemplationTitle,/Resurrection|Résurrection/i,"Rosary contemplation lost the active mystery title");
+  // The Rosary "Today" entry chooses the mystery set by date (Thursday is
+  // traditionally Joyful), not by an old hard-coded feast-day screenshot.
+  assert.match(rosaryMysteryFx.headerTitle,/(Joyful|Sorrowful|Glorious) Mysteries|Mystères (joyeux|douloureux|glorieux)/i,
+    "Rosary heading must identify the selected mystery set, not a single mystery");
+  assert.notEqual(rosaryMysteryFx.headerTitle,rosaryMysteryFx.contemplationTitle,
+    "Rosary header repeats the active contemplation mystery");
+  const firstMysteries=[
+    [/Joyful|joyeux/i,/Annunciation|Annonciation/i],
+    [/Sorrowful|douloureux/i,/Agony|Agonie/i],
+    [/Glorious|glorieux/i,/Resurrection|Résurrection/i],
+  ];
+  const first=firstMysteries.find(([set])=>set.test(rosaryMysteryFx.headerTitle));
+  assert.ok(first,"Rosary mystery set has no canonical first mystery");
+  assert.match(rosaryMysteryFx.contemplationTitle,first[1],"Rosary contemplation does not match the selected set's first mystery");
   assert.equal(rosaryMysteryFx.artTitleVisible,false,"Rosary sacred-art caption repeats the active mystery title");
   assert.equal(rosaryMysteryFx.mysteryKickerVisible,false,"Rosary repeats mystery progress as text beneath the five-segment progress owner");
   assert.equal(rosaryMysteryFx.mysteryBeadsVisible,false,"Rosary displays an empty decade-bead row before decade prayer begins");
@@ -1043,7 +1073,7 @@ try{
     modularView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
   }));
   assert.equal(rosaryReturn.rosaryStep,rosaryStepBeforeBack,"Rosary visible Back advanced the preserved engine instead of returning");
-  assert.equal(rosaryReturn.modularView,"home","Rosary visible Back did not return directly to PRAY");
+  assert.equal(rosaryReturn.modularView,"family","Rosary visible Back did not restore its immediate Daily Prayer parent");
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.library",{returnContext:null}));
   await page.waitForSelector("#aoPray435930.open [data-p435930-lib-open='sacrament_act_of_contrition']",{timeout:10000});
@@ -1168,6 +1198,9 @@ try{
   assert.match(catechismMask,/ao-module-catechism\.png/,"Traditional Catechism canonical mask did not resolve to the frozen PNG");
   await page.locator("#ao-learn-modular-root [data-ao-learn-back]").click();
   await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
+  // Formation repaints its hero when returning from a family. Presentation FX
+  // decorates that newly-created node on the next scheduled frame/scan.
+  await page.waitForFunction(()=>document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero==="modular-presentation-fx-v3",null,{timeout:5000});
   const learnFx=await page.evaluate(()=>({
     hero:document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("ao-learn-modular-root")?.dataset?.aoPresentationFxArtScan??null,
@@ -1247,7 +1280,9 @@ try{
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
 
-  await page.locator("[data-ao-app-surface='settings']").click();
+  // Settings is a contextual destination, not the sixth permanent ribbon slot.
+  // Enter it through the same shell navigation method used by actual Settings launchers.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
   await waitForFxSettled();
   await assertHomeHidden("Settings");
@@ -1294,14 +1329,15 @@ try{
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="about-sources",null,{timeout:5000});
   const settingsAbout=await page.evaluate(()=>({
     sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetSource").length,
-    provenanceRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSourceKey").length,
+    provenanceLabels:(document.querySelector("#ao-settings-modular-root .aoSetSource:last-of-type p")?.textContent?.trim()||"").split(/\s*·\s*/).filter(Boolean),
     aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSection:last-child .aoSetRow").length,
     version:document.querySelector("#ao-settings-modular-root [data-settings-app-version]")?.textContent?.trim()??"",
     canonical:globalThis.AO_RELEASE_AUTHORITY_V4359?.version||document.documentElement.dataset.aoRelease||"",
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
   }));
-  assert.equal(settingsAbout.sourceGroups,8,"Sources & About lost a source family");
-  assert.equal(settingsAbout.provenanceRows,6,"Sources & About lost provenance labels");
+  assert.ok(settingsAbout.sourceGroups>=9,"Sources & About lost one of the nine retained source families, including programme authorities");
+  assert.equal(settingsAbout.provenanceLabels.length,6,"Sources & About lost the six source-methodology labels");
+  assert.ok(settingsAbout.provenanceLabels.some(x=>/1962/.test(x)),"1962 normative source distinction lost");
   assert.ok(settingsAbout.aboutRows>=7,"Settings About section is incomplete");
   assert.equal(settingsAbout.version,String(settingsAbout.canonical),"Settings About does not show canonical application version");
   assert.equal(settingsAbout.active,"settings","Sources & About escaped Settings into another top-level surface");
@@ -1343,6 +1379,7 @@ try{
   assert.ok(wideHub.titleWidth>=210&&wideHub.descriptionWidth>=210,"PRAY wide module text collapsed inside its canonical icon column: "+JSON.stringify(wideHub));
   assert.ok(wideHub.titleLeft>=wideHub.iconRight+6,"PRAY wide module text overlaps its canonical icon column: "+JSON.stringify(wideHub));
 
+  await wide.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await wide.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await wide.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await wide.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});

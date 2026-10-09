@@ -94,9 +94,11 @@ const browser = fs.readFileSync(new URL("../src/calendar/browser-entry.js", impo
 assert.match(browser, /modular-calendar-v2-liturgical-year/);
 assert.match(browser, /calendarView==="year"\?yearSurface/);
 assert.match(browser, /data-cal-view/);
-assert.match(browser, /aoCalV2Ring/);
-assert.match(browser, /aoCalV2Timeline/);
-assert.match(browser, /aoCalV2JourneyRail/);
+assert.match(browser, /aoCalV2Ring/, "Liturgical Year lost its sourced progress ring");
+assert.match(browser, /aoCalV2YearIdentity/, "Liturgical Year lost selected-day and period identity");
+assert.match(browser, /aoCalV2PeriodProgress/, "Liturgical Year lost the period-progress presentation");
+assert.match(browser, /aoCalV2Coming/, "Liturgical Year lost its next major celebration and season transitions");
+assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
 assert.doesNotMatch(browser, /v384Companion/,"redundant v38.4 Traditional Liturgical Year companion returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-panel/,"retired v38.4 year\/discipline UI returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-era/,"retired duplicate discipline-era tabs returned");

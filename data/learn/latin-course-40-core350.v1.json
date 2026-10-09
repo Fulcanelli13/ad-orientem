@@ -288,11 +288,9 @@
       ],
       "core201_350Introduced": [
         "iustitia",
-        "aqua",
-        "familia",
-        "ira"
+        "aqua"
       ],
-      "totalTrackedIntroduced": 12
+      "totalTrackedIntroduced": 10
     },
     {
       "lesson": 3,
@@ -606,9 +604,10 @@
       "core201_350Introduced": [
         "semper",
         "donec",
-        "hora"
+        "hora",
+        "iterum"
       ],
-      "totalTrackedIntroduced": 7
+      "totalTrackedIntroduced": 8
     },
     {
       "lesson": 14,
@@ -1039,12 +1038,12 @@
       "readingOutcome": "Recognize characteristic Church-Latin vocabulary and syntactic preferences without forcing classical norms.",
       "core1_200Introduced": [],
       "core201_350Introduced": [
-        "neque",
-        "nec",
         "aut",
         "vel",
         "sive",
-        "at"
+        "at",
+        "neque/nec",
+        "vir"
       ],
       "totalTrackedIntroduced": 6
     },
@@ -1067,10 +1066,11 @@
         "generatio",
         "sermo",
         "inimicus",
-        "corona",
-        "lapis"
+        "invicem",
+        "aio",
+        "abeo"
       ],
-      "totalTrackedIntroduced": 10
+      "totalTrackedIntroduced": 11
     },
     {
       "lesson": 34,
@@ -1103,7 +1103,7 @@
       ],
       "core201_350Introduced": [
         "sacerdos",
-        "vinum"
+        "respicio"
       ],
       "totalTrackedIntroduced": 7
     },
@@ -1124,8 +1124,8 @@
         "caput",
         "ignis",
         "mare",
-        "sol",
-        "pauper"
+        "pauper",
+        "mirabilis"
       ],
       "totalTrackedIntroduced": 8
     },
@@ -1185,5 +1185,31 @@
       "core201_350Introduced": [],
       "totalTrackedIntroduced": 0
     }
-  ]
+  ],
+  "reconciliation": {
+    "date": "2026-10-08",
+    "authority": "data/learn/core-latin-201-350.v1.0.json",
+    "kind": "ERRATUM_TO_FROZEN_DRAFT_CROSSWALK",
+    "retiredFromTrackedCore": [
+      "neque",
+      "nec",
+      "familia",
+      "ira",
+      "corona",
+      "lapis",
+      "vinum",
+      "sol"
+    ],
+    "promotedToTrackedCore": [
+      "neque/nec",
+      "iterum",
+      "invicem",
+      "vir",
+      "aio",
+      "abeo",
+      "respicio",
+      "mirabilis"
+    ],
+    "preservation": "Displaced words remain source-backed support where retained by authored examples; lesson and Glossary modifications are part of this reconciliation."
+  }
 }

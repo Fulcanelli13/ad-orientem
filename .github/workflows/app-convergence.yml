@@ -77,7 +77,8 @@ jobs:
       - run: npm run check:app-release
 
   app-shell-phone:
-    if: github.event_name == 'push'
+    # Validate actual phone journeys on PRs, not only after merging into main.
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     needs: app-shell-contract
     runs-on: ubuntu-latest
     steps:

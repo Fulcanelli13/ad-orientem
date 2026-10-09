@@ -28,7 +28,8 @@ try{
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true&&globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true,null,{timeout:30000});
   await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),null,{timeout:10000}).catch(()=>{});
 
-  await page.locator("[data-ao-app-surface='settings']").click();
+  // Settings is a contextual overlay; the sixth permanent ribbon slot is Explore.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
   const opened=await page.evaluate(()=>{
     const r=document.getElementById("ao-settings-modular-root"),rect=r?.getBoundingClientRect(),visible=n=>Boolean(n?.isConnected&&!n.hidden&&getComputedStyle(n).display!=="none");
@@ -48,6 +49,13 @@ try{
 
   await page.locator('[data-settings-route="/settings/general"]').click();
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/general");
+  assert.equal(await page.locator('[data-pref-path="general.uiLanguage"]').count(),0,
+    "App language must be owned by Language & Text, not duplicated in General");
+  await page.locator("[data-pref-toggle='general.hapticsEnabled']").click();
+  await page.locator("[data-settings-back]").click();
+
+  await page.locator('[data-settings-route="/settings/language-reading"]').click();
+  await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/language-reading");
   await page.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
   await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr");
   await page.locator("[data-settings-back]").click();

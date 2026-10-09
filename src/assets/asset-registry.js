@@ -1072,6 +1072,24 @@ export const AO_CANONICAL_EXTENSION_ASSETS=Object.freeze({
 });
 
 export const AO_RUNTIME_ASSET_RECOVERIES=Object.freeze({
+  // The frozen V4 CONTEXT.HELP glyph is recorded but its SVG was not
+  // committed under assets/active/daily-context/. The shipped semantic
+  // information glyph is the explicit runtime fallback until the verified
+  // frozen source can be restored. Never rewrite its frozen hash/ownership.
+  "ao-refined-help": Object.freeze({
+    "assetId": "ao-refined-help",
+    "path": "assets/active/ui/ao-ui-info.svg",
+    "sourcePath": "assets/active/daily-context/ao-refined-help.svg",
+    "derivation": "temporary shipped V4 information glyph fallback; original CONTEXT.HELP master unavailable"
+  }),
+  // The frozen V4 UI.SETTINGS PNG is not shipped in this repository.
+  // Reuse the shipped V4 Settings navigation master rather than loading a 404.
+  "ao-ui-settings": Object.freeze({
+    "assetId": "ao-ui-settings",
+    "path": "assets/active/navigation/ao-nav-settings.png",
+    "sourcePath": "assets/active/ui/ao-ui-settings.png",
+    "derivation": "runtime alias to the shipped frozen V4 Settings gear; original semantic source metadata retained"
+  }),
   "ao-live-blessing": Object.freeze({
     "assetId": "ao-live-blessing",
     "path": "assets/recovered/ao-live-blessing.svg",

@@ -84,20 +84,20 @@
         "frozenLesson": 36
       },
       {
-        "lemma": "sol",
-        "partOfSpeech": "noun",
-        "gloss": {
-          "en": "sun",
-          "fr": "soleil"
-        },
-        "frozenLesson": 36
-      },
-      {
         "lemma": "pauper",
         "partOfSpeech": "adjective/noun",
         "gloss": {
           "en": "poor / poor person",
           "fr": "pauvre"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "mirabilis",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "wonderful / admirable",
+          "fr": "merveilleux / admirable"
         },
         "frozenLesson": 36
       }
@@ -132,7 +132,6 @@
       "adoro",
       "is/ea/id",
       "quoniam",
-      "lapis",
       "hic/haec/hoc",
       "ante",
       "ipse",
@@ -235,6 +234,30 @@
       },
       "trackedLesson": null,
       "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sol",
+      "forms": [
+        "sol"
+      ],
+      "gloss": {
+        "en": "sun",
+        "fr": "soleil"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "lapis",
+      "forms": [
+        "lapis"
+      ],
+      "gloss": {
+        "en": "stone",
+        "fr": "pierre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
     }
   ],
   "sources": [
@@ -322,6 +345,18 @@
       "corpusReferenceIds": [
         "corpus-vulgata-clementina-1592"
       ]
+    },
+    {
+      "id": "vulg-ps138-14-mirabilia-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 138:14",
+      "sourceLatin": "Confitebor tibi, quia terribiliter magnificatus es: mirabilia opera tua, et anima mea cognoscit nimis.",
+      "provenanceNote": "The plural/substantive mirabilia makes the certified adjective mirabilis recognizable in psalmody.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ],
+      "sourceUrl": "https://vulgata.linguasacra.org/bible/psalms/138/"
     }
   ],
   "casePanel": {
@@ -466,8 +501,8 @@
       "type": "imagery",
       "title": "Concrete nouns become liturgical images",
       "learnerCopy": {
-        "en": "fire, sea, sun, stone, foot and tongue remain concrete nouns, yet Scripture and hymnody give them recurring spiritual or typological associations. Read literal syntax before interpreting imagery.",
-        "fr": "feu, mer, soleil, pierre, pied et langue restent des noms concrets, mais l'Écriture et l'hymnographie leur donnent des associations spirituelles ou typologiques récurrentes. Lisez d'abord la syntaxe littérale."
+        "en": "fire, sea, sun, stone, foot and tongue remain concrete nouns, yet Scripture and hymnody give them recurring spiritual or typological associations. Read literal syntax before interpreting imagery. Psalm 138:14 uses mirabilia ('wondrous works'), a contextual form of the tracked adjective mirabilis; sol and lapis remain useful reference vocabulary outside this certified Core tranche.",
+        "fr": "feu, mer, soleil, pierre, pied et langue restent des noms concrets, mais l'Écriture et l'hymnographie leur donnent des associations spirituelles ou typologiques récurrentes. Lisez d'abord la syntaxe littérale. Le psaume 138,14 emploie mirabilia (« œuvres merveilleuses »), forme contextuelle de l'adjectif suivi mirabilis ; sol et lapis demeurent des mots de référence hors de cette tranche certifiée."
       },
       "referenceIds": [
         "grammar-nunn-1922",
@@ -554,14 +589,15 @@
       "sourceLatin": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
       "instructionalDisplay": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
       "targetLemmas": [
-        "lapis",
         "qui/quae/quod",
         "hic/haec/hoc",
         "facio",
         "in",
         "caput"
       ],
-      "supportLemmas": []
+      "supportLemmas": [
+        "lapis"
+      ]
     },
     {
       "id": "l36-p5",
@@ -599,7 +635,6 @@
       "instructionalDisplay": "A solis ortu usque ad occasum, laudabile nomen Domini.",
       "targetLemmas": [
         "a/ab",
-        "sol",
         "usque",
         "ad",
         "nomen",
@@ -607,7 +642,8 @@
       ],
       "supportLemmas": [
         "ortus",
-        "occasus"
+        "occasus",
+        "sol"
       ]
     },
     {
@@ -625,6 +661,20 @@
       "supportLemmas": [
         "inops"
       ]
+    },
+    {
+      "id": "l36-p9",
+      "sourceId": "vulg-ps138-14-mirabilia-l36",
+      "sourceLatin": "Confitebor tibi, quia terribiliter magnificatus es: mirabilia opera tua, et anima mea cognoscit nimis.",
+      "instructionalDisplay": "Confitebor tibi, quia terribiliter magnificatus es: mirabilia opera tua, et anima mea cognoscit nimis.",
+      "translation": {
+        "en": "I will praise thee, for thou art fearfully magnified: wonderful are thy works, and my soul knoweth right well.",
+        "fr": "Je vous louerai, car vous êtes admirablement grand ; vos œuvres sont merveilleuses, et mon âme le sait bien."
+      },
+      "targetLemmas": [
+        "mirabilis"
+      ],
+      "supportLemmas": []
     }
   ],
   "exercises": [
@@ -1094,11 +1144,11 @@
       "caput",
       "ignis",
       "mare",
-      "sol",
-      "pauper"
+      "pauper",
+      "mirabilis"
     ],
     "silentIntroductions": [],
-    "authenticSourceCount": 8,
+    "authenticSourceCount": 9,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
     "answersResolved": true,
@@ -1129,5 +1179,16 @@
         "Commencer l’étape 8 avec une assistance réduite."
       ]
     }
+  },
+  "reconciliation": {
+    "date": "2026-10-08",
+    "source": "data/learn/core-latin-201-350.v1.0.json",
+    "retiredTracked": [
+      "sol"
+    ],
+    "promotedTracked": [
+      "mirabilis"
+    ],
+    "preservation": "Former tracked words remain reading support when the source passage requires them."
   }
 }

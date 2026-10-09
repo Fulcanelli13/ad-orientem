@@ -6,6 +6,8 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
 const repoRoot=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const expectedTraditionalLearnOwner=(await readFile(resolve(repoRoot,"src/learn/traditional-life.js"),"utf8")).match(/TRADITIONAL_LEARN_VERSION="([^"]+)"/)?.[1];
+assert.ok(expectedTraditionalLearnOwner,"Traditional Formation owner version must be declared");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp"};
 const server=http.createServer(async(req,res)=>{
   try{
@@ -147,13 +149,26 @@ try{
   // Glossary: category-first navigation, multilingual search and sourced term drawer.
   await openFormationFamily("reference");
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
-  await page.waitForFunction(()=>
-    globalThis.AO_GLOSSARY_V1?.status?.().open===true &&
-    globalThis.AO_GLOSSARY_V1?.status?.().loaded===true &&
-    globalThis.AO_GLOSSARY_V1?.status?.().entries===450 &&
-    Boolean(document.getElementById("ao-glossary-root")),
-    null,{timeout:10000}
-  );
+  try{
+    await page.waitForFunction(()=>
+      globalThis.AO_GLOSSARY_V1?.status?.().open===true &&
+      globalThis.AO_GLOSSARY_V1?.status?.().loaded===true &&
+      globalThis.AO_GLOSSARY_V1?.status?.().entries===450 &&
+      Boolean(document.getElementById("ao-glossary-root")),
+      null,{timeout:10000}
+    );
+  }catch(error){
+    const diagnostic=await page.evaluate(()=>({
+      glossary:globalThis.AO_GLOSSARY_V1?.status?.()??null,
+      learn:globalThis.AO_LEARN_APP_V1?.status?.()??null,
+      registryWrapper:!!globalThis.AO_MODULES?.__aoGlossaryV1,
+      registered:!!globalThis.AO_MODULES?.get?.("learn.glossary"),
+      route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+      rootPresent:!!document.getElementById("ao-glossary-root"),
+      learnText:document.getElementById("ao-learn-modular-root")?.innerText?.slice(0,250)??null
+    }));
+    throw new Error("Glossary phone navigation state: "+JSON.stringify({diagnostic,pageErrors,error:String(error)}));
+  }
   const glossaryLanding=await page.evaluate(()=>{
     const root=document.getElementById("ao-glossary-root");
     return {
@@ -238,12 +253,18 @@ try{
   assert.match(phraseDetail.translation,/Lord be with you/i);
   assert.ok(phraseDetail.sources>=1,"Phrasebook drawer has no source link");
   await page.locator("#ao-glossary-root [data-gloss-close]").tap();
+  // Back must preserve every real parent: Phrases → Latin category →
+  // Glossary categories → Formation. It must never jump straight Home.
   await page.locator("#ao-glossary-root [data-gloss-back]").tap();
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.().view==="category",null,{timeout:5000});
+  await page.locator("#ao-glossary-root [data-gloss-back]").tap();
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.().view==="categories",null,{timeout:5000});
   await page.locator("#ao-glossary-root [data-gloss-back]").tap();
   await page.waitForFunction(()=>
     !document.getElementById("ao-glossary-root") &&
     !document.getElementById("ao-learn-modular-root")?.hidden &&
-    globalThis.AO_LEARN_APP_V1?.status?.().child==null,
+    globalThis.AO_LEARN_APP_V1?.status?.().child==null &&
+    globalThis.AO_LEARN_APP_V1?.status?.().family==="reference",
     null,{timeout:10000}
   );
   await assertNoMass("Glossary -> Formation");
@@ -355,7 +376,7 @@ try{
       donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
       priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
     }});
-    assert.equal(child.owner,"38.5-after-death-family-absorption",id+": wrong child owner");
+    assert.equal(child.owner,expectedTraditionalLearnOwner,id+": wrong child owner");
     assert.ok(child.width>300,id+": child collapsed on phone");
     assert.ok(child.overflow<=1,id+": child has horizontal overflow");
     assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
@@ -417,7 +438,8 @@ try{
   await assertFocusSafe("Learn -> Calendar");
 
   await openLearn();
-  await page.locator("[data-ao-app-surface='settings']").tap();
+  // Settings is a contextual app overlay, not the sixth global ribbon tab.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings" &&
     !document.getElementById("ao-learn-modular-root"),

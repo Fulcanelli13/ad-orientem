@@ -28,6 +28,16 @@ on:
       - "tools/validate_latin_course.mjs"
       - ".github/workflows/latin-course-validation.yml"
 
+  pull_request:
+    paths:
+      - "data/learn/**"
+      - "data/glossary/**"
+      - "src/learn/latin-**"
+      - "tests/learn-latin-**"
+      - "tests/glossary-**"
+      - "tools/validate_latin_course.mjs"
+      - ".github/workflows/latin-course-validation.yml"
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -50,3 +60,7 @@ jobs:
         run: node tests/learn-owner.mjs
       - name: Validate Scanlon completeness control
         run: node tests/learn-latin-scanlon-coverage.mjs
+      - name: Validate Glossary concept and lexeme corpus integrity
+        run: npm run test:glossary
+      - name: Full repository source and runtime regression gate
+        run: npm test

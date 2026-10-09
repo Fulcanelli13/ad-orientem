@@ -200,8 +200,8 @@
         "en": "stone",
         "fr": "pierre"
       },
-      "trackedLesson": 33,
-      "status": "gloss-only-not-introduced"
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
     },
     {
       "lemma": "revolvo",
@@ -1451,5 +1451,10 @@
         "Franchir le jalon narratif Psaume/Évangile de l’étape 3."
       ]
     }
+  },
+  "reconciliation": {
+    "date": "2026-10-08",
+    "source": "data/learn/core-latin-201-350.v1.0.json",
+    "note": "Lapis still occurs in a genuine lesson reading, but its prior Lesson-33 tracked placement belonged to the superseded draft inventory."
   }
 }
