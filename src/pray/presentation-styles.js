@@ -634,6 +634,8 @@ const ROSARY_SCRIPTURE_POLICY_CSS=`
   display:inline-block;align-self:start;padding:7px 0;min-height:36px;color:var(--liturgical,#d8bd7d);
   text-decoration:underline;text-underline-offset:3px;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
 }
+/* Guided Rosary: authored contemplations (not Scripture quotations). */
+#aoPrayerBookRoot .aoRosaryGuidedBeadMeditation{margin:12px 0 3px;padding:10px 12px;border-left:2px solid var(--liturgical,#9b886c);color:var(--text,#f3ead7);background:transparent;font:italic 0.94rem/1.55 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
 `;
 
 function ensureStyle(doc,id,css){
@@ -663,7 +665,3 @@ export function installPrayPresentationStyles(doc=globalThis.document){
 }
 
 if(typeof document!=="undefined")installPrayPresentationStyles(document);
-
-/* The Scripture source is the mystery-opening link; these are authored prayers,
-   never verbatim Scripture or legacy quote fragments. */
-#aoPrayerBookRoot .aoRosaryGuidedBeadMeditation{margin:12px 0 3px;padding:10px 12px;border-left:2px solid var(--liturgical,#9b886c);color:var(--text,#f3ead7);background:transparent;font:italic 0.94rem/1.55 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
