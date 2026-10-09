@@ -287,8 +287,12 @@ function makeObservance(raw, date, source) {
         throw new Error(`Bad observance ID: ${raw}`);
     let [flexibility, name, rankString, colorCode] = parts;
     let rank = Number(rankString);
-    if (flexibility === 'tempora' && /^Adv\d-[1-6]$/.test(name) && date.getMonth() === 11 && date.getDate() >= 17 && date.getDate() <= 23)
-        rank = 2;
+    // 1960 General Rubrics nn. 24–25: ordinary Advent ferias are
+    // III class even when they fall in late November. Dec 17–23 are
+    // II class; keep those distinct from ordinary Advent weekdays.
+    if (flexibility === 'tempora' && /^Adv\d-[1-6]$/.test(name) &&
+        (date.getMonth() === 10 || date.getMonth() === 11))
+        rank = date.getMonth() === 11 && date.getDate() >= 17 && date.getDate() <= 23 ? 2 : 3;
     const id = [flexibility, name, rank, colorCode].join(':');
     return {
         rawId: raw,
