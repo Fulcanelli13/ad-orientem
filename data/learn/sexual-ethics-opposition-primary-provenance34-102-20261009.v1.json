@@ -8,10 +8,11 @@
     "cases_with_directly_read_specific_original_context": 15,
     "cases_without_directly_read_specific_original_context": 19,
     "farley_mediated_excerpt_with_own_statement": 4,
-    "pew_false_23_percent_attribution_corrected": true,
+    "pew_false_23_percent_attribution_corrected": false,
     "entire_eight_stage_original_certifications": 0,
     "independent_theological_signoffs": 0,
-    "independent_native_french_signoffs": 0
+    "independent_native_french_signoffs": 0,
+    "pew_23_percent_testing_motive_verified_in_original_main_report": true
   },
   "cases": [
     {
@@ -376,19 +377,19 @@
       "id": "CSE035",
       "existing_opponent_attribution_class": "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED",
       "original_provenance_class": "ORIGINAL_SURVEY_REPORT_READ_AND_CORRECTED",
-      "read_original_context_url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/",
-      "original_section_locator": "Pew 2019 Why people get married or move in, paragraphs on cohabiter major factors and seriousness",
-      "scope_limitation": "Pew reports 38% financial and 37% convenience major motives among cohabiters; 23% instead refers to people neither engaged nor in a very serious relationship. Survey measures reported reasons, not outcomes or motives to test compatibility.",
+      "read_original_context_url": "https://www.pewresearch.org/social-trends/2019/11/06/marriage-and-cohabitation-in-the-u-s/",
+      "original_section_locator": "Pew Research Center, Marriage and Cohabitation in the U.S. (main 2019 report), paragraphs 'The reasons why people get married and the reasons they move in with a partner differ', explicitly including 23% testing, 38% finances, 37% convenience.",
+      "scope_limitation": "Pew reports 23% citing testing the relationship, 38% finances and 37% convenience as major cohabitation motives. Another unrelated 23% refers to cohabiters neither engaged nor describing the relationship as very serious. Neither statistic demonstrates causal future marital improvement.",
       "original_objection_is_direct_quotation": false,
       "reviewed_opponent_fields": [
         {
           "stage": "opposition",
-          "live_english_text": "Pew's 2019 US survey found that 38% of cohabiters cited finances and 37% cited convenience as major reasons for moving in together. That survey described reported motives, not whether cohabitation improves marriage outcomes. Can the desire to understand daily compatibility justify cohabitation before marriage?",
-          "live_french_text": "Selon l'enquête américaine Pew de 2019, 38 % des personnes en cohabitation invoquaient les finances et 37 % la commodité comme raisons majeures d'emménager ensemble. L'enquête rapporte des motifs déclarés, sans démontrer que la cohabitation améliore les mariages ultérieurs. Le désir de connaître sa compatibilité quotidienne justifie-t-il la vie commune avant le mariage ?",
+          "live_english_text": "Pew's 2019 U.S. survey found that 23% of adults currently cohabiting cited wanting to test their relationship as a major reason for moving in together; 38% cited finances and 37% convenience. These are reported motives, not evidence that cohabitation improves later marriages. Does testing daily compatibility justify living together before marriage?",
+          "live_french_text": "Selon l'enquête américaine Pew de 2019, 23 % des adultes en cohabitation citaient la volonté de mettre leur relation à l'épreuve comme raison majeure d'emménager ensemble ; 38 % invoquaient les finances et 37 % la commodité. Il s'agit de motifs déclarés, non d'une preuve que la cohabitation améliore les mariages ultérieurs. Cette mise à l'épreuve de la compatibilité quotidienne justifie-t-elle la vie commune avant le mariage ?",
           "selected_opponent_source_links": [
             {
               "id": "PEW_CO2019",
-              "canonical_url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/"
+              "canonical_url": "https://www.pewresearch.org/social-trends/2019/11/06/marriage-and-cohabitation-in-the-u-s/"
             }
           ],
           "source_role": "Opponent proposition with precisely qualified authorship",
@@ -402,7 +403,7 @@
           "selected_opponent_source_links": [
             {
               "id": "PEW_CO2019",
-              "canonical_url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/"
+              "canonical_url": "https://www.pewresearch.org/social-trends/2019/11/06/marriage-and-cohabitation-in-the-u-s/"
             }
           ],
           "source_role": "Why this position may appeal, not an independent empirical proof",
@@ -416,7 +417,7 @@
           "selected_opponent_source_links": [
             {
               "id": "PEW_CO2019",
-              "canonical_url": "https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/"
+              "canonical_url": "https://www.pewresearch.org/social-trends/2019/11/06/marriage-and-cohabitation-in-the-u-s/"
             }
           ],
           "source_role": "Follow-up objection, often constructed, not a direct source quotation",
@@ -2042,5 +2043,5 @@
     }
   ],
   "scope_correction_note": "After main advanced, CSE035 was reconciled against the latest app text and original 2019 Pew report: 38% finances, 37% convenience as major factors, not 23% testing compatibility.",
-  "reconciliation_note": "2026-10-09: Re-synced all 34×3 live EN/FR opposing stages and source mappings with intervening concurrent original-source PR, rather than overwriting concurrent improvements. Corrected Pew data remains checked against original 2019 report. Previous original-access classifications remain caveated."
+  "reconciliation_note": "2026-10-09 verification of Pew main report restores correctly attributed 23% testing motive and distinguishes it from another 23% (not-engaged/not-serious group). Old report subsection was too narrow."
 }
