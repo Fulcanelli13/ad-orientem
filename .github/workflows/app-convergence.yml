@@ -14,6 +14,13 @@ on:
       - "src/settings/**"
       - "src/mass/browser-entry.js"
       - "index.html"
+      - "ao-inline-*.js"
+      - "ao-inline-*.css"
+      - "data/presentation/startup-thin-shell.v1.json"
+      - "tools/extract-thin-html-shell.mjs"
+      - "tools/pack-extracted-classic-js.mjs"
+      - "ao-packed-*.js"
+      - "tests/thin-html-browser-e2e.mjs"
       - "assets/generated-sprites/**"
       - "assets/generated-symbols/**"
       - "tests/per-icon-svg-e2e.mjs"
@@ -54,6 +61,13 @@ on:
       - "src/learn/**"
       - "src/mass/browser-entry.js"
       - "index.html"
+      - "ao-inline-*.js"
+      - "ao-inline-*.css"
+      - "data/presentation/startup-thin-shell.v1.json"
+      - "tools/extract-thin-html-shell.mjs"
+      - "tools/pack-extracted-classic-js.mjs"
+      - "ao-packed-*.js"
+      - "tests/thin-html-browser-e2e.mjs"
       - "assets/generated-sprites/**"
       - "assets/generated-symbols/**"
       - "tests/per-icon-svg-e2e.mjs"
@@ -93,6 +107,8 @@ jobs:
       - run: npm run test:app-shell-contract
       - run: npm run test:tree-hygiene
       - run: node tests/startup-payload-contract.mjs
+      - run: node tools/extract-thin-html-shell.mjs --verify
+      - run: node tools/pack-extracted-classic-js.mjs --verify
       - run: npm run test:app-live-guards
       - run: npm run test:presentation-fx
       - run: npm run test:home-owner
@@ -120,6 +136,7 @@ jobs:
       - run: node tests/per-icon-svg-e2e.mjs
       - run: node tests/external-svg-sprite-e2e.mjs
       - run: node tests/route-lazy-browser-e2e.mjs
+      - run: node tests/thin-html-browser-e2e.mjs
       - run: npm run test:rc-interaction-qa
       - run: npm run test:phone
       - run: node tests/app-shell-journey-e2e.mjs

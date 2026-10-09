@@ -1,0 +1,119 @@
+
+/* v40.1 — Rosary native harmonization. Uses only the established v39.1/v40
+   surface, border, typography and liturgical-colour tokens. */
+
+/* Sacred-art choice belongs in Preferences, not the live prayer chrome. */
+#aoPrayerBookRoot .aoRosaryArtMode{display:none!important}
+/* The older v38 renderer may still populate these; v40.1 owns the visible art layer. */
+#aoPrayerBookRoot .aoRosaryArtHero{display:none!important}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{display:none!important}
+
+/* Native mystery artwork. */
+#aoPrayerBookRoot .aoV401RosaryHero{
+  margin:0 0 14px;border:1px solid var(--liturgical-border);border-radius:var(--radius-m);
+  overflow:hidden;background:var(--surface-1);box-shadow:none
+}
+#aoPrayerBookRoot .aoV401RosaryHero img{
+  display:block;width:100%;height:auto;max-height:min(54vh,520px);object-fit:contain;background:var(--bg)
+}
+#aoPrayerBookRoot .aoV401RosaryHero figcaption{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;
+  border-top:1px solid var(--border);background:var(--surface-1);color:var(--text);
+  font:600 .76rem/1.35 var(--font-display)
+}
+#aoPrayerBookRoot .aoV401RosaryHero figcaption span:last-child{
+  color:var(--muted);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase
+}
+#aoPrayerBookRoot .aoV401RosaryHero.aoV401ArtSubtle img{filter:saturate(.82) brightness(.78);opacity:.86}
+
+/* During a decade the image remains legible behind the prayer rather than becoming
+   an almost-black wallpaper. The card stays native and readable, but is glassier. */
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer{position:relative;isolation:isolate;overflow:clip}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer::before{
+  content:"";display:block!important;position:absolute;z-index:0;inset:64px 0 70px;border-radius:var(--radius-l);
+  background-image:linear-gradient(180deg,rgba(3,8,12,.18),rgba(3,8,12,.30) 46%,rgba(3,8,12,.42)),var(--ao-v401-rosary-art);
+  background-size:cover;background-position:center 22%;opacity:1;filter:saturate(1.02) brightness(.88);pointer-events:none
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer.aoV401ArtSubtle::before{
+  background-image:linear-gradient(180deg,rgba(3,8,12,.46),rgba(3,8,12,.62)),var(--ao-v401-rosary-art);
+  filter:saturate(.78) brightness(.72)
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer>*{position:relative;z-index:1}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 62%,transparent)!important;
+  border-color:var(--border)!important;box-shadow:0 14px 34px rgba(0,0,0,.18)!important;
+  backdrop-filter:blur(2.5px) saturate(1.03)!important;-webkit-backdrop-filter:blur(2.5px) saturate(1.03)!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer.aoV401ArtSubtle .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 76%,transparent)!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer .lab-scripture-cue{
+  background:color-mix(in srgb,var(--surface-2) 67%,transparent)!important;
+  border-color:var(--liturgical-border)!important
+}
+
+/* Link/action colour follows the app's actual liturgical accent; no donor gold. */
+#aoPrayerBookRoot .lab-scripture-actions button,
+#aoPrayerBookRoot .lab-source-row a,
+#aoPrayerBookRoot .lab-source-note a,
+#aoPrayerBookRoot .lab-change{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-scripture-actions button:focus-visible,
+#aoPrayerBookRoot .lab-change:focus-visible{outline:2px solid var(--liturgical);outline-offset:3px}
+
+/* Direct decade navigation: visual bead stays compact, hit area is generous. */
+#aoPrayerBookRoot .lab-bead-stage.aoV401InteractiveBeads{
+  gap:5px;flex-wrap:nowrap;overflow-x:auto;overflow-y:visible;padding:8px 4px 10px;scrollbar-width:none;
+  overscroll-behavior-x:contain;touch-action:pan-x
+}
+#aoPrayerBookRoot .lab-bead-stage.aoV401InteractiveBeads::-webkit-scrollbar{display:none}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead{
+  appearance:none;-webkit-appearance:none;position:relative;flex:0 0 30px;width:30px;height:30px;min-width:30px;min-height:30px;
+  margin:0;padding:0;border-radius:50%;cursor:pointer;touch-action:manipulation;
+  transition:transform .11s ease,box-shadow .15s ease,background .15s ease,border-color .15s ease,filter .15s ease
+}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead::after{content:"";position:absolute;inset:-6px;border-radius:50%}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead:hover{filter:brightness(1.1)}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead:active{transform:scale(.82)}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead:focus-visible{
+  outline:2px solid var(--liturgical);outline-offset:4px;box-shadow:0 0 0 6px var(--liturgical-soft)!important
+}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead.current{
+  width:34px;height:34px;min-width:34px;min-height:34px;flex-basis:34px
+}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead.aoV401Pulse{animation:aoV401BeadPulse .24s ease-out}
+@keyframes aoV401BeadPulse{0%{transform:scale(.8)}55%{transform:scale(1.14)}100%{transform:scale(1)}}
+
+/* Guide / Preferences and Rosary depth readers must sit above the canonical Prayer Book root (z-index 2147482000). */
+.ao-r-depth-modal{z-index:2147483100!important}
+/* Guide / Preferences: native bottom sheet, hardened for actual phones and narrow widths. */
+.rc2SheetBackdrop{z-index:2147483000!important;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))!important}
+.rc2Sheet{width:min(100%,680px)!important;max-height:min(88dvh,820px)!important;overscroll-behavior:contain;overflow-x:hidden!important}
+.rc2SheetBody{overflow-x:hidden!important}
+.rc2GuideSection,.rc2PrefSection,.rc2SheetIntro,.rc2SourceLinks a{overflow-wrap:anywhere;word-break:normal}
+.rc2SourceLinks{min-width:0}
+.rc2SourceLinks a{max-width:100%}
+#rc2-module-sheet .aoV401ArtPref .rc2Segments{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+#rc2-module-sheet .aoV401ArtPref .rc2Segments button{touch-action:manipulation}
+
+@media(max-width:560px){
+ .rc2SheetBackdrop{padding:0!important;align-items:flex-end!important}
+ .rc2Sheet{width:100%!important;max-height:94dvh!important;border-radius:var(--radius-l) var(--radius-l) 0 0!important}
+ .rc2Sheet header{padding:14px 15px!important}
+ .rc2SheetBody{padding:15px!important;padding-bottom:max(18px,env(safe-area-inset-bottom))!important}
+ .rc2GuideSection,.rc2PrefSection{padding:14px!important}
+ .rc2ModuleTools{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px!important}
+ .rc2ModuleTools .rc2ModePill{grid-column:1/-1!important;margin:0!important;width:100%!important}
+ .rc2ModuleTools button{width:100%!important;min-width:0!important}
+ #aoPrayerBookRoot .aoV401RosaryHero img{max-height:46vh}
+ #aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer::before{inset:58px 0 68px;border-radius:var(--radius-m)}
+}
+@media(max-width:300px){
+ .rc2Segments,.rc2Segments.three{grid-template-columns:1fr!important}
+ #aoPrayerBookRoot .lab-bead-stage.aoV401InteractiveBeads{gap:4px}
+ #aoPrayerBookRoot button.lab-bead.aoV401Bead{flex-basis:28px;width:28px;height:28px;min-width:28px;min-height:28px}
+ #aoPrayerBookRoot button.lab-bead.aoV401Bead.current{flex-basis:32px;width:32px;height:32px;min-width:32px;min-height:32px}
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPrayerBookRoot button.lab-bead.aoV401Bead{transition:none!important}
+ #aoPrayerBookRoot button.lab-bead.aoV401Bead.aoV401Pulse{animation:none!important}
+}

@@ -1,0 +1,60 @@
+
+/* The v40.2 scrim must never share a stacking plane with prayer content. */
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer{
+  position:relative!important;isolation:isolate!important;overflow:clip!important;
+  filter:none!important;opacity:1!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer::after{
+  content:none!important;display:none!important;background:none!important;
+  opacity:0!important;filter:none!important;backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;pointer-events:none!important
+}
+
+/* Only the artwork layer is attenuated. It sits behind every live control/text node. */
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer::before{
+  content:""!important;display:block!important;position:absolute!important;z-index:0!important;
+  inset:64px 0 70px!important;border-radius:var(--radius-l)!important;
+  background-image:var(--ao-v401-rosary-art)!important;
+  background-size:cover!important;background-position:center 22%!important;background-repeat:no-repeat!important;
+  opacity:.20!important;filter:saturate(.76) brightness(.72) contrast(.94)!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;pointer-events:none!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer.aoV401ArtSubtle::before{
+  opacity:.10!important;filter:saturate(.62) brightness(.66) contrast(.92)!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer>*{
+  position:relative!important;z-index:1!important;opacity:1!important
+}
+
+/* Prayer surfaces stay native and sharp. Transparency is in the image, not in the text. */
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 94%,transparent)!important;
+  border-color:var(--border)!important;box-shadow:0 12px 28px rgba(0,0,0,.16)!important;
+  filter:none!important;opacity:1!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer.aoV401ArtSubtle .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 97%,transparent)!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer .lab-scripture-cue{
+  background:color-mix(in srgb,var(--surface-2) 96%,transparent)!important;
+  border-color:var(--liturgical-border)!important;
+  filter:none!important;opacity:1!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important
+}
+
+/* Reinstate v40.2's crisp announcement-art sizing after the older v40.1 tail. */
+#aoPrayerBookRoot .aoV401RosaryHero img{
+  display:block!important;width:auto!important;max-width:100%!important;height:auto!important;
+  max-height:min(54vh,520px)!important;margin-inline:auto!important;object-fit:contain!important;
+  image-rendering:auto!important;filter:none!important;opacity:1!important;background:var(--bg)!important
+}
+#aoPrayerBookRoot .aoV401RosaryHero.aoV401ArtSubtle img{
+  opacity:.88!important;filter:saturate(.88) brightness(.90)!important
+}
+
+@media(max-width:560px){
+  #aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer::before{
+    inset:58px 0 68px!important;border-radius:var(--radius-m)!important
+  }
+  #aoPrayerBookRoot .aoV401RosaryHero img{max-height:46vh!important}
+}

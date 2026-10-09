@@ -1,0 +1,24 @@
+
+.aoSaintArtCard.aoSaintArtCardClickable{cursor:pointer;transition:transform .16s ease,border-color .16s ease}.aoSaintArtCard.aoSaintArtCardClickable:focus-visible{outline:2px solid var(--liturgical,#c7ae7b);outline-offset:3px}.aoSaintArtCard.aoSaintArtCardClickable:hover{border-color:var(--liturgical,#c7ae7b)}
+.aoSaintReader{margin:0 0 18px;padding:0;border:1px solid var(--liturgical-border,rgba(255,255,255,.13));border-radius:18px;overflow:hidden;background:var(--surface,#111820)}
+.aoSaintReaderTabs{display:flex;gap:7px;overflow:auto;padding:11px 12px;border-bottom:1px solid var(--liturgical-border,rgba(255,255,255,.1))}.aoSaintReaderTabs button{white-space:nowrap;border:1px solid var(--liturgical-border,rgba(255,255,255,.14));border-radius:999px;background:transparent;color:inherit;padding:7px 10px;font:inherit;font-size:.72rem}.aoSaintReaderTabs button.active{background:var(--liturgical-soft,rgba(255,255,255,.09));border-color:var(--liturgical,#999)}
+.aoSaintReaderGrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:0}.aoSaintReaderArt{min-height:260px;background:linear-gradient(135deg,var(--liturgical-soft,rgba(255,255,255,.06)),rgba(255,255,255,.02));display:flex;flex-direction:column}.aoSaintReaderArtMedia{position:relative;min-height:260px;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden}.aoSaintReaderArtMedia img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block}.aoSaintReaderArtMeta{padding:10px 12px;border-top:1px solid rgba(255,255,255,.08);font-size:.7rem;line-height:1.45;color:var(--muted,#aab3bb)}
+.aoSaintReaderBio{padding:16px}.aoSaintReaderKicker{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--liturgical,#c7ae7b)}.aoSaintReaderBio h3{margin:5px 0 10px;font:700 1.18rem/1.25 var(--font-display,Georgia,serif)}.aoSaintReaderBioText{font-size:.91rem;line-height:1.63}.aoSaintReaderBioText p{margin:0 0 .9em}.aoSaintReaderSource{margin-top:13px;padding-top:11px;border-top:1px solid rgba(255,255,255,.09);font-size:.72rem;line-height:1.5;color:var(--muted,#aab3bb)}.aoSaintReaderSource a{color:inherit;text-decoration:underline}.aoSaintReaderPlaceholder{padding:24px;text-align:center;color:var(--muted,#aab3bb);font-size:.82rem;line-height:1.5}.aoSaintReaderStatus{display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;padding:5px 8px;border-radius:999px;background:var(--liturgical-soft,rgba(255,255,255,.06));font-size:.65rem;color:var(--muted,#aab3bb)}
+@media(max-width:640px){.aoSaintReader{border-radius:15px}.aoSaintReaderGrid{grid-template-columns:1fr}.aoSaintReaderArtMedia,.aoSaintReaderArtMedia img{min-height:230px;max-height:360px}.aoSaintReaderBio{padding:14px}}
+
+/* v40.6 consolidated Saint-of-the-Day presentation */
+.aoSaintArtMeta{display:none!important}
+[data-ao-art-info],.aoSaintArtActions,[data-ao-art-debug],.aoArtInfoBackdrop{display:none!important}
+#ao-v25-panel[data-ao-saint-reader] .aoV25Hero{display:none!important}
+#ao-v25-panel[data-ao-saint-reader] .aoV25Body{padding-top:12px!important}
+.aoSaintReaderArtMeta{padding:8px 12px!important;font-size:.68rem!important;line-height:1.4!important}
+.aoSaintReaderArtMeta:empty{display:none!important}
+.aoSaintReaderArtMeta a{color:inherit;text-decoration:underline}
+.aoSaintArtCreditDisclosure{margin:0}
+.aoSaintArtCreditDisclosure summary{cursor:pointer;list-style:none;color:var(--muted,#aab3bb);opacity:.8;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase}
+.aoSaintArtCreditDisclosure summary::-webkit-details-marker{display:none}
+.aoSaintArtCreditDisclosure summary::after{content:' +'}
+.aoSaintArtCreditDisclosure[open] summary::after{content:' −'}
+.aoSaintArtCreditBody{margin-top:7px;color:var(--muted,#aab3bb);font-size:.66rem;line-height:1.45}
+.aoSaintArtCreditBody a{color:inherit;text-decoration:underline}
+@media(max-width:640px){.aoSaintReaderBioText{font-size:.94rem;line-height:1.62}.aoSaintReaderBio h3{font-size:1.32rem}.aoSaintReaderArtMedia,.aoSaintReaderArtMedia img{min-height:250px;max-height:420px}}

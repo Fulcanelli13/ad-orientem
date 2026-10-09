@@ -1,0 +1,40 @@
+
+/* v43.23 owns the visible Coming Up surface. The v43.20 card remains hidden for compatibility. */
+.homeScreen #aoComingUpCardV4320{display:none!important}
+.homeScreen .aoComingUpV4323{
+  margin:10px 0 13px;padding:12px 13px 10px;border:1px solid var(--liturgical-border);
+  border-radius:17px;background:linear-gradient(180deg,color-mix(in srgb,var(--surface-1) 97%,var(--liturgical-soft) 3%),var(--surface-1));
+  overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.12)
+}
+.aoComingUpV4323 .aoCU23Head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 1px 8px}
+.aoComingUpV4323 .aoCU23Heading{display:flex;align-items:center;gap:8px;min-width:0}
+.aoComingUpV4323 .aoCU23Heading svg{width:18px;height:18px;color:var(--liturgical);flex:none}
+.aoComingUpV4323 .aoCU23Heading b{font:600 1.02rem/1.1 var(--font-display);letter-spacing:.02em}
+.aoComingUpV4323 .aoCU23More{border:0;background:transparent;color:var(--liturgical);font:.65rem/1.2 var(--font-display);letter-spacing:.05em;text-transform:uppercase;padding:6px 2px;white-space:nowrap}
+.aoComingUpV4323 .aoCU23Rows{display:grid;gap:0;border-top:1px solid var(--border)}
+.aoComingUpV4323 .aoCU23Row{width:100%;display:grid;grid-template-columns:70px 28px minmax(0,1fr) 14px;align-items:center;gap:9px;min-height:64px;padding:9px 1px;border:0;border-bottom:1px solid var(--border);background:transparent;color:var(--text);text-align:left}
+.aoComingUpV4323 .aoCU23Row:last-child{border-bottom:0}
+.aoComingUpV4323 .aoCU23Role{font:600 .58rem/1.15 var(--font-display);letter-spacing:.1em;text-transform:uppercase;color:var(--liturgical)}
+.aoComingUpV4323 .aoCU23Role small{display:block;margin-top:3px;font:500 .59rem/1.15 var(--font-liturgical);letter-spacing:0;text-transform:none;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoComingUpV4323 .aoCU23Icon{width:28px;height:28px;display:grid;place-items:center;color:var(--text)}
+.aoComingUpV4323 .aoCU23Icon svg{width:24px;height:24px}
+.aoComingUpV4323 .aoCU23Copy{min-width:0}
+.aoComingUpV4323 .aoCU23Copy strong{display:block;font:600 .92rem/1.14 var(--font-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoComingUpV4323 .aoCU23Copy span{display:block;margin-top:3px;color:var(--muted);font-size:.69rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoComingUpV4323 .aoCU23Arrow{color:var(--muted);font-size:1rem;text-align:right}
+.aoComingUpV4323 .aoCU23Row.event{background:linear-gradient(90deg,color-mix(in srgb,var(--liturgical) 6%,transparent),transparent 72%)}
+.aoComingUpV4323 .aoCU23Row.done{opacity:.72}
+.aoComingUpV4323 .aoCU23Row.done .aoCU23Copy strong:after{content:' ✓';color:var(--liturgical)}
+@media(max-width:480px){
+ .homeScreen .aoComingUpV4323{padding:10px 11px 8px;border-radius:15px}
+ .aoComingUpV4323 .aoCU23Head{padding-bottom:7px}
+ .aoComingUpV4323 .aoCU23Heading b{font-size:.95rem}
+ .aoComingUpV4323 .aoCU23Row{grid-template-columns:59px 25px minmax(0,1fr) 12px;gap:7px;min-height:58px;padding:8px 0}
+ .aoComingUpV4323 .aoCU23Role{font-size:.53rem}.aoComingUpV4323 .aoCU23Role small{font-size:.55rem}
+ .aoComingUpV4323 .aoCU23Icon{width:25px;height:25px}.aoComingUpV4323 .aoCU23Icon svg{width:21px;height:21px}
+ .aoComingUpV4323 .aoCU23Copy strong{font-size:.84rem}.aoComingUpV4323 .aoCU23Copy span{font-size:.63rem}
+}
+@media(max-width:370px){
+ .aoComingUpV4323 .aoCU23Row{grid-template-columns:54px 23px minmax(0,1fr) 10px;gap:6px}
+ .aoComingUpV4323 .aoCU23Copy strong{font-size:.8rem}
+}

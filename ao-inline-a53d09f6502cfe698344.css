@@ -1,0 +1,49 @@
+
+.homeScreen .aoDailyCateHome{min-height:162px!important;padding:13px 40% 12px 14px!important}
+.homeScreen .aoDailyCateHome .aoPiusHeroMedia{width:44%!important}
+.homeScreen .aoDailyCateHome .cateCardCopy{padding-bottom:38px!important}
+.homeScreen .aoDailyCateHome .cateCardCopy p{display:none!important}
+.homeScreen .aoDailyCateHome .cateCardCopy>b{font-size:clamp(1.16rem,4vw,1.5rem)!important}
+.homeScreen .aoDailyCateHome .aoPiusXByline{margin-top:4px!important;font-size:.65rem!important}
+.homeScreen .aoDailyCateHome .aoCateBadge{margin-top:8px!important}
+.homeScreen .aoDailyCateHome .roundAction{left:14px!important;bottom:12px!important;width:34px!important;height:34px!important;min-width:34px!important}
+.homeScreen .massCard{display:none!important}
+.homeScreen .aoComingUpV4320{margin:10px 0 13px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+.aoComingUpV4320 .aoCU20Head{padding:0 2px 8px!important;border:0!important}
+.aoComingUpV4320 .aoCU20Heading{gap:7px}
+.aoComingUpV4320 .aoCU20Heading svg{width:17px;height:17px}
+.aoComingUpV4320 .aoCU20Heading b{font-size:1rem!important}
+.aoComingUpV4320 .aoCU20More{font-size:.64rem!important;padding:5px 2px!important}
+.aoComingUpV4320 .aoCU20Rows{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;padding:0!important}
+.aoComingUpV4320 .aoCU20Row{position:relative;min-width:0;min-height:60px!important;display:grid!important;grid-template-columns:25px minmax(0,1fr) 11px!important;grid-template-rows:auto auto!important;column-gap:8px!important;row-gap:1px!important;padding:9px 10px!important;border:1px solid var(--border)!important;border-radius:12px!important;background:color-mix(in srgb,var(--surface-1) 97%,var(--liturgical-soft) 3%)!important}
+.aoComingUpV4320 .aoCU20Row .aoCU20Icon{grid-column:1;grid-row:1/3;width:25px;height:25px;align-self:center}
+.aoComingUpV4320 .aoCU20Row .aoCU20Icon svg{width:22px;height:22px}
+.aoComingUpV4320 .aoCU20Row .aoCU20When{grid-column:2;grid-row:1;font-size:.61rem!important;line-height:1.15!important}
+.aoComingUpV4320 .aoCU20Row .aoCU20Copy{grid-column:2;grid-row:2;min-width:0}
+.aoComingUpV4320 .aoCU20Row .aoCU20Copy strong{font-size:.78rem!important;line-height:1.16!important}
+.aoComingUpV4320 .aoCU20Row .aoCU20Copy span{display:none!important}
+.aoComingUpV4320 .aoCU20Row .aoCU20Arrow{grid-column:3;grid-row:1/3;align-self:center;font-size:.9rem!important}
+.aoComingUpV4320 .aoCU20Row:first-child{grid-column:1/-1!important;min-height:82px!important;grid-template-columns:31px minmax(0,1fr) 40px!important;padding:13px 14px!important;border-color:var(--liturgical-border)!important;border-radius:17px!important;background:linear-gradient(135deg,color-mix(in srgb,var(--liturgical) 15%,var(--surface-1)),var(--surface-1) 72%)!important;box-shadow:0 9px 24px rgba(0,0,0,.16)!important}
+.aoComingUpV4320 .aoCU20Row:first-child .aoCU20Icon{width:31px;height:31px}
+.aoComingUpV4320 .aoCU20Row:first-child .aoCU20Icon svg{width:27px;height:27px}
+.aoComingUpV4320 .aoCU20Row:first-child .aoCU20When{font-size:.65rem!important;letter-spacing:.06em;text-transform:uppercase}
+.aoComingUpV4320 .aoCU20Row:first-child .aoCU20Copy strong{font-size:1.08rem!important;line-height:1.1!important}
+.aoComingUpV4320 .aoCU20Row:first-child .aoCU20Copy span{display:block!important;margin-top:3px!important;font-size:.65rem!important}
+.aoComingUpV4320 .aoCU20Row:first-child .aoCU20Arrow{width:34px;height:34px;border:1px solid var(--liturgical-border);border-radius:50%;display:grid;place-items:center;color:var(--liturgical)!important;font-size:1rem!important}
+.aoComingUpV4320 .aoCU20Rows:has(> .aoCU20Row:nth-child(2):last-child) > .aoCU20Row:nth-child(2){grid-column:1/-1!important}
+#ao-mass-flow-v1 .aoPreflightHero>p,#ao-mass-flow-v1 .aoArchitectureState,#ao-mass-flow-v1 .aoWhyRubric,#ao-mass-flow-v1 .aoInternalMetaV4322{display:none!important}
+@media(max-width:480px){
+ .homeScreen .aoDailyCateHome{min-height:150px!important;padding:12px 38% 11px 12px!important}
+ .homeScreen .aoDailyCateHome .aoPiusHeroMedia{width:42%!important}
+ .homeScreen .aoDailyCateHome .cateCardCopy{padding-bottom:35px!important}
+ .homeScreen .aoDailyCateHome .cateCardCopy>b{font-size:1.16rem!important}
+ .homeScreen .aoDailyCateHome .aoCateBadge{font-size:.56rem!important;padding:3px 7px!important}
+ .homeScreen .aoDailyCateHome .roundAction{left:12px!important;bottom:10px!important;width:32px!important;height:32px!important;min-width:32px!important}
+ .aoComingUpV4320 .aoCU20Rows{gap:7px!important}
+ .aoComingUpV4320 .aoCU20Row{min-height:57px!important;padding:8px 9px!important;grid-template-columns:23px minmax(0,1fr) 10px!important;column-gap:7px!important}
+ .aoComingUpV4320 .aoCU20Row .aoCU20Icon{width:23px;height:23px}.aoComingUpV4320 .aoCU20Row .aoCU20Icon svg{width:20px;height:20px}
+ .aoComingUpV4320 .aoCU20Row .aoCU20Copy strong{font-size:.73rem!important}
+ .aoComingUpV4320 .aoCU20Row:first-child{min-height:76px!important;padding:12px!important;grid-template-columns:29px minmax(0,1fr) 37px!important}
+ .aoComingUpV4320 .aoCU20Row:first-child .aoCU20Copy strong{font-size:1rem!important}
+ .aoComingUpV4320 .aoCU20Row:first-child .aoCU20Copy span{font-size:.61rem!important}
+}

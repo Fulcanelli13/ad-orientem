@@ -1,0 +1,30 @@
+
+/* v38 Rosary Sacred Art Meditation — presentation/content-delivery only. */
+#aoPrayerBookRoot .aoRosaryArtMode{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0 14px;padding:8px 10px;border:1px solid var(--border,#304353);border-radius:13px;background:color-mix(in srgb,var(--surface-1,#0d1822) 92%,transparent)}
+#aoPrayerBookRoot .aoRosaryArtMode>span{font:600 .68rem var(--font-display,serif);letter-spacing:.07em;text-transform:uppercase;color:var(--muted,#91a0aa);margin-right:2px}
+#aoPrayerBookRoot .aoRosaryArtMode button{min-height:32px;padding:5px 10px;border:1px solid var(--border,#304353);border-radius:999px;background:transparent;color:var(--muted,#a8b1b8);font:600 .7rem var(--font-display,serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryArtMode button.active{border-color:var(--liturgical-border,var(--liturgical,#c7ae6d));background:var(--liturgical-soft,rgba(199,174,109,.12));color:var(--text,#eee9df)}
+#aoPrayerBookRoot .aoRosaryArtHero{position:relative;margin:0 0 14px;border:1px solid var(--liturgical-border,var(--border));border-radius:20px;overflow:hidden;background:#05080b;box-shadow:0 16px 38px rgba(0,0,0,.28)}
+#aoPrayerBookRoot .aoRosaryArtHero img{display:block;width:100%;height:auto;max-height:min(58vh,560px);object-fit:contain;background:#03070a;opacity:0;transition:opacity .35s ease,filter .35s ease}
+#aoPrayerBookRoot .aoRosaryArtHero.ready img{opacity:1}
+#aoPrayerBookRoot .aoRosaryArtHero.subtle img{max-height:min(36vh,320px);opacity:.76;filter:saturate(.88) brightness(.88)}
+#aoPrayerBookRoot .aoRosaryArtHero figcaption{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 13px;background:linear-gradient(180deg,#0c1620,#081019);color:#ddd7ca;font-size:.78rem}
+#aoPrayerBookRoot .aoRosaryArtHero figcaption span:last-child{color:#9eaaaf;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em}
+#aoPrayerBookRoot .aoRosaryArtHero.unavailable{min-height:110px;display:grid;place-items:center;background:linear-gradient(145deg,#0c1c2a,#080d12)}
+#aoPrayerBookRoot .aoRosaryArtHero.unavailable img{display:none}
+#aoPrayerBookRoot .aoRosaryArtHero.unavailable figcaption{position:static;width:100%}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer{position:relative;isolation:isolate}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{content:"";position:absolute;z-index:0;inset:70px 4px 74px;border-radius:24px;background-image:var(--ao-rosary-art-image);background-size:cover;background-position:center;opacity:.22;filter:saturate(.86) brightness(.58);transition:opacity .25s ease;pointer-events:none}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer.aoArtSubtle::before{opacity:.11;filter:saturate(.72) brightness(.55)}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer>*{position:relative;z-index:1}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet{background:rgba(241,238,229,.84);backdrop-filter:blur(1.5px);-webkit-backdrop-filter:blur(1.5px);border:1px solid rgba(255,255,255,.16)}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer.aoArtSubtle .lab-prayer-sheet{background:rgba(241,238,229,.91)}
+@media(max-width:520px){
+ #aoPrayerBookRoot .aoRosaryArtMode{gap:6px;padding:7px 8px}
+ #aoPrayerBookRoot .aoRosaryArtMode button{padding:5px 8px}
+ #aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{inset:64px 0 72px;border-radius:18px}
+ #aoPrayerBookRoot .aoRosaryArtHero img{max-height:52vh}
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPrayerBookRoot .aoRosaryArtHero img,#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{transition:none}
+}

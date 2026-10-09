@@ -1,0 +1,48 @@
+
+/* v43.34 — single-file Rosary Group-width authority. */
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomarySplit,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomarySplit{
+  display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;
+  writing-mode:horizontal-tb!important;text-orientation:mixed!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryLeader,
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryResponse,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryLeader,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryResponse{
+  display:block!important;grid-template-columns:none!important;grid-auto-columns:auto!important;
+  width:100%!important;inline-size:100%!important;max-width:100%!important;min-width:0!important;
+  writing-mode:horizontal-tb!important;text-orientation:mixed!important;
+  white-space:normal!important;word-break:normal!important;overflow-wrap:break-word!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryLeader>.aoPrayerRole,
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryResponse>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryLeader>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryResponse>.aoPrayerRole{
+  display:inline!important;position:static!important;float:none!important;
+  width:auto!important;inline-size:auto!important;max-width:none!important;min-width:0!important;
+  margin-right:.38em!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryLeader>span:not(.aoPrayerRole):not(.aoSrOnly),
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryResponse>span:not(.aoPrayerRole):not(.aoSrOnly),
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryLeader>span:not(.aoPrayerRole):not(.aoSrOnly),
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryResponse>span:not(.aoPrayerRole):not(.aoSrOnly){
+  display:inline!important;position:static!important;float:none!important;
+  width:auto!important;inline-size:auto!important;max-width:none!important;min-width:0!important;
+  writing-mode:horizontal-tb!important;white-space:normal!important;word-break:normal!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine,
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine{
+  grid-template-columns:max-content minmax(0,1fr)!important;width:100%!important;min-width:0!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine>.aoPrayerRole{
+  position:static!important;float:none!important;grid-column:1!important;width:auto!important;max-width:none!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine>.aoPrayerDialogueBody,
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine>.aoPrayerWords,
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine>.aoPrayerDialogueBody,
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine>.aoPrayerWords{
+  grid-column:2!important;justify-self:stretch!important;width:100%!important;inline-size:100%!important;
+  max-width:100%!important;min-width:0!important;writing-mode:horizontal-tb!important;
+  white-space:normal!important;word-break:normal!important;overflow-wrap:break-word!important
+}

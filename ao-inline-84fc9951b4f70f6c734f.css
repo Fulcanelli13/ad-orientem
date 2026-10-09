@@ -1,0 +1,61 @@
+
+/* v37: one visible information architecture. Existing content/renderers remain canonical behind AO_MODULES. */
+body.aoV37ShellOpen{overflow:hidden}
+
+/* Retire competing Home navigation surfaces without deleting their engines. */
+.homeScreen .v25HomeExplore,
+.homeScreen .aoLearnHomeCard,
+.homeScreen .aoCateHomeCard:not(.aoDailyCateHome){display:none!important}
+
+/* Prayer Library is a corpus/search surface, not a competing module hub. */
+#aoPrayerBookRoot.aoV37CorpusOnly .pbModuleGrid,
+#aoPrayerBookRoot.aoV37CorpusOnly .ao354Guided{display:none!important}
+
+/* Home domain dock */
+.aoV37HomeNav{margin:16px 0 8px;padding:12px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.018));box-shadow:0 12px 34px rgba(0,0,0,.14)}
+.aoV37HomeNavLabel{margin:0 0 9px 2px;color:var(--muted-2);font:600 .62rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase}
+.aoV37DomainDock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.aoV37DomainDock button{min-width:0;min-height:48px;padding:7px 4px;border:1px solid var(--border);border-radius:13px;background:var(--surface-1);color:var(--muted);font:650 .68rem/1.1 var(--font-display);letter-spacing:.02em}
+.aoV37DomainDock button.active{border-color:var(--liturgical-border);background:var(--liturgical-soft);color:var(--text)}
+.aoV37DomainDock button b{display:block;font-size:.92rem;color:inherit}
+.aoV37DomainDock button span{display:block;margin-top:3px;font-size:.56rem;opacity:.78}
+.aoV37UtilityRail{display:flex;justify-content:center;gap:5px;margin-top:8px;flex-wrap:wrap}
+.aoV37UtilityRail button{border:0;background:transparent;color:var(--muted-2);padding:5px 7px;font-size:.66rem}
+.aoV37UtilityRail button:hover,.aoV37UtilityRail button:focus-visible{color:var(--liturgical);outline:none}
+
+/* Full domain shell */
+.aoV37Root{position:fixed;z-index:14900;inset:0;background:var(--bg);color:var(--text);overflow:auto;overscroll-behavior:contain;padding-bottom:max(88px,var(--safe-bottom))}
+.aoV37Root[hidden]{display:none!important}
+.aoV37Top{position:sticky;top:0;z-index:8;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;padding:calc(10px + var(--safe-top)) 12px 10px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.aoV37Top button{width:42px;height:42px;border:1px solid var(--border);border-radius:50%;background:var(--surface-1);color:var(--text)}
+.aoV37TopTitle{min-width:0;text-align:center}.aoV37TopTitle small{display:block;color:var(--liturgical);font:650 .58rem/1.1 var(--font-display);letter-spacing:.12em;text-transform:uppercase}.aoV37TopTitle strong{display:block;margin-top:4px;font-family:var(--font-display);font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoV37Wrap{width:min(760px,100%);margin:0 auto;padding:20px 15px 34px}
+.aoV37Hero{padding:10px 2px 18px}.aoV37Hero .kicker{color:var(--liturgical);font:650 .63rem/1.1 var(--font-display);letter-spacing:.12em;text-transform:uppercase}.aoV37Hero h1{margin:7px 0 7px;font:500 clamp(1.85rem,8vw,2.65rem)/1.06 var(--font-display);letter-spacing:.015em}.aoV37Hero p{max-width:640px;margin:0;color:var(--muted);font-size:.94rem;line-height:1.5}.aoV37Context{margin-top:10px;color:var(--muted-2);font-size:.72rem}
+.aoV37Section{margin:8px 0 22px}.aoV37SectionHead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 2px 9px}.aoV37SectionHead h2{margin:0;color:var(--liturgical);font:650 .67rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase}.aoV37SectionHead span{color:var(--muted-2);font-size:.66rem}
+.aoV37Grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.aoV37Card{min-width:0;padding:0;border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg,var(--surface-1),rgba(255,255,255,.018));overflow:hidden}
+.aoV37Card.featured{border-color:var(--liturgical-border);background:linear-gradient(160deg,var(--liturgical-soft),var(--surface-1))}
+.aoV37CardMain{width:100%;min-height:104px;padding:14px;border:0;background:transparent;color:inherit;text-align:left}
+.aoV37CardMain .type{display:block;color:var(--liturgical);font:650 .56rem/1.1 var(--font-display);letter-spacing:.1em;text-transform:uppercase}
+.aoV37CardMain strong{display:block;margin-top:6px;font:600 .98rem/1.25 var(--font-display)}
+.aoV37CardMain p{margin:6px 0 0;color:var(--muted);font-size:.76rem;line-height:1.4}
+.aoV37CardMethods{display:flex;gap:5px;flex-wrap:wrap;padding:0 12px 12px}
+.aoV37CardMethods button{min-height:30px;padding:6px 8px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.025);color:var(--muted-2);font-size:.62rem}
+.aoV37CardMethods button:hover,.aoV37CardMethods button:focus-visible{border-color:var(--liturgical-border);color:var(--text);outline:none}
+.aoV37Bottom{position:fixed;z-index:14910;left:50%;bottom:0;transform:translateX(-50%);width:min(760px,100%);padding:7px 10px calc(7px + var(--safe-bottom));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(18px);border-top:1px solid var(--border)}
+.aoV37Bottom .aoV37DomainDock{max-width:560px;margin:0 auto}
+.aoV37Empty{padding:18px;border:1px dashed var(--border);border-radius:14px;color:var(--muted);text-align:center}
+.aoV37Error{margin:10px 0;padding:10px 12px;border:1px solid var(--liturgical-border);border-radius:12px;background:var(--liturgical-soft);color:var(--text);font-size:.78rem}
+
+@media(max-width:430px){
+  .aoV37Grid{grid-template-columns:1fr}
+  .aoV37CardMain{min-height:88px}
+  .aoV37Wrap{padding-left:12px;padding-right:12px}
+  .aoV37DomainDock button b{font-size:.82rem}
+  .aoV37DomainDock button span{font-size:.52rem}
+}
+@media(max-width:350px){
+  .aoV37HomeNav{padding:9px}
+  .aoV37DomainDock{gap:4px}
+  .aoV37DomainDock button{padding-left:2px;padding-right:2px}
+}

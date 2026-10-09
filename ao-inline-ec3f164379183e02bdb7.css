@@ -1,0 +1,21 @@
+
+/* Unified RC2 — common module controls, guide sheets and preferences */
+.rc2ModuleTools{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:-5px 0 16px;flex-wrap:wrap}
+.rc2ModuleTools button,.rc2FlowPrefs{min-height:38px;padding:8px 12px;border:1px solid rgba(197,209,218,.24);border-radius:10px;background:rgba(16,47,76,.66);color:var(--paper,#f4efe4);font:600 .72rem var(--display,system-ui);letter-spacing:.055em;text-transform:uppercase}
+.rc2ModuleTools button:hover,.rc2FlowPrefs:hover{background:rgba(255,255,255,.08)}
+.rc2ModuleTools .rc2ModePill{margin-right:auto;color:var(--gold,#cab78b);border-color:rgba(202,183,139,.34);background:rgba(202,183,139,.06);cursor:default}
+.rc2SheetBackdrop{position:fixed;inset:0;z-index:10050;background:rgba(1,8,15,.78);display:flex;align-items:flex-end;justify-content:center;padding:18px;backdrop-filter:blur(8px)}
+.rc2Sheet{width:min(100%,680px);max-height:min(86vh,820px);overflow:auto;border:1px solid rgba(197,209,218,.22);border-radius:22px 22px 16px 16px;background:#0b2034;color:#edf1f3;box-shadow:0 28px 80px rgba(0,0,0,.5)}
+.rc2Sheet header{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border-bottom:1px solid rgba(197,209,218,.17);background:rgba(11,32,52,.96);backdrop-filter:blur(12px)}
+.rc2Sheet header small{display:block;color:#cab78b;font:600 .65rem var(--display,system-ui);letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}.rc2Sheet header strong{font-size:1.22rem}.rc2SheetClose{width:42px;height:42px;border:1px solid rgba(197,209,218,.22);border-radius:50%;background:transparent;color:#edf1f3;font-size:1.25rem}
+.rc2SheetBody{padding:20px}.rc2SheetIntro{color:#bdc9d1;line-height:1.55;margin:0 0 18px}.rc2GuideSection,.rc2PrefSection{margin:0 0 14px;padding:16px;border:1px solid rgba(197,209,218,.17);border-radius:15px;background:rgba(16,47,76,.48)}
+.rc2GuideSection h3,.rc2PrefSection h3{margin:0 0 7px;font-size:1.02rem}.rc2GuideSection p,.rc2PrefSection p{margin:0;color:#cbd5dc;line-height:1.55}.rc2GuideSection a{color:#eadbb8}
+.rc2SourceLinks{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.rc2SourceLinks a{display:inline-flex;padding:6px 9px;border:1px solid rgba(202,183,139,.28);border-radius:999px;color:#eadbb8;text-decoration:none;font-size:.78rem}
+.rc2Segments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:10px}.rc2Segments.three{grid-template-columns:repeat(3,minmax(0,1fr))}.rc2Segments button{min-height:44px;border:1px solid rgba(197,209,218,.22);border-radius:11px;background:#07192c;color:#cbd5dc;padding:8px}.rc2Segments button.active{background:#d9e1e6;color:#152b3e;border-color:#e8edf0;font-weight:700}
+.rc2Toggle{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;padding:11px 0;border-top:1px solid rgba(197,209,218,.13)}.rc2Toggle:first-of-type{border-top:0}.rc2Toggle input{width:18px;height:18px;margin-top:2px}.rc2Toggle strong{display:block}.rc2Toggle span span{display:block;margin-top:3px;color:#9fb0bc;font-size:.83rem;line-height:1.4}
+.rc2Module.rc2-no-scripture .lab-scripture-cue,.rc2Module.rc2-no-scripture [data-ao-r-context]{display:none!important}.rc2Module.rc2-no-commentary [data-ao-r-commentary],.rc2Module.rc2-no-commentary .lab-contemplation .commentary{display:none!important}
+.rc2Module[data-rc2-module="rosary"] .lab-option-bar label{display:none}
+.rc2Module[data-rc2-module="angelus"] .lab-practice-sheet>label.lab-practice-note{display:none}
+.flowTop{gap:10px}.flowTop .rc2FlowPrefs{flex:0 0 auto}.flowTop>button[data-prepare-guide],.flowTop>button[data-thanks-guide]{margin-left:auto}.flowTop .rc2FlowPrefs{margin-left:-4px}
+.rc2FlowNote{font-size:.84rem;color:#9fb0bc;margin-top:8px}
+@media(max-width:560px){.rc2ModuleTools{justify-content:stretch}.rc2ModuleTools button{flex:1}.rc2ModuleTools .rc2ModePill{flex:1 0 100%;margin-right:0}.rc2SheetBackdrop{padding:0;align-items:flex-end}.rc2Sheet{border-radius:20px 20px 0 0;max-height:91vh}.rc2Segments.three{grid-template-columns:1fr}.flowTop .rc2FlowPrefs{padding-inline:8px;font-size:.66rem}}

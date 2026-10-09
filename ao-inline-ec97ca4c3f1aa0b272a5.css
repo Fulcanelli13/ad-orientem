@@ -1,0 +1,96 @@
+
+/* v43.19 rejected presentation is retained only as inherited code, never shown. */
+.homeScreen .aoComingUpV4319{display:none!important}
+
+/* DAILY CATECHISM — actual photographic hero, not a text card with a remote pseudo-background. */
+.homeScreen .aoDailyCateHome{
+  position:relative!important;isolation:isolate!important;overflow:hidden!important;
+  display:block!important;min-height:236px!important;
+  padding:22px 47% 22px 20px!important;
+  border-color:var(--liturgical-border)!important;
+  background:#080d12!important;
+}
+.homeScreen .aoDailyCateHome::before{display:none!important}
+.homeScreen .aoDailyCateHome::after{
+  content:""!important;display:block!important;position:absolute!important;inset:0!important;z-index:-1!important;
+  background:
+    linear-gradient(90deg,#080d12 0%,rgba(8,13,18,.97) 33%,rgba(8,13,18,.78) 52%,rgba(8,13,18,.24) 76%,rgba(8,13,18,.08) 100%),
+    linear-gradient(0deg,rgba(8,13,18,.62),transparent 55%)!important;
+  pointer-events:none!important;
+}
+.homeScreen .aoDailyCateHome .aoPiusHeroMedia{
+  position:absolute;z-index:-2;inset:0 0 0 auto;width:55%;overflow:hidden;background:#15181b;
+}
+.homeScreen .aoDailyCateHome .aoPiusHeroMedia img{
+  width:100%;height:100%;display:block;object-fit:cover;object-position:50% 23%;
+  filter:grayscale(1) sepia(.08) contrast(1.04) brightness(.9);
+}
+.homeScreen .aoDailyCateHome .cateCardCopy{max-width:none!important;padding-bottom:54px!important;position:relative;z-index:1}
+.homeScreen .aoDailyCateHome .cardKicker{color:var(--liturgical)!important;letter-spacing:.11em!important}
+.homeScreen .aoDailyCateHome .cateCardCopy>b{
+  display:block!important;margin-top:5px!important;color:#fff!important;
+  font:650 clamp(1.42rem,5vw,2.05rem)/1.04 var(--font-display)!important;
+}
+.homeScreen .aoDailyCateHome .cateCardCopy>b::after{content:none!important}
+.homeScreen .aoDailyCateHome .aoPiusXByline{
+  display:block;margin-top:6px;color:rgba(255,255,255,.78);
+  font:500 .78rem/1.2 var(--font-display);letter-spacing:.055em;text-transform:uppercase;
+}
+.homeScreen .aoDailyCateHome .cateCardCopy p{margin:12px 0 0!important;color:rgba(255,255,255,.88)!important;line-height:1.43!important;max-width:31rem}
+.homeScreen .aoDailyCateHome .aoDailyCateMeta{display:none!important}
+.homeScreen .aoDailyCateHome .aoCateBadge{
+  display:inline-flex!important;margin-top:13px!important;min-height:26px!important;padding:5px 9px!important;
+  border:1px solid rgba(255,255,255,.24)!important;border-radius:999px!important;
+  background:rgba(5,8,12,.54)!important;color:rgba(255,255,255,.9)!important;
+  font-size:.66rem!important;letter-spacing:.045em!important;
+}
+.homeScreen .aoDailyCateHome .roundAction{
+  position:absolute!important;left:20px!important;bottom:18px!important;right:auto!important;z-index:3!important;
+  width:43px!important;height:43px!important;min-width:43px!important;
+  background:var(--liturgical)!important;border-color:var(--liturgical)!important;color:#08100d!important;
+}
+
+/* COMING UP — compact orientation surface, not a planner. */
+.homeScreen .aoComingUpV4320{
+  margin:12px 0 14px!important;padding:0!important;overflow:hidden!important;
+  border-color:var(--liturgical-border)!important;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--surface-1) 97%,var(--liturgical-soft) 3%),var(--surface-1))!important;
+}
+.aoComingUpV4320 .aoCU20Head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:13px 14px 11px;border-bottom:1px solid var(--border);
+}
+.aoCU20Heading{display:flex;align-items:center;gap:9px;min-width:0}
+.aoCU20Heading svg{width:20px;height:20px;flex:none;color:var(--liturgical)}
+.aoCU20Heading b{font:650 1.08rem/1.1 var(--font-display);letter-spacing:.01em}
+.aoCU20More{border:0;background:transparent;color:var(--liturgical);padding:7px 2px;font:650 .68rem/1 var(--font-display);white-space:nowrap}
+.aoCU20Rows{padding:0 13px}
+.aoCU20Row{
+  width:100%;min-height:68px;display:grid;grid-template-columns:68px 30px minmax(0,1fr) 16px;
+  gap:10px;align-items:center;padding:10px 0;border:0;border-bottom:1px solid var(--border);
+  background:transparent;color:var(--text);text-align:left;
+}
+.aoCU20Row:last-child{border-bottom:0}
+.aoCU20When{color:var(--liturgical);font:650 .72rem/1.2 var(--font-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoCU20Icon{width:28px;height:28px;display:grid;place-items:center;color:var(--text)}
+.aoCU20Icon svg{width:25px;height:25px;display:block}
+.aoCU20Copy{min-width:0}
+.aoCU20Copy strong{display:block;font:600 .94rem/1.2 var(--font-display);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aoCU20Copy span{display:block;margin-top:3px;color:var(--muted);font-size:.68rem;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aoCU20Arrow{color:var(--muted);font-size:1.12rem;line-height:1;text-align:right}
+
+@media(max-width:480px){
+  .homeScreen .aoDailyCateHome{min-height:226px!important;padding:19px 43% 19px 17px!important}
+  .homeScreen .aoDailyCateHome .aoPiusHeroMedia{width:53%}
+  .homeScreen .aoDailyCateHome .cateCardCopy{padding-bottom:50px!important}
+  .homeScreen .aoDailyCateHome .cateCardCopy>b{font-size:1.45rem!important}
+  .homeScreen .aoDailyCateHome .cateCardCopy p{font-size:.83rem!important;line-height:1.4!important}
+  .homeScreen .aoDailyCateHome .roundAction{left:17px!important;bottom:16px!important;width:41px!important;height:41px!important;min-width:41px!important}
+  .aoCU20Row{grid-template-columns:60px 27px minmax(0,1fr) 13px;gap:8px;min-height:64px;padding:9px 0}
+  .aoCU20When{font-size:.67rem}.aoCU20Copy strong{font-size:.9rem}.aoCU20Copy span{font-size:.65rem}
+}
+@media(max-width:370px){
+  .homeScreen .aoDailyCateHome{padding-right:38%!important}
+  .homeScreen .aoDailyCateHome .aoPiusHeroMedia{width:49%;opacity:.88}
+  .aoCU20Row{grid-template-columns:54px 25px minmax(0,1fr) 12px;gap:7px}
+}

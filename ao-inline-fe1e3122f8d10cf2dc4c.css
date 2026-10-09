@@ -1,0 +1,55 @@
+
+/* v43.15 — presentation-only mobile hardening for Mass formation / cue guide sheets. */
+.whySheet,.whySheet *{min-width:0}
+.whySheet{scrollbar-gutter:stable;overflow-x:hidden}
+.whySheet .whyBlock,.whySheet .whyDetail,.whySheet .whyDetailBody,.whySheet .whySources li{overflow-wrap:anywhere;word-break:normal}
+.whySummaryLabel{overflow-wrap:anywhere}
+.aoGuideFact span,.aoLearnGuideFact span,.aoGuideFact small,.aoLearnGuideFact small{overflow-wrap:anywhere}
+
+/* The compact cue guide previously inherited browser-default UL/status styling. */
+.aoCueGuideSources{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.aoCueGuideSources li{margin:0;padding:10px 11px;border:1px solid var(--border);border-radius:11px;background:rgba(255,255,255,.022);color:var(--text);font-size:.86rem;line-height:1.35;overflow-wrap:anywhere}
+.aoCueGuideSources small{display:block;color:var(--liturgical);font:600 .58rem/1.2 var(--font-display);text-transform:uppercase;letter-spacing:.065em;margin:0 0 4px;overflow-wrap:anywhere}
+.aoCueGuideStatus{display:inline-flex;align-items:center;max-width:100%;padding:6px 9px;border:1px solid var(--liturgical-border);border-radius:999px;background:var(--liturgical-soft);color:var(--text);font-size:.82rem;line-height:1.3;white-space:normal;overflow-wrap:anywhere}
+.aoCueGuideCaution{margin:0;color:var(--muted-2)!important;font-size:.82rem!important;line-height:1.45!important}
+.aoCueStudy{display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 12px;line-height:1.25;overflow-wrap:anywhere}
+
+/* Full-sheet source cards and authority notes remain readable at narrow widths. */
+.whySources a,.whySources b,.sourceLocator,.authorityNote{overflow-wrap:anywhere}
+.whyDetail>summary{min-width:0}
+
+@media(max-width:480px){
+  .sheetBackdrop{padding-left:max(0px,env(safe-area-inset-left));padding-right:max(0px,env(safe-area-inset-right))}
+  .liveSheet.whySheet{max-height:92dvh;padding-left:14px;padding-right:14px}
+  .liveSheet.whySheet header{grid-template-columns:minmax(0,1fr) 44px;gap:8px}
+  .liveSheet.whySheet header h2{overflow-wrap:anywhere}
+  .whyDetail>summary{grid-template-columns:minmax(0,1fr) auto 18px;gap:7px;min-height:52px}
+  .whySummaryMeta{max-width:40vw;overflow:hidden;text-overflow:ellipsis}
+  .aoGuideFact,.aoLearnGuideFact{grid-template-columns:minmax(62px,auto) minmax(0,1fr);gap:4px 8px;padding:9px}
+  .whySources li{padding:10px}
+}
+
+@media(max-width:360px){
+  .liveSheet.whySheet{max-height:94dvh;padding:14px 12px calc(18px + var(--safe-bottom))}
+  .liveSheet.whySheet header{top:-14px;padding:14px 0 9px}
+  .liveSheet.whySheet header h2{font-size:1.12rem;line-height:1.22}
+  .whyBlock{padding:11px 0}
+  .primaryWhy p{font-size:.98rem;line-height:1.52}
+  .whyDetail{margin-top:8px;padding:0 10px}
+  .whyDetail>summary{min-height:50px;grid-template-columns:minmax(0,1fr) auto 17px;gap:6px;font-size:.67rem;letter-spacing:.055em}
+  .whySummaryMeta{max-width:34vw;padding:4px 6px;font-size:.54rem}
+  .whyDetailBody{padding-bottom:13px}
+  .whyDetailBody>p{font-size:.94rem;line-height:1.52}
+  .aoGuideFact,.aoLearnGuideFact{grid-template-columns:1fr;gap:3px;padding:9px 10px}
+  .aoGuideFact small,.aoLearnGuideFact small{grid-column:1}
+  .aoGuideFact b,.aoLearnGuideFact b{margin-bottom:1px}
+  .authorityNote{padding:9px 10px}
+  .aoCueGuideStatus{border-radius:10px}
+  .aoCueStudy{margin-bottom:calc(8px + var(--safe-bottom))}
+}
+
+@media(max-width:320px){
+  .whySummaryMeta{display:none}
+  .whyDetail>summary{grid-template-columns:minmax(0,1fr) 17px}
+  .whyDetail>summary:after{grid-column:2}
+}

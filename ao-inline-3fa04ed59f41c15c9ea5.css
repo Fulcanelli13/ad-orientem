@@ -1,0 +1,163 @@
+
+.aoRuleCard{
+  margin:12px 0 14px;
+  padding:9px 11px 10px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.018));
+  box-shadow:0 10px 26px rgba(0,0,0,.12)
+}
+.aoRuleHead{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:24px;margin-bottom:6px
+}
+.aoRuleHead button{
+  border:0;background:transparent;color:var(--text);padding:0;
+  font:600 .68rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase
+}
+.aoRuleCount{color:var(--muted-2);font:.67rem/1.2 var(--font-display);letter-spacing:.05em}
+.aoRuleNow{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;
+  margin:0 -2px 6px;padding:6px 8px;
+  border-left:2px solid var(--liturgical);
+  background:var(--liturgical-soft);
+  border-radius:0 8px 8px 0
+}
+.aoRuleNowText{min-width:0}
+.aoRuleNowText small{
+  display:block;color:var(--liturgical);
+  font:600 .59rem/1.2 var(--font-display);letter-spacing:.09em;text-transform:uppercase;
+  margin-bottom:2px
+}
+.aoRuleNowText strong{
+  display:inline;color:var(--text);
+  font:600 .96rem/1.15 var(--font-liturgical);
+  white-space:nowrap
+}
+.aoRuleNowText span{
+  display:inline;color:var(--muted);font-size:.66rem;line-height:1.15;margin-left:.38rem
+}
+.aoRuleNowAction{
+  border:0;background:transparent;color:var(--liturgical);
+  padding:5px 2px;font:700 .64rem/1 var(--font-display);letter-spacing:.07em;text-transform:uppercase;
+  white-space:nowrap
+}
+.aoRuleStatic{display:flex;align-items:center;gap:5px;flex-wrap:nowrap;min-height:25px;overflow-x:auto;scrollbar-width:none;overscroll-behavior-inline:contain}.aoRuleStatic::-webkit-scrollbar{display:none}
+.aoRulePill{
+  display:inline-flex;align-items:center;min-width:0;
+  border:1px solid rgba(255,255,255,.085);border-radius:999px;
+  background:rgba(255,255,255,.022);overflow:hidden
+}
+.aoRulePill.done{background:color-mix(in srgb,var(--liturgical) 7%,transparent);border-color:color-mix(in srgb,var(--liturgical) 30%,var(--border))}
+.aoRuleCheck,.aoRuleOpen,.aoRuleMore{
+  border:0;background:transparent;color:var(--text);min-height:25px
+}
+.aoRuleCheck{
+  width:25px;padding:0;color:var(--muted-2);font-size:.76rem
+}
+.aoRulePill.done .aoRuleCheck{color:var(--liturgical)}
+.aoRuleOpen{
+  padding:3px 8px 3px 0;font-size:.68rem;white-space:nowrap
+}
+.aoRuleMore{
+  border:1px solid var(--border);border-radius:999px;padding:3px 8px;
+  color:var(--muted);font-size:.65rem
+}
+
+/* Full rule sheet */
+#aoRuleSheet{
+  position:fixed;inset:0;z-index:12340;display:flex;align-items:flex-end;justify-content:center;
+  background:rgba(0,0,0,.66);backdrop-filter:blur(10px)
+}
+#aoRuleSheet[hidden]{display:none!important}
+.aoRuleSheetPanel{
+  width:min(720px,100%);max-height:min(88vh,880px);overflow:auto;
+  border:1px solid var(--border);border-bottom:0;border-radius:22px 22px 0 0;
+  background:color-mix(in srgb,var(--bg) 92%,#142033);color:var(--text);
+  box-shadow:0 -18px 60px rgba(0,0,0,.45);
+  padding:0 16px calc(18px + var(--safe-bottom))
+}
+.aoRuleSheetTop{
+  position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:10px;
+  margin:0 -16px;padding:12px 16px;
+  border-bottom:1px solid var(--border);
+  background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(14px)
+}
+.aoRuleSheetTop>div{flex:1}.aoRuleSheetTop small{
+  display:block;color:var(--liturgical);
+  font:600 .61rem/1.2 var(--font-display);letter-spacing:.1em;text-transform:uppercase
+}
+.aoRuleSheetTop h2{margin:2px 0 0;font:600 1.12rem/1.15 var(--font-display)}
+.aoRuleSheetTop button{
+  width:38px;height:38px;border:1px solid var(--border);border-radius:50%;
+  background:transparent;color:var(--text);font-size:1.15rem
+}
+.aoRuleSection{padding:16px 0;border-bottom:1px solid var(--border)}
+.aoRuleSection:last-child{border-bottom:0}
+.aoRuleSectionHead{
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px
+}
+.aoRuleSectionHead h3{
+  margin:0;font:600 .72rem/1.2 var(--font-display);letter-spacing:.1em;text-transform:uppercase
+}
+.aoRuleSectionHead span{color:var(--muted-2);font-size:.72rem}
+.aoRuleList{display:grid;gap:4px}
+.aoRuleRow{
+  display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:8px;
+  min-height:42px;padding:4px 2px;border-bottom:1px solid rgba(255,255,255,.055)
+}
+.aoRuleRow:last-child{border-bottom:0}
+.aoRuleRow .mark{
+  width:28px;height:28px;border:1px solid var(--border);border-radius:50%;
+  background:transparent;color:var(--muted)
+}
+.aoRuleRow.done .mark{color:var(--liturgical);border-color:var(--liturgical-border);background:var(--liturgical-soft)}
+.aoRuleRow .open{
+  border:0;background:transparent;color:var(--text);text-align:left;padding:4px 0
+}
+.aoRuleRow .open strong{display:block;font-weight:600;font-size:.9rem}
+.aoRuleRow .open small{display:block;color:var(--muted);font-size:.69rem;margin-top:2px}
+.aoRuleToggle{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.67rem}
+.aoRuleToggle input{accent-color:var(--liturgical)}
+.aoRuleHours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.aoRuleHour{
+  padding:9px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,.02)
+}
+.aoRuleHour label{
+  display:block;color:var(--muted);font:600 .58rem/1.2 var(--font-display);
+  letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px
+}
+.aoRuleHour input,.aoRuleSelect{
+  width:100%;min-height:34px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface-1);color:var(--text);padding:6px 8px
+}
+.aoRuleSettingRow{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:9px 0;border-bottom:1px solid rgba(255,255,255,.055)
+}
+.aoRuleSettingRow:last-child{border-bottom:0}
+.aoRuleSettingRow strong{display:block;font-size:.85rem}
+.aoRuleSettingRow small{display:block;color:var(--muted);font-size:.69rem;margin-top:2px;max-width:460px}
+.aoRuleSettingRow input[type=checkbox]{accent-color:var(--liturgical)}
+.aoRuleConditional{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,.055)
+}
+.aoRuleConditional:last-child{border-bottom:0}
+.aoRuleConditional strong{font-size:.86rem}
+.aoRuleConditional small{display:block;color:var(--muted);font-size:.68rem;margin-top:2px}
+.aoRuleConditional button{
+  border:1px solid var(--border);border-radius:999px;background:transparent;color:var(--text);
+  min-height:32px;padding:5px 9px;font-size:.68rem
+}
+.aoRuleSource{
+  color:var(--muted);font-size:.69rem;line-height:1.45
+}
+@media(max-width:430px){
+  .aoRuleCard{padding:8px 9px 9px}
+  .aoRuleStatic{gap:4px}
+  .aoRuleOpen{font-size:.65rem}
+  .aoRuleHours{grid-template-columns:1fr 1fr 1fr}
+  .aoRuleHour{padding:7px}
+  .aoRuleHour input{font-size:.78rem;padding:5px}
+}

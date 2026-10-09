@@ -13,7 +13,9 @@ if(process.argv.includes("--verify")){
   const html=readFileSync("index.html","utf8");
   const perIconPath="data/presentation/startup-per-icon-report.v1.json";
   const perIcon=existsSync(perIconPath)?JSON.parse(readFileSync(perIconPath,"utf8")):null;
-  if(Buffer.byteLength(html,"utf8")!==(perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??saved.reducedHtmlBytes))throw new Error("Index differs from sprite manifest");
+  const thinPath="data/presentation/startup-thin-shell.v1.json";
+  const thin=existsSync(thinPath)?JSON.parse(readFileSync(thinPath,"utf8")):null;
+  if(Buffer.byteLength(html,"utf8")!==(thin?.packedShellBytes??thin?.shellBytes??perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??saved.reducedHtmlBytes))throw new Error("Index differs from sprite manifest");
   for(const entry of saved.entries){
     if(!existsSync(entry.path))throw new Error("SVG sprite missing: "+entry.path);
     const external=readFileSync(entry.path,"utf8");
@@ -40,7 +42,9 @@ if(apply&&existsSync(MANIFEST)){
   const baseline=JSON.parse(readFileSync(MANIFEST,"utf8"));
   const perIconPath="data/presentation/startup-per-icon-report.v1.json";
   const perIcon=existsSync(perIconPath)?JSON.parse(readFileSync(perIconPath,"utf8")):null;
-  if(before!==(perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??baseline.reducedHtmlBytes))throw new Error("Existing SVG sprite manifest does not match index.html; manual reconciliation required");
+  const thinPath="data/presentation/startup-thin-shell.v1.json";
+  const thin=existsSync(thinPath)?JSON.parse(readFileSync(thinPath,"utf8")):null;
+  if(before!==(thin?.packedShellBytes??thin?.shellBytes??perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??baseline.reducedHtmlBytes))throw new Error("Existing SVG sprite manifest does not match index.html; manual reconciliation required");
   for(const item of baseline.entries)if(!existsSync(item.path))throw new Error("Existing SVG asset missing: "+item.path);
   console.log("SVG geometry already extracted; no changes made");
   process.exit(0);

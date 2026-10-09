@@ -1,0 +1,261 @@
+
+/* v39.1 — Prayer visual harmonization.
+   Presentation-only. All prayer/devotional cards inherit the native Ad Orientem
+   dark surface hierarchy used by Mass; donor Lab-ora paper/blue styling is neutralized. */
+
+#aoPrayerBookRoot{
+  background:
+    radial-gradient(circle at 50% 12%,color-mix(in srgb,var(--liturgical) 9%,transparent),transparent 31rem),
+    linear-gradient(180deg,#0d121a 0%,#080b10 70%,#06080c 100%)!important;
+  color:var(--text)!important;
+  font-family:var(--font-liturgical)!important;
+}
+
+/* Common native surface grammar */
+#aoPrayerBookRoot .lab-library-section,
+#aoPrayerBookRoot .lab-practice-grid button,
+#aoPrayerBookRoot .lab-library-grid button,
+#aoPrayerBookRoot .lab-mystery-card,
+#aoPrayerBookRoot .lab-rosary-hero,
+#aoPrayerBookRoot .lab-stations-hero,
+#aoPrayerBookRoot .lab-stations-settings button,
+#aoPrayerBookRoot .lab-stations-settings label,
+#aoPrayerBookRoot .lab-practice-sheet,
+#aoPrayerBookRoot .lab-prayer-sheet,
+#aoPrayerBookRoot .lab-contemplation,
+#aoPrayerBookRoot .lab-recitation-mode,
+#aoPrayerBookRoot .lab-actions button,
+#aoPrayerBookRoot .lab-scripture-cue,
+#aoPrayerBookRoot .lab-practice-note,
+#aoPrayerBookRoot .lab-practice-sheet .lab-practice-note,
+#aoPrayerBookRoot .lab-contemplation .principal{
+  border-color:var(--border)!important;
+  color:var(--text)!important;
+  box-shadow:none!important;
+}
+
+#aoPrayerBookRoot .lab-library-section,
+#aoPrayerBookRoot .lab-practice-grid button,
+#aoPrayerBookRoot .lab-library-grid button,
+#aoPrayerBookRoot .lab-mystery-card,
+#aoPrayerBookRoot .lab-stations-settings button,
+#aoPrayerBookRoot .lab-stations-settings label{
+  background:var(--surface-1)!important;
+}
+
+#aoPrayerBookRoot .lab-practice-grid .primary-practice,
+#aoPrayerBookRoot .lab-library-grid button.featured,
+#aoPrayerBookRoot .lab-mystery-card.recommended,
+#aoPrayerBookRoot .lab-stations-settings button.active{
+  border-color:var(--liturgical-border)!important;
+  background:linear-gradient(180deg,var(--liturgical-soft),rgba(255,255,255,.02))!important;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--liturgical) 12%,transparent)!important;
+}
+
+/* Keep the Rosary/Stations hero hierarchy, but in the app's own palette. */
+#aoPrayerBookRoot .lab-rosary-hero,
+#aoPrayerBookRoot .lab-stations-hero{
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface-2) 92%,var(--liturgical) 8%),var(--surface-1))!important;
+  border-color:var(--liturgical-border)!important;
+}
+#aoPrayerBookRoot .lab-rosary-hero small,
+#aoPrayerBookRoot .lab-mystery-card small,
+#aoPrayerBookRoot .lab-view-head .eyebrow,
+#aoPrayerBookRoot .lab-lang,
+#aoPrayerBookRoot .lab-station-text h3,
+#aoPrayerBookRoot .lab-contemplation .kicker,
+#aoPrayerBookRoot .lab-contemplation .fruit,
+#aoPrayerBookRoot .lab-scripture-cue strong,
+#aoPrayerBookRoot .lab-prayer-count strong,
+#aoPrayerBookRoot .lab-source-note a,
+#aoPrayerBookRoot .lab-source-row a,
+#aoPrayerBookRoot .lab-change,
+#aoPrayerBookRoot .lab-scripture-actions button{
+  color:var(--liturgical)!important;
+}
+#aoPrayerBookRoot .lab-rosary-hero p,
+#aoPrayerBookRoot .lab-practice-lead,
+#aoPrayerBookRoot .lab-library-grid span,
+#aoPrayerBookRoot .lab-practice-grid button span,
+#aoPrayerBookRoot .lab-mystery-card ol,
+#aoPrayerBookRoot .lab-step-count,
+#aoPrayerBookRoot .lab-source-note,
+#aoPrayerBookRoot .lab-prayer-sheet .lab-source-note,
+#aoPrayerBookRoot .lab-practice-sheet .lab-source-note,
+#aoPrayerBookRoot .lab-prayer-count,
+#aoPrayerBookRoot .lab-recitation-mode small{
+  color:var(--muted)!important;
+}
+
+/* The former 'paper sheets' are now native reading cards. */
+#aoPrayerBookRoot .lab-practice-sheet,
+#aoPrayerBookRoot .lab-prayer-sheet,
+#aoPrayerBookRoot .lab-contemplation{
+  background:var(--surface-1)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--radius-m)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-practice-sheet h2,
+#aoPrayerBookRoot .lab-practice-sheet h3,
+#aoPrayerBookRoot .lab-prayer-sheet>h2,
+#aoPrayerBookRoot .lab-contemplation h2,
+#aoPrayerBookRoot .lab-practice-sheet p,
+#aoPrayerBookRoot .lab-practice-sheet li,
+#aoPrayerBookRoot .lab-contemplation .commentary{
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-practice-sheet details,
+#aoPrayerBookRoot .lab-stabat,
+#aoPrayerBookRoot .lab-flip-hint{
+  border-color:var(--border)!important;
+}
+#aoPrayerBookRoot .lab-practice-sheet summary{color:var(--liturgical)!important}
+
+/* Scripture/formation inset: same dark hierarchy, slightly stronger state accent. */
+#aoPrayerBookRoot .lab-scripture-cue,
+#aoPrayerBookRoot .lab-practice-note,
+#aoPrayerBookRoot .lab-practice-sheet .lab-practice-note,
+#aoPrayerBookRoot .lab-contemplation .principal{
+  background:var(--liturgical-soft)!important;
+  color:var(--text)!important;
+  border-left:2px solid var(--liturgical)!important;
+  border-radius:0 var(--radius-s) var(--radius-s) 0!important;
+}
+#aoPrayerBookRoot .lab-scripture-cue{border:1px solid var(--liturgical-border)!important;border-left-width:2px!important}
+
+/* Prayer text itself remains typographically prominent, never a light card. */
+#aoPrayerBookRoot .lab-prayer-flip{
+  color:var(--text)!important;
+  font-family:var(--font-liturgical)!important;
+}
+#aoPrayerBookRoot .lab-flip-hint{color:var(--muted-2)!important}
+#aoPrayerBookRoot .lab-prayer-sheet>.rubric{color:var(--rubric)!important}
+
+/* Status/meta chips use liturgical tint rather than beige/green donor badges. */
+#aoPrayerBookRoot .lab-practice-status,
+#aoPrayerBookRoot .lab-practice-status.custom,
+#aoPrayerBookRoot .lab-practice-status.official,
+#aoPrayerBookRoot .lab-reader-meta span{
+  color:var(--liturgical)!important;
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+}
+
+/* Actions and controls match Mass controls. */
+#aoPrayerBookRoot .lab-actions button,
+#aoPrayerBookRoot .lab-player-controls button,
+#aoPrayerBookRoot .lab-recitation-mode button,
+#aoPrayerBookRoot .lab-scripture-actions button{
+  border-color:var(--border)!important;
+  background:var(--surface-2)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-actions .accent,
+#aoPrayerBookRoot .lab-player-controls .primary,
+#aoPrayerBookRoot .lab-recitation-mode button.active{
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-scripture-actions button{
+  background:transparent!important;
+  border:0!important;
+  color:var(--liturgical)!important;
+  text-decoration:none!important;
+}
+#aoPrayerBookRoot .lab-scripture-actions button:hover,
+#aoPrayerBookRoot .lab-scripture-actions button:focus-visible{
+  background:var(--liturgical-soft)!important;
+}
+
+/* Individual / Group selector is a native segmented control. */
+#aoPrayerBookRoot .lab-recitation-mode{
+  background:rgba(255,255,255,.025)!important;
+  padding:8px!important;
+}
+#aoPrayerBookRoot .lab-recitation-mode>span{color:var(--muted-2)!important}
+#aoPrayerBookRoot .lab-recitation-mode>div{
+  border-color:var(--border)!important;
+  background:rgba(0,0,0,.14)!important;
+}
+
+/* Progress and beads follow the current liturgical state. */
+#aoPrayerBookRoot .lab-progress{background:rgba(255,255,255,.07)!important}
+#aoPrayerBookRoot .lab-progress i,
+#aoPrayerBookRoot .lab-decade-bar i.done,
+#aoPrayerBookRoot .lab-decade-bar i.current{background:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-bead{
+  background:var(--surface-2)!important;
+  border-color:var(--border)!important;
+  color:transparent!important;
+}
+#aoPrayerBookRoot .lab-bead.past{
+  background:color-mix(in srgb,var(--liturgical) 38%,var(--surface-2))!important;
+  border-color:var(--liturgical-border)!important;
+}
+#aoPrayerBookRoot .lab-bead.current{
+  background:var(--liturgical)!important;
+  border-color:var(--liturgical)!important;
+  box-shadow:0 0 0 4px var(--liturgical-soft),0 0 16px var(--liturgical-glow)!important;
+}
+#aoPrayerBookRoot .lab-station-rail i{border-color:var(--border)!important;color:var(--muted)!important}
+#aoPrayerBookRoot .lab-station-rail i.done{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-station-rail i.current{background:var(--liturgical)!important;border-color:var(--liturgical)!important;color:var(--bg)!important}
+
+/* Native top controls. */
+#aoPrayerBookRoot .lab-back,
+#aoPrayerBookRoot .lab-icon{
+  border:1px solid var(--border)!important;
+  background:rgba(255,255,255,.025)!important;
+  color:var(--text)!important;
+  border-radius:12px!important;
+}
+#aoPrayerBookRoot .lab-view-head h1{font-family:var(--font-display)!important;color:var(--text)!important}
+
+/* RC2 guide/preferences chrome: eliminate the surviving navy/white control language. */
+.rc2ModuleTools button,.rc2FlowPrefs{
+  border-color:var(--border)!important;
+  background:var(--surface-1)!important;
+  color:var(--text)!important;
+}
+.rc2ModuleTools .rc2ModePill{
+  border-color:var(--liturgical-border)!important;
+  background:var(--liturgical-soft)!important;
+  color:var(--liturgical)!important;
+}
+.rc2SheetBackdrop{background:rgba(2,5,9,.82)!important;backdrop-filter:blur(12px)!important}
+.rc2Sheet{background:var(--bg)!important;color:var(--text)!important;border-color:var(--border)!important}
+.rc2Sheet header{background:color-mix(in srgb,var(--bg) 94%,transparent)!important;border-color:var(--border)!important}
+.rc2Sheet header small{color:var(--liturgical)!important}
+.rc2SheetClose{border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--text)!important}
+.rc2SheetIntro,.rc2GuideSection p,.rc2PrefSection p,.rc2Toggle span span,.rc2FlowNote{color:var(--muted)!important}
+.rc2GuideSection,.rc2PrefSection{background:var(--surface-1)!important;border-color:var(--border)!important}
+.rc2GuideSection a,.rc2SourceLinks a{color:var(--liturgical)!important}
+.rc2SourceLinks a{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important}
+.rc2Segments button{background:var(--surface-2)!important;color:var(--muted)!important;border-color:var(--border)!important}
+.rc2Segments button.active{background:var(--liturgical-soft)!important;color:var(--text)!important;border-color:var(--liturgical-border)!important}
+.rc2Toggle{border-color:var(--border)!important}
+
+/* Group response styling remains semantic and uses the day's colour. */
+#aoPrayerBookRoot .aoPrayerRoleResponse,
+#aoPrayerBookRoot .aoGroupResponse,
+#aoPrayerBookRoot [data-prayer-role="response"]{
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+  color:var(--text)!important;
+}
+
+/* Source/provenance remains visible but quiet. */
+#aoPrayerBookRoot .lab-source-row a{
+  border:1px solid var(--border)!important;
+  border-radius:999px!important;
+  padding:5px 8px!important;
+  text-decoration:none!important;
+}
+
+@media(max-width:650px){
+  #aoPrayerBookRoot .lab-practice-sheet,
+  #aoPrayerBookRoot .lab-prayer-sheet,
+  #aoPrayerBookRoot .lab-contemplation{padding:18px!important;border-radius:14px!important}
+}
