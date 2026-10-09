@@ -1,13 +1,24 @@
 {
   "schema": "ao-pius-x-1912-question-index-v1",
   "version": "1.0.0",
-  "status": "EXTERNALIZED_FROM_LEGACY_CATECHISM_LOADER",
+  "status": "CANONICAL_433_QUESTION_INDEX",
   "created_at": "2026-10-09",
   "source": {
     "work": "St Pius X — Catechism of Christian Doctrine (1912 shorter catechism)",
     "expectedQuestions": 433,
     "englishStructuredSource": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
-    "note": "Exact question numbering and English study text used by the existing Ad Orientem Traditional Catechism loader, externalized from the legacy donor."
+    "note": "Exact question numbering and English study text used by the existing Ad Orientem Traditional Catechism loader, externalized from the legacy donor.",
+    "english": {
+      "role": "OPEN_STUDY_TRANSLATION_ALIGNED_TO_1912",
+      "repository": "gustavo-depaula/ember",
+      "base": "https://raw.githubusercontent.com/gustavo-depaula/ember/main/content/books/pius-x-catechism/en-US/"
+    },
+    "french": {
+      "role": "STRUCTURED_FRENCH_TRANSCRIPTION",
+      "repository": "janvier-s/catechismecatholique",
+      "base": "https://raw.githubusercontent.com/janvier-s/catechismecatholique/main/static/data/pius-x-petit/",
+      "public_reference": "https://catechismecatholique.fr/petit-catechisme"
+    }
   },
   "parts": [
     {
@@ -3671,5 +3682,70 @@
       "part": "prayer",
       "sourceUrl": "https://raw.githubusercontent.com/gustavo-depaula/ember/main/content/books/pius-x-catechism/en-US/orazione.md"
     }
-  ]
+  ],
+  "historical_discipline_flags": [
+    {
+      "refs": [
+        "PXQ100"
+      ],
+      "topic": "limbo",
+      "note": "Traditional theological hypothesis; not defined dogma."
+    },
+    {
+      "refs": [
+        "PXQ218",
+        "PXQ219",
+        "PXQ220",
+        "PXQ221"
+      ],
+      "topic": "fasting-abstinence",
+      "note": "Disciplinary details reflect the 1912 context; present obligations require current law."
+    },
+    {
+      "refs": [
+        "PXQ226"
+      ],
+      "topic": "marriage-season-discipline",
+      "note": "Historical discipline; not current universal law."
+    },
+    {
+      "refs": [
+        "PXQ303"
+      ],
+      "topic": "infant-baptism-timing",
+      "note": "Historical canonical discipline."
+    },
+    {
+      "refs": [
+        "PXQ339",
+        "PXQ340"
+      ],
+      "topic": "eucharistic-fast",
+      "note": "Historical Eucharistic-fast discipline."
+    },
+    {
+      "refs": [
+        "PXQ390"
+      ],
+      "topic": "indulgence-days-years",
+      "note": "Historical way of expressing partial indulgences."
+    },
+    {
+      "range": "PXQ393–PXQ400",
+      "topic": "unction-orders-discipline",
+      "note": "Traditional terminology and disciplinary details require distinction from current law."
+    },
+    {
+      "range": "PXQ408–PXQ412",
+      "topic": "matrimony-law",
+      "note": "Some canonical/civil details are specific to the 1912 context."
+    }
+  ],
+  "integrity": {
+    "questionCount": 433,
+    "firstQuestion": 1,
+    "lastQuestion": 433,
+    "contiguous": true,
+    "chapters": 21
+  }
 }
