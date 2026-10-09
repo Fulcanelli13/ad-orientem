@@ -107,7 +107,7 @@
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
-    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second && npm run test:directory-sspx-oct26-bulk && npm run test:directory-sspx-asia-central-americas && npm run test:directory-sspx-north-america-corpus && npm run test:directory-worldwide-geocode-reuse && npm run test:directory-sspx-map-geo-overlays && npm run test:directory-sspx-worldwide-index && npm run test:directory-sspx-worldwide-evidence && npm run test:directory-sspx-mexico-completion && npm run test:directory-sspx-priority-districts && npm run test:directory-sspx-post-alias-audit && npm run test:directory-sspx-six-district-65 && npm run test:directory-sspx-remaining-worldwide-crosswalk",
+    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second && npm run test:directory-sspx-oct26-bulk && npm run test:directory-sspx-asia-central-americas && npm run test:directory-sspx-north-america-corpus && npm run test:directory-worldwide-geocode-reuse && npm run test:directory-sspx-map-geo-overlays && npm run test:directory-sspx-worldwide-index && npm run test:directory-sspx-worldwide-evidence && npm run test:directory-sspx-mexico-completion && npm run test:directory-sspx-priority-districts && npm run test:directory-sspx-post-alias-audit && npm run test:directory-sspx-six-district-65 && npm run test:directory-sspx-remaining-worldwide-crosswalk && npm run test:directory-sspx-official-directions-23",
     "directory:import:sspx": "node tools/directory/import-sspx.mjs",
     "test:sacramental-sot": "node tests/sacramental-formation-sot.mjs",
     "directory:import:fssp": "node tools/directory/import-fssp.mjs",
@@ -154,7 +154,8 @@
     "test:directory-sspx-post-alias-audit": "node tests/directory-sspx-post-alias-audit.mjs",
     "test:scripture": "node tests/scripture-catalogue.mjs && node tests/scripture-canon.mjs && node tests/scripture-passages.mjs && node tests/scripture-rosary-audit.mjs && node tests/scripture-library.mjs && node tests/scripture-experience.mjs && node tests/scripture-import.mjs",
     "test:directory-sspx-six-district-65": "node tests/directory-sspx-six-district-65.mjs",
-    "test:directory-sspx-remaining-worldwide-crosswalk": "node tests/directory-sspx-remaining-worldwide-crosswalk.mjs"
+    "test:directory-sspx-remaining-worldwide-crosswalk": "node tests/directory-sspx-remaining-worldwide-crosswalk.mjs",
+    "test:directory-sspx-official-directions-23": "node tests/directory-sspx-official-directions-23.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
