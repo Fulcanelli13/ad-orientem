@@ -145,6 +145,6 @@ assert.match(exploreProjection,/Related novena/,"Explore shrine/custom records l
 assert.match(explorePresentation,/data-explore-open-novena/,"Explore presentation lost Novena deep link");
 assert.match(exploreBrowser,/AO_PRAY_V435930\?\.open\?\.\("pray\.novenas"/,"Explore browser stopped routing related records into PRAY");
 assert.match(runtime,/data-n1-explore/,"Novena detail lost the reverse Explore link");
-assert.match(runtime,/AO_FIND_APP_V1\?\.open\?\.\(\{lens:'traditions',query:/,"Novena detail no longer prefilters Explore by its own identity");
+assert.ok(runtime.includes("AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}"),"Novena detail no longer prefilters Explore by its own identity");
 
 console.log("PASS Novena context v1: 16/16 history-guide-practice-indulgence-temporal and cross-domain coverage with bidirectional Explore links");
