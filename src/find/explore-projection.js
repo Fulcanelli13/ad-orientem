@@ -314,12 +314,12 @@ export function projectNovenaContextItems({links=[],novenas=[],places=[],geoArea
   }));
 }
 
-export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temporalLinks=[],places=[],sources=[],novenaLinks=[],novenas=[],customs=[],attestations=[],customSources=[]}={}){
+export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temporalLinks=[],places=[],sources=[],novenaLinks=[],novenas=[],customs=[],attestations=[],customSources=[],novenaSources=[]}={}){
   const shrineMap=new Map(arr(shrines).map(shrine=>[shrine?.shrine_id,shrine]).filter(([id])=>id));
   const routeMap=new Map(arr(routes).map(route=>[route?.route_id,route]).filter(([id])=>id));
   const temporalMap=new Map(arr(temporalLinks).map(link=>[link?.temporal_link_id,link]).filter(([id])=>id));
   const placeMap=new Map(arr(places).map(place=>[place?.place_id,place]).filter(([id])=>id));
-  const sourceMap=new Map([...arr(sources),...arr(customSources)].map(source=>[source?.id,source]).filter(([id])=>id));
+  const sourceMap=new Map([...arr(sources),...arr(customSources),...arr(novenaSources)].map(source=>[source?.id,source]).filter(([id])=>id));
   const novenaMap=novenaRecordMap(novenas);
   const customMap=new Map(arr(customs).map(custom=>[custom?.custom_id,custom]).filter(([id])=>id));
   return Object.freeze(arr(pilgrimages).map(pilgrimage=>{
@@ -380,8 +380,7 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
       sections:freezeList(sections),
       calendar_keys:freezeList(linkedTemporal.filter(link=>link?.binding_state==="BOUND_TO_CALENDAR"&&link?.calendar_semantic_key).map(link=>link.calendar_semantic_key)),
       source_links:sourceLinks([...arr(pilgrimage?.source_ids),...localCustoms.flatMap(att=>arr(att?.source_ids)),...relatedNovenas.flatMap(link=>arr(link.source_ids))],sourceMap),
-      actions:freezeList(placeMapsUrl(place)?[{label:"Destination",url:placeMapsUrl(place)}]:[]),
-      actions:freezeList(novenaActions(relatedNovenas,novenaMap)),
+      actions:freezeList([...(placeMapsUrl(place)?[{label:"Destination",url:placeMapsUrl(place)}]:[]),...novenaActions(relatedNovenas,novenaMap)]),
       note:"Pilgrimage destination, saints, local customs and novenas are linked only where sources establish the association. Calendar alone resolves recurring dates, and nearby Mass venues are not inferred.",
       search_text:itemSearch([pilgrimage?.name,pilgrimage?.scope_note,shrine?.name,addressLabel(place?.address),linkedRoutes.map(route=>route.name),linkedTemporal.map(link=>link.source_event_label),saints,relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id))),localCustoms.map(att=>[customMap.get(att.custom_id)?.name,att.evidence_note])]),
       raw:Object.freeze({pilgrimage,shrine,place,routes:linkedRoutes,temporalLinks:linkedTemporal}),
@@ -403,7 +402,7 @@ export function projectExploreDataset(dataset={}){
     tlm:projectDirectoryItems(directory?.records,{communities:directory?.communities}),
     shrines:projectShrineItems({shrines:shrines?.shrines,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records}),
     traditions:Object.freeze([...customTraditions,...novenaTraditions]),
-    pilgrimages:projectPilgrimageItems({pilgrimages:shrines?.pilgrimages,shrines:shrines?.shrines,routes:shrines?.routes,temporalLinks:shrines?.temporalLinks,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records,customs:customs?.customs,attestations:customs?.attestations,customSources:customs?.sources}),
+    pilgrimages:projectPilgrimageItems({pilgrimages:shrines?.pilgrimages,shrines:shrines?.shrines,routes:shrines?.routes,temporalLinks:shrines?.temporalLinks,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records,customs:customs?.customs,attestations:customs?.attestations,customSources:customs?.sources,novenaSources:novenas?.sources}),
   });
   return Object.freeze({
     byLens,
