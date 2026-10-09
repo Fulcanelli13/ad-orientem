@@ -10,15 +10,10 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
     tradition: "Catholic; Vulgate-derived", role: "default",
     rights: "pending-edition-and-digital-rights-review", enabled: false
   }),
-  "knox": Object.freeze({
-    id: "knox", language: "en", title: "Knox Bible",
-    tradition: "Catholic; Vulgate-based with original-language consultation",
-    role: "literary-catholic-alternative", rights: "permission-required", enabled: false
-  }),
-  "ncb-2019": Object.freeze({
-    id: "ncb-2019", language: "en", title: "New Catholic Bible (2019) · Clear English",
-    tradition: "Catholic; 73-book contemporary translation by Catholic biblical scholars",
-    role: "readability-alternative", rights: "permission-required", enabled: false
+  "cpdv-2009": Object.freeze({
+    id: "cpdv-2009", language: "en", title: "Catholic Public Domain Version (2009)",
+    tradition: "Catholic; independent contemporary-English translation from Clementine Vulgate",
+    role: "readability-candidate", rights: "public-domain-author-declared", enabled: false
   }),
   "crampon-1923": Object.freeze({
     id: "crampon-1923", language: "fr", title: "Bible Crampon (1923 text)",
