@@ -22,7 +22,7 @@ try{
  const page=await browser.newPage({serviceWorkers:"block"});
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
- const dates=["2024-05-06","2027-05-03","2027-06-30","2027-08-15","2027-11-30","2027-12-08"];
+ const dates=["2024-05-06","2027-05-03","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08"];
  const result=[];
  for(const date of dates){
    const row=await page.evaluate(async date=>{
@@ -47,6 +47,7 @@ try{
    assert.equal(item.properStatus,"ready",date+" must load full Eastertide Mass proper");
    assert.match(item.path||"",/Tempora\/Pasc5-0/,date+" must inherit Sunday Eastertide Mass, not unselected Rogation");
    assert.equal(item.properColour,"White",date+" Proper did not inherit white Mass colour");
+   assert.ok(item.collects>=1&&item.secrets>=1&&item.postcommunions>=1,date+" must load all Mass orations");
  }
  const peter=result.find(x=>x.date==="2027-06-30");
  assert.match(peter.main?.id||"",/^sancti:06-30:/);
@@ -54,7 +55,8 @@ try{
  assert.equal(peter.properStatus,"ready","Saint Paul Mass Proper must load");
  // The two apostolic prayers are already included in Sancti/06-30;
  // ordinary merge logic must not append duplicate collect by commemoration path.
- assert.ok(peter.collects>=2,"Saint Paul's Mass must contain the embedded Petrine Collect");
+ assert.ok(peter.collects>=1,"St Paul and St Peter must retain the combined Oratio");
+ assert.equal(peter.comms.find(x=>x.inseparable)?.path,null,"Inseparable Petrine prayers are in the original St Paul Proper and must not be appended twice");
  for(const [date,id,path] of [
    ["2027-08-15",/tempora:Pent13-0:/,/Tempora\/Pent13-0/],
    ["2027-11-30",/tempora:Adv1-2:/,/Tempora\/Adv1-0/],
