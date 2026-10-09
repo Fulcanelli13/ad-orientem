@@ -26,14 +26,14 @@ for(const row of review.cases){
  for(const p of row.passages){
   assert.equal(CSE_SOURCE_MAP[p.source_id]?.canonical_url,p.original_url,p.source_id+" original locator drift");
   assert.ok(p.locator.length>=2&&p.claim_supported.length>30,p.source_id+" unbounded source claim");
-  assert.ok(["ORIGINAL_PASSAGE_CONTEXT_CHECKED","ORIGINAL_ISSUER_SUMMARY_ONLY","BIBLIOGRAPHIC_RECORD_ONLY"].includes(p.verification));
+  assert.ok(["ORIGINAL_PASSAGE_CONTEXT_CHECKED","ORIGINAL_ISSUER_SUMMARY_ONLY","ORIGINAL_PDF_TEXT_AND_PAGE_2_IMAGE_CHECKED","BIBLIOGRAPHIC_RECORD_ONLY"].includes(p.verification));
  }
 }
 assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/§§19–25/);
 assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/§§19–25/);
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[0],/USCCB Committee on Doctrine's 2010 statement/);
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[1],/Comité doctrinal des évêques américains de 2010/);
-assert.ok(!CSE_DEBATE_MAP.CSE125.catholicCase[0].includes("CDF's 2009 clarification distinguishes"));
+assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[0],/CDF\'s 2009 clarification explicitly distinguishes/);
 for(const field of ["breakpoint","catholicCase","response","bottom"]){
  const ids=CSE_HIGH_STAGE_SOURCE_IDS.CSE125[field];
  assert.ok(ids.includes("USCCB_DIRECT2010"),field+" missing USCCB distinction");
