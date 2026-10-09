@@ -63,7 +63,13 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     const style=doc.createElement?.("style");
     if(!style)return;
     style.id="ao-app-surface-isolation";
-    style.textContent='html[data-ao-home-suppressed="true"] .homeScreen{display:none!important}';
+    style.textContent='html[data-ao-home-suppressed="true"] .homeScreen{display:none!important}'+
+      '#ao-global-ribbon .aoGlobalRibbonInner{grid-template-columns:repeat(5,minmax(0,1fr))!important}'+
+      '#ao-global-ribbon [data-ao-app-secondary="calendar"]{display:none!important}'+
+      '.aoHomeCalendarAccess{display:flex;justify-content:flex-end;margin:4px 0 0}'+
+      '.aoHomeCalendarAction{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:7px 11px;border:1px solid var(--ao-rule,rgba(201,173,120,.25));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);font:500 13px/1.35 var(--ao-font-ui,system-ui,sans-serif)}'+
+      '.aoHomeCalendarAction .aoHomeAssetIcon{width:19px;height:19px;display:inline-block;color:var(--liturgical,#c9ad78)}'+
+      '.aoHomeCalendarAction:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}';
     (doc.head??doc.documentElement)?.append?.(style);
   }
 
@@ -110,7 +116,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     const active = controller.getActive?.();
     syncHomeIsolation(active);
     for (const button of nav.querySelectorAll("[data-ao-app-surface]")) {
-      const current = button.dataset?.aoAppSurface === active;
+      const current = button.dataset?.aoAppSurface === active || (active === "calendar" && button.dataset?.aoAppSurface === "home");
       button.classList?.toggle?.("active", current);
       button.setAttribute?.("aria-current", current ? "page" : "false");
     }
@@ -143,6 +149,21 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
 
   function forceCanonicalSurfaceLabel(button,surface){
     if(!button)return false;
+    if(surface==="home"){
+      // Keep the internal home route stable, but present it as Today.
+      const todayLabel=win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"?"Aujourd’hui":"Today";
+      button.setAttribute?.("aria-label",todayLabel);
+      const all=button.querySelectorAll?.("[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label,span,strong,small")??[];
+      const old=/^\s*(?:Home|Accueil|Today|Aujourd.hui)\s*$/i;
+      for(const el of all){
+        if(el?.querySelector?.("[data-ao-asset-id],.aoGlobalRibbonIcon"))continue;
+        if(old.test(el.textContent??"")){if(el.textContent!==todayLabel)el.textContent=todayLabel;return true;}
+      }
+      for(const el of button.childNodes??[]){
+        if(el.nodeType===3&&old.test(el.textContent??"")){if(el.textContent!==todayLabel)el.textContent=todayLabel;return true;}
+      }
+      return false;
+    }
     if(surface==="find"){
       button.setAttribute?.("aria-label","Explore");
       const candidates=button.querySelectorAll?.("[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label,span,strong,small")??[];
@@ -236,6 +257,16 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
       // deliberately reuses that physical slot for Explore; Settings remains
       // available as a utility overlay from Home and contextual controls.
       const surface = rawSurface==="settings" ? "find" : rawSurface;
+      if(surface==="calendar"){
+        // Calendar remains fully routable via Today, Coming Up, and deep links.
+        // Retire only its *permanent ribbon slot*, not its existing owner.
+        button.dataset.aoAppSecondary="calendar";
+        button.hidden=true;
+        button.removeAttribute?.("data-ao-app-surface");
+        button.removeAttribute?.("data-ao-ribbon");
+        button.setAttribute?.("aria-hidden","true");
+        continue;
+      }
       if (!surface || !APP_SURFACES.includes(surface)) continue;
       button.dataset.aoAppSurface = surface;
       const assetId=canonicalAssetIdForSurface(surface);
@@ -303,6 +334,14 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     paintActive();
   });
   if (typeof unsubscribe === "function") cleanups.push(unsubscribe);
+  let ribbonLanguage=win?.AO_RUNTIME_V8?.store?.getState?.()?.language??"en";
+  const stopLanguage=win?.AO_RUNTIME_V8?.store?.subscribe?.(next=>{
+    const language=next?.language??win?.AO_RUNTIME_V8?.store?.getState?.()?.language??"en";
+    if(language===ribbonLanguage)return;
+    ribbonLanguage=language;
+    adopt(); // Only text labels change; the canonical route IDs are stable.
+  });
+  if(typeof stopLanguage==="function")cleanups.push(stopLanguage);
 
   doc.addEventListener?.("click", reconcileRibbonOnClick, { capture: true });
   doc.addEventListener?.("click", syncExternalNavigation, { capture: true });

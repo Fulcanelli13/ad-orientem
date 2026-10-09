@@ -10,11 +10,11 @@ const corpus=id=>registry.corpora.find(x=>x.id===id);
 const route=id=>registry.routes.find(x=>x.id===id);
 
 assert.equal(registry.schema,"AO_CONTENT_NAVIGATION_REGISTRY_V1");
-assert.equal(registry.status,"REVIEW_ONLY_NO_RUNTIME_CHANGES");
+assert.equal(registry.status,"ACTIVE_REGISTRY_WITH_NAVIGATION_MIGRATION");
 assert.equal(registry.scope,"ROUTE_AND_CORPUS_FAMILY_CENSUS");
 assert.deepEqual(registry.navigation.current_ribbon,APP_SURFACES);
 assert.deepEqual(registry.navigation.proposed_ribbon,["today","mass","pray","learn","explore"]);
-assert.equal(registry.navigation.proposed_status,"DESIGN_PROPOSAL_NOT_RELEASED");
+assert.equal(registry.navigation.proposed_status,"IMPLEMENTED_FIVE_SLOT_SHELL_PENDING_PHONE_ACCEPTANCE");
 assert.equal(new Set(registry.routes.map(x=>x.id)).size,registry.routes.length,"duplicate route identifier");
 assert.equal(new Set(registry.corpora.map(x=>x.id)).size,registry.corpora.length,"duplicate corpus identifier");
 assert.deepEqual(

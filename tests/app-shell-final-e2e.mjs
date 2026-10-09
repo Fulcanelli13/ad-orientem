@@ -814,7 +814,7 @@ try{
   assert.equal(ownership.appShell?.visibleOwner,true,"modular app shell did not adopt the visible ribbon");
   assert.equal(ownership.appShell?.ribbonOwner,"AO_APP_SHELL_V1","visible ribbon owner is not modular shell");
   assert.equal(ownership.appShell?.legacyRibbonButtons,0,"legacy ribbon click attributes remain active");
-  assert.equal(ownership.appShell?.modularRibbonButtons,6,"modular shell did not own all six ribbon destinations");
+  assert.equal(ownership.appShell?.modularRibbonButtons,5,"modular shell did not own all five permanent ribbon destinations");
   assert.equal(ownership.appShellOwnerDataset,"AO_APP_SHELL_V1","document does not expose modular visible-shell ownership");
   assert.equal(ownership.appShellDataset,"ready","actual index.html did not expose ready app-shell bridge state");
   assert.deepEqual(

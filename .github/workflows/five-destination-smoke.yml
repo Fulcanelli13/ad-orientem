@@ -1,0 +1,22 @@
+name: Five-destination boot smoke
+on:
+  pull_request:
+    paths:
+      - 'src/app/browser-entry.js'
+      - 'src/app/contracts.js'
+      - 'src/home/**'
+      - 'tests/five-destination-smoke.mjs'
+      - '.github/workflows/five-destination-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/five-destination-smoke.mjs
