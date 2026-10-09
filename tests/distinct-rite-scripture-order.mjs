@@ -66,7 +66,7 @@ assert.equal(palm.precedingRiteGospel.displayReference,"Matthew 21:1–9");
 assert.equal(palm.massPassion.standardMassProperSlot,"GOSPEL");
 assert.equal(palm.massPassion.nativeStateId,undefined,"No invented palm native state for Mass Passion");
 assert.equal(palm.massPassion.displayReference,"Matthew 26:36–75; 27:1–60");
-assert.ok(palm.massPassion.status.includes("CROSS_CHAPTER"));
+assert.equal(palm.massPassion.status,"SOURCE_VERIFIED_MASS_PROPER_SEGMENTED_CONTEXT_AVAILABLE");
 const palmGraph=load("../data/mass/special-days-extension.v1.3.json").graphs.PALM;
 assert.equal(palmGraph.length,12);
 assert.ok(palmGraph.some(x=>x.id===palm.precedingRiteGospel.nativeStateId&&x.phase==="GOSPEL"));
@@ -90,6 +90,7 @@ for(const row of vigilMass.readings){
 }
 const feast=load("../data/mass/scripture-feast-reading-supplement.v1.json");
 assert.ok(feast.holds.some(x=>x.sourcePath==="Tempora/Quad6-0"&&x.slot==="GOSPEL"));
+assert.ok(load("../data/mass/scripture-segmented-proper.v1.json").readings.some(x=>x.sourcePath==="Tempora/Quad6-0"&&x.slot==="GOSPEL"));
 assert.ok(!feast.celebrations.some(x=>x.sourcePath==="Tempora/Quad6-6"),"Special Vigil Mass must not be imported into ordinary generic source registry");
 
 console.log("PASS native GF/EV 7 readings + Palm two distinct Gospels + Vigil post-litany 2 Mass Proper slots, no unsafe context capsules");

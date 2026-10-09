@@ -2,6 +2,7 @@ import { mountScriptureLibrary } from "./library.js";
 import { installScriptureStyles, installScriptureContextStyles } from "./styles.js";
 import { loadScriptureBook } from "./pack-loader.js";
 import { parseScriptureContext } from "./context.js";
+import {scriptureSegmentContext} from "./segments.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -68,6 +69,12 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!parsed)return false;
    return open({passage:parsed.passage,context:parsed,language});
  }
+ function openSegments(segments,{language=null,reference=null,provenance=null}={}){
+   try{
+     const context=scriptureSegmentContext(segments,{reference,provenance});
+     return open({passage:context.passage,context,language});
+   }catch{return false;}
+ }
  const click=e=>{
    const capsule=e.target?.closest?.("[data-ao-scripture-context]");
    if(capsule){
@@ -102,10 +109,10 @@ export function installScriptureBrowserOwner(win=globalThis){
  };
  doc?.addEventListener?.("click",click,true);
  doc?.addEventListener?.("keydown",key);
- const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,openContext,close,
+ const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,openContext,openSegments,close,
    status:()=>Object.freeze({installed:true,open:Boolean(reader),reader:reader?.status?.()??null})});
  win.AO_SCRIPTURE_APP_V1=api;
- win.AO_SCRIPTURE_CONTEXT_V1=Object.freeze({version:"scripture-context-v1",open:openContext,parse:parseScriptureContext});
+ win.AO_SCRIPTURE_CONTEXT_V1=Object.freeze({version:"scripture-context-v1",open:openContext,openSegments,parse:parseScriptureContext});
  return api;
 }
 if(typeof window!=="undefined"&&typeof document!=="undefined")installScriptureBrowserOwner(window);

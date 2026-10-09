@@ -30,6 +30,9 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureLibrary summary{cursor:pointer;font-size:18px;padding:8px 0}
  .aoScriptureContextBar{margin:12px 0;padding:10px 0;border-block:1px solid #524b3e}
  .aoScriptureContextTitle{margin:0 0 7px;color:#d4c7af;font:500 13px/1.4 system-ui,sans-serif}
+ .aoScriptureSegments{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0 3px}
+ .aoScriptureLibrary .aoScriptureSegments button{border-radius:999px;padding:6px 11px;font:500 13px/1.3 system-ui,sans-serif;background:transparent;border:1px solid #73644f}
+ .aoScriptureLibrary .aoScriptureSegments button[aria-pressed="true"]{background:#594935;color:#fff0cf}
  .aoScriptureContextControls{display:flex;gap:6px;flex-wrap:wrap}
  .aoScriptureLibrary .aoScriptureContextControls button{border-radius:999px;padding:6px 12px;font:500 13px/1.3 system-ui,sans-serif;background:transparent;border:1px solid #73644f}
  .aoScriptureLibrary .aoScriptureContextControls button[aria-pressed="true"]{background:#594935;color:#fff0cf}
