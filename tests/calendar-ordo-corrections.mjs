@@ -38,6 +38,8 @@ assert.match(boot,/jesusFeasts: new Set\(\[\.\.\.parseTupleTokens\(common, "FEAS
 assert.match(boot,/lordFeast=source\.jesusFeasts instanceof Set && source\.jesusFeasts\.has\(main\.id\)/,
  "The shared commemoration completion must use Set.has, not silently skipped Set.some");
 assert.doesNotMatch(boot,/jesusFeasts\?\.some\?\./,"Never treat a Set as an Array when checking Lord's feast identity");
+assert.ok(boot.split("\n").some(line=>line.trim().startsWith("const lordFeast=source.jesusFeasts instanceof Set && source.jesusFeasts.has(main.id)")),
+ "Lord-feast guard must be executable code, not text inside a preceding comment");
 assert.match(boot,/observance\.path === 'Tempora\/Pasc6-6'/,"canonical Pentecost Vigil title resolver missing");
 
 console.log("PASS pinned 1962 calendar correction registry, 15 recurring feasts, 2 transparently unresolved source disagreements, St Joseph precedence");
