@@ -223,8 +223,8 @@ function refreshComposedProperIntegrity(proper, diagnostic) {
         add("Preparatory chant " + (i + 1), row.gradual);
         add("Preparatory collect " + (i + 1), row.collect);
     });
-    const rawMarker = /\\$[A-Za-z][A-Za-z -]*/;
-    const nameMarker = /\\bN\\.(?=\\s|$)/;
+    const rawMarker = /\$[A-Za-z][A-Za-z -]*/;
+    const nameMarker = /\bN\.(?=\s|$)/;
     proper.languageCoverage = {};
     for (const language of ["en", "fr"]) {
         const missing = fields.filter(([,v]) => {
@@ -240,7 +240,7 @@ function refreshComposedProperIntegrity(proper, diagnostic) {
     for (const [section, v] of fields) {
         for (const language of ["lat", "en", "fr"]) {
             const body = String(v?.[language] || "");
-            for (const match of body.matchAll(/\\$[A-Za-z][A-Za-z -]*/g)) {
+            for (const match of body.matchAll(/\$[A-Za-z][A-Za-z -]*/g)) {
                 unresolved.push({section, language, marker:match[0].trim()});
             }
             if (nameMarker.test(body)) unresolved.push({section, language, marker:"N."});
@@ -2220,7 +2220,7 @@ function cleanLines(lines, language) {
         // Divinum Officium uses distinct conclusion macros. Only expand
         // exact, independently established endings; never turn every formula
         // into the generic Per Dominum or change a saint's name placeholder.
-        const conclusionKey = line.startsWith("$") ? line.slice(1).trim().replace(/\\s+/g, " ").toLowerCase() : "";
+        const conclusionKey = line.startsWith("$") ? line.slice(1).trim().replace(/\s+/g, " ").toLowerCase() : "";
         const conclusion = {
             "per dominum": PER_DOM,
             "per eundem": {
