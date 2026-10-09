@@ -56,6 +56,48 @@ try {
   assert.equal(statusBefore.mass,true,"Native Mass bridge missing");
   assert.equal(statusBefore.pray,true,"PRAY boot bridge missing");
 
+
+  // A single canonical contextual reader is reusable before loading Formation
+  // or Prayer. No reference is silently treated as approved local Bible text.
+  assert.equal(await page.evaluate(()=>typeof globalThis.AO_SCRIPTURE_CONTEXT_V1?.open),"function",
+    "Cold Home did not install canonical Scripture Context owner");
+  await page.evaluate(()=>{
+    const b=document.createElement("button");
+    b.type="button";b.id="ao-test-scripture-context-launcher";
+    b.dataset.aoScriptureContext="Matthew 5:27–28";
+    b.textContent="Context · Bible";
+    document.querySelector(".homeScreen").append(b);
+  });
+  await page.locator("#ao-test-scripture-context-launcher").click();
+  await page.locator("#ao-scripture-overlay [data-ao-scripture-context-reader]").waitFor({state:"visible",timeout:12000});
+  const reading=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status());
+  assert.equal(reading.reader.passage.book,"Matthew");
+  assert.equal(reading.reader.passage.chapter,5);
+  assert.equal(reading.reader.passage.verseStart,27);
+  assert.equal(reading.reader.contextDepth,"selected");
+  assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-context-depth='selected'][aria-pressed='true']").count(),1);
+  await page.locator("#ao-scripture-overlay [data-scripture-context-depth='chapter']").click();
+  assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-whole-chapter]").count(),1,
+    "Wider chapter reading must be available directly from cited verses");
+  await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
+  const verified=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
+  await verified.waitFor({state:"visible",timeout:12000});
+  assert.match(await verified.getAttribute("href"),/ecatholic2000\\.com\\/catena/,
+    "Passage-specific patristic link lost provenance");
+  await page.locator("#ao-scripture-overlay .aoScriptureNav select").nth(1).selectOption("cpdv-2009");
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.editionId),"cpdv-2009",
+    "Bible selection does not survive reading-context expansion");
+  await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().open),false);
+  assert.equal(await page.evaluate(()=>document.activeElement?.id),"ao-test-scripture-context-launcher",
+    "Closing Scripture Context did not restore focus to originating module");
+  await page.locator("#ao-test-scripture-context-launcher").evaluate(node=>node.remove());
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:26–38")),true);
+  await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
+  assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").count(),0,
+    "Uncollated passage must not receive a fabricated commentary");
+  await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
+
   // Daily Rule remains actionable even if its legacy static-sheet handler
   // explicitly rejects opening. The fallback must dispatch Rosary.
   const homeRule=await page.evaluate(()=>{
