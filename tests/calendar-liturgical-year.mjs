@@ -43,7 +43,7 @@ assert.ok(segments.find(p=>p.id==="pentecost").widthPercent<3,"Short Pentecost o
 const yearHtml=renderYearJourney({year:rosary,selectedDate:"2026-10-07",formatDate:id=>id});
 assert.equal((yearHtml.match(/data-cal-year-segment=/g)||[]).length,9,"Year track must render each period exactly once");
 assert.equal((yearHtml.match(/data-cal-year-period=/g)||[]).length,9,"All nine period cards must be selectable");
-assert.equal((yearHtml.match(/data-cal-year-open-day=/g)||[]).length,1,"Only the expanded period must expose its date actions");
+assert.equal((yearHtml.match(/class="aoCalYearDetail"[^>]*>/g)||[]).filter(x=>!x.includes(" hidden")).length,1,"Only the expanded period detail must be visible");
 assert.match(yearHtml,/data-cal-year-open-day="2026-05-31"/,"Current period start day is computed from the year model");
 assert.match(yearHtml,/data-cal-year-month="2026-05"/,"Current period month navigation must be grounded");
 assert.match(yearHtml,/data-cal-year-stage="present"/,"Current period must be distinguished visually");
