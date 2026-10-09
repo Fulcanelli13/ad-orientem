@@ -594,6 +594,114 @@
           "latinIncipit": "in illo tempore cum appropinquaret jesus jerusalem videns civitatem flevit super illam dicens quia si cognovisses et tu"
         }
       }
+    },
+    {
+      "sourcePath": "Tempora/Pent12-0",
+      "title": "Dominica XII Post Pentecosten",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent12-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "2Corinthians 3:4–9",
+          "latinIncipit": "fratres fiduciam talem habemus per christum ad deum non quod sufficientes simus cogitare aliquid a nobis quasi ex"
+        },
+        "GOSPEL": {
+          "reference": "Luke 10:23–37",
+          "latinIncipit": "in illo tempore dixit jesus discipulis suis beati oculi qui vident quae vos videtis dico enim vobis quod"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pent13-0",
+      "title": "Dominica XIII Post Pentecosten",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent13-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Galatians 3:16–22",
+          "latinIncipit": "fratres abrahae dictae sunt promissiones et semini ejus non dicit et seminibus quasi in multis sed quasi in"
+        },
+        "GOSPEL": {
+          "reference": "Luke 17:11–19",
+          "latinIncipit": "in illo tempore dum iret jesus in jerusalem transibat per mediam samariam et galilaeam et cum ingrederetur quoddam"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pent14-0",
+      "title": "Dominica XIV Post Pentecosten",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent14-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Galatians 5:16–24",
+          "latinIncipit": "fratres spiritu ambulate et desideria carnis non perficietis caro enim concupiscit adversus spiritum spiritus autem adversus carnem haec"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 6:24–33",
+          "latinIncipit": "in illo tempore dixit jesus discipulis suis nemo potest duobus dominis servire aut enim unum odio habebit et"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pent16-0",
+      "title": "Dominica XVI Post Pentecosten",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent16-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Ephesians 3:13–21",
+          "latinIncipit": "fratres obsecro vos ne deficiatis in tribulationibus meis pro vobis quae est gloria vestra hujus rei gratia flecto"
+        },
+        "GOSPEL": {
+          "reference": "Luke 14:1–11",
+          "latinIncipit": "in illo tempore cum intraret jesus in domum cujusdam principis pharisaeorum sabbato manducare panem et ipsi observabant eum"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pent17-0",
+      "title": "Dominica XVII Post Pentecosten",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent17-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Ephesians 4:1–6",
+          "latinIncipit": "fratres obsecro vos ego vinctus in domino ut digne ambuletis vocatione qua vocati estis cum omni humilitate et"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 22:34–46",
+          "latinIncipit": "in illo tempore accesserunt ad jesum pharisaei et interrogavit eum unus ex eis legis doctor tentans eum magister"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "title": "Dominica XXII Post Pentecosten",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Philippians 1:6–11",
+          "latinIncipit": "fratres confidimus in domino jesu quia qui coepit in vobis opus bonum perficiet usque in diem christi jesu"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 22:15–21",
+          "latinIncipit": "in illo tempore abeuntes pharisaei consilium inierunt ut caperent jesum in sermone et mittunt ei discipulos suos cum"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pent23-0",
+      "title": "Dominica XXIII Post Pentecosten",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "readings": {
+        "GOSPEL": {
+          "reference": "Matthew 9:18–26",
+          "latinIncipit": "in illo tempore loquente jesu ad turbas ecce princeps unus accessit et adorabat eum dicens domine filia mea"
+        }
+      },
+      "sourceHolds": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reason": "DISCONTINUOUS_TEXT_IN_SEGMENTED_REGISTER",
+          "reference": "Philippians 3:17–21; 4:1–3"
+        }
+      ]
     }
   ]
 }
