@@ -83,7 +83,7 @@ function installStyle(win){
     ".aoExploreAddress{margin:15px 0;padding:12px;border:1px solid rgba(217,197,154,.1);border-radius:12px}.aoExploreAddress p{margin:5px 0 0;color:#c5baa6}",
     ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a,.aoFindActions button,.aoFindSources a{display:inline-flex;align-items:center;min-height:var(--ao-control-h,44px);border:1px solid rgba(217,197,154,.2);border-radius:var(--ao-pill-radius,999px);padding:9px 12px;color:#e7d8b8;text-decoration:none;font:650 var(--ao-type-ui-sm,12px) var(--ao-font-ui,system-ui,sans-serif);background:transparent;cursor:pointer}",
     ".aoFindSources{margin:15px 0}.aoFindSources>div{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.aoFindSheet footer{color:#8f846e;font:500 var(--ao-type-ui-xs,11px)/1.4 var(--ao-font-ui,system-ui,sans-serif);margin-top:14px}.aoFindGeoAttribution{display:block;margin-top:6px;opacity:.82}",
-    ".aoExplorePlaceGroup{margin:16px 0;padding-top:13px;border-top:1px solid rgba(217,197,154,.1)}.aoExplorePlaceGroup>small{display:block;font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;color:#b7a57d;margin-bottom:9px}.aoExplorePlaceGroup>p{color:#bdb29f;line-height:1.45;font-size:13px}.aoExplorePlaceGroup>article{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(217,197,154,.07)}.aoExplorePlaceGroup>article:first-of-type{border-top:0}.aoExplorePlaceGroup>article strong{font-size:13px;font-weight:500}.aoExplorePlaceGroup>article span{color:#a99e89;font:600 11px sans-serif;white-space:nowrap}.aoExplorePlaceRows{display:grid;gap:7px}.aoExplorePlaceRow{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;border:1px solid rgba(217,197,154,.12);background:#101923;color:#e9e4d9;border-radius:12px;padding:11px}.aoExplorePlaceRow span{min-width:0}.aoExplorePlaceRow small{display:block;color:#a99570;font:650 var(--ao-type-ui-xs,11px)/1.1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em}.aoExplorePlaceRow strong{display:block;margin-top:4px;font-size:13px;font-weight:500}.aoExplorePlaceRow i{font:600 var(--ao-type-ui-xs,11px) var(--ao-font-ui,system-ui,sans-serif);color:#887e6d;font-style:normal;text-align:right}",
+    ".aoExplorePlaceGroup{margin:16px 0;padding-top:13px;border-top:1px solid rgba(217,197,154,.1)}.aoExplorePlaceGroup>small{display:block;font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;color:#b7a57d;margin-bottom:9px}.aoExplorePlaceGroup>p{color:#bdb29f;line-height:1.45;font-size:13px}.aoExplorePlaceGroup>article{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(217,197,154,.07)}.aoExplorePlaceGroup>article:first-of-type{border-top:0}.aoExplorePlaceGroup>article button{min-height:38px;flex:none;border:1px solid rgba(217,197,154,.27);border-radius:999px;background:#111c25;color:#e5d5b5;padding:7px 10px;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}.aoExplorePlaceGroup>article>div{min-width:0}.aoExplorePlaceGroup>article>div p{font-size:11px;line-height:1.4;color:#a59d90;margin:5px 0}.aoExplorePlaceGroup>article strong{font-size:13px;font-weight:500}.aoExplorePlaceGroup>article span{color:#a99e89;font:600 11px sans-serif;white-space:nowrap}.aoExplorePlaceRows{display:grid;gap:7px}.aoExplorePlaceRow{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;border:1px solid rgba(217,197,154,.12);background:#101923;color:#e9e4d9;border-radius:12px;padding:11px}.aoExplorePlaceRow span{min-width:0}.aoExplorePlaceRow small{display:block;color:#a99570;font:650 var(--ao-type-ui-xs,11px)/1.1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em}.aoExplorePlaceRow strong{display:block;margin-top:4px;font-size:13px;font-weight:500}.aoExplorePlaceRow i{font:600 var(--ao-type-ui-xs,11px) var(--ao-font-ui,system-ui,sans-serif);color:#887e6d;font-style:normal;text-align:right}",
     "@media(min-width:800px){.aoFindSurface{max-width:980px;margin:auto;border-left:1px solid rgba(217,197,154,.08);border-right:1px solid rgba(217,197,154,.08)}.aoFindList{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindSheet{max-width:720px;margin:0 auto}.aoFindSheetBackdrop{justify-content:center}}",
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}"
   ].join("");
@@ -105,6 +105,7 @@ export function createFindOwner(win=globalThis){
     atlasArea:"ANY",
     atlasPeriod:"ANY",
     atlasCalendar:"ANY",
+    calendarKey:null,
     selectedId:null,
     selectedPlaceId:null,
   };
@@ -141,7 +142,8 @@ export function createFindOwner(win=globalThis){
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
     }
     if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
-    return filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
+    const list=filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
+    return state.lens==="pilgrimages"&&state.calendarKey?list.filter(item=>item.calendar_keys?.includes(state.calendarKey)):list;
   }
 
   async function paint(){
@@ -191,6 +193,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    state.calendarKey=state.lens==="pilgrimages"&&typeof options?.calendarKey==="string"?options.calendarKey:null;
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
@@ -210,7 +213,7 @@ export function createFindOwner(win=globalThis){
 
   function setFilter(key,value){
     if(key==="view")state.view=value==="map"?"map":"list";
-    else if(key==="lens"&&EXPLORE_LENSES.includes(value))state.lens=value;
+    else if(key==="lens"&&EXPLORE_LENSES.includes(value)){state.lens=value;state.calendarKey=null;}
     else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;
     mapHandle?.destroy?.();mapHandle=null;
@@ -221,6 +224,9 @@ export function createFindOwner(win=globalThis){
     if(!openState)return;
     const target=event?.target;
     if(target?.closest?.("[data-find-glossary]")){event.preventDefault?.();event.stopPropagation?.();openGlossary();return}
+    if(target?.closest?.("[data-find-clear-calendar]")){
+      event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
+    }
     if(state.lens==="traditions"&&target?.closest?.("[data-atlas-clear]")){
       event.preventDefault?.();
       state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
@@ -245,6 +251,19 @@ export function createFindOwner(win=globalThis){
       state.selectedPlaceId=null;
       state.selectedId=placeItem.dataset.explorePlaceItem||null;
       void paint();return;
+    }
+    const calendarDate=target?.closest?.("[data-explore-calendar-date]");
+    if(calendarDate){
+      event.preventDefault?.();event.stopPropagation?.();
+      const date=calendarDate.dataset.exploreCalendarDate;
+      if(/^\d{4}-\d{2}-\d{2}$/.test(date||"")){
+        close();
+        void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("calendar")).then(ok=>{
+          if(ok!==false)return win?.AO_CALENDAR_APP_V1?.select?.(date);
+          return false;
+        }).catch(error=>console.error("Explore Calendar deep link failed",error));
+      }
+      return;
     }
     const novena=target?.closest?.("[data-explore-open-novena]");
     if(novena){

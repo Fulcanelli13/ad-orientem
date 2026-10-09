@@ -5,6 +5,9 @@ on:
     paths:
       - "data/directory/**"
       - "data/geography/**"
+      - "data/shrines/**"
+      - "src/calendar/**"
+      - "tests/pilgrimage-associations.mjs"
       - "data/customs/**"
       - "tests/customs-atlas-place-pins.mjs"
       - "tests/explore-place-profiles.mjs"
@@ -20,6 +23,9 @@ on:
     paths:
       - "data/directory/**"
       - "data/geography/**"
+      - "data/shrines/**"
+      - "src/calendar/**"
+      - "tests/pilgrimage-associations.mjs"
       - "data/customs/**"
       - "tests/customs-atlas-place-pins.mjs"
       - "tests/explore-place-profiles.mjs"
@@ -47,6 +53,9 @@ jobs:
       - run: npm run test:explore-geography
       - run: npm run test:explore-place-profiles
       - run: node tests/customs-atlas-place-pins.mjs
+      - run: node tests/pilgrimage-associations.mjs
+      - run: node --check src/calendar/browser-entry.js
+      - run: node --check src/calendar/pilgrimage-places.js
       - run: node --check src/find/customs-atlas-filters.js
       - run: node --check src/find/explore-presentation.js
       - run: node tests/directory-worldwide-coverage.mjs
