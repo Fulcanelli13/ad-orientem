@@ -65,6 +65,8 @@ The interface must render these as **Traditional start / Début traditionnel** a
 
 ### St Anthony’s Nine Tuesdays
 
+**Source correction (9 October 2026):** The historical Tuesday recalls St Anthony's **burial on the Tuesday following his death**, not a Tuesday date of death. The [1966 Franciscan pamphlet](https://www.pamphlets.info/Australia/acts1014/) reproduces the Nine Tuesdays prayers and states that no one prayer formula is mandated. French-world attestation is [Messager de saint Antoine (2023)](https://www.messagerdesaintantoine.com/node/5972), explicitly distinguishing the *neuf mardis* from the thirteen-day *treizaine*. The formerly cited La Porte Latine saint's biography does not itself establish that custom and is not used as this claim's witness. The SOT still has **16/16 playable bilingual novenas** and no source holds.
+
 This remains a **weekly** devotion. It is not a nine-consecutive-day novena. The traditional source requires nine consecutive Tuesdays but does not restrict them to a feast-preparation window. Calendar Intelligence therefore offers the nine Tuesdays leading toward 13 June as a **SUGGESTED_START**, not as a recovered historical start rule. The source also makes clear that one single mandatory prayer text was not universally prescribed; Ad Orientem uses the commonly attested traditional prayers without inventing nine day-specific meditations.
 
 ### Christ the King
