@@ -175,7 +175,45 @@ try{
  await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
  assert.equal(await dialog.locator(".aoScriptureSegments button").count(),0,"Manual Bible navigation must leave citation-specific segment mode");
  await dialog.locator("[data-scripture-close]").click();
- assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
+ // The 1962 Ember-Saturday Daniel reading begins at Vulgate 3:49,
+ // returns to 3:47–48 and resumes 3:50–51. Scripture is still read in
+ // canonical Bible order, with a non-dismissable bilingual clarification.
+ const daniel=[{book:"Daniel",chapter:3,verseStart:47,verseEnd:51}];
+ const arrangement={
+  schema:"ao-liturgical-bible-verse-order-v1",
+  canonicalReference:"Daniel 3:47–51",
+  liturgicalVerseOrder:["Daniel 3:49","Daniel 3:47–48","Daniel 3:50–51"],
+  noteEn:"The Missal presents these verses in liturgical order: Daniel 3:49, then 3:47–48, then 3:50–51. The Bible below presents the canonical order 3:47–51. The following hymn is a separate liturgical text.",
+  noteFr:"Le missel présente ces versets dans l’ordre liturgique : Daniel 3,49, puis 3,47–48, puis 3,50–51. La Bible ci-dessous suit l’ordre canonique 3,47–51. Le cantique qui suit est un texte liturgique distinct.",
+  separateHymn:"Daniel 3:52–59"
+ };
+ assert.equal(await page.evaluate(({daniel,arrangement})=>
+  globalThis.AO_SCRIPTURE_CONTEXT_V1.openSegments(daniel,{
+   reference:"Daniel 3:47–51",language:"en",liturgicalArrangement:arrangement
+  }),{daniel,arrangement}),true);
+ await dialog.waitFor({state:"visible"});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Daniel 3:47–51");
+ const notice=dialog.locator("[data-scripture-liturgical-order='Daniel 3:47–51']");
+ await notice.waitFor({state:"visible",timeout:8000});
+ assert.match(await notice.innerText(),/Missal presents these verses in liturgical order/);
+ assert.match(await notice.innerText(),/then 3:47–48, then 3:50–51/);
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,
+   "Liturgical note must never unlock unlicensed Bible text");
+ await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
+ assert.match(await notice.innerText(),/ordre liturgique/);
+ assert.match(await notice.innerText(),/Bible ci-dessous suit l’ordre canonique/);
+ await dialog.locator("[data-scripture-close]").click();
+ assert.equal(await page.evaluate(({daniel,arrangement})=>
+  globalThis.AO_SCRIPTURE_CONTEXT_V1.openSegments(daniel,{
+   reference:"Daniel 3:47–51",liturgicalArrangement:{...arrangement,noteFr:""}
+  }),{daniel,arrangement}),false,
+  "Missing bilingual transposition explanation must fail closed");
+ assert.equal(await page.evaluate(({daniel,arrangement})=>
+  globalThis.AO_SCRIPTURE_CONTEXT_V1.openSegments(daniel,{
+   reference:"Daniel 3:47–51",liturgicalArrangement:{...arrangement,liturgicalVerseOrder:["Daniel 3:47–51"]}
+  }),{daniel,arrangement}),false,
+  "Unproven liturgical verse order must never open a misleading Context");
+  assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
  await browser?.close?.();
