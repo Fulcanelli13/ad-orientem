@@ -7,6 +7,7 @@ import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
 import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper.js";
+import { observedCycle } from "./observed-cycle.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -142,35 +143,6 @@ function downloadMonthIcs(monthId){
     return false;
   }
 }
-function sourceHints(r){
-  const p=properOf(r),d=r?.day?.main??{};
-  return [
-    p?.calendarKind,p?.calendarType,p?.category,p?.kind,p?.type,p?.source,p?.sourceType,p?.file,p?.path,
-    d?.calendarKind,d?.calendarType,d?.category,d?.kind,d?.type,d?.source,d?.sourceType,d?.file,d?.path,
-  ].map(x=>String(x??"").toLowerCase()).filter(Boolean).join(" ");
-}
-function observedCycle(r,id){
-  if(!r||r.status==="failed"||!r.day)return "unknown";
-  // Temporale is a liturgical classification, not strictly a source folder:
-  // Christ the King, Christmas and Epiphany are stored under Sancti upstream.
-  const title=String(titleOf(r)||"").toLowerCase();
-  const temporal=/\b(?:feria|sunday|dimanche|f[eé]rie|ember|quatre[- ]temps|rogation|ash wednesday|mercredi des cendres|septuagesima|septuag[eé]sime|sexagesima|sexag[eé]sime|quinquagesima|quinquag[eé]sime|lent|car[eê]me|passion sunday|dimanche de la passion|palm sunday|rameaux|holy monday|lundi saint|holy tuesday|mardi saint|holy wednesday|mercredi saint|holy thursday|jeudi saint|good friday|vendredi saint|holy saturday|samedi saint|easter|p[aâ]ques|ascension|pentecost|pentec[oô]te|trinity|trinit[eé]|corpus christi|f[eê]te[- ]dieu|sacred heart|sacr[eé][ -]c[oœ]ur|christ the king|christ[- ]roi|advent|avent|nativity of our lord|nativit[eé] de notre[- ]seigneur|epiphany of our lord|[eé]piphanie de notre[- ]seigneur|circumcision of our lord|circoncision de notre[- ]seigneur)\b/;
-  if(temporal.test(title))return "temporale";
-  // For other observed celebrations, the actual principal Mass identity
-  // takes precedence over a generic Sunday classification.
-  const observedId=String(r.day.main?.id||"").toLowerCase();
-  if(observedId.startsWith("sancti:"))return "sanctorale";
-  if(observedId.startsWith("tempora:"))return "temporale";
-  // Classify the observed celebration, never a projected date which might be
-  // impeded or transferred under the 1962 rubrics.
-  const hints=sourceHints(r);
-  if(/\b(?:sanct|sanctor|fixed[-_ ]?feast|saint)\b/.test(hints))return "sanctorale";
-  if(/\b(?:temp|tempor|season|feria|sunday)\b/.test(hints))return "temporale";
-  if(dateOf(id).getDay()===0)return "temporale";
-
-  const generic=/^(?:liturgical day|jour liturgique|calendar unavailable|calendrier indisponible)$/;
-  return generic.test(title.trim())?"unknown":"sanctorale";
-}
 function principalSaintContext(r,id){
   if(observedCycle(r,id)!=="sanctorale")return null;
   const title=titleOf(r);
@@ -223,6 +195,7 @@ function monthIndexResolutionState(monthId,view){
 }
 function monthIndexList(monthId,selected,view){
   const rows=monthIndexEntries(monthId,view);
+  const unknownRows=(view==="temporale"||view==="sanctorale")?monthDateIds(monthId).map(monthEntry).filter(x=>x?.cycle==="unknown"):[];
   const status=monthIndexResolutionState(monthId,view);
   const label=view==="major"?L("Major days","Jours majeurs"):view==="temporale"?L("Temporale","Temporal"):view==="sanctorale"?L("Sanctorale","Sanctoral"):L("Practices","Pratiques");
   const explanation=view==="major"
@@ -235,6 +208,7 @@ function monthIndexList(monthId,selected,view){
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
     ${rows.length&&status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
+    ${unknownRows.length?`<div class="aoCalMonthCoverage" data-cal-unclassified role="status"><p>${esc(L("Some resolved days cannot yet be assigned to Temporale or Sanctorale from their source identity; they are excluded from both indexes.","Certains jours résolus ne peuvent pas encore être classés dans le temporal ou le sanctoral selon leur source ; ils sont exclus des deux index."))}</p><div>${unknownRows.map(x=>`<button type="button" data-cal-month-index-date="${esc(x.date)}">${esc(displayDate(x.date))} · ${esc(x.title)}</button>`).join("")}</div></div>`:""}
     ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<div class="aoCalMonthIndexRow" style="--month-accent:${esc(x.accent)}">
       <button type="button" data-cal-month-index-date="${x.date}" class="aoCalMonthIndexDay ${x.date===selected?"selected":""}">
         <time>${esc(displayDate(x.date))}</time>
