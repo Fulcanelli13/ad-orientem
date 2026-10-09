@@ -42,6 +42,10 @@ function css(){
 .aoSLSources{margin:24px 0 0;padding-top:16px;border-top:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}.aoSLSources summary{cursor:pointer;color:var(--muted,#9ba5b1);font-size:.8rem}.aoSLSource{margin:11px 0;padding-left:10px;border-left:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));font-size:.76rem;line-height:1.45}.aoSLSource a{color:var(--liturgical,#c9ad78);text-decoration:none}.aoSLSource em{display:block;margin-top:2px;color:var(--muted,#9ba5b1);font-style:normal}.aoSLSourceLoc{margin-top:4px;color:var(--muted,#9ba5b1);font-size:.71rem}
 .aoSLNav{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:25px}.aoSLNav button{min-height:48px;border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));border-radius:12px;background:var(--ao-surface-1,var(--surface-1,#101821));color:inherit;padding:10px 12px;text-align:left}.aoSLNav button:last-child{text-align:right}.aoSLNav button:disabled{opacity:.35}.aoSLNav small{display:block;color:var(--muted,#9ba5b1);font-size:.64rem;text-transform:uppercase;letter-spacing:.07em}.aoSLNav strong{display:block;margin-top:3px;font-size:.8rem;line-height:1.25}
 @media(max-width:430px){.aoSLWrap{padding-left:13px;padding-right:13px}.aoSLBlock p{font-size:.98rem}.aoSLHero h1{font-size:2.25rem}.aoSLHandoffButtons{display:grid}.aoSLBtn{width:100%}}
+/* Semantic reading hierarchy: paragraphs and practice text, not compact labels. */
+.aoSLBoundary,.aoSLRow p,.aoSLPractice p,.aoSLLessonHead p{font-size:max(14px,.875rem);line-height:1.55}
+.aoSLSource,.aoSLSourceLoc{font-size:max(13px,.8125rem);line-height:1.55}
+
 `;
 }
 
