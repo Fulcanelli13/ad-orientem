@@ -1,5 +1,5 @@
-import { normalizeScrollmapperSource } from "./normalize-scrollmapper.mjs";
 #!/usr/bin/env node
+import { normalizeScrollmapperSource } from "./normalize-scrollmapper.mjs";
 import { mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 const PIN="e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c";
