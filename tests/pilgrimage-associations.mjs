@@ -104,9 +104,11 @@ assert.ok(linked.some(place=>place.place_id==="place:FR:sanctuaire-notre-dame-de
 assert.ok(!pilgrimagePlacesForCalendarKeys(["not-a-real-calendar-key"],shrines).length);
 assert.ok(!pilgrimagePlacesForCalendarKeys(["feast.our_lady_of_lourdes"],{}).length);
 const calendarBrowser=readFileSync("src/calendar/browser-entry.js","utf8");
+const calendarRuntime=readFileSync("src/calendar/calendar-runtime.js","utf8");
 const exploreBrowser=readFileSync("src/find/browser-entry.js","utf8");
-assert.match(calendarBrowser,/pilgrimagePlacesForCalendarKeys/);
-assert.match(calendarBrowser,/find:pilgrimages:/);
+assert.match(calendarBrowser,/import\("\.\/calendar-runtime\.js"\)/,"Calendar entrypoint must lazily own its runtime");
+assert.match(calendarRuntime,/pilgrimagePlacesForCalendarKeys/,"actual Calendar runtime must retain pilgrimage associations");
+assert.match(calendarRuntime,/find:pilgrimages:/,"actual Calendar runtime must preserve pilgrimage routing");
 assert.match(exploreBrowser,/state\.calendarKey/);
 assert.match(exploreBrowser,/data-explore-calendar-date/);
 console.log("PASS 131 shrines; 159 pilgrimages; saints, novenas, local devotions, 46 bound links/37 Calendar keys, date navigation");

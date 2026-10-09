@@ -1,0 +1,1672 @@
+{
+  "schema": "SACRED_ATLAS_RELIC_SITE_SELECTION_REVIEW_V1",
+  "as_of": "2026-10-09",
+  "status": "SUBJECT_FIRST_EDITORIAL_RECOMMENDATIONS_NOT_PRODUCTION_MAP",
+  "criteria": [
+    "A principal tomb, substantial relic or historic pilgrimage makes a stronger anchor than dispersed fragments.",
+    "The saint's devotional reach is separate from a relic object's material class, authentication and significance.",
+    "No duplicated pin if the same chapel contains several saints or relic pieces.",
+    "An existing Place is reused; an unregistered site requires address/coordinate and original sanctuary-link validation before publication.",
+    "A historically prominent tomb with uncertain present body custody may warrant pilgrimage context, never an authenticated bodily-relic assertion.",
+    "Traditional Passion and Marian sacred objects undergo a separate exceptional-object publication review.",
+    "No updated Mass schedules or 1962 feasts are inferred."
+  ],
+  "source_registry": "data/explore/worldwide-relic-subject-census.research.v1.json plus wave2–wave6",
+  "research_scope_note": "Priority screening and candidate triage; not a comprehensive worldwide relic inventory.",
+  "summary": {
+    "recommendations": 71,
+    "unique_sites": 66,
+    "existing_place_reuse": 28,
+    "subject_associations_at_new_sites": 43,
+    "new_distinct_sites": 39,
+    "world_anchors": 39,
+    "regional_anchors": 31,
+    "historic_associations": 1,
+    "explicit_exclusions": 18
+  },
+  "site_decisions": [
+    {
+      "selection_id": "selection:saint-peter-the-apostle:placevasaintpetervatican",
+      "subject_id": "subject:saint-peter-the-apostle",
+      "candidate_site_key": "place:VA:saint-peter-vatican",
+      "site_name": "St Peter's Basilica — Vatican",
+      "existing_place_id": "place:VA:saint-peter-vatican",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Apostolic tomb; one site, not one pin for every transferred fragment",
+      "evidence_ids": [
+        "relic:VA:peter-tomb"
+      ],
+      "evidence_sources": [
+        "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-paul-the-apostle:placeitsaintpauloutsidewallsrome",
+      "subject_id": "subject:saint-paul-the-apostle",
+      "candidate_site_key": "place:IT:saint-paul-outside-walls-rome",
+      "site_name": "Basilica Papale di San Paolo fuori le Mura",
+      "existing_place_id": "place:IT:saint-paul-outside-walls-rome",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal apostolic tomb; chains remain separate objects in its profile",
+      "evidence_ids": [
+        "relic:IT:paul-tomb",
+        "relic:IT:paul-chains"
+      ],
+      "evidence_sources": [
+        "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+        "https://basilicas.vatican.va/en.html"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-james-the-greater:placeessantiagocompostelacathedral",
+      "subject_id": "subject:saint-james-the-greater",
+      "candidate_site_key": "place:ES:santiago-compostela-cathedral",
+      "site_name": "Catedral de Santiago de Compostela",
+      "existing_place_id": "place:ES:santiago-compostela-cathedral",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Historic pilgrimage destination associated with the Apostle",
+      "evidence_ids": [
+        "relic:ES:james-compostela",
+        "evidence:relic:wave2:002"
+      ],
+      "evidence_sources": [
+        "https://catedraldesantiago.es/en/pilgrimage/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-mark-the-evangelist:placeitbasilicasanmarcovenezia",
+      "subject_id": "subject:saint-mark-the-evangelist",
+      "candidate_site_key": "place:IT:basilica-san-marco-venezia",
+      "site_name": "Basilica Cattedrale Patriarcale di San Marco",
+      "existing_place_id": "place:IT:basilica-san-marco-venezia",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal traditional apostolic tomb",
+      "evidence_ids": [
+        "relic:IT:basilica-san-marco-venezia"
+      ],
+      "evidence_sources": [
+        "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-francis-of-assisi:placeitbasilicasanfrancescoassisi",
+      "subject_id": "subject:saint-francis-of-assisi",
+      "candidate_site_key": "place:IT:basilica-san-francesco-assisi",
+      "site_name": "Basilica di San Francesco d'Assisi",
+      "existing_place_id": "place:IT:basilica-san-francesco-assisi",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal tomb; international pilgrims explicitly documented",
+      "evidence_ids": [
+        "relic:IT:francis-assisi"
+      ],
+      "evidence_sources": [
+        "https://basilica.sanfrancesco.org/en/explore-the-basilica/tomb"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-anthony-of-padua:placeitbasilicasantantoniopadova",
+      "subject_id": "subject:saint-anthony-of-padua",
+      "candidate_site_key": "place:IT:basilica-sant-antonio-padova",
+      "site_name": "Basilica di Sant'Antonio, Padova",
+      "existing_place_id": "place:IT:basilica-sant-antonio-padova",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal relic sanctuary, grouping tongue, jaw, voice and other remains",
+      "evidence_ids": [
+        "relic:IT:anthony-padua-tongue",
+        "relic:IT:anthony-padua-jawbone",
+        "relic:IT:anthony-padua-voice",
+        "relic:IT:anthony-padua-bones"
+      ],
+      "evidence_sources": [
+        "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-dominic-de-guzman:placeitbasilicasandomenicobologna",
+      "subject_id": "subject:saint-dominic-de-guzman",
+      "candidate_site_key": "place:IT:basilica-san-domenico-bologna",
+      "site_name": "Basilica di San Domenico, Bologna",
+      "existing_place_id": "place:IT:basilica-san-domenico-bologna",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal founder's tomb in Bologna",
+      "evidence_ids": [
+        "relic:IT:basilica-san-domenico-bologna"
+      ],
+      "evidence_sources": [
+        "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-nicholas-of-myra:placeitbasilicasannicolabari",
+      "subject_id": "subject:saint-nicholas-of-myra",
+      "candidate_site_key": "place:IT:basilica-san-nicola-bari",
+      "site_name": "Basilica di San Nicola, Bari",
+      "existing_place_id": "place:IT:basilica-san-nicola-bari",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal body shrine; Saint-Nicolas-de-Port fragment is a separate regional claim",
+      "evidence_ids": [
+        "relic:IT:nicholas-bari"
+      ],
+      "evidence_sources": [
+        "https://www.basilicasannicola.it/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-francis-xavier:placeinbasilicabomjesusoldgoa",
+      "subject_id": "subject:saint-francis-xavier",
+      "candidate_site_key": "place:IN:basilica-bom-jesus-old-goa",
+      "site_name": "Basilica of Bom Jesus, Old Goa",
+      "existing_place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal whole-body site; Rome forearm only a profile cross-link",
+      "evidence_ids": [
+        "relic:IN:francis-xavier-goa",
+        "evidence:relic:20261009:013"
+      ],
+      "evidence_sources": [
+        "https://www.goa.gov.in/places/basilica-church-for-churches/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-therese-of-lisieux:placefrcarmellisieux",
+      "subject_id": "subject:saint-therese-of-lisieux",
+      "candidate_site_key": "place:FR:carmel-lisieux",
+      "site_name": "Chapelle du Carmel de Lisieux",
+      "existing_place_id": "place:FR:carmel-lisieux",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal Carmel reliquary; Basilica pilgrimage remains a linked sanctuary",
+      "evidence_ids": [
+        "relic:FR:therese-carmel"
+      ],
+      "evidence_sources": [
+        "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-bernadette-soubirous:placefrespacebernadettenevers",
+      "subject_id": "subject:saint-bernadette-soubirous",
+      "candidate_site_key": "place:FR:espace-bernadette-nevers",
+      "site_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "existing_place_id": "place:FR:espace-bernadette-nevers",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal body shrine; Lourdes is an apparition sanctuary, not a body custodian",
+      "evidence_ids": [
+        "relic:FR:bernadette-nevers"
+      ],
+      "evidence_sources": [
+        "https://www.sainte-bernadette-soubirous-nevers.com/fr/le-sanctuaire/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-jean-marie-vianney:placefrbasiliquears",
+      "subject_id": "subject:saint-jean-marie-vianney",
+      "candidate_site_key": "place:FR:basilique-ars",
+      "site_name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "existing_place_id": "place:FR:basilique-ars",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal body and heart-devotion complex; both objects share the same pilgrimage destination",
+      "evidence_ids": [
+        "relic:FR:curé-ars"
+      ],
+      "evidence_sources": [
+        "https://www.arsnet.org/plan-du-sanctuaire/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-catherine-laboure:placefrruedubac",
+      "subject_id": "subject:saint-catherine-laboure",
+      "candidate_site_key": "place:FR:rue-du-bac",
+      "site_name": "Chapelle Notre-Dame de la Médaille Miraculeuse",
+      "existing_place_id": "place:FR:rue-du-bac",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Bodily relic in established Marian devotion chapel",
+      "evidence_ids": [
+        "relic:FR:catherine-laboure"
+      ],
+      "evidence_sources": [
+        "https://www.medaille-miraculeuse.fr/chapelle-medaille-miraculeuse"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-louise-de-marillac"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-teresa-of-avila:placeescarmelalbatormes",
+      "subject_id": "subject:saint-teresa-of-avila",
+      "candidate_site_key": "place:ES:carmel-alba-tormes",
+      "site_name": "Monasterio de la Anunciación — Carmelitas Descalzas",
+      "existing_place_id": "place:ES:carmel-alba-tormes",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Body, heart and arm grouped under the same Carmel",
+      "evidence_ids": [
+        "relic:ES:teresa-body-alba",
+        "relic:ES:teresa-heart-alba",
+        "relic:ES:teresa-arm-alba"
+      ],
+      "evidence_sources": [
+        "https://carmelitasalba.org/reconocimiento-canonico-del-sepulcro-y-de-las-reliquias-de-santa-teresa-de-jesus-en-alba-de-tormes/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-mary-magdalene:placefrbasiliquesaintemariemadeleinesaintmaxi",
+      "subject_id": "subject:saint-mary-magdalene",
+      "candidate_site_key": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "site_name": "Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+      "existing_place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal Provençal head-reliquary tradition; Vézelay claim must be compared, not erased",
+      "evidence_ids": [
+        "relic:FR:magdalene-head-saint-maximin"
+      ],
+      "evidence_sources": [
+        "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-martin-of-tours:placefrbasiliquesaintmartintours",
+      "subject_id": "subject:saint-martin-of-tours",
+      "candidate_site_key": "place:FR:basilique-saint-martin-tours",
+      "site_name": "Basilique Saint-Martin de Tours",
+      "existing_place_id": "place:FR:basilique-saint-martin-tours",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Historic bishop's tomb and documented reliquary",
+      "evidence_ids": [
+        "relic:FR:martin-tours-tomb",
+        "evidence:relic:wave2:020"
+      ],
+      "evidence_sources": [
+        "https://musees.tours.fr/visiter/sites-patrimoniaux/basilique-saint-martin/",
+        "https://www.basiliquesaintmartin.fr/visite-guidee-en-anglais/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-pio-of-pietrelcina:placeitsantuariosanpiorotondo",
+      "subject_id": "subject:saint-pio-of-pietrelcina",
+      "candidate_site_key": "place:IT:santuario-san-pio-rotondo",
+      "site_name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+      "existing_place_id": "place:IT:santuario-san-pio-rotondo",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal modern relic sanctuary",
+      "evidence_ids": [
+        "relic:IT:padre-pio-rotondo"
+      ],
+      "evidence_sources": [
+        "https://www.conventosantuariopadrepio.it/it/archivio/visita-a-san-pio.html"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-vincent-de-paul:placefrchapellesaintvincentparis",
+      "subject_id": "subject:saint-vincent-de-paul",
+      "candidate_site_key": "place:FR:chapelle-saint-vincent-paris",
+      "site_name": "Chapelle Saint-Vincent-de-Paul, Paris",
+      "existing_place_id": "place:FR:chapelle-saint-vincent-paris",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal bodily-relic chapel; heart at Rue du Bac not a second global anchor",
+      "evidence_ids": [
+        "relic:FR:vincent-de-paul"
+      ],
+      "evidence_sources": [
+        "https://fr.wikipedia.org/wiki/Chapelle_Saint-Vincent-de-Paul_de_Paris"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-anne:placecasainteannedebeaupre",
+      "subject_id": "subject:saint-anne",
+      "candidate_site_key": "place:CA:sainte-anne-de-beaupre",
+      "site_name": "Sanctuaire Sainte-Anne-de-Beaupré",
+      "existing_place_id": "place:CA:sainte-anne-de-beaupre",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Major saint-associated bone relics with specific sanctuary documentation",
+      "evidence_ids": [
+        "relic:CA:anne-beaupre-finger",
+        "relic:CA:anne-beaupre-1892-forearm",
+        "relic:CA:anne-beaupre-1960-forearm"
+      ],
+      "evidence_sources": [
+        "https://sanctuairesainteanne.org/pages/les-reliques-de-sainte-anne"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-margaret-mary-alacoque:placefrsanctuairesacrecoeurparay",
+      "subject_id": "subject:saint-margaret-mary-alacoque",
+      "candidate_site_key": "place:FR:sanctuaire-sacre-coeur-paray",
+      "site_name": "Sanctuaire du Sacré-Cœur de Paray-le-Monial",
+      "existing_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Foundational Sacred Heart devotional sanctuary",
+      "evidence_ids": [
+        "relic:FR:margaret-mary-paray"
+      ],
+      "evidence_sources": [
+        "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-andre-bessette:placecaoratoiresaintjosephmontreal",
+      "subject_id": "subject:saint-andre-bessette",
+      "candidate_site_key": "place:CA:oratoire-saint-joseph-montreal",
+      "site_name": "Oratoire Saint-Joseph du Mont-Royal",
+      "existing_place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal saint's shrine with bodily/heart relic tradition",
+      "evidence_ids": [
+        "relic:CA:brother-andre-tomb-montreal",
+        "relic:CA:brother-andre-heart-montreal",
+        "evidence:relic:20261009:014"
+      ],
+      "evidence_sources": [
+        "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/",
+        "https://saint-joseph.org/en/",
+        "https://saint-joseph.org/en/incontournable/the-exhibition-on-the-life-of-brother-andre/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-john-neumann:placeusstjohnneumannphiladelphia",
+      "subject_id": "subject:saint-john-neumann",
+      "candidate_site_key": "place:US:st-john-neumann-philadelphia",
+      "site_name": "National Shrine of St. John Neumann",
+      "existing_place_id": "place:US:st-john-neumann-philadelphia",
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Documented body shrine, stronger than scattered minor relics",
+      "evidence_ids": [
+        "relic:US:neumann-philadelphia"
+      ],
+      "evidence_sources": [
+        "https://stjohnneumann.org/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-elizabeth-ann-seton:placeussetonemmitsburg",
+      "subject_id": "subject:saint-elizabeth-ann-seton",
+      "candidate_site_key": "place:US:seton-emmitsburg",
+      "site_name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "existing_place_id": "place:US:seton-emmitsburg",
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal body shrine and historical foundation",
+      "evidence_ids": [
+        "relic:US:seton-emmitsburg"
+      ],
+      "evidence_sources": [
+        "https://setonshrine.org/the-basilica/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-louise-de-marillac:placefrruedubac",
+      "subject_id": "subject:saint-louise-de-marillac",
+      "candidate_site_key": "place:FR:rue-du-bac",
+      "site_name": "Chapelle Notre-Dame de la Médaille Miraculeuse",
+      "existing_place_id": "place:FR:rue-du-bac",
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Same physical chapel as Saint Catherine Labouré; no duplicate pin",
+      "evidence_ids": [
+        "relic:FR:louise-de-marillac"
+      ],
+      "evidence_sources": [
+        "https://www.medaille-miraculeuse.fr/chapelle-medaille-miraculeuse"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-catherine-laboure"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-rita-of-cascia:placeitbasilicasantaritacascia",
+      "subject_id": "subject:saint-rita-of-cascia",
+      "candidate_site_key": "place:IT:basilica-santa-rita-cascia",
+      "site_name": "Basilica di Santa Rita da Cascia",
+      "existing_place_id": "place:IT:basilica-santa-rita-cascia",
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal bodily-relic sanctuary",
+      "evidence_ids": [
+        "relic:IT:rita-cascia"
+      ],
+      "evidence_sources": [
+        "https://santaritadacascia.org/santuario/basilica/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-john-paul-ii:placeplsanktuariumjanapawlaiikrakow",
+      "subject_id": "subject:saint-john-paul-ii",
+      "candidate_site_key": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "site_name": "Sanktuarium św. Jana Pawła II Wielkiego w Krakowie",
+      "existing_place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal documented modern shrine/relic identity",
+      "evidence_ids": [
+        "relic:PL:sanktuarium-jana-pawla-ii-krakow"
+      ],
+      "evidence_sources": [
+        "https://sjanpawel2.pl/en/misja-cjp/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-maurice-of-agaunum:placechabbayesaintmauriceagaune",
+      "subject_id": "subject:saint-maurice-of-agaunum",
+      "candidate_site_key": "place:CH:abbaye-saint-maurice-agaune",
+      "site_name": "Abbaye de Saint-Maurice d'Agaune",
+      "existing_place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Abbey treasury and individually attributed Saint Maurice reliquary, aggregated",
+      "evidence_ids": [
+        "evidence:relic:wave5:025"
+      ],
+      "evidence_sources": [
+        "https://www.abbaye-stmaurice.ch/fr/fondation-de-l-abbaye/patrimoine/reliquaires-tresor-de-l-abbaye/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-mary-magdalene:placefrbasiliquesaintemariemadeleinevezelay",
+      "subject_id": "subject:saint-mary-magdalene",
+      "candidate_site_key": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "site_name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "existing_place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "visibility_recommendation": "HISTORICAL_ASSOCIATION",
+      "selection_reason": "Competing/historic Magdalene traditions should link to principal object dossier",
+      "evidence_ids": [
+        "relic:FR:basilique-sainte-marie-madeleine-vezelay"
+      ],
+      "evidence_sources": [
+        "https://www.basiliquedevezelay.org/samedi-saint/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "INHERITED_LEGACY_NEEDS_PASSAGE_RECHECK",
+      "publication_state": "EXISTING_PLACE_KEEP_PIN_RELIC_EDITORIAL_TAG",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-andrew-the-apostle:duomosantandreaamalfi",
+      "subject_id": "subject:saint-andrew-the-apostle",
+      "candidate_site_key": "candidate:relicsite:duomosantandreaamalfi",
+      "site_name": "Duomo Sant'Andrea, Amalfi",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal traditional apostolic tomb",
+      "evidence_ids": [
+        "evidence:relic:wave2:001"
+      ],
+      "evidence_sources": [
+        "https://museodiocesanoamalfi.it/app/it/la-cripta/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-thomas-the-apostle:basilicaconcattedraledisantommasoortona",
+      "subject_id": "subject:saint-thomas-the-apostle",
+      "candidate_site_key": "candidate:relicsite:basilicaconcattedraledisantommasoortona",
+      "site_name": "Basilica Concattedrale di San Tommaso, Ortona",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal traditionally attributed body; Chennai fragment appears only in profile",
+      "evidence_ids": [
+        "evidence:relic:wave2:004"
+      ],
+      "evidence_sources": [
+        "https://diocesilanciano.it/?p=6295"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-matthew-the-apostle:cattedraledisalerno",
+      "subject_id": "subject:saint-matthew-the-apostle",
+      "candidate_site_key": "candidate:relicsite:cattedraledisalerno",
+      "site_name": "Cattedrale di Salerno",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal body tradition at Salerno",
+      "evidence_ids": [
+        "evidence:relic:wave3:001",
+        "evidence:relic:wave3:002"
+      ],
+      "evidence_sources": [
+        "https://www.cattedraledisalerno.it/la-cripta.html",
+        "https://www.cattedraledisalerno.it/la-basilica.html"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-matthias-the-apostle:benediktinerabteistmatthiastrier",
+      "subject_id": "subject:saint-matthias-the-apostle",
+      "candidate_site_key": "candidate:relicsite:benediktinerabteistmatthiastrier",
+      "site_name": "Benediktinerabtei St Matthias, Trier",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Long-standing apostolic pilgrimage tomb",
+      "evidence_ids": [
+        "evidence:relic:wave3:003"
+      ],
+      "evidence_sources": [
+        "https://www.trierer-dom.de/gottesdienste/innenstadtkirchen/sankt-matthias/index.html"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-bartholomew-the-apostle:basilicasanbartolomeoallisolarome",
+      "subject_id": "subject:saint-bartholomew-the-apostle",
+      "candidate_site_key": "candidate:relicsite:basilicasanbartolomeoallisolarome",
+      "site_name": "Basilica San Bartolomeo all'Isola, Rome",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal Rome apostolic relic sanctuary; other claimed portions require reconciliation",
+      "evidence_ids": [
+        "evidence:relic:wave5:001"
+      ],
+      "evidence_sources": [
+        "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-ambrose-of-milan:basilicasantambrogiomilan",
+      "subject_id": "subject:saint-ambrose-of-milan",
+      "candidate_site_key": "candidate:relicsite:basilicasantambrogiomilan",
+      "site_name": "Basilica Sant'Ambrogio, Milan",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Body reliquary shared with Gervasius and Protasius",
+      "evidence_ids": [
+        "evidence:relic:20261009:001"
+      ],
+      "evidence_sources": [
+        "https://www.basilicasantambrogio.it/en/mappa-della-basilica"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-gervasius-of-milan",
+        "subject:saint-protasius-of-milan"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-gervasius-of-milan:basilicasantambrogiomilan",
+      "subject_id": "subject:saint-gervasius-of-milan",
+      "candidate_site_key": "candidate:relicsite:basilicasantambrogiomilan",
+      "site_name": "Basilica Sant'Ambrogio, Milan",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Same burial complex as Ambrose; do not generate a second marker",
+      "evidence_ids": [
+        "evidence:relic:20261009:002"
+      ],
+      "evidence_sources": [
+        "https://www.basilicasantambrogio.it/en/mappa-della-basilica"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-ambrose-of-milan",
+        "subject:saint-protasius-of-milan"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-protasius-of-milan:basilicasantambrogiomilan",
+      "subject_id": "subject:saint-protasius-of-milan",
+      "candidate_site_key": "candidate:relicsite:basilicasantambrogiomilan",
+      "site_name": "Basilica Sant'Ambrogio, Milan",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Same burial complex as Ambrose; do not generate a third marker",
+      "evidence_ids": [
+        "evidence:relic:20261009:003"
+      ],
+      "evidence_sources": [
+        "https://www.basilicasantambrogio.it/en/mappa-della-basilica"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-ambrose-of-milan",
+        "subject:saint-gervasius-of-milan"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-augustine-of-hippo:basilicasanpietroincieldoropavia",
+      "subject_id": "subject:saint-augustine-of-hippo",
+      "candidate_site_key": "candidate:relicsite:basilicasanpietroincieldoropavia",
+      "site_name": "Basilica San Pietro in Ciel d'Oro, Pavia",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal traditional body shrine",
+      "evidence_ids": [
+        "evidence:relic:20261009:004"
+      ],
+      "evidence_sources": [
+        "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-luke-the-evangelist:abbaziadisantagiustinapadua",
+      "subject_id": "subject:saint-luke-the-evangelist",
+      "candidate_site_key": "candidate:relicsite:abbaziadisantagiustinapadua",
+      "site_name": "Abbazia di Santa Giustina, Padua",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Reported evangelist relic body, source qualified",
+      "evidence_ids": [
+        "evidence:relic:20261009:008"
+      ],
+      "evidence_sources": [
+        "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-charles-borromeo:duomodimilano",
+      "subject_id": "subject:saint-charles-borromeo",
+      "candidate_site_key": "candidate:relicsite:duomodimilano",
+      "site_name": "Duomo di Milano",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal saint's body sanctuary",
+      "evidence_ids": [
+        "evidence:relic:20261009:007"
+      ],
+      "evidence_sources": [
+        "https://www.duomomilano.it/en/restoration-scurolo-st-carlo-duomo/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-clare-of-assisi:basilicadisantachiaraassisi",
+      "subject_id": "subject:saint-clare-of-assisi",
+      "candidate_site_key": "candidate:relicsite:basilicadisantachiaraassisi",
+      "site_name": "Basilica di Santa Chiara, Assisi",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal body shrine",
+      "evidence_ids": [
+        "evidence:relic:20261009:009"
+      ],
+      "evidence_sources": [
+        "https://www.assisisantachiara.it/la-cripta-e-le-reliquie/il-corpo-di-santa-chiara/?print=pdf"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-catherine-of-siena:santamariasopraminervarome",
+      "subject_id": "subject:saint-catherine-of-siena",
+      "candidate_site_key": "candidate:relicsite:santamariasopraminervarome",
+      "site_name": "Santa Maria sopra Minerva, Rome",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal reported body shrine",
+      "evidence_ids": [
+        "evidence:relic:20261009:010"
+      ],
+      "evidence_sources": [
+        "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-ignatius-of-loyola:chiesadelgesurome",
+      "subject_id": "subject:saint-ignatius-of-loyola",
+      "candidate_site_key": "candidate:relicsite:chiesadelgesurome",
+      "site_name": "Chiesa del Gesù, Rome",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Founder body shrine",
+      "evidence_ids": [
+        "evidence:relic:wave2:017"
+      ],
+      "evidence_sources": [
+        "https://gesuiti.it/chi-siamo/ignazio-di-loyola/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-thomas-aquinas:couventdesjacobinstoulouse",
+      "subject_id": "subject:saint-thomas-aquinas",
+      "candidate_site_key": "candidate:relicsite:couventdesjacobinstoulouse",
+      "site_name": "Couvent des Jacobins, Toulouse",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Body of Doctor and founder-related pilgrimage",
+      "evidence_ids": [
+        "evidence:relic:wave2:016"
+      ],
+      "evidence_sources": [
+        "https://jacobins.toulouse.fr/fr/histoire/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-john-of-the-cross:conventosanjuandelacruzsegovia",
+      "subject_id": "subject:saint-john-of-the-cross",
+      "candidate_site_key": "candidate:relicsite:conventosanjuandelacruzsegovia",
+      "site_name": "Convento San Juan de la Cruz, Segovia",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal Carmelite Doctor body shrine",
+      "evidence_ids": [
+        "evidence:relic:wave3:016"
+      ],
+      "evidence_sources": [
+        "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-agatha-of-sicily:basilicacattedraledicatania",
+      "subject_id": "subject:saint-agatha-of-sicily",
+      "candidate_site_key": "candidate:relicsite:basilicacattedraledicatania",
+      "site_name": "Basilica Cattedrale di Catania",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal head reliquary and regional martyr pilgrimage",
+      "evidence_ids": [
+        "evidence:relic:wave3:006"
+      ],
+      "evidence_sources": [
+        "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-lucy-of-syracuse:santuariodisantaluciasangeremiavenezia",
+      "subject_id": "subject:saint-lucy-of-syracuse",
+      "candidate_site_key": "candidate:relicsite:santuariodisantaluciasangeremiavenezia",
+      "site_name": "Santuario di Santa Lucia, San Geremia, Venezia",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal body custody, not temporary Sicilian visit",
+      "evidence_ids": [
+        "evidence:relic:wave3:007"
+      ],
+      "evidence_sources": [
+        "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-titus:orthodoxchurchofsainttitusheraklion",
+      "subject_id": "subject:saint-titus",
+      "candidate_site_key": "candidate:relicsite:orthodoxchurchofsainttitusheraklion",
+      "site_name": "Orthodox Church of Saint Titus, Heraklion",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal traditionally attributed skull, non-Catholic custodian",
+      "evidence_ids": [
+        "evidence:relic:wave6:001"
+      ],
+      "evidence_sources": [
+        "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-martha-of-bethany:collegialesaintemarthedetarascon",
+      "subject_id": "subject:saint-martha-of-bethany",
+      "candidate_site_key": "candidate:relicsite:collegialesaintemarthedetarascon",
+      "site_name": "Collégiale Sainte-Marthe de Tarascon",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Head and arm traditions at one Provençal shrine",
+      "evidence_ids": [
+        "evidence:relic:wave6:002",
+        "evidence:relic:wave6:024"
+      ],
+      "evidence_sources": [
+        "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-katharine-drexel:cathedralbasilicasaintspeterandpaulphiladelph",
+      "subject_id": "subject:saint-katharine-drexel",
+      "candidate_site_key": "candidate:relicsite:cathedralbasilicasaintspeterandpaulphiladelphia",
+      "site_name": "Cathedral Basilica Saints Peter and Paul, Philadelphia",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Body moved in 2018; previous Bensalem site is historic",
+      "evidence_ids": [
+        "evidence:relic:wave3:012"
+      ],
+      "evidence_sources": [
+        "https://cathedralphila.org/drexel/about/history/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-oscar-romero:catedralmetropolitanadesansalvador",
+      "subject_id": "subject:saint-oscar-romero",
+      "candidate_site_key": "candidate:relicsite:catedralmetropolitanadesansalvador",
+      "site_name": "Catedral Metropolitana de San Salvador",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal reported tomb",
+      "evidence_ids": [
+        "evidence:relic:20261009:012"
+      ],
+      "evidence_sources": [
+        "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-charbel-makhlouf:monasteryofsaintmaronannaya",
+      "subject_id": "subject:saint-charbel-makhlouf",
+      "candidate_site_key": "candidate:relicsite:monasteryofsaintmaronannaya",
+      "site_name": "Monastery of Saint Maron, Annaya",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Internationally visited principal tomb",
+      "evidence_ids": [
+        "evidence:relic:wave3:011"
+      ],
+      "evidence_sources": [
+        "https://saintcharbel.com/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-josephine-bakhita:santuariosantagiuseppinabakhitaschio",
+      "subject_id": "subject:saint-josephine-bakhita",
+      "candidate_site_key": "candidate:relicsite:santuariosantagiuseppinabakhitaschio",
+      "site_name": "Santuario Santa Giuseppina Bakhita, Schio",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Documented permanent relic urn",
+      "evidence_ids": [
+        "evidence:relic:wave3:013"
+      ],
+      "evidence_sources": [
+        "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-junipero-serra:carmelmissionbasilicacalifornia",
+      "subject_id": "subject:saint-junipero-serra",
+      "candidate_site_key": "candidate:relicsite:carmelmissionbasilicacalifornia",
+      "site_name": "Carmel Mission Basilica, California",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Actual grave, distinct from cenotaph and old coffin fragments",
+      "evidence_ids": [
+        "evidence:relic:wave2:025",
+        "evidence:relic:wave2:026"
+      ],
+      "evidence_sources": [
+        "https://carmelmission.org/serra-grave/",
+        "https://carmelmission.org/serra-reliquary/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-rose-of-lima:conventosantodomingolima",
+      "subject_id": "subject:saint-rose-of-lima",
+      "candidate_site_key": "candidate:relicsite:conventosantodomingolima",
+      "site_name": "Convento Santo Domingo, Lima",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Important regional body shrine shared with Martin de Porres",
+      "evidence_ids": [
+        "evidence:relic:wave2:027"
+      ],
+      "evidence_sources": [
+        "https://www.conventosantodomingo.com.pe/basilica/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-martin-de-porres"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-martin-de-porres:conventosantodomingolima",
+      "subject_id": "subject:saint-martin-de-porres",
+      "candidate_site_key": "candidate:relicsite:conventosantodomingolima",
+      "site_name": "Convento Santo Domingo, Lima",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Same custodian as Saint Rose; one site",
+      "evidence_ids": [
+        "evidence:relic:wave2:028"
+      ],
+      "evidence_sources": [
+        "https://www.conventosantodomingo.com.pe/basilica/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-rose-of-lima"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-edward-the-confessor:westminsterabbeylondon",
+      "subject_id": "subject:saint-edward-the-confessor",
+      "candidate_site_key": "candidate:relicsite:westminsterabbeylondon",
+      "site_name": "Westminster Abbey, London",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Historic royal saint body shrine, Anglican custodianship clear",
+      "evidence_ids": [
+        "evidence:relic:wave2:024"
+      ],
+      "evidence_sources": [
+        "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-willibrord:stwillibrordbasilicaechternach",
+      "subject_id": "subject:saint-willibrord",
+      "candidate_site_key": "candidate:relicsite:stwillibrordbasilicaechternach",
+      "site_name": "St Willibrord Basilica, Echternach",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal body tomb and Luxembourg pilgrim devotion",
+      "evidence_ids": [
+        "evidence:relic:wave3:008"
+      ],
+      "evidence_sources": [
+        "https://basilika.lu/en/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-stanislaus-of-krakow:wawelcathedralkrakow",
+      "subject_id": "subject:saint-stanislaus-of-krakow",
+      "candidate_site_key": "candidate:relicsite:wawelcathedralkrakow",
+      "site_name": "Wawel Cathedral, Kraków",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal Polish martyr body shrine",
+      "evidence_ids": [
+        "evidence:relic:wave3:009"
+      ],
+      "evidence_sources": [
+        "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-casimir:vilniuscathedralsaintcasimirchapel",
+      "subject_id": "subject:saint-casimir",
+      "candidate_site_key": "candidate:relicsite:vilniuscathedralsaintcasimirchapel",
+      "site_name": "Vilnius Cathedral, Saint Casimir Chapel",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal Lithuanian royal saint's body shrine",
+      "evidence_ids": [
+        "evidence:relic:wave3:010"
+      ],
+      "evidence_sources": [
+        "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-stephen-of-hungary:szentistvanbazilikabudapest",
+      "subject_id": "subject:saint-stephen-of-hungary",
+      "candidate_site_key": "candidate:relicsite:szentistvanbazilikabudapest",
+      "site_name": "Szent István Bazilika, Budapest",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Holy Right as major first-class candidate with strong national devotion",
+      "evidence_ids": [
+        "evidence:relic:wave5:010"
+      ],
+      "evidence_sources": [
+        "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-adalbert-of-prague:archcathedralbasilicagniezno",
+      "subject_id": "subject:saint-adalbert-of-prague",
+      "candidate_site_key": "candidate:relicsite:archcathedralbasilicagniezno",
+      "site_name": "Archcathedral Basilica, Gniezno",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal complex of attributed relics; Prague conflict noted",
+      "evidence_ids": [
+        "evidence:relic:wave5:008"
+      ],
+      "evidence_sources": [
+        "https://archidiecezja.pl/co-kryja-relikwiarze/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-columbanus:basilicasancolombanobobbio",
+      "subject_id": "subject:saint-columbanus",
+      "candidate_site_key": "candidate:relicsite:basilicasancolombanobobbio",
+      "site_name": "Basilica San Colombano, Bobbio",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal Irish missionary and founder body shrine",
+      "evidence_ids": [
+        "evidence:relic:wave5:015"
+      ],
+      "evidence_sources": [
+        "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-monica:basilicasantagostinoincampomarziorome",
+      "subject_id": "subject:saint-monica",
+      "candidate_site_key": "candidate:relicsite:basilicasantagostinoincampomarziorome",
+      "site_name": "Basilica Sant'Agostino in Campo Marzio, Rome",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Main body tomb",
+      "evidence_ids": [
+        "evidence:relic:wave5:013"
+      ],
+      "evidence_sources": [
+        "https://www.santagostinoroma.it/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-jose-de-anchieta:pateodocollegiosaopaulo",
+      "subject_id": "subject:saint-jose-de-anchieta",
+      "candidate_site_key": "candidate:relicsite:pateodocollegiosaopaulo",
+      "site_name": "Pateo do Collegio, São Paulo",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Distinct femur and mantle under one Jesuit custodian",
+      "evidence_ids": [
+        "evidence:relic:wave6:023",
+        "evidence:relic:wave6:025"
+      ],
+      "evidence_sources": [
+        "https://www.pateodocollegio.com.br/sao-jose-de-anchieta"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-eusebius-of-vercelli:cattedraledisanteusebiovercelli",
+      "subject_id": "subject:saint-eusebius-of-vercelli",
+      "candidate_site_key": "candidate:relicsite:cattedraledisanteusebiovercelli",
+      "site_name": "Cattedrale di Sant'Eusebio, Vercelli",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Documented Piedmontese bishop relic collection",
+      "evidence_ids": [
+        "evidence:relic:wave6:012"
+      ],
+      "evidence_sources": [
+        "https://tesorodelduomovc.it/opere/urna-di-eusebio/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-hilary-of-poitiers:eglisesainthilairelegrandpoitiers",
+      "subject_id": "subject:saint-hilary-of-poitiers",
+      "candidate_site_key": "candidate:relicsite:eglisesainthilairelegrandpoitiers",
+      "site_name": "Église Saint-Hilaire-le-Grand, Poitiers",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Historic bishop sanctuary, physical relic class remains undetermined",
+      "evidence_ids": [
+        "evidence:relic:wave3:015"
+      ],
+      "evidence_sources": [
+        "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-alphonsus-liguori:basilicasantalfonsodeliguoripagani",
+      "subject_id": "subject:saint-alphonsus-liguori",
+      "candidate_site_key": "candidate:relicsite:basilicasantalfonsodeliguoripagani",
+      "site_name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Founder and Doctor body shrine",
+      "evidence_ids": [
+        "evidence:relic:wave3:014"
+      ],
+      "evidence_sources": [
+        "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-francis-de-sales:basiliquedelavisitationannecy",
+      "subject_id": "subject:saint-francis-de-sales",
+      "candidate_site_key": "candidate:relicsite:basiliquedelavisitationannecy",
+      "site_name": "Basilique de la Visitation, Annecy",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Shared permanent body shrine with Jeanne de Chantal",
+      "evidence_ids": [
+        "evidence:relic:wave2:022"
+      ],
+      "evidence_sources": [
+        "https://visitationannecy.org/la-basilique-dannecy/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-jane-frances-de-chantal"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-jane-frances-de-chantal:basiliquedelavisitationannecy",
+      "subject_id": "subject:saint-jane-frances-de-chantal",
+      "candidate_site_key": "candidate:relicsite:basiliquedelavisitationannecy",
+      "site_name": "Basilique de la Visitation, Annecy",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Same place as Francis de Sales",
+      "evidence_ids": [
+        "evidence:relic:wave2:023"
+      ],
+      "evidence_sources": [
+        "https://visitationannecy.org/la-basilique-dannecy/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": [
+        "subject:saint-francis-de-sales"
+      ]
+    },
+    {
+      "selection_id": "selection:saint-john-bosco:basilicamariaausiliatriceturin",
+      "subject_id": "subject:saint-john-bosco",
+      "candidate_site_key": "candidate:relicsite:basilicamariaausiliatriceturin",
+      "site_name": "Basilica Maria Ausiliatrice, Turin",
+      "existing_place_id": null,
+      "visibility_recommendation": "WORLD_ANCHOR",
+      "selection_reason": "Principal Salesian founder remains",
+      "evidence_ids": [
+        "evidence:relic:wave2:019"
+      ],
+      "evidence_sources": [
+        "https://salesians.org/blog/salesian-house-built-living-stones"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    },
+    {
+      "selection_id": "selection:saint-philip-neri:chiesasantamariainvallicellachiesanuovarome",
+      "subject_id": "subject:saint-philip-neri",
+      "candidate_site_key": "candidate:relicsite:chiesasantamariainvallicellachiesanuovarome",
+      "site_name": "Chiesa Santa Maria in Vallicella (Chiesa Nuova), Rome",
+      "existing_place_id": null,
+      "visibility_recommendation": "REGIONAL_ANCHOR",
+      "selection_reason": "Principal founder body tomb; relic export does not create pins",
+      "evidence_ids": [
+        "evidence:relic:wave4:005"
+      ],
+      "evidence_sources": [
+        "https://www.oratoriosanfilippo.org/la-roma-filippina/"
+      ],
+      "custody_inference": "SOURCE_REPORTS_CUSTODY_WITH_TRADITIONAL_ATTRIBUTION_UNCERTIFIED",
+      "source_grade": "SOURCE_SCREENED_IN_WAVES",
+      "publication_state": "NEW_PLACE_REQUIRES_LOCATOR_AND_CUSTODY_VERIFICATION",
+      "creates_pin_in_this_pr": false,
+      "site_shared_with_subjects": []
+    }
+  ],
+  "nonpublication_cases": [
+    {
+      "subject_id": "subject:saint-francis-xavier",
+      "location": "Chiesa del Gesù, Rome",
+      "exclusion_class": "PROFILE_FRAGMENT_ONLY",
+      "reason": "Right forearm is historically significant but not a separate global primary shrine for the subject",
+      "source_urls": [
+        "https://www.chiesadelgesu.org/le-memorie-dei-santi/"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-thomas-the-apostle",
+      "location": "San Thome Cathedral Basilica, Chennai",
+      "exclusion_class": "PROFILE_FRAGMENT_ONLY",
+      "reason": "Chennai reports a small bone: link to Ortona without declaring competing entire bodies",
+      "source_urls": [
+        "https://www.santhomechurch.org/about.html"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-anne",
+      "location": "place:CA:sainte-anne-de-beaupre",
+      "exclusion_class": "PROFILE_OBJECT_GROUP_ONLY",
+      "reason": "Three bodily fragments at one published shrine must never create three marker identities",
+      "source_urls": [
+        "https://sanctuairesainteanne.org/pages/les-reliques-de-sainte-anne"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-brigid-of-kildare",
+      "location": "Saint Brigid's Church, Kildare",
+      "exclusion_class": "PROFILE_FRAGMENT_ONLY",
+      "reason": "2024 small fragment returned; important local veneration but no new relic map marker solely for fragment",
+      "source_urls": [
+        "https://www.catholicbishops.ie/2024/01/28/mass-celebrated-by-bishop-denis-nulty-for-the-installation-of-the-holy-relic-of-saint-brigid/"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-timothy",
+      "location": "Catholic Cathedral, Istanbul",
+      "exclusion_class": "PROFILE_FRAGMENT_ONLY",
+      "reason": "Small transferred fragment; do not replace Termoli principal site",
+      "source_urls": [
+        "https://www.diocesitermolilarino.it/san-timoteo-una-reliquia-del-santo-biblico-custodito-a-termoli-posta-nellaltare-della-cattedrale-di-istanbul-costantinopoli/"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-junipero-serra",
+      "location": "Carmel Mission Basilica, California",
+      "exclusion_class": "PROFILE_OBJECT_GROUP_ONLY",
+      "reason": "Coffin pieces associated with body tomb are not separate first-class bodily relic pins",
+      "source_urls": [
+        "https://carmelmission.org/serra-grave/",
+        "https://carmelmission.org/serra-reliquary/"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-lorenzo-ruiz",
+      "location": "Nagasaki martyrdom site",
+      "exclusion_class": "NO_EXTANT_BODY_CUSTODY",
+      "reason": "Reported dispersed ashes, no authenticated body relic location",
+      "source_urls": [
+        "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19871018_ruiz-compagni_it.html"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-pedro-calungsod",
+      "location": "Tumon, Guam historic martyrdom",
+      "exclusion_class": "NO_EXTANT_BODY_CUSTODY",
+      "reason": "Vatican records remains were not recovered",
+      "source_urls": [
+        "https://www.vatican.va/news_services/liturgy/libretti/2012/20121021.pdf"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-joachim",
+      "location": "Historic Jerusalem site of Joachim and Anne",
+      "exclusion_class": "HISTORICAL_DEVOTIONAL_SITE",
+      "reason": "No verified bodily relic custody",
+      "source_urls": [
+        "https://www.vatican.va/content/osservatore-romano/it/comments/2009/documents/206q01b1.html"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-thomas-becket",
+      "location": "Canterbury medieval shrine destroyed in 1538; no verified present permanent bodily relics",
+      "exclusion_class": "HISTORICAL_DEVOTIONAL_SITE",
+      "reason": "Destroyed medieval shrine; do not label current bodily custody",
+      "source_urls": [],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-joan-of-arc",
+      "location": "Rouen historic commemorative setting",
+      "exclusion_class": "NO_EXTANT_BODY_CUSTODY",
+      "reason": "No authenticated corporal relic currently established",
+      "source_urls": [],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-irenaeus-of-lyons",
+      "location": "Crypte Saint-Irénée, Lyon",
+      "exclusion_class": "HISTORICAL_BONES_UNATTRIBUTED",
+      "reason": "Mixed bones lack individual identification; pilgrim history is separate",
+      "source_urls": [
+        "https://www.patrimoine-lyon.org/secteur_unesco/fourviere/saint-irenee/la-crypte"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-hedwig-of-silesia",
+      "location": "Basilika St Jadwiga, Trzebnica",
+      "exclusion_class": "IDENTITY_AND_POSITION_HOLD",
+      "reason": "Physical placement relative to sarcophagus unresolved in reviewed source",
+      "source_urls": [
+        "https://trzebnica.pl/5186/kolejne-sensacyjne-odkrycie-w-trzebnickiej-bazylice.html"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-bridget-of-sweden",
+      "location": "Vadstena Klosterkyrka, Vadstena",
+      "exclusion_class": "CONTESTED_IDENTIFICATION_HOLD",
+      "reason": "Some skull identifications contradicted by genetic research",
+      "source_urls": [
+        "https://www.svenskakyrkan.se/vadstena/klosterkyrkan"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-genevieve-of-paris",
+      "location": "Église Saint-Étienne-du-Mont, Paris",
+      "exclusion_class": "PROFILE_MINOR_SURVIVING_FRAGMENTS",
+      "reason": "Original complete body shrine destroyed; surviving small fragments should not imply intact body",
+      "source_urls": [
+        "https://www.saintetiennedumont.fr/a-propos/histoire-et-architecture/"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-olaf-of-norway",
+      "location": "Nidaros Cathedral, Trondheim",
+      "exclusion_class": "HISTORICAL_DEVOTIONAL_SITE",
+      "reason": "Great historic pilgrimage, present bodily contents not established",
+      "source_urls": [
+        "https://www.nidarosdomen.no/en/historie-og-arkitektur/olav-den-hellige"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-louis-ix",
+      "location": "Saint-Denis / Sainte-Chapelle, Paris historic custodians",
+      "exclusion_class": "HISTORICAL_DEVOTIONAL_SITE",
+      "reason": "Medieval transfers do not establish current authenticated remains",
+      "source_urls": [
+        "https://www.sainte-chapelle.fr/en/discover/saint-louis"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    },
+    {
+      "subject_id": "subject:saint-mary-magdalene",
+      "location": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "exclusion_class": "HISTORICAL_DEVOTIONAL_SITE",
+      "reason": "Historic competing relic tradition, no additional principal-body claim from this listing",
+      "source_urls": [
+        "https://www.basiliquedevezelay.org/samedi-saint/"
+      ],
+      "editorial_status": "NOT_A_NEW_RELIC_PIN"
+    }
+  ]
+}
