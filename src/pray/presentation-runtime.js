@@ -1337,24 +1337,38 @@ function onClick(e){
  if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930ConfPath!=null){
    if(!confessionPath(b.dataset.p435930ConfPath))return;
-   CONF.path=b.dataset.p435930ConfPath;CONF.examStep=0;return render();
+   CONF.path=b.dataset.p435930ConfPath;
+   CONF.examStep=0;CONF.riteStep=0;CONF.afterStep=0;
+   return render();
  }
  if(b.dataset.p435930ConfStep!=null||b.dataset.p435930ConfStage!=null){
    const target=Number(b.dataset.p435930ConfStep??b.dataset.p435930ConfStage);
    if(!CONF.path&&target>0)return;
-   CONF.stage=Math.max(0,Math.min(3,Number.isInteger(target)?target:0));CONF.examStep=0;return render();
+   CONF.stage=Math.max(0,Math.min(3,Number.isInteger(target)?target:0));
+   CONF.examStep=0;CONF.riteStep=0;CONF.afterStep=0;
+   return render();
  }
  if(b.matches('[data-p435930-conf-prev]')){
-   if(CONF.stage===1&&CONF.path!=='regular'&&CONF.examStep>0)CONF.examStep--;
+   if(CONF.stage===1&&CONF.examStep>0)CONF.examStep--;
+   else if(CONF.stage===2&&CONF.riteStep>0)CONF.riteStep--;
+   else if(CONF.stage===3&&CONF.afterStep>0)CONF.afterStep--;
    else CONF.stage=Math.max(0,CONF.stage-1);
    return render();
  }
  if(b.matches('[data-p435930-conf-next]')){
    if(!CONF.path)return;
-   if(CONF.stage>=3){CONF=freshConfessionState();return backToParent()}
-   if(CONF.stage===1&&CONF.path!=='regular'){
+   if(CONF.stage===1){
      const count=confessionExaminationCards(CONF.path,(isFr()?DATA.examFr:DATA.exam)?.sections).length;
-     if(CONF.examStep<count-1){CONF.examStep++;return render()}
+     if(CONF.examStep<count-1){CONF.examStep++;return render();}
+   }
+   if(CONF.stage===2){
+     const count=confessionRiteCards(CONF.path).length;
+     if(CONF.riteStep<count-1){CONF.riteStep++;return render();}
+   }
+   if(CONF.stage===3){
+     const count=confessionAfterCards().length;
+     if(CONF.afterStep<count-1){CONF.afterStep++;return render();}
+     CONF=freshConfessionState();return backToParent();
    }
    CONF.stage++;return render();
  }
