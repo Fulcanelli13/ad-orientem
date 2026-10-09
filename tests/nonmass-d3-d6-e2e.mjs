@@ -102,7 +102,7 @@ try{
   assert.ok(await page.locator("#aoPray435930 .aoP435930ExamReadOnly details").count()>=10);
   assert.equal(await page.locator("#aoPray435930 .aoP435930ExamReadOnly input").count(),0,"D5 examination still contains tickable controls");
   const examText=await page.locator("#aoPray435930").innerText();
-  assert.match(examText,/points for reflection, not boxes to tick|points de réflexion, non des cases à cocher/i,"Confession examination must be reflective, non-scored, and non-checklist");
+  assert.match(examText,/Read through the Commandments|Parcourez les commandements|points for reflection, not boxes to tick|points de réflexion, non des cases à cocher/i,"Confession examination must remain doctrinal and read-only after selecting a preparation path");
   assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i);
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null}));
