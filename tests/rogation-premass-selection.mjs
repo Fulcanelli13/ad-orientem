@@ -33,10 +33,28 @@ for(const date of ["2024-05-06","2027-05-03"]){
  assert.equal(resolved.authority,"DAY_RESOLVER");
  assert.equal(resolvedRogationCandidate(legacy,null,{requireResolver:true}).eligible,false,
   "public Rogation choice must wait for real day resolver");
- assert.equal(resolvedRogationCandidate(legacy,{...resolvedDay,day:{main:{rank:1}}},{requireResolver:true}).eligible,false,
-  "resolved first-class celebration must impede the Rogation candidate");
- assert.equal(resolvedRogationCandidate(legacy,{...resolvedDay,proper:{status:"ready",data:{sourcePath:"Sancti/05-03"}}},{requireResolver:true}).eligible,false,
-  "resolved saint Mass may not be misrepresented as a white feria");
+ const firstClass={...resolvedDay,day:{main:{rank:1}}};
+ const firstClassCandidate=resolvedRogationCandidate(legacy,firstClass,{requireResolver:true});
+ assert.equal(firstClassCandidate.eligible,true,
+  "public Litanies are allowed even when a first-class celebration impedes the votive");
+ assert.equal(firstClassCandidate.votiveAllowed,false,
+  "first-class celebration must block only the II-class Rogation Mass");
+ const dayMass=projectRogationPreflight({legacy,resolvedDay:firstClass,
+  requireResolver:true,choice:"DAY_MASS",service:"PUBLIC_PROCESSION",library});
+ assert.equal(dayMass.selection.choice,"DAY_MASS");
+ assert.equal(dayMass.selection.dayClass,1);
+ assert.equal(projectRogationPreflight({legacy,resolvedDay:firstClass,
+  requireResolver:true,choice:"ROGATION_MASS",service:"PUBLIC_PROCESSION",library}).reason,
+  "VOTIVE_II_CLASS_IMPEDED");
+ const saintDay={...resolvedDay,day:{main:{rank:3}},
+  proper:{status:"ready",data:{sourcePath:"Sancti/05-04"}}};
+ assert.equal(resolvedRogationCandidate(legacy,saintDay,{requireResolver:true}).eligible,true,
+  "Rogation weekday with a III-class saint retains the public-litany option");
+ assert.equal(resolvedRogationCandidate(legacy,saintDay,{requireResolver:true}).dayClass,3);
+ assert.equal(resolvedRogationCandidate(legacy,{...saintDay,proper:{status:"unavailable"}},{requireResolver:true}).eligible,false,
+  "missing day Proper must never be treated as source-certified");
+ assert.equal(resolvedRogationCandidate(legacy,{...saintDay,date:"2027-05-04"},{requireResolver:true}).eligible,false,
+  "resolver date mismatch must not enable the wrong celebration");
  const checked=projectRogationPreflight({legacy,
   resolvedDay,requireResolver:true,choice:"DAY_MASS",service:"PUBLIC_PROCESSION",library});
  assert.equal(checked.selection.observanceConfirmed,true);
