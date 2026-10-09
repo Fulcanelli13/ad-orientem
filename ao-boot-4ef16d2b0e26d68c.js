@@ -116,12 +116,13 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
                   en: 'May the intercession of blessed Barbara, Thy Virgin and Martyr, we beseech Thee, O Lord, protect us from all adversity; and through her glorious intercession may we be worthy, before the day of our death, to receive the Sacrament of the most holy Body and Blood of our Lord Jesus Christ through true penance and sincere confession. ' + endings.en,
                   fr: 'Que l’intercession de la bienheureuse Barbe, votre Vierge et Martyre, nous protège, Seigneur, contre toute adversité. Que, par sa glorieuse intercession, nous méritions de recevoir avant notre mort, par une véritable pénitence et une confession sincère, le très saint Sacrement du Corps et du Sang de Notre-Seigneur Jésus-Christ. ' + endings.fr
                 };
-                const saintNames={lat:'Bárbaræ',en:'Barbara',fr:'Barbe'};
-                const nameInPrayer=prayer=>Object.fromEntries(
+                const nameInPrayer=(prayer,latinCase)=>Object.fromEntries(
                   ['lat','en','fr'].map(lang=>[lang,
-                    String(prayer?.[lang]||'').replace(/\bN\./g,saintNames[lang])]));
-                secret={...secret,...nameInPrayer(secret)};
-                postcommunion={...postcommunion,...nameInPrayer(postcommunion)};
+                    String(prayer?.[lang]||'').replace(/\bN\./g,
+                      lang==='lat'?latinCase:lang==='fr'?'Barbe':'Barbara')]));
+                // Genitive in Secreta, ablative after 'intercedénte' in Postcommunio.
+                secret={...secret,...nameInPrayer(secret,'Bárbaræ')};
+                postcommunion={...postcommunion,...nameInPrayer(postcommunion,'Bárbara')};
             }
             if (collect)
                 proper.collects.push(collect);
