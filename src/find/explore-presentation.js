@@ -47,7 +47,8 @@ function customsAtlasPanel(vm){
   html+='<div class="aoCustomsAtlasHeading"><div><small>'+esc(L(language,"TRADITIONS & PRACTICES","TRADITIONS ET PRATIQUES"))+'</small>'
     +'<h2>'+esc(L(language,"Customs Atlas","Atlas des coutumes"))+'</h2></div>'
     +'<p>'+esc(L(language,"Explore documented Catholic practices by place, historical description and devotional-calendar context.","Explorer les pratiques catholiques attestées par lieu, période historique et contexte du calendrier dévotionnel."))+'</p></div>';
-  html+='<div class="aoCustomsAtlasFacets">'
+  const active=(filters.atlasArea&&filters.atlasArea!=="ANY")||(filters.atlasPeriod&&filters.atlasPeriod!=="ANY")||(filters.atlasCalendar&&filters.atlasCalendar!=="ANY");
+  html+='<details class="aoCustomsAtlasDiscovery"'+(active?' open':'')+'><summary>'+esc(L(language,"Filter by place, period or calendar context","Filtrer par lieu, période ou calendrier"))+'</summary><div class="aoCustomsAtlasFacets">'
     +atlasSelect("atlasArea",L(language,"Geography","Géographie"),L(language,"All areas","Toutes les régions"),facets.areas,filters.atlasArea??"ANY")
     +atlasSelect("atlasPeriod",L(language,"Historical period","Période historique"),L(language,"All periods","Toutes les périodes"),facets.periods,filters.atlasPeriod??"ANY")
     +atlasSelect("atlasCalendar",L(language,"Calendar context","Contexte calendaire"),L(language,"All contexts","Tous les contextes"),
@@ -57,7 +58,7 @@ function customsAtlasPanel(vm){
     "Periods and calendar hints are source descriptions, not calculated feast dates. Unverified places remain in List.",
     "Les périodes et indications calendaires décrivent les sources, sans calcul de dates liturgiques. Les lieux non vérifiés restent dans la liste."))+'</span>'
     +'<button type="button" data-atlas-clear>'+esc(L(language,"Clear filters","Effacer les filtres"))+'</button></div>';
-  return html+'</section>';
+  return html+'</details></section>';
 }
 function sourceLinks(item,language){
   const links=arr(item?.source_links);
