@@ -134,7 +134,15 @@ assert.deepEqual(unresolved,[],"current production presentation references unres
 
 const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const home=readFileSync("src/home/presentation.js","utf8");
-const calendar=readFileSync("src/calendar/browser-entry.js","utf8");
+const calendarEntry=readFileSync("src/calendar/browser-entry.js","utf8");
+const calendarRuntimePath="src/calendar/calendar-runtime.js";
+// Calendar's new first-use loader retains the route API while the actual
+// buttons and asset IDs are owned by its deferred runtime module.
+// Inspect the actual presentation owner instead of requiring UI markup
+// in a loader that must remain small for startup performance.
+const calendarIsLazy=calendarEntry.includes('import("./calendar-runtime.js")');
+if(calendarIsLazy)assert.ok(existsSync(calendarRuntimePath),"Calendar loader must resolve a genuine presentation owner");
+const calendar=calendarIsLazy?readFileSync(calendarRuntimePath,"utf8"):calendarEntry;
 const learn=readFileSync("src/learn/presentation.js","utf8");
 const learnOwner=readFileSync("src/learn/browser-entry.js","utf8");
 const prayOwner=readFileSync("src/pray/browser-entry.js","utf8");
@@ -154,6 +162,10 @@ assert.doesNotMatch(home,/ao-ui-close/,"Home regained a modal-sheet Close contro
 assert.match(calendar,/ao-ui-back/);
 assert.match(calendar,/ao-ui-previous/);
 assert.match(calendar,/ao-ui-next/);
+if(calendarIsLazy){
+  assert.match(calendarEntry,/ensureCalendarRuntime/,"Calendar first-use loader cannot bypass runtime initialization");
+  assert.match(calendar,/installCalendarBrowserOwner/,"Canonical Calendar controller must exist in deferred implementation");
+}
 assert.match(learn,/canonicalAssetIdForLearnRoute/);
 assert.doesNotMatch(learn,/AO_ICON_REGISTRY_V4333/,"Learn still depends on the historical icon registry");
 assert.match(learn,/asset\.kind==="mask"/,"Learn cannot render canonical file-backed mask assets");

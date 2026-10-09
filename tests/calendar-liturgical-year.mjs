@@ -90,7 +90,17 @@ assert.doesNotMatch(traditionalSource,/v384DateLead|v384EraTabs|data-ao-cal-v384
 assert.match(traditionalSource,/export function v384Events/,"v38.4 event donor data was removed with its retired presentation");
 assert.match(traditionalSource,/export function v384Dates/,"v38.4 date donor data was removed with its retired presentation");
 
-const browser = fs.readFileSync(new URL("../src/calendar/browser-entry.js", import.meta.url), "utf8");
+const entry = fs.readFileSync(new URL("../src/calendar/browser-entry.js", import.meta.url), "utf8");
+// First-use Calendar shells defer the complete year/day/month presentation.
+// Validate the real imported presentation owner, not its intentionally small loader.
+const deferred = entry.includes('import("./calendar-runtime.js")');
+const browser = deferred
+  ? fs.readFileSync(new URL("../src/calendar/calendar-runtime.js", import.meta.url), "utf8")
+  : entry;
+if(deferred){
+  assert.match(entry,/ensureCalendarRuntime/, "Calendar must retain a callable first-use owner");
+  assert.match(browser,/installCalendarBrowserOwner/, "Deferred Calendar owner must really install");
+}
 assert.match(browser, /modular-calendar-v2-liturgical-year/);
 assert.match(browser, /calendarView==="year"\?yearSurface/);
 assert.match(browser, /data-cal-view/);

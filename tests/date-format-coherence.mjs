@@ -12,11 +12,17 @@ assert.equal(parseDisplayDate("7-10-2026"),"2026-10-07");
 assert.equal(parseDisplayDate("31/02/2026"),null);
 
 const read=path=>readFile(new URL("../"+path,import.meta.url),"utf8");
+const readCalendarDateOwner=async()=>{
+  const entry=await read("src/calendar/browser-entry.js");
+  if(!entry.includes('import("./calendar-runtime.js")'))return entry;
+  assert.match(entry,/ensureCalendarRuntime/);
+  return read("src/calendar/calendar-runtime.js");
+};
 const [app,home,enrichers,calendar,learn,pray,novenas]=await Promise.all([
   read("src/app/browser-entry.js"),
   read("src/home/presentation.js"),
   read("src/home/enrichers.js"),
-  read("src/calendar/browser-entry.js"),
+  readCalendarDateOwner(),
   read("src/learn/presentation.js"),
   read("src/pray/presentation-runtime.js"),
   read("src/pray/novena-runtime.js"),

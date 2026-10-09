@@ -2,6 +2,14 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
 const read=path=>readFile(new URL("../"+path,import.meta.url),"utf8");
+const readCalendarPresentation=async()=>{
+  const entry=await read("src/calendar/browser-entry.js");
+  // First-use loading intentionally separates startup API from the full
+  // typography/layout owner. Inspect the imported runtime when it exists.
+  if(!entry.includes('import("./calendar-runtime.js")'))return entry;
+  assert.match(entry,/ensureCalendarRuntime/);
+  return read("src/calendar/calendar-runtime.js");
+};
 
 const [
   design,
@@ -16,7 +24,7 @@ const [
 ]=await Promise.all([
   read("src/app/design-system.js"),
   read("src/app/browser-entry.js"),
-  read("src/calendar/browser-entry.js"),
+  readCalendarPresentation(),
   read("src/learn/presentation.js"),
   read("src/settings/presentation.js"),
   read("src/pray/presentation-styles.js"),
