@@ -94,9 +94,8 @@ function sourceHints(r){
 }
 function observedCycle(r,id){
   if(!r||r.status==="failed"||!r.day)return "unknown";
-  const major=majorForDate(id);
-  if(major?.kind==="sanctorale")return "sanctorale";
-  if(major?.kind==="temporale"||major?.kind==="sunday")return "temporale";
+  // Classify the observed celebration, never a projected date which might be
+  // impeded or transferred under the 1962 rubrics.
   const hints=sourceHints(r);
   if(/\b(?:sanct|sanctor|fixed[-_ ]?feast|saint)\b/.test(hints))return "sanctorale";
   if(/\b(?:temp|tempor|season|feria|sunday)\b/.test(hints))return "temporale";
@@ -133,7 +132,7 @@ function monthIndexEntries(monthId,view){
     accent:periodUiColour(buildLiturgicalYear(x.date).currentPeriod.color)
   }));
   const entries=monthDateIds(monthId).map(monthEntry).filter(Boolean);
-  if(view==="major")return entries.filter(x=>x.sunday||x.tier<=2||Boolean(x.major));
+  if(view==="major")return entries.filter(x=>x.sunday||(x.tier>0&&x.tier<=2));
   if(view==="temporale")return entries.filter(x=>x.cycle==="temporale");
   if(view==="sanctorale")return entries.filter(x=>x.cycle==="sanctorale");
   return entries;
