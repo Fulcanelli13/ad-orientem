@@ -13,7 +13,7 @@ const novenas=read("data/pray/novena-sot.v1.json");
 const evidence=read("data/geography/customs-atlas-place-geo-evidence.2026-10-09.json");
 const places=new Map(geography.places.map(place=>[place.place_id,place]));
 const published=geography.places.filter(place=>isMapPublishablePlaceGeo(place.geo,place.address?.country_code));
-assert.equal(published.length,146,"146 shared places have provenance-locked map coordinates");
+assert.equal(published.length,165,"165 shared places have provenance-locked map coordinates");
 assert.equal(evidence.records.length,58,"58 source-attributed coordinate promotions required");
 assert.equal(new Set(evidence.records.map(e=>e.place_id)).size,evidence.records.length,"duplicate GPS provenance");
 for(const record of evidence.records){
@@ -73,4 +73,4 @@ assert.equal(shrine.geo.lat,Math.round((derivedLat+cellLat/2)*1e8)/1e8);
 assert.equal(shrine.geo.lng,Math.round((derivedLng+cellLng/2)*1e8)/1e8);
 assert.equal(shrine.geo.source_ref,"OLC:6FR9JH95+W9J");
 assert.equal(shrine.geo.precision,"complex_anchor");
-console.log("PASS 112 geocoded shared Places, 58/58 customs site markers, Russell indicative locality label, Plus Code proof");
+console.log("PASS 165 geocoded shared Places, 58/58 customs site markers, Russell indicative locality label, Plus Code proof");
