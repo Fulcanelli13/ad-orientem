@@ -14,7 +14,8 @@ const PACKS = Object.freeze([
   ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
   ["Apologetics dossiers","apologetics-canonical.v1.json"],
   ["Church Crisis dossiers","church-crisis-canonical.v1.json"],
-  ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"]
+  ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"],
+  ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -131,6 +132,12 @@ export function buildRecoveryDossierCoverage(rows,packs) {
   const evidenceMap=new Map((evidence?.dossiers||[]).map(d=>[d.id,d]));
   if(evidence && (evidence.dossiers?.length!==141 || evidenceMap.size!==141 || evidence.counts?.fully_certified!==0 || evidence.counts?.published_apologetics_or_crisis!==0))
     throw new Error("Unapproved dossier source status");
+  const synth=packs.find(p=>p.label==="Canonical syntheses")?.doc;
+  const synthMap=new Map((synth?.dossiers||[]).map(d=>[d.id,d]));
+  if(synth && (synth.version!=="FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH1_V1" ||
+    synth.dossiers?.length!==10 || synthMap.size!==10 || synth.publication_allowed!==false ||
+    synth.dossiers.some(d=>d.publication_allowed!==false||d.sections?.length!==4)))
+      throw new Error("Formation canonical synthesis publication/evidence contract changed");
   const owners=new Map([...apo,...crisis].map(d=>[d.id,[]]));
   if(owners.size!==141)throw new Error("Duplicate canonical dossier identifiers");
   const external=[];
@@ -140,8 +147,8 @@ export function buildRecoveryDossierCoverage(rows,packs) {
     else external.push(record);
   }
   const dossiers=[
-    ...apo.map(d=>({...d,corpus:"apologetics",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null})),
-    ...crisis.map(d=>({...d,corpus:"crisis",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null}))
+    ...apo.map(d=>({...d,corpus:"apologetics",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null,synthesis:synthMap.get(d.id)||null})),
+    ...crisis.map(d=>({...d,corpus:"crisis",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null,synthesis:synthMap.get(d.id)||null}))
   ];
   return Object.freeze({dossiers,external,covered:dossiers.filter(d=>d.research.length).length,
     linked:dossiers.reduce((n,d)=>n+d.research.length,0)});
@@ -207,6 +214,27 @@ export function createFormationRecoveryReview(win=globalThis) {
       '<button type="button" class="rrInspect" data-rr-id="'+esc(x.id)+'">'+esc(pick(win,"Inspect original record","Examiner la fiche originale"))+'</button>'+
       '</div></details>';
   };
+  const synthesisReading=d=>{
+    if(!d.synthesis)return "";
+    const corpus=state.synthesisSources||new Map();
+    const labels={
+      answer:["Direct answer","Réponse directe"],
+      documented_objection:["Documented objection","Objection documentée"],
+      documented_position:["Documented original position","Position originale documentée"],
+      critical_response:["Critical reply","Réponse critique"],
+      traditional_catholic_argument:["Traditional Catholic argument","Argument catholique traditionnel"]
+    };
+    return '<section data-rr-canonical-synthesis="'+esc(d.id)+'">'+
+      '<h2>'+esc(pick(win,"Canonical answer and argument","Réponse et argumentation du dossier"))+'</h2>'+
+      '<div class="rrWarning">'+esc(pick(win,
+        "New bilingual source-linked synthesis. Original-text spot-checking does not constitute independent passage-by-passage, theological or French editorial approval.",
+        "Nouvelle synthèse bilingue sourcée. Le repérage des textes ne constitue ni une certification indépendante de chaque passage, ni une approbation théologique ou linguistique."))+'</div>'+
+      d.synthesis.sections.map(q=>'<section class="rrArticleSection" data-rr-synthesis-role="'+esc(q.role)+'">'+
+      '<h3>'+esc(pick(win,...(labels[q.role]||[q.role,q.role])))+'</h3>'+
+      (q.attribution?'<p class="rrMuted">'+esc(q.attribution)+'</p>':"")+
+      '<p>'+esc(asText(q.text,win))+'</p>'+
+      sourceLinks(q.source_ids,corpus)+'</section>').join("")+'</section>';
+  };
   const dossierDetail=()=>{
     const d=state.dossiers.find(x=>x.id===state.dossierId);
     if(!d)return listView();
@@ -219,10 +247,10 @@ export function createFormationRecoveryReview(win=globalThis) {
         "Recherches originales sourcées regroupées dans ce dossier. Elles ne constituent pas une réponse complète certifiée et ne sont pas approuvées pour publication."))+'</div>'+
       (leads.length?'<p class="rrMuted">'+esc(pick(win,"Historical thematic leads (not recovered questions): ","Pistes historiques (non questions authentifiées) : "))+esc([...new Set(leads.map(x=>x.key))].join(", "))+'</p>':"")+
       (refs.length?'<p class="rrMuted">'+esc(pick(win,"Apostolate cross-references only: ","Références croisées d’apostolat : "))+esc(refs.join(", "))+'</p>':"");
-    if(!d.research.length)return intro+'<p class="rrMuted">'+esc(pick(win,
+    if(!d.research.length)return intro+synthesisReading(d)+'<p class="rrMuted">'+esc(pick(win,
       "No direct indexed research record. Check other existing Formation owners and historical sources before drafting new claims.",
       "Aucune recherche individuelle directement liée. Vérifier les autres modules et les sources historiques avant de rédiger."))+'</p>';
-    return intro+'<h2>'+esc(pick(win,"Source-linked dossier reading","Lecture des recherches sourcées"))+' ('+d.research.length+')</h2>'+
+    return intro+synthesisReading(d)+'<h2>'+esc(pick(win,"Source-linked dossier reading","Lecture des recherches sourcées"))+' ('+d.research.length+')</h2>'+
       '<p class="rrMuted">'+esc(pick(win,
         "Expand each case to read its documented answer, opposed positions, critical replies and traditional Catholic argument, wherever those sections actually exist. Source links accompany each original paragraph.",
         "Déplier chaque cas pour lire les réponses, positions adverses, répliques et arguments catholiques traditionnels qui existent effectivement, avec les liens de source de chaque paragraphe."))+'</p>'+
@@ -332,6 +360,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       state.rows=[...buildRecoveryReviewRows(docs),...buildContemporaryDraftRows(docs)];
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
+      state.synthesisSources=new Map((docs.find(x=>x.label==="Canonical syntheses")?.doc?.source_registry||[]).map(x=>[x.id,x]));
       state.external=coverage.external;
       state.questionSources=docs.find(x=>x.label==="BAQ questions")?.doc?.source_registry||[];
       state.error="";
@@ -345,7 +374,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     el?.remove?.();state.open=false;state.view="list";state.id=null;state.dossierId=null;return true;
   }
   function status(){return Object.freeze({version:RECOVERY_REVIEW_VERSION,open:state.open,
-    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,assembledDossierReadings:state.dossiers.filter(d=>d.research.length&&d.evidence).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
+    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,assembledDossierReadings:state.dossiers.filter(d=>d.research.length&&d.evidence).length,synthesisDossiers:state.dossiers.filter(d=>d.synthesis).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
   return Object.freeze({open,close,paint,status});
 }
 export function installFormationRecoveryReview(win=globalThis) {
