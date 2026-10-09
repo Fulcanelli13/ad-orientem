@@ -22,7 +22,7 @@ try{
  const page=await browser.newPage({serviceWorkers:"block"});
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
- const dates=["2024-05-06","2027-05-03","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
+ const dates=["2024-05-06","2027-05-03","2024-06-15","2027-07-17","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
    "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01","2024-12-04","2027-12-04","2026-12-04","2022-12-04",
    "2024-01-25","2027-01-25","2024-02-22","2027-02-22",
    "2024-05-16","2024-06-12","2027-06-12","2024-10-03",
@@ -56,6 +56,19 @@ try{
    assert.match(item.path||"",/Tempora\/Pasc5-0/,date+" must inherit Sunday Eastertide Mass, not unselected Rogation");
    assert.equal(item.properColour,"White",date+" Proper did not inherit white Mass colour");
    assert.ok(item.collects>=1&&item.secrets>=1&&item.postcommunions>=1,date+" must load all Mass orations");
+ }
+ // Genuine IV-class Saturday BVM Masses in the season after Pentecost
+ // use C10t. Its pinned Latin root must resolve even if the redundant
+ // obsolete Divinum Officium upstream duplicate is absent.
+ for(const date of ["2024-06-15","2027-07-17"]){
+   const row=result.find(x=>x.date===date);
+   assert.equal(row.status,"ready",date+": Calendar unable to resolve");
+   assert.equal(row.properStatus,"ready",date+": Mass of BVM Common source unavailable");
+   assert.equal(row.main?.id,"commune:C10t:4:w",date+": wrong BVM Common identity");
+   assert.equal(row.path,"Commune/C10t",date+": don't swap to a different seasonal Proper");
+   assert.equal(row.properColour,"White",date+": Saturday BVM vestment colour wrong");
+   for(const key of ["collects","secrets","postcommunions"])
+     assert.ok(row[key]>=1,date+": BVM Latin Proper missing "+key);
  }
  const peter=result.find(x=>x.date==="2027-06-30");
  assert.match(peter.main?.id||"",/^sancti:06-30:/);

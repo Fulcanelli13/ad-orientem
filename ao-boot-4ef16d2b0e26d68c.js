@@ -1920,7 +1920,23 @@ class ProperResolver {
         const directory = source_config_1.LANGUAGE_DIR[language];
         const url = `${source_config_1.MISSAL_BASE}/${directory}/${path}.txt`;
         const text = await this.fetcher.tryGet(url, diagnostic);
-        const upstream = await this.loadUpstreamParsed(path, language, diagnostic);
+        // An exact pinned normalized Latin Proper may survive after the
+        // older Divinum Officium live/obsolete source was retired or becomes
+        // unavailable (notably the IV-class BVM Saturday Common C10t).
+        // Do not make a valid pinned Latin root depend on a redundant
+        // upstream copy. The actual section references still resolve against
+        // their own sources and must fail if those texts are missing.
+        let upstream;
+        try {
+            upstream = await this.loadUpstreamParsed(path, language, diagnostic);
+        } catch (error) {
+            const missingLatinUpstream = language === 'la' &&
+                usableSourceText(text) &&
+                String(error?.message || error).startsWith('Source not found upstream: la/');
+            if (!missingLatinUpstream) throw error;
+            upstream = {map:new Map(),order:[],source:null,requestedLanguage:language,translationMissing:false};
+            diagnostic?.warnings?.push('Pinned normalized Latin source used without the unavailable upstream duplicate: '+path);
+        }
         if (language === 'la') {
             if (!usableSourceText(text)) return upstream;
             let parsed = parseSections(text);
