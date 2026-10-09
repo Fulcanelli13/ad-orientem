@@ -1,0 +1,52 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {CSE_QUESTIONS,CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/index.js";
+import {CSE_DEBATE_MAP,CSE_DEBATE_IDS} from "../src/learn/sexual-ethics-data/debates.js";
+import {cseSourceTargets} from "../src/learn/sexual-ethics-data/source-targets.js";
+const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-atomic-claim-review-assault2024-cse112-117-020.v1.json","utf8"));
+const questionById=new Map(CSE_QUESTIONS.map(x=>[x.id,x]));
+assert.equal(CSE_QUESTIONS.length,150);
+assert.equal(CSE_DEBATE_IDS.length,55);
+assert.deepEqual(audit.cases.map(x=>x.id),["CSE112","CSE117","CSE020"]);
+assert.equal(audit.summary.existing_debates_reviewed,3);
+assert.equal(audit.summary.individual_claim_units,20);
+assert.equal(audit.summary.clinical_original_full_paper_text_read,true);
+assert.equal(audit.summary.publisher_abstract_checked,true);
+assert.equal(audit.summary.empirical_population_prevalence_established,false);
+assert.equal(audit.summary.source_internal_denominator_discrepancy_flagged,true);
+assert.equal(audit.summary.full_eight_stage_original_certifications,0);
+assert.equal(audit.summary.independent_theological_approvals,0);
+assert.equal(audit.summary.independent_native_french_approvals,0);
+const all=audit.cases.flatMap(x=>x.claims);
+assert.equal(all.length,20);
+assert.equal(new Set(all.map(x=>x[0])).size,20);
+const allowed=new Set(["DIRECT_EMPIRICAL_SUPPORT","DIRECT_METHODS_SUPPORT","DIRECT_METHODS_LIMITATION","PRIMARY_SOURCE_INTERNAL_DISCREPANCY","DIRECT_LIMITATION","DIRECT_SURVIVOR_GUIDANCE","DIRECT_THOMISTIC_PRINCIPLE","MORAL_APPLICATION_OF_PRIMARY_PRINCIPLE","PRUDENTIAL_INFERENCE","BOUNDED_MORAL_INFERENCE","PRACTICAL_SAFETY_APPLICATION","DOCTRINAL_SYNTHESIS","UNRESOLVED_CLINICAL_EVIDENCE"]);
+for(const row of audit.cases){
+ assert.ok(CSE_DEBATE_MAP[row.id],row.id+" not a canonical debate");
+ assert.ok(questionById.get(row.id),row.id+" not a canonical question");
+ for(const claim of row.claims){
+  const [claimId,assertion,sourceId,locator,assessment,qualification]=claim;
+  assert.match(claimId,/^\d{3}-[a-z]$/);
+  assert.ok(assertion.length>=22);
+  assert.ok(locator.length>=12);
+  assert.ok(allowed.has(assessment),claimId+" unknown evidence assessment");
+  assert.ok(qualification.length>=40);
+  assert.ok(CSE_SOURCE_MAP[sourceId],claimId+" no original source");
+ }
+}
+const cse112=questionById.get("CSE112");
+assert.match(cse112.d[0],/screened 13,894 records and retained eight articles and one book/);
+assert.match(cse112.d[1],/13 894 références et retenu huit articles et un livre/);
+assert.doesNotMatch(cse112.d[0],/136 male|36%|26%/);
+assert.doesNotMatch(cse112.d[1],/136 hommes|36 %|26 %/);
+assert.match(CSE_DEBATE_MAP.CSE112.catholicCase[0],/could not establish how often/);
+assert.match(CSE_DEBATE_MAP.CSE112.catholicCase[1],/ni leur fréquence/);
+const target=cseSourceTargets("ASSAULT2024","original full study",CSE_SOURCE_MAP.ASSAULT2024)[0];
+assert.equal(target.scope,"original-full-text");
+assert.equal(target.url,audit.originals.ASSAULT2024.full);
+assert.equal(CSE_SOURCE_MAP.ASSAULT2024.canonical_url,audit.originals.ASSAULT2024.canonical);
+assert.equal(all.find(x=>x[0]==="112-e")[4],"PRIMARY_SOURCE_INTERNAL_DISCREPANCY");
+assert.match(all.find(x=>x[0]==="112-e")[5],/one-person discrepancy/);
+assert.equal(all.find(x=>x[0]==="020-e")[4],"UNRESOLVED_CLINICAL_EVIDENCE");
+assert.ok(all.some(x=>x[4]==="MORAL_APPLICATION_OF_PRIMARY_PRINCIPLE"));
+console.log("PASS 20 independently bounded clinical/theological claims for CSE112/117/020; full 2024 study primary text, 135/136 discrepancy and prevalence caution; EN/FR live corrections; original full-text source capsule; zero false approvals");
