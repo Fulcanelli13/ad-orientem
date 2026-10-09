@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./mass-scripture-reading-register.mjs";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
 import {PRAYER_SCRIPTURE_ORIGINS,STATION_SCRIPTURE_ORIGINS,prayerScriptureOrigin,stationScriptureOrigin} from "../src/pray/scripture-origins.js";
 import {massScriptureContextForCard} from "../src/mass/scripture-reading-context.js";
