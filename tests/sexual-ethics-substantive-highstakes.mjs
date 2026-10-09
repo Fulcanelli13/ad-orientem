@@ -32,7 +32,7 @@ assert.match(CSE_QUESTION_MAP.CSE055.a[0],/fostering or preserving conjugal love
 assert.match(CSE_QUESTION_MAP.CSE055.a[1],/favoriser ou préserver leur amour/);
 assert.match(CSE_DEBATE_MAP.CSE055.concession[0],/§1624/);
 assert.match(CSE_DEBATE_MAP.CSE055.bottom[1],/affection conjugale/);
-assert.match(CSE_DEBATE_MAP.CSE070.bottom[0],/grave reason/);
+assert.match(CSE_DEBATE_MAP.CSE070.bottom[0],/[Gg]rave reason/);
 assert.match(CSE_DEBATE_MAP.CSE071.concession[0],/Neither automatic mortal guilt/);
 assert.match(CSE_QUESTION_MAP.CSE071.d[1],/ni la culpabilité mortelle automatique/);
 assert.match(CSE_QUESTION_MAP.CSE125.a[0],/prompt medical care/);
