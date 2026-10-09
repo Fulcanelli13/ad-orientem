@@ -57,15 +57,15 @@ const ownerSource=readFileSync("src/home/browser-entry.js","utf8");
 assert.doesNotMatch(ownerSource,/AO_COMING_UP_V4323\?\.render|AO_COMING_UP_V4323\.render/,"Home still rehydrates donor Coming Up");
 assert.doesNotMatch(ownerSource,/AO_DAILY_CATECHISM\?\.ensureHome|AO_DAILY_CATECHISM\.ensureHome/,"Home still rehydrates donor Daily Catechism card");
 assert.doesNotMatch(ownerSource,/AO_V37_SHELL\?\.openDomain\?\.\("learn"\)|AO_V37_SHELL\.openDomain\("learn"\)/,"Home enrichers revive historical Learn domain");
-assert.match(ownerSource,/navigate\?\.\("calendar"\)/,"Coming Up View all no longer routes through modular Calendar");
+assert.ok(ownerSource.includes('navigateHomeShortcut("calendar",{trigger:all,routeId:"calendar"})'),"Coming Up View all no longer routes through modular Calendar");
 assert.match(ownerSource,/\[data-resume-mass\]/,"Home Resume is not intercepted by the modular owner");
-assert.match(ownerSource,/Modular Home Mass resume failed/,"Home Resume does not use modular app-shell ownership");
-assert.ok((ownerSource.match(/navigate\?\.\("mass"\)/g)||[]).length>=2,"Home fresh entry and Resume are not both routed through the app shell");
-assert.match(ownerSource,/navigate\?\.\("find"\)/,"Home Find entry does not route through the modular app shell");
+assert.ok(ownerSource.includes('navigateHomeShortcut("mass",{trigger:resumeMass,routeId:"mass.current"})'),"Home Resume must preserve exact Mass target and retry");
+assert.ok((ownerSource.match(/navigateHomeShortcut\("mass",\{trigger:/g)||[]).length>=2,"Home fresh entry and Resume must share the result-aware Mass route");
+assert.ok(ownerSource.includes('navigateHomeShortcut("find",{trigger:find,routeId:"find"})'),"Home Find entry must use the failure-aware app shell");
 assert.match(ownerSource,/\[data-home-settings\]/,"Home does not own the new Settings utility entry");
 assert.match(ownerSource,/\[data-home-calendar\]/,"Today must own full Calendar entry");
 assert.match(readFileSync("src/home/presentation.js","utf8"),/data-home-calendar/,"Today missing explicit Full Calendar action");
-assert.match(ownerSource,/navigate\?\.\("settings"\)/,"Home Settings utility does not route through the modular shell");
+assert.ok(ownerSource.includes('navigateHomeShortcut("settings",{trigger:settings,routeId:"settings"})'),"Home Settings utility must use the failure-aware shell");
 assert.match(ownerSource,/MutationObserver/,"Home does not continuously retire asynchronously reinserted donor enrichers");
 assert.match(ownerSource,/retireLegacyHomeEnrichers/,"Home donor enricher retirement helper is missing");
 assert.match(ownerSource,/retireUnresolvedSaintArt/,"Home does not suppress terminal saint-art cards without resolved artwork");
@@ -76,6 +76,7 @@ assert.match(ownerSource,/opened===false/,"Daily Rule does not recognize a rejec
 assert.ok(ownerSource.includes('rosary:"pray.rosary"'),"Daily Rule Rosary lacks a canonical fallback");
 assert.doesNotMatch(ownerSource,/AO_PRAY_APP_V1\?\.open\?\.\(\)/,"Home still substitutes the generic Pray hub for a failed exact shortcut");
 assert.match(ownerSource,/data-home-shortcut-retry/,"Home failed shortcut has no user-facing retry path");
+assert.ok(ownerSource.includes("AO_APP_SHELL_V1?.navigate?.(surface)"),"Home helper must use the canonical app shell for all surface shortcuts");
 assert.match(ownerSource,/role","alert"/,"Home failed shortcut has no accessible error message");
 
 
