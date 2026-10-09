@@ -41,14 +41,14 @@ try{
  assert.equal(scripture.length,190);
  assert.equal(packet.rows.length-scripture.length,10);
  assert.equal((html.match(/data-review-id=/g)||[]).length,200);
- assert.match(html,/Export signed review decisions/);
+ assert.match(html,/Export review decisions/);
  assert.match(html,/SUBMITTED_FOR_EDITORIAL_REVIEW_NOT_RELEASE_AUTHORIZATION/);
  assert.match(html,/PENDING|Independent editorial review packet/);
  assert.match(html,/English original/);
  assert.match(html,/French original/);
  assert.match(html,/Latin original/);
  assert.ok(html.includes(packet.corpusFingerprint));
- assert.equal(csv.split("\r\n").filter(line=>line.startsWith('"')).length,201);
+ assert.equal(csv.replace(/^\uFEFF/,"").split("\r\n").filter(line=>line.startsWith('"')).length,201);
  assert.ok(csv.includes('"UNREVIEWED"'));
  assert.ok(!csv.includes('"APPROVED_FOR_PUBLIC_RELEASE"'));
  console.log("PASS pilot packet: exact 200 bilingual rows, 190 Catholic biblical/10 doctrinal links, content fingerprints, no implied approval");
