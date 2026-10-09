@@ -3,12 +3,13 @@ import {
   LEARN_DONOR_RELEASE,
   LEARN_MODULE_IDS,
   LEARN_PRESENTATION_VERSION,
-  renderLearnPresentation,
+  renderLearnPresentation,learnDiscoveryMarkup,
 } from "./presentation.js";
 import {
   ensureLearnModule,installLazyLearnRegistry,TRADITIONAL_LEARN_ROUTES,
   SPIRITUAL_LIFE_ROUTE_ID,LATIN_COURSE_ROUTE_ID,GLOSSARY_ROUTE_ID,MASS_FORMATION_ROUTE,
 } from "./lazy-module-registry.js";
+import {loadReferenceDiscovery} from "./discovery.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
@@ -82,7 +83,7 @@ function closeChild(win,id){
 }
 
 export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
-  const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false,guidedAttempted:false};
+  const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false,guidedAttempted:false,discoveryQuery:"",referenceEntries:[],referenceStatus:"idle",lastDiscoveryReference:null};
 
   function cancelMonitor(){
     if(state.monitor&&typeof win?.clearTimeout==="function")win.clearTimeout(state.monitor);
@@ -96,10 +97,34 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   function paint(){
     const node=root(win);
     if(!node||!state.open)return false;
-    renderLearnPresentation(node,appState(win),win,{error:state.error,familyId:state.family});
+    renderLearnPresentation(node,appState(win),win,{error:state.error,familyId:state.family,discoveryQuery:state.discoveryQuery,referenceEntries:state.referenceEntries,referenceStatus:state.referenceStatus});
     node.dataset.aoLearnOwner=VERSION;
     markRouteOwner();
     return true;
+  }
+
+  function updateDiscovery(){
+    const node=root(win);
+    const results=node?.querySelector?.("[data-ao-learn-discovery-results]");
+    if(!results)return false;
+    results.innerHTML=learnDiscoveryMarkup(appState(win),win,{
+      query:state.discoveryQuery,referenceEntries:state.referenceEntries,referenceStatus:state.referenceStatus
+    });
+    return true;
+  }
+
+  function ensureDiscovery(){
+    if(state.referenceStatus==="ready"||state.referenceStatus==="loading")return;
+    state.referenceStatus="loading";
+    void loadReferenceDiscovery(win).then(entries=>{
+      state.referenceEntries=entries;
+      state.referenceStatus="ready";
+      if(state.open&&!state.child)updateDiscovery();
+    }).catch(error=>{
+      state.referenceStatus="unavailable";
+      try{win?.console?.warn?.("Formation reference discovery unavailable",error)}catch{}
+      if(state.open&&!state.child)updateDiscovery();
+    });
   }
 
   function ensureRoot(){
@@ -114,6 +139,13 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     node.dataset.aoLearnDonorRelease=LEARN_DONOR_RELEASE;
     node.setAttribute("role","region");
     node.setAttribute("aria-label","Formation");
+    node.addEventListener("input",event=>{
+      const input=event.target?.closest?.("[data-ao-learn-discovery-search]");
+      if(!input)return;
+      state.discoveryQuery=String(input.value||"").slice(0,100);
+      if(state.discoveryQuery.trim().length>=2)ensureDiscovery();
+      updateDiscovery(); // Preserve input focus/caret, don't repaint the root.
+    });
     node.addEventListener("click",event=>{
       const back=event.target?.closest?.("[data-ao-learn-back]");
       if(back){
@@ -145,6 +177,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         if(id){
           state.family=id;
           state.lastFamily=id;
+          state.discoveryQuery="";
           state.error="";
           paint();
           const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
@@ -158,11 +191,39 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         void win?.AO_APP_SHELL_V1?.navigate?.("apostolate");
         return;
       }
+      const surface=event.target?.closest?.("[data-ao-learn-discovery-surface]");
+      if(surface){
+        event.preventDefault?.();
+        const target=surface.dataset?.aoLearnDiscoverySurface;
+        if(["home","mass","pray","calendar","find","apostolate"].includes(target)){
+          void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.(target)).then(value=>{
+            if(value===false||value?.ok===false){
+              state.error=L(win,"This section could not be opened.","Impossible d’ouvrir cette rubrique.");
+              paint();
+            }
+          }).catch(error=>{
+            try{win?.console?.error?.("Formation discovery navigation failed",error)}catch{}
+            state.error=L(win,"This section could not be opened.","Impossible d’ouvrir cette rubrique.");
+            paint();
+          });
+        }
+        return;
+      }
       const launch=event.target?.closest?.("[data-ao-learn-module]");
       if(launch){
         event.preventDefault?.();
         state.lastLauncher=launch.dataset?.aoLearnModule??null;
-        void openModule(state.lastLauncher);
+        const referenceId=launch.dataset?.aoLearnReferenceId??null;
+        const referenceKind=launch.dataset?.aoLearnReferenceKind??null;
+        state.lastDiscoveryReference=referenceId;
+        const familyId=launch.dataset?.aoLearnDiscoveryFamily??null;
+        if(familyId){
+          state.family=familyId;
+          state.lastFamily=familyId;
+        }
+        const opts=referenceId&&["concept","lexeme","phrase"].includes(referenceKind)
+          ?{[referenceKind==="concept"?"entryId":referenceKind==="lexeme"?"lexemeId":"phraseId"]:referenceId}:{};
+        void openModule(state.lastLauncher,opts);
       }
     });
     node.addEventListener("keydown",event=>{
@@ -203,11 +264,13 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     try{node.inert=false;}catch{}
     paint();
     if(focus){
-      const selector=state.lastLauncher&&state.family
-        ?`[data-ao-learn-module="${state.lastLauncher}"]`
-        :state.family
-          ?"[data-ao-learn-module]"
-          :"[data-ao-learn-back]";
+      const selector=state.lastDiscoveryReference&&state.discoveryQuery
+        ?`[data-ao-learn-reference-id="${state.lastDiscoveryReference}"]`
+        :state.lastLauncher&&state.discoveryQuery
+          ?`[data-ao-learn-module="${state.lastLauncher}"]`
+          :state.lastLauncher&&state.family
+            ?`[data-ao-learn-module="${state.lastLauncher}"]`
+            :state.family?"[data-ao-learn-module]":"[data-ao-learn-back]";
       const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
       queue(()=>root(win)?.querySelector?.(selector)?.focus?.({preventScroll:true}));
     }
@@ -296,7 +359,11 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         // Glossary's existing canonical owner is authoritative. Registry wrappers
         // from other Formation modules may advertise the route without actually
         // dispatching it; open the owner directly on this known Learn child.
-        const opened=await win.AO_GLOSSARY_V1.open({origin:"learn"});
+        const opened=await win.AO_GLOSSARY_V1.open({origin:"learn",
+          ...(opts?.entryId?{entryId:opts.entryId}:{}),
+          ...(opts?.lexemeId?{lexemeId:opts.lexemeId}:{}),
+          ...(opts?.phraseId?{phraseId:opts.phraseId}:{})
+        });
         result={ok:opened!==false,canonicalId:GLOSSARY_ROUTE_ID};
       }else result=await registry.open(id);
     }catch(error){
@@ -321,6 +388,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.guidedAttempted=false;
     state.family=null;
     state.lastFamily=null;
+    state.discoveryQuery="";
+    state.lastDiscoveryReference=null;
     state.externalReturn=null;
     state.seenChild=false;
     state.openPolls=0;
@@ -340,6 +409,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.child=null;
     state.family=null;
     state.lastFamily=null;
+    state.discoveryQuery="";
+    state.lastDiscoveryReference=null;
     state.seenChild=false;
     state.openPolls=0;
     state.error="";
@@ -367,6 +438,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       open:Boolean(state.open&&node&&!node.hidden),
       child:state.child,
       family:state.family,
+      discoveryQuery:state.discoveryQuery,
+      referenceDiscoveryLoaded:state.referenceStatus==="ready",
       externalReturn:state.externalReturn,
       owner:node?.dataset?.aoLearnOwner??null,
       presentationOwner:node?.dataset?.aoLearnPresentationOwner??LEARN_PRESENTATION_VERSION,
