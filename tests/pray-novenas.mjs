@@ -156,7 +156,8 @@ assert.doesNotMatch(runtime,/function windowFor\(/,"Novenas reintroduced private
 assert.match(runtime,/canonicalReuse:\{ourFather:true,hailMary:true,gloryBe:true,loreto1962:true\}/,"canonical prayer reuse contract changed");
 assert.match(styles,/aoN1Hero/);
 assert.match(styles,/aoN1StageRail/);
-assert.match(browser,/import "\.\/novena-runtime\.js";/,"PRAY browser owner no longer installs Novenas");
+assert.match(browser,/await import\("\.\/novena-runtime\.js"\)/,"PRAY browser owner must load canonical Novenas on first Prayer entry");
+assert.doesNotMatch(browser,/^import "\.\/novena-runtime\.js";/m,"Novenas should not load during Home startup");
 assert.match(assets,/"pray\.novenas"\s*:\s*"ao-rich-novenas"/,"Novenas lost canonical V4 asset identity");
 
 console.log("PASS complete 16-target bilingual Novenas corpus with French prayer-body parity");
