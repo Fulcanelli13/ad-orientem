@@ -7,7 +7,6 @@ import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
 import "../scripture/browser-entry.js";
 import "../learn/browser-entry.js";
-import "../apostolate/browser-entry.js";
 import "../settings/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
 import { createPresentationFxBridge } from "./presentation-fx.js";
