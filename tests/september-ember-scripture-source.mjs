@@ -15,11 +15,11 @@ const ext=load("../data/mass/scripture-extended-lesson.v1.json");
 assert.equal(audit.schema,"ao-1962-september-ember-scripture-source-audit-v1");
 assert.deepEqual(audit.days.map(x=>x.date),["2026-09-23","2026-09-25","2026-09-26"]);
 assert.deepEqual(audit.days.map(x=>x.sourcePath),["Tempora/093-3","Tempora/093-5","Tempora/093-6"]);
-assert.equal(VERIFIED_EXTENDED_LESSON_READINGS.length,6);
+assert.equal(VERIFIED_EXTENDED_LESSON_READINGS.length,25);
 assert.deepEqual(VERIFIED_EXTENDED_LESSON_READINGS,ext.readings);
 
 const septExtra=VERIFIED_EXTENDED_LESSON_READINGS.filter(r=>/^Tempora\/093-/.test(r.sourcePath));
-assert.equal(septExtra.length,5);
+assert.equal(septExtra.length,6);
 assert.deepEqual(septExtra.map(x=>x.sourceSectionId),[
  "LectioL1","LectioL1","LectioL2","LectioL3","LectioL4"]);
 assert.deepEqual(septExtra.map(x=>x.reference),[
@@ -49,7 +49,7 @@ function fixture(order,path){
  const payloads=Object.fromEntries(nodes.map(node=>{
   const witness=records.find(x=>x.sourceSectionId===node.sourceSectionId);
   return [node.payloadRef,{
-   textLat:witness ? witness.latinIncipit+" hoc est lectio originalis."
+   textLat:witness ? witness.latinIncipit+(witness.latinContinuityGuard ? " "+witness.latinContinuityGuard.join(" ") : "")+" hoc est lectio originalis."
      : node.type==="ORATION"?"Orémus. Flectámus génua. Leváte.":"Graduale pro loco.",
    textEn:"Sourced testing counterpart"
   }];
@@ -90,8 +90,11 @@ for(const id of saturday.longFormSupplementaryReadingIds){
  const card=sat.cards.find(x=>x.sourceSectionKey===id);
  assert.ok(card,"Long form source missed "+id);
  const context=extendedLessonScriptureContext(card,sat.prepared);
- if(id==="LectioL5")assert.equal(context,null,
-  "Daniel liturgical verse reorder is unresolved; fail closed");
+ if(id==="LectioL5"){
+   assert.equal(context?.state,"READY");
+   assert.equal(context?.reference,"Daniel 3:47–51");
+   assert.equal(context?.liturgicalArrangement?.noteFr?.includes("ordre liturgique"),true);
+ }
  else{
   assert.equal(context?.state,"READY",id+" should have source/LATIN proof");
   assert.equal(context?.reference,
@@ -102,7 +105,7 @@ const short=fixture(saturday.shortFormSupplementaryReadingIds,saturday.sourcePat
 assert.deepEqual(short.cards.map(x=>x.sourceSectionKey),["LectioL1","LectioL5"]);
 assert.equal(extendedLessonScriptureContext(short.cards[0],short.prepared)?.reference,
  "Leviticus 23:26–32");
-assert.equal(extendedLessonScriptureContext(short.cards[1],short.prepared),null);
+assert.equal(extendedLessonScriptureContext(short.cards[1],short.prepared)?.reference,"Daniel 3:47–51");
 assert.ok(!short.cards.some(x=>["LectioL2","LectioL3","LectioL4"].includes(x.sourceSectionKey)));
 for(const id of ["LectioL2","LectioL3","LectioL4"]){
  const card=sat.cards.find(x=>x.sourceSectionKey===id);
@@ -133,12 +136,12 @@ for(const day of audit.days){
  }
 }
 const dan=saturday.supplementaryReadings.find(x=>x.sourceSectionId==="LectioL5");
-assert.equal(dan.status,"HELD_LITURGICAL_VERSE_ORDER_DIFFERS_FROM_CANONICAL_BIBLE_ORDER");
+assert.equal(dan.status,"BIBLE_CONTEXT_CANONICAL_ORDER_WITH_MANDATORY_LITURGICAL_TRANSPOSITION_NOTE");
 assert.deepEqual(dan.actualLatinTextOrder,
  ["Daniel 3:49","Daniel 3:47–48","Daniel 3:50–51"]);
 assert.equal(dan.observedLatinHeader,"Dan 3:47-51");
 assert.equal(dan.observedEnglishHeader,"Dan 3:49-51");
-assert.ok(!septExtra.some(x=>x.sourceSectionId==="LectioL5"));
+assert.equal(septExtra.find(x=>x.sourceSectionId==="LectioL5")?.liturgicalArrangement?.canonicalReference,"Daniel 3:47–51");
 assert.ok(!septProper.some(x=>Object.values(x.readings).some(v=>/Daniel/.test(v.reference))));
 assert.ok(dan.hymnSeparate.startsWith("Daniel 3:52–59"));
-console.log("September 1962 Ember Scripture: PASS — Wednesday Amos, Saturday four released source-ordered lessons and held reordered Daniel, six ordinary Proper refs, original 093 source paths, short/long source selection and no duplicate scripture controls.");
+console.log("September 1962 Ember Scripture: PASS — Wednesday Amos, Saturday five source-ordered lessons with explicit canonical-vs-liturgical Daniel order, six ordinary Proper refs, original 093 source paths, short/long source selection and no duplicate scripture controls.");
