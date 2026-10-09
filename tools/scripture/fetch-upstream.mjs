@@ -46,9 +46,9 @@ for(const source of SOURCES) {
    sha256:createHash("sha256").update(bytes).digest("hex"),inspection,
    status:"RESEARCH_ONLY_NOT_CERTIFIED_OR_PUBLISHABLE",
    normalized:{bookCount:normalized.bookCount,chapterCount:normalized.chapterCount,
-     verseCount:normalized.verseCount,held:normalized.held}});
+     verseCount:normalized.verseCount,held:normalized.held,emptyVerses:normalized.emptyVerses}});
  console.log(source.tag+" verified "+bytes.length+" bytes. Shape: "+JSON.stringify(inspection).slice(0,3000));
- console.log(source.tag+" canonical 73-book normalization: "+JSON.stringify({books:normalized.bookCount,chapters:normalized.chapterCount,verses:normalized.verseCount,held:normalized.held}));
+ console.log(source.tag+" canonical 73-book normalization: "+JSON.stringify({books:normalized.bookCount,chapters:normalized.chapterCount,verses:normalized.verseCount,held:normalized.held,emptyVerses:normalized.emptyVerses}));
  console.log(source.tag+" book names: "+JSON.stringify(json.books?.map(b=>b.name)));
  console.log(source.tag+" chapter shape: "+JSON.stringify(shape(json.books?.[0]?.chapters)).slice(0,2000));
  console.log(source.tag+" verses shape: "+JSON.stringify(shape(json.books?.[0]?.chapters?.[0]?.verses)).slice(0,2000));
