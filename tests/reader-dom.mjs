@@ -1,6 +1,8 @@
 import {
   buildReaderShellMarkup,
   createReaderDomAdapter,
+  extractDonorRichMaskUri,
+  createDonorRichMaskLoader,
   toggleReaderTranslation,
   syncReaderRitualHighlights,
   normalizeReaderMoment,
@@ -504,5 +506,35 @@ expect(html.includes('.ao-priest-action-badge{display:none}'),
   "LIVE action icon duplication was reintroduced");
 expect(html.includes('content:"RUBRIC";display:block'),
   "non-LIVE source rubric differentiation was removed while decluttering LIVE");
+
+// Restore the final donor's currentColor masking for rich PNG silhouettes.
+// Check real frozen production wrappers rather than a fabricated SVG fixture.
+const v46Manifest=JSON.parse(readFileSync(new URL("../assets/active/mass-v46/manifest.v1.json",import.meta.url),"utf8"));
+const frozenRichAssets=v46Manifest.assets.filter(row=>row.key.endsWith("_rich"));
+expect(v46Manifest.count===67 && frozenRichAssets.length>=20,
+  "v1.80 master icon bank/alpha masters were unexpectedly reduced");
+for(const {key} of frozenRichAssets){
+  const svg=readFileSync(new URL("../assets/active/mass-v46/"+key+".svg",import.meta.url),"utf8");
+  const png=extractDonorRichMaskUri(svg);
+  expect(png?.startsWith("data:image/png;base64,iVBORw0KGgo"),
+    key+" does not expose its exact alpha-bearing PNG for the v1.80 mask");
+}
+expect(extractDonorRichMaskUri('<svg><image href="https://untrusted.invalid/foo.png"/></svg>')===null,
+  "rich-mask loader accepted an unrelated external image");
+let richRequests=0;
+const donorFixture=readFileSync(new URL("../assets/active/mass-v46/priest_elevate_host_rich.svg",import.meta.url),"utf8");
+const loadRich=createDonorRichMaskLoader(async(_url,options)=>{
+  richRequests++;
+  expect(options?.credentials==="same-origin","rich donor art fetch lost local origin restriction");
+  return {ok:true,text:async()=>donorFixture};
+});
+const pendingRich=loadRich("donor-host.svg");
+expect(pendingRich===loadRich("donor-host.svg"),"duplicate cue renders refetched a rich master");
+const unwrapped=await pendingRich.promise;
+expect(richRequests===1 && unwrapped===pendingRich.value && unwrapped?.startsWith("data:image/png;base64,"),
+  "v1.80 rich icon alpha was not extracted or cached");
+const missingRich=createDonorRichMaskLoader(async()=>{throw new Error("offline")});
+expect(await missingRich("unreachable.svg").promise===null,
+  "offline rich master must permit visible SVG transport fallback");
 
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");

@@ -172,9 +172,20 @@ assert.match(transients,/"AO\.SM\.C0174":Object\.freeze\(\{kind:"ELEVATION",titl
 assert.match(transients,/"AO\.SM\.C0181":Object\.freeze\(\{kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:3450\}\)/);
 assert.match(transients,/presentationHoldMs:presentationSpec\?\.kind==="ELEVATION" \? 3600/);
 assert.match(dom,/data-icon-slot="cinematic"/,"v1.80 elevation cinema lost canonical action artwork slot");
-assert.match(dom,/ao-icon-direct/,"rich v4.6 master direct-render path is missing");
-assert.match(dom,/const direct=\/_rich\$\//,"rich master resolver no longer distinguishes the v4.6 PNG-silhouette family");
-assert.match(dom,/el\.style\.backgroundImage=css/,"rich master direct rendering is not wired");
+// v1.80 rendered rich PNG alpha using currentColor, not fixed-colour
+// backgrounds. The SVG wrapper remains a first-paint/offline fallback only.
+assert.ok(dom.includes("extractDonorRichMaskUri"),
+  "rich v4.6 PNG alpha source cannot be recovered");
+assert.ok(dom.includes("data:image"),
+  "rich source extraction lost its PNG-only identity contract");
+assert.ok(dom.includes("const entry=loadDonorRichMask(src)"),
+  "rich master resolver no longer uses v1.80 alpha-masking path");
+assert.ok(dom.includes("el.style.maskImage=cssUrl(uri)"),
+  "rich master currentColor alpha mask is not applied");
+assert.ok(dom.includes('el.classList?.add?.("ao-icon-direct")'),
+  "rich SVG fallback must remain visible when offline or first loading");
+assert.ok(dom.includes("el.style.backgroundImage=cssUrl(src)"),
+  "rich asset fallback no longer displays the correct frozen wrapper");
 assert.match(dom,/kind==="ELEVATION" \? current\.priestActionIconKey : null/,
   "elevation cinema no longer consumes the exact current priest-action art");
 assert.match(dom,/@keyframes aoBellHold\{/,"v1.80 held-bell animation is missing");

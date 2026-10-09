@@ -492,6 +492,14 @@ try{
     document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue==="AO.SM.C0174" &&
     document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===false,
     null,{timeout:5000});
+  // The donor used the embedded raw PNG as a currentColor alpha mask.
+  // The SVG transport wrapper is only a visible fallback until the source
+  // PNG is extracted from the same-origin canonical asset.
+  await page.waitForFunction(()=>{
+    const icon=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='cinematic']");
+    return icon && !icon.hidden && !icon.classList.contains("ao-icon-direct") &&
+      icon.style.maskImage.includes("data:image/png;base64,");
+  },null,{timeout:5000});
   const elevationState=await page.evaluate(()=>({
     cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
     bellActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='bell']")?.dataset?.active??null,
@@ -541,10 +549,21 @@ try{
   assert.equal(elevationState.cinematicTitle,"ELEVATION");
   assert.equal(elevationState.cinematicSub,"SACRED HOST");
   assert.equal(elevationState.cinematicIcon.hidden,false,"Host elevation master is hidden");
-  assert.equal(elevationState.cinematicIcon.direct,true,"rich Host elevation master fell back to wrapper masking");
-  assert.match(elevationState.cinematicIcon.background,/mass-v46\/priest_elevate_host_rich\.svg/,
-    "Host elevation cinematic is not using the exact v4.6 rich master");
-  assert.equal(elevationState.cinematicIcon.mask,"none","rich Host elevation master is still being rasterized as an SVG mask viewport");
+  assert.equal(elevationState.cinematicIcon.direct,false,
+    "rich Host elevation still uses fixed-colour SVG-wrapper fallback");
+  assert.equal(elevationState.cinematicIcon.background,"",
+    "rich Host elevation has a competing fixed-colour background image");
+  assert.match(elevationState.cinematicIcon.mask,/data:image\/png;base64,/,
+    "Host elevation did not restore exact v1.80 transparent-PNG alpha masking");
+  const elevationColour=await page.locator("#ao-r17-native-reader-preview [data-icon-slot='cinematic']").evaluate(icon=>({
+    color:getComputedStyle(icon).color,
+    backgroundColor:getComputedStyle(icon).backgroundColor,
+    mask:getComputedStyle(icon).maskImage,
+  }));
+  assert.equal(elevationColour.backgroundColor,elevationColour.color,
+    "Host elevation rich pictogram is no longer liturgical-currentColor adaptive");
+  assert.match(elevationColour.mask,/data:image\/png;base64,/,
+    "Chromium did not accept the unwrapped v1.80 rich alpha mask");
   assert.match(elevationState.bellOwner,/R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT/);
   assert.match(elevationState.cinematicOwner,/R17_EXACT_ELEVATION_CINEMATIC/);
   await page.screenshot({path:resolve(out,"08-mass-host-elevation.png"),fullPage:false});
