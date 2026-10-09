@@ -1,5 +1,6 @@
 import { ROSARY_MYSTERY_CONTEXT_V1 } from "./rosary-mystery-context.v1.js";
 import { ROSARY_GUIDED_BEAD_MEDITATIONS_V1 } from "./rosary-guided-bead-meditations.v1.js";
+import { ROSARY_GUIDED_BEAD_EVIDENCE_V1 } from "./rosary-guided-bead-evidence.v1.js";
 
 /**
  * Rosary Scripture display policy — editorial safety gate, 9 October 2026.
@@ -150,14 +151,26 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
     const family={joyful:"joy",sorrowful:"sor",glorious:"glo",luminous:"lum"}[String(info.set||"")];
     const id=family+String(info.mi+1),bead=Number(info.step.bead||0);
     const moment=ROSARY_GUIDED_BEAD_MEDITATIONS_V1[id]?.[bead-1];
+    const witness=ROSARY_GUIDED_BEAD_EVIDENCE_V1[id]?.[bead-1];
     const prayer=root.querySelector(".lab-prayer-sheet");
-    if(prayer&&moment&&moment.bead===bead){
+    if(prayer&&moment&&witness&&moment.bead===bead&&witness.bead===bead){
       const note=root.ownerDocument.createElement("p");
       note.className="aoRosaryGuidedBeadMeditation";
       note.dataset.aoRosaryGuidedBead=id+".b"+bead;
       note.dataset.aoRosaryContext="editorial-meditation";
+      note.dataset.aoRosarySourceType=witness.relationship;
       note.lang=french?"fr":"en";
-      note.textContent=moment[french?"fr":"en"];
+      note.append(root.ownerDocument.createTextNode(moment[french?"fr":"en"]));
+      const citation=root.ownerDocument.createElement("a");
+      citation.href=french?witness.frenchPrimaryUrl:witness.primaryUrl;
+      citation.target="_blank";
+      citation.rel="noopener noreferrer";
+      citation.dataset.aoRosaryMeditationSource=id+".b"+bead;
+      citation.title=french
+        ?"Lire le contexte original ; la méditation n’est pas une citation biblique."
+        :"Read the original context; this meditation is not a Scripture quotation.";
+      citation.textContent=witness.reference;
+      note.appendChild(citation);
       prayer.appendChild(note);
     }
   }

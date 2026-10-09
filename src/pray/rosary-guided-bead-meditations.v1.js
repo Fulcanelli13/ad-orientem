@@ -472,8 +472,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 10,
-      "en": "They descend the mountain awaiting His Resurrection.",
-      "fr": "Ils descendent de la montagne dans l’attente de sa Résurrection."
+      "en": "Jesus tells them to keep the vision secret until His Resurrection.",
+      "fr": "Jésus leur demande de taire cette vision jusqu’à sa Résurrection."
     }
   ],
   "lum5": [
@@ -603,18 +603,18 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 5,
-      "en": "The soldiers treat Jesus with cruelty.",
-      "fr": "Les soldats traitent Jésus avec cruauté."
+      "en": "The suffering Servant is wounded for our sins.",
+      "fr": "Le Serviteur souffrant est blessé pour nos péchés."
     },
     {
       "bead": 6,
-      "en": "They prepare to mock His kingship.",
-      "fr": "Ils se préparent à tourner sa royauté en dérision."
+      "en": "Christ does not answer His persecutors with threats.",
+      "fr": "Le Christ ne répond pas par des menaces à ses persécuteurs."
     },
     {
       "bead": 7,
-      "en": "The Lord endures contempt without sin.",
-      "fr": "Le Seigneur endure le mépris sans pécher."
+      "en": "His wounds bring healing to those who return to Him.",
+      "fr": "Ses blessures guérissent ceux qui reviennent à lui."
     },
     {
       "bead": 8,
