@@ -26,8 +26,16 @@ try{
  for(const year of [2024,2027]){
   const url=secondUrl(year);let data=[];
   try{
-   const result=await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
-   if(result.status()!==200)throw Error('GCatholic HTTP '+result.status());
+   let result=null,lastError=null;
+   for(let attempt=1;attempt<=3;attempt++){
+     try{
+       result=await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
+       if(result?.status()===200)break;
+       lastError=new Error('GCatholic HTTP '+(result?.status()??'no response'));
+     }catch(error){lastError=error;}
+     if(attempt<3)await new Promise(ok=>setTimeout(ok,attempt*3000));
+   }
+   if(result?.status()!==200)throw lastError??new Error('GCatholic could not be loaded');
    data=await page.evaluate(year=>{
     const text=e=>String(e?.innerText||e?.textContent||'').replace(/\s+/g,' ').trim();
     const byDate=new Map();
@@ -154,6 +162,7 @@ try{
  await writeFile(new URL('artifacts/calendar-1962-secondary-reconciliation.json',root),JSON.stringify(report,null,2)+'\n');
  await browser?.close();
 }
+if(report.failures.length)console.error('SECONDARY_1962_SOURCE_FAILURES='+JSON.stringify(report.failures));
 if(report.failures.length||report.years.length!==2)process.exitCode=2;
 
 if(report.years.some(x=>x.secondaryNewConflicts>0))process.exitCode=3;
