@@ -4,6 +4,7 @@ import "./contextual-study.mjs";
 import "./contextual-study-coverage.mjs";
 import "./prayer-source-anchor-triage.mjs";
 import "./prayer-12-original-form.mjs";
+import "./mass-proper-composition-integrity.mjs";
 import "./prayer-reviewed18-variants.mjs";
 import "./prayer-locale-collation.mjs";
 import "./prayer-compendium-whole-form.mjs";

@@ -196,7 +196,64 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
     proper.collect = proper.collects[0] || proper.collect;
     proper.secret = proper.secrets[0] || proper.secret;
     proper.postcommunion = proper.postcommunions[0] || proper.postcommunion;
+    // Recalculate after actual commemoration composition, not solely when the
+    // principal Proper was first normalized. Never count a raw source token
+    // as an available vernacular translation.
+    refreshComposedProperIntegrity(proper, diagnostic);
     return proper;
+}
+function refreshComposedProperIntegrity(proper, diagnostic) {
+    const fields = [];
+    const add = (label, value) => {
+        if (String(value?.lat || "").trim()) fields.push([label, value]);
+    };
+    add("Introit", proper.introit);
+    (proper.collects || []).forEach((v, i) => add("Collect " + (i + 1), v));
+    add("Epistle / Lesson", proper.epistle);
+    add("Gradual / Tract / Alleluia", proper.gradual);
+    add("Sequence", proper.sequence);
+    add("Gospel", proper.gospel);
+    add("Offertory", proper.offertory);
+    (proper.secrets || []).forEach((v, i) => add("Secret " + (i + 1), v));
+    add("Preface", proper.preface);
+    add("Communion", proper.communion);
+    (proper.postcommunions || []).forEach((v, i) => add("Postcommunion " + (i + 1), v));
+    (proper.preparatoryLessons || []).forEach((row, i) => {
+        add("Preparatory lesson " + (i + 1), row.lesson);
+        add("Preparatory chant " + (i + 1), row.gradual);
+        add("Preparatory collect " + (i + 1), row.collect);
+    });
+    const rawMarker = /\$[A-Za-z][A-Za-z -]*/;
+    const nameMarker = /\bN\.(?=\s|$)/;
+    proper.languageCoverage = {};
+    for (const language of ["en", "fr"]) {
+        const missing = fields.filter(([,v]) => {
+            const value = String(v?.[language] || "").trim();
+            return !value || rawMarker.test(value) || nameMarker.test(value);
+        }).map(([label]) => label);
+        proper.languageCoverage[language] = {
+            expected: fields.length, available: fields.length - missing.length,
+            missing, complete: missing.length === 0
+        };
+    }
+    const unresolved = [];
+    for (const [section, v] of fields) {
+        for (const language of ["lat", "en", "fr"]) {
+            const body = String(v?.[language] || "");
+            for (const match of body.matchAll(/\$[A-Za-z][A-Za-z -]*/g)) {
+                unresolved.push({section, language, marker:match[0].trim()});
+            }
+            if (nameMarker.test(body)) unresolved.push({section, language, marker:"N."});
+        }
+    }
+    proper.composedSourceIntegrity = {
+        expectedLatinSections: fields.length,
+        unresolved,
+        clean: unresolved.length === 0
+    };
+    if (unresolved.length) diagnostic.warnings.push(
+        "Composed Proper still has " + unresolved.length + " unresolved text/source placeholders; do not certify complete."
+    );
 }
 class DayResolver {
     properResolver;
@@ -2160,8 +2217,35 @@ function cleanLines(lines, language) {
             out.push(GLORIA[language]);
             continue;
         }
-        if (line === "$Per Dominum") {
-            out.push(PER_DOM[language]);
+        // Divinum Officium uses distinct conclusion macros. Only expand
+        // exact, independently established endings; never turn every formula
+        // into the generic Per Dominum or change a saint's name placeholder.
+        const conclusionKey = line.startsWith("$") ? line.slice(1).trim().replace(/\s+/g, " ").toLowerCase() : "";
+        const conclusion = {
+            "per dominum": PER_DOM,
+            "per eundem": {
+                la: "Per eúndem Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+                en: "Through the same Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+                fr: "Par le même Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il."
+            },
+            "per eumdem": {
+                la: "Per eúndem Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+                en: "Through the same Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+                fr: "Par le même Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il."
+            },
+            "qui tecum": {
+                la: "Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+                en: "Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+                fr: "Lui qui vit et règne avec vous dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il."
+            },
+            "qui vivis": {
+                la: "Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+                en: "Who livest and reignest with God the Father in the unity of the Holy Ghost, God, world without end. Amen.",
+                fr: "Vous qui vivez et régnez avec Dieu le Père dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il."
+            }
+        }[conclusionKey];
+        if (conclusion) {
+            out.push(conclusion[language]);
             continue;
         }
         if (line === "$Deo gratias") {
