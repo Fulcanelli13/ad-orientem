@@ -69,6 +69,16 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("KEENER_2021")||d.sources.opposition.includes("GROOTHUIS")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.every(d=>d.traditionalAssessment[0].length>200 && d.traditionalAssessment[1].length>200));
+
+const forbiddenDebateMeta=/(?:a serious Catholic answer|a serious defender|a specialist must|methodologically weak|the answer must|this question should|this module|not a named opponent|a sourced reconstruction|editorial synthesis|a traditional account must|une réponse catholique sérieuse|un défenseur sérieux|il serait méthodologiquement faible|une défense traditionnelle doit|cette réponse ne doit)/i;
+for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
+ for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
+  for(const [language,paragraph] of entry[field].entries()){
+   assert.doesNotMatch(paragraph,forbiddenDebateMeta,entry.id+" "+field+" "+(language?"FR":"EN")+" contains editorial instructions");
+  }
+ }
+}
+
 assert.match(CSE_QUESTION_MAP.CSE045.q[0],/headship and submission/,"Submission disputes must be visible from existing CSE045 title");
 assert.match(CSE_QUESTION_MAP.CSE045.q[1],/soumission/);
 assert.ok(CSE_QUESTION_MAP.CSE045.refs.some(([id,loc])=>id==="MULIERIS"&&loc==="§24"));
@@ -333,7 +343,9 @@ assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/paragraphSourceLinks/);
 assert.match(runtime,/data-ao-cse-inline-source/);
 assert.match(runtime,/function marriageDisputationsHtml/);
-assert.match(runtime,/Traditional Catholic assessment/);
+const maritalHtmlRenderer=runtime.slice(runtime.indexOf("function marriageDisputationsHtml"),runtime.indexOf("function questionHtml"));
+assert.doesNotMatch(maritalHtmlRenderer,/Arguments attributed to named authors paraphrase|Ces débats restent soumis|Reasoned objection \(not attributed/);
+assert.match(runtime,/Traditional Catholic teaching/);
 assert.match(runtime,/CSE_MARRIAGE_AUTHORITY_DEBATES/);
 assert.match(runtime,/data-ao-cse-disputation/);
 assert.match(runtime,/marriageDisputationsHtml\(win,item\)/);
