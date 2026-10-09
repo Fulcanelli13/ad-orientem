@@ -391,8 +391,8 @@ for(const id of missingHistorical){
   assert.equal(g.originalDaySections[i].day,i+1);
   assert.ok(g.originalDaySections[i].originalEnglishTitle.length>10);
   assert.match(g.originalDaySections[i].originalUrl,/gutenberg\.org/);
-  assert.equal(g.originalDaySections[i].historicalMeditationStatus,"PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP");
-  assert.equal(g.originalDaySections[i].historicalPracticeStatus,"PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP");
+  assert.equal(g.originalDaySections[i].historicalMeditationStatus,"ENGLISH_DIGITAL_TRANSCRIPTION_EMBEDDED_NOT_PRINT_CERTIFIED");
+  assert.equal(g.originalDaySections[i].historicalPracticeStatus,"ENGLISH_DIGITAL_TRANSCRIPTION_EMBEDDED_NOT_PRINT_CERTIFIED");
  }
  const source=novenaSourceAccess(id);
  assert.match(source.note.en,/MEDITATION and PRACTICE/);
@@ -400,6 +400,20 @@ for(const id of missingHistorical){
  assert.match(source.note.en,/editorial/);
  assert.match(source.note.fr,/rédactionnel/);
 }
+assert.equal(historicalNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,0);
+assert.equal(historicalNovenaReview.counts.embeddedHammerMeditationPracticeDayPairs,27);
+assert.equal(historicalNovenaReview.counts.fullOriginalPrintCertificates,0);
+assert.equal(historicalNovenaReview.counts.verifiedOriginalFrenchHammerMeditations,0);
+for(const id of ["annunciation","seven_sorrows","assumption"]){
+ for(let day=1;day<=9;day++){
+  const source=hammerHistoricalDayText(id,day);
+  assert.ok(source&&source.meditation.length>50&&source.practice.length>50,`Original Hammer day text incomplete: ${id} day ${day}`);
+  assert.equal(hammerHistoricalDayWitness(id,day)?.day,day);
+ }
+}
+assert.ok(!/not yet reproduced|ne sont pas encore reproduits/i.test(
+ ["annunciation","seven_sorrows","assumption"].map(id=>novenaSourceAccess(id).note.en+" "+novenaSourceAccess(id).note.fr).join(" ")
+),"User-facing provenance still claims embedded Hammer text is missing");
 assert.ok(!historicalNovenaReview.records.some(x=>x.dayBodySourceReview?.some(d=>d.completePrintEditionCertification!=="NOT_CERTIFIED")),"Premature original facsimile certification");
 
 
