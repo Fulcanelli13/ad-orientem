@@ -105,6 +105,7 @@ export function createFindOwner(win=globalThis){
     atlasArea:"ANY",
     atlasPeriod:"ANY",
     atlasCalendar:"ANY",
+    calendarKey:null,
     selectedId:null,
     selectedPlaceId:null,
   };
@@ -141,7 +142,8 @@ export function createFindOwner(win=globalThis){
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
     }
     if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
-    return filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
+    const list=filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
+    return state.lens==="pilgrimages"&&state.calendarKey?list.filter(item=>item.calendar_keys?.includes(state.calendarKey)):list;
   }
 
   async function paint(){
@@ -191,6 +193,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    state.calendarKey=state.lens==="pilgrimages"&&typeof options?.calendarKey==="string"?options.calendarKey:null;
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
@@ -210,7 +213,7 @@ export function createFindOwner(win=globalThis){
 
   function setFilter(key,value){
     if(key==="view")state.view=value==="map"?"map":"list";
-    else if(key==="lens"&&EXPLORE_LENSES.includes(value))state.lens=value;
+    else if(key==="lens"&&EXPLORE_LENSES.includes(value)){state.lens=value;state.calendarKey=null;}
     else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;
     mapHandle?.destroy?.();mapHandle=null;
@@ -221,6 +224,9 @@ export function createFindOwner(win=globalThis){
     if(!openState)return;
     const target=event?.target;
     if(target?.closest?.("[data-find-glossary]")){event.preventDefault?.();event.stopPropagation?.();openGlossary();return}
+    if(target?.closest?.("[data-find-clear-calendar]")){
+      event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
+    }
     if(state.lens==="traditions"&&target?.closest?.("[data-atlas-clear]")){
       event.preventDefault?.();
       state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
@@ -245,6 +251,19 @@ export function createFindOwner(win=globalThis){
       state.selectedPlaceId=null;
       state.selectedId=placeItem.dataset.explorePlaceItem||null;
       void paint();return;
+    }
+    const calendarDate=target?.closest?.("[data-explore-calendar-date]");
+    if(calendarDate){
+      event.preventDefault?.();event.stopPropagation?.();
+      const date=calendarDate.dataset.exploreCalendarDate;
+      if(/^\d{4}-\d{2}-\d{2}$/.test(date||"")){
+        close();
+        void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("calendar")).then(ok=>{
+          if(ok!==false)return win?.AO_CALENDAR_APP_V1?.select?.(date);
+          return false;
+        }).catch(error=>console.error("Explore Calendar deep link failed",error));
+      }
+      return;
     }
     const novena=target?.closest?.("[data-explore-open-novena]");
     if(novena){
