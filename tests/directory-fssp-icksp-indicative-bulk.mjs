@@ -93,6 +93,7 @@ assert.equal(fsspMapped.length,fsspJoined.length,"FSSP records dropped during in
 assert.ok(fsspMapped.every(r=>r.sources.some(s=>/^https:\/\//.test(s.url||"")) || r.venue.contact.schedule_url?.some(Boolean) || r.venue.contact.website?.some(Boolean)),"FSSP missing official source redirection");
 assert.ok(fsspMapped.every(r=>!r.venue.geo?.indicative_only||r.venue.geo.routing_eligible===false),"FSSP indicative pin routed");
 const geoCount=fsspMapped.filter(r=>isMapPublishableGeo(r.venue.geo,r.venue.address.country_code)).length;
+assert.equal(geoCount,fsspJoined.length,"Every existing FSSP source-backed directory venue must have a non-routing country-level fallback when necessary");
 const unmappedCountries=Object.entries(fsspMapped.filter(r=>!isMapPublishableGeo(r.venue.geo,r.venue.address.country_code)).reduce((a,r)=>{const cc=r.venue.address.country_code||"UNKNOWN";a[cc]=(a[cc]||0)+1;return a;},{}));
 console.log("FSSP unmapped countries:",JSON.stringify(unmappedCountries));
 console.log("FSSP bulk:",JSON.stringify({venues:fsspVenues.length,ministries:fsspMinistries.length,massSchedules:fsspSchedules.length,sourceRows:fsspSources.length,joined:fsspJoined.length,mapped:geoCount,unmapped:fsspJoined.length-geoCount}));
