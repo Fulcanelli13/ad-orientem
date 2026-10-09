@@ -229,8 +229,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 3,
-      "en": "His parents begin their return without finding Him.",
-      "fr": "Ses parents repartent sans le retrouver."
+      "en": "His parents begin the return, unaware that Jesus has stayed behind.",
+      "fr": "Ses parents prennent le chemin du retour, sans savoir que Jésus est resté à Jérusalem."
     },
     {
       "bead": 4,
