@@ -47,7 +47,7 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"unverified CPDV text displayed as certified");
  await dialog.getByRole("button",{name:"Read at source"}).click();
- assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/index\.htm/);
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.reader?.editionId),"cpdv-2009");
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
  const mark=dialog.getByRole("button",{name:"Bookmark",exact:true});
@@ -58,6 +58,13 @@ try{
  await dialog.locator(".aoScriptureSearch input").fill("Tob");
  await dialog.locator(".aoScriptureResults button").first().click();
  assert.match(await dialog.locator(".aoScriptureReading h3").innerText(),/Tobit 1:1/);
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Esther");
+ assert.equal(await dialog.locator("[data-crosswalk-unverified=Esther]").count(),1);
+ assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/chapter order differ/i);
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Psalms");
+ assert.equal(await dialog.locator("[data-crosswalk-unverified=Psalms]").count(),1);
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("John");
+ assert.equal(await dialog.locator("[data-crosswalk-unverified]").count(),0);
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),1);

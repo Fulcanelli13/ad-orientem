@@ -1,0 +1,20 @@
+# CPDV doctrinal / source-language escalation — 9 October 2026
+
+**Purpose.** CPDV was selected as a free contemporary-English alternative. The author-original text has been retrieved in 73 checksum-tagged books. This comparison identifies interpretive risks, not an imprimatur, approval of the translation, or permission to alter an author's wording.
+
+| CPDV locus | Original wording / issue | Source witness | Editorial action |
+|---|---|---|---|
+| John 1:1 | The author's ending "God was the Word" follows Latin **et Deus erat Verbum** order, rather than D–R's "the Word was God." English inversion can imply a misleading exclusive identity if isolated from John 1:2. | [Vulgate John 1](https://www.biblegateway.com/passage/?search=Joannes%201%3A1-3&version=VULGATE) | Present 1:1–3 context; review under Trinitarian doctrine, avoid claiming a formal error from inversion alone |
+| Luke 1:43 | "And how does this concern me" weakens Elizabeth's expression of amazement that the Mother of her Lord visits her; **et unde hoc mihi** more naturally asks why/how this privilege is granted. | [Vulgate Luke 1:41–45](https://www.biblegateway.com/passage/?search=Lucas%201%3A41-45&version=VULGATE) | Flag semantic and devotional readability problem; do not replace source silently |
+| Sirach 24:1 | "Wisdom will praise her own mind" renders **sapientia laudabit animam suam**, where D–R has "her own self" and Latin *anima* usually signifies soul/self rather than merely mind. | [Vulgate Sirach 24](https://www.biblindex.org/en/bible/vulgata/si-24) | High-priority lexical/sense review, considering Wisdom and Marian traditional application |
+| Revelation 21:8, 22:15 | CPDV's **"drug abusers"** for Vulgate **veneficis / venefici** is substantially narrower than its traditional sense of sorcerers/poisoners and risks misleading moral classification. | [Vulgate Rev 21:8](https://www.newadvent.org/bible/rev021.htm), [Vulgate Rev 22:15](https://vulgate.org/nt/epistle/revelation_22.htm) | Mark substantial semantic challenge, compare Greek *pharmakoi* and Latin tradition, obtain editorial ruling before doctrinal clearance |
+| Matthew 5:28 | The phrase "anyone who will have looked" is not ordinary modern English; the Latin **qui viderit ... ad concupiscendum eam** concerns a look with lustful intent. | [Vulgate Matthew 5:28](https://www.biblegateway.com/passage/?search=Matthaeus%205%3A28&version=VULGATE) | Readability issue; preserve the moral distinction between noticing and deliberate lust |
+| 2 Maccabees 12:46 | Original Catholic source numbering places the explicit statement on praying for the dead at verse **46**, rather than verse 45 in some citation conventions. | [Douay–Rheims 2 Maccabees 12](https://www.newadvent.org/bible/2ma012.htm) | Source-order crosswalk required where outside citations use alternate numbering; doctrinal content remains central to prayer for the dead |
+| John 6:51–54 | The explicit flesh-giving clause is distributed into verse 52 in this Catholic numbering, so an isolated verse 51 is incomplete evidence. | [Douay–Rheims John 6](https://www.newadvent.org/bible/joh006.htm) | Always compare and display full 51–59 context |
+
+## Decision boundary
+- **Selection approval:** CPDV approved as a free, accessible alternative, not as an independently ecclesiastically certified Bible.
+- **Textual source provenance:** 73 author-original pages retrieved and checksummed; 1,333 chapters and 35,827 numbered verses, subject to source/numbering reconciliation.
+- **Doctrinal review:** observations above are sourced editorial findings, not automated clearance. No full-text in-app publication while catalogue `enabled:false`.
+- **Parallel references:** Esther, Psalms and Song of Songs must not inherit the same coordinates across editions without an explicit source-checked crosswalk.
+- **Policy:** Never silently rewrite CPDV into an edited third translation. The app may supply a clearly attributed critical note if an authoritative editorial review concludes one is needed.

@@ -1,9 +1,10 @@
 import { scripturePassage } from "./catalogue.js";
 import { CATHOLIC_BOOK_IDS } from "./canon.js";
+import { cpdvAuthorBookUrl } from "./cpdv-primary-links.js";
 import { ROSARY_MYSTERY_CONTEXT_V1 } from "../pray/rosary-mystery-context.v1.js";
 
 const EN_WITNESS = "https://www.biblegateway.com/passage/?version=DRA&search=";
-const PUBLIC_DOMAIN_CATHOLIC_INDEX = "https://sacredbible.org/catholic/index.htm";
+
 const FRENCH_WITNESS = "https://fr.wikisource.org/wiki/Bible_Crampon_1923";
 const referenceSyntax = /^([1-3]?[A-Za-z][A-Za-z0-9]*)\s+(\d+):(\d+)(?:[-–](\d+))?$/;
 
@@ -20,7 +21,7 @@ export function parseScriptureReference(reference) {
 }
 export function sourceReadingLink(passage, editionId = "dr-challoner") {
   const p = scripturePassage(passage);
-  if (editionId === "cpdv-2009") return PUBLIC_DOMAIN_CATHOLIC_INDEX; // Verified publisher index only, not a deep-linked verse.
+  if (editionId === "cpdv-2009") return cpdvAuthorBookUrl(p.book); // Correct original book; no unverified verse anchor.
   if (editionId !== "dr-challoner") throw new Error("No verified passage URL provider for edition");
   const query = p.book + " " + p.chapter + ":" + p.verseStart +
     (p.verseEnd === p.verseStart ? "" : "-" + p.verseEnd);

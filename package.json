@@ -152,7 +152,7 @@
     "test:rosary-scripture-policy": "node tests/rosary-scripture-policy.mjs && node tests/rosary-primary-edition-review.mjs && node tests/rosary-drc-crampon-collation.mjs && node tests/rosary-dra-machine-alignment.mjs",
     "test:directory-sspx-priority-districts": "node tests/directory-sspx-priority-districts.mjs",
     "test:directory-sspx-post-alias-audit": "node tests/directory-sspx-post-alias-audit.mjs",
-    "test:scripture": "node tests/scripture-catalogue.mjs && node tests/scripture-canon.mjs && node tests/scripture-passages.mjs && node tests/scripture-rosary-audit.mjs && node tests/scripture-library.mjs && node tests/scripture-experience.mjs && node tests/scripture-import.mjs",
+    "test:scripture": "node tests/scripture-catalogue.mjs && node tests/scripture-canon.mjs && node tests/scripture-passages.mjs && node tests/scripture-rosary-audit.mjs && node tests/scripture-library.mjs && node tests/scripture-experience.mjs && node tests/scripture-import.mjs && node tests/scripture-cpdv-stage-and-crosswalk.mjs",
     "test:directory-sspx-six-district-65": "node tests/directory-sspx-six-district-65.mjs",
     "test:directory-sspx-remaining-worldwide-crosswalk": "node tests/directory-sspx-remaining-worldwide-crosswalk.mjs",
     "test:directory-sspx-official-directions-23": "node tests/directory-sspx-official-directions-23.mjs",
