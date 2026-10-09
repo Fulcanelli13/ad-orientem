@@ -38,7 +38,8 @@ for(const key of ["opposition","appeal","counter"]){
   for(const obj of b.reviewed_opponent_fields.find(x=>x.stage===key).selected_opponent_source_links)assert.equal(obj.canonical_url,full);
 }
 assert.equal(frozen.cases.find(x=>x.id==="CSE035").opposition_primary_links.find(x=>x.source_id==="PEW_CO2019").link,full);
-assert.ok(JSON.stringify(cert.cases.find(x=>x.id==="CSE035")).includes(full));
+assert.ok(cert.cases.find(x=>x.id==="CSE035").stages.find(x=>x.stage==="opposition").selected_source_ids.includes("PEW_CO2019"));
+assert.equal(CSE_SOURCE_MAP.PEW_CO2019.canonical_url,full);
 assert.equal(stage.summary.entire_eight_stage_original_certifications,0);
 assert.equal(reg.summary.entire_eight_stage_certifications,0);
 console.log("PASS Pew 2019 exact full-report 23% testing motive restored; separate 23% engagement category distinguished; EN/FR reader, stage sources, frozen audit and certification references aligned");
