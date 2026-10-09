@@ -465,7 +465,13 @@ assert.equal(parseScriptureContext("1 Cor 6:18–20")?.passage.book,"1Corinthian
 assert.equal(parseScriptureContext("Psalms 129:1")?.numbering,"SOURCE_EDITION_REQUIRED");
 assert.equal(parseScriptureContext("Unverified source 4:1"),null);
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Matthew 5:27–28").passage)?.type,"PATRISTIC_COMPILATION");
-assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:28").passage),null);
+const verifiedAnnunciation=verifiedScriptureCommentary(parseScriptureContext("Luke 1:28").passage);
+assert.equal(verifiedAnnunciation?.type,"PATRISTIC_COMPILATION",
+  "Annunciation passage must use the source-bound Catena Aurea witness added by Scripture Context v3");
+assert.match(verifiedAnnunciation?.url||"",/\/catena\/untitled-62\.shtml$/,
+  "Annunciation commentary destination must identify the verified Luke witness");
+assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null,
+  "Uncollated passages must not inherit unrelated patristic comments");
 for(const file of ["src/home/presentation.js","src/learn/sexual-ethics.js",
   "src/pray/presentation-runtime.js","src/apostolate/presentation.js"]){
   assert.match(readFileSync(file,"utf8"),/scriptureContextCapsule/,
