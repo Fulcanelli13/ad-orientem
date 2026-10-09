@@ -169,7 +169,7 @@ assert.ok(browserSource.includes("preserveSearchFocus:true"),"Explore input stil
 assert.ok(browserSource.includes('target?.closest?.("button[data-find-close-detail]")'),"Detail close is not button-specific");
 assert.ok(browserSource.includes('target?.matches?.(".aoFindSheetBackdrop[data-find-close-detail]")'),"Detail backdrop dismissal is missing");
 assert.ok(!browserSource.includes('target?.closest?.("[data-find-close-detail]")'),"Sheet contents are still swallowed by backdrop dismissal");
-assert.ok(browserSource.includes("result?.ok===true"),"Explore Calendar link does not require successful shell navigation");
+assert.ok(browserSource.includes("const routed=await shell?.navigate?.(surface)")&&browserSource.includes("if(routed?.ok===true)"),"Explore handoffs must verify successful shell navigation");
 assert.ok(browserSource.includes('handoff("pray",')&&browserSource.includes('AO_PRAY_V435930?.open?.("pray.novenas"'),"Explore novena must enter through shell and then open the exact Prayer owner");
 const calendarRuntime=readFileSync("src/calendar/calendar-runtime.js","utf8");
 assert.ok(calendarRuntime.includes("result?.ok===true?globalThis.AO_FIND_APP_V1"),
