@@ -186,6 +186,13 @@ assert.deepEqual(
     "place:PS:holy-sepulchre-jerusalem",
     "place:PS:nativity-bethlehem",
     "place:JP:our-lady-akita-convent",
+    "place:IT:duomo-torino-sindone",
+    "place:DE:aachener-dom-four-textiles",
+    "place:DE:trierer-dom-heiliger-rock",
+    "place:FR:cathedrale-saint-etienne-cahors",
+    "place:ES:catedral-san-salvador-oviedo",
+    "place:FR:abbatiale-sainte-trinite-fecamp",
+    "place:IT:santuario-volto-santo-manoppello",
     "place:ES:convento-san-juan-cruz-segovia",
     "place:IT:san-geremia-santa-lucia-venezia",
     "place:GR:saint-titus-heraklion",
@@ -280,7 +287,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 41,
-  places: 175,
+  places: 182,
   directoryPlaceLinks: 1,
 });
 
