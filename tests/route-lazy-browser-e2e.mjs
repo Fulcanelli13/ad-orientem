@@ -66,8 +66,12 @@ try {
     b.type="button";b.id="ao-test-scripture-context-launcher";
     b.dataset.aoScriptureContext="Matthew 5:27–28";
     b.textContent="Context · Bible";
-    document.querySelector(".homeScreen").append(b);
+    document.body.append(b);
   });
+  await page.waitForFunction(()=>{
+    const boot=document.getElementById("ao-cinema-boot");
+    return !boot||boot.hidden||getComputedStyle(boot).display==="none"||getComputedStyle(boot).pointerEvents==="none";
+  },null,{timeout:25000});
   await page.locator("#ao-test-scripture-context-launcher").click();
   await page.locator("#ao-scripture-overlay [data-ao-scripture-context-reader]").waitFor({state:"visible",timeout:12000});
   const reading=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status());
