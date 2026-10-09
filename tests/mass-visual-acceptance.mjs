@@ -998,8 +998,22 @@ try{
     return {offset,record:api.getGoodFridayState().step.recordId,scroll:card.scrollTop};
   });
   assert.ok(beforeDeath.offset>=0,"source Passion death words were not assigned to the Good Friday cue");
-  await page.waitForFunction(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API?.getGoodFridayState()?.step?.recordId==="GF-PASS-320",
-    null,{timeout:3000});
+  await page.waitForTimeout(180);
+  const deathPosition=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const card=api.root.querySelector(".ao-prayer-card");
+    const p=card.querySelector('.ao-reader-paragraph[data-cue-id="GF-PASS-320"]');
+    const bounds=p?.getBoundingClientRect(),viewport=card.getBoundingClientRect();
+    return {
+      record:api.getGoodFridayState().step.recordId,
+      scrollTop:card.scrollTop,
+      maxScroll:card.scrollHeight-card.clientHeight,
+      cueParagraphTop:bounds?.top??null,
+      focusLine:viewport.top+card.clientHeight*.39,
+    };
+  });
+  assert.equal(deathPosition.record,"GF-PASS-320",
+    "scrolling to the exact Passion death words did not start the kneeling pause: "+JSON.stringify({beforeDeath,deathPosition}));
   const atDeath=await page.evaluate(()=>{
     const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
     const p=api.root.querySelector('.ao-reader-paragraph[data-cue-id="GF-PASS-320"]');
