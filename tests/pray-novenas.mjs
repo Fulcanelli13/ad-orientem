@@ -173,8 +173,8 @@ assert.match(runtime,/Choisissez une neuvaine/);
 // Secondary historical links alone do not establish a witness to the prayer.
 const litSource=readFileSync("src/pray/novena-runtime.js","utf8");
 assert.match(litSource,/class="aoN1SourcePrimary"/,"Novenas primary citation must be rendered as clickable link");
-assert.match(litSource,/href="\\$\\{esc\\(url\\)\\}"/,"Actual source URL is not wired to clickable href");
-assert.match(litSource,/novenaSourceAccess\\(n\\.id\\)/,"Novena source drawer no longer resolves editorial section identity");
+assert.match(litSource,/href="\$\{esc\(url\)\}"/,"Actual source URL is not wired to clickable href");
+assert.match(litSource,/novenaSourceAccess\(n\.id\)/,"Novena source drawer no longer resolves editorial section identity");
 assert.match(litSource,/rel="noopener noreferrer"/,"External novena witness lacks safe rel");
 assert.equal(Object.keys(NOVENA_SOURCE_ACCESS_V1).length,8);
 for(const [id,section] of Object.entries(NOVENA_SOURCE_ACCESS_V1)){
