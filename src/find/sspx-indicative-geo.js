@@ -158,3 +158,67 @@ export async function fetchOfficialSspxPlaceIndex({fetchImpl=fetch,timeoutMs=500
   }finally{if(timer!==null)clearTimeout(timer)}
   return out;
 }
+
+
+/**
+ * Extends the discovery-only policy to other communities. An existing mapped
+ * place of ANY community is a geographical reference, never evidence that a
+ * different chapel occupies its coordinates.
+ */
+export function applyIndicativeOtherCommunities(records){
+  const input=Array.isArray(records)?records:[];
+  const anchors=input.filter(isExistingGeo).map(record=>{
+    const v=record.venue,g=v.geo;
+    return {...coords(g),cc:v.address?.country_code,city:v.address?.city,
+      region:v.address?.region,source_ref:g.source_ref,
+      source_url:g.source_url||v.contact?.website?.[0]||null};
+  }).filter(x=>x.lat!==undefined&&x.cc);
+  const cities=new Map(),regions=new Map(),countries=new Map();
+  for(const point of anchors){
+    addIndex(cities,point.cc,point.city,point);
+    if(point.region)addIndex(regions,point.cc,point.region,point);
+    const prior=countries.get(point.cc)||[];
+    prior.push(point);countries.set(point.cc,prior);
+  }
+  const summary={eligible:0,already_mapped:0,locality_added:0,region_added:0,country_added:0,unresolved:0};
+  const enriched=input.map(record=>{
+    if(sspx(record))return record;
+    summary.eligible++;
+    if(isExistingGeo(record)){summary.already_mapped++;return record}
+    const v=record?.venue??{},cc=String(v.address?.country_code||"").toUpperCase();
+    if(!cc){summary.unresolved++;return record}
+    let list=[...new Set(localityParts(v.address?.city).flatMap(city=>cities.get(cityKey(cc,city))||[]))];
+    let precision="locality",scope="city";
+    if(!list.length&&v.address?.region){
+      list=regions.get(cityKey(cc,v.address.region))||[];
+      precision="region";scope="region";
+    }
+    if(!list.length){
+      list=countries.get(cc)||[];
+      if(!list.length&&Object.hasOwn(COUNTRY_REFERENCE,cc)){
+        const [lat,lng]=COUNTRY_REFERENCE[cc];
+        list=[{lat,lng,source_ref:"COUNTRYINFO:"+cc,
+          source_url:COUNTRY_REFERENCE_SOURCE}];
+      }
+      precision="country";scope="country";
+    }
+    const chosen=bestRepresentative(list);
+    if(!chosen){summary.unresolved++;return record}
+    const geo={lat:chosen.lat,lng:chosen.lng,precision,
+      geocoding_source:"OTHER",
+      source_ref:"AO:TRADITIONAL_INDICATIVE:"+v.venue_id,
+      source_url:chosen.source_url,
+      matched_country_code:cc,
+      matched_on:"INDICATIVE_OTHER_COMMUNITIES_"+scope.toUpperCase(),
+      indicative_scope:scope,indicative_only:true,routing_eligible:false,
+      source_observed_at:"2026-10-09",
+      supporting_source_ref:chosen.source_ref,
+      locality_label:v.address?.city||null};
+    if(!isMapPublishableGeo(geo,cc)){summary.unresolved++;return record}
+    if(precision==="locality")summary.locality_added++;
+    else if(precision==="region")summary.region_added++;
+    else summary.country_added++;
+    return Object.freeze({...record,venue:Object.freeze({...v,geo})});
+  });
+  return Object.freeze({records:Object.freeze(enriched),summary:Object.freeze(summary)});
+}
