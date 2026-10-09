@@ -50,7 +50,14 @@ function css(){
 `;
 }
 function source(win,label,url){
-  return `<details class="aoLearnTradSource"><summary>${esc(L(win,"Source","Source"))} · ${esc(label)}</summary><p><a href="${esc(url)}" target="_blank" rel="noopener">${esc(L(win,"Open source","Ouvrir la source"))} ↗</a></p></details>`;
+  let href="";
+  try{
+    const parsed=new URL(String(url||""));
+    if(parsed.protocol==="https:")href=parsed.href;
+  }catch{}
+  return `<details class="aoLearnTradSource"><summary>${esc(L(win,"Source","Source"))} · ${esc(label)}</summary><p>${href
+    ?`<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(L(win,"Open source","Ouvrir la source"))} ↗</a>`
+    :`<small>${esc(L(win,"A direct source link has not yet been verified.","Aucun lien direct vers la source n’est encore vérifié."))}</small>`}</p></details>`;
 }
 function card(win,title,text,extra=""){
   return `<details class="aoLearnTradCard"><summary><span class="aoLearnTradCardTitle">${esc(title)}</span></summary><div class="aoLearnTradCardBody"><p>${esc(text)}</p>${extra}</div></details>`;
@@ -259,7 +266,7 @@ function trainer(win,state){
     L(win,"Practice the common minister responses from the same certified 1962 Mass text already used by the Mass follower. This trains the words; it does not invent altar-server choreography.","Entraînez-vous aux réponses courantes du servant à partir du même texte certifié de la Messe de 1962 utilisé par le suivi de Messe. Ceci entraîne les paroles ; aucune chorégraphie de servant n’est inventée."),
     L(win,"1962 Mass · exact response text","Messe de 1962 · texte exact des réponses"),
     `<section class="aoLearnTradTrainer"><div class="aoLearnTradCue">${esc(L(win,x.cue,x.cueFr))} · ${state.trainerIndex+1} / ${LOW_MASS_RESPONSES_V381.length}</div><div class="aoLearnTradPrompt">${esc(L(win,x.prompt,x.promptFr))}</div>${state.trainerReveal?`<div class="aoLearnTradAnswer"><strong>${esc(x.lat)}</strong><span>${esc(isFr(win)?x.fr:x.en)}</span></div>`:`<div class="aoLearnTradActions"><button type="button" class="primary" data-ao-tradlearn-reveal>${esc(L(win,"Reveal response","Afficher la réponse"))}</button></div>`}<div class="aoLearnTradNav"><button type="button" data-ao-tradlearn-trainer="prev" ${state.trainerIndex===0?"disabled":""}>← ${esc(L(win,"Previous","Précédent"))}</button><button type="button" data-ao-tradlearn-trainer="next" ${state.trainerIndex===LOW_MASS_RESPONSES_V381.length-1?"disabled":""}>${esc(L(win,"Next","Suivant"))} →</button></div></section>`+
-    source(win,"Ad Orientem certified 1962 Mass corpus + Baltimore · Manner of Serving Mass",TRADITIONAL_LEARN_SOURCES_V381.baltimore)
+    source(win,"Baltimore Manual · Manner of Serving Mass",TRADITIONAL_LEARN_SOURCES_V381.baltimore)
   );
 }
 function scapular(win){
