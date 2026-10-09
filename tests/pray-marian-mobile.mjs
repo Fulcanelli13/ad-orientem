@@ -117,6 +117,13 @@ try{
  assert.equal(await guidedCue.count(),1,"Guided Hail Mary lacks its original coherent bilingual meditation");
  assert.match(await guidedCue.innerText(),/God sends Gabriel|Dieu envoie Gabriel/);
  assert.equal(await guidedCue.getAttribute("data-ao-rosary-context"),"editorial-meditation");
+ const beadSource=guidedCue.locator("a[data-ao-rosary-meditation-source]");
+ assert.equal(await beadSource.count(),1,"Guided bead lacks contextual primary witness");
+ assert.match(await beadSource.innerText(),/Luke 1:26-27/);
+ assert.match(await beadSource.getAttribute("href"),/^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
+ assert.equal(await beadSource.getAttribute("target"),"_blank");
+ assert.equal(await beadSource.getAttribute("rel"),"noopener noreferrer");
+ assert.equal(await guidedCue.getAttribute("data-ao-rosary-source-type"),"SCRIPTURAL_PARAPHRASE");
  assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-cue").count(),0,
    "Unreviewed bead Scripture still presented as certified English/French quotation");
  assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-actions").count(),0,
