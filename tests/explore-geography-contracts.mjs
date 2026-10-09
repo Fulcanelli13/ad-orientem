@@ -112,6 +112,8 @@ assert.deepEqual(
     "place:CA:sainte-anne-de-beaupre",
     "place:CA:notre-dame-du-cap",
     "place:CA:oratoire-saint-joseph-montreal",
+    "place:FR:basilique-saint-denis",
+    "place:PL:sanktuarium-jana-pawla-ii-krakow",
     "place:CA:martyrs-shrine-midland",
     "place:IT:loreto-santa-casa",
     "place:IT:pompei-rosary-shrine",
@@ -228,7 +230,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 35,
-  places: 123,
+  places: 125,
   directoryPlaceLinks: 1,
 });
 
