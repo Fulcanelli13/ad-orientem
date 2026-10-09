@@ -47,13 +47,13 @@ const p={
 };
 const diagnostic={warnings:[]};
 refresh(p,diagnostic);
-assert.deepEqual(p.languageCoverage.en,{expected:5,available:5,missing:[],complete:true});
-assert.deepEqual(p.languageCoverage.fr,{expected:5,available:5,missing:[],complete:true});
+assert.deepEqual(JSON.parse(JSON.stringify(p.languageCoverage.en)),{expected:5,available:5,missing:[],complete:true});
+assert.deepEqual(JSON.parse(JSON.stringify(p.languageCoverage.fr)),{expected:5,available:5,missing:[],complete:true});
 p.collects.push(a("Commemoratio", "Commemoration",""));
 refresh(p,diagnostic);
 assert.equal(p.languageCoverage.fr.expected,6,"Commemoration not included after composition");
 assert.equal(p.languageCoverage.fr.complete,false);
-assert.deepEqual(p.languageCoverage.fr.missing,["Collect 2"]);
+assert.deepEqual(Array.from(p.languageCoverage.fr.missing),["Collect 2"]);
 assert.equal(p.languageCoverage.en.complete,true);
 p.secrets.push(a("Secreta N.", "$Qui tecum", "N."));
 refresh(p,diagnostic);
