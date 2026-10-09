@@ -57,8 +57,13 @@ assert.equal(registry.resolve(SPIRITUAL_LIFE_ROUTE_ID).ok,true);
 assert.equal(registry.list().some(item=>item.id===SPIRITUAL_LIFE_ROUTE_ID),true,"published Spiritual Life route missing from module registry");
 assert.equal(registry.list().some(item=>item.id==="learn.catechism"),true);
 
+for(const [id,item] of Object.entries(SPIRITUAL_LIFE_SOURCE_MAP)){
+  assert.match(item.canonical_url,/^https:\/\//,id+" has an invalid public source destination");
+}
 const source=readFileSync("src/learn/spiritual-life.js","utf8");
 assert.match(source,/Sources & provenance/);
+assert.match(source,/claimSourceMarkup\(win,block\.claims\)/,"Lesson explanations must carry claim-specific links");
+assert.match(source,/claimSourceMarkup\(win,lesson\.practice\.claims\)/,"Practical counsel must carry claim-specific links");
 assert.match(source,/Practice · not scored/);
 assert.match(source,/SPIRITUAL_LIFE_SOURCE_MAP/);
 assert.match(source,/data-ao-sl-prev/);
