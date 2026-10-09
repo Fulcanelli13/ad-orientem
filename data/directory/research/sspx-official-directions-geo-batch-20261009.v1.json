@@ -1,0 +1,262 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_20261009_OFFICIAL_DIRECTIONS_23_GEO_AUDIT_V1",
+  "review_date": "2026-10-09",
+  "purpose": "Existing SSPX 336 approved map overlays preserved; geo enrichment of 20 additional already-registered physical Mass sites plus 3 independent new Sunday-Mass sites. Each GPS pair transcribed from exact official place page's directions destination, not generated from city lookup.",
+  "source_method": "https://map.fsspx.org/de/places/<slug> -> Route -> maps/dir/?api=1&destination=<lat>,<lng>",
+  "old_approved_sspx_map_coordinates": 350,
+  "added_existing_sspx_mass_site_coordinates": 20,
+  "added_new_venue_coordinates": 3,
+  "total_sspx_map_coordinates": 373,
+  "current_sspx_mass_venues": 614,
+  "not_yet_geolocated": 241,
+  "precision_counts": {
+    "address": 22,
+    "locality": 1
+  },
+  "controls": {
+    "no_new_venue_from_existing_geo": true,
+    "no_duplicate_geo_venue_ids": true,
+    "no_duplicate_official_slug_reference": true,
+    "no_building_precision_claim": true,
+    "route_based_address_only_when_official_map_address_matches_registry_address": true,
+    "armidale_city_map_pin_is_locality_only": true,
+    "previous_336_crm_precision_unchanged": true
+  },
+  "evidence": [
+    "sspx-oct26-poland.geo.v1.json",
+    "sspx-four-district-bulk.geo.v1.json",
+    "sspx-official-route-oct26-20261009.geo.v1.json"
+  ],
+  "cases": [
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-olsztyn-kaplica-matki-bozej-ostrobramskiej",
+      "official_place_slug": "kaplica-p-w-matki-bozej-ostrobramskiej",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-p-w-matki-bozej-ostrobramskiej",
+      "country_code": "PL",
+      "latitude": 53.76192,
+      "longitude": 20.50673,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-szczecin-kaplica-sw-wojciecha",
+      "official_place_slug": "kaplica-p-w-sw-wojciecha",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-p-w-sw-wojciecha",
+      "country_code": "PL",
+      "latitude": 53.43633,
+      "longitude": 14.54083,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-pi-a-kaplica-sw-jana-chrzciciela-i-sw-jana-ewan",
+      "official_place_slug": "kaplica-pi-a",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-pi-a",
+      "country_code": "PL",
+      "latitude": 53.16005,
+      "longitude": 16.75744,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-wroc-aw-kaplica-sw-jadwigi-slaskiej",
+      "official_place_slug": "kaplica-pw-sw-jadwigi-slaskiej",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-jadwigi-slaskiej",
+      "country_code": "PL",
+      "latitude": 51.12748,
+      "longitude": 17.02565,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-nowy-sacz-kaplica-sw-kingi",
+      "official_place_slug": "kaplica-pw-sw-kingi",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-kingi",
+      "country_code": "PL",
+      "latitude": 49.60833,
+      "longitude": 20.6956,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-odz-kaplica-sw-piusa-v",
+      "official_place_slug": "kaplica-pw-sw-piusa-v",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-piusa-v",
+      "country_code": "PL",
+      "latitude": 51.7396,
+      "longitude": 19.46012,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-s-upsk-kaplica-sw-ignacego-loyoli",
+      "official_place_slug": "kaplica-pw-sw-ignacego-loyoli",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-ignacego-loyoli",
+      "country_code": "PL",
+      "latitude": 54.473,
+      "longitude": 17.02724,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-bielsko-bia-a-kaplica-sw-melchiora-grodzieckiego",
+      "official_place_slug": "kaplica-pw-sw-melchiora-grodzieckiego",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-melchiora-grodzieckiego",
+      "country_code": "PL",
+      "latitude": 49.81971,
+      "longitude": 18.99565,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-zamosc-kaplica-sw-antoniego-padewskiego",
+      "official_place_slug": "kaplica-sw-antoniego-z-padwy",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-sw-antoniego-z-padwy",
+      "country_code": "PL",
+      "latitude": 50.72342,
+      "longitude": 23.25774,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-kielce-kaplica-swietego-krzyza",
+      "official_place_slug": "kaplica-sw-krzyza",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-sw-krzyza",
+      "country_code": "PL",
+      "latitude": 50.86629,
+      "longitude": 20.63083,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-zielona-gora-kaplica-swietych-pieciu-braci-meczennikow",
+      "official_place_slug": "kaplica-zielona-gora",
+      "source_url": "https://map.fsspx.org/de/places/kaplica-zielona-gora",
+      "country_code": "PL",
+      "latitude": 51.95989,
+      "longitude": 15.49516,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-fulda-mutter-von-der-immerwahrenden-hilfe",
+      "official_place_slug": "mutter-v-d-immerwahrenden-hilfe",
+      "source_url": "https://map.fsspx.org/de/places/mutter-v-d-immerwahrenden-hilfe",
+      "country_code": "DE",
+      "latitude": 50.56166,
+      "longitude": 9.66314,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-armidale-armidale-mission-hughes-house",
+      "official_place_slug": "armidale",
+      "source_url": "https://map.fsspx.org/de/places/armidale",
+      "country_code": "AU",
+      "latitude": -30.51642,
+      "longitude": 151.66667,
+      "precision": "locality",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-ch-ch-basel-chapelle-sainte-therese-de-l-enfant-jesus",
+      "official_place_slug": "kapelle-der-heiligen-theresia",
+      "source_url": "https://map.fsspx.org/de/places/kapelle-der-heiligen-theresia",
+      "country_code": "CH",
+      "latitude": 47.57287,
+      "longitude": 7.59559,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-hannover-kapelle-hl-ansgar",
+      "official_place_slug": "kapelle-st-ansgar",
+      "source_url": "https://map.fsspx.org/de/places/kapelle-st-ansgar",
+      "country_code": "DE",
+      "latitude": 52.39585,
+      "longitude": 9.63488,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-nz-auckland-immaculate-heart-of-mary-church",
+      "official_place_slug": "chapel-of-the-immaculate-heart-of-mary-s-john",
+      "source_url": "https://map.fsspx.org/de/places/chapel-of-the-immaculate-heart-of-mary-s-john",
+      "country_code": "NZ",
+      "latitude": -36.88931,
+      "longitude": 174.67755,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-viernheim-kapelle-hl-josef",
+      "official_place_slug": "kapelle-st-josef-viernheim",
+      "source_url": "https://map.fsspx.org/de/places/kapelle-st-josef-viernheim",
+      "country_code": "DE",
+      "latitude": 49.52784,
+      "longitude": 8.56998,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-hamburg-kapelle-hl-theresia-von-avila",
+      "official_place_slug": "kapelle-st-theresia-von-avila",
+      "source_url": "https://map.fsspx.org/de/places/kapelle-st-theresia-von-avila",
+      "country_code": "DE",
+      "latitude": 53.60615,
+      "longitude": 10.00147,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-schramberg-kirche-maria-verkundigung",
+      "official_place_slug": "kirche-mariae-verkundigung",
+      "source_url": "https://map.fsspx.org/de/places/kirche-mariae-verkundigung",
+      "country_code": "DE",
+      "latitude": 48.23906,
+      "longitude": 8.41631,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-four-district-bulk-sspx-de-de-memmingen-kirche-st-josef",
+      "official_place_slug": "kirche-st-joseph",
+      "source_url": "https://map.fsspx.org/de/places/kirche-st-joseph",
+      "country_code": "DE",
+      "latitude": 48.00514,
+      "longitude": 10.16379,
+      "precision": "address",
+      "previously_registered": true
+    },
+    {
+      "venue_id": "ao-research-sspx-official-route-oct26-20261009-sspx-sspxmap-20261009-de-passau-rosenkranz",
+      "official_place_slug": "rosenkranz-kapelle",
+      "source_url": "https://map.fsspx.org/de/places/rosenkranz-kapelle",
+      "country_code": "DE",
+      "latitude": 48.57101,
+      "longitude": 13.48102,
+      "precision": "address",
+      "previously_registered": false
+    },
+    {
+      "venue_id": "ao-research-sspx-official-route-oct26-20261009-sspx-sspxmap-20261009-fr-les-rousses-nd-lourdes",
+      "official_place_slug": "chapelle-notre-dame-de-lourdes",
+      "source_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-de-lourdes",
+      "country_code": "FR",
+      "latitude": 46.5098681,
+      "longitude": 6.0918546,
+      "precision": "address",
+      "previously_registered": false
+    },
+    {
+      "venue_id": "ao-research-sspx-official-route-oct26-20261009-sspx-sspxmap-20261009-fr-le-laus-nd-rosaire",
+      "official_place_slug": "chapelle-notre-dame-du-rosaire",
+      "source_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-du-rosaire",
+      "country_code": "FR",
+      "latitude": 44.521546,
+      "longitude": 6.1537492,
+      "precision": "address",
+      "previously_registered": false
+    }
+  ]
+}
