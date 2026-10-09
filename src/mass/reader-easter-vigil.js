@@ -1,3 +1,5 @@
+import {EASTER_VIGIL_PROPHECY_READINGS} from "./reader-easter-vigil-prophecy-index.js";
+
 // R33 Easter Vigil composite distinct-rite reader.
 // The recovered 38-record EV graph owns choreography and branch state.
 // Recovered Ad Orientem donor text owns presentation copy; ordinary Mass
@@ -40,6 +42,14 @@ function validatePayload(payload){
     if(!payload.donor?.[key]?.lat)throw new Error("Easter Vigil donor text missing "+key);
   }
   if(!payload.bridge?.litanyI?.lat||!payload.bridge?.litanyII?.lat||!payload.bridge?.renewal?.lat)throw new Error("Easter Vigil bridge payload incomplete");
+  if(EASTER_VIGIL_PROPHECY_READINGS.length!==4)throw new Error("Exactly four source-pinned 1962 prophecies required");
+  EASTER_VIGIL_PROPHECY_READINGS.forEach((p,index)=>{
+    if(p.stateId!=="EV-LESS-"+String(index+1).padStart(2,"0")+"-READ"||
+       !Array.isArray(p.latinParagraphs)||p.latinParagraphs.length<2||
+       !p.latinParagraphs.every(x=>typeof x==="string"&&x.length>80)||
+       typeof p.collectLatin!=="string"||p.collectLatin.length<60)
+      throw new Error("Unverified Easter Vigil full Latin prophecy corpus "+(index+1));
+  });
 }
 
 function lumenPairs(payload){
@@ -51,13 +61,29 @@ function lumenPairs(payload){
 function prophecySurface(id,payload){
   const n=Number(id.match(/EV-LESS-(\d\d)-/)?.[1]??0);
   const names=["","First Prophecy · Genesis","Second Prophecy · Exodus","Third Prophecy · Isaias","Fourth Prophecy · Deuteronomy"];
-  if(id.endsWith("-READ"))return freeze({
-    key:"PROPHECY_"+n,title:names[n],
-    paragraphs:bilingualRows("EV-PROP-"+n,payload.donor.prophecies,[id])
-  });
+  const source=EASTER_VIGIL_PROPHECY_READINGS[n-1];
+  if(!source||source.stateId!=="EV-LESS-"+String(n).padStart(2,"0")+"-READ")
+    throw new Error("Easter Vigil source-owned prophecy missing for "+id);
+  // Source text is a 1962 liturgical lesson, not an approved local Bible edition.
+  // Canticles follow their appointed lesson without contaminating its Scripture
+  // reference. The short legacy donor summary is never rendered as a lesson.
+  if(id.endsWith("-READ")){
+    const lines=source.latinParagraphs.map((text,i)=>
+      row("EV-PROP-"+n+"-T"+(i+1),text,"TEXT",[id]));
+    if(source.canticle){
+      lines.push(row("EV-PROP-"+n+"-CIT",
+        "Canticum · "+source.canticle.reference,"RUBRIC",[id]));
+      source.canticle.latin.forEach((text,i)=>
+        lines.push(row("EV-PROP-"+n+"-CANT"+(i+1),text,"CANTICLE",[id])));
+    }
+    return freeze({key:"PROPHECY_"+n,title:names[n],paragraphs:freeze(lines)});
+  }
   if(id.endsWith("-OREM"))return freeze({key:"PROPHECY_"+n+"_PRAYER",title:"Prayer after "+names[n],paragraphs:freeze([row("EV-PROP-"+n+"-O","Oremus.","VERSICLE",[id])])});
   if(id.endsWith("-KNEEL"))return freeze({key:"PROPHECY_"+n+"_PRAYER",title:"Prayer after "+names[n],paragraphs:freeze([row("EV-PROP-"+n+"-K","Flectamus genua.","VERSICLE",[id])])});
-  if(id.endsWith("-RISE"))return freeze({key:"PROPHECY_"+n+"_PRAYER",title:"Prayer after "+names[n],paragraphs:freeze([row("EV-PROP-"+n+"-R","Levate.","RESPONSE",[id])])});
+  if(id.endsWith("-RISE"))return freeze({key:"PROPHECY_"+n+"_PRAYER",title:"Prayer after "+names[n],paragraphs:freeze([
+    row("EV-PROP-"+n+"-R","Levate.","RESPONSE",[id]),
+    row("EV-PROP-"+n+"-COLLECT",source.collectLatin,"COLLECT",[id])
+  ])});
   throw new Error("Unknown Easter Vigil prophecy state "+id);
 }
 
