@@ -2,6 +2,7 @@ import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations, nextMajorCelebration } from "./liturgical-year.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
+import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -28,6 +29,17 @@ let foregroundWeek="",navEpoch=0,monthEpoch=0;
 const CALENDAR_VIEWS=new Set(["day","year","picker"]);
 const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","practices"]);
 let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null;
+let pilgrimageCorpus=null,pilgrimageLoad=null;
+const pilgrimageDataUrl=new URL("../../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url).href;
+function loadCalendarPilgrimagePlaces(){
+  if(pilgrimageCorpus||pilgrimageLoad||typeof globalThis.fetch!=="function")return;
+  pilgrimageLoad=globalThis.fetch(pilgrimageDataUrl,{headers:{accept:"application/json"}})
+    .then(response=>response.ok?response.json():null)
+    .then(json=>{if(json?.schema==="SHRINES_PILGRIMAGES_SEED_V1")pilgrimageCorpus=json;if(root())paint();})
+    .catch(error=>{console.warn("Calendar pilgrimage associations unavailable",error)})
+    .finally(()=>{pilgrimageLoad=null});
+}
+
 function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
 function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
 function weekReady(id){return weekIds(id).every(x=>weekCache.has(x))}
@@ -419,6 +431,7 @@ function practiceContext(selected,r){
   if(!intel)return "";
   const events=(intel.events||[]).filter(event=>event?.key!=="sunday-mass");
   const tags=new Set(events.flatMap(event=>event?.tags||[]));
+  const linkedPlaces=pilgrimagePlacesForCalendarKeys(intel.semantic?.map(event=>event.key),pilgrimageCorpus??{});
   const disciplineRelevant=intel.discipline?.today?.key!=="none"||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
   if(!events.length&&!disciplineRelevant)return "";
   return `<section class="aoCalPracticeContext" data-cal-intelligence-date="${esc(selected)}">
@@ -431,6 +444,7 @@ function practiceContext(selected,r){
       ${event.current||event.historical?`<details><summary>${esc(L("Current / traditional status","Statut actuel / traditionnel"))}</summary>${event.current?`<p><b>${esc(L("Current:","Actuel :"))}</b> ${esc(event.current)}</p>`:""}${event.historical?`<p><b>${esc(L("Traditional:","Traditionnel :"))}</b> ${esc(event.historical)}</p>`:""}</details>`:""}
       ${intelligenceActions(event).length?`<div class="aoCalPracticeActions">${intelligenceActions(event).map(([route,label])=>`<button type="button" data-cal-intelligence-route="${esc(route)}">${esc(label)} →</button>`).join("")}</div>`:""}
     </article>`).join("")}</div>`:""}
+    ${linkedPlaces.length?`<section class="aoCalPilgrimagePlaces"><small>${esc(L("PILGRIMAGES & SACRED PLACES","PÈLERINAGES ET SANCTUAIRES"))}</small><p>${esc(L("Places associated with this feast or anniversary. Local celebrations and travel arrangements must be checked with the shrine.","Lieux associés à cette fête ou à cet anniversaire. Les célébrations locales et les renseignements pratiques restent à vérifier auprès du sanctuaire."))}</p>${linkedPlaces.map(place=>`<article><div><strong>${esc(place.shrine_name)}</strong>${place.saints.length?`<small>${esc(place.saints.join(" · "))}</small>`:""}</div><button type="button" data-cal-intelligence-route="${esc("find:pilgrimages:"+place.semantic_key)}">${esc(L("View pilgrimage","Voir le pèlerinage"))} →</button></article>`).join("")}</section>`:""}
     ${disciplineRelevant?disciplineReference(intel.discipline):""}
   </section>`;
 }
@@ -684,7 +698,7 @@ function open(){
   calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});return true;
 }
 function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,monthView:calendarMonthView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,pickerMonthId,monthReady:pickerMonthId?monthReady(pickerMonthId):false,monthLoading:pickerMonthId?monthLoads.has(pickerMonthId):false,monthCachedDays:pickerMonthId?monthGridIds(pickerMonthId).filter(x=>weekCache.has(x)).length:0,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
