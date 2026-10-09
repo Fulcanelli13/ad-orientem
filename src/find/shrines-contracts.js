@@ -31,6 +31,9 @@ export const SOURCE_DIRECTNESS = Object.freeze([
   "OFFICIAL_CHURCH",
   "OFFICIAL_PILGRIMAGE_SITE",
   "PRIMARY_HISTORICAL",
+  // First-party institutional records: civic custodians, museums and shrine-operating institutions.
+  // Distinct from historical originals, official ecclesial attestations and third-party secondary descriptions.
+  "PRIMARY_INSTITUTIONAL",
   "DIRECT_PILGRIMAGE_ORGANIZER",
   "SECONDARY",
 ]);
