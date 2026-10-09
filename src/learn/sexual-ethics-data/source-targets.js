@@ -29,6 +29,14 @@ export function cseSourceTargets(sourceId,locator,source,{french=false}={}){
     if(target.scope==="document" && new URL(target.url).hostname==="www.researchgate.net")
       return Object.freeze([Object.freeze({...target,scope:"original-full-text",witness:"Author-uploaded full article · methods, results and limitations"})]);
   }
+  // Original 1966 Fletcher book sections, not the later reprint or a critic.
+  // Only explicitly scoped original-book locators receive the third-party
+  // digitized text; ordinary page mentions remain bibliography-only.
+  if(sourceId==="FLETCHER1966"&&/^1966 original, pp?\./i.test(original)){
+    const target=sourceTarget(source?.original_digitized_text_url,original);
+    if(target.url)return Object.freeze([Object.freeze({...target,scope:"digitized-original",
+      witness:"1966 original book · third-party digitization; printed pages not independently collated"})]);
+  }
   if(sourceId!=="SCR")return Object.freeze([sourceTarget(base,original)]);
   const parts=original.split(";").map(s=>s.trim()).filter(Boolean);
   if(!parts.length)return Object.freeze([{url:base,locator:original,scope:"index",witness:null}]);
