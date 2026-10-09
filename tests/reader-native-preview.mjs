@@ -116,7 +116,7 @@ assert.equal(aspergesReady.aspergesController.project().faithfulGesture,"MAKE_FU
 aspergesReady.aspergesController.goTo("ASP-R05");
 assert.equal(aspergesReady.aspergesController.project().handoff,"FOOT_CLUSTER");
 
-const palmPrepared={
+const palmProcessionPrepared={
   ...livePrepared,
   session:{
     ...livePrepared.session,
@@ -124,18 +124,18 @@ const palmPrepared={
     plan:{...livePrepared.session.plan,precedingGraphs:["PALM"],normalLastGospel:false},
   },
 };
-const palmReady=await prepareNativeReaderPreview({
-  prepared:palmPrepared,presentationData:data,eventData,cueRegistries,guideData,palmData
+const palmProcessionReady=await prepareNativeReaderPreview({
+  prepared:palmProcessionPrepared,presentationData:data,eventData,cueRegistries,guideData,palmData
 });
-palmReady.palmController.goTo("PALM-R04");
-assert.equal(palmReady.palmController.project().posture,null,
+palmProcessionReady.palmController.goTo("PALM-R04");
+assert.equal(palmProcessionReady.palmController.project().posture,null,
   "native Palm prelude imposed participant-only posture");
-palmReady.palmController.setProcessionParticipant(true);
-assert.equal(palmReady.palmController.project().posture,"PROCESSIONAL");
-palmReady.palmController.setProcessionParticipant(false);
-assert.equal(palmReady.palmController.project().posture,null);
-palmReady.palmController.goTo("PALM-R07");
-assert.equal(palmReady.palmController.project().handoff,"INTROIT");
+palmProcessionReady.palmController.setProcessionParticipant(true);
+assert.equal(palmProcessionReady.palmController.project().posture,"PROCESSIONAL");
+palmProcessionReady.palmController.setProcessionParticipant(false);
+assert.equal(palmProcessionReady.palmController.project().posture,null);
+palmProcessionReady.palmController.goTo("PALM-R07");
+assert.equal(palmProcessionReady.palmController.project().handoff,"INTROIT");
 
 const candlemasPrepared={
   ...livePrepared,
