@@ -198,14 +198,20 @@ const SHELL_STYLE = `
 .ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"] .ao-line-primary{
   display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden
 }
+.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]{
+  cursor:pointer
+}
+.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]:focus-visible{
+  outline:2px solid rgba(157,191,166,.7);outline-offset:3px
+}
 .ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]::after{
-  content:"TAP FOR FULL RUBRIC";display:block;margin-top:6px;font:700 6.5px/1 var(--ao-font-ui,system-ui,sans-serif);
-  letter-spacing:.12em;color:#657268
+  content:"READ FULL RUBRIC";display:block;margin-top:8px;font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.065em;color:#aeb8af
 }
 .ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"][data-expanded="true"] .ao-line-primary{
   display:block;-webkit-line-clamp:unset;overflow:visible
 }
-.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"][data-expanded="true"]::after{content:"TAP TO COLLAPSE"}
+.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"][data-expanded="true"]::after{content:"COLLAPSE RUBRIC"}
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{
   margin:14px 0;padding:14px 8px;text-align:center;
   font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
@@ -282,7 +288,7 @@ const SHELL_STYLE = `
   position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
   width:min(940px,calc(100% - 170px));height:var(--ao-schola-height);min-height:0;max-height:180px;
   padding:11px 16px 13px;border:1px solid rgba(109,149,117,.38);border-radius:16px;
-  background:rgba(17,25,20,.968);box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
+  background:#111914;box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
 }
 .ao-schola-dock[data-active="false"]{display:none}
 .ao-schola-dock[data-collapsed="true"]{min-height:32px;height:32px!important;padding-top:4px;padding-bottom:4px}
@@ -361,7 +367,11 @@ button.ao-schola-control{cursor:pointer}
 .ao-cinematic-fallback{display:block}
 .ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 var(--ao-font-display,Georgia,"Times New Roman",serif);letter-spacing:.08em;color:#f0f1e9}
 .ao-cinematic-sub{font:600 .63rem/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:#89928a}
-.ao-cinematic[data-kind="ELEVATION"]{background:radial-gradient(circle at center,rgba(226,211,158,.075),rgba(3,7,5,0) 43%)}
+.ao-cinematic[data-kind="ELEVATION"]{
+  /* A solid backing is essential: the Host elevation must not compete
+     with the underlying Consecration rubric or prayer paragraphs. */
+  background:radial-gradient(circle at center,rgba(226,211,158,.075),rgba(3,7,5,0) 43%),#070b08
+}
 .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{
   position:relative;width:min(43vw,210px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle,rgba(239,233,210,.12),rgba(20,27,22,.44) 48%,rgba(7,10,8,.15) 70%,transparent 72%);
@@ -1352,6 +1362,14 @@ export function createReaderDomAdapter({
     return true;
   }
 
+  function toggleRubric(rubric){
+    if(!rubric || rubric.dataset?.rubricExpandable!=="true")return false;
+    const expanded=rubric.dataset.expanded!=="true";
+    rubric.dataset.expanded=String(expanded);
+    rubric.setAttribute?.("aria-expanded",String(expanded));
+    return true;
+  }
+
   function unbind(){
     if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
     if(rootKeydownListener)root.removeEventListener?.("keydown",rootKeydownListener);
@@ -1441,7 +1459,7 @@ export function createReaderDomAdapter({
         return;
       }
       const rubric=event.target?.closest?.('.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]');
-      if(rubric){rubric.dataset.expanded=String(rubric.dataset.expanded!=="true");return;}
+      if(rubric){toggleRubric(rubric);return;}
     };
     root.addEventListener?.("click",rootClickListener);
     // The donor edge arrows are real phone controls. Own touch navigation on
@@ -1518,6 +1536,8 @@ export function createReaderDomAdapter({
         if(scholaTranslate && current?.schola?.english){
           event.preventDefault?.();toggleScholaTranslation();return;
         }
+        const rubric=event.target?.closest?.('.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]');
+        if(rubric){event.preventDefault?.();toggleRubric(rubric);return;}
       }
       if(["INPUT","SELECT","TEXTAREA"].includes(tag))return;
       if(event.target?.isContentEditable)return;
@@ -1698,8 +1718,14 @@ export function createReaderDomAdapter({
           if(p.kind==="RUBRIC"){
             const rubricText=stripRubricBrackets(p.primary);
             node.dataset.stateDuplicate=String(rubricIsStateDuplicate(rubricText));
-            node.dataset.rubricExpandable=String(rubricText.length>180);
+            const canExpand=rubricText.length>180;
+            node.dataset.rubricExpandable=String(canExpand);
             node.dataset.expanded="false";
+            if(canExpand){
+              node.tabIndex=0;
+              node.setAttribute("role","button");
+              node.setAttribute("aria-expanded","false");
+            }
           }
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
           const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));

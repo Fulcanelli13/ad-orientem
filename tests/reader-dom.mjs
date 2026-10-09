@@ -281,6 +281,28 @@ expect(translationSpan.textContent==="Au commencement"&&preventCount===1,
 dispatch("keydown",{key:" ",target:translationTarget,preventDefault(){preventCount++;}});
 expect(translationSpan.textContent==="In principio"&&preventCount===2,
   "Space failed to activate paragraph translation");
+// Expandable source rubrics are genuine keyboard controls, not mouse-only prose.
+const rubricAttrs={};
+const rubricNode={
+  dataset:{kind:"RUBRIC",rubricExpandable:"true",expanded:"false"},
+  setAttribute(name,value){rubricAttrs[name]=value;},
+};
+const rubricTarget={
+  tagName:"P",
+  closest(selector){
+    return selector==='.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]'
+      ? rubricNode:null;
+  },
+};
+dispatch("keydown",{key:"Enter",target:rubricTarget,preventDefault(){}});
+expect(rubricNode.dataset.expanded==="true"&&rubricAttrs["aria-expanded"]==="true",
+  "Enter failed to expand an accessible source rubric");
+dispatch("keydown",{key:" ",target:rubricTarget,preventDefault(){}});
+expect(rubricNode.dataset.expanded==="false"&&rubricAttrs["aria-expanded"]==="false",
+  "Space failed to collapse an accessible source rubric");
+dispatch("click",{target:rubricTarget});
+expect(rubricNode.dataset.expanded==="true"&&rubricAttrs["aria-expanded"]==="true",
+  "pointer activation did not update the rubric's accessible expanded state");
 adapter.destroy();
 expect(html.includes('data-schola-translate title="Tap to translate" role="button" tabindex="-1"'),
   "Schola translation remained a mouse-only div");
@@ -354,5 +376,14 @@ expect(html.includes(".ao-prayer-card{padding-left:0;padding-right:0}"),
   "320px reader regained redundant side insets");
 expect(html.includes("-webkit-line-clamp:3;max-height:3.5em"),
   "compact state ribbon reverted to truncating longer priest/posture labels");
+
+expect(html.includes("background:radial-gradient(circle at center,rgba(226,211,158,.075),rgba(3,7,5,0) 43%),#070b08"),
+  "Elevation regressed to a transparent backdrop that overlays Source rubric text");
+expect(html.includes("background:#111914;box-shadow:0 15px 46px"),
+  "Schola dock reverted to showing moving prayers through its background");
+expect(html.includes('content:"READ FULL RUBRIC"'),
+  "rubric full-text action is no longer readable");
+expect(readerDomSource.includes('node.setAttribute("aria-expanded","false")'),
+  "expandable rubrics did not receive accessible collapsed semantics");
 
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
