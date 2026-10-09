@@ -619,8 +619,8 @@ try{
   // Multi-fragment and single-word anchors are resolved at exactly their
   // canonical cue, not merely at the section or card level.
   const gloriaAdoramus=await focusCanonicalCue("AO.SM.C0056");
-  assert.ok(gloriaAdoramus.anchorWords.some(word=>/Ador[aá]mus te/i.test(word)),
-    "Adoramus te gesture rail activates without highlighting the actual Latin words: "+JSON.stringify(gloriaAdoramus));
+  assert.ok(gloriaAdoramus.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
+    "Adoramus te gesture rail activates without highlighting the sourced phrase in the displayed language: "+JSON.stringify(gloriaAdoramus));
   assert.equal(gloriaAdoramus.anchorFlag,"true");
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
@@ -635,9 +635,9 @@ try{
   assert.equal(gloriaBow.scholaDockActive,"false","shared Gloria text duplicated itself in the Schola dock");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
   assert.equal(gloriaBow.anchorFlag,"true","Gloria bow rail/Latin anchor state diverged");
-  assert.ok(gloriaBow.anchorWords.some(word=>/Iesu Christe|Jesu Christe/i.test(word)),
-    "Gloria Holy Name bow cue lacks its word-level Latin highlight: "+JSON.stringify(gloriaBow));
-  assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te/i.test(word)),
+  assert.ok(gloriaBow.anchorWords.some(word=>/Iesu Christe|Jesu Christe|Jesus Christ|Jésus-Christ/i.test(word)),
+    "Gloria Holy Name bow cue lacks its source-aligned phrase highlight: "+JSON.stringify(gloriaBow));
+  assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
     "Gloria previous-word ritual highlight leaked into the next cue");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
 
@@ -648,9 +648,9 @@ try{
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
   assert.equal(incarnatus.anchorFlag,"true","Incarnatus genuflect rail did not activate its Latin words");
-  assert.ok(incarnatus.anchorWords.some(word=>/Et incarn[aá]tus est/i.test(word)) &&
-    incarnatus.anchorWords.some(word=>/et homo factus est/i.test(word)),
-    "Credo Incarnatus complete phrase is not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
+  assert.ok(incarnatus.anchorWords.some(word=>/Et incarn[aá]tus est|And was incarnate|Il a pris chair/i.test(word)) &&
+    incarnatus.anchorWords.some(word=>/et homo factus est|and was made man|s.est fait homme/i.test(word)),
+    "Credo Incarnatus sourced opening and closing words are not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
 
   const agnus=await focusCanonicalCue("AO.SM.C0222");
