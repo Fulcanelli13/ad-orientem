@@ -96,13 +96,17 @@ export function projectDirectoryItems(records,{communities=[]}={}){
     const mapped=isMapPublishableGeo(venue?.geo,venue?.address?.country_code);
     const geo=mapped?normalizeGeo(venue.geo):null;
     const label=communityLabel(ministry?.community_id,communities);
-    const status=una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":una==="VARIES"?"VARIES":"STATUS UNKNOWN";
-    const facts=[
+    const external=venue?.publication_state==="DIRECTORY_LISTED_UNVERIFIED";
+    const status=external?"SCHEDULE UNVERIFIED":una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":una==="VARIES"?"VARIES":"STATUS UNKNOWN";
+    const facts=(external?[
+      {label:"Verification",value:"External directory listing · schedule not independently checked"},
+      {label:"Liturgy",value:"Exact liturgical form not independently established"},
+    ]:[
       venue?.diocese?.name?{label:"Diocese",value:venue.diocese.name}:null,
       {label:"Liturgy",value:usageLabel(ministry)},
       {label:"Una cum",value:una==="YES"?"Yes":una==="NO"?"No":una==="VARIES"?"Varies":"Unknown"},
       mapped?{label:"Location",value:directoryGeoLabel(venue.geo,{language:"en"})}:null,
-    ].filter(Boolean);
+    ]).filter(Boolean);
     const schedules=rawSchedules(record);
     return Object.freeze({
       item_id:"tlm:"+venue.venue_id,
@@ -110,26 +114,28 @@ export function projectDirectoryItems(records,{communities=[]}={}){
       lens:"tlm",
       kind:"TLM_VENUE",
       community_id:ministry?.community_id??"OTHER",
-      eyebrow:label,
+      eyebrow:external?"Directory-listed":label,
       status,
       title:venue?.name?.official||"Unnamed venue",
       subtitle:[venue?.address?.city,venue?.address?.country_code].filter(Boolean).join(" · "),
-      summary:schedules[0]?.body??usageLabel(ministry),
+      summary:external?"Listed by an external directory. Current Mass times and liturgical form require checking at source.":schedules[0]?.body??usageLabel(ministry),
       address:venue?.address??null,
       geo,
       map_publishable:Boolean(mapped&&geo),
       map_state:mapped?"MAPPED":"ADDRESS_ONLY",
       facts:freezeList(facts),
-      sections:freezeList(schedules.map(schedule=>({label:"Schedule",title:schedule.title,body:schedule.body}))),
+      sections:freezeList(external?[]:schedules.map(schedule=>({label:"Schedule",title:schedule.title,body:schedule.body}))),
       source_links:directorySourceLinks(record),
-      actions:freezeList([
+      actions:freezeList(external?[
+        arr(venue?.contact?.schedule_url)[0]?{label:"Open external listing",url:arr(venue.contact.schedule_url)[0]}:null,
+      ].filter(Boolean):[
         directoryMapsUrl(venue)?{label:"Directions",url:directoryMapsUrl(venue)}:null,
         arr(venue?.contact?.website)[0]?{label:"Website",url:arr(venue.contact.website)[0]}:null,
       ].filter(Boolean)),
-      note:"Source-backed current directory record. Check the official schedule before travelling.",
+      note:external?"Licensed third-party listing only. Not an independent verification of a currently celebrated 1962 Mass; consult the original source before travelling.":"Source-backed current directory record. Check the official schedule before travelling.",
       search_text:itemSearch([
         venue?.name?.official,venue?.name?.alternate,addressLabel(venue?.address),venue?.diocese?.name,label,
-        usageLabel(ministry),schedules.map(item=>item.body),
+        external?"directory listed":usageLabel(ministry),schedules.map(item=>item.body),
       ]),
       raw:record,
     });
