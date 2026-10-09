@@ -1,5 +1,5 @@
 // GENERATED FROM data/pray/prayer-source-certification-inventory.v3.json.
-// Only the seven material edition differences requiring user disclosure are
+// Only the ten material edition differences requiring user disclosure are
 // loaded in the lightweight Prayer runtime. Keep the 64-entry JSON authoritative.
 export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
   "foundations_our_father": {
@@ -31,8 +31,8 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
   "foundations_grace_after_meals": {
     "classification": "HISTORICAL_PRAYER_ALTERNATIVE",
     "notice": {
-      "en": "This text follows the benefits form found in another historical prayer book, not the mercies wording on the cited Baltimore Manual page.",
-      "fr": "Cette prière suit la formule anglaise « benefits » attestée dans un autre livre ancien, non « mercies » du manuel de Baltimore."
+      "en": "The primary historical source prints « benefits », matching this English prayer; the separately linked Baltimore Manual prints « mercies ». These are distinct witnesses, not identical editions.",
+      "fr": "Le témoin anglais principal donne « benefits », conforme à cette prière ; le manuel de Baltimore cité à titre comparatif donne « mercies ». Il s’agit de témoins différents."
     },
     "relatedWitnesses": [
       {
@@ -80,6 +80,30 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
     "notice": {
       "en": "The French translation uses lumière éternelle, while the French Compendium of 2005 uses lumière de ta face.",
       "fr": "La traduction française emploie « lumière éternelle » ; le Compendium français de 2005 emploie « lumière de ta face »."
+    },
+    "relatedWitnesses": []
+  },
+  "foundations_act_of_faith": {
+    "classification": "AUTHORITATIVE_LOCALE_VARIANTS",
+    "notice": {
+      "en": "The English Act of Faith in the 2005 Compendium includes longer Trinitarian and Christological clauses than its French and Latin forms. They are separately published prayers, not three literal translations.",
+      "fr": "L’Acte de foi anglais du Compendium de 2005 comporte des développements trinitaire et christologique absents des formules française et latine. Ce ne sont pas trois traductions mot à mot."
+    },
+    "relatedWitnesses": []
+  },
+  "foundations_act_of_love": {
+    "classification": "AUTHORITATIVE_LOCALE_VARIANTS",
+    "notice": {
+      "en": "The French published Act of Charity ends sooner than the English and Latin forms, which include a final resolution to live and die in charity. The app preserves the separate published language forms.",
+      "fr": "L’Acte de charité français publié se termine avant les formules anglaise et latine, qui ajoutent une résolution de vivre et mourir dans la charité. Chaque version est conservée selon son témoin."
+    },
+    "relatedWitnesses": []
+  },
+  "sacrament_act_of_contrition": {
+    "classification": "AUTHORITATIVE_LOCALE_VARIANTS",
+    "notice": {
+      "en": "The Compendium's French Act of Contrition is shorter than its English and Latin prayers and does not print the final « Amen » shown here. The app retains that customary ending without claiming a verbatim copy.",
+      "fr": "L’Acte de contrition français du Compendium est plus court que les formes anglaise et latine et n’imprime pas l’« Amen » final présent ici. Cette conclusion usuelle est conservée sans prétendre copier l’édition mot à mot."
     },
     "relatedWitnesses": []
   }
