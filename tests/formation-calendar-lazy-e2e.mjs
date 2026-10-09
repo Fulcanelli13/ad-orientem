@@ -215,6 +215,7 @@ try{
  assert.match(transferred||"",/Annunciation|Annonciation/i,"Transferred Annunciation absent from April's observed Major index");
  // A first-class sanctoral feast that falls on Sunday must not be
  // misclassified as an ordinary Sunday of the temporal cycle.
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
  assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-08-15"),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("sanctorale")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").waitFor({state:"visible",timeout:12000});
