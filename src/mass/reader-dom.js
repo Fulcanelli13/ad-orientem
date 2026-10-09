@@ -849,6 +849,8 @@ export function createReaderDomAdapter({
   let current=null;
   let mode="LIVE";
   let bound=false;
+  let rootClickListener=null;
+  let rootKeydownListener=null;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let scholaCollapsed=false;
   let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 132 : 150);
@@ -1211,10 +1213,18 @@ export function createReaderDomAdapter({
     return result;
   }
 
+  function unbind(){
+    if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
+    if(rootKeydownListener)root.removeEventListener?.("keydown",rootKeydownListener);
+    rootClickListener=null;
+    rootKeydownListener=null;
+    bound=false;
+  }
+
   function bind(){
     if(bound) return;
     bound=true;
-    root.addEventListener?.("click", event => {
+    rootClickListener=event => {
       const homeButton=event.target?.closest?.("[data-reader-home]");
       if(homeButton){onHome?.(current,prepared);return;}
       const preferencesButton=event.target?.closest?.("[data-reader-preferences]");
@@ -1308,7 +1318,8 @@ export function createReaderDomAdapter({
       }
       const rubric=event.target?.closest?.('.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]');
       if(rubric){rubric.dataset.expanded=String(rubric.dataset.expanded!=="true");return;}
-    });
+    };
+    root.addEventListener?.("click",rootClickListener);
     // The donor edge arrows are real phone controls. Own touch navigation on
     // pointerdown: Playwright/Chromium and physical touchscreens both dispatch
     // this before the compatibility click, so the latter can be suppressed
@@ -1355,11 +1366,15 @@ export function createReaderDomAdapter({
         }
       },{passive:false});
     }
-    root.addEventListener?.("keydown",event=>{
-      const tag=String(event.target?.tagName??"").toUpperCase();if(["INPUT","SELECT","TEXTAREA"].includes(tag))return;
+    rootKeydownListener=event=>{
+      const tag=String(event.target?.tagName??"").toUpperCase();
+      if(["INPUT","SELECT","TEXTAREA"].includes(tag))return;
+      // Navigation beneath an open Guide would dismiss the text the person is reading.
+      if(root.querySelector?.('[data-role="guide-popover"]')?.hidden===false)return;
       if(event.key==="ArrowRight"){event.preventDefault?.();navigateBy(1,"keyboard");}
       else if(event.key==="ArrowLeft"){event.preventDefault?.();navigateBy(-1,"keyboard");}
-    });
+    };
+    root.addEventListener?.("keydown",rootKeydownListener);
     // v1.80 Mass-preferences mode controls own touch on pointerdown for the
     // same reason as the edge arrows: a physical tap must commit the switch
     // even while the reader rebuilds beneath the preferences sheet.
@@ -1403,6 +1418,8 @@ export function createReaderDomAdapter({
 
   function mount(nextPrepared){
     if(!nextPrepared?.session?.resolvedMass) throw new TypeError("Prepared Mass session required");
+    // The root survives innerHTML replacement; old delegated handlers do too unless removed.
+    unbind();
     prepared=nextPrepared;
     mode=normalizePresentationMode(prepared.readerPreferences?.mode ?? prepared.session.resolvedMass.presentationMode);
     root.innerHTML=buildReaderShellMarkup(prepared);
@@ -1422,7 +1439,6 @@ export function createReaderDomAdapter({
     syncScholaChrome();
     syncScholaContent();
     syncRailVisibility(root);
-    bound=false;
     bind();
     return prepared;
   }
@@ -1574,6 +1590,7 @@ export function createReaderDomAdapter({
   }
 
   function destroy(){
+    unbind();
     if(bellHoldTimer)clearTimeout(bellHoldTimer);
     cancelScholaTicker({clearIdentity:true});
     bellHoldTimer=0;heldBell=null;bellHoldUntil=0;
