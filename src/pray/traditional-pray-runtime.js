@@ -334,10 +334,24 @@ function handleClick(e){
     const route=b.dataset.tp381Route;
     if(ROUTES[route])return open(route,{trigger:b});
     if(String(route).startsWith("learn.")){
+      const prayerRoute=S.route;
       BASE_CLOSE();
       void (async()=>{
-        try{await window?.AO_APP_SHELL_V1?.navigate?.("learn")}catch{}
-        try{await window?.AO_MODULES?.open?.(route,{returnContext:{surface:"pray",route:S.route}})}catch{}
+        try{
+          const navigation=await window?.AO_APP_SHELL_V1?.navigate?.("learn");
+          if(navigation?.ok!==true)throw new Error("Formation surface refused navigation");
+          // The Formation owner must own the child and its return context.
+          // A raw registry launch leaves Learn.child unset and can strand
+          // users in Formation instead of returning to their bedside prayer.
+          const launched=await window?.AO_LEARN_APP_V1?.openModule?.(route,{
+            returnContext:{surface:"pray",route:prayerRoute}
+          });
+          if(launched!==true)throw new Error("Formation child did not open");
+        }catch(error){
+          try{window?.console?.error?.("Prayer to Formation handoff failed",error)}catch{}
+          const recovered=await window?.AO_APP_SHELL_V1?.navigate?.("pray");
+          if(recovered?.ok===true)await window?.AO_MODULES?.open?.(prayerRoute);
+        }
       })();
       return;
     }
