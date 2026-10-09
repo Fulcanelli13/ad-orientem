@@ -543,6 +543,78 @@
       "codes": {
         "iso_alpha2": "EG"
       }
+    },
+    {
+      "geo_area_id": "geo:country:VA",
+      "name": {
+        "official": "Vatican City",
+        "aliases": [
+          "Cité du Vatican"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "VA"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:ES",
+      "name": {
+        "official": "Spain",
+        "aliases": [
+          "Espagne"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "ES"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PS",
+      "name": {
+        "official": "Palestinian Territories",
+        "aliases": [
+          "Territoires palestiniens"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PS"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:JP",
+      "name": {
+        "official": "Japan",
+        "aliases": [
+          "Japon"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "JP"
+      }
     }
   ],
   "places": [
@@ -4621,6 +4693,395 @@
       },
       "source_ids": [
         "wikidata:Q956741"
+      ]
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "name": {
+        "official": "St Peter's Basilica — Vatican",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:VA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.90216,
+        "lng": 12.45371,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/24884214",
+        "source_ref": "osm:way:244159210",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "VA",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza San Pietro",
+        "line2": null,
+        "postal_code": null,
+        "city": "Vatican City",
+        "region": null,
+        "country_code": "VA",
+        "country": "Vatican City",
+        "formatted": "Piazza San Pietro, Vatican City, Vatican City"
+      },
+      "source_ids": [
+        "osm:way:244159210"
+      ]
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "name": {
+        "official": "Basilica Papale di San Paolo fuori le Mura",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.858611,
+        "lng": 12.477222,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q231699",
+        "source_ref": "wikidata:Q231699",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazzale San Paolo 1",
+        "line2": null,
+        "postal_code": "00146",
+        "city": "Rome",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazzale San Paolo 1, 00146, Rome, Italy"
+      },
+      "source_ids": [
+        "wikidata:Q231699"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "name": {
+        "official": "Basilica Papale di Santa Maria Maggiore",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.8975,
+        "lng": 12.498611,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q186282",
+        "source_ref": "wikidata:Q186282",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza di Santa Maria Maggiore",
+        "line2": null,
+        "postal_code": "00185",
+        "city": "Rome",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza di Santa Maria Maggiore, 00185, Rome, Italy"
+      },
+      "source_ids": [
+        "wikidata:Q186282"
+      ]
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "name": {
+        "official": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.887315,
+        "lng": 12.506719,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.turismoroma.it/en/places/pontifical-sanctuary-holy-stairs",
+        "source_ref": "roma-turismo:scala-santa",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza di San Giovanni in Laterano 14",
+        "line2": null,
+        "postal_code": "00184",
+        "city": "Rome",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza di San Giovanni in Laterano 14, 00184, Rome, Italy"
+      },
+      "source_ids": [
+        "roma-turismo:scala-santa"
+      ]
+    },
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "name": {
+        "official": "Catedral de Santiago de Compostela",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.88064,
+        "lng": -8.5445,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/25251226",
+        "source_ref": "wikidata:Q205136",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Praza do Obradoiro",
+        "line2": null,
+        "postal_code": "15705",
+        "city": "Santiago de Compostela",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Praza do Obradoiro, 15705, Santiago de Compostela, Spain"
+      },
+      "source_ids": [
+        "wikidata:Q205136"
+      ]
+    },
+    {
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "name": {
+        "official": "Basílica de Nuestra Señora del Pilar",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.656883,
+        "lng": -0.878328,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q24019734",
+        "source_ref": "wikidata:Q24019734",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Plaza del Pilar",
+        "line2": null,
+        "postal_code": "50003",
+        "city": "Zaragoza",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Plaza del Pilar, 50003, Zaragoza, Spain"
+      },
+      "source_ids": [
+        "wikidata:Q24019734"
+      ]
+    },
+    {
+      "place_id": "place:ES:santo-toribio-liebana",
+      "name": {
+        "official": "Monasterio de Santo Toribio de Liébana",
+        "aliases": []
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.150331,
+        "lng": -4.654339,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q2256022",
+        "source_ref": "wikidata:Q2256022",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "39589",
+        "city": "Camaleño",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "39589, Camaleño, Spain"
+      },
+      "source_ids": [
+        "wikidata:Q2256022"
+      ]
+    },
+    {
+      "place_id": "place:ES:carmel-alba-tormes",
+      "name": {
+        "official": "Monasterio de la Anunciación — Carmelitas Descalzas",
+        "aliases": []
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.826583,
+        "lng": -5.51472,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q43115071",
+        "source_ref": "wikidata:Q43115071",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "37800",
+        "city": "Alba de Tormes",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "37800, Alba de Tormes, Spain"
+      },
+      "source_ids": [
+        "wikidata:Q43115071"
+      ]
+    },
+    {
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "name": {
+        "official": "Church of the Holy Sepulchre — shared Christian sanctuary",
+        "aliases": []
+      },
+      "place_type": "pilgrimage_destination",
+      "geo_area_ids": [
+        "geo:country:PS"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 31.778333,
+        "lng": 35.229722,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q187702",
+        "source_ref": "wikidata:Q187702",
+        "matched_country_code": "PS",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Christian Quarter, Old City",
+        "line2": null,
+        "postal_code": null,
+        "city": "Jerusalem",
+        "region": null,
+        "country_code": "PS",
+        "country": "Palestinian Territories",
+        "formatted": "Christian Quarter, Old City, Jerusalem, Palestinian Territories"
+      },
+      "source_ids": [
+        "wikidata:Q187702"
+      ],
+      "territorial_status_note": "The geographic label follows the selected dataset convention. Jerusalem's political status is disputed; this record asserts site geography, not sovereignty."
+    },
+    {
+      "place_id": "place:PS:nativity-bethlehem",
+      "name": {
+        "official": "Church of the Nativity — shared Christian sanctuary",
+        "aliases": []
+      },
+      "place_type": "pilgrimage_destination",
+      "geo_area_ids": [
+        "geo:country:PS"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 31.704306,
+        "lng": 35.207583,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q194504",
+        "source_ref": "wikidata:Q194504",
+        "matched_country_code": "PS",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Manger Square",
+        "line2": null,
+        "postal_code": null,
+        "city": "Bethlehem",
+        "region": null,
+        "country_code": "PS",
+        "country": "Palestinian Territories",
+        "formatted": "Manger Square, Bethlehem, Palestinian Territories"
+      },
+      "source_ids": [
+        "wikidata:Q194504"
+      ],
+      "territorial_status_note": "The geographic label follows the selected dataset convention. Jerusalem's political status is disputed; this record asserts site geography, not sovereignty."
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "name": {
+        "official": "Seitai Hoshikai — Our Lady of Akita Chapel",
+        "aliases": []
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:JP"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 39.75932,
+        "lng": 140.14953,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W375753167",
+        "source_ref": "osm:way:375753167",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "JP",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Yuzawadai-1 Soegawa",
+        "line2": null,
+        "postal_code": "010-0822",
+        "city": "Akita",
+        "region": null,
+        "country_code": "JP",
+        "country": "Japan",
+        "formatted": "Yuzawadai-1 Soegawa, 010-0822, Akita, Japan"
+      },
+      "source_ids": [
+        "osm:way:375753167"
       ]
     }
   ],
