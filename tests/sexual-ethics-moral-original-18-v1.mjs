@@ -4,8 +4,8 @@ import {CSE_DEBATE_FIELDS,CSE_DEBATE_MAP} from "../src/learn/sexual-ethics-data/
 import {CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/sources.js";
 const earlier=JSON.parse(readFileSync("data/learn/sexual-ethics-moral-reasoning-source-batch-20261009.v1.json","utf8"));
 const ledger=JSON.parse(readFileSync("data/learn/sexual-ethics-moral-reasoning-original-18-20261009.v1.json","utf8"));
-const ids=["CSE012","CSE013","CSE014","CSE016","CSE018","CSE021","CSE020"];
-assert.equal(ledger.summary.debates_touched,7);
+const ids=["CSE012","CSE013","CSE014","CSE016","CSE018","CSE021"];
+assert.equal(ledger.summary.debates_touched,6);
 assert.equal(ledger.summary.original_passage_checks_added,18);
 assert.equal(ledger.summary.previous_bounded_original_stage_scopes,38);
 assert.equal(ledger.summary.new_scope_records_with_partial_or_direct_evidence,14);
@@ -14,7 +14,7 @@ assert.equal(ledger.summary.full_case_certifications,0);
 assert.equal(ledger.summary.independent_french_approvals,0);
 assert.equal(ledger.summary.independent_theology_approvals,0);
 assert.equal(ledger.records.length,18);
-assert.deepEqual([...new Set(ledger.records.map(x=>x.id))].sort(),ids.filter(x=>x!=="CSE020").sort());
+assert.deepEqual([...new Set(ledger.records.map(x=>x.id))].sort(),ids.sort());
 assert.equal(new Set(ledger.records.map(x=>x.id+"."+x.stage)).size,18);
 const types={};
 for(const x of ledger.records){
