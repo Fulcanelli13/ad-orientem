@@ -28,7 +28,8 @@
     {
       "type": "original1962",
       "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
-      "status": "TEXT_EXTRACTION_AND_PASSAGE_COLLATION_PENDING"
+      "status": "TEXT_EXTRACTION_AND_PASSAGE_COLLATION_PENDING",
+      "printedLocator": "Missale Romanum (1962), Proprium de Tempore, In Litaniis maioribus et minoribus, printed p. 341 ff.; complete leaf-by-leaf collation pending"
     },
     {
       "type": "rubrics",
@@ -55,7 +56,7 @@
       "type": "french_latin_secondary_candidate",
       "url": "https://laudemus.org/?date=2027-05-03&v=1029",
       "status": "PROPER_IN_CANDIDATE_FORM_NOT_AUTHORITATIVE_FOR_1962_COLLATION",
-      "warning": "Individual Rogation Proper passages and French renderings occur here, but exact 1962 printed-Missal comparison and text re-use rights remain pending. Generic Ordinary sections shown on a webpage cannot establish Rogation rubrics."
+      "warning": "Individual Rogation Proper passages and French renderings occur here, but exact 1962 printed-Missal comparison and text re-use rights remain pending. Generic Ordinary sections shown on a webpage cannot establish Rogation rubrics. This rendering also shows an ordinary Gloria in its full-page Mass assembly, despite the original 1962 Rogation processional rubric explicitly excluding it."
     },
     {
       "type": "historical_repertory_non_normative",
@@ -243,6 +244,9 @@
     "Read only the nine Proper components from secondary pages; generic preparation, Ordinary, Gloria and Credo shown elsewhere on those pages must not be inherited as processional Mass content.",
     "No English translation was approved for the Secret in the sampled Missale Online witness. Check all English and French renderings independently and retain their provenance and re-use permissions.",
     "The 1960 general rubrics (especially 80-90, 346-347) govern the class and processional condition, independently of the secondary text source.",
-    "No change to live Mass selection or Calendar ownership."
+    "No change to live Mass selection or Calendar ownership.",
+    "Treat the explicit service as PUBLIC_PROCESSION or ORDINARY_AUTHORIZED_SUPPLICATIONS. Do not enable the conditional Mass on private prayer or date alone; a I-class day impedes the II-class votive (1960 §§341, 346–347).",
+    "The 1962 original printed heading begins on page 341; original source index independently confirms Introit/Collect/Epistle there, but per-section leaf collation remains pending and no latinVerified flags have been lifted.",
+    "The current test example dated 2027-05-10 was after Ascension and was replaced by 2027-05-03 for the representative Rogations Monday."
   ]
 }

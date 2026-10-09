@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { resolveRogationMassVariant, rogationProperReady, ROGATION_PROPER_KEYS } from "../src/mass/rogation-mass-selection.js";
 import { buildRogationsPayload, createRogationsReaderController } from "../src/mass/reader-rogations.js";
 import { compileMassPlan, makeResolvedMass } from "../src/mass/session-engine.js";
 
@@ -35,6 +36,92 @@ assert.ok(sourceGate.properSections.every(x=>x.candidate.sourceLinks.length>=2 &
 assert.match(sourceGate.properSections.find(x=>x.key==="epistle").candidate.passageReference,/James 5:16/);
 assert.match(sourceGate.properSections.find(x=>x.key==="gospel").candidate.passageReference,/Luke 11:5/);
 assert.match(sourceGate.properSections.find(x=>x.key==="secret").candidate.passageReference,/English absent/);
+
+
+assert.deepEqual(ROGATION_PROPER_KEYS,sourceGate.properSections.map(x=>x.key));
+assert.equal(rogationProperReady(sourceGate),false);
+for(const date of ["2024-05-06","2027-05-03"]) {
+  // The date is deliberately NOT a selector input; observance must come from
+  // the actual day resolver and the public rite must be chosen separately.
+  const defaultChoice=resolveRogationMassVariant({choice:"DAY_MASS"});
+  assert.equal(defaultChoice.availability,"AVAILABLE",date);
+  assert.equal(defaultChoice.massEntry,"FOOT_CLUSTER",date);
+  assert.deepEqual(defaultChoice.precedingRites,[],date);
+  const blocked=resolveRogationMassVariant({
+    choice:"ROGATION_MASS",observanceConfirmed:true,
+    service:"PUBLIC_PROCESSION",dayClass:4,sourceGate
+  });
+  assert.equal(blocked.availability,"BLOCKED",date);
+  assert.equal(blocked.reason,"PROPER_NOT_SOURCE_CERTIFIED",date);
+  assert.equal(blocked.massEntry,null,date);
+}
+assert.equal(resolveRogationMassVariant({
+  choice:"ROGATION_MASS",observanceConfirmed:false,
+  service:"PUBLIC_PROCESSION",dayClass:4,sourceGate
+}).reason,"ROGATION_OBSERVANCE_NOT_CONFIRMED");
+assert.equal(resolveRogationMassVariant({
+  choice:"ROGATION_MASS",observanceConfirmed:true,
+  service:"PRIVATE_PRAYERS",dayClass:4,sourceGate
+}).reason,"PUBLIC_RITE_NOT_CONFIRMED");
+assert.equal(resolveRogationMassVariant({
+  choice:"ROGATION_MASS",observanceConfirmed:true,
+  service:"PUBLIC_PROCESSION",dayClass:1,sourceGate
+}).reason,"VOTIVE_II_CLASS_IMPEDED");
+assert.equal(resolveRogationMassVariant({
+  choice:"ROGATION_MASS",observanceConfirmed:true,
+  service:"PUBLIC_PROCESSION",sourceGate
+}).reason,"DAY_CLASS_NOT_VERIFIED");
+
+// Synthetic fully attested fixture checks the future acceptance route, without
+// changing or shipping the actual research-only ledger as published text.
+
+const afterPublicLitanies=resolveRogationMassVariant({
+  choice:"DAY_MASS",observanceConfirmed:true,
+  service:"PUBLIC_PROCESSION",dayClass:1,sourceGate
+});
+assert.equal(afterPublicLitanies.availability,"AVAILABLE");
+assert.equal(afterPublicLitanies.properOwner,"DAY_RESOLVER");
+assert.equal(afterPublicLitanies.massEntry,"INTROIT");
+assert.equal(afterPublicLitanies.omitOpeningPrayers,true);
+assert.deepEqual(afterPublicLitanies.precedingRites,["ROGATIONS"]);
+assert.equal(resolveRogationMassVariant({
+  choice:"DAY_MASS",observanceConfirmed:false,
+  service:"PUBLIC_PROCESSION",dayClass:4,sourceGate
+}).availability,"BLOCKED");
+
+const certifiedMock=structuredClone(sourceGate);
+certifiedMock.status="PUBLISHED_1962_ROGATION_PROPER";
+certifiedMock.publicationAllowed=true;
+for(const s of certifiedMock.properSections) {
+  s.latinVerified=s.englishVerified=s.frenchVerified=true;
+  s.exactSourceLocator="Missale Romanum (1962), validated source locator";
+  s.candidate.translationRights="CLEARED";
+}
+assert.equal(rogationProperReady(certifiedMock),false,
+  "A metadata-only certificate without the actual Rogation Proper must fail closed");
+const syntheticProper={
+  schema:"AO_1962_ROGATION_PROPER_V1",
+  sections:certifiedMock.properSections.map(s=>({
+    key:s.key,sourceLocator:s.exactSourceLocator,
+    latin:"TEST ONLY - fabricated Latin fixture content; not publishable",
+    english:"TEST ONLY - fabricated English fixture content; not publishable",
+    french:"TEST ONLY - fabricated French fixture content; not publishable"
+  }))
+};
+assert.equal(rogationProperReady(certifiedMock,syntheticProper),true);
+const permitted=resolveRogationMassVariant({
+  choice:"ROGATION_MASS",observanceConfirmed:true,
+  service:"ORDINARY_AUTHORIZED_SUPPLICATIONS",dayClass:2,sourceGate:certifiedMock,sourceProper:syntheticProper
+});
+assert.equal(permitted.availability,"AVAILABLE");
+assert.equal(permitted.massClass,2);
+assert.equal(permitted.colour,"violet");
+assert.equal(permitted.massEntry,"INTROIT");
+assert.deepEqual(permitted.precedingRites,["ROGATIONS"]);
+assert.equal(permitted.gloria,false);
+assert.equal(permitted.credo,false);
+certifiedMock.properSections[6].frenchVerified=false;
+assert.equal(rogationProperReady(certifiedMock,syntheticProper),false);
 
 assert.equal(graph.length,6);
 const built=buildRogationsPayload({graph,payload});
@@ -73,7 +160,7 @@ assert.equal(state.handoff,"INTROIT");
 assert.equal(state.ordinaryOpeningSuppressed,true);
 
 const resolved=makeResolvedMass({
-  date:"2027-05-10",
+  date:"2027-05-03",
   form:"MISSA_CANTATA_INCENSE",
   presentationMode:"MISSAL",
   calendarCelebration:{id:"feria-rogationum",type:"CALENDAR"},
