@@ -66,8 +66,10 @@ assert.match(pray,/pray\.de_profundis/);
 assert.match(pray,/pray\.eternal_rest/);
 assert.match(learn,/data-ao-learn-module/);
 assert.match(learn,/ensureLearnModule/);
-assert.match(home,/function openRoute\(route\)/);
-assert.match(home,/AO_PRAY_APP_V1\?\.open/);
+assert.match(home,/function openRoute\(route,\{trigger=null\}=\{\}\)/);
+assert.doesNotMatch(home,/AO_PRAY_APP_V1\?\.open\?\.\(\)/,"Home must not silently substitute generic Pray hub");
+assert.match(home,/data-home-shortcut-retry/,"Home must expose a visible exact-target retry");
+assert.match(home,/AO_PRAY_V435930\?\.open\?\.\(id,/,"Home must use exact Prayer fallback");
 assert.match(script,/data-ao-scripture-context/);
 assert.match(find,/data-find-filter/);
 assert.match(explore,/EXPLORE_LENSES=Object\.freeze/);
@@ -96,7 +98,16 @@ const reviewedIds=audit.orphaned_place_profile_candidates.map(x=>x.place_id).sor
 assert.deepEqual(orphanIds,reviewedIds,"unlinked Place records changed: reconcile with Explore audit, not new duplicate imports");
 assert.equal(g.places.length,audit.summary.geographical_place_profile_count);
 assert.equal(g.places.length-orphanIds.length,audit.summary.geographical_place_profiles_with_known_lens_relationship);
-assert.ok(audit.orphaned_place_profile_candidates.every(x=>x.relationship_status==="NOT_VERIFIED"));
+assert.ok(audit.orphaned_place_profile_candidates.every(x=>x.current_resolution==="DISCOVERABLE_VIA_VERIFIED_RELATED_PLACE"));
+const officialLinks=json("data/geography/related-places.v1.json").relationships;
+const linkedPlaceIds=new Set(officialLinks.flatMap(link=>[link.source_place_id,link.target_place_id]));
+assert.ok(orphanIds.every(id=>linkedPlaceIds.has(id)),"historically unlinked places must be recoverable through official relationship links");
+assert.ok(officialLinks.every(link=>/^https:\/\//.test(link.source_url)),"linked places require original institutional sources");
+assert.equal(audit.summary.geographical_place_profiles_with_related_place_discovery,g.places.length);
+assert.equal(audit.summary.source_level_orphan_place_records,0);
+assert.equal(audit.summary.conditional_home_fallbacks_current,0);
+for(const id of ["RCH-004","RCH-011"])
+ assert.equal(findings.get(id).current_resolution.status,"REMEDIATED_ON_MAIN");
 
 console.log(JSON.stringify({
  status:"SOURCE_CONTRACT_PASS",
