@@ -27,7 +27,7 @@ export function pickActiveCue({
   // early source cue real territory without inserting blank lead-in prose.
   const steadyOffset=viewport*Math.min(.7,Math.max(.3,Number(focusRatio)||.46));
   const firstCenter=Math.max(24,(usable[0].top+usable[0].bottom)/2);
-  const openingOffset=Math.min(steadyOffset,Math.max(24,firstCenter+top*.3));
+  const openingOffset=Math.min(steadyOffset,Math.max(24,firstCenter+top*.8));
   const focus=top+openingOffset;
   let best=usable[0],bestDistance=Infinity;
   for(const item of usable){
