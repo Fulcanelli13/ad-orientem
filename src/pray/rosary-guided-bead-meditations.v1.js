@@ -670,7 +670,7 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1=Object.freeze({
     },
     {
       "bead": 8,
-      "en": "They spit upon the Lord.",
+      "en": "They spit upon the Lord in mockery.",
       "fr": "Ils crachent sur le Seigneur."
     },
     {
