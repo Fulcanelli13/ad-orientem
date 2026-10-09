@@ -23,7 +23,8 @@ try{
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
  const dates=["2024-05-06","2027-05-03","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
-   "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01","2024-12-04","2027-12-04","2026-12-04","2022-12-04"];
+   "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01","2024-12-04","2027-12-04","2026-12-04","2022-12-04",
+   "2024-01-25","2027-01-25","2024-02-22","2027-02-22"];
  const result=[];
  for(const date of dates){
    const row=await page.evaluate(async date=>{
@@ -73,6 +74,25 @@ try{
    assert.ok(item.postcommunions>=2,date+" must include second Postcommunion");
  }
 
+
+ // Historic 2024/2027 count disagreements on 25 Jan and 22 Feb come
+ // from witnesses that omit the linked Apostle or the Lenten feria in
+ // their *displayed count*. The three Mass orations still must exist.
+ for(const date of ["2024-01-25","2027-01-25"]){
+   const row=result.find(x=>x.date===date);
+   assert.equal(row.properStatus,"ready",date+": St Paul Conversion Proper absent");
+   assert.ok(row.comms.some(x=>x.id==="sancti:01-25c:4:w"),date+": St Peter apostolic commemoration omitted");
+   for(const key of ["collects","secrets","postcommunions"])
+     assert.ok(row[key]>=2,date+": St Peter "+key+" not composed");
+ }
+ for(const date of ["2024-02-22","2027-02-22"]){
+   const row=result.find(x=>x.date===date);
+   assert.equal(row.properStatus,"ready",date+": Chair of St Peter Proper absent");
+   assert.ok(row.comms.some(x=>x.id==="sancti:02-22c:4:r"),date+": St Paul commemoration omitted");
+   assert.ok(row.comms.some(x=>/^tempora:Quad/.test(x.id)),date+": privileged Lenten feria omitted");
+   for(const key of ["collects","secrets","postcommunions"])
+     assert.ok(row[key]>=3,date+": one of three appointed "+key+" absent");
+ }
  // The III-class St Peter Chrysologus on Dec 4 requires the III-class
  // Advent weekday plus a commemoration of St Barbara (ordos and 1962).
  // Both accompanying three-prayer sets must survive into the Mass Proper.
