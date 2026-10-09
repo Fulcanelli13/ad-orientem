@@ -186,6 +186,9 @@ try{
   const phoneAudit=[];
   for(const width of [390,320]){
     await page.setViewportSize({width,height:844});
+    // The section menu is display:none while closed, so its clickable geometry
+    // must be measured with the menu actually open.
+    await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
     const audit=await page.evaluate(()=>{
       const root=document.querySelector("#ao-r17-native-reader-preview");
       const rect=selector=>{
@@ -228,6 +231,7 @@ try{
     assert.ok(audit.scholaDock?.left>=0&&audit.scholaDock?.right<=width+1,
       "Schola dock extends beyond the phone screen: "+JSON.stringify(audit));
     phoneAudit.push({width,audit});
+    await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
   }
   await page.setViewportSize({width:390,height:844});
 
