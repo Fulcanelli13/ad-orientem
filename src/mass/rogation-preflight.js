@@ -119,7 +119,7 @@ export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis
       root.setAttribute("data-ao-rogation-preflight","");
       root.innerHTML='<summary>Rogation observance</summary><label>Public rite <select data-rogation-service><option value="">No public litanies</option><option value="PUBLIC_PROCESSION">Public procession</option><option value="ORDINARY_AUTHORIZED_SUPPLICATIONS">Authorized public supplications</option></select></label><label>Mass <select data-rogation-choice><option value="DAY_MASS">Mass of the day</option><option value="ROGATION_MASS">Rogation Mass · Exaudivit</option></select></label><p data-rogation-status role="status"></p>';
       root.style.cssText="margin:9px 0;padding:12px 14px;border:1px solid var(--liturgical-border,rgba(197,174,116,.28));border-radius:12px;background:var(--liturgical-soft,rgba(255,255,255,.025));color:var(--text,#ede4d9);font:inherit";
-      root.querySelector("summary").style.cssText="cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center";
+      root.querySelector("summary").style.cssText="cursor:pointer;font-weight:600;min-height:44px;line-height:44px;display:list-item";
       root.querySelectorAll("label").forEach(x=>x.style.cssText="display:block;margin-top:11px;font-size:.83rem");
       root.querySelectorAll("select").forEach(x=>x.style.cssText="display:block;min-height:44px;max-width:100%;margin-top:4px;padding:8px;border:1px solid var(--liturgical-border,rgba(255,255,255,.2));border-radius:8px;background:var(--surface-1,#12202c);color:inherit");
       root.addEventListener("change",e=>{
