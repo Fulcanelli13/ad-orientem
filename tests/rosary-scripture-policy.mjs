@@ -37,8 +37,12 @@ for(const [id,ctx] of Object.entries(ROSARY_MYSTERY_CONTEXT_V1)){
 }
 assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo4.kind,"related_scripture_for_doctrinal_mystery");
 assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo5.kind,"traditional_marian_typology");
-assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo4.summary.en,/does not narrate her Assumption/);
-assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo5.summary.en,/God.s people/);
+assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo4.summary.en,/assumed body and soul into heavenly glory/);
+assert.match(readFileSync("src/pray/rosary-scripture-policy.js","utf8"),/The Assumption is not narrated here/,
+ "historical clarification belongs in Scripture guidance, not the meditation");
+assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo5.summary.en,/Mother of the King of kings/);
+assert.match(readFileSync("src/pray/rosary-scripture-policy.js","utf8"),/God.s people and traditionally interpreted/,
+ "symbolic and ecclesial interpretation must remain in Scripture guidance");
 assert.equal(rosaryScripturePassage("unknown"),null,"unknown mystery must fail closed");
 assert.equal(audit.rows.length,200,"all 200 original cues must remain accounted for in the editorial archive");
 assert.equal(new Set(audit.rows.map(x=>x.id)).size,200,"original bead identities were lost");
