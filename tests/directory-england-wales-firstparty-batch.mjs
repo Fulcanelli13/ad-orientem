@@ -6,8 +6,8 @@ import {stageFirstPartyMassBatch,mergeStagedFirstPartyMasses} from "../tools/dir
 const read=f=>JSON.parse(fs.readFileSync(f,"utf8"));
 const canonical=read("data/directory/generated/v19/diocesan.v1.json");
 const review=read("data/directory/research/england-wales-first-party-reconciliation-20261009.v1.json");
-assert.equal(canonical.records.length,65);
-assert.equal(new Set(canonical.records.map(r=>r.u)).size,65);
+assert.equal(canonical.records.length,73);
+assert.equal(new Set(canonical.records.map(r=>r.u)).size,73);
 assert.equal(review.imported.length,9);
 assert.equal(review.held.length,12);
 assert.equal(review.held.find(r=>r.id==="DIO-GB-GLASGOW-TORYGLEN").decision,"ARCHIVED_DISCONTINUED");
