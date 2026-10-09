@@ -758,12 +758,14 @@
         ],
         "breakpoint": [
           "CASTI",
-          "ABORTCLAR"
+          "ABORTCLAR",
+          "USCCB_DIRECT2010"
         ],
         "catholicCase": [
           "CASTI",
           "ABORTCLAR",
-          "NCBC_ECTOPIC"
+          "NCBC_ECTOPIC",
+          "USCCB_DIRECT2010"
         ],
         "counter": [
           "ACOG_ABORTION"
@@ -771,16 +773,18 @@
         "response": [
           "CASTI",
           "ABORTCLAR",
-          "ACOG_ECTOPIC"
+          "ACOG_ECTOPIC",
+          "USCCB_DIRECT2010"
         ],
         "bottom": [
           "CASTI",
           "ABORTCLAR",
-          "NCBC_ECTOPIC"
+          "NCBC_ECTOPIC",
+          "USCCB_DIRECT2010"
         ]
       },
-      "source_scope_caveat": "ACOG gives clinical treatment options, not moral permission. The CDF gives the normative direct/indirect distinction. NCBC is a non-magisterial application illustrating accepted salpingectomy and debate surrounding methotrexate/salpingostomy; this does not settle every disputed technique.",
-      "editorial_review_focus": "Emergency presentation and clinical urgency; no postponement of lifesaving care; do not confuse ACOG guidance, magisterial doctrine and non-magisterial bioethical judgments.",
+      "source_scope_caveat": "The CDF 2009 clarification restates the direct-abortion prohibition, not a classification of ectopic procedures. The 2010 USCCB Committee on Doctrine statement separately addresses the distinction between direct abortion and legitimate medical procedures (original issuer summary read, linked complete PDF not collated). Particular procedure classifications remain non-magisterial and disputed.",
+      "editorial_review_focus": "Separate CDF 2009 universal norm, 2010 USCCB Committee distinction and non-magisterial ectopic method determinations; urgent medical assessment cannot be delayed.",
       "stage_verification_status": "INTENTIONALLY_MATCHED_LOCATORS_EDITORIAL_PROOF_PENDING"
     },
     "CSE143": {
