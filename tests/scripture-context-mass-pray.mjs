@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./extended-lesson-scripture-context.mjs";
 import "./mass-scripture-reading-register.mjs";
 import "./scripture-segmented-context.mjs";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
