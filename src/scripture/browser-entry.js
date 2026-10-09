@@ -1,6 +1,7 @@
 import { mountScriptureLibrary } from "./library.js";
 import { installScriptureStyles } from "./styles.js";
 import { loadScriptureBook } from "./pack-loader.js";
+import { parseScriptureContext } from "./context.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -29,14 +30,14 @@ export function installScriptureBrowserOwner(win=globalThis){
    previousFocus?.focus?.();previousFocus=null;
    return true;
  }
- function open({passage=null,language=null}={}){
+ function open({passage=null,language=null,context=null}={}){
    const node=overlay();if(!node)return false;
    installScriptureStyles(doc);
    if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
    reader?.destroy?.();
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{
-     passage,language:current==="fr"?"fr":"en",storage:win.localStorage,
+     passage,context,language:current==="fr"?"fr":"en",storage:win.localStorage,
      onClose:close,
      onNeedBook:async({book,editionId})=>{
        const key=editionId+":"+book;
@@ -61,7 +62,27 @@ export function installScriptureBrowserOwner(win=globalThis){
    node.querySelector?.("[data-scripture-close]")?.focus?.();
    return true;
  }
+ function openContext(reference,{language=null}={}){
+   const parsed=parseScriptureContext(reference);
+   if(!parsed)return false;
+   return open({passage:parsed.passage,context:parsed,language});
+ }
  const click=e=>{
+   const capsule=e.target?.closest?.("[data-ao-scripture-context]");
+   if(capsule){
+     e.preventDefault?.();e.stopImmediatePropagation?.();
+     const accepted=openContext(capsule.getAttribute("data-ao-scripture-context"));
+     if(!accepted){
+       const error=doc.createElement("span");
+       error.setAttribute("role","alert");error.className="aoScriptureContextError";
+       error.textContent=win.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"
+         ?"Référence biblique non reconnue. Utilisez le lien de la source."
+         :"Unrecognised Bible reference. Use the original source link.";
+       capsule.parentElement?.querySelector?.(".aoScriptureContextError")?.remove();
+       capsule.insertAdjacentElement("afterend",error);
+     }
+     return;
+   }
    const button=e.target?.closest?.("[data-home-scripture]");
    if(!button)return;
    e.preventDefault?.();e.stopPropagation?.();open();
@@ -80,9 +101,10 @@ export function installScriptureBrowserOwner(win=globalThis){
  };
  doc?.addEventListener?.("click",click,true);
  doc?.addEventListener?.("keydown",key);
- const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,close,
+ const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,openContext,close,
    status:()=>Object.freeze({installed:true,open:Boolean(reader),reader:reader?.status?.()??null})});
  win.AO_SCRIPTURE_APP_V1=api;
+ win.AO_SCRIPTURE_CONTEXT_V1=Object.freeze({version:"scripture-context-v1",open:openContext,parse:parseScriptureContext});
  return api;
 }
 if(typeof window!=="undefined"&&typeof document!=="undefined")installScriptureBrowserOwner(window);
