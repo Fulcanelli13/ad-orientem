@@ -1,0 +1,1460 @@
+{
+  "version": "CSE_MORAL_REASONING_80_STAGE_BATCH_V1",
+  "date": "2026-10-09",
+  "based_on": "data/learn/sexual-ethics-certification-evidence.v2.json",
+  "status": "STAGE_SPECIFIC_SOURCE_SCOPE_TRIAGE_AND_REVISIONS_NOT_ORIGINAL_FULL_TEXT_CERTIFICATION",
+  "rule": "The primary-document review status records only a bounded original-passage scope comparison, not complete bilingual text collation or certification. All 55 original debates remain uncertified; editorial objections are not quotations.",
+  "summary": {
+    "debates": 10,
+    "stages": 80,
+    "status_counts": {
+      "CITED_SOURCE_CONTEXT_ONLY_NOT_DIRECT_ADVOCACY": 4,
+      "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION": 38,
+      "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM": 22,
+      "AUTHOR_EXCERPTS_VIA_ADVERSE_SECONDARY_NOT_FULL_BOOK": 4,
+      "OPPONENT_ATTRIBUTION_NOT_SUPPORTED_BY_DOCUMENT": 4,
+      "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM": 8
+    },
+    "fully_certified": 0
+  },
+  "cases": [
+    {
+      "id": "CSE007",
+      "topic": "Consent and the moral object",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "CITED_SOURCE_CONTEXT_ONLY_NOT_DIRECT_ADVOCACY",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "PP_CONSENT",
+              "canonical_url": "https://www.plannedparenthood.org/learn/relationships/sexual-consent"
+            }
+          ],
+          "finding_en": "Consent is a necessary condition; the cited consent advice is not an argument that consent is sufficient for Catholic moral goodness.",
+          "finding_fr": "Le consentement est nécessaire ; la page citée n'affirme pas qu'il suffit à assurer la bonté morale catholique.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "CITED_SOURCE_CONTEXT_ONLY_NOT_DIRECT_ADVOCACY",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "PP_CONSENT",
+              "canonical_url": "https://www.plannedparenthood.org/learn/relationships/sexual-consent"
+            }
+          ],
+          "finding_en": "Coercion is a grave injustice; this concession should not be attributed to a source as a complete sexual ethic.",
+          "finding_fr": "Le caractère grave de la contrainte ne fait pas du consentement une morale sexuelle complète.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "ST18",
+              "canonical_url": "https://www.newadvent.org/summa/2018.htm"
+            }
+          ],
+          "finding_en": "An act may be freely chosen and nevertheless morally defective by object; see I-II q18.",
+          "finding_fr": "Un acte librement voulu peut rester mauvais par son objet : voir I-II q.18.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Veritatis Splendor §§78–80 explicitly rejects reducing moral goodness to aims or consequences.",
+          "finding_fr": "Veritatis Splendor §§78–80 refuse de réduire la bonté morale aux fins ou aux conséquences.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "ST18",
+              "canonical_url": "https://www.newadvent.org/summa/2018.htm"
+            }
+          ],
+          "finding_en": "Consent to adultery cannot remove an existing obligation of fidelity: moral inference from object and justice.",
+          "finding_fr": "Consentir à l'adultère ne supprime pas le devoir de fidélité : inférence morale sur l'objet et la justice.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "PP_CONSENT",
+              "canonical_url": "https://www.plannedparenthood.org/learn/relationships/sexual-consent"
+            }
+          ],
+          "finding_en": "The example of unattached adults is an authored challenge, not a quoted Planned Parenthood passage.",
+          "finding_fr": "Le cas de deux adultes libres est une objection rédigée, non une citation de Planned Parenthood.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "ST18",
+              "canonical_url": "https://www.newadvent.org/summa/2018.htm"
+            }
+          ],
+          "finding_en": "The answer turns on moral object and conjugal goods, not personal freedom alone.",
+          "finding_fr": "La réponse porte sur l'objet moral et les biens conjugaux, non seulement sur la liberté.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Veritatis Splendor §§78–80; Aquinas I-II q18 aa2–4; Planned Parenthood consent page is contextual",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Necessity of consent and sufficiency for moral rectitude remain logically different claims.",
+          "finding_fr": "Consentement nécessaire et suffisance pour la rectitude morale restent deux affirmations différentes.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE008",
+      "topic": "Good intention and situation ethics",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "AUTHOR_EXCERPTS_VIA_ADVERSE_SECONDARY_NOT_FULL_BOOK",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "FLETCHER_EXCERPTS",
+              "canonical_url": "https://www.christianstudylibrary.org/article/situation-ethics"
+            }
+          ],
+          "finding_en": "Fletcher's claim about agape as a supreme norm is attested through quotations in John Murray's critique, not a full direct check of his book.",
+          "finding_fr": "L'agapè comme seule norme est attestée par les citations de Fletcher chez John Murray, sans vérification du livre intégral.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "AUTHOR_EXCERPTS_VIA_ADVERSE_SECONDARY_NOT_FULL_BOOK",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "FLETCHER_TABLET",
+              "canonical_url": "https://www.thetablet.co.uk/student-zone/ocr/religion-and-ethics/situation-ethics/"
+            }
+          ],
+          "finding_en": "The secondary review explicitly prints Fletcher's claim that loving conduct is morally right in the situation.",
+          "finding_fr": "La critique secondaire reproduit une affirmation précise de Fletcher sur l'acte le plus aimant.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "ST18",
+              "canonical_url": "https://www.newadvent.org/summa/2018.htm"
+            }
+          ],
+          "finding_en": "Aquinas on act and will permits good intentions without endorsing every chosen means.",
+          "finding_fr": "Saint Thomas admet l'importance d'une bonne intention sans justifier tout moyen choisi.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "ST18",
+              "canonical_url": "https://www.newadvent.org/summa/2018.htm"
+            },
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Veritatis Splendor §§78–80 states a good end cannot render an intrinsically evil object good.",
+          "finding_fr": "Veritatis Splendor §§78–80 refuse qu'une fin bonne rende bon un objet intrinsèquement mauvais.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Object, intention and circumstances are distinct dimensions, not mutually exclusive ones.",
+          "finding_fr": "Objet, intention et circonstances sont distincts sans être séparés dans l'acte.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "FLETCHER_EXCERPTS",
+              "canonical_url": "https://www.christianstudylibrary.org/article/situation-ethics"
+            }
+          ],
+          "finding_en": "The question about inseparability is a reasoned hypothetical; Fletcher's original wording was not checked.",
+          "finding_fr": "La question sur leur inséparabilité est construite ; elle n'est pas une citation de Fletcher.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Different means to a good end require distinct judgments about what is deliberately chosen.",
+          "finding_fr": "Plusieurs moyens poursuivant une même fin demandent des jugements moraux distincts.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher passages reproduced by John Murray, Situation Ethics, criticism §§1–2; Veritatis Splendor §§78–83",
+          "source_references": [
+            {
+              "id": "ST18",
+              "canonical_url": "https://www.newadvent.org/summa/2018.htm"
+            },
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Intentions matter but cannot turn an evil moral object good.",
+          "finding_fr": "L'intention importe mais ne transforme pas un objet mauvais en bien.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE010",
+      "topic": "Intrinsic evil and culpability",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "AUTHOR_EXCERPTS_VIA_ADVERSE_SECONDARY_NOT_FULL_BOOK",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "FLETCHER_EXCERPTS",
+              "canonical_url": "https://www.christianstudylibrary.org/article/situation-ethics"
+            }
+          ],
+          "finding_en": "Fletcher's situationist exception claim is traceable only through selected author excerpts in an adverse critic's essay.",
+          "finding_fr": "La thèse situationniste de Fletcher n'est accessible ici qu'à travers des extraits cités par un critique.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "AUTHOR_EXCERPTS_VIA_ADVERSE_SECONDARY_NOT_FULL_BOOK",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "FLETCHER_TABLET",
+              "canonical_url": "https://www.thetablet.co.uk/student-zone/ocr/religion-and-ethics/situation-ethics/"
+            }
+          ],
+          "finding_en": "Compassion and context can be important, but quotations do not establish an absolute clinical inference.",
+          "finding_fr": "La compassion et le contexte comptent sans constituer une démonstration clinique générale.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Veritatis Splendor distinguishes objectively evil object from the culpability of a particular agent.",
+          "finding_fr": "Veritatis Splendor distingue objet mauvais et culpabilité d'une personne.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "An exception based solely on circumstances does not alter intrinsic moral specification.",
+          "finding_fr": "Une exception tirée des circonstances ne modifie pas l'espèce morale intrinsèque.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Intrinsically wrong refers to the object chosen, not identical guilt for all persons.",
+          "finding_fr": "« Intrinsèquement mauvais » qualifie l'objet choisi, non une culpabilité identique pour tous.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "FLETCHER_EXCERPTS",
+              "canonical_url": "https://www.christianstudylibrary.org/article/situation-ethics"
+            }
+          ],
+          "finding_en": "The request for proof rather than assertion is an illustrative challenge, not Fletcher's direct question.",
+          "finding_fr": "La demande de démonstration est une contre-objection illustrative, non la question littérale de Fletcher.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Calling an act intrinsically evil requires a warranted account of its moral object.",
+          "finding_fr": "Qualifier l'acte exige une justification de son objet moral, non une simple étiquette.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Fletcher excerpts in Murray's critique; Veritatis Splendor §§79–83; Aquinas I-II q18",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Objective prohibition and subjective responsibility must never be conflated.",
+          "finding_fr": "Interdiction objective et responsabilité subjective ne doivent pas être confondues.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE012",
+      "topic": "Christ's teaching and later moral applications",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "OPPONENT_ATTRIBUTION_NOT_SUPPORTED_BY_DOCUMENT",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "CURRAN_CDF1986",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html"
+            }
+          ],
+          "finding_en": "The CDF's letter lists disputed sexual doctrines; it does NOT attribute a 'Jesus never mentioned it' thesis to Curran.",
+          "finding_fr": "La lettre CDF énumère des positions discutées ; elle n'attribue PAS à Curran l'argument « Jésus ne l'a jamais dit ».",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "OPPONENT_ATTRIBUTION_NOT_SUPPORTED_BY_DOCUMENT",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "CURRAN_CDF1986",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html"
+            }
+          ],
+          "finding_en": "The absence of modern terminology from Gospels is an observation, not an original Curran thesis.",
+          "finding_fr": "L'absence de termes modernes des Évangiles est un constat, pas une thèse originale vérifiée de Curran.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Whether a modern practice is named is separate from its moral properties and Scriptural principles.",
+          "finding_fr": "L'absence du nom d'une technique se distingue de sa portée morale et des principes scripturaires.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Christian moral teaching is not limited to exact nouns used in the Gospels; this is a theological inference.",
+          "finding_fr": "La morale chrétienne dépasse les seuls termes évangéliques : c'est une inférence théologique.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Jesus discusses adultery and marriage, Paul bodily holiness; each specific modern extension needs proof.",
+          "finding_fr": "Jésus enseigne sur l'adultère et le mariage, Paul sur le corps ; l'application moderne doit être démontrée.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "CURRAN_CDF1986",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860725_carlo-curran_en.html"
+            }
+          ],
+          "finding_en": "The worry about importing later prejudices is an authored counterquestion, not Curran's verified wording.",
+          "finding_fr": "Le soupçon de préjugés tardifs est une contre-objection construite, pas une formule attestée de Curran.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "An extension from Scripture requires an argued analogy with the chosen act, not lexical identity.",
+          "finding_fr": "Appliquer l'Écriture suppose un raisonnement sur l'acte choisi, non une identité lexicale.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "1986 CDF letter to Curran, list of disputed subjects; Scripture Mt 5:27–32; Mt 19:3–12; 1 Cor 6:9–20",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "A missing ancient term neither entails permission nor entails prohibition.",
+          "finding_fr": "L'absence d'un mot antique ne prouve ni permission ni interdiction.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE013",
+      "topic": "St Paul and historical culture",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "OPPONENT_ATTRIBUTION_NOT_SUPPORTED_BY_DOCUMENT",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "Curran's 1987 text addresses the history of Catholic sexual-ethical argument, not this verbatim statement about Paul's culture.",
+          "finding_fr": "L'article de Curran examine l'histoire de la morale sexuelle, non cette formule littérale sur la culture de Paul.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "OPPONENT_ATTRIBUTION_NOT_SUPPORTED_BY_DOCUMENT",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "The critical observation about ancient culture must be distinguished from an attributed published claim.",
+          "finding_fr": "La contextualisation de l'Antiquité ne doit pas être présentée comme une citation d'auteur.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Pauline texts have literary and cultural contexts; what follows morally must be argued.",
+          "finding_fr": "Les textes pauliniens ont un contexte culturel ; la conséquence morale doit être argumentée.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Historic context alone cannot demonstrate that a claim was meant only for that context.",
+          "finding_fr": "Le seul contexte historique ne démontre pas qu'une norme soit limitée à son époque.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Paul appeals to belonging to Christ and holiness; that is not merely etiquette.",
+          "finding_fr": "Paul évoque l'appartenance au Christ et la sainteté, non de simples convenances.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "The ancient-anthropology counterquestion is authored rather than quoted from Curran.",
+          "finding_fr": "La contre-question sur l'anthropologie antique est construite, non citée de Curran.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "The force of Paul's theological reason remains a distinct question from his era's customs.",
+          "finding_fr": "La portée d'une raison théologique se distingue des coutumes de son siècle.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, history of manuals and sexual theology; 1 Cor 6:12–20; 1 Thess 4:3–8",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            }
+          ],
+          "finding_en": "Contextual study is necessary, but age of the text is not itself a refutation.",
+          "finding_fr": "L'étude du contexte est nécessaire, mais l'ancienneté n'est pas une réfutation.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE014",
+      "topic": "Moral doctrine and historical change",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "Curran's original essay explicitly discusses development at Vatican II and continuity in sexual ethics.",
+          "finding_fr": "Le texte original de Curran discute des changements conciliaires et de la continuité en morale sexuelle.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            },
+            {
+              "id": "CASTI",
+              "canonical_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+            }
+          ],
+          "finding_en": "Historical changes in formulations and disciplines are relevant, but do not entail any exact contradiction.",
+          "finding_fr": "Les changements de formulations et de discipline comptent sans prouver une contradiction précise.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "CASTI",
+              "canonical_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+            },
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Changing discipline or wording is not identical to reversal of an intrinsic moral norm.",
+          "finding_fr": "Un changement de pratique n'est pas le renversement d'une norme morale intrinsèque.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "CASTI",
+              "canonical_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+            }
+          ],
+          "finding_en": "A claim of contradiction must concern the same moral object and level of doctrinal assertion.",
+          "finding_fr": "Une contradiction alléguée doit viser le même objet moral et un jugement doctrinal comparable.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "SCR",
+              "canonical_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html"
+            },
+            {
+              "id": "CASTI",
+              "canonical_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+            },
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Casti Connubii supplies one primary continuity witness, not a proof of all centuries.",
+          "finding_fr": "Casti Connubii constitue un témoin primaire de continuité, non la preuve de tous les siècles.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "The charge of selective evidence is an illustrative skeptical question, not an original Curran quotation.",
+          "finding_fr": "L'accusation de sélection des sources est une question critique construite, non une citation de Curran.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "TRENT6",
+              "canonical_url": "https://en.wikisource.org/wiki/The_Catechism_of_the_Council_of_Trent/Part_3:_The_Sixth_Commandment"
+            }
+          ],
+          "finding_en": "The revised answer tests doctrinal reversal against matching act, circumstances and authority.",
+          "finding_fr": "La réponse révisée confronte le même acte, ses circonstances et le degré d'autorité.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Curran 1987, Vatican II and manual tradition; Veritatis Splendor §§78–83; Casti Connubii",
+          "source_references": [
+            {
+              "id": "CASTI",
+              "canonical_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+            },
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "Development is compatible with enduring norms, unless an actual opposed proposition is demonstrated.",
+          "finding_fr": "Développement et normes durables coexistent tant qu'une proposition contraire n'est pas prouvée.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE016",
+      "topic": "Conscience and magisterial teaching",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "Curran's original article supports the fact of dissent, not the exact assertion that any sincere conscience makes an act right.",
+          "finding_fr": "Curran atteste le dissentiment, non la thèse littérale que toute conscience sincère rend l'acte bon.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "The appeal to conscientious judgment has a real basis without equating sincerity and truth.",
+          "finding_fr": "Le jugement de conscience importe sans identifier sincérité et vérité.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "ST19",
+              "canonical_url": "https://www.newadvent.org/summa/2019.htm"
+            }
+          ],
+          "finding_en": "Aquinas I-II q19 aa5–6 distinguishes a conscience judgment from the truth of its object.",
+          "finding_fr": "Saint Thomas I-II q19 aa5–6 distingue le jugement de conscience de la vérité de son objet.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "DONUMVER",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html"
+            }
+          ],
+          "finding_en": "Donum Veritatis §28 explicitly rejects an autonomous conscience as doctrinal arbiter.",
+          "finding_fr": "Donum Veritatis §28 rejette expressément la conscience comme arbitre doctrinal autonome.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "ST19",
+              "canonical_url": "https://www.newadvent.org/summa/2019.htm"
+            }
+          ],
+          "finding_en": "Donum Veritatis §§23–31 permits responsible inquiry with continuing obligation toward authority.",
+          "finding_fr": "Donum Veritatis §§23–31 admet une recherche loyale sous l'obligation due à l'autorité.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "The 'make it agree with Church' question is authored, not verbatim Curran.",
+          "finding_fr": "La question « s'accorder avec l'Église » est construite, non une citation de Curran.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            },
+            {
+              "id": "DONUMVER",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html"
+            }
+          ],
+          "finding_en": "The revised reply states authentic Magisterium is not a mere optional opinion; serious difficulties may still be investigated.",
+          "finding_fr": "La réponse précise que le Magistère authentique n'est pas une simple opinion tout en admettant les difficultés.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q19 aa5–6; Donum Veritatis §§23–31; Curran 1987 on dissent",
+          "source_references": [
+            {
+              "id": "VS",
+              "canonical_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            }
+          ],
+          "finding_en": "An erroneous conscience remains possible despite sincere conviction.",
+          "finding_fr": "Une conscience sincère peut néanmoins être erronée.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE018",
+      "topic": "Dissent and authority of teaching",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "Curran's 1987 essay documents actual dissent, not the exact claim that disagreement makes moral options free.",
+          "finding_fr": "L'essai de Curran manifeste un dissentiment réel, non la thèse littérale que la divergence libère tout choix.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "Expert disagreement matters as evidence of debate, but is not itself a doctrinal ruling.",
+          "finding_fr": "Le désaccord d'experts indique un débat, non un jugement doctrinal.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "DONUMVER",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html"
+            }
+          ],
+          "finding_en": "Donum Veritatis §24 explicitly recognizes some prudential magisterial judgments may be defective.",
+          "finding_fr": "Donum Veritatis §24 reconnaît que certains jugements prudentiels peuvent être imparfaits.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "DONUMVER",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html"
+            }
+          ],
+          "finding_en": "Donum Veritatis §28 distinguishes serious difficulty from rejection based only on contrary probability.",
+          "finding_fr": "Donum Veritatis §28 distingue difficulté sérieuse et rejet fondé sur une simple opinion probable.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "DONUMVER",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html"
+            }
+          ],
+          "finding_en": "Donum Veritatis §§23–31 distinguishes grades of teaching and the proper response.",
+          "finding_fr": "Donum Veritatis §§23–31 distingue les degrés de magistère et leurs exigences.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "CURRAN1987",
+              "canonical_url": "https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/"
+            }
+          ],
+          "finding_en": "The rhetorical case of differing theologians is illustrative rather than an author quote.",
+          "finding_fr": "Le cas des théologiens divisés est illustratif, non une citation.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "DONUMVER",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html"
+            }
+          ],
+          "finding_en": "Persistent theological difficulty does not by itself imply definitive teaching is optional.",
+          "finding_fr": "Une difficulté persistante ne rend pas facultatif tout enseignement définitif.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Donum Veritatis §§23–31 and §§32–41; Curran 1987 original essay",
+          "source_references": [
+            {
+              "id": "DONUMVER",
+              "canonical_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html"
+            }
+          ],
+          "finding_en": "The teaching's authority, not a count of scholars, determines the ecclesial obligation.",
+          "finding_fr": "L'autorité de l'enseignement compte davantage que le nombre de théologiens.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE020",
+      "topic": "Habit, addiction and responsibility",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "CITED_SOURCE_CONTEXT_ONLY_NOT_DIRECT_ADVOCACY",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "NIDA_ADDICTION",
+              "canonical_url": "https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction"
+            }
+          ],
+          "finding_en": "The NIDA source addresses substance addiction, not a verified sexual-addiction diagnosis.",
+          "finding_fr": "Le texte NIDA traite des drogues, non d'un diagnostic vérifié de dépendance sexuelle.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "CITED_SOURCE_CONTEXT_ONLY_NOT_DIRECT_ADVOCACY",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "NIDA_ADDICTION",
+              "canonical_url": "https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction"
+            }
+          ],
+          "finding_en": "Compulsion as a phenomenon is relevant, but analogy between drugs and sex needs separate evidence.",
+          "finding_fr": "La compulsion importe, mais l'analogie entre substances et sexualité exige d'autres preuves.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "ST77",
+              "canonical_url": "https://www.newadvent.org/summa/2077.htm"
+            },
+            {
+              "id": "CCC",
+              "canonical_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.index.html"
+            }
+          ],
+          "finding_en": "Aquinas I-II q77 a6–7 explains diminished culpability through antecedent passion.",
+          "finding_fr": "Saint Thomas I-II q77 aa6–7 étudie la diminution de responsabilité par passion antécédente.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "ST77",
+              "canonical_url": "https://www.newadvent.org/summa/2077.htm"
+            },
+            {
+              "id": "ST78",
+              "canonical_url": "https://www.newadvent.org/summa/2078.htm"
+            }
+          ],
+          "finding_en": "Aquinas I-II q78 a2 distinguishes habit possessed from deliberate action by habit.",
+          "finding_fr": "Saint Thomas I-II q78 a2 distingue l'habitude possédée de l'acte choisi selon l'habitude.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "CCC",
+              "canonical_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.index.html"
+            },
+            {
+              "id": "ST77",
+              "canonical_url": "https://www.newadvent.org/summa/2077.htm"
+            }
+          ],
+          "finding_en": "The revised argument avoids treating every entrenched habit as fully involuntary.",
+          "finding_fr": "La révision évite d'assimiler toute habitude à une absence de volonté.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "NIDA_ADDICTION",
+              "canonical_url": "https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction"
+            }
+          ],
+          "finding_en": "The measurement objection is an illustrative challenge not stated by NIDA.",
+          "finding_fr": "La difficulté de mesurer la culpabilité est une objection illustrative, non une thèse NIDA.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "ST77",
+              "canonical_url": "https://www.newadvent.org/summa/2077.htm"
+            },
+            {
+              "id": "CCC",
+              "canonical_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.index.html"
+            }
+          ],
+          "finding_en": "Judgment of a specific person's culpability requires careful knowledge and freedom distinctions.",
+          "finding_fr": "La culpabilité individuelle exige un examen prudent de la connaissance et de la liberté.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Aquinas I-II q77 aa6–7; q78 a2; Catechism §2352; NIDA substance addiction only",
+          "source_references": [
+            {
+              "id": "ST77",
+              "canonical_url": "https://www.newadvent.org/summa/2077.htm"
+            },
+            {
+              "id": "ST78",
+              "canonical_url": "https://www.newadvent.org/summa/2078.htm"
+            }
+          ],
+          "finding_en": "A habit may mitigate, leave intact or aggravate culpability depending on how chosen.",
+          "finding_fr": "Une habitude peut diminuer, laisser intacte ou aggraver la culpabilité selon le choix.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    },
+    {
+      "id": "CSE021",
+      "topic": "Chastity and Freud's repression criticism",
+      "fully_certified": false,
+      "stages": [
+        {
+          "stage": "opposition",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "FREUD1908",
+              "canonical_url": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift"
+            }
+          ],
+          "finding_en": "Freud directly criticizes contemporary restrictions and their alleged link to nervous illness, not chastity as Thomistic virtue in exact wording.",
+          "finding_fr": "Freud critique les restrictions de son époque et leurs effets supposés, non la vertu thomiste sous ces mots.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "appeal",
+          "status": "ORIGINAL_AUTHOR_CONTEXT_REVIEWED_NOT_VERBATIM",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "FREUD1908",
+              "canonical_url": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift"
+            }
+          ],
+          "finding_en": "Some formation can be distressing; Freud's thesis must not be inflated into a measured universal outcome.",
+          "finding_fr": "Une formation peut causer de la détresse ; Freud ne fournit pas une mesure universelle de cet effet.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "concession",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "ST151",
+              "canonical_url": "https://www.newadvent.org/summa/3151.htm"
+            }
+          ],
+          "finding_en": "Aquinas II-II q151 a1 locates chastity under temperance rather than condemnation of desire.",
+          "finding_fr": "Saint Thomas II-II q151 a1 place la chasteté sous la tempérance, non la négation du désir.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "breakpoint",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "ST151",
+              "canonical_url": "https://www.newadvent.org/summa/3151.htm"
+            }
+          ],
+          "finding_en": "Self-governance is not identical with indiscriminate suppression: moral inference from virtue's object.",
+          "finding_fr": "La maîtrise de soi diffère de la suppression indistincte : inférence sur l'objet de la vertu.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "catholicCase",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "ST151",
+              "canonical_url": "https://www.newadvent.org/summa/3151.htm"
+            },
+            {
+              "id": "SACRA",
+              "canonical_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html"
+            }
+          ],
+          "finding_en": "Aquinas q151 and Sacra Virginitas distinguish virtue from fear or disdain for the body.",
+          "finding_fr": "Saint Thomas et Sacra Virginitas distinguent la vertu de la peur ou du mépris du corps.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "counter",
+          "status": "INFERENCE_OR_ILLUSTRATIVE_ARGUMENT_NOT_VERBATIM",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "FREUD1908",
+              "canonical_url": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift"
+            }
+          ],
+          "finding_en": "The psychological-harm challenge is a reasoned extrapolation, not Freud's exact question.",
+          "finding_fr": "L'objection clinique est une extrapolation raisonnable, non une question littérale de Freud.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "response",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "ST151",
+              "canonical_url": "https://www.newadvent.org/summa/3151.htm"
+            },
+            {
+              "id": "SACRA",
+              "canonical_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html"
+            }
+          ],
+          "finding_en": "The updated response concedes suffering without treating all chastity as clinically pathological.",
+          "finding_fr": "La réponse admet la souffrance sans assimiler toute chasteté à une pathologie.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        },
+        {
+          "stage": "bottom",
+          "status": "PRIMARY_DOCUMENT_SCOPE_REVIEWED_NOT_FULL_CERTIFICATION",
+          "source_locator_scope": "Freud 1908 original essay Modern Sexual Morality and Modern Nervousness; Aquinas II-II q151 a1; Sacra Virginitas",
+          "source_references": [
+            {
+              "id": "ST151",
+              "canonical_url": "https://www.newadvent.org/summa/3151.htm"
+            }
+          ],
+          "finding_en": "Virtuous chastity governs the sexual appetite rather than abolishing it.",
+          "finding_fr": "La chasteté vertueuse gouverne l'appétit sexuel au lieu de le supprimer.",
+          "original_full_paragraph_collation_complete": false,
+          "verbatim_opponent_quote_certified": false,
+          "independent_theological_and_french_approval": false
+        }
+      ]
+    }
+  ]
+}
