@@ -51,7 +51,7 @@ for(const x of evidence.readiness_v3.primary_reference_documents_consulted)asser
 assert.match(CSE_DEBATE_MAP.CSE006.opposition[0],/state coercion/);
 assert.match(CSE_DEBATE_MAP.CSE006.opposition[1],/contrainte étatique/);
 assert.match(CSE_DEBATE_MAP.CSE093.opposition[0],/atypical development of sex characteristics/);
-assert.match(CSE_DEBATE_MAP.CSE093.opposition[1],/développement sexuel atypique/);
+assert.match(CSE_DEBATE_MAP.CSE093.opposition[1],/développements atypiques des caractères sexuels/);
 assert.doesNotMatch(CSE_DEBATE_MAP.CSE141.counter[0],/module/);
 assert.doesNotMatch(CSE_DEBATE_MAP.CSE141.response[0],/focused reference|the module|app/);
 assert.match(CSE_DEBATE_MAP.CSE141.response[1],/justice/);
