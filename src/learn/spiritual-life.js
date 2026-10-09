@@ -78,12 +78,29 @@ function claimSources(claimIds){
   }
   return [...ids].map(id=>SPIRITUAL_LIFE_SOURCE_MAP[id]).filter(Boolean);
 }
+// The Tanquerey witness is split across two verified full-text pages:
+// general means (§§407ff.) and beginners' prayer/methods (§§643–700).
+// Cite the section actually containing the claims, never the first page
+// merely because it is stored as the default canonical URL.
+function sourceTarget(win,source,claimIds=[]){
+  if(source.id==="SL-TANQUEREY-1930"&&
+      claimIds.some(id=>/^SL0[34]-Q\d+$/.test(id)))
+    return source.continuation_url||source.canonical_url;
+  if(isFr(win)&&source.french_canonical_url)return source.french_canonical_url;
+  return source.canonical_url||"";
+}
 function claimSourceMarkup(win,claimIds){
   const sources=claimSources(claimIds);
   const links=sources.map(source=>{
-    if(!/^https:\/\//.test(source.canonical_url||""))return "";
-    const short=source.title.split(" · ").pop();
-    return `<a href="${esc(source.canonical_url)}" target="_blank" rel="noopener noreferrer" title="${esc(source.title)}" aria-label="${esc(source.title)}">${esc(short)} ↗</a>`;
+    const url=sourceTarget(win,source,claimIds);
+    if(!/^https:\/\//.test(url))return "";
+    const short=source.id==="SL-TANQUEREY-1930"
+      ?L(win,"Tanquerey · The Spiritual Life","Tanquerey · La Vie spirituelle")
+      :source.title.split(" · ").pop();
+    const section=source.id==="SL-TANQUEREY-1930"
+      ?(url===source.continuation_url?" · §§643–700":" · §§407–642")
+      :source.id==="SL-CIC83-992-997"?" · cann. 992–997":"";
+    return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" title="${esc(source.title+section)}" aria-label="${esc(source.title+section)}">${esc(short+section)} ↗</a>`;
   }).filter(Boolean);
   if(!links.length)return `<div class="aoSLInlineSources aoSLSourceHold">${esc(L(win,"Source link not verified","Lien source non vérifié"))}</div>`;
   return `<div class="aoSLInlineSources" data-ao-sl-claim-sources="${esc((claimIds||[]).join(" "))}"><span>${esc(L(win,"Sources","Sources"))}:</span> ${links.join(" · ")}</div>`;
@@ -95,7 +112,17 @@ function sourceMarkup(win,lesson){
   return `<details class="aoSLSources"><summary>${esc(L(win,"Sources & provenance","Sources & provenance"))} ▾</summary>${sources.map(source=>{
     const locators=Array.isArray(source.locators)?source.locators:(source.locator?[source.locator]:[]);
     const meta=[source.authority_type?String(source.authority_type).replaceAll("_"," "):"",source.role?String(source.role).replaceAll("_"," "):""].filter(Boolean).join(" · ");
-    return `<div class="aoSLSource"><a href="${esc(source.canonical_url)}" target="_blank" rel="noopener"><strong>${esc(source.title)}</strong> ↗</a>${meta?`<em>${esc(meta)}</em>`:""}${locators.length?`<div class="aoSLSourceLoc">${locators.map(esc).join("<br>")}</div>`:""}</div>`;
+    const target=sourceTarget(win,source,lessonClaimIds(lesson));
+    const continuation=source.id==="SL-TANQUEREY-1930"&&target===source.continuation_url;
+    const applicable=continuation
+      ?locators.filter(locator=>/#643|#688|#700|prayer of beginners|mental prayer/i.test(locator))
+      :source.id==="SL-TANQUEREY-1930"
+        ?locators.filter(locator=>!/#643|#688|#700|prayer of beginners|mental prayer/i.test(locator))
+        :locators;
+    const linked=/^https:\/\//.test(target)
+      ?`<a href="${esc(target)}" target="_blank" rel="noopener noreferrer"><strong>${esc(source.title)}</strong> ↗</a>`
+      :`<strong>${esc(source.title)}</strong> · ${esc(L(win,"Direct source link not verified","Lien direct non vérifié"))}`;
+    return `<div class="aoSLSource">${linked}${meta?`<em>${esc(meta)}</em>`:""}${applicable.length?`<div class="aoSLSourceLoc">${applicable.map(esc).join("<br>")}</div>`:""}</div>`;
   }).join("")}</details>`;
 }
 
