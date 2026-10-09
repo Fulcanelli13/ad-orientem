@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {calendarObservanceAlias} from "../src/calendar/observance-title.js";
 
 const registry=JSON.parse(readFileSync(new URL("../data/calendar/1962-editorial-reconciliation-2024-2027.v1.json",import.meta.url),"utf8"));
 assert.equal(registry.schema,"AO_CALENDAR_1962_EDITORIAL_CROSSWALK_V1");
@@ -61,3 +62,57 @@ assert.equal(current.feriaReconciliation.observedEpiphanyProperWithoutTemporale,
 assert.equal(current.feriaReconciliation.resumedEpiphanyWeekdaysAfterPentecost,6);
 assert.equal(current.feriaReconciliation.dateOnlyPatches,0);
 console.log("PASS Calendar editorial historical 132-date worklist: 85 source-backed display headlines, 47 open; newer raw-source audit 127");
+const adjudications=registry.remaining47Adjudications;
+assert.equal(adjudications.status,"SOURCE_LEVEL_EDITORIAL_AND_COMMEMORATION_ADJUDICATION_PENDING_ACCEPTANCE");
+const remainingOwners=new Map([
+  ["saints","saint_variants"],["major","major_title_variants"],
+  ["commemorations","commemoration_count"]
+]);
+const adjudicatedDates=new Set();
+let saintAliases=0,saintEquivalents=0,majorEquivalent=0,commRestored=0,commExisting=0,commApostolic=0;
+for(const [field,original] of remainingOwners){
+  const entries=adjudications[field];
+  const actual=entries.flatMap(x=>x.dates).sort();
+  const historical=registry.groups.find(x=>x.key===original).dates.slice().sort();
+  assert.deepEqual(actual,historical,field+": decisions do not cover the original flagged dates exactly");
+  for(const entry of entries){
+    assert.match(entry.canonicalId,/^(sancti|tempora):/,field+": no canonical source ID");
+    assert.ok(entry.rationale?.length>32,field+": empty historical/adjudication evidence");
+    for(const date of entry.dates){
+      assert.ok(!adjudicatedDates.has(date),date+": duplicated adjudication");
+      adjudicatedDates.add(date);
+      if(field==="saints"){
+        if(entry.disposition==="SOURCE_ID_BILINGUAL_ALIAS")saintAliases++;
+        else if(entry.disposition.startsWith("APPROVED_"))saintEquivalents++;
+        else assert.fail("Unadjudicated saint case "+date);
+      }else if(field==="major"){
+        assert.match(entry.disposition,/^APPROVED_/,date+": invalid major day/Mass disposition");
+        majorEquivalent++;
+      }else{
+        if(entry.disposition==="RESTORED_BARBARA_PR_767")commRestored++;
+        else if(entry.disposition==="RESTORED_INSEPARABLE_APOSTOLIC_PR_767")commApostolic++;
+        else if(/^(PRESENT_|PRESENT_RESTORED)/.test(entry.disposition))commExisting++;
+        else assert.fail("Unadjudicated commemoration case "+date);
+        assert.ok(entry.expectedCommemorated?.length,date+": missing Mass commemoration owner");
+      }
+    }
+  }
+}
+assert.equal(adjudicatedDates.size,47);
+assert.deepEqual([saintAliases,saintEquivalents,majorEquivalent,commExisting,commApostolic,commRestored],[4,28,6,3,4,2]);
+assert.equal(adjudications.actualMassPrayerDefectDates,6);
+assert.equal(adjudications.restoredInseparableApostolicDates,4);
+for(const [id,date,en,fr] of [
+  ["sancti:05-16:3:w","2024-05-16","St Ubald","Saint Ubald"],
+  ["sancti:06-12:3:w","2024-06-12","St John of Sahagún","Saint Jean de Sahagún"],
+  ["sancti:06-12:3:w","2027-06-12","St John of Sahagún","Saint Jean de Sahagún"],
+  ["sancti:10-03:3:w","2024-10-03","St Thérèse of the Child Jesus","Sainte Thérèse de l’Enfant-Jésus"],
+]){
+  const resolution={status:"ready",date,day:{main:{id,title:"donor-short-name"}}};
+  assert.equal(calendarObservanceAlias(resolution,"en"),en,date+": English saint alias");
+  assert.equal(calendarObservanceAlias(resolution,"fr"),fr,date+": French saint alias");
+}
+assert.equal(calendarObservanceAlias({status:"ready",date:"2024-05-16",day:{main:{id:"sancti:05-16:4:w"}}},"en"),"St Ubald",
+  "Identity-backed display intentionally covers the same feast ID independent of class if source confirms");
+assert.equal(current.allPropersCertified,false,"This bounded review must never certify every Mass Proper");
+console.log("PASS Calendar editorial 47-case reconciliation: 4 saint-name aliases, 28 valid short titles, 6 day/Mass names, 3 existing commemorations, 4 reciprocal Apostles, 2 Barbara fixes pending source acceptance");

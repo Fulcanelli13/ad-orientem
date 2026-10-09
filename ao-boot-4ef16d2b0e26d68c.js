@@ -68,6 +68,63 @@ async function applyShiftedPostEpiphany(resolver, sources, date, path, diagnosti
 async function mergeCommemorations(resolver, proper, day, diagnostic) {
     proper.calendarCommemorations = [];
     for (const commemoration of day.commemorations || []) {
+        // 1960 Rubricae generales n.110: the reciprocal commemoration of
+        // the two Apostles is inseparable; the two prayers share ONE
+        // conclusion and count as one Collect/Secret/Postcommunion.
+        // The pinned normalized /01-25c and /02-22c are local-only source
+        // paths and do not exist upstream. resolveSource() throws before
+        // reading their sections. Use the verified named source sections in
+        // canonical Sancti/02-22 from the pinned Divinum Officium witness.
+        const reciprocal =
+          day.main?.id === 'sancti:01-25r:3:w' && commemoration.id === 'sancti:01-25c:4:w'
+            ? 'Petri'
+            : day.main?.id === 'sancti:02-22:2:w' && commemoration.id === 'sancti:02-22c:4:r'
+              ? 'Pauli' : null;
+        if (reciprocal) {
+            const sources = {};
+            for (const lang of ['la', 'en', 'fr'])
+                sources[lang] = await resolver.resolveSource('Sancti/02-22', lang, diagnostic);
+            const sectionKeys = [['collects', 'Oratio'], ['secrets', 'Secreta'], ['postcommunions', 'Postcommunio']];
+            const removeConclusion = value => {
+                const lines = String(value || '').split('\n');
+                const idx = lines.findIndex((line, i) => i > 0 &&
+                  /^(?:Per Dóminum|Per Dominum|Through our Lord|Par Notre-Seigneur|Par Notre Seigneur|Qui vivis|Who liveth|Who livest|Vous qui vivez|Lui qui vit|\$Per Dominum|\$Qui vivis)/i.test(line.trim()));
+                return (idx < 0 ? lines : lines.slice(0, idx)).join('\n').trim();
+            };
+            const noRubricHeading = value => String(value || '').split('\n')
+                .filter((line,i)=>!(i===0&&/^(?:Pro S\.|For St\.|Commemoratio S\.|Commemoration of St\.|Pour St\.|Pour S\.)/.test(line.trim())))
+                .join('\n').trim();
+            const endings = reciprocal === 'Petri'
+              ? {
+                lat: 'Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.',
+                en: 'Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.',
+                fr: 'Par Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.'
+              }
+              : {
+                lat: 'Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.',
+                en: 'Who livest and reignest with God the Father in the unity of the Holy Ghost, God, world without end. Amen.',
+                fr: 'Vous qui vivez et régnez avec Dieu le Père dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il.'
+              };
+            for (const [field, section] of sectionKeys) {
+                const companion = (0, proper_resolver_1.numbered)(sources, section+' '+reciprocal, true)[0];
+                if (!companion || !['lat', 'en', 'fr'].every(lang => !!companion[lang] && companion[lang].length > 30))
+                    throw new Error('Reciprocal apostolic source incomplete: '+section+' '+reciprocal);
+                if (!proper[field]?.[0])
+                    throw new Error('Principal apostolic prayer missing: '+field);
+                const primary = proper[field][0];
+                proper[field][0] = Object.fromEntries(['lat', 'en', 'fr'].map(lang=>{
+                    const a = removeConclusion(primary[lang]), b = removeConclusion(noRubricHeading(companion[lang]));
+                    if (!a || !b) throw new Error('Incomplete inseparable apostolic '+section+' in '+lang);
+                    return [lang, a+'\n'+b+'\n'+endings[lang]];
+                }));
+            }
+            proper.calendarCommemorations.push({
+                name: commemoration.title, path: commemoration.path,
+                prayerSourcePath: 'Sancti/02-22', rank: (0, calendar_engine_1.classLabel)(commemoration.rank),
+                inseparable: true, underOneConclusion: true
+            });
+            continue;
+        }
         if (!commemoration?.path)
             continue;
         try {
@@ -94,6 +151,35 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
                 secret = secret || (0, proper_resolver_1.numbered)(sundaySources, 'Secreta', true)[0];
                 postcommunion = postcommunion || (0, proper_resolver_1.numbered)(sundaySources, 'Postcommunio', true)[0];
                 prayerSourcePath = sundayPath;
+            }
+            // The universal Dec 4 St Barbara commemoration draws its
+            // Latin named Collect from pinned Sancti/12-04pl and its Secret/
+            // Postcommunion from the Virgin-Martyr Common. The latter
+            // intentionally contain an N. placeholder: fill it with the
+            // named saint rather than showing a liturgically invalid formula.
+            // EN/FR Collect translations below are explicit editorial
+            // translations of the pinned Latin original, not false claims
+            // of a translation present in the donor source.
+            if (commemoration.id === 'commemoration:12-04-barbara:4:r') {
+                if (!collect || !secret || !postcommunion)
+                    throw new Error('The three sourced St Barbara commemorative prayers are incomplete.');
+                const endings = {
+                  lat: 'Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. Amen.',
+                  en: 'Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.',
+                  fr: 'Lui qui vit et règne avec vous dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il.'
+                };
+                collect = {...collect,
+                  lat: String(collect.lat||'').replace(/\$Qui tecum\b/g,endings.lat),
+                  en: 'May the intercession of blessed Barbara, Thy Virgin and Martyr, we beseech Thee, O Lord, protect us from all adversity; and through her glorious intercession may we be worthy, before the day of our death, to receive the Sacrament of the most holy Body and Blood of our Lord Jesus Christ through true penance and sincere confession. ' + endings.en,
+                  fr: 'Que l’intercession de la bienheureuse Barbe, votre Vierge et Martyre, nous protège, Seigneur, contre toute adversité. Que, par sa glorieuse intercession, nous méritions de recevoir avant notre mort, par une véritable pénitence et une confession sincère, le très saint Sacrement du Corps et du Sang de Notre-Seigneur Jésus-Christ. ' + endings.fr
+                };
+                const nameInPrayer=(prayer,latinCase)=>Object.fromEntries(
+                  ['lat','en','fr'].map(lang=>[lang,
+                    String(prayer?.[lang]||'').replace(/\bN\./g,
+                      lang==='lat'?latinCase:lang==='fr'?'Barbe':'Barbara')]));
+                // Genitive in Secreta, ablative after 'intercedénte' in Postcommunio.
+                secret={...secret,...nameInPrayer(secret,'Bárbaræ')};
+                postcommunion={...postcommunion,...nameInPrayer(postcommunion,'Bárbara')};
             }
             if (collect)
                 proper.collects.push(collect);
@@ -575,6 +661,17 @@ function completePrivilegedCommemorations(day,source){
  // Saint Peter is named in three linked Oratio/Secreta/Postcommunio
  // texts inside Sancti/06-30. Represent his inseparable commemoration,
  // but do not append the same three prayers twice (1960 §110).
+ // 1962 Missal, Dec 4: under St Peter Chrysologus the Advent feria
+ // precedes an ordinary commemoration of St Barbara (Virgin and Martyr).
+ // The pinned donor does not include St Barbara as a universal calendar ID.
+ // Reuse the existing pinned Latin Proper (Sancti/12-04pl), which contains
+ // her named Collect and points to the Common of a Virgin Martyr for the
+ // other two orations; do not invent a date-specific Calendar substitute.
+ if(main.id===source.constants.SANCTI_12_04 && day.date.getDay()!==0){
+   add({id:'commemoration:12-04-barbara:4:r',
+     title:'St Barbara, Virgin and Martyr',name:'Sancta Barbara Virgo et Martyr',
+     rank:4,path:'Sancti/12-04pl',properSource:'pinned-sancti-12-04pl'});
+ }
  if(main.id===source.constants.SANCTI_06_30){
    add({id:'inseparable:sancti:06-29-petrus',title:'St Peter, Apostle',
      name:'Sanctus Petrus Apostolus',rank:3,path:null,inseparable:true});

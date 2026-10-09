@@ -7,6 +7,20 @@ const NAMES = Object.freeze({
     en: "Vigil of Pentecost",
     fr: "Vigile de la Pentecôte",
   }),
+  // Canonical 1962 IDs, clearer everyday EN/FR names; the underlying
+  // title/office, rank and appointed Proper are never changed.
+  "sancti:05-16": Object.freeze({
+    en: "St Ubald",
+    fr: "Saint Ubald",
+  }),
+  "sancti:06-12": Object.freeze({
+    en: "St John of Sahagún",
+    fr: "Saint Jean de Sahagún",
+  }),
+  "sancti:10-03": Object.freeze({
+    en: "St Thérèse of the Child Jesus",
+    fr: "Sainte Thérèse de l’Enfant-Jésus",
+  }),
   "sancti:12-02": Object.freeze({
     en: "St Bibiana, Virgin and Martyr",
     fr: "Sainte Bibiane, vierge et martyre",
