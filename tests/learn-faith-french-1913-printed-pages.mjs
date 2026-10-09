@@ -24,7 +24,7 @@ assert.equal(nuptial.discrepancy,"DATE_RANGES_DIFFER_BETWEEN_LANGUAGE_EDITION_WI
 assert.equal(proof.verifiedPageSamples.find(x=>x.question===400).continuationPdfPageOneIndexed,108);
 assert.equal(proof.all433FrOriginalAnswersPrintPageCollated,false);
 assert.equal(proof.all433ItalianPrintPageCollated,false);
-assert.equal(historic.historicalFrenchWitness.questionAnswersVisuallyChecked,4);
+assert.equal(historic.historicalFrenchWitness.questionAnswersVisuallyChecked,5);
 assert.equal(historic.historicalFrenchWitness.fullScanNumberedQuestionCollation,false);
 const precepts=crosswalk.lessons[45];
 assert.equal(precepts.displayLessonId,"LTF-046");
