@@ -93,26 +93,20 @@ try{
     }
     const {mountRogationPreflight}=await import("/src/mass/rogation-preflight.js");
     globalThis.__rogationFetches=[];globalThis.__rogationFetchedLibrary={};
-    const fetchApproved=async url=>{
-     const response=await fetch(url);
+    const fetchPublished=async url=>{
+     const response=await fetch(url,{cache:"no-store"});
      globalThis.__rogationFetches.push({url:String(url),status:response.status});
      const d=await response.json();
-     if(d.schema==="AO_1962_ROGATION_MASS_SOURCE_GATE_V1"){
-      d.status="PUBLISHED_1962_ROGATION_PROPER";d.publicationAllowed=true;
-     }else if(d.schema==="AO_1962_ROGATION_PROPER_V1"){
-      d.status="PUBLISHED_1962_ROGATION_PROPER";d.publicationAllowed=true;
-     }else if(d.schema==="AO_1962_ROGATION_EASTER_PREFACE_V1"){
-      d.status="PUBLISHED_1962_EASTER_PREFACE";d.published=true;d.publicationAllowed=true;
-     }
      globalThis.__rogationFetches.at(-1).schema=d.schema;
      globalThis.__rogationFetches.at(-1).finalStatus=d.status;
      globalThis.__rogationFetchedLibrary[d.schema]=d;
-     return {ok:true,json:async()=>d};
+     // No synthetic status or publication overrides: use checked-in source.
+     return {ok:response.ok,json:async()=>d};
     };
     globalThis.__rogationPreflight=mountRogationPreflight({
      doc:document,getResolvedMass:()=>globalThis.AO_CELEBRATION_API.getResolvedMass(),
      resolveDay:date=>globalThis.AO_RUNTIME_V8.resolver.resolveDay(date),
-     fetchImpl:fetchApproved,language:()=>language
+     fetchImpl:fetchPublished,language:()=>language
     });
    },{date,language,icons:ICONS});
    try{
@@ -150,6 +144,10 @@ try{
    await page.selectOption("[data-rogation-choice]","ROGATION_MASS");
    const selection=await page.evaluate(()=>globalThis.__rogationPreflight.selectionFor(
      globalThis.AO_CELEBRATION_API.getResolvedMass()));
+   const disk=await page.evaluate(()=>globalThis.__rogationFetchedLibrary);
+   assert.equal(disk.AO_1962_ROGATION_MASS_SOURCE_GATE_V1.publicationAllowed,true);
+   assert.equal(disk.AO_1962_ROGATION_PROPER_V1.publicationAllowed,true);
+   assert.equal(disk.AO_1962_ROGATION_EASTER_PREFACE_V1.publicationAllowed,true);
    assert.equal(selection.choice,"ROGATION_MASS");
    assert.equal(selection.service,"PUBLIC_PROCESSION");
    assert.match(selection.preface.lat,/in hoc potissimum/);
@@ -240,5 +238,5 @@ try{
    assert.deepEqual(errors,[],language+" produced a browser exception");
   }finally{await context.close()}
  }
- console.log("Synthetic-certified Rogation II-class E2E PASS: EN/FR pre-Mass choice, R17 procession, Introit, Back; production source remains unpublished.");
+ console.log("PUBLISHED-CORPUS Rogation II-class E2E PASS: real on-disk trilingual Proper/Preface EN/FR pre-Mass selection, six rite stages, Introit, omitted Gloria/Credo and Back.");
 }finally{await browser?.close();await new Promise(ok=>server.close(()=>ok()))}
