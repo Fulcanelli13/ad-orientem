@@ -520,6 +520,58 @@ export async function mountNativeReaderPreview({
       personalControls=panel;
     }
 
+    const communionSpeakerLabels=Object.freeze({
+      CELEBRANT:"Celebrant",
+      ALL:"All present",
+      COMMUNICANTS:"Communicants",
+    });
+
+    function installCommunionSpeakerStyles(){
+      const style=doc.createElement("style");
+      style.textContent=`
+        #ao-r17-native-reader-preview .ao-good-friday-speaker-label{
+          display:block;margin:0 0 5px;
+          font:600 10px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+          letter-spacing:.09em;text-transform:uppercase;color:#b2c0b6;
+        }
+        #ao-r17-native-reader-preview .ao-reader-paragraph[data-speaker]{
+          padding-top:9px;
+        }
+        #ao-r17-native-reader-preview .ao-reader-paragraph[data-speaker="COMMUNICANTS"]{
+          border-left:2px solid rgba(178,201,183,.46);
+          padding-left:12px;
+        }
+      `;
+      root.append(style);
+    }
+
+    function updateCommunionSpeakerLabels(){
+      // The canonical GF source paragraphs carry speaker metadata; labels
+      // appear only when the speaker changes, never as extra liturgical text.
+      const voiceById=new Map((controller.project().card?.paragraphs??[])
+        .filter(row=>row.speaker).map(row=>[row.id,row.speaker]));
+      let previous=null;
+      for(const node of host.querySelectorAll?.(".ao-reader-paragraph[data-paragraph-id]")??[]){
+        const speaker=voiceById.get(node.dataset.paragraphId)??null;
+        const old=node.querySelector(".ao-good-friday-speaker-label");
+        if(!speaker){
+          delete node.dataset.speaker;
+          old?.remove();
+          previous=null;
+          continue;
+        }
+        node.dataset.speaker=speaker;
+        if(speaker===previous)old?.remove();
+        else {
+          const label=old??doc.createElement("span");
+          label.className="ao-good-friday-speaker-label";
+          label.textContent=communionSpeakerLabels[speaker]??speaker;
+          if(!old)node.insertBefore(label,node.firstChild);
+        }
+        previous=speaker;
+      }
+    }
+
     function createCommunionControls(){
       const stage=host.querySelector?.(".ao-reader-stage");
       if(!stage)return;
@@ -759,6 +811,7 @@ export async function mountNativeReaderPreview({
           );
       }
       syncReaderRitualHighlights(host,moment?.ritualTrigger??moment?.gesture??null);
+      updateCommunionSpeakerLabels();
       updateGoodFridayControls();
       updateCommunionControls();
       root.dataset.r17NativeRiteRecord=step?.recordId??"none";
@@ -809,6 +862,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17StateOwner="R28_GOOD_FRIDAY_GRAPH";
     doc.body.appendChild(root);
     reader.mount(prepared);
+    installCommunionSpeakerStyles();
     createGoodFridayControls();
     createCommunionControls();
     host.addEventListener?.("click",onGoodFridayAction);
