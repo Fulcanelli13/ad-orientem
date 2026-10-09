@@ -232,14 +232,21 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       state.error="";
       const external=state.externalReturn;
       state.externalReturn=null;
-      if(external?.surface==="apostolate"){
+      if(external?.surface==="apostolate"||external?.surface==="pray"){
         state.open=false;
         cancelMonitor();
         const node=root(win);
         releaseFocus(win,node);
         node?.remove?.();
         win?.document?.body?.classList?.remove?.("aoLearnModularOpen");
-        void win?.AO_APP_SHELL_V1?.navigate?.("apostolate");
+        // A Learn child opened from bedside Prayer must return to that
+        // Prayer module, not abandon the user at the Formation landing.
+        void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.(external.surface))
+          .then(result=>result?.ok===true&&external.surface==="pray"&&
+            String(external.route||"").startsWith("pray.")
+              ?win?.AO_MODULES?.open?.(external.route)
+              :false)
+          .catch(error=>win?.console?.error?.("Formation return navigation failed",error));
         return;
       }
       showHub();
