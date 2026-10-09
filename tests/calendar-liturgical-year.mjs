@@ -146,7 +146,10 @@ assert.match(browser, /overflow-y:auto;overflow-x:hidden/, "Calendar root must s
 assert.match(browser, /height:66px!important/, "Calendar liturgical month lost its phone-readable cell height");
 assert.match(browser, /grid-template-columns:repeat\(3,1fr\)/, "Calendar top navigation did not collapse to Day · Month · Liturgical Year");
 assert.match(browser, /observedCycle\(r,id\)/, "Month Temporale\/Sanctorale classification is missing");
-assert.match(browser, /majorForDate\(id\)/, "Month classification stopped using resolved major-day metadata");
+assert.doesNotMatch(browser, /majorForDate\(|nextMajorCelebration\(selected\)/, "A candidate feast may not override a resolved daily Mass");
+assert.match(browser, /nextResolvedMajorCelebration\(selected\)/, "Next major celebration must come from resolved days");
+assert.match(browser, /if\(!weekCache\.has\(date\)\)return null/, "Next major celebration must not skip unknown earlier days");
+assert.match(browser, /await ensureLearnModule\("learn\.glossary",globalThis\)/, "Calendar Glossary must load its canonical owner on first use");
 assert.match(browser, /function principalSaintContext\(r,id\)/, "Calendar Day lost principal saint\/feast classification");
 assert.match(browser, /data-cal-saint-date/, "Calendar lost the shared saint-detail entry point");
 assert.match(browser, /AO_MODULES\?\.open\?\.\("today\.saint"/, "Calendar no longer reuses the shared saint-detail engine");
