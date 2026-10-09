@@ -586,8 +586,14 @@ export async function mountNativeReaderPreview({
         return {cueId:node.dataset.cueId,
           top:rect.top-shell.top+card.scrollTop,bottom:rect.bottom-shell.top+card.scrollTop};
       });
+      // In a short or densely segmented prayer, both formulae can fall
+      // above the focus line on the first swipe. Never skip Flectamus:
+      // until it has been reached, only its exact K words may activate.
+      // Once kneeling is active, only the distinct Levate line may rise.
+      const expected=formulaKneelRecord===id ? id.replace(/-K$/,"-R") : id;
       const reached=goodFridayFormulaAtFocus({
-        scrollTop:card.scrollTop,clientHeight:card.clientHeight,items,
+        scrollTop:card.scrollTop,clientHeight:card.clientHeight,
+        items:items.filter(row=>row.cueId===expected),
       });
       if(!reached)return;
       formulaCueRunning=true;
