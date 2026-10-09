@@ -73,14 +73,23 @@ async function readHtml(page,url,{fetchImpl=fetch}={}){
   // Public HTML through a read-only transport; only map.fsspx.org's own
   // source elements are parsed. This is NOT a third-party location directory.
   const errors=[];
+  // Keep request volume below reader gateway burst limits.
+  await new Promise(resolve=>setTimeout(resolve,1200));
   for(const transport of ["https://r.jina.ai/https://","https://r.jina.ai/http://"]){
     const mirror=transport+new URL(url).host+new URL(url).pathname;
     try{
       const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),30000);
       let response;
-      try{response=await fetchImpl(mirror,{
-        signal:controller.signal,headers:{"X-Respond-With":"html","Accept":"text/html"}});}
-      finally{clearTimeout(timeout);}
+      try{
+        for(let attempt=0;attempt<6;attempt++){
+          response=await fetchImpl(mirror,{
+            signal:controller.signal,headers:{"X-Respond-With":"html","Accept":"text/html"}});
+          if(response.status!==429&&response.status!==503)break;
+          // Short, bounded increasing pause protects the host and allows
+          // the public read-only rate limit to recover.
+          if(attempt<5)await new Promise(resolve=>setTimeout(resolve,4000*(attempt+1)));
+        }
+      }finally{clearTimeout(timeout);}
       if(!response.ok)throw new Error("HTTP "+response.status);
       const html=await response.text();
       if(html.length<500)throw new Error("insufficient HTML "+html.length);
@@ -106,7 +115,7 @@ export async function acquireWorldwideIndex({out="data/directory/research/stagin
     directories=parseDistrictIndex(index.links);
     await page.close();
     let current=0;
-    const workers=Array.from({length:4},async()=>{
+    const workers=Array.from({length:2},async()=>{
       const tab=await browser.newPage({locale:"fr-FR"});
       try{
         while(current<directories.length){
