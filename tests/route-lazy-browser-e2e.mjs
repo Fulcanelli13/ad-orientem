@@ -84,6 +84,23 @@ try {
   await place.waitFor({state:"visible",timeout:12000});
   assert.equal(await detail.count(),0,
     "Explore Place-page click was swallowed by the detail backdrop dismissal handler");
+  // A Place-page novena launches on the first Prayer visit; the heavy
+  // PRAY donor is intentionally not loaded by the cold Home or Explore.
+  const novenaAction=page.locator("#ao-find-modular-root [data-explore-open-novena]").first();
+  await novenaAction.waitFor({state:"visible",timeout:12000});
+  const selectedNovena=await novenaAction.getAttribute("data-explore-open-novena");
+  await novenaAction.click();
+  await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().readerLoaded===true,null,{timeout:20000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:15000});
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930?.state?.()?.view==="novenas"),true,
+    "Explore clicked Novena without opening the selected Prayer reader");
+  assert.ok(selectedNovena,"Place novena action has no linked ID");
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("find"));
+  await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
+    lens:"shrines",view:"list",query:"Lourdes",
+    placeId:"place:FR:sanctuaire-notre-dame-de-lourdes"
+  }));
+  await page.locator("#ao-find-modular-root [data-explore-place-owner]").waitFor({state:"visible",timeout:12000});
   const dateButton=page.locator("#ao-find-modular-root [data-explore-calendar-date]").first();
   await dateButton.waitFor({state:"visible",timeout:12000});
   const linkedDate=await dateButton.getAttribute("data-explore-calendar-date");
