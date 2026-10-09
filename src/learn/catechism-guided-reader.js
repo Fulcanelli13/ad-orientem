@@ -78,10 +78,11 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
           ${study.lessons.map(l => `<option value="${escapeHtml(l.id)}" ${l.id === current ? "selected" : ""}>${escapeHtml(l.id)} · ${escapeHtml(l.title[lang])}</option>`).join("")}
         </select>
       </nav>
+      <p class="aoCatechismGuidedPosition">${text("Lesson", "Leçon", lang)} ${idx + 1} / ${study.lessons.length}</p>
       <article><h2>${escapeHtml(lesson.title[lang])}</h2>
         ${lesson.claims.map(c => `<p>${escapeHtml(c[lang])} <span class="aoCatechismGuidedSources">${c.sources.map(renderSource).join(" · ")}</span></p>`).join("")}
         <h3>${text("Original Catechism questions", "Questions du Catéchisme original", lang)}</h3>
-        <div class="aoCatechismGuidedQuestions">${lesson.primaryQuestions.map(n => `<button type="button" data-guided-question="${n}" title="${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}">Q${n} · ${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}</button>`).join(" ")}</div>
+        <div class="aoCatechismGuidedQuestions">${lesson.primaryQuestions.map(n => `<button type="button" data-guided-question="${n}" aria-label="${text("Open original question", "Ouvrir la question originale", lang)} ${n}">${lang === "fr" ? `Question ${n}` : `Q${n} · ${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}`}</button>`).join(" ")}</div>
       </article>
       <footer>
         <button type="button" data-guided-prev ${idx === 0 ? "disabled" : ""}>${text("Previous", "Précédente", lang)}</button>
@@ -89,6 +90,8 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
       </footer>
     </section>`;
     root.innerHTML = html;
+    // The overlay is scrollable; advancing a lesson must not leave the reader at the preceding lesson's footer.
+    if (root.parentElement?.scrollTop != null) root.parentElement.scrollTop = 0;
     root.querySelector("[data-guided-select]")?.addEventListener("change", event => {
       const value = event.target.value;
       if (study.lessons.some(l => l.id === value)) { current = value; paint(); }
