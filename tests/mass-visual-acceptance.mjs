@@ -674,7 +674,7 @@ try{
   assert.equal(listenCue.active,"true","sung Collect did not activate the faithful LISTEN channel: "+JSON.stringify({collectListening,listenCue}));
   assert.equal(listenCue.display,"grid","LISTEN cue exists but is hidden by rail CSS");
   assert.equal(listenCue.iconHidden,false,"LISTEN cue lost its exact donor art");
-  assert.match(listenCue.iconMask,/listen\\.svg/,"LISTEN cue resolved to the wrong donor key");
+  assert.match(listenCue.iconMask,/listen\.svg/,"LISTEN cue resolved to the wrong donor key");
   assert.equal(listenCue.postureCueActive,"false",
     "persistent STAND was duplicated as a second posture-change icon");
 
