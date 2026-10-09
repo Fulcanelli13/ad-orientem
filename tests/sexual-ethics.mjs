@@ -70,6 +70,16 @@ assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.every(d=>d.traditionalAssessment[0].length>200 && d.traditionalAssessment[1].length>200));
 
+const disallowedReaderMeta=/(?:a serious Catholic answer|a serious defender|a specialist must|methodologically weak|the answer must|this question should|this module|not a named opponent|a sourced reconstruction|editorial synthesis|a traditional account must|une réponse catholique sérieuse|un défenseur sérieux|il serait méthodologiquement faible|une défense traditionnelle doit|cette réponse ne doit)/i;
+for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
+ for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
+  for(const [language,passage] of entry[field].entries()){
+   assert.doesNotMatch(passage,disallowedReaderMeta,entry.id+" "+field+" "+(language?"FR":"EN")+" exposes editorial meta-commentary");
+  }
+ }
+}
+
+
 assert.deepEqual(CSE_EDITORIAL_ARCHIVE_IDS,["CSE055","CSE056","CSE058"]);
 assert.equal(CSE_PUBLIC_QUESTIONS.length,147);
 assert.equal(CSE_PUBLIC_QUESTIONS.filter(item=>item.depth==="DEBATE").length,52);
@@ -325,7 +335,9 @@ assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/paragraphSourceLinks/);
 assert.match(runtime,/data-ao-cse-inline-source/);
 assert.match(runtime,/function marriageDisputationsHtml/);
-assert.match(runtime,/Traditional Catholic assessment/);
+const marriageRenderer=runtime.slice(runtime.indexOf("function marriageDisputationsHtml"),runtime.indexOf("function questionHtml"));
+assert.doesNotMatch(marriageRenderer,/Arguments attributed to named authors paraphrase|Ces débats restent soumis|Reasoned objection \(not attributed/);
+assert.match(runtime,/Traditional Catholic teaching/);
 assert.match(runtime,/CSE_MARRIAGE_AUTHORITY_DEBATES/);
 assert.match(runtime,/data-ao-cse-disputation/);
 assert.match(runtime,/marriageDisputationsHtml\(win,item\)/);
