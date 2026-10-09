@@ -1,6 +1,6 @@
 {
   "schema": "ao.prayer.novena-source-review.v2",
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "relationship": "Supplement to prayer-source-certification-inventory.v3.json, NOT a parallel canonical prayer corpus",
   "scope": "Sixteen novena source links, digital-witness source-page type, original practice requirements, material reading caveats",
   "counts": {
@@ -10,13 +10,15 @@
     "daySpecificNovenas": 8,
     "uniqueDayPrayerBodies": 72,
     "additionalSharedOrRepeatBodies": 19,
-    "sourceDayBodyReviews": 27,
+    "sourceDayBodyReviews": 36,
     "frenchEditorialTranslationReviews": 27,
     "completePrintEditionCertificates": 0,
     "omittedHammerMeditationPracticeDayPairs": 27,
-    "namedOriginalHistoricalMeditationSections": 27
+    "namedOriginalHistoricalMeditationSections": 27,
+    "reviewedHolySoulsDayPrayers": 9,
+    "restoredHolySoulsRecurringVerses": 1
   },
-  "sourceMethod": "Identified principal online witness pages and section/context from historical transcriptions and the existing donor register. URL access is not proofread facsimile collation. Unchecked entries are explicitly noted.",
+  "sourceMethod": "Identified principal online witness pages and section/context from historical transcriptions and the existing donor register. URL access is not proofread facsimile collation. Unchecked entries are explicitly noted. Nine English Holy Souls daily prayers additionally reviewed against sequential pages prayer108–prayer116; original printed facsimile not obtained; French remains editorial and unverified.",
   "records": [
     {
       "id": "holy_ghost",
@@ -749,10 +751,136 @@
       "languageClaim": "PUBLIC_DOMAIN_ORIGINAL · MULTI-WITNESS_DIGITAL_TRANSCRIPTION",
       "authority": "EXISTING_DIGITAL_WITNESS_UNCOLLATED",
       "dayCount": 9,
-      "sourceType": "EXISTING_LINK_UNCHECKED",
-      "finding": "Original printed attribution and digital transcription still require independent checking.",
+      "sourceType": "NINE_PAGE_MODERN_DIGITAL_PRAYERBOOK_TRANSCRIPTION",
+      "finding": "Nine linked day-by-day modern prayer-book transcriptions reproduce the English day prayers and prescribe, on all days, an Our Father, Hail Mary, four-line On Thy spouses verse, then seven O most sweet Jesus intercessions. The app formerly omitted the repeated four-line verse, now restored in V4 only. The original print edition has not been identified or independently collated.",
       "verbatimStatus": "NOT_CERTIFIED",
-      "frenchTextStatus": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED"
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_NOT_INDEPENDENTLY_CERTIFIED",
+      "dayBodySourceReview": [
+        {
+          "day": 1,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer108.shtml",
+          "sourceIncipit": "O Jesus, my Saviour, I have so often deserve",
+          "sourceExplicit": "ir assistance with thy powerful intercession.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "Digital text opens with original printed-context day prayer; original printed book not identified"
+        },
+        {
+          "day": 2,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer109.shtml",
+          "sourceIncipit": "Woe to me, unhappy being, so many years have",
+          "sourceExplicit": "ir assistance with thy powerful intercession.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "The transcribed second-day concluding rubric explicitly repeats On Thy spouses and O most sweet Jesus"
+        },
+        {
+          "day": 3,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer110.shtml",
+          "sourceIncipit": "O my God! Because Thou art infinite goodness",
+          "sourceExplicit": "ir assistance with thy powerful intercession.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "Digital day-three text retains the paired daily petitions; common closing verse is repeated"
+        },
+        {
+          "day": 4,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer111.shtml",
+          "sourceIncipit": "O my God! because Thou art infinite goodness",
+          "sourceExplicit": " of God, assist them by thy powerful prayers.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "Digital day-four text retains the paired daily petitions; common closing verse is repeated"
+        },
+        {
+          "day": 5,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer112.shtml",
+          "sourceIncipit": "Woe to me, unhappy being, if Thou, O Lord, h",
+          "sourceExplicit": "ir assistance with thy powerful intercession.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "The digital witness reads 'ever offended Thee again' (possibly peculiar wording); app preserves witness and does not silently emend"
+        },
+        {
+          "day": 6,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer113.shtml",
+          "sourceIncipit": "O my Divine Redeemer, Thou didst die for me ",
+          "sourceExplicit": " to their aid with thy powerful intercession.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "Digital day-six retains the daily prayer and repeated closing rubric"
+        },
+        {
+          "day": 7,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer114.shtml",
+          "sourceIncipit": "O God, Father of Mercy, satisfy this their a",
+          "sourceExplicit": " the moment of their deliverance has arrived.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "Digital day-seven text includes only a short prayer, with no longer original prayer body evidenced"
+        },
+        {
+          "day": 8,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer115.shtml",
+          "sourceIncipit": "O my God! I also am one of these ungrateful ",
+          "sourceExplicit": " to their aid with thy powerful intercession.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "The witness prints 'they powerful intercession' (probable transcription error); app has 'thy powerful intercession' and does not claim proofread facsimile"
+        },
+        {
+          "day": 9,
+          "witnessSection": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+          "url": "https://www.ecatholic2000.com/life/prayer116.shtml",
+          "sourceIncipit": "O my God! How was it possible that I, for so",
+          "sourceExplicit": "who are still in danger of eternal damnation.",
+          "enTextComparison": "CONTENT_CORRESPONDS_TO_MODERN_DIGITAL_TRANSCRIPTION_WITH_NORMALIZED_PUNCTUATION_AND_MINOR_TYPOS",
+          "frTextComparison": "NOT_REVIEWED_IN_THIS_PASS; EDITORIAL_TRANSLATION_NOT_HISTORICAL_WITNESS",
+          "directPrintedFacsimileComparison": "PENDING",
+          "completePrintEditionCertification": "NOT_CERTIFIED",
+          "observation": "The witness again prints 'they powerful intercession' (probable transcription error); app reads 'thy', original print remains unverified"
+        }
+      ],
+      "dailyClosingAudit": {
+        "witnessDayOne": "https://www.ecatholic2000.com/life/prayer108.shtml",
+        "witnessLaterDays": "https://www.ecatholic2000.com/life/prayer116.shtml",
+        "englishVerse": "On Thy spouses have compassion, / On these suffering children Thine; / Make these holy souls partakers / Of Thy happiness Divine.",
+        "recitationOrder": [
+          "DAY_PRAYER",
+          "CANONICAL_OUR_FATHER_1",
+          "CANONICAL_HAIL_MARY_1",
+          "FOUR_LINE_VERSE",
+          "SEVEN_INTERCESSIONS_AND_CONCLUSION"
+        ],
+        "priorDefect": "HISTORICAL_DAILY_VERSE_OMITTED",
+        "correction": "RESTORED_IN_NOVENA_V4_WITH_EDITORIAL_FRENCH_TRANSLATION",
+        "printingStatus": "MODERN_DIGITAL_TRANSCRIPTION_ONLY",
+        "languageStatus": "ENGLISH_DIGITAL_WITNESS_REVIEWED__FRENCH_EDITORIAL_UNCERTIFIED"
+      }
     },
     {
       "id": "perpetual_help",
