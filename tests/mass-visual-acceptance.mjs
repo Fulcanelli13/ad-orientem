@@ -209,6 +209,24 @@ try{
         scholaPause:rect("[data-schola-pause]"),
         scholaToggle:rect("[data-schola-toggle]"),
         scholaDock:rect(".ao-schola-dock"),
+        prayerBody:rect(".ao-prayer-body"),
+        prayerCard:rect(".ao-prayer-card"),
+        leftRail:rect(".ao-rail-left .ao-rail-item"),
+        rightRail:rect(".ao-rail-right .ao-rail-item"),
+        stateLabels:[...root.querySelectorAll(".ao-state-label")].map(el=>({
+          text:el.textContent.trim(),
+          width:el.getBoundingClientRect().width,
+          whiteSpace:getComputedStyle(el).whiteSpace,
+          clamp:getComputedStyle(el).webkitLineClamp,
+          fontSize:Number.parseFloat(getComputedStyle(el).fontSize)
+        })),
+        focusLine:(()=>{
+          const card=root.querySelector(".ao-prayer-card");
+          const dock=root.querySelector(".ao-schola-dock");
+          return {line:card?.getBoundingClientRect().top+(card?.clientHeight??0)*.39,
+            dockTop:dock?.getBoundingClientRect().top,
+            active:dock?.dataset.active}
+        })(),
       };
       return row;
     });
@@ -230,6 +248,20 @@ try{
       "Schola hide/show target too small: "+JSON.stringify(audit));
     assert.ok(audit.scholaDock?.left>=0&&audit.scholaDock?.right<=width+1,
       "Schola dock extends beyond the phone screen: "+JSON.stringify(audit));
+    assert.ok(audit.stateLabels.every(x=>x.whiteSpace==="normal"&&Number(x.clamp)>=2),
+      "YOU/PRIEST ribbon still clips state text to a single line: "+JSON.stringify(audit));
+    if(width===320){
+      assert.ok(audit.prayerBody?.width>=205,
+        "320px mobile prayer reading measure remains constricted: "+JSON.stringify(audit));
+      assert.ok(audit.prayerBody.left>=audit.leftRail.right,
+        "prayer text overlaps faithful gesture rail: "+JSON.stringify(audit));
+      assert.ok(audit.prayerBody.right<=audit.rightRail.left,
+        "prayer text overlaps priest gesture rail: "+JSON.stringify(audit));
+      assert.ok(audit.stateLabels.every(x=>Number(x.clamp)===3),
+        "narrow-phone state labels did not gain a third readable line: "+JSON.stringify(audit));
+    }
+    assert.ok(audit.focusLine?.line<audit.focusLine?.dockTop-20,
+      "Schola dock obscures the certified 39% active-cue reading line: "+JSON.stringify(audit));
     phoneAudit.push({width,audit});
     await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
   }
