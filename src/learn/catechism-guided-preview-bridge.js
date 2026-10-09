@@ -36,6 +36,8 @@ export async function installCatechismGuidedMode(win = globalThis) {
   panel.id = "ao-catechism-guided-panel";
   panel.hidden = true;
   panel.setAttribute("aria-label", L("Guided Catechism study", "Parcours guidé du Catéchisme"));
+  panel.setAttribute("role", "dialog");
+  panel.setAttribute("aria-modal", "true");
   panel.style.cssText = "position:fixed;inset:0;z-index:2147483000;overflow:auto;overscroll-behavior:contain;background:var(--ao-bg-canvas,#080c12);color:var(--ao-text-primary,#e9e4d9);padding:calc(12px + env(safe-area-inset-top)) 14px calc(60px + env(safe-area-inset-bottom));font-family:Georgia,serif";
   const close = doc.createElement("button");
   close.textContent = "×";
@@ -47,7 +49,7 @@ export async function installCatechismGuidedMode(win = globalThis) {
   notice.hidden = true;
   const content = doc.createElement("div");
   const style = doc.createElement("style");
-  style.textContent = ".aoCatechismGuided{max-width:760px;margin:auto;line-height:1.55}.aoCatechismGuided select{max-width:100%;padding:10px;background:#151d29;color:inherit}.aoCatechismGuided a{color:var(--liturgical,#c9ad78)}.aoCatechismGuided article p{margin:1.1rem 0}.aoCatechismGuided button{padding:10px;margin:3px;background:#17202b;color:inherit;border:1px solid #56606a;border-radius:7px;min-height:44px}.aoCatechismGuidedDraft{font-size:.85rem;opacity:.75}";
+  style.textContent = ".aoCatechismGuided{max-width:760px;margin:auto;line-height:1.55}.aoCatechismGuided select{max-width:100%;padding:10px;background:#151d29;color:inherit}.aoCatechismGuided a{color:var(--liturgical,#c9ad78)}.aoCatechismGuided article p{margin:1.1rem 0}.aoCatechismGuided button{padding:10px;margin:3px;background:#17202b;color:inherit;border:1px solid #56606a;border-radius:7px;min-height:44px}.aoCatechismGuidedDraft{font-size:.85rem;opacity:.75}.aoCatechismGuidedClaim{margin:18px 0 26px}.aoCatechismGuidedEvidence{margin:0 0 14px}.aoCatechismGuidedEvidence summary{cursor:pointer;color:var(--liturgical,#c9ad78);padding:8px 0}.aoCatechismGuidedSources{display:block;padding:8px 0;line-height:2}.aoCatechismGuided button:focus-visible,.aoCatechismGuided a:focus-visible,.aoCatechismGuided summary:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}";
   panel.append(close, notice, style, content);
   doc.body.append(panel);
   // The legacy Catechism replaces its own innerHTML when switching question/language.
@@ -98,8 +100,18 @@ export async function installCatechismGuidedMode(win = globalThis) {
     return false;
   }
   const closeGuided = () => { panel.hidden = true; button.focus?.({ preventScroll: true }); };
+  const openGuided = () => { panel.hidden = false; close.focus?.({ preventScroll: true }); };
   const onKeyDown = event => {
-    if (event.key === "Escape" && !panel.hidden) {
+    if (panel.hidden) return;
+    if (event.key === "Tab" && doc.activeElement && panel.contains(doc.activeElement)) {
+      const focusable = Array.from(panel.querySelectorAll('button:not([disabled]), select:not([disabled]), a[href], summary, [tabindex]:not([tabindex="-1"])')).filter(el => el.getClientRects().length && !el.closest("details:not([open])") && !el.closest("[hidden]"));
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (first && last && (event.shiftKey ? doc.activeElement === first : doc.activeElement === last)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      }
+    }
+    if (event.key === "Escape") {
       event.preventDefault();
       // Esc belongs to the open modal; do not let the surrounding Catechism
       // reader handle the same keystroke and move focus elsewhere.
@@ -112,7 +124,7 @@ export async function installCatechismGuidedMode(win = globalThis) {
   // cannot swallow Escape before the guided modal receives it.
   win.addEventListener("keydown", onKeyDown, true);
   doc.addEventListener("keydown", onKeyDown, true);
-  button.addEventListener("click", () => { panel.hidden = false; close.focus?.({ preventScroll: true }); });
+  button.addEventListener("click", openGuided);
   close.addEventListener("click", closeGuided);
   win.AO_CATECHISM_GUIDED_MODE_V1 = Object.freeze({
     openQuestion: number => view.openQuestion(number),
