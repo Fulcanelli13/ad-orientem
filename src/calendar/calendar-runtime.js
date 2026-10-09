@@ -8,6 +8,7 @@ import { calendarMassColour } from "./colour-projection.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
 import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper.js";
 import { observedCycle } from "./observed-cycle.js";
+import { calendarObservanceAlias } from "./observance-title.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -359,6 +360,8 @@ function resolution(){
 }
 function properOf(r){return r?.proper?.status==="ready"?r.proper.data:null}
 function titleOf(r){
+  const alias=calendarObservanceAlias(r,fr()?"fr":"en");
+  if(alias)return alias;
   const p=properOf(r),d=r?.day?.main;
   return String((fr()?(p?.nameFr||p?.title?.fr||p?.name||d?.titleFr||d?.nameFr||d?.title):(p?.name||p?.title?.en||d?.title||d?.name))||L("Liturgical day","Jour liturgique"));
 }
