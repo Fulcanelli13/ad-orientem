@@ -169,7 +169,11 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
       citation.title=french
         ?"Lire le contexte original ; la méditation n’est pas une citation biblique."
         :"Read the original context; this meditation is not a Scripture quotation.";
-      citation.textContent=witness.reference;
+      citation.textContent=french?(witness.referenceFr||witness.reference):witness.reference;
+      if(french&&witness.frenchWitnessLanguage==="la"){
+        citation.lang="la";
+        citation.title="Texte latin original du Saint-Siège · ouvrir la source";
+      }
       note.appendChild(citation);
       prayer.appendChild(note);
     }
