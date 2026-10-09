@@ -1,0 +1,696 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_PRIORITY_DISTRICTS_RECONCILIATION_V1",
+  "reviewed_on": "2026-10-09",
+  "review_districts": [
+    "poland",
+    "australia",
+    "asia"
+  ],
+  "previous_worldwide_sspx_mass_records": 586,
+  "new_mass_records_added": 11,
+  "new_worldwide_sspx_mass_records": 597,
+  "source_cases_reviewed": 53,
+  "result_counts": {
+    "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS": 10,
+    "POTENTIAL_EXISTING_SAME_LOCALITY": 26,
+    "SOURCED_NEW_PHYSICAL_MASS_VENUE": 11,
+    "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH": 6
+  },
+  "by_district": [
+    {
+      "district": "poland",
+      "total": 25,
+      "breakdown": {
+        "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS": 0,
+        "POTENTIAL_EXISTING_SAME_LOCALITY": 14,
+        "SOURCED_NEW_PHYSICAL_MASS_VENUE": 9,
+        "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH": 2
+      }
+    },
+    {
+      "district": "australia",
+      "total": 17,
+      "breakdown": {
+        "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS": 4,
+        "POTENTIAL_EXISTING_SAME_LOCALITY": 9,
+        "SOURCED_NEW_PHYSICAL_MASS_VENUE": 2,
+        "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH": 2
+      }
+    },
+    {
+      "district": "asia",
+      "total": 11,
+      "breakdown": {
+        "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS": 6,
+        "POTENTIAL_EXISTING_SAME_LOCALITY": 3,
+        "SOURCED_NEW_PHYSICAL_MASS_VENUE": 0,
+        "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH": 2
+      }
+    }
+  ],
+  "controls": {
+    "remaining_same_city_cases_not_auto_deduped": true,
+    "locational_ambiguities_held": true,
+    "all_new_records_have_first_party_address_sunday_evidence": true,
+    "no_new_pins_asserted": true,
+    "v1_worldwide_941_identity_census_unchanged": true
+  },
+  "cases": [
+    {
+      "official_place_id": "abu-dhabi-or-dubai",
+      "official_place_url": "https://map.fsspx.org/de/places/abu-dhabi-or-dubai",
+      "district": "asia",
+      "label": "United Arab EmiratesMissionDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "armidale",
+      "official_place_url": "https://map.fsspx.org/de/places/armidale",
+      "district": "australia",
+      "label": "ArmidaleMission · ArmidaleDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-AU-ARMIDALE-ARMIDALE-MISSION-HUGHES-HOUSE"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "bergen",
+      "official_place_url": "https://map.fsspx.org/de/places/bergen",
+      "district": "poland",
+      "label": "BergenMission · BergenDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-01-BERGEN",
+      "published_address": "Takvamvegen 67, 5264 Bergen, Norway",
+      "published_mass_source": "https://map.fsspx.org/de/places/bergen",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "centrum-sw-ludwika-marii-grignion-de-montfort",
+      "official_place_url": "https://map.fsspx.org/de/places/centrum-sw-ludwika-marii-grignion-de-montfort",
+      "district": "poland",
+      "label": "Centrum św. Ludwika Marii Grignion de MontfortChapelle · CzęstochowaDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-CZESTOCHOWA-KAPLICA-SW-LUDWIKA-MARII-GRIGNIONA-DE-MONT"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "chapel-of-ol-of-fatima",
+      "official_place_url": "https://map.fsspx.org/de/places/chapel-of-ol-of-fatima",
+      "district": "poland",
+      "label": "Chapel of OL of FatimaMission, Chapelle · Saint PetersburgDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-02-CHAPEL-OF-OL-OF-FATIMA",
+      "published_address": "Vockova 18/10, Church of St Anna, 197101 Saint Petersburg, Russia",
+      "published_mass_source": "https://map.fsspx.org/de/places/chapel-of-ol-of-fatima",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "chapel-of-st-joseph",
+      "official_place_url": "https://map.fsspx.org/de/places/chapel-of-st-joseph",
+      "district": "australia",
+      "label": "Chapel of St JosephMission · HamiltonDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-NZ-HAMILTON-SAINT-JOSEPH-S-CHAPEL"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "chapel-of-st-michael-the-archangel",
+      "official_place_url": "https://map.fsspx.org/de/places/chapel-of-st-michael-the-archangel",
+      "district": "australia",
+      "label": "Chapel of St Michael the ArchangelChapelle · TawaDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH",
+      "existing_record_id": "SSPX-ANZ-NZ-WELLINGTON-SAINT-MICHAEL-THE-ARCHANGEL-CHAPEL",
+      "match_qualifier": "NAME/ADDRESS/ADMINISTRATIVE_LOCALITY_ALIAS_NO_ADDITIONAL_VENUE",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "chapel-of-the-immaculate-heart-of-mary",
+      "official_place_url": "https://map.fsspx.org/de/places/chapel-of-the-immaculate-heart-of-mary",
+      "district": "poland",
+      "label": "Chapel of the Immaculate Heart of MaryMission · MoscowDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-03-CHAPEL-OF-THE-IMMACULATE-HEART-OF-MARY",
+      "published_address": "Nalichnaya Ulitsa 1, Vvedenskoye Cemetery, 111020 Moscow, Russia",
+      "published_mass_source": "https://map.fsspx.org/de/places/chapel-of-the-immaculate-heart-of-mary",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "chapel-of-the-immaculate-heart-of-mary-s-john",
+      "official_place_url": "https://map.fsspx.org/de/places/chapel-of-the-immaculate-heart-of-mary-s-john",
+      "district": "australia",
+      "label": "Chapel of the Immaculate Heart of Mary & S. JohnChapelle · AucklandDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-NZ-AUCKLAND-IMMACULATE-HEART-OF-MARY-CHURCH"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "chapel-of-the-sacred-heart",
+      "official_place_url": "https://map.fsspx.org/de/places/chapel-of-the-sacred-heart",
+      "district": "poland",
+      "label": "Chapel of the Sacred HeartChapelle · MinskDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-04-CHAPEL-OF-THE-SACRED-HEART",
+      "published_address": "Business Centre Ocean, Prospekt Dzerzhinskj 3 B, 8th floor room 119, 220069 Minsk, Belarus",
+      "published_mass_source": "https://map.fsspx.org/de/places/chapel-of-the-sacred-heart",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "chapelle-saint-joseph-paita",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-saint-joseph-paita",
+      "district": "australia",
+      "label": "Chapelle Saint-JosephChapelle · Katiramona, Nouvelle-CalédonieDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-10-CHAPELLE-SAINT-JOSEPH-PAITA",
+      "published_address": "Route Territoriale 1, Lotissement les Fougères, arrêt Les Pétroglyphes, Katiramona, 98890 Païta, Nouvelle-Calédonie",
+      "published_mass_source": "https://map.fsspx.org/de/places/chapelle-saint-joseph-paita",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "chapelle-saint-olaf",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-saint-olaf",
+      "district": "poland",
+      "label": "Chapelle Saint-OlafMission · OsloDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-05-CHAPELLE-SAINT-OLAF",
+      "published_address": "Ørakerstien 6, 0284 Oslo, Norway",
+      "published_mass_source": "https://map.fsspx.org/de/places/chapelle-saint-olaf",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "church-of-the-immaculate-heart-of-mary",
+      "official_place_url": "https://map.fsspx.org/de/places/church-of-the-immaculate-heart-of-mary",
+      "district": "poland",
+      "label": "Church of the Immaculate Heart of MaryChapelle · TallinnDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-06-CHURCH-OF-THE-IMMACULATE-HEART-OF-MARY",
+      "published_address": "Pärnu mnt. 397, 10914 Tallinn, Estonia",
+      "published_mass_source": "https://map.fsspx.org/de/places/church-of-the-immaculate-heart-of-mary",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "dardanup",
+      "official_place_url": "https://map.fsspx.org/de/places/dardanup",
+      "district": "australia",
+      "label": "DardanupMission · DardanupDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "dom-rekolekcyjny-pw-chrystusa-krola",
+      "official_place_url": "https://map.fsspx.org/de/places/dom-rekolekcyjny-pw-chrystusa-krola",
+      "district": "poland",
+      "label": "Dom rekolekcyjny pw. Chrystusa KrólaMaison de retraites spirituelles, Chapelle · Kijewo KrólewskieDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH",
+      "existing_record_id": "SSPX-OCT26-PL-BAJERZE-KAPLICA-CHRYSTUSA-KROLA",
+      "match_qualifier": "NAME/ADDRESS/ADMINISTRATIVE_LOCALITY_ALIAS_NO_ADDITIONAL_VENUE",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "dubbo",
+      "official_place_url": "https://map.fsspx.org/de/places/dubbo",
+      "district": "australia",
+      "label": "DubboMission · RawsonvilleDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-AU-RAWSONVILLE-DUBBO-MASS-CENTRE-SOLDIER-S-MEMORIAL-HALL"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "dunstall-s-funeral-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/dunstall-s-funeral-chapel",
+      "district": "australia",
+      "label": "Dunstall’s Funeral ChapelMission · NapierDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-NZ-NAPIER-OUR-LADY-HELP-OF-CHRISTIANS-MISSION-DUNSTALL-S-FUNERAL-CHAPEL"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "east-devonport",
+      "official_place_url": "https://map.fsspx.org/de/places/east-devonport",
+      "district": "australia",
+      "label": "East DevonportMission · East DevonportDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-AU-EAST-DEVONPORT-TASMANIAN-MISSION"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "eglise-saint-raphael",
+      "official_place_url": "https://map.fsspx.org/de/places/eglise-saint-raphael",
+      "district": "australia",
+      "label": "Église Saint RaphaëlMission · VunapisuDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "hervey-bay-mass-centre",
+      "official_place_url": "https://map.fsspx.org/de/places/hervey-bay-mass-centre",
+      "district": "australia",
+      "label": "Hervey Bay Mass CentreMission · NikenbahDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-AU-NIKENBAH-PIALBA-HISTORICAL-VILLAGE-MUSEUM-CHAPEL"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "hill-end",
+      "official_place_url": "https://map.fsspx.org/de/places/hill-end",
+      "district": "australia",
+      "label": "Hill EndMission · Hill EndDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-11-HILL-END",
+      "published_address": "18 Denison Street, corner Denison and Thomas Streets, Hill End NSW 2850, Australia",
+      "published_mass_source": "https://map.fsspx.org/de/places/hill-end",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "hong-kong",
+      "official_place_url": "https://map.fsspx.org/de/places/hong-kong",
+      "district": "asia",
+      "label": "Hong-KongMission · KowloonDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "immaculate-heart-of-mary-mass-center",
+      "official_place_url": "https://map.fsspx.org/de/places/immaculate-heart-of-mary-mass-center",
+      "district": "asia",
+      "label": "Immaculate Heart of Mary Mass CenterMission · TakatsukiDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-ACAS-ASIA-JP-005"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "indonesie-jakarta",
+      "official_place_url": "https://map.fsspx.org/de/places/indonesie-jakarta",
+      "district": "asia",
+      "label": "IndonesiaMissionDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-p-w-matki-bozej-ostrobramskiej",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-p-w-matki-bozej-ostrobramskiej",
+      "district": "poland",
+      "label": "Kaplica p.w. Matki Bożej OstrobramskiejChapelle · OlsztynDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-OLSZTYN-KAPLICA-MATKI-BOZEJ-OSTROBRAMSKIEJ"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-p-w-sw-wojciecha",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-p-w-sw-wojciecha",
+      "district": "poland",
+      "label": "Kaplica p.w. sw. WojciechaChapelle · SzczecinDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-SZCZECIN-KAPLICA-SW-WOJCIECHA"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pi-a",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pi-a",
+      "district": "poland",
+      "label": "Kaplica PiłaMission · PiłaDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-PI-A-KAPLICA-SW-JANA-CHRZCICIELA-I-SW-JANA-EWAN"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-matki-bozej-bolesnej",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-matki-bozej-bolesnej",
+      "district": "poland",
+      "label": "Kaplica pw. Matki Bożej BolesnejChapelle · BydgoszczDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-BYDGOSZCZ-KAPLICA-MATKI-BOZEJ-BOLESNEJ"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-nmpanny-nieustajacej-pomocy",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-nmpanny-nieustajacej-pomocy",
+      "district": "poland",
+      "label": "Kaplica pw. NMPanny Nieustającej PomocyChapelle · BolesławiecDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-BOLES-AWIEC-KAPLICA-NMP-NIEUSTAJACEJ-POMOCY"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-sw-andrzeja-boboli",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-andrzeja-boboli",
+      "district": "poland",
+      "label": "Kaplica pw. św. Andrzeja BoboliChapelle · ZaczernieDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH",
+      "existing_record_id": "SSPX-OCT26-PL-RZESZOW-KAPLICA-SW-ANDRZEJA-BOBOLI",
+      "match_qualifier": "NAME/ADDRESS/ADMINISTRATIVE_LOCALITY_ALIAS_NO_ADDITIONAL_VENUE",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-sw-ignacego-loyoli",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-ignacego-loyoli",
+      "district": "poland",
+      "label": "Kaplica pw. św. Ignacego LoyoliChapelle · SłupskDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-S-UPSK-KAPLICA-SW-IGNACEGO-LOYOLI"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-sw-jadwigi-slaskiej",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-jadwigi-slaskiej",
+      "district": "poland",
+      "label": "Kaplica pw. św. Jadwigi ŚląskiejChapelle · WroclawDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-WROC-AW-KAPLICA-SW-JADWIGI-SLASKIEJ"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-sw-kingi",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-kingi",
+      "district": "poland",
+      "label": "Kaplica pw. św. KingiChapelle · Nowy SączDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-NOWY-SACZ-KAPLICA-SW-KINGI"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-sw-melchiora-grodzieckiego",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-melchiora-grodzieckiego",
+      "district": "poland",
+      "label": "Kaplica pw. św. Melchiora GrodzieckiegoChapelle · Bielsko-BiałaDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-BIELSKO-BIA-A-KAPLICA-SW-MELCHIORA-GRODZIECKIEGO"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-pw-sw-piusa-v",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-pw-sw-piusa-v",
+      "district": "poland",
+      "label": "Kaplica pw. św. Piusa VChapelle · ŁódźDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-ODZ-KAPLICA-SW-PIUSA-V"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-sw-antoniego-z-padwy",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-sw-antoniego-z-padwy",
+      "district": "poland",
+      "label": "Kaplica św. Antoniego z PadwyChapelle · ZamośćDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-ZAMOSC-KAPLICA-SW-ANTONIEGO-PADEWSKIEGO"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-sw-krzyza",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-sw-krzyza",
+      "district": "poland",
+      "label": "Kaplica św. KrzyżaChapelle · KielceDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-KIELCE-KAPLICA-SWIETEGO-KRZYZA"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "kaplica-zielona-gora",
+      "official_place_url": "https://map.fsspx.org/de/places/kaplica-zielona-gora",
+      "district": "poland",
+      "label": "Kaplica Zielona GóraMission · Zielona GóraDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-PL-ZIELONA-GORA-KAPLICA-SWIETYCH-PIECIU-BRACI-MECZENNIKOW"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "maungatapere-memorial-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/maungatapere-memorial-chapel",
+      "district": "australia",
+      "label": "Maungatapere Memorial ChapelMission · WhangareiDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-NZ-WHANGAREI-SAINT-PETER-CHANEL-MISSION"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "mission-of-st-peter-mary-chanel",
+      "official_place_url": "https://map.fsspx.org/de/places/mission-of-st-peter-mary-chanel",
+      "district": "australia",
+      "label": "Mission of St Peter Mary ChanelMission · DarwinDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "nakavu-village",
+      "official_place_url": "https://map.fsspx.org/de/places/nakavu-village",
+      "district": "australia",
+      "label": "Nakavu VillageMission · Nakavu VillageDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH",
+      "existing_record_id": "SSPX-ANZ-FJ-NAKAVU-NAKAVU-VILLAGE-MASS-CENTRE",
+      "match_qualifier": "NAME/ADDRESS/ADMINISTRATIVE_LOCALITY_ALIAS_NO_ADDITIONAL_VENUE",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "ormoc",
+      "official_place_url": "https://map.fsspx.org/de/places/ormoc",
+      "district": "asia",
+      "label": "OrmocMission · OrmocDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "our-lady-of-consolation-st-joseph-ch",
+      "official_place_url": "https://map.fsspx.org/de/places/our-lady-of-consolation-st-joseph-ch",
+      "district": "asia",
+      "label": "Our Lady of Consolation & St Joseph Ch.Chapelle · Iloilo CityDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-ACAS-ASIA-PH-021"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "rotuma",
+      "official_place_url": "https://map.fsspx.org/de/places/rotuma",
+      "district": "australia",
+      "label": "RotumaMission · JujuDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "sacred-heart-of-jesus-and-mary-mission",
+      "official_place_url": "https://map.fsspx.org/de/places/sacred-heart-of-jesus-and-mary-mission",
+      "district": "australia",
+      "label": "Sacred Heart of Jesus and Mary MissionChapelle · SingletonDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-ANZ-AU-SINGLETON-SACRED-HEART-OF-JESUS-AND-MARY-CHURCH"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "saint-francis-xavier-priory",
+      "official_place_url": "https://map.fsspx.org/de/places/saint-francis-xavier-priory",
+      "district": "asia",
+      "label": "Saint Francis Xavier PrioryChapelle · NegomboDimancheEn semaine",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "decision": "POTENTIAL_EXISTING_SAME_LOCALITY",
+      "candidate_registry_ids": [
+        "SSPX-OCT26-ACAS-ASIA-LK-003"
+      ],
+      "reason": "Same locality is not proof of same building; compare addresses before claiming a duplicate",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "spiritual-centre-of-saint-berthold",
+      "official_place_url": "https://map.fsspx.org/de/places/spiritual-centre-of-saint-berthold",
+      "district": "poland",
+      "label": "Spiritual Centre of Saint BertholdChapelle · RigaDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-07-SPIRITUAL-CENTRE-OF-SAINT-BERTHOLD",
+      "published_address": "Skrīveru iela 2, LV-1007 Riga, Latvia",
+      "published_mass_source": "https://map.fsspx.org/de/places/spiritual-centre-of-saint-berthold",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "st-anthony-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/st-anthony-chapel",
+      "district": "asia",
+      "label": "St. Anthony ChapelMission · ManbusaoDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "st-anthony-s-chapel-singamparai",
+      "official_place_url": "https://map.fsspx.org/de/places/st-anthony-s-chapel-singamparai",
+      "district": "asia",
+      "label": "St. Anthony's ChapelChapelle · Tirunelveli Dist.Dimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH",
+      "existing_record_id": "SSPX-OCT26-ACAS-ASIA-IN-032",
+      "match_qualifier": "NAME/ADDRESS/ADMINISTRATIVE_LOCALITY_ALIAS_NO_ADDITIONAL_VENUE",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "st-bartholomew-s-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/st-bartholomew-s-chapel",
+      "district": "asia",
+      "label": "Saint Bartholomew's MissionChapelle · Vasai (W), Dist- PalgharDimancheEn semaine",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "HOLD_NO_PUBLISHABLE_VISITOR_ADDRESS",
+      "reason": "Official Sunday label without visitor-ready site address or unresolved physical location",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "st-jospeh-s-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/st-jospeh-s-chapel",
+      "district": "asia",
+      "label": "St Joseph's ChapelChapelle · TrichyDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "EXISTING_REGISTERED_ALIAS_PHYSICAL_MATCH",
+      "existing_record_id": "SSPX-OCT26-ACAS-ASIA-IN-035",
+      "match_qualifier": "NAME/ADDRESS/ADMINISTRATIVE_LOCALITY_ALIAS_NO_ADDITIONAL_VENUE",
+      "publishable_new_record": false
+    },
+    {
+      "official_place_id": "sv-juozapo-koplycia",
+      "official_place_url": "https://map.fsspx.org/de/places/sv-juozapo-koplycia",
+      "district": "poland",
+      "label": "Šv. Juozapo koplyčiaChapelle · ŠiauliaiDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-08-SV-JUOZAPO-KOPLYCIA",
+      "published_address": "Tilvikų g. 12, 76203 Šiauliai, Lithuania",
+      "published_mass_source": "https://map.fsspx.org/de/places/sv-juozapo-koplycia",
+      "publishable_new_record": true
+    },
+    {
+      "official_place_id": "svc-mergeles-marijos-rozancines-koplycia",
+      "official_place_url": "https://map.fsspx.org/de/places/svc-mergeles-marijos-rozancines-koplycia",
+      "district": "poland",
+      "label": "Švč. Mergelės Marijos Rožančinės koplyčiaChapelle · VilniusDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "decision": "SOURCED_NEW_PHYSICAL_MASS_VENUE",
+      "published_record_id": "SSPX-PRIORITY-20261009-09-SVC-MERGELES-MARIJOS-ROZANCINES-KOPLYCIA",
+      "published_address": "S. Konarskio g. 21-59, 03109 Vilnius, Lithuania",
+      "published_mass_source": "https://map.fsspx.org/de/places/svc-mergeles-marijos-rozancines-koplycia",
+      "publishable_new_record": true
+    }
+  ]
+}
