@@ -25,11 +25,11 @@ export function parseCountryPage(html,{countryCode,pageUrl}){
  for(const a of extractAnchors(html,pageUrl)){
   if(!venueUrl(a.url))continue;
   const id=new URL(a.url).pathname.split("/").filter(Boolean).pop();
-  if(!seen.has(id))seen.set(id,{source_id:"LMD:"+id,external_id:id,name:a.text||id,
+  if(!seen.has(id)||seen.get(id).name.length<6&&a.text.length>seen.get(id).name.length)seen.set(id,{source_id:"LMD:"+id,external_id:id,name:a.text.length>5?a.text:id,
    country_code:iso(countryCode),directory_url:a.url,source_type:"THIRD_PARTY_DIRECTORY",publication_state:"RESEARCH_ONLY"});
  }
  const match=stripTags(html).match(/Showing\s+(\d+)\s*[-–]\s*(\d+)\s+of\s+([\d,]+)/i);
- return {venues:[...seen.values()],pagination:match?{first:+match[1],last:+match[2],total:+match[3].replace(/,/g,"")}:null};
+ return {venues:[...seen.values()],pagination:match?{first:+match[1],last:+match[2],total:+match[3].replace(/,/g,"")}:null,reportedTotal:headline?Number(headline[1].replace(/,/g,"")):null};
 }
 const HAS_MASS=/\b(?:Mass|Messe|Missa|Misa|messe|messe tridentine|Sung Mass|Low Mass)\b/i;
 const NOT_MASS=/\b(?:Vespers|Benediction|Confessions|Rosary|Holy Hour|Lauds|Adoration)\b/i;
@@ -49,7 +49,7 @@ export function parseVenuePage(html,{directoryUrl}){
  }
  const anchors=extractAnchors(html,directoryUrl);
  const outlinks=[...new Set(anchors.map(x=>x.url).filter(url=>{
-  try{const host=new URL(url).hostname;return host!=="www.latinmassdir.org"&&host!=="latinmassdir.org"&&
+  try{const u=new URL(url);const host=u.hostname;return ["http:","https:"].includes(u.protocol)&&host!=="latinmassdir.org"&&!host.endsWith(".latinmassdir.org")&&
     !/^(www\.)?google\./.test(host)&&!/(donorbox|facebook|instagram|twitter|youtube)\./.test(host)}catch{return false}
  }))];
  const modified=body.match(/Last modified\s+([^\n]+?)(?:Created|Sorry for the interruption|$)/i)?.[1]?.trim()||null;
@@ -71,7 +71,7 @@ function argsFor(argv){
   else if(item.startsWith("--delay-ms="))opts.delayMs=Number(item.slice(11));
   else if(item.startsWith("--out="))opts.out=item.slice(6);
  }
- if(!Number.isInteger(opts.maxPages)||opts.maxPages<1||opts.maxPages>200)throw Error("max-pages must be 1..200");
+ if(!Number.isInteger(opts.maxPages)||opts.maxPages<1||opts.maxPages>240)throw Error("max-pages must be 1..200");
  if(!Number.isInteger(opts.maxDetails)||opts.maxDetails<0||opts.maxDetails>2000)throw Error("max-details must be 0..2000");
  if(!Number.isInteger(opts.delayMs)||opts.delayMs<1000)throw Error("Rate limit: at least 1000ms between requests");
  return opts;
@@ -99,6 +99,7 @@ export async function discoverApprovedDirectory({countries=["US","FR"],maxPages=
    catch(error){errors.push({country_code:code,page,error:String(error?.message??error)});break}
    remaining--;pages++;
    if(parsed.pagination)total=parsed.pagination.total;
+   else if(parsed.reportedTotal!==null)total=parsed.reportedTotal;
    if(!parsed.venues.length){errors.push({country_code:code,page,error:"NO_VENUE_LINKS_OR_PARSER_CHANGED"});break}
    for(const item of parsed.venues)found.set(item.external_id,item);
    if(parsed.pagination&&parsed.pagination.last>=parsed.pagination.total)break;
@@ -125,6 +126,10 @@ export async function discoverApprovedDirectory({countries=["US","FR"],maxPages=
 const directlyInvoked=process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url);
 if(directlyInvoked){
  const args=argsFor(process.argv.slice(2));
+ if(args.countries.length===1&&args.countries[0]==="ALL"){
+  const benchmark=JSON.parse(await fs.readFile("data/directory/research/adorientem-church-public-benchmark-20261009.v1.json","utf8"));
+  args.countries=Object.keys(benchmark.independent_official_source.latinmassdir_country_counts);
+ }
  if(!args.allowRemote)throw Error("Pass --remote to acknowledge paced external access. Tests use fixtures offline.");
  const result=await discoverApprovedDirectory(args);
  await fs.mkdir(path.dirname(path.resolve(args.out)),{recursive:true});
