@@ -75,3 +75,22 @@ for(const m of fsspMinistries){
  assert.ok(m.source_ids?.some(id=>fsspSourceIds.has(id)),"Every FSSP ministry requires linked source evidence");
 }
 console.log("FSSP ministry/source inventory audit: PASS; records:",fsspMinistries.length,"sources:",fsspSources.length);
+
+const fsspVenues=read("data/directory/generated/fssp/venues.v1.json").records;
+const fsspSchedules=read("data/directory/generated/fssp/schedules.v1.json").records;
+assert.equal(fsspVenues.length,fsspMinistries.length,"FSSP imported venue/ministry count mismatch");
+const fsspVenueIds=new Set(fsspVenues.map(v=>v.venue_id));
+const fsspMinistryIds=new Set(fsspMinistries.map(m=>m.ministry_id));
+const fsspScheduleMinistries=new Set(fsspSchedules.filter(s=>s.service_type==="MASS").map(s=>s.ministry_id));
+assert.equal(fsspVenueIds.size,fsspVenues.length,"FSSP duplicate venue IDs");
+for(const m of fsspMinistries)assert.ok(fsspVenueIds.has(m.venue_id),"Orphan FSSP ministry");
+for(const s of fsspSchedules)assert.ok(fsspMinistryIds.has(s.ministry_id),"Orphan FSSP Mass schedule");
+const fsspJoined=publishableDirectoryRecords(joinDirectoryRecords({
+ venues:fsspVenues,ministries:fsspMinistries,schedules:fsspSchedules,sources:fsspSources
+}));
+const fsspMapped=applyIndicativeOtherCommunities([...rows,...fsspJoined]).records.filter(r=>fsspVenueIds.has(r.venue.venue_id));
+assert.equal(fsspMapped.length,fsspJoined.length,"FSSP records dropped during indicative mapping");
+assert.ok(fsspMapped.every(r=>r.venue.contact.website?.length>0),"FSSP missing official redirection");
+assert.ok(fsspMapped.every(r=>!r.venue.geo?.indicative_only||r.venue.geo.routing_eligible===false),"FSSP indicative pin routed");
+const geoCount=fsspMapped.filter(r=>isMapPublishableGeo(r.venue.geo,r.venue.address.country_code)).length;
+console.log("FSSP bulk:",JSON.stringify({venues:fsspVenues.length,ministries:fsspMinistries.length,massSchedules:fsspSchedules.length,sourceRows:fsspSources.length,joined:fsspJoined.length,mapped:geoCount,unmapped:fsspJoined.length-geoCount}));
