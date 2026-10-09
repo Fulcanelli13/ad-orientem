@@ -88,8 +88,8 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     }
     const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
-    const opened=api.open("pray.hub",{returnContext:null});
-    if(opened===false)return false;
+    const opened=await Promise.resolve(api.open("pray.hub",{returnContext:null}));
+    if(opened!==true&&opened?.ok!==true)return false;
     stamp(win);
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
     return true;

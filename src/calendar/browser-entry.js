@@ -75,7 +75,8 @@ export function installCalendarBrowserOwner(win=globalThis){
      if(requestedView)owner.setView?.(requestedView);
      if(requestedMonthView)owner.setMonthView?.(requestedMonthView);
      requestedView=requestedMonthView=null;
-     return (await owner.open())!==false;
+     const opened=await owner.open();
+     return opened===true||opened?.ok===true;
    }catch(error){try{win.console?.error?.("Calendar first-use import failed",error)}catch{};return false}
   },
   close:opts=>real()?.close?.(opts)??true,

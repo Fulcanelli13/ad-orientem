@@ -10,6 +10,7 @@ import "./prayer-locale-collation.mjs";
 import "./prayer-compendium-whole-form.mjs";
 import "./prayer-eight-full-boundaries.mjs";
 import {parseScriptureContext,verifiedScriptureCommentary} from "../src/scripture/context.js";
+import "./app-shell-navigation-open-results.mjs";
 import { readFileSync } from "node:fs";
 import {
   APP_SURFACES,
