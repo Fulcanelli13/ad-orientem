@@ -143,6 +143,87 @@ try{
  await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:8000});
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
 
+
+ // Clean Calendar boot: Glossary must load only after its own contextual click.
+ const glossaryUrl="/src/glossary/browser-entry.js";
+ assert.equal(hits.some(x=>x.path===glossaryUrl),false,"Glossary unexpectedly loaded before its Calendar button");
+ await page.locator("#ao-calendar-modular-root [data-cal-glossary]").click();
+ await page.locator("#ao-glossary-root").waitFor({state:"visible",timeout:25000});
+ assert.equal(hits.some(x=>x.path===glossaryUrl),true,"Calendar Glossary click failed to import its owner");
+ assert.equal(await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.status?.().open),true,"Contextual Glossary click did not open the real reader");
+ await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.close?.());
+
+ // Documented 1962-calendar oracle (not the modern Roman calendar):
+ // https://gcatholic.org/calendar/2024/Extraordinary-en
+ // https://gcatholic.org/calendar/2027/Extraordinary-en
+ // https://missale.online/festkalender/en/2027/druck
+ const roman1962Cases=[
+   ["2024-03-25",/Holy Monday|Monday of Holy Week|Feria II of Holy Week|Lundi saint/i],
+   ["2024-04-08",/Annunciation|Annonciation/i],
+   ["2024-12-08",/Immaculate Conception|Immaculée Conception/i],
+   ["2027-02-10",/Ash Wednesday|Mercredi des Cendres/i],
+   ["2027-03-19",/St[.]? Joseph|Saint Joseph|Saint-Joseph/i],
+   ["2027-03-25",/Holy Thursday|Jeudi saint/i],
+   ["2027-03-26",/Good Friday|Vendredi saint/i],
+   ["2027-03-28",/Easter Sunday|Dimanche de Pâques/i],
+   ["2027-04-05",/Annunciation|Annonciation/i],
+   ["2027-05-06",/Ascension/i],
+   ["2027-05-16",/Pentecost|Pentecôte/i],
+   ["2027-08-15",/Assumption|Assomption/i],
+   ["2027-10-31",/Christ the King|Christ-Roi|Kingship of Our Lord/i],
+   ["2027-11-01",/All Saints|Toussaint/i]
+ ];
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
+ const oracleFindings=[],oracleMismatch=[];
+ for(const [date,expected] of roman1962Cases){
+   const opened=await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),date);
+   const title=await page.locator("#ao-calendar-modular-root .aoCalV2Hero h2").textContent();
+   const resolved=await page.evaluate(id=>{
+     const r=globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.get?.(id);
+     const p=r?.proper?.data,day=r?.day?.main;
+     return {status:r?.status,rank:p?.rank||day?.rank||null,colour:p?.color||day?.color||null};
+   },date);
+   const ok=opened===true&&resolved.status!=="failed"&&expected.test(title||"");
+   oracleFindings.push({date,title,status:resolved.status,rank:resolved.rank,colour:resolved.colour,ok});
+   if(!ok)oracleMismatch.push({date,actual:title,expected:String(expected),status:resolved.status});
+ }
+ console.log("CALENDAR_1962_ORACLE_FINDINGS="+JSON.stringify(oracleFindings));
+ assert.deepEqual(oracleMismatch,[],"1962 resolved Masses disagree with independent sample");
+ // In Passion Week 2027 the first-class Mass of St Joseph displaces the
+ // third-class Friday, which survives as a commemoration. Confirm all three
+ // facets of precedence: principal observance, class/colour, commemoration.
+ const josephResolution=await page.evaluate(()=>{
+   const r=globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.get?.("2027-03-19");
+   return {
+     id:r?.day?.main?.id,
+     rank:r?.day?.main?.rank,
+     colour:r?.day?.main?.color,
+     commemorations:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title}))
+   };
+ });
+ assert.equal(josephResolution.id,"sancti:03-19:1:w","St Joseph must own the principal Mass instead of Passion Friday");
+ assert.equal(josephResolution.rank,1,"St Joseph must be I class under the 1962 ordo");
+ assert.match(josephResolution.colour||"",/white/i,"St Joseph must be white, not Passion Friday violet");
+ assert.ok(josephResolution.commemorations.some(x=>/quad5|passion|feria vi/i.test(String(x.id||"")+" "+String(x.title||""))),
+   "Friday of Passion Week must remain commemorated under St Joseph");
+
+ assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-04-05"),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("major")),true);
+ await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({state:"visible",timeout:12000});
+ await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:45000});
+ const transferred=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-04-05']").textContent();
+ assert.match(transferred||"",/Annunciation|Annonciation/i,"Transferred Annunciation absent from April's observed Major index");
+ // A first-class sanctoral feast that falls on Sunday must not be
+ // misclassified as an ordinary Sunday of the temporal cycle.
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
+ assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-08-15"),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("sanctorale")),true);
+ await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").waitFor({state:"visible",timeout:12000});
+ await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:45000});
+ const assumptionEntry=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-08-15']").textContent();
+ assert.match(assumptionEntry||"",/Assumption|Assomption/i,"Sunday Assumption must remain Sanctorale by observed principal Mass");
+ console.log("PASS Calendar 1962 source-oracle sample: 14 observed days and transferred April feast");
+
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
  const fetchedBefore=hits.filter(x=>x.path==="/src/calendar/calendar-runtime.js").length;
  const second=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("calendar"));

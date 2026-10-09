@@ -416,7 +416,7 @@ function applyRules(calendar, source, date, shifted) {
             return ret([x], y ? [y] : []);
         }
     }
-    if ((x = matchFirst(obs, C.TEMPORA_QUAD5_5)) && (y = matchFirst(obs, C.TEMPORA_QUAD5_5C)))
+    if ((x = matchFirst(obs, C.TEMPORA_QUAD5_5)) && (y = matchFirst(obs, C.TEMPORA_QUAD5_5C)) && !matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2))
         return ret([x], [y]);
     x = !isSun ? matchFirst(obs, [...source.ember, PAT.PATTERN_ADVENT]) : null;
     if (x) {
