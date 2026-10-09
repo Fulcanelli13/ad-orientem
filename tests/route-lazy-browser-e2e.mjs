@@ -62,6 +62,40 @@ try {
   const findLoaded=await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.()?.installed===true);
   assert.equal(findLoaded,true,"Explore modular owner not installed");
 
+  // Exercise visible Explore controls rather than only its lazy owner.
+  // Search rerenders the complete result surface: keyboard focus and caret
+  // must survive successive input events so users can enter a full query.
+  await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"shrines",view:"list",query:""}));
+  const search=page.locator("#ao-find-modular-root [data-find-query]");
+  await search.click();
+  await page.keyboard.type("Lourdes",{delay:30});
+  await page.waitForFunction(()=>document.querySelector("#ao-find-modular-root [data-find-query]")?.value==="Lourdes");
+  assert.equal(await page.evaluate(()=>document.activeElement?.matches?.("#ao-find-modular-root [data-find-query]")),true,
+    "Explore search loses focus after repaint: users cannot type beyond the first character");
+  const lourdesCard=page.locator("#ao-find-modular-root [data-explore-item]").first();
+  await lourdesCard.waitFor({state:"visible",timeout:12000});
+  await lourdesCard.click();
+  const detail=page.locator("#ao-find-modular-root [data-find-close-detail].aoFindSheetBackdrop");
+  await detail.waitFor({state:"visible"});
+  const placeAction=page.locator("#ao-find-modular-root [data-explore-open-place]").first();
+  await placeAction.waitFor({state:"visible"});
+  await placeAction.click();
+  const place=page.locator("#ao-find-modular-root [data-explore-place-owner]");
+  await place.waitFor({state:"visible",timeout:12000});
+  assert.equal(await detail.count(),0,
+    "Explore Place-page click was swallowed by the detail backdrop dismissal handler");
+  const dateButton=page.locator("#ao-find-modular-root [data-explore-calendar-date]").first();
+  await dateButton.waitFor({state:"visible",timeout:12000});
+  const linkedDate=await dateButton.getAttribute("data-explore-calendar-date");
+  assert.match(linkedDate,/^\\d{4}-\\d{2}-\\d{2}$/);
+  await dateButton.click();
+  await page.locator("#ao-calendar-modular-root").waitFor({state:"visible",timeout:20000});
+  await page.waitForFunction(date=>
+    globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate===date,
+    linkedDate,{timeout:20000});
+  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"calendar",
+    "Explore Calendar deep link failed to activate the Calendar surface");
+
   const back=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
   assert.equal(back.ok,true,"Home route failed after lazy Explore");
   const apostolate=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("apostolate"));
