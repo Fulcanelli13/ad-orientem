@@ -9,6 +9,7 @@ const META="ao-bootstrap-meta-v1";
 const BASE=new URL(self.registration.scope);
 const ROOT=new URL("index.html",BASE).href;
 const KEY=new URL("__ao_bootstrap_state__",BASE).href;
+const READY=new URL("__ao_bootstrap_completed__",BASE).href;
 const MAX_ITEMS=320,MAX_BYTES=35_000_000;
 let stagedJob=null,activeVersion=null;
 const liveClients=new Map();
@@ -38,7 +39,7 @@ const cacheName=v=>PREFIX+v;
 async function validVersion(v){
  if(!v||!await caches.has(cacheName(v)))return false;
  const c=await caches.open(cacheName(v));
- return Boolean(await c.match(ROOT));
+ return Boolean(await c.match(ROOT))&&Boolean(await c.match(READY));
 }
 async function pinnedVersion(event){
  const id=event?.clientId||event?.resultingClientId;
@@ -125,9 +126,11 @@ async function stageSnapshot(){
       await final.put(keyFor(url),r);
      }
      if(!await final.match(ROOT))fail("MISSING_ENTRY");
+     await final.put(READY,new Response(JSON.stringify({version,files:processed.size,bytes}),{headers:{"content-type":"application/json"}}));
     }catch(e){await caches.delete(cacheName(version));throw e}
    }
-   const next={active:existing.active||version,completed:[version,...existing.completed.filter(x=>x!==version)].slice(0,4)};
+   const oldActive=await validVersion(existing.active)?existing.active:null;
+   const next={active:oldActive||version,completed:[version,...existing.completed.filter(x=>x!==version)].slice(0,4)};
    await saveState(next);
    await caches.delete(STAGE);
    await broadcast(existing.active&&existing.active!==version?"UPDATE_READY":"OFFLINE_READY",{version,active:next.active,files:processed.size,bytes});
@@ -140,10 +143,11 @@ async function stageSnapshot(){
  })().finally(()=>{stagedJob=null});
  return stagedJob;
 }
-async function useSnapshot(version){
+async function useSnapshot(version,clientId=null){
  const state=await readState();
  if(!state.completed.includes(version)||!await validVersion(version))return {ok:false,error:"UNVERIFIED_VERSION"};
  await saveState({...state,active:version});
+ if(clientId)liveClients.set(clientId,version);
  // Existing tab clients stay pinned to their previous snapshot until they
  // themselves navigate/reload. Do not force reload of a live Mass session.
  await broadcast("ACTIVE_VERSION",{version});
@@ -159,7 +163,7 @@ self.addEventListener("message",event=>{
  const respond=body=>{try{event.ports?.[0]?.postMessage(body)}catch{}};
  if(m.type==="CHECK_UPDATE")event.waitUntil(stageSnapshot().then(respond));
  else if(m.type==="STATUS")event.waitUntil(readState().then(s=>respond({ok:true,...s})));
- else if(m.type==="USE_SNAPSHOT")event.waitUntil(useSnapshot(m.version).then(respond));
+ else if(m.type==="USE_SNAPSHOT")event.waitUntil(useSnapshot(m.version,event.source?.id).then(respond));
 });
 self.addEventListener("fetch",event=>{
  const request=event.request;
