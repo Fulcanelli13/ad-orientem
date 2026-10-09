@@ -579,7 +579,10 @@ export async function mountNativeReaderPreview({
         postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[state.posture]??null,
         gesture:step.recordId==="GF-PASS-320"
           ? Object.freeze({
-              label:"Kneel · pause briefly",action:"Pause at the death of Our Lord",
+              // Keep the exact source action stable for the R28 Good Friday
+              // contract and the low-tech faithful cue display. The
+              // contextual Continue control presents the plain-language cue.
+              label:state.action,action:state.action,
               canonicalCueId:"GF-PASS-320",anchorLat:"tradidit spiritum",
               owner:"R28_GF_PASSION_DEATH_SOURCE",
             })
