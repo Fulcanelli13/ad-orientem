@@ -213,6 +213,14 @@ try{
  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:45000});
  const transferred=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-04-05']").textContent();
  assert.match(transferred||"",/Annunciation|Annonciation/i,"Transferred Annunciation absent from April's observed Major index");
+ // A first-class sanctoral feast that falls on Sunday must not be
+ // misclassified as an ordinary Sunday of the temporal cycle.
+ assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-08-15"),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("sanctorale")),true);
+ await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").waitFor({state:"visible",timeout:12000});
+ await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:45000});
+ const assumptionEntry=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-08-15']").textContent();
+ assert.match(assumptionEntry||"",/Assumption|Assomption/i,"Sunday Assumption must remain Sanctorale by observed principal Mass");
  console.log("PASS Calendar 1962 source-oracle sample: 14 observed days and transferred April feast");
 
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
