@@ -41,12 +41,14 @@ for(const id of PRAYER_COMPENDIUM_FRENCH_IDS_V1){
 }
 for(const id of ["foundations_grace_before_meals","foundations_grace_after_meals","mass_confiteor"])assert.equal(prayerCompendiumFrenchWitness(id),null);
 assert.equal(source.items.find(x=>x.id==="foundations_act_of_hope").statuses.fr.grade,"PUBLISHED_FRENCH_ANOMALY");
+assert.equal(prayerCompendiumFrenchWitness("foundations_act_of_hope").isComparative,false,"printed Acte d'espérance is independently witnessed, not an alternative text");
+assert.equal(prayerCompendiumFrenchWitness("foundations_our_father").isComparative,true,"traditional French Lord's Prayer differs from published edition");
 assert.equal(source.items.find(x=>x.id==="adoration_anima_christi").statuses.en.grade,"ENGLISH_PROSE_NOT_PRINTED_POEM");
 assert.equal(source.items.find(x=>x.id==="foundations_our_father").statuses.fr.grade,"TRADITIONAL_FRENCH_NOT_2005");
 assert.equal(source.items.find(x=>x.id==="foundations_eternal_rest").statuses.fr.grade,"FRENCH_TRANSLATION_NOT_2005");
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.match(runtime,/localeWitness=!edition&&isFr\(\)\?prayerCompendiumFrenchWitness\(p\.id\):null/);
 assert.match(runtime,/url=localeWitness\?\.url\|\|praySourceURL\(p\)/);
-assert.match(runtime,/localeWitness\?L\('Read French edition for comparison'/);
+assert.ok(runtime.includes("localeWitness.isComparative?L('Compare the published French edition'"),"source link must distinguish comparison from actual printed text");
 assert.match(runtime,/const SOURCE_REGISTRY=/,"original source registry still present");
 console.log("PASS Prayer 18x3 edition/locale evidence: 54 cells, French original target, no false full certification");
