@@ -3,10 +3,11 @@ import { readFileSync } from "node:fs";
 import { CSE_DEBATE_FIELDS, CSE_DEBATE_MAP } from "../src/learn/sexual-ethics-data/debates.js";
 import { CSE_QUESTION_MAP } from "../src/learn/sexual-ethics-data/index.js";
 import { CSE_SOURCE_MAP } from "../src/learn/sexual-ethics-data/sources.js";
-import { paragraphRefsFor } from "../src/learn/sexual-ethics-data/provenance.js";
+import { paragraphRefsFor, CSE_CONTEXT_ONLY_POSITION_IDS } from "../src/learn/sexual-ethics-data/provenance.js";
 
 const ledger=JSON.parse(readFileSync("data/learn/sexual-ethics-original-passage-scope-batch-2026-10-09.v4.json","utf8"));
 assert.equal(ledger.version,"CSE_ORIGINAL_PASSAGE_SCOPE_BATCH_2026_10_09_V4");
+for(const id of ["CSE051","CSE063","CSE064","CSE070"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" may not masquerade as an original author position");
 assert.equal(ledger.status,"PARTIAL_SOURCE_SCOPE_REVIEW_NOT_EIGHT_STAGE_CERTIFICATION");
 assert.deepEqual(ledger.cases.map(x=>x.id),["CSE006","CSE051","CSE061","CSE063","CSE064","CSE070"]);
 assert.equal(ledger.summary.debates_reviewed,6);
