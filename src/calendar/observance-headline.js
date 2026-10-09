@@ -20,6 +20,6 @@ export function calendarObservanceHeadline(resolution,language="en"){
   // The same Common formulary may be chosen as a votive Mass on other dates;
   // do not misrepresent it as a Saturday office then.
   const date=String(resolution.date||"");
-  if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)||new Date(date+"T12:00:00Z").getUTCDay()!==6)return null;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||new Date(date+"T12:00:00Z").getUTCDay()!==6)return null;
   return french?"Sainte Vierge Marie le samedi":"Blessed Virgin Mary on Saturday";
 }
