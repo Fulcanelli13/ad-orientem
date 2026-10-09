@@ -303,12 +303,12 @@ export const ROSARY_MYSTERY_CONTEXT_V1=Object.freeze({
     "bookFr": "Luc",
     "kind": "related_scripture_for_doctrinal_mystery",
     "summary": {
-      "en": "Mary’s Magnificat rejoices in God her Saviour and foretells that all generations will call her blessed. This Gospel does not narrate her Assumption; the Church contemplates her heavenly glorification in the light of Christ’s victory.",
-      "fr": "Le Magnificat de Marie exalte Dieu son Sauveur et annonce que toutes les générations la diront bienheureuse. Ce passage ne raconte pas son Assomption ; l’Église contemple sa glorification céleste à la lumière de la victoire du Christ."
+      "en": "Mary praises God her Saviour, who has looked upon His lowly handmaid and done great things for her. Contemplate the Mother of God, assumed body and soul into heavenly glory through the victory of her Son.",
+      "fr": "Marie glorifie Dieu son Sauveur, qui s’est penché sur son humble servante et a fait pour elle de grandes choses. Contemplez la Mère de Dieu, élevée corps et âme dans la gloire du ciel par la victoire de son Fils."
     },
     "intention": {
-      "en": "Contemplate Our Lady’s heavenly glory without treating this Gospel as an eyewitness account of the Assumption.",
-      "fr": "Contemplez la gloire céleste de Notre-Dame sans prendre cet Évangile pour un récit de l’Assomption."
+      "en": "Contemplate the glory granted to Our Lady and ask for the grace of final perseverance.",
+      "fr": "Contemplez la gloire accordée à Notre-Dame et demandez la grâce de la persévérance finale."
     },
     "englishWitness": "Douay–Rheims (Challoner; DRA)",
     "frenchWitness": "Bible Crampon, édition 1923",
@@ -319,12 +319,12 @@ export const ROSARY_MYSTERY_CONTEXT_V1=Object.freeze({
     "bookFr": "Apocalypse",
     "kind": "traditional_marian_typology",
     "summary": {
-      "en": "Saint John sees the great sign of a woman clothed with the sun and crowned with twelve stars. The image also concerns God’s people and has traditionally been applied to Mary; it does not describe a historical coronation ceremony.",
-      "fr": "Saint Jean voit le grand signe d’une femme revêtue du soleil et couronnée de douze étoiles. Cette image concerne aussi le peuple de Dieu et s’applique traditionnellement à Marie ; elle ne décrit pas une cérémonie historique de couronnement."
+      "en": "Saint John beholds the great sign of a woman clothed with the sun and crowned with twelve stars. Honour the Blessed Virgin, Mother of the King of kings, who reigns in heaven with maternal solicitude for the faithful.",
+      "fr": "Saint Jean contemple le grand signe d’une femme revêtue du soleil et couronnée de douze étoiles. Honorez la Sainte Vierge, Mère du Roi des rois, qui règne au ciel avec une sollicitude maternelle pour les fidèles."
     },
     "intention": {
-      "en": "Honour Mary as Queen while keeping the symbolic character of the biblical vision clear.",
-      "fr": "Honorez Marie comme Reine tout en respectant le caractère symbolique de la vision biblique."
+      "en": "Ask Mary, our Queen and Mother, to lead you more faithfully to Christ.",
+      "fr": "Demandez à Marie, notre Reine et notre Mère, de vous conduire plus fidèlement au Christ."
     },
     "englishWitness": "Douay–Rheims (Challoner; DRA)",
     "frenchWitness": "Bible Crampon, édition 1923",
