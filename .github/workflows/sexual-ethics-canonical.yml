@@ -45,3 +45,5 @@ jobs:
         run: node tests/sexual-ethics-moral-reasoning-source-batch-v1.mjs
       - name: Practical relationships, marriage and chastity original-scope batch (120 stages)
         run: node tests/sexual-ethics-practical-relationships-120-stage-v1.mjs
+      - name: Last fourteen public debates: 112 bilingual source-stage findings
+        run: node tests/sexual-ethics-last14-public-source-scope-v1.mjs
