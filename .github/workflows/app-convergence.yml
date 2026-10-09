@@ -15,6 +15,11 @@ on:
       - "src/mass/browser-entry.js"
       - "index.html"
       - "assets/generated-sprites/**"
+      - "assets/generated-symbols/**"
+      - "tests/per-icon-svg-e2e.mjs"
+      - "data/presentation/startup-per-icon-report.v1.json"
+      - "src/app/refined-icon-on-demand.js"
+      - "tools/defer-refined-symbol-geometry.mjs"
       - "data/presentation/startup-sprite-report.v1.json"
       - "tests/external-svg-sprite-e2e.mjs"
       - "tests/startup-payload-contract.mjs"
@@ -49,6 +54,11 @@ on:
       - "src/mass/browser-entry.js"
       - "index.html"
       - "assets/generated-sprites/**"
+      - "assets/generated-symbols/**"
+      - "tests/per-icon-svg-e2e.mjs"
+      - "data/presentation/startup-per-icon-report.v1.json"
+      - "src/app/refined-icon-on-demand.js"
+      - "tools/defer-refined-symbol-geometry.mjs"
       - "data/presentation/startup-sprite-report.v1.json"
       - "tests/external-svg-sprite-e2e.mjs"
       - "tests/startup-payload-contract.mjs"
@@ -105,6 +115,7 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: node tests/per-icon-svg-e2e.mjs
       - run: node tests/external-svg-sprite-e2e.mjs
       - run: node tests/route-lazy-browser-e2e.mjs
       - run: npm run test:rc-interaction-qa
