@@ -5,7 +5,7 @@
  */
 export const CONTEXTUAL_GLOSSARY_TERMS=Object.freeze({
  G001:Object.freeze({en:"Grace",fr:"Grâce"}),
- G034:Object.freeze({en:"Penance",fr:"Pénitence"}),
+ G034:Object.freeze({en:"Sacrament of Penance",fr:"Sacrement de Pénitence"}),
  G036:Object.freeze({en:"Confession",fr:"Confession"}),
  G044:Object.freeze({en:"Indulgence",fr:"Indulgence"}),
  G046:Object.freeze({en:"Mass",fr:"Messe"}),
