@@ -121,9 +121,11 @@ function paragraphSourceLinks(win,item,kind,field=null){
       const scope=target.scope==="chapter"?L(win,"Opens cited chapter; locate the listed verses.","Ouvre le chapitre cité ; repérez les versets indiqués.")
         :target.scope==="index"?L(win,"Source index only; passage link not verified.","Index uniquement ; lien au passage non vérifié.")
         :target.scope==="catalogue"?L(win,"Bibliographic record or preview only; cited passage not verified.","Notice bibliographique ou aperçu uniquement ; passage cité non vérifié.")
+        :target.scope==="digitized-original"?L(win,"Digitized 1966 original on third-party host; independent print collation pending.","Original de 1966 numérisé sur un site tiers ; collation indépendante en attente.")
         :"";
       const full=`${source.title} · ${target.locator}${witness}${scope?` · ${scope}`:""}`;
-      const flag=target.scope==="catalogue"?`<span class="aoCSESourceScope">${esc(L(win,"catalogue / preview only","notice / aperçu seulement"))}</span>`:"";
+      const flag=target.scope==="catalogue"?`<span class="aoCSESourceScope">${esc(L(win,"catalogue / preview only","notice / aperçu seulement"))}</span>`
+        :target.scope==="digitized-original"?`<span class="aoCSESourceScope">${esc(L(win,"1966 scan · uncollated","numérisation de 1966 · non collationnée"))}</span>`:"";
       return `<a class="aoCSEInlineRef" data-ao-cse-inline-source="${esc(sourceId)}" data-ao-cse-link-scope="${esc(target.scope)}" href="${esc(target.url)}" target="_blank" rel="noopener noreferrer" title="${esc(full)}">${esc(visible)} ↗</a>${flag}${sourceId==="SCR"?scriptureContextCapsule(target.locator,{french:isFr(win)}):""}`;
     }).join("");
   }).filter(Boolean).join("");
@@ -141,6 +143,7 @@ function sourceDetails(win,item){
       const limit=target.scope==="chapter"?L(win,"Chapter-level text (verse locator above)","Texte au chapitre (versets indiqués ci-dessus)")
         :target.scope==="index"?L(win,"Index only; passage link unverified","Index seulement ; lien au passage non vérifié")
         :target.scope==="catalogue"?L(win,"Bibliographic catalogue or preview only; not a verified original passage","Catalogue bibliographique ou aperçu seulement ; passage original non vérifié")
+        :target.scope==="digitized-original"?L(win,"Original 1966 book in third-party digitization; printed-page collation not certified","Original de 1966 numérisé par un tiers ; vérification des pages imprimées non certifiée")
         :target.scope==="unverified"?L(win,"Source destination not verified","Destination de la source non vérifiée")
         :"";
       return `<div class="aoCSESource">${target.url?`<a data-ao-cse-link-scope="${esc(target.scope)}" href="${esc(target.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(citation)}</strong> ↗</a>`:`<strong>${esc(citation)}</strong>`}<br><em>${esc(authority)}${target.witness?` · ${esc(target.witness)}`:""}${limit?` · ${esc(limit)}`:""}${source.role==="argument_lead"?` · ${esc(L(win,"research / argument lead","guide de recherche / argumentation"))}`:""}</em></div>`;
