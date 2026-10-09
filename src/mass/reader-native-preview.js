@@ -12,6 +12,28 @@ import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveF
 import { loadReaderCueRegistries } from "./reader-cue-state.js";
 import { loadReaderFormStateData, createReaderFormCueStateController } from "./reader-form-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
+
+// Palm gospel-crosses belong only to the source-owned proclamation heading,
+// never the response or the complete Matthew reading in the same rite card.
+const PALM_GOSPEL_HEADING_ID="PALM-R03-01";
+export function palmGospelFocusedRow({scrollTop=0,clientHeight=0,scrollHeight=0,items=[]}={}){
+  const rows=(items??[]).filter(x=>/^PALM-R03-0[1-4]$/.test(String(x?.id??"")) &&
+    Number.isFinite(x?.top)&&Number.isFinite(x?.bottom));
+  if(!rows.length)return null;
+  const top=Math.max(0,Number(scrollTop)||0),height=Math.max(1,Number(clientHeight)||1);
+  const extent=Math.max(height,Number(scrollHeight)||height);
+  if(top<=8)return rows[0].id;
+  if(top>=extent-height-8)return rows[rows.length-1].id;
+  const openingCenter=(rows[0].top+rows[0].bottom)/2;
+  const focus=top+Math.min(height*.39,Math.max(24,openingCenter+top*.8));
+  let selected=rows[0],distance=Infinity;
+  for(const row of rows){
+    if(focus>=row.top&&focus<=row.bottom)return row.id;
+    const delta=Math.abs((row.top+row.bottom)/2-focus);
+    if(delta<distance){distance=delta;selected=row}
+  }
+  return selected.id;
+}
 import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
@@ -687,6 +709,92 @@ export async function mountNativeReaderPreview({
   let lastEventCinemaCue=null;
   const transientGuard=createCardTransitionTransientGuard();
   const win=doc.defaultView ?? globalThis;
+  let riteChoice=null;
+  let palmGospelCueVisible=null;
+
+  function createRiteChoice(){
+    const stage=host.querySelector?.(".ao-reader-stage");
+    if(!stage)return;
+    const panel=doc.createElement("div");
+    panel.className="ao-rite-choice";
+    panel.dataset.role="rite-choice";
+    panel.hidden=true;
+    panel.setAttribute("role","group");
+    panel.setAttribute("aria-label","Personal procession participation");
+    panel.innerHTML='<span class="ao-rite-choice-label" data-rite-choice-title></span>'+
+      '<span class="ao-rite-choice-actions">'+
+      '<button type="button" data-rite-participation="false" aria-pressed="true">Remain</button>'+
+      '<button type="button" data-rite-participation="true" aria-pressed="false">Join</button>'+
+      '</span>';
+    stage.append(panel);
+    riteChoice=panel;
+  }
+
+  function syncRiteChoice(kind,state){
+    if(!riteChoice)return;
+    const id=state?.card?.id;
+    const eligible=(kind==="PALM"&&["PALM-R04","PALM-R05"].includes(id)) ||
+      (kind==="CANDLEMAS"&&["CND-R05","CND-R06"].includes(id)) ||
+      (kind==="REQUIEM_ABSOLUTION"&&id==="ABS-R05");
+    riteChoice.hidden=!eligible;
+    const stage=riteChoice.closest(".ao-reader-stage");
+    if(stage)stage.dataset.riteChoice=String(eligible);
+    if(!eligible)return;
+    riteChoice.dataset.rite=kind;
+    riteChoice.querySelector("[data-rite-choice-title]").textContent=
+      kind==="REQUIEM_ABSOLUTION"?"Follow the burial procession?":"Join this procession?";
+    const selected=kind==="PALM" ? state.processionParticipant :
+      kind==="CANDLEMAS" ? state.processionParticipant : state.burialParticipant;
+    for(const button of riteChoice.querySelectorAll("[data-rite-participation]")){
+      button.setAttribute("aria-pressed",String(button.dataset.riteParticipation===String(Boolean(selected))));
+    }
+  }
+
+  function syncPalmGospelCue(){
+    if(!inPalm || ready.palmController?.project?.().card?.id!=="PALM-R03")return;
+    const card=host.querySelector?.(".ao-prayer-card");
+    if(!card)return;
+    const rect=card.getBoundingClientRect();
+    const items=[...card.querySelectorAll(".ao-reader-paragraph[data-paragraph-id^='PALM-R03-']")].map(node=>{
+      const bounds=node.getBoundingClientRect();
+      return {id:node.dataset.paragraphId,top:bounds.top-rect.top+card.scrollTop,bottom:bounds.bottom-rect.top+card.scrollTop};
+    });
+    const activeId=palmGospelFocusedRow({
+      scrollTop:card.scrollTop,clientHeight:card.clientHeight,scrollHeight:card.scrollHeight,items
+    });
+    for(const node of card.querySelectorAll(".ao-reader-paragraph[data-paragraph-id^='PALM-R03-']"))
+      node.dataset.active=String(node.dataset.paragraphId===activeId);
+    const show=activeId===PALM_GOSPEL_HEADING_ID;
+    if(show===palmGospelCueVisible)return;
+    palmGospelCueVisible=show;
+    const gesture=show?{
+      label:"Forehead · lips · breast",action:"Gospel small crosses",type:"GOSPEL_CROSSES",
+      canonicalCueId:PALM_GOSPEL_HEADING_ID,
+      anchorLat:"Sequéntia sancti Evangélii",
+      owner:"R22_PALM_GOSPEL_HEADING_SOURCE",
+    }:null;
+    reader.renderMoment({cardUpdate:false,gesture});
+    root.dataset.r17OwnerGesture=show?"R22_PALM_GOSPEL_HEADING_SOURCE":"R22_PALM_GOSPEL_READING_NONE";
+    const previous=globalThis.AO_R17_NATIVE_READER_STATE??{};
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({...previous,gesture,palmGospelActive:show});
+  }
+
+  function onRiteChoiceClick(event){
+    const button=event.target?.closest?.("[data-rite-participation]");
+    if(!button||!riteChoice?.contains?.(button)||riteChoice.hidden)return;
+    event.stopPropagation?.();
+    const participating=button.dataset.riteParticipation==="true";
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    const position=scroll?.scrollTop??0;
+    if(riteChoice.dataset.rite==="PALM"&&inPalm){
+      ready.palmController.setProcessionParticipant(participating);showPalm();
+    }else if(riteChoice.dataset.rite==="CANDLEMAS"&&inCandlemas){
+      ready.candlemasController.setProcessionParticipant(participating);showCandlemas();
+    }else if(riteChoice.dataset.rite==="REQUIEM_ABSOLUTION"&&inRequiemAbsolution){
+      ready.requiemAbsolutionController.setBurialParticipant(participating);showRequiemAbsolution();
+    }else return;
+    if(scroll)scroll.scrollTop=position;
+  }
 
   function clearScheduledTimer(timer){
     if(timer==null)return;
@@ -935,7 +1043,9 @@ export async function mountNativeReaderPreview({
           : (kind==="PALM" ? state.posture : card.posture) && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(kind==="PALM" ? state.posture : card.posture)
             ? {label:kind==="PALM" ? state.posture : card.posture}
             : null,
-        gesture:card.gesture ? {label:card.gesture} : null,
+        // A card-level Gospel-cross flag is not an event trigger: only the
+        // exact PALM-R03-01 heading can activate the three small crosses.
+        gesture:null,
         response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
@@ -952,6 +1062,8 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    syncRiteChoice(kind,projected.state);
+    palmGospelCueVisible=null;
     root.dataset.r17NativeEvent=kind.toLowerCase();
     root.dataset.r17NativeRiteRecord=kind+":"+(projected.state.card?.id??"none");
     root.dataset.r17NativeCue="unresolved";
@@ -975,6 +1087,7 @@ export async function mountNativeReaderPreview({
     });
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll)scroll.scrollTop=0;
+    if(kind==="PALM")syncPalmGospelCue();
     return projected.state;
   }
 
@@ -1016,6 +1129,7 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    syncRiteChoice("CANDLEMAS",projected.state);
     root.dataset.r17NativeEvent="candlemas";
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner="R24_CANDLEMAS_NATIVE";
@@ -1150,6 +1264,7 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    syncRiteChoice(kind,projected.state);
     root.dataset.r17NativeEvent=kind.toLowerCase();
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner=projected.config.owner;
@@ -1403,6 +1518,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const visibleCard=planAwareCard(card);
     if(!visibleCard)return null;
+    syncRiteChoice(null,null);
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
     const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
@@ -1574,6 +1690,8 @@ export async function mountNativeReaderPreview({
     eventCinemaTimer=null;
     observer?.disconnect?.();
     observer=null;
+    root.removeEventListener?.("click",onRiteChoiceClick);
+    host.querySelector?.(".ao-prayer-card")?.removeEventListener?.("scroll",syncPalmGospelCue);
     cueTracker?.destroy?.();
     cueTracker=null;
     root.remove?.();
@@ -1587,6 +1705,8 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
+  createRiteChoice();
+  root.addEventListener?.("click",onRiteChoiceClick);
   if(inRogations)showRogations();
   else if(inCandlemas)showCandlemas();
   else if(inPalm)showPalm();
@@ -1596,6 +1716,7 @@ export async function mountNativeReaderPreview({
 
   const readerScroll=host.querySelector?.(".ao-prayer-card");
   if(readerScroll){
+    readerScroll.addEventListener?.("scroll",syncPalmGospelCue,{passive:true});
     cueTracker=installCueFocusTracker({
       container:readerScroll,
       win,
