@@ -41,6 +41,7 @@ try{
        comms:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title,path:x.path,inseparable:x.inseparable})),
        collects:p?.collects?.length||0,secrets:p?.secrets?.length||0,postcommunions:p?.postcommunions?.length||0,
        lastCollect:p?.collects?.at(-1)||null,lastSecret:p?.secrets?.at(-1)||null,lastPostcommunion:p?.postcommunions?.at(-1)||null,
+       firstCollect:p?.collects?.[0]||null,firstSecret:p?.secrets?.[0]||null,firstPostcommunion:p?.postcommunions?.[0]||null,
        temporale:(r?.day?.tempora||[]).map(x=>({id:x.id,path:x.path,color:x.color}))};
    },date);
    result.push(row);
@@ -107,23 +108,52 @@ try{
    assert.equal(row.main?.title,title,date+": liturgical-day title collapsed into ritual name");
    assert.equal(row.nameEn,null,date+": redundant alias added for day/Mass distinction");
  }
- // Historic 2024/2027 count disagreements on 25 Jan and 22 Feb come
- // from witnesses that omit the linked Apostle or the Lenten feria in
- // their *displayed count*. The three Mass orations still must exist.
+ // 1960 General Rubrics n.110: the two Apostles are inseparable.
+ // Their main + reciprocal texts share *one conclusion*, counting as one
+ // collect/secret/postcommunion group, not as two independent collects.
+ // Lenten privileged feria on Feb 22 remains a second prayer group.
  for(const date of ["2024-01-25","2027-01-25"]){
    const row=result.find(x=>x.date===date);
    assert.equal(row.properStatus,"ready",date+": St Paul Conversion Proper absent");
-   assert.ok(row.comms.some(x=>x.id==="sancti:01-25c:4:w"),date+": St Peter apostolic commemoration omitted");
+   assert.ok(row.comms.some(x=>x.id==="sancti:01-25c:4:w"),date+": St Peter commemoration omitted");
+   assert.ok(row.calendarCommemorations?.some(x=>x.path==="Sancti/01-25c"
+     && x.prayerSourcePath==="Sancti/02-22" && x.inseparable && x.underOneConclusion),
+     date+": reciprocal St Peter prayer not source-composed");
    for(const key of ["collects","secrets","postcommunions"])
-     assert.ok(row[key]>=2,date+": St Peter "+key+" not composed");
+     assert.equal(row[key],1,date+": Apostle pair must have one shared conclusion: "+key);
+   for(const [field,petri,pauli] of [
+     ["firstCollect",/Petro|Petri/i,/Pauli/i],
+     ["firstSecret",/Petri|Petr/i,/Pauli/i],
+     ["firstPostcommunion",/Petr/i,/Pauli/i]
+   ]){
+     const prayer=row[field];
+     assert.match(prayer?.lat||"",pauli,date+": St Paul omitted in joined "+field);
+     assert.match(prayer?.lat||"",petri,date+": St Peter omitted in joined "+field);
+     assert.equal((prayer?.lat||"").match(/Amen\./g)?.length||0,1,
+       date+": apostolic "+field+" has more than one liturgical conclusion");
+     assert.ok(prayer?.en?.length>100 && prayer?.fr?.length>100,
+       date+": EN/FR reciprocal apostolic "+field+" incomplete");
+   }
  }
  for(const date of ["2024-02-22","2027-02-22"]){
    const row=result.find(x=>x.date===date);
    assert.equal(row.properStatus,"ready",date+": Chair of St Peter Proper absent");
    assert.ok(row.comms.some(x=>x.id==="sancti:02-22c:4:r"),date+": St Paul commemoration omitted");
    assert.ok(row.comms.some(x=>/^tempora:Quad/.test(x.id)),date+": privileged Lenten feria omitted");
+   assert.ok(row.calendarCommemorations?.some(x=>x.path==="Sancti/02-22c"
+     && x.prayerSourcePath==="Sancti/02-22" && x.inseparable && x.underOneConclusion),
+     date+": reciprocal St Paul prayer not composed");
    for(const key of ["collects","secrets","postcommunions"])
-     assert.ok(row[key]>=3,date+": one of three appointed "+key+" absent");
+     assert.equal(row[key],2,date+": apostolic pair + Lenten feria, not three independent "+key);
+   for(const field of ["firstCollect","firstSecret","firstPostcommunion"]){
+     const prayer=row[field];
+     assert.match(prayer?.lat||"",/Petr/i,date+": main St Peter not in "+field);
+     assert.match(prayer?.lat||"",/Paul/i,date+": reciprocal St Paul not in "+field);
+     assert.equal((prayer?.lat||"").match(/Amen\./g)?.length||0,1,
+       date+": reciprocal Apostles must share one conclusion");
+     assert.ok(prayer?.en?.length>100&&prayer?.fr?.length>100,
+       date+": bilingual apostolic "+field+" incomplete");
+   }
  }
  // The III-class St Peter Chrysologus on Dec 4 requires the III-class
  // Advent weekday plus a commemoration of St Barbara (ordos and 1962).
