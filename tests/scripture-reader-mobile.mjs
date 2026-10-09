@@ -78,6 +78,14 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"SongOfSongs 1:1");
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Psalms");
  assert.equal(await dialog.locator("[data-crosswalk-unverified=Psalms]").count(),1);
+ await dialog.locator(".aoScriptureNav input").nth(0).fill("22");
+ await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
+ await dialog.locator(".aoScriptureNav input").nth(1).fill("1");
+ await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1");
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1");
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("John");
  assert.equal(await dialog.locator("[data-crosswalk-unverified]").count(),0);
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");

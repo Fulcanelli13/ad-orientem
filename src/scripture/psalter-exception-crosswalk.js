@@ -6,6 +6,7 @@
  * A span means that the verse's wording belongs within that one contiguous
  * region of the opposite edition; it is not proof of word-for-word identity.
  */
+import {psalterIdentityVerse} from "./psalter-identity-crosswalk.js";
 const ENTRIES=[
  // Psalm 13: Douay verse 3 contains the wording split into CPDV verses 3–6.
  [13,1,1,1],[13,2,2,2],[13,3,3,3],[13,4,3,3],
@@ -42,12 +43,12 @@ export const PSALTER_EXCEPTION_STATUS=Object.freeze({
  sourceReview:"actual CPDV author master and Douay–Rheims Catholic witness",
  unmappedCpdv:Object.freeze(["92:1"]),
  unmappedDouay:Object.freeze(["150:6 (empty third-party slot)"]),
- otherChapters:"NOT_CERTIFIED_FOR_AUTOMATIC_PARALLEL"
+ otherChapters:"133 SOURCE-ALIGNED CHAPTERS IN psalter-identity-crosswalk.js; REMAINING CHAPTERS BLOCKED"
 });
 export function psalterParallelVerse(reference,from,to){
  if(reference?.book!=="Psalms"||reference.verseStart!==reference.verseEnd)return null;
  const key=reference.chapter+":"+reference.verseStart;
- if(from==="cpdv-2009"&&to==="dr-challoner")return cpMap.get(key)??null;
- if(from==="dr-challoner"&&to==="cpdv-2009")return drMap.get(key)??null;
+ if(from==="cpdv-2009"&&to==="dr-challoner")return cpMap.get(key)??psalterIdentityVerse(reference,from,to);
+ if(from==="dr-challoner"&&to==="cpdv-2009")return drMap.get(key)??psalterIdentityVerse(reference,from,to);
  return null;
 }
