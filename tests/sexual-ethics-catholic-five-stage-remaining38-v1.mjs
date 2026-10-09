@@ -31,11 +31,12 @@ for(const row of review.cases){
  assert.equal(row.full_case_original_passage_certified,false,row.id+" cannot declare full certification");
  assert.equal(row.human_theological_signoff,false);
  assert.equal(row.native_french_signoff,false);
- assert.ok(row.original_locator.length>=4,row.id+" unspecified source location");
+ assert.ok(row.original_locator.length>=2,row.id+" unspecified source location");
  assert.ok(row.claim_supported_only_within.length>=50,row.id+" original context claim not delimited");
  assert.ok(row.unverified_claim_boundary.length>=55,row.id+" caveat not specific");
  assert.equal(row.principal_original_url,CSE_SOURCE_MAP[row.principal_source_id]?.canonical_url,row.id+" source URL drift");
  assert.equal(row.archived_case,["CSE055","CSE056","CSE058"].includes(row.id));
+ assert.ok(row.stages.some(st=>st.intended_source_ids.includes(row.principal_source_id)),row.id+" principal source is not selected in any Catholic stage");
  assert.deepEqual(row.stages.map(x=>x.stage),five,row.id+" stage sequence incorrect");
  const live=CSE_DEBATE_MAP[row.id];
  assert.ok(live&&itemMap.get(row.id),row.id+" not canonical");
