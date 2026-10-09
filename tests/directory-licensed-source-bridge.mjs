@@ -69,8 +69,8 @@ const fakeFetch=async input=>{
  return {ok:false,status:404};
 };
 const dataset=await loadDirectoryDataset({providers:[],researchProviders:[],fetchImpl:fakeFetch});
-assert.equal(dataset.records.length,1);
-assert.equal(dataset.licensedListingSummary.listing_records,1);
+assert.equal(dataset.records.length,2);
+assert.equal(dataset.licensedListingSummary.listing_records,2);
 assert.equal(dataset.loadedProviders.includes("licensed-external-listings"),true);
 assert.equal(dataset.records[0].venue.publication_state,"DIRECTORY_LISTED_UNVERIFIED");
 assert.equal(dataset.records[0].venue.geo?.lat,null);
