@@ -96,6 +96,12 @@ try{
   assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
   assert.equal(setup.mode,"LIVE");
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:30000});
+  // The native shell mounts before its initial projected cue is committed on
+  // requestAnimationFrame. Inspect the completed source-backed state, not
+  // the transient mount placeholder ('—').
+  await page.waitForFunction(()=>
+    document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.trim()==="STAND",
+    null,{timeout:7000});
 
   const opening=await page.evaluate(()=>({
     uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
