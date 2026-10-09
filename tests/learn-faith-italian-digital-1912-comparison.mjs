@@ -17,7 +17,7 @@ const pagesCount=Number(info.match(/^Pages:\s*(\d+)/m)?.[1]);
 assert.equal(pagesCount,68,"Unexpected Italian edition PDF identity/pages");
 const extracted=execFileSync("pdftotext",["-raw",pdf,"-"],{encoding:"utf8",maxBuffer:12000000,timeout:30000});
 const body=extracted.split("\f").slice(3,60).join("\n");
-const candidates=[...body.matchAll(/^[ \t]*(\d{1,3})\.[ \t]+([^\r\n]{3,})/gm)];
+const candidates=[...body.matchAll(/^[ \t]*[*•]?\s*(\d{1,3})\.[ \t]+([^\r\n]{3,})/gm)];
 let started=false,last=0;const found=[];
 for(const m of candidates){
   const n=+m[1],line=m[2];
@@ -29,7 +29,7 @@ for(const m of candidates){
 const qExtracted=new Map();
 for(let i=0;i<found.length;i++){
  const row=found[i],next=found[i+1];
- qExtracted.set(row.q,body.slice(row.offset,next?.offset??body.length).slice(0,4500).trim());
+ qExtracted.set(row.q,body.slice(row.offset,next?.offset??body.length).slice(0,row.q===433?1100:4500).trim());
 }
 const sourceContents=await Promise.all(files.map(async filename=>{
  const resp=await fetch(root+filename);
@@ -68,4 +68,5 @@ const out={version:"ITALIAN_DIGITAL_1912_EDITION_TEXT_COMPARISON_DRAFT",date:"20
  counts,rows};
 writeFileSync("artifacts/pius-x-collation/italian-digital-comparison.json",JSON.stringify(out,null,2));
 const low=rows.filter(x=>x.reviewClass==="MAJOR_TEXT_DIVERGENCE_CANDIDATE"||x.reviewClass==="QUESTION_HEADING_NOT_PARSED").slice(0,25).map(x=>({q:x.q,score:x.similarityScore,type:x.reviewClass,excerpt:x.digitalExcerpt?.slice(0,145)}));
+console.log("ITALIAN_DIGITAL_MISSING_HEADING_DIAGNOSTICS="+JSON.stringify(rows.filter(x=>!x.independentDigitalPdfQuestionDetected).map(x=>({q:x.q,possible:candidates.filter(c=>Number(c[1])===x.q).slice(0,3).map(c=>c[0].slice(0,120))}))));
 console.log("ITALIAN_DIGITAL_COMPARISON_SUMMARY="+JSON.stringify({status:"UNVERIFIED_CANDIDATE_COMPARISON",pdfPages:pagesCount,numbered:rows.length,detected:out.detectedQuestionCount,counts,reviewPriority:low,q226:rows[225],originalPrintingCertified:false}));
