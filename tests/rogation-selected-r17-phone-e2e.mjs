@@ -86,8 +86,10 @@ try{
      flow.appendChild(actions);
     }
     const {mountRogationPreflight}=await import("/src/mass/rogation-preflight.js");
+    globalThis.__rogationFetches=[];
     const fetchApproved=async url=>{
      const response=await fetch(url);
+     globalThis.__rogationFetches.push({url:String(url),status:response.status});
      const d=await response.json();
      if(d.schema==="AO_1962_ROGATION_MASS_SOURCE_GATE_V1"){
       d.status="PUBLISHED_1962_ROGATION_PROPER";d.publicationAllowed=true;
@@ -104,9 +106,26 @@ try{
      fetchImpl:fetchApproved,language:()=>language
     });
    },{date,language,icons:ICONS});
-   await page.waitForFunction(()=>document.querySelector(
-     '[data-rogation-choice] option[value="ROGATION_MASS"]')?.disabled===false,
-     null,{timeout:12000});
+   try{
+    await page.waitForFunction(()=>document.querySelector(
+      '[data-rogation-choice] option[value="ROGATION_MASS"]')?.disabled===false,
+      null,{timeout:12000});
+   }catch(error){
+    const diagnostic=await page.evaluate(async()=>{
+     const mod=await import("/src/mass/rogation-preflight.js");
+     const host=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+     return {
+      date:host?.date,canStart:host?.canStart,rank:host?.calendarRank,
+      properSource:host?.properSource,
+      candidate:mod.resolvedRogationCandidate(host),
+      dom:document.querySelector("[data-ao-rogation-preflight]")?.outerHTML?.slice(0,1700)??null,
+      fetches:globalThis.__rogationFetches??[],
+      selection:globalThis.__rogationPreflight?.selectionFor?.(host)??null
+     };
+    });
+    console.error("ROGATION_SELECTED_PREFLIGHT_DIAGNOSTIC",date,language,JSON.stringify(diagnostic));
+    throw error;
+   }
    const area=page.locator('[data-ao-rogation-preflight]');
    await area.locator("summary").click();
    await page.selectOption("[data-rogation-service]","PUBLIC_PROCESSION");
