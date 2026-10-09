@@ -1,0 +1,234 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
+  "version": "1.0.0",
+  "provider": "VERIFIED_LOCAL_ROUND18_20261010",
+  "generated_at": "2026-10-10T00:00:00Z",
+  "scope_note": "Five distinct source-supported worship spaces. Four parish/rectorate sites and one independent chapel. No automatic coordinates. Raw schedules are user-readable; machine rules remain informational until a recurrence engine consumes them. Liturgical book years are unknown for the two Polish parish 'Tridentine' notices.",
+  "defaults": {
+    "f": "ROMAN",
+    "mf": "TRADITIONAL_LATIN",
+    "rel": "served_by",
+    "ac": "DIRECT",
+    "svc": "MASS",
+    "vs": "OFFICIAL_VERIFIED",
+    "vv": "2026-10-10",
+    "cp": "UNKNOWN",
+    "az": "NOT_PUBLICLY_ESTABLISHED",
+    "pc": "UNKNOWN",
+    "ad": "NO_PUBLIC_EVIDENCE",
+    "ps": "CURRENT_PUBLIC_MASS",
+    "gs": "SOURCE_ADDRESS_ONLY"
+  },
+  "records": [
+    {
+      "u": "VL18-PL-NOWY-SACZ-ST-MARGARET",
+      "c": "DIOCESAN",
+      "cc": "PL",
+      "j": "Diocese of Tarnów",
+      "l": "Nowy Sącz",
+      "n": "Bazylika św. Małgorzaty",
+      "vt": "basilica",
+      "a": "Plac Kolegiacki 1, 33-300 Nowy Sącz, Poland",
+      "b": "UNKNOWN",
+      "sr": "Sunday 15:30 Tridentine Mass; on Sundays in Lent 20:00 replaces 15:30.",
+      "su": "https://www.bazylika.org.pl/parafia.html",
+      "st": "PARISH_OFFICIAL",
+      "sa": "PRIMARY",
+      "rr": {
+        "timezone": "Europe/Warsaw",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "15:30"
+          }
+        ],
+        "seasonal_overrides": [
+          {
+            "season": "LENT",
+            "day": "SU",
+            "time": "20:00",
+            "replaces": "15:30"
+          }
+        ]
+      },
+      "origin_source_id": "LMD:bazylika-kolegiacka-swietej-malgorzaty-nowy-sacz-poland"
+    },
+    {
+      "u": "VL18-DE-FRANKFURT-DEUTSCHORDEN",
+      "c": "DIOCESAN",
+      "cc": "DE",
+      "j": "Diocese of Limburg",
+      "l": "Frankfurt am Main – Sachsenhausen",
+      "n": "Deutschordenskirche St. Maria Himmelfahrt",
+      "vt": "church",
+      "a": "Brückenstraße 7, 60594 Frankfurt am Main, Germany",
+      "b": "1962",
+      "sr": "Sunday and holy days 18:00 Sung Mass; Thursday 18:00 Low Mass. A holy day on Sunday is one celebration, not two.",
+      "su": "https://www.deutschordenskirche.de/ausserordentliche-form-des-roem-ritus/",
+      "eu": "https://www.deutschordenskirche.de/ausserordentliche-form-des-roem-ritus/",
+      "st": "PARISH_OFFICIAL",
+      "et": "PARISH_OFFICIAL",
+      "sa": "PRIMARY",
+      "rr": {
+        "timezone": "Europe/Berlin",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "18:00",
+            "mass_type": "SUNG"
+          },
+          {
+            "day": "TH",
+            "time": "18:00",
+            "mass_type": "LOW"
+          }
+        ],
+        "feast_days": [
+          {
+            "time": "18:00",
+            "mass_type": "SUNG",
+            "deduplicate_when": "SUNDAY"
+          }
+        ]
+      },
+      "origin_source_id": "LMD:deutschordenskirche-teutonic-order-church-frankfurt-germany"
+    },
+    {
+      "u": "VL18-CZ-HRADEC-TREBES-ST-JOHN",
+      "c": "DIOCESAN",
+      "cc": "CZ",
+      "j": "Diocese of Hradec Králové",
+      "l": "Hradec Králové – Třebeš",
+      "n": "Kostel svatého Jana Křtitele",
+      "vt": "church",
+      "a": "Husova, Hradec Králové – Třebeš, Czech Republic",
+      "b": "1962",
+      "sr": "Sunday 17:00, starting 18 October 2026; obligatory feast days only as separately announced.",
+      "su": "https://www.unavoce.cz/kostely/hradec-kralove/hradec-kralove-sv-jan-krtitel",
+      "eu": "https://www.unavoce.cz/tradicni-mse-v-hradci-kralove",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "et": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "INDEPENDENT_ASSOCIATION_WITH_NAMED_LOCAL_CELEBRANT",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "17:00",
+            "effective_from": "2026-10-18"
+          }
+        ],
+        "feast_days": "BY_ANNOUNCEMENT_NO_FIXED_TIME"
+      },
+      "origin_source_id": "LMD:kostel-svateho-jana-krtitele-hradec-kralove-8-czechia"
+    },
+    {
+      "u": "VL18-BE-NIEL-AS-ST-MICHAEL",
+      "c": "UNKNOWN",
+      "cc": "BE",
+      "j": "",
+      "l": "Niel-bij-As",
+      "n": "Sint-Michaëlskapel",
+      "vt": "chapel",
+      "a": "Caelenbergstraat 40, Niel-bij-As, Belgium",
+      "b": "1962",
+      "sr": "Sunday Mass: 1st 17:00; 2nd 10:00; 3rd 11:30; 4th/5th 17:00. Dated overrides: 11 Oct 2026 11:30; 18 Oct time not announced; 25 Oct 10:00. Check current chapel calendar; scheduled time is not guaranteed.",
+      "su": "https://www.michaelskapel.be/",
+      "eu": "https://www.michaelskapel.be/",
+      "st": "COMMUNITY_OFFICIAL",
+      "et": "COMMUNITY_OFFICIAL",
+      "sa": "PRIMARY",
+      "ac": "UNKNOWN",
+      "rr": {
+        "timezone": "Europe/Brussels",
+        "monthly_nth_weekday": [
+          {
+            "day": "SU",
+            "nth": 1,
+            "time": "17:00"
+          },
+          {
+            "day": "SU",
+            "nth": 2,
+            "time": "10:00"
+          },
+          {
+            "day": "SU",
+            "nth": 3,
+            "time": "11:30"
+          },
+          {
+            "day": "SU",
+            "nth": 4,
+            "time": "17:00"
+          },
+          {
+            "day": "SU",
+            "nth": 5,
+            "time": "17:00"
+          }
+        ],
+        "date_overrides": [
+          {
+            "date": "2026-10-11",
+            "time": "11:30"
+          },
+          {
+            "date": "2026-10-18",
+            "time": null,
+            "status": "TIME_NOT_ANNOUNCED"
+          },
+          {
+            "date": "2026-10-25",
+            "time": "10:00"
+          }
+        ],
+        "precedence": "DATE_OVERRIDE_OVER_MONTHLY"
+      },
+      "origin_source_id": "LMD:sint-michaelskapel-saint-michaels-chapel-as-belgium"
+    },
+    {
+      "u": "VL18-PL-OSWIECIM-FATIMA-CHAPEL",
+      "c": "DIOCESAN",
+      "cc": "PL",
+      "j": "Diocese of Bielsko-Żywiec",
+      "l": "Oświęcim",
+      "n": "Kaplica Matki Bożej Fatimskiej (dolny kościół)",
+      "vt": "chapel",
+      "a": "Plac św. Maksymiliana 2, 32-602 Oświęcim, Poland",
+      "b": "UNKNOWN",
+      "sr": "Second Sunday of the month 13:15 Tridentine Mass, September through June only; no July or August recurrence. Lower church, Our Lady of Fatima chapel.",
+      "su": "https://www.maksymilian.oswiecim.pl/index.php/o-parafii/nabozenstwa",
+      "st": "PARISH_OFFICIAL",
+      "sa": "PRIMARY",
+      "rr": {
+        "timezone": "Europe/Warsaw",
+        "monthly_nth_weekday": [
+          {
+            "day": "SU",
+            "nth": 2,
+            "time": "13:15",
+            "months": [
+              9,
+              10,
+              11,
+              12,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          }
+        ],
+        "excluded_months": [
+          7,
+          8
+        ]
+      },
+      "origin_source_id": "LMD:kaplica-matki-bozej-fatimskiej-oswiecim-poland"
+    }
+  ]
+}
