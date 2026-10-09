@@ -1,0 +1,23 @@
+name: Scripture contracts
+on:
+  pull_request:
+    paths:
+      - 'src/scripture/**'
+      - 'tests/scripture-*.mjs'
+      - 'package.json'
+      - '.github/workflows/scripture-contracts.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/scripture/**'
+      - 'tests/scripture-*.mjs'
+      - 'package.json'
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm run test:scripture
