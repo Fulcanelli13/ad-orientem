@@ -2,6 +2,7 @@ import "./canonical-data.js";
 import "./presentation-styles.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
+import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
@@ -370,8 +371,9 @@ function devotionalGuide(id){
 
 function prayerBlock(id,opts={}){
  const p=P(id);if(!p)return callout(esc(L('Prayer unavailable in this build.','Prière indisponible dans cette version.')),'warn');
- const vern=p[lang()]||'',latin=p.la||'',both=!!(latin&&vern),shown=vern||latin;
- return `<article class="aoP435930Prayer"><div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-la>${nl(latin)}</span><span data-face-v hidden>${nl(vern)}</span></button>`:`<div class="aoP435930Text">${nl(shown)}</div>`}${sourceLine(p)}</article>`;
+ const vern=p[lang()]||'',latin=p.la||'',both=!!(latin&&vern),englishOnly=!vern&&!latin&&!!p.en,shown=vern||latin||p.en||'';
+ const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
+ return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-la>${nl(latin)}</span><span data-face-v hidden>${nl(vern)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${sourceLine(p)}</article>`;
 }
 function selectedDateKey(){
  const v=core()?.selectedDate;
@@ -817,6 +819,8 @@ function decorateRosaryExact(r){
  r.querySelectorAll('[data-r23-overview-open],#r23-overview-sheet').forEach(node=>node.remove());
  rosaryDonorArt(r,info);
  rosaryDonorMysteryFx(r,info);
+ // Source-first mystery context, not the uncertified 200-bead quotation bank.
+ applyRosaryScripturePolicy(r,info,{french:isFr(),guided:S.rosary.mode==='guided'});
  lastRosaryRitualKey=st.key;
  return true;
 }
