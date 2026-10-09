@@ -656,6 +656,16 @@ function ensureStyle(doc,id,css){
   return true;
 }
 
+const PRAY_READING_TYPE_CSS=`
+/* Explanatory devotional body-copy, not rubric, caption or prayer response type. */
+#aoPray435930 .aoAngelusGuideSection p,
+#aoPray435930 .aoP435930GuideInfo>div,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection p{
+  font-size:max(14px,.875rem)!important;
+  line-height:1.58;
+}
+`;
+
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
@@ -670,6 +680,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-exact-rosary-overview-v3414-style",ROSARY_EXACT_OVERVIEW_CSS);
   ensureStyle(doc,"ao-pray-visible-regression-guard-style",VISIBLE_REGRESSION_GUARD_CSS);
   ensureStyle(doc,"ao-pray-rosary-declutter-style",ROSARY_DECLUTTER_CSS);
+  ensureStyle(doc,"ao-pray-readable-guidance-style",PRAY_READING_TYPE_CSS);
   return true;
 }
 
