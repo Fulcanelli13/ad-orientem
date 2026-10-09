@@ -123,8 +123,12 @@ assert.equal(christKing.map_policy,"NOT_MAPPED","French textual Christ-the-King 
 assert.equal(christKing.geo_area_id,"geo:culture:french-catholic-world");
 
 const stMichael=bridge.links.find(x=>x.novena_id==="st_michael");
-assert.equal(stMichael.map_policy,"PLACE_PENDING");
-assert.match(stMichael.place_name_hint,/Mont-Saint-Michel/);
+assert.equal(stMichael.map_policy,"PLACE");
+assert.equal(stMichael.place_id,"place:FR:abbaye-mont-saint-michel");
+const assumptionParis=bridge.links.find(x=>x.link_id==="novena-place:assumption:notre-dame-paris");
+assert.equal(assumptionParis.map_policy,"PLACE");
+assert.equal(assumptionParis.place_id,"place:FR:notre-dame-paris");
+assert.ok(bridge.links.filter(x=>x.map_policy==="PLACE_PENDING").length===7,"Only genuine unlinked novena sites should remain pending");
 
 for(const id of ["holy_ghost","annunciation","assumption","seven_sorrows","perpetual_help","st_anthony_nine_tuesdays","immaculate_heart"]){
   assert.ok(bridgeNovenaIds.has(id),id+" lost its researched French-world bridge");

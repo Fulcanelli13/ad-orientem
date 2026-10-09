@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:72,
-  pilgrimages:100,
+  shrines:78,
+  pilgrimages:106,
   routes:20,
-  temporalLinks:69,
-  sources:154,
+  temporalLinks:75,
+  sources:160,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -126,12 +126,21 @@ const requiredPlaces=new Set([
   "place:NL:maastricht-sterre-der-zee",
   "place:PT:fatima-sanctuary",
   "place:PT:sameiro-braga",
+  "place:PL:gietrzwald-basilica",
+  "place:LT:siluva-apparition-chapel",
+  "place:NI:cuapa-national-shrine",
+  "place:VE:finca-betania",
+  "place:AR:san-nicolas-virgen-rosario",
+  "place:IT:santa-croce-gerusalemme-rome",
 ]);
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
 }
 
 assert.equal(calendarDateForSemanticKey("feast.saint_anne",2026),"2026-07-26");
+assert.equal(calendarDateForSemanticKey("observance.san_nicolas_september25",2026),"2026-09-25");
+assert.equal(calendarDateForSemanticKey("observance.siluva_silines",2026),"2026-09-08");
+assert.equal(calendarDateForSemanticKey("observance.gietrzwald_september8",2026),"2026-09-08");
 assert.equal(calendarDateForSemanticKey("observance.knock_apparition_anniversary",2026),"2026-08-21");
 assert.equal(calendarDateForSemanticKey("feast.blessed_jacques_desire_laval",2026),"2026-09-09");
 assert.equal(calendarDateForSemanticKey("feast.assumption_of_mary",2026),"2026-08-15");

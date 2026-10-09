@@ -1158,6 +1158,92 @@
         "PIL-ST-ANNE-NOVENA"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PL:gietrzwald",
+      "place_id": "place:PL:gietrzwald-basilica",
+      "name": "Sanctuary of Our Lady of Gietrzwałd",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Blessed Virgin Mary",
+      "origin_summary": "1877 Marian apparition shrine; annual Marian pilgrimage focused on the Nativity of Mary and locally observed 8 September ceremonies.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-GIETRZWALD-ARCHDIOCESE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:LT:siluva",
+      "place_id": "place:LT:siluva-apparition-chapel",
+      "name": "Our Lady of Šiluva — Apparition Chapel",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Blessed Virgin Mary",
+      "origin_summary": "Lithuanian Catholic sanctuary and annual Šilinės pilgrimage; individual programme days vary from year to year.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-SILUVA-OFFICIAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:NI:cuapa",
+      "place_id": "place:NI:cuapa-national-shrine",
+      "name": "National Shrine of Our Lady of Cuapa",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Blessed Virgin Mary",
+      "origin_summary": "Site of reported 1980 Marian experiences, visited for prayer and pilgrimage; no single universal annual day asserted.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-CUAPA-MARIAN-FATHERS"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:VE:betania",
+      "place_id": "place:VE:finca-betania",
+      "name": "Our Lady of Betania Diocesan Shrine",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Blessed Virgin Mary",
+      "origin_summary": "Shrine associated with the 1976–1984 reported Marian events and diocesan recognition; no exact recurring programme presumed.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-BETANIA-ASSOCIATION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:AR:san-nicolas",
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "name": "Sanctuary of Mary of the Rosary of San Nicolás",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Blessed Virgin Mary",
+      "origin_summary": "Official Argentine bishops' press coverage of the 25 September shrine feast and annual pilgrimages.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-SAN-NICOLAS-EPC"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:santa-croce-rome",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "name": "Basilica of Santa Croce in Gerusalemme",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Relics of the Holy Cross and Passion of Christ",
+      "origin_summary": "Roman Seven Churches pilgrimage site and permanent relic collection. The Relics Chapel is temporarily closed for building works as announced April 2026; do not infer public access.",
+      "associated_saints": [
+        "Saint Helena"
+      ],
+      "source_ids": [
+        "SHR-SANTA-CROCE-RELICS"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -2687,6 +2773,96 @@
         "PIL-ST-ANNE-NOVENA"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PL:gietrzwald-visit",
+      "name": "Our Lady of Gietrzwałd — 8 September shrine celebration",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PL:gietrzwald",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:gietrzwald:local-observance"
+      ],
+      "scope_note": "1877 Marian apparition shrine; annual Marian pilgrimage focused on the Nativity of Mary and locally observed 8 September ceremonies.",
+      "source_ids": [
+        "SHR-GIETRZWALD-ARCHDIOCESE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:LT:siluva-visit",
+      "name": "Šilinės local pilgrimage opening 8 September",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:LT:siluva",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:siluva:local-observance"
+      ],
+      "scope_note": "Lithuanian Catholic sanctuary and annual Šilinės pilgrimage; individual programme days vary from year to year.",
+      "source_ids": [
+        "SHR-SILUVA-OFFICIAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:NI:cuapa-visit",
+      "name": "Pilgrimage and Marian devotion at Cuapa",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:NI:cuapa",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:cuapa:variable-pilgrimage"
+      ],
+      "scope_note": "Site of reported 1980 Marian experiences, visited for prayer and pilgrimage; no single universal annual day asserted.",
+      "source_ids": [
+        "SHR-CUAPA-MARIAN-FATHERS"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:VE:betania-visit",
+      "name": "Year-round pilgrimage to Finca Betania",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:VE:betania",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:betania:variable-pilgrimage"
+      ],
+      "scope_note": "Shrine associated with the 1976–1984 reported Marian events and diocesan recognition; no exact recurring programme presumed.",
+      "source_ids": [
+        "SHR-BETANIA-ASSOCIATION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:AR:san-nicolas-visit",
+      "name": "25 September Marian pilgrimage to San Nicolás",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:AR:san-nicolas",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:san-nicolas:local-observance"
+      ],
+      "scope_note": "Official Argentine bishops' press coverage of the 25 September shrine feast and annual pilgrimages.",
+      "source_ids": [
+        "SHR-SAN-NICOLAS-EPC"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:santa-croce-rome-visit",
+      "name": "Pilgrimage to the Basilica of the Holy Cross in Jerusalem (Rome)",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:santa-croce-rome",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:santa-croce-rome:variable-pilgrimage"
+      ],
+      "scope_note": "Roman Seven Churches pilgrimage site and permanent relic collection. The Relics Chapel is temporarily closed for building works as announced April 2026; do not infer public access.",
+      "source_ids": [
+        "SHR-SANTA-CROCE-RELICS"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -3929,6 +4105,87 @@
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:gietrzwald:local-observance",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PL:gietrzwald-visit",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.gietrzwald_september8",
+      "source_event_label": "Our Lady of Gietrzwałd — 8 September shrine celebration",
+      "source_ids": [
+        "SHR-GIETRZWALD-ARCHDIOCESE"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:siluva:local-observance",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:LT:siluva-visit",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.siluva_silines",
+      "source_event_label": "Šilinės local pilgrimage opening 8 September",
+      "source_ids": [
+        "SHR-SILUVA-OFFICIAL"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:cuapa:variable-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:NI:cuapa-visit",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Pilgrimage and Marian devotion at Cuapa",
+      "source_ids": [
+        "SHR-CUAPA-MARIAN-FATHERS"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:betania:variable-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:VE:betania-visit",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Year-round pilgrimage to Finca Betania",
+      "source_ids": [
+        "SHR-BETANIA-ASSOCIATION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:san-nicolas:local-observance",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:AR:san-nicolas-visit",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.san_nicolas_september25",
+      "source_event_label": "25 September Marian pilgrimage to San Nicolás",
+      "source_ids": [
+        "SHR-SAN-NICOLAS-EPC"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:santa-croce-rome:variable-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:IT:santa-croce-rome-visit",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Pilgrimage to the Basilica of the Holy Cross in Jerusalem (Rome)",
+      "source_ids": [
+        "SHR-SANTA-CROCE-RELICS"
+      ],
+      "confidence": "HIGH"
     }
   ]
 }

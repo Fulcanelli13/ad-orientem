@@ -21,12 +21,12 @@ const dataset={
   customs:{...customs,sources:customSources.sources},
   novenas:{records:novenas.novenas,links:bridge.links,sources:bridge.sources},
 };
-assert.equal(shrines.shrines.length,72);
-assert.equal(shrines.pilgrimages.length,100);
+assert.equal(shrines.shrines.length,78);
+assert.equal(shrines.pilgrimages.length,106);
 assert.equal(shrines.routes.length,20);
-assert.equal(shrines.temporalLinks.length,69);
+assert.equal(shrines.temporalLinks.length,75);
 const projection=projectExploreDataset(dataset);
-assert.equal(projection.byLens.pilgrimages.length,100);
+assert.equal(projection.byLens.pilgrimages.length,106);
 const allShrineIds=new Set(shrines.shrines.map(shrine=>shrine.shrine_id));
 assert.ok(shrines.pilgrimages.every(p=>allShrineIds.has(p.destination_shrine_id)),
   "a pilgrimage lost its actual destination shrine");
@@ -61,9 +61,9 @@ assert.match(ui,/data-explore-open-novena="sacred_heart"/);
 assert.match(ui,/data-explore-calendar-date=/,"dated pilgrimage must link back to Calendar");
 
 const bound=shrines.temporalLinks.filter(t=>t.binding_state==="BOUND_TO_CALENDAR");
-assert.equal(bound.length,41,"SOT bound Calendar relationships drifted");
+assert.equal(bound.length,44,"SOT bound Calendar relationships drifted");
 const keys=[...new Set(bound.map(t=>t.calendar_semantic_key))];
-assert.equal(keys.length,32);
+assert.equal(keys.length,35);
 for(const key of keys){
   const places=pilgrimagePlacesForCalendarKeys([key],shrines);
   assert.ok(places.length,"Calendar lost exact shrine-place associations for "+key);
@@ -85,4 +85,4 @@ assert.match(calendarBrowser,/pilgrimagePlacesForCalendarKeys/);
 assert.match(calendarBrowser,/find:pilgrimages:/);
 assert.match(exploreBrowser,/state\.calendarKey/);
 assert.match(exploreBrowser,/data-explore-calendar-date/);
-console.log("PASS 72 shrines; 100 pilgrimages; saints, novenas, local devotions, 41 bound links/32 Calendar keys, date navigation");
+console.log("PASS 78 shrines; 106 pilgrimages; saints, novenas, local devotions, 44 bound links/35 Calendar keys, date navigation");

@@ -457,6 +457,92 @@
       "codes": {
         "iso_alpha2": "IN"
       }
+    },
+    {
+      "geo_area_id": "geo:country:LT",
+      "name": {
+        "official": "Lithuania",
+        "aliases": [
+          "Lituanie"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:NI",
+      "name": {
+        "official": "Nicaragua",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "NI"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:VE",
+      "name": {
+        "official": "Venezuela",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "VE"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:AR",
+      "name": {
+        "official": "Argentina",
+        "aliases": [
+          "Argentine"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "AR"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:EG",
+      "name": {
+        "official": "Egypt",
+        "aliases": [
+          "Égypte"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "EG"
+      }
     }
   ],
   "places": [
@@ -3924,6 +4010,258 @@
       },
       "source_ids": [
         "frwiki:Sanctuaire_marial_de_Kibeho"
+      ]
+    },
+    {
+      "place_id": "place:PL:gietrzwald-basilica",
+      "name": {
+        "official": "Sanktuarium Matki Bożej Gietrzwałdzkiej",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 53.74806,
+        "lng": 20.23576,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W254499596",
+        "source_ref": "osm:way:254499596",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "ul. Kościelna 1",
+        "line2": null,
+        "postal_code": "11-036",
+        "city": "Gietrzwałd",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "ul. Kościelna 1, 11-036, Gietrzwałd, Poland"
+      },
+      "source_ids": [
+        "osm:way:254499596"
+      ]
+    },
+    {
+      "place_id": "place:LT:siluva-apparition-chapel",
+      "name": {
+        "official": "Holy Virgin Mary’s Apparition Chapel, Šiluva",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:LT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 55.53062,
+        "lng": 23.21986,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W217778405",
+        "source_ref": "osm:way:217778405",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Šiluva",
+        "region": null,
+        "country_code": "LT",
+        "country": "Lithuania",
+        "formatted": "Šiluva, Lithuania"
+      },
+      "source_ids": [
+        "osm:way:217778405"
+      ]
+    },
+    {
+      "place_id": "place:NI:cuapa-national-shrine",
+      "name": {
+        "official": "Santuario de Nuestra Señora de Cuapa",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:NI"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 12.25104,
+        "lng": -85.37841,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W1172482605",
+        "source_ref": "osm:way:1172482605",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "NI",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "San Francisco de Cuapa",
+        "region": null,
+        "country_code": "NI",
+        "country": "Nicaragua",
+        "formatted": "San Francisco de Cuapa, Nicaragua"
+      },
+      "source_ids": [
+        "osm:way:1172482605"
+      ]
+    },
+    {
+      "place_id": "place:VE:finca-betania",
+      "name": {
+        "official": "Santuario Finca Betania",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:VE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 10.0751,
+        "lng": -66.92714,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W307095283",
+        "source_ref": "osm:way:307095283",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "VE",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Cúa",
+        "region": null,
+        "country_code": "VE",
+        "country": "Venezuela",
+        "formatted": "Cúa, Venezuela"
+      },
+      "source_ids": [
+        "osm:way:307095283"
+      ]
+    },
+    {
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "name": {
+        "official": "Santuario María del Rosario de San Nicolás",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:AR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -33.3218,
+        "lng": -60.22499,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/es/W627849399",
+        "source_ref": "osm:way:627849399",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "AR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Domingo Faustino Sarmiento",
+        "line2": null,
+        "postal_code": "2900",
+        "city": "San Nicolás de los Arroyos",
+        "region": null,
+        "country_code": "AR",
+        "country": "Argentina",
+        "formatted": "Domingo Faustino Sarmiento, 2900, San Nicolás de los Arroyos, Argentina"
+      },
+      "source_ids": [
+        "osm:way:627849399"
+      ]
+    },
+    {
+      "place_id": "place:EG:zeitoun-coptic-saint-mary",
+      "name": {
+        "official": "Church of the Virgin Mary, Zeitoun (Coptic Orthodox)",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:EG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 30.10467,
+        "lng": 31.31544,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W922977953",
+        "source_ref": "osm:way:922977953",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "EG",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Zeitoun, Cairo",
+        "region": null,
+        "country_code": "EG",
+        "country": "Egypt",
+        "formatted": "Zeitoun, Cairo, Egypt"
+      },
+      "source_ids": [
+        "osm:way:922977953"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "name": {
+        "official": "Basilica di Santa Croce in Gerusalemme",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.88823,
+        "lng": 12.51586,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/28375852",
+        "source_ref": "osm:way:998191514",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza di Santa Croce in Gerusalemme",
+        "line2": null,
+        "postal_code": null,
+        "city": "Rome",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza di Santa Croce in Gerusalemme, Rome, Italy"
+      },
+      "source_ids": [
+        "osm:way:998191514"
       ]
     }
   ],
