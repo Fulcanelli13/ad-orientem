@@ -8,11 +8,11 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
-assert.equal(geo.places.length,84);
-assert.equal(sacred.apparitions.length,19);
-assert.equal(sacred.relics.length,13);
+assert.equal(geo.places.length,93);
+assert.equal(sacred.apparitions.length,23);
+assert.equal(sacred.relics.length,25);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
-assert.equal(assertExploreGeographyRegistry(geo).counts.places,84);
+assert.equal(assertExploreGeographyRegistry(geo).counts.places,93);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
 const ids=new Set();
 for(const record of [...sacred.apparitions,...sacred.relics]){
@@ -60,7 +60,7 @@ assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);
 assert.match(detail,/aucune authentification canonique indépendante/);
 const profiles=buildExplorePlaceProfiles({geography:geo},projection,{today:"2026-10-09"});
-assert.equal(profiles.length,84);
+assert.equal(profiles.length,93);
 const cotignac=profiles.find(p=>p.place_id==="place:FR:saint-joseph-bessillon");
 assert.equal(cotignac.counts.apparitions,1);
 assert.equal(cotignac.counts.relics,0);
@@ -75,4 +75,4 @@ assert.equal(notreDame.counts.apparitions,0);
 assert.equal(notreDame.counts.relics,3);
 assert.equal(geo.directoryPlaceLinks.some(link=>link.place_id==="place:FR:abbaye-mont-saint-michel"),false,
   "historical shrine is not automatically a TLM directory venue");
-console.log("PASS 19 historically distinct apparition traditions, 13 relic records, 10 new GPS Places, 6-map Explore, bilingual source/status, and no TLM/calendar inference");
+console.log("PASS 23 documented apparition traditions, 25 relic holdings, 93 GPS-shared Places, bilingual status and no TLM/calendar inference");
