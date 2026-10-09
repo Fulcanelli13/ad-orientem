@@ -1,0 +1,55 @@
+{
+  "schema": "ao-startup-html-split-v1",
+  "originalHtmlBytes": 37964045,
+  "reducedHtmlBytes": 28014541,
+  "originalGzipBytes": 22140914,
+  "reducedGzipBytes": 15198120,
+  "extractedBytes": 9949540,
+  "extractedCount": 1,
+  "retainedLargeBlocks": [
+    {
+      "kind": "script",
+      "bytes": 8222411,
+      "type": "",
+      "reason": "attributes"
+    },
+    {
+      "kind": "script",
+      "bytes": 6442233,
+      "type": "",
+      "reason": "attributes"
+    },
+    {
+      "kind": "script",
+      "bytes": 1621465,
+      "type": "",
+      "reason": "attributes"
+    },
+    {
+      "kind": "script",
+      "bytes": 1450716,
+      "type": "",
+      "reason": "attributes"
+    },
+    {
+      "kind": "script",
+      "bytes": 470535,
+      "type": "",
+      "reason": "attributes"
+    },
+    {
+      "kind": "style",
+      "bytes": 298006,
+      "type": "",
+      "reason": "attributes"
+    }
+  ],
+  "entries": [
+    {
+      "filename": "ao-boot-4ef16d2b0e26d68c.js",
+      "kind": "script",
+      "originalBytes": 9949540,
+      "order": 1
+    }
+  ]
+}
