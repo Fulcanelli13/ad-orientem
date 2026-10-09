@@ -132,6 +132,10 @@ try{
     for(const key of ["collects","secrets","postcommunions"])
       assert.ok(c[key]>=2,date+": missing distinct Proper "+key+" for privileged commemoration");
   }
+  assert.equal(normalizeRank(rows.find(x=>x.date==="2026-12-01")?.rawRank),3,
+    "Ordinary Advent feria in early December must remain III class");
+  assert.equal(normalizeRank(rows.find(x=>x.date==="2026-12-16")?.rawRank),2,
+    "Advent Ember Wednesday must remain II class despite falling before 17 December");
   const vigil=rows.find(x=>x.date==="2026-05-23");
   assert.match(vigil?.title||"",/Vigil of Pentecost/,"Pentecost Vigil title must be canonical, not inherited Saturday title");
   assert.equal(vigil?.composition?.nameFr,"Vigile de la Pentecôte","French vigil label lost");
