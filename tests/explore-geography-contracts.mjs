@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -141,6 +141,17 @@ assert.deepEqual(
     "place:NL:maastricht-sterre-der-zee",
     "place:PT:fatima-sanctuary",
     "place:PT:sameiro-braga",
+    "place:VA:saint-peter-vatican",
+    "place:IT:saint-paul-outside-walls-rome",
+    "place:IT:santa-maria-maggiore-rome",
+    "place:IT:scala-santa-rome",
+    "place:ES:santiago-compostela-cathedral",
+    "place:ES:basilica-del-pilar-zaragoza",
+    "place:ES:santo-toribio-liebana",
+    "place:ES:carmel-alba-tormes",
+    "place:PS:holy-sepulchre-jerusalem",
+    "place:PS:nativity-bethlehem",
+    "place:JP:our-lady-akita-convent",
   "place:FR:basilique-sainte-therese-lisieux",
   "place:BE:sanctuaire-sainte-julienne-cornillon",
   "place:FR:cathedrale-notre-dame-le-puy",
@@ -215,8 +226,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 31,
-  places: 111,
+  geoAreas: 35,
+  places: 122,
   directoryPlaceLinks: 1,
 });
 
