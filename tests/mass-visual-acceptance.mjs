@@ -181,6 +181,60 @@ try{
   assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
 
+  // Phone ergonomics acceptance at standard and narrow widths. Test computed
+  // hitboxes, not a CSS string or desktop hover state.
+  const phoneAudit=[];
+  for(const width of [390,320]){
+    await page.setViewportSize({width,height:844});
+    // The section menu is display:none while closed, so its clickable geometry
+    // must be measured with the menu actually open.
+    await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
+    const audit=await page.evaluate(()=>{
+      const root=document.querySelector("#ao-r17-native-reader-preview");
+      const rect=selector=>{
+        const el=root?.querySelector(selector),box=el?.getBoundingClientRect();
+        const cs=el?getComputedStyle(el):null;
+        return box?{width:box.width,height:box.height,left:box.left,right:box.right,
+          fontSize:Number.parseFloat(cs?.fontSize??"0"),display:cs?.display}:null;
+      };
+      const row={
+        viewport:document.documentElement.clientWidth,
+        prefsClose:rect(".ao-mass-prefs-close"),
+        modeButton:rect(".ao-mode-ribbon button"),
+        preferencesAction:rect(".ao-mass-prefs-more"),
+        sectionItem:rect('[data-reader-section]'),
+        guideKicker:rect(".ao-guide-copy small"),
+        scholaSlower:rect("[data-schola-slower]"),
+        scholaFaster:rect("[data-schola-faster]"),
+        scholaPause:rect("[data-schola-pause]"),
+        scholaToggle:rect("[data-schola-toggle]"),
+        scholaDock:rect(".ao-schola-dock"),
+      };
+      return row;
+    });
+    assert.ok(audit.prefsClose?.width>=44&&audit.prefsClose?.height>=44,
+      "preferences close has an undersized phone target: "+JSON.stringify(audit));
+    assert.ok(audit.modeButton?.height>=44&&audit.modeButton?.fontSize>=10,
+      "mode labels are still microscopic: "+JSON.stringify(audit));
+    assert.ok(audit.preferencesAction?.height>=44&&audit.preferencesAction?.fontSize>=10,
+      "preferences actions are too small to tap/read: "+JSON.stringify(audit));
+    assert.ok(audit.sectionItem?.height>=44&&audit.sectionItem?.fontSize>=12,
+      "section picker targets are too small: "+JSON.stringify(audit));
+    assert.ok(audit.guideKicker?.fontSize>=9,
+      "Guide label is microscopic: "+JSON.stringify(audit));
+    for(const name of ["scholaSlower","scholaFaster","scholaPause"]){
+      assert.ok(audit[name]?.height>=44,
+        "Schola "+name+" has an undersized target: "+JSON.stringify(audit));
+    }
+    assert.ok(audit.scholaToggle?.height>=40,
+      "Schola hide/show target too small: "+JSON.stringify(audit));
+    assert.ok(audit.scholaDock?.left>=0&&audit.scholaDock?.right<=width+1,
+      "Schola dock extends beyond the phone screen: "+JSON.stringify(audit));
+    phoneAudit.push({width,audit});
+    await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
+  }
+  await page.setViewportSize({width:390,height:844});
+
   // v1.79 Guide: structured sheet, curated sections and source links.
   const guideButton=page.locator("#ao-r17-native-reader-preview [data-role='guide-button']");
   assert.equal(await guideButton.isDisabled(),false,"opening v1.79 Guide is disabled");
@@ -553,7 +607,7 @@ try{
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,consecration,wordsState,elevationState,
     salience:{gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
-    wide,
+    wide,phoneAudit,
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
