@@ -88,10 +88,10 @@ export function crosswalkThirdPartyDirectory(incoming,existing,{snapshotUrl="htt
   const match=matchesFor(venues,e);
   const siteIds=[...new Set(match.matches.map(m=>m.id).filter(Boolean))];
   const status=e.planned?"PLANNED_NOT_ACTIVE":e.inactive?"INACTIVE_HISTORICAL":null;
-  const matchCandidate=match.matches.length===1&&match.method==="STREET_ADDRESS";
+  const matchCandidate=match.matches.length===1;
   if(matchCandidate){
    result.matched.push({...metadata,matched_venue_id:siteIds[0],match_method:match.method,
-    classification:"EXISTING_PHYSICAL_SITE_REVIEW",cross_community:match.crossCommunity});
+    classification:match.method==="STREET_ADDRESS"?"EXISTING_PHYSICAL_SITE_REVIEW":"EXISTING_NAME_LOCALITY_POSSIBLE_MATCH",cross_community:match.crossCommunity});
   }else{
    result.needsReview.push({...metadata,matched_candidates:siteIds,match_method:match.method,
     classification:status||(match.matches.length?"AMBIGUOUS_OR_WEAK_MATCH":"POTENTIAL_MISSING_VENUE"),
