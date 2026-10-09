@@ -1,0 +1,55 @@
+{
+  "schema": "AO_1962_PRIVILEGED_COMMEMORATIONS_V1",
+  "rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+  "paragraphs": [
+    25,
+    108,
+    111
+  ],
+  "scope": "Universal general Roman 1962 ordo only. Source-first generic precedence changes on canonical parsed observances, with preserved Mass formulary identities; not a civil-date display override.",
+  "witnesses": [
+    {
+      "date": "2026-05-23",
+      "principal": "Vigil of Pentecost",
+      "sourcePath": "Tempora/Pasc6-6",
+      "sourceAlias": "Saturday after the Ascension",
+      "source": "https://missale.online/festkalender/en/2026/druck",
+      "correction": "Canonical display identity only; 1st-class red Vigil and violet-to-red ceremony already correct"
+    },
+    {
+      "date": "2026-11-01",
+      "principal": "All Saints",
+      "sourcePath": "Sancti/11-01",
+      "commemorationPathPattern": "^Tempora/Pent[0-9]+-0$",
+      "commemoration": "XXIII Sunday after Pentecost",
+      "source": "https://ordo.fsspx.org/day/2026-11-01?lang=en",
+      "correction": "One privileged Sunday commemoration in Mass orations; universal 1st-class sanctoral feast takes precedence"
+    },
+    {
+      "date": "2026-11-30",
+      "principal": "Saint Andrew",
+      "sourcePath": "Sancti/11-30",
+      "commemorationPathPattern": "^Tempora/Adv1-1$",
+      "commemoration": "Monday after First Sunday of Advent",
+      "source": "https://ordo.fsspx.org/day/2026-11-30?lang=en",
+      "correction": "Advent III-class feria is privileged when displaced by II-class sanctoral feast"
+    },
+    {
+      "date": "2026-12-08",
+      "principal": "Immaculate Conception",
+      "sourcePath": "Sancti/12-08",
+      "commemorationPathPattern": "^Tempora/Adv2-2$",
+      "commemoration": "Tuesday of Second Week of Advent",
+      "source": "https://missale.online/festkalender/en/2026/druck",
+      "correction": "Advent III-class feria is privileged when displaced by I-class sanctoral feast"
+    }
+  ],
+  "guards": [
+    "No duplicate calendar implementation",
+    "No extra collect if source cannot be fetched",
+    "Only one privileged commemoration at I class",
+    "Do not reclassify Sundays of I class or override their own rank",
+    "Liturgical commemoration must supply Collect, Secret, Postcommunion from canonical Proper sources",
+    "Do not infer local feasts or unrelated civil dates"
+  ]
+}

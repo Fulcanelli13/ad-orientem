@@ -74,16 +74,34 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
             const sources = {};
             for (const language of ['la', 'en', 'fr'])
                 sources[language] = await resolver.resolveSource(commemoration.path, language, diagnostic);
-            const collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
-            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta')[0];
-            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio')[0];
+            let collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
+            let secret = (0, proper_resolver_1.numbered)(sources, 'Secreta', true)[0];
+            let postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio', true)[0];
+            let prayerSourcePath = commemoration.path;
+            // The original Divinum Officium Advent weekday source explicitly
+            // declares "Oratio Dominica" instead of repeating three prayers.
+            // Resolve them from that Sunday's source, but keep the weekday as
+            // the commemorated liturgical identity, not the Sunday's feast.
+            const adventFeria = /^Tempora\/(Adv[1-4])-[1-6]$/.exec(commemoration.path);
+            const ruleLines = (sources.la?.map.get('Rule') || []).join('\n');
+            if (adventFeria && /(?:^|\n)Oratio Dominica(?:\n|$)/.test(ruleLines) &&
+                (!collect || !secret || !postcommunion)) {
+                const sundayPath = 'Tempora/' + adventFeria[1] + '-0';
+                const sundaySources = {};
+                for (const language of ['la', 'en', 'fr'])
+                    sundaySources[language] = await resolver.resolveSource(sundayPath, language, diagnostic);
+                collect = collect || (0, proper_resolver_1.numbered)(sundaySources, 'Oratio', true)[0];
+                secret = secret || (0, proper_resolver_1.numbered)(sundaySources, 'Secreta', true)[0];
+                postcommunion = postcommunion || (0, proper_resolver_1.numbered)(sundaySources, 'Postcommunio', true)[0];
+                prayerSourcePath = sundayPath;
+            }
             if (collect)
                 proper.collects.push(collect);
             if (secret)
                 proper.secrets.push(secret);
             if (postcommunion)
                 proper.postcommunions.push(postcommunion);
-            proper.calendarCommemorations.push({ name: commemoration.title, path: commemoration.path, rank: (0, calendar_engine_1.classLabel)(commemoration.rank) });
+            proper.calendarCommemorations.push({ name: commemoration.title, path: commemoration.path, prayerSourcePath, rank: (0, calendar_engine_1.classLabel)(commemoration.rank) });
         }
         catch (error) {
             diagnostic.warnings.push(`Commemoration source failed ${commemoration.path}: ${error instanceof Error ? error.message : String(error)}`);
@@ -148,7 +166,7 @@ class DayResolver {
                 path,
                 properId: `calendar:${dateKey}:${path}`,
                 name: day.main.title || 'Feria',
-                nameFr: day.main.title || 'Férie',
+                nameFr: path === 'Tempora/Pasc6-6' ? 'Vigile de la Pentecôte' : (day.main.title || 'Férie'),
                 rank: (0, calendar_engine_1.classLabel)(day.main.rank || 4),
                 color: day.main.color || 'White',
                 profile: 'ordinary_mass',
@@ -418,6 +436,15 @@ function applyRules(calendar, source, date, shifted) {
     }
     if ((x = matchFirst(obs, C.TEMPORA_QUAD5_5)) && (y = matchFirst(obs, C.TEMPORA_QUAD5_5C)) && !matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2))
         return ret([x], [y]);
+    // 1960 General Rubrics nn. 25, 108, 111: a III-class Advent feria
+    // yields to a I/II-class sanctoral feast but remains a privileged
+    // commemoration (Collect, Secret and Postcommunion).
+    if (!isSun && (date.getMonth() === 10 || (date.getMonth() === 11 && date.getDate() <= 16))) {
+        const advent = matchFirst(obs, PAT.PATTERN_ADVENT);
+        const saint = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2);
+        if (advent && advent.rank === 3 && saint && saint.rank < advent.rank)
+            return ret([saint], [advent]);
+    }
     x = !isSun ? matchFirst(obs, [...source.ember, PAT.PATTERN_ADVENT]) : null;
     if (x) {
         y = matchFirst(obs, PAT.PATTERN_SANCTI);
@@ -466,8 +493,14 @@ function applyRules(calendar, source, date, shifted) {
         y = matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2);
         return ret(x ? [x] : [], y ? [y] : []);
     }
-    if ((x = matchFirst([...obs].sort((a, b) => a.priority - b.priority), PAT.PATTERN_CLASS_1)))
-        return ret([x]);
+    if ((x = matchFirst([...obs].sort((a, b) => a.priority - b.priority), PAT.PATTERN_CLASS_1))) {
+        // On a sanctoral I-class feast, a displaced II-class Sunday
+        // receives its privileged commemoration; Sundays of the Lord
+        // expressly excluded by the earlier Jesus-feast rule stay omitted.
+        const sunday = isSun && x.flexibility === 'sancti'
+            ? matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2) : null;
+        return ret([x], sunday ? [sunday] : []);
+    }
     if (matchFirst(obs, [C.SANCTI_09_14, C.SANCTI_11_09].filter(Boolean)) && isSun) {
         x = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_2);
         if (x)
@@ -666,6 +699,11 @@ class CalendarEngine {
         }
     }
     async hydrateTitle(observance, diagnostic) {
+        // Normalize the named 1962 first-class Vigil at source hydration.
+        // Some upstream calendar editions already supply the descriptive
+        // Saturday title, so this must precede the early title return.
+        if (observance.path === 'Tempora/Pasc6-6')
+            return { ...observance, title: 'Vigil of Pentecost', sourceTitle: observance.title || 'Saturday after the Ascension' };
         if (observance.title)
             return observance;
         if (!observance.path)
@@ -683,8 +721,15 @@ class CalendarEngine {
         }
         catch { /* title fallback is safe */ }
         title = title || observance.name || 'Feria';
+        // The 1962 first-class vigil is identified by the canonical
+        // Temporale source path, not by a hardcoded civil date.
+        // The upstream "Saturday after the Ascension" is retained as
+        // sourceTitle for provenance rather than replacing Proper texts.
+        const sourceTitle = title;
+        if (observance.path === 'Tempora/Pasc6-6')
+            title = 'Vigil of Pentecost';
         this.titleCache.set(observance.path, title);
-        return { ...observance, title };
+        return { ...observance, title, ...(sourceTitle !== title ? { sourceTitle } : {}) };
     }
     async resolveCalendarDay(date, diagnostic, formularyIndex = 0) {
         const { cal } = await this.getCalendar(date.getFullYear(), diagnostic);
@@ -2053,10 +2098,10 @@ function normalizeProper(meta, sources, preface, diagnostic) {
         sequence: textFrom(sources, "Sequentia"),
         gospel: textFrom(sources, "Evangelium"),
         offertory: textFrom(sources, "Offertorium"),
-        secrets: numbered(sources, "Secreta"),
+        secrets: numbered(sources, "Secreta", true),
         preface,
         communion: textFrom(sources, "Communio"),
-        postcommunions: numbered(sources, "Postcommunio"),
+        postcommunions: numbered(sources, "Postcommunio", true),
         preparatoryLessons,
         specialSections,
         showGloria: meta.gloria,

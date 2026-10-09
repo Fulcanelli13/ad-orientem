@@ -206,6 +206,30 @@ try{
  }
  console.log("CALENDAR_1962_ORACLE_FINDINGS="+JSON.stringify(oracleFindings));
  assert.deepEqual(oracleMismatch,[],"1962 resolved Masses disagree with independent sample");
+ // Issue #690: verify actual full-source 1962 Mass texts, not just date labels.
+ // The Advent ferias explicitly inherit the preceding Sunday's three
+ // orations under their original [Rule] Oratio Dominica.
+ for(const [date,pattern,expectedCommSource] of [
+   ["2026-05-23",/Vigil of Pentecost/,null],
+   ["2026-11-01",/All Saints/,new RegExp("^Tempora/Pent[0-9]+-0")],
+   ["2026-11-30",/Andrew/,new RegExp("^Tempora/Adv1-1")],
+   ["2026-12-08",/Immaculate Conception/,new RegExp("^Tempora/Adv2-2")],
+ ]){
+   assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),date),true);
+   const r=await page.evaluate(id=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.get?.(id),date);
+   assert.ok(r?.day?.main && r?.proper?.data,date+": missing original resolved Mass");
+   assert.match(String(r.proper.data.name||r.day.main.title||""),pattern,date+": wrong 1962 principal celebration");
+   if(expectedCommSource){
+     const comm=r.day.commemorations||[],texts=r.proper.data;
+     assert.ok(comm.some(c=>expectedCommSource.test(c.path||"")),date+": missing privileged commemoration");
+     assert.ok((texts.calendarCommemorations||[]).some(c=>expectedCommSource.test(c.path||"")),date+": Proper source commemoration missing");
+     for(const key of ["collects","secrets","postcommunions"])
+       assert.ok((texts[key]||[]).length>=2,date+": missing actual commemorated "+key);
+   } else {
+     assert.equal(r.proper.data.nameFr,"Vigile de la Pentecôte",date+": French title missing");
+   }
+ }
+
  // In Passion Week 2027 the first-class Mass of St Joseph displaces the
  // third-class Friday, which survives as a commemoration. Confirm all three
  // facets of precedence: principal observance, class/colour, commemoration.

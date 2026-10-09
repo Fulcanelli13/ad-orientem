@@ -80,6 +80,12 @@ try{
             provenance:{dayTitle:d.title??null,dayColour:d.color??d.colour??null,properTitle:p.name??p.title?.en??null,properColour:p.color??p.colour??null,colourPlan:r?.colourPlan??null,dayCommemorations:d.commemorations??null,properCommemorations:p.commemorations??null},
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
+            composition:{
+              commemorations:(p.calendarCommemorations||[]).map(x=>({name:x.name,path:x.path,prayerSourcePath:x.prayerSourcePath||null,rank:x.rank})),
+              collects:(p.collects||[]).length,secrets:(p.secrets||[]).length,
+              postcommunions:(p.postcommunions||[]).length,
+              nameFr:p.nameFr||null,
+            },
             failed:!r||r.status==="failed"||!r.day?.main||r.date!==date,
             failure:String(r?.error||r?.proper?.error||""),
           };
@@ -106,6 +112,34 @@ try{
     }
     checks.push({date:check.date,expected:{principalRegex:check.principalRegex,rank:check.rank,colourRegex:check.colourRegex,commemorationRegex:check.commemorationRegex||null,colourPhases:check.colourPhases||null},actual:row||null,problems});
   }
+  // Source-first issue #690 acceptance: preserving the displaced day in
+  // the ordo must also result in actual second Mass orations; merely adding
+  // a Calendar label is not a valid implementation.
+  for(const [date,expectedId] of [
+    ["2026-11-01",new RegExp("^Tempora/Pent[0-9]+-0")],
+    ["2026-11-30",new RegExp("^Tempora/Adv1-1")],
+    ["2026-12-08",new RegExp("^Tempora/Adv2-2")],
+  ]){
+    const row=rows.find(x=>x.date===date);
+    assert.ok(!row.failed,date+": day unresolved: "+JSON.stringify(row));
+    const c=row?.composition;
+    assert.ok(c?.commemorations?.length>0,date+": no source-backed Proper commemoration");
+    assert.ok(c.commemorations.some(x=>expectedId.test(x.path||"")),
+      date+": original Temporale commemoration path absent");
+    if(date.startsWith("2026-1")&&date!=="2026-11-01")
+      assert.ok(c.commemorations.some(x=>new RegExp("^Tempora/Adv[12]-0$").test(x.prayerSourcePath||"")),
+        date+": the Advent ferial collect/secret/postcommunion must cite the source Sunday");
+    for(const key of ["collects","secrets","postcommunions"])
+      assert.ok(c[key]>=2,date+": missing distinct Proper "+key+" for privileged commemoration");
+  }
+  assert.equal(normalizeRank(rows.find(x=>x.date==="2026-12-01")?.rawRank),3,
+    "Ordinary Advent feria in early December must remain III class");
+  assert.equal(normalizeRank(rows.find(x=>x.date==="2026-12-16")?.rawRank),2,
+    "Advent Ember Wednesday must remain II class despite falling before 17 December");
+  const vigil=rows.find(x=>x.date==="2026-05-23");
+  assert.match(vigil?.title||"",/Vigil of Pentecost/,"Pentecost Vigil title must be canonical, not inherited Saturday title");
+  assert.equal(vigil?.composition?.nameFr,"Vigile de la Pentecôte","French vigil label lost");
+
   const unresolved=rows.filter(x=>x.failed);
   const incomplete=rows.filter(x=>!x.failed&&(!x.title||normalizeRank(x.rawRank)===null||!normalizeColor(x.rawColour)));
   const discrepancies=checks.filter(x=>x.problems.length);
