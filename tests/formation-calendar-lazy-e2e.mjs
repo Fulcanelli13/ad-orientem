@@ -356,7 +356,15 @@ try{
  const entry=await page.evaluate(()=>{
    const root=document.getElementById("ao-calendar-modular-root");
    root.scrollTop=180;
-   return {date:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate,scroll:root.scrollTop};
+   // Playwright's touch gesture may scroll the capsule into view before the
+   // click. Capture the actual scroll at activation, which is what the reader
+   // must restore, rather than the artificial pre-tap scroll offset.
+   globalThis.__aoScriptureTapScroll=null;
+   root.addEventListener("click",event=>{
+     if(event.target.closest?.("[data-cal-scripture-slot]"))
+       globalThis.__aoScriptureTapScroll=root.scrollTop;
+   },{capture:true,once:true});
+   return {date:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate};
  });
  assert.equal(entry.date,"2026-08-02");
  await gospelCapsule.tap();
@@ -372,7 +380,10 @@ try{
  }));
  assert.equal(returned.date,entry.date,"Scripture return lost Calendar's exact date");
  assert.equal(returned.view,"day","Scripture return changed Calendar's selected view");
- assert.ok(Math.abs(returned.scroll-entry.scroll)<=2,"Scripture return lost Calendar scroll position");
+ const activatedScroll=await page.evaluate(()=>globalThis.__aoScriptureTapScroll);
+ assert.ok(Number.isFinite(activatedScroll),"Calendar did not record the real touch activation scroll");
+ assert.ok(Math.abs(returned.scroll-activatedScroll)<=2,
+   "Scripture return lost Calendar scroll position at touch activation");
  assert.equal(returned.focus,"GOSPEL","Scripture return did not restore the originating reading control");
  console.log("PASS Calendar Gospel -> source-backed shared Scripture -> same date/view/scroll/focus");
 
