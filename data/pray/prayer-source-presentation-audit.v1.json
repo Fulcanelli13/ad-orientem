@@ -1,0 +1,1494 @@
+{
+  "schema": "AO_PRAYER_SOURCE_PRESENTATION_AUDIT_V1",
+  "date": "2026-10-10",
+  "baseline": "PR #782 extension; source-level, no independent online or textual witness verification",
+  "source_inputs": [
+    "data/app/content-items-pray.v1.json",
+    "data/pray/prayer-source-certification-inventory.v3.json",
+    "src/pray/prayer-edition-witnesses.v1.js",
+    "src/pray/presentation-runtime.js"
+  ],
+  "render_evidence": {
+    "library": "renderLibrary() detail invokes prayerBlock(LIB.open,{scriptureContext:true})",
+    "block": "prayerBlock() always appends sourceLine(p) inside its prayer article",
+    "source": "sourceLine(p) renders a collapsible Source / provenance details element",
+    "source_selection": "prayEditionWitness(p.id)?.url || p.provenance?.url || p.sourceUrl || PRAY_LITURGICAL_TRANSCRIPTION[p.id]",
+    "visibility_note": "source_visible/sourceVisible metadata does not guard the canonical Prayer Library sourceLine rendering"
+  },
+  "counts": {
+    "total": 48,
+    "true_source_visible_metadata": 14,
+    "false_source_visible_metadata": 34,
+    "base_citation_urls": 46,
+    "runtime_source_urls": 48,
+    "edition_witness_overrides": 5,
+    "edition_only_base_missing": 2,
+    "anchor_reviewed_not_full_verbatim": 18,
+    "anchor_not_reviewed": 30,
+    "fully_certified": 0
+  },
+  "identities": [
+    {
+      "id": "foundations_sign_of_cross",
+      "title_en": "Sign of the Cross",
+      "title_fr": "Signe de la Croix",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "SAME_FORM_NORM",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_our_father",
+      "title_en": "Our Father",
+      "title_fr": "Notre Père",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "FRENCH_HISTORICAL_VARIANT",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_hail_mary",
+      "title_en": "Hail Mary",
+      "title_fr": "Je vous salue Marie",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "SAME_FORM_NORM",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_glory_be",
+      "title_en": "Glory Be",
+      "title_fr": "Gloire au Père",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "SAME_FORM_NORM",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_apostles_creed",
+      "title_en": "Apostles’ Creed",
+      "title_fr": "Symbole des Apôtres",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "FRENCH_HISTORICAL_VARIANT",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "sacrament_act_of_contrition",
+      "title_en": "Act of Contrition",
+      "title_fr": "Acte de contrition",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "AUTHORITATIVE_LOCALE_VARIANTS",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_act_of_faith",
+      "title_en": "Act of Faith",
+      "title_fr": "Acte de foi",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "AUTHORITATIVE_LOCALE_VARIANTS",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_act_of_hope",
+      "title_en": "Act of Hope",
+      "title_fr": "Acte d'espérance",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "PUBLISHED_FRENCH_ANOMALY",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_act_of_love",
+      "title_en": "Act of Love",
+      "title_fr": "Acte de charité",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "AUTHORITATIVE_LOCALE_VARIANTS",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "title_en": "Guardian Angel Prayer",
+      "title_fr": "Prière à l’Ange gardien",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "SAME_FORM_NORM",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_grace_before_meals",
+      "title_en": "Grace Before Meals",
+      "title_fr": "Bénédicité",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "HISTORICAL_PRAYER_PRESENT",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_grace_after_meals",
+      "title_en": "Grace After Meals",
+      "title_fr": "Grâces après le repas",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "HISTORICAL_PRAYER_ALTERNATIVE",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_morning_offering",
+      "title_en": "Morning Offering",
+      "title_fr": "Offrande du matin",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.usccb.org/prayers/morning-offering"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.usccb.org/prayers/morning-offering",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.usccb.org/prayers/morning-offering"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "foundations_prayer_of_adoration",
+      "title_en": "My Lord and My God",
+      "title_fr": "Acte d’adoration",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://bible.usccb.org/bible/john/20"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://bible.usccb.org/bible/john/20",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://bible.usccb.org/bible/john/20"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "mass_confiteor",
+      "title_en": "Confiteor",
+      "title_fr": "Confiteor",
+      "category": "essentials",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": null
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": null,
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": {
+        "type": "PRINTED_MISSAL_FACSIMILE_UNCOLLATED",
+        "edition": "ROMAN_MISSAL_1962",
+        "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "secondaryUrl": "https://la.wikisource.org/wiki/Ordinarium_miss%C3%A6_(1962)"
+      },
+      "actual_runtime_source_selection": {
+        "type": "EDITION_WITNESS_RUNTIME_OVERRIDE",
+        "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "EDITION_SPECIFIC_SOURCE",
+        "MISSING_BASE_URL",
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "title_en": "Hail Holy Queen (Salve Regina)",
+      "title_fr": "Salve Regina",
+      "category": "marian",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "FRENCH_HISTORICAL_VARIANT",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "marian_memorare",
+      "title_en": "Memorare (to Mary)",
+      "title_fr": "Souvenez-vous",
+      "category": "marian",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "FRENCH_ALTERNATE_WITNESS",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "weekday_magnificat",
+      "title_en": "Magnificat (Mary)",
+      "title_fr": "Magnificat",
+      "category": "marian",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "OFFICIAL_TEXT_VARIANTS",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "marian_consecration_immaculate_heart",
+      "title_en": "Consecration to Immaculate Heart",
+      "title_fr": "Consécration au Cœur Immaculé",
+      "category": "marian",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_SECONDARY",
+        "url": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_SECONDARY",
+        "sourceUrl": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "adoration_anima_christi",
+      "title_en": "Anima Christi",
+      "title_fr": "Anima Christi",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "ENGLISH_TRANSLATION_VARIANT",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "adoration_spiritual_communion",
+      "title_en": "Spiritual Communion",
+      "title_fr": "Communion spirituelle",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "benediction_o_salutaris",
+      "title_en": "O Salutaris Hostia",
+      "title_fr": "O Salutaris Hostia",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "benediction_tantum_ergo",
+      "title_en": "Tantum Ergo",
+      "title_fr": "Tantum Ergo",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "benediction_divine_praises",
+      "title_en": "Divine Praises",
+      "title_fr": "Louanges divines",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.usccb.org/prayers/divine-praises"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.usccb.org/prayers/divine-praises",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.usccb.org/prayers/divine-praises"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "adoration_litany_blessed_sacrament",
+      "title_en": "Litany of the Most Blessed Sacrament",
+      "title_fr": "Litanies du Très Saint Sacrement",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/With_God/Litanies"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/With_God/Litanies",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/With_God/Litanies"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "benediction_versicles",
+      "title_en": "Versicle & Prayer (English)",
+      "title_fr": "Versets et oraison de la bénédiction",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "adoration_lord_i_am_not_worthy",
+      "title_en": "Lord, I Am Not Worthy",
+      "title_fr": "Domine, non sum dignus",
+      "category": "massdev",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": null
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": null,
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": {
+        "type": "PRINTED_MISSAL_FACSIMILE_UNCOLLATED",
+        "edition": "ROMAN_MISSAL_1962",
+        "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "secondaryUrl": "https://la.wikisource.org/wiki/Ordinarium_miss%C3%A6_(1962)"
+      },
+      "actual_runtime_source_selection": {
+        "type": "EDITION_WITNESS_RUNTIME_OVERRIDE",
+        "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "EDITION_SPECIFIC_SOURCE",
+        "MISSING_BASE_URL",
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "mass_devotion_leonine",
+      "title_en": "Leonine Prayers After Low Mass",
+      "title_fr": "Prières léonines après la Messe basse",
+      "category": "massdev",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_SECONDARY",
+        "url": "https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/Prayers_after_Low-Mass"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_SECONDARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/Prayers_after_Low-Mass",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/Prayers_after_Low-Mass"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "sacrament_come_holy_spirit",
+      "title_en": "Come, Holy Spirit",
+      "title_fr": "Venez, Esprit-Saint",
+      "category": "holyghost",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.usccb.org/prayers/prayer-holy-spirit"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.usccb.org/prayers/prayer-holy-spirit",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.usccb.org/prayers/prayer-holy-spirit"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "weekday_benedictus",
+      "title_en": "Benedictus (Zechariah)",
+      "title_fr": "Benedictus",
+      "category": "canticles",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "BIBLE_EDITORIAL_VARIANTS",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "devotion_prayer_st_michael",
+      "title_en": "Prayer to St. Michael",
+      "title_fr": "Prière à saint Michel",
+      "category": "saints",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "devotion_memorare_st_joseph",
+      "title_en": "Memorare to St. Joseph",
+      "title_fr": "Souvenez-vous à saint Joseph",
+      "category": "saints",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_SECONDARY",
+        "url": "https://www.scd.org/stjoseph/prayers"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_SECONDARY",
+        "sourceUrl": "https://www.scd.org/stjoseph/prayers",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.scd.org/stjoseph/prayers"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "devotion_consecration_christ_king",
+      "title_en": "Consecration to Christ the King",
+      "title_fr": "Consécration au Christ-Roi",
+      "category": "saints",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_SECONDARY",
+        "url": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_SECONDARY",
+        "sourceUrl": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "church_prayer_for_pope",
+      "title_en": "Prayer for the Pope",
+      "title_fr": "Prière pour le Pape",
+      "category": "saints",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "devotion_st_anthony_lost_items",
+      "title_en": "Si quæris miracula — St Anthony for Lost Things",
+      "title_fr": "Si quæris miracula — saint Antoine et les objets perdus",
+      "category": "saints",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_SECONDARY",
+        "url": "https://www.preces-latinae.org/thesaurus/Sancti/SAntoniusDePadova/SiQuaeris.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_SECONDARY",
+        "sourceUrl": "https://www.preces-latinae.org/thesaurus/Sancti/SAntoniusDePadova/SiQuaeris.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.preces-latinae.org/thesaurus/Sancti/SAntoniusDePadova/SiQuaeris.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "sacred_heart_short_prayer",
+      "title_en": "Act of Reparation to the Sacred Heart of Jesus",
+      "title_fr": "Acte de réparation au Sacré-Cœur de Jésus",
+      "category": "hearts",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "sacred_heart_aspiration_trust",
+      "title_en": "Sacred Heart Aspiration",
+      "title_fr": "Aspiration au Sacré-Cœur",
+      "category": "hearts",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_SECONDARY",
+        "url": "https://www.usccb.org/novena-sacred-heart-jesus"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_SECONDARY",
+        "sourceUrl": "https://www.usccb.org/novena-sacred-heart-jesus",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.usccb.org/novena-sacred-heart-jesus"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "foundations_eternal_rest",
+      "title_en": "Eternal Rest (Requiem)",
+      "title_fr": "Repos éternel",
+      "category": "dead",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+        "collationStatus": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "collationClassification": "FRENCH_TRANSLATION_VARIANT",
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_LANGUAGE_COLLATION",
+      "flags": [
+        "TEXT_OR_EDITION_VARIANT_RECORDED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "dead_de_profundis",
+      "title_en": "De Profundis — Psalm 129",
+      "title_fr": "De profundis · Psaume 129",
+      "category": "dead",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "devotion_litany_st_joseph",
+      "title_en": "Litany of Saint Joseph",
+      "title_fr": "Litanies de saint Joseph",
+      "category": "saints",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": "https://www.usccb.org/prayers/litany-saint-joseph"
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": "https://www.usccb.org/prayers/litany-saint-joseph",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": {
+        "type": "CURRENT_HOLY_SEE_WITH_DECREE",
+        "edition": "ST_JOSEPH_2021",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/05/01/210501c.html",
+        "secondaryUrl": "https://www.usccb.org/prayers/litany-saint-joseph"
+      },
+      "actual_runtime_source_selection": {
+        "type": "EDITION_WITNESS_RUNTIME_OVERRIDE",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/05/01/210501c.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "EDITION_SPECIFIC_SOURCE",
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "devotion_ad_te_beate_ioseph",
+      "title_en": "To Thee, O Blessed Joseph",
+      "title_fr": "À vous, bienheureux Joseph",
+      "category": "saints",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "traditional_veni_sancte_sequence",
+      "title_en": "Veni Sancte Spiritus · Pentecost Sequence",
+      "title_fr": "Veni Sancte Spiritus",
+      "category": "holyghost",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/The_Hymn%2C_%22Veni_Creator_Spiritus%22%2C_and_the_Sequence%2C_%22Veni_Sancte_piritus%22"
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/The_Hymn%2C_%22Veni_Creator_Spiritus%22%2C_and_the_Sequence%2C_%22Veni_Sancte_piritus%22",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/The_Hymn%2C_%22Veni_Creator_Spiritus%22%2C_and_the_Sequence%2C_%22Veni_Sancte_piritus%22"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "dead_fidelium_deus",
+      "title_en": "Prayer for All the Faithful Departed",
+      "title_fr": "Prière pour tous les fidèles défunts",
+      "category": "dead",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Prayers_for_the_Dead"
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Prayers_for_the_Dead",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Prayers_for_the_Dead"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "dead_eternal_rest_singular",
+      "title_en": "Eternal Rest · for one deceased person",
+      "title_fr": "Repos éternel · pour un défunt",
+      "category": "dead",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": "https://www.ctsbooks.org/prayers-for-the-dead/"
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": "https://www.ctsbooks.org/prayers-for-the-dead/",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://www.ctsbooks.org/prayers-for-the-dead/"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "sub_tuum",
+      "title_en": "Sub Tuum Praesidium",
+      "title_fr": "Sous l’abri de votre miséricorde",
+      "category": "marian",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "benediction_adoremus_ps116",
+      "title_en": "Adoremus in aeternum · Psalm 116/117",
+      "title_fr": "Adorons à jamais · Psaume 116/117",
+      "category": "eucharistic",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": true,
+      "base_citation": {
+        "source_claim": "VERIFIED_PRIMARY",
+        "url": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book"
+      },
+      "independent_inventory": {
+        "sourceQuality": "VERIFIED_PRIMARY",
+        "sourceUrl": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": null,
+      "actual_runtime_source_selection": {
+        "type": "CANONICAL_PROVENANCE_URL",
+        "url": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "ANCHOR_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "litany_loreto_1962",
+      "title_en": "Litany of Loreto · 1962-era form",
+      "title_fr": "Litanies de Lorette · forme de 1962",
+      "category": "marian",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": {
+        "type": "PRECONCILIAR_COMPARATIVE_WITNESS",
+        "edition": "LORETO_PRE_1980_FORM",
+        "url": "https://en.wikisource.org/wiki/Prayer-book_for_Religious/Book_2",
+        "secondaryUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/06/20/200620c.html"
+      },
+      "actual_runtime_source_selection": {
+        "type": "EDITION_WITNESS_RUNTIME_OVERRIDE",
+        "url": "https://en.wikisource.org/wiki/Prayer-book_for_Religious/Book_2"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "EDITION_SPECIFIC_SOURCE",
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    },
+    {
+      "id": "litany_loreto_current",
+      "title_en": "Litany of Loreto · current invocations",
+      "title_fr": "Litanies de Lorette · invocations actuelles",
+      "category": "marian",
+      "source_display_contract": "COLLAPSIBLE_PROVENANCE_IN_CANONICAL_PRAYER_LIBRARY",
+      "source_visible_metadata": false,
+      "base_citation": {
+        "source_claim": "UNSPECIFIED",
+        "url": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html"
+      },
+      "independent_inventory": {
+        "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+        "sourceUrl": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
+        "collationStatus": "NOT_REVIEWED",
+        "collationClassification": null,
+        "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION"
+      },
+      "edition_witness": {
+        "type": "CURRENT_HOLY_SEE_WITH_DECREE",
+        "edition": "LORETO_CURRENT_2020",
+        "url": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
+        "secondaryUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/06/20/200620c.html"
+      },
+      "actual_runtime_source_selection": {
+        "type": "EDITION_WITNESS_RUNTIME_OVERRIDE",
+        "url": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html"
+      },
+      "status": "UNVERIFIED_EXACT_TEXT",
+      "triage": "NEEDS_SOURCE_ANCHOR_REVIEW",
+      "flags": [
+        "EDITION_SPECIFIC_SOURCE",
+        "ANCHOR_NOT_REVIEWED",
+        "METADATA_DEFAULT_SOURCE_VISIBILITY_FALSE"
+      ]
+    }
+  ],
+  "review_rules": [
+    "source_visible false is metadata, not evidence of a missing or hidden reader control.",
+    "A runtime URL demonstrates link selection in code, not HTTP availability nor exact anchor correctness.",
+    "A source marked VERIFIED_PRIMARY in inherited corpus is not proof that all displayed EN, FR and LA text was independently collated.",
+    "For edition-specific forms (Roman Missal, Loreto, Saint Joseph), prefer the explicit reader edition witness and disclose historical/current distinctions.",
+    "Do not label full quotation certifiable until exact edition, original text, full language collation and target locator are individually verified.",
+    "Prayer text, bilingual choices, reader navigation and source controls remain unchanged in this audit."
+  ]
+}

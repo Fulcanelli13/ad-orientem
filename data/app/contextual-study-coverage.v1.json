@@ -1,0 +1,1787 @@
+{
+  "schema": "AO_CONTEXTUAL_STUDY_COVERAGE_V1",
+  "date": "2026-10-10",
+  "baseline": "main after PR #777; read-only audit branch",
+  "state": "SOURCE_LEVEL_AUDIT_NO_RUNTIME_CHANGE",
+  "generation": "Exact route/corpus IDs project from data/app/content-navigation-registry.v1.json; classifications based on inspected owners.",
+  "limitations": [
+    "SOURCE_WIRED is a source-code witness, not successful phone interaction, claim verification or 100% content coverage.",
+    "NOT_AUDITED does not mean missing.",
+    "FAMILY_LEVEL_ONLY does not mean a control is inside each nested Prayer reader.",
+    "Scripture full-text editions remain disabled; links to an external Bible do not certify locally displayed text.",
+    "Gated/retired identities cannot be treated as missing public entry points."
+  ],
+  "source_status_codes": [
+    "NOT_AUDITED",
+    "SOURCE_WIRED",
+    "CANONICAL_OWNER",
+    "FAMILY_LEVEL_ONLY",
+    "PUBLICATION_GATED",
+    "ALIAS_OR_RETIRED",
+    "FULL_TEXT_DISABLED"
+  ],
+  "route_count": 63,
+  "corpus_count": 31,
+  "item_census_index": "data/app/content-item-census.v1.json",
+  "shards": [
+    {
+      "name": "pray",
+      "path": "data/app/content-items-pray.v1.json",
+      "count": 100,
+      "complete": true
+    },
+    {
+      "name": "formation",
+      "path": "data/app/content-items-formation.v1.json",
+      "count": 860,
+      "complete": true
+    },
+    {
+      "name": "sexual-ethics",
+      "path": "data/app/content-items-sexual-ethics.v1.json",
+      "count": 255,
+      "complete": true
+    },
+    {
+      "name": "reference",
+      "path": "data/app/content-items-reference.v1.json",
+      "count": 1030,
+      "complete": true
+    },
+    {
+      "name": "explore",
+      "path": "data/app/content-items-explore.v1.json",
+      "count": 1282,
+      "complete": true
+    },
+    {
+      "name": "apostolate",
+      "path": "data/app/content-items-apostolate.v1.json",
+      "count": 45,
+      "complete": true
+    },
+    {
+      "name": "directory-partial",
+      "path": "data/app/content-items-directory-partial.v1.json",
+      "count": 277,
+      "complete": false
+    }
+  ],
+  "prayer_source_visibility_snapshot": {
+    "count": 48,
+    "source_visible_true": 14,
+    "source_visible_false": 34,
+    "source_url_registered": 46,
+    "interpretation": "SOURCE_VISIBLE_IS_METADATA_NOT_PROOF_OF_PROVENANCE_CONTROL_VISIBILITY",
+    "library_control": "PRAYER_LIBRARY_DETAIL_ALWAYS_CALLS_SOURCE_LINE",
+    "item_level_audit": "data/pray/prayer-source-presentation-audit.v1.json",
+    "anchor_reviewed_not_fully_certified": 18,
+    "not_anchor_reviewed": 30,
+    "fully_certified": 0
+  },
+  "specific_witnesses": [
+    {
+      "id": "W01",
+      "route": "mass",
+      "kind": "glossary",
+      "where": "Mass rubric guide",
+      "source": "src/mass/reader-dom.js",
+      "needle": "glossaryContextCapsule(\"G067\")",
+      "detail": "Exact Rubric definition G067 from the guide, without editing Mass cards."
+    },
+    {
+      "id": "W02",
+      "route": "mass",
+      "kind": "originalSources",
+      "where": "Mass guide sources",
+      "source": "src/mass/reader-dom.js",
+      "needle": "guide.sourceLinks",
+      "detail": "Guide source hyperlinks, when sourceLinks are supplied."
+    },
+    {
+      "id": "W03",
+      "route": "pray.adoration",
+      "kind": "glossary",
+      "where": "Prayer Eucharistic family entry",
+      "source": "src/pray/presentation-runtime.js",
+      "needle": "eucharistic:'G301'",
+      "detail": "Eucharistic Adoration G301 is on the family heading, not each nested reader.",
+      "scope": "family"
+    },
+    {
+      "id": "W04",
+      "route": "pray.confession",
+      "kind": "glossary",
+      "where": "Prayer Penance family entry",
+      "source": "src/pray/presentation-runtime.js",
+      "needle": "penance:'G036'",
+      "detail": "Confession G036 on the family heading.",
+      "scope": "family"
+    },
+    {
+      "id": "W05",
+      "route": "pray.stations",
+      "kind": "glossary",
+      "where": "Prayer Passion family entry",
+      "source": "src/pray/presentation-runtime.js",
+      "needle": "passion:'G419'",
+      "detail": "Stations of the Cross G419 on the family heading.",
+      "scope": "family"
+    },
+    {
+      "id": "W06",
+      "route": "pray.rosary",
+      "kind": "scripture",
+      "where": "Rosary mystery opening",
+      "source": "src/pray/rosary-scripture-policy.js",
+      "needle": "capsule.dataset.aoScriptureContext=passage.reference",
+      "detail": "Twenty source-linked mystery contexts; editorial summaries are not Bible quotations."
+    },
+    {
+      "id": "W07",
+      "route": "pray.stations",
+      "kind": "scripture",
+      "where": "Stations",
+      "source": "src/pray/presentation-runtime.js",
+      "needle": "stationScriptureOrigin(i)",
+      "detail": "Curated Gospel contexts; five Stations are explicitly devotional-tradition-only."
+    },
+    {
+      "id": "W08",
+      "route": "pray.library",
+      "kind": "scripture",
+      "where": "Canonical Prayer Library prayer block",
+      "source": "src/pray/presentation-runtime.js",
+      "needle": "opts.scriptureContext?prayerScriptureOrigin(id)",
+      "detail": "Conditional origin capsule for individually mapped prayers; not every prayer."
+    },
+    {
+      "id": "W09",
+      "route": "pray.penitential_psalms",
+      "kind": "scripture",
+      "where": "Seven Penitential Psalms",
+      "source": "src/pray/presentation-runtime.js",
+      "needle": "scriptureContextCapsule(ref,{french:isFr()})",
+      "detail": "Psalm context with traditional-numbering warning required."
+    },
+    {
+      "id": "W10",
+      "route": "pray.seven_words",
+      "kind": "scripture",
+      "where": "Seven Words",
+      "source": "src/pray/presentation-runtime.js",
+      "needle": "scriptureContextCapsule(ref,{french:isFr()})",
+      "detail": "Gospel context alongside historical witness."
+    },
+    {
+      "id": "W11",
+      "route": "learn.spiritual_life",
+      "kind": "glossary",
+      "where": "Spiritual Life SL01/SL03/SL06/SL07/SL12",
+      "source": "src/learn/spiritual-life.js",
+      "needle": "SL01:\"G001\"",
+      "detail": "Exactly five lesson headings link G001, G324, G328, G328, G044."
+    },
+    {
+      "id": "W12",
+      "route": "learn.spiritual_life",
+      "kind": "originalSources",
+      "where": "Spiritual Life lesson claims",
+      "source": "src/learn/spiritual-life.js",
+      "needle": "claimSourceMarkup(win,block.claims)",
+      "detail": "Claim-level original-source links; verify exact target per claim."
+    },
+    {
+      "id": "W13",
+      "route": "learn.sexual_ethics",
+      "kind": "scripture",
+      "where": "Sexual Ethics biblical source",
+      "source": "src/learn/sexual-ethics.js",
+      "needle": "sourceId===\"SCR\"?scriptureContextCapsule",
+      "detail": "Only for source-coded Scripture references, not all questions."
+    },
+    {
+      "id": "W14",
+      "route": "learn.sexual_ethics",
+      "kind": "originalSources",
+      "where": "Sexual Ethics question and argument",
+      "source": "src/learn/sexual-ethics.js",
+      "needle": "paragraphSourceLinks(win,item",
+      "detail": "Paragraph-level links with source-scope flags; independent certification remains separate."
+    },
+    {
+      "id": "W15",
+      "route": "apostolate",
+      "kind": "scripture",
+      "where": "Apostolate source list",
+      "source": "src/apostolate/presentation.js",
+      "needle": "source.authority===\"SACRED_SCRIPTURE\"?scriptureContextCapsule",
+      "detail": "Passage capsule only where source is explicitly Scripture."
+    },
+    {
+      "id": "W16",
+      "route": "apostolate",
+      "kind": "originalSources",
+      "where": "Apostolate source list",
+      "source": "src/apostolate/presentation.js",
+      "needle": "sourceMarkup(source,state)",
+      "detail": "Original source hyperlink in each available source record."
+    },
+    {
+      "id": "W17",
+      "route": "find",
+      "kind": "originalSources",
+      "where": "Explore detail view",
+      "source": "src/find/explore-presentation.js",
+      "needle": "sourceLinks(item,language)",
+      "detail": "Record-specific source_links; verify every lens and item separately."
+    },
+    {
+      "id": "W18",
+      "route": "scripture",
+      "kind": "scripture",
+      "where": "Shared Scripture owner",
+      "source": "src/scripture/browser-entry.js",
+      "needle": "openContext(reference",
+      "detail": "One contextual reader, text editions restricted."
+    },
+    {
+      "id": "W19",
+      "route": "scripture",
+      "kind": "originalSources",
+      "where": "Scripture reader source handoff",
+      "source": "src/scripture/library.js",
+      "needle": "sourceReadingLink(location,editionId)",
+      "detail": "External Catholic source reading, not local full-text certification."
+    },
+    {
+      "id": "W20",
+      "route": "learn.glossary",
+      "kind": "glossary",
+      "where": "Canonical Glossary owner",
+      "source": "src/glossary/browser-entry.js",
+      "needle": "installGlossaryModule",
+      "detail": "Single owner for 450 concepts; 12 exact contextual identifiers curated."
+    },
+    {
+      "id": "W21",
+      "route": "learn.glossary",
+      "kind": "originalSources",
+      "where": "Glossary original source references",
+      "source": "data/glossary/glossary-navigation-sot.v1.json",
+      "needle": "",
+      "detail": "Bibliographical source identities exist in canonical reference corpus; per-link visibility still requires audit.",
+      "scope": "registry_only"
+    }
+  ],
+  "route_coverage": [
+    {
+      "id": "home",
+      "owner": "home",
+      "route_state": "NAV_VISIBLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "mass",
+      "owner": "mass",
+      "route_state": "NAV_VISIBLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W01"
+          ]
+        },
+        "originalSources": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W02"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pray",
+      "owner": "pray",
+      "route_state": "NAV_VISIBLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn",
+      "owner": "learn",
+      "route_state": "NAV_VISIBLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "calendar",
+      "owner": "calendar",
+      "route_state": "NAV_VISIBLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "find",
+      "owner": "explore",
+      "route_state": "NAV_VISIBLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W17"
+          ]
+        }
+      }
+    },
+    {
+      "id": "settings",
+      "owner": "settings",
+      "route_state": "ROUTABLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "apostolate",
+      "owner": "apostolate",
+      "route_state": "ROUTABLE_IN_SOURCE",
+      "capabilities": {
+        "scripture": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W15"
+          ]
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W16"
+          ]
+        }
+      }
+    },
+    {
+      "id": "learn.catechism.daily",
+      "owner": "learn.catechism",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.catechism",
+      "owner": "catechism",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.spiritual_life",
+      "owner": "spiritual-life",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W11"
+          ]
+        },
+        "originalSources": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W12"
+          ]
+        }
+      }
+    },
+    {
+      "id": "learn.sexual_ethics",
+      "owner": "sexual-ethics",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W13"
+          ]
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W14"
+          ]
+        }
+      }
+    },
+    {
+      "id": "learn.scapular",
+      "owner": "formation-devotional-guide",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.mass",
+      "owner": "mass-formation",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.serve_mass.responses",
+      "owner": "mass-formation-practice",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.rites.sick",
+      "owner": "sacramental-formation",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.rites.baptism",
+      "owner": "sacramental-formation",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.rites.first_communion",
+      "owner": "sacramental-formation",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.rites.confirmation",
+      "owner": "sacramental-formation",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.rites.holy_orders",
+      "owner": "sacramental-formation",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.rites.matrimony",
+      "owner": "sacramental-formation",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.latin",
+      "owner": "latin",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.glossary",
+      "owner": "glossary",
+      "route_state": "LAUNCHER_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "CANONICAL_OWNER",
+          "witness_ids": [
+            "W20"
+          ]
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.hub",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.rosary",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W06"
+          ]
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.angelus_regina",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.angelus",
+      "owner": "pray.angelus_regina",
+      "route_state": "COMPATIBILITY_ALIAS",
+      "capabilities": {
+        "scripture": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.confession",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "FAMILY_LEVEL_ONLY",
+          "witness_ids": [
+            "W04"
+          ]
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.benediction",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.adoration",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "FAMILY_LEVEL_ONLY",
+          "witness_ids": [
+            "W03"
+          ]
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.stations",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W07"
+          ]
+        },
+        "glossary": {
+          "status": "FAMILY_LEVEL_ONLY",
+          "witness_ids": [
+            "W05"
+          ]
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.visit_blessed_sacrament",
+      "owner": "pray",
+      "route_state": "REGISTRY_DECLARED_NOT_FAMILY",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.library",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W08"
+          ]
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W09"
+          ]
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.litany_saints",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.seven_words",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W10"
+          ]
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.forty_hours",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.de_profundis",
+      "owner": "pray",
+      "route_state": "REGISTRY_DECLARED_NOT_FAMILY",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.eternal_rest",
+      "owner": "pray",
+      "route_state": "REGISTRY_DECLARED_NOT_FAMILY",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "programme.first_friday",
+      "owner": "prayer-programmes",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "programme.first_saturday",
+      "owner": "prayer-programmes",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.morning_evening",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.meal_prayers",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.nightly_examen",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.communion_treasury",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.novenas",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.sacred_heart",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.good_death",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "pray.dying_companion",
+      "owner": "pray",
+      "route_state": "FAMILY_OR_HUB_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "explore.lens.tlm",
+      "owner": "mass-directory",
+      "route_state": "LIVE_LENS_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "explore.lens.shrines",
+      "owner": "sacred-geography",
+      "route_state": "LIVE_LENS_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "explore.lens.apparitions",
+      "owner": "sacred-geography",
+      "route_state": "LIVE_LENS_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "explore.lens.relics",
+      "owner": "sacred-geography",
+      "route_state": "LIVE_LENS_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "explore.lens.traditions",
+      "owner": "customs-atlas",
+      "route_state": "LIVE_LENS_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "explore.lens.pilgrimages",
+      "owner": "sacred-geography",
+      "route_state": "LIVE_LENS_DECLARED",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "scripture",
+      "owner": "scripture",
+      "route_state": "CONTEXTUAL_OR_COMPATIBILITY",
+      "capabilities": {
+        "scripture": {
+          "status": "CANONICAL_OWNER",
+          "witness_ids": [
+            "W18"
+          ]
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "SOURCE_WIRED",
+          "witness_ids": [
+            "W19"
+          ]
+        }
+      }
+    },
+    {
+      "id": "learn.apologetics",
+      "owner": "apologetics",
+      "route_state": "PUBLICATION_GATED",
+      "capabilities": {
+        "scripture": {
+          "status": "PUBLICATION_GATED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "PUBLICATION_GATED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "PUBLICATION_GATED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.church_crisis",
+      "owner": "church-crisis",
+      "route_state": "PUBLICATION_GATED",
+      "capabilities": {
+        "scripture": {
+          "status": "PUBLICATION_GATED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "PUBLICATION_GATED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "PUBLICATION_GATED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.catholic_life",
+      "owner": "none",
+      "route_state": "RETIRED_OR_ALIAS",
+      "capabilities": {
+        "scripture": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "learn.seasonal_rites",
+      "owner": "none",
+      "route_state": "RETIRED_OR_ALIAS",
+      "capabilities": {
+        "scripture": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "ALIAS_OR_RETIRED",
+          "witness_ids": []
+        }
+      }
+    },
+    {
+      "id": "today.calendar",
+      "owner": "calendar",
+      "route_state": "CONTEXTUAL_OR_COMPATIBILITY",
+      "capabilities": {
+        "scripture": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "glossary": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        },
+        "originalSources": {
+          "status": "NOT_AUDITED",
+          "witness_ids": []
+        }
+      }
+    }
+  ],
+  "corpus_coverage": [
+    {
+      "id": "mass-1962",
+      "owner": "mass",
+      "publication_state": "LIVE_RUNTIME_SOURCE",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/mass/form-registry.v2.json"
+    },
+    {
+      "id": "liturgical-calendar",
+      "owner": "calendar",
+      "publication_state": "LIVE_RUNTIME_SOURCE",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "src/calendar/calendar-runtime.js"
+    },
+    {
+      "id": "prayer-core",
+      "owner": "pray",
+      "publication_state": "REGISTERED_CORE_TEXTS",
+      "reference_coverage_state": "SOURCE_WIRED_PARTIAL_SCOPE",
+      "source_of_truth": "src/pray/canonical-data.js"
+    },
+    {
+      "id": "prayer-experiences",
+      "owner": "pray",
+      "publication_state": "ROUTES_REGISTERED",
+      "reference_coverage_state": "SOURCE_WIRED_PARTIAL_SCOPE",
+      "source_of_truth": "src/pray/presentation-runtime.js"
+    },
+    {
+      "id": "novenas",
+      "owner": "pray",
+      "publication_state": "PLAYABLE_REPORTED_BY_SOT",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/pray/novena-sot.v1.json"
+    },
+    {
+      "id": "catechism-st-pius-x",
+      "owner": "catechism",
+      "publication_state": "PUBLIC_CONTENT_REPORTED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "docs/FORMATION-MASTER-INVENTORY-2026-10-09.md"
+    },
+    {
+      "id": "learn-the-faith-54",
+      "owner": "catechism",
+      "publication_state": "RESEARCH_ONLY_UNPUBLISHED",
+      "reference_coverage_state": "PUBLICATION_GATED",
+      "source_of_truth": "data/learn/learn-the-faith-recovered-54.v1.json"
+    },
+    {
+      "id": "apologetics",
+      "owner": "apologetics",
+      "publication_state": "FROZEN_TARGET_NOT_YET_PUBLISHED",
+      "reference_coverage_state": "PUBLICATION_GATED",
+      "source_of_truth": "data/learn/apologetics-canonical.v1.json"
+    },
+    {
+      "id": "church-crisis",
+      "owner": "church-crisis",
+      "publication_state": "FROZEN_TARGET_NOT_YET_PUBLISHED",
+      "reference_coverage_state": "PUBLICATION_GATED",
+      "source_of_truth": "data/learn/church-crisis-canonical.v1.json"
+    },
+    {
+      "id": "traditional-mass-objections",
+      "owner": "church-crisis",
+      "publication_state": "RESEARCH_RECONCILED_NOT_PUBLISHED",
+      "reference_coverage_state": "PUBLICATION_GATED",
+      "source_of_truth": "data/learn/traditional-mass-objections-reconciliation.v1.json"
+    },
+    {
+      "id": "contemporary-controversies",
+      "owner": "apologetics-church-crisis",
+      "publication_state": "RECONCILIATION_RESEARCH_ONLY",
+      "reference_coverage_state": "PUBLICATION_GATED",
+      "source_of_truth": "data/learn/contemporary-controversies-reconciliation.v1.json"
+    },
+    {
+      "id": "sexual-ethics-questions",
+      "owner": "sexual-ethics",
+      "publication_state": "PUBLIC_QA_REPORTED",
+      "reference_coverage_state": "SOURCE_WIRED_PARTIAL_SCOPE",
+      "source_of_truth": "src/learn/sexual-ethics-data/index.js"
+    },
+    {
+      "id": "sexual-ethics-debates",
+      "owner": "sexual-ethics",
+      "publication_state": "PUBLIC_DEBATES_NOT_FULLY_CERTIFIED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "docs/FORMATION-MASTER-INVENTORY-2026-10-09.md"
+    },
+    {
+      "id": "spiritual-life",
+      "owner": "spiritual-life",
+      "publication_state": "PUBLIC_LESSONS_REPORTED",
+      "reference_coverage_state": "SOURCE_WIRED_PARTIAL_SCOPE",
+      "source_of_truth": "data/learn/spiritual-life-course.v1.json"
+    },
+    {
+      "id": "latin-course",
+      "owner": "latin",
+      "publication_state": "PUBLIC_COURSE_REPORTED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/learn/latin-course-40-core350.v1.json"
+    },
+    {
+      "id": "sacramental-formation",
+      "owner": "sacramental-formation",
+      "publication_state": "SOT_RECORDS",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/learn/sacramental-formation-sot.v1.json"
+    },
+    {
+      "id": "glossary",
+      "owner": "glossary",
+      "publication_state": "LIVE_REFERENCE_INFRASTRUCTURE",
+      "reference_coverage_state": "CANONICAL_OWNER",
+      "source_of_truth": "data/glossary/glossary-navigation-sot.v1.json"
+    },
+    {
+      "id": "apostolate-scenarios",
+      "owner": "apostolate",
+      "publication_state": "ROUTE_IMPLEMENTED",
+      "reference_coverage_state": "SOURCE_WIRED_PARTIAL_SCOPE",
+      "source_of_truth": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skills",
+      "owner": "apostolate",
+      "publication_state": "ROUTE_IMPLEMENTED",
+      "reference_coverage_state": "SOURCE_WIRED_PARTIAL_SCOPE",
+      "source_of_truth": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "scripture-editions",
+      "owner": "scripture",
+      "publication_state": "TEXT_EDITIONS_DISABLED",
+      "reference_coverage_state": "FULL_TEXT_DISABLED",
+      "source_of_truth": "src/scripture/catalogue.js"
+    },
+    {
+      "id": "scripture-context",
+      "owner": "scripture",
+      "publication_state": "CONTEXT_CAPSULE_IMPLEMENTED",
+      "reference_coverage_state": "CANONICAL_OWNER",
+      "source_of_truth": "src/scripture/context.js"
+    },
+    {
+      "id": "geographical-places",
+      "owner": "sacred-geography",
+      "publication_state": "EXPLORE_SEED_LOADED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/geography/seed-registry.v1.json"
+    },
+    {
+      "id": "shrines",
+      "owner": "sacred-geography",
+      "publication_state": "EXPLORE_SEED_LOADED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json"
+    },
+    {
+      "id": "pilgrimages",
+      "owner": "sacred-geography",
+      "publication_state": "EXPLORE_SEED_LOADED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json"
+    },
+    {
+      "id": "pilgrimage-routes",
+      "owner": "sacred-geography",
+      "publication_state": "EXPLORE_SEED_LOADED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json"
+    },
+    {
+      "id": "apparitions",
+      "owner": "sacred-geography",
+      "publication_state": "EXPLORE_PARTIAL_SEED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/explore/sacred-phenomena-seed.v1.json"
+    },
+    {
+      "id": "relics",
+      "owner": "sacred-geography",
+      "publication_state": "EXPLORE_PARTIAL_SEED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/explore/sacred-phenomena-seed.v1.json"
+    },
+    {
+      "id": "published-relic-principal-sites",
+      "owner": "sacred-geography",
+      "publication_state": "ALREADY_IN_LIVE_SEED_BY_ID",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/explore/relic-principal-sites-publication.2026-10-09.json"
+    },
+    {
+      "id": "customs",
+      "owner": "customs-atlas",
+      "publication_state": "EXPLORE_SEED_LOADED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/customs/customs-atlas-seed.v1.json"
+    },
+    {
+      "id": "customs-attestations",
+      "owner": "customs-atlas",
+      "publication_state": "EXPLORE_SEED_LOADED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "data/customs/customs-atlas-seed.v1.json"
+    },
+    {
+      "id": "mass-directory",
+      "owner": "mass-directory",
+      "publication_state": "PROVIDER_LOADER_IMPLEMENTED",
+      "reference_coverage_state": "NOT_AUDITED",
+      "source_of_truth": "src/find/data-service.js"
+    }
+  ],
+  "acceptance": [
+    "For each live route with relevant biblical text, classify passage identity, edition/versification, exact source URL, study-commentary eligibility and origin return behaviour.",
+    "For each exposed term, link only an exact curated canonical Glossary ID; do not auto-match words and do not duplicate definitions.",
+    "For each assertion/source, distinguish original witness, excerpt, chapter-level link, secondary commentary and unresolved bibliographical pointer.",
+    "For each control, test first-use lazy loading, French/English, touch, keyboard, offline failure and precise return-to-origin reader focus and scroll.",
+    "For every source-visible false prayer item, investigate intended canonical reader and nested source presentation before creating new controls.",
+    "Hold APOL/CR unpublished dossiers, restricted Bible editions and retired routes out of public UI until independent approval."
+  ],
+  "next_pass_ownership": [
+    {
+      "priority": "P1",
+      "owner": "Prayer",
+      "scope": "48 canonical prayers: 34 source_visible=false is metadata; provenance accordion is called for every Library detail; 30 anchors unreviewed, 18 anchor-reviewed not fully verbatim; zero fully certified",
+      "change_policy": "Audit source accuracy and inline readability in existing reader; no duplicated source buttons"
+    },
+    {
+      "priority": "P1",
+      "owner": "Mass+Scripture",
+      "scope": "R17 Epistle/Gospel and extended Ember/Proper sources; preserve source-order/selection and unapproved edition gates",
+      "change_policy": "do not alter R17 or invent Bible text"
+    },
+    {
+      "priority": "P1",
+      "owner": "Reference/Scripture",
+      "scope": "Verify external source, commentary, edition choice, number mapping and return-to-origin for each existing Scripture capsule",
+      "change_policy": "one Scripture reader and one Glossary owner"
+    },
+    {
+      "priority": "P2",
+      "owner": "Formation",
+      "scope": "15 Learn launchers and source-linked lessons; flag item-level gaps without publishing APOL/CR",
+      "change_policy": "canonical dossier and paragraph-citation ownership"
+    },
+    {
+      "priority": "P2",
+      "owner": "Prayer",
+      "scope": "Rosary 20 mysteries, Stations 14 stages, seven psalms, seven words and canonical prayer origins; verify each reference vs Catholic editions",
+      "change_policy": "no false verbatim verse or invented Scripture for devotional traditions"
+    },
+    {
+      "priority": "P2",
+      "owner": "Explore/Apostolate",
+      "scope": "All six Explore lenses plus 36 Apostolate scenarios; distinguish ministry, geographical proof and original texts",
+      "change_policy": "no duplicate places or doctrine"
+    },
+    {
+      "priority": "P3",
+      "owner": "Global design",
+      "scope": "Only after source/context audit, unify minimal capsule placement and return behaviour",
+      "change_policy": "no extra global ribbon destinations"
+    }
+  ]
+}
