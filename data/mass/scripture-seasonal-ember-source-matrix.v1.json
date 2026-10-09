@@ -1,0 +1,486 @@
+{
+  "schema": "ao-1962-three-season-ember-source-order-matrix-v1",
+  "version": "2026-10-10-ADVENT-LENT-PENTECOST",
+  "status": "SOURCE_AND_LATIN_GATED_IN_EXISTING_R17_AND_SHARED_BIBLE_READER",
+  "sources": [
+    "Divinum Officium Latin Proper source files: original 1962 source order, extra lessons, common/historical section resolution",
+    "Missale Meum dated 1962 liturgical Mass witnesses; selected proper Latin match mandatory"
+  ],
+  "policy": [
+    "A calendrical date never confers a Bible reference unless the resolved actual Proper sourcePath, source slot, and liturgical Latin incipit match.",
+    "PreGospelSequence sourceOrder is authoritative; numbered suffixes may not pair lessons, tracts, collects, or chants.",
+    "1962 Saturday long/short variants are optional; the short retains LectioL1 and LectioL5, and no long-only L2–L4 may appear.",
+    "Pentecost octave Ember days are red I-class liturgies with particular rubrics; no other Mass actor/ceremonial data is changed by this Scripture Context matrix.",
+    "Daniel canonical Bible passage is Daniel 3:47–51, but the Latin Missal reading is 3:49 then 47–48 then 50–51. The bilingual notice is mandatory and separate canticle not included.",
+    "Leviticus 23 and Deuteronomy 26 disjoint verse references must remain strict segments, not silently recombined continuous passages.",
+    "The original Latin source uses 3 Regum for the Lent Ember Wednesday Epistle; canonical Catholic Bible book is 1Kings.",
+    "The Lent Ember Saturday fourth lesson uses Ecclesiasticus/Sirach 36:1–10; no Bible-edition numbering compatibility is asserted for uncertified editions."
+  ],
+  "days": [
+    {
+      "date": "2026-12-16",
+      "sourcePath": "Tempora/Adv3-3",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-3.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-16?theme=light",
+      "sourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1"
+      ],
+      "sourceSectionReadingOrder": [
+        "LectioL1",
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Isaiah 2:2–5"
+        }
+      ],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Isaiah 7:10–15"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 1:26–38"
+        }
+      ],
+      "segmentedProperReadings": []
+    },
+    {
+      "date": "2026-12-18",
+      "sourcePath": "Tempora/Adv3-5",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-5.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-18?theme=light",
+      "sourceSectionOrder": [],
+      "sourceSectionReadingOrder": [
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Isaiah 11:1–5"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 1:39–47"
+        }
+      ],
+      "segmentedProperReadings": []
+    },
+    {
+      "date": "2026-12-19",
+      "sourcePath": "Tempora/Adv3-6",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-6.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-19?theme=light",
+      "sourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1",
+        "LectioL2",
+        "GradualeL2",
+        "OratioL2",
+        "LectioL3",
+        "GradualeL3",
+        "OratioL3",
+        "LectioL4",
+        "GradualeL4",
+        "OratioL4",
+        "LectioL5",
+        "OratioL5"
+      ],
+      "sourceSectionReadingOrder": [
+        "LectioL1",
+        "LectioL2",
+        "LectioL3",
+        "LectioL4",
+        "LectioL5",
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Isaiah 19:20–22"
+        },
+        {
+          "sourceSectionId": "LectioL2",
+          "reference": "Isaiah 35:1–7"
+        },
+        {
+          "sourceSectionId": "LectioL3",
+          "reference": "Isaiah 40:9–11"
+        },
+        {
+          "sourceSectionId": "LectioL4",
+          "reference": "Isaiah 45:1–8"
+        },
+        {
+          "sourceSectionId": "LectioL5",
+          "reference": "Daniel 3:47–51",
+          "liturgicalVerseOrder": [
+            "Daniel 3:49",
+            "Daniel 3:47–48",
+            "Daniel 3:50–51"
+          ]
+        }
+      ],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "2Thessalonians 2:1–8"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 3:1–6"
+        }
+      ],
+      "segmentedProperReadings": [],
+      "saturdayVariant": {
+        "available": [
+          "longer",
+          "shorter"
+        ],
+        "longLessons": [
+          "LectioL1",
+          "LectioL2",
+          "LectioL3",
+          "LectioL4",
+          "LectioL5"
+        ],
+        "shortLessons": [
+          "LectioL1",
+          "LectioL5"
+        ],
+        "rubricEvidence": true
+      },
+      "danielReading": {
+        "sourceSectionId": "LectioL5",
+        "bibleReference": "Daniel 3:47–51",
+        "liturgicalOrder": [
+          "Daniel 3:49",
+          "Daniel 3:47–48",
+          "Daniel 3:50–51"
+        ],
+        "mandatoryVisibleContextNote": true,
+        "standaloneHymn": "Daniel 3:52–59"
+      }
+    },
+    {
+      "date": "2026-02-25",
+      "sourcePath": "Tempora/Quad1-3",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-3.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-25?theme=light",
+      "sourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1"
+      ],
+      "sourceSectionReadingOrder": [
+        "LectioL1",
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Exodus 24:12–18"
+        }
+      ],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "1Kings 19:3–8"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 12:38–50"
+        }
+      ],
+      "segmentedProperReadings": []
+    },
+    {
+      "date": "2026-02-27",
+      "sourcePath": "Tempora/Quad1-5",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-5.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-27?theme=light",
+      "sourceSectionOrder": [],
+      "sourceSectionReadingOrder": [
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Ezekiel 18:20–28"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 5:1–15"
+        }
+      ],
+      "segmentedProperReadings": []
+    },
+    {
+      "date": "2026-02-28",
+      "sourcePath": "Tempora/Quad1-6",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-6.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-28?theme=light",
+      "sourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1",
+        "LectioL2",
+        "GradualeL2",
+        "OratioL2",
+        "LectioL3",
+        "GradualeL3",
+        "OratioL3",
+        "LectioL4",
+        "GradualeL4",
+        "OratioL4",
+        "LectioL5",
+        "OratioL5"
+      ],
+      "sourceSectionReadingOrder": [
+        "LectioL1",
+        "LectioL2",
+        "LectioL3",
+        "LectioL4",
+        "LectioL5",
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Deuteronomy 26:12–19"
+        },
+        {
+          "sourceSectionId": "LectioL2",
+          "reference": "Deuteronomy 11:22–25"
+        },
+        {
+          "sourceSectionId": "LectioL3",
+          "reference": "2Maccabees 1:23–27"
+        },
+        {
+          "sourceSectionId": "LectioL4",
+          "reference": "Sirach 36:1–10"
+        },
+        {
+          "sourceSectionId": "LectioL5",
+          "reference": "Daniel 3:47–51",
+          "liturgicalVerseOrder": [
+            "Daniel 3:49",
+            "Daniel 3:47–48",
+            "Daniel 3:50–51"
+          ]
+        }
+      ],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "1Thessalonians 5:14–23"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 17:1–9"
+        }
+      ],
+      "segmentedProperReadings": [],
+      "saturdayVariant": {
+        "available": [
+          "longer",
+          "shorter"
+        ],
+        "longLessons": [
+          "LectioL1",
+          "LectioL2",
+          "LectioL3",
+          "LectioL4",
+          "LectioL5"
+        ],
+        "shortLessons": [
+          "LectioL1",
+          "LectioL5"
+        ],
+        "rubricEvidence": true
+      },
+      "danielReading": {
+        "sourceSectionId": "LectioL5",
+        "bibleReference": "Daniel 3:47–51",
+        "liturgicalOrder": [
+          "Daniel 3:49",
+          "Daniel 3:47–48",
+          "Daniel 3:50–51"
+        ],
+        "mandatoryVisibleContextNote": true,
+        "standaloneHymn": "Daniel 3:52–59"
+      }
+    },
+    {
+      "date": "2026-05-27",
+      "sourcePath": "Tempora/Pasc7-3",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-3.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-27?theme=light",
+      "sourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1"
+      ],
+      "sourceSectionReadingOrder": [
+        "LectioL1",
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Acts 2:14–21"
+        }
+      ],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Acts 5:12–16"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "John 6:44–52"
+        }
+      ],
+      "segmentedProperReadings": []
+    },
+    {
+      "date": "2026-05-29",
+      "sourcePath": "Tempora/Pasc7-5",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-5.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-29?theme=light",
+      "sourceSectionOrder": [],
+      "sourceSectionReadingOrder": [
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [],
+      "ordinaryProperReadings": [
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 5:17–26"
+        }
+      ],
+      "segmentedProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Joel 2:23–24; 2:26–27",
+          "omittedVerse": "Joel 2:25"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "sourcePath": "Tempora/Pasc7-6",
+      "primarySourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6.txt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-30?theme=light",
+      "sourceSectionOrder": [
+        "LectioL1",
+        "GradualeL1",
+        "OratioL1",
+        "LectioL2",
+        "GradualeL2",
+        "OratioL2",
+        "LectioL3",
+        "GradualeL3",
+        "OratioL3",
+        "LectioL4",
+        "GradualeL4",
+        "OratioL4",
+        "LectioL5",
+        "GradualeL5",
+        "OratioL5"
+      ],
+      "sourceSectionReadingOrder": [
+        "LectioL1",
+        "LectioL2",
+        "LectioL3",
+        "LectioL4",
+        "LectioL5",
+        "Lectio",
+        "Evangelium"
+      ],
+      "supplementaryReadings": [
+        {
+          "sourceSectionId": "LectioL1",
+          "reference": "Joel 2:28–32"
+        },
+        {
+          "sourceSectionId": "LectioL2",
+          "reference": "Leviticus 23:9–11; 23:15–17; 23:21"
+        },
+        {
+          "sourceSectionId": "LectioL3",
+          "reference": "Deuteronomy 26:1–3; 26:7–11"
+        },
+        {
+          "sourceSectionId": "LectioL4",
+          "reference": "Leviticus 26:3–12"
+        },
+        {
+          "sourceSectionId": "LectioL5",
+          "reference": "Daniel 3:47–51",
+          "liturgicalVerseOrder": [
+            "Daniel 3:49",
+            "Daniel 3:47–48",
+            "Daniel 3:50–51"
+          ]
+        }
+      ],
+      "ordinaryProperReadings": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reference": "Romans 5:1–5"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Luke 4:38–44"
+        }
+      ],
+      "segmentedProperReadings": [],
+      "saturdayVariant": {
+        "available": [
+          "longer",
+          "shorter"
+        ],
+        "longLessons": [
+          "LectioL1",
+          "LectioL2",
+          "LectioL3",
+          "LectioL4",
+          "LectioL5"
+        ],
+        "shortLessons": [
+          "LectioL1",
+          "LectioL5"
+        ],
+        "rubricEvidence": true
+      },
+      "danielReading": {
+        "sourceSectionId": "LectioL5",
+        "bibleReference": "Daniel 3:47–51",
+        "liturgicalOrder": [
+          "Daniel 3:49",
+          "Daniel 3:47–48",
+          "Daniel 3:50–51"
+        ],
+        "mandatoryVisibleContextNote": true,
+        "standaloneHymn": "Daniel 3:52–59"
+      }
+    }
+  ]
+}
