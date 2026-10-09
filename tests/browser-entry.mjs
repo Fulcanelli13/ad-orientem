@@ -11,6 +11,7 @@ import {
   persistedMassIsResumable,
   clearPersistedActiveMass,
   resolveHostIconAssets,
+  openReaderGlossaryContext,
 } from "../src/mass/browser-entry.js";
 import { auditHostIconBank, R17_FROZEN_ACTIVE_ICON_KEYS, R17_FROZEN_EXCLUDED_ICON_KEYS } from "../src/mass/reader-icons.js";
 
@@ -125,6 +126,45 @@ for(const id of ["G052","G057","G061","G062","G063","G266","G320","G067"]){
   assert.match(browserEntrySource,new RegExp('"'+id+'"'),"Mass glossary mapping lost "+id);
 }
 assert.match(browserEntrySource,/openTerms\(massGlossaryTerms\(preview\),\{origin:"mass"\}\)/,"Mass glossary no longer opens as contextual overlay");
+
+// Mass can be the very first module visited: the terms control must
+// install its single canonical glossary owner rather than silently no-op.
+const massPreview={getCurrentCard:()=>({title:"Communion of the Priest",sectionTitle:"Communion",sectionId:"AO.CARD.023"})};
+const ownerCall=[];
+const readyGlossary={async openTerms(ids,options){
+  ownerCall.push({ids,options});
+  return true;
+}};
+let usedLoader=0;
+assert.equal(await openReaderGlossaryContext(massPreview,{
+  win:{AO_GLOSSARY_V1:readyGlossary},
+  loader:async()=>{usedLoader++;throw new Error("SHOULD_NOT_LOAD");},
+}),true);
+assert.equal(usedLoader,0,"Already-loaded glossary should not trigger a second import");
+assert.deepEqual(ownerCall[0].options,{origin:"mass"});
+assert.ok(ownerCall[0].ids.includes("G031")&&ownerCall[0].ids.includes("G064"),
+  "Mass context terms were not passed through to original Glossary owner");
+const lazyWindow={};
+assert.equal(await openReaderGlossaryContext(massPreview,{
+  win:lazyWindow,
+  loader:async()=>{usedLoader++;return {installGlossaryModule(win){win.AO_GLOSSARY_V1=readyGlossary;return readyGlossary;}};},
+}),true);
+assert.equal(usedLoader,1,"First-use Mass glossary must lazy-load exactly once");
+assert.equal(lazyWindow.AO_GLOSSARY_V1,readyGlossary,"Canonical glossary module was not installed");
+await assert.rejects(()=>openReaderGlossaryContext(massPreview,{
+  win:{},
+  loader:async()=>({installGlossaryModule:()=>false}),
+}),/MASS_GLOSSARY_NOT_READY/,"Missing glossary owner must fail visibly");
+await assert.rejects(()=>openReaderGlossaryContext(massPreview,{
+  win:{AO_GLOSSARY_V1:{openTerms:async()=>false}},
+}),/MASS_GLOSSARY_CONTEXT_UNAVAILABLE/,"A rejected Glossary context must not report success");
+await assert.rejects(()=>openReaderGlossaryContext(massPreview,{
+  win:{},loader:async()=>{throw new Error("NETWORK_OFFLINE")},
+}),/NETWORK_OFFLINE/,"First-use loading failure must propagate to the error notice");
+assert.match(readFileSync("src/mass/browser-entry.js","utf8"),/Glossary could not open\. Mass remains available/,
+  "Glossary first-use error is not visible to English readers");
+assert.match(readFileSync("src/mass/browser-entry.js","utf8"),/Impossible d’ouvrir le glossaire/,
+  "Glossary first-use error is not visible to French readers");
 
 // browser-entry persisted Mass contract
 
