@@ -1,3 +1,4 @@
+import {calendarObservanceHeadline} from "./observance-headline.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations } from "./liturgical-year.js";
@@ -359,6 +360,8 @@ function resolution(){
 }
 function properOf(r){return r?.proper?.status==="ready"?r.proper.data:null}
 function titleOf(r){
+  const observed=calendarObservanceHeadline(r,fr()?"fr":"en");
+  if(observed)return observed;
   const p=properOf(r),d=r?.day?.main;
   return String((fr()?(p?.nameFr||p?.title?.fr||p?.name||d?.titleFr||d?.nameFr||d?.title):(p?.name||p?.title?.en||d?.title||d?.name))||L("Liturgical day","Jour liturgique"));
 }
