@@ -701,6 +701,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       state.rogationPreflight=mountRogationPreflight({
         doc:document,
         getResolvedMass:()=>celebrationApi().getResolvedMass(),
+        resolveDay:typeof runtime()?.resolver?.resolveDay==="function"?
+          (date)=>runtime().resolver.resolveDay(date):null,
         language:()=>runtimeState()?.language??"en"
       });
       state.controller = createBrowserMassController({rogationPreflight:state.rogationPreflight});

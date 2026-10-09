@@ -1,20 +1,34 @@
 {
   "schema": "AO_1962_ROGATION_EASTER_PREFACE_V1",
-  "status": "SOURCE_COLLATED_EDITORIAL_APPROVAL_PENDING",
+  "status": "SOURCE_VERIFIED_TRANSLATIONS_REVIEWED_PRODUCTION_GATED",
   "published": false,
   "selection": "IN_HOC_POTISSIMUM",
   "source": {
-    "edition": "Missale Romanum (1962), Praefationes sine cantu, Praefatio Paschalis (OCR printed p.291)",
+    "edition": "Missale Romanum (1962), Vatican typical edition, Praefatio solemnis paschalis, pp. 234–235",
     "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
     "alternateWitness": "https://liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1716-prefacios.html",
     "variantRubric": "After the Easter octave until the Ascension vigil: 'in hoc potissimum'; do not use 'in hac potissimum die' or 'in hac potissimum nocte'.",
-    "status": "TEXT_RECONCILED_PAGE_IMAGE_PROOF_PENDING"
+    "status": "ORIGINAL_VATICAN_1962_PRINT_PAGES_234_235_VISUALLY_VERIFIED",
+    "visualWitness": {
+      "edition": "Missale Romanum (1962), Vatican typical edition, Praefatio solemnis paschalis, printed pp. 234–235",
+      "page234": "https://gregobase.selapa.net/sources/42/316.png",
+      "page235": "https://gregobase.selapa.net/sources/42/317.png",
+      "verifiedText": "'sed in hoc potissimum' appears as the third Eastertide seasonal alternative on p. 234; remaining Preface paragraph and closing 'sine fine dicentes' appear on p. 235.",
+      "status": "ORIGINAL_1962_PRINTED_PAGES_VISUALLY_VERIFIED"
+    }
   },
   "text": {
     "lat": "Vere dignum et iustum est, aequum et salutare: Te quidem, Domine, omni tempore, sed in hoc potissimum gloriosius praedicare, cum Pascha nostrum immolatus est Christus. Ipse enim verus est Agnus, qui abstulit peccata mundi. Qui mortem nostram moriendo destruxit, et vitam resurgendo reparavit. Et ideo cum Angelis et Archangelis, cum Thronis et Dominationibus, cumque omni militia caelestis exercitus hymnum gloriae tuae canimus, sine fine dicentes:",
     "en": "It is truly fitting and just, right and for our salvation, to proclaim your glory at every time, O Lord, but especially in this season, when Christ our Passover has been sacrificed. For he is the true Lamb who took away the sins of the world; by dying he destroyed our death, and by rising restored our life. And therefore, with the Angels and Archangels, with the Thrones and Dominions, and with all the hosts of heaven, we sing the hymn of your glory, saying without end:",
     "fr": "Il est vraiment digne et juste, équitable et salutaire, de proclamer votre gloire en tout temps, Seigneur, mais plus particulièrement en ce temps où le Christ, notre Pâque, a été immolé. Il est en effet le véritable Agneau qui a enlevé les péchés du monde ; en mourant, il a détruit notre mort, et en ressuscitant, il nous a rendu la vie. C'est pourquoi, avec les Anges et les Archanges, les Trônes et les Dominations et toute l'armée céleste, nous chantons l'hymne de votre gloire en disant sans fin :"
   },
-  "translationStatus": "ORIGINAL_DRAFT_NOT_EXTERNALLY_PROOFREAD",
-  "publicationAllowed": false
+  "translationStatus": "ORIGINAL_EN_FR_DRAFTS_SEMANTICALLY_REVIEWED_AGAINST_VERIFIED_LATIN",
+  "publicationAllowed": false,
+  "editorialReview": {
+    "latin": "PRINT_SOURCE_VERIFIED",
+    "english": "INTERNAL_SEMANTIC_REVIEW",
+    "french": "INTERNAL_SEMANTIC_REVIEW",
+    "ecclesiasticalApprobation": "NOT_CLAIMED",
+    "publicationPending": "Full selected preflight-to-R17 production browser acceptance and Major Litany scope reconciliation"
+  }
 }
