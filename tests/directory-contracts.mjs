@@ -56,7 +56,7 @@ const researchSnapshots = [
 ];
 
 const expectedResearchCounts = new Map([
-  ["DIOCESAN",64],
+  ["DIOCESAN",65],
   ["SSPX_DISTRICT_SEED",34],
   ["SSPX_FRANCE_FIRST_PARTY",89],
   ["SSPX_FRANCE_SECOND_PASS",30],
@@ -225,7 +225,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,1001,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
+assert.equal(researchVenueCount,1002,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
