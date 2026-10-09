@@ -210,6 +210,39 @@ try{
    await disclosure.locator("summary").tap();
    assert.equal(await disclosure.getAttribute("open"),"","Historical witness drawer cannot be opened on touch: "+route);
  }
+
+ // Reach the lazy canonical Novena reader through the public module registry.
+ // Every one of the sixteen original-source links must be accessible by touch.
+ const novenaOpen=await page.evaluate(async()=>await globalThis.AO_MODULES.open("pray.novenas",{returnContext:null}));
+ assert.notEqual(novenaOpen?.ok,false,"Canonical lazy Novenas entry did not open: "+JSON.stringify(novenaOpen));
+ await page.waitForSelector("#aoPray435930.open [data-n1-select='st_anthony_nine_tuesdays']",{timeout:15000});
+ const novenaIds=await page.locator("#aoPray435930.open [data-n1-select]").evaluateAll(nodes=>nodes.map(x=>x.dataset.n1Select));
+ assert.equal(novenaIds.length,16,"Novenas home no longer lists all sixteen source-backed targets");
+ for(const id of novenaIds){
+   await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:9000});
+   const detail=page.locator("#aoPray435930.open");
+   const source=detail.locator("details.aoN1SourceDetails");
+   assert.equal(await source.count(),1,"Missing original-source disclosure for Novena "+id);
+   await source.locator("summary").tap({timeout:9000});
+   const primary=source.locator("a.aoN1SourcePrimary");
+   assert.equal(await primary.count(),1,"Original witness citation is not clickable for "+id);
+   const href=await primary.getAttribute("href");
+   assert.match(href,/^https:\/\//,"Non-HTTPS Novena source for "+id);
+   assert.equal(await primary.getAttribute("rel"),"noopener noreferrer");
+   if(id==="holy_ghost")assert.match(await source.textContent(),/NOVENA FOR PENTECOST/,"Source points to Christmas page without Pentecost section identity");
+   if(id==="perpetual_help")assert.match(await source.textContent(),/not proofread/i,"Unproofread source transcription is represented as certified");
+   if(id==="st_anthony_nine_tuesdays"){
+     await detail.locator("[data-n1-mode='simple']").tap();
+     await detail.locator("[data-n1-begin]").tap();
+     const prayerBody=await detail.innerText();
+     assert.match(prayerBody,/Our Father/);
+     assert.match(prayerBody,/Hail Mary/);
+     assert.match(prayerBody,/Glory Be/);
+     assert.match(prayerBody,/Si quæris miracula|If, then, thou seekest miracles/i,"Traditional responsory not reused from Prayer corpus");
+     await detail.locator("[data-n1-back]").tap();
+   }
+   await detail.locator("[data-n1-back]").tap({timeout:9000});
+ }
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
  const ids=await page.locator("#aoPray435930 [data-p435930-lib-open]").evaluateAll(nodes=>nodes.map(x=>x.dataset.p435930LibOpen));

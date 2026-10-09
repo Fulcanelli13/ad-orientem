@@ -1,4 +1,5 @@
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
+import { novenaSourceAccess } from "./novena-source-access.v1.js";
 import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
@@ -45,7 +46,15 @@ function fmt(d){return formatDisplayDate(d)}
 function calStatus(n){const now=selectedDate(),key=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-'),c=novenaStatusFor(n,key,{fr:isFr()});const w={start:new Date(c.window.start+'T12:00:00'),end:new Date(c.window.end+'T12:00:00'),feast:new Date(c.window.feast+'T12:00:00')};return{kind:c.kind,day:c.day,label:c.label,w}}
 function head(title,sub=''){return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-n1-back aria-label="${esc(L('Back','Retour'))}">${n1UiIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY · NOVENAS','PRIER · NEUVAINES'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div><button type="button" class="aoP435930Home" data-n1-home aria-label="${esc(L('Home','Accueil'))}">${n1UiIcon('ao-nav-home')}</button></header>`}
 function modeNav(){return `<div class="aoP435930Seg" role="group" aria-label="${esc(L('Depth','Profondeur'))}"><button type="button" class="${N.mode==='simple'?'active':''}" aria-pressed="${N.mode==='simple'}" data-n1-mode="simple">${esc(L('Simple','Simple'))}</button><button type="button" class="${N.mode==='guided'?'active':''}" aria-pressed="${N.mode==='guided'}" data-n1-mode="guided">${esc(L('Guided','Guidé'))}</button></div>`}
-function sourceDetails(n){const s=n.source,links=(n.historySources||[]).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)} ↗</a></li>`).join('');return `<details class="aoN1Details"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work)}</b><br>${esc(s.authors)}<br>${esc(s.edition)}<br>${esc(s.approval)}</p><p>${esc(s.adaptation)}</p><ul>${links}</ul><p class="aoN1Fine">${esc(L('The underlying historical witnesses remain auditable. French prayer bodies are either traditional French witnesses or clearly labelled editorial translations aligned to the source text.','Les témoins historiques demeurent vérifiables. Les textes français sont soit des témoins français traditionnels, soit des traductions éditoriales explicitement signalées et alignées sur le texte source.'))}</p></details>`}
+function sourceDetails(n){
+ const s=n.source||{},section=novenaSourceAccess(n.id),url=String(s.url||'');
+ const direct=/^https:\/\/[a-z0-9.-]+\//i.test(url)
+   ?`<p><a class="aoN1SourcePrimary" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(L('Read the cited text','Consulter le texte cité'))} ↗</a></p>`
+   :`<p class="aoN1Fine">${esc(L('A direct source link is unavailable.','Aucun lien direct vers la source n’est disponible.'))}</p>`;
+ const note=section?`<p class="aoN1Fine aoN1SourceSection"><b>${esc(txt(section.heading))}</b></p><p class="aoN1Fine">${esc(txt(section.note))}</p>`:'';
+ const links=(n.historySources||[]).filter(x=>/^https:\/\//i.test(x.url||'')).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.label)} ↗</a></li>`).join('');
+ return `<details class="aoN1Details aoN1SourceDetails"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work||n.id)}</b><br>${esc(s.authors||'')}<br>${esc(s.edition||'')}<br>${esc(s.approval||'')}</p>${direct}${note}${s.adaptation?`<p>${esc(s.adaptation)}</p>`:''}${links?`<ul>${links}</ul>`:''}<p class="aoN1Fine">${esc(L('An identified source or translation is not in itself proof of complete word-for-word collation.', 'Un texte source identifié ou une traduction ne constitue pas, à lui seul, une vérification intégrale mot à mot.'))}</p></details>`;
+}
 function contextSource(id){return (NOVENA_CONTEXT_V1.sourceRegistry||[]).find(x=>x.id===id)||null}
 function contextDetails(n){
  const x=novenaContext(n.id);if(!x)return'';

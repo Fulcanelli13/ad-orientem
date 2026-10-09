@@ -256,7 +256,14 @@ const ST_ANTHONY=F({
     "O Jesus my Saviour, who didst vouchsafe to appear to St Anthony in the form of an infant, I implore Thee, through the love Thou didst bear this saint when he dwelt on earth and which Thou now bearest him in heaven, graciously hear my prayer and assist me in my necessities, who livest and reignest, world without end. Amen.\n\nO glorious St Anthony, safe refuge of all the afflicted and distressed, who hast revealed that all who piously invoke thee at thy altar on nine consecutive Tuesdays shall experience the power of thy intercession. Encouraged by thy promise, and by the knowledge of the wonderful favours and graces which God bestows on those who piously invoke thy intercession, I come to thee, O powerful Saint, and with firm hope I implore thy aid, thy protection, thy counsel and thy blessing. Obtain for me, I beseech thee, my request. But if it should be opposed to the Will of God and the welfare of my soul, obtain for me such other graces as shall be conducive to my salvation. Through Christ our Lord. Amen.",
     "Ô Jésus, mon Sauveur, qui avez daigné apparaître à saint Antoine sous la forme d’un enfant, je vous supplie, par l’amour que vous portiez à ce saint lorsqu’il vivait sur la terre et que vous lui portez maintenant dans le ciel, d’écouter avec bonté ma prière et de m’assister dans mes nécessités, vous qui vivez et régnez dans les siècles des siècles. Ainsi soit-il.\n\nÔ glorieux saint Antoine, refuge assuré de tous les affligés et de tous ceux qui sont dans la détresse, vous avez fait connaître que ceux qui vous invoquent pieusement pendant neuf mardis consécutifs éprouveront la puissance de votre intercession. Encouragé par cette promesse et par la connaissance des faveurs et des grâces merveilleuses que Dieu accorde à ceux qui recourent pieusement à votre intercession, je viens à vous, ô puissant saint, et avec une ferme espérance j’implore votre secours, votre protection, votre conseil et votre bénédiction. Obtenez-moi, je vous en supplie, la grâce que je demande. Mais si elle était contraire à la volonté de Dieu et au bien de mon âme, obtenez-moi les autres grâces qui contribueront à mon salut. Par Jésus-Christ Notre-Seigneur. Ainsi soit-il."
   ),
-  commonPrayers:A([]),
+  // The 1966 Franciscan pamphlet prints these after its two customary prayers,
+  // followed by the historic responsory, already owned by canonical Prayer.
+  commonNote:bi(
+    "The Franciscan source offers this customary sequence: one Our Father, one Hail Mary and one Glory Be, followed by the Si quaeris responsory. No single novena formula is obligatory.",
+    "La source franciscaine propose cet usage : un Notre Père, un Je vous salue Marie et un Gloire au Père, suivis du répons Si quaeris. Aucune formule unique n’est obligatoire."
+  ),
+  commonPrayers:A([["foundations_our_father",1],["foundations_hail_mary",1],["foundations_glory_be",1]]),
+  closingCanonical:"devotion_st_anthony_lost_items",
   days:repeatedDays(
     "The Nine Tuesdays","Les neuf mardis",
     "This is a weekly devotion: pray the traditional form on the appointed Tuesday and return the following Tuesday.",
