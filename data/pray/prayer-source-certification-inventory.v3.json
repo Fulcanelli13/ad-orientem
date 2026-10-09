@@ -1,0 +1,1493 @@
+{
+  "schema": "ao.prayer.source-certification-inventory.v3",
+  "date": "2026-10-09",
+  "provenance": "REPOSITORY_RECORD_EXTRACTION_NOT_INDEPENDENT_COLLATION",
+  "rule": "Existing sourceQuality and sourceUrl are claims from the current corpus; they are NOT certification of text or live link destination. Every prayer/novena is pending comparison against its original witness before ACCEPTED.",
+  "counts": {
+    "prayers": 48,
+    "novenas": 16,
+    "primaryOrSecondaryClaims": 39,
+    "legacyUnclassified": 9,
+    "prayerMissingUrl": [
+      "mass_confiteor",
+      "adoration_lord_i_am_not_worthy"
+    ],
+    "anchorReviewed": 18,
+    "fullyCertified": 0,
+    "notReviewed": 46,
+    "editionDifferent": 12
+  },
+  "conflicts": [
+    {
+      "id": "foundations_act_of_hope",
+      "type": "PRINTED_FRENCH_ANOMALY",
+      "source": "Holy See Compendium French Appendix A, Acte d’espérance",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "note": "The official French printed source says « Dans cette foi » while Latin says « In hac spe » and English says « In this hope ». Preserve source wording, do not silently emend."
+    },
+    {
+      "id": "litany_saints",
+      "type": "HISTORICAL_WITNESS_SOURCE_BOUNDARY",
+      "note": "Separate the Litanies from the following psalm/collect and collate EN/FR; segment ownership addressed in PR #711 but texts not certified."
+    },
+    {
+      "id": "pray.seven_words",
+      "type": "HISTORICAL_WITNESS_SECTION_BOUNDARY",
+      "note": "Keep post-Seventh Word Marian prayers as appendix rather than seventh meditation."
+    }
+  ],
+  "prayers": [
+    {
+      "id": "foundations_sign_of_cross",
+      "type": "canonical_prayer",
+      "title": "Sign of the Cross",
+      "sourceWork": "Sign of the Cross",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "SAME_FORM_NORM",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "The three common-prayer formulas are present in the printed 2005 Compendium; punctuation and capitalization do not constitute independent source certifications.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_our_father",
+      "type": "canonical_prayer",
+      "title": "Our Father",
+      "sourceWork": "Our Father",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "FRENCH_HISTORICAL_VARIANT",
+        "comparedLanguages": [
+          "fr"
+        ],
+        "summary": "French app text uses the older vous / ne nous laissez pas succomber formula; the 2005 French Compendium instead uses tu / ne nous soumets pas. An early nineteenth-century French catechism witnesses the traditional construction, but its surrounding wording is not an exact line-for-line match.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [
+          {
+            "label": "Traditional French catechism (historical comparison, not exact app edition)",
+            "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_%C3%A0_l%E2%80%99usage_de_toutes_les_%C3%A9glises_de_l%E2%80%99empire_fran%C3%A7ais.djvu/164"
+          }
+        ],
+        "uiNotice": {
+          "en": "The French text is the traditional form; it is not the wording of the linked French 2005 Compendium.",
+          "fr": "La version française conserve la formule traditionnelle ; elle n’est pas identique au texte français du Compendium de 2005."
+        }
+      }
+    },
+    {
+      "id": "foundations_hail_mary",
+      "type": "canonical_prayer",
+      "title": "Hail Mary",
+      "sourceWork": "Hail Mary",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "SAME_FORM_NORM",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "Common Hail Mary formula appears in EN/FR/Latin published appendix; minor punctuation and typographical differences require normalized text comparison.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_glory_be",
+      "type": "canonical_prayer",
+      "title": "Glory Be",
+      "sourceWork": "Glory Be",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "SAME_FORM_NORM",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "Common Gloria Patri appears in EN/FR/Latin published appendix; minor spelling and punctuation differences.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_apostles_creed",
+      "type": "canonical_prayer",
+      "title": "Apostles’ Creed",
+      "sourceWork": "Apostles’ Creed",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "FRENCH_HISTORICAL_VARIANT",
+        "comparedLanguages": [
+          "fr"
+        ],
+        "summary": "App French says je crois au Saint-Esprit, while the 2005 French Compendium says je crois en l'Esprit Saint. Traditional French catechetical use of Saint-Esprit is historically attested; preserve wording and distinguish the French source edition.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [
+          {
+            "label": "Traditional French catechism witness",
+            "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_%C3%A0_l%E2%80%99usage_de_toutes_les_%C3%A9glises_de_l%E2%80%99empire_fran%C3%A7ais.djvu/164"
+          }
+        ],
+        "uiNotice": {
+          "en": "The French Creed uses the traditional Saint-Esprit wording rather than the 2005 Compendium's Esprit Saint.",
+          "fr": "Le Credo français conserve « Saint-Esprit » au lieu de la formulation « Esprit Saint » du Compendium de 2005."
+        }
+      }
+    },
+    {
+      "id": "sacrament_act_of_contrition",
+      "type": "canonical_prayer",
+      "title": "Act of Contrition",
+      "sourceWork": "Act of Contrition",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "AUTHORITATIVE_LOCALE_VARIANTS",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "The 2005 English and Latin Acts of Contrition have an extended punishment/occasion structure. The French printed Acte de contrition is appreciably shorter. They are distinct official local forms, not three literal translations of one text.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_act_of_faith",
+      "type": "canonical_prayer",
+      "title": "Act of Faith",
+      "sourceWork": "Act of Faith",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "AUTHORITATIVE_LOCALE_VARIANTS",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "The printed Compendium's English Act of Faith includes an expanded Trinitarian/Christological section absent from its concise Latin and French forms. All are attested there; do not imply word-for-word translation.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_act_of_hope",
+      "type": "canonical_prayer",
+      "title": "Act of Hope",
+      "sourceWork": "Act of Hope",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "PUBLISHED_FRENCH_ANOMALY",
+        "comparedLanguages": [
+          "fr"
+        ],
+        "summary": "The Holy See's printed French Acte d'espérance ends Dans cette foi while English ends In this hope and Latin In hac spe. Preserve the attested French reading until an independently witnessed correction is found; previous UI disclosure remains canonical.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_act_of_love",
+      "type": "canonical_prayer",
+      "title": "Act of Love",
+      "sourceWork": "Act of Love",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "AUTHORITATIVE_LOCALE_VARIANTS",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "French published Acte de charité omits the English/Latin closing In this love I intend to live and die, and is shorter; the app follows these distinct official formulas.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "type": "canonical_prayer",
+      "title": "Guardian Angel Prayer",
+      "sourceWork": "Angel of God / Angele Dei",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "SAME_FORM_NORM",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "The English verse, French Ange de Dieu and Latin Angele Dei appear in the respective Compendium appendices and match the app substantially.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_grace_before_meals",
+      "type": "canonical_prayer",
+      "title": "Grace Before Meals",
+      "sourceWork": "Grace Before Meals",
+      "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "HISTORICAL_PRAYER_PRESENT",
+        "comparedLanguages": [
+          "en"
+        ],
+        "summary": "The original historical Baltimore Manual Morning Prayers page contains Grace Before Meals. App English substantially reproduces the prayer, including the shorter conclusion; French still lacks a fully independently collated printed witness.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+          }
+        ],
+        "relatedWitnesses": [
+          {
+            "label": "Baltimore Manual, Grace Before Meals",
+            "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+          }
+        ],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "foundations_grace_after_meals",
+      "type": "canonical_prayer",
+      "title": "Grace After Meals",
+      "sourceWork": "Grace After Meals",
+      "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "HISTORICAL_PRAYER_ALTERNATIVE",
+        "comparedLanguages": [
+          "en"
+        ],
+        "summary": "The cited Baltimore Manual has We give Thee thanks ... for all Thy mercies, while the app says ... for all Thy benefits, a documented alternative preserved in Blessed Sacrament Book / Prayers During the Day. The extra responsories in historical books must not be silently ascribed to the app.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book/Prayers_During_the_Day"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+          }
+        ],
+        "relatedWitnesses": [
+          {
+            "label": "Blessed Sacrament Book, prayers during the day",
+            "url": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book/Prayers_During_the_Day"
+          }
+        ],
+        "uiNotice": {
+          "en": "This text follows the benefits form found in another historical prayer book, not the mercies wording on the cited Baltimore Manual page.",
+          "fr": "Cette prière suit la formule anglaise « benefits » attestée dans un autre livre ancien, non « mercies » du manuel de Baltimore."
+        }
+      }
+    },
+    {
+      "id": "foundations_morning_offering",
+      "type": "canonical_prayer",
+      "title": "Morning Offering",
+      "sourceWork": "Morning Offering",
+      "sourceUrl": "https://www.usccb.org/prayers/morning-offering",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "foundations_prayer_of_adoration",
+      "type": "canonical_prayer",
+      "title": "My Lord and My God",
+      "sourceWork": "My Lord and my God",
+      "sourceUrl": "https://bible.usccb.org/bible/john/20",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "mass_confiteor",
+      "type": "canonical_prayer",
+      "title": "Confiteor",
+      "sourceWork": "Missale Romanum 1962 · Prayers at the Foot of the Altar",
+      "sourceUrl": null,
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": true,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "type": "canonical_prayer",
+      "title": "Hail Holy Queen (Salve Regina)",
+      "sourceWork": "Hail Holy Queen",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "FRENCH_HISTORICAL_VARIANT",
+        "comparedLanguages": [
+          "fr"
+        ],
+        "summary": "App French Salve Regina uses vous, Reine and an older conventional vocabulary, whereas the French 2005 Compendium uses Salut, ô Reine and tutoiement. Latin and English belong to the corresponding common prayer; no exact French 2005-text identity.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [
+          {
+            "label": "French Marian text, historical-style comparison (not exact edition)",
+            "url": "https://www.notredamedetilly.org/rosaire-priere/pri%C3%A8res-chants"
+          }
+        ],
+        "uiNotice": {
+          "en": "The French Salve Regina is a traditional translation, not the exact French 2005 Compendium edition.",
+          "fr": "Le Salve Regina français est une traduction traditionnelle, non la reproduction exacte du Compendium français de 2005."
+        }
+      }
+    },
+    {
+      "id": "marian_memorare",
+      "type": "canonical_prayer",
+      "title": "Memorare (to Mary)",
+      "sourceWork": "Memorare",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "FRENCH_ALTERNATE_WITNESS",
+        "comparedLanguages": [
+          "fr"
+        ],
+        "summary": "French 2005 Compendium has mère du Verbe and imploré votre assistance / réclamé votre secours; the app instead says mère du Verbe incarné and réclamé votre intercession. FSSP publishes a closely related French traditional formula; it is a comparative devotional witness, not the original source edition of St Bernard.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [
+          {
+            "label": "FSSP French traditional devotional form (2022)",
+            "url": "https://www.fssp.org/fr/consecration-de-la-fraternite-sacerdotale-saint-pierre-au-coeur-immacule-de-marie/"
+          }
+        ],
+        "uiNotice": {
+          "en": "This French Memorare follows a traditional variant independently attested by the FSSP; it differs from the 2005 French Compendium.",
+          "fr": "Ce Souvenez-vous suit une variante traditionnelle également attestée par la FSSP ; il diffère du Compendium français de 2005."
+        }
+      }
+    },
+    {
+      "id": "weekday_magnificat",
+      "type": "canonical_prayer",
+      "title": "Magnificat (Mary)",
+      "sourceWork": "Magnificat",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "OFFICIAL_TEXT_VARIANTS",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "The published Compendium has more than one English liturgical Magnificat version and a separate French text; edition and biblical translation must be displayed distinctly. No claim of complete 1962 Vulgate equivalence from this comparison alone.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "marian_consecration_immaculate_heart",
+      "type": "canonical_prayer",
+      "title": "Consecration to Immaculate Heart",
+      "sourceWork": "Act of Consecration to the Immaculate Heart of Mary",
+      "sourceUrl": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/",
+      "sourceQuality": "VERIFIED_SECONDARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": false,
+        "la": false
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "adoration_anima_christi",
+      "type": "canonical_prayer",
+      "title": "Anima Christi",
+      "sourceWork": "Anima Christi",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "ENGLISH_TRANSLATION_VARIANT",
+        "comparedLanguages": [
+          "en"
+        ],
+        "summary": "Compendium's English Anima Christi is a rhymed poem, whereas the app's English text is a direct prose translation of the Latin. The 2005 Latin text confirms the traditional original formula; French prose resembles the French appendix but all variants require complete comparison.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": {
+          "en": "The English prose rendering is not the rhymed English text printed in the 2005 Compendium; the Latin original is provided for comparison.",
+          "fr": "La version anglaise en prose diffère du poème anglais imprimé dans le Compendium de 2005 ; le latin permet la comparaison."
+        }
+      }
+    },
+    {
+      "id": "adoration_spiritual_communion",
+      "type": "canonical_prayer",
+      "title": "Spiritual Communion",
+      "sourceWork": "Act of Spiritual Communion",
+      "sourceUrl": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "benediction_o_salutaris",
+      "type": "canonical_prayer",
+      "title": "O Salutaris Hostia",
+      "sourceWork": "O Salutaris Hostia",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "benediction_tantum_ergo",
+      "type": "canonical_prayer",
+      "title": "Tantum Ergo",
+      "sourceWork": "Tantum Ergo",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "benediction_divine_praises",
+      "type": "canonical_prayer",
+      "title": "Divine Praises",
+      "sourceWork": "The Divine Praises",
+      "sourceUrl": "https://www.usccb.org/prayers/divine-praises",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "adoration_litany_blessed_sacrament",
+      "type": "canonical_prayer",
+      "title": "Litany of the Most Blessed Sacrament",
+      "sourceWork": "Litany of the Blessed Sacrament",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Litanies",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "benediction_versicles",
+      "type": "canonical_prayer",
+      "title": "Versicle & Prayer (English)",
+      "sourceWork": "Panem de caelo / Deus qui nobis",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "adoration_lord_i_am_not_worthy",
+      "type": "canonical_prayer",
+      "title": "Lord, I Am Not Worthy",
+      "sourceWork": "Missale Romanum 1962 · Communion formula",
+      "sourceUrl": null,
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": true,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "mass_devotion_leonine",
+      "type": "canonical_prayer",
+      "title": "Leonine Prayers After Low Mass",
+      "sourceWork": "Prayers after Low Mass (Leonine Prayers)",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/Prayers_after_Low-Mass",
+      "sourceQuality": "VERIFIED_SECONDARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "sacrament_come_holy_spirit",
+      "type": "canonical_prayer",
+      "title": "Come, Holy Spirit",
+      "sourceWork": "Prayer to the Holy Spirit",
+      "sourceUrl": "https://www.usccb.org/prayers/prayer-holy-spirit",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "weekday_benedictus",
+      "type": "canonical_prayer",
+      "title": "Benedictus (Zechariah)",
+      "sourceWork": "Benedictus",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "BIBLE_EDITORIAL_VARIANTS",
+        "comparedLanguages": [
+          "en",
+          "fr",
+          "la"
+        ],
+        "summary": "English Compendium prints alternative canticle renderings; French and Latin also have established liturgical texts. The app must declare which Bible/office wording it reproduces rather than treating all as one literal trilingual witness.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": null
+      }
+    },
+    {
+      "id": "devotion_prayer_st_michael",
+      "type": "canonical_prayer",
+      "title": "Prayer to St. Michael",
+      "sourceWork": "Prayer to Saint Michael the Archangel",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "devotion_memorare_st_joseph",
+      "type": "canonical_prayer",
+      "title": "Memorare to St. Joseph",
+      "sourceWork": "Memorare to Saint Joseph",
+      "sourceUrl": "https://www.scd.org/stjoseph/prayers",
+      "sourceQuality": "VERIFIED_SECONDARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "devotion_consecration_christ_king",
+      "type": "canonical_prayer",
+      "title": "Consecration to Christ the King",
+      "sourceWork": "Oratio ad D. N. Iesum Christum Regem",
+      "sourceUrl": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html",
+      "sourceQuality": "VERIFIED_SECONDARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "church_prayer_for_pope",
+      "type": "canonical_prayer",
+      "title": "Prayer for the Pope",
+      "sourceWork": "Prayer for the Pope",
+      "sourceUrl": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "devotion_st_anthony_lost_items",
+      "type": "canonical_prayer",
+      "title": "Si quæris miracula — St Anthony for Lost Things",
+      "sourceWork": "Si quæris miracula",
+      "sourceUrl": "https://www.preces-latinae.org/thesaurus/Sancti/SAntoniusDePadova/SiQuaeris.html",
+      "sourceQuality": "VERIFIED_SECONDARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "sacred_heart_short_prayer",
+      "type": "canonical_prayer",
+      "title": "Act of Reparation to the Sacred Heart of Jesus",
+      "sourceWork": "Iesu dulcissime · Actus reparationis",
+      "sourceUrl": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "sacred_heart_aspiration_trust",
+      "type": "canonical_prayer",
+      "title": "Sacred Heart Aspiration",
+      "sourceWork": "Sacred Heart aspiration",
+      "sourceUrl": "https://www.usccb.org/novena-sacred-heart-jesus",
+      "sourceQuality": "VERIFIED_SECONDARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "foundations_eternal_rest",
+      "type": "canonical_prayer",
+      "title": "Eternal Rest (Requiem)",
+      "sourceWork": "Eternal Rest",
+      "sourceUrl": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
+        "classification": "FRENCH_TRANSLATION_VARIANT",
+        "comparedLanguages": [
+          "fr"
+        ],
+        "summary": "App French renders et lux perpetua as lumière éternelle brille sur eux. The French 2005 Compendium instead prints lumière de ta face, while the English and Latin texts support perpetual light; do not present the app French as copied from the Compendium.",
+        "comparisonWits": [
+          {
+            "type": "EN_COMPENDIUM_OR_HISTORICAL_WITNESS",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+          },
+          {
+            "type": "FR_COMPENDIUM_OR_HISTORICAL_COMPARATOR",
+            "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+          }
+        ],
+        "relatedWitnesses": [],
+        "uiNotice": {
+          "en": "The French translation uses lumière éternelle, while the French Compendium of 2005 uses lumière de ta face.",
+          "fr": "La traduction française emploie « lumière éternelle » ; le Compendium français de 2005 emploie « lumière de ta face »."
+        }
+      }
+    },
+    {
+      "id": "dead_de_profundis",
+      "type": "canonical_prayer",
+      "title": "De Profundis — Psalm 129",
+      "sourceWork": "De Profundis · Psalm 129 (Vulgate)",
+      "sourceUrl": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "devotion_litany_st_joseph",
+      "type": "canonical_prayer",
+      "title": "Litany of Saint Joseph",
+      "sourceWork": "Current 2021 invocation set. English: AELF Committee on Divine Worship approved translation, freely publishable. Latin: Holy See current text. French: retained as a traditional vernacular rendering with the seven 2021 titles; not represented as an episcopal-conference official recension pending exact source lock.",
+      "sourceUrl": "https://www.usccb.org/prayers/litany-saint-joseph",
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": true,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "devotion_ad_te_beate_ioseph",
+      "type": "canonical_prayer",
+      "title": "To Thee, O Blessed Joseph",
+      "sourceWork": "Prayer attached by Leo XIII to Quamquam pluries (1889). Latin is retained as the canonical traditional text; English follows the historical Holy See translation; French follows a historical Catholic translation.",
+      "sourceUrl": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html",
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "traditional_veni_sancte_sequence",
+      "type": "canonical_prayer",
+      "title": "Veni Sancte Spiritus · Pentecost Sequence",
+      "sourceWork": "Traditional Pentecost Sequence, also used devotionally to invoke the Holy Spirit. Latin is the received sequence; English is the public-domain Caswall translation printed in the 1857 Raccolta; French is a historical public-domain translation (Douniol, 1858).",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/The_Hymn%2C_%22Veni_Creator_Spiritus%22%2C_and_the_Sequence%2C_%22Veni_Sancte_piritus%22",
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "dead_fidelium_deus",
+      "type": "canonical_prayer",
+      "title": "Prayer for All the Faithful Departed",
+      "sourceWork": "Traditional Roman collect for all the faithful departed. English and French are historical Catholic translations; Latin is the received traditional text.",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Prayers_for_the_Dead",
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "dead_eternal_rest_singular",
+      "type": "canonical_prayer",
+      "title": "Eternal Rest · for one deceased person",
+      "sourceWork": "Traditional singular form of Requiem aeternam for one deceased person.",
+      "sourceUrl": "https://www.ctsbooks.org/prayers-for-the-dead/",
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "sub_tuum",
+      "type": "canonical_prayer",
+      "title": "Sub Tuum Praesidium",
+      "sourceWork": "Sub tuum praesidium",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "benediction_adoremus_ps116",
+      "type": "canonical_prayer",
+      "title": "Adoremus in aeternum · Psalm 116/117",
+      "sourceWork": "Adoremus in aeternum + Psalm 116",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book",
+      "sourceQuality": "VERIFIED_PRIMARY",
+      "editionSpecificWitness": false,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "litany_loreto_1962",
+      "type": "canonical_prayer",
+      "title": "Litany of Loreto · 1962-era form",
+      "sourceWork": "Holy See Litany of Loreto; 1962-era form omits later invocations",
+      "sourceUrl": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": true,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "litany_loreto_current",
+      "type": "canonical_prayer",
+      "title": "Litany of Loreto · current invocations",
+      "sourceWork": "Holy See · current Litany of Loreto",
+      "sourceUrl": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
+      "sourceQuality": "LEGACY_RECORD_NOT_RECLASSIFIED",
+      "editionSpecificWitness": true,
+      "languages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editorial": "PENDING_INDEPENDENT_EDITION_AND_3_LANGUAGE_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    }
+  ],
+  "novenas": [
+    {
+      "id": "holy_ghost",
+      "type": "novena",
+      "title": "Novena to the Holy Ghost",
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "christmas",
+      "type": "novena",
+      "title": "Christmas Novena",
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "corpus_christi",
+      "type": "novena",
+      "title": "Corpus Christi Novena",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Festival_of_Corpus_Christi",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "sacred_heart",
+      "type": "novena",
+      "title": "Novena to the Sacred Heart",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Feast_of_the_Sacred_Heart",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "immaculate_conception",
+      "type": "novena",
+      "title": "Novena of the Immaculate Conception",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_in_Preparation_for_the_Feast_of_the_Immaculate_Conception",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "annunciation",
+      "type": "novena",
+      "title": "Annunciation Novena",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_PROJECT_GUTENBERG",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "assumption",
+      "type": "novena",
+      "title": "Assumption Novena",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_PROJECT_GUTENBERG",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "seven_sorrows",
+      "type": "novena",
+      "title": "Seven Sorrows Novena",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_PROJECT_GUTENBERG",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "st_joseph",
+      "type": "novena",
+      "title": "Novena of St Joseph",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_of_St._Joseph",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · DIGITAL_WITNESS_WIKISOURCE",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "holy_souls",
+      "type": "novena",
+      "title": "Novena for the Holy Souls in Purgatory",
+      "sourceWork": "Novena for the Holy Souls in Purgatory",
+      "sourceUrl": "https://www.ecatholic2000.com/life/prayer108.shtml",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · MULTI-WITNESS_DIGITAL_TRANSCRIPTION",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "perpetual_help",
+      "type": "novena",
+      "title": "Our Lady of Perpetual Help Novena",
+      "sourceWork": "With God: A Book of Prayers and Reflections",
+      "sourceUrl": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
+      "sourceQuality": "PUBLIC_DOMAIN_ORIGINAL · WIKISOURCE_DIGITAL_WITNESS",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "st_therese",
+      "type": "novena",
+      "title": "St Thérèse · Twenty-Four Glory Bes Novena",
+      "sourceWork": "Novena of the Twenty-Four Glory Bes to St Thérèse of Lisieux",
+      "sourceUrl": "https://www.ewtn.com/catholicism/devotions/novena-of-the-twentyfour-glory-bes-to-st-therese-the-little-flower-293",
+      "sourceQuality": "PUBLIC_DOMAIN_1925_TRADITIONAL_FORM · MODERN_DIGITAL_WITNESS",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "christ_the_king",
+      "type": "novena",
+      "title": "Novena to Christ the King",
+      "sourceWork": "Preces et Pia Opera / Thésaurisons pour le Ciel",
+      "sourceUrl": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
+      "sourceQuality": "SOURCE_LOCKED_TRADITIONAL_FRENCH · ENGLISH_EDITORIAL_ALIGNMENT",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "immaculate_heart",
+      "type": "novena",
+      "title": "Novena to the Immaculate Heart of Mary",
+      "sourceWork": "The Raccolta · Prayer to the Immaculate Heart of Mary",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
+      "sourceQuality": "SOURCE_LOCKED_TRADITIONAL_ENGLISH · FRENCH_WORLD_TRADITIONAL_WITNESS",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "st_michael",
+      "type": "novena",
+      "title": "Novena to St Michael the Archangel",
+      "sourceWork": "Leonine Prayer to St Michael the Archangel",
+      "sourceUrl": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel",
+      "sourceQuality": "SOURCE_LOCKED_TRADITIONAL_FRENCH · TRADITIONAL_ENGLISH_FORM",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    },
+    {
+      "id": "st_anthony_nine_tuesdays",
+      "type": "novena",
+      "title": "St Anthony’s Nine Tuesdays",
+      "sourceWork": "Devotion of the Nine Tuesdays to St Anthony",
+      "sourceUrl": "https://www.pamphlets.info/Australia/acts1014/",
+      "sourceQuality": "SOURCE_LOCKED_TRADITIONAL_ENGLISH · FRENCH_EDITORIAL_TRANSLATION · FRENCH_WORLD_PRACTICE_WITNESS",
+      "days": 9,
+      "editorial": "PENDING_INDEPENDENT_ORIGINAL_LANGUAGE_AND_FRENCH_TEXT_COLLATION",
+      "collation": {
+        "status": "NOT_REVIEWED"
+      }
+    }
+  ],
+  "version": "pass3-compendium-and-meals-anchor-review-v1",
+  "supersedes": "data/pray/prayer-source-certification-inventory.v2.json",
+  "method": "Primary-page direct comparison of named formula anchors across English and French; classification of edition relationships; no 3-language verbatim certificate. No unreviewed record upgraded."
+}
