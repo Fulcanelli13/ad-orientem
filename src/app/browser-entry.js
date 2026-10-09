@@ -50,7 +50,8 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   let observer = null;
   let releaseObserver = null;
   let disposed = false;
-  let ribbonClickBound = false;
+  let boundRibbon = null;
+  let observedRibbon = null;
   const cleanups = [];
 
   const isolatedNonMass=new Set(["calendar","pray","learn","settings","find","apostolate"]);
@@ -187,20 +188,39 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   }
 
   function bindRibbonClick() {
-    if (ribbonClickBound || !nav?.addEventListener) return;
+    if (boundRibbon === nav) return;
+    // A donor rebuild can replace the ribbon element without replacing the
+    // app-shell controller. Never retain a listener on the detached element.
+    boundRibbon?.removeEventListener?.("click", onRibbonClick);
+    boundRibbon = null;
+    if (!nav?.addEventListener) return;
     nav.addEventListener("click", onRibbonClick);
-    ribbonClickBound = true;
-    cleanups.push(() => {
-      nav?.removeEventListener?.("click", onRibbonClick);
-      ribbonClickBound = false;
+    boundRibbon = nav;
+  }
+
+  function watchRibbonChanges() {
+    if (!nav || typeof win?.MutationObserver !== "function" || observedRibbon === nav) return;
+    if (!observer) observer = new win.MutationObserver(() => adopt());
+    else observer.disconnect();
+    observer.observe(nav, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["data-ao-ribbon"],
     });
+    observedRibbon = nav;
   }
 
   function adopt() {
     if (disposed) return false;
     nav = doc.getElementById("ao-global-ribbon");
-    if (!nav?.querySelectorAll) return false;
+    if (!nav?.querySelectorAll) {
+      state.visibleOwner = false;
+      if (doc.documentElement?.dataset) doc.documentElement.dataset.aoAppShellOwner = "partial";
+      return false;
+    }
     bindRibbonClick();
+    watchRibbonChanges();
 
     nav.dataset.aoOwner = "AO_APP_SHELL_V1";
     nav.dataset.aoVisibleShell = "modular";
@@ -246,6 +266,14 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     void (presentationFx?.navigate?.(surface, () => controller.go(surface)) ?? controller.go(surface));
   }
 
+  function reconcileRibbonOnClick(event) {
+    // A replaced ribbon is no longer observed by the old MutationObserver.
+    // Capture before bubbling so its very first button click works.
+    const button = event.target?.closest?.("[data-ao-app-surface], [data-ao-ribbon]");
+    const current = doc.getElementById("ao-global-ribbon");
+    if (button && current?.contains?.(button)) adopt();
+  }
+
   function syncExternalNavigation(event) {
     const domain = event.target?.closest?.("[data-v37-domain]");
     if (domain) {
@@ -274,16 +302,15 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   });
   if (typeof unsubscribe === "function") cleanups.push(unsubscribe);
 
+  doc.addEventListener?.("click", reconcileRibbonOnClick, { capture: true });
   doc.addEventListener?.("click", syncExternalNavigation, { capture: true });
-  cleanups.push(() => doc.removeEventListener?.("click", syncExternalNavigation, { capture: true }));
-
-  if (typeof win?.MutationObserver === "function" && nav) {
-    observer = new win.MutationObserver(() => {
-      adopt();
-    });
-    observer.observe(nav, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-ao-ribbon"] });
-    cleanups.push(() => observer?.disconnect?.());
-  }
+  cleanups.push(() => {
+    doc.removeEventListener?.("click", reconcileRibbonOnClick, { capture: true });
+    doc.removeEventListener?.("click", syncExternalNavigation, { capture: true });
+    boundRibbon?.removeEventListener?.("click", onRibbonClick);
+    boundRibbon = null;
+    observer?.disconnect?.();
+  });
 
   watchReleaseAuthority();
   cleanups.push(() => releaseObserver?.disconnect?.());
