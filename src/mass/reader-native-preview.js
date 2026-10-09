@@ -932,8 +932,8 @@ export async function mountNativeReaderPreview({
         progress:String(state.index+1)+" / "+String(state.total)+" · "+(kind==="PALM"?"Palm Rite":"Ash Rite"),
         posture:state.recipientPosture
           ? {label:state.recipientPosture}
-          : card.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture)
-            ? {label:card.posture}
+          : (kind==="PALM" ? state.posture : card.posture) && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(kind==="PALM" ? state.posture : card.posture)
+            ? {label:kind==="PALM" ? state.posture : card.posture}
             : null,
         gesture:card.gesture ? {label:card.gesture} : null,
         response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
@@ -971,6 +971,7 @@ export async function mountNativeReaderPreview({
       gesture:projected.moment.gesture,
       handoff:projected.state.handoff??null,
       recipientState:projected.state.recipientState??null,
+      processionParticipant:kind==="PALM" ? projected.state.processionParticipant??false : null,
     });
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll)scroll.scrollTop=0;
@@ -998,8 +999,8 @@ export async function mountNativeReaderPreview({
         progress:String(state.index+1)+" / "+String(state.total)+" · Candlemas",
         posture:state.recipientPosture
           ? {label:state.recipientPosture}
-          : card.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture)
-            ? {label:card.posture}
+          : state.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(state.posture)
+            ? {label:state.posture}
             : null,
         gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
@@ -1117,7 +1118,7 @@ export async function mountNativeReaderPreview({
       sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
     }));
     let posture=null;
-    if(kind==="REQUIEM_ABSOLUTION" && card.posture && card.posture!=="LOCAL_OR_INHERIT")posture={label:card.posture};
+    if(kind==="REQUIEM_ABSOLUTION" && state.posture && state.posture!=="LOCAL_OR_INHERIT")posture={label:state.posture};
     if(kind==="CORPUS_CHRISTI_PROCESSION" && state.posture && !["INHERIT","LOCAL_OR_INHERIT","LOCAL_REVERENT"].includes(state.posture))posture={label:state.posture};
     if(kind==="HOLY_THURSDAY_POST" && state.posture && state.posture!=="LOCAL_OR_INHERIT")posture={label:state.posture};
     if(kind==="GENERIC_PROCESSION" && state.posture && state.posture!=="LOCAL")posture={label:state.posture};
@@ -1168,6 +1169,7 @@ export async function mountNativeReaderPreview({
       objectState:projected.state.objectState??null,
       joiningState:projected.state.joiningState??null,
       processionActive:projected.state.processionActive??null,
+      burialParticipant:kind==="REQUIEM_ABSOLUTION" ? projected.state.burialParticipant??false : null,
     });
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll)scroll.scrollTop=0;
@@ -1687,6 +1689,7 @@ export async function mountNativeReaderPreview({
     getGenericProcessionState:()=>ready.genericProcessionController?.project?.()??null,
     getLifecycleState:()=>ready.lifecycleRuntime?.snapshot?.()??null,
     setPalmRecipientState:value=>{if(!ready.palmController)return null;const result=ready.palmController.setRecipientState(value);return inPalm ? showPalm() : result},
+    setPalmProcessionParticipant:value=>{if(!ready.palmController)return null;const result=ready.palmController.setProcessionParticipant(value);return inPalm ? showPalm() : result},
     setAshRecipientState:value=>{if(!ready.ashController)return null;const result=ready.ashController.setRecipientState(value);return inAsh ? showAsh() : result},
     setCandlemasRecipientState:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setRecipientState(value);return inCandlemas ? showCandlemas() : result},
     setCandlemasProcessionParticipant:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setProcessionParticipant(value);return inCandlemas ? showCandlemas() : result},
@@ -1695,6 +1698,7 @@ export async function mountNativeReaderPreview({
     setCorpusChristiSacramentalState:value=>{if(!ready.corpusChristiController)return null;const result=ready.corpusChristiController.setSacramentalState(value);return inCorpusChristi ? showCorpusChristi() : result},
     setHolyThursdayJoiningState:value=>{if(!ready.holyThursdayPostController)return null;const result=ready.holyThursdayPostController.setJoiningState(value);return inHolyThursdayPost ? showHolyThursdayPost() : result},
     setGenericProcessionParticipant:value=>{if(!ready.genericProcessionController)return null;const result=ready.genericProcessionController.setParticipating(value);return inGenericProcession ? showGenericProcession() : result},
+    setRequiemBurialParticipant:value=>{if(!ready.requiemAbsolutionController)return null;const result=ready.requiemAbsolutionController.setBurialParticipant(value);return inRequiemAbsolution ? showRequiemAbsolution() : result},
     markActuallySprinkled:()=>{
       if(!ready.aspergesController)return null;
       const value=ready.aspergesController.setActuallySprinkled(true);

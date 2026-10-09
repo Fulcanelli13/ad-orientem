@@ -59,6 +59,26 @@ s=ctrl.project();
 assert.equal(s.handoff,"INTROIT");
 assert.equal(s.ordinaryOpeningSuppressed,true);
 
+const observer=createCandlemasReaderController({graph,payload});
+observer.goTo("CND-R03");
+observer.setRecipientState("CANDLE_RECEIVED");
+observer.goTo("CND-R05");
+assert.equal(observer.project().candleState,"BLESSED_CANDLE_HELD",
+  "observing with a candle silently implied participation and a lit candle");
+assert.equal(observer.project().posture,null,
+  "Candlemas procession posture imposed on a non-participant");
+observer.setProcessionParticipant(true);
+assert.equal(observer.project().posture,"PROCESSIONAL");
+assert.equal(observer.project().candleState,"CANDLE_LIT");
+observer.goTo("CND-R06");
+assert.equal(observer.project().posture,"PROCESSIONAL_STAND");
+observer.setProcessionParticipant(false);
+assert.equal(observer.project().posture,null,
+  "declining Candlemas procession retained the walking posture");
+observer.goTo("CND-R04");
+assert.equal(observer.project().posture,"STAND",
+  "procession participation gate incorrectly hid communal prayer posture");
+
 const noCandle=createCandlemasReaderController({graph,payload});
 assert.equal(noCandle.massCandleState("MC-GSP-060").state,null,
   "Candle state was invented for someone without a blessed candle");

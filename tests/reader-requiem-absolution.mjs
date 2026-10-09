@@ -40,6 +40,15 @@ assert.equal(ctrl.project().card.id,"ABS-R04");
 ctrl.next();
 assert.equal(ctrl.project().card.id,"ABS-R05");
 assert.equal(ctrl.project().atEnd,true);
+assert.equal(ctrl.project().burialParticipant,false);
+assert.equal(ctrl.project().posture,null,
+  "Requiem burial procession imposed a personal walking posture on all faithful");
+ctrl.setBurialParticipant(true);
+assert.equal(ctrl.project().posture,"PROCESSIONAL",
+  "person explicitly following the Requiem burial procession lost its cue");
+ctrl.setBurialParticipant(false);
+assert.equal(ctrl.project().posture,null,
+  "Requiem stopped-participating state retained processional posture");
 ctrl.previous();
 assert.equal(ctrl.project().card.id,"ABS-R04");
 

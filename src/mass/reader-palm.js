@@ -113,6 +113,7 @@ export function createPalmReaderController(args={}){
   const built=buildPalmPayload(args);
   let index=0;
   let recipientState=null;
+  let processionParticipant=false;
 
   function state(){
     const card=built.cards[index]??null;
@@ -125,6 +126,11 @@ export function createPalmReaderController(args={}){
       recipientState,
       recipientPosture:recipient?.posture??null,
       recipientAction:recipient?.action??null,
+      processionParticipant,
+      // PROCESSIONAL applies to those actually following the procession,
+      // not everybody standing in the church or holding a blessed palm.
+      posture:card?.actorScope==="FAITHFUL_PARTICIPATING" && !processionParticipant
+        ? null : card?.posture??null,
       handoff:card?.handoff??null,
       ordinaryOpeningSuppressed:Boolean(card?.ordinaryOpeningSuppressed),
       normalLastGospel:card?.normalLastGospel!==false,
@@ -137,7 +143,8 @@ export function createPalmReaderController(args={}){
     if(!built.cards[index]?.recipientStates?.[value])throw new Error("Unsupported Palm recipient state: "+value);
     recipientState=value;return state();
   }
-  return freeze({schema:"ao-r22-palm-reader-controller-v1",supported:true,cards:built.cards,project:state,next,previous,goTo,setRecipientState});
+  function setProcessionParticipant(value){processionParticipant=Boolean(value);return state()}
+  return freeze({schema:"ao-r22-palm-reader-controller-v1",supported:true,cards:built.cards,project:state,next,previous,goTo,setRecipientState,setProcessionParticipant});
 }
 
 
