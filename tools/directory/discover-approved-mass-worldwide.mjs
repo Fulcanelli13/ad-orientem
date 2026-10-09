@@ -61,12 +61,13 @@ export function parseVenuePage(html,{directoryUrl}){
    liturgical_form_evidence:"SPECIALIZED_DIRECTORY_CLAIM_ONLY",
    directory_url:directoryUrl,section_labels:h2.map(h=>h.text).filter(Boolean)};
 }
-function pageUrl(code,page){return BASE+"/country/"+code.toLowerCase()+"/"+(page>1?"page/"+page+"/":"")+"?view=list"}
+function pageUrl(code,page){const slug=code==="GB"?"uk":code.toLowerCase();return BASE+"/country/"+slug+"/"+(page>1?"page/"+page+"/":"")+"?view=list"}
 function argsFor(argv){
  const opts={countries:["US","FR","PL","IT","GB","BR","DE"],maxPages:60,maxDetails:0,delayMs:1800,
-  out:"/tmp/ao-approved-directory-research.json",allowRemote:false};
+  out:"/tmp/ao-approved-directory-research.json",allowRemote:false,browserFallback:false};
  for(const item of argv){
   if(item==="--remote")opts.allowRemote=true;
+  else if(item==="--browser-fallback")opts.browserFallback=true;
   else if(item.startsWith("--countries="))opts.countries=item.slice(12).split(",").map(iso).filter(Boolean);
   else if(item.startsWith("--max-pages="))opts.maxPages=Number(item.slice(12));
   else if(item.startsWith("--max-details="))opts.maxDetails=Number(item.slice(14));
@@ -79,8 +80,8 @@ function argsFor(argv){
  return opts;
 }
 export async function discoverApprovedDirectory({countries=["US","FR"],maxPages=60,maxDetails=0,delayMs=1800,
- fetchImpl=fetch}={}){
- const candidates=[],errors=[],countryCoverage=[];let requests=0;
+ fetchImpl=fetch,renderImpl=null}={}){
+ const candidates=[],errors=[],countryCoverage=[];let requests=0,browserFallbacks=0;
  // Sequential, bounded, and deliberately nonaggressive: full data comes from ordinary public pages only.
  async function get(url){
   if(requests)await sleep(delayMs);
@@ -99,6 +100,12 @@ export async function discoverApprovedDirectory({countries=["US","FR"],maxPages=
    let parsed;
    try{parsed=parseCountryPage(await get(url),{countryCode:code,pageUrl:url})}
    catch(error){errors.push({country_code:code,page,error:String(error?.message??error)});break}
+   if(renderImpl&&(parsed.venues.length===0||(page===1&&parsed.reportedTotal!==null&&parsed.reportedTotal>parsed.venues.length&&parsed.venues.length<20))){
+    await sleep(delayMs);requests++;browserFallbacks++;
+    try{const rendered=parseCountryPage(await renderImpl(url),{countryCode:code,pageUrl:url});
+      if(rendered.venues.length>parsed.venues.length)parsed=rendered;
+    }catch(error){errors.push({country_code:code,page,error:"BROWSER_FALLBACK: "+String(error?.message??error)})}
+   }
    remaining--;pages++;
    if(parsed.pagination)total=parsed.pagination.total;
    else if(parsed.reportedTotal!==null)total=parsed.reportedTotal;
@@ -121,7 +128,7 @@ export async function discoverApprovedDirectory({countries=["US","FR"],maxPages=
  return {schema:"AO_APPROVED_MASS_RESEARCH_DISCOVERY_V1",source:"https://www.latinmassdir.org/",
    scope:"RESEARCH_ONLY_NOT_PUBLICATION",generated_at:new Date().toISOString(),
    provenance_notice:"Third-party discovery data requires original-source confirmation of current Mass, liturgical form and physical identity.",
-   summary:{requests,unique_discovered:candidates.length,detail_pages_read:detailed,errors:errors.length,
+   summary:{requests,browser_fallbacks:browserFallbacks,unique_discovered:candidates.length,detail_pages_read:detailed,errors:errors.length,
     full_countries:countryCoverage.filter(x=>x.complete).length,requested_countries:countries.length},
    country_coverage:countryCoverage,errors,records:candidates};
 }
@@ -134,7 +141,13 @@ if(directlyInvoked){
   args.countries=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
  }
  if(!args.allowRemote)throw Error("Pass --remote to acknowledge paced external access. Tests use fixtures offline.");
- const result=await discoverApprovedDirectory(args);
+ let browser=null;
+ const renderImpl=args.browserFallback?async url=>{
+   if(!browser){const {chromium}=await import("@playwright/test");browser=await chromium.launch({headless:true});}
+   const page=await browser.newPage();try{await page.goto(url,{waitUntil:"domcontentloaded",timeout:45000});
+     await page.waitForTimeout(1800);return await page.content()}finally{await page.close()}
+ }:null;
+ let result;try{result=await discoverApprovedDirectory({...args,renderImpl})}finally{if(browser)await browser.close()}
  await fs.mkdir(path.dirname(path.resolve(args.out)),{recursive:true});
  await fs.writeFile(args.out,JSON.stringify(result,null,2)+"\n");
  console.log(JSON.stringify({summary:result.summary,countries:result.country_coverage,errors:result.errors.slice(0,10)}));
