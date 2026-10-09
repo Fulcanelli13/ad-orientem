@@ -53,7 +53,7 @@ ctrl.setProcessionParticipant(true);
 assert.equal(ctrl.project().posture,"PROCESSIONAL",
   "a participant in Palm procession is missing the processional posture");
 ctrl.goTo("PALM-R05");
-assert.equal(ctrl.project().posture,"PROCESSIONAL",
+assert.equal(ctrl.project().posture,"PROCESSIONAL_STAND",
   "Palm return processional posture lost after card transition");
 ctrl.setProcessionParticipant(false);
 assert.equal(ctrl.project().posture,null,
