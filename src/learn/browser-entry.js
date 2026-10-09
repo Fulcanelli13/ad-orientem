@@ -222,6 +222,9 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(!state.open||!state.child)return;
     const openNow=childOpen(win,state.child);
     if(openNow)state.seenChild=true;
+    if(openNow&&state.child==="learn.catechism"&&String(win?.location?.search||"").includes("aoCatechismGuidedPreview=1")){
+      void import("./catechism-guided-preview-bridge.js").then(mod=>mod.installCatechismGuidedPreview(win)).catch(error=>win?.console?.error?.("Catechism guided preview failed",error));
+    }
     if(state.seenChild&&!openNow){
       state.child=null;
       state.openPolls=0;
