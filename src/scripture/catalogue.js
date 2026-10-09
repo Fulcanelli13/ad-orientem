@@ -13,7 +13,12 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
   "knox": Object.freeze({
     id: "knox", language: "en", title: "Knox Bible",
     tradition: "Catholic; Vulgate-based with original-language consultation",
-    role: "alternative", rights: "permission-required", enabled: false
+    role: "literary-catholic-alternative", rights: "permission-required", enabled: false
+  }),
+  "ncb-2019": Object.freeze({
+    id: "ncb-2019", language: "en", title: "New Catholic Bible (2019) · Clear English",
+    tradition: "Catholic; 73-book contemporary translation by Catholic biblical scholars",
+    role: "readability-alternative", rights: "permission-required", enabled: false
   }),
   "crampon-1923": Object.freeze({
     id: "crampon-1923", language: "fr", title: "Bible Crampon (1923 text)",
