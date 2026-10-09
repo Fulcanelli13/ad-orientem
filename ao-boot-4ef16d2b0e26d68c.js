@@ -74,16 +74,34 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
             const sources = {};
             for (const language of ['la', 'en', 'fr'])
                 sources[language] = await resolver.resolveSource(commemoration.path, language, diagnostic);
-            const collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
-            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta', true)[0];
-            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio', true)[0];
+            let collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
+            let secret = (0, proper_resolver_1.numbered)(sources, 'Secreta', true)[0];
+            let postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio', true)[0];
+            let prayerSourcePath = commemoration.path;
+            // The original Divinum Officium Advent weekday source explicitly
+            // declares "Oratio Dominica" instead of repeating three prayers.
+            // Resolve them from that Sunday's source, but keep the weekday as
+            // the commemorated liturgical identity, not the Sunday's feast.
+            const adventFeria = /^Tempora\/(Adv[1-4])-[1-6]$/.exec(commemoration.path);
+            const ruleLines = (sources.la?.map.get('Rule') || []).join('\n');
+            if (adventFeria && /(?:^|\n)Oratio Dominica(?:\n|$)/.test(ruleLines) &&
+                (!collect || !secret || !postcommunion)) {
+                const sundayPath = 'Tempora/' + adventFeria[1] + '-0';
+                const sundaySources = {};
+                for (const language of ['la', 'en', 'fr'])
+                    sundaySources[language] = await resolver.resolveSource(sundayPath, language, diagnostic);
+                collect = collect || (0, proper_resolver_1.numbered)(sundaySources, 'Oratio', true)[0];
+                secret = secret || (0, proper_resolver_1.numbered)(sundaySources, 'Secreta', true)[0];
+                postcommunion = postcommunion || (0, proper_resolver_1.numbered)(sundaySources, 'Postcommunio', true)[0];
+                prayerSourcePath = sundayPath;
+            }
             if (collect)
                 proper.collects.push(collect);
             if (secret)
                 proper.secrets.push(secret);
             if (postcommunion)
                 proper.postcommunions.push(postcommunion);
-            proper.calendarCommemorations.push({ name: commemoration.title, path: commemoration.path, rank: (0, calendar_engine_1.classLabel)(commemoration.rank) });
+            proper.calendarCommemorations.push({ name: commemoration.title, path: commemoration.path, prayerSourcePath, rank: (0, calendar_engine_1.classLabel)(commemoration.rank) });
         }
         catch (error) {
             diagnostic.warnings.push(`Commemoration source failed ${commemoration.path}: ${error instanceof Error ? error.message : String(error)}`);
