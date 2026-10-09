@@ -277,7 +277,12 @@ assert.equal(ashDiscipline.today.key,"fast-abstinence");
 assert.match(ashDiscipline.today.label,/universal fast and abstinence/);
 assert.equal(calendarIntelligenceForDate("2026-10-09").discipline.today.key,"friday","Calendar intelligence stopped carrying discipline context");
 
-const calendarBrowser=readFileSync("src/calendar/browser-entry.js","utf8");
+const calendarLoader=readFileSync("src/calendar/browser-entry.js","utf8");
+// The Calendar first-use facade resolves semantic Explore links in its imported
+// runtime. Assert the router in the genuine presentation, not the tiny facade.
+const calendarDeferred=calendarLoader.includes('import("./calendar-runtime.js")');
+const calendarBrowser=calendarDeferred?readFileSync("src/calendar/calendar-runtime.js","utf8"):calendarLoader;
+if(calendarDeferred)assert.match(calendarLoader,/ensureCalendarRuntime/,"Calendar facade lost its guarded runtime import");
 assert.match(calendarBrowser,/route\.startsWith\("find:"\)/,"Calendar semantic Explore routes are not handled by the app shell");
 assert.match(calendarBrowser,/route\.slice\(5\)\.split\(":"\)/,"Calendar route no longer parses the optional semantic pilgrimage event filter");
 assert.match(calendarBrowser,/AO_FIND_APP_V1\?\.open\?\.\(\{lens:lens\|\|"pilgrimages",view:"map",calendarKey:calendarKey\|\|null,query:""\}\)/,"Calendar semantic Explore route must open the requested mapped lens with a calendar-event filter");
