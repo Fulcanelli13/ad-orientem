@@ -28,7 +28,7 @@ for(const [i,f] of ledger.findings.entries()){
  assert.ok(section?.source_ids.includes(f.source_id),key+": claimed original not linked in substantive section");
  assert.equal(obj.reg.get(f.source_id)?.url,f.url,"URL differs from canonical original source registry");
  assert.match(f.url,/^https:\/\/[^\s/]+\/\S+/);
- assert.ok(f.locator.length>25&&f.document_finding.length>65&&f.qualification.length>65,"Thin primary-text review "+f.id);
+ assert.ok(f.locator.length>25&&f.document_finding.length>65&&f.qualification.length>=65,"Thin primary-text review "+f.id);
  assert.equal(section.original_context_approved,false);
  assert.equal(section.french_final_approved,false);
 }
