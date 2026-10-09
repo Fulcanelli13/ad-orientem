@@ -1,4 +1,5 @@
 import "./source-transport-compat.js";
+import "./offline-boot.js";
 import { installAppDesignSystem } from "./design-system.js";
 import { installDateFormat } from "./date-format.js";
 import "./cinematic-runtime.js";
