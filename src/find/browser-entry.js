@@ -151,9 +151,21 @@ export function createFindOwner(win=globalThis){
     return state.lens==="pilgrimages"&&state.calendarKey?list.filter(item=>item.calendar_keys?.includes(state.calendarKey)):list;
   }
 
-  async function paint(){
+  async function paint({preserveSearchFocus=false}={}){
     const node=ensureRoot(win);if(!node)return false;
     installStyle(win);
+    // Rebuilding the entire Explore surface after each search keystroke
+    // detaches its focused input. Retain focus, caret and page position so
+    // users can type a complete query, including on mobile keyboards.
+    const activeSearch=node.querySelector?.("[data-find-query]");
+    const searchFocus=preserveSearchFocus&&activeSearch===win?.document?.activeElement
+      ? {
+          start:activeSearch.selectionStart,
+          end:activeSearch.selectionEnd,
+          direction:activeSearch.selectionDirection,
+          scroll:node.querySelector?.(".aoFindSurface")?.scrollTop??0,
+        }
+      : null;
     const data=await ensureData(),items=filtered();
     const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
@@ -172,6 +184,15 @@ export function createFindOwner(win=globalThis){
       selectedPlaceId:state.selectedPlaceId,
     });
     node.innerHTML=renderExploreToString(vm);
+    if(searchFocus){
+      const next=node.querySelector?.("[data-find-query]");
+      next?.focus?.({preventScroll:true});
+      if(Number.isInteger(searchFocus.start)&&Number.isInteger(searchFocus.end)){
+        try{next?.setSelectionRange?.(searchFocus.start,searchFocus.end,searchFocus.direction||"none")}catch{}
+      }
+      const scroller=node.querySelector?.(".aoFindSurface");
+      if(scroller)scroller.scrollTop=searchFocus.scroll;
+    }
     node.dataset.open=openState?"true":"false";
     node.dataset.exploreLens=state.lens;
     if(mapHandle&&state.view==="map"){
@@ -240,8 +261,16 @@ export function createFindOwner(win=globalThis){
       state.selectedId=null;state.selectedPlaceId=null;void paint();return;
     }
     if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
-    if(target?.closest?.("[data-find-close-detail]")){state.selectedId=null;void paint();return}
-    if(target?.closest?.("[data-find-close-place]")){state.selectedPlaceId=null;void paint();return}
+    // Backdrops may be clicked to dismiss, but clicks *inside* the sheet
+    // must reach their own Place, Calendar, novena and source-link actions.
+    if(target?.closest?.("button[data-find-close-detail]")||
+       target?.matches?.(".aoFindSheetBackdrop[data-find-close-detail]")){
+      event.preventDefault?.();state.selectedId=null;void paint();return;
+    }
+    if(target?.closest?.("button[data-find-close-place]")||
+       target?.matches?.(".aoFindSheetBackdrop[data-find-close-place]")){
+      event.preventDefault?.();state.selectedPlaceId=null;void paint();return;
+    }
     const openPlace=target?.closest?.("[data-explore-open-place]");
     if(openPlace){
       event.preventDefault?.();event.stopPropagation?.();
@@ -265,8 +294,8 @@ export function createFindOwner(win=globalThis){
       const date=calendarDate.dataset.exploreCalendarDate;
       if(/^\d{4}-\d{2}-\d{2}$/.test(date||"")){
         close();
-        void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("calendar")).then(ok=>{
-          if(ok!==false)return win?.AO_CALENDAR_APP_V1?.select?.(date);
+        void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("calendar")).then(result=>{
+          if(result?.ok===true)return win?.AO_CALENDAR_APP_V1?.select?.(date);
           return false;
         }).catch(error=>console.error("Explore Calendar deep link failed",error));
       }
@@ -301,7 +330,8 @@ export function createFindOwner(win=globalThis){
   function onInput(event){
     if(!openState)return;
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
-    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.displayLimit=120;void paint();
+    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.displayLimit=120;
+    void paint({preserveSearchFocus:true});
   }
 
   function onChange(event){
