@@ -206,6 +206,34 @@
       ],
       "reference": "Philippians 3:17–21; 4:1–3",
       "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt"
+    },
+    {
+      "sourcePath": "Tempora/Pent15-0",
+      "title": "Dominica XV Post Pentecosten · split Galatians Epistle",
+      "slot": "EPISTLE_OR_LESSON",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent15-0.txt",
+      "latinIncipit": "fratres si spiritu vivimus spiritu et ambulemus non efficiamur inanis gloriae cupidi invicem provocantes invicem invidentes fratres et",
+      "segments": [
+        {
+          "book": "Galatians",
+          "chapter": 5,
+          "verseStart": 25,
+          "verseEnd": 26
+        },
+        {
+          "book": "Galatians",
+          "chapter": 6,
+          "verseStart": 1,
+          "verseEnd": 10
+        }
+      ],
+      "reference": "Galatians 5:25–26; 6:1–10",
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent15-0.txt",
+      "publishedSecondaryWitnesses": [
+        "https://1962missal.com/temporale/dom-xv-post-pentecosten/",
+        "https://www.missalemeum.com/en/widgets/propers/2025-09-21?theme=light"
+      ],
+      "editorialReason": "Original Latin Epistle begins at 5:25, continues at 5:26 then 6:1–10; a chapter-6-only link silently loses two verses."
     }
   ]
 }

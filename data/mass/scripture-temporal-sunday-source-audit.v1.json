@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-temporal-sunday-scripture-source-batch-v1",
-  "version": "2026-10-10-R2",
+  "version": "2026-10-10-R3",
   "status": "DIRECT_LATIN_SOURCE_BOUND_WITH_1962_RUBRICS_CONTEXT; NOT_GLOBAL_DOUBLE-COLLATION",
   "policy": [
     "Only exact sourcePath + displayed original Latin incipit unlocks the shared Bible Context capsule.",
@@ -9,7 +9,8 @@
     "Historical pre-1960 source variants can coexist in upstream files: publication of dates, classes and rite choices is owned by the separate 1962 calendar/Mass resolver, not this Scripture index.",
     "Discontinuous biblical sections have distinct segmented-register owners; missing or redirected files must fail closed and cannot be guessed.",
     "Unpublished texts, procession readings, optional branch state and local translation texts remain outside this batch.",
-    "A resumed Epiphany alias inherits biblical reading content only from its explicit source-owner pointer; the 1960 Code of Rubrics §18 and 1962 Calendar own when the resumed Proper is selected. Never deduce celebration from the alias's name."
+    "A resumed Epiphany alias inherits biblical reading content only from its explicit source-owner pointer; the 1960 Code of Rubrics §18 and 1962 Calendar own when the resumed Proper is selected. Never deduce celebration from the alias's name.",
+    "All references must preserve precise verse starts and discontinuities. Ten Pentecost Sunday sources (X–XIX) were checked against a separate published witness; 2 initial boundaries were repaired; review file: data/mass/scripture-temporal-sunday-second-witness-audit.v1.json."
   ],
   "corpus": {
     "legacySingleRangeSundaySources": 8,
@@ -17,10 +18,12 @@
     "newSourceBoundSingleReferences": 70,
     "newSegmentedSundayReferences": 4,
     "totalSingleRangeMassProperSources": 79,
-    "totalSingleRangeMassProperReferences": 149,
-    "totalSegmentedProperReferences": 9,
+    "totalSingleRangeMassProperReferences": 148,
+    "totalSegmentedProperReferences": 10,
     "resolvedPreviouslyHeldSourcePaths": 5,
-    "resolvedPreviouslyHeldReadingReferences": 10
+    "resolvedPreviouslyHeldReadingReferences": 10,
+    "correctedEarlierSundaySingleReferences": 1,
+    "correctedEarlierSundayToSegmented": 1
   },
   "originalWitnesses": [
     {
@@ -678,7 +681,7 @@
   "deferred": {
     "missingFullMassSource": [],
     "resumedEpiphanySundays": [],
-    "independentTextCollation": "Direct original-file source aliases resolved for all five formerly held Sunday identities. Comprehensive independent two-witness 1962 collation of every Mass Proper reference, actual Calendar-date selection, original French/English text licensing and unregistered feast/weekday coverage remain separate editorial gates."
+    "independentTextCollation": "Ten Sunday source identities (X–XIX) / 20 reading slots compared against a separately published witness; two citation boundary errors corrected. This is a second published digital witness, not a complete independent 1962 print-edition collation. All other Sundays, Proper branches, weekday and feast references still require systematic secondary editorial audit."
   },
   "independentlyCorroboratedExamples": [
     {

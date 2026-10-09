@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import "./mass-scripture-feast-supplement.mjs";
 import "./scripture-segmented-context.mjs";
+import "./mass-scripture-secondary-witness.mjs";
 import {readFileSync} from "node:fs";
 import {VERIFIED_MASS_SCRIPTURE_READINGS,VERIFIED_MASS_SCRIPTURE_VERSION}
  from "../src/mass/scripture-reading-witness-index.js";
@@ -65,7 +66,7 @@ for(const witness of raw.celebrations){
   count++;
  }
 }
-assert.equal(count,96);
+assert.equal(count,95);
 const special={sourcePath:"Tempora/Pent19-0",
  gospel:{lat:"Loquebatur Jesus principibus sacerdotum"},
  epistle:{lat:"Renovamini spiritu mentis"}};
@@ -95,4 +96,4 @@ for(const [sourcePath,sourceOwner] of Object.entries(inheritedSourcePaths)){
  }
 }
 assert.equal(raw.celebrations.length,50);
-console.log("PASS 50 source-checked temporal Sunday Mass Proper identities / 96 single-range Scripture references, exact Latin/source identity and inherited/split-reading holds; explicit conflicts veto the index");
+console.log("PASS 50 source-checked temporal Sunday Mass Proper identities / 95 single-range Scripture references, exact Latin/source identity and inherited/split-reading holds; explicit conflicts veto the index");

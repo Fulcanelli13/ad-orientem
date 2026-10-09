@@ -6,7 +6,7 @@ export const VERIFIED_MASS_SCRIPTURE_READINGS=Object.freeze([
     "witnessUrl": "https://missale.online/proprium/en/tempore/dominica_x_post_pentecosten",
     "readings": {
       "EPISTLE_OR_LESSON": {
-        "reference": "1 Corinthians 12:1–11",
+        "reference": "1 Corinthians 12:2–11",
         "latinIncipit": "Scitis quoniam cum gentes"
       },
       "GOSPEL": {
@@ -35,15 +35,18 @@ export const VERIFIED_MASS_SCRIPTURE_READINGS=Object.freeze([
     "title": "15th Sunday after Pentecost",
     "witnessUrl": "https://missale.online/proprium/en/tempore/dominica_xv_post_pentecosten",
     "readings": {
-      "EPISTLE_OR_LESSON": {
-        "reference": "Galatians 6:1–10",
-        "latinIncipit": "Si spiritu vivimus"
-      },
       "GOSPEL": {
         "reference": "Luke 7:11–16",
         "latinIncipit": "Ibat Jesus in civitatem"
       }
-    }
+    },
+    "sourceHolds": [
+      {
+        "slot": "EPISTLE_OR_LESSON",
+        "reason": "DISCONTINUOUS_EPISTLE_IN_SEGMENTED_REGISTER",
+        "reference": "Galatians 5:25–26; 6:1–10"
+      }
+    ]
   },
   {
     "sourcePath": "Tempora/Pent18-0",
