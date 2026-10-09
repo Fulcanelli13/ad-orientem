@@ -6,6 +6,7 @@ on:
       - 'src/learn/catechism-guided-reader.js'
       - 'src/learn/catechism-guided-preview-bridge.js'
       - 'tests/catechism-guided-study.mjs'
+      - 'tests/catechism-legacy-runtime-inspection.mjs'
       - 'src/learn/formation-research-preview.js'
       - 'src/learn/formation-recovery-review.js'
       - 'tests/formation-recovery-review.mjs'
@@ -64,6 +65,8 @@ jobs:
         run: node tests/formation-research-preview.mjs
       - name: Verify forensic A/C/TLM recovery holds and surviving 102 research records
         run: node tests/formation-forensic-recovery.mjs
+      - name: Inspect legacy Catechism navigation hooks
+        run: node tests/catechism-legacy-runtime-inspection.mjs
       - name: Check gated Catechism guided-study data adapter and 433-question ownership
         run: node tests/catechism-guided-study.mjs
       - name: Check archival 54 to proposed 55 title and 433 distinct question-owner crosswalk
