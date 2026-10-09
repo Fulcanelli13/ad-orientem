@@ -146,7 +146,8 @@
     "test:directory-worldwide-geocode-reuse": "node tests/directory-worldwide-geocode-reuse.mjs",
     "directory:geocode:worldwide-cache": "node tools/directory/build-worldwide-geocode-overlays.mjs",
     "test:directory-sspx-map-geo-overlays": "node tests/directory-sspx-map-geo-overlays.mjs",
-    "test:directory-sspx-worldwide-index": "node tests/directory-sspx-worldwide-index.mjs && node tests/directory-sspx-worldwide-corpus.mjs"
+    "test:directory-sspx-worldwide-index": "node tests/directory-sspx-worldwide-index.mjs && node tests/directory-sspx-worldwide-corpus.mjs",
+    "test:learn-faith-certification-001-018": "node tests/learn-faith-certification-001-018.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
