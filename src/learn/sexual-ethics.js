@@ -133,7 +133,7 @@ function searchQuestions(query,win){
   if(!needle)return [];
   return CSE_PUBLIC_QUESTIONS.filter(item=>{
     const debateText=item.debate?Object.values(item.debate).flat():[];
-    const hay=[...item.q,...item.a,...(item.d||[]),...(item.aliases||[]),...debateText,...(item.id==="CSE045"?CSE_MARRIAGE_AUTHORITY_DEBATES.flatMap(d=>[...d.question,...d.opposition,...d.reply,...d.rejoinder,...d.finding]):[])].map(norm).join(" ");
+    const hay=[...item.q,...item.a,...(item.d||[]),...(item.aliases||[]),...debateText,...(item.id==="CSE045"?CSE_MARRIAGE_AUTHORITY_DEBATES.flatMap(d=>[...d.question,...d.opposition,...d.reply,...d.rejoinder,...d.finding,...d.traditionalAssessment]):[])].map(norm).join(" ");
     return hay.includes(needle);
   });
 }
@@ -196,13 +196,13 @@ function marriageDisputationsHtml(win,item){
     const body=stages.map(stage=>{
       const citations=(entry.sources[stage]||[]).map(key=>{
         const source=CSE_MARRIAGE_AUTHORITY_SOURCES[key];
-        return source?`<a href="${esc(source[1])}" target="_blank" rel="noopener noreferrer">${esc(source[0])} ↗</a>`:"";
+        return source?`<a href="${esc(isFr(win)&&source[2]?source[2]:source[1])}" target="_blank" rel="noopener noreferrer">${esc(source[0])} ↗</a>`:"";
       }).join("");
       return `<section class="aoCSEDebateStep" data-stage="${esc(stage)}"><small>${esc(stage==="opposition"&&entry.oppositionKind==="REASONED_APPLICATION_NOT_NAMED_OPPONENT"?L(win,"Reasoned objection (not attributed to a named proponent)","Objection raisonnée (sans attribution à un auteur précis)"):pick(win,MARRIAGE_DEBATE_STAGE_LABELS[stage]))}</small><p>${esc(pick(win,entry[stage]))}</p><nav class="aoCSEDisputationRefs" aria-label="${esc(L(win,"References","Références"))}">${citations}</nav></section>`;
     }).join("");
     return `<details class="aoCSEDisputation" data-ao-cse-disputation="${esc(entry.id)}"><summary>${esc(pick(win,entry.question))}</summary>${body}</details>`;
   }).join("");
-  return `<section class="aoCSEMaritalDisputations" aria-label="${esc(L(win,"Ephesians 5 marriage debates","Débats sur le mariage et Éphésiens 5"))}"><h2>${esc(L(win,"Ephesians 5: eight examined objections","Éphésiens 5 : huit objections examinées"))}</h2><p>${esc(L(win,"Arguments attributed to named authors paraphrase the linked original texts; the engagement question is an explicit reasoning exercise, not a fabricated opponent. The papal texts differ in emphasis and require contextual examination. These debates remain subject to independent doctrinal and French review.","Les arguments attribués à des auteurs précis reformulent les textes originaux liés ; la question des fiançailles présente un raisonnement explicite, non un adversaire inventé. Les textes pontificaux diffèrent par leurs accents et exigent un examen contextuel. Ces débats restent soumis à une vérification doctrinale et française indépendante."))}</p>${entries}</section>`;
+  return `<section class="aoCSEMaritalDisputations" aria-label="${esc(L(win,"Ephesians 5 marriage debates","Débats sur le mariage et Éphésiens 5"))}"><h2>${esc(L(win,"Ephesians 5: eight examined objections","Éphésiens 5 : huit objections examinées"))}</h2><p>${esc(L(win,"Arguments attributed to named authors paraphrase the linked original texts; the engagement question is an explicit reasoning exercise, not a fabricated opponent. The papal texts differ in emphasis and require contextual examination. Each objection is answered against the traditional text and the later documents; no ecclesiastical endorsement is claimed.","Les arguments attribués à des auteurs précis reformulent les textes originaux liés ; la question des fiançailles présente un raisonnement explicite, non un adversaire inventé. Les textes pontificaux diffèrent par leurs accents et exigent un examen contextuel. Chaque objection est examinée à la lumière du texte traditionnel et des documents ultérieurs ; aucune approbation ecclésiastique n’est revendiquée."))}</p>${entries}</section>`;
 }
 
 function questionHtml(win,item,reveal){
