@@ -42,9 +42,17 @@ export async function installCatechismGuidedPreview(win = globalThis) {
     onQuestion: ({ number }) => {
       panel.hidden = true;
       original.hidden = false;
-      // The original Catechism keeps its own question navigation; do not
-      // falsely imply a deep link exists in its legacy runtime.
-      original.dataset.aoGuidedRequestedQuestion = String(number);
+      // The historical Catechism reader has no confirmed question deep-link API.
+      // Until its native navigator is identified, open the exact source chapter
+      // rather than pretending that the original reader moved to question N.
+      const source = witnessIndex.entries.find(entry => entry.q === number);
+      if (source?.source_file_url) {
+        const link = win.document.createElement("a");
+        link.href = source.source_file_url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.click();
+      }
     }
   });
   button.addEventListener("click", () => { panel.hidden = false; });
