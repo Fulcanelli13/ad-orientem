@@ -118,6 +118,18 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     const allItems=[...related.shrines,...related.traditions,...related.pilgrimages];
     const calendar=temporalRows(related.pilgrimages,today);
     const saints=[...new Set(related.shrines.flatMap(item=>arr(item?.raw?.shrine?.associated_saints)).filter(Boolean))];
+    const shrineIds=new Set(related.shrines.map(item=>item?.raw?.shrine?.shrine_id).filter(Boolean));
+    const novenaMap=new Map(arr(dataset?.novenas?.records).map(record=>[record?.id,record]).filter(([id])=>id));
+    const groupedNovenas=new Map();
+    for(const link of arr(dataset?.novenas?.links)){
+      if(!link?.novena_id||!(link?.place_id===placeId||(link?.shrine_id&&shrineIds.has(link.shrine_id))))continue;
+      const record=novenaMap.get(link.novena_id);
+      if(!record)continue;
+      const previous=groupedNovenas.get(link.novena_id);
+      if(previous){if(link.note&&!previous.notes.includes(link.note))previous.notes.push(link.note);continue;}
+      groupedNovenas.set(link.novena_id,{id:link.novena_id,title_en:record.title_en??record.title_fr??link.novena_id,title_fr:record.title_fr??record.title_en??link.novena_id,notes:link.note?[link.note]:[]});
+    }
+    const novenas=Object.freeze([...groupedNovenas.values()].map(row=>Object.freeze({...row,notes:Object.freeze(row.notes)})));
 
     profiles.push(Object.freeze({
       place_id:placeId,
@@ -133,6 +145,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
         shrines:related.shrines.length,
         traditions:related.traditions.length,
         pilgrimages:related.pilgrimages.length,
+        novenas:novenas.length,
         tlm:tlm.length,
       }),
       shrines:Object.freeze(related.shrines.map(itemRef)),
@@ -140,6 +153,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       pilgrimages:Object.freeze(related.pilgrimages.map(itemRef)),
       tlm,
       saints:Object.freeze(saints),
+      novenas,
       calendar,
       sources:uniqueSourceLinks(allItems,place),
       exact_tlm_link_state:tlm.length?"VERIFIED":"NONE",
