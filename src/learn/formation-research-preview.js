@@ -1,5 +1,6 @@
 import { FORMATION_RESEARCH_PREVIEW_DATA as DATA } from "./formation-research-preview-data.js";
 import { TRADITIONAL_MASS_RESEARCH_PREVIEW_DATA as TLM } from "./traditional-mass-research-preview-data.js";
+import {scriptureContextCapsule} from "../scripture/context.js";
 
 export const FORMATION_RESEARCH_PREVIEW_ROOT="ao-formation-research-preview";
 export const FORMATION_RESEARCH_PREVIEW_VERSION="FORMATION_RESEARCH_PREVIEW_V1";
@@ -29,6 +30,26 @@ const CSS=`
 .aoFRPart{border-top:1px solid var(--ao-rule,#3d3d40);padding:12px 0}.aoFRLead{color:var(--liturgical,#c9ad78);font:.72rem/1.6 system-ui;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
 .aoFRPrevNext{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.aoFRPrevNext button{font:.8rem system-ui}.aoFRPrevNext button:disabled{opacity:.35}
 @media(max-width:440px){.aoFRWrap{padding:15px 12px 45px}}@media(prefers-reduced-motion:reduce){#ao-formation-research-preview{scroll-behavior:auto!important}}`;
+// Curated *existing* biblical-source locators. These do not create new
+// theological claims or mark unpublished Formation content as approved.
+// Source title, type and exact primary URL must still match the frozen witness.
+export const FORMATION_PREVIEW_BIBLE_WITNESSES=Object.freeze({
+ "ISA714":Object.freeze({reference:"Isaiah 7:14",type:"SCRIPTURE",url:"https://www.drbo.org/chapter/27007.htm"}),
+ "DRBOAPOC":Object.freeze({reference:"Revelation 17:1",type:"SCRIPTURE",url:"https://www.drbo.org/chapter/73017.htm"}),
+ "HEBREWS-1":Object.freeze({reference:"Hebrews 1:1",type:"PRIMARY_OR_SCHOLARLY",url:"https://www.newadvent.org/bible/heb001.htm"}),
+ "REVELATION-13":Object.freeze({reference:"Revelation 13:1",type:"PRIMARY_OR_SCHOLARLY",url:"https://bible.usccb.org/bible/revelation/13"}),
+ "REVELATION-17":Object.freeze({reference:"Revelation 17:1",type:"CATHOLIC_SCRIPTURE_WITH_TRADITIONAL_COMMENTARY",url:"https://www.drbo.org/chapter/73017.htm"}),
+ "1JOHN-2":Object.freeze({reference:"1 John 2:1",type:"PRIMARY_OR_SCHOLARLY",url:"https://bible.usccb.org/bible/1john/2"}),
+ "2THESS-2":Object.freeze({reference:"2 Thessalonians 2:1",type:"PRIMARY_OR_SCHOLARLY",url:"https://bible.usccb.org/bible/2thessalonians/2"}),
+ "OBADIAH":Object.freeze({reference:"Obadiah 1:1",type:"PRIMARY_OR_SCHOLARLY",url:"https://bible.usccb.org/bible/obadiah/1"})
+});
+export function formationPreviewBibleCapsule(win,group,id,record){
+ if(group!=="biblical")return "";
+ const reviewed=FORMATION_PREVIEW_BIBLE_WITNESSES[id];
+ if(!reviewed || record?.url!==reviewed.url || record?.type!==reviewed.type)return "";
+ return scriptureContextCapsule(reviewed.reference,{french:fr(win)});
+}
+
 // Internal research must expose unresolved evidence rather than silently
 // dropping absent source IDs or non-document destinations from a paragraph.
 export function formationResearchSourceLinks(win,ids,group){
@@ -42,7 +63,7 @@ export function formationResearchSourceLinks(win,ids,group){
       if(parsed.protocol==="https:")destination=parsed.href;
     }catch{}
     return destination
-      ?`<a href="${esc(destination)}" target="_blank" rel="noopener noreferrer" title="${esc(record.title||id)}">${esc(record.title||id)} ↗</a>`
+      ?`<a href="${esc(destination)}" target="_blank" rel="noopener noreferrer" title="${esc(record.title||id)}">${esc(record.title||id)} ↗</a>${formationPreviewBibleCapsule(win,group,id,record)}`
       :`<span class="aoFRSourceHold" data-ao-fr-source-hold="${esc(id??"none")}">${esc(id===null
         ?L(win,"No documentary source attached — review required","Aucune source documentaire jointe — examen requis")
         :L(win,"Source not verified","Source non vérifiée")+": "+id)}</span>`;
