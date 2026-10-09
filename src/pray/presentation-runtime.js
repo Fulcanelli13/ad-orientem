@@ -349,7 +349,7 @@ function sourceLine(p){
    ?'<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="'+esc(edition.secondaryUrl)+'">'+esc(L('Additional historical/decree witness','Témoin historique ou décret complémentaire'))+' ↗</a>'
    :'';
  const collation=prayCollationNotice(p.id);
- const collationLinks=collation?.relatedWitnesses?.map(x=>`<p><a class="aoP435930SourceLink" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.label)} ↗</a></p>`).join('')||'';
+ const collationLinks=collation?.relatedWitnesses?.filter(x=>x.url!==url&&x.url!==edition?.secondaryUrl).map(x=>`<p><a class="aoP435930SourceLink" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.label)} ↗</a></p>`).join('')||'';
  const collationDisclosure=collation?`<p class="aoP435930SourceEditionVariant">${esc(L(collation.notice.en,collation.notice.fr))}</p>${collationLinks}`:'';
  const textualVariant=PRAYER_WITNESSED_VARIANTS[p.id];
  const variantNotice=textualVariant?`<p class="aoP435930SourceWitnessNote">${esc(L(textualVariant.noteEn,textualVariant.noteFr))} <a href="${esc(textualVariant.url)}" target="_blank" rel="noopener noreferrer">${esc(L('Original French witness','Témoin français original'))} ↗</a></p>`:'';
