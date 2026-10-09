@@ -1,0 +1,26 @@
+name: Export Find source corpus for offline research matrix
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/export-find-matrix-source.yml'
+permissions:
+  contents: read
+jobs:
+  export-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bundle existing source datasets for an offline Excel matrix
+        run: |
+          mkdir -p _matrix_export
+          cp -r data/directory/generated _matrix_export/generated
+          cp -r data/directory/research _matrix_export/research
+          cp package.json _matrix_export/package.json
+          date -u +%Y-%m-%dT%H:%M:%SZ > _matrix_export/export_utc.txt
+      - name: Upload source-only export
+        uses: actions/upload-artifact@v4
+        with:
+          name: find-existing-corpus-research-20261009
+          path: _matrix_export/
+          retention-days: 7
