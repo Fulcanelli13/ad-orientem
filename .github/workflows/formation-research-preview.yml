@@ -39,6 +39,8 @@ on:
       - 'data/learn/formation-primary-context-review-7-2026-10-09.v1.json'
       - 'tests/formation-primary-context-review-7.mjs'
       - 'tests/formation-primary-context-review-8.mjs'
+      - 'tests/formation-primary-context-review-9.mjs'
+      - 'data/learn/formation-primary-context-review-9-2026-10-09.v1.json'
       - 'data/learn/formation-primary-context-review-8-2026-10-09.v1.json'
       - 'tests/formation-141-claim-scope-matrix.mjs'
       - 'data/learn/formation-141-claim-scope-matrix-2026-10-09.v1.json'
@@ -125,6 +127,8 @@ jobs:
         run: node tests/formation-primary-context-review-7.mjs
       - name: Review 50 previously unreviewed rebuttal and tradition sections, protect release gates
         run: node tests/formation-primary-context-review-8.mjs
+      - name: Verify sixty original Vatican-text claim checks and all publication holds
+        run: node tests/formation-primary-context-review-9.mjs
       - name: Reconcile all 141 Formation owners and 564 claim sections against six reviewer ledgers
         run: node tests/formation-141-claim-scope-matrix.mjs
   qa-reader:
@@ -196,6 +200,8 @@ jobs:
         run: node tests/formation-primary-context-review-7.mjs
       - name: Review 50 previously unreviewed rebuttal and tradition sections, protect release gates
         run: node tests/formation-primary-context-review-8.mjs
+      - name: Verify sixty original Vatican-text claim checks and all publication holds
+        run: node tests/formation-primary-context-review-9.mjs
       - name: Assert all 141 dossiers and 564 claim sections have accurate source-review scope accounting
         run: node tests/formation-141-claim-scope-matrix.mjs
       - name: Bulk-validate all 21 unresolved controversy source maps
