@@ -46,5 +46,7 @@ assert.match(CSE_QUESTION_MAP.CSE058.a[1],/aucune permission générale/);
 assert.ok(CSE_QUESTION_MAP.CSE119.refs.some(([id,locator])=>id==="ST151"&&locator.includes("a.1")));
 assert.ok(CSE_DEBATE_MAP.CSE054&&CSE_DEBATE_MAP.CSE125&&CSE_DEBATE_MAP.CSE144,"Existing substantive disputes remain");
 assert.equal(doc.cases.find(x=>x.id==="CSE125").status,"BOUNDED_CDF_PRIMARY_PLUS_SECONDARY_ETHICS_PROCEDURE_OPEN");
+assert.equal(doc.cases.find(x=>x.id==="CSE125").primary[1][0],"NCBC_ECTOPIC_FAQ");
+assert.equal(doc.cases.find(x=>x.id==="CSE125").review.ncbc_original_pdf_page_2_visual_checked,true);
 assert.equal(doc.cases.find(x=>x.id==="CSE055").review.whole_case_claim_by_claim_certified,false);
 console.log("PASS 14 high-risk CSE case/source scopes, 15 live registered original links, 3 EN/FR answers repaired, 2 archived kept, 0 fabricated theological approvals");
