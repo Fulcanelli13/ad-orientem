@@ -98,7 +98,7 @@ function renderDailyGuided(rows){
  const body=step===total?"":row.kind==="examination"
    ?`<p>${esc(L("Review the day before God: your duties towards Him, your neighbour, and yourself. This is a brief daily examen, not sacramental Confession.","Revoyez la journée devant Dieu : vos devoirs envers Lui, le prochain et vous-même. Il s’agit d’un bref examen quotidien, non d’une Confession sacramentelle."))}</p><button type="button" class="aoTP381GuideSubroute" data-tp381-daily-examen>${esc(L("Open guided nightly examination","Ouvrir l’examen du soir guidé"))}</button>`
    :prayerCard(row.id);
- return guidedCardFrame({id:step===total?"daily-finished":row.id,title:step===total?"":row.title,
+ return guidedCardFrame({id:step===total?"daily-finished":row.id,title:step===total?"":(row.kind==="examination"?L("Nightly Examination","Examen du soir"):prayerTitle(data().prayers?.[row.id],row.id)),
    step,total,body,onStep:"daily"});
 }
 function renderMorningEvening(){
@@ -127,8 +127,11 @@ function renderNightlyExamen(){
  const steps=NIGHTLY_EXAMEN_CARDS,step=clampPrayerCardStep(S.examenStep,steps.length),item=steps[step];
  const focus=step===steps.length?"":`<p>${esc(isFr()?item.bodyFr:item.bodyEn)}</p>`;
  const prayer=(item?.id==="resolve"&&!S.returnToDaily)?prayerCard("sacrament_act_of_contrition"):"";
- const after=step===steps.length&&S.returnToDaily
-  ?`<button type="button" data-tp381-examen-return>${esc(L("Continue Evening Prayer","Poursuivre les prières du soir"))}</button>`:"";
+ const after=step===steps.length
+  ?S.returnToDaily
+    ?`<button type="button" data-tp381-examen-return>${esc(L("Continue Evening Prayer","Poursuivre les prières du soir"))}</button>`
+    :`<button type="button" data-tp381-examen-step="0">${esc(L("Review again","Recommencer l’examen"))}</button>`
+  :"";
  const card=guidedCardFrame({id:item?.id||"examen-finished",title:item?isFr()?item.titleFr:item.titleEn:"",
   step,total:steps.length,body:focus+prayer,onStep:"examen",returnButton:after});
  return `${head(L("Nightly Examination","Examen du soir"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A brief daily review before God. It is not the full preparation for sacramental Confession, and it does not record or score sins.","Une brève revue quotidienne devant Dieu. Ce n’est pas la préparation complète à la Confession sacramentelle, et l’application n’enregistre ni ne classe les péchés."))}</p>${card}<div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.confession"><span><b>${esc(L("Preparing for sacramental Confession?","Vous préparez-vous à la Confession sacramentelle ?"))}</b><small>${esc(L("Open the full Confession examination","Ouvrir l’examen complet de Confession"))}</small></span><i aria-hidden="true">→</i></button></div></main>`;
@@ -271,7 +274,7 @@ function render(){
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   injectGlossaryAction();
   m.scrollTop=0;
-  queueMicrotask(()=>m.querySelector("[data-ao-guided-focus]")?.focus?.()||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());
+  queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.()});
   return true;
 }
 function open(route,opts={}){
