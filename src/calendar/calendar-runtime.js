@@ -578,7 +578,7 @@ function ringGradient(year){
   }).join(",");
 }
 function yearSurface(selected,r){
-  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),yearPct=pct(y.progress),gradient=ringGradient(y);
+  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),gradient=ringGradient(y);
   const nextSeason=y.nextPeriod||{en:"Advent",fr:"Avent",start:addDaysIso(y.end,1)};
   return `
     <section class="aoCalV2YearHero">
@@ -586,13 +586,12 @@ function yearSurface(selected,r){
       <div class="aoCalV2YearHeroGrid">
         <div class="aoCalV2Ring" style="--year-angle:${(y.progress*360).toFixed(2)}deg;--year-gradient:conic-gradient(from -90deg,${gradient})">
           <div class="aoCalV2RingMarker"></div>
-          <div class="aoCalV2RingCore"><strong>${yearPct}%</strong><small>${esc(L("THROUGH SELECTED DAY","JUSQU’AU JOUR CONSULTÉ"))}</small><span>${esc(L(`day ${y.dayIndex} of ${y.totalDays}`,`jour ${y.dayIndex} sur ${y.totalDays}`))}</span></div>
+          <div class="aoCalV2RingCore"><strong>${dateOf(selected).getDate()}</strong><small>${esc(dateOf(selected).toLocaleDateString(fr()?"fr-FR":"en-GB",{month:"long"}))}</small><span>${esc(L("SELECTED DAY","JOUR CONSULTÉ"))}</span></div>
         </div>
         <div class="aoCalV2YearIdentity">
-          <small>${esc(L("SELECTED DAY","JOUR CONSULTÉ"))}</small>
+          <small>${esc(L("LITURGICAL SEASON","TEMPS LITURGIQUE"))}</small>
           <h3>${esc(periodName(p))}</h3>
           <p class="aoCalV2SelectedFeast">${esc(r?.day?titleOf(r):L("Mass of the day awaiting resolution","Messe du jour en attente de résolution"))}</p>
-          <dl><div><dt>${esc(L("Year","Année"))}</dt><dd>${esc(y.label)}</dd></div><div><dt>${esc(L("Current period","Période actuelle"))}</dt><dd>${esc(L(`Day ${y.periodDayIndex} of ${p.days}`,`Jour ${y.periodDayIndex} sur ${p.days}`))}</dd></div></dl>
           ${next?`<div class="aoCalV2MajorLine"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><button type="button" data-cal-year-open-day="${next.date}">${esc(celebrationName(next))} · ${esc(shortDate(next.date))}</button></div>`:nextMajorStatusMarkup(selected,"year")}
         </div>
       </div>

@@ -333,7 +333,13 @@ try{
     tabsBottom:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs")?.getBoundingClientRect?.().bottom??Infinity,
   }));
   assert.ok(calendarYear.ringWidth>=105&&calendarYear.ringWidth<=160,"Calendar year ring must be compact but legible at phone width");
-  assert.match(calendarYear.ringValue,/\d+(?:\.\d+)?%/,"Calendar year ring lost its computed percentage");
+  assert.match(calendarYear.ringValue,/^\d{1,2}$/,"Calendar wheel centre must show selected calendar day, not a gamified percentage");
+  assert.ok(!/%|through selected day|jusqu’au jour consulté/i.test(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").innerText()),
+    "Calendar Year should not foreground percentage progress");
+  assert.ok(!/day \d+ of \d+|jour \d+ sur \d+/i.test(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").innerText()),
+    "Calendar Year still repeats day-count progress metrics");
+  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2YearIdentity .aoCalV2MajorLine").count()===1,
+    "Next major celebration must remain visually prominent");
   assert.equal(calendarYear.yearTracks,1,"Calendar must have exactly one proportional year track");
   assert.equal(calendarYear.yearSegments,9,"Calendar timeline must contain all nine liturgical periods");
   assert.equal(calendarYear.periodCards,9,"Calendar journey must contain nine selectable periods");
