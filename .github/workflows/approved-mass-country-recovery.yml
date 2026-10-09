@@ -1,11 +1,5 @@
 name: Approved source country gap recovery
 on:
-  pull_request:
-    paths:
-      - "tools/directory/discover-approved-mass-worldwide.mjs"
-      - "tools/directory/recover-approved-world-source-gaps.mjs"
-      - "tests/directory-approved-country-gap-recovery.mjs"
-      - ".github/workflows/approved-mass-country-recovery.yml"
   workflow_dispatch:
 jobs:
   recover:
