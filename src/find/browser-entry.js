@@ -45,6 +45,7 @@ function installStyle(win){
     ".aoFindHeader small,.aoFindCard small,.aoFindFacts small,.aoFindSchedules>small,.aoFindSources>small,.aoExploreAddress>small{font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;color:#b7a57d}",
     ".aoFindHeader h1{margin:2px 0 0;font:600 24px/1.05 var(--ao-font-display,Georgia,serif)}",
     ".aoFindHeader>span{font:600 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;color:#8f846e}",
+    ".aoFindActionError{margin:0;padding:10px 16px;background:var(--ao-surface-2,#21191a);color:var(--ao-text-primary,#efe7d4);border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:600 var(--ao-type-ui-sm,12px)/1.4 var(--ao-font-ui,system-ui,sans-serif)}.aoFindActionError[hidden]{display:none}",
     ".aoExploreLensTabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:14px 16px 4px}",
     ".aoExploreLensTabs button{min-width:0;border:1px solid rgba(217,197,154,.16);background:#0e151e;color:#c9bea8;border-radius:var(--ao-control-radius,11px);padding:10px 7px;font:650 var(--ao-type-ui-sm,12px)/1.15 var(--ao-font-ui,system-ui,sans-serif);display:grid;gap:4px;text-align:center}",
     ".aoExploreLensTabs button small{font-size:var(--ao-type-ui-xs,11px);color:#817765}.aoExploreLensTabs button.active{background:#d9c59a;color:#080c12;border-color:#d9c59a}.aoExploreLensTabs button.active small{color:#493f30}",
@@ -123,13 +124,27 @@ export function createFindOwner(win=globalThis){
     return ["G334","G336"];
   }
 
-  function openGlossary(){
-    const glossary=win?.AO_GLOSSARY_V1;
-    if(typeof glossary?.openTerms!=="function")return false;
-    void glossary.openTerms(glossaryTerms(),{origin:"find"});
-    return true;
+  function actionError(message){
+    const label=getRoot(win)?.querySelector?.("[data-find-action-error]");
+    if(label){label.textContent=String(message||"");label.hidden=!message;}
   }
-
+  async function openGlossary(button){
+    if(button?.getAttribute?.("aria-busy")==="true")return false;
+    button?.setAttribute?.("aria-busy","true");actionError("");
+    try{
+      const {ensureLearnModule}=await import("../learn/lazy-module-registry.js");
+      await ensureLearnModule("learn.glossary",win);
+      const glossary=win?.AO_GLOSSARY_V1;
+      if(typeof glossary?.openTerms!=="function")throw new Error("Glossary owner unavailable");
+      const opened=await glossary.openTerms(glossaryTerms(),{origin:"find"});
+      if(opened===false)throw new Error("No contextual glossary entries available");
+      return true;
+    }catch(error){
+      console.error("Explore Glossary failed",error);
+      actionError(language(win)==="fr"?"Définitions indisponibles. Veuillez réessayer.":"Definitions unavailable. Please try again.");
+      return false;
+    }finally{button?.removeAttribute?.("aria-busy");}
+  }
   async function ensureData(){
     if(dataset)return dataset;
     if(!loading){
@@ -251,7 +266,7 @@ export function createFindOwner(win=globalThis){
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
-    if(target?.closest?.("[data-find-glossary]")){event.preventDefault?.();event.stopPropagation?.();openGlossary();return}
+    const glossaryButton=target?.closest?.("[data-find-glossary]");if(glossaryButton){event.preventDefault?.();event.stopPropagation?.();void openGlossary(glossaryButton);return}
     if(target?.closest?.("[data-find-clear-calendar]")){
       event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
     }

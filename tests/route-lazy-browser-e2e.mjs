@@ -61,6 +61,14 @@ try {
   assert.ok(hits.some(row=>row.path==="/src/find/browser-entry.js"),"Explore dynamic import not requested");
   const findLoaded=await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.()?.installed===true);
   assert.equal(findLoaded,true,"Explore modular owner not installed");
+  // First-use contextual Glossary must work before visiting Formation.
+  await page.locator("#ao-find-modular-root [data-find-glossary]").click();
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.open===true,null,{timeout:30000});
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.loaded===true
+    &&globalThis.AO_GLOSSARY_V1?.status?.()?.view==="context",null,{timeout:30000});
+  assert.ok(await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.entries>0),
+    "Explore Glossary must load sourced entries before the contextual definitions appear");
+  await page.evaluate(()=>globalThis.AO_GLOSSARY_V1.close());
 
   // Exercise visible Explore controls rather than only its lazy owner.
   // Search rerenders the complete result surface: keyboard focus and caret

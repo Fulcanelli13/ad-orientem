@@ -304,6 +304,7 @@ export function renderExploreToString(vm){
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
+  html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<nav class="aoExploreLensTabs">';
   for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
     const label=lensLabel(vm.language,lens);
