@@ -87,7 +87,7 @@ try {
   const dateButton=page.locator("#ao-find-modular-root [data-explore-calendar-date]").first();
   await dateButton.waitFor({state:"visible",timeout:12000});
   const linkedDate=await dateButton.getAttribute("data-explore-calendar-date");
-  assert.match(linkedDate,/^\\d{4}-\\d{2}-\\d{2}$/);
+  assert.match(linkedDate,/^\d{4}-\d{2}-\d{2}$/);
   await dateButton.click();
   await page.locator("#ao-calendar-modular-root").waitFor({state:"visible",timeout:20000});
   await page.waitForFunction(date=>
