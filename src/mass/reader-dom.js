@@ -584,6 +584,30 @@ button.ao-schola-control{cursor:pointer}
     padding-bottom:calc(max(42vh,240px) + var(--ao-schola-reserve) + var(--ao-short-cue-tail,0px))
   }
 }
+/* Rite-specific choice: show only while an individual is deciding whether
+   to walk in the current Palm, Candlemas or burial procession. The choice
+   lives above the prayer text and never occupies permanent Mass chrome. */
+.ao-reader-stage[data-rite-choice="true"] .ao-prayer-card{padding-top:112px}
+.ao-rite-choice{
+  position:absolute;z-index:11;top:9px;left:50%;transform:translateX(-50%);
+  width:min(305px,calc(100% - 112px));min-width:0;
+  padding:8px 10px 9px;border:1px solid rgba(161,181,161,.24);border-radius:14px;
+  background:#101813;color:#e3e9e1;box-shadow:0 9px 26px rgba(0,0,0,.32);
+  display:flex;flex-direction:column;gap:6px;align-items:stretch;text-align:center
+}
+.ao-rite-choice[hidden]{display:none}
+.ao-rite-choice-label{font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em}
+.ao-rite-choice-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ao-rite-choice button{
+  appearance:none;border:1px solid rgba(185,203,188,.16);border-radius:8px;
+  min-height:44px;padding:7px 5px;background:rgba(255,255,255,.025);color:#c1cbc2;
+  font:600 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer
+}
+.ao-rite-choice button[aria-pressed="true"]{
+  background:rgba(123,156,126,.24);border-color:rgba(171,198,174,.48);color:#f4f8f0
+}
+.ao-rite-choice button:focus-visible{outline:2px solid #b4cbb6;outline-offset:2px}
+@media(max-width:360px){.ao-rite-choice{width:calc(100% - 110px);padding:7px 5px}}
 @media(prefers-reduced-motion:reduce){
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
@@ -1864,6 +1888,7 @@ export function createReaderDomAdapter({
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
           node.dataset.active=String(p.active);
+          node.dataset.paragraphId=p.id;
           if(p.kind==="RUBRIC"){
             const rubricText=stripRubricBrackets(p.primary);
             node.dataset.stateDuplicate=String(rubricIsStateDuplicate(rubricText));
@@ -1879,6 +1904,10 @@ export function createReaderDomAdapter({
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
           const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
+          // PALM-GSP-010 has four distinct reader rows. Only its opening
+          // proclamation heading can own the faithful's Gospel crosses.
+          if(p.id==="PALM-R03-01" && p.sourceCueIds?.includes("PALM-GSP-010"))
+            node.dataset.cueId="PALM-R03-01";
           if(p.replaceOnToggle && p.alternate){
             node.dataset.translateToggle="true";
             node.dataset.primaryText=p.primary;
