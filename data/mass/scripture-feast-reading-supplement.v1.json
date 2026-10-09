@@ -9,7 +9,8 @@
     "Sacred Heart: Epistle uses Ephesians 3:8–12 and 3:14–19, not one continuous passage. Since the shared reader cannot represent separated ranges, the Epistle is held, not approximated.",
     "Palm Sunday: Epistle is indexed only for Mass. Its processional Gospel and cross-chapter Passion are excluded pending distinct-rite/source-order integration.",
     "Christmas has three distinct Mass forms, not a blanket Christmas-day reading. A single generic reading would be wrong.",
-    "Good Friday and Easter Vigil have distinct, non-Ordinary source-order graphs and are excluded from this Ordinary Mass Proper supplement."
+    "Good Friday and Easter Vigil have distinct, non-Ordinary source-order graphs and are excluded from this Ordinary Mass Proper supplement.",
+    "The separately governed Good Friday and Easter Vigil owners must receive Scripture context from their own approved rite-state references; no proxy link to Palm Sunday or Easter Sunday is accepted."
   ],
   "holds": [
     {
@@ -35,14 +36,12 @@
     {
       "sourcePath": "Tempora/Quad6-5",
       "slot": "DISTINCT_GOOD_FRIDAY",
-      "reason": "NOT_AN_ORDINARY_MASS_PROPER",
-      "witnessUrl": "https://missale.online/proprium/en/tempore/dominica_in_palmis"
+      "reason": "NOT_AN_ORDINARY_MASS_PROPER"
     },
     {
       "sourcePath": "Tempora/Quad6-6",
       "slot": "DISTINCT_EASTER_VIGIL",
-      "reason": "FOUR_PROPHECY_SOURCE_ORDER_MUST_BE_VERIFIED",
-      "witnessUrl": "https://missale.online/proprium/en/tempore/dominica_resurrectionis"
+      "reason": "FOUR_PROPHECY_SOURCE_ORDER_MUST_BE_VERIFIED"
     }
   ],
   "celebrations": [
