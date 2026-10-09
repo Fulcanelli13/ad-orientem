@@ -24,7 +24,7 @@
       "id": "WCF",
       "title": "Westminster Confession of Faith, original Reformed confessional position",
       "url": "https://wts.edu/wcf",
-      "locator": "chapters I, XXV, XXVII–XXIX, XXXI; original historically received text",
+      "locator": "Westminster Confession chapters I, III, XI, XVIII, XXI, XXIV, XXVII–XXIX and XXXII–XXXIII; see section-level source_claim_locators for precise chapter",
       "original_context_approved": false
     },
     {
@@ -311,7 +311,7 @@
       "id": "LG",
       "title": "Lumen gentium, Dogmatic Constitution on the Church",
       "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
-      "locator": "§§8, 18–25, 39–42",
+      "locator": "Lumen gentium §§8, 14–16, 18–25, 39–42; source_claim_locators identify exact sections",
       "original_context_approved": false
     },
     {
@@ -607,8 +607,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Westminster chapter XXIV permits divorce and remarriage in certain circumstances, including adultery and irremediable desertion, while retaining a strong account of marriage as a solemn covenant. This historical Protestant objection is narrower than the claim that Reformed believers view marriage as trivial or wholly disposable.",
-            "fr": "Westminster (XXIV) permet divorce et remariage dans certains cas, notamment adultère et abandon irrémédiable, tout en défendant une conception solennelle du mariage comme alliance. L'objection protestante historique est donc plus précise que l'affirmation selon laquelle les réformés considéreraient le mariage comme insignifiant ou entièrement révocable."
+            "en": "Westminster XXIV.5–6 permits divorce followed by remarriage after marital adultery, and also accepts dissolution for wilful desertion that neither Church nor civil authority can remedy; it insists on public, orderly proceedings, not unilateral repudiation. The Reformed objection therefore appeals to Matthew's exception text and 1 Corinthians 7 while preserving the serious covenantal character of marriage. The Catholic reply must confront whether those passages permit dissolution of a valid sacramental bond, rather than accusing Protestants of treating marriage as disposable.",
+            "fr": "Westminster (XXIV, 5–6) admet le divorce suivi d'un nouveau mariage après l'adultère conjugal, ainsi que la dissolution pour abandon volontaire auquel ni l'Église ni le magistrat ne peuvent remédier ; elle demande une procédure publique et régulière, non une rupture unilatérale. L'objection réformée invoque donc l'exception de Matthieu et 1 Corinthiens 7 tout en préservant la gravité de l'alliance matrimoniale. La réponse catholique doit discuter si ces passages dissolvent le lien sacramentel valide, non accuser les protestants de mépriser le mariage."
           },
           "source_ids": [
             "WCF",
@@ -616,7 +616,11 @@
           ],
           "attribution": "Westminster Confession chapter XXIV §§5–6, divorce and remarriage",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WCF": "Confession XXIV.5–6, adultery, irremediable desertion and orderly procedure",
+            "BIBLE-MATT19": "Matthew 19:3–12, prohibition and disputed exception"
+          }
         },
         {
           "role": "critical_response",
@@ -748,8 +752,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Westminster chapter XXIX rejects transubstantiation while affirming that worthy communicants spiritually receive the body and blood of Christ through faith. Its original Reformed position is neither Catholic substantial presence nor a denial that Communion can truly communicate Christ's benefits; the disagreement concerns what is present and how.",
-            "fr": "Westminster (XXIX) rejette la transsubstantiation tout en affirmant que les communiants dignes reçoivent spirituellement le corps et le sang du Christ par la foi. Cette position réformée originelle n'est pas la présence substantielle catholique mais ne nie pas que la Cène communique réellement les bienfaits du Christ ; la divergence concerne l'objet et le mode de présence."
+            "en": "Westminster XXIX.5–7 asserts that consecrated bread and wine remain bread and wine in substance and explicitly rejects transubstantiation as contrary to Scripture and reason. Yet it also teaches that worthy recipients really feed on Christ by faith, spiritually rather than bodily: this is not a merely empty memorial. The Catholic dispute concerns the ontological presence of Christ under the Eucharistic species, not whether Reformed worshippers take Communion seriously or affirm all divine grace is absent.",
+            "fr": "Westminster (XXIX, 5–7) affirme que le pain et le vin consacrés demeurent substantiellement pain et vin et refuse la transsubstantiation comme contraire à l'Écriture et à la raison. Elle enseigne cependant que les communiants dignes se nourrissent réellement du Christ par la foi, spirituellement et non corporellement : ce n'est pas un simple souvenir vide. La divergence catholique porte sur la présence ontologique du Christ sous les espèces eucharistiques, non sur le sérieux de la Cène réformée ni sur l'absence prétendue de toute grâce divine."
           },
           "source_ids": [
             "WCF",
@@ -757,7 +761,11 @@
           ],
           "attribution": "Westminster Confession XXIX §§5–7, spiritual receiving and denial of transubstantiation",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WCF": "Confession XXIX.5–7, elements, transubstantiation and spiritual reception",
+            "TRENT13": "Council of Trent Session XIII, Eucharistic real presence and transubstantiation"
+          }
         },
         {
           "role": "critical_response",
@@ -819,8 +827,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Westminster XXIX describes the Lord's Supper as a memorial and communion but explicitly denies that it is any actual propitiatory sacrifice for the living or dead, appealing to the single sacrifice once accomplished by Christ. This is a precise original Reformed objection, not an accusation that all Protestants regard the Lord's Supper as meaningless.",
-            "fr": "Westminster (XXIX) présente la Cène comme mémorial et communion mais refuse explicitement d'y voir un sacrifice propitiatoire réel pour vivants ou morts, invoquant le sacrifice unique du Christ. C'est une objection réformée originale précise, non l'affirmation que tous les protestants jugeraient la Cène insignifiante."
+            "en": "Westminster XXIX.2 does not merely call the Lord's Supper a remembrance: it explicitly denies any Eucharistic sacrifice for the sins of living or dead and denounces the Catholic propitiatory Mass as injuring Christ's one sufficient sacrifice. XXIX.1 nonetheless describes true spiritual nourishment and communion in the Supper. This forceful historical Reformed objection must be met on Hebrews' once-for-all sacrifice and the Catholic distinction between that unique historical oblation and its unbloody sacramental making-present.",
+            "fr": "Westminster (XXIX, 2) ne se contente pas d'appeler la Cène un mémorial : elle nie explicitement tout sacrifice eucharistique pour les péchés des vivants et des morts et accuse la messe propitiatoire catholique de porter atteinte à l'unique sacrifice suffisant du Christ. Elle affirme néanmoins, en XXIX, 1, une réelle nourriture spirituelle et la communion. Cette objection réformée vigoureuse exige une réponse sur l'unicité de l'offrande selon l'épître aux Hébreux et sur sa présence sacramentelle non sanglante selon la doctrine catholique."
           },
           "source_ids": [
             "WCF",
@@ -828,7 +836,11 @@
           ],
           "attribution": "Westminster Confession XXIX §§1–2, no propitiatory Mass sacrifice",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WCF": "Confession XXIX.1–2, non-propitiatory Supper and explicit rejection of the Mass as sacrifice",
+            "BIBLE-HEB10": "Hebrews 10:10–18, unique and complete offering"
+          }
         },
         {
           "role": "critical_response",
@@ -1381,7 +1393,10 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "LG": "Lumen gentium §§14–16, necessity of Church and condition of non-Catholics and non-Christians"
+          }
         },
         {
           "role": "documented_position",
@@ -1395,7 +1410,10 @@
           ],
           "attribution": "Lumen gentium 14–16; Dominus Iesus 20 and 22",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "LG": "Lumen gentium §§14–16, necessity of Church and condition of non-Catholics and non-Christians"
+          }
         },
         {
           "role": "critical_response",
@@ -1410,7 +1428,10 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "LG": "Lumen gentium §§14–16, necessity of Church and condition of non-Catholics and non-Christians"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -1425,7 +1446,10 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "LG": "Lumen gentium §§14–16, necessity of Church and condition of non-Catholics and non-Christians"
+          }
         }
       ],
       "original_claim_by_claim_source_context_certified": false,
@@ -1596,8 +1620,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Westminster chapter III teaches God's eternal decree of election and expressly speaks of others being passed by and ordained to dishonour and wrath; its chapter XVIII discusses assurance of grace and salvation. This is a documented classical Reformed contrast with Catholic teaching on predestination to evil and the certainty of one's own final state.",
-            "fr": "Westminster (III) enseigne le décret éternel d'élection et parle expressément d'autres personnes laissées de côté et ordonnées au déshonneur et à la colère ; son chapitre XVIII traite de l'assurance du salut. C'est une opposition réformée classique documentée à la doctrine catholique sur la prédestination au mal et la certitude de l'état final personnel."
+            "en": "Westminster III.1 expressly denies that God is the author of sin or that the liberty of secondary causes is destroyed. But III.3 and III.7 also affirm an eternal decree in which some are foreordained to death, others elected freely, and those passed over are ordained to wrath 'for their sin'; XVIII develops assurance of salvation. A fair Catholic critique must engage both assertions at once, distinguishing Reformed reprobation from caricatures of an arbitrary God creating people simply to sin, and comparing actual claims about grace, foreknowledge, freedom and final perseverance.",
+            "fr": "Westminster (III, 1) nie expressément que Dieu soit l'auteur du péché ou que la liberté des causes secondes soit détruite. Toutefois, III, 3 et III, 7 affirment aussi un décret éternel qui destine certains à la vie et d'autres à la mort, les derniers étant livrés à la colère « pour leur péché » ; le chapitre XVIII traite de l'assurance du salut. Une critique catholique loyale doit tenir ensemble ces affirmations, sans imputer aux réformés un Dieu qui créerait arbitrairement l'homme pour le faire pécher, et comparer exactement grâce, prescience, liberté et persévérance finale."
           },
           "source_ids": [
             "WCF",
@@ -1605,7 +1629,11 @@
           ],
           "attribution": "Westminster Confession chapters III and XVIII, predestination and assurance",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WCF": "Confession III.1, III.3, III.7 and XVIII.1–4: sin, decree, reprobation and assurance",
+            "TRENT6": "Trent Session VI, chapter 13 and canons 15–16 on perseverance and predestination"
+          }
         },
         {
           "role": "critical_response",
@@ -1809,8 +1837,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The 2019 Abu Dhabi declaration speaks of religious plurality within divine providence, and its wording sparked debate over the difference between God's permitting non-Christian religion and his positively revealing incompatible doctrines. Dominus Iesus explicitly rejects the theory of equivalent autonomous salvific mediations. These are traceable original texts, not a licence to impute religious indifferentism to every person who pursues dialogue.",
-            "fr": "La déclaration d'Abou Dhabi de 2019 parle de la pluralité religieuse dans le dessein divin, soulevant le débat entre la permission de Dieu et une révélation positive de doctrines incompatibles. Dominus Iesus rejette expressément des médiations salvifiques autonomes équivalentes. Ce sont des textes originaux identifiables, non une raison d'imputer l'indifférentisme à quiconque dialogue."
+            "en": "The signed Abu Dhabi declaration of 4 February 2019 says that diversity of religions, alongside colour, sex, race and language, is 'willed by God' in divine wisdom. The theological objection is not a fabrication: understood as God's positive approval of contradictory religious doctrines, that proposition would conflict with the definitive revelation of Christ and Dominus Iesus §§5–7, 13–15. A permissive-will interpretation may distinguish divine tolerance of religious error from positive revelation, but it must openly acknowledge the original wording and the distinction it needs; neither sincere interreligious dialogue nor the signatories' intentions alone decide the meaning.",
+            "fr": "Le texte signé à Abou Dhabi le 4 février 2019 affirme que la diversité des religions, aux côtés de celles de couleur, de sexe, de race et de langue, est « voulue par Dieu » dans sa sagesse. L'objection théologique n'est pas inventée : comprise comme approbation positive par Dieu de doctrines religieuses contradictoires, la formule entrerait en conflit avec la révélation définitive du Christ et Dominus Iesus (§§5–7, 13–15). L'interprétation selon la volonté permissive peut distinguer tolérance divine de l'erreur et révélation positive ; elle doit cependant reconnaître les mots originaux et la distinction nécessaire. Ni la sincérité du dialogue ni les seules intentions des signataires ne tranchent le sens."
           },
           "source_ids": [
             "AD2019",
@@ -1818,7 +1846,11 @@
           ],
           "attribution": "Abu Dhabi 2019 declaration and CDF Dominus Iesus §§13–22",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "AD2019": "Abu Dhabi declaration, 'Freedom' bullet on pluralism and diversity willed by God, 4 February 2019",
+            "DOMJES": "Dominus Iesus §§5–7 and 13–15, definitive revelation and unique mediation"
+          }
         },
         {
           "role": "critical_response",
