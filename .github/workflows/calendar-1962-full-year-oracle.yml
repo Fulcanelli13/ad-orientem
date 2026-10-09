@@ -10,6 +10,10 @@ on:
       - "tests/calendar-ordo-corrections.mjs"
       - "tests/calendar-1962-rogations-commemoration-e2e.mjs"
       - "tools/calendar/secondary-1962-oracle.mjs"
+      - "src/calendar/observance-title.js"
+      - "data/calendar/1962-editorial-reconciliation-2024-2027.v1.json"
+      - "tests/calendar-source-feria-projection.mjs"
+      - "tests/calendar-source-feria-browser-e2e.mjs"
   workflow_dispatch:
 
 permissions:
@@ -45,6 +49,8 @@ jobs:
           node tests/app-shell-final-e2e.mjs
       - name: Verify ordinary Rogation Proper and all commemoration prayers
         run: node tests/calendar-1962-rogations-commemoration-e2e.mjs
+      - name: Verify all 55 canonical 2024/2027 feria headlines and source lineage
+        run: node tests/calendar-source-feria-browser-e2e.mjs
       - name: Inspect both full civil years against independent 1962 calendar
         run: node tools/calendar/full-year-1962-oracle.mjs --strict
       - name: Reconcile full years with independent second 1962 calendar
