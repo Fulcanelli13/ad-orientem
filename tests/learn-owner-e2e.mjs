@@ -147,6 +147,30 @@ try{
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
 
+  // Published-content discovery: source index is lazy and opens the exact
+  // canonical Glossary term, retaining Formation and search on return.
+  const coldReferenceIndex=await page.evaluate(()=>
+    performance.getEntriesByType("resource").some(row=>row.name.includes("/data/app/public-reference-discovery.v1.json")));
+  assert.equal(coldReferenceIndex,false,"880-term reference index was loaded before any search");
+  const formationSearch=page.locator("#ao-learn-modular-root [data-ao-learn-discovery-search]");
+  await formationSearch.fill("grâce");
+  await page.locator('#ao-learn-modular-root [data-ao-learn-reference-id="G001"]').waitFor({state:"visible",timeout:10000});
+  assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.apologetics"]').count(),0);
+  assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.church_crisis"]').count(),0);
+  await page.locator('#ao-learn-modular-root [data-ao-learn-reference-id="G001"]').tap();
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.().detailId==="G001",null,{timeout:12000});
+  assert.equal(await page.locator("#ao-glossary-root .aoGlossDetailCard").isVisible(),true);
+  await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.close?.());
+  await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:12000});
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-discovery-search]").inputValue(),"grâce");
+  assert.ok(await page.locator('#ao-learn-modular-root [data-ao-learn-reference-id="G001"]').count());
+  await page.locator("#ao-learn-modular-root [data-ao-learn-discovery-search]").focus();
+  await page.keyboard.press("Escape");
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-discovery-search]").inputValue(),"","Escape must clear search without sending the user Home");
+  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"learn");
+  await assertNoMass("Formation discovery exact Glossary term");
+  await assertFocusSafe("Formation discovery exact Glossary term");
+
   // Glossary: category-first navigation, multilingual search and sourced term drawer.
   await openFormationFamily("reference");
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
