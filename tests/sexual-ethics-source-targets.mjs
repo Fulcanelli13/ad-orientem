@@ -27,6 +27,14 @@ assert.deepEqual(cseSourceTargets("SCR","Mt 5:27–28; 1 Cor 6:18–20",CSE_SOUR
     "https://www.newadvent.org/bible/mat005.htm",
     "https://www.newadvent.org/bible/1co006.htm"
   ]);
+const assaultFull=cseSourceTargets("ASSAULT2024","2024 scoping review: Methods, Results, Limitations",CSE_SOURCE_MAP.ASSAULT2024);
+assert.equal(assaultFull.length,1,"Primary research should open a single full-text target without duplicate source chips");
+assert.equal(assaultFull[0].scope,"original-full-text");
+assert.equal(assaultFull[0].url,CSE_SOURCE_MAP.ASSAULT2024.full_text_url);
+assert.match(assaultFull[0].witness,/Author-uploaded full article/);
+assert.match(CSE_SOURCE_MAP.ASSAULT2024.canonical_url,/pubmed\.ncbi\.nlm\.nih\.gov\/38724699/);
+const badFull=cseSourceTargets("ASSAULT2024","Methods",{canonical_url:"https://pubmed.ncbi.nlm.nih.gov/38724699/",full_text_url:"javascript:alert(1)"})[0];
+assert.equal(badFull.scope,"document","Unsafe full-text URL must fall back to authoritative bibliographic record");
 const source=CSE_SOURCE_MAP.TRENT6;
 assert.equal(cseSourceTargets("TRENT6","Part III",source)[0].url,source.canonical_url,
   "Other document URLs must not be fabricated or rewritten");
