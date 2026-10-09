@@ -30,10 +30,31 @@ for(const row of added.records){
  assert.ok(!physical.has(row.cc+"|"+normalize(row.a)),"Previously published address duplicated "+row.u);
  physical.add(row.cc+"|"+normalize(row.a));
 }
+const geoOverlay=read(dir+"sspx-oct26-followup-65.geo.v1.json");
+assert.equal(geoOverlay.schema,"AO_DIRECTORY_RESEARCH_GEO_OVERLAY_V1");
+assert.equal(geoOverlay.provider,added.provider);
+assert.equal(geoOverlay.records.length,7);
+assert.equal(new Set(geoOverlay.records.map(r=>r.venue_id)).size,7);
+assert.equal(new Set(geoOverlay.records.map(r=>r.geo.source_ref)).size,7);
+const sourceSlugs=new Set(added.records.map(x=>x.official_map_source_place_id));
+for(const entry of geoOverlay.records){
+ assert.equal(entry.geo.precision,"address");
+ assert.equal(entry.geo.geocoding_source,"OFFICIAL_SOURCE");
+ assert.equal(entry.geo.matched_on,"OFFICIAL_PLACE_ID_ADDRESS_AND_DIRECTIONS_DESTINATION");
+ assert.equal(entry.geo.source_observed_at,"2026-10-09");
+ assert.ok(entry.geo.lat>=-90&&entry.geo.lat<=90&&entry.geo.lng>=-180&&entry.geo.lng<=180);
+ assert.ok(sourceSlugs.has(entry.geo.source_ref.replace("SSPX:MAP:","")));
+}
 const expanded=expandResearchProviderSnapshot(added);
 assert.equal(expanded.venues.length,7);
 assert.equal(expanded.schedules.length,7);
 assert.ok(expanded.venues.every(x=>x.geo.lat===null&&x.geo.lng===null),"Unverified coordinate was fabricated");
+const withOfficialGeo=expandResearchProviderSnapshot(added,{geoRecords:geoOverlay.records});
+assert.equal(withOfficialGeo.venues.length,7);
+assert.ok(withOfficialGeo.venues.every(v=>v.geo.geocoding_source==="OFFICIAL_SOURCE"&&v.geo.precision==="address"));
+assert.ok(withOfficialGeo.venues.every(v=>v.geo.lat!==null&&v.geo.lng!==null));
+assert.ok(withOfficialGeo.venues.every(v=>auditVenue(v).length===0),"Official address point violates venue audit");
+
 assert.ok(expanded.venues.every(x=>x.capabilities.sunday_mass===true));
 assert.ok(expanded.venues.every(x=>auditVenue(x).length===0));
 assert.ok(expanded.schedules.every(x=>auditSchedule(x).length===0));
@@ -73,4 +94,4 @@ assert.equal(worldwide.current_all_source_records,1439);
 assert.equal(worldwide.cases.reduce((n,x)=>n+x.new_mass_record_count,0),28);
 assert.equal(worldwide.cases.filter(x=>x.status==="NEW_VERIFIED_MASS_VENUE").length,28);
 assert.ok(worldwide.cases.filter(x=>x.status==="ADDRESS_CONFLICT_HOLD").every(x=>x.discrepancy));
-console.log("SSPX six-district directory: PASS — 65 source cases, 41 existing sites, seven current public venues, 16 evidence holds, one address conflict, no invented pins; 604 SSPX source Mass records");
+console.log("SSPX six-district directory: PASS — 65 source cases, 41 existing sites, seven current public venues, 16 evidence holds, one address conflict, seven official address pins; 604 SSPX source Mass records");
