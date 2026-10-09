@@ -53,7 +53,7 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
  for(const field of CSE_DEBATE_FIELDS){
    assert.equal(entry[field]?.length,2,entry.id+" "+field+" must match standard eight-step schema");
    for(const [language,passage] of entry[field].entries()){
-     const words=passage.trim().split(/\\s+/).length;
+     const words=passage.trim().split(/\s+/).length;
      assert.ok(words>=7&&words<=70,entry.id+" "+field+" "+(language?"FR":"EN")+" must stay concise: "+words);
      assert.doesNotMatch(passage,/a serious Catholic answer|a serious defender|a specialist must|methodologically weak|the answer must|this question should|this module|not a named opponent|a sourced reconstruction|editorial synthesis|a traditional account must|une réponse catholique sérieuse|un défenseur sérieux|il serait méthodologiquement faible|une défense traditionnelle doit|cette réponse ne doit/i,entry.id+" "+field+" contains editorial meta prose");
      if(language===0)englishWords+=words;
@@ -61,7 +61,7 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
    const refs=entry.sources?.[field]||[];
    assert.ok(refs.length>0,entry.id+" "+field+" missing stage-level sources");
    for(const key of refs){
-     assert.match(CSE_MARRIAGE_AUTHORITY_SOURCES[key]?.[1]||"",/^https:\\/\\//,entry.id+" "+field+" missing original link "+key);
+     assert.ok(CSE_MARRIAGE_AUTHORITY_SOURCES[key]?.[1]?.startsWith("https://"),entry.id+" "+field+" missing original link "+key);
    }
  }
  assert.ok(englishWords>=110&&englishWords<=240,entry.id+" does not match existing debate length: "+englishWords);
