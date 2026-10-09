@@ -109,7 +109,7 @@ for(const x of [...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4.slice(6),...ROSARY_GUIDED
  assert.match(x.frenchPrimaryUrl,/vatican\.va\/content\/pius-xii\/la\//);
 }
 const rosaryPolicy=readFileSync("src/pray/rosary-scripture-policy.js","utf8");
-assert.match(rosaryPolicy,/witness\.referenceFr\|\|witness\.reference/);
+assert.match(rosaryPolicy,/rosaryMeditationCitationLabel\(witness,\{french\}\)/);
 assert.match(rosaryPolicy,/frenchWitnessLanguage==="la"/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy1[2].en,/ponders the meaning/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy2[2].fr,/Élisabeth/);
