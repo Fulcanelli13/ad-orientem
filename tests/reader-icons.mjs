@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import {
   R17_ICON_KEYS,
@@ -98,5 +99,24 @@ assert.equal(readerAttentionForState({
 assert.equal(readerAttentionForState({
   priestVoice:{label:"SECRET / QUIET"},
 }),null,"silent priest text wrongly generated a listening instruction");
+
+// Every actual source-only matrix action without a higher-priority explicit
+// priest action must have an available donor icon, or a rubric-bound identity
+// for the same cue. Do not certify the bank simply because its files exist.
+const readJson=file=>JSON.parse(readFileSync(new URL(file,import.meta.url),"utf8"));
+const explicitCues=new Set(readJson("../data/presentation/reader-priest-actions.v1.json").items.map(x=>x.cueId));
+const rubricByCue=new Map(readJson("../data/presentation/reader-rubric-events.v1.json").items
+  .filter(x=>x.actor==="PRIEST"&&x.displayPrimary).map(x=>[x.cueId,x]));
+const primaryMatrix=readJson("../data/mass/gesture-matrix.v1.json").items
+  .filter(x=>x.actor==="PRIEST"&&x.displayPrimary&&!explicitCues.has(x.cueId));
+const unmapped=primaryMatrix.filter(row=>{
+  const matchedRubric=rubricByCue.get(row.cueId);
+  const art=iconKeysForReaderState({priestAction:{
+    label:row.label,iconKey:row.iconKey??matchedRubric?.iconKey??null,
+  }}).priestActionIconKey;
+  return !art || !resolve(art);
+});
+assert.deepEqual(unmapped.map(x=>x.cueId+":"+x.label),[],
+  "source priest gestures missing a real v1.80 icon or rubric binding");
 
 console.log("reader icons: PASS — v1.77 plain position pictograms and exact v4.6 rich action art remain separately owned.");
