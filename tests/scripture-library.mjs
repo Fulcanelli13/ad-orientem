@@ -15,6 +15,6 @@ assert.deepEqual(parseScriptureReference("Luke 1:26-38"),{book:"Luke",chapter:1,
 assert.throws(()=>parseScriptureReference("GospelOfThomas 1:1"));
 assert.throws(()=>parseScriptureReference("Luke 1:38-26"));
 assert.throws(()=>sourceReadingLink({book:"Luke",chapter:1,verseStart:28},"ncb-2019"));
-assert.match(sourceReadingLink({book:"Luke",chapter:1,verseStart:28},"cpdv-2009"),/sacredbible\.org\/catholic\/index\.htm/);
+assert.match(sourceReadingLink({book:"Luke",chapter:1,verseStart:28},"cpdv-2009"),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
 assert.equal(typeof mountScriptureLibrary,"function");
 console.log("Scripture library/Rosary bridge contracts passed");
