@@ -104,7 +104,10 @@ export async function installCatechismGuidedMode(win = globalThis) {
       closeGuided();
     }
   };
-  doc.addEventListener("keydown", onKeyDown);
+  // Register in capture phase so existing application-level keyboard shortcuts
+  // cannot swallow Escape before the guided modal receives it.
+  win.addEventListener("keydown", onKeyDown, true);
+  doc.addEventListener("keydown", onKeyDown, true);
   button.addEventListener("click", () => { panel.hidden = false; close.focus?.({ preventScroll: true }); });
   close.addEventListener("click", closeGuided);
   win.AO_CATECHISM_GUIDED_MODE_V1 = Object.freeze({
@@ -112,7 +115,8 @@ export async function installCatechismGuidedMode(win = globalThis) {
     status: () => ({ installed: true, preview, visible: !panel.hidden, lesson: view.currentLessonId }),
     dispose: () => {
       observer.disconnect();
-      doc.removeEventListener("keydown", onKeyDown);
+      win.removeEventListener("keydown", onKeyDown, true);
+      doc.removeEventListener("keydown", onKeyDown, true);
       view.destroy();
       button.remove();
       panel.remove();
