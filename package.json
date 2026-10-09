@@ -107,7 +107,7 @@
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
-    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second && npm run test:directory-sspx-oct26-bulk && npm run test:directory-sspx-asia-central-americas && npm run test:directory-sspx-north-america-corpus && npm run test:directory-worldwide-geocode-reuse && npm run test:directory-sspx-map-geo-overlays && npm run test:directory-sspx-worldwide-index && npm run test:directory-sspx-worldwide-evidence && npm run test:directory-sspx-mexico-completion && npm run test:directory-sspx-priority-districts && npm run test:directory-sspx-post-alias-audit && npm run test:directory-sspx-six-district-65 && npm run test:directory-sspx-remaining-worldwide-crosswalk && npm run test:directory-sspx-official-directions-23 && npm run test:directory-sspx-existing-geo-18 && npm run test:directory-sspx-canonical-geography && npm run test:directory-sspx-indicative-bulk && npm run test:directory-other-communities-indicative && npm run test:directory-fssp-icksp-indicative && node tests/directory-adorientem-crosswalk.mjs && node tests/directory-adorientem-benchmark.mjs",
+    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second && npm run test:directory-sspx-oct26-bulk && npm run test:directory-sspx-asia-central-americas && npm run test:directory-sspx-north-america-corpus && npm run test:directory-worldwide-geocode-reuse && npm run test:directory-sspx-map-geo-overlays && npm run test:directory-sspx-worldwide-index && npm run test:directory-sspx-worldwide-evidence && npm run test:directory-sspx-mexico-completion && npm run test:directory-sspx-priority-districts && npm run test:directory-sspx-post-alias-audit && npm run test:directory-sspx-six-district-65 && npm run test:directory-sspx-remaining-worldwide-crosswalk && npm run test:directory-sspx-official-directions-23 && npm run test:directory-sspx-existing-geo-18 && npm run test:directory-sspx-canonical-geography && npm run test:directory-sspx-indicative-bulk && npm run test:directory-other-communities-indicative && npm run test:directory-fssp-icksp-indicative && node tests/directory-adorientem-crosswalk.mjs && node tests/directory-adorientem-benchmark.mjs && npm run test:directory-approved-discovery",
     "directory:import:sspx": "node tools/directory/import-sspx.mjs",
     "test:sacramental-sot": "node tests/sacramental-formation-sot.mjs",
     "directory:import:fssp": "node tools/directory/import-fssp.mjs",
@@ -166,7 +166,9 @@
     "test:directory-other-communities-indicative": "node tests/directory-other-communities-indicative.mjs",
     "test:directory-fssp-icksp-indicative": "node tests/directory-fssp-icksp-indicative-bulk.mjs",
     "atlas:compare-relics": "node tools/atlas/relic-census-selection-triage.mjs",
-    "atlas:relic-publication-review": "node tools/atlas/report-relic-publication-shortlist.mjs"
+    "atlas:relic-publication-review": "node tools/atlas/report-relic-publication-shortlist.mjs",
+    "test:directory-approved-discovery": "node tests/directory-approved-mass-discovery.mjs",
+    "directory:discover:approved": "node tools/directory/discover-approved-mass-worldwide.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
