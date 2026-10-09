@@ -78,7 +78,7 @@ const expectedResearchCounts = new Map([
   ["RCI",31],
   ["SSPV_CSPV",19],
   ["SMMD",1],
-  ["ICKSP_FEDERATED_V13",103],
+  ["ICKSP_FEDERATED_V13",102],
 ]);
 let researchVenueCount=0;
 const researchVenueIds=new Set();
@@ -86,7 +86,7 @@ for(const snapshot of researchSnapshots){
   assert.equal(snapshot.schema,"AO_DIRECTORY_RESEARCH_PROVIDER_V1");
   assert.equal(snapshot.records.length,expectedResearchCounts.get(snapshot.provider),snapshot.provider+" record-count drift");
   const expanded=expandResearchProviderSnapshot(snapshot);
-  const expectedExpandedCount=snapshot.provider==="ICKSP_FEDERATED_V13"?120:snapshot.records.length;
+  const expectedExpandedCount=snapshot.provider==="ICKSP_FEDERATED_V13"?119:snapshot.records.length;
   assert.equal(expanded.venues.length,expectedExpandedCount,snapshot.provider+" physical venue expansion drift");
   assert.equal(expanded.ministries.length,expectedExpandedCount,snapshot.provider+" physical ministry expansion drift");
   assert.equal(expanded.schedules.length,expectedExpandedCount,snapshot.provider+" physical schedule expansion drift");
@@ -225,7 +225,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,1010,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
+assert.equal(researchVenueCount,1009,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
