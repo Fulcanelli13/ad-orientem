@@ -4,6 +4,14 @@
  * witness, or a digitized unproofread page as textually certified.
  */
 export const NOVENA_SOURCE_ACCESS_V1=Object.freeze({
+ holy_souls:Object.freeze({
+  heading:{en:"Holy Souls · nine online daily sections (modern transcription)",fr:"Âmes du purgatoire · neuf pages quotidiennes (transcription moderne)"},
+  note:{en:"The source is a modern digital prayer-book reproduction, not a collated photograph of the original edition. Days 1–9 follow linked pages prayer108–prayer116. After every daily prayer and the Our Father/Hail Mary, the historical witness prints a four-line verse beginning On Thy spouses, followed by the repeated intercessions. The French verse is an editorial translation.",fr:"La source est une reproduction numérique moderne, non une collation d'un imprimé d'époque. Les neuf jours figurent sur les pages liées prayer108 à prayer116. Après chaque prière du jour, le Notre Père et le Je vous salue Marie, le témoin donne le quatrain commençant par On Thy spouses, puis les intercessions communes. La traduction française du quatrain est rédactionnelle."}
+ }),
+ immaculate_conception:Object.freeze({
+  heading:{en:"Moran, 1883 · Litany OR Tota pulchra",fr:"Moran, 1883 · Litanies OU Tota pulchra"},
+  note:{en:"The original directs the Litany of the Blessed Virgin OR the Tota pulchra hymn after each day's proper prayer. This reader renders the existing canonical Litany of Loreto; the alternative hymn, followed by historical collects including one naming Pope Leo, is available in the linked 1883 source and is not represented as current papal prayer.",fr:"L'édition de 1883 prescrit les Litanies de la Sainte Vierge OU l'hymne Tota pulchra après la prière propre. Le lecteur présente les Litanies de Lorette déjà disponibles ; l'hymne alternatif et les oraisons historiques, dont l'une nomme Léon, figurent dans la source de 1883, sans être présentées comme une prière pour le pape actuel."}
+ }),
  holy_ghost:Object.freeze({
   heading:{en:"NOVENA FOR PENTECOST — distinct section within the Christmas-titled volume page",fr:"NOVENA FOR PENTECOST — section distincte sur la page intitulée Novena For Christmas"},
   note:{en:"The 1925 book prints all nine Pentecost days later on this shared transcription page. Its Christmas page heading does not identify the Pentecost text; find the separate NOVENA FOR PENTECOST heading.",fr:"Le livre de 1925 imprime les neuf jours de la Pentecôte plus bas sur cette page commune. Cherchez le titre distinct NOVENA FOR PENTECOST."}
