@@ -24,7 +24,7 @@ for(const row of added.records){
  assert.ok(row.su.startsWith("https://map.fsspx.org/de/places/"));
  assert.equal(row.source_checked_on,"2026-10-09");
  assert.equal(row.review_flag,"OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026");
- assert.equal(row.geographic_coordinate_state,"UNKNOWN_NOT_INFERRED");
+ assert.equal(row.geographic_coordinate_state,"OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY");
  assert.ok(row.a.length>=35);
  assert.ok(/Sunday\b/i.test(row.sr),"No explicit Sunday Mass source on "+row.u);
  assert.ok(!physical.has(row.cc+"|"+normalize(row.a)),"Previously published address duplicated "+row.u);
