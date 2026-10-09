@@ -209,7 +209,7 @@ assert.match(litSource,/class="aoN1SourcePrimary"/,"Novenas primary citation mus
 assert.match(litSource,/href="\$\{esc\(url\)\}"/,"Actual source URL is not wired to clickable href");
 assert.match(litSource,/novenaSourceAccess\(n\.id\)/,"Novena source drawer no longer resolves editorial section identity");
 assert.match(litSource,/rel="noopener noreferrer"/,"External novena witness lacks safe rel");
-assert.equal(Object.keys(NOVENA_SOURCE_ACCESS_V1).length,8);
+assert.equal(Object.keys(NOVENA_SOURCE_ACCESS_V1).length,10);
 for(const [id,section] of Object.entries(NOVENA_SOURCE_ACCESS_V1)){
  assert.ok(NOVENA_CORPUS_V4[id]?.source?.url,"Unknown source identity "+id);
  assert.ok(section.heading.en.length>10&&section.heading.fr.length>10,id+" source section must be bilingual");
@@ -239,9 +239,25 @@ assert.equal(NOVENA_CORPUS_V4.perpetual_help.source.url,"https://en.wikisource.o
 // collation and does not certify editorial French translations.
 const historicalNovenaReview=JSON.parse(readFileSync("data/pray/novena-source-review.v2.json","utf8"));
 assert.equal(historicalNovenaReview.records.length,16);
+assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,36,"Historical text review must include nine Holy Souls day-prayers");
+assert.equal(historicalNovenaReview.counts.frenchEditorialTranslationReviews,27,"Uncompared editorial French meanings must not count as reviewed");
+const souls=NOVENA_CORPUS_V4.holy_souls;
+assert.equal(souls.days.length,9);
+assert.equal(souls.commonPrayers[0][0],"foundations_our_father");
+assert.equal(souls.commonPrayers[1][0],"foundations_hail_mary");
+assert.ok(souls.sharedClosingText.en.startsWith("On Thy spouses have compassion,\\n"),"Daily Holy Souls verse lost");
+assert.ok(souls.sharedClosingText.en.includes("On these suffering children Thine;"));
+assert.ok(souls.sharedClosingText.en.indexOf("On Thy spouses")<souls.sharedClosingText.en.indexOf("O most sweet Jesus"),"The hymn must precede the historical intercessions");
+assert.ok(souls.sharedClosingText.fr.startsWith("Ayez pitié de vos épouses,\\n"),"Editorial French daily verse missing");
+assert.match(souls.source.status,/MODERN_DIGITAL_TRANSCRIPTION.*PRINT_EDITION_NOT_COLLATED/,"Do not claim a modern reproduction is the printed original");
+assert.match(NOVENA_SOURCE_ACCESS_V1.holy_souls.note.en,/prayer108.*prayer116/);
+assert.match(NOVENA_SOURCE_ACCESS_V1.immaculate_conception.note.en,/Litany.*OR.*Tota pulchra/);
+assert.equal(historicalNovenaReview.records.find(x=>x.id==="holy_souls").dayBodySourceReview.length,9);
+assert.match(readFileSync("src/pray/novena-runtime.js","utf8"),/Moran directs the Litany of Loreto or the Tota pulchra hymn/);
+
 assert.equal(historicalNovenaReview.counts.daySpecificNovenas,8);
 assert.equal(historicalNovenaReview.counts.uniqueDayPrayerBodies,72);
-assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,27);
+assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,36);
 assert.equal(historicalNovenaReview.counts.frenchEditorialTranslationReviews,27);
 assert.equal(historicalNovenaReview.counts.completePrintEditionCertificates,0);
 assert.equal(historicalNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,27);
