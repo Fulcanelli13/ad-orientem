@@ -85,6 +85,8 @@ const fsspVenueIds=new Set(fsspVenues.map(v=>v.venue_id));
 const fsspMinistryIds=new Set(fsspMinistries.map(m=>m.ministry_id));
 const fsspScheduleMinistries=new Set(fsspSchedules.filter(s=>s.service_type==="MASS").map(s=>s.ministry_id));
 assert.equal(fsspVenueIds.size,fsspVenues.length,"FSSP duplicate venue IDs");
+const massVenueIds=new Set(fsspMinistries.filter(m=>fsspScheduleMinistries.has(m.ministry_id)).map(m=>m.venue_id));
+assert.equal(massVenueIds.size,fsspSchedules.filter(s=>s.service_type==="MASS").length,"Mass venue count must reconcile against schedules");
 for(const m of fsspMinistries)assert.ok(fsspVenueIds.has(m.venue_id),"Orphan FSSP ministry");
 for(const s of fsspSchedules)assert.ok(fsspMinistryIds.has(s.ministry_id),"Orphan FSSP Mass schedule");
 const fsspJoined=publishableDirectoryRecords(joinDirectoryRecords({
@@ -98,4 +100,4 @@ const geoCount=fsspMapped.filter(r=>isMapPublishableGeo(r.venue.geo,r.venue.addr
 assert.equal(geoCount,fsspJoined.length,"Every existing FSSP source-backed directory venue must have a non-routing country-level fallback when necessary");
 const unmappedCountries=Object.entries(fsspMapped.filter(r=>!isMapPublishableGeo(r.venue.geo,r.venue.address.country_code)).reduce((a,r)=>{const cc=r.venue.address.country_code||"UNKNOWN";a[cc]=(a[cc]||0)+1;return a;},{}));
 console.log("FSSP unmapped countries:",JSON.stringify(unmappedCountries));
-console.log("FSSP bulk:",JSON.stringify({venues:fsspVenues.length,ministries:fsspMinistries.length,massSchedules:fsspSchedules.length,sourceRows:fsspSources.length,joined:fsspJoined.length,mapped:geoCount,unmapped:fsspJoined.length-geoCount}));
+console.log("FSSP bulk:",JSON.stringify({venues:fsspVenues.length,ministries:fsspMinistries.length,massSchedules:fsspSchedules.length,sourceRows:fsspSources.length,scheduleBackedMassVenues:massVenueIds.size,nonMassOrUnscheduled:fsspVenueIds.size-massVenueIds.size,joined:fsspJoined.length,mapped:geoCount,unmapped:fsspJoined.length-geoCount}));
