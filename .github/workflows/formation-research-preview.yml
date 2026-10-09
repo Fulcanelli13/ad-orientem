@@ -12,6 +12,11 @@ on:
       - 'tests/formation-recovery-review.mjs'
       - 'tests/formation-123-claim-gates.mjs'
       - 'tests/formation-master-inventory.mjs'
+      - 'tests/formation-141-absorption-evidence.mjs'
+      - 'data/learn/formation-141-absorption-evidence-2026-10-09.v1.json'
+      - 'docs/FORMATION-141-ABSORPTION-ACTIONS-2026-10-09.md'
+      - 'data/learn/apologetics-canonical.v1.json'
+      - 'data/learn/apologetics-reconciliation.v1.json'
       - 'tests/learn-faith-54-recovery.mjs'
       - 'tests/learn-faith-certification-019-054.mjs'
       - 'tests/learn-faith-certification-001-018.mjs'
@@ -90,6 +95,8 @@ jobs:
         run: node tests/formation-123-claim-gates.mjs
       - name: Reconcile all Formation owners and recoverable archived lesson branches
         run: node tests/formation-master-inventory.mjs
+      - name: Verify all 141 dossier research evidence tiers and no false publication
+        run: node tests/formation-141-absorption-evidence.mjs
       - name: Verify all 54 archived Catechism lesson versions are preserved without new public routes
         run: node tests/learn-faith-54-recovery.mjs
       - name: Verify 433 pinned Catechism question locations and lesson-specific citation crosswalk
