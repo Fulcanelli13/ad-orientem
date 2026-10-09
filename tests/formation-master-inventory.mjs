@@ -51,7 +51,7 @@ assert.equal(sx.summary.full_case_certifications,0);
 assert.equal(spiritual.lessons.length,14);
 assert.equal(mass.stages.length,8);
 assert.equal(sac.sacraments.length,7);
-assert.equal(readdirSync("data/learn/latin-course-lessons").filter(x=>/^lesson-\\d+\\.v1\\.json$/.test(x)).length,40);
+assert.equal(readdirSync("data/learn/latin-course-lessons").filter(x=>x.startsWith("lesson-")&&x.endsWith(".v1.json")).length,40);
 const learn=readFileSync("src/learn/presentation.js","utf8");
 assert.ok(!learn.includes('id:"learn.apologetics"'));
 assert.ok(!learn.includes('id:"learn.church_crisis"'));
@@ -59,9 +59,9 @@ assert.ok(learn.includes('id:"learn.sexual_ethics"'));
 assert.ok(learn.includes('id:"learn.spiritual_life"'));
 assert.ok(learn.includes('id:"learn.catechism"'));
 for(const row of inv.unmerged_recoverable_branch_family.variants){
- assert.match(row.branch,/^formation\\/learn-the-faith/);
+ assert.ok(row.branch.startsWith("formation/learn-the-faith"));
  assert.match(row.commit,/^[a-f0-9]{40}$/);
- for(const path of row.paths)assert.match(path,/^data\\/learn\\/learn-the-faith-/);
+ for(const path of row.paths)assert.ok(path.startsWith("data/learn/learn-the-faith-"));
 }
 const doc=readFileSync("docs/FORMATION-MASTER-INVENTORY-2026-10-09.md","utf8");
 for(const phrase of ["A001–A318","C001–C233","TLM001","123","622","1,508","54","0 fully certified"]){
