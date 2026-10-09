@@ -24,6 +24,15 @@ function sourceTarget(base,locator){
 export function cseSourceTargets(sourceId,locator,source,{french=false}={}){
   const original=String(locator||"").trim();
   const base=String((french&&source?.canonical_url_fr)||source?.canonical_url||"");
+  // When a bounded Fletcher chapter/page citation is present, open the
+  // examined digitization of the *1966* text, not a 1997 reprint catalogue.
+  // This third-party reproduction is readable, but OCR/page collation and
+  // independent eight-stage certification are NOT inferred from the link.
+  if(sourceId==="FLETCHER1966"&&/\b(?:pp?\.|propositions?|ch(?:apter)?\.?\s*[IVX])/i.test(original)){
+    const witness=sourceTarget(source?.original_digitized_text_url,original);
+    if(witness.url)return Object.freeze([Object.freeze({...witness,scope:"digitized-original",
+      witness:"1966 original book · third-party digitization; verify original pagination"})]);
+  }
   if(sourceId!=="SCR")return Object.freeze([sourceTarget(base,original)]);
   const parts=original.split(";").map(s=>s.trim()).filter(Boolean);
   if(!parts.length)return Object.freeze([{url:base,locator:original,scope:"index",witness:null}]);
