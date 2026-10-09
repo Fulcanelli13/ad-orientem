@@ -636,6 +636,15 @@ const ROSARY_SCRIPTURE_POLICY_CSS=`
 }
 /* Guided Rosary: authored contemplations (not Scripture quotations). */
 #aoPrayerBookRoot .aoRosaryGuidedBeadMeditation{margin:12px 0 3px;padding:10px 12px;border-left:2px solid var(--liturgical,#9b886c);color:var(--text,#f3ead7);background:transparent;font:italic 0.94rem/1.55 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
+#aoPrayerBookRoot .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]{
+ display:block;width:fit-content;margin-top:6px;padding:4px 0;
+ font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--muted,#aeb2b8);text-decoration:underline;
+ text-underline-offset:3px;text-decoration-thickness:1px;
+}
+#aoPrayerBookRoot .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
 `;
 
 function ensureStyle(doc,id,css){
