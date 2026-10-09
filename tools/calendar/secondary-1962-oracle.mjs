@@ -3,6 +3,9 @@ import {chromium} from '@playwright/test';
 
 const root=new URL('../../',import.meta.url);
 const primary=JSON.parse(await readFile(new URL('artifacts/calendar-1962-full-year-audit.json',root),'utf8'));
+const rubric=JSON.parse(await readFile(new URL('data/calendar/1962-ordo-corrections.v1.json',root),'utf8'));
+const adjudicated=new Map(rubric.secondaryAdjudications.flatMap(x=>x.dates.map(d=>[d,x])));
+const knownProblems=new Map(rubric.outstandingSecondaryCases.flatMap(x=>x.dates.map(d=>[d,x])));
 const secondUrl=y=>'https://gcatholic.org/calendar/'+y+'/Extraordinary-en';
 const total=y=>y===2024?366:365;
 const indexByDate=new Map(primary.reviews.map(x=>[x.date,x]));
@@ -68,6 +71,7 @@ try{
    primaryNeedsEditorial:0,secondaryCorroboratesAppForEditorial:0,secondaryConflictsAppForEditorial:0,
    disputedPrimary:0,secondaryAgreesAppInDispute:0,secondaryAgreesPrimaryInDispute:0,
    secondaryNewConflicts:0,secondaryAlternativeMatchesApp:0,secondaryDisagreesOnFirstSourceCompatible:0,
+   secondaryConflictsWithRubric:0,knownConditionalRogationMismatch:0,secondaryRubricalJanuaryCorroborations:0,
    editorialGenericFeria:0,editorialNamesStillToReview:0,editorialCommemorationPresenceMismatch:0};
   for(const [date,raw] of secondByDate){
    const prior=indexByDate.get(date)||null;
@@ -84,7 +88,17 @@ try{
     review:null};
    const matchesPrimary=sourceMatch(app,second),matchesAlternative=alternatives.some(x=>sourceMatch(app,x));
    if(!matchesPrimary){
-     if(matchesAlternative){counters.secondaryAlternativeMatchesApp++;finding.alternativeWarning='App may use an allowed secondary Mass';}
+     const a=adjudicated.get(date),k=knownProblems.get(date);
+     if(a&&a.decision==='VIOLET_CONFIRMED'&&normColour(app?.colour)==='violet'&&normColour(second.colour)==='white'){
+       counters.secondaryConflictsWithRubric++;
+       finding.review='rubrical_authority_overrides_secondary_colour';
+       finding.rubricalAuthority=a.authority;
+     }else if(k?.status==='ENGINE_MODE_DISCREPANCY'&&normColour(app?.colour)==='violet'&&normColour(second.colour)==='white'&&
+       alternatives.some(x=>normColour(x.colour)==='violet'&&x.rank===2)){
+       counters.knownConditionalRogationMismatch++;
+       finding.review='unresolved_rogation_mode_vs_day_only_default';
+       finding.rubricalAuthority=k.authority;
+     }else if(matchesAlternative){counters.secondaryAlternativeMatchesApp++;finding.alternativeWarning='App may use an allowed secondary Mass';}
      else {
        counters.secondaryNewConflicts++;
        finding.secondaryConflict={expected:{rank:second.rank,colour:second.colour},actual:{rank:app?.rank,colour:app?.colour}};
@@ -111,15 +125,16 @@ try{
     finding.review=sourceMatch(app,second)?'secondary_agrees_on_class_colour_editorial_still_open':'secondary_class_colour_disagreement';
     if(finding.review==='secondary_agrees_on_class_colour_editorial_still_open')counters.secondaryCorroboratesAppForEditorial++;
     else counters.secondaryConflictsAppForEditorial++;
-   }else if(prior?.status==='source_disputed'){
+   }else if(prior?.status==='source_disputed'||prior?.status==='source_adjudicated_rubrical'){
     counters.disputedPrimary++;
     const appColour=normColour(app?.colour),firstColour=normColour(prior?.independent?.colour);
     finding.review=normColour(secondaryColour)===appColour?'secondary_agrees_with_app':
       normColour(secondaryColour)===firstColour?'secondary_agrees_with_first_oracle':'three_way_or_missing';
     if(finding.review==='secondary_agrees_with_app')counters.secondaryAgreesAppInDispute++;
+    if(prior?.status==='source_adjudicated_rubrical'&&finding.review==='secondary_agrees_with_app')counters.secondaryRubricalJanuaryCorroborations++;
     if(finding.review==='secondary_agrees_with_first_oracle')counters.secondaryAgreesPrimaryInDispute++;
    }
-   if(prior?.status==='source_disputed'||prior?.status==='oracle_unrecorded'||prior?.status==='needs_editorial_review'||finding.secondaryConflict)
+   if(prior?.status==='source_disputed'||prior?.status==='source_adjudicated_rubrical'||prior?.status==='oracle_unrecorded'||prior?.status==='needs_editorial_review'||finding.secondaryConflict||finding.rubricalAuthority)
     report.findings.push(finding);
   }
   report.years.push({year,status:'SECONDARY_COMPARISON_NOT_CERTIFICATION',...counters,
@@ -141,4 +156,4 @@ try{
 }
 if(report.failures.length||report.years.length!==2)process.exitCode=2;
 
-if(report.years.some(x=>x.secondaryNewConflicts>2))process.exitCode=3;
+if(report.years.some(x=>x.secondaryNewConflicts>0))process.exitCode=3;
