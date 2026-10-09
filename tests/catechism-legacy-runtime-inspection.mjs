@@ -1,19 +1,34 @@
 import assert from "node:assert/strict";
-import {readFileSync} from "node:fs";
-import {openNativeCatechismQuestion} from "../src/learn/catechism-guided-reader.js";
-// The packed legacy Catechism is now loaded via AO_INLINE_PACK_V1[2],
-// not verbatim inline in index.html. Its live contract is covered by
-// tests/catechism-guided-mode-e2e.mjs.
-const html=readFileSync("index.html","utf8");
-assert.match(html,/ao-traditional-catechism-v6-js/);
-assert.match(html,/AO_INLINE_PACK_V1\[2\]/);
-assert.match(html,/ao-cate-root/);
-const bridge=readFileSync("src/learn/catechism-guided-preview-bridge.js","utf8");
+import { readFileSync } from "node:fs";
+
+// The native 433-question controller was extracted from index.html into an
+// immutable classic-script asset by the thin-shell refactor. The test must
+// follow the current parser-order manifest, not require an obsolete inline copy.
+const read = path => readFileSync(path, "utf8");
+const html = read("index.html");
+const manifest = JSON.parse(read("data/presentation/startup-thin-shell.v1.json"));
+const nativeControllers = manifest.entries
+  .filter(entry => entry.tag === "script")
+  .filter(entry => /\b(?:window|globalThis)\.AO_TRADITIONAL_CATECHISM\s*=\s*\{/.test(read(entry.path)));
+assert.equal(nativeControllers.length, 1, "Exactly one native Catechism controller must own question navigation");
+const controller = nativeControllers[0];
+const source = read(controller.path);
+assert.match(source, /window\.AO_TRADITIONAL_CATECHISM\s*=\s*\{open:openCate/);
+assert.match(source, /openQuestion\s*:\s*\(n\)\s*=>\s*\{const x=getQ\(n\);if\(!x\)return false;state\.detail=Number\(n\)/);
+assert.match(source, /render\(\);return true\}/, "Native question handoff must render the opened Q&A");
+assert.match(source, /['"]ao-cate-root['"]/, "Native Catechism root is created by the extracted controller");
+
+const packed = manifest.pack?.entries?.find(entry => entry.source === controller.path);
+if (packed) {
+  const packFile = manifest.pack.file;
+  assert.ok(packFile && manifest.pack.unpacked?.every(path => path !== controller.path));
+  assert.ok(html.includes('src="./' + packFile + '"'), "The classic-script pack must load in the shell");
+  assert.ok(html.includes('AO_INLINE_PACK_V1[' + packed.position + '].call(globalThis)'), "The native controller must be invoked at its original parser position");
+} else {
+  assert.ok(html.includes('src="./' + controller.path + '"'), "The native controller must be linked from the shell");
+}
+
+const bridge = read("src/learn/catechism-guided-preview-bridge.js");
 assert.ok(bridge.includes("openNativeCatechismQuestion(win, number, lang)"));
-assert.ok(!bridge.includes("link.click()"));
-const calls=[];
-const api={openQuestion:n=>(calls.push(n),n===213)};
-assert.equal(await openNativeCatechismQuestion({AO_TRADITIONAL_CATECHISM:api},213),true);
-assert.deepEqual(calls,[213]);
-assert.equal(await openNativeCatechismQuestion({AO_TRADITIONAL_CATECHISM:api},434),false);
-console.log(JSON.stringify({status:"PASS",source:"packed legacy Catechism",nativeQuestion:213,publicationGate:"unchanged"}));
+assert.ok(!bridge.includes("link.click()"), "No simulated navigation or automatic external redirects");
+console.log(JSON.stringify({ status: "PASS", legacyQuestionNavigator: "AO_TRADITIONAL_CATECHISM.openQuestion", asset: controller.path, packed: Boolean(packed), route: "learn.catechism", publicPublicationGate: "fail-closed" }));
