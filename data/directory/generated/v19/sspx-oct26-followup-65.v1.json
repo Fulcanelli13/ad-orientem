@@ -28,8 +28,8 @@
     },
     "conditional": 5,
     "current_public": 2,
-    "pins_unverified": 7,
-    "scope": "65 priority source records"
+    "scope": "65 priority source records",
+    "address_level_official_map_pins": 7
   },
   "records": [
     {
@@ -48,7 +48,7 @@
       "review_flag": "OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026",
       "official_map_source_place_id": "chapelle-sainte-emilie-de-rodat-ruols",
       "schedule_caveat": "LOCAL_ANNOUNCEMENTS_REQUIRED",
-      "geographic_coordinate_state": "UNKNOWN_NOT_INFERRED"
+      "geographic_coordinate_state": "OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY"
     },
     {
       "u": "SSPX-OCT26-FOLLOWUP-02-CHAPELLE-STE-HONORINE",
@@ -66,7 +66,7 @@
       "review_flag": "OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026",
       "official_map_source_place_id": "chapelle-ste-honorine",
       "schedule_caveat": "SUMMER_WINDOW_ONLY",
-      "geographic_coordinate_state": "UNKNOWN_NOT_INFERRED"
+      "geographic_coordinate_state": "OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY"
     },
     {
       "u": "SSPX-OCT26-FOLLOWUP-03-CHATEAU-DE-CABANOUS",
@@ -84,7 +84,7 @@
       "review_flag": "OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026",
       "official_map_source_place_id": "chateau-de-cabanous",
       "schedule_caveat": "LOCAL_ANNOUNCEMENTS_REQUIRED",
-      "geographic_coordinate_state": "UNKNOWN_NOT_INFERRED"
+      "geographic_coordinate_state": "OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY"
     },
     {
       "u": "SSPX-OCT26-FOLLOWUP-04-PRIEURE-N-D-DE-LA-MISERICORDE",
@@ -102,7 +102,7 @@
       "review_flag": "OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026",
       "official_map_source_place_id": "prieure-n-d-de-la-misericorde",
       "schedule_caveat": "NO_FIXED_DATE_ISSUE",
-      "geographic_coordinate_state": "UNKNOWN_NOT_INFERRED"
+      "geographic_coordinate_state": "OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY"
     },
     {
       "u": "SSPX-OCT26-FOLLOWUP-05-CHIESA-MADONNA-DI-SAN-GIOVANNI",
@@ -120,7 +120,7 @@
       "review_flag": "OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026",
       "official_map_source_place_id": "chiesa-madonna-di-san-giovanni",
       "schedule_caveat": "FIRST_THIRD_SUNDAY",
-      "geographic_coordinate_state": "UNKNOWN_NOT_INFERRED"
+      "geographic_coordinate_state": "OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY"
     },
     {
       "u": "SSPX-OCT26-FOLLOWUP-06-HERZ-JESU-KIRCHE",
@@ -138,7 +138,7 @@
       "review_flag": "OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026",
       "official_map_source_place_id": "herz-jesu-kirche",
       "schedule_caveat": "NO_FIXED_DATE_ISSUE",
-      "geographic_coordinate_state": "UNKNOWN_NOT_INFERRED"
+      "geographic_coordinate_state": "OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY"
     },
     {
       "u": "SSPX-OCT26-FOLLOWUP-07-GEMEINDE-ST-PETRUS-CANISIUS",
@@ -156,7 +156,7 @@
       "review_flag": "OFFICIAL_FIRST_PARTY_PHYSICAL_SUNDAY_MASS_OCT2026",
       "official_map_source_place_id": "gemeinde-st-petrus-canisius",
       "schedule_caveat": "DATE_SCOPED_OCTOBER_ONLY",
-      "geographic_coordinate_state": "UNKNOWN_NOT_INFERRED"
+      "geographic_coordinate_state": "OFFICIAL_SOURCE_ADDRESS_ROUTE_GEO_OVERLAY"
     }
   ]
 }
