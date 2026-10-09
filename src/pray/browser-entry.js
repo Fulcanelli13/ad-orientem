@@ -1,10 +1,42 @@
 import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
-import "./presentation-coherence.js";
-import "./novena-runtime.js";
-import "./traditional-pray-runtime.js";
-import "./focus-installer.js";
+
+
+
+
 
 const VERSION="modular-pray-v1";
+
+// Cold Home requires only the small route owner. Devotional readers, novena
+// records, gesture focus observers and traditional prayer corpora are loaded
+// on first Prayer entry in the historical dependency/installation order.
+// Module scripts are cached by the browser; concurrent entries share a promise.
+let readerLoad=null;
+let readerReady=false;
+let readerError=null;
+export function ensurePrayReader({win=globalThis}={}){
+  if(readerReady)return Promise.resolve(true);
+  if(readerLoad)return readerLoad;
+  readerLoad=(async()=>{
+    await import("./presentation-coherence.js");
+    await import("./novena-runtime.js");
+    await import("./traditional-pray-runtime.js");
+    await import("./focus-installer.js");
+    // All of these modules install via their original production side-effects.
+    // Preserve their original API globals instead of introducing a new owner.
+    const coherence=win?.AO_PRAY_COHERENCE_V435930;
+    const focus=win?.AO_PRAY_FOCUS_V3410;
+    if(!coherence||!focus)throw new Error("Prayer presentation or focus owner missing");
+    readerReady=true;
+    readerError=null;
+    return true;
+  })().catch(error=>{
+    readerError=error;
+    readerLoad=null; // retry from a new navigation after transient failures
+    throw error;
+  });
+  return readerLoad;
+}
+
 
 function donor(win){return win?.AO_PRAY_V435930??null;}
 function root(win){return win?.document?.getElementById?.("aoPray435930")??null;}
@@ -39,6 +71,10 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   }
 
   async function open(){
+    try{await ensurePrayReader({win});}catch(error){
+      try{win?.console?.error?.("Prayer reader load failed",error);}catch{}
+      return false;
+    }
     const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
     const opened=api.open("pray.hub",{returnContext:null});
@@ -62,6 +98,9 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     return Object.freeze({
       version:VERSION,
       installed:true,
+      readerLoaded:readerReady,
+      readerLoading:Boolean(readerLoad&&!readerReady),
+      readerError:readerError?String(readerError?.message??readerError):null,
       donorAvailable:typeof donor(win)?.open==="function",
       routeOwner:win?.document?.documentElement?.dataset?.aoPrayRouteOwner??null,
       visibleOwner:node?.dataset?.aoPrayOwner??null,
