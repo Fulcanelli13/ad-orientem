@@ -93,7 +93,7 @@ export const VERIFIED_SEGMENTED_MASS_READINGS=Object.freeze([
     "title": "Pentecost Octave Ember Friday · Joel prophecy with omitted verse",
     "slot": "EPISTLE_OR_LESSON",
     "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-29?theme=light",
-    "latinIncipit": "haec dicit dominus deus exsultate filii sion et laetamini in domino deo vestro quia dedit vobis doctorem iustitiae",
+    "latinIncipit": "haec dicit dominus deus exsultate filii sion et laetamini in domino deo vestro quia dedit vobis doctorem",
     "segments": [
       {
         "book": "Joel",
