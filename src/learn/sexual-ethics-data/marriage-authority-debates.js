@@ -69,6 +69,18 @@ export const CSE_MARRIAGE_AUTHORITY_SOURCES=Object.freeze({
   "FAMILY_CHARTER": [
     "Holy See, Charter of the Rights of the Family, Articles 1–2 (1983)",
     "https://www.vatican.va/roman_curia/pontifical_councils/family/documents/rc_pc_family_doc_19831022_family-rights_en.html"
+  ],
+  "COR7": [
+    "St Paul, 1 Corinthians 7:3–5 (Greek, Catholic English, Vulgate)",
+    "https://www.newadvent.org/bible/1co007.htm"
+  ],
+  "COL3": [
+    "St Paul, Colossians 3:18–21 (Greek, Catholic English, Vulgate)",
+    "https://www.newadvent.org/bible/col003.htm"
+  ],
+  "PET3": [
+    "St Peter, 1 Peter 3:1–7 (Greek, Catholic English, Vulgate)",
+    "https://www.newadvent.org/bible/1pe003.htm"
   ]
 });
 export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
@@ -102,6 +114,8 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       ],
       "reply": [
         "EPH",
+        "COL3",
+        "PET3",
         "CHRYSOSTOM",
         "ARCANUM",
         "CASTI"
@@ -322,13 +336,14 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
     ],
     "sources": {
       "opposition": [
-        "AQUINAS_MARITAL",
-        "EPH"
+        "COR7",
+        "AQUINAS_MARITAL"
       ],
       "reply": [
         "HV",
         "AL",
-        "AQUINAS_MARITAL"
+        "AQUINAS_MARITAL",
+        "COR7"
       ],
       "rejoinder": [
         "CIC",
@@ -336,6 +351,7 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
         "AL"
       ],
       "finding": [
+        "COR7",
         "AQUINAS_MARITAL",
         "HV",
         "AL"
