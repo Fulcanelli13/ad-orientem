@@ -62,7 +62,7 @@ import { createAspergesReaderController, loadAspergesReaderData, resolveAsperges
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
-import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
+import { createRogationsReaderController, contextualRogationCard, loadRogationsReaderData } from "./reader-rogations.js";
 import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
 import { createEasterVigilReaderController, loadEasterVigilReaderData, projectEasterVigilMassModel } from "./reader-easter-vigil.js";
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
@@ -1601,20 +1601,22 @@ export async function mountNativeReaderPreview({
 
   function rogationsMoment(){
     const state=ready.rogationsController?.project?.();
-    const card=state?.card;
+    const selection=prepared?.session?.resolvedMass?.provenance?.rogationSelection??{};
+    const card=contextualRogationCard(state?.card,selection);
     if(!card)return null;
+    const major=selection.observance==="MAJOR";
     return Object.freeze({
       state,
       moment:Object.freeze({
         id:card.id,
-        sectionTitle:"Rogations",
+        sectionTitle:major?"Greater Litanies":"Rogations",
         cardTitle:card.title,
         cardUpdate:true,
         paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
           id:row.id,kind:row.kind,primary:row.latin,
           sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
         }))),
-        progress:String(state.index+1)+" / "+String(state.total)+" · Rogations",
+        progress:String(state.index+1)+" / "+String(state.total)+(major?" · Greater Litanies":" · Rogations"),
         posture:card.posture && !["LOCAL_OR_STAND","STAND_OR_LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture)
           ? {label:card.posture}
           : null,

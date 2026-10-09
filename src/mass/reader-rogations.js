@@ -101,6 +101,26 @@ export function buildRogationsPayload({graph,payload}={}){
   });
 }
 
+// Shared presentation projection for the same 1962 Litany source.
+// Public supplications do not involve a walking procession. Keep the
+// canonical six-record graph intact; change labels/posture instructions only.
+export function contextualRogationCard(card,{observance=null,selectedService=null}={}){
+  if(!card)return null;
+  const major=observance==="MAJOR";
+  const supplications=selectedService==="ORDINARY_AUTHORIZED_SUPPLICATIONS";
+  if(!major&&!supplications)return card;
+  const processionStep=card.id==="ROG-R03";
+  return freeze({
+    ...card,
+    title:processionStep&&supplications?"Litany of the Saints · Public Supplications":
+      processionStep&&major?"Greater Litanies · Public Procession":card.title,
+    posture:processionStep&&supplications?"LOCAL_OR_STAND":card.posture,
+    guide:processionStep&&supplications?
+      "The Litany continues in the Ordinary-authorized public supplications. Follow local posture; do not walk in a procession that is not being held.":
+      card.guide
+  });
+}
+
 export function createRogationsReaderController(args={}){
   const built=buildRogationsPayload(args);
   let index=0;

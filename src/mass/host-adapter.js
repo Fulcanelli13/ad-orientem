@@ -148,6 +148,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       sourceDiagnostics:legacy.sourceDiagnostics??null,
       rogationSelection:rogationSelection ? {
         selection:rogationSelection.selection,
+        observance:options.rogationSelection?.observance??null,
         selectedService:rogationSelection.selectedService??null,
         properOwner:rogationSelection.properOwner,
         sourceVerified:rogationSelection.selection==="ROGATION_MASS",
