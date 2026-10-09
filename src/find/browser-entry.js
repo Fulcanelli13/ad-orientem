@@ -95,6 +95,7 @@ function installStyle(win){
 
 export function createFindOwner(win=globalThis){
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null;
+  let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
   const state={
     lens:"tlm",
@@ -166,7 +167,21 @@ export function createFindOwner(win=globalThis){
     return state.lens==="pilgrimages"&&state.calendarKey?list.filter(item=>item.calendar_keys?.includes(state.calendarKey)):list;
   }
 
+  function showLoadFailure(node){
+    const fr=language(win)==="fr";
+    node.innerHTML=`<main class="aoFindSurface" data-find-recovery aria-labelledby="ao-find-load-failed-title">
+      <header class="aoFindHeader"><span aria-hidden="true"></span><div><small>${fr?"EXPLORER":"EXPLORE"}</small><h1 id="ao-find-load-failed-title">${fr?"Contenu indisponible":"Content unavailable"}</h1></div><span></span><button type="button" data-find-close aria-label="${fr?"Fermer":"Close"}">×</button></header>
+      <div role="alert" style="padding:24px var(--ao-page-gutter,14px);max-width:540px;margin:auto">
+        <p style="line-height:1.5">${fr?"Impossible de charger les données. Vérifiez votre connexion, puis réessayez.":"Explore could not load its data. Check your connection and try again."}</p>
+        <button type="button" data-find-retry style="min-height:44px;padding:10px 22px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">${fr?"Réessayer":"Retry"}</button>
+      </div></main>`;
+    node.dataset.open="true";
+    node.dataset.aoFindLoadState="error";
+    node.querySelector?.("[data-find-retry]")?.focus?.({preventScroll:true});
+  }
+
   async function paint({preserveSearchFocus=false}={}){
+    const token=++paintToken;
     const node=ensureRoot(win);if(!node)return false;
     installStyle(win);
     // Rebuilding the entire Explore surface after each search keystroke
@@ -181,7 +196,19 @@ export function createFindOwner(win=globalThis){
           scroll:node.querySelector?.(".aoFindSurface")?.scrollTop??0,
         }
       : null;
-    const data=await ensureData(),items=filtered();
+    let data;
+    try{data=await ensureData()}catch(error){
+      if(token!==paintToken||!openState)return false;
+      lastLoadError=error;
+      try{win?.console?.error?.("Explore data unavailable",error)}catch{}
+      showLoadFailure(node);
+      return true;
+    }
+    // Ignore a stale dataset response if the user has closed Explore or
+    // started another render while the shared load was in flight.
+    if(token!==paintToken||!openState)return false;
+    lastLoadError=null;
+    const items=filtered();
     const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
       language:language(win),
@@ -209,6 +236,7 @@ export function createFindOwner(win=globalThis){
       if(scroller)scroller.scrollTop=searchFocus.scroll;
     }
     node.dataset.open=openState?"true":"false";
+    node.dataset.aoFindLoadState="ready";
     node.dataset.exploreLens=state.lens;
     if(mapHandle&&state.view==="map"){
       lastMapView=mapViewport(mapHandle.map);lastMapLens=state.lens;
@@ -239,14 +267,19 @@ export function createFindOwner(win=globalThis){
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
-    openState=true;
-    const node=ensureRoot(win);if(node)node.dataset.open="true";
-    await paint();
+    const node=ensureRoot(win);if(!node)return false;
+    openState=true;node.dataset.open="true";
+    node.dataset.aoFindLoadState="loading";
+    // A failed fetch produces an actual recoverable Explore screen rather
+    // than a blank overlay or a rejected navigation promise.
+    const rendered=await paint();
+    if(!rendered)return false;
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("find")}catch{}
     return true;
   }
 
   function close(){
+    ++paintToken;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
@@ -266,6 +299,14 @@ export function createFindOwner(win=globalThis){
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
+    const retry=target?.closest?.("[data-find-retry]");
+    if(retry){
+      event.preventDefault?.();
+      if(retry.getAttribute?.("aria-busy")==="true")return;
+      retry.setAttribute?.("aria-busy","true");
+      void paint().finally(()=>retry.removeAttribute?.("aria-busy"));
+      return;
+    }
     const glossaryButton=target?.closest?.("[data-find-glossary]");if(glossaryButton){event.preventDefault?.();event.stopPropagation?.();void openGlossary(glossaryButton);return}
     if(target?.closest?.("[data-find-clear-calendar]")){
       event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
@@ -375,6 +416,7 @@ export function createFindOwner(win=globalThis){
     status:()=>Object.freeze({
       installed:true,
       open:openState,
+      loadState:openState?(lastLoadError?"error":dataset?"ready":"loading"):"closed",
       lens:state.lens,
       view:state.view,
       selectedPlaceId:state.selectedPlaceId,
