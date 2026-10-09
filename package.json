@@ -160,7 +160,8 @@
     "test:directory-sspx-canonical-geography": "node tests/directory-sspx-canonical-geography.mjs",
     "test:directory-sspx-indicative-bulk": "node tests/directory-sspx-indicative-bulk.mjs",
     "atlas:sync-baselines": "node tools/atlas/sync-census-baselines.mjs --write",
-    "atlas:check-baselines": "node tools/atlas/sync-census-baselines.mjs --check"
+    "atlas:check-baselines": "node tools/atlas/sync-census-baselines.mjs --check",
+    "test:atlas-census": "node tests/european-relic-census.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
