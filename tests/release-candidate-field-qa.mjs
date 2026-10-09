@@ -143,8 +143,15 @@ async function assertNoLegacyLeak(page,label,width){
 
 async function openSurface(page,surface,width){
   if(surface==="settings"){
-    // Settings is a contextual overlay; the sixth permanent ribbon tab is Find.
+    // Settings is contextual, never an extra permanent destination.
     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
+  }else if(surface==="calendar"){
+    // Calendar is reached through Today, from every preceding surface.
+    await page.locator("[data-ao-app-surface='home']").first().click();
+    await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
+    const calendar=page.locator(".homeScreen [data-home-calendar]");
+    assert.equal(await calendar.count(),1,width+"px Today is missing its full Calendar action");
+    await calendar.click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
     assert.equal(await nav.count(),1,width+"px missing "+surface+" top-level navigation control");
@@ -228,8 +235,8 @@ try{
     assert.equal(release.active,"home",viewport.width+"px cold launch did not land on Home");
     assert.deepEqual(
       [...new Set(release.destinations)],
-      ["home","mass","pray","learn","calendar","find"],
-      viewport.width+"px top-level destination contract changed",
+      ["home","mass","pray","learn","find"],
+      viewport.width+"px five-destination ribbon contract changed",
     );
 
     await assertViewportFit(page,"Home cold launch",viewport.width);
