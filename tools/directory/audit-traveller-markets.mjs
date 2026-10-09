@@ -55,13 +55,14 @@ function inventoryFromFiles(today){
    const linked=items(venue.source_ids).map(id=>bySource.get(id)).filter(Boolean);
    const reviews=mass.map(s=>date(s?.verification?.review_due_at)).filter(Boolean);
    const due=reviews.length?reviews.some(d=>d<today):null;
+   const sourceUndated=mass.some(s=>/SOURCE_PAGE_UNDATED|NOT_VERIFIED|REQUIRES_DATE_CONFIRMATION/i.test(String(s?.verification?.state??"")));
    const sunday=mass.some(s=>/(?:sunday|dimanche|domingo|domenica|sonntag|domingo|\bsun\b|dim\.)/i.test(s?.payload?.raw??""));
    const hasWebsite=items(venue.contact?.website).concat(items(venue.contact?.schedule_url))
      .some(x=>/^https?:\/\//.test(x));
    index.push({
     provider:p.name,kind:p.kind,cc,venue_id:venue.venue_id,
     hasMass:mass.length>0,sunday,hasWebsite,
-    oldReview:due,unknownReview:mass.length>0&&reviews.length===0,
+    oldReview:due,unknownReview:mass.length>0&&reviews.length===0,sourceUndated,
     hasAddress:Number(String(venue.address?.line1||venue.address?.formatted||"").length)>=14,
     hasOfficialSource:linked.some(officialSources),
     addressFingerprint:addressFingerprint(venue)
@@ -96,6 +97,7 @@ export function auditTravellerMarkets({today="2026-10-09"}={}){
     original_link_missing:records.filter(x=>!x.hasWebsite).length,
     scheduled_records_review_due:mass.filter(x=>x.oldReview===true).length,
     scheduled_records_review_unknown:mass.filter(x=>x.unknownReview).length,
+    scheduled_records_with_undated_source:mass.filter(x=>x.sourceUndated).length,
     known_exact_address_collision_groups:collisions.length,
     exact_address_collision_review:collisions.slice(0,15),
     third_party_discovery_snapshot_count:expected,
