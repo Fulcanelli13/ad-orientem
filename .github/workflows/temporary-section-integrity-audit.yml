@@ -1,0 +1,21 @@
+name: Temporary Section Integrity Audit
+on:
+  push:
+    branches: [audit/section-integrity-20261009]
+    paths:
+      - ".github/workflows/temporary-section-integrity-audit.yml"
+      - "tests/ux-section-negative-audit.mjs"
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/ux-section-negative-audit.mjs
