@@ -2,6 +2,9 @@ name: Formation research preview checks
 on:
   pull_request:
     paths:
+      - 'src/learn/catechism-guided-study.js'
+      - 'src/learn/catechism-guided-reader.js'
+      - 'tests/catechism-guided-study.mjs'
       - 'src/learn/formation-research-preview.js'
       - 'src/learn/formation-recovery-review.js'
       - 'tests/formation-recovery-review.mjs'
@@ -60,6 +63,8 @@ jobs:
         run: node tests/formation-research-preview.mjs
       - name: Verify forensic A/C/TLM recovery holds and surviving 102 research records
         run: node tests/formation-forensic-recovery.mjs
+      - name: Check gated Catechism guided-study data adapter and 433-question ownership
+        run: node tests/catechism-guided-study.mjs
       - name: Check archival 54 to proposed 55 title and 433 distinct question-owner crosswalk
         run: node tests/learn-faith-55-course-reconciliation.mjs
       - name: Verify Learn the Faith lessons 1–18 and source distinctions
