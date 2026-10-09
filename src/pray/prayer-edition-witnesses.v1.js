@@ -61,15 +61,15 @@ export const PRAY_EDITION_WITNESSES_V1=Object.freeze({
   "devotion_litany_st_joseph": {
     "edition": "ST_JOSEPH_2021",
     "witnessType": "CURRENT_HOLY_SEE_WITH_DECREE",
-    "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/05/01/210501c.html",
-    "secondaryUrl": "https://www.usccb.org/prayers/litany-saint-joseph",
+    "url": "https://www.usccb.org/prayers/litany-saint-joseph",
+    "secondaryUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/05/01/210501c.html",
     "label": {
       "en": "Litany of Saint Joseph · 2021 expanded form",
       "fr": "Litanies de saint Joseph · forme augmentée de 2021"
     },
     "note": {
-      "en": "This is the expanded litany with seven invocations added in 2021, not the unexpanded 1909 form. The Latin decree is authoritative; French text is a devotional translation not claimed to be conference-approved.",
-      "fr": "Cette version contient les sept invocations ajoutées en 2021 ; il ne s'agit pas de la forme de 1909 sans ajouts. Le décret latin fait autorité ; la traduction française n'est pas présentée comme approuvée par une conférence épiscopale."
+      "en": "The linked USCCB prayer gives the complete English expanded litany with seven invocations added in 2021; the Holy See decree is separately linked as the addition authority. This is not the unexpanded 1909 form. French remains a devotional translation without claimed conference approval.",
+      "fr": "Le lien principal donne les litanies anglaises intégrales avec les sept invocations ajoutées en 2021 ; le décret du Saint-Siège est cité séparément. Il ne s’agit pas de la forme de 1909 sans ces ajouts. La traduction française n’est pas présentée comme approuvée par une conférence épiscopale."
     }
   }
 });
