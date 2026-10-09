@@ -35,6 +35,9 @@ assert.match(boot,/1960 General Rubrics nn\. 25, 108, 111/,"III-class Advent fer
 assert.match(boot,/const sunday = isSun && x\.flexibility === 'sancti'/,"displaced II-class Sunday commemoration rule missing");
 assert.match(boot,/jesusFeasts: new Set\(\[\.\.\.parseTupleTokens\(common, "FEASTS_OF_JESUS_CLASS_1_AND_2"\).*constants\.SANCTI_10_DU\]/,
  "1960 rubrics 16(a),17(d): Lord's feast Christ the King must suppress Sunday commemoration");
+assert.match(boot,/lordFeast=source\.jesusFeasts instanceof Set && source\.jesusFeasts\.has\(main\.id\)/,
+ "The shared commemoration completion must use Set.has, not silently skipped Set.some");
+assert.doesNotMatch(boot,/jesusFeasts\?\.some\?\./,"Never treat a Set as an Array when checking Lord's feast identity");
 assert.match(boot,/observance\.path === 'Tempora\/Pasc6-6'/,"canonical Pentecost Vigil title resolver missing");
 
 console.log("PASS pinned 1962 calendar correction registry, 15 recurring feasts, 2 transparently unresolved source disagreements, St Joseph precedence");
