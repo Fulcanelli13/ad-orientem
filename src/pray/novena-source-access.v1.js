@@ -14,15 +14,15 @@ export const NOVENA_SOURCE_ACCESS_V1=Object.freeze({
  }),
  annunciation:Object.freeze({
   heading:{en:"Hammer, Section III · Annunciation",fr:"Hammer, section III · Annonciation"},
-  note:{en:"This source is a complete public-domain Marian novena book. Section III contains the nine Annunciation days. A nominal 25 March feast is not evidence that the 1962 feast is observed on that date in every year.",fr:"Cette source est un recueil complet de neuvaines mariales. La section III contient les neuf jours de l’Annonciation. Le 25 mars nominal ne prouve pas que la fête de 1962 tombe à cette date chaque année."}
+  note:{en:"Hammer's 1909 Section III includes a full historical MEDITATION and PRACTICE for each of the nine Annunciation days. Those original prose sections are not yet reproduced here; the short day guide is editorial. Open the cited book to read them. The 25 March feast can be transferred.",fr:"La section III du livre de Hammer (1909) contient pour chacun des neuf jours une MÉDITATION et une PRATIQUE complètes. Ces textes historiques ne sont pas encore reproduits ici ; le guide bref est rédactionnel. Consultez le livre cité. La fête du 25 mars peut être transférée."}
  }),
  seven_sorrows:Object.freeze({
   heading:{en:"Hammer, Section IV · Seven Sorrows",fr:"Hammer, section IV · Sept Douleurs"},
-  note:{en:"The nine meditations are in Section IV of the full book. Their historical devotional headings are not instructions to invent additional prayers.",fr:"Les neuf méditations figurent dans la section IV du livre. Leurs titres historiques n’autorisent pas l’ajout de prières inventées."}
+  note:{en:"Hammer's 1909 Section IV includes full historical MEDITATION and PRACTICE passages for each of nine Seven Sorrows days. The short day guide is editorial and does not replace those sections; read them in the cited book.",fr:"La section IV du livre de Hammer (1909) contient pour chacun des neuf jours une MÉDITATION et une PRATIQUE complètes. Le guide bref est rédactionnel et ne les remplace pas ; consultez le livre cité."}
  }),
  assumption:Object.freeze({
   heading:{en:"Hammer, Section V · Assumption",fr:"Hammer, section V · Assomption"},
-  note:{en:"The nine historical Assumption meditations occur in Section V of the full book.",fr:"Les neuf méditations historiques de l’Assomption figurent dans la section V du livre."}
+  note:{en:"Hammer's 1909 Section V includes full historical MEDITATION and PRACTICE sections for the nine Assumption days. The short editorial day guide does not reproduce them; consult the cited book. Historical devotional meditation must not be mistaken for a definition of dogma.",fr:"La section V du livre de Hammer (1909) contient neuf MÉDITATIONS et PRATIQUES historiques. Le bref guide rédactionnel ne les reproduit pas ; consultez le livre cité. Ces méditations ne doivent pas être confondues avec des définitions dogmatiques."}
  }),
  perpetual_help:Object.freeze({
   heading:{en:"With God, scan page 699 · unproofread transcription",fr:"With God, page numérisée 699 · transcription non relue"},
