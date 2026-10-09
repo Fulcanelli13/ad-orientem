@@ -293,10 +293,10 @@ for(const id of ["corpus_christi","sacred_heart"]){
  assert.equal(row.directPrintedFacsimileComparison,"PENDING");
 }
 const latestRuntime=readFileSync("src/pray/novena-runtime.js","utf8");
-assert.match(latestRuntime,/function hammerSourceDayDetails\\(n\\)/,"Missing discreet per-day original-source expander");
+assert.match(latestRuntime,/function hammerSourceDayDetails\(n\)/,"Missing discreet per-day original-source expander");
 assert.match(latestRuntime,/data-n1-hammer-source-day/);
-assert.match(latestRuntime,/sourceWitness\\(daySource\\(n,d\\),L\\('Proper prayer of the day','Prière propre du jour'\\)\\)\\+hammerSourceDayDetails\\(n\\)/,"Guided Hammer day must offer the full original meditation and practice");
-assert.match(latestRuntime,/\\$\\{hammerSourceDayDetails\\(n\\)\\}\\$\\{hammerTailStage\\(n\\)\\}/,"Simple Hammer day must offer the original meditations and practices");
+assert.match(latestRuntime,/sourceWitness\(daySource\(n,d\),L\('Proper prayer of the day','Prière propre du jour'\)\)\+hammerSourceDayDetails\(n\)/,"Guided Hammer day must offer the full original meditation and practice");
+assert.match(latestRuntime,/\$\{hammerSourceDayDetails\(n\)\}\$\{hammerTailStage\(n\)\}/,"Simple Hammer day must offer the original meditations and practices");
 assert.match(latestRuntime,/target="_blank" rel="noopener noreferrer"/,"Historical source access lost secure external link");
 
 assert.equal(historicalNovenaReview.records.length,16);
