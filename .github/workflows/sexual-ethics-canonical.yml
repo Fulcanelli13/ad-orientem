@@ -59,3 +59,5 @@ jobs:
         run: node tests/sexual-ethics-remaining-21-passage-checks-v1.mjs
       - name: Original text review for 15 practical-debate stages
         run: node tests/sexual-ethics-practical-original-passages-15-v1.mjs
+      - name: Original texts for 18 moral-reasoning stages
+        run: node tests/sexual-ethics-moral-original-18-v1.mjs
