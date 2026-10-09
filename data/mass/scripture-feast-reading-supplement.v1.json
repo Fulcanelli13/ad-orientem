@@ -15,7 +15,8 @@
     "Holy Wednesday first lesson's source heading says Isaiah 63:1–7, but the Latin begins with Isaiah 62:11 (Dicite filiae Sion); this is explicitly held pending segmented native lesson linking. The second lesson is Isaiah 53:1–12 and must retain its separate source-order identity.",
     "Holy Thursday's Mass Gospel John 13:1–15 is not a proxy for the optional Mandatum and its separate associated chants.",
     "Holy Tuesday's Gospel Passion Mark 14:32–72; 15:1–46 is excluded from this legacy single-range supplement, but available in the independently witnessed segmented Mass Proper index with a Latin-incpit and source-path guard.",
-    "Holy Wednesday: LectioL1 (Isaiah 62:11; 63:1–7) belongs to the ordered extended-lesson index and requires its actual Latin node; the later Epistle/Lectio is Isaiah 53:1–12 and uses this separate single-range Proper guard. Luke Passion is separately indexed by segments."
+    "Holy Wednesday: LectioL1 (Isaiah 62:11; 63:1–7) belongs to the ordered extended-lesson index and requires its actual Latin node; the later Epistle/Lectio is Isaiah 53:1–12 and uses this separate single-range Proper guard. Luke Passion is separately indexed by segments.",
+    "1962 September Ember Wednesday/Friday/Saturday are Tempora/093-3, 093-5, 093-6, not Pent17-3/5/6. Wednesday Amos preparatory lesson, Saturday preparatory lessons and Saturday post-preparatory Hebrews Epistle remain separate source owners. Saturday has source-pinned long/short variants."
   ],
   "holds": [
     {
@@ -321,6 +322,57 @@
           "latinIncipit": "Dixit Isaias Domine quis credidit auditui nostro"
         }
       }
+    },
+    {
+      "sourcePath": "Tempora/093-3",
+      "title": "September Ember Wednesday (1962)",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-23?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Nehemiah 8:1–10",
+          "latinIncipit": "in diebus illis congregatus est omnis populus quasi vir unus ad plateam quae est ante portam aquarum et"
+        },
+        "GOSPEL": {
+          "reference": "Mark 9:16–28",
+          "latinIncipit": "in illo tempore respondens unus de turba dixit ad jesum magister attuli filium meum ad te habentem spiritum"
+        }
+      },
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-3.txt",
+      "note": "The supplementary Amos 9:13–15 is the source-ordered LectioL1, not this later ordinary Nehemiah Epistle."
+    },
+    {
+      "sourcePath": "Tempora/093-5",
+      "title": "September Ember Friday (1962)",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-25?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Hosea 14:2–10",
+          "latinIncipit": "haec dicit dominus deus convertere israel ad dominum deum tuum quoniam corruisti in iniquitate tua tollite vobiscum verba"
+        },
+        "GOSPEL": {
+          "reference": "Luke 7:36–50",
+          "latinIncipit": "in illo tempore rogabat jesum quidam de pharisaeis ut manducaret cum illo et ingressus domum pharisaei discubuit et"
+        }
+      },
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-5.txt",
+      "note": "The Luke Gospel source is inherited from Sancti/07-22; matched Latin is verified against the resolved Proper and not inferred from a date."
+    },
+    {
+      "sourcePath": "Tempora/093-6",
+      "title": "September Ember Saturday (1962)",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-26?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Hebrews 9:2–12",
+          "latinIncipit": "fratres tabernaculum factum est primum in quo erant candelabra et mensa et propositio panum quae dicitur sancta post"
+        },
+        "GOSPEL": {
+          "reference": "Luke 13:6–17",
+          "latinIncipit": "in illo tempore dicebat jesus turbis hanc similitudinem arborem fici habebat quidam plantatam in vinea sua et venit"
+        }
+      },
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-6.txt",
+      "note": "The five preparatory lessons are separate from the Hebrews 9:2–12 ordinary Mass Epistle; Sept Ember shorter/longer form is source-controlled."
     }
   ]
 }
