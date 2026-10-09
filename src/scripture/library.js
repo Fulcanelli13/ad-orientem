@@ -50,7 +50,7 @@ export function mountScriptureLibrary(root, {language="en", openExternal=url=>wi
    const verse=el("input");
    verse.type="number";verse.min="1";verse.step="1";verse.value="1";
    verseLabel.append(verse);frame.append(verseLabel);
-   const go=el("button",selectedLanguage==="fr"?"Lire dans Douay–Rheims":"Read in Douay–Rheims");
+   const go=el("button",selectedLanguage==="fr"?"Consulter Crampon 1923":"Read in Douay–Rheims");
    go.type="button";
    const status=el("p");
    status.setAttribute("role","status");
