@@ -706,7 +706,7 @@ function bind(r){
     if(yearMonth){
       event.preventDefault();
       const month=yearMonth.dataset.calYearMonth||"";
-      if(!/^\\d{4}-\\d{2}$/.test(month))return;
+      if(!/^\d{4}-\d{2}$/.test(month))return;
       pickerMonthId=month;calendarMonthView="calendar";calendarView="picker";
       root()?.scrollTo?.({top:0,left:0,behavior:"auto"});paint();requestPickerMonth();return;
     }
