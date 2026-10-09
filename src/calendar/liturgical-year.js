@@ -54,7 +54,24 @@ export function buildLiturgicalYear(selectedId){
     periodProgress:clamp01(periodDayIndex/currentPeriod.days),nextPeriod,easter,pentecost
   });
 }
-function celebration(date,en,fr,kind="temporale",importance="major"){return {date,en,fr,kind,importance}}
+// The major-day overview is not an independent ordo. It must still respect
+// explicitly defined 1960/1962 transfer rules, never imply every Marian
+// feast stays at its nominal civil date. General Rubrics 1960, nn. 96(a–b).
+export function annunciationObservanceDate(civilYear){
+  const original=`${civilYear}-03-25`,easter=gregorianEaster(civilYear);
+  const palm=addDaysIso(easter,-7),lowSunday=addDaysIso(easter,7);
+  if(original>=palm&&original<=lowSunday)return addDaysIso(lowSunday,1);
+  // A first-class Sunday of Lent/Passiontide takes precedence (rubric 96).
+  if(dateFromIso(original).getDay()===0)return addDaysIso(original,1);
+  return original;
+}
+export function allSoulsObservanceDate(civilYear){
+  const original=`${civilYear}-11-02`;
+  return dateFromIso(original).getDay()===0?addDaysIso(original,1):original;
+}
+function celebration(date,en,fr,kind="temporale",importance="major",transferredFrom=null){
+  return {date,en,fr,kind,importance,...(transferredFrom&&transferredFrom!==date?{transferredFrom}: {})};
+}
 export function buildMajorCelebrations(selectedId){
   const year=buildLiturgicalYear(selectedId),y=year.startYear,easter=year.easter;
   const a1=year.start,a2=addDaysIso(a1,7),a3=addDaysIso(a1,14),a4=addDaysIso(a1,21);
@@ -81,7 +98,7 @@ export function buildMajorCelebrations(selectedId){
     celebration(lent4,"Fourth Sunday of Lent · Laetare","Quatrième dimanche de Carême · Laetare","sunday"),
     celebration(`${y+1}-03-19`,"Saint Joseph, Spouse of the Blessed Virgin Mary","Saint Joseph, époux de la Sainte Vierge","sanctorale"),
     celebration(passion,"Passion Sunday","Dimanche de la Passion","sunday"),
-    celebration(`${y+1}-03-25`,"Annunciation of the Blessed Virgin Mary","Annonciation de la Bienheureuse Vierge Marie","sanctorale"),
+    celebration(annunciationObservanceDate(y+1),"Annunciation of the Blessed Virgin Mary","Annonciation de la Bienheureuse Vierge Marie","sanctorale","major",`${y+1}-03-25`),
     celebration(palm,"Palm Sunday","Dimanche des Rameaux","sunday"),
     celebration(holyMon,"Holy Monday","Lundi saint"),
     celebration(holyTue,"Holy Tuesday","Mardi saint"),
@@ -102,7 +119,7 @@ export function buildMajorCelebrations(selectedId){
     celebration(`${y+1}-09-29`,"Dedication of Saint Michael the Archangel","Dédicace de saint Michel Archange","sanctorale"),
     celebration(king,"Christ the King","Christ-Roi","sunday"),
     celebration(`${y+1}-11-01`,"All Saints","Toussaint","sanctorale"),
-    celebration(`${y+1}-11-02`,"Commemoration of All the Faithful Departed","Commémoration de tous les fidèles défunts","sanctorale"),
+    celebration(allSoulsObservanceDate(y+1),"Commemoration of All the Faithful Departed","Commémoration de tous les fidèles défunts","sanctorale","major",`${y+1}-11-02`),
   ];
   return rows.filter(x=>x.date>=year.start&&x.date<=year.end).sort((a,b)=>a.date.localeCompare(b.date));
 }

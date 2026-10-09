@@ -327,7 +327,7 @@ try{
     yearSegments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
     periodCards:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
     yearMarker:document.querySelector("#ao-calendar-modular-root .aoCalYearMarker")?.getBoundingClientRect?.().left??0,
-    comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-date]").length,
+    comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-year-open-day]").length,
     rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
     headingTop:document.querySelector("#ao-calendar-modular-root .aoCalV2YearHeading")?.getBoundingClientRect?.().top??-1,
     tabsBottom:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs")?.getBoundingClientRect?.().bottom??Infinity,
@@ -408,6 +408,8 @@ try{
   assert.ok(sanctoraleCount>=4,"Month Sanctorale index is missing resolved sanctoral observances");
   assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").getByText(/Rosary|Rosaire/).count()>=1,"Month Sanctorale classification lost Our Lady of the Rosary");
   assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] [data-cal-saint-date]").count()>=4,"Month Sanctorale is not wired to the shared saint-detail entry point");
+  const splitSanctorale=await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] .aoCalMonthIndexRow").evaluateAll(rows=>rows.length>=4&&rows.every(row=>row.querySelectorAll(":scope > button").length===2&&row.querySelector(":scope > button[data-cal-month-index-date]")&&row.querySelector(":scope > button[data-cal-saint-date]")));
+  assert.equal(splitSanctorale,true,"Sanctorale must offer separate Day and Life & sources controls instead of competing click actions");
   await shot("02g-calendar-month-sanctorale");
 
   await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='practices']").click();
