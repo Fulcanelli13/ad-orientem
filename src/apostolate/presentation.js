@@ -1,4 +1,5 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { scriptureContextCapsule } from "../scripture/context.js";
 
 export const APOSTOLATE_PRESENTATION_VERSION="apostolate-presentation-v1";
 export const APOSTOLATE_ROOT_ID="ao-apostolate-root";
@@ -27,7 +28,7 @@ function scenarioKind(id,state){
 function sourceMarkup(source,state){
   if(!source)return "";
   const href=isFr(state)&&source.urlFr?source.urlFr:source.url;
-  return `<li><a href="${esc(href)}" target="_blank" rel="noopener"><strong>${esc(source.work)}</strong><span>${esc(source.locator||"")}</span></a></li>`;
+  return `<li><a href="${esc(href)}" target="_blank" rel="noopener"><strong>${esc(source.work)}</strong><span>${esc(source.locator||"")}</span></a>${source.authority==="SACRED_SCRIPTURE"?scriptureContextCapsule(String(source.locator||"").split(" · ")[0],{french:isFr(state)}):""}</li>`;
 }
 
 function skillMarkup(skill,state){

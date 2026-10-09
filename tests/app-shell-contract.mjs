@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {parseScriptureContext,verifiedScriptureCommentary} from "../src/scripture/context.js";
 import { readFileSync } from "node:fs";
 import {
   APP_SURFACES,
@@ -458,4 +459,17 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal(bridge.getActive(), "learn");
 }
 
+assert.equal(parseScriptureContext("Luke 1:26–38")?.passage.book,"Luke");
+assert.equal(parseScriptureContext("1 Cor 6:18–20")?.passage.book,"1Corinthians");
+assert.equal(parseScriptureContext("Psalms 129:1")?.numbering,"SOURCE_EDITION_REQUIRED");
+assert.equal(parseScriptureContext("Unverified source 4:1"),null);
+assert.equal(verifiedScriptureCommentary(parseScriptureContext("Matthew 5:27–28").passage)?.type,"PATRISTIC_COMPILATION");
+assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:28").passage),null);
+for(const file of ["src/home/presentation.js","src/learn/sexual-ethics.js",
+  "src/pray/presentation-runtime.js","src/apostolate/presentation.js"]){
+  assert.match(readFileSync(file,"utf8"),/scriptureContextCapsule/,
+    file+" does not link into the shared contextual reader");
+}
+assert.match(readFileSync("src/pray/rosary-scripture-policy.js","utf8"),/dataset\.aoScriptureContext=passage\.reference/,
+  "Rosary lost its contextual Bible entry");
 console.log("PASS app shell contract");

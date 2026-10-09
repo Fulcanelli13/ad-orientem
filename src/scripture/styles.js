@@ -28,10 +28,32 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureMystery{padding:12px 0;border-bottom:1px solid #474337}
  .aoScriptureMystery p{font-size:15px;color:#c6bdac;margin:4px 0}
  .aoScriptureLibrary summary{cursor:pointer;font-size:18px;padding:8px 0}
+ .aoScriptureContextBar{margin:12px 0;padding:10px 0;border-block:1px solid #524b3e}
+ .aoScriptureContextTitle{margin:0 0 7px;color:#d4c7af;font:500 13px/1.4 system-ui,sans-serif}
+ .aoScriptureContextControls{display:flex;gap:6px;flex-wrap:wrap}
+ .aoScriptureLibrary .aoScriptureContextControls button{border-radius:999px;padding:6px 12px;font:500 13px/1.3 system-ui,sans-serif;background:transparent;border:1px solid #73644f}
+ .aoScriptureLibrary .aoScriptureContextControls button[aria-pressed="true"]{background:#594935;color:#fff0cf}
+ .aoScriptureContextCommentary{padding:12px 2px 6px;font:14px/1.55 Georgia,serif;color:#dfd6c8}
+ .aoScriptureContextCommentary p{margin:6px 0}
+ .aoScriptureContextCommentary a,#ao-scripture-overlay [data-scripture-whole-chapter]{color:#e3cb9b;text-underline-offset:3px}
  .aoHomeScriptureLink{margin:12px 0}
  @media(max-width:700px){.aoScriptureNav{grid-template-columns:repeat(2,minmax(0,1fr))}.aoScriptureLibrary{padding:16px}.aoScriptureText{font-size:18px}}
  @media(prefers-reduced-motion:reduce){#ao-scripture-overlay *{scroll-behavior:auto!important;transition:none!important}}
  `;
  (doc.head||doc.documentElement).append(style);
  return true;
+}
+
+/* Installed on cold boot: context capsules are usable before opening Bible. */
+export function installScriptureContextStyles(doc=globalThis.document){
+ if(!doc?.createElement)return false;
+ if(doc.getElementById("ao-scripture-context-style"))return true;
+ const css=doc.createElement("style");css.id="ao-scripture-context-style";
+ css.textContent=`
+ .aoScriptureContextCapsule{display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;min-height:30px;margin:4px 3px;padding:5px 11px;border-radius:999px;border:1px solid var(--liturgical-border,rgba(201,172,111,.48));background:var(--liturgical-soft,rgba(201,172,111,.055));color:var(--liturgical,#ceb680);font:600 max(12px,.75rem)/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.005em;cursor:pointer}
+ .aoScriptureContextCapsule:focus-visible{outline:2px solid var(--liturgical,#ceb680);outline-offset:3px}
+ .aoScriptureContextError{display:inline-block;margin:6px;color:var(--ao-text-primary,#ece6d6);font:13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+ @media(prefers-reduced-motion:reduce){.aoScriptureContextCapsule{transition:none!important}}
+ `;
+ (doc.head||doc.documentElement).append(css);return true;
 }

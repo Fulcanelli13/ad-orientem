@@ -218,6 +218,13 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
   const line=root.ownerDocument.createElement("p");
   line.textContent=passage.reference;
   section.append(caption,line);
+  const capsule=root.ownerDocument.createElement("button");
+  capsule.type="button";
+  capsule.className="aoScriptureContextCapsule";
+  capsule.dataset.aoScriptureContext=passage.reference;
+  capsule.textContent=french?"Contexte · Bible":"Context · Bible";
+  capsule.setAttribute("aria-label",(french?"Lire en contexte : ":"Read in context: ")+passage.reference);
+  section.append(capsule);
   if(passage.type==="traditional_typology"){
     const note=root.ownerDocument.createElement("p");
     note.className="aoRosaryTypologyNote";
