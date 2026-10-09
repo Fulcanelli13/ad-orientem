@@ -181,4 +181,51 @@ const readerDomSource=readFileSync("src/mass/reader-dom.js","utf8");
 expect(readerDomSource.includes("if(pop && current.cardUpdate)"),
   "Guide popover is still dismissed by transient in-card updates");
 
+// The DOM adapter can be remounted against the same long-lived root. A second
+// mount must not double the delegated click and keyboard commands.
+const registered=new Map();
+const guidePopover={hidden:true};
+const rootWithListeners={
+  innerHTML:"",dataset:{},
+  ownerDocument:{defaultView:{}},
+  querySelector(selector){
+    if(selector==='[data-role="guide-popover"]')return guidePopover;
+    return null;
+  },
+  querySelectorAll(){return [];},
+  addEventListener(type,handler){
+    if(!registered.has(type))registered.set(type,new Set());
+    registered.get(type).add(handler);
+  },
+  removeEventListener(type,handler){registered.get(type)?.delete(handler);},
+};
+let nextCount=0;
+const adapter=createReaderDomAdapter({
+  root:rootWithListeners,
+  onNext:()=>{nextCount++;return null;},
+  allowPresentationModeSwitch:true,
+});
+adapter.mount(prepared);
+adapter.mount(prepared);
+expect(registered.get("click")?.size===1,"reader remount duplicated root click handlers");
+expect(registered.get("keydown")?.size===1,"reader remount duplicated root keyboard handlers");
+const navNode={dataset:{readerNav:"next"}};
+const navTarget={tagName:"BUTTON",closest(selector){return selector==="[data-reader-nav]"?navNode:null;}};
+const dispatch=(type,event)=>{for(const handler of registered.get(type)??[])handler(event);};
+dispatch("click",{target:navTarget});
+expect(nextCount===1,"single navigation click moved two Mass cards after remount");
+guidePopover.hidden=false;
+dispatch("keydown",{key:"ArrowRight",target:{tagName:"BUTTON"},preventDefault(){}});
+expect(nextCount===1,"keyboard advanced Mass beneath an open Guide");
+guidePopover.hidden=true;
+dispatch("keydown",{key:"ArrowRight",target:{tagName:"BUTTON"},preventDefault(){}});
+expect(nextCount===2,"keyboard card navigation was lost after Guide closed");
+adapter.destroy();
+expect(registered.get("click")?.size===0&&registered.get("keydown")?.size===0,
+  "reader destroy leaked delegated root listeners");
+adapter.mount(prepared);
+expect(registered.get("click")?.size===1&&registered.get("keydown")?.size===1,
+  "reader remount after destroy did not register one set of listeners");
+adapter.destroy();
+
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
