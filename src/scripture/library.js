@@ -5,6 +5,7 @@ import { createScripturePreferences } from "./preferences.js";
 import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
 import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./reference-safety.js";
 import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
+import { verifiedScriptureCommentary } from "./context.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -36,7 +37,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},passage=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},passage=null,context=null
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -47,6 +48,8 @@ export function mountScriptureLibrary(root,{
  let location=passage?scripturePassage(passage):scripturePassage({book:"Luke",chapter:1,verseStart:28});
  let query="";
  let section="read";
+ let contextDepth="selected";
+ let commentaryVisible=false;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
  function moveEdition(nextEdition){
@@ -150,6 +153,46 @@ export function mountScriptureLibrary(root,{
      label.append(input);nav.append(label);
    }
    wrap.append(nav);
+   // Context is a single quiet row beneath the Bible/edition controls.
+   // It never changes or replaces the Mass Proper, Rosary meditation or source.
+   if(context?.reference){
+     const contextBar=element("section",null,"aoScriptureContextBar");
+     contextBar.dataset.aoScriptureContextReader=context.reference;
+     const title=element("p",(lang==="fr"?"Passage cité · ":"Cited passage · ")+context.reference,"aoScriptureContextTitle");
+     contextBar.append(title);
+     const controls=element("div",null,"aoScriptureContextControls");
+     for(const [key,en,fr] of [["selected","Verses","Versets"],["chapter","Chapter","Chapitre"],["commentary","Commentary","Commentaire"]]){
+       const button=element("button",lang==="fr"?fr:en);
+       button.type="button";button.dataset.scriptureContextDepth=key;
+       button.setAttribute("aria-pressed",String(key==="commentary"?commentaryVisible:!commentaryVisible&&contextDepth===key));
+       button.addEventListener("click",()=>{
+         if(key==="commentary")commentaryVisible=!commentaryVisible;
+         else{contextDepth=key;commentaryVisible=false;}
+         draw();
+       });
+       controls.append(button);
+     }
+     contextBar.append(controls);
+     if(commentaryVisible){
+       const verified=verifiedScriptureCommentary(location);
+       const area=element("div",null,"aoScriptureContextCommentary");
+       area.setAttribute("role","region");
+       area.setAttribute("aria-label",lang==="fr"?"Commentaire vérifié":"Verified commentary");
+       if(verified){
+         area.append(element("p",verified.title));
+         area.append(element("p",lang==="fr"
+           ?"Compilation patristique attribuée ; commentaire distinct du texte inspiré."
+           :"Attributed patristic compilation, distinct from inspired Scripture."));
+         const link=element("a",lang==="fr"?"Lire le commentaire à la source ↗":"Read commentary at source ↗");
+         link.href=verified.url;link.target="_blank";link.rel="noopener noreferrer";
+         link.dataset.scriptureCommentarySource="verified";area.append(link);
+       }else area.append(element("p",lang==="fr"
+         ?"Aucun commentaire authentifié pour ce passage. Aucune attribution n’est inventée."
+         :"No authenticated passage-specific commentary is currently linked. No attribution is invented."));
+       contextBar.append(area);
+     }
+     wrap.append(contextBar);
+   }
    const crosswalkWarning=scriptureReferenceWarning(location.book,lang);
    if(crosswalkWarning){
      const notice=element("p",crosswalkWarning,"aoScriptureNotice aoScriptureReferenceWarning");
@@ -159,11 +202,23 @@ export function mountScriptureLibrary(root,{
    }
    const main=element("div",null,"aoScriptureReading");
    main.append(element("h3",passageReference(location)));
+   if(context?.reference&&contextDepth==="chapter"&&!commentaryVisible){
+     const chapterLink=element("a",lang==="fr"?"Lire le chapitre complet à la source ↗":"Read full chapter at source ↗");
+     // Verse-specific links remain in the usual action; this link deliberately
+     // asks for the whole chapter in the selected textual witness.
+     const chapterQuery=location.book+" "+location.chapter;
+     chapterLink.href=lang==="fr"?FRENCH_INDEX:
+       "https://www.biblegateway.com/passage/?version=DRA&search="+encodeURIComponent(chapterQuery);
+     chapterLink.target="_blank";chapterLink.rel="noopener noreferrer";
+     chapterLink.dataset.scriptureWholeChapter="";
+     main.append(chapterLink);
+     if(lang==="fr")main.append(element("p","Repérez le livre et le chapitre dans la Bible Crampon ; ce lien mène à l’index de l’édition.","aoScriptureNotice"));
+   }
    const chapterEntries=records.filter(r=>validatedRecord(r,editionId)&&r.book===location.book&&r.chapter===location.chapter)
      .sort((a,b)=>a.verseStart-b.verseStart);
    const textBlock=element("div",null,"aoScriptureText");
    if(chapterEntries.length){
-     for(const item of chapterEntries){
+     for(const item of chapterEntries.filter(item=>contextDepth==="chapter"||!context?.reference|| (item.verseStart>=location.verseStart&&item.verseStart<=location.verseEnd))){
        const verse=element("p",item.text,"aoScriptureVerse");verse.dataset.verse=String(item.verseStart);
        const sup=element("span",String(item.verseStart)+" ");sup.className="aoScriptureVerseNumber";
        verse.prepend(sup);textBlock.append(verse);
@@ -255,7 +310,7 @@ export function mountScriptureLibrary(root,{
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
    setPassage(next){location=scripturePassage(next);draw();},
    setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");records=next;draw();},
-   status(){return Object.freeze({language:lang,editionId,passage:location,bookmarks:prefs.load().bookmarks.length});},
+   status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
 }
