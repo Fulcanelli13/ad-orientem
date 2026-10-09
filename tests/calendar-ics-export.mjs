@@ -45,7 +45,7 @@ assert.equal((serialize1962CalendarMonth("2027-02",month("2027-02"),{now:fixture
 for(const [why,modify] of [
   ["missing day",rows=>rows.pop()],
   ["failed day",rows=>rows[5].status="failed"],
-  ["missing Proper",rows=>{rows[7].proper.status="unavailable";rows[7].proper.data=null}],
+  ["missing liturgical identity",rows=>{rows[7].proper.status="unavailable";rows[7].proper.data=null;rows[7].day.main.title="";rows[7].day.main.rank="";}],
   ["wrong date",rows=>rows[1].date="2026-11-02"],
   ["duplicate",rows=>rows[1].date=rows[0].date],
   ["missing rank",rows=>{rows[0].proper.data.rank="";rows[0].day.main.rank=""}],
@@ -53,6 +53,14 @@ for(const [why,modify] of [
   const rows=month("2026-10");modify(rows);
   assert.throws(()=>serialize1962CalendarMonth("2026-10",rows),undefined,why);
 }
-assert.throws(()=>serialize1962CalendarMonth("2026-13",month("2026-10")));
+const orphanProper=month("2026-10");
+ orphanProper[7].proper={status:"unavailable",data:null};
+ orphanProper[7].day.main.path="Sancti/10-08";
+ const partialTexts=serialize1962CalendarMonth("2026-10",orphanProper,{now:fixtureTime});
+ assert.equal((partialTexts.match(/BEGIN:VEVENT/g)||[]).length,31,
+   "Source-resolved calendar day must survive a separate Proper text transport failure");
+ assert.match(partialTexts.replace(/\r\n[ \t]/g,""),/Sancti\/10-08/,
+   "Source path of actual day must be retained when Proper text unavailable");
+ assert.throws(()=>serialize1962CalendarMonth("2026-13",month("2026-10")));
 assert.throws(()=>serialize1962CalendarMonth("2026-10",month("2026-10"),{language:"la"}));
 console.log("PASS 1962 all-day monthly .ics: 31/29/28 entries, UTF-8 line folding, EN/FR, exclusive DTEND, stable UIDs, fail-closed partials");
