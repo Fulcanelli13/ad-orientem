@@ -60,6 +60,31 @@ try{
   for(let i=0;i<deferred.length;i++)assert.equal(hits.filter(x=>x.path===deferred[i]).length,once[i],"Prayer scripts reloaded on second entry");
   assert.deepEqual(errors.filter(x=>/module|SyntaxError|ReferenceError|TypeError|Failed to fetch/i.test(x)),[],"Deferred Prayer caused page errors");
 
+  // Dying Companion -> Serious Illness Formation must use the Learn child
+  // owner and return to the original bedside Prayer when its guide closes.
+  const bedside=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("pray.dying_companion"));
+  assert.equal(bedside?.ok,true,"Dying Companion did not open");
+  const illnessLink=page.locator("#aoPray435930.open [data-tp381-route='learn.rites.sick']");
+  await illnessLink.waitFor({state:"visible",timeout:10000});
+  await illnessLink.tap();
+  await page.waitForFunction(()=>
+    globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().route==="learn.rites.sick" &&
+    globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().open===true,
+    null,{timeout:20000});
+  assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().child),"learn.rites.sick",
+    "Prayer launched the Formation module without registering its child owner");
+  assert.deepEqual(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().externalReturn),
+    {surface:"pray",route:"pray.dying_companion"},
+    "Serious Illness guide did not retain its bedside Prayer return context");
+  await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").tap();
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray" &&
+    globalThis.AO_TRADITIONAL_PRAY_V381?.status?.().route==="pray.dying_companion" &&
+    globalThis.AO_PRAY_APP_V1?.status?.().open===true,
+    null,{timeout:20000});
+  assert.equal(await page.locator("#ao-learn-traditional-root").count(),0,
+    "Formation guide still overlays the restored Prayer module");
+
   // Calendar and Coming Up deep-links invoke AO_MODULES directly; they must
   // not require visiting the Prayer tab first.
   const direct=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
