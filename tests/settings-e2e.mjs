@@ -95,6 +95,15 @@ try{
   await page.locator("[data-profile-name]").fill("St Test Church");
   await page.locator("[data-profile-name]").blur();
   await page.locator("[data-profile-use-default]").click();
+  // Destructive controls must fail closed when browser confirmation is absent.
+  await page.evaluate(()=>{
+    globalThis.__aoTestConfirm=globalThis.confirm;
+    globalThis.confirm=undefined;
+  });
+  await page.locator("[data-profile-delete]").click();
+  assert.equal(await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().profileCount),1,
+    "Delete profile ran without explicit confirmation");
+  await page.evaluate(()=>{globalThis.confirm=globalThis.__aoTestConfirm;delete globalThis.__aoTestConfirm;});
   await page.locator("[data-settings-back]").click();
   await page.locator("[data-settings-back]").click();
 
