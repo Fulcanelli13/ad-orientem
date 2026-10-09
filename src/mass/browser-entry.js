@@ -182,24 +182,72 @@ export function checkpointPersistedMass({
   }, storage);
 }
 
-function installReaderCloseBridge(preview) {
-  const close = preview?.root?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
-  if (!close?.addEventListener) return null;
+// Shell navigation reports expected failures as {ok:false}; Promise.catch alone
+// cannot detect them. Cancellation of the live-Mass leave prompt is not an error.
+export async function navigateReaderSurface(surface,{win=globalThis}={}){
+  const shell=win?.AO_APP_SHELL_V1;
+  if(typeof shell?.navigate!=="function")throw new Error("APP_SHELL_NOT_READY");
+  const result=await shell.navigate(surface);
+  if(result===false || result?.ok===false){
+    if(result?.reason==="LIVE_MASS_LEAVE_CANCELLED")return false;
+    throw new Error(String(result?.reason||"READER_NAVIGATION_UNAVAILABLE"));
+  }
+  return true;
+}
 
-  const onClick = (event) => {
-    const shell = globalThis.AO_APP_SHELL_V1;
-    if (typeof shell?.navigate !== "function") return;
+function installReaderSurfaceBridge(preview,{selector,surface,language="en"}){
+  const button=preview?.root?.querySelector?.(selector);
+  if(!button?.addEventListener)return null;
+  let opening=false,disposed=false,notice=null;
+  const fr=String(language).startsWith("fr");
+  const clearNotice=()=>{notice?.remove?.();notice=null;};
+  const onClick=event=>{
     event.preventDefault?.();
     event.stopImmediatePropagation?.();
-    void Promise.resolve(shell.navigate("home")).catch((error) => {
-      console.error("R17 reader Home navigation failed", error);
+    if(opening||disposed)return;
+    opening=true;
+    button.disabled=true;
+    button.setAttribute?.("aria-busy","true");
+    clearNotice();
+    // Preserve the exact current card/cue before leaving the Mass surface.
+    checkpointPersistedMass({preview});
+    void navigateReaderSurface(surface).catch(error=>{
+      if(disposed)return;
+      console.error("R17 reader "+surface+" navigation failed",error);
+      const doc=button.ownerDocument;
+      const host=preview?.root?.querySelector?.("[data-ao-reader-shell]")??preview?.root;
+      if(!doc?.createElement||!host?.append)return;
+      notice=doc.createElement("p");
+      notice.className="aoMassReaderNavigationError";
+      notice.setAttribute("role","alert");
+      notice.dataset.readerNavigationError=surface;
+      notice.textContent=surface==="home"
+        ?(fr?"Impossible d’ouvrir l’accueil. Réessayez.":"Home could not open. Please retry.")
+        :(fr?"Impossible d’ouvrir les réglages. Réessayez.":"Settings could not open. Please retry.");
+      notice.style.cssText="position:absolute;z-index:65;top:58px;left:8px;right:8px;max-width:340px;margin:auto;padding:11px 13px;border:1px solid rgba(201,164,122,.35);border-radius:9px;background:#18201c;color:#e9e9df;font:500 13px/1.5 var(--ao-font-ui,system-ui,sans-serif);text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.35)";
+      host.append(notice);
+    }).finally(()=>{
+      opening=false;
+      if(!disposed){
+        button.disabled=false;
+        button.removeAttribute?.("aria-busy");
+      }
     });
   };
-  close.addEventListener("click", onClick, true);
-  return Object.freeze({
-    dispose() {
-      close.removeEventListener?.("click", onClick, true);
-    },
+  button.addEventListener("click",onClick,true);
+  return Object.freeze({dispose(){
+    disposed=true;
+    button.removeEventListener?.("click",onClick,true);
+    button.disabled=false;
+    button.removeAttribute?.("aria-busy");
+    clearNotice();
+  }});
+}
+
+function installReaderCloseBridge(preview,prepared){
+  return installReaderSurfaceBridge(preview,{
+    selector:"[data-reader-home], [aria-label='Close Mass reader']",
+    surface:"home",language:prepared?.readerPreferences?.language,
   });
 }
 
@@ -353,21 +401,10 @@ function installReaderScriptureBridge(preview,prepared){
   return Object.freeze({refresh,dispose(){root.removeEventListener("click",onClick,true);box.remove()}});
 }
 
-function installReaderParametersBridge(preview) {
-  const button=preview?.root?.querySelector?.("[data-reader-parameters]");
-  if(!button?.addEventListener)return null;
-  const onClick=(event)=>{
-    const shell=globalThis.AO_APP_SHELL_V1;
-    if(typeof shell?.navigate!=="function")return;
-    event.preventDefault?.();
-    event.stopImmediatePropagation?.();
-    void Promise.resolve(shell.navigate("settings")).catch((error)=>{
-      console.error("R17 reader Settings navigation failed",error);
-    });
-  };
-  button.addEventListener("click",onClick,true);
-  return Object.freeze({
-    dispose(){button.removeEventListener?.("click",onClick,true);}
+function installReaderParametersBridge(preview,prepared){
+  return installReaderSurfaceBridge(preview,{
+    selector:"[data-reader-parameters]",
+    surface:"settings",language:prepared?.readerPreferences?.language,
   });
 }
 
@@ -485,8 +522,8 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
-  installReaderCloseBridge(previewState.preview);
-  installReaderParametersBridge(previewState.preview);
+  installReaderCloseBridge(previewState.preview,prepared);
+  installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
