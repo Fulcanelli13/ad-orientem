@@ -172,8 +172,23 @@ const requiredPlaces=new Set([
   "place:IN:basilica-bom-jesus-old-goa",
   "place:RW:sanctuaire-kibeho",
   "place:FR:notre-dame-paris",
+  // Freeze recovered institutional relic and pilgrimage owners including the Holy Tunic in Argenteuil.
+  "place:CA:oratoire-saint-joseph-montreal",
+  "place:FR:basilique-saint-denis",
+  "place:PL:sanktuarium-jana-pawla-ii-krakow",
+  "place:FR:basilique-saint-denys-argenteuil",
+  "place:FR:cathedrale-notre-dame-amiens",
+  "place:FR:basilique-sainte-marie-madeleine-vezelay",
+  "place:FR:basilique-saint-sernin-toulouse",
+  "place:FR:basilique-saint-nicolas-de-port",
+  "place:FR:basilique-saint-quentin-aisne",
+  "place:FR:cathedrale-saint-etienne-sens",
+  "place:CH:abbaye-saint-maurice-agaune",
+  "place:DE:kolner-dom-three-kings",
+  "place:IT:basilica-san-marco-venezia",
+  "place:IT:basilica-san-domenico-bologna",
 ]);
-assert.ok(requiredPlaces.size>=117,"frozen place identities must not silently shrink");
+assert.ok(requiredPlaces.size>=131,"frozen place identities must not silently shrink");
 for(const id of ["place:FR:saint-joseph-bessillon","place:FR:notre-dame-graces-cotignac","place:FR:notre-dame-la-salette-fallavaux","place:FR:abbaye-mont-saint-michel","place:IT:san-michele-gargano","place:FR:carmel-lisieux","place:FR:espace-bernadette-nevers","place:FR:basilique-ars","place:FR:notre-dame-du-laus","place:PL:divine-mercy-plock","place:IT:basilica-sant-antonio-padova","place:IT:basilica-san-francesco-assisi","place:IT:basilica-santa-rita-cascia","place:IT:basilica-san-nicola-bari","place:IT:santuario-san-pio-rotondo","place:IN:basilica-bom-jesus-old-goa","place:RW:sanctuaire-kibeho","place:FR:notre-dame-paris"])assert.ok(corpus.shrines.some(x=>x.place_id===id),id+" source-recovered shrine missing");
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
