@@ -7,7 +7,7 @@ if(process.argv.includes("--verify")){
   const html=readFileSync(PATH,"utf8");
   const thinPath="data/presentation/startup-thin-shell.v1.json";
   const thin=existsSync(thinPath)?JSON.parse(readFileSync(thinPath,"utf8")):null;
-  if(Buffer.byteLength(html,"utf8")!==(thin?.shellBytes??manifest.lazyHtmlBytes))throw Error("Lazy SVG index byte count drifted");
+  if(Buffer.byteLength(html,"utf8")!==(thin?.packedShellBytes??thin?.shellBytes??manifest.lazyHtmlBytes))throw Error("Lazy SVG index byte count drifted");
   for(const icon of manifest.icons){
     if(!html.includes('data-ao-refined-lazy="./'+icon.path+'#'+icon.id+'"'))throw Error("Missing inert icon "+icon.id);
     if(html.includes('<use href="./'+icon.path+'#'+icon.id+'"'))throw Error("Eager SVG icon request returned: "+icon.id);
