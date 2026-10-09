@@ -8,7 +8,7 @@ const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const data=load("../data/mass/scripture-extended-lesson.v1.json");
 assert.equal(VERIFIED_EXTENDED_LESSON_VERSION,data.version);
 assert.deepEqual(VERIFIED_EXTENDED_LESSON_READINGS,data.readings);
-assert.equal(data.readings.length,25);
+assert.equal(data.readings.length,26);
 const source=data.readings[0];
 assert.equal(source.sourcePath,"Tempora/Quad6-3");
 assert.equal(source.sourceSectionId,"LectioL1");
