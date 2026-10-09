@@ -107,7 +107,10 @@ if(deferred){
   assert.match(browser,/installCalendarBrowserOwner/, "Deferred Calendar owner must really install");
 }
 assert.match(browser, /modular-calendar-v2-liturgical-year/);
-assert.match(browser, /calendarView==="year"\?yearSurface/);
+assert.match(browser, /if\(calendarView==="year"\)return/, "Year dashboard must remain available if day resolution is pending");
+assert.match(browser, /if\(calendarView==="picker"\)return/, "Month picker must remain available if day resolution is pending");
+assert.match(browser, /calendarView==="year"\)return \`\$\{tabsMarkup\(\)\}\$\{yearSurface/, "Year view must render before Day's resolution guard");
+assert.match(browser, /calendarView==="picker"\)return \`\$\{tabsMarkup\(\)\}\$\{pickerSurface/, "Month must render before Day's resolution guard");
 assert.match(browser, /data-cal-view/);
 assert.match(browser, /aoCalV2Ring/, "Liturgical Year lost its sourced progress ring");
 assert.match(browser, /aoCalV2YearIdentity/, "Liturgical Year lost selected-day and period identity");
