@@ -52,6 +52,11 @@ export function installScriptureContextStyles(doc=globalThis.document){
  css.textContent=`
  .aoScriptureContextCapsule{display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;min-height:30px;margin:4px 3px;padding:5px 11px;border-radius:999px;border:1px solid var(--liturgical-border,rgba(201,172,111,.48));background:var(--liturgical-soft,rgba(201,172,111,.055));color:var(--liturgical,#ceb680);font:600 max(12px,.75rem)/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.005em;cursor:pointer}
  .aoScriptureContextCapsule:focus-visible{outline:2px solid var(--liturgical,#ceb680);outline-offset:3px}
+ .aoP435930ScriptureOrigin{display:flex;flex-wrap:wrap;align-items:center;gap:5px 10px;margin:9px 0 13px}
+ .aoP435930ScriptureOrigin small{color:var(--muted,rgba(228,223,213,.70));font:500 max(12px,.75rem)/1.45 var(--ao-font-ui,system-ui,sans-serif);max-width:38rem}
+ .aoMassScriptureStudy{display:grid;gap:3px;margin:8px 0 0;padding-top:8px;border-top:1px solid rgba(206,182,128,.2)}
+ .aoMassScriptureStudy[hidden],.aoMassScriptureStudy [hidden]{display:none!important}
+ .aoMassScriptureStudyStatus{display:block;padding:3px 7px;color:#c9c3b5;font:500 12px/1.45 system-ui,sans-serif}
  .aoScriptureContextError{display:inline-block;margin:6px;color:var(--ao-text-primary,#ece6d6);font:13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
  @media(prefers-reduced-motion:reduce){.aoScriptureContextCapsule{transition:none!important}}
  `;
