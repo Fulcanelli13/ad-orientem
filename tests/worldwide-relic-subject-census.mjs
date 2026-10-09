@@ -6,14 +6,14 @@ const published=read("data/explore/sacred-phenomena-seed.v1.json");
 const geo=read("data/geography/seed-registry.v1.json");
 assert.equal(census.schema,"SACRED_ATLAS_SUBJECT_OBJECT_CUSTODY_CENSUS_V1");
 assert.equal(census.status,"RESEARCH_ONLY_NOT_GLOBAL_COMPLETION");
-assert.equal(census.legacy_object_crosswalk.length,published.relics.length);
+assert.ok(published.relics.length>=census.legacy_object_crosswalk.length);
 assert.equal(census.institutional_custody_evidence.length,22);
 assert.ok(census.systematic_subject_backlog.length>=120);
 assert.ok(census.subjects.length>=150);
 const subjects=new Map(census.subjects.map(x=>[x.subject_id,x]));
 assert.equal(subjects.size,census.subjects.length,"duplicate subject identity");
-assert.equal(new Set(census.legacy_object_crosswalk.map(x=>x.legacy_relic_id)).size,published.relics.length);
-assert.deepEqual(new Set(census.legacy_object_crosswalk.map(x=>x.legacy_relic_id)),new Set(published.relics.map(x=>x.id)),"legacy objects lost or duplicated");
+assert.equal(new Set(census.legacy_object_crosswalk.map(x=>x.legacy_relic_id)).size,census.legacy_object_crosswalk.length);
+assert.ok(census.legacy_object_crosswalk.every(x=>published.relics.some(r=>r.id===x.legacy_relic_id)),"original relic objects must all survive expanded publications");
 const claimIds=new Set(),geoIds=new Set(geo.places.map(x=>x.place_id)),originalLinks=new Set();
 for(const evidence of census.institutional_custody_evidence){
  assert.ok(subjects.has(evidence.subject_id),evidence.evidence_id+" unknown subject");
