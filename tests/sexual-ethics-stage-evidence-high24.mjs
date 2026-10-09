@@ -44,7 +44,7 @@ assert.equal(chains,192);
 assert.equal(references,pack.stage_reference_count||282);
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,605);
+assert.equal(audit.summary.stage_specific_mapping_references,612);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 const pending=CSE_DEBATE_IDS.filter(id=>!CSE_HIGH_STAGE_SOURCE_IDS[id]);
