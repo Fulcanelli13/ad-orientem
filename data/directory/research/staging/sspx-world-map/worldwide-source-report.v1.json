@@ -1,0 +1,136 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_WORLD_MAP_INDEX_REPORT_V1",
+  "retrieved_on": "2026-10-09",
+  "source_url": "https://map.fsspx.org/fr/districts/",
+  "all_24_official_index_pages_recovered": true,
+  "expected_source_entity_memberships": 941,
+  "distinct_official_source_ids": 941,
+  "official_district_and_institutional_groups": 24,
+  "sunday_labelled_source_entities": 577,
+  "weekday_labelled_source_entities": 279,
+  "districts": [
+    {
+      "district": "africa",
+      "source_entities": 32,
+      "sunday_badged": 9
+    },
+    {
+      "district": "asia",
+      "source_entities": 53,
+      "sunday_badged": 35
+    },
+    {
+      "district": "australia",
+      "source_entities": 43,
+      "sunday_badged": 30
+    },
+    {
+      "district": "austria",
+      "source_entities": 35,
+      "sunday_badged": 26
+    },
+    {
+      "district": "benelux",
+      "source_entities": 11,
+      "sunday_badged": 6
+    },
+    {
+      "district": "brazil",
+      "source_entities": 18,
+      "sunday_badged": 10
+    },
+    {
+      "district": "canada",
+      "source_entities": 41,
+      "sunday_badged": 28
+    },
+    {
+      "district": "central-america",
+      "source_entities": 16,
+      "sunday_badged": 13
+    },
+    {
+      "district": "dillwyn",
+      "source_entities": 1,
+      "sunday_badged": 0
+    },
+    {
+      "district": "econe",
+      "source_entities": 1,
+      "sunday_badged": 0
+    },
+    {
+      "district": "flavigny",
+      "source_entities": 1,
+      "sunday_badged": 0
+    },
+    {
+      "district": "france",
+      "source_entities": 235,
+      "sunday_badged": 139
+    },
+    {
+      "district": "general-house",
+      "source_entities": 5,
+      "sunday_badged": 1
+    },
+    {
+      "district": "germany",
+      "source_entities": 51,
+      "sunday_badged": 33
+    },
+    {
+      "district": "great-britain-ireland",
+      "source_entities": 32,
+      "sunday_badged": 20
+    },
+    {
+      "district": "italy",
+      "source_entities": 28,
+      "sunday_badged": 21
+    },
+    {
+      "district": "la-reja",
+      "source_entities": 1,
+      "sunday_badged": 0
+    },
+    {
+      "district": "mexico",
+      "source_entities": 41,
+      "sunday_badged": 30
+    },
+    {
+      "district": "poland",
+      "source_entities": 49,
+      "sunday_badged": 35
+    },
+    {
+      "district": "south-america",
+      "source_entities": 36,
+      "sunday_badged": 24
+    },
+    {
+      "district": "spain-portugal",
+      "source_entities": 14,
+      "sunday_badged": 9
+    },
+    {
+      "district": "switzerland",
+      "source_entities": 37,
+      "sunday_badged": 16
+    },
+    {
+      "district": "usa",
+      "source_entities": 158,
+      "sunday_badged": 91
+    },
+    {
+      "district": "zaitzkofen",
+      "source_entities": 2,
+      "sunday_badged": 1
+    }
+  ],
+  "staging_only": true,
+  "publishable_mass_venues_created": 0,
+  "notes": "This is a worldwide census of official place identities, not a deduplicated public Sunday Mass count; it includes schools, houses, convents, priories and missions. Public Sunday tags are only discovery hints and require address and current schedule adjudication. Source pages were retrieved via read-only official-page HTML delivery because GitHub runners receive HTTP 403 from the official origin."
+}
