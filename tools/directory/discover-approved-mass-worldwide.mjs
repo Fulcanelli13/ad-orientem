@@ -28,7 +28,9 @@ export function parseCountryPage(html,{countryCode,pageUrl}){
   if(!seen.has(id)||seen.get(id).name.length<6&&a.text.length>seen.get(id).name.length)seen.set(id,{source_id:"LMD:"+id,external_id:id,name:a.text.length>5?a.text:id,
    country_code:iso(countryCode),directory_url:a.url,source_type:"THIRD_PARTY_DIRECTORY",publication_state:"RESEARCH_ONLY"});
  }
- const match=stripTags(html).match(/Showing\s+(\d+)\s*[-–]\s*(\d+)\s+of\s+([\d,]+)/i);
+ const plain=stripTags(html);
+ const match=plain.match(/Showing\s+(\d+)\s*[-–]\s*(\d+)\s+of\s+([\d,]+)/i);
+ const headline=plain.match(/Results:\s*([\d,]+)\s+venues/i);
  return {venues:[...seen.values()],pagination:match?{first:+match[1],last:+match[2],total:+match[3].replace(/,/g,"")}:null,reportedTotal:headline?Number(headline[1].replace(/,/g,"")):null};
 }
 const HAS_MASS=/\b(?:Mass|Messe|Missa|Misa|messe|messe tridentine|Sung Mass|Low Mass)\b/i;
@@ -128,7 +130,8 @@ if(directlyInvoked){
  const args=argsFor(process.argv.slice(2));
  if(args.countries.length===1&&args.countries[0]==="ALL"){
   const benchmark=JSON.parse(await fs.readFile("data/directory/research/adorientem-church-public-benchmark-20261009.v1.json","utf8"));
-  args.countries=Object.keys(benchmark.independent_official_source.latinmassdir_country_counts);
+  const counts=benchmark.independent_official_source.latinmassdir_country_counts;
+  args.countries=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
  }
  if(!args.allowRemote)throw Error("Pass --remote to acknowledge paced external access. Tests use fixtures offline.");
  const result=await discoverApprovedDirectory(args);
