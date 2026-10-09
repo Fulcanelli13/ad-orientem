@@ -279,8 +279,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 35,
-  places: 156,
+  geoAreas: 41,
+  places: 175,
   directoryPlaceLinks: 1,
 });
 
