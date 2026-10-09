@@ -58,6 +58,13 @@ try{
  await dialog.locator(".aoScriptureSearch input").fill("Tob");
  await dialog.locator(".aoScriptureResults button").first().click();
  assert.match(await dialog.locator(".aoScriptureReading h3").innerText(),/Tobit 1:1/);
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Esther");
+ assert.equal(await dialog.locator("[data-crosswalk-unverified=Esther]").count(),1);
+ assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/chapter order differ/i);
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Psalms");
+ assert.equal(await dialog.locator("[data-crosswalk-unverified=Psalms]").count(),1);
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("John");
+ assert.equal(await dialog.locator("[data-crosswalk-unverified]").count(),0);
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),1);
