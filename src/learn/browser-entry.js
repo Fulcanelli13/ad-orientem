@@ -5,13 +5,10 @@ import {
   LEARN_PRESENTATION_VERSION,
   renderLearnPresentation,
 } from "./presentation.js";
-import { ensureTraditionalLearnRegistry, installTraditionalLearnModules, TRADITIONAL_LEARN_ROUTES } from "./traditional-life.js";
-import { ensureSexualEthicsRegistry, installSexualEthicsModule } from "./sexual-ethics.js";
-import { ensureSpiritualLifeRegistry, installSpiritualLifeModule } from "./spiritual-life.js";
-import { SPIRITUAL_LIFE_ROUTE_ID } from "./spiritual-life-data.js";
-import { ensureLatinCourseRegistry, installLatinCourseModule, LATIN_COURSE_ROUTE_ID } from "./latin-course-v2.js";
-import { ensureGlossaryRegistry, installGlossaryModule, GLOSSARY_ROUTE_ID } from "../glossary/browser-entry.js";
-import { ensureMassFormationRegistry, installMassFormationModule, MASS_FORMATION_ROUTE } from "./mass-formation.js";
+import {
+  ensureLearnModule,installLazyLearnRegistry,TRADITIONAL_LEARN_ROUTES,
+  SPIRITUAL_LIFE_ROUTE_ID,LATIN_COURSE_ROUTE_ID,GLOSSARY_ROUTE_ID,MASS_FORMATION_ROUTE,
+} from "./lazy-module-registry.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
@@ -264,12 +261,13 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
 
   async function openModule(id,opts={}){
     if(!state.open||!MODULE_SET.has(id))return false;
-    ensureTraditionalLearnRegistry(win);
-    ensureLatinCourseRegistry(win);
-    ensureGlossaryRegistry(win);
-    ensureMassFormationRegistry(win);
-    ensureSexualEthicsRegistry(win);
-    ensureSpiritualLifeRegistry(win);
+    try{
+      await ensureLearnModule(id,win);
+    }catch(error){
+      try{win?.console?.error?.("Formation module import failed",error);}catch{}
+      state.error=L(win,"This module could not be opened.","Ce module n’a pas pu être ouvert.");
+      paint();return false;
+    }
     const registry=win?.AO_MODULES;
     if(typeof registry?.open!=="function"){
       state.error=L(win,"This module could not be opened.","Ce module n’a pas pu être ouvert.");
@@ -404,12 +402,9 @@ function maybeOpenFormationRecoveryReview(win){
 
 export function installLearnBrowserOwner(win=globalThis){
   if(win?.AO_LEARN_APP_V1)return win.AO_LEARN_APP_V1;
-  installTraditionalLearnModules(win);
-  installLatinCourseModule(win);
-  installGlossaryModule(win);
-  installMassFormationModule(win);
-  installSexualEthicsModule(win);
-  installSpiritualLifeModule(win);
+  // Only the canonical route descriptors install on Home.
+  // Runtime-specific install*Module functions are called in ensureLearnModule.
+  installLazyLearnRegistry(win);
   const api=createLearnOwner(win);
   win.AO_LEARN_APP_V1=api;
   maybeOpenFormationResearchPreview(win);
