@@ -41,6 +41,7 @@ const researchSnapshots = [
   readJson("../data/directory/generated/v19/sspx-priority-europe-pacific-20261009.v1.json"),
   readJson("../data/directory/generated/v19/sspx-oct26-followup-65.v1.json"),
   readJson("../data/directory/generated/v19/sspx-global-completion-20261009.v1.json"),
+  readJson("../data/directory/generated/v19/sspx-official-route-oct26-20261009.v1.json"),
   readJson("../data/directory/generated/v19/sspx-oct26-poland.v1.json"),
   readJson("../data/directory/generated/v19/sspx-asia-central-americas.v1.json"),
   readJson("../data/directory/generated/v19/sspx-north-america-20261008.v1.json"),
@@ -66,6 +67,7 @@ const expectedResearchCounts = new Map([
   ["SSPX_PRIORITY_EUROPE_PACIFIC_20261009",11],
   ["SSPX_OCT26_FOLLOWUP_65_20261009",7],
   ["SSPX_GLOBAL_COMPLETION_20261009",7],
+  ["SSPX_OFFICIAL_ROUTE_OCT26_20261009",3],
   ["SSPX_OCT26_POLAND",38],
   ["SSPX_ASIA_CENTRAL_AMERICAS_20261008",47],
   ["SSPX_NA_DISTRICTS_20261008",120],
@@ -223,7 +225,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,981,"research projection includes seven added globally sourced SSPX Mass venues");
+assert.equal(researchVenueCount,984,"research projection includes three more sourced Sunday Mass sites in Passau, Le Laus and Les Rousses");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
