@@ -1,4 +1,5 @@
 import { isCatholicBookId } from "./canon.js";
+import {scriptureChapterExists,scriptureChapterLimit} from "./chapter-counts.js";
 /**
  * Shared Catholic Scripture catalogue.
  * Metadata only: no Bible text may ship until its exact edition and digital rights are verified.
@@ -44,6 +45,7 @@ export function scripturePassage({ book, chapter, verseStart, verseEnd = verseSt
       || chapter < 1 || verseStart < 1 || verseEnd < verseStart) {
     throw new Error("Invalid passage coordinates");
   }
+  if(!scriptureChapterExists(book,chapter))throw new Error("Chapter beyond Catholic "+book+" limit ("+scriptureChapterLimit(book)+")");
   return Object.freeze({ book, chapter, verseStart, verseEnd });
 }
 

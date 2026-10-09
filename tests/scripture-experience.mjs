@@ -60,7 +60,7 @@ assert.equal(parseScriptureContext("Luke 0:1"),null);
 assert.equal(parseScriptureContext("John 19:30; Mt 5:28"),null,"Multi-source strings require individual capsules");
 assert.equal(parseScriptureContext("Psalms 129:1").numbering,"SOURCE_EDITION_REQUIRED");
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Matthew 5:27–28").passage)?.type,"PATRISTIC_COMPILATION");
-assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:28").passage),null,
+assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null,
   "Never fabricate a patristic commentary for an uncollated passage");
 assert.match(scriptureContextCapsule("Mt 5:27–28"),/data-ao-scripture-context="Mt 5:27–28"/);
 assert.equal(scriptureContextCapsule("unsupported passage"),"");
