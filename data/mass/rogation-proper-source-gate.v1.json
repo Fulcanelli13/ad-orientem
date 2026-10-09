@@ -1,6 +1,6 @@
 {
   "schema": "AO_1962_ROGATION_MASS_SOURCE_GATE_V1",
-  "status": "RESEARCH_ONLY_NOT_AVAILABLE_FOR_MASS_SELECTION",
+  "status": "PUBLISHED_1962_ROGATION_PROPER",
   "owner": "Shared DayResolver / R17 Mass Proper; not Calendar overlay",
   "issue": "https://github.com/Fulcanelli13/ad-orientem/issues/714",
   "scope": {
@@ -11,7 +11,8 @@
     "defaultMass": {
       "class": 4,
       "colour": "white",
-      "sourcePath": "Tempora/Pasc5-0"
+      "sourcePath": "Tempora/Pasc5-0",
+      "note": "Representative IV-class Monday feria only; on other Lesser Rogation weekdays DayResolver may resolve a III-class saint or another actual celebration. Never overwrite the day Mass."
     },
     "conditionalMass": {
       "class": 2,
@@ -21,7 +22,8 @@
       "handoff": "INTROIT",
       "omitOpeningPrayers": true,
       "gloria": false,
-      "credo": false
+      "credo": false,
+      "impediment": "A I-class celebration prevents the II-class Rogation votive, but public Litanies and their Mass-of-day handoff may still be chosen."
     }
   },
   "sourceWitnesses": [
@@ -91,10 +93,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "collect",
@@ -110,10 +113,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "epistle",
@@ -129,10 +133,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "gradual_alleluia",
@@ -148,10 +153,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "gospel",
@@ -167,10 +173,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "offertory",
@@ -186,10 +193,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "secret",
@@ -205,10 +213,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "communion",
@@ -224,10 +233,11 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     },
     {
       "key": "postcommunion",
@@ -243,24 +253,24 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED",
+        "status": "PUBLISHED_SOURCE_BOUND_ORIGINAL_TRANSLATIONS",
         "translationRights": "CLEARED"
       },
-      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json",
+      "publicationScope": "MINOR_ROGATIONS_EASTERTIDE_ONLY"
     }
   ],
   "releaseGate": [
-    "Each section has a precise 1962 Vatican printed-page locator and textually verified normalized Latin; stress accents to be normalized at final editorial pass",
-    "Translations independently source-bound and rights cleared",
-    "Processional action explicitly selected and lawful for day",
-    "II-class violet correct only in conditional route; IV white unchanged otherwise",
-    "No Júdica/Confiteor or additional foot prayers before Introit handoff",
-    "No Gloria or Credo; Easter preface verified",
-    "Phone EN/FR first-entry/back-navigation proves complete content and mode isolation",
-    "The independent trilingual research draft itself must be explicitly marked PUBLISHED after textual and editorial approval; metadata approval alone never enables Mass selection.",
-    "Production publication remains disabled until 1962 Rogation Mass is wired to shared Mass reader and EN/FR phone tests prove conditional handoff."
+    "Vatican Missale Romanum 1962 page images pp.347-349 checked and nine Latin passages transcribed in normalized spelling",
+    "Original English and French translations internally reviewed against primary Latin and rights for original renderings cleared; no ecclesiastical imprimatur represented",
+    "Paschal preface 'in hoc potissimum' source pages 234-235 verified and internally reviewed EN/FR published separately",
+    "Eastertide Minor Rogations only; Major Litanies and non-Eastertide variants deliberately excluded",
+    "User must explicitly select actual public procession/authorized supplications and II-class Mass; normal date-only Mass remains unchanged",
+    "R17 phone acceptance must load published on-disk JSON without synthetic certification overrides and test both English/French",
+    "Class-I impediments remain under shared DayResolver selection contract; do not infer missing local transfer or observance",
+    "Original R17 48-card source architecture immutable; Gloria/Credo omitted only for conditional Rogation owner"
   ],
-  "publicationAllowed": false,
+  "publicationAllowed": true,
   "researchNotes": [
     "The nine online incipits are candidates, not certified transcriptions of the 1962 Missale Romanum. Keep exactSourceLocator null, all three language verification flags false, and publicationAllowed false until original Missal page/section collation is completed.",
     "Read only the nine Proper components from secondary pages; generic preparation, Ordinary, Gloria and Credo shown elsewhere on those pages must not be inherited as processional Mass content.",
@@ -278,5 +288,41 @@
     "The Mass-source proper's original English/French translations remain drafts and source gate stays closed. The 1962 Missal also provides outside-Eastertide Gradual, Alleluia and Tract variants; they are captured as unpublished research-only alternatives.",
     "2026-10-10 original Vatican 1962 printed page 348 confirms only one Eastertide Alleluia (T.P. Alleluia.) with Introit antiphon; erroneous repeated Alleluia removed from Latin/EN/FR.",
     "Internal EN/FR semantic translation review completed for nine full Proper sections against photographed Latin pages 348–349, with independent French witness used for comparison only; revised Luke 11:11–12 for clarity. No external imprimatur claimed."
-  ]
+  ],
+  "publicationScope": {
+    "status": "PUBLISHED_MINOR_ROGATIONS_EASTERTIDE_ONLY",
+    "season": "EASTERTIDE",
+    "eligibleAction": "EXPLICIT_PUBLIC_PROCESSION_OR_AUTHORIZED_PUBLIC_SUPPLICATIONS",
+    "eligibleWeekdayOffsetsFromGregorianEaster": [
+      36,
+      37,
+      38
+    ],
+    "excludes": [
+      "MAJOR_LITANY_APRIL_25_OR_TRANSFER",
+      "OUTSIDE_EASTERTIDE_GRADUAL_TRACT",
+      "DATE_ONLY_INFERENCE",
+      "NONPUBLIC_PRAYERS",
+      "CLASS_I_VOTIVE_IMPEDIMENT"
+    ],
+    "requiredTextOwnership": "R17_REAL_SOURCE_CORPUS_AND_VERIFIED_PASCHAL_PREFACE",
+    "acceptance": "PR_810_SYNTHETIC_TEXT_E2E_PASS; THIS_PR_REAL_CHECKED_IN_CORPUS_PHONE_ACCEPTANCE_REQUIRED",
+    "eligibleDayMass": "Resolver-confirmed source-available class I-IV calendar Mass on the three minor-Rogation weekdays; saint Proper remains intact for day-Mass choice.",
+    "eligibleVotive": "II-class Rogation votive on those weekdays only when the resolved principal celebration is not I class and user explicitly selects public service.",
+    "representativeObservedSaintDay": {
+      "2027-05-04": "St Monica, III class, Sancti/05-04; white day Mass remains selectable"
+    }
+  },
+  "researchNotesAreHistorical": true,
+  "editorialApproval": {
+    "edition": "Missale Romanum 1962 Vatican typical edition",
+    "scope": "Internal text-and-translation review, not ecclesiastical approbation",
+    "date": "2026-10-10",
+    "sourcePrintPages": [
+      347,
+      348,
+      349
+    ],
+    "rights": "All EN/FR texts authored for this project; third-party comparison text not reproduced"
+  }
 }

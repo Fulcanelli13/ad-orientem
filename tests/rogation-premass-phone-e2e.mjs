@@ -49,10 +49,10 @@ try{
   });
   assert.equal(ordered,true,"Rogation choice must precede the Start Mass action");
   await page.locator("[data-ao-rogation-preflight] summary").click();
-  await page.waitForFunction(()=>document.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]')?.disabled===true &&
+  await page.waitForFunction(()=>document.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]')?.disabled===false &&
     globalThis.__rogation?.status?.().sourceLoading===false);
   const status=await page.locator("[data-rogation-status]").textContent();
-  assert.match(status,lang==="fr"?/pas encore certifié/i:/not yet certified/i);
+  assert.match(status,lang==="fr"?/exige des litanies publiques/i:/requires explicitly selected public litanies/i);
   for(const selector of ["[data-ao-rogation-preflight] summary","[data-rogation-service]","[data-rogation-choice]"]){
    const box=await page.locator(selector).boundingBox();
    assert.ok(box&&box.height>=44,selector+" must have an accessible 44px touch target");
@@ -71,5 +71,5 @@ try{
   assert.deepEqual(errors,[]);
   await context.close();
  }
- console.log("Rogation pre-Mass phone EN/FR: PASS — touch selection, unpublished form disabled, explicit procession and date reset.");
+ console.log("Rogation pre-Mass phone EN/FR: PASS — published Proper enabled only on eligible dates, touch selection, explicit procession and date reset.");
 }finally{await browser?.close();await new Promise(ok=>server.close(()=>ok()))}

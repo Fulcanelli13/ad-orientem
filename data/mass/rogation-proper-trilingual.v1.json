@@ -1,6 +1,6 @@
 {
   "schema": "AO_1962_ROGATION_PROPER_V1",
-  "status": "SOURCE_RESEARCH_UNPUBLISHED",
+  "status": "PUBLISHED_1962_ROGATION_PROPER",
   "owner": "Shared DayResolver / R17 Mass Proper",
   "title": {
     "latin": "In Litaniis maioribus et minoribus",
@@ -29,11 +29,11 @@
     },
     "ocrCorroborator": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
     "status": "LATIN_PRIMARY_SCAN_RECHECKED_AND_EDITORIAL_TRANSLATIONS_REVIEWED",
-    "warning": "Text is a normalization of the printed 1962 Latin (unaccented, ae/oe expanded and i/j standardized), not a facsimile transcription. Original EN/FR draft translations require editorial proofreading. The other OCR mirror uses different pagination. p.348 prints (T. P. Alleluia.) only once after the Introit; internet alternate with triple Alleluia is not accepted as 1962 wording."
+    "warning": "Latin is normalized from 1962 photographed Vatican Missal (unaccented, ae/oe expanded, i/j standardized). French/English are original internally reviewed translations; ecclesiastical approbation is not asserted. The OCR witness has different pagination. Introit prints one Eastertide Alleluia at each repetition."
   },
   "translations": {
-    "english": "ORIGINAL_DRAFT_TEXTUALLY_REVIEWED_AGAINST_1962_LATIN",
-    "french": "ORIGINAL_DRAFT_TEXTUALLY_REVIEWED_AGAINST_1962_LATIN_AND_FRENCH_COMPARATOR",
+    "english": "ORIGINAL_TRANSLATION_INTERNAL_REVIEW_PUBLISHED_MINOR_ROGATIONS",
+    "french": "ORIGINAL_TRANSLATION_INTERNAL_REVIEW_PUBLISHED_MINOR_ROGATIONS",
     "method": "Newly authored EN/FR texts from the source Latin; third-party witness comparison only, never copied.",
     "reviewerScope": "Internal editorial linguistic review; no external imprimatur"
   },
@@ -80,7 +80,7 @@
       "latin": "Exaudivit de templo sancto suo vocem meam: et clamor meus in conspectu eius introivit in aures eius, alleluia.\nPs. Diligam te, Domine, virtus mea: Dominus firmamentum meum et refugium meum et liberator meus.\nGloria Patri, et Filio, et Spiritui Sancto. Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen.\nExaudivit de templo sancto suo vocem meam: et clamor meus in conspectu eius introivit in aures eius, alleluia.",
       "english": "He heard my voice from his holy temple; my cry came before him and reached his ears, alleluia.\nPsalm: I love you, Lord, my strength. The Lord is my stronghold, my refuge, and my deliverer.\nGlory to the Father, and to the Son, and to the Holy Spirit; as it was in the beginning, is now and ever shall be, world without end. Amen.\nHe heard my voice from his holy temple; my cry came before him and reached his ears, alleluia.",
       "french": "Du haut de son temple saint, le Seigneur a entendu ma voix ; mon cri est parvenu devant lui, jusqu'à ses oreilles, alléluia.\nPsaume : Je vous aime, Seigneur, ma force. Le Seigneur est mon appui, mon refuge et mon libérateur.\nGloire au Père, au Fils et au Saint-Esprit, comme au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.\nDu haut de son temple saint, le Seigneur a entendu ma voix ; mon cri est parvenu devant lui, jusqu'à ses oreilles, alléluia.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "liturgicalVariant": "EASTERTIDE_SINGLE_ALLELUIA_ADDED_TO_ANTIPHON_AND_ANTIPHON_REPEATED",
       "sourceImage": "https://gregobase.selapa.net/sources/42/430.png",
@@ -92,7 +92,7 @@
       "latin": "Praesta, quaesumus, omnipotens Deus: ut, qui in afflictione nostra de tua pietate confidimus; contra adversa omnia, tua semper protectione muniamur. Per Dominum nostrum Iesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
       "english": "Almighty God, we ask you to grant that, as we trust in your goodness amid our troubles, we may always be defended by your protection against every adversity. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever. Amen.",
       "french": "Dieu tout-puissant, nous vous supplions : puisque, au milieu de nos épreuves, nous mettons notre confiance en votre bonté, gardez-nous toujours sous votre protection contre toute adversité. Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l'unité du Saint-Esprit, Dieu pour les siècles des siècles. Ainsi soit-il.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/430.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
@@ -106,7 +106,7 @@
       "latin": "Carissimi: Confitemini alterutrum peccata vestra, et orate pro invicem, ut salvemini: multum enim valet deprecatio iusti assidua. Elias homo erat similis nobis passibilis: et oratione oravit ut non plueret super terram, et non pluit annos tres et menses sex. Et rursum oravit: et caelum dedit pluviam, et terra dedit fructum suum. Fratres mei, si quis ex vobis erraverit a veritate, et converterit quis eum: scire debet, quoniam qui converti fecerit peccatorem ab errore viae suae, salvabit animam eius a morte, et operiet multitudinem peccatorum.",
       "english": "Dearly beloved: Confess your sins to one another and pray for one another, that you may be saved; for the persevering prayer of a righteous person has great power. Elijah was a man subject to suffering as we are. He prayed earnestly that rain might not fall upon the earth, and it did not rain for three years and six months. Then he prayed again, and heaven sent rain and the earth yielded its fruit. My brethren, if someone among you wanders from the truth and another brings him back, let him know that whoever turns a sinner back from his misguided way will save his soul from death and will cover a multitude of sins.",
       "french": "Bien-aimés, confessez vos péchés les uns aux autres et priez les uns pour les autres, afin d'être sauvés : la prière persévérante du juste possède en effet une grande force. Élie était un homme sujet aux souffrances comme nous. Il pria avec insistance pour que la pluie ne tombât point sur la terre, et il ne plut pas durant trois ans et six mois. Puis il pria de nouveau : le ciel donna la pluie et la terre produisit son fruit. Mes frères, si l'un de vous s'écarte de la vérité et qu'un autre le ramène, qu'il sache que celui qui détourne un pécheur de son chemin d'égarement sauvera son âme de la mort et couvrira une multitude de péchés.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/430.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
@@ -123,7 +123,7 @@
       "latin": "Alleluia, alleluia. V. Propitius esto, Domine, peccatis nostris: ne quando dicant gentes: Ubi est Deus eorum? Alleluia. V. Exsultabo et laetabor in misericordia tua, quoniam respexisti humilitatem meam: salvasti de necessitatibus animam meam. Alleluia.",
       "english": "Alleluia, alleluia. Verse: Pardon our sins, O Lord, lest the nations should say: Where is their God? Alleluia. Verse: I shall rejoice and be glad in your mercy, for you have looked upon my lowliness; you have rescued my soul from its distress. Alleluia.",
       "french": "Alléluia, alléluia. Verset : Pardonnez nos péchés, Seigneur, de peur que les nations ne disent : Où donc est leur Dieu ? Alléluia. Verset : Je tressaillirai de joie dans votre miséricorde, car vous avez considéré mon abaissement et délivré mon âme de ses détresses. Alléluia.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/430.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
@@ -137,7 +137,7 @@
       "latin": "In illo tempore: Dixit Iesus discipulis suis: Quis vestrum habebit amicum, et ibit ad illum media nocte, et dicet illi: Amice, commoda mihi tres panes, quoniam amicus meus venit de via ad me, et non habeo quod ponam ante illum: et ille deintus respondens, dicat: Noli mihi molestus esse, iam ostium clausum est, et pueri mei mecum sunt in cubili, non possum surgere et dare tibi. Et si ille perseveraverit pulsans: dico vobis, etsi non dabit illi surgens, eo quod amicus eius sit, propter improbitatem tamen eius surget et dabit illi quotquot habet necessarios. Et ego dico vobis: Petite, et dabitur vobis: quaerite, et invenietis: pulsate, et aperietur vobis. Omnis enim qui petit, accipit: et qui quaerit, invenit: et pulsanti aperietur. Quis autem ex vobis patrem petit panem, numquid lapidem dabit illi? Aut piscem: numquid pro pisce serpentem dabit illi? Aut si petierit ovum: numquid porriget illi scorpionem? Si ergo vos cum sitis mali, nostis bona data dare filiis vestris: quanto magis Pater vester de caelo dabit spiritum bonum petentibus se?",
       "english": "At that time Jesus said to his disciples: Suppose one of you has a friend and goes to him at midnight, saying, “Friend, lend me three loaves, for a friend of mine has arrived after a journey and I have nothing to set before him.” From inside he may answer, “Do not trouble me. The door is already shut, and my children are in bed with me; I cannot rise and give you anything.” Yet if the other goes on knocking, I tell you that, even if he will not get up and give him bread because he is his friend, he will rise because of his persistence and give him all that he needs. And I say to you: Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. Everyone who asks receives; whoever seeks finds; and to him who knocks it will be opened. Suppose a child asks his father for bread: would the father give him a stone? If he asks for a fish, would the father give him a serpent instead? Or if he asks for an egg, would he offer him a scorpion? If you, then, despite being wicked, know how to give good things to your children, how much more will your heavenly Father give the good Spirit to those who ask him?",
       "french": "En ce temps-là, Jésus dit à ses disciples : Si l'un de vous a un ami et se présente chez lui au milieu de la nuit en lui disant : « Mon ami, prête-moi trois pains ; un ami vient d'arriver chez moi de voyage et je n'ai rien à lui servir », et si, de l'intérieur, l'autre répond : « Ne me dérange pas ; la porte est déjà fermée et mes enfants sont couchés avec moi ; je ne puis me lever pour te donner quelque chose », je vous le dis : quand bien même il ne se lèverait pas en raison de leur amitié, il finira par se lever à cause de l'insistance de cet homme et lui donnera tout ce dont il a besoin. Aussi, je vous le dis : demandez, et l'on vous donnera ; cherchez, et vous trouverez ; frappez, et l'on vous ouvrira. Car celui qui demande reçoit, celui qui cherche trouve, et l'on ouvre à celui qui frappe. Si un enfant demande du pain à son père, celui-ci lui donnerait-il une pierre ? S'il demande un poisson, lui donnerait-il plutôt un serpent ? Ou s'il demande un œuf, lui présenterait-il un scorpion ? Si donc vous, malgré votre malice, savez donner de bonnes choses à vos enfants, combien davantage votre Père du ciel donnera-t-il le bon Esprit à ceux qui le lui demandent !",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/431.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
@@ -151,7 +151,7 @@
       "latin": "Confitebor Domino nimis in ore meo: et in medio multorum laudabo eum, qui astitit a dextris pauperis: ut salvam faceret a persequentibus animam meam, alleluia.",
       "english": "I shall praise the Lord abundantly with my lips and acclaim him among a great assembly, for he stood at the right hand of the poor man to save my soul from those who pursued it, alleluia.",
       "french": "Je louerai le Seigneur de toute ma bouche et je le célébrerai au milieu d'une grande assemblée, car il s'est tenu à la droite du pauvre pour sauver mon âme de ceux qui la poursuivaient, alléluia.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/431.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
@@ -162,7 +162,7 @@
       "latin": "Haec munera, quaesumus, Domine, et vincula nostrae pravitatis absolvant, et tuae nobis misericordiae dona concilient. Per Dominum nostrum Iesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
       "english": "We beseech you, Lord: may these offerings break the bonds of our wrongdoing and obtain for us the gifts of your mercy. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever. Amen.",
       "french": "Nous vous en prions, Seigneur : que ces offrandes délient les chaînes de nos fautes et nous procurent les dons de votre miséricorde. Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l'unité du Saint-Esprit, Dieu pour les siècles des siècles. Ainsi soit-il.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/431.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
@@ -176,7 +176,7 @@
       "latin": "Petite, et accipietis: quaerite, et invenietis: pulsate, et aperietur vobis: omnis enim qui petit, accipit: et qui quaerit, invenit: et pulsanti aperietur, alleluia.",
       "english": "Ask, and you shall receive; seek, and you shall find; knock, and the door shall be opened to you. For everyone who asks receives, whoever seeks finds, and to the one who knocks the door shall be opened, alleluia.",
       "french": "Demandez, et vous recevrez ; cherchez, et vous trouverez ; frappez, et l'on vous ouvrira. Car quiconque demande reçoit, celui qui cherche trouve, et l'on ouvrira à celui qui frappe, alléluia.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/431.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
@@ -187,11 +187,12 @@
       "latin": "Vota nostra, quaesumus, Domine, pio favore prosequere: ut, dum dona tua in tribulatione percipimus, de consolatione nostra in tuo amore crescamus. Per Dominum nostrum Iesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
       "english": "In your gracious kindness, Lord, sustain our petitions, so that, as we receive your gifts amid affliction, the consolation they bring may help us grow in love of you. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever. Amen.",
       "french": "Seigneur, accueillez favorablement nos demandes : tandis que nous recevons vos dons au sein de l'épreuve, que la consolation ainsi reçue nous fasse grandir dans votre amour. Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l'unité du Saint-Esprit, Dieu pour les siècles des siècles. Ainsi soit-il.",
-      "sectionStatus": "LATIN_SOURCE_CHECKED_EN_FR_DRAFT_REVIEWED_PUBLICATION_BLOCKED",
+      "sectionStatus": "SOURCE_VERIFIED_ORIGINAL_EN_FR_PUBLISHED_MINOR_ROGATIONS",
       "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
       "sourceImage": "https://gregobase.selapa.net/sources/42/431.png",
       "transcriptionPolicy": "Latin normalized from the original 1962 page: accents removed; æ→ae and œ→oe; liturgical formula endings expanded from the Ordinary where the printed Proper abbreviates Per Dominum."
     }
   ],
-  "publicationAllowed": false
+  "publicationAllowed": true,
+  "releaseScope": "MINOR_ROGATIONS_IN_EASTERTIDE_ONLY"
 }
