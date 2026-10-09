@@ -1,5 +1,5 @@
 import { scheduleFreshnessState } from "./data-service.js";
-import { directoryGeoLabel, isMapPublishableGeo } from "./geo-provenance.js";
+import { directoryGeoLabel, isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
@@ -27,8 +27,11 @@ function sourceUrl(record){
 }
 function directionsUrl(venue){
   const g=venue?.geo??{};
-  const query=g.lat!==null&&g.lat!==undefined&&g.lng!==null&&g.lng!==undefined
-    ?String(g.lat)+","+String(g.lng)
+  // Indicative markers are discovery aids, NOT driving/walking destinations.
+  if(g.indicative_only||g.routing_eligible===false)return null;
+  const precise=["building","address"].includes(g.precision)&&
+    g.lat!==null&&g.lat!==undefined&&g.lng!==null&&g.lng!==undefined;
+  const query=precise?String(g.lat)+","+String(g.lng)
     :(venue?.address?.formatted||[venue?.name?.official,venue?.address?.city,venue?.address?.country_code].filter(Boolean).join(", "));
   return query?"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(query):null;
 }
@@ -107,12 +110,16 @@ function detailSheet(vm){
     html+='</section>';
   }
   html+='<section class="aoFindActions">';
+  // Most prominent action: the official provider/chapel listing, not our pin.
+  if(src)html+='<a class="aoFindPrimarySource" href="'+esc(src)+'" target="_blank" rel="noopener">'+esc(L(vm.language,"Open official Mass / chapel information","Consulter les informations officielles de la chapelle"))+'</a>';
+  if(site&&site!==src)html+='<a href="'+esc(site)+'" target="_blank" rel="noopener">'+esc(L(vm.language,"Website","Site"))+'</a>';
   if(dir)html+='<a href="'+esc(dir)+'" target="_blank" rel="noopener">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a>';
-  if(site)html+='<a href="'+esc(site)+'" target="_blank" rel="noopener">'+esc(L(vm.language,"Website","Site"))+'</a>';
-  if(src&&src!==site)html+='<a href="'+esc(src)+'" target="_blank" rel="noopener">'+esc(L(vm.language,"Official source","Source officielle"))+'</a>';
   if(phone)html+='<a href="tel:'+esc(phone)+'">'+esc(phone)+'</a>';
   if(email)html+='<a href="mailto:'+esc(email)+'">'+esc(email)+'</a>';
   html+='</section><footer><small>'+esc(L(vm.language,"Source-backed directory record. Check the official schedule before travelling.","Fiche d’annuaire sourcée. Vérifiez l’horaire officiel avant de vous déplacer."))+'</small>';
+  if(isApproximateDirectoryGeo(v?.geo))html+='<small>'+esc(L(vm.language,
+    "The pin is indicative only, not an exact chapel location. Follow the official link for the correct address and Mass times.",
+    "Le repère est indicatif, pas l’emplacement exact de la chapelle. Consultez le lien officiel pour l’adresse et les horaires."))+'</small>';
   if(v?.geo?.geocoding_source==="OSM_NOMINATIM"&&v?.geo?.attribution){
     html+='<small class="aoFindGeoAttribution">'+esc(v.geo.attribution)+'</small>';
   }
@@ -136,6 +143,9 @@ export function renderFindToString(vm){
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.records.length)+'</strong><span>'+esc(L(vm.language,"matching venues","lieux correspondants"))+'</span>'+(vm.geocoded?'<span> · '+String(vm.geocoded)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>':"")+'</div>';
   html+='<div class="aoFindBody" data-find-view="'+esc(vm.view)+'">';
   if(vm.view==="map"){
+    html+='<p class="aoFindMapNote">'+esc(L(vm.language,
+      "Pins show approximate areas where necessary. Open a location for its official chapel information.",
+      "Les repères peuvent être approximatifs. Ouvrez un lieu pour accéder aux informations officielles de la chapelle."))+'</p>';
     html+='<div class="aoFindMap" data-find-map><div class="aoFindMapFallback"><strong>'+esc(L(vm.language,"Map","Carte"))+'</strong><span>'+esc(vm.geocoded?L(vm.language,"Loading mapped venues…","Chargement des lieux cartographiés…"):L(vm.language,"No geocoded venues in this snapshot yet.","Aucun lieu géocodé dans cet instantané pour le moment."))+'</span></div></div>';
   }else if(vm.records.length){
     html+='<div class="aoFindList">'+vm.records.map(r=>venueCard(r,vm)).join("")+'</div>';

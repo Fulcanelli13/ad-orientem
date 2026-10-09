@@ -4,6 +4,7 @@ export const DIRECTORY_GEO_PRECISIONS=Object.freeze([
   "street",
   "locality",
   "region",
+  "country",
   "unknown",
 ]);
 
@@ -16,7 +17,7 @@ export const DIRECTORY_GEO_SOURCES=Object.freeze([
 
 const precisionSet=new Set(DIRECTORY_GEO_PRECISIONS);
 const sourceSet=new Set(DIRECTORY_GEO_SOURCES);
-const mappablePrecisionSet=new Set(["building","address","street","locality"]);
+const mappablePrecisionSet=new Set(["building","address","street","locality","region","country"]);
 
 function issue(code,path,message){return Object.freeze({code,path,message})}
 function nonEmpty(value){return typeof value==="string"&&value.trim().length>0}
@@ -84,7 +85,7 @@ export function isMapPublishableGeo(geo,countryCode=null){
 }
 
 export function isApproximateDirectoryGeo(geo){
-  return new Set(["street","locality"]).has(String(geo?.precision??"").toLowerCase());
+  return new Set(["street","locality","region","country"]).has(String(geo?.precision??"").toLowerCase());
 }
 
 export function directoryGeoLabel(geo,{language="en"}={}){
@@ -95,7 +96,8 @@ export function directoryGeoLabel(geo,{language="en"}={}){
     address:fr?"Adresse cartographiée":"Mapped address",
     street:fr?"Position approximative · rue":"Approximate · street",
     locality:fr?"Position approximative · localité":"Approximate · locality",
-    region:fr?"Position régionale":"Regional position",
+    region:fr?"Position approximative · région":"Approximate · region",
+    country:fr?"Position indicative · pays uniquement":"Indicative · country only",
     unknown:fr?"Position non vérifiée":"Unverified location",
   };
   return labels[precision]??labels.unknown;
