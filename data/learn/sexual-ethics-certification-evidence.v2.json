@@ -55,15 +55,15 @@
   "summary": {
     "total_cases": 55,
     "total_stages": 440,
-    "substantive_case_reviews": 39,
-    "individually_assessed_stages": 312,
+    "substantive_case_reviews": 55,
+    "individually_assessed_stages": 440,
     "stage_verdict_counts": {
-      "ILLUSTRATIVE_CHALLENGE": 65,
-      "REASONED_INFERENCE_FROM_DOCUMENT": 183,
+      "ILLUSTRATIVE_CHALLENGE": 97,
+      "REASONED_INFERENCE_FROM_DOCUMENT": 279,
       "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 45,
       "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT": 5,
       "ORIGINAL_OPPONENT_POSITION": 11,
-      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 129,
+      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 1,
       "DIRECT_ORIGINAL_CLINICAL_CONTEXT": 2
     },
     "full_case_certifications": 0
@@ -5816,7 +5816,7 @@
     },
     {
       "id": "CSE076",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -5825,9 +5825,9 @@
           "selected_source_ids": [
             "PP_PORN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The question about privately recorded spousal material is an illustrative technology case, not a direct magisterial pronouncement.",
+          "explanation_fr": "Les images intimes privées des époux constituent un cas technique illustratif, non une prise de position magistérielle précise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5836,9 +5836,9 @@
           "selected_source_ids": [
             "PP_PORN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The question about privately recorded spousal material is an illustrative technology case, not a direct magisterial pronouncement.",
+          "explanation_fr": "Les images intimes privées des époux constituent un cas technique illustratif, non une prise de position magistérielle précise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5847,9 +5847,9 @@
           "selected_source_ids": [
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Marital intimacy remains personal and private; the Catechism addresses pornography as public sexual display for arousal.",
+          "explanation_fr": "L'intimité conjugale reste personnelle et privée ; le Catéchisme traite de l'exhibition sexuelle destinée à exciter.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5859,9 +5859,9 @@
             "CCC",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Risks of copying and unauthorized sharing are factual, not proof that every private image is the same moral act.",
+          "explanation_fr": "Les risques de copie et de diffusion sont des faits, non la preuve que toute image privée est le même acte moral.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5871,9 +5871,9 @@
             "CCC",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Marital intimacy remains personal and private; the Catechism addresses pornography as public sexual display for arousal.",
+          "explanation_fr": "L'intimité conjugale reste personnelle et privée ; le Catéchisme traite de l'exhibition sexuelle destinée à exciter.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5882,9 +5882,9 @@
           "selected_source_ids": [
             "PP_PORN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Risks of copying and unauthorized sharing are factual, not proof that every private image is the same moral act.",
+          "explanation_fr": "Les risques de copie et de diffusion sont des faits, non la preuve que toute image privée est le même acte moral.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5894,9 +5894,9 @@
             "CCC",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Risks of copying and unauthorized sharing are factual, not proof that every private image is the same moral act.",
+          "explanation_fr": "Les risques de copie et de diffusion sont des faits, non la preuve que toute image privée est le même acte moral.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5905,9 +5905,9 @@
           "selected_source_ids": [
             "CCC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Marital intimacy remains personal and private; the Catechism addresses pornography as public sexual display for arousal.",
+          "explanation_fr": "L'intimité conjugale reste personnelle et privée ; le Catéchisme traite de l'exhibition sexuelle destinée à exciter.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -5994,6 +5994,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -6190,7 +6195,7 @@
     },
     {
       "id": "CSE084",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -6199,9 +6204,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Farley's cited passage endorses same-sex relations but does not use the exact infertility analogy.",
+          "explanation_fr": "Le passage cité de Farley défend les relations homosexuelles sans formuler exactement l'analogie de la stérilité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6210,9 +6215,9 @@
           "selected_source_ids": [
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Farley's cited passage endorses same-sex relations but does not use the exact infertility analogy.",
+          "explanation_fr": "Le passage cité de Farley défend les relations homosexuelles sans formuler exactement l'analogie de la stérilité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6221,9 +6226,9 @@
           "selected_source_ids": [
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Canon 1084 §3 distinguishes sterility from inability to consummate the marital union.",
+          "explanation_fr": "Le canon 1084 §3 distingue stérilité et incapacité de consommer l'union conjugale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6233,9 +6238,9 @@
             "CIC",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A body-kind distinction is normative, not a guarantee of conception in every heterosexual marriage.",
+          "explanation_fr": "La distinction de l'union corporelle est normative, non la garantie de conception pour tout mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6245,9 +6250,9 @@
             "CIC",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Canon 1084 §3 distinguishes sterility from inability to consummate the marital union.",
+          "explanation_fr": "Le canon 1084 §3 distingue stérilité et incapacité de consommer l'union conjugale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6256,9 +6261,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A body-kind distinction is normative, not a guarantee of conception in every heterosexual marriage.",
+          "explanation_fr": "La distinction de l'union corporelle est normative, non la garantie de conception pour tout mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6268,9 +6273,9 @@
             "CIC",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A body-kind distinction is normative, not a guarantee of conception in every heterosexual marriage.",
+          "explanation_fr": "La distinction de l'union corporelle est normative, non la garantie de conception pour tout mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6280,9 +6285,9 @@
             "CIC",
             "CDF2003"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Canon 1084 §3 distinguishes sterility from inability to consummate the marital union.",
+          "explanation_fr": "Le canon 1084 §3 distingue stérilité et incapacité de consommer l'union conjugale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -6370,11 +6375,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE087",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -6383,9 +6393,9 @@
           "selected_source_ids": [
             "APA_LGB_POLICY"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "APA's criticism of stigma and discrimination is genuine and morally serious.",
+          "explanation_fr": "Les préoccupations de l'APA sur stigmatisation et discrimination sont réelles et moralement graves.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6394,9 +6404,9 @@
           "selected_source_ids": [
             "APA_LGB_POLICY"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "APA's criticism of stigma and discrimination is genuine and morally serious.",
+          "explanation_fr": "Les préoccupations de l'APA sur stigmatisation et discrimination sont réelles et moralement graves.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6405,9 +6415,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "CDF pastoral texts insist on personal dignity and reject unjust discrimination while evaluating acts separately.",
+          "explanation_fr": "Les textes pastoraux de la CDF maintiennent la dignité des personnes et refusent la discrimination injuste tout en jugeant les actes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6417,9 +6427,9 @@
             "HOMO86",
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No clinical harm evidence licenses mistreatment, and the moral proposition is not a psychiatric diagnosis.",
+          "explanation_fr": "Aucune donnée de dommage ne justifie la maltraitance et un jugement moral n'est pas un diagnostic.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6429,9 +6439,9 @@
             "HOMO86",
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "CDF pastoral texts insist on personal dignity and reject unjust discrimination while evaluating acts separately.",
+          "explanation_fr": "Les textes pastoraux de la CDF maintiennent la dignité des personnes et refusent la discrimination injuste tout en jugeant les actes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6440,9 +6450,9 @@
           "selected_source_ids": [
             "APA_LGB"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "No clinical harm evidence licenses mistreatment, and the moral proposition is not a psychiatric diagnosis.",
+          "explanation_fr": "Aucune donnée de dommage ne justifie la maltraitance et un jugement moral n'est pas un diagnostic.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6452,9 +6462,9 @@
             "HOMO86",
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No clinical harm evidence licenses mistreatment, and the moral proposition is not a psychiatric diagnosis.",
+          "explanation_fr": "Aucune donnée de dommage ne justifie la maltraitance et un jugement moral n'est pas un diagnostic.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6463,9 +6473,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "CDF pastoral texts insist on personal dignity and reject unjust discrimination while evaluating acts separately.",
+          "explanation_fr": "Les textes pastoraux de la CDF maintiennent la dignité des personnes et refusent la discrimination injuste tout en jugeant les actes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -6552,11 +6562,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE088",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -6565,9 +6580,9 @@
           "selected_source_ids": [
             "APA_LGB_POLICY"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "APA's declassification of same-sex orientation as a mental disorder is a genuine clinical position.",
+          "explanation_fr": "L'APA ne classe plus l'orientation homosexuelle comme trouble mental ; c'est une position clinique authentique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6576,9 +6591,9 @@
           "selected_source_ids": [
             "APA_LGB"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "APA's declassification of same-sex orientation as a mental disorder is a genuine clinical position.",
+          "explanation_fr": "L'APA ne classe plus l'orientation homosexuelle comme trouble mental ; c'est une position clinique authentique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6587,9 +6602,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The moral status of an action is not logically identical with the psychiatric classification of an orientation.",
+          "explanation_fr": "Le statut moral d'un acte ne se confond pas logiquement avec la classification psychiatrique d'une orientation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6598,9 +6613,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No mental-illness implication follows from defending Catholic sexual morality.",
+          "explanation_fr": "La défense de la morale catholique n'autorise aucune insinuation de maladie mentale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6609,9 +6624,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The moral status of an action is not logically identical with the psychiatric classification of an orientation.",
+          "explanation_fr": "Le statut moral d'un acte ne se confond pas logiquement avec la classification psychiatrique d'une orientation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6620,9 +6635,9 @@
           "selected_source_ids": [
             "APA_LGB_POLICY"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "No mental-illness implication follows from defending Catholic sexual morality.",
+          "explanation_fr": "La défense de la morale catholique n'autorise aucune insinuation de maladie mentale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6631,9 +6646,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No mental-illness implication follows from defending Catholic sexual morality.",
+          "explanation_fr": "La défense de la morale catholique n'autorise aucune insinuation de maladie mentale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6642,9 +6657,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The moral status of an action is not logically identical with the psychiatric classification of an orientation.",
+          "explanation_fr": "Le statut moral d'un acte ne se confond pas logiquement avec la classification psychiatrique d'une orientation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -6728,6 +6743,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -6914,7 +6934,7 @@
     },
     {
       "id": "CSE093",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -6923,9 +6943,9 @@
           "selected_source_ids": [
             "APA_TRANS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The revised challenge concerns stereotypes and developmental variation, not a claim that bodily sex is fictional.",
+          "explanation_fr": "L'objection revue vise stéréotypes et variations du développement, non une prétendue fiction du sexe corporel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6934,9 +6954,9 @@
           "selected_source_ids": [
             "APA_TRANS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The revised challenge concerns stereotypes and developmental variation, not a claim that bodily sex is fictional.",
+          "explanation_fr": "L'objection revue vise stéréotypes et variations du développement, non une prétendue fiction du sexe corporel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6945,9 +6965,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Embodied sex can be real while social expectations remain contingent and some medical cases are complex.",
+          "explanation_fr": "Le sexe corporel peut être réel tandis que les attentes sociales varient et que des cas médicaux sont complexes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6956,9 +6976,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Atypical biology neither erases a person's dignity nor settles all theological inferences.",
+          "explanation_fr": "Une biologie atypique n'efface pas la dignité et ne tranche pas toutes les inférences théologiques.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6967,9 +6987,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Embodied sex can be real while social expectations remain contingent and some medical cases are complex.",
+          "explanation_fr": "Le sexe corporel peut être réel tandis que les attentes sociales varient et que des cas médicaux sont complexes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6978,9 +6998,9 @@
           "selected_source_ids": [
             "APA_TRANS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Atypical biology neither erases a person's dignity nor settles all theological inferences.",
+          "explanation_fr": "Une biologie atypique n'efface pas la dignité et ne tranche pas toutes les inférences théologiques.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -6989,9 +7009,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Atypical biology neither erases a person's dignity nor settles all theological inferences.",
+          "explanation_fr": "Une biologie atypique n'efface pas la dignité et ne tranche pas toutes les inférences théologiques.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7000,9 +7020,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Embodied sex can be real while social expectations remain contingent and some medical cases are complex.",
+          "explanation_fr": "Le sexe corporel peut être réel tandis que les attentes sociales varient et que des cas médicaux sont complexes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -7086,11 +7106,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE094",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -7099,9 +7124,9 @@
           "selected_source_ids": [
             "APA_TRANS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Gender dysphoria is real suffering and clinical outcomes depend on intervention, patient and evidence quality.",
+          "explanation_fr": "La dysphorie de genre est une souffrance réelle ; les résultats cliniques varient selon intervention, patient et qualité des preuves.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7110,9 +7135,9 @@
           "selected_source_ids": [
             "APA_SEXTHERAPY"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Gender dysphoria is real suffering and clinical outcomes depend on intervention, patient and evidence quality.",
+          "explanation_fr": "La dysphorie de genre est une souffrance réelle ; les résultats cliniques varient selon intervention, patient et qualité des preuves.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7121,9 +7146,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic anthropology describes the body as integral to the person; clinical management remains an empirical specialty.",
+          "explanation_fr": "L'anthropologie catholique intègre le corps à la personne ; le traitement reste une question clinique empirique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7132,9 +7157,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A compassionate response must not promise a universal treatment effect or deny the person's dignity.",
+          "explanation_fr": "Une réponse compatissante ne doit promettre aucun effet thérapeutique universel ni nier la dignité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7143,9 +7168,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic anthropology describes the body as integral to the person; clinical management remains an empirical specialty.",
+          "explanation_fr": "L'anthropologie catholique intègre le corps à la personne ; le traitement reste une question clinique empirique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7154,9 +7179,9 @@
           "selected_source_ids": [
             "APA_TRANS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A compassionate response must not promise a universal treatment effect or deny the person's dignity.",
+          "explanation_fr": "Une réponse compatissante ne doit promettre aucun effet thérapeutique universel ni nier la dignité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7165,9 +7190,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A compassionate response must not promise a universal treatment effect or deny the person's dignity.",
+          "explanation_fr": "Une réponse compatissante ne doit promettre aucun effet thérapeutique universel ni nier la dignité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7176,9 +7201,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic anthropology describes the body as integral to the person; clinical management remains an empirical specialty.",
+          "explanation_fr": "L'anthropologie catholique intègre le corps à la personne ; le traitement reste une question clinique empirique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -7262,11 +7287,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE095",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -7275,9 +7305,9 @@
           "selected_source_ids": [
             "APA_TRANSCARE"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Respect and preferred modes of address are genuine social concerns, not a complete metaphysical thesis.",
+          "explanation_fr": "Le respect et les formes d'adresse sont des enjeux sociaux réels, non une thèse métaphysique complète.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7286,9 +7316,9 @@
           "selected_source_ids": [
             "APA_TRANSCARE"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Respect and preferred modes of address are genuine social concerns, not a complete metaphysical thesis.",
+          "explanation_fr": "Le respect et les formes d'adresse sont des enjeux sociaux réels, non une thèse métaphysique complète.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7297,9 +7327,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Charity, truthfulness and freedom from abuse must be balanced without asserting a rule for every encounter.",
+          "explanation_fr": "Charité, véracité et absence de maltraitance doivent être conciliées sans règle universelle pour chaque rencontre.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7308,9 +7338,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Disagreement with a proposition is not license to humiliate an individual.",
+          "explanation_fr": "Le désaccord doctrinal n'autorise jamais l'humiliation personnelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7319,9 +7349,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Charity, truthfulness and freedom from abuse must be balanced without asserting a rule for every encounter.",
+          "explanation_fr": "Charité, véracité et absence de maltraitance doivent être conciliées sans règle universelle pour chaque rencontre.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7330,9 +7360,9 @@
           "selected_source_ids": [
             "APA_TRANSCARE"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Disagreement with a proposition is not license to humiliate an individual.",
+          "explanation_fr": "Le désaccord doctrinal n'autorise jamais l'humiliation personnelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7341,9 +7371,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Disagreement with a proposition is not license to humiliate an individual.",
+          "explanation_fr": "Le désaccord doctrinal n'autorise jamais l'humiliation personnelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7352,9 +7382,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Charity, truthfulness and freedom from abuse must be balanced without asserting a rule for every encounter.",
+          "explanation_fr": "Charité, véracité et absence de maltraitance doivent être conciliées sans règle universelle pour chaque rencontre.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -7438,11 +7468,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE096",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -7451,9 +7486,9 @@
           "selected_source_ids": [
             "WPATH8_FULL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "WPATH clinical guidance addresses eligibility, consent, risks and possible benefits; it does not pronounce Catholic moral doctrine.",
+          "explanation_fr": "Les recommandations WPATH traitent critères, consentement, risques et bénéfices possibles, non la doctrine morale catholique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7462,9 +7497,9 @@
           "selected_source_ids": [
             "WPATH8_FULL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "WPATH clinical guidance addresses eligibility, consent, risks and possible benefits; it does not pronounce Catholic moral doctrine.",
+          "explanation_fr": "Les recommandations WPATH traitent critères, consentement, risques et bénéfices possibles, non la doctrine morale catholique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7473,9 +7508,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Specific procedures differ by age, diagnosis and bodily target and must be evaluated individually.",
+          "explanation_fr": "Les actes médicaux diffèrent selon âge, diagnostic et partie du corps, et demandent une analyse individualisée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7484,9 +7519,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No uniform medical or moral verdict follows from an abstract appeal to autonomy.",
+          "explanation_fr": "L'autonomie abstraite ne détermine ni le bénéfice clinique ni la licéité morale de tout acte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7495,9 +7530,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Specific procedures differ by age, diagnosis and bodily target and must be evaluated individually.",
+          "explanation_fr": "Les actes médicaux diffèrent selon âge, diagnostic et partie du corps, et demandent une analyse individualisée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7506,9 +7541,9 @@
           "selected_source_ids": [
             "WPATH8_FULL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "No uniform medical or moral verdict follows from an abstract appeal to autonomy.",
+          "explanation_fr": "L'autonomie abstraite ne détermine ni le bénéfice clinique ni la licéité morale de tout acte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7518,9 +7553,9 @@
             "DI2024",
             "WPATH8_FULL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No uniform medical or moral verdict follows from an abstract appeal to autonomy.",
+          "explanation_fr": "L'autonomie abstraite ne détermine ni le bénéfice clinique ni la licéité morale de tout acte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7529,9 +7564,9 @@
           "selected_source_ids": [
             "DI2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Specific procedures differ by age, diagnosis and bodily target and must be evaluated individually.",
+          "explanation_fr": "Les actes médicaux diffèrent selon âge, diagnostic et partie du corps, et demandent une analyse individualisée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -7616,6 +7651,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -7817,7 +7857,7 @@
     },
     {
       "id": "CSE112",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -7826,9 +7866,9 @@
           "selected_source_ids": [
             "RAINN_CONSENT101"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "RAINN's documented source expressly rebuts the arousal-means-consent misconception.",
+          "explanation_fr": "La source RAINN réfute expressément l'idée qu'une excitation corporelle constituerait le consentement.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7837,9 +7877,9 @@
           "selected_source_ids": [
             "ASSAULT2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "RAINN's documented source expressly rebuts the arousal-means-consent misconception.",
+          "explanation_fr": "La source RAINN réfute expressément l'idée qu'une excitation corporelle constituerait le consentement.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7849,9 +7889,9 @@
             "ST6",
             "ASSAULT2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Consent is deliberate willingness, not erection, lubrication or an involuntary orgasm.",
+          "explanation_fr": "Le consentement est une volonté délibérée, non une érection, une lubrification ou un orgasme involontaire.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7861,9 +7901,9 @@
             "ASSAULT2024",
             "ST6"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A victim's reflex cannot retroactively make an assault consensual or create blame.",
+          "explanation_fr": "Un réflexe de la victime ne rend jamais rétroactivement une agression consentie ou coupable.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7873,9 +7913,9 @@
             "ST6",
             "ASSAULT2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Consent is deliberate willingness, not erection, lubrication or an involuntary orgasm.",
+          "explanation_fr": "Le consentement est une volonté délibérée, non une érection, une lubrification ou un orgasme involontaire.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7884,9 +7924,9 @@
           "selected_source_ids": [
             "RAINN_CONSENT101"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A victim's reflex cannot retroactively make an assault consensual or create blame.",
+          "explanation_fr": "Un réflexe de la victime ne rend jamais rétroactivement une agression consentie ou coupable.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7896,9 +7936,9 @@
             "ST6",
             "RAINN_CONSENT101"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A victim's reflex cannot retroactively make an assault consensual or create blame.",
+          "explanation_fr": "Un réflexe de la victime ne rend jamais rétroactivement une agression consentie ou coupable.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -7908,9 +7948,9 @@
             "ST6",
             "ASSAULT2024"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Consent is deliberate willingness, not erection, lubrication or an involuntary orgasm.",
+          "explanation_fr": "Le consentement est une volonté délibérée, non une érection, une lubrification ou un orgasme involontaire.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -7999,11 +8039,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE117",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -8012,9 +8057,9 @@
           "selected_source_ids": [
             "RAINN_ASSAULT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "RAINN is evidence against the intoxicated-consent misconception, not its proponent.",
+          "explanation_fr": "RAINN réfute les fausses idées sur le consentement sous intoxication ; il ne les défend pas.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8023,9 +8068,9 @@
           "selected_source_ids": [
             "RAINN_ALCOHOL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "RAINN is evidence against the intoxicated-consent misconception, not its proponent.",
+          "explanation_fr": "RAINN réfute les fausses idées sur le consentement sous intoxication ; il ne les défend pas.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8034,9 +8079,9 @@
           "selected_source_ids": [
             "ST6"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Severe intoxication may prevent meaningful choice, distinct from every mild lowering of inhibition.",
+          "explanation_fr": "Une forte intoxication peut empêcher un choix libre, contrairement à une légère désinhibition.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8046,9 +8091,9 @@
             "ST6",
             "RAINN_ASSAULT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Legal thresholds vary; a theological discussion should not infer precise guilt from a sparse scenario.",
+          "explanation_fr": "Les seuils légaux varient ; on ne peut déduire une culpabilité précise d'un cas sommaire.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8058,9 +8103,9 @@
             "ST6",
             "ST76"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Severe intoxication may prevent meaningful choice, distinct from every mild lowering of inhibition.",
+          "explanation_fr": "Une forte intoxication peut empêcher un choix libre, contrairement à une légère désinhibition.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8069,9 +8114,9 @@
           "selected_source_ids": [
             "RAINN_ASSAULT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Legal thresholds vary; a theological discussion should not infer precise guilt from a sparse scenario.",
+          "explanation_fr": "Les seuils légaux varient ; on ne peut déduire une culpabilité précise d'un cas sommaire.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8081,9 +8126,9 @@
             "ST6",
             "RAINN_ASSAULT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Legal thresholds vary; a theological discussion should not infer precise guilt from a sparse scenario.",
+          "explanation_fr": "Les seuils légaux varient ; on ne peut déduire une culpabilité précise d'un cas sommaire.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8093,9 +8138,9 @@
             "ST6",
             "ST76"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Severe intoxication may prevent meaningful choice, distinct from every mild lowering of inhibition.",
+          "explanation_fr": "Une forte intoxication peut empêcher un choix libre, contrairement à une légère désinhibition.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -8183,11 +8228,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE123",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -8197,9 +8247,9 @@
             "ACOG_ABORTION",
             "SINGER_KUHSE1990"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The original abortion objection points to embryological stages, but clinical development does not by itself define personhood.",
+          "explanation_fr": "L'objection sur l'avortement invoque le développement embryologique, qui ne détermine pas à lui seul la personnalité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8208,9 +8258,9 @@
           "selected_source_ids": [
             "ACOG_ABORTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The original abortion objection points to embryological stages, but clinical development does not by itself define personhood.",
+          "explanation_fr": "L'objection sur l'avortement invoque le développement embryologique, qui ne détermine pas à lui seul la personnalité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8219,9 +8269,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The 1974 CDF declaration opposes direct abortion while acknowledging historical disagreements on ensoulment.",
+          "explanation_fr": "La déclaration CDF de 1974 s'oppose à l'avortement direct tout en reconnaissant des divergences sur l'animation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8231,9 +8281,9 @@
             "CASTI",
             "ABORT74"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Do not state medieval theology or penalties as though unanimously identical to current embryology.",
+          "explanation_fr": "Ne présentez ni théologie médiévale ni peines anciennes comme identiques à la biologie actuelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8243,9 +8293,9 @@
             "CASTI",
             "ABORT74"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The 1974 CDF declaration opposes direct abortion while acknowledging historical disagreements on ensoulment.",
+          "explanation_fr": "La déclaration CDF de 1974 s'oppose à l'avortement direct tout en reconnaissant des divergences sur l'animation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8254,9 +8304,9 @@
           "selected_source_ids": [
             "PP_ABORTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Do not state medieval theology or penalties as though unanimously identical to current embryology.",
+          "explanation_fr": "Ne présentez ni théologie médiévale ni peines anciennes comme identiques à la biologie actuelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8266,9 +8316,9 @@
             "ABORT74",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Do not state medieval theology or penalties as though unanimously identical to current embryology.",
+          "explanation_fr": "Ne présentez ni théologie médiévale ni peines anciennes comme identiques à la biologie actuelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8278,9 +8328,9 @@
             "CASTI",
             "ABORT74"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The 1974 CDF declaration opposes direct abortion while acknowledging historical disagreements on ensoulment.",
+          "explanation_fr": "La déclaration CDF de 1974 s'oppose à l'avortement direct tout en reconnaissant des divergences sur l'animation.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -8369,11 +8419,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE124",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -8382,9 +8437,9 @@
           "selected_source_ids": [
             "ACOG_ABORTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Trauma and bodily autonomy are real concerns for a rape survivor; they do not constitute an advocate's quotation.",
+          "explanation_fr": "Traumatisme et autonomie corporelle sont des préoccupations réelles d'une victime de viol, non citation attribuée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8393,9 +8448,9 @@
           "selected_source_ids": [
             "ACOG_ABORTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Trauma and bodily autonomy are real concerns for a rape survivor; they do not constitute an advocate's quotation.",
+          "explanation_fr": "Traumatisme et autonomie corporelle sont des préoccupations réelles d'une victime de viol, non citation attribuée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8404,9 +8459,9 @@
           "selected_source_ids": [
             "ABORTCLAR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic doctrine distinguishes the assailant's guilt and the unborn child's innocence, with duties of protective care.",
+          "explanation_fr": "La doctrine catholique distingue la faute de l'agresseur et l'innocence de l'enfant, avec devoirs de protection.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8416,9 +8471,9 @@
             "CASTI",
             "ABORT74"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Neither refusal of direct abortion nor the care requirement permits blaming or abandoning the survivor.",
+          "explanation_fr": "Ni le refus de l'avortement direct ni les soins ne permettent de blâmer ou d'abandonner la victime.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8429,9 +8484,9 @@
             "ABORT74",
             "ABORTCLAR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic doctrine distinguishes the assailant's guilt and the unborn child's innocence, with duties of protective care.",
+          "explanation_fr": "La doctrine catholique distingue la faute de l'agresseur et l'innocence de l'enfant, avec devoirs de protection.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8440,9 +8495,9 @@
           "selected_source_ids": [
             "PP_ABORTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Neither refusal of direct abortion nor the care requirement permits blaming or abandoning the survivor.",
+          "explanation_fr": "Ni le refus de l'avortement direct ni les soins ne permettent de blâmer ou d'abandonner la victime.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8452,9 +8507,9 @@
             "ABORT74",
             "ABORTCLAR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Neither refusal of direct abortion nor the care requirement permits blaming or abandoning the survivor.",
+          "explanation_fr": "Ni le refus de l'avortement direct ni les soins ne permettent de blâmer ou d'abandonner la victime.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8463,9 +8518,9 @@
           "selected_source_ids": [
             "ABORTCLAR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic doctrine distinguishes the assailant's guilt and the unborn child's innocence, with duties of protective care.",
+          "explanation_fr": "La doctrine catholique distingue la faute de l'agresseur et l'innocence de l'enfant, avec devoirs de protection.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -8553,6 +8608,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -8849,7 +8909,7 @@
     },
     {
       "id": "CSE142",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -8858,9 +8918,9 @@
           "selected_source_ids": [
             "FREUD1908"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Freud's 1908 critique of repression does not prove chastity is impossible in a digitized society.",
+          "explanation_fr": "La critique freudienne de 1908 ne prouve pas que la chasteté soit impossible dans une société numérisée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8869,9 +8929,9 @@
           "selected_source_ids": [
             "FREUD1908"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Freud's 1908 critique of repression does not prove chastity is impossible in a digitized society.",
+          "explanation_fr": "La critique freudienne de 1908 ne prouve pas que la chasteté soit impossible dans une société numérisée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8880,9 +8940,9 @@
           "selected_source_ids": [
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Chastity as virtue concerns learned self-government and realistic support, not effortless temptation absence.",
+          "explanation_fr": "La chasteté comme vertu comporte maîtrise acquise et soutien concret, non absence de tentations.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8892,9 +8952,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Digital risks may be significant, but a categorical psychological impossibility remains unsupported.",
+          "explanation_fr": "Les risques numériques sont sérieux, sans preuve d'impossibilité psychologique générale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8904,9 +8964,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Chastity as virtue concerns learned self-government and realistic support, not effortless temptation absence.",
+          "explanation_fr": "La chasteté comme vertu comporte maîtrise acquise et soutien concret, non absence de tentations.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8915,9 +8975,9 @@
           "selected_source_ids": [
             "FREUD1908"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Digital risks may be significant, but a categorical psychological impossibility remains unsupported.",
+          "explanation_fr": "Les risques numériques sont sérieux, sans preuve d'impossibilité psychologique générale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8927,9 +8987,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Digital risks may be significant, but a categorical psychological impossibility remains unsupported.",
+          "explanation_fr": "Les risques numériques sont sérieux, sans preuve d'impossibilité psychologique générale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -8938,9 +8998,9 @@
           "selected_source_ids": [
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Chastity as virtue concerns learned self-government and realistic support, not effortless temptation absence.",
+          "explanation_fr": "La chasteté comme vertu comporte maîtrise acquise et soutien concret, non absence de tentations.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -9027,11 +9087,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE143",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -9040,9 +9105,9 @@
           "selected_source_ids": [
             "PURITY_SHAME2026"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The referenced sexual-shame studies are observational and partly about evangelical purity culture.",
+          "explanation_fr": "Les études sur la honte sexuelle sont observationnelles et concernent en partie la purity culture évangélique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9051,9 +9116,9 @@
           "selected_source_ids": [
             "PURITY_SURVIVORS2026"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The referenced sexual-shame studies are observational and partly about evangelical purity culture.",
+          "explanation_fr": "Les études sur la honte sexuelle sont observationnelles et concernent en partie la purity culture évangélique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9062,9 +9127,9 @@
           "selected_source_ids": [
             "HOMO86"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral responsibility, dignity and merciful care must be distinguished from damaging shame practices.",
+          "explanation_fr": "Responsabilité morale, dignité et miséricorde se distinguent des pratiques qui cultivent la honte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9074,9 +9139,9 @@
             "HOMO86",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Associations neither prove the Church's moral propositions cause harm nor excuse pastoral cruelty.",
+          "explanation_fr": "Les corrélations ne prouvent ni la nocivité causale d'une doctrine ni n'excusent la cruauté pastorale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9086,9 +9151,9 @@
             "HOMO86",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral responsibility, dignity and merciful care must be distinguished from damaging shame practices.",
+          "explanation_fr": "Responsabilité morale, dignité et miséricorde se distinguent des pratiques qui cultivent la honte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9097,9 +9162,9 @@
           "selected_source_ids": [
             "PURITY_SHAME2026"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Associations neither prove the Church's moral propositions cause harm nor excuse pastoral cruelty.",
+          "explanation_fr": "Les corrélations ne prouvent ni la nocivité causale d'une doctrine ni n'excusent la cruauté pastorale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9109,9 +9174,9 @@
             "HOMO86",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Associations neither prove the Church's moral propositions cause harm nor excuse pastoral cruelty.",
+          "explanation_fr": "Les corrélations ne prouvent ni la nocivité causale d'une doctrine ni n'excusent la cruauté pastorale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9121,9 +9186,9 @@
             "HOMO86",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral responsibility, dignity and merciful care must be distinguished from damaging shame practices.",
+          "explanation_fr": "Responsabilité morale, dignité et miséricorde se distinguent des pratiques qui cultivent la honte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -9211,11 +9276,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE145",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -9224,9 +9294,9 @@
           "selected_source_ids": [
             "FLETCHER_EXCERPTS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Fletcher's agape ethics cannot be equated verbatim with the modern 'love is love' slogan.",
+          "explanation_fr": "L'agapè de Fletcher ne se confond pas littéralement avec le slogan moderne « love is love ».",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9235,9 +9305,9 @@
           "selected_source_ids": [
             "PP_RELATIONSHIPS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Fletcher's agape ethics cannot be equated verbatim with the modern 'love is love' slogan.",
+          "explanation_fr": "L'agapè de Fletcher ne se confond pas littéralement avec le slogan moderne « love is love ».",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9246,9 +9316,9 @@
           "selected_source_ids": [
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas I–II q18 and Veritatis Splendor distinguish loving intention from moral object.",
+          "explanation_fr": "La Somme I–II q18 et Veritatis Splendor distinguent intention aimante et objet moral.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9258,9 +9328,9 @@
             "VS",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The full original Fletcher book still needs collation before claiming his precise opposition.",
+          "explanation_fr": "L'ouvrage original de Fletcher reste à collationner avant d'attribuer un argument précis.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9270,9 +9340,9 @@
             "VS",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas I–II q18 and Veritatis Splendor distinguish loving intention from moral object.",
+          "explanation_fr": "La Somme I–II q18 et Veritatis Splendor distinguent intention aimante et objet moral.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9281,9 +9351,9 @@
           "selected_source_ids": [
             "FLETCHER_EXCERPTS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The full original Fletcher book still needs collation before claiming his precise opposition.",
+          "explanation_fr": "L'ouvrage original de Fletcher reste à collationner avant d'attribuer un argument précis.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9293,9 +9363,9 @@
             "VS",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The full original Fletcher book still needs collation before claiming his precise opposition.",
+          "explanation_fr": "L'ouvrage original de Fletcher reste à collationner avant d'attribuer un argument précis.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9304,9 +9374,9 @@
           "selected_source_ids": [
             "VS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas I–II q18 and Veritatis Splendor distinguish loving intention from moral object.",
+          "explanation_fr": "La Somme I–II q18 et Veritatis Splendor distinguent intention aimante et objet moral.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -9393,11 +9463,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE149",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -9407,9 +9482,9 @@
             "APA_LGB",
             "ASRM_ART"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Empirical findings can disprove particular facts assumed in an older moral argument.",
+          "explanation_fr": "Les résultats empiriques peuvent réfuter certains faits présupposés dans un argument moral ancien.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9418,9 +9493,9 @@
           "selected_source_ids": [
             "APA_TRANS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Empirical findings can disprove particular facts assumed in an older moral argument.",
+          "explanation_fr": "Les résultats empiriques peuvent réfuter certains faits présupposés dans un argument moral ancien.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9429,9 +9504,9 @@
           "selected_source_ids": [
             "ST94"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas's natural law and Veritatis Splendor also evaluate the human goods and chosen act.",
+          "explanation_fr": "La loi naturelle chez Thomas et Veritatis Splendor évaluent aussi les biens humains et l'acte choisi.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9441,9 +9516,9 @@
             "ST94",
             "DP"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Both dismissal of science and deduction of every moral norm from data are invalid.",
+          "explanation_fr": "Ni le rejet de la science ni la déduction intégrale des normes depuis les données ne sont valables.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9453,9 +9528,9 @@
             "ST94",
             "DP"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas's natural law and Veritatis Splendor also evaluate the human goods and chosen act.",
+          "explanation_fr": "La loi naturelle chez Thomas et Veritatis Splendor évaluent aussi les biens humains et l'acte choisi.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9465,9 +9540,9 @@
             "APA_TRANS",
             "ACOG_ABORTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Both dismissal of science and deduction of every moral norm from data are invalid.",
+          "explanation_fr": "Ni le rejet de la science ni la déduction intégrale des normes depuis les données ne sont valables.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9477,9 +9552,9 @@
             "ST94",
             "DP"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Both dismissal of science and deduction of every moral norm from data are invalid.",
+          "explanation_fr": "Ni le rejet de la science ni la déduction intégrale des normes depuis les données ne sont valables.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -9489,9 +9564,9 @@
             "ST94",
             "DP"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas's natural law and Veritatis Splendor also evaluate the human goods and chosen act.",
+          "explanation_fr": "La loi naturelle chez Thomas et Veritatis Splendor évaluent aussi les biens humains et l'acte choisi.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -9581,6 +9656,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     }
   ],
@@ -9713,10 +9793,10 @@
       }
     ],
     "primary_consultation_limit": "These are original text or original-author quotations used to check scope. Access to a page alone is NOT a comprehensive collation of every section or every linked stage, and does not warrant declaring a full debate certified.",
-    "additional_semantic_stage_cases": 31,
-    "additional_semantic_stage_assessments": 248,
-    "total_semantic_stage_assessments": 312,
-    "remaining_unassessed_stage_claims": 128,
+    "additional_semantic_stage_cases": 47,
+    "additional_semantic_stage_assessments": 376,
+    "total_semantic_stage_assessments": 440,
+    "remaining_unassessed_stage_claims": 0,
     "full_original_passage_certification_remains_open": true
   }
 }
