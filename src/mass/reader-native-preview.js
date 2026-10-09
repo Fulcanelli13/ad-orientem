@@ -701,7 +701,7 @@ export async function mountNativeReaderPreview({
       // Chromium may dispatch a deferred native scroll event after the
       // explicit first focus event; it must not immediately stand at Levate.
       // Require forward movement after Flectamus, or the explicit stand action.
-      if(formulaKneelRecord===id && /^GF-SOP-\\d\\d-K$/.test(id) &&
+      if(formulaKneelRecord===id && /^GF-SOP-\d\d-K$/.test(id) &&
         card.scrollTop<=(formulaKneelScrollTop??card.scrollTop)+2)return;
       formulaCueRunning=true;
       try{
