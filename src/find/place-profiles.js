@@ -105,7 +105,9 @@ function relatedItemsForPlace(projection,placeId){
   const shrines=arr(projection?.byLens?.shrines).filter(item=>placeIdForItem(item)===placeId);
   const traditions=arr(projection?.byLens?.traditions).filter(item=>placeIdForItem(item)===placeId);
   const pilgrimages=arr(projection?.byLens?.pilgrimages).filter(item=>placeIdForItem(item)===placeId);
-  return Object.freeze({shrines,traditions,pilgrimages});
+  const apparitions=arr(projection?.byLens?.apparitions).filter(item=>placeIdForItem(item)===placeId);
+  const relics=arr(projection?.byLens?.relics).filter(item=>placeIdForItem(item)===placeId);
+  return Object.freeze({shrines,traditions,pilgrimages,apparitions,relics});
 }
 
 export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}={}){
@@ -115,7 +117,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     if(!placeId)continue;
     const related=relatedItemsForPlace(projection,placeId);
     const tlm=exactTlmItems(dataset,projection,placeId);
-    const allItems=[...related.shrines,...related.traditions,...related.pilgrimages];
+    const allItems=[...related.shrines,...related.traditions,...related.pilgrimages,...related.apparitions,...related.relics];
     const calendar=temporalRows(related.pilgrimages,today);
     const seasonal=new Map();
     for(const pilgrimage of related.pilgrimages){
@@ -153,12 +155,16 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       map_publishable:Boolean(allItems.some(item=>item?.map_publishable)),
       counts:Object.freeze({
         shrines:related.shrines.length,
+        apparitions:related.apparitions.length,
+        relics:related.relics.length,
         traditions:related.traditions.length,
         pilgrimages:related.pilgrimages.length,
         novenas:novenas.length,
         tlm:tlm.length,
       }),
       shrines:Object.freeze(related.shrines.map(itemRef)),
+      apparitions:Object.freeze(related.apparitions.map(itemRef)),
+      relics:Object.freeze(related.relics.map(itemRef)),
       traditions:Object.freeze(related.traditions.map(itemRef)),
       pilgrimages:Object.freeze(related.pilgrimages.map(itemRef)),
       tlm,

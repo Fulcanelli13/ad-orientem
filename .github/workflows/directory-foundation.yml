@@ -6,6 +6,8 @@ on:
       - "data/directory/**"
       - "data/geography/**"
       - "data/shrines/**"
+      - "data/explore/**"
+      - "tests/sacred-geography-atlas.mjs"
       - "src/calendar/**"
       - "tests/pilgrimage-associations.mjs"
       - "data/customs/**"
@@ -24,6 +26,8 @@ on:
       - "data/directory/**"
       - "data/geography/**"
       - "data/shrines/**"
+      - "data/explore/**"
+      - "tests/sacred-geography-atlas.mjs"
       - "src/calendar/**"
       - "tests/pilgrimage-associations.mjs"
       - "data/customs/**"
@@ -54,6 +58,7 @@ jobs:
       - run: npm run test:explore-place-profiles
       - run: node tests/customs-atlas-place-pins.mjs
       - run: node tests/pilgrimage-associations.mjs
+      - run: node tests/sacred-geography-atlas.mjs
       - run: node --check src/calendar/browser-entry.js
       - run: node --check src/calendar/pilgrimage-places.js
       - run: node --check src/find/customs-atlas-filters.js
