@@ -57,3 +57,5 @@ jobs:
         run: node tests/sexual-ethics-short-answer-passage-confirmations-v1.mjs
       - name: Remaining 21 bounded original-passage checks (95/95)
         run: node tests/sexual-ethics-remaining-21-passage-checks-v1.mjs
+      - name: Original text review for 15 practical-debate stages
+        run: node tests/sexual-ethics-practical-original-passages-15-v1.mjs
