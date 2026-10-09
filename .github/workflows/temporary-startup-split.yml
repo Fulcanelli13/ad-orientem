@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Inspect remaining oversized inline payloads
+        run: node tools/audit-startup-html.mjs
       - name: Split the large HTML without changing script execution order
         run: |
           node tools/split-production-html.mjs --apply > /tmp/ao-split-report.json
