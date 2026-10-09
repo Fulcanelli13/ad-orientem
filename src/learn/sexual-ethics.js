@@ -116,7 +116,7 @@ function paragraphSourceLinks(win,item,kind,field=null){
   const links=refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
     return cseSourceTargets(sourceId,locator,source,{french:isFr(win)}).filter(t=>t.url).map(target=>{
-      const visible=`${shortSourceTitle(source)}${target.locator?` · ${target.locator}`:""}`;
+      const visible=`${shortSourceTitle(source)}${target.locator?` · ${target.locator}`:""}${target.scope==="original-full-text"?` · ${L(win,"full article","texte intégral")}`:""}`;
       const witness=target.witness?` · ${target.witness}`:"";
       const scope=target.scope==="chapter"?L(win,"Opens cited chapter; locate the listed verses.","Ouvre le chapitre cité ; repérez les versets indiqués.")
         :target.scope==="index"?L(win,"Source index only; passage link not verified.","Index uniquement ; lien au passage non vérifié.")
