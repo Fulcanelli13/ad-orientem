@@ -231,3 +231,49 @@ assert.match(litSource,/n\.closingCanonical\?canonicalPrayer\(n\.closingCanonica
  "Both guided and simple Novenas must render the source's canonical closing responsory");
 assert.equal(NOVENA_CORPUS_V4.perpetual_help.source.url,"https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
  "Retain actual unproofread scan witness rather than inventing a certified edition");
+
+
+// The 1925 primary digital witness prints nine Christmas days and nine
+// Pentecost days as separate sections on a single page. English source-body
+// correspondence may be reviewed without implying that the 18 French
+// editorial translations were printed in that English book.
+const historicalNovenaReview=JSON.parse(readFileSync("data/pray/novena-source-review.v2.json","utf8"));
+assert.equal(historicalNovenaReview.records.length,16);
+assert.equal(historicalNovenaReview.counts.daySpecificNovenas,8);
+assert.equal(historicalNovenaReview.counts.uniqueDayPrayerBodies,72);
+assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,18);
+assert.equal(historicalNovenaReview.counts.frenchEditorialTranslationReviews,18);
+assert.equal(historicalNovenaReview.counts.completePrintEditionCertificates,0);
+assert.equal(historicalNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,27);
+const reviews=Object.fromEntries(historicalNovenaReview.records.map(x=>[x.id,x]));
+for(const id of ["christmas","holy_ghost"]){
+ const historical=reviews[id],current=NOVENA_CORPUS_V4[id];
+ assert.equal(historical.dayBodySourceReview.length,9);
+ assert.equal(current.days.length,9);
+ for(let i=0;i<9;i++){
+  const row=historical.dayBodySourceReview[i],text=current.days[i].text.en;
+  assert.equal(row.day,i+1);
+  assert.ok(row.sourceIncipit.length>=25 && row.sourceExplicit.length>=30);
+  assert.ok(text.startsWith(row.sourceIncipit),id+" day "+(i+1)+" lost historically compared opening");
+  assert.ok(text.endsWith(row.sourceExplicit),id+" day "+(i+1)+" lost historically compared ending");
+  assert.match(row.enTextComparison,/NORMALIZED_CAPITALIZATION_AND_PUNCTUATION/);
+  assert.match(row.frTextComparison,/EDITORIAL_TRANSLATION/);
+  assert.equal(row.completePrintEditionCertification,"NOT_CERTIFIED");
+  assert.equal(typeof current.days[i].text.fr,"string");
+  assert.ok(current.days[i].text.fr.length>30);
+ }
+ assert.deepEqual(current.commonPrayers,[["foundations_our_father",1],["foundations_hail_mary",1],["foundations_glory_be",1]],id+" lost one common Our Father, Hail Mary or Glory Be");
+}
+const missingHistorical=["annunciation","seven_sorrows","assumption"];
+for(const id of missingHistorical){
+ const g=reviews[id].omittedHistoricalMaterial;
+ assert.equal(g.status,"27_HISTORICAL_MEDITATIONS_AND_PRACTICES_NOT_REPRODUCED");
+ assert.deepEqual(g.missingPerDay,["full MEDITATION prose","full PRACTICE/resolution prose"]);
+ assert.equal(NOVENA_CORPUS_V4[id].days.length,9);
+ const source=novenaSourceAccess(id);
+ assert.match(source.note.en,/MEDITATION and PRACTICE/);
+ assert.match(source.note.fr,/MÉDITATION et (une )?PRATIQUE/);
+ assert.match(source.note.en,/editorial/);
+ assert.match(source.note.fr,/rédactionnel/);
+}
+assert.ok(!historicalNovenaReview.records.some(x=>x.dayBodySourceReview?.some(d=>d.completePrintEditionCertification!=="NOT_CERTIFIED")),"Premature original facsimile certification");
