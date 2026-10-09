@@ -65,3 +65,5 @@ jobs:
         run: node tests/sexual-ethics-fletcher-original-book-v1.mjs
       - name: Thirty new practical debate original passage scopes
         run: node tests/sexual-ethics-practical-thirty-passages-v1.mjs
+      - name: Practical stage source-role reconciliation 120 of 120
+        run: node tests/sexual-ethics-practical-final51-roles-v1.mjs
