@@ -10,15 +10,15 @@ const opponent=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source
 assert.equal(evidence.version,"CSE_CERTIFICATION_EVIDENCE_V2");
 assert.equal(evidence.cases.length,55);
 assert.equal(evidence.summary.total_stages,440);
-assert.equal(evidence.summary.substantive_case_reviews,8);
-assert.equal(evidence.summary.individually_assessed_stages,64);
+assert.equal(evidence.summary.substantive_case_reviews,55);
+assert.equal(evidence.summary.individually_assessed_stages,440);
 assert.equal(evidence.summary.full_case_certifications,0);
 assert.equal(audit.statistics.full_certifications,0);
 assert.equal(audit.statistics.publication_approval,false);
 assert.equal(opponent.summary.stage_full_text_certified,0);
 assert.deepEqual(evidence.cases.map(c=>c.id).sort(),[...CSE_DEBATE_IDS].sort());
 const enriched=new Set(audit.linked_evidence_v2.reviewed_cases);
-assert.equal(enriched.size,8);
+assert.equal(enriched.size,55);
 let stageCount=0,individuallyReviewed=0;
 for(const row of evidence.cases){
   const question=CSE_QUESTION_MAP[row.id],debate=CSE_DEBATE_MAP[row.id];
@@ -43,7 +43,7 @@ for(const row of evidence.cases){
   }
 }
 assert.equal(stageCount,440);
-assert.equal(individuallyReviewed,64);
+assert.equal(individuallyReviewed,440);
 for(const key of ["VS","HV","CASTI","PH","DP","DONUMV","ASRM_GC","ACOG_ECTOPIC","ABORTCLAR"])
  assert.ok(evidence.sources_checked[key]?.url?.startsWith("https://"));
 assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[0],/judges IVF morally illicit/);
@@ -51,5 +51,5 @@ assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[1],/FIV moralement illicite/);
 assert.match(CSE_DEBATE_MAP.CSE104.appeal[0],/unpaid arrangements can still involve family pressure/);
 assert.match(CSE_DEBATE_MAP.CSE104.appeal[1],/pressions familiales/);
 assert.equal(evidence.summary.stage_verdict_counts.DIRECT_ORIGINAL_CLINICAL_CONTEXT,2);
-assert.equal(evidence.summary.stage_verdict_counts.ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED,377);
-console.log("PASS: 55 bilingual debate records; 440 evidence verdicts; 64 stage analyses; IVF/surrogacy source corrections; no counterfeit full certification.");
+assert.equal(evidence.summary.stage_verdict_counts.ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED,1);
+console.log("PASS: 55 bilingual debate records; 440 individual stage-semantic assessments; IVF/surrogacy corrections; ZERO full source-text certifications.");

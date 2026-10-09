@@ -3658,8 +3658,26 @@
   },
   "certification_audit_v2": {
     "file": "data/learn/sexual-ethics-certification-evidence.v2.json",
-    "stage_semantic_checks": 64,
+    "stage_semantic_checks": 440,
     "still_uncertified_debates": 55,
-    "status": "SELECTED_ORIGINAL_PASSAGE_CROSSCHECK_WITH_UNRESOLVED_ILLUSTRATIVE_AND_SECONDARY_CLAIMS"
+    "status": "ALL_STAGE_LEVEL_SEMANTIC_SCOPE_REVIEWS_RECORDED_FULL_PASSAGE_CERTIFICATION_OPEN"
+  },
+  "certification_audit_v3": {
+    "date": "2026-10-09",
+    "evidence_file": "data/learn/sexual-ethics-certification-evidence.v2.json",
+    "all_case_risks_specific": true,
+    "case_risk_scope_notes": 55,
+    "stage_semantic_assessments": 440,
+    "stage_original_manuscript_fully_collated": 0,
+    "fully_certified_debates": 0,
+    "language_fields_preserved": true,
+    "bilingual_substantive_corrections": [
+      "CSE006",
+      "CSE093",
+      "CSE141"
+    ],
+    "primary_reference_documents_consulted": 21,
+    "original_source_certification": "REQUIRES_INDEPENDENT_EXACT_PASSAGE_AND_THEOLOGICAL_FRENCH_APPROVAL",
+    "publication_approval": false
   }
 }
