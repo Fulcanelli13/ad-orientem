@@ -167,8 +167,10 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
       citation.rel="noopener noreferrer";
       citation.dataset.aoRosaryMeditationSource=id+".b"+bead;
       citation.title=french
-        ?"Lire le contexte original ; la méditation n’est pas une citation biblique."
-        :"Read the original context; this meditation is not a Scripture quotation.";
+        ?(witness.frenchPrimaryUrl.startsWith("https://fr.wikisource.org/wiki/Bible_Crampon_1923/")
+          ?"Bible Crampon 1923 · ouvrir le chapitre cité et repérer le verset indiqué ; cette méditation n’est pas une citation biblique."
+          :"Lire le document doctrinal d’origine ; cette méditation n’est pas une citation biblique.")
+        :"Read the original Scripture or doctrinal witness; this meditation is not a verbatim quotation.";
       citation.textContent=french?(witness.referenceFr||witness.reference):witness.reference;
       if(french&&witness.frenchWitnessLanguage==="la"){
         citation.lang="la";
