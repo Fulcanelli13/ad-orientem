@@ -80,7 +80,7 @@ function placeRecordRows(records,language){
   if(!list.length)return "";
   return '<div class="aoExplorePlaceRows">'+list.map(item=>
     '<button type="button" class="aoExplorePlaceRow" data-explore-place-item="'+esc(item.item_id)+'" data-explore-place-lens="'+esc(item.lens)+'">'
-    +'<span><small>'+esc(item.eyebrow||lensLabel(language,item.lens))+'</small><strong>'+esc(item.title||"")+'</strong></span>'
+    +'<span><small>'+esc(item.eyebrow||lensLabel(language,item.lens))+'</small><strong>'+esc(translatedTitle(item,vm.language)||"")+'</strong></span>'
     +(item.status?'<i>'+esc(item.status)+'</i>':"")
     +'</button>'
   ).join("")+'</div>';
@@ -168,22 +168,24 @@ function placeSheet(vm){
   return html;
 }
 
+const translatedTitle=(item,language)=>language==="fr"&&item?.title_fr?item.title_fr:item?.title;
+const translatedSummary=(item,language)=>language==="fr"&&item?.summary_fr?item.summary_fr:item?.summary;
 function itemCard(item,vm){
   return '<button type="button" class="aoFindCard aoExploreCard" data-explore-item="'+esc(item.item_id)+'" data-explore-lens="'+esc(item.lens)+'">'
     +'<span class="aoFindCardTop"><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><i class="aoFindStatus" data-state="'+esc(item.map_publishable?"YES":"UNKNOWN")+'">'+esc(item.status||"")+'</i></span>'
-    +'<strong>'+esc(item.title||"")+'</strong>'
+    +'<strong>'+esc(translatedTitle(item,vm.language)||"")+'</strong>'
     +(item.subtitle?'<span>'+esc(item.subtitle)+'</span>':"")
-    +(item.summary?'<p>'+esc(String(item.summary).slice(0,240))+'</p>':"")
+    +(item.summary?'<p>'+esc(String(translatedSummary(item,vm.language)).slice(0,240))+'</p>':"")
     +'</button>';
 }
 function detailSheet(vm){
   const item=vm.selected;if(!item)return "";
   let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet" role="dialog" aria-modal="true">';
-  html+='<header><div><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(item.title||"")+'</h2>';
+  html+='<header><div><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(translatedTitle(item,vm.language)||"")+'</h2>';
   if(item.subtitle)html+='<p>'+esc(item.subtitle)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
-  if(item.summary)html+='<p class="aoExploreLead">'+esc(item.summary)+'</p>';
+  if(item.summary)html+='<p class="aoExploreLead">'+esc(translatedSummary(item,vm.language))+'</p>';
   if(item.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(item.geo.reference_point_name?" · "+item.geo.reference_point_name:""))+"</p>";
 
   if(arr(item.facts).length){
