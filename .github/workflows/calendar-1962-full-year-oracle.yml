@@ -28,6 +28,12 @@ jobs:
         run: |
           node tests/calendar-ordo-corrections.mjs
           npm run test:calendar
+      - name: Check Mass-reader and Proper contracts
+        run: |
+          npm run test:reader
+          npm run test:reader-rogations
+          npm run test:proper
+          npm run test:app-shell-contract
       - name: Install browser runner
         run: |
           npm install --no-save --no-package-lock @playwright/test
