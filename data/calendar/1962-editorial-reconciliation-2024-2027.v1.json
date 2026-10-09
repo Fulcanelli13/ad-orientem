@@ -93,7 +93,7 @@
     {
       "key": "saturday_bvm_mass_title",
       "count": 24,
-      "status": "REVIEW_NOT_CLEARED",
+      "status": "DISPLAY_HEADLINE_CORRECTED_PR_752_FORMULARY_UNCHANGED",
       "reason": "The app names a particular Saturday Marian Mass (Common C10 form); both dated ordo witnesses use a generic Saturday BVM celebration. The specific Proper is useful: harmonize user display with subtype without losing the appointed Mass identity.",
       "dates": [
         "2024-02-03",
@@ -196,7 +196,7 @@
     {
       "key": "pentecost_vigil_mislabel",
       "count": 2,
-      "status": "CALENDAR_ALIAS_PROPOSED",
+      "status": "HYDRATED_SOURCE_TITLE_CORRECTED_CALENDAR_ALIAS_GUARDED",
       "reason": "Observed tempora:Pasc6-6:1:r rendered 'Saturday after the Ascension', despite both independent 1962 witnesses identifying the Vigil of Pentecost. Apply strictly ID-guarded EN/FR display correction only; Mass reading/rite remains shared.",
       "dates": [
         "2024-05-18",
@@ -206,7 +206,7 @@
     {
       "key": "bibiana_mislabel",
       "count": 2,
-      "status": "CALENDAR_ALIAS_PROPOSED",
+      "status": "DISPLAY_HEADLINE_CORRECTED_CANONICAL_ID",
       "reason": "Observed sancti:12-02:3:r rendered 'St. Vivian', but both independent 1962 witnesses identify St Bibiana. Correct the EN/FR display label by canonical source ID.",
       "dates": [
         "2024-12-02",
@@ -216,7 +216,7 @@
     {
       "key": "paul_latin_only",
       "count": 1,
-      "status": "CALENDAR_ALIAS_PROPOSED",
+      "status": "DISPLAY_HEADLINE_CORRECTED_CANONICAL_ID",
       "reason": "Observed sancti:06-30:3:r rendered 'In Commemoratione Sancti Pauli Apostoli' instead of a user-language title; do not alter source Latin or the St Peter commemoration.",
       "dates": [
         "2027-06-30"
@@ -225,11 +225,32 @@
     {
       "key": "advent_saturday_wording",
       "count": 1,
-      "status": "REVIEW_NOT_CLEARED",
+      "status": "DISPLAY_HEADLINE_CORRECTED_PR_752",
       "reason": "Observed tempora:Adv2-6:3:v rendered 'Sabbato after II Sunday of Advent'. Review bilingual weekday wording, retaining Advent precedence and Proper.",
       "dates": [
         "2024-12-14"
       ]
     }
-  ]
+  ],
+  "currentReaudit": {
+    "date": "2026-10-09",
+    "workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37958564284",
+    "sourceCommit": "b69fda453617505fca58e89a178464988a83973f",
+    "mergedSharedResolverPR": "https://github.com/Fulcanelli13/ad-orientem/pull/753",
+    "editorialFlagsCurrentlyDetectedFromRawSource": {
+      "year2024": 65,
+      "year2027": 62,
+      "total": 127,
+      "genericFeria": 55,
+      "nonGeneric": 72
+    },
+    "archivedFlagsNotComparableAsSimpleRemainingCount": 132,
+    "historicCalendarHeadlineCorrections": 30,
+    "archivedUnclearedFlagsAfterDisplayWork": 102,
+    "principalRankColourNewUnclassifiedConflicts": 0,
+    "currentChristKingSundayCommemorations": 0,
+    "alternativeRogationMassCertified": false,
+    "allPropersCertified": false,
+    "note": "The current 127 raw-calendar title-similarity flags are not 127 verified user-facing headline errors. The first-source audit captures unhydrated donor titles and its 127 count is not a correction ledger; 30 historically flagged displays now have source-ID UI aliases or resolver hydration. Source completeness and appointed Proper certification remain separate."
+  }
 }
