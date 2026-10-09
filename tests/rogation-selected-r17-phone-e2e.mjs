@@ -86,7 +86,7 @@ try{
      flow.appendChild(actions);
     }
     const {mountRogationPreflight}=await import("/src/mass/rogation-preflight.js");
-    globalThis.__rogationFetches=[];
+    globalThis.__rogationFetches=[];globalThis.__rogationFetchedLibrary={};
     const fetchApproved=async url=>{
      const response=await fetch(url);
      globalThis.__rogationFetches.push({url:String(url),status:response.status});
@@ -98,6 +98,9 @@ try{
      }else if(d.schema==="AO_1962_ROGATION_EASTER_PREFACE_V1"){
       d.status="PUBLISHED_1962_EASTER_PREFACE";d.published=true;d.publicationAllowed=true;
      }
+     globalThis.__rogationFetches.at(-1).schema=d.schema;
+     globalThis.__rogationFetches.at(-1).finalStatus=d.status;
+     globalThis.__rogationFetchedLibrary[d.schema]=d;
      return {ok:true,json:async()=>d};
     };
     globalThis.__rogationPreflight=mountRogationPreflight({
@@ -114,7 +117,14 @@ try{
     const diagnostic=await page.evaluate(async()=>{
      const mod=await import("/src/mass/rogation-preflight.js");
      const host=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+     const fetched=globalThis.__rogationFetchedLibrary??{};
      return {
+      status:globalThis.__rogationPreflight?.status?.(),
+      fetchedSourceReady:mod.rogationPublicChoiceReady({
+        sourceGate:fetched["AO_1962_ROGATION_MASS_SOURCE_GATE_V1"],
+        sourceProper:fetched["AO_1962_ROGATION_PROPER_V1"],
+        preface:fetched["AO_1962_ROGATION_EASTER_PREFACE_V1"]
+      }),
       date:host?.date,canStart:host?.canStart,rank:host?.calendarRank,
       properSource:host?.properSource,
       candidate:mod.resolvedRogationCandidate(host),
