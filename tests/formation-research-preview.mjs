@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {FORMATION_RESEARCH_PREVIEW_DATA as DATA} from "../src/learn/formation-research-preview-data.js";
 import {TRADITIONAL_MASS_RESEARCH_PREVIEW_DATA as TLM} from "../src/learn/traditional-mass-research-preview-data.js";
-import {createFormationResearchPreview,FORMATION_RESEARCH_PREVIEW_ROOT,formationResearchSourceLinks} from "../src/learn/formation-research-preview.js";
+import {createFormationResearchPreview,FORMATION_RESEARCH_PREVIEW_ROOT,formationResearchSourceLinks,formationPreviewBibleCapsule,FORMATION_PREVIEW_BIBLE_WITNESSES} from "../src/learn/formation-research-preview.js";
 import {LEARN_MODULE_IDS} from "../src/learn/presentation.js";
 
 const answers=JSON.parse(readFileSync("data/learn/biblical-patristic-answers.v1.json","utf8"));
@@ -21,6 +21,30 @@ assert.equal((one.match(/<a /g)||[]).length,1,"Missing references must not becom
 assert.match(formationResearchSourceLinks(sourceFr,["NOT-A-SOURCE"],"sedevacantism"),/Source non vérifiée/);
 assert.match(formationResearchSourceLinks(sourceEn,[],"biblical"),/No documentary source attached/);
 assert.match(formationResearchSourceLinks(sourceFr,[],"biblical"),/Aucune source documentaire jointe/);
+assert.equal(Object.keys(FORMATION_PREVIEW_BIBLE_WITNESSES).length,8);
+for(const [id,expected] of Object.entries(FORMATION_PREVIEW_BIBLE_WITNESSES)){
+ const source=DATA.sourceSets.biblical[id];
+ assert.ok(source, "An indexed Scripture source disappeared from the internal review corpus: "+id);
+ assert.equal(source.url,expected.url,id+" original document destination changed");
+ assert.equal(source.type,expected.type,id+" original source classification changed");
+ const html=formationResearchSourceLinks(sourceEn,[id],"biblical");
+ assert.match(html,/data-ao-scripture-context=/,id+" missing Bible contextual reader");
+ assert.match(html,/rel="noopener noreferrer"/,"Underlying documentary hyperlink lost");
+ assert.ok(html.includes(source.url),"Original source no longer visible: "+id);
+ const french=formationResearchSourceLinks(sourceFr,[id],"biblical");
+ assert.match(french,/Contexte · Bible/,id+" French Bible context absent");
+ assert.equal(formationPreviewBibleCapsule(sourceEn,"biblical",id,{...source,url:"https://invalid.example/changed"}),"",
+   id+" unverified document URL should disable contextual source suggestion");
+ assert.equal(formationPreviewBibleCapsule(sourceEn,"biblical",id,{...source,type:"OPPONENT_OWN_WORDS"}),"",
+   id+" reclassified primary source must fail closed");
+}
+assert.equal(formationPreviewBibleCapsule(sourceEn,"sedevacantism","ISA714",DATA.sourceSets.biblical.ISA714),"",
+ "No cross-owner reuse of unpublished biblical source without a declaration");
+assert.doesNotMatch(formationResearchSourceLinks(sourceEn,["JW-JOHN"],"biblical"),/data-ao-scripture-context=/,
+ "Opponent interpretation must not masquerade as a certified Catholic Bible edition");
+assert.doesNotMatch(formationResearchSourceLinks(sourceEn,["CRAMPON-1904"],"biblical"),/data-ao-scripture-context=/,
+ "Whole-Bible catalogue link must not invent a precise verse citation");
+
 assert.match(formationResearchSourceLinks(sourceEn,["TC21"],"custodes"),/traditionis-custodes/);
 assert.match(formationResearchSourceLinks(sourceEn,["SC63"],"reform"),/sacrosanctum-concilium/);
 // Existing preview data currently resolves; this protects all underlying
