@@ -1,0 +1,162 @@
+{
+  "schema": "ao-1962-sunday-reading-secondary-witness-v1",
+  "version": "2026-10-10-R1",
+  "scope": "Ten Sundays after Pentecost (X–XIX), two Scripture slots per Sunday; second published witness confirms printed Scripture boundaries, not independent provenance of the historical manuscript.",
+  "status": "20_OF_20_PUBLISHED_CITATIONS_RECONCILED_AFTER_TWO_BOUNDARY_CORRECTIONS",
+  "sourceHierarchy": {
+    "originalLatin": "Exact Divinum Officium Latin Tempora Proper file (first-party source-text identity guard, not a claim the digital edition is normative by itself)",
+    "secondPublishedWitness": "1962missal.com independent publisher, per-Sunday Epistola and Evangelium headings; separate publication is not proof of independent transcription",
+    "thirdConfirmationForCorrections": "MissaleMeum provides a separate published 1962 witness to the discontinuous Galatians text; Missale Online shows Latin beginning at 5:25 despite a short linked chapter label",
+    "liturgicalAuthority": "The 1962 Roman Missal and rubrics control the appointed reading and Sunday selection; external websites are evidence, not autonomous rubrical authorities"
+  },
+  "results": [
+    {
+      "sourcePath": "Tempora/Pent10-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent10-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-x-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "1 Corinthians 12:2–11",
+        "GOSPEL": "Luke 18:9–14"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "CORRECTED_LOWER_VERSE_BOUNDARY",
+        "GOSPEL": "MATCH"
+      },
+      "notes": "The original Latin and second witness begin 1 Corinthians 12:2, not 12:1."
+    },
+    {
+      "sourcePath": "Tempora/Pent11-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent11-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xi-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "1 Corinthians 15:1–10",
+        "GOSPEL": "Mark 7:31–37"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent12-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent12-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xii-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "2Corinthians 3:4–9",
+        "GOSPEL": "Luke 10:23–37"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent13-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent13-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xiii-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Galatians 3:16–22",
+        "GOSPEL": "Luke 17:11–19"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent14-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent14-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xiv-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Galatians 5:16–24",
+        "GOSPEL": "Matthew 6:24–33"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent15-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent15-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xv-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Galatians 5:25–26; 6:1–10",
+        "GOSPEL": "Luke 7:11–16"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "CORRECTED_SPLIT_FIRST_CHAPTER_VERSES",
+        "GOSPEL": "MATCH"
+      },
+      "notes": "The source text includes Galatians 5:25–26 before 6:1–10; the shared Bible reader must use two ordered segments."
+    },
+    {
+      "sourcePath": "Tempora/Pent16-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent16-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xvi-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Ephesians 3:13–21",
+        "GOSPEL": "Luke 14:1–11"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent17-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent17-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xvii-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Ephesians 4:1–6",
+        "GOSPEL": "Matthew 22:34–46"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent18-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent18-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xviii-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "1 Corinthians 1:4–8",
+        "GOSPEL": "Matthew 9:1–8"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    },
+    {
+      "sourcePath": "Tempora/Pent19-0",
+      "originalLatinUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent19-0.txt",
+      "secondWitnessUrl": "https://1962missal.com/temporale/dom-xix-post-pentecosten/",
+      "publishedReadings": {
+        "EPISTLE_OR_LESSON": "Ephesians 4:23–28",
+        "GOSPEL": "Matthew 22:1–14"
+      },
+      "comparisons": {
+        "EPISTLE_OR_LESSON": "MATCH",
+        "GOSPEL": "MATCH"
+      },
+      "notes": ""
+    }
+  ],
+  "totals": {
+    "sundayProperIdentities": 10,
+    "readingSlots": 20,
+    "agreedWithoutCorrection": 18,
+    "correctedBoundaryErrors": 2,
+    "unresolvedInBatch": 0
+  },
+  "excluded": "No new Bible translations, Gospel text reproduction, alternative calendar-date rules or non-X–XIX assertions."
+}
