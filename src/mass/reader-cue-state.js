@@ -1,4 +1,5 @@
 import { validateReaderGestureMatrix } from "./reader-gesture-matrix.js";
+import { ORDINARY_SUNG_GESTURE_ANCHORS } from "./faithful-gesture-cues.js";
 // R17 cue-scoped reader state projection.
 // Source-backed only: exact cue IDs from the certified Sung Mass blueprint.
 // No text scanning, no title/phase heuristics, no canonical chronology mutation.
@@ -211,6 +212,9 @@ const V183_GESTURE_SUPPRESS=new Set([
   "AO.SM.C0173", // HOC EST ENIM CORPUS MEUM — words, not elevation
   "AO.SM.C0179", // Chalice consecration words, not elevation
   "AO.SM.C0180", // Hæc quotiescúmque — words, not elevation
+  "AO.SM.C0197", // Nobis quoque breast strike belongs to C0196, not its following petition
+  "AO.SM.C0198", // Per Christum is not a second breast strike
+  "AO.SM.C0246", // quiet individual Communion formula; Holy Name bow explicitly needs public/audible text
 ]);
 const V183_GESTURE_REANCHOR=Object.freeze({
   "AO.SM.C0181":"AO.SM.C0179", // reuse extracted Chalice gesture text at actual action cue
@@ -244,6 +248,7 @@ function latestPassing(transitions,activeSort,conditions){
 function sourceGesture(item){
   if(!item)return null;
   const action=String(item.action??"").trim();
+  const anchors=ORDINARY_SUNG_GESTURE_ANCHORS[item.cueId]??null;
   const matrixOwned=Boolean(item.sourceGestureId);
   // The source itself explicitly marks these as conditional/advisory rather than universal.
   if(/do not hard-code as universal/i.test(action) || /depends on sung\/local calendar rule/i.test(action)){
@@ -264,6 +269,9 @@ function sourceGesture(item){
     label:action,
     action,
     trigger:item.trigger??null,
+    anchorLat:anchors?.anchorLat??null,
+    anchorEn:anchors?.anchorEn??null,
+    anchorFr:anchors?.anchorFr??null,
     scope:item.scope??"INSTANT",
     owner:matrixOwned?"GESTURE_MATRIX_SOT":"R17_CUE_SOURCE",
     cueId:item.cueId,

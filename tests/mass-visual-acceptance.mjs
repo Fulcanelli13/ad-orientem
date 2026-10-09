@@ -594,6 +594,8 @@ try{
       cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
       section:document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent?.trim()??"",
       gesture:document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.trim()??"",
+      response:document.querySelector("#ao-r17-native-reader-preview [data-role='response']")?.textContent?.trim()??"",
+      responseActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='response']")?.dataset?.active??null,
       posture:document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.trim()??"",
       leftRail:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.leftRail??null,
       gestureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='gesture']")?.dataset?.active??null,
@@ -653,12 +655,40 @@ try{
     "Credo Incarnatus sourced opening and closing words are not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
 
+  // Check unrelated phases, not just Gloria/Credo. These anchors belong to
+  // their exact canonical cues, in the language the reader already displays.
+  const confiteorStrike=await focusCanonicalCue("AO.SM.C0022");
+  assert.match(confiteorStrike.gesture,/STRIKE BREAST/i);
+  assert.equal(confiteorStrike.anchorFlag,"true");
+  assert.ok(confiteorStrike.anchorWords.some(word=>/mea culpa|through my fault|C.est ma faute/i.test(word)),
+    "Confiteor triple breast-strike lacks its source-owned word highlight: "+JSON.stringify(confiteorStrike));
+
+  const nobisStrike=await focusCanonicalCue("AO.SM.C0196");
+  assert.match(nobisStrike.gesture,/STRIKE BREAST/i);
+  assert.equal(nobisStrike.anchorFlag,"true");
+  assert.ok(nobisStrike.anchorWords.some(word=>/Nobis quoque peccat[oó]ribus|To us also|À nous aussi/i.test(word)),
+    "Nobis quoque breast-strike and its words are not synchronized: "+JSON.stringify(nobisStrike));
+
+  const nextNobis=await focusCanonicalCue("AO.SM.C0197");
+  assert.equal(nextNobis.gestureActive,"false","Nobis breast strike is incorrectly repeated on the following Canon sentence");
+  assert.notEqual(nextNobis.anchorFlag,"true","Nobis words remained highlighted after the strike cue");
+
   const agnus=await focusCanonicalCue("AO.SM.C0222");
   assert.match(agnus.gesture,/STRIKE BREAST/i,"Agnus Dei breast-strike cue is not visibly salient");
   assert.equal(agnus.posture,"STAND","Agnus Dei source posture is not visible in the faithful state ribbon");
   assert.equal(agnus.leftRail,"true");
   assert.equal(agnus.gestureIconHidden,false,"Agnus Dei breast strike lost its canonical icon");
   assert.equal(agnus.targetActive,"true");
+  assert.equal(agnus.anchorFlag,"true");
+  assert.ok(agnus.anchorWords.some(word=>/Agnus Dei|Lamb of God|Agneau de Dieu/i.test(word)),
+    "Agnus Dei breast-strike failed to highlight the invocation");
+  for(const cueId of ["AO.SM.C0223","AO.SM.C0224"]){
+    const repeat=await focusCanonicalCue(cueId);
+    assert.match(repeat.gesture,/STRIKE BREAST/i,"each Agnus Dei invocation must own one distinct strike");
+    assert.equal(repeat.anchorFlag,"true");
+    assert.ok(repeat.anchorWords.some(word=>/Agnus Dei|Lamb of God|Agneau de Dieu/i.test(word)),
+      "repeated Agnus Dei cue lacks its own highlight: "+JSON.stringify(repeat));
+  }
   await page.screenshot({path:resolve(out,"11-mass-agnus-dei.png"),fullPage:false});
 
   const lastGospelGenuflect=await focusCanonicalCue("AO.SM.C0273");
@@ -667,6 +697,9 @@ try{
   assert.equal(lastGospelGenuflect.leftRail,"true");
   assert.equal(lastGospelGenuflect.gestureIconHidden,false,"Last Gospel genuflect lost its canonical icon");
   assert.equal(lastGospelGenuflect.targetActive,"true");
+  assert.equal(lastGospelGenuflect.anchorFlag,"true");
+  assert.ok(lastGospelGenuflect.anchorWords.some(word=>/ET VERBUM CARO FACTUM EST|AND THE WORD WAS MADE FLESH|ET LE VERBE S.EST FAIT CHAIR/i.test(word)),
+    "Last Gospel genuflection words not synchronized with the gesture icon");
   await page.screenshot({path:resolve(out,"12-mass-last-gospel-genuflect.png"),fullPage:false});
 
   const lastGospelRise=await focusCanonicalCue("AO.SM.C0274");
@@ -674,6 +707,15 @@ try{
   assert.equal(lastGospelRise.posture,"STAND");
   assert.equal(lastGospelRise.leftRail,"true");
   assert.equal(lastGospelRise.targetActive,"true");
+  assert.equal(lastGospelRise.anchorFlag,"true");
+  assert.ok(lastGospelRise.anchorWords.some(word=>/Et habit[aá]vit in nobis|And dwelt among us|et il a habit[eé] parmi nous/i.test(word)),
+    "Last Gospel return to standing does not identify its exact source words");
+
+  const dismissalResponse=await focusCanonicalCue("AO.SM.C0260");
+  assert.equal(dismissalResponse.responseActive,"true","Deo gratias source response not present at dismissal");
+  assert.match(dismissalResponse.response,/Deo gr[aá]tias/i);
+  const afterDismissal=await focusCanonicalCue("AO.SM.C0261");
+  assert.equal(afterDismissal.responseActive,"false","Deo gratias response persists after its actual source cue");
 
   // Donor-parity guard for the regression visible on wide browsers: the reader
   // must remain a centred ritual surface, not expand into a dashboard-width card.
