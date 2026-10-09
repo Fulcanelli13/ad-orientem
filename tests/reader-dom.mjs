@@ -282,7 +282,7 @@ dispatch("keydown",{key:" ",target:translationTarget,preventDefault(){preventCou
 expect(translationSpan.textContent==="In principio"&&preventCount===2,
   "Space failed to activate paragraph translation");
 adapter.destroy();
-expect(html.includes('data-schola-translate role="button" tabindex="-1"'),
+expect(html.includes('data-schola-translate title="Tap to translate" role="button" tabindex="-1"'),
   "Schola translation remained a mouse-only div");
 
 // A real animation can be paused while its speed is changed: tempo changes
