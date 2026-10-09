@@ -21,7 +21,7 @@ const server=http.createServer(async(req,res)=>{
 await new Promise((ok,no)=>{server.once("error",no);server.listen(4203,"127.0.0.1",ok)});
 let browser;
 const mustDefer=[
- "/src/calendar/calendar-runtime.js","/src/calendar/intelligence.js",
+ "/src/calendar/calendar-runtime.js",
  "/src/learn/traditional-life.js","/src/learn/spiritual-life-data.js",
  "/src/learn/sexual-ethics.js","/src/learn/latin-course-v2.js",
  "/src/glossary/browser-entry.js"
