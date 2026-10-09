@@ -1,0 +1,45 @@
+name: Rosary DRC Crampon collation
+on:
+  pull_request:
+    paths:
+      - 'tools/scripture/collate-rosary-editions.mjs'
+      - '.github/workflows/rosary-edition-collation.yml'
+      - 'data/pray/rosary-scripture-editorial-inventory.v1.json'
+      - 'data/pray/rosary-primary-edition-review.v1.json'
+      - 'data/pray/rosary-drc-crampon-collation.v1.json'
+      - 'tests/rosary-drc-crampon-collation.mjs'
+      - 'package.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare-catholic-witnesses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch pinned Catholic JSON transcriptions (not published in app)
+        run: |
+          set -euo pipefail
+          REV=e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c
+          BASE=https://raw.githubusercontent.com/scrollmapper/bible_databases/$REV/sources
+          curl -fLsS --retry 3 "$BASE/en/DRC/DRC.json" -o /tmp/rosary-drc.json
+          curl -fLsS --retry 3 "$BASE/fr/FreCrampon/FreCrampon.json" -o /tmp/rosary-crampon.json
+          echo 'Pinned Catholic witness JSON sizes:'
+          wc -c /tmp/rosary-drc.json /tmp/rosary-crampon.json
+          echo "EN_FILE=/tmp/rosary-drc.json" >> "$GITHUB_ENV"
+          echo "FR_FILE=/tmp/rosary-crampon.json" >> "$GITHUB_ENV"
+      - name: Collate all 200 original Rosary cues without publishing Bible text
+        run: node tools/scripture/collate-rosary-editions.mjs "$EN_FILE" "$FR_FILE" /tmp/rosary-edition-collation.json
+      - name: Enforce committed edition-pinned comparison and production display hold
+        run: |
+          node tests/rosary-drc-crampon-collation.mjs /tmp/rosary-edition-collation.json
+          npm run test:rosary-scripture-policy
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rosary-catholic-edition-collation
+          path: /tmp/rosary-edition-collation.json
+          retention-days: 7

@@ -1,0 +1,51 @@
+{
+  "schema": "ao-rosary-edition-exceptions-v1",
+  "version": "1.0.0",
+  "date": "2026-10-09",
+  "scope": "Exact four missing Crampon digital verse keys during initial automated collation; source existence independently checked with Crampon 1923 Wikisource.",
+  "rule": "A secondary machine-readable dataset may omit a verse key or follow different numbering. Do not assert the verse is absent from the Catholic Bible, silently substitute another translation or publish Scripture from an unapproved witness.",
+  "exceptions": [
+    {
+      "id": "glo4.b1",
+      "donorReference": "Psalm 131:8",
+      "finding": "CROSS_EDITION_NUMBERING_ALIAS_VERIFIED",
+      "Crampon1923Reference": "Psaume 132:8",
+      "notes": "Printed Crampon Psalter labels Ps. cxxxii (Vulg. cxxxi) and includes the corresponding verse 8. This is an explicit single-reference alias, not a general +1 Psalm rule.",
+      "printedWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_5",
+      "machineDisposition": "RESOLVED_WITH_EXPLICIT_ALIAS",
+      "type": "traditional_marian_typology"
+    },
+    {
+      "id": "glo4.b10",
+      "donorReference": "Judith 13:23",
+      "finding": "PRINTED_VERSE_PRESENT_DIGITAL_KEY_ABSENT",
+      "Crampon1923Reference": "Judith 13:23",
+      "notes": "Crampon 1923 printed text includes Judith XIII, 23. The pinned Scrollmapper transcription does not present this identical (chapter,verse) key.",
+      "printedWitnessUrl": "https://fr.wikisource.org/wiki/Page:La_Sainte_Bible,_trad_Crampon,_édition_1923.djvu/545",
+      "machineDisposition": "HOLD_SECONDARY_DATASET_GAP",
+      "type": "traditional_marian_typology"
+    },
+    {
+      "id": "glo5.b7",
+      "donorReference": "Judith 13:23",
+      "finding": "PRINTED_VERSE_PRESENT_DIGITAL_KEY_ABSENT",
+      "Crampon1923Reference": "Judith 13:23",
+      "notes": "Same printed Crampon verse as glo4.b10; may not be labelled absent just because a particular dataset lacks the key.",
+      "printedWitnessUrl": "https://fr.wikisource.org/wiki/Page:La_Sainte_Bible,_trad_Crampon,_édition_1923.djvu/545",
+      "machineDisposition": "HOLD_SECONDARY_DATASET_GAP",
+      "type": "traditional_marian_typology"
+    },
+    {
+      "id": "glo5.b8",
+      "donorReference": "Judith 13:25",
+      "finding": "PRINTED_VERSE_PRESENT_DIGITAL_KEY_ABSENT",
+      "Crampon1923Reference": "Judith 13:25",
+      "notes": "Crampon 1923 printed text includes Judith XIII, 25; pinned digital dataset lacks identical verse key. Do not infer that the Scripture is missing.",
+      "printedWitnessUrl": "https://fr.wikisource.org/wiki/Page:La_Sainte_Bible,_trad_Crampon,_édition_1923.djvu/545",
+      "machineDisposition": "HOLD_SECONDARY_DATASET_GAP",
+      "type": "traditional_marian_typology"
+    }
+  ],
+  "humanFrenchVerbatimCertification": 0,
+  "republicationAuthorised": false
+}
