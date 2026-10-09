@@ -18,6 +18,7 @@ on:
       - "tools/directory/**"
       - "tools/atlas/**"
       - "tests/relic-subject-census.mjs"
+      - "tests/worldwide-relic-subject-census.mjs"
       - "docs/research/sacred-atlas-worldwide-relic-census-v1.md"
       - "package.json"
       - "tests/directory-*.mjs"
@@ -43,6 +44,7 @@ on:
       - "tools/directory/**"
       - "tools/atlas/**"
       - "tests/relic-subject-census.mjs"
+      - "tests/worldwide-relic-subject-census.mjs"
       - "docs/research/sacred-atlas-worldwide-relic-census-v1.md"
       - "package.json"
       - "tests/directory-*.mjs"
@@ -65,6 +67,7 @@ jobs:
       - run: npm run atlas:check-baselines
       - run: npm run test:atlas-census
       - run: node tests/relic-subject-census.mjs
+      - run: node tests/worldwide-relic-subject-census.mjs
       - run: npm run test:explore-surface
       - run: npm run test:customs-atlas
       - run: npm run test:explore-geography
