@@ -1,5 +1,5 @@
-import { annotateCpdvReview } from "./cpdv-first-pass.mjs";
 #!/usr/bin/env node
+import { annotateCpdvReview } from "./cpdv-first-pass.mjs";
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
