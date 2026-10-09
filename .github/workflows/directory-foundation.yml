@@ -4,6 +4,10 @@ on:
   pull_request:
     paths:
       - "data/directory/**"
+      - "data/geography/**"
+      - "data/customs/**"
+      - "tests/customs-atlas-place-pins.mjs"
+      - "tests/explore-place-profiles.mjs"
       - "src/find/**"
       - "tools/directory/**"
       - "tests/directory-*.mjs"
@@ -15,6 +19,10 @@ on:
       - main
     paths:
       - "data/directory/**"
+      - "data/geography/**"
+      - "data/customs/**"
+      - "tests/customs-atlas-place-pins.mjs"
+      - "tests/explore-place-profiles.mjs"
       - "src/find/**"
       - "tools/directory/**"
       - "tests/directory-*.mjs"
@@ -37,6 +45,8 @@ jobs:
       - run: npm run test:explore-surface
       - run: npm run test:customs-atlas
       - run: npm run test:explore-geography
+      - run: npm run test:explore-place-profiles
+      - run: node tests/customs-atlas-place-pins.mjs
       - run: node --check src/find/customs-atlas-filters.js
       - run: node --check src/find/explore-presentation.js
       - run: node tests/directory-worldwide-coverage.mjs

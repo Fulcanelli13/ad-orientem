@@ -149,7 +149,7 @@ const chartres=explorePlaceProfile(profiles,"place:FR:chartres-notre-dame");
 assert.ok(chartres);
 assert.equal(chartres.counts.shrines,1);
 assert.equal(chartres.counts.pilgrimages,1);
-assert.equal(chartres.map_publishable,false);
+assert.equal(chartres.map_publishable,true);
 assert.ok(chartres.calendar.some(row=>row.semantic_key==="liturgical.pentecost_monday"&&row.date==="2027-05-17"));
 
 const sainteAnne=explorePlaceProfile(profiles,"place:FR:sainte-anne-d-auray");
@@ -163,7 +163,7 @@ assert.ok(bermont);
 assert.equal(bermont.counts.shrines,1);
 assert.equal(bermont.counts.pilgrimages,1);
 assert.ok(bermont.counts.traditions>=1);
-assert.equal(bermont.map_publishable,false);
+assert.equal(bermont.map_publishable,true);
 
 const arcachon=explorePlaceProfile(profiles,"place:FR:notre-dame-des-marins-arcachon");
 assert.ok(arcachon);
@@ -177,7 +177,7 @@ assert.equal(pontmain.counts.shrines,1);
 assert.equal(pontmain.counts.pilgrimages,3);
 assert.ok(pontmain.counts.traditions>=2);
 assert.equal(pontmain.counts.tlm,0);
-assert.equal(pontmain.map_publishable,false);
+assert.equal(pontmain.map_publishable,true);
 assert.ok(pontmain.calendar.some(row=>row.semantic_key==="observance.pontmain_apparition_anniversary"&&row.date==="2027-01-17"));
 assert.ok(pontmain.calendar.some(row=>row.semantic_key==="feast.assumption_of_mary"&&row.date==="2027-08-15"));
 
@@ -226,7 +226,7 @@ assert.ok(altoetting);
 assert.equal(altoetting.counts.shrines,1);
 assert.equal(altoetting.counts.pilgrimages,2);
 assert.ok(altoetting.counts.traditions>=1);
-assert.equal(altoetting.map_publishable,false);
+assert.equal(altoetting.map_publishable,true);
 assert.ok(altoetting.calendar.some(row=>row.semantic_key==="feast.assumption_of_mary"&&row.date==="2027-08-15"));
 
 const kevelaer=explorePlaceProfile(profiles,"place:DE:kevelaer-gnadenkapelle");
@@ -247,7 +247,7 @@ assert.ok(wigratzbad);
 assert.equal(wigratzbad.counts.shrines,1);
 assert.equal(wigratzbad.counts.pilgrimages,1);
 assert.ok(wigratzbad.counts.traditions>=1);
-assert.equal(wigratzbad.map_publishable,false);
+assert.equal(wigratzbad.map_publishable,true);
 assert.equal(wigratzbad.calendar.length,0);
 
 const mariahilfAmberg=explorePlaceProfile(profiles,"place:DE:mariahilf-amberg");
@@ -289,7 +289,7 @@ assert.equal(oswego.counts.shrines,1);
 assert.equal(oswego.counts.pilgrimages,1);
 assert.equal(oswego.counts.tlm,1,"confirmed Oswego ICKSP bridge did not resolve the live traditional Mass venue");
 assert.equal(oswego.exact_tlm_link_state,"VERIFIED");
-assert.equal(oswego.map_publishable,false);
+assert.equal(oswego.map_publishable,true);
 
 const auriesville=explorePlaceProfile(profiles,"place:US:auriesville-martyrs");
 assert.ok(auriesville);
@@ -298,7 +298,7 @@ assert.equal(auriesville.counts.pilgrimages,3);
 assert.ok(auriesville.counts.traditions>=1);
 assert.equal(auriesville.counts.tlm,0);
 assert.equal(auriesville.calendar.length,0);
-assert.equal(auriesville.map_publishable,false);
+assert.equal(auriesville.map_publishable,true);
 
 const stockbridge=explorePlaceProfile(profiles,"place:US:divine-mercy-stockbridge");
 assert.ok(stockbridge);
@@ -360,7 +360,7 @@ assert.ok(champion);
 assert.equal(champion.counts.shrines,1);
 assert.equal(champion.counts.pilgrimages,3);
 assert.ok(champion.counts.traditions>=1);
-assert.equal(champion.map_publishable,false);
+assert.equal(champion.map_publishable,true);
 assert.ok(champion.calendar.some(row=>row.semantic_key==="observance.our_lady_of_champion"&&row.date==="2026-10-09"));
 
 const guadalupe=explorePlaceProfile(profiles,"place:US:guadalupe-shrine-la-crosse");
@@ -403,7 +403,7 @@ assert.ok(loreto);
 assert.equal(loreto.counts.shrines,1);
 assert.equal(loreto.counts.pilgrimages,1);
 assert.ok(loreto.counts.traditions>=1);
-assert.equal(loreto.map_publishable,false);
+assert.equal(loreto.map_publishable,true);
 assert.ok(loreto.calendar.some(row=>row.semantic_key==="observance.loreto_our_lady"&&row.date==="2026-12-10"));
 
 const pompei=explorePlaceProfile(profiles,"place:IT:pompei-rosary-shrine");
@@ -499,7 +499,7 @@ assert.ok(guadalupeMx);
 assert.equal(guadalupeMx.counts.shrines,1);
 assert.equal(guadalupeMx.counts.pilgrimages,1);
 assert.ok(guadalupeMx.counts.traditions>=1);
-assert.equal(guadalupeMx.map_publishable,false);
+assert.equal(guadalupeMx.map_publishable,true);
 assert.equal(guadalupeMx.counts.tlm,0);
 assert.ok(guadalupeMx.calendar.some(row=>row.semantic_key==="feast.our_lady_of_guadalupe"&&row.date==="2026-12-12"));
 
@@ -508,7 +508,7 @@ assert.ok(zapopan);
 assert.equal(zapopan.counts.shrines,1);
 assert.equal(zapopan.counts.pilgrimages,2);
 assert.ok(zapopan.counts.traditions>=1);
-assert.equal(zapopan.map_publishable,false);
+assert.equal(zapopan.map_publishable,true);
 assert.ok(zapopan.calendar.some(row=>row.semantic_key==="observance.zapopan_romeria"&&row.date==="2026-10-12"));
 
 const aparecida=explorePlaceProfile(profiles,"place:BR:aparecida-national-shrine");
@@ -516,7 +516,7 @@ assert.ok(aparecida);
 assert.equal(aparecida.counts.shrines,1);
 assert.equal(aparecida.counts.pilgrimages,1);
 assert.ok(aparecida.counts.traditions>=1);
-assert.equal(aparecida.map_publishable,false);
+assert.equal(aparecida.map_publishable,true);
 assert.ok(aparecida.calendar.some(row=>row.semantic_key==="observance.our_lady_aparecida"&&row.date==="2026-10-12"));
 
 const nazare=explorePlaceProfile(profiles,"place:BR:nazare-belem");
@@ -524,7 +524,7 @@ assert.ok(nazare);
 assert.equal(nazare.counts.shrines,1);
 assert.equal(nazare.counts.pilgrimages,2);
 assert.ok(nazare.counts.traditions>=1);
-assert.equal(nazare.map_publishable,false);
+assert.equal(nazare.map_publishable,true);
 assert.equal(nazare.calendar.length,0,"second-Sunday Círio recurrence was incorrectly reduced to one fixed date");
 
 const lasLajas=explorePlaceProfile(profiles,"place:CO:las-lajas-ipiales");
@@ -540,7 +540,7 @@ assert.ok(chiquinquira);
 assert.equal(chiquinquira.counts.shrines,1);
 assert.equal(chiquinquira.counts.pilgrimages,1);
 assert.ok(chiquinquira.counts.traditions>=1);
-assert.equal(chiquinquira.map_publishable,false);
+assert.equal(chiquinquira.map_publishable,true);
 assert.ok(chiquinquira.calendar.some(row=>row.semantic_key==="observance.chiquinquira_july9"&&row.date==="2027-07-09"));
 
 const banneux=explorePlaceProfile(profiles,"place:BE:banneux");
@@ -548,7 +548,7 @@ assert.ok(banneux);
 assert.equal(banneux.counts.shrines,1);
 assert.equal(banneux.counts.pilgrimages,1);
 assert.ok(banneux.counts.traditions>=1);
-assert.equal(banneux.map_publishable,false);
+assert.equal(banneux.map_publishable,true);
 assert.ok(banneux.calendar.some(row=>row.semantic_key==="observance.banneux_first_apparition"&&row.date==="2027-01-15"));
 
 const beauraing=explorePlaceProfile(profiles,"place:BE:beauraing");
