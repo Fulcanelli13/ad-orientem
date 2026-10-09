@@ -64,8 +64,10 @@ try {
   // First-use contextual Glossary must work before visiting Formation.
   await page.locator("#ao-find-modular-root [data-find-glossary]").click();
   await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.open===true,null,{timeout:30000});
-  assert.equal(await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.loaded),true,
-    "Explore Glossary must load definitions on first tap");
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.loaded===true
+    &&globalThis.AO_GLOSSARY_V1?.status?.()?.view==="context",null,{timeout:30000});
+  assert.ok(await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.entries>0),
+    "Explore Glossary must load sourced entries before the contextual definitions appear");
   await page.evaluate(()=>globalThis.AO_GLOSSARY_V1.close());
 
   // Exercise visible Explore controls rather than only its lazy owner.
