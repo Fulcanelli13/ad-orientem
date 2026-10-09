@@ -396,9 +396,9 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     },
     {
       "bead": 2,
-      "reference": "Luke 2:43",
+      "reference": "Luke 2:43-46",
       "relationship": "SCRIPTURAL_PARAPHRASE",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A43&version=DRA",
+      "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A43-46&version=DRA",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
       "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc#2"
