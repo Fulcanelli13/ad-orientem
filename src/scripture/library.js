@@ -9,7 +9,7 @@ const L={
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
-  readable:"Struggling with Douay–Rheims? Select New Catholic Bible (2019) to open the same passage in clear, contemporary Catholic English. Full in-app text requires publisher permission.",
+  readable:"Struggling with Douay–Rheims? Try the Catholic Public Domain Version (CPDV). Its English is more contemporary but still quite literal. The free complete text is being checked for correct verse alignment.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
  fr:{heading:"Sainte Écriture",notice:"Bible catholique traditionnelle. Le texte intégral n'apparaît qu'après validation et intégration d'une édition autorisée.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
@@ -51,14 +51,14 @@ export function mountScriptureLibrary(root,{
  root.replaceChildren(wrap);
  function editionSource() {
    if(lang==="fr")return FRENCH_INDEX;
-   if(["dr-challoner","ncb-2019"].includes(editionId))return sourceReadingLink(location,editionId);
+   if(["dr-challoner","cpdv-2009"].includes(editionId))return sourceReadingLink(location,editionId);
    return null;
  }
  function linkToSource(href) {
    if(!href)return;
    // Only scheme + two known source hosts are accepted.
    const parsed=new URL(href);
-   if(parsed.protocol!=="https:" || !["www.biblegateway.com","fr.wikisource.org"].includes(parsed.hostname))
+   if(parsed.protocol!=="https:" || !["www.biblegateway.com","fr.wikisource.org","sacredbible.org"].includes(parsed.hostname))
      throw new Error("Untrusted Scripture source URL");
    openExternal(parsed.href);
  }
@@ -87,15 +87,15 @@ export function mountScriptureLibrary(root,{
    for(const edition of Object.values(SCRIPTURE_EDITIONS).filter(x=>x.language===lang)){
      const opt=element("option",edition.title);
      opt.value=edition.id;
-     opt.disabled=!(edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || edition.id==="ncb-2019" || (edition.enabled && edition.rights==="cleared"));
+     opt.disabled=!(edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || edition.id==="cpdv-2009" || (edition.enabled && edition.rights==="cleared"));
      editionSelect.append(opt);
    }
    editionSelect.value=editionId;
    editionSelect.addEventListener("change",()=>{
      const chosen=SCRIPTURE_EDITIONS[editionSelect.value];
-     if(!chosen || chosen.language!==lang || (chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && chosen.id!=="ncb-2019" && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
+     if(!chosen || chosen.language!==lang || (chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && chosen.id!=="cpdv-2009" && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
      editionId=chosen.id;
-     if(lang==="en" && ["dr-challoner","ncb-2019"].includes(editionId))prefs.setEnglishEdition(editionId);
+     if(lang==="en" && ["dr-challoner","cpdv-2009"].includes(editionId))prefs.setEnglishEdition(editionId);
      draw();
    });
    editionControl.append(editionSelect);nav.append(editionControl);
