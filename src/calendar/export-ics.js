@@ -58,7 +58,7 @@ function strictlyResolvedDay(row){
     throw new Error("Missing canonical title, class or colour: "+id);
   return row;
 }
-function escapeLine(name,value){return foldLine(name+":"+escapeText(value));}
+function escapeLine(name,value){return name+":"+escapeText(value);}
 export function serialize1962CalendarMonth(monthId,rows,{language="en",now=new Date()}={}){
   if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(String(monthId||"")))throw new TypeError("Valid YYYY-MM required");
   if(!["en","fr"].includes(language))throw new TypeError("Unsupported export language");
