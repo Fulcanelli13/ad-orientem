@@ -353,6 +353,23 @@ function installReaderGlossaryBridge(preview){
   }});
 }
 
+
+export async function openReaderScriptureContext(reference,{
+  win=globalThis,language="en",
+  loader=()=>import("../scripture/browser-entry.js"),
+}={}){
+  let owner=win?.AO_SCRIPTURE_CONTEXT_V1;
+  if(typeof owner?.open!=="function"){
+    const module=await loader();
+    module?.installScriptureBrowserOwner?.(win);
+    owner=win?.AO_SCRIPTURE_CONTEXT_V1;
+  }
+  if(typeof owner?.open!=="function")throw new Error("MASS_SCRIPTURE_OWNER_NOT_READY");
+  const accepted=await owner.open(reference,{language});
+  if(accepted===false)throw new Error("MASS_SCRIPTURE_CONTEXT_UNAVAILABLE");
+  return true;
+}
+
 function installReaderScriptureBridge(preview,prepared){
   const root=preview?.root,panel=root?.querySelector?.('[data-role="mass-preferences"]');
   if(!panel?.ownerDocument)return null;
@@ -368,12 +385,14 @@ function installReaderScriptureBridge(preview,prepared){
   const status=doc.createElement("small");status.className="aoMassScriptureStudyStatus";
   status.setAttribute("role","status");
   box.append(button,status);panel.append(box);
+  let opening=false,disposed=false;
   function refresh(){
+    if(disposed)return null;
     const context=massScriptureContextForCard(preview?.getCurrentCard?.(),prepared);
     box.hidden=!context;
     if(!context)return null;
     button.hidden=context.state!=="READY";
-    button.disabled=context.state!=="READY";
+    button.disabled=opening||context.state!=="READY";
     if(context.state==="READY"){
       button.dataset.massReadingReference=context.reference;
       status.textContent=(fr?"Étude facultative · ":"Optional study · ")+context.reference;
@@ -383,22 +402,46 @@ function installReaderScriptureBridge(preview,prepared){
         ?"Référence biblique exacte non vérifiée. Le texte liturgique reste inchangé."
         :"Exact Bible reference unverified. Liturgical text remains unchanged.";
     }
+    status.setAttribute("role","status");
     return context;
   }
   const onClick=event=>{
-    if(event.target?.closest?.("[data-reader-preferences]")){refresh();return}
+    if(event.target?.closest?.("[data-reader-preferences]")){refresh();return;}
     if(!event.target?.closest?.("[data-reader-scripture-context]"))return;
     event.preventDefault?.();event.stopImmediatePropagation?.();
+    if(opening||disposed)return;
     const context=refresh();if(context?.state!=="READY")return;
-    const opened=globalThis.AO_SCRIPTURE_CONTEXT_V1?.open?.(context.reference,{language:fr?"fr":"en"});
-    if(!opened){
-      status.textContent=fr?"Le contexte biblique n’a pas pu être ouvert. La Messe reste disponible."
+    opening=true;button.disabled=true;button.setAttribute("aria-busy","true");
+    void openReaderScriptureContext(context.reference,{language:fr?"fr":"en"}).catch(error=>{
+      if(disposed)return;
+      console.error("R17 reader Scripture context failed",error);
+      status.textContent=fr
+        ?"Le contexte biblique n’a pas pu être ouvert. La Messe reste disponible."
         :"Scripture context could not open. Mass remains available.";
       status.setAttribute("role","alert");
-    }
+    }).finally(()=>{
+      opening=false;
+      if(!disposed){
+        button.removeAttribute?.("aria-busy");
+        button.disabled=false;
+      }
+    });
   };
-  root.addEventListener("click",onClick,true);refresh();
-  return Object.freeze({refresh,dispose(){root.removeEventListener("click",onClick,true);box.remove()}});
+  root.addEventListener("click",onClick,true);
+  // The user can change cards without closing Mass preferences. Keep the
+  // displayed passage synchronized with the actual selected liturgical reading.
+  const Observer=root.ownerDocument?.defaultView?.MutationObserver??globalThis.MutationObserver;
+  const observer=typeof Observer==="function"?new Observer(()=>refresh()):null;
+  observer?.observe?.(root,{attributes:true,attributeFilter:[
+    "data-r17-native-cue","data-r17-native-event","data-r17-presentation-mode",
+  ]});
+  refresh();
+  return Object.freeze({refresh,dispose(){
+    disposed=true;
+    observer?.disconnect?.();
+    root.removeEventListener?.("click",onClick,true);
+    box.remove?.();
+  }});
 }
 
 function installReaderParametersBridge(preview,prepared){
