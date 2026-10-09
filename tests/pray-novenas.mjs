@@ -233,20 +233,20 @@ assert.equal(NOVENA_CORPUS_V4.perpetual_help.source.url,"https://en.wikisource.o
  "Retain actual unproofread scan witness rather than inventing a certified edition");
 
 
-// The 1925 primary digital witness prints nine Christmas days and nine
-// Pentecost days as separate sections on a single page. English source-body
-// correspondence may be reviewed without implying that the 18 French
-// editorial translations were printed in that English book.
+// The 1925 prayer book prints Christmas and Pentecost as distinct sections;
+// the 1883 Moran prayer book prints St Joseph's nine day-specific prayers.
+// Textual correspondence to their digitizations is not a printed facsimile
+// collation and does not certify editorial French translations.
 const historicalNovenaReview=JSON.parse(readFileSync("data/pray/novena-source-review.v2.json","utf8"));
 assert.equal(historicalNovenaReview.records.length,16);
 assert.equal(historicalNovenaReview.counts.daySpecificNovenas,8);
 assert.equal(historicalNovenaReview.counts.uniqueDayPrayerBodies,72);
-assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,18);
-assert.equal(historicalNovenaReview.counts.frenchEditorialTranslationReviews,18);
+assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,27);
+assert.equal(historicalNovenaReview.counts.frenchEditorialTranslationReviews,27);
 assert.equal(historicalNovenaReview.counts.completePrintEditionCertificates,0);
 assert.equal(historicalNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,27);
 const reviews=Object.fromEntries(historicalNovenaReview.records.map(x=>[x.id,x]));
-for(const id of ["christmas","holy_ghost"]){
+for(const id of ["christmas","holy_ghost","st_joseph"]){
  const historical=reviews[id],current=NOVENA_CORPUS_V4[id];
  assert.equal(historical.dayBodySourceReview.length,9);
  assert.equal(current.days.length,9);
@@ -262,8 +262,9 @@ for(const id of ["christmas","holy_ghost"]){
   assert.equal(typeof current.days[i].text.fr,"string");
   assert.ok(current.days[i].text.fr.length>30);
  }
- assert.deepEqual(current.commonPrayers,[["foundations_our_father",1],["foundations_hail_mary",1],["foundations_glory_be",1]],id+" lost one common Our Father, Hail Mary or Glory Be");
+ assert.deepEqual(current.commonPrayers,id==="st_joseph"?[["foundations_our_father",3],["foundations_hail_mary",3]]:[["foundations_our_father",1],["foundations_hail_mary",1],["foundations_glory_be",1]],id+" lost common prayers as printed");
 }
+assert.match(historicalNovenaReview.records.find(x=>x.id==="st_joseph").dayBodySourceReview[6].witnessTranscriptionIssue,/as 1 ought/);
 const missingHistorical=["annunciation","seven_sorrows","assumption"];
 for(const id of missingHistorical){
  const g=reviews[id].omittedHistoricalMaterial;
