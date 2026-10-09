@@ -7,6 +7,7 @@ import { buildExploreViewModel, renderExploreToString } from "../src/find/explor
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const geography=readJson("data/geography/seed-registry.v1.json");
+const phenomena=readJson("data/explore/sacred-phenomena-seed.v1.json");
 const customsSeed=readJson("data/customs/customs-atlas-seed.v1.json");
 const customSources=readJson("data/customs/source-registry.v1.json");
 const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
@@ -100,6 +101,7 @@ function buildDataset(directoryPlaceLinks=geography.directoryPlaceLinks){
       directoryPlaceLinks
     },
     customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources},
+    sacredPhenomena:phenomena,
     shrines:{
       shrines:shrineSeed.shrines,
       pilgrimages:shrineSeed.pilgrimages,
@@ -120,7 +122,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,74,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,84,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
