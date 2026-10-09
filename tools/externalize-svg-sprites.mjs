@@ -34,6 +34,13 @@ const before=bytes(html);
 const originalGzip=gzipSync(html).length;
 const entries=[];
 const apply=process.argv.includes("--apply");
+if(apply&&existsSync(MANIFEST)){
+  const baseline=JSON.parse(readFileSync(MANIFEST,"utf8"));
+  if(before!==baseline.reducedHtmlBytes)throw new Error("Existing SVG sprite manifest does not match index.html; manual reconciliation required");
+  for(const item of baseline.entries)if(!existsSync(item.path))throw new Error("Existing SVG asset missing: "+item.path);
+  console.log("SVG geometry already extracted; no changes made");
+  process.exit(0);
+}
 if(apply)mkdirSync(DIRECTORY,{recursive:true});
 
 for(const id of SPRITES){
