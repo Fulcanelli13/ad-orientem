@@ -1,0 +1,2796 @@
+{
+  "schema": "SACRED_ATLAS_SUBJECT_DEVOTIONAL_REACH_SCREENING_V1",
+  "as_of": "2026-10-09",
+  "status": "EDITORIAL_SCREENING_NOT_WORLDWIDE_POPULARITY_METRIC",
+  "norms": {
+    "relic_authenticity": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/csaints/documents/rc_con_csaints_doc_20171208_istruzione-reliquie_en.html",
+    "scope": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_fr.html",
+    "original_1962_general_vs_particular_calendar": "https://w2.vatican.va/content/dam/wss/archive/aas/documents/AAS-53-1961-ocr.pdf"
+  },
+  "invariants": [
+    "Classify the scope of documented cult, not the worth or holiness of a saint.",
+    "International pilgrimage is distinct from universal liturgical observance.",
+    "Scriptural or apostolic mission is marked universal in theological importance, not asserted as a modern popularity survey.",
+    "A single source indicator cannot certify worldwide prevalence; relative scope is a triage category.",
+    "The 1962 Roman universal and particular calendars have not been collated in this review.",
+    "No source URL proves a relic's bodily identity or present access without further review.",
+    "No automatic map pins from subject popularity."
+  ],
+  "rows": [
+    {
+      "subject_id": "subject:saint-andrew-the-apostle",
+      "name": "Saint Andrew the Apostle",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-james-the-greater",
+      "name": "Saint James the Greater",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:ES:james-compostela"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-the-apostle",
+      "name": "Saint John the Apostle",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-philip-the-apostle",
+      "name": "Saint Philip the Apostle",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-bartholomew-the-apostle",
+      "name": "Saint Bartholomew the Apostle",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "APOSTOLIC_CULT_UNIVERSAL_BUT_SCALE_NOT_MEASURED",
+      "principal_reach_source_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "APOSTOLIC_CULT_UNIVERSAL_BUT_SCALE_NOT_MEASURED",
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-thomas-the-apostle",
+      "name": "Saint Thomas the Apostle",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:santa-croce-thomas-finger"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-matthew-the-apostle",
+      "name": "Saint Matthew the Apostle",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_PATRONAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.cattedraledisalerno.it/la-cripta.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_PATRONAGE_EVIDENCED",
+          "source_url": "https://www.cattedraledisalerno.it/la-cripta.html",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-james-the-less",
+      "name": "Saint James the Less",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-jude-thaddeus",
+      "name": "Saint Jude Thaddeus",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-simon-the-zealot",
+      "name": "Saint Simon the Zealot",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-matthias-the-apostle",
+      "name": "Saint Matthias the Apostle",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "TRANSREGIONAL_PILGRIMAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.trierer-dom.de/gottesdienste/innenstadtkirchen/sankt-matthias/index.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "TRANSREGIONAL_PILGRIMAGE_EVIDENCED",
+          "source_url": "https://www.trierer-dom.de/gottesdienste/innenstadtkirchen/sankt-matthias/index.html",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-mark-the-evangelist",
+      "name": "Saint Mark the Evangelist",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:basilica-san-marco-venezia"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-stephen-the-protomartyr",
+      "name": "Saint Stephen the Protomartyr",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-timothy",
+      "name": "Saint Timothy",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_PATRONAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.diocesitermolilarino.it/san-timoteo/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_PATRONAGE_EVIDENCED",
+          "source_url": "https://www.diocesitermolilarino.it/san-timoteo/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-titus",
+      "name": "Saint Titus",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "CITY_AND_CHURCH_PRIMARY_SOURCE",
+      "principal_reach_source_url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "CITY_AND_CHURCH_PRIMARY_SOURCE",
+          "source_url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-mary-magdalene",
+      "name": "Saint Mary Magdalene",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:magdalene-head-saint-maximin",
+        "relic:FR:basilique-sainte-marie-madeleine-vezelay"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-martha-of-bethany",
+      "name": "Saint Martha of Bethany",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "ACTIVE_TRADITIONAL_PILGRIMAGE",
+      "principal_reach_source_url": "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ACTIVE_TRADITIONAL_PILGRIMAGE",
+          "source_url": "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        },
+        {
+          "signal": "ACTIVE_TRADITIONAL_PILGRIMAGE",
+          "source_url": "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-lazarus-of-bethany",
+      "name": "Saint Lazarus of Bethany",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-anne",
+      "name": "Saint Anne",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:CA:anne-beaupre-finger",
+        "relic:CA:anne-beaupre-1892-forearm",
+        "relic:CA:anne-beaupre-1960-forearm"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-joachim",
+      "name": "Saint Joachim",
+      "coverage_family": "APOSTLES_EVANGELISTS",
+      "assessed_devotional_reach": "ORDER_OR_CHURCH_WIDE_INDICATION",
+      "evidence_signal": "CHURCH_WIDE_DEVOTIONAL_CULT",
+      "principal_reach_source_url": "https://www.vatican.va/content/osservatore-romano/it/comments/2009/documents/206q01b1.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "CHURCH_WIDE_DEVOTIONAL_CULT",
+          "source_url": "https://www.vatican.va/content/osservatore-romano/it/comments/2009/documents/206q01b1.html",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-ignatius-of-antioch",
+      "name": "Saint Ignatius of Antioch",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "ANCIENT_MARTYR_CULT",
+      "principal_reach_source_url": "https://www.basilicasanclemente.com/eng/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ANCIENT_MARTYR_CULT",
+          "source_url": "https://www.basilicasanclemente.com/eng/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        },
+        {
+          "signal": "ANCIENT_CHRISTIAN_MARTYR_CULT",
+          "source_url": "https://www.basilicasanclemente.com/eng/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-polycarp-of-smyrna",
+      "name": "Saint Polycarp of Smyrna",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "APOSTOLIC_FATHER_HISTORICAL_CULT",
+      "principal_reach_source_url": "https://portal.sds.ox.ac.uk/articles/online_resource/E00035_The_Greek_Martyrdom_of_Polycarp_describes_the_martyrdom_of_Polycarp_Polykarpos_bishop_and_martyr_of_Smyrna_S00004_including_accounts_of_miracles_and_references_to_the_veneration_of_his_remains_Written_in_Smyrna_western_Asia_Minor_bet/13795253",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "APOSTOLIC_FATHER_HISTORICAL_CULT",
+          "source_url": "https://portal.sds.ox.ac.uk/articles/online_resource/E00035_The_Greek_Martyrdom_of_Polycarp_describes_the_martyrdom_of_Polycarp_Polykarpos_bishop_and_martyr_of_Smyrna_S00004_including_accounts_of_miracles_and_references_to_the_veneration_of_his_remains_Written_in_Smyrna_western_Asia_Minor_bet/13795253",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-justin-martyr",
+      "name": "Saint Justin Martyr",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "CHURCH_FATHER_AND_APOLOGIST",
+      "principal_reach_source_url": "https://faith.nd.edu/saint/st-justin-martyr/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "CHURCH_FATHER_AND_APOLOGIST",
+          "source_url": "https://faith.nd.edu/saint/st-justin-martyr/",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-lawrence-of-rome",
+      "name": "Saint Lawrence of Rome",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-agnes-of-rome",
+      "name": "Saint Agnes of Rome",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-cecilia",
+      "name": "Saint Cecilia",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-sebastian",
+      "name": "Saint Sebastian",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-vincent-of-saragossa",
+      "name": "Saint Vincent of Saragossa",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_AND_HISTORICAL_CULT",
+      "principal_reach_source_url": "https://archivocatedraldevalencia.com/fondos/fondos-incorporados/fondo-zampieri/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_AND_HISTORICAL_CULT",
+          "source_url": "https://archivocatedraldevalencia.com/fondos/fondos-incorporados/fondo-zampieri/",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-lucy-of-syracuse",
+      "name": "Saint Lucy of Syracuse",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "TRANSREGIONAL_PILGRIMAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "TRANSREGIONAL_PILGRIMAGE_EVIDENCED",
+          "source_url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-agatha-of-sicily",
+      "name": "Saint Agatha of Sicily",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_PATRONAGE_EVIDENCED",
+      "principal_reach_source_url": "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_PATRONAGE_EVIDENCED",
+          "source_url": "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-irenaeus-of-lyons",
+      "name": "Saint Irenaeus of Lyons",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_HISTORIC_CULT_EVIDENCED",
+      "principal_reach_source_url": "https://www.patrimoine-lyon.org/secteur_unesco/fourviere/saint-irenee/la-crypte",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_HISTORIC_CULT_EVIDENCED",
+          "source_url": "https://www.patrimoine-lyon.org/secteur_unesco/fourviere/saint-irenee/la-crypte",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-cyprian-of-carthage",
+      "name": "Saint Cyprian of Carthage",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "EARLY_CHURCH_FATHER_CULT",
+      "principal_reach_source_url": "https://www.persee.fr/doc/crai_0065-0536_1934_num_78_3_76515",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "EARLY_CHURCH_FATHER_CULT",
+          "source_url": "https://www.persee.fr/doc/crai_0065-0536_1934_num_78_3_76515",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-athanasius",
+      "name": "Saint Athanasius",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "ANCIENT_DOCTOR_TRANSREGIONAL_CULT",
+      "principal_reach_source_url": "https://st-takla.org/Coptic-History/places/africa/egypt/cairo/hadayek-el-kobba--waily--abbasia/cathedral/relics-athanasius.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ANCIENT_DOCTOR_TRANSREGIONAL_CULT",
+          "source_url": "https://st-takla.org/Coptic-History/places/africa/egypt/cairo/hadayek-el-kobba--waily--abbasia/cathedral/relics-athanasius.html",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-basil-the-great",
+      "name": "Saint Basil the Great",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "EASTERN_CHURCH_DOCTOR_TRANSREGIONAL_CULT",
+      "principal_reach_source_url": "https://basilica.ro/en/st-basil-great-relics-procession-alexandria-romania/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "EASTERN_CHURCH_DOCTOR_TRANSREGIONAL_CULT",
+          "source_url": "https://basilica.ro/en/st-basil-great-relics-procession-alexandria-romania/",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-gregory-nazianzen",
+      "name": "Saint Gregory Nazianzen",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "ECUMENICAL_TRANSREGIONAL_EVIDENCED",
+      "principal_reach_source_url": "https://www.vatican.va/content/john-paul-ii/en/letters/2004/documents/hf_jp-ii_let_20041127_consegna-reliquie.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ECUMENICAL_TRANSREGIONAL_EVIDENCED",
+          "source_url": "https://www.vatican.va/content/john-paul-ii/en/letters/2004/documents/hf_jp-ii_let_20041127_consegna-reliquie.html",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-chrysostom",
+      "name": "Saint John Chrysostom",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "ECUMENICAL_TRANSREGIONAL_EVIDENCED",
+      "principal_reach_source_url": "https://www.vatican.va/content/john-paul-ii/en/letters/2004/documents/hf_jp-ii_let_20041127_consegna-reliquie.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ECUMENICAL_TRANSREGIONAL_EVIDENCED",
+          "source_url": "https://www.vatican.va/content/john-paul-ii/en/letters/2004/documents/hf_jp-ii_let_20041127_consegna-reliquie.html",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-gregory-of-nyssa",
+      "name": "Saint Gregory of Nyssa",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "CHURCH_FATHER_TRANSREGIONAL_CULT",
+      "principal_reach_source_url": "https://obitel-minsk.org/en/the-life-of-st-gregory-of-nyssa",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "CHURCH_FATHER_TRANSREGIONAL_CULT",
+          "source_url": "https://obitel-minsk.org/en/the-life-of-st-gregory-of-nyssa",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-jerome",
+      "name": "Saint Jerome",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:jerome-rome"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-gregory-the-great",
+      "name": "Saint Gregory the Great",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "ROMAN_PONTIFF_AND_DOCTOR",
+      "principal_reach_source_url": "https://stpetersbasilica.info/Altars/GregoryGreat/GregoryGreat.htm",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ROMAN_PONTIFF_AND_DOCTOR",
+          "source_url": "https://stpetersbasilica.info/Altars/GregoryGreat/GregoryGreat.htm",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-hilary-of-poitiers",
+      "name": "Saint Hilary of Poitiers",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_PILGRIMAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_PILGRIMAGE_EVIDENCED",
+          "source_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-martin-of-tours",
+      "name": "Saint Martin of Tours",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:martin-tours-tomb"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-nicholas-of-myra",
+      "name": "Saint Nicholas of Myra",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:nicholas-bari",
+        "relic:FR:phalange-saint-nicolas-port"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-eusebius-of-vercelli",
+      "name": "Saint Eusebius of Vercelli",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "PIEDMONT_DIOCESAN_PATRON",
+      "principal_reach_source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "PIEDMONT_DIOCESAN_PATRON",
+          "source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-leo-the-great",
+      "name": "Saint Leo the Great",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "ROMAN_PONTIFF_AND_DOCTOR",
+      "principal_reach_source_url": "https://www.vatican.va/content/benedict-xvi/it/audiences/2008/documents/hf_ben-xvi_aud_20080305.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ROMAN_PONTIFF_AND_DOCTOR",
+          "source_url": "https://www.vatican.va/content/benedict-xvi/it/audiences/2008/documents/hf_ben-xvi_aud_20080305.html",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-damascene",
+      "name": "Saint John Damascene",
+      "coverage_family": "EARLY_MARTYRS_FATHERS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "CHURCH_DOCTOR_EASTERN_CULT",
+      "principal_reach_source_url": "https://www.pappaspatristicinstitute.com/post/st-john-damascene-the-father-who-came-in-from-the-cold",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "CHURCH_DOCTOR_EASTERN_CULT",
+          "source_url": "https://www.pappaspatristicinstitute.com/post/st-john-damascene-the-father-who-came-in-from-the-cold",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-benedict-of-nursia",
+      "name": "Saint Benedict of Nursia",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:benedict-fleury"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-scholastica",
+      "name": "Saint Scholastica",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-bernard-of-clairvaux",
+      "name": "Saint Bernard of Clairvaux",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "ORDER_OR_CHURCH_WIDE_INDICATION",
+      "evidence_signal": "CISTERCIAN_ORDER_WIDE_CULT",
+      "principal_reach_source_url": "https://pop.culture.gouv.fr/notice/palissy/PM10003019",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "CISTERCIAN_ORDER_WIDE_CULT",
+          "source_url": "https://pop.culture.gouv.fr/notice/palissy/PM10003019",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-francis-of-assisi",
+      "name": "Saint Francis of Assisi",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "DOCUMENTED_INTERNATIONAL_PILGRIMAGE",
+      "principal_reach_source_url": "https://basilica.sanfrancesco.org/en/explore-the-basilica/tomb",
+      "reach_assessment_grade": "PRIMARY_CUSTODIAN_EXPLICIT_REACH",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "DOCUMENTED_INTERNATIONAL_PILGRIMAGE",
+          "source_url": "https://basilica.sanfrancesco.org/en/explore-the-basilica/tomb",
+          "kind": "FRESH_PRIMARY_CUSTODIAN_REVIEW"
+        }
+      ],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:francis-assisi"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-clare-of-assisi",
+      "name": "Saint Clare of Assisi",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-dominic-de-guzman",
+      "name": "Saint Dominic de Guzmán",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:basilica-san-domenico-bologna"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-thomas-aquinas",
+      "name": "Saint Thomas Aquinas",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-bonaventure",
+      "name": "Saint Bonaventure",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-anthony-of-padua",
+      "name": "Saint Anthony of Padua",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:anthony-padua-tongue",
+        "relic:IT:anthony-padua-jawbone",
+        "relic:IT:anthony-padua-voice",
+        "relic:IT:anthony-padua-bones"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-catherine-of-siena",
+      "name": "Saint Catherine of Siena",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-catherine-of-alexandria",
+      "name": "Saint Catherine of Alexandria",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "ANCIENT_CROSS_CONFESSIONAL_CULT",
+      "principal_reach_source_url": "https://sinaimonastery.com/st-catherine/index.php/en/42-home/welcome-to-the-official-website-of-the-holy-monastery-of-st-catherine-at-mount-sinai/437-mount-sinai-monastery",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ANCIENT_CROSS_CONFESSIONAL_CULT",
+          "source_url": "https://sinaimonastery.com/st-catherine/index.php/en/42-home/welcome-to-the-official-website-of-the-holy-monastery-of-st-catherine-at-mount-sinai/437-mount-sinai-monastery",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-bridget-of-sweden",
+      "name": "Saint Bridget of Sweden",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "INTERNATIONAL_PILGRIMAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.svenskakyrkan.se/vadstena/klosterkyrkan",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "INTERNATIONAL_PILGRIMAGE_EVIDENCED",
+          "source_url": "https://www.svenskakyrkan.se/vadstena/klosterkyrkan",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-teresa-of-avila",
+      "name": "Saint Teresa of Ávila",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:ES:teresa-body-alba",
+        "relic:ES:teresa-heart-alba",
+        "relic:ES:teresa-arm-alba"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-of-the-cross",
+      "name": "Saint John of the Cross",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_PILGRIMAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_PILGRIMAGE_EVIDENCED",
+          "source_url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-ignatius-of-loyola",
+      "name": "Saint Ignatius of Loyola",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-francis-de-sales",
+      "name": "Saint Francis de Sales",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-jane-frances-de-chantal",
+      "name": "Saint Jane Frances de Chantal",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-vincent-de-paul",
+      "name": "Saint Vincent de Paul",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:vincent-de-paul",
+        "relic:FR:vincent-heart-rue-du-bac"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-louise-de-marillac",
+      "name": "Saint Louise de Marillac",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:louise-de-marillac"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-therese-of-lisieux",
+      "name": "Saint Thérèse of Lisieux",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:therese-carmel"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-alphonsus-liguori",
+      "name": "Saint Alphonsus Liguori",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "ORDER_OR_CHURCH_WIDE_INDICATION",
+      "evidence_signal": "ORDER_WIDE_CULT_EVIDENCED",
+      "principal_reach_source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ORDER_WIDE_CULT_EVIDENCED",
+          "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-bosco",
+      "name": "Saint John Bosco",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-philip-neri",
+      "name": "Saint Philip Neri",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-pio-of-pietrelcina",
+      "name": "Saint Pio of Pietrelcina",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IT:padre-pio-rotondo"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-margaret-mary-alacoque",
+      "name": "Saint Margaret Mary Alacoque",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:margaret-mary-paray"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-catherine-laboure",
+      "name": "Saint Catherine Labouré",
+      "coverage_family": "MONASTIC_FOUNDERS_DOCTORS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:catherine-laboure"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-patrick",
+      "name": "Saint Patrick",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-brigid-of-kildare",
+      "name": "Saint Brigid of Kildare",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "IRISH_NATIONAL_PATRON_CULT",
+      "principal_reach_source_url": "https://www.catholicbishops.ie/2024/01/28/mass-celebrated-by-bishop-denis-nulty-for-the-installation-of-the-holy-relic-of-saint-brigid/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "IRISH_NATIONAL_PATRON_CULT",
+          "source_url": "https://www.catholicbishops.ie/2024/01/28/mass-celebrated-by-bishop-denis-nulty-for-the-installation-of-the-holy-relic-of-saint-brigid/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        },
+        {
+          "signal": "IRISH_NATIONAL_PATRON_CULT",
+          "source_url": "https://www.catholicbishops.ie/2024/01/28/mass-celebrated-by-bishop-denis-nulty-for-the-installation-of-the-holy-relic-of-saint-brigid/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-columba-of-iona",
+      "name": "Saint Columba of Iona",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "IRISH_SCOTTISH_MONASTIC_CULT",
+      "principal_reach_source_url": "https://www.historicenvironment.scot/visit/all/iona-abbey-and-nunnery/history-and-stories/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "IRISH_SCOTTISH_MONASTIC_CULT",
+          "source_url": "https://www.historicenvironment.scot/visit/all/iona-abbey-and-nunnery/history-and-stories/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-columbanus",
+      "name": "Saint Columbanus",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "ORDER_OR_CHURCH_WIDE_INDICATION",
+      "evidence_signal": "EUROPEAN_MONASTIC_CULT",
+      "principal_reach_source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "EUROPEAN_MONASTIC_CULT",
+          "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-david-of-wales",
+      "name": "Saint David of Wales",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-edward-the-confessor",
+      "name": "Saint Edward the Confessor",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-thomas-becket",
+      "name": "Saint Thomas Becket",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-thomas-more",
+      "name": "Saint Thomas More",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-fisher",
+      "name": "Saint John Fisher",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "ENGLISH_REFORMATION_MARTYR",
+      "principal_reach_source_url": "https://www.vaticanstate.va/en/component/content/article/june-22-saints-thomas-more-and-john-fisher.html?Itemid=216&catid=51",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ENGLISH_REFORMATION_MARTYR",
+          "source_url": "https://www.vaticanstate.va/en/component/content/article/june-22-saints-thomas-more-and-john-fisher.html?Itemid=216&catid=51",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-edmund-campion",
+      "name": "Saint Edmund Campion",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "ENGLISH_JESUIT_MARTYR",
+      "principal_reach_source_url": "https://www.jesuit.org.sg/dec-edmund-campion-sj/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ENGLISH_JESUIT_MARTYR",
+          "source_url": "https://www.jesuit.org.sg/dec-edmund-campion-sj/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-boniface",
+      "name": "Saint Boniface",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_AND_REGIONAL_DOCUMENTED",
+      "evidence_signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+      "principal_reach_source_url": "https://www.stbonifaceonline.org/our-patron",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+          "source_url": "https://www.stbonifaceonline.org/our-patron",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-willibrord",
+      "name": "Saint Willibrord",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_AND_REGIONAL_DOCUMENTED",
+      "evidence_signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+      "principal_reach_source_url": "https://basilika.lu/en/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+          "source_url": "https://basilika.lu/en/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-wenceslaus",
+      "name": "Saint Wenceslaus",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "CZECH_NATIONAL_PATRON",
+      "principal_reach_source_url": "https://www.hrad.cz/en/prague-castle-for-visitors/objects-for-visitors/st.-vitus-cathedral-10330%23from-list",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "CZECH_NATIONAL_PATRON",
+          "source_url": "https://www.hrad.cz/en/prague-castle-for-visitors/objects-for-visitors/st.-vitus-cathedral-10330%23from-list",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-adalbert-of-prague",
+      "name": "Saint Adalbert of Prague",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "POLISH_NATIONAL_PATRON",
+      "principal_reach_source_url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "POLISH_NATIONAL_PATRON",
+          "source_url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        },
+        {
+          "signal": "CENTRAL_EUROPEAN_MARTYR",
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-stanislaus-of-krakow",
+      "name": "Saint Stanislaus of Kraków",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_AND_REGIONAL_DOCUMENTED",
+      "evidence_signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+      "principal_reach_source_url": "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+          "source_url": "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-casimir",
+      "name": "Saint Casimir",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_AND_REGIONAL_DOCUMENTED",
+      "evidence_signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+      "principal_reach_source_url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+          "source_url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-stephen-of-hungary",
+      "name": "Saint Stephen of Hungary",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "HUNGARIAN_NATIONAL_PATRON",
+      "principal_reach_source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "HUNGARIAN_NATIONAL_PATRON",
+          "source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-elizabeth-of-hungary",
+      "name": "Saint Elizabeth of Hungary",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "MEDIEVAL_TRANSREGIONAL_PILGRIMAGE",
+      "principal_reach_source_url": "https://www.elisabethkirche.de/kirchenraum/sehenswuerdiges/geschichte",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "MEDIEVAL_TRANSREGIONAL_PILGRIMAGE",
+          "source_url": "https://www.elisabethkirche.de/kirchenraum/sehenswuerdiges/geschichte",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-hedwig-of-silesia",
+      "name": "Saint Hedwig of Silesia",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "SILESIAN_REGIONAL_PATRON",
+      "principal_reach_source_url": "https://trzebnica.pl/5186/kolejne-sensacyjne-odkrycie-w-trzebnickiej-bazylice.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "SILESIAN_REGIONAL_PATRON",
+          "source_url": "https://trzebnica.pl/5186/kolejne-sensacyjne-odkrycie-w-trzebnickiej-bazylice.html",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-olaf-of-norway",
+      "name": "Saint Olaf of Norway",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "NATIONAL_PATRON_AND_HISTORIC_NORDIC_PILGRIMAGE",
+      "principal_reach_source_url": "https://www.nidarosdomen.no/en/historie-og-arkitektur/olav-den-hellige",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "NATIONAL_PATRON_AND_HISTORIC_NORDIC_PILGRIMAGE",
+          "source_url": "https://www.nidarosdomen.no/en/historie-og-arkitektur/olav-den-hellige",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-genevieve-of-paris",
+      "name": "Saint Geneviève of Paris",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_PATRONAGE_EVIDENCED",
+      "principal_reach_source_url": "https://www.saintetiennedumont.fr/a-propos/histoire-et-architecture/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_PATRONAGE_EVIDENCED",
+          "source_url": "https://www.saintetiennedumont.fr/a-propos/histoire-et-architecture/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-denis-of-paris",
+      "name": "Saint Denis of Paris",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:basilique-saint-denis"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-remi-of-reims",
+      "name": "Saint Rémi of Reims",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-louis-ix",
+      "name": "Saint Louis IX",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "FRENCH_ROYAL_SAINT_AND_MEDIEVAL_CULT",
+      "principal_reach_source_url": "https://www.sainte-chapelle.fr/en/discover/saint-louis",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "FRENCH_ROYAL_SAINT_AND_MEDIEVAL_CULT",
+          "source_url": "https://www.sainte-chapelle.fr/en/discover/saint-louis",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-joan-of-arc",
+      "name": "Saint Joan of Arc",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-jean-marie-vianney",
+      "name": "Saint Jean-Marie Vianney",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "DOCUMENTED_INTERNATIONAL_PILGRIMAGE",
+      "principal_reach_source_url": "https://www.arsnet.org/le-cure-dars/",
+      "reach_assessment_grade": "PRIMARY_CUSTODIAN_EXPLICIT_REACH",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "DOCUMENTED_INTERNATIONAL_PILGRIMAGE",
+          "source_url": "https://www.arsnet.org/le-cure-dars/",
+          "kind": "FRESH_PRIMARY_CUSTODIAN_REVIEW"
+        }
+      ],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:curé-ars"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-bernadette-soubirous",
+      "name": "Saint Bernadette Soubirous",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:FR:bernadette-nevers"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-charbel-makhlouf",
+      "name": "Saint Charbel Makhlouf",
+      "coverage_family": "EUROPE_REGIONAL",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "INTERNATIONAL_DEVOTION_EVIDENCED",
+      "principal_reach_source_url": "https://saintcharbel.com/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "INTERNATIONAL_DEVOTION_EVIDENCED",
+          "source_url": "https://saintcharbel.com/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-augustine-of-hippo",
+      "name": "Saint Augustine of Hippo",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-monica",
+      "name": "Saint Monica",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "TRANSREGIONAL_AUGUSTINIAN_DEVOTION",
+      "principal_reach_source_url": "https://www.santagostinoroma.it/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "TRANSREGIONAL_AUGUSTINIAN_DEVOTION",
+          "source_url": "https://www.santagostinoroma.it/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-perpetua",
+      "name": "Saint Perpetua",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "EARLY_AFRICAN_CHRISTIAN_MARTYR",
+      "principal_reach_source_url": "https://archeologiechretienne.ive.org/?p=748",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "EARLY_AFRICAN_CHRISTIAN_MARTYR",
+          "source_url": "https://archeologiechretienne.ive.org/?p=748",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-felicity",
+      "name": "Saint Felicity",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "EARLY_AFRICAN_CHRISTIAN_MARTYR",
+      "principal_reach_source_url": "https://archeologiechretienne.ive.org/?p=748",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "EARLY_AFRICAN_CHRISTIAN_MARTYR",
+          "source_url": "https://archeologiechretienne.ive.org/?p=748",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-maurice-of-agaunum",
+      "name": "Saint Maurice of Agaunum",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "TRANSREGIONAL_HISTORICAL_CULT",
+      "principal_reach_source_url": "https://www.abbaye-stmaurice.ch/fr/fondation-de-l-abbaye/patrimoine/reliquaires-tresor-de-l-abbaye/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "TRANSREGIONAL_HISTORICAL_CULT",
+          "source_url": "https://www.abbaye-stmaurice.ch/fr/fondation-de-l-abbaye/patrimoine/reliquaires-tresor-de-l-abbaye/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-charles-lwanga",
+      "name": "Saint Charles Lwanga",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-kizito",
+      "name": "Saint Kizito",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-joseph-mukasa-balikuddembe",
+      "name": "Saint Joseph Mukasa Balikuddembe",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "UGANDAN_MARTYR_REGIONAL_CULT",
+      "principal_reach_source_url": "https://archdiocese.nswanjereseminary.ac.ug/about-us/the-uganda-martyrs/basilicas/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "UGANDAN_MARTYR_REGIONAL_CULT",
+          "source_url": "https://archdiocese.nswanjereseminary.ac.ug/about-us/the-uganda-martyrs/basilicas/",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-mathias-mulumba",
+      "name": "Saint Mathias Mulumba",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "NATIONAL_AND_REGIONAL_DOCUMENTED",
+      "evidence_signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+      "principal_reach_source_url": "https://ugandamartyrsshrine.org.ug/index.php/about/the-alta-at-the-marian-grotto/the-relics",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "NATIONAL_REGIONAL_PATRON_EVIDENCED",
+          "source_url": "https://ugandamartyrsshrine.org.ug/index.php/about/the-alta-at-the-marian-grotto/the-relics",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:blessed-daudi-okello",
+      "name": "Blessed Daudi Okello",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_CULT_EVIDENCED",
+      "principal_reach_source_url": "https://ugandamartyrsshrine.org.ug/index.php/about/the-alta-at-the-marian-grotto/the-relics",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_CULT_EVIDENCED",
+          "source_url": "https://ugandamartyrsshrine.org.ug/index.php/about/the-alta-at-the-marian-grotto/the-relics",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:blessed-jildo-irwa",
+      "name": "Blessed Jildo Irwa",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_CULT_EVIDENCED",
+      "principal_reach_source_url": "https://ugandamartyrsshrine.org.ug/index.php/about/the-alta-at-the-marian-grotto/the-relics",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_CULT_EVIDENCED",
+          "source_url": "https://ugandamartyrsshrine.org.ug/index.php/about/the-alta-at-the-marian-grotto/the-relics",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-josephine-bakhita",
+      "name": "Saint Josephine Bakhita",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "RELIGIOUS_ORDER_AND_REGIONAL_EVIDENCED",
+      "principal_reach_source_url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "RELIGIOUS_ORDER_AND_REGIONAL_EVIDENCED",
+          "source_url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-francis-xavier",
+      "name": "Saint Francis Xavier",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:IN:francis-xavier-goa"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-gonsalo-garcia",
+      "name": "Saint Gonsalo Garcia",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "INDIAN_NATIONAL_MARTYR_CULT",
+      "principal_reach_source_url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1989/april/documents/hf_jp-ii_spe_19890413_india-ad-limina.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "INDIAN_NATIONAL_MARTYR_CULT",
+          "source_url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1989/april/documents/hf_jp-ii_spe_19890413_india-ad-limina.html",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-andrew-kim-taegon",
+      "name": "Saint Andrew Kim Taegon",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "KOREAN_NATIONAL_PATRON_WITH_ASIAN_DEVOTION",
+      "principal_reach_source_url": "https://www.korea.net/NewsFocus/Society/view?articleId=147762",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "KOREAN_NATIONAL_PATRON_WITH_ASIAN_DEVOTION",
+          "source_url": "https://www.korea.net/NewsFocus/Society/view?articleId=147762",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-paul-chong-hasang",
+      "name": "Saint Paul Chong Hasang",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "KOREAN_CATHOLIC_MARTYR_CULT",
+      "principal_reach_source_url": "https://www.seosomun.org/en/retrieveContents.do?mCode=220",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "KOREAN_CATHOLIC_MARTYR_CULT",
+          "source_url": "https://www.seosomun.org/en/retrieveContents.do?mCode=220",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-laurent-imbert",
+      "name": "Saint Laurent Imbert",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "KOREAN_MARTYR_AND_FRENCH_MISSIONARY_CULT",
+      "principal_reach_source_url": "https://www.korea.net/NewsFocus/Society/view?articleId=121022",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "KOREAN_MARTYR_AND_FRENCH_MISSIONARY_CULT",
+          "source_url": "https://www.korea.net/NewsFocus/Society/view?articleId=121022",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-paul-miki",
+      "name": "Saint Paul Miki",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-pedro-calungsod",
+      "name": "Saint Pedro Calungsod",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "FILIPINO_MARTYR_AND_GUAM_PILGRIMAGE",
+      "principal_reach_source_url": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121021.pdf",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "FILIPINO_MARTYR_AND_GUAM_PILGRIMAGE",
+          "source_url": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121021.pdf",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-lorenzo-ruiz",
+      "name": "Saint Lorenzo Ruiz",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "FILIPINO_NATIONAL_MARTYR_CULT",
+      "principal_reach_source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19871018_ruiz-compagni_it.html",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "FILIPINO_NATIONAL_MARTYR_CULT",
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19871018_ruiz-compagni_it.html",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-de-britto",
+      "name": "Saint John de Britto",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "TAMIL_CATHOLIC_PILGRIMAGE",
+      "principal_reach_source_url": "https://www.dioceseofsivagangai.org/st-john-de-britto-shrine",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "TAMIL_CATHOLIC_PILGRIMAGE",
+          "source_url": "https://www.dioceseofsivagangai.org/st-john-de-britto-shrine",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-rose-of-lima",
+      "name": "Saint Rose of Lima",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-martin-de-porres",
+      "name": "Saint Martin de Porres",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-juan-diego",
+      "name": "Saint Juan Diego",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "TRANSNATIONAL_DOCUMENTED",
+      "evidence_signal": "TRANSREGIONAL_DEVOTION_EVIDENCED",
+      "principal_reach_source_url": "https://www.olacathedral.org/tilma-chapel",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "TRANSREGIONAL_DEVOTION_EVIDENCED",
+          "source_url": "https://www.olacathedral.org/tilma-chapel",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-philip-of-jesus",
+      "name": "Saint Philip of Jesus",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "MEXICAN_NATIONAL_PATRON_CULT",
+      "principal_reach_source_url": "https://catalogonacionalmhi.inah.gob.mx/consulta_publica/detalle/11736",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "MEXICAN_NATIONAL_PATRON_CULT",
+          "source_url": "https://catalogonacionalmhi.inah.gob.mx/consulta_publica/detalle/11736",
+          "kind": "WAVE5_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-mariana-de-jesus",
+      "name": "Saint Mariana de Jesús",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "NATIONAL_DOCUMENTED",
+      "evidence_signal": "ECUADORIAN_PATRON_NATIONAL_CULT",
+      "principal_reach_source_url": "https://fundacioniglesiadelacompania.org.ec/informacion/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "ECUADORIAN_PATRON_NATIONAL_CULT",
+          "source_url": "https://fundacioniglesiadelacompania.org.ec/informacion/",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-jose-de-anchieta",
+      "name": "Saint José de Anchieta",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "HISTORICAL_ROLE_ONLY_NO_REACH_MEASURE",
+      "evidence_signal": "BRAZILIAN_MISSIONARY_FOUNDATIONAL_CULT",
+      "principal_reach_source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "BRAZILIAN_MISSIONARY_FOUNDATIONAL_CULT",
+          "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        },
+        {
+          "signal": "BRAZILIAN_MISSIONARY_FOUNDATIONAL_CULT",
+          "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+          "kind": "WAVE6_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-oscar-romero",
+      "name": "Saint Oscar Romero",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-kateri-tekakwitha",
+      "name": "Saint Kateri Tekakwitha",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-elizabeth-ann-seton",
+      "name": "Saint Elizabeth Ann Seton",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:US:seton-emmitsburg"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-john-neumann",
+      "name": "Saint John Neumann",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:US:neumann-philadelphia"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-katharine-drexel",
+      "name": "Saint Katharine Drexel",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "REGIONAL_OR_LOCAL_DOCUMENTED",
+      "evidence_signal": "REGIONAL_PILGRIMAGE_EVIDENCED",
+      "principal_reach_source_url": "https://cathedralphila.org/drexel/about/history/",
+      "reach_assessment_grade": "INHERITED_SCREENED_SOURCE_SIGNAL_REQUIRES_INDEPENDENT_CROSSCHECK",
+      "all_traceable_reach_signals": [
+        {
+          "signal": "REGIONAL_PILGRIMAGE_EVIDENCED",
+          "source_url": "https://cathedralphila.org/drexel/about/history/",
+          "kind": "WAVE3_EVIDENCE_SIGNAL"
+        }
+      ],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-junipero-serra",
+      "name": "Saint Junípero Serra",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": false,
+      "legacy_relic_ids": [],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    },
+    {
+      "subject_id": "subject:saint-andre-bessette",
+      "name": "Saint André Bessette",
+      "coverage_family": "AFRICA_ASIA_AMERICAS",
+      "assessed_devotional_reach": "UNASSESSED",
+      "evidence_signal": null,
+      "principal_reach_source_url": null,
+      "reach_assessment_grade": "NO_SUBJECT_SPECIFIC_CULT_SCOPE_EVIDENCE",
+      "all_traceable_reach_signals": [],
+      "has_existing_legacy_relic_record": true,
+      "legacy_relic_ids": [
+        "relic:CA:brother-andre-tomb-montreal",
+        "relic:CA:brother-andre-heart-montreal"
+      ],
+      "personal_holiness_not_ranked": true,
+      "relic_authenticity_not_inferred": true,
+      "traditional_1962_calendar_status": "NOT_INDEPENDENTLY_COLLATED",
+      "final_fame_rank": "NOT_ISSUED",
+      "map_pin_decision": "SEPARATE_SITE_LEVEL_DECISION"
+    }
+  ]
+}
