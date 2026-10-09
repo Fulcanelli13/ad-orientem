@@ -13,7 +13,7 @@ assert.ok(src.authoritativeIdentity.notIdenticalTo.includes("1905"));
 assert.equal(src.historicalFrenchWitness.publicationYear,1913);
 assert.equal(src.historicalFrenchWitness.authorizationLetterDate,"1913-03-07");
 assert.equal(src.historicalFrenchWitness.sourceStatus,"BOOK_ID_AND_EDITION_ESTABLISHED_NOT_PAGE_BY_PAGE_COLLATED");
-assert.equal(src.historicalFrenchWitness.questionAnswersVisuallyChecked,5);
+assert.equal(src.historicalFrenchWitness.questionAnswersVisuallyChecked,23);
 assert.equal(src.historicalFrenchWitness.fullScanNumberedQuestionCollation,false);
 assert.equal(src.modernFrenchOnlineWitness.status,"REFERENCE_ONLY_UNSAFE_FOR_AUTOMATIC_PRODUCTION_TEXT_IMPORT");
 assert.deepEqual(src.modernFrenchOnlineWitness.observedTextDamage.map(x=>x.question),[228,253,400]);
@@ -22,7 +22,7 @@ assert.equal(it.officialApprovalLetter,src.authoritativeIdentity.approvalLetter)
 assert.equal(it.original1912PrintedFacsimileCollated,false);
 assert.equal(c.authority.historicalFrenchWitnessReview,"data/learn/ltfaith-pius-x-french-historical-witness-review.v1.json");
 assert.equal(c.metrics.french1913HistoricalEditionIdentified,true);
-assert.equal(c.metrics.french1913PageLevelQuestionCollation,5);
+assert.equal(c.metrics.french1913PageLevelQuestionCollation,23);
 const corrections=new Map();
 let claimCount=0;
 for(const overlay of [a,b])for(const l of overlay.lessons)for(const [i,claim] of l.claims.entries()){

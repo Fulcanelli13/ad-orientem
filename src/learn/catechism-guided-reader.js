@@ -41,6 +41,25 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
   }
   const doc = root.ownerDocument;
   const witnessByQuestion = new Map(inputs.witnessIndex.entries.map(entry => [entry.q, entry]));
+  // Original-language links load only when Guided Study is explicitly open.
+  const frenchByQuestion = new Map((inputs.frenchIndex?.entries || []).map(item => [item.q, item]));
+  if (inputs.frenchIndex && frenchByQuestion.size !== 433)
+    throw new Error("Incomplete original 1913 French page index");
+  const renderSource = source => {
+    const links = [`<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.ref)}</a>`];
+    if (source.originalLanguageUrl)
+      links.push(`<a href="${escapeHtml(source.originalLanguageUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(text("Italian 1912 transcription", "Transcription italienne de 1912", lang))}">IT</a>`);
+    const match = /^PX1912-Q(\d{3})$/.exec(source.ref);
+    const french = match ? frenchByQuestion.get(Number(match[1])) : null;
+    if (french?.scanUrl) {
+      const checked = french.status === "VISUALLY_CONFIRMED_ORIGINAL_FRENCH_1913_PRINT_QA";
+      const label = checked
+        ? text("French printed 1913 original, answer visually checked", "Original français imprimé de 1913, réponse contrôlée visuellement", lang)
+        : text("French printed 1913 original, provisional page locator", "Original français imprimé de 1913, page provisoire non collationnée", lang);
+      links.push(`<a href="${escapeHtml(french.scanUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">FR 1913</a>`);
+    }
+    return links.join(" ");
+  };
   const onQuestion = typeof options.onQuestion === "function" ? options.onQuestion : () => {};
   let current = options.questionNumber
     ? findGuidedLessonForQuestion(study, options.questionNumber)?.id
@@ -60,7 +79,7 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
         </select>
       </nav>
       <article><h2>${escapeHtml(lesson.title[lang])}</h2>
-        ${lesson.claims.map(c => `<p>${escapeHtml(c[lang])} <span class="aoCatechismGuidedSources">${c.sources.map(s => `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.ref)}</a>${s.originalLanguageUrl ? ` <a href="${escapeHtml(s.originalLanguageUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${text("1912 Italian text (transcription)", "Texte italien de 1912 (transcription)", lang)}">IT</a>` : ""}`).join(" · ")}</span></p>`).join("")}
+        ${lesson.claims.map(c => `<p>${escapeHtml(c[lang])} <span class="aoCatechismGuidedSources">${c.sources.map(renderSource).join(" · ")}</span></p>`).join("")}
         <h3>${text("Original Catechism questions", "Questions du Catéchisme original", lang)}</h3>
         <div class="aoCatechismGuidedQuestions">${lesson.primaryQuestions.map(n => `<button type="button" data-guided-question="${n}" title="${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}">Q${n} · ${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}</button>`).join(" ")}</div>
       </article>

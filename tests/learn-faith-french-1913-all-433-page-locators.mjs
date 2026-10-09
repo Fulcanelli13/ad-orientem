@@ -9,10 +9,12 @@ assert.equal(printed.pdfPageCount,165);
 assert.equal(printed.entries.length,433);
 assert.equal(printed.directOcrDetectedQuestionNumbers,414);
 assert.equal(printed.ocrMissingQuestionNumbers.length,19);
-assert.deepEqual(printed.photoVerifiedQuestionNumbers,[202,226,228,253,400]);
-assert.equal(printed.entries.filter(e=>e.status.startsWith("VISUALLY")).length,5);
+assert.equal(printed.photoVerifiedQuestionNumbers.length,23);
+assert.ok([10,11,12,14,15,16,21,30,31,41,42,48,182,202,207,226,228,253,265,342,361,383,400].every(q=>printed.photoVerifiedQuestionNumbers.includes(q)));
+assert.equal(printed.entries.filter(e=>e.status.startsWith("VISUALLY")).length,23);
 assert.equal(printed.entries.filter(e=>e.status.startsWith("OCR_NUMBER")).length,410);
-assert.equal(printed.entries.filter(e=>e.status.startsWith("OCR_HEADING_MISSING")).length,18);
+assert.equal(printed.entries.filter(e=>e.status.startsWith("OCR_HEADING_MISSING")).length,0);
+assert.equal(printed.remainingUnlocatedQuestionNumbers.length,0);
 for(const [i,e] of printed.entries.entries()){
  const q=i+1;
  assert.equal(e.q,q);
@@ -31,16 +33,16 @@ for(const [q,page] of expected){
  assert.equal(photo.pdfPageOneIndexed,page);
  assert.equal(photo.fullAnswerVisuallyRead,true);
 }
-assert.equal(evidence.verifiedPageSamples.length,5);
+assert.equal(evidence.verifiedPageSamples.length,23);
 assert.equal(printed.all433PrintedAnswersVisuallyVerified,false);
 assert.equal(printed.original1912ItalianPrintedFacsimileCollated,false);
 assert.equal(printed.nativeFrenchEditorialApproved,false);
 assert.equal(printed.publicationApproved,false);
-assert.equal(cross.metrics.french1913PageLevelQuestionCollation,5);
+assert.equal(cross.metrics.french1913PageLevelQuestionCollation,23);
 assert.equal(cross.metrics.french1913AutomatedPageHeadingDetections,414);
 assert.equal(cross.metrics.french1913BoundedQuestionPageCandidates,433);
-assert.equal(cross.metrics.french1913PrintedQuestionAnswersStillNeedFullIndependentReview,428);
+assert.equal(cross.metrics.french1913PrintedQuestionAnswersStillNeedFullIndependentReview,410);
 assert.equal(cross.publicationGate.frenchOriginalCollation,false);
 assert.equal(cross.publicationGate.nativeFrenchEdit,false);
 assert.equal(cross.publicationGate.canonicalReview,false);
-console.log(JSON.stringify({status:"PASS",questionPageCandidates:433,ocrHeadings:414,boundedInferred:18,photoQaVerified:5,fullyCertified:0}));
+console.log(JSON.stringify({status:"PASS",questionPageCandidates:433,ocrHeadings:414,boundedInferred:0,photoQaVerified:23,fullyCertified:0}));

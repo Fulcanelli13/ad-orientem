@@ -14,7 +14,8 @@ export async function installCatechismGuidedMode(win = globalThis) {
     "data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json",
     "data/learn/learn-the-faith-certification-001-018.v1.json",
     "data/learn/learn-the-faith-certification-019-054.v1.json",
-    "data/learn/ltfaith-pius-x-en-witness-index.v1.json"
+    "data/learn/ltfaith-pius-x-en-witness-index.v1.json",
+    "data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json"
   ];
   const firstResponse = await win.fetch(new URL(paths[0], win.document.baseURI));
   if (!firstResponse.ok) throw new Error("Guided Catechism crosswalk unavailable");
@@ -22,7 +23,7 @@ export async function installCatechismGuidedMode(win = globalThis) {
   if (!preview && !guidedStudyReleaseApproved(crosswalk)) return false;
   const remaining = await Promise.all(paths.slice(1).map(p => win.fetch(new URL(p, win.document.baseURI))));
   if (remaining.some(r => !r.ok)) throw new Error("Guided Catechism source unavailable");
-  const [first, second, witnessIndex] = await Promise.all(remaining.map(r => r.json()));
+  const [first, second, witnessIndex, frenchIndex] = await Promise.all(remaining.map(r => r.json()));
   const lang = win.AO_RUNTIME_V8?.store?.getState?.()?.language === "fr" ? "fr" : "en";
   const L = (en, fr) => lang === "fr" ? fr : en;
   const doc = win.document;
@@ -59,7 +60,7 @@ export async function installCatechismGuidedMode(win = globalThis) {
   observer.observe(original, { childList: true });
   let view;
   try {
-    view = renderCatechismGuidedStudy(content, { crosswalk, first, second, witnessIndex }, {
+    view = renderCatechismGuidedStudy(content, { crosswalk, first, second, witnessIndex, frenchIndex }, {
       preview, language: lang,
       onQuestion: async ({ number }) => {
         notice.hidden = true;
