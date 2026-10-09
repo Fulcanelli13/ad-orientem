@@ -106,13 +106,32 @@
     }
   ],
   "reviewStatus": "Bounded 2024/2027 independent class/colour corroboration; not a day-by-day theological or archival certification.",
-  "seasonalCorrections": [
+  "disputes": [
     {
-      "id": "generic-epiphany-feria",
-      "scope": "Unassigned IV-class ferias after the Holy Family Sunday and before Septuagesima",
-      "liturgicalColour": "Green",
-      "reason": "The generic source fallback had a hardcoded white class-IV feria for the season after Epiphany, despite green being the applicable temporal colour. Confirmed on 2024-01-08 and 2027-01-11; the rule applies to all years, not a date-specific patch.",
-      "source": "https://missale.online/festkalender/en/2027/druck"
+      "date": "2024-01-08",
+      "field": "colour",
+      "app": "White",
+      "firstSource": "Green",
+      "status": "REQUIRES_RUBRIC_REVIEW",
+      "note": "Missale Online presents this isolated Monday in green while the surrounding octave weekdays have white propers. Do not generalize colour by season.",
+      "sources": [
+        "https://missale.online/festkalender/en/2024/druck",
+        "https://gcatholic.org/calendar/2024/Extraordinary-en",
+        "https://manualistpress.com/liturgical-calendar/1962-missal/"
+      ]
+    },
+    {
+      "date": "2027-01-11",
+      "field": "colour",
+      "app": "White",
+      "firstSource": "Green",
+      "status": "REQUIRES_RUBRIC_REVIEW",
+      "note": "The 2027 Monday is green in Missale Online, but the next pre-Baptism weekday remains white. Compare traditional rubrics and alternative 1962 calendars.",
+      "sources": [
+        "https://missale.online/festkalender/en/2027/druck",
+        "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "https://manualistpress.com/liturgical-calendar/1962-missal/"
+      ]
     }
   ]
 }
