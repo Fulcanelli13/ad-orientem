@@ -334,10 +334,32 @@ function handleClick(e){
     const route=b.dataset.tp381Route;
     if(ROUTES[route])return open(route,{trigger:b});
     if(String(route).startsWith("learn.")){
-      BASE_CLOSE();
+      const prayerRoute=S.route;
+      // This is a deliberate cross-domain handoff. Do not schedule the
+      // historical donor's return-context navigation while Learn is opening.
+      BASE_CLOSE({silent:true});
       void (async()=>{
-        try{await window?.AO_APP_SHELL_V1?.navigate?.("learn")}catch{}
-        try{await window?.AO_MODULES?.open?.(route,{returnContext:{surface:"pray",route:S.route}})}catch{}
+        try{
+          const navigation=await window?.AO_APP_SHELL_V1?.navigate?.("learn");
+          if(navigation?.ok!==true)throw new Error("Formation surface refused navigation");
+          // The Formation owner must own the child and its return context.
+          // A raw registry launch leaves Learn.child unset and can strand
+          // users in Formation instead of returning to their bedside prayer.
+          const launched=await window?.AO_LEARN_APP_V1?.openModule?.(route,{
+            returnContext:{surface:"pray",route:prayerRoute}
+          });
+          if(launched!==true)throw new Error("Formation child did not open");
+          // The app-shell can leave the Prayer donor sheet open during a
+          // cross-domain child launch. Explicitly release that interactive
+          // overlay after Formation owns the child, or its Back button is
+          // visually present but blocked by Prayer's higher z-index.
+          if(window?.AO_PRAY_APP_V1?.status?.()?.open===true)
+            window?.AO_PRAY_V435930?.close?.({silent:true});
+        }catch(error){
+          try{window?.console?.error?.("Prayer to Formation handoff failed",error)}catch{}
+          const recovered=await window?.AO_APP_SHELL_V1?.navigate?.("pray");
+          if(recovered?.ok===true)await window?.AO_MODULES?.open?.(prayerRoute);
+        }
       })();
       return;
     }
