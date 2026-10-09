@@ -79,7 +79,7 @@ assert.equal(v6.current_all_mass_evidenced_records,1212);
 assert.equal(v6.current_all_source_records,1449);
 assert.equal(v6.official_sspx_map_pins_after_overlay,373);
 assert.equal(v6.sspx_source_records_still_without_verified_coordinates,241);
-assert.deepEqual(new Set(v6.cases.filter(c=>c.new_mass_record_count===1&&c.previous_status==="PENDING_PLACE_DETAIL_ADJUDICATION").map(c=>c.source_place_id)),
+assert.deepEqual(new Set(v6.cases.filter(c=>c.status==="NEW_VERIFIED_MASS_VENUE"&&v5.cases.some(old=>old.source_place_id===c.source_place_id&&old.status==="PENDING_PLACE_DETAIL_ADJUDICATION")).map(c=>c.source_place_id)),
  new Set(["rosenkranz-kapelle","chapelle-notre-dame-de-lourdes","chapelle-notre-dame-du-rosaire"]));
 assert.equal(v6.cases.reduce((n,x)=>n+x.new_mass_record_count,0),38);
 console.log("SSPX source-first coordinates: PASS — 23 unique official route points (22 address, 1 locality), 20 existing pinned, 3 Mass sites added; 373 total points, 163/210 source cases resolved");
