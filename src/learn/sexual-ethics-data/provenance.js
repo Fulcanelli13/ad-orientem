@@ -68,7 +68,7 @@ export const CSE_MISCONCEPTION_REBUTTAL_IDS=Object.freeze(["CSE112","CSE117"]);
 
 // For these debate scenarios, external citations establish context or a documented
 // concern, not an individual proponent's exact hypothetical wording.
-export const CSE_CONTEXT_ONLY_POSITION_IDS=Object.freeze(["CSE035","CSE038","CSE045","CSE051","CSE063","CSE064","CSE070","CSE141","CSE142","CSE143"]);
+export const CSE_CONTEXT_ONLY_POSITION_IDS=Object.freeze(["CSE012","CSE013","CSE014","CSE016","CSE018","CSE020","CSE021","CSE035","CSE038","CSE045","CSE051","CSE063","CSE064","CSE070","CSE141","CSE142","CSE143"]);
 
 export const CSE_POSITION_SOURCE_IDS=Object.freeze(Object.keys(CSE_DEBATE_POSITION_REFS).sort());
 
