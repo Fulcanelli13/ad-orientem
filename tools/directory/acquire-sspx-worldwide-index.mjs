@@ -78,7 +78,7 @@ async function readHtml(page,url,{fetchImpl=fetch}={}){
   for(const transport of ["https://r.jina.ai/https://","https://r.jina.ai/http://"]){
     const mirror=transport+new URL(url).host+new URL(url).pathname;
     try{
-      const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),30000);
+      const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),150000);
       let response;
       try{
         for(let attempt=0;attempt<6;attempt++){
