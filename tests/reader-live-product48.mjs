@@ -170,6 +170,25 @@ assert.deepEqual(productBlocks,sourceBlocks,
 assert.equal(new Set(productBlocks).size,productBlocks.length,
   "48-step projection duplicated a canonical block");
 
+
+// Full source-coverage release gate: the final Per omnia / Amen B061 must not
+// disappear between the Canon source-first projection and its 48-card product.
+const canonicalBlocks=sungCorpus.blocks.map(b=>b.Block_ID);
+assert.deepEqual(sourceBlocks,canonicalBlocks,
+  "39-step LIVE omits or reorders a canonical Sung source block");
+assert.deepEqual(productBlocks,canonicalBlocks,
+  "48-step LIVE omits or reorders a canonical Sung source block");
+const canonConclusion=real48.cards.find(card=>card.sectionId==="AO.CANON.14");
+assert.ok(canonConclusion,"The Canon conclusion card disappeared");
+assert.deepEqual(canonConclusion.blocks.map(b=>b.blockId),["AO.SM.B060","AO.SM.B061"]);
+const lastCues=canonConclusion.paragraphs.flatMap(p=>p.sourceCueIds??[]);
+assert.ok(lastCues.includes("AO.SM.C0206"),"Per omnia absent from LIVE Canon conclusion");
+assert.ok(lastCues.includes("AO.SM.C0207"),"Congregation Amen absent from LIVE Canon conclusion");
+assert.equal(real48.cards.filter(c=>c.blocks.some(b=>b.blockId==="AO.SM.B061")).length,1,
+  "Canon Amen is duplicated on LIVE cards");
+assert.ok(!real48.cards.find(c=>c.sectionId==="AO.CARD.019")?.blocks.some(b=>b.blockId==="AO.SM.B061"),
+  "The Canon Amen was incorrectly moved to the Pater Noster card");
+
 const sourceParagraphs=realSource.cards.flatMap(card=>card.paragraphs.map(p=>p.id));
 const productParagraphs=real48.cards.flatMap(card=>card.paragraphs.map(p=>p.id));
 assert.deepEqual(productParagraphs,sourceParagraphs,

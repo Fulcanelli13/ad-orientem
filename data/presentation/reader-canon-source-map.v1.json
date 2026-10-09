@@ -4,7 +4,7 @@
   "status": "CERTIFIED_SOURCE_FIRST",
   "authority": "PRESENTATION_STRUCTURE_ONLY",
   "releaseAuthority": true,
-  "principle": "Canon presentation follows sourced liturgical prayer/rubric units and canonical cue/event ownership. Historical v1.83 card count is compatibility evidence, not liturgical authority.",
+  "principle": "Canon presentation follows sourced liturgical prayer/rubric units and canonical cue/event ownership. Historical v1.83 card count is compatibility evidence, not liturgical authority. Canon concluding response B061 remains inside AO.CANON.14 after the minor elevation; Pater noster begins with B062.",
   "sourceWitnesses": [
     {
       "id": "MISSEL_FR",
@@ -28,11 +28,11 @@
   "invariants": {
     "blockRange": [
       "AO.SM.B047",
-      "AO.SM.B060"
+      "AO.SM.B061"
     ],
     "cueRange": [
       "AO.SM.C0150",
-      "AO.SM.C0205"
+      "AO.SM.C0207"
     ],
     "exactSegmentCount": 14,
     "hostWordsCue": "AO.SM.C0173",
@@ -230,7 +230,8 @@
       "sequence": 14,
       "title": "Per ipsum · Minor Elevation",
       "blockIds": [
-        "AO.SM.B060"
+        "AO.SM.B060",
+        "AO.SM.B061"
       ],
       "eventIds": [
         "MC-CAN-180",
@@ -238,7 +239,7 @@
         "MC-CAN-200"
       ],
       "cueStart": "AO.SM.C0201",
-      "cueEnd": "AO.SM.C0205"
+      "cueEnd": "AO.SM.C0207"
     }
   ],
   "historicalV183Compatibility": {
