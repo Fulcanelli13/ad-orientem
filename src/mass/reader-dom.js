@@ -606,6 +606,22 @@ function ritualAnchorFragments(anchor){
     .filter(Boolean);
 }
 
+// The 1962 Latin corpus and the historical gesture registers may disagree on
+// accent placement or Iesu/Jesu orthography. Match conservatively inside the
+// *already source-identified* cue paragraph, preserving offsets of the text.
+function foldRitualText(value){
+  let text="",offsets=[];
+  const raw=String(value??"");
+  for(let i=0;i<raw.length;){
+    const char=String.fromCodePoint(raw.codePointAt(i));
+    const folded=char.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/j/g,"i");
+    for(const letter of folded){text+=letter;offsets.push(i);}
+    i+=char.length;
+  }
+  offsets.push(raw.length);
+  return {text,offsets};
+}
+
 function appendRitualFragment(target,text,doc){
   const pieces=String(text??"").split("✠");
   pieces.forEach((piece,index)=>{
@@ -628,16 +644,22 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
   target.replaceChildren();
   if(!fragments.length){target.textContent=raw;return false;}
 
+  const folded=foldRitualText(raw);
   let cursor=0,matched=false;
   for(const fragment of fragments){
-    const index=raw.indexOf(fragment,cursor);
-    if(index<0)continue;
+    const needle=foldRitualText(fragment).text;
+    if(needle.length<3)continue;
+    const foldedStart=folded.offsets.findIndex(offset=>offset>=cursor);
+    const at=folded.text.indexOf(needle,Math.max(0,foldedStart));
+    if(at<0)continue;
+    const index=folded.offsets[at],end=folded.offsets[at+needle.length];
+    if(index<cursor||end<=index)continue;
     if(index>cursor)target.append(doc.createTextNode(raw.slice(cursor,index)));
     const span=doc.createElement("span");
     span.className="ao-ritual-trigger ao-ritual-trigger-live";
-    appendRitualFragment(span,fragment,doc);
+    appendRitualFragment(span,raw.slice(index,end),doc);
     target.append(span);
-    cursor=index+fragment.length;
+    cursor=end;
     matched=true;
   }
   if(cursor<raw.length)target.append(doc.createTextNode(raw.slice(cursor)));
@@ -646,6 +668,39 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
     target.textContent=raw;
   }
   return matched;
+}
+
+// Cue changes update state chrome without rebuilding the prayer card.
+// Update just the changed Latin anchor span so rails, focus, and the text cue
+// remain driven by the same canonical AO.SM.C.... identity. Never replace
+// the paragraph itself: that would reset translation/focus/scroll controls.
+export function syncReaderRitualHighlights(root,gesture){
+  const cueId=String(gesture?.canonicalCueId??gesture?.cueId??"");
+  const anchor=String(gesture?.anchorLat??"");
+  let applied=0;
+  for(const paragraph of root?.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[]){
+    const primary=paragraph.querySelector?.(".ao-line-primary");
+    if(!primary)continue;
+    const intended=Boolean(cueId && anchor && paragraph.dataset?.cueId===cueId &&
+      paragraph.dataset?.active==="true" && !paragraph.hidden);
+    const oldActive=paragraph.dataset?.ritualCueActive==="true";
+    const oldAnchor=paragraph.dataset?.ritualAnchor??"";
+    if(!intended&&!oldActive)continue;
+    if(intended&&oldActive&&oldAnchor===anchor){applied++;continue;}
+    // Keep exactly what the reader currently displays, including an opened
+    // vernacular alternative; a cue must never switch languages by itself.
+    const displayed=primary.textContent??"";
+    const matched=renderReaderText(primary,displayed,{anchor,active:intended});
+    if(matched){
+      paragraph.dataset.ritualAnchor=anchor;
+      paragraph.dataset.ritualCueActive="true";
+      applied++;
+    }else{
+      delete paragraph.dataset.ritualAnchor;
+      paragraph.dataset.ritualCueActive="false";
+    }
+  }
+  return applied;
 }
 
 export function normalizeReaderMoment(moment = {}, previous = {}) {
@@ -1780,21 +1835,10 @@ export function createReaderDomAdapter({
           }
           const primary=doc.createElement("span");
           primary.className="ao-line-primary";
-          const gestureCueId=String(current.gesture?.canonicalCueId??current.gesture?.cueId??"");
-          const ritualCueActive=Boolean(
-            p.active &&
-            current.gesture?.anchorLat &&
-            gestureCueId &&
-            exactCueIds.includes(gestureCueId)
-          );
-          if(ritualCueActive){
-            node.dataset.ritualAnchor=String(current.gesture.anchorLat);
-            node.dataset.ritualCueActive="true";
-          }
-          renderReaderText(primary,p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary,{
-            anchor:ritualCueActive ? current.gesture.anchorLat : null,
-            active:ritualCueActive,
-          });
+          // The initial paragraph.active state is not authoritative after
+          // native scroll tracking starts. Cue highlighting follows the live
+          // DOM focus and the *same* projected gesture as the rail below.
+          renderReaderText(primary,p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary);
           node.append(primary);
           if(p.secondary){
             const secondary=doc.createElement("span");
@@ -1806,6 +1850,7 @@ export function createReaderDomAdapter({
         }
       }
     }
+    syncReaderRitualHighlights(root,current.gesture);
     return current;
   }
 
