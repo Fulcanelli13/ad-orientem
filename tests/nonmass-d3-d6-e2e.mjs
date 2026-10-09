@@ -98,11 +98,11 @@ try{
   await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").click();
   assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-next]").isEnabled(),true);
   await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
-  await page.waitForSelector("#aoPray435930 .aoP435930ExamReadOnly details",{timeout:5000});
-  assert.ok(await page.locator("#aoPray435930 .aoP435930ExamReadOnly details").count()>=10);
-  assert.equal(await page.locator("#aoPray435930 .aoP435930ExamReadOnly input").count(),0,"D5 examination still contains tickable controls");
+  await page.waitForSelector("#aoPray435930 [data-ao-confession-card='quick-commandments-1']",{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 [data-ao-confession-card]").count(),1,"Confession should display one guided examination card");
+  assert.equal(await page.locator("#aoPray435930 [data-ao-confession-card] input").count(),0,"No sins are entered, scored or retained");
   const examText=await page.locator("#aoPray435930").innerText();
-  assert.match(examText,/Read through the Commandments|Parcourez les commandements|points for reflection, not boxes to tick|points de réflexion, non des cases à cocher/i,"Confession examination must remain doctrinal and read-only after selecting a preparation path");
+  assert.match(examText,/no answers or sins are recorded|aucune réponse ni aucun péché/i,"Guided Confession must be reflective and private");
   assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i);
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null}));
