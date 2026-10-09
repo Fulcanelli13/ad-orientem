@@ -20,6 +20,7 @@ jobs:
           node-version: "22"
       - run: npm install --no-audit --no-fund
       - run: node tests/pray-guided-cards.mjs
+      - run: node tests/pray-confession-paths.mjs
       - run: node tests/pray-traditional-life.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-all-modules-mobile.mjs
