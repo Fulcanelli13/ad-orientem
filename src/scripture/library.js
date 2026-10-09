@@ -3,7 +3,7 @@ import { scriptureBookCatalogue, sourceReadingLink, ROSARY_SCRIPTURE_LINKS } fro
 import { passageReference } from "./passages.js";
 import { createScripturePreferences } from "./preferences.js";
 import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
-import { scriptureReferenceWarning } from "./reference-safety.js";
+import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./reference-safety.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -52,9 +52,12 @@ export function mountScriptureLibrary(root,{
    if(nextEdition===editionId)return;
    editionLocations.set(editionId,location);
    const saved=editionLocations.get(nextEdition);
-   // Where source chapter/verse order is demonstrably incompatible, do not
-   // carry a numerical reference to another translation as if equivalent.
-   if(saved?.book===location.book)location=saved;
+   const parallel=scriptureParallelReferenceState(location,editionId,nextEdition);
+   // A source-collated one-verse Esther reference can be translated exactly,
+   // including its rearranged Greek additions. Other unverified source moves
+   // restore a previously chosen edition position rather than fabricate one.
+   if(parallel.canAutoParallel&&parallel.reference)location=parallel.reference;
+   else if(saved?.book===location.book)location=saved;
    else if(scriptureReferenceWarning(location.book,lang))
      location=scripturePassage({book:location.book,chapter:1,verseStart:1});
    editionId=nextEdition;
