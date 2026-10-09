@@ -56,7 +56,7 @@ const researchSnapshots = [
 ];
 
 const expectedResearchCounts = new Map([
-  ["DIOCESAN",62],
+  ["DIOCESAN",64],
   ["SSPX_DISTRICT_SEED",34],
   ["SSPX_FRANCE_FIRST_PARTY",89],
   ["SSPX_FRANCE_SECOND_PASS",30],
