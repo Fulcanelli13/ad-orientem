@@ -1,0 +1,246 @@
+{
+  "schema": "AO_SSPX_MEXICO_20261009_SITE_ADJUDICATION_V1",
+  "date": "2026-10-09",
+  "official_district_index_url": "https://fsspx.mx/es/capillas-2",
+  "official_world_map_index": "https://map.fsspx.org/fr/districts/mexico",
+  "source_map_official_place_id_count": 23,
+  "previous_approved_mexico_mass_rows": 14,
+  "approved_new_street_address_mass_rows": 10,
+  "after_tranche_mexico_mass_rows": 24,
+  "remaining_same_locality_indeterminate": 7,
+  "remaining_no_street_address": 6,
+  "not_for_publication_due_to_status": 13,
+  "all_new_schedule_publication_state": "CONDITIONAL_MASS",
+  "all_new_geo_coordinates_status": "UNVERIFIED_NO_COORDINATES",
+  "downstream_global_projection_if_added": {
+    "all_source_records": 1421,
+    "all_mass_evidenced_records": 1184,
+    "sspx_mass_evidenced_records": 586
+  },
+  "cases": [
+    {
+      "official_place_id": "capilla-san-rafael",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-san-rafael",
+      "label": "Capilla San RafaélChapelle, Maison de retraites spirituelles · ZapotilticDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "resolution": "EXISTING_CITY_REQUIRES_PHYSICAL_DUPLICATE_REVIEW",
+      "reason": "Existing venue in same locality is not proof of same chapel"
+    },
+    {
+      "official_place_id": "mision-aguascalientes",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-aguascalientes",
+      "label": "Misión AguascalientesMission · AguascalientesDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-01-MISION-AGUASCALIENTES",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Calle Arandas 502, esquina Zapotlanejo, Col. La Soledad, 20126 Aguascalientes, Ags., México",
+      "sunday_schedule_note": "Misa dominical periódica. Conflicto entre fuentes oficiales: lista distrital indica 4º domingo 17:00; ficha individual indica 3º domingo 17:00. Confirmar directamente.",
+      "schedule_caveat": "CONFLICTING_SUNDAY_FREQUENCY"
+    },
+    {
+      "official_place_id": "mision-cancun",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-cancun",
+      "label": "Misión - CancúnMission · CancúnDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "HELD_SUNDAY_EVIDENCE_NO_STREET_ADDRESS",
+      "reason": "First-party Sunday Mass evidence alone does not establish a visitor-ready physical address"
+    },
+    {
+      "official_place_id": "mision-don-bosco",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-don-bosco",
+      "label": "Misión Don BoscoMission · ChilapaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-02-MISION-DON-BOSCO",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Calle 8 Poniente N° 1507, Col. La Villa, 41100 Chilapa, Guerrero, México",
+      "sunday_schedule_note": "2º domingo 19:00; lunes siguiente 08:00. La lista distrital añade «cada tres meses»; confirmar periodicidad.",
+      "schedule_caveat": "QUALIFIED_THREE_MONTH_INTERVAL"
+    },
+    {
+      "official_place_id": "mision-ensenada",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-ensenada",
+      "label": "Misión EnsenadaMission · EnsenadaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-03-MISION-ENSENADA",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Calle Castilla 190, esquina Valdepeña, Fracc. Chapultepec 2a Sección, 22870 Ensenada, Baja California, México",
+      "sunday_schedule_note": "Misa dominical de domingo indicada en el directorio oficial; horario no publicado. Confirmar antes de desplazarse.",
+      "schedule_caveat": "SUNDAY_FLAG_WITHOUT_TIME"
+    },
+    {
+      "official_place_id": "mision-jalapa",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-jalapa",
+      "label": "Misión - JalapaMission · JalapaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "HELD_SUNDAY_EVIDENCE_NO_STREET_ADDRESS",
+      "reason": "First-party Sunday Mass evidence alone does not establish a visitor-ready physical address"
+    },
+    {
+      "official_place_id": "mision-merida",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-merida",
+      "label": "Misión - MeridaMission · MéridaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "HELD_SUNDAY_EVIDENCE_NO_STREET_ADDRESS",
+      "reason": "First-party Sunday Mass evidence alone does not establish a visitor-ready physical address"
+    },
+    {
+      "official_place_id": "mision-monterrey",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-monterrey",
+      "label": "Misión - MonterreyChapelle · Santa CatarinaDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "resolution": "EXISTING_CITY_REQUIRES_PHYSICAL_DUPLICATE_REVIEW",
+      "reason": "Existing venue in same locality is not proof of same chapel"
+    },
+    {
+      "official_place_id": "mision-morelia",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-morelia",
+      "label": "Misión - MoreliaMission · MoreliaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-04-MISION-MORELIA",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Valerio de la Cruz 1067, Col. Ilustres Novohispanos, 58226 Morelia, Michoacán, México",
+      "sunday_schedule_note": "4º domingo del mes; hora no indicada en la lista oficial.",
+      "schedule_caveat": "MONTHLY_WITHOUT_TIME"
+    },
+    {
+      "official_place_id": "mision-oaxaca",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-oaxaca",
+      "label": "Misión - OaxacaMission · OaxacaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "HELD_SUNDAY_EVIDENCE_NO_STREET_ADDRESS",
+      "reason": "First-party Sunday Mass evidence alone does not establish a visitor-ready physical address"
+    },
+    {
+      "official_place_id": "mision-puebla",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-puebla",
+      "label": "Misión PueblaChapelle, Mission · CholulaDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "resolution": "EXISTING_CITY_REQUIRES_PHYSICAL_DUPLICATE_REVIEW",
+      "reason": "Existing venue in same locality is not proof of same chapel"
+    },
+    {
+      "official_place_id": "mision-queretaro",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-queretaro",
+      "label": "Misión QuerétaroChapelle · CorregidoraDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-06-MISION-QUERETARO",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Calle San Juan 28, Col. Los Ángeles, 76920 Corregidora, Querétaro, México",
+      "sunday_schedule_note": "1º y 3º domingo 08:30 y 11:30; viernes anterior 18:00; sábado anterior 10:30.",
+      "schedule_caveat": "TWO_SUNDAYS_MONTHLY"
+    },
+    {
+      "official_place_id": "mision-s-ignacio",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-s-ignacio",
+      "label": "Misión - S. IgnacioMission · San Ignacio Cerro GordoDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-07-MISION-S-IGNACIO",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Aceves Pozos N° 51, San Ignacio Cerro Gordo, Jalisco, México",
+      "sunday_schedule_note": "Un domingo al mes 18:00; lunes siguiente 07:00. Fecha del domingo variable.",
+      "schedule_caveat": "VARIABLE_MONTHLY_SUNDAY"
+    },
+    {
+      "official_place_id": "mision-sagrada-familia",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-sagrada-familia",
+      "label": "Misión Sagrada FamiliaChapelle · CuernavacaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-05-MISION-SAGRADA-FAMILIA",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Sandoval s/n (frente al n.º 4), Col. Lomas de Cortés, 62583 Cuernavaca, Morelos, México",
+      "sunday_schedule_note": "3º domingo 10:00.",
+      "schedule_caveat": "MONTHLY"
+    },
+    {
+      "official_place_id": "mision-saltillo",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-saltillo",
+      "label": "Misión - SaltilloChapelle · SaltilloDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "resolution": "EXISTING_CITY_REQUIRES_PHYSICAL_DUPLICATE_REVIEW",
+      "reason": "Existing venue in same locality is not proof of same chapel"
+    },
+    {
+      "official_place_id": "mision-san-luis-rey",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-san-luis-rey",
+      "label": "Misión San Luis ReyMission, Chapelle · San Luis PotosíDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-08-MISION-SAN-LUIS-REY",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Calle Independencia N° 2918, Col. Himmo Nacional, 78280 San Luis Potosí, S.L.P., México",
+      "sunday_schedule_note": "1º y 3º domingo 10:00; viernes y sábado anteriores 19:00.",
+      "schedule_caveat": "TWO_SUNDAYS_MONTHLY"
+    },
+    {
+      "official_place_id": "mision-santa-maria-goretti",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-santa-maria-goretti",
+      "label": "Misión Santa María GorettiMission · IrapuatoDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "resolution": "EXISTING_CITY_REQUIRES_PHYSICAL_DUPLICATE_REVIEW",
+      "reason": "Existing venue in same locality is not proof of same chapel"
+    },
+    {
+      "official_place_id": "mision-tlaxiaco",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-tlaxiaco",
+      "label": "Misión - TlaxiacoChapelle · TlaxiacoDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "resolution": "EXISTING_CITY_REQUIRES_PHYSICAL_DUPLICATE_REVIEW",
+      "reason": "Existing venue in same locality is not proof of same chapel"
+    },
+    {
+      "official_place_id": "mision-toluca",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-toluca",
+      "label": "Misión - TolucaMission, Chapelle · TolucaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-09-MISION-TOLUCA",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Calle Filiberto Navas, esquina Fernando Montes de Oca, Del. San Mateo Oxtotitlán, 50100 Toluca, Estado de México, México",
+      "sunday_schedule_note": "2º domingo de cada mes; hora no indicada en la lista oficial.",
+      "schedule_caveat": "MONTHLY_WITHOUT_TIME"
+    },
+    {
+      "official_place_id": "mision-tuxtla",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-tuxtla",
+      "label": "Misión TuxtlaChapelle, Mission · Tuxtla GutiérrezDimanche",
+      "original_review_bucket": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "resolution": "EXISTING_CITY_REQUIRES_PHYSICAL_DUPLICATE_REVIEW",
+      "reason": "Existing venue in same locality is not proof of same chapel"
+    },
+    {
+      "official_place_id": "mision-veracruz",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-veracruz",
+      "label": "Misión - VeracruzMission · VeracruzDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "HELD_SUNDAY_EVIDENCE_NO_STREET_ADDRESS",
+      "reason": "First-party Sunday Mass evidence alone does not establish a visitor-ready physical address"
+    },
+    {
+      "official_place_id": "mision-zacatecas",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-zacatecas",
+      "label": "Misión - ZacatecasMission · ZacatecasDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "NEW_MASS_VENUE_STREET_ADDRESS",
+      "new_registry_source_id": "SSPX-MX-COMP-20261009-10-MISION-ZACATECAS",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "address": "Calle Galeana 20, frente a la Plaza Fray Margil de Jesús, Guadalupe, 98600 Zacatecas, México",
+      "sunday_schedule_note": "4º domingo 09:00; viernes y sábado anteriores 19:00.",
+      "schedule_caveat": "MONTHLY"
+    },
+    {
+      "official_place_id": "oratorio-san-jose",
+      "official_map_url": "https://map.fsspx.org/fr/places/oratorio-san-jose",
+      "label": "Oratorio San JoséMission · La HabanaDimanche",
+      "original_review_bucket": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "resolution": "HELD_SUNDAY_EVIDENCE_NO_STREET_ADDRESS",
+      "reason": "First-party Sunday Mass evidence alone does not establish a visitor-ready physical address"
+    }
+  ]
+}
