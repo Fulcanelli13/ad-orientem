@@ -141,6 +141,7 @@ jobs:
       - run: node tests/route-lazy-browser-e2e.mjs
       - run: node tests/formation-calendar-lazy-e2e.mjs
       - run: node tests/pray-route-lazy-e2e.mjs
+      - run: node tests/pray-all-modules-mobile.mjs
       - run: node tests/thin-html-browser-e2e.mjs
       - run: npm run test:rc-interaction-qa
       - run: npm run test:phone

@@ -33,7 +33,62 @@ try{
  const errors=[];
  page.on("pageerror",e=>errors.push(String(e?.message||e)));
  await page.goto("http://127.0.0.1:4198/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+ assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,
+   "The lightweight Prayer host must lazy-load the real prayer reader");
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+ // Real card-by-card traditional prayers: preserve each canonical prayer once.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.morning_evening",{returnContext:null}));
+ const daily="#aoPray435930.open [data-ao-pray-guide-card]";
+ await page.waitForSelector(daily);
+ assert.equal(await page.locator(daily).count(),1,"Morning guidance must show one card, not 11 stacked");
+ assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"0");
+ assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Guidance must display complete canonical prayer");
+ assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 11");
+ assert.equal(await page.locator(daily+" [data-tp381-daily-step='-1']").isDisabled(),true);
+ async function tapStep(control,expected){
+  try{await page.locator(control).tap({timeout:6500})}
+  catch(error){
+    const current=await page.locator(daily).getAttribute("data-guide-step").catch(()=>null);
+    if(current===String(expected))return;
+    await page.locator(control).scrollIntoViewIfNeeded();
+    await page.locator(control).tap({timeout:9000});
+  }
+ }
+ for(let step=1;step<=11;step++){
+   await tapStep("#aoPray435930.open [data-tp381-daily-step='"+step+"']",step);
+   assert.equal(await page.locator(daily).getAttribute("data-guide-step"),String(step));
+   assert.equal(await page.locator(daily).count(),1);
+ }
+ assert.match(await page.locator(daily).innerText(),/Prayer completed/);
+ await tapStep("#aoPray435930.open [data-tp381-daily-step='0']",0);
+ await page.locator("#aoPray435930.open [data-tp381-daypart='evening']").tap();
+ assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 13");
+ for(let step=1;step<=8;step++)await tapStep("#aoPray435930.open [data-tp381-daily-step='"+step+"']",step);
+ assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"pray.nightly_examen");
+ await page.locator("#aoPray435930.open [data-tp381-daily-examen]").tap();
+ assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"recollect");
+ assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 5");
+ for(let step=1;step<=5;step++){
+   await tapStep("#aoPray435930.open [data-tp381-examen-step='"+step+"']",step);
+   assert.equal(await page.locator(daily).getAttribute("data-guide-step"),String(step));
+ }
+ assert.match(await page.locator(daily).innerText(),/Prayer completed/);
+ await page.locator("#aoPray435930.open [data-tp381-examen-return]").tap();
+ assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9","Examen must resume Evening Prayer at contrition");
+ assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"sacrament_act_of_contrition");
+ await page.locator("#aoPray435930.open [data-tp381-daily-mode='list']").tap();
+ assert.equal(await page.locator("#aoPray435930.open .aoTP381PrayerList button").count(),13,"Traditional unabridged overview must survive guided mode");
+ await page.locator("#aoPray435930.open [data-tp381-daily-mode='guided']").tap();
+ assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9");
+ const phoneOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+ assert.ok(phoneOverflow<=1,"Prayer card UI overflows mobile viewport");
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.nightly_examen",{returnContext:null}));
+ assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"recollect");
+ for(let step=1;step<=4;step++)await tapStep("#aoPray435930.open [data-tp381-examen-step='"+step+"']",step);
+ assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"resolve");
+ assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Standalone examen must show sourced Act of Contrition");
+
  const snapshots=[];
  for(const [id,view] of routes){
   const opened=await page.evaluate(route=>globalThis.AO_PRAY_V435930.open(route,{returnContext:null}),id);

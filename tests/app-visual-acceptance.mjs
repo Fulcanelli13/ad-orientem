@@ -1137,6 +1137,11 @@ try{
     assert.equal(await page.locator("#aoPray435930 .aoTP381Hero").count(),0,route+" regained a non-donor hero card");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,route+" lost its v38.1 donor introduction");
     if(route==="pray.morning_evening"){
+       assert.equal(await page.locator("#aoPray435930 [data-ao-pray-guide-card]").count(),1,
+         "Morning/Evening must open as a single guided prayer card");
+       assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").getAttribute("aria-pressed"),"true");
+       await shot("03g-pray-morning-guided");
+       await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
       const rowGeometry=await page.evaluate(()=>{
         const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");
         const title=row?.querySelector("b")?.getBoundingClientRect();

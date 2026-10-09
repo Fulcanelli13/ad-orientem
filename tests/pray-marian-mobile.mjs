@@ -25,6 +25,8 @@ try{
  const page=await context.newPage();
  const pageErrors=[];page.on("pageerror",e=>pageErrors.push(String(e?.message??e)));
  await page.goto("http://127.0.0.1:4196/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+ assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,"Lazy Prayer owner did not load");
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{timeout:12000});
