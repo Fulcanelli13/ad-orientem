@@ -15,7 +15,7 @@ if(process.argv.includes("--verify")){
   const perIcon=existsSync(perIconPath)?JSON.parse(readFileSync(perIconPath,"utf8")):null;
   const thinPath="data/presentation/startup-thin-shell.v1.json";
   const thin=existsSync(thinPath)?JSON.parse(readFileSync(thinPath,"utf8")):null;
-  if(Buffer.byteLength(html,"utf8")!==(thin?.shellBytes??perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??saved.reducedHtmlBytes))throw new Error("Index differs from sprite manifest");
+  if(Buffer.byteLength(html,"utf8")!==(thin?.packedShellBytes??thin?.shellBytes??perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??saved.reducedHtmlBytes))throw new Error("Index differs from sprite manifest");
   for(const entry of saved.entries){
     if(!existsSync(entry.path))throw new Error("SVG sprite missing: "+entry.path);
     const external=readFileSync(entry.path,"utf8");
@@ -44,7 +44,7 @@ if(apply&&existsSync(MANIFEST)){
   const perIcon=existsSync(perIconPath)?JSON.parse(readFileSync(perIconPath,"utf8")):null;
   const thinPath="data/presentation/startup-thin-shell.v1.json";
   const thin=existsSync(thinPath)?JSON.parse(readFileSync(thinPath,"utf8")):null;
-  if(before!==(thin?.shellBytes??perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??baseline.reducedHtmlBytes))throw new Error("Existing SVG sprite manifest does not match index.html; manual reconciliation required");
+  if(before!==(thin?.packedShellBytes??thin?.shellBytes??perIcon?.lazyHtmlBytes??perIcon?.reducedHtmlBytes??baseline.reducedHtmlBytes))throw new Error("Existing SVG sprite manifest does not match index.html; manual reconciliation required");
   for(const item of baseline.entries)if(!existsSync(item.path))throw new Error("Existing SVG asset missing: "+item.path);
   console.log("SVG geometry already extracted; no changes made");
   process.exit(0);
