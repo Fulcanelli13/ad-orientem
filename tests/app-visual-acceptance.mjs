@@ -666,6 +666,9 @@ try{
   await page.locator("#aoPray435930 [data-p435930-family='penance']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-next]").isDisabled(),true,
+    "Confession must require a preparation-path choice before continuing");
+  await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").click();
   for(let i=0;i<2;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
   const confessionRail=await page.evaluate(()=>({
