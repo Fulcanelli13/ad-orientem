@@ -5,6 +5,7 @@ import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleRespon
 import { rosaryGuideSections } from "../src/pray/rosary-guide-data.js";
 import { directChildAnchor } from "../src/pray/dom-anchor.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pray/devotional-ux-contract.js";
+import { LITANY_SOURCE_WITNESSES, extractLitanyProper, paginateLitanyProper } from "../src/pray/litany-source.js";
 
 const prayers=PRAY_CANONICAL_DATA_V435930?.prayers??{};
 assert.equal(Object.keys(prayers).length,48,"locked v43.59.30 corpus must contain exactly 48 prayer records");
@@ -282,3 +283,27 @@ for(const text of ["One Eucharistic family","5–15 MIN","OPEN-ENDED","Holy Hour
   assert.ok(prayRuntimeSource.includes(text),"final Adoration donor landing lost: "+text);
 }
 assert.doesNotMatch(prayRuntimeSource,/data-p435930-go-ben><small>\$\{esc\(L\('PUBLIC RITE'/,"Benediction must not replace Holy Hour/Four Ends on the final Adoration landing");
+
+
+// Source-bounded Litany audit: the selected historical editions include a
+// following Psalm/collect sequence which may never be labelled as Litany text.
+for(const code of ["en","fr"]){
+ const w=LITANY_SOURCE_WITNESSES[code];
+ assert.match(w.url,/^https:\/\//);
+ assert.match(w.status,/UNCOLLATED/);
+ const start=code==="fr"?"Avant\nLES LITANIES DES SAINTS.\nSeigneur, ayez pitié de nous.\nSainte Marie\nSaint Pierre\nAgneau de Dieu":
+   "The Litany of the Saints\nLord, have mercy on us.\nHoly Mary\nSt. Peter\nLamb of God";
+ const ending=code==="fr"?"Notre Père, qui, etc.":"Our Father, in secret.";
+ const witness=start+"\n"+Array.from({length:44},(_,i)=>"Invocation "+i+" — pray for us").join("\n")+"\n"+ending+"\nPSALM LXIX\nUnrelated appended material";
+ const proper=extractLitanyProper(witness,code);
+ assert.ok(proper.includes("Agneau de Dieu")||proper.includes("Lamb of God"));
+ assert.doesNotMatch(proper,/PSALM LXIX|Unrelated appended material|Our Father, in secret|Notre Père, qui/i);
+ const parts=paginateLitanyProper(proper,code,16);
+ assert.ok(parts.length>1);
+ assert.equal(parts.flatMap(x=>x.lines).join("\n"),proper.split(/\n+/).map(x=>x.trim()).filter(Boolean).join("\n"));
+ assert.ok(parts.every(x=>/^Part(ie)? \d+$/.test(x.title)),"do not invent semantic labels from equal text chunks");
+ assert.throws(()=>extractLitanyProper(witness.replace(ending,""),code),/ending not found/i);
+}
+assert.match(runtime,/data-p435930-lit-retry/);
+assert.match(runtime,/litanySourceDisclosure\(\)/);
+assert.doesNotMatch(runtime,/A Manual of Prayers for the Use of the Catholic Laity\/Litany of the Saints/,"unavailable historical Wikisource title returned");
