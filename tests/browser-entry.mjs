@@ -13,6 +13,7 @@ import {
   resolveHostIconAssets,
   openReaderGlossaryContext,
   navigateReaderSurface,
+  openReaderScriptureContext,
 } from "../src/mass/browser-entry.js";
 import { auditHostIconBank, R17_FROZEN_ACTIVE_ICON_KEYS, R17_FROZEN_EXCLUDED_ICON_KEYS } from "../src/mass/reader-icons.js";
 
@@ -167,6 +168,41 @@ assert.match(readFileSync("src/mass/browser-entry.js","utf8"),/Glossary could no
 assert.match(readFileSync("src/mass/browser-entry.js","utf8"),/Impossible d’ouvrir le glossaire/,
   "Glossary first-use error is not visible to French readers");
 
+
+
+const knownScripture={open:(reference,{language})=>{
+  assert.equal(reference,"Luke 18:9-14");
+  assert.equal(language,"fr");
+  return true;
+}};
+assert.equal(await openReaderScriptureContext("Luke 18:9-14",{
+  win:{AO_SCRIPTURE_CONTEXT_V1:knownScripture},language:"fr",
+  loader:async()=>{throw new Error("SHOULD_NOT_LOAD");},
+}),true,"loaded canonical Scripture owner must be reused");
+const lazyScriptureWin={};
+assert.equal(await openReaderScriptureContext("Luke 18:9-14",{
+  win:lazyScriptureWin,language:"fr",
+  loader:async()=>({installScriptureBrowserOwner(win){
+    win.AO_SCRIPTURE_CONTEXT_V1=knownScripture;
+  }}),
+}),true,"Scripture owner should install on first use");
+await assert.rejects(()=>openReaderScriptureContext("Luke 18:9-14",{
+  win:{},loader:async()=>({installScriptureBrowserOwner:()=>false}),
+}),/MASS_SCRIPTURE_OWNER_NOT_READY/);
+await assert.rejects(()=>openReaderScriptureContext("Luke 18:9-14",{
+  win:{AO_SCRIPTURE_CONTEXT_V1:{open:()=>false}},
+}),/MASS_SCRIPTURE_CONTEXT_UNAVAILABLE/);
+await assert.rejects(()=>openReaderScriptureContext("Luke 18:9-14",{
+  win:{},loader:async()=>{throw new Error("OFFLINE_SCRIPTURE_IMPORT");},
+}),/OFFLINE_SCRIPTURE_IMPORT/);
+await assert.rejects(()=>openReaderScriptureContext("Luke 18:9-14",{
+  win:{AO_SCRIPTURE_CONTEXT_V1:{open:()=>Promise.reject(new Error("SCRIPTURE_RENDER_FAILED"))}},
+}),/SCRIPTURE_RENDER_FAILED/);
+const scriptureBridgeSource=readFileSync("src/mass/browser-entry.js","utf8");
+assert.match(scriptureBridgeSource,/data-r17-native-cue/,"Scripture context reference must follow card changes");
+assert.match(scriptureBridgeSource,/Scripture context could not open\. Mass remains available/);
+assert.match(scriptureBridgeSource,/Le contexte biblique n’a pas pu être ouvert/);
+console.log("browser-entry Scripture context lazy owner and failures: PASS");
 
 const shellSuccess={AO_APP_SHELL_V1:{navigate:async surface=>({ok:true,surface})}};
 assert.equal(await navigateReaderSurface("home",{win:shellSuccess}),true);
