@@ -36,7 +36,7 @@ export const EASTER_VIGIL_PROPHECY_READINGS=Object.freeze([
       "Complevitque Deus die septimo opus suum quod fecerat: et requievit die septimo ab universo opere quod patrarat."
     ],
     "canticle": null,
-    "collectLatin": "Deus, qui mirabiliter creasti hominem, et mirabilius redemisti: da nobis, quǽsumus, contra oblectamenta peccati, mentis ratione persistere; ut mereamur ad æterna gaudia pervenire. Per Dominum nostrum Iesum Christum."
+    "collectLatin": "Deus, qui mirabiliter creasti hominem, et mirabilius redemisti: da nobis, quǽsumus, contra oblectamenta peccati, mentis ratione persistere; ut mereamur ad æterna gaudia pervenire. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. ℟. Amen."
   },
   {
     "stateId": "EV-LESS-02-READ",
@@ -69,7 +69,7 @@ export const EASTER_VIGIL_PROPHECY_READINGS=Object.freeze([
         "℣. Dominus conterens bella: Dominus nomen est illi."
       ]
     },
-    "collectLatin": "Deus, cuius antiqua miracula etiam nostris sæculis coruscare sentimus: dum quod uni populo, a persecutione Aegyptiaca liberando, dexteræ tuæ potentia contulisti, id in salutem gentium per aquam regenerationis operaris: præsta; ut in Abrahæ filios, et in Israëliticam dignitatem, totius mundi transeat plenitudo. Per Dominum nostrum Iesum Christum."
+    "collectLatin": "Deus, cuius antiqua miracula etiam nostris sæculis coruscare sentimus: dum quod uni populo, a persecutione Aegyptiaca liberando, dexteræ tuæ potentia contulisti, id in salutem gentium per aquam regenerationis operaris: præsta; ut in Abrahæ filios, et in Israëliticam dignitatem, totius mundi transeat plenitudo. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. ℟. Amen."
   },
   {
     "stateId": "EV-LESS-03-READ",
@@ -95,7 +95,7 @@ export const EASTER_VIGIL_PROPHECY_READINGS=Object.freeze([
         "℣. Et torcular fodit in ea: vinea enim Domini Sabaoth, domus Israël est."
       ]
     },
-    "collectLatin": "Deus, qui in omnibus Ecclesiæ tuæ filiis sanctorum prophetarum voce manifestasti, in omni loco dominationis tuæ, satorem te bonorum seminum, et electorum palmitum esse cultorem: tribue populis tuis, qui et vinearum apud te nomine censentur, et segetum; ut, spinarum et tribulorum squalore resecato, digna efficiantur fruge fecundi. Per Dominum nostrum Iesum Christum."
+    "collectLatin": "Deus, qui in omnibus Ecclesiæ tuæ filiis sanctorum prophetarum voce manifestasti, in omni loco dominationis tuæ, satorem te bonorum seminum, et electorum palmitum esse cultorem: tribue populis tuis, qui et vinearum apud te nomine censentur, et segetum; ut, spinarum et tribulorum squalore resecato, digna efficiantur fruge fecundi. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. ℟. Amen."
   },
   {
     "stateId": "EV-LESS-04-READ",
@@ -124,6 +124,6 @@ export const EASTER_VIGIL_PROPHECY_READINGS=Object.freeze([
         "℣. Deus fidelis, in quo non est iniquitas: iustus et sanctus Dominus."
       ]
     },
-    "collectLatin": "Deus, celsitudo humilium et fortitudo rectorum, qui per sanctum Moysen puerum tuum, ita erudire populum tuum sacri carminis tui decantatione voluisti, ut illa legis iteratio fieret etiam nostra directio: excita in omnem iustificatarum gentium plenitudinem potentiam tuam, et da lætitiam, mitigando terrorem; ut, omnium peccatis tua remissione deletis, quod denuntiatum est in ultionem, transeat in salutem. Per Dominum nostrum Iesum Christum."
+    "collectLatin": "Deus, celsitudo humilium et fortitudo rectorum, qui per sanctum Moysen puerum tuum, ita erudire populum tuum sacri carminis tui decantatione voluisti, ut illa legis iteratio fieret etiam nostra directio: excita in omnem iustificatarum gentium plenitudinem potentiam tuam, et da lætitiam, mitigando terrorem; ut, omnium peccatis tua remissione deletis, quod denuntiatum est in ultionem, transeat in salutem. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. ℟. Amen."
   }
 ]);
