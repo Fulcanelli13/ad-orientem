@@ -304,4 +304,25 @@ const compiledEngine=fs.readFileSync(new URL("../ao-boot-4ef16d2b0e26d68c.js",im
 assert.match(compiledEngine,/C\.TEMPORA_QUAD5_5C\)\) && !matchFirst\(obs, PAT\.PATTERN_SANCTI_CLASS_1_OR_2\)/,
   "Passion Friday special case still suppresses first/second-class saints");
 
+// Reuse the one existing Calendar observance-title owner. A default selected
+// Mass exists in pinned DayResolver output and must not suppress a day alias.
+const {calendarObservanceAlias}=await import("../src/calendar/observance-title.js");
+const observed=(date,id,extras={})=>({date,status:"ready",day:{main:{id,title:"Common formulary"},...extras}});
+for(const [date,id] of [
+  ["2024-02-03","commune:C10c:4:w"],
+  ["2024-04-20","commune:C10Pasc:4:w"],
+  ["2024-06-08","commune:C10t:4:w"],
+  ["2027-01-02","commune:C10b:4:w"],
+  ["2027-11-27","commune:C10t:4:w"],
+]){
+  assert.equal(calendarObservanceAlias(observed(date,id),"en"),"Blessed Virgin Mary on Saturday",date);
+  assert.equal(calendarObservanceAlias(observed(date,id),"fr"),"Sainte Vierge Marie le samedi",date);
+}
+assert.equal(calendarObservanceAlias(observed("2024-06-09","commune:C10t:4:w")),null,"Common chosen outside Saturday is not automatically a Saturday office");
+assert.equal(calendarObservanceAlias(observed("2024-06-08","commune:C10t:4:w",{selectedMassOption:{id:"auto"}}),"en"),"Blessed Virgin Mary on Saturday","Default Mass selection cannot suppress the day name");
+assert.equal(calendarObservanceAlias(observed("2024-12-14","tempora:Adv2-6:3:v"),"en"),"Saturday after the Second Sunday of Advent");
+assert.equal(calendarObservanceAlias(observed("2024-12-14","tempora:Adv2-6:3:v"),"fr"),"Samedi après le deuxième dimanche de l’Avent");
+assert.equal(calendarObservanceAlias(observed("2024-10-27","sancti:10-DU:1:w")),null,"Do not hide Christ the King commemoration in a Calendar alias");
+assert.equal(calendarObservanceAlias({status:"failed"}),null,"Do not invent a title for unresolved date");
+
 console.log("Calendar liturgical-year model, intelligence projection and v2 presentation contract: OK");
