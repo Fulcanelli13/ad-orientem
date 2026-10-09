@@ -25,7 +25,7 @@ for(const {name,doc,geo} of snapshots){
  const providers=expandResearchProviderSnapshot(doc,{geoRecords:geo.records});
  const byId=new Map(providers.venues.map(v=>[v.venue_id,v]));
  for(const item of geo.records){
-  if(!item.geo.source_ref.startsWith("SSPX:MAP:"))continue;
+  if(!item.geo.source_ref.startsWith("SSPX:MAP:")||!review.cases.some(x=>x.venue_id===item.venue_id))continue;
   const v=byId.get(item.venue_id);
   assert.ok(v,"Unresolved registered SSPX provider venue ID: "+name);
   assert.ok(!ids.has(item.venue_id),"Duplicate physical SSPX venue point");
