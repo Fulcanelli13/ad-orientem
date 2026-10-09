@@ -14,6 +14,9 @@ let readerLoad=null;
 let readerReady=false;
 let readerError=null;
 export function ensurePrayReader({win=globalThis}={}){
+  // Unit-test/SSR host adapters have no browser document or module side-effects.
+  // The supplied donor in those environments is already the dependency.
+  if(typeof window==="undefined" || typeof document==="undefined")return Promise.resolve(true);
   if(readerReady)return Promise.resolve(true);
   if(readerLoad)return readerLoad;
   readerLoad=(async()=>{
