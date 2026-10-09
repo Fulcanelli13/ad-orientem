@@ -16,7 +16,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A26-27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -24,7 +25,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A28&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -32,7 +34,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A29&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -40,7 +43,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A30&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -48,7 +52,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A31&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -56,7 +61,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A32&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -64,7 +70,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A33&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 8,
@@ -72,7 +79,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A34&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 9,
@@ -80,7 +88,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A35&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 10,
@@ -88,7 +97,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A38&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     }
   ],
   "joy2": [
@@ -98,7 +108,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A39&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -106,7 +117,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A40&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -114,7 +126,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A40&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -122,7 +135,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A41&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -130,7 +144,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A41&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -138,7 +153,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A43&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -146,7 +162,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A45&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 8,
@@ -154,7 +171,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A46-47&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 9,
@@ -162,7 +180,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A48-49&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 10,
@@ -170,7 +189,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A56&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     }
   ],
   "joy3": [
@@ -180,7 +200,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A1-4&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -188,7 +209,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A4-5&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -196,7 +218,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A6&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -204,7 +227,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A7&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -212,7 +236,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A7&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -220,7 +245,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A7&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -228,7 +254,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A8&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 8,
@@ -236,7 +263,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A10-11&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 9,
@@ -244,7 +272,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A15-16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 10,
@@ -252,7 +281,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A19&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     }
   ],
   "joy4": [
@@ -262,7 +292,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A22&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -270,7 +301,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A22-24&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -278,7 +310,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A22-23&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -286,7 +319,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A24&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -294,7 +328,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A25&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -302,7 +337,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -310,7 +346,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A28&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 8,
@@ -318,7 +355,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A30-32&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 9,
@@ -326,7 +364,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A34-35&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 10,
@@ -334,7 +373,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A36-38&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     }
   ],
   "joy5": [
@@ -344,7 +384,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A41-42&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -352,7 +393,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A43&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -360,7 +402,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A43-44&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -368,7 +411,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A44-45&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -376,7 +420,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A46&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -384,7 +429,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A46&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -392,7 +438,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A47&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 8,
@@ -400,7 +447,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A49&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 9,
@@ -408,7 +456,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A51&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 10,
@@ -416,7 +465,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%202%3A51&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     }
   ],
   "lum1": [
@@ -426,7 +476,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A13&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 2,
@@ -434,7 +485,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A13&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 3,
@@ -442,7 +494,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A14&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 4,
@@ -450,7 +503,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A15&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 5,
@@ -458,7 +512,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 6,
@@ -466,7 +521,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 7,
@@ -474,7 +530,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 8,
@@ -482,7 +539,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A17&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 9,
@@ -490,7 +548,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%203%3A16-17&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 10,
@@ -498,7 +557,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Romans%206%3A3-4&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Romains"
     }
   ],
   "lum2": [
@@ -508,7 +568,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A1-2&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 2,
@@ -516,7 +577,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 3,
@@ -524,7 +586,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 4,
@@ -532,7 +595,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 5,
@@ -540,7 +604,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A5&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 6,
@@ -548,7 +613,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A6-7&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 7,
@@ -556,7 +622,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A7&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 8,
@@ -564,7 +631,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A8&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 9,
@@ -572,7 +640,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A9&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 10,
@@ -580,7 +649,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%202%3A11&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     }
   ],
   "lum3": [
@@ -590,7 +660,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A14&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 2,
@@ -598,7 +669,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A15&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 3,
@@ -606,7 +678,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A15&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 4,
@@ -614,7 +687,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A15&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 5,
@@ -622,7 +696,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A15&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 6,
@@ -630,7 +705,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 7,
@@ -638,7 +714,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 8,
@@ -646,7 +723,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A17&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 9,
@@ -654,7 +732,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A19-20&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     },
     {
       "bead": 10,
@@ -662,7 +741,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Mark%201%3A17-20&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
     }
   ],
   "lum4": [
@@ -672,7 +752,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 2,
@@ -680,7 +761,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 3,
@@ -688,7 +770,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A2&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 4,
@@ -696,7 +779,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A2&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 5,
@@ -704,7 +788,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 6,
@@ -712,7 +797,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A4&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 7,
@@ -720,7 +806,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A5&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 8,
@@ -728,7 +815,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A5&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 9,
@@ -736,7 +824,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A7&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 10,
@@ -744,7 +833,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2017%3A9&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     }
   ],
   "lum5": [
@@ -754,7 +844,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A14&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -762,7 +853,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A15&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -770,7 +862,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -778,7 +871,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -786,7 +880,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -794,7 +889,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A20&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -802,7 +898,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A20&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 8,
@@ -810,7 +907,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19-20&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 9,
@@ -818,7 +916,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19-20&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 10,
@@ -826,7 +925,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2022%3A19-20&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     }
   ],
   "sor1": [
@@ -836,7 +936,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A36&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 2,
@@ -844,7 +945,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A36&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 3,
@@ -852,7 +954,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A37&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 4,
@@ -860,7 +963,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A38&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 5,
@@ -868,7 +972,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A38&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 6,
@@ -876,7 +981,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A39&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 7,
@@ -884,7 +990,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A39&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 8,
@@ -892,7 +999,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A39&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 9,
@@ -900,7 +1008,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A40&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 10,
@@ -908,7 +1017,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2026%3A45-46&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     }
   ],
   "sor2": [
@@ -918,7 +1028,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 2,
@@ -926,7 +1037,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 3,
@@ -934,7 +1046,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 4,
@@ -942,7 +1055,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 5,
@@ -950,7 +1064,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A2-3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 6,
@@ -958,7 +1073,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A2-3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 7,
@@ -966,7 +1082,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Hebrews%204%3A15&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/H%C3%A9breux"
     },
     {
       "bead": 8,
@@ -974,7 +1091,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A1-3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 9,
@@ -982,7 +1100,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A1-3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 10,
@@ -990,7 +1109,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A1-3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     }
   ],
   "sor3": [
@@ -1000,7 +1120,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 2,
@@ -1008,7 +1129,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A28&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 3,
@@ -1016,7 +1138,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A29&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 4,
@@ -1024,7 +1147,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A29&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 5,
@@ -1032,7 +1156,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A29&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 6,
@@ -1040,7 +1165,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A29&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 7,
@@ -1048,7 +1174,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A29&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 8,
@@ -1056,7 +1183,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A30&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 9,
@@ -1064,7 +1192,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A30&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     },
     {
       "bead": 10,
@@ -1072,7 +1201,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Matthew%2027%3A31&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
     }
   ],
   "sor4": [
@@ -1082,7 +1212,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A26&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -1090,7 +1221,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A26&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -1098,7 +1230,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A26&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -1106,7 +1239,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -1114,7 +1248,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -1122,7 +1257,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A28&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -1130,7 +1266,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A28-31&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 8,
@@ -1138,7 +1275,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A32-33&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 9,
@@ -1146,7 +1284,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A32&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 10,
@@ -1154,7 +1293,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%2023%3A33&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     }
   ],
   "sor5": [
@@ -1164,7 +1304,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A25&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 2,
@@ -1172,7 +1313,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A25-26&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 3,
@@ -1180,7 +1322,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A26&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 4,
@@ -1188,7 +1331,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A26-27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 5,
@@ -1196,7 +1340,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 6,
@@ -1204,7 +1349,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A27&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 7,
@@ -1212,7 +1358,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A28&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 8,
@@ -1220,7 +1367,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A29&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 9,
@@ -1228,7 +1376,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A30&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 10,
@@ -1236,7 +1385,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A30&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     }
   ],
   "glo1": [
@@ -1246,7 +1396,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 2,
@@ -1254,7 +1405,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 3,
@@ -1262,7 +1414,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A2&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 4,
@@ -1270,7 +1423,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A3-4&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 5,
@@ -1278,7 +1432,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A5-7&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 6,
@@ -1286,7 +1441,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A11&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 7,
@@ -1294,7 +1450,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A14&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 8,
@@ -1302,7 +1459,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 9,
@@ -1310,7 +1468,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A16&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     },
     {
       "bead": 10,
@@ -1318,7 +1477,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2020%3A18&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
     }
   ],
   "glo2": [
@@ -1328,7 +1488,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 2,
@@ -1336,7 +1497,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 3,
@@ -1344,7 +1506,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A4&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 4,
@@ -1352,7 +1515,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A8&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 5,
@@ -1360,7 +1524,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A8&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 6,
@@ -1368,7 +1533,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A8&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 7,
@@ -1376,7 +1542,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A9&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 8,
@@ -1384,7 +1551,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A9&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 9,
@@ -1392,7 +1560,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A10-11&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 10,
@@ -1400,7 +1569,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%201%3A11&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     }
   ],
   "glo3": [
@@ -1410,7 +1580,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 2,
@@ -1418,7 +1589,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A2&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 3,
@@ -1426,7 +1598,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A3&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 4,
@@ -1434,7 +1607,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A4&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 5,
@@ -1442,7 +1616,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A4&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 6,
@@ -1450,7 +1625,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A5&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 7,
@@ -1458,7 +1634,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A6&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 8,
@@ -1466,7 +1643,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A12-13&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 9,
@@ -1474,7 +1652,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A11&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     },
     {
       "bead": 10,
@@ -1482,7 +1661,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Acts%202%3A1-13&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
     }
   ],
   "glo4": [
@@ -1492,7 +1672,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A46&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 2,
@@ -1500,7 +1681,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A47&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 3,
@@ -1508,7 +1690,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A48&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 4,
@@ -1516,7 +1699,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A48&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 5,
@@ -1524,7 +1708,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A49&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 6,
@@ -1532,7 +1717,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "SCRIPTURAL_PARAPHRASE",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Luke%201%3A50&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
     },
     {
       "bead": 7,
@@ -1540,7 +1726,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEFINED_DOCTRINE",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
     },
     {
       "bead": 8,
@@ -1548,7 +1735,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEFINED_DOCTRINE",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
     },
     {
       "bead": 9,
@@ -1556,7 +1744,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEFINED_DOCTRINE",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
     },
     {
       "bead": 10,
@@ -1564,7 +1753,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEFINED_DOCTRINE",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
     }
   ],
   "glo5": [
@@ -1574,7 +1764,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "MARIAN_TYPOLOGICAL_READING",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Revelation%2012%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
     },
     {
       "bead": 2,
@@ -1582,7 +1773,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "MARIAN_TYPOLOGICAL_READING",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Revelation%2012%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
     },
     {
       "bead": 3,
@@ -1590,7 +1782,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "MARIAN_TYPOLOGICAL_READING",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Revelation%2012%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
     },
     {
       "bead": 4,
@@ -1598,7 +1791,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "MARIAN_TYPOLOGICAL_READING",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Revelation%2012%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
     },
     {
       "bead": 5,
@@ -1606,7 +1800,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "MARIAN_TYPOLOGICAL_READING",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Revelation%2012%3A3-17&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
     },
     {
       "bead": 6,
@@ -1614,7 +1809,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "MARIAN_TYPOLOGICAL_READING",
       "primaryUrl": "https://www.biblegateway.com/passage/?search=Revelation%2012%3A1&version=DRA",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
     },
     {
       "bead": 7,
@@ -1622,7 +1818,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
     },
     {
       "bead": 8,
@@ -1630,7 +1827,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
     },
     {
       "bead": 9,
@@ -1638,7 +1836,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
     },
     {
       "bead": 10,
@@ -1646,7 +1845,8 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
       "relationship": "DEVOTIONAL_REFLECTION",
       "primaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
       "isDirectQuotation": false,
-      "textualApproval": "NOT_A_BIBLICAL_QUOTATION"
+      "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
+      "frenchPrimaryUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
     }
   ]
 });
