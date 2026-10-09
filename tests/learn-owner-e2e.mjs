@@ -354,9 +354,13 @@ try{
     for(let i=0;i<scopes.length;i++){
       const actual=audit.scopeLinks[i],expected=scopes[i];
       assert.deepEqual(actual.ids,expected.claims,audit.id+": wrong source claims at section "+i);
-      const urls=[...new Set(expected.claims.flatMap(cid=>
-        SPIRITUAL_LIFE_CLAIM_MAP[cid].source_ids.map(sid=>
-          new URL(SPIRITUAL_LIFE_SOURCE_MAP[sid].canonical_url).href)))];
+      const ids=[...new Set(expected.claims.flatMap(cid=>SPIRITUAL_LIFE_CLAIM_MAP[cid].source_ids))];
+      const urls=ids.map(sid=>{
+        const source=SPIRITUAL_LIFE_SOURCE_MAP[sid];
+        const prayerSection=sid==="SL-TANQUEREY-1930" &&
+          expected.claims.some(id=>/^SL0[34]-Q\\d+$/.test(id));
+        return new URL(prayerSection?source.continuation_url:source.canonical_url).href;
+      });
       assert.deepEqual([...actual.links].sort(),urls.sort(),
         audit.id+": hyperlinks mismatch frozen source IDs at section "+i);
       assert.ok(actual.links.every(url=>url.startsWith("https://")),
