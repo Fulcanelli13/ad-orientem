@@ -39,7 +39,7 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.match(await dialog.locator(".aoScriptureText").innerText(),/not available offline/i);
  assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"uncleared biblical text leaked to user");
- assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='knox']").isDisabled(),true);
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='knox']").evaluate(el=>el.disabled),true);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
@@ -54,7 +54,7 @@ try{
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),1);
- assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").first().isDisabled(),false);
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").first().evaluate(el=>el.disabled),false);
  await dialog.getByRole("button",{name:"Consulter la source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/fr\.wikisource\.org\/wiki\/Bible_Crampon_1923/);
  await dialog.locator(".aoScriptureRosary summary").click();
