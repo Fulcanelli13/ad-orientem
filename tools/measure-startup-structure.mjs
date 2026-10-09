@@ -38,3 +38,21 @@ const inlineSvg=[...withoutScripts.matchAll(/<svg\b([^>]*)>[\s\S]*?<\/svg\s*>/gi
  symbolCount:(m[0].match(/<symbol\b/g)||[]).length,pathCount:(m[0].match(/<path\b/g)||[]).length
 }));
 console.log("SVG_ANALYSIS="+JSON.stringify({svgCount:inlineSvg.length,svgTotalBytes:inlineSvg.reduce((a,b)=>a+b.bytes,0),largest:inlineSvg.sort((a,b)=>b.bytes-a.bytes).slice(0,25)}));
+
+const externalCandidates=["ao-v4318-refined-sprite","ao-v4330-semantic-icon-sprite","ao-v4332-full-refined-sprite"];
+const groupsReport=[];
+for(const id of externalCandidates){
+ const escaped=id.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&");
+ const rx=new RegExp("<svg\\b[^>]*\\bid=[\"']"+escaped+"[\"'][^>]*>[\\s\\S]*?<\\/svg\\s*>","i");
+ const match=source.match(rx);
+ if(!match){groupsReport.push({id,found:false});continue}
+ const markup=match[0], outside=source.replace(markup,"");
+ const symbols=[...markup.matchAll(/<symbol\b[^>]*\bid=["']([^"']+)["']/gi)].map(z=>z[1]);
+ const usage=[];
+ for(const sym of symbols){
+   const pos=outside.indexOf(sym);
+   usage.push({id:sym,refs:pos<0?0:outside.split(sym).length-1,context:pos<0?"":outside.slice(Math.max(0,pos-100),pos+sym.length+110).replace(/\s+/g," ")});
+ }
+ groupsReport.push({id,bytes:len(markup),symbols:usage,externalUse:usage.filter(x=>x.refs>0).length});
+}
+console.log("SPRITE_REFERENCES="+JSON.stringify(groupsReport));
