@@ -138,6 +138,12 @@ assert.match(browser, /aoCalV2YearIdentity/, "Liturgical Year lost selected-day 
 assert.match(browser, /aoCalV2PeriodProgress/, "Liturgical Year lost the period-progress presentation");
 assert.match(browser, /aoCalV2Coming/, "Liturgical Year lost its next major celebration and season transitions");
 assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
+assert.ok(browser.includes('data-cal-open-date="${next.date}"'),"Year dashboard next feast button must be an open-day action");
+assert.ok(browser.includes('data-cal-open-date="${nextSeason.start}"'),"Season changes must open their actual dates");
+assert.ok(browser.includes('if(openDate){event.preventDefault();calendarView="day"'),"Year milestones must change the visible page, not only the selected date");
+assert.ok(!browser.includes('data-cal-month-index-date="${x.date}" ${view==="sanctorale"'),"Sanctorale row cannot double-bind day and saint-detail actions");
+assert.ok(browser.includes('if(openMonth&&calendarView!=="picker")pickerMonthId='),"Jumping into Month must discard a stale picker month");
+assert.ok(browser.includes('aoCalYearProvenance')&&browser.includes('General%20Rubrics.html'),"Major-date projection must link its 1960 rubrics source");
 assert.doesNotMatch(browser, /v384Companion/,"redundant v38.4 Traditional Liturgical Year companion returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-panel/,"retired v38.4 year\/discipline UI returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-era/,"retired duplicate discipline-era tabs returned");
