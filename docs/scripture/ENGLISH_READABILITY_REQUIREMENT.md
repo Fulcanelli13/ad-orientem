@@ -2,7 +2,7 @@
 
 ## Decisions
 - English traditional: Douay–Rheims (Challoner), preferably a verified 1899 witness.
-- English contemporary **candidate**: Catholic Public Domain Version (Ronald L. Conte Jr., 2009), Vulgate-derived, full 73-book Catholic canon. Author expressly dedicates his translation to the public domain. His own notes caution that literal wording can be awkward; this is not certified as an easy-reading translation or approved by an ecclesiastical authority.
+- English **selected alternative** (9 Oct 2026, pending textual and theological verification): Catholic Public Domain Version (Ronald L. Conte Jr., 2009), Vulgate-derived, full 73-book Catholic canon. Author expressly dedicates his translation to the public domain. His own notes caution that literal wording can be awkward; the product owner approves its selection as an alternative to D–R, **not** its textual accuracy, theological safety, or release of full text. No ecclesiastical approval has been established.
 - French: Crampon revised 1923; use original printed source or public-domain transcription.
 - Latin: Clementine Vulgate (historical editions).
 - Remove paid-permission Bibles (NCB, Knox, RSV, etc.) from selectable app choices and stop licence procurement work. Do not present an unapproved personal translation as official Catholic Scripture.
@@ -21,7 +21,7 @@ Public domain removes the publisher-licensing dependency, **not** data-quality, 
 - Pinned open machine sources used for candidate import: scrollmapper/bible_databases commit e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c
 
 ## Delivery definition
-1. Acquire all three candidate complete textual corpora and verify hashes and book identities.
+1. Completed: Acquire the three English/French candidate corpora (D–R, CPDV, Crampon) and verify hashes and canonical identities.
 2. Compare candidate text against original edition, in particular CPDV against author's SacredBible.org master, and flag missing/unusual verse numbering.
 3. Compile 73 per-book packs and a manifest for *each* certified edition. Use the existing offline source-integrity and SHA-256 checks, and avoid loading the entire Bible on app startup.
 4. Offer traditional ↔ contemporary English at the same confirmed passage, with persistent preferences and without routing to paid copyrighted editions.

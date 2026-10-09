@@ -4,6 +4,7 @@ on:
     paths:
       - 'tools/scripture/**'
       - 'tests/scripture-source-normalization.mjs'
+      - 'tests/scripture-cpdv-editorial-review.mjs'
       - '.github/workflows/scripture-source-audit.yml'
   workflow_dispatch:
 jobs:
@@ -16,8 +17,12 @@ jobs:
           node-version: '22'
       - name: Test Catholic canon and verse gap classification
         run: node tests/scripture-source-normalization.mjs
+      - name: Test pending CPDV theological review gates
+        run: node tests/scripture-cpdv-editorial-review.mjs
       - name: Fetch and verify historical Catholic text witnesses
         run: node tools/scripture/fetch-upstream.mjs
+      - name: Generate side-by-side doctrinal and readability review dossier
+        run: node tools/scripture/audit-cpdv-vs-drc.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: scripture-historical-candidates-review-only

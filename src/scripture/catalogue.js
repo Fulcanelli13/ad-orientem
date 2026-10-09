@@ -13,7 +13,9 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
   "cpdv-2009": Object.freeze({
     id: "cpdv-2009", language: "en", title: "Catholic Public Domain Version (2009)",
     tradition: "Catholic; independent contemporary-English translation from Clementine Vulgate",
-    role: "readability-candidate", rights: "cleared", sourceReview: "author-master-text-review-pending", enabled: false
+    role: "readability-alternative", selectionStatus: "approved-by-product-owner-pending-certification",
+    rights: "cleared", sourceReview: "author-master-text-review-pending",
+    doctrinalReview: "pending", textAccuracyReview: "pending", enabled: false
   }),
   "crampon-1923": Object.freeze({
     id: "crampon-1923", language: "fr", title: "Bible Crampon (1923 text)",
