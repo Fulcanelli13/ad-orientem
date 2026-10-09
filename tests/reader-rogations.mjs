@@ -24,23 +24,27 @@ assert.equal(sourceGate.scope.conditionalMass.credo,false);
 assert.equal(sourceGate.properSections.length,9);
 assert.equal(new Set(sourceGate.properSections.map(x=>x.key)).size,9);
 assert.ok(sourceGate.properSections.every(x=>
-  x.latinVerified === true && x.englishVerified === false &&
-  x.frenchVerified === false && typeof x.exactSourceLocator === "string"),
-  "Original 1962 Latin is source-collated but unpublished EN/FR cannot be certified");
+  x.latinVerified === true && x.englishVerified === true &&
+  x.frenchVerified === true && typeof x.exactSourceLocator === "string"),
+  "Source-collated Latin and reviewed EN/FR must retain page locators");
 assert.ok(sourceGate.sourceWitnesses.some(x=>x.type==="textual_candidate_not_normative_for_class"&&/NOT itself/.test(x.warning)),
   "A general online Rogation-week Proper must not certify processional class/rubrics");
 
 
 
-assert.ok(sourceGate.properSections.every(x=>x.candidate && x.candidate.status==="LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED"),
+assert.ok(sourceGate.properSections.every(x=>x.candidate && x.candidate.status==="TRANSLATIONS_EDITORIALLY_REVIEWED_PUBLICATION_BLOCKED"),
   "Every Rogation Proper section must have an explicit uncertified candidate status");
-assert.ok(sourceGate.properSections.every(x=>x.candidate.sourceLinks.length>=2 && /ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING/.test(x.candidate.translationRights)),
+assert.ok(sourceGate.properSections.every(x=>x.candidate.sourceLinks.length>=2 && /CLEARED/.test(x.candidate.translationRights)),
   "No derivative translation may be published without independent textual and rights validation");
 assert.match(sourceGate.properSections.find(x=>x.key==="epistle").candidate.passageReference,/James 5:16/);
 assert.match(sourceGate.properSections.find(x=>x.key==="gospel").candidate.passageReference,/Luke 11:5/);
 assert.match(sourceGate.properSections.find(x=>x.key==="secret").candidate.passageReference,/English absent/);
 assert.equal(researchProper.schema,"AO_1962_ROGATION_PROPER_V1");
 assert.equal(researchProper.publicationAllowed,false);
+assert.equal(researchProper.status,"SOURCE_RESEARCH_UNPUBLISHED");
+assert.ok(!researchProper.sections.find(s=>s.key==="introit").latin.includes("alleluia, alleluia"));
+assert.equal((researchProper.sections.find(s=>s.key==="introit").latin.match(/alleluia\./gi)||[]).length,2);
+assert.match(researchProper.sections.find(s=>s.key==="gospel").french,/Si un enfant demande du pain/);
 assert.equal(researchProper.sections.length,9);
 assert.equal(researchProper.source.status,"LATIN_SOURCE_PASSAGE_VISUALLY_CHECKED_IN_1962_VATICAN_SCAN");
 assert.ok(researchProper.sections.every(s=>
