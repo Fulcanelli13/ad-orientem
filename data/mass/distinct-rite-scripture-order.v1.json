@@ -4,7 +4,7 @@
   "policy": {
     "owner": "Canonical Good Friday/Easter Vigil native scripture order, Palm preceding-rite Gospel and source-verified separate Mass handoffs",
     "verseModel": "Ordered segments with explicit start/end book/chapter/verse; no fake single-chapter reference for cross-chapter readings",
-    "presentation": "These are source-led editorial research mappings, not active distinct-rite Scripture capsules. Each actual native state/Proper text must pass an independent Latin-bound UI gate before activation.",
+    "presentation": "GF/EV native rites and the Palm preceding-rite Gospel remain editorial-only with no Scripture capsule until native-state text binding is independently proven. The Palm Mass Passion is separately available only through the ordinary Proper's Latin-matched segmented-context bridge.",
     "graphLink": "Source-owned GF/EV native lesson and Passion states; Palm procession source state; Easter Vigil post-Kyrie readings identified only by ordinary Mass Proper slot, never invented EV reading states"
   },
   "rites": [
@@ -247,8 +247,8 @@
       ],
       "displayReference": "Matthew 26:36–75; 27:1–60",
       "latinIncipit": "Tunc venit Jesus cum illis in villam",
-      "status": "CROSS_CHAPTER_MASS_PASSION_REQUIRES_MULTI_SEGMENT_READER",
-      "note": "Never bind to PALM-GSP-020: that native state contains Matthew 21:1–9, a different Gospel preceding the procession."
+      "status": "SOURCE_VERIFIED_MASS_PROPER_SEGMENTED_CONTEXT_AVAILABLE",
+      "note": "Available only through matching canonical Palm Mass Proper GOSPEL slot and Latin incipit, not through native PALM-GSP-020 (Matthew 21:1–9); no inherited per-state Passion death boundaries."
     }
   }
 }
