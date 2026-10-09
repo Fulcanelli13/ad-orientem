@@ -66,7 +66,7 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
  if(entry.oppositionKind==="REASONED_APPLICATION_NOT_NAMED_OPPONENT")
   assert.ok(!entry.sources.opposition.includes("GROOTHUIS"),entry.id+" improperly attributes a constructed argument to a scholar");
 }
-assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("CBE")));
+assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("KEENER_2021")||d.sources.opposition.includes("GROOTHUIS")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
 
 assert.deepEqual(CSE_EDITORIAL_ARCHIVE_IDS,["CSE055","CSE056","CSE058"]);
