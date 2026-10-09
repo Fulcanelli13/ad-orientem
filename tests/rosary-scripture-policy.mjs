@@ -76,6 +76,8 @@ for(const row of calvaryEvidence){
  assert.equal(new URL(row.frenchPrimaryUrl).hash,"#19");
 }
 assert.equal(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.sor3[7].en,"They spit upon the Lord in mockery.");
+assert.equal(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.sor3[7].fr,"Ils crachent sur le Seigneur.");
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.sor4[6].fr,/avertit les femmes/);
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2[6].reference,"1 Peter 2:24-25");
 assert.deepEqual(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5.slice(8).map(x=>x.relationship),
  ["DOGMATIC_TEACHING","DOGMATIC_TEACHING"],"Trent's teaching must own the Eucharistic doctrinal cues");
