@@ -11,7 +11,7 @@ const bvmSaturdayIds=new Set([
   "commune:C10Pasc:4:w","commune:C10t:4:w",
 ]);
 export function calendarObservanceHeadline(resolution,language="en"){
-  if(!resolution||resolution.status==="failed"||resolution?.day?.selectedMassOption||resolution?.selectedMassOption)return null;
+  if(!resolution||resolution.status==="failed")return null;
   const id=String(resolution?.day?.main?.id||"");
   const french=String(language).toLowerCase().startsWith("fr");
   const pair=observanceNames[id];
