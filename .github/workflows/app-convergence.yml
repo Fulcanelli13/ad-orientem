@@ -9,6 +9,7 @@ on:
       - "tests/route-lazy-browser-e2e.mjs"
       - "tests/formation-calendar-lazy-e2e.mjs"
       - "src/calendar/**"
+      - "tests/calendar-month-truthful-status.mjs"
       - "src/home/**"
       - "src/learn/**"
       - "src/pray/**"
