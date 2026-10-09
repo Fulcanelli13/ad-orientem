@@ -80,7 +80,22 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").count()>0);
+ // Every year milestone is an actual jump to a day, not a silent date change
+ // that leaves the user stranded on the same year dashboard.
+ const milestone=page.locator("#ao-calendar-modular-root .aoCalV2YearHero [data-cal-open-date]").first();
+ const milestoneDate=await milestone.getAttribute("data-cal-open-date");
+ assert.match(milestoneDate,/^\\d{4}-\\d{2}-\\d{2}$/);
+ await milestone.click();
+ await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:12000});
+ await page.waitForFunction(id=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate===id,milestoneDate,{timeout:12000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year"));
+ await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
+ // Going from the year to a month must open the selected date's month,
+ // not the stale month last viewed in the picker.
+ const expectedMonth=milestoneDate.slice(0,7);
  await page.locator("#ao-calendar-modular-root [data-cal-open-month='major']").click();
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().pickerMonthId),expectedMonth);
  await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({timeout:8000});
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"picker");
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthView),"major");
