@@ -1,0 +1,35 @@
+name: Calendar 1962 full-year oracle
+
+on:
+  pull_request:
+    paths:
+      - "tools/calendar/full-year-1962-oracle.mjs"
+      - ".github/workflows/calendar-1962-full-year-oracle.yml"
+      - "ao-boot-*.js"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-2024-2027:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install browser runner
+        run: |
+          npm install --no-save --no-package-lock @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Inspect both full civil years against independent 1962 calendar
+        run: node tools/calendar/full-year-1962-oracle.mjs
+      - name: Upload independent calendar audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-1962-full-year-comparison
+          path: artifacts/calendar-1962-full-year-audit.json
+          if-no-files-found: error
