@@ -79,7 +79,7 @@ assert.deepEqual(projection.counts,{
   tlm:1,
   shrines:72,
   apparitions:19,
-  relics:11,
+  relics:13,
   traditions:89,
   pilgrimages:100,
 });
