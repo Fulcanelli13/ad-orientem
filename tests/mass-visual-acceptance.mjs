@@ -603,9 +603,22 @@ try{
       activeParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
       targetActive:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset?.active??null,
       gestureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerGesture??null,
+      anchorWords:[...document.querySelectorAll(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}'] .ao-ritual-trigger-live`)].map(el=>el.textContent.trim()),
+      anchorFlag:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset.ritualCueActive??null,
+      // Verify that triggering a transient action does not rebuild the
+      // source paragraph or steal focus/translation state on cue updates.
+      anchoredParagraphSource:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}'] .ao-line-primary`)?.textContent?.trim()??"",
+
       postureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerPosture??null,
     }),cueId);
   }
+
+  // Multi-fragment and single-word anchors are resolved at exactly their
+  // canonical cue, not merely at the section or card level.
+  const gloriaAdoramus=await focusCanonicalCue("AO.SM.C0056");
+  assert.ok(gloriaAdoramus.anchorWords.some(word=>/Ador[aá]mus te/i.test(word)),
+    "Adoramus te gesture rail activates without highlighting the actual Latin words: "+JSON.stringify(gloriaAdoramus));
+  assert.equal(gloriaAdoramus.anchorFlag,"true");
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
@@ -618,6 +631,11 @@ try{
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
   assert.equal(gloriaBow.scholaDockActive,"false","shared Gloria text duplicated itself in the Schola dock");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
+  assert.equal(gloriaBow.anchorFlag,"true","Gloria bow rail/Latin anchor state diverged");
+  assert.ok(gloriaBow.anchorWords.some(word=>/Iesu Christe|Jesu Christe/i.test(word)),
+    "Gloria Holy Name bow cue lacks its word-level Latin highlight: "+JSON.stringify(gloriaBow));
+  assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te/i.test(word)),
+    "Gloria previous-word ritual highlight leaked into the next cue");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
@@ -626,6 +644,10 @@ try{
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
+  assert.equal(incarnatus.anchorFlag,"true","Incarnatus genuflect rail did not activate its Latin words");
+  assert.ok(incarnatus.anchorWords.some(word=>/Et incarn[aá]tus est/i.test(word)) &&
+    incarnatus.anchorWords.some(word=>/et homo factus est/i.test(word)),
+    "Credo Incarnatus complete phrase is not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
 
   const agnus=await focusCanonicalCue("AO.SM.C0222");
@@ -694,7 +716,7 @@ try{
 
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,hierarchy,consecration,wordsState,elevationState,
-    salience:{gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
+    salience:{gloriaAdoramus,gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
     wide,phoneAudit,
     errors
   },null,2));
