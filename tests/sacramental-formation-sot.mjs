@@ -56,7 +56,7 @@ assert.match(prayRuntime,/confessionSingleCard\(/,"Guided Confession card owner 
 assert.match(prayRuntime,/confessionRiteCards\(CONF\.path\)/,"Pre-confessional instruction must precede the priest");
 assert.doesNotMatch(prayRuntime,/\[L\('Doctrine','Doctrine'\)/,"Confession doctrine must remain in the optional Guide, not a mandatory stage");
 assert.match(prayRuntime,/devotionalGuide\('confession'\)/,"Confession lost its accessible doctrine/history Guide");
-assert.match(prayRuntime,/put the phone away/i,"Confession lost the sacramental privacy boundary");
+assert.match(prayRuntime,/put (?:the|your) phone away/i,"Confession lost the sacramental privacy boundary");
 
 assert.match(learnRuntime,/route:"pray\.confession"/,"Sacramental Learn handoffs lost Confession reuse");
 assert.match(learnRuntime,/route:"mass\.prepare"/,"First Communion lost Before Mass ownership handoff");
