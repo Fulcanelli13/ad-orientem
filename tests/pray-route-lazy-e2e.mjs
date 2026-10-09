@@ -79,7 +79,7 @@ try{
   await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").tap();
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray" &&
-    globalThis.AO_TRADITIONAL_PRAY_V381?.status?.().route==="pray.dying_companion" &&
+    globalThis.AO_TRADITIONAL_PRAY_V381?.state?.().route==="pray.dying_companion" &&
     globalThis.AO_PRAY_APP_V1?.status?.().open===true,
     null,{timeout:20000});
   assert.equal(await page.locator("#ao-learn-traditional-root").count(),0,
