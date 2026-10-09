@@ -2702,6 +2702,106 @@
         "SHR-IT-santa-maria-vallicella-rome"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-torino-sindone",
+      "place_id": "place:IT:duomo-torino-sindone",
+      "name": "Cattedrale di San Giovanni Battista — Holy Shroud, Turin",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Shroud of Turin — traditionally attributed burial cloth",
+      "origin_summary": "The Archdiocese of Turin documents custody of the cloth and its exceptional ostensions. Its historical attribution to the burial of Jesus is a traditional claim, not an authenticated fact.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-IT-duomo-torino-sindone"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "name": "Aachener Dom — Four Sacred Textiles",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Four sacred textiles of Aachen Cathedral",
+      "origin_summary": "The cathedral identifies four cloth traditions: Mary's dress, Jesus' swaddling cloths, Jesus' loincloth, and the cloth associated with John the Baptist's head. Custody and historical cult do not authenticate each attribution.",
+      "associated_saints": [
+        "Saint John the Baptist"
+      ],
+      "source_ids": [
+        "SHR-DE-aachener-dom-four-textiles"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:trierer-dom-heiliger-rock",
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "name": "Trierer Dom — Holy Robe",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Holy Robe of Trier — traditionally attributed tunic",
+      "origin_summary": "The cathedral documents its centuries-old tunic tradition while expressly acknowledging that its authenticity cannot be conclusively established by historical or scientific means.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-DE-trierer-dom-heiliger-rock"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-cahors",
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "name": "Cathédrale Saint-Étienne — Sainte Coiffe de Cahors",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Sainte Coiffe of Cahors — reputed burial head-cloth",
+      "origin_summary": "The parish documents a medieval tradition identifying the cloth with a covering placed over Christ's head in burial. Cult and custody are documented; material identity is not independently authenticated.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-FR-cathedrale-saint-etienne-cahors"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:ES:catedral-san-salvador-oviedo",
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "name": "Catedral de San Salvador — Cámara Santa, Oviedo",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Sudarium of Oviedo — traditionally attributed face-cloth",
+      "origin_summary": "The cathedral and archdiocese document the historic custody of a cloth traditionally associated with Jesus' burial. Its alleged connection to the Shroud of Turin is not established as object identity.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-ES-catedral-san-salvador-oviedo"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:abbatiale-sainte-trinite-fecamp",
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "name": "Abbatiale de la Sainte-Trinité — Précieux Sang, Fécamp",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Precious Blood tradition of Fécamp",
+      "origin_summary": "The local heritage authority describes two differing medieval explanations for Fécamp's Precious Blood cult, including a Eucharistic miracle account and a Holy Land transmission legend. Neither narrative authenticates blood from Christ.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-FR-abbatiale-sainte-trinite-fecamp"
+      ],
+      "confidence": "MEDIUM"
+    },
+    {
+      "shrine_id": "shrine:IT:santuario-volto-santo-manoppello",
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "name": "Basilica del Volto Santo di Manoppello",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Holy Face of Manoppello — venerated image",
+      "origin_summary": "The Capuchin custodians document the image at Manoppello and a historical tradition recorded in the seventeenth century. Identity with the Roman Veronica or a miraculous origin remains disputed and unproved.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-IT-santuario-volto-santo-manoppello"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "pilgrimages": [
@@ -5519,6 +5619,97 @@
       "scope_note": "Check visiting and veneration arrangements directly with the linked institution. A site map marker is not proof of canonical authentication or continuous exhibition.",
       "source_ids": [
         "SHR-IT-santa-maria-vallicella-rome"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:duomo-torino-sindone:destination",
+      "name": "Pilgrimage to Cattedrale di San Giovanni Battista — Holy Shroud, Turin",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:duomo-torino-sindone",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The Shroud is kept in a protected case in Turin Cathedral and is not normally visible. Pilgrims can pray at its chapel; public exposition requires a separately announced event. Do not promise an ostension date. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
+      "source_ids": [
+        "SHR-IT-duomo-torino-sindone"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:aachener-dom-four-textiles:destination",
+      "name": "Pilgrimage to Aachener Dom — Four Sacred Textiles",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:aachener-dom-four-textiles",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The four cloths are kept together in the Marian shrine and shown during special major pilgrimages, not on ordinary cathedral visits. The cathedral announces the next pilgrimage for 2028; check its official programme before travel. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
+      "source_ids": [
+        "SHR-DE-aachener-dom-four-textiles"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:trierer-dom-heiliger-rock:destination",
+      "name": "Pilgrimage to Trierer Dom — Holy Robe",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:trierer-dom-heiliger-rock",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The robe remains in a climate-controlled reliquary and is not ordinarily visible. The Holy Robe chapel itself is accessible only during designated devotional days, even then without exposing the garment. Verify any new public ostension. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
+      "source_ids": [
+        "SHR-DE-trierer-dom-heiliger-rock"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:cathedrale-saint-etienne-cahors:destination",
+      "name": "Pilgrimage to Cathédrale Saint-Étienne — Sainte Coiffe de Cahors",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:cathedrale-saint-etienne-cahors",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The reliquary can ordinarily be viewed from outside its chapel behind the cathedral choir. Entry to the chapel and passage beneath the relic are reserved for separately announced solemn ostensions, particularly around Easter and Pentecost. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
+      "source_ids": [
+        "SHR-FR-cathedrale-saint-etienne-cahors"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:ES:catedral-san-salvador-oviedo:destination",
+      "name": "Pilgrimage to Catedral de San Salvador — Cámara Santa, Oviedo",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:ES:catedral-san-salvador-oviedo",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The original is kept in the Cámara Santa and is generally not on permanent exhibition; a replica is presented at other times. The cathedral reports special public presentation during Holy Week/Easter and the September Holy Cross jubilee; confirm the current year's arrangements. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
+      "source_ids": [
+        "SHR-ES-catedral-san-salvador-oviedo"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:abbatiale-sainte-trinite-fecamp:destination",
+      "name": "Pilgrimage to Abbatiale de la Sainte-Trinité — Précieux Sang, Fécamp",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:abbatiale-sainte-trinite-fecamp",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The abbey church is open to visitors subject to worship and local notices. The source documents the Precious Blood pilgrimage tradition, but does not establish that the alleged substance is currently exposed or available for individual veneration. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
+      "source_ids": [
+        "SHR-FR-abbatiale-sainte-trinite-fecamp"
+      ],
+      "confidence": "MEDIUM"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:santuario-volto-santo-manoppello:destination",
+      "name": "Pilgrimage to Basilica del Volto Santo di Manoppello",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:santuario-volto-santo-manoppello",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The Capuchin sanctuary welcomes pilgrims and publishes cathedral-style visitor information. The existence of the venerated image is documented; direct inspection arrangements should be checked. Do not equate the image with the original Roman Veronica or with an authenticated imprint of Christ. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
+      "source_ids": [
+        "SHR-IT-santuario-volto-santo-manoppello"
       ],
       "confidence": "MEDIUM_HIGH"
     }
