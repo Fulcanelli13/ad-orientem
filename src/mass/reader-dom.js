@@ -483,6 +483,35 @@ button.ao-schola-control{cursor:pointer}
   .ao-guide-section p{font-size:13.5px}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{width:min(48vw,190px)}
 }
+
+/* Mobile readability/accessibility layer. Retain the frozen v1.80 layout
+   geometry above; improve controls without adding persistent interface chrome. */
+@media(max-width:760px){
+  .ao-mass-prefs-close{min-width:44px;min-height:44px;display:grid;place-items:center}
+  .ao-mass-prefs-group>small{font-size:11px;letter-spacing:.08em}
+  .ao-mode-ribbon button{font-size:11px;letter-spacing:.04em}
+  .ao-mass-prefs-more{min-height:44px;padding:9px 11px;font-size:11px;line-height:1.3;letter-spacing:.04em}
+  .ao-section-menu button{min-height:44px;font-size:13px;line-height:1.35}
+  .ao-state-kicker{font-size:9px;letter-spacing:.07em}
+  .ao-state-label{font-size:11px;letter-spacing:0}
+  .ao-state-guide{flex-direction:column;gap:1px;padding:3px 4px}
+  .ao-guide-icon{height:28px;min-height:28px}
+  .ao-guide-copy{align-items:center}
+  .ao-guide-copy small{font-size:10px;letter-spacing:.04em}
+  .ao-guide-short{display:none}
+  .ao-schola-title{min-height:32px}
+  .ao-schola-kicker{font-size:10px}
+  .ao-schola-page{font-size:10px}
+  .ao-schola-controls{grid-template-columns:44px 54px 44px minmax(72px,1fr);gap:5px}
+  .ao-schola-control{min-height:44px;padding:7px 6px;font-size:11px;line-height:1.2;letter-spacing:.03em}
+  .ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{height:44px;font-size:19px}
+  .ao-schola-speed{height:44px}
+  .ao-schola-control[data-schola-pause]{height:44px}
+  .ao-schola-toggle{min-height:40px;min-width:48px;padding:6px 9px;font-size:10px}
+  .ao-schola-resize{top:-6px;height:26px}
+  .ao-schola-dock[data-collapsed="true"]{min-height:44px;height:44px!important;padding-top:7px;padding-bottom:5px}
+  .ao-reader-nav button{opacity:.42}
+}
 @media(prefers-reduced-motion:reduce){
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
@@ -869,7 +898,8 @@ export function createReaderDomAdapter({
   let rootKeydownListener=null;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let scholaCollapsed=false;
-  let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 132 : 150);
+  let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 166 : 150);
+  let scholaExpandedHeight=scholaHeight;
   let scholaTranslationVisible=false;
   let scholaIdentity=null;
   let heldBell=null;
@@ -1221,7 +1251,7 @@ export function createReaderDomAdapter({
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
-    const reserve=(scholaActive||scholaRelevant) ? (scholaCollapsed ? 32 : scholaHeight) : 0;
+    const reserve=(scholaActive||scholaRelevant) ? (scholaCollapsed ? 44 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
       shell.dataset.scholaRelevant=String(scholaRelevant);
@@ -1349,6 +1379,7 @@ export function createReaderDomAdapter({
       const scholaToggle=event.target?.closest?.("[data-schola-toggle]");
       if(scholaToggle){
         scholaCollapsed=!scholaCollapsed;
+        if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
         return;
       }
@@ -1507,9 +1538,15 @@ export function createReaderDomAdapter({
       });
       resize.addEventListener("pointermove",event=>{
         if(pointerId==null||event.pointerId!==pointerId)return;
-        const next=Math.max(32,Math.min(180,startHeight+(startY-event.clientY)));
-        scholaCollapsed=next<44;
-        scholaHeight=scholaCollapsed?32:next;
+        const next=Math.max(44,Math.min(180,startHeight+(startY-event.clientY)));
+        const mobile=Boolean(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches);
+        const expandedMinimum=mobile?158:128;
+        scholaCollapsed=next<expandedMinimum-16;
+        if(scholaCollapsed)scholaHeight=44;
+        else{
+          scholaHeight=Math.max(expandedMinimum,next);
+          scholaExpandedHeight=scholaHeight;
+        }
         syncScholaChrome();
       });
       const finish=event=>{
