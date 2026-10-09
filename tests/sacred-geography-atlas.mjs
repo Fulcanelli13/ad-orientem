@@ -77,7 +77,7 @@ assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditi
 for(const lens of ["apparitions","relics"]){
   const items=projection.byLens[lens],records=sacred[lens];
   assert.equal(items.length,records.length);
-  assert.equal(exploreMapFeatures(items).length,records.length);
+  assert.equal(exploreMapFeatures(items).length,lens==="relics"?new Set(items.map(x=>x.place_id)).size:records.length,"Relic map has one physical Place marker while retaining all source records");
   assert.ok(items.every(x=>x.map_publishable===true&&x.source_links.length===1));
   assert.ok(items.every(x=>!x.actions.some(a=>a.novena_id)),"unsourced novena associations must not be inferred");
 }
