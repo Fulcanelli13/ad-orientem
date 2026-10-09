@@ -19,7 +19,7 @@
     "test:browser-runtime": "node tests/browser-runtime.mjs",
     "test:browser-entry": "node tests/browser-entry.mjs",
     "test:proper-reader-slots": "node tests/proper-reader-slots.mjs",
-    "test:reader-model": "node tests/reader-model.mjs",
+    "test:reader-model": "node tests/reader-model.mjs && node tests/reader-print-booklet.mjs",
     "test:reader-gate": "node tests/reader-gate.mjs",
     "test:reader-data": "node tests/reader-data.mjs",
     "test:reader-native-preview": "node tests/reader-native-preview.mjs",

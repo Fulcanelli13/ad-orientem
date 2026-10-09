@@ -471,6 +471,64 @@ try{
   await exerciseRecipientPrelude("PALM","PALM-R01","PALM-R02","RECEIVE_PALM","PALM-R07");
   await exerciseRecipientPrelude("ASH","ASH-R01","ASH-R03","RECEIVE_ASHES","ASH-R05");
 
+
+  // The standard 1962 Mass print must be user-operable and sourced from all
+  // 96 canonical Missal blocks. A votive/preceding-rite graph is rejected.
+  for(const lang of ["en","fr"]){
+    const printCtx=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true});
+    const printPage=await printCtx.newPage();
+    await printPage.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html?print=1&lang="+lang,
+      {waitUntil:"networkidle"});
+    await printPage.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
+    // Secondary printing lives inside the existing preferences umbrella:
+    // it must not obstruct the section jump or 48-step reading ribbon.
+    assert.equal(await printPage.locator('[data-ao-native-mass-print]').isVisible(),false,
+      "Print action leaked from closed Mass preferences");
+    await printPage.locator("[data-reader-preferences]").click();
+    await printPage.locator('[data-role="mass-preferences"][data-open="true"]').waitFor({state:"visible",timeout:10000});
+    const button=printPage.locator('[data-ao-native-mass-print="source-text"]');
+    if(await button.count()!==1 || !await button.isVisible()){
+      const debug=await printPage.evaluate(()=>({
+        root:document.querySelector("#ao-r17-native-reader-preview")?.dataset??null,
+        previewRoot:window.__AO_PHONE_PREVIEW?.root?.id??null,
+        printCount:document.querySelectorAll("[data-ao-native-mass-print]").length,
+        prefs:document.querySelector('[data-role="mass-preferences"]')?.outerHTML?.slice(0,1600)||null,
+      }));
+      throw new Error("Mass print control missing from open preferences: "+JSON.stringify({lang,debug}));
+    }
+    const rect=await button.boundingBox();
+    assert.ok(rect&&rect.height>=44,"Native print requires a 44px touch target");
+    const printErrors=[];
+    printPage.on("console",message=>{if(message.type()==="error")printErrors.push(message.text())});
+    const popupPromise=printPage.waitForEvent("popup",{timeout:6000}).catch(()=>null);
+    await button.click();
+    const printed=await popupPromise;
+    if(!printed){
+      const details=await printPage.evaluate(()=>({
+        status:document.querySelector("#ao-r17-native-reader-preview")?.dataset?.aoNativePrintStatus??null,
+        button:document.querySelector("[data-ao-native-mass-print]")?.outerHTML?.slice(0,750)??null,
+        url:location.href,
+      }));
+      throw new Error("Native Mass print did not open a popup: "+JSON.stringify({lang,details,printErrors}));
+    }
+    await printed.locator('main [data-section]').first().waitFor({state:"visible",timeout:12000});
+    assert.equal(await printed.locator("main [data-section]").count(),30,
+      "Print must use the 30-section complete Missal corpus, not LIVE presentation 39/48");
+    const body=await printed.locator("body").innerText();
+    assert.match(body,/Per ómnia sǽcula sæculórum/,"Canon conclusion was not printed");
+    assert.match(body,/R17 96/,"One or more source blocks were omitted");
+    assert.match(body,/This is not a certified complete|n’est pas un missel liturgique certifié/,
+      "Print failed to disclose its limited ceremonial coverage");
+    const right=lang==="fr"?"fr":"en";
+    assert.ok(await printed.locator('.two p[lang="'+right+'"]').count()>30,
+      "Proper and Ordinary vernacular columns absent: "+right);
+    assert.equal(await printPage.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48,
+      "Printing mutated the native LIVE presentation model");
+    await printed.close();
+    await printCtx.close();
+  }
+  console.log("PASS Native source-first Mass text print on phone: 30 sections, 96 blocks, Canon B061, EN/FR, LIVE48 preserved");
+
   console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, source-first Mass, plus native Asperges/Palm/Ash prelude handoffs.");
 }finally{
   await browser?.close();
