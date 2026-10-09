@@ -327,7 +327,7 @@ try{
     yearSegments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
     periodCards:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
     yearMarker:document.querySelector("#ao-calendar-modular-root .aoCalYearMarker")?.getBoundingClientRect?.().left??0,
-    comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-date]").length,
+    comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-year-open-day]").length,
     rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
     headingTop:document.querySelector("#ao-calendar-modular-root .aoCalV2YearHeading")?.getBoundingClientRect?.().top??-1,
     tabsBottom:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs")?.getBoundingClientRect?.().bottom??Infinity,
