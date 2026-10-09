@@ -557,15 +557,18 @@ try{
     const cue=page.locator(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${cueId}']`);
     assert.equal(await cue.count(),1,cueId+" is not exposed exactly once in the current source-first section");
     for(let attempt=0;attempt<5;attempt++){
-      await cue.evaluate(el=>{
+      await cue.evaluate((el,attempt)=>{
         const card=el.closest(".ao-prayer-card");
         const cr=card.getBoundingClientRect(),er=el.getBoundingClientRect();
         const top=er.top-cr.top+card.scrollTop;
         const bottom=er.bottom-cr.top+card.scrollTop;
         const max=Math.max(0,card.scrollHeight-card.clientHeight);
-        card.scrollTop=Math.min(max,Math.max(0,(top+bottom)/2-card.clientHeight*.39));
+        const target=Math.min(max,Math.max(0,(top+bottom)/2-card.clientHeight*.39));
+        // An early cue may have no possible fixed-39% position. Scroll a
+        // little further on retries to exercise its adaptive opening zone.
+        card.scrollTop=Math.min(max,Math.max(target,attempt*28));
         card.dispatchEvent(new Event("scroll"));
-      });
+      },attempt);
       await page.waitForTimeout(100);
       const active=await page.evaluate(()=>document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null);
       if(active===cueId)break;
