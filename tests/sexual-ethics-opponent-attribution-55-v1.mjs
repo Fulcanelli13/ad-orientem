@@ -16,7 +16,8 @@ assert.deepEqual(audit.cases.map(x=>x.id),[...CSE_DEBATE_IDS].sort());
 assert.deepEqual(audit.summary.opposition_class_counts,{
  AUTHOR_FULL_FIRST_PERSON:5,
  NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED:13,
- AUTHOR_EXCERPTS_MEDIATED:2,
+ AUTHOR_EXCERPTS_MEDIATED:0,
+ DIGITIZED_1966_AUTHOR_PASSAGES_BOUNDED_NOT_COLLATED:2,
  REASONED_OR_ILLUSTRATIVE_NOT_NAMED_AUTHOR:27,
  AUTHOR_EXCERPTS_CDF:6,
  MISCONCEPTION_NOT_AN_AUTHOR:2
@@ -49,7 +50,7 @@ for(const row of audit.cases){
  }
 }
 assert.equal(count,440);
-for(const id of ["CSE008","CSE010"])assert.equal(audit.cases.find(x=>x.id===id).attribution_class,"AUTHOR_EXCERPTS_MEDIATED");
+for(const id of ["CSE008","CSE010"])assert.equal(audit.cases.find(x=>x.id===id).attribution_class,"DIGITIZED_1966_AUTHOR_PASSAGES_BOUNDED_NOT_COLLATED");
 for(const id of ["CSE014","CSE016","CSE018","CSE061"])assert.equal(audit.cases.find(x=>x.id===id).attribution_class,"AUTHOR_FULL_FIRST_PERSON");
 for(const id of ["CSE043","CSE049","CSE050","CSE071","CSE083","CSE089"])assert.equal(audit.cases.find(x=>x.id===id).attribution_class,"AUTHOR_EXCERPTS_CDF");
 for(const id of ["CSE112","CSE117"])assert.equal(audit.cases.find(x=>x.id===id).attribution_class,"MISCONCEPTION_NOT_AN_AUTHOR");
