@@ -157,6 +157,20 @@ try{
  for(let step=1;step<=4;step++)await tapStep("#aoPray435930.open [data-tp381-examen-step='"+step+"']",step);
  assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"resolve");
  assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Standalone examen must show sourced Act of Contrition");
+ // Traditional Prayer citations must never create false, unsafe or
+ // unattributed links; pending witnesses show an honest provenance notice.
+ const citeAudit=await page.evaluate(()=>[...document.querySelectorAll("#aoPray435930.open .aoTP381Source")].map(node=>({
+   links:[...node.querySelectorAll("a[href]")].map(a=>({href:a.href,rel:a.rel})),
+   hold:node.querySelectorAll(".aoTP381SourceHold").length,
+ })));
+ assert.ok(citeAudit.length>=1,"Traditional Prayer card lost its source/provenance drawer");
+ for(const entry of citeAudit){
+   assert.equal(entry.links.length+entry.hold,1,"Source drawer must show one verified link or one explicit hold");
+   for(const link of entry.links){
+     assert.match(link.href,/^https:\/\//,"Traditional Prayer source has an invalid URL");
+     assert.match(link.rel,/noreferrer/,"Traditional Prayer external source lacks noreferrer");
+   }
+ }
 
  const snapshots=[];
  for(const [id,view] of routes){
