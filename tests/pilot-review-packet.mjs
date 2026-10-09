@@ -1,0 +1,55 @@
+import assert from "node:assert/strict";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { ROSARY_GUIDED_BEAD_MEDITATIONS_V1 } from "../src/pray/rosary-guided-bead-meditations.v1.js";
+import { ROSARY_GUIDED_BEAD_EVIDENCE_V1 } from "../src/pray/rosary-guided-bead-evidence.v1.js";
+const dir=mkdtempSync(join(tmpdir(),"ao-pilot-review-"));
+try{
+ const result=spawnSync(process.execPath,["tools/build-pilot-review-packet.mjs",dir],{encoding:"utf8"});
+ assert.equal(result.status,0,result.stdout+"\n"+result.stderr);
+ const packet=JSON.parse(readFileSync(join(dir,"rosary-review-source.json"),"utf8"));
+ const html=readFileSync(join(dir,"rosary-review-offline.html"),"utf8");
+ const csv=readFileSync(join(dir,"rosary-review-200.csv"),"utf8");
+ assert.equal(packet.schema,"ao-rosary-human-review-packet-v1");
+ assert.equal(packet.approvalStatus,"PENDING_INDEPENDENT_REVIEW");
+ assert.equal(packet.historicalQuotations,"WITHHELD_NOT_REPUBLISHED");
+ assert.deepEqual(packet.summaries,{mysteries:20,beads:200,bilingualRows:200,humanApprovalsRecorded:0});
+ assert.equal(packet.rows.length,200);
+ assert.equal(new Set(packet.rows.map(r=>r.id)).size,200);
+ const sha=v=>createHash("sha256").update(JSON.stringify(v)).digest("hex");
+ for(const row of packet.rows){
+  const medit=ROSARY_GUIDED_BEAD_MEDITATIONS_V1[row.mysteryId][row.bead-1];
+  const evidence=ROSARY_GUIDED_BEAD_EVIDENCE_V1[row.mysteryId][row.bead-1];
+  assert.equal(row.id,row.mysteryId+".b"+row.bead);
+  assert.equal(row.en,medit.en);
+  assert.equal(row.fr,medit.fr);
+  assert.equal(row.sourceReference,evidence.reference);
+  assert.equal(row.sourceRole,evidence.relationship);
+  assert.equal(row.englishSourceUrl,evidence.primaryUrl);
+  assert.equal(row.frenchSourceUrl,evidence.frenchPrimaryUrl);
+  assert.equal(row.directQuotation,false);
+  assert.match(row.englishSourceUrl,/^https:\/\//);
+  assert.match(row.frenchSourceUrl,/^https:\/\//);
+  const {fingerprint,...payload}=row;
+  assert.equal(row.fingerprint,sha(payload),"fingerprint stale: "+row.id);
+ }
+ assert.equal(packet.corpusFingerprint,sha(packet.rows.map(r=>r.fingerprint)));
+ const scripture=packet.rows.filter(r=>r.frenchSourceUrl.startsWith("https://fr.wikisource.org/wiki/Bible_Crampon_1923/"));
+ assert.equal(scripture.length,190);
+ assert.equal(packet.rows.length-scripture.length,10);
+ assert.equal((html.match(/data-review-id=/g)||[]).length,200);
+ assert.match(html,/Export signed review decisions/);
+ assert.match(html,/SUBMITTED_FOR_EDITORIAL_REVIEW_NOT_RELEASE_AUTHORIZATION/);
+ assert.match(html,/PENDING|Independent editorial review packet/);
+ assert.match(html,/English original/);
+ assert.match(html,/French original/);
+ assert.match(html,/Latin original/);
+ assert.ok(html.includes(packet.corpusFingerprint));
+ assert.equal(csv.split("\r\n").filter(line=>line.startsWith('"')).length,201);
+ assert.ok(csv.includes('"UNREVIEWED"'));
+ assert.ok(!csv.includes('"APPROVED_FOR_PUBLIC_RELEASE"'));
+ console.log("PASS pilot packet: exact 200 bilingual rows, 190 Catholic biblical/10 doctrinal links, content fingerprints, no implied approval");
+} finally {rmSync(dir,{recursive:true,force:true});}
