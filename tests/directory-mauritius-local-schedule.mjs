@@ -15,5 +15,6 @@ const report=auditTravellerMarkets({today:"2026-10-09"});
 const mu=report.priority_markets.find(x=>x.country_code==="MU");
 assert.equal(mu.source_records,4);
 assert.equal(mu.mass_asserted_source_records,4);
+assert.equal(mu.scheduled_records_with_undated_source,4,"Reviewing an undated local webpage is not proof that its timetable is current");
 assert.equal(mu.official_inventory_completeness,null);
 console.log("Mauritius local source: PASS — four Mass venues, unverified church removed and monthly dates flagged");
