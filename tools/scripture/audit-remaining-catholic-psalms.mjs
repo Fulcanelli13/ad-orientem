@@ -4,6 +4,7 @@ import {resolve,join} from "node:path";
 import {inspectPsalmChapter,overlapRatio} from "./audit-full-catholic-psalter.mjs";
 import {PSALTER_IDENTITY_VERSE_COUNTS} from "../../src/scripture/psalter-identity-crosswalk.js";
 import {PSALTER_EXCEPTION_STATUS} from "../../src/scripture/psalter-exception-crosswalk.js";
+import {PSALTER_REMAINDER_VERIFIED} from "../../src/scripture/psalter-remainder-crosswalk.js";
 export const OUTSTANDING_PSALMS=Object.freeze([16,64,73,75,76,77,88,101,108,111,115,120,137]);
 const MIN_OVERLAP=.46;
 const MIN_CONTEXT_OVERLAP=.35;
@@ -74,7 +75,7 @@ export function auditRemainingPsalms(drc,cpdv){
   totalCandidateVerses:reports.reduce((s,x)=>s+x.eligibleCount,0),
   totalUnresolvedVerses:reports.reduce((s,x)=>s+x.blockedCount,0),
   proposedReferenceWhitelist:map,individualFindings:reports,
-  doctinallyCertified:false,textApprovedForPublication:false,
+  doctrinallyCertified:false,textApprovedForPublication:false,
   status:"REVIEW-REQUIRED-BEFORE-INCORPORATING-ANY-VERSE"
  };
 }
@@ -85,6 +86,10 @@ if(process.argv[2]){
   readFile(join(dir,"cpdv-author-master-books/Psalms.json"),"utf8").then(JSON.parse)
  ]);
  const audit=auditRemainingPsalms(dr,cp);
+ const measured=audit.proposedReferenceWhitelist.map(x=>[x.chapter,x.verifiedVerses]);
+ const pinned=Object.entries(PSALTER_REMAINDER_VERIFIED).map(([ch,verses])=>[Number(ch),verses]).sort((a,b)=>a[0]-b[0]);
+ if(JSON.stringify(measured)!==JSON.stringify(pinned))
+  throw Error("Remaining Psalm source alignment changed; whitelist requires fresh editorial review");
  await writeFile(join(dir,"Psalms-13-unresolved-verse-by-verse-review.json"),JSON.stringify(audit,null,2)+"\n");
  console.log("REMAINING_PSALTER_REVIEW "+JSON.stringify({
   chapters:audit.chapters,candidateVerses:audit.totalCandidateVerses,
