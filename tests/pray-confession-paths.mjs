@@ -1,0 +1,33 @@
+import assert from "node:assert/strict";
+import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,confessionPath,confessionStepAt} from "../src/pray/confession-paths.js";
+assert.deepEqual(Object.keys(CONFESSION_PATHS),["regular","returning","general"]);
+assert.equal(confessionPath("general").id,"general");
+assert.equal(confessionPath("unknown"),null);
+assert.ok(CONFESSION_SOURCE_LINKS.every(x=>x.url.startsWith("https://www.vatican.va/")));
+for(const [key,value] of Object.entries(CONFESSION_PATHS)){
+ assert.equal(value.id,key);
+ for(const lang of ["titleEn","titleFr","descriptionEn","descriptionFr"])assert.ok(value[lang].length>12);
+}
+assert.match(CONFESSION_PATHS.general.descriptionEn,/Not required simply because it has been years/i);
+const sourceSections=Array.from({length:10},(_,i)=>[(i+1)+" · Commandment",[ "A distinct first duty", "A second consideration" ]]);
+assert.deepEqual(confessionExaminationCards("regular",sourceSections),[]);
+const returning=confessionExaminationCards("returning",sourceSections);
+assert.equal(returning.length,13);
+assert.deepEqual(returning.slice(0,2).map(x=>x.id),["return-priest","return-period"]);
+assert.deepEqual(returning.slice(2,12).map(x=>x.id),Array.from({length:10},(_,i)=>"commandment-"+(i+1)));
+assert.equal(returning.at(-1).id,"ready");
+const general=confessionExaminationCards("general",sourceSections);
+assert.equal(general.length,14);
+assert.deepEqual(general.slice(0,3).map(x=>x.id),["general-scope","general-period","general-forgiven"]);
+assert.deepEqual(general.slice(3,13).map(x=>x.id),Array.from({length:10},(_,i)=>"commandment-"+(i+1)));
+assert.match(general[0].bodyEn,/not collective/i);
+assert.match(general[2].bodyEn,/need not be confessed again/i);
+assert.ok(general.filter(x=>x.kind==="questions").every(x=>x.questions.length===2));
+assert.ok(returning.filter(x=>x.kind==="questions").every(x=>x.questions.length===2));
+assert.equal(confessionStepAt(-4,14),0);
+assert.equal(confessionStepAt(100,14),13);
+assert.equal(confessionStepAt(3.8,14),3);
+assert.throws(()=>confessionExaminationCards("general",sourceSections.slice(1)),/ten original/);
+assert.throws(()=>confessionExaminationCards("unknown",sourceSections),/Unknown/);
+assert.throws(()=>confessionStepAt(0,0),/Empty/);
+console.log("Confession quick, returning and optional general guidance contracts passed (0/13/14 examination cards)");
