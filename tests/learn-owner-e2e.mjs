@@ -502,16 +502,24 @@ try{
   await assertNoMass("Learn -> Pray");
   await assertFocusSafe("Learn -> Pray");
 
+  // Calendar remains directly routable, but its visible user journey is
+  // Formation -> Today -> Full Calendar rather than a sixth ribbon slot.
   await openLearn();
-  await page.locator("[data-ao-app-surface='calendar']").tap();
+  await page.locator("[data-ao-app-surface='home']").tap();
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
+    !document.getElementById("ao-learn-modular-root"),
+    null,{timeout:10000}
+  );
+  await page.locator("[data-home-calendar]").tap();
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
     globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await assertNoMass("Learn -> Calendar");
-  await assertFocusSafe("Learn -> Calendar");
+  await assertNoMass("Learn -> Today -> Calendar");
+  await assertFocusSafe("Learn -> Today -> Calendar");
 
   await openLearn();
   // Settings is a contextual app overlay, not the sixth global ribbon tab.
