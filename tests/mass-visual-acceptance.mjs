@@ -863,8 +863,8 @@ try{
   assert.equal(await palmChoice.locator('[data-rite-participation="false"]').getAttribute("aria-pressed"),"true");
   await page.setViewportSize({width:320,height:700});
   const choiceBox=await palmChoice.boundingBox();
-  assert.ok(choiceBox&&choiceBox.left>=0&&choiceBox.width<=320,
-    "procession control overflows a 320px device");
+  assert.ok(choiceBox&&choiceBox.x>=-0.5&&choiceBox.x+choiceBox.width<=320.5,
+    "procession control overflows a 320px device: "+JSON.stringify(choiceBox));
   const joinPalm=palmChoice.locator('[data-rite-participation="true"]');
   const joinBox=await joinPalm.boundingBox();
   assert.ok(joinBox&&joinBox.height>=44,"procession Join target is below 44px");
