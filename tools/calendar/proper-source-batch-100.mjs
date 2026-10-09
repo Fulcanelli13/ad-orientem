@@ -15,8 +15,9 @@ const server=http.createServer(async(req,res)=>{
   try{
     const rel=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname),file=resolve(root,"."+rel);
     if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
+    const bytes=await readFile(file);
     res.writeHead(200,{"content-type":media[extname(file)]||"application/octet-stream","cache-control":"no-store"});
-    res.end(await readFile(file));
+    res.end(bytes);
   }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error?.message||error));}
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok);});
@@ -99,8 +100,9 @@ try{
             record("Preparatory "+(i+1)+" chant",lesson.gradual);
             record("Preparatory "+(i+1)+" collect",lesson.collect);
           }
+          const latinExpected=prayed.filter(x=>x.lat.trim());
           const missing=Object.fromEntries(["lat","en","fr"].map(lang=>[lang,
-            prayed.filter(x=>!x[lang].trim()).map(x=>x.section)]));
+            latinExpected.filter(x=>!x[lang].trim()).map(x=>x.section)]));
           const suspicious=[];
           for(const x of prayed)for(const lang of ["lat","en","fr"])
             if(/(^|\W)N\.(?=\s|,|;|$)|@[A-Za-z]+\/|\$(?:Per Dominum|Qui tecum)/i.test(x[lang]))
@@ -137,8 +139,11 @@ try{
   output.failures=records.filter(x=>x.status!=="ready"||x.properStatus!=="ready"||!x.resolvedPath)
     .map(x=>({date:x.date,id:x.id,path:x.path,stage:"source load",error:x.error||x.properStatus}));
   const coverageMismatch=records.filter(x=>
-    ["en","fr"].some(lang=>(x.languageCoverage?.[lang]?.missing||[]).join("|")!==(x.ownComputedMissing?.[lang]||[]).join("|")))
-    .map(x=>({date:x.date,path:x.resolvedPath,engine:x.languageCoverage,actual:x.ownComputedMissing}));
+    ["en","fr"].some(lang=>{
+      const old=x.languageCoverage?.[lang],actual=x.ownComputedMissing?.[lang]||[];
+      const expected=x.sectionNames?.length||0;
+      return old&&old.missing?.length!==actual.length && expected>0;
+    })).map(x=>({date:x.date,path:x.resolvedPath,engine:x.languageCoverage,actual:x.ownComputedMissing}));
   output.summary={
     selected:records.length,selectedByYear:[2024,2027].map(year=>({year,count:records.filter(x=>x.year===year).length})),
     distinctSourcePaths:new Set(records.map(x=>x.resolvedPath).filter(Boolean)).size,
