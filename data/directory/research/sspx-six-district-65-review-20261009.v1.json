@@ -1,0 +1,770 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_SIX_DISTRICT_65_CASE_REVIEW_V1",
+  "review_date": "2026-10-09",
+  "scope": {
+    "input_pending": 65,
+    "districts": [
+      "austria",
+      "france",
+      "switzerland",
+      "germany",
+      "italy",
+      "usa"
+    ],
+    "prior_worldwide_pending": 122
+  },
+  "disposition_counts": {
+    "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD": 16,
+    "MATCHES_EXISTING_REGISTERED_SITE": 41,
+    "NEW_CURRENT_MASS_VENUE": 7,
+    "ADDRESS_CONFLICT_HOLD": 1
+  },
+  "controls": {
+    "no_duplicate_venue_publication": true,
+    "map_place_source_has_sunday_badge": true,
+    "official_address_required_for_new_mass_venue": true,
+    "conflicting_address_does_not_change_live_venue": true,
+    "expired_schedule_does_not_imply_future_mass": true,
+    "no_geocoordinates_inferred": true
+  },
+  "records": [
+    {
+      "official_place_id": "angers-noel-pinot",
+      "official_place_url": "https://map.fsspx.org/de/places/angers-noel-pinot",
+      "district": "france",
+      "original_label": "Oratoire Bienheureux Noël PinotChapelle · AngersDimancheEn semaine",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "LAST_PUBLIC_SUNDAY_SCHEDULE_2023_CONTACT_ONLY",
+      "published": false
+    },
+    {
+      "official_place_id": "brindisi",
+      "official_place_url": "https://map.fsspx.org/de/places/brindisi",
+      "district": "italy",
+      "original_label": "BrindisiMission · BrindisiDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-IT-IT-BRINDISI-OSPEDALE-A-DI-SUMMA-PUBLIC-MASS-VENUE",
+      "registered_venue_name": "Ospedale A. Di Summa — public Mass venue",
+      "registered_address": "Piazza Di Summa, 72100 Brindisi BR, Italia",
+      "matching_street_key": "Piazza Di Summa",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "cappella-santa-caterina-da-siena",
+      "official_place_url": "https://map.fsspx.org/de/places/cappella-santa-caterina-da-siena",
+      "district": "italy",
+      "original_label": "Cappella Santa Caterina da SienaChapelle · RomaDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-IT-IT-ROMA-CAPPELLA-S-CATERINA-DA-SIENA",
+      "registered_venue_name": "Cappella S. Caterina da Siena",
+      "registered_address": "Via Urbana 85, 00184 Roma RM, Italia",
+      "matching_street_key": "Via Urbana 85",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "chapelle-de-la-sainte-famille",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-de-la-sainte-famille",
+      "district": "switzerland",
+      "original_label": "Chapelle de la Sainte FamilleChapelle · SionDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-SION-EGLISE-DE-LA-SAINTE-FAMILLE",
+      "registered_venue_name": "Église de la Sainte Famille",
+      "registered_address": "Rue de la Bourgeoisie 9, 1950 Sion",
+      "matching_street_key": "Bourgeoisie 9",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "chapelle-notre-dame-de-coat-ar-roch",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-de-coat-ar-roch",
+      "district": "france",
+      "original_label": "Chapelle Notre-Dame de Coat ar RochChapelle · LannedernDimancheEn semaine",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "EXPIRED_2025_TWO_DATE_MASS_LIST",
+      "published": false
+    },
+    {
+      "official_place_id": "chapelle-notre-dame-de-lourdes",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-de-lourdes",
+      "district": "switzerland",
+      "original_label": "Chapelle Notre-Dame de LourdesChapelle · Les RoussesDimancheEn semaine",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "OFFICIAL_SUNDAY_TIME_LAST_REVIEWED_JANUARY_2025",
+      "published": false
+    },
+    {
+      "official_place_id": "chapelle-notre-dame-du-rosaire",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-du-rosaire",
+      "district": "france",
+      "original_label": "Chapelle Notre-Dame du RosaireChapelle · Le LausDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "SCHEDULE_SOURCE_LAST_UPDATED_2024",
+      "published": false
+    },
+    {
+      "official_place_id": "chapelle-saint-mathias",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-saint-mathias",
+      "district": "france",
+      "original_label": "Chapelle Saint-MathiasChapelle · PontoiseDimancheEn semaine",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "OFFICIAL_2026_SUMMER_NOTICE_EXPRESSLY_NO_REGULAR_ROMAN_RITE_AT_PONTOISE",
+      "published": false
+    },
+    {
+      "official_place_id": "chapelle-sainte-emilie-de-rodat-ruols",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-sainte-emilie-de-rodat-ruols",
+      "district": "france",
+      "original_label": "Chapelle Sainte-Emilie-de-RodatChapelle · OlempsDimanche",
+      "decision": "NEW_CURRENT_MASS_VENUE",
+      "new_venue_id": "SSPX-OCT26-FOLLOWUP-01-CHAPELLE-SAINTE-EMILIE-DE-RODAT-RUOLS",
+      "official_address": "1180 route de la Mouline, 12510 Olemps, France",
+      "schedule_summary": "Sunday Mass confirmed in official 2 October 2026 announcements; exact upcoming time is on the chapel announcement sheet, not a fixed weekly hour.",
+      "review_flags": [
+        "LOCAL_ANNOUNCEMENTS_REQUIRED"
+      ]
+    },
+    {
+      "official_place_id": "chapelle-ste-honorine",
+      "official_place_url": "https://map.fsspx.org/de/places/chapelle-ste-honorine",
+      "district": "france",
+      "original_label": "Chapelle Sainte-HonorineChapelle · Conflans-Sainte-HonorineDimancheEn semaine",
+      "decision": "NEW_CURRENT_MASS_VENUE",
+      "new_venue_id": "SSPX-OCT26-FOLLOWUP-02-CHAPELLE-STE-HONORINE",
+      "official_address": "66 rue Maurice Berteaux, 78700 Conflans-Sainte-Honorine, France",
+      "schedule_summary": "Sunday sung Mass listed at 09:00 in official July–August 2026 notice; current autumn time must be reconfirmed.",
+      "review_flags": [
+        "SUMMER_WINDOW_ONLY"
+      ]
+    },
+    {
+      "official_place_id": "chateau-de-cabanous",
+      "official_place_url": "https://map.fsspx.org/de/places/chateau-de-cabanous",
+      "district": "france",
+      "original_label": "Chapelle Saint Georges de LodèveMission · La CavalerieDimanche",
+      "decision": "NEW_CURRENT_MASS_VENUE",
+      "new_venue_id": "SSPX-OCT26-FOLLOWUP-03-CHATEAU-DE-CABANOUS",
+      "official_address": "370 allée du Puech du Mus, 12230 La Cavalerie, France",
+      "schedule_summary": "Sunday Mass listed in official 2 October 2026 announcements; upcoming time in announcement sheet, not a fixed public hour.",
+      "review_flags": [
+        "LOCAL_ANNOUNCEMENTS_REQUIRED"
+      ]
+    },
+    {
+      "official_place_id": "chiesa-madonna-di-san-giovanni",
+      "official_place_url": "https://map.fsspx.org/de/places/chiesa-madonna-di-san-giovanni",
+      "district": "italy",
+      "original_label": "Chiesa Madonna di San GiovanniMission · CoratoDimanche",
+      "decision": "NEW_CURRENT_MASS_VENUE",
+      "new_venue_id": "SSPX-OCT26-FOLLOWUP-05-CHIESA-MADONNA-DI-SAN-GIOVANNI",
+      "official_address": "Via Vecchia Barletta 7, 70033 Corato BA, Italia",
+      "schedule_summary": "Sunday Mass on first Sunday 10:30 and third Sunday 18:00 each month; verify monthly exceptions.",
+      "review_flags": [
+        "FIRST_THIRD_SUNDAY"
+      ]
+    },
+    {
+      "official_place_id": "christkonigskapelle",
+      "official_place_url": "https://map.fsspx.org/de/places/christkonigskapelle",
+      "district": "switzerland",
+      "original_label": "ChristkönigskapelleChapelle · SchlierenDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-SCHLIEREN-CHAPELLE-DU-CHRIST-ROI",
+      "registered_venue_name": "Chapelle du Christ-Roi",
+      "registered_address": "Rohrstrasse 7, 8952 Schlieren",
+      "matching_street_key": "Rohrstrasse 7",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "debreceni-orvostudomanyi-egyetem-gyermekklinika-kapolnaja",
+      "official_place_url": "https://map.fsspx.org/de/places/debreceni-orvostudomanyi-egyetem-gyermekklinika-kapolnaja",
+      "district": "austria",
+      "original_label": "Debreceni Orvostudományi Egyetem Gyermekklinika kápolnájaChapelle · DebrecenDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-HU-DEBRECEN-UNIVERSITATSKINDERKLINIK-KAPELLE",
+      "registered_venue_name": "Universitätskinderklinik — Kapelle",
+      "registered_address": "Pallagi út 9–10, 4032 Debrecen, Ungarn",
+      "matching_street_key": "Pallagi út 9",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "eglise-sainte-foy",
+      "official_place_url": "https://map.fsspx.org/de/places/eglise-sainte-foy",
+      "district": "france",
+      "original_label": "Église Sainte-FoyChapelle · Jouy-MauvoisinDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "SUMMER_2026_DATES_ONLY_AFTER_AUGUST",
+      "published": false
+    },
+    {
+      "official_place_id": "exerzitienhaus-porta-caeli",
+      "official_place_url": "https://map.fsspx.org/de/places/exerzitienhaus-porta-caeli",
+      "district": "germany",
+      "original_label": "Exerzitienhaus Porta CaeliMaison de retraites spirituelles · LauterbachDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "RETREAT_HOUSE_2024_SCHEDULE_UNCONFIRMED_PUBLIC_SUNDAY_ACCESS",
+      "published": false
+    },
+    {
+      "official_place_id": "gemeinde-st-petrus-canisius",
+      "official_place_url": "https://map.fsspx.org/de/places/gemeinde-st-petrus-canisius",
+      "district": "germany",
+      "original_label": "Gemeinde St. Petrus CanisiusChapelle · KerkradeDimanche",
+      "decision": "NEW_CURRENT_MASS_VENUE",
+      "new_venue_id": "SSPX-OCT26-FOLLOWUP-07-GEMEINDE-ST-PETRUS-CANISIUS",
+      "official_address": "Pannesheiderstraat 71, 6462 EB Kerkrade, Netherlands",
+      "schedule_summary": "Sunday Mass 08:30 and High Mass 10:00 confirmed on 11 and 18 October 2026; consult fsspx.today/aachen for later dates.",
+      "review_flags": [
+        "DATE_SCOPED_OCTOBER_ONLY"
+      ]
+    },
+    {
+      "official_place_id": "herz-jesu-kirche",
+      "official_place_url": "https://map.fsspx.org/de/places/herz-jesu-kirche",
+      "district": "switzerland",
+      "original_label": "Herz Jesu KircheChapelle · OensingenDimancheEn semaine",
+      "decision": "NEW_CURRENT_MASS_VENUE",
+      "new_venue_id": "SSPX-OCT26-FOLLOWUP-06-HERZ-JESU-KIRCHE",
+      "official_address": "Staadackerstrasse 4, 4702 Oensingen, Switzerland",
+      "schedule_summary": "Sunday Mass 07:15 Low Mass and 09:15 High Mass; Rosary 08:40 (official September 2026).",
+      "review_flags": [
+        "NO_FIXED_DATE_ISSUE"
+      ]
+    },
+    {
+      "official_place_id": "immaculate-conception-church-gilford",
+      "official_place_url": "https://map.fsspx.org/de/places/immaculate-conception-church-gilford",
+      "district": "usa",
+      "original_label": "Immaculate Conception ChurchChapelle · GilfordDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-US-NH-GILFORD",
+      "registered_venue_name": "Immaculate Conception Church",
+      "registered_address": "500 Morrill Street, Gilford, NH 03249, United States",
+      "matching_street_key": "Morrill Street",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapela-sv-anna",
+      "official_place_url": "https://map.fsspx.org/de/places/kapela-sv-anna",
+      "district": "austria",
+      "original_label": "Kapela sv. AnnaMission · MariborDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-SI-MARIBOR-KAPELA-SV-DRUZINE",
+      "registered_venue_name": "Kapela sv. Družine",
+      "registered_address": "Kuzmičeva 12, 2000 Maribor, Slowenien",
+      "matching_street_key": "Kuzmičeva 12",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-der-heiligen-theresia",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-der-heiligen-theresia",
+      "district": "switzerland",
+      "original_label": "Kapelle der Heiligen TheresiaChapelle · BaselDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-BASEL-CHAPELLE-SAINTE-THERESE-DE-L-ENFANT-JESUS",
+      "registered_venue_name": "Chapelle Sainte Thérèse de l'Enfant-Jésus",
+      "registered_address": "Schliengerweg 33, 4057 Basel",
+      "matching_street_key": "Schliengerweg 33",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-heiliger-prokop",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-heiliger-prokop",
+      "district": "austria",
+      "original_label": "Kapelle Heiliger ProkopChapelle · PstružíDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-CZ-PSTRUZI-DUM-SV-PROKOPA",
+      "registered_venue_name": "Dům sv. Prokopa",
+      "registered_address": "Pstruží č. p. 107, 73911 Pstruží, Tschechien",
+      "matching_street_key": "Pstruží č.",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-hl-prophet-elias",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-hl-prophet-elias",
+      "district": "austria",
+      "original_label": "Kapelle Hl. Prophet EliasMission, Chapelle · Ždár nad SázavouDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-CZ-ZDAR-NAD-SAZAVOU-KAPLE-SV-ELIASE-PROROKA",
+      "registered_venue_name": "Kaple sv. Eliáše proroka",
+      "registered_address": "Nám. Republiky 1485/7, 59101 Žďár nad Sázavou, Tschechien",
+      "matching_street_key": "Republiky 1485",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-jablonec-nad-nisou",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-jablonec-nad-nisou",
+      "district": "austria",
+      "original_label": "Kapelle Jablonec nad NisouChapelle, Mission · Jablonec nad NisouDimanche",
+      "decision": "ADDRESS_CONFLICT_HOLD",
+      "stale_registry_address": "Anenské náměstí 3/4, 46601 Jablonec nad Nisou, Tschechien",
+      "official_map_address": "Jiráskova 7, Eurocentrum, 466 01 Jablonec nad Nisou, Czechia",
+      "reason": "2026-10-09 first-party international SSPX map shows a different Mass location from 2026-10-08 Austrian district import; venue may have moved; do not publish second site or silently move registered address",
+      "published": false
+    },
+    {
+      "official_place_id": "kapelle-mgr-marcel-lefebvre",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-mgr-marcel-lefebvre",
+      "district": "austria",
+      "original_label": "Kapelle Mgr. Marcel LefebvreMission · Boršov nad VltavouDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-CZ-BORSOV-NAD-VLTAVOU-DUM-MSGR-MARCELA-LEFEBVRA-MASS-CHAPEL",
+      "registered_venue_name": "Dům Msgr. Marcela Lefebvra — Mass chapel",
+      "registered_address": "Farní 50, 37382 Boršov nad Vltavou, Tschechien",
+      "matching_street_key": "Farní 50",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-pardubice",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-pardubice",
+      "district": "austria",
+      "original_label": "Kapelle PardubiceMission · PardubiceDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-CZ-PARDUBICE-SUNDAY-MASS-CENTRE",
+      "registered_venue_name": "Sunday Mass centre",
+      "registered_address": "Nám. Republiky 2686, 53002 Pardubice, Tschechien",
+      "matching_street_key": "Republiky 2686",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-prag",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-prag",
+      "district": "austria",
+      "original_label": "Kapelle PragChapelle · PrahaDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-CZ-PRAHA-DOMOV-SUE-RYDER-MASS-VENUE",
+      "registered_venue_name": "Domov Sue Ryder — Mass venue",
+      "registered_address": "Michelská 1/7, 14000 Praha, Tschechien",
+      "matching_street_key": "Michelská 1/7",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-st-ansgar",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-st-ansgar",
+      "district": "germany",
+      "original_label": "Kapelle St. AnsgarChapelle · Seelze-LetterDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-DE-DE-HANNOVER-KAPELLE-HL-ANSGAR",
+      "registered_venue_name": "Kapelle Hl. Ansgar",
+      "registered_address": "Lange Feld Str. 63, 30926 Seelze-Letter",
+      "matching_street_key": "Lange Feld Str.",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-st-blasius",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-st-blasius",
+      "district": "austria",
+      "original_label": "Kapelle St. BlasiusMission · MliniDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-HR-MLINI-KAPELA-SV-VLAHA",
+      "registered_venue_name": "Kapela sv. Vlaha",
+      "registered_address": "Put Bruna Bušića 81, 20207 Mlini, Kroatien",
+      "matching_street_key": "Put Bruna",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-st-josef-viernheim",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-st-josef-viernheim",
+      "district": "germany",
+      "original_label": "Kapelle St. JosefChapelle · ViernheimDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-DE-DE-VIERNHEIM-KAPELLE-HL-JOSEF",
+      "registered_venue_name": "Kapelle Hl. Josef",
+      "registered_address": "Bürgermeister-Neff-Str. 15, 68519 Viernheim",
+      "matching_street_key": "Neff-Str. 15",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-st-pius-x",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-st-pius-x",
+      "district": "switzerland",
+      "original_label": "Kapelle St. Pius X.Chapelle · St. GallenDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-ST-GALLEN-CHAPELLE-SAINT-PIE-X",
+      "registered_venue_name": "Chapelle Saint-Pie X",
+      "registered_address": "Zürcherstrasse 68A, 9000 St. Gallen",
+      "matching_street_key": "Zürcherstrasse 68A",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-st-theresia-von-avila",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-st-theresia-von-avila",
+      "district": "germany",
+      "original_label": "Kapelle St Theresia von AvilaPrieuré, Chapelle · Hamburg-AlsterdorfDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-DE-DE-HAMBURG-KAPELLE-HL-THERESIA-VON-AVILA",
+      "registered_venue_name": "Kapelle Hl. Theresia von Avila",
+      "registered_address": "Alsterdorfer Str. 210, 22297 Hamburg-Alsterdorf",
+      "matching_street_key": "Alsterdorfer Str. 210",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-uhersky-brod",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-uhersky-brod",
+      "district": "austria",
+      "original_label": "Kapelle Uherský BrodMission · Uherský BrodDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-CZ-UHERSKY-BROD-HRBITOVNI-KAPLE-STARY-HRBITOV",
+      "registered_venue_name": "Hřbitovní kaple — starý hřbitov",
+      "registered_address": "Svatopluka Čecha 1324, 68801 Uherský Brod, Tschechien",
+      "matching_street_key": "Svatopluka Čecha 1324",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kapelle-unsere-liebe-frau-huterin-des-glauben",
+      "official_place_url": "https://map.fsspx.org/de/places/kapelle-unsere-liebe-frau-huterin-des-glauben",
+      "district": "switzerland",
+      "original_label": "Kapelle Unsere Liebe Frau, Hüterin des GlaubenChapelle · Granges-PaccotDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-GRANGES-PACCOT-CHAPELLE-NOTRE-DAME-GARDIENNE-DE-LA-FOI",
+      "registered_venue_name": "Chapelle Notre-Dame Gardienne de la Foi",
+      "registered_address": "Route du Coteau 6, 1763 Granges-Paccot",
+      "matching_street_key": "Coteau 6",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kirche-hl-mauritius",
+      "official_place_url": "https://map.fsspx.org/de/places/kirche-hl-mauritius",
+      "district": "switzerland",
+      "original_label": "Kirche Hl. MauritiusMission, Chapelle · GlisDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-GLIS-CHAPELLE-SAINT-MAURICE",
+      "registered_venue_name": "Chapelle Saint-Maurice",
+      "registered_address": "Wierystrasse 60, 3902 Glis",
+      "matching_street_key": "Wierystrasse 60",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kirche-mariae-verkundigung",
+      "official_place_url": "https://map.fsspx.org/de/places/kirche-mariae-verkundigung",
+      "district": "germany",
+      "original_label": "Kirche Mariae VerkündigungChapelle · Schramberg-SulgenDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-DE-DE-SCHRAMBERG-KIRCHE-MARIA-VERKUNDIGUNG",
+      "registered_venue_name": "Kirche Mariä Verkündigung",
+      "registered_address": "Lienberg 61, 78713 Schramberg-Sulgen",
+      "matching_street_key": "Lienberg 61",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "kirche-st-joseph",
+      "official_place_url": "https://map.fsspx.org/de/places/kirche-st-joseph",
+      "district": "germany",
+      "original_label": "Kirche St. JosephChapelle · MemmingenDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-DE-DE-MEMMINGEN-KIRCHE-ST-JOSEF",
+      "registered_venue_name": "Kirche St. Josef",
+      "registered_address": "Teramostr. 2a, 87700 Memmingen",
+      "matching_street_key": "Teramostr. 2a",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "le-bremien-notre-dame",
+      "official_place_url": "https://map.fsspx.org/de/places/le-bremien-notre-dame",
+      "district": "france",
+      "original_label": "Maison de retraite \"Le Brémien Notre-Dame\"Résidence, Maison de retraite · Illiers-l'EvêqueDimancheEn semaine",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "COLOCATED_NURSING_HOME_VS_REGISTERED_PRIORY_PHYSICAL_IDENTITY_UNCONFIRMED",
+      "published": false
+    },
+    {
+      "official_place_id": "magyarok-nagyasszonya-kapolna",
+      "official_place_url": "https://map.fsspx.org/de/places/magyarok-nagyasszonya-kapolna",
+      "district": "austria",
+      "original_label": "Magyarok Nagyasszonya KápolnaChapelle · BudapestDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-HU-BUDAPEST-KAPELLE-UNSERER-LIEBEN-FRAU-VON-UNGARN",
+      "registered_venue_name": "Kapelle Unserer Lieben Frau von Ungarn",
+      "registered_address": "Thököly út 116 I/3, 1146 Budapest, Ungarn",
+      "matching_street_key": "Thököly út 116",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "maria-hilfe-der-christen",
+      "official_place_url": "https://map.fsspx.org/de/places/maria-hilfe-der-christen",
+      "district": "switzerland",
+      "original_label": "Maria Hilfe der ChristenChapelle · GoldauDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-GOLDAU-CHAPELLE-MARIE-SECOURS-DES-CHRETIENS",
+      "registered_venue_name": "Chapelle Marie Secours des chrétiens",
+      "registered_address": "Hügelweg 8, 6410 Goldau",
+      "matching_street_key": "Hügelweg 8",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "maria-stella-maris-church",
+      "official_place_url": "https://map.fsspx.org/de/places/maria-stella-maris-church",
+      "district": "usa",
+      "original_label": "Maria Stella Maris ChurchChapelle · San PedroDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-NA-US-MARIA-STELLA-MARIS-MISSION-SAN-PEDRO-3600-S-GAFFEY-STREET",
+      "registered_venue_name": "Maria Stella Maris Mission",
+      "registered_address": "3600 S. Gaffey Street, San Pedro, CA 90731-6932",
+      "matching_street_key": "Gaffey Street",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "mission-osijek",
+      "official_place_url": "https://map.fsspx.org/de/places/mission-osijek",
+      "district": "austria",
+      "original_label": "Mission OsijekChapelle · OsijekDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-AT-HR-OSIJEK-SUNDAY-MASS-MISSION",
+      "registered_venue_name": "Sunday Mass mission",
+      "registered_address": "Ulica Josipa Jurja Strossmayera 1a, 31000 Osijek, Kroatien",
+      "matching_street_key": "Strossmayera 1a",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "mutter-v-d-immerwahrenden-hilfe",
+      "official_place_url": "https://map.fsspx.org/de/places/mutter-v-d-immerwahrenden-hilfe",
+      "district": "germany",
+      "original_label": "Mutter v. d. Immerwährenden HilfeChapelle · FuldaDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-DE-DE-FULDA-MUTTER-VON-DER-IMMERWAHRENDEN-HILFE",
+      "registered_venue_name": "Mutter von der Immerwährenden Hilfe",
+      "registered_address": "Horaser Weg 99, 36039 Fulda",
+      "matching_street_key": "Horaser Weg 99",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "notre-dame-de-lepante",
+      "official_place_url": "https://map.fsspx.org/de/places/notre-dame-de-lepante",
+      "district": "switzerland",
+      "original_label": "Notre Dame de LépanteChapelle · MontreuxDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-MONTREUX-EGLISE-NOTRE-DAME-DE-LEPANTE",
+      "registered_venue_name": "Église Notre-Dame de Lépante",
+      "registered_address": "Rue de la Gare 24, 1820 Montreux",
+      "matching_street_key": "Gare 24",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "olbia",
+      "official_place_url": "https://map.fsspx.org/de/places/olbia",
+      "district": "italy",
+      "original_label": "OlbiaMission · OlbiaDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-IT-IT-OLBIA-SSPX-MASS-CENTRE",
+      "registered_venue_name": "SSPX Mass centre",
+      "registered_address": "Via Ernestina Paper 7, 07026 Olbia SS, Italia",
+      "matching_street_key": "Ernestina Paper 7",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "oratoire-st-joseph",
+      "official_place_url": "https://map.fsspx.org/de/places/oratoire-st-joseph",
+      "district": "france",
+      "original_label": "GuyaneMission, Chapelle · Cayenne - Kourou - Saint-LourentDimancheEn semaine",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "MULTI_CITY_FRENCH_GUIANA_MISSION_NO_EXACT_VISITOR_ADDRESS",
+      "published": false
+    },
+    {
+      "official_place_id": "our-lady-of-fatima-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/our-lady-of-fatima-chapel",
+      "district": "usa",
+      "original_label": "Our Lady of Fatima ChapelChapelle · RichmondDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-US-VA-RICHMOND",
+      "registered_venue_name": "Our Lady of Fatima Chapel",
+      "registered_address": "5217 Futura Avenue, Richmond, VA 23231, United States",
+      "matching_street_key": "Futura Avenue",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "our-lady-of-lourdes-mission",
+      "official_place_url": "https://map.fsspx.org/de/places/our-lady-of-lourdes-mission",
+      "district": "usa",
+      "original_label": "Our Lady of Lourdes MissionMission · Honolulu (Waikiki)Dimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-US-HI-HONOLULU",
+      "registered_venue_name": "Our Lady of Lourdes Mission",
+      "registered_address": "Eaton Square, 438 Hobron Lane, Suite 300, Honolulu, HI 96815, United States",
+      "matching_street_key": "Hobron Lane",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "our-lady-of-victory-church-las-vegas",
+      "official_place_url": "https://map.fsspx.org/de/places/our-lady-of-victory-church-las-vegas",
+      "district": "usa",
+      "original_label": "Our Lady of Victory ChurchChapelle · Las VegasDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-US-NV-LASVEGAS",
+      "registered_venue_name": "Our Lady of Victory Church",
+      "registered_address": "1575 East Windmill Lane, Las Vegas, NV 89123, United States",
+      "matching_street_key": "Windmill Lane",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "palermo",
+      "official_place_url": "https://map.fsspx.org/de/places/palermo",
+      "district": "italy",
+      "original_label": "PalermoMission · PalermoDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "CITY_ONLY_ADDRESS_NO_VISITOR_VENUE",
+      "published": false
+    },
+    {
+      "official_place_id": "pavia-voghera",
+      "official_place_url": "https://map.fsspx.org/de/places/pavia-voghera",
+      "district": "italy",
+      "original_label": "Pavia-VogheraMission · PaviaDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "CITY_ONLY_ADDRESS_NO_VISITOR_VENUE",
+      "published": false
+    },
+    {
+      "official_place_id": "prieure-n-d-de-la-misericorde",
+      "official_place_url": "https://map.fsspx.org/de/places/prieure-n-d-de-la-misericorde",
+      "district": "france",
+      "original_label": "Chapelle de ND de l’AssomptionChapelle · Corse du Sud (Ajaccio) - AFADimancheEn semaine",
+      "decision": "NEW_CURRENT_MASS_VENUE",
+      "new_venue_id": "SSPX-OCT26-FOLLOWUP-04-PRIEURE-N-D-DE-LA-MISERICORDE",
+      "official_address": "11 Stretta Di U Caso, 20167 Afa (Ajaccio), Corse-du-Sud, France",
+      "schedule_summary": "Sunday Mass 10:00 sung Mass (official district entry updated July 2026).",
+      "review_flags": [
+        "NO_FIXED_DATE_ISSUE"
+      ]
+    },
+    {
+      "official_place_id": "priorat-heilige-familie",
+      "official_place_url": "https://map.fsspx.org/de/places/priorat-heilige-familie",
+      "district": "germany",
+      "original_label": "Priorat Heilige FamilieChapelle · Neustadt/WeinstraßeDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-DE-DE-NEUSTADT-KAPELLE-HEILIGE-FAMILIE",
+      "registered_venue_name": "Kapelle Heilige Familie",
+      "registered_address": "Mandelring 36, 67433 Neustadt/Weinstraße",
+      "matching_street_key": "Mandelring 36",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "ravanusa",
+      "official_place_url": "https://map.fsspx.org/de/places/ravanusa",
+      "district": "italy",
+      "original_label": "RavanusaMission, Chapelle · RavanusaDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-OCT26-IT-IT-RAVANUSA-SSPX-MASS-CENTRE",
+      "registered_venue_name": "SSPX Mass centre",
+      "registered_address": "Via Calabria 57, 92029 Ravanusa AG, Italia",
+      "matching_street_key": "Calabria 57",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "rende",
+      "official_place_url": "https://map.fsspx.org/de/places/rende",
+      "district": "italy",
+      "original_label": "RendeMission · CosenzaDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "CITY_ONLY_ADDRESS_NO_VISITOR_VENUE",
+      "published": false
+    },
+    {
+      "official_place_id": "saint-anthony-of-padua-mission",
+      "official_place_url": "https://map.fsspx.org/de/places/saint-anthony-of-padua-mission",
+      "district": "usa",
+      "original_label": "Saint Anthony of Padua MissionChapelle · North CaldwellDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-NA-US-SAINT-ANTHONY-OF-PADUA-CHAPEL-NORTH-CALDWELL-103-GOULD-AVENUE",
+      "registered_venue_name": "Saint Anthony of Padua Chapel",
+      "registered_address": "103 Gould Avenue, North Caldwell, NJ 07006-4211",
+      "matching_street_key": "Gould Avenue",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "saint-catherine-of-siena-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/saint-catherine-of-siena-chapel",
+      "district": "usa",
+      "original_label": "Saint Catherine of Siena ChapelMission · WestonDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-NA-US-SAINT-CATHERINE-OF-SIENNA-MISSION-WESTON-439-BOSTON-POST-RD",
+      "registered_venue_name": "Saint Catherine of Sienna Mission",
+      "registered_address": "439 Boston Post Rd, Weston, MA 02493-1552",
+      "matching_street_key": "Boston Post Rd",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "saint-james-catholic-church",
+      "official_place_url": "https://map.fsspx.org/de/places/saint-james-catholic-church",
+      "district": "usa",
+      "original_label": "Saint James Catholic ChurchChapelle · PittsburghDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-NA-US-SAINT-JAMES-CHURCH-PITTSBURGH-326-S-MAIN-ST",
+      "registered_venue_name": "Saint James Church",
+      "registered_address": "326 S. Main St., Pittsburgh, PA 15220-5512",
+      "matching_street_key": "S. Main St.",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "saint-joseph-s-catholic-church",
+      "official_place_url": "https://map.fsspx.org/de/places/saint-joseph-s-catholic-church",
+      "district": "usa",
+      "original_label": "Saint Joseph's Catholic ChurchChapelle · GreenwoodDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-US-IN-GREENWOOD",
+      "registered_venue_name": "Saint Joseph's Church",
+      "registered_address": "245 West Broadway Street, Greenwood, IN 46142, United States",
+      "matching_street_key": "Broadway Street",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "saint-therese-patron-of-alaska-chapel",
+      "official_place_url": "https://map.fsspx.org/de/places/saint-therese-patron-of-alaska-chapel",
+      "district": "usa",
+      "original_label": "Saint Therese, Patron of Alaska ChapelChapelle · AnchorageDimanche",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-US-AK-ANCHORAGE",
+      "registered_venue_name": "Saint Therese, Patroness of Alaska Mission",
+      "registered_address": "7653 Cranberry Road, Anchorage, AK 99502, United States",
+      "matching_street_key": "Cranberry Road",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "sainte-marie-de-re",
+      "official_place_url": "https://map.fsspx.org/de/places/sainte-marie-de-re",
+      "district": "france",
+      "original_label": "Chapelle de l'Île de RéChapelle · Ile de RéDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "SUMMER_2026_MASS_PERIOD_ENDED_AUGUST_30",
+      "published": false
+    },
+    {
+      "official_place_id": "sanfre",
+      "official_place_url": "https://map.fsspx.org/de/places/sanfre",
+      "district": "italy",
+      "original_label": "SanfrèMission · SanfrèDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "CITY_ONLY_ADDRESS_NO_VISITOR_VENUE",
+      "published": false
+    },
+    {
+      "official_place_id": "seniorenheim-st-josef",
+      "official_place_url": "https://map.fsspx.org/de/places/seniorenheim-st-josef",
+      "district": "germany",
+      "original_label": "Seniorenheim St. JosefMaison de retraite, Chapelle · WeihungszellDimancheEn semaine",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "RETIREMENT_HOME_SHARES_PRIORY_ADDRESS_SEPARATE_PUBLIC_ACCESS_UNCERTAIN",
+      "published": false
+    },
+    {
+      "official_place_id": "st-meinrad-kapelle",
+      "official_place_url": "https://map.fsspx.org/de/places/st-meinrad-kapelle",
+      "district": "switzerland",
+      "original_label": "St. Meinrad KapelleChapelle · GommiswaldDimancheEn semaine",
+      "decision": "MATCHES_EXISTING_REGISTERED_SITE",
+      "registered_venue_id": "SSPX-CH-CH-GOMMISWALD-CHAPELLE-SAINT-MEINRAD",
+      "registered_venue_name": "Chapelle Saint Meinrad",
+      "registered_address": "Hof 15, 8737 Gommiswald",
+      "matching_street_key": "Hof 15",
+      "alias_method": "FIRST_PARTY_SUNDAY_PLACE_IDENTITY_AND_PHYSICAL_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "verona",
+      "official_place_url": "https://map.fsspx.org/de/places/verona",
+      "district": "italy",
+      "original_label": "VeronaMission, Chapelle · VeronaDimanche",
+      "decision": "EVIDENCE_OR_PHYSICAL_ACCESS_HOLD",
+      "reason": "CITY_ONLY_ADDRESS_NO_VISITOR_VENUE",
+      "published": false
+    }
+  ]
+}
