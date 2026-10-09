@@ -336,4 +336,16 @@ expect(scholaAnim.currentTime===time,"Schola speed adjustment reset the current 
 expect(animationsStarted===1,"Schola speed adjustment unnecessarily restarted the current phrase");
 scholaAdapter.destroy();
 
+// Preserve donor baseline, then apply a legible, operable mobile-only layer.
+expect(html.includes("Mobile readability/accessibility layer"),
+  "mobile legibility layer disappeared from the reader");
+expect(html.includes(".ao-mass-prefs-more{min-height:44px"),
+  "Mass preferences actions reverted to small touch targets");
+expect(html.includes(".ao-schola-control{min-height:44px"),
+  "Schola tempo buttons reverted to undersized touch targets");
+expect(html.includes(".ao-guide-short{display:none}"),
+  "mobile GUIDE cell regained unreadable redundant microcopy");
+expect(html.includes('scholaCollapsed ? 44 : scholaHeight'),
+  "collapsed Schola height and reader controls are out of sync");
+
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
