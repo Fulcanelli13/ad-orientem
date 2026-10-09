@@ -127,7 +127,7 @@ try{
     assert.ok(c.commemorations.some(x=>expectedId.test(x.path||"")),
       date+": original Temporale commemoration path absent");
     if(date.startsWith("2026-1")&&date!=="2026-11-01")
-      assert.ok(c.commemorations.some(x=>/^Tempora\\/Adv[12]-0$/.test(x.prayerSourcePath||"")),
+      assert.ok(c.commemorations.some(x=>new RegExp("^Tempora/Adv[12]-0$").test(x.prayerSourcePath||"")),
         date+": the Advent ferial collect/secret/postcommunion must cite the source Sunday");
     for(const key of ["collects","secrets","postcommunions"])
       assert.ok(c[key]>=2,date+": missing distinct Proper "+key+" for privileged commemoration");
