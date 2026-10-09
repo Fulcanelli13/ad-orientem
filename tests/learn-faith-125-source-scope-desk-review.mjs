@@ -4,6 +4,7 @@ import {buildCatechismGuidedStudy} from "../src/learn/catechism-guided-study.js"
 const load=p=>JSON.parse(readFileSync(p,"utf8"));
 const first=load("data/learn/learn-the-faith-certification-001-018.v1.json");
 const second=load("data/learn/learn-the-faith-certification-019-054.v1.json");
+const recovered=load("data/learn/learn-the-faith-recovered-54.v1.json");
 const crosswalk=load("data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json");
 const english=load("data/learn/ltfaith-pius-x-en-witness-index.v1.json");
 const italian=load("data/learn/ltfaith-pius-x-it-witness-index.v1.json");
@@ -39,7 +40,7 @@ for(const lesson of second.lessons){
     italianCitations++;
   }
   for(const s of claim.sources.filter(s=>s.source!=="PIUS_X_1912")){
-    assert.equal(s.url,second.supplementarySourceRegistry[s.source]?.url,"unknown external authority "+s.source);
+    assert.equal(s.url,(second.supplementarySourceRegistry[s.source]??recovered.sourceRegistries.claimBased[s.source])?.url,"unknown external authority "+s.source);
     assert.ok(v.supplementaryAuthorityLinks.includes(s.url));
     external++;
   }
