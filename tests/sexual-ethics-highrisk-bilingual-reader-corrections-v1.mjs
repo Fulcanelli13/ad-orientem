@@ -41,9 +41,10 @@ for(const [id,page] of [["CSE043","p.293"],["CSE049","pp.304"],["CSE050","p.310"
  assert.ok(CSE_DEBATE_MAP[id].opposition[1].includes("Farley"));
 }
 for(const id of ["CSE049","CSE050","CSE071"]){
- const x=CSE_DEBATE_MAP[id].counter;
- assert.match(x[0],/(not a|not an|not an additional|not a quotation)/i,id+" counter does not own editorial authorship");
- assert.match(x[1],/non|et non/i,id+" French counterpart unclear");
+ const stage=ledger.records.find(x=>x.id===id&&x.stage==="counter");
+ assert.equal(stage.source_scope,"EDITORIAL_SYNTHESIS_NOT_AUTHOR_QUOTE",id+" synthetic objection cannot be credited to Farley");
+ assert.match(stage.scope_limit,/not (present|quoted|an additional|a quotation|in Farley|from Farley)|not a/i);
+ assert.ok(CSE_DEBATE_MAP[id].counter[0].length>75&&CSE_DEBATE_MAP[id].counter[1].length>75);
 }
 for(const stage of ["breakpoint","response"]){
  const [en,fr]=CSE_DEBATE_MAP.CSE038[stage];
