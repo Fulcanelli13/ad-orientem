@@ -123,11 +123,46 @@ export function createFindOwner(win=globalThis){
     return ["G334","G336"];
   }
 
-  function openGlossary(){
-    const glossary=win?.AO_GLOSSARY_V1;
-    if(typeof glossary?.openTerms!=="function")return false;
-    void glossary.openTerms(glossaryTerms(),{origin:"find"});
-    return true;
+  function actionError(message){
+    const label=getRoot(win)?.querySelector?.("[data-find-action-error]");
+    if(label){label.textContent=String(message||"");label.hidden=!message;}
+  }
+  async function openGlossary(button){
+    if(button?.getAttribute?.("aria-busy")==="true")return false;
+    button?.setAttribute?.("aria-busy","true");actionError("");
+    try{
+      const {ensureLearnModule}=await import("../learn/lazy-module-registry.js");
+      await ensureLearnModule("learn.glossary",win);
+      const glossary=win?.AO_GLOSSARY_V1;
+      if(typeof glossary?.openTerms!=="function")throw new Error("Glossary owner unavailable");
+      const opened=await glossary.openTerms(glossaryTerms(),{origin:"find"});
+      if(opened===false)throw new Error("No contextual glossary entries available");
+      return true;
+    }catch(error){
+      console.error("Explore Glossary failed",error);
+      actionError(language(win)==="fr"?"Définitions indisponibles. Veuillez réessayer.":"Definitions unavailable. Please try again.");
+      return false;
+    }finally{button?.removeAttribute?.("aria-busy");}
+  }
+  async function openNovena(button){
+    if(button?.getAttribute?.("aria-busy")==="true")return false;
+    button?.setAttribute?.("aria-busy","true");actionError("");
+    try{
+      const novenaId=String(button?.dataset?.exploreOpenNovena||"");
+      if(!novenaId)throw new Error("Missing linked novena ID");
+      // Use the same deferred canonical PRAY owner as Calendar and Formation.
+      const {ensurePrayReader}=await import("../pray/browser-entry.js");
+      await ensurePrayReader({win});
+      const result=await win?.AO_MODULES?.open?.("pray.novenas",{novenaId,returnContext:{surface:"find"}});
+      if(result!==true&&result?.ok!==true)throw new Error("Canonical Novena route did not open");
+      close();
+      try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
+      return true;
+    }catch(error){
+      console.error("Explore Novena failed",error);
+      actionError(language(win)==="fr"?"Neuvaine indisponible. Veuillez réessayer.":"Novena unavailable. Please try again.");
+      return false;
+    }finally{button?.removeAttribute?.("aria-busy");}
   }
 
   async function ensureData(){
@@ -230,7 +265,7 @@ export function createFindOwner(win=globalThis){
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
-    if(target?.closest?.("[data-find-glossary]")){event.preventDefault?.();event.stopPropagation?.();openGlossary();return}
+    const glossaryButton=target?.closest?.("[data-find-glossary]");if(glossaryButton){event.preventDefault?.();event.stopPropagation?.();void openGlossary(glossaryButton);return}
     if(target?.closest?.("[data-find-clear-calendar]")){
       event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
     }
@@ -273,14 +308,7 @@ export function createFindOwner(win=globalThis){
       return;
     }
     const novena=target?.closest?.("[data-explore-open-novena]");
-    if(novena){
-      event.preventDefault?.();event.stopPropagation?.();
-      const novenaId=novena.dataset.exploreOpenNovena;
-      close();
-      try{win?.AO_PRAY_V435930?.open?.("pray.novenas",{novenaId,returnContext:{surface:"find"}});}catch{}
-      try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
-      return;
-    }
+    if(novena){event.preventDefault?.();event.stopPropagation?.();void openNovena(novena);return;}
     if(target?.closest?.("[data-find-show-more]")){
       event.preventDefault?.();
       const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
