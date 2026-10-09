@@ -111,6 +111,7 @@ assert.deepEqual(
     "place:US:st-anne-fiskdale",
     "place:CA:sainte-anne-de-beaupre",
     "place:CA:notre-dame-du-cap",
+    "place:CA:oratoire-saint-joseph-montreal",
     "place:CA:martyrs-shrine-midland",
     "place:IT:loreto-santa-casa",
     "place:IT:pompei-rosary-shrine",
