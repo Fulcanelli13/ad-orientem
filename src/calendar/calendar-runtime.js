@@ -6,6 +6,7 @@ import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
+import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -538,7 +539,7 @@ function practiceContext(selected,r){
 }
 function daySurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),cm=commemorations(r),saint=principalSaintContext(r,selected);
-  const season=periodName(p),properReady=!!properOf(r),periodPercent=pct(y.periodProgress);
+  const season=periodName(p),properReady=!!properOf(r),periodPercent=pct(y.periodProgress),printReady=assessPrintableProper(r,{language:fr()?"fr":"en"}).ok;
   return `
     ${dayNavigator(selected)}
     <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
@@ -547,6 +548,7 @@ function daySurface(selected,r){
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
       ${sourceStatus(r)}
       ${properReady?`<button class="aoCalV2Primary" type="button" data-cal-mass>${esc(L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
+      ${printReady?`<button type="button" class="aoCalV2TextLink" data-cal-print-proper>${esc(L("Print bilingual Mass Propers","Imprimer les propres bilingues"))}</button><p data-cal-print-feedback role="status" aria-live="polite"></p>`:""}
     </section>
     ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small><p>${esc(L("Biography, artwork and sources for the principal observance.","Biographie, œuvre et sources de la célébration principale."))}</p></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
     <section class="aoCalV2Context">
@@ -782,6 +784,20 @@ function setView(view){
   if(calendarView==="picker")requestPickerMonth();
   return true;
 }
+function openPrintableProper(){
+  const feedback=root()?.querySelector("[data-cal-print-feedback]");
+  try{
+    const doc=renderPrintableProperHtml(resolution(),{language:fr()?"fr":"en"});
+    const win=globalThis.open?.("","_blank");
+    if(!win){if(feedback)feedback.textContent=L("Allow a new window to print the Propers.","Autorisez une nouvelle fenêtre pour imprimer les propres.");return false}
+    win.opener=null;win.document.open();win.document.write(doc);win.document.close();
+    if(feedback)feedback.textContent="";
+    return true;
+  }catch(error){
+    if(feedback)feedback.textContent=L("Complete bilingual Propers are unavailable for this Mass.","Les propres bilingues complets ne sont pas disponibles pour cette messe.");
+    console.error("Calendar print Proper source gate",error);return false;
+  }
+}
 function bind(r){
   r.addEventListener("click",event=>{
     const yearPeriod=event.target.closest?.("[data-cal-year-period]");
@@ -818,6 +834,7 @@ function bind(r){
     const saintDetail=event.target.closest?.("[data-cal-saint-date]");if(saintDetail){event.preventDefault();event.stopPropagation?.();void openSaintDetail(saintDetail.dataset.calSaintDate);return}
     const intelligenceRoute=event.target.closest?.("[data-cal-intelligence-route]");if(intelligenceRoute){event.preventDefault();const route=intelligenceRoute.dataset.calIntelligenceRoute||"";if(route==="mass.current"){void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar practice Mass route failed",error));return}if(route==="today.calendar"){calendarView="day";paint();return}if(route.startsWith("find:")){const [lens,calendarKey]=route.slice(5).split(":");void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("find")).then(result=>result?.ok===true?globalThis.AO_FIND_APP_V1?.open?.({lens:lens||"pilgrimages",view:"map",calendarKey:calendarKey||null,query:""}):false).catch(error=>console.error("Calendar Explore route failed",error));return}void Promise.resolve(globalThis.AO_MODULES?.open?.(route,{returnContext:{surface:"calendar",view:"day",date:state()?.selectedDate||null}})).catch(error=>console.error("Calendar practice route failed",error));return}
     const monthIndexDate=event.target.closest?.("[data-cal-month-index-date]");if(monthIndexDate){event.preventDefault();calendarView="day";void select(monthIndexDate.dataset.calMonthIndexDate);return}
+    const printButton=event.target.closest?.("[data-cal-print-proper]");if(printButton){event.preventDefault();openPrintableProper();return}
     const mass=event.target.closest?.("[data-cal-mass]");if(mass){event.preventDefault();void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar Mass entry failed",error));return}
     const closeButton=event.target.closest?.("[data-cal-close]");if(closeButton){event.preventDefault();close();return}
     const day=event.target.closest?.("[data-cal-date]");if(day){event.preventDefault();void select(day.dataset.calDate);return}

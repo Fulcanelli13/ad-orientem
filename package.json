@@ -103,7 +103,7 @@
     "test:pray-traditional": "node tests/pray-traditional-life.mjs",
     "test:learn-traditional": "node tests/learn-traditional-life.mjs",
     "test:donor-visual": "node tests/nonmass-donor-reference-e2e.mjs",
-    "test:calendar": "node tests/calendar-liturgical-year.mjs && node tests/calendar-intelligence.mjs && node tests/calendar-ics-export.mjs",
+    "test:calendar": "node tests/calendar-liturgical-year.mjs && node tests/calendar-intelligence.mjs && node tests/calendar-ics-export.mjs && node tests/calendar-print-proper.mjs",
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
