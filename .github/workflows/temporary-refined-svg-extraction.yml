@@ -1,0 +1,50 @@
+name: Temporary refined SVG extraction
+on:
+  push:
+    branches:
+      - performance/lazy-shell-phase1-20261009
+    paths:
+      - ".github/workflows/temporary-refined-svg-extraction.yml"
+permissions:
+  contents: write
+concurrency:
+  group: refined-svg-extraction-phase1
+  cancel-in-progress: false
+jobs:
+  generate-test-promote:
+    if: github.ref == 'refs/heads/performance/lazy-shell-phase1-20261009'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: performance/lazy-shell-phase1-20261009
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Externalize 3 historic SVG libraries and verify symbols
+        run: |
+          node tools/externalize-svg-sprites.mjs --apply
+          node tools/externalize-svg-sprites.mjs --verify
+          node tests/startup-payload-contract.mjs
+          git diff --stat
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Verify real browser SVG rendering and App/Mass/Prayer journeys
+        run: |
+          node tests/external-svg-sprite-e2e.mjs
+          npm run test:app-shell-contract
+          npm run check:app-release
+          npm run test:rc-interaction-qa
+          npm run test:phone
+      - name: Commit tested generated assets to isolated branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html data/presentation/startup-sprite-report.v1.json assets/generated-sprites
+          git diff --cached --stat
+          git commit -m "Move 7.44 MB SVG sprite geometry to independently cacheable assets"
+          git push origin HEAD:refs/heads/performance/lazy-shell-phase1-20261009
