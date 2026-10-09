@@ -108,6 +108,7 @@ jobs:
         with:
           node-version: 22
       - run: npm run test:app-shell-contract
+      - run: npm run test:calendar
       - run: npm run test:tree-hygiene
       - run: node tests/startup-payload-contract.mjs
       - run: node tools/extract-thin-html-shell.mjs --verify

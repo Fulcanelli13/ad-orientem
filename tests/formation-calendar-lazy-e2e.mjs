@@ -76,6 +76,19 @@ try{
  assert.equal(calendar.status?.open,true);
  assert.equal(calendar.root,"ao-calendar-modular-root");
  assert.equal(calendar.week?.version,"43.45-modular-exact");
+ // Calendar must preserve working day/year/month controls on actual mobile DOM.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year")),true);
+ await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
+ assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").count()>0);
+ await page.locator("#ao-calendar-modular-root [data-cal-open-month='major']").click();
+ await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({timeout:8000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"picker");
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthView),"major");
+ // The Today control is a navigation action, not merely a month-grid scroll.
+ await page.locator("#ao-calendar-modular-root [data-cal-today]").click();
+ await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:8000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
+
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
  const fetchedBefore=hits.filter(x=>x.path==="/src/calendar/calendar-runtime.js").length;
  const second=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("calendar"));
