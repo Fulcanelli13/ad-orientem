@@ -58,6 +58,16 @@ assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:46–55")
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null,
  "Benedictus chapter proximity must not fabricate passage-specific commentary");
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("John 1:1").passage),null);
+for(const chapter of [1,6,31,37,50,101,116,129,142,150]){
+ const record=verifiedScriptureCommentary(parseScriptureContext("Psalms "+chapter+":1").passage);
+ assert.equal(record?.type,"HISTORIC_CATHOLIC_EXEGESIS");
+ assert.equal(record?.scope,"PSALM_SECTION_IN_COMPLETE_WORK");
+ assert.equal(record?.psalmNumbering,"VULGATE_TRADITIONAL");
+ assert.match(record?.url||"",/ecatholic2000.com\/bellarmine\/commentary-on-psalms/);
+ assert.match(record?.title||"",new RegExp("Psalm "+chapter+"$"));
+}
+assert.equal(verifiedScriptureCommentary({book:"Psalms",chapter:151,verseStart:1}),null);
+
 assert.match(readFileSync(new URL("../src/scripture/library.js",import.meta.url),"utf8"),
  /location\.chapter>=scriptureChapterLimit\(location\.book\)/,
  "Next chapter must disable at the last chapter");
