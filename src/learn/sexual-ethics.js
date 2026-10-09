@@ -137,7 +137,7 @@ function searchQuestions(query,win){
   if(!needle)return [];
   return CSE_PUBLIC_QUESTIONS.filter(item=>{
     const debateText=item.debate?Object.values(item.debate).flat():[];
-    const hay=[...item.q,...item.a,...(item.d||[]),...(item.aliases||[]),...debateText,...(item.id==="CSE045"?CSE_MARRIAGE_AUTHORITY_DEBATES.flatMap(d=>[...d.question,...d.opposition,...d.reply,...d.rejoinder,...d.finding,...d.traditionalAssessment]):[])].map(norm).join(" ");
+    const hay=[...item.q,...item.a,...(item.d||[]),...(item.aliases||[]),...debateText,...(item.id==="CSE045"?CSE_MARRIAGE_AUTHORITY_DEBATES.flatMap(d=>[...d.question,...Object.keys(DEBATE_LABELS).flatMap(field=>d[field]||[])]):[])].map(norm).join(" ");
     return hay.includes(needle);
   });
 }
@@ -206,6 +206,12 @@ function marriageDisputationsHtml(win,item){
   return `<section class="aoCSEMaritalDisputations" aria-label="${esc(L(win,"Ephesians 5 marriage debates","Débats sur le mariage et Éphésiens 5"))}"><h2>${esc(L(win,"Marriage, headship and freedom","Mariage, primauté et liberté"))}</h2>${entries}</section>`;
 }
 
+function relatedMarriageQuestionsHtml(win,item){
+  if(item.id!=="CSE045")return "";
+  const questions=[["CSE032",["Engagement is not marriage","Les fiançailles ne sont pas le mariage"]],["CSE054",["Conjugal rights and coercion","Devoir conjugal et contrainte"]]];
+  return `<div class="aoCSERelated"><small>${esc(L(win,"Existing questions covering related subjects","Questions existantes sur ces sujets"))}</small><div class="aoCSERelatedButtons">${questions.map(([id,label])=>`<button type="button" class="aoCSEBtn" data-ao-cse-question="${id}">${esc(pick(win,label))} →</button>`).join("")}</div></div>`;
+}
+
 function questionHtml(win,item,reveal){
   const detail=item.d?pick(win,item.d):"";
   const isDebate=item.depth==="DEBATE"&&item.debate;
@@ -218,7 +224,7 @@ function questionHtml(win,item,reveal){
   const debateAttribution=isDebate&&item.id!=="CSE045"?`<p class="aoCSEAttributionNote">${esc(attributionIsContext?L(win,"Illustrative objection: the linked sources document context or criticism, not a named advocate of the exact wording.","Objection illustrative : les sources liées documentent un contexte ou une critique, non un auteur défendant cette formulation exacte."):L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the linked texts for the author's original words.","La position adverse est une reformulation sourcée, non une citation littérale. Consultez les textes liés pour retrouver les paroles exactes de l’auteur."))}</p>`:"";
   const apostolateTarget=CSE_SOT_BY_ID[item.id]?.apostolateHandoff||null;
   const apostolateAction=apostolateTarget?`<button type="button" class="aoCSEBtn" data-ao-cse-apostolate>${esc(L(win,"Practise answering this objection","S’exercer à répondre à cette objection"))}</button>`:"";
-  return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?debateAttribution+exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${marriageDisputationsHtml(win,item)}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+  return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?debateAttribution+exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${marriageDisputationsHtml(win,item)}${relatedMarriageQuestionsHtml(win,item)}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
 }
 
 export function createSexualEthicsRuntime(win=globalThis){
