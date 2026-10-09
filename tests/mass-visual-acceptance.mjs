@@ -1059,7 +1059,11 @@ try{
       if(!p)return {missing:cueId,current:api.getGoodFridayState().step.recordId};
       const rect=p.getBoundingClientRect(),frame=card.getBoundingClientRect();
       const target=card.scrollTop+rect.top-frame.top-card.clientHeight*.39+2;
-      card.scrollTop=Math.max(0,Math.min(card.scrollHeight-card.clientHeight,target));
+      // A source cue already aligned with the 39% line at card-open has
+      // not yet been encountered by scrolling. Advance a minimal 12px
+      // rather than pretending the card's initial paint triggers speech.
+      card.scrollTop=Math.min(card.scrollHeight-card.clientHeight,
+        Math.max(12,target));
       card.dispatchEvent(new Event("scroll"));
       return {cueId,scrollTop:card.scrollTop,maxScroll:card.scrollHeight-card.clientHeight,
         paragraphTop:rect.top,viewportTop:frame.top,viewportHeight:card.clientHeight};
