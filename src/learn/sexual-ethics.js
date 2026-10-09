@@ -195,7 +195,7 @@ function marriageDisputationsHtml(win,item){
         const source=CSE_MARRIAGE_AUTHORITY_SOURCES[key];
         if(!source)return "";
         const url=isFr(win)&&source[2]?source[2]:source[1];
-        return `<a class="aoCSEInlineRef" href="${esc(url)}" target="_blank" rel="noopener noreferrer" title="${esc(source[0])}">${esc(key)} ↗</a>`;
+        return `<a class="aoCSEInlineRef" href="${esc(url)}" target="_blank" rel="noopener noreferrer" title="${esc(source[0])}">${esc(shortSourceTitle({title:source[0]}))} ↗</a>`;
       }).filter(Boolean).join("");
       const positionSide=["opposition","appeal","counter"].includes(field);
       const prefix=positionSide?L(win,"Opposing-position references:","Références de la position adverse :"):L(win,"Sources:","Sources :");
