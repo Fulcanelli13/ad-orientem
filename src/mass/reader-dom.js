@@ -573,6 +573,17 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-shell[data-mode="LIVE"][data-handoff="next"] .ao-reader-nav button[data-reader-nav="next"],
   .ao-reader-shell[data-mode="LIVE"][data-handoff="previous"] .ao-reader-nav button[data-reader-nav="previous"]{opacity:.56}
 }
+/* Only source cards too short to scroll between their distinct cues
+   receive additional travel. Measured per card below; regular cards stay
+   unchanged. Keep the frozen donor padding definitions intact above. */
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-card{
+  padding-bottom:calc(max(42vh,250px) + var(--ao-schola-reserve) + var(--ao-short-cue-tail,0px))
+}
+@media(max-width:760px){
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-card{
+    padding-bottom:calc(max(42vh,240px) + var(--ao-schola-reserve) + var(--ao-short-cue-tail,0px))
+  }
+}
 @media(prefers-reduced-motion:reduce){
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
@@ -1519,6 +1530,7 @@ export function createReaderDomAdapter({
         scholaCollapsed=!scholaCollapsed;
         if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
+        ensureShortCardCueTravel();
         return;
       }
       const scholaSlower=event.target?.closest?.("[data-schola-slower]");
@@ -1736,6 +1748,29 @@ export function createReaderDomAdapter({
     return prepared;
   }
 
+  function ensureShortCardCueTravel(){
+    const card=root.querySelector?.(".ao-prayer-card");
+    const body=root.querySelector?.('[data-role="paragraphs"]');
+    if(!card?.getBoundingClientRect || !body?.getBoundingClientRect ||
+       !card?.style?.setProperty || !card?.ownerDocument?.defaultView?.getComputedStyle)return;
+    // Recompute from the original fixed layout every time, not from the
+    // previously extended size. This also handles Schola collapse/expansion.
+    card.style.setProperty("--ao-short-cue-tail","0px");
+    const cueCount=body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")?.length??0;
+    if(cueCount<2)return;
+    const viewport=Math.max(0,card.clientHeight||0);
+    if(!viewport)return;
+    const win=card.ownerDocument.defaultView;
+    const basePadding=Number.parseFloat(win.getComputedStyle(card).paddingBottom)||0;
+    const contentBottom=body.getBoundingClientRect().bottom-card.getBoundingClientRect().top+
+      (Number(card.scrollTop)||0);
+    // Allow at least one meaningful scroll interval per distinct cue, capped
+    // at 240px on longer devices. Never modify individual prayer line heights.
+    const travel=Math.min(240,Math.max(68,(cueCount-1)*56));
+    const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
+    if(extra)card.style.setProperty("--ao-short-cue-tail",extra+"px");
+  }
+
   function renderMoment(moment){
     if(!prepared) throw new Error("Reader shell must be mounted before rendering moments");
     current=normalizeReaderMoment(moment,current ?? {});
@@ -1871,6 +1906,7 @@ export function createReaderDomAdapter({
         }
       }
     }
+    ensureShortCardCueTravel();
     syncReaderRitualHighlights(root,current.gesture);
     return current;
   }
