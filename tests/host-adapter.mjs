@@ -140,34 +140,27 @@ const load=(p)=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const actualRogationGate=load("../data/mass/rogation-proper-source-gate.v1.json");
 const actualRogationText=load("../data/mass/rogation-proper-trilingual.v1.json");
 const rogationDate={...base,date:"2027-05-03",calendarRank:4};
+const actualRogationPreface=load("../data/mass/rogation-easter-preface.v1.json");
 const requestedRogation={
   choice:"ROGATION_MASS",observanceConfirmed:true,
   service:"PUBLIC_PROCESSION",dayClass:4,
   sourceGate:actualRogationGate,sourceProper:actualRogationText,
   preface:{
-    lat:"Praefatio paschalis — 1962 source-resolved Latin fixture.",
-    en:"Easter Preface — fully resolved English fixture.",
-    fr:"Préface pascale — témoin français de validation.",
-    sourceRef:"TEST: Missale Romanum 1962 Easter Preface"
+    ...actualRogationPreface.text,
+    sourceRef:actualRogationPreface.source.edition,
+    sourceUrl:actualRogationPreface.source.url
   }
 };
+const unpublishedGate=structuredClone(actualRogationGate);
+unpublishedGate.publicationAllowed=false;
 let unpublishedBlocked=false;
 try{prepareMassSessionFromV346(rogationDate,{
-  form:"sung",proper,rogationSelection:requestedRogation
+  form:"sung",proper,rogationSelection:{
+    ...requestedRogation,sourceGate:unpublishedGate
+  }
 })}catch(e){unpublishedBlocked=/ROGATION_SELECTION_PROPER_NOT_SOURCE_CERTIFIED/.test(String(e))}
-expect(unpublishedBlocked,"Unpublished Rogation Mass must be rejected at actual host adapter boundary");
-
-const certifiedGate=structuredClone(actualRogationGate);
-certifiedGate.status="PUBLISHED_1962_ROGATION_PROPER";
-certifiedGate.publicationAllowed=true;
-const certifiedProper=structuredClone(actualRogationText);
-certifiedProper.status="PUBLISHED_1962_ROGATION_PROPER";
-certifiedProper.publicationAllowed=true;
-const certifiedSelection={...requestedRogation,
-  sourceGate:certifiedGate,sourceProper:certifiedProper
-};
-// Test-only fixture simulates future editorial publication; production JSON
-// remains unpublished and cannot pass this entry point.
+expect(unpublishedBlocked,"An unpublished source gate must fail closed even with published texts");
+const certifiedSelection=requestedRogation;
 const approved=prepareMassSessionFromV346(rogationDate,{
   form:"sung",proper,rogationSelection:certifiedSelection
 });
