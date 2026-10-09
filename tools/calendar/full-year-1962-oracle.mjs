@@ -102,7 +102,10 @@ try{
     return [...built.cal.entries()].map(([date,raw])=>{
      const obs=raw.celebration?.[0]||null;
      return {date,id:obs?.id||null,title:obs?.title||null,rank:obs?.rank??null,
-      colour:obs?.color||null,commemorations:(raw.commemoration||[]).map(x=>x.id)};
+      colour:obs?.color||null,commemorations:(raw.commemoration||[]).map(x=>x.id),
+      temporale:(raw.tempora||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title})),
+      sanctorale:(raw.sancti||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title})),
+      displaced:(raw.displaced||[]).map(x=>({id:x.id,rank:x.rank,colour:x.color,title:x.title}))};
     });
    },year);
    assert.equal(resolved.length,numberOfDays(year),'App returned incomplete calendar year');
@@ -115,7 +118,7 @@ try{
   const anomalies=[];
   for(let i=0;i<numberOfDays(year);i++){
    const date=new Date(Date.UTC(year,0,i+1)).toISOString().slice(0,10),a=appDays.get(date),o=oracle.get(date);
-   report.dayRows.push({date,app:a?{id:a.id,title:a.title,rank:a.rank,colour:a.colour,commemorations:a.commemorations}:null,
+   report.dayRows.push({date,app:a?{id:a.id,title:a.title,rank:a.rank,colour:a.colour,commemorations:a.commemorations,temporale:a.temporale,sanctorale:a.sanctorale,displaced:a.displaced}:null,
     independent:o?{title:o.title,rank:o.rank,colour:o.colour,commemorations:o.commemorations,unrecorded:o.unrecorded}:null});
    let finding=compare(a,o);
    const dispute=disputesByDate.get(date);
