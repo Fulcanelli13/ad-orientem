@@ -17,5 +17,6 @@ assert.match(runtime,/aoP435930StationOrdinary/,"Stations ordinary-prayer phase 
 assert.match(styles,/opacity \.045s linear/,"45ms donor opacity response changed");
 assert.match(styles,/ao346-current/,"Angelus categorical focus styling missing");
 assert.match(styles,/ao347-current/,"Stations categorical focus styling missing");
-assert.match(browser,/import "\.\/focus-installer\.js";/,"PRAY browser owner no longer installs v3.4.10 focus");
+assert.match(browser,/await import\("\.\/focus-installer\.js"\)/,"PRAY first entry must install v3.4.10 focus");
+assert.doesNotMatch(browser,/^import "\.\/focus-installer\.js";/m,"Prayer focus observer was eagerly installed");
 console.log("PASS v3.4.10 non-Mass reading focus recovery");
