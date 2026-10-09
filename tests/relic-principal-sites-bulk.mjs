@@ -13,15 +13,15 @@ const sources=read("data/shrines/source-registry.v1.json");
 const sacred=read("data/explore/sacred-phenomena-seed.v1.json");
 assert.equal(manifest.schema,"SACRED_ATLAS_RELIC_BULK_PUBLICATION_V1");
 assert.equal(manifest.mode,"SITE_LEVEL_NOT_EVERY_FRAGMENT");
-assert.equal(manifest.sites.length,20);
+assert.equal(manifest.sites.length,39);
 assert.equal(manifest.one_relic_aggregate_per_site,true);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:sh.shrines,pilgrimages:sh.pilgrimages,routes:sh.routes,temporalLinks:sh.temporalLinks,sources:sources.sources,places:geo.places}).pass,true);
-assert.equal(geo.places.length,155);
-assert.equal(sh.shrines.length,151);
-assert.equal(sh.pilgrimages.length,179);
-assert.equal(sources.sources.length,234);
-assert.equal(sacred.relics.length,95);
+assert.equal(geo.places.length,174);
+assert.equal(sh.shrines.length,170);
+assert.equal(sh.pilgrimages.length,198);
+assert.equal(sources.sources.length,253);
+assert.equal(sacred.relics.length,114);
 const idset=new Set(),pmap=new Map(geo.places.map(p=>[p.place_id,p]));
 const sid=new Set(),selectionIds=new Set(selection.site_decisions.map(x=>x.selection_id));
 for(const group of manifest.sites){
@@ -47,7 +47,7 @@ for(const group of manifest.sites){
  assert.equal(sources.sources.filter(x=>x.id===p.source_ids[0]).length,1);
  for(const x of group.subject_ids)sid.add(x);
 }
-assert.ok(sid.size>=20);
+assert.ok(sid.size>=40);
 const projected=projectExploreDataset({geography:geo,shrines:sh,sacredPhenomena:sacred});
 const allRelics=projected.byLens.relics;
 const points=exploreMapFeatures(allRelics);
@@ -62,5 +62,5 @@ const rome=projected.byLens.relics.filter(x=>x.place_id==="place:FR:notre-dame-p
 assert.equal(rome.length,3,"Original Holy Crown/Cross/Nail remain independent records in place profile");
 assert.equal(points.filter(p=>rome.some(x=>x.item_id===p.properties.item_id)).length,1,"Original multi-object relic sites must not flood the pin map");
 const remaining=selection.site_decisions.filter(x=>!x.existing_place_id&&!manifest.sites.some(g=>g.selection_ids.includes(x.selection_id)));
-assert.ok(remaining.length>=15,"Unpublished shortlisted destinations must remain visible as research leads");
-console.log("PASS 20 documented principal relic destinations, 23 subject links, one map pin per place, 95 relic records, 151 shrines, 179 pilgrimages; other candidates remain in research");
+assert.ok(remaining.length===0,"All 39 originally shortlisted new Places are now mapped");
+console.log("PASS 39 principal relic destinations, 43 saint associations, one marker per Place, 114 relic records, 170 shrines, 198 pilgrimages");
