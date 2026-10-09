@@ -8,6 +8,8 @@ const normalized=value=>String(value??"").normalize("NFKD").replace(/[\u0300-\u0
 const meaningful=s=>normalized(s).split(" ").filter(t=>t.length>1);
 const commonNames=new Set(["church","chapel","saint","st","santa","santo","holy","eglise","chapelle","de","la","le","du","des","of","the","our","lady","parish","catholic","notre","dame"]);
 function compareNames(a,b){
+ const na=normalized(a),nb=normalized(b);
+ if(na.length>=10&&nb.length>=10&&(na===nb||na.startsWith(nb+" ")||nb.startsWith(na+" ")))return 0.98;
  const as=new Set(meaningful(a).filter(t=>!commonNames.has(t)));
  const bs=new Set(meaningful(b).filter(t=>!commonNames.has(t)));
  if(!as.size||!bs.size)return 0;
