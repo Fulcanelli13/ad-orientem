@@ -3215,6 +3215,361 @@
       "source_ids": [
         "SHR-ST-ANNE-FISKDALE"
       ]
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "name": {
+        "official": "Sanctuaire Saint-Joseph du Bessillon",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.5329,
+        "lng": 6.1189,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.saintjosephcotignac.com/comment-venir-au-sanctuaire",
+        "source_ref": "OFFICIAL_SHRINE_GPS",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "5248 chemin de Saint-Joseph",
+        "line2": null,
+        "postal_code": "83570",
+        "city": "Cotignac",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "5248 chemin de Saint-Joseph, 83570, Cotignac, France"
+      },
+      "source_ids": [
+        "OFFICIAL_SHRINE_GPS"
+      ]
+    },
+    {
+      "place_id": "place:FR:notre-dame-graces-cotignac",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de Grâces, Cotignac",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.52022,
+        "lng": 6.14678,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W564176391",
+        "source_ref": "osm:way:564176391",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Chemin de Notre-Dame de Grâces",
+        "line2": null,
+        "postal_code": "83570",
+        "city": "Cotignac",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Chemin de Notre-Dame de Grâces, 83570, Cotignac, France"
+      },
+      "source_ids": [
+        "osm:way:564176391"
+      ]
+    },
+    {
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de La Salette",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.85887,
+        "lng": 5.9786,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W239191922",
+        "source_ref": "osm:way:239191922",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "38970",
+        "city": "La Salette-Fallavaux",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "38970, La Salette-Fallavaux, France"
+      },
+      "source_ids": [
+        "osm:way:239191922"
+      ]
+    },
+    {
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "name": {
+        "official": "Abbaye du Mont-Saint-Michel",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.636111,
+        "lng": -1.511389,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q651388",
+        "source_ref": "wikidata:Q651388",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "50170",
+        "city": "Le Mont-Saint-Michel",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "50170, Le Mont-Saint-Michel, France"
+      },
+      "source_ids": [
+        "wikidata:Q651388"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-michele-gargano",
+      "name": {
+        "official": "Santuario di San Michele Arcangelo, Monte Sant'Angelo",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.707778,
+        "lng": 15.954722,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q1448870",
+        "source_ref": "wikidata:Q1448870",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "71037",
+        "city": "Monte Sant'Angelo",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "71037, Monte Sant'Angelo, Italy"
+      },
+      "source_ids": [
+        "wikidata:Q1448870"
+      ]
+    },
+    {
+      "place_id": "place:FR:carmel-lisieux",
+      "name": {
+        "official": "Chapelle du Carmel de Lisieux",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.14163,
+        "lng": 0.22834,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W130886614",
+        "source_ref": "osm:way:130886614",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "35 rue du Carmel",
+        "line2": null,
+        "postal_code": "14100",
+        "city": "Lisieux",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "35 rue du Carmel, 14100, Lisieux, France"
+      },
+      "source_ids": [
+        "osm:way:130886614"
+      ]
+    },
+    {
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "name": {
+        "official": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 46.99235,
+        "lng": 3.15202,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/fr/W126001306",
+        "source_ref": "osm:way:126001306",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "34 rue Saint-Gildard",
+        "line2": null,
+        "postal_code": "58000",
+        "city": "Nevers",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "34 rue Saint-Gildard, 58000, Nevers, France"
+      },
+      "source_ids": [
+        "osm:way:126001306"
+      ]
+    },
+    {
+      "place_id": "place:FR:basilique-ars",
+      "name": {
+        "official": "Basilique d’Ars — Saint Jean-Marie Vianney",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.99238,
+        "lng": 4.82295,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/fr/W143836310",
+        "source_ref": "osm:way:143836310",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "01480",
+        "city": "Ars-sur-Formans",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "01480, Ars-sur-Formans, France"
+      },
+      "source_ids": [
+        "osm:way:143836310"
+      ]
+    },
+    {
+      "place_id": "place:FR:chapelle-saint-vincent-paris",
+      "name": {
+        "official": "Chapelle Saint-Vincent-de-Paul, Paris",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.848861,
+        "lng": 2.321778,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/Chapelle_Saint-Vincent-de-Paul_de_Paris",
+        "source_ref": "frwiki:Chapelle_Saint-Vincent-de-Paul_de_Paris",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "95 rue de Sèvres",
+        "line2": null,
+        "postal_code": "75006",
+        "city": "Paris",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "95 rue de Sèvres, 75006, Paris, France"
+      },
+      "source_ids": [
+        "frwiki:Chapelle_Saint-Vincent-de-Paul_de_Paris"
+      ]
+    },
+    {
+      "place_id": "place:FR:notre-dame-paris",
+      "name": {
+        "official": "Cathédrale Notre-Dame de Paris",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.853,
+        "lng": 2.3499,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q2981",
+        "source_ref": "wikidata:Q2981",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "6 Parvis Notre-Dame — Place Jean-Paul-II",
+        "line2": null,
+        "postal_code": "75004",
+        "city": "Paris",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "6 Parvis Notre-Dame — Place Jean-Paul-II, 75004, Paris, France"
+      },
+      "source_ids": [
+        "wikidata:Q2981"
+      ]
     }
   ],
   "directoryPlaceLinks": [
