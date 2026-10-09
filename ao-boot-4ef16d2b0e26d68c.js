@@ -129,6 +129,14 @@ class DayResolver {
             const main = day.main;
             let path = main?.path || null;
             let inherited = false;
+            // Ordinary Feria: inherit the fifth Easter Sunday's Mass, not
+            // the conditional Rogation proper whose procession was not selected.
+            const rogationFeria=main?.id===':feria:4:w' &&
+                day.tempora?.some(x=>/^tempora:Pasc5-[123]:4:v$/.test(x.id));
+            if(rogationFeria){
+                path='Tempora/Pasc5-0';
+                inherited=true;
+            }
             if (path && main.flexibility === 'tempora' && !(await this.calendarEngine.missaExists(path, diagnostic)))
                 path = null;
             if (!path) {
@@ -522,6 +530,39 @@ function applyRules(calendar, source, date, shifted) {
         return ret([x]);
     return ret([x], [y]);
 }
+// Rubricae generales 1960 §§108–114: retain privileged Sunday/Advent
+// commemorations, and §110's inseparable Petrine prayer (already part of
+// the sourced June 30 Proper). One common policy serves all civil years.
+function completePrivilegedCommemorations(day, source) {
+    const main=day.celebration?.[0];
+    if(!main)return;
+    const existing=new Set((day.commemoration||[]).map(x=>x.id));
+    const add=o=>{if(o&&!existing.has(o.id)){day.commemoration.push(o);existing.add(o.id)}};
+    const temporal=(day.tempora||[]).find(x=>x.flexibility==='tempora');
+    // Sunday is a privileged commemoration beneath an I-class feast of
+    // Our Lady or a saint; do not add it beneath a feast of Our Lord.
+    if(day.date.getDay()===0&&main.rank===1&&main.flexibility==='sancti'&&
+       temporal?.rank===2&&!source.jesusFeasts.has?.(main.id)&&
+       !source.jesusFeasts.includes?.(main.id)){
+        add(temporal);
+    }
+    // Ferias of Advent are privileged (1960 §108e), with a source-
+    // resolved Collect from the corresponding Advent Sunday when the
+    // feria has no distinct weekday Mass in the pinned Missal sources.
+    if(day.date.getDay()!==0&&main.flexibility==='sancti'&&main.rank<=2&&
+       temporal?.name?.startsWith('Adv')){
+        const week=temporal.name.match(/^Adv(\d)-/)?.[1];
+        if(week) add({...temporal,path:'Tempora/Adv'+week+'-0'});
+    }
+    // §110: this inseparable commemoration is contained as Oratio,
+    // Secreta and Postcommunio Petri inside Sancti/06-30.txt. Keep
+    // the identity visible without importing these prayers twice.
+    if(main.id===source.constants.SANCTI_06_30){
+        add({id:'inseparable:sancti:06-29-petrus',name:'Sanctus Petrus Apostolus',
+          title:'St Peter, Apostle',rank:3,path:null,inseparable:true,
+          authority:'1960 General Rubrics §110'});
+    }
+}
 function resolveConcurrency(calendar, source) {
     const shifted = new Map();
     for (const day of calendar.values()) {
@@ -536,11 +577,19 @@ function resolveConcurrency(calendar, source) {
                 feria.colorCode = day.tempora[0].colorCode;
                 feria.color = colorLabel(feria.colorCode);
             }
+            // The three lesser-Litanies ferias are ordinary Paschaltide
+            // (IV class, white). The violet Rogation Mass belongs to
+            // an explicitly selected public supplication (§§87–90).
+            if((day.tempora||[]).some(x=>/^tempora:Pasc5-[123]:4:v$/.test(x.id))){
+                feria.colors=['w'];feria.colorCode='w';feria.color=colorLabel('w');
+                feria.title='Feria after the Fifth Sunday of Easter';
+            }
             celebration = [feria];
         }
         day.celebration = celebration;
         day.commemoration = result.commemoration || [];
         day.displaced = result.displaced || [];
+        completePrivilegedCommemorations(day, source);
         for (const [targetDate, items] of result.shifts || []) {
             const shiftedKey = (0, date_utils_1.iso)(targetDate);
             shifted.set(shiftedKey, [...(shifted.get(shiftedKey) || []), ...items]);
