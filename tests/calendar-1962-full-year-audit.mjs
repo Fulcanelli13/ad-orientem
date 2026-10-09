@@ -116,9 +116,9 @@ try{
   // the ordo must also result in actual second Mass orations; merely adding
   // a Calendar label is not a valid implementation.
   for(const [date,expectedId] of [
-    ["2026-11-01",/^Tempora\\/Pent\\d+-0/],
-    ["2026-11-30",/^Tempora\\/Adv1-1/],
-    ["2026-12-08",/^Tempora\\/Adv2-2/],
+    ["2026-11-01",new RegExp("^Tempora/Pent[0-9]+-0")],
+    ["2026-11-30",new RegExp("^Tempora/Adv1-1")],
+    ["2026-12-08",new RegExp("^Tempora/Adv2-2")],
   ]){
     const row=rows.find(x=>x.date===date);
     assert.ok(!row.failed,date+": day unresolved");
