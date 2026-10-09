@@ -112,26 +112,101 @@
       "field": "colour",
       "app": "White",
       "firstSource": "Green",
-      "status": "REQUIRES_RUBRIC_REVIEW",
+      "status": "ADJUDICATED_FROM_1960_RUBRICS",
       "note": "Missale Online presents this isolated Monday in green while the surrounding octave weekdays have white propers. Do not generalize colour by season.",
       "sources": [
         "https://missale.online/festkalender/en/2024/druck",
         "https://gcatholic.org/calendar/2024/Extraordinary-en",
         "https://manualistpress.com/liturgical-calendar/1962-missal/"
-      ]
+      ],
+      "decision": "WHITE_CONFIRMED",
+      "authority": {
+        "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+        "locator": "General Rubrics 119(a), 127(a): white from Christmas through the end of Epiphany; green begins January 14."
+      },
+      "secondary": "https://gcatholic.org/calendar/2024/Extraordinary-en"
     },
     {
       "date": "2027-01-11",
       "field": "colour",
       "app": "White",
       "firstSource": "Green",
-      "status": "REQUIRES_RUBRIC_REVIEW",
+      "status": "ADJUDICATED_FROM_1960_RUBRICS",
       "note": "The 2027 Monday is green in Missale Online, but the next pre-Baptism weekday remains white. Compare traditional rubrics and alternative 1962 calendars.",
       "sources": [
         "https://missale.online/festkalender/en/2027/druck",
         "https://gcatholic.org/calendar/2027/Extraordinary-en",
         "https://manualistpress.com/liturgical-calendar/1962-missal/"
-      ]
+      ],
+      "decision": "WHITE_CONFIRMED",
+      "authority": {
+        "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+        "locator": "General Rubrics 119(a), 127(a): white from Christmas through the end of Epiphany; green begins January 14."
+      },
+      "secondary": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+    }
+  ],
+  "secondaryAdjudications": [
+    {
+      "dates": [
+        "2024-12-24",
+        "2027-12-24"
+      ],
+      "status": "ADJUDICATED_FROM_1960_RUBRICS",
+      "issue": "GCatholic display assigns white to the Vigil of Christmas while the app and the 1960 Roman rubrics require violet.",
+      "decision": "VIOLET_CONFIRMED",
+      "authority": {
+        "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+        "locator": "General Rubrics 128(a): Advent through the Vigil of Christmas inclusive."
+      },
+      "otherSource": "https://missalemeum.com/en/calendar/2062-12-24"
+    }
+  ],
+  "outstandingSecondaryCases": [
+    {
+      "dates": [
+        "2024-05-06",
+        "2027-05-03"
+      ],
+      "status": "ENGINE_MODE_DISCREPANCY",
+      "issue": "The date-only day engine describes the minor Rogations as a fourth-class violet feria; the default Eastertide feria is fourth-class white, while the violet Rogation Mass is a distinct second-class votive Mass associated with litanies/procession.",
+      "authority": {
+        "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+        "locator": "General Rubrics §§86–90, 119(b), 130(a), General Rubrics of the Missal §346."
+      },
+      "decision": "REQUIRE_EXPLICIT_ROGATION_MASS_SELECTION"
+    },
+    {
+      "dates": [
+        "2027-06-30"
+      ],
+      "status": "COMMEMORATION_REVIEW",
+      "issue": "Commemoration of Saint Peter absent under St Paul feast in pinned resolver; secondary 1962 calendar includes it.",
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+    },
+    {
+      "dates": [
+        "2027-08-15"
+      ],
+      "status": "COMMEMORATION_REVIEW",
+      "issue": "XIII Sunday after Pentecost commemoration missing under first-class Assumption.",
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+    },
+    {
+      "dates": [
+        "2027-11-30"
+      ],
+      "status": "COMMEMORATION_REVIEW",
+      "issue": "Advent feria commemoration missing under St Andrew.",
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+    },
+    {
+      "dates": [
+        "2027-12-08"
+      ],
+      "status": "COMMEMORATION_REVIEW",
+      "issue": "Advent feria commemoration missing under Immaculate Conception.",
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
     }
   ]
 }
