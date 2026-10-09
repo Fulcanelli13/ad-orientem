@@ -147,6 +147,10 @@ class DayResolver {
             const main = day.main;
             let path = main?.path || null;
             let inherited = false;
+            // No generic violet Rogation Mass without explicit litanies.
+            const rogationFeria=main?.id===':feria:4:w'&&
+                day.tempora?.some(x=>/^tempora:Pasc5-[123]:4:v$/.test(x.id));
+            if(rogationFeria){path='Tempora/Pasc5-0';inherited=true;}
             if (path && main.flexibility === 'tempora' && !(await this.calendarEngine.missaExists(path, diagnostic)))
                 path = null;
             if (!path) {
@@ -170,7 +174,7 @@ class DayResolver {
                 rank: (0, calendar_engine_1.classLabel)(day.main.rank || 4),
                 color: day.main.color || 'White',
                 profile: 'ordinary_mass',
-                gloria: inherited ? false : rules.gloria,
+                gloria: rogationFeria ? true : (inherited ? false : rules.gloria),
                 credo: inherited ? false : rules.credo,
                 preface: inherited ? seasonalPreface(day) : (rules.preface || 'Communis'),
                 inherited,
@@ -555,6 +559,25 @@ function applyRules(calendar, source, date, shifted) {
         return ret([x]);
     return ret([x], [y]);
 }
+// Common privileged commemorations, 1960 Rubricae Generales §§108–114.
+function completePrivilegedCommemorations(day,source){
+ const main=day.celebration?.[0];if(!main)return;
+ const existing=new Set((day.commemoration||[]).map(x=>x.id));
+ const add=x=>{if(x&&!existing.has(x.id)){day.commemoration.push(x);existing.add(x.id)}};
+ const t=(day.tempora||[]).find(x=>x.flexibility==='tempora');
+ const lordFeast=source.jesusFeasts?.some?.(id=>id===main.id)||false;
+ if(day.date.getDay()===0&&main.flexibility==='sancti'&&main.rank===1&&
+    t?.rank<=2&&!lordFeast)add(t);
+ if(day.date.getDay()!==0&&main.flexibility==='sancti'&&main.rank<=2&&
+    /^Adv[1-4]-/.test(t?.name||''))add(t);
+ // Saint Peter is named in three linked Oratio/Secreta/Postcommunio
+ // texts inside Sancti/06-30. Represent his inseparable commemoration,
+ // but do not append the same three prayers twice (1960 §110).
+ if(main.id===source.constants.SANCTI_06_30){
+   add({id:'inseparable:sancti:06-29-petrus',title:'St Peter, Apostle',
+     name:'Sanctus Petrus Apostolus',rank:3,path:null,inseparable:true});
+ }
+}
 function resolveConcurrency(calendar, source) {
     const shifted = new Map();
     for (const day of calendar.values()) {
@@ -569,11 +592,18 @@ function resolveConcurrency(calendar, source) {
                 feria.colorCode = day.tempora[0].colorCode;
                 feria.color = colorLabel(feria.colorCode);
             }
+            // An unselected minor Rogation is the ordinary Eastertide
+            // feria. A procession requires a distinct explicit rite choice.
+            if((day.tempora||[]).some(x=>/^tempora:Pasc5-[123]:4:v$/.test(x.id))){
+                feria.colors=['w'];feria.colorCode='w';feria.color=colorLabel('w');
+                feria.title='Feria after the Fifth Sunday of Easter';
+            }
             celebration = [feria];
         }
         day.celebration = celebration;
         day.commemoration = result.commemoration || [];
         day.displaced = result.displaced || [];
+        completePrivilegedCommemorations(day, source);
         for (const [targetDate, items] of result.shifts || []) {
             const shiftedKey = (0, date_utils_1.iso)(targetDate);
             shifted.set(shiftedKey, [...(shifted.get(shiftedKey) || []), ...items]);

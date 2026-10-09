@@ -168,45 +168,51 @@
         "2024-05-06",
         "2027-05-03"
       ],
-      "status": "ENGINE_MODE_DISCREPANCY",
+      "status": "DEFAULT_FERIA_FIXED_RITUAL_MASS_SELECTION_PENDING",
       "issue": "The date-only day engine describes the minor Rogations as a fourth-class violet feria; the default Eastertide feria is fourth-class white, while the violet Rogation Mass is a distinct second-class votive Mass associated with litanies/procession.",
       "authority": {
         "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
         "locator": "General Rubrics §§86–90, 119(b), 130(a), General Rubrics of the Missal §346."
       },
-      "decision": "REQUIRE_EXPLICIT_ROGATION_MASS_SELECTION"
+      "decision": "REQUIRE_EXPLICIT_ROGATION_MASS_SELECTION",
+      "implementation": "Pinned DayResolver now selects IV-class white Eastertide Feria using Tempora/Pasc5-0 as Proper; explicitly selected II-class violet Rogation Mass and source-complete proper still require independent implementation in Issue #694."
     },
     {
       "dates": [
         "2027-06-30"
       ],
-      "status": "COMMEMORATION_REVIEW",
+      "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Commemoration of Saint Peter absent under St Paul feast in pinned resolver; secondary 1962 calendar includes it.",
-      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "implementation": "Inseparable St Peter commemoration is represented in day metadata; Sancti/06-30 contains the reciprocal Collect, Secret and Postcommunion under one conclusion per §110."
     },
     {
       "dates": [
         "2027-08-15"
       ],
-      "status": "COMMEMORATION_REVIEW",
+      "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "XIII Sunday after Pentecost commemoration missing under first-class Assumption.",
-      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "implementation": "Privileged Sunday or Advent feria is supplied as a resolved commemoration with Collect, Secret, and Postcommunion from an existing temporal Mass Proper per §§108–114."
     },
     {
       "dates": [
         "2027-11-30"
       ],
-      "status": "COMMEMORATION_REVIEW",
+      "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Advent feria commemoration missing under St Andrew.",
-      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria."
     },
     {
       "dates": [
         "2027-12-08"
       ],
-      "status": "COMMEMORATION_REVIEW",
+      "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Advent feria commemoration missing under Immaculate Conception.",
-      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+      "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria."
     }
-  ]
+  ],
+  "sourceCorrectionStatus": "2026-10-09: after PR #700, principal default Rogation weekdays and four commemorations are corrected; explicit violet Rogation Mass remains uncertified"
 }
