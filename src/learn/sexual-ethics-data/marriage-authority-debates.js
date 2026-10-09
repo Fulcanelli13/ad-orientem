@@ -8,15 +8,18 @@ export const CSE_MARRIAGE_AUTHORITY_SOURCES=Object.freeze({
   ],
   "CASTI": [
     "Pius XI, Casti Connubii §§26–29",
-    "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+    "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+    "https://www.vatican.va/content/pius-xi/fr/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
   ],
   "ARCANUM": [
     "Leo XIII, Arcanum Divinae §11",
-    "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_10021880_arcanum.html"
+    "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_10021880_arcanum.html",
+    "https://www.vatican.va/content/leo-xiii/fr/encyclicals/documents/hf_l-xiii_enc_10021880_arcanum.html"
   ],
   "MULIERIS": [
     "John Paul II, Mulieris Dignitatem §24",
-    "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html"
+    "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html",
+    "https://www.vatican.va/content/john-paul-ii/fr/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html"
   ],
   "CBE": [
     "Craig Keener, The Case for Mutual Submission in Ephesians 5 (2016), CBE International, Protestant interpretation",
@@ -40,15 +43,18 @@ export const CSE_MARRIAGE_AUTHORITY_SOURCES=Object.freeze({
   ],
   "HV": [
     "Paul VI, Humanae Vitae §13",
-    "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html"
+    "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+    "https://www.vatican.va/content/paul-vi/fr/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html"
   ],
   "AL": [
     "Francis, Amoris Laetitia §156 (2016)",
+    "https://www.vatican.va/content/dam/francesco/pdf/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia_en.pdf",
     "https://www.vatican.va/content/francesco/fr/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia.html"
   ],
   "LIBERTAS": [
     "Leo XIII, Libertas §§5–11",
-    "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
+    "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+    "https://www.vatican.va/content/leo-xiii/fr/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
   ],
   "GROOTHUIS": [
     "Rebecca Merrill Groothuis, 'Biblical Submission within Marriage' (egalitarian position)",
