@@ -584,3 +584,4 @@ assert.match(homeOwnerSource,/data-home-customs-atlas/);
 assert.match(homeOwnerSource,/lens:"traditions",view:"map",query:""/);
 
 console.log("PASS unified Explore projection and four-lens surface");
+await import("./explore-first-load-recovery.mjs");
