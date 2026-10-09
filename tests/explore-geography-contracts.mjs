@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -69,6 +69,15 @@ assert.deepEqual(
     "place:FR:basilique-ars",
     "place:FR:chapelle-saint-vincent-paris",
     "place:FR:notre-dame-paris",
+    "place:FR:notre-dame-du-laus",
+    "place:PL:divine-mercy-plock",
+    "place:IT:basilica-sant-antonio-padova",
+    "place:IT:basilica-san-francesco-assisi",
+    "place:IT:basilica-santa-rita-cascia",
+    "place:IT:basilica-san-nicola-bari",
+    "place:IT:santuario-san-pio-rotondo",
+    "place:IN:basilica-bom-jesus-old-goa",
+    "place:RW:sanctuaire-kibeho",
     "place:IE:knock-shrine",
     "place:IE:lough-derg-station-island",
     "place:MU:pere-laval-sainte-croix",
@@ -189,8 +198,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 24,
-  places: 85,
+  geoAreas: 26,
+  places: 94,
   directoryPlaceLinks: 1,
 });
 

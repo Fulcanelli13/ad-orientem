@@ -421,6 +421,42 @@
       "codes": {
         "iso_alpha2": "PT"
       }
+    },
+    {
+      "geo_area_id": "geo:country:RW",
+      "name": {
+        "official": "Rwanda",
+        "aliases": [
+          "République du Rwanda"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "RW"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:IN",
+      "name": {
+        "official": "India",
+        "aliases": [
+          "Inde"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "IN"
+      }
     }
   ],
   "places": [
@@ -3569,6 +3605,325 @@
       },
       "source_ids": [
         "wikidata:Q2981"
+      ]
+    },
+    {
+      "place_id": "place:FR:notre-dame-du-laus",
+      "name": {
+        "official": "Sanctuaire Notre-Dame du Laus",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.52118,
+        "lng": 6.15213,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/39157168",
+        "source_ref": "GeoNames:13405745",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "05130",
+        "city": "Saint-Étienne-le-Laus",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "05130, Saint-Étienne-le-Laus, France"
+      },
+      "source_ids": [
+        "GeoNames:13405745"
+      ]
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "name": {
+        "official": "Sanktuarium Bożego Miłosierdzia, Płock",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 52.541389,
+        "lng": 19.69,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q9333660",
+        "source_ref": "wikidata:Q9333660",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Stary Rynek 14/18",
+        "line2": null,
+        "postal_code": "09-400",
+        "city": "Płock",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Stary Rynek 14/18, 09-400, Płock, Poland"
+      },
+      "source_ids": [
+        "wikidata:Q9333660"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "name": {
+        "official": "Basilica di Sant'Antonio, Padova",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.40146,
+        "lng": 11.88093,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/28375708",
+        "source_ref": "osm:way:27198535",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza del Santo",
+        "line2": null,
+        "postal_code": "35123",
+        "city": "Padova",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza del Santo, 35123, Padova, Italy"
+      },
+      "source_ids": [
+        "osm:way:27198535"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "name": {
+        "official": "Basilica di San Francesco d'Assisi",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.07485,
+        "lng": 12.60581,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W34357303",
+        "source_ref": "osm:way:34357303",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza San Francesco 2",
+        "line2": null,
+        "postal_code": "06081",
+        "city": "Assisi",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza San Francesco 2, 06081, Assisi, Italy"
+      },
+      "source_ids": [
+        "osm:way:34357303"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "name": {
+        "official": "Basilica di Santa Rita da Cascia",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.71892,
+        "lng": 13.01266,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W739181945",
+        "source_ref": "osm:way:739181945",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Viale Santa Rita 3",
+        "line2": null,
+        "postal_code": "06043",
+        "city": "Cascia",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Viale Santa Rita 3, 06043, Cascia, Italy"
+      },
+      "source_ids": [
+        "osm:way:739181945"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "name": {
+        "official": "Basilica di San Nicola, Bari",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.130261,
+        "lng": 16.870281,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/Basilique_Saint-Nicolas_de_Bari",
+        "source_ref": "frwiki:Basilique_Saint-Nicolas_de_Bari",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Largo Abate Elia 13",
+        "line2": null,
+        "postal_code": "70122",
+        "city": "Bari",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Largo Abate Elia 13, 70122, Bari, Italy"
+      },
+      "source_ids": [
+        "frwiki:Basilique_Saint-Nicolas_de_Bari"
+      ]
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "name": {
+        "official": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.70703,
+        "lng": 15.70312,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://mapcarta.com/W405757483",
+        "source_ref": "osm:way:405757483",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Viale Padre Pio",
+        "line2": null,
+        "postal_code": "71013",
+        "city": "San Giovanni Rotondo",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Viale Padre Pio, 71013, San Giovanni Rotondo, Italy"
+      },
+      "source_ids": [
+        "osm:way:405757483"
+      ]
+    },
+    {
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "name": {
+        "official": "Basilica of Bom Jesus, Old Goa",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 15.500871,
+        "lng": 73.91151,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/Basilique_du_Bon-J%C3%A9sus_de_Goa",
+        "source_ref": "frwiki:Basilique_du_Bon-Jesus_de_Goa",
+        "matched_country_code": "IN",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "403402",
+        "city": "Old Goa",
+        "region": null,
+        "country_code": "IN",
+        "country": "India",
+        "formatted": "403402, Old Goa, India"
+      },
+      "source_ids": [
+        "frwiki:Basilique_du_Bon-Jesus_de_Goa"
+      ]
+    },
+    {
+      "place_id": "place:RW:sanctuaire-kibeho",
+      "name": {
+        "official": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:RW"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -2.648889,
+        "lng": 29.553333,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_marial_de_Kibeho",
+        "source_ref": "frwiki:Sanctuaire_marial_de_Kibeho",
+        "matched_country_code": "RW",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kibeho",
+        "region": null,
+        "country_code": "RW",
+        "country": "Rwanda",
+        "formatted": "Kibeho, Rwanda"
+      },
+      "source_ids": [
+        "frwiki:Sanctuaire_marial_de_Kibeho"
       ]
     }
   ],
