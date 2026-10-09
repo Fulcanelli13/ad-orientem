@@ -1526,8 +1526,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The 1969 Ottaviani–Bacci Short Critical Study argued that the new Order of Mass risked obscuring the Catholic doctrine of sacrifice and its distinction from Protestant Eucharistic theology. This is an actual attributed critical submission, not a fictional objection; its claims must be assessed against the promulgated Missal and subsequent General Instruction.",
-            "fr": "La Brève étude critique Ottaviani–Bacci de 1969 reprochait au nouvel Ordo Missae de risquer d'obscurcir la doctrine catholique du sacrifice et sa différence avec les conceptions protestantes de l'Eucharistie. Il s'agit d'une critique réellement attribuée, non d'une objection imaginaire ; ses conclusions exigent confrontation avec le missel promulgué et sa Présentation générale."
+            "en": "The signed Ottaviani–Bacci letter of 25 September 1969 presents the accompanying Short Critical Study to Paul VI as alleging a serious departure, both overall and in detail, from the theology of the Mass formulated at Trent's Session XXII. Its authors did not merely dislike an altered ceremonial style: they challenged the expression of Eucharistic sacrifice and the possibility of readings compatible with Protestant theology. This remains a historically real, forceful traditional critique. It should be tested against the exact 1969 texts and the subsequent amendment of the General Instruction, not blunted into a generic unease about change or converted automatically into proof of sacramental invalidity.",
+            "fr": "La lettre signée par les cardinaux Ottaviani et Bacci le 25 septembre 1969 présente à Paul VI la Brève étude critique et soutient que le nouvel Ordo Missae s'éloigne gravement, dans son ensemble et ses détails, de la théologie de la messe formulée à la XXIIe session de Trente. Il ne s'agit pas d'une simple préférence cérémonielle : la critique porte sur l'expression du sacrifice eucharistique et sur des interprétations jugées compatibles avec la théologie protestante. Cette objection traditionnelle vigoureuse est historique et réelle. Il faut la confronter aux textes précis de 1969 et aux modifications ultérieures de la Présentation générale, sans la réduire à une aversion au changement ni en déduire automatiquement l'invalidité sacramentelle."
           },
           "source_ids": [
             "OTT69",
@@ -1536,7 +1536,12 @@
           ],
           "attribution": "Cardinals Ottaviani and Bacci, Short Critical Study (1969)",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "OTT69": "Ottaviani–Bacci signed transmittal letter, 25 September 1969 and attached Short Critical Study; claim of departure from Trent Session XXII",
+            "MR69": "Paul VI, Missale Romanum (3 April 1969), actual act of promulgation",
+            "IGMR69_ORIGINAL": "1969 original General Instruction no.7, compare revised wording"
+          }
         },
         {
           "role": "critical_response",
@@ -1747,8 +1752,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The General Instruction discusses the arrangement of an altar so that it can be walked around and Mass can be celebrated facing the people. The Congregation for Divine Worship's 2000 clarification explains that this does not exclude celebration toward the apse. One may discuss prudential architectural preference without misdescribing this legal distinction.",
-            "fr": "La Présentation générale traite de l'aménagement d'un autel permettant d'en faire le tour et d'y célébrer face au peuple. Une clarification de 2000 de la Congrégation pour le culte divin précise que cela n'exclut pas une célébration vers l'abside. On peut débattre de préférence architecturale sans déformer cette distinction juridique."
+            "en": "The General Instruction of the Roman Missal no. 299 describes constructing an altar detached from the wall, so that it may be walked around and Mass may be celebrated facing the people, a placement it calls desirable where possible. In a formal reply of 25 September 2000, the Congregation for Divine Worship answered expressly that this text does not exclude celebration facing the apse: the Latin expedit indicates recommendation rather than obligation, and 'where possible' depends on architectural and pastoral conditions. The actual Roman norm therefore cannot honestly be presented as an absolute prohibition of ad orientem celebration.",
+            "fr": "La Présentation générale du Missel romain (n°299) traite de l'autel détaché du mur, permettant d'en faire le tour et d'y célébrer face au peuple, aménagement recommandé là où c'est possible. Dans une réponse formelle du 25 septembre 2000, la Congrégation pour le culte divin affirme explicitement que ce texte n'exclut pas la célébration vers l'abside : le latin expedit indique une recommandation et non une obligation, et la condition « là où c'est possible » dépend du lieu et de considérations pastorales. Il est donc inexact de présenter la norme romaine comme une interdiction absolue de la célébration ad orientem."
           },
           "source_ids": [
             "GIRM",
@@ -1756,7 +1761,11 @@
           ],
           "attribution": "CDW, reply on General Instruction no. 299 (2000)",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "GIRM": "GIRM §299, altar free-standing and versus populum preference",
+            "CDW2000": "CDWDS Prot. 2036/00/L of 25 September 2000: 'Negative', expedit not binding, apse-facing not excluded"
+          }
         },
         {
           "role": "critical_response",
@@ -1820,15 +1829,18 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Memoriale Domini recounts a consultation of bishops and affirms retention of the traditional practice, while allowing particular episcopal conferences to seek permission under specified conditions. This original instruction is essential evidence: the permission did not arise from a direct conciliar mandate and cannot be retrospectively presented as universal and immediate abolition of reception on the tongue.",
-            "fr": "Memoriale Domini rapporte une consultation des évêques et affirme le maintien de l'usage traditionnel, tout en permettant à certaines conférences épiscopales de demander une autorisation soumise à conditions. Cette instruction originale est essentielle : la permission ne procède pas d'un mandat conciliaire direct et ne peut être présentée rétrospectivement comme l'abolition universelle immédiate de la communion sur la langue."
+            "en": "In Memoriale Domini (1969), the Holy See published the episcopal consultation: on admitting Communion in the hand in addition to the customary manner, 597 bishops voted yes, 1,233 no, and 315 yes with reservations (20 invalid votes). Paul VI therefore decided to preserve the existing manner and warned against irreverence; where a contrary practice already prevailed, a conference could petition Rome after the prescribed deliberation and majority. This was not a universal conciliar mandate to distribute in the hand, still less a decree abolishing reception on the tongue.",
+            "fr": "Memoriale Domini (1969) publie les résultats de la consultation épiscopale : concernant l'admission de la communion dans la main en plus de l'usage reçu, 597 évêques répondirent oui, 1 233 non, et 315 oui avec réserves (20 votes invalides). Paul VI décida donc de maintenir la manière existante en avertissant contre l'irrévérence ; là où la pratique contraire s'était déjà répandue, une conférence pouvait demander l'autorisation romaine selon une procédure et une majorité déterminées. Il ne s'agissait ni d'un mandat conciliaire universel de communier dans la main ni d'une abolition de la communion sur la langue."
           },
           "source_ids": [
             "MEM69"
           ],
           "attribution": "Congregation for Divine Worship, Memoriale Domini (1969)",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "MEM69": "Memoriale Domini, first ballot results 597/1,233/315/20; papal decision and conditional conference petition"
+          }
         },
         {
           "role": "critical_response",
@@ -1894,8 +1906,8 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The 1917 Code contained a norm on women's head coverings, while the 1983 Code did not carry it forward in identical terms. The 1994 Roman communication clarified how service at the altar by girls could be permitted; it did not turn this permission into a universal requirement. These are verifiable legal distinctions, regardless of one's preference for older customs.",
-            "fr": "Le Code de 1917 contenait une règle sur la tête couverte des femmes, alors que le Code de 1983 ne l'a pas reprise dans les mêmes termes. Une communication romaine de 1994 précisa les conditions de permission du service de l'autel par des filles, sans en faire une obligation universelle. Ce sont des distinctions juridiques vérifiables, quelles que soient les préférences pour les coutumes anciennes."
+            "en": "The 1917 Code, canon 1262 §2, prescribed covered heads for women in church, while the 1983 Code did not reproduce this obligation and its canon 6 abrogated the prior Code. This difference between an older binding prescription and a respected devotional custom today must be stated explicitly. Separately, the 1994 communication on female altar servers concerned a possible local permission, not a duty to employ girls; each practice must be classified according to the applicable rite, date and competent authority rather than attributed indiscriminately to Vatican II.",
+            "fr": "Le Code de 1917, canon 1262 §2, prescrivait aux femmes de se couvrir la tête dans l'église ; le Code de 1983 ne reprend pas cette obligation, et son canon 6 abroge l'ancien Code. Il faut distinguer explicitement cette prescription juridique antérieure d'une coutume pieuse conservée aujourd'hui. Par ailleurs, la communication de 1994 sur les filles servant à l'autel concernait une possibilité de permission locale et non un devoir de les employer ; toute pratique doit être qualifiée selon le rite, la date et l'autorité compétente, sans être attribuée indistinctement au concile Vatican II."
           },
           "source_ids": [
             "CAN1917",
@@ -1904,7 +1916,12 @@
           ],
           "attribution": "1917 and 1983 Codes; CDW 1994 instruction",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "CAN1917": "1917 CIC canon 1262 §2, Latin/French text about women's head covering",
+            "CIC6": "1983 CIC canon 6 §1 no.1, abrogation of 1917 Code",
+            "SERV94": "1994 Roman communication, permissive rather than mandatory female altar service"
+          }
         },
         {
           "role": "critical_response",
