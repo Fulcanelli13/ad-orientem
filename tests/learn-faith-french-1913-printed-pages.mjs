@@ -9,7 +9,7 @@ const first=load("data/learn/learn-the-faith-certification-001-018.v1.json");
 const second=load("data/learn/learn-the-faith-certification-019-054.v1.json");
 const english=load("data/learn/ltfaith-pius-x-en-witness-index.v1.json");
 assert.equal(proof.pdfPages,165);
-assert.equal(proof.verifiedPageSamples.length,23);
+assert.equal(proof.verifiedPageSamples.length,70);
 assert.ok([202,226,228,253,400].every(q=>proof.verifiedPageSamples.some(s=>s.question===q)));
 for(const q of proof.verifiedPageSamples){
  assert.equal(q.fullAnswerVisuallyRead,true);
@@ -24,7 +24,7 @@ assert.equal(nuptial.discrepancy,"DATE_RANGES_DIFFER_BETWEEN_LANGUAGE_EDITION_WI
 assert.equal(proof.verifiedPageSamples.find(x=>x.question===400).continuationPdfPageOneIndexed,108);
 assert.equal(proof.all433FrOriginalAnswersPrintPageCollated,false);
 assert.equal(proof.all433ItalianPrintPageCollated,false);
-assert.equal(historic.historicalFrenchWitness.questionAnswersVisuallyChecked,23);
+assert.equal(historic.historicalFrenchWitness.questionAnswersVisuallyChecked,70);
 assert.equal(historic.historicalFrenchWitness.fullScanNumberedQuestionCollation,false);
 const precepts=crosswalk.lessons[45];
 assert.equal(precepts.displayLessonId,"LTF-046");
@@ -45,4 +45,4 @@ assert.ok(last.sources.some(s=>s.ref==="FR1913-Q226"&&s.url===c.french1913PrintS
 assert.ok(last.sources.some(s=>s.ref==="PX1912-Q226"&&s.originalLanguageUrl.includes("/it/legge-precetti.md")));
 assert.equal(buildCatechismGuidedStudy(crosswalk,first,second,english).available,false);
 for(const flag of ["fullOriginalPassageHumanVerification","editorialApproval","canonicalReview","frenchOriginalCollation","nativeFrenchEdit","publicRouteAdded"])assert.equal(crosswalk.publicationGate[flag],false);
-console.log(JSON.stringify({status:"PASS",sampledPrintedFrenchQuestions:23,editionDiscrepancies:1,guidedClaims:181,questions:433,releaseUnlocked:false}));
+console.log(JSON.stringify({status:"PASS",sampledPrintedFrenchQuestions:70,editionDiscrepancies:1,guidedClaims:181,questions:433,releaseUnlocked:false}));
