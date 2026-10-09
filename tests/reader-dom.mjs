@@ -509,11 +509,11 @@ expect(html.includes('content:"RUBRIC";display:block'),
 
 // Restore the final donor's currentColor masking for rich PNG silhouettes.
 // Check real frozen production wrappers rather than a fabricated SVG fixture.
-for(const key of [
-  "priest_elevate_host_rich","priest_elevate_chalice_rich",
-  "priest_profound_bow_rich","priest_gospel_rich",
-  "priest_incense_altar_rich","priest_blessing_rich",
-]){
+const v46Manifest=JSON.parse(readFileSync(new URL("../assets/active/mass-v46/manifest.v1.json",import.meta.url),"utf8"));
+const frozenRichAssets=v46Manifest.assets.filter(row=>row.key.endsWith("_rich"));
+expect(v46Manifest.count===67 && frozenRichAssets.length>=20,
+  "v1.80 master icon bank/alpha masters were unexpectedly reduced");
+for(const {key} of frozenRichAssets){
   const svg=readFileSync(new URL("../assets/active/mass-v46/"+key+".svg",import.meta.url),"utf8");
   const png=extractDonorRichMaskUri(svg);
   expect(png?.startsWith("data:image/png;base64,iVBORw0KGgo"),
