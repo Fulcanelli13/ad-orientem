@@ -18,7 +18,10 @@ function addressLabel(address){
 
 function directionsUrl(place){
   const lat=Number(place?.geo?.lat),lng=Number(place?.geo?.lng);
-  const query=Number.isFinite(lat)&&Number.isFinite(lng)
+  const hasCoordinates=place?.geo?.lat!==null&&place?.geo?.lat!==undefined
+    &&place?.geo?.lng!==null&&place?.geo?.lng!==undefined
+    &&Number.isFinite(lat)&&Number.isFinite(lng);
+  const query=hasCoordinates
     ? String(lat)+","+String(lng)
     : addressLabel(place?.address);
   return query?"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(query):null;
@@ -53,6 +56,26 @@ function uniqueSourceLinks(items,place){
     }));
   }
   return Object.freeze(out);
+}
+
+function relatedPlacesForPlace(geography,placeId){
+  const places=new Map(arr(geography?.places).map(place=>[place?.place_id,place]));
+  return Object.freeze(arr(geography?.placeRelationships).flatMap(link=>{
+    const oppositeId=link?.source_place_id===placeId?link?.target_place_id:
+      link?.target_place_id===placeId?link?.source_place_id:null;
+    const opposite=places.get(oppositeId);
+    if(!opposite||!text(link?.source_url))return [];
+    return [Object.freeze({
+      place_id:oppositeId,
+      title:opposite?.name?.official??oppositeId,
+      address_label:addressLabel(opposite?.address),
+      relationship_kind:link.relationship_kind??"RELATED",
+      description_en:link.description_en??"",
+      description_fr:link.description_fr??link.description_en??"",
+      source_url:link.source_url,
+      source_label:link.source_label??"Institutional source",
+    })];
+  }));
 }
 
 function itemRef(item){
@@ -117,6 +140,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     if(!placeId)continue;
     const related=relatedItemsForPlace(projection,placeId);
     const tlm=exactTlmItems(dataset,projection,placeId);
+    const relatedPlaces=relatedPlacesForPlace(dataset?.geography,placeId);
     const allItems=[...related.shrines,...related.traditions,...related.pilgrimages,...related.apparitions,...related.relics];
     const calendar=temporalRows(related.pilgrimages,today);
     const seasonal=new Map();
@@ -168,11 +192,17 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       traditions:Object.freeze(related.traditions.map(itemRef)),
       pilgrimages:Object.freeze(related.pilgrimages.map(itemRef)),
       tlm,
+      related_places:relatedPlaces,
       saints:Object.freeze(saints),
       novenas,
       calendar,
       seasonal_pilgrimages,
-      sources:uniqueSourceLinks(allItems,place),
+      sources:Object.freeze([...uniqueSourceLinks(allItems,place),
+        ...relatedPlaces.filter(row=>row.source_url).map(row=>Object.freeze({
+          id:row.source_url,title:row.source_label,issuer:"Institutional place relationship",
+          url:row.source_url,role:"RELATIONSHIP",
+        })),
+      ]),
       exact_tlm_link_state:tlm.length?"VERIFIED":"NONE",
       exact_tlm_note:tlm.length
         ?"Only Directory venues with an explicit shared-Place relationship are shown here."
