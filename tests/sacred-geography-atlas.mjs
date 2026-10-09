@@ -58,7 +58,7 @@ const detail=renderExploreToString(buildExploreViewModel({
 }));
 assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);
-assert.match(detail,/sans authentification/);
+assert.match(detail,/aucune authentification canonique indépendante/);
 const profiles=buildExplorePlaceProfiles({geography:geo},projection,{today:"2026-10-09"});
 assert.equal(profiles.length,84);
 const cotignac=profiles.find(p=>p.place_id==="place:FR:saint-joseph-bessillon");
