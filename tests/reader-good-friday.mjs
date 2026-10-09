@@ -188,4 +188,64 @@ for(const [record,posture,object] of [
 }
 assert.equal(objectRite.project().step.recordId,"GF-COM-860");
 
+// The personal Communion flag can change in the rite, without forcing a
+// reconstruction of the liturgical texts or erasing the current source cue.
+const changing=createGoodFridayReaderController({graph,payload,willReceiveCommunion:false});
+changing.goToRecord("GF-COM-840");
+assert.equal(changing.project().willReceiveCommunion,false);
+assert.equal(changing.project().posture,"KNEEL");
+assert.equal(changing.project().card.paragraphs.length,7);
+changing.setWillReceiveCommunion(true);
+assert.equal(changing.project().step.recordId,"GF-COM-840",
+  "changing personal Communion choice unexpectedly restarted the rite");
+assert.equal(changing.project().willReceiveCommunion,true);
+assert.equal(changing.built.steps.filter(x=>x.recordId==="GF-COM-850").length,1);
+changing.next();
+assert.equal(changing.project().step.recordId,"GF-COM-850");
+assert.equal(changing.project().personalState,"RECEIVING_COMMUNION");
+assert.equal(changing.project().personalOnly,true);
+changing.setWillReceiveCommunion(false);
+assert.equal(changing.project().step.recordId,"GF-COM-860",
+  "changing to noncommunicant during personal Communion returned to priest prayers");
+assert.equal(changing.project().personalState,null);
+assert.equal(changing.project().posture,"STAND");
+assert.equal(changing.project().willReceiveCommunion,false);
+assert.ok(!changing.built.steps.some(x=>x.recordId==="GF-COM-850"),
+  "opted-out personal Communion event remained in runtime");
+changing.previous();
+assert.equal(changing.project().step.recordId,"GF-COM-840");
+changing.next();
+assert.equal(changing.project().step.recordId,"GF-COM-860",
+  "noncommunicant was forced through personal reception");
+changing.setWillReceiveCommunion(true);
+assert.equal(changing.project().step.recordId,"GF-COM-860",
+  "adding a personal option changed current common concluding posture");
+changing.goToRecord("GF-COM-840");
+changing.next();
+assert.equal(changing.project().step.recordId,"GF-COM-850");
+changing.next();
+assert.equal(changing.project().step.recordId,"GF-COM-860");
+changing.next();
+assert.equal(changing.project().step.recordId,"GF-END-900");
+assert.equal(changing.project().action,"RESPOND_AMEN");
+changing.next();
+assert.equal(changing.project().step.recordId,"GF-END-910");
+assert.equal(changing.project().action,null);
+assert.equal(changing.project().objectState,null);
+assert.equal(changing.project().personalState,null);
+assert.equal(changing.project().atEnd,true);
+
+// The source-bound preparation and Pater remain identical whichever personal
+// choice is made: priest formulas are not a proxy for personal reception.
+const baseline=buildGoodFridayReader({graph,payload,willReceiveCommunion:false});
+const withCommunion=buildGoodFridayReader({graph,payload,willReceiveCommunion:true});
+for(const id of ["GF-COM-810","GF-COM-820","GF-COM-830","GF-COM-840","GF-COM-860","GF-END-900","GF-END-910"]){
+  const a=baseline.steps.find(x=>x.recordId===id);
+  const b=withCommunion.steps.find(x=>x.recordId===id);
+  assert.equal(JSON.stringify(a.paragraphs),JSON.stringify(b.paragraphs),
+    id+" text or source metadata changed because of a personal Communion decision");
+  assert.equal(a.posture,b.posture);
+  assert.equal(a.objectState,b.objectState);
+}
+
 console.log("Good Friday distinct rite: PASS — 56-state graph, Passion death pause, nine Solemn Prayers, three unveilings, personal veneration/Communion and 1962 prayer policy.");

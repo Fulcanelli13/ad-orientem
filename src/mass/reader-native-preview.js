@@ -477,6 +477,7 @@ export async function mountNativeReaderPreview({
     let reader=null;
     let shownSurface=null;
     let personalControls=null;
+    let communionControls=null;
     let deathCueRunning=false;
     let formulaCueRunning=false;
     let formulaKneelRecord=null;
@@ -495,6 +496,7 @@ export async function mountNativeReaderPreview({
       "GF-VEN-620":Object.freeze({title:"One simple genuflection",label:"I have genuflected"}),
       "GF-VEN-630":Object.freeze({title:"Venerate the Cross",label:"I have venerated"}),
       "GF-VEN-640":Object.freeze({title:"Return to your place",label:"Continue"}),
+      "GF-COM-850":Object.freeze({title:"Your Holy Communion",label:"I have received"}),
     });
 
     function createGoodFridayControls(){
@@ -516,6 +518,48 @@ export async function mountNativeReaderPreview({
       panel.append(title,action);
       stage.append(panel);
       personalControls=panel;
+    }
+
+    function createCommunionControls(){
+      const stage=host.querySelector?.(".ao-reader-stage");
+      if(!stage)return;
+      const panel=doc.createElement("div");
+      panel.className="ao-rite-choice ao-good-friday-communion";
+      panel.dataset.role="good-friday-communion-choice";
+      panel.hidden=true;
+      panel.setAttribute("role","group");
+      panel.setAttribute("aria-label","Your Holy Communion");
+      panel.innerHTML='<span class="ao-rite-choice-label">Will you receive Holy Communion?</span>'+
+        '<span class="ao-rite-choice-actions">'+
+        '<button type="button" data-gf-communion="false" aria-pressed="false">Remain</button>'+
+        '<button type="button" data-gf-communion="true" aria-pressed="false">Receive</button>'+
+        '</span>';
+      stage.append(panel);
+      communionControls=panel;
+    }
+
+    function updateCommunionControls(){
+      if(!communionControls)return;
+      const state=controller.project();
+      const visible=state.step?.recordId==="GF-COM-840";
+      communionControls.hidden=!visible;
+      const stage=communionControls.closest(".ao-reader-stage");
+      if(stage)stage.dataset.riteChoice=String(visible);
+      if(!visible)return;
+      for(const button of communionControls.querySelectorAll("[data-gf-communion]"))
+        button.setAttribute("aria-pressed",
+          String(button.dataset.gfCommunion===String(state.willReceiveCommunion)));
+    }
+
+    function onCommunionChoice(event){
+      const button=event.target?.closest?.("[data-gf-communion]");
+      if(!button||!communionControls?.contains?.(button)||communionControls.hidden)return;
+      event.stopPropagation?.();
+      const card=host.querySelector?.(".ao-prayer-card");
+      const previousScroll=card?.scrollTop??0;
+      controller.setWillReceiveCommunion(button.dataset.gfCommunion==="true");
+      showGoodFriday();
+      if(card)card.scrollTop=previousScroll;
     }
 
     function updateGoodFridayControls(){
@@ -716,6 +760,7 @@ export async function mountNativeReaderPreview({
       }
       syncReaderRitualHighlights(host,moment?.ritualTrigger??moment?.gesture??null);
       updateGoodFridayControls();
+      updateCommunionControls();
       root.dataset.r17NativeRiteRecord=step?.recordId??"none";
       root.dataset.r17OwnerGesture=dying?"R28_GF_PASSION_DEATH_SOURCE":
         activeFormula?"R28_GF_FORMULA_EXACT_SOURCE":
@@ -726,6 +771,7 @@ export async function mountNativeReaderPreview({
         posture:r28Posture(state),personalState:state.personalState,
         exactFormulaActive:activeFormula,exactLevateActive:activeRise,
         objectState:state.objectState,deathPause:dying,
+        willReceiveCommunion:state.willReceiveCommunion,
       });
       return state.card??null;
     }
@@ -749,6 +795,7 @@ export async function mountNativeReaderPreview({
     function destroyGoodFriday(){
       host.querySelector?.(".ao-prayer-card")?.removeEventListener?.("scroll",onGoodFridayScroll);
       host.removeEventListener?.("click",onGoodFridayAction);
+      host.removeEventListener?.("click",onCommunionChoice);
       reader.destroy?.();
       root.remove?.();
       if(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root===root){
@@ -763,7 +810,9 @@ export async function mountNativeReaderPreview({
     doc.body.appendChild(root);
     reader.mount(prepared);
     createGoodFridayControls();
+    createCommunionControls();
     host.addEventListener?.("click",onGoodFridayAction);
+    host.addEventListener?.("click",onCommunionChoice);
     host.querySelector?.(".ao-prayer-card")?.addEventListener?.("scroll",onGoodFridayScroll,{passive:true});
     showGoodFriday();
 
@@ -784,6 +833,10 @@ export async function mountNativeReaderPreview({
       goToGoodFridayRecord:id=>{
         formulaKneelRecord=null;
         controller.goToRecord(id);
+        return showGoodFriday();
+      },
+      setWillReceiveCommunion:value=>{
+        controller.setWillReceiveCommunion(value);
         return showGoodFriday();
       },
       destroy:destroyGoodFriday,

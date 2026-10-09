@@ -1171,9 +1171,112 @@ try{
     "GF-X-700","personal veneration did not return cleanly to the common rite");
   assert.equal(await gfPanel.isVisible(),false,"personal Cross-veneration controls persisted after completion");
 
+  // Good Friday personal reception is selected in situ, not inferred from
+  // the celebrant's Communion or the Ecce Agnus Dei text. Test both routes
+  // and the exact sacramental-object / posture boundaries in Chromium.
+  const communionTransitions=[];
+  for(const [id,posture,object] of [
+    ["GF-COM-810","KNEEL","BLESSED_SACRAMENT_RETURNING"],
+    ["GF-COM-820","STAND","BLESSED_SACRAMENT_AT_ALTAR"],
+    ["GF-COM-830","STAND",null],
+    ["GF-COM-840","KNEEL",null]
+  ]){
+    const projection=await page.evaluate(id=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      api.goToGoodFridayRecord(id);
+      const state=api.getGoodFridayState();
+      return {
+        id:state.step.recordId,
+        posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+        object:globalThis.AO_R17_NATIVE_READER_STATE?.objectState??null,
+        paragraphCount:state.card.paragraphs.length,
+      };
+    },id);
+    assert.equal(projection.id,id);
+    assert.equal(projection.posture,posture,id+" wrong temporary posture");
+    assert.equal(projection.object,object,id+" sacramental object state drifted");
+    communionTransitions.push(projection);
+  }
+  const communionChoice=page.locator("#ao-r17-native-reader-preview [data-role='good-friday-communion-choice']");
+  assert.equal(await communionChoice.isVisible(),true,
+    "the faithful cannot select personal Communion during preparation");
+  const receive=communionChoice.locator('[data-gf-communion="true"]');
+  const communionRemain=communionChoice.locator('[data-gf-communion="false"]');
+  assert.equal(await communionRemain.getAttribute("aria-pressed"),"true",
+    "Good Friday silently assumed personal reception without authorization");
+  const receiverBox=await receive.boundingBox();
+  assert.ok(receiverBox?.height>=44,"Communion participation control is not touch safe");
+  await receive.click();
+  assert.equal(await receive.getAttribute("aria-pressed"),"true");
+  assert.equal(await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.getGoodFridayState().step.recordId),
+    "GF-COM-840","personal choice unexpectedly moved the common reader");
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+  const receiving=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const state=api.getGoodFridayState();
+    return {
+      id:state.step.recordId,action:state.action,
+      posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+      personal:state.personalOnly,choice:state.willReceiveCommunion,
+    };
+  });
+  assert.equal(receiving.id,"GF-COM-850");
+  assert.equal(receiving.action,"RECEIVE_COMMUNION");
+  assert.equal(receiving.posture,"KNEEL");
+  assert.equal(receiving.personal,true);
+  assert.equal(receiving.choice,true);
+  assert.equal(await communionChoice.isVisible(),false);
+  assert.equal(await gfPanel.isVisible(),true,
+    "individual Communion completion was not exposed");
+  await gfPanel.locator("[data-good-friday-advance]").click();
+  const received=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const state=api.getGoodFridayState();
+    return {id:state.step.recordId,posture:state.posture,object:state.objectState,
+      personal:state.personalState};
+  });
+  assert.deepEqual(received,{id:"GF-COM-860",posture:"STAND",object:null,personal:null});
+  assert.equal(await gfPanel.isVisible(),false,"personal Communion action persisted after completion");
+
+  await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord("GF-COM-840"));
+  await communionRemain.click();
+  assert.equal(await communionRemain.getAttribute("aria-pressed"),"true");
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+  const nonCommunicant=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const state=api.getGoodFridayState();
+    return {id:state.step.recordId,posture:state.posture,personal:state.personalState,
+      choseCommunion:state.willReceiveCommunion};
+  });
+  assert.deepEqual(nonCommunicant,{
+    id:"GF-COM-860",posture:"STAND",personal:null,choseCommunion:false,
+  },"noncommunicant was still forced through a personal reception step");
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+  const ending=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const state=api.getGoodFridayState();
+    return {id:state.step.recordId,action:state.action,
+      paragraphs:state.card.paragraphs.length,
+      title:state.card.title};
+  });
+  assert.equal(ending.id,"GF-END-900");
+  assert.equal(ending.paragraphs,3);
+  assert.equal(ending.action,"RESPOND_AMEN");
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+  const departure=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const state=api.getGoodFridayState();
+    return {id:state.step.recordId,atEnd:state.atEnd,action:state.action,
+      object:state.objectState};
+  });
+  assert.deepEqual(departure,{id:"GF-END-910",atEnd:true,action:null,object:null});
+  assert.equal(await communionChoice.isVisible(),false);
+  await page.screenshot({path:resolve(out,"16b-good-friday-communion-conclusion.png"),fullPage:false});
+
   const goodFriday={beforeDeath,atDeath,afterDeath,
     solemnPrayerPairs:prayerChecks,unveilingIntervals:unveilChecks,
-    venerationSteps:venerationRecords.length};
+    venerationSteps:venerationRecords.length,
+    communionTransitions,receiving,received,nonCommunicant,ending,departure};
   await page.screenshot({path:resolve(out,"16-good-friday-veneration-exit.png"),fullPage:false});
 
   // Holy Thursday joining is a choice, not an automatic transition from
