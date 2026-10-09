@@ -575,6 +575,17 @@ function completePrivilegedCommemorations(day,source){
  // Saint Peter is named in three linked Oratio/Secreta/Postcommunio
  // texts inside Sancti/06-30. Represent his inseparable commemoration,
  // but do not append the same three prayers twice (1960 §110).
+ // 1962 Missal, Dec 4: under St Peter Chrysologus the Advent feria
+ // precedes an ordinary commemoration of St Barbara (Virgin and Martyr).
+ // The pinned donor does not include St Barbara as a universal calendar ID.
+ // Reuse the existing pinned Latin Proper (Sancti/12-04pl), which contains
+ // her named Collect and points to the Common of a Virgin Martyr for the
+ // other two orations; do not invent a date-specific Calendar substitute.
+ if(main.id===source.constants.SANCTI_12_04 && day.date.getDay()!==0){
+   add({id:'commemoration:12-04-barbara:4:r',
+     title:'St Barbara, Virgin and Martyr',name:'Sancta Barbara Virgo et Martyr',
+     rank:4,path:'Sancti/12-04pl',properSource:'pinned-sancti-12-04pl'});
+ }
  if(main.id===source.constants.SANCTI_06_30){
    add({id:'inseparable:sancti:06-29-petrus',title:'St Peter, Apostle',
      name:'Sanctus Petrus Apostolus',rank:3,path:null,inseparable:true});
