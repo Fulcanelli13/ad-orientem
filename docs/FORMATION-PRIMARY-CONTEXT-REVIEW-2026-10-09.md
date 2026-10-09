@@ -1,0 +1,14 @@
+# Formation — original-context review, substantive correction pass 1 (9 October 2026)
+
+This change goes beyond checking that a hyperlink is present. It checks **17 specific bounded original-document propositions**, including the Roman and SSPX sides of a live legal disagreement, and rewrites both English and French prose in **six canonical Church Crisis dossiers**. See the structured audit file for exact documents, passages, conclusions and limitations.
+
+**Substantive corrections made**
+- `CR-LIT-01`: distinguishes the experimental **1951** Easter Vigil, **16 November 1955** decree and mandatory observance from **25 March 1956**. Original Congregation decree inspected.
+- `CR-DOC-05`: gives the SSPX's *actual* civil religious-indifferentism objection, not an anonymous catchphrase. Its 2019/2020 General House doctrinal text examined and compared with *Dignitatis humanae*.
+- `CR-ECC-06`: differentiates canon 144's narrowly supplied faculties from canon 1353's suspension of a **penalty**. DDF's **2 July 2026** decree and explanatory note and the SSPX's **13 July** preliminary-recourse communiqué are actual different documents. Recourse cannot be casually described as supplying all marriage/confession faculties. This is an editorial interpretation with no expert judicial adjudication.
+- `CR-ECC-07`: corrects the 1988 claim from “the pope imposed penalties” to “the pope reported the parties **had incurred** excommunications.” Explicitly distinguishes original `Ecclesia Dei` from the **1999 SiSiNoNo** retrospective SSPX-hosted defence. The latter is *not* a contemporaneous 1988 official General House decree.
+- `CR-MOR-03` and `CR-MOR-04`: adds an October 1986 **article written and signed by Charles E. Curran** to his side of the debate, alongside the 1986 CDF letter and `Donum veritatis`. New direct opposing source materially improves debate fairness; the critic's institutional statement no longer speaks alone for him.
+
+**Explicit unresolved original-source failures:** Original proponent text for the proportionalist position in `CR-MOR-05` remains to be checked (rather than mistake `Veritatis splendor`, its *critic*, for a firsthand statement). For `CR-ORG-07`, the final *Dei Verbum* does not prove why particular *preparatory schemas* were rejected: their drafts and the meeting acts still need comparison. Both are recorded as partial, not approved.
+
+**Hard hold:** All 141 canonical answer drafts remain non-public, with *every theological/canonical, original-context and French publication-approval flag false*. The scoped finding “primary passage inspected editorially” never means an independent doctrinal or native-French certification. Tests check source IDs, original URLs, changes in user-facing prose and lack of accidental approval. No unrelated Mass, prayer or app runtime edits.
