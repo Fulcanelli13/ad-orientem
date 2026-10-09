@@ -18,6 +18,8 @@ on:
       - "ao-inline-*.css"
       - "data/presentation/startup-thin-shell.v1.json"
       - "tools/extract-thin-html-shell.mjs"
+      - "tools/pack-extracted-classic-js.mjs"
+      - "ao-packed-*.js"
       - "tests/thin-html-browser-e2e.mjs"
       - "assets/generated-sprites/**"
       - "assets/generated-symbols/**"
@@ -63,6 +65,8 @@ on:
       - "ao-inline-*.css"
       - "data/presentation/startup-thin-shell.v1.json"
       - "tools/extract-thin-html-shell.mjs"
+      - "tools/pack-extracted-classic-js.mjs"
+      - "ao-packed-*.js"
       - "tests/thin-html-browser-e2e.mjs"
       - "assets/generated-sprites/**"
       - "assets/generated-symbols/**"
@@ -104,6 +108,7 @@ jobs:
       - run: npm run test:tree-hygiene
       - run: node tests/startup-payload-contract.mjs
       - run: node tools/extract-thin-html-shell.mjs --verify
+      - run: node tools/pack-extracted-classic-js.mjs --verify
       - run: npm run test:app-live-guards
       - run: npm run test:presentation-fx
       - run: npm run test:home-owner
