@@ -149,6 +149,15 @@ export function createHomeOwner(win=globalThis){
       });
       return;
     }
+    const customsAtlas=target?.closest?.("[data-home-customs-atlas]");
+    if(customsAtlas){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("find"))
+        .then(result=>result?.ok?win?.AO_FIND_APP_V1?.open?.({lens:"traditions",view:"map",query:""}):false)
+        .catch(error=>{console.error("Customs Atlas navigation failed",error)});
+      return;
+    }
     const find=target?.closest?.("[data-home-find]");
     if(find){
       event.preventDefault?.();

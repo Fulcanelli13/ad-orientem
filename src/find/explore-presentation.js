@@ -35,6 +35,31 @@ function addressText(address){
 function pill(name,value,label,current){
   return '<button type="button" data-find-filter="'+esc(name)+'" data-find-filter-value="'+esc(value)+'" class="'+(current===value?"active":"")+'" aria-pressed="'+String(current===value)+'">'+esc(label)+'</button>';
 }
+
+function atlasSelect(name,title,allLabel,options,current){
+  const opt=(value,label)=>'<option value="'+esc(value)+'"'+(current===value?' selected':'')+'>'+esc(label)+'</option>';
+  return '<label class="aoAtlasSelect"><span>'+esc(title)+'</span><select data-atlas-filter="'+esc(name)+'" aria-label="'+esc(title)+'">'
+    +opt("ANY",allLabel)+arr(options).map(item=>opt(item.value,item.label)).join("")+'</select></label>';
+}
+function customsAtlasPanel(vm){
+  const language=vm.language,facets=vm.atlasFacets??{},filters=vm.filters??{};
+  let html='<section class="aoCustomsAtlasPanel" aria-label="'+esc(L(language,"Customs Atlas","Atlas des coutumes"))+'">';
+  html+='<div class="aoCustomsAtlasHeading"><div><small>'+esc(L(language,"TRADITIONS & PRACTICES","TRADITIONS ET PRATIQUES"))+'</small>'
+    +'<h2>'+esc(L(language,"Customs Atlas","Atlas des coutumes"))+'</h2></div>'
+    +'<p>'+esc(L(language,"Explore documented Catholic practices by place, historical description and devotional-calendar context.","Explorer les pratiques catholiques attestées par lieu, période historique et contexte du calendrier dévotionnel."))+'</p></div>';
+  const active=(filters.atlasArea&&filters.atlasArea!=="ANY")||(filters.atlasPeriod&&filters.atlasPeriod!=="ANY")||(filters.atlasCalendar&&filters.atlasCalendar!=="ANY");
+  html+='<details class="aoCustomsAtlasDiscovery"'+(active?' open':'')+'><summary>'+esc(L(language,"Filter by place, period or calendar context","Filtrer par lieu, période ou calendrier"))+'</summary><div class="aoCustomsAtlasFacets">'
+    +atlasSelect("atlasArea",L(language,"Geography","Géographie"),L(language,"All areas","Toutes les régions"),facets.areas,filters.atlasArea??"ANY")
+    +atlasSelect("atlasPeriod",L(language,"Historical period","Période historique"),L(language,"All periods","Toutes les périodes"),facets.periods,filters.atlasPeriod??"ANY")
+    +atlasSelect("atlasCalendar",L(language,"Calendar context","Contexte calendaire"),L(language,"All contexts","Tous les contextes"),
+      arr(facets.calendar).map(item=>item.value==="NOVENA"?{...item,label:L(language,"Related novena","Neuvaine associée")}:item),filters.atlasCalendar??"ANY")
+    +'</div>';
+  html+='<div class="aoCustomsAtlasFoot"><span>'+esc(L(language,
+    "Periods and calendar hints are source descriptions, not calculated feast dates. Unverified places remain in List.",
+    "Les périodes et indications calendaires décrivent les sources, sans calcul de dates liturgiques. Les lieux non vérifiés restent dans la liste."))+'</span>'
+    +'<button type="button" data-atlas-clear>'+esc(L(language,"Clear filters","Effacer les filtres"))+'</button></div>';
+  return html+'</details></section>';
+}
 function sourceLinks(item,language){
   const links=arr(item?.source_links);
   if(!links.length)return "";
@@ -210,6 +235,7 @@ export function buildExploreViewModel({
   items=[],
   lens="tlm",
   counts={},
+  atlasFacets=null,
   loadedProviders=[],
   unavailableProviders=[],
   view="list",
@@ -228,6 +254,7 @@ export function buildExploreViewModel({
     items:list,
     lens,
     counts,
+    atlasFacets,
     loadedProviders:arr(loadedProviders),
     unavailableProviders:arr(unavailableProviders),
     view,
@@ -251,6 +278,7 @@ export function renderExploreToString(vm){
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+esc(lens)+'" class="'+(vm.lens===lens?"active":"")+'" aria-pressed="'+String(vm.lens===lens)+'"><span>'+esc(label)+'</span>'+(Number.isFinite(Number(count))?'<small>'+esc(count)+'</small>':"")+'</button>';
   }
   html+='</nav>';
+  if(vm.lens==="traditions")html+=customsAtlasPanel(vm);
 
   html+='<div class="aoFindSearch"><input type="search" data-find-query value="'+esc(f.query||"")+'" placeholder="'+esc(
     vm.lens==="tlm"?L(vm.language,"City, church, diocese or country","Ville, église, diocèse ou pays"):

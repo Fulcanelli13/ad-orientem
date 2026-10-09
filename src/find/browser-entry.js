@@ -8,6 +8,7 @@ import {
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { mapViewport, mountExploreMap } from "./map-runtime.js";
+import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 
 const VERSION="explore-v1";
@@ -47,6 +48,12 @@ function installStyle(win){
     ".aoExploreLensTabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:14px 16px 4px}",
     ".aoExploreLensTabs button{min-width:0;border:1px solid rgba(217,197,154,.16);background:#0e151e;color:#c9bea8;border-radius:var(--ao-control-radius,11px);padding:10px 7px;font:650 var(--ao-type-ui-sm,12px)/1.15 var(--ao-font-ui,system-ui,sans-serif);display:grid;gap:4px;text-align:center}",
     ".aoExploreLensTabs button small{font-size:var(--ao-type-ui-xs,11px);color:#817765}.aoExploreLensTabs button.active{background:#d9c59a;color:#080c12;border-color:#d9c59a}.aoExploreLensTabs button.active small{color:#493f30}",
+    ".aoCustomsAtlasPanel{margin:12px 16px 6px;padding:17px;border:1px solid rgba(217,197,154,.22);border-radius:16px;background:linear-gradient(145deg,rgba(217,197,154,.06),rgba(10,18,27,.6))}",
+    ".aoCustomsAtlasHeading{display:flex;align-items:end;justify-content:space-between;gap:14px}.aoCustomsAtlasHeading small{font:650 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:#bba47a}.aoCustomsAtlasHeading h2{margin:5px 0 0;font:600 25px/1.1 var(--ao-font-display,Georgia,serif);color:#eadfcb}.aoCustomsAtlasHeading p{max-width:390px;margin:0;color:#ad9f8c;font:13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
+    ".aoCustomsAtlasDiscovery{margin-top:12px;padding-top:10px;border-top:1px solid rgba(217,197,154,.14)}.aoCustomsAtlasDiscovery>summary{cursor:pointer;min-height:36px;color:#d9c59a;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);display:list-item;list-style-position:inside}.aoCustomsAtlasDiscovery>summary:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}",
+    ".aoCustomsAtlasFacets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:16px}.aoAtlasSelect{display:grid;gap:6px;min-width:0}.aoAtlasSelect span{font:650 11px/1.25 var(--ao-font-ui,system-ui,sans-serif);color:#c6b18b}.aoAtlasSelect select{width:100%;min-width:0;min-height:44px;box-sizing:border-box;border:1px solid rgba(217,197,154,.24);border-radius:10px;background:#101a24;color:#efe7d4;padding:10px 26px 10px 10px;font:13px var(--ao-font-ui,system-ui,sans-serif)}.aoAtlasSelect select:focus-visible,.aoCustomsAtlasFoot button:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}",
+    ".aoCustomsAtlasFoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}.aoCustomsAtlasFoot span{color:#978d7e;font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoCustomsAtlasFoot button{flex:none;border:1px solid rgba(217,197,154,.28);border-radius:999px;background:transparent;color:#e6d4b4;padding:9px 11px;cursor:pointer;font:650 11px var(--ao-font-ui,system-ui,sans-serif)}",
+    "@media(max-width:700px){.aoCustomsAtlasHeading{display:block}.aoCustomsAtlasHeading p{max-width:none;margin-top:9px}.aoCustomsAtlasFacets{grid-template-columns:1fr}.aoCustomsAtlasFoot{align-items:flex-start;flex-direction:column}}",
     ".aoFindSearch{padding:12px 16px 14px}.aoFindSearch input{width:100%;box-sizing:border-box;padding:14px 15px;border-radius:12px;border:1px solid rgba(217,197,154,.18);background:#111923;color:#fff;font:16px/1.2 inherit}",
     ".aoFindViewTabs{display:flex;gap:6px;padding:0 16px 10px}",
     ".aoFindViewTabs button,.aoFindFilters button{border:1px solid rgba(217,197,154,.16);background:#0e151e;color:#c9bea8;border-radius:var(--ao-pill-radius,999px);padding:9px 12px;font:650 var(--ao-type-ui-sm,12px)/1 var(--ao-font-ui,system-ui,sans-serif)}",
@@ -95,6 +102,9 @@ export function createFindOwner(win=globalThis){
     unaCum:"ANY",
     liturgy:"ANY",
     massType:"ANY",
+    atlasArea:"ANY",
+    atlasPeriod:"ANY",
+    atlasCalendar:"ANY",
     selectedId:null,
     selectedPlaceId:null,
   };
@@ -130,6 +140,7 @@ export function createFindOwner(win=globalThis){
       const records=filterDirectoryRecords(dataset.directory?.records??[],state);
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
     }
+    if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
     return filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
   }
 
@@ -143,6 +154,7 @@ export function createFindOwner(win=globalThis){
       items,
       lens:state.lens,
       counts:projection?.counts??{},
+      atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:data.directory?.loadedProviders??[],
       unavailableProviders:data.directory?.unavailableProviders??[],
       view:state.view,
@@ -179,6 +191,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
     openState=true;
@@ -208,6 +221,11 @@ export function createFindOwner(win=globalThis){
     if(!openState)return;
     const target=event?.target;
     if(target?.closest?.("[data-find-glossary]")){event.preventDefault?.();event.stopPropagation?.();openGlossary();return}
+    if(state.lens==="traditions"&&target?.closest?.("[data-atlas-clear]")){
+      event.preventDefault?.();
+      state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
+      state.selectedId=null;state.selectedPlaceId=null;void paint();return;
+    }
     if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(target?.closest?.("[data-find-close-detail]")){state.selectedId=null;void paint();return}
     if(target?.closest?.("[data-find-close-place]")){state.selectedPlaceId=null;void paint();return}
@@ -253,8 +271,16 @@ export function createFindOwner(win=globalThis){
     state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;void paint();
   }
 
+  function onChange(event){
+    if(!openState||state.lens!=="traditions")return;
+    const field=event?.target?.closest?.("[data-atlas-filter]");
+    if(!field)return;
+    setFilter(field.dataset.atlasFilter,field.value);
+  }
+
   win?.document?.addEventListener?.("click",onClick,true);
   win?.document?.addEventListener?.("input",onInput,true);
+  win?.document?.addEventListener?.("change",onChange,true);
   installStyle(win);ensureRoot(win);
 
   return Object.freeze({
@@ -277,6 +303,7 @@ export function createFindOwner(win=globalThis){
       close();
       win?.document?.removeEventListener?.("click",onClick,true);
       win?.document?.removeEventListener?.("input",onInput,true);
+      win?.document?.removeEventListener?.("change",onChange,true);
       getRoot(win)?.remove?.();
     }
   });

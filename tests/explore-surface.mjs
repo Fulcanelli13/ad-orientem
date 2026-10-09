@@ -8,6 +8,7 @@ import {
 } from "../src/find/explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "../src/find/explore-presentation.js";
 import { exploreMapFeatures } from "../src/find/map-runtime.js";
+import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/customs-atlas-filters.js";
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const geography=readJson("data/geography/seed-registry.v1.json");
@@ -510,5 +511,60 @@ assert.match(novenaRuntimeSource,/Object\.keys\(CORPUS\)\.length===16/,"Novena Q
 const homeSource=readFileSync("src/home/presentation.js","utf8");
 assert.match(homeSource,/Traditional Masses, shrines, customs and pilgrimages/);
 assert.match(homeSource,/data-home-find/,"Explore route lost shell-compatible Home trigger");
+
+
+const customsAtlasItems=projection.byLens.traditions;
+const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
+assert.ok(atlasFacets.areas.some(option=>option.value==="geo:country:FR"&&option.label==="France"),"French customs geography disappeared");
+assert.ok(atlasFacets.periods.some(option=>option.value==="Historical; largely declined"),"source-owned historical period was lost");
+assert.ok(atlasFacets.calendar.some(option=>option.value==="HINT:May"),"documented May Marian context was lost");
+assert.ok(atlasFacets.calendar.some(option=>option.value==="NOVENA"),"Novena context filter was lost");
+const atlasFrance=filterCustomsAtlasItems(customsAtlasItems,{atlasArea:"geo:country:FR"});
+assert.ok(atlasFrance.length>0&&atlasFrance.length<customsAtlasItems.length);
+assert.ok(atlasFrance.every(item=>(item.raw?.attestation??item.raw?.link)?.geo_area_id==="geo:country:FR"));
+const atlasHistorical=filterCustomsAtlasItems(customsAtlasItems,{atlasPeriod:"Historical; largely declined"});
+assert.ok(atlasHistorical.length>0&&atlasHistorical.every(item=>item.raw?.custom?.custom_id==="FOOD-001"),"historical facet must use the recorded period, not fabricated chronology");
+const atlasMay=filterCustomsAtlasItems(customsAtlasItems,{atlasCalendar:"HINT:May"});
+assert.ok(atlasMay.length>0&&atlasMay.every(item=>item.raw?.custom?.custom_id==="DEV-001"));
+const atlasNovenas=filterCustomsAtlasItems(customsAtlasItems,{atlasCalendar:"NOVENA"});
+assert.ok(atlasNovenas.some(item=>item.kind==="NOVENA_CONTEXT"));
+assert.ok(atlasNovenas.some(item=>item.kind==="CUSTOM_ATTESTATION"&&item.actions.some(action=>action.novena_id)));
+const atlasLourdes=filterCustomsAtlasItems(customsAtlasItems,{query:"Lourdes",atlasArea:"geo:country:FR"});
+assert.ok(atlasLourdes.length>0&&atlasLourdes.every(item=>item.search_text.includes("lourdes")),"geography and search must compose");
+assert.equal(filterCustomsAtlasItems(customsAtlasItems,{atlasArea:"INVALID"}).length,0);
+assert.equal(filterCustomsAtlasItems(customsAtlasItems,{atlasCalendar:"HINT:UNSOURCED"}).length,0);
+assert.equal(exploreMapFeatures(atlasFrance).every(feature=>feature.geometry.type==="Point"),true);
+assert.ok(customsAtlasItems.some(item=>!item.map_publishable),"unmapped source records must stay discoverable");
+const atlasVm=buildExploreViewModel({
+  language:"en",items:customsAtlasItems,lens:"traditions",counts:projection.counts,
+  atlasFacets,view:"map",
+  filters:{atlasArea:"geo:country:FR",atlasPeriod:"ANY",atlasCalendar:"NOVENA"},
+});
+const atlasHtml=renderExploreToString(atlasVm);
+assert.match(atlasHtml,/Customs Atlas/);
+assert.match(atlasHtml,/data-atlas-filter="atlasArea"/);
+assert.match(atlasHtml,/data-atlas-filter="atlasPeriod"/);
+assert.match(atlasHtml,/data-atlas-filter="atlasCalendar"/);
+assert.match(atlasHtml,/data-atlas-clear/);
+assert.match(atlasHtml,/value="geo:country:FR" selected/);
+assert.match(atlasHtml,/value="NOVENA" selected/);
+assert.match(atlasHtml,/Periods and calendar hints are source descriptions/);
+assert.match(atlasHtml,/data-find-view="map"/);
+const atlasFrHtml=renderExploreToString(buildExploreViewModel({
+  language:"fr",items:atlasFrance,lens:"traditions",counts:projection.counts,
+  atlasFacets,filters:{atlasArea:"ANY",atlasPeriod:"ANY",atlasCalendar:"ANY"},view:"list",
+}));
+assert.match(atlasFrHtml,/Atlas des coutumes/);
+assert.match(atlasFrHtml,/Géographie/);
+assert.match(atlasFrHtml,/Période historique/);
+assert.match(atlasFrHtml,/Contexte calendaire/);
+assert.doesNotMatch(shrineHtml,/data-atlas-filter=/,"Customs Atlas controls must remain confined to Traditions");
+assert.match(browserSource,/filterCustomsAtlasItems/);
+assert.match(browserSource,/addEventListener\?\.\("change",onChange,true\)/);
+assert.match(browserSource,/options\?\.view==="map"/);
+assert.match(homeSource,/data-home-customs-atlas/);
+const homeOwnerSource=readFileSync("src/home/browser-entry.js","utf8");
+assert.match(homeOwnerSource,/data-home-customs-atlas/);
+assert.match(homeOwnerSource,/lens:"traditions",view:"map",query:""/);
 
 console.log("PASS unified Explore projection and four-lens surface");
