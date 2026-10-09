@@ -9,6 +9,7 @@ on:
       - 'tests/scripture-cpdv-errata.mjs'
       - 'tests/scripture-author-master-collation.mjs'
       - 'tests/scripture-cpdv-stage-and-crosswalk.mjs'
+      - 'tests/scripture-esther-crosswalk.mjs'
       - '.github/workflows/scripture-source-audit.yml'
   workflow_dispatch:
 jobs:
@@ -31,10 +32,14 @@ jobs:
         run: node tests/scripture-author-master-collation.mjs
       - name: Test CPDV pack staging and cross-version safety
         run: node tests/scripture-cpdv-stage-and-crosswalk.mjs
+      - name: Test complete Catholic Esther crosswalk and edition-aware bookmarks
+        run: node tests/scripture-esther-crosswalk.mjs
       - name: Fetch and verify historical Catholic text witnesses
         run: node tools/scripture/fetch-upstream.mjs
       - name: Check primary publisher text and correct only attested errata in research snapshots
         run: node tools/scripture/verify-cpdv-edition.mjs artifacts/scripture-candidates
+      - name: Audit 274 CPDV Esther references against all 275 Douay–Rheims source verses
+        run: node tools/scripture/audit-esther-crosswalk.mjs artifacts/scripture-candidates
       - name: Collate all 73 CPDV books against the author's maintained master text
         run: node tools/scripture/collate-cpdv-master.mjs artifacts/scripture-candidates 73
       - name: Build all 73 original-author CPDV book packs as unpublished staging assets
