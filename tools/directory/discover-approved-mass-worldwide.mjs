@@ -7,7 +7,7 @@ const BASE="https://www.latinmassdir.org";
 const iso=s=>String(s||"").trim().toUpperCase();
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const sourceUrl=x=>{try{return new URL(x,BASE).href}catch{return null}};
-const venueUrl=x=>/^https:\/\/www\.latinmassdir\.org\/venue\/[a-z0-9-]+\/?$/i.test(x||"");
+const venueUrl=x=>/^https:\/\/www\.latinmassdir\.org\/venue\/[^/?#]+\/?$/i.test(x||"");
 export function countryIndexFromHtml(html){
  const rows=extractTableRows(html),result=[];
  for(const row of rows){
