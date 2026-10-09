@@ -3,8 +3,8 @@ import {auditWorldwideDirectory} from "../tools/directory/audit-worldwide-corpus
 
 const result=auditWorldwideDirectory();
 assert.equal(result.schema,"AO_DIRECTORY_WORLDWIDE_COVERAGE_AUDIT_V1");
-assert.equal(result.source_venue_records,1414);
-assert.equal(result.mass_evidenced_records,1177);
+assert.equal(result.source_venue_records,1419);
+assert.equal(result.mass_evidenced_records,1182);
 assert.equal(result.without_mass_assertion,237);
 assert.equal(result.by_provider.length,21);
 const byId=new Map(result.by_provider.map(p=>[p.provider,p]));
