@@ -44,40 +44,35 @@ assert.equal(SEXUAL_ETHICS_VERSION,"1.4.0");
 assert.equal(SEXUAL_ETHICS_ROUTE,"learn.sexual_ethics");
 assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
-assert.equal(CSE_MARRIAGE_AUTHORITY_DEBATES.length,8,"Eight internal disputations, not new question IDs");
+assert.equal(CSE_MARRIAGE_AUTHORITY_DEBATES.length,8,"Eight compact sub-debates in existing CSE045");
 assert.equal(new Set(CSE_MARRIAGE_AUTHORITY_DEBATES.map(d=>d.id)).size,8);
 for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
  assert.match(entry.id,/^MAR-0[1-8]$/);
- for(const field of ["question","opposition","reply","rejoinder","finding","traditionalAssessment"]){
-   assert.equal(entry[field]?.length,2,entry.id+" "+field+" must be bilingual");
-   for(const text of entry[field])assert.ok(text.length>(field==="question"?18:65),entry.id+" "+field+" too thin");
- }
- for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
+ assert.equal(entry.question?.length,2,entry.id+" bilingual title");
+ let englishWords=0;
+ for(const field of CSE_DEBATE_FIELDS){
+   assert.equal(entry[field]?.length,2,entry.id+" "+field+" must match standard eight-step schema");
+   for(const [language,passage] of entry[field].entries()){
+     const words=passage.trim().split(/\s+/).length;
+     assert.ok(words>=7&&words<=70,entry.id+" "+field+" "+(language?"FR":"EN")+" must stay concise: "+words);
+     assert.doesNotMatch(passage,/a serious Catholic answer|a serious defender|a specialist must|methodologically weak|the answer must|this question should|this module|not a named opponent|a sourced reconstruction|editorial synthesis|a traditional account must|une réponse catholique sérieuse|un défenseur sérieux|il serait méthodologiquement faible|une défense traditionnelle doit|cette réponse ne doit/i,entry.id+" "+field+" contains editorial meta prose");
+     if(language===0)englishWords+=words;
+   }
    const refs=entry.sources?.[field]||[];
-   assert.ok(refs.length>0,entry.id+" "+field+" without evidence");
-   for(const key of refs)assert.match(CSE_MARRIAGE_AUTHORITY_SOURCES[key]?.[1]||"",/^https:\/\//,entry.id+" "+field+" source "+key);
+   assert.ok(refs.length>0,entry.id+" "+field+" missing stage-level sources");
+   for(const key of refs){
+     assert.ok(CSE_MARRIAGE_AUTHORITY_SOURCES[key]?.[1]?.startsWith("https://"),entry.id+" "+field+" missing original link "+key);
+   }
  }
-}
-for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
- for(const field of ["opposition","reply","rejoinder"]){
-  for(const text of entry[field])assert.ok(text.length>=400,entry.id+" "+field+" lacks sufficient substantive reasoning");
- }
- assert.ok(entry.oppositionKind,entry.id+" must classify the objection as sourced or reasoned");
+ assert.ok(englishWords>=110&&englishWords<=240,entry.id+" does not match existing debate length: "+englishWords);
+ assert.equal(entry.traditionalAssessment,undefined,entry.id+" must not have a ninth/special debate stage");
+ assert.equal(entry.finding,undefined,entry.id+" must not retain an incompatible stage");
+ assert.ok(entry.oppositionKind,entry.id+" must distinguish sourced from reasoned objection");
  if(entry.oppositionKind==="REASONED_APPLICATION_NOT_NAMED_OPPONENT")
-  assert.ok(!entry.sources.opposition.includes("GROOTHUIS"),entry.id+" improperly attributes a constructed argument to a scholar");
+   assert.ok(!entry.sources.opposition.includes("GROOTHUIS"),entry.id+" cannot falsely attribute an illustrative argument");
 }
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("KEENER_2021")||d.sources.opposition.includes("GROOTHUIS")));
-assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
-assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.every(d=>d.traditionalAssessment[0].length>200 && d.traditionalAssessment[1].length>200));
-
-const forbiddenDebateMeta=/(?:a serious Catholic answer|a serious defender|a specialist must|methodologically weak|the answer must|this question should|this module|not a named opponent|a sourced reconstruction|editorial synthesis|a traditional account must|une réponse catholique sérieuse|un défenseur sérieux|il serait méthodologiquement faible|une défense traditionnelle doit|cette réponse ne doit)/i;
-for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
- for(const field of ["opposition","reply","rejoinder","finding","traditionalAssessment"]){
-  for(const [language,paragraph] of entry[field].entries()){
-   assert.doesNotMatch(paragraph,forbiddenDebateMeta,entry.id+" "+field+" "+(language?"FR":"EN")+" contains editorial instructions");
-  }
- }
-}
+assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.counter.includes("MULIERIS")));
 
 assert.match(CSE_QUESTION_MAP.CSE045.q[0],/headship and submission/,"Submission disputes must be visible from existing CSE045 title");
 assert.match(CSE_QUESTION_MAP.CSE045.q[1],/soumission/);
@@ -345,7 +340,8 @@ assert.match(runtime,/data-ao-cse-inline-source/);
 assert.match(runtime,/function marriageDisputationsHtml/);
 const maritalHtmlRenderer=runtime.slice(runtime.indexOf("function marriageDisputationsHtml"),runtime.indexOf("function questionHtml"));
 assert.doesNotMatch(maritalHtmlRenderer,/Arguments attributed to named authors paraphrase|Ces débats restent soumis|Reasoned objection \(not attributed/);
-assert.match(runtime,/Traditional Catholic teaching/);
+assert.match(maritalHtmlRenderer,/Object\.entries\(DEBATE_LABELS\)/);
+assert.doesNotMatch(maritalHtmlRenderer,/MARRIAGE_DEBATE_STAGE_LABELS|traditionalAssessment|rejoinder/);
 assert.match(runtime,/CSE_MARRIAGE_AUTHORITY_DEBATES/);
 assert.match(runtime,/data-ao-cse-disputation/);
 assert.match(runtime,/marriageDisputationsHtml\(win,item\)/);

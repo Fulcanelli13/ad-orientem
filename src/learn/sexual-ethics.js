@@ -65,7 +65,11 @@ function css(){
 .aoCSEList{display:grid;border-top:1px solid var(--border,rgba(255,255,255,.13))}.aoCSERow{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 2px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));background:transparent;color:inherit;text-align:left}.aoCSERow strong{font:600 1rem/1.3 var(--font-display,Georgia,serif)}.aoCSERow span{color:var(--muted,rgba(238,233,223,.62));font-size:var(--ao-type-ui-sm,12px)}.aoCSERow:hover,.aoCSERow:focus-visible{outline:none;background:rgba(255,255,255,.025)}
 .aoCSESectionMeta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:5px}.aoCSEBadge{display:inline-flex;padding:3px 7px;border:1px solid var(--liturgical-border,rgba(199,174,109,.35));border-radius:999px;color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;text-transform:uppercase}.aoCSELayer{color:var(--muted);font-size:var(--ao-type-ui-xs,11px)}
 .aoCSEQNum{color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em}.aoCSEQuestion{margin:6px 0 14px;font:600 clamp(1.45rem,6vw,2.2rem)/1.12 var(--font-display,Georgia,serif)}.aoCSEAnswer{margin:0;padding:16px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:13px;background:var(--surface-1,#102235);font-size:1rem;line-height:1.62}
-.aoCSEMaritalDisputations{margin:20px 0 8px;padding-top:15px;border-top:1px solid var(--border,rgba(255,255,255,.16))}.aoCSEMaritalDisputations h2{font:600 1.2rem/1.3 var(--font-display,Georgia,serif);margin:0 0 8px}.aoCSEMaritalDisputations>p{color:var(--muted);line-height:1.52;margin:0 0 12px}.aoCSEDisputation{margin:8px 0;border:1px solid var(--border,rgba(255,255,255,.18));border-radius:10px;background:var(--surface-1,#102235);overflow:hidden}.aoCSEDisputation summary{padding:13px 14px;cursor:pointer;font-weight:600;line-height:1.45}.aoCSEDisputation[open] summary{border-bottom:1px solid var(--border,rgba(255,255,255,.14));color:var(--liturgical,#c7ae6d)}.aoCSEDisputation .aoCSEDebateStep{border-radius:0;background:transparent}.aoCSEDisputation .aoCSEDebateStep:last-child{border-bottom:0}.aoCSEDisputation .aoCSEDebateStep[data-stage="traditionalAssessment"]{border-left:3px solid var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07))}.aoCSEDisputation .aoCSEDebateStep[data-stage="traditionalAssessment"] p{font-weight:550}.aoCSEDisputationRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font:var(--ao-type-ui-xs,11px)/1.4 var(--ao-font-ui,system-ui,sans-serif)}.aoCSEDisputationRefs a{border:1px solid var(--liturgical-border,rgba(199,174,109,.30));border-radius:6px;padding:3px 6px;text-decoration:none;color:var(--liturgical,#c7ae6d)}
+.aoCSEMaritalDisputations{margin:20px 0 8px;padding-top:15px;border-top:1px solid var(--border,rgba(255,255,255,.16))}.aoCSEMaritalDisputations h2{font:600 1.2rem/1.3 var(--font-display,Georgia,serif);margin:0 0 8px}.aoCSEMaritalDisputations>p{color:var(--muted);line-height:1.52;margin:0 0 12px}.aoCSEDisputation{margin:8px 0;border:1px solid var(--border,rgba(255,255,255,.18));border-radius:10px;overflow:hidden}
+.aoCSEDisputation summary{padding:13px 14px;cursor:pointer;font-weight:600;line-height:1.45;background:var(--surface-1,#102235)}
+.aoCSEDisputation[open] summary{color:var(--liturgical,#c7ae6d);border-bottom:1px solid var(--border,rgba(255,255,255,.14))}
+.aoCSEDisputation .aoCSEDebate{margin:0;gap:0}
+
 .aoCSEExplore{margin-top:12px}.aoCSEDetail{margin-top:12px;padding:14px;border-left:2px solid var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07));line-height:1.62}.aoCSEDetail[hidden]{display:none!important}
 .aoCSEDebate{display:grid;gap:0;padding:0;border-left:0;background:transparent}.aoCSEDebateStep{padding:14px 14px 15px;border-left:2px solid var(--border,rgba(255,255,255,.16));border-bottom:1px solid var(--border,rgba(255,255,255,.10));background:var(--surface-1,#102235)}.aoCSEDebateStep:first-child{border-left-color:var(--liturgical,#c7ae6d);border-radius:12px 12px 0 0}.aoCSEDebateStep:last-child{border-left-color:var(--liturgical,#c7ae6d);border-bottom:0;border-radius:0 0 12px 12px}.aoCSEDebateStep small{display:block;margin-bottom:6px;color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase}.aoCSEDebateStep p{margin:0;line-height:1.6}.aoCSEAttributionNote{padding:10px 12px;margin:0;color:var(--muted,rgba(238,233,223,.76));font:var(--ao-type-ui-sm,12px)/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoCSEDebateStep[data-stage="opposition"] p,.aoCSEDebateStep[data-stage="counter"] p{font-style:italic}.aoCSEDebateStep[data-stage="bottom"] p{font-weight:600}
 .aoCSERelated{margin:17px 0 0;padding-top:11px;border-top:1px solid var(--border,rgba(255,255,255,.13))}.aoCSERelated small{display:block;margin-bottom:8px;color:var(--muted);font-size:var(--ao-type-ui-xs,11px);text-transform:uppercase;letter-spacing:.08em}.aoCSERelatedButtons{display:flex;gap:8px;flex-wrap:wrap}.aoCSERelated .aoCSEBtn{font-size:var(--ao-type-ui-sm,12px)}
@@ -182,25 +186,22 @@ function debateDetails(win,item){
   }).join("");
 }
 
-const MARRIAGE_DEBATE_STAGE_LABELS=Object.freeze({
- opposition:["Objection","Objection"],
- reply:["Catholic reply","Réponse catholique"],
- rejoinder:["Further objection","Nouvelle objection"],
- finding:["Conclusion","Conclusion"],
- traditionalAssessment:["Traditional Catholic teaching","Enseignement catholique traditionnel"]
-});
+// Ephesians 5 subdebates reuse the same eight steps and labels as every CSE debate.
 function marriageDisputationsHtml(win,item){
   if(item.id!=="CSE045")return "";
-  const stages=Object.keys(MARRIAGE_DEBATE_STAGE_LABELS);
   const entries=CSE_MARRIAGE_AUTHORITY_DEBATES.map(entry=>{
-    const body=stages.map(stage=>{
-      const citations=(entry.sources[stage]||[]).map(key=>{
+    const stages=Object.entries(DEBATE_LABELS).map(([field,label])=>{
+      const refs=(entry.sources[field]||[]).map(key=>{
         const source=CSE_MARRIAGE_AUTHORITY_SOURCES[key];
-        return source?`<a href="${esc(isFr(win)&&source[2]?source[2]:source[1])}" target="_blank" rel="noopener noreferrer">${esc(source[0])} ↗</a>`:"";
-      }).join("");
-      return `<section class="aoCSEDebateStep" data-stage="${esc(stage)}"><small>${esc(pick(win,MARRIAGE_DEBATE_STAGE_LABELS[stage]))}</small><p>${esc(pick(win,entry[stage]))}</p><nav class="aoCSEDisputationRefs" aria-label="${esc(L(win,"References","Références"))}">${citations}</nav></section>`;
+        if(!source)return "";
+        const url=isFr(win)&&source[2]?source[2]:source[1];
+        return `<a class="aoCSEInlineRef" href="${esc(url)}" target="_blank" rel="noopener noreferrer" title="${esc(source[0])}">${esc(shortSourceTitle({title:source[0]}))} ↗</a>`;
+      }).filter(Boolean).join("");
+      const positionSide=["opposition","appeal","counter"].includes(field);
+      const prefix=positionSide?L(win,"Opposing-position references:","Références de la position adverse :"):L(win,"Sources:","Sources :");
+      return `<section class="aoCSEDebateStep" data-stage="${esc(field)}"><small>${esc(pick(win,label))}</small><p>${esc(pick(win,entry[field]))}${refs?`<span class="aoCSEInlineRefs" data-label="${esc(prefix)}">${refs}</span>`:""}</p></section>`;
     }).join("");
-    return `<details class="aoCSEDisputation" data-ao-cse-disputation="${esc(entry.id)}"><summary>${esc(pick(win,entry.question))}</summary>${body}</details>`;
+    return `<details class="aoCSEDisputation" data-ao-cse-disputation="${esc(entry.id)}"><summary>${esc(pick(win,entry.question))}</summary><div class="aoCSEDebate">${stages}</div></details>`;
   }).join("");
   return `<section class="aoCSEMaritalDisputations" aria-label="${esc(L(win,"Ephesians 5 marriage debates","Débats sur le mariage et Éphésiens 5"))}"><h2>${esc(L(win,"Marriage, headship and freedom","Mariage, primauté et liberté"))}</h2>${entries}</section>`;
 }
