@@ -7,6 +7,9 @@ import {
   SEXUAL_ETHICS_RESEARCH_LEAD,
   CSE_QUESTIONS,
   CSE_QUESTION_MAP,
+  CSE_EDITORIAL_ARCHIVE_IDS,
+  CSE_PUBLIC_QUESTIONS,
+  CSE_PUBLIC_QUESTION_MAP,
   CSE_SECTIONS,
   CSE_SOURCES,
   CSE_SOURCE_MAP,
@@ -40,6 +43,12 @@ assert.equal(SEXUAL_ETHICS_VERSION,"1.4.0");
 assert.equal(SEXUAL_ETHICS_ROUTE,"learn.sexual_ethics");
 assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
+assert.deepEqual(CSE_EDITORIAL_ARCHIVE_IDS,["CSE055","CSE056","CSE058"]);
+assert.equal(CSE_PUBLIC_QUESTIONS.length,147);
+assert.equal(CSE_PUBLIC_QUESTIONS.filter(item=>item.depth==="DEBATE").length,52);
+assert.equal(CSE_PUBLIC_QUESTION_MAP.CSE056,undefined);
+assert.equal(CSE_PUBLIC_QUESTION_MAP.CSE058,undefined);
+assert.ok(CSE_PUBLIC_QUESTION_MAP.CSE051&&CSE_PUBLIC_QUESTION_MAP.CSE057);
 assert.equal(CSE_SECTIONS.length,15);
 assert.equal(CSE_VALIDATION.ok,true,CSE_VALIDATION.errors.join("\n"));
 assert.deepEqual(CSE_VALIDATION.depthCounts,{STANDARD:75,EXPANDED:20,DEBATE:55});
@@ -200,7 +209,7 @@ const q035=CSE_QUESTIONS.find(item=>item.id==="CSE035");
 assert.equal(q035.layer,"PASTORAL_CASE");
 assert.match(q035.a[0],/not itself fornication/i);
 const q051=CSE_QUESTIONS.find(item=>item.id==="CSE051");
-assert.ok(q051.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§19–20"));
+assert.ok(q051.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§19–22"));
 const q057=CSE_QUESTIONS.find(item=>item.id==="CSE057");
 assert.match(q057.a[0],/integrated into the marital act/i);
 const q076=CSE_QUESTIONS.find(item=>item.id==="CSE076");
@@ -239,7 +248,7 @@ assert.match(q039.q[0],/flirting/i);
 assert.ok(q039.aliases.includes("emotional cheating"));
 
 const q040=CSE_QUESTIONS.find(item=>item.id==="CSE040");
-assert.match(q040.q[0],/oral sex, manual stimulation/i);
+assert.match(q040.q[0],/avoiding intercourse/i);
 assert.ok(q040.aliases.includes("handjob before marriage"));
 assert.equal(q040.depth,"DEBATE");
 
@@ -282,7 +291,8 @@ assert.match(presentation,/id:"learn\.sexual_ethics"/);
 assert.match(owner,/installSexualEthicsModule/);
 assert.match(owner,/ensureSexualEthicsRegistry/);
 assert.match(owner,/AO_SEXUAL_ETHICS_V1/);
-assert.match(runtime,/Search all 150 questions/);
+assert.match(runtime,/CSE_PUBLIC_QUESTIONS\.length/);
+assert.match(runtime,/CSE_ARCHIVED_REDIRECTS/);
 assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/paragraphSourceLinks/);
 assert.match(runtime,/data-ao-cse-inline-source/);

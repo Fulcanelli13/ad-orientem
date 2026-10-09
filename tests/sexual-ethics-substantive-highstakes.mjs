@@ -43,5 +43,6 @@ assert.equal(CSE_SOURCE_MAP.NCBC_ECTOPIC.role,"catholic_commentary");
 assert.equal(CSE_SOURCE_MAP.NCBC_ECTOPIC.authority_type,"NON_MAGISTERIAL_CATHOLIC_BIOETHICS");
 assert.ok(CSE_QUESTION_MAP.CSE125.refs.some(([id])=>id==="NCBC_ECTOPIC"));
 for(const stage of ["catholicCase","bottom"])assert.ok(paragraphRefsFor(CSE_QUESTION_MAP.CSE125,"debate",stage).some(([id])=>id==="NCBC_ECTOPIC"));
-assert.ok(CSE_QUESTION_MAP.CSE040.refs.some(([id,loc])=>id==="PH"&&loc.startsWith("§§7,9")));
+assert.ok(CSE_QUESTION_MAP.CSE040.refs.some(([id,loc])=>id==="PH"&&loc.includes("§7")&&loc.includes("§9")));
+assert.ok(CSE_QUESTION_MAP.CSE040.refs.some(([id,loc])=>id==="CASTI"&&loc==="§18"));
 console.log("PASS Sexual Ethics substantive editorial regression: 4 original-text rechecks, EN/FR revised answers and debates, NCBC marked non-magisterial, urgency and culpability qualifications retained.");
