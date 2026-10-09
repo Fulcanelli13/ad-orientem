@@ -8,12 +8,12 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
   "dr-challoner": Object.freeze({
     id: "dr-challoner", language: "en", title: "Douay–Rheims (Challoner)",
     tradition: "Catholic; Vulgate-derived", role: "default",
-    rights: "pending-edition-and-digital-rights-review", enabled: false
+    rights: "cleared", sourceReview: "1899-text-collation-pending", enabled: false
   }),
   "cpdv-2009": Object.freeze({
     id: "cpdv-2009", language: "en", title: "Catholic Public Domain Version (2009)",
     tradition: "Catholic; independent contemporary-English translation from Clementine Vulgate",
-    role: "readability-candidate", rights: "public-domain-author-declared", enabled: false
+    role: "readability-candidate", rights: "cleared", sourceReview: "author-master-text-review-pending", enabled: false
   }),
   "crampon-1923": Object.freeze({
     id: "crampon-1923", language: "fr", title: "Bible Crampon (1923 text)",
@@ -23,7 +23,7 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
   "vulgate-clementine": Object.freeze({
     id: "vulgate-clementine", language: "la", title: "Biblia Sacra Vulgata (Clementine)",
     tradition: "Catholic Latin", role: "reference",
-    rights: "pending-source-and-digital-rights-review", enabled: false
+    rights: "cleared", sourceReview: "clementine-edition-review-pending", enabled: false
   })
 });
 
