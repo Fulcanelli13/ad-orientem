@@ -62,16 +62,16 @@ function flatten(root) {
 const en=flatten(english),fr=flatten(french);
 console.log("COLLATION_BOOK_NAMES "+JSON.stringify({en:english.books.map(x=>x.name),fr:french.books.map(x=>x.name)}));
 const aliases={
-  "luke":{en:["luke"],fr:["luc","evangile selon saint luc"]},
-  "matthew":{en:["matthew"],fr:["matthieu","evangile selon saint matthieu"]},
-  "john":{en:["john","gospel of john"],fr:["jean","evangile selon saint jean"]},
-  "mark":{en:["mark"],fr:["marc","evangile selon saint marc"]},
-  "acts":{en:["acts","acts of the apostles"],fr:["actes","actes des apotres"]},
-  "1 corinthians":{en:["1 corinthians","i corinthians","1st corinthians"],fr:["1 corinthiens","premiere epitre aux corinthiens"]},
-  "isaias":{en:["isaias","isaiah"],fr:["isaie","isaie"]},
-  "psalm":{en:["psalm","psalms"],fr:["psaumes","psaume"]},
-  "canticles":{en:["canticles","song of songs","song of solomon"],fr:["cantique des cantiques","cantique"]},
-  "apocalypse":{en:["apocalypse","revelation","revelation of john"],fr:["apocalypse","apocalypse de saint jean"]},
+  "luke":{en:["luke"],fr:["Luke","luc","evangile selon saint luc"]},
+  "matthew":{en:["matthew"],fr:["Matthew","matthieu","evangile selon saint matthieu"]},
+  "john":{en:["john","gospel of john"],fr:["John","jean","evangile selon saint jean"]},
+  "mark":{en:["mark"],fr:["Mark","marc","evangile selon saint marc"]},
+  "acts":{en:["acts","acts of the apostles"],fr:["Acts","actes","actes des apotres"]},
+  "1 corinthians":{en:["1 corinthians","i corinthians","1st corinthians"],fr:["I Corinthians","1 corinthiens","premiere epitre aux corinthiens"]},
+  "isaias":{en:["isaias","isaiah"],fr:["Isaiah","isaie"]},
+  "psalm":{en:["psalm","psalms"],fr:["Psalms","psaumes","psaume"]},
+  "canticles":{en:["canticles","song of songs","song of solomon"],fr:["Song of Solomon","cantique des cantiques","cantique"]},
+  "apocalypse":{en:["apocalypse","revelation","revelation of john"],fr:["Revelation of John","apocalypse","apocalypse de saint jean"]},
   "judith":{en:["judith"],fr:["judith"]}
 };
 const byId=Object.fromEntries(archive.rows.map(x=>[x.id,x]));
