@@ -346,6 +346,31 @@ export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
     tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
     sourceIds:Object.freeze(["PIL-SAMEIRO-PILGRIMAGES"]),
   }),
+  "observance.gietrzwald_september8":Object.freeze({
+    key:"observance.gietrzwald_september8",
+    title:Object.freeze({en:"Our Lady of Gietrzwałd — local shrine observance",fr:"Notre-Dame de Gietrzwałd — fête locale du sanctuaire"}),
+    schedule:Object.freeze({type:"FIXED",month:9,day:8}),
+    route:"find",exploreLens:"pilgrimages",priority:65,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-GIETRZWALD-ARCHDIOCESE"]),
+  }),
+  "observance.siluva_silines":Object.freeze({
+    key:"observance.siluva_silines",
+    title:Object.freeze({en:"Šilinės pilgrimage — Šiluva",fr:"Pèlerinage de Šilinės — Šiluva"}),
+    schedule:Object.freeze({type:"FIXED",month:9,day:8}),
+    route:"find",exploreLens:"pilgrimages",priority:65,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-SILUVA-OFFICIAL"]),
+  }),
+  "observance.san_nicolas_september25":Object.freeze({
+    key:"observance.san_nicolas_september25",
+    title:Object.freeze({en:"Our Lady of the Rosary of San Nicolás — local pilgrimage",fr:"Notre-Dame du Rosaire de San Nicolás — pèlerinage local"}),
+    schedule:Object.freeze({type:"FIXED",month:9,day:25}),
+    route:"find",exploreLens:"pilgrimages",priority:65,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-SAN-NICOLAS-EPC"]),
+  }),
+
 });
 
 function semanticDateForDefinition(def,year){
