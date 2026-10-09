@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import {readFile,writeFile} from "node:fs/promises";
 import {resolve,join} from "node:path";
+import {PSALTER_IDENTITY_VERSE_COUNTS} from "../../src/scripture/psalter-identity-crosswalk.js";
 
 /** Mechanical passage-number alignment ONLY. Never a translation or theological approval. */
 const STOP=new Set("the and for but was were which whose will have had not unto thee thou thine thy ye your you they them their her him his she has from with when who this that these those shall may such did does into upon under after before all its are our out where there here then nor let can one two three thus also by in of to an on is it he we i at a be as or do no so if".split(" "));
@@ -91,6 +92,11 @@ if(process.argv[2]){
   readFile(join(root,"cpdv-author-master-books/Psalms.json"),"utf8").then(JSON.parse)
  ]);
  const report=auditFullPsalter(cp,dr);
+ const emitted=report.chapters.filter(x=>x.candidateForIdentityCrosswalk)
+   .map(x=>[x.chapter,x.cpdvNonblank]);
+ const pinned=Object.entries(PSALTER_IDENTITY_VERSE_COUNTS).map(([n,v])=>[Number(n),v]).sort((a,b)=>a[0]-b[0]);
+ if(JSON.stringify(emitted)!==JSON.stringify(pinned))
+  throw Error("Verified Psalter source changed; source-aligned runtime whitelist must be reviewed and reconciled");
  await writeFile(join(root,"Psalms-150-complete-parallel-reconciliation.json"),JSON.stringify(report,null,2)+"\n");
  console.log("CATHOLIC_PSALTER_SOURCE_TRIAGE "+JSON.stringify({
   examined:report.psalmsExamined,candidateChapters:report.mechanicallyAlignedPsalms,
