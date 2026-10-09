@@ -14,7 +14,17 @@ assert.ok(report.replacedImages>=90,"Historic base64 image payload was reintrodu
 assert.ok(report.uniqueImages>=80,"Externalized image registry unexpectedly shrank");
 assert.ok(report.savedFromTextBytes>=25_000_000,"Text weight recovered less than expected");
 const sprites=JSON.parse(readFileSync("data/presentation/startup-sprite-report.v1.json","utf8"));
-assert.equal(sprites.reducedHtmlBytes,htmlBytes,"Current HTML changed without a matching sprite manifest");
+const perIcon=JSON.parse(readFileSync("data/presentation/startup-per-icon-report.v1.json","utf8"));
+assert.equal(perIcon.reducedHtmlBytes,htmlBytes,"Current HTML differs from per-icon SVG manifest");
+assert.equal(perIcon.originalHtmlBytes,sprites.reducedHtmlBytes,"Original sprite manifest lost its provenance");
+assert.equal(perIcon.icons.length,20,"Twenty historical refined icon symbols must remain intact");
+const mappedIcons=new Map(perIcon.icons.map(row=>[row.id,row]));
+for(const icon of perIcon.icons){
+  assert.ok(existsSync(icon.path),"Missing per-icon geometry: "+icon.path);
+  const source=readFileSync(icon.path,"utf8");
+  assert.ok(source.includes('id="'+icon.id+'"'),"Individual SVG lost "+icon.id);
+  assert.ok(html.includes("./"+icon.path+"#"+icon.id),"Local proxy points to wrong SVG: "+icon.id);
+}
 assert.equal(sprites.originalHtmlBytes,split.postArtHtmlBytes,"SVG extraction did not start from the certified post-art HTML");
 assert.ok(htmlBytes<3_000_000,"Cold HTML budget: refined SVG assets must remain external");
 assert.ok(sprites.entries.length===3,"Three large refined SVG sprite assets required");
@@ -24,7 +34,7 @@ for(const entry of sprites.entries){
   assert.ok(svg.includes('xmlns="http://www.w3.org/2000/svg"'),"External sprite lacks SVG namespace");
   for(const id of entry.symbols){
     assert.ok(html.includes('id="'+id+'"'),"Legacy symbol not present in lightweight proxy: "+id);
-    assert.ok(html.includes(entry.path+"#"+id),"Symbol proxy lost content address: "+id);
+    assert.ok(mappedIcons.has(id),"Historical sprite symbol disappeared: "+id);
     assert.ok(svg.includes('id="'+id+'"'),"External asset lost referenced symbol: "+id);
   }
 }
