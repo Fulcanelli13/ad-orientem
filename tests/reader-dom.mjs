@@ -176,4 +176,9 @@ unlocked.setMode("SIMPLE");
 expect(unlocked.getMode()==="SIMPLE","unlocked reader did not change mode");
 expect(callbackMode==="SIMPLE","unlocked reader did not invoke presentation mode callback");
 
+import {readFileSync} from "node:fs";
+const readerDomSource=readFileSync("src/mass/reader-dom.js","utf8");
+expect(readerDomSource.includes("if(pop && current.cardUpdate)"),
+  "Guide popover is still dismissed by transient in-card updates");
+
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");

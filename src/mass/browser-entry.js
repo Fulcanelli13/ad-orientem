@@ -182,24 +182,72 @@ export function checkpointPersistedMass({
   }, storage);
 }
 
-function installReaderCloseBridge(preview) {
-  const close = preview?.root?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
-  if (!close?.addEventListener) return null;
+// Shell navigation reports expected failures as {ok:false}; Promise.catch alone
+// cannot detect them. Cancellation of the live-Mass leave prompt is not an error.
+export async function navigateReaderSurface(surface,{win=globalThis}={}){
+  const shell=win?.AO_APP_SHELL_V1;
+  if(typeof shell?.navigate!=="function")throw new Error("APP_SHELL_NOT_READY");
+  const result=await shell.navigate(surface);
+  if(result===false || result?.ok===false){
+    if(result?.reason==="LIVE_MASS_LEAVE_CANCELLED")return false;
+    throw new Error(String(result?.reason||"READER_NAVIGATION_UNAVAILABLE"));
+  }
+  return true;
+}
 
-  const onClick = (event) => {
-    const shell = globalThis.AO_APP_SHELL_V1;
-    if (typeof shell?.navigate !== "function") return;
+function installReaderSurfaceBridge(preview,{selector,surface,language="en"}){
+  const button=preview?.root?.querySelector?.(selector);
+  if(!button?.addEventListener)return null;
+  let opening=false,disposed=false,notice=null;
+  const fr=String(language).startsWith("fr");
+  const clearNotice=()=>{notice?.remove?.();notice=null;};
+  const onClick=event=>{
     event.preventDefault?.();
     event.stopImmediatePropagation?.();
-    void Promise.resolve(shell.navigate("home")).catch((error) => {
-      console.error("R17 reader Home navigation failed", error);
+    if(opening||disposed)return;
+    opening=true;
+    button.disabled=true;
+    button.setAttribute?.("aria-busy","true");
+    clearNotice();
+    // Preserve the exact current card/cue before leaving the Mass surface.
+    checkpointPersistedMass({preview});
+    void navigateReaderSurface(surface).catch(error=>{
+      if(disposed)return;
+      console.error("R17 reader "+surface+" navigation failed",error);
+      const doc=button.ownerDocument;
+      const host=preview?.root?.querySelector?.("[data-ao-reader-shell]")??preview?.root;
+      if(!doc?.createElement||!host?.append)return;
+      notice=doc.createElement("p");
+      notice.className="aoMassReaderNavigationError";
+      notice.setAttribute("role","alert");
+      notice.dataset.readerNavigationError=surface;
+      notice.textContent=surface==="home"
+        ?(fr?"Impossible d’ouvrir l’accueil. Réessayez.":"Home could not open. Please retry.")
+        :(fr?"Impossible d’ouvrir les réglages. Réessayez.":"Settings could not open. Please retry.");
+      notice.style.cssText="position:absolute;z-index:65;top:58px;left:8px;right:8px;max-width:340px;margin:auto;padding:11px 13px;border:1px solid rgba(201,164,122,.35);border-radius:9px;background:#18201c;color:#e9e9df;font:500 13px/1.5 var(--ao-font-ui,system-ui,sans-serif);text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.35)";
+      host.append(notice);
+    }).finally(()=>{
+      opening=false;
+      if(!disposed){
+        button.disabled=false;
+        button.removeAttribute?.("aria-busy");
+      }
     });
   };
-  close.addEventListener("click", onClick, true);
-  return Object.freeze({
-    dispose() {
-      close.removeEventListener?.("click", onClick, true);
-    },
+  button.addEventListener("click",onClick,true);
+  return Object.freeze({dispose(){
+    disposed=true;
+    button.removeEventListener?.("click",onClick,true);
+    button.disabled=false;
+    button.removeAttribute?.("aria-busy");
+    clearNotice();
+  }});
+}
+
+function installReaderCloseBridge(preview,prepared){
+  return installReaderSurfaceBridge(preview,{
+    selector:"[data-reader-home], [aria-label='Close Mass reader']",
+    surface:"home",language:prepared?.readerPreferences?.language,
   });
 }
 
@@ -305,6 +353,23 @@ function installReaderGlossaryBridge(preview){
   }});
 }
 
+
+export async function openReaderScriptureContext(reference,{
+  win=globalThis,language="en",
+  loader=()=>import("../scripture/browser-entry.js"),
+}={}){
+  let owner=win?.AO_SCRIPTURE_CONTEXT_V1;
+  if(typeof owner?.open!=="function"){
+    const module=await loader();
+    module?.installScriptureBrowserOwner?.(win);
+    owner=win?.AO_SCRIPTURE_CONTEXT_V1;
+  }
+  if(typeof owner?.open!=="function")throw new Error("MASS_SCRIPTURE_OWNER_NOT_READY");
+  const accepted=await owner.open(reference,{language});
+  if(accepted===false)throw new Error("MASS_SCRIPTURE_CONTEXT_UNAVAILABLE");
+  return true;
+}
+
 function installReaderScriptureBridge(preview,prepared){
   const root=preview?.root,panel=root?.querySelector?.('[data-role="mass-preferences"]');
   if(!panel?.ownerDocument)return null;
@@ -320,12 +385,14 @@ function installReaderScriptureBridge(preview,prepared){
   const status=doc.createElement("small");status.className="aoMassScriptureStudyStatus";
   status.setAttribute("role","status");
   box.append(button,status);panel.append(box);
+  let opening=false,disposed=false;
   function refresh(){
+    if(disposed)return null;
     const context=massScriptureContextForCard(preview?.getCurrentCard?.(),prepared);
     box.hidden=!context;
     if(!context)return null;
     button.hidden=context.state!=="READY";
-    button.disabled=context.state!=="READY";
+    button.disabled=opening||context.state!=="READY";
     if(context.state==="READY"){
       button.dataset.massReadingReference=context.reference;
       status.textContent=(fr?"Étude facultative · ":"Optional study · ")+context.reference;
@@ -335,39 +402,52 @@ function installReaderScriptureBridge(preview,prepared){
         ?"Référence biblique exacte non vérifiée. Le texte liturgique reste inchangé."
         :"Exact Bible reference unverified. Liturgical text remains unchanged.";
     }
+    status.setAttribute("role","status");
     return context;
   }
   const onClick=event=>{
-    if(event.target?.closest?.("[data-reader-preferences]")){refresh();return}
+    if(event.target?.closest?.("[data-reader-preferences]")){refresh();return;}
     if(!event.target?.closest?.("[data-reader-scripture-context]"))return;
     event.preventDefault?.();event.stopImmediatePropagation?.();
+    if(opening||disposed)return;
     const context=refresh();if(context?.state!=="READY")return;
-    const opened=globalThis.AO_SCRIPTURE_CONTEXT_V1?.open?.(context.reference,{language:fr?"fr":"en"});
-    if(!opened){
-      status.textContent=fr?"Le contexte biblique n’a pas pu être ouvert. La Messe reste disponible."
+    opening=true;button.disabled=true;button.setAttribute("aria-busy","true");
+    void openReaderScriptureContext(context.reference,{language:fr?"fr":"en"}).catch(error=>{
+      if(disposed)return;
+      console.error("R17 reader Scripture context failed",error);
+      status.textContent=fr
+        ?"Le contexte biblique n’a pas pu être ouvert. La Messe reste disponible."
         :"Scripture context could not open. Mass remains available.";
       status.setAttribute("role","alert");
-    }
-  };
-  root.addEventListener("click",onClick,true);refresh();
-  return Object.freeze({refresh,dispose(){root.removeEventListener("click",onClick,true);box.remove()}});
-}
-
-function installReaderParametersBridge(preview) {
-  const button=preview?.root?.querySelector?.("[data-reader-parameters]");
-  if(!button?.addEventListener)return null;
-  const onClick=(event)=>{
-    const shell=globalThis.AO_APP_SHELL_V1;
-    if(typeof shell?.navigate!=="function")return;
-    event.preventDefault?.();
-    event.stopImmediatePropagation?.();
-    void Promise.resolve(shell.navigate("settings")).catch((error)=>{
-      console.error("R17 reader Settings navigation failed",error);
+    }).finally(()=>{
+      opening=false;
+      if(!disposed){
+        button.removeAttribute?.("aria-busy");
+        button.disabled=false;
+      }
     });
   };
-  button.addEventListener("click",onClick,true);
-  return Object.freeze({
-    dispose(){button.removeEventListener?.("click",onClick,true);}
+  root.addEventListener("click",onClick,true);
+  // The user can change cards without closing Mass preferences. Keep the
+  // displayed passage synchronized with the actual selected liturgical reading.
+  const Observer=root.ownerDocument?.defaultView?.MutationObserver??globalThis.MutationObserver;
+  const observer=typeof Observer==="function"?new Observer(()=>refresh()):null;
+  observer?.observe?.(root,{attributes:true,attributeFilter:[
+    "data-r17-native-cue","data-r17-native-event","data-r17-presentation-mode",
+  ]});
+  refresh();
+  return Object.freeze({refresh,dispose(){
+    disposed=true;
+    observer?.disconnect?.();
+    root.removeEventListener?.("click",onClick,true);
+    box.remove?.();
+  }});
+}
+
+function installReaderParametersBridge(preview,prepared){
+  return installReaderSurfaceBridge(preview,{
+    selector:"[data-reader-parameters]",
+    surface:"settings",language:prepared?.readerPreferences?.language,
   });
 }
 
@@ -485,8 +565,8 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
-  installReaderCloseBridge(previewState.preview);
-  installReaderParametersBridge(previewState.preview);
+  installReaderCloseBridge(previewState.preview,prepared);
+  installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
